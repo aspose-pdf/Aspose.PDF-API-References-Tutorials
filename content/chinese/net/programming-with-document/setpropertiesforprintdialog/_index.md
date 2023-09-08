@@ -1,49 +1,49 @@
 ---
-title: Set Properties For Print Dialog
-linktitle: Set Properties For Print Dialog
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set properties for print dialog in Aspose.PDF for .NET using step-by-step guide.
+title: 设置打印对话框的属性
+linktitle: 设置打印对话框的属性
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用分步指南在 Aspose.PDF for .NET 中设置打印对话框的属性。
 type: docs
 weight: 320
 url: /zh/net/programming-with-document/setpropertiesforprintdialog/
 ---
-here's a step-by-step guide for setting properties for the print dialog using Aspose.PDF for .NET:
+以下是使用 Aspose.PDF for .NET 设置打印对话框属性的分步指南：
 
 
-## Step 1: Define the directory where your PDF document is located:
+## 第 1 步：定义 PDF 文档所在的目录：
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
    
-## Step 2: Create a new instance of the `Document` class:
+## 步骤 2：创建一个新实例`Document` class:
 
 ```csharp
 using (Document doc = new Document())
 {
-  // Code here
+  //代码在这里
 }
 ```
    
-## Step 3: Add a new page to the document:
+## 步骤 3：向文档添加新页面：
 
 ```csharp
 doc.Pages.Add();
 ```
    
-## Step 4: Set the duplex property to `DuplexFlipLongEdge`:
+## 步骤 4：将双工属性设置为`DuplexFlipLongEdge`:
 
 ```csharp
 doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
 ```
    
-## Step 5: Save the document with the specified file name and format:
+## 步骤5：以指定的文件名和格式保存文档：
 
 ```csharp
 doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
 ```
 
-### Example source code for Set Properties For Print Dialog using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 设置打印对话框属性的示例源代码
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -56,20 +56,20 @@ using (Document doc = new Document())
 }
 ```
 
-## Conclusion
+## 结论
 
-Aspose.PDF for .NET makes it easy to set properties for the print dialog in your PDF files. By following the step-by-step guide above, you can quickly optimize your PDF files for printing.
+Aspose.PDF for .NET 可以轻松设置 PDF 文件中打印对话框的属性。通过遵循上面的分步指南，您可以快速优化 PDF 文件以进行打印。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: Can I set other print dialog properties besides duplex mode using Aspose.PDF for .NET?
+#### 问：除了双面模式之外，我还可以使用 Aspose.PDF for .NET 设置其他打印对话框属性吗？
 
-A: Yes, besides setting the duplex mode, Aspose.PDF for .NET allows you to set various other properties for the print dialog. Some examples include setting the print quality, page range, number of copies, paper size, and more. You can refer to the Aspose.PDF for .NET documentation to explore the full list of available properties.
+答：是的，除了设置双面模式之外，Aspose.PDF for .NET 还允许您为打印对话框设置各种其他属性。一些示例包括设置打印质量、页面范围、份数、纸张尺寸等。您可以参考 Aspose.PDF for .NET 文档来探索可用属性的完整列表。
 
-#### Q: How can I set the print quality when printing the PDF document?
+#### 问：打印PDF文档时如何设置打印质量？
 
-A: To set the print quality, you can use the `PrintQuality` property of the `Document` class in Aspose.PDF for .NET. You can choose from different print quality options such as high, medium, or low, based on your requirements.
+答：要设置打印质量，您可以使用`PrintQuality`的财产`Document`Aspose.PDF for .NET 中的类。您可以根据您的要求选择不同的打印质量选项，例如高、中或低。
 
-#### Q: Is it possible to specify custom print settings for different pages in the PDF document?
+#### 问：是否可以为 PDF 文档中的不同页面指定自定义打印设置？
 
-A: Yes, you can set custom print settings for different pages in the PDF document using Aspose.PDF for .NET. You can access individual pages through the `doc.Pages` collection and set specific print settings for each page separately.
+答：是的，您可以使用 Aspose.PDF for .NET 为 PDF 文档中的不同页面设置自定义打印设置。您可以通过以下方式访问各个页面`doc.Pages`收集并分别为每个页面设置特定的打印设置。

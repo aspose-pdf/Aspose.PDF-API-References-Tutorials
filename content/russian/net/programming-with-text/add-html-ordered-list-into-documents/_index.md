@@ -1,129 +1,129 @@
 ---
-title: Add HTML Ordered List Into Documents
-linktitle: Add HTMLOrdered List Into Documents
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add an HTML ordered list to a document using Aspose.PDF for .NET.
+title: Добавить упорядоченный список HTML в документы
+linktitle: Добавить упорядоченный список HTML в документы
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как добавить упорядоченный список HTML в документ с помощью Aspose.PDF для .NET.
 type: docs
 weight: 30
 url: /ru/net/programming-with-text/add-html-ordered-list-into-documents/
 ---
-In this tutorial, you will learn how to use the Aspose.PDF for .NET library to add an HTML ordered list into a document. The code provided demonstrates the necessary steps to accomplish this task.
+В этом руководстве вы узнаете, как использовать библиотеку Aspose.PDF для .NET для добавления упорядоченного списка HTML в документ. Предоставленный код демонстрирует необходимые шаги для выполнения этой задачи.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Требования
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio или любой другой компилятор C#, установленный на вашем компьютере.
+- Aspose.PDF для библиотеки .NET. Вы можете скачать его с официального сайта Aspose или использовать для установки менеджер пакетов, например NuGet.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Шаг 1. Настройте проект
+1. Создайте новый проект C# в предпочитаемой вами среде разработки.
+2. Добавьте ссылку на библиотеку Aspose.PDF для .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to add the HTML ordered list, add the following using directives at the top of the file:
+## Шаг 2. Импортируйте необходимые пространства имен.
+В файл кода, в который вы хотите добавить упорядоченный список HTML, добавьте следующие директивы, используя верхнюю часть файла:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the document directory and output file path
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Шаг 3. Установите каталог документа и путь к выходному файлу.
+ В коде найдите строку с надписью`string dataDir = "YOUR DOCUMENT DIRECTORY";` и заменить`"YOUR DOCUMENT DIRECTORY"` с путем к каталогу, в котором хранятся ваши документы.
 
-Next, locate the line that says `string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";` and replace `"AddHTMLOrderedListIntoDocuments_out.pdf"` with the desired name for your output PDF file.
+ Затем найдите строку с надписью`string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";` и заменить`"AddHTMLOrderedListIntoDocuments_out.pdf"` с желаемым именем выходного PDF-файла.
 
-## Step 4: Create a new Document object
-Instantiate a new `Document` object by adding the following line of code:
+## Шаг 4. Создайте новый объект документа.
+ Создать экземпляр нового`Document` объект, добавив следующую строку кода:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 5: Create an HtmlFragment object with the HTML content
-Instantiate an `HtmlFragment` object with the HTML content you want to add to the document. In the provided code, the HTML content is assigned to the variable `t`. You can modify the HTML content as needed.
+## Шаг 5. Создайте объект HtmlFragment с содержимым HTML.
+ Создать экземпляр`HtmlFragment` объект с HTML-содержимым, которое вы хотите добавить в документ. В предоставленном коде содержимое HTML присваивается переменной`t`. При необходимости вы можете изменить содержимое HTML.
 
 ```csharp
 HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li >Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");
 ```
 
-## Step 6: Add a page to the document
-Add a new page to the document by using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `page`.
+## Шаг 6. Добавьте страницу в документ
+ Добавьте новую страницу в документ с помощью`Add` метод`Pages`коллекция. В предоставленном коде новая страница присваивается переменной`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 7: Add the HtmlFragment to the page
-Add the `HtmlFragment` object to the page by using the `Add` method of the `Paragraphs` collection.
+## Шаг 7. Добавьте HtmlFragment на страницу.
+ Добавить`HtmlFragment` объект на странице с помощью`Add` метод`Paragraphs` коллекция.
 
 ```csharp
 page.Paragraphs.Add(t);
 ```
 
-## Step 8: Save the PDF document
-Save the resulting PDF file using the `Save` method of the `Document` object. Specify the output file path that you set in Step 3.
+## Шаг 8. Сохраните PDF-документ.
+ Сохраните полученный PDF-файл, используя`Save` метод`Document` объект. Укажите путь к выходному файлу, который вы установили на шаге 3.
 
 ```csharp
 doc.Save(outFile);
 ```
 
-### Sample source code for Add HTMLOrdered List Into Documents using Aspose.PDF for .NET 
+### Пример исходного кода для добавления HTMLOrdered List в документы с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// The path to the output document.  
+// Путь к выходному документу.
 string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";
-// Instantiate Document object  
+// Создать экземпляр объекта документа
 Document doc = new Document();
-// Instantiate HtmlFragment object with corresponding HTML fragment  
+// Создайте экземпляр объекта HtmlFragment с соответствующим фрагментом HTML.
 HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li>Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");
-// Add Page in Pages Collection  
+// Добавить страницу в коллекцию страниц
 Page page = doc.Pages.Add();
-// Add HtmlFragment inside page  
+// Добавить HtmlFragment внутри страницы
 page.Paragraphs.Add(t);
-// Save resultant PDF file  
+// Сохраните полученный PDF-файл
 doc.Save(outFile);
 ```
 
-## Conclusion
-You have successfully added an HTML ordered list into a document using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## Заключение
+Вы успешно добавили упорядоченный список HTML в документ, используя Aspose.PDF для .NET. Полученный PDF-файл теперь можно найти по указанному пути к выходному файлу.
 
-Remember to customize the HTML content and adjust the code according to your specific requirements.
+Не забудьте настроить HTML-содержимое и настроить код в соответствии с вашими конкретными требованиями.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of this tutorial?
+#### Вопрос: Какова цель этого урока?
 
-A: This tutorial aims to guide you through the process of adding an HTML ordered list into a document using the Aspose.PDF for .NET library. It provides step-by-step instructions and code snippets to help you achieve this task.
+О: Это руководство призвано помочь вам в процессе добавления упорядоченного списка HTML в документ с использованием библиотеки Aspose.PDF для .NET. Он предоставляет пошаговые инструкции и фрагменты кода, которые помогут вам выполнить эту задачу.
 
-#### Q: Which namespaces do I need to import for this tutorial?
+#### Вопрос: Какие пространства имен мне нужно импортировать для работы с этим руководством?
 
-A: You need to import the following namespaces at the top of your code file:
+О: Вам необходимо импортировать следующие пространства имен в начало файла кода:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-#### Q: How do I specify the document directory and output file path?
+#### Вопрос: Как указать каталог документа и путь к выходному файлу?
 
-A: In the code, locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory. Also, find the line `string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";` and replace `"AddHTMLOrderedListIntoDocuments_out.pdf"` with your desired output PDF file name.
+ О: В коде найдите строку`string dataDir = "YOUR DOCUMENT DIRECTORY";` и заменить`"YOUR DOCUMENT DIRECTORY"` с фактическим путем к каталогу вашего документа. Также найдите строку`string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";` и заменить`"AddHTMLOrderedListIntoDocuments_out.pdf"` с желаемым именем выходного PDF-файла.
 
-#### Q: Can I customize the HTML content being added to the document?
+#### Вопрос: Могу ли я настроить HTML-содержимое, добавляемое в документ?
 
-A: Absolutely! In Step 5, you'll create an `HtmlFragment` object named `t` that holds the HTML content. You can modify the HTML content within the backticks to suit your requirements.
+ А: Абсолютно! На шаге 5 вы создадите`HtmlFragment` объект с именем`t` который содержит HTML-контент. Вы можете изменить содержимое HTML в обратных кавычках в соответствии с вашими требованиями.
 
-#### Q: How do I add the HTML ordered list to a page in the document?
+#### Вопрос: Как добавить упорядоченный список HTML на страницу документа?
 
-A: In Step 7, you'll add the `HtmlFragment` object (`t`) to the page using the `Add` method of the `Paragraphs` collection. This will seamlessly integrate the HTML ordered list into the document.
+ О: На шаге 7 вы добавите`HtmlFragment` объект (`t` ) на страницу с помощью`Add` метод`Paragraphs`коллекция. Это позволит легко интегрировать упорядоченный список HTML в документ.
 
-#### Q: How do I save the resulting PDF document?
+#### Вопрос: Как сохранить полученный PDF-документ?
 
-A: After adding the HTML content and arranging it on a page, you can save the PDF document using the `Save` method of the `Document` object. Make sure to provide the correct output file path you set earlier.
+ О: После добавления HTML-содержимого и его размещения на странице вы можете сохранить PDF-документ с помощью`Save` метод`Document` объект. Обязательно укажите правильный путь к выходному файлу, который вы установили ранее.
 
-#### Q: Can you provide a summary of the sample source code for reference?
+#### Вопрос: Можете ли вы предоставить краткое описание примера исходного кода для справки?
 
-A: Certainly! Here's a summarized version of the sample source code provided in this tutorial:
+А: Конечно! Вот обобщенная версия примера исходного кода, представленного в этом руководстве:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -135,6 +135,6 @@ page.Paragraphs.Add(t);
 doc.Save(outFile);
 ```
 
-#### Q: What is the key takeaway from this tutorial?
+#### Вопрос: Каков основной вывод из этого урока?
 
-A: By following this tutorial, you've successfully learned how to leverage the Aspose.PDF for .NET library to incorporate an HTML ordered list into a document. This newfound knowledge can be applied to enhance your document creation and manipulation processes.
+О: Следуя этому руководству, вы успешно научились использовать библиотеку Aspose.PDF для .NET для включения упорядоченного списка HTML в документ. Эти новые знания можно применить для улучшения процессов создания и обработки документов.

@@ -1,26 +1,26 @@
 ---
-title: Add Text With Shading Colors In PDF File
-linktitle: Add Text With Shading Colors In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text with shading colors in PDF file using Aspose.PDF for .NET.
+title: Добавить текст с цветами заливки в файл PDF
+linktitle: Добавить текст с цветами заливки в файл PDF
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как добавить текст с цветами заливки в файл PDF с помощью Aspose.PDF для .NET.
 type: docs
 weight: 80
 url: /ru/net/programming-with-text/add-text-with-shading-colors/
 ---
-This tutorial will guide you through the process of adding text with shading colors in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Это руководство проведет вас через процесс добавления текста с цветами заливки в PDF-файл с помощью Aspose.PDF для .NET. Приведенный исходный код C# демонстрирует необходимые шаги.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Требования
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio или любой другой компилятор C#, установленный на вашем компьютере.
+- Aspose.PDF для библиотеки .NET. Вы можете скачать его с официального сайта Aspose или использовать для установки менеджер пакетов, например NuGet.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Шаг 1. Настройте проект
+1. Создайте новый проект C# в предпочитаемой вами среде разработки.
+2. Добавьте ссылку на библиотеку Aspose.PDF для .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to add text with shading colors, add the following using directive at the top of the file:
+## Шаг 2. Импортируйте необходимые пространства имен.
+В файл кода, куда вы хотите добавить текст с цветами заливки, добавьте следующую директиву using в верхней части файла:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,21 +28,21 @@ using Aspose.Pdf.Text;
 using System.Drawing;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Шаг 3. Установите каталог документов.
+ В коде найдите строку с надписью`string dataDir = "YOUR DOCUMENT DIRECTORY";` и заменить`"YOUR DOCUMENT DIRECTORY"` с путем к каталогу, в котором хранятся ваши документы.
 
-## Step 4: Load the PDF document
-Load the existing PDF document using the `Document` constructor and provide the path to the document file.
+## Шаг 4. Загрузите PDF-документ.
+ Загрузите существующий PDF-документ, используя`Document` конструктор и укажите путь к файлу документа.
 
 ```csharp
 using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 {
-     // Code goes here...
+     // Код идет сюда...
 }
 ```
 
-## Step 5: Find the text to modify
-Use `TextFragmentAbsorber` to find the desired text within the document. In the provided code, it looks for the text "Lorem ipsum".
+## Шаг 5. Найдите текст, который нужно изменить.
+ Использовать`TextFragmentAbsorber` чтобы найти нужный текст в документе. В предоставленном коде он ищет текст «Lorem ipsum».
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -50,8 +50,8 @@ pdfDocument.Pages.Accept(absorb);
 TextFragment textFragment = absorb.TextFragments[1];
 ```
 
-## Step 6: Set shading color for the text
-Create a new `Color` object with a pattern colorspace and specify the gradient shading colors. Assign this color to the `ForegroundColor` property of the `TextState` of the `TextFragment` object.
+## Шаг 6: Установите цвет заливки для текста
+ Создать новый`Color` объект с цветовым пространством узора и укажите цвета градиентной заливки. Назначьте этот цвет`ForegroundColor` собственность`TextState` принадлежащий`TextFragment` объект.
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
@@ -60,30 +60,30 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 };
 ```
 
-## Step 7: Apply additional text formatting (optional)
-You can apply additional formatting to the text fragment, such as underlining, by modifying the properties of the `TextState` object.
+## Шаг 7. Примените дополнительное форматирование текста (необязательно).
+ К фрагменту текста можно применить дополнительное форматирование, например подчеркивание, изменив свойства элемента`TextState` объект.
 
 ```csharp
 textFragment.TextState.Underline = true;
 ```
 
-## Step 8: Save the modified PDF document
-Save the modified PDF document using the `Save` method of the `Document` object.
+## Шаг 8. Сохраните измененный PDF-документ.
+ Сохраните измененный PDF-документ, используя`Save` метод`Document` объект.
 
 ```csharp
 pdfDocument.Save(dataDir + "text_out.pdf");
 ```
 
-### Sample source code for Add Text With Shading Colors using Aspose.PDF for .NET 
+### Пример исходного кода для добавления текста с цветами заливки с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 using (Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 {
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
 	pdfDocument.Pages.Accept(absorber);
 	TextFragment textFragment = absorber.TextFragments[1];
-	// Create new color with pattern colorspace
+	// Создайте новый цвет с помощью цветового пространства шаблона
 	textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 	{
 		PatternColorSpace = new Aspose.Pdf.Drawing.GradientAxialShading(Color.Red, Color.Blue)
@@ -93,18 +93,18 @@ using (Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 }
 ```
 
-## Conclusion
-You have successfully added text with shading colors to your PDF document using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## Заключение
+Вы успешно добавили текст с цветами заливки в свой PDF-документ с помощью Aspose.PDF для .NET. Полученный PDF-файл теперь можно найти по указанному пути к выходному файлу.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the main focus of this tutorial?
+#### Вопрос: Какова основная цель этого урока?
 
-A: This tutorial guides you through the process of adding text with shading colors to a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the necessary steps to achieve this.
+О: Это руководство проведет вас через процесс добавления текста с цветами заливки в файл PDF с использованием библиотеки Aspose.PDF для .NET. Приведенный исходный код C# демонстрирует необходимые шаги для достижения этой цели.
 
-#### Q: Which namespaces do I need to import for this tutorial?
+#### Вопрос: Какие пространства имен мне нужно импортировать для работы с этим руководством?
 
-A: In the code file where you want to add text with shading colors, import the following namespaces at the beginning of the file:
+О: В файле кода, в который вы хотите добавить текст с цветами заливки, импортируйте следующие пространства имен в начале файла:
 
 ```csharp
 using Aspose.Pdf;
@@ -112,24 +112,24 @@ using Aspose.Pdf.Text;
 using System.Drawing;
 ```
 
-#### Q: How do I specify the document directory?
+#### Вопрос: Как указать каталог документа?
 
-A: In the code, locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ О: В коде найдите строку`string dataDir = "YOUR DOCUMENT DIRECTORY";` и заменить`"YOUR DOCUMENT DIRECTORY"` с фактическим путем к каталогу вашего документа.
 
-#### Q: How do I load an existing PDF document?
+#### Вопрос: Как загрузить существующий PDF-документ?
 
-A: In Step 4, you'll load an existing PDF document using the `Document` constructor and providing the path to the document file:
+ О: На шаге 4 вы загрузите существующий PDF-документ, используя`Document` конструктор и указав путь к файлу документа:
 
 ```csharp
 using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 {
-     // Code goes here...
+     // Код идет сюда...
 }
 ```
 
-#### Q: How do I find and modify specific text within the PDF document?
+#### Вопрос: Как найти и изменить определенный текст в документе PDF?
 
-A: In Step 5, you'll use the `TextFragmentAbsorber` to find the desired text within the document. Then, you can modify its properties:
+ О: На шаге 5 вы будете использовать`TextFragmentAbsorber`чтобы найти нужный текст в документе. Затем вы можете изменить его свойства:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -137,9 +137,9 @@ pdfDocument.Pages.Accept(absorber);
 TextFragment textFragment = absorber.TextFragments[1];
 ```
 
-#### Q: How can I set shading colors for the text?
+#### Вопрос: Как задать цвета заливки текста?
 
-A: In Step 6, you'll create a new `Color` object with a pattern colorspace and specify the gradient shading colors. Assign this color to the `ForegroundColor` property of the `TextState` of the `TextFragment` object:
+ О: На шаге 6 вы создадите новый`Color` объект с цветовым пространством узора и укажите цвета градиентной заливки. Назначьте этот цвет`ForegroundColor` собственность`TextState` принадлежащий`TextFragment` объект:
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
@@ -148,22 +148,22 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 };
 ```
 
-#### Q: Can I apply additional text formatting to the modified text?
+#### Вопрос: Могу ли я применить к измененному тексту дополнительное форматирование?
 
-A: Yes, in Step 7, you can apply additional text formatting such as underlining by modifying the properties of the `TextState` object:
+ О: Да, на шаге 7 вы можете применить дополнительное форматирование текста, например подчеркивание, изменив свойства`TextState` объект:
 
 ```csharp
 textFragment.TextState.Underline = true;
 ```
 
-#### Q: How do I save the modified PDF document?
+#### Вопрос: Как сохранить измененный PDF-документ?
 
-A: In Step 8, you'll save the modified PDF document using the `Save` method of the `Document` object:
+ О: На шаге 8 вы сохраните измененный PDF-документ, используя`Save` метод`Document` объект:
 
 ```csharp
 pdfDocument.Save(dataDir + "text_out.pdf");
 ```
 
-#### Q: What is the main takeaway from this tutorial?
+#### Вопрос: Каков основной вывод из этого урока?
 
-A: By following this tutorial, you've successfully learned how to enhance your PDF document by adding text with shading colors using Aspose.PDF for .NET. This can be particularly useful for highlighting and emphasizing specific text content within your PDF files.
+О: Следуя этому руководству, вы успешно научились улучшать PDF-документ, добавляя текст с цветовой заливкой с помощью Aspose.PDF для .NET. Это может быть особенно полезно для выделения и выделения определенного текстового содержимого в файлах PDF.

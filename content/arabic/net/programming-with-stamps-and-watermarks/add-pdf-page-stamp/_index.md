@@ -1,146 +1,146 @@
 ---
-title: Add PDF Page Stamp In PDF File
-linktitle: Add PDF Page Stamp In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily add a PDF page stamp in PDF file with Aspose.PDF for .NET.
+title: إضافة ختم صفحة PDF في ملف PDF
+linktitle: إضافة ختم صفحة PDF في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة ختم صفحة PDF بسهولة إلى ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 40
 url: /ar/net/programming-with-stamps-and-watermarks/add-pdf-page-stamp/
 ---
-In this tutorial, we will take you step by step on how to add a PDF page stamp in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to add a custom stamp to a specific page of the PDF file.
+في هذا البرنامج التعليمي، سنأخذك خطوة بخطوة حول كيفية إضافة ختم صفحة PDF في ملف PDF باستخدام Aspose.PDF لـ .NET. سنوضح لك كيفية استخدام كود مصدر C# المقدم لإضافة ختم مخصص إلى صفحة معينة من ملف PDF.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- بيئة تطوير .NET مثبتة.
+- تم تنزيل مكتبة Aspose.PDF الخاصة بـ .NET والإشارة إليها في مشروعك.
 
-## Step 2: Loading the PDF document
+## الخطوة 2: تحميل مستند PDF
 
-The first step is to load the existing PDF document into your project. Here's how:
+الخطوة الأولى هي تحميل مستند PDF الموجود في مشروعك. إليك الطريقة:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "PDFPageStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+تأكد من استبدال "دليل المستندات الخاص بك" بالمسار الفعلي للدليل الذي يوجد به مستند PDF الخاص بك.
 
-## Step 3: Creating the page buffer
+## الخطوة 3: إنشاء المخزن المؤقت للصفحة
 
-Now that you have uploaded the PDF document, you can create the page stamp to add. Here's how to do it:
+الآن بعد أن قمت بتحميل مستند PDF، يمكنك إنشاء ختم الصفحة لإضافته. هيريس كيفية القيام بذلك:
 
 ```csharp
-// Create the page buffer
+// إنشاء المخزن المؤقت للصفحة
 PdfPageStamp pageStamp = new PdfPageStamp(pdfDocument.Pages[1]);
 ```
 
-The code above creates a new page buffer using the first page of the PDF document.
+يقوم الكود أعلاه بإنشاء مخزن مؤقت جديد للصفحة باستخدام الصفحة الأولى من مستند PDF.
 
-## Step 4: Configuring Page Buffer Properties
+## الخطوة 4: تكوين خصائص المخزن المؤقت للصفحة
 
-Before adding the page stamp to the PDF document, you can configure various properties of the stamp, such as background, position, rotation, etc. Here's how:
+قبل إضافة ختم الصفحة إلى مستند PDF، يمكنك تكوين خصائص مختلفة للختم، مثل الخلفية والموضع والتدوير وما إلى ذلك. وإليك الطريقة:
 
 ```csharp
-// Configure page buffer properties
+// تكوين خصائص المخزن المؤقت للصفحة
 pageStamp. Background = true;
 pageStamp. XIndent = 100;
 pageStamp. YIndent = 100;
 pageStamp.Rotate = Rotate.on180;
 ```
 
-You can adjust these properties according to your needs.
+يمكنك ضبط هذه الخصائص وفقًا لاحتياجاتك.
 
-## Step 5: Adding the page stamp to the PDF
+## الخطوة 5: إضافة ختم الصفحة إلى ملف PDF
 
-Now that the page stamp is ready, you can add it to a specific page of the PDF document. Here's how:
+الآن بعد أن أصبح ختم الصفحة جاهزًا، يمكنك إضافته إلى صفحة معينة من مستند PDF. إليك الطريقة:
 
 ```csharp
-// Add page buffer to specific page
+// إضافة المخزن المؤقت للصفحة إلى صفحة معينة
 pdfDocument.Pages[1].AddStamp(pageStamp);
 ```
 
-The above code adds the page stamp to the first page of the PDF document. You can specify another page if needed.
+يضيف الكود أعلاه ختم الصفحة إلى الصفحة الأولى من مستند PDF. يمكنك تحديد صفحة أخرى إذا لزم الأمر.
 
-## Step 6: Save the output document
+## الخطوة 6: احفظ مستند الإخراج
 
-Once you have added the page stamp, you can save the modified PDF document. Here's how:
+بمجرد إضافة ختم الصفحة، يمكنك حفظ مستند PDF المعدل. إليك الطريقة:
 
 ```csharp
-// Save the output document
+// احفظ مستند الإخراج
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Add PDFPage Stamp using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإضافة ختم PDFPage باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir+ "PDFPageStamp.pdf");
 
-// Create page stamp
+// إنشاء ختم الصفحة
 PdfPageStamp pageStamp = new PdfPageStamp(pdfDocument.Pages[1]);
 pageStamp.Background = true;
 pageStamp.XIndent = 100;
 pageStamp.YIndent = 100;
 pageStamp.Rotate = Rotation.on180;
 
-// Add stamp to particular page
+// إضافة طابع إلى صفحة معينة
 pdfDocument.Pages[1].AddStamp(pageStamp);
 dataDir = dataDir + "PDFPageStamp_out.pdf";
 
-// Save output document
+// حفظ مستند الإخراج
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nPdf page stamp added successfully.\nFile saved at " + dataDir);
 
 ```
 
-The above code saves the edited PDF document to the specified directory.
+يحفظ الكود أعلاه مستند PDF المحرر في الدليل المحدد.
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have learned how to add a PDF page stamp using Aspose.PDF for .NET. Now you can apply this knowledge to your own projects to add custom stamps to specific pages of your PDF documents.
+تهنئة ! لقد تعلمت كيفية إضافة طابع صفحة PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن تطبيق هذه المعرفة على مشاريعك الخاصة لإضافة طوابع مخصصة إلى صفحات محددة من مستندات PDF الخاصة بك.
 
-### FAQ's for add PDF page stamp in PDF file
+### الأسئلة الشائعة لإضافة ختم صفحة PDF في ملف PDF
 
-#### Q: What is the purpose of adding a PDF page stamp using Aspose.PDF for .NET?
+#### س: ما هو الغرض من إضافة طابع صفحة PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Adding a PDF page stamp allows you to place a custom stamp on a specific page of a PDF document. This feature is useful for adding watermarks, logos, signatures, or any other visual elements to enhance the document's appearance and convey additional information.
+ج: تتيح لك إضافة ختم صفحة PDF وضع ختم مخصص على صفحة معينة من مستند PDF. تفيد هذه الميزة في إضافة علامات مائية أو شعارات أو توقيعات أو أي عناصر مرئية أخرى لتحسين مظهر المستند ونقل معلومات إضافية.
 
-#### Q: Can I add multiple page stamps to different pages of the same PDF document?
+#### س: هل يمكنني إضافة طوابع صفحات متعددة إلى صفحات مختلفة من نفس مستند PDF؟
 
-A: Yes, you can add multiple page stamps to different pages of the same PDF document. The provided C# source code allows you to specify the target page for adding the page stamp, making it versatile for different pages within the document.
+ج: نعم، يمكنك إضافة طوابع صفحات متعددة إلى صفحات مختلفة من نفس مستند PDF. يسمح لك كود مصدر C# المقدم بتحديد الصفحة المستهدفة لإضافة ختم الصفحة، مما يجعلها متعددة الاستخدامات لصفحات مختلفة داخل المستند.
 
-#### Q: How can I adjust the position and rotation of the page stamp within the PDF document?
+#### س: كيف يمكنني ضبط موضع وتدوير ختم الصفحة داخل مستند PDF؟
 
-A: You can customize the position and rotation of the page stamp by modifying the properties of the `PdfPageStamp` object. The code provided in the tutorial demonstrates how to set properties such as `XIndent`, `YIndent`, and `Rotate` to control the stamp's positioning and orientation.
+ ج: يمكنك تخصيص موضع ختم الصفحة وتدويره عن طريق تعديل خصائص`PdfPageStamp` هدف. يوضح الكود الموجود في البرنامج التعليمي كيفية تعيين خصائص مثل`XIndent`, `YIndent` ، و`Rotate` للتحكم في موضع الختم واتجاهه.
 
-#### Q: Is it possible to have a transparent or semi-transparent background for the page stamp?
+#### س: هل من الممكن أن تكون الخلفية شفافة أو شبه شفافة لختم الصفحة؟
 
-A: Yes, you can set the `Background` property of the `PdfPageStamp` object to `true` to enable a transparent or semi-transparent background for the page stamp. This can be useful for watermarks or other stamps that should not fully obscure the content.
+ ج: نعم، يمكنك ضبط`Background` ملكية`PdfPageStamp` يعترض على`true` لتمكين خلفية شفافة أو شبه شفافة لختم الصفحة. يمكن أن يكون هذا مفيدًا للعلامات المائية أو الطوابع الأخرى التي لا ينبغي أن تحجب المحتوى بالكامل.
 
-#### Q: Can I apply this method to existing PDF documents to add page stamps?
+#### س: هل يمكنني تطبيق هذه الطريقة على مستندات PDF الموجودة لإضافة طوابع الصفحات؟
 
-A: Absolutely, you can apply this method to existing PDF documents to add page stamps. The tutorial's provided code demonstrates how to load an existing PDF document and add a page stamp to a specific page.
+ج: بالتأكيد، يمكنك تطبيق هذه الطريقة على مستندات PDF الموجودة لإضافة طوابع الصفحات. يوضح الكود المقدم في البرنامج التعليمي كيفية تحميل مستند PDF موجود وإضافة طابع صفحة إلى صفحة معينة.
 
-#### Q: How do I specify the page to which I want to add a page stamp?
+#### س: كيف أحدد الصفحة التي أريد إضافة طابع الصفحة إليها؟
 
-A: You can specify the target page for adding a page stamp by referencing the desired page using the `pdfDocument.Pages[index]` syntax. The provided C# source code shows how to add a page stamp to the first page using `pdfDocument.Pages[1]`, but you can modify the index to target a different page.
+ ج: يمكنك تحديد الصفحة المستهدفة لإضافة ختم الصفحة عن طريق الرجوع إلى الصفحة المطلوبة باستخدام`pdfDocument.Pages[index]` بناء الجملة. يوضح كود مصدر C# المقدم كيفية إضافة طابع صفحة إلى الصفحة الأولى باستخدام`pdfDocument.Pages[1]`، ولكن يمكنك تعديل الفهرس لاستهداف صفحة مختلفة.
 
-#### Q: Can I use this method to add stamps other than watermarks, such as logos or signatures?
+#### س: هل يمكنني استخدام هذه الطريقة لإضافة طوابع غير العلامات المائية، مثل الشعارات أو التوقيعات؟
 
-A: Yes, you can use this method to add various types of stamps, including watermarks, logos, signatures, or any other visual elements. The tutorial's code can be customized to add the desired stamps to your PDF documents.
+ج: نعم، يمكنك استخدام هذه الطريقة لإضافة أنواع مختلفة من الطوابع، بما في ذلك العلامات المائية أو الشعارات أو التوقيعات أو أي عناصر مرئية أخرى. يمكن تخصيص رمز البرنامج التعليمي لإضافة الطوابع المطلوبة إلى مستندات PDF الخاصة بك.
 
-#### Q: Are there any considerations or limitations when adding page stamps to PDF documents?
+#### س: هل هناك أي اعتبارات أو قيود عند إضافة طوابع الصفحات إلى مستندات PDF؟
 
-A: While adding page stamps is straightforward, consider the overall layout and content of the PDF document. Ensure that the added page stamps do not obstruct critical information or negatively affect the document's readability.
+ج: على الرغم من أن إضافة طوابع الصفحة هو أمر بسيط، إلا أنه يجب مراعاة التخطيط العام ومحتوى مستند PDF. تأكد من أن طوابع الصفحة المضافة لا تعيق المعلومات الهامة أو تؤثر سلبًا على إمكانية قراءة المستند.
 
-#### Q: Can I automate the process of adding page stamps to multiple PDF documents?
+#### س: هل يمكنني أتمتة عملية إضافة طوابع الصفحات إلى مستندات PDF متعددة؟
 
-A: Yes, you can automate the process of adding page stamps to multiple PDF documents by creating a script or program that iterates through a list of documents and applies the same page stamping process to each one.
+ج: نعم، يمكنك أتمتة عملية إضافة طوابع الصفحات إلى مستندات PDF متعددة عن طريق إنشاء برنامج نصي أو برنامج يتكرر خلال قائمة المستندات ويطبق نفس عملية ختم الصفحة على كل منها.

@@ -1,143 +1,143 @@
 ---
-title: Page Orientation According Image Dimensions
-linktitle: Page Orientation According Image Dimensions
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to set page orientation based on image dimensions with Aspose.PDF for .NET.
+title: Resim Boyutlarına Göre Sayfa Yönü
+linktitle: Resim Boyutlarına Göre Sayfa Yönü
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile görüntü boyutlarına göre sayfa yönünü ayarlamak için adım adım kılavuz.
 type: docs
 weight: 80
 url: /tr/net/document-conversion/page-orientation-according-image-dimensions/
 ---
-In this tutorial, we'll walk you through the process of setting page orientation based on an image's dimensions using Aspose.PDF for .NET. We will loop through a list of JPG images in a given directory and automatically adjust the page orientation based on the width of each image. Follow the steps below to achieve this.
+Bu eğitimde, Aspose.PDF for .NET'i kullanarak görüntünün boyutlarına göre sayfa yönünü ayarlama sürecinde size yol göstereceğiz. Belirli bir dizindeki JPG görsellerinin listesi boyunca dolaşacağız ve her görselin genişliğine göre sayfa yönünü otomatik olarak ayarlayacağız. Bunu başarmak için aşağıdaki adımları izleyin.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Önkoşullar
+Başlamadan önce aşağıdaki önkoşulları karşıladığınızdan emin olun:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- C# programlama dili hakkında temel bilgiler.
+- Sisteminizde yüklü olan .NET için Aspose.PDF kütüphanesi.
+- Visual Studio gibi bir geliştirme ortamı.
 
-## Step 1: Browse JPG images
-At this step, we will browse all JPG images in a given directory. Follow the code below:
+## 1. Adım: JPG görsellerine göz atın
+Bu adımda belirli bir dizindeki tüm JPG görsellerine göz atacağız. Aşağıdaki kodu izleyin:
 
 ```csharp
-// Path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a new PDF document
+// Yeni bir PDF belgesi oluştur
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Retrieve the names of all JPG files in a particular directory
+// Belirli bir dizindeki tüm JPG dosyalarının adlarını alın
 string[] fileEntries = Directory.GetFiles(dataDir, "*.JPG");
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your JPG images are located.
+ Değiştirdiğinizden emin olun`"YOUR DOCUMENTS DIRECTORY"` JPG resimlerinizin bulunduğu gerçek dizinle.
 
-## Step 2: Creation of the page and the image
-After browsing the JPG files, we will create a page and an image for each file. Use the following code:
+## Adım 2: Sayfanın ve görselin oluşturulması
+JPG dosyalarına göz attıktan sonra her dosya için bir sayfa ve görsel oluşturacağız. Aşağıdaki kodu kullanın:
 
 ```csharp
 int counter;
 for (counter = 0; counter < fileEntries.Length - 1; counter++)
 {
-// Create a Page object
+// Sayfa nesnesi oluşturma
 Aspose.Pdf.Page page = doc.Pages.Add();
 
-// Create an Image object
+// Bir Görüntü nesnesi oluşturma
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 image1.File = fileEntries[counter];
 ```
 
-## Step 3: Checking image dimensions
-Now let's check the dimensions of each image to determine the page orientation. Use the following code:
+## 3. Adım: Görüntü boyutlarını kontrol etme
+Şimdi sayfa yönünü belirlemek için her görselin boyutlarını kontrol edelim. Aşağıdaki kodu kullanın:
 
 ```csharp
-// Create a BitMap object to get information from the image file
+// Görüntü dosyasından bilgi almak için bir BitMap nesnesi oluşturun
 Bitmap myimage = new Bitmap(fileEntries[counter]);
 
-// Check if the width of the image is greater than the width of the page or not
+// Resmin genişliğinin sayfa genişliğinden büyük olup olmadığını kontrol edin
 if (myimage.Width > page.PageInfo.Width)
 //
 
   If the width of the image is greater than the width of the page, set the page orientation to landscape
 page.PageInfo.IsLandscape = true;
 else
-// If the width of the image is less than the width of the page, set the orientation of the page to portrait
+// Resmin genişliği sayfa genişliğinden azsa sayfanın yönünü dikey olarak ayarlayın
 page.PageInfo.IsLandscape = false;
 ```
 
-## Step 4: Adding the image to the PDF document
-After checking the dimensions of the image, we will add the image to the PDF document's paragraph collection. Use the following code:
+## Adım 4: Görüntüyü PDF belgesine ekleme
+Görselin boyutlarını kontrol ettikten sonra görseli PDF belgesinin paragraf koleksiyonuna ekleyeceğiz. Aşağıdaki kodu kullanın:
 
 ```csharp
-// Add the image to the paragraph collection of the PDF document
+// Görüntüyü PDF belgesinin paragraf koleksiyonuna ekleyin
 page.Paragraphs.Add(image1);
 ```
 
-## Step 5: Saving the PDF file
-Once we have added all the images to the PDF document, we can now save the resulting PDF file. Here is the last step:
+## Adım 5: PDF dosyasını kaydetme
+Tüm görselleri PDF belgesine ekledikten sonra artık ortaya çıkan PDF dosyasını kaydedebiliriz. İşte son adım:
 
 ```csharp
-// Save the PDF file
+// PDF dosyasını kaydedin
 doc.Save(dataDir + "SetPageOrientation_out.pdf");
 ```
 
-Replace `"YOUR DOCUMENTS DIRECTORY"` with the desired directory where you want to save the output PDF file.
+ Yer değiştirmek`"YOUR DOCUMENTS DIRECTORY"` Çıktı PDF dosyasını kaydetmek istediğiniz dizini seçin.
 
-### Example source code for Page Orientation According Image Dimensions using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Görüntü Boyutlarına Göre Sayfa Yönlendirmesi için örnek kaynak kodu
 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Retrieve names of all the JPG files in a particular Directory
+// Belirli bir Dizindeki tüm JPG dosyalarının adlarını alın
 string[] fileEntries = Directory.GetFiles(dataDir, "*.JPG");
 
 int counter;
 for (counter = 0; counter < fileEntries.Length - 1; counter++)
 {
-	// Create a page object
+	// Sayfa nesnesi oluşturma
 	Aspose.Pdf.Page page = doc.Pages.Add();
 
-	// Creat an image object
+	// Bir görüntü nesnesi oluşturun
 	Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 	image1.File = fileEntries[counter];
 
-	// Create a BitMap object in order to get the information of image file
+	// Görüntü dosyasının bilgilerini almak için bir BitMap nesnesi oluşturun
 	Bitmap myimage = new Bitmap(fileEntries[counter]);
-	// Check if the width of the image file is greater than Page width or not
+	// Resim dosyasının genişliğinin Sayfa genişliğinden büyük olup olmadığını kontrol edin
 	if (myimage.Width > page.PageInfo.Width)
-		// If the Image width is greater than page width, then set the page orientation to Landscape
+		// Görüntü genişliği sayfa genişliğinden büyükse sayfa yönünü Yatay olarak ayarlayın
 		page.PageInfo.IsLandscape = true;
 	else
-		// If the Image width is less than page width, then set the page orientation to Portrait
+		// Görüntü genişliği sayfa genişliğinden azsa sayfa yönünü Dikey olarak ayarlayın
 		page.PageInfo.IsLandscape = false;
-	// Add the image to paragraphs collection of the PDF document 
+	// Görüntüyü PDF belgesinin paragraf koleksiyonuna ekleyin
 	page.Paragraphs.Add(image1);
 }
-// Save the Pdf file
+// Pdf dosyasını kaydedin
 doc.Save(dataDir + "SetPageOrientation_out.pdf");
 ```
 
-## Conclusion
-In this tutorial, we've covered the step-by-step process of setting page orientation based on an image's dimensions using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to create a PDF document with the correct page orientation for each image. This feature is useful when you have images of different sizes and want to embed them into a PDF document.
+## Çözüm
+Bu eğitimde, Aspose.PDF for .NET'i kullanarak görüntünün boyutlarına göre sayfa yönlendirmesini adım adım ayarlama sürecini ele aldık. Yukarıda özetlenen talimatları izleyerek artık her görüntü için doğru sayfa yönüne sahip bir PDF belgesi oluşturabilmeniz gerekir. Bu özellik, farklı boyutlarda resimleriniz olduğunda ve bunları bir PDF belgesine gömmek istediğinizde kullanışlıdır.
 
-### FAQ's
+### SSS'ler
 
-#### Q: Can I use other image formats instead of JPG for setting page orientation based on image dimensions?
+#### S: Sayfa yönünü görsel boyutlarına göre ayarlamak için JPG yerine başka görsel formatlarını kullanabilir miyim?
 
-A: Yes, you can use other image formats such as PNG, BMP, or GIF in addition to JPG for setting page orientation based on image dimensions. The provided code loops through all image files with the ".JPG" extension, but you can modify it to include other image formats as well.
+C: Evet, görüntü boyutlarına göre sayfa yönünü ayarlamak için JPG'nin yanı sıra PNG, BMP veya GIF gibi diğer görüntü formatlarını da kullanabilirsiniz. Sağlanan kod, ".JPG" uzantılı tüm resim dosyalarında döngü yapar, ancak onu diğer resim formatlarını da içerecek şekilde değiştirebilirsiniz.
 
-#### Q: What happens if an image's dimensions are exactly equal to the page width?
+#### S: Bir görselin boyutları sayfa genişliğine tam olarak eşitse ne olur?
 
-A: If an image's width is exactly equal to the page width, the page orientation will be set to portrait. In the code provided, the page orientation is set to landscape only if the image's width is greater than the page width.
+C: Bir görselin genişliği sayfa genişliğine tam olarak eşitse sayfa yönü dikey olarak ayarlanacaktır. Sağlanan kodda, sayfa yönü yalnızca görüntünün genişliği sayfa genişliğinden büyükse yatay olarak ayarlanır.
 
-#### Q: Can I customize the page orientation logic based on specific requirements?
+#### S: Sayfa yönlendirme mantığını belirli gereksinimlere göre özelleştirebilir miyim?
 
-A: Yes, you can customize the page orientation logic based on specific requirements. For example, you can set a threshold value to determine when the page orientation should be set to landscape or portrait. Additionally, you can consider factors such as image height or aspect ratio to determine the page orientation.
+C: Evet, sayfa yönlendirme mantığını belirli gereksinimlere göre özelleştirebilirsiniz. Örneğin, sayfa yönlendirmesinin ne zaman yatay veya dikey olarak ayarlanması gerektiğini belirlemek için bir eşik değeri ayarlayabilirsiniz. Ayrıca sayfa yönünü belirlemek için görüntü yüksekliği veya en boy oranı gibi faktörleri de göz önünde bulundurabilirsiniz.
 
-#### Q: Can I add other content, such as text or tables, to the PDF document along with the images?
+#### S: PDF belgesine görsellerin yanı sıra metin veya tablolar gibi başka içerikler de ekleyebilir miyim?
 
-A: Yes, you can add other content, such as text or tables, to the PDF document along with the images. Aspose.PDF for .NET provides a rich set of features to manipulate PDF documents, including adding text, images, tables, and other elements to the pages.
+C: Evet, PDF belgesine görsellerin yanı sıra metin veya tablolar gibi başka içerikler de ekleyebilirsiniz. Aspose.PDF for .NET, PDF belgelerini yönetmek için sayfalara metin, resim, tablo ve diğer öğelerin eklenmesi de dahil olmak üzere zengin özellikler sunar.

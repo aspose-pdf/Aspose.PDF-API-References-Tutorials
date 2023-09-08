@@ -1,115 +1,115 @@
 ---
-title: Remove Multiple Tables In PDF Document
-linktitle: Remove Multiple Tables In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove multiple tables in PDF document using Aspose.PDF for .NET.
+title: PDF Belgesindeki Birden Çok Tabloyu Kaldırma
+linktitle: PDF Belgesindeki Birden Çok Tabloyu Kaldırma
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF belgesindeki birden fazla tabloyu nasıl kaldıracağınızı öğrenin.
 type: docs
 weight: 150
 url: /tr/net/programming-with-tables/remove-multiple-tables/
 ---
-In this tutorial, we will guide you step by step to remove multiple tables in PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+Bu eğitimde, Aspose.PDF for .NET kullanarak PDF belgesindeki birden fazla tabloyu kaldırmak için size adım adım rehberlik edeceğiz. Sağlanan C# kaynak kodunu açıklayacağız ve size nasıl uygulayacağınızı göstereceğiz.
 
-## Step 1: Loading the existing PDF document
-First, you need to load the existing PDF document using the following code:
+## 1. Adım: Mevcut PDF belgesini yükleme
+Öncelikle mevcut PDF belgesini aşağıdaki kodu kullanarak yüklemeniz gerekir:
 
 ```csharp
-// Path to the documents directory
+// Belgeler dizininin yolu
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the existing PDF document
+// Mevcut PDF belgesini yükleyin
 Document pdfDocument = new Document(dataDir + "Table_input2.pdf");
 ```
 
-## Step 2: Creating the TableAbsorber object to find the tables
-Next, we'll create a TableAbsorber object to find the tables in the PDF document:
+## Adım 2: Tabloları bulmak için TableAbsorber nesnesini oluşturma
+Daha sonra, PDF belgesindeki tabloları bulmak için bir TableAbsorber nesnesi oluşturacağız:
 
 ```csharp
-// Create a TableAbsorber object to find the tables
+// Tabloları bulmak için bir TableAbsorber nesnesi oluşturun
 TableAbsorber absorber = new TableAbsorber();
 ```
 
-## Step 3: Visit the second page with the absorber
-We will now visit the second page of the PDF document using the absorber:
+## Adım 3: Emicinin bulunduğu ikinci sayfayı ziyaret edin
+Şimdi emiciyi kullanarak PDF belgesinin ikinci sayfasını ziyaret edeceğiz:
 
 ```csharp
-// Visit the second page with the absorber
+// Emicinin bulunduğu ikinci sayfayı ziyaret edin
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
-## Step 4: Obtaining a copy of the table collection
-To be able to drop the tables, we need to get a copy of the tables collection:
+## Adım 4: Tablo koleksiyonunun bir kopyasını alma
+Tabloları bırakabilmek için tablo koleksiyonunun bir kopyasını almamız gerekir:
 
 ```csharp
-// Get a copy of the table collection
+//Tablo koleksiyonunun bir kopyasını alın
 AbsorbedTable[] tables = new AbsorbedTable[absorb.TableList.Count];
 absorb.TableList.CopyTo(tables, 0);
 ```
 
-## Step 5: Browse the copy of the collection and remove the tables
-Now let's iterate through the copy of the collection of tables and remove them one by one:
+## 5. Adım: Koleksiyonun kopyasına göz atın ve tabloları kaldırın
+Şimdi tablo koleksiyonunun kopyasını tekrarlayalım ve bunları birer birer kaldıralım:
 
 ```csharp
-// Browse the copy of the collection and remove the tables
+// Koleksiyonun kopyasına göz atın ve tabloları kaldırın
 foreach(AbsorbedTable table in tables)
      absorb.Remove(table);
 ```
 
-## Step 6: Saving the document
-Finally, we save the modified PDF document:
+## Adım 6: Belgeyi kaydetme
+Son olarak değiştirilen PDF belgesini kaydediyoruz:
 
 ```csharp
-// Save the document
+// Belgeyi kaydet
 pdfDocument.Save(dataDir + "Table2_out.pdf");
 ```
 
-### Example source code for Remove Multiple Tables using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Çoklu Tabloları Kaldırmak için örnek kaynak kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load existing PDF document
+// Mevcut PDF belgesini yükle
 Document pdfDocument = new Document(dataDir + "Table_input2.pdf");
 
-// Create TableAbsorber object to find tables
+// Tabloları bulmak için TableAbsorber nesnesi oluşturun
 TableAbsorber absorber = new TableAbsorber();
 
-// Visit second page with absorber
+// Emici ile ikinci sayfayı ziyaret edin
 absorber.Visit(pdfDocument.Pages[1]);
 
-// Get copy of table collection
+// Tablo koleksiyonunun kopyasını alın
 AbsorbedTable[] tables = new AbsorbedTable[absorber.TableList.Count];
 absorber.TableList.CopyTo(tables, 0);
 
-// Loop through the copy of collection and removing tables
+// Koleksiyonun kopyasında dolaşın ve tabloları kaldırın
 foreach (AbsorbedTable table in tables)
 	absorber.Remove(table);
 
-// Save document
+// Belgeyi kaydet
 pdfDocument.Save(dataDir + "Table2_out.pdf");
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to remove multiple tables in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to upload the document, find the tables, and remove them. Now you can apply this knowledge to your own projects.
+## Çözüm
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesindeki birden fazla tabloyu nasıl kaldıracağınızı öğrendiniz. Bu adım adım kılavuz, belgeyi nasıl yükleyeceğinizi, tabloları nasıl bulacağınızı ve kaldıracağınızı gösterdi. Artık bu bilgiyi kendi projelerinize uygulayabilirsiniz.
 
-### FAQ's for remove multiple tables in PDF document
+### PDF belgesindeki birden fazla tabloyu kaldırmak için SSS
 
-#### Q: Can I remove specific tables instead of all tables in a PDF document?
+#### S: Bir PDF belgesindeki tüm tablolar yerine belirli tabloları kaldırabilir miyim?
 
-A: Yes, you can remove specific tables instead of all tables in a PDF document using Aspose.PDF for .NET. In the provided example, all tables on the second page are removed. However, you can modify the code to target and remove specific tables based on your requirements. To do this, you need to identify the tables you want to remove and then call the `absorber.Remove(table)` method for each specific table you wish to delete.
+C: Evet, Aspose.PDF for .NET'i kullanarak bir PDF belgesindeki tüm tablolar yerine belirli tabloları kaldırabilirsiniz. Verilen örnekte ikinci sayfadaki tüm tablolar kaldırılmıştır. Ancak gereksinimlerinize göre belirli tabloları hedeflemek ve kaldırmak için kodu değiştirebilirsiniz. Bunu yapmak için kaldırmak istediğiniz tabloları tanımlamanız ve ardından çağrı yapmanız gerekir.`absorber.Remove(table)` Silmek istediğiniz her bir tablo için yöntem.
 
-#### Q: How can I remove tables from multiple pages in the PDF document?
+#### S: PDF belgesindeki birden çok sayfadaki tabloları nasıl kaldırabilirim?
 
-A: To remove tables from multiple pages in the PDF document, you need to repeat the process for each page. In the provided example, the code removes tables only from the second page using `pdfDocument.Pages[1]`. To remove tables from other pages, you can use similar code for each desired page by replacing the page index (e.g., `pdfDocument.Pages[2]`, `pdfDocument.Pages[3]`, and so on).
+ C: PDF belgesindeki birden çok sayfadaki tabloları kaldırmak için işlemi her sayfa için tekrarlamanız gerekir. Verilen örnekte kod, tabloları yalnızca ikinci sayfadan şunu kullanarak kaldırır:`pdfDocument.Pages[1]` . Diğer sayfalardan tabloları kaldırmak için, sayfa dizinini değiştirerek istediğiniz her sayfa için benzer kodu kullanabilirsiniz (örn.`pdfDocument.Pages[2]`, `pdfDocument.Pages[3]`, ve benzeri).
 
-#### Q: What happens if I try to remove a table that does not exist on the specified page?
+#### S: Belirtilen sayfada bulunmayan bir tabloyu kaldırmaya çalışırsam ne olur?
 
-A: If you try to remove a table that does not exist on the specified page, it will not result in an error. The `absorber.Remove(table)` method will simply ignore the removal request, and the PDF document will remain unchanged.
+C: Belirtilen sayfada bulunmayan bir tabloyu kaldırmaya çalışırsanız bu bir hatayla sonuçlanmayacaktır.`absorber.Remove(table)` yöntemi yalnızca kaldırma isteğini yok sayar ve PDF belgesi değişmeden kalır.
 
-#### Q: Can I undo the removal of tables after saving the document?
+#### S: Belgeyi kaydettikten sonra tabloların kaldırılmasını geri alabilir miyim?
 
-A: No, once you save the modified PDF document after removing the tables, the changes are permanent, and you cannot undo the removal of tables. Therefore, it is essential to be cautious while removing content from a PDF document as the original data will be lost.
+C: Hayır, tabloları kaldırdıktan sonra değiştirilen PDF belgesini kaydettiğinizde değişiklikler kalıcı olur ve tabloların kaldırılmasını geri alamazsınız. Bu nedenle, orijinal veriler kaybolacağından bir PDF belgesinden içerik kaldırırken dikkatli olmak önemlidir.
 
-#### Q: Are there any restrictions on the type of tables that can be removed using this method?
+#### S: Bu yöntem kullanılarak kaldırılabilecek tablo türlerinde herhangi bir kısıtlama var mı?
 
-A: The method shown in this tutorial allows you to remove tables from a PDF document without restrictions based on the content of the table. However, it is essential to consider the overall structure and layout of the document to ensure that removing tables does not negatively affect the remaining content and readability.
+C: Bu eğitimde gösterilen yöntem, tablonun içeriğine bağlı olarak kısıtlama olmaksızın bir PDF belgesinden tabloları kaldırmanıza olanak tanır. Ancak tabloların kaldırılmasının kalan içeriği ve okunabilirliği olumsuz etkilememesini sağlamak için belgenin genel yapısını ve düzenini dikkate almak önemlidir.

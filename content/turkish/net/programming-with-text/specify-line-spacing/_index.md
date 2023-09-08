@@ -1,28 +1,28 @@
 ---
-title: Specify Line Spacing In PDF File
-linktitle: Specify Line Spacing In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to specify line spacing in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasında Satır Aralığını Belirtin
+linktitle: PDF Dosyasında Satır Aralığını Belirtin
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasında satır aralığını nasıl belirleyeceğinizi öğrenin.
 type: docs
 weight: 510
 url: /tr/net/programming-with-text/specify-line-spacing/
 ---
-This tutorial explains how to specify line spacing in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the process step by step.
+Bu eğitimde Aspose.PDF for .NET kullanılarak PDF dosyasında satır aralığının nasıl belirleneceği açıklanmaktadır. Sağlanan C# kaynak kodu süreci adım adım gösterir.
 
-## Prerequisites
+## Önkoşullar
 
-Before proceeding with the tutorial, make sure you have the following:
+Eğiticiye devam etmeden önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Temel C# programlama dili bilgisi.
+- Aspose.PDF for .NET kütüphanesi kuruldu. Bunu Aspose web sitesinden edinebilir veya projenize kurmak için NuGet'i kullanabilirsiniz.
 
-## Step 1: Set up the project
+## 1. Adım: Projeyi ayarlayın
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturarak başlayın ve Aspose.PDF for .NET kitaplığına bir referans ekleyin.
 
-## Step 2: Import necessary namespaces
+## 2. Adım: Gerekli ad alanlarını içe aktarın
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Gerekli ad alanlarını içe aktarmak için C# dosyanızın başına aşağıdaki kullanma yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,44 +30,44 @@ using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-## Step 3: Set the path to the document directory
+## 3. Adım: Belge dizininin yolunu ayarlayın
 
-Set the path to your document directory using the `dataDir` variable:
+ kullanarak belge dizininizin yolunu ayarlayın.`dataDir` değişken:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
 
-## Step 4: Load the input PDF file
+## 4. Adım: Giriş PDF dosyasını yükleyin
 
-Load the input PDF file using the `Document` class:
+ Giriş PDF dosyasını kullanarak yükleyin.`Document` sınıf:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 5: Create TextFormattingOptions
+## Adım 5: TextFormattingOptions'ı oluşturun
 
-Create a `TextFormattingOptions` object and set the line spacing mode to `FullSize`:
+ Oluşturmak`TextFormattingOptions` nesneyi seçin ve satır aralığı modunu şu şekilde ayarlayın:`FullSize`:
 
 ```csharp
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 ```
 
-## Step 6: Create a TextFragment
+## Adım 6: Bir TextFragment Oluşturun
 
-Create a `TextFragment` object and specify the text content:
+ Oluşturmak`TextFragment` nesneyi seçin ve metin içeriğini belirtin:
 
 ```csharp
 TextFragment textFragment = new TextFragment("Hello world");
 ```
 
-## Step 7: Load the font file (optional)
+## 7. Adım: Yazı tipi dosyasını yükleyin (isteğe bağlı)
 
-If you want to use a specific font for the text, load the TrueType font file into a `FileStream` object:
+ Metin için belirli bir yazı tipi kullanmak istiyorsanız TrueType yazı tipi dosyasını bir`FileStream` nesne:
 
 ```csharp
 string fontFile = dataDir + "HPSimplified.TTF";
@@ -77,111 +77,111 @@ using (FileStream fontStream = File.OpenRead(fontFile))
 }
 ```
 
-Replace `"HPSimplified.TTF"` with the actual font file name.
+ Yer değiştirmek`"HPSimplified.TTF"` gerçek yazı tipi dosyası adı ile.
 
-## Step 8: Specify the text position and line spacing
+## 8. Adım: Metin konumunu ve satır aralığını belirtin
 
-Set the position for the text fragment and assign the `TextFormattingOptions` to the `TextState.FormattingOptions` property:
+ Metin parçasının konumunu ayarlayın ve`TextFormattingOptions` -e`TextState.FormattingOptions` mülk:
 
 ```csharp
 textFragment.Position = new Position(100, 600);
 textFragment.TextState.FormattingOptions = formattingOptions;
 ```
 
-## Step 9: Add the text to the document
+## 9. Adım: Metni belgeye ekleyin
 
-Add the text fragment to the document, either by appending it to a `TextBuilder` or directly to a page's `Paragraphs` collection:
+ Metin parçasını bir dosyaya ekleyerek belgeye ekleyin.`TextBuilder` veya doğrudan bir sayfanın`Paragraphs` Toplamak:
 
 ```csharp
 var page = doc.Pages.Add();
 page.Paragraphs.Add(textFragment);
 ```
 
-## Step 10: Save the resulting PDF document
+## Adım 10: Ortaya çıkan PDF belgesini kaydedin
 
-Save the modified PDF document:
+Değiştirilen PDF belgesini kaydedin:
 
 ```csharp
 dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
 doc.Save(dataDir);
 ```
 
-Make sure to replace `"SpecifyLineSpacing_out.pdf"` with the desired output file name.
+ Değiştirdiğinizden emin olun`"SpecifyLineSpacing_out.pdf"` İstenilen çıktı dosyası adı ile.
 
-### Sample source code for Specify Line Spacing using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Satır Aralığını Belirleme için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string fontFile = dataDir + "HPSimplified.TTF";
-// Load input PDF file
+// Giriş PDF dosyasını yükle
 Document doc = new Document();
-//Create TextFormattingOptions with LineSpacingMode.FullSize
+//LineSpacingMode.FullSize ile TextFormattingOptions oluşturun
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
-// Create text builder object for first page of document
+// Belgenin ilk sayfası için metin oluşturucu nesnesi oluşturun
 //TextBuilder textBuilder = new TextBuilder(doc.Pages[1]);
-// Create text fragment with sample string
+// Örnek dizeyle metin parçası oluşturun
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
-	// Load the TrueType font into stream object
+	// TrueType yazı tipini akış nesnesine yükleyin
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
-		// Set the font name for text string
+		//Metin dizesi için yazı tipi adını ayarlama
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		// Specify the position for Text Fragment
+		// Metin Parçası için konumu belirtin
 		textFragment.Position = new Position(100, 600);
-		//Set TextFormattingOptions of current fragment to predefined(which points to LineSpacingMode.FullSize)
+		//Geçerli parçanın TextFormattingOptions'ını önceden tanımlanmış olarak ayarlayın (bu, LineSpacingMode.FullSize'a işaret eder)
 		textFragment.TextState.FormattingOptions = formattingOptions;
-		// Add the text to TextBuilder so that it can be placed over the PDF file
+		// Metni TextBuilder'a ekleyerek PDF dosyasının üzerine yerleştirilebilmesini sağlayın
 		//textBuilder.AppendText(textFragment);
 		var page = doc.Pages.Add();
 		page.Paragraphs.Add(textFragment);
 	}
 	dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
-	// Save resulting PDF document
+	// Ortaya çıkan PDF belgesini kaydet
 	doc.Save(dataDir);
 }
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulations! You have successfully learned how to specify line spacing in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to saving the modified document. You can now incorporate this code into your own C# projects to customize the line spacing of text in PDF files.
+Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF belgesinde satır aralığını nasıl belirleyeceğinizi başarıyla öğrendiniz. Bu eğitimde, projenin kurulumundan değiştirilen belgenin kaydedilmesine kadar adım adım bir kılavuz sağlanmıştır. Artık PDF dosyalarındaki metnin satır aralığını özelleştirmek için bu kodu kendi C# projelerinize dahil edebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of the "Specify Line Spacing In PDF File" tutorial?
+#### S: "PDF Dosyasında Satır Aralığını Belirleme" eğitiminin amacı nedir?
 
-A: The "Specify Line Spacing In PDF File" tutorial aims to guide users on how to use the Aspose.PDF library for .NET to customize the line spacing of text within a PDF document. The tutorial provides step-by-step instructions and C# code samples to demonstrate the process.
+C: "PDF Dosyasında Satır Aralığını Belirleme" eğitimi, kullanıcılara bir PDF belgesi içindeki metnin satır aralığını özelleştirmek için .NET için Aspose.PDF kütüphanesini nasıl kullanacakları konusunda rehberlik etmeyi amaçlamaktadır. Öğretici, süreci göstermek için adım adım talimatlar ve C# kod örnekleri sağlar.
 
-#### Q: How does this tutorial help in specifying line spacing within a PDF document?
+#### S: Bu eğitim, bir PDF belgesinde satır aralığını belirlemede nasıl yardımcı olur?
 
-A: This tutorial helps users understand how to utilize the capabilities of Aspose.PDF for .NET to specify line spacing for text in a PDF document. By following the provided steps and code examples, users can adjust the line spacing according to their preferences.
+C: Bu eğitim, kullanıcıların bir PDF belgesindeki metin için satır aralığını belirlemek amacıyla Aspose.PDF for .NET'in özelliklerinden nasıl yararlanacaklarını anlamalarına yardımcı olur. Kullanıcılar verilen adımları ve kod örneklerini takip ederek satır aralıklarını tercihlerine göre ayarlayabilirler.
 
-#### Q: What prerequisites are required to follow this tutorial?
+#### S: Bu öğreticiyi takip etmek için hangi ön koşullar gereklidir?
 
-A: Before starting the tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or install it in your project using NuGet.
+C: Eğitime başlamadan önce C# programlama dili hakkında temel bilgiye sahip olmanız gerekir. Ayrıca Aspose.PDF for .NET kütüphanesinin de kurulu olması gerekir. Bunu Aspose web sitesinden edinebilir veya NuGet'i kullanarak projenize yükleyebilirsiniz.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### S: Projemi bu öğreticiyi takip edecek şekilde nasıl ayarlayabilirim?
 
-A: To get started, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This enables you to leverage the library's features for working with PDF documents and customizing line spacing.
+C: Başlamak için tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturun ve Aspose.PDF for .NET kütüphanesine bir referans ekleyin. Bu, kitaplığın PDF belgeleriyle çalışma ve satır aralığını özelleştirme özelliklerinden yararlanmanıza olanak tanır.
 
-#### Q: Can I use this tutorial to specify line spacing for any type of text?
+#### S: Bu öğreticiyi herhangi bir metin türü için satır aralığını belirlemek amacıyla kullanabilir miyim?
 
-A: Yes, this tutorial provides instructions on how to specify line spacing for any text content within a PDF document using Aspose.PDF for .NET. You can use the provided code samples to adjust the line spacing of text according to your needs.
+C: Evet, bu eğitimde Aspose.PDF for .NET kullanılarak bir PDF belgesindeki herhangi bir metin içeriği için satır aralığının nasıl belirleneceğine ilişkin talimatlar verilmektedir. Metnin satır aralığını ihtiyaçlarınıza göre ayarlamak için sağlanan kod örneklerini kullanabilirsiniz.
 
-#### Q: How do I specify the line spacing mode in the tutorial?
+#### S: Öğreticide satır aralığı modunu nasıl belirlerim?
 
-A: The tutorial demonstrates how to create a `TextFormattingOptions` object and set its `LineSpacing` property to `TextFormattingOptions.LineSpacingMode.FullSize`. This mode specifies full line spacing for the text content.
+ C: Eğitimde nasıl oluşturulacağı gösterilmektedir.`TextFormattingOptions` nesneyi ve onu ayarlayın`LineSpacing` mülkiyet`TextFormattingOptions.LineSpacingMode.FullSize`. Bu mod, metin içeriği için tam satır aralığını belirtir.
 
-#### Q: How can I load a specific font for the text?
+#### S: Metin için belirli bir yazı tipini nasıl yükleyebilirim?
 
-A: If you wish to use a specific font for the text content, the tutorial provides guidance on how to load a TrueType font file into a `FileStream` object and set it as the font for the `TextFragment`. This enables you to customize the font of the text along with its line spacing.
+ C: Metin içeriği için belirli bir yazı tipi kullanmak istiyorsanız eğitimde TrueType yazı tipi dosyasının bir yazı tipine nasıl yükleneceği konusunda rehberlik sağlanır.`FileStream` nesneyi seçin ve onu yazı tipi olarak ayarlayın.`TextFragment`. Bu, metnin yazı tipini satır aralığıyla birlikte özelleştirmenizi sağlar.
 
-#### Q: How do I customize the position of the text within the PDF document?
+#### S: PDF belgesindeki metnin konumunu nasıl özelleştiririm?
 
-A: To customize the position of the text, create a `TextFragment` object and set its `Position` property to the desired coordinates (X and Y). This allows you to control where the text is placed within the PDF document.
+ C: Metnin konumunu özelleştirmek için bir`TextFragment` nesneyi ve onu ayarlayın`Position`özelliği istenen koordinatlara (X ve Y) ayarlayın. Bu, metnin PDF belgesinde nereye yerleştirileceğini kontrol etmenizi sağlar.
 
-#### Q: Can I apply these line spacing modifications to existing PDF documents?
+#### S: Bu satır aralığı değişikliklerini mevcut PDF belgelerine uygulayabilir miyim?
 
-A: Yes, you can modify line spacing for text in existing PDF documents. The tutorial demonstrates how to create a `TextFragment` with the specified line spacing and position, and then add it to a page's `Paragraphs` collection.
+ C: Evet, mevcut PDF belgelerindeki metinlerin satır aralığını değiştirebilirsiniz. Öğreticide nasıl oluşturulacağı gösterilmektedir`TextFragment` belirtilen satır aralığı ve konumuyla seçin ve ardından bunu bir sayfanın`Paragraphs` Toplamak.

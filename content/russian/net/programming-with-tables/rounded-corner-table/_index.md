@@ -1,86 +1,86 @@
 ---
-title: Rounded Corner Table In PDF Document
-linktitle: Rounded Corner Table In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create a rounded corner table in PDF document using Aspose.PDF for .NET.
+title: Стол с закругленными углами в PDF-документе
+linktitle: Стол с закругленными углами в PDF-документе
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как создать таблицу с закругленными углами в документе PDF с помощью Aspose.PDF для .NET.
 type: docs
 weight: 190
 url: /ru/net/programming-with-tables/rounded-corner-table/
 ---
-In this tutorial, we will guide you step by step to create a rounded corner table in PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+В этом уроке мы шаг за шагом покажем вам, как создать таблицу с закругленными углами в PDF-документе с помощью Aspose.PDF для .NET. Мы объясним предоставленный исходный код C# и покажем, как его реализовать.
 
-## Step 1: Creating the table
-First, we will create the table using the following code:
+## Шаг 1: Создание таблицы
+Сначала мы создадим таблицу, используя следующий код:
 
 ```csharp
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 ```
 
-## Step 2: Rounded Corner Style Setup
-Next, we'll configure the rounded corner style for the table:
+## Шаг 2: Настройка стиля закругленных углов
+Далее мы настроим стиль закругленных углов для стола:
 
 ```csharp
 tab1.CornerStyle = Aspose.Pdf.BorderCornerStyle.Round;
 ```
 
-## Step 3: Table Border Setup
-To give the table a rounded corner border, we need to create a BorderInfo object and configure it with the appropriate parameters:
+## Шаг 3: Настройка границ таблицы
+Чтобы придать таблице границу с закругленными углами, нам нужно создать объект BorderInfo и настроить его с соответствующими параметрами:
 
 ```csharp
-// Create a GraphInfo object to set the border color
+// Создайте объект GraphInfo, чтобы установить цвет границы.
 GraphInfo graph = new GraphInfo();
 graph.Color = Aspose.Pdf.Color.Red;
 
-// Create an empty BorderInfo object
+// Создайте пустой объект BorderInfo.
 BorderInfo bInfo = new BorderInfo(BorderSide.All, graph);
 
-// Set the radius of the rounded border to 15
+// Установите радиус закругленной границы на 15.
 bInfo.RoundedBorderRadius = 15;
 
-// Apply border information to the table
+// Применить информацию о границах к таблице
 tab1.Border = bInfo;
 ```
 
-### Example source code for Rounded Corner Table using Aspose.PDF for .NET
+### Пример исходного кода для таблицы с закругленными углами с использованием Aspose.PDF для .NET
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 GraphInfo graph = new GraphInfo();
 graph.Color = Aspose.Pdf.Color.Red;
-// Create a blank BorderInfo object
+// Создайте пустой объект BorderInfo.
 BorderInfo bInfo = new BorderInfo(BorderSide.All, graph);
-// Set the border a rounder border where radius of round is 15
+// Установите границу более округлой, где радиус скругления равен 15.
 bInfo.RoundedBorderRadius = 15;
-// Set the table Corner style as Round.
+// Установите стиль угла стола как круглый.
 tab1.CornerStyle = Aspose.Pdf.BorderCornerStyle.Round;
-// Set the table border information
+// Установите информацию о границах таблицы
 tab1.Border = bInfo;
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to create a rounded corner table in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to set up the rounded corner style and table border. Now you can apply this knowledge to your own projects.
+## Заключение
+Поздравляем! Теперь вы узнали, как создать таблицу с закругленными углами в документе PDF с помощью Aspose.PDF для .NET. В этом пошаговом руководстве показано, как настроить стиль закругленных углов и границу таблицы. Теперь вы можете применить эти знания в своих проектах.
 
-### FAQ's for rounded corner table in PDF document
+### Часто задаваемые вопросы по столу с закругленными углами в PDF-документе
 
-#### Q: Can I customize the radius of the rounded corners for the table?
+#### Вопрос: Могу ли я настроить радиус закругленных углов стола?
 
-A: Yes, you can customize the radius of the rounded corners for the table by modifying the value of the `bInfo.RoundedBorderRadius` property in the provided C# source code. Simply set the desired radius value (in points) to achieve the desired rounded corner appearance.
+О: Да, вы можете настроить радиус закругленных углов стола, изменив значение параметра`bInfo.RoundedBorderRadius` свойство в предоставленном исходном коде C#. Просто установите желаемое значение радиуса (в пунктах), чтобы добиться желаемого внешнего вида закругленного угла.
 
-#### Q: Can I apply rounded corners to individual cells within the table?
+#### Вопрос: Можно ли применить закругленные углы к отдельным ячейкам таблицы?
 
-A: No, the rounded corner style is applied to the entire table as a whole. Aspose.PDF for .NET currently does not provide built-in support for applying rounded corners to individual cells within the table.
+О: Нет, стиль закругленных углов применяется ко всей таблице в целом. Aspose.PDF для .NET в настоящее время не предоставляет встроенной поддержки применения закругленных углов к отдельным ячейкам таблицы.
 
-#### Q: Can I change the color of the rounded corner border?
+#### Вопрос: Могу ли я изменить цвет рамки закругленного угла?
 
-A: Yes, you can change the color of the rounded corner border by modifying the value of the `graph.Color` property in the C# source code. Simply provide the desired color, such as `Aspose.Pdf.Color.Red` or any other valid color representation.
+ О: Да, вы можете изменить цвет границы закругленного угла, изменив значение параметра`graph.Color` свойство в исходном коде C#. Просто укажите желаемый цвет, например`Aspose.Pdf.Color.Red` или любое другое допустимое представление цвета.
 
-#### Q: Is it possible to apply different corner styles (e.g., square and rounded) to different tables within the same PDF document?
+#### Вопрос: Можно ли применять разные стили углов (например, квадратные и закругленные) к разным таблицам в одном PDF-документе?
 
-A: Yes, it is possible to apply different corner styles to different tables within the same PDF document. You can create multiple tables and configure their corner styles individually based on your requirements.
+О: Да, к разным таблицам в одном PDF-документе можно применять разные стили углов. Вы можете создать несколько таблиц и настроить их угловые стили индивидуально в соответствии с вашими требованиями.
 
-#### Q: Can I adjust the thickness of the rounded corner border?
+#### Вопрос: Могу ли я настроить толщину границы закругленного угла?
 
-A: Yes, you can adjust the thickness of the rounded corner border by modifying the `BorderInfo` object's properties in the C# source code. For example, you can set the `bInfo.Width` property to adjust the border's thickness.
+ О: Да, вы можете настроить толщину границы закругленного угла, изменив`BorderInfo` свойства объекта в исходном коде C#. Например, вы можете установить`bInfo.Width` свойство для регулировки толщины границы.

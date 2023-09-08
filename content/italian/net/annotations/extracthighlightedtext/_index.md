@@ -1,58 +1,58 @@
 ---
-title: Extract Highlighted Text In PDF File
-linktitle: Extract Highlighted Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract highlighted text in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+title: Estrai il testo evidenziato nel file PDF
+linktitle: Estrai il testo evidenziato nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come estrarre il testo evidenziato nel file PDF utilizzando Aspose.PDF per .NET con questa guida passo passo.
 type: docs
 weight: 60
 url: /it/net/annotations/extracthighlightedtext/
 ---
-To extract highlighted text in PDF file, you can use the Aspose.PDF for .NET API. This API provides a simple way to retrieve all the text that has been highlighted in a document.
+Per estrarre il testo evidenziato nel file PDF, è possibile utilizzare Aspose.PDF per l'API .NET. Questa API fornisce un modo semplice per recuperare tutto il testo evidenziato in un documento.
 
-## Step 1: Load the PDF document
+## Passaggio 1: carica il documento PDF
 
-The first step in extracting highlighted text in PDF file is to load the document using the Aspose.PDF for .NET API. You can do this by creating a new instance of the `Document` class and passing the path to the PDF document as a parameter. 
+ Il primo passo per estrarre il testo evidenziato nel file PDF è caricare il documento utilizzando l'API Aspose.PDF per .NET. Puoi farlo creando una nuova istanza del file`Document` class e passando il percorso del documento PDF come parametro. 
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir ="YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 ```
 
-## Step 2: Loop through all annotations
+## Passaggio 2: scorrere tutte le annotazioni
 
-The next step is to loop through all the annotations in the PDF document. You can do this using a `foreach` loop, like so:
+ Il passaggio successivo consiste nel scorrere tutte le annotazioni nel documento PDF. Puoi farlo usando a`foreach` ciclo, in questo modo:
 
 ```csharp
 foreach (Annotation annotation in doc.Pages[1].Annotations)
 {
-	// Code goes here
+	// Il codice va qui
 }
 ```
 
-## Step 3: Filter text markup annotations
+## Passaggio 3: filtra le annotazioni di markup del testo
 
-Inside the `foreach` loop, you will need to filter out all the annotations that are not text markup annotations. You can do this by checking if the annotation is an instance of the `TextMarkupAnnotation` class.
+ Dentro il`foreach` loop, dovrai filtrare tutte le annotazioni che non sono annotazioni di markup di testo. Puoi farlo controllando se l'annotazione è un'istanza di`TextMarkupAnnotation` classe.
 
 ```csharp
 if (annotation is TextMarkupAnnotation)
 {
-	// Code goes here
+	// Il codice va qui
 }
 ```
 
-## Step 4: Retrieve highlighted text fragments
+## Passaggio 4: recupera i frammenti di testo evidenziati
 
-Once you have filtered out all the text markup annotations, you can retrieve the highlighted text fragments for each annotation. You can do this by calling the `GetMarkedTextFragments()` method on the `TextMarkupAnnotation` object.
+ Dopo aver filtrato tutte le annotazioni di markup di testo, puoi recuperare i frammenti di testo evidenziati per ciascuna annotazione. Puoi farlo chiamando il`GetMarkedTextFragments()` metodo sul`TextMarkupAnnotation` oggetto.
 
 ```csharp
 TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
 TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
 ```
 
-## Step 5: Display the highlighted text
+## Passaggio 5: visualizza il testo evidenziato
 
-Finally, you can display the highlighted text to the user. You can do this by looping through each `TextFragment` object in the `TextFragmentCollection` and calling the `Text` property.
+ Infine, puoi visualizzare il testo evidenziato all'utente. Puoi farlo eseguendo il looping su ciascuno di essi`TextFragment` oggetto in`TextFragmentCollection` e chiamando il`Text` proprietà.
 
 ```csharp
 foreach (TextFragment tf in collection)
@@ -61,10 +61,10 @@ foreach (TextFragment tf in collection)
 }
 ```
 
-### Example source code for Extract Highlighted Text using Aspose.PDF for .NET
+### Codice sorgente di esempio per estrarre il testo evidenziato utilizzando Aspose.PDF per .NET
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir ="YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 
@@ -82,28 +82,28 @@ foreach (Annotation annotation in doc.Pages[1].Annotations)
 }
 ```
 
-## Conclusion
+## Conclusione
 
-In this tutorial, we explored how to extract highlighted text from a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and using the provided C# source code, developers can easily extract and manage highlighted text in their PDF documents.
+In questo tutorial, abbiamo esplorato come estrarre il testo evidenziato da un documento PDF utilizzando Aspose.PDF per .NET. Seguendo la guida passo passo e utilizzando il codice sorgente C# fornito, gli sviluppatori possono estrarre e gestire facilmente il testo evidenziato nei propri documenti PDF.
 
-### FAQ's for extract highlighted text in PDF file
+### Domande frequenti sull'estrazione del testo evidenziato nel file PDF
 
-#### Q: What are text markup annotations in a PDF document?
+#### D: Cosa sono le annotazioni di markup di testo in un documento PDF?
 
-A: Text markup annotations are annotations that highlight or mark specific text in a PDF document. Examples of text markup annotations include highlights, underlines, and strikethroughs.
+R: Le annotazioni di markup del testo sono annotazioni che evidenziano o contrassegnano un testo specifico in un documento PDF. Esempi di annotazioni di markup di testo includono evidenziazioni, sottolineature e barre barrate.
 
-#### Q: Can I extract text from other types of annotations using Aspose.PDF for .NET?
+#### D: Posso estrarre testo da altri tipi di annotazioni utilizzando Aspose.PDF per .NET?
 
-A: Yes, Aspose.PDF for .NET provides various methods to extract text from different types of annotations, including text markup annotations, free text annotations, and more.
+R: Sì, Aspose.PDF per .NET fornisce vari metodi per estrarre testo da diversi tipi di annotazioni, incluse annotazioni di markup di testo, annotazioni di testo libero e altro.
 
-#### Q: Does Aspose.PDF for .NET support extracting text from password-protected PDF files?
+#### D: Aspose.PDF per .NET supporta l'estrazione di testo da file PDF protetti da password?
 
-A: Yes, Aspose.PDF for .NET supports extracting text from password-protected PDF files. You need to provide the correct password when loading the PDF document using the `Document` class.
+ R: Sì, Aspose.PDF per .NET supporta l'estrazione di testo da file PDF protetti da password. È necessario fornire la password corretta quando si carica il documento PDF utilizzando il file`Document` classe.
 
-#### Q: Can I filter highlighted text based on other criteria, such as color or author?
+#### D: Posso filtrare il testo evidenziato in base ad altri criteri, come colore o autore?
 
-A: Yes, you can filter highlighted text based on other criteria, such as color, author, or creation date. Aspose.PDF for .NET provides methods to access and filter annotations based on their properties.
+R: Sì, puoi filtrare il testo evidenziato in base ad altri criteri, come colore, autore o data di creazione. Aspose.PDF per .NET fornisce metodi per accedere e filtrare le annotazioni in base alle loro proprietà.
 
-#### Q: Is it possible to save the extracted highlighted text to a separate file?
+#### D: È possibile salvare il testo evidenziato estratto in un file separato?
 
-A: Yes, you can save the extracted highlighted text to a separate file or store it in a data structure for further processing or analysis.
+R: Sì, puoi salvare il testo evidenziato estratto in un file separato o memorizzarlo in una struttura dati per ulteriore elaborazione o analisi.

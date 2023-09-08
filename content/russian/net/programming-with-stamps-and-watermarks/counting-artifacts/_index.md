@@ -1,114 +1,114 @@
 ---
-title: Counting Artifacts In PDF File
-linktitle: Counting Artifacts In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily count watermarks in PDF file with Aspose.PDF for .NET.
+title: Подсчет артефактов в PDF-файле
+linktitle: Подсчет артефактов в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как легко подсчитать водяные знаки в PDF-файле с помощью Aspose.PDF для .NET.
 type: docs
 weight: 60
 url: /ru/net/programming-with-stamps-and-watermarks/counting-artifacts/
 ---
-In this tutorial, we will take you step by step on how to count artifacts in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to count the number of "watermark" artifacts on a specific page of the PDF file.
+В этом уроке мы шаг за шагом покажем вам, как подсчитывать артефакты в PDF-файле с помощью Aspose.PDF для .NET. Мы покажем вам, как использовать предоставленный исходный код C# для подсчета количества артефактов «водяных знаков» на определенной странице PDF-файла.
 
-## Step 1: Setting up the environment
+## Шаг 1. Настройка среды
 
-Before you begin, make sure you have the following:
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Установленная среда разработки .NET.
+- Библиотека Aspose.PDF для .NET загружена и используется в вашем проекте.
 
-## Step 2: Loading the PDF document
+## Шаг 2. Загрузка PDF-документа
 
-The first step is to load the existing PDF document into your project. Here's how:
+Первым шагом является загрузка существующего PDF-документа в ваш проект. Вот как:
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "watermark.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Обязательно замените «КАТАЛОГ ВАШИХ ДОКУМЕНТОВ» фактическим путем к каталогу, в котором находится ваш PDF-документ.
 
-## Step 3: Count artifacts
+## Шаг 3. Подсчитайте артефакты
 
-Now that you have loaded the PDF document, you can count the "watermark" type artifacts on a specific page of the document. Here's how:
+Теперь, когда вы загрузили PDF-документ, вы можете подсчитать артефакты типа «водяной знак» на определенной странице документа. Вот как:
 
 ```csharp
-// Initialize the counter
+// Инициализировать счетчик
 int count = 0;
 
-// Loop through all first page artifacts
+// Перебрать все артефакты первой страницы.
 foreach(Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
-     // If the artifact subtype is "watermark", increment the counter
+     //Если подтипом артефакта является «водяной знак», увеличьте счетчик.
      if (artifact.Subtype == Artifact.ArtifactSubtype.Watermark)
          count++;
 }
 
-// Display the number of "watermark" type artifacts
+// Отображение количества артефактов типа «водяной знак».
 Console.WriteLine("The page contains " + count + " watermarks");
 ```
 
-The above code loops through all the artifacts on the first page of the PDF document and increments the counter for each "watermark" type artifact encountered.
+Приведенный выше код перебирает все артефакты на первой странице PDF-документа и увеличивает счетчик для каждого обнаруженного артефакта типа «водяной знак».
 
-### Sample source code for Counting Artifacts using Aspose.PDF for .NET 
+### Пример исходного кода для подсчета артефактов с использованием Aspose.PDF для .NET 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Открыть документ
 Document pdfDocument = new Document( dataDir +  "watermark.pdf");
 
 int count = 0;
 foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
-	// If artifact type is watermark, increate the counter
+	// Если тип артефакта — водяной знак, создайте счетчик.
 	if (artifact.Subtype == Artifact.ArtifactSubtype.Watermark) count++;
 }
 Console.WriteLine("Page contains " + count + " watermarks");
 
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You learned how to count "watermark" artifacts in a PDF document using Aspose.PDF for .NET. You can now use this knowledge to perform specific analysis and processing on artifacts in your PDF documents.
+Поздравляем! Вы узнали, как подсчитывать артефакты «водяные знаки» в PDF-документе с помощью Aspose.PDF для .NET. Теперь вы можете использовать эти знания для выполнения конкретного анализа и обработки артефактов в ваших PDF-документах.
 
-### FAQ's for counting artifacts in PDF file
+### Часто задаваемые вопросы по подсчету артефактов в PDF-файле
 
-#### Q: What are artifacts in a PDF document, and why would I need to count them?
+#### Вопрос: Что такое артефакты в PDF-документе и зачем мне их подсчитывать?
 
-A: Artifacts in a PDF document are elements that don't directly affect the content or appearance of the document but are included for specific purposes, such as accessibility or metadata. Counting artifacts can help you identify and analyze specific elements within a PDF, such as watermarks, annotations, or hidden content.
+Ответ: Артефакты в PDF-документе — это элементы, которые не влияют напрямую на содержимое или внешний вид документа, но включаются для определенных целей, таких как доступность или метаданные. Подсчет артефактов может помочь вам идентифицировать и проанализировать определенные элементы в PDF-файле, например водяные знаки, аннотации или скрытое содержимое.
 
-#### Q: How do I determine the type of artifacts to count in a PDF document using Aspose.PDF for .NET?
+#### Вопрос: Как определить тип артефактов, которые следует учитывать в PDF-документе, с помощью Aspose.PDF для .NET?
 
-A: The provided C# source code demonstrates how to count "watermark" artifacts on a specific page of a PDF document. You can modify the code to count artifacts of different types by changing the `ArtifactSubtype` comparison to the desired subtype, such as "Annotation," "Stamp," or "Link."
+ О: Приведенный исходный код C# демонстрирует, как подсчитывать артефакты «водяные знаки» на определенной странице PDF-документа. Вы можете изменить код для подсчета артефактов разных типов, изменив`ArtifactSubtype` сравнение с нужным подтипом, например «Аннотация», «Штамп» или «Ссылка».
 
-#### Q: Can I count artifacts on multiple pages of a PDF document?
+#### Вопрос: Могу ли я подсчитать артефакты на нескольких страницах PDF-документа?
 
-A: Yes, you can extend the code to loop through artifacts on multiple pages of a PDF document by iterating through the `pdfDocument.Pages` collection and counting artifacts on each page.
+ О: Да, вы можете расширить код, чтобы он перебирал артефакты на нескольких страницах PDF-документа, повторяя`pdfDocument.Pages` сбор и подсчет артефактов на каждой странице.
 
-#### Q: How can I use the counted artifact information for further processing?
+#### Вопрос: Как я могу использовать подсчитанную информацию об артефактах для дальнейшей обработки?
 
-A: Once you have counted the desired artifacts, you can use the information for various purposes, such as generating reports, performing targeted modifications, or validating the presence of specific elements within the PDF document.
+О: После того как вы подсчитали нужные артефакты, вы можете использовать эту информацию для различных целей, таких как создание отчетов, выполнение целевых изменений или проверка наличия определенных элементов в PDF-документе.
 
-#### Q: Can I customize the counting process to consider additional attributes or conditions of artifacts?
+#### Вопрос: Могу ли я настроить процесс подсчета так, чтобы он учитывал дополнительные атрибуты или условия артефактов?
 
-A: Absolutely, you can customize the counting process to consider additional attributes or conditions by adding more conditional checks within the loop. For example, you could count artifacts based on a combination of artifact subtype and color.
+О: Конечно, вы можете настроить процесс подсчета для учета дополнительных атрибутов или условий, добавив в цикл больше условных проверок. Например, вы можете подсчитывать артефакты на основе комбинации подтипа и цвета артефакта.
 
-#### Q: What if my PDF document contains multiple types of artifacts, not just watermarks?
+#### Вопрос: Что делать, если мой PDF-документ содержит не только водяные знаки, но и несколько типов артефактов?
 
-A: While the tutorial focuses on counting watermark artifacts, you can adapt the code to count different types of artifacts by adjusting the `ArtifactSubtype` comparison to the desired subtype you want to count.
+ О: Хотя в руководстве основное внимание уделяется подсчету артефактов водяных знаков, вы можете адаптировать код для подсчета различных типов артефактов, настроив`ArtifactSubtype` сравнение с желаемым подтипом, который вы хотите посчитать.
 
-#### Q: How can I apply this knowledge to automate artifact counting for a large batch of PDF documents?
+#### Вопрос: Как я могу применить эти знания для автоматизации подсчета артефактов в большом пакете PDF-документов?
 
-A: You can create a script or program that iterates through a list of PDF documents and performs the artifact counting process for each document, generating reports or storing the counts for analysis.
+О: Вы можете создать сценарий или программу, которая перебирает список PDF-документов и выполняет процесс подсчета артефактов для каждого документа, создавая отчеты или сохраняя результаты для анализа.
 
-#### Q: Is it possible to count artifacts with specific attributes, such as artifacts of a certain color or size?
+#### Вопрос: Можно ли посчитать артефакты с определенными атрибутами, например артефакты определенного цвета или размера?
 
-A: Yes, you can enhance the code to count artifacts with specific attributes. Within the loop, you can include additional conditional checks to consider attributes like color, size, or position of artifacts.
+О: Да, вы можете улучшить код для подсчета артефактов с определенными атрибутами. Внутри цикла вы можете включить дополнительные условные проверки для рассмотрения таких атрибутов, как цвет, размер или положение артефактов.
 
-#### Q: Can I use this approach to count other types of elements, such as annotations or text objects?
+#### Вопрос: Могу ли я использовать этот подход для подсчета других типов элементов, таких как аннотации или текстовые объекты?
 
-A: Yes, you can adapt the provided source code to count other types of elements, such as annotations or text objects, by modifying the loop and conditional checks accordingly.
+О: Да, вы можете адаптировать предоставленный исходный код для подсчета других типов элементов, таких как аннотации или текстовые объекты, соответствующим образом изменив цикл и условные проверки.

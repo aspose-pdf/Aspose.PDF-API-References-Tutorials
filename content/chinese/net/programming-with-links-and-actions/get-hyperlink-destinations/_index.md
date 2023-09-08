@@ -1,74 +1,74 @@
 ---
-title: Get Hyperlink Destinations In PDF File
-linktitle: Get Hyperlink Destinations In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract hyperlink destinations in PDF file using Aspose.PDF for .NET.
+title: 获取 PDF 文件中的超链接目标
+linktitle: 获取 PDF 文件中的超链接目标
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 提取 PDF 文件中的超链接目标。
 type: docs
 weight: 60
 url: /zh/net/programming-with-links-and-actions/get-hyperlink-destinations/
 ---
-Aspose.PDF for .NET is a powerful library for manipulating and extracting information in PDF file using the C# programming language. In this tutorial, we will focus on extracting hyperlink destinations from a PDF file using Aspose.PDF for .NET.
+Aspose.PDF for .NET 是一个功能强大的库，用于使用 C# 编程语言操作和提取 PDF 文件中的信息。在本教程中，我们将重点介绍使用 Aspose.PDF for .NET 从 PDF 文件中提取超链接目标。
 
-## Prerequisites
+## 先决条件
 
-Before you begin, make sure you have the following:
+在开始之前，请确保您具备以下条件：
 
-- An integrated development environment (IDE) such as Visual Studio.
-- The Aspose.PDF library for .NET installed on your machine.
+- 集成开发环境 (IDE)，例如 Visual Studio。
+- 您的计算机上安装了适用于 .NET 的 Aspose.PDF 库。
 
-## Step 1: Setting up the development environment
+## 第一步：搭建开发环境
 
-Before you start writing code, you need to set up your development environment by creating a new C# project in your favorite IDE.
+在开始编写代码之前，您需要通过在您最喜欢的 IDE 中创建新的 C# 项目来设置开发环境。
 
-## Step 2: Import Aspose.PDF references
+## 第 2 步：导入 Aspose.PDF 参考文献
 
-To use Aspose.PDF for .NET, you need to add the appropriate references to your project. Follow the steps below to import the necessary references:
+要使用 Aspose.PDF for .NET，您需要向您的项目添加适当的引用。请按照以下步骤导入必要的参考：
 
-1. In your project, right-click "References" and select "Add Reference".
-2. In the "Add Reference" window, locate and select the DLL files of Aspose.PDF for .NET.
-3. Click "OK" to import the references into your project.
+1. 在您的项目中，右键单击“引用”并选择“添加引用”。
+2. 在“添加引用”窗口中，找到并选择 Aspose.PDF for .NET 的 DLL 文件。
+3. 单击“确定”将引用导入到您的项目中。
 
-## Step 3: Loading the PDF File
+## 第 3 步：加载 PDF 文件
 
-Before you can extract hyperlink destinations, you must load the PDF file into your application. Use the following code to load the PDF file:
+在提取超链接目标之前，必须将 PDF 文件加载到应用程序中。使用以下代码加载 PDF 文件：
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+//加载 PDF 文件
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-Be sure to specify the correct path to your document directory and the PDF file you want to process.
+请务必指定文档目录和要处理的 PDF 文件的正确路径。
 
-## Step 4: Navigating the pages of the document
+## 步骤 4：浏览文档页面
 
-Now that the PDF file is loaded, you need to go through all the pages of the document. This will allow you to get
+现在 PDF 文件已加载，您需要浏览文档的所有页面。这将使您获得
 
-ir the hyperlink annotations present on each page. Use the following code to iterate through the pages of the document:
+每个页面上都有超链接注释。使用以下代码遍历文档的页面：
 
 ```csharp
 foreach(Aspose.Pdf.Page page in document.Pages)
 {
-     // Get the link annotations of a specific page
+     //获取特定页面的链接注释
      AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
      page. Accept(selector);
-     // Create a list to store all the links
+     //创建一个列表来存储所有链接
      IList<Annotation> list = selector. Selected;
-     // Loop through each item in the list
+     //循环遍历列表中的每个项目
      foreach(LinkAnnotation a in list)
      {
-         // Print destination URL
+         //打印目标 URL
          Console.WriteLine("\nDestination: " + (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI + "\n");
      }
 }
 ```
 
-This code loops through each page of the document and selects the hyperlink annotations present on each page. Then it stores these annotations in a list and prints the destination URL for each link.
+此代码循环遍历文档的每个页面并选择每个页面上存在的超链接注释。然后它将这些注释存储在列表中并打印每个链接的目标 URL。
 
-## Step 5: Obtaining Hyperlink Destinations
+## 步骤5：获取超链接目标
 
-The last step is to extract the hyperlink destinations from the hyperlink annotations. The following code shows you how to do it:
+最后一步是从超链接注释中提取超链接目的地。以下代码向您展示了如何执行此操作：
 
 ```csharp
 foreach(Aspose.Pdf.Page page in document.Pages)
@@ -79,33 +79,33 @@ foreach(Aspose.Pdf.Page page in document.Pages)
      foreach(LinkAnnotation a in list)
      {
          string destination = (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI;
-         // Use the destination as you wish
+         //根据您的意愿使用目的地
      }
 }
 ```
 
-In this code, we get each hyperlink destination from the link annotations and store the destination in a variable. You can then use this destination as you wish in your application.
+在此代码中，我们从链接注释中获取每个超链接目标并将目标存储在变量中。然后，您可以根据需要在应用程序中使用该目标。
 
-### Sample source code for Get Hyperlink Destinations using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 获取超链接目标的示例源代码 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	//文档目录的路径。
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the PDF file
+	//加载 PDF 文件
 	Document document = new Document(dataDir + "input.pdf");
-	// Traverse through all the page of PDF
+	//遍历PDF的所有页面
 	foreach (Aspose.Pdf.Page page in document.Pages)
 	{
-		// Get the link annotations from particular page
+		//获取特定页面的链接注释
 		AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
 		page.Accept(selector);
-		// Create list holding all the links
+		//创建包含所有链接的列表
 		IList<Annotation> list = selector.Selected;
-		// Iterate through invidiaul item inside list
+		//遍历列表中的单个项目
 		foreach (LinkAnnotation a in list)
 		{
-			// Print the destination URL
+			//打印目标 URL
 			Console.WriteLine("\nDestination: " + (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI + "\n");
 		}
 	}
@@ -116,36 +116,36 @@ catch (Exception ex)
 }
 ```
 
-### FAQs for get hyperlink destinations in PDF file
+### 在 PDF 文件中获取超链接目标的常见问题解答
 
-#### Q: What is a hyperlink destination in a PDF file?
+#### 问：PDF 文件中的超链接目标是什么？
 
-A: A hyperlink destination in a PDF file is a specific location or target that a hyperlink points to. It could be a URL, a page within the same document, or an external document.
+答：PDF 文件中的超链接目标是超链接指向的特定位置或目标。它可以是 URL、同一文档中的页面或外部文档。
 
-#### Q: How can extracting hyperlink destinations benefit my PDF document analysis?
+#### 问：提取超链接目标对我的 PDF 文档分析有何帮助？
 
-A: Extracting hyperlink destinations allows you to identify and catalog all the targets that hyperlinks point to within a PDF document. This information can be useful for content validation, link verification, and data analysis.
+答：提取超链接目标允许您识别和编目 PDF 文档中超链接指向的所有目标。此信息可用于内容验证、链接验证和数据分析。
 
-#### Q: How does Aspose.PDF for .NET assist in extracting hyperlink destinations?
+#### 问：Aspose.PDF for .NET 如何协助提取超链接目标？
 
-A: Aspose.PDF for .NET provides powerful APIs to extract hyperlink destinations with ease. This tutorial demonstrates step-by-step how to extract hyperlink destinations using C#.
+答：Aspose.PDF for .NET 提供了强大的 API 来轻松提取超链接目标。本教程分步演示如何使用 C# 提取超链接目标。
 
-#### Q: Can I selectively extract hyperlink destinations based on certain criteria?
+#### 问：我可以根据特定条件有选择地提取超链接目的地吗？
 
-A: Yes, you can selectively extract hyperlink destinations by iterating through the pages of the PDF document and filtering the desired hyperlink annotations based on your criteria.
+答：是的，您可以通过迭代 PDF 文档的页面并根据您的条件过滤所需的超链接注释来选择性地提取超链接目标。
 
-#### Q: Is it possible to extract hyperlink destinations from password-protected PDF documents?
+#### 问：是否可以从受密码保护的 PDF 文档中提取超链接目标？
 
-A: Aspose.PDF for .NET can extract hyperlink destinations from password-protected PDF documents as long as you provide the necessary authentication credentials when opening the document.
+答：只要您在打开文档时提供必要的身份验证凭据，Aspose.PDF for .NET 就可以从受密码保护的 PDF 文档中提取超链接目标。
 
-#### Q: How can I utilize the extracted hyperlink destinations in my application?
+#### 问：如何在我的应用程序中使用提取的超链接目标？
 
-A: Once you've extracted the hyperlink destinations, you can use them to perform various actions, such as validating link URLs, creating reports, or implementing custom navigation.
+答：提取超链接目标后，您可以使用它们执行各种操作，例如验证链接 URL、创建报告或实施自定义导航。
 
-#### Q: Are there any limitations when extracting hyperlink destinations?
+#### 问：提取超链接目标时有什么限制吗？
 
-A: While hyperlink destination extraction is powerful, it's essential to consider the structure of the PDF document. Hyperlinks embedded within complex graphics or multimedia content may require additional handling.
+答：虽然超链接目标提取功能很强大，但必须考虑 PDF 文档的结构。嵌入复杂图形或多媒体内容中的超链接可能需要额外的处理。
 
-#### Q: Can I extract other attributes of hyperlinks, such as link types or coordinates?
+#### 问：我可以提取超链接的其他属性，例如链接类型或坐标吗？
 
-A: The tutorial focuses on extracting hyperlink destinations. However, you can refer to the official Aspose.PDF documentation to explore advanced features, including extracting link types and coordinates.
+答：本教程重点介绍提取超链接目标。不过，您可以参考 Aspose.PDF 官方文档来探索高级功能，包括提取链接类型和坐标。

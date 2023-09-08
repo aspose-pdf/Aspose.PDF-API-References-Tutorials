@@ -1,52 +1,52 @@
 ---
-title: Programming with Document
-linktitle: Programming with Document
+title: Belgeyle Programlama
+linktitle: Belgeyle Programlama
 type: docs
 weight: 10
 url: /tr/net/programming-with-document/
-description: This resource offers Aspose.PDF for .NET library tutorials for programming with documents. It covers topics like creating/manipulating PDFs, adding images/tables/links, optimizing documents, and adding security. It's a valuable resource for developers working with PDF documents using Aspose.PDF for .NET.
+description: Bu kaynak, belgelerle programlamaya yönelik Aspose.PDF for .NET kitaplığı eğitimlerini sunar. PDF oluşturma/değiştirme, resim/tablo/bağlantı ekleme, belgeleri optimize etme ve güvenlik ekleme gibi konuları kapsar. Aspose.PDF for .NET kullanarak PDF belgeleriyle çalışan geliştiriciler için değerli bir kaynaktır.
 ---
-The resource includes tutorials on the Aspose.PDF for .NET library's programming with document feature. It is a detailed guide that explains how to programmatically create and manipulate PDF documents using the Aspose.PDF for .NET library. The tutorials cover a wide range of topics, including adding text, images, tables, and graphs to PDF documents, working with bookmarks, links, and annotations, adding security and digital signatures to documents, and optimizing the size and quality of PDF documents. The tutorials are an invaluable resource for developers looking to work with PDF documents programmatically using the Aspose.PDF for .NET library.
+Kaynak, Aspose.PDF for .NET kütüphanesinin belge özelliğiyle programlanmasına ilişkin eğitimler içerir. Aspose.PDF for .NET kitaplığını kullanarak PDF belgelerinin programlı olarak nasıl oluşturulacağını ve değiştirileceğini açıklayan ayrıntılı bir kılavuzdur. Eğitimler, PDF belgelerine metin, resim, tablo ve grafik ekleme, yer işaretleri, bağlantılar ve açıklamalarla çalışma, belgelere güvenlik ve dijital imza ekleme ve PDF belgelerinin boyutunu ve kalitesini optimize etme gibi çok çeşitli konuları kapsar. Eğitimler, Aspose.PDF for .NET kütüphanesini kullanarak PDF belgeleriyle programlı olarak çalışmak isteyen geliştiriciler için paha biçilmez bir kaynaktır.
 
-## Tutorials
-| Title | Description |
+## Öğreticiler
+| Başlık | Tanım |
 | --- | --- | 
-| [Add Java Script To PDF File](./addjavascripttopage/) | Learn how to add JavaScript to PDF file using Aspose.PDF for .NET. Step-by-step guide with code tutorials for document and page level scripting. |  
-| [Add Layers To PDF File](./addlayers/) | Learn how to add layers to PDF file using Aspose.PDF for .NET. Step-by-step guide with code tutorials for creating and saving layered PDFs. |  
-| [Add Remove Javascript To PDF Document](./addremovejavascripttodoc/) | Learn how to add and remove JavaScript to PDF document using Aspose.PDF for .NET. Step-by-step guide with code tutorials for document-level scripting. |  
-| [Add TOC To PDF File](./addtoc/) | Learn how to add a table of contents to PDF file using Aspose.PDF for .NET. Step-by-step guide with example source code. Boost document navigation! |  
-| [Allow Resuse Page Content](./allowresusepagecontent/) | Learn how to optimize PDFs by enabling "Allow Resuse Page Content" feature using Aspose.PDF for .NET. Reduce file size and improve performance. |  
-| [Convert From RGBTo Grayscale](./convertfromrgbtograyscale/) | Learn how to convert PDFs from RGB to Grayscale using Aspose.PDF for .NET. Enhance printing quality and reduce file size. |  
-| [Create Multilayer PDF File First Approach](./createmultilayerpdffirstapproach/) | Learn how to create multilayer PDF file using the First Approach with Aspose.PDF for .NET. Add text, images, and more to enhance your PDFs. |  
-| [Create Multilayer PDF Second Approach](./createmultilayerpdfsecondapproach/) | Learn how to create a multilayer PDF using Aspose.PDF for .NET. Step-by-step guide with source code for creating dynamic PDFs with text and images. |  
-| [Create PDF A1 With Aspose Pdf](./createpdfa1withasposepdf/) | Learn how to create a PDF A1 document using Aspose.PDF for .NET. Step-by-step guide with C# source code. Efficiently optimize PDFs. |  
-| [Customize Page Numbes While Adding TOC](./customizepagenumbeswhileaddingtoc/) | Learn how to customize page numbers while adding a table of contents (TOC) using Aspose.PDF for .NET with this step-by-step guide and code example. |  
-| [Determine Progress To PDF File](./determineprogress/) | Learn how to determine the progress to a PDF file conversion process using Aspose.PDF for .NET with this step-by-step guide and code example. |  
-| [Embed Font In PDF File](./embedfont/) | Learn how to embed fonts in a PDF file using Aspose.PDF for .NET with this step-by-step guide. Ensure your documents are displayed correctly on any device. |  
-| [Embed Fonts In PDF File With Subset Strategy](./embedfontsusingsubsetstrategy/) | Learn how to embed fonts in a PDF file with Subset Strategy using Aspose.PDF for .NET. Optimize your PDF size by embedding only necessary characters. |  
-| [Embed Font While PDF Doc Creation](./embedfontwhiledoccreation/) | Learn how to embed a font while creating a PDF document using Aspose.PDF for .NET. Ensure correct display on different devices. |  
-| [Flatten Annotation In PDF File](./flattenannotation/) | Learn how to flatten annotations in a PDF file using Aspose.PDF for .NET. Preserve annotations and prevent accidental alteration. |  
-| [Get All Fonts In PDF File](./getallfonts/) | Learn how to use Aspose.PDF for .NET to get all the fonts used in a PDF file programmatically with this step-by-step guide and example code. |  
-| [Get Document Window](./getdocumentwindow/) | Learn how to use the GetDocumentWindow feature of Aspose.PDF for .NET to retrieve information about a PDF document's window properties. |  
-| [Get File Info In PDF File](./getfileinfo/) | Learn how to use the GetFileInfo in PDF file feature of Aspose.PDF for .NET to retrieve metadata information about a PDF document. |  
-| [Get Warnings For Font Substitution](./getwarningsforfontsubstitution/) | Learn how to use the GetWarningsForFontSubstitution feature of Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document. |  
-| [Get XMP Metadata](./getxmpmetadata/) | Learn how to use the GetXmpMetadata feature of Aspose.PDF for .NET to extract XMP metadata from a PDF document using C# source code. |  
-| [Get Warnings For Font Substitution](./getwarningsforfontsubstitution/) | Learn how to use the GetWarningsForFontSubstitution feature of Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document. |  
-| [Get Zoom Factor In PDF File](./getzoomfactor/) | Learn how to use Aspose.PDF for .NET to get the zoom factor in PDF file with this step-by-step guide. |  
-| [Hide Page Numbers In TOC](./hidepagenumbersintoc/) | Learn how to hide page numbers in a table of contents using Aspose.PDF for .NET with this step-by-step guide. |  
-| [Link Duplicate Streams](./linkduplicatestreams/) | Learn how to use Aspose.PDF for .NET Link Duplicate Streams feature to optimize your PDF documents with this step-by-step guide. |  
-| [Optimize PDF Document](./optimizedocument/) | Optimize PDF Document for the web is essential for user experience. Learn how to do it using Aspose.PDF for .NET with this step-by-step guide. |  
-| [Optimize File Size In PDF File](./optimizefilesize/) | Learn how to optimize file size in PDF file with Aspose.PDF for .NET using this step-by-step guide. |  
-| [Remove Unused Objects In PDF File](./removeunusedobjects/) | Learn how to use Aspose.PDF for .NET to remove unused objects in PDF file with this step-by-step guide |  
-| [Remove Unused Streams](./removeunusedstreams/) | Learn how to remove unused streams from PDF files using Aspose.PDF for .NET. Our step-by-step guide. |  
-| [Set Default Font](./setdefaultfont/) | Learn how to set the default font for a PDF document using Aspose.PDF for .NET with this step-by-step guide. |  
-| [Set Expiry Date](./setexpirydate/) | Learn how to set expiry date in PDF documents using Aspose.PDF for .NET with this step-by-step guide. |  
-| [Set File Info In PDF File](./setfileinfo/) | Learn how to use Aspose.PDF for .NET to set file info in PDF file with this step-by-step guide. |  
-| [Set Properties For Print Dialog](./setpropertiesforprintdialog/) | Learn how to set properties for print dialog in Aspose.PDF for .NET using step-by-step guide. |  
-| [Set XMP Metadata In PDF File](./setxmpmetadata/) | Learn how to set XMPMetadata in PDF file using Aspose.PDF for .NET. Follow this step-by-step guide. |  
-| [Set Zoom Factor In PDF File](./setzoomfactor/) | Learn how to set the zoom factor in PDF file using Aspose.PDF for .NET with our step-by-step guide. |  
-| [Shrink PDF Documents](./shrinkdocuments/) | Learn how to use Aspose.PDF for .NET to shrink PDF documents with this step-by-step guide.  |  
-| [Unembed Fonts And Optimize PDF Files](./unembedfonts/) | Learn how to use Aspose.PDF for .NET to get Unembed Fonts and optimize PDF files. A step-by-step guide. |  
-| [Validate PDF AB Standard](./validatepdfabstandard/) | Learn how to use Aspose.PDF for .NET to validate PDF documents against the PDFABStandard with our step-by-step guide and code example. |  
-| [Validate PDF Files A Standard](./validatepdfastandard/) | Learn how to use Aspose.PDF for .NET to validate PDF files for PDFAStandard with this step-by-step guide. |  
-| [Validate PDF UA Standard](./validatepdfuastandard/) | Learn how to use Aspose.PDF for .NET to validate PDFUAstandard using C# code. Step-by-step guide. |  
+| [PDF Dosyasına Java Komut Dosyası Ekleme](./addjavascripttopage/) | Aspose.PDF for .NET kullanarak PDF dosyasına nasıl JavaScript ekleyeceğinizi öğrenin. Belge ve sayfa düzeyinde komut dosyası oluşturmaya yönelik kod eğitimlerini içeren adım adım kılavuz. |  
+| [PDF Dosyasına Katman Ekleme](./addlayers/) | Aspose.PDF for .NET kullanarak PDF dosyasına nasıl katman ekleyeceğinizi öğrenin. Katmanlı PDF'ler oluşturmaya ve kaydetmeye yönelik kod eğitimlerini içeren adım adım kılavuz. |  
+| [Javascript'i PDF Belgesine Ekle Kaldır](./addremovejavascripttodoc/) | Aspose.PDF for .NET kullanarak PDF belgesine JavaScript eklemeyi ve kaldırmayı öğrenin. Belge düzeyinde komut dosyası oluşturmaya yönelik kod eğitimlerini içeren adım adım kılavuz. |  
+| [PDF Dosyasına TOC Ekle](./addtoc/) | Aspose.PDF for .NET kullanarak PDF dosyasına içindekiler tablosunu nasıl ekleyeceğinizi öğrenin. Örnek kaynak koduyla adım adım kılavuz. Belge navigasyonunu artırın! |  
+| [Sayfa İçeriğinin Yeniden Kullanımına İzin Ver](./allowresusepagecontent/) | Aspose.PDF for .NET kullanarak "Sayfa İçeriğinin Yeniden Kullanılmasına İzin Ver" özelliğini etkinleştirerek PDF'leri nasıl optimize edeceğinizi öğrenin. Dosya boyutunu azaltın ve performansı artırın. |  
+| [RGB'den Gri Tonlamaya Dönüştürme](./convertfromrgbtograyscale/) | Aspose.PDF for .NET'i kullanarak PDF'leri RGB'den Gri tonlamaya nasıl dönüştüreceğinizi öğrenin. Yazdırma kalitesini artırın ve dosya boyutunu azaltın. |  
+| [Çok Katmanlı PDF Dosyası Oluşturma İlk Yaklaşım](./createmultilayerpdffirstapproach/) | Aspose.PDF for .NET ile İlk Yaklaşımı kullanarak çok katmanlı PDF dosyasını nasıl oluşturacağınızı öğrenin. PDF'lerinizi geliştirmek için metin, resim ve daha fazlasını ekleyin. |  
+| [Çok Katmanlı PDF Oluşturma İkinci Yaklaşımı](./createmultilayerpdfsecondapproach/) | Aspose.PDF for .NET'i kullanarak çok katmanlı bir PDF'nin nasıl oluşturulacağını öğrenin. Metin ve görsellerle dinamik PDF'ler oluşturmak için kaynak kodlu adım adım kılavuz. |  
+| [Aspose PDF ile A1 PDF Oluşturun](./createpdfa1withasposepdf/) | Aspose.PDF for .NET kullanarak PDF A1 belgesinin nasıl oluşturulacağını öğrenin. C# kaynak koduyla adım adım kılavuz. PDF'leri verimli bir şekilde optimize edin. |  
+| [İçindekiler Eklerken Sayfa Numaralarını Özelleştirin](./customizepagenumbeswhileaddingtoc/) | Bu adım adım kılavuz ve kod örneğiyle Aspose.PDF for .NET kullanarak içindekiler tablosu (TOC) eklerken sayfa numaralarını nasıl özelleştireceğinizi öğrenin. |  
+| [PDF Dosyasına Giden İlerlemeyi Belirleme](./determineprogress/) | Bu adım adım kılavuz ve kod örneğiyle Aspose.PDF for .NET kullanarak PDF dosyası dönüştürme işleminin ilerleme durumunu nasıl belirleyeceğinizi öğrenin. |  
+| [Yazı Tipini PDF Dosyasına Göm](./embedfont/) | Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak yazı tiplerini bir PDF dosyasına nasıl yerleştireceğinizi öğrenin. Belgelerinizin her cihazda doğru şekilde görüntülendiğinden emin olun. |  
+| [Alt Küme Stratejisi ile Fontları PDF Dosyasına Gömme](./embedfontsusingsubsetstrategy/) | Aspose.PDF for .NET kullanarak Alt Küme Stratejisi ile yazı tiplerini bir PDF dosyasına nasıl yerleştireceğinizi öğrenin. Yalnızca gerekli karakterleri yerleştirerek PDF boyutunuzu optimize edin. |  
+| [PDF Belgesi Oluşturulurken Yazı Tipini Göm](./embedfontwhiledoccreation/) | Aspose.PDF for .NET kullanarak PDF belgesi oluştururken yazı tipini nasıl yerleştireceğinizi öğrenin. Farklı cihazlarda doğru görüntülendiğinden emin olun. |  
+| [PDF Dosyasında Ek Açıklamayı Düzleştir](./flattenannotation/) | Aspose.PDF for .NET kullanarak bir PDF dosyasındaki açıklamaları nasıl düzleştireceğinizi öğrenin. Ek açıklamaları koruyun ve yanlışlıkla değiştirilmesini önleyin. |  
+| [Tüm Yazı Tiplerini PDF Dosyasında Al](./getallfonts/) | Bu adım adım kılavuz ve örnek kodla, bir PDF dosyasında kullanılan tüm yazı tiplerini programlı olarak almak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin. |  
+| [Belgeyi Al Penceresi](./getdocumentwindow/) | Bir PDF belgesinin pencere özellikleri hakkında bilgi almak için Aspose.PDF for .NET'in GetDocumentWindow özelliğini nasıl kullanacağınızı öğrenin. |  
+| [PDF Dosyasında Dosya Bilgisini Al](./getfileinfo/) | Bir PDF belgesi hakkında meta veri bilgilerini almak için Aspose.PDF for .NET'in PDF dosyasında GetFileInfo özelliğini nasıl kullanacağınızı öğrenin. |  
+| [Yazı Tipi Değişikliği İçin Uyarı Al](./getwarningsforfontsubstitution/) | Bir PDF belgesini açarken yazı tipi değiştirme uyarılarını algılamak için Aspose.PDF for .NET'in GetWarningsForFontSubstitution özelliğini nasıl kullanacağınızı öğrenin. |  
+| [XMP Meta Verilerini Alın](./getxmpmetadata/) | C# kaynak kodunu kullanarak bir PDF belgesinden XMP meta verilerini çıkarmak için Aspose.PDF for .NET'in GetXmpMetadata özelliğini nasıl kullanacağınızı öğrenin. |  
+| [Yazı Tipi Değişikliği İçin Uyarı Al](./getwarningsforfontsubstitution/) | Bir PDF belgesini açarken yazı tipi değiştirme uyarılarını algılamak için Aspose.PDF for .NET'in GetWarningsForFontSubstitution özelliğini nasıl kullanacağınızı öğrenin. |  
+| [PDF Dosyasında Yakınlaştırma Faktörünü Alın](./getzoomfactor/) | Bu adım adım kılavuzla PDF dosyasında yakınlaştırma faktörünü elde etmek için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin. |  
+| [İçindekiler Tablosunda Sayfa Numaralarını Gizle](./hidepagenumbersintoc/) | Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak içindekiler tablosundaki sayfa numaralarını nasıl gizleyeceğinizi öğrenin. |  
+| [Yinelenen Akışları Bağlama](./linkduplicatestreams/) | Bu adım adım kılavuzla PDF belgelerinizi optimize etmek için Aspose.PDF for .NET Link Çoğaltılmış Akışlar özelliğini nasıl kullanacağınızı öğrenin. |  
+| [PDF Belgesini Optimize Et](./optimizedocument/) | PDF Belgesini web için optimize etmek, kullanıcı deneyimi açısından çok önemlidir. Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak bunu nasıl yapacağınızı öğrenin. |  
+| [PDF Dosyasında Dosya Boyutunu Optimize Etme](./optimizefilesize/) | Bu adım adım kılavuzu kullanarak Aspose.PDF for .NET ile PDF dosyasındaki dosya boyutunu nasıl optimize edeceğinizi öğrenin. |  
+| [PDF Dosyasındaki Kullanılmayan Nesneleri Kaldır](./removeunusedobjects/) | Bu adım adım kılavuzla PDF dosyasındaki kullanılmayan nesneleri kaldırmak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin |  
+| [Kullanılmayan Akışları Kaldır](./removeunusedstreams/) | Aspose.PDF for .NET kullanarak kullanılmayan akışları PDF dosyalarından nasıl kaldıracağınızı öğrenin. Adım adım kılavuzumuz. |  
+| [Varsayılan Yazı Tipini Ayarla](./setdefaultfont/) | Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak bir PDF belgesi için varsayılan yazı tipini nasıl ayarlayacağınızı öğrenin. |  
+| [Son Kullanma Tarihini Ayarla](./setexpirydate/) | Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak PDF belgelerinde son kullanma tarihini nasıl ayarlayacağınızı öğrenin. |  
+| [PDF Dosyasında Dosya Bilgilerini Ayarla](./setfileinfo/) | Bu adım adım kılavuzla PDF dosyasındaki dosya bilgilerini ayarlamak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin. |  
+| [Yazdırma İletişim Kutusunun Özelliklerini Ayarlama](./setpropertiesforprintdialog/) | Adım adım kılavuzu kullanarak Aspose.PDF for .NET'te yazdırma iletişim kutusunun özelliklerini nasıl ayarlayacağınızı öğrenin. |  
+| [XMP Meta Verilerini PDF Dosyasında Ayarlayın](./setxmpmetadata/) | Aspose.PDF for .NET kullanarak XMPMetadata'yı PDF dosyasında nasıl ayarlayacağınızı öğrenin. Bu adım adım kılavuzu izleyin. |  
+| [PDF Dosyasında Yakınlaştırma Faktörünü Ayarla](./setzoomfactor/) | Adım adım kılavuzumuzla Aspose.PDF for .NET kullanarak PDF dosyasında yakınlaştırma faktörünü nasıl ayarlayacağınızı öğrenin. |  
+| [PDF Belgelerini Küçült](./shrinkdocuments/) | Bu adım adım kılavuzla PDF belgelerini küçültmek için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin.  |  
+| [Gömülü Yazı Tiplerini Çıkarın ve PDF Dosyalarını Optimize Edin](./unembedfonts/) | Gömülü Fontları Çıkarmak ve PDF dosyalarını optimize etmek için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin. Adım adım bir kılavuz. |  
+| [PDF AB Standardını Doğrulayın](./validatepdfabstandard/) | Adım adım kılavuzumuz ve kod örneğimizle PDF belgelerini PDFABStandard'a göre doğrulamak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin. |  
+| [PDF Dosyalarını Doğrulayın Bir Standart](./validatepdfastandard/) | Bu adım adım kılavuzla PDFAStandard için PDF dosyalarını doğrulamak amacıyla Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin. |  
+| [PDF UA Standardını Doğrulayın](./validatepdfuastandard/) | C# kodunu kullanarak PDFUA standardını doğrulamak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin. Adım adım rehber. |  

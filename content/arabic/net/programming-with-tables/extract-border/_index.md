@@ -1,28 +1,28 @@
 ---
-title: Extract Border In PDF File
-linktitle: Extract Border In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract the border in PDF file using Aspose.PDF for .NET.
+title: استخراج الحدود في ملف PDF
+linktitle: استخراج الحدود في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخراج الحدود في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 80
 url: /ar/net/programming-with-tables/extract-border/
 ---
-In this tutorial, we are going to learn how to extract the border in PDF file using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to extract the border from a PDF document and save it as an image. Let's start!
+في هذا البرنامج التعليمي، سنتعلم كيفية استخراج الحدود في ملف PDF باستخدام Aspose.PDF لـ .NET. سنشرح الكود المصدري في لغة C# خطوة بخطوة. في نهاية هذا البرنامج التعليمي، ستعرف كيفية استخراج الحدود من مستند PDF وحفظه كصورة. لنبدأ!
 
-## Step 1: Setting up the environment
-First, make sure you've set up your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## الخطوة 1: تهيئة البيئة
+أولاً، تأكد من قيامك بإعداد بيئة تطوير C# باستخدام Aspose.PDF لـ .NET. أضف المرجع إلى المكتبة واستورد مساحات الأسماء الضرورية.
 
-## Step 2: Loading the PDF Document
-In this step, we load the PDF document from the specified file.
+## الخطوة 2: تحميل وثيقة PDF
+في هذه الخطوة، نقوم بتحميل مستند PDF من الملف المحدد.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENT DIRECTORY" with the actual directory where your PDF file is located.
+تأكد من استبدال "دليل المستندات الخاص بك" بالدليل الفعلي الذي يوجد به ملف PDF الخاص بك.
 
-## Step 3: Edge Extraction
-We will extract the border from the PDF document by iterating over the operations contained in the document.
+## الخطوة 3: استخراج الحافة
+سنقوم باستخراج الحدود من مستند PDF من خلال تكرار العمليات الموجودة في المستند.
 
 ```csharp
 Stack graphicsState = new Stack();
@@ -36,38 +36,38 @@ System.Drawing.Color strokeColor = System.Drawing.Color.FromArgb(0, 0, 0);
 
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 {
-     // Process all content operations
+     // معالجة جميع عمليات المحتوى
      foreach(Operator op in doc.Pages[1].Contents)
      {
-         // Check the type of operation
+         // التحقق من نوع العملية
          // ...
-         // Add code to process each operation
+         // أضف رمزًا لمعالجة كل عملية
      }
 }
 ```
 
-We create a `graphicsState` stack to store graphics states, a bitmap image to capture the extracted border, a `GraphicsPath` object to store drawing paths, and other variables to track state and colors.
+ نقوم بإنشاء أ`graphicsState` مكدس لتخزين حالات الرسومات، وصورة نقطية لالتقاط الحدود المستخرجة، أ`GraphicsPath` كائن لتخزين مسارات الرسم، ومتغيرات أخرى لتتبع الحالة والألوان.
 
-## Step 4: Transaction Processing
-In this step, we process each operation of the document to extract the border.
+## الخطوة 4: معالجة المعاملات
+في هذه الخطوة، نقوم بمعالجة كل عملية للمستند لاستخراج الحدود.
 
 ```csharp
-// Check the type of operation
+// التحقق من نوع العملية
 if (opSaveState != null)
 {
-     // Save the previous state and push the current state to the top of the stack
+     // احفظ الحالة السابقة وادفع الحالة الحالية إلى أعلى المكدس
      graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
      lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 }
 else if (opRestoreState != null)
 {
-     // Delete the current state and restore previous state
+     // حذف الحالة الحالية واستعادة الحالة السابقة
      graphicsState. Pop();
      lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 }
 else if (opCtm != null)
 {
-     // Retrieve the current transformation matrix
+     // استرداد مصفوفة التحويل الحالية
      System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
          (float)opCtm.Matrix.A,
          (float)opCtm.Matrix.B,
@@ -76,41 +76,41 @@ else if (opCtm != null)
          (float)opCtm.Matrix.E,
          (float)opCtm.Matrix.F);
 
-     // Multiply the current matrix with the state matrix
+     // اضرب المصفوفة الحالية بمصفوفة الحالة
      ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
      lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 }
 else if (opMoveTo != null)
 {
-     // Update the last drawing point
+     // قم بتحديث نقطة الرسم الأخيرة
      lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
 }
 else if (opLineTo != null)
 {
-     // Process the drawing of a line
+     // معالجة رسم الخط
      // ...
-     // Add code to handle drawing a line
+     // أضف رمزًا للتعامل مع رسم الخط
 }
 // ...
-// Add else if blocks for other operations
+// أضف آخر إذا كتل لعمليات أخرى
 ```
 
-We check the type of operation using conditions and run the appropriate code for each operation.
+نتحقق من نوع العملية باستخدام الشروط ونقوم بتشغيل الكود المناسب لكل عملية.
 
-## Step 5: Backup Image
-Finally, we save the bitmap image containing the extracted border to a specified file.
+## الخطوة 5: صورة النسخ الاحتياطي
+وأخيرًا، نقوم بحفظ الصورة النقطية التي تحتوي على الحد المستخرج في ملف محدد.
 
 ```csharp
 dataDir = dataDir + "ExtractBorder_out.png";
 bitmap.Save(dataDir, ImageFormat.Png);
 ```
 
-Be sure to specify the correct directory and filename to save the output image.
+تأكد من تحديد الدليل واسم الملف الصحيحين لحفظ الصورة الناتجة.
 
-### Example source code for Extract Border using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لاستخراج الحدود باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document(dataDir + "input.pdf");
@@ -118,9 +118,9 @@ Document doc = new Document(dataDir + "input.pdf");
 Stack graphicsState = new Stack();
 System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageInfo.Width, (int)doc.Pages[1].PageInfo.Height);
 System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-// Default ctm matrix value is 1,0,0,1,0,0
+// قيمة مصفوفة ctm الافتراضية هي 1,0,0,1,0,0
 System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
-// System.Drawing coordinate system is top left based, while pdf coordinate system is low left based, so we have to apply the inversion matrix
+//النظام. نظام إحداثيات الرسم يعتمد على أعلى اليسار، في حين أن نظام إحداثيات pdf يعتمد على اليسار المنخفض، لذلك يتعين علينا تطبيق مصفوفة الانعكاس
 System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, (float)doc.Pages[1].PageInfo.Height);
 System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
 System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
@@ -131,7 +131,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 	gr.SmoothingMode = SmoothingMode.HighQuality;
 	graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
 
-	// Process all the contents commands
+	// معالجة جميع أوامر المحتويات
 	foreach (Operator op in doc.Pages[1].Contents)
 	{
 		Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
@@ -149,13 +149,13 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			// Save previous state and push current state to the top of the stack
+			//احفظ الحالة السابقة وادفع الحالة الحالية إلى أعلى المكدس
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
 		else if (opRestoreState != null)
 		{
-			// Throw away current state and restore previous one
+			// التخلص من الحالة الحالية واستعادة الحالة السابقة
 			graphicsState.Pop();
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -169,7 +169,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 				(float)opCtm.Matrix.E,
 				(float)opCtm.Matrix.F);
 
-			// Multiply current matrix with the state matrix
+			// اضرب المصفوفة الحالية بمصفوفة الحالة
 			((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -232,27 +232,27 @@ bitmap.Save(dataDir, ImageFormat.Png);
 Console.WriteLine("\nBorder extracted successfully as image.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-In this tutorial, we learned how to extract the border from a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to extract border from other PDF documents.
+## خاتمة
+في هذا البرنامج التعليمي، تعلمنا كيفية استخراج الحدود من مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الدليل التفصيلي لاستخراج الحدود من مستندات PDF الأخرى.
 
-### FAQ's for extract border in PDF file
+### الأسئلة الشائعة لاستخراج الحدود في ملف PDF
 
-#### Q: What is the purpose of extracting the border from a PDF file?
+#### س: ما هو الغرض من استخراج الحدود من ملف PDF؟
 
-A: Extracting the border from a PDF file can be useful for various purposes. It allows you to isolate and analyze the structural elements of the document, such as tables, diagrams, or graphical elements. You can use the extracted border to identify the layout, dimensions, and positioning of the content within the PDF document.
+ج: يمكن أن يكون استخراج الحدود من ملف PDF مفيدًا لأغراض متعددة. فهو يسمح لك بعزل وتحليل العناصر الهيكلية للمستند، مثل الجداول أو الرسوم البيانية أو العناصر الرسومية. يمكنك استخدام الحد المستخرج لتحديد تخطيط المحتوى وأبعاده وموضعه داخل مستند PDF.
 
-#### Q: Can I extract the border from specific pages or areas within the PDF document?
+#### س: هل يمكنني استخراج الحدود من صفحات أو مناطق محددة داخل مستند PDF؟
 
-A: Yes, you can modify the provided C# source code to extract the border from specific pages or regions within the PDF document. By manipulating the `doc.Pages` collection and specifying custom criteria, you can choose to extract the border from particular pages or areas of interest.
+ج: نعم، يمكنك تعديل كود مصدر C# المقدم لاستخراج الحدود من صفحات أو مناطق محددة داخل مستند PDF. من خلال التلاعب`doc.Pages` جمع وتحديد معايير مخصصة، يمكنك اختيار استخراج الحدود من صفحات معينة أو مجالات الاهتمام.
 
-#### Q: How can I customize the output image format and quality?
+#### س: كيف يمكنني تخصيص تنسيق الصورة الناتجة وجودتها؟
 
-A: In the provided C# code, the extracted border is saved as a PNG image. If you want to change the output image format, you can modify the `ImageFormat.Png` parameter in the `bitmap.Save` method to other supported image formats, such as JPEG, BMP, or GIF. Additionally, you can adjust the image quality or compression settings based on your requirements.
+ ج: في كود C# المقدم، يتم حفظ الحدود المستخرجة كصورة PNG. إذا كنت تريد تغيير تنسيق الصورة الناتجة، فيمكنك تعديل ملف`ImageFormat.Png` المعلمة في`bitmap.Save` طريقة إلى تنسيقات الصور المدعومة الأخرى، مثل JPEG، BMP، أو GIF. بالإضافة إلى ذلك، يمكنك ضبط جودة الصورة أو إعدادات الضغط بناءً على متطلباتك.
 
-#### Q: What other operations can I perform on the extracted border?
+#### س: ما هي العمليات الأخرى التي يمكنني القيام بها على الحدود المستخرجة؟
 
-A: Once you have extracted the border as an image, you can further process it using image processing libraries or algorithms. You can analyze the image, apply image filters, detect patterns, or perform OCR (Optical Character Recognition) to extract text from the image if needed.
+ج: بمجرد استخراج الحدود كصورة، يمكنك معالجتها بشكل أكبر باستخدام مكتبات معالجة الصور أو الخوارزميات. يمكنك تحليل الصورة أو تطبيق مرشحات الصور أو اكتشاف الأنماط أو إجراء التعرف الضوئي على الحروف (OCR) لاستخراج النص من الصورة إذا لزم الأمر.
 
-#### Q: Are there any limitations or considerations when extracting borders from complex PDF documents?
+#### س: هل هناك أي قيود أو اعتبارات عند استخراج الحدود من مستندات PDF المعقدة؟
 
-A: The extraction process may vary depending on the complexity of the PDF document. Complex PDFs with multiple layers, transparency, or advanced graphics might require additional processing or adjustments to accurately extract the border. It's essential to thoroughly test the extraction process on various PDF documents to ensure reliable results.
+ج: قد تختلف عملية الاستخراج اعتمادًا على مدى تعقيد مستند PDF. قد تتطلب ملفات PDF المعقدة ذات الطبقات المتعددة أو الشفافية أو الرسومات المتقدمة معالجة إضافية أو تعديلات لاستخراج الحدود بدقة. من الضروري اختبار عملية الاستخراج بدقة على مستندات PDF المختلفة لضمان الحصول على نتائج موثوقة.

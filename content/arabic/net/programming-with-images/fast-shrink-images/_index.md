@@ -1,41 +1,41 @@
 ---
-title: Fast Shrink Images
-linktitle: Fast Shrink Images
-second_title: Aspose.PDF for .NET API Reference
-description: Quickly reduce the size of images in a PDF file with Aspose.PDF for .NET.
+title: تقليص الصور بسرعة
+linktitle: تقليص الصور بسرعة
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بتقليل حجم الصور في ملف PDF بسرعة باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 130
 url: /ar/net/programming-with-images/fast-shrink-images/
 ---
-This guide will take you step by step how to quickly reduce the size of images in a PDF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+سيرشدك هذا الدليل خطوة بخطوة إلى كيفية تقليل حجم الصور بسرعة في ملف PDF باستخدام Aspose.PDF لـ .NET. تأكد من أنك قمت بالفعل بإعداد بيئتك واتبع الخطوات التالية:
 
-## Step 1: Initialize the time
+## الخطوة 1: تهيئة الوقت
 
-Before we begin, we'll initialize the time to measure compression performance. Add the following code to record the start time:
+قبل أن نبدأ، سنقوم بتهيئة الوقت لقياس أداء الضغط. أضف الكود التالي لتسجيل وقت البدء:
 
 ```csharp
 var time = DateTime.Now.Ticks;
 ```
 
-## Step 2: Define the document directory
+## الخطوة 2: تحديد دليل المستند
 
-Make sure to set the correct document directory. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+ تأكد من تعيين دليل المستند الصحيح. يستبدل`"YOUR DOCUMENT DIRECTORY"` في الكود الذي يحتوي على المسار إلى الدليل الذي يوجد به مستند PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## الخطوة 3: افتح مستند PDF
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+في هذه الخطوة، سنقوم بفتح مستند PDF باستخدام الملف`Document` فئة Aspose.PDF. استخدم ال`Document` منشئ وتمرير المسار إلى وثيقة PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
 ```
 
-## Step 4: Initialize optimization options
+## الخطوة 4: تهيئة خيارات التحسين
 
-In this step, we will initialize the optimization options for image compression. Create an instance of `OptimizationOptions` and set the appropriate options. In this example, we enable image compression, set the image quality to 75, and use the fast compression version.
+في هذه الخطوة، سنقوم بتهيئة خيارات التحسين لضغط الصور. إنشاء مثيل ل`OptimizationOptions` وضبط الخيارات المناسبة. في هذا المثال، نقوم بتمكين ضغط الصور، وضبط جودة الصورة على 75، واستخدام إصدار الضغط السريع.
 
 ```csharp
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
@@ -44,90 +44,90 @@ optimizeOptions.ImageCompressionOptions.ImageQuality = 75;
 optimizeOptions.ImageCompressionOptions.Version = Pdf.Optimization.ImageCompressionVersion.Fast;
 ```
 
-## Step 5: Optimize the PDF document
+## الخطوة 5: تحسين مستند PDF
 
-In this step, we will optimize the PDF document using the optimization options defined earlier. Call the `OptimizeResources` method of the `pdfDocument` object and pass the optimization options.
+ في هذه الخطوة، سنقوم بتحسين مستند PDF باستخدام خيارات التحسين المحددة مسبقًا. اتصل ب`OptimizeResources` طريقة`pdfDocument` الكائن وتمرير خيارات التحسين.
 
 ```csharp
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-## Step 6: Save the updated PDF document
+## الخطوة 6: احفظ مستند PDF المحدث
 
-Save the updated PDF document using the `Save` method of the `pdfDocument` object. Specify the output path for the PDF file.
+ احفظ مستند PDF المحدث باستخدام الملف`Save` طريقة`pdfDocument` هدف. حدد مسار الإخراج لملف PDF.
 
 ```csharp
 dataDir = dataDir + "FastShrinkImages_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Fast Shrink Images using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لصور التقليص السريع باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// Initialize Time
+// تهيئة الوقت
 var time = DateTime.Now.Ticks;
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
-// Initialize OptimizationOptions
+// تهيئة خيارات التحسين
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
-// Set CompressImages option
+// اضبط خيار ضغط الصور
 optimizeOptions.ImageCompressionOptions.CompressImages = true;
-// Set ImageQuality option
+// ضبط خيار جودة الصورة
 optimizeOptions.ImageCompressionOptions.ImageQuality = 75;
-// Set Imagae Compression Version to fast 
+// اضبط إصدار ضغط الصور على الصيام
 optimizeOptions.ImageCompressionOptions.Version = Pdf.Optimization.ImageCompressionVersion.Fast;
-// Optimize PDF document using OptimizationOptions
+// تحسين مستند PDF باستخدام OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
 dataDir = dataDir + "FastShrinkImages_out.pdf";
-// Save updated document
+// حفظ المستند المحدث
 pdfDocument.Save(dataDir);
 Console.WriteLine("Ticks: {0}", DateTime.Now.Ticks - time);
 Console.WriteLine("\nImage fast shrinked successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You quickly reduced the size of images in a PDF using Aspose.PDF for .NET. The optimized PDF file is saved in the specified directory. You can now use this PDF file with reduced images for more efficient storage or sharing needs.
+تهنئة ! لقد قمت بسرعة بتقليل حجم الصور في ملف PDF باستخدام Aspose.PDF لـ .NET. يتم حفظ ملف PDF الأمثل في الدليل المحدد. يمكنك الآن استخدام ملف PDF هذا مع صور مصغرة لتلبية احتياجات التخزين أو المشاركة الأكثر كفاءة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Why would I want to quickly reduce the size of images in a PDF file using Aspose.PDF for .NET?
+#### س: لماذا أرغب في تقليل حجم الصور بسرعة في ملف PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Quickly reducing the size of images in a PDF file can help optimize the file for storage, sharing, or transmission, resulting in improved performance and reduced resource consumption.
+ج: يمكن أن يساعد تقليل حجم الصور في ملف PDF بسرعة في تحسين الملف للتخزين أو المشاركة أو النقل، مما يؤدي إلى تحسين الأداء وتقليل استهلاك الموارد.
 
-#### Q: What advantages does image compression offer in a PDF document?
+#### س: ما هي المزايا التي يقدمها ضغط الصور في مستند PDF؟
 
-A: Image compression in a PDF document helps minimize the file size while maintaining acceptable image quality, leading to faster loading times, reduced storage requirements, and improved data transfer efficiency.
+ج: يساعد ضغط الصور في مستند PDF على تقليل حجم الملف مع الحفاظ على جودة الصورة المقبولة، مما يؤدي إلى أوقات تحميل أسرع وتقليل متطلبات التخزين وتحسين كفاءة نقل البيانات.
 
-#### Q: How does Aspose.PDF for .NET facilitate fast image size reduction in a PDF file?
+#### س: كيف يسهل Aspose.PDF for .NET تقليل حجم الصورة بسرعة في ملف PDF؟
 
-A: Aspose.PDF for .NET provides a streamlined process to open a PDF document, apply image compression options, and save the optimized PDF file with reduced image sizes.
+ج: يوفر Aspose.PDF for .NET عملية مبسطة لفتح مستند PDF، وتطبيق خيارات ضغط الصور، وحفظ ملف PDF المُحسّن بأحجام صور منخفضة.
 
-#### Q: What is the significance of the `OptimizationOptions` class in fast image size reduction?
+####  س: ما أهمية`OptimizationOptions` class in fast image size reduction?
 
-A: The `OptimizationOptions` class enables you to define various optimization settings, including image compression options, to effectively reduce the size of images within the PDF document.
+ ج: ال`OptimizationOptions`يتيح لك class إمكانية تحديد إعدادات التحسين المختلفة، بما في ذلك خيارات ضغط الصور، لتقليل حجم الصور بشكل فعال داخل مستند PDF.
 
-#### Q: Can I customize the image compression settings to control the balance between file size and image quality?
+#### س: هل يمكنني تخصيص إعدادات ضغط الصور للتحكم في التوازن بين حجم الملف وجودة الصورة؟
 
-A: Yes, you can customize the image compression settings by adjusting parameters such as image quality and compression version to achieve the desired balance between file size and image appearance.
+ج: نعم، يمكنك تخصيص إعدادات ضغط الصورة عن طريق ضبط المعلمات مثل جودة الصورة وإصدار الضغط لتحقيق التوازن المطلوب بين حجم الملف ومظهر الصورة.
 
-#### Q: How does the `pdfDocument.OptimizeResources` method work to reduce image sizes?
+####  س: كيف`pdfDocument.OptimizeResources` method work to reduce image sizes?
 
-A: The `OptimizeResources` method analyzes the PDF document and applies the specified optimization options, including image compression settings, to reduce the size of images and other resources.
+ ج: ال`OptimizeResources` تقوم هذه الطريقة بتحليل مستند PDF وتطبيق خيارات التحسين المحددة، بما في ذلك إعدادات ضغط الصور، لتقليل حجم الصور والموارد الأخرى.
 
-#### Q: Is it possible to apply fast image size reduction to a specific range of pages within a PDF document?
+#### س: هل من الممكن تطبيق تقليل سريع لحجم الصورة على نطاق محدد من الصفحات داخل مستند PDF؟
 
-A: The `OptimizeResources` method applies optimization options to the entire PDF document. If you want to apply optimization to specific pages, you need to extract those pages into a new document before optimization.
+ ج: ال`OptimizeResources` تطبق الطريقة خيارات التحسين على مستند PDF بأكمله. إذا كنت تريد تطبيق التحسين على صفحات معينة، فستحتاج إلى استخراج تلك الصفحات في مستند جديد قبل التحسين.
 
-#### Q: What are some scenarios where fast image size reduction can be beneficial?
+#### س: ما هي بعض السيناريوهات التي يمكن أن يكون فيها تقليل حجم الصورة بسرعة مفيدًا؟
 
-A: Fast image size reduction can be beneficial when preparing PDF files for online distribution, email attachments, archiving, or when working with large documents with many images.
+ج: يمكن أن يكون تقليل حجم الصورة بسرعة مفيدًا عند إعداد ملفات PDF للتوزيع عبر الإنترنت، أو مرفقات البريد الإلكتروني، أو الأرشفة، أو عند العمل مع مستندات كبيرة تحتوي على العديد من الصور.
 
-#### Q: Does reducing image sizes impact the visual quality of images in the PDF document?
+#### س: هل يؤثر تقليل أحجام الصور على الجودة المرئية للصور في مستند PDF؟
 
-A: Reducing image sizes through compression can impact image quality to some extent. It's important to find a balance between size reduction and acceptable image quality.
+ج: يمكن أن يؤثر تقليل أحجام الصور من خلال الضغط على جودة الصورة إلى حد ما. من المهم إيجاد توازن بين تقليل الحجم وجودة الصورة المقبولة.
 
-#### Q: How can I measure the performance of the fast image size reduction process?
+#### س: كيف يمكنني قياس أداء عملية تقليل حجم الصورة السريعة؟
 
-A: You can measure the performance by recording the start time using the `DateTime.Now.Ticks` method before the optimization process and calculating the time elapsed after the process.
+ ج: يمكنك قياس الأداء عن طريق تسجيل وقت البدء باستخدام`DateTime.Now.Ticks` الطريقة قبل عملية التحسين وحساب الوقت المنقضي بعد العملية.

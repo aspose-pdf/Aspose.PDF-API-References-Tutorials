@@ -1,50 +1,50 @@
 ---
-title: Provide Credentials During HTML To PDF
-linktitle: Provide Credentials During HTML To PDF
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert HTML to PDF by providing credentials with Aspose.PDF for .NET.
+title: Geben Sie Anmeldeinformationen während der HTML-zu-PDF-Umwandlung an
+linktitle: Geben Sie Anmeldeinformationen während der HTML-zu-PDF-Umwandlung an
+second_title: Aspose.PDF für .NET API-Referenz
+description: Schritt-für-Schritt-Anleitung zum Konvertieren von HTML in PDF durch Bereitstellung von Anmeldeinformationen mit Aspose.PDF für .NET.
 type: docs
 weight: 240
 url: /de/net/document-conversion/provide-credentials-during-html-to-pdf/
 ---
-In this tutorial, we will walk you through the process of converting an HTML file to PDF while providing credentials when accessing a secure URL using Aspose.PDF for .NET. By following the steps below, you will be able to convert HTML content to PDF using the appropriate credentials.
+In diesem Tutorial führen wir Sie durch den Prozess der Konvertierung einer HTML-Datei in PDF und geben dabei Anmeldeinformationen an, wenn Sie mit Aspose.PDF für .NET auf eine sichere URL zugreifen. Wenn Sie die folgenden Schritte ausführen, können Sie HTML-Inhalte mit den entsprechenden Anmeldeinformationen in PDF konvertieren.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Voraussetzungen
+Bevor Sie beginnen, stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllen:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Grundkenntnisse der Programmiersprache C#.
+- Aspose.PDF-Bibliothek für .NET auf Ihrem System installiert.
+- Eine Entwicklungsumgebung wie Visual Studio.
 
-## Step 1: Fetch secure HTML content
-In this step, we'll fetch secure HTML content from a URL using the appropriate credentials. Use the following code:
+## Schritt 1: Sichere HTML-Inhalte abrufen
+In diesem Schritt rufen wir mit den entsprechenden Anmeldeinformationen sicheren HTML-Inhalt von einer URL ab. Verwenden Sie den folgenden Code:
 
 ```csharp
-// Path to the documents directory.
+// Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a request for the URL.
+// Erstellen Sie eine Anfrage für die URL.
 WebRequest request = WebRequest.Create("http://My.signchart.com/Report/PrintBook.asp?ProjectGuid=6FB9DBB0-");
-// If needed for server, set credentials.
+// Legen Sie bei Bedarf für den Server Anmeldeinformationen fest.
 request.Credentials = CredentialCache.DefaultCredentials;
-// Get the response.
+// Holen Sie sich die Antwort.
 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
-// Get the stream containing the content returned by the server.
+// Rufen Sie den Stream ab, der den vom Server zurückgegebenen Inhalt enthält.
 Stream dataStream = response. GetResponseStream();
-// Open the stream using a StreamReader for easy access.
+// Öffnen Sie den Stream mit einem StreamReader, um den Zugriff zu erleichtern.
 StreamReader reader = new StreamReader(dataStream);
-// Read the content.
+// Lesen Sie den Inhalt.
 string responseFromServer = reader.ReadToEnd();
 reader. Close();
 dataStream.Close();
 response. Close();
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where you want to save the resulting PDF file.
+ Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem Sie die resultierende PDF-Datei speichern möchten.
 
-## Step 2: Convert HTML to PDF by providing credentials
-Now we will load the retrieved HTML content and convert it to PDF format while providing the appropriate credentials. Use the following code:
+## Schritt 2: Konvertieren Sie HTML in PDF, indem Sie Anmeldeinformationen angeben
+Jetzt laden wir den abgerufenen HTML-Inhalt und konvertieren ihn unter Angabe der entsprechenden Anmeldeinformationen in das PDF-Format. Verwenden Sie den folgenden Code:
 
 ```csharp
 MemoryStream stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(responseFromServer));
@@ -52,41 +52,41 @@ MemoryStream stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(respon
 HtmlLoadOptions options = new HtmlLoadOptions("http://My.signchart.com/");
 options.ExternalResourcesCredentials = CredentialCache.DefaultCredentials;
 
-// Load the HTML file
+// Laden Sie die HTML-Datei
 Document pdfDocument = new Document(stream, options);
 ```
 
-## Step 3: Saving the resulting PDF file
-Finally, we will save the resulting PDF file. Use the following code:
+## Schritt 3: Speichern der resultierenden PDF-Datei
+Abschließend speichern wir die resultierende PDF-Datei. Verwenden Sie den folgenden Code:
 
 ```csharp
-// Save the resulting PDF file
+// Speichern Sie die resultierende PDF-Datei
 pdfDocument.Save(dataDir + "ProvideCredentialsDuringHTMLToPDF_out.pdf");
 ```
 
-The code above saves the resulting PDF file with the filename `"ProvideCredentialsDuringHTMLToPDF_out.pdf"`.
+ Der obige Code speichert die resultierende PDF-Datei unter dem Dateinamen`"ProvideCredentialsDuringHTMLToPDF_out.pdf"`.
 
-### Example source code for Provide Credentials During HTML to PDF using Aspose.PDF for .NET
+### Beispielquellcode für die Bereitstellung von Anmeldeinformationen bei der Umwandlung von HTML in PDF mit Aspose.PDF für .NET
 
 ```csharp
 try
 {
 	
-	// The path to the documents directory.
+	// Der Pfad zum Dokumentenverzeichnis.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Create a request for the URL.
+	// Erstellen Sie eine Anfrage für die URL.
 	WebRequest request = WebRequest.Create("http:// My.signchart.com/Report/PrintBook.asp?ProjectGuid=6FB9DBB0-");
-	// If required by the server, set the credentials.
+	// Wenn der Server dies erfordert, legen Sie die Anmeldeinformationen fest.
 	request.Credentials = CredentialCache.DefaultCredentials;
-	// Get the response.
+	// Holen Sie sich die Antwort.
 	HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
-	// Get the stream containing content returned by the server.
+	// Rufen Sie den Stream ab, der den vom Server zurückgegebenen Inhalt enthält.
 	Stream dataStream = response.GetResponseStream();
-	// Open the stream using a StreamReader for easy access.
+	// Öffnen Sie den Stream mit einem StreamReader, um den Zugriff zu erleichtern.
 	StreamReader reader = new StreamReader(dataStream);
-	// Read the content.
+	// Lesen Sie den Inhalt.
 	string responseFromServer = reader.ReadToEnd();
 	reader.Close();
 	dataStream.Close();
@@ -97,9 +97,9 @@ try
 	HtmlLoadOptions options = new HtmlLoadOptions("http:// My.signchart.com/");
 	options.ExternalResourcesCredentials = CredentialCache.DefaultCredentials;
 
-	// Load HTML file
+	// HTML-Datei laden
 	Document pdfDocument = new Document(stream, options);
-	// Save resultant file
+	// Speichern Sie die resultierende Datei
 	pdfDocument.Save("ProvideCredentialsDuringHTMLToPDF_out.pdf");
 	
 }
@@ -109,31 +109,31 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of converting an HTML file to PDF while providing credentials when accessing a secure URL using Aspose.PDF for .NET. By following the instructions outlined above, you will be able to successfully convert HTML content to PDF while providing the correct credentials.
+## Abschluss
+In diesem Tutorial haben wir den Schritt-für-Schritt-Prozess der Konvertierung einer HTML-Datei in PDF behandelt und dabei Anmeldeinformationen bereitgestellt, wenn mit Aspose.PDF für .NET auf eine sichere URL zugegriffen wird. Wenn Sie die oben beschriebenen Anweisungen befolgen, können Sie HTML-Inhalte erfolgreich in PDF konvertieren und dabei die richtigen Anmeldeinformationen angeben.
 
-### FAQ's
+### FAQs
 
-#### Q: What is Aspose.PDF for .NET?
+#### F: Was ist Aspose.PDF für .NET?
 
-A: Aspose.PDF for .NET is a robust library that empowers developers to work with PDF documents in C# applications. It offers a wide range of functionalities, including HTML to PDF conversion.
+A: Aspose.PDF für .NET ist eine robuste Bibliothek, die Entwicklern die Arbeit mit PDF-Dokumenten in C#-Anwendungen ermöglicht. Es bietet eine breite Palette an Funktionen, einschließlich der Konvertierung von HTML in PDF.
 
-#### Q: How can I fetch secure HTML content from a URL?
+#### F: Wie kann ich sichere HTML-Inhalte von einer URL abrufen?
 
-A: To fetch secure HTML content from a URL, you can use the `WebRequest` class in C#. Make sure to set the appropriate credentials using the `Credentials` property.
+ A: Um sichere HTML-Inhalte von einer URL abzurufen, können Sie die verwenden`WebRequest` Klasse in C#. Stellen Sie sicher, dass Sie die entsprechenden Anmeldeinformationen mithilfe von festlegen`Credentials` Eigentum.
 
-#### Q: What are the prerequisites for this tutorial?
+#### F: Was sind die Voraussetzungen für dieses Tutorial?
 
-A: Before proceeding with the tutorial, ensure that you have the following prerequisites:
+A: Bevor Sie mit dem Tutorial fortfahren, stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllen:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Grundkenntnisse der Programmiersprache C#.
+- Aspose.PDF-Bibliothek für .NET auf Ihrem System installiert.
+- Eine Entwicklungsumgebung wie Visual Studio.
 
-#### Q: How does Aspose.PDF for .NET handle external resources while converting HTML to PDF?
+#### F: Wie geht Aspose.PDF für .NET mit externen Ressourcen um, während es HTML in PDF konvertiert?
 
-A: Aspose.PDF for .NET provides the `HtmlLoadOptions` class to handle external resources during HTML to PDF conversion. You can set the external resource credentials using the `ExternalResourcesCredentials` property.
+ A: Aspose.PDF für .NET bietet das`HtmlLoadOptions`Klasse zur Handhabung externer Ressourcen während der HTML-zu-PDF-Konvertierung. Sie können die Anmeldeinformationen für externe Ressourcen mithilfe von festlegen`ExternalResourcesCredentials` Eigentum.
 
-#### Q: Can I customize the filename for the resulting PDF file?
+#### F: Kann ich den Dateinamen für die resultierende PDF-Datei anpassen?
 
-A: Yes, you can customize the filename for the resulting PDF file by modifying the code that saves the PDF document. Simply change the desired filename in the `pdfDocument.Save()` method.
+ A: Ja, Sie können den Dateinamen für die resultierende PDF-Datei anpassen, indem Sie den Code ändern, der das PDF-Dokument speichert. Ändern Sie einfach den gewünschten Dateinamen im`pdfDocument.Save()` Methode.

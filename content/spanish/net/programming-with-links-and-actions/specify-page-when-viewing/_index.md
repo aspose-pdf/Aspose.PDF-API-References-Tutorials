@@ -1,145 +1,145 @@
 ---
-title: Specify Page When Viewing
-linktitle: Specify Page When Viewing
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to specify a page when viewing a PDF using Aspose.PDF for .NET.
+title: Especificar página al visualizar
+linktitle: Especificar página al visualizar
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a especificar una página al visualizar un PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 110
 url: /es/net/programming-with-links-and-actions/specify-page-when-viewing/
 ---
-Learn how to specify a page when viewing a PDF file using Aspose.PDF for .NET with this step-by-step guide.
+Aprenda cómo especificar una página al visualizar un archivo PDF usando Aspose.PDF para .NET con esta guía paso a paso.
 
-## Step 1: Setting up the environment
+## Paso 1: configurar el entorno
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+Asegúrese de haber configurado su entorno de desarrollo con un proyecto C# y las referencias Aspose.PDF adecuadas.
 
-## Step 2: Loading the PDF file
+## Paso 2: cargar el archivo PDF
 
-Set the directory path of your documents and upload the PDF file using the following code:
+Establezca la ruta del directorio de sus documentos y cargue el archivo PDF usando el siguiente código:
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// Cargue el archivo PDF
 Document doc = new Document(dataDir + "SpecifyPageWhenViewing.pdf");
 ```
 
-## Step 3: Specifying the target page
+## Paso 3: especificar la página de destino
 
-Get the target page instance using the following code:
+Obtenga la instancia de la página de destino utilizando el siguiente código:
 
 ```csharp
 Page page2 = doc.Pages[2];
 ```
 
-You can adjust the index `[2]` to select the desired page.
+ Puedes ajustar el índice.`[2]` para seleccionar la página deseada.
 
-## Step 4: Configuring the zoom setting
+## Paso 4: Configurar la configuración del zoom
 
-Create a variable to set the target page zoom factor:
+Cree una variable para establecer el factor de zoom de la página de destino:
 
 ```csharp
 double zoom = 1;
 ```
 
-You can adjust the zoom value according to your needs.
+Puede ajustar el valor del zoom según sus necesidades.
 
-## Step 5: Create the navigation action
+## Paso 5: crear la acción de navegación
 
-Create an instance of the navigation action using the specified target page:
+Cree una instancia de la acción de navegación utilizando la página de destino especificada:
 
 ```csharp
 GoToAction action = new GoToAction(doc.Pages[2]);
 ```
 
-## Step 6: Setting the destination
+## Paso 6: Configurar el destino
 
-Set the destination to go to the target page using coordinates and zoom:
+Establezca el destino para ir a la página de destino usando coordenadas y zoom:
 
 ```csharp
 action.Destination = new XYZExplicitDestination(page2, 0, page2.Rect.Height, zoom);
 ```
 
-## Step 7: Configuring the Document Open Action
+## Paso 7: Configurar la acción de apertura de documento
 
-Set the document open action with the created navigation action:
+Configure la acción de apertura del documento con la acción de navegación creada:
 
 ```csharp
 doc. OpenAction = action;
 ```
 
-## Step 8: Save the updated document
+## Paso 8: guarde el documento actualizado
 
-Save the updated document using the `Save` method:
+ Guarde el documento actualizado usando el`Save` método:
 
 ```csharp
 doc.Save(dataDir + "goto2page_out.pdf");
 ```
 
-### Sample source code for Specify Page When Viewing using Aspose.PDF for .NET 
+### Código fuente de muestra para Especificar página al visualizar usando Aspose.PDF para .NET 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load the PDF file
+// Cargue el archivo PDF
 Document doc = new Document(dataDir + "SpecifyPageWhenViewing.pdf");
-// Get the instance of second page of document
+// Obtener la instancia de la segunda página del documento.
 Page page2 = doc.Pages[2];
-// Create the variable to set the zoom factor of target page
+// Cree la variable para establecer el factor de zoom de la página de destino
 double zoom = 1;
-// Create GoToAction instance
+// Crear instancia de GoToAction
 GoToAction action = new GoToAction(doc.Pages[2]);
-// Go to 2 page
+// Ir a la página 2
 action.Destination = new XYZExplicitDestination(page2, 0, page2.Rect.Height, zoom);
-// Set the document open action
+// Establecer la acción de apertura del documento
 doc.OpenAction = action;
-// Save updated document
+// Guardar documento actualizado
 doc.Save(dataDir + "goto2page_out.pdf");
 ```
 
-## Conclusion
+## Conclusión
 
-Congratulation ! You now know how to specify a page when viewing a PDF using Aspose.PDF for .NET. Use this knowledge to customize the user viewing experience in your PDF documents.
+¡Enhorabuena! Ahora sabe cómo especificar una página al visualizar un PDF usando Aspose.PDF para .NET. Utilice este conocimiento para personalizar la experiencia de visualización del usuario en sus documentos PDF.
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+Ahora que ha completado esta guía, puede aplicar estos conceptos a sus propios proyectos y explorar más a fondo las funciones que ofrece Aspose.PDF para .NET.
 
-### FAQ's 
+### Preguntas frecuentes 
 
-#### Q: What is the purpose of specifying a target page when viewing a PDF file?
+#### P: ¿Cuál es el propósito de especificar una página de destino al visualizar un archivo PDF?
 
-A: Specifying a target page allows you to control which page of a PDF document is displayed when the file is opened. This can enhance the user experience by directing them to a specific page of interest.
+R: Especificar una página de destino le permite controlar qué página de un documento PDF se muestra cuando se abre el archivo. Esto puede mejorar la experiencia del usuario dirigiéndolo a una página de interés específica.
 
-#### Q: How can specifying a target page be useful in PDF documents?
+#### P: ¿Cómo puede resultar útil especificar una página de destino en documentos PDF?
 
-A: Specifying a target page is beneficial when you want to guide users to a particular section or content within a PDF document without requiring them to manually navigate through the pages.
+R: Especificar una página de destino es beneficioso cuando desea guiar a los usuarios a una sección o contenido particular dentro de un documento PDF sin necesidad de navegar manualmente por las páginas.
 
-#### Q: How does Aspose.PDF for .NET facilitate specifying a target page for viewing?
+#### P: ¿Cómo facilita Aspose.PDF para .NET la especificación de una página de destino para su visualización?
 
-A: Aspose.PDF for .NET provides APIs that allow you to set the initial view of a PDF document, including the target page, zoom level, and other display properties.
+R: Aspose.PDF para .NET proporciona API que le permiten configurar la vista inicial de un documento PDF, incluida la página de destino, el nivel de zoom y otras propiedades de visualización.
 
-#### Q: Can I specify any page to be the target page?
+#### P: ¿Puedo especificar cualquier página como página de destino?
 
-A: Yes, you can specify any page within the PDF document as the target page for viewing. Simply use the appropriate index to select the desired page.
+R: Sí, puede especificar cualquier página dentro del documento PDF como página de destino para su visualización. Simplemente utilice el índice apropiado para seleccionar la página deseada.
 
-#### Q: What is the significance of the zoom factor when specifying a target page?
+#### P: ¿Cuál es la importancia del factor de zoom al especificar una página de destino?
 
-A: The zoom factor determines the level of magnification applied to the target page when the PDF document is opened. It controls how much content is displayed within the viewport.
+R: El factor de zoom determina el nivel de ampliación aplicado a la página de destino cuando se abre el documento PDF. Controla la cantidad de contenido que se muestra dentro de la ventana gráfica.
 
-#### Q: Can I set different zoom factors for different target pages?
+#### P: ¿Puedo establecer diferentes factores de zoom para diferentes páginas de destino?
 
-A: Yes, you can set different zoom factors for different target pages by creating separate `GoToAction` instances and configuring their destinations accordingly.
+R: Sí, puede establecer diferentes factores de zoom para diferentes páginas de destino creando`GoToAction` instancias y configurar sus destinos en consecuencia.
 
-#### Q: Are there any limitations to specifying a target page?
+#### P: ¿Existe alguna limitación para especificar una página de destino?
 
-A: Specifying a target page is limited to controlling the initial view when the PDF is opened. It does not affect user interactions or navigation once the PDF is displayed.
+R: La especificación de una página de destino se limita a controlar la vista inicial cuando se abre el PDF. No afecta las interacciones del usuario ni la navegación una vez que se muestra el PDF.
 
-#### Q: Can I use this feature to create presentations within a PDF document?
+#### P: ¿Puedo utilizar esta función para crear presentaciones dentro de un documento PDF?
 
-A: Yes, you can use this feature to create presentation-like experiences within a PDF document, guiding users through different sections or topics.
+R: Sí, puede utilizar esta función para crear experiencias similares a presentaciones dentro de un documento PDF, guiando a los usuarios a través de diferentes secciones o temas.
 
-#### Q: Can I customize other aspects of the initial view, such as page layout?
+#### P: ¿Puedo personalizar otros aspectos de la vista inicial, como el diseño de la página?
 
-A: Yes, Aspose.PDF for .NET provides properties to customize other aspects of the initial view, including page layout, page mode, and more.
+R: Sí, Aspose.PDF para .NET proporciona propiedades para personalizar otros aspectos de la vista inicial, incluido el diseño de página, el modo de página y más.
 
-#### Q: How can I test if the specified target page and zoom factor are working as intended?
+#### P: ¿Cómo puedo comprobar si la página de destino especificada y el factor de zoom funcionan según lo previsto?
 
-A: After applying the provided code to specify the target page and zoom factor, open the modified PDF file and verify that it opens with the correct page and zoom level.
+R: Después de aplicar el código proporcionado para especificar la página de destino y el factor de zoom, abra el archivo PDF modificado y verifique que se abra con la página y el nivel de zoom correctos.

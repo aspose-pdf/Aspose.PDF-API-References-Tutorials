@@ -1,52 +1,52 @@
 ---
-title: Create Table Element
-linktitle: Create Table Element
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to create an array element with Aspose.PDF for .NET. Generate dynamic PDFs with tables easily.
+title: Tablo Öğesi Oluştur
+linktitle: Tablo Öğesi Oluştur
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile dizi öğesi oluşturmak için adım adım kılavuz. Tablolarla kolayca dinamik PDF'ler oluşturun.
 type: docs
 weight: 80
 url: /tr/net/programming-with-tagged-pdf/create-table-element/
 ---
-In this step-by-step guide, we'll walk you through the process of creating an array element using Aspose.PDF for .NET. Aspose.PDF is a powerful library that lets you manipulate PDF documents programmatically. Creating an array element is a common requirement when generating dynamic PDFs, and Aspose.PDF offers an easy and efficient way to accomplish this.
+Bu adım adım kılavuzda, Aspose.PDF for .NET'i kullanarak bir dizi öğesi oluşturma sürecinde size yol göstereceğiz. Aspose.PDF, PDF belgelerini programlı olarak değiştirmenizi sağlayan güçlü bir kütüphanedir. Dinamik PDF'ler oluştururken bir dizi öğesi oluşturmak yaygın bir gereksinimdir ve Aspose.PDF bunu başarmanın kolay ve etkili bir yolunu sunar.
 
-Let's dive into the code and learn how to create an array element using Aspose.PDF for .NET.
+Hadi kodun derinliklerine inelim ve Aspose.PDF for .NET kullanarak bir dizi öğesinin nasıl oluşturulacağını öğrenelim.
 
-## Prerequisites
+## Önkoşullar
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-1. Aspose.PDF library for .NET installed.
-2. A basic knowledge of the C# programming language.
+1. .NET için Aspose.PDF kütüphanesi kuruldu.
+2. C# programlama dili hakkında temel bilgi.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-To get started, open your C# development environment and create a new project. Make sure you have added a reference to the Aspose.PDF library for .NET in your project.
+Başlamak için C# geliştirme ortamınızı açın ve yeni bir proje oluşturun. Projenize .NET için Aspose.PDF kütüphanesine bir referans eklediğinizden emin olun.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating the document
+## Adım 2: Belgeyi oluşturma
 
-The first step is to create a new PDF document using the `Document` class.
+ İlk adım, kullanarak yeni bir PDF belgesi oluşturmaktır.`Document` sınıf.
 
 ```csharp
-// Create the document
+// Belgeyi oluştur
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example Array");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-Here we also set the title and language for the tagged content.
+Burada etiketlenen içeriğin başlığını ve dilini de ayarlıyoruz.
 
-## Step 3: Creating the array element
+## 3. Adım: Dizi öğesini oluşturma
 
-Next, we need to create the array element and add it to the document. We start by getting the root structure element, then we create a new table element using the `CreateTableElement` method.
+Daha sonra dizi elemanını oluşturup belgeye eklememiz gerekiyor. Kök yapı elemanını alarak başlıyoruz, ardından aşağıdaki komutu kullanarak yeni bir tablo elemanı oluşturuyoruz.`CreateTableElement` yöntem.
 
 ```csharp
-// Get the root structure element
+// Kök yapı öğesini alın
 StructureElement rootElement = taggedContent.RootElement;
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
@@ -129,27 +129,27 @@ StructureAttribute summaryAttribute = new StructureAttribute(AttributeKey.Summar
 summaryAttribute.SetStringValue("The summary text for the table");
 tableAttributes.SetAttribute(summaryAttribute);
 
-// Save the tagged PDF document
+// Etiketli PDF belgesini kaydedin
 document.Save(dataDir + "CreateTableElement.pdf");
 
-// PDF/UA compliance check
+// PDF/UA uyumluluk kontrolü
 document = new Document(dataDir + "CreateTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "table.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-### Sample source code for Create Table Element using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Tablo Öğesi Oluşturma için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create document
+// Doküman oluştur
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table");
 taggedContent.SetLanguage("en-US");
 
-// Get root structure element
+// Kök yapı öğesini alın
 StructureElement rootElement = taggedContent.RootElement;
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
@@ -230,58 +230,58 @@ StructureAttribute summaryAttribute = new StructureAttribute(AttributeKey.Summar
 summaryAttribute.SetStringValue("The summary text for table");
 tableAttributes.SetAttribute(summaryAttribute);
 
-// Save Tagged Pdf Document
+// Etiketli Pdf Belgesini Kaydet
 document.Save(dataDir + "CreateTableElement.pdf");
 
-// Checking PDF/UA compliance
+// PDF/UA uyumluluğunu kontrol etme
 document = new Document(dataDir + "CreateTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "table.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## Çözüm
 
-You have learned how to create an array element using Aspose.PDF for .NET. You can now generate PDF documents with dynamic tables using this method. Feel free to explore more features of Aspose.PDF to discover its full potential.
+Aspose.PDF for .NET'i kullanarak bir dizi öğesinin nasıl oluşturulacağını öğrendiniz. Artık bu yöntemi kullanarak dinamik tablolara sahip PDF belgeleri oluşturabilirsiniz. Aspose.PDF'in tüm potansiyelini keşfetmek için daha fazla özelliğini keşfetmekten çekinmeyin.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is an array element in a PDF document, and why would I need to create one using Aspose.PDF for .NET?
+#### S: PDF belgesindeki dizi öğesi nedir ve neden Aspose.PDF for .NET kullanarak bir dizi öğesi oluşturmam gerekiyor?
 
-A: An array element in a PDF document represents a structured collection of data, often used for creating tables or grids. You might need to create an array element using Aspose.PDF for .NET when generating dynamic PDFs that require structured data presentation, such as tabular information or grids.
+C: Bir PDF belgesindeki dizi öğesi, genellikle tablolar veya ızgaralar oluşturmak için kullanılan, yapılandırılmış bir veri koleksiyonunu temsil eder. Tablo bilgileri veya ızgaralar gibi yapılandırılmış veri sunumu gerektiren dinamik PDF'ler oluştururken Aspose.PDF for .NET'i kullanarak bir dizi öğesi oluşturmanız gerekebilir.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of creating an array element?
+#### S: Aspose.PDF for .NET bir dizi öğesi oluşturma sürecini nasıl basitleştirir?
 
-A: Aspose.PDF for .NET provides a comprehensive set of classes and methods that allow you to create, customize, and manage array elements (tables) in a PDF document programmatically. This eliminates the need for manual PDF manipulation and streamlines the creation of structured data representations.
+C: Aspose.PDF for .NET, bir PDF belgesindeki dizi öğelerini (tabloları) programlı olarak oluşturmanıza, özelleştirmenize ve yönetmenize olanak tanıyan kapsamlı bir sınıf ve yöntemler seti sağlar. Bu, manuel PDF manipülasyonu ihtiyacını ortadan kaldırır ve yapılandırılmış veri temsillerinin oluşturulmasını kolaylaştırır.
 
-#### Q: What are the key steps involved in creating an array element using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir dizi öğesi oluşturmanın temel adımları nelerdir?
 
-A: The key steps include setting up the environment, creating the document, obtaining the root structure element, creating a table element, defining rows and cells within the table, and specifying formatting and properties for the elements. The provided code example demonstrates these steps.
+C: Temel adımlar arasında ortamın kurulması, belgenin oluşturulması, kök yapı öğesinin elde edilmesi, bir tablo öğesi oluşturulması, tablo içindeki satırların ve hücrelerin tanımlanması ve öğeler için biçimlendirmenin ve özelliklerin belirtilmesi yer alır. Sağlanan kod örneği bu adımları göstermektedir.
 
-#### Q: What role does the `taggedContent` object play in creating an array element?
+####  S: Hangi rol`taggedContent` object play in creating an array element?
 
-A: The `taggedContent` object, obtained from the document's `TaggedContent` property, allows you to define the structure of the tagged content within the PDF document. This includes creating and organizing array elements and their child elements in a hierarchical manner.
+ C:`taggedContent` belgeden elde edilen nesne`TaggedContent`özelliği, PDF belgesindeki etiketli içeriğin yapısını tanımlamanıza olanak tanır. Bu, dizi öğelerini ve bunların alt öğelerini hiyerarşik bir şekilde oluşturmayı ve düzenlemeyi içerir.
 
-#### Q: How does the code ensure accessibility and semantics of the created array element?
+#### S: Kod, oluşturulan dizi öğesinin erişilebilirliğini ve anlambilimini nasıl sağlıyor?
 
-A: The code sets attributes such as `AlternativeText`, `BackgroundColor`, `Border`, `Margin`, `Alignment`, and `ColSpan` to enhance the accessibility and semantics of the array element. These attributes contribute to a well-structured, informative, and visually appealing representation of data.
+ C: Kod, aşağıdaki gibi nitelikleri ayarlar:`AlternativeText`, `BackgroundColor`, `Border`, `Margin`, `Alignment` , Ve`ColSpan` dizi öğesinin erişilebilirliğini ve anlambilimini geliştirmek için. Bu nitelikler, verilerin iyi yapılandırılmış, bilgilendirici ve görsel olarak çekici bir temsiline katkıda bulunur.
 
-#### Q: What is the significance of PDF/UA compliance in the context of creating array elements?
+#### S: Dizi öğeleri oluşturma bağlamında PDF/UA uyumluluğunun önemi nedir?
 
-A: PDF/UA (Universal Accessibility) compliance ensures that the generated PDF documents are accessible to users with disabilities and meet certain accessibility standards. The code example checks PDF/UA compliance using the `Validate` method, helping you create documents that are inclusive and accessible.
+ C: PDF/UA (Evrensel Erişilebilirlik) uyumluluğu, oluşturulan PDF belgelerinin engelli kullanıcılar tarafından erişilebilir olmasını ve belirli erişilebilirlik standartlarını karşılamasını sağlar. Kod örneği, PDF/UA uyumluluğunu aşağıdaki komutu kullanarak kontrol eder:`Validate` kapsayıcı ve erişilebilir belgeler oluşturmanıza yardımcı olan yöntem.
 
-#### Q: Can I customize the formatting and appearance of the array elements further?
+#### S: Dizi öğelerinin biçimlendirmesini ve görünümünü daha da özelleştirebilir miyim?
 
-A: Yes, you can customize the formatting and appearance of the array elements by adjusting attributes such as background color, border style, font size, and alignment. Aspose.PDF for .NET provides a wide range of properties to tailor the visual presentation to your requirements.
+C: Evet, arka plan rengi, kenarlık stili, yazı tipi boyutu ve hizalama gibi nitelikleri ayarlayarak dizi öğelerinin biçimlendirmesini ve görünümünü özelleştirebilirsiniz. Aspose.PDF for .NET, görsel sunumu ihtiyaçlarınıza göre uyarlamak için geniş bir özellik yelpazesi sunar.
 
-#### Q: How can I extend this knowledge to create more complex table structures or incorporate array elements into larger PDF documents?
+#### S: Bu bilgiyi daha karmaşık tablo yapıları oluşturacak veya dizi öğelerini daha büyük PDF belgelerine dahil edecek şekilde nasıl genişletebilirim?
 
-A: You can extend this knowledge by exploring additional features of Aspose.PDF for .NET, such as merging multiple array elements, creating nested tables, adding headers and footers, and integrating array elements into larger PDF layouts. The library's documentation and examples provide guidance for these advanced scenarios.
+C: Aspose.PDF for .NET'in birden fazla dizi öğesini birleştirmek, iç içe geçmiş tablolar oluşturmak, üstbilgi ve altbilgiler eklemek ve dizi öğelerini daha büyük PDF düzenlerine entegre etmek gibi ek özelliklerini keşfederek bu bilgiyi genişletebilirsiniz. Kitaplığın belgeleri ve örnekleri bu gelişmiş senaryolar için rehberlik sağlar.
 
-#### Q: Is it possible to import data from external sources, such as databases or spreadsheets, to populate the array elements?
+#### S: Dizi öğelerini doldurmak için veritabanları veya elektronik tablolar gibi harici kaynaklardan veri almak mümkün müdür?
 
-A: Yes, you can import data from external sources to populate array elements. You can use data retrieval and transformation techniques in C# to fetch data from databases, spreadsheets, or other sources and then populate the array elements accordingly.
+C: Evet, dizi öğelerini doldurmak için harici kaynaklardan verileri içe aktarabilirsiniz. Veritabanlarından, elektronik tablolardan veya diğer kaynaklardan veri almak ve ardından dizi öğelerini buna göre doldurmak için C#'taki veri alma ve dönüştürme tekniklerini kullanabilirsiniz.
 
-#### Q: How can I use the knowledge gained from this tutorial to enhance the quality and usability of PDF documents I create programmatically?
+#### S: Programlı olarak oluşturduğum PDF belgelerinin kalitesini ve kullanılabilirliğini geliştirmek için bu eğitimden edindiğim bilgileri nasıl kullanabilirim?
 
-A: The knowledge gained from this tutorial allows you to create structured and visually appealing array elements (tables) in PDF documents. By incorporating these techniques, you can improve the readability, accessibility, and user experience of dynamically generated PDFs, making them more informative and user-friendly.
+C: Bu eğitimden edinilen bilgiler, PDF belgelerinde yapılandırılmış ve görsel olarak çekici dizi öğeleri (tablolar) oluşturmanıza olanak tanır. Bu teknikleri birleştirerek, dinamik olarak oluşturulan PDF'lerin okunabilirliğini, erişilebilirliğini ve kullanıcı deneyimini iyileştirerek onları daha bilgilendirici ve kullanıcı dostu hale getirebilirsiniz.

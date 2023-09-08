@@ -1,41 +1,41 @@
 ---
-title: Set Callout Property In PDF File
-linktitle: Set Callout Property In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set Callout Property in PDF File using Aspose.PDF for .NET. Customize annotations with callout lines, text color, and ending styles.
+title: Définir la propriété de légende dans un fichier PDF
+linktitle: Définir la propriété de légende dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment définir la propriété de légende dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Personnalisez les annotations avec des lignes de légende, la couleur du texte et des styles de fin.
 type: docs
 weight: 130
 url: /fr/net/annotations/setcalloutproperty/
 ---
-Aspose.PDF for .NET is a powerful library for creating, manipulating, and converting PDF documents in C#. One of the features provided by this library is the ability to set callout properties for free text annotations in PDF documents. This can be done using the `FreeTextAnnotation` class, which allows you to create annotations with callouts.
+ Aspose.PDF pour .NET est une bibliothèque puissante permettant de créer, manipuler et convertir des documents PDF en C#. L'une des fonctionnalités fournies par cette bibliothèque est la possibilité de définir des propriétés de légende pour les annotations de texte libre dans les documents PDF. Cela peut être fait en utilisant le`FreeTextAnnotation` classe, qui vous permet de créer des annotations avec des légendes.
 
-In this tutorial, we will guide you through the process of setting callout properties for a free text annotation using Aspose.PDF for .NET in C#. Follow the steps below to get started.
+Dans ce didacticiel, nous vous guiderons tout au long du processus de définition des propriétés de légende pour une annotation de texte libre à l'aide d'Aspose.PDF pour .NET en C#. Suivez les étapes ci-dessous pour commencer.
 
-## Install Aspose.PDF for .NET
+## Installer Aspose.PDF pour .NET
 
-If you haven't already done so, you will need to [download](https://releases.aspose.com/pdf/net/) and install Aspose.PDF for .NET from the Aspose Releases or via NuGet package manager.
+ Si vous ne l'avez pas déjà fait, vous devrez[télécharger](https://releases.aspose.com/pdf/net/) et installez Aspose.PDF pour .NET à partir des versions Aspose ou via le gestionnaire de packages NuGet.
 
-## Step 1: Create a new PDF document
+## Étape 1 : Créer un nouveau document PDF
 
-Create a new PDF document using the `Document` class provided by Aspose.PDF for .NET.
+ Créez un nouveau document PDF à l'aide du`Document`classe fournie par Aspose.PDF pour .NET.
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 ```
 
-## Step 2: Add a new page to the document
+## Étape 2 : Ajouter une nouvelle page au document
 
-Add a new page to the document using the `Pages` collection of the `Document` class.
+ Ajoutez une nouvelle page au document à l'aide du`Pages` collecte des`Document` classe.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Set default appearance
+## Étape 3 : Définir l'apparence par défaut
 
-Set the default appearance for the free text annotation by creating a new `DefaultAppearance` object and setting its properties such as `TextColor` and `FontSize`.
+ Définissez l'apparence par défaut de l'annotation de texte libre en créant un nouveau`DefaultAppearance` objet et définir ses propriétés telles que`TextColor` et`FontSize`.
 
 ```csharp
 DefaultAppearance da = new DefaultAppearance();
@@ -43,9 +43,9 @@ da.TextColor = System.Drawing.Color.Red;
 da.FontSize = 10;
 ```
 
-## Step 4: Create a free text annotation with callout
+## Étape 4 : Créez une annotation de texte libre avec légende
 
-Create a new free text annotation with callout by using the `FreeTextAnnotation` class. Set the `Intent` property to `FreeTextIntent.FreeTextCallout` to specify that this is a callout annotation. Set the `EndingStyle` property to `LineEnding.OpenArrow` to specify the style of the arrow at the end of the callout. Set the `Callout` property to an array of `Point` objects that represent the points on the page where the callout line should be drawn.
+ Créez une nouvelle annotation de texte libre avec légende à l'aide de l'outil`FreeTextAnnotation` classe. Met le`Intent` propriété à`FreeTextIntent.FreeTextCallout` pour spécifier qu'il s'agit d'une annotation de légende. Met le`EndingStyle` propriété à`LineEnding.OpenArrow` pour spécifier le style de la flèche à la fin de la légende. Met le`Callout` propriété à un tableau de`Point` objets qui représentent les points de la page où la ligne de légende doit être tracée.
 
 ```csharp
 FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
@@ -57,34 +57,34 @@ fta.Callout = new Point[]
 };
 ```
 
-## Step 5: Add the free text annotation to the page
+## Étape 5 : Ajouter l'annotation de texte libre à la page
 
-Add the free text annotation to the page by using the `Annotations` collection of the `Page` class.
+ Ajoutez l'annotation de texte libre à la page en utilisant le`Annotations` collecte des`Page` classe.
 
 ```csharp
 page.Annotations.Add(fta);
 ```
 
-## Step 6: Add text to the annotation
+## Étape 6 : ajouter du texte à l'annotation
 
-Add text to the annotation by setting the `RichText` property to a string of formatted XML. In this tutorial, we're setting the text color to red and the font size to 9.
+ Ajoutez du texte à l'annotation en définissant le`RichText`propriété en une chaîne de XML formaté. Dans ce didacticiel, nous définissons la couleur du texte sur rouge et la taille de la police sur 9.
 
 ```csharp
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\"  style=\"color:#FF
+fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"couleur:#FF
 ```
 
-## Step 7: save the document
+## Étape 7 : enregistrez le document
 
-Now save the document by using the following code:
+Enregistrez maintenant le document en utilisant le code suivant :
 
 ```csharp
 doc.Save(dataDir + "SetCalloutProperty.pdf")
 ```
 
-### Example source code for Set Callout Property using Aspose.PDF for .NET
+### Exemple de code source pour définir la propriété de légende à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document();
@@ -100,28 +100,28 @@ fta.Callout = new Point[]
 	new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
 };
 page.Annotations.Add(fta);
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\"  style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"><span style=\"font-size:9.0pt;font-family:Helvetica\">This is a sample</span></p></body>";
+fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"> <span style=\"font-size:9.0pt;font-family:Helvetica\">Ceci est un exemple</span></p></body>";
 doc.Save(dataDir + "SetCalloutProperty.pdf");
 ```
 
 ## Conclusion
 
-In this tutorial, we explored how to set callout properties for a free text annotation in a PDF document using Aspose.PDF for .NET. Callout annotations are useful for providing additional information or explanations related to specific areas in a document. Aspose.PDF for .NET provides a wide range of features and capabilities to work with PDF files, including creating and customizing annotations, such as callouts. By following the step-by-step guide and using the provided C# source code, developers can easily implement callout annotations in their PDF documents, enhancing the usability and clarity of their documents. Aspose.PDF for .NET is a versatile and reliable library for PDF operations in .NET applications, offering powerful tools to handle various PDF-related tasks efficiently.
+Dans ce didacticiel, nous avons expliqué comment définir les propriétés de légende pour une annotation de texte libre dans un document PDF à l'aide d'Aspose.PDF pour .NET. Les annotations de légende sont utiles pour fournir des informations supplémentaires ou des explications liées à des zones spécifiques d'un document. Aspose.PDF pour .NET offre un large éventail de fonctionnalités et de capacités pour travailler avec des fichiers PDF, notamment la création et la personnalisation d'annotations, telles que des légendes. En suivant le guide étape par étape et en utilisant le code source C# fourni, les développeurs peuvent facilement implémenter des annotations de légende dans leurs documents PDF, améliorant ainsi la convivialité et la clarté de leurs documents. Aspose.PDF for .NET est une bibliothèque polyvalente et fiable pour les opérations PDF dans les applications .NET, offrant des outils puissants pour gérer efficacement diverses tâches liées aux PDF.
 
-### FAQ's for set callout property in PDF file
+### FAQ pour définir la propriété de légende dans un fichier PDF
 
-#### Q: What is a callout annotation in a PDF document?
+#### Q : Qu'est-ce qu'une annotation de légende dans un document PDF ?
 
-A: A callout annotation in a PDF document is a type of annotation that allows you to create a text box with a leader line pointing to a specific area in the document. It is commonly used to provide additional information or comments related to a particular section or element in the document.
+R : Une annotation de légende dans un document PDF est un type d'annotation qui vous permet de créer une zone de texte avec une ligne de repère pointant vers une zone spécifique du document. Il est couramment utilisé pour fournir des informations supplémentaires ou des commentaires liés à une section ou un élément particulier du document.
 
-#### Q: Can I customize the appearance of the callout annotation using Aspose.PDF for .NET?
+#### Q : Puis-je personnaliser l'apparence de l'annotation de légende à l'aide d'Aspose.PDF pour .NET ?
 
-A: Yes, you can customize various properties of the callout annotation, such as the color, font size, text alignment, line style, arrow style, and more.
+R : Oui, vous pouvez personnaliser diverses propriétés de l'annotation de légende, telles que la couleur, la taille de la police, l'alignement du texte, le style de ligne, le style de flèche, etc.
 
-#### Q: How do I add text to the callout annotation?
+#### Q : Comment ajouter du texte à l'annotation de légende ?
 
-A: To add text to the callout annotation, you can set the `RichText` property of the `FreeTextAnnotation` object. The `RichText` property takes a string of formatted XML that represents the text to be displayed in the callout annotation.
+ R : Pour ajouter du texte à l'annotation de légende, vous pouvez définir le`RichText` propriété du`FreeTextAnnotation` objet. Le`RichText` La propriété prend une chaîne XML formatée qui représente le texte à afficher dans l'annotation de légende.
 
-#### Q: Can I add multiple callout annotations to a PDF document using Aspose.PDF for .NET?
+#### Q : Puis-je ajouter plusieurs annotations de légende à un document PDF à l'aide d'Aspose.PDF pour .NET ?
 
-A: Yes, you can create multiple callout annotations in a PDF document by creating multiple instances of the `FreeTextAnnotation` object and adding them to different pages or locations in the document.
+ R : Oui, vous pouvez créer plusieurs annotations de légende dans un document PDF en créant plusieurs instances du`FreeTextAnnotation`objet et en les ajoutant à différentes pages ou emplacements du document.

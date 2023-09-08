@@ -1,164 +1,164 @@
 ---
-title: Style Text Structure In PDF File
-linktitle: Style Text Structure In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to format text structure in PDF file with Aspose.PDF for .NET. Step-by-step guide to style text.
+title: Stiltextstruktur in PDF-Datei
+linktitle: Stiltextstruktur in PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET die Textstruktur in einer PDF-Datei formatieren. Schritt-für-Schritt-Anleitung zum Formatieren von Texten.
 type: docs
 weight: 190
 url: /de/net/programming-with-tagged-pdf/style-text-structure/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step to format text structure using Aspose.PDF for .NET. Follow the instructions below to understand how to style and format the text in PDF file.
+In diesem ausführlichen Tutorial führen wir Sie Schritt für Schritt durch den bereitgestellten C#-Quellcode, um die Textstruktur mit Aspose.PDF für .NET zu formatieren. Befolgen Sie die nachstehenden Anweisungen, um zu verstehen, wie Sie den Text in einer PDF-Datei formatieren und formatieren.
 
-## Step 1: Setting up the environment
+## Schritt 1: Einrichten der Umgebung
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+Bevor Sie beginnen, stellen Sie sicher, dass Sie Ihre Entwicklungsumgebung für die Verwendung von Aspose.PDF für .NET konfiguriert haben. Dazu gehört die Installation der Aspose.PDF-Bibliothek und die Konfiguration Ihres Projekts, um darauf zu verweisen.
 
-## Step 2: Creating the PDF document
+## Schritt 2: Erstellen des PDF-Dokuments
 
-In this step, we will create a new PDF document object with Aspose.PDF.
+In diesem Schritt erstellen wir mit Aspose.PDF ein neues PDF-Dokumentobjekt.
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create the PDF document
+// Erstellen Sie das PDF-Dokument
 Document document = new Document();
 ```
 
-We have created a new PDF document with Aspose.PDF.
+Wir haben mit Aspose.PDF ein neues PDF-Dokument erstellt.
 
-## Step 3: Get content to work with TaggedPdf
+## Schritt 3: Machen Sie Inhalte mit TaggedPdf nutzbar
 
-In this step, we will get the contents of the PDF document to work with the tagged structure.
+In diesem Schritt sorgen wir dafür, dass der Inhalt des PDF-Dokuments mit der getaggten Struktur funktioniert.
 
 ```csharp
-// Get content to work with TaggedPdf
+// Bringen Sie Inhalte mit TaggedPdf zum Einsatz
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-We got the contents of the PDF document to work with the tagged structure.
+Wir haben den Inhalt des PDF-Dokuments dazu gebracht, mit der getaggten Struktur zu arbeiten.
 
-## Step 4: Set document title and language
+## Schritt 4: Dokumenttitel und Sprache festlegen
 
-Now we will set the title and language of the PDF document.
+Jetzt legen wir den Titel und die Sprache des PDF-Dokuments fest.
 
 ```csharp
-// Define the document title and language
+// Definieren Sie den Titel und die Sprache des Dokuments
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We have defined the title and the language of the PDF document.
+Wir haben den Titel und die Sprache des PDF-Dokuments definiert.
 
-## Step 5: Creating a paragraph element
+## Schritt 5: Erstellen eines Absatzelements
 
-In this step, we'll create a new paragraph element and add it to the tagged structure.
+In diesem Schritt erstellen wir ein neues Absatzelement und fügen es der getaggten Struktur hinzu.
 
 ```csharp
-// Create a paragraph element
+// Erstellen Sie ein Absatzelement
 ParagraphElement p = taggedContent.CreateParagraphElement();
 taggedContent.RootElement.AppendChild(p);
 ```
 
-We created a new paragraph element and added it to the root of the tagged structure.
+Wir haben ein neues Absatzelement erstellt und es dem Stamm der getaggten Struktur hinzugefügt.
 
-## Step 6: Formatting the text
+## Schritt 6: Formatieren des Textes
 
-Now let's style and format the text of the paragraph element.
+Lassen Sie uns nun den Text des Absatzelements formatieren und formatieren.
 
 ```csharp
-// Format the text
+// Formatieren Sie den Text
 p.StructureTextState.FontSize = 18F;
 p.StructureTextState.ForegroundColor = Color.Red;
 p.StructureTextState.FontStyle = FontStyles.Italic;
 p.SetText("Text in italic red.");
 ```
 
-We applied formatting to the text by setting the font size, color, and font style.
+Wir haben die Formatierung auf den Text angewendet, indem wir die Schriftgröße, die Farbe und den Schriftstil festgelegt haben.
 
-## Step 7: Saving the tagged PDF document
+## Schritt 7: Speichern des getaggten PDF-Dokuments
 
-Now that we've styled the text in our PDF document, let's save it as a tagged PDF document.
+Nachdem wir nun den Text in unserem PDF-Dokument formatiert haben, speichern wir ihn als getaggtes PDF-Dokument.
 
 ```csharp
-// Save the tagged PDF document
+// Speichern Sie das getaggte PDF-Dokument
 document.Save(dataDir + "StyleTextStructure.pdf");
 ```
 
-We saved the tagged PDF document in the specified directory.
+Wir haben das getaggte PDF-Dokument im angegebenen Verzeichnis gespeichert.
 
-### Sample source code for Style Text Structure using Aspose.PDF for .NET 
+### Beispielquellcode für Style Text Structure mit Aspose.PDF für .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// Erstellen Sie ein PDF-Dokument
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// Holen Sie sich Inhalte für die Arbeit mit TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+// Legen Sie Titel und Sprache für Documentt fest
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 ParagraphElement p = taggedContent.CreateParagraphElement();
 taggedContent.RootElement.AppendChild(p);
 
-// Under Development
+// In Entwicklung
 p.StructureTextState.FontSize = 18F;
 p.StructureTextState.ForegroundColor = Color.Red;
 p.StructureTextState.FontStyle = FontStyles.Italic;
 p.SetText("Red italic text.");
 
-// Save Tagged Pdf Document
+// Markiertes PDF-Dokument speichern
 document.Save(dataDir + "StyleTextStructure.pdf");
 
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we learned how to style and format the text structure in a PDF document using Aspose.PDF for .NET. You can now use Aspose.PDF to create PDF documents with custom formatting for text.
+In diesem Tutorial haben wir gelernt, wie man die Textstruktur in einem PDF-Dokument mit Aspose.PDF für .NET formatiert und formatiert. Sie können Aspose.PDF jetzt verwenden, um PDF-Dokumente mit benutzerdefinierter Textformatierung zu erstellen.
 
-### FAQ's
+### FAQs
 
-#### Q: What is the main objective of this tutorial on styling text structure in a PDF file using Aspose.PDF for .NET?
+#### F: Was ist das Hauptziel dieses Tutorials zur Gestaltung der Textstruktur in einer PDF-Datei mit Aspose.PDF für .NET?
 
-A: The primary goal of this tutorial is to guide you through the process of formatting and styling text within a PDF document using Aspose.PDF for .NET. It provides step-by-step instructions and C# source code examples to help you understand how to apply styles and formatting to text elements.
+A: Das Hauptziel dieses Tutorials besteht darin, Sie durch den Prozess der Formatierung und Gestaltung von Text in einem PDF-Dokument mit Aspose.PDF für .NET zu führen. Es enthält Schritt-für-Schritt-Anleitungen und C#-Quellcode-Beispiele, die Ihnen helfen, zu verstehen, wie Sie Stile und Formatierungen auf Textelemente anwenden.
 
-#### Q: What are the prerequisites for following this tutorial on text structure styling in PDF using Aspose.PDF for .NET?
+#### F: Was sind die Voraussetzungen, um diesem Tutorial zum Textstrukturstil in PDF mit Aspose.PDF für .NET zu folgen?
 
-A: Before you start, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+A: Bevor Sie beginnen, stellen Sie sicher, dass Sie Ihre Entwicklungsumgebung für die Verwendung von Aspose.PDF für .NET eingerichtet haben. Dazu müssen Sie die Aspose.PDF-Bibliothek installieren und Ihr Projekt so konfigurieren, dass es darauf verweist.
 
-#### Q: How can I create a new PDF document and set its title and language using Aspose.PDF for .NET?
+#### F: Wie kann ich mit Aspose.PDF für .NET ein neues PDF-Dokument erstellen und dessen Titel und Sprache festlegen?
 
-A: The tutorial provides C# source code examples to demonstrate how to create a new PDF document using Aspose.PDF for .NET and how to set its title and language properties.
+A: Das Tutorial stellt C#-Quellcodebeispiele bereit, um zu veranschaulichen, wie man mit Aspose.PDF für .NET ein neues PDF-Dokument erstellt und wie man dessen Titel und Spracheigenschaften festlegt.
 
-#### Q: What is the purpose of the "tagged structure" in the context of PDF documents?
+#### F: Welchen Zweck hat die „getaggte Struktur“ im Zusammenhang mit PDF-Dokumenten?
 
-A: The "tagged structure" refers to the logical organization of content within a PDF document, enabling accessibility and structural information for assistive technologies. It allows for proper text extraction, navigation, and semantic understanding of the document's content.
+A: Die „markierte Struktur“ bezieht sich auf die logische Organisation von Inhalten innerhalb eines PDF-Dokuments und ermöglicht die Zugänglichkeit und strukturelle Informationen für unterstützende Technologien. Es ermöglicht eine ordnungsgemäße Textextraktion, Navigation und ein semantisches Verständnis des Dokumentinhalts.
 
-#### Q: How can I create a paragraph element and add it to the tagged structure of a PDF document?
+#### F: Wie kann ich ein Absatzelement erstellen und es zur getaggten Struktur eines PDF-Dokuments hinzufügen?
 
-A: The tutorial explains how to create a paragraph element using Aspose.PDF for .NET and add it to the tagged structure of the PDF document. This element will serve as a container for the styled text.
+A: Das Tutorial erklärt, wie man mit Aspose.PDF für .NET ein Absatzelement erstellt und es der getaggten Struktur des PDF-Dokuments hinzufügt. Dieses Element dient als Container für den formatierten Text.
 
-#### Q: How do I apply formatting and styling to the text within a paragraph element using Aspose.PDF for .NET?
+#### F: Wie wende ich mit Aspose.PDF für .NET Formatierung und Stil auf den Text innerhalb eines Absatzelements an?
 
-A: The tutorial provides C# source code examples that demonstrate how to format and style the text within a paragraph element. You'll learn how to set properties such as font size, text color, and font style.
+A: Das Tutorial stellt C#-Quellcodebeispiele bereit, die veranschaulichen, wie der Text innerhalb eines Absatzelements formatiert und gestaltet wird. Sie erfahren, wie Sie Eigenschaften wie Schriftgröße, Textfarbe und Schriftstil festlegen.
 
-#### Q: What is the significance of setting the font size, color, and style for text in a PDF document?
+#### F: Welche Bedeutung hat das Festlegen von Schriftgröße, Farbe und Stil für Text in einem PDF-Dokument?
 
-A: Setting font size, color, and style for text enhances the visual appearance of the document, making it more engaging and aesthetically pleasing to readers. Additionally, proper styling helps emphasize important information and improve readability.
+A: Das Festlegen von Schriftgröße, Farbe und Stil für Text verbessert das visuelle Erscheinungsbild des Dokuments und macht es für die Leser ansprechender und ästhetisch ansprechender. Darüber hinaus trägt die richtige Gestaltung dazu bei, wichtige Informationen hervorzuheben und die Lesbarkeit zu verbessern.
 
-#### Q: How can I save the PDF document after styling and formatting the text structure?
+#### F: Wie kann ich das PDF-Dokument speichern, nachdem ich die Textstruktur gestaltet und formatiert habe?
 
-A: Once you have styled and formatted the text structure, you can use the provided C# source code examples to save the tagged PDF document using the `Save()` method.
+ A: Sobald Sie die Textstruktur gestaltet und formatiert haben, können Sie die bereitgestellten C#-Quellcodebeispiele verwenden, um das getaggte PDF-Dokument mit zu speichern`Save()` Methode.
 
-#### Q: What is the purpose of the sample source code provided in the tutorial?
+#### F: Wozu dient der im Tutorial bereitgestellte Beispielquellcode?
 
-A: The sample source code serves as a practical reference for implementing text styling and formatting using Aspose.PDF for .NET. You can use this code as a starting point and modify it to suit your specific requirements.
+A: Der Beispielquellcode dient als praktische Referenz für die Implementierung von Textstilen und -formatierungen mit Aspose.PDF für .NET. Sie können diesen Code als Ausgangspunkt verwenden und ihn an Ihre spezifischen Anforderungen anpassen.
 
-#### Q: Can I incorporate these concepts into my own .NET applications to create customized PDF documents?
+#### F: Kann ich diese Konzepte in meine eigenen .NET-Anwendungen integrieren, um benutzerdefinierte PDF-Dokumente zu erstellen?
 
-A: Yes, you can use the concepts and code provided in the tutorial as a foundation for creating your own customized PDF documents with styled and formatted text. Modify and expand upon the code to achieve your desired results.
+A: Ja, Sie können die im Tutorial bereitgestellten Konzepte und Codes als Grundlage für die Erstellung Ihrer eigenen benutzerdefinierten PDF-Dokumente mit gestaltetem und formatiertem Text verwenden. Ändern und erweitern Sie den Code, um die gewünschten Ergebnisse zu erzielen.

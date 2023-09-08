@@ -1,86 +1,86 @@
 ---
-title: Table In Header Footer Section
-linktitle: Table In Header Footer Section
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a table in the header/footer section of a PDF document with Aspose.PDF for .NET.
+title: Tabelle im Kopf- und Fußzeilenbereich
+linktitle: Tabelle im Kopf- und Fußzeilenbereich
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET eine Tabelle in den Kopf-/Fußzeilenbereich eines PDF-Dokuments einfügen.
 type: docs
 weight: 170
 url: /de/net/programming-with-stamps-and-watermarks/table-in-header-footer-section/
 ---
-In this tutorial, we will guide you step by step on how to add a table in the header or footer section of a PDF document using Aspose.PDF for .NET. The provided C# source code shows you how to create an empty PDF document, add a page, configure the header section, create a table, add rows and cells to the table, and finally save the PDF document.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch das Hinzufügen einer Tabelle im Kopf- oder Fußzeilenbereich eines PDF-Dokuments mit Aspose.PDF für .NET. Der bereitgestellte C#-Quellcode zeigt Ihnen, wie Sie ein leeres PDF-Dokument erstellen, eine Seite hinzufügen, den Kopfzeilenabschnitt konfigurieren, eine Tabelle erstellen, Zeilen und Zellen zur Tabelle hinzufügen und schließlich das PDF-Dokument speichern.
 
-## Step 1: Setting up the environment
+## Schritt 1: Einrichten der Umgebung
 
-Before you begin, make sure you have the following:
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Eine installierte .NET-Entwicklungsumgebung.
+- Die Aspose.PDF-Bibliothek für .NET wurde heruntergeladen und in Ihrem Projekt referenziert.
 
-## Step 2: Creating the PDF Document and Page
+## Schritt 2: Erstellen des PDF-Dokuments und der Seite
 
-The first step is to create an instance of the `Document` class and add a page to the document. Here's how:
+ Der erste Schritt besteht darin, eine Instanz davon zu erstellen`Document` Klasse und fügen Sie dem Dokument eine Seite hinzu. Hier ist wie:
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Instantiate a Document object
+// Instanziieren Sie ein Document-Objekt
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
 
-// Create a page in the PDF document
+// Erstellen Sie eine Seite im PDF-Dokument
 Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+Ersetzen Sie unbedingt „VERZEICHNIS IHRER DOKUMENTE“ durch den tatsächlichen Pfad zu dem Verzeichnis, in dem Sie das PDF-Dokument speichern möchten.
 
-## Step 3: Configuring the header section
+## Schritt 3: Konfigurieren des Header-Bereichs
 
-Now we will configure the header section of the PDF document by creating an instance of the `HeaderFooter` class. Here's how:
+ Jetzt konfigurieren wir den Kopfbereich des PDF-Dokuments, indem wir eine Instanz davon erstellen`HeaderFooter` Klasse. Hier ist wie:
 
 ```csharp
-// Create a header section for the PDF file
+// Erstellen Sie einen Kopfbereich für die PDF-Datei
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Define the header section for the page
+// Definieren Sie den Kopfbereich für die Seite
 page. Header = header;
 
-// Set the top margin of the header section
+// Legen Sie den oberen Rand des Kopfzeilenabschnitts fest
 header. Margin. Top = 20;
 ```
 
-## Step 4: Creating the table
+## Schritt 4: Erstellen der Tabelle
 
-Now we are going to create a table using the `Table` class and add it to the heading section's paragraph collection. Here's how:
+ Jetzt erstellen wir eine Tabelle mit`Table` Klasse und fügen Sie sie der Absatzsammlung des Überschriftenabschnitts hinzu. Hier ist wie:
 
 ```csharp
-// Instantiate a Table object
+// Instanziieren Sie ein Table-Objekt
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Add the table to the paragraphs collection of the header section
+// Fügen Sie die Tabelle zur Absatzsammlung des Kopfzeilenabschnitts hinzu
 header.Paragraphs.Add(tab1);
 
-// Define the widths of the columns of the table
+// Definieren Sie die Breite der Spalten der Tabelle
 tab1.ColumnWidths = "60,300";
 ```
 
-The code above creates a table with two columns of specified widths.
+Der obige Code erstellt eine Tabelle mit zwei Spalten mit der angegebenen Breite.
 
-## Step 5: Add rows and cells to the table
+## Schritt 5: Fügen Sie der Tabelle Zeilen und Zellen hinzu
 
-Now we will add rows and cells to the table using the `Row` class and the `Cell` class. Here's how:
+ Jetzt fügen wir der Tabelle mithilfe von Zeilen und Zellen hinzu`Row` Klasse und die`Cell` Klasse. Hier ist wie:
 
 ```csharp
-// Create a row in the table and add cells
+// Erstellen Sie eine Zeile in der Tabelle und fügen Sie Zellen hinzu
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Table in header section");
 row1.BackgroundColor = Color.Gray;
 
-// Merge the first cell of the first row
+// Führen Sie die erste Zelle der ersten Zeile zusammen
 tab1.Rows[0].Cells[0].ColSpan = 2;
 tab1.Rows[0].Cells[0].DefaultCellTextState.ForegroundColor = Color.Cyan;
 tab1.Rows[0].Cells[0].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
 
-// Create another row in the table and add a cell with an image
+// Erstellen Sie eine weitere Zeile in der Tabelle und fügen Sie eine Zelle mit einem Bild hinzu
 Aspose.Pdf.Row row2 = tab1.Rows.Add();
 row2.BackgroundColor = Color.White;
 Aspose.Pdf.Cell cell2 = row2.Cells.Add();
@@ -94,128 +94,128 @@ row2.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
 row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 ```
 
-## Step 6: Saving the PDF Document
+## Schritt 6: Speichern des PDF-Dokuments
 
-Once the table has been added to the header section, we can save the PDF document. Here's how:
+Sobald die Tabelle zum Kopfbereich hinzugefügt wurde, können wir das PDF-Dokument speichern. Hier ist wie:
 
 ```csharp
-// Save the PDF file
+// Speichern Sie die PDF-Datei
 pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+Ersetzen Sie unbedingt „VERZEICHNIS IHRER DOKUMENTE“ durch den tatsächlichen Pfad zu dem Verzeichnis, in dem Sie das PDF-Dokument speichern möchten.
 
-### Sample source code for Table In Header Footer Section using Aspose.PDF for .NET 
+### Beispielquellcode für den Abschnitt „Tabelle im Kopf- und Fußbereich“ mit Aspose.PDF für .NET 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document instance by calling empty constructor
+// Instanziieren Sie eine Dokumentinstanz, indem Sie einen leeren Konstruktor aufrufen
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
 
-// Create a page in the pdf document
+// Erstellen Sie eine Seite im PDF-Dokument
 Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 
-// Create a Header Section of the PDF file
+// Erstellen Sie einen Kopfzeilenabschnitt der PDF-Datei
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the Odd Header for the PDF file
+//Legen Sie den ungeraden Header für die PDF-Datei fest
 page.Header = header;
 
-// Set the top margin for the header section
+// Legen Sie den oberen Rand für den Kopfbereich fest
 header.Margin.Top = 20;
 
-// Instantiate a table object
+// Instanziieren Sie ein Tabellenobjekt
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Add the table in paragraphs collection of the desired section
+// Fügen Sie die Tabelle in der Absatzsammlung des gewünschten Abschnitts hinzu
 header.Paragraphs.Add(tab1);
 
-// Set default cell border using BorderInfo object
+// Legen Sie den Standardzellenrahmen mithilfe des BorderInfo-Objekts fest
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 
-// Set with column widths of the table
+// Mit den Spaltenbreiten der Tabelle festlegen
 tab1.ColumnWidths = "60 300";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose-logo.jpg";
 
-// Create rows in the table and then cells in the rows
+// Erstellen Sie Zeilen in der Tabelle und dann Zellen in den Zeilen
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Table in Header Section");
 row1.BackgroundColor = Color.Gray;
 
-// Set the row span value for first row as 2
+// Legen Sie den Zeilenspannenwert für die erste Zeile auf 2 fest
 tab1.Rows[0].Cells[0].ColSpan = 2;
 tab1.Rows[0].Cells[0].DefaultCellTextState.ForegroundColor = Color.Cyan;
 tab1.Rows[0].Cells[0].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
 
-// Create rows in the table and then cells in the rows
+// Erstellen Sie Zeilen in der Tabelle und dann Zellen in den Zeilen
 Aspose.Pdf.Row row2 = tab1.Rows.Add();
 
-// Set the background color for Row2
+// Legen Sie die Hintergrundfarbe für Zeile2 fest
 row2.BackgroundColor = Color.White;
 
-// Add the cell which holds the image
+// Fügen Sie die Zelle hinzu, die das Bild enthält
 Aspose.Pdf.Cell cell2 = row2.Cells.Add();
 
-// Set the image width to 60
+// Stellen Sie die Bildbreite auf 60 ein
 img.FixWidth = 60;
 
-// Add the image to the table cell
+// Fügen Sie das Bild zur Tabellenzelle hinzu
 cell2.Paragraphs.Add(img);
 row2.Cells.Add("Logo is looking fine !");
 row2.Cells[1].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
 
-// Set the vertical allignment of the text as center alligned
+// Stellen Sie die vertikale Ausrichtung des Textes auf zentriert ein
 row2.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
 row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 
-// Save the Pdf file
+// Speichern Sie die PDF-Datei
 pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You have learned how to add a table in the header or footer section of a PDF document using Aspose.PDF for .NET. You can now customize your headers and footers by adding tables to display additional information in your PDF documents.
+Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET eine Tabelle in den Kopf- oder Fußzeilenbereich eines PDF-Dokuments einfügen. Sie können jetzt Ihre Kopf- und Fußzeilen anpassen, indem Sie Tabellen hinzufügen, um zusätzliche Informationen in Ihren PDF-Dokumenten anzuzeigen.
 
-### FAQ's for table in header footer section
+### FAQs zur Tabelle im Kopf- und Fußbereich
 
-#### Q: What is the purpose of adding a table in the header or footer section of a PDF document?
+#### F: Welchen Zweck hat das Hinzufügen einer Tabelle im Kopf- oder Fußzeilenbereich eines PDF-Dokuments?
 
-A: Adding a table in the header or footer section of a PDF document allows you to display structured and organized information such as titles, subtitles, logos, or any other content that you want to appear consistently on each page of the document.
+A: Durch das Hinzufügen einer Tabelle im Kopf- oder Fußzeilenbereich eines PDF-Dokuments können Sie strukturierte und organisierte Informationen wie Titel, Untertitel, Logos oder andere Inhalte anzeigen, die konsistent auf jeder Seite des Dokuments angezeigt werden sollen.
 
-#### Q: How does the provided C# source code achieve the addition of a table in the header or footer section of a PDF document?
+#### F: Wie erreicht der bereitgestellte C#-Quellcode das Hinzufügen einer Tabelle im Kopf- oder Fußzeilenbereich eines PDF-Dokuments?
 
-A: The code demonstrates the process of creating an empty PDF document, adding a page, configuring the header section, creating a table with rows and cells, and finally saving the PDF document. The result is a table displayed in the header section of the PDF document.
+A: Der Code demonstriert den Prozess des Erstellens eines leeren PDF-Dokuments, des Hinzufügens einer Seite, des Konfigurierens des Kopfbereichs, des Erstellens einer Tabelle mit Zeilen und Zellen und schließlich des Speicherns des PDF-Dokuments. Das Ergebnis ist eine Tabelle, die im Kopfbereich des PDF-Dokuments angezeigt wird.
 
-#### Q: Can I customize the appearance of the table cells, such as borders, background color, and text style?
+#### F: Kann ich das Erscheinungsbild der Tabellenzellen anpassen, z. B. Ränder, Hintergrundfarbe und Textstil?
 
-A: Yes, you can customize the appearance of the table cells by setting properties like cell borders, background color, text style, font, font size, and more.
+A: Ja, Sie können das Erscheinungsbild der Tabellenzellen anpassen, indem Sie Eigenschaften wie Zellränder, Hintergrundfarbe, Textstil, Schriftart, Schriftgröße und mehr festlegen.
 
-#### Q: How is the table added to the header section of the PDF document?
+#### F: Wie wird die Tabelle zum Kopfbereich des PDF-Dokuments hinzugefügt?
 
-A: The code adds the table to the paragraphs collection of the header section, which ensures that the table is displayed in the header of each page.
+A: Der Code fügt die Tabelle zur Absatzsammlung des Kopfzeilenabschnitts hinzu, wodurch sichergestellt wird, dass die Tabelle in der Kopfzeile jeder Seite angezeigt wird.
 
-#### Q: Can I add more rows and cells to the table as needed?
+#### F: Kann ich der Tabelle nach Bedarf weitere Zeilen und Zellen hinzufügen?
 
-A: Absolutely, you can add more rows and cells to the table by using the `Rows.Add()` and `Cells.Add()` methods. This allows you to structure the table content as desired.
+ A: Auf jeden Fall können Sie der Tabelle weitere Zeilen und Zellen hinzufügen, indem Sie die verwenden`Rows.Add()` Und`Cells.Add()` Methoden. Dadurch können Sie den Tabelleninhalt nach Ihren Wünschen strukturieren.
 
-#### Q: Is it possible to adjust the width of the table columns?
-A: Yes, you can adjust the width of the table columns using the `ColumnWidths` property. This enables you to control the layout of the table.
+#### F: Ist es möglich, die Breite der Tabellenspalten anzupassen?
+ A: Ja, Sie können die Breite der Tabellenspalten mit anpassen`ColumnWidths` Eigentum. Dadurch können Sie das Layout der Tabelle steuern.
 
-#### Q: How can I span cells across multiple columns or rows within the table?
-A: To span cells across multiple columns, you can use the `ColSpan` property of the corresponding cell. Similarly, you can use the `RowSpan` property to span cells across multiple rows.
+#### F: Wie kann ich Zellen über mehrere Spalten oder Zeilen innerhalb der Tabelle verteilen?
+ A: Um Zellen über mehrere Spalten zu verteilen, können Sie die verwenden`ColSpan` Eigenschaft der entsprechenden Zelle. Ebenso können Sie die verwenden`RowSpan` Eigenschaft, um Zellen über mehrere Zeilen zu erstrecken.
 
-#### Q: What happens if I want to add a table to both the header and footer sections of the PDF document?
+#### F: Was passiert, wenn ich sowohl im Kopf- als auch im Fußzeilenbereich des PDF-Dokuments eine Tabelle hinzufügen möchte?
 
-A: You can follow a similar approach for both the header and footer sections. Simply create a `HeaderFooter` instance for the footer, configure it, and add the table to its paragraphs collection.
+A: Sie können für die Kopf- und Fußzeilen einen ähnlichen Ansatz verfolgen. Erstellen Sie einfach eine`HeaderFooter` Instanz für die Fußzeile, konfigurieren Sie sie und fügen Sie die Tabelle zu ihrer Absatzsammlung hinzu.
 
-#### Q: Can I use images within the table cells, and how is that achieved?
+#### F: Kann ich Bilder in den Tabellenzellen verwenden und wie wird das erreicht?
 
-A: Yes, you can add images within table cells. The code example demonstrates adding an image to a cell by creating an `Image` object, setting its file path and dimensions, and then adding it to a cell's paragraphs.
+ A: Ja, Sie können Bilder in Tabellenzellen hinzufügen. Das Codebeispiel veranschaulicht das Hinzufügen eines Bilds zu einer Zelle durch Erstellen eines`Image` Objekt hinzufügen, seinen Dateipfad und seine Abmessungen festlegen und es dann den Absätzen einer Zelle hinzufügen.
 
-#### Q: How do I ensure the table appears consistently across all pages in the PDF document?
+#### F: Wie stelle ich sicher, dass die Tabelle auf allen Seiten des PDF-Dokuments einheitlich angezeigt wird?
 
-A: When you add the table to the header or footer section using the `HeaderFooter` instance, Aspose.PDF ensures that the table appears consistently on each page, providing a uniform layout.
+ A: Wenn Sie die Tabelle mit dem zum Kopf- oder Fußzeilenabschnitt hinzufügen`HeaderFooter` Aspose.PDF stellt beispielsweise sicher, dass die Tabelle auf jeder Seite konsistent erscheint und ein einheitliches Layout bietet.

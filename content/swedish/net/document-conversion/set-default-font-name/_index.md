@@ -1,38 +1,38 @@
 ---
-title: Set Default Font Name
-linktitle: Set Default Font Name
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to set default font name in PDF file using Aspose.PDF for .NET.
+title: Ställ in standardteckensnittsnamn
+linktitle: Ställ in standardteckensnittsnamn
+second_title: Aspose.PDF för .NET API Referens
+description: Steg för steg guide för att ställa in standardtypsnittsnamn i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 270
 url: /sv/net/document-conversion/set-default-font-name/
 ---
-In this tutorial, we will show you how to set the default font name in a PDF file using Aspose.PDF for .NET. Sometimes when you extract images from a PDF file, you may encounter missing font issues. By specifying a default font name, you can ensure that extracted text will be displayed correctly. Follow the steps below to set the default font name in a PDF file.
+den här handledningen kommer vi att visa dig hur du ställer in standardteckensnittsnamnet i en PDF-fil med Aspose.PDF för .NET. Ibland när du extraherar bilder från en PDF-fil kan du stöta på problem med teckensnitt som saknas. Genom att ange ett standardteckensnittsnamn kan du säkerställa att extraherad text kommer att visas korrekt. Följ stegen nedan för att ställa in standardteckensnittsnamnet i en PDF-fil.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Förutsättningar
+Innan du börjar, se till att du uppfyller följande förutsättningar:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Grundläggande kunskaper i programmeringsspråket C#.
+- Aspose.PDF-bibliotek för .NET installerat på ditt system.
+- En utvecklingsmiljö som Visual Studio.
 
-## Step 1: Loading the PDF document
-The first step is to load the PDF document into a `Document` object. Use the following code:
+## Steg 1: Laddar PDF-dokumentet
+ Det första steget är att ladda PDF-dokumentet i en`Document` objekt. Använd följande kod:
 
 ```csharp
-// Path to the documents directory.
+// Sökväg till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 {
-     // Code to add
+     // Kod att lägga till
 }
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+ Se till att byta ut`"YOUR DOCUMENTS DIRECTORY"` med den faktiska katalogen där din PDF-fil finns.
 
-## Step 2: Set default font name
-Next, we'll set the default font name using the `DefaultFontName` option of the `RenderingOptions` object. Use the following code:
+## Steg 2: Ange standardtypsnittsnamn
+ Därefter ställer vi in standardteckensnittsnamnet med hjälp av`DefaultFontName` alternativet för`RenderingOptions` objekt. Använd följande kod:
 
 ```csharp
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
@@ -45,26 +45,26 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
          ro.DefaultFontName = "Arial";
          pngDevice.RenderingOptions = ro;
         
-         // Code to add
+         // Kod att lägga till
      }
 }
 ```
 
-Be sure to replace `"Arial"` with the desired font name.
+ Se till att byta ut`"Arial"` med önskat teckensnittsnamn.
 
-## Step 3: Image Extraction
-Next, we will extract the image from the specified page of the PDF document. Use the following code:
+## Steg 3: Bildextraktion
+Därefter extraherar vi bilden från den angivna sidan i PDF-dokumentet. Använd följande kod:
 
 ```csharp
 pngDevice.Process(pdfDocument.Pages[1], imageStream);
 ```
 
-Be sure to specify the correct page number in `pdfDocument.Pages[1]`.
+ Var noga med att ange rätt sidnummer i`pdfDocument.Pages[1]`.
 
-### Example source code for Set Default Font Name using Aspose.PDF for .NET
+### Exempel på källkod för Set Default Font Name med Aspose.PDF för .NET
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
@@ -81,27 +81,27 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 }
 ```
 
-## Conclusion
-In this tutorial, we learned how to set the default font name in a PDF file using Aspose.PDF for .NET. By specifying a default font name, you can ensure that extracted text will be displayed correctly. Use this method to resolve missing font issues when extracting images from PDF files.
+## Slutsats
+den här handledningen lärde vi oss hur man ställer in standardteckensnittsnamnet i en PDF-fil med Aspose.PDF för .NET. Genom att ange ett standardteckensnittsnamn kan du säkerställa att extraherad text kommer att visas korrekt. Använd den här metoden för att lösa problem med saknade teckensnitt när du extraherar bilder från PDF-filer.
 
 ### FAQ's
 
-#### Q: What is Aspose.PDF for .NET?
+#### F: Vad är Aspose.PDF för .NET?
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers various functionalities, including setting the default font name in a PDF file.
+S: Aspose.PDF för .NET är ett kraftfullt bibliotek som gör det möjligt för utvecklare att arbeta med PDF-dokument i C#-applikationer. Den erbjuder olika funktioner, inklusive att ställa in standardtypsnittsnamnet i en PDF-fil.
 
-#### Q: Why would I need to set the default font name in a PDF file?
+#### F: Varför skulle jag behöva ställa in standardteckensnittsnamnet i en PDF-fil?
 
-A: Setting the default font name is useful when extracting text from a PDF document. If the PDF contains text with fonts that are not available on the extraction machine, specifying a default font name ensures correct text display.
+S: Att ställa in standardteckensnittsnamnet är användbart när du extraherar text från ett PDF-dokument. Om PDF-filen innehåller text med teckensnitt som inte är tillgängliga på extraheringsmaskinen säkerställs korrekt textvisning genom att ange ett standardteckensnittsnamn.
 
-#### Q: How can I load a PDF document and set the default font name using Aspose.PDF for .NET?
+#### F: Hur kan jag ladda ett PDF-dokument och ställa in standardfontnamnet med Aspose.PDF för .NET?
 
-A: To load a PDF document and set the default font name, you can use the `Document` class to load the PDF file and the `RenderingOptions.DefaultFontName` property to specify the desired default font name.
+ S: För att ladda ett PDF-dokument och ställa in standardteckensnittsnamnet kan du använda`Document`klass för att ladda PDF-filen och`RenderingOptions.DefaultFontName` egenskap för att ange önskat standardtypsnittsnamn.
 
-#### Q: Can I choose any font as the default font name?
+#### F: Kan jag välja vilket typsnitt som helst som standardtypsnittsnamn?
 
-A:Yes, you can choose any font that is available on the extraction machine as the default font name. Use a font that closely matches the missing fonts in the original PDF to ensure accurate text rendering.
+S: Ja, du kan välja vilket typsnitt som helst som är tillgängligt på extraktionsmaskinen som standardtypsnittsnamn. Använd ett teckensnitt som stämmer överens med de saknade teckensnitten i den ursprungliga PDF-filen för att säkerställa korrekt textåtergivning.
 
-#### Q: Is setting the default font name a permanent change to the PDF file?
+#### F: Är inställningen av standardteckensnittsnamnet en permanent ändring av PDF-filen?
 
-A: No, setting the default font name using Aspose.PDF for .NET is a temporary change made during text extraction. It does not modify the original PDF file.
+S: Nej, att ställa in standardteckensnittsnamnet med Aspose.PDF för .NET är en tillfällig ändring som görs under textextraktion. Det ändrar inte den ursprungliga PDF-filen.

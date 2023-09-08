@@ -1,26 +1,26 @@
 ---
-title: Extract Text Using Text Device
-linktitle: Extract Text Using Text Device
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract text from a PDF document using the Text Device in Aspose.PDF for .NET.
+title: Extraer texto usando un dispositivo de texto
+linktitle: Extraer texto usando un dispositivo de texto
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a extraer texto de un documento PDF utilizando el dispositivo de texto en Aspose.PDF para .NET.
 type: docs
 weight: 210
 url: /es/net/programming-with-text/extract-text-using-text-device/
 ---
-This tutorial will guide you through the process of extracting text from a PDF document using the Text Device in Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Este tutorial lo guiará a través del proceso de extracción de texto de un documento PDF utilizando el dispositivo de texto en Aspose.PDF para .NET. El código fuente de C# proporcionado demuestra los pasos necesarios.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Requisitos
+Antes de comenzar, asegúrese de tener lo siguiente:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio o cualquier otro compilador de C# instalado en su máquina.
+- Aspose.PDF para la biblioteca .NET. Puede descargarlo del sitio web oficial de Aspose o utilizar un administrador de paquetes como NuGet para instalarlo.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Paso 1: configurar el proyecto
+1. Cree un nuevo proyecto de C# en su entorno de desarrollo preferido.
+2. Agregue una referencia a la biblioteca Aspose.PDF para .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to extract text, add the following using directives at the top of the file:
+## Paso 2: importar los espacios de nombres necesarios
+En el archivo de código donde desea extraer texto, agregue lo siguiente usando directivas en la parte superior del archivo:
 
 ```csharp
 using Aspose.Pdf;
@@ -29,18 +29,18 @@ using System.IO;
 using System.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Paso 3: configurar el directorio de documentos
+ En el código, localice la línea que dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` y reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta al directorio donde están almacenados sus documentos.
 
-## Step 4: Open the PDF document
-Open an existing PDF document using the `Document` constructor and passing the path to the input PDF file.
+## Paso 4: abre el documento PDF
+ Abra un documento PDF existente usando el`Document`constructor y pasando la ruta al archivo PDF de entrada.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-## Step 5: Extract text using Text Device
-Create a `StringBuilder` object to hold the extracted text. Iterate through each page of the document and use a `TextDevice` to extract the text from each page.
+## Paso 5: extraiga texto usando el dispositivo de texto
+ Crear un`StringBuilder` objeto para contener el texto extraído. Repita cada página del documento y utilice un`TextDevice` para extraer el texto de cada página.
 
 ```csharp
 StringBuilder builder = new StringBuilder();
@@ -60,62 +60,62 @@ builder. Append(extractedText);
 }
 ```
 
-## Step 6: Save the extracted text
-Specify the output file path and save the extracted text to a text file using the `File.WriteAllText` method.
+## Paso 6: guarde el texto extraído
+ Especifique la ruta del archivo de salida y guarde el texto extraído en un archivo de texto usando el`File.WriteAllText` método.
 
 ```csharp
 dataDir = dataDir + "input_Text_Extracted_out.txt";
 File.WriteAllText(dataDir, builder.ToString());
 ```
 
-### Sample source code for Extract Text Using Text Device using Aspose.PDF for .NET 
+### Código fuente de muestra para extraer texto usando un dispositivo de texto usando Aspose.PDF para .NET 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Abrir documento
 Document pdfDocument = new Document( dataDir + "input.pdf");
 System.Text.StringBuilder builder = new System.Text.StringBuilder();
-// String to hold extracted text
+//Cadena para contener el texto extraído
 string extractedText = "";
 foreach (Page pdfPage in pdfDocument.Pages)
 {
 	using (MemoryStream textStream = new MemoryStream())
 	{
-		// Create text device
+		// Crear dispositivo de texto
 		TextDevice textDevice = new TextDevice();
-		// Set text extraction options - set text extraction mode (Raw or Pure)
+		// Establecer opciones de extracción de texto: configurar el modo de extracción de texto (sin procesar o puro)
 		TextExtractionOptions textExtOptions = new
 		TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
 		textDevice.ExtractionOptions = textExtOptions;
-		// Convert a particular page and save text to the stream
+		// Convierta una página en particular y guarde texto en la secuencia
 		textDevice.Process(pdfPage, textStream);
-		// Convert a particular page and save text to the stream
+		// Convierta una página en particular y guarde texto en la secuencia
 		textDevice.Process(pdfDocument.Pages[1], textStream);
-		// Close memory stream
+		// Cerrar flujo de memoria
 		textStream.Close();
-		// Get text from memory stream
+		// Obtener texto del flujo de memoria
 		extractedText = Encoding.Unicode.GetString(textStream.ToArray());
 	}
 	builder.Append(extractedText);
 }
 dataDir = dataDir + "input_Text_Extracted_out.txt";
-// Save the extracted text in text file
+// Guarde el texto extraído en un archivo de texto
 File.WriteAllText(dataDir, builder.ToString());
 Console.WriteLine("\nText extracted successfully using text device from page of PDF Document.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-You have successfully extracted text from a PDF document using the Text Device in Aspose.PDF for .NET. The extracted text has been saved to the specified output file.
+## Conclusión
+Ha extraído con éxito texto de un documento PDF utilizando el dispositivo de texto en Aspose.PDF para .NET. El texto extraído se ha guardado en el archivo de salida especificado.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is the purpose of this tutorial?
+#### P: ¿Cuál es el propósito de este tutorial?
 
-A: This tutorial provides guidance on extracting text from a PDF document using the Text Device feature in Aspose.PDF for .NET. The accompanying C# source code demonstrates the necessary steps to achieve this task.
+R: Este tutorial proporciona orientación sobre cómo extraer texto de un documento PDF utilizando la función Dispositivo de texto en Aspose.PDF para .NET. El código fuente de C# adjunto demuestra los pasos necesarios para realizar esta tarea.
 
-#### Q: What namespaces should I import?
+#### P: ¿Qué espacios de nombres debo importar?
 
-A: In the code file where you plan to extract text, include the following using directives at the beginning of the file:
+R: En el archivo de código donde planea extraer texto, incluya las siguientes directivas de uso al principio del archivo:
 
 ```csharp
 using Aspose.Pdf;
@@ -124,22 +124,22 @@ using System.IO;
 using System.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### P: ¿Cómo especifico el directorio de documentos?
 
-A: In the code, find the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ R: En el código, busque la línea que dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` y reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta real a su directorio de documentos.
 
-#### Q: How do I open an existing PDF document?
+#### P: ¿Cómo abro un documento PDF existente?
 
-A: In Step 4, you'll open an existing PDF document using the `Document` constructor and providing the path to the input PDF file.
+ R: En el Paso 4, abrirá un documento PDF existente usando el`Document` constructor y proporcionando la ruta al archivo PDF de entrada.
 
-#### Q: How do I extract text using the Text Device?
+#### P: ¿Cómo extraigo texto usando el dispositivo de texto?
 
-A: Step 5 involves creating a `StringBuilder` object to hold the extracted text. You'll then iterate through each page of the document and use a `TextDevice` along with `TextExtractionOptions` to extract text from each page.
+ R: El paso 5 implica crear un`StringBuilder` objeto para contener el texto extraído. Luego recorrerá cada página del documento y utilizará un`TextDevice` junto con`TextExtractionOptions` para extraer texto de cada página.
 
-#### Q: How do I save the extracted text to a file?
+#### P: ¿Cómo guardo el texto extraído en un archivo?
 
-A: In Step 6, you'll specify the output file path and use the `File.WriteAllText` method to save the extracted text to a text file.
+ R: En el paso 6, especificará la ruta del archivo de salida y utilizará el`File.WriteAllText`Método para guardar el texto extraído en un archivo de texto.
 
-#### Q: What is the key takeaway from this tutorial?
+#### P: ¿Cuál es la conclusión clave de este tutorial?
 
-A: By following this tutorial, you've learned how to leverage the Text Device feature in Aspose.PDF for .NET to extract text from a PDF document. The extracted text has been saved to a specified output file, enabling you to manipulate and utilize the extracted content as needed.
+R: Al seguir este tutorial, habrá aprendido cómo aprovechar la función Dispositivo de texto en Aspose.PDF para .NET para extraer texto de un documento PDF. El texto extraído se ha guardado en un archivo de salida específico, lo que le permite manipular y utilizar el contenido extraído según sea necesario.

@@ -1,57 +1,57 @@
 ---
-title: Get Bookmark Page Number In PDF File
-linktitle: Get Bookmark Page Number In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get bookmark page number in PDF file with Aspose.PDF for .NET.
+title: Obtener el número de página del marcador en un archivo PDF
+linktitle: Obtener el número de página del marcador en un archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Obtenga fácilmente el número de página del marcador en un archivo PDF con Aspose.PDF para .NET.
 type: docs
 weight: 60
 url: /es/net/programming-with-bookmarks/get-bookmark-page-number/
 ---
-Retrieving page numbers associated with bookmarks in PDF file can be useful for navigation. With Aspose.PDF for .NET, you can easily get the page number of bookmarks by following the following source code:
+Recuperar números de página asociados con marcadores en un archivo PDF puede resultar útil para la navegación. Con Aspose.PDF para .NET, puede obtener fácilmente el número de página de los marcadores siguiendo el siguiente código fuente:
 
-## Step 1: Import required libraries
+## Paso 1: importar las bibliotecas necesarias
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Antes de comenzar, debe importar las bibliotecas necesarias para su proyecto C#. Aquí está la directiva de importación necesaria:
 
 ```csharp
 using Aspose.Pdf.Facades;
 ```
 
-## Step 2: Set path to documents folder
+## Paso 2: establezca la ruta a la carpeta de documentos
 
-In this step, you need to specify the path to the folder containing the PDF file you want to extract the bookmark page numbers from. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ En este paso, debe especificar la ruta a la carpeta que contiene el archivo PDF del que desea extraer los números de página del marcador. Reemplazar`"YOUR DOCUMENT DIRECTORY"`en el siguiente código con la ruta real a su carpeta de documentos:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Create the bookmark editor
+## Paso 3: crea el editor de marcadores
 
-Now we will create a `PdfBookmarkEditor` object to manipulate the bookmarks of the document. Use the following code:
+ Ahora crearemos un`PdfBookmarkEditor` objeto para manipular los marcadores del documento. Utilice el siguiente código:
 
 ```csharp
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
 ```
 
-## Step 4: Open the PDF File
+## Paso 4: abra el archivo PDF
 
-In this step, we open the PDF file using the `BindPdf` method of the bookmark editor. Here is the corresponding code:
+ En este paso, abrimos el archivo PDF usando el`BindPdf` método del editor de marcadores. Aquí está el código correspondiente:
 
 ```csharp
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
 ```
 
-## Step 5: Extract bookmarks
+## Paso 5: extraer marcadores
 
-Now we will extract the bookmarks from the document using the `ExtractBookmarks` method of the bookmark editor. Here is the corresponding code:
+ Ahora extraeremos los marcadores del documento usando el`ExtractBookmarks` método del editor de marcadores. Aquí está el código correspondiente:
 
 ```csharp
 Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 ```
 
-## Step 6: Browse bookmarks and get page numbers
+## Paso 6: busque marcadores y obtenga números de página
 
-Finally, we loop through the extracted bookmarks and get the page numbers associated with each bookmark using a `foreach` loop. Here is the corresponding code:
+ Finalmente, recorremos los marcadores extraídos y obtenemos los números de página asociados con cada marcador usando un`foreach` bucle. Aquí está el código correspondiente:
 
 ```csharp
 foreach (Bookmark bookmark in bookmarks)
@@ -67,15 +67,15 @@ foreach (Bookmark bookmark in bookmarks)
 }
 ```
 
-### Sample source code for Get Bookmark Page Number using Aspose.PDF for .NET 
+### Código fuente de muestra para Obtener número de página de marcador usando Aspose.PDF para .NET 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create PdfBookmarkEditor
+// Crear PDFBookmarkEditor
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
-// Open PDF file
+// Abrir archivo PDF
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
-// Extract bookmarks
+// Extraer marcadores
 Aspose.Pdf.Facades.Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 foreach (Aspose.Pdf.Facades.Bookmark bookmark in bookmarks)
 {
@@ -90,65 +90,65 @@ foreach (Aspose.Pdf.Facades.Bookmark bookmark in bookmarks)
 }
 ```
 
-## Conclusion
+## Conclusión
 
-Congratulation ! Now you have a step by step guide to getting bookmark page numbers with Aspose.PDF for .NET. You can use this code to retrieve the navigation information associated with each bookmark in your PDF documents.
+¡Enhorabuena! Ahora tiene una guía paso a paso para obtener números de páginas de marcadores con Aspose.PDF para .NET. Puede utilizar este código para recuperar la información de navegación asociada con cada marcador en sus documentos PDF.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Asegúrese de consultar la documentación oficial de Aspose.PDF para obtener más información sobre las funciones avanzadas de manipulación de marcadores.
 
-### FAQ's for get bookmark page number in PDF file
+### Preguntas frecuentes para obtener el número de página del marcador en un archivo PDF
 
-#### Q: What are bookmarks in a PDF file?
+#### P: ¿Qué son los marcadores en un archivo PDF?
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They enhance the user experience by providing shortcuts to relevant content.
+R: Los marcadores en un archivo PDF son ayudas de navegación que permiten a los usuarios saltar rápidamente a secciones o páginas específicas dentro del documento. Mejoran la experiencia del usuario al proporcionar accesos directos a contenido relevante.
 
-#### Q: Why would I want to retrieve bookmark page numbers from a PDF file?
+#### P: ¿Por qué querría recuperar los números de páginas de marcadores de un archivo PDF?
 
-A: Retrieving bookmark page numbers helps users navigate through a document more effectively, providing a clear indication of where each bookmark leads. This is particularly useful for longer documents with multiple sections.
+R: Recuperar los números de páginas de los marcadores ayuda a los usuarios a navegar por un documento de forma más eficaz, proporcionando una indicación clara de hacia dónde conduce cada marcador. Esto es particularmente útil para documentos más largos con varias secciones.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### P: ¿Cómo importo las bibliotecas necesarias para mi proyecto C#?
 
-A: To import the required library for your C# project, use the following import directive:
+R: Para importar la biblioteca requerida para su proyecto C#, use la siguiente directiva de importación:
 
 ```csharp
 using Aspose.Pdf.Facades;
 ```
 
-This directive allows you to utilize the classes and methods provided by Aspose.PDF for .NET.
+Esta directiva le permite utilizar las clases y métodos proporcionados por Aspose.PDF para .NET.
 
-#### Q: How do I specify the path to the documents folder?
+#### P: ¿Cómo especifico la ruta a la carpeta de documentos?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to extract bookmark page numbers. This ensures that the code can locate the target PDF file.
+ R: En el código fuente proporcionado, reemplace`"YOUR DOCUMENT DIRECTORY"`con la ruta real a la carpeta que contiene el archivo PDF del cual desea extraer los números de página del marcador. Esto garantiza que el código pueda localizar el archivo PDF de destino.
 
-#### Q: How do I create a bookmark editor?
+#### P: ¿Cómo creo un editor de marcadores?
 
-A: To create a bookmark editor, use the following code:
+R: Para crear un editor de marcadores, utilice el siguiente código:
 
 ```csharp
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
 ```
 
-#### Q: How do I open a PDF file for bookmark manipulation?
+#### P: ¿Cómo abro un archivo PDF para manipular marcadores?
 
-A: To open a PDF file for extracting bookmark information, use the following code:
+R: Para abrir un archivo PDF y extraer información de marcadores, utilice el siguiente código:
 
 ```csharp
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
 ```
 
-Replace `"GetBookmarks.pdf"` with the actual file name.
+ Reemplazar`"GetBookmarks.pdf"` con el nombre del archivo real.
 
-#### Q: How do I extract bookmarks from the PDF file?
+#### P: ¿Cómo extraigo marcadores del archivo PDF?
 
-A: To extract bookmarks from the PDF file, use the `ExtractBookmarks` method of the bookmark editor:
+ R: Para extraer marcadores del archivo PDF, utilice el`ExtractBookmarks` método del editor de marcadores:
 
 ```csharp
 Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 ```
 
-#### Q: How do I retrieve and display bookmark page numbers?
+#### P: ¿Cómo recupero y visualizo los números de páginas de favoritos?
 
-A: Loop through the extracted bookmarks using a `foreach` loop and access the `PageNumber` property of each bookmark to retrieve and display its associated page number:
+ R: Recorra los marcadores extraídos usando un`foreach` bucle y acceder al`PageNumber` propiedad de cada marcador para recuperar y mostrar su número de página asociado:
 
 ```csharp
 foreach (Bookmark bookmark in bookmarks)
@@ -159,10 +159,10 @@ foreach (Bookmark bookmark in bookmarks)
 }
 ```
 
-#### Q: Can I modify bookmark properties using this approach?
+#### P: ¿Puedo modificar las propiedades de los marcadores usando este método?
 
-A: While this tutorial focuses on retrieving bookmark page numbers, you can modify other bookmark properties using the same `Bookmark` object and associated properties.
+ R: Si bien este tutorial se centra en recuperar números de páginas de marcadores, puede modificar otras propiedades de marcadores usando el mismo`Bookmark`objeto y propiedades asociadas.
 
-#### Q: How do I save the updated PDF file after extracting bookmark information?
+#### P: ¿Cómo guardo el archivo PDF actualizado después de extraer la información del marcador?
 
-A: Bookmark extraction does not modify the original PDF file. If you want to save any changes, you can do so using other methods provided by Aspose.PDF for .NET.
+R: La extracción de marcadores no modifica el archivo PDF original. Si desea guardar algún cambio, puede hacerlo utilizando otros métodos proporcionados por Aspose.PDF para .NET.

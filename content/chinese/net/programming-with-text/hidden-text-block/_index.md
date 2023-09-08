@@ -1,32 +1,32 @@
 ---
-title: Hidden Text Block In PDF File
-linktitle: Hidden Text Block In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create hidden text blocks in PDF file using Aspose.PDF for .NET.
+title: PDF 文件中的隐藏文本块
+linktitle: PDF 文件中的隐藏文本块
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中创建隐藏文本块。
 type: docs
 weight: 230
 url: /zh/net/programming-with-text/hidden-text-block/
 ---
-In this tutorial, we will explain how to create a hidden text block in PDF file using the Aspose.PDF library for .NET. A hidden text block is a floating text that becomes visible when the mouse cursor hovers over a specific area. We will go through the step-by-step process of creating the hidden text block using the provided C# source code.
+在本教程中，我们将解释如何使用 .NET 的 Aspose.PDF 库在 PDF 文件中创建隐藏文本块。隐藏文本块是浮动文本，当鼠标光标悬停在特定区域上时，该文本块变得可见。我们将使用提供的 C# 源代码逐步完成创建隐藏文本块的过程。
 
-## Requirements
+## 要求
 
-Before you begin, ensure that you have the following:
+在开始之前，请确保您具备以下条件：
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- 安装了 Aspose.PDF for .NET 库。
+- 对 C# 编程有基本了解。
 
-## Step 1: Set up the Document Directory
+## 第 1 步：设置文档目录
 
-First, you need to set the path to the directory where you want to save the generated PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your desired directory.
+首先，您需要设置要保存生成的 PDF 文件的目录路径。代替`"YOUR DOCUMENT DIRECTORY"`在里面`dataDir`变量包含您所需目录的路径。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a Sample Document
+## 第 2 步：创建示例文档
 
-In this step, we create a sample PDF document and add a text fragment to it. The text fragment will serve as the trigger for displaying the hidden text block.
+在此步骤中，我们创建一个示例 PDF 文档并向其中添加一个文本片段。文本片段将作为显示隐藏文本块的触发器。
 
 ```csharp
 string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
@@ -35,17 +35,17 @@ doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to d
 doc.Save(outputFile);
 ```
 
-## Step 3: Open the Document
+## 第 3 步：打开文档
 
-Now, we open the previously created document using the `Document` class.
+现在，我们使用以下命令打开之前创建的文档`Document`班级。
 
 ```csharp
 Document document = new Document(outputFile);
 ```
 
-## Step 4: Find the Text Fragment
+## 第四步：找到文本片段
 
-We use a `TextFragmentAbsorber` object to find the text fragment that will trigger the display of the hidden text block. In this case, we are searching for the exact text "Move the mouse cursor here to display floating text".
+我们使用一个`TextFragmentAbsorber`对象查找将触发隐藏文本块显示的文本片段。在本例中，我们正在搜索确切的文本“将鼠标光标移至此处以显示浮动文本”。
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
@@ -54,9 +54,9 @@ TextFragmentCollection textFragments = absorb.TextFragments;
 TextFragment fragment = textFragments[1];
 ```
 
-## Step 5: Create the Hidden Text Field
+## 第 5 步：创建隐藏文本字段
 
-We create a `TextBoxField` object to represent the hidden text field. This field will contain the text that becomes visible when the mouse cursor hovers over the trigger text.
+我们创建一个`TextBoxField`对象来表示隐藏的文本字段。该字段将包含当鼠标光标悬停在触发器文本上时变得可见的文本。
 
 ```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
@@ -72,17 +72,17 @@ floatingField.Border.Width = 1;
 floatingField. Multiline = true;
 ```
 
-## Step 6: Add the Hidden Text Field to the Document
+## 步骤 6：将隐藏文本字段添加到文档中
 
-We add the hidden text field to the document's form collection.
+我们将隐藏文本字段添加到文档的表单集合中。
 
 ```csharp
 document.Form.Add(floatingField);
 ```
 
-## Step 7: Create the Invisible Button
+## 第7步：创建隐形按钮
 
-We create an invisible button field that will be positioned on top of the trigger text fragment. This button field will have actions associated with mouse enter and exit events.
+我们创建一个不可见的按钮字段，该字段将位于触发器文本片段的顶部。该按钮字段将具有与鼠标进入和退出事件相关的操作。
 
 ```csharp
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
@@ -91,104 +91,104 @@ buttonField.Actions.OnExit = new HideAction(floatingField);
 document.Form.Add(buttonField);
 ```
 
-## Step 8: Save the Document
+## 第 8 步：保存文档
 
-Finally, we save the modified document with the hidden text block.
+最后，我们使用隐藏文本块保存修改后的文档。
 
 ```csharp
 document. Save(outputFile);
 ```
 
-### Sample source code for Hidden Text Block using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 的隐藏文本块的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
-// Create sample document with text
+//创建带有文本的示例文档
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
 doc.Save(outputFile);
-// Open document with text
+//打开包含文本的文档
 Document document = new Document(outputFile);
-// Create TextAbsorber object to find all the phrases matching the regular expression
+//创建 TextAbsorber 对象以查找与正则表达式匹配的所有短语
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-// Accept the absorber for the document pages
+//接受文档页面的吸收器
 document.Pages.Accept(absorber);
-// Get the first extracted text fragment
+//获取第一个提取的文本片段
 TextFragmentCollection textFragments = absorber.TextFragments;
 TextFragment fragment = textFragments[1];
-// Create hidden text field for floating text in the specified rectangle of the page
+//为页面指定矩形中的浮动文本创建隐藏文本字段
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-// Set text to be displayed as field value
+//设置要显示为字段值的文本
 floatingField.Value = "This is the \"floating text field\".";
-// We recommend to make field 'readonly' for this scenario
+//我们建议在这种情况下将字段设置为“只读”
 floatingField.ReadOnly = true;
-// Set 'hidden' flag to make field invisible on document opening
+//设置“隐藏”标志以使字段在打开文档时不可见
 floatingField.Flags |= AnnotationFlags.Hidden;
-// Setting a unique field name isn't necessary but allowed
+//设置唯一的字段名称不是必需的，但允许
 floatingField.PartialName = "FloatingField_1";
-// Setting characteristics of field appearance isn't necessary but makes it better
+//设置字段外观的特征不是必需的，但可以使其更好
 floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
 floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
 floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
 floatingField.Border = new Border(floatingField);
 floatingField.Border.Width = 1;
 floatingField.Multiline = true;
-// Add text field to the document
+//将文本字段添加到文档中
 document.Form.Add(floatingField);
-// Create invisible button on text fragment position
+//在文本片段位置创建不可见按钮
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-// Create new hide action for specified field (annotation) and invisibility flag.
-// (You also may reffer floating field by the name if you specified it above.)
-// Add actions on mouse enter/exit at the invisible button field
+//为指定字段（注释）和不可见标志创建新的隐藏操作。
+//（如果您在上面指定了浮动字段，您也可以通过名称引用浮动字段。）
+//在不可见的按钮字段中添加鼠标进入/退出的操作
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
-// Add button field to the document
+//将按钮字段添加到文档中
 document.Form.Add(buttonField);
-// Save document
+//保存文档
 document.Save(outputFile);
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, you have learned how to create a hidden text block using the Aspose.PDF for .NET library. By following the step-by-step guide, you can generate a PDF document with a hidden text field that becomes visible when the mouse cursor hovers over a specific area. You can customize the appearance and behavior of the hidden text block according to your requirements.
+在本教程中，您学习了如何使用 Aspose.PDF for .NET 库创建隐藏文本块。通过遵循分步指南，您可以生成带有隐藏文本字段的 PDF 文档，当鼠标光标悬停在特定区域上时，隐藏文本字段将变为可见。您可以根据您的要求自定义隐藏文本块的外观和行为。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of the "Hidden Text Block In PDF File" tutorial?
+#### 问：“PDF 文件中的隐藏文本块”教程的目的是什么？
 
-A: The "Hidden Text Block In PDF File" tutorial explains how to create a hidden text block in a PDF file using the Aspose.PDF library for .NET. A hidden text block is a floating text that becomes visible when the mouse cursor hovers over a specific area. This tutorial provides a step-by-step guide using C# source code.
+答：“PDF 文件中的隐藏文本块”教程介绍了如何使用 .NET 的 Aspose.PDF 库在 PDF 文件中创建隐藏文本块。隐藏文本块是浮动文本，当鼠标光标悬停在特定区域上时，该文本块变得可见。本教程提供了使用 C# 源代码的分步指南。
 
-#### Q: Why would I want to create a hidden text block in a PDF file?
+#### 问：为什么我要在 PDF 文件中创建隐藏文本块？
 
-A: Creating a hidden text block can be useful for interactive PDF documents where you want to provide additional information or context that only becomes visible when a user hovers their mouse cursor over a designated area.
+答：创建隐藏文本块对于交互式 PDF 文档非常有用，在交互式 PDF 文档中，您想要提供仅当用户将鼠标光标悬停在指定区域上时才可见的附加信息或上下文。
 
-#### Q: How do I set up the document directory?
+#### 问：如何设置文档目录？
 
-A: To set up the document directory:
+A：设置文档目录：
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where you want to save the generated PDF file.
+1. 代替`"YOUR DOCUMENT DIRECTORY"`在里面`dataDir`变量包含要保存生成的 PDF 文件的目录路径。
 
-#### Q: How do I create a sample document and add a text fragment to it?
+#### 问：如何创建示例文档并向其中添加文本片段？
 
-A: In the tutorial, you use the `Document` class to create a sample PDF document and add a text fragment. This text fragment serves as the trigger for displaying the hidden text block.
+答：在本教程中，您使用`Document`类来创建示例 PDF 文档并添加文本片段。该文本片段用作显示隐藏文本块的触发器。
 
-#### Q: How do I find the text fragment that triggers the hidden text block?
+#### 问：如何找到触发隐藏文本块的文本片段？
 
-A: The tutorial demonstrates how to use a `TextFragmentAbsorber` object to find the text fragment that triggers the display of the hidden text block. It searches for a specific text string within the PDF document.
+答：本教程演示了如何使用`TextFragmentAbsorber`对象来查找触发隐藏文本块显示的文本片段。它在 PDF 文档中搜索特定的文本字符串。
 
-#### Q: How do I create and customize the hidden text field?
+#### 问：如何创建和自定义隐藏文本字段？
 
-A: You create a `TextBoxField` object to represent the hidden text field. The tutorial provides code to set various properties such as position, value, appearance, and behavior of the hidden text field.
+答：你创建一个`TextBoxField`对象来表示隐藏的文本字段。本教程提供了用于设置各种属性的代码，例如隐藏文本字段的位置、值、外观和行为。
 
-#### Q: How do I create an invisible button associated with the hidden text block?
+#### 问：如何创建与隐藏文本块关联的不可见按钮？
 
-A: An invisible button field is created using the `ButtonField` class. This button field is positioned on top of the trigger text fragment and has actions associated with mouse enter and exit events. These actions control the visibility of the hidden text block.
+答：使用以下命令创建不可见的按钮字段`ButtonField`班级。该按钮字段位于触发文本片段的顶部，并具有与鼠标进入和退出事件关联的操作。这些操作控制隐藏文本块的可见性。
 
-#### Q: Can I customize the appearance of the hidden text block and the trigger area?
+#### 问：我可以自定义隐藏文本块和触发区域的外观吗？
 
-A: Yes, you can customize various properties of both the hidden text field and the invisible button, including font, color, size, and positioning.
+答：是的，您可以自定义隐藏文本字段和隐形按钮的各种属性，包括字体、颜色、大小和位置。
 
-#### Q: How do I save the modified document with the hidden text block?
+#### 问：如何保存修改后的带有隐藏文本块的文档？
 
-A: The tutorial demonstrates how to save the modified document using the `Save` method of the `Document` class.
+ A：本教程演示了如何使用保存修改后的文档`Save`的方法`Document`班级。

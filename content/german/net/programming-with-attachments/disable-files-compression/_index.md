@@ -1,123 +1,123 @@
 ---
-title: Disable Files Compression In PDF File
-linktitle: Disable Files Compression In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to disable file compression in PDF file with Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: Deaktivieren Sie die Dateikomprimierung in PDF-Dateien
+linktitle: Deaktivieren Sie die Dateikomprimierung in PDF-Dateien
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie die Dateikomprimierung in PDF-Dateien mit Aspose.PDF für .NET deaktivieren. Schritt-für-Schritt-Anleitung für einfache Handhabung.
 type: docs
 weight: 30
 url: /de/net/programming-with-attachments/disable-files-compression/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to disable file compression in PDF using Aspose.PDF for .NET.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch den folgenden C#-Quellcode, um die Dateikomprimierung in PDF mit Aspose.PDF für .NET zu deaktivieren.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert und Ihre Entwicklungsumgebung eingerichtet haben, bevor Sie beginnen. Außerdem verfügen Sie über Grundkenntnisse der C#-Programmierung.
 
-### Step 1: Document Directory Setup
+### Schritt 1: Einrichten des Dokumentenverzeichnisses
 
-In the provided source code, you need to specify the directory where the PDF file is located that you want to disable file compression. Change the "dataDir" variable to the desired directory.
+Im bereitgestellten Quellcode müssen Sie das Verzeichnis angeben, in dem sich die PDF-Datei befindet, in der Sie die Dateikomprimierung deaktivieren möchten. Ändern Sie die Variable „dataDir“ in das gewünschte Verzeichnis.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Schritt 2: Öffnen Sie das vorhandene PDF-Dokument
 
-We open the existing PDF document using the specified path.
+Wir öffnen das vorhandene PDF-Dokument über den angegebenen Pfad.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
 ```
 
-### Step 3: Setting up the new file to add as an attachment
+### Schritt 3: Einrichten der neuen Datei zum Hinzufügen als Anhang
 
-We configure the new file that we want to add as an attachment. In this example, we add a text file with the name "test_out.txt" and a description "Example text file".
+Wir konfigurieren die neue Datei, die wir als Anhang hinzufügen möchten. In diesem Beispiel fügen wir eine Textdatei mit dem Namen „test_out.txt“ und der Beschreibung „Beispieltextdatei“ hinzu.
 
 ```csharp
 FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
 ```
 
-### Step 4: Disable File Compression
+### Schritt 4: Deaktivieren Sie die Dateikomprimierung
 
-We disable file compression by setting the Encoding property of the FileSpecification object to FileEncoding.None.
+Wir deaktivieren die Dateikomprimierung, indem wir die Encoding-Eigenschaft des FileSpecification-Objekts auf FileEncoding.None setzen.
 
 ```csharp
 fileSpecification.Encoding = FileEncoding.None;
 ```
 
-### Step 5: Adding the attachment to the document's attachments collection
+### Schritt 5: Hinzufügen des Anhangs zur Anhangssammlung des Dokuments
 
-We add the attachment to the document's attachments collection.
+Wir fügen den Anhang zur Anhangssammlung des Dokuments hinzu.
 
 ```csharp
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 ```
 
-### Step 6: Save the new output file
+### Schritt 6: Speichern Sie die neue Ausgabedatei
 
-Finally, we save the resulting new PDF file with the name "DisableFilesCompression_out.pdf" in the specified directory.
+Abschließend speichern wir die resultierende neue PDF-Datei mit dem Namen „DisableFilesCompression_out.pdf“ im angegebenen Verzeichnis.
 
 ```csharp
 pdfDocument.Save(dataDir + "DisableFilesCompression_out.pdf");
 ```
 
 
-### Sample source code for Disable Files Compression using Aspose.PDF for .NET 
+### Beispielquellcode zum Deaktivieren der Dateikomprimierung mit Aspose.PDF für .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Setup new file to be added as attachment
+// Richten Sie eine neue Datei ein, die als Anhang hinzugefügt werden soll
 FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-// Specify Encoding proparty setting it to FileEncoding.None
+// Geben Sie den Encoding-Profi an und setzen Sie ihn auf FileEncoding.None
 fileSpecification.Encoding = FileEncoding.None;
-// Add attachment to document's attachment collection
+//Anhang zur Anhangssammlung des Dokuments hinzufügen
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 dataDir = dataDir + "DisableFilesCompression_out.pdf";
-// Save new output
+// Neue Ausgabe speichern
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we explained how to disable file compression in a PDF using Aspose.PDF for .NET. You can now use this knowledge to maintain the integrity of attached files without compression.
+In diesem Tutorial haben wir erklärt, wie Sie die Dateikomprimierung in einer PDF-Datei mit Aspose.PDF für .NET deaktivieren. Sie können dieses Wissen nun nutzen, um die Integrität angehängter Dateien ohne Komprimierung aufrechtzuerhalten.
 
-## FAQ's for disable files compression in PDF file
+## FAQs zum Deaktivieren der Dateikomprimierung in PDF-Dateien
 
-#### Q: Why would I want to disable file compression in a PDF document?
+#### F: Warum sollte ich die Dateikomprimierung in einem PDF-Dokument deaktivieren?
 
-A: Disabling file compression ensures that attached files within a PDF document remain uncompressed, preserving their original quality and content.
+A: Durch Deaktivieren der Dateikomprimierung wird sichergestellt, dass angehängte Dateien in einem PDF-Dokument unkomprimiert bleiben und ihre ursprüngliche Qualität und ihr ursprünglicher Inhalt erhalten bleiben.
 
-#### Q: How does disabling file compression benefit PDF attachments?
+#### F: Wie wirkt sich die Deaktivierung der Dateikomprimierung auf PDF-Anhänge aus?
 
-A: Disabling compression prevents any loss of data or quality that can occur during the compression process, ensuring that attached files are presented as-is.
+A: Das Deaktivieren der Komprimierung verhindert Daten- oder Qualitätsverluste, die während des Komprimierungsvorgangs auftreten können, und stellt sicher, dass angehängte Dateien unverändert angezeigt werden.
 
-#### Q: Can I selectively disable compression for specific attachments using this tutorial?
+#### F: Kann ich mit diesem Tutorial die Komprimierung für bestimmte Anhänge selektiv deaktivieren?
 
-A: Yes, this tutorial guides you through disabling file compression for individual attachments in a PDF document, providing fine-grained control.
+A: Ja, dieses Tutorial führt Sie durch die Deaktivierung der Dateikomprimierung für einzelne Anhänge in einem PDF-Dokument und bietet eine detaillierte Steuerung.
 
-#### Q: What types of attachments can I disable compression for?
+#### F: Für welche Arten von Anhängen kann ich die Komprimierung deaktivieren?
 
-A: You can disable compression for any type of attachment, such as images, documents, spreadsheets, and more, ensuring their integrity is maintained.
+A: Sie können die Komprimierung für jede Art von Anhang deaktivieren, z. B. Bilder, Dokumente, Tabellenkalkulationen und mehr, um sicherzustellen, dass deren Integrität gewahrt bleibt.
 
-#### Q: Does disabling compression affect the overall file size of the PDF document?
+#### F: Hat die Deaktivierung der Komprimierung Auswirkungen auf die Gesamtdateigröße des PDF-Dokuments?
 
-A: Disabling compression for attachments might lead to a slight increase in the overall file size of the PDF document, as uncompressed files take up more space.
+A: Das Deaktivieren der Komprimierung für Anhänge kann zu einem leichten Anstieg der Gesamtdateigröße des PDF-Dokuments führen, da unkomprimierte Dateien mehr Platz beanspruchen.
 
-#### Q: How does Aspose.PDF for .NET facilitate the process of disabling file compression?
+#### F: Wie erleichtert Aspose.PDF für .NET das Deaktivieren der Dateikomprimierung?
 
-A: Aspose.PDF for .NET provides an easy-to-use API that allows you to disable file compression for attachments, as demonstrated in the provided source code.
+A: Aspose.PDF für .NET bietet eine benutzerfreundliche API, mit der Sie die Dateikomprimierung für Anhänge deaktivieren können, wie im bereitgestellten Quellcode gezeigt.
 
-#### Q: Can I re-enable compression for attachments later if needed?
+#### F: Kann ich die Komprimierung für Anhänge bei Bedarf später wieder aktivieren?
 
-A: Yes, you can modify the attachment's settings to enable compression again if necessary.
+A: Ja, Sie können die Einstellungen des Anhangs ändern, um die Komprimierung bei Bedarf wieder zu aktivieren.
 
-#### Q: What happens if I open the PDF on a device or software that supports compression?
+#### F: Was passiert, wenn ich die PDF-Datei auf einem Gerät oder einer Software öffne, die die Komprimierung unterstützt?
 
-A: If you open the PDF on a device or software that supports compression, the attachment might be displayed uncompressed, potentially affecting file size and rendering performance.
+A: Wenn Sie die PDF-Datei auf einem Gerät oder einer Software öffnen, die die Komprimierung unterstützt, wird der Anhang möglicherweise unkomprimiert angezeigt, was sich möglicherweise auf die Dateigröße und die Renderleistung auswirkt.
 
-#### Q: Are there specific scenarios where disabling compression is recommended?
+#### F: Gibt es bestimmte Szenarien, in denen die Deaktivierung der Komprimierung empfohlen wird?
 
-A: Disabling compression is recommended for attachments where maintaining the original quality and data integrity is a priority, such as high-resolution images or sensitive documents.
+A: Die Deaktivierung der Komprimierung wird für Anhänge empfohlen, bei denen die Wahrung der Originalqualität und Datenintegrität Priorität hat, beispielsweise hochauflösende Bilder oder vertrauliche Dokumente.

@@ -1,83 +1,83 @@
 ---
-title: Search Regular Expression In PDF File
-linktitle: Search Regular Expression In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to search and retrieve text using regular expressions in PDF file using Aspose.PDF for .NET.
+title: Buscar expresiones regulares en archivos PDF
+linktitle: Buscar expresiones regulares en archivos PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a buscar y recuperar texto usando expresiones regulares en un archivo PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 440
 url: /es/net/programming-with-text/search-regular-expression/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to search and retrieve text that matches a regular expression in PDF file. The provided C# source code demonstrates the process step by step.
+Este tutorial explica cómo usar Aspose.PDF para .NET para buscar y recuperar texto que coincida con una expresión regular en un archivo PDF. El código fuente de C# proporcionado demuestra el proceso paso a paso.
 
-## Prerequisites
+## Requisitos previos
 
-Before proceeding with the tutorial, make sure you have the following:
+Antes de continuar con el tutorial, asegúrese de tener lo siguiente:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Conocimientos básicos del lenguaje de programación C#.
+- Aspose.PDF para la biblioteca .NET instalada. Puede obtenerlo del sitio web de Aspose o utilizar NuGet para instalarlo en su proyecto.
 
-## Step 1: Set up the project
+## Paso 1: configurar el proyecto
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Comience creando un nuevo proyecto C# en su entorno de desarrollo integrado (IDE) preferido y agregue una referencia a la biblioteca Aspose.PDF para .NET.
 
-## Step 2: Import necessary namespaces
+## Paso 2: importar los espacios de nombres necesarios
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Agregue las siguientes directivas de uso al principio de su archivo C# para importar los espacios de nombres requeridos:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Load the PDF document
+## Paso 3: cargue el documento PDF
 
-Set the path to your PDF document directory and load the document using the `Document` class:
+ Establezca la ruta a su directorio de documentos PDF y cargue el documento usando el`Document` clase:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
 ```
 
-Make sure to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Asegúrate de reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta real a su directorio de documentos.
 
-## Step 4: Search with regular expression
+## Paso 4: buscar con expresión regular
 
-Create a `TextFragmentAbsorber` object and set the regular expression pattern to find all phrases that match the pattern:
+ Crear un`TextFragmentAbsorber` objeto y establezca el patrón de expresión regular para encontrar todas las frases que coincidan con el patrón:
 
 ```csharp
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Like 1999-2000
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Como 1999-2000
 ```
 
-Replace `"\\d{4}-\\d{4}"` with your desired regular expression pattern.
+ Reemplazar`"\\d{4}-\\d{4}"` con el patrón de expresión regular que desee.
 
-## Step 5: Set text search options
+## Paso 5: configurar las opciones de búsqueda de texto
 
-Create a `TextSearchOptions` object and set it to the `TextSearchOptions` property of the `TextFragmentAbsorber` object to enable regular expression usage:
+ Crear un`TextSearchOptions` objeto y configúrelo en el`TextSearchOptions` propiedad de la`TextFragmentAbsorber` objeto para habilitar el uso de expresiones regulares:
 
 ```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textFragmentAbsorber.TextSearchOptions = textSearchOptions;
 ```
 
-## Step 6: Search on all pages
+## Paso 6: buscar en todas las páginas
 
-Accept the absorber for all the pages of the document:
+Acepta el absorbente para todas las páginas del documento:
 
 ```csharp
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
 
-## Step 7: Retrieve extracted text fragments
+## Paso 7: recuperar fragmentos de texto extraídos
 
-Get the extracted text fragments using the `TextFragments` property of the `TextFragmentAbsorber` object:
+Obtenga los fragmentos de texto extraídos utilizando el`TextFragments` propiedad de la`TextFragmentAbsorber` objeto:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 ```
 
-## Step 8: Loop through the text fragments
+## Paso 8: recorrer los fragmentos de texto
 
-Loop through the retrieved text fragments and access their properties:
+Recorra los fragmentos de texto recuperados y acceda a sus propiedades:
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentCollection)
@@ -95,24 +95,24 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-You can modify the code within the loop to perform further actions on each text fragment.
+Puede modificar el código dentro del bucle para realizar más acciones en cada fragmento de texto.
 
-### Sample source code for Search Regular Expression using Aspose.PDF for .NET 
+### Código fuente de muestra para buscar expresiones regulares usando Aspose.PDF para .NET 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Abrir documento
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
-// Create TextAbsorber object to find all the phrases matching the regular expression
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Like 1999-2000
-// Set text search option to specify regular expression usage
+// Cree un objeto TextAbsorber para encontrar todas las frases que coincidan con la expresión regular
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Como 1999-2000
+// Establecer la opción de búsqueda de texto para especificar el uso de expresiones regulares
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textFragmentAbsorber.TextSearchOptions = textSearchOptions;
-// Accept the absorber for all the pages
+// Aceptar el absorbente para todas las páginas.
 pdfDocument.Pages.Accept(textFragmentAbsorber);
-// Get the extracted text fragments
+// Obtenga los fragmentos de texto extraídos
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Loop through the fragments
+// Recorre los fragmentos
 foreach (TextFragment textFragment in textFragmentCollection)
 {
 	Console.WriteLine("Text : {0} ", textFragment.Text);
@@ -128,48 +128,48 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-## Conclusion
+## Conclusión
 
-Congratulations! You have successfully learned how to search and retrieve text that matches a regular expression in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from loading the document to accessing the extracted text fragments. You can now incorporate this code into your own C# projects to perform advanced text searches in PDF files.
+¡Felicidades! Ha aprendido con éxito cómo buscar y recuperar texto que coincida con una expresión regular en un documento PDF utilizando Aspose.PDF para .NET. Este tutorial proporciona una guía paso a paso, desde cargar el documento hasta acceder a los fragmentos de texto extraídos. Ahora puede incorporar este código en sus propios proyectos de C# para realizar búsquedas de texto avanzadas en archivos PDF.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is the purpose of the "Search Regular Expression In PDF File" tutorial?
+#### P: ¿Cuál es el propósito del tutorial "Buscar expresiones regulares en archivos PDF"?
 
-A: The "Search Regular Expression In PDF File" tutorial aims to showcase how to use the Aspose.PDF library for .NET to search for and extract text that matches a specified regular expression pattern within a PDF file. The tutorial provides comprehensive guidance and sample C# code to demonstrate the process.
+R: El tutorial "Buscar expresiones regulares en archivos PDF" tiene como objetivo mostrar cómo utilizar la biblioteca Aspose.PDF para .NET para buscar y extraer texto que coincida con un patrón de expresión regular específico dentro de un archivo PDF. El tutorial proporciona una guía completa y un código C# de muestra para demostrar el proceso.
 
-#### Q: How does this tutorial help in searching for text using regular expressions in a PDF document?
+#### P: ¿Cómo ayuda este tutorial a buscar texto usando expresiones regulares en un documento PDF?
 
-A: This tutorial provides a step-by-step approach to using the Aspose.PDF library to conduct text searches in a PDF document based on a regular expression pattern. It details how to set up the project, load the PDF document, define a regular expression pattern, and retrieve the matching text fragments.
+R: Este tutorial proporciona un método paso a paso para utilizar la biblioteca Aspose.PDF para realizar búsquedas de texto en un documento PDF basándose en un patrón de expresión regular. Detalla cómo configurar el proyecto, cargar el documento PDF, definir un patrón de expresión regular y recuperar los fragmentos de texto coincidentes.
 
-#### Q: What are the prerequisites for following this tutorial?
+#### P: ¿Cuáles son los requisitos previos para seguir este tutorial?
 
-A: Before starting this tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to integrate it into your project.
+R: Antes de comenzar este tutorial, debes tener un conocimiento básico del lenguaje de programación C#. Además, debe tener instalada la biblioteca Aspose.PDF para .NET. Puede obtenerlo del sitio web de Aspose o utilizar NuGet para integrarlo en su proyecto.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### P: ¿Cómo configuro mi proyecto para seguir este tutorial?
 
-A: To begin, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This will allow you to leverage the library's capabilities within your project.
+R: Para comenzar, cree un nuevo proyecto C# en su entorno de desarrollo integrado (IDE) preferido y agregue una referencia a la biblioteca Aspose.PDF para .NET. Esto le permitirá aprovechar las capacidades de la biblioteca dentro de su proyecto.
 
-#### Q: Can I use regular expressions to search for text in a PDF document?
+#### P: ¿Puedo utilizar expresiones regulares para buscar texto en un documento PDF?
 
-A: Yes, this tutorial demonstrates how to use regular expressions to search for and extract text from a PDF document. It involves utilizing the `TextFragmentAbsorber` class and specifying a regular expression pattern to find phrases that match the provided pattern.
+ R: Sí, este tutorial demuestra cómo usar expresiones regulares para buscar y extraer texto de un documento PDF. Implica utilizar el`TextFragmentAbsorber` clase y especificando un patrón de expresión regular para encontrar frases que coincidan con el patrón proporcionado.
 
-#### Q: How do I define the regular expression pattern for text search?
+#### P: ¿Cómo defino el patrón de expresión regular para la búsqueda de texto?
 
-A: To define a regular expression pattern for text search, create a `TextFragmentAbsorber` object and set its pattern using the `Text` parameter. Replace the default pattern `"\\d{4}-\\d{4}"` in the tutorial's code with your desired regular expression pattern.
+ R: Para definir un patrón de expresión regular para la búsqueda de texto, cree un`TextFragmentAbsorber` objeto y establecer su patrón usando el`Text` parámetro. Reemplazar el patrón predeterminado`"\\d{4}-\\d{4}"` en el código del tutorial con el patrón de expresión regular que desee.
 
-#### Q: How can I enable regular expression usage for text search?
+#### P: ¿Cómo puedo habilitar el uso de expresiones regulares para la búsqueda de texto?
 
-A: Regular expression usage is enabled by creating a `TextSearchOptions` object and setting its value to `true`. Assign this object to the `TextSearchOptions` property of the `TextFragmentAbsorber` instance. This ensures that the regular expression pattern is applied during text search.
+ R: El uso de expresiones regulares se habilita creando un`TextSearchOptions` objeto y estableciendo su valor en`true` . Asigne este objeto al`TextSearchOptions` propiedad de la`TextFragmentAbsorber` instancia. Esto garantiza que se aplique el patrón de expresión regular durante la búsqueda de texto.
 
-#### Q: Can I retrieve text fragments that match the regular expression pattern?
+#### P: ¿Puedo recuperar fragmentos de texto que coincidan con el patrón de expresión regular?
 
-A: Absolutely. After applying the regular expression search on the PDF document, you can retrieve the extracted text fragments using the `TextFragments` property of the `TextFragmentAbsorber` object. These text fragments contain the text segments that match the specified regular expression pattern.
+ R: Absolutamente. Después de aplicar la búsqueda de expresiones regulares en el documento PDF, puede recuperar los fragmentos de texto extraídos utilizando el`TextFragments` propiedad de la`TextFragmentAbsorber` objeto. Estos fragmentos de texto contienen los segmentos de texto que coinciden con el patrón de expresión regular especificado.
 
-#### Q: What can I access from the retrieved text fragments?
+#### P: ¿A qué puedo acceder desde los fragmentos de texto recuperados?
 
-A: From the retrieved text fragments, you can access various properties such as the matched text content, position (X and Y coordinates), font information (name, size, color), and more. The sample code within the tutorial's loop demonstrates how to access and display these properties.
+R: Desde los fragmentos de texto recuperados, puede acceder a varias propiedades, como el contenido del texto coincidente, la posición (coordenadas X e Y), la información de la fuente (nombre, tamaño, color) y más. El código de muestra dentro del bucle del tutorial demuestra cómo acceder y mostrar estas propiedades.
 
-#### Q: How can I customize actions on the extracted text fragments?
+#### P: ¿Cómo puedo personalizar acciones en los fragmentos de texto extraídos?
 
-A: Once you have the extracted text fragments, you can customize the code within the loop to perform additional actions on each text fragment. This can include saving the extracted text, analyzing patterns, or implementing formatting changes based on your requirements.
+R: Una vez que tenga los fragmentos de texto extraídos, puede personalizar el código dentro del bucle para realizar acciones adicionales en cada fragmento de texto. Esto puede incluir guardar el texto extraído, analizar patrones o implementar cambios de formato según sus requisitos.

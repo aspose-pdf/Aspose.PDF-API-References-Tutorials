@@ -1,86 +1,86 @@
 ---
-title: Table In Header Footer Section
-linktitle: Table In Header Footer Section
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a table in the header/footer section of a PDF document with Aspose.PDF for .NET.
+title: 页眉页脚部分中的表格
+linktitle: 页眉页脚部分中的表格
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文档的页眉/页脚部分添加表格。
 type: docs
 weight: 170
 url: /zh/net/programming-with-stamps-and-watermarks/table-in-header-footer-section/
 ---
-In this tutorial, we will guide you step by step on how to add a table in the header or footer section of a PDF document using Aspose.PDF for .NET. The provided C# source code shows you how to create an empty PDF document, add a page, configure the header section, create a table, add rows and cells to the table, and finally save the PDF document.
+在本教程中，我们将逐步指导您如何使用 Aspose.PDF for .NET 在 PDF 文档的页眉或页脚部分添加表格。提供的 C# 源代码向您展示了如何创建空 PDF 文档、添加页面、配置标题部分、创建表格、向表格添加行和单元格，最后保存 PDF 文档。
 
-## Step 1: Setting up the environment
+## 第一步：搭建环境
 
-Before you begin, make sure you have the following:
+在开始之前，请确保您具备以下条件：
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- 已安装的 .NET 开发环境。
+- 下载用于 .NET 的 Aspose.PDF 库并在您的项目中引用。
 
-## Step 2: Creating the PDF Document and Page
+## 第 2 步：创建 PDF 文档和页面
 
-The first step is to create an instance of the `Document` class and add a page to the document. Here's how:
+第一步是创建一个实例`Document`类并向文档添加页面。就是这样：
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Instantiate a Document object
+//实例化一个文档对象
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
 
-// Create a page in the PDF document
+//在 PDF 文档中创建页面
 Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+请务必将“您的文档目录”替换为您要保存 PDF 文档的目录的实际路径。
 
-## Step 3: Configuring the header section
+## 步骤 3：配置标头部分
 
-Now we will configure the header section of the PDF document by creating an instance of the `HeaderFooter` class. Here's how:
+现在我们将通过创建一个实例来配置 PDF 文档的标题部分`HeaderFooter`班级。就是这样：
 
 ```csharp
-// Create a header section for the PDF file
+//为 PDF 文件创建标题部分
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Define the header section for the page
+//定义页面的标题部分
 page. Header = header;
 
-// Set the top margin of the header section
+//设置标题部分的上边距
 header. Margin. Top = 20;
 ```
 
-## Step 4: Creating the table
+## 第四步：创建表
 
-Now we are going to create a table using the `Table` class and add it to the heading section's paragraph collection. Here's how:
+现在我们将使用以下命令创建一个表`Table`类并将其添加到标题部分的段落集合中。就是这样：
 
 ```csharp
-// Instantiate a Table object
+//实例化一个Table对象
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Add the table to the paragraphs collection of the header section
+//将表格添加到标题部分的段落集合中
 header.Paragraphs.Add(tab1);
 
-// Define the widths of the columns of the table
+//定义表格列的宽度
 tab1.ColumnWidths = "60,300";
 ```
 
-The code above creates a table with two columns of specified widths.
+上面的代码创建了一个具有两列指定宽度的表格。
 
-## Step 5: Add rows and cells to the table
+## 步骤 5：向表格添加行和单元格
 
-Now we will add rows and cells to the table using the `Row` class and the `Cell` class. Here's how:
+现在我们将使用以下命令将行和单元格添加到表格中`Row`类和`Cell`班级。就是这样：
 
 ```csharp
-// Create a row in the table and add cells
+//在表格中创建一行并添加单元格
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Table in header section");
 row1.BackgroundColor = Color.Gray;
 
-// Merge the first cell of the first row
+//合并第一行的第一个单元格
 tab1.Rows[0].Cells[0].ColSpan = 2;
 tab1.Rows[0].Cells[0].DefaultCellTextState.ForegroundColor = Color.Cyan;
 tab1.Rows[0].Cells[0].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
 
-// Create another row in the table and add a cell with an image
+//在表格中创建另一行并添加带有图像的单元格
 Aspose.Pdf.Row row2 = tab1.Rows.Add();
 row2.BackgroundColor = Color.White;
 Aspose.Pdf.Cell cell2 = row2.Cells.Add();
@@ -94,128 +94,128 @@ row2.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
 row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 ```
 
-## Step 6: Saving the PDF Document
+## 第6步：保存PDF文档
 
-Once the table has been added to the header section, we can save the PDF document. Here's how:
+将表格添加到标题部分后，我们就可以保存 PDF 文档。就是这样：
 
 ```csharp
-// Save the PDF file
+//保存 PDF 文件
 pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+请务必将“您的文档目录”替换为您要保存 PDF 文档的目录的实际路径。
 
-### Sample source code for Table In Header Footer Section using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 的页眉页脚部分中的表的示例源代码 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document instance by calling empty constructor
+//通过调用空构造函数实例化 Document 实例
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
 
-// Create a page in the pdf document
+//在 pdf 文档中创建页面
 Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 
-// Create a Header Section of the PDF file
+//创建 PDF 文件的标题部分
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the Odd Header for the PDF file
+//设置 PDF 文件的奇数页眉
 page.Header = header;
 
-// Set the top margin for the header section
+//设置标题部分的上边距
 header.Margin.Top = 20;
 
-// Instantiate a table object
+//实例化一个表对象
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Add the table in paragraphs collection of the desired section
+//将表格添加到所需部分的段落集合中
 header.Paragraphs.Add(tab1);
 
-// Set default cell border using BorderInfo object
+//使用 BorderInfo 对象设置默认单元格边框
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 
-// Set with column widths of the table
+//设置表格的列宽
 tab1.ColumnWidths = "60 300";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose-logo.jpg";
 
-// Create rows in the table and then cells in the rows
+//在表中创建行，然后在行中创建单元格
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Table in Header Section");
 row1.BackgroundColor = Color.Gray;
 
-// Set the row span value for first row as 2
+//将第一行的行跨度值设置为 2
 tab1.Rows[0].Cells[0].ColSpan = 2;
 tab1.Rows[0].Cells[0].DefaultCellTextState.ForegroundColor = Color.Cyan;
 tab1.Rows[0].Cells[0].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
 
-// Create rows in the table and then cells in the rows
+//在表中创建行，然后在行中创建单元格
 Aspose.Pdf.Row row2 = tab1.Rows.Add();
 
-// Set the background color for Row2
+//设置 Row2 的背景颜色
 row2.BackgroundColor = Color.White;
 
-// Add the cell which holds the image
+//添加保存图像的单元格
 Aspose.Pdf.Cell cell2 = row2.Cells.Add();
 
-// Set the image width to 60
+//将图像宽度设置为 60
 img.FixWidth = 60;
 
-// Add the image to the table cell
+//将图像添加到表格单元格
 cell2.Paragraphs.Add(img);
 row2.Cells.Add("Logo is looking fine !");
 row2.Cells[1].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
 
-// Set the vertical allignment of the text as center alligned
+//设置文本的垂直对齐方式为居中对齐
 row2.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
 row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 
-// Save the Pdf file
+//保存 PDF 文件
 pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have learned how to add a table in the header or footer section of a PDF document using Aspose.PDF for .NET. You can now customize your headers and footers by adding tables to display additional information in your PDF documents.
+恭喜！您已经了解了如何使用 Aspose.PDF for .NET 在 PDF 文档的页眉或页脚部分添加表格。现在，您可以通过添加表格来自定义页眉和页脚，以在 PDF 文档中显示其他信息。
 
-### FAQ's for table in header footer section
+### 页眉页脚部分表格的常见问题解答
 
-#### Q: What is the purpose of adding a table in the header or footer section of a PDF document?
+#### 问：在 PDF 文档的页眉或页脚部分添加表格的目的是什么？
 
-A: Adding a table in the header or footer section of a PDF document allows you to display structured and organized information such as titles, subtitles, logos, or any other content that you want to appear consistently on each page of the document.
+答：在 PDF 文档的页眉或页脚部分添加表格可让您显示结构化且有组织的信息，例如标题、副标题、徽标或您希望在文档的每一页上一致显示的任何其他内容。
 
-#### Q: How does the provided C# source code achieve the addition of a table in the header or footer section of a PDF document?
+#### 问：提供的C#源代码如何实现在PDF文档的页眉或页脚部分添加表格？
 
-A: The code demonstrates the process of creating an empty PDF document, adding a page, configuring the header section, creating a table with rows and cells, and finally saving the PDF document. The result is a table displayed in the header section of the PDF document.
+答：该代码演示了创建空 PDF 文档、添加页面、配置标题部分、创建包含行和单元格的表格以及最后保存 PDF 文档的过程。结果是在 PDF 文档的标题部分显示一个表格。
 
-#### Q: Can I customize the appearance of the table cells, such as borders, background color, and text style?
+#### 问：我可以自定义表格单元格的外观，例如边框、背景颜色和文本样式吗？
 
-A: Yes, you can customize the appearance of the table cells by setting properties like cell borders, background color, text style, font, font size, and more.
+答：是的，您可以通过设置单元格边框、背景颜色、文本样式、字体、字体大小等属性来自定义表格单元格的外观。
 
-#### Q: How is the table added to the header section of the PDF document?
+#### 问：如何将表格添加到 PDF 文档的页眉部分？
 
-A: The code adds the table to the paragraphs collection of the header section, which ensures that the table is displayed in the header of each page.
+A：代码将表格添加到页眉部分的段落集合中，这样可以确保表格显示在每个页面的页眉中。
 
-#### Q: Can I add more rows and cells to the table as needed?
+#### 问：我可以根据需要向表格添加更多行和单元格吗？
 
-A: Absolutely, you can add more rows and cells to the table by using the `Rows.Add()` and `Cells.Add()` methods. This allows you to structure the table content as desired.
+答：当然，您可以使用以下命令向表格添加更多行和单元格`Rows.Add()`和`Cells.Add()`方法。这允许您根据需要构建表格内容。
 
-#### Q: Is it possible to adjust the width of the table columns?
-A: Yes, you can adjust the width of the table columns using the `ColumnWidths` property. This enables you to control the layout of the table.
+#### 问：可以调整表格列的宽度吗？
+答：是的，您可以使用`ColumnWidths`财产。这使您能够控制表的布局。
 
-#### Q: How can I span cells across multiple columns or rows within the table?
-A: To span cells across multiple columns, you can use the `ColSpan` property of the corresponding cell. Similarly, you can use the `RowSpan` property to span cells across multiple rows.
+#### 问：如何将单元格跨越表格中的多列或多行？
+答：要将单元格跨多列，您可以使用`ColSpan`相应单元格的属性。同样，您可以使用`RowSpan`属性将单元格跨多行。
 
-#### Q: What happens if I want to add a table to both the header and footer sections of the PDF document?
+#### 问：如果我想向 PDF 文档的页眉和页脚部分添加表格，会发生什么情况？
 
-A: You can follow a similar approach for both the header and footer sections. Simply create a `HeaderFooter` instance for the footer, configure it, and add the table to its paragraphs collection.
+答：您可以对页眉和页脚部分采用类似的方法。只需创建一个`HeaderFooter`页脚的实例，配置它，并将表格添加到其段落集合中。
 
-#### Q: Can I use images within the table cells, and how is that achieved?
+#### 问：我可以在表格单元格内使用图像吗？如何实现？
 
-A: Yes, you can add images within table cells. The code example demonstrates adding an image to a cell by creating an `Image` object, setting its file path and dimensions, and then adding it to a cell's paragraphs.
+答：是的，您可以在表格单元格中添加图像。该代码示例演示了通过创建一个`Image`对象，设置其文件路径和尺寸，然后将其添加到单元格的段落中。
 
-#### Q: How do I ensure the table appears consistently across all pages in the PDF document?
+#### 问：如何确保表格在 PDF 文档的所有页面上一致显示？
 
-A: When you add the table to the header or footer section using the `HeaderFooter` instance, Aspose.PDF ensures that the table appears consistently on each page, providing a uniform layout.
+答：当您使用`HeaderFooter`例如，Aspose.PDF 确保表格在每个页面上显示一致，提供统一的布局。

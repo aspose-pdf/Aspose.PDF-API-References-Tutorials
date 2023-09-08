@@ -1,33 +1,33 @@
 ---
-title: Add Image In PDF File
-linktitle: Add Image In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add an image in PDF file using Aspose.PDF for .NET.
+title: 在 PDF 文件中添加图像
+linktitle: 在 PDF 文件中添加图像
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 在 PDF 文件中轻松添加图像。
 type: docs
 weight: 10
 url: /zh/net/programming-with-images/add-image/
 ---
-This guide will take you step by step how to add an image in PDF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+本指南将逐步指导您如何使用 Aspose.PDF for .NET 在 PDF 文件中添加图像。确保您已设置环境并按照以下步骤操作：
 
-## Step 1: Define the document directory
+## 第1步：定义文档目录
 
-Before you start, make sure you set the correct directory for the documents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+开始之前，请确保为文档设置正确的目录。代替`"YOUR DOCUMENT DIRECTORY"`在代码中添加 PDF 文档所在目录的路径。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the document
+## 步骤 2：打开文档
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+在此步骤中，我们将使用以下命令打开 PDF 文档`Document` Aspose.PDF 类。使用`Document`构造函数并传递 PDF 文档的路径。
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddImage.pdf");
 ```
 
-## Step 3: Set Image Coordinates
+## 第三步：设置图像坐标
 
-Set the coordinates of the image you want to add. The variables `lowerLeftX`, `lowerLeftY`, `upperRightX` and `upperRightY` represent the coordinates of the lower left corner and the upper right corner of the image respectively.
+设置要添加的图像的坐标。变量`lowerLeftX`, `lowerLeftY`, `upperRightX`和`upperRightY`分别表示图像的左下角和右上角的坐标。
 
 ```csharp
 int lowerLeftX = 100;
@@ -36,41 +36,41 @@ int upperRightX = 200;
 int upperRightY = 200;
 ```
 
-## Step 4: Get the page where the image should be added
+## 第四步：获取要添加图片的页面
 
-To add the image to a specific page of the PDF document, we first need to retrieve that page. In this example, we add the image to the second page (index 1) of the document.
+要将图像添加到 PDF 文档的特定页面，我们首先需要检索该页面。在此示例中，我们将图像添加到文档的第二页（索引 1）。
 
 ```csharp
 Page page = pdfDocument.Pages[1];
 ```
 
-## Step 5: Load the image from a stream
+## 第 5 步：从流中加载图像
 
-We will now load the image we want to add to the PDF document. This example assumes you have an image file named `aspose-logo.jpg` in the same directory as your document. Replace the file name if necessary.
+现在我们将加载要添加到 PDF 文档中的图像。此示例假设您有一个名为`aspose-logo.jpg`与您的文档位于同一目录中。如有必要，请替换文件名。
 
 ```csharp
 FileStream imageStream = new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open);
 ```
 
-## Step 6: Add the Image to Page Assets
+## 第 6 步：将图像添加到页面资源
 
-To use the image in the PDF document, we need to add it to the page's resource image collection.
+要使用PDF文档中的图像，我们需要将其添加到页面的资源图像集合中。
 
 ```csharp
 page.Resources.Images.Add(imageStream);
 ```
 
-## Step 7: Save current graphics state
+## 步骤7：保存当前图形状态
 
-Before drawing the image, we need to save the current graphics state using the `GSave` operator. This ensures that changes to the graphics state can be rolled back later.
+在绘制图像之前，我们需要使用以下命令保存当前图形状态`GSave`操作员。这确保了对图形状态的更改可以稍后回滚。
 
 ```csharp
 page.Contents.Add(new Aspose.Pdf.Operators.GSave());
 ```
 
-## Step 8: Create Rectangle and Matrix objects
+## 第8步：创建矩形和矩阵对象
 
-We will now create a `Rectangle` object and a `Matrix` object. The rectangle represents the position and size of the image, while the matrix defines how the image should be placed.
+我们现在将创建一个`Rectangle`对象和一个`Matrix`目的。矩形代表图像的位置和大小，而矩阵定义图像的放置方式。
 
 ```csharp
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(lower
@@ -79,121 +79,121 @@ LeftX, lowerLeftY, upperRightX, upperRightY);
 Matrix matrix = new Matrix(new double[] { rectangle.URX - rectangle.LLX, 0, 0, rectangle.URY - rectangle.LLY, rectangle.LLX, rectangle.LLY });
 ```
 
-## Step 9: Concatenate matrix for image placement
+## 第 9 步：连接图像放置矩阵
 
-To specify how the image should be placed in the rectangle, we use the `ConcatenateMatrix` operator. This operator defines the transformation matrix that maps the coordinate space of the image to the coordinate space of the page.
+为了指定图像应如何放置在矩形中，我们使用`ConcatenateMatrix`操作员。该运算符定义将图像的坐标空间映射到页面的坐标空间的变换矩阵。
 
 ```csharp
 page.Contents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(matrix));
 ```
 
-## Step 10: Draw the image
+## 第10步：绘制图像
 
-In this step we will draw the image on the page using the `Do` operator. The `Do` operator takes the image name from the resources and draws it onto the page.
+在此步骤中，我们将使用以下方法在页面上绘制图像`Do`操作员。这`Do`运算符从资源中获取图像名称并将其绘制到页面上。
 
 ```csharp
 XImage ximage = page.Resources.Images[page.Resources.Images.Count];
 page.Contents.Add(new Aspose.Pdf.Operators.Do(ximage.Name));
 ```
 
-## Step 11: Restore graphics state
+## 步骤11：恢复图形状态
 
-After drawing the image, we need to restore the previous graphics state using the `GRestore` operator.
+绘制图像后，我们需要使用以下命令恢复之前的图形状态`GRestore`操作员。
 
 ```csharp
 page.Contents.Add(new Aspose.Pdf.Operators.GRestore());
 ```
 
-## Step 12: Save the updated document
+## 第12步：保存更新后的文档
 
-Finally, we'll save the updated document to a new file. Update the `dataDir` variable with the desired output directory and filename.
+最后，我们将更新的文档保存到新文件中。更新`dataDir`具有所需输出目录和文件名的变量。
 
 ```csharp
 dataDir = dataDir + "AddImage_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Add Image using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 添加图像的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir+ "AddImage.pdf");
-// Set coordinates
+//设置坐标
 int lowerLeftX = 100;
 int lowerLeftY = 100;
 int upperRightX = 200;
 int upperRightY = 200;
-// Get the page where image needs to be added
+//获取需要添加图片的页面
 Page page = pdfDocument.Pages[1];
-// Load image into stream
+//将图像加载到流中
 FileStream imageStream = new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open);
-// Add image to Images collection of Page Resources
+//将图像添加到页面资源的图像集合
 page.Resources.Images.Add(imageStream);
-// Using GSave operator: this operator saves current graphics state
+//使用GSave运算符：该运算符保存当前图形状态
 page.Contents.Add(new Aspose.Pdf.Operators.GSave());
-// Create Rectangle and Matrix objects
+//创建矩形和矩阵对象
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(lowerLeftX, lowerLeftY, upperRightX, upperRightY);
 Matrix matrix = new Matrix(new double[] { rectangle.URX - rectangle.LLX, 0, 0, rectangle.URY - rectangle.LLY, rectangle.LLX, rectangle.LLY });
-// Using ConcatenateMatrix (concatenate matrix) operator: defines how image must be placed
+//使用ConcatenateMatrix（连接矩阵）运算符：定义图像的放置方式
 page.Contents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(matrix));
 XImage ximage = page.Resources.Images[page.Resources.Images.Count];
-// Using Do operator: this operator draws image
+//使用 Do 运算符：该运算符绘制图像
 page.Contents.Add(new Aspose.Pdf.Operators.Do(ximage.Name));
-// Using GRestore operator: this operator restores graphics state
+//使用GRestore运算符：该运算符恢复图形状态
 page.Contents.Add(new Aspose.Pdf.Operators.GRestore());
 dataDir = dataDir + "AddImage_out.pdf";
-// Save updated document
+//保存更新的文档
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImage added successfully.\nFile saved at " + dataDir); 
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we learned how to add an image to a PDF document using Aspose.PDF for .NET. We've covered every step in detail, from opening the document to saving the updated version. By following this guide, you should now be able to embed images into your PDF files programmatically using C# and Aspose.PDF.
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 将图像添加到 PDF 文档。我们详细介绍了从打开文档到保存更新版本的每个步骤。通过遵循本指南，您现在应该能够使用 C# 和 Aspose.PDF 以编程方式将图像嵌入到 PDF 文件中。
 
-### FAQ's for add image in PDF file
+### 在 PDF 文件中添加图像的常见问题解答
 
-#### Q: Why would I want to add an image to a PDF document?
+#### 问：为什么我要向 PDF 文档添加图像？
 
-A: Adding images to a PDF document can enhance visual content, provide additional context, or include logos and graphics in your PDF files.
+答：将图像添加到 PDF 文档可以增强视觉内容、提供附加上下文或在 PDF 文件中包含徽标和图形。
 
-#### Q: Can I add images to specific pages within a PDF document?
+#### 问：我可以将图像添加到 PDF 文档中的特定页面吗？
 
-A: Yes, you can specify the page where you want to add the image. In the provided code, the image is added to the second page of the PDF document.
+答：是的，您可以指定要添加图像的页面。在提供的代码中，图像被添加到 PDF 文档的第二页。
 
-#### Q: How do I adjust the position and size of the added image?
+#### 问：如何调整添加图片的位置和大小？
 
-A: You can modify the `lowerLeftX`, `lowerLeftY`, `upperRightX`, and `upperRightY` variables in the code to set the coordinates of the image and control its size and position on the page.
+答：您可以修改`lowerLeftX`, `lowerLeftY`, `upperRightX`， 和`upperRightY`代码中的变量用于设置图像的坐标并控制其大小和在页面上的位置。
 
-#### Q: What type of image formats can I add using this method?
+#### 问：使用此方法可以添加什么类型的图像格式？
 
-A: The provided code example assumes you are loading a JPG image (`aspose-logo.jpg`). Aspose.PDF for .NET supports various image formats, including PNG, BMP, GIF, and more.
+答：提供的代码示例假设您正在加载 JPG 图像（`aspose-logo.jpg`）。 Aspose.PDF for .NET 支持各种图像格式，包括 PNG、BMP、GIF 等。
 
-#### Q: How do I ensure that the added image fits within the specified coordinates?
+#### 问：如何确保添加的图像符合指定的坐标？
 
-A: Make sure to adjust the coordinates and size of the `Rectangle` object (`rectangle`) to match the dimensions of the image and its desired placement on the page.
+ A：一定要调整好坐标和大小`Rectangle`目的 （`rectangle`以匹配图像的尺寸及其在页面上所需的位置。
 
-#### Q: Can I add multiple images to a single PDF page?
+#### 问：我可以将多个图像添加到单个 PDF 页面吗？
 
-A: Yes, you can add multiple images to a single PDF page by repeating the process for each image and adjusting the coordinates and other parameters accordingly.
+答：是的，您可以通过对每个图像重复该过程并相应地调整坐标和其他参数，将多个图像添加到单个 PDF 页面。
 
-#### Q: How does the `GSave` and `GRestore` operator work in the code?
+#### 问：如何`GSave` and `GRestore` operator work in the code?
 
-A: The `GSave` operator saves the current graphics state, allowing you to make changes without affecting the overall graphics context. The `GRestore` operator restores the previous graphics state after changes are made.
+答： 的`GSave`操作符保存当前图形状态，允许您在不影响整体图形上下文的情况下进行更改。这`GRestore`操作员在进行更改后恢复之前的图形状态。
 
-#### Q: What happens if the image file is not found at the specified path?
+#### 问：如果在指定路径下找不到镜像文件怎么办？
 
-A: If the image file is not found at the specified path, the code will throw an exception when trying to load the image stream. Make sure the image file is located in the correct directory.
+答：如果在指定路径下没有找到图像文件，代码在尝试加载图像流时会抛出异常。确保图像文件位于正确的目录中。
 
-#### Q: Can I customize the image placement and appearance further?
+#### 问：我可以进一步自定义图像位置和外观吗？
 
-A: Yes, you can customize the image appearance by modifying the `Matrix` object and adjusting other operators within the code. Refer to the Aspose.PDF documentation for advanced customization.
+答：是的，您可以通过修改`Matrix`对象并调整代码中的其他运算符。请参阅 Aspose.PDF 文档以进行高级自定义。
 
-#### Q: How can I test if the image was successfully added to the PDF?
+#### 问：如何测试图像是否成功添加到PDF？
 
-A: After applying the provided code to add the image, open the modified PDF file and verify that the image is displayed on the specified page with the correct placement.
+答：应用提供的代码添加图像后，打开修改后的 PDF 文件并验证图像是否以正确的位置显示在指定页面上。
 
-#### Q: Does adding images affect the original content of the PDF document?
+#### 问：添加图片是否会影响PDF文档的原始内容？
 
-A: Adding images does not affect the original content of the PDF document. It enhances the document by including visual elements.
+答：添加图像不会影响PDF文档的原始内容。它通过包含视觉元素来增强文档。

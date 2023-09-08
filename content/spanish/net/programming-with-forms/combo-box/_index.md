@@ -1,49 +1,49 @@
 ---
-title: Combo Box
-linktitle: Combo Box
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create combo box list in your PDF documents using Aspose.PDF for .NET.
+title: Caja combo
+linktitle: Caja combo
+second_title: Aspose.PDF para referencia de API .NET
+description: Cree fácilmente una lista de cuadros combinados en sus documentos PDF utilizando Aspose.PDF para .NET.
 type: docs
 weight: 30
 url: /es/net/programming-with-forms/combo-box/
 ---
-In this tutorial, we will show you how to create a combo box list using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+En este tutorial, le mostraremos cómo crear una lista de cuadro combinado usando Aspose.PDF para .NET. Explicaremos el código fuente de C# paso a paso para guiarlo a través de este proceso.
 
-## Step 1: Preparation
+## Paso 1: preparación
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Primero, asegúrese de haber importado las bibliotecas necesarias y establecer la ruta al directorio de documentos:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a Document Object
+## Paso 2: crear un objeto de documento
 
-Create a Document object to hold the PDF form:
+Cree un objeto Documento para contener el formulario PDF:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 3: Add a page
+## Paso 3: agrega una página
 
-Add a page to the document:
+Agregue una página al documento:
 
 ```csharp
 doc.Pages.Add();
 ```
 
-## Step 4: Instantiate a ComboBoxField Object
+## Paso 4: crear una instancia de un objeto ComboBoxField
 
-Instantiate a ComboBoxField object with the desired dimensions:
+Cree una instancia de un objeto ComboBoxField con las dimensiones deseadas:
 
 ```csharp
 ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
 ```
 
-## Step 5: Add options to the drop-down list
+## Paso 5: agregue opciones a la lista desplegable
 
-Add the desired options to the drop-down list:
+Agregue las opciones deseadas a la lista desplegable:
 
 ```csharp
 combo.AddOption("Red");
@@ -52,44 +52,44 @@ combo.AddOption("Green");
 combo.AddOption("Blue");
 ```
 
-## Step 6: Add the combo box list to the form
+## Paso 6: agregue la lista del cuadro combinado al formulario
 
-Add the ComboBoxField object to the Document Form Fields collection:
+Agregue el objeto ComboBoxField a la colección Campos de formulario de documento:
 
 ```csharp
 doc.Form.Add(combo);
 ```
 
-## Step 7: Save the document
+## Paso 7: guarde el documento
 
-Save the PDF document:
+Guarde el documento PDF:
 
 ```csharp
 dataDir = dataDir + "ComboBox_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Combo Box using Aspose.PDF for .NET 
+### Código fuente de muestra para Combo Box usando Aspose.PDF para .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// La ruta al directorio de documentos.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Create Document object
+	// Crear objeto de documento
 	Document doc = new Document();
-	// Add page to document object
+	// Agregar página al objeto del documento
 	doc.Pages.Add();
-	// Instantiate ComboBox Field object
+	// Crear una instancia del objeto de campo ComboBox
 	ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
-	// Add option to ComboBox
+	// Agregar opción a ComboBox
 	combo.AddOption("Red");
 	combo.AddOption("Yellow");
 	combo.AddOption("Green");
 	combo.AddOption("Blue");
-	// Add combo box object to form fields collection of document object
+	// Agregar un objeto de cuadro combinado para formar la colección de campos del objeto de documento
 	doc.Form.Add(combo);
 	dataDir = dataDir + "ComboBox_out.pdf";
-	// Save the PDF document
+	// Guarde el documento PDF
 	doc.Save(dataDir);
 	Console.WriteLine("\nCombobox field added successfully.\nFile saved at " + dataDir);
 }
@@ -99,28 +99,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, we learned how to create a combo box list using Aspose.PDF for .NET. By following these steps, you can easily add a combo box list to your PDF documents using Aspose.PDF.
+En este tutorial, aprendimos cómo crear una lista de cuadro combinado usando Aspose.PDF para .NET. Siguiendo estos pasos, puede agregar fácilmente una lista de cuadros combinados a sus documentos PDF usando Aspose.PDF.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: Can I customize the appearance of the combo box list using Aspose.PDF for .NET?
+#### P: ¿Puedo personalizar la apariencia de la lista del cuadro combinado usando Aspose.PDF para .NET?
 
-A: Yes, you can customize the appearance of the combo box list using Aspose.PDF for .NET. You can set properties such as font size, color, background color, border style, and more to match your desired look and feel.
+R: Sí, puede personalizar la apariencia de la lista del cuadro combinado usando Aspose.PDF para .NET. Puede configurar propiedades como tamaño de fuente, color, color de fondo, estilo de borde y más para que coincidan con la apariencia deseada.
 
-#### Q: Can I set default selected options in the combo box list?
+#### P: ¿Puedo configurar opciones seleccionadas predeterminadas en la lista del cuadro combinado?
 
-A: Yes, you can set default selected options in the combo box list using Aspose.PDF for .NET. You can use the `Selected` property of the `ComboBoxField` object to mark one or more options as selected by default.
+ R: Sí, puede configurar las opciones seleccionadas predeterminadas en la lista del cuadro combinado usando Aspose.PDF para .NET. Puedes usar el`Selected` propiedad de la`ComboBoxField` objeto para marcar una o más opciones como seleccionadas de forma predeterminada.
 
-#### Q: How can I retrieve the selected value from the combo box list after the user makes a selection?
+#### P: ¿Cómo puedo recuperar el valor seleccionado de la lista del cuadro combinado después de que el usuario realiza una selección?
 
-A: You can retrieve the selected value from the combo box list using Aspose.PDF for .NET. After the user makes a selection, you can access the `Value` property of the `ComboBoxField` object to obtain the selected value.
+ R: Puede recuperar el valor seleccionado de la lista del cuadro combinado usando Aspose.PDF para .NET. Después de que el usuario haga una selección, podrá acceder a la`Value` propiedad de la`ComboBoxField`objeto para obtener el valor seleccionado.
 
-#### Q: Is it possible to add event handlers or actions to the combo box list?
+#### P: ¿Es posible agregar controladores de eventos o acciones a la lista del cuadro combinado?
 
-A: Yes, Aspose.PDF for .NET allows you to add event handlers or actions to the combo box list. You can associate JavaScript actions, such as `OnValueChanged`, to the combo box list to perform specific actions when the user selects an option.
+ R: Sí, Aspose.PDF para .NET le permite agregar controladores de eventos o acciones a la lista del cuadro combinado. Puede asociar acciones de JavaScript, como`OnValueChanged`, a la lista del cuadro combinado para realizar acciones específicas cuando el usuario selecciona una opción.
 
-#### Q: Can I add tooltips or descriptions to the options in the combo box list?
+#### P: ¿Puedo agregar información sobre herramientas o descripciones a las opciones en la lista del cuadro combinado?
 
-A: Yes, you can add tooltips or descriptions to the options in the combo box list using Aspose.PDF for .NET. You can set the `AlternateName` property of each option to provide a tooltip or description that will be displayed when the user hovers over the option.
+ R: Sí, puede agregar información sobre herramientas o descripciones a las opciones en la lista del cuadro combinado usando Aspose.PDF para .NET. Puedes configurar el`AlternateName` propiedad de cada opción para proporcionar información sobre herramientas o descripción que se mostrará cuando el usuario pase el cursor sobre la opción.

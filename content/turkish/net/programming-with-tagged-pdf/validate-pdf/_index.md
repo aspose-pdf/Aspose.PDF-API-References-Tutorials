@@ -1,54 +1,54 @@
 ---
-title: Validate PDF File
-linktitle: Validate PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to validate a PDF file with Aspose.PDF for .NET. Check its compliance with standards and generate a validation report.
+title: PDF Dosyasını Doğrula
+linktitle: PDF Dosyasını Doğrula
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile bir PDF dosyasını nasıl doğrulayacağınızı öğrenin. Standartlara uygunluğunu kontrol edin ve bir doğrulama raporu oluşturun.
 type: docs
 weight: 240
 url: /tr/net/programming-with-tagged-pdf/validate-pdf/
 ---
-In this tutorial, we will walk you through how to validate a PDF file using Aspose.PDF for .NET. Follow the instructions below to understand how to use the provided C# source code to validate a PDF file and generate a validation report.
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasını nasıl doğrulayacağınız konusunda size yol göstereceğiz. Bir PDF dosyasını doğrulamak ve doğrulama raporu oluşturmak için sağlanan C# kaynak kodunun nasıl kullanılacağını anlamak için aşağıdaki talimatları izleyin.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+Başlamadan önce geliştirme ortamınızı Aspose.PDF for .NET'i kullanacak şekilde yapılandırdığınızdan emin olun. Buna Aspose.PDF kütüphanesinin kurulması ve projenizin buna referans verecek şekilde yapılandırılması da dahildir.
 
-## Step 2: Preparing the PDF document
+## Adım 2: PDF belgesini hazırlama
 
-Place your PDF file to be validated in the specified directory. Be sure to adjust the file path in the source code using your own docs directory.
+Doğrulanacak PDF dosyanızı belirtilen dizine yerleştirin. Kendi dokümanlar dizininizi kullanarak kaynak kodundaki dosya yolunu ayarladığınızdan emin olun.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// PDF input file path
+// PDF giriş dosyası yolu
 string inputFileName = dataDir + "StructureElements.pdf";
 
-// Path of the validation report output file
+// Doğrulama raporu çıktı dosyasının yolu
 string outputLogName = dataDir + "ua-20.xml";
 ```
 
-Make sure that your PDF file to be validated is correctly specified in the source code.
+Doğrulanacak PDF dosyanızın kaynak kodunda doğru şekilde belirtildiğinden emin olun.
 
-## Step 3: PDF Validation
+## Adım 3: PDF Doğrulaması
 
-In this step, we will use Aspose.PDF for .NET to validate the specified PDF document and generate a validation report.
+Bu adımda, belirtilen PDF belgesini doğrulamak ve bir doğrulama raporu oluşturmak için Aspose.PDF for .NET'i kullanacağız.
 
 ```csharp
-// Open the PDF document
+//PDF belgesini açın
 using (var document = new Aspose.Pdf.Document(inputFileName))
 {
-// Validate the PDF document
+// PDF belgesini doğrulayın
 bool isValid = document.Validate(outputLogName, Aspose.Pdf.PdfFormat.PDF_UA_1);
 }
 ```
 
-We opened the PDF document and validated its format using Aspose.PDF for .NET. The validation result will be stored in the specified report file.
+PDF belgesini açtık ve Aspose.PDF for .NET kullanarak formatını doğruladık. Doğrulama sonucu belirtilen rapor dosyasında saklanacaktır.
 
-### Sample source code for Validate PDF using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak PDF'yi Doğrulamak için örnek kaynak kodu 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inputFileName = dataDir + "StructureElements.pdf";
 string outputLogName = dataDir + "ua-20.xml";
@@ -60,40 +60,40 @@ using (var document = new Aspose.Pdf.Document(inputFileName))
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to use Aspose.PDF for .NET to validate a PDF document and generate a validation report. Validating the PDF allows you to ensure that it conforms to standards and guarantees its accessibility. Use these features to improve the quality of your PDF documents.
+Bu eğitimde, bir PDF belgesini doğrulamak ve bir doğrulama raporu oluşturmak için Aspose.PDF for .NET'i nasıl kullanacağımızı öğrendik. PDF'yi doğrulamak, onun standartlara uygun olduğundan emin olmanızı sağlar ve erişilebilirliğini garanti eder. PDF belgelerinizin kalitesini artırmak için bu özellikleri kullanın.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of this tutorial on validating a PDF file using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF dosyasını doğrulamaya yönelik bu eğitimin amacı nedir?
 
-A: The primary goal of this tutorial is to guide you through the process of validating a PDF file using Aspose.PDF for .NET. By following the provided instructions and using the provided C# source code, you can ensure that your PDF document adheres to specified standards and generate a validation report.
+C: Bu eğitimin temel amacı, Aspose.PDF for .NET kullanarak bir PDF dosyasını doğrulama sürecinde size rehberlik etmektir. Sağlanan talimatları izleyerek ve sağlanan C# kaynak kodunu kullanarak PDF belgenizin belirtilen standartlara uygun olmasını sağlayabilir ve bir doğrulama raporu oluşturabilirsiniz.
 
-#### Q: What are the prerequisites for validating a PDF file using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF dosyasını doğrulamanın önkoşulları nelerdir?
 
-A: Before you begin, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+C: Başlamadan önce, geliştirme ortamınızı Aspose.PDF for .NET'i kullanacak şekilde ayarladığınızdan emin olun. Bu, Aspose.PDF kütüphanesinin kurulmasını ve projenizin buna referans verecek şekilde yapılandırılmasını içerir.
 
-#### Q: How do I prepare the PDF document for validation using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak PDF belgesini doğrulamaya nasıl hazırlarım?
 
-A: You need to place the PDF file you want to validate in the specified directory. Adjust the file path in the source code to point to your PDF document. The tutorial provides the necessary source code and guidance.
+C: Doğrulamak istediğiniz PDF dosyasını belirtilen dizine yerleştirmeniz gerekir. Kaynak kodundaki dosya yolunu PDF belgenizi işaret edecek şekilde ayarlayın. Öğretici gerekli kaynak kodunu ve rehberliği sağlar.
 
-#### Q: What does the PDF validation process involve using Aspose.PDF for .NET?
+#### S: PDF doğrulama süreci Aspose.PDF for .NET kullanımını neleri içerir?
 
-A: The tutorial demonstrates how to use Aspose.PDF for .NET to open and validate a specified PDF document. The validation process ensures that the PDF conforms to a specific standard (PDF/UA-1 in this case). The result of the validation is stored in a validation report.
+C: Eğitim, belirli bir PDF belgesini açmak ve doğrulamak için Aspose.PDF for .NET'in nasıl kullanılacağını gösterir. Doğrulama süreci, PDF'nin belirli bir standarda (bu durumda PDF/UA-1) uygun olmasını sağlar. Doğrulamanın sonucu bir doğrulama raporunda saklanır.
 
-#### Q: How can I generate a validation report for a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesi için nasıl doğrulama raporu oluşturabilirim?
 
-A: The provided C# source code examples show how to open a PDF document, validate it using Aspose.PDF for .NET, and generate a validation report. The `Validate` method is used for this purpose.
+ C: Sağlanan C# kaynak kodu örnekleri, bir PDF belgesinin nasıl açılacağını, Aspose.PDF for .NET kullanılarak belgenin nasıl doğrulanacağını ve bir doğrulama raporunun nasıl oluşturulacağını gösterir.`Validate` Bu amaçla yöntem kullanılır.
 
-#### Q: What is the significance of PDF validation and generating a validation report?
+#### S: PDF doğrulamanın ve doğrulama raporu oluşturmanın önemi nedir?
 
-A: Validating a PDF document ensures that it adheres to standards and guidelines, such as PDF/UA, which is specifically focused on accessibility. A validation report provides valuable information about any issues or areas of non-compliance within the PDF document.
+C: Bir PDF belgesinin doğrulanması, belgenin özellikle erişilebilirliğe odaklanan PDF/UA gibi standartlara ve yönergelere uygun olmasını sağlar. Doğrulama raporu, PDF belgesindeki herhangi bir sorun veya uyumsuzluk alanı hakkında değerli bilgiler sağlar.
 
-#### Q: Can I customize the validation process or specify different standards for validation using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak doğrulama sürecini özelleştirebilir miyim veya doğrulama için farklı standartlar belirleyebilir miyim?
 
-A: Yes, you can customize the validation process by choosing different validation standards, such as PDF/A or PDF/X, and by configuring additional validation options. The provided C# source code focuses on PDF/UA validation, but you can explore the official documentation for more options.
+C: Evet, PDF/A veya PDF/X gibi farklı doğrulama standartlarını seçerek ve ek doğrulama seçeneklerini yapılandırarak doğrulama sürecini özelleştirebilirsiniz. Sağlanan C# kaynak kodu, PDF/UA doğrulamasına odaklanır, ancak daha fazla seçenek için resmi belgeleri inceleyebilirsiniz.
 
-#### Q: How can I interpret and utilize the validation report generated by Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET tarafından oluşturulan doğrulama raporunu nasıl yorumlayabilir ve kullanabilirim?
 
-A: The validation report provides detailed information about any validation errors or warnings within the PDF document. It helps you identify and address issues related to accessibility and compliance. You can review the report to make necessary improvements.
+C: Doğrulama raporu, PDF belgesindeki doğrulama hataları veya uyarılar hakkında ayrıntılı bilgi sağlar. Erişilebilirlik ve uyumlulukla ilgili sorunları belirlemenize ve çözmenize yardımcı olur. Gerekli iyileştirmeleri yapmak için raporu inceleyebilirsiniz.

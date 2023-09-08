@@ -1,114 +1,114 @@
 ---
-title: Counting Artifacts In PDF File
-linktitle: Counting Artifacts In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily count watermarks in PDF file with Aspose.PDF for .NET.
+title: PDF Dosyasındaki Yapıları Sayma
+linktitle: PDF Dosyasındaki Yapıları Sayma
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasındaki filigranları nasıl kolayca sayacağınızı öğrenin.
 type: docs
 weight: 60
 url: /tr/net/programming-with-stamps-and-watermarks/counting-artifacts/
 ---
-In this tutorial, we will take you step by step on how to count artifacts in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to count the number of "watermark" artifacts on a specific page of the PDF file.
+Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasındaki yapıtların nasıl sayılacağı konusunda size adım adım yol göstereceğiz. PDF dosyasının belirli bir sayfasındaki "filigran" yapılarının sayısını saymak için sağlanan C# kaynak kodunu nasıl kullanacağınızı size göstereceğiz.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Kurulu bir .NET geliştirme ortamı.
+- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
 
-## Step 2: Loading the PDF document
+## Adım 2: PDF belgesini yükleme
 
-The first step is to load the existing PDF document into your project. Here's how:
+İlk adım mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "watermark.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+"BELGELERİNİZ DİZİNİ"ni, PDF belgenizin bulunduğu dizine giden gerçek yolla değiştirdiğinizden emin olun.
 
-## Step 3: Count artifacts
+## 3. Adım: Yapıları sayın
 
-Now that you have loaded the PDF document, you can count the "watermark" type artifacts on a specific page of the document. Here's how:
+Artık PDF belgesini yüklediğinize göre, belgenin belirli bir sayfasındaki "filigran" türü yapıtları sayabilirsiniz. İşte nasıl:
 
 ```csharp
-// Initialize the counter
+// Sayacı başlat
 int count = 0;
 
-// Loop through all first page artifacts
+// Tüm ilk sayfa yapıtları arasında geçiş yapın
 foreach(Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
-     // If the artifact subtype is "watermark", increment the counter
+     //Yapıt alt türü "filigran" ise sayacı artırın
      if (artifact.Subtype == Artifact.ArtifactSubtype.Watermark)
          count++;
 }
 
-// Display the number of "watermark" type artifacts
+// "Filigran" tipi yapıtların sayısını görüntüleme
 Console.WriteLine("The page contains " + count + " watermarks");
 ```
 
-The above code loops through all the artifacts on the first page of the PDF document and increments the counter for each "watermark" type artifact encountered.
+Yukarıdaki kod, PDF belgesinin ilk sayfasındaki tüm yapılar arasında geçiş yapar ve karşılaşılan her "filigran" tipi yapı için sayacı artırır.
 
-### Sample source code for Counting Artifacts using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Yapıları Saymak için örnek kaynak kodu 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document( dataDir +  "watermark.pdf");
 
 int count = 0;
 foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
-	// If artifact type is watermark, increate the counter
+	// Yapı türü filigran ise sayacı oluşturun
 	if (artifact.Subtype == Artifact.ArtifactSubtype.Watermark) count++;
 }
 Console.WriteLine("Page contains " + count + " watermarks");
 
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You learned how to count "watermark" artifacts in a PDF document using Aspose.PDF for .NET. You can now use this knowledge to perform specific analysis and processing on artifacts in your PDF documents.
+Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF belgesindeki "filigran" yapıtlarını nasıl sayacağınızı öğrendiniz. Artık bu bilgiyi, PDF belgelerinizdeki yapılar üzerinde belirli analizler ve işlemler gerçekleştirmek için kullanabilirsiniz.
 
-### FAQ's for counting artifacts in PDF file
+### PDF dosyasındaki yapıları saymaya ilişkin SSS'ler
 
-#### Q: What are artifacts in a PDF document, and why would I need to count them?
+#### S: Bir PDF belgesindeki yapılar nelerdir ve bunları neden saymam gerekiyor?
 
-A: Artifacts in a PDF document are elements that don't directly affect the content or appearance of the document but are included for specific purposes, such as accessibility or metadata. Counting artifacts can help you identify and analyze specific elements within a PDF, such as watermarks, annotations, or hidden content.
+C: PDF belgesindeki yapılar, belgenin içeriğini veya görünümünü doğrudan etkilemeyen ancak erişilebilirlik veya meta veriler gibi belirli amaçlarla dahil edilen öğelerdir. Yapıları saymak, PDF'deki filigranlar, ek açıklamalar veya gizli içerik gibi belirli öğeleri tanımlamanıza ve analiz etmenize yardımcı olabilir.
 
-#### Q: How do I determine the type of artifacts to count in a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinde sayılacak yapıtların türünü nasıl belirlerim?
 
-A: The provided C# source code demonstrates how to count "watermark" artifacts on a specific page of a PDF document. You can modify the code to count artifacts of different types by changing the `ArtifactSubtype` comparison to the desired subtype, such as "Annotation," "Stamp," or "Link."
+ C: Sağlanan C# kaynak kodu, bir PDF belgesinin belirli bir sayfasındaki "filigran" yapıtlarının nasıl sayılacağını gösterir. Farklı türlerdeki yapıtları saymak için kodu değiştirerek değiştirebilirsiniz.`ArtifactSubtype` "Ek Açıklama", "Damga" veya "Bağlantı" gibi istenen alt türle karşılaştırma.
 
-#### Q: Can I count artifacts on multiple pages of a PDF document?
+#### S: Bir PDF belgesinin birden çok sayfasındaki yapıları sayabilir miyim?
 
-A: Yes, you can extend the code to loop through artifacts on multiple pages of a PDF document by iterating through the `pdfDocument.Pages` collection and counting artifacts on each page.
+ C: Evet, kodu, bir PDF belgesinin birden fazla sayfasındaki yapılar arasında döngü oluşturacak şekilde genişletebilirsiniz.`pdfDocument.Pages` her sayfada eserlerin toplanması ve sayılması.
 
-#### Q: How can I use the counted artifact information for further processing?
+#### S: Sayılan eser bilgisini daha sonraki işlemler için nasıl kullanabilirim?
 
-A: Once you have counted the desired artifacts, you can use the information for various purposes, such as generating reports, performing targeted modifications, or validating the presence of specific elements within the PDF document.
+C: İstenilen yapıları saydıktan sonra bilgileri, rapor oluşturmak, hedeflenen değişiklikleri gerçekleştirmek veya PDF belgesindeki belirli öğelerin varlığını doğrulamak gibi çeşitli amaçlar için kullanabilirsiniz.
 
-#### Q: Can I customize the counting process to consider additional attributes or conditions of artifacts?
+#### S: Sayım sürecini, yapıtların ek niteliklerini veya koşullarını dikkate alacak şekilde özelleştirebilir miyim?
 
-A: Absolutely, you can customize the counting process to consider additional attributes or conditions by adding more conditional checks within the loop. For example, you could count artifacts based on a combination of artifact subtype and color.
+C: Kesinlikle, döngüye daha fazla koşullu kontrol ekleyerek sayma sürecini ek nitelikleri veya koşulları dikkate alacak şekilde özelleştirebilirsiniz. Örneğin, yapıt alt türü ve renginin birleşimine dayalı olarak yapıtları sayabilirsiniz.
 
-#### Q: What if my PDF document contains multiple types of artifacts, not just watermarks?
+#### S: PDF belgem yalnızca filigranlar değil birden fazla türde yapı içeriyorsa ne olur?
 
-A: While the tutorial focuses on counting watermark artifacts, you can adapt the code to count different types of artifacts by adjusting the `ArtifactSubtype` comparison to the desired subtype you want to count.
+ C: Öğretici filigran yapıtlarını saymaya odaklanırken, kodu, farklı türdeki yapıtları sayacak şekilde uyarlayabilirsiniz.`ArtifactSubtype` saymak istediğiniz istenen alt türle karşılaştırma.
 
-#### Q: How can I apply this knowledge to automate artifact counting for a large batch of PDF documents?
+#### S: Bu bilgiyi, büyük miktarda PDF belgesi için yapıt sayımı otomatikleştirmek amacıyla nasıl uygulayabilirim?
 
-A: You can create a script or program that iterates through a list of PDF documents and performs the artifact counting process for each document, generating reports or storing the counts for analysis.
+C: PDF belgelerinin bir listesini yineleyen ve her belge için yapı sayma işlemini gerçekleştiren, raporlar üreten veya analiz için sayıları saklayan bir komut dosyası veya program oluşturabilirsiniz.
 
-#### Q: Is it possible to count artifacts with specific attributes, such as artifacts of a certain color or size?
+#### S: Belirli bir renk veya boyuttaki eserler gibi belirli niteliklere sahip eserleri saymak mümkün müdür?
 
-A: Yes, you can enhance the code to count artifacts with specific attributes. Within the loop, you can include additional conditional checks to consider attributes like color, size, or position of artifacts.
+C: Evet, belirli niteliklere sahip yapıtları saymak için kodu geliştirebilirsiniz. Döngü içinde, yapıların rengi, boyutu veya konumu gibi nitelikleri dikkate almak için ek koşullu kontroller ekleyebilirsiniz.
 
-#### Q: Can I use this approach to count other types of elements, such as annotations or text objects?
+#### S: Bu yaklaşımı ek açıklamalar veya metin nesneleri gibi diğer türdeki öğeleri saymak için kullanabilir miyim?
 
-A: Yes, you can adapt the provided source code to count other types of elements, such as annotations or text objects, by modifying the loop and conditional checks accordingly.
+C: Evet, sağlanan kaynak kodunu, döngü ve koşul kontrollerini uygun şekilde değiştirerek, ek açıklamalar veya metin nesneleri gibi diğer öğe türlerini sayacak şekilde uyarlayabilirsiniz.

@@ -1,64 +1,64 @@
 ---
-title: Style Table Row
-linktitle: Style Table Row
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to customize table rows with Aspose.PDF for .NET step by step guide to styling and formatting rows.
+title: Stiltabellenzeile
+linktitle: Stiltabellenzeile
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie Schritt für Schritt, wie Sie Tabellenzeilen mit Aspose.PDF für .NET anpassen und Zeilen formatieren und formatieren.
 type: docs
 weight: 180
 url: /de/net/programming-with-tagged-pdf/style-table-row/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step to format the table row using Aspose.PDF for .NET. Follow the instructions below to understand how to customize table row styles and properties.
+In diesem ausführlichen Tutorial führen wir Sie Schritt für Schritt durch den bereitgestellten C#-Quellcode, um die Tabellenzeile mit Aspose.PDF für .NET zu formatieren. Befolgen Sie die nachstehenden Anweisungen, um zu verstehen, wie Sie Tabellenzeilenstile und -eigenschaften anpassen.
 
-## Step 1: Setting up the environment
+## Schritt 1: Einrichten der Umgebung
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+Bevor Sie beginnen, stellen Sie sicher, dass Sie Ihre Entwicklungsumgebung für die Verwendung von Aspose.PDF für .NET konfiguriert haben. Dazu gehört die Installation der Aspose.PDF-Bibliothek und die Konfiguration Ihres Projekts, um darauf zu verweisen.
 
-## Step 2: Creating a document
+## Schritt 2: Erstellen eines Dokuments
 
-In this step, we will create a new document object Aspose.PDF.
+In diesem Schritt erstellen wir ein neues Dokumentobjekt Aspose.PDF.
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Document creation
+// Dokumentenerstellung
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example of Table Row Formatting");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We have created a new document and set the document title and language.
+Wir haben ein neues Dokument erstellt und den Dokumenttitel und die Sprache festgelegt.
 
-## Step 3: Obtaining the root structure element
+## Schritt 3: Erhalten des Wurzelstrukturelements
 
-In this step we will get the root structure element for our document.
+In diesem Schritt erhalten wir das Stammstrukturelement für unser Dokument.
 
 ```csharp
-// Obtain the root structure element
+//Rufen Sie das Wurzelstrukturelement ab
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We got the root structure element which will serve as a container for the array element.
+Wir haben das Wurzelstrukturelement erhalten, das als Container für das Array-Element dient.
 
-## Step 4: Creating the array structure element
+## Schritt 4: Erstellen des Array-Strukturelements
 
-Now let's create a new table structure element for our document.
+Erstellen wir nun ein neues Tabellenstrukturelement für unser Dokument.
 
 ```csharp
-// Create the array structure element
+// Erstellen Sie das Array-Strukturelement
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 ```
 
-We have created a new array structure element and added it to the root structure element.
+Wir haben ein neues Array-Strukturelement erstellt und es dem Root-Strukturelement hinzugefügt.
 
-## Step 5: Customize table row styles and properties
+## Schritt 5: Passen Sie Tabellenzeilenstile und -eigenschaften an
 
-In this step, we will customize the table row styles and properties.
+In diesem Schritt passen wir die Tabellenzeilenstile und -eigenschaften an.
 
 ```csharp
-// Customize table row styles and properties
+// Passen Sie Tabellenzeilenstile und -eigenschaften an
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
@@ -68,7 +68,7 @@ int colCount = 3;
 int rowIndex;
 int colIndex;
 
-// Create the table header row
+// Erstellen Sie die Tabellenkopfzeile
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Header Row";
 
@@ -78,7 +78,7 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
      theElement.SetText(string.Format("Header {0}", colIndex));
 }
 
-// Customize the rows of the body of the table
+// Passen Sie die Zeilen des Tabellenkörpers an
 for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 {
      TableTRElement trElement = tableTBodyElement.CreateTR();
@@ -103,7 +103,7 @@ for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
      }
 }
 
-// Create the footer line of the table
+// Erstellen Sie die Fußzeile der Tabelle
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Footline";
 
@@ -114,48 +114,48 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-We've customized various aspects of the table row, such as background color, borders, row height, pagination, default cell style, and more.
+Wir haben verschiedene Aspekte der Tabellenzeile angepasst, z. B. Hintergrundfarbe, Rahmen, Zeilenhöhe, Paginierung, Standardzellenstil und mehr.
 
-## Step 6: Saving the tagged PDF document
+## Schritt 6: Speichern des getaggten PDF-Dokuments
 
-Now that we've created our document with the styled table row, we'll save it as a tagged PDF document.
+Nachdem wir nun unser Dokument mit der formatierten Tabellenzeile erstellt haben, speichern wir es als getaggtes PDF-Dokument.
 ```csharp
-// Save the tagged PDF document
+// Speichern Sie das getaggte PDF-Dokument
 document.Save(dataDir + "StyleTableRow.pdf");
 ```
 
-We saved the tagged PDF document in the specified directory.
+Wir haben das getaggte PDF-Dokument im angegebenen Verzeichnis gespeichert.
 
-## Step 7: PDF/UA compliance validation
+## Schritt 7: PDF/UA-Konformitätsvalidierung
 
-Next, we will validate the PDF/UA conformity of our document.
+Als nächstes validieren wir die PDF/UA-Konformität unseres Dokuments.
 
 ```csharp
-// PDF/UA compliance check
+// Prüfung der PDF/UA-Konformität
 document = new Document(dataDir + "StyleTableRow.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableRow.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-We uploaded the tagged PDF document and validated its PDF/UA compliance by generating an XML report.
+Wir haben das getaggte PDF-Dokument hochgeladen und seine PDF/UA-Konformität durch die Erstellung eines XML-Berichts validiert.
 
 
-### Sample source code for Style Table Row using Aspose.PDF for .NET 
+### Beispielquellcode für Style Table Row mit Aspose.PDF für .NET 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create document
+// Dokument erstellen
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table row style");
 taggedContent.SetLanguage("en-US");
 
-// Get root structure element
+// Stammstrukturelement abrufen
 StructureElement rootElement = taggedContent.RootElement;
 
-// Create table structure element
+// Erstellen Sie ein Tabellenstrukturelement
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
@@ -202,62 +202,62 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 	tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
 
-// Save Tagged Pdf Document
+// Markiertes PDF-Dokument speichern
 document.Save(dataDir + "StyleTableRow.pdf");
 
-// Checking PDF/UA compliance
+// Überprüfung der PDF/UA-Konformität
 document = new Document(dataDir + "StyleTableRow.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableRow.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we learned how to format table row with Aspose.PDF for .NET. We customized the table row styles and properties, added the headers, body rows, and footer, saved the tagged PDF document, and validated its PDF/UA compliance.
+In diesem Tutorial haben wir gelernt, wie man Tabellenzeilen mit Aspose.PDF für .NET formatiert. Wir haben die Stile und Eigenschaften der Tabellenzeilen angepasst, die Kopfzeilen, Hauptzeilen und Fußzeilen hinzugefügt, das getaggte PDF-Dokument gespeichert und seine PDF/UA-Konformität validiert.
 
-### FAQ's
+### FAQs
 
-#### Q: What is the purpose of this tutorial on formatting table rows using Aspose.PDF for .NET?
+#### F: Was ist der Zweck dieses Tutorials zum Formatieren von Tabellenzeilen mit Aspose.PDF für .NET?
 
-A: The purpose of this tutorial is to guide you through the process of formatting table rows in a PDF document using Aspose.PDF for .NET. It provides step-by-step instructions and C# source code examples to help you customize table row styles and properties.
+A: Der Zweck dieses Tutorials besteht darin, Sie durch den Prozess der Formatierung von Tabellenzeilen in einem PDF-Dokument mit Aspose.PDF für .NET zu führen. Es enthält Schritt-für-Schritt-Anleitungen und C#-Quellcode-Beispiele, die Sie bei der Anpassung von Tabellenzeilenstilen und -eigenschaften unterstützen.
 
-#### Q: What are the prerequisites for following this tutorial?
+#### F: Was sind die Voraussetzungen, um diesem Tutorial zu folgen?
 
-A: Before you start, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+A: Bevor Sie beginnen, stellen Sie sicher, dass Sie Ihre Entwicklungsumgebung für die Verwendung von Aspose.PDF für .NET eingerichtet haben. Dazu müssen Sie die Aspose.PDF-Bibliothek installieren und Ihr Projekt so konfigurieren, dass es darauf verweist.
 
-#### Q: How can I create a new PDF document and set its title and language using Aspose.PDF for .NET?
+#### F: Wie kann ich mit Aspose.PDF für .NET ein neues PDF-Dokument erstellen und dessen Titel und Sprache festlegen?
 
-A: To create a new PDF document, you need to create a `Document` object from the Aspose.PDF library. The tutorial's provided C# source code demonstrates how to create a document and set its title and language properties.
+ A: Um ein neues PDF-Dokument zu erstellen, müssen Sie ein erstellen`Document` Objekt aus der Aspose.PDF-Bibliothek. Der im Tutorial bereitgestellte C#-Quellcode zeigt, wie ein Dokument erstellt und dessen Titel und Spracheigenschaften festgelegt werden.
 
-#### Q: What is the significance of the root structure element in a PDF document?
+#### F: Welche Bedeutung hat das Stammstrukturelement in einem PDF-Dokument?
 
-A: The root structure element acts as a container for other structure elements, helping to organize and categorize the content of the PDF document. It plays a crucial role in establishing the logical structure of the document.
+A: Das Stammstrukturelement fungiert als Container für andere Strukturelemente und hilft dabei, den Inhalt des PDF-Dokuments zu organisieren und zu kategorisieren. Es spielt eine entscheidende Rolle bei der Festlegung der logischen Struktur des Dokuments.
 
-#### Q: How do I create and customize a table structure element to format table rows using Aspose.PDF for .NET?
+#### F: Wie erstelle und passe ich ein Tabellenstrukturelement an, um Tabellenzeilen mit Aspose.PDF für .NET zu formatieren?
 
-A: The tutorial explains how to create a table structure element and customize its properties to format table rows. It covers aspects such as background color, borders, row height, pagination, default cell style, and more.
+A: Das Tutorial erklärt, wie man ein Tabellenstrukturelement erstellt und seine Eigenschaften anpasst, um Tabellenzeilen zu formatieren. Es deckt Aspekte wie Hintergrundfarbe, Rahmen, Zeilenhöhe, Paginierung, Standardzellenstil und mehr ab.
 
-#### Q: Can I customize the styles and properties of individual cells within a table row?
+#### F: Kann ich die Stile und Eigenschaften einzelner Zellen innerhalb einer Tabellenzeile anpassen?
 
-A: Yes, you can customize the styles and properties of individual cells within a table row. The tutorial demonstrates how to set properties such as background color, borders, text color, padding, and more for table cells within the formatted table row.
+A: Ja, Sie können die Stile und Eigenschaften einzelner Zellen innerhalb einer Tabellenzeile anpassen. Das Tutorial zeigt, wie Sie Eigenschaften wie Hintergrundfarbe, Rahmen, Textfarbe, Abstand und mehr für Tabellenzellen innerhalb der formatierten Tabellenzeile festlegen.
 
-#### Q: How can I add headers, body rows, and a footer to the formatted table row?
+#### F: Wie kann ich der formatierten Tabellenzeile Kopfzeilen, Hauptzeilen und eine Fußzeile hinzufügen?
 
-A: The tutorial provides examples of creating and adding headers, body rows, and a footer to the table structure element. These elements can be customized further using the properties described in the tutorial.
+A: Das Tutorial enthält Beispiele für das Erstellen und Hinzufügen von Kopfzeilen, Hauptzeilen und einer Fußzeile zum Tabellenstrukturelement. Diese Elemente können mithilfe der im Tutorial beschriebenen Eigenschaften weiter angepasst werden.
 
-#### Q: What is PDF/UA compliance, and how can I validate it for my tagged PDF document?
+#### F: Was ist PDF/UA-Konformität und wie kann ich sie für mein getaggtes PDF-Dokument validieren?
 
-A: PDF/UA compliance ensures that the PDF document conforms to accessibility standards, making it more accessible to users with disabilities. The tutorial demonstrates how to validate PDF/UA conformity using the `Validate()` method and generate an XML compliance report.
+ A: Durch die PDF/UA-Konformität wird sichergestellt, dass das PDF-Dokument den Barrierefreiheitsstandards entspricht, sodass es für Benutzer mit Behinderungen leichter zugänglich ist. Das Tutorial zeigt, wie Sie die PDF/UA-Konformität mithilfe von validieren`Validate()` Methode und generieren Sie einen XML-Compliance-Bericht.
 
-#### Q: How can I incorporate these concepts into my own .NET applications?
+#### F: Wie kann ich diese Konzepte in meine eigenen .NET-Anwendungen integrieren?
 
-A: You can use the provided C# source code examples as a guide to implementing table row formatting in your own .NET applications. Modify and adapt the code to match your requirements and integrate it into your projects.
+A: Sie können die bereitgestellten C#-Quellcodebeispiele als Leitfaden für die Implementierung der Tabellenzeilenformatierung in Ihren eigenen .NET-Anwendungen verwenden. Ändern und passen Sie den Code an Ihre Anforderungen an und integrieren Sie ihn in Ihre Projekte.
 
-#### Q: Are there any recommended best practices for formatting table rows in PDF documents?
+#### F: Gibt es empfohlene Best Practices für die Formatierung von Tabellenzeilen in PDF-Dokumenten?
 
-A: When formatting table rows, consider the readability and accessibility of the content. Ensure that colors have sufficient contrast, use clear and legible fonts, and maintain a consistent layout. Validate PDF/UA compliance to ensure accessibility standards are met.
+A: Berücksichtigen Sie beim Formatieren von Tabellenzeilen die Lesbarkeit und Zugänglichkeit des Inhalts. Achten Sie auf einen ausreichenden Kontrast der Farben, verwenden Sie klare und lesbare Schriftarten und achten Sie auf ein einheitliches Layout. Validieren Sie die PDF/UA-Konformität, um sicherzustellen, dass die Barrierefreiheitsstandards eingehalten werden.
 
-#### Q: What other features of Aspose.PDF for .NET can I explore for PDF document customization?
+#### F: Welche anderen Funktionen von Aspose.PDF für .NET kann ich für die Anpassung von PDF-Dokumenten erkunden?
 
-A: Aspose.PDF for .NET offers a wide range of features for PDF document customization, including text manipulation, image insertion, form field management, digital signatures, annotations, and more. Consult the official documentation and resources to explore additional functionalities.
+A: Aspose.PDF für .NET bietet eine breite Palette von Funktionen zur Anpassung von PDF-Dokumenten, einschließlich Textbearbeitung, Bildeinfügung, Formularfeldverwaltung, digitale Signaturen, Anmerkungen und mehr. Konsultieren Sie die offizielle Dokumentation und Ressourcen, um zusätzliche Funktionen zu erkunden.

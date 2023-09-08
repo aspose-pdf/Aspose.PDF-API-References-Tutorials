@@ -1,90 +1,90 @@
 ---
-title: Concatenate PDF Files
-linktitle: Concatenate PDF Files
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to concatenate PDF files using Aspose.PDF for .NET. Easy to follow and implement in your projects.
+title: تسلسل ملفات PDF
+linktitle: تسلسل ملفات PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لتسلسل ملفات PDF باستخدام Aspose.PDF لـ .NET. سهولة المتابعة والتنفيذ في مشاريعك.
 type: docs
 weight: 20
 url: /ar/net/programming-with-pdf-pages/concatenate-pdf-files/
 ---
-In this tutorial, we'll walk you through the step-by-step process to concatenate PDF files using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to concatenate PDF files using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك خلال العملية خطوة بخطوة لتسلسل ملفات PDF باستخدام Aspose.PDF لـ .NET. سنشرح لك التعليمات البرمجية المصدرية المجمعة لـ C# ونزودك بدليل شامل لمساعدتك على فهم هذه الميزة وتنفيذها في مشاريعك الخاصة. في نهاية هذا البرنامج التعليمي، ستعرف كيفية ربط ملفات PDF باستخدام Aspose.PDF لـ .NET.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## المتطلبات الأساسية
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- معرفة أساسية بلغة البرمجة C#
+- تم تثبيت Aspose.PDF لـ .NET في بيئة التطوير الخاصة بك
 
-## Step 1: Define the document directory
-First, you need to set the path to your documents directory. This is where your PDF files to concatenate are located. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
+## الخطوة 1: تحديد دليل المستند
+أولاً، تحتاج إلى تعيين المسار إلى دليل المستندات الخاص بك. هذا هو المكان الذي توجد فيه ملفات PDF المراد ربطها. استبدل "دليل المستندات الخاصة بك" بالمسار المناسب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open PDF Files
-Then you can open the PDF files to concatenate using the `Document` class of Aspose.PDF. Be sure to specify the correct path to each PDF file.
+## الخطوة 2: افتح ملفات PDF
+ ثم يمكنك فتح ملفات PDF لتسلسلها باستخدام الملف`Document` فئة Aspose.PDF. تأكد من تحديد المسار الصحيح لكل ملف PDF.
 
 ```csharp
 Document pdfDocument1 = new Document(dataDir + "Concat1.pdf");
 Document pdfDocument2 = new Document(dataDir + "Concat2.pdf");
 ```
 
-## Step 3: Concatenate pages
-Now you can add the pages from the second document to the first document using the `Add()` method of the document's `Pages` collection. This will concatenate the pages of both documents into a single document.
+## الخطوة 3: ربط الصفحات
+ يمكنك الآن إضافة الصفحات من المستند الثاني إلى المستند الأول باستخدام الملف`Add()` طريقة الوثيقة`Pages` مجموعة. سيؤدي هذا إلى دمج صفحات كلا الوثيقتين في مستند واحد.
 
 ```csharp
 pdfDocument1.Pages.Add(pdfDocument2.Pages);
 ```
 
-## Step 4: Save the concatenated PDF file
-Finally, you can save the concatenated PDF document to an output file using the document's `Save()` method. Be sure to specify the correct path and file name.
+## الخطوة 4: احفظ ملف PDF المتسلسل
+ أخيرًا، يمكنك حفظ مستند PDF المتسلسل في ملف إخراج باستخدام ملف المستند`Save()` طريقة. تأكد من تحديد المسار الصحيح واسم الملف.
 
 ```csharp
 dataDir = dataDir + "ConcatenatePdfFiles_out.pdf";
 pdfDocument1.Save(dataDir);
 ```
 
-### Sample source code for Concatenate Pdf Files using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لملفات Concatenate Pdf باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open first document
+// فتح الوثيقة الأولى
 Document pdfDocument1 = new Document(dataDir + "Concat1.pdf");
-// Open second document
+// افتح المستند الثاني
 Document pdfDocument2 = new Document(dataDir + "Concat2.pdf");
-// Add pages of second document to the first
+// أضف صفحات المستند الثاني إلى الأول
 pdfDocument1.Pages.Add(pdfDocument2.Pages);
 dataDir = dataDir + "ConcatenatePdfFiles_out.pdf";
-// Save concatenated output file
+//حفظ ملف الإخراج متسلسل
 pdfDocument1.Save(dataDir);
 System.Console.WriteLine("\nPDFs are concatenated successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
-In this tutorial, we learned how to concatenate PDF files using Aspose.PDF for .NET. By following the steps outlined above, you can easily implement this functionality in your own projects. Feel free to explore the Aspose.PDF documentation further to discover other useful features for working with PDF files.
+## خاتمة
+في هذا البرنامج التعليمي، تعلمنا كيفية ربط ملفات PDF باستخدام Aspose.PDF لـ .NET. باتباع الخطوات الموضحة أعلاه، يمكنك بسهولة تنفيذ هذه الوظيفة في مشاريعك الخاصة. لا تتردد في استكشاف وثائق Aspose.PDF بشكل أكبر لاكتشاف ميزات مفيدة أخرى للعمل مع ملفات PDF.
 
-### FAQ's for concatenate PDF files
+### الأسئلة الشائعة لتسلسل ملفات PDF
 
-#### Q: What is the purpose of concatenating PDF files?
+#### س: ما هو الغرض من سلسلة ملفات PDF؟
 
-A: Concatenating PDF files means merging multiple PDF documents into a single PDF document. This can be useful when you have several PDF files that you want to combine or join together to create a comprehensive report, presentation, or any other document.
+ج: ربط ملفات PDF يعني دمج مستندات PDF متعددة في مستند PDF واحد. يمكن أن يكون هذا مفيدًا عندما يكون لديك العديد من ملفات PDF التي تريد دمجها أو ضمها معًا لإنشاء تقرير شامل أو عرض تقديمي أو أي مستند آخر.
 
-#### Q: Can I concatenate more than two PDF files using Aspose.PDF for .NET?
+#### س: هل يمكنني ربط أكثر من ملفي PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can concatenate more than two PDF files using Aspose.PDF for .NET. The provided C# source code demonstrates how to concatenate two PDF files, but you can extend the logic to concatenate any number of PDF files by repeating the process for each additional PDF document.
+ج: نعم، يمكنك ربط أكثر من ملفين PDF باستخدام Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم كيفية ربط ملفين PDF، ولكن يمكنك توسيع المنطق لتسلسل أي عدد من ملفات PDF عن طريق تكرار العملية لكل مستند PDF إضافي.
 
-#### Q: Does concatenating PDF files modify the original files?
+#### س: هل تؤدي ملفات PDF المتسلسلة إلى تعديل الملفات الأصلية؟
 
-A: No, concatenating PDF files using Aspose.PDF for .NET does not modify the original files. The method `pdfDocument1.Pages.Add(pdfDocument2.Pages)` in the source code adds the pages from the second document to the first document, but it does not alter the original PDF files. The concatenated result is saved as a new PDF file.
+ ج: لا، لا يؤدي ربط ملفات PDF باستخدام Aspose.PDF لـ .NET إلى تعديل الملفات الأصلية. طريقة`pdfDocument1.Pages.Add(pdfDocument2.Pages)` في الكود المصدري يضيف الصفحات من المستند الثاني إلى المستند الأول، لكنه لا يغير ملفات PDF الأصلية. يتم حفظ النتيجة المتسلسلة كملف PDF جديد.
 
-#### Q: What happens if the PDF files being concatenated have different page sizes or orientations?
+#### س: ماذا يحدث إذا كانت ملفات PDF المتسلسلة لها أحجام صفحات أو اتجاهات مختلفة؟
 
-A: When concatenating PDF files with different page sizes or orientations, the pages from each PDF will be combined in the order they are added. As a result, the output PDF will have pages with different sizes or orientations as per the source files. The content layout might be affected, and you may need to adjust it accordingly.
+ج: عند ربط ملفات PDF بأحجام صفحات أو اتجاهات مختلفة، سيتم دمج الصفحات من كل ملف PDF بترتيب إضافتها. ونتيجة لذلك، سيحتوي ملف PDF الناتج على صفحات بأحجام أو اتجاهات مختلفة وفقًا للملفات المصدر. قد يتأثر تخطيط المحتوى، وقد تحتاج إلى تعديله وفقًا لذلك.
 
-#### Q: Can I control the order of pages in the concatenated PDF?
+#### س: هل يمكنني التحكم في ترتيب الصفحات في ملف PDF المتسلسل؟
 
-A: Yes, you can control the order of pages in the concatenated PDF by manipulating the sequence in which you add the pages from different PDF documents. The order of adding pages determines their order in the final concatenated document.
+ج: نعم، يمكنك التحكم في ترتيب الصفحات في ملف PDF المتسلسل عن طريق معالجة التسلسل الذي تضيف به الصفحات من مستندات PDF المختلفة. يحدد ترتيب إضافة الصفحات ترتيبها في المستند المتسلسل النهائي.

@@ -1,86 +1,86 @@
 ---
-title: Rounded Corner Table In PDF Document
-linktitle: Rounded Corner Table In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create a rounded corner table in PDF document using Aspose.PDF for .NET.
+title: Rundat hörnbord i PDF-dokument
+linktitle: Rundat hörnbord i PDF-dokument
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du skapar en rundad hörntabell i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 190
 url: /sv/net/programming-with-tables/rounded-corner-table/
 ---
-In this tutorial, we will guide you step by step to create a rounded corner table in PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+I denna handledning guidar vi dig steg för steg för att skapa en rundad hörntabell i PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och visa dig hur du implementerar den.
 
-## Step 1: Creating the table
-First, we will create the table using the following code:
+## Steg 1: Skapa tabellen
+Först skapar vi tabellen med följande kod:
 
 ```csharp
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 ```
 
-## Step 2: Rounded Corner Style Setup
-Next, we'll configure the rounded corner style for the table:
+## Steg 2: Konfiguration av rundade hörnstilar
+Därefter konfigurerar vi den rundade hörnstilen för bordet:
 
 ```csharp
 tab1.CornerStyle = Aspose.Pdf.BorderCornerStyle.Round;
 ```
 
-## Step 3: Table Border Setup
-To give the table a rounded corner border, we need to create a BorderInfo object and configure it with the appropriate parameters:
+## Steg 3: Inställning av tabellkant
+För att ge tabellen en rundad hörnkant måste vi skapa ett BorderInfo-objekt och konfigurera det med lämpliga parametrar:
 
 ```csharp
-// Create a GraphInfo object to set the border color
+// Skapa ett GraphInfo-objekt för att ställa in kantfärgen
 GraphInfo graph = new GraphInfo();
 graph.Color = Aspose.Pdf.Color.Red;
 
-// Create an empty BorderInfo object
+// Skapa ett tomt BorderInfo-objekt
 BorderInfo bInfo = new BorderInfo(BorderSide.All, graph);
 
-// Set the radius of the rounded border to 15
+// Ställ in radien för den rundade kanten till 15
 bInfo.RoundedBorderRadius = 15;
 
-// Apply border information to the table
+// Tillämpa gränsinformation på tabellen
 tab1.Border = bInfo;
 ```
 
-### Example source code for Rounded Corner Table using Aspose.PDF for .NET
+### Exempel på källkod för Rounded Corner Table med Aspose.PDF för .NET
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 GraphInfo graph = new GraphInfo();
 graph.Color = Aspose.Pdf.Color.Red;
-// Create a blank BorderInfo object
+// Skapa ett tomt BorderInfo-objekt
 BorderInfo bInfo = new BorderInfo(BorderSide.All, graph);
-// Set the border a rounder border where radius of round is 15
+// Ställ in gränsen som en rundare gräns där rundans radie är 15
 bInfo.RoundedBorderRadius = 15;
-// Set the table Corner style as Round.
+// Ställ in bordshörnstilen som rund.
 tab1.CornerStyle = Aspose.Pdf.BorderCornerStyle.Round;
-// Set the table border information
+// Ställ in tabellkantinformationen
 tab1.Border = bInfo;
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to create a rounded corner table in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to set up the rounded corner style and table border. Now you can apply this knowledge to your own projects.
+## Slutsats
+Grattis! Du har nu lärt dig hur du skapar en rundad hörntabell i ett PDF-dokument med Aspose.PDF för .NET. Den här steg-för-steg-guiden visade dig hur du ställer in stilen med rundade hörn och bordskanten. Nu kan du tillämpa denna kunskap i dina egna projekt.
 
-### FAQ's for rounded corner table in PDF document
+### Vanliga frågor för rundat hörnbord i PDF-dokument
 
-#### Q: Can I customize the radius of the rounded corners for the table?
+#### F: Kan jag anpassa radien för de rundade hörnen för bordet?
 
-A: Yes, you can customize the radius of the rounded corners for the table by modifying the value of the `bInfo.RoundedBorderRadius` property in the provided C# source code. Simply set the desired radius value (in points) to achieve the desired rounded corner appearance.
+S: Ja, du kan anpassa radien för de rundade hörnen för tabellen genom att ändra värdet på`bInfo.RoundedBorderRadius` egenskapen i den angivna C#-källkoden. Ställ bara in önskat radievärde (i poäng) för att uppnå önskat utseende av rundade hörn.
 
-#### Q: Can I apply rounded corners to individual cells within the table?
+#### F: Kan jag använda rundade hörn på enskilda celler i tabellen?
 
-A: No, the rounded corner style is applied to the entire table as a whole. Aspose.PDF for .NET currently does not provide built-in support for applying rounded corners to individual cells within the table.
+S: Nej, stilen med rundade hörn tillämpas på hela bordet som helhet. Aspose.PDF för .NET ger för närvarande inte inbyggt stöd för att applicera rundade hörn på enskilda celler i tabellen.
 
-#### Q: Can I change the color of the rounded corner border?
+#### F: Kan jag ändra färgen på den rundade hörnkanten?
 
-A: Yes, you can change the color of the rounded corner border by modifying the value of the `graph.Color` property in the C# source code. Simply provide the desired color, such as `Aspose.Pdf.Color.Red` or any other valid color representation.
+ S: Ja, du kan ändra färgen på den rundade hörnkanten genom att ändra värdet på`graph.Color` egenskapen i C#-källkoden. Ange helt enkelt önskad färg, som t.ex`Aspose.Pdf.Color.Red` eller någon annan giltig färgrepresentation.
 
-#### Q: Is it possible to apply different corner styles (e.g., square and rounded) to different tables within the same PDF document?
+#### F: Är det möjligt att använda olika hörnstilar (t.ex. kvadratiska och rundade) på olika tabeller inom samma PDF-dokument?
 
-A: Yes, it is possible to apply different corner styles to different tables within the same PDF document. You can create multiple tables and configure their corner styles individually based on your requirements.
+S: Ja, det är möjligt att använda olika hörnstilar på olika tabeller inom samma PDF-dokument. Du kan skapa flera bord och konfigurera deras hörnstilar individuellt baserat på dina krav.
 
-#### Q: Can I adjust the thickness of the rounded corner border?
+#### F: Kan jag justera tjockleken på den rundade hörnkanten?
 
-A: Yes, you can adjust the thickness of the rounded corner border by modifying the `BorderInfo` object's properties in the C# source code. For example, you can set the `bInfo.Width` property to adjust the border's thickness.
+ S: Ja, du kan justera tjockleken på den rundade hörnkanten genom att ändra`BorderInfo` objektets egenskaper i C#-källkoden. Du kan till exempel ställa in`bInfo.Width` egenskap för att justera bårdens tjocklek.

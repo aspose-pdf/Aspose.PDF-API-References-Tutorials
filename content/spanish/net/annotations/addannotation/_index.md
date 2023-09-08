@@ -1,38 +1,38 @@
 ---
-title: Add PDF Annotation
-linktitle: Add Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text PDF annotations with Aspose.PDF for .NET using this C# source code. Customize your annotations with specific details and icons.
+title: Agregar anotación PDF
+linktitle: Agregar anotación
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a agregar anotaciones de texto en PDF con Aspose.PDF para .NET usando este código fuente de C#. Personaliza tus anotaciones con detalles e íconos específicos.
 type: docs
 weight: 10
 url: /es/net/annotations/addannotation/
 ---
-Adding annotations to PDF documents is a powerful feature that can enhance collaboration and review processes. Aspose.PDF for .NET makes it easy to add annotations programmatically to PDF documents using C#. In this guide, we will explain step-by-step how to use Aspose.PDF for .NET to add annotations to a PDF document.
+Agregar anotaciones a documentos PDF es una característica poderosa que puede mejorar los procesos de colaboración y revisión. Aspose.PDF para .NET facilita la adición de anotaciones mediante programación a documentos PDF utilizando C#. En esta guía, explicaremos paso a paso cómo usar Aspose.PDF para .NET para agregar anotaciones a un documento PDF.
 
-## Step 1: Create a New Project and Install Aspose.PDF for .NET
+## Paso 1: cree un nuevo proyecto e instale Aspose.PDF para .NET
 
-Before we start writing the code for adding annotations, we need to create a new project and install Aspose.PDF for .NET. To install Aspose.PDF for .NET, follow these steps:
+Antes de comenzar a escribir el código para agregar anotaciones, debemos crear un nuevo proyecto e instalar Aspose.PDF para .NET. Para instalar Aspose.PDF para .NET, siga estos pasos:
 
-1. Open Visual Studio and create a new C# project.
-2. Right-click on the project in the Solution Explorer and select "Manage NuGet Packages".
-3. Search for "Aspose.PDF" and select "Install".
+1. Abra Visual Studio y cree un nuevo proyecto de C#.
+2. Haga clic derecho en el proyecto en el Explorador de soluciones y seleccione "Administrar paquetes NuGet".
+3. Busque "Aspose.PDF" y seleccione "Instalar".
 
-Once the installation is complete, we can start writing the code.
+Una vez completada la instalación, podemos comenzar a escribir el código.
 
-## Step 2: Open the PDF Document
+## Paso 2: abra el documento PDF
 
-The first step in adding annotations is to open the PDF document. We can use the following code to open the document:
+El primer paso para agregar anotaciones es abrir el documento PDF. Podemos usar el siguiente código para abrir el documento:
 
 ```csharp
 string dataDir = "YOUR DATA DIRECTORY";
 Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
 ```
 
-In this code, we specify the path to the PDF document we want to open. Make sure to replace "YOUR DATA DIRECTORY" with the actual path to your data directory.
+En este código, especificamos la ruta al documento PDF que queremos abrir. Asegúrese de reemplazar "SU DIRECTORIO DE DATOS" con la ruta real a su directorio de datos.
 
-## Step 3: Create the Annotation
+## Paso 3: crear la anotación
 
-To add an annotation, we need to create a new instance of the `TextAnnotation` class. We can use the following code to create a new text annotation:
+ Para agregar una anotación, necesitamos crear una nueva instancia del`TextAnnotation` clase. Podemos usar el siguiente código para crear una nueva anotación de texto:
 
 ```csharp
 TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
@@ -44,11 +44,11 @@ textAnnotation.Open = true;
 textAnnotation.Icon = TextIcon.Key;
 ```
 
-In this code, we create a new text annotation on the second page of the PDF document. We also set the title, subject, state, contents, open, and icon properties of the annotation.
+En este código, creamos una nueva anotación de texto en la segunda página del documento PDF. También configuramos las propiedades de título, tema, estado, contenido, apertura e icono de la anotación.
 
-## Step 4: Customize the Annotation
+## Paso 4: personaliza la anotación
 
-We can customize the appearance of the annotation using the `Border` class. We can use the following code to customize the border of the annotation:
+ Podemos personalizar la apariencia de la anotación usando el`Border` clase. Podemos usar el siguiente código para personalizar el borde de la anotación:
 
 ```csharp
 Border border = new Border(textAnnotation);
@@ -58,37 +58,37 @@ textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
 ```
 
-In this code, we create a new `Border` object and set its width and dash properties. We then set the `Border` property of the annotation to the new `Border` object. Finally, we set the `Rect` property of the annotation to specify its position and size.
+ En este código, creamos un nuevo`Border`objeto y establezca sus propiedades de ancho y guión. Luego configuramos el`Border` propiedad de la anotación al nuevo`Border` objeto. Finalmente, fijamos el`Rect` Propiedad de la anotación para especificar su posición y tamaño.
 
-## Step 5: Add the Annotation to the PDF Document
+## Paso 5: agregue la anotación al documento PDF
 
-Once we have created and customized the annotation, we need to add it to the PDF document. We can use the following code to add the annotation to the PDF document:
+Una vez que hayamos creado y personalizado la anotación, debemos agregarla al documento PDF. Podemos usar el siguiente código para agregar la anotación al documento PDF:
 
 ```csharp
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
 ```
 
-In this code, we add the annotation to the annotations collection of the second page of the PDF document.
+En este código, agregamos la anotación a la colección de anotaciones de la segunda página del documento PDF.
 
-## Step 6: Save the Output File
+## Paso 6: guarde el archivo de salida
 
-Finally, we need to save the PDF document with the added annotation. We can use the following code to save the output file:
+Finalmente, necesitamos guardar el documento PDF con la anotación agregada. Podemos usar el siguiente código para guardar el archivo de salida:
 
 ```csharp
 dataDir = dataDir + "AddAnnotation_out.pdf";
 pdfDocument.Save(dataDir);
 ```
-### Example source code for Adding Annotation using Aspose.PDF for .NET
+### Código fuente de ejemplo para agregar anotaciones usando Aspose.PDF para .NET
 
 
 ```csharp   
- // The path to the documents directory.
+ // La ruta al directorio de documentos.
 string dataDir = "YOUR DATA DIRECTORY";
 
-// Open document
+// Abrir documento
 Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
 
-// Create annotation
+// Crear anotación
 TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
 textAnnotation.Title = "Sample Annotation Title";
 textAnnotation.Subject = "Sample Subject";
@@ -103,36 +103,36 @@ border.Dash = new Dash(1, 1);
 textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
 
-// Add annotation in the annotations collection of the page
+// Agregar anotación en la colección de anotaciones de la página.
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
 dataDir = dataDir + "AddAnnotation_out.pdf";
-// Save output file
+// Guardar archivo de salida
 pdfDocument.Save(dataDir);
 ```
-This code demonstrates how to add a text annotation with a specific title, subject, state, contents, and icon to a PDF page using Aspose.PDF for .NET. You can modify this code according to your requirements for adding annotations to your PDF documents. Just remember to replace YOUR DATA DIRECTORY with the actual directory path where your PDF file is located and where you want to save the output file.
+Este código demuestra cómo agregar una anotación de texto con un título, tema, estado, contenido e ícono específicos a una página PDF usando Aspose.PDF para .NET. Puede modificar este código según sus requisitos para agregar anotaciones a sus documentos PDF. Sólo recuerde reemplazar SU DIRECTORIO DE DATOS con la ruta del directorio real donde se encuentra su archivo PDF y donde desea guardar el archivo de salida.
 
-## Conclusion
+## Conclusión
 
-Adding annotations to PDF documents using Aspose.PDF for .NET offers a valuable tool for enhancing document collaboration and review processes. By following the step-by-step guide provided in this article, developers can seamlessly integrate annotation capabilities into their C# applications.
+Agregar anotaciones a documentos PDF utilizando Aspose.PDF para .NET ofrece una herramienta valiosa para mejorar la colaboración de documentos y los procesos de revisión. Siguiendo la guía paso a paso proporcionada en este artículo, los desarrolladores pueden integrar perfectamente capacidades de anotación en sus aplicaciones C#.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What types of annotations can be added using Aspose.PDF for .NET?
+#### P: ¿Qué tipos de anotaciones se pueden agregar usando Aspose.PDF para .NET?
 
-A: Aspose.PDF for .NET supports various types of annotations, including text annotations, stamps, links, shapes, and more. Developers can customize the appearance and properties of these annotations to suit their specific needs.
+R: Aspose.PDF para .NET admite varios tipos de anotaciones, incluidas anotaciones de texto, sellos, enlaces, formas y más. Los desarrolladores pueden personalizar la apariencia y las propiedades de estas anotaciones para adaptarlas a sus necesidades específicas.
 
-#### Q: Can I add annotations to specific pages in a multi-page PDF document?
+#### P: ¿Puedo agregar anotaciones a páginas específicas en un documento PDF de varias páginas?
 
-A: Yes, Aspose.PDF for .NET allows you to specify the page where you want to add the annotation. You can choose a specific page or add annotations to multiple pages as needed.
+R: Sí, Aspose.PDF para .NET le permite especificar la página donde desea agregar la anotación. Puede elegir una página específica o agregar anotaciones a varias páginas según sea necesario.
 
-#### Q: How do I customize the appearance of annotations?
+#### P: ¿Cómo personalizo la apariencia de las anotaciones?
 
-A: Annotations can be customized using properties such as border width, color, dash style, text style, and more. Aspose.PDF for .NET provides a rich set of options to tailor the appearance of annotations.
+R: Las anotaciones se pueden personalizar usando propiedades como ancho de borde, color, estilo de guión, estilo de texto y más. Aspose.PDF para .NET proporciona un amplio conjunto de opciones para personalizar la apariencia de las anotaciones.
 
-#### Q: Is it possible to add hyperlinks as annotations using Aspose.PDF for .NET?
+#### P: ¿Es posible agregar hipervínculos como anotaciones usando Aspose.PDF para .NET?
 
-A: Yes, you can add hyperlinks as annotations to PDF documents using Aspose.PDF for .NET. Hyperlink annotations can be used to link to external URLs or specific locations within the same document.
+R: Sí, puede agregar hipervínculos como anotaciones a documentos PDF usando Aspose.PDF para .NET. Las anotaciones de hipervínculo se pueden utilizar para vincular a URL externas o ubicaciones específicas dentro del mismo documento.
 
-#### Q: Can annotations be added to existing PDF documents without altering the original content?
+#### P: ¿Se pueden agregar anotaciones a documentos PDF existentes sin alterar el contenido original?
 
-A: Yes, Aspose.PDF for .NET adds annotations as additional elements without altering the original content of the PDF document. The original PDF content remains intact.
+R: Sí, Aspose.PDF para .NET agrega anotaciones como elementos adicionales sin alterar el contenido original del documento PDF. El contenido original del PDF permanece intacto.

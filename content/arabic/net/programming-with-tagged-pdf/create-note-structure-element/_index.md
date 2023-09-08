@@ -1,28 +1,28 @@
 ---
-title: Create Note Structure Element
-linktitle: Create Note Structure Element
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to create structured note items in a PDF document using Aspose.PDF for .NET.
+title: إنشاء عنصر هيكل الملاحظة
+linktitle: إنشاء عنصر هيكل الملاحظة
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لإنشاء عناصر ملاحظات منظمة في مستند PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 30
 url: /ar/net/programming-with-tagged-pdf/create-note-structure-element/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to create a note structure element in a PDF document using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. Using the marked content structure features of Aspose.PDF, you can add structured notes to your PDF document.
+في هذا البرنامج التعليمي، سنزودك بدليل خطوة بخطوة حول كيفية إنشاء عنصر بنية ملاحظة في مستند PDF باستخدام Aspose.PDF لـ .NET. Aspose.PDF هي مكتبة قوية تتيح لك إنشاء مستندات PDF ومعالجتها وتحويلها برمجيًا. باستخدام ميزات بنية المحتوى المحددة في Aspose.PDF، يمكنك إضافة ملاحظات منظمة إلى مستند PDF الخاص بك.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before you begin, make sure you have the following prerequisites in place:
+قبل البدء، تأكد من توفر المتطلبات الأساسية التالية:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. تم تثبيت Visual Studio مع إطار عمل .NET.
+2. مكتبة Aspose.PDF لـ .NET.
 
-## Step 1: Project Setup
+## الخطوة 1: إعداد المشروع
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+للبدء، قم بإنشاء مشروع جديد في Visual Studio وقم بإضافة مرجع إلى مكتبة Aspose.PDF لـ .NET. يمكنك تنزيل المكتبة من موقع Aspose الرسمي وتثبيتها على جهازك.
 
-## Step 2: Import the necessary namespaces
+## الخطوة 2: استيراد مساحات الأسماء الضرورية
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+في ملف التعليمات البرمجية C# الخاص بك، قم باستيراد مساحات الأسماء المطلوبة للوصول إلى الفئات والأساليب التي يوفرها Aspose.PDF:
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Step 3: Creating the PDF Document and Note Structured Elements
+## الخطوة 3: إنشاء مستند PDF وعناصر الملاحظة المنظمة
 
-Use the following code to create a PDF document and add note structured elements:
+استخدم الكود التالي لإنشاء مستند PDF وإضافة عناصر منظمة للملاحظة:
 
 ```csharp
 string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
@@ -62,102 +62,102 @@ note3.SetText("Note with ID = 'note_003'.");
 note3.SetId("note_003");
 ```
 
-This code creates an empty PDF document and adds structured note elements to a paragraph. Each note is created using the methods provided by Aspose.PDF.
+يقوم هذا الرمز بإنشاء مستند PDF فارغ وإضافة عناصر ملاحظة منظمة إلى الفقرة. يتم إنشاء كل ملاحظة باستخدام الطرق التي يوفرها Aspose.PDF.
 
-## Step 4: Saving the PDF Document
+## الخطوة 4: حفظ مستند PDF
 
-Use the following code to save the PDF document:
+استخدم الكود التالي لحفظ مستند PDF:
 
 ```csharp
 document. Save(outFile);
 ```
 
-This code saves the PDF document with the note structured elements to a specified file.
+يحفظ هذا الرمز مستند PDF مع العناصر المنظمة للملاحظة في ملف محدد.
 
-### Sample source code for Create Note Structure Element using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإنشاء عنصر هيكل ملاحظة باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "45929_doc.pdf";
 string logFile = dataDir + "45929_log.xml";
-// Create Pdf Document
+// إنشاء مستند PDF
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Sample of Note Elements");
 taggedContent.SetLanguage("en-US");
-// Add Paragraph Element
+// إضافة عنصر الفقرة
 ParagraphElement paragraph = taggedContent.CreateParagraphElement();
 taggedContent.RootElement.AppendChild(paragraph);
-// Add NoteElement
+// إضافة عنصر الملاحظة
 NoteElement note1 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note1);
 note1.SetText("Note with auto generate ID. ");
-// Add NoteElement
+// إضافة عنصر الملاحظة
 NoteElement note2 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note2);
 note2.SetText("Note with ID = 'note_002'. ");
 note2.SetId("note_002");
-// Add NoteElement
+// إضافة عنصر الملاحظة
 NoteElement note3 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
-// Must throw exception - Aspose.Pdf.Tagged.TaggedException : Structure element with ID='note_002' already exists
+// يجب طرح استثناء - Aspose.Pdf.Tagged.TaggedException: عنصر البنية بالمعرف='note_002' موجود بالفعل
 //note3.SetId("note_002");
-// Resultant document does not compliance to PDF/UA If ClearId() used for Note Structure Element
+// لا يتوافق المستند الناتج مع PDF/UA في حالة استخدام ClearId() لعنصر هيكل الملاحظة
 //note3.ClearId();
-// Save Tagged Pdf Document
+// حفظ وثيقة PDF ذات العلامات
 document.Save(outFile);
-// Checking PDF/UA compliance
+// التحقق من توافق PDF/UA
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, you learned how to create note structure elements in a PDF document using Aspose.PDF for .NET. Structured note elements allow you to add additional, structured information to your PDF document.
+في هذا البرنامج التعليمي، تعلمت كيفية إنشاء عناصر بنية الملاحظة في مستند PDF باستخدام Aspose.PDF لـ .NET. تتيح لك عناصر الملاحظات المنظمة إضافة معلومات منظمة إضافية إلى مستند PDF الخاص بك.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of creating note structure elements in a PDF document using Aspose.PDF for .NET?
+#### س: ما هو الغرض من إنشاء عناصر بنية الملاحظة في مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Creating note structure elements in a PDF document using Aspose.PDF for .NET allows you to add structured notes to the document's content. These notes can provide additional context, explanations, or references to specific parts of the content.
+ج: يتيح لك إنشاء عناصر بنية الملاحظة في مستند PDF باستخدام Aspose.PDF لـ .NET إضافة ملاحظات منظمة إلى محتوى المستند. يمكن أن توفر هذه الملاحظات سياقًا إضافيًا أو تفسيرات أو مراجع لأجزاء معينة من المحتوى.
 
-#### Q: How does the Aspose.PDF library assist in creating note structure elements in a PDF document?
+#### س: كيف تساعد مكتبة Aspose.PDF في إنشاء عناصر بنية الملاحظة في مستند PDF؟
 
-A: Aspose.PDF for .NET is a powerful library that provides functionalities for creating, manipulating, and converting PDF documents programmatically. In this tutorial, the library's marked content structure features are used to create structured note elements within the PDF document's content.
+ج: Aspose.PDF for .NET هي مكتبة قوية توفر وظائف لإنشاء مستندات PDF ومعالجتها وتحويلها برمجيًا. في هذا البرنامج التعليمي، يتم استخدام ميزات بنية المحتوى المميزة بالمكتبة لإنشاء عناصر ملاحظة منظمة داخل محتوى مستند PDF.
 
-#### Q: What are the prerequisites for creating note structure elements in a PDF document using Aspose.PDF for .NET?
+#### س: ما هي المتطلبات الأساسية لإنشاء عناصر بنية الملاحظة في مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Before you begin, ensure that you have Visual Studio installed with the .NET framework and have the Aspose.PDF library for .NET referenced in your project.
+ج: قبل أن تبدأ، تأكد من تثبيت Visual Studio مع إطار عمل .NET وأن مكتبة Aspose.PDF الخاصة بـ .NET مشار إليها في مشروعك.
 
-#### Q: How does the provided C# code create note structure elements in the PDF document's content?
+#### س: كيف يقوم كود C# المقدم بإنشاء عناصر بنية الملاحظة في محتوى مستند PDF؟
 
-A: The code demonstrates how to create a PDF document, define note structured elements, and add them to a paragraph. Each note is created using methods provided by Aspose.PDF, allowing you to incorporate structured notes into the content.
+ج: يوضح الكود كيفية إنشاء مستند PDF، وتحديد العناصر المنظمة للملاحظة، وإضافتها إلى فقرة. يتم إنشاء كل ملاحظة باستخدام الأساليب التي يوفرها Aspose.PDF، مما يسمح لك بدمج الملاحظات المنظمة في المحتوى.
 
-#### Q: Can I customize the content and properties of the note structure elements I create?
+#### س: هل يمكنني تخصيص محتوى وخصائص عناصر بنية الملاحظة التي أقوم بإنشائها؟
 
-A: Yes, you can customize the content and properties of note structure elements by using the methods and properties provided by the Aspose.PDF library. The code showcases how to set the text and ID of note elements, but you can further customize them as needed.
+ج: نعم، يمكنك تخصيص محتوى وخصائص عناصر بنية الملاحظة باستخدام الطرق والخصائص التي توفرها مكتبة Aspose.PDF. يعرض الكود كيفية تعيين النص ومعرف عناصر الملاحظة، ولكن يمكنك تخصيصها بشكل أكبر حسب الحاجة.
 
-#### Q: How is the hierarchical relationship established between the note structure elements and the document's content?
+#### س: كيف يتم إنشاء العلاقة الهرمية بين عناصر بنية الملاحظة ومحتوى الوثيقة؟
 
-A: The hierarchical relationship is established by adding note structure elements as children of other structured elements, such as paragraphs. In the code, note elements are appended to a paragraph element using the `AppendChild` method.
+ ج: يتم إنشاء العلاقة الهرمية عن طريق إضافة عناصر بنية الملاحظة كعناصر فرعية لعناصر منظمة أخرى، مثل الفقرات. في التعليمات البرمجية، يتم إلحاق عناصر الملاحظة بعنصر فقرة باستخدام التابع`AppendChild` طريقة.
 
-#### Q: Can I assign unique IDs to note structure elements?
+#### س: هل يمكنني تعيين معرفات فريدة لتدوين عناصر البنية؟
 
-A: Yes, you can assign unique IDs to note structure elements using the `SetId` method. The code demonstrates how to set the IDs of note elements to unique values.
+ج: نعم، يمكنك تعيين معرفات فريدة لملاحظة عناصر البنية باستخدام`SetId` طريقة. يوضح الكود كيفية تعيين معرفات عناصر الملاحظة على قيم فريدة.
 
-#### Q: What happens if I attempt to assign a duplicate ID to a note structure element?
+#### س: ماذا يحدث إذا حاولت تعيين معرف مكرر لعنصر بنية الملاحظة؟
 
-A: Attempting to assign a duplicate ID to a note structure element will result in an exception. The code provided in the tutorial includes a comment illustrating this scenario.
+ج: ستؤدي محاولة تعيين معرف مكرر لعنصر بنية الملاحظة إلى حدوث استثناء. يتضمن الكود الموجود في البرنامج التعليمي تعليقًا يوضح هذا السيناريو.
 
-#### Q: How can I ensure PDF/UA compliance when creating note structure elements?
+#### س: كيف يمكنني ضمان التوافق مع PDF/UA عند إنشاء عناصر هيكل الملاحظة؟
 
-A: The code provided in the tutorial demonstrates how to validate PDF/UA compliance using the `Validate` method. By validating the document against the PDF/UA standard, you can ensure that the added note structure elements adhere to accessibility guidelines.
+ ج: يوضح الكود الموجود في البرنامج التعليمي كيفية التحقق من صحة توافق PDF/UA باستخدام ملف`Validate` طريقة. من خلال التحقق من صحة المستند مقابل معيار PDF/UA، يمكنك التأكد من أن عناصر بنية الملاحظة المضافة تلتزم بإرشادات إمكانية الوصول.
 
-#### Q: Can I use this approach to add note structure elements to an existing PDF document?
+#### س: هل يمكنني استخدام هذا الأسلوب لإضافة عناصر بنية الملاحظة إلى مستند PDF موجود؟
 
-A: Yes, you can modify the provided approach to add note structure elements to an existing PDF document. Instead of creating a new document, you would load the existing document using Aspose.PDF and then follow similar steps to append note elements.
+ج: نعم، يمكنك تعديل النهج المقدم لإضافة عناصر بنية الملاحظة إلى مستند PDF موجود. بدلاً من إنشاء مستند جديد، يمكنك تحميل المستند الحالي باستخدام Aspose.PDF ثم اتباع خطوات مماثلة لإلحاق عناصر الملاحظة.

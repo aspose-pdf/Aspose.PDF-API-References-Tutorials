@@ -1,51 +1,51 @@
 ---
-title: Remove Hyperlinks After Converting From Html
-linktitle: Remove Hyperlinks After Converting From Html
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to remove hyperlinks after converting HTML to PDF using Aspose.PDF for .NET.
+title: إزالة الارتباطات التشعبية بعد التحويل من HTML
+linktitle: إزالة الارتباطات التشعبية بعد التحويل من HTML
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لإزالة الارتباطات التشعبية بعد تحويل HTML إلى PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 250
 url: /ar/net/document-conversion/remove-hyperlinks-after-converting-from-html/
 ---
-In this tutorial, we'll walk you through the process of removing hyperlinks from a PDF file generated from an HTML file using Aspose.PDF for .NET. Hyperlinks are clickable links that may redirect to other pages or websites. By following the steps below, you will be able to remove hyperlinks from the resulting PDF file.
+في هذا البرنامج التعليمي، سنرشدك خلال عملية إزالة الارتباطات التشعبية من ملف PDF تم إنشاؤه من ملف HTML باستخدام Aspose.PDF لـ .NET. الارتباطات التشعبية هي روابط قابلة للنقر عليها والتي قد تعيد التوجيه إلى صفحات أو مواقع ويب أخرى. باتباع الخطوات أدناه، ستتمكن من إزالة الارتباطات التشعبية من ملف PDF الناتج.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## المتطلبات الأساسية
+قبل البدء، تأكد من استيفاء المتطلبات الأساسية التالية:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- المعرفة الأساسية بلغة البرمجة C#.
+- مكتبة Aspose.PDF لـ .NET مثبتة على نظامك.
+- بيئة تطوير مثل Visual Studio.
 
-## Step 1: Loading HTML file and removing hyperlinks
-At this step, we will load the HTML file and remove the hyperlinks from the resulting PDF document. Use the following code:
+## الخطوة 1: تحميل ملف HTML وإزالة الارتباطات التشعبية
+في هذه الخطوة، سنقوم بتحميل ملف HTML وإزالة الارتباطات التشعبية من مستند PDF الناتج. استخدم الكود التالي:
 
 ```csharp
-// Path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the HTML file using the HTML loading options
+// قم بتحميل ملف HTML باستخدام خيارات تحميل HTML
 Document doc = new Document(dataDir + "SampleHtmlFile.html", new HtmlLoadOptions());
 
-// Browse the annotations of the first page of the document
+// تصفح التعليقات التوضيحية للصفحة الأولى من المستند
 foreach(Annotation a in doc.Pages[1].Annotations)
 {
-     // Check if the annotation is a link
+     // تحقق مما إذا كان التعليق التوضيحي عبارة عن رابط
      if (a.AnnotationType == AnnotationType.Link)
      {
          LinkAnnotation the = (LinkAnnotation)a;
         
-         // Check if the action is of type GoToURIAction
+         // تحقق مما إذا كان الإجراء من النوع GoToURIAction
          if (the.Action is GoToURIAction)
          {
              GoToURIAction gta = (GoToURIAction)the.Action;
              gta.URI = "";
             
-             // Use a text fragment absorber to find matching text fragments
+             // استخدم أداة امتصاص أجزاء النص للعثور على أجزاء النص المطابقة
              TextFragmentAbsorber tfa = new TextFragmentAbsorber();
              tfa.TextSearchOptions = new TextSearchOptions(a.Rect);
              doc.Pages[a.PageIndex].Accept(tfa);
             
-             // Loop through matching text fragments and remove attributes from hyperlinks
+             // قم بالمراجعة عبر أجزاء النص المطابقة وقم بإزالة السمات من الارتباطات التشعبية
              foreach(TextFragment tf in tfa.TextFragments)
              {
                  tf.TextState.Underline = false;
@@ -53,28 +53,28 @@ foreach(Annotation a in doc.Pages[1].Annotations)
              }
          }
         
-         // Remove the annotation from the page
+         // قم بإزالة التعليق التوضيحي من الصفحة
          doc.Pages[a.PageIndex].Annotations.Delete(a);
      }
 }
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your HTML file is located.
+ تأكد من استبدال`"YOUR DOCUMENTS DIRECTORY"` مع الدليل الفعلي الذي يوجد به ملف HTML الخاص بك.
 
-## Step 2: Saving the resulting PDF file
-Finally, we'll save the resulting PDF file without the hyperlinks. Use the following code:
+## الخطوة 2: حفظ ملف PDF الناتج
+وأخيرًا، سنقوم بحفظ ملف PDF الناتج بدون الارتباطات التشعبية. استخدم الكود التالي:
 
 ```csharp
-// Save the resulting PDF file
+// احفظ ملف PDF الناتج
 doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 ```
 
-The code above saves the resulting PDF file with the filename `"RemoveHyperlinksFromText_out.pdf"`.
+ يحفظ الكود أعلاه ملف PDF الناتج باسم الملف`"RemoveHyperlinksFromText_out.pdf"`.
 
-### Example source code for Remove Hyperlinks After Converting From Html using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لإزالة الارتباطات التشعبية بعد التحويل من Html باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document(dataDir + "SampleHtmlFile.html", new HtmlLoadOptions());
@@ -103,27 +103,27 @@ foreach (Annotation a in doc.Pages[1].Annotations)
 doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of removing hyperlinks from a PDF file generated from an HTML file using Aspose.PDF for .NET. By following the instructions described above, you will be able to successfully remove hyperlinks from the resulting PDF file.
+## خاتمة
+في هذا البرنامج التعليمي، قمنا بتغطية العملية خطوة بخطوة لإزالة الارتباطات التشعبية من ملف PDF تم إنشاؤه من ملف HTML باستخدام Aspose.PDF لـ .NET. باتباع الإرشادات الموضحة أعلاه، ستتمكن من إزالة الارتباطات التشعبية بنجاح من ملف PDF الناتج.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is Aspose.PDF for .NET?
+#### س: ما هو Aspose.PDF لـ .NET؟
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers a wide range of functionalities, including the ability to convert HTML files to PDF and manipulate PDF content.
+ج: Aspose.PDF for .NET هي مكتبة قوية تمكن المطورين من العمل مع مستندات PDF في تطبيقات C#. وهو يقدم مجموعة واسعة من الوظائف، بما في ذلك القدرة على تحويل ملفات HTML إلى PDF ومعالجة محتوى PDF.
 
-#### Q: Why would I want to remove hyperlinks from a PDF file?
+#### س: لماذا أرغب في إزالة الارتباطات التشعبية من ملف PDF؟
 
-A: There are various reasons for removing hyperlinks from a PDF file. For example, you might want to eliminate external links for printing or archiving purposes or ensure that the PDF content is not navigable via hyperlinks.
+ج: هناك أسباب مختلفة لإزالة الارتباطات التشعبية من ملف PDF. على سبيل المثال، قد ترغب في إزالة الروابط الخارجية لأغراض الطباعة أو الأرشفة أو التأكد من أن محتوى PDF غير قابل للتنقل عبر الارتباطات التشعبية.
 
-#### Q: How can I load an HTML file and remove hyperlinks using Aspose.PDF for .NET?
+#### س: كيف يمكنني تحميل ملف HTML وإزالة الارتباطات التشعبية باستخدام Aspose.PDF لـ .NET؟
 
-A: To load an HTML file and remove hyperlinks, you can use Aspose.PDF for .NET's `HtmlLoadOptions` class. Iterate through the annotations of the PDF pages to find link annotations and modify their attributes.
+ ج: لتحميل ملف HTML وإزالة الارتباطات التشعبية، يمكنك استخدام Aspose.PDF لملفات .NET`HtmlLoadOptions` فصل. قم بالتكرار من خلال التعليقات التوضيحية لصفحات PDF للعثور على التعليقات التوضيحية للارتباط وتعديل سماتها.
 
-#### Q: Can I customize the output filename for the resulting PDF?
+#### س: هل يمكنني تخصيص اسم ملف الإخراج لملف PDF الناتج؟
 
-A: Yes, you can customize the output filename for the resulting PDF file by modifying the code that saves the PDF document. Simply change the desired filename in the `doc.Save()` method.
+ج: نعم، يمكنك تخصيص اسم الملف الناتج لملف PDF الناتج عن طريق تعديل الكود الذي يحفظ مستند PDF. ما عليك سوى تغيير اسم الملف المطلوب في ملف`doc.Save()` طريقة.
 
-#### Q: Is it possible to selectively remove hyperlinks based on certain criteria?
+#### س: هل من الممكن إزالة الارتباطات التشعبية بشكل انتقائي بناءً على معايير معينة؟
 
-A: Yes, you can selectively remove hyperlinks based on specific criteria. For example, you can choose to remove only external links or links pointing to specific URLs.
+ج: نعم، يمكنك إزالة الارتباطات التشعبية بشكل انتقائي بناءً على معايير محددة. على سبيل المثال، يمكنك اختيار إزالة الروابط الخارجية فقط أو الروابط التي تشير إلى عناوين URL محددة.

@@ -1,58 +1,58 @@
 ---
-title: Convert Page Region To DOM
-linktitle: Convert Page Region To DOM
-second_title: Aspose.PDF for .NET API Reference
-description: Easily convert a specific region of a PDF page to a Document Object Model (DOM) with Aspose.PDF for .NET.
+title: Преобразование региона страницы в DOM
+linktitle: Преобразование региона страницы в DOM
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко конвертируйте определенную область страницы PDF в объектную модель документа (DOM) с помощью Aspose.PDF для .NET.
 type: docs
 weight: 80
 url: /ru/net/programming-with-images/convert-page-region-to-dom/
 ---
-This guide will take you step by step how to convert a specific region of a page to a Document Object Model (DOM) using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+В этом руководстве шаг за шагом вы узнаете, как преобразовать определенную область страницы в объектную модель документа (DOM) с помощью Aspose.PDF для .NET. Убедитесь, что вы уже настроили свою среду, и выполните следующие действия:
 
-## Step 1: Define the document directory
+## Шаг 1. Определите каталог документов.
 
-Before you start, make sure you set the correct directory for the documents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+ Прежде чем начать, убедитесь, что вы установили правильный каталог для документов. Заменять`"YOUR DOCUMENT DIRECTORY"` в коде укажите путь к каталогу, в котором находится ваш PDF-документ.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the document
+## Шаг 2. Откройте документ.
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+На этом этапе мы откроем PDF-документ с помощью`Document` класс Aspose.PDF. Использовать`Document` конструктор и передайте путь к PDF-документу.
 
 ```csharp
 Document document = new Document(dataDir + "AddImage.pdf");
 ```
 
-## Step 3: Get Page Region Rectangle
+## Шаг 3. Получите прямоугольник области страницы
 
-In this step, we will define a rectangle representing the specific region of the page that we want to convert to DOM. Use the `Aspose.Pdf.Rectangle` class to define the coordinates of the rectangle.
+ На этом этапе мы определим прямоугольник, представляющий конкретную область страницы, которую мы хотим преобразовать в DOM. Использовать`Aspose.Pdf.Rectangle` класс для определения координат прямоугольника.
 
 ```csharp
 Aspose.Pdf.Rectangle pageRect = new Aspose.Pdf.Rectangle(20, 671, 693, 1125);
 ```
 
-## Step 4: Define the crop area of the page
+## Шаг 4. Определите область обрезки страницы.
 
-Use the `CropBox` property of the `Page` object to set the crop box of the page to the desired region rectangle.
+ Использовать`CropBox` собственность`Page` объект, чтобы установить рамку обрезки страницы в нужный прямоугольник области.
 
 ```csharp
 document.Pages[1].CropBox = pageRect;
 ```
 
-## Step 5: Save the cropped PDF document to a stream
+## Шаг 5. Сохраните обрезанный PDF-документ в поток.
 
-In this step, we will save the cropped PDF document to a stream using the `MemoryStream` class.
+ На этом этапе мы сохраним обрезанный PDF-документ в поток, используя команду`MemoryStream` сорт.
 
 ```csharp
 MemoryStream ms = new MemoryStream();
 document.Save(ms);
 ```
 
-## Step 6: Open the cropped PDF document and convert it to an image
+## Шаг 6. Откройте обрезанный PDF-документ и преобразуйте его в изображение.
 
-Open the cropped PDF document using the `Document` class and convert it to an image. We will use a resolution of 300 dpi.
+ Откройте обрезанный PDF-документ с помощью`Document` класс и преобразовать его в изображение. Мы будем использовать разрешение 300 dpi.
 
 ```csharp
 document = newDocument(ms);
@@ -60,79 +60,79 @@ Resolution resolution = new Resolution(300);
 PngDevice pngDevice = new PngDevice(resolution);
 ```
 
-## Step 7: Convert the specific page to an image
+## Шаг 7. Преобразуйте конкретную страницу в изображение
 
-Convert the specific page to an image using the `Process` method of the `pngDevice` object. Specify the image output path.
+ Преобразуйте конкретную страницу в изображение с помощью`Process` метод`pngDevice`объект. Укажите путь вывода изображения.
 
 ```csharp
 dataDir = dataDir + "ConvertPageRegionToDOM_out.png";
 pngDevice.Process(document.Pages[1], dataDir);
 ```
 
-### Sample source code for Convert Page Region To DOM using Aspose.PDF for .NET 
+### Пример исходного кода для преобразования региона страницы в DOM с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document document = new Document( dataDir + "AddImage.pdf");
-// Get rectangle of particular page region
+// Получить прямоугольник определенной области страницы
 Aspose.Pdf.Rectangle pageRect = new Aspose.Pdf.Rectangle(20, 671, 693, 1125);
-// Set CropBox value as per rectangle of desired page region
+// Установите значение CropBox в соответствии с прямоугольником нужной области страницы.
 document.Pages[1].CropBox = pageRect;
-// Save cropped document into stream
+// Сохранить обрезанный документ в поток
 MemoryStream ms = new MemoryStream();
 document.Save(ms);
-// Open cropped PDF document and convert to image
+// Откройте обрезанный PDF-документ и преобразуйте его в изображение.
 document = new Document(ms);
-// Create Resolution object
+// Создать объект разрешения
 Resolution resolution = new Resolution(300);
-// Create PNG device with specified attributes
+// Создать устройство PNG с указанными атрибутами
 PngDevice pngDevice = new PngDevice(resolution);
 dataDir = dataDir + "ConvertPageRegionToDOM_out.png";
-// Convert a particular page and save the image to stream
+//Преобразуйте определенную страницу и сохраните изображение для потоковой передачи.
 pngDevice.Process(document.Pages[1], dataDir);
 ms.Close();
 Console.WriteLine("\nPage region converted to DOM successfully.\nFile saved at " + dataDir); 
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You have successfully converted a specific region of a page to a Document Object Model (DOM) using Aspose.PDF for .NET. The resulting image is saved in the specified directory. You can now use this image in your projects or applications.
+Поздравляем! Вы успешно преобразовали определенную область страницы в объектную модель документа (DOM) с помощью Aspose.PDF для .NET. Полученное изображение сохраняется в указанном каталоге. Теперь вы можете использовать это изображение в своих проектах или приложениях.
 
-## FAQ's
+## Часто задаваемые вопросы
 
-#### Q: What is the purpose of converting a specific region of a page to a Document Object Model (DOM) using Aspose.PDF for .NET?
+#### Вопрос: Какова цель преобразования определенной области страницы в объектную модель документа (DOM) с помощью Aspose.PDF для .NET?
 
-A: Converting a specific region of a PDF page to a Document Object Model (DOM) can be helpful for extracting and manipulating a particular section of content within a PDF document.
+О: Преобразование определенной области страницы PDF в объектную модель документа (DOM) может быть полезно для извлечения и управления определенным разделом содержимого в документе PDF.
 
-#### Q: How does Aspose.PDF for .NET facilitate the conversion of a specific page region to a DOM?
+#### Вопрос: Как Aspose.PDF для .NET облегчает преобразование определенной области страницы в DOM?
 
-A: Aspose.PDF for .NET provides a step-by-step process to define the desired page region, set the crop area, save the cropped PDF document to a stream, and convert the specified page region to an image.
+О: Aspose.PDF для .NET предоставляет пошаговый процесс определения желаемой области страницы, установки области обрезки, сохранения обрезанного PDF-документа в поток и преобразования указанной области страницы в изображение.
 
-#### Q: Why is it important to define the document directory before starting the conversion process?
+#### Вопрос: Почему важно определить каталог документа перед началом процесса преобразования?
 
-A: Specifying the document directory ensures that the PDF document and the resulting image are correctly located in the desired output path.
+О: Указание каталога документа гарантирует, что документ PDF и полученное изображение будут правильно расположены в желаемом пути вывода.
 
-#### Q: How does the `Document` class in Aspose.PDF for .NET help in the conversion process?
+####  Вопрос: Как`Document` class in Aspose.PDF for .NET help in the conversion process?
 
-A: The `Document` class allows you to open, manipulate, and save PDF documents. In this case, it is used to load the PDF document and create a cropped version of it.
+ А:`Document` Класс позволяет открывать, манипулировать и сохранять PDF-документы. В этом случае он используется для загрузки PDF-документа и создания его обрезанной версии.
 
-#### Q: What is the purpose of the `Rectangle` class in the page region conversion process?
+####  Вопрос: Какова цель`Rectangle` class in the page region conversion process?
 
-A: The `Rectangle` class defines the coordinates of the specific region on the PDF page that you want to convert to a DOM. It helps in accurately specifying the crop area.
+ А:`Rectangle` Класс определяет координаты конкретной области на странице PDF, которую вы хотите преобразовать в DOM. Это помогает точно указать площадь урожая.
 
-#### Q: How is the crop area of the page set to the desired region in the conversion process?
+#### Вопрос: Как в процессе преобразования область обрезки страницы устанавливается на нужную область?
 
-A: The `CropBox` property of the `Page` object is used to set the crop area of the page to the defined rectangle representing the specific region.
+ А:`CropBox` собственность`Page` Объект используется для установки области обрезки страницы в определенный прямоугольник, представляющий конкретную область.
 
-#### Q: How is the cropped PDF document saved to a stream during the conversion process?
+#### Вопрос: Как обрезанный PDF-документ сохраняется в поток во время процесса преобразования?
 
-A: The cropped PDF document is saved to a `MemoryStream` object, which allows for efficient manipulation of the PDF content.
+ О: Обрезанный PDF-документ сохраняется в`MemoryStream` объект, который позволяет эффективно манипулировать содержимым PDF.
 
-#### Q: What role does the `PngDevice` class play in the page region to DOM conversion process?
+####  Вопрос: Какую роль играет`PngDevice` class play in the page region to DOM conversion process?
 
-A: The `PngDevice` class helps convert the cropped PDF document into an image format, such as PNG, allowing you to visualize the specific page region.
+ А:`PngDevice` Класс помогает преобразовать обрезанный PDF-документ в формат изображения, например PNG, что позволяет визуализировать определенную область страницы.
 
-#### Q: Can I adjust the resolution or other attributes of the resulting image during the conversion process?
+#### Вопрос: Могу ли я настроить разрешение или другие атрибуты полученного изображения в процессе конвертации?
 
-A: Yes, you can modify the resolution and other attributes of the resulting image by configuring the `PngDevice` object before converting the page.
+ О: Да, вы можете изменить разрешение и другие атрибуты полученного изображения, настроив`PngDevice` объект перед преобразованием страницы.

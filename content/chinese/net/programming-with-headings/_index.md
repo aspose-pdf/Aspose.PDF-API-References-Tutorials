@@ -1,16 +1,16 @@
 ---
-title: Programming with Headings
-linktitle: Programming with Headings
+title: 使用标题进行编程
+linktitle: 使用标题进行编程
 type: docs
 weight: 20
 url: /zh/net/programming-with-headings/
-description: The Aspose.PDF for .NET tutorials walk you through using headings to improve the structure of your PDF documents.
+description: Aspose.PDF for .NET 教程将引导您使用标题来改进 PDF 文档的结构。
 ---
-The Aspose.PDF for .NET tutorials take you step-by-step to master programming with headings in your PDF documents. Learn how to add, style and manipulate headings to improve the structure of your PDF files.
+Aspose.PDF for .NET 教程将带您逐步掌握 PDF 文档中标题的编程。了解如何添加、设置样式和操作标题以改进 PDF 文件的结构。
 
-Explore the features of Aspose.PDF for .NET with dedicated tutorials. Learn how to work with headings in your PDF documents, using practical examples and step-by-step explanations. Improve the readability and navigation of your PDF files with these comprehensive resources.
+通过专门的教程探索 Aspose.PDF for .NET 的功能。通过实际示例和分步说明，了解如何使用 PDF 文档中的标题。利用这些综合资源提高 PDF 文件的可读性和导航性。
 
-## Tutorials
-| Title | Description |
+## 教程
+| 标题 | 描述 |
 | --- | --- | 
-| [Apply Number Style In PDF File](./apply-number-style/) | Learn how to apply a numbering style to headings in PDF file using Aspose.PDF for .NET. Step by step guide. |   
+| [在 PDF 文件中应用数字样式](./apply-number-style/) | 了解如何使用 Aspose.PDF for .NET 将编号样式应用于 PDF 文件中的标题。一步步指导。 |   

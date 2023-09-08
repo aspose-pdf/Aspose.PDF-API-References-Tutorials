@@ -1,74 +1,74 @@
 ---
-title: Get Hyperlink Destinations In PDF File
-linktitle: Get Hyperlink Destinations In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract hyperlink destinations in PDF file using Aspose.PDF for .NET.
+title: Få hyperlänkdestinationer i PDF-fil
+linktitle: Få hyperlänkdestinationer i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du extraherar hyperlänkdestinationer i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 60
 url: /sv/net/programming-with-links-and-actions/get-hyperlink-destinations/
 ---
-Aspose.PDF for .NET is a powerful library for manipulating and extracting information in PDF file using the C# programming language. In this tutorial, we will focus on extracting hyperlink destinations from a PDF file using Aspose.PDF for .NET.
+Aspose.PDF för .NET är ett kraftfullt bibliotek för att manipulera och extrahera information i PDF-filer med programmeringsspråket C#. I den här handledningen kommer vi att fokusera på att extrahera hyperlänkdestinationer från en PDF-fil med Aspose.PDF för .NET.
 
-## Prerequisites
+## Förutsättningar
 
-Before you begin, make sure you have the following:
+Innan du börjar, se till att du har följande:
 
-- An integrated development environment (IDE) such as Visual Studio.
-- The Aspose.PDF library for .NET installed on your machine.
+- En integrerad utvecklingsmiljö (IDE) som Visual Studio.
+- Aspose.PDF-biblioteket för .NET installerat på din maskin.
 
-## Step 1: Setting up the development environment
+## Steg 1: Konfigurera utvecklingsmiljön
 
-Before you start writing code, you need to set up your development environment by creating a new C# project in your favorite IDE.
+Innan du börjar skriva kod måste du ställa in din utvecklingsmiljö genom att skapa ett nytt C#-projekt i din favorit-IDE.
 
-## Step 2: Import Aspose.PDF references
+## Steg 2: Importera Aspose.PDF-referenser
 
-To use Aspose.PDF for .NET, you need to add the appropriate references to your project. Follow the steps below to import the necessary references:
+För att använda Aspose.PDF för .NET måste du lägga till lämpliga referenser till ditt projekt. Följ stegen nedan för att importera nödvändiga referenser:
 
-1. In your project, right-click "References" and select "Add Reference".
-2. In the "Add Reference" window, locate and select the DLL files of Aspose.PDF for .NET.
-3. Click "OK" to import the references into your project.
+1. I ditt projekt högerklickar du på "Referenser" och väljer "Lägg till referens".
+2. fönstret "Lägg till referens", leta upp och välj DLL-filerna för Aspose.PDF för .NET.
+3. Klicka på "OK" för att importera referenserna till ditt projekt.
 
-## Step 3: Loading the PDF File
+## Steg 3: Laddar PDF-filen
 
-Before you can extract hyperlink destinations, you must load the PDF file into your application. Use the following code to load the PDF file:
+Innan du kan extrahera hyperlänkdestinationer måste du ladda PDF-filen i din applikation. Använd följande kod för att ladda PDF-filen:
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// Ladda PDF-filen
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-Be sure to specify the correct path to your document directory and the PDF file you want to process.
+Var noga med att ange rätt sökväg till din dokumentkatalog och PDF-filen du vill bearbeta.
 
-## Step 4: Navigating the pages of the document
+## Steg 4: Navigera på sidorna i dokumentet
 
-Now that the PDF file is loaded, you need to go through all the pages of the document. This will allow you to get
+Nu när PDF-filen är laddad måste du gå igenom alla sidor i dokumentet. Detta gör att du kan få
 
-ir the hyperlink annotations present on each page. Use the following code to iterate through the pages of the document:
+ir hyperlänksanteckningarna som finns på varje sida. Använd följande kod för att iterera genom dokumentets sidor:
 
 ```csharp
 foreach(Aspose.Pdf.Page page in document.Pages)
 {
-     // Get the link annotations of a specific page
+     // Få länkkommentarer för en specifik sida
      AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
      page. Accept(selector);
-     // Create a list to store all the links
+     // Skapa en lista för att lagra alla länkar
      IList<Annotation> list = selector. Selected;
-     // Loop through each item in the list
+     // Gå igenom varje objekt i listan
      foreach(LinkAnnotation a in list)
      {
-         // Print destination URL
+         // Skriv ut måladress
          Console.WriteLine("\nDestination: " + (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI + "\n");
      }
 }
 ```
 
-This code loops through each page of the document and selects the hyperlink annotations present on each page. Then it stores these annotations in a list and prints the destination URL for each link.
+Denna kod går igenom varje sida i dokumentet och väljer hyperlänksanteckningarna som finns på varje sida. Sedan lagrar den dessa kommentarer i en lista och skriver ut måladressen för varje länk.
 
-## Step 5: Obtaining Hyperlink Destinations
+## Steg 5: Skaffa hyperlänkdestinationer
 
-The last step is to extract the hyperlink destinations from the hyperlink annotations. The following code shows you how to do it:
+Det sista steget är att extrahera hyperlänkdestinationerna från hyperlänksanteckningarna. Följande kod visar hur du gör:
 
 ```csharp
 foreach(Aspose.Pdf.Page page in document.Pages)
@@ -79,33 +79,33 @@ foreach(Aspose.Pdf.Page page in document.Pages)
      foreach(LinkAnnotation a in list)
      {
          string destination = (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI;
-         // Use the destination as you wish
+         // Använd destinationen som du vill
      }
 }
 ```
 
-In this code, we get each hyperlink destination from the link annotations and store the destination in a variable. You can then use this destination as you wish in your application.
+I den här koden får vi varje hyperlänkdestination från länkanteckningarna och lagrar destinationen i en variabel. Du kan sedan använda denna destination som du vill i din ansökan.
 
-### Sample source code for Get Hyperlink Destinations using Aspose.PDF for .NET 
+### Exempel på källkod för Get Hyperlink Destinations med Aspose.PDF för .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Sökvägen till dokumentkatalogen.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the PDF file
+	// Ladda PDF-filen
 	Document document = new Document(dataDir + "input.pdf");
-	// Traverse through all the page of PDF
+	// Gå igenom hela PDF-sidan
 	foreach (Aspose.Pdf.Page page in document.Pages)
 	{
-		// Get the link annotations from particular page
+		// Få länkkommentarerna från en viss sida
 		AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
 		page.Accept(selector);
-		// Create list holding all the links
+		// Skapa en lista med alla länkar
 		IList<Annotation> list = selector.Selected;
-		// Iterate through invidiaul item inside list
+		// Iterera genom invidiaul objekt i listan
 		foreach (LinkAnnotation a in list)
 		{
-			// Print the destination URL
+			// Skriv ut måladressen
 			Console.WriteLine("\nDestination: " + (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI + "\n");
 		}
 	}
@@ -116,36 +116,36 @@ catch (Exception ex)
 }
 ```
 
-### FAQs for get hyperlink destinations in PDF file
+### Vanliga frågor för att få hyperlänkdestinationer i PDF-fil
 
-#### Q: What is a hyperlink destination in a PDF file?
+#### F: Vad är en hyperlänkdestination i en PDF-fil?
 
-A: A hyperlink destination in a PDF file is a specific location or target that a hyperlink points to. It could be a URL, a page within the same document, or an external document.
+S: En hyperlänkdestination i en PDF-fil är en specifik plats eller mål som en hyperlänk pekar på. Det kan vara en URL, en sida i samma dokument eller ett externt dokument.
 
-#### Q: How can extracting hyperlink destinations benefit my PDF document analysis?
+#### F: Hur kan extrahera hyperlänkdestinationer gynna min PDF-dokumentanalys?
 
-A: Extracting hyperlink destinations allows you to identify and catalog all the targets that hyperlinks point to within a PDF document. This information can be useful for content validation, link verification, and data analysis.
+S: Genom att extrahera hyperlänkdestinationer kan du identifiera och katalogisera alla mål som hyperlänkar pekar på i ett PDF-dokument. Denna information kan vara användbar för innehållsvalidering, länkverifiering och dataanalys.
 
-#### Q: How does Aspose.PDF for .NET assist in extracting hyperlink destinations?
+#### F: Hur hjälper Aspose.PDF för .NET att extrahera hyperlänkdestinationer?
 
-A: Aspose.PDF for .NET provides powerful APIs to extract hyperlink destinations with ease. This tutorial demonstrates step-by-step how to extract hyperlink destinations using C#.
+S: Aspose.PDF för .NET tillhandahåller kraftfulla API:er för att extrahera hyperlänkdestinationer med lätthet. Denna handledning visar steg-för-steg hur man extraherar hyperlänkdestinationer med C#.
 
-#### Q: Can I selectively extract hyperlink destinations based on certain criteria?
+#### F: Kan jag selektivt extrahera hyperlänkdestinationer baserat på vissa kriterier?
 
-A: Yes, you can selectively extract hyperlink destinations by iterating through the pages of the PDF document and filtering the desired hyperlink annotations based on your criteria.
+S: Ja, du kan selektivt extrahera hyperlänkdestinationer genom att iterera genom sidorna i PDF-dokumentet och filtrera de önskade hyperlänksanteckningarna baserat på dina kriterier.
 
-#### Q: Is it possible to extract hyperlink destinations from password-protected PDF documents?
+#### F: Är det möjligt att extrahera hyperlänkdestinationer från lösenordsskyddade PDF-dokument?
 
-A: Aspose.PDF for .NET can extract hyperlink destinations from password-protected PDF documents as long as you provide the necessary authentication credentials when opening the document.
+S: Aspose.PDF för .NET kan extrahera hyperlänkdestinationer från lösenordsskyddade PDF-dokument så länge du tillhandahåller nödvändiga autentiseringsuppgifter när du öppnar dokumentet.
 
-#### Q: How can I utilize the extracted hyperlink destinations in my application?
+#### F: Hur kan jag använda de extraherade hyperlänkdestinationerna i min applikation?
 
-A: Once you've extracted the hyperlink destinations, you can use them to perform various actions, such as validating link URLs, creating reports, or implementing custom navigation.
+S: När du har extraherat hyperlänkdestinationerna kan du använda dem för att utföra olika åtgärder, som att validera länkadresser, skapa rapporter eller implementera anpassad navigering.
 
-#### Q: Are there any limitations when extracting hyperlink destinations?
+#### F: Finns det några begränsningar när du extraherar hyperlänkdestinationer?
 
-A: While hyperlink destination extraction is powerful, it's essential to consider the structure of the PDF document. Hyperlinks embedded within complex graphics or multimedia content may require additional handling.
+S: Även om extrahering av hyperlänkdestinationer är kraftfullt, är det viktigt att överväga PDF-dokumentets struktur. Hyperlänkar inbäddade i komplex grafik eller multimediainnehåll kan kräva ytterligare hantering.
 
-#### Q: Can I extract other attributes of hyperlinks, such as link types or coordinates?
+#### F: Kan jag extrahera andra attribut för hyperlänkar, såsom länktyper eller koordinater?
 
-A: The tutorial focuses on extracting hyperlink destinations. However, you can refer to the official Aspose.PDF documentation to explore advanced features, including extracting link types and coordinates.
+S: Handledningen fokuserar på att extrahera hyperlänkdestinationer. Du kan dock hänvisa till den officiella Aspose.PDF-dokumentationen för att utforska avancerade funktioner, inklusive extrahera länktyper och koordinater.

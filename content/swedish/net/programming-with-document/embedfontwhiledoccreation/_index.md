@@ -1,48 +1,48 @@
 ---
-title: Embed Font While PDF Doc Creation
-linktitle: Embed Font While PDF Doc Creation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to embed a font while creating a PDF document using Aspose.PDF for .NET. Ensure correct display on different devices.
+title: Bädda in teckensnitt medan du skapar PDF-dokument
+linktitle: Bädda in teckensnitt medan du skapar PDF-dokument
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du bäddar in ett teckensnitt samtidigt som du skapar ett PDF-dokument med Aspose.PDF för .NET. Säkerställ korrekt visning på olika enheter.
 type: docs
 weight: 140
 url: /sv/net/programming-with-document/embedfontwhiledoccreation/
 ---
-In this tutorial, we will discuss how to embed a font while creating a PDF document using Aspose.PDF for .NET. Aspose.PDF for .NET is a powerful library that allows developers to create, edit, and manipulate PDF documents programmatically. This library provides a wide range of features to work with PDF documents, including adding text, images, tables, and much more. Embedding fonts while creating a PDF document is a common requirement for developers who want to ensure that the PDF document displays correctly on different devices, regardless of whether the required fonts are installed on those devices or not.
+I den här handledningen kommer vi att diskutera hur man bäddar in ett teckensnitt samtidigt som man skapar ett PDF-dokument med Aspose.PDF för .NET. Aspose.PDF för .NET är ett kraftfullt bibliotek som låter utvecklare skapa, redigera och manipulera PDF-dokument programmatiskt. Det här biblioteket erbjuder ett brett utbud av funktioner för att arbeta med PDF-dokument, inklusive att lägga till text, bilder, tabeller och mycket mer. Att bädda in typsnitt när man skapar ett PDF-dokument är ett vanligt krav för utvecklare som vill säkerställa att PDF-dokumentet visas korrekt på olika enheter, oavsett om de nödvändiga typsnitten är installerade på dessa enheter eller inte.
 
-## Step 1: Create a new C# Console Application
-To get started, create a new C# Console Application in Visual Studio. You can name it whatever you like. Once the project is created, you need to add a reference to the Aspose.PDF for .NET library.
+## Steg 1: Skapa en ny C# Console Application
+För att komma igång, skapa en ny C# Console Application i Visual Studio. Du kan namnge det vad du vill. När projektet har skapats måste du lägga till en referens till Aspose.PDF för .NET-biblioteket.
 
-## Step 2: Import the Aspose.PDF Namespace
-Add the following line of code at the top of your C# file to import the Aspose.PDF namespace:
+## Steg 2: Importera Aspose.PDF-namnområdet
+Lägg till följande kodrad överst i din C#-fil för att importera Aspose.PDF-namnrymden:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Instantiate a Pdf Object
-Instantiate a Pdf object by calling its empty constructor:
+## Steg 3: Instantiera ett PDF-objekt
+Instantiera ett Pdf-objekt genom att anropa dess tomma konstruktor:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Step 4: Create a Section in the Pdf Object
-Create a section in the Pdf object:
+## Steg 4: Skapa ett avsnitt i Pdf-objektet
+Skapa ett avsnitt i Pdf-objektet:
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## Step 5: Add Text to the Section
-Add text to the section:
+## Steg 5: Lägg till text i avsnittet
+Lägg till text i avsnittet:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
 Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
 ```
 
-## Step 6: Set the Font and Embed It
-Set the font and embed it:
+## Steg 6: Ställ in typsnittet och bädda in det
+Ställ in typsnittet och bädda in det:
 
 ```csharp
 Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
@@ -53,25 +53,25 @@ fragment.Segments.Add(segment);
 page.Paragraphs.Add(fragment);
 ```
 
-## Step 7: Save the PDF Document
-Once you have embedded the font while creating the PDF document, you need to save the document:
+## Steg 7: Spara PDF-dokumentet
+När du har bäddat in teckensnittet medan du skapar PDF-dokumentet måste du spara dokumentet:
 
 ```csharp
 dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-// Save PDF Document
+// Spara PDF-dokument
 doc.Save(dataDir);
 ```
 
-### Example Source Code for Embed Font While Doc Creation using Aspose.PDF for .NET
+### Exempel på källkod för Embed Font While Doc Creation med Aspose.PDF för .NET
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Pdf object by calling its empty constructor
+// Instantiera Pdf-objekt genom att anropa dess tomma konstruktor
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Create a section in the Pdf object
+// Skapa ett avsnitt i Pdf-objektet
 Aspose.Pdf.Page page = doc.Pages.Add();
 
 Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
@@ -85,31 +85,31 @@ fragment.Segments.Add(segment);
 page.Paragraphs.Add(fragment);
 
 dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-// Save PDF Document
+// Spara PDF-dokument
 doc.Save(dataDir);
 ```
 
-## Conclusion
-In this tutorial, we have discussed how to embed a font while creating a PDF document using Aspose.PDF for .NET. Aspose.PDF for .NET provides a simple and easy-to-use API to work with PDF documents, including adding and embedding fonts. Embedding fonts while creating a PDF document is an important step to ensure that the document is displayed correctly on different devices, regardless of whether the required fonts are installed on those devices or not.
+## Slutsats
+den här handledningen har vi diskuterat hur man bäddar in ett teckensnitt samtidigt som man skapar ett PDF-dokument med Aspose.PDF för .NET. Aspose.PDF för .NET tillhandahåller ett enkelt och lättanvänt API för att arbeta med PDF-dokument, inklusive att lägga till och bädda in teckensnitt. Att bädda in teckensnitt när du skapar ett PDF-dokument är ett viktigt steg för att säkerställa att dokumentet visas korrekt på olika enheter, oavsett om de nödvändiga typsnitten är installerade på dessa enheter eller inte.
 
-### FAQ's for embed font while PDF doc creation
+### Vanliga frågor för inbäddning av teckensnitt när PDF-dokument skapas
 
-#### Q: Why is embedding fonts while creating a PDF document important?
+#### F: Varför är det viktigt att bädda in teckensnitt när man skapar ett PDF-dokument?
 
-A: Embedding fonts while creating a PDF document is important to ensure that the document is displayed correctly on different devices, even if the required fonts are not installed on those devices. This helps maintain the document's intended appearance and prevents font substitution issues.
+S: Det är viktigt att bädda in teckensnitt när du skapar ett PDF-dokument för att säkerställa att dokumentet visas korrekt på olika enheter, även om de nödvändiga teckensnitten inte är installerade på dessa enheter. Detta hjälper till att behålla dokumentets avsedda utseende och förhindrar problem med teckensnittsersättning.
 
-#### Q: How can I embed fonts while creating a PDF document using Aspose.PDF for .NET?
+#### F: Hur kan jag bädda in typsnitt när jag skapar ett PDF-dokument med Aspose.PDF för .NET?
 
-A: You can embed fonts while creating a PDF document using Aspose.PDF for .NET by specifying the font and setting the `IsEmbedded` property to `true`. This ensures that the font data is embedded in the PDF file.
+S: Du kan bädda in teckensnitt samtidigt som du skapar ett PDF-dokument med Aspose.PDF för .NET genom att ange typsnittet och ställa in`IsEmbedded` egendom till`true`. Detta säkerställer att teckensnittsdata är inbäddade i PDF-filen.
 
-#### Q: Can I specify a custom font while embedding it in a PDF document?
+#### F: Kan jag ange ett anpassat teckensnitt när jag bäddar in det i ett PDF-dokument?
 
-A: Yes, you can specify a custom font while embedding it in a PDF document using Aspose.PDF for .NET. This allows you to use specific fonts that suit your design requirements.
+S: Ja, du kan ange ett anpassat teckensnitt medan du bäddar in det i ett PDF-dokument med Aspose.PDF för .NET. Detta gör att du kan använda specifika typsnitt som passar dina designkrav.
 
-#### Q: Is Aspose.PDF for .NET compatible with various font formats?
+#### F: Är Aspose.PDF för .NET kompatibelt med olika teckensnittsformat?
 
-A: Yes, Aspose.PDF for .NET is compatible with various font formats, including TrueType, OpenType, and Type 1 fonts. It can embed fonts in a PDF document regardless of their format.
+S: Ja, Aspose.PDF för .NET är kompatibel med olika teckensnittsformat, inklusive TrueType, OpenType och Type 1-teckensnitt. Det kan bädda in teckensnitt i ett PDF-dokument oavsett format.
 
-#### Q: Can I customize the font embedding process?
+#### F: Kan jag anpassa teckensnittsinbäddningsprocessen?
 
-A: Yes, you can customize the font embedding process using Aspose.PDF for .NET. You can specify the font and set properties such as `IsEmbedded` to control how the font is embedded in the PDF document.
+ S: Ja, du kan anpassa teckensnittsinbäddningsprocessen med Aspose.PDF för .NET. Du kan ange typsnitt och ställa in egenskaper som t.ex`IsEmbedded` för att styra hur typsnittet bäddas in i PDF-dokumentet.

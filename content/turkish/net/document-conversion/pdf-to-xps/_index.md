@@ -1,86 +1,86 @@
 ---
-title: PDF To XPS
-linktitle: PDF To XPS
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert PDF to XPS using Aspose.PDF for .NET.
+title: PDF'den XPS'ye
+linktitle: PDF'den XPS'ye
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF'yi XPS'ye dönüştürmek için adım adım kılavuz.
 type: docs
 weight: 220
 url: /tr/net/document-conversion/pdf-to-xps/
 ---
-In this tutorial, we'll walk you through the process of converting a PDF file to XPS (XML Paper Specification) format using Aspose.PDF for .NET. The XPS format is an XML-based file format used to electronically represent documents. By following the steps below, you will be able to convert a PDF file to XPS format.
+Bu eğitimde, Aspose.PDF for .NET'i kullanarak bir PDF dosyasını XPS (XML Kağıt Belirtimi) formatına dönüştürme sürecinde size yol göstereceğiz. XPS formatı, belgeleri elektronik olarak temsil etmek için kullanılan XML tabanlı bir dosya formatıdır. Aşağıdaki adımları takip ederek bir PDF dosyasını XPS formatına dönüştürebileceksiniz.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Önkoşullar
+Başlamadan önce aşağıdaki önkoşulları karşıladığınızdan emin olun:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- C# programlama dili hakkında temel bilgiler.
+- Sisteminizde yüklü olan .NET için Aspose.PDF kütüphanesi.
+- Visual Studio gibi bir geliştirme ortamı.
 
-## Step 1: Loading the PDF document
-In this step we will load the source PDF file using Aspose.PDF for .NET. Follow the code below:
+## 1. Adım: PDF belgesini yükleme
+Bu adımda kaynak PDF dosyasını Aspose.PDF for .NET kullanarak yükleyeceğiz. Aşağıdaki kodu izleyin:
 
 ```csharp
-// Path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the PDF document
+// PDF belgesini yükleyin
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+ Değiştirdiğinizden emin olun`"YOUR DOCUMENTS DIRECTORY"` PDF dosyanızın bulunduğu gerçek dizinle.
 
-## Step 2: Instantiate XPS save options
-After loading the PDF file, we will instantiate the XPS save options. Use the following code:
+## 2. Adım: XPS kaydetme seçeneklerini somutlaştırın
+PDF dosyasını yükledikten sonra XPS kaydetme seçeneklerini başlatacağız. Aşağıdaki kodu kullanın:
 
 ```csharp
-// Instantiate XPS save options
+// XPS kaydetme seçeneklerini somutlaştırın
 Aspose.Pdf.XpsSaveOptions saveOptions = new Aspose.Pdf.XpsSaveOptions();
 ```
 
-## Step 3: Saving the resulting XPS file
-Now we will save the converted PDF file in XPS format. Use the following code:
+## 3. Adım: Ortaya çıkan XPS dosyasını kaydetme
+Şimdi dönüştürülen PDF dosyasını XPS formatında kaydedeceğiz. Aşağıdaki kodu kullanın:
 
 ```csharp
-// Save the XPS document
+// XPS belgesini kaydedin
 pdfDocument.Save("PDFToXPS_out.xps", saveOptions);
 ```
 
-The above code saves the converted PDF file in XPS format with the filename `"PDFToXPS_out.xps"`.
+ Yukarıdaki kod, dönüştürülen PDF dosyasını dosya adıyla XPS formatında kaydeder.`"PDFToXPS_out.xps"`.
 
 
-### Example source code for PDF to XPS using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanılarak PDF'den XPS'ye geçiş için örnek kaynak kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load PDF document
+// PDF belgesini yükle
 Document pdfDocument = new Document(dataDir + "input.pdf");
 
-// Instantiate XPS Save options
+// XPS Kaydetme seçeneklerini somutlaştırın
 Aspose.Pdf.XpsSaveOptions saveOptions = new Aspose.Pdf.XpsSaveOptions();
 
-// Save the XPS document
+// XPS belgesini kaydedin
 pdfDocument.Save("PDFToXPS_out.xps", saveOptions);
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of converting a PDF file to XPS format using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to convert a PDF file to XPS format. This feature is useful when you want to view or print PDF documents in an XPS format.
+## Çözüm
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasını XPS formatına dönüştürme işlemini adım adım ele aldık. Yukarıda özetlenen talimatları izleyerek artık bir PDF dosyasını XPS formatına dönüştürebilmelisiniz. Bu özellik, PDF belgelerini XPS formatında görüntülemek veya yazdırmak istediğinizde kullanışlıdır.
 
-### FAQ's
+### SSS'ler
 
-#### Q: Is the XPS format suitable for cross-platform compatibility?
+#### S: XPS formatı platformlar arası uyumluluk için uygun mu?
 
-A: The XPS format, being an XML-based file format, is platform-independent and can be viewed on various operating systems and devices. XPS files are supported on Windows platforms by default, and some third-party applications and viewers may be available for other platforms.
+C: XML tabanlı bir dosya formatı olan XPS formatı platformdan bağımsızdır ve çeşitli işletim sistemleri ve cihazlarda görüntülenebilir. XPS dosyaları varsayılan olarak Windows platformlarında desteklenir ve bazı üçüncü taraf uygulamalar ve görüntüleyiciler diğer platformlar için de mevcut olabilir.
 
-#### Q: Can Aspose.PDF for .NET handle complex PDF files with multiple pages and images during XPS conversion?
+#### S: Aspose.PDF for .NET, XPS dönüştürme sırasında birden fazla sayfa ve görüntü içeren karmaşık PDF dosyalarını işleyebilir mi?
 
-A: Yes, Aspose.PDF for .NET can handle complex PDF files with multiple pages and images during XPS conversion. It accurately retains the layout, images, and textual content of the PDF while converting it to XPS format.
+C: Evet, Aspose.PDF for .NET, XPS dönüşümü sırasında birden fazla sayfa ve görüntü içeren karmaşık PDF dosyalarını işleyebilir. PDF'yi XPS formatına dönüştürürken düzenini, resimlerini ve metin içeriğini doğru bir şekilde korur.
 
-#### Q: Is it possible to specify additional settings or options during the XPS conversion process?
+#### S: XPS dönüştürme işlemi sırasında ek ayarlar veya seçenekler belirlemek mümkün müdür?
 
-A: Yes, Aspose.PDF for .NET provides various options and settings that can be customized during the XPS conversion process. You can control the image compression, font embedding, and other settings using the `XpsSaveOptions` class.
+ C: Evet, Aspose.PDF for .NET, XPS dönüştürme işlemi sırasında özelleştirilebilecek çeşitli seçenekler ve ayarlar sağlar. Görüntü sıkıştırmayı, yazı tipi yerleştirmeyi ve diğer ayarları kullanarak kontrol edebilirsiniz.`XpsSaveOptions` sınıf.
 
-#### Q: Can password-protected PDFs be converted to XPS format using Aspose.PDF for .NET?
+#### S: Parola korumalı PDF'ler Aspose.PDF for .NET kullanılarak XPS formatına dönüştürülebilir mi?
 
-A: Yes, Aspose.PDF for .NET supports converting password-protected PDFs to XPS format. When loading a password-protected PDF, you can provide the password using the `Document` class constructor or by setting the `Password` property before loading the PDF.
+ C: Evet, Aspose.PDF for .NET, parola korumalı PDF'lerin XPS formatına dönüştürülmesini destekler. Parola korumalı bir PDF yüklerken, parolayı kullanarak sağlayabilirsiniz.`Document` sınıf yapıcısı veya ayarlayarak`Password` PDF'yi yüklemeden önce özellik.

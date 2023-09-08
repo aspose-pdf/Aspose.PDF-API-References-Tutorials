@@ -1,129 +1,129 @@
 ---
-title: Image and Page Number in Header Footer Section Inline
-linktitle: Image and Page Number in Header Footer Section Inline
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add image and page number in header and footer using inline paragraphs with Aspose.PDF for .NET.
+title: Изображение и номер страницы в верхнем колонтитуле, встроенный в раздел нижнего колонтитула
+linktitle: Изображение и номер страницы в верхнем колонтитуле, встроенный в раздел нижнего колонтитула
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как добавить изображение и номер страницы в верхний и нижний колонтитул, используя встроенные абзацы, с помощью Aspose.PDF для .NET.
 type: docs
 weight: 120
 url: /ru/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section-inline/
 ---
-In this tutorial, we will guide you step by step on how to add image and page number in header and footer section of PDF document using Aspose.PDF for .NET. We will use the provided C# source code to create a page, set header and footer, add image and text using inline paragraphs in the header of the PDF document.
+В этом уроке мы шаг за шагом покажем вам, как добавить изображение и номер страницы в раздел верхнего и нижнего колонтитула PDF-документа с помощью Aspose.PDF для .NET. Мы будем использовать предоставленный исходный код C# для создания страницы, установки верхнего и нижнего колонтитула, добавления изображения и текста, используя встроенные абзацы в заголовке PDF-документа.
 
-## Step 1: Setting up the environment
+## Шаг 1. Настройка среды
 
-Before you begin, make sure you have the following:
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Установленная среда разработки .NET.
+- Библиотека Aspose.PDF для .NET загружена и используется в вашем проекте.
 
-## Step 2: Creating the PDF Document and Page
+## Шаг 2. Создание PDF-документа и страницы
 
-The first step is to create a new Document object and a page in the PDF document. Here's how:
+Первым шагом является создание нового объекта Document и страницы в документе PDF. Вот как:
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a new Document object
+// Создайте новый объект документа.
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 
-// Create a page in the document
+// Создать страницу в документе
 Aspose.Pdf.Page page = pdf1.Pages.Add();
 ```
 
-The code above creates a new Document object and an empty page in the PDF document.
+Приведенный выше код создает новый объект Document и пустую страницу в документе PDF.
 
-## Step 3: Adding the header with an image and inline text
+## Шаг 3. Добавление заголовка с изображением и встроенным текстом.
 
-Now that the page is created, we can add a header section with an image and text using inline paragraphs. Here's how:
+Теперь, когда страница создана, мы можем добавить раздел заголовка с изображением и текстом, используя встроенные абзацы. Вот как:
 
 ```csharp
-// Create a header section
+// Создайте раздел заголовка
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the page header
+// Установить заголовок страницы
 page. Header = header;
 
-// Create a TextFragment object for the first inline text
+// Создайте объект TextFragment для первого встроенного текста.
 Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf is a robust component developed by");
 
-// Specify text color
+// Укажите цвет текста
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
 
-// Create an Image object for the image
+// Создайте объект Image для изображения.
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set image path
+// Установить путь к изображению
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Define the dimensions of the image
+// Определите размеры изображения
 image1.FixWidth = 50;
 image1.FixHeight = 20;
 
-// Indicate that the first inline text is an image
+// Укажите, что первый встроенный текст — это изображение.
 image1.IsInLineParagraph = true;
 
-// Create a second inline text
+// Создайте второй встроенный текст
 Aspose.Pdf.Text.TextFragment txt2 = new Aspose.Pdf.Text.TextFragment(" Pty Ltd.");
 txt2.IsInLineParagraph = true;
 txt2.TextState.ForegroundColor = Color.Maroon;
 
-// Add items to header
+// Добавляйте элементы в шапку
 header.Paragraphs.Add(txt1);
 header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
 ```
 
-The code above creates a header section, sets the page header with this section, adds a TextFragment with inline text and an inline Image object.
+Приведенный выше код создает раздел заголовка, устанавливает заголовок страницы с этим разделом, добавляет TextFragment со встроенным текстом и встроенным объектом изображения.
 
-## Step 4: Saving the modified PDF document
+## Шаг 4. Сохранение измененного PDF-документа.
 
-Once the header with the image and inline text is added, we can save the modified PDF document. Here's how:
+После добавления заголовка с изображением и встроенным текстом мы можем сохранить измененный PDF-документ. Вот как:
 
 ```csharp
-// Save the modified PDF document
+// Сохраните измененный PDF-документ.
 pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Приведенный выше код сохраняет отредактированный PDF-документ в указанный каталог.
 
-### Sample source code for Imageand Page Numberin Header Footersection Inline using Aspose.PDF for .NET 
+### Пример исходного кода для изображения и номера страницы в верхнем колонтитуле, нижнем колонтитуле, встроенный с использованием Aspose.PDF для .NET 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate a Document object by calling its empty constructor
+// Создайте экземпляр объекта Document, вызвав его пустой конструктор.
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 
-// Create a page in the Pdf object
+// Создайте страницу в объекте PDF
 Aspose.Pdf.Page page = pdf1.Pages.Add();
 
-// Create Header Section of the document
+// Создать раздел заголовка документа
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the header for the PDF file
+// Установите заголовок для PDF-файла
 page.Header = header;
 
-// Create a Text object
+// Создать текстовый объект
 Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf is a Robust component by");
 
-// Specify the color
+// Укажите цвет
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
 
-// Create an image object in the section
+// Создайте объект изображения в разделе
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set the path of image file
+// Установите путь к файлу изображения
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Set the image width Information
+// Установка ширины изображения Информация
 image1.FixWidth = 50;
 image1.FixHeight = 20;
 
-// Indicate seg1's InlineParagraph is a image.
+// Укажите, что InlineParagraph сегмента 1 является изображением.
 image1.IsInLineParagraph = true;
 Aspose.Pdf.Text.TextFragment txt2 = new Aspose.Pdf.Text.TextFragment(" Pty Ltd.");
 txt2.IsInLineParagraph = true;
@@ -132,53 +132,53 @@ header.Paragraphs.Add(txt1);
 header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
 
-// Save the Pdf
+// Сохраните PDF-файл
 pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.pdf");
 
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You have learned how to add an image and page number in the header and footer section of a PDF document using inline paragraphs with Aspose.PDF for .NET. You can now customize the header and footer of your PDF documents flexibly.
+Поздравляем! Вы узнали, как добавить изображение и номер страницы в раздел верхнего и нижнего колонтитула PDF-документа, используя встроенные абзацы, с помощью Aspose.PDF для .NET. Теперь вы можете гибко настраивать верхний и нижний колонтитулы PDF-документов.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the advantage of using inline paragraphs for adding an image and text to the header of a PDF document?
+#### Вопрос: В чем преимущество использования встроенных абзацев для добавления изображения и текста в заголовок PDF-документа?
 
-A: Using inline paragraphs allows you to seamlessly integrate images and text within the same paragraph, providing precise control over their placement and formatting. This method is especially useful for creating customized headers with visual elements.
+О: Использование встроенных абзацев позволяет легко интегрировать изображения и текст в одном абзаце, обеспечивая точный контроль над их размещением и форматированием. Этот метод особенно полезен для создания индивидуальных заголовков с визуальными элементами.
 
-#### Q: How does the provided C# source code achieve inline paragraphs for the header in a PDF document?
+#### Вопрос: Как предоставленный исходный код C# обеспечивает встроенные абзацы для заголовка в PDF-документе?
 
-A: The provided code demonstrates how to create a PDF document, add a page, and customize the header using inline paragraphs. It adds a TextFragment with inline text, an inline image, and another inline TextFragment.
+О: Приведенный код демонстрирует, как создать PDF-документ, добавить страницу и настроить заголовок с помощью встроенных абзацев. Он добавляет TextFragment со встроенным текстом, встроенным изображением и еще одним встроенным TextFragment.
 
-#### Q: How do I specify the color of the inline text in the header?
+#### Вопрос: Как указать цвет встроенного текста в заголовке?
 
-A: The color of the inline text is specified using the `ForegroundColor` property of the `TextState` of the `TextFragment` object.
+ О: Цвет встроенного текста задается с помощью`ForegroundColor` собственность`TextState` принадлежащий`TextFragment` объект.
 
-#### Q: Can I adjust the dimensions of the inline image in the header?
+#### Вопрос: Могу ли я настроить размеры встроенного изображения в шапке?
 
-A: Yes, you can adjust the dimensions of the inline image using the `FixWidth` and `FixHeight` properties of the `Image` object. This allows you to control the width and height of the image within the header.
+ О: Да, вы можете настроить размеры встроенного изображения с помощью`FixWidth` и`FixHeight` свойства`Image` объект. Это позволяет вам контролировать ширину и высоту изображения в заголовке.
 
-#### Q: Can I include additional inline elements, such as hyperlinks or different font styles, in the header?
+#### Вопрос: Могу ли я включить в заголовок дополнительные встроенные элементы, такие как гиперссылки или другие стили шрифта?
 
-A: Yes, you can include additional inline elements in the header by creating more `TextFragment` or `Image` objects with the desired properties. This allows you to customize the header further, including hyperlinks, different font styles, or other visual elements.
+ О: Да, вы можете включить в заголовок дополнительные встроенные элементы, создав больше`TextFragment` или`Image` объекты с желаемыми свойствами. Это позволяет дополнительно настроить заголовок, включая гиперссылки, различные стили шрифта или другие визуальные элементы.
 
-#### Q: How can I ensure that the inline image and text remain properly aligned and formatted across different devices and viewers?
+#### Вопрос: Как я могу гарантировать, что встроенное изображение и текст будут правильно выровнены и отформатированы на разных устройствах и в различных программах просмотра?
 
-A: Aspose.PDF for .NET ensures that inline images and text are properly aligned and formatted, resulting in consistent appearance across different devices and PDF viewers.
+О: Aspose.PDF для .NET гарантирует, что встроенные изображения и текст правильно выровнены и отформатированы, что приводит к единообразному виду на разных устройствах и в программах просмотра PDF.
 
-#### Q: Can I apply inline paragraphs to the footer section as well?
+#### Вопрос: Могу ли я применить встроенные абзацы и к нижнему колонтитулу?
 
-A: Yes, you can apply the same technique of using inline paragraphs to the footer section by creating a `Footer` object and adding inline elements such as text and images to it.
+ О: Да, вы можете применить ту же технику использования встроенных абзацев к нижнему колонтитулу, создав`Footer` объект и добавление к нему встроенных элементов, таких как текст и изображения.
 
-#### Q: Is it possible to combine inline paragraphs with other header or footer customization methods?
+#### Вопрос: Можно ли комбинировать встроенные абзацы с другими методами настройки верхнего или нижнего колонтитула?
 
-A: Yes, you can combine inline paragraphs with other header or footer customization methods provided by Aspose.PDF for .NET to create more complex and tailored header or footer designs.
+О: Да, вы можете комбинировать встроенные абзацы с другими методами настройки верхнего или нижнего колонтитула, предоставляемыми Aspose.PDF для .NET, для создания более сложных и адаптированных дизайнов верхнего или нижнего колонтитула.
 
-#### Q: Can I remove or clear the inline elements from the header if needed?
+#### Вопрос: Могу ли я удалить или очистить встроенные элементы из заголовка, если это необходимо?
 
-A: Yes, you can remove or clear the inline elements by modifying the contents of the `HeaderFooter` object and removing the respective inline paragraphs.
+ О: Да, вы можете удалить или очистить встроенные элементы, изменив содержимое файла.`HeaderFooter` объект и удаление соответствующих встроенных абзацев.
 
-#### Q: How can I apply inline paragraphs to specific pages of the PDF document?
+#### Вопрос: Как применить встроенные абзацы к определенным страницам PDF-документа?
 
-A: To apply inline paragraphs to specific pages, you can create separate `HeaderFooter` objects for each page and assign them using the `Header` property of the respective `Aspose.Pdf.Page` objects.
+ О: Чтобы применить встроенные абзацы к конкретным страницам, вы можете создать отдельные`HeaderFooter` объекты для каждой страницы и назначайте их с помощью`Header` собственность соответствующего`Aspose.Pdf.Page` объекты.

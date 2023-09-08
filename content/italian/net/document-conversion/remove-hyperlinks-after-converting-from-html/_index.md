@@ -1,51 +1,51 @@
 ---
-title: Remove Hyperlinks After Converting From Html
-linktitle: Remove Hyperlinks After Converting From Html
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to remove hyperlinks after converting HTML to PDF using Aspose.PDF for .NET.
+title: Rimuovi i collegamenti ipertestuali dopo la conversione da HTML
+linktitle: Rimuovi i collegamenti ipertestuali dopo la conversione da HTML
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Guida passo passo per rimuovere i collegamenti ipertestuali dopo aver convertito HTML in PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 250
 url: /it/net/document-conversion/remove-hyperlinks-after-converting-from-html/
 ---
-In this tutorial, we'll walk you through the process of removing hyperlinks from a PDF file generated from an HTML file using Aspose.PDF for .NET. Hyperlinks are clickable links that may redirect to other pages or websites. By following the steps below, you will be able to remove hyperlinks from the resulting PDF file.
+In questo tutorial ti guideremo attraverso il processo di rimozione dei collegamenti ipertestuali da un file PDF generato da un file HTML utilizzando Aspose.PDF per .NET. I collegamenti ipertestuali sono collegamenti cliccabili che possono reindirizzare ad altre pagine o siti Web. Seguendo i passaggi seguenti, sarai in grado di rimuovere i collegamenti ipertestuali dal file PDF risultante.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Prerequisiti
+Prima di iniziare, assicurati di soddisfare i seguenti prerequisiti:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Conoscenza base del linguaggio di programmazione C#.
+- Libreria Aspose.PDF per .NET installata sul tuo sistema.
+- Un ambiente di sviluppo come Visual Studio.
 
-## Step 1: Loading HTML file and removing hyperlinks
-At this step, we will load the HTML file and remove the hyperlinks from the resulting PDF document. Use the following code:
+## Passaggio 1: caricamento del file HTML e rimozione dei collegamenti ipertestuali
+questo punto, caricheremo il file HTML e rimuoveremo i collegamenti ipertestuali dal documento PDF risultante. Utilizza il seguente codice:
 
 ```csharp
-// Path to the documents directory.
+// Percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the HTML file using the HTML loading options
+// Carica il file HTML utilizzando le opzioni di caricamento HTML
 Document doc = new Document(dataDir + "SampleHtmlFile.html", new HtmlLoadOptions());
 
-// Browse the annotations of the first page of the document
+// Sfoglia le annotazioni della prima pagina del documento
 foreach(Annotation a in doc.Pages[1].Annotations)
 {
-     // Check if the annotation is a link
+     // Controlla se l'annotazione è un collegamento
      if (a.AnnotationType == AnnotationType.Link)
      {
          LinkAnnotation the = (LinkAnnotation)a;
         
-         // Check if the action is of type GoToURIAction
+         // Controlla se l'azione è di tipo GoToURIAction
          if (the.Action is GoToURIAction)
          {
              GoToURIAction gta = (GoToURIAction)the.Action;
              gta.URI = "";
             
-             // Use a text fragment absorber to find matching text fragments
+             // Utilizzare un assorbitore di frammenti di testo per trovare frammenti di testo corrispondenti
              TextFragmentAbsorber tfa = new TextFragmentAbsorber();
              tfa.TextSearchOptions = new TextSearchOptions(a.Rect);
              doc.Pages[a.PageIndex].Accept(tfa);
             
-             // Loop through matching text fragments and remove attributes from hyperlinks
+             // Passa in rassegna i frammenti di testo corrispondenti e rimuovi gli attributi dai collegamenti ipertestuali
              foreach(TextFragment tf in tfa.TextFragments)
              {
                  tf.TextState.Underline = false;
@@ -53,28 +53,28 @@ foreach(Annotation a in doc.Pages[1].Annotations)
              }
          }
         
-         // Remove the annotation from the page
+         // Rimuovi l'annotazione dalla pagina
          doc.Pages[a.PageIndex].Annotations.Delete(a);
      }
 }
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your HTML file is located.
+ Assicurati di sostituire`"YOUR DOCUMENTS DIRECTORY"` con la directory effettiva in cui si trova il file HTML.
 
-## Step 2: Saving the resulting PDF file
-Finally, we'll save the resulting PDF file without the hyperlinks. Use the following code:
+## Passaggio 2: salvataggio del file PDF risultante
+Infine, salveremo il file PDF risultante senza i collegamenti ipertestuali. Utilizza il seguente codice:
 
 ```csharp
-// Save the resulting PDF file
+// Salva il file PDF risultante
 doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 ```
 
-The code above saves the resulting PDF file with the filename `"RemoveHyperlinksFromText_out.pdf"`.
+ Il codice sopra salva il file PDF risultante con il nome file`"RemoveHyperlinksFromText_out.pdf"`.
 
-### Example source code for Remove Hyperlinks After Converting From Html using Aspose.PDF for .NET
+### Codice sorgente di esempio per rimuovere i collegamenti ipertestuali dopo la conversione da Html utilizzando Aspose.PDF per .NET
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document(dataDir + "SampleHtmlFile.html", new HtmlLoadOptions());
@@ -103,27 +103,27 @@ foreach (Annotation a in doc.Pages[1].Annotations)
 doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of removing hyperlinks from a PDF file generated from an HTML file using Aspose.PDF for .NET. By following the instructions described above, you will be able to successfully remove hyperlinks from the resulting PDF file.
+## Conclusione
+In questo tutorial, abbiamo trattato il processo passo passo di rimozione dei collegamenti ipertestuali da un file PDF generato da un file HTML utilizzando Aspose.PDF per .NET. Seguendo le istruzioni sopra descritte, sarai in grado di rimuovere con successo i collegamenti ipertestuali dal file PDF risultante.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: What is Aspose.PDF for .NET?
+#### D: Cos'è Aspose.PDF per .NET?
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers a wide range of functionalities, including the ability to convert HTML files to PDF and manipulate PDF content.
+R: Aspose.PDF per .NET è una potente libreria che consente agli sviluppatori di lavorare con documenti PDF in applicazioni C#. Offre un'ampia gamma di funzionalità, inclusa la possibilità di convertire file HTML in PDF e manipolare il contenuto PDF.
 
-#### Q: Why would I want to remove hyperlinks from a PDF file?
+#### D: Perché dovrei rimuovere i collegamenti ipertestuali da un file PDF?
 
-A: There are various reasons for removing hyperlinks from a PDF file. For example, you might want to eliminate external links for printing or archiving purposes or ensure that the PDF content is not navigable via hyperlinks.
+R: Esistono vari motivi per rimuovere i collegamenti ipertestuali da un file PDF. Ad esempio, potresti voler eliminare i collegamenti esterni per scopi di stampa o archiviazione o garantire che il contenuto del PDF non sia navigabile tramite collegamenti ipertestuali.
 
-#### Q: How can I load an HTML file and remove hyperlinks using Aspose.PDF for .NET?
+#### D: Come posso caricare un file HTML e rimuovere i collegamenti ipertestuali utilizzando Aspose.PDF per .NET?
 
-A: To load an HTML file and remove hyperlinks, you can use Aspose.PDF for .NET's `HtmlLoadOptions` class. Iterate through the annotations of the PDF pages to find link annotations and modify their attributes.
+ R: Per caricare un file HTML e rimuovere i collegamenti ipertestuali, è possibile utilizzare Aspose.PDF per .NET`HtmlLoadOptions` classe. Scorri le annotazioni delle pagine PDF per trovare le annotazioni dei collegamenti e modificarne gli attributi.
 
-#### Q: Can I customize the output filename for the resulting PDF?
+#### D: Posso personalizzare il nome del file di output per il PDF risultante?
 
-A: Yes, you can customize the output filename for the resulting PDF file by modifying the code that saves the PDF document. Simply change the desired filename in the `doc.Save()` method.
+R: Sì, puoi personalizzare il nome del file di output per il file PDF risultante modificando il codice che salva il documento PDF. Basta cambiare il nome del file desiderato nel file`doc.Save()` metodo.
 
-#### Q: Is it possible to selectively remove hyperlinks based on certain criteria?
+#### D: È possibile rimuovere selettivamente i collegamenti ipertestuali in base a determinati criteri?
 
-A: Yes, you can selectively remove hyperlinks based on specific criteria. For example, you can choose to remove only external links or links pointing to specific URLs.
+R: Sì, puoi rimuovere selettivamente i collegamenti ipertestuali in base a criteri specifici. Ad esempio, puoi scegliere di rimuovere solo i collegamenti esterni o i collegamenti che puntano a URL specifici.

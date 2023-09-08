@@ -1,28 +1,28 @@
 ---
-title: Text And Image As Paragraph In PDF File
-linktitle: Text And Image As Paragraph In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text and an image as inline paragraphs in PDF file using Aspose.PDF for .NET.
+title: Text Och Bild Som Stycke I PDF-fil
+linktitle: Text Och Bild Som Stycke I PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du lägger till text och en bild som inline-stycken i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 530
 url: /sv/net/programming-with-text/text-and-image-as-paragraph/
 ---
-This tutorial explains how to add text and an image as inline paragraphs in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the process step by step.
+Denna handledning förklarar hur man lägger till text och en bild som inline-stycken i PDF-fil med Aspose.PDF för .NET. Den medföljande C#-källkoden demonstrerar processen steg för steg.
 
-## Prerequisites
+## Förutsättningar
 
-Before proceeding with the tutorial, make sure you have the following:
+Innan du fortsätter med handledningen, se till att du har följande:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Grundläggande kunskaper i programmeringsspråket C#.
+- Aspose.PDF för .NET-biblioteket installerat. Du kan hämta det från Asposes webbplats eller använda NuGet för att installera det i ditt projekt.
 
-## Step 1: Set up the project
+## Steg 1: Konfigurera projektet
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Börja med att skapa ett nytt C#-projekt i din föredragna integrerade utvecklingsmiljö (IDE) och lägg till en referens till Aspose.PDF för .NET-biblioteket.
 
-## Step 2: Import necessary namespaces
+## Steg 2: Importera nödvändiga namnutrymmen
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Lägg till följande med hjälp av direktiv i början av din C#-fil för att importera de nödvändiga namnrymden:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,52 +30,52 @@ using Aspose.Pdf.Text;
 using Aspose.Pdf.Drawing;
 ```
 
-## Step 3: Set the path to the document directory
+## Steg 3: Ställ in sökvägen till dokumentkatalogen
 
-Set the path to your document directory using the `dataDir` variable:
+ Ställ in sökvägen till din dokumentkatalog med hjälp av`dataDir` variabel:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Byta ut`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
 
-## Step 4: Create a new Document and Page
+## Steg 4: Skapa ett nytt dokument och sida
 
-Create a new `Document` object and add a page to its pages collection:
+ Skapa en ny`Document` objekt och lägg till en sida i dess sidsamling:
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 5: Create a TextFragment and add it as a paragraph
+## Steg 5: Skapa ett TextFragment och lägg till det som ett stycke
 
-Create a `TextFragment` object and add it to the paragraphs collection of the page:
+ Skapa en`TextFragment` objekt och lägg till det i styckesamlingen på sidan:
 
 ```csharp
 TextFragment text = new TextFragment("Hello World.. ");
 page.Paragraphs.Add(text);
 ```
 
-## Step 6: Add an image as an inline paragraph
+## Steg 6: Lägg till en bild som ett inline-stycke
 
-Create an `Aspose.Pdf.Image` object and set it as an inline paragraph so that it appears right after the previous paragraph:
+ Skapa en`Aspose.Pdf.Image` objekt och ställ in det som ett inline-stycke så att det visas precis efter föregående stycke:
 
 ```csharp
 Aspose.Pdf.Image image = new Aspose.Pdf.Image();
 image.IsInLineParagraph = true;
 image.File = dataDir + "aspose-logo.jpg";
-image.FixHeight = 30; // Optional: Set image height
-image.FixWidth = 100; // Optional: Set image width
+image.FixHeight = 30; // Valfritt: Ställ in bildhöjd
+image.FixWidth = 100; // Valfritt: Ställ in bildbredd
 page.Paragraphs.Add(image);
 ```
 
-Replace `"aspose-logo.jpg"` with the actual image file name and adjust the optional image height and width as desired.
+ Byta ut`"aspose-logo.jpg"` med det faktiska bildfilens namn och justera den valfria bildens höjd och bredd efter önskemål.
 
-## Step 7: Add another TextFragment as an inline paragraph
+## Steg 7: Lägg till ytterligare ett TextFragment som ett inline-stycke
 
-Re-initialize the `TextFragment` object with different content and add it as an inline paragraph:
+ Återinitiera`TextFragment` objekt med annat innehåll och lägg till det som ett inline-stycke:
 
 ```csharp
 text = new TextFragment(" Hello Again..");
@@ -83,87 +83,87 @@ text.IsInLineParagraph = true;
 page.Paragraphs.Add(text);
 ```
 
-## Step 8: Save the PDF document
+## Steg 8: Spara PDF-dokumentet
 
-Save the modified PDF document:
+Spara det ändrade PDF-dokumentet:
 
 ```csharp
 dataDir = dataDir + "TextAndImageAsParagraph_out.pdf";
 doc.Save(dataDir);
 ```
 
-Make sure to replace `"TextAndImageAsParagraph_out.pdf"` with the desired output file name.
+ Se till att byta ut`"TextAndImageAsParagraph_out.pdf"` med önskat utdatafilnamn.
 
-### Sample source code for Text And Image As Paragraph using Aspose.PDF for .NET 
+### Exempel på källkod för text och bild som stycke med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document instance
+// Instantiera dokumentinstans
 Document doc = new Document();
-// Add page to pages collection of Document instance
+// Lägg till sida till sidsamling av dokumentinstans
 Page page = doc.Pages.Add();
-// Create TextFragmnet
+// Skapa TextFragmnet
 TextFragment text = new TextFragment("Hello World.. ");
-// Add text fragment to paragraphs collection of Page object
+// Lägg till textfragment till styckesamlingen av sidobjekt
 page.Paragraphs.Add(text);
-// Create an image instance
+// Skapa en bildinstans
 Aspose.Pdf.Image image = new Aspose.Pdf.Image();
-// Set image as inline paragraph so that it appears right after 
-// The previous paragraph object (TextFragment)
+// Ställ in bilden som inline-stycke så att den visas direkt efter
+// Föregående styckeobjekt (TextFragment)
 image.IsInLineParagraph = true;
-// Specify image file path 
+// Ange sökväg till bildfilen
 image.File = dataDir + "aspose-logo.jpg";
-// Set image Height (optional)
+// Ställ in bildhöjd (valfritt)
 image.FixHeight = 30;
-// Set Image Width (optional)
+// Ställ in bildbredd (valfritt)
 image.FixWidth = 100;
-// Add image to paragraphs collection of page object
+// Lägg till bild till styckesamling av sidobjekt
 page.Paragraphs.Add(image);
-// Re-initialize TextFragment object with different contents
+// Återinitiera TextFragment-objekt med olika innehåll
 text = new TextFragment(" Hello Again..");
-// Set TextFragment as inline paragraph
+// Ställ in TextFragment som inline-stycke
 text.IsInLineParagraph = true;
-// Add newly created TextFragment to paragraphs collection of page
+// Lägg till nyskapade TextFragment till styckesamlingen på sidan
 page.Paragraphs.Add(text);
 dataDir = dataDir + "TextAndImageAsParagraph_out.pdf";
 doc.Save(dataDir);
 Console.WriteLine("\nText and image added successfully as an inline paragraphs.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulations! You have successfully learned how to add text and an image as inline paragraphs in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to saving the modified document. You can now incorporate this code into your own C# projects to customize the layout of text and images in PDF files.
+Grattis! Du har framgångsrikt lärt dig hur du lägger till text och en bild som inline-stycken i ett PDF-dokument med Aspose.PDF för .NET. Denna handledning gav en steg-för-steg-guide, från att ställa in projektet till att spara det ändrade dokumentet. Du kan nu infoga den här koden i dina egna C#-projekt för att anpassa layouten för text och bilder i PDF-filer.
 
 ### FAQ's
 
-#### Q: What is the purpose of the "Text And Image As Paragraph In PDF File" tutorial?
+#### F: Vad är syftet med handledningen "Text och bild som stycke i PDF-fil"?
 
-A: The "Text And Image As Paragraph In PDF File" tutorial aims to guide users on how to add both text and images as inline paragraphs within a PDF document using Aspose.PDF for .NET. The tutorial provides step-by-step instructions and C# code samples to demonstrate the process.
+S: Handledningen "Text och bild som stycke i PDF-fil" syftar till att vägleda användare om hur man lägger till både text och bilder som inline-stycken i ett PDF-dokument med Aspose.PDF för .NET. Handledningen innehåller steg-för-steg-instruktioner och C#-kodexempel för att demonstrera processen.
 
-#### Q: How does this tutorial help in adding text and images as inline paragraphs?
+#### F: Hur hjälper den här handledningen att lägga till text och bilder som inline-stycken?
 
-A: This tutorial helps users understand how to use Aspose.PDF for .NET to incorporate both text and images as inline paragraphs within a PDF document. By following the provided steps and code examples, users can create PDF files with custom layouts that combine text and images.
+S: Denna handledning hjälper användare att förstå hur man använder Aspose.PDF för .NET för att infoga både text och bilder som inline-stycken i ett PDF-dokument. Genom att följa stegen och kodexemplen kan användare skapa PDF-filer med anpassade layouter som kombinerar text och bilder.
 
-#### Q: What prerequisites are required to follow this tutorial?
+#### F: Vilka förutsättningar krävs för att följa denna handledning?
 
-A: Before starting the tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or install it in your project using NuGet.
+S: Innan du startar handledningen bör du ha en grundläggande förståelse för programmeringsspråket C#. Dessutom måste du ha Aspose.PDF för .NET-biblioteket installerat. Du kan hämta det från Asposes webbplats eller installera det i ditt projekt med NuGet.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### F: Hur ställer jag in mitt projekt för att följa denna handledning?
 
-A: To begin, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This allows you to utilize the library's features for working with PDF documents, text fragments, and images.
+S: Till att börja, skapa ett nytt C#-projekt i din föredragna integrerade utvecklingsmiljö (IDE) och lägg till en referens till Aspose.PDF för .NET-biblioteket. Detta gör att du kan använda bibliotekets funktioner för att arbeta med PDF-dokument, textfragment och bilder.
 
-#### Q: Can I use this tutorial to add multiple text and image paragraphs in a PDF?
+#### F: Kan jag använda den här handledningen för att lägga till flera text- och bildstycken i en PDF?
 
-A: Yes, you can use the provided code samples to add multiple instances of both text and image paragraphs within the same PDF document. This tutorial demonstrates how to create inline paragraphs, making it easy to include different combinations of text and images.
+S: Ja, du kan använda de medföljande kodexemplen för att lägga till flera instanser av både text- och bildstycken i samma PDF-dokument. Den här handledningen visar hur man skapar inline-stycken, vilket gör det enkelt att inkludera olika kombinationer av text och bilder.
 
-#### Q: How do I specify the content and appearance of the text paragraphs and images?
+#### F: Hur anger jag innehållet och utseendet på textstyckena och bilderna?
 
-A: The tutorial demonstrates how to create `TextFragment` objects to represent text paragraphs and `Aspose.Pdf.Image` objects to represent images. You can customize the content, dimensions, and appearance of both text and images using the provided code samples.
+ S: Handledningen visar hur man skapar`TextFragment`objekt för att representera textstycken och`Aspose.Pdf.Image` objekt för att representera bilder. Du kan anpassa innehållet, dimensionerna och utseendet på både text och bilder med hjälp av de medföljande kodexemplen.
 
-#### Q: Can I adjust the layout of the inline paragraphs?
+#### F: Kan jag justera layouten för de infogade styckena?
 
-A: Yes, you can adjust the layout of inline paragraphs by controlling their positioning, dimensions, and order within the page. The tutorial shows how to set inline attributes, such as `IsInLineParagraph`, to control the layout of text and image paragraphs.
+ S: Ja, du kan justera layouten för inline-stycken genom att kontrollera deras placering, dimensioner och ordning på sidan. Handledningen visar hur man ställer in inline-attribut, som t.ex`IsInLineParagraph`, för att styra layouten för text- och bildstycken.
 
-#### Q: How do I save the modified PDF document?
+#### F: Hur sparar jag det ändrade PDF-dokumentet?
 
-A: To save the modified PDF document, you can use the `Save` method of the `Document` object. The tutorial provides code samples that demonstrate how to save the resulting PDF document.
+ S: För att spara det ändrade PDF-dokumentet kan du använda`Save` metod för`Document` objekt. Handledningen ger kodexempel som visar hur man sparar det resulterande PDF-dokumentet.

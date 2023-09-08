@@ -1,114 +1,114 @@
 ---
-title: Set Image As Page Background In PDF File
-linktitle: Set Image As Page Background In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to set an image as a page background in PDF file using Aspose.PDF for .NET.
+title: تعيين الصورة كخلفية للصفحة في ملف PDF
+linktitle: تعيين الصورة كخلفية للصفحة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لتعيين صورة كخلفية صفحة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 110
 url: /ar/net/programming-with-pdf-pages/image-as-background/
 ---
-In this tutorial, we'll walk you through the step-by-step process to set an image as a page background using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to add an image as a page background in a PDF document using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك خلال العملية خطوة بخطوة لتعيين صورة كخلفية للصفحة باستخدام Aspose.PDF لـ .NET. سنشرح لك التعليمات البرمجية المصدرية المجمعة لـ C# ونزودك بدليل شامل لمساعدتك على فهم هذه الميزة وتنفيذها في مشاريعك الخاصة. في نهاية هذا البرنامج التعليمي، ستعرف كيفية إضافة صورة كخلفية صفحة في مستند PDF باستخدام Aspose.PDF لـ .NET.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## المتطلبات الأساسية
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- معرفة أساسية بلغة البرمجة C#
+- تم تثبيت Aspose.PDF لـ .NET في بيئة التطوير الخاصة بك
 
-## Step 1: Define the document directory
-First, you need to set the path to your documents directory. This is the location where you want to save your edited PDF document. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
+## الخطوة 1: تحديد دليل المستند
+أولاً، تحتاج إلى تعيين المسار إلى دليل المستندات الخاص بك. هذا هو الموقع الذي تريد حفظ مستند PDF الذي تم تحريره فيه. استبدل "دليل المستندات الخاصة بك" بالمسار المناسب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Create a new document
-Then you can create a new Document object using the `Document` class.
+## الخطوة 2: إنشاء مستند جديد
+ ثم يمكنك إنشاء كائن مستند جديد باستخدام`Document` فصل.
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 3: Add a new page to the document
-Now you can add a new page to the Document object using the `Add()` method of the `Pages` class.
+## الخطوة 3: إضافة صفحة جديدة إلى المستند
+ يمكنك الآن إضافة صفحة جديدة إلى كائن المستند باستخدام الملف`Add()` طريقة`Pages` فصل.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 4: Create a Background Artifact object
-Then you can create a new BackgroundArtifact object to set the background image.
+## الخطوة 4: إنشاء كائن قطعة أثرية في الخلفية
+ثم يمكنك إنشاء كائن BackgroundArtifact جديد لتعيين صورة الخلفية.
 
 ```csharp
 BackgroundArtifact background = new BackgroundArtifact();
 background.BackgroundImage = File.OpenRead(dataDir + "aspose-total-for-net.jpg");
 ```
 
-## Step 5: Add the background to the page
-Then you can add the BackgroundArtifact object to the page's artifact collection using the `Artifacts` property of the `Page` class.
+## الخطوة 5: إضافة الخلفية إلى الصفحة
+بعد ذلك، يمكنك إضافة كائنBackgroundArtifact إلى مجموعة العناصر الموجودة بالصفحة باستخدام ملف`Artifacts` ملكية`Page` فصل.
 
 ```csharp
 page. Artifacts. Add(background);
 ```
 
-## Step 6: Save the PDF document
-Finally, you can save the PDF document to a file using the `Save()` method of the `Document` class. Be sure to specify the correct path and file name.
+## الخطوة 6: احفظ مستند PDF
+ وأخيرًا، يمكنك حفظ مستند PDF في ملف باستخدام الملف`Save()` طريقة`Document`فصل. تأكد من تحديد المسار الصحيح واسم الملف.
 
 ```csharp
 doc.Save(dataDir + "ImageAsBackground_out.pdf");
 ```
 
-### Sample source code for Image As Background using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للصورة كخلفية باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create a new Document object
+// قم بإنشاء كائن مستند جديد
 Document doc = new Document();
-// Add a new page to document object
+// إضافة صفحة جديدة إلى كائن الوثيقة
 Page page = doc.Pages.Add();
-// Create Background Artifact object
+// إنشاء كائن قطعة أثرية في الخلفية
 BackgroundArtifact background = new BackgroundArtifact();
-// Specify the image for backgroundartifact object
+// حدد الصورة لكائن الخلفية
 background.BackgroundImage = File.OpenRead(dataDir + "aspose-total-for-net.jpg");
-// Add backgroundartifact to artifacts collection of page
+// أضف قطعة أثرية خلفية إلى مجموعة القطع الأثرية بالصفحة
 page.Artifacts.Add(background);
 dataDir = dataDir + "ImageAsBackground_out.pdf";
-// Save the document
+// احفظ المستند
 doc.Save(dataDir);
 System.Console.WriteLine("\nImage as page background added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
-In this tutorial, we learned how to set an image as a page background in a PDF document using Aspose.PDF for .NET. By following this step-by-step guide, you can easily add a background image to your PDF documents. Aspose.PDF offers a powerful and flexible API for working with PDF files, including page background customization. You can now apply this feature in your own projects to create PDF documents with custom background images
+## خاتمة
+في هذا البرنامج التعليمي، تعلمنا كيفية تعيين صورة كخلفية للصفحة في مستند PDF باستخدام Aspose.PDF لـ .NET. باتباع هذا الدليل التفصيلي، يمكنك بسهولة إضافة صورة خلفية إلى مستندات PDF الخاصة بك. يقدم Aspose.PDF واجهة برمجة تطبيقات قوية ومرنة للعمل مع ملفات PDF، بما في ذلك تخصيص خلفية الصفحة. يمكنك الآن تطبيق هذه الميزة في مشاريعك الخاصة لإنشاء مستندات PDF مع صور خلفية مخصصة
 
-### FAQ's for set image as page background in PDF file
+### الأسئلة الشائعة لتعيين الصورة كخلفية للصفحة في ملف PDF
 
-#### Q: How can I set an image as a page background in a PDF document using Aspose.PDF for .NET?
+#### س: كيف يمكنني تعيين صورة كخلفية صفحة في مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: To set an image as a page background in a PDF document using Aspose.PDF for .NET, you can follow these steps:
+ج: لتعيين صورة كخلفية صفحة في مستند PDF باستخدام Aspose.PDF لـ .NET، يمكنك اتباع الخطوات التالية:
 
-1. Set the document directory by specifying the path where you want to save your edited PDF document.
-2. Create a new Document object using the `Document` class.
-3. Add a new page to the Document object using the `Add()` method of the `Pages` class.
-4. Create a new BackgroundArtifact object to set the background image. You can specify the image file using `File.OpenRead()` method.
-5. Add the BackgroundArtifact object to the page's artifact collection using the `Artifacts` property of the `Page` class.
-6. Save the PDF document to a file using the `Save()` method of the `Document` class, and specify the correct path and file name for the output.
+1. قم بتعيين دليل المستند عن طريق تحديد المسار الذي تريد حفظ مستند PDF الذي تم تحريره فيه.
+2.  قم بإنشاء كائن مستند جديد باستخدام`Document` فصل.
+3.  أضف صفحة جديدة إلى كائن المستند باستخدام`Add()` طريقة`Pages` فصل.
+4.  أنشئ كائنًا جديدًا لـBackgroundArtifact لتعيين صورة الخلفية. يمكنك تحديد ملف الصورة باستخدام`File.OpenRead()` طريقة.
+5.  قم بإضافة كائنBackgroundArtifact إلى مجموعة العناصر الخاصة بالصفحة باستخدام`Artifacts` ملكية`Page` فصل.
+6.  احفظ مستند PDF في ملف باستخدام الملف`Save()` طريقة`Document` فئة، وحدد المسار الصحيح واسم الملف للإخراج.
 
-#### Q: Can I add multiple background images to different pages of the PDF document?
+#### س: هل يمكنني إضافة صور خلفية متعددة إلى صفحات مختلفة من مستند PDF؟
 
-A: Yes, you can add multiple background images to different pages of the PDF document by repeating the process described in the tutorial for each page. Simply create a new BackgroundArtifact object with the desired image for each page and add it to the respective page's artifact collection.
+ج: نعم، يمكنك إضافة صور خلفية متعددة إلى صفحات مختلفة من مستند PDF عن طريق تكرار العملية الموضحة في البرنامج التعليمي لكل صفحة. ما عليك سوى إنشاء كائن ScreenArtifact جديد بالصورة المطلوبة لكل صفحة وإضافته إلى مجموعة القطع الأثرية الخاصة بالصفحة المعنية.
 
-#### Q: Can I apply image scaling or positioning to the background image on the page?
+#### س: هل يمكنني تطبيق تغيير حجم الصورة أو تحديد موضعها على صورة الخلفية على الصفحة؟
 
-A: Yes, you can apply image scaling or positioning to the background image on the page by manipulating the `background.BackgroundImage` property of the BackgroundArtifact object. Before adding the BackgroundArtifact to the page, you can modify the image properties, such as width, height, and position, to customize how the image appears as the background.
+ ج: نعم، يمكنك تطبيق تغيير حجم الصورة أو تحديد موضعها على صورة الخلفية على الصفحة عن طريق معالجة`background.BackgroundImage` خاصية كائنBackgroundArtifact. قبل إضافة PictureArtifact إلى الصفحة، يمكنك تعديل خصائص الصورة، مثل العرض والارتفاع والموضع، لتخصيص كيفية ظهور الصورة كخلفية.
 
-#### Q: Does Aspose.PDF for .NET support adding background images to existing PDF documents with content?
+#### س: هل يدعم Aspose.PDF for .NET إضافة صور خلفية إلى مستندات PDF الموجودة مع المحتوى؟
 
-A: Yes, Aspose.PDF for .NET allows you to add background images to existing PDF documents with content. You can load an existing PDF document, add the background image to the desired page, and then save the updated document to a new file or overwrite the original file.
+ج: نعم، يسمح لك Aspose.PDF for .NET بإضافة صور خلفية إلى مستندات PDF الموجودة مع المحتوى. يمكنك تحميل مستند PDF موجود، وإضافة صورة الخلفية إلى الصفحة المطلوبة، ثم حفظ المستند المحدث في ملف جديد أو الكتابة فوق الملف الأصلي.
 
-#### Q: Can I use images of different formats as the page background, such as PNG or BMP?
+#### س: هل يمكنني استخدام صور ذات تنسيقات مختلفة كخلفية للصفحة، مثل PNG أو BMP؟
 
-A: Yes, you can use images of different formats as the page background, such as PNG or BMP, in addition to the JPEG format used in the tutorial. Aspose.PDF for .NET supports a wide range of image formats, and you can use any supported image format as the background for PDF pages.
+ج: نعم، يمكنك استخدام صور بتنسيقات مختلفة كخلفية للصفحة، مثل PNG أو BMP، بالإضافة إلى تنسيق JPEG المستخدم في البرنامج التعليمي. يدعم Aspose.PDF for .NET نطاقًا واسعًا من تنسيقات الصور، ويمكنك استخدام أي تنسيق صورة مدعوم كخلفية لصفحات PDF.

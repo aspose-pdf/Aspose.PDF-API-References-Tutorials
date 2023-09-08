@@ -1,117 +1,117 @@
 ---
-title: Set Privileges In PDF File
-linktitle: Set Privileges In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily set access privileges in PDF file with Aspose.PDF for .NET.
+title: Установить привилегии в PDF-файле
+linktitle: Установить привилегии в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко устанавливайте права доступа к PDF-файлу с помощью Aspose.PDF для .NET.
 type: docs
 weight: 100
 url: /ru/net/programming-with-security-and-signatures/set-privileges/
 ---
-It is often necessary to set specific access privileges in PDF file. With Aspose.PDF for .NET, you can easily set access privileges using the following source code:
+Часто бывает необходимо установить определенные права доступа к PDF-файлу. С помощью Aspose.PDF для .NET вы можете легко установить права доступа, используя следующий исходный код:
 
-## Step 1: Import required libraries
+## Шаг 1. Импортируйте необходимые библиотеки.
 
-Before you begin, you need to import the necessary libraries for your C# project. Here are the necessary import directives:
+Прежде чем начать, вам необходимо импортировать необходимые библиотеки для вашего проекта C#. Вот необходимые директивы импорта:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Шаг 2. Установите путь к папке с документами.
 
-In this step, you need to specify the path to the folder containing the PDF file you want to edit. Replace `"YOUR DOCUMENTS DIRECTORY"` in the following code with the actual path to your documents folder:
+ На этом этапе вам необходимо указать путь к папке, содержащей PDF-файл, который вы хотите редактировать. Заменять`"YOUR DOCUMENTS DIRECTORY"`в следующем коде с фактическим путем к папке ваших документов:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 3: Load source PDF file
+## Шаг 3. Загрузите исходный PDF-файл.
 
-Now we will load the source PDF file using the following code:
+Теперь мы загрузим исходный PDF-файл, используя следующий код:
 
 ```csharp
 using (Document document = new Document(dataDir + "input.pdf"))
 ```
 
-## Step 4: Set Access Privileges
+## Шаг 4. Установите права доступа
 
-In this step, we will instantiate the `DocumentPrivilege` object to set the desired access privileges. You can apply restrictions on all privileges using `DocumentPrivilege.ForbidAll`. For example, if you want to only allow screen reading, you can set `AllowScreenReaders` to `true`. Here is the corresponding code:
+ На этом этапе мы создадим экземпляр`DocumentPrivilege` объект, чтобы установить желаемые права доступа. Вы можете применить ограничения ко всем привилегиям, используя`DocumentPrivilege.ForbidAll` . Например, если вы хотите разрешить только чтение с экрана, вы можете установить`AllowScreenReaders` к`true`. Вот соответствующий код:
 
 ```csharp
 DocumentPrivilege documentPrivilege = DocumentPrivilege.ForbidAll;
 documentPrivilege.AllowScreenReaders = true;
 ```
 
-## Step 5: Encrypt and save the document
+## Шаг 5. Зашифруйте и сохраните документ.
 
-Finally, we can encrypt the PDF document with a user and owner password using `Encrypt` and specifying the desired encryption algorithm. Then we save the updated document. Here is the corresponding code:
+ Наконец, мы можем зашифровать PDF-документ с помощью пароля пользователя и владельца, используя`Encrypt` и указание желаемого алгоритма шифрования. Затем сохраняем обновленный документ. Вот соответствующий код:
 
 ```csharp
 document.Encrypt("user", "owner", documentPrivilege, CryptoAlgorithm.AESx128, false);
 document.Save(dataDir + "SetPrivileges_out.pdf");
 ```
 
-### Sample source code for Set Privileges using Aspose.PDF for .NET 
+### Пример исходного кода для установки привилегий с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load a source PDF file
+// Загрузите исходный PDF-файл
 using (Document document = new Document(dataDir + "input.pdf"))
 {
-	// Instantiate Document Privileges object
-	// Apply restrictions on all privileges
+	// Создать экземпляр объекта «Привилегии документа»
+	// Применить ограничения ко всем привилегиям
 	DocumentPrivilege documentPrivilege = DocumentPrivilege.ForbidAll;
-	// Only allow screen reading
+	// Разрешить только чтение с экрана
 	documentPrivilege.AllowScreenReaders = true;
-	// Encrypt the file with User and Owner password.
-	// Need to set the password, so that once the user views the file with user password,
-	// Only screen reading option is enabled
+	// Зашифруйте файл с помощью пароля пользователя и владельца.
+	// Необходимо установить пароль, чтобы, как только пользователь просмотрит файл с паролем пользователя,
+	// Включена только опция чтения с экрана
 	document.Encrypt("user", "owner", documentPrivilege, CryptoAlgorithm.AESx128, false);
-	// Save updated document
+	// Сохранить обновленный документ
 	document.Save(dataDir + "SetPrivileges_out.pdf");
 }
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You now have a step-by-step guide to set access privileges for a PDF document using Aspose.PDF for .NET. You can use this code to apply specific restrictions and protect your PDF files as needed.
+Поздравляем! Теперь у вас есть пошаговое руководство по настройке прав доступа к PDF-документу с помощью Aspose.PDF для .NET. Вы можете использовать этот код, чтобы применить определенные ограничения и защитить ваши PDF-файлы по мере необходимости.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced PDF document security and access privilege management features.
+Обязательно ознакомьтесь с официальной документацией Aspose.PDF для получения дополнительной информации о расширенной безопасности PDF-документов и функциях управления правами доступа.
 
-### FAQ's for set privileges in PDF file
+### Часто задаваемые вопросы по настройке прав в PDF-файле
 
-#### Q: Why would I need to set access privileges in a PDF file?
+#### Вопрос: Зачем мне устанавливать права доступа к PDF-файлу?
 
-A: Setting access privileges allows you to control how users interact with your PDF documents. You can restrict actions like printing, copying, and editing to enhance document security.
+О: Установка прав доступа позволяет вам контролировать взаимодействие пользователей с вашими PDF-документами. Вы можете ограничить такие действия, как печать, копирование и редактирование, чтобы повысить безопасность документа.
 
-#### Q: How can I benefit from setting access privileges using Aspose.PDF for .NET?
+#### Вопрос: Как я могу получить выгоду от настройки прав доступа с помощью Aspose.PDF для .NET?
 
-A: Aspose.PDF for .NET provides a straightforward way to implement access privileges, giving you the power to customize user permissions and protect sensitive content.
+О: Aspose.PDF для .NET предоставляет простой способ реализации привилегий доступа, предоставляя вам возможность настраивать разрешения пользователей и защищать конфиденциальный контент.
 
-#### Q: Can I apply different privileges for different users?
+#### Вопрос: Могу ли я применять разные привилегии для разных пользователей?
 
-A: Yes, you can set specific access privileges for different user groups, enabling you to fine-tune document access based on user roles.
+О: Да, вы можете установить определенные права доступа для разных групп пользователей, что позволит вам точно настроить доступ к документам в зависимости от ролей пользователей.
 
-#### Q: What are some common access privileges I can set?
+#### Вопрос: Какие общие права доступа я могу установить?
 
-A: Common access privileges include allowing or forbidding actions such as printing, copying text or images, modifying the document, and filling form fields.
+О: Права общего доступа включают разрешение или запрет таких действий, как печать, копирование текста или изображений, изменение документа и заполнение полей формы.
 
-#### Q: How does setting screen reading privilege enhance document accessibility?
+#### Вопрос: Как настройка права чтения с экрана повышает доступность документа?
 
-A: Enabling screen reading privilege ensures that users can access the content of the PDF using screen readers, enhancing accessibility for visually impaired individuals.
+Ответ: Включение права чтения с экрана гарантирует, что пользователи смогут получить доступ к содержимому PDF-файла с помощью программ чтения с экрана, что повышает доступность для людей с нарушениями зрения.
 
-#### Q: Can I set password protection along with access privileges?
+#### Вопрос: Могу ли я установить защиту паролем вместе с правами доступа?
 
-A: Absolutely, you can encrypt your PDF document with passwords while applying access privileges. This provides an extra layer of security.
+О: Конечно, вы можете зашифровать свой PDF-документ с помощью паролей, применяя привилегии доступа. Это обеспечивает дополнительный уровень безопасности.
 
-#### Q: Is there a way to revoke access privileges after applying them?
+#### Вопрос: Есть ли способ отозвать права доступа после их применения?
 
-A: Once access privileges are applied and the document is encrypted, users will need the appropriate password to access the content. The privileges can be modified by altering the source code.
+О: После применения прав доступа и шифрования документа пользователям потребуется соответствующий пароль для доступа к содержимому. Привилегии можно изменить, изменив исходный код.
 
-#### Q: Are there any performance considerations when setting access privileges?
+#### Вопрос. Есть ли какие-либо соображения по поводу производительности при настройке прав доступа?
 
-A: The performance impact is minimal, as the access privilege settings are applied during encryption, which is a swift process.
+О: Влияние на производительность минимально, поскольку настройки привилегий доступа применяются во время шифрования, что является быстрым процессом.
 
-#### Q: Can I apply access privileges to an existing PDF document?
+#### Вопрос: Могу ли я применить права доступа к существующему PDF-документу?
 
-A: Yes, you can use Aspose.PDF for .NET to apply access privileges to both new and existing PDF documents.
+О: Да, вы можете использовать Aspose.PDF для .NET, чтобы применять права доступа как к новым, так и к существующим PDF-документам.

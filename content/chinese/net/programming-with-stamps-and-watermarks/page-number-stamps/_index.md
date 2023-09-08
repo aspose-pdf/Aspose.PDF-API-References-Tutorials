@@ -1,59 +1,59 @@
 ---
-title: Page Number Stamps In PDF File
-linktitle: Page Number Stamps In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add page number stamps in PDF file with Aspose.PDF for .NET.
+title: PDF 文件中的页码标记
+linktitle: PDF 文件中的页码标记
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中添加页码戳记。
 type: docs
 weight: 160
 url: /zh/net/programming-with-stamps-and-watermarks/page-number-stamps/
 ---
-In this tutorial, we will guide you step by step on how to add page number stamps in PDF file using Aspose.PDF for .NET. We'll use the provided C# source code to open an existing PDF document, create a page number stamp, set its properties, and add it to a specific page in the PDF file.
+在本教程中，我们将逐步指导您如何使用 Aspose.PDF for .NET 在 PDF 文件中添加页码戳记。我们将使用提供的 C# 源代码打开现有 PDF 文档、创建页码戳、设置其属性并将其添加到 PDF 文件中的特定页面。
 
-## Step 1: Setting up the environment
+## 第一步：搭建环境
 
-Before you begin, make sure you have the following:
+在开始之前，请确保您具备以下条件：
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- 已安装的 .NET 开发环境。
+- 下载用于 .NET 的 Aspose.PDF 库并在您的项目中引用。
 
-## Step 2: Loading the existing PDF document
+## 第 2 步：加载现有 PDF 文档
 
-The first step is to load the existing PDF document into your project. Here's how:
+第一步是将现有的 PDF 文档加载到您的项目中。就是这样：
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the existing PDF document
+//打开现有的 PDF 文档
 Document pdfDocument = new Document(dataDir + "PageNumberStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+请务必将“您的文档目录”替换为 PDF 文档所在目录的实际路径。
 
-## Step 3: Creating and Configuring the Page Numbering Stamp
+## 步骤 3：创建并配置页码标记
 
-Now that the PDF document is loaded, we can create a page numbering buffer and configure it according to our needs. Here's how:
+现在 PDF 文档已加载，我们可以创建页码缓冲区并根据需要进行配置。就是这样：
 
 ```csharp
-// Create a page number buffer
+//创建页码缓冲区
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
 
-// Define if the buffer is in the background or not
+//定义缓冲区是否在后台
 pageNumberStamp.Background = false;
 
-// Format of the page numbering buffer
+//页编号缓冲区的格式
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
 
-// Bottom margin of page numbering buffer
+//页码缓冲区的下边距
 pageNumberStamp.BottomMargin = 10;
 
-// Horizontal alignment of the page numbering buffer
+//页码缓冲区的水平对齐
 pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
 
-// Start number of page numbering
+//页码起始编号
 pageNumberStamp.StartingNumber = 1;
 
-// Set page number buffer text properties
+//设置页码缓冲区文本属性
 pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
 pageNumberStamp.TextState.FontSize = 14.0F;
 pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
@@ -61,108 +61,108 @@ pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
 pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 ```
 
-The above code creates a page number stamp with properties like page number format, bottom margin, horizontal alignment, starting number and text properties.
+上面的代码创建了一个页码标记，其属性包括页码格式、下边距、水平对齐方式、起始编号和文本属性。
 
-## Step 4: Adding the page number stamp to a specific page
+## 步骤 4：将页码标记添加到特定页面
 
-Once the page number stamp is configured, we can add it to a specific page of the PDF document. Here's how:
+配置页码标记后，我们可以将其添加到 PDF 文档的特定页面。就是这样：
 
 ```csharp
-// Add the page number buffer to a specific page
+//将页码缓冲区添加到特定页面
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 ```
 
-The above code adds the page number stamp to the first page of the PDF document. You can change the page number as needed.
+上面的代码将页码标记添加到 PDF 文档的第一页。您可以根据需要更改页码。
 
-## Step 5: Saving the modified PDF document
+## 步骤5：保存修改后的PDF文档
 
-Once the page number stamp is added to the PDF document, we can save the modified PDF document. Here's how:
+一旦页码标记添加到PDF文档中，我们就可以保存修改后的PDF文档。就是这样：
 
 ```csharp
-// Save the modified PDF document
+//保存修改后的PDF文档
 pdfDocument.Save(dataDir + "PageNumberStamp_out.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the edited PDF document.
+请务必将“您的文档目录”替换为您要保存编辑后的 PDF 文档的目录的实际路径。
 
-### Sample source code for Page Number Stamps using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 的页码图章示例源代码 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir+ "PageNumberStamp.pdf");
 
-// Create page number stamp
+//创建页码印记
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
 
-// Whether the stamp is background
+//印章是否为背景
 pageNumberStamp.Background = false;
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
 pageNumberStamp.BottomMargin = 10;
 pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
 pageNumberStamp.StartingNumber = 1;
 
-// Set text properties
+//设置文本属性
 pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
 pageNumberStamp.TextState.FontSize = 14.0F;
 pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
 pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
 pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 
-// Add stamp to particular page
+//添加图章到特定页面
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 dataDir = dataDir + "PageNumberStamp_out.pdf";
 
-// Save output document
+//保存输出文档
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have learned how to add page number stamps to a PDF document using Aspose.PDF for .NET. You can now personalize your PDF documents by adding clear and informative page numbers.
+恭喜！您已了解如何使用 Aspose.PDF for .NET 将页码标记添加到 PDF 文档。现在，您可以通过添加清晰且信息丰富的页码来个性化您的 PDF 文档。
 
-### FAQ's for page number stamps in PDF file
+### PDF 文件中页码标记的常见问题解答
 
-#### Q: What is a Page Number Stamp, and how is it used to add page numbers to a PDF file?
+#### 问：什么是页码标记，如何使用它向 PDF 文件添加页码？
 
-A: A Page Number Stamp is a feature in Aspose.PDF that allows you to add dynamic page numbers to specific pages of a PDF document. In this tutorial, it's achieved by creating a PageNumberStamp object, configuring its properties, and adding it to a designated page.
+答：页码标记是 Aspose.PDF 中的一项功能，允许您将动态页码添加到 PDF 文档的特定页面。在本教程中，它是通过创建 PageNumberStamp 对象、配置其属性并将其添加到指定页面来实现的。
 
-#### Q: How does the provided C# source code accomplish adding page number stamps to a PDF file?
+#### 问：提供的 C# 源代码如何完成向 PDF 文件添加页码戳记？
 
-A: The code demonstrates how to load an existing PDF document, create a PageNumberStamp, set various properties (such as format, font, alignment, etc.), and then add the stamp to a specific page. The stamp automatically calculates the total page count and inserts the correct page numbers.
+答：代码演示了如何加载现有的 PDF 文档，创建 PageNumberStamp，设置各种属性（如格式、字体、对齐方式等），然后将图章添加到特定页面。邮票自动计算总页数并插入正确的页码。
 
-#### Q: Can I customize the appearance of the page number, such as font style, color, and size?
+#### 问：我可以自定义页码的外观，例如字体样式、颜色和大小吗？
 
-A: Absolutely, you can customize the appearance of the page number stamp by adjusting properties like font, font size, font style (bold, italic, etc.), and text color.
+答：当然，您可以通过调整字体、字体大小、字体样式（粗体、斜体等）和文本颜色等属性来自定义页码标记的外观。
 
-#### Q: Is it possible to add page number stamps to multiple pages within a PDF document?
+#### 问：是否可以在 PDF 文档的多个页面上添加页码标记？
 
-A: Yes, you can add page number stamps to multiple pages by creating multiple PageNumberStamp objects and adding each one to the desired pages.
+答：是的，您可以通过创建多个 PageNumberStamp 对象并将每个对象添加到所需页面来将页码标记添加到多个页面。
 
-#### Q: Can I choose whether the page number stamp appears as part of the page's content or as a background element?
+#### 问：我可以选择页码标记是作为页面内容的一部分还是作为背景元素显示？
 
-A: Yes, you can control whether the page number stamp appears as part of the page's content or as a background element by setting the `Background` property of the PageNumberStamp.
+答：是的，您可以通过设置页码标记来控制页码标记是作为页面内容的一部分还是作为背景元素显示。`Background` PageNumberStamp 的属性。
 
-#### Q: How do I specify the format of the page number, including the total page count?
+#### 问：如何指定页码的格式，包括总页数？
 
-A: The code uses the `Format` property of the PageNumberStamp to specify the format of the page number. The macro "# of" is used to represent the total page count.
+答：该代码使用`Format`PageNumberStamp 属性指定页码的格式。宏“# of”用于表示总页数。
 
-#### Q: What happens if I add the same page number stamp to multiple pages?
+#### 问：如果我在多个页面上添加相同的页码戳记，会发生什么情况？
 
-A: Adding the same PageNumberStamp instance to multiple pages will display the correct page numbers for each page. The stamp automatically adjusts the page number and total page count.
+答：将相同的 PageNumberStamp 实例添加到多个页面将显示每个页面的正确页码。印章会自动调整页码和总页数。
 
-#### Q: Can I add page number stamps to header or footer sections of a PDF document?
+#### 问：我可以将页码标记添加到 PDF 文档的页眉或页脚部分吗？
 
-A: While PageNumberStamps are typically added directly to the page's content, you can use FloatingBox or other techniques to position them in header or footer sections.
+答：虽然 PageNumberStamp 通常直接添加到页面内容中，但您可以使用 FloatingBox 或其他技术将它们放置在页眉或页脚部分中。
 
-#### Q: How do I specify the position of the page number stamp on the page?
+#### 问：如何指定页码标记在页面上的位置？
 
-A: The `BottomMargin` and `HorizontalAlignment` properties of the PageNumberStamp allow you to control the position of the stamp within the page.
+答： 的`BottomMargin`和`HorizontalAlignment` PageNumberStamp 的属性允许您控制图章在页面中的位置。
 
-#### Q: What if I want to start page numbering from a different number rather than 1?
+#### 问：如果我想从不同的数字而不是 1 开始页码，该怎么办？
 
-A: You can set the `StartingNumber` property of the PageNumberStamp to specify the starting page number.
+答：您可以设置`StartingNumber`PageNumberStamp 属性来指定起始页码。

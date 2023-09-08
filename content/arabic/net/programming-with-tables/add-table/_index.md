@@ -1,60 +1,60 @@
 ---
-title: Add Table In PDF File
-linktitle: Add Table In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add tables in PDF file using Aspose.PDF for .NET.
+title: إضافة جدول في ملف PDF
+linktitle: إضافة جدول في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بإضافة الجداول بسهولة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 40
 url: /ar/net/programming-with-tables/add-table/
 ---
-Aspose.PDF for .NET is a powerful library that allows developers to create, manipulate, and transform PDF documents programmatically. In this tutorial, we will guide you through the process of adding a table in PDF file using Aspose.PDF for .NET. We will explain each step of the code snippet provided and provide a comprehensive guide to help you understand and implement the functionality in your own projects.
+Aspose.PDF for .NET هي مكتبة قوية تتيح للمطورين إنشاء مستندات PDF ومعالجتها وتحويلها برمجيًا. في هذا البرنامج التعليمي، سنرشدك خلال عملية إضافة جدول في ملف PDF باستخدام Aspose.PDF لـ .NET. سنشرح كل خطوة من مقتطف الكود المقدم ونقدم دليلاً شاملاً لمساعدتك على فهم الوظيفة وتنفيذها في مشاريعك الخاصة.
 
-## Introduction
+## مقدمة
 
-PDF documents are widely used for sharing and preserving information in a portable format. Adding tables to PDF documents can enhance their visual appearance and make data presentation more organized and structured. Aspose.PDF for .NET provides a convenient way to add tables to existing PDF documents or create new ones from scratch.
+تُستخدم مستندات PDF على نطاق واسع لمشاركة المعلومات وحفظها بتنسيق محمول. يمكن أن تؤدي إضافة الجداول إلى مستندات PDF إلى تحسين مظهرها المرئي وجعل عرض البيانات أكثر تنظيمًا وتنظيمًا. يوفر Aspose.PDF for .NET طريقة ملائمة لإضافة جداول إلى مستندات PDF الموجودة أو إنشاء جداول جديدة من البداية.
 
-## What is Aspose.PDF for .NET?
+## ما هو Aspose.PDF لـ .NET؟
 
-Aspose.PDF for .NET is a powerful and feature-rich library that enables .NET developers to create, manipulate, and convert PDF documents programmatically. It provides a wide range of functionalities, including creating PDF files from scratch, modifying existing PDF documents, merging or splitting PDF files, adding text, images, and tables, extracting data from PDFs, and much more. With Aspose.PDF for .NET, developers can automate complex PDF-related tasks and deliver high-quality PDF solutions.
+Aspose.PDF for .NET هي مكتبة قوية وغنية بالميزات تمكن مطوري .NET من إنشاء مستندات PDF ومعالجتها وتحويلها برمجيًا. فهو يوفر مجموعة واسعة من الوظائف، بما في ذلك إنشاء ملفات PDF من البداية، وتعديل مستندات PDF الموجودة، ودمج ملفات PDF أو تقسيمها، وإضافة النصوص والصور والجداول، واستخراج البيانات من ملفات PDF، وغير ذلك الكثير. باستخدام Aspose.PDF for .NET، يمكن للمطورين أتمتة المهام المعقدة المتعلقة بملفات PDF وتقديم حلول PDF عالية الجودة.
 
-## Adding a Table to a PDF Document
+## إضافة جدول إلى وثيقة PDF
 
-To add a table to a PDF document using Aspose.PDF for .NET, follow the step-by-step guide below:
+لإضافة جدول إلى مستند PDF باستخدام Aspose.PDF لـ .NET، اتبع الدليل التفصيلي أدناه:
 
-## Step 1: Loading the source PDF document
+## الخطوة 1: تحميل مستند PDF المصدر
 
 ```csharp
 string dataDir = RunExamples.GetDataDir_AsposePdf_Tables();
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "AddTable.pdf");
 ```
 
-The code snippet above loads the source PDF document that you want to add the table to. Make sure to provide the correct path to your PDF file.
+يقوم مقتطف الكود أعلاه بتحميل مستند PDF المصدر الذي تريد إضافة الجدول إليه. تأكد من توفير المسار الصحيح لملف PDF الخاص بك.
 
-## Step 2: Initializing a new instance of the Table
+## الخطوة 2: تهيئة مثيل جديد للجدول
 
 ```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 ```
 
-In this step, we create a new instance of the Table class, which represents a table in a PDF document.
+في هذه الخطوة، نقوم بإنشاء مثيل جديد لفئة Table، والذي يمثل جدولًا في مستند PDF.
 
-## Step 3: Setting the table border color
+## الخطوة 3: تحديد لون حدود الجدول
 
 ```csharp
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-Here, we set the border color for the table using the BorderInfo class. You can customize the border style, width, and color according to your requirements.
+هنا، قمنا بتعيين لون الحدود للجدول باستخدام فئة BorderInfo. يمكنك تخصيص نمط الحدود وعرضها ولونها وفقًا لمتطلباتك.
 
-## Step 4: Setting the border for table cells
+## الخطوة 4: تعيين الحدود لخلايا الجدول
 
 ```csharp
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-We also set the border for table cells using the DefaultCellBorder property of the table object. This ensures that each cell in the table has the specified border style, width, and color.
+قمنا أيضًا بتعيين حدود خلايا الجدول باستخدام خاصية DefaultCellBorder لكائن الجدول. وهذا يضمن أن كل خلية في الجدول لها نمط الحدود والعرض واللون المحدد.
 
-## Step 5: Adding rows and cells to the table
+## الخطوة 5: إضافة صفوف وخلايا إلى الجدول
 
 ```csharp
 for (int row_count = 1; row_count < 10; row_count++)
@@ -68,75 +68,75 @@ for (int row_count = 1; row_count < 10; row_count++)
 }
 ```
 
-In this step, we create a loop to add 10 rows to the table. Within each row, we add three cells with sample data. You can modify the code to add rows and cells according to your specific requirements.
+في هذه الخطوة، نقوم بإنشاء حلقة لإضافة 10 صفوف إلى الجدول. داخل كل صف، نضيف ثلاث خلايا تحتوي على بيانات نموذجية. يمكنك تعديل التعليمات البرمجية لإضافة صفوف وخلايا وفقًا لمتطلباتك المحددة.
 
-## Step 6: Adding the table object to the document
+## الخطوة 6: إضافة كائن الجدول إلى المستند
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(table);
 dataDir = dataDir + "document_with_table_out.pdf";
-// Save updated document containing table object
+// حفظ المستند المحدث الذي يحتوي على كائن الجدول
 doc.Save(dataDir);
 Console.WriteLine("\nText added successfully to an existing pdf file.\nFile saved at " + dataDir);       
 ```
 
-Finally, we add the table object to the first page of the PDF document using the Paragraphs collection of the corresponding page.
+أخيرًا، نضيف كائن الجدول إلى الصفحة الأولى من مستند PDF باستخدام مجموعة الفقرات في الصفحة المقابلة.
 
-### Example source code for add table using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لإضافة جدول باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load source PDF document
+//قم بتحميل مستند PDF المصدر
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "AddTable.pdf");
-// Initializes a new instance of the Table
+// تهيئة مثيل جديد للجدول
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Set the table border color as LightGray
+// قم بتعيين لون حدود الجدول باللون LightGray
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// Set the border for table cells
+// تعيين الحدود لخلايا الجدول
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// Create a loop to add 10 rows
+// قم بإنشاء حلقة لإضافة 10 صفوف
 for (int row_count = 1; row_count < 10; row_count++)
 {
-	// Add row to table
+	// إضافة صف إلى الجدول
 	Aspose.Pdf.Row row = table.Rows.Add();
-	// Add table cells
+	// إضافة خلايا الجدول
 	row.Cells.Add("Column (" + row_count + ", 1)");
 	row.Cells.Add("Column (" + row_count + ", 2)");
 	row.Cells.Add("Column (" + row_count + ", 3)");
 }
-// Add table object to first page of input document
+// إضافة كائن جدول إلى الصفحة الأولى من مستند الإدخال
 doc.Pages[1].Paragraphs.Add(table);
 dataDir = dataDir + "document_with_table_out.pdf";
-// Save updated document containing table object
+// حفظ المستند المحدث الذي يحتوي على كائن الجدول
 doc.Save(dataDir);
 
 Console.WriteLine("\nText added successfully to an existing pdf file.\nFile saved at " + dataDir);       
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we have explained the step-by-step process of adding a table to a PDF document using Aspose.PDF for .NET. We covered loading the source PDF document, initializing a new instance of the Table class, setting the table border color and cell borders, adding rows and cells to the table, and adding the table object to the document. By following this guide, you can easily incorporate tables into your PDF documents programmatically and customize them according to your specific needs.
+في هذا البرنامج التعليمي، شرحنا عملية إضافة جدول إلى مستند PDF خطوة بخطوة باستخدام Aspose.PDF لـ .NET. لقد قمنا بتغطية تحميل مستند PDF المصدر، وتهيئة مثيل جديد لفئة الجدول، وتعيين لون حدود الجدول وحدود الخلايا، وإضافة صفوف وخلايا إلى الجدول، وإضافة كائن الجدول إلى المستند. باتباع هذا الدليل، يمكنك بسهولة دمج الجداول في مستندات PDF الخاصة بك برمجيًا وتخصيصها وفقًا لاحتياجاتك الخاصة.
 
-### FAQ's for add table in PDF file
+### الأسئلة الشائعة لإضافة جدول في ملف PDF
 
-#### Q: Can I add more columns to the table?
+#### س: هل يمكنني إضافة المزيد من الأعمدة إلى الجدول؟
 
-A: Yes, you can add more columns to the table by increasing the number of cells added to each row. In the provided example, each row has three cells representing three columns. You can add more cells to each row to add additional columns.
+ج: نعم، يمكنك إضافة المزيد من الأعمدة إلى الجدول عن طريق زيادة عدد الخلايا المضافة إلى كل صف. في المثال المقدم، يحتوي كل صف على ثلاث خلايا تمثل ثلاثة أعمدة. يمكنك إضافة المزيد من الخلايا إلى كل صف لإضافة أعمدة إضافية.
 
-#### Q: How can I change the appearance of the table, such as font size and style?
+#### س: كيف يمكنني تغيير مظهر الجدول، مثل حجم الخط ونمطه؟
 
-A: You can customize the appearance of the table, including font size and style, by setting properties on the `Aspose.Pdf.Table` and `Aspose.Pdf.TextFragment` objects. For example, you can set the `DefaultCellTextState` property to change the font properties of the text in the table cells.
+ ج: يمكنك تخصيص مظهر الجدول، بما في ذلك حجم الخط ونمطه، عن طريق تعيين الخصائص على`Aspose.Pdf.Table` و`Aspose.Pdf.TextFragment` أشياء. على سبيل المثال، يمكنك ضبط`DefaultCellTextState` خاصية لتغيير خصائص خط النص في خلايا الجدول.
 
-#### Q: Is it possible to merge cells in the table?
+#### س: هل يمكن دمج الخلايا في الجدول؟
 
-A: Yes, you can merge cells in the table using the `MergeCells` method of the `Aspose.Pdf.Row` class. This allows you to create cells that span multiple rows and columns.
+ ج: نعم، يمكنك دمج الخلايا في الجدول باستخدام`MergeCells` طريقة`Aspose.Pdf.Row` فصل. يتيح لك ذلك إنشاء خلايا تمتد عبر عدة صفوف وأعمدة.
 
-#### Q: Can I add images or other content to the table cells?
+#### س: هل يمكنني إضافة صور أو محتوى آخر إلى خلايا الجدول؟
 
-A: Yes, you can add various types of content to the table cells, including images, text, hyperlinks, and more. You can use the appropriate classes from Aspose.PDF for .NET to add different types of content to the cells.
+ج: نعم، يمكنك إضافة أنواع مختلفة من المحتوى إلى خلايا الجدول، بما في ذلك الصور والنصوص والارتباطات التشعبية والمزيد. يمكنك استخدام الفئات المناسبة من Aspose.PDF لـ .NET لإضافة أنواع مختلفة من المحتوى إلى الخلايا.
 
-#### Q: Is Aspose.PDF for .NET compatible with .NET 5.0 or later versions?
+#### س: هل يتوافق Aspose.PDF for .NET مع .NET 5.0 أو الإصدارات الأحدث؟
 
-A: Yes, Aspose.PDF for .NET is compatible with .NET 5.0 and later versions. It supports various .NET platforms, including .NET Framework, .NET Core, and .NET 5.0+.
+ج: نعم، Aspose.PDF for .NET متوافق مع .NET 5.0 والإصدارات الأحدث. وهو يدعم العديد من منصات .NET، بما في ذلك .NET Framework و.NET Core و.NET 5.0+.

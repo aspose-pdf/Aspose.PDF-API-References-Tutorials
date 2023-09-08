@@ -1,113 +1,113 @@
 ---
-title: Flate Decode Compression
-linktitle: Flate Decode Compression
-second_title: Aspose.PDF for .NET API Reference
-description: Efficiently compress images in a PDF using Flate Decode compression with Aspose.PDF for .NET.
+title: 平面解码压缩
+linktitle: 平面解码压缩
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 进行 Flate Decode 压缩，有效压缩 PDF 中的图像。
 type: docs
 weight: 140
 url: /zh/net/programming-with-images/flate-decode-compression/
 ---
-This guide will take you step by step how to compress images using Flate Decode compression into a PDF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+本指南将逐步指导您如何使用 Aspose.PDF for .NET 使用 Flate Decode 压缩将图像压缩为 PDF 文件。确保您已设置环境并按照以下步骤操作：
 
-## Step 1: Define the document directory
+## 第1步：定义文档目录
 
-Make sure to set the correct document directory. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+确保设置正确的文档目录。代替`"YOUR DOCUMENT DIRECTORY"`在代码中添加 PDF 文档所在目录的路径。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the PDF document
+## 步骤 2：打开 PDF 文档
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+在此步骤中，我们将使用以下命令打开 PDF 文档`Document` Aspose.PDF 类。使用`Document`构造函数并传递 PDF 文档的路径。
 
 ```csharp
 Document doc = new Document(dataDir + "AddImage.pdf");
 ```
 
-## Step 3: Initialize optimization options
+## 第 3 步：初始化优化选项
 
-In this step, we will initialize the optimization options for image compression. Create an instance of `OptimizationOptions` and set the appropriate options. In this example, we are using Flate Decode compression to optimize the images.
+在此步骤中，我们将初始化图像压缩的优化选项。创建一个实例`OptimizationOptions`并设置适当的选项。在此示例中，我们使用 Flate Decode 压缩来优化图像。
 
 ```csharp
 var optimizationOptions = new Aspose.Pdf.Optimization.OptimizationOptions();
 optimizationOptions.ImageCompressionOptions.Encoding = ImageEncoding.Flate;
 ```
 
-## Step 4: Optimize the PDF document
+## 步骤 4：优化 PDF 文档
 
-In this step, we will optimize the PDF document using the optimization options defined earlier. Call the `OptimizeResources` method of the `doc` object and pass the optimization options.
+在此步骤中，我们将使用之前定义的优化选项来优化 PDF 文档。致电`OptimizeResources`的方法`doc`对象并传递优化选项。
 
 ```csharp
 doc.OptimizeResources(optimizationOptions);
 ```
 
-## Step 5: Save the updated PDF document
+## 第5步：保存更新后的PDF文档
 
-Save the updated PDF document using the `Save` method of the `doc` object. Specify the output path for the PDF file.
+使用以下命令保存更新的 PDF 文档`Save`的方法`doc`目的。指定 PDF 文件的输出路径。
 
 ```csharp
 doc.Save(dataDir + "FlateDecodeCompression.pdf");
 ```
 
-### Sample source code for Flate Decode Compression using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 进行 Flate 解码压缩的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open Document
+//打开文档
 Document doc = new Document(dataDir + "AddImage.pdf");
-// Initialize OptimizationOptions  
+//初始化优化选项
 var optimizationOptions = new Aspose.Pdf.Optimization.OptimizationOptions();
-// To optimise image using FlateDecode Compression set optimization options to Flate
+//使用 FlateDecode Compression 优化图像，将优化选项设置为 Flate
 optimizationOptions.ImageCompressionOptions.Encoding = ImageEncoding.Flate;
-// Set Optimization Options 
+//设置优化选项
 doc.OptimizeResources(optimizationOptions);
-// Save Document
+//保存文档
 doc.Save(dataDir + "FlateDecodeCompression.pdf");
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have successfully compressed images into a PDF using Flate Decode compression with Aspose.PDF for .NET. The optimized PDF file is saved in the specified directory. You can now use this PDF file for more efficient storage or sharing needs.
+恭喜！您已使用 Aspose.PDF for .NET 使用 Flate Decode 压缩成功将图像压缩为 PDF。优化后的PDF文件保存在指定目录中。您现在可以使用此 PDF 文件来满足更高效的存储或共享需求。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is Flate Decode compression, and why is it used in PDF documents?
+#### 问：什么是 Flate Decode 压缩，为什么在 PDF 文档中使用它？
 
-A: Flate Decode compression is a data compression method that is commonly used to reduce the size of data within a PDF document. It is particularly effective for compressing images, reducing the overall file size and improving efficiency during storage and transmission.
+答：Flate Decode 压缩是一种数据压缩方法，通常用于减小 PDF 文档中的数据大小。它对于压缩图像、减小整体文件大小以及提高存储和传输过程中的效率特别有效。
 
-#### Q: How does Aspose.PDF for .NET facilitate Flate Decode compression in a PDF document?
+#### 问：Aspose.PDF for .NET 如何促进 PDF 文档中的 Flate Decode 压缩？
 
-A: Aspose.PDF for .NET provides a streamlined process to open a PDF document, apply Flate Decode compression to images, and save the optimized PDF file with compressed images.
+答：Aspose.PDF for .NET 提供了一个简化的流程来打开 PDF 文档、对图像应用 Flate Decode 压缩以及使用压缩图像保存优化的 PDF 文件。
 
-#### Q: What are the advantages of using Flate Decode compression for image optimization in a PDF document?
+#### 问：使用 Flate Decode 压缩来优化 PDF 文档中的图像有哪些优势？
 
-A: Flate Decode compression offers efficient and lossless image compression, resulting in reduced file sizes without compromising image quality. This can lead to faster document loading and improved data transfer.
+答：Flate Decode 压缩提供高效且无损的图像压缩，从而在不影响图像质量的情况下减小文件大小。这可以加快文档加载速度并改进数据传输。
 
-#### Q: How does the `ImageEncoding.Flate` option contribute to image optimization in Flate Decode compression?
+#### 问：如何`ImageEncoding.Flate` option contribute to image optimization in Flate Decode compression?
 
-A: The `ImageEncoding.Flate` option specifies the use of Flate Decode compression for image optimization in the PDF document, ensuring that images are effectively compressed using this method.
+答： 的`ImageEncoding.Flate`选项指定使用 Flate Decode 压缩来优化 PDF 文档中的图像，确保使用此方法有效地压缩图像。
 
-#### Q: Can I selectively apply Flate Decode compression to specific images within a PDF document?
+#### 问：我可以选择性地将 Flate Decode 压缩应用于 PDF 文档中的特定图像吗？
 
-A: Yes, you can selectively apply Flate Decode compression to specific images by setting the `ImageCompressionOptions.Encoding` property to `ImageEncoding.Flate` for the desired images.
+答：是的，您可以通过设置`ImageCompressionOptions.Encoding`财产给`ImageEncoding.Flate`以获得所需的图像。
 
-#### Q: How does the `OptimizeResources` method work to apply Flate Decode compression in a PDF document?
+#### 问：如何`OptimizeResources` method work to apply Flate Decode compression in a PDF document?
 
-A: The `OptimizeResources` method analyzes the PDF document and applies the specified optimization options, including Flate Decode compression, to images and other resources, effectively reducing file size.
+答： 的`OptimizeResources`方法分析 PDF 文档并对图像和其他资源应用指定的优化选项（包括 Flate Decode 压缩），从而有效减小文件大小。
 
-#### Q: What scenarios benefit from Flate Decode compression in PDF documents?
+#### 问：PDF 文档中的 Flate Decode 压缩对哪些场景有利？
 
-A: Flate Decode compression is particularly beneficial when preparing PDF files for online distribution, archiving, or sharing, as it reduces file size while maintaining high-quality images.
+答：Flate Decode 压缩在准备 PDF 文件以供在线分发、存档或共享时特别有用，因为它可以减小文件大小，同时保持高质量图像。
 
-#### Q: Does Flate Decode compression impact the visual quality of images in the PDF document?
+#### 问：Flate Decode 压缩是否会影响 PDF 文档中图像的视觉质量？
 
-A: Flate Decode compression is a lossless compression method, meaning it does not impact the visual quality of images. Images remain unchanged while the file size is reduced.
+答：Flate Decode 压缩是一种无损压缩方法，这意味着它不会影响图像的视觉质量。图像保持不变，但文件大小减小。
 
-#### Q: Is it possible to reverse Flate Decode compression and restore original images from the optimized PDF?
+#### 问：是否可以反转 Flate Decode 压缩并从优化的 PDF 中恢复原始图像？
 
-A: No, Flate Decode compression is a lossless method, and the original image data is retained. There is no need to reverse compression to access the original images.
+答：不会，Flate Decode 压缩是一种无损方法，保留了原始图像数据。无需反向压缩即可访问原始图像。
 
-#### Q: How does Flate Decode compression affect the performance of PDF documents?
+#### 问：Flate Decode 压缩如何影响 PDF 文档的性能？
 
-A: Flate Decode compression can improve the performance of PDF documents by reducing their file size, leading to faster loading times and more efficient data transfer.
+答：Flate Decode 压缩可以通过减小文件大小来提高 PDF 文档的性能，从而缩短加载时间并提高数据传输效率。

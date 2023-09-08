@@ -1,50 +1,50 @@
 ---
-title: Get Individual Attachment In PDF File
-linktitle: Get Individual Attachment In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get an individual attachment in PDF file with Aspose.PDF for .NET. 
+title: Obtenga un archivo adjunto individual en un archivo PDF
+linktitle: Obtenga un archivo adjunto individual en un archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda cómo obtener un archivo adjunto individual en un archivo PDF con Aspose.PDF para .NET.
 type: docs
 weight: 60
 url: /es/net/programming-with-attachments/get-individual-attachment/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to get an individual attachment of a PDF file using Aspose.PDF for .NET.
+En este tutorial, lo guiaremos a través del siguiente código fuente de C# paso a paso para obtener un archivo adjunto individual de un archivo PDF usando Aspose.PDF para .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Asegúrese de haber instalado la biblioteca Aspose.PDF y configurar su entorno de desarrollo antes de comenzar. También tener conocimientos básicos de programación en C#.
 
-### Step 1: Document Directory Setup
+### Paso 1: Configuración del directorio de documentos
 
-In the provided source code, you need to specify the directory where the PDF file is located from which you want to get the individual attachment. Change the "dataDir" variable to the desired directory.
+En el código fuente proporcionado, debe especificar el directorio donde se encuentra el archivo PDF del que desea obtener el archivo adjunto individual. Cambie la variable "dataDir" al directorio deseado.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Paso 2: abra el documento PDF existente
 
-We open the existing PDF document using the specified path.
+Abrimos el documento PDF existente usando la ruta especificada.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetIndividualAttachment.pdf");
 ```
 
-### Step 3: Obtaining a Specific Attachment
+### Paso 3: Obtener un archivo adjunto específico
 
-We retrieve a specific attachment from the document's attachments collection. In this example, we get the first attachment using index 1.
+Recuperamos un archivo adjunto específico de la colección de archivos adjuntos del documento. En este ejemplo, obtenemos el primer archivo adjunto usando el índice 1.
 
 ```csharp
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
 ```
 
-### Step 4: Get File Properties
+### Paso 4: obtener propiedades del archivo
 
-We display attachment properties such as name, description, MIME type, control hash, date created, date modified, and size.
+Mostramos propiedades del archivo adjunto como nombre, descripción, tipo MIME, hash de control, fecha de creación, fecha de modificación y tamaño.
 
 ```csharp
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Check if object parameters contain additional information
+// Compruebe si los parámetros del objeto contienen información adicional
 if (fileSpecification.Params != null)
 {
 Console.WriteLine("Check Hash: {0}", fileSpecification.Params.CheckSum);
@@ -54,9 +54,9 @@ Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 ```
 
-### Step 5: Retrieve attachment and save to file
+### Paso 5: recuperar el archivo adjunto y guardarlo en un archivo
 
-We retrieve the content of the attachment and save it to a text file. In this example, the file is saved with the name "test_out.txt".
+Recuperamos el contenido del archivo adjunto y lo guardamos en un archivo de texto. En este ejemplo, el archivo se guarda con el nombre "test_out.txt".
 
 ```csharp
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
@@ -66,21 +66,21 @@ fileStream.Write(fileContent, 0, fileContent.Length);
 fileStream.Close();
 ```
 
-### Sample source code for Get Individual Attachment using Aspose.PDF for .NET 
+### Código fuente de muestra para obtener un archivo adjunto individual usando Aspose.PDF para .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Abrir documento
 Document pdfDocument = new Document(dataDir + "GetIndividualAttachment.pdf");
-// Get particular embedded file
+// Obtener un archivo incrustado particular
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
-// Get the file properties
+// Obtener las propiedades del archivo
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-// Check if parameter object contains the parameters
+//Compruebe si el objeto de parámetro contiene los parámetros
 if (fileSpecification.Params != null)
 {
 	Console.WriteLine("CheckSum: {0}",
@@ -91,7 +91,7 @@ if (fileSpecification.Params != null)
 	fileSpecification.Params.ModDate);
 	Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
-// Get the attachment and write to file or stream
+// Obtenga el archivo adjunto y escriba en un archivo o transmisión
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
 fileSpecification.Contents.Read(fileContent, 0, fileContent.Length);
 FileStream fileStream = new FileStream(dataDir + "test_out" + ".txt", FileMode.Create);
@@ -100,44 +100,44 @@ fileStream.Close();
 
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, we explained how to get an individual attachment from a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and save attachments from your PDF files.
+En este tutorial, explicamos cómo obtener un archivo adjunto individual de un archivo PDF usando Aspose.PDF para .NET. Ahora puede utilizar este conocimiento para extraer y guardar archivos adjuntos de sus archivos PDF.
 
-### FAQs for get individual attachment in PDF file
+### Preguntas frecuentes para obtener archivos adjuntos individuales en archivos PDF
 
-#### Q: What is the purpose of getting an individual attachment from a PDF document?
+#### P: ¿Cuál es el propósito de obtener un archivo adjunto individual de un documento PDF?
 
-A: Getting an individual attachment allows you to extract and save a specific embedded file within a PDF, which can be useful for further analysis or manipulation.
+R: Obtener un archivo adjunto individual le permite extraer y guardar un archivo incrustado específico dentro de un PDF, lo que puede resultar útil para análisis o manipulación posteriores.
 
-#### Q: How can I benefit from this tutorial in my PDF-related tasks?
+#### P: ¿Cómo puedo beneficiarme de este tutorial en mis tareas relacionadas con PDF?
 
-A: This tutorial provides step-by-step instructions and C# source code to retrieve and save a particular attachment from a PDF document using Aspose.PDF for .NET.
+R: Este tutorial proporciona instrucciones paso a paso y código fuente C# para recuperar y guardar un archivo adjunto particular de un documento PDF usando Aspose.PDF para .NET.
 
-#### Q: What attachment properties can I access using this tutorial?
+#### P: ¿A qué propiedades de los archivos adjuntos puedo acceder usando este tutorial?
 
-A: You can access attachment properties such as name, description, MIME type, control hash, creation date, modification date, and size of the specific attachment.
+R: Puede acceder a las propiedades del archivo adjunto, como nombre, descripción, tipo MIME, hash de control, fecha de creación, fecha de modificación y tamaño del archivo adjunto específico.
 
-#### Q: Can I modify the code to get attachments other than the first attachment?
+#### P: ¿Puedo modificar el código para obtener archivos adjuntos distintos al primero?
 
-A: Absolutely, you can adjust the index (e.g., `pdfDocument.EmbeddedFiles[1]`) to retrieve attachments at different indices within the PDF.
+ R: Por supuesto, puedes ajustar el índice (p. ej.,`pdfDocument.EmbeddedFiles[1]`) para recuperar archivos adjuntos en diferentes índices dentro del PDF.
 
-#### Q: How do I save the retrieved attachment to a file?
+#### P: ¿Cómo guardo el archivo adjunto recuperado en un archivo?
 
-A: This tutorial provides code to retrieve the attachment's content and save it to a text file with a specified name.
+R: Este tutorial proporciona código para recuperar el contenido del archivo adjunto y guardarlo en un archivo de texto con un nombre específico.
 
-#### Q: What is the significance of the "Check Hash" property in attachment information?
+#### P: ¿Cuál es el significado de la propiedad "Check Hash" en la información del archivo adjunto?
 
-A: The "Check Hash" property represents the control hash value of the attachment, which can be used to verify the integrity of the attachment.
+R: La propiedad "Check Hash" representa el valor hash de control del archivo adjunto, que se puede utilizar para verificar la integridad del archivo adjunto.
 
-#### Q: Can I extend this knowledge to extract attachments with specific criteria, such as file type?
+#### P: ¿Puedo ampliar este conocimiento para extraer archivos adjuntos con criterios específicos, como el tipo de archivo?
 
-A: Yes, you can enhance the code to filter attachments based on specific criteria such as file type or other properties.
+R: Sí, puede mejorar el código para filtrar archivos adjuntos según criterios específicos, como el tipo de archivo u otras propiedades.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of extracting individual attachments?
+#### P: ¿Cómo simplifica Aspose.PDF para .NET el proceso de extracción de archivos adjuntos individuales?
 
-A: Aspose.PDF for .NET provides a user-friendly API that facilitates the extraction and manipulation of attachments within PDF documents.
+R: Aspose.PDF para .NET proporciona una API fácil de usar que facilita la extracción y manipulación de archivos adjuntos dentro de documentos PDF.
 
-#### Q: Is this tutorial relevant for password-protected PDF files as well?
+#### P: ¿Este tutorial también es relevante para archivos PDF protegidos con contraseña?
 
-A: Yes, you can adapt similar techniques to retrieve individual attachments from password-protected PDF files using Aspose.PDF for .NET.
+R: Sí, puede adaptar técnicas similares para recuperar archivos adjuntos individuales de archivos PDF protegidos con contraseña utilizando Aspose.PDF para .NET.

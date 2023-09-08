@@ -1,49 +1,49 @@
 ---
-title: Replace First Occurrence
-linktitle: Replace First Occurrence
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to replace the first occurrence of text in a PDF document using Aspose.PDF for .NET.
+title: Remplacer la première occurrence
+linktitle: Remplacer la première occurrence
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment remplacer la première occurrence de texte dans un document PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 330
 url: /fr/net/programming-with-text/replace-first-occurrence/
 ---
-In this tutorial, we will explain how to replace the first occurrence of a specific text in a PDF document using the Aspose.PDF library for .NET. We will go through the step-by-step process of opening a PDF document, finding the first occurrence of the search phrase, replacing the text, updating properties, and saving the modified PDF using the provided C# source code.
+Dans ce didacticiel, nous expliquerons comment remplacer la première occurrence d'un texte spécifique dans un document PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Nous passerons par le processus étape par étape d'ouverture d'un document PDF, de recherche de la première occurrence de l'expression de recherche, de remplacement du texte, de mise à jour des propriétés et d'enregistrement du PDF modifié à l'aide du code source C# fourni.
 
-## Prerequisites
+## Conditions préalables
 
-Before you begin, ensure that you have the following:
+Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- La bibliothèque Aspose.PDF pour .NET installée.
+- Une compréhension de base de la programmation C#.
 
-## Step 1: Set up the Document Directory
+## Étape 1 : configurer le répertoire de documents
 
-First, you need to set the path to the directory where you have the input PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF file.
+ Tout d’abord, vous devez définir le chemin d’accès au répertoire dans lequel se trouve le fichier PDF d’entrée. Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le`dataDir` variable avec le chemin d'accès à votre fichier PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the PDF Document
+## Étape 2 : ouvrez le document PDF
 
-Next, we open the PDF document using the `Document` class from the Aspose.PDF library.
+ Ensuite, nous ouvrons le document PDF en utilisant le`Document` classe de la bibliothèque Aspose.PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 ```
 
-## Step 3: Find the First Occurrence of the Search Phrase
+## Étape 3 : Trouver la première occurrence de l'expression de recherche
 
-We create a `TextFragmentAbsorber` object and accept it for all the pages of the PDF document to find all instances of the search phrase.
+ Nous créons un`TextFragmentAbsorber` objet et acceptez-le pour toutes les pages du document PDF afin de trouver toutes les instances de la phrase de recherche.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
 
-## Step 4: Replace the Text
+## Étape 4 : Remplacer le texte
 
-If the search phrase is found in the PDF document, we retrieve the first occurrence of the text fragment and update its properties with the new text and formatting.
+Si l'expression recherchée est trouvée dans le document PDF, nous récupérons la première occurrence du fragment de texte et mettons à jour ses propriétés avec le nouveau texte et le nouveau formatage.
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -57,9 +57,9 @@ if (textFragmentCollection.Count > 0)
 }
 ```
 
-## Step 5: Save the Modified PDF
+## Étape 5 : Enregistrez le PDF modifié
 
-Finally, we save the modified PDF document to the specified output file.
+Enfin, nous enregistrons le document PDF modifié dans le fichier de sortie spécifié.
 
 ```csharp
 dataDir = dataDir + "ReplaceFirstOccurrence_out.pdf";
@@ -67,23 +67,23 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nText replaced successfully.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Replace First Occurrence using Aspose.PDF for .NET 
+### Exemple de code source pour Remplacer la première occurrence à l’aide d’Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-// Create TextAbsorber object to find all instances of the input search phrase
+// Créez un objet TextAbsorber pour trouver toutes les instances de la phrase de recherche d'entrée
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-// Accept the absorber for all the pages
+// Acceptez l'absorbeur pour toutes les pages
 pdfDocument.Pages.Accept(textFragmentAbsorber);
-// Get the extracted text fragments
+// Obtenez les fragments de texte extraits
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 if (textFragmentCollection.Count > 0)
 {
-	// Get first occurance of text and replace
+	// Obtenir la première occurrence du texte et le remplacer
 	TextFragment textFragment = textFragmentCollection[1];
-	// Update text and other properties
+	// Mettre à jour le texte et d'autres propriétés
 	textFragment.Text = "New Phrase";
 	textFragment.TextState.Font = FontRepository.FindFont("Verdana");
 	textFragment.TextState.FontSize = 22;
@@ -96,49 +96,49 @@ if (textFragmentCollection.Count > 0)
 
 ## Conclusion
 
-In this tutorial, you have learned how to replace the first occurrence of a specific text in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can open a PDF document, find the first occurrence of a search phrase, replace the text, update properties, and save the modified PDF.
+Dans ce didacticiel, vous avez appris à remplacer la première occurrence d'un texte spécifique dans un document PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. En suivant le guide étape par étape et en exécutant le code C# fourni, vous pouvez ouvrir un document PDF, rechercher la première occurrence d'une expression de recherche, remplacer le texte, mettre à jour les propriétés et enregistrer le PDF modifié.
 
-### FAQ's
+### FAQ
 
-#### Q: What is the purpose of the "Replace First Occurrence" tutorial?
+#### Q : Quel est l'objectif du didacticiel « Remplacer la première occurrence » ?
 
-A: The "Replace First Occurrence" tutorial demonstrates how to use the Aspose.PDF library for .NET to replace the first occurrence of a specific text in a PDF document. It provides step-by-step instructions on how to open a PDF document, locate the first instance of a search phrase, replace the text, update properties, and save the modified PDF.
+: Le didacticiel « Remplacer la première occurrence » montre comment utiliser la bibliothèque Aspose.PDF pour .NET pour remplacer la première occurrence d'un texte spécifique dans un document PDF. Il fournit des instructions étape par étape sur la façon d'ouvrir un document PDF, de localiser la première instance d'une expression de recherche, de remplacer le texte, de mettre à jour les propriétés et d'enregistrer le PDF modifié.
 
-#### Q: Why would I want to replace the first occurrence of text in a PDF document?
+#### Q : Pourquoi voudrais-je remplacer la première occurrence de texte dans un document PDF ?
 
-A: Replacing the first occurrence of text in a PDF document is useful when you need to make targeted changes to specific instances of a certain phrase while leaving other occurrences untouched. This approach is often used to update or correct text in a controlled manner.
+R : Le remplacement de la première occurrence d'un texte dans un document PDF est utile lorsque vous devez apporter des modifications ciblées à des instances spécifiques d'une certaine phrase tout en laissant les autres occurrences intactes. Cette approche est souvent utilisée pour mettre à jour ou corriger du texte de manière contrôlée.
 
-#### Q: How do I set up the document directory?
+#### Q : Comment configurer le répertoire de documents ?
 
-A: To set up the document directory:
+R : Pour configurer le répertoire de documents :
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your input PDF file is located.
+1.  Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le`dataDir` variable avec le chemin d’accès au répertoire où se trouve votre fichier PDF d’entrée.
 
-#### Q: How do I replace the first occurrence of a specific text in a PDF document?
+#### Q : Comment remplacer la première occurrence d'un texte spécifique dans un document PDF ?
 
-A: The tutorial guides you through the process step by step:
+R : Le didacticiel vous guide étape par étape tout au long du processus :
 
-1. Open a PDF document using the `Document` class.
-2. Create a `TextFragmentAbsorber` object and accept it for all pages to find instances of the search phrase.
-3. If the search phrase is found, retrieve the first occurrence of the text fragment and update its properties with the new text and formatting.
-4. Save the modified PDF document.
+1.  Ouvrez un document PDF à l'aide du`Document` classe.
+2.  Créer un`TextFragmentAbsorber` objet et acceptez-le pour toutes les pages afin de trouver des instances de la phrase de recherche.
+3. Si l'expression recherchée est trouvée, récupérez la première occurrence du fragment de texte et mettez à jour ses propriétés avec le nouveau texte et le nouveau formatage.
+4. Enregistrez le document PDF modifié.
 
-#### Q: What is the purpose of using `TextFragmentAbsorber` to find the first occurrence of the search phrase?
+####  Q : Quel est le but de l'utilisation`TextFragmentAbsorber` to find the first occurrence of the search phrase?
 
-A: The `TextFragmentAbsorber` is used to locate instances of the search phrase within the PDF document. In this tutorial, it helps identify the first occurrence of the text that needs to be replaced.
+ R : Le`TextFragmentAbsorber` est utilisé pour localiser les instances de l'expression de recherche dans le document PDF. Dans ce didacticiel, cela permet d'identifier la première occurrence du texte à remplacer.
 
-#### Q: How do I update the properties of the text fragment?
+#### Q : Comment mettre à jour les propriétés du fragment de texte ?
 
-A: Once the first occurrence of the text fragment is located, you can update its properties, such as the text itself, font, font size, and text color. This allows you to customize the appearance of the replacement text.
+R : Une fois la première occurrence du fragment de texte localisée, vous pouvez mettre à jour ses propriétés, telles que le texte lui-même, la police, la taille de la police et la couleur du texte. Cela vous permet de personnaliser l'apparence du texte de remplacement.
 
-#### Q: Is there a limitation to replacing only the first occurrence of the text?
+#### Q : Existe-t-il une limitation au remplacement uniquement de la première occurrence du texte ?
 
-A: Yes, this tutorial specifically focuses on replacing the first occurrence of the text. If you need to replace multiple occurrences of the same text, you can extend the approach by looping through the `TextFragmentCollection` to identify and update each instance.
+ R : Oui, ce didacticiel se concentre spécifiquement sur le remplacement de la première occurrence du texte. Si vous devez remplacer plusieurs occurrences du même texte, vous pouvez étendre l'approche en parcourant le`TextFragmentCollection` pour identifier et mettre à jour chaque instance.
 
-#### Q: What is the expected outcome of executing the provided code?
+#### Q : Quel est le résultat attendu de l’exécution du code fourni ?
 
-A: By following the tutorial and running the provided C# code, you will replace the first occurrence of the specified text in the PDF document. The replacement text will have updated properties, such as font, font size, and text color.
+R : En suivant le didacticiel et en exécutant le code C# fourni, vous remplacerez la première occurrence du texte spécifié dans le document PDF. Le texte de remplacement aura des propriétés mises à jour, telles que la police, la taille de la police et la couleur du texte.
 
-#### Q: Can I use this approach to replace other occurrences of the same text?
+#### Q : Puis-je utiliser cette approche pour remplacer d’autres occurrences du même texte ?
 
-A: Yes, you can modify the code to loop through the `TextFragmentCollection` to replace multiple occurrences of the same text. Simply extend the logic to identify and update each instance as needed.
+ R : Oui, vous pouvez modifier le code pour parcourir le`TextFragmentCollection` pour remplacer plusieurs occurrences du même texte. Étendez simplement la logique pour identifier et mettre à jour chaque instance selon vos besoins.

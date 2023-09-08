@@ -1,69 +1,69 @@
 ---
-title: Inline Structure Elements
-linktitle: Inline Structure Elements
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to using online structural elements with Aspose.PDF for .NET. Organize your PDFs with headings and paragraphs.
+title: عناصر الهيكل المضمنة
+linktitle: عناصر الهيكل المضمنة
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لاستخدام العناصر الهيكلية عبر الإنترنت مع Aspose.PDF لـ .NET. قم بتنظيم ملفات PDF الخاصة بك بالعناوين والفقرات.
 type: docs
 weight: 110
 url: /ar/net/programming-with-tagged-pdf/inline-structure-elements/
 ---
-In this step-by-step guide, we'll show you how to use inline structure elements with Aspose.PDF for .NET. Aspose.PDF is a powerful library that lets you manipulate PDF documents programmatically. Inline structure elements allow you to create a hierarchical structure in your PDF document using headings of different levels and paragraphs.
+في هذا الدليل خطوة بخطوة، سنوضح لك كيفية استخدام عناصر البنية المضمنة مع Aspose.PDF لـ .NET. Aspose.PDF هي مكتبة قوية تتيح لك التعامل مع مستندات PDF برمجياً. تتيح لك عناصر البنية المضمنة إنشاء بنية هرمية في مستند PDF الخاص بك باستخدام عناوين ذات مستويات وفقرات مختلفة.
 
-Let's dive into the code and learn how to use inline structure elements with Aspose.PDF for .NET.
+دعنا نتعمق في التعليمات البرمجية ونتعلم كيفية استخدام عناصر البنية المضمنة مع Aspose.PDF لـ .NET.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-1. Aspose.PDF library for .NET installed.
-2. A basic knowledge of the C# programming language.
+1. تم تثبيت مكتبة Aspose.PDF لـ .NET.
+2. معرفة أساسية بلغة البرمجة C#.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-To get started, open your C# development environment and create a new project. Make sure you have added a reference to the Aspose.PDF library for .NET in your project.
+للبدء، افتح بيئة تطوير C# الخاصة بك وقم بإنشاء مشروع جديد. تأكد من إضافة مرجع إلى مكتبة Aspose.PDF لـ .NET في مشروعك.
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating the document
+## الخطوة 2: إنشاء الوثيقة
 
-The first step is to create a new PDF document using the `Document` class.
+ الخطوة الأولى هي إنشاء مستند PDF جديد باستخدام الملف`Document` فصل.
 
 ```csharp
-// Create the PDF document
+// قم بإنشاء مستند PDF
 Document document = new Document();
 ```
 
-## Step 3: Work with tagged content
+## الخطوة 3: العمل مع المحتوى الموسوم
 
-Then we get the tagged content of the document to work with.
+ثم نحصل على المحتوى المميز للمستند للعمل معه.
 
 ```csharp
-// Get the tagged content of the document
+// احصل على المحتوى المميز للمستند
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 4: Set document title and language
+## الخطوة 4: تعيين عنوان المستند واللغة
 
-We can now set the document title and language.
+يمكننا الآن تعيين عنوان المستند واللغة.
 
 ```csharp
-// Define the document title and language
+// تحديد عنوان الوثيقة واللغة
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 5: Add structural elements online
+## الخطوة 5: إضافة العناصر الهيكلية عبر الإنترنت
 
-Now we are going to add inline structure elements such as headings of different levels and paragraphs to our document.
+سنقوم الآن بإضافة عناصر هيكلية مضمنة مثل عناوين المستويات والفقرات المختلفة إلى وثيقتنا.
 
 ```csharp
-// Get the root structure element
+// الحصول على عنصر هيكل الجذر
 StructureElement rootElement = taggedContent.RootElement;
 
-// Add headers of different levels
+// إضافة رؤوس من مستويات مختلفة
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
 HeaderElement h3 = taggedContent.CreateHeaderElement(3);
@@ -77,7 +77,7 @@ rootElement.AppendChild(h4);
 rootElement.AppendChild(h5);
 rootElement.AppendChild(h6);
 
-// Add content to each header
+// أضف محتوى إلى كل رأس
 SpanElement spanH11 = taggedContent.CreateSpanElement();
 spanH11.SetText("H1.");
 h1.AppendChild(spanH11);
@@ -120,12 +120,12 @@ SpanElement spanH62 = taggedContent.CreateSpanElement();
 spanH62.SetText("Heading level 6");
 h6.AppendChild(spanH62);
 
-// Add a paragraph
+// أضف فقرة
 ParagraphElement p = taggedContent.CreateParagraphElement();
 p.SetText("P.");
 rootElement.AppendChild(p);
 
-// Add content to the paragraph
+// إضافة محتوى إلى الفقرة
 SpanElement span1 = taggedContent.CreateSpanElement();
 span1.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
 p.AppendChild(span1);
@@ -158,35 +158,35 @@ span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla pur
 p.AppendChild(span10);
 ```
 
-Here we create inline structure elements, such as headings of different levels and a paragraph, and add content to them.
+نقوم هنا بإنشاء عناصر هيكلية مضمنة، مثل العناوين ذات المستويات المختلفة والفقرة، وإضافة محتوى إليها.
 
-## Step 6: Save the tagged PDF document
+## الخطوة 6: احفظ مستند PDF الذي تم وضع علامة عليه
 
-Finally, we save the tagged PDF document.
+وأخيرًا، نقوم بحفظ مستند PDF الذي تم وضع علامة عليه.
 
 ```csharp
-// Save the tagged PDF document
+// احفظ مستند PDF الذي تم وضع علامة عليه
 document.Save(dataDir + "InlineStructureElements.pdf");
 ```
 
-### Sample source code for Inline Structure Elements using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لعناصر البنية المضمنة باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// إنشاء مستند PDF
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// احصل على محتوى للعمل مع TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+// قم بتعيين العنوان واللغة لـ Documnet
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Get Root Structure Element
+// احصل على عنصر البنية الجذرية
 StructureElement rootElement = taggedContent.RootElement;
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
@@ -270,53 +270,53 @@ SpanElement span10 = taggedContent.CreateSpanElement();
 span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
 p.AppendChild(span10);
 
-// Save Tagged Pdf Document
+// حفظ وثيقة PDF ذات العلامات
 document.Save(dataDir + "InlineStructureElements.pdf");
 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have learned how to use inline structure elements with Aspose.PDF for .NET. You can now create a hierarchical structure in your PDF document by using headings of different levels and paragraphs. Explore more features of Aspose.PDF to discover its full potential.
+تهنئة ! لقد تعلمت كيفية استخدام عناصر البنية المضمنة مع Aspose.PDF لـ .NET. يمكنك الآن إنشاء هيكل هرمي في مستند PDF الخاص بك باستخدام عناوين ذات مستويات وفقرات مختلفة. اكتشف المزيد من ميزات Aspose.PDF لاكتشاف إمكاناته الكاملة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What are inline structure elements in a PDF document, and how do they contribute to creating a hierarchical structure?
+#### س: ما هي عناصر البنية المضمنة في مستند PDF، وكيف تساهم في إنشاء هيكل هرمي؟
 
-A: Inline structure elements in a PDF document, such as headings of different levels and paragraphs, are used to create a hierarchical structure that organizes and presents content in a structured manner. These elements allow you to establish a clear hierarchy and flow of information within the document.
+ج: يتم استخدام عناصر البنية المضمنة في مستند PDF، مثل عناوين المستويات والفقرات المختلفة، لإنشاء بنية هرمية تنظم المحتوى وتقدمه بطريقة منظمة. تسمح لك هذه العناصر بإنشاء تسلسل هرمي واضح وتدفق للمعلومات داخل المستند.
 
-#### Q: How can inline structure elements enhance the readability and organization of a PDF document?
+#### س: كيف يمكن لعناصر البنية المضمنة تحسين إمكانية قراءة مستند PDF وتنظيمه؟
 
-A: Inline structure elements, particularly headings and paragraphs, help improve the readability and organization of a PDF document by providing a logical structure. Headings indicate different levels of importance and help readers navigate the content, while paragraphs group related information together.
+ج: تساعد عناصر البنية المضمنة، خاصة العناوين والفقرات، على تحسين إمكانية قراءة مستند PDF وتنظيمه من خلال توفير بنية منطقية. تشير العناوين إلى مستويات مختلفة من الأهمية وتساعد القراء على التنقل في المحتوى، بينما تقوم الفقرات بتجميع المعلومات ذات الصلة معًا.
 
-#### Q: How does Aspose.PDF for .NET facilitate the use of inline structure elements?
+#### س: كيف يسهل Aspose.PDF for .NET استخدام عناصر البنية المضمنة؟
 
-A: Aspose.PDF for .NET offers classes and methods to create and manipulate inline structure elements, such as headings and paragraphs. These elements can be customized, organized hierarchically, and enriched with content to improve the visual presentation and accessibility of the document.
+ج: يوفر Aspose.PDF for .NET فئات وطرق لإنشاء عناصر البنية المضمنة ومعالجتها، مثل العناوين والفقرات. يمكن تخصيص هذه العناصر وتنظيمها بشكل هرمي وإثرائها بالمحتوى لتحسين العرض المرئي وإمكانية الوصول إلى المستند.
 
-#### Q: What is the purpose of the `taggedContent` object in relation to inline structure elements?
+####  س: ما هو الغرض من`taggedContent` object in relation to inline structure elements?
 
-A: The `taggedContent` object, obtained from the `TaggedContent` property of a `Document`, allows you to work with structured elements, including inline structure elements. It enables you to create, customize, and organize headings and paragraphs within the document.
+ ج: ال`taggedContent` الكائن الذي تم الحصول عليه من`TaggedContent` خاصية أ`Document`، يسمح لك بالعمل مع العناصر المنظمة، بما في ذلك عناصر البنية المضمنة. فهو يمكّنك من إنشاء وتخصيص وتنظيم العناوين والفقرات داخل المستند.
 
-#### Q: How do inline structure elements aid in creating a clear document hierarchy?
+#### س: كيف تساعد عناصر البنية المضمنة في إنشاء تسلسل هرمي واضح للمستند؟
 
-A: Inline structure elements, such as headings of varying levels, contribute to establishing a clear and well-defined hierarchy in the document. Readers can quickly identify the main topics, subtopics, and related content, making the document easier to navigate and comprehend.
+ج: تساهم عناصر البنية المضمنة، مثل العناوين ذات المستويات المختلفة، في إنشاء تسلسل هرمي واضح ومحدد جيدًا في المستند. يمكن للقراء التعرف بسرعة على الموضوعات الرئيسية والمواضيع الفرعية والمحتوى ذي الصلة، مما يجعل التنقل في المستند وفهمه أسهل.
 
-#### Q: Can I customize the appearance and formatting of inline structure elements using Aspose.PDF for .NET?
+#### س: هل يمكنني تخصيص مظهر وتنسيق عناصر البنية المضمنة باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can customize the appearance and formatting of inline structure elements. You can set properties such as font styles, sizes, colors, alignment, indentation, and spacing to achieve the desired visual presentation for headings and paragraphs.
+ج: نعم، يمكنك تخصيص مظهر وتنسيق عناصر البنية المضمنة. يمكنك تعيين خصائص مثل أنماط الخطوط وأحجامها وألوانها والمحاذاة والمسافات البادئة والتباعد لتحقيق العرض المرئي المطلوب للعناوين والفقرات.
 
-#### Q: How do I create and add headings of different levels to a PDF document using inline structure elements in Aspose.PDF for .NET?
+#### س: كيف يمكنني إنشاء وإضافة عناوين ذات مستويات مختلفة إلى مستند PDF باستخدام عناصر البنية المضمنة في Aspose.PDF لـ .NET؟
 
-A: You can create headings of different levels using the `CreateHeaderElement` method and then append them to the root structure element. Subsequently, you can add content to each heading element using the `CreateSpanElement` method to create spans of text.
+ ج: يمكنك إنشاء عناوين بمستويات مختلفة باستخدام`CreateHeaderElement` الطريقة ثم قم بإلحاقها بعنصر البنية الجذرية. وبعد ذلك، يمكنك إضافة محتوى إلى كل عنصر عنوان باستخدام الملف`CreateSpanElement` طريقة إنشاء مساحات من النص.
 
-#### Q: Can I use inline structure elements to create lists, bullet points, or other types of content organization in a PDF document?
+#### س: هل يمكنني استخدام عناصر البنية المضمنة لإنشاء قوائم أو نقاط أو أنواع أخرى من تنظيم المحتوى في مستند PDF؟
 
-A: While inline structure elements themselves are primarily used for headings and paragraphs, you can use them in combination with other features offered by Aspose.PDF for .NET to create lists, bullet points, tables, and other types of content organization for a comprehensive document structure.
+ج: على الرغم من أن عناصر البنية المضمنة نفسها تُستخدم بشكل أساسي للعناوين والفقرات، إلا أنه يمكنك استخدامها مع الميزات الأخرى التي يقدمها Aspose.PDF لـ .NET لإنشاء قوائم ونقاط نقطية وجداول وأنواع أخرى من تنظيم المحتوى من أجل تنظيم شامل هيكل الوثيقة.
 
-#### Q: How do inline structure elements contribute to document accessibility?
+#### س: كيف تساهم عناصر البنية المضمنة في إمكانية الوصول إلى المستند؟
 
-A: Inline structure elements play a crucial role in enhancing document accessibility. Properly structured headings and paragraphs provide a clear document hierarchy that aids screen readers and other assistive technologies in accurately interpreting and conveying the content to users with disabilities.
+ج: تلعب عناصر البنية المضمنة دورًا حاسمًا في تعزيز إمكانية الوصول إلى المستندات. توفر العناوين والفقرات المنظمة بشكل صحيح تسلسلاً هرميًا واضحًا للمستندات يساعد برامج قراءة الشاشة والتقنيات المساعدة الأخرى في تفسير المحتوى ونقله بدقة إلى المستخدمين ذوي الإعاقة.
 
-#### Q: Can I explore more advanced uses of inline structure elements, such as creating interactive elements or embedding multimedia?
+#### س: هل يمكنني استكشاف المزيد من الاستخدامات المتقدمة لعناصر البنية المضمنة، مثل إنشاء عناصر تفاعلية أو تضمين الوسائط المتعددة؟
 
-A: Absolutely! While this tutorial focuses on creating headings and paragraphs, Aspose.PDF for .NET offers advanced features to create interactive elements, embed multimedia, add hyperlinks, and more. Check the library's documentation and examples to delve into these advanced capabilities.
+ج: بالتأكيد! بينما يركز هذا البرنامج التعليمي على إنشاء العناوين والفقرات، يقدم Aspose.PDF for .NET ميزات متقدمة لإنشاء عناصر تفاعلية وتضمين الوسائط المتعددة وإضافة ارتباطات تشعبية والمزيد. تحقق من وثائق المكتبة وأمثلتها للتعمق في هذه الإمكانات المتقدمة.

@@ -1,21 +1,21 @@
 ---
-title: Programming with Attachments
-linktitle: Programming with Attachments
+title: البرمجة بالمرفقات
+linktitle: البرمجة بالمرفقات
 type: docs
 weight: 18
 url: /ar/net/programming-with-attachments/
-description: Learn how to manipulate attachments in PDF documents, including adding, extracting and deleting them, to improve the functionality of PDF files.
+description: تعرف على كيفية التعامل مع المرفقات في مستندات PDF، بما في ذلك إضافتها واستخراجها وحذفها، لتحسين وظائف ملفات PDF.
 ---
-The Aspose.PDF for .NET tutorials on programming with attachments provide step-by-step instructions for working with attachments in PDF documents. Learn how to add, extract and delete attachments, as well as manage their properties.
+توفر البرامج التعليمية Aspose.PDF for .NET حول البرمجة باستخدام المرفقات إرشادات خطوة بخطوة للتعامل مع المرفقات في مستندات PDF. تعرف على كيفية إضافة المرفقات واستخراجها وحذفها وإدارة خصائصها.
 
-These tutorials will guide you through the different steps to manipulate attachments in your PDF documents, allowing you to improve the functionality and interactivity of your PDF files.
+سترشدك هذه البرامج التعليمية خلال الخطوات المختلفة للتعامل مع المرفقات في مستندات PDF الخاصة بك، مما يسمح لك بتحسين وظائف ملفات PDF الخاصة بك وتفاعلها.
 
-## Tutorials
-| Title | Description |
+## دروس
+| عنوان | وصف |
 | --- | --- | 
-| [Add Attachment In PDF File](./add-attachment/) | Learn how to add attachment in PDF file using Aspose.PDF for .NET.  |  
-| [Delete All Attachments In PDF File](./delete-all-attachments/) | Learn how to remove all attachments in PDF file using Aspose.PDF for .NET.  |  
-| [Disable Files Compression In PDF File](./disable-files-compression/) | Learn how to disable file compression in PDF file with Aspose.PDF for .NET.  |  
-| [Get All The Attachments In PDF File](./get-all-the-attachments/) | Learn how to get all attachments in PDF file with Aspose.PDF for .NET.  |  
-| [Get Attachment Info](./get-attachment-info/) | Learn how to get information about a specific attachment in a PDF file with Aspose.PDF for .NET. |  
-| [Get Individual Attachment In PDF File](./get-individual-attachment/) | Learn how to get an individual attachment in PDF file with Aspose.PDF for .NET.  |  
+| [إضافة مرفق في ملف PDF](./add-attachment/) | تعرف على كيفية إضافة مرفق في ملف PDF باستخدام Aspose.PDF لـ .NET.  |  
+| [حذف كافة المرفقات في ملف PDF](./delete-all-attachments/) | تعرف على كيفية إزالة جميع المرفقات في ملف PDF باستخدام Aspose.PDF لـ .NET.  |  
+| [تعطيل ضغط الملفات في ملف PDF](./disable-files-compression/) | تعرف على كيفية تعطيل ضغط الملفات في ملف PDF باستخدام Aspose.PDF لـ .NET.  |  
+| [احصل على جميع المرفقات في ملف PDF](./get-all-the-attachments/) | تعرف على كيفية الحصول على جميع المرفقات في ملف PDF باستخدام Aspose.PDF لـ .NET.  |  
+| [الحصول على معلومات المرفقات](./get-attachment-info/) | تعرف على كيفية الحصول على معلومات حول مرفق معين في ملف PDF باستخدام Aspose.PDF لـ .NET. |  
+| [احصل على مرفق فردي في ملف PDF](./get-individual-attachment/) | تعرف على كيفية الحصول على مرفق فردي في ملف PDF باستخدام Aspose.PDF لـ .NET.  |  

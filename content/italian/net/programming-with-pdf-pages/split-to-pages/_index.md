@@ -1,36 +1,36 @@
 ---
-title: Split To Pages
-linktitle: Split To Pages
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to split a PDF document into individual pages using Aspose.PDF for .NET.
+title: Dividi in pagine
+linktitle: Dividi in pagine
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Guida passo passo per dividere un documento PDF in singole pagine utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 140
 url: /it/net/programming-with-pdf-pages/split-to-pages/
 ---
-In this tutorial, we'll walk you through the step-by-step process to split a PDF document into individual pages using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to split a PDF document into multiple PDF files, each containing a single page.
+In questo tutorial ti guideremo attraverso il processo passo passo per dividere un documento PDF in singole pagine utilizzando Aspose.PDF per .NET. Spiegheremo il codice sorgente C# in bundle e ti forniremo una guida completa per aiutarti a comprendere e implementare questa funzionalità nei tuoi progetti. Alla fine di questo tutorial, saprai come dividere un documento PDF in più file PDF, ciascuno contenente una singola pagina.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## Prerequisiti
+Prima di iniziare, assicurati di avere quanto segue:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- Conoscenza base del linguaggio di programmazione C#
+- Aspose.PDF per .NET installato nel tuo ambiente di sviluppo
 
-## Step 1: Define the document directory
-First, you need to set the path to your documents directory. This is where the PDF document you want to split is located. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
+## Passaggio 1: definire la directory dei documenti
+Innanzitutto, devi impostare il percorso della directory dei documenti. Qui è dove si trova il documento PDF che desideri dividere. Sostituisci "DIRECTORY DOCUMENTI" con il percorso appropriato.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the PDF document
-Then you can open the PDF document to split using the `Document` class of Aspose.PDF. Be sure to specify the correct document path.
+## Passaggio 2: apri il documento PDF
+ Quindi puoi aprire il documento PDF da dividere utilizzando il file`Document` classe di Aspose.PDF. Assicurati di specificare il percorso corretto del documento.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "SplitToPages.pdf");
 ```
 
-## Step 3: Go through the pages and divide them
-Now you can loop through all pages of the PDF document using a loop. For each page, create a new document and add that page to this new document. Then save the new document using a unique file name for each page.
+## Passaggio 3: sfoglia le pagine e dividile
+Ora puoi scorrere tutte le pagine del documento PDF utilizzando un ciclo. Per ogni pagina, crea un nuovo documento e aggiungi quella pagina a questo nuovo documento. Quindi salva il nuovo documento utilizzando un nome file univoco per ciascuna pagina.
 
 ```csharp
 int pageCount = 1;
@@ -43,16 +43,16 @@ pageCount++;
 }
 ```
 
-### Sample source code for Split To Pages using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Dividi in pagine utilizzando Aspose.PDF per .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Apri documento
 Document pdfDocument = new Document(dataDir + "SplitToPages.pdf");
 int pageCount = 1;
-// Loop through all the pages
+// Passa in rassegna tutte le pagine
 foreach (Page pdfPage in pdfDocument.Pages)
 {
 	Document newDocument = new Document();
@@ -63,33 +63,33 @@ foreach (Page pdfPage in pdfDocument.Pages)
 
 ```
 
-## Conclusion
-In this tutorial, we learned how to split a PDF document into individual pages using Aspose.PDF for .NET. By following this step-by-step guide, you can easily split a PDF document into multiple PDF files, each containing a single page. Aspose.PDF offers a powerful and flexible API for working with PDF documents in your projects. Now you can use this feature to perform PDF document splitting operations according to your specific needs.
+## Conclusione
+In questo tutorial, abbiamo imparato come dividere un documento PDF in singole pagine utilizzando Aspose.PDF per .NET. Seguendo questa guida passo passo, puoi facilmente dividere un documento PDF in più file PDF, ciascuno contenente una singola pagina. Aspose.PDF offre un'API potente e flessibile per lavorare con documenti PDF nei tuoi progetti. Ora puoi utilizzare questa funzionalità per eseguire operazioni di suddivisione dei documenti PDF in base alle tue esigenze specifiche.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: How can I split a PDF document into individual pages using Aspose.PDF for .NET?
+#### D: Come posso dividere un documento PDF in singole pagine utilizzando Aspose.PDF per .NET?
 
-A: To split a PDF document into individual pages using Aspose.PDF for .NET, you can follow these steps:
+R: Per dividere un documento PDF in singole pagine utilizzando Aspose.PDF per .NET, puoi seguire questi passaggi:
 
-1. Set the document directory by specifying the path where your original PDF file is located and where you want to save the split PDF files. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
-2. Open the PDF document to split using the `Document` class of Aspose.PDF. Be sure to specify the correct path to the original PDF document.
-3. Loop through all the pages of the PDF document using a loop.
-4. For each page, create a new document using the `Document` class and add that page to this new document using the `Add()` method of the `Pages` property.
-5. Save the new document with a unique file name for each page using the `Save()` method of the `Document` class.
+1. Imposta la directory dei documenti specificando il percorso in cui si trova il file PDF originale e dove desideri salvare i file PDF divisi. Sostituisci "DIRECTORY DOCUMENTI" con il percorso appropriato.
+2.  Apri il documento PDF da dividere utilizzando il file`Document` classe di Aspose.PDF. Assicurati di specificare il percorso corretto del documento PDF originale.
+3. Passa in rassegna tutte le pagine del documento PDF utilizzando un ciclo.
+4.  Per ogni pagina, crea un nuovo documento utilizzando il file`Document` classe e aggiungi quella pagina a questo nuovo documento usando il file`Add()` metodo del`Pages` proprietà.
+5.  Salva il nuovo documento con un nome file univoco per ogni pagina utilizzando il file`Save()` metodo del`Document` classe.
 
-#### Q: Will splitting the PDF document affect the original PDF file?
+#### D: La divisione del documento PDF influirà sul file PDF originale?
 
-A: No, splitting the PDF document will not affect the original PDF file. Each page is copied to a new document, and the new documents are saved separately, leaving the original PDF file intact.
+R: No, la divisione del documento PDF non influirà sul file PDF originale. Ogni pagina viene copiata in un nuovo documento e i nuovi documenti vengono salvati separatamente, lasciando intatto il file PDF originale.
 
-#### Q: Can I specify a different file format for the split pages, such as images or text files?
+#### D: Posso specificare un formato file diverso per le pagine divise, ad esempio immagini o file di testo?
 
-A: The provided C# source code demonstrates how to split the PDF document into separate PDF files for each page. However, you can modify the code to save the split pages in other formats, such as images or text files, depending on your specific requirements.
+R: Il codice sorgente C# fornito dimostra come dividere il documento PDF in file PDF separati per ogni pagina. Tuttavia, puoi modificare il codice per salvare le pagine divise in altri formati, come immagini o file di testo, a seconda delle tue esigenze specifiche.
 
-#### Q: Is there a limit to the number of pages that can be split using Aspose.PDF for .NET?
+#### D: Esiste un limite al numero di pagine che possono essere divise utilizzando Aspose.PDF per .NET?
 
-A: There is no specific limit imposed by Aspose.PDF for .NET on the number of pages that can be split. However, the amount of memory and resources available in your system may affect the performance when working with a large number of pages.
+R: Non esiste un limite specifico imposto da Aspose.PDF per .NET sul numero di pagine che possono essere divise. Tuttavia, la quantità di memoria e risorse disponibili nel sistema potrebbero influire sulle prestazioni quando si lavora con un numero elevato di pagine.
 
-#### Q: Can I split a specific range of pages from the PDF document?
+#### D: Posso dividere un intervallo specifico di pagine dal documento PDF?
 
-A: Yes, you can modify the provided source code to split a specific range of pages from the PDF document. Instead of looping through all pages, you can implement logic to select a specific range of pages and create new documents for only those pages.
+R: Sì, puoi modificare il codice sorgente fornito per dividere un intervallo specifico di pagine dal documento PDF. Invece di scorrere tutte le pagine, puoi implementare la logica per selezionare un intervallo specifico di pagine e creare nuovi documenti solo per quelle pagine.

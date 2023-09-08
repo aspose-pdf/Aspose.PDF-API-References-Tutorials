@@ -1,50 +1,50 @@
 ---
-title: Get Individual Attachment In PDF File
-linktitle: Get Individual Attachment In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get an individual attachment in PDF file with Aspose.PDF for .NET. 
+title: Obtenez une pièce jointe individuelle dans un fichier PDF
+linktitle: Obtenez une pièce jointe individuelle dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment obtenir une pièce jointe individuelle dans un fichier PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 60
 url: /fr/net/programming-with-attachments/get-individual-attachment/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to get an individual attachment of a PDF file using Aspose.PDF for .NET.
+Dans ce didacticiel, nous vous guiderons étape par étape à travers le code source C# suivant pour obtenir une pièce jointe individuelle d'un fichier PDF à l'aide d'Aspose.PDF pour .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Assurez-vous d'avoir installé la bibliothèque Aspose.PDF et configuré votre environnement de développement avant de commencer. Posséder également des connaissances de base en programmation C#.
 
-### Step 1: Document Directory Setup
+### Étape 1 : configuration du répertoire de documents
 
-In the provided source code, you need to specify the directory where the PDF file is located from which you want to get the individual attachment. Change the "dataDir" variable to the desired directory.
+Dans le code source fourni, vous devez spécifier le répertoire où se trouve le fichier PDF à partir duquel vous souhaitez obtenir la pièce jointe individuelle. Remplacez la variable "dataDir" par le répertoire souhaité.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Étape 2 : Ouvrez le document PDF existant
 
-We open the existing PDF document using the specified path.
+Nous ouvrons le document PDF existant en utilisant le chemin spécifié.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetIndividualAttachment.pdf");
 ```
 
-### Step 3: Obtaining a Specific Attachment
+### Étape 3 : obtention d'une pièce jointe spécifique
 
-We retrieve a specific attachment from the document's attachments collection. In this example, we get the first attachment using index 1.
+Nous récupérons une pièce jointe spécifique de la collection de pièces jointes du document. Dans cet exemple, nous obtenons la première pièce jointe en utilisant l'index 1.
 
 ```csharp
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
 ```
 
-### Step 4: Get File Properties
+### Étape 4 : obtenir les propriétés du fichier
 
-We display attachment properties such as name, description, MIME type, control hash, date created, date modified, and size.
+Nous affichons les propriétés des pièces jointes telles que le nom, la description, le type MIME, le hachage de contrôle, la date de création, la date de modification et la taille.
 
 ```csharp
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Check if object parameters contain additional information
+// Vérifiez si les paramètres de l'objet contiennent des informations supplémentaires
 if (fileSpecification.Params != null)
 {
 Console.WriteLine("Check Hash: {0}", fileSpecification.Params.CheckSum);
@@ -54,9 +54,9 @@ Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 ```
 
-### Step 5: Retrieve attachment and save to file
+### Étape 5 : Récupérer la pièce jointe et l'enregistrer dans un fichier
 
-We retrieve the content of the attachment and save it to a text file. In this example, the file is saved with the name "test_out.txt".
+Nous récupérons le contenu de la pièce jointe et l'enregistrons dans un fichier texte. Dans cet exemple, le fichier est enregistré sous le nom « test_out.txt ».
 
 ```csharp
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
@@ -66,21 +66,21 @@ fileStream.Write(fileContent, 0, fileContent.Length);
 fileStream.Close();
 ```
 
-### Sample source code for Get Individual Attachment using Aspose.PDF for .NET 
+### Exemple de code source pour obtenir une pièce jointe individuelle à l’aide d’Aspose.PDF pour .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir + "GetIndividualAttachment.pdf");
-// Get particular embedded file
+// Obtenir un fichier intégré particulier
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
-// Get the file properties
+// Obtenez les propriétés du fichier
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-// Check if parameter object contains the parameters
+//Vérifiez si l'objet paramètre contient les paramètres
 if (fileSpecification.Params != null)
 {
 	Console.WriteLine("CheckSum: {0}",
@@ -91,7 +91,7 @@ if (fileSpecification.Params != null)
 	fileSpecification.Params.ModDate);
 	Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
-// Get the attachment and write to file or stream
+// Obtenez la pièce jointe et écrivez dans un fichier ou un flux
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
 fileSpecification.Contents.Read(fileContent, 0, fileContent.Length);
 FileStream fileStream = new FileStream(dataDir + "test_out" + ".txt", FileMode.Create);
@@ -102,42 +102,42 @@ fileStream.Close();
 
 ## Conclusion
 
-In this tutorial, we explained how to get an individual attachment from a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and save attachments from your PDF files.
+Dans ce didacticiel, nous avons expliqué comment obtenir une pièce jointe individuelle à partir d'un fichier PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais utiliser ces connaissances pour extraire et enregistrer les pièces jointes de vos fichiers PDF.
 
-### FAQs for get individual attachment in PDF file
+### FAQ pour obtenir une pièce jointe individuelle dans un fichier PDF
 
-#### Q: What is the purpose of getting an individual attachment from a PDF document?
+#### Q : Quel est l'objectif d'obtenir une pièce jointe individuelle à partir d'un document PDF ?
 
-A: Getting an individual attachment allows you to extract and save a specific embedded file within a PDF, which can be useful for further analysis or manipulation.
+R : Obtenir une pièce jointe individuelle vous permet d'extraire et d'enregistrer un fichier intégré spécifique dans un PDF, ce qui peut être utile pour une analyse ou une manipulation plus approfondie.
 
-#### Q: How can I benefit from this tutorial in my PDF-related tasks?
+#### Q : Comment puis-je bénéficier de ce didacticiel dans mes tâches liées aux PDF ?
 
-A: This tutorial provides step-by-step instructions and C# source code to retrieve and save a particular attachment from a PDF document using Aspose.PDF for .NET.
+R : Ce didacticiel fournit des instructions étape par étape et du code source C# pour récupérer et enregistrer une pièce jointe particulière à partir d'un document PDF à l'aide d'Aspose.PDF pour .NET.
 
-#### Q: What attachment properties can I access using this tutorial?
+#### Q : À quelles propriétés des pièces jointes puis-je accéder à l'aide de ce didacticiel ?
 
-A: You can access attachment properties such as name, description, MIME type, control hash, creation date, modification date, and size of the specific attachment.
+R : Vous pouvez accéder aux propriétés de la pièce jointe telles que le nom, la description, le type MIME, le hachage de contrôle, la date de création, la date de modification et la taille de la pièce jointe spécifique.
 
-#### Q: Can I modify the code to get attachments other than the first attachment?
+#### Q : Puis-je modifier le code pour obtenir des pièces jointes autres que la première pièce jointe ?
 
-A: Absolutely, you can adjust the index (e.g., `pdfDocument.EmbeddedFiles[1]`) to retrieve attachments at different indices within the PDF.
+ R : Absolument, vous pouvez ajuster l'index (par exemple,`pdfDocument.EmbeddedFiles[1]`) pour récupérer les pièces jointes à différents index du PDF.
 
-#### Q: How do I save the retrieved attachment to a file?
+#### Q : Comment puis-je enregistrer la pièce jointe récupérée dans un fichier ?
 
-A: This tutorial provides code to retrieve the attachment's content and save it to a text file with a specified name.
+R : Ce didacticiel fournit du code pour récupérer le contenu de la pièce jointe et l'enregistrer dans un fichier texte sous un nom spécifié.
 
-#### Q: What is the significance of the "Check Hash" property in attachment information?
+#### Q : Quelle est la signification de la propriété « Vérifier le hachage » dans les informations des pièces jointes ?
 
-A: The "Check Hash" property represents the control hash value of the attachment, which can be used to verify the integrity of the attachment.
+R : La propriété « Vérifier le hachage » représente la valeur de hachage de contrôle de la pièce jointe, qui peut être utilisée pour vérifier l'intégrité de la pièce jointe.
 
-#### Q: Can I extend this knowledge to extract attachments with specific criteria, such as file type?
+#### Q : Puis-je étendre ces connaissances pour extraire des pièces jointes avec des critères spécifiques, tels que le type de fichier ?
 
-A: Yes, you can enhance the code to filter attachments based on specific criteria such as file type or other properties.
+R : Oui, vous pouvez améliorer le code pour filtrer les pièces jointes en fonction de critères spécifiques tels que le type de fichier ou d'autres propriétés.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of extracting individual attachments?
+#### Q : Comment Aspose.PDF pour .NET simplifie-t-il le processus d'extraction de pièces jointes individuelles ?
 
-A: Aspose.PDF for .NET provides a user-friendly API that facilitates the extraction and manipulation of attachments within PDF documents.
+R : Aspose.PDF pour .NET fournit une API conviviale qui facilite l'extraction et la manipulation des pièces jointes dans les documents PDF.
 
-#### Q: Is this tutorial relevant for password-protected PDF files as well?
+#### Q : Ce didacticiel est-il également pertinent pour les fichiers PDF protégés par mot de passe ?
 
-A: Yes, you can adapt similar techniques to retrieve individual attachments from password-protected PDF files using Aspose.PDF for .NET.
+R : Oui, vous pouvez adapter des techniques similaires pour récupérer des pièces jointes individuelles à partir de fichiers PDF protégés par mot de passe à l'aide d'Aspose.PDF pour .NET.

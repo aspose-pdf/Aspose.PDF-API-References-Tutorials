@@ -1,49 +1,49 @@
 ---
-title: Rendering Replaceable Symbols In PDF File
-linktitle: Rendering Replaceable Symbols In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to render replaceable symbols in PDF file using Aspose.PDF for .NET.
+title: 在 PDF 文件中渲染可替换符号
+linktitle: 在 PDF 文件中渲染可替换符号
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中呈现可替换符号。
 type: docs
 weight: 310
 url: /zh/net/programming-with-text/rendering-replaceable-symbols/
 ---
-In this tutorial, we will explain how to render replaceable symbols in PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of creating a PDF, adding a text fragment with newline markers, setting text properties, positioning the text, and saving the PDF using the provided C# source code.
+在本教程中，我们将解释如何使用 .NET 的 Aspose.PDF 库在 PDF 文件中渲染可替换符号。我们将逐步完成创建 PDF、添加带有换行符标记的文本片段、设置文本属性、定位文本以及使用提供的 C# 源代码保存 PDF 的过程。
 
-## Prerequisites
+## 先决条件
 
-Before you begin, ensure that you have the following:
+在开始之前，请确保您具备以下条件：
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- 安装了 Aspose.PDF for .NET 库。
+- 对 C# 编程有基本了解。
 
-## Step 1: Set up the Document Directory
+## 第 1 步：设置文档目录
 
-First, you need to set the path to the directory where you want to save the generated PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your desired directory.
+首先，您需要设置要保存生成的 PDF 文件的目录路径。代替`"YOUR DOCUMENT DIRECTORY"`在里面`dataDir`变量包含您所需目录的路径。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a PDF Document and Page
+## 第 2 步：创建 PDF 文档和页面
 
-Next, we create a new PDF document and add a page to it using the `Document` class and `Page` class from the Aspose.PDF library.
+接下来，我们创建一个新的 PDF 文档并使用以下命令向其中添加页面`Document`类和`Page`来自 Aspose.PDF 库的类。
 
 ```csharp
 Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page applicationFirstPage = (Aspose.Pdf.Page)pdfApplicationDoc.Pages.Add();
 ```
 
-## Step 3: Add Text Fragment with Newline Markers
+## 第 3 步：添加带有换行标记的文本片段
 
-We create a `TextFragment` object and set its text to include newline markers (`Environment.NewLine`) to represent multiple lines of text.
+我们创建一个`TextFragment`对象并设置其文本以包含换行符（`Environment.NewLine`) 来表示多行文本。
 
 ```csharp
 Aspose.Pdf.Text.TextFragment textFragment = new Aspose.Pdf.Text.TextFragment("Applicant Name: " + Environment.NewLine + " Joe Smoe");
 ```
 
-## Step 4: Set Text Fragment Properties
+## 步骤 4：设置文本片段属性
 
-We can set various properties for the text fragment if desired, such as font size, font, background color, and foreground color.
+如果需要，我们可以为文本片段设置各种属性，例如字体大小、字体、背景颜色和前景色。
 
 ```csharp
 textFragment.TextState.FontSize = 12;
@@ -52,9 +52,9 @@ textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
 ```
 
-## Step 5: Create Text Paragraph and Position
+## 第5步：创建文本段落和位置
 
-We create a `TextParagraph` object, append the text fragment to the paragraph, and set the position of the paragraph on the page.
+我们创建一个`TextParagraph`对象，将文本片段附加到段落中，并设置段落在页面上的位置。
 
 ```csharp
 TextParagraph par = new TextParagraph();
@@ -62,18 +62,18 @@ par.AppendLine(textFragment);
 par.Position = new Aspose.Pdf.Text.Position(100, 600);
 ```
 
-## Step 6: Add Text Paragraph to the Page
+## 第 6 步：将文本段落添加到页面
 
-We create a `TextBuilder` object with the page and append the text paragraph to the text builder.
+我们创建一个`TextBuilder`对象与页面并将文本段落附加到文本生成器。
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(applicationFirstPage);
 textBuilder.AppendParagraph(par);
 ```
 
-## Step 7: Save the PDF Document
+## 第7步：保存PDF文档
 
-Finally, we save the PDF document to the specified output file.
+最后，我们将PDF文档保存到指定的输出文件中。
 
 ```csharp
 dataDir = dataDir + "RenderingReplaceableSymbols_out.pdf";
@@ -81,82 +81,82 @@ pdfApplicationDoc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols rendered successfully during PDF creation.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Rendering Replaceable Symbols using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 渲染可替换符号的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page applicationFirstPage = (Aspose.Pdf.Page)pdfApplicationDoc.Pages.Add();
-// Initialize new TextFragment with text containing required newline markers
+//使用包含所需换行标记的文本初始化新的 TextFragment
 Aspose.Pdf.Text.TextFragment textFragment = new Aspose.Pdf.Text.TextFragment("Applicant Name: " + Environment.NewLine + " Joe Smoe");
-// Set text fragment properties if necessary
+//如有必要，设置文本片段属性
 textFragment.TextState.FontSize = 12;
 textFragment.TextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman");
 textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-// Create TextParagraph object
+//创建 TextParagraph 对象
 TextParagraph par = new TextParagraph();
-// Add new TextFragment to paragraph
+//添加新的 TextFragment 到段落
 par.AppendLine(textFragment);
-// Set paragraph position
+//设置段落位置
 par.Position = new Aspose.Pdf.Text.Position(100, 600);
-// Create TextBuilder object
+//创建 TextBuilder 对象
 TextBuilder textBuilder = new TextBuilder(applicationFirstPage);
-// Add the TextParagraph using TextBuilder
+//使用 TextBuilder 添加 TextParagraph
 textBuilder.AppendParagraph(par);
 dataDir = dataDir + "RenderingReplaceableSymbols_out.pdf";
 pdfApplicationDoc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols render successfully duing pdf creation.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, you have learned how to render replaceable symbols in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can create a PDF, add text with newline markers, set text properties, position the text on the page, and save the PDF.
+在本教程中，您学习了如何使用 .NET 的 Aspose.PDF 库在 PDF 文档中呈现可替换符号。通过遵循分步指南并执行提供的 C# 代码，您可以创建 PDF、添加带有换行符标记的文本、设置文本属性、在页面上放置文本以及保存 PDF。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of the "Rendering Replaceable Symbols In PDF File" tutorial?
+#### 问：“渲染 PDF 文件中的可替换符号”教程的目的是什么？
 
-A: The "Rendering Replaceable Symbols In PDF File" tutorial demonstrates how to use the Aspose.PDF library for .NET to create a PDF document that includes replaceable symbols. These symbols are represented as text fragments with newline markers to create multi-line content.
+答：“在 PDF 文件中渲染可替换符号”教程演示了如何使用 .NET 的 Aspose.PDF 库创建包含可替换符号的 PDF 文档。这些符号表示为带有换行标记的文本片段，以创建多行内容。
 
-#### Q: Why would I want to render replaceable symbols in a PDF document?
+#### 问：为什么我要在 PDF 文档中呈现可替换符号？
 
-A: Rendering replaceable symbols is useful when you need to dynamically generate PDF content that includes variable or user-specific information. These symbols act as placeholders that can be replaced with actual data during runtime, such as form field values or personalized details.
+答：当您需要动态生成包含变量或用户特定信息的 PDF 内容时，渲染可替换符号非常有用。这些符号充当占位符，可以在运行时替换为实际数据，例如表单字段值或个性化详细信息。
 
-#### Q: How do I set up the document directory?
+#### 问：如何设置文档目录？
 
-A: To set up the document directory:
+A：设置文档目录：
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where you want to save the generated PDF file.
+1. 代替`"YOUR DOCUMENT DIRECTORY"`在里面`dataDir`变量包含要保存生成的 PDF 文件的目录路径。
 
-#### Q: How do I render replaceable symbols in a PDF document using the Aspose.PDF library?
+#### 问：如何使用 Aspose.PDF 库在 PDF 文档中渲染可替换符号？
 
-A: The tutorial guides you through the process step by step:
+答：本教程将逐步指导您完成整个过程：
 
-1. Create a new PDF document using the `Document` class.
-2. Add a page to the document using the `Page` class.
-3. Create a `TextFragment` object with newline markers (`Environment.NewLine`) to represent multi-line content.
-4. Customize the text fragment's properties such as font size, font, background color, and foreground color.
-5. Create a `TextParagraph` object, append the text fragment to it, and set the position of the paragraph on the page.
-6. Create a `TextBuilder` object with the page and append the text paragraph to it.
-7. Save the PDF document.
+1. 使用以下命令创建新的 PDF 文档`Document`班级。
+2. 使用以下命令向文档添加页面`Page`班级。
+3. 创建一个`TextFragment`带有换行符的对象（`Environment.NewLine`) 来表示多行内容。
+4. 自定义文本片段的属性，例如字体大小、字体、背景颜色和前景色。
+5. 创建一个`TextParagraph`对象，将文本片段附加到其上，并设置该段落在页面上的位置。
+6. 创建一个`TextBuilder`对象与页面并将文本段落附加到其中。
+7. 保存 PDF 文档。
 
-#### Q: What is the purpose of using newline markers (`Environment.NewLine`) in the text fragment?
+#### 问：使用换行符的目的是什么（`Environment.NewLine`) in the text fragment?
 
-A: Newline markers are used to create multi-line content within a single text fragment. By using `Environment.NewLine`, you can indicate where line breaks should occur in the text.
+答：换行标记用于在单个文本片段中创建多行内容。通过使用`Environment.NewLine`，您可以指示文本中应出现换行符的位置。
 
-#### Q: Can I customize the appearance of the replaceable symbols?
+#### 问：我可以自定义可替换符号的外观吗？
 
-A: Yes, you can customize various properties of the text fragment, such as font size, font, background color, and foreground color. These properties determine the visual appearance of the replaceable symbols in the PDF document.
+答：是的，您可以自定义文本片段的各种属性，例如字体大小、字体、背景颜色和前景色。这些属性决定 PDF 文档中可替换符号的视觉外观。
 
-#### Q: How do I specify the position of the text on the page?
+#### 问：如何指定文本在页面上的位置？
 
-A: You can set the position of the text by creating a `TextParagraph` object and using the `Position` property to specify the X and Y coordinates on the page where the paragraph should be positioned.
+ A：您可以通过创建一个来设置文本的位置`TextParagraph`对象并使用`Position`属性来指定页面上段落应放置的 X 和 Y 坐标。
 
-#### Q: What is the expected outcome of executing the provided code?
+#### 问：执行所提供的代码的预期结果是什么？
 
-A: By following the tutorial and running the provided C# code, you will create a PDF document that includes replaceable symbols. The replaceable symbols will be represented as text fragments with newline markers and customized properties.
+答：通过遵循教程并运行提供的 C# 代码，您将创建一个包含可替换符号的 PDF 文档。可替换的符号将表示为带有换行符和自定义属性的文本片段。
 
-#### Q: Can I use this approach to dynamically generate personalized PDF documents?
+#### 问：我可以使用这种方法动态生成个性化的PDF文档吗？
 
-A: Yes, this approach is suitable for dynamically generating PDF documents with personalized information. By replacing the replaceable symbols with actual data, you can create customized PDF content for each user or scenario.
+答：是的，这种方式适合动态生成带有个性化信息的PDF文档。通过用实际数据替换可替换符号，您可以为每个用户或场景创建自定义的 PDF 内容。

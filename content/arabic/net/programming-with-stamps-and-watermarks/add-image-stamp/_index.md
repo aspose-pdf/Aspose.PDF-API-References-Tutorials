@@ -1,52 +1,52 @@
 ---
-title: Add Image Stamp In PDF File
-linktitle: Add Image Stamp In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily add an image stamp in PDF file with Aspose.PDF for .NET.
+title: إضافة ختم الصورة في ملف PDF
+linktitle: إضافة ختم الصورة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة ختم صورة بسهولة إلى ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 20
 url: /ar/net/programming-with-stamps-and-watermarks/add-image-stamp/
 ---
-In this tutorial, we will take you step by step on how to add an image buffer in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to add a custom image buffer to a specific page in the PDF file.
+في هذا البرنامج التعليمي، سنأخذك خطوة بخطوة حول كيفية إضافة مخزن مؤقت للصورة في ملف PDF باستخدام Aspose.PDF لـ .NET. سنوضح لك كيفية استخدام كود مصدر C# المقدم لإضافة مخزن مؤقت مخصص للصورة إلى صفحة معينة في ملف PDF.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- بيئة تطوير .NET مثبتة.
+- تم تنزيل مكتبة Aspose.PDF الخاصة بـ .NET والإشارة إليها في مشروعك.
 
-## Step 2: Loading the PDF document
+## الخطوة 2: تحميل مستند PDF
 
-The first step is to load the existing PDF document into your project. Here's how:
+الخطوة الأولى هي تحميل مستند PDF الموجود في مشروعك. إليك الطريقة:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "AddImageStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+تأكد من استبدال "دليل المستندات الخاص بك" بالمسار الفعلي للدليل الذي يوجد به مستند PDF الخاص بك.
 
-## Step 3: Creating the framebuffer
+## الخطوة 3: إنشاء المخزن المؤقت للإطار
 
-Now that you have uploaded the PDF document, you can create the image stamp to add. Here's how to do it:
+الآن بعد أن قمت بتحميل مستند PDF، يمكنك إنشاء ختم الصورة لإضافته. هيريس كيفية القيام بذلك:
 
 ```csharp
-// Create the frame buffer
+// إنشاء المخزن المؤقت للإطار
 ImageStamp imageStamp = new ImageStamp(dataDir + "aspose-logo.jpg");
 ```
 
-The code above creates a new image buffer using the "aspose-logo.jpg" file. Make sure the image file path is correct.
+يقوم الكود أعلاه بإنشاء مخزن مؤقت جديد للصورة باستخدام الملف "aspose-logo.jpg". تأكد من صحة مسار ملف الصورة.
 
-## Step 4: Configuring Image Buffer Properties
+## الخطوة 4: تكوين خصائص المخزن المؤقت للصورة
 
-Before adding the image stamp to the PDF document, you can configure various properties of the stamp, such as opacity, size, position, etc. Here's how:
+قبل إضافة ختم الصورة إلى مستند PDF، يمكنك تكوين خصائص مختلفة للختم، مثل العتامة والحجم والموضع وما إلى ذلك. وإليك الطريقة:
 
 ```csharp
-// Configure image buffer properties
+// تكوين خصائص المخزن المؤقت للصورة
 imageStamp. Background = true;
 imageStamp. XIndent = 100;
 imageStamp. YIndent = 100;
@@ -56,40 +56,40 @@ imageStamp.Rotate = Rotate.on270;
 imageStamp. Opacity = 0.5;
 ```
 
-You can adjust these properties according to your needs.
+يمكنك ضبط هذه الخصائص وفقًا لاحتياجاتك.
 
-## Step 5: Adding the image stamp to the PDF
+## الخطوة 5: إضافة ختم الصورة إلى ملف PDF
 
-Now that the image stamp is ready, you can add it to a specific page of the PDF document. Here's how:
+الآن بعد أن أصبح ختم الصورة جاهزًا، يمكنك إضافته إلى صفحة معينة من مستند PDF. إليك الطريقة:
 
 ```csharp
-// Add the frame buffer to the specific page
+// أضف المخزن المؤقت للإطار إلى الصفحة المحددة
 pdfDocument.Pages[1].AddStamp(imageStamp);
 ```
 
-The code above adds the image buffer to the first page of the PDF document. You can specify another page if needed.
+يضيف الكود أعلاه المخزن المؤقت للصورة إلى الصفحة الأولى من مستند PDF. يمكنك تحديد صفحة أخرى إذا لزم الأمر.
 
-## Step 6: Save the output document
+## الخطوة 6: احفظ مستند الإخراج
 
-Once you have added the image buffer, you can save the modified PDF document. Here's how:
+بمجرد إضافة المخزن المؤقت للصورة، يمكنك حفظ مستند PDF المعدل. إليك الطريقة:
 
 ```csharp
-// Save the output document
+// احفظ مستند الإخراج
 pdfDocument.Save(dataDir);
 ```
 
-The above code saves the edited PDF document to the specified directory.
+يحفظ الكود أعلاه مستند PDF المحرر في الدليل المحدد.
 
-### Sample source code for Add Image Stamp using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإضافة ختم الصورة باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir+ "AddImageStamp.pdf");
 
-// Create image stamp
+// إنشاء ختم الصورة
 ImageStamp imageStamp = new ImageStamp(dataDir + "aspose-logo.jpg");
 imageStamp.Background = true;
 imageStamp.XIndent = 100;
@@ -99,53 +99,53 @@ imageStamp.Width = 300;
 imageStamp.Rotate = Rotation.on270;
 imageStamp.Opacity = 0.5;
 
-// Add stamp to particular page
+// إضافة طابع إلى صفحة معينة
 pdfDocument.Pages[1].AddStamp(imageStamp);
 dataDir = dataDir + "AddImageStamp_out.pdf";
 
-// Save output document
+// حفظ مستند الإخراج
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImage stamp added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have learned how to add an image buffer using Aspose.PDF for .NET. Now you can apply this knowledge to your own projects to add custom image stamps to PDF documents.
+تهنئة ! لقد تعلمت كيفية إضافة مخزن مؤقت للصورة باستخدام Aspose.PDF لـ .NET. يمكنك الآن تطبيق هذه المعرفة على مشاريعك الخاصة لإضافة طوابع صور مخصصة إلى مستندات PDF.
 
-### FAQ's for add image stamp in PDF file
+### الأسئلة الشائعة لإضافة ختم الصورة في ملف PDF
 
-#### Q: What is the purpose of adding an image buffer to a PDF document using Aspose.PDF for .NET?
+#### س: ما هو الغرض من إضافة مخزن مؤقت للصورة إلى مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Adding an image buffer to a PDF document allows you to incorporate custom images into the document, enhancing its visual appeal and conveying specific information or branding. This feature is useful for adding logos, watermarks, or other graphical elements to the PDF.
+ج: تتيح لك إضافة مخزن مؤقت للصور إلى مستند PDF دمج صور مخصصة في المستند، مما يعزز جاذبيته المرئية وينقل معلومات أو علامة تجارية محددة. هذه الميزة مفيدة لإضافة شعارات أو علامات مائية أو عناصر رسومية أخرى إلى ملف PDF.
 
-#### Q: Can I add multiple image buffers to different pages of the same PDF document?
+#### س: هل يمكنني إضافة عدة مخازن مؤقتة للصور إلى صفحات مختلفة من نفس مستند PDF؟
 
-A: Yes, you can add multiple image buffers to different pages of the same PDF document. The provided C# source code allows you to specify the target page for adding the image stamp, making it versatile for different pages within the document.
+ج: نعم، يمكنك إضافة عدة مخازن مؤقتة للصور إلى صفحات مختلفة من نفس مستند PDF. يسمح لك كود مصدر C# المقدم بتحديد الصفحة المستهدفة لإضافة ختم الصورة، مما يجعلها متعددة الاستخدامات لصفحات مختلفة داخل المستند.
 
-#### Q: How can I adjust the position and size of the image buffer within the PDF document?
+#### س: كيف يمكنني ضبط موضع وحجم المخزن المؤقت للصورة داخل مستند PDF؟
 
-A: You can customize the position and size of the image buffer by modifying the properties of the `ImageStamp` object. The code provided in the tutorial demonstrates how to set properties such as `XIndent`, `YIndent`, `Height`, and `Width` to control the positioning and dimensions of the image stamp.
+ ج: يمكنك تخصيص موضع وحجم المخزن المؤقت للصورة عن طريق تعديل خصائص الملف`ImageStamp` هدف. يوضح الكود الموجود في البرنامج التعليمي كيفية تعيين خصائص مثل`XIndent`, `YIndent`, `Height` ، و`Width` للتحكم في موضع وأبعاد ختم الصورة.
 
-#### Q: Is it possible to rotate the image buffer when adding it to the PDF document?
+#### س: هل من الممكن تدوير المخزن المؤقت للصورة عند إضافتها إلى مستند PDF؟
 
-A: Yes, you can rotate the image buffer before adding it to the PDF document by setting the `Rotate` property of the `ImageStamp` object. The code in the tutorial showcases how to rotate the image stamp using values like `Rotation.on270`, but you can adjust the rotation angle as needed.
+ ج: نعم، يمكنك تدوير المخزن المؤقت للصورة قبل إضافتها إلى مستند PDF عن طريق ضبط الإعداد`Rotate` ملكية`ImageStamp` هدف. يعرض الكود الموجود في البرنامج التعليمي كيفية تدوير ختم الصورة باستخدام قيم مثل`Rotation.on270`ولكن يمكنك ضبط زاوية الدوران حسب الحاجة.
 
-#### Q: Can I control the opacity of the image buffer when adding it to the PDF document?
+#### س: هل يمكنني التحكم في عتامة المخزن المؤقت للصورة عند إضافتها إلى مستند PDF؟
 
-A: Absolutely, you can control the opacity of the image buffer by adjusting the `Opacity` property of the `ImageStamp` object. The provided C# source code demonstrates how to set the opacity level, allowing you to achieve the desired transparency effect.
+ ج: بالتأكيد، يمكنك التحكم في عتامة المخزن المؤقت للصورة عن طريق ضبط`Opacity` ملكية`ImageStamp` هدف. يوضح كود مصدر C# المقدم كيفية ضبط مستوى العتامة، مما يسمح لك بتحقيق تأثير الشفافية المطلوب.
 
-#### Q: How can I integrate this method into my own projects to add image buffers to PDF documents?
+#### س: كيف يمكنني دمج هذه الطريقة في مشاريعي الخاصة لإضافة مخازن مؤقتة للصور إلى مستندات PDF؟
 
-A: To integrate this method, follow the provided steps and adapt the code to match your project's structure. By adding image buffers to PDF documents, you can enhance their visual presentation and convey specific branding or information.
+ج: لدمج هذه الطريقة، اتبع الخطوات المقدمة وقم بتعديل الكود ليتناسب مع هيكل مشروعك. من خلال إضافة مخازن مؤقتة للصور إلى مستندات PDF، يمكنك تحسين العرض المرئي الخاص بها ونقل علامة تجارية أو معلومات محددة.
 
-#### Q: Are there any considerations or limitations when adding image buffers to PDF documents?
+#### س: هل هناك أي اعتبارات أو قيود عند إضافة مخازن مؤقتة للصور إلى مستندات PDF؟
 
-A: While adding image buffers is straightforward, consider the overall layout and content of the PDF document. Ensure that the added image buffers do not obstruct critical information or negatively affect the document's readability.
+ج: على الرغم من أن إضافة مخازن مؤقتة للصور أمر بسيط، إلا أنه يجب مراعاة التخطيط العام ومحتوى مستند PDF. تأكد من أن المخازن المؤقتة للصور المضافة لا تعيق المعلومات الهامة أو تؤثر سلبًا على إمكانية قراءة المستند.
 
-#### Q: Can I use this method to add images other than logos, such as watermarks or custom graphics?
+#### س: هل يمكنني استخدام هذه الطريقة لإضافة صور غير الشعارات، مثل العلامات المائية أو الرسومات المخصصة؟
 
-A: Yes, you can use this method to add various types of images, including watermarks, custom graphics, or any other visual elements. The tutorial's code can be customized to add the desired images to your PDF documents.
+ج: نعم، يمكنك استخدام هذه الطريقة لإضافة أنواع مختلفة من الصور، بما في ذلك العلامات المائية أو الرسومات المخصصة أو أي عناصر مرئية أخرى. يمكن تخصيص رمز البرنامج التعليمي لإضافة الصور المطلوبة إلى مستندات PDF الخاصة بك.
 
-#### Q: Is it possible to automate the process of adding image buffers to multiple PDF documents?
+#### س: هل من الممكن أتمتة عملية إضافة مخازن الصور المؤقتة إلى مستندات PDF متعددة؟
 
-A: Yes, you can automate the process of adding image buffers to multiple PDF documents by creating a script or program that iterates through a list of documents and applies the same image stamping process to each one.
+ج: نعم، يمكنك أتمتة عملية إضافة مخازن الصور المؤقتة إلى مستندات PDF متعددة عن طريق إنشاء برنامج نصي أو برنامج يتكرر خلال قائمة المستندات ويطبق نفس عملية ختم الصور على كل منها.

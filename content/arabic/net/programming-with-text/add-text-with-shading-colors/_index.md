@@ -1,26 +1,26 @@
 ---
-title: Add Text With Shading Colors In PDF File
-linktitle: Add Text With Shading Colors In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text with shading colors in PDF file using Aspose.PDF for .NET.
+title: إضافة نص مع ألوان التظليل في ملف PDF
+linktitle: إضافة نص مع ألوان التظليل في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة نص بألوان تظليل في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 80
 url: /ar/net/programming-with-text/add-text-with-shading-colors/
 ---
-This tutorial will guide you through the process of adding text with shading colors in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+سيرشدك هذا البرنامج التعليمي خلال عملية إضافة نص بألوان تظليل في ملف PDF باستخدام Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم الخطوات اللازمة.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## متطلبات
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio أو أي مترجم C# آخر مثبت على جهازك.
+- Aspose.PDF لمكتبة .NET. يمكنك تنزيله من موقع Aspose الرسمي أو استخدام مدير الحزم مثل NuGet لتثبيته.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## الخطوة 1: إعداد المشروع
+1. قم بإنشاء مشروع C# جديد في بيئة التطوير المفضلة لديك.
+2. قم بإضافة مرجع إلى Aspose.PDF لمكتبة .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to add text with shading colors, add the following using directive at the top of the file:
+## الخطوة 2: استيراد مساحات الأسماء المطلوبة
+في ملف التعليمات البرمجية الذي تريد إضافة نص فيه بألوان تظليل، أضف ما يلي باستخدام التوجيه الموجود أعلى الملف:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,21 +28,21 @@ using Aspose.Pdf.Text;
 using System.Drawing;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## الخطوة 3: قم بتعيين دليل المستند
+ في الكود، حدد السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدال`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل حيث يتم تخزين المستندات الخاصة بك.
 
-## Step 4: Load the PDF document
-Load the existing PDF document using the `Document` constructor and provide the path to the document file.
+## الخطوة 4: قم بتحميل مستند PDF
+ قم بتحميل مستند PDF الموجود باستخدام الملف`Document` منشئ وتوفير المسار إلى ملف الوثيقة.
 
 ```csharp
 using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 {
-     // Code goes here...
+     // الكود يذهب هنا...
 }
 ```
 
-## Step 5: Find the text to modify
-Use `TextFragmentAbsorber` to find the desired text within the document. In the provided code, it looks for the text "Lorem ipsum".
+## الخطوة 5: ابحث عن النص المراد تعديله
+ يستخدم`TextFragmentAbsorber` للعثور على النص المطلوب داخل المستند. في الكود المقدم، يتم البحث عن النص "Lorem ipsum".
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -50,8 +50,8 @@ pdfDocument.Pages.Accept(absorb);
 TextFragment textFragment = absorb.TextFragments[1];
 ```
 
-## Step 6: Set shading color for the text
-Create a new `Color` object with a pattern colorspace and specify the gradient shading colors. Assign this color to the `ForegroundColor` property of the `TextState` of the `TextFragment` object.
+## الخطوة 6: تعيين لون التظليل للنص
+ إنشاء جديد`Color` كائن بمساحة ألوان نمطية وحدد ألوان التظليل المتدرجة. تخصيص هذا اللون ل`ForegroundColor` ملكية`TextState` التابع`TextFragment` هدف.
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
@@ -60,30 +60,30 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 };
 ```
 
-## Step 7: Apply additional text formatting (optional)
-You can apply additional formatting to the text fragment, such as underlining, by modifying the properties of the `TextState` object.
+## الخطوة 7: تطبيق تنسيق النص الإضافي (اختياري)
+ يمكنك تطبيق تنسيق إضافي على جزء النص، مثل التسطير، عن طريق تعديل خصائص`TextState` هدف.
 
 ```csharp
 textFragment.TextState.Underline = true;
 ```
 
-## Step 8: Save the modified PDF document
-Save the modified PDF document using the `Save` method of the `Document` object.
+## الخطوة 8: احفظ مستند PDF المعدل
+ احفظ مستند PDF المعدل باستخدام الملف`Save` طريقة`Document` هدف.
 
 ```csharp
 pdfDocument.Save(dataDir + "text_out.pdf");
 ```
 
-### Sample source code for Add Text With Shading Colors using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإضافة نص مع ألوان التظليل باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 using (Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 {
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
 	pdfDocument.Pages.Accept(absorber);
 	TextFragment textFragment = absorber.TextFragments[1];
-	// Create new color with pattern colorspace
+	// قم بإنشاء لون جديد باستخدام مساحة ألوان النمط
 	textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 	{
 		PatternColorSpace = new Aspose.Pdf.Drawing.GradientAxialShading(Color.Red, Color.Blue)
@@ -93,18 +93,18 @@ using (Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 }
 ```
 
-## Conclusion
-You have successfully added text with shading colors to your PDF document using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## خاتمة
+لقد نجحت في إضافة نص بألوان تظليل إلى مستند PDF الخاص بك باستخدام Aspose.PDF لـ .NET. يمكن الآن العثور على ملف PDF الناتج في مسار ملف الإخراج المحدد.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the main focus of this tutorial?
+#### س: ما هو التركيز الرئيسي لهذا البرنامج التعليمي؟
 
-A: This tutorial guides you through the process of adding text with shading colors to a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the necessary steps to achieve this.
+ج: يرشدك هذا البرنامج التعليمي خلال عملية إضافة نص بألوان تظليل إلى ملف PDF باستخدام مكتبة Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم الخطوات اللازمة لتحقيق ذلك.
 
-#### Q: Which namespaces do I need to import for this tutorial?
+#### س: ما هي مساحات الأسماء التي أحتاج إلى استيرادها لهذا البرنامج التعليمي؟
 
-A: In the code file where you want to add text with shading colors, import the following namespaces at the beginning of the file:
+ج: في ملف التعليمات البرمجية حيث تريد إضافة نص بألوان تظليل، قم باستيراد مساحات الأسماء التالية في بداية الملف:
 
 ```csharp
 using Aspose.Pdf;
@@ -112,24 +112,24 @@ using Aspose.Pdf.Text;
 using System.Drawing;
 ```
 
-#### Q: How do I specify the document directory?
+#### س: كيف أحدد دليل المستندات؟
 
-A: In the code, locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ ج: في الكود، حدد موقع السطر`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدال`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك.
 
-#### Q: How do I load an existing PDF document?
+#### س: كيف يمكنني تحميل مستند PDF موجود؟
 
-A: In Step 4, you'll load an existing PDF document using the `Document` constructor and providing the path to the document file:
+ ج: في الخطوة 4، ستقوم بتحميل مستند PDF موجود باستخدام ملف`Document` المنشئ وتوفير المسار إلى ملف المستند:
 
 ```csharp
 using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 {
-     // Code goes here...
+     // الكود يذهب هنا...
 }
 ```
 
-#### Q: How do I find and modify specific text within the PDF document?
+#### س: كيف يمكنني العثور على نص معين وتعديله داخل مستند PDF؟
 
-A: In Step 5, you'll use the `TextFragmentAbsorber` to find the desired text within the document. Then, you can modify its properties:
+ ج: في الخطوة 5، ستستخدم`TextFragmentAbsorber`للعثور على النص المطلوب داخل المستند. ومن ثم يمكنك تعديل خصائصه:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -137,9 +137,9 @@ pdfDocument.Pages.Accept(absorber);
 TextFragment textFragment = absorber.TextFragments[1];
 ```
 
-#### Q: How can I set shading colors for the text?
+#### س: كيف يمكنني ضبط ألوان التظليل للنص؟
 
-A: In Step 6, you'll create a new `Color` object with a pattern colorspace and specify the gradient shading colors. Assign this color to the `ForegroundColor` property of the `TextState` of the `TextFragment` object:
+ ج: في الخطوة 6، ستقوم بإنشاء ملف جديد`Color` كائن بمساحة ألوان نمطية وحدد ألوان التظليل المتدرجة. تخصيص هذا اللون ل`ForegroundColor` ملكية`TextState` التابع`TextFragment` هدف:
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
@@ -148,22 +148,22 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 };
 ```
 
-#### Q: Can I apply additional text formatting to the modified text?
+#### س: هل يمكنني تطبيق تنسيق إضافي للنص على النص المعدل؟
 
-A: Yes, in Step 7, you can apply additional text formatting such as underlining by modifying the properties of the `TextState` object:
+ ج: نعم، في الخطوة 7، يمكنك تطبيق تنسيق إضافي للنص مثل التسطير عن طريق تعديل خصائص`TextState` هدف:
 
 ```csharp
 textFragment.TextState.Underline = true;
 ```
 
-#### Q: How do I save the modified PDF document?
+#### س: كيف يمكنني حفظ مستند PDF المعدل؟
 
-A: In Step 8, you'll save the modified PDF document using the `Save` method of the `Document` object:
+ ج: في الخطوة 8، ستحفظ مستند PDF المعدل باستخدام ملف`Save` طريقة`Document` هدف:
 
 ```csharp
 pdfDocument.Save(dataDir + "text_out.pdf");
 ```
 
-#### Q: What is the main takeaway from this tutorial?
+#### س: ما هي الوجبات الرئيسية من هذا البرنامج التعليمي؟
 
-A: By following this tutorial, you've successfully learned how to enhance your PDF document by adding text with shading colors using Aspose.PDF for .NET. This can be particularly useful for highlighting and emphasizing specific text content within your PDF files.
+ج: باتباع هذا البرنامج التعليمي، تكون قد تعلمت بنجاح كيفية تحسين مستند PDF الخاص بك عن طريق إضافة نص بألوان تظليل باستخدام Aspose.PDF لـ .NET. يمكن أن يكون هذا مفيدًا بشكل خاص لتسليط الضوء على محتوى نصي معين والتأكيد عليه داخل ملفات PDF الخاصة بك.

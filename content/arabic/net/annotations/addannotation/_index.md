@@ -1,38 +1,38 @@
 ---
-title: Add PDF Annotation
-linktitle: Add Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text PDF annotations with Aspose.PDF for .NET using this C# source code. Customize your annotations with specific details and icons.
+title: إضافة شرح PDF
+linktitle: إضافة تعليق توضيحي
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة تعليقات توضيحية نصية بتنسيق PDF باستخدام Aspose.PDF لـ .NET باستخدام كود مصدر C# هذا. قم بتخصيص التعليقات التوضيحية الخاصة بك بتفاصيل وأيقونات محددة.
 type: docs
 weight: 10
 url: /ar/net/annotations/addannotation/
 ---
-Adding annotations to PDF documents is a powerful feature that can enhance collaboration and review processes. Aspose.PDF for .NET makes it easy to add annotations programmatically to PDF documents using C#. In this guide, we will explain step-by-step how to use Aspose.PDF for .NET to add annotations to a PDF document.
+تعد إضافة التعليقات التوضيحية إلى مستندات PDF ميزة قوية يمكنها تحسين عمليات التعاون والمراجعة. يسهل Aspose.PDF for .NET إضافة التعليقات التوضيحية برمجيًا إلى مستندات PDF باستخدام لغة C#. في هذا الدليل، سنشرح خطوة بخطوة كيفية استخدام Aspose.PDF لـ .NET لإضافة التعليقات التوضيحية إلى مستند PDF.
 
-## Step 1: Create a New Project and Install Aspose.PDF for .NET
+## الخطوة 1: إنشاء مشروع جديد وتثبيت Aspose.PDF لـ .NET
 
-Before we start writing the code for adding annotations, we need to create a new project and install Aspose.PDF for .NET. To install Aspose.PDF for .NET, follow these steps:
+قبل أن نبدأ في كتابة التعليمات البرمجية لإضافة التعليقات التوضيحية، نحتاج إلى إنشاء مشروع جديد وتثبيت Aspose.PDF لـ .NET. لتثبيت Aspose.PDF لـ .NET، اتبع الخطوات التالية:
 
-1. Open Visual Studio and create a new C# project.
-2. Right-click on the project in the Solution Explorer and select "Manage NuGet Packages".
-3. Search for "Aspose.PDF" and select "Install".
+1. افتح Visual Studio وقم بإنشاء مشروع C# جديد.
+2. انقر بزر الماوس الأيمن على المشروع في Solution Explorer وحدد "إدارة حزم NuGet".
+3. ابحث عن "Aspose.PDF" وحدد "تثبيت".
 
-Once the installation is complete, we can start writing the code.
+بمجرد اكتمال التثبيت، يمكننا البدء في كتابة الكود.
 
-## Step 2: Open the PDF Document
+## الخطوة 2: افتح مستند PDF
 
-The first step in adding annotations is to open the PDF document. We can use the following code to open the document:
+الخطوة الأولى في إضافة التعليقات التوضيحية هي فتح مستند PDF. يمكننا استخدام الكود التالي لفتح المستند:
 
 ```csharp
 string dataDir = "YOUR DATA DIRECTORY";
 Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
 ```
 
-In this code, we specify the path to the PDF document we want to open. Make sure to replace "YOUR DATA DIRECTORY" with the actual path to your data directory.
+في هذا الكود، نحدد المسار إلى مستند PDF الذي نريد فتحه. تأكد من استبدال "دليل بياناتك" بالمسار الفعلي لدليل بياناتك.
 
-## Step 3: Create the Annotation
+## الخطوة 3: إنشاء التعليق التوضيحي
 
-To add an annotation, we need to create a new instance of the `TextAnnotation` class. We can use the following code to create a new text annotation:
+ لإضافة تعليق توضيحي، نحتاج إلى إنشاء مثيل جديد لـ`TextAnnotation` فصل. يمكننا استخدام الكود التالي لإنشاء تعليق توضيحي نصي جديد:
 
 ```csharp
 TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
@@ -44,11 +44,11 @@ textAnnotation.Open = true;
 textAnnotation.Icon = TextIcon.Key;
 ```
 
-In this code, we create a new text annotation on the second page of the PDF document. We also set the title, subject, state, contents, open, and icon properties of the annotation.
+في هذا الكود، نقوم بإنشاء تعليق توضيحي نصي جديد في الصفحة الثانية من مستند PDF. نقوم أيضًا بتعيين خصائص العنوان والموضوع والحالة والمحتويات والفتح والرمز للتعليق التوضيحي.
 
-## Step 4: Customize the Annotation
+## الخطوة 4: تخصيص التعليق التوضيحي
 
-We can customize the appearance of the annotation using the `Border` class. We can use the following code to customize the border of the annotation:
+ يمكننا تخصيص مظهر التعليق التوضيحي باستخدام`Border` فصل. يمكننا استخدام الكود التالي لتخصيص حدود التعليق التوضيحي:
 
 ```csharp
 Border border = new Border(textAnnotation);
@@ -58,37 +58,37 @@ textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
 ```
 
-In this code, we create a new `Border` object and set its width and dash properties. We then set the `Border` property of the annotation to the new `Border` object. Finally, we set the `Rect` property of the annotation to specify its position and size.
+ في هذا الكود نقوم بإنشاء جديد`Border`الكائن وتعيين خصائص العرض والشرطة. نقوم بعد ذلك بتعيين`Border` خاصية الشرح للجديد`Border` هدف. وأخيراً قمنا بتعيين`Rect` خاصية التعليق التوضيحي لتحديد موضعه وحجمه.
 
-## Step 5: Add the Annotation to the PDF Document
+## الخطوة 5: أضف التعليق التوضيحي إلى مستند PDF
 
-Once we have created and customized the annotation, we need to add it to the PDF document. We can use the following code to add the annotation to the PDF document:
+بمجرد إنشاء التعليق التوضيحي وتخصيصه، نحتاج إلى إضافته إلى مستند PDF. يمكننا استخدام الكود التالي لإضافة التعليق التوضيحي إلى مستند PDF:
 
 ```csharp
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
 ```
 
-In this code, we add the annotation to the annotations collection of the second page of the PDF document.
+في هذا الكود، نضيف التعليق التوضيحي إلى مجموعة التعليقات التوضيحية للصفحة الثانية من مستند PDF.
 
-## Step 6: Save the Output File
+## الخطوة 6: احفظ ملف الإخراج
 
-Finally, we need to save the PDF document with the added annotation. We can use the following code to save the output file:
+أخيرًا، نحتاج إلى حفظ مستند PDF مع التعليق التوضيحي المُضاف. يمكننا استخدام الكود التالي لحفظ ملف الإخراج:
 
 ```csharp
 dataDir = dataDir + "AddAnnotation_out.pdf";
 pdfDocument.Save(dataDir);
 ```
-### Example source code for Adding Annotation using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لإضافة تعليق توضيحي باستخدام Aspose.PDF لـ .NET
 
 
 ```csharp   
- // The path to the documents directory.
+ // المسار إلى دليل المستندات.
 string dataDir = "YOUR DATA DIRECTORY";
 
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
 
-// Create annotation
+// إنشاء تعليق توضيحي
 TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
 textAnnotation.Title = "Sample Annotation Title";
 textAnnotation.Subject = "Sample Subject";
@@ -103,36 +103,36 @@ border.Dash = new Dash(1, 1);
 textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
 
-// Add annotation in the annotations collection of the page
+// أضف تعليقًا توضيحيًا في مجموعة التعليقات التوضيحية للصفحة
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
 dataDir = dataDir + "AddAnnotation_out.pdf";
-// Save output file
+// حفظ ملف الإخراج
 pdfDocument.Save(dataDir);
 ```
-This code demonstrates how to add a text annotation with a specific title, subject, state, contents, and icon to a PDF page using Aspose.PDF for .NET. You can modify this code according to your requirements for adding annotations to your PDF documents. Just remember to replace YOUR DATA DIRECTORY with the actual directory path where your PDF file is located and where you want to save the output file.
+يوضح هذا الرمز كيفية إضافة تعليق توضيحي نصي بعنوان وموضوع وحالة ومحتويات وأيقونة محددة إلى صفحة PDF باستخدام Aspose.PDF لـ .NET. يمكنك تعديل هذا الرمز وفقًا لمتطلباتك لإضافة التعليقات التوضيحية إلى مستندات PDF الخاصة بك. فقط تذكر استبدال دليل البيانات الخاص بك بمسار الدليل الفعلي حيث يوجد ملف PDF الخاص بك والمكان الذي تريد حفظ ملف الإخراج فيه.
 
-## Conclusion
+## خاتمة
 
-Adding annotations to PDF documents using Aspose.PDF for .NET offers a valuable tool for enhancing document collaboration and review processes. By following the step-by-step guide provided in this article, developers can seamlessly integrate annotation capabilities into their C# applications.
+توفر إضافة التعليقات التوضيحية إلى مستندات PDF باستخدام Aspose.PDF لـ .NET أداة قيمة لتعزيز التعاون في المستندات وعمليات المراجعة. باتباع الدليل التفصيلي المقدم في هذه المقالة، يمكن للمطورين دمج إمكانات التعليقات التوضيحية بسلاسة في تطبيقات C# الخاصة بهم.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What types of annotations can be added using Aspose.PDF for .NET?
+#### س: ما أنواع التعليقات التوضيحية التي يمكن إضافتها باستخدام Aspose.PDF لـ .NET؟
 
-A: Aspose.PDF for .NET supports various types of annotations, including text annotations, stamps, links, shapes, and more. Developers can customize the appearance and properties of these annotations to suit their specific needs.
+ج: يدعم Aspose.PDF for .NET أنواعًا مختلفة من التعليقات التوضيحية، بما في ذلك التعليقات التوضيحية النصية والطوابع والروابط والأشكال والمزيد. يمكن للمطورين تخصيص مظهر وخصائص هذه التعليقات التوضيحية لتناسب احتياجاتهم الخاصة.
 
-#### Q: Can I add annotations to specific pages in a multi-page PDF document?
+#### س: هل يمكنني إضافة تعليقات توضيحية إلى صفحات معينة في مستند PDF متعدد الصفحات؟
 
-A: Yes, Aspose.PDF for .NET allows you to specify the page where you want to add the annotation. You can choose a specific page or add annotations to multiple pages as needed.
+ج: نعم، Aspose.PDF for .NET يسمح لك بتحديد الصفحة التي تريد إضافة التعليق التوضيحي إليها. يمكنك اختيار صفحة معينة أو إضافة تعليقات توضيحية إلى صفحات متعددة حسب الحاجة.
 
-#### Q: How do I customize the appearance of annotations?
+#### س: كيف يمكنني تخصيص مظهر التعليقات التوضيحية؟
 
-A: Annotations can be customized using properties such as border width, color, dash style, text style, and more. Aspose.PDF for .NET provides a rich set of options to tailor the appearance of annotations.
+ج: يمكن تخصيص التعليقات التوضيحية باستخدام خصائص مثل عرض الحدود واللون ونمط الشرطة ونمط النص والمزيد. يوفر Aspose.PDF for .NET مجموعة غنية من الخيارات لتخصيص مظهر التعليقات التوضيحية.
 
-#### Q: Is it possible to add hyperlinks as annotations using Aspose.PDF for .NET?
+#### س: هل من الممكن إضافة ارتباطات تشعبية كتعليقات توضيحية باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can add hyperlinks as annotations to PDF documents using Aspose.PDF for .NET. Hyperlink annotations can be used to link to external URLs or specific locations within the same document.
+ج: نعم، يمكنك إضافة ارتباطات تشعبية كتعليقات توضيحية إلى مستندات PDF باستخدام Aspose.PDF لـ .NET. يمكن استخدام التعليقات التوضيحية للارتباط التشعبي للارتباط بعناوين URL الخارجية أو مواقع محددة داخل نفس المستند.
 
-#### Q: Can annotations be added to existing PDF documents without altering the original content?
+#### س: هل يمكن إضافة التعليقات التوضيحية إلى مستندات PDF الموجودة دون تغيير المحتوى الأصلي؟
 
-A: Yes, Aspose.PDF for .NET adds annotations as additional elements without altering the original content of the PDF document. The original PDF content remains intact.
+ج: نعم، يضيف Aspose.PDF for .NET التعليقات التوضيحية كعناصر إضافية دون تغيير المحتوى الأصلي لمستند PDF. يبقى محتوى PDF الأصلي كما هو.

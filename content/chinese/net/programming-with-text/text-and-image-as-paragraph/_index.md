@@ -1,28 +1,28 @@
 ---
-title: Text And Image As Paragraph In PDF File
-linktitle: Text And Image As Paragraph In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text and an image as inline paragraphs in PDF file using Aspose.PDF for .NET.
+title: PDF 文件中的文本和图像作为段落
+linktitle: PDF 文件中的文本和图像作为段落
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中添加文本和图像作为内联段落。
 type: docs
 weight: 530
 url: /zh/net/programming-with-text/text-and-image-as-paragraph/
 ---
-This tutorial explains how to add text and an image as inline paragraphs in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the process step by step.
+本教程介绍如何使用 Aspose.PDF for .NET 在 PDF 文件中添加文本和图像作为内联段落。提供的 C# 源代码逐步演示了该过程。
 
-## Prerequisites
+## 先决条件
 
-Before proceeding with the tutorial, make sure you have the following:
+在继续学习本教程之前，请确保您具备以下条件：
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- C# 编程语言的基础知识。
+- 安装了 Aspose.PDF for .NET 库。您可以从 Aspose 网站获取它或使用 NuGet 将其安装到您的项目中。
 
-## Step 1: Set up the project
+## 第 1 步：设置项目
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+首先在您首选的集成开发环境 (IDE) 中创建一个新的 C# 项目，并添加对 Aspose.PDF for .NET 库的引用。
 
-## Step 2: Import necessary namespaces
+## 第2步：导入必要的命名空间
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+在 C# 文件的开头添加以下 using 指令以导入所需的命名空间：
 
 ```csharp
 using Aspose.Pdf;
@@ -30,52 +30,52 @@ using Aspose.Pdf.Text;
 using Aspose.Pdf.Drawing;
 ```
 
-## Step 3: Set the path to the document directory
+## 第三步：设置文档目录路径
 
-Set the path to your document directory using the `dataDir` variable:
+使用以下命令设置文档目录的路径`dataDir`多变的：
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+代替`"YOUR DOCUMENT DIRECTORY"`与文档目录的实际路径。
 
-## Step 4: Create a new Document and Page
+## 第 4 步：创建新文档和页面
 
-Create a new `Document` object and add a page to its pages collection:
+创建一个新的`Document`对象并将页面添加到其页面集合中：
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 5: Create a TextFragment and add it as a paragraph
+## 第 5 步：创建 TextFragment 并将其添加为段落
 
-Create a `TextFragment` object and add it to the paragraphs collection of the page:
+创建一个`TextFragment`对象并将其添加到页面的段落集合中：
 
 ```csharp
 TextFragment text = new TextFragment("Hello World.. ");
 page.Paragraphs.Add(text);
 ```
 
-## Step 6: Add an image as an inline paragraph
+## 步骤 6：添加图像作为内嵌段落
 
-Create an `Aspose.Pdf.Image` object and set it as an inline paragraph so that it appears right after the previous paragraph:
+创建一个`Aspose.Pdf.Image`对象并将其设置为内联段落，以便它出现在上一个段落之后：
 
 ```csharp
 Aspose.Pdf.Image image = new Aspose.Pdf.Image();
 image.IsInLineParagraph = true;
 image.File = dataDir + "aspose-logo.jpg";
-image.FixHeight = 30; // Optional: Set image height
-image.FixWidth = 100; // Optional: Set image width
+image.FixHeight = 30; //可选：设置图像高度
+image.FixWidth = 100; //可选：设置图像宽度
 page.Paragraphs.Add(image);
 ```
 
-Replace `"aspose-logo.jpg"` with the actual image file name and adjust the optional image height and width as desired.
+代替`"aspose-logo.jpg"`与实际的图像文件名，并根据需要调整可选的图像高度和宽度。
 
-## Step 7: Add another TextFragment as an inline paragraph
+## 第 7 步：添加另一个 TextFragment 作为内嵌段落
 
-Re-initialize the `TextFragment` object with different content and add it as an inline paragraph:
+重新初始化`TextFragment`具有不同内容的对象并将其添加为内联段落：
 
 ```csharp
 text = new TextFragment(" Hello Again..");
@@ -83,87 +83,87 @@ text.IsInLineParagraph = true;
 page.Paragraphs.Add(text);
 ```
 
-## Step 8: Save the PDF document
+## 步骤8：保存PDF文档
 
-Save the modified PDF document:
+保存修改后的PDF文档：
 
 ```csharp
 dataDir = dataDir + "TextAndImageAsParagraph_out.pdf";
 doc.Save(dataDir);
 ```
 
-Make sure to replace `"TextAndImageAsParagraph_out.pdf"` with the desired output file name.
+确保更换`"TextAndImageAsParagraph_out.pdf"`与所需的输出文件名。
 
-### Sample source code for Text And Image As Paragraph using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 的文本和图像作为段落的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document instance
+//实例化文档实例
 Document doc = new Document();
-// Add page to pages collection of Document instance
+//将页面添加到 Document 实例的页面集合中
 Page page = doc.Pages.Add();
-// Create TextFragmnet
+//创建文本片段网
 TextFragment text = new TextFragment("Hello World.. ");
-// Add text fragment to paragraphs collection of Page object
+//将文本片段添加到 Page 对象的段落集合中
 page.Paragraphs.Add(text);
-// Create an image instance
+//创建图像实例
 Aspose.Pdf.Image image = new Aspose.Pdf.Image();
-// Set image as inline paragraph so that it appears right after 
-// The previous paragraph object (TextFragment)
+//将图像设置为内联段落，以便它出现在
+//上一段对象（TextFragment）
 image.IsInLineParagraph = true;
-// Specify image file path 
+//指定图像文件路径
 image.File = dataDir + "aspose-logo.jpg";
-// Set image Height (optional)
+//设置图像高度（可选）
 image.FixHeight = 30;
-// Set Image Width (optional)
+//设置图像宽度（可选）
 image.FixWidth = 100;
-// Add image to paragraphs collection of page object
+//将图像添加到页面对象的段落集合中
 page.Paragraphs.Add(image);
-// Re-initialize TextFragment object with different contents
+//使用不同的内容重新初始化 TextFragment 对象
 text = new TextFragment(" Hello Again..");
-// Set TextFragment as inline paragraph
+//将 TextFragment 设置为内联段落
 text.IsInLineParagraph = true;
-// Add newly created TextFragment to paragraphs collection of page
+//将新创建的 TextFragment 添加到页面的段落集合中
 page.Paragraphs.Add(text);
 dataDir = dataDir + "TextAndImageAsParagraph_out.pdf";
 doc.Save(dataDir);
 Console.WriteLine("\nText and image added successfully as an inline paragraphs.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## 结论
 
-Congratulations! You have successfully learned how to add text and an image as inline paragraphs in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to saving the modified document. You can now incorporate this code into your own C# projects to customize the layout of text and images in PDF files.
+恭喜！您已成功学习如何使用 Aspose.PDF for .NET 在 PDF 文档中添加文本和图像作为内联段落。本教程提供了从设置项目到保存修改后的文档的分步指南。现在，您可以将此代码合并到您自己的 C# 项目中，以自定义 PDF 文件中文本和图像的布局。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of the "Text And Image As Paragraph In PDF File" tutorial?
+#### 问：“文本和图像作为 PDF 文件中的段落”教程的目的是什么？
 
-A: The "Text And Image As Paragraph In PDF File" tutorial aims to guide users on how to add both text and images as inline paragraphs within a PDF document using Aspose.PDF for .NET. The tutorial provides step-by-step instructions and C# code samples to demonstrate the process.
+答：“文本和图像作为 PDF 文件中的段落”教程旨在指导用户如何使用 Aspose.PDF for .NET 在 PDF 文档中添加文本和图像作为内联段落。本教程提供分步说明和 C# 代码示例来演示该过程。
 
-#### Q: How does this tutorial help in adding text and images as inline paragraphs?
+#### 问：本教程如何帮助添加文本和图像作为内嵌段落？
 
-A: This tutorial helps users understand how to use Aspose.PDF for .NET to incorporate both text and images as inline paragraphs within a PDF document. By following the provided steps and code examples, users can create PDF files with custom layouts that combine text and images.
+答：本教程帮助用户了解如何使用 Aspose.PDF for .NET 将文本和图像合并为 PDF 文档中的内联段落。通过遵循提供的步骤和代码示例，用户可以创建具有结合文本和图像的自定义布局的 PDF 文件。
 
-#### Q: What prerequisites are required to follow this tutorial?
+#### 问：学习本教程需要什么先决条件？
 
-A: Before starting the tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or install it in your project using NuGet.
+答：在开始本教程之前，您应该对 C# 编程语言有基本的了解。此外，您需要安装 Aspose.PDF for .NET 库。您可以从 Aspose 网站获取它或使用 NuGet 将其安装到您的项目中。
 
-#### Q: How do I set up my project to follow this tutorial?
+#### 问：如何设置我的项目来遵循本教程？
 
-A: To begin, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This allows you to utilize the library's features for working with PDF documents, text fragments, and images.
+答：首先，在您首选的集成开发环境 (IDE) 中创建一个新的 C# 项目，并添加对 Aspose.PDF for .NET 库的引用。这使您可以利用该库的功能来处理 PDF 文档、文本片段和图像。
 
-#### Q: Can I use this tutorial to add multiple text and image paragraphs in a PDF?
+#### 问：我可以使用本教程在 PDF 中添加多个文本和图像段落吗？
 
-A: Yes, you can use the provided code samples to add multiple instances of both text and image paragraphs within the same PDF document. This tutorial demonstrates how to create inline paragraphs, making it easy to include different combinations of text and images.
+答：是的，您可以使用提供的代码示例在同一 PDF 文档中添加文本和图像段落的多个实例。本教程演示如何创建内联段落，从而轻松包含文本和图像的不同组合。
 
-#### Q: How do I specify the content and appearance of the text paragraphs and images?
+#### 问：如何指定文本段落和图像的内容和外观？
 
-A: The tutorial demonstrates how to create `TextFragment` objects to represent text paragraphs and `Aspose.Pdf.Image` objects to represent images. You can customize the content, dimensions, and appearance of both text and images using the provided code samples.
+ A：本教程演示了如何创建`TextFragment`代表文本段落的对象和`Aspose.Pdf.Image`对象来表示图像。您可以使用提供的代码示例自定义文本和图像的内容、尺寸和外观。
 
-#### Q: Can I adjust the layout of the inline paragraphs?
+#### 问：我可以调整内嵌段落的布局吗？
 
-A: Yes, you can adjust the layout of inline paragraphs by controlling their positioning, dimensions, and order within the page. The tutorial shows how to set inline attributes, such as `IsInLineParagraph`, to control the layout of text and image paragraphs.
+答：是的，您可以通过控制内嵌段落在页面内的位置、尺寸和顺序来调整内嵌段落的布局。本教程展示了如何设置内联属性，例如`IsInLineParagraph`，控制文本和图像段落的布局。
 
-#### Q: How do I save the modified PDF document?
+#### 问：如何保存修改后的PDF文档？
 
-A: To save the modified PDF document, you can use the `Save` method of the `Document` object. The tutorial provides code samples that demonstrate how to save the resulting PDF document.
+ A：要保存修改后的PDF文档，您可以使用`Save`的方法`Document`目的。本教程提供了演示如何保存生成的 PDF 文档的代码示例。

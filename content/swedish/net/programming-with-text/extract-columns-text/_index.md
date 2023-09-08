@@ -1,26 +1,26 @@
 ---
-title: Extract Columns Text In PDF File
-linktitle: Extract Columns Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract columns text in PDF file using Aspose.PDF for .NET.
+title: Extrahera kolumntext i PDF-fil
+linktitle: Extrahera kolumntext i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du extraherar kolumntext i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 150
 url: /sv/net/programming-with-text/extract-columns-text/
 ---
-This tutorial will guide you through the process of extracting columns text in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Denna handledning guidar dig genom processen att extrahera kolumntext i PDF-fil med Aspose.PDF för .NET. Den medföljande C#-källkoden visar de nödvändiga stegen.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Krav
+Innan du börjar, se till att du har följande:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio eller någon annan C#-kompilator installerad på din maskin.
+- Aspose.PDF för .NET-bibliotek. Du kan ladda ner den från den officiella Aspose-webbplatsen eller använda en pakethanterare som NuGet för att installera den.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Steg 1: Konfigurera projektet
+1. Skapa ett nytt C#-projekt i din föredragna utvecklingsmiljö.
+2. Lägg till en referens till Aspose.PDF för .NET-biblioteket.
 
-## Step 2: Import required namespaces
-In the code file where you want to extract columns text, add the following using directives at the top of the file:
+## Steg 2: Importera nödvändiga namnrymder
+I kodfilen där du vill extrahera kolumntext, lägg till följande med hjälp av direktiv överst i filen:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,18 +28,18 @@ using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Steg 3: Ställ in dokumentkatalogen
+ I koden, lokalisera raden som säger`string dataDir = "YOUR DOCUMENT DIRECTORY";` och byt ut`"YOUR DOCUMENT DIRECTORY"` med sökvägen till katalogen där dina dokument är lagrade.
 
-## Step 4: Open the PDF document
-Open an existing PDF document using the `Document` constructor and passing the path to the input PDF file.
+## Steg 4: Öppna PDF-dokumentet
+ Öppna ett befintligt PDF-dokument med hjälp av`Document`konstruktorn och skickar sökvägen till indata-PDF-filen.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
 ```
 
-## Step 5: Adjust the font size
-Reduce the font size of the text fragments by a factor of 0.7 to enhance readability and better represent columnar text.
+## Steg 5: Justera teckenstorleken
+Minska teckensnittsstorleken på textfragmenten med en faktor 0,7 för att förbättra läsbarheten och bättre representera kolumnär text.
 
 ```csharp
 TextFragmentAbsorber tfa = new TextFragmentAbsorber();
@@ -51,8 +51,8 @@ foreach(TextFragment tf in tfc)
 }
 ```
 
-## Step 6: Extract text from columns
-Save the modified PDF document to a memory stream and reload it as a new document. Then, use the `TextAbsorber` class to extract text from the columns.
+## Steg 6: Extrahera text från kolumner
+ Spara det ändrade PDF-dokumentet i en minnesström och ladda om det som ett nytt dokument. Använd sedan`TextAbsorber` klass för att extrahera text från kolumnerna.
 
 ```csharp
 Stream st = new MemoryStream();
@@ -64,8 +64,8 @@ String extractedText = textAbsorber.Text;
 textAbsorber.Visit(pdfDocument);
 ```
 
-## Step 7: Save the extracted text
-Save the extracted text to a text file at the specified output file path.
+## Steg 7: Spara den extraherade texten
+Spara den extraherade texten till en textfil på den angivna sökvägen för utdatafilen.
 
 ```csharp
 dataDir = dataDir + "ExtractColumnsText_out.txt";
@@ -73,18 +73,18 @@ File.WriteAllText(dataDir, extractedText);
 Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Extract Columns Text using Aspose.PDF for .NET 
+### Exempel på källkod för Extrahera kolumntext med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");                
 TextFragmentAbsorber tfa = new TextFragmentAbsorber();
 pdfDocument.Pages.Accept(tfa);
 TextFragmentCollection tfc = tfa.TextFragments;
 foreach (TextFragment tf in tfc)
 {
-	// Need to reduce font size at least for 70%
+	// Måste minska teckensnittsstorleken med minst 70 %
 	tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
 }
 Stream st = new MemoryStream();
@@ -99,18 +99,18 @@ System.IO.File.WriteAllText(dataDir, extractedText);
 Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-You have successfully extracted columns text from a PDF document using Aspose.PDF for .NET. The extracted text has been saved to the specified output file.
+## Slutsats
+Du har framgångsrikt extraherat kolumntext från ett PDF-dokument med Aspose.PDF för .NET. Den extraherade texten har sparats i den angivna utdatafilen.
 
 ### FAQ's
 
-#### Q: What is the purpose of this tutorial?
+#### F: Vad är syftet med denna handledning?
 
-A: This tutorial offers a step-by-step guide on extracting columns of text from a PDF file using Aspose.PDF for .NET. The accompanying C# source code provides a practical demonstration of the required procedures.
+S: Denna handledning erbjuder en steg-för-steg-guide för att extrahera kolumner med text från en PDF-fil med Aspose.PDF för .NET. Den medföljande C#-källkoden ger en praktisk demonstration av de nödvändiga procedurerna.
 
-#### Q: What namespaces should I import?
+#### F: Vilka namnområden ska jag importera?
 
-A: In the code file where you intend to extract columns of text, include the following using directives at the beginning of the file:
+S: I kodfilen där du tänker extrahera textkolumner, inkludera följande med hjälp av direktiv i början av filen:
 
 ```csharp
 using Aspose.Pdf;
@@ -118,30 +118,30 @@ using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-#### Q: How do I specify the document directory?
+#### F: Hur anger jag dokumentkatalogen?
 
-A: Locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` in the code and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ S: Lokalisera linjen`string dataDir = "YOUR DOCUMENT DIRECTORY";` i koden och byt ut`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
 
-#### Q: How do I open an existing PDF document?
+#### F: Hur öppnar jag ett befintligt PDF-dokument?
 
-A: In Step 4, you'll open an existing PDF document using the `Document` constructor and providing the path to the input PDF file.
+ S: I steg 4 öppnar du ett befintligt PDF-dokument med hjälp av`Document` konstruktor och tillhandahåller sökvägen till PDF-inmatningsfilen.
 
-#### Q: Why is the font size adjusted?
+#### F: Varför justeras teckensnittsstorleken?
 
-A: Step 5 involves reducing the font size of text fragments by a factor of 0.7. This adjustment enhances readability and more accurately represents columnar text.
+S: Steg 5 innebär att teckensnittsstorleken på textfragment minskas med en faktor på 0,7. Denna justering förbättrar läsbarheten och representerar kolumnformad text mer exakt.
 
-#### Q: How do I extract text from columns?
+#### F: Hur extraherar jag text från kolumner?
 
-A: Step 6 consists of saving the modified PDF document to a memory stream, reloading it as a new document, and then using the `TextAbsorber` class to extract text from the columns.
+ S: Steg 6 består av att spara det modifierade PDF-dokumentet i en minnesström, ladda om det som ett nytt dokument och sedan använda`TextAbsorber` klass för att extrahera text från kolumnerna.
 
-#### Q: What is the purpose of saving the extracted text?
+#### F: Vad är syftet med att spara den extraherade texten?
 
-A: In Step 7, you'll save the extracted text to a text file at the specified output file path.
+S: I steg 7 sparar du den extraherade texten till en textfil på den angivna sökvägen för utdatafilen.
 
-#### Q: Why reduce the font size before extraction?
+#### F: Varför minska teckenstorleken innan extrahering?
 
-A: Reducing the font size helps ensure that the extracted text aligns properly within the columns, providing a more accurate representation of the original layout.
+S: Att minska teckenstorleken hjälper till att säkerställa att den extraherade texten justeras ordentligt i kolumnerna, vilket ger en mer exakt representation av den ursprungliga layouten.
 
-#### Q: What is the key takeaway from this tutorial?
+#### F: Vad är nyckeln till den här handledningen?
 
-A: By following this tutorial, you've acquired the knowledge and skills needed to extract columns of text from a PDF document using Aspose.PDF for .NET. The resulting text has been saved to the specified output file.
+S: Genom att följa denna handledning har du skaffat dig de kunskaper och färdigheter som behövs för att extrahera kolumner med text från ett PDF-dokument med Aspose.PDF för .NET. Den resulterande texten har sparats i den angivna utdatafilen.

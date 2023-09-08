@@ -1,43 +1,43 @@
 ---
-title: Get All The Attachments In PDF File
-linktitle: Get All The Attachments In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get all attachments in PDF file with Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: Holen Sie sich alle Anhänge als PDF-Datei
+linktitle: Holen Sie sich alle Anhänge als PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET alle Anhänge in eine PDF-Datei übertragen. Schritt-für-Schritt-Anleitung für einfache Handhabung.
 type: docs
 weight: 40
 url: /de/net/programming-with-attachments/get-all-the-attachments/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to get all attachments in PDF file using Aspose.PDF for .NET.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch den folgenden C#-Quellcode, um alle Anhänge mit Aspose.PDF für .NET in eine PDF-Datei zu übertragen.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert und Ihre Entwicklungsumgebung eingerichtet haben, bevor Sie beginnen. Außerdem verfügen Sie über Grundkenntnisse der C#-Programmierung.
 
-### Step 1: Document Directory Setup
+### Schritt 1: Einrichten des Dokumentenverzeichnisses
 
-In the provided source code, you need to specify the directory where the PDF file is located from which you want to get the attachments. Change the "dataDir" variable to the desired directory.
+Im bereitgestellten Quellcode müssen Sie das Verzeichnis angeben, in dem sich die PDF-Datei befindet, aus der Sie die Anhänge beziehen möchten. Ändern Sie die Variable „dataDir“ in das gewünschte Verzeichnis.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Schritt 2: Öffnen Sie das vorhandene PDF-Dokument
 
-We open the existing PDF document using the specified path.
+Wir öffnen das vorhandene PDF-Dokument über den angegebenen Pfad.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
 ```
 
-### Step 3: Obtaining the Attachments Collection
+### Schritt 3: Abrufen der Anhangssammlung
 
-We get the collection of attachments from the document.
+Wir erhalten die Sammlung von Anhängen aus dem Dokument.
 
 ```csharp
 EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
 ```
 
-### Step 4: Retrieving attachments
+### Schritt 4: Anhänge abrufen
 
-We go through the collection to get all the attachments and display their information. We also save attachments in individual files.
+Wir gehen die Sammlung durch, um alle Anhänge abzurufen und deren Informationen anzuzeigen. Wir speichern Anhänge auch in einzelnen Dateien.
 
 ```csharp
 int count = 1;
@@ -47,7 +47,7 @@ Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Check if object parameters contain additional information
+// Prüfen Sie, ob Objektparameter zusätzliche Informationen enthalten
 if (fileSpecification.Params != null)
 {
 Console.WriteLine("CheckSum: {0}", fileSpecification.Params.CheckSum);
@@ -56,7 +56,7 @@ Console.WriteLine("Modified date: {0}", fileSpecification.Params.ModDate);
 Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 
-// Retrieve the attachment and save in a file
+// Rufen Sie den Anhang ab und speichern Sie ihn in einer Datei
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
 fileSpecification.Contents.Read(fileContent, 0, fileContent.Length);
 FileStream fileStream = new FileStream(dataDir + count + "_out" + ".txt", FileMode.Create);
@@ -68,27 +68,27 @@ count += 1;
 ```
 
 
-### Sample source code for Get Allthe Attachments using Aspose.PDF for .NET 
+### Beispielquellcode für „Get Allthe Attachments“ mit Aspose.PDF für .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Get embedded files collection
+// Erhalten Sie eine Sammlung eingebetteter Dateien
 EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
-// Get count of the embedded files
+// Ermitteln Sie die Anzahl der eingebetteten Dateien
 Console.WriteLine("Total files : {0}", embeddedFiles.Count);
 int count = 1;
-// Loop through the collection to get all the attachments
+// Gehen Sie die Sammlung durch, um alle Anhänge zu erhalten
 foreach (FileSpecification fileSpecification in embeddedFiles)
 {
 	Console.WriteLine("Name: {0}", fileSpecification.Name);
 	Console.WriteLine("Description: {0}",
 	fileSpecification.Description);
 	Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-	// Check if parameter object contains the parameters
+	//Überprüfen Sie, ob das Parameterobjekt die Parameter enthält
 	if (fileSpecification.Params != null)
 	{
 		Console.WriteLine("CheckSum: {0}",
@@ -99,7 +99,7 @@ foreach (FileSpecification fileSpecification in embeddedFiles)
 		fileSpecification.Params.ModDate);
 		Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 	}
-	// Get the attachment and write to file or stream
+	// Holen Sie sich den Anhang und schreiben Sie in eine Datei oder einen Stream
 	byte[] fileContent = new byte[fileSpecification.Contents.Length];
 	fileSpecification.Contents.Read(fileContent, 0,
 	fileContent.Length);
@@ -112,44 +112,44 @@ foreach (FileSpecification fileSpecification in embeddedFiles)
 
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we explained how to get all attachments from a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and manipulate attachments from your PDF files.
+In diesem Tutorial haben wir erklärt, wie Sie mit Aspose.PDF für .NET alle Anhänge aus einer PDF-Datei abrufen. Mit diesem Wissen können Sie nun Anhänge aus Ihren PDF-Dateien extrahieren und bearbeiten.
 
-## FAQ's for get all the attachments in PDF file
+## FAQs zum Abrufen aller Anhänge in einer PDF-Datei
 
-#### Q: Why would I need to retrieve all attachments from a PDF document?
+#### F: Warum sollte ich alle Anhänge aus einem PDF-Dokument abrufen?
 
-A: Retrieving attachments allows you to access and manipulate additional files embedded within a PDF, which can be useful for archiving, sharing, or further processing.
+A: Durch das Abrufen von Anhängen können Sie auf zusätzliche in eine PDF-Datei eingebettete Dateien zugreifen und diese bearbeiten, was zum Archivieren, Teilen oder Weiterverarbeiten nützlich sein kann.
 
-#### Q: What types of files can be attached to a PDF document?
+#### F: Welche Dateitypen können an ein PDF-Dokument angehängt werden?
 
-A: PDF documents can contain a wide range of attached files, including images, documents, spreadsheets, audio files, and more.
+A: PDF-Dokumente können eine Vielzahl an angehängten Dateien enthalten, darunter Bilder, Dokumente, Tabellenkalkulationen, Audiodateien und mehr.
 
-#### Q: How does this tutorial help me retrieve attachments from a PDF using Aspose.PDF for .NET?
+#### F: Wie hilft mir dieses Tutorial beim Abrufen von Anhängen aus einer PDF-Datei mit Aspose.PDF für .NET?
 
-A: This tutorial provides step-by-step instructions and C# source code to access and retrieve all attachments within a PDF document.
+A: Dieses Tutorial bietet Schritt-für-Schritt-Anleitungen und C#-Quellcode für den Zugriff und den Abruf aller Anhänge in einem PDF-Dokument.
 
-#### Q: Can I retrieve specific attachments instead of all attachments using this tutorial?
+#### F: Kann ich mit diesem Tutorial bestimmte Anhänge anstelle aller Anhänge abrufen?
 
-A: Yes, you can modify the provided code to selectively retrieve attachments based on your requirements.
+A: Ja, Sie können den bereitgestellten Code ändern, um Anhänge entsprechend Ihren Anforderungen gezielt abzurufen.
 
-#### Q: What information about each attachment can I obtain using this tutorial?
+#### F: Welche Informationen zu den einzelnen Anhängen kann ich mit diesem Tutorial erhalten?
 
-A: This tutorial demonstrates how to retrieve and display details such as the attachment's name, description, MIME type, creation date, modification date, and size.
+A: In diesem Tutorial wird gezeigt, wie Sie Details wie den Namen, die Beschreibung, den MIME-Typ, das Erstellungsdatum, das Änderungsdatum und die Größe des Anhangs abrufen und anzeigen.
 
-#### Q: How are the retrieved attachments saved using this tutorial?
+#### F: Wie werden die mit diesem Tutorial abgerufenen Anhänge gespeichert?
 
-A: The tutorial guides you through saving each retrieved attachment as a separate file in the specified directory.
+A: Das Tutorial führt Sie durch das Speichern jedes abgerufenen Anhangs als separate Datei im angegebenen Verzeichnis.
 
-#### Q: Can I use this knowledge to extract attachments from password-protected PDF files?
+#### F: Kann ich dieses Wissen nutzen, um Anhänge aus passwortgeschützten PDF-Dateien zu extrahieren?
 
-A: Yes, you can apply similar principles to retrieve attachments from password-protected PDF files using Aspose.PDF for .NET.
+A: Ja, Sie können ähnliche Prinzipien anwenden, um Anhänge aus passwortgeschützten PDF-Dateien mit Aspose.PDF für .NET abzurufen.
 
-#### Q: How does Aspose.PDF for .NET facilitate attachment retrieval?
+#### F: Wie erleichtert Aspose.PDF für .NET das Abrufen von Anhängen?
 
-A: Aspose.PDF for .NET provides an intuitive API that allows you to access and manipulate attachments in PDF documents easily.
+A: Aspose.PDF für .NET bietet eine intuitive API, mit der Sie problemlos auf Anhänge in PDF-Dokumenten zugreifen und diese bearbeiten können.
 
-#### Q: Are there specific scenarios where retrieving attachments is recommended?
+#### F: Gibt es bestimmte Szenarien, in denen das Abrufen von Anhängen empfohlen wird?
 
-A: Retrieving attachments is useful when you need to access files embedded within a PDF, such as extracting images, audio files, or additional documents.
+A: Das Abrufen von Anhängen ist nützlich, wenn Sie auf in einer PDF-Datei eingebettete Dateien zugreifen müssen, z. B. zum Extrahieren von Bildern, Audiodateien oder zusätzlichen Dokumenten.

@@ -1,25 +1,47 @@
 ---
-title: Aspose.PDF Tutorials
-additionalTitle: Aspose API References
-description: Tutorials and code-snippets of Aspose.PDF product family. It includes basic and advance tutorials of usage of Aspose.PDF.
+title: Aspose.PDF-Tutorials
+additionalTitle: Aspose API-Referenzen
+description: Tutorials und Code-Schnipsel der Aspose.PDF-Produktfamilie. Es enthält grundlegende und fortgeschrittene Tutorials zur Verwendung von Aspose.PDF.
 type: docs
 weight: 11
 url: /de/
 is_root: true
 ---
 
-## Aspose.PDF for .NET
+## Aspose.PDF für .NET
 {{% alert color="primary" %}}
-Aspose.PDF for .NET tutorials and code-snippets for creating, editing, converting, printing, and many more features for PDF documents in your application. 
+Aspose.PDF für .NET-Tutorials und Codeausschnitte zum Erstellen, Bearbeiten, Konvertieren, Drucken und vielen weiteren Funktionen für PDF-Dokumente in Ihrer Anwendung. 
 {{% /alert %}}
 
-These are links to some useful resources:
-- [Programming with Document](./net/programming-with-document/)
-- [Programming with Annotations](./net/annotations/)  
-- [Document Conversion](./net/document-conversion/)
-- [Programming with Forms](./net/programming-with-forms/)
-- [Programming with Tables](./net/programming-with-tables/) 
-- [Programming with PDF Pages](./net/programming-with-pdf-pages/)
-- [Programming with Graphs](./net/programming-with-graphs/)
+Dies sind Links zu einigen nützlichen Ressourcen:
+- [Programmieren mit Dokument](./net/programming-with-document/)
+- [Programmieren mit Anmerkungen](./net/annotations/)  
+- [Dokumentenkonvertierung](./net/document-conversion/)
+- [Programmieren mit Formularen](./net/programming-with-forms/)
+- [Programmieren mit Tabellen](./net/programming-with-tables/) 
+- [Programmieren mit PDF-Seiten](./net/programming-with-pdf-pages/)
+- [Programmieren mit Graphen](./net/programming-with-graphs/)
  
+## Aspose.PDF-Verarbeitungs-API für Java
+{{% alert color="primary" %}}
+Master Aspose.PDF für Java mit umfassenden Tutorials. PDFs mühelos erstellen, bearbeiten und optimieren. Verbessern Sie noch heute Ihre PDF-Entwicklungsfähigkeiten!
+{{% /alert %}}
+
+Dies sind Links zu einigen nützlichen Ressourcen:
+- [PDF-Anmerkungen](./java/pdf-annotations/)
+- [PDF-Anhänge](./java/pdf-attachments/)
+- [PDF-Lesezeichen](./java/pdf-bookmarks/)
+- [PDF-Konvertierung und -Transformation](./java/pdf-conversion-&-transformation/)
+- [PDF-Bilder](./java/pdf-images/)
+- [PDF-Bildmanipulation](./java/pdf-image-manipulation/)
+- [Links zu PDF-Dokumenten](./java/pdf-document-links/)
+- [Manipulation von PDF-Seiten](./java/pdf-page-manipulation/)
+- [PDF-Dokumentoperationen](./java/pdf-document-operations/)
+- [PDF-Formularfelder](./java/pdf-form-fields/)
+- [PDF-Tabellen](./java/pdf-tables/)
+- [PDF-Strukturelemente](./java/pdf-structure-elements/)
+- [PDF-Tags und -Struktur](./java/pdf-tags-and-structure/)
+- [PDF-Stile und Formatierung](./java/pdf-styles-and-formatting/)
+- [PDF-Textextraktion](./java/pdf-text-extraction/)
+- [PDF-Validierung und -Verifizierung](./java/pdf-validation-and-verification/)
 

@@ -1,57 +1,57 @@
 ---
-title: Extract Text From Stamp Annotation
-linktitle: Extract Text From Stamp Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily extract text from a stamp annotation in your PDF documents with Aspose.PDF for .NET.
+title: Damga Açıklamasından Metin Çıkarma
+linktitle: Damga Açıklamasından Metin Çıkarma
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF belgelerinizdeki damga açıklamasından kolayca metin çıkarmayı öğrenin.
 type: docs
 weight: 80
 url: /tr/net/programming-with-stamps-and-watermarks/extract-text-from-stamp-annotation/
 ---
-In this tutorial, we will take you step by step on how to extract text from a stamp annotation in a PDF document using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to extract the text from a specific stamp annotation on a given page of the PDF document.
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesindeki damga açıklamasından nasıl metin çıkarılacağı konusunda size adım adım yol göstereceğiz. PDF belgesinin belirli bir sayfasındaki belirli bir damga açıklamasından metni çıkarmak için sağlanan C# kaynak kodunu nasıl kullanacağınızı size göstereceğiz.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Kurulu bir .NET geliştirme ortamı.
+- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
 
-## Step 2: Loading the PDF document
+## Adım 2: PDF belgesini yükleme
 
-The first step is to load the existing PDF document into your project. Here's how:
+İlk adım mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the document
+// Belgeyi yükleyin
 Document doc = new Document(dataDir + "test.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+"BELGELERİNİZ DİZİNİ"ni, PDF belgenizin bulunduğu dizine giden gerçek yolla değiştirdiğinizden emin olun.
 
-## Step 3: Extract text from stamp annotation
+## 3. Adım: Damga açıklamasından metni çıkarın
 
-Now that you have loaded the PDF document, you can extract the text from the specific stamp annotation. Here's how:
+Artık PDF belgesini yüklediğinize göre, metni belirli damga açıklamasından çıkarabilirsiniz. İşte nasıl:
 
 ```csharp
-// Retrieve buffer annotation
+// Tampon açıklamasını al
 StampAnnotation annot = doc.Pages[1].Annotations[3] as StampAnnotation;
 
-// Create a text absorber
+// Metin emici oluşturma
 TextAbsorber ta = new TextAbsorber();
 
-// Visit the appearance of the annotation
+// Ek açıklamanın görünümünü ziyaret edin
 XForm ap = annot. Appearance["N"];
 ta.Visit(ap);
 
-// Display the extracted text
+// Çıkarılan metni görüntüle
 Console.WriteLine(ta.Text);
 ```
 
-The code above retrieves the stamp annotation from the specified page of the PDF document and then uses a text absorber to extract the text from the appearance of the annotation. The extracted text is then displayed in the output.
+Yukarıdaki kod, damga ek açıklamasını PDF belgesinin belirtilen sayfasından alır ve ardından metni ek açıklamanın görünümünden çıkarmak için bir metin emici kullanır. Çıkarılan metin daha sonra çıktıda görüntülenir.
 
-### Sample source code for Extract Text From Stamp Annotation using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Damga Açıklamasından Metin Çıkarma için örnek kaynak kodu 
 ```csharp
 
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -64,44 +64,44 @@ Console.WriteLine(ta.Text);
 
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have learned how to extract text from a stamp annotation in a PDF document using Aspose.PDF for .NET. You can now use this method to extract text from other annotations in your PDF documents.
+Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF belgesindeki damga açıklamasından metni nasıl çıkaracağınızı öğrendiniz. Artık bu yöntemi PDF belgelerinizdeki diğer açıklamalardan metin çıkarmak için kullanabilirsiniz.
 
-### FAQ's for extract text from stamp annotation
+### Damga açıklamasından metin çıkarmak için SSS'ler
 
-#### Q: What is a stamp annotation in a PDF document, and why would I need to extract text from it?
+#### S: PDF belgesindeki damga açıklaması nedir ve neden bu belgeden metin çıkarmam gerekiyor?
 
-A: A stamp annotation in a PDF document is a graphical element that can be used to provide additional information, such as a watermark or a rubber stamp. Extracting text from a stamp annotation is useful when you want to retrieve text-based content from these annotations, which can include notes, labels, or other textual information.
+C: PDF belgesindeki damga açıklaması, filigran veya lastik damga gibi ek bilgiler sağlamak için kullanılabilen grafiksel bir öğedir. Damga ek açıklamasından metin çıkarmak, bu ek açıklamalardan notlar, etiketler veya diğer metin bilgileri içerebilen metin tabanlı içerik almak istediğinizde kullanışlıdır.
 
-#### Q: How does the provided C# source code extract text from a stamp annotation?
+#### S: Sağlanan C# kaynak kodu, damga ek açıklamasından metni nasıl çıkarır?
 
-A: The provided source code demonstrates how to extract text from a specific stamp annotation on a given page of a PDF document. It uses the Aspose.PDF library to retrieve the stamp annotation, visit its appearance using a `TextAbsorber`, and then displays the extracted text in the output.
+ C: Sağlanan kaynak kodu, bir PDF belgesinin belirli bir sayfasındaki belirli bir damga açıklamasından metnin nasıl çıkarılacağını gösterir. Damga açıklamasını almak, görünümünü ziyaret etmek için Aspose.PDF kütüphanesini kullanır.`TextAbsorber`ve ardından çıkarılan metni çıktıda görüntüler.
 
-#### Q: Can I extract text from different types of annotations using a similar approach?
+#### S: Benzer bir yaklaşım kullanarak farklı türdeki ek açıklamalardan metin çıkarabilir miyim?
 
-A: Yes, you can use a similar approach to extract text from other types of annotations, such as text annotations or popup annotations. You would need to modify the code to target the specific type of annotation you want to extract text from.
+C: Evet, metin ek açıklamaları veya açılır pencere ek açıklamaları gibi diğer ek açıklama türlerinden metin çıkarmak için benzer bir yaklaşım kullanabilirsiniz. Metni çıkarmak istediğiniz belirli ek açıklama türünü hedeflemek için kodu değiştirmeniz gerekir.
 
-#### Q: What is the purpose of the `TextAbsorber` class in the code?
+####  Soru: Programın amacı nedir?`TextAbsorber` class in the code?
 
-A: The `TextAbsorber` class is used to extract text from different parts of a PDF document, including stamp annotations. It "absorbs" or captures the text content found in the specified area or element of the PDF.
+ C:`TextAbsorber` sınıfı, damga açıklamaları da dahil olmak üzere bir PDF belgesinin farklı bölümlerinden metin çıkarmak için kullanılır. PDF'nin belirtilen alanında veya öğesinde bulunan metin içeriğini "emer" veya yakalar.
 
-#### Q: How do I identify the specific stamp annotation I want to extract text from?
+#### S: Metni çıkarmak istediğim belirli damga açıklamasını nasıl tanımlarım?
 
-A: In the provided code, the stamp annotation is identified by accessing the `Annotations` collection of a specific page and using the index to retrieve the desired annotation. You can adjust the index or use other criteria to identify the target annotation.
+ C: Sağlanan kodda damga açıklaması,`Annotations` Belirli bir sayfanın toplanması ve istenen ek açıklamayı almak için dizini kullanma. Hedef açıklamayı tanımlamak için dizini ayarlayabilir veya diğer kriterleri kullanabilirsiniz.
 
-#### Q: Can I extract text from multiple stamp annotations on the same page?
+#### S: Aynı sayfadaki birden fazla damga açıklamasından metin çıkarabilir miyim?
 
-A: Yes, you can modify the code to loop through the `Annotations` collection of a page, filter out stamp annotations, and extract text from each of them.
+ C: Evet, kodda döngü oluşturacak şekilde değişiklik yapabilirsiniz.`Annotations`bir sayfanın koleksiyonunu oluşturun, damga açıklamalarını filtreleyin ve her birinden metin çıkarın.
 
-#### Q: What if the stamp annotation has no textual content? Will the code still work?
+#### S: Damga açıklamasının metin içeriği yoksa ne olur? Kod hala çalışacak mı?
 
-A: The code will still work, but it will extract and display an empty string if the stamp annotation's appearance does not contain any textual content.
+C: Kod çalışmaya devam edecek ancak damga ek açıklamasının görünümü herhangi bir metin içeriği içermiyorsa boş bir dize çıkaracak ve görüntüleyecektir.
 
-#### Q: How can I save the extracted text to a file instead of displaying it in the output?
+#### S: Çıkarılan metni çıktıda görüntülemek yerine bir dosyaya nasıl kaydedebilirim?
 
-A: You can modify the code to save the extracted text to a file instead of displaying it in the console. Simply replace the `Console.WriteLine` statement with code to write the text to a file.
+ C: Çıkarılan metni konsolda görüntülemek yerine bir dosyaya kaydetmek için kodu değiştirebilirsiniz. Basitçe değiştirin`Console.WriteLine` Metni bir dosyaya yazmak için kod içeren ifade.
 
-#### Q: How can I use the extracted text in further processing or analysis?
+#### S: Çıkarılan metni daha sonraki işlemlerde veya analizlerde nasıl kullanabilirim?
 
-A: Once you have extracted the text using the provided method, you can store it in a variable, manipulate it, analyze it, or integrate it into other parts of your application as needed.
+C: Sağlanan yöntemi kullanarak metni çıkardıktan sonra, onu bir değişkende saklayabilir, değiştirebilir, analiz edebilir veya gerektiği şekilde uygulamanızın diğer bölümlerine entegre edebilirsiniz.

@@ -1,28 +1,28 @@
 ---
-title: Secure License In PDF File
-linktitle: Secure License In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to securing a license in PDF file using Aspose.PDF for .NET. Protect your PDF application from unauthorized access.
+title: PDF Dosyasında Güvenli Lisans
+linktitle: PDF Dosyasında Güvenli Lisans
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki bir lisansın güvenliğini sağlamak için adım adım kılavuz. PDF uygulamanızı yetkisiz erişime karşı koruyun.
 type: docs
 weight: 40
 url: /tr/net/licensing-aspose-pdf/secure-license/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to secure a license in PDF file using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. By securing your license, you can protect your application and features from unauthorized access.
+Bu eğitimde size Aspose.PDF for .NET kullanarak PDF dosyasındaki bir lisansın güvenliğini nasıl sağlayacağınız konusunda adım adım bir kılavuz sunacağız. Aspose.PDF, PDF belgelerini programlı olarak oluşturmanıza, değiştirmenize ve dönüştürmenize olanak tanıyan güçlü bir kütüphanedir. Lisansınızı güvence altına alarak uygulamanızı ve özelliklerinizi yetkisiz erişime karşı koruyabilirsiniz.
 
-## Prerequisites
+## Önkoşullar
 
-Before you begin, make sure you have the following prerequisites in place:
+Başlamadan önce aşağıdaki önkoşulların mevcut olduğundan emin olun:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. .NET framework ile yüklenen Visual Studio.
+2. .NET için Aspose.PDF kütüphanesi.
 
-## Step 1: Project Setup
+## Adım 1: Proje Kurulumu
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+Başlamak için Visual Studio'da yeni bir proje oluşturun ve Aspose.PDF for .NET kitaplığına bir referans ekleyin. Kütüphaneyi Aspose resmi web sitesinden indirebilir ve makinenize kurabilirsiniz.
 
-## Step 2: Import the necessary namespaces
+## 2. Adım: Gerekli ad alanlarını içe aktarın
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+Aspose.PDF tarafından sağlanan sınıflara ve yöntemlere erişmek için gereken ad alanlarını C# kod dosyanıza aktarın:
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using System.IO;
 using Ionic.Zip;
 ```
 
-## Step 3: Loading the secure license file
+## 3. Adım: Güvenli lisans dosyasını yükleme
 
-Use the following lines of code to load the secure license file:
+Güvenli lisans dosyasını yüklemek için aşağıdaki kod satırlarını kullanın:
 
 ```csharp
 using (Stream zip = new SecureLicense().GetType().Assembly.GetManifestResourceStream("Aspose.Total.lic.zip"))
@@ -43,13 +43,13 @@ MemoryStream ms = new MemoryStream();
 ZipEntry e = zf["Aspose.Total.lic"];
 e.ExtractWithPassword(ms, "test");
 ms.Position = 0;
-// Use the 'ms' stream containing the secure license
+// Güvenli lisansı içeren 'ms' akışını kullanın
 }
 }
 ```
-Be sure to replace `"Aspose.Total.lic.zip"` with the actual name of your secure license file and `"test"` with the correct password.
+ Değiştirdiğinizden emin olun`"Aspose.Total.lic.zip"` güvenli lisans dosyanızın gerçek adıyla ve`"test"` doğru şifreyle.
 
-### Sample source code for Secure License using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Güvenli Lisans için örnek kaynak kodu 
 
 ```csharp
 using (Stream zip = new SecureLicense().GetType().Assembly.GetManifestResourceStream("Aspose.Total.lic.zip"))
@@ -66,61 +66,61 @@ using (Stream zip = new SecureLicense().GetType().Assembly.GetManifestResourceSt
 ```
 
 
-## Conclusion
+## Çözüm
 
-In this tutorial, you learned how to secure a license using Aspose.PDF for .NET. By following the steps outlined, you can protect your application and PDF functionality from unauthorized access.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir lisansın güvenliğini nasıl sağlayacağınızı öğrendiniz. Belirtilen adımları izleyerek uygulamanızı ve PDF işlevselliğinizi yetkisiz erişime karşı koruyabilirsiniz.
 
-### FAQ's for secure license in PDF file
+### PDF dosyasında güvenli lisans için SSS
 
-#### Q: Why should I secure a license in a PDF file?
+#### S: Neden bir PDF dosyasındaki lisansı güvence altına almalıyım?
 
-A: Securing a license in a PDF file helps protect your application and features from unauthorized access and usage. It adds an extra layer of security to your software.
+C: Bir PDF dosyasındaki lisansın güvenliğini sağlamak, uygulamanızı ve özelliklerinizi yetkisiz erişim ve kullanıma karşı korumanıza yardımcı olur. Yazılımınıza ekstra bir güvenlik katmanı ekler.
 
-#### Q: How do I import the necessary namespaces for Aspose.PDF?
+#### S: Aspose.PDF için gerekli ad alanlarını nasıl içe aktarabilirim?
 
-A: In your C# code file, use the `using` directive to import the required namespaces for accessing the classes and methods provided by Aspose.PDF, and Ionic.Zip:
+ C: C# kod dosyanızda şunu kullanın:`using` Aspose.PDF ve Ionic.Zip tarafından sağlanan sınıflara ve yöntemlere erişim için gerekli ad alanlarını içe aktarma yönergesi:
 ```csharp
 using System;
 using System.IO;
 using Ionic.Zip;
 ```
 
-#### Q: How do I load the secure license file?
+#### S: Güvenli lisans dosyasını nasıl yüklerim?
 
-A: Load the secure license file using the provided code snippet. Replace `"Aspose.Total.lic.zip"` with the actual name of your secure license file and `"test"` with the correct password.
+ C: Sağlanan kod parçacığını kullanarak güvenli lisans dosyasını yükleyin. Yer değiştirmek`"Aspose.Total.lic.zip"` güvenli lisans dosyanızın gerçek adıyla ve`"test"` doğru şifreyle.
 
-#### Q: What is the purpose of the password in the license file extraction?
+#### S: Lisans dosyasının çıkarılmasında şifrenin amacı nedir?
 
-A: The password is used to protect the secure license file within the Zip archive. It ensures that only authorized users with the correct password can access the license.
+C: Şifre, Zip arşivindeki güvenli lisans dosyasını korumak için kullanılır. Lisansa yalnızca doğru şifreye sahip yetkili kullanıcıların erişebilmesini sağlar.
 
-#### Q: Can I use my own secure license file?
+#### S: Kendi güvenli lisans dosyamı kullanabilir miyim?
 
-A: Yes, you can use your own secure license file. Modify the code snippet by replacing `"Aspose.Total.lic.zip"` with the actual name of your secure license file and `"test"` with the correct password.
+ C: Evet, kendi güvenli lisans dosyanızı kullanabilirsiniz. Değiştirerek kod pasajını değiştirin`"Aspose.Total.lic.zip"` güvenli lisans dosyanızın gerçek adıyla ve`"test"` doğru şifreyle.
 
-#### Q: Is the secure license file encrypted?
+#### S: Güvenli lisans dosyası şifrelenmiş mi?
 
-A: Yes, the secure license file is encrypted within the Zip archive using a password. This adds an additional layer of security to the license.
+C: Evet, güvenli lisans dosyası Zip arşivinde bir parola kullanılarak şifrelenir. Bu, lisansa ek bir güvenlik katmanı ekler.
 
-#### Q: How do I access the secure license after loading?
+#### S: Yüklemeden sonra güvenli lisansa nasıl erişebilirim?
 
-A: After loading the secure license, you can access it as a `MemoryStream` named `ms` in the provided code snippet. This stream contains the decrypted secure license data.
+ C: Güvenli lisansı yükledikten sonra lisansa`MemoryStream` adlandırılmış`ms` sağlanan kod pasajında. Bu akış, şifresi çözülmüş güvenli lisans verilerini içerir.
 
-#### Q: Can I load multiple secure licenses in the same PDF file?
+#### S: Aynı PDF dosyasına birden fazla güvenli lisans yükleyebilir miyim?
 
-A: Yes, you can load multiple secure licenses in the same PDF file, each with its own password and extraction logic.
+C: Evet, aynı PDF dosyasına her birinin kendi şifresi ve çıkarma mantığı olan birden fazla güvenli lisansı yükleyebilirsiniz.
 
-#### Q: Is it necessary to extract the secure license to a `MemoryStream`?
+####  S: Güvenli lisansın bir bilgisayara çıkarılması gerekli midir?`MemoryStream`?
 
-A: Extracting the secure license to a `MemoryStream` is a common practice, but you can modify the code to save it to a file or process it in other ways as needed.
+ A: Güvenli lisansı bir klasöre çıkarma`MemoryStream` yaygın bir uygulamadır, ancak kodu bir dosyaya kaydedecek veya gerektiğinde başka şekillerde işleyecek şekilde değiştirebilirsiniz.
 
-#### Q: How do I apply the secure license to Aspose.PDF?
+#### S: Güvenli lisansı Aspose.PDF'e nasıl uygulayabilirim?
 
-A: The provided code demonstrates how to load the secure license. To apply the secure license to Aspose.PDF, use the `SetLicense` method as shown in other licensing tutorials.
+ C: Sağlanan kod, güvenli lisansın nasıl yükleneceğini gösterir. Güvenli lisansı Aspose.PDF'e uygulamak için`SetLicense` diğer lisanslama eğitimlerinde gösterilen yöntem.
 
-#### Q: Where can I obtain more information about secure licensing in Aspose products?
+#### S: Aspose ürünlerinde güvenli lisanslama hakkında daha fazla bilgiyi nereden edinebilirim?
 
-A: For more information about secure licensing, password protection, and related details, refer to the [Aspose Licensing Documentation](https://docs.aspose.com/pdf/net/licensing/) page.
+ C: Güvenli lisanslama, şifre koruması ve ilgili ayrıntılar hakkında daha fazla bilgi için bkz.[Aspose Lisanslama Belgeleri](https://docs.aspose.com/pdf/net/licensing/) sayfa.
 
-#### Q: Can I use a secure license with a trial version of Aspose.PDF?
+#### S: Aspose.PDF'in deneme sürümüyle güvenli bir lisans kullanabilir miyim?
 
-A: Yes, you can use a secure license with a trial version of Aspose.PDF. However, for full functionality, it's recommended to use a valid license.
+C: Evet, Aspose.PDF'in deneme sürümüyle güvenli bir lisans kullanabilirsiniz. Ancak tam işlevsellik için geçerli bir lisans kullanılması önerilir.

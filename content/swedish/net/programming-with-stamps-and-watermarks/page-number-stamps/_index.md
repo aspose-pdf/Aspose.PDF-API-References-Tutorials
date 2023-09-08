@@ -1,59 +1,59 @@
 ---
-title: Page Number Stamps In PDF File
-linktitle: Page Number Stamps In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add page number stamps in PDF file with Aspose.PDF for .NET.
+title: Sidnummerstämplar i PDF-fil
+linktitle: Sidnummerstämplar i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du lägger till sidnummerstämplar i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 160
 url: /sv/net/programming-with-stamps-and-watermarks/page-number-stamps/
 ---
-In this tutorial, we will guide you step by step on how to add page number stamps in PDF file using Aspose.PDF for .NET. We'll use the provided C# source code to open an existing PDF document, create a page number stamp, set its properties, and add it to a specific page in the PDF file.
+I den här handledningen guidar vi dig steg för steg om hur du lägger till sidnummerstämplar i PDF-fil med Aspose.PDF för .NET. Vi använder den medföljande C#-källkoden för att öppna ett befintligt PDF-dokument, skapa en sidnummerstämpel, ställa in dess egenskaper och lägga till den på en specifik sida i PDF-filen.
 
-## Step 1: Setting up the environment
+## Steg 1: Sätta upp miljön
 
-Before you begin, make sure you have the following:
+Innan du börjar, se till att du har följande:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- En installerad .NET-utvecklingsmiljö.
+- Aspose.PDF-biblioteket för .NET laddas ner och refereras till i ditt projekt.
 
-## Step 2: Loading the existing PDF document
+## Steg 2: Laddar det befintliga PDF-dokumentet
 
-The first step is to load the existing PDF document into your project. Here's how:
+Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Här är hur:
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the existing PDF document
+// Öppna det befintliga PDF-dokumentet
 Document pdfDocument = new Document(dataDir + "PageNumberStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Var noga med att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till katalogen där ditt PDF-dokument finns.
 
-## Step 3: Creating and Configuring the Page Numbering Stamp
+## Steg 3: Skapa och konfigurera sidnumreringsstämpeln
 
-Now that the PDF document is loaded, we can create a page numbering buffer and configure it according to our needs. Here's how:
+Nu när PDF-dokumentet är laddat kan vi skapa en sidnumreringsbuffert och konfigurera den efter våra behov. Här är hur:
 
 ```csharp
-// Create a page number buffer
+// Skapa en sidnummerbuffert
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
 
-// Define if the buffer is in the background or not
+// Definiera om bufferten är i bakgrunden eller inte
 pageNumberStamp.Background = false;
 
-// Format of the page numbering buffer
+// Format för sidnumreringsbufferten
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
 
-// Bottom margin of page numbering buffer
+// Nedre marginal på sidnumreringsbuffert
 pageNumberStamp.BottomMargin = 10;
 
-// Horizontal alignment of the page numbering buffer
+// Horisontell justering av sidnumreringsbufferten
 pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
 
-// Start number of page numbering
+// Startnummer för sidnumrering
 pageNumberStamp.StartingNumber = 1;
 
-// Set page number buffer text properties
+// Ställ in sidnummerbufferttextegenskaper
 pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
 pageNumberStamp.TextState.FontSize = 14.0F;
 pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
@@ -61,108 +61,108 @@ pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
 pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 ```
 
-The above code creates a page number stamp with properties like page number format, bottom margin, horizontal alignment, starting number and text properties.
+Ovanstående kod skapar en sidnummerstämpel med egenskaper som sidnummerformat, bottenmarginal, horisontell justering, startnummer och textegenskaper.
 
-## Step 4: Adding the page number stamp to a specific page
+## Steg 4: Lägga till sidnummerstämpeln på en specifik sida
 
-Once the page number stamp is configured, we can add it to a specific page of the PDF document. Here's how:
+När sidnummerstämpeln är konfigurerad kan vi lägga till den på en specifik sida i PDF-dokumentet. Här är hur:
 
 ```csharp
-// Add the page number buffer to a specific page
+// Lägg till sidnummerbufferten på en specifik sida
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 ```
 
-The above code adds the page number stamp to the first page of the PDF document. You can change the page number as needed.
+Ovanstående kod lägger till sidnummerstämpeln på första sidan i PDF-dokumentet. Du kan ändra sidnumret efter behov.
 
-## Step 5: Saving the modified PDF document
+## Steg 5: Spara det ändrade PDF-dokumentet
 
-Once the page number stamp is added to the PDF document, we can save the modified PDF document. Here's how:
+När sidnummerstämpeln har lagts till i PDF-dokumentet kan vi spara det ändrade PDF-dokumentet. Här är hur:
 
 ```csharp
-// Save the modified PDF document
+// Spara det ändrade PDF-dokumentet
 pdfDocument.Save(dataDir + "PageNumberStamp_out.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the edited PDF document.
+Var noga med att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till katalogen där du vill spara det redigerade PDF-dokumentet.
 
-### Sample source code for Page Number Stamps using Aspose.PDF for .NET 
+### Exempel på källkod för sidnummerstämplar med Aspose.PDF för .NET 
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Öppna dokumentet
 Document pdfDocument = new Document(dataDir+ "PageNumberStamp.pdf");
 
-// Create page number stamp
+// Skapa sidnummerstämpel
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
 
-// Whether the stamp is background
+// Om stämpeln är bakgrund
 pageNumberStamp.Background = false;
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
 pageNumberStamp.BottomMargin = 10;
 pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
 pageNumberStamp.StartingNumber = 1;
 
-// Set text properties
+// Ställ in textegenskaper
 pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
 pageNumberStamp.TextState.FontSize = 14.0F;
 pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
 pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
 pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 
-// Add stamp to particular page
+// Lägg till stämpel på en viss sida
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 dataDir = dataDir + "PageNumberStamp_out.pdf";
 
-// Save output document
+// Spara utdatadokument
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! You have learned how to add page number stamps to a PDF document using Aspose.PDF for .NET. You can now personalize your PDF documents by adding clear and informative page numbers.
+Grattis! Du har lärt dig hur du lägger till sidnummerstämplar i ett PDF-dokument med Aspose.PDF för .NET. Du kan nu anpassa dina PDF-dokument genom att lägga till tydliga och informativa sidnummer.
 
-### FAQ's for page number stamps in PDF file
+### Vanliga frågor om sidnummerstämplar i PDF-fil
 
-#### Q: What is a Page Number Stamp, and how is it used to add page numbers to a PDF file?
+#### F: Vad är en sidnummerstämpel och hur används den för att lägga till sidnummer i en PDF-fil?
 
-A: A Page Number Stamp is a feature in Aspose.PDF that allows you to add dynamic page numbers to specific pages of a PDF document. In this tutorial, it's achieved by creating a PageNumberStamp object, configuring its properties, and adding it to a designated page.
+S: En sidnummerstämpel är en funktion i Aspose.PDF som låter dig lägga till dynamiska sidnummer på specifika sidor i ett PDF-dokument. I den här handledningen uppnås det genom att skapa ett PageNumberStamp-objekt, konfigurera dess egenskaper och lägga till det på en angiven sida.
 
-#### Q: How does the provided C# source code accomplish adding page number stamps to a PDF file?
+#### F: Hur kan den medföljande C#-källkoden lägga till sidnummerstämplar i en PDF-fil?
 
-A: The code demonstrates how to load an existing PDF document, create a PageNumberStamp, set various properties (such as format, font, alignment, etc.), and then add the stamp to a specific page. The stamp automatically calculates the total page count and inserts the correct page numbers.
+S: Koden visar hur man laddar ett befintligt PDF-dokument, skapar en sidnummerstämpel, ställer in olika egenskaper (som format, teckensnitt, justering, etc.) och sedan lägger till stämpeln på en specifik sida. Stämpeln beräknar automatiskt det totala sidantal och infogar de korrekta sidnumren.
 
-#### Q: Can I customize the appearance of the page number, such as font style, color, and size?
+#### F: Kan jag anpassa utseendet på sidnumret, som typsnitt, färg och storlek?
 
-A: Absolutely, you can customize the appearance of the page number stamp by adjusting properties like font, font size, font style (bold, italic, etc.), and text color.
+S: Absolut, du kan anpassa utseendet på sidnummerstämpeln genom att justera egenskaper som teckensnitt, teckenstorlek, teckensnitt (fet, kursiv, etc.) och textfärg.
 
-#### Q: Is it possible to add page number stamps to multiple pages within a PDF document?
+#### F: Är det möjligt att lägga till sidnummerstämplar på flera sidor i ett PDF-dokument?
 
-A: Yes, you can add page number stamps to multiple pages by creating multiple PageNumberStamp objects and adding each one to the desired pages.
+S: Ja, du kan lägga till sidnummerstämplar på flera sidor genom att skapa flera PageNumberStamp-objekt och lägga till var och en på önskade sidor.
 
-#### Q: Can I choose whether the page number stamp appears as part of the page's content or as a background element?
+#### F: Kan jag välja om sidnummerstämpeln ska visas som en del av sidans innehåll eller som ett bakgrundselement?
 
-A: Yes, you can control whether the page number stamp appears as part of the page's content or as a background element by setting the `Background` property of the PageNumberStamp.
+ S: Ja, du kan styra om sidnummerstämpeln ska visas som en del av sidans innehåll eller som ett bakgrundselement genom att ställa in`Background` egenskapen för PageNumberStamp.
 
-#### Q: How do I specify the format of the page number, including the total page count?
+#### F: Hur anger jag formatet på sidnumret, inklusive det totala antalet sidor?
 
-A: The code uses the `Format` property of the PageNumberStamp to specify the format of the page number. The macro "# of" is used to represent the total page count.
+ S: Koden använder`Format`egenskapen för PageNumberStamp för att ange formatet för sidnumret. Makrot "# av" används för att representera det totala antalet sidor.
 
-#### Q: What happens if I add the same page number stamp to multiple pages?
+#### F: Vad händer om jag lägger till samma sidnummerstämpel på flera sidor?
 
-A: Adding the same PageNumberStamp instance to multiple pages will display the correct page numbers for each page. The stamp automatically adjusts the page number and total page count.
+S: Om du lägger till samma PageNumberStamp-instans på flera sidor visas rätt sidnummer för varje sida. Stämpeln justerar automatiskt sidnumret och det totala antalet sidor.
 
-#### Q: Can I add page number stamps to header or footer sections of a PDF document?
+#### F: Kan jag lägga till sidnummerstämplar i sidhuvuds- eller sidfotsavsnitt i ett PDF-dokument?
 
-A: While PageNumberStamps are typically added directly to the page's content, you can use FloatingBox or other techniques to position them in header or footer sections.
+S: Även om PageNumberStamps vanligtvis läggs till direkt i sidans innehåll, kan du använda FloatingBox eller andra tekniker för att placera dem i sidhuvuds- eller sidfotsavsnitt.
 
-#### Q: How do I specify the position of the page number stamp on the page?
+#### F: Hur anger jag positionen för sidnummerstämpeln på sidan?
 
-A: The `BottomMargin` and `HorizontalAlignment` properties of the PageNumberStamp allow you to control the position of the stamp within the page.
+ A: Den`BottomMargin` och`HorizontalAlignment` Egenskaperna för sidnummerstämpeln låter dig styra stämpelns position på sidan.
 
-#### Q: What if I want to start page numbering from a different number rather than 1?
+#### F: Vad händer om jag vill börja sidnumreringen från ett annat nummer istället för 1?
 
-A: You can set the `StartingNumber` property of the PageNumberStamp to specify the starting page number.
+ S: Du kan ställa in`StartingNumber`egenskapen för PageNumberStamp för att ange startsidans nummer.

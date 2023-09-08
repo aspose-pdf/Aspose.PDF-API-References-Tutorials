@@ -1,87 +1,87 @@
 ---
-title: Set Border In PDF To Table
-linktitle: Set Border In PDF To Table
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set a border in PDF to table with Aspose.PDF for .NET.
+title: تعيين الحدود في PDF إلى الجدول
+linktitle: تعيين الحدود في PDF إلى الجدول
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تعيين حدود في ملف PDF لجدول باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 200
 url: /ar/net/programming-with-tables/set-border/
 ---
-In this tutorial, we will guide you step by step to set a border in a table of a PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+في هذا البرنامج التعليمي، سنرشدك خطوة بخطوة لتعيين حد في جدول مستند PDF باستخدام Aspose.PDF لـ .NET. سنشرح لك كود مصدر C# المقدم ونوضح لك كيفية تنفيذه.
 
-## Step 1: Instantiating the Document object
-First, we'll instantiate a Document object:
+## الخطوة 1: إنشاء مثيل لكائن المستند
+أولاً، سنقوم بإنشاء كائن Document:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 2: Adding a page to the PDF document
-Next, we'll add a page to the PDF document:
+## الخطوة 2: إضافة صفحة إلى مستند PDF
+بعد ذلك، سنقوم بإضافة صفحة إلى مستند PDF:
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Creating the BorderInfo object
-We will now create a BorderInfo object to define the border of the table:
+## الخطوة 3: إنشاء كائن BorderInfo
+سنقوم الآن بإنشاء كائن BorderInfo لتحديد حدود الجدول:
 
 ```csharp
 Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
 ```
 
-## Step 4: Specifying top and bottom borders
-We'll specify that the top and bottom borders will be double:
+## الخطوة 4: تحديد الحدود العلوية والسفلية
+سنحدد أن الحدود العلوية والسفلية ستكون مزدوجة:
 
 ```csharp
 border.Top.IsDoubled = true;
 border.Bottom.IsDoubled = true;
 ```
 
-## Step 5: Instantiating the Table object
-Now let's instantiate a Table object:
+## الخطوة 5: إنشاء مثيل لكائن الجدول
+لنقم الآن بإنشاء كائن جدول:
 
 ```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 ```
 
-## Step 6: Specifying column widths
-We will specify the widths of the columns of the table:
+## الخطوة 6: تحديد عرض الأعمدة
+سنحدد عرض أعمدة الجدول:
 
 ```csharp
 table. ColumnWidths = "100";
 ```
 
-## Step 7: Creating the Row Object
-We will create a Row object:
+## الخطوة 7: إنشاء كائن الصف
+سنقوم بإنشاء كائن صف:
 
 ```csharp
 Aspose.Pdf.Row row = table.Rows.Add();
 ```
 
-## Step 8: Adding a cell to the row
-Next, we'll add a cell to the row:
+## الخطوة 8: إضافة خلية إلى الصف
+بعد ذلك، سنقوم بإضافة خلية إلى الصف:
 
 ```csharp
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
 ```
 
-## Step 9: Setting the cell border
-We are going to define the border of the cell (double border):
+## الخطوة 9: تعيين حدود الخلية
+سنقوم بتحديد حدود الخلية (الحدود المزدوجة):
 
 ```csharp
 cell. Border = border;
 ```
 
-## Step 10: Adding the table to the page
-Now let's add the table to the document page:
+## الخطوة 10: إضافة الجدول إلى الصفحة
+الآن دعونا نضيف الجدول إلى صفحة المستند:
 
 ```csharp
 page.Paragraphs.Add(table);
 ```
 
-## Step 11: Save PDF document
-Finally, we will save the PDF document:
+## الخطوة 11: حفظ مستند PDF
+أخيرًا، سنقوم بحفظ مستند PDF:
 
 ```csharp
 dataDir = dataDir + "TableBorderTest_out.pdf";
@@ -90,62 +90,62 @@ doc.Save(dataDir);
 Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Example source code for Set Border using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لـ Set Border باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document object
+// إنشاء مثيل لكائن المستند
 Document doc = new Document();
-// Add page to PDF document
+// إضافة صفحة إلى وثيقة PDF
 Page page = doc.Pages.Add();
-// Create BorderInfo object
+// إنشاء كائن BorderInfo
 Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
-// Specify that Top border will be double
+//حدد أن الحد العلوي سيكون مزدوجًا
 border.Top.IsDoubled = true;
-// Specify that bottom border will be double
+// حدد أن الحد السفلي سيكون مزدوجًا
 border.Bottom.IsDoubled = true;
-// Instantiate Table object
+// إنشاء كائن الجدول
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Specify Columns width information
+// تحديد معلومات عرض الأعمدة
 table.ColumnWidths = "100";
-// Create Row object
+// إنشاء كائن صف
 Aspose.Pdf.Row row = table.Rows.Add();
-// Add a Table cell to cells collection of row
+// إضافة خلية جدول إلى مجموعة خلايا الصف
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
-// Set the border for cell object (double border)
+// تعيين الحدود لكائن الخلية (حد مزدوج)
 cell.Border = border;
-// Add table to paragraphs collection of Page
+// إضافة جدول إلى مجموعة الفقرات من الصفحة
 page.Paragraphs.Add(table);
 dataDir = dataDir + "TableBorderTest_out.pdf";
-// Save the PDF document
+// احفظ مستند PDF
 doc.Save(dataDir);
 
 Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to set a border in a table of a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to create a document, add a page, configure the table border, and save the PDF document. Now you can apply this knowledge to your own projects.
+## خاتمة
+تهنئة ! لقد تعلمت الآن كيفية تعيين حدود في جدول مستند PDF باستخدام Aspose.PDF لـ .NET. يوضح لك هذا الدليل خطوة بخطوة كيفية إنشاء مستند وإضافة صفحة وتكوين حدود الجدول وحفظ مستند PDF. الآن يمكنك تطبيق هذه المعرفة على مشاريعك الخاصة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Can I set different border styles (e.g., dashed or dotted) for the table's top and bottom borders?
+#### س: هل يمكنني تعيين أنماط حدود مختلفة (على سبيل المثال، متقطعة أو منقط) للحدود العلوية والسفلية للجدول؟
 
-A: Yes, you can set different border styles for the table's top and bottom borders by modifying the `border.Top.Style` and `border.Bottom.Style` properties in the provided C# source code. Aspose.PDF for .NET allows you to choose from various border styles, including Solid, Dashed, Dotted, Double, and more.
+ ج: نعم، يمكنك تعيين أنماط حدود مختلفة للحدود العلوية والسفلية للجدول عن طريق تعديل`border.Top.Style` و`border.Bottom.Style`الخصائص في كود مصدر C# المقدم. يتيح لك Aspose.PDF for .NET الاختيار من بين أنماط الحدود المتنوعة، بما في ذلك Solid وDashed وDotted وDouble والمزيد.
 
-#### Q: How can I set the color of the table's border?
+#### س: كيف يمكنني ضبط لون حدود الجدول؟
 
-A: You can set the color of the table's border by modifying the `border.Color` property in the C# source code. Simply provide the desired color, such as `Aspose.Pdf.Color.Red` or any other valid color representation, to customize the border color.
+ ج: يمكنك ضبط لون حدود الجدول عن طريق تعديل`border.Color` الخاصية في كود مصدر C#. ببساطة قم بتوفير اللون المطلوب، مثل`Aspose.Pdf.Color.Red` أو أي تمثيل ألوان صالح آخر، لتخصيص لون الحدود.
 
-#### Q: Is it possible to apply borders to individual cells within the table with different settings (e.g., different colors or border styles)?
+#### س: هل من الممكن تطبيق الحدود على الخلايا الفردية داخل الجدول باستخدام إعدادات مختلفة (على سبيل المثال، ألوان مختلفة أو أنماط حدود)؟
 
-A: Yes, you can apply borders to individual cells within the table with different settings by configuring the `cell.Border` property for each cell individually. This allows you to have cell-specific border styles and colors based on your requirements.
+ ج: نعم، يمكنك تطبيق الحدود على الخلايا الفردية داخل الجدول باستخدام إعدادات مختلفة عن طريق تكوين`cell.Border` خاصية لكل خلية على حدة. يتيح لك ذلك الحصول على أنماط وألوان حدود خاصة بالخلية بناءً على متطلباتك.
 
-#### Q: Can I remove the border from specific sides of the table (e.g., left and right borders)?
+#### س: هل يمكنني إزالة الحدود من جوانب معينة من الجدول (على سبيل المثال، الحدود اليسرى واليمنى)؟
 
-A: Yes, you can remove the border from specific sides of the table by modifying the `border.Left`, `border.Right`, `border.Top`, and `border.Bottom` properties in the C# source code. Setting these properties to `null` will remove the border from the corresponding sides of the table.
+ ج: نعم، يمكنك إزالة الحدود من جوانب معينة من الجدول عن طريق تعديل`border.Left`, `border.Right`, `border.Top` ، و`border.Bottom`الخصائص في كود مصدر C#. ضبط هذه الخصائص على`null` سيؤدي إلى إزالة الحدود من الجوانب المقابلة للجدول.
 
-#### Q: How can I adjust the thickness of the table's border?
+#### س: كيف يمكنني ضبط سمك حدود الطاولة؟
 
-A: You can adjust the thickness of the table's border by modifying the `border.Width` property in the C# source code. Simply set the desired border width (in points) to achieve the desired thickness.
+ ج: يمكنك ضبط سمك حدود الجدول عن طريق تعديل`border.Width` الخاصية في كود مصدر C#. ما عليك سوى ضبط عرض الحدود المطلوب (بالنقاط) لتحقيق السُمك المطلوب.

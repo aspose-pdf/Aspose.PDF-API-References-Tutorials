@@ -1,58 +1,58 @@
 ---
-title: Extract Highlighted Text In PDF File
-linktitle: Extract Highlighted Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract highlighted text in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+title: Extraer texto resaltado en un archivo PDF
+linktitle: Extraer texto resaltado en un archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda cómo extraer texto resaltado en un archivo PDF usando Aspose.PDF para .NET con esta guía paso a paso.
 type: docs
 weight: 60
 url: /es/net/annotations/extracthighlightedtext/
 ---
-To extract highlighted text in PDF file, you can use the Aspose.PDF for .NET API. This API provides a simple way to retrieve all the text that has been highlighted in a document.
+Para extraer texto resaltado en un archivo PDF, puede utilizar Aspose.PDF para .NET API. Esta API proporciona una forma sencilla de recuperar todo el texto resaltado en un documento.
 
-## Step 1: Load the PDF document
+## Paso 1: cargue el documento PDF
 
-The first step in extracting highlighted text in PDF file is to load the document using the Aspose.PDF for .NET API. You can do this by creating a new instance of the `Document` class and passing the path to the PDF document as a parameter. 
+ El primer paso para extraer el texto resaltado en un archivo PDF es cargar el documento utilizando Aspose.PDF para .NET API. Puedes hacer esto creando una nueva instancia del`Document` clase y pasando la ruta al documento PDF como parámetro. 
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir ="YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 ```
 
-## Step 2: Loop through all annotations
+## Paso 2: recorrer todas las anotaciones
 
-The next step is to loop through all the annotations in the PDF document. You can do this using a `foreach` loop, like so:
+ El siguiente paso es recorrer todas las anotaciones en el documento PDF. Puedes hacer esto usando un`foreach` bucle, así:
 
 ```csharp
 foreach (Annotation annotation in doc.Pages[1].Annotations)
 {
-	// Code goes here
+	// El código va aquí.
 }
 ```
 
-## Step 3: Filter text markup annotations
+## Paso 3: filtrar las anotaciones de marcado de texto
 
-Inside the `foreach` loop, you will need to filter out all the annotations that are not text markup annotations. You can do this by checking if the annotation is an instance of the `TextMarkupAnnotation` class.
+ Dentro de`foreach` bucle, deberá filtrar todas las anotaciones que no sean anotaciones de marcado de texto. Puede hacer esto comprobando si la anotación es una instancia del`TextMarkupAnnotation` clase.
 
 ```csharp
 if (annotation is TextMarkupAnnotation)
 {
-	// Code goes here
+	// El código va aquí.
 }
 ```
 
-## Step 4: Retrieve highlighted text fragments
+## Paso 4: recuperar fragmentos de texto resaltados
 
-Once you have filtered out all the text markup annotations, you can retrieve the highlighted text fragments for each annotation. You can do this by calling the `GetMarkedTextFragments()` method on the `TextMarkupAnnotation` object.
+ Una vez que haya filtrado todas las anotaciones de marcado de texto, puede recuperar los fragmentos de texto resaltados para cada anotación. Puedes hacerlo llamando al`GetMarkedTextFragments()` método en el`TextMarkupAnnotation` objeto.
 
 ```csharp
 TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
 TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
 ```
 
-## Step 5: Display the highlighted text
+## Paso 5: muestra el texto resaltado
 
-Finally, you can display the highlighted text to the user. You can do this by looping through each `TextFragment` object in the `TextFragmentCollection` and calling the `Text` property.
+ Finalmente, puede mostrar el texto resaltado al usuario. Puedes hacer esto recorriendo cada`TextFragment` objeto en el`TextFragmentCollection` y llamando al`Text` propiedad.
 
 ```csharp
 foreach (TextFragment tf in collection)
@@ -61,10 +61,10 @@ foreach (TextFragment tf in collection)
 }
 ```
 
-### Example source code for Extract Highlighted Text using Aspose.PDF for .NET
+### Código fuente de ejemplo para extraer texto resaltado usando Aspose.PDF para .NET
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir ="YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 
@@ -82,28 +82,28 @@ foreach (Annotation annotation in doc.Pages[1].Annotations)
 }
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, we explored how to extract highlighted text from a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and using the provided C# source code, developers can easily extract and manage highlighted text in their PDF documents.
+En este tutorial, exploramos cómo extraer texto resaltado de un documento PDF usando Aspose.PDF para .NET. Siguiendo la guía paso a paso y utilizando el código fuente C# proporcionado, los desarrolladores pueden extraer y administrar fácilmente el texto resaltado en sus documentos PDF.
 
-### FAQ's for extract highlighted text in PDF file
+### Preguntas frecuentes para extraer texto resaltado en un archivo PDF
 
-#### Q: What are text markup annotations in a PDF document?
+#### P: ¿Qué son las anotaciones de texto en un documento PDF?
 
-A: Text markup annotations are annotations that highlight or mark specific text in a PDF document. Examples of text markup annotations include highlights, underlines, and strikethroughs.
+R: Las anotaciones de marcado de texto son anotaciones que resaltan o marcan texto específico en un documento PDF. Ejemplos de anotaciones de marcado de texto incluyen resaltados, subrayados y tachados.
 
-#### Q: Can I extract text from other types of annotations using Aspose.PDF for .NET?
+#### P: ¿Puedo extraer texto de otros tipos de anotaciones usando Aspose.PDF para .NET?
 
-A: Yes, Aspose.PDF for .NET provides various methods to extract text from different types of annotations, including text markup annotations, free text annotations, and more.
+R: Sí, Aspose.PDF para .NET proporciona varios métodos para extraer texto de diferentes tipos de anotaciones, incluidas anotaciones de marcado de texto, anotaciones de texto libre y más.
 
-#### Q: Does Aspose.PDF for .NET support extracting text from password-protected PDF files?
+#### P: ¿Aspose.PDF para .NET admite la extracción de texto de archivos PDF protegidos con contraseña?
 
-A: Yes, Aspose.PDF for .NET supports extracting text from password-protected PDF files. You need to provide the correct password when loading the PDF document using the `Document` class.
+ R: Sí, Aspose.PDF para .NET admite la extracción de texto de archivos PDF protegidos con contraseña. Debe proporcionar la contraseña correcta al cargar el documento PDF utilizando el`Document` clase.
 
-#### Q: Can I filter highlighted text based on other criteria, such as color or author?
+#### P: ¿Puedo filtrar el texto resaltado según otros criterios, como el color o el autor?
 
-A: Yes, you can filter highlighted text based on other criteria, such as color, author, or creation date. Aspose.PDF for .NET provides methods to access and filter annotations based on their properties.
+R: Sí, puedes filtrar el texto resaltado según otros criterios, como el color, el autor o la fecha de creación. Aspose.PDF para .NET proporciona métodos para acceder y filtrar anotaciones según sus propiedades.
 
-#### Q: Is it possible to save the extracted highlighted text to a separate file?
+#### P: ¿Es posible guardar el texto resaltado extraído en un archivo separado?
 
-A: Yes, you can save the extracted highlighted text to a separate file or store it in a data structure for further processing or analysis.
+R: Sí, puede guardar el texto resaltado extraído en un archivo separado o almacenarlo en una estructura de datos para su posterior procesamiento o análisis.

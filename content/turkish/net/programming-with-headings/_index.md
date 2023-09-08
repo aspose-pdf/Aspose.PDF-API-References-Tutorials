@@ -1,16 +1,16 @@
 ---
-title: Programming with Headings
-linktitle: Programming with Headings
+title: Başlıklarla Programlama
+linktitle: Başlıklarla Programlama
 type: docs
 weight: 20
 url: /tr/net/programming-with-headings/
-description: The Aspose.PDF for .NET tutorials walk you through using headings to improve the structure of your PDF documents.
+description: Aspose.PDF for .NET eğitimleri, PDF belgelerinizin yapısını geliştirmek için başlıkları kullanma konusunda size yol gösterir.
 ---
-The Aspose.PDF for .NET tutorials take you step-by-step to master programming with headings in your PDF documents. Learn how to add, style and manipulate headings to improve the structure of your PDF files.
+Aspose.PDF for .NET eğitimleri, PDF belgelerinizdeki başlıklarla programlama konusunda uzmanlaşmanıza adım adım yol gösterir. PDF dosyalarınızın yapısını geliştirmek için başlıkları nasıl ekleyeceğinizi, stillendireceğinizi ve değiştireceğinizi öğrenin.
 
-Explore the features of Aspose.PDF for .NET with dedicated tutorials. Learn how to work with headings in your PDF documents, using practical examples and step-by-step explanations. Improve the readability and navigation of your PDF files with these comprehensive resources.
+Özel eğitimlerle Aspose.PDF for .NET'in özelliklerini keşfedin. Pratik örnekler ve adım adım açıklamalar kullanarak PDF belgelerinizdeki başlıklarla nasıl çalışacağınızı öğrenin. Bu kapsamlı kaynaklarla PDF dosyalarınızın okunabilirliğini ve gezinmesini geliştirin.
 
-## Tutorials
-| Title | Description |
+## Öğreticiler
+| Başlık | Tanım |
 | --- | --- | 
-| [Apply Number Style In PDF File](./apply-number-style/) | Learn how to apply a numbering style to headings in PDF file using Aspose.PDF for .NET. Step by step guide. |   
+| [PDF Dosyasında Sayı Stilini Uygula](./apply-number-style/) | Aspose.PDF for .NET kullanarak PDF dosyasındaki başlıklara numaralandırma stilini nasıl uygulayacağınızı öğrenin. Adım adım rehber. |   

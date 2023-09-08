@@ -1,51 +1,51 @@
 ---
-title: Text In Footer Of PDF File
-linktitle: Text In Footer Of PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn to add text in the footer of PDF file with Aspose.PDF for .NET.
+title: النص في تذييل ملف PDF
+linktitle: النص في تذييل ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة نص في تذييل ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 180
 url: /ar/net/programming-with-stamps-and-watermarks/text-in-footer/
 ---
-In this tutorial, we are going to learn how to add text in the footer of PDF file using Aspose.PDF for .NET. Follow the steps below:
+في هذا البرنامج التعليمي، سنتعلم كيفية إضافة نص في تذييل ملف PDF باستخدام Aspose.PDF لـ .NET. اتبع الخطوات التالية:
 
-## Step 1: Project preparation
+## الخطوة 1: إعداد المشروع
 
-Make sure you have installed Aspose.PDF for .NET and created a C# project.
+تأكد من تثبيت Aspose.PDF لـ .NET وإنشاء مشروع C#.
 
-## Step 2: Importing namespaces
+## الخطوة 2: استيراد مساحات الأسماء
 
-Add the following namespaces to your C# source file:
+أضف مساحات الأسماء التالية إلى ملف مصدر C# الخاص بك:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Opening the document
+## الخطوة 3: فتح المستند
 
-Open the existing PDF document using the path provided:
+افتح مستند PDF الموجود باستخدام المسار المقدم:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "TextinFooter.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to your documents directory.
+تأكد من استبدال "دليل مستنداتك" بالمسار الفعلي لدليل مستنداتك.
 
-## Step 4: Create footer text
+## الخطوة 4: إنشاء نص التذييل
 
-Create a new text stamp with the text you want to add in the footer:
+قم بإنشاء طابع نصي جديد بالنص الذي تريد إضافته في التذييل:
 
 ```csharp
 TextStamp textStamp = new TextStamp("footer text");
 ```
 
-You can customize the text by changing its properties like bottom margin, horizontal alignment, and vertical alignment.
+يمكنك تخصيص النص عن طريق تغيير خصائصه مثل الهامش السفلي، والمحاذاة الأفقية، والمحاذاة الرأسية.
 
-## Step 5: Add footer text to all pages
+## الخطوة 5: إضافة نص التذييل إلى جميع الصفحات
 
-Go through all the pages of the PDF document and add the text stamp in the footer:
+تصفح جميع صفحات مستند PDF وأضف ختم النص في التذييل:
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -54,9 +54,9 @@ foreach(Page page in pdfDocument.Pages)
 }
 ```
 
-## Step 6: Saving the PDF Document
+## الخطوة 6: حفظ مستند PDF
 
-Once the footer text has been added on all pages, save the updated PDF document:
+بمجرد إضافة نص التذييل إلى جميع الصفحات، احفظ مستند PDF المحدث:
 
 ```csharp
 dataDir = dataDir + "TextinFooter_out.pdf";
@@ -64,72 +64,72 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nText in footer added successfully.\nFile saved at: " + dataDir);
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+تأكد من استبدال "دليل المستندات الخاص بك" بالمسار الفعلي للدليل الذي تريد حفظ مستند PDF فيه.
 
-### Sample source code for Textin Footer using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتذييل Textin باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir+ "TextinFooter.pdf");
 
-// Create footer
+// إنشاء تذييل
 TextStamp textStamp = new TextStamp("Footer Text");
 
-// Set properties of the stamp
+// تعيين خصائص الطوابع
 textStamp.BottomMargin = 10;
 textStamp.HorizontalAlignment = HorizontalAlignment.Center;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-// Add footer on all pages
+// إضافة تذييل على كافة الصفحات
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(textStamp);
 }
 dataDir = dataDir + "TextinFooter_out.pdf";
 
-// Save updated PDF file
+// حفظ ملف PDF المحدث
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nText in footer added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have learned how to add text in the footer of a PDF document using Aspose.PDF for .NET. You can now customize your footers by adding additional text to your PDF documents.
+تهنئة ! لقد تعلمت كيفية إضافة نص في تذييل مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن تخصيص تذييلاتك عن طريق إضافة نص إضافي إلى مستندات PDF الخاصة بك.
 
-### FAQ's for text in footer of PDF file
+### الأسئلة الشائعة للنص الموجود في تذييل ملف PDF
 
-#### Q: What is the purpose of adding text in the footer of a PDF document?
+#### س: ما هو الغرض من إضافة نص في تذييل مستند PDF؟
 
-A: Adding text in the footer of a PDF document allows you to include important information, such as copyright notices, page numbers, document version, or any other text that you want to appear consistently at the bottom of each page.
+ج: تتيح لك إضافة نص في تذييل مستند PDF تضمين معلومات مهمة، مثل إشعارات حقوق الطبع والنشر أو أرقام الصفحات أو إصدار المستند أو أي نص آخر تريده أن يظهر بشكل متسق أسفل كل صفحة.
 
-#### Q: How does the provided C# source code achieve the addition of text in the footer of a PDF document?
+#### س: كيف يحقق كود مصدر C# المقدم إضافة نص في تذييل مستند PDF؟
 
-A: The code demonstrates the process of opening an existing PDF document, creating a text stamp with the desired footer text, customizing the text properties, adding the text stamp to all pages, and finally saving the updated PDF document with the added footer text.
+ج: يوضح الكود عملية فتح مستند PDF موجود، وإنشاء ختم نصي بنص التذييل المطلوب، وتخصيص خصائص النص، وإضافة ختم النص إلى جميع الصفحات، وأخيرًا حفظ مستند PDF المحدث مع نص التذييل المضاف.
 
-#### Q: Can I modify the appearance of the footer text, such as its font, size, color, and alignment?
+#### س: هل يمكنني تعديل مظهر نص التذييل، مثل الخط والحجم واللون والمحاذاة؟
 
-A: Yes, you can customize the appearance of the footer text by modifying the properties of the `TextStamp` object. The code example includes setting properties like bottom margin, horizontal alignment, and vertical alignment. You can also adjust the font, size, color, and other text-related properties.
+ ج: نعم، يمكنك تخصيص مظهر نص التذييل عن طريق تعديل خصائص الملف`TextStamp` هدف. يتضمن مثال التعليمات البرمجية خصائص الإعداد مثل الهامش السفلي، والمحاذاة الأفقية، والمحاذاة الرأسية. يمكنك أيضًا ضبط الخط والحجم واللون والخصائص الأخرى المتعلقة بالنص.
 
-#### Q: Is it possible to add different text to each page's footer?
+#### س: هل من الممكن إضافة نص مختلف إلى تذييل كل صفحة؟
 
-A: Yes, you can add different text to each page's footer by creating separate `TextStamp` objects with different text content or properties and then adding them to specific pages as needed.
+ ج: نعم، يمكنك إضافة نص مختلف إلى تذييل كل صفحة عن طريق إنشاء نص منفصل`TextStamp` كائنات ذات محتوى أو خصائص نصية مختلفة ثم إضافتها إلى صفحات محددة حسب الحاجة.
 
-#### Q: How do I ensure the footer text appears consistently on every page of the PDF document?
+#### س: كيف أتأكد من ظهور نص التذييل بشكل متسق في كل صفحة من مستند PDF؟
 
-A: By using a loop that iterates through all the pages of the PDF document and adding the same text stamp to each page, you ensure that the footer text appears consistently on every page.
+ج: باستخدام حلقة تتكرر عبر جميع صفحات مستند PDF وإضافة نفس ختم النص إلى كل صفحة، فإنك تضمن ظهور نص التذييل بشكل متسق في كل صفحة.
 
-#### Q: Can I add multiple lines of text or format the footer text with line breaks?
+#### س: هل يمكنني إضافة عدة أسطر من النص أو تنسيق نص التذييل مع فواصل الأسطر؟
 
-A: Yes, you can add multiple lines of text to the footer by including line breaks in the text string. For example, you can use the escape sequence `\n` to indicate a line break in the text.
+ ج: نعم، يمكنك إضافة عدة أسطر من النص إلى التذييل عن طريق تضمين فواصل الأسطر في السلسلة النصية. على سبيل المثال، يمكنك استخدام تسلسل الهروب`\n` للإشارة إلى فاصل أسطر في النص.
 
-#### Q: What happens if I want to add different content to the header and footer of the same PDF document?
+#### س: ماذا يحدث إذا أردت إضافة محتوى مختلف إلى رأس وتذييل مستند PDF نفسه؟
 
-A: To add different content to the header and footer sections, you would follow similar steps for both sections. The code demonstrates adding text to the footer; you can use a similar approach to add text to the header.
+ج: لإضافة محتوى مختلف إلى قسمي الرأس والتذييل، يجب عليك اتباع خطوات مماثلة لكلا القسمين. يوضح الكود إضافة نص إلى التذييل؛ يمكنك استخدام أسلوب مماثل لإضافة نص إلى الرأس.
 
-#### Q: Is it possible to add images or other elements alongside the footer text using this approach?
+#### س: هل من الممكن إضافة صور أو عناصر أخرى إلى جانب نص التذييل باستخدام هذا الأسلوب؟
 
-A: While the provided code specifically demonstrates adding text to the footer, you can extend the approach to add other elements like images, lines, shapes, or any other content to the footer section using the Aspose.PDF library.
+ج: بينما يوضح الكود المقدم على وجه التحديد إضافة نص إلى التذييل، يمكنك توسيع الأسلوب لإضافة عناصر أخرى مثل الصور أو الخطوط أو الأشكال أو أي محتوى آخر إلى قسم التذييل باستخدام مكتبة Aspose.PDF.

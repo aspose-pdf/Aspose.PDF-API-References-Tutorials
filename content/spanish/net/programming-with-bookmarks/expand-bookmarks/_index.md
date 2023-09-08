@@ -1,49 +1,49 @@
 ---
-title: Expand Bookmarks In PDF File
-linktitle: Expand Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily expand bookmarks in PDF file for improved navigation with Aspose.PDF for .NET.
+title: Expandir marcadores en un archivo PDF
+linktitle: Expandir marcadores en un archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Amplíe fácilmente los marcadores en un archivo PDF para mejorar la navegación con Aspose.PDF para .NET.
 type: docs
 weight: 50
 url: /es/net/programming-with-bookmarks/expand-bookmarks/
 ---
-Expanding bookmarks in PDF file will display all open bookmarks by default. With Aspose.PDF for .NET, you can easily expand bookmarks by following the following source code:
+Al expandir los marcadores en un archivo PDF se mostrarán todos los marcadores abiertos de forma predeterminada. Con Aspose.PDF para .NET, puede expandir fácilmente los marcadores siguiendo el siguiente código fuente:
 
-## Step 1: Import required libraries
+## Paso 1: importar las bibliotecas necesarias
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Antes de comenzar, debe importar las bibliotecas necesarias para su proyecto C#. Aquí está la directiva de importación necesaria:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Paso 2: establezca la ruta a la carpeta de documentos
 
-In this step, you need to specify the path to the folder containing the PDF file whose bookmarks you want to expand. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ En este paso, debe especificar la ruta a la carpeta que contiene el archivo PDF cuyos marcadores desea expandir. Reemplazar`"YOUR DOCUMENT DIRECTORY"`en el siguiente código con la ruta real a su carpeta de documentos:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Paso 3: abre el documento PDF
 
-Now we will open the PDF document whose bookmarks we want to expand using the following code:
+Ahora abriremos el documento PDF cuyos marcadores queremos expandir usando el siguiente código:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 4: Set Page Display Mode
+## Paso 4: configurar el modo de visualización de página
 
-In this step, we will set the page display mode to show bookmarks by default. We use the `PageMode` property of the `doc` object to set the desired page mode. Here is the corresponding code:
+En este paso, configuraremos el modo de visualización de la página para que muestre marcadores de forma predeterminada. Usamos el`PageMode` propiedad de la`doc` objeto para establecer el modo de página deseado. Aquí está el código correspondiente:
 
 ```csharp
 doc.PageMode = PageMode.UseOutlines;
 ```
 
-## Step 5: Browse bookmarks and expand them
+## Paso 5: busque marcadores y amplíelos
 
-Now we'll loop through each bookmark item in the document's bookmarks collection and set each item's open state to `true` to expand them by default. Here is the corresponding code:
+ Ahora recorreremos cada elemento de marcador en la colección de marcadores del documento y estableceremos el estado abierto de cada elemento en`true` para expandirlos de forma predeterminada. Aquí está el código correspondiente:
 
 ```csharp
 foreach(OutlineItemCollection item in doc.Outlines)
@@ -52,86 +52,86 @@ foreach(OutlineItemCollection item in doc.Outlines)
 }
 ```
 
-## Step 6: Save the updated file
+## Paso 6: guarde el archivo actualizado
 
-Finally, we save the updated PDF file using the `Save` method of the `doc` object. Here is the corresponding code:
+ Finalmente, guardamos el archivo PDF actualizado usando el`Save` método de la`doc` objeto. Aquí está el código correspondiente:
 
 ```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Expand Bookmarks using Aspose.PDF for .NET 
+### Código fuente de muestra para expandir marcadores usando Aspose.PDF para .NET 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Abrir documento
 Document doc = new Document(dataDir + "input.pdf");
-// Set page view mode i.e. show thumbnails, full-screen, show attachment panel
+// Establecer el modo de vista de página, es decir, mostrar miniaturas, pantalla completa, mostrar panel de archivos adjuntos
 doc.PageMode = PageMode.UseOutlines;
-// Traverse through each Ouline item in outlines collection of PDF file
+// Recorra cada elemento de Ouline en la colección de esquemas del archivo PDF
 foreach (OutlineItemCollection item in doc.Outlines)
 {
-	// Set open status for outline item
+	// Establecer estado abierto para elemento de esquema
 	item.Open = true;
 }
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
-// Save output
+// Guardar salida
 doc.Save(dataDir);
 Console.WriteLine("\nBookmarks expanded successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Conclusión
 
-Congratulation ! You now have a step-by-step guide to developing bookmarks with Aspose.PDF for .NET. You can use this code to show all default bookmarks in your PDF documents.
+¡Enhorabuena! Ahora tiene una guía paso a paso para desarrollar marcadores con Aspose.PDF para .NET. Puede utilizar este código para mostrar todos los marcadores predeterminados en sus documentos PDF.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Asegúrese de consultar la documentación oficial de Aspose.PDF para obtener más información sobre las funciones avanzadas de manipulación de marcadores.
 
-### FAQ's for expand bookmarks in PDF file
+### Preguntas frecuentes para expandir marcadores en un archivo PDF
 
-#### Q: What are bookmarks in a PDF file?
+#### P: ¿Qué son los marcadores en un archivo PDF?
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They provide a convenient way to access different parts of a document.
+R: Los marcadores en un archivo PDF son ayudas de navegación que permiten a los usuarios saltar rápidamente a secciones o páginas específicas dentro del documento. Proporcionan una forma cómoda de acceder a diferentes partes de un documento.
 
-#### Q: Why would I want to expand bookmarks in a PDF file?
+#### P: ¿Por qué querría expandir los marcadores en un archivo PDF?
 
-A: Expanding bookmarks can improve the user experience by displaying all bookmarks in an expanded state by default. This gives users a clear overview of the document's structure and allows them to easily navigate to different sections.
+R: Expandir los marcadores puede mejorar la experiencia del usuario al mostrar todos los marcadores en un estado expandido de forma predeterminada. Esto brinda a los usuarios una descripción general clara de la estructura del documento y les permite navegar fácilmente a diferentes secciones.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### P: ¿Cómo importo las bibliotecas necesarias para mi proyecto C#?
 
-A: To import the required library for your C# project, use the following import directive:
+R: Para importar la biblioteca requerida para su proyecto C#, use la siguiente directiva de importación:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive allows you to utilize the classes and methods provided by Aspose.PDF for .NET.
+Esta directiva le permite utilizar las clases y métodos proporcionados por Aspose.PDF para .NET.
 
-#### Q: How do I specify the path to the documents folder?
+#### P: ¿Cómo especifico la ruta a la carpeta de documentos?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file that you want to work with. This ensures that the code can locate the target PDF file.
+ R: En el código fuente proporcionado, reemplace`"YOUR DOCUMENT DIRECTORY"` con la ruta real a la carpeta que contiene el archivo PDF con el que desea trabajar. Esto garantiza que el código pueda localizar el archivo PDF de destino.
 
-#### Q: How do I open a PDF document to expand its bookmarks?
+#### P: ¿Cómo abro un documento PDF para expandir sus marcadores?
 
-A: To open a PDF document for expanding bookmarks, use the following code:
+R: Para abrir un documento PDF y expandir los marcadores, utilice el siguiente código:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Replace `"input.pdf"` with the actual file name.
+ Reemplazar`"input.pdf"` con el nombre del archivo real.
 
-#### Q: How do I set the page display mode to show bookmarks by default?
+#### P: ¿Cómo configuro el modo de visualización de páginas para que muestre marcadores de forma predeterminada?
 
-A: To set the page display mode to show bookmarks by default, use the `PageMode` property of the `doc` object:
+R: Para configurar el modo de visualización de páginas para que muestre marcadores de forma predeterminada, utilice el`PageMode` propiedad de la`doc` objeto:
 
 ```csharp
 doc.PageMode = PageMode.UseOutlines;
 ```
 
-#### Q: How do I expand all bookmarks in the PDF document?
+#### P: ¿Cómo amplío todos los marcadores en el documento PDF?
 
-A: To expand all bookmarks, loop through each bookmark item in the document's outlines collection and set the `Open` property to `true`:
+ R: Para expandir todos los marcadores, recorra cada elemento de marcador en la colección de esquemas del documento y configure el`Open` propiedad a`true`:
 
 ```csharp
 foreach (OutlineItemCollection item in doc.Outlines)
@@ -140,19 +140,19 @@ foreach (OutlineItemCollection item in doc.Outlines)
 }
 ```
 
-#### Q: What happens if a bookmark has nested child bookmarks?
+#### P: ¿Qué sucede si un marcador tiene marcadores secundarios anidados?
 
-A: If a bookmark has nested child bookmarks, expanding the parent bookmark will also expand its child bookmarks, providing a comprehensive view of the document's structure.
+R: Si un marcador tiene marcadores secundarios anidados, al expandir el marcador principal también se expandirán sus marcadores secundarios, lo que proporciona una vista completa de la estructura del documento.
 
-#### Q: How do I save the updated PDF file after expanding bookmarks?
+#### P: ¿Cómo guardo el archivo PDF actualizado después de expandir los marcadores?
 
-A: To save the updated PDF file after expanding bookmarks, use the following code:
+R: Para guardar el archivo PDF actualizado después de expandir los marcadores, use el siguiente código:
 
 ```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 doc.Save(dataDir);
 ```
 
-#### Q: Can I customize the appearance of expanded bookmarks?
+#### P: ¿Puedo personalizar la apariencia de los marcadores expandidos?
 
-A: While this tutorial focuses on expanding bookmarks by default, you can customize the appearance of bookmarks using Aspose.PDF's other features and properties.
+R: Si bien este tutorial se centra en expandir los marcadores de forma predeterminada, puede personalizar la apariencia de los marcadores utilizando otras características y propiedades de Aspose.PDF.

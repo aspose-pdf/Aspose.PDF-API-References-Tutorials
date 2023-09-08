@@ -1,54 +1,54 @@
 ---
-title: Create Structure Elements
-linktitle: Create Structure Elements
-second_title: Aspose.PDF for .NET API Reference
-description: In this tutorial, you will learn how to use Aspose.PDF for .NET to create structural elements in a tagged PDF document.
+title: إنشاء عناصر الهيكل
+linktitle: إنشاء عناصر الهيكل
+second_title: Aspose.PDF لمرجع .NET API
+description: في هذا البرنامج التعليمي، ستتعلم كيفية استخدام Aspose.PDF لـ .NET لإنشاء عناصر هيكلية في وثيقة PDF ذات علامات.
 type: docs
 weight: 60
 url: /ar/net/programming-with-tagged-pdf/create-structure-elements/
 ---
-The following C# source code uses Aspose.PDF for .NET to create structure elements. Follow the steps below to understand how the code works.
+يستخدم كود مصدر C# التالي Aspose.PDF لـ .NET لإنشاء عناصر البنية. اتبع الخطوات أدناه لفهم كيفية عمل الكود.
 
-## Step 1: Import the necessary libraries
+## الخطوة 1: استيراد المكتبات اللازمة
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Define the directory of your documents
+## الخطوة 2: تحديد دليل المستندات الخاصة بك
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-Be sure to specify the correct path to your documents directory.
+تأكد من تحديد المسار الصحيح لدليل المستندات الخاص بك.
 
-## Step 3: Create a PDF document
+## الخطوة 3: إنشاء مستند PDF
 
 ```csharp
 Document document = new Document();
 ```
 
-We create a new Document object that represents the PDF document.
+نقوم بإنشاء كائن مستند جديد يمثل مستند PDF.
 
-## Step 4: Get content to work with TaggedPdf
+## الخطوة 4: احصل على محتوى للعمل مع TaggedPdf
 
 ```csharp
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-We retrieve the tagged content of the PDF document. This will allow us to manipulate structural elements.
+نقوم باسترداد المحتوى الموسوم لوثيقة PDF. هذا سيسمح لنا بالتعامل مع العناصر الهيكلية.
 
-## Step 5: Set document title and language
+## الخطوة 5: تعيين عنوان المستند واللغة
 
 ```csharp
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We set the title and language of the tagged PDF document. This improves the accessibility of the document.
+قمنا بتعيين عنوان ولغة مستند PDF الذي تم وضع علامة عليه. يؤدي هذا إلى تحسين إمكانية الوصول إلى المستند.
 
-## Step 6: Create grouping elements
+## الخطوة 6: إنشاء عناصر التجميع
 
 ```csharp
 PartElement partElement = taggedContent.CreatePartElement();
@@ -64,9 +64,9 @@ NonStructElement nonStructElement = taggedContent.CreateNonStructElement();
 PrivateElement privateElement = taggedContent.CreatePrivateElement();
 ```
 
-We create different structural elements for grouping content in the PDF document.
+نقوم بإنشاء عناصر هيكلية مختلفة لتجميع المحتوى في مستند PDF.
 
-## Step 7: Create paragraph structure elements
+## الخطوة 7: إنشاء عناصر هيكل الفقرة
 
 ```csharp
 ParagraphElement paragraphElement = taggedContent.CreateParagraphElement();
@@ -74,9 +74,9 @@ HeaderElement headerElement = taggedContent.CreateHeaderElement();
 HeaderElement h1Element = taggedContent.CreateHeaderElement(1);
 ```
 
-We create block-level structural elements for paragraphs and headings. The example above shows the creation of a level 1 header.
+نقوم بإنشاء عناصر هيكلية على مستوى الكتلة للفقرات والعناوين. يوضح المثال أعلاه إنشاء رأس المستوى 1.
 
-## Step 8: Create inline level structure elements
+## الخطوة 8: إنشاء عناصر بنية المستوى المضمنة
 
 ```csharp
 SpanElement spanElement = taggedContent.CreateSpanElement();
@@ -84,39 +84,39 @@ QuoteElement quoteElement = taggedContent.CreateQuoteElement();
 NoteElement noteElement = taggedContent.CreateNoteElement();
 ```
 
-We create inline level structure elements for the parts of text that appear inside a paragraph or heading.
+نقوم بإنشاء عناصر بنية المستوى المضمنة لأجزاء النص التي تظهر داخل الفقرة أو العنوان.
 
-## Step 9: Create artwork structure elements
+## الخطوة 9: إنشاء عناصر هيكل العمل الفني
 
 ```csharp
 FigureElement figureElement = taggedContent.CreateFigureElement();
 FormulaElement formulaElement = taggedContent.CreateFormulaElement();
 ```
 
-We create structural elements for the illustrations and mathematical formulas present in the document.
+نقوم بإنشاء عناصر هيكلية للرسوم التوضيحية والصيغ الرياضية الموجودة في الوثيقة.
 
-## Step 10: Save the tagged PDF document
+## الخطوة 10: احفظ مستند PDF الذي تم وضع علامة عليه
 
 ```csharp
 document.Save(dataDir + "StructureElements.pdf");
 ```
 
-We save the tagged PDF document with the created structure elements.
+نقوم بحفظ وثيقة PDF ذات العلامات مع عناصر البنية التي تم إنشاؤها.
 
-### Sample source code for Create Structure Elements using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإنشاء عناصر البنية باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Pdf Document
+// إنشاء مستند PDF
 Document document = new Document();
-// Get Content for work with TaggedPdf
+// احصل على محتوى للعمل مع TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
-// Set Title and Language for Documnet
+// قم بتعيين العنوان واللغة لـ Documnet
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
-// Create Grouping Elements
+// إنشاء عناصر التجميع
 PartElement partElement = taggedContent.CreatePartElement();
 ArtElement artElement = taggedContent.CreateArtElement();
 SectElement sectElement = taggedContent.CreateSectElement();
@@ -128,18 +128,18 @@ TOCIElement tociElement = taggedContent.CreateTOCIElement();
 IndexElement indexElement = taggedContent.CreateIndexElement();
 NonStructElement nonStructElement = taggedContent.CreateNonStructElement();
 PrivateElement privateElement = taggedContent.CreatePrivateElement();
-// Create Text Block-Level Structure Elements
+// إنشاء عناصر بنية على مستوى كتلة النص
 ParagraphElement paragraphElement = taggedContent.CreateParagraphElement();
 HeaderElement headerElement = taggedContent.CreateHeaderElement();
 HeaderElement h1Element = taggedContent.CreateHeaderElement(1);
-// Create Text Inline-Level Structure Elements
+// إنشاء عناصر بنية على مستوى النص
 SpanElement spanElement = taggedContent.CreateSpanElement();
 QuoteElement quoteElement = taggedContent.CreateQuoteElement();
 NoteElement noteElement = taggedContent.CreateNoteElement();
-// Create Illustration Structure Elements
+// إنشاء عناصر هيكل التوضيح
 FigureElement figureElement = taggedContent.CreateFigureElement();
 FormulaElement formulaElement = taggedContent.CreateFormulaElement();
-// Methods are under development
+// الأساليب قيد التطوير
 ListElement listElement = taggedContent.CreateListElement();
 TableElement tableElement = taggedContent.CreateTableElement();
 ReferenceElement referenceElement = taggedContent.CreateReferenceElement();
@@ -150,53 +150,53 @@ AnnotElement annotElement = taggedContent.CreateAnnotElement();
 RubyElement rubyElement = taggedContent.CreateRubyElement();
 WarichuElement warichuElement = taggedContent.CreateWarichuElement();
 FormElement formElement = taggedContent.CreateFormElement();
-// Save Tagged Pdf Document
+// حفظ وثيقة PDF ذات العلامات
 document.Save(dataDir + "StructureElements.pdf");
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to use Aspose.PDF for .NET to create structure elements in a tagged PDF document. Structural elements help improve document accessibility and organize content in a meaningful way. Now you can use this knowledge to create structured, easy-to-navigate PDF documents.
+في هذا البرنامج التعليمي، تعلمنا كيفية استخدام Aspose.PDF لـ .NET لإنشاء عناصر هيكلية في وثيقة PDF ذات علامات. تساعد العناصر الهيكلية على تحسين إمكانية الوصول إلى المستندات وتنظيم المحتوى بطريقة مفيدة. يمكنك الآن استخدام هذه المعرفة لإنشاء مستندات PDF منظمة وسهلة التنقل.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of creating structure elements in a PDF document using Aspose.PDF for .NET?
+#### س: ما هو الغرض من إنشاء عناصر هيكلية في مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Creating structure elements in a PDF document using Aspose.PDF for .NET enhances the accessibility and organization of the document's content. Structure elements provide a hierarchical structure that improves navigation, semantics, and compatibility with assistive technologies.
+ج: يؤدي إنشاء عناصر هيكلية في مستند PDF باستخدام Aspose.PDF لـ .NET إلى تحسين إمكانية الوصول إلى محتوى المستند وتنظيمه. توفر عناصر البنية بنية هرمية تعمل على تحسين التنقل والدلالات والتوافق مع التقنيات المساعدة.
 
-#### Q: How does the provided C# code create structure elements in a PDF document?
+#### س: كيف يقوم كود C# المقدم بإنشاء عناصر هيكلية في مستند PDF؟
 
-A: The code example demonstrates how to create various types of structure elements, including grouping elements (such as parts, sections, and divs), block-level elements (like paragraphs and headings), inline-level elements (span, quote, note), and artwork elements (such as figures and formulas). These structure elements help organize content.
+ج: يوضح مثال التعليمات البرمجية كيفية إنشاء أنواع مختلفة من عناصر البنية، بما في ذلك عناصر التجميع (مثل الأجزاء والأقسام وdivs)، وعناصر مستوى الكتلة (مثل الفقرات والعناوين)، وعناصر المستوى المضمّن (الامتداد، والاقتباس، والملاحظة )، وعناصر العمل الفني (مثل الأشكال والصيغ). تساعد عناصر البنية هذه في تنظيم المحتوى.
 
-#### Q: Why is it important to set the document's title and language using the `SetTitle` and `SetLanguage` methods?
+####  س: لماذا من المهم تعيين عنوان المستند ولغته باستخدام`SetTitle` and `SetLanguage` methods?
 
-A: Setting the document's title and language using the `SetTitle` and `SetLanguage` methods improves document accessibility and semantics. The title provides a brief description of the document's purpose, while the language attribute enhances language-specific rendering and accessibility.
+ ج: قم بتعيين عنوان المستند ولغته باستخدام`SetTitle` و`SetLanguage`تعمل الأساليب على تحسين إمكانية الوصول إلى المستندات ودلالاتها. يوفر العنوان وصفًا موجزًا للغرض من المستند، بينما تعمل سمة اللغة على تحسين العرض وإمكانية الوصول الخاصة باللغة.
 
-#### Q: How do grouping elements, such as `PartElement` and `SectElement`, contribute to the structure of the PDF document?
+####  س: كيف يتم تجميع العناصر، مثل`PartElement` and `SectElement`, contribute to the structure of the PDF document?
 
-A: Grouping elements create a hierarchical structure within the PDF document, allowing you to logically organize and group related content. This enhances navigation and provides a clear structure for users.
+ج: تقوم عناصر التجميع بإنشاء هيكل هرمي داخل مستند PDF، مما يسمح لك بتنظيم المحتوى ذي الصلة وتجميعه بشكل منطقي. وهذا يعزز التنقل ويوفر بنية واضحة للمستخدمين.
 
-#### Q: What are block-level and inline-level structure elements, and how do they differ?
+#### س: ما هي عناصر البنية على مستوى الكتلة والمستوى المضمن، وكيف تختلف؟
 
-A: Block-level structure elements represent larger blocks of content, such as paragraphs and headings, while inline-level elements represent parts of text within a paragraph or heading, such as spans, quotes, and notes. They help define the hierarchy and relationships of content.
+ج: تمثل عناصر البنية على مستوى الكتلة كتلًا أكبر من المحتوى، مثل الفقرات والعناوين، بينما تمثل عناصر المستوى المضمن أجزاء من النص داخل فقرة أو عنوان، مثل الامتدادات وعلامات الاقتباس والملاحظات. فهي تساعد في تحديد التسلسل الهرمي وعلاقات المحتوى.
 
-#### Q: How do artwork structure elements, like `FigureElement` and `FormulaElement`, contribute to the document?
+####  س: كيف يمكن لعناصر هيكل العمل الفني، مثل`FigureElement` and `FormulaElement`, contribute to the document?
 
-A: Artwork structure elements allow you to add illustrations, figures, and mathematical formulas to the document. They provide a structured way to include visual and mathematical content.
+ج: تسمح لك عناصر هيكل العمل الفني بإضافة الرسوم التوضيحية والأشكال والصيغ الرياضية إلى المستند. أنها توفر طريقة منظمة لتضمين المحتوى المرئي والرياضي.
 
-#### Q: Can I use similar techniques to create other types of structure elements, like lists, tables, or annotations?
+#### س: هل يمكنني استخدام تقنيات مشابهة لإنشاء أنواع أخرى من عناصر البنية، مثل القوائم أو الجداول أو التعليقات التوضيحية؟
 
-A: Yes, you can use similar techniques to create other types of structure elements like lists, tables, annotations, references, and more. Aspose.PDF provides a wide range of structure element creation methods.
+ج: نعم، يمكنك استخدام تقنيات مشابهة لإنشاء أنواع أخرى من عناصر البنية مثل القوائم والجداول والتعليقات التوضيحية والمراجع والمزيد. يوفر Aspose.PDF نطاقًا واسعًا من طرق إنشاء عناصر البنية.
 
-#### Q: How does saving the tagged PDF document using the `Save` method ensure the preservation of structure elements?
+####  س: كيف يمكن حفظ مستند PDF الذي تم وضع علامة عليه باستخدام ملف`Save` method ensure the preservation of structure elements?
 
-A: The `Save` method saves the PDF document along with the created structure elements, ensuring that the document's hierarchical and semantic structure is preserved for accessibility and navigation.
+ ج: ال`Save` تقوم هذه الطريقة بحفظ مستند PDF مع عناصر البنية التي تم إنشاؤها، مما يضمن الحفاظ على البنية الهرمية والدلالية للمستند من أجل إمكانية الوصول والتنقل.
 
-#### Q: What benefits do structure elements bring to PDF documents in terms of accessibility and compatibility with assistive technologies?
+#### س: ما هي الفوائد التي تجلبها عناصر البنية إلى مستندات PDF من حيث إمكانية الوصول والتوافق مع التقنيات المساعدة؟
 
-A: Structure elements enhance accessibility by providing a meaningful structure and semantics to the document. This allows assistive technologies like screen readers to interpret and convey the document's content more effectively to users with disabilities.
+ج: تعمل عناصر البنية على تحسين إمكانية الوصول من خلال توفير بنية ودلالات ذات معنى للمستند. يتيح ذلك للتقنيات المساعدة، مثل قارئات الشاشة، تفسير ونقل محتوى المستند بشكل أكثر فعالية للمستخدمين ذوي الإعاقة.
 
-#### Q: How can I further customize and combine different types of structure elements in my PDF documents?
+#### س: كيف يمكنني تخصيص ودمج أنواع مختلفة من عناصر البنية في مستندات PDF الخاصة بي؟
 
-A: You can combine and customize structure elements by using appropriate creation methods provided by Aspose.PDF. Experiment with different elements and their properties to create a well-structured and organized PDF document.
+ج: يمكنك دمج عناصر البنية وتخصيصها باستخدام طرق الإنشاء المناسبة التي يوفرها Aspose.PDF. قم بتجربة عناصر مختلفة وخصائصها لإنشاء مستند PDF منظم وجيد التنظيم.

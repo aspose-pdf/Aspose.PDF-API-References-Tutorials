@@ -1,96 +1,96 @@
 ---
-title: Get Zoom Factor In PDF File
-linktitle: Get Zoom Factor In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to get the zoom factor in PDF file with this step-by-step guide.
+title: Obtenez le facteur de zoom dans un fichier PDF
+linktitle: Obtenez le facteur de zoom dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment utiliser Aspose.PDF pour .NET pour obtenir le facteur de zoom dans un fichier PDF avec ce guide étape par étape.
 type: docs
 weight: 210
 url: /fr/net/programming-with-document/getzoomfactor/
 ---
-Aspose.PDF for .NET is a PDF manipulation library that provides many features to perform various operations on PDF documents. One of these features is the ability to get the zoom factor in PDF file. In this tutorial, we will explain how to use Aspose.PDF for .NET to get the zoom factor in PDF file using C# source code.
+Aspose.PDF pour .NET est une bibliothèque de manipulation PDF qui fournit de nombreuses fonctionnalités pour effectuer diverses opérations sur les documents PDF. L'une de ces fonctionnalités est la possibilité d'obtenir le facteur de zoom dans un fichier PDF. Dans ce didacticiel, nous expliquerons comment utiliser Aspose.PDF pour .NET pour obtenir le facteur de zoom dans un fichier PDF à l'aide du code source C#.
 
 
-## Step 1: Instantiate new Document object
+## Étape 1 : Instancier un nouvel objet Document
 
-The first step to getting the zoom factor of a PDF file using Aspose.PDF for .NET is to instantiate a new `Document` object. The `Document` object represents a PDF document that can be loaded from a file or a stream.
+ La première étape pour obtenir le facteur de zoom d'un fichier PDF à l'aide d'Aspose.PDF pour .NET consiste à instancier un nouveau fichier.`Document` objet. Le`Document` L'objet représente un document PDF pouvant être chargé à partir d'un fichier ou d'un flux.
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate new Document object
+// Instancier un nouvel objet Document
 Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
 ```
 
-In the above code, we have created a `Document` object by passing the path of the PDF file to the constructor of the `Document` class. You need to replace "YOUR DOCUMENT DIRECTORY" with the actual path of the directory where your PDF file is located.
+ Dans le code ci-dessus, nous avons créé un`Document` objet en passant le chemin du fichier PDF au constructeur du`Document` classe. Vous devez remplacer « VOTRE RÉPERTOIRE DE DOCUMENTS » par le chemin réel du répertoire où se trouve votre fichier PDF.
 
-## Step 2: Create GoToAction object
+## Étape 2 : Créer un objet GoToAction
 
-The next step is to create a `GoToAction` object. A `GoToAction` object represents an action that goes to a specific destination in a PDF document. In our case, we want to get the zoom factor of the PDF file, so we will use the `OpenAction` property of the `Document` object to get the `GoToAction` object.
+ La prochaine étape consiste à créer un`GoToAction` objet. UN`GoToAction`L'objet représente une action qui va vers une destination spécifique dans un document PDF. Dans notre cas, nous voulons obtenir le facteur de zoom du fichier PDF, nous utiliserons donc le`OpenAction` propriété du`Document` s'opposer à obtenir le`GoToAction` objet.
 
 ```csharp
-// Create GoToAction object
+// Créer un objet GoToAction
 GoToAction action = doc.OpenAction as GoToAction;
 ```
 
-In the above code, we have created a `GoToAction` object by casting the `OpenAction` property of the `Document` object to `GoToAction`.
+ Dans le code ci-dessus, nous avons créé un`GoToAction` objet en lançant le`OpenAction` propriété du`Document` s'opposer à`GoToAction`.
 
-## Step 3: Get the Zoom factor of PDF file
+## Étape 3 : Obtenez le facteur de zoom du fichier PDF
 
-The third step is to get the zoom factor of the PDF file. We can get the zoom factor of the PDF file by accessing the `Destination` property of the `GoToAction` object and then casting it to `XYZExplicitDestination`. The `XYZExplicitDestination` class represents a destination in a PDF document that specifies the coordinates and zoom factor to go to.
+ La troisième étape consiste à obtenir le facteur de zoom du fichier PDF. Nous pouvons obtenir le facteur de zoom du fichier PDF en accédant au`Destination` propriété du`GoToAction` objet, puis le lancer vers`XYZExplicitDestination` . Le`XYZExplicitDestination` La classe représente une destination dans un document PDF qui spécifie les coordonnées et le facteur de zoom vers lesquels accéder.
 
 ```csharp
-// Get the Zoom factor of PDF file
-System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Document zoom value;
+// Obtenez le facteur de zoom du fichier PDF
+System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Valeur de zoom du document ;
 ```
 
-In the above code, we have accessed the `Destination` property of the `GoToAction` object and then cast it to `XYZExplicitDestination`. After that, we have accessed the `Zoom` property of the `XYZExplicitDestination` object to get the zoom factor of the PDF file.
+ Dans le code ci-dessus, nous avons accédé au`Destination` propriété du`GoToAction` objet, puis lancez-le vers`XYZExplicitDestination` . Après cela, nous avons accédé au`Zoom` propriété du`XYZExplicitDestination` objet pour obtenir le facteur de zoom du fichier PDF.
 
-## Step 4: Output the Zoom factor
+## Étape 4 : Afficher le facteur de zoom
 
-The final step is to output the zoom factor of the PDF file. We can use the `System.Console.WriteLine`
+ La dernière étape consiste à générer le facteur de zoom du fichier PDF. Nous pouvons utiliser le`System.Console.WriteLine`
 
 ```csharp
-// Get the Zoom factor of PDF file
-System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Document zoom value;
+// Obtenez le facteur de zoom du fichier PDF
+System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Valeur de zoom du document ;
 ```        
 
-### Example Source Code for Get Zoom Factor using Aspose.PDF for .NET
+### Exemple de code source pour obtenir le facteur de zoom à l'aide d'Aspose.PDF pour .NET
 
-Here's the complete example source code for Get Zoom Factor using Aspose.PDF for .NET:
+Voici l'exemple complet de code source pour obtenir un facteur de zoom à l'aide d'Aspose.PDF pour .NET :
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate new Document object
+// Instancier un nouvel objet Document
 Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
 
-// Create GoToAction object
+// Créer un objet GoToAction
 GoToAction action = doc.OpenAction as GoToAction;
 
-// Get the Zoom factor of PDF file
-System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Document zoom value;
+// Obtenez le facteur de zoom du fichier PDF
+System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Valeur de zoom du document ;
 ```
 
 ## Conclusion
 
-In this tutorial, we have explored how to use Aspose.PDF for .NET to get the zoom factor of a PDF file. The zoom factor is a crucial aspect of a PDF document, as it determines the initial display size when opened in a viewer. By accessing and utilizing the zoom factor, developers can customize the viewing experience for end-users. Aspose.PDF for .NET provides a simple and effective API to retrieve the zoom factor and other navigation-related information from a PDF document, empowering developers to build feature-rich and interactive PDF applications.
+Dans ce didacticiel, nous avons expliqué comment utiliser Aspose.PDF pour .NET pour obtenir le facteur de zoom d'un fichier PDF. Le facteur de zoom est un aspect crucial d'un document PDF, car il détermine la taille d'affichage initiale lors de son ouverture dans une visionneuse. En accédant et en utilisant le facteur de zoom, les développeurs peuvent personnaliser l'expérience de visualisation pour les utilisateurs finaux. Aspose.PDF pour .NET fournit une API simple et efficace pour récupérer le facteur de zoom et d'autres informations liées à la navigation à partir d'un document PDF, permettant ainsi aux développeurs de créer des applications PDF interactives et riches en fonctionnalités.
 
-### FAQ's for get zoom factor in PDF file
+### FAQ pour obtenir le facteur de zoom dans un fichier PDF
 
-#### Q: What is the zoom factor in a PDF file?
+#### Q : Quel est le facteur de zoom dans un fichier PDF ?
 
-A: The zoom factor in a PDF file refers to the level of magnification applied to the document when it is viewed. It determines the initial display size of the PDF file on the screen. A zoom factor of 1.0 represents the actual size (100% zoom), while a zoom factor greater than 1.0 represents an enlargement, and a zoom factor less than 1.0 represents a reduction.
+R : Le facteur de zoom dans un fichier PDF fait référence au niveau d'agrandissement appliqué au document lors de sa visualisation. Il détermine la taille d'affichage initiale du fichier PDF à l'écran. Un facteur de zoom de 1,0 représente la taille réelle (zoom 100 %), tandis qu'un facteur de zoom supérieur à 1,0 représente un agrandissement et un facteur de zoom inférieur à 1,0 représente une réduction.
 
-#### Q: How can I use the zoom factor information in my application?
+#### Q : Comment puis-je utiliser les informations sur le facteur de zoom dans mon application ?
 
-A: You can use the zoom factor information to customize the initial display size of a PDF document when it is opened in a viewer. For example, you can set a specific zoom factor to ensure that the PDF is displayed at a particular size or fit the entire page to the viewer's window.
+R : Vous pouvez utiliser les informations sur le facteur de zoom pour personnaliser la taille d'affichage initiale d'un document PDF lorsqu'il est ouvert dans une visionneuse. Par exemple, vous pouvez définir un facteur de zoom spécifique pour garantir que le PDF est affiché à une taille particulière ou adapter la page entière à la fenêtre de la visionneuse.
 
-#### Q: Can I modify the zoom factor of a PDF document programmatically using Aspose.PDF for .NET?
+#### Q : Puis-je modifier le facteur de zoom d'un document PDF par programme à l'aide d'Aspose.PDF pour .NET ?
 
-A: Yes, you can modify the zoom factor of a PDF document programmatically using Aspose.PDF for .NET. You can set the zoom factor for specific actions, such as `GoToAction` or `GoToRemoteAction`, to control how the document is displayed when the user interacts with links or bookmarks.
+ R : Oui, vous pouvez modifier le facteur de zoom d'un document PDF par programmation à l'aide d'Aspose.PDF pour .NET. Vous pouvez définir le facteur de zoom pour des actions spécifiques, telles que`GoToAction` ou`GoToRemoteAction`pour contrôler la façon dont le document est affiché lorsque l'utilisateur interagit avec des liens ou des signets.
 
-#### Q: Are there other ways to navigate to specific locations in a PDF document using Aspose.PDF for .NET?
+#### Q : Existe-t-il d'autres moyens de naviguer vers des emplacements spécifiques dans un document PDF à l'aide d'Aspose.PDF pour .NET ?
 
-A: Yes, Aspose.PDF for .NET provides various features to navigate to specific locations in a PDF document. Besides using `GoToAction`, you can use other actions like `GoToURIAction` to open a URL, `GoToEmbeddedAction` to navigate to embedded files, and `GoToNamedAction` to go to named destinations within the PDF document.
+ R : Oui, Aspose.PDF pour .NET fournit diverses fonctionnalités pour accéder à des emplacements spécifiques dans un document PDF. En plus d'utiliser`GoToAction` , vous pouvez utiliser d'autres actions comme`GoToURIAction` pour ouvrir une URL,`GoToEmbeddedAction` pour accéder aux fichiers intégrés, et`GoToNamedAction` pour accéder aux destinations nommées dans le document PDF.

@@ -1,51 +1,51 @@
 ---
-title: Determine Line Break In PDF File
-linktitle: Determine Line Break In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to determine line breaks in PDF file using Aspose.PDF for .NET.
+title: Determina l'interruzione di riga nel file PDF
+linktitle: Determina l'interruzione di riga nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come determinare le interruzioni di riga nel file PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 130
 url: /it/net/programming-with-text/determine-line-break/
 ---
-This tutorial will guide you through the process of determining line breaks in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Questo tutorial ti guiderà attraverso il processo di determinazione delle interruzioni di riga nel file PDF utilizzando Aspose.PDF per .NET. Il codice sorgente C# fornito illustra i passaggi necessari.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Requisiti
+Prima di iniziare, assicurati di avere quanto segue:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio o qualsiasi altro compilatore C# installato sul tuo computer.
+- Aspose.PDF per la libreria .NET. Puoi scaricarlo dal sito Web ufficiale di Aspose o utilizzare un gestore di pacchetti come NuGet per installarlo.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Passaggio 1: impostare il progetto
+1. Crea un nuovo progetto C# nel tuo ambiente di sviluppo preferito.
+2. Aggiungere un riferimento alla libreria Aspose.PDF per .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to determine line breaks, add the following using directives at the top of the file:
+## Passaggio 2: importa gli spazi dei nomi richiesti
+Nel file di codice in cui desideri determinare le interruzioni di riga, aggiungi le seguenti direttive using nella parte superiore del file:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Passaggio 3: imposta la directory dei documenti
+ Nel codice, individua la riga che dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso della directory in cui sono archiviati i tuoi documenti.
 
-## Step 4: Create a new Document instance
-Instantiate a new `Document` object by adding the following line of code:
+## Passaggio 4: crea una nuova istanza del documento
+ Istanziarne uno nuovo`Document` oggetto aggiungendo la seguente riga di codice:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `page`.
+## Passaggio 5: aggiungi una pagina al documento
+ Aggiungi una nuova pagina al documento utilizzando il file`Add` metodo del`Pages`collezione. Nel codice fornito, la nuova pagina viene assegnata alla variabile`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 6: Add text fragments with line breaks
-Create a loop to add multiple text fragments to the page, each containing a paragraph with line breaks.
+## Passaggio 6: aggiungi frammenti di testo con interruzioni di riga
+Crea un ciclo per aggiungere più frammenti di testo alla pagina, ciascuno contenente un paragrafo con interruzioni di riga.
 
 ```csharp
 for (int i = 0; i < 4; i++)
@@ -56,8 +56,8 @@ for (int i = 0; i < 4; i++)
 }
 ```
 
-## Step 7: Save the PDF document and extract line break information
-Save the PDF document using the `Save` method of the `Document` object. Then, extract the line break information using the `GetNotifications` method of the desired page.
+## Passaggio 7: salva il documento PDF ed estrai le informazioni sull'interruzione di riga
+ Salvare il documento PDF utilizzando il file`Save` metodo del`Document` oggetto. Quindi, estrai le informazioni sull'interruzione di riga utilizzando il file`GetNotifications` metodo della pagina desiderata.
 
 ```csharp
 doc.Save(dataDir + "DetermineLineBreak_out.pdf");
@@ -65,9 +65,9 @@ string notifications = doc.Pages[1].GetNotifications();
 File.WriteAllText(dataDir + "notifications_out.txt", notifications);
 ```
 
-### Sample source code for Determine Line Break using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Determinare l'interruzione di riga utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 Page page = doc.Pages.Add();
@@ -82,48 +82,48 @@ string notifications = doc.Pages[1].GetNotifications();
 File.WriteAllText(dataDir + "notifications_out.txt", notifications);
 ```
 
-## Conclusion
-You have successfully determined line breaks in a PDF document using Aspose.PDF for .NET. The line break information has been extracted and saved to a text file.
+## Conclusione
+Hai determinato con successo le interruzioni di riga in un documento PDF utilizzando Aspose.PDF per .NET. Le informazioni sull'interruzione di riga sono state estratte e salvate in un file di testo.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: What is the main focus of this tutorial?
+#### D: Qual è l'obiettivo principale di questo tutorial?
 
-A: This tutorial is focused on guiding you through the process of determining line breaks in a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the necessary steps to achieve this.
+R: Questo tutorial è incentrato sulla guida dell'utente attraverso il processo di determinazione delle interruzioni di riga in un file PDF utilizzando la libreria Aspose.PDF per .NET. Il codice sorgente C# fornito illustra i passaggi necessari per raggiungere questo obiettivo.
 
-#### Q: Which namespaces should I import for this tutorial?
+#### D: Quali spazi dei nomi devo importare per questo tutorial?
 
-A: In the code file where you want to determine line breaks, import the following namespaces at the beginning of the file:
+R: Nel file di codice in cui desideri determinare le interruzioni di riga, importa i seguenti spazi dei nomi all'inizio del file:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-#### Q: How do I specify the document directory?
+#### D: Come posso specificare la directory dei documenti?
 
-A: In the code, find the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ A: Nel codice, trova la riga`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory dei documenti.
 
-#### Q: How do I create a new Document instance?
+#### D: Come posso creare una nuova istanza del documento?
 
-A: In Step 4, you'll instantiate a new `Document` object using the provided code.
+ R: Nel passaggio 4 creerai un'istanza di new`Document` oggetto utilizzando il codice fornito.
 
-#### Q: How do I add a page to the document?
+#### D: Come faccio ad aggiungere una pagina al documento?
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection.
+ R: Nel passaggio 5, aggiungerai una nuova pagina al documento utilizzando il file`Add` metodo del`Pages` collezione.
 
-#### Q: How do I add text fragments with line breaks?
+#### D: Come posso aggiungere frammenti di testo con interruzioni di riga?
 
-A: In Step 6, you'll create a loop to add multiple text fragments to the page, each containing a paragraph with line breaks.
+R: Nel passaggio 6 creerai un ciclo per aggiungere più frammenti di testo alla pagina, ciascuno contenente un paragrafo con interruzioni di riga.
 
-#### Q: How do I save the PDF document and extract line break information?
+#### D: Come posso salvare il documento PDF ed estrarre le informazioni sulle interruzioni di riga?
 
-A: In Step 7, you'll save the PDF document using the `Save` method of the `Document` object. Then, you'll extract the line break information using the `GetNotifications` method of the desired page and save it to a text file.
+ R: Nel passaggio 7, salverai il documento PDF utilizzando il file`Save` metodo del`Document` oggetto. Quindi, estrarrai le informazioni sull'interruzione di riga utilizzando il file`GetNotifications` metodo della pagina desiderata e salvarlo in un file di testo.
 
-#### Q: What is the purpose of the extracted line break information?
+#### D: Qual è lo scopo delle informazioni sulle interruzioni di riga estratte?
 
-A: The extracted line break information provides details about the line breaks and notifications present in the PDF document. This can be useful for analyzing and understanding how text and paragraphs are structured within the document.
+R: Le informazioni sulle interruzioni di riga estratte forniscono dettagli sulle interruzioni di riga e sulle notifiche presenti nel documento PDF. Ciò può essere utile per analizzare e comprendere come sono strutturati testo e paragrafi all'interno del documento.
 
-#### Q: What is the main takeaway from this tutorial?
+#### D: Qual è il punto principale di questo tutorial?
 
-A: By following this tutorial, you've learned how to determine line breaks in a PDF document using Aspose.PDF for .NET. You can use this knowledge to extract and analyze line break information from PDF files programmatically.
+R: Seguendo questo tutorial, hai imparato come determinare le interruzioni di riga in un documento PDF utilizzando Aspose.PDF per .NET. È possibile utilizzare queste conoscenze per estrarre e analizzare a livello di codice le informazioni sulle interruzioni di riga dai file PDF.

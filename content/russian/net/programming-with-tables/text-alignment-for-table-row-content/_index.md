@@ -1,45 +1,45 @@
 ---
-title: Text Alignment For Table Row Content
-linktitle: Text Alignment For Table Row Content
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to align row content in a PDF table using Aspose.PDF for .NET.
+title: Выравнивание текста для содержимого строк таблицы
+linktitle: Выравнивание текста для содержимого строк таблицы
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как выровнять содержимое строк в таблице PDF с помощью Aspose.PDF для .NET.
 type: docs
 weight: 210
 url: /ru/net/programming-with-tables/text-alignment-for-table-row-content/
 ---
-In this tutorial, we will guide you step by step to align the contents of a row in a table of a PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+В этом уроке мы шаг за шагом покажем вам, как выровнять содержимое строки в таблице PDF-документа с помощью Aspose.PDF для .NET. Мы объясним предоставленный исходный код C# и покажем, как его реализовать.
 
-## Step 1: Creating the PDF document
-First, we'll create the PDF document:
+## Шаг 1. Создание PDF-документа
+Сначала мы создадим PDF-документ:
 
 ```csharp
 var dataDir = "YOUR DOCUMENTS DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Step 2: Table initialization
-Next, we will initialize the table:
+## Шаг 2: Инициализация таблицы
+Далее инициализируем таблицу:
 
 ```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 ```
 
-## Step 3: Setting the table border color
-We will configure the table border color:
+## Шаг 3. Установка цвета границы таблицы.
+Настроим цвет границы таблицы:
 
 ```csharp
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-## Step 4: Configuring the table cell border
-We are going to configure the table cell border:
+## Шаг 4. Настройка границы ячейки таблицы
+Мы собираемся настроить границу ячейки таблицы:
 
 ```csharp
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-## Step 5: Loop to add 10 rows to the table
-We will now use a loop to add 10 rows to the table:
+## Шаг 5. Цикл для добавления 10 строк в таблицу.
+Теперь мы будем использовать цикл для добавления 10 строк в таблицу:
 
 ```csharp
 for (int row_count = 0; row_count < 10; row_count++)
@@ -53,15 +53,15 @@ for (int row_count = 0; row_count < 10; row_count++)
 }
 ```
 
-## Step 6: Configuring the vertical line alignment
-We are going to configure the vertical alignment of the rows of the table:
+## Шаг 6. Настройка выравнивания вертикальной линии
+Настроим вертикальное выравнивание строк таблицы:
 
 ```csharp
 row.VerticalAlignment = VerticalAlignment.Center;
 ```
 
-## Step 7: Adding content to row cells
-We are going to add content to the row cells:
+## Шаг 7. Добавление содержимого в ячейки строк
+Мы собираемся добавить содержимое в ячейки строк:
 
 ```csharp
 row.Cells.Add("Column("+row_count+",1)"+DateTime.Now.Ticks);
@@ -69,38 +69,38 @@ row.Cells.Add("Column("+row_count+",2)");
 row.Cells.Add("Column("+row_count+",3)");
 ```
 
-## Step 8: Adding the table to the document page
-Now let's add the table to the document page:
+## Шаг 8: Добавление таблицы на страницу документа
+Теперь добавим таблицу на страницу документа:
 
 ```csharp
 Page tocPage = doc.Pages.Add();
 tocPage.Paragraphs.Add(table);
 ```
 
-## Step 9: Saving the PDF document
-Finally, we will save the PDF document:
+## Шаг 9: Сохранение PDF-документа
+Наконец, мы сохраним PDF-документ:
 
 ```csharp
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-### Example source code for Text Alignment For Table Row Content using Aspose.PDF for .NET
+### Пример исходного кода для выравнивания текста для содержимого строк таблицы с использованием Aspose.PDF для .NET
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create PDF document
+// Создать PDF-документ
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-// Initializes a new instance of the Table
+// Инициализирует новый экземпляр таблицы
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Set the table border color as LightGray
+// Установите цвет границы таблицы как LightGray.
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// set the border for table cells
+// установить границу ячеек таблицы
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// create a loop to add 10 rows
+// создайте цикл, чтобы добавить 10 строк
 for (int row_count = 0; row_count < 10; row_count++)
 {
-	// add row to table
+	// добавить строку в таблицу
 	Aspose.Pdf.Row row = table.Rows.Add();
 	row.VerticalAlignment = VerticalAlignment.Center;
 
@@ -109,33 +109,33 @@ for (int row_count = 0; row_count < 10; row_count++)
 	row.Cells.Add("Column (" + row_count + ", 3)");
 }
 Page tocPage = doc.Pages.Add();
-// Add table object to first page of input document
+// Добавить объект таблицы на первую страницу входного документа
 tocPage.Paragraphs.Add(table);
-// Save updated document containing table object
+// Сохранить обновленный документ, содержащий объект таблицы.
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to align the contents of a row in a table in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to create a document, initialize a table, configure border and alignment, add content, and save the PDF document. Now you can apply this knowledge to your own projects.
+## Заключение
+Поздравляем! Теперь вы узнали, как выровнять содержимое строки в таблице PDF-документа с помощью Aspose.PDF для .NET. В этом пошаговом руководстве показано, как создать документ, инициализировать таблицу, настроить границы и выравнивание, добавить контент и сохранить документ PDF. Теперь вы можете применить эти знания в своих проектах.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: How can I align the contents of the table cells horizontally?
+#### Вопрос: Как выровнять содержимое ячеек таблицы по горизонтали?
 
-A: You can align the contents of the table cells horizontally by setting the `HorizontalAlign` property of the cell's `TextState` object. For example, to center-align the text, use `cell.TextState.HorizontalAlignment = HorizontalAlignment.Center`. You can also set it to `HorizontalAlignment.Left` or `HorizontalAlignment.Right` for left and right alignment, respectively.
+ О: Вы можете выровнять содержимое ячеек таблицы по горизонтали, установив`HorizontalAlign` свойство клетки`TextState` объект. Например, чтобы выровнять текст по центру, используйте`cell.TextState.HorizontalAlignment = HorizontalAlignment.Center` . Вы также можете установить его на`HorizontalAlignment.Left` или`HorizontalAlignment.Right` для выравнивания по левому и правому краю соответственно.
 
-#### Q: Can I apply different border styles and colors to individual cells within the table?
+#### Вопрос: Могу ли я применять разные стили и цвета границ к отдельным ячейкам таблицы?
 
-A: Yes, you can apply different border styles and colors to individual cells within the table. To customize the border for a specific cell, set the `cell.Border` property to a new `BorderInfo` object with the desired settings, such as border sides, width, and color.
+ О: Да, вы можете применять разные стили и цвета границ к отдельным ячейкам таблицы. Чтобы настроить границу для конкретной ячейки, установите`cell.Border` собственность на новый`BorderInfo`объект с нужными настройками, такими как стороны границы, ширина и цвет.
 
-#### Q: How can I adjust the vertical alignment of the table content within the cells?
+#### Вопрос: Как настроить вертикальное выравнивание содержимого таблицы внутри ячеек?
 
-A: You can adjust the vertical alignment of the table content within the cells by setting the `VerticalAlignment` property of the row to `VerticalAlignment.Center`, `VerticalAlignment.Top`, or `VerticalAlignment.Bottom`. This property controls the vertical alignment of all cells in that row.
+ О: Вы можете настроить вертикальное выравнивание содержимого таблицы внутри ячеек, установив параметр`VerticalAlignment` свойство строки`VerticalAlignment.Center`, `VerticalAlignment.Top` , или`VerticalAlignment.Bottom`. Это свойство управляет вертикальным выравниванием всех ячеек в этой строке.
 
-#### Q: Is it possible to add more columns or rows to the table dynamically?
+#### Вопрос: Можно ли динамически добавлять в таблицу дополнительные столбцы или строки?
 
-A: Yes, you can add more columns and rows to the table dynamically by using the `table.Rows.Add()` method to add new rows and the `row.Cells.Add()` method to add new cells to the rows. You can do this inside loops or based on your specific requirements.
+ О: Да, вы можете динамически добавлять в таблицу дополнительные столбцы и строки, используя`table.Rows.Add()` метод для добавления новых строк и`row.Cells.Add()` метод добавления новых ячеек в строки. Вы можете сделать это внутри циклов или в зависимости от ваших конкретных требований.
 
-#### Q: How can I set a background color for specific cells or the entire table?
+#### Вопрос: Как задать цвет фона для отдельных ячеек или всей таблицы?
 
-A: To set a background color for specific cells or the entire table, use the `BackgroundColor` property of the `Cell` or `Table` object. For example, to set the background color of a cell, use `cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.
+ О: Чтобы установить цвет фона для отдельных ячеек или всей таблицы, используйте команду`BackgroundColor` собственность`Cell` или`Table` объект. Например, чтобы установить цвет фона ячейки, используйте`cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.

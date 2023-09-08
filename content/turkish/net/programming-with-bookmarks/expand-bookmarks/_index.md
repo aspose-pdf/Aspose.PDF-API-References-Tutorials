@@ -1,49 +1,49 @@
 ---
-title: Expand Bookmarks In PDF File
-linktitle: Expand Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily expand bookmarks in PDF file for improved navigation with Aspose.PDF for .NET.
+title: PDF Dosyasındaki Yer İmlerini Genişlet
+linktitle: PDF Dosyasındaki Yer İmlerini Genişlet
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile gelişmiş gezinme için PDF dosyasındaki yer işaretlerini kolayca genişletin.
 type: docs
 weight: 50
 url: /tr/net/programming-with-bookmarks/expand-bookmarks/
 ---
-Expanding bookmarks in PDF file will display all open bookmarks by default. With Aspose.PDF for .NET, you can easily expand bookmarks by following the following source code:
+PDF dosyasındaki yer işaretlerini genişletmek, varsayılan olarak tüm açık yer işaretlerini görüntüler. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu izleyerek yer işaretlerini kolayca genişletebilirsiniz:
 
-## Step 1: Import required libraries
+## 1. Adım: Gerekli kitaplıkları içe aktarın
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Başlamadan önce C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. Gerekli ithalat direktifi aşağıdadır:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## 2. Adım: Belgeler klasörünün yolunu ayarlayın
 
-In this step, you need to specify the path to the folder containing the PDF file whose bookmarks you want to expand. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ Bu adımda, yer işaretlerini genişletmek istediğiniz PDF dosyasının bulunduğu klasörün yolunu belirtmeniz gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"`belgeler klasörünüzün gerçek yolunu içeren aşağıdaki kodda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## 3. Adım: PDF belgesini açın
 
-Now we will open the PDF document whose bookmarks we want to expand using the following code:
+Şimdi yer işaretlerini genişletmek istediğimiz PDF belgesini aşağıdaki kodu kullanarak açacağız:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 4: Set Page Display Mode
+## Adım 4: Sayfa Görüntüleme Modunu Ayarlayın
 
-In this step, we will set the page display mode to show bookmarks by default. We use the `PageMode` property of the `doc` object to set the desired page mode. Here is the corresponding code:
+Bu adımda, sayfa görüntüleme modunu varsayılan olarak yer imlerini gösterecek şekilde ayarlayacağız. biz kullanıyoruz`PageMode` mülkiyeti`doc` İstenilen sayfa modunu ayarlamak için nesne. İşte ilgili kod:
 
 ```csharp
 doc.PageMode = PageMode.UseOutlines;
 ```
 
-## Step 5: Browse bookmarks and expand them
+## 5. Adım: Yer imlerine göz atın ve onları genişletin
 
-Now we'll loop through each bookmark item in the document's bookmarks collection and set each item's open state to `true` to expand them by default. Here is the corresponding code:
+ Şimdi belgenin yer imleri koleksiyonundaki her bir yer imi öğesi arasında geçiş yapacağız ve her öğenin açık durumunu şu şekilde ayarlayacağız:`true` bunları varsayılan olarak genişletmek için. İşte ilgili kod:
 
 ```csharp
 foreach(OutlineItemCollection item in doc.Outlines)
@@ -52,86 +52,86 @@ foreach(OutlineItemCollection item in doc.Outlines)
 }
 ```
 
-## Step 6: Save the updated file
+## 6. Adım: Güncellenen dosyayı kaydedin
 
-Finally, we save the updated PDF file using the `Save` method of the `doc` object. Here is the corresponding code:
+ Son olarak, güncellenen PDF dosyasını kullanarak kaydediyoruz.`Save` yöntemi`doc` nesne. İşte ilgili kod:
 
 ```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Expand Bookmarks using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Yer İmlerini Genişletme için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document doc = new Document(dataDir + "input.pdf");
-// Set page view mode i.e. show thumbnails, full-screen, show attachment panel
+// Sayfa görüntüleme modunu ayarlayın; örneğin küçük resimleri göster, tam ekran göster, ek panelini göster
 doc.PageMode = PageMode.UseOutlines;
-// Traverse through each Ouline item in outlines collection of PDF file
+// PDF dosyasının ana hatlar koleksiyonundaki her bir Ouline öğesi arasında geçiş yapın
 foreach (OutlineItemCollection item in doc.Outlines)
 {
-	// Set open status for outline item
+	// Anahat öğesi için açık durumu ayarla
 	item.Open = true;
 }
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
-// Save output
+// Çıktıyı kaydet
 doc.Save(dataDir);
 Console.WriteLine("\nBookmarks expanded successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You now have a step-by-step guide to developing bookmarks with Aspose.PDF for .NET. You can use this code to show all default bookmarks in your PDF documents.
+Tebrikler! Artık Aspose.PDF for .NET ile yer imleri geliştirmeye yönelik adım adım bir kılavuza sahipsiniz. PDF belgelerinizdeki tüm varsayılan yer işaretlerini göstermek için bu kodu kullanabilirsiniz.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Gelişmiş yer imi düzenleme özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
 
-### FAQ's for expand bookmarks in PDF file
+### PDF dosyasındaki yer işaretlerini genişletmeye ilişkin SSS
 
-#### Q: What are bookmarks in a PDF file?
+#### S: PDF dosyasındaki yer işaretleri nedir?
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They provide a convenient way to access different parts of a document.
+C: Bir PDF dosyasındaki yer imleri, kullanıcıların belge içindeki belirli bölümlere veya sayfalara hızlı bir şekilde atlamasına olanak tanıyan gezinme yardımcılarıdır. Bir belgenin farklı bölümlerine erişmenin kolay bir yolunu sağlarlar.
 
-#### Q: Why would I want to expand bookmarks in a PDF file?
+#### S: Bir PDF dosyasındaki yer işaretlerini neden genişletmek isteyeyim?
 
-A: Expanding bookmarks can improve the user experience by displaying all bookmarks in an expanded state by default. This gives users a clear overview of the document's structure and allows them to easily navigate to different sections.
+C: Yer işaretlerini genişletmek, tüm yer işaretlerini varsayılan olarak genişletilmiş durumda görüntüleyerek kullanıcı deneyimini iyileştirebilir. Bu, kullanıcılara belgenin yapısına ilişkin net bir genel bakış sunar ve farklı bölümlere kolayca gitmelerine olanak tanır.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### S: C# projem için gerekli kitaplıkları nasıl içeri aktarabilirim?
 
-A: To import the required library for your C# project, use the following import directive:
+C: C# projeniz için gerekli kitaplığı içe aktarmak için aşağıdaki içe aktarma yönergesini kullanın:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive allows you to utilize the classes and methods provided by Aspose.PDF for .NET.
+Bu yönerge Aspose.PDF for .NET tarafından sağlanan sınıfları ve yöntemleri kullanmanızı sağlar.
 
-#### Q: How do I specify the path to the documents folder?
+#### S: Belgeler klasörünün yolunu nasıl belirlerim?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file that you want to work with. This ensures that the code can locate the target PDF file.
+ C: Sağlanan kaynak kodunda değiştirin`"YOUR DOCUMENT DIRECTORY"` çalışmak istediğiniz PDF dosyasını içeren klasörün gerçek yolunu belirtin. Bu, kodun hedef PDF dosyasını bulabilmesini sağlar.
 
-#### Q: How do I open a PDF document to expand its bookmarks?
+#### S: Yer işaretlerini genişletmek için bir PDF belgesini nasıl açarım?
 
-A: To open a PDF document for expanding bookmarks, use the following code:
+C: Yer imlerini genişletmek amacıyla bir PDF belgesi açmak için aşağıdaki kodu kullanın:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Replace `"input.pdf"` with the actual file name.
+ Yer değiştirmek`"input.pdf"` gerçek dosya adı ile.
 
-#### Q: How do I set the page display mode to show bookmarks by default?
+#### S: Sayfa görüntüleme modunu varsayılan olarak yer imlerini gösterecek şekilde nasıl ayarlarım?
 
-A: To set the page display mode to show bookmarks by default, use the `PageMode` property of the `doc` object:
+C: Sayfa görüntüleme modunu varsayılan olarak yer imlerini gösterecek şekilde ayarlamak için`PageMode` mülkiyeti`doc` nesne:
 
 ```csharp
 doc.PageMode = PageMode.UseOutlines;
 ```
 
-#### Q: How do I expand all bookmarks in the PDF document?
+#### S: PDF belgesindeki tüm yer işaretlerini nasıl genişletirim?
 
-A: To expand all bookmarks, loop through each bookmark item in the document's outlines collection and set the `Open` property to `true`:
+ C: Tüm yer imlerini genişletmek için, belgenin ana hatlar koleksiyonundaki her bir yer imi öğesi arasında dolaşın ve`Open` mülkiyet`true`:
 
 ```csharp
 foreach (OutlineItemCollection item in doc.Outlines)
@@ -140,19 +140,19 @@ foreach (OutlineItemCollection item in doc.Outlines)
 }
 ```
 
-#### Q: What happens if a bookmark has nested child bookmarks?
+#### S: Bir yer iminde iç içe geçmiş alt yer imleri varsa ne olur?
 
-A: If a bookmark has nested child bookmarks, expanding the parent bookmark will also expand its child bookmarks, providing a comprehensive view of the document's structure.
+C: Bir yer iminde yuvalanmış alt yer imleri varsa, ana yer imini genişletmek aynı zamanda alt yer imlerini de genişleterek belgenin yapısına ilişkin kapsamlı bir görünüm sağlar.
 
-#### Q: How do I save the updated PDF file after expanding bookmarks?
+#### S: Yer imlerini genişlettikten sonra güncellenen PDF dosyasını nasıl kaydedebilirim?
 
-A: To save the updated PDF file after expanding bookmarks, use the following code:
+C: Yer imlerini genişlettikten sonra güncellenen PDF dosyasını kaydetmek için aşağıdaki kodu kullanın:
 
 ```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 doc.Save(dataDir);
 ```
 
-#### Q: Can I customize the appearance of expanded bookmarks?
+#### S: Genişletilmiş yer imlerinin görünümünü özelleştirebilir miyim?
 
-A: While this tutorial focuses on expanding bookmarks by default, you can customize the appearance of bookmarks using Aspose.PDF's other features and properties.
+C: Bu eğitim varsayılan olarak yer imlerini genişletmeye odaklansa da, Aspose.PDF'in diğer özelliklerini ve özelliklerini kullanarak yer imlerinin görünümünü özelleştirebilirsiniz.

@@ -1,35 +1,35 @@
 ---
-title: Add TOC To PDF File
-linktitle: Add TOC To PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a table of contents to PDF file using Aspose.PDF for .NET. Step-by-step guide with example source code. Boost document navigation!
+title: Inhaltsverzeichnis zur PDF-Datei hinzufügen
+linktitle: Inhaltsverzeichnis zur PDF-Datei hinzufügen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET ein Inhaltsverzeichnis zu einer PDF-Datei hinzufügen. Schritt-für-Schritt-Anleitung mit Beispiel-Quellcode. Beschleunigen Sie die Dokumentennavigation!
 type: docs
 weight: 40
 url: /de/net/programming-with-document/addtoc/
 ---
-In this tutorial, we will explore how to use the Add TOC (Table of Contents) to PDF file feature of Aspose.PDF for .NET to add a table of contents to PDF documents. We will provide a step-by-step guide and explain the C# source code required to achieve this. By the end of this tutorial, you will be able to generate a PDF document with a table of contents using Aspose.PDF for .NET.
+In diesem Tutorial erfahren Sie, wie Sie die Funktion „Inhaltsverzeichnis (Inhaltsverzeichnis) zu PDF-Datei hinzufügen“ von Aspose.PDF für .NET verwenden, um PDF-Dokumenten ein Inhaltsverzeichnis hinzuzufügen. Wir stellen Ihnen eine Schritt-für-Schritt-Anleitung zur Verfügung und erläutern den dafür erforderlichen C#-Quellcode. Am Ende dieses Tutorials werden Sie in der Lage sein, mit Aspose.PDF für .NET ein PDF-Dokument mit einem Inhaltsverzeichnis zu erstellen.
 
 
-## Step 1: Load the existing PDF file
+## Schritt 1: Laden Sie die vorhandene PDF-Datei
 
-To get started, we need to load an existing PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your PDF file:
+ Um zu beginnen, müssen wir eine vorhandene PDF-Datei laden. Ersetzen`"YOUR DOCUMENT DIRECTORY"` Geben Sie im folgenden Code den tatsächlichen Pfad zu Ihrer PDF-Datei ein:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "AddTOC.pdf");
 ```
 
-## Step 2: Create a new page for the table of contents
+## Schritt 2: Erstellen Sie eine neue Seite für das Inhaltsverzeichnis
 
-We will create a new page to hold the table of contents. The following code inserts a new page at index 1:
+Wir erstellen eine neue Seite für das Inhaltsverzeichnis. Der folgende Code fügt eine neue Seite an Index 1 ein:
 
 ```csharp
 Page tocPage = doc.Pages.Insert(1);
 ```
 
-## Step 3: Define the table of contents information
+## Schritt 3: Definieren Sie die Inhaltsverzeichnisinformationen
 
-Next, we need to define the table of contents information. We will set the title and other properties of the table of contents. Add the following code:
+Als nächstes müssen wir die Inhaltsverzeichnisinformationen definieren. Wir legen den Titel und andere Eigenschaften des Inhaltsverzeichnisses fest. Fügen Sie den folgenden Code hinzu:
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -41,9 +41,9 @@ tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 ```
 
-## Step 4: Create TOC elements
+## Schritt 4: Erstellen Sie TOC-Elemente
 
-Now, we will create the elements of the table of contents. In this tutorial, we will create four TOC elements corresponding to different pages. Modify the following code as per your requirements:
+Jetzt erstellen wir die Elemente des Inhaltsverzeichnisses. In diesem Tutorial erstellen wir vier TOC-Elemente, die verschiedenen Seiten entsprechen. Ändern Sie den folgenden Code entsprechend Ihren Anforderungen:
 
 ```csharp
 string[] titles = new string[4];
@@ -67,9 +67,9 @@ for (int i = 0; i < 2; i++)
 }
 ```
 
-## Step 5: Save the updated document
+## Schritt 5: Speichern Sie das aktualisierte Dokument
 
-Finally, we need to save the modified document with the table of contents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code below with the desired output file path:
+ Abschließend müssen wir das geänderte Dokument mit dem Inhaltsverzeichnis speichern. Ersetzen`"YOUR DOCUMENT DIRECTORY"` Geben Sie im folgenden Code den gewünschten Ausgabedateipfad ein:
 
 ```csharp
 dataDir = dataDir + "TOC_out.pdf";
@@ -77,30 +77,30 @@ doc.Save(dataDir);
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
-### Example source code for Adding TOC to PDF documents using Aspose.PDF for .NET
+### Beispielquellcode zum Hinzufügen von Inhaltsverzeichnissen zu PDF-Dokumenten mit Aspose.PDF für .NET
 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load an existing PDF files
+// Laden Sie eine vorhandene PDF-Datei
 Document doc = new Document(dataDir + "AddTOC.pdf");
 
-// Get access to first page of PDF file
+// Erhalten Sie Zugriff auf die erste Seite der PDF-Datei
 Page tocPage = doc.Pages.Insert(1);
 
-// Create object to represent TOC information
+// Erstellen Sie ein Objekt zur Darstellung von TOC-Informationen
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
 
-// Set the title for TOC
+// Legen Sie den Titel für das Inhaltsverzeichnis fest
 tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 
-// Create string objects which will be used as TOC elements
+//Erstellen Sie String-Objekte, die als TOC-Elemente verwendet werden
 string[] titles = new string[4];
 titles[0] = "First page";
 titles[1] = "Second page";
@@ -108,53 +108,53 @@ titles[2] = "Third page";
 titles[3] = "Fourth page";
 for (int i = 0; i < 2; i++)
 {
-	// Create Heading object
+	// Erstellen Sie ein Überschriftenobjekt
 	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
 	TextSegment segment2 = new TextSegment();
 	heading2.TocPage = tocPage;
 	heading2.Segments.Add(segment2);
 
-	// Specify the destination page for heading object
+	// Geben Sie die Zielseite für das Überschriftenobjekt an
 	heading2.DestinationPage = doc.Pages[i + 2];
 
-	// Destination page
+	// Zielseite
 	heading2.Top = doc.Pages[i + 2].Rect.Height;
 
-	// Destination coordinate
+	// Zielkoordinate
 	segment2.Text = titles[i];
 
-	// Add heading to page containing TOC
+	// Fügen Sie der Seite mit dem Inhaltsverzeichnis eine Überschrift hinzu
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";
-// Save the updated document
+// Speichern Sie das aktualisierte Dokument
 doc.Save(dataDir);
 
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we explored how to add a table of contents (TOC) to PDF documents using Aspose.PDF for .NET. By following the step-by-step guide and utilizing the provided C# source code, you can easily generate a PDF document with a table of contents. The TOC enhances the document's usability, allowing users to navigate to specific sections or pages more efficiently. Aspose.PDF for .NET provides a robust and user-friendly solution for working with PDF files in .NET applications, enabling you to create dynamic and interactive PDF documents with ease.
+In diesem Tutorial haben wir untersucht, wie man mit Aspose.PDF für .NET ein Inhaltsverzeichnis (TOC) zu PDF-Dokumenten hinzufügt. Indem Sie der Schritt-für-Schritt-Anleitung folgen und den bereitgestellten C#-Quellcode verwenden, können Sie ganz einfach ein PDF-Dokument mit einem Inhaltsverzeichnis erstellen. Das Inhaltsverzeichnis verbessert die Benutzerfreundlichkeit des Dokuments und ermöglicht Benutzern eine effizientere Navigation zu bestimmten Abschnitten oder Seiten. Aspose.PDF für .NET bietet eine robuste und benutzerfreundliche Lösung für die Arbeit mit PDF-Dateien in .NET-Anwendungen und ermöglicht Ihnen die einfache Erstellung dynamischer und interaktiver PDF-Dokumente.
 
-### FAQ's for add TOC to PDF file
+### FAQs zum Hinzufügen von Inhaltsverzeichnissen zu PDF-Dateien
 
-#### Q: What is Aspose.PDF for .NET?
+#### F: Was ist Aspose.PDF für .NET?
 
-A: Aspose.PDF for .NET is a powerful library that allows developers to work with PDF files in .NET applications effectively. It provides a wide range of features for creating, manipulating, and managing PDF documents programmatically.
+A: Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die es Entwicklern ermöglicht, effektiv mit PDF-Dateien in .NET-Anwendungen zu arbeiten. Es bietet eine breite Palette von Funktionen zum programmgesteuerten Erstellen, Bearbeiten und Verwalten von PDF-Dokumenten.
 
-#### Q: What is the purpose of adding a table of contents (TOC) to a PDF document?
+#### F: Welchen Zweck hat das Hinzufügen eines Inhaltsverzeichnisses (TOC) zu einem PDF-Dokument?
 
-A: The table of contents (TOC) provides a navigational aid for users, enabling them to quickly jump to specific sections or pages within the PDF document. It improves the document's usability and user experience.
+A: Das Inhaltsverzeichnis (TOC) bietet Benutzern eine Navigationshilfe, die es ihnen ermöglicht, schnell zu bestimmten Abschnitten oder Seiten innerhalb des PDF-Dokuments zu springen. Es verbessert die Benutzerfreundlichkeit und Benutzererfahrung des Dokuments.
 
-#### Q: How do I add a table of contents to a PDF document using Aspose.PDF for .NET?
+#### F: Wie füge ich mit Aspose.PDF für .NET ein Inhaltsverzeichnis zu einem PDF-Dokument hinzu?
 
-A: To add a table of contents to a PDF document using Aspose.PDF for .NET, you need to create a new page to hold the TOC, define the table of contents information, and then create TOC elements that correspond to specific pages or sections in the document.
+A: Um mit Aspose.PDF für .NET ein Inhaltsverzeichnis zu einem PDF-Dokument hinzuzufügen, müssen Sie eine neue Seite erstellen, die das Inhaltsverzeichnis enthält, die Informationen zum Inhaltsverzeichnis definieren und dann Inhaltsverzeichniselemente erstellen, die bestimmten Seiten oder Seiten entsprechen Abschnitte im Dokument.
 
-#### Q: Can I customize the appearance of the table of contents?
+#### F: Kann ich das Erscheinungsbild des Inhaltsverzeichnisses anpassen?
 
-A: Yes, you can customize the appearance of the table of contents by setting various properties of the TOC elements, such as font size, font style, and alignment. Aspose.PDF for .NET provides flexibility in designing the TOC to match your desired look and feel.
+A: Ja, Sie können das Erscheinungsbild des Inhaltsverzeichnisses anpassen, indem Sie verschiedene Eigenschaften der Inhaltsverzeichniselemente festlegen, wie z. B. Schriftgröße, Schriftstil und Ausrichtung. Aspose.PDF für .NET bietet Flexibilität bei der Gestaltung des Inhaltsverzeichnisses, um es an Ihr gewünschtes Erscheinungsbild anzupassen.
 
-#### Q: Is Aspose.PDF for .NET suitable for adding advanced features to PDF documents?
+#### F: Ist Aspose.PDF für .NET zum Hinzufügen erweiterter Funktionen zu PDF-Dokumenten geeignet?
 
-A: Absolutely, Aspose.PDF for .NET is a feature-rich library that allows you to add advanced functionalities to PDF documents, including interactive elements, form fields, digital signatures, and more.
+A: Absolut, Aspose.PDF für .NET ist eine funktionsreiche Bibliothek, mit der Sie PDF-Dokumenten erweiterte Funktionen hinzufügen können, darunter interaktive Elemente, Formularfelder, digitale Signaturen und mehr.

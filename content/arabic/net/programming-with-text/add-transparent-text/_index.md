@@ -1,58 +1,58 @@
 ---
-title: Add Transparent Text In PDF File
-linktitle: Add Transparent Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add transparent text in PDF file using Aspose.PDF for .NET.
+title: إضافة نص شفاف في ملف PDF
+linktitle: إضافة نص شفاف في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة نص شفاف في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 100
 url: /ar/net/programming-with-text/add-transparent-text/
 ---
-This tutorial will guide you through the process of adding transparent text to a PDF document using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+سيرشدك هذا البرنامج التعليمي خلال عملية إضافة نص شفاف إلى مستند PDF باستخدام Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم الخطوات اللازمة.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## متطلبات
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio أو أي مترجم C# آخر مثبت على جهازك.
+- Aspose.PDF لمكتبة .NET. يمكنك تنزيله من موقع Aspose الرسمي أو استخدام مدير الحزم مثل NuGet لتثبيته.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## الخطوة 1: إعداد المشروع
+1. قم بإنشاء مشروع C# جديد في بيئة التطوير المفضلة لديك.
+2. قم بإضافة مرجع إلى Aspose.PDF لمكتبة .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to add transparent text, add the following using directives at the top of the file:
+## الخطوة 2: استيراد مساحات الأسماء المطلوبة
+في ملف التعليمات البرمجية الذي تريد إضافة نص شفاف إليه، أضف ما يلي باستخدام التوجيهات الموجودة في أعلى الملف:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Drawing;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## الخطوة 3: قم بتعيين دليل المستند
+ في الكود، حدد السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدال`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل حيث يتم تخزين المستندات الخاصة بك.
 
-## Step 4: Create a new Document instance
-Instantiate a new `Document` object by adding the following line of code:
+## الخطوة 4: إنشاء مثيل مستند جديد
+ إنشاء مثيل جديد`Document` كائن عن طريق إضافة السطر التالي من التعليمات البرمجية:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document by using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `page`.
+## الخطوة 5: إضافة صفحة إلى المستند
+ أضف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages`مجموعة. في الكود المقدم، يتم تعيين الصفحة الجديدة للمتغير`page`.
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## Step 6: Create a Graph object
-Create a new `Graph` object with a specific width and height.
+## الخطوة 6: إنشاء كائن الرسم البياني
+ إنشاء جديد`Graph` كائن له عرض وارتفاع محدد.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 ```
 
-## Step 7: Create a rectangle with transparency
-Create a rectangle with specific dimensions and set its fill color to a transparent color using the `Color.FromRgb` method.
+## الخطوة 7: إنشاء مستطيل بشفافية
+ أنشئ مستطيلاً بأبعاد محددة واضبط لون تعبئته على لون شفاف باستخدام الملف`Color.FromRgb` طريقة.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 400, 400);
@@ -60,22 +60,22 @@ rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArg
 canvas.Shapes.Add(rect);
 ```
 
-## Step 8: Add the Graph object to the page
-Add the `Graph` object to the paragraphs collection of the page.
+## الخطوة 8: أضف كائن الرسم البياني إلى الصفحة
+ أضف ال`Graph` الاعتراض على مجموعة الفقرات من الصفحة.
 
 ```csharp
 page.Paragraphs.Add(canvas);
 ```
 
-## Step 9: Set position for the Graph object
-Set the `IsChangePosition` property of the `Graph` object to `false` to prevent it from changing position.
+## الخطوة 9: تعيين موضع كائن الرسم البياني
+ تعيين`IsChangePosition` ملكية`Graph` يعترض على`false` لمنعه من تغيير الموقف.
 
 ```csharp
 canvas. IsChangePosition = false;
 ```
 
-## Step 10: Create a TextFragment with transparency
-Create a `TextFragment` object and set its content to the desired text. Set the `ForegroundColor` property of the `TextState` to a color with transparency using the `Color.FromArgb` method.
+## الخطوة 10: إنشاء TextFragment بشفافية
+ إنشاء`TextFragment` الكائن وتعيين محتواه على النص المطلوب. تعيين`ForegroundColor` ملكية`TextState` إلى لون ذو شفافية باستخدام`Color.FromArgb` طريقة.
 
 ```csharp
 TextFragment text = new TextFragment("transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text ");
@@ -84,8 +84,8 @@ text.TextState.ForegroundColor = color;
 page.Paragraphs.Add(text);
 ```
 
-## Step 11: Save the PDF document
-Save the PDF document using the `Save` method of the `Document` object.
+## الخطوة 11: احفظ مستند PDF
+ احفظ مستند PDF باستخدام`Save` طريقة`Document` هدف.
 
 ```csharp
 doc.Save(dataDir + "AddTransparentText_out.pdf");
@@ -93,33 +93,33 @@ doc.Save(dataDir);
 Console.WriteLine("\nTransparent text added successfully.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Add Transparent Text using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإضافة نص شفاف باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Document instance
+// إنشاء مثيل المستند
 Document doc = new Document();
-// Create page to pages collection of PDF file
+// إنشاء صفحة لمجموعة صفحات من ملف PDF
 Aspose.Pdf.Page page = doc.Pages.Add();
-// Create Graph object 
+// إنشاء كائن الرسم البياني
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
-// Create rectangle instance with certain dimensions
+// إنشاء مثيل مستطيل بأبعاد معينة
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 400, 400);
-// Create color object from Alpha color channel
+// إنشاء كائن اللون من قناة لون ألفا
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
-// Add rectanlge to shapes collection of Graph object
+// إضافة مستطيل إلى مجموعة الأشكال لكائن الرسم البياني
 canvas.Shapes.Add(rect);
-// Add graph object to paragraphs collection of page object
+//إضافة كائن الرسم البياني إلى مجموعة الفقرات من كائن الصفحة
 page.Paragraphs.Add(canvas);
-// Set value to not change position for graph object
+// قم بتعيين القيمة لعدم تغيير موضع كائن الرسم البياني
 canvas.IsChangePosition = false;
-// Create TextFragment instance with sample value
+// قم بإنشاء مثيل TextFragment بقيمة العينة
 TextFragment text = new TextFragment("transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text ");
-// Create color object from Alpha channel
+// إنشاء كائن اللون من قناة ألفا
 Aspose.Pdf.Color color = Aspose.Pdf.Color.FromArgb(30, 0, 255, 0);
-// Set color information for text instance
+// قم بتعيين معلومات اللون لمثيل النص
 text.TextState.ForegroundColor = color;
-// Add text to paragraphs collection of page instance
+// إضافة نص إلى مجموعة الفقرات من مثيل الصفحة
 page.Paragraphs.Add(text);
 dataDir = dataDir + "AddTransparentText_out.pdf";
 doc.Save(dataDir);
@@ -127,60 +127,60 @@ Console.WriteLine("\nTransparent text added successfully.\nFile saved at " + dat
 ```
 
 
-## Conclusion
-You have successfully added transparent text to your PDF document using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## خاتمة
+لقد نجحت في إضافة نص شفاف إلى مستند PDF الخاص بك باستخدام Aspose.PDF لـ .NET. يمكن الآن العثور على ملف PDF الناتج في مسار ملف الإخراج المحدد.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the focus of this tutorial?
+#### س: ما هو محور هذا البرنامج التعليمي؟
 
-A: This tutorial focuses on adding transparent text to a PDF document using the Aspose.PDF for .NET library. The provided C# source code demonstrates the necessary steps to achieve this effect.
+ج: يركز هذا البرنامج التعليمي على إضافة نص شفاف إلى مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم الخطوات اللازمة لتحقيق هذا التأثير.
 
-#### Q: Which namespaces need to be imported for this tutorial?
+#### س: ما هي مساحات الأسماء التي يجب استيرادها لهذا البرنامج التعليمي؟
 
-A: In the code file where you want to add transparent text, import the following namespaces at the beginning of the file:
+ج: في ملف التعليمات البرمجية الذي تريد إضافة نص شفاف إليه، قم باستيراد مساحات الأسماء التالية في بداية الملف:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Drawing;
 ```
 
-#### Q: How do I specify the document directory?
+#### س: كيف أحدد دليل المستندات؟
 
-A: In the code, find the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ ج: في الكود، ابحث عن السطر`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدال`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك.
 
-#### Q: How do I create a new Document instance?
+#### س: كيف يمكنني إنشاء مثيل مستند جديد؟
 
-A: In Step 4, you'll instantiate a new `Document` object using the provided code.
+ ج: في الخطوة 4، ستقوم بإنشاء نسخة جديدة`Document` الكائن باستخدام الكود المقدم.
 
-#### Q: How do I add a page to the document?
+#### س: كيف يمكنني إضافة صفحة إلى المستند؟
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection.
+ ج: في الخطوة 5، ستضيف صفحة جديدة إلى المستند باستخدام الملف`Add` طريقة`Pages` مجموعة.
 
-#### Q: How do I create a Graph object?
+#### س: كيف أقوم بإنشاء كائن رسم بياني؟
 
-A: In Step 6, you'll create a new `Graph` object with a specific width and height.
+ ج: في الخطوة 6، ستقوم بإنشاء ملف جديد`Graph` كائن له عرض وارتفاع محدد.
 
-#### Q: How do I create a rectangle with transparency?
+#### س: كيف أقوم بإنشاء مستطيل ذو شفافية؟
 
-A: In Step 7, you'll create a rectangle with specific dimensions and set its fill color to a transparent color using the `Color.FromRgb` method.
+ج: في الخطوة 7، ستقوم بإنشاء مستطيل بأبعاد محددة وتعيين لون تعبئته إلى لون شفاف باستخدام`Color.FromRgb` طريقة.
 
-#### Q: How do I add the Graph object to the page?
+#### س: كيف يمكنني إضافة كائن الرسم البياني إلى الصفحة؟
 
-A: In Step 8, you'll add the `Graph` object to the paragraphs collection of the page.
+ ج: في الخطوة 8، ستضيف`Graph` الاعتراض على مجموعة الفقرات من الصفحة.
 
-#### Q: How do I set the position for the Graph object?
+#### س: كيف أقوم بتعيين موضع كائن الرسم البياني؟
 
-A: In Step 9, you'll set the `IsChangePosition` property of the `Graph` object to `false` to prevent it from changing position.
+ ج: في الخطوة 9، ستقوم بتعيين`IsChangePosition` ملكية`Graph` يعترض على`false` لمنعه من تغيير الموقف.
 
-#### Q: How do I create a TextFragment with transparency?
+#### س: كيف يمكنني إنشاء TextFragment بشفافية؟
 
-A: In Step 10, you'll create a `TextFragment` object and set its content and `ForegroundColor` property to achieve transparent text.
+ ج: في الخطوة 10، ستقوم بإنشاء ملف`TextFragment` الكائن وتعيين محتواه و`ForegroundColor` خاصية لتحقيق نص شفاف.
 
-#### Q: How do I save the PDF document?
+#### س: كيف أحفظ وثيقة PDF؟
 
-A: In Step 11, you'll save the PDF document using the `Save` method of the `Document` object.
+ ج: في الخطوة 11، ستحفظ مستند PDF باستخدام ملف`Save` طريقة`Document` هدف.
 
-#### Q: What is the main takeaway from this tutorial?
+#### س: ما هي الوجبات الرئيسية من هذا البرنامج التعليمي؟
 
-A: By following this tutorial, you've learned how to add transparent text to a PDF document using Aspose.PDF for .NET. This can be useful for creating visually appealing and creative PDF documents.
+ج: باتباع هذا البرنامج التعليمي، تعلمت كيفية إضافة نص شفاف إلى مستند PDF باستخدام Aspose.PDF لـ .NET. يمكن أن يكون هذا مفيدًا لإنشاء مستندات PDF جذابة ومبتكرة.

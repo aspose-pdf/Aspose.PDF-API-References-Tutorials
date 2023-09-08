@@ -1,85 +1,85 @@
 ---
-title: Set Default Font In PDF File
-linktitle: Set Default Font In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set the default font in a PDF file using Aspose.PDF for .NET with this step-by-step guide.
+title: 在 PDF 文件中设置默认字体
+linktitle: 在 PDF 文件中设置默认字体
+second_title: Aspose.PDF for .NET API 参考
+description: 通过此分步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 文件中设置默认字体。
 type: docs
 weight: 280
 url: /zh/net/programming-with-document/setdefaultfont/
 ---
-If you're working with PDF documents in .NET, you may encounter issues where the font used in the PDF is not available on the system where it is being viewed or printed. This can result in the text appearing incorrectly or not at all. Aspose.PDF for .NET provides a solution to this problem by allowing you to set a default font for the document. In this example, how to set the default font using Aspose.PDF for .NET.
+如果您在 .NET 中处理 PDF 文档，则可能会遇到以下问题：PDF 中使用的字体在查看或打印 PDF 的系统上不可用。这可能会导致文本显示不正确或根本不显示。 Aspose.PDF for .NET 允许您为文档设置默认字体，从而提供了此问题的解决方案。在此示例中，如何使用 Aspose.PDF for .NET 设置默认字体。
 
-## Step 1: Set the path to the document directory
+## 第一步：设置文档目录路径
 
-we need to set the path to the directory where our PDF document is located. We will store this path in a variable called "dataDir".
+我们需要设置PDF文档所在目录的路径。我们将该路径存储在名为“dataDir”的变量中。
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the PDF document
+## 第 2 步：加载 PDF 文档
 
-We'll start by loading an existing PDF document that has missing fonts. In this example, we'll assume that the PDF document is located in the directory specified by the `dataDir` variable.
+我们首先加载缺少字体的现有 PDF 文档。在此示例中，我们假设 PDF 文档位于由`dataDir`多变的。
 
 ```csharp
 string documentName = dataDir + "input.pdf";
 using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
 using (Document document = new Document(fs))
 {
-    // code goes here
+    //代码放在这里
 }
 ```
 
-## Step 3: Set the default font
+## 第三步：设置默认字体
 
-Next, we'll set the default font for the PDF document using the `PdfSaveOptions` class. In this example, we'll set the default font to "Arial".
+接下来，我们将使用以下命令设置 PDF 文档的默认字体`PdfSaveOptions`班级。在此示例中，我们将默认字体设置为“Arial”。
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
 pdfSaveOptions.DefaultFontName = "Arial";
 ```
 
-## Step 4: Save the updated document
+## 步骤 4：保存更新后的文档
 
-Finally, we'll save the updated document to a new file. In this example, we'll save the updated document to a file named "output_out.pdf" in the same directory as the input file.
+最后，我们将更新的文档保存到新文件中。在此示例中，我们将更新的文档保存到与输入文件位于同一目录中的名为“output_out.pdf”的文件中。
 
 ```csharp
 document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 ```
 
-### Example Source Code for Set Default Font using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 设置默认字体的示例源代码
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load an existing PDF document with missing font
+//加载缺少字体的现有 PDF 文档
 string documentName = dataDir + "input.pdf";
 string newName = "Arial";
 using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
 using (Document document = new Document(fs))
 {
 	PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
-	// Specify Default Font Name
+	//指定默认字体名称
 	pdfSaveOptions.DefaultFontName = newName;
 	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 }
 ```
 
-## Conclusion
+## 结论
 
-Setting a default font in PDF documents using Aspose.PDF for .NET is a simple and effective way to ensure that the text is displayed correctly, even if the original fonts are not available. By following the step-by-step guide and using the provided C# source code, developers can easily set the default font and create PDFs that offer a consistent and reliable viewing experience across different environments. This feature is particularly useful in scenarios where the PDFs will be viewed or printed on various systems that may have different font sets installed.
+使用 Aspose.PDF for .NET 在 PDF 文档中设置默认字体是一种简单而有效的方法，可以确保文本正确显示，即使原始字体不可用。通过遵循分步指南并使用提供的 C# 源代码，开发人员可以轻松设置默认字体并创建 PDF，从而在不同环境中提供一致且可靠的查看体验。当在可能安装了不同字体集的各种系统上查看或打印 PDF 时，此功能特别有用。
 
-### FAQ's for set default font in PDF file
+### PDF 文件中设置默认字体的常见问题解答
 
-#### Q: Why is setting a default font important in PDF documents?
+#### 问：为什么在 PDF 文档中设置默认字体很重要？
 
-A: Setting a default font in PDF documents is important because it ensures that the text will be displayed correctly even if the original fonts are not available on the system where the PDF is being viewed or printed. It helps prevent issues like missing or garbled text, ensuring a consistent and reliable viewing experience.
+答：在 PDF 文档中设置默认字体非常重要，因为即使在查看或打印 PDF 的系统上没有原始字体，它也能确保文本正确显示。它有助于防止文本丢失或乱码等问题，确保一致且可靠的观看体验。
 
-#### Q: Can I choose any font as the default font using Aspose.PDF for .NET?
+#### 问：我可以使用 Aspose.PDF for .NET 选择任何字体作为默认字体吗？
 
-A: Yes, you can choose any font that is available on the system as the default font using Aspose.PDF for .NET. Simply specify the name of the font in the `DefaultFontName` property of the `PdfSaveOptions` class.
+答：是的，您可以使用 Aspose.PDF for .NET 选择系统上可用的任何字体作为默认字体。只需在中指定字体名称即可`DefaultFontName`的财产`PdfSaveOptions`班级。
 
-#### Q: What happens if the specified default font is not available on the system?
+#### 问：如果系统上没有指定的默认字体，会发生什么情况？
 
-A: If the specified default font is not available on the system, the PDF viewer will use a fallback font to display the text. It is advisable to choose a commonly available font like Arial or Times New Roman to ensure compatibility across different systems.
+答：如果系统上没有指定的默认字体，PDF 查看器将使用后备字体来显示文本。建议选择常用字体，如 Arial 或 Times New Roman，以确保不同系统之间的兼容性。

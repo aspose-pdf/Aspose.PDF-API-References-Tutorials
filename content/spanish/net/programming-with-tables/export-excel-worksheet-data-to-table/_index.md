@@ -1,237 +1,237 @@
 ---
-title: Export Excel Worksheet Data To Table
-linktitle: Export Excel Worksheet Data To Table
-second_title: Aspose.PDF for .NET API Reference
-description: Export data from an Excel sheet to a PDF table using Aspose.PDF for .NET.
+title: Exportar datos de la hoja de cálculo de Excel a la tabla
+linktitle: Exportar datos de la hoja de cálculo de Excel a la tabla
+second_title: Aspose.PDF para referencia de API .NET
+description: Exporte datos de una hoja de Excel a una tabla PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 70
 url: /es/net/programming-with-tables/export-excel-worksheet-data-to-table/
 ---
-In this tutorial, we will learn how to export data from an Excel worksheet and create a table in a PDF document using the Aspose.PDF for .NET library. We will walk through the source code step by step and explain each section in detail. By the end of this tutorial, you will be able to generate PDF files with tables containing data from Excel worksheets. Let's get started!
+En este tutorial, aprenderemos cómo exportar datos desde una hoja de cálculo de Excel y crear una tabla en un documento PDF usando la biblioteca Aspose.PDF para .NET. Revisaremos el código fuente paso a paso y explicaremos cada sección en detalle. Al final de este tutorial, podrá generar archivos PDF con tablas que contienen datos de hojas de cálculo de Excel. ¡Empecemos!
 
-## Requirements
-Before we begin, make sure you have the following:
+## Requisitos
+Antes de comenzar, asegúrese de tener lo siguiente:
 
-- Basic knowledge of C# programming language
-- Visual Studio installed on your machine
-- Aspose.PDF for .NET library added to your project
+- Conocimientos básicos del lenguaje de programación C#.
+- Visual Studio instalado en su máquina
+- Biblioteca Aspose.PDF para .NET agregada a su proyecto
 
-## Step 1: Setting up the Environment
-To begin, create a new C# project in Visual Studio. Add the reference to the Aspose.PDF for .NET library by right-clicking on your project in the Solution Explorer, selecting "Manage NuGet Packages," and searching for "Aspose.PDF." Install the package and you're ready to go.
+## Paso 1: configurar el entorno
+Para comenzar, cree un nuevo proyecto de C# en Visual Studio. Agregue la referencia a la biblioteca Aspose.PDF para .NET haciendo clic derecho en su proyecto en el Explorador de soluciones, seleccionando "Administrar paquetes NuGet" y buscando "Aspose.PDF". Instale el paquete y estará listo para comenzar.
 
-## Step 2: Loading the Excel Worksheet
-In the first step of our code, we define the path to the directory containing the Excel document. Replace "YOUR DOCUMENT DIRECTORY" with the actual directory path where your Excel file is located.
+## Paso 2: cargar la hoja de cálculo de Excel
+En el primer paso de nuestro código, definimos la ruta al directorio que contiene el documento de Excel. Reemplace "SU DIRECTORIO DE DOCUMENTOS" con la ruta del directorio real donde se encuentra su archivo de Excel.
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Aspose.Cells.Workbook workbook = new Aspose.Cells.Workbook(new FileStream(dataDir + "newBook1.xlsx", FileMode.Open));
 ```
 
-Here, we use the Aspose.Cells library to load the Excel workbook. Make sure to replace "newBook1.xlsx" with the name of your Excel file.
+Aquí, usamos la biblioteca Aspose.Cells para cargar el libro de Excel. Asegúrese de reemplazar "newBook1.xlsx" con el nombre de su archivo de Excel.
 
-## Step 3: Accessing the Worksheet
-Next, we need to access the first worksheet in the Excel file. We do this using the `Worksheets` collection of the `Workbook` object.
+## Paso 3: acceder a la hoja de trabajo
+ A continuación, debemos acceder a la primera hoja de trabajo del archivo de Excel. Hacemos esto usando el`Worksheets` colección de la`Workbook` objeto.
 
 ```csharp
-// Accessing the first worksheet in the Excel file
+// Accediendo a la primera hoja de trabajo en el archivo de Excel
 Aspose.Cells.Worksheet worksheet = workbook.Worksheets[0];
 ```
 
-If your Excel file contains multiple worksheets, you can change the index value `[0]` to access a different worksheet.
+ Si su archivo de Excel contiene varias hojas de trabajo, puede cambiar el valor del índice`[0]` para acceder a una hoja de trabajo diferente.
 
-## Step 4: Exporting Data to DataTable
-Now, we will export the contents of the Excel worksheet to a `DataTable` object. We specify the range of cells to export using the `ExportDataTable` method.
+## Paso 4: Exportar datos a DataTable
+ Ahora, exportaremos el contenido de la hoja de cálculo de Excel a un`DataTable` objeto. Especificamos el rango de celdas a exportar usando el`ExportDataTable` método.
 
 ```csharp
-// Exporting the contents of 7 rows and 2 columns starting from 1st cell to DataTable
+// Exportar el contenido de 7 filas y 2 columnas a partir de la primera celda a DataTable
 DataTable dataTable = worksheet.Cells.ExportDataTable(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1, true);
 ```
 
-In this example, we export all rows and columns starting from the first cell (0, 0) to the last cell in the worksheet. Set the appropriate range based on your requirements.
+En este ejemplo, exportamos todas las filas y columnas desde la primera celda (0, 0) hasta la última celda de la hoja de trabajo. Establezca el rango apropiado según sus requisitos.
 
-## Step 5: Creating a PDF Document
-Now, we will create a new PDF document using the Aspose.PDF library.
+## Paso 5: crear un documento PDF
+Ahora, crearemos un nuevo documento PDF usando la biblioteca Aspose.PDF.
 
 ```csharp
-// Instantiate a Document instance
+// Crear una instancia de documento
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 ```
 
-This creates an empty PDF document where we can add content.
+Esto crea un documento PDF vacío donde podemos agregar contenido.
 
-## Step 6: Adding a Page and Table
-To display the data in a table format, we need to add a page and a table to the PDF document.
+## Paso 6: agregar una página y una tabla
+Para mostrar los datos en formato de tabla, necesitamos agregar una página y una tabla al documento PDF.
 
 ```csharp
-// Create a page in the document instance
+// Crear una página en la instancia del documento.
 Aspose.Pdf.Page sec1 = pdf1.Pages.Add();
 
-// Create a Table object
+// Crear un objeto de tabla
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Add the Table object in the paragraphs collection of the section
+// Agregue el objeto Tabla en la colección de párrafos de la sección.
 sec1.Paragraphs.Add(tab1);
 ```
 
-Here, we create a new page and a table object. We then add the table to the paragraphs collection of the page.
+Aquí, creamos una nueva página y un objeto de tabla. Luego agregamos la tabla a la colección de párrafos de la página.
 
-## Step 7: Setting Table Properties
-Before importing the data, we need to set some properties of the table, such as column widths and default cell borders.
+## Paso 7: configurar las propiedades de la tabla
+Antes de importar los datos, debemos configurar algunas propiedades de la tabla, como el ancho de las columnas y los bordes de las celdas predeterminados.
 
 ```csharp
-// Set column widths of the table
+// Establecer anchos de columna de la tabla
 tab1.ColumnWidths = "40 100 100";
 
-// Set default cell border of the table using BorderInfo object
+// Establecer el borde de celda predeterminado de la tabla usando el objeto BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 ```
 
-In this example, we set the column widths to 40, 100, and 100 units. Adjust the values based on your data. We also set the default cell border to display borders on all sides of each cell.
+En este ejemplo, configuramos los anchos de columna en 40, 100 y 100 unidades. Ajuste los valores según sus datos. También configuramos el borde de celda predeterminado para mostrar bordes en todos los lados de cada celda.
 
-## Step 8: Importing Data to the Table
-Now, we will import the data from the `DataTable` object into the table using the `ImportDataTable` method.
+## Paso 8: Importar datos a la tabla
+ Ahora importaremos los datos del`DataTable` objeto en la mesa usando el`ImportDataTable` método.
 
 ```csharp
-// Import data into the Table object from the DataTable created above
+// Importe datos al objeto Tabla desde el DataTable creado anteriormente
 tab1.ImportDataTable(dataTable, true, 0, 0, dataTable.Rows.Count + 1, dataTable.Columns.Count);
 ```
 
-Here, we specify the range of rows and columns to import. In this example, we import all rows and columns from the `dataTable` object.
+ Aquí, especificamos el rango de filas y columnas a importar. En este ejemplo, importamos todas las filas y columnas del`dataTable` objeto.
 
-## Step 9: Formatting the Table
-To enhance the appearance of the table, we can apply formatting to specific cells or rows. In this step, we will format the first row and alternate rows of the table.
+## Paso 9: formatear la tabla
+Para mejorar la apariencia de la tabla, podemos aplicar formato a celdas o filas específicas. En este paso, daremos formato a la primera fila y a las filas alternas de la tabla.
 
 ```csharp
-// Get 1st row from the table
+// Obtener la primera fila de la tabla
 Aspose.Pdf.Row row1 = tab1.Rows[0];
 
-// Format the first row
+// Formatear la primera fila
 foreach(Aspose.Pdf.Cell curCell in row1.Cells)
 {
-     // Set the background color of the cells in the first row
-     curCell.BackgroundColor = Color.Blue;// Set the face for the cells in the first row
+     // Establecer el color de fondo de las celdas de la primera fila.
+     curCell.BackgroundColor = Color.Blue;// Establece la cara de las celdas en la primera fila.
      curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
     
-     // Set the font color of the cells in the first row
+     // Establecer el color de fuente de las celdas de la primera fila
      curCell.DefaultCellTextState.ForegroundColor = Color.Yellow;
     
-     // Set the text alignment for the cells in the first row
+     // Establecer la alineación del texto para las celdas de la primera fila
      curCell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 }
 
-// Alternate row format
+// Formato de fila alternativo
 for (int All_Rows = 1; All_Rows <= dataTable.Rows.Count; All_Rows++)
 {
      foreach(Aspose.Pdf.Cell curCell in tab1.Rows[All_Rows].Cells)
      {
-         // Set the background color of the cells in alternate rows
+         // Establecer el color de fondo de las celdas en filas alternas
          curCell.BackgroundColor = Color.Gray;
         
-         // Set the text color of the cells in alternate rows
+         // Establecer el color del texto de las celdas en filas alternas
          curCell.DefaultCellTextState.ForegroundColor = Color.White;
      }
 }
 ```
 
-Here, we iterate through the cells in the first row and set their background color, font face, font color, and text alignment. Then, we iterate through all cells in the alternate rows and set their background and text color.
+Aquí, recorremos las celdas de la primera fila y configuramos su color de fondo, tipo de fuente, color de fuente y alineación del texto. Luego, recorremos todas las celdas en las filas alternativas y configuramos su fondo y color de texto.
 
-## Step 10: Saving the PDF Document
-Finally, we save the PDF document to the specified location.
+## Paso 10: guardar el documento PDF
+Finalmente, guardamos el documento PDF en la ubicación especificada.
 
 ```csharp
-// Save the PDF
+// Guarde el PDF
 pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 ```
 
-Make sure to replace "YOUR DOCUMENT DIRECTORY" with the desired directory path and filename for the output PDF file.
+Asegúrese de reemplazar "SU DIRECTORIO DE DOCUMENTOS" con la ruta del directorio y el nombre de archivo deseados para el archivo PDF de salida.
 
-### Example source code for Export Excel Worksheet Data To Table using Aspose.PDF for .NET
+### Código fuente de ejemplo para exportar datos de hojas de cálculo de Excel a una tabla usando Aspose.PDF para .NET
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Aspose.Cells.Workbook workbook = new Aspose.Cells.Workbook(new FileStream(dataDir + "newBook1.xlsx", FileMode.Open));
-// Accessing the first worksheet in the Excel file
+// Accediendo a la primera hoja de trabajo en el archivo de Excel
 Aspose.Cells.Worksheet worksheet = workbook.Worksheets[0];
-// Exporting the contents of 7 rows and 2 columns starting from 1st cell to DataTable
+// Exportar el contenido de 7 filas y 2 columnas a partir de la primera celda a DataTable
 DataTable dataTable = worksheet.Cells.ExportDataTable(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1, true);
 
-// Instantiate a Document instanc
+// Crear una instancia de documento
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
-// Create a page in the document instance
+// Crear una página en la instancia del documento.
 Aspose.Pdf.Page sec1 = pdf1.Pages.Add();
 
-// Create a Table object
+// Crear un objeto de tabla
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Add the Table object in the paragraphs collection of the section
+// Agregue el objeto Tabla en la colección de párrafos de la sección.
 sec1.Paragraphs.Add(tab1);
 
-// Set column widths of the table.  We need to specify the ColumnCount manually.
-// As the curent excel worksheet has three columsn, so we are specifying the same count
+// Establezca el ancho de las columnas de la tabla. Necesitamos especificar ColumnCount manualmente.
+// Como la hoja de trabajo de Excel actual tiene tres columnas, estamos especificando el mismo recuento
 tab1.ColumnWidths = "40 100 100";
 
-// Set default cell border of the table using BorderInfo object
+// Establecer el borde de celda predeterminado de la tabla usando el objeto BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 
-// Import data into the Table object from the DataTable created above
+// Importe datos al objeto Tabla desde el DataTable creado anteriormente
 tab1.ImportDataTable(dataTable, true, 0, 0, dataTable.Rows.Count + 1, dataTable.Columns.Count);
-// Get 1st row from the table
+// Obtener la primera fila de la tabla
 Aspose.Pdf.Row row1 = tab1.Rows[0];
 
-// Iterate through all cells in the 1st row and set their background color to blue
+// Repita todas las celdas de la primera fila y establezca su color de fondo en azul
 foreach (Aspose.Pdf.Cell curCell in row1.Cells)
 {
-	// Set the background of all the cells in 1st row of the table.
+	// Establezca el fondo de todas las celdas en la primera fila de la tabla.
 	curCell.BackgroundColor = Color.Blue;
-	// Set the font face for the cells of 1st row in the table.
+	// Establezca la fuente para las celdas de la primera fila de la tabla.
 	curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
-	// Set the font Color of all the cells in 1st row of the table.
+	// Establezca el color de fuente de todas las celdas en la primera fila de la tabla.
 	curCell.DefaultCellTextState.ForegroundColor = Color.Yellow;
-	// Set the text allignment for the cells of 1st row as Center.
+	// Establezca la alineación del texto para las celdas de la primera fila como Centro.
 	curCell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 }
 
 for (int All_Rows = 1; All_Rows <= dataTable.Rows.Count; All_Rows++)
 {
-	// Iterate through all cells in the 1st row and set their background color to blue
+	// Repita todas las celdas de la primera fila y establezca su color de fondo en azul
 	foreach (Aspose.Pdf.Cell curCell in tab1.Rows[All_Rows].Cells)
 	{
-		// Set the background color of all the cells except of the 1st row.
+		// Establezca el color de fondo de todas las celdas excepto de la primera fila.
 		curCell.BackgroundColor = Color.Gray;
-		// Set the Text color of all the cells except the 1st row.
+		// Establezca el color del texto de todas las celdas excepto la primera fila.
 		curCell.DefaultCellTextState.ForegroundColor = Color.White;
 	}
 }
 
-// Save the Pdf
+// Guarde el PDF
 pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 ```
 
-## Conclusion
-In this tutorial, we learned how to export data from an Excel worksheet to a PDF table using the Aspose.PDF for .NET library. We covered the step-by-step process of loading the Excel worksheet, creating a PDF document, adding a table, importing data, andformatting the table. You can now generate PDF files with tables containing Excel data programmatically.
+## Conclusión
+En este tutorial, aprendimos cómo exportar datos de una hoja de cálculo de Excel a una tabla PDF usando la biblioteca Aspose.PDF para .NET. Cubrimos el proceso paso a paso de cargar la hoja de cálculo de Excel, crear un documento PDF, agregar una tabla, importar datos y formatear la tabla. Ahora puede generar archivos PDF con tablas que contengan datos de Excel mediante programación.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is the purpose of exporting Excel worksheet data to a PDF table?
+#### P: ¿Cuál es el propósito de exportar datos de una hoja de cálculo de Excel a una tabla PDF?
 
-A: Exporting Excel worksheet data to a PDF table allows you to present the data in a structured and organized format. It enables you to generate PDF files with tables that contain data from Excel worksheets, making it easier to share and preserve information in a portable document format.
+R: Exportar datos de una hoja de cálculo de Excel a una tabla PDF le permite presentar los datos en un formato estructurado y organizado. Le permite generar archivos PDF con tablas que contienen datos de hojas de cálculo de Excel, lo que facilita compartir y conservar información en un formato de documento portátil.
 
-#### Q: Can I customize the appearance of the PDF table?
+#### P: ¿Puedo personalizar la apariencia de la tabla PDF?
 
-A: Yes, you can customize the appearance of the PDF table using various properties provided by Aspose.PDF for .NET. In the provided C# source code, you can modify the column widths, cell borders, text alignment, font style, and more to suit your specific requirements.
+R: Sí, puede personalizar la apariencia de la tabla PDF utilizando varias propiedades proporcionadas por Aspose.PDF para .NET. En el código fuente de C# proporcionado, puede modificar el ancho de las columnas, los bordes de las celdas, la alineación del texto, el estilo de fuente y más para adaptarlo a sus requisitos específicos.
 
-#### Q: How do I handle Excel files with multiple worksheets?
+#### P: ¿Cómo manejo archivos de Excel con varias hojas de cálculo?
 
-A: In the provided C# code, we accessed the first worksheet in the Excel file using the index `[0]`. If your Excel file contains multiple worksheets, you can access them by changing the index value accordingly, such as `[1]` for the second worksheet or `[2]` for the third worksheet.
+ R: En el código C# proporcionado, accedemos a la primera hoja de trabajo del archivo Excel usando el índice`[0]` . Si su archivo de Excel contiene varias hojas de trabajo, puede acceder a ellas cambiando el valor del índice en consecuencia, como`[1]` para la segunda hoja de trabajo o`[2]` para la tercera hoja de trabajo.
 
-#### Q: Can I apply different formatting to specific rows or cells in the PDF table?
+#### P: ¿Puedo aplicar un formato diferente a filas o celdas específicas en la tabla PDF?
 
-A: Yes, you can apply different formatting to specific rows or cells in the PDF table. In the provided C# source code, we demonstrated how to format the first row and alternate rows differently by changing their background color, font style, and font color. You can apply similar formatting techniques to any specific rows or cells as needed.
+R: Sí, puede aplicar diferentes formatos a filas o celdas específicas en la tabla PDF. En el código fuente de C# proporcionado, demostramos cómo formatear la primera fila y las filas alternas de manera diferente cambiando el color de fondo, el estilo de fuente y el color de fuente. Puede aplicar técnicas de formato similares a filas o celdas específicas según sea necesario.
 
-#### Q: Is Aspose.PDF for .NET the only library that allows exporting Excel data to a PDF table?
+#### P: ¿Es Aspose.PDF para .NET la única biblioteca que permite exportar datos de Excel a una tabla PDF?
 
-A: Aspose.PDF for .NET is a powerful library for working with PDF documents in .NET applications. While there might be other libraries available, Aspose.PDF for .NET offers a wide range of features and capabilities for generating, manipulating, and exporting PDF files with tables from Excel data, making it a popular choice for such tasks.
+R: Aspose.PDF para .NET es una potente biblioteca para trabajar con documentos PDF en aplicaciones .NET. Si bien puede haber otras bibliotecas disponibles, Aspose.PDF para .NET ofrece una amplia gama de funciones y capacidades para generar, manipular y exportar archivos PDF con tablas a partir de datos de Excel, lo que lo convierte en una opción popular para este tipo de tareas.

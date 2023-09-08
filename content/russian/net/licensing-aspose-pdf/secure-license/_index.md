@@ -1,28 +1,28 @@
 ---
-title: Secure License In PDF File
-linktitle: Secure License In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to securing a license in PDF file using Aspose.PDF for .NET. Protect your PDF application from unauthorized access.
+title: Безопасная лицензия в PDF-файле
+linktitle: Безопасная лицензия в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Пошаговое руководство по сохранению лицензии в PDF-файле с использованием Aspose.PDF для .NET. Защитите свое PDF-приложение от несанкционированного доступа.
 type: docs
 weight: 40
 url: /ru/net/licensing-aspose-pdf/secure-license/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to secure a license in PDF file using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. By securing your license, you can protect your application and features from unauthorized access.
+В этом руководстве мы предоставим вам пошаговое руководство по защите лицензии в PDF-файле с помощью Aspose.PDF для .NET. Aspose.PDF — это мощная библиотека, которая позволяет программно создавать, манипулировать и конвертировать PDF-документы. Защитив свою лицензию, вы можете защитить свое приложение и функции от несанкционированного доступа.
 
-## Prerequisites
+## Предварительные условия
 
-Before you begin, make sure you have the following prerequisites in place:
+Прежде чем начать, убедитесь, что у вас есть следующие предварительные условия:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. Visual Studio установлена с .NET Framework.
+2. Библиотека Aspose.PDF для .NET.
 
-## Step 1: Project Setup
+## Шаг 1: Настройка проекта
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+Для начала создайте новый проект в Visual Studio и добавьте ссылку на библиотеку Aspose.PDF для .NET. Вы можете скачать библиотеку с официального сайта Aspose и установить ее на свой компьютер.
 
-## Step 2: Import the necessary namespaces
+## Шаг 2. Импортируйте необходимые пространства имен.
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+В файл кода C# импортируйте пространства имен, необходимые для доступа к классам и методам, предоставляемым Aspose.PDF:
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using System.IO;
 using Ionic.Zip;
 ```
 
-## Step 3: Loading the secure license file
+## Шаг 3. Загрузка файла защищенной лицензии
 
-Use the following lines of code to load the secure license file:
+Используйте следующие строки кода для загрузки файла защищенной лицензии:
 
 ```csharp
 using (Stream zip = new SecureLicense().GetType().Assembly.GetManifestResourceStream("Aspose.Total.lic.zip"))
@@ -43,13 +43,13 @@ MemoryStream ms = new MemoryStream();
 ZipEntry e = zf["Aspose.Total.lic"];
 e.ExtractWithPassword(ms, "test");
 ms.Position = 0;
-// Use the 'ms' stream containing the secure license
+// Используйте поток «ms», содержащий безопасную лицензию.
 }
 }
 ```
-Be sure to replace `"Aspose.Total.lic.zip"` with the actual name of your secure license file and `"test"` with the correct password.
+ Обязательно замените`"Aspose.Total.lic.zip"` с фактическим именем вашего файла защищенной лицензии и`"test"` с правильным паролем.
 
-### Sample source code for Secure License using Aspose.PDF for .NET 
+### Пример исходного кода для безопасной лицензии с использованием Aspose.PDF для .NET 
 
 ```csharp
 using (Stream zip = new SecureLicense().GetType().Assembly.GetManifestResourceStream("Aspose.Total.lic.zip"))
@@ -66,61 +66,61 @@ using (Stream zip = new SecureLicense().GetType().Assembly.GetManifestResourceSt
 ```
 
 
-## Conclusion
+## Заключение
 
-In this tutorial, you learned how to secure a license using Aspose.PDF for .NET. By following the steps outlined, you can protect your application and PDF functionality from unauthorized access.
+В этом руководстве вы узнали, как защитить лицензию с помощью Aspose.PDF для .NET. Следуя описанным шагам, вы сможете защитить свое приложение и функции PDF от несанкционированного доступа.
 
-### FAQ's for secure license in PDF file
+### Часто задаваемые вопросы по безопасной лицензии в PDF-файле
 
-#### Q: Why should I secure a license in a PDF file?
+#### Вопрос: Почему мне следует сохранять лицензию в PDF-файле?
 
-A: Securing a license in a PDF file helps protect your application and features from unauthorized access and usage. It adds an extra layer of security to your software.
+О: Сохранение лицензии в файле PDF помогает защитить ваше приложение и функции от несанкционированного доступа и использования. Это добавляет дополнительный уровень безопасности вашему программному обеспечению.
 
-#### Q: How do I import the necessary namespaces for Aspose.PDF?
+#### Вопрос: Как мне импортировать необходимые пространства имен для Aspose.PDF?
 
-A: In your C# code file, use the `using` directive to import the required namespaces for accessing the classes and methods provided by Aspose.PDF, and Ionic.Zip:
+ О: В файле кода C# используйте`using` директива для импорта необходимых пространств имен для доступа к классам и методам, предоставляемым Aspose.PDF и Ionic.Zip:
 ```csharp
 using System;
 using System.IO;
 using Ionic.Zip;
 ```
 
-#### Q: How do I load the secure license file?
+#### Вопрос: Как загрузить файл защищенной лицензии?
 
-A: Load the secure license file using the provided code snippet. Replace `"Aspose.Total.lic.zip"` with the actual name of your secure license file and `"test"` with the correct password.
+ О: Загрузите файл защищенной лицензии, используя предоставленный фрагмент кода. Заменять`"Aspose.Total.lic.zip"` с фактическим именем вашего файла защищенной лицензии и`"test"` с правильным паролем.
 
-#### Q: What is the purpose of the password in the license file extraction?
+#### Вопрос: Какова цель использования пароля при извлечении файла лицензии?
 
-A: The password is used to protect the secure license file within the Zip archive. It ensures that only authorized users with the correct password can access the license.
+О: Пароль используется для защиты безопасного файла лицензии в Zip-архиве. Это гарантирует, что доступ к лицензии смогут получить только авторизованные пользователи с правильным паролем.
 
-#### Q: Can I use my own secure license file?
+#### Вопрос: Могу ли я использовать свой собственный защищенный файл лицензии?
 
-A: Yes, you can use your own secure license file. Modify the code snippet by replacing `"Aspose.Total.lic.zip"` with the actual name of your secure license file and `"test"` with the correct password.
+ О: Да, вы можете использовать свой собственный защищенный файл лицензии. Измените фрагмент кода, заменив`"Aspose.Total.lic.zip"` с фактическим именем вашего файла защищенной лицензии и`"test"` с правильным паролем.
 
-#### Q: Is the secure license file encrypted?
+#### Вопрос. Зашифрован ли файл защищенной лицензии?
 
-A: Yes, the secure license file is encrypted within the Zip archive using a password. This adds an additional layer of security to the license.
+О: Да, файл защищенной лицензии зашифрован в Zip-архиве с использованием пароля. Это добавляет дополнительный уровень безопасности лицензии.
 
-#### Q: How do I access the secure license after loading?
+#### Вопрос: Как получить доступ к защищенной лицензии после загрузки?
 
-A: After loading the secure license, you can access it as a `MemoryStream` named `ms` in the provided code snippet. This stream contains the decrypted secure license data.
+ О: После загрузки защищенной лицензии вы сможете получить к ней доступ как`MemoryStream` названный`ms` в предоставленном фрагменте кода. Этот поток содержит расшифрованные данные защищенной лицензии.
 
-#### Q: Can I load multiple secure licenses in the same PDF file?
+#### Вопрос: Могу ли я загрузить несколько защищенных лицензий в один PDF-файл?
 
-A: Yes, you can load multiple secure licenses in the same PDF file, each with its own password and extraction logic.
+О: Да, вы можете загрузить несколько защищенных лицензий в один и тот же PDF-файл, каждая со своим собственным паролем и логикой извлечения.
 
-#### Q: Is it necessary to extract the secure license to a `MemoryStream`?
+####  Вопрос: Необходимо ли извлекать безопасную лицензию на`MemoryStream`?
 
-A: Extracting the secure license to a `MemoryStream` is a common practice, but you can modify the code to save it to a file or process it in other ways as needed.
+ О: Извлечение защищенной лицензии на`MemoryStream` это обычная практика, но вы можете изменить код, чтобы сохранить его в файл или обработать другими способами по мере необходимости.
 
-#### Q: How do I apply the secure license to Aspose.PDF?
+#### Вопрос: Как применить безопасную лицензию к Aspose.PDF?
 
-A: The provided code demonstrates how to load the secure license. To apply the secure license to Aspose.PDF, use the `SetLicense` method as shown in other licensing tutorials.
+ О: Приведенный код демонстрирует, как загрузить безопасную лицензию. Чтобы применить безопасную лицензию к Aspose.PDF, используйте`SetLicense` метод, как показано в других руководствах по лицензированию.
 
-#### Q: Where can I obtain more information about secure licensing in Aspose products?
+#### Вопрос: Где я могу получить дополнительную информацию о безопасном лицензировании продуктов Aspose?
 
-A: For more information about secure licensing, password protection, and related details, refer to the [Aspose Licensing Documentation](https://docs.aspose.com/pdf/net/licensing/) page.
+ О: Дополнительную информацию о безопасном лицензировании, защите паролем и другие сведения см.[Лицензионная документация Aspose](https://docs.aspose.com/pdf/net/licensing/) страница.
 
-#### Q: Can I use a secure license with a trial version of Aspose.PDF?
+#### Вопрос: Могу ли я использовать безопасную лицензию с пробной версией Aspose.PDF?
 
-A: Yes, you can use a secure license with a trial version of Aspose.PDF. However, for full functionality, it's recommended to use a valid license.
+О: Да, вы можете использовать безопасную лицензию с пробной версией Aspose.PDF. Однако для полной функциональности рекомендуется использовать действующую лицензию.

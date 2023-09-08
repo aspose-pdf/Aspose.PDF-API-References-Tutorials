@@ -1,120 +1,120 @@
 ---
-title: Add Date Time Stamp In PDF File
-linktitle: Add Date Time Stamp In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily add a date and time stamp in PDF file with Aspose.PDF for .NET.
+title: إضافة طابع التاريخ والوقت في ملف PDF
+linktitle: إضافة طابع التاريخ والوقت في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة طابع التاريخ والوقت بسهولة إلى ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 10
 url: /ar/net/programming-with-stamps-and-watermarks/add-date-time-stamp/
 ---
-In this article, we will take you step by step on how to add a date and time stamp in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to add a date and time stamp to an existing PDF file.
+في هذه المقالة، سنأخذك خطوة بخطوة حول كيفية إضافة طابع التاريخ والوقت في ملف PDF باستخدام Aspose.PDF لـ .NET. سنوضح لك كيفية استخدام كود مصدر C# المقدم لإضافة طابع التاريخ والوقت إلى ملف PDF موجود.
 
-## Requirements
+## متطلبات
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- بيئة تطوير .NET مثبتة.
+- تم تنزيل مكتبة Aspose.PDF الخاصة بـ .NET والإشارة إليها في مشروعك.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Before you can add a date and time stamp to a PDF document, you need to set up your development environment. Here are the steps to follow:
+قبل أن تتمكن من إضافة طابع التاريخ والوقت إلى مستند PDF، تحتاج إلى إعداد بيئة التطوير الخاصة بك. فيما يلي الخطوات التي يجب اتباعها:
 
-1. Open your favorite IDE (Integrated Development Environment).
-2. Create a new C# project.
-3. Make sure you have added a reference to the Aspose.PDF library for .NET.
+1. افتح IDE المفضل لديك (بيئة التطوير المتكاملة).
+2. إنشاء مشروع C# جديد.
+3. تأكد من إضافة مرجع إلى مكتبة Aspose.PDF لـ .NET.
 
-## Step 2: Adding the Aspose.PDF library
+## الخطوة 2: إضافة مكتبة Aspose.PDF
 
-The Aspose.PDF library for .NET is required to work with PDF documents in your project.
+مكتبة Aspose.PDF لـ .NET مطلوبة للعمل مع مستندات PDF في مشروعك.
 
-## Step 3: Loading the PDF document
+## الخطوة 3: تحميل وثيقة PDF
 
-The first step to adding a date and time stamp is to load the existing PDF document into your project. Here's how:
+الخطوة الأولى لإضافة طابع التاريخ والوقت هي تحميل مستند PDF الموجود في مشروعك. إليك الطريقة:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+تأكد من استبدال "دليل المستندات الخاص بك" بالمسار الفعلي للدليل الذي يوجد به مستند PDF الخاص بك.
 
-## Step 4: Creating the date and time stamp
+## الخطوة 4: إنشاء طابع التاريخ والوقت
 
-Now that you have uploaded the document
+الآن بعد أن قمت بتحميل المستند
 
-  PDF, you can create the date and time stamp to add. Here's how to do it:
+  PDF، يمكنك إنشاء طابع التاريخ والوقت لإضافته. هيريس كيفية القيام بذلك:
 
 ```csharp
 string annotationText = string.Empty;
 annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt");
 
-// Create a text buffer
+// إنشاء مخزن مؤقت للنص
 TextStamp textStamp = new TextStamp(annotationText);
 ```
 
-The code above creates a new text buffer containing the current date and time.
+يقوم الكود أعلاه بإنشاء مخزن مؤقت نصي جديد يحتوي على التاريخ والوقت الحاليين.
 
-## Step 5: Configuring Stamp Properties
+## الخطوة 5: تكوين خصائص الطوابع
 
-Before adding the stamp to the PDF document, you can configure various properties of the stamp, such as margin, horizontal and vertical alignment, etc. Here's how:
+قبل إضافة الختم إلى مستند PDF، يمكنك تكوين خصائص مختلفة للختم، مثل الهامش والمحاذاة الأفقية والرأسية وما إلى ذلك. وإليك الطريقة:
 
 ```csharp
-// Set buffer properties
+// تعيين خصائص المخزن المؤقت
 textStamp.BottomMargin = 10;
 textStamp. RightMargin = 20;
 textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
 ```
 
-You can adjust these properties according to your needs.
+يمكنك ضبط هذه الخصائص وفقًا لاحتياجاتك.
 
-## Step 6: Add Stamp to PDF
+## الخطوة 6: إضافة ختم إلى PDF
 
-Now that the date and time stamp is ready, you can add it to a specific page of the PDF document. Here's how:
+الآن بعد أن أصبح طابع التاريخ والوقت جاهزًا، يمكنك إضافته إلى صفحة معينة من مستند PDF. إليك الطريقة:
 
 ```csharp
-// Add the stamp to the page's stamp collection
+// أضف الختم إلى مجموعة الطوابع الخاصة بالصفحة
 pdfDocument.Pages[1].AddStamp(textStamp);
 ```
 
-The code above adds the stamp to the first page of the PDF document. You can specify another page if needed.
+يضيف الكود أعلاه الختم إلى الصفحة الأولى من مستند PDF. يمكنك تحديد صفحة أخرى إذا لزم الأمر.
 
-## Step 7: Save the output document
+## الخطوة 7: احفظ مستند الإخراج
 
-Once you have added the date and time stamp, you can save the modified PDF document. Here's how:
+بمجرد إضافة طابع التاريخ والوقت، يمكنك حفظ مستند PDF المعدل. إليك الطريقة:
 
 ```csharp
-// Save the output document
+// احفظ مستند الإخراج
 pdfDocument.Save(dataDir);
 ```
 
-The above code saves the edited PDF document to the specified directory.
+يحفظ الكود أعلاه مستند PDF المحرر في الدليل المحدد.
 
-### Sample source code for Add Date Time Stamp using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإضافة طابع زمني باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
 string annotationText = string.Empty;
 annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt ");
 
-// Create text stamp
+// إنشاء ختم النص
 TextStamp textStamp = new TextStamp(annotationText);
 
-// Set properties of the stamp
+// تعيين خصائص الطوابع
 textStamp.BottomMargin = 10;
 textStamp.RightMargin = 20;
 textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-// Adding stamp on stamp collection
+// إضافة ختم على جمع الطوابع
 pdfDocument.Pages[1].AddStamp(textStamp);
 DefaultAppearance default_appearance = new DefaultAppearance("Arial", 6, System.Drawing.Color.Black);
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(0, 0, 0, 0), default_appearance);
@@ -130,50 +130,50 @@ textAnnotation.Rect = new Aspose.Pdf.Rectangle(0, 0, 0, 0);
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
 dataDir = dataDir + "AddDateTimeStamp_out.pdf";
 
-// Save output document
+// حفظ مستند الإخراج
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + dataDir);  
           
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have learned how to add a date and time stamp using Aspose.PDF for .NET. Now you can apply this knowledge to your own projects to add date and time stamps to PDF documents.
+تهنئة ! لقد تعلمت كيفية إضافة طابع التاريخ والوقت باستخدام Aspose.PDF لـ .NET. يمكنك الآن تطبيق هذه المعرفة على مشاريعك الخاصة لإضافة طوابع التاريخ والوقت إلى مستندات PDF.
 
-### FAQ's for add date time stamp in PDF file
+### الأسئلة الشائعة لإضافة طابع التاريخ والوقت في ملف PDF
 
-#### Q: What is the purpose of adding a date and time stamp to a PDF document using Aspose.PDF for .NET?
+#### س: ما هو الغرض من إضافة طابع التاريخ والوقت إلى مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Adding a date and time stamp to a PDF document enhances its informational value by indicating when the document was modified or created. This feature is useful for tracking document changes and providing a reference point for document history.
+ج: تؤدي إضافة طابع التاريخ والوقت إلى مستند PDF إلى تحسين قيمته المعلوماتية من خلال الإشارة إلى وقت تعديل المستند أو إنشائه. تعد هذه الميزة مفيدة لتتبع تغييرات المستند وتوفير نقطة مرجعية لتاريخ المستند.
 
-#### Q: Can I customize the format of the date and time stamp to match specific requirements?
+#### س: هل يمكنني تخصيص تنسيق طابع التاريخ والوقت ليتوافق مع متطلبات محددة؟
 
-A: Yes, you can customize the format of the date and time stamp according to your preferences. The provided C# source code uses the `DateTime.Now.ToString()` method to generate the timestamp in a specific format. You can modify this code to format the timestamp as needed.
+ ج: نعم، يمكنك تخصيص تنسيق طابع التاريخ والوقت وفقًا لتفضيلاتك. يستخدم كود مصدر C# المقدم`DateTime.Now.ToString()` طريقة لإنشاء الطابع الزمني بتنسيق معين. يمكنك تعديل هذا الرمز لتنسيق الطابع الزمني حسب الحاجة.
 
-#### Q: Is it possible to add the date and time stamp to a specific location on a PDF page?
+#### س: هل من الممكن إضافة طابع التاريخ والوقت إلى موقع محدد على صفحة PDF؟
 
-A: Absolutely, you can adjust the placement of the date and time stamp on the PDF page by modifying the properties of the `TextStamp` object. The code provided in the tutorial demonstrates how to set properties such as margin, alignment, and vertical positioning.
+ ج: بالتأكيد، يمكنك ضبط موضع طابع التاريخ والوقت على صفحة PDF عن طريق تعديل خصائص الملف`TextStamp` هدف. يوضح الكود الموجود في البرنامج التعليمي كيفية تعيين خصائص مثل الهامش والمحاذاة والموضع الرأسي.
 
-#### Q: Can I add multiple date and time stamps to different pages of the same PDF document?
+#### س: هل يمكنني إضافة طوابع التاريخ والوقت المتعددة إلى صفحات مختلفة من نفس مستند PDF؟
 
-A: Yes, you can add multiple date and time stamps to different pages of the same PDF document. Simply repeat the process of creating a `TextStamp` object and configuring its properties for each desired page.
+ ج: نعم، يمكنك إضافة طوابع التاريخ والوقت المتعددة إلى صفحات مختلفة من نفس مستند PDF. ما عليك سوى تكرار عملية إنشاء ملف`TextStamp` الكائن وتكوين خصائصه لكل صفحة مرغوبة.
 
-#### Q: How can I change the font, size, or color of the date and time stamp text?
+#### س: كيف يمكنني تغيير الخط أو الحجم أو اللون لنص طابع التاريخ والوقت؟
 
-A: To modify the font, size, or color of the date and time stamp text, you can customize the properties of the `DefaultAppearance` object used to create the `TextStamp`. Adjust the font name, size, and color values to achieve the desired appearance.
+ ج: لتعديل الخط أو الحجم أو اللون لنص طابع التاريخ والوقت، يمكنك تخصيص خصائص الملف`DefaultAppearance` الكائن المستخدم لإنشاء`TextStamp`. اضبط اسم الخط وحجمه وقيم اللون لتحقيق المظهر المطلوب.
 
-#### Q: Is it possible to add other types of annotations or stamps to a PDF document using Aspose.PDF for .NET?
+#### س: هل من الممكن إضافة أنواع أخرى من التعليقات التوضيحية أو الطوابع إلى مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, Aspose.PDF for .NET provides a wide range of annotation types that you can add to PDF documents, including text annotations, stamps, lines, shapes, and more. You can explore the Aspose.PDF documentation for further details on working with annotations.
+ج: نعم، يوفر Aspose.PDF for .NET نطاقًا واسعًا من أنواع التعليقات التوضيحية التي يمكنك إضافتها إلى مستندات PDF، بما في ذلك التعليقات التوضيحية النصية والطوابع والخطوط والأشكال والمزيد. يمكنك استكشاف وثائق Aspose.PDF لمزيد من التفاصيل حول التعامل مع التعليقات التوضيحية.
 
-#### Q: Are there any limitations or considerations when adding a date and time stamp to a PDF document?
+#### س: هل هناك أي قيود أو اعتبارات عند إضافة طابع التاريخ والوقت إلى مستند PDF؟
 
-A: While adding a date and time stamp is straightforward, consider factors such as the document's layout and existing content. Make sure the placement of the stamp does not obscure important information or affect the readability of the document.
+ج: على الرغم من أن إضافة طابع التاريخ والوقت هو أمر بسيط، إلا أنه يجب مراعاة عوامل مثل تخطيط المستند والمحتوى الموجود. تأكد من أن وضع الختم لا يحجب المعلومات المهمة أو يؤثر على سهولة قراءة المستند.
 
-#### Q: How can I integrate this method into my own projects to add date and time stamps to PDF documents?
+#### س: كيف يمكنني دمج هذه الطريقة في مشاريعي الخاصة لإضافة طوابع التاريخ والوقت إلى مستندات PDF؟
 
-A: To integrate this method, follow the provided steps and adjust the code to fit your project's structure. You can add date and time stamps to existing PDF documents to enhance their usefulness and provide a clear timeline of changes.
+ج: لدمج هذه الطريقة، اتبع الخطوات المقدمة واضبط الكود ليناسب بنية مشروعك. يمكنك إضافة طوابع التاريخ والوقت إلى مستندات PDF الموجودة لتعزيز فائدتها وتوفير جدول زمني واضح للتغييرات.
 
-#### Q: Can I automate the process of adding date and time stamps to multiple PDF documents?
+#### س: هل يمكنني أتمتة عملية إضافة طوابع التاريخ والوقت إلى مستندات PDF متعددة؟
 
-A: Yes, you can automate the process of adding date and time stamps to multiple PDF documents by creating a script or program that iterates through a list of documents and applies the same stamping process to each one.
+ج: نعم، يمكنك أتمتة عملية إضافة طوابع التاريخ والوقت إلى مستندات PDF متعددة عن طريق إنشاء برنامج نصي أو برنامج يتكرر خلال قائمة المستندات ويطبق نفس عملية الختم على كل منها.

@@ -1,17 +1,17 @@
 ---
-title: Create Local Hyperlink In PDF File
-linktitle: Create Local Hyperlink In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create local hyperlinks in PDF file using Aspose.PDF for .NET.
+title: 在 PDF 文件中创建本地超链接
+linktitle: 在 PDF 文件中创建本地超链接
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 在 PDF 文件中轻松创建本地超链接。
 type: docs
 weight: 40
 url: /zh/net/programming-with-links-and-actions/create-local-hyperlink/
 ---
-Creating local hyperlinks in PDF file lets you create clickable links that take users to other pages in the same PDF document. With Aspose.PDF for .NET, you can easily create such links by following the following source code:
+在 PDF 文件中创建本地超链接可让您创建可单击的链接，将用户带到同一 PDF 文档中的其他页面。使用 Aspose.PDF for .NET，您可以按照以下源代码轻松创建此类链接：
 
-## Step 1: Import Required Libraries
+## 第 1 步：导入所需的库
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+在开始之前，您需要为 C# 项目导入必要的库。这是必要的导入指令：
 
 ```csharp
 using Aspose.Pdf;
@@ -19,25 +19,25 @@ using Aspose.Pdf.Text;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## 步骤 2：设置文档文件夹路径
 
-In this step, you need to specify the path to the folder where you want to save the resulting PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+在此步骤中，您需要指定要保存生成的 PDF 文件的文件夹的路径。代替`"YOUR DOCUMENT DIRECTORY"`在以下代码中使用文档文件夹的实际路径：
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Create an instance of Document
+## 步骤 3：创建 Document 实例
 
-We will create an instance of the `Document` class to represent our PDF document. Here is the corresponding code:
+我们将创建一个实例`Document`类来表示我们的 PDF 文档。这是相应的代码：
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 4: Add page and text with hyperlinks
+## 步骤 4：添加带有超链接的页面和文本
 
-In this step, we are going to add a page to our PDF document and add some text containing local hyperlinks. We will define the target pages for each link. Here is the corresponding code:
+在此步骤中，我们将向 PDF 文档添加页面并添加一些包含本地超链接的文本。我们将为每个链接定义目标页面。这是相应的代码：
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -56,90 +56,90 @@ text. Hyperlink = link;
 page.Paragraphs.Add(text);
 ```
 
-## Step 5: Save the updated document
+## 步骤 5：保存更新后的文档
 
-Now let's save the updated PDF file using the `Save` method of the `doc` object. Here is the corresponding code:
+现在让我们使用以下命令保存更新后的 PDF 文件`Save`的方法`doc`目的。这是相应的代码：
 
 ```csharp
 dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Create Local Hyperlink using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 创建本地超链接的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Document instance
+//创建文档实例
 Document doc = new Document();
-// Add page to pages collection of PDF file
+//将页面添加到 PDF 文件的页面集合
 Page page = doc.Pages.Add();
-// Create Text Fragment instance
+//创建文本片段实例
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("link page number test to page 7");
-// Create local hyperlink instance
+//创建本地超链接实例
 Aspose.Pdf.LocalHyperlink link = new Aspose.Pdf.LocalHyperlink();
-// Set target page for link instance
+//设置链接实例的目标页面
 link.TargetPageNumber = 7;
-// Set TextFragment hyperlink
+//设置 TextFragment 超链接
 text.Hyperlink = link;
-// Add text to paragraphs collection of Page
+//将文本添加到页面的段落集合中
 page.Paragraphs.Add(text);
-// Create new TextFragment instance
+//创建新的 TextFragment 实例
 text = new TextFragment("link page number test to page 1");
-// TextFragment should be added over new page
+//TextFragment 应添加到新页面上
 text.IsInNewPage = true;
-// Create another local hyperlink instance
+//创建另一个本地超链接实例
 link = new LocalHyperlink();
-// Set Target page for second hyperlink
+//设置第二个超链接的目标页面
 link.TargetPageNumber = 1;
-// Set link for second TextFragment
+//设置第二个 TextFragment 的链接
 text.Hyperlink = link;
-// Add text to paragraphs collection of page object
+//将文本添加到页面对象的段落集合中
 page.Paragraphs.Add(text);    
 dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
-// Save updated document
+//保存更新的文档
 doc.Save(dataDir);
 Console.WriteLine("\nLocal hyperlink created successfully.\nFile saved at " + dataDir);            
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! Now you have a step by step guide to create local hyperlinks in a PDF using Aspose.PDF for .NET. You can use this code to create clickable links that take users to other pages in the same document.
+恭喜！现在您有了使用 Aspose.PDF for .NET 在 PDF 中创建本地超链接的分步指南。您可以使用此代码创建可单击的链接，将用户带到同一文档中的其他页面。
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced hyperlinking features.
+请务必查看官方 Aspose.PDF 文档，以获取有关高级超链接功能的更多信息。
 
-### FAQ's for create local hyperlink in PDF file
+### 在 PDF 文件中创建本地超链接的常见问题解答
 
-#### Q: What are local hyperlinks in a PDF file?
+#### 问：什么是 PDF 文件中的本地超链接？
 
-A: Local hyperlinks in a PDF file are clickable links that navigate users to different pages within the same document. These links enhance navigation and allow readers to quickly access relevant sections.
+答：PDF 文件中的本地超链接是可单击的链接，可将用户导航到同一文档中的不同页面。这些链接增强了导航功能，使读者能够快速访问相关部分。
 
-#### Q: How can local hyperlinks benefit my PDF document?
+#### 问：本地超链接对我的 PDF 文档有何好处？
 
-A: Local hyperlinks provide an efficient way to connect related content within the same PDF document. They improve user experience by enabling readers to quickly jump to specific sections without scrolling through the entire document.
+答：本地超链接提供了一种有效的方式来连接同一 PDF 文档中的相关内容。它们使读者能够快速跳转到特定部分，而无需滚动浏览整个文档，从而改善用户体验。
 
-#### Q: How does Aspose.PDF for .NET support the creation of local hyperlinks?
-A: Aspose.PDF for .NET offers comprehensive support for creating local hyperlinks. The step-by-step tutorial provided in this guide demonstrates how to add local hyperlinks to your PDF document using C#.
+#### 问：Aspose.PDF for .NET 如何支持本地超链接的创建？
+答：Aspose.PDF for .NET 为创建本地超链接提供全面支持。本指南中提供的分步教程演示了如何使用 C# 将本地超链接添加到 PDF 文档。
 
-#### Q: Can I customize the appearance of local hyperlinks?
+#### 问：我可以自定义本地超链接的外观吗？
 
-A: Yes, you can customize the appearance of local hyperlinks, including text color and style, to ensure they match your document's design and provide a consistent visual experience.
+答：是的，您可以自定义本地超链接的外观，包括文本颜色和样式，以确保它们符合文档的设计并提供一致的视觉体验。
 
-#### Q: Is it possible to create multiple local hyperlinks within a single PDF page?
+#### 问：是否可以在单个 PDF 页面中创建多个本地超链接？
 
-A: Absolutely! You can create multiple local hyperlinks within a single PDF page, allowing readers to jump to various sections or pages as needed. Each local hyperlink can be tailored to its respective target.
+答：当然！您可以在单个 PDF 页面中创建多个本地超链接，允许读者根据需要跳转到各个部分或页面。每个本地超链接都可以根据其各自的目标进行定制。
 
-#### Q: Can I link to specific sections of a page using local hyperlinks?
+#### 问：我可以使用本地超链接链接到页面的特定部分吗？
 
-A: While local hyperlinks typically navigate to entire pages, you can create anchors or bookmarks within your PDF document to achieve targeted linking. Aspose.PDF for .NET supports various hyperlinking options.
+答：虽然本地超链接通常导航到整个页面，但您可以在 PDF 文档中创建锚点或书签以实现有针对性的链接。 Aspose.PDF for .NET 支持各种超链接选项。
 
-#### Q: How can I verify that my local hyperlinks are functioning correctly?
+#### 问：如何验证本地超链接是否正常工作？
 
-A: By following the tutorial and sample code provided, you can confidently create functional local hyperlinks. You can test the links by opening the generated PDF document and clicking on the hyperlinked text.
+答：按照提供的教程和示例代码，您可以自信地创建功能性本地超链接。您可以通过打开生成的 PDF 文档并单击超链接文本来测试链接。
 
-#### Q: Are there any limitations when using local hyperlinks?
+#### 问：使用本地超链接有什么限制吗？
 
-A: Local hyperlinks are an effective way to enhance document navigation, but it's important to ensure that the document's structure remains clear and intuitive. Properly labeled hyperlinks and anchors contribute to a positive user experience.
+答：本地超链接是增强文档导航的有效方法，但确保文档结构保持清晰直观也很重要。正确标记的超链接和锚点有助于提供积极的用户体验。
 
-#### Q: Can I create local hyperlinks within tables or images?
+#### 问：我可以在表格或图像中创建本地超链接吗？
 
-A: Yes, you can create local hyperlinks within various elements of your PDF document, including tables, images, and text. Aspose.PDF for .NET offers flexibility in adding hyperlinks to different types of content.
+答：是的，您可以在 PDF 文档的各种元素（包括表格、图像和文本）中创建本地超链接。 Aspose.PDF for .NET 可以灵活地向不同类型的内容添加超链接。

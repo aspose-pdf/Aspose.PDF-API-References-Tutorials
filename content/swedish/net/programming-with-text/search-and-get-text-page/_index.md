@@ -1,74 +1,74 @@
 ---
-title: Search And Get Text Page In PDF File
-linktitle: Search And Get Text Page In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to search and get text from a specific page in PDF file using Aspose.PDF for .NET.
+title: Sök och hämta textsida i PDF-fil
+linktitle: Sök och hämta textsida i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du söker och hämtar text från en specifik sida i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 430
 url: /sv/net/programming-with-text/search-and-get-text-page/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to search and get text from a specific page in PDF file. The provided C# source code demonstrates the process step by step.
+Denna handledning förklarar hur man använder Aspose.PDF för .NET för att söka och hämta text från en specifik sida i PDF-fil. Den medföljande C#-källkoden demonstrerar processen steg för steg.
 
-## Prerequisites
+## Förutsättningar
 
-Before proceeding with the tutorial, make sure you have the following:
+Innan du fortsätter med handledningen, se till att du har följande:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Grundläggande kunskaper i programmeringsspråket C#.
+- Aspose.PDF för .NET-biblioteket installerat. Du kan hämta det från Asposes webbplats eller använda NuGet för att installera det i ditt projekt.
 
-## Step 1: Set up the project
+## Steg 1: Konfigurera projektet
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Börja med att skapa ett nytt C#-projekt i din föredragna integrerade utvecklingsmiljö (IDE) och lägg till en referens till Aspose.PDF för .NET-biblioteket.
 
-## Step 2: Import necessary namespaces
+## Steg 2: Importera nödvändiga namnutrymmen
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Lägg till följande med hjälp av direktiv i början av din C#-fil för att importera de nödvändiga namnrymden:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Load the PDF document
+## Steg 3: Ladda PDF-dokumentet
 
-Set the path to your PDF document directory and load the document using the `Document` class:
+ Ställ in sökvägen till din PDF-dokumentkatalog och ladda dokumentet med hjälp av`Document` klass:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextPage.pdf");
 ```
 
-Make sure to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Se till att byta ut`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
 
-## Step 4: Search and extract text from a page
+## Steg 4: Sök och extrahera text från en sida
 
-Create a `TextFragmentAbsorber` object to find all instances of the input search phrase on a specific page:
+ Skapa en`TextFragmentAbsorber`objekt för att hitta alla instanser av den inmatade sökfrasen på en specifik sida:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Figure");
 ```
 
-Replace `"Figure"` with the actual text you want to search for.
+ Byta ut`"Figure"` med den faktiska texten du vill söka efter.
 
-## Step 5: Search on a specific page
+## Steg 5: Sök på en specifik sida
 
-Accept the absorber for a specific page of the document:
+Acceptera absorbenten för en specifik sida i dokumentet:
 
 ```csharp
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
 
-## Step 6: get extracted text fragments
+## Steg 6: hämta extraherade textfragment
 
-Get the extracted text fragments using the `TextFragments` property of the `TextFragmentAbsorber` object:
+Hämta de extraherade textfragmenten med hjälp av`TextFragments` egendom av`TextFragmentAbsorber` objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 ```
 
-## Step 7: Loop through the text fragments and segments
+## Steg 7: Gå igenom textfragmenten och segmenten
 
-Loop through the getd text fragments and their segments, and access their properties:
+Gå igenom getd-textfragmenten och deras segment och få tillgång till deras egenskaper:
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentCollection)
@@ -89,21 +89,21 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-You can modify the code within the loop to perform further actions on each text segment.
+Du kan ändra koden i slingan för att utföra ytterligare åtgärder på varje textsegment.
 
-### Sample source code for Search And Get Text Page using Aspose.PDF for .NET 
+### Exempel på källkod för Sök och hämta textsida med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextPage.pdf");
-// Create TextAbsorber object to find all instances of the input search phrase
+// Skapa TextAbsorber-objekt för att hitta alla instanser av den inmatade sökfrasen
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Figure");
-// Accept the absorber for all the pages
+// Acceptera absorbenten för alla sidor
 pdfDocument.Pages.Accept(textFragmentAbsorber);
-// Get the extracted text fragments
+// Hämta de extraherade textfragmenten
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Loop through the fragments
+// Gå igenom fragmenten
 foreach (TextFragment textFragment in textFragmentCollection)
 {
 	foreach (TextSegment textSegment in textFragment.Segments)
@@ -122,40 +122,40 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulations! You have successfully learned how to search and get text from a specific page of a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from loading the document to accessing the extracted text segments. You can now incorporate
+Grattis! Du har framgångsrikt lärt dig hur du söker och hämtar text från en specifik sida i ett PDF-dokument med Aspose.PDF för .NET. Denna handledning gav en steg-för-steg-guide, från att ladda dokumentet till att komma åt de extraherade textsegmenten. Du kan nu införliva
 
 ### FAQ's
 
-#### Q: What is the purpose of the "Search And Get Text Page" tutorial?
+#### F: Vad är syftet med handledningen "Sök och hämta textsida"?
 
-A: The "Search And Get Text Page" tutorial is designed to illustrate how to use the Aspose.PDF library for .NET to search for and retrieve text from a specific page within a PDF file. The tutorial provides detailed instructions and sample C# code to demonstrate the process.
+S: Handledningen "Sök och hämta textsida" är utformad för att illustrera hur man använder Aspose.PDF-biblioteket för .NET för att söka efter och hämta text från en specifik sida i en PDF-fil. Handledningen ger detaljerade instruktioner och exempel på C#-kod för att demonstrera processen.
 
-#### Q: How does this tutorial help in extracting text from a specific page in a PDF document?
+#### F: Hur hjälper den här handledningen till att extrahera text från en specifik sida i ett PDF-dokument?
 
-A: This tutorial guides you through the process of extracting text from a particular page of a PDF document using the Aspose.PDF library. It outlines the necessary steps and provides C# code to search for a specified text phrase on the selected page and retrieve associated text segments.
+S: Denna handledning guidar dig genom processen att extrahera text från en viss sida i ett PDF-dokument med hjälp av Aspose.PDF-biblioteket. Den beskriver de nödvändiga stegen och tillhandahåller C#-kod för att söka efter en specificerad textfras på den valda sidan och hämta tillhörande textsegment.
 
-#### Q: What are the prerequisites for following this tutorial?
+#### F: Vilka är förutsättningarna för att följa denna handledning?
 
-A: Before starting this tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to integrate it into your project.
+S: Innan du börjar med den här handledningen bör du ha en grundläggande förståelse för programmeringsspråket C#. Dessutom måste du ha Aspose.PDF för .NET-biblioteket installerat. Du kan få det från Asposes webbplats eller använda NuGet för att integrera det i ditt projekt.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### F: Hur ställer jag in mitt projekt för att följa denna handledning?
 
-A: To get started, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This will enable you to utilize the library's capabilities in your project.
+S: För att komma igång, skapa ett nytt C#-projekt i din föredragna integrerade utvecklingsmiljö (IDE) och lägg till en referens till Aspose.PDF för .NET-biblioteket. Detta gör att du kan använda bibliotekets kapacitet i ditt projekt.
 
-#### Q: Can I search for text on a specific page of the PDF document?
+#### F: Kan jag söka efter text på en specifik sida i PDF-dokumentet?
 
-A: Yes, this tutorial demonstrates how to search for text on a specific page of a PDF document. It involves using the `TextFragmentAbsorber` class to locate instances of a particular text phrase on the chosen page.
+S: Ja, den här handledningen visar hur man söker efter text på en specifik sida i ett PDF-dokument. Det handlar om att använda`TextFragmentAbsorber` klass för att hitta instanser av en viss textfras på den valda sidan.
 
-#### Q: How do I access the extracted text segments from the specific page?
+#### F: Hur kommer jag åt de extraherade textsegmenten från den specifika sidan?
 
-A: After searching for the text on the designated page, you can access the extracted text segments using the `TextSegments` property of the `TextFragment` object. This property provides access to a collection of `TextSegment` objects that contain the extracted text and related information.
+ S: Efter att ha sökt efter texten på den angivna sidan kan du komma åt de extraherade textsegmenten med hjälp av`TextSegments` egendom av`TextFragment` objekt. Denna fastighet ger tillgång till en samling av`TextSegment` objekt som innehåller den extraherade texten och relaterad information.
 
-#### Q: What information can I retrieve from the extracted text segments?
+#### F: Vilken information kan jag hämta från de extraherade textsegmenten?
 
-A: You can retrieve various details from the extracted text segments, including the text content, position (X and Y coordinates), font information (name, size, color, etc.), and more. The tutorial's sample code demonstrates how to access and print these details for each text segment.
+S: Du kan hämta olika detaljer från de extraherade textsegmenten, inklusive textinnehåll, position (X- och Y-koordinater), teckensnittsinformation (namn, storlek, färg, etc.) och mer. Handledningens exempelkod visar hur du kommer åt och skriver ut dessa detaljer för varje textsegment.
 
-#### Q: Can I perform custom actions on the extracted text segments?
+#### F: Kan jag utföra anpassade åtgärder på de extraherade textsegmenten?
 
-A: Certainly. Once you have the extracted text segments, you can customize the code within the loop to perform additional actions on each segment. This could include saving the extracted text, analyzing text patterns, or applying formatting changes.
+A: Visst. När du har de extraherade textsegmenten kan du anpassa koden i slingan för att utföra ytterligare åtgärder på varje segment. Detta kan inkludera att spara den extraherade texten, analysera textmönster eller tillämpa formateringsändringar.

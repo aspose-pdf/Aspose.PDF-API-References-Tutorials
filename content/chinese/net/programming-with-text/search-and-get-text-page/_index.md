@@ -1,74 +1,74 @@
 ---
-title: Search And Get Text Page In PDF File
-linktitle: Search And Get Text Page In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to search and get text from a specific page in PDF file using Aspose.PDF for .NET.
+title: 搜索并获取 PDF 文件中的文本页面
+linktitle: 搜索并获取 PDF 文件中的文本页面
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 从 PDF 文件中的特定页面搜索和获取文本。
 type: docs
 weight: 430
 url: /zh/net/programming-with-text/search-and-get-text-page/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to search and get text from a specific page in PDF file. The provided C# source code demonstrates the process step by step.
+本教程介绍如何使用 Aspose.PDF for .NET 从 PDF 文件中的特定页面搜索和获取文本。提供的 C# 源代码逐步演示了该过程。
 
-## Prerequisites
+## 先决条件
 
-Before proceeding with the tutorial, make sure you have the following:
+在继续学习本教程之前，请确保您具备以下条件：
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- C# 编程语言的基础知识。
+- 安装了 Aspose.PDF for .NET 库。您可以从 Aspose 网站获取它或使用 NuGet 将其安装到您的项目中。
 
-## Step 1: Set up the project
+## 第 1 步：设置项目
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+首先在您首选的集成开发环境 (IDE) 中创建一个新的 C# 项目，并添加对 Aspose.PDF for .NET 库的引用。
 
-## Step 2: Import necessary namespaces
+## 第2步：导入必要的命名空间
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+在 C# 文件的开头添加以下 using 指令以导入所需的命名空间：
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Load the PDF document
+## 第 3 步：加载 PDF 文档
 
-Set the path to your PDF document directory and load the document using the `Document` class:
+设置 PDF 文档目录的路径并使用以下命令加载文档`Document`班级：
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextPage.pdf");
 ```
 
-Make sure to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+确保更换`"YOUR DOCUMENT DIRECTORY"`与文档目录的实际路径。
 
-## Step 4: Search and extract text from a page
+## 步骤 4：从页面中搜索并提取文本
 
-Create a `TextFragmentAbsorber` object to find all instances of the input search phrase on a specific page:
+创建一个`TextFragmentAbsorber`对象查找特定页面上输入搜索短语的所有实例：
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Figure");
 ```
 
-Replace `"Figure"` with the actual text you want to search for.
+代替`"Figure"`与您要搜索的实际文本。
 
-## Step 5: Search on a specific page
+## 第5步：在特定页面上搜索
 
-Accept the absorber for a specific page of the document:
+接受文档特定页面的吸收器：
 
 ```csharp
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
 
-## Step 6: get extracted text fragments
+## 第6步：获取提取的文本片段
 
-Get the extracted text fragments using the `TextFragments` property of the `TextFragmentAbsorber` object:
+使用以下命令获取提取的文本片段`TextFragments`的财产`TextFragmentAbsorber`目的：
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 ```
 
-## Step 7: Loop through the text fragments and segments
+## 第 7 步：循环遍历文本片段和片段
 
-Loop through the getd text fragments and their segments, and access their properties:
+循环遍历 getd 文本片段及其段，并访问它们的属性：
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentCollection)
@@ -89,21 +89,21 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-You can modify the code within the loop to perform further actions on each text segment.
+您可以修改循环内的代码以对每个文本段执行进一步的操作。
 
-### Sample source code for Search And Get Text Page using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 搜索和获取文本页面的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextPage.pdf");
-// Create TextAbsorber object to find all instances of the input search phrase
+//创建 TextAbsorber 对象以查找输入搜索短语的所有实例
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Figure");
-// Accept the absorber for all the pages
+//接受所有页面的吸收器
 pdfDocument.Pages.Accept(textFragmentAbsorber);
-// Get the extracted text fragments
+//获取提取的文本片段
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Loop through the fragments
+//循环遍历片段
 foreach (TextFragment textFragment in textFragmentCollection)
 {
 	foreach (TextSegment textSegment in textFragment.Segments)
@@ -122,40 +122,40 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-## Conclusion
+## 结论
 
-Congratulations! You have successfully learned how to search and get text from a specific page of a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from loading the document to accessing the extracted text segments. You can now incorporate
+恭喜！您已成功学习如何使用 Aspose.PDF for .NET 从 PDF 文档的特定页面搜索和获取文本。本教程提供了从加载文档到访问提取的文本段的分步指南。您现在可以合并
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of the "Search And Get Text Page" tutorial?
+#### 问：“搜索并获取文本页面”教程的目的是什么？
 
-A: The "Search And Get Text Page" tutorial is designed to illustrate how to use the Aspose.PDF library for .NET to search for and retrieve text from a specific page within a PDF file. The tutorial provides detailed instructions and sample C# code to demonstrate the process.
+答：“搜索并获取文本页面”教程旨在说明如何使用 .NET 的 Aspose.PDF 库从 PDF 文件中的特定页面搜索和检索文本。本教程提供了详细说明和示例 C# 代码来演示该过程。
 
-#### Q: How does this tutorial help in extracting text from a specific page in a PDF document?
+#### 问：本教程如何帮助从 PDF 文档的特定页面中提取文本？
 
-A: This tutorial guides you through the process of extracting text from a particular page of a PDF document using the Aspose.PDF library. It outlines the necessary steps and provides C# code to search for a specified text phrase on the selected page and retrieve associated text segments.
+答：本教程将指导您完成使用 Aspose.PDF 库从 PDF 文档的特定页面提取文本的过程。它概述了必要的步骤并提供 C# 代码来搜索所选页面上的指定文本短语并检索关联的文本段。
 
-#### Q: What are the prerequisites for following this tutorial?
+#### 问：学习本教程的先决条件是什么？
 
-A: Before starting this tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to integrate it into your project.
+答：在开始本教程之前，您应该对 C# 编程语言有基本的了解。此外，您需要安装 Aspose.PDF for .NET 库。您可以从 Aspose 网站获取它或使用 NuGet 将其集成到您的项目中。
 
-#### Q: How do I set up my project to follow this tutorial?
+#### 问：如何设置我的项目来遵循本教程？
 
-A: To get started, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This will enable you to utilize the library's capabilities in your project.
+答：首先，在您首选的集成开发环境 (IDE) 中创建一个新的 C# 项目，并添加对 Aspose.PDF for .NET 库的引用。这将使您能够在项目中利用该库的功能。
 
-#### Q: Can I search for text on a specific page of the PDF document?
+#### 问：我可以搜索 PDF 文档特定页面上的文本吗？
 
-A: Yes, this tutorial demonstrates how to search for text on a specific page of a PDF document. It involves using the `TextFragmentAbsorber` class to locate instances of a particular text phrase on the chosen page.
+答：是的，本教程演示了如何在 PDF 文档的特定页面上搜索文本。它涉及使用`TextFragmentAbsorber`类来查找所选页面上特定文本短语的实例。
 
-#### Q: How do I access the extracted text segments from the specific page?
+#### 问：如何访问从特定页面提取的文本片段？
 
-A: After searching for the text on the designated page, you can access the extracted text segments using the `TextSegments` property of the `TextFragment` object. This property provides access to a collection of `TextSegment` objects that contain the extracted text and related information.
+ A：在指定页面搜索到文本后，您可以通过以下方式访问提取的文本片段：`TextSegments`的财产`TextFragment`目的。此属性提供对集合的访问`TextSegment`包含提取的文本和相关信息的对象。
 
-#### Q: What information can I retrieve from the extracted text segments?
+#### 问：我可以从提取的文本片段中检索哪些信息？
 
-A: You can retrieve various details from the extracted text segments, including the text content, position (X and Y coordinates), font information (name, size, color, etc.), and more. The tutorial's sample code demonstrates how to access and print these details for each text segment.
+答：您可以从提取的文本片段中检索各种详细信息，包括文本内容、位置（X 和 Y 坐标）、字体信息（名称、大小、颜色等）等。本教程的示例代码演示了如何访问和打印每个文本段的这些详细信息。
 
-#### Q: Can I perform custom actions on the extracted text segments?
+#### 问：我可以对提取的文本段执行自定义操作吗？
 
-A: Certainly. Once you have the extracted text segments, you can customize the code within the loop to perform additional actions on each segment. This could include saving the extracted text, analyzing text patterns, or applying formatting changes.
+答：当然可以。提取文本段后，您可以自定义循环中的代码以对每个段执行其他操作。这可能包括保存提取的文本、分析文本模式或应用格式更改。

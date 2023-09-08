@@ -1,28 +1,28 @@
 ---
-title: Determine Table Break In PDF File
-linktitle: Determine Table Break In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to determine table breaks in PDF file using Aspose.PDF for .NET.
+title: Determinar el salto de tabla en un archivo PDF
+linktitle: Determinar el salto de tabla en un archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a determinar saltos de tabla en un archivo PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 60
 url: /es/net/programming-with-tables/determine-table-break/
 ---
-In this tutorial, we are going to learn how to determine table breaks in PDF file using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to determine if a table exceeds the page margins. Let's start!
+En este tutorial, aprenderemos cómo determinar saltos de tabla en un archivo PDF usando Aspose.PDF para .NET. Explicaremos el código fuente en C# paso a paso. Al final de este tutorial, sabrá cómo determinar si una tabla excede los márgenes de la página. ¡Empecemos!
 
-## Step 1: Setting up the environment
-First, make sure you've set up your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## Paso 1: configurar el entorno
+Primero, asegúrese de haber configurado su entorno de desarrollo C# con Aspose.PDF para .NET. Agregue la referencia a la biblioteca e importe los espacios de nombres necesarios.
 
-## Step 2: Creating the PDF document
-In this step, we create a new `Document` object to represent the PDF document.
+## Paso 2: crear el documento PDF
+ En este paso, creamos un nuevo`Document` objeto para representar el documento PDF.
 
 ```csharp
 pdf-Document = new Document();
 ```
 
-This document will be used to add sections and tables.
+Este documento se utilizará para agregar secciones y tablas.
 
-## Step 3: Adding a section and a table
-Now we are going to add a section to our PDF document and create a table inside this section.
+## Paso 3: agregar una sección y una tabla
+Ahora vamos a agregar una sección a nuestro documento PDF y crearemos una tabla dentro de esta sección.
 
 ```csharp
 Page page = pdf.Pages.Add();
@@ -31,10 +31,10 @@ table1. Margin. Top = 300;
 page.Paragraphs.Add(table1);
 ```
 
-We also specify a top margin of 300 points for the table. You can adjust this value according to your needs.
+También especificamos un margen superior de 300 puntos para la tabla. Puede ajustar este valor según sus necesidades.
 
-## Step 4: Table Setup
-In this step, we configure table properties, such as column widths and borders.
+## Paso 4: Configuración de la mesa
+En este paso, configuramos las propiedades de la tabla, como el ancho de las columnas y los bordes.
 
 ```csharp
 table1. ColumnWidths = "100 100 100";
@@ -42,10 +42,10 @@ table1.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1F);
 table1.Border = new BorderInfo(BorderSide.All, 1F);
 ```
 
-Here we define the width of the table columns and the cell borders. You can adjust these values according to your preferences.
+Aquí definimos el ancho de las columnas de la tabla y los bordes de las celdas. Puede ajustar estos valores según sus preferencias.
 
-## Step 5: Add rows and cells to the table
-Now we will create rows and cells in the table using a loop.
+## Paso 5: agregue filas y celdas a la tabla
+Ahora crearemos filas y celdas en la tabla usando un bucle.
 
 ```csharp
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
@@ -57,10 +57,10 @@ for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 }
 ```
 
-Here we create 17 rows in the table and add three cells to each row. You can adjust the buckle according to your needs.
+Aquí creamos 17 filas en la tabla y agregamos tres celdas a cada fila. Puedes ajustar la hebilla según tus necesidades.
 
-## Step 6: Determining Table Breaks
-Now we will determine if the table exceeds the page margins by comparing the height of the page with the total height of the objects in the table.
+## Paso 6: Determinar los descansos en la mesa
+Ahora determinaremos si la tabla excede los márgenes de la página comparando la altura de la página con la altura total de los objetos en la tabla.
 
 ```csharp
 float PageHeight = (float)pdf.PageInfo.Height;
@@ -70,10 +70,10 @@ if ((PageHeight - TotalObjectsHeight) <= 10)
      Console.WriteLine("The height of the page - Height of objects < 10, the table will be truncated");
 ```
 
-We calculate the height of the page and the total height of the objects taking into account the margins. If the difference is 10 or less, the table exceeds the page margins.
+Calculamos el alto de la página y el alto total de los objetos teniendo en cuenta los márgenes. Si la diferencia es 10 o menos, la tabla excede los márgenes de la página.
 
-## Step 7: Saving the PDF document
-Finally, we save the PDF document with the results.
+## Paso 7: Guardar el documento PDF
+Finalmente guardamos el documento PDF con los resultados.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -82,95 +82,95 @@ pdf.Save(dataDir);
 Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
 ```
 
-Be sure to specify the correct document directory. The resulting PDF file will be saved with the determined table breaks.
+Asegúrese de especificar el directorio de documentos correcto. El archivo PDF resultante se guardará con los saltos de tabla determinados.
 
-### Example source code for Determine Table Break using Aspose.PDF for .NET
+### Código fuente de ejemplo para Determinar salto de tabla usando Aspose.PDF para .NET
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate an object PDF class
+// Crear una instancia de una clase PDF de objeto
 Document pdf = new Document();
-// Add the section to PDF document sections collection
+// Agregue la sección a la colección de secciones de documentos PDF
 Aspose.Pdf.Page page = pdf.Pages.Add();
-// Instantiate a table object
+// Crear una instancia de un objeto de tabla
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
 table1.Margin.Top = 300;
-// Add the table in paragraphs collection of the desired section
+// Agregue la tabla en la colección de párrafos de la sección deseada.
 page.Paragraphs.Add(table1);
-// Set with column widths of the table
+// Establecer con anchos de columna de la tabla.
 table1.ColumnWidths = "100 100 100";
-// Set default cell border using BorderInfo object
+// Establecer el borde de celda predeterminado usando el objeto BorderInfo
 table1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-// Set table border using another customized BorderInfo object
+// Establecer el borde de la tabla usando otro objeto BorderInfo personalizado
 table1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-// Create MarginInfo object and set its left, bottom, right and top margins
+// Cree un objeto MarginInfo y establezca sus márgenes izquierdo, inferior, derecho y superior
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 5f;
 margin.Left = 5f;
 margin.Right = 5f;
 margin.Bottom = 5f;
-// Set the default cell padding to the MarginInfo object
+// Establezca el relleno de celda predeterminado en el objeto MarginInfo
 table1.DefaultCellPadding = margin;
-// If you increase the counter to 17, table will break 
-// Because it cannot be accommodated any more over this page
+// Si aumentas el contador a 17, la mesa se romperá.
+// Porque ya no se puede alojar en esta página.
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	// Create rows in the table and then cells in the rows
+	// Crea filas en la tabla y luego celdas en las filas.
 	Aspose.Pdf.Row row1 = table1.Rows.Add();
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
 }
-// Get the Page Height information
+// Obtenga la información sobre el alto de la página
 float PageHeight = (float)pdf.PageInfo.Height;
-// Get the total height information of Page Top & Bottom margin,
-// Table Top margin and table height.
+// Obtenga la información de altura total del margen superior e inferior de la página,
+// Margen superior de la mesa y altura de la mesa.
 float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
 
-// Display Page Height, Table Height, table Top margin and Page Top 
-// And Bottom margin information
+// Mostrar altura de página, altura de tabla, margen superior de tabla y parte superior de página
+// E información del margen inferior
 Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
 
-// Check if we deduct the sume of Page top margin + Page Bottom margin
-// + Table Top margin and table height from Page height and its less
-// Than 10 (an average row can be greater than 10)
+// Compruebe si deducimos la suma del margen superior de la página + margen inferior de la página
+// + Margen superior de la tabla y altura de la tabla desde la altura de la página y su menor
+// Que 10 (una fila promedio puede ser mayor que 10)
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	// If the value is less than 10, then display the message. 
-	// Which shows that another row can not be placed and if we add new 
-	// Row, table will break. It depends upon the row height value.
+	// Si el valor es menor que 10, muestre el mensaje.
+	//Lo cual demuestra que no se puede colocar otra fila y si agregamos nueva
+	// Fila, la mesa se romperá. Depende del valor de la altura de la fila.
 	Console.WriteLine("Page Height - Objects Height < 10, so table will break");
 
 
 dataDir = dataDir + "DetermineTableBreak_out.pdf";
-// Save the pdf document
+// Guardar el documento pdf
 pdf.Save(dataDir);
 
 Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-In this tutorial, we learned how to determine table breaks in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to check if a table exceeds the page margins in your own C# projects.
+## Conclusión
+En este tutorial, aprendimos cómo determinar saltos de tabla en un documento PDF usando Aspose.PDF para .NET. Puede utilizar esta guía paso a paso para comprobar si una tabla excede los márgenes de la página en sus propios proyectos de C#.
 
-### FAQ's for determine table break in PDF file
+### Preguntas frecuentes para determinar el salto de tabla en un archivo PDF
 
-#### Q: What is the purpose of determining table breaks in a PDF document?
+#### P: ¿Cuál es el propósito de determinar los saltos de tabla en un documento PDF?
 
-A: The purpose of determining table breaks in a PDF document is to check if the table exceeds the page margins. This ensures that the table's content is correctly displayed within the available page space. By detecting table breaks, you can handle the content overflow and adjust the table layout accordingly.
+R: El propósito de determinar los saltos de tabla en un documento PDF es verificar si la tabla excede los márgenes de la página. Esto garantiza que el contenido de la tabla se muestre correctamente dentro del espacio de página disponible. Al detectar saltos de tabla, puede controlar el desbordamiento de contenido y ajustar el diseño de la tabla en consecuencia.
 
-#### Q: How can I adjust the top margin of the table?
+#### P: ¿Cómo puedo ajustar el margen superior de la tabla?
 
-A: In the provided C# source code, you can adjust the top margin of the table by modifying the value of the `table1.Margin.Top` property. Increase or decrease the value as needed to set the desired top margin for the table.
+ R: En el código fuente de C# proporcionado, puede ajustar el margen superior de la tabla modificando el valor de`table1.Margin.Top`propiedad. Aumente o disminuya el valor según sea necesario para establecer el margen superior deseado para la tabla.
 
-#### Q: Can I customize the appearance of the table, such as cell colors and font size?
+#### P: ¿Puedo personalizar la apariencia de la tabla, como los colores de las celdas y el tamaño de fuente?
 
-A: Yes, you can customize the appearance of the table and its cells using various properties and methods provided by Aspose.PDF for .NET. For example, you can change cell background colors, font size, font family, text alignment, and more. Refer to the official documentation for more information on how to customize the table appearance.
+R: Sí, puede personalizar la apariencia de la tabla y sus celdas utilizando varias propiedades y métodos proporcionados por Aspose.PDF para .NET. Por ejemplo, puede cambiar los colores de fondo de las celdas, el tamaño de fuente, la familia de fuentes, la alineación del texto y más. Consulte la documentación oficial para obtener más información sobre cómo personalizar la apariencia de la mesa.
 
-#### Q: What happens if the table exceeds the page margins?
+#### P: ¿Qué pasa si la tabla excede los márgenes de la página?
 
-A: If the table exceeds the page margins, it may result in content truncation or overlapping, making the PDF document less readable and organized. By detecting table breaks and handling the overflow, you can ensure that the content remains properly displayed within the available page area.
+R: Si la tabla excede los márgenes de la página, el contenido puede truncarse o superponerse, lo que hace que el documento PDF sea menos legible y menos organizado. Al detectar saltos de tabla y gestionar el desbordamiento, puede asegurarse de que el contenido se muestre correctamente dentro del área de página disponible.
 
-#### Q: Can I determine table breaks for multiple tables in the same PDF document?
+#### P: ¿Puedo determinar saltos de tabla para varias tablas en el mismo documento PDF?
 
-A: Yes, you can determine table breaks for multiple tables in the same PDF document. Simply repeat the steps for each table you want to analyze and adjust the table layout as necessary to prevent content overflow.
+R: Sí, puede determinar saltos de tabla para varias tablas en el mismo documento PDF. Simplemente repita los pasos para cada tabla que desee analizar y ajuste el diseño de la tabla según sea necesario para evitar el desbordamiento de contenido.

@@ -1,59 +1,59 @@
 ---
-title: Page Number Stamps In PDF File
-linktitle: Page Number Stamps In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add page number stamps in PDF file with Aspose.PDF for .NET.
+title: Штампы с номерами страниц в PDF-файле
+linktitle: Штампы с номерами страниц в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как добавлять штампы с номерами страниц в PDF-файл с помощью Aspose.PDF для .NET.
 type: docs
 weight: 160
 url: /ru/net/programming-with-stamps-and-watermarks/page-number-stamps/
 ---
-In this tutorial, we will guide you step by step on how to add page number stamps in PDF file using Aspose.PDF for .NET. We'll use the provided C# source code to open an existing PDF document, create a page number stamp, set its properties, and add it to a specific page in the PDF file.
+В этом уроке мы шаг за шагом покажем вам, как добавить штампы с номерами страниц в PDF-файл с помощью Aspose.PDF для .NET. Мы будем использовать предоставленный исходный код C#, чтобы открыть существующий PDF-документ, создать отметку номера страницы, установить ее свойства и добавить ее на определенную страницу в PDF-файле.
 
-## Step 1: Setting up the environment
+## Шаг 1. Настройка среды
 
-Before you begin, make sure you have the following:
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Установленная среда разработки .NET.
+- Библиотека Aspose.PDF для .NET загружена и используется в вашем проекте.
 
-## Step 2: Loading the existing PDF document
+## Шаг 2. Загрузка существующего PDF-документа.
 
-The first step is to load the existing PDF document into your project. Here's how:
+Первым шагом является загрузка существующего PDF-документа в ваш проект. Вот как:
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the existing PDF document
+// Откройте существующий PDF-документ
 Document pdfDocument = new Document(dataDir + "PageNumberStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Обязательно замените «КАТАЛОГ ВАШИХ ДОКУМЕНТОВ» фактическим путем к каталогу, в котором находится ваш PDF-документ.
 
-## Step 3: Creating and Configuring the Page Numbering Stamp
+## Шаг 3. Создание и настройка штампа нумерации страниц
 
-Now that the PDF document is loaded, we can create a page numbering buffer and configure it according to our needs. Here's how:
+Теперь, когда документ PDF загружен, мы можем создать буфер нумерации страниц и настроить его в соответствии с нашими потребностями. Вот как:
 
 ```csharp
-// Create a page number buffer
+// Создать буфер номеров страниц
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
 
-// Define if the buffer is in the background or not
+// Определите, находится ли буфер в фоновом режиме или нет.
 pageNumberStamp.Background = false;
 
-// Format of the page numbering buffer
+// Формат буфера нумерации страниц
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
 
-// Bottom margin of page numbering buffer
+// Нижнее поле буфера нумерации страниц
 pageNumberStamp.BottomMargin = 10;
 
-// Horizontal alignment of the page numbering buffer
+// Горизонтальное выравнивание буфера нумерации страниц
 pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
 
-// Start number of page numbering
+// Начальный номер нумерации страниц
 pageNumberStamp.StartingNumber = 1;
 
-// Set page number buffer text properties
+// Установить свойства текста буфера номеров страниц
 pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
 pageNumberStamp.TextState.FontSize = 14.0F;
 pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
@@ -61,108 +61,108 @@ pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
 pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 ```
 
-The above code creates a page number stamp with properties like page number format, bottom margin, horizontal alignment, starting number and text properties.
+Приведенный выше код создает штамп номера страницы с такими свойствами, как формат номера страницы, нижнее поле, горизонтальное выравнивание, начальный номер и свойства текста.
 
-## Step 4: Adding the page number stamp to a specific page
+## Шаг 4. Добавление штампа номера страницы на определенную страницу
 
-Once the page number stamp is configured, we can add it to a specific page of the PDF document. Here's how:
+После настройки отметки номера страницы мы можем добавить ее на определенную страницу PDF-документа. Вот как:
 
 ```csharp
-// Add the page number buffer to a specific page
+// Добавить буфер номеров страниц на определенную страницу
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 ```
 
-The above code adds the page number stamp to the first page of the PDF document. You can change the page number as needed.
+Приведенный выше код добавляет отметку с номером страницы на первую страницу PDF-документа. При необходимости вы можете изменить номер страницы.
 
-## Step 5: Saving the modified PDF document
+## Шаг 5. Сохранение измененного PDF-документа.
 
-Once the page number stamp is added to the PDF document, we can save the modified PDF document. Here's how:
+После добавления отметки номера страницы в PDF-документ мы можем сохранить измененный PDF-документ. Вот как:
 
 ```csharp
-// Save the modified PDF document
+// Сохраните измененный PDF-документ.
 pdfDocument.Save(dataDir + "PageNumberStamp_out.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the edited PDF document.
+Обязательно замените «КАТАЛОГ ВАШИХ ДОКУМЕНТОВ» фактическим путем к каталогу, в котором вы хотите сохранить отредактированный PDF-документ.
 
-### Sample source code for Page Number Stamps using Aspose.PDF for .NET 
+### Пример исходного кода для штампов с номерами страниц с использованием Aspose.PDF для .NET 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir+ "PageNumberStamp.pdf");
 
-// Create page number stamp
+// Создать штамп с номером страницы
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
 
-// Whether the stamp is background
+// Является ли штамп фоном
 pageNumberStamp.Background = false;
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
 pageNumberStamp.BottomMargin = 10;
 pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
 pageNumberStamp.StartingNumber = 1;
 
-// Set text properties
+// Установить свойства текста
 pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
 pageNumberStamp.TextState.FontSize = 14.0F;
 pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
 pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
 pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 
-// Add stamp to particular page
+// Добавить штамп на определенную страницу
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 dataDir = dataDir + "PageNumberStamp_out.pdf";
 
-// Save output document
+// Сохранить выходной документ
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You have learned how to add page number stamps to a PDF document using Aspose.PDF for .NET. You can now personalize your PDF documents by adding clear and informative page numbers.
+Поздравляем! Вы узнали, как добавлять штампы с номерами страниц в PDF-документ с помощью Aspose.PDF для .NET. Теперь вы можете персонализировать свои PDF-документы, добавив четкие и информативные номера страниц.
 
-### FAQ's for page number stamps in PDF file
+### Часто задаваемые вопросы о штампах с номерами страниц в PDF-файле
 
-#### Q: What is a Page Number Stamp, and how is it used to add page numbers to a PDF file?
+#### Вопрос: Что такое штамп номера страницы и как он используется для добавления номеров страниц в файл PDF?
 
-A: A Page Number Stamp is a feature in Aspose.PDF that allows you to add dynamic page numbers to specific pages of a PDF document. In this tutorial, it's achieved by creating a PageNumberStamp object, configuring its properties, and adding it to a designated page.
+О: Штамп номера страницы — это функция Aspose.PDF, которая позволяет добавлять динамические номера страниц к определенным страницам PDF-документа. В этом руководстве это достигается путем создания объекта PageNumberStamp, настройки его свойств и добавления его на назначенную страницу.
 
-#### Q: How does the provided C# source code accomplish adding page number stamps to a PDF file?
+#### Вопрос: Как предоставленный исходный код C# позволяет добавлять отметки номеров страниц в PDF-файл?
 
-A: The code demonstrates how to load an existing PDF document, create a PageNumberStamp, set various properties (such as format, font, alignment, etc.), and then add the stamp to a specific page. The stamp automatically calculates the total page count and inserts the correct page numbers.
+О: Код демонстрирует, как загрузить существующий PDF-документ, создать PageNumberStamp, установить различные свойства (например, формат, шрифт, выравнивание и т. д.), а затем добавить штамп на определенную страницу. Штамп автоматически подсчитывает общее количество страниц и вставляет правильные номера страниц.
 
-#### Q: Can I customize the appearance of the page number, such as font style, color, and size?
+#### Вопрос: Могу ли я настроить внешний вид номера страницы, например стиль, цвет и размер шрифта?
 
-A: Absolutely, you can customize the appearance of the page number stamp by adjusting properties like font, font size, font style (bold, italic, etc.), and text color.
+О: Конечно, вы можете настроить внешний вид отметки номера страницы, настроив такие свойства, как шрифт, размер шрифта, стиль шрифта (жирный, курсив и т. д.) и цвет текста.
 
-#### Q: Is it possible to add page number stamps to multiple pages within a PDF document?
+#### Вопрос: Можно ли добавлять штампы с номерами страниц на несколько страниц PDF-документа?
 
-A: Yes, you can add page number stamps to multiple pages by creating multiple PageNumberStamp objects and adding each one to the desired pages.
+О: Да, вы можете добавлять штампы номеров страниц на несколько страниц, создав несколько объектов PageNumberStamp и добавив каждый из них на нужные страницы.
 
-#### Q: Can I choose whether the page number stamp appears as part of the page's content or as a background element?
+#### Вопрос: Могу ли я выбрать, будет ли отметка с номером страницы отображаться как часть содержимого страницы или как фоновый элемент?
 
-A: Yes, you can control whether the page number stamp appears as part of the page's content or as a background element by setting the `Background` property of the PageNumberStamp.
+ О: Да, вы можете контролировать, будет ли штамп номера страницы отображаться как часть содержимого страницы или как фоновый элемент, установив параметр`Background` свойство PageNumberStamp.
 
-#### Q: How do I specify the format of the page number, including the total page count?
+#### Вопрос: Как указать формат номера страницы, включая общее количество страниц?
 
-A: The code uses the `Format` property of the PageNumberStamp to specify the format of the page number. The macro "# of" is used to represent the total page count.
+ О: В коде используется`Format`Свойство PageNumberStamp, чтобы указать формат номера страницы. Макрос «# of» используется для представления общего количества страниц.
 
-#### Q: What happens if I add the same page number stamp to multiple pages?
+#### Вопрос: Что произойдет, если я добавлю один и тот же штамп с номером страницы на несколько страниц?
 
-A: Adding the same PageNumberStamp instance to multiple pages will display the correct page numbers for each page. The stamp automatically adjusts the page number and total page count.
+О: При добавлении одного и того же экземпляра PageNumberStamp на несколько страниц будут отображаться правильные номера страниц для каждой страницы. Штамп автоматически корректирует номер страницы и общее количество страниц.
 
-#### Q: Can I add page number stamps to header or footer sections of a PDF document?
+#### Вопрос: Могу ли я добавить отметки с номерами страниц в верхний или нижний колонтитул PDF-документа?
 
-A: While PageNumberStamps are typically added directly to the page's content, you can use FloatingBox or other techniques to position them in header or footer sections.
+О: Хотя PageNumberStamps обычно добавляются непосредственно к содержимому страницы, вы можете использовать FloatingBox или другие методы, чтобы разместить их в разделах верхнего или нижнего колонтитула.
 
-#### Q: How do I specify the position of the page number stamp on the page?
+#### Вопрос: Как указать положение отметки номера страницы на странице?
 
-A: The `BottomMargin` and `HorizontalAlignment` properties of the PageNumberStamp allow you to control the position of the stamp within the page.
+ А:`BottomMargin` и`HorizontalAlignment` Свойства PageNumberStamp позволяют вам управлять положением штампа на странице.
 
-#### Q: What if I want to start page numbering from a different number rather than 1?
+#### Вопрос: Что делать, если я хочу начать нумерацию страниц с другого номера, а не с 1?
 
-A: You can set the `StartingNumber` property of the PageNumberStamp to specify the starting page number.
+ О: Вы можете установить`StartingNumber`Свойство PageNumberStamp для указания номера начальной страницы.

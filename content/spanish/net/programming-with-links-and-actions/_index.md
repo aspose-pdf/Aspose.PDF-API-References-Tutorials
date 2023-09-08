@@ -1,26 +1,26 @@
 ---
-title: Programming with Links and Actions
-linktitle: Programming with Links and Actions
+title: Programación con enlaces y acciones
+linktitle: Programación con enlaces y acciones
 type: docs
 weight: 21
 url: /es/net/programming-with-links-and-actions/
-description: Aspose.PDF for .NET's Programming with Links and Actions tutorials are a comprehensive resource for mastering creating and managing interactive links in PDF documents.
+description: Los tutoriales de programación con enlaces y acciones de Aspose.PDF para .NET son un recurso integral para dominar la creación y administración de enlaces interactivos en documentos PDF.
 ---
-The "Programming with Links and Actions" tutorial page on Aspose.PDF for .NET offers a valuable resource for developers looking to master creating and managing links and actions in PDF documents. These in-depth tutorials provide code examples and step-by-step explanations to help you add hyperlinks, form actions, and more to your PDF documents. Whether you are a beginner or an experienced user, these tutorials will guide you through the effective use of links and actions features of Aspose.PDF for .NET, allowing you to create interactive and dynamic PDF documents.
+La página del tutorial "Programación con enlaces y acciones" en Aspose.PDF para .NET ofrece un recurso valioso para los desarrolladores que buscan dominar la creación y administración de enlaces y acciones en documentos PDF. Estos tutoriales detallados brindan ejemplos de código y explicaciones paso a paso para ayudarlo a agregar hipervínculos, acciones de formulario y más a sus documentos PDF. Ya sea un principiante o un usuario experimentado, estos tutoriales lo guiarán a través del uso efectivo de enlaces y funciones de acciones de Aspose.PDF para .NET, permitiéndole crear documentos PDF interactivos y dinámicos.
 
-## Tutorials
-| Title | Description |
+## Tutoriales
+| Título | Descripción |
 | --- | --- | 
-| [Add Hyperlink In PDF File](./add-hyperlink/) | asily add interactive hyperlinks in PDF file with Aspose.PDF for .NET. |  
-| [Create Application Link In PDF File](./create-application-link/) | Easily create application links in PDF file with Aspose.PDF for .NET. |  
-| [Create Document Link](./create-document-link/) | Easily create links to other PDF documents with Aspose.PDF for .NET. |  
-| [Create Local Hyperlink In PDF File](./create-local-hyperlink/) | Easily create local hyperlinks in PDF file using Aspose.PDF for .NET. |  
-| [Extract Links In PDF File](./extract-links/) | Easily extract links in PDF file using Aspose.PDF for .NET. |  
-| [Get Hyperlink Destinations In PDF File](./get-hyperlink-destinations/) | Learn how to extract hyperlink destinations in PDF file using Aspose.PDF for .NET. |  
-| [Get Hyperlink Text In PDF File](./get-hyperlink-text/) | Learn how to extract hyperlink text in PDF file using Aspose.PDF for .NET. |  
-| [Remove Open Action](./remove-open-action/) | Learn how to remove the open action from a PDF using Aspose.PDF for .NET. |  
-| [Set Destination Link In PDF File](./set-destination-link/) | Learn how to set a destination link in PDF file using Aspose.PDF for .NET. |  
-| [Set Target Link In PDF File](./set-target-link/) | Learn how to set a target link in PDF file using Aspose.PDF for .NET. |  
-| [Specify Page When Viewing](./specify-page-when-viewing/) | Learn how to specify a page when viewing a PDF using Aspose.PDF for .NET. |  
-| [Update Links In PDF File](./update-links/) | Learn how to update links in PDF file with Aspose.PDF for .NET. |  
-| [Update Link Text Color In PDF File](./update-link-text-color/) | Learn how to update the text color of links in PDF file with Aspose.PDF for .NET. |  
+| [Agregar hipervínculo en un archivo PDF](./add-hyperlink/) | Agregue fácilmente hipervínculos interactivos en archivos PDF con Aspose.PDF para .NET. |  
+| [Crear enlace de aplicación en archivo PDF](./create-application-link/) | Cree fácilmente enlaces de aplicaciones en archivos PDF con Aspose.PDF para .NET. |  
+| [Crear enlace de documento](./create-document-link/) | Cree fácilmente enlaces a otros documentos PDF con Aspose.PDF para .NET. |  
+| [Crear hipervínculo local en un archivo PDF](./create-local-hyperlink/) | Cree fácilmente hipervínculos locales en archivos PDF utilizando Aspose.PDF para .NET. |  
+| [Extraer enlaces en un archivo PDF](./extract-links/) | Extraiga fácilmente enlaces en archivos PDF utilizando Aspose.PDF para .NET. |  
+| [Obtenga destinos de hipervínculos en un archivo PDF](./get-hyperlink-destinations/) | Aprenda a extraer destinos de hipervínculos en un archivo PDF usando Aspose.PDF para .NET. |  
+| [Obtener texto de hipervínculo en un archivo PDF](./get-hyperlink-text/) | Aprenda a extraer texto de hipervínculo en un archivo PDF usando Aspose.PDF para .NET. |  
+| [Eliminar acción abierta](./remove-open-action/) | Aprenda cómo eliminar la acción de abrir de un PDF usando Aspose.PDF para .NET. |  
+| [Establecer enlace de destino en archivo PDF](./set-destination-link/) | Aprenda a configurar un enlace de destino en un archivo PDF usando Aspose.PDF para .NET. |  
+| [Establecer enlace de destino en archivo PDF](./set-target-link/) | Aprenda a configurar un enlace de destino en un archivo PDF usando Aspose.PDF para .NET. |  
+| [Especificar página al visualizar](./specify-page-when-viewing/) | Aprenda a especificar una página al visualizar un PDF usando Aspose.PDF para .NET. |  
+| [Actualizar enlaces en un archivo PDF](./update-links/) | Aprenda cómo actualizar enlaces en archivos PDF con Aspose.PDF para .NET. |  
+| [Actualizar el color del texto del enlace en un archivo PDF](./update-link-text-color/) | Aprenda a actualizar el color del texto de los enlaces en un archivo PDF con Aspose.PDF para .NET. |  

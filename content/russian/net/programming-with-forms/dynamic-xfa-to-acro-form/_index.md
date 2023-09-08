@@ -1,83 +1,83 @@
 ---
-title: Dynamic XFA To Acro Form
-linktitle: Dynamic XFA To Acro Form
-second_title: Aspose.PDF for .NET API Reference
-description: Easily convert dynamic XFA To forms to standard AcroForm forms with Aspose.PDF for .NET.
+title: Динамический XFA в форму Acro
+linktitle: Динамический XFA в форму Acro
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко конвертируйте динамические формы XFA To в стандартные формы AcroForm с помощью Aspose.PDF для .NET.
 type: docs
 weight: 70
 url: /ru/net/programming-with-forms/dynamic-xfa-to-acro-form/
 ---
-In this tutorial, we will show you how to convert an XFA To dynamic form to an AcroForm using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+В этом уроке мы покажем вам, как преобразовать динамическую форму XFA To в AcroForm с помощью Aspose.PDF для .NET. Мы шаг за шагом объясним исходный код C#, чтобы помочь вам в этом процессе.
 
-## Step 1: Preparation
+## Шаг 1: Подготовка
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Сначала убедитесь, что вы импортировали необходимые библиотеки и задали путь к каталогу документов:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the dynamic XFA form
+## Шаг 2. Загрузите динамическую форму XFA.
 
-Load the dynamic XFA form:
+Загрузите динамическую форму XFA:
 
 ```csharp
 Document document = new Document(dataDir + "DynamicXFAToAcroForm.pdf");
 ```
 
-## Step 3: Set Form Type as Standard AcroForm
+## Шаг 3. Установите тип формы как стандартную AcroForm
 
-Set the form type as standard AcroForm:
+Установите тип формы как стандартный AcroForm:
 
 ```csharp
 document.Form.Type = FormType.Standard;
 ```
 
-## Step 4: Save the Resulting PDF
+## Шаг 4. Сохраните полученный PDF-файл.
 
-Save the resulting PDF:
+Сохраните полученный PDF-файл:
 
 ```csharp
 dataDir = dataDir + "Standard_AcroForm_out.pdf";
 document. Save(dataDir);
 ```
 
-### Sample source code for Dynamic XFA To Acro Form using Aspose.PDF for .NET 
+### Пример исходного кода для динамической формы XFA в Acro с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load dynamic XFA form
+// Загрузить динамическую форму XFA
 Document document = new Document(dataDir + "DynamicXFAToAcroForm.pdf");
-// Set the form fields type as standard AcroForm
+// Установить тип полей формы как стандартный AcroForm
 document.Form.Type = FormType.Standard;
 dataDir = dataDir + "Standard_AcroForm_out.pdf";
-// Save the resultant PDF
+// Сохраните полученный PDF-файл.
 document.Save(dataDir);
 Console.WriteLine("\nDynamic XFA form converted to standard AcroForm successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we learned how to convert an XFA To dynamic form to a standard AcroForm form using Aspose.PDF for .NET. By following these steps, you can easily convert your dynamic XFATo forms to AcroForms for more common use.
+В этом уроке мы узнали, как преобразовать динамическую форму XFA To в стандартную форму AcroForm с помощью Aspose.PDF для .NET. Выполнив эти шаги, вы сможете легко преобразовать динамические формы XFATo в AcroForms для более частого использования.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the difference between a dynamic XFA form and a standard AcroForm?
+#### Вопрос: В чем разница между динамической формой XFA и стандартной формой AcroForm?
 
-A: A dynamic XFA (XML Forms Architecture) form is a type of PDF form that uses XML-based data to define its layout and behavior. XFA forms are often used in interactive and data-intensive forms. On the other hand, a standard AcroForm is a more traditional type of PDF form that uses the PDF format itself to define its structure and appearance. AcroForms are widely supported by PDF viewers and can be more compatible with various applications.
+О: Динамическая форма XFA (архитектура XML-форм) — это тип формы PDF, которая использует данные на основе XML для определения ее макета и поведения. Формы XFA часто используются в интерактивных формах и формах с интенсивным использованием данных. С другой стороны, стандартная AcroForm — это более традиционный тип PDF-формы, которая использует сам формат PDF для определения своей структуры и внешнего вида. AcroForms широко поддерживаются средствами просмотра PDF-файлов и могут быть более совместимы с различными приложениями.
 
-#### Q: Why would I want to convert a dynamic XFA form to a standard AcroForm?
+#### Вопрос: Зачем мне конвертировать динамическую форму XFA в стандартную форму AcroForm?
 
-A: Converting a dynamic XFA form to a standard AcroForm can be useful in scenarios where XFA forms are not fully supported or when you want to achieve greater compatibility with different PDF viewers and applications. Standard AcroForms are generally more widely supported across different platforms and devices.
+О: Преобразование динамической формы XFA в стандартную форму AcroForm может быть полезно в сценариях, где формы XFA не полностью поддерживаются или когда вы хотите добиться большей совместимости с различными средствами просмотра PDF и приложениями. Стандартные AcroForms обычно более широко поддерживаются на разных платформах и устройствах.
 
-#### Q: Can I modify the form fields after converting a dynamic XFA form to a standard AcroForm?
+#### Вопрос: Могу ли я изменить поля формы после преобразования динамической формы XFA в стандартную форму AcroForm?
 
-A: Yes, after converting a dynamic XFA form to a standard AcroForm, you can modify the form fields as needed using Aspose.PDF for .NET. You can add new fields, change their properties, set field values, and perform other form-related operations.
+О: Да, после преобразования динамической формы XFA в стандартную AcroForm вы можете при необходимости изменять поля формы с помощью Aspose.PDF для .NET. Вы можете добавлять новые поля, изменять их свойства, устанавливать значения полей и выполнять другие операции, связанные с формой.
 
-#### Q: Are there any limitations or considerations when converting dynamic XFA forms to standard AcroForms?
+#### Вопрос. Существуют ли какие-либо ограничения или соображения при преобразовании динамических форм XFA в стандартные AcroForms?
 
-A: Yes, there are some limitations to consider when converting dynamic XFA forms to standard AcroForms. XFA forms can have complex and dynamic layouts, including features such as dynamic tables, repeating sections, and form calculations, which may not be fully preserved in the conversion process. Additionally, some specific form field properties unique to XFA forms may not be applicable in AcroForms.
+О: Да, существуют некоторые ограничения, которые следует учитывать при преобразовании динамических форм XFA в стандартные AcroForms. Формы XFA могут иметь сложные и динамические макеты, включая такие функции, как динамические таблицы, повторяющиеся разделы и вычисления форм, которые могут не полностью сохраняться в процессе преобразования. Кроме того, некоторые свойства полей формы, уникальные для форм XFA, могут быть неприменимы в AcroForms.
 
-#### Q: Can I convert a standard AcroForm to a dynamic XFA form using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я преобразовать стандартную форму AcroForm в динамическую форму XFA с помощью Aspose.PDF для .NET?
 
-A: Aspose.PDF for .NET currently supports converting dynamic XFA forms to standard AcroForms, but it does not support the reverse operation of converting standard AcroForms to dynamic XFA forms. Converting standard AcroForms to dynamic XFA forms involves more complex transformations and may not be fully supported in all scenarios.
+О: Aspose.PDF для .NET в настоящее время поддерживает преобразование динамических форм XFA в стандартные AcroForms, но не поддерживает обратную операцию преобразования стандартных AcroForms в динамические формы XFA. Преобразование стандартных AcroForms в динамические формы XFA предполагает более сложные преобразования и может не полностью поддерживаться во всех сценариях.

@@ -1,50 +1,50 @@
 ---
-title: Get PDF Properties
-linktitle: Get PDF Properties
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to get PDF properties like box dimensions and rotation using Aspose.PDF for .NET.
+title: Ottieni proprietà PDF
+linktitle: Ottieni proprietà PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Guida passo passo per ottenere proprietà PDF come dimensioni della casella e rotazione utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 100
 url: /it/net/programming-with-pdf-pages/get-properties/
 ---
-In this tutorial, we'll walk you through the step-by-step process to get the properties of a PDF using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to access different properties of a PDF page such as art box, crop box, crop box, etc., using Aspose.PDF for .NET.
+In questo tutorial ti guideremo attraverso il processo passo passo per ottenere le proprietà di un PDF utilizzando Aspose.PDF per .NET. Spiegheremo il codice sorgente C# in bundle e ti forniremo una guida completa per aiutarti a comprendere e implementare questa funzionalità nei tuoi progetti. Alla fine di questo tutorial, saprai come accedere alle diverse proprietà di una pagina PDF come art box, crop box, crop box, ecc., utilizzando Aspose.PDF per .NET.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## Prerequisiti
+Prima di iniziare, assicurati di avere quanto segue:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- Conoscenza base del linguaggio di programmazione C#
+- Aspose.PDF per .NET installato nel tuo ambiente di sviluppo
 
-## Step 1: Set document directory
-First, you need to set the path to your documents directory. This is the location of the PDF file whose properties you want to get. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
+## Passaggio 1: imposta la directory dei documenti
+Innanzitutto, devi impostare il percorso della directory dei documenti. Questa è la posizione del file PDF di cui desideri ottenere le proprietà. Sostituisci "DIRECTORY DOCUMENTI" con il percorso appropriato.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the PDF document
-Next, you need to open the PDF document using the `Document` class of Aspose.PDF. Be sure to specify the correct path to the PDF file.
+## Passaggio 2: apri il documento PDF
+ Successivamente, è necessario aprire il documento PDF utilizzando il file`Document` classe di Aspose.PDF. Assicurati di specificare il percorso corretto del file PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
 ```
 
-## Step 3: Access the Page Collection
-Now you can access the document's pages collection using the `Pages` property of the `pdfDocument` object.
+## Passaggio 3: accedi alla raccolta di pagine
+ Ora puoi accedere alla raccolta delle pagine del documento utilizzando il file`Pages` proprietà del`pdfDocument` oggetto.
 
 ```csharp
 PageCollection pageCollection = pdfDocument.Pages;
 ```
 
-## Step 4: Go to a specific page
-Then you can jump to a specific page using the index of the page in the collection. In the example below, we access the second page (index 1).
+## Passaggio 4: vai a una pagina specifica
+Quindi puoi passare a una pagina specifica utilizzando l'indice della pagina nella raccolta. Nell'esempio seguente accediamo alla seconda pagina (indice 1).
 
 ```csharp
 Page pdfPage = pageCollection[1];
 ```
 
-## Step 5: Get page properties
-Now you can get the different properties of the PDF page, such as art box, crop box, crop box, etc., by using the corresponding properties of the `pdfPage` object.
+## Passaggio 5: ottieni le proprietà della pagina
+ Ora puoi ottenere le diverse proprietà della pagina PDF, come art box, crop box, crop box, ecc., utilizzando le proprietà corrispondenti del`pdfPage` oggetto.
 
 ```csharp
 Console.WriteLine("ArtBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
@@ -59,19 +59,19 @@ Console.WriteLine("Page number: {0}", pdfPage.Number);
 Console.WriteLine("Rotate: {0}", pdfPage.Rotate);
 ```
 
-### Sample source code for Get Properties using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Ottieni proprietà utilizzando Aspose.PDF per .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Apri documento
 Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
-// Get page collection
+// Ottieni la raccolta di pagine
 PageCollection pageCollection = pdfDocument.Pages;
-// Get particular page
+// Ottieni una pagina particolare
 Page pdfPage = pageCollection[1];
-// Get page properties
+// Ottieni le proprietà della pagina
 System.Console.WriteLine("ArtBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
 System.Console.WriteLine("BleedBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.BleedBox.Height, pdfPage.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
 System.Console.WriteLine("CropBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, pdfPage.CropBox.URX, pdfPage.CropBox.URY);
@@ -83,44 +83,44 @@ System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
 
 ```
 
-## Conclusion
-Congratulation ! You have successfully obtained the properties of a PDF using Aspose.PDF for .NET. You learned how to open a PDF document, navigate to a specific page, and get various page properties, such as dimension boxes and rotation. You can now use this information to customize the handling of your PDF files based on their properties.
+## Conclusione
+Congratulazioni! Hai ottenuto con successo le proprietà di un PDF utilizzando Aspose.PDF per .NET. Hai imparato come aprire un documento PDF, passare a una pagina specifica e ottenere varie proprietà della pagina, come riquadri delle dimensioni e rotazione. Ora puoi utilizzare queste informazioni per personalizzare la gestione dei tuoi file PDF in base alle loro proprietà.
 
-Be sure to check out the official Aspose.PDF for .NET documentation for more information on advanced features and customization possibilities.
+Assicurati di controllare la documentazione ufficiale Aspose.PDF per .NET per ulteriori informazioni sulle funzionalità avanzate e sulle possibilità di personalizzazione.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: How can I get the properties of a PDF using Aspose.PDF for .NET?
+#### D: Come posso ottenere le proprietà di un PDF utilizzando Aspose.PDF per .NET?
 
-A: To get the properties of a PDF using Aspose.PDF for .NET, you can follow these steps:
+R: Per ottenere le proprietà di un PDF utilizzando Aspose.PDF per .NET, puoi seguire questi passaggi:
 
-1. Set the document directory by specifying the path to the PDF file whose properties you want to retrieve.
-2. Open the PDF document using the `Document` class of Aspose.PDF, providing the correct path to the PDF file.
-3. Access the document's pages collection using the `Pages` property of the `pdfDocument` object.
-4. Jump to a specific page using the index of the page in the collection (indexing starts from 1).
-5. Get the different properties of the PDF page, such as ArtBox, BleedBox, CropBox, MediaBox, TrimBox, Rect, Page Number, and Rotation, by using the corresponding properties of the `pdfPage` object.
+1. Imposta la directory dei documenti specificando il percorso del file PDF di cui desideri recuperare le proprietà.
+2.  Aprire il documento PDF utilizzando il file`Document` classe di Aspose.PDF, fornendo il percorso corretto al file PDF.
+3.  Accedi alla raccolta delle pagine del documento utilizzando il file`Pages` proprietà del`pdfDocument` oggetto.
+4. Passa a una pagina specifica utilizzando l'indice della pagina nella raccolta (l'indicizzazione inizia da 1).
+5.  Ottieni le diverse proprietà della pagina PDF, come ArtBox, BleedBox, CropBox, MediaBox, TrimBox, Rect, Numero di pagina e Rotazione, utilizzando le proprietà corrispondenti della pagina PDF`pdfPage` oggetto.
 
-#### Q: What are the different properties of a PDF page that I can retrieve using Aspose.PDF for .NET?
+#### D: Quali sono le diverse proprietà di una pagina PDF che posso recuperare utilizzando Aspose.PDF per .NET?
 
-A: You can retrieve various properties of a PDF page using Aspose.PDF for .NET, such as:
+R: È possibile recuperare varie proprietà di una pagina PDF utilizzando Aspose.PDF per .NET, come ad esempio:
 
-- ArtBox: Represents the dimensions of the page's artwork.
-- BleedBox: Represents the dimensions of the page's bleed.
-- CropBox: Represents the dimensions of the page's visible content after cropping.
-- MediaBox: Represents the dimensions of the page's physical media.
-- TrimBox: Represents the dimensions of the page's trimmed content.
-- Rect: Represents the dimensions of the page's bounding box.
-- Page Number: Represents the page number in the document.
-- Rotate: Represents the rotation angle of the page.
+- ArtBox: rappresenta le dimensioni dell'opera d'arte della pagina.
+- BleedBox: rappresenta le dimensioni del margine al vivo della pagina.
+- CropBox: rappresenta le dimensioni del contenuto visibile della pagina dopo il ritaglio.
+- MediaBox: rappresenta le dimensioni del supporto fisico della pagina.
+- TrimBox: rappresenta le dimensioni del contenuto tagliato della pagina.
+- Rect: rappresenta le dimensioni del riquadro di delimitazione della pagina.
+- Numero di pagina: rappresenta il numero di pagina nel documento.
+- Ruota: rappresenta l'angolo di rotazione della pagina.
 
-#### Q: How do I access a specific page in the PDF document to retrieve its properties?
+#### D: Come posso accedere a una pagina specifica nel documento PDF per recuperarne le proprietà?
 
-A: To access a specific page in the PDF document and retrieve its properties, you can use the `Pages` property of the `pdfDocument` object to access the document's pages collection. Then, you can use the index of the page in the collection to jump to the desired page. For example, to access the second page, you can use `pdfDocument.Pages[1]` (indexing starts from 1).
+ R: Per accedere a una pagina specifica nel documento PDF e recuperarne le proprietà, è possibile utilizzare il file`Pages` proprietà del`pdfDocument` oggetto per accedere alla raccolta di pagine del documento. Quindi, puoi utilizzare l'indice della pagina nella raccolta per passare alla pagina desiderata. Ad esempio, per accedere alla seconda pagina, è possibile utilizzare`pdfDocument.Pages[1]` (l'indicizzazione inizia da 1).
 
-#### Q: Can I perform operations on the retrieved properties, such as modifying or resizing the page boxes?
+#### D: Posso eseguire operazioni sulle proprietà recuperate, come la modifica o il ridimensionamento dei box di pagina?
 
-A: Yes, once you retrieve the properties of a PDF page using Aspose.PDF for .NET, you can perform various operations on them. For example, you can modify the dimensions of the page boxes, rotate the page, or use the retrieved information for custom processing and manipulation of the PDF document.
+R: Sì, una volta recuperate le proprietà di una pagina PDF utilizzando Aspose.PDF per .NET, è possibile eseguire varie operazioni su di esse. Ad esempio, è possibile modificare le dimensioni dei box di pagina, ruotare la pagina o utilizzare le informazioni recuperate per l'elaborazione e la manipolazione personalizzata del documento PDF.
 
-#### Q: Does Aspose.PDF for .NET support extracting properties from encrypted or password-protected PDF files?
+#### D: Aspose.PDF per .NET supporta l'estrazione di proprietà da file PDF crittografati o protetti da password?
 
-A: Yes, Aspose.PDF for .NET supports extracting properties from encrypted or password-protected PDF files. As long as you provide the correct password to open the PDF document, you can access and retrieve its properties using the same approach demonstrated in the tutorial.
+R: Sì, Aspose.PDF per .NET supporta l'estrazione di proprietà da file PDF crittografati o protetti da password. Finché fornisci la password corretta per aprire il documento PDF, puoi accedere e recuperare le sue proprietà utilizzando lo stesso approccio dimostrato nel tutorial.

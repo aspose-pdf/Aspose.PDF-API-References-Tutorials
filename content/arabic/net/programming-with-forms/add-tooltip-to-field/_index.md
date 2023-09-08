@@ -1,100 +1,100 @@
 ---
-title: Add Tooltip To Field
-linktitle: Add Tooltip To Field
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a tooltip to a field with Aspose.PDF for .NET.
+title: إضافة تلميح الأدوات إلى الحقل
+linktitle: إضافة تلميح الأدوات إلى الحقل
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة تلميح أداة إلى حقل باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 10
 url: /ar/net/programming-with-forms/add-tooltip-to-field/
 ---
-Aspose.PDF for .NET is a powerful library that allows developers to manipulate PDF documents programmatically. In this tutorial, we will walk through the process of adding a tooltip to a field using Aspose.PDF for .NET. We will provide a step-by-step guide to help you understand and implement this functionality in your C# code.
+Aspose.PDF for .NET هي مكتبة قوية تسمح للمطورين بمعالجة مستندات PDF برمجياً. في هذا البرنامج التعليمي، سنتعرف على عملية إضافة تلميح أداة إلى حقل باستخدام Aspose.PDF لـ .NET. سنقدم لك دليلًا خطوة بخطوة لمساعدتك على فهم هذه الوظيفة وتنفيذها في كود C# الخاص بك.
 
-## Step 1: Setting up the project and including Aspose.PDF for .NET
+## الخطوة 1: إعداد المشروع وتضمين Aspose.PDF لـ .NET
 
-Before we begin, make sure you have Aspose.PDF for .NET installed in your development environment. You can download the library from the official website and follow the installation instructions provided.
+قبل أن نبدأ، تأكد من تثبيت Aspose.PDF for .NET في بيئة التطوير لديك. يمكنك تنزيل المكتبة من الموقع الرسمي واتباع تعليمات التثبيت المتوفرة.
 
-Once you have installed Aspose.PDF for .NET, create a new C# project in your preferred Integrated Development Environment (IDE). Add a reference to the Aspose.PDF.dll file in your project to access the library's functionality.
+بمجرد تثبيت Aspose.PDF لـ .NET، قم بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة (IDE) المفضلة لديك. قم بإضافة مرجع إلى ملف Aspose.PDF.dll في مشروعك للوصول إلى وظائف المكتبة.
 
-## Step 2: Loading the source PDF form
+## الخطوة 2: تحميل نموذج PDF المصدر
 
-In this step, we will load the source PDF form that contains the field to which we want to add a tooltip. First, ensure that you have the source PDF form file available in your project directory. You can obtain a sample PDF form or use your own existing form.
+في هذه الخطوة، سنقوم بتحميل نموذج PDF المصدر الذي يحتوي على الحقل الذي نريد إضافة تلميح الأدوات إليه. أولاً، تأكد من توفر ملف نموذج PDF المصدر في دليل مشروعك. يمكنك الحصول على نموذج PDF نموذجي أو استخدام النموذج الحالي الخاص بك.
 
-To load the PDF form, use the following code:
+لتحميل نموذج PDF استخدم الكود التالي:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// تحميل نموذج PDF المصدر
 Document doc = new Document(dataDir + "AddTooltipToField.pdf");
 ```
 
-Make sure to replace `"AddTooltipToField.pdf"` with the actual filename of your source PDF form.
+ تأكد من استبدال`"AddTooltipToField.pdf"` باستخدام اسم الملف الفعلي لنموذج PDF المصدر الخاص بك.
 
-## Step 3: Adding a tooltip to a text field
+## الخطوة 3: إضافة تلميح أداة إلى حقل النص
 
-Now that we have loaded the source PDF form, we can proceed to add a tooltip to a specific text field. In this example, let's assume that the text field's name is "textbox1".
+الآن بعد أن قمنا بتحميل نموذج PDF المصدر، يمكننا المتابعة لإضافة تلميح أداة إلى حقل نصي محدد. في هذا المثال، لنفترض أن اسم حقل النص هو "textbox1".
 
-To add a tooltip to the text field, use the following code:
+لإضافة تلميح أداة إلى حقل النص، استخدم الكود التالي:
 
 ```csharp
-// Set the tooltip for textfield
+// قم بتعيين تلميح الأداة لحقل النص
 (doc.Form["textbox1"] as Field).AlternateName = "Text box tool tip";
 ```
 
-Replace `"textbox1"` with the actual name of the text field to which you want to add the tooltip. Also, customize the tooltip text by modifying the value assigned to `AlternateName`.
+ يستبدل`"textbox1"` بالاسم الفعلي لحقل النص الذي تريد إضافة تلميح الأداة إليه. قم أيضًا بتخصيص نص تلميح الأداة عن طريق تعديل القيمة المخصصة له`AlternateName`.
 
-## Step 4: Saving the updated document
+## الخطوة 4: حفظ المستند المحدث
 
-After adding the tooltip to the field, we need to save the updated document. Specify the output file path where you want to save the modified PDF form.
+بعد إضافة تلميح الأداة إلى الحقل، نحتاج إلى حفظ المستند المحدث. حدد مسار ملف الإخراج حيث تريد حفظ نموذج PDF المعدل.
 
-To save the updated document, use the following code:
+لحفظ المستند المحدث، استخدم الكود التالي:
 
 ```csharp
 dataDir = dataDir + "AddTooltipToField_out.pdf";
-// Save the updated document
+// احفظ المستند المحدث
 doc.Save(dataDir);
 Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 ```
 
-Make sure to provide the desired output file name and path. After executing this code, the modified PDF form with the added tooltip will be saved to the specified location.
+تأكد من توفير اسم ملف الإخراج المطلوب والمسار. بعد تنفيذ هذا الرمز، سيتم حفظ نموذج PDF المعدل مع تلميح الأدوات المضاف في الموقع المحدد.
 
-### Sample source code for Add Tooltip To Field using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإضافة تلميح الأدوات إلى الحقل باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// تحميل نموذج PDF المصدر
 Document doc = new Document(dataDir + "AddTooltipToField.pdf");
-// Set the tooltip for textfield
+// قم بتعيين تلميح الأداة لحقل النص
 (doc.Form["textbox1"] as Field).AlternateName = "Text box tool tip";
 dataDir = dataDir + "AddTooltipToField_out.pdf";
-// Save the updated document
+// احفظ المستند المحدث
 doc.Save(dataDir);
 Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulations! You have successfully learned how to add a tooltip to a field using Aspose.PDF for .NET. By following the step-by-step guide in this tutorial, you can enhance your PDF forms with tooltips to provide additional information or guidance to the users. Remember to explore the documentation and examples provided by Aspose.PDF for .NET to discover more advanced features and functionalities offered by the library.
+تهانينا! لقد تعلمت بنجاح كيفية إضافة تلميح أداة إلى حقل باستخدام Aspose.PDF لـ .NET. باتباع الدليل التفصيلي الموجود في هذا البرنامج التعليمي، يمكنك تحسين نماذج PDF الخاصة بك باستخدام تلميحات الأدوات لتوفير معلومات أو إرشادات إضافية للمستخدمين. تذكر استكشاف الوثائق والأمثلة المقدمة من Aspose.PDF لـ .NET لاكتشاف المزيد من الميزات والوظائف المتقدمة التي تقدمها المكتبة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is a tooltip in a PDF form, and why would I use it?
+#### س: ما هو تلميح الأداة في نموذج PDF، ولماذا أستخدمه؟
 
-A: A tooltip in a PDF form is a small pop-up box that appears when the user hovers their mouse over a specific field. It provides additional information or instructions related to that field. Tooltips are helpful for guiding users, providing explanations, or offering context-specific help in PDF forms.
+ج: تلميح الأداة في نموذج PDF عبارة عن مربع منبثق صغير يظهر عندما يقوم المستخدم بتمرير الماوس فوق حقل معين. ويقدم معلومات أو تعليمات إضافية تتعلق بهذا المجال. تعتبر تلميحات الأدوات مفيدة في توجيه المستخدمين أو توفير التوضيحات أو تقديم مساعدة خاصة بالسياق في نماذج PDF.
 
-#### Q: Can I customize the appearance and behavior of the tooltip?
+#### س: هل يمكنني تخصيص مظهر وسلوك تلميح الأداة؟
 
-A: Yes, with Aspose.PDF for .NET, you can customize the appearance and behavior of the tooltip. You can set the tooltip text, font, color, and other attributes to match your application's design and requirements.
+ج: نعم، باستخدام Aspose.PDF for .NET، يمكنك تخصيص مظهر وسلوك تلميح الأداة. يمكنك تعيين نص تلميح الأداة والخط واللون والسمات الأخرى لتتوافق مع تصميم تطبيقك ومتطلباته.
 
-#### Q: Is Aspose.PDF for .NET compatible with other programming languages besides C#?
+#### س: هل يتوافق Aspose.PDF for .NET مع لغات البرمجة الأخرى إلى جانب C#؟
 
-A: Yes, Aspose.PDF for .NET is designed to work with other .NET languages such as VB.NET, F#, and more. The library provides consistent functionality across these languages.
+ج: نعم، تم تصميم Aspose.PDF for .NET للعمل مع لغات .NET الأخرى مثل VB.NET وF# والمزيد. توفر المكتبة وظائف متسقة عبر هذه اللغات.
 
-#### Q: Can I add tooltips to other types of form fields, such as checkboxes or radio buttons?
+#### س: هل يمكنني إضافة تلميحات أدوات إلى أنواع أخرى من حقول النماذج، مثل خانات الاختيار أو أزرار الاختيار؟
 
-A: Yes, you can add tooltips to various types of form fields, including text fields, checkboxes, radio buttons, combo boxes, and more. The process is similar, and you can access different types of form fields using their names or IDs.
+ج: نعم، يمكنك إضافة تلميحات أدوات إلى أنواع مختلفة من حقول النماذج، بما في ذلك حقول النص ومربعات الاختيار وأزرار الاختيار ومربعات التحرير والسرد والمزيد. العملية مشابهة، ويمكنك الوصول إلى أنواع مختلفة من حقول النماذج باستخدام أسمائها أو معرفاتها.
 
-#### Q: Can I remove or modify the tooltip after it has been added to the field?
+#### س: هل يمكنني إزالة تلميح الأداة أو تعديله بعد إضافته إلى الحقل؟
 
-A: Yes, you can modify or remove the tooltip from a field even after it has been added using Aspose.PDF for .NET. Simply access the field and update its `AlternateName` property with the new tooltip text or set it to an empty string to remove the tooltip.
+ ج: نعم، يمكنك تعديل تلميح الأداة أو إزالته من الحقل حتى بعد إضافته باستخدام Aspose.PDF لـ .NET. ما عليك سوى الوصول إلى الحقل وتحديثه`AlternateName` الخاصية مع نص تلميح الأداة الجديد أو قم بتعيينه على سلسلة فارغة لإزالة تلميح الأداة.

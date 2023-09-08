@@ -1,146 +1,146 @@
 ---
-title: Add PDF Page Stamp In PDF File
-linktitle: Add PDF Page Stamp In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily add a PDF page stamp in PDF file with Aspose.PDF for .NET.
+title: PDF Dosyasına PDF Sayfa Damgası Ekleme
+linktitle: PDF Dosyasına PDF Sayfa Damgası Ekleme
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasına kolayca PDF sayfa damgası eklemeyi öğrenin.
 type: docs
 weight: 40
 url: /tr/net/programming-with-stamps-and-watermarks/add-pdf-page-stamp/
 ---
-In this tutorial, we will take you step by step on how to add a PDF page stamp in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to add a custom stamp to a specific page of the PDF file.
+Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasına PDF sayfa damgasının nasıl ekleneceği konusunda size adım adım yol göstereceğiz. PDF dosyasının belirli bir sayfasına özel damga eklemek için sağlanan C# kaynak kodunu nasıl kullanacağınızı size göstereceğiz.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Kurulu bir .NET geliştirme ortamı.
+- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
 
-## Step 2: Loading the PDF document
+## Adım 2: PDF belgesini yükleme
 
-The first step is to load the existing PDF document into your project. Here's how:
+İlk adım mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "PDFPageStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+"BELGELERİNİZ DİZİNİ"ni, PDF belgenizin bulunduğu dizine giden gerçek yolla değiştirdiğinizden emin olun.
 
-## Step 3: Creating the page buffer
+## 3. Adım: Sayfa arabelleğini oluşturma
 
-Now that you have uploaded the PDF document, you can create the page stamp to add. Here's how to do it:
+Artık PDF belgesini yüklediğinize göre eklenecek sayfa damgasını oluşturabilirsiniz. Bunu nasıl yapacağınız aşağıda açıklanmıştır:
 
 ```csharp
-// Create the page buffer
+// Sayfa arabelleğini oluşturun
 PdfPageStamp pageStamp = new PdfPageStamp(pdfDocument.Pages[1]);
 ```
 
-The code above creates a new page buffer using the first page of the PDF document.
+Yukarıdaki kod, PDF belgesinin ilk sayfasını kullanarak yeni bir sayfa arabelleği oluşturur.
 
-## Step 4: Configuring Page Buffer Properties
+## Adım 4: Sayfa Arabelleği Özelliklerini Yapılandırma
 
-Before adding the page stamp to the PDF document, you can configure various properties of the stamp, such as background, position, rotation, etc. Here's how:
+Sayfa damgasını PDF belgesine eklemeden önce damganın arka plan, konum, döndürme vb. çeşitli özelliklerini yapılandırabilirsiniz. Bunu şu şekilde yapabilirsiniz:
 
 ```csharp
-// Configure page buffer properties
+// Sayfa arabelleği özelliklerini yapılandırma
 pageStamp. Background = true;
 pageStamp. XIndent = 100;
 pageStamp. YIndent = 100;
 pageStamp.Rotate = Rotate.on180;
 ```
 
-You can adjust these properties according to your needs.
+Bu özellikleri ihtiyaçlarınıza göre ayarlayabilirsiniz.
 
-## Step 5: Adding the page stamp to the PDF
+## 5. Adım: Sayfa damgasını PDF'ye ekleme
 
-Now that the page stamp is ready, you can add it to a specific page of the PDF document. Here's how:
+Artık sayfa damgası hazır olduğuna göre onu PDF belgesinin belirli bir sayfasına ekleyebilirsiniz. İşte nasıl:
 
 ```csharp
-// Add page buffer to specific page
+// Belirli bir sayfaya sayfa arabelleği ekle
 pdfDocument.Pages[1].AddStamp(pageStamp);
 ```
 
-The above code adds the page stamp to the first page of the PDF document. You can specify another page if needed.
+Yukarıdaki kod, sayfa damgasını PDF belgesinin ilk sayfasına ekler. Gerekirse başka bir sayfa belirtebilirsiniz.
 
-## Step 6: Save the output document
+## Adım 6: Çıktı belgesini kaydedin
 
-Once you have added the page stamp, you can save the modified PDF document. Here's how:
+Sayfa damgasını ekledikten sonra değiştirilen PDF belgesini kaydedebilirsiniz. İşte nasıl:
 
 ```csharp
-// Save the output document
+// Çıktı belgesini kaydet
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Add PDFPage Stamp using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak PDFPage Damgası Ekleme için örnek kaynak kodu 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir+ "PDFPageStamp.pdf");
 
-// Create page stamp
+// Sayfa damgası oluştur
 PdfPageStamp pageStamp = new PdfPageStamp(pdfDocument.Pages[1]);
 pageStamp.Background = true;
 pageStamp.XIndent = 100;
 pageStamp.YIndent = 100;
 pageStamp.Rotate = Rotation.on180;
 
-// Add stamp to particular page
+// Belirli bir sayfaya damga ekle
 pdfDocument.Pages[1].AddStamp(pageStamp);
 dataDir = dataDir + "PDFPageStamp_out.pdf";
 
-// Save output document
+// Çıktı belgesini kaydet
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nPdf page stamp added successfully.\nFile saved at " + dataDir);
 
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Yukarıdaki kod, düzenlenen PDF belgesini belirtilen dizine kaydeder.
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have learned how to add a PDF page stamp using Aspose.PDF for .NET. Now you can apply this knowledge to your own projects to add custom stamps to specific pages of your PDF documents.
+Tebrikler! Aspose.PDF for .NET'i kullanarak PDF sayfa damgasını nasıl ekleyeceğinizi öğrendiniz. Artık PDF belgelerinizin belirli sayfalarına özel damgalar eklemek için bu bilgiyi kendi projelerinize uygulayabilirsiniz.
 
-### FAQ's for add PDF page stamp in PDF file
+### PDF dosyasına PDF sayfa damgası eklemek için SSS
 
-#### Q: What is the purpose of adding a PDF page stamp using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak PDF sayfa damgası eklemenin amacı nedir?
 
-A: Adding a PDF page stamp allows you to place a custom stamp on a specific page of a PDF document. This feature is useful for adding watermarks, logos, signatures, or any other visual elements to enhance the document's appearance and convey additional information.
+C: PDF sayfa damgası eklemek, PDF belgesinin belirli bir sayfasına özel damga yerleştirmenize olanak tanır. Bu özellik, belgenin görünümünü geliştirmek ve ek bilgiler iletmek amacıyla filigran, logo, imza veya diğer görsel öğeleri eklemek için kullanışlıdır.
 
-#### Q: Can I add multiple page stamps to different pages of the same PDF document?
+#### S: Aynı PDF belgesinin farklı sayfalarına birden fazla sayfa damgası ekleyebilir miyim?
 
-A: Yes, you can add multiple page stamps to different pages of the same PDF document. The provided C# source code allows you to specify the target page for adding the page stamp, making it versatile for different pages within the document.
+C: Evet, aynı PDF belgesinin farklı sayfalarına birden fazla sayfa damgası ekleyebilirsiniz. Sağlanan C# kaynak kodu, sayfa damgasını eklemek için hedef sayfayı belirtmenize olanak tanıyarak belge içindeki farklı sayfalar için çok yönlü olmasını sağlar.
 
-#### Q: How can I adjust the position and rotation of the page stamp within the PDF document?
+#### S: PDF belgesindeki sayfa damgasının konumunu ve dönüşünü nasıl ayarlayabilirim?
 
-A: You can customize the position and rotation of the page stamp by modifying the properties of the `PdfPageStamp` object. The code provided in the tutorial demonstrates how to set properties such as `XIndent`, `YIndent`, and `Rotate` to control the stamp's positioning and orientation.
+ C: Sayfa damgasının özelliklerini değiştirerek sayfa damgasının konumunu ve dönüşünü özelleştirebilirsiniz.`PdfPageStamp` nesne. Öğreticide sağlanan kod, aşağıdaki gibi özelliklerin nasıl ayarlanacağını gösterir:`XIndent`, `YIndent` , Ve`Rotate` Damganın konumunu ve yönünü kontrol etmek için.
 
-#### Q: Is it possible to have a transparent or semi-transparent background for the page stamp?
+#### S: Sayfa damgası için şeffaf veya yarı şeffaf bir arka plana sahip olmak mümkün müdür?
 
-A: Yes, you can set the `Background` property of the `PdfPageStamp` object to `true` to enable a transparent or semi-transparent background for the page stamp. This can be useful for watermarks or other stamps that should not fully obscure the content.
+ C: Evet, ayarlayabilirsiniz`Background` mülkiyeti`PdfPageStamp` itiraz etmek`true` sayfa damgası için şeffaf veya yarı şeffaf bir arka plan etkinleştirmek için. Bu, içeriği tamamen gizlememesi gereken filigranlar veya diğer damgalar için yararlı olabilir.
 
-#### Q: Can I apply this method to existing PDF documents to add page stamps?
+#### S: Sayfa damgaları eklemek için bu yöntemi mevcut PDF belgelerine uygulayabilir miyim?
 
-A: Absolutely, you can apply this method to existing PDF documents to add page stamps. The tutorial's provided code demonstrates how to load an existing PDF document and add a page stamp to a specific page.
+C: Kesinlikle, sayfa damgaları eklemek için bu yöntemi mevcut PDF belgelerine uygulayabilirsiniz. Eğitimde sağlanan kod, mevcut bir PDF belgesinin nasıl yükleneceğini ve belirli bir sayfaya sayfa damgasının nasıl ekleneceğini gösterir.
 
-#### Q: How do I specify the page to which I want to add a page stamp?
+#### S: Sayfa damgası eklemek istediğim sayfayı nasıl belirlerim?
 
-A: You can specify the target page for adding a page stamp by referencing the desired page using the `pdfDocument.Pages[index]` syntax. The provided C# source code shows how to add a page stamp to the first page using `pdfDocument.Pages[1]`, but you can modify the index to target a different page.
+ C: Sayfa damgasını eklemek için hedef sayfayı, istediğiniz sayfaya referans vererek belirleyebilirsiniz.`pdfDocument.Pages[index]` sözdizimi. Sağlanan C# kaynak kodu, kullanarak ilk sayfaya nasıl sayfa damgası ekleneceğini gösterir.`pdfDocument.Pages[1]`, ancak farklı bir sayfayı hedeflemek için dizini değiştirebilirsiniz.
 
-#### Q: Can I use this method to add stamps other than watermarks, such as logos or signatures?
+#### S: Bu yöntemi filigran dışında logo veya imza gibi damgalar eklemek için kullanabilir miyim?
 
-A: Yes, you can use this method to add various types of stamps, including watermarks, logos, signatures, or any other visual elements. The tutorial's code can be customized to add the desired stamps to your PDF documents.
+C: Evet, filigranlar, logolar, imzalar veya diğer görsel öğeler dahil olmak üzere çeşitli damga türlerini eklemek için bu yöntemi kullanabilirsiniz. Öğreticinin kodu, istenen damgaları PDF belgelerinize eklemek için özelleştirilebilir.
 
-#### Q: Are there any considerations or limitations when adding page stamps to PDF documents?
+#### S: PDF belgelerine sayfa damgaları eklerken dikkat edilmesi gereken noktalar veya sınırlamalar var mı?
 
-A: While adding page stamps is straightforward, consider the overall layout and content of the PDF document. Ensure that the added page stamps do not obstruct critical information or negatively affect the document's readability.
+C: Sayfa damgaları eklemek kolay olsa da, PDF belgesinin genel düzenini ve içeriğini göz önünde bulundurun. Eklenen sayfa damgalarının kritik bilgileri engellemediğinden veya belgenin okunabilirliğini olumsuz etkilemediğinden emin olun.
 
-#### Q: Can I automate the process of adding page stamps to multiple PDF documents?
+#### S: Birden fazla PDF belgesine sayfa damgası ekleme işlemini otomatikleştirebilir miyim?
 
-A: Yes, you can automate the process of adding page stamps to multiple PDF documents by creating a script or program that iterates through a list of documents and applies the same page stamping process to each one.
+C: Evet, bir belge listesi üzerinde yinelenen ve her birine aynı sayfa damgalama işlemini uygulayan bir komut dosyası veya program oluşturarak birden fazla PDF belgesine sayfa damgası ekleme işlemini otomatikleştirebilirsiniz.

@@ -1,69 +1,69 @@
 ---
-title: Unembed Fonts And Optimize PDF Files
-linktitle: Unembed Fonts And Optimize PDF Files
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to get Unembed Fonts and optimize PDF files. A step-by-step guide.
+title: Gömülü Yazı Tiplerini Çıkarın ve PDF Dosyalarını Optimize Edin
+linktitle: Gömülü Yazı Tiplerini Çıkarın ve PDF Dosyalarını Optimize Edin
+second_title: .NET API Referansı için Aspose.PDF
+description: Gömülü Fontları Çıkarmak ve PDF dosyalarını optimize etmek için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin. Adım adım bir kılavuz.
 type: docs
 weight: 370
 url: /tr/net/programming-with-document/unembedfonts/
 ---
-Aspose.PDF for .NET is a powerful library that provides a wide range of features to work with PDF documents. One of its features is to get unembed fonts from a PDF document. This can be useful if you need to extract fonts from a PDF document and use them in other applications.
+Aspose.PDF for .NET, PDF belgeleriyle çalışmak için çok çeşitli özellikler sunan güçlü bir kütüphanedir. Özelliklerinden biri, bir PDF belgesinden gömülü olmayan yazı tiplerini almaktır. Bir PDF belgesinden yazı tiplerini çıkarmanız ve bunları başka uygulamalarda kullanmanız gerekiyorsa bu yararlı olabilir.
 
-we will provide a step-by-step guide to explain the following C# source code of get unembed fonts feature of Aspose.PDF for .NET.
+Aspose.PDF for .NET'in gömülü yazı tiplerini alma özelliğinin aşağıdaki C# kaynak kodunu açıklamak için adım adım bir kılavuz sunacağız.
 
-## Step 1: Set the path to the document directory
+## 1. Adım: Belge dizininin yolunu ayarlayın
 
-Before we start, we need to set the path to the directory where our PDF document is located. We will store this path in a variable called "dataDir".
+Başlamadan önce PDF belgemizin bulunduğu dizinin yolunu ayarlamamız gerekiyor. Bu yolu "dataDir" adlı bir değişkende saklayacağız.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual path to the directory where your PDF document is located.
+"BELGE DİZİNİNİZ" ifadesini, PDF belgenizin bulunduğu dizine giden gerçek yolla değiştirin.
 
-## Step 2: Open the PDF Document
+## Adım 2: PDF Belgesini açın
 
-The first step is to load the PDF document that you want to do this, use the `Document` class of Aspose.PDF for .NET. The following code snippet shows how to load the PDF document:
+ İlk adım, bunu yapmak istediğiniz PDF belgesini yüklemek,`Document` .NET için Aspose.PDF sınıfı. Aşağıdaki kod parçacığı PDF belgesinin nasıl yükleneceğini gösterir:
 
 ```csharp
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Step3: Set the UnembedFonts Option
+## 3. Adım: UnembedFonts Seçeneğini Ayarlayın
 
-To get unembed fonts from the PDF document, you need to set the `UnembedFonts` option to `true`. This option is available in the `OptimizationOptions` class. The following code snippet shows how to set the `UnembedFonts` option:
+ PDF belgesinden gömülü olmayan yazı tiplerini almak için,`UnembedFonts` seçeneği`true` . Bu seçenek şu adreste mevcuttur:`OptimizationOptions` sınıf. Aşağıdaki kod parçacığı, ayarın nasıl ayarlanacağını gösterir.`UnembedFonts` seçenek:
 
 ```csharp
-// Set UnembedFonts option 
+// UnembedFonts seçeneğini ayarla
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
 	UnembedFonts = true
 };
 ```
 
-## Step 4: Optimize the PDF Document
+## Adım 4: PDF Belgesini Optimize Edin
 
-After setting the `UnembedFonts` option, you can optimize the PDF document using the `OptimizeResources` method of the `Document` class. The following code snippet shows how to optimize the PDF document:
+ Ayarladıktan sonra`UnembedFonts` seçeneğini kullanarak PDF belgesini optimize edebilirsiniz.`OptimizeResources` yöntemi`Document` sınıf. Aşağıdaki kod parçacığı, PDF belgesinin nasıl optimize edileceğini gösterir:
 
 ```csharp
-// Optimize PDF document using OptimizationOptions
+// OptimizationOptions'ı kullanarak PDF belgesini optimize edin
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-## Step 5: Save the Updated Document
+## Adım 5: Güncellenen Belgeyi Kaydedin
 
-Once the PDF document is optimized, you can save the updated document using the `Save` method of the `Document` class. The following code snippet shows how to save the updated document:
+ PDF belgesi optimize edildikten sonra, güncellenen belgeyi kullanarak kaydedebilirsiniz.`Save` yöntemi`Document`sınıf. Aşağıdaki kod parçacığı güncellenen belgenin nasıl kaydedileceğini gösterir:
 
 ```csharp
-// Save updated document
+// Güncellenen belgeyi kaydet
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 ```
 
-## Step 6: Get the Original and Reduced File Size
+## Adım 6: Orijinali ve Küçültülmüş Dosya Boyutunu Alın
 
-Finally, you can get the original and reduced file size of the PDF document using the `FileInfo` class of System.IO. The following code snippet shows how to get the original and reduced file size:
+ Son olarak, PDF belgesinin orijinal ve küçültülmüş dosya boyutunu aşağıdakileri kullanarak alabilirsiniz:`FileInfo` System.IO sınıfı. Aşağıdaki kod parçacığı, orijinal ve küçültülmüş dosya boyutunun nasıl elde edileceğini gösterir:
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
@@ -71,24 +71,24 @@ var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```
 
-### Example Source Code for Get Unembed Fonts using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Gömülü Fontları Almak için Örnek Kaynak Kodu
 
-Here is the complete example source code for getting unembed fonts from a PDF document using Aspose.PDF for .NET:
+Aspose.PDF for .NET kullanarak bir PDF belgesinden gömülmemiş yazı tiplerini almak için tam örnek kaynak kodunu burada bulabilirsiniz:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Set UnembedFonts  option 
+// UnembedFonts seçeneğini ayarla
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
 	UnembedFonts = true
 };
 Console.WriteLine("Start");
-// Optimize PDF document using OptimizationOptions
+// OptimizationOptions'ı kullanarak PDF belgesini optimize edin
 pdfDocument.OptimizeResources(optimizeOptions);
-// Save updated document
+// Güncellenen belgeyi kaydet
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Finished");
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
@@ -96,23 +96,23 @@ var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we demonstrated how to use Aspose.PDF for .NET to get unembed fonts from a PDF document. By following the step-by-step guide, you can easily implement this feature in your C# applications. Unembedding fonts can be advantageous when you need to work with the extracted fonts separately or ensure consistent font usage across various platforms.
+Bu eğitimde, bir PDF belgesinden gömülü olmayan fontları almak için Aspose.PDF for .NET'in nasıl kullanılacağını gösterdik. Adım adım kılavuzu takip ederek bu özelliği C# uygulamalarınızda kolaylıkla uygulayabilirsiniz. Ayıklanan fontlarla ayrı ayrı çalışmanız veya çeşitli platformlarda tutarlı font kullanımı sağlamanız gerektiğinde, fontları gömmemek avantajlı olabilir.
 
-## FAQ's
+## SSS'ler
 
-#### Q: What is the purpose of unembedding fonts from a PDF document?
+#### S: Fontları bir PDF belgesinden çıkarmanın amacı nedir?
 
-A: Unembedding fonts from a PDF document allows you to extract the embedded fonts and use them in other applications. This can be useful for ensuring consistent font rendering and preserving the document's visual appearance.
+C: Fontları bir PDF belgesinden çıkarmak, gömülü fontları çıkarmanıza ve bunları diğer uygulamalarda kullanmanıza olanak tanır. Bu, tutarlı yazı tipi oluşturma ve belgenin görsel görünümünü koruma açısından yararlı olabilir.
 
-#### Q: How do I specify the path to the document directory in the C# code?
+#### S: C# kodundaki belge dizininin yolunu nasıl belirlerim?
 
-A: To specify the path to the document directory, replace `"YOUR DOCUMENT DIRECTORY"` in the code with the actual path to the directory where your PDF document is located.
+ C: Belge dizininin yolunu belirtmek için değiştirin`"YOUR DOCUMENT DIRECTORY"` PDF belgenizin bulunduğu dizinin gerçek yolunu içeren kodda.
 
-#### Q: What does the `UnembedFonts` option do, and where is it set?
+####  S: Ne işe yarar?`UnembedFonts` option do, and where is it set?
 
-A: The `UnembedFonts` option, available in the `OptimizationOptions` class, enables or disables the unembedding of fonts from the PDF document. To set this option to `true`, use the following code:
+ C:`UnembedFonts` seçeneği mevcuttur`OptimizationOptions` class, yazı tiplerinin PDF belgesinden çıkarılmasını etkinleştirir veya devre dışı bırakır. Bu seçeneği ayarlamak için`true`, aşağıdaki kodu kullanın:
 
 ```csharp
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
@@ -121,13 +121,13 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 };
 ```
 
-#### Q: Can I revert the changes made during the optimization process?
+#### S: Optimizasyon işlemi sırasında yapılan değişiklikleri geri alabilir miyim?
 
-A: Aspose.PDF for .NET does not make permanent changes to the original PDF document during optimization. The optimization process is performed on a copy of the document, leaving the original intact.
+C: Aspose.PDF for .NET, optimizasyon sırasında orijinal PDF belgesinde kalıcı değişiklikler yapmaz. Optimizasyon işlemi, orijinali olduğu gibi bırakarak belgenin bir kopyası üzerinde gerçekleştirilir.
 
-#### Q: How can I check the original and reduced file size after optimization?
+#### S: Optimizasyondan sonra orijinal ve küçültülmüş dosya boyutunu nasıl kontrol edebilirim?
 
-A: You can use the `FileInfo` class of `System.IO` to get the original and reduced file size. Here's an example code snippet to achieve this:
+C: Kullanabilirsiniz`FileInfo` sınıfı`System.IO` orijinal ve küçültülmüş dosya boyutunu elde etmek için. Bunu başarmak için örnek bir kod pasajını burada bulabilirsiniz:
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");

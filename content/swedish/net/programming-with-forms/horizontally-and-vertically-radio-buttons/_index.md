@@ -1,96 +1,96 @@
 ---
-title: Horizontally And Vertically Radio Buttons
-linktitle: Horizontally And Vertically Radio Buttons
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create horizontal and vertical radio buttons in your PDF documents with Aspose.PDF for .NET.
+title: Horisontellt Och Vertikalt Radioknappar
+linktitle: Horisontellt Och Vertikalt Radioknappar
+second_title: Aspose.PDF för .NET API Referens
+description: Skapa enkelt horisontella och vertikala alternativknappar i dina PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 180
 url: /sv/net/programming-with-forms/horizontally-and-vertically-radio-buttons/
 ---
-In this tutorial, we will show you how to create horizontally and vertically arranged radio buttons in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+I den här handledningen kommer vi att visa dig hur du skapar horisontellt och vertikalt arrangerade radioknappar i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara C#-källkoden steg för steg för att guida dig genom denna process.
 
-## Step 1: Preparation
+## Steg 1: Förberedelser
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Se till att du har importerat de nödvändiga biblioteken och ange sökvägen till din dokumentkatalog:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the document
+## Steg 2: Ladda dokumentet
 
-Load the existing PDF document:
+Ladda det befintliga PDF-dokumentet:
 
 ```csharp
 FormEditor formEditor = new FormEditor();
 formEditor.BindPdf(dataDir + "input.pdf");
 ```
 
-## Step 3: Customize radio button options
+## Steg 3: Anpassa alternativ för alternativknappar
 
-Customize radio button options by setting the following properties:
+Anpassa alternativknappsalternativ genom att ställa in följande egenskaper:
 
 ```csharp
-formEditor. RadioGap = 4; // Distance between two radio button options
-formEditor. RadioHoriz = true; // Horizontal layout of radio buttons
-formEditor.RadioButtonItemSize = 20; // Size of radio buttons
-formEditor.Facade.BorderWidth = 1; // Width of radio button border
-formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Radio button border color
+formEditor. RadioGap = 4; // Avstånd mellan två alternativ för alternativknappar
+formEditor. RadioHoriz = true; //Horisontell layout av radioknappar
+formEditor.RadioButtonItemSize = 20; // Storlek på radioknappar
+formEditor.Facade.BorderWidth = 1; // Bredd på radioknappskant
+formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Radioknapp kantfärg
 ```
 
-## Step 4: Add Horizontal Radio Buttons
+## Steg 4: Lägg till horisontella radioknappar
 
-Add radio buttons arranged horizontally by specifying the options and position of the field:
+Lägg till radioknappar ordnade horisontellt genom att ange alternativen och positionen för fältet:
 
 ```csharp
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
 ```
 
-## Step 5: Add vertical radio buttons
+## Steg 5: Lägg till vertikala radioknappar
 
-Add radio buttons arranged vertically by specifying the options and position of the field:
+Lägg till alternativknappar anordnade vertikalt genom att ange alternativen och positionen för fältet:
 
 ```csharp
-formEditor. RadioHoriz = false; // Vertical layout of radio buttons
+formEditor. RadioHoriz = false; // Vertikal layout av radioknappar
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
 ```
 
-## Step 6: Save the document
+## Steg 6: Spara dokumentet
 
-Save the modified PDF document:
+Spara det ändrade PDF-dokumentet:
 
 ```csharp
 dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
 ```
 
-### Sample source code for Horizontally And Vertically Radio Buttons using Aspose.PDF for .NET 
+### Exempel på källkod för radioknappar horisontellt och vertikalt med Aspose.PDF för .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Sökvägen till dokumentkatalogen.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the previously saved document
+	// Ladda det tidigare sparade dokumentet
 	FormEditor formEditor = new FormEditor();
 	formEditor.BindPdf(dataDir + "input.pdf");
-	// RadioGap is distance between two radio button options. 
+	// RadioGap är avståndet mellan två alternativ för alternativknappar.
 	formEditor.RadioGap = 4;
-	// Add horizontal radio button
+	// Lägg till horisontell alternativknapp
 	formEditor.RadioHoriz = true;
-	// RadioButtonItemSize if size of radio button item.
+	// RadioButtonItemSize om storleken på alternativknappsobjektet.
 	formEditor.RadioButtonItemSize = 20;
 	formEditor.Facade.BorderWidth = 1;
 	formEditor.Facade.BorderColor = System.Drawing.Color.Black;
 	formEditor.Items = new string[] { "First", "Second", "Third" };
 	formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
-	// Add other radio button situated vertically
+	// Lägg till annan alternativknapp som är placerad vertikalt
 	formEditor.RadioHoriz = false;
 	formEditor.Items = new string[] { "First", "Second", "Third" };
 	formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
 	dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
-	// Save the PDF document
+	// Spara PDF-dokumentet
 	formEditor.Save(dataDir);
 	Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
 }
@@ -100,28 +100,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we learned how to create horizontally and vertically arranged radio buttons in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily customize the layout of radio buttons and add them to your PDF documents using Aspose.PDF.
+den här handledningen lärde vi oss hur man skapar horisontellt och vertikalt arrangerade radioknappar i ett PDF-dokument med Aspose.PDF för .NET. Genom att följa dessa steg kan du enkelt anpassa layouten för alternativknappar och lägga till dem i dina PDF-dokument med Aspose.PDF.
 
 ### FAQ's
 
-#### Q: What are horizontally and vertically arranged radio buttons in a PDF document?
+#### F: Vad är horisontellt och vertikalt arrangerade alternativknappar i ett PDF-dokument?
 
-A: Horizontally and vertically arranged radio buttons in a PDF document refer to the layout orientation of radio button options. Horizontal layout places the radio button options side by side, allowing users to make a selection from left to right. Vertical layout, on the other hand, stacks the radio button options on top of each other, enabling users to make a selection from top to bottom.
+S: Horisontellt och vertikalt arrangerade alternativknappar i ett PDF-dokument hänvisar till layoutorienteringen för alternativknappsalternativ. Horisontell layout placerar alternativknapparna sida vid sida, så att användarna kan välja från vänster till höger. Vertikal layout, å andra sidan, staplar alternativen för alternativknappar ovanpå varandra, vilket gör det möjligt för användare att göra ett urval uppifrån och ner.
 
-#### Q: How do I customize the appearance of radio button options in Aspose.PDF for .NET?
+#### F: Hur anpassar jag utseendet på alternativknappsalternativ i Aspose.PDF för .NET?
 
-A: You can customize the appearance of radio button options in Aspose.PDF for .NET by adjusting several properties. The API provides options to set the distance between two radio button options (`RadioGap`), the layout orientation (`RadioHoriz`), the size of radio button items (`RadioButtonItemSize`), the border width and color of radio buttons, and more.
+S: Du kan anpassa utseendet på alternativknapparna i Aspose.PDF för .NET genom att justera flera egenskaper. API ger alternativ för att ställa in avståndet mellan två alternativknappsalternativ (`RadioGap`), layoutens orientering (`RadioHoriz`), storleken på alternativknappsobjekt (`RadioButtonItemSize`), kantbredden och färgen på alternativknappar med mera.
 
-#### Q: Can I add both horizontal and vertical radio buttons to the same PDF document?
+#### F: Kan jag lägga till både horisontella och vertikala alternativknappar i samma PDF-dokument?
 
-A: Yes, you can add both horizontal and vertical radio buttons to the same PDF document using Aspose.PDF for .NET. The sample source code provided in the tutorial demonstrates how to first add radio buttons arranged horizontally and then add another set of radio buttons arranged vertically to the same PDF document.
+S: Ja, du kan lägga till både horisontella och vertikala alternativknappar till samma PDF-dokument med Aspose.PDF för .NET. Exempelkällkoden som tillhandahålls i handledningen visar hur man först lägger till radioknappar anordnade horisontellt och sedan lägger till ytterligare en uppsättning alternativknappar arrangerade vertikalt i samma PDF-dokument.
 
-#### Q: Can I set different radio button options for each group of radio buttons?
+#### F: Kan jag ställa in olika alternativ för alternativknappar för varje grupp av alternativknappar?
 
-A: Yes, you can set different radio button options for each group of radio buttons. Each group should have a unique `RadioButtonField` object, and the `RadioButtonOptionField` objects within each group should share the same page and unique names for their options. This ensures that the radio buttons within each group function correctly, and the selections are mutually exclusive.
+ S: Ja, du kan ställa in olika alternativ för alternativknappar för varje grupp av alternativknappar. Varje grupp ska ha en unik`RadioButtonField` objekt och`RadioButtonOptionField` objekt inom varje grupp ska dela samma sida och unika namn för sina alternativ. Detta säkerställer att radioknapparna inom varje grupp fungerar korrekt och att valen utesluter varandra.
 
-#### Q: Are the layout and appearance settings of radio buttons supported in all PDF viewers and applications?
+#### F: Stöds layout- och utseendeinställningarna för alternativknappar i alla PDF-läsare och applikationer?
 
-A: Yes, the layout and appearance settings of radio buttons are supported in all standard-compliant PDF viewers and applications. The PDF specification defines radio buttons and their various attributes, making them universally recognized in the PDF format. However, it's essential to test the appearance and behavior of radio buttons in different PDF viewers to ensure consistent rendering across various platforms.
+S: Ja, layout- och utseendeinställningarna för alternativknappar stöds i alla standardkompatibla PDF-läsare och applikationer. PDF-specifikationen definierar alternativknappar och deras olika attribut, vilket gör dem allmänt igenkända i PDF-formatet. Det är dock viktigt att testa utseendet och beteendet hos alternativknappar i olika PDF-visare för att säkerställa konsekvent rendering på olika plattformar.

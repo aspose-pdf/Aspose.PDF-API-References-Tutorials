@@ -1,102 +1,102 @@
 ---
-title: Search Text With Dot Net Regex
-linktitle: Search Text With Dot Net Regex
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to search for text using .NET regular expressions in a PDF document using Aspose.PDF for .NET.
+title: Dot Net Regex ile Metin Arama
+linktitle: Dot Net Regex ile Metin Arama
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak bir PDF belgesinde .NET normal ifadelerini kullanarak nasıl metin arayacağınızı öğrenin.
 type: docs
 weight: 480
 url: /tr/net/programming-with-text/search-text-with-dot-net-regex/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to search for text using .NET regular expressions in a PDF document. The provided C# source code demonstrates the process step by step.
+Bu eğitimde, bir PDF belgesinde .NET normal ifadelerini kullanarak metin aramak için Aspose.PDF for .NET'in nasıl kullanılacağı açıklanmaktadır. Sağlanan C# kaynak kodu süreci adım adım gösterir.
 
-## Prerequisites
+## Önkoşullar
 
-Before proceeding with the tutorial, make sure you have the following:
+Eğiticiye devam etmeden önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Temel C# programlama dili bilgisi.
+- Aspose.PDF for .NET kütüphanesi kuruldu. Bunu Aspose web sitesinden edinebilir veya projenize kurmak için NuGet'i kullanabilirsiniz.
 
-## Step 1: Set up the project
+## 1. Adım: Projeyi ayarlayın
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturarak başlayın ve Aspose.PDF for .NET kitaplığına bir referans ekleyin.
 
-## Step 2: Import necessary namespaces
+## 2. Adım: Gerekli ad alanlarını içe aktarın
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Gerekli ad alanlarını içe aktarmak için C# dosyanızın başına aşağıdaki kullanma yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the path to the document directory
+## 3. Adım: Belge dizininin yolunu ayarlayın
 
-Set the path to your document directory using the `dataDir` variable:
+ kullanarak belge dizininizin yolunu ayarlayın.`dataDir` değişken:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
 
-## Step 4: Create a .NET Regex object
+## 4. Adım: .NET Regex nesnesi oluşturun
 
-Create a `.NET Regex` object to define the search pattern:
+ Oluşturmak`.NET Regex` Arama modelini tanımlamak için nesne:
 
 ```csharp
 System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"[\S]+");
 ```
 
-Replace `@"[\S]+"` with your desired regular expression pattern.
+ Yer değiştirmek`@"[\S]+"` İstediğiniz düzenli ifade modeliyle.
 
-## Step 5: Load the PDF document
+## 5. Adım: PDF belgesini yükleyin
 
-Load the PDF document using the `Document` class:
+ PDF belgesini kullanarak yükleyin`Document` sınıf:
 
 ```csharp
 Aspose.Pdf.Document document = new Aspose.Pdf.Document(dataDir + "SearchTextRegex.pdf");
 ```
 
-Replace `"SearchTextRegex.pdf"` with the actual name of your PDF file.
+ Yer değiştirmek`"SearchTextRegex.pdf"` PDF dosyanızın gerçek adıyla.
 
-## Step 6: Get a specific page
+## 6. Adım: Belirli bir sayfayı edinin
 
-Get the desired page of the document:
+Belgenin istediğiniz sayfasını alın:
 
 ```csharp
 Page page = document.Pages[1];
 ```
 
-Replace `1` with the desired page number (1-based index).
+ Yer değiştirmek`1` İstenilen sayfa numarasıyla (1 tabanlı dizin).
 
-## Step 7: Create a TextFragmentAbsorber
+## Adım 7: TextFragmentAbsorber oluşturun
 
-Create a `TextFragmentAbsorber` object to find all instances of the input regular expression:
+ Oluşturmak`TextFragmentAbsorber` giriş normal ifadesinin tüm örneklerini bulmak için nesne:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(regex);
 textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
 ```
 
-## Step 8: Accept the absorber for the page
+## 8. Adım: Sayfanın emicisini kabul edin
 
-Accept the absorber for the page:
+Sayfa için emiciyi kabul edin:
 
 ```csharp
 page.Accept(textFragmentAbsorber);
 ```
 
-## Step 9: Retrieve the extracted text fragments
+## 9. Adım: Çıkarılan metin parçalarını alın
 
-Get the extracted text fragments using the `TextFragments` property of the `TextFragmentAbsorber` object:
+Çıkarılan metin parçalarını kullanarak alın`TextFragments` mülkiyeti`TextFragmentAbsorber` nesne:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 ```
 
-## Step 10: Loop through the text fragments
+## Adım 10: Metin parçaları arasında dolaşın
 
-Loop through the retrieved text fragments and perform desired actions:
+Alınan metin parçaları arasında dolaşın ve istediğiniz eylemleri gerçekleştirin:
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentCollection)
@@ -105,69 +105,69 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-Modify the code within the loop to perform further actions on each text fragment if needed.
+Gerekirse her metin parçası üzerinde daha fazla eylem gerçekleştirmek için döngü içindeki kodu değiştirin.
 
-### Sample source code for Search Text With Dot Net Regex using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Dot Net Regex ile Metin Arama için örnek kaynak kodu 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Regex object to find all words
+// Tüm kelimeleri bulmak için Regex nesnesi oluşturun
 System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"[\S]+");
-// Open document
+// Belgeyi aç
 Aspose.Pdf.Document document = new Aspose.Pdf.Document(dataDir + "SearchTextRegex.pdf");
-// Get a particular page
+// Belirli bir sayfayı edinin
 Page page = document.Pages[1];
-// Create TextAbsorber object to find all instances of the input regex
+// Giriş normal ifadesinin tüm örneklerini bulmak için TextAbsorber nesnesi oluşturun
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(regex);
 textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
-// Accept the absorber for the page
+// Sayfanın emicisini kabul edin
 page.Accept(textFragmentAbsorber);
-// Get the extracted text fragments
+// Çıkarılan metin parçalarını alın
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Loop through the fragments
+// Parçalar arasında döngü yapın
 foreach (TextFragment textFragment in textFragmentCollection)
 {
 	Console.WriteLine(textFragment.Text);
 }
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulations! You have successfully learned how to search for text using .NET regular expressions in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to accessing the extracted text fragments. You can now incorporate this code into your own C# projects to perform advanced text searches in PDF files.
+Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF belgesinde .NET normal ifadelerini kullanarak nasıl metin arayacağınızı başarıyla öğrendiniz. Bu eğitimde, projenin kurulumundan çıkarılan metin parçalarına erişmeye kadar adım adım bir kılavuz sağlanmıştır. Artık PDF dosyalarında gelişmiş metin aramaları gerçekleştirmek için bu kodu kendi C# projelerinize dahil edebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of the "Search Text With Dot Net Regex" tutorial?
+#### S: "Dot Net Regex ile Metin Arama" öğreticisinin amacı nedir?
 
-A: The "Search Text With Dot Net Regex" tutorial aims to guide users on using the Aspose.PDF library for .NET to search for text within a PDF document using .NET regular expressions. The tutorial provides step-by-step instructions and C# code samples to demonstrate the process.
+C: "Dot Net Regex ile Metin Arama" eğitimi, kullanıcılara, .NET normal ifadelerini kullanarak bir PDF belgesi içinde metin aramak için .NET için Aspose.PDF kütüphanesini kullanma konusunda rehberlik etmeyi amaçlamaktadır. Öğretici, süreci göstermek için adım adım talimatlar ve C# kod örnekleri sağlar.
 
-#### Q: How does this tutorial help in searching for text using .NET regular expressions in a PDF?
+#### S: Bu eğitim, PDF'de .NET normal ifadeleri kullanarak metin aramaya nasıl yardımcı olur?
 
-A: This tutorial helps users understand how to leverage the capabilities of Aspose.PDF for .NET to search for text using .NET regular expressions within a PDF document. By following the provided steps and code examples, users can effectively search for text patterns that match their specified regular expressions.
+C: Bu eğitim, kullanıcıların Aspose.PDF for .NET'in bir PDF belgesinde .NET normal ifadelerini kullanarak metin arama yeteneklerinden nasıl yararlanabileceklerini anlamalarına yardımcı olur. Sağlanan adımları ve kod örneklerini takip ederek kullanıcılar, belirledikleri normal ifadelerle eşleşen metin kalıplarını etkili bir şekilde arayabilir.
 
-#### Q: What prerequisites are required to follow this tutorial?
+#### S: Bu öğreticiyi takip etmek için hangi ön koşullar gereklidir?
 
-A: Before starting the tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or install it in your project using NuGet.
+C: Eğitime başlamadan önce C# programlama dili hakkında temel bilgiye sahip olmanız gerekir. Ayrıca Aspose.PDF for .NET kütüphanesinin de kurulu olması gerekir. Bunu Aspose web sitesinden edinebilir veya NuGet'i kullanarak projenize yükleyebilirsiniz.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### S: Projemi bu öğreticiyi takip edecek şekilde nasıl ayarlayabilirim?
 
-A: To begin, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This will enable you to utilize the library's features for searching and working with PDF documents.
+C: Başlamak için tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturun ve Aspose.PDF for .NET kütüphanesine bir referans ekleyin. Bu, kitaplığın PDF belgelerini arama ve bunlarla çalışma özelliklerini kullanmanızı sağlayacaktır.
 
-#### Q: Can I use this tutorial to search for any specific type of text using .NET regular expressions?
+#### S: Bu öğreticiyi, .NET normal ifadelerini kullanarak herhangi bir belirli metin türünü aramak için kullanabilir miyim?
 
-A: Yes, this tutorial provides instructions on how to search for text using .NET regular expressions within a PDF document. You can customize the `.NET Regex` object to define the specific search pattern you want to use.
+ C: Evet, bu eğitimde bir PDF belgesinde .NET normal ifadeleri kullanılarak nasıl metin aranacağıyla ilgili talimatlar verilmektedir. özelleştirebilirsiniz`.NET Regex` Kullanmak istediğiniz belirli arama modelini tanımlamak için nesneyi seçin.
 
-#### Q: How do I specify the .NET regular expression pattern to search for in this tutorial?
+#### S: Bu öğreticide aranacak .NET normal ifade modelini nasıl belirleyebilirim?
 
-A: To specify the .NET regular expression pattern you want to search for, create a `.NET Regex` object and set its pattern using the appropriate regular expression syntax. Replace the default `@"[\S]+"` in the tutorial's code with your desired regular expression.
+ C: Aramak istediğiniz .NET normal ifade modelini belirtmek için bir`.NET Regex` nesneyi oluşturun ve uygun normal ifade sözdizimini kullanarak desenini ayarlayın. Varsayılanı değiştir`@"[\S]+"` öğreticinin kodunda istediğiniz normal ifadeyi kullanın.
 
-#### Q: How do I retrieve the properties of the extracted text fragments?
+#### S: Çıkarılan metin parçalarının özelliklerini nasıl alabilirim?
 
-A: After accepting the `TextFragmentAbsorber` for a specific page of the PDF, you can retrieve the extracted text fragments using the `TextFragments` property of the absorber object. This provides access to a collection of text fragments that match the specified .NET regular expression.
+ C: Kabul ettikten sonra`TextFragmentAbsorber` PDF'nin belirli bir sayfası için, çıkartılan metin parçalarını`TextFragments` soğurucu nesnenin özelliği. Bu, belirtilen .NET normal ifadesiyle eşleşen metin parçaları koleksiyonuna erişim sağlar.
 
-#### Q: Can I customize the code to perform additional actions on each extracted text fragment?
+#### S: Çıkarılan her metin parçasında ek eylemler gerçekleştirmek için kodu özelleştirebilir miyim?
 
-A: Certainly. The tutorial's sample code includes a loop to iterate through the retrieved text fragments. You can customize the code within this loop to perform additional actions on each extracted text fragment based on your project requirements.
+C: Kesinlikle. Öğreticinin örnek kodu, alınan metin parçaları arasında yineleme yapmak için bir döngü içerir. Proje gereksinimlerinize göre çıkarılan her metin parçası üzerinde ek eylemler gerçekleştirmek için bu döngü içindeki kodu özelleştirebilirsiniz.
 
-#### Q: How do I save the modified PDF document after extracting text fragments?
+#### S: Metin parçalarını çıkardıktan sonra değiştirilen PDF belgesini nasıl kaydedebilirim?
 
-A: This tutorial primarily focuses on searching for text using .NET regular expressions and retrieving text fragments. If you intend to make modifications to the PDF, you can refer to other Aspose.PDF documentation to learn how to manipulate and save the document based on your specific needs.
+C: Bu eğitim öncelikle .NET normal ifadelerini kullanarak metin aramaya ve metin parçalarını almaya odaklanıyor. PDF'de değişiklik yapmayı düşünüyorsanız, belgeyi özel ihtiyaçlarınıza göre nasıl değiştireceğinizi ve kaydedeceğinizi öğrenmek için diğer Aspose.PDF belgelerine başvurabilirsiniz.

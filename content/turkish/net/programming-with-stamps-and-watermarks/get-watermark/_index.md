@@ -1,59 +1,59 @@
 ---
-title: Get Watermark From PDF File
-linktitle: Get Watermark From PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract watermarks from PDF file with Aspose.PDF for .NET.
+title: PDF Dosyasından Filigran Al
+linktitle: PDF Dosyasından Filigran Al
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasından filigranları nasıl çıkaracağınızı öğrenin.
 type: docs
 weight: 100
 url: /tr/net/programming-with-stamps-and-watermarks/get-watermark/
 ---
-In this tutorial, we will take you step by step on how to get a watermark from PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to iterate through the artifacts of a specific page and get the watermark type, text, and location.
+Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasından nasıl filigran alacağınızı adım adım anlatacağız. Belirli bir sayfanın yapıları arasında yineleme yapmak ve filigran türünü, metnini ve konumunu elde etmek için sağlanan C# kaynak kodunu nasıl kullanacağınızı size göstereceğiz.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Kurulu bir .NET geliştirme ortamı.
+- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
 
-## Step 2: Loading the PDF document
+## Adım 2: PDF belgesini yükleme
 
-The first step is to load the existing PDF document into your project. Here's how:
+İlk adım mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the PDF document
+//PDF belgesini açın
 Document pdfDocument = new Document(dataDir + "watermark.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+"BELGELERİNİZ DİZİNİ"ni, PDF belgenizin bulunduğu dizine giden gerçek yolla değiştirdiğinizden emin olun.
 
-## Step 3: Getting the watermark
+## 3. Adım: Filigranı alma
 
-Now that you have loaded the PDF document, you can iterate through the specific page artifacts to get the watermark information. Here's how:
+Artık PDF belgesini yüklediğinize göre, filigran bilgilerini almak için belirli sayfa yapılarını yineleyebilirsiniz. İşte nasıl:
 
 ```csharp
-// Browse artifacts and get watermark subtype, text and location
+// Yapılara göz atın ve filigran alt türünü, metnini ve konumunu öğrenin
 foreach(Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
      Console.WriteLine(artifact.Subtype + " " + artifact.Text + " " + artifact.Rectangle);
 }
 ```
 
-The above code loops through all artifacts on the first page of the PDF document and displays the subtype, text, and rectangle (location) of each watermark encountered.
+Yukarıdaki kod, PDF belgesinin ilk sayfasındaki tüm yapılar arasında geçiş yapar ve karşılaşılan her filigranın alt türünü, metnini ve dikdörtgenini (konumunu) görüntüler.
 
-### Sample source code for Get Watermark using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Filigran Al için örnek kaynak kodu 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document( dataDir +  "watermark.pdf");
 
-// Iterate through and get tub-type, text and location of artifact
+// Tekrarlayarak küvet tipini, metni ve eserin konumunu elde edin
 foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
 	Console.WriteLine(artifact.Subtype + " " + artifact.Text + " " + artifact.Rectangle);
@@ -61,48 +61,48 @@ foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have learned how to get watermark information from a PDF document using Aspose.PDF for .NET. Now you can use this knowledge to analyze and process watermarks in your PDF documents.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesinden filigran bilgilerinin nasıl alınacağını öğrendiniz. Artık bu bilgiyi PDF belgelerinizdeki filigranları analiz etmek ve işlemek için kullanabilirsiniz.
 
-### FAQ's for get watermark from PDF file
+### PDF dosyasından filigran almak için SSS
 
-#### Q: What is a watermark in a PDF document, and why would I need to extract its information?
+#### S: PDF belgesindeki filigran nedir ve neden bilgilerini çıkarmam gerekiyor?
 
-A: A watermark in a PDF document is a recognizable image or text that is superimposed onto the content of the document, often to indicate its status, ownership, or confidential nature. Extracting watermark information can be useful for analyzing document authenticity, identifying document source, or processing documents based on watermark presence.
+C: PDF belgesindeki filigran, genellikle belgenin durumunu, sahipliğini veya gizli niteliğini belirtmek için belgenin içeriğine eklenen tanınabilir bir görüntü veya metindir. Filigran bilgilerinin çıkarılması, belgenin orijinalliğini analiz etmek, belge kaynağını belirlemek veya belgeleri filigran varlığına göre işlemek için yararlı olabilir.
 
-#### Q: How does the provided C# source code help in extracting watermark information from a PDF file?
+#### S: Sağlanan C# kaynak kodu, filigran bilgilerinin bir PDF dosyasından çıkarılmasına nasıl yardımcı olur?
 
-A: The provided code demonstrates how to load an existing PDF document, iterate through the artifacts of a specific page, and extract information about watermarks. It does this by accessing the `Subtype`, `Text`, and `Rectangle` properties of each artifact.
+ C: Sağlanan kod, mevcut bir PDF belgesinin nasıl yükleneceğini, belirli bir sayfadaki yapıların nasıl yineleneceğini ve filigranlarla ilgili bilgilerin nasıl çıkarılacağını gösterir. Bunu şuraya erişerek yapar:`Subtype`, `Text` , Ve`Rectangle` Her eserin özellikleri.
 
-#### Q: What does the `Subtype` property of an artifact represent?
+####  S: Ne işe yarar?`Subtype` property of an artifact represent?
 
-A: The `Subtype` property of an artifact represents the type of the artifact. For watermarks, it indicates that the artifact is a watermark.
+ C:`Subtype` Bir eserin özelliği, eserin türünü temsil eder. Filigranlar için bu, yapının bir filigran olduğunu belirtir.
 
-#### Q: How does the code determine the location (rectangle) of the watermark on the page?
+#### S: Kod, filigranın sayfadaki konumunu (dikdörtgen) nasıl belirler?
 
-A: The code uses the `Rectangle` property of the artifact to determine the location of the watermark. The `Rectangle` property represents the bounding rectangle of the artifact on the page.
+ C: Kod şunları kullanır:`Rectangle` Filigranın konumunu belirlemek için eserin özelliği.`Rectangle` özelliği, sayfadaki yapının sınırlayıcı dikdörtgenini temsil eder.
 
-#### Q: Can I modify the code to extract additional information about the watermark, such as its appearance or color?
+#### S: Filigranın görünümü veya rengi gibi ek bilgileri almak için kodu değiştirebilir miyim?
 
-A: Yes, you can modify the code to access other properties of the artifact, such as its appearance or color, if such information is available and relevant to your use case.
+C: Evet, eğer bu tür bilgiler mevcutsa ve kullanım durumunuzla alakalıysa, yapının görünümü veya rengi gibi diğer özelliklerine erişmek için kodu değiştirebilirsiniz.
 
-#### Q: Can I extract watermark information from multiple pages of a PDF document using this code?
+#### S: Bu kodu kullanarak bir PDF belgesinin birden fazla sayfasından filigran bilgilerini çıkarabilir miyim?
 
-A: Yes, you can modify the code to iterate through artifacts on multiple pages by changing the page index in the loop to access artifacts from different pages.
+C: Evet, farklı sayfalardaki yapılara erişmek için döngüdeki sayfa dizinini değiştirerek birden fazla sayfadaki yapılar arasında yineleme yapacak şekilde kodu değiştirebilirsiniz.
 
-#### Q: What happens if there are no watermarks on the specified page?
+#### S: Belirtilen sayfada filigran yoksa ne olur?
 
-A: If there are no watermarks on the specified page, the loop will not execute, and no watermark information will be displayed.
+C: Belirtilen sayfada filigran yoksa döngü yürütülmeyecek ve hiçbir filigran bilgisi görüntülenmeyecektir.
 
-#### Q: How can I use the extracted watermark information for further processing?
+#### S: Çıkarılan filigran bilgilerini daha ileri işlemler için nasıl kullanabilirim?
 
-A: The extracted watermark information can be used for various purposes, such as logging, analysis, reporting, or automation of specific actions based on the presence or properties of watermarks.
+C: Çıkarılan filigran bilgileri, günlüğe kaydetme, analiz etme, raporlama veya filigranların varlığına veya özelliklerine bağlı olarak belirli eylemlerin otomasyonu gibi çeşitli amaçlar için kullanılabilir.
 
-#### Q: Can I modify this code to extract information about other types of artifacts in a PDF document?
+#### S: Bir PDF belgesindeki diğer yapı türleri hakkında bilgi çıkarmak için bu kodu değiştirebilir miyim?
 
-A: Yes, you can modify the code to extract information about other types of artifacts by accessing their properties using a similar approach.
+C: Evet, benzer bir yaklaşım kullanarak diğer yapı türleri hakkında bunların özelliklerine erişerek bilgi çıkarmak için kodu değiştirebilirsiniz.
 
-#### Q: How can I access watermarks that are not artifacts but are part of the PDF content?
+#### S: Yapay olmayan ancak PDF içeriğinin parçası olan filigranlara nasıl erişebilirim?
 
-A: Watermarks that are not artifacts may be part of the PDF content itself, such as images or text. To extract information about these types of watermarks, you may need to analyze the PDF content and identify specific elements that represent the watermarks.
+C: Yapay olmayan filigranlar, resimler veya metinler gibi PDF içeriğinin kendisinin bir parçası olabilir. Bu tür filigranlar hakkında bilgi çıkarmak için PDF içeriğini analiz etmeniz ve filigranları temsil eden belirli öğeleri tanımlamanız gerekebilir.

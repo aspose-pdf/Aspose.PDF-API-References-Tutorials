@@ -1,58 +1,58 @@
 ---
-title: Extract Highlighted Text In PDF File
-linktitle: Extract Highlighted Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract highlighted text in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+title: Vurgulanan Metni PDF Dosyasından Çıkart
+linktitle: Vurgulanan Metni PDF Dosyasından Çıkart
+second_title: .NET API Referansı için Aspose.PDF
+description: Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak PDF dosyasındaki vurgulanan metni nasıl çıkaracağınızı öğrenin.
 type: docs
 weight: 60
 url: /tr/net/annotations/extracthighlightedtext/
 ---
-To extract highlighted text in PDF file, you can use the Aspose.PDF for .NET API. This API provides a simple way to retrieve all the text that has been highlighted in a document.
+Vurgulanan metni PDF dosyasından çıkarmak için Aspose.PDF for .NET API'sini kullanabilirsiniz. Bu API, bir belgede vurgulanan tüm metni almanın basit bir yolunu sağlar.
 
-## Step 1: Load the PDF document
+## 1. Adım: PDF belgesini yükleyin
 
-The first step in extracting highlighted text in PDF file is to load the document using the Aspose.PDF for .NET API. You can do this by creating a new instance of the `Document` class and passing the path to the PDF document as a parameter. 
+ PDF dosyasında vurgulanan metni çıkarmanın ilk adımı, belgeyi Aspose.PDF for .NET API'sini kullanarak yüklemektir. Bunu, yeni bir örneğini oluşturarak yapabilirsiniz.`Document` sınıf ve PDF belgesinin yolunu parametre olarak geçirmek. 
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir ="YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 ```
 
-## Step 2: Loop through all annotations
+## 2. Adım: Tüm ek açıklamalar arasında geçiş yapın
 
-The next step is to loop through all the annotations in the PDF document. You can do this using a `foreach` loop, like so:
+ Bir sonraki adım, PDF belgesindeki tüm ek açıklamalar arasında geçiş yapmaktır. Bunu bir kullanarak yapabilirsiniz`foreach` döngü, şöyle:
 
 ```csharp
 foreach (Annotation annotation in doc.Pages[1].Annotations)
 {
-	// Code goes here
+	// Kod buraya gelecek
 }
 ```
 
-## Step 3: Filter text markup annotations
+## 3. Adım: Metin işaretleme ek açıklamalarını filtreleyin
 
-Inside the `foreach` loop, you will need to filter out all the annotations that are not text markup annotations. You can do this by checking if the annotation is an instance of the `TextMarkupAnnotation` class.
+ İçinde`foreach` döngüsünde, metin işaretleme ek açıklamaları olmayan tüm ek açıklamaları filtrelemeniz gerekecektir. Ek açıklamanın bir örneği olup olmadığını kontrol ederek bunu yapabilirsiniz.`TextMarkupAnnotation` sınıf.
 
 ```csharp
 if (annotation is TextMarkupAnnotation)
 {
-	// Code goes here
+	// Kod buraya gelecek
 }
 ```
 
-## Step 4: Retrieve highlighted text fragments
+## 4. Adım: Vurgulanan metin parçalarını alın
 
-Once you have filtered out all the text markup annotations, you can retrieve the highlighted text fragments for each annotation. You can do this by calling the `GetMarkedTextFragments()` method on the `TextMarkupAnnotation` object.
+ Tüm metin işaretleme ek açıklamalarını filtreledikten sonra, her ek açıklama için vurgulanan metin parçalarını alabilirsiniz. Bunu arayarak yapabilirsiniz.`GetMarkedTextFragments()` konusundaki yöntem`TextMarkupAnnotation` nesne.
 
 ```csharp
 TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
 TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
 ```
 
-## Step 5: Display the highlighted text
+## 5. Adım: Vurgulanan metni görüntüleyin
 
-Finally, you can display the highlighted text to the user. You can do this by looping through each `TextFragment` object in the `TextFragmentCollection` and calling the `Text` property.
+ Son olarak, vurgulanan metni kullanıcıya görüntüleyebilirsiniz. Bunu her biri arasında döngü yaparak yapabilirsiniz.`TextFragment` içindeki nesne`TextFragmentCollection` ve arayarak`Text` mülk.
 
 ```csharp
 foreach (TextFragment tf in collection)
@@ -61,10 +61,10 @@ foreach (TextFragment tf in collection)
 }
 ```
 
-### Example source code for Extract Highlighted Text using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Vurgulanan Metni Çıkarma için örnek kaynak kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir ="YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 
@@ -82,28 +82,28 @@ foreach (Annotation annotation in doc.Pages[1].Annotations)
 }
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we explored how to extract highlighted text from a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and using the provided C# source code, developers can easily extract and manage highlighted text in their PDF documents.
+Bu eğitimde, Aspose.PDF for .NET kullanarak vurgulanan metni bir PDF belgesinden nasıl çıkaracağımızı araştırdık. Geliştiriciler, adım adım kılavuzu izleyerek ve sağlanan C# kaynak kodunu kullanarak, PDF belgelerindeki vurgulanan metni kolayca çıkarabilir ve yönetebilir.
 
-### FAQ's for extract highlighted text in PDF file
+### PDF dosyasında vurgulanan metni ayıklamak için SSS
 
-#### Q: What are text markup annotations in a PDF document?
+#### S: PDF belgesindeki metin işaretleme açıklamaları nedir?
 
-A: Text markup annotations are annotations that highlight or mark specific text in a PDF document. Examples of text markup annotations include highlights, underlines, and strikethroughs.
+C: Metin işaretleme ek açıklamaları, bir PDF belgesindeki belirli metni vurgulayan veya işaretleyen ek açıklamalardır. Metin işaretleme ek açıklamalarına örnek olarak vurgulamalar, alt çizgiler ve üstü çizili çizgiler verilebilir.
 
-#### Q: Can I extract text from other types of annotations using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak diğer açıklama türlerinden metin çıkarabilir miyim?
 
-A: Yes, Aspose.PDF for .NET provides various methods to extract text from different types of annotations, including text markup annotations, free text annotations, and more.
+C: Evet, Aspose.PDF for .NET, metin işaretleme ek açıklamaları, serbest metin ek açıklamaları ve daha fazlası dahil olmak üzere farklı türdeki ek açıklamalardan metin çıkarmak için çeşitli yöntemler sunar.
 
-#### Q: Does Aspose.PDF for .NET support extracting text from password-protected PDF files?
+#### S: Aspose.PDF for .NET, parola korumalı PDF dosyalarından metin çıkarmayı destekliyor mu?
 
-A: Yes, Aspose.PDF for .NET supports extracting text from password-protected PDF files. You need to provide the correct password when loading the PDF document using the `Document` class.
+ C: Evet, Aspose.PDF for .NET, parola korumalı PDF dosyalarından metin çıkarmayı destekler. PDF belgesini kullanarak yüklerken doğru şifreyi girmeniz gerekir.`Document` sınıf.
 
-#### Q: Can I filter highlighted text based on other criteria, such as color or author?
+#### S: Vurgulanan metni renk veya yazar gibi diğer ölçütlere göre filtreleyebilir miyim?
 
-A: Yes, you can filter highlighted text based on other criteria, such as color, author, or creation date. Aspose.PDF for .NET provides methods to access and filter annotations based on their properties.
+C: Evet, vurgulanan metni renk, yazar veya oluşturulma tarihi gibi diğer kriterlere göre filtreleyebilirsiniz. Aspose.PDF for .NET, özelliklerine göre açıklamalara erişmek ve bunları filtrelemek için yöntemler sağlar.
 
-#### Q: Is it possible to save the extracted highlighted text to a separate file?
+#### S: Çıkarılan vurgulanan metni ayrı bir dosyaya kaydetmek mümkün mü?
 
-A: Yes, you can save the extracted highlighted text to a separate file or store it in a data structure for further processing or analysis.
+C: Evet, çıkarılan vurgulanan metni ayrı bir dosyaya kaydedebilir veya daha ileri işlemler veya analizler için bir veri yapısında saklayabilirsiniz.

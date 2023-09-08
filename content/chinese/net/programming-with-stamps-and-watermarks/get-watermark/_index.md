@@ -1,59 +1,59 @@
 ---
-title: Get Watermark From PDF File
-linktitle: Get Watermark From PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract watermarks from PDF file with Aspose.PDF for .NET.
+title: 从PDF文件中获取水印
+linktitle: 从PDF文件中获取水印
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 从 PDF 文件中提取水印。
 type: docs
 weight: 100
 url: /zh/net/programming-with-stamps-and-watermarks/get-watermark/
 ---
-In this tutorial, we will take you step by step on how to get a watermark from PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to iterate through the artifacts of a specific page and get the watermark type, text, and location.
+在本教程中，我们将逐步指导您如何使用 Aspose.PDF for .NET 从 PDF 文件中获取水印。我们将向您展示如何使用提供的 C# 源代码迭代特定页面的工件并获取水印类型、文本和位置。
 
-## Step 1: Setting up the environment
+## 第一步：搭建环境
 
-Before you begin, make sure you have the following:
+在开始之前，请确保您具备以下条件：
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- 已安装的 .NET 开发环境。
+- 下载用于 .NET 的 Aspose.PDF 库并在您的项目中引用。
 
-## Step 2: Loading the PDF document
+## 第 2 步：加载 PDF 文档
 
-The first step is to load the existing PDF document into your project. Here's how:
+第一步是将现有的 PDF 文档加载到您的项目中。就是这样：
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the PDF document
+//打开 PDF 文档
 Document pdfDocument = new Document(dataDir + "watermark.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+请务必将“您的文档目录”替换为 PDF 文档所在目录的实际路径。
 
-## Step 3: Getting the watermark
+## 第三步：获取水印
 
-Now that you have loaded the PDF document, you can iterate through the specific page artifacts to get the watermark information. Here's how:
+现在您已经加载了 PDF 文档，您可以迭代特定的页面工件来获取水印信息。就是这样：
 
 ```csharp
-// Browse artifacts and get watermark subtype, text and location
+//浏览工件并获取水印子类型、文本和位置
 foreach(Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
      Console.WriteLine(artifact.Subtype + " " + artifact.Text + " " + artifact.Rectangle);
 }
 ```
 
-The above code loops through all artifacts on the first page of the PDF document and displays the subtype, text, and rectangle (location) of each watermark encountered.
+上面的代码循环遍历 PDF 文档第一页上的所有工件，并显示遇到的每个水印的子类型、文本和矩形（位置）。
 
-### Sample source code for Get Watermark using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 获取水印的示例源代码 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+//打开文档
 Document pdfDocument = new Document( dataDir +  "watermark.pdf");
 
-// Iterate through and get tub-type, text and location of artifact
+//迭代并获取工件的浴缸类型、文本和位置
 foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
 	Console.WriteLine(artifact.Subtype + " " + artifact.Text + " " + artifact.Rectangle);
@@ -61,48 +61,48 @@ foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have learned how to get watermark information from a PDF document using Aspose.PDF for .NET. Now you can use this knowledge to analyze and process watermarks in your PDF documents.
+恭喜！您已经了解了如何使用 Aspose.PDF for .NET 从 PDF 文档中获取水印信息。现在您可以使用这些知识来分析和处理 PDF 文档中的水印。
 
-### FAQ's for get watermark from PDF file
+### 从 PDF 文件中获取水印的常见问题解答
 
-#### Q: What is a watermark in a PDF document, and why would I need to extract its information?
+#### 问：什么是 PDF 文档中的水印？为什么需要提取其信息？
 
-A: A watermark in a PDF document is a recognizable image or text that is superimposed onto the content of the document, often to indicate its status, ownership, or confidential nature. Extracting watermark information can be useful for analyzing document authenticity, identifying document source, or processing documents based on watermark presence.
+答：PDF 文档中的水印是叠加在文档内容上的可识别图像或文本，通常用于指示其状态、所有权或机密性质。提取水印信息可用于分析文档真实性、识别文档来源或根据水印存在来处理文档。
 
-#### Q: How does the provided C# source code help in extracting watermark information from a PDF file?
+#### 问：提供的 C# 源代码如何帮助从 PDF 文件中提取水印信息？
 
-A: The provided code demonstrates how to load an existing PDF document, iterate through the artifacts of a specific page, and extract information about watermarks. It does this by accessing the `Subtype`, `Text`, and `Rectangle` properties of each artifact.
+答：提供的代码演示了如何加载现有 PDF 文档、迭代特定页面的工件以及提取有关水印的信息。它通过访问`Subtype`, `Text`， 和`Rectangle`每个工件的属性。
 
-#### Q: What does the `Subtype` property of an artifact represent?
+#### 问：什么是`Subtype` property of an artifact represent?
 
-A: The `Subtype` property of an artifact represents the type of the artifact. For watermarks, it indicates that the artifact is a watermark.
+答： 的`Subtype`工件的属性表示工件的类型。对于水印，它表明该工件是水印。
 
-#### Q: How does the code determine the location (rectangle) of the watermark on the page?
+#### 问：代码如何确定页面上水印的位置（矩形）？
 
-A: The code uses the `Rectangle` property of the artifact to determine the location of the watermark. The `Rectangle` property represents the bounding rectangle of the artifact on the page.
+答：该代码使用`Rectangle`工件的属性来确定水印的位置。这`Rectangle`属性表示页面上工件的边界矩形。
 
-#### Q: Can I modify the code to extract additional information about the watermark, such as its appearance or color?
+#### 问：我可以修改代码以提取有关水印的其他信息，例如其外观或颜色吗？
 
-A: Yes, you can modify the code to access other properties of the artifact, such as its appearance or color, if such information is available and relevant to your use case.
+答：是的，您可以修改代码以访问工件的其他属性，例如其外观或颜色（如果此类信息可用且与您的用例相关）。
 
-#### Q: Can I extract watermark information from multiple pages of a PDF document using this code?
+#### 问：我可以使用此代码从 PDF 文档的多个页面中提取水印信息吗？
 
-A: Yes, you can modify the code to iterate through artifacts on multiple pages by changing the page index in the loop to access artifacts from different pages.
+答：是的，您可以修改代码以迭代多个页面上的工件，方法是更改循环中的页面索引以访问不同页面的工件。
 
-#### Q: What happens if there are no watermarks on the specified page?
+#### 问：如果指定页面没有水印怎么办？
 
-A: If there are no watermarks on the specified page, the loop will not execute, and no watermark information will be displayed.
+A：如果指定页面没有水印，则不会执行循环，也不显示水印信息。
 
-#### Q: How can I use the extracted watermark information for further processing?
+#### 问：如何使用提取的水印信息进行进一步处理？
 
-A: The extracted watermark information can be used for various purposes, such as logging, analysis, reporting, or automation of specific actions based on the presence or properties of watermarks.
+答：提取的水印信息可用于各种目的，例如记录、分析、报告或根据水印的存在或属性自动执行特定操作。
 
-#### Q: Can I modify this code to extract information about other types of artifacts in a PDF document?
+#### 问：我可以修改此代码以提取有关 PDF 文档中其他类型工件的信息吗？
 
-A: Yes, you can modify the code to extract information about other types of artifacts by accessing their properties using a similar approach.
+答：是的，您可以修改代码，通过使用类似的方法访问其他类型的工件的属性来提取有关其他类型工件的信息。
 
-#### Q: How can I access watermarks that are not artifacts but are part of the PDF content?
+#### 问：如何访问属于 PDF 内容而不是人工制品的水印？
 
-A: Watermarks that are not artifacts may be part of the PDF content itself, such as images or text. To extract information about these types of watermarks, you may need to analyze the PDF content and identify specific elements that represent the watermarks.
+答：非人工制品的水印可能是 PDF 内容本身的一部分，例如图像或文本。要提取有关这些类型的水印的信息，您可能需要分析 PDF 内容并识别代表水印的特定元素。

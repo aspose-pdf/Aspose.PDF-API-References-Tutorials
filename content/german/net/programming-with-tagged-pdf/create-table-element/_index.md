@@ -1,52 +1,52 @@
 ---
-title: Create Table Element
-linktitle: Create Table Element
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to create an array element with Aspose.PDF for .NET. Generate dynamic PDFs with tables easily.
+title: Tabellenelement erstellen
+linktitle: Tabellenelement erstellen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Schritt-für-Schritt-Anleitung zum Erstellen eines Array-Elements mit Aspose.PDF für .NET. Erstellen Sie ganz einfach dynamische PDFs mit Tabellen.
 type: docs
 weight: 80
 url: /de/net/programming-with-tagged-pdf/create-table-element/
 ---
-In this step-by-step guide, we'll walk you through the process of creating an array element using Aspose.PDF for .NET. Aspose.PDF is a powerful library that lets you manipulate PDF documents programmatically. Creating an array element is a common requirement when generating dynamic PDFs, and Aspose.PDF offers an easy and efficient way to accomplish this.
+In dieser Schritt-für-Schritt-Anleitung führen wir Sie durch den Prozess der Erstellung eines Array-Elements mit Aspose.PDF für .NET. Aspose.PDF ist eine leistungsstarke Bibliothek, mit der Sie PDF-Dokumente programmgesteuert bearbeiten können. Das Erstellen eines Array-Elements ist eine häufige Anforderung beim Generieren dynamischer PDFs, und Aspose.PDF bietet eine einfache und effiziente Möglichkeit, dies zu erreichen.
 
-Let's dive into the code and learn how to create an array element using Aspose.PDF for .NET.
+Lassen Sie uns in den Code eintauchen und lernen, wie Sie mit Aspose.PDF für .NET ein Array-Element erstellen.
 
-## Prerequisites
+## Voraussetzungen
 
-Before you begin, make sure you have the following:
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-1. Aspose.PDF library for .NET installed.
-2. A basic knowledge of the C# programming language.
+1. Aspose.PDF-Bibliothek für .NET installiert.
+2. Grundkenntnisse der Programmiersprache C#.
 
-## Step 1: Setting up the environment
+## Schritt 1: Einrichten der Umgebung
 
-To get started, open your C# development environment and create a new project. Make sure you have added a reference to the Aspose.PDF library for .NET in your project.
+Öffnen Sie zunächst Ihre C#-Entwicklungsumgebung und erstellen Sie ein neues Projekt. Stellen Sie sicher, dass Sie in Ihrem Projekt einen Verweis auf die Aspose.PDF-Bibliothek für .NET hinzugefügt haben.
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating the document
+## Schritt 2: Erstellen des Dokuments
 
-The first step is to create a new PDF document using the `Document` class.
+ Der erste Schritt besteht darin, ein neues PDF-Dokument mit zu erstellen`Document` Klasse.
 
 ```csharp
-// Create the document
+// Erstellen Sie das Dokument
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example Array");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-Here we also set the title and language for the tagged content.
+Hier legen wir auch den Titel und die Sprache für den getaggten Inhalt fest.
 
-## Step 3: Creating the array element
+## Schritt 3: Erstellen des Array-Elements
 
-Next, we need to create the array element and add it to the document. We start by getting the root structure element, then we create a new table element using the `CreateTableElement` method.
+Als nächstes müssen wir das Array-Element erstellen und es dem Dokument hinzufügen. Wir beginnen mit dem Abrufen des Stammstrukturelements und erstellen dann mithilfe von ein neues Tabellenelement`CreateTableElement` Methode.
 
 ```csharp
-// Get the root structure element
+// Holen Sie sich das Stammstrukturelement
 StructureElement rootElement = taggedContent.RootElement;
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
@@ -129,27 +129,27 @@ StructureAttribute summaryAttribute = new StructureAttribute(AttributeKey.Summar
 summaryAttribute.SetStringValue("The summary text for the table");
 tableAttributes.SetAttribute(summaryAttribute);
 
-// Save the tagged PDF document
+// Speichern Sie das getaggte PDF-Dokument
 document.Save(dataDir + "CreateTableElement.pdf");
 
-// PDF/UA compliance check
+// Prüfung der PDF/UA-Konformität
 document = new Document(dataDir + "CreateTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "table.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-### Sample source code for Create Table Element using Aspose.PDF for .NET 
+### Beispielquellcode für „Tabellenelement erstellen“ mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create document
+// Dokument erstellen
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table");
 taggedContent.SetLanguage("en-US");
 
-// Get root structure element
+// Stammstrukturelement abrufen
 StructureElement rootElement = taggedContent.RootElement;
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
@@ -230,58 +230,58 @@ StructureAttribute summaryAttribute = new StructureAttribute(AttributeKey.Summar
 summaryAttribute.SetStringValue("The summary text for table");
 tableAttributes.SetAttribute(summaryAttribute);
 
-// Save Tagged Pdf Document
+// Markiertes PDF-Dokument speichern
 document.Save(dataDir + "CreateTableElement.pdf");
 
-// Checking PDF/UA compliance
+// Überprüfung der PDF/UA-Konformität
 document = new Document(dataDir + "CreateTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "table.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## Abschluss
 
-You have learned how to create an array element using Aspose.PDF for .NET. You can now generate PDF documents with dynamic tables using this method. Feel free to explore more features of Aspose.PDF to discover its full potential.
+Sie haben gelernt, wie Sie mit Aspose.PDF für .NET ein Array-Element erstellen. Mit dieser Methode können Sie nun PDF-Dokumente mit dynamischen Tabellen generieren. Entdecken Sie gerne weitere Funktionen von Aspose.PDF, um sein volles Potenzial zu entdecken.
 
-### FAQ's
+### FAQs
 
-#### Q: What is an array element in a PDF document, and why would I need to create one using Aspose.PDF for .NET?
+#### F: Was ist ein Array-Element in einem PDF-Dokument und warum sollte ich eines mit Aspose.PDF für .NET erstellen?
 
-A: An array element in a PDF document represents a structured collection of data, often used for creating tables or grids. You might need to create an array element using Aspose.PDF for .NET when generating dynamic PDFs that require structured data presentation, such as tabular information or grids.
+A: Ein Array-Element in einem PDF-Dokument stellt eine strukturierte Datensammlung dar, die häufig zum Erstellen von Tabellen oder Rastern verwendet wird. Möglicherweise müssen Sie mit Aspose.PDF für .NET ein Array-Element erstellen, wenn Sie dynamische PDFs generieren, die eine strukturierte Datenpräsentation erfordern, z. B. tabellarische Informationen oder Raster.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of creating an array element?
+#### F: Wie vereinfacht Aspose.PDF für .NET den Prozess der Erstellung eines Array-Elements?
 
-A: Aspose.PDF for .NET provides a comprehensive set of classes and methods that allow you to create, customize, and manage array elements (tables) in a PDF document programmatically. This eliminates the need for manual PDF manipulation and streamlines the creation of structured data representations.
+A: Aspose.PDF für .NET bietet einen umfassenden Satz an Klassen und Methoden, mit denen Sie Array-Elemente (Tabellen) in einem PDF-Dokument programmgesteuert erstellen, anpassen und verwalten können. Dadurch entfällt die Notwendigkeit einer manuellen PDF-Bearbeitung und die Erstellung strukturierter Datendarstellungen wird optimiert.
 
-#### Q: What are the key steps involved in creating an array element using Aspose.PDF for .NET?
+#### F: Was sind die wichtigsten Schritte beim Erstellen eines Array-Elements mit Aspose.PDF für .NET?
 
-A: The key steps include setting up the environment, creating the document, obtaining the root structure element, creating a table element, defining rows and cells within the table, and specifying formatting and properties for the elements. The provided code example demonstrates these steps.
+A: Zu den wichtigsten Schritten gehören das Einrichten der Umgebung, das Erstellen des Dokuments, das Abrufen des Stammstrukturelements, das Erstellen eines Tabellenelements, das Definieren von Zeilen und Zellen innerhalb der Tabelle sowie das Festlegen von Formatierungen und Eigenschaften für die Elemente. Das bereitgestellte Codebeispiel veranschaulicht diese Schritte.
 
-#### Q: What role does the `taggedContent` object play in creating an array element?
+####  F: Welche Rolle spielt das`taggedContent` object play in creating an array element?
 
-A: The `taggedContent` object, obtained from the document's `TaggedContent` property, allows you to define the structure of the tagged content within the PDF document. This includes creating and organizing array elements and their child elements in a hierarchical manner.
+ A: Die`taggedContent` Objekt, das aus dem Dokument stammt`TaggedContent`Mit dieser Eigenschaft können Sie die Struktur des getaggten Inhalts im PDF-Dokument definieren. Dazu gehört das hierarchische Erstellen und Organisieren von Array-Elementen und ihren untergeordneten Elementen.
 
-#### Q: How does the code ensure accessibility and semantics of the created array element?
+#### F: Wie stellt der Code die Zugänglichkeit und Semantik des erstellten Array-Elements sicher?
 
-A: The code sets attributes such as `AlternativeText`, `BackgroundColor`, `Border`, `Margin`, `Alignment`, and `ColSpan` to enhance the accessibility and semantics of the array element. These attributes contribute to a well-structured, informative, and visually appealing representation of data.
+ A: Der Code legt Attribute wie fest`AlternativeText`, `BackgroundColor`, `Border`, `Margin`, `Alignment` , Und`ColSpan` um die Zugänglichkeit und Semantik des Array-Elements zu verbessern. Diese Attribute tragen zu einer gut strukturierten, informativen und optisch ansprechenden Darstellung von Daten bei.
 
-#### Q: What is the significance of PDF/UA compliance in the context of creating array elements?
+#### F: Welche Bedeutung hat die PDF/UA-Konformität im Zusammenhang mit der Erstellung von Array-Elementen?
 
-A: PDF/UA (Universal Accessibility) compliance ensures that the generated PDF documents are accessible to users with disabilities and meet certain accessibility standards. The code example checks PDF/UA compliance using the `Validate` method, helping you create documents that are inclusive and accessible.
+ A: Durch die PDF/UA-Konformität (Universal Accessibility) wird sichergestellt, dass die generierten PDF-Dokumente für Benutzer mit Behinderungen zugänglich sind und bestimmte Barrierefreiheitsstandards erfüllen. Das Codebeispiel prüft die PDF/UA-Konformität mithilfe von`Validate` Methode, die Ihnen dabei hilft, Dokumente zu erstellen, die umfassend und barrierefrei sind.
 
-#### Q: Can I customize the formatting and appearance of the array elements further?
+#### F: Kann ich die Formatierung und das Erscheinungsbild der Array-Elemente weiter anpassen?
 
-A: Yes, you can customize the formatting and appearance of the array elements by adjusting attributes such as background color, border style, font size, and alignment. Aspose.PDF for .NET provides a wide range of properties to tailor the visual presentation to your requirements.
+A: Ja, Sie können die Formatierung und das Erscheinungsbild der Array-Elemente anpassen, indem Sie Attribute wie Hintergrundfarbe, Rahmenstil, Schriftgröße und Ausrichtung anpassen. Aspose.PDF für .NET bietet eine Vielzahl von Eigenschaften, um die visuelle Präsentation an Ihre Anforderungen anzupassen.
 
-#### Q: How can I extend this knowledge to create more complex table structures or incorporate array elements into larger PDF documents?
+#### F: Wie kann ich dieses Wissen erweitern, um komplexere Tabellenstrukturen zu erstellen oder Array-Elemente in größere PDF-Dokumente zu integrieren?
 
-A: You can extend this knowledge by exploring additional features of Aspose.PDF for .NET, such as merging multiple array elements, creating nested tables, adding headers and footers, and integrating array elements into larger PDF layouts. The library's documentation and examples provide guidance for these advanced scenarios.
+A: Sie können dieses Wissen erweitern, indem Sie zusätzliche Funktionen von Aspose.PDF für .NET erkunden, wie z. B. das Zusammenführen mehrerer Array-Elemente, das Erstellen verschachtelter Tabellen, das Hinzufügen von Kopf- und Fußzeilen und die Integration von Array-Elementen in größere PDF-Layouts. Die Dokumentation und Beispiele der Bibliothek bieten Anleitungen für diese erweiterten Szenarios.
 
-#### Q: Is it possible to import data from external sources, such as databases or spreadsheets, to populate the array elements?
+#### F: Ist es möglich, Daten aus externen Quellen wie Datenbanken oder Tabellenkalkulationen zu importieren, um die Array-Elemente zu füllen?
 
-A: Yes, you can import data from external sources to populate array elements. You can use data retrieval and transformation techniques in C# to fetch data from databases, spreadsheets, or other sources and then populate the array elements accordingly.
+A: Ja, Sie können Daten aus externen Quellen importieren, um Array-Elemente zu füllen. Sie können Datenabruf- und Transformationstechniken in C# verwenden, um Daten aus Datenbanken, Tabellenkalkulationen oder anderen Quellen abzurufen und dann die Array-Elemente entsprechend zu füllen.
 
-#### Q: How can I use the knowledge gained from this tutorial to enhance the quality and usability of PDF documents I create programmatically?
+#### F: Wie kann ich das in diesem Tutorial gewonnene Wissen nutzen, um die Qualität und Benutzerfreundlichkeit von PDF-Dokumenten zu verbessern, die ich programmgesteuert erstelle?
 
-A: The knowledge gained from this tutorial allows you to create structured and visually appealing array elements (tables) in PDF documents. By incorporating these techniques, you can improve the readability, accessibility, and user experience of dynamically generated PDFs, making them more informative and user-friendly.
+A: Mit den Erkenntnissen aus diesem Tutorial können Sie strukturierte und optisch ansprechende Array-Elemente (Tabellen) in PDF-Dokumenten erstellen. Durch die Integration dieser Techniken können Sie die Lesbarkeit, Zugänglichkeit und Benutzererfahrung dynamisch generierter PDFs verbessern und sie informativer und benutzerfreundlicher machen.

@@ -1,84 +1,84 @@
 ---
-title: SVG To PDF
-linktitle: SVG To PDF
-second_title: Aspose.PDF for .NET API Reference
-description: Easy and fast SVG to PDF conversion using Aspose.PDF for .NET.
+title: SVG'den PDF'ye
+linktitle: SVG'den PDF'ye
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak SVG'den PDF'ye kolay ve hızlı dönüştürme.
 type: docs
 weight: 280
 url: /tr/net/document-conversion/svg-to-pdf/
 ---
-This tutorial will walk you through the steps to convert an SVG file to a PDF file using Aspose.PDF for .NET. Aspose.PDF offers a simple and effective solution for converting SVG files to PDF while preserving content quality and layout. Follow the steps below to perform this conversion.
+Bu eğitim, Aspose.PDF for .NET kullanarak bir SVG dosyasını PDF dosyasına dönüştürme adımlarında size yol gösterecektir. Aspose.PDF, içerik kalitesini ve düzenini korurken SVG dosyalarını PDF'ye dönüştürmek için basit ve etkili bir çözüm sunar. Bu dönüşümü gerçekleştirmek için aşağıdaki adımları izleyin.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Önkoşullar
+Başlamadan önce aşağıdaki önkoşulları karşıladığınızdan emin olun:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- C# programlama dili hakkında temel bilgiler.
+- Sisteminizde yüklü olan .NET için Aspose.PDF kütüphanesi.
+- Visual Studio gibi bir geliştirme ortamı.
 
-## Step 1: Loading SVG file
-The first step is to load the SVG file into a `Document` object using the SVG load option (`SvgLoadOptions`). Use the following code:
+## 1. Adım: SVG dosyasını yükleme
+İlk adım, SVG dosyasını bir`Document` SVG yükleme seçeneğini kullanarak nesne (`SvgLoadOptions`). Aşağıdaki kodu kullanın:
 
 ```csharp
-// Path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Instantiate LoadOption object using SVG load option
+// SVG yükleme seçeneğini kullanarak LoadOption nesnesini örnekleyin
 Aspose.Pdf.LoadOptions loadopt = new Aspose.Pdf.SvgLoadOptions();
 
-// Create Document object
+// Belge nesnesi oluştur
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "SVGToPDF.svg", loadopt);
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your SVG file is located.
+ Değiştirdiğinizden emin olun`"YOUR DOCUMENTS DIRECTORY"` SVG dosyanızın bulunduğu gerçek dizinle.
 
-## Step 2: Convert to PDF
-The second step is to convert the SVG document to a PDF document using the `Save` method of the `Document` object. Use the following code:
+## 2. Adım: PDF'ye dönüştürün
+ İkinci adım, SVG belgesini PDF belgesine dönüştürmektir.`Save` yöntemi`Document` nesne. Aşağıdaki kodu kullanın:
 
 ```csharp
-// Save the resulting PDF document
+// Ortaya çıkan PDF belgesini kaydedin
 doc.Save(dataDir + "SVGToPDF_out.pdf");
 ```
 
-Be sure to specify the desired path and filename for the resulting PDF file.
+Ortaya çıkan PDF dosyası için istediğiniz yolu ve dosya adını belirttiğinizden emin olun.
 
-### Example source code for SVG to PDF using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak SVG'den PDF'ye dönüştürme için örnek kaynak kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate LoadOption object using SVG load option
+// SVG yükleme seçeneğini kullanarak LoadOption nesnesini örnekleyin
 Aspose.Pdf.LoadOptions loadopt = new Aspose.Pdf.SvgLoadOptions();
 
-// Create Document object
+// Belge nesnesi oluştur
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "SVGToPDF.svg", loadopt);
 
-// Save the resultant PDF document
+// Ortaya çıkan PDF belgesini kaydedin
 doc.Save(dataDir + "SVGToPDF_out.pdf");
 ```
 
-## Conclusion
-In this tutorial, we learned how to convert an SVG file to a PDF file using Aspose.PDF for .NET. By following the steps given above, you can easily perform this conversion. Use this method to convert your SVG files to PDF and enjoy the flexibility and quality of Aspose.PDF.
+## Çözüm
+Bu eğitimde Aspose.PDF for .NET kullanarak bir SVG dosyasını PDF dosyasına nasıl dönüştüreceğimizi öğrendik. Yukarıda verilen adımları takip ederek bu dönüşümü kolaylıkla gerçekleştirebilirsiniz. SVG dosyalarınızı PDF'ye dönüştürmek için bu yöntemi kullanın ve Aspose.PDF'in esnekliğinin ve kalitesinin keyfini çıkarın.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET nedir?
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers various functionalities, including converting SVG files to PDF.
+C: Aspose.PDF for .NET, geliştiricilerin C# uygulamalarında PDF belgeleriyle çalışmasına olanak tanıyan güçlü bir kitaplıktır. SVG dosyalarını PDF'ye dönüştürmek de dahil olmak üzere çeşitli işlevler sunar.
 
-#### Q: Why would I want to convert an SVG file to a PDF?
+#### S: Neden bir SVG dosyasını PDF'ye dönüştürmek isteyeyim?
 
-A: SVG (Scalable Vector Graphics) files are commonly used for vector graphics on the web. Converting an SVG file to a PDF format allows for easier sharing, printing, and embedding of the graphic content.
+C: SVG (Ölçeklenebilir Vektör Grafikleri) dosyaları web'deki vektör grafikleri için yaygın olarak kullanılır. Bir SVG dosyasını PDF formatına dönüştürmek, grafik içeriğinin daha kolay paylaşılmasına, yazdırılmasına ve yerleştirilmesine olanak tanır.
 
-#### Q: How can I load an SVG file and convert it to a PDF using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak bir SVG dosyasını nasıl yükleyip PDF'ye dönüştürebilirim?
 
-A: To load an SVG file, you can use the `SvgLoadOptions` class to specify the SVG load option. Then, create a `Document` object and load the SVG file into it. Finally, use the `Save` method of the `Document` object to convert and save the SVG as a PDF.
+ C: Bir SVG dosyasını yüklemek için`SvgLoadOptions` SVG yükleme seçeneğini belirtmek için sınıf. Ardından, bir`Document` nesneyi seçin ve SVG dosyasını ona yükleyin. Son olarak şunu kullanın:`Save` yöntemi`Document` SVG'yi dönüştürmek ve PDF olarak kaydetmek için nesneyi seçin.
 
-#### Q: Can I customize the output PDF during the conversion?
+#### S: Dönüştürme sırasında çıktı PDF'sini özelleştirebilir miyim?
 
-A: Yes, you can customize the output PDF during the conversion process. Aspose.PDF for .NET provides various options and properties to control the PDF document's appearance and layout.
+C: Evet, dönüştürme işlemi sırasında çıktı PDF'sini özelleştirebilirsiniz. Aspose.PDF for .NET, PDF belgesinin görünümünü ve düzenini kontrol etmek için çeşitli seçenekler ve özellikler sağlar.
 
-#### Q: Is the content quality of the SVG preserved in the resulting PDF?
+#### S: Ortaya çıkan PDF'de SVG'nin içerik kalitesi korunuyor mu?
 
-A: Yes, Aspose.PDF for .NET ensures the preservation of content quality and layout during the SVG to PDF conversion, ensuring a seamless transition between formats.
+C: Evet, Aspose.PDF for .NET, SVG'den PDF'ye dönüştürme sırasında içerik kalitesinin ve düzeninin korunmasını sağlayarak formatlar arasında kusursuz bir geçiş sağlar.

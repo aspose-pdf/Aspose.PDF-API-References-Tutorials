@@ -1,69 +1,69 @@
 ---
-title: Unembed Fonts And Optimize PDF Files
-linktitle: Unembed Fonts And Optimize PDF Files
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to get Unembed Fonts and optimize PDF files. A step-by-step guide.
+title: إلغاء تضمين الخطوط وتحسين ملفات PDF
+linktitle: إلغاء تضمين الخطوط وتحسين ملفات PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخدام Aspose.PDF لـ .NET للحصول على Unembed Fonts وتحسين ملفات PDF. دليل خطوة بخطوة.
 type: docs
 weight: 370
 url: /ar/net/programming-with-document/unembedfonts/
 ---
-Aspose.PDF for .NET is a powerful library that provides a wide range of features to work with PDF documents. One of its features is to get unembed fonts from a PDF document. This can be useful if you need to extract fonts from a PDF document and use them in other applications.
+Aspose.PDF for .NET هي مكتبة قوية توفر مجموعة واسعة من الميزات للعمل مع مستندات PDF. إحدى ميزاته هي الحصول على خطوط غير مدمجة من مستند PDF. يمكن أن يكون هذا مفيدًا إذا كنت بحاجة إلى استخراج الخطوط من مستند PDF واستخدامها في تطبيقات أخرى.
 
-we will provide a step-by-step guide to explain the following C# source code of get unembed fonts feature of Aspose.PDF for .NET.
+سنقدم دليلًا خطوة بخطوة لشرح كود مصدر C# التالي لميزة الحصول على الخطوط غير المضمنة في Aspose.PDF لـ .NET.
 
-## Step 1: Set the path to the document directory
+## الخطوة 1: قم بتعيين المسار إلى دليل المستند
 
-Before we start, we need to set the path to the directory where our PDF document is located. We will store this path in a variable called "dataDir".
+قبل أن نبدأ، نحتاج إلى تعيين المسار إلى الدليل الذي يوجد به مستند PDF الخاص بنا. سنقوم بتخزين هذا المسار في متغير يسمى "dataDir".
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual path to the directory where your PDF document is located.
+استبدل "دليل المستندات الخاص بك" بالمسار الفعلي للدليل الذي يوجد به مستند PDF الخاص بك.
 
-## Step 2: Open the PDF Document
+## الخطوة 2: افتح مستند PDF
 
-The first step is to load the PDF document that you want to do this, use the `Document` class of Aspose.PDF for .NET. The following code snippet shows how to load the PDF document:
+ الخطوة الأولى هي تحميل مستند PDF الذي تريد القيام بذلك، استخدم الملف`Document` فئة Aspose.PDF لـ .NET. يوضح مقتطف الكود التالي كيفية تحميل مستند PDF:
 
 ```csharp
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Step3: Set the UnembedFonts Option
+## الخطوة 3: قم بتعيين خيار UnembedFonts
 
-To get unembed fonts from the PDF document, you need to set the `UnembedFonts` option to `true`. This option is available in the `OptimizationOptions` class. The following code snippet shows how to set the `UnembedFonts` option:
+ للحصول على خطوط غير مدمجة من مستند PDF، تحتاج إلى تعيين`UnembedFonts` خيار ل`true` . هذا الخيار متاح في`OptimizationOptions` فصل. يوضح مقتطف الكود التالي كيفية تعيين`UnembedFonts` خيار:
 
 ```csharp
-// Set UnembedFonts option 
+// قم بتعيين خيار UnembedFonts
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
 	UnembedFonts = true
 };
 ```
 
-## Step 4: Optimize the PDF Document
+## الخطوة 4: تحسين مستند PDF
 
-After setting the `UnembedFonts` option, you can optimize the PDF document using the `OptimizeResources` method of the `Document` class. The following code snippet shows how to optimize the PDF document:
+ بعد ضبط`UnembedFonts` الخيار، يمكنك تحسين مستند PDF باستخدام`OptimizeResources` طريقة`Document` فصل. يوضح مقتطف الكود التالي كيفية تحسين مستند PDF:
 
 ```csharp
-// Optimize PDF document using OptimizationOptions
+// تحسين مستند PDF باستخدام OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-## Step 5: Save the Updated Document
+## الخطوة 5: احفظ المستند المحدث
 
-Once the PDF document is optimized, you can save the updated document using the `Save` method of the `Document` class. The following code snippet shows how to save the updated document:
+ بمجرد تحسين مستند PDF، يمكنك حفظ المستند المحدث باستخدام الملف`Save` طريقة`Document`فصل. يوضح مقتطف التعليمات البرمجية التالي كيفية حفظ المستند المحدث:
 
 ```csharp
-// Save updated document
+// حفظ المستند المحدث
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 ```
 
-## Step 6: Get the Original and Reduced File Size
+## الخطوة 6: احصل على حجم الملف الأصلي والمصغر
 
-Finally, you can get the original and reduced file size of the PDF document using the `FileInfo` class of System.IO. The following code snippet shows how to get the original and reduced file size:
+ وأخيرًا، يمكنك الحصول على حجم الملف الأصلي والمصغر لمستند PDF باستخدام الملف`FileInfo` فئة System.IO. يوضح مقتطف الكود التالي كيفية الحصول على حجم الملف الأصلي والمصغر:
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
@@ -71,24 +71,24 @@ var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```
 
-### Example Source Code for Get Unembed Fonts using Aspose.PDF for .NET
+### مثال على كود المصدر للحصول على خطوط غير مدمجة باستخدام Aspose.PDF لـ .NET
 
-Here is the complete example source code for getting unembed fonts from a PDF document using Aspose.PDF for .NET:
+فيما يلي المثال الكامل للتعليمة البرمجية المصدر للحصول على خطوط غير مدمجة من مستند PDF باستخدام Aspose.PDF لـ .NET:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Set UnembedFonts  option 
+// قم بتعيين خيار UnembedFonts
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
 	UnembedFonts = true
 };
 Console.WriteLine("Start");
-// Optimize PDF document using OptimizationOptions
+// تحسين مستند PDF باستخدام OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
-// Save updated document
+// حفظ المستند المحدث
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Finished");
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
@@ -96,23 +96,23 @@ var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we demonstrated how to use Aspose.PDF for .NET to get unembed fonts from a PDF document. By following the step-by-step guide, you can easily implement this feature in your C# applications. Unembedding fonts can be advantageous when you need to work with the extracted fonts separately or ensure consistent font usage across various platforms.
+في هذا البرنامج التعليمي، أوضحنا كيفية استخدام Aspose.PDF لـ .NET للحصول على خطوط غير مدمجة من مستند PDF. باتباع الدليل الموضح خطوة بخطوة، يمكنك بسهولة تنفيذ هذه الميزة في تطبيقات C# الخاصة بك. يمكن أن يكون إلغاء تضمين الخطوط مفيدًا عندما تحتاج إلى العمل مع الخطوط المستخرجة بشكل منفصل أو التأكد من استخدام الخط بشكل متسق عبر الأنظمة الأساسية المختلفة.
 
-## FAQ's
+## الأسئلة الشائعة
 
-#### Q: What is the purpose of unembedding fonts from a PDF document?
+#### س: ما هو الغرض من إلغاء دمج الخطوط من مستند PDF؟
 
-A: Unembedding fonts from a PDF document allows you to extract the embedded fonts and use them in other applications. This can be useful for ensuring consistent font rendering and preserving the document's visual appearance.
+ج: يتيح لك إلغاء دمج الخطوط من مستند PDF استخراج الخطوط المضمنة واستخدامها في تطبيقات أخرى. يمكن أن يكون هذا مفيدًا لضمان عرض خط متناسق والحفاظ على المظهر المرئي للمستند.
 
-#### Q: How do I specify the path to the document directory in the C# code?
+#### س: كيف يمكنني تحديد المسار إلى دليل المستند في كود C#؟
 
-A: To specify the path to the document directory, replace `"YOUR DOCUMENT DIRECTORY"` in the code with the actual path to the directory where your PDF document is located.
+ ج: لتحديد المسار إلى دليل المستندات، استبدل`"YOUR DOCUMENT DIRECTORY"` في الكود مع المسار الفعلي إلى الدليل الذي يوجد به مستند PDF الخاص بك.
 
-#### Q: What does the `UnembedFonts` option do, and where is it set?
+####  س: ماذا يفعل`UnembedFonts` option do, and where is it set?
 
-A: The `UnembedFonts` option, available in the `OptimizationOptions` class, enables or disables the unembedding of fonts from the PDF document. To set this option to `true`, use the following code:
+ ج: ال`UnembedFonts` الخيار متاح في`OptimizationOptions` فئة، تمكن أو تعطل إلغاء دمج الخطوط من مستند PDF. لتعيين هذا الخيار على`true`، استخدم الكود التالي:
 
 ```csharp
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
@@ -121,13 +121,13 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 };
 ```
 
-#### Q: Can I revert the changes made during the optimization process?
+#### س: هل يمكنني التراجع عن التغييرات التي تم إجراؤها أثناء عملية التحسين؟
 
-A: Aspose.PDF for .NET does not make permanent changes to the original PDF document during optimization. The optimization process is performed on a copy of the document, leaving the original intact.
+ج: لا يقوم Aspose.PDF for .NET بإجراء تغييرات دائمة على مستند PDF الأصلي أثناء التحسين. يتم تنفيذ عملية التحسين على نسخة من المستند، مع ترك النسخة الأصلية سليمة.
 
-#### Q: How can I check the original and reduced file size after optimization?
+#### س: كيف يمكنني التحقق من حجم الملف الأصلي والمصغر بعد التحسين؟
 
-A: You can use the `FileInfo` class of `System.IO` to get the original and reduced file size. Here's an example code snippet to achieve this:
+ج: يمكنك استخدام`FileInfo` فئة من`System.IO` للحصول على حجم الملف الأصلي والمصغر. فيما يلي مثال لمقتطف التعليمات البرمجية لتحقيق ذلك:
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");

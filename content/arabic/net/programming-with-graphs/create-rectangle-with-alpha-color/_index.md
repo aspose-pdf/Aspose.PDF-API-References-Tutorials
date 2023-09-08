@@ -1,61 +1,61 @@
 ---
-title: Create Rectangle With Alpha Color
-linktitle: Create Rectangle With Alpha Color
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create a rectangle with transparent color using Aspose.PDF for .NET. Step-by-step guide to customize transparency.
+title: إنشاء مستطيل مع لون ألفا
+linktitle: إنشاء مستطيل مع لون ألفا
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إنشاء مستطيل بلون شفاف باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة لتخصيص الشفافية.
 type: docs
 weight: 60
 url: /ar/net/programming-with-graphs/create-rectangle-with-alpha-color/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to create a rectangle with alpha color using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك عبر التعليمات البرمجية المصدر لـ C# التالية خطوة بخطوة لإنشاء مستطيل بلون ألفا باستخدام Aspose.PDF لـ .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك قبل البدء. لديك أيضًا معرفة أساسية ببرمجة C#.
 
-## Step 1: Document Directory Setup
+## الخطوة 1: إعداد دليل المستندات
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+في كود المصدر المقدم، تحتاج إلى تحديد الدليل الذي تريد حفظ ملف PDF الناتج فيه. قم بتغيير المتغير "dataDir" إلى الدليل المطلوب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiating a Document Object and Adding a Page
+## الخطوة 2: إنشاء كائن مستند وإضافة صفحة
 
-We create an instance of the Document class and add a page to this document.
+نقوم بإنشاء مثيل لفئة المستند وإضافة صفحة إلى هذا المستند.
 
 ```csharp
 Document doc = new Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## Step 3: Creating a Graph Object and a Rectangle
+## الخطوة 3: إنشاء كائن رسم بياني ومستطيل
 
-We create a Graph object with specified dimensions and a rectangle with specific dimensions.
+نقوم بإنشاء كائن رسم بياني بأبعاد محددة ومستطيل بأبعاد محددة.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 100);
 ```
 
-## Step 4: Setting up the alpha color for the rectangle
+## الخطوة 4: إعداد لون ألفا للمستطيل
 
-We can specify an alpha color for the rectangle using the FromArgb method of the System.Drawing.Color class.
+يمكننا تحديد لون ألفا للمستطيل باستخدام طريقة FromArgb لفئة System.Drawing.Color.
 
 ```csharp
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 ```
 
-## Step 5: Adding the Rectangle to the Graph Object
+## الخطوة 5: إضافة المستطيل إلى كائن الرسم البياني
 
-We add the rectangle to the shape collection of the Graph object.
+نضيف المستطيل إلى مجموعة أشكال كائن الرسم البياني.
 
 ```csharp
 canvas.Shapes.Add(rect);
 ```
 
-## Step 6: Creating a second rectangle with a different alpha color
+## الخطوة 6: إنشاء مستطيل ثانٍ بلون ألفا مختلف
 
-We create a second rectangle with specific dimensions and another alpha color.
+نقوم بإنشاء مستطيل ثانٍ بأبعاد محددة ولون ألفا آخر.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect1 = new Aspose.Pdf.Drawing.Rectangle(200, 150, 200, 100);
@@ -63,83 +63,83 @@ rect1.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromAr
 canvas.Shapes.Add(rect1);
 ```
 
-## Step 7: Adding the Graph Object to the Page
+## الخطوة 7: إضافة كائن الرسم البياني إلى الصفحة
 
-We add the Graph object to the Page object's Paragraph collection.
+نضيف كائن الرسم البياني إلى مجموعة الفقرة الخاصة بكائن الصفحة.
 
 ```csharp
 page.Paragraphs.Add(canvas);
 ```
 
-## Step 8: Saving the Resulting PDF File
+## الخطوة 8: حفظ ملف PDF الناتج
 
-Finally, we save the resulting PDF file with the name "CreateRectangleWithAlphaColor_out.pdf" in the specified directory.
+أخيرًا، نقوم بحفظ ملف PDF الناتج بالاسم "CreateRectangleWithAlphaColor_out.pdf" في الدليل المحدد.
 
 ```csharp
 doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");
 ```
 
-### Sample source code for Create Rectangle With Alpha Color using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإنشاء مستطيل باستخدام Alpha Color باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document instance
+// إنشاء مثيل للمستند
 Document doc = new Document();
-// Add page to pages collection of PDF file
+// إضافة صفحة إلى مجموعة الصفحات من ملف PDF
 Aspose.Pdf.Page page = doc.Pages.Add();
-// Create Graph instance
+// إنشاء مثيل الرسم البياني
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
-// Create rectangle object with specific dimensions
+// إنشاء كائن مستطيل بأبعاد محددة
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 100);
-// Set graph fill color from System.Drawing.Color structure from a 32-bit ARGB value
+//قم بتعيين لون تعبئة الرسم البياني من بنية System.Drawing.Color من قيمة ARGB 32 بت
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
-// Add rectangle object to shapes collection of Graph instance
+// إضافة كائن مستطيل إلى مجموعة الأشكال لمثيل الرسم البياني
 canvas.Shapes.Add(rect);
-// Create second rectangle object
+// إنشاء كائن المستطيل الثاني
 Aspose.Pdf.Drawing.Rectangle rect1 = new Aspose.Pdf.Drawing.Rectangle(200, 150, 200, 100);
 rect1.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(16118015)));
 canvas.Shapes.Add(rect1);
-// Add graph instance to paragraph collection of page object
+// إضافة مثيل الرسم البياني إلى مجموعة الفقرة من كائن الصفحة
 page.Paragraphs.Add(canvas);
 dataDir = dataDir + "CreateRectangleWithAlphaColor_out.pdf";
-// Save PDF file
+// حفظ ملف PDF
 doc.Save(dataDir);
 Console.WriteLine("\nRectangle object created successfully with alpha color.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we explained how to create a rectangle with alpha color using Aspose.PDF for .NET. You can now use this knowledge to create geometric shapes with transparent colors in your PDF files.
+في هذا البرنامج التعليمي، شرحنا كيفية إنشاء مستطيل بلون ألفا باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام هذه المعرفة لإنشاء أشكال هندسية بألوان شفافة في ملفات PDF الخاصة بك.
 
-## FAQ's
+## الأسئلة الشائعة
 
-#### Q: What is the purpose of this tutorial?
+#### س: ما هو الغرض من هذا البرنامج التعليمي؟
 
-A: This tutorial aims to guide you through the process of creating a rectangle with alpha color using Aspose.PDF for .NET. You'll learn how to add geometric shapes with transparent colors to your PDF files.
+ج: يهدف هذا البرنامج التعليمي إلى إرشادك خلال عملية إنشاء مستطيل بلون ألفا باستخدام Aspose.PDF لـ .NET. ستتعلم كيفية إضافة أشكال هندسية بألوان شفافة إلى ملفات PDF الخاصة بك.
 
-#### Q: What prerequisites are required before starting?
+#### س: ما هي المتطلبات الأساسية المطلوبة قبل البدء؟
 
-A: Before you begin, ensure that you have installed the Aspose.PDF library and set up your development environment. Additionally, having a basic understanding of C# programming is recommended.
+ج: قبل أن تبدأ، تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك. بالإضافة إلى ذلك، يوصى بالحصول على فهم أساسي لبرمجة C#.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### س: كيف أحدد الدليل لحفظ ملف PDF؟
 
-A: In the provided source code, you can modify the "dataDir" variable to indicate the directory where you want to save the resulting PDF file.
+ج: في الكود المصدري المقدم، يمكنك تعديل متغير "dataDir" للإشارة إلى الدليل الذي تريد حفظ ملف PDF الناتج فيه.
 
-#### Q: What is the purpose of the Graph object and Rectangle?
+#### س: ما هو الغرض من كائن الرسم البياني والمستطيل؟
 
-A: The Graph object acts as a container for drawing elements, while the Rectangle represents the geometric shape that you'll be adding to the PDF.
+ج: يعمل كائن Graph كحاوية لعناصر الرسم، بينما يمثل المستطيل الشكل الهندسي الذي ستضيفه إلى ملف PDF.
 
-#### Q: How can I set up an alpha color for the rectangle?
+#### س: كيف يمكنني إعداد لون ألفا للمستطيل؟
 
-A: You can specify an alpha color for the rectangle using the `FillColor` property of the `GraphInfo` object and the `Color.FromRgb` method with an ARGB value.
+ج: يمكنك تحديد لون ألفا للمستطيل باستخدام`FillColor` ملكية`GraphInfo` الكائن و`Color.FromRgb` الطريقة بقيمة ARGB.
 
-#### Q: Can I create multiple rectangles with different alpha colors?
+#### س: هل يمكنني إنشاء مستطيلات متعددة بألوان ألفا مختلفة؟
 
-A: Yes, you can create multiple rectangles with different alpha colors by following similar steps as demonstrated in the tutorial.
+ج: نعم، يمكنك إنشاء مستطيلات متعددة بألوان ألفا مختلفة عن طريق اتباع خطوات مماثلة كما هو موضح في البرنامج التعليمي.
 
-#### Q: How do I save the resulting PDF file after creating rectangles with alpha colors?
+#### س: كيف يمكنني حفظ ملف PDF الناتج بعد إنشاء مستطيلات بألوان ألفا؟
 
-A: After creating the rectangles with alpha colors, you can save the resulting PDF file using the `doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");` line in the provided source code.
+ ج: بعد إنشاء المستطيلات بألوان ألفا، يمكنك حفظ ملف PDF الناتج باستخدام الملف`doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");` سطر في كود المصدر المقدم.

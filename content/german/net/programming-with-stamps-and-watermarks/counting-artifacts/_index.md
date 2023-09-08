@@ -1,114 +1,114 @@
 ---
-title: Counting Artifacts In PDF File
-linktitle: Counting Artifacts In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily count watermarks in PDF file with Aspose.PDF for .NET.
+title: Zählen von Artefakten in einer PDF-Datei
+linktitle: Zählen von Artefakten in einer PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET ganz einfach Wasserzeichen in PDF-Dateien zählen können.
 type: docs
 weight: 60
 url: /de/net/programming-with-stamps-and-watermarks/counting-artifacts/
 ---
-In this tutorial, we will take you step by step on how to count artifacts in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to count the number of "watermark" artifacts on a specific page of the PDF file.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch die Zählung von Artefakten in PDF-Dateien mit Aspose.PDF für .NET. Wir zeigen Ihnen, wie Sie den bereitgestellten C#-Quellcode verwenden, um die Anzahl der „Wasserzeichen“-Artefakte auf einer bestimmten Seite der PDF-Datei zu zählen.
 
-## Step 1: Setting up the environment
+## Schritt 1: Einrichten der Umgebung
 
-Before you begin, make sure you have the following:
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Eine installierte .NET-Entwicklungsumgebung.
+- Die Aspose.PDF-Bibliothek für .NET wurde heruntergeladen und in Ihrem Projekt referenziert.
 
-## Step 2: Loading the PDF document
+## Schritt 2: Laden des PDF-Dokuments
 
-The first step is to load the existing PDF document into your project. Here's how:
+Der erste Schritt besteht darin, das vorhandene PDF-Dokument in Ihr Projekt zu laden. Hier ist wie:
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the document
+// Öffnen Sie das Dokument
 Document pdfDocument = new Document(dataDir + "watermark.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Ersetzen Sie „IHR DOKUMENTENVERZEICHNIS“ unbedingt durch den tatsächlichen Pfad zu dem Verzeichnis, in dem sich Ihr PDF-Dokument befindet.
 
-## Step 3: Count artifacts
+## Schritt 3: Artefakte zählen
 
-Now that you have loaded the PDF document, you can count the "watermark" type artifacts on a specific page of the document. Here's how:
+Nachdem Sie das PDF-Dokument geladen haben, können Sie die Artefakte vom Typ „Wasserzeichen“ auf einer bestimmten Seite des Dokuments zählen. Hier ist wie:
 
 ```csharp
-// Initialize the counter
+// Initialisieren Sie den Zähler
 int count = 0;
 
-// Loop through all first page artifacts
+// Durchlaufen Sie alle Artefakte der ersten Seite
 foreach(Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
-     // If the artifact subtype is "watermark", increment the counter
+     //Wenn der Artefaktuntertyp „Wasserzeichen“ ist, erhöhen Sie den Zähler
      if (artifact.Subtype == Artifact.ArtifactSubtype.Watermark)
          count++;
 }
 
-// Display the number of "watermark" type artifacts
+// Zeigt die Anzahl der Artefakte vom Typ „Wasserzeichen“ an
 Console.WriteLine("The page contains " + count + " watermarks");
 ```
 
-The above code loops through all the artifacts on the first page of the PDF document and increments the counter for each "watermark" type artifact encountered.
+Der obige Code durchläuft alle Artefakte auf der ersten Seite des PDF-Dokuments und erhöht den Zähler für jedes gefundene Artefakt vom Typ „Wasserzeichen“.
 
-### Sample source code for Counting Artifacts using Aspose.PDF for .NET 
+### Beispielquellcode für das Zählen von Artefakten mit Aspose.PDF für .NET 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document( dataDir +  "watermark.pdf");
 
 int count = 0;
 foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
-	// If artifact type is watermark, increate the counter
+	// Wenn der Artefakttyp „Wasserzeichen“ ist, erhöhen Sie den Zähler
 	if (artifact.Subtype == Artifact.ArtifactSubtype.Watermark) count++;
 }
 Console.WriteLine("Page contains " + count + " watermarks");
 
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You learned how to count "watermark" artifacts in a PDF document using Aspose.PDF for .NET. You can now use this knowledge to perform specific analysis and processing on artifacts in your PDF documents.
+Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET „Wasserzeichen“-Artefakte in einem PDF-Dokument zählen. Sie können dieses Wissen nun nutzen, um spezifische Analysen und Verarbeitungen von Artefakten in Ihren PDF-Dokumenten durchzuführen.
 
-### FAQ's for counting artifacts in PDF file
+### FAQs zum Zählen von Artefakten in PDF-Dateien
 
-#### Q: What are artifacts in a PDF document, and why would I need to count them?
+#### F: Was sind Artefakte in einem PDF-Dokument und warum sollte ich sie zählen?
 
-A: Artifacts in a PDF document are elements that don't directly affect the content or appearance of the document but are included for specific purposes, such as accessibility or metadata. Counting artifacts can help you identify and analyze specific elements within a PDF, such as watermarks, annotations, or hidden content.
+A: Artefakte in einem PDF-Dokument sind Elemente, die sich nicht direkt auf den Inhalt oder das Erscheinungsbild des Dokuments auswirken, sondern für bestimmte Zwecke eingefügt werden, beispielsweise zur Barrierefreiheit oder für Metadaten. Das Zählen von Artefakten kann Ihnen dabei helfen, bestimmte Elemente in einer PDF-Datei zu identifizieren und zu analysieren, z. B. Wasserzeichen, Anmerkungen oder versteckte Inhalte.
 
-#### Q: How do I determine the type of artifacts to count in a PDF document using Aspose.PDF for .NET?
+#### F: Wie bestimme ich mit Aspose.PDF für .NET die Art der Artefakte, die in einem PDF-Dokument gezählt werden sollen?
 
-A: The provided C# source code demonstrates how to count "watermark" artifacts on a specific page of a PDF document. You can modify the code to count artifacts of different types by changing the `ArtifactSubtype` comparison to the desired subtype, such as "Annotation," "Stamp," or "Link."
+ A: Der bereitgestellte C#-Quellcode zeigt, wie „Wasserzeichen“-Artefakte auf einer bestimmten Seite eines PDF-Dokuments gezählt werden. Sie können den Code ändern, um Artefakte verschiedener Typen zu zählen, indem Sie die ändern`ArtifactSubtype` Vergleich mit dem gewünschten Untertyp, z. B. „Anmerkung“, „Stempel“ oder „Link“.
 
-#### Q: Can I count artifacts on multiple pages of a PDF document?
+#### F: Kann ich Artefakte auf mehreren Seiten eines PDF-Dokuments zählen?
 
-A: Yes, you can extend the code to loop through artifacts on multiple pages of a PDF document by iterating through the `pdfDocument.Pages` collection and counting artifacts on each page.
+ A: Ja, Sie können den Code erweitern, um Artefakte auf mehreren Seiten eines PDF-Dokuments zu durchlaufen, indem Sie ihn durchlaufen`pdfDocument.Pages` Sammlung und Zählung von Artefakten auf jeder Seite.
 
-#### Q: How can I use the counted artifact information for further processing?
+#### F: Wie kann ich die gezählten Artefaktinformationen für die weitere Verarbeitung verwenden?
 
-A: Once you have counted the desired artifacts, you can use the information for various purposes, such as generating reports, performing targeted modifications, or validating the presence of specific elements within the PDF document.
+A: Sobald Sie die gewünschten Artefakte gezählt haben, können Sie die Informationen für verschiedene Zwecke verwenden, z. B. zum Erstellen von Berichten, zum Durchführen gezielter Änderungen oder zum Überprüfen des Vorhandenseins bestimmter Elemente im PDF-Dokument.
 
-#### Q: Can I customize the counting process to consider additional attributes or conditions of artifacts?
+#### F: Kann ich den Zählvorgang anpassen, um zusätzliche Attribute oder Bedingungen von Artefakten zu berücksichtigen?
 
-A: Absolutely, you can customize the counting process to consider additional attributes or conditions by adding more conditional checks within the loop. For example, you could count artifacts based on a combination of artifact subtype and color.
+A: Auf jeden Fall können Sie den Zählvorgang anpassen, um zusätzliche Attribute oder Bedingungen zu berücksichtigen, indem Sie weitere bedingte Prüfungen innerhalb der Schleife hinzufügen. Beispielsweise könnten Sie Artefakte basierend auf einer Kombination aus Artefaktuntertyp und Farbe zählen.
 
-#### Q: What if my PDF document contains multiple types of artifacts, not just watermarks?
+#### F: Was passiert, wenn mein PDF-Dokument mehrere Arten von Artefakten enthält, nicht nur Wasserzeichen?
 
-A: While the tutorial focuses on counting watermark artifacts, you can adapt the code to count different types of artifacts by adjusting the `ArtifactSubtype` comparison to the desired subtype you want to count.
+ A: Während sich das Tutorial auf das Zählen von Wasserzeichenartefakten konzentriert, können Sie den Code anpassen, um verschiedene Arten von Artefakten zu zählen, indem Sie die anpassen`ArtifactSubtype` Vergleich mit dem gewünschten Subtyp, den Sie zählen möchten.
 
-#### Q: How can I apply this knowledge to automate artifact counting for a large batch of PDF documents?
+#### F: Wie kann ich dieses Wissen anwenden, um die Artefaktzählung für einen großen Stapel von PDF-Dokumenten zu automatisieren?
 
-A: You can create a script or program that iterates through a list of PDF documents and performs the artifact counting process for each document, generating reports or storing the counts for analysis.
+A: Sie können ein Skript oder Programm erstellen, das eine Liste von PDF-Dokumenten durchläuft und den Artefaktzählungsprozess für jedes Dokument durchführt, Berichte generiert oder die Zählungen zur Analyse speichert.
 
-#### Q: Is it possible to count artifacts with specific attributes, such as artifacts of a certain color or size?
+#### F: Ist es möglich, Artefakte mit bestimmten Attributen zu zählen, beispielsweise Artefakte einer bestimmten Farbe oder Größe?
 
-A: Yes, you can enhance the code to count artifacts with specific attributes. Within the loop, you can include additional conditional checks to consider attributes like color, size, or position of artifacts.
+A: Ja, Sie können den Code erweitern, um Artefakte mit bestimmten Attributen zu zählen. Innerhalb der Schleife können Sie zusätzliche bedingte Prüfungen einschließen, um Attribute wie Farbe, Größe oder Position von Artefakten zu berücksichtigen.
 
-#### Q: Can I use this approach to count other types of elements, such as annotations or text objects?
+#### F: Kann ich diesen Ansatz verwenden, um andere Arten von Elementen zu zählen, z. B. Anmerkungen oder Textobjekte?
 
-A: Yes, you can adapt the provided source code to count other types of elements, such as annotations or text objects, by modifying the loop and conditional checks accordingly.
+A: Ja, Sie können den bereitgestellten Quellcode anpassen, um andere Elementtypen wie Anmerkungen oder Textobjekte zu zählen, indem Sie die Schleife und die bedingten Prüfungen entsprechend ändern.

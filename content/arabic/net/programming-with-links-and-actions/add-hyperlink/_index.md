@@ -1,17 +1,17 @@
 ---
-title: Add Hyperlink In PDF File
-linktitle: Add Hyperlink In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add interactive hyperlinks in PDF file with Aspose.PDF for .NET.
+title: إضافة ارتباط تشعبي في ملف PDF
+linktitle: إضافة ارتباط تشعبي في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بإضافة الارتباطات التشعبية التفاعلية بسهولة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 10
 url: /ar/net/programming-with-links-and-actions/add-hyperlink/
 ---
-Adding hyperlinks in PDF file allows you to create interactive hyperlinks to other pages, websites, or destinations in the document. With Aspose.PDF for .NET, you can easily add hyperlinks by following the following source code:
+تتيح لك إضافة الارتباطات التشعبية في ملف PDF إنشاء ارتباطات تشعبية تفاعلية لصفحات أو مواقع ويب أو وجهات أخرى في المستند. باستخدام Aspose.PDF for .NET، يمكنك بسهولة إضافة ارتباطات تشعبية باتباع التعليمات البرمجية المصدر التالية:
 
-## Step 1: Import required libraries
+## الخطوة 1: استيراد المكتبات المطلوبة
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+قبل أن تبدأ، تحتاج إلى استيراد المكتبات اللازمة لمشروع C# الخاص بك. فيما يلي توجيه الاستيراد الضروري:
 
 ```csharp
 using Aspose.Pdf;
@@ -19,25 +19,25 @@ using Aspose.Pdf.Annotations;
 using Aspose.Pdf.Text;
 ```
 
-## Step 2: Set path to documents folder
+## الخطوة 2: تعيين المسار إلى مجلد المستندات
 
-In this step, you need to specify the path to the folder containing the PDF file you want to add a hyperlink to. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+في هذه الخطوة، تحتاج إلى تحديد المسار إلى المجلد الذي يحتوي على ملف PDF الذي تريد إضافة رابط تشعبي إليه. يستبدل`"YOUR DOCUMENT DIRECTORY"`في الكود التالي مع المسار الفعلي لمجلد المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## الخطوة 3: افتح مستند PDF
 
-Now we will open the PDF document to which we want to add a hyperlink using the following code:
+سنقوم الآن بفتح مستند PDF الذي نريد إضافة رابط تشعبي إليه باستخدام الكود التالي:
 
 ```csharp
 Document document = new Document(dataDir + "AddHyperlink.pdf");
 ```
 
-## Step 4: Create a link
+## الخطوة 4: إنشاء رابط
 
-In this step, we will create a hyperlink using the `LinkAnnotation` annotation. We will specify the contact details and area of the link, the type of link and the content of the link. Here is the corresponding code:
+ في هذه الخطوة، سنقوم بإنشاء رابط تشعبي باستخدام ملف`LinkAnnotation` حاشية. ملاحظة. سنحدد تفاصيل الاتصال ومساحة الرابط ونوع الرابط ومحتوى الرابط. هنا هو الكود المقابل:
 
 ```csharp
 Page page = document.Pages[1];
@@ -49,9 +49,9 @@ link. Action = new GoToURIAction("www.aspose.com");
 page.Annotations.Add(link);
 ```
 
-## Step 5: Add additional text
+## الخطوة 5: إضافة نص إضافي
 
-In addition to the hyperlink, we can also add additional text using the `FreeTextAnnotation` annotation. We will specify coordinates, text appearance and text content. Here is the corresponding code:
+ بالإضافة إلى الارتباط التشعبي، يمكننا أيضًا إضافة نص إضافي باستخدام`FreeTextAnnotation` حاشية. ملاحظة. سنحدد الإحداثيات ومظهر النص ومحتوى النص. هنا هو الكود المقابل:
 
 ```csharp
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(document.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), new DefaultAppearance(Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman"), 10, System .Drawing.Color.Blue));
@@ -60,83 +60,83 @@ textAnnotation. Border = border;
 document.Pages[1].Annotations.Add(textAnnotation);
 ```
 
-## Step 6: Save the updated file
+## الخطوة 6: احفظ الملف المحدث
 
-Now let's save the updated PDF file using the `Save` method of the `document` object. Here is the corresponding code:
+ الآن دعونا نحفظ ملف PDF المحدث باستخدام ملف`Save` طريقة`document` هدف. هنا هو الكود المقابل:
 
 ```csharp
 dataDir = dataDir + "AddHyperlink_out.pdf";
 document. Save(dataDir);
 ```
 
-### Sample source code for Add Hyperlink using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإضافة ارتباط تشعبي باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document document = new Document(dataDir + "AddHyperlink.pdf");
-// Create link
+// إنشاء رابط
 Page page = document.Pages[1];
-// Create Link annotation object
+// إنشاء كائن تعليق توضيحي للارتباط
 LinkAnnotation link = new LinkAnnotation(page, new Aspose.Pdf.Rectangle(100, 100, 300, 300));
-// Create border object for LinkAnnotation
+// قم بإنشاء كائن حدودي لـ LinkAnnotation
 Border border = new Border(link);
-// Set the border width value as 0
+// قم بتعيين قيمة عرض الحدود على 0
 border.Width = 0;
-// Set the border for LinkAnnotation
+// قم بتعيين الحدود لـ LinkAnnotation
 link.Border = border;
-// Specify the link type as remote URI
+// حدد نوع الارتباط كـ URI البعيد
 link.Action = new GoToURIAction("www.aspose.com");
-// Add link annotation to annotations collection of first page of PDF file
+//أضف تعليقًا توضيحيًا للارتباط إلى مجموعة التعليقات التوضيحية للصفحة الأولى من ملف PDF
 page.Annotations.Add(link);
-// Create Free Text annotation
+// إنشاء تعليق توضيحي نصي مجاني
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(document.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), new DefaultAppearance(Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman"), 10, System.Drawing.Color.Blue));
-// String to be added as Free text
+// السلسلة المراد إضافتها كنص مجاني
 textAnnotation.Contents = "Link to Aspose website";
-// Set the border for Free Text Annotation
+// قم بتعيين الحدود للتعليق التوضيحي للنص الحر
 textAnnotation.Border = border;
-// Add FreeText annotation to annotations collection of first page of Document
+// أضف تعليقًا توضيحيًا FreeText إلى مجموعة التعليقات التوضيحية للصفحة الأولى من المستند
 document.Pages[1].Annotations.Add(textAnnotation);
 dataDir = dataDir + "AddHyperlink_out.pdf";
-// Save updated document
+// حفظ المستند المحدث
 document.Save(dataDir);
 Console.WriteLine("\nHyperlink added successfully.\nFile saved at " + dataDir);            
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You now have a step-by-step guide to adding hyperlinks with Aspose.PDF for .NET. You can use this code to create interactive links in your PDF documents.
+تهنئة ! لديك الآن دليل خطوة بخطوة لإضافة الارتباطات التشعبية باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الرمز لإنشاء روابط تفاعلية في مستندات PDF الخاصة بك.
 
-### FAQ's for add hyperlink in PDF file
+### الأسئلة الشائعة لإضافة ارتباط تشعبي في ملف PDF
 
-#### Q: Why should I consider adding hyperlinks to my PDF files?
+#### س: لماذا يجب أن أفكر في إضافة ارتباطات تشعبية إلى ملفات PDF الخاصة بي؟
 
-A: Adding hyperlinks to your PDF files enhances user experience by allowing readers to easily navigate to other pages, websites, or destinations within the document. It provides a seamless way to access additional resources or related information.
+ج: تعمل إضافة الارتباطات التشعبية إلى ملفات PDF الخاصة بك على تحسين تجربة المستخدم من خلال السماح للقراء بالانتقال بسهولة إلى الصفحات أو مواقع الويب أو الوجهات الأخرى داخل المستند. فهو يوفر طريقة سلسة للوصول إلى موارد إضافية أو المعلومات ذات الصلة.
 
-#### Q: Is Aspose.PDF for .NET suitable for beginners?
+#### س: هل Aspose.PDF for .NET مناسب للمبتدئين؟
 
-A: Yes, Aspose.PDF for .NET is beginner-friendly. The step-by-step tutorial provided in this guide simplifies the process of adding hyperlinks to PDF files, making it accessible to developers of varying skill levels.
+ج: نعم، Aspose.PDF for .NET مناسب للمبتدئين. يعمل البرنامج التعليمي خطوة بخطوة المقدم في هذا الدليل على تبسيط عملية إضافة الارتباطات التشعبية إلى ملفات PDF، مما يجعلها في متناول المطورين ذوي مستويات المهارة المختلفة.
 
-#### Q: Can I customize the appearance of the hyperlinks?
+#### س: هل يمكنني تخصيص مظهر الارتباطات التشعبية؟
 
-A: Absolutely! Aspose.PDF for .NET offers customization options for hyperlink appearance, including text color, style, and formatting. This allows you to match the hyperlinks to the overall design of your document.
+ج: بالتأكيد! يوفر Aspose.PDF for .NET خيارات تخصيص لمظهر الارتباط التشعبي، بما في ذلك لون النص والنمط والتنسيق. يتيح لك ذلك مطابقة الارتباطات التشعبية مع التصميم العام للمستند الخاص بك.
 
-#### Q: Are hyperlinks supported in all types of PDF documents?
+#### س: هل الارتباطات التشعبية مدعومة في جميع أنواع مستندات PDF؟
 
-A: Yes, hyperlinks can be added to various types of PDF documents, including text-based documents, images, and multimedia-rich files. Aspose.PDF for .NET ensures that the hyperlinks are functional across different PDF formats.
+ج: نعم، يمكن إضافة الارتباطات التشعبية إلى أنواع مختلفة من مستندات PDF، بما في ذلك المستندات النصية والصور والملفات الغنية بالوسائط المتعددة. يضمن Aspose.PDF for .NET أن الارتباطات التشعبية تعمل عبر تنسيقات PDF المختلفة.
 
-#### Q: What other functionalities does Aspose.PDF for .NET offer?
+#### س: ما هي الوظائف الأخرى التي يقدمها Aspose.PDF لـ .NET؟
 
-A: Aspose.PDF for .NET is a robust library that provides a wide range of features, including PDF generation, manipulation, conversion, and extraction. It supports working with text, images, annotations, and more, making it a versatile tool for PDF-related tasks.
+ج: Aspose.PDF for .NET هي مكتبة قوية توفر نطاقًا واسعًا من الميزات، بما في ذلك إنشاء PDF ومعالجته وتحويله واستخراجه. وهو يدعم العمل مع النصوص والصور والتعليقات التوضيحية والمزيد، مما يجعله أداة متعددة الاستخدامات للمهام المتعلقة بملفات PDF.
 
-#### Q: Can hyperlinks be added to specific sections within the document?
+#### س: هل يمكن إضافة الارتباطات التشعبية إلى أقسام معينة داخل المستند؟
 
-A: Yes, using the `LinkAnnotation` annotation, you can create hyperlinks that direct users to specific sections within the PDF document. This feature is particularly useful for creating interactive table of contents or reference links.
+ ج: نعم باستخدام`LinkAnnotation` التعليق التوضيحي، يمكنك إنشاء ارتباطات تشعبية توجه المستخدمين إلى أقسام معينة داخل مستند PDF. هذه الميزة مفيدة بشكل خاص لإنشاء جدول محتويات تفاعلي أو روابط مرجعية.
 
-#### Q: Are there any limitations to adding hyperlinks in PDF files?
+#### س: هل هناك أي قيود على إضافة الارتباطات التشعبية في ملفات PDF؟
 
-A: While Aspose.PDF for .NET offers comprehensive hyperlink functionality, it's important to ensure that the linked content remains accessible and up-to-date. Hyperlinks to external websites should be regularly verified to avoid broken links.
+ج: بينما يوفر Aspose.PDF for .NET وظيفة الارتباط التشعبي الشاملة، فمن المهم التأكد من أن المحتوى المرتبط يظل قابلاً للوصول ومحدثًا. يجب التحقق بانتظام من الارتباطات التشعبية لمواقع الويب الخارجية لتجنب الروابط المعطلة.
 
-#### Q: Can I create hyperlinks to external files using Aspose.PDF for .NET?
+#### س: هل يمكنني إنشاء ارتباطات تشعبية لملفات خارجية باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, in addition to web URLs, you can create hyperlinks that lead to external files, such as other PDF documents, images, or multimedia files. Aspose.PDF for .NET provides the flexibility to link to various types of resources.
+ج: نعم، بالإضافة إلى عناوين URL على الويب، يمكنك إنشاء ارتباطات تشعبية تؤدي إلى ملفات خارجية، مثل مستندات PDF أو صور أو ملفات وسائط متعددة أخرى. يوفر Aspose.PDF for .NET المرونة اللازمة للارتباط بأنواع مختلفة من الموارد.

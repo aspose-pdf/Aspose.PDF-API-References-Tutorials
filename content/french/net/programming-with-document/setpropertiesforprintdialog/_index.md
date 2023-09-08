@@ -1,49 +1,49 @@
 ---
-title: Set Properties For Print Dialog
-linktitle: Set Properties For Print Dialog
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set properties for print dialog in Aspose.PDF for .NET using step-by-step guide.
+title: Définir les propriétés de la boîte de dialogue Imprimer
+linktitle: Définir les propriétés de la boîte de dialogue Imprimer
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment définir les propriétés de la boîte de dialogue d'impression dans Aspose.PDF pour .NET à l'aide d'un guide étape par étape.
 type: docs
 weight: 320
 url: /fr/net/programming-with-document/setpropertiesforprintdialog/
 ---
-here's a step-by-step guide for setting properties for the print dialog using Aspose.PDF for .NET:
+voici un guide étape par étape pour définir les propriétés de la boîte de dialogue d'impression à l'aide d'Aspose.PDF pour .NET :
 
 
-## Step 1: Define the directory where your PDF document is located:
+## Étape 1 : Définissez le répertoire où se trouve votre document PDF :
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
    
-## Step 2: Create a new instance of the `Document` class:
+##  Étape 2 : Créez une nouvelle instance du`Document` class:
 
 ```csharp
 using (Document doc = new Document())
 {
-  // Code here
+  // Codez ici
 }
 ```
    
-## Step 3: Add a new page to the document:
+## Étape 3 : Ajouter une nouvelle page au document :
 
 ```csharp
 doc.Pages.Add();
 ```
    
-## Step 4: Set the duplex property to `DuplexFlipLongEdge`:
+##  Étape 4 : définissez la propriété duplex sur`DuplexFlipLongEdge`:
 
 ```csharp
 doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
 ```
    
-## Step 5: Save the document with the specified file name and format:
+## Étape 5 : Enregistrez le document avec le nom de fichier et le format spécifiés :
 
 ```csharp
 doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
 ```
 
-### Example source code for Set Properties For Print Dialog using Aspose.PDF for .NET
+### Exemple de code source pour la boîte de dialogue Définir les propriétés de l'impression à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -58,18 +58,18 @@ using (Document doc = new Document())
 
 ## Conclusion
 
-Aspose.PDF for .NET makes it easy to set properties for the print dialog in your PDF files. By following the step-by-step guide above, you can quickly optimize your PDF files for printing.
+Aspose.PDF pour .NET facilite la définition des propriétés de la boîte de dialogue d'impression dans vos fichiers PDF. En suivant le guide étape par étape ci-dessus, vous pouvez rapidement optimiser vos fichiers PDF pour l'impression.
 
-### FAQ's
+### FAQ
 
-#### Q: Can I set other print dialog properties besides duplex mode using Aspose.PDF for .NET?
+#### Q : Puis-je définir d'autres propriétés de la boîte de dialogue d'impression en plus du mode recto verso à l'aide d'Aspose.PDF pour .NET ?
 
-A: Yes, besides setting the duplex mode, Aspose.PDF for .NET allows you to set various other properties for the print dialog. Some examples include setting the print quality, page range, number of copies, paper size, and more. You can refer to the Aspose.PDF for .NET documentation to explore the full list of available properties.
+: Oui, outre la définition du mode recto verso, Aspose.PDF pour .NET vous permet de définir diverses autres propriétés pour la boîte de dialogue d'impression. Quelques exemples incluent la définition de la qualité d'impression, de la plage de pages, du nombre de copies, du format du papier, etc. Vous pouvez vous référer à la documentation Aspose.PDF pour .NET pour explorer la liste complète des propriétés disponibles.
 
-#### Q: How can I set the print quality when printing the PDF document?
+#### Q : Comment puis-je définir la qualité d'impression lors de l'impression du document PDF ?
 
-A: To set the print quality, you can use the `PrintQuality` property of the `Document` class in Aspose.PDF for .NET. You can choose from different print quality options such as high, medium, or low, based on your requirements.
+ R : Pour définir la qualité d'impression, vous pouvez utiliser le`PrintQuality` propriété du`Document` classe dans Aspose.PDF pour .NET. Vous pouvez choisir parmi différentes options de qualité d'impression, telles que élevée, moyenne ou faible, en fonction de vos besoins.
 
-#### Q: Is it possible to specify custom print settings for different pages in the PDF document?
+#### Q : Est-il possible de spécifier des paramètres d'impression personnalisés pour différentes pages du document PDF ?
 
-A: Yes, you can set custom print settings for different pages in the PDF document using Aspose.PDF for .NET. You can access individual pages through the `doc.Pages` collection and set specific print settings for each page separately.
+ R : Oui, vous pouvez définir des paramètres d'impression personnalisés pour différentes pages du document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez accéder à des pages individuelles via le`doc.Pages` collection et définissez les paramètres d’impression spécifiques pour chaque page séparément.

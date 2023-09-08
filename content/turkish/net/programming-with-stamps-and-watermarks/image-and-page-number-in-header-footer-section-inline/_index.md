@@ -1,129 +1,129 @@
 ---
-title: Image and Page Number in Header Footer Section Inline
-linktitle: Image and Page Number in Header Footer Section Inline
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add image and page number in header and footer using inline paragraphs with Aspose.PDF for .NET.
+title: Üst Bilgi Alt Bilgi Bölümündeki Resim ve Sayfa Numarası Satır İçi
+linktitle: Üst Bilgi Alt Bilgi Bölümündeki Resim ve Sayfa Numarası Satır İçi
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile satır içi paragrafları kullanarak üstbilgi ve altbilgiye resim ve sayfa numarası eklemeyi öğrenin.
 type: docs
 weight: 120
 url: /tr/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section-inline/
 ---
-In this tutorial, we will guide you step by step on how to add image and page number in header and footer section of PDF document using Aspose.PDF for .NET. We will use the provided C# source code to create a page, set header and footer, add image and text using inline paragraphs in the header of the PDF document.
+Bu eğitimde, Aspose.PDF for .NET kullanarak PDF belgesinin üstbilgi ve altbilgi bölümüne resim ve sayfa numarasının nasıl ekleneceği konusunda size adım adım rehberlik edeceğiz. PDF belgesinin başlığındaki satır içi paragrafları kullanarak sayfa oluşturmak, üstbilgi ve altbilgiyi ayarlamak, resim ve metin eklemek için sağlanan C# kaynak kodunu kullanacağız.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Kurulu bir .NET geliştirme ortamı.
+- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
 
-## Step 2: Creating the PDF Document and Page
+## Adım 2: PDF Belgesini ve Sayfasını Oluşturma
 
-The first step is to create a new Document object and a page in the PDF document. Here's how:
+İlk adım, PDF belgesinde yeni bir Belge nesnesi ve bir sayfa oluşturmaktır. İşte nasıl:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a new Document object
+// Yeni bir Belge nesnesi oluşturun
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 
-// Create a page in the document
+// Belgede bir sayfa oluşturun
 Aspose.Pdf.Page page = pdf1.Pages.Add();
 ```
 
-The code above creates a new Document object and an empty page in the PDF document.
+Yukarıdaki kod, PDF belgesinde yeni bir Belge nesnesi ve boş bir sayfa oluşturur.
 
-## Step 3: Adding the header with an image and inline text
+## 3. Adım: Resim ve satır içi metin içeren başlığı ekleme
 
-Now that the page is created, we can add a header section with an image and text using inline paragraphs. Here's how:
+Artık sayfa oluşturulduğuna göre, satır içi paragrafları kullanarak resim ve metin içeren bir başlık bölümü ekleyebiliriz. İşte nasıl:
 
 ```csharp
-// Create a header section
+// Başlık bölümü oluşturma
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the page header
+// Sayfa başlığını ayarlayın
 page. Header = header;
 
-// Create a TextFragment object for the first inline text
+// İlk satır içi metin için bir TextFragment nesnesi oluşturun
 Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf is a robust component developed by");
 
-// Specify text color
+// Metin rengini belirtin
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
 
-// Create an Image object for the image
+// Görüntü için bir Görüntü nesnesi oluşturun
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set image path
+// Görüntü yolunu ayarla
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Define the dimensions of the image
+// Resmin boyutlarını tanımlayın
 image1.FixWidth = 50;
 image1.FixHeight = 20;
 
-// Indicate that the first inline text is an image
+// İlk satır içi metnin bir resim olduğunu belirtin
 image1.IsInLineParagraph = true;
 
-// Create a second inline text
+// İkinci bir satır içi metin oluşturun
 Aspose.Pdf.Text.TextFragment txt2 = new Aspose.Pdf.Text.TextFragment(" Pty Ltd.");
 txt2.IsInLineParagraph = true;
 txt2.TextState.ForegroundColor = Color.Maroon;
 
-// Add items to header
+// Başlığa öğe ekle
 header.Paragraphs.Add(txt1);
 header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
 ```
 
-The code above creates a header section, sets the page header with this section, adds a TextFragment with inline text and an inline Image object.
+Yukarıdaki kod bir başlık bölümü oluşturur, bu bölümle sayfa başlığını ayarlar, satır içi metin içeren bir TextFragment ve satır içi Image nesnesi ekler.
 
-## Step 4: Saving the modified PDF document
+## Adım 4: Değiştirilen PDF belgesini kaydetme
 
-Once the header with the image and inline text is added, we can save the modified PDF document. Here's how:
+Görüntüyü ve satır içi metni içeren başlık eklendikten sonra değiştirilen PDF belgesini kaydedebiliriz. İşte nasıl:
 
 ```csharp
-// Save the modified PDF document
+// Değiştirilen PDF belgesini kaydedin
 pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Yukarıdaki kod, düzenlenen PDF belgesini belirtilen dizine kaydeder.
 
-### Sample source code for Imageand Page Numberin Header Footersection Inline using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Satır İçi Başlık Alt Bilgi bölümündeki Görüntü ve Sayfa Numarası için örnek kaynak kodu 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate a Document object by calling its empty constructor
+// Boş yapıcısını çağırarak bir Document nesnesinin örneğini oluşturun
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 
-// Create a page in the Pdf object
+// Pdf nesnesinde bir sayfa oluşturun
 Aspose.Pdf.Page page = pdf1.Pages.Add();
 
-// Create Header Section of the document
+// Belgenin Başlık Bölümünü Oluşturun
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the header for the PDF file
+// PDF dosyasının başlığını ayarlayın
 page.Header = header;
 
-// Create a Text object
+// Metin nesnesi oluşturma
 Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf is a Robust component by");
 
-// Specify the color
+// Rengi belirtin
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
 
-// Create an image object in the section
+// Bölümde bir görüntü nesnesi oluşturun
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set the path of image file
+// Görüntü dosyasının yolunu ayarlayın
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Set the image width Information
+// Görüntü genişliğini ayarlayın Bilgi
 image1.FixWidth = 50;
 image1.FixHeight = 20;
 
-// Indicate seg1's InlineParagraph is a image.
+// Seg1'in InlineParagraph'ının bir resim olduğunu belirtin.
 image1.IsInLineParagraph = true;
 Aspose.Pdf.Text.TextFragment txt2 = new Aspose.Pdf.Text.TextFragment(" Pty Ltd.");
 txt2.IsInLineParagraph = true;
@@ -132,53 +132,53 @@ header.Paragraphs.Add(txt1);
 header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
 
-// Save the Pdf
+// PDF'yi kaydet
 pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.pdf");
 
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have learned how to add an image and page number in the header and footer section of a PDF document using inline paragraphs with Aspose.PDF for .NET. You can now customize the header and footer of your PDF documents flexibly.
+Tebrikler! Aspose.PDF for .NET ile satır içi paragrafları kullanarak bir PDF belgesinin üstbilgi ve altbilgi bölümüne nasıl resim ve sayfa numarası ekleyeceğinizi öğrendiniz. Artık PDF belgelerinizin üstbilgisini ve altbilgisini esnek bir şekilde özelleştirebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the advantage of using inline paragraphs for adding an image and text to the header of a PDF document?
+#### S: PDF belgesinin başlığına resim ve metin eklemek için satır içi paragraf kullanmanın avantajı nedir?
 
-A: Using inline paragraphs allows you to seamlessly integrate images and text within the same paragraph, providing precise control over their placement and formatting. This method is especially useful for creating customized headers with visual elements.
+C: Satır içi paragrafları kullanmak, görselleri ve metni aynı paragraf içinde sorunsuz bir şekilde entegre etmenize olanak tanıyarak bunların yerleşimi ve biçimlendirmesi üzerinde hassas kontrol sağlar. Bu yöntem özellikle görsel öğeler içeren özelleştirilmiş başlıklar oluşturmak için kullanışlıdır.
 
-#### Q: How does the provided C# source code achieve inline paragraphs for the header in a PDF document?
+#### S: Sağlanan C# kaynak kodu, bir PDF belgesindeki başlık için satır içi paragrafları nasıl elde eder?
 
-A: The provided code demonstrates how to create a PDF document, add a page, and customize the header using inline paragraphs. It adds a TextFragment with inline text, an inline image, and another inline TextFragment.
+C: Sağlanan kod, bir PDF belgesinin nasıl oluşturulacağını, sayfa ekleneceğini ve satır içi paragraflar kullanılarak başlığın nasıl özelleştirileceğini gösterir. Satır içi metin içeren bir TextFragment, bir satır içi görüntü ve başka bir satır içi TextFragment ekler.
 
-#### Q: How do I specify the color of the inline text in the header?
+#### S: Başlıktaki satır içi metnin rengini nasıl belirlerim?
 
-A: The color of the inline text is specified using the `ForegroundColor` property of the `TextState` of the `TextFragment` object.
+ C: Satır içi metnin rengi şu komut kullanılarak belirtilir:`ForegroundColor` mülkiyeti`TextState` arasında`TextFragment` nesne.
 
-#### Q: Can I adjust the dimensions of the inline image in the header?
+#### S: Başlıktaki satır içi görüntünün boyutlarını ayarlayabilir miyim?
 
-A: Yes, you can adjust the dimensions of the inline image using the `FixWidth` and `FixHeight` properties of the `Image` object. This allows you to control the width and height of the image within the header.
+ C: Evet, satır içi görüntünün boyutlarını aşağıdaki düğmeyi kullanarak ayarlayabilirsiniz:`FixWidth` Ve`FixHeight` özellikleri`Image` nesne. Bu, başlıktaki görüntünün genişliğini ve yüksekliğini kontrol etmenize olanak tanır.
 
-#### Q: Can I include additional inline elements, such as hyperlinks or different font styles, in the header?
+#### S: Başlığa köprüler veya farklı yazı tipi stilleri gibi ek satır içi öğeler ekleyebilir miyim?
 
-A: Yes, you can include additional inline elements in the header by creating more `TextFragment` or `Image` objects with the desired properties. This allows you to customize the header further, including hyperlinks, different font styles, or other visual elements.
+ C: Evet, daha fazla öğe oluşturarak başlığa ek satır içi öğeler ekleyebilirsiniz.`TextFragment` veya`Image` İstenilen özelliklere sahip nesneler. Bu, köprüler, farklı yazı tipi stilleri veya diğer görsel öğeler de dahil olmak üzere başlığı daha da özelleştirmenize olanak tanır.
 
-#### Q: How can I ensure that the inline image and text remain properly aligned and formatted across different devices and viewers?
+#### S: Satır içi görselin ve metnin farklı cihazlar ve izleyiciler arasında düzgün şekilde hizalandığından ve biçimlendirildiğinden nasıl emin olabilirim?
 
-A: Aspose.PDF for .NET ensures that inline images and text are properly aligned and formatted, resulting in consistent appearance across different devices and PDF viewers.
+C: Aspose.PDF for .NET, satır içi görsellerin ve metinlerin düzgün şekilde hizalanmasını ve formatlanmasını sağlayarak farklı cihazlar ve PDF görüntüleyiciler arasında tutarlı bir görünüm sağlar.
 
-#### Q: Can I apply inline paragraphs to the footer section as well?
+#### S: Satır içi paragrafları altbilgi bölümüne de uygulayabilir miyim?
 
-A: Yes, you can apply the same technique of using inline paragraphs to the footer section by creating a `Footer` object and adding inline elements such as text and images to it.
+ C: Evet, satır içi paragraf kullanma tekniğinin aynısını altbilgi bölümüne de uygulayabilirsiniz.`Footer` nesne ve ona metin ve resimler gibi satır içi öğeler ekleme.
 
-#### Q: Is it possible to combine inline paragraphs with other header or footer customization methods?
+#### S: Satır içi paragrafları diğer üstbilgi veya altbilgi özelleştirme yöntemleriyle birleştirmek mümkün müdür?
 
-A: Yes, you can combine inline paragraphs with other header or footer customization methods provided by Aspose.PDF for .NET to create more complex and tailored header or footer designs.
+C: Evet, daha karmaşık ve özelleştirilmiş üstbilgi veya altbilgi tasarımları oluşturmak için satır içi paragrafları Aspose.PDF for .NET tarafından sağlanan diğer üstbilgi veya altbilgi özelleştirme yöntemleriyle birleştirebilirsiniz.
 
-#### Q: Can I remove or clear the inline elements from the header if needed?
+#### S: Gerekirse başlıktaki satır içi öğeleri kaldırabilir veya temizleyebilir miyim?
 
-A: Yes, you can remove or clear the inline elements by modifying the contents of the `HeaderFooter` object and removing the respective inline paragraphs.
+ C: Evet, satır içi öğeleri, içeriğini değiştirerek kaldırabilir veya temizleyebilirsiniz.`HeaderFooter` nesne ve ilgili satır içi paragrafların kaldırılması.
 
-#### Q: How can I apply inline paragraphs to specific pages of the PDF document?
+#### S: Satır içi paragrafları PDF belgesinin belirli sayfalarına nasıl uygulayabilirim?
 
-A: To apply inline paragraphs to specific pages, you can create separate `HeaderFooter` objects for each page and assign them using the `Header` property of the respective `Aspose.Pdf.Page` objects.
+ C: Satır içi paragrafları belirli sayfalara uygulamak için ayrı paragraflar oluşturabilirsiniz.`HeaderFooter` her sayfa için nesneler ve bunları kullanarak atayın`Header` ilgilinin mülkiyeti`Aspose.Pdf.Page` nesneler.

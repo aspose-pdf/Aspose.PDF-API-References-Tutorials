@@ -1,134 +1,134 @@
 ---
-title: Set Image Size In PDF File
-linktitle: Set Image Size In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to set the size of an image in PDF file using Aspose.PDF for .NET.
+title: Bildgröße in der PDF-Datei festlegen
+linktitle: Bildgröße in der PDF-Datei festlegen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Schritt-für-Schritt-Anleitung zum Festlegen der Größe eines Bildes in einer PDF-Datei mit Aspose.PDF für .NET.
 type: docs
 weight: 270
 url: /de/net/programming-with-images/set-image-size/
 ---
-In this tutorial, we will walk you through how to set the size of an image in PDF file using Aspose.PDF for .NET. Follow these steps to perform this operation easily.
+In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET die Größe eines Bildes in einer PDF-Datei festlegen. Befolgen Sie diese Schritte, um diesen Vorgang einfach durchzuführen.
 
-## Prerequisites
+## Voraussetzungen
 
-Before you begin, make sure you have the following:
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- Visual Studio or any other development environment installed and configured.
-- A basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed. You can download it from Aspose official website.
+- Visual Studio oder eine andere Entwicklungsumgebung installiert und konfiguriert.
+- Grundkenntnisse der Programmiersprache C#.
+- Aspose.PDF-Bibliothek für .NET installiert. Sie können es von der offiziellen Website von Aspose herunterladen.
 
-## Step 1: Creation of the PDF document
+## Schritt 1: Erstellung des PDF-Dokuments
 
-To get started, use the following code to create a new PDF document:
+Verwenden Sie zunächst den folgenden Code, um ein neues PDF-Dokument zu erstellen:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Instantiate a Document object
+// Instanziieren Sie ein Document-Objekt
 Document doc = new Document();
 
-// Add a page to the collection of pages of the PDF file
+// Fügen Sie eine Seite zur Seitensammlung der PDF-Datei hinzu
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## Step 2: Added picture
+## Schritt 2: Bild hinzugefügt
 
-Next, we'll add an image to the page of the PDF document. Use the following code:
+Als Nächstes fügen wir der Seite des PDF-Dokuments ein Bild hinzu. Verwenden Sie den folgenden Code:
 
 ```csharp
-// Create an image instance
+// Erstellen Sie eine Image-Instanz
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 
-// Set the width and height of the image in points
+// Legen Sie die Breite und Höhe des Bildes in Punkten fest
 img. FixWidth = 100;
 img. FixHeight = 100;
 
-// Set image type to unknown (Unknown)
+// Bildtyp auf unbekannt (Unbekannt) setzen
 img.FileType = Aspose.Pdf.ImageFileType.Unknown;
 
-// Path to the image source file
+//Pfad zur Bildquelldatei
 img.File = dataDir + "aspose-logo.jpg";
 
-// Add the image to the page's paragraph collection
+// Fügen Sie das Bild zur Absatzsammlung der Seite hinzu
 page.Paragraphs.Add(img);
 ```
 
-Be sure to provide the correct path to the image source file.
+Stellen Sie sicher, dass Sie den korrekten Pfad zur Bildquelldatei angeben.
 
-## Step 3: Setting page properties
+## Schritt 3: Seiteneigenschaften festlegen
 
-Finally, we'll set the properties of the page, including its width and height. Use the following code:
+Schließlich legen wir die Eigenschaften der Seite fest, einschließlich ihrer Breite und Höhe. Verwenden Sie den folgenden Code:
 
 ```csharp
-// Set page properties
+// Seiteneigenschaften festlegen
 page.PageInfo.Width = 800;
 page.PageInfo.Height = 800;
 ```
 
-### Sample source code for Set Image Size using Aspose.PDF for .NET 
+### Beispielquellcode zum Festlegen der Bildgröße mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document object
+// Dokumentobjekt instanziieren
 Document doc = new Document();
-// add page to pages collection of PDF file
+// Seite zur Seitensammlung der PDF-Datei hinzufügen
 Aspose.Pdf.Page page = doc.Pages.Add();
-// Create an image instance
+// Erstellen Sie eine Image-Instanz
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
-// Set Image Width and Height in Points
+// Legen Sie die Bildbreite und -höhe in Punkten fest
 img.FixWidth = 100;
 img.FixHeight = 100;
-// Set image type as SVG
+// Stellen Sie den Bildtyp auf SVG ein
 img.FileType = Aspose.Pdf.ImageFileType.Unknown;
-// Path for source file
+// Pfad für die Quelldatei
 img.File = dataDir + "aspose-logo.jpg";
 page.Paragraphs.Add(img);
-//Set page properties
+//Seiteneigenschaften festlegen
 page.PageInfo.Width = 800;
 page.PageInfo.Height = 800;
 dataDir = dataDir + "SetImageSize_out.pdf";
-// save resultant PDF file
+// Speichern Sie die resultierende PDF-Datei
 doc.Save(dataDir);
 Console.WriteLine("\nImage size added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You have successfully set the size of an image in a PDF document using Aspose.PDF for .NET. You can now apply this method to your own projects to adjust the size of images in PDF files.
+Herzlichen Glückwunsch! Sie haben die Größe eines Bildes in einem PDF-Dokument mit Aspose.PDF für .NET erfolgreich festgelegt. Sie können diese Methode jetzt auf Ihre eigenen Projekte anwenden, um die Größe von Bildern in PDF-Dateien anzupassen.
 
-### FAQ's for set image size in PDF file
+### FAQs zum Festlegen der Bildgröße in einer PDF-Datei
 
-#### Q: What is the purpose of setting the size of an image in a PDF document using Aspose.PDF for .NET?
+#### F: Was ist der Zweck, die Größe eines Bildes in einem PDF-Dokument mit Aspose.PDF für .NET festzulegen?
 
-A: The purpose of setting the size of an image in a PDF document is to control the dimensions of the image when it is added to the PDF. This allows you to adjust the appearance and layout of images within your PDF files.
+A: Der Zweck des Festlegens der Größe eines Bildes in einem PDF-Dokument besteht darin, die Abmessungen des Bildes zu steuern, wenn es dem PDF hinzugefügt wird. Dadurch können Sie das Erscheinungsbild und Layout von Bildern in Ihren PDF-Dateien anpassen.
 
-#### Q: How does the process of setting the size of an image work in a PDF document?
+#### F: Wie funktioniert das Festlegen der Bildgröße in einem PDF-Dokument?
 
-A: The process involves creating an `Aspose.Pdf.Image` instance, specifying its width and height using the `FixWidth` and `FixHeight` properties, and then adding the image to the PDF document. Additionally, you can set the dimensions of the page itself to accommodate the image.
+ A: Der Prozess umfasst die Erstellung eines`Aspose.Pdf.Image` Geben Sie beispielsweise seine Breite und Höhe mithilfe von an`FixWidth` Und`FixHeight` Eigenschaften und fügen Sie dann das Bild dem PDF-Dokument hinzu. Darüber hinaus können Sie die Abmessungen der Seite selbst anpassen, um sie an das Bild anzupassen.
 
-#### Q: Can I set the size of an image to a specific percentage of the page dimensions?
+#### F: Kann ich die Größe eines Bildes auf einen bestimmten Prozentsatz der Seitenabmessungen einstellen?
 
-A: The provided code sets the absolute width and height of the image in points. If you want to set the size of an image based on a percentage of the page dimensions, you would need to calculate the dimensions accordingly and adjust the code accordingly.
+A: Der bereitgestellte Code legt die absolute Breite und Höhe des Bildes in Punkten fest. Wenn Sie die Größe eines Bildes anhand eines Prozentsatzes der Seitenabmessungen festlegen möchten, müssen Sie die Abmessungen entsprechend berechnen und den Code entsprechend anpassen.
 
-#### Q: What is the significance of the `FileType` property when adding an image to the PDF document?
+####  F: Welche Bedeutung hat das?`FileType` property when adding an image to the PDF document?
 
-A: The `FileType` property specifies the type of the image being added to the PDF document. In the provided code, the value `Unknown` indicates that the type of the image is unknown, and Aspose.PDF will attempt to determine the image type based on the file extension.
+ A: Die`FileType`Die Eigenschaft gibt den Typ des Bildes an, das dem PDF-Dokument hinzugefügt wird. Im bereitgestellten Code der Wert`Unknown` zeigt an, dass der Bildtyp unbekannt ist und Aspose.PDF versucht, den Bildtyp anhand der Dateierweiterung zu ermitteln.
 
-#### Q: Can I add multiple images to a single page using this method?
+#### F: Kann ich mit dieser Methode mehrere Bilder zu einer einzelnen Seite hinzufügen?
 
-A: Yes, you can add multiple images to a single page by creating multiple `Aspose.Pdf.Image` instances and adding them to the page's paragraph collection. Make sure to adjust the positioning and layout of the images as needed.
+ A: Ja, Sie können mehrere Bilder zu einer einzelnen Seite hinzufügen, indem Sie mehrere erstellen`Aspose.Pdf.Image` Instanzen und fügen Sie sie der Absatzsammlung der Seite hinzu. Stellen Sie sicher, dass Sie die Positionierung und das Layout der Bilder nach Bedarf anpassen.
 
-#### Q: How can I control the placement and alignment of the added image on the page?
+#### F: Wie kann ich die Platzierung und Ausrichtung des hinzugefügten Bildes auf der Seite steuern?
 
-A: The placement and alignment of the added image can be controlled by adjusting the coordinates and layout of the image using properties such as `img.Left`, `img.Top`, and paragraph formatting properties.
+ A: Die Platzierung und Ausrichtung des hinzugefügten Bildes kann durch Anpassen der Koordinaten und des Layouts des Bildes mithilfe von Eigenschaften wie gesteuert werden`img.Left`, `img.Top`und Absatzformatierungseigenschaften.
 
-#### Q: What is the purpose of setting the page properties using `page.PageInfo.Width` and `page.PageInfo.Height`?
+####  F: Zu welchem Zweck werden die Seiteneigenschaften festgelegt?`page.PageInfo.Width` and `page.PageInfo.Height`?
 
-A: Setting the page properties allows you to define the dimensions of the page itself. This ensures that the page dimensions accommodate the added image and any other content you may have on the page.
+A: Durch Festlegen der Seiteneigenschaften können Sie die Abmessungen der Seite selbst definieren. Dadurch wird sichergestellt, dass die Seitenabmessungen dem hinzugefügten Bild und allen anderen Inhalten, die Sie möglicherweise auf der Seite haben, gerecht werden.
 
-#### Q: Can I set different sizes for different images within the same PDF document?
+#### F: Kann ich für verschiedene Bilder innerhalb desselben PDF-Dokuments unterschiedliche Größen festlegen?
 
-A: Yes, you can set different sizes for different images by creating separate `Aspose.Pdf.Image` instances and adjusting the `FixWidth`, `FixHeight`, and placement properties for each image.
+ A: Ja, Sie können unterschiedliche Größen für verschiedene Bilder festlegen, indem Sie separate Bilder erstellen`Aspose.Pdf.Image` Instanzen und Anpassen der`FixWidth`, `FixHeight`und Platzierungseigenschaften für jedes Bild.
 
-#### Q: How can I integrate this method into my own projects to set image sizes in PDF files?
+#### F: Wie kann ich diese Methode in meine eigenen Projekte integrieren, um Bildgrößen in PDF-Dateien festzulegen?
 
-A: To integrate this method into your projects, follow the outlined steps and modify the code as needed. You can use this method to add images of specific sizes to your PDF documents based on your application's requirements.
+A: Um diese Methode in Ihre Projekte zu integrieren, befolgen Sie die beschriebenen Schritte und ändern Sie den Code nach Bedarf. Mit dieser Methode können Sie je nach den Anforderungen Ihrer Anwendung Bilder in bestimmten Größen zu Ihren PDF-Dokumenten hinzufügen.

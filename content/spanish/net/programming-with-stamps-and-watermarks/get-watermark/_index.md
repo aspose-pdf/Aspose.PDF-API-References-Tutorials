@@ -1,59 +1,59 @@
 ---
-title: Get Watermark From PDF File
-linktitle: Get Watermark From PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract watermarks from PDF file with Aspose.PDF for .NET.
+title: Obtener marca de agua de un archivo PDF
+linktitle: Obtener marca de agua de un archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a extraer marcas de agua de un archivo PDF con Aspose.PDF para .NET.
 type: docs
 weight: 100
 url: /es/net/programming-with-stamps-and-watermarks/get-watermark/
 ---
-In this tutorial, we will take you step by step on how to get a watermark from PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to iterate through the artifacts of a specific page and get the watermark type, text, and location.
+En este tutorial, le explicaremos paso a paso cómo obtener una marca de agua de un archivo PDF utilizando Aspose.PDF para .NET. Le mostraremos cómo utilizar el código fuente de C# proporcionado para recorrer los artefactos de una página específica y obtener el tipo de marca de agua, el texto y la ubicación.
 
-## Step 1: Setting up the environment
+## Paso 1: configurar el entorno
 
-Before you begin, make sure you have the following:
+Antes de comenzar, asegúrese de tener lo siguiente:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Un entorno de desarrollo .NET instalado.
+- La biblioteca Aspose.PDF para .NET descargada y referenciada en su proyecto.
 
-## Step 2: Loading the PDF document
+## Paso 2: cargar el documento PDF
 
-The first step is to load the existing PDF document into your project. Here's how:
+El primer paso es cargar el documento PDF existente en su proyecto. Así es cómo:
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the PDF document
+//Abrir el documento PDF
 Document pdfDocument = new Document(dataDir + "watermark.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Asegúrese de reemplazar "SU DIRECTORIO DE DOCUMENTOS" con la ruta real al directorio donde se encuentra su documento PDF.
 
-## Step 3: Getting the watermark
+## Paso 3: Obtener la marca de agua
 
-Now that you have loaded the PDF document, you can iterate through the specific page artifacts to get the watermark information. Here's how:
+Ahora que ha cargado el documento PDF, puede recorrer los artefactos de página específicos para obtener la información de la marca de agua. Así es cómo:
 
 ```csharp
-// Browse artifacts and get watermark subtype, text and location
+// Explore artefactos y obtenga subtipos, texto y ubicación de marcas de agua
 foreach(Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
      Console.WriteLine(artifact.Subtype + " " + artifact.Text + " " + artifact.Rectangle);
 }
 ```
 
-The above code loops through all artifacts on the first page of the PDF document and displays the subtype, text, and rectangle (location) of each watermark encountered.
+El código anterior recorre todos los artefactos en la primera página del documento PDF y muestra el subtipo, el texto y el rectángulo (ubicación) de cada marca de agua encontrada.
 
-### Sample source code for Get Watermark using Aspose.PDF for .NET 
+### Código fuente de muestra para Obtener marca de agua usando Aspose.PDF para .NET 
 ```csharp
 
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Abrir documento
 Document pdfDocument = new Document( dataDir +  "watermark.pdf");
 
-// Iterate through and get tub-type, text and location of artifact
+// Iterar y obtener el tipo de contenedor, el texto y la ubicación del artefacto
 foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
 	Console.WriteLine(artifact.Subtype + " " + artifact.Text + " " + artifact.Rectangle);
@@ -61,48 +61,48 @@ foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 
 ```
 
-## Conclusion
+## Conclusión
 
-Congratulation ! You have learned how to get watermark information from a PDF document using Aspose.PDF for .NET. Now you can use this knowledge to analyze and process watermarks in your PDF documents.
+¡Enhorabuena! Ha aprendido cómo obtener información de marca de agua de un documento PDF usando Aspose.PDF para .NET. Ahora puede utilizar este conocimiento para analizar y procesar marcas de agua en sus documentos PDF.
 
-### FAQ's for get watermark from PDF file
+### Preguntas frecuentes para obtener marcas de agua de un archivo PDF
 
-#### Q: What is a watermark in a PDF document, and why would I need to extract its information?
+#### P: ¿Qué es una marca de agua en un documento PDF y por qué necesitaría extraer su información?
 
-A: A watermark in a PDF document is a recognizable image or text that is superimposed onto the content of the document, often to indicate its status, ownership, or confidential nature. Extracting watermark information can be useful for analyzing document authenticity, identifying document source, or processing documents based on watermark presence.
+R: Una marca de agua en un documento PDF es una imagen o texto reconocible que se superpone al contenido del documento, a menudo para indicar su estado, propiedad o naturaleza confidencial. Extraer información de marcas de agua puede resultar útil para analizar la autenticidad de los documentos, identificar el origen del documento o procesar documentos en función de la presencia de marcas de agua.
 
-#### Q: How does the provided C# source code help in extracting watermark information from a PDF file?
+#### P: ¿Cómo ayuda el código fuente C# proporcionado a extraer información de marca de agua de un archivo PDF?
 
-A: The provided code demonstrates how to load an existing PDF document, iterate through the artifacts of a specific page, and extract information about watermarks. It does this by accessing the `Subtype`, `Text`, and `Rectangle` properties of each artifact.
+ R: El código proporcionado demuestra cómo cargar un documento PDF existente, recorrer los artefactos de una página específica y extraer información sobre marcas de agua. Lo hace accediendo al`Subtype`, `Text` , y`Rectangle` propiedades de cada artefacto.
 
-#### Q: What does the `Subtype` property of an artifact represent?
+####  P: ¿Qué significa el`Subtype` property of an artifact represent?
 
-A: The `Subtype` property of an artifact represents the type of the artifact. For watermarks, it indicates that the artifact is a watermark.
+ R: El`Subtype` La propiedad de un artefacto representa el tipo de artefacto. Para marcas de agua, indica que el artefacto es una marca de agua.
 
-#### Q: How does the code determine the location (rectangle) of the watermark on the page?
+#### P: ¿Cómo determina el código la ubicación (rectángulo) de la marca de agua en la página?
 
-A: The code uses the `Rectangle` property of the artifact to determine the location of the watermark. The `Rectangle` property represents the bounding rectangle of the artifact on the page.
+ R: El código utiliza el`Rectangle` propiedad del artefacto para determinar la ubicación de la marca de agua. El`Rectangle` La propiedad representa el rectángulo delimitador del artefacto en la página.
 
-#### Q: Can I modify the code to extract additional information about the watermark, such as its appearance or color?
+#### P: ¿Puedo modificar el código para extraer información adicional sobre la marca de agua, como su apariencia o color?
 
-A: Yes, you can modify the code to access other properties of the artifact, such as its appearance or color, if such information is available and relevant to your use case.
+R: Sí, puede modificar el código para acceder a otras propiedades del artefacto, como su apariencia o color, si dicha información está disponible y es relevante para su caso de uso.
 
-#### Q: Can I extract watermark information from multiple pages of a PDF document using this code?
+#### P: ¿Puedo extraer información de marca de agua de varias páginas de un documento PDF usando este código?
 
-A: Yes, you can modify the code to iterate through artifacts on multiple pages by changing the page index in the loop to access artifacts from different pages.
+R: Sí, puede modificar el código para iterar a través de artefactos en varias páginas cambiando el índice de la página en el bucle para acceder a artefactos de diferentes páginas.
 
-#### Q: What happens if there are no watermarks on the specified page?
+#### P: ¿Qué sucede si no hay marcas de agua en la página especificada?
 
-A: If there are no watermarks on the specified page, the loop will not execute, and no watermark information will be displayed.
+R: Si no hay marcas de agua en la página especificada, el bucle no se ejecutará y no se mostrará ninguna información de la marca de agua.
 
-#### Q: How can I use the extracted watermark information for further processing?
+#### P: ¿Cómo puedo utilizar la información de marca de agua extraída para su posterior procesamiento?
 
-A: The extracted watermark information can be used for various purposes, such as logging, analysis, reporting, or automation of specific actions based on the presence or properties of watermarks.
+R: La información extraída de las marcas de agua se puede utilizar para diversos fines, como registro, análisis, informes o automatización de acciones específicas basadas en la presencia o propiedades de las marcas de agua.
 
-#### Q: Can I modify this code to extract information about other types of artifacts in a PDF document?
+#### P: ¿Puedo modificar este código para extraer información sobre otros tipos de artefactos en un documento PDF?
 
-A: Yes, you can modify the code to extract information about other types of artifacts by accessing their properties using a similar approach.
+R: Sí, puede modificar el código para extraer información sobre otros tipos de artefactos accediendo a sus propiedades mediante un enfoque similar.
 
-#### Q: How can I access watermarks that are not artifacts but are part of the PDF content?
+#### P: ¿Cómo puedo acceder a marcas de agua que no son artefactos pero que forman parte del contenido del PDF?
 
-A: Watermarks that are not artifacts may be part of the PDF content itself, such as images or text. To extract information about these types of watermarks, you may need to analyze the PDF content and identify specific elements that represent the watermarks.
+R: Las marcas de agua que no son artefactos pueden formar parte del propio contenido del PDF, como imágenes o texto. Para extraer información sobre estos tipos de marcas de agua, es posible que necesite analizar el contenido del PDF e identificar elementos específicos que representen las marcas de agua.

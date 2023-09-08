@@ -1,44 +1,44 @@
 ---
-title: Drawing Line
-linktitle: Drawing Line
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to draw a line across a page using Aspose.PDF for .NET. Step-by-step guide to creating custom lines.
+title: خط الرسم
+linktitle: خط الرسم
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية رسم خط عبر الصفحة باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة لإنشاء خطوط مخصصة.
 type: docs
 weight: 80
 url: /ar/net/programming-with-graphs/drawing-line/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to draw a line using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك عبر التعليمات البرمجية المصدر لـ C# التالية خطوة بخطوة لرسم خط باستخدام Aspose.PDF لـ .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك قبل البدء. لديك أيضًا معرفة أساسية ببرمجة C#.
 
-## Step 1: Document Directory Setup
+## الخطوة 1: إعداد دليل المستندات
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+في كود المصدر المقدم، تحتاج إلى تحديد الدليل الذي تريد حفظ ملف PDF الناتج فيه. قم بتغيير المتغير "dataDir" إلى الدليل المطلوب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating a Document Instance and Adding a Page
+## الخطوة 2: إنشاء مثيل مستند وإضافة صفحة
 
-We create an instance of the Document class and add a page to this document.
+نقوم بإنشاء مثيل لفئة المستند وإضافة صفحة إلى هذا المستند.
 
 ```csharp
 Document pDoc = new Document();
 Page pg = pDoc.Pages.Add();
 ```
 
-## Step 3: Setting Page Margins
+## الخطوة 3: تحديد هوامش الصفحة
 
-We set the page margins to 0 on all sides.
+قمنا بتعيين هوامش الصفحة على 0 من جميع الجوانب.
 
 ```csharp
 pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
 ```
 
-## Step 4: Creating a Graph Object and the First Line
+## الخطوة 4: إنشاء كائن الرسم البياني والخط الأول
 
-We create a Graph object with dimensions equal to those of the page and draw the first line going from the lower left corner to the upper right corner of the page.
+نقوم بإنشاء كائن رسم بياني بأبعاد مساوية لتلك الموجودة في الصفحة ونرسم السطر الأول بدءًا من الزاوية اليسرى السفلية إلى الزاوية اليمنى العليا من الصفحة.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width, (float)pg.PageInfo.Height);
@@ -46,92 +46,92 @@ Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)
 graph.Shapes.Add(line);
 ```
 
-## Step 5: Drawing the second line
+## الخطوة 5: رسم الخط الثاني
 
-We draw the second line going from the upper left corner to the lower right corner of the page.
+نرسم الخط الثاني بدءًا من الزاوية اليسرى العليا إلى الزاوية اليمنى السفلية للصفحة.
 
 ```csharp
 Aspose.Pdf.Drawing.Line line2 = new Aspose.Pdf.Drawing.Line(new float[] { 0, (float)pg.Rect.URY, (float)pg.PageInfo.Width, (float)pg.Rect. LLX });
 graph.Shapes.Add(line2);
 ```
 
-## Step 6: Adding the Graph Object to the Page
+## الخطوة 6: إضافة كائن الرسم البياني إلى الصفحة
 
-We add the Graph object to the page's paragraph collection.
+نضيف كائن الرسم البياني إلى مجموعة فقرات الصفحة.
 
 ```csharp
 pg.Paragraphs.Add(graph);
 ```
 
-## Step 7: Saving the Resulting PDF File
+## الخطوة 7: حفظ ملف PDF الناتج
 
-Finally, we save the resulting PDF file with the name "DrawingLine_out.pdf" in the specified directory.
+أخيرًا، نقوم بحفظ ملف PDF الناتج باسم "DrawingLine_out.pdf" في الدليل المحدد.
 
 ```csharp
 pDoc.Save(dataDir + "DrawingLine_out.pdf");
 ```
 
-### Sample source code for Drawing Line using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لخط الرسم باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Document instance
+// إنشاء مثيل المستند
 Document pDoc = new Document();
-// Add page to pages collection of PDF document
+// إضافة صفحة إلى مجموعة الصفحات من وثيقة PDF
 Page pg = pDoc.Pages.Add();
-// Set page margin on all sides as 0
+// قم بتعيين هامش الصفحة من جميع الجوانب على 0
 pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
-// Create Graph object with Width and Height equal to page dimensions
+// قم بإنشاء كائن رسم بياني بحيث يكون العرض والارتفاع مساويين لأبعاد الصفحة
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width , (float)pg.PageInfo.Height);
-// Create first line object starting from Lower-Left to Top-Right corner of page
+// قم بإنشاء كائن السطر الأول بدءًا من الزاوية السفلية اليسرى إلى الزاوية العلوية اليمنى للصفحة
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)pg.Rect.LLX, 0, (float)pg.PageInfo.Width, (float)pg.Rect.URY });
-// Add line to shapes collection of Graph object
+// إضافة خط إلى مجموعة أشكال كائن الرسم البياني
 graph.Shapes.Add(line);
-// Draw line from Top-Left corner of page to Bottom-Right corner of page
+// ارسم خطًا من الزاوية العلوية اليسرى للصفحة إلى الزاوية اليمنى السفلية للصفحة
 Aspose.Pdf.Drawing.Line line2 = new Aspose.Pdf.Drawing.Line(new float[] { 0, (float)pg.Rect.URY, (float)pg.PageInfo.Width, (float)pg.Rect.LLX });
-// Add line to shapes collection of Graph object
+// إضافة خط إلى مجموعة أشكال كائن الرسم البياني
 graph.Shapes.Add(line2);
-// Add Graph object to paragraphs collection of page
+// إضافة كائن الرسم البياني إلى مجموعة الفقرات من الصفحة
 pg.Paragraphs.Add(graph);
 dataDir = dataDir + "DrawingLine_out.pdf";
-// Save PDF file
+// حفظ ملف PDF
 pDoc.Save(dataDir);
 Console.WriteLine("\nLine drawn successfully across the page.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we explained how to draw a line using Aspose.PDF for .NET. You can now use this knowledge to create geometric shapes with custom lines in your PDF files.
+في هذا البرنامج التعليمي، شرحنا كيفية رسم خط باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام هذه المعرفة لإنشاء أشكال هندسية بخطوط مخصصة في ملفات PDF الخاصة بك.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of this tutorial?
+#### س: ما هو الغرض من هذا البرنامج التعليمي؟
 
-A: This tutorial's purpose is to guide you through the process of drawing lines using Aspose.PDF for .NET. You'll learn how to create lines on a PDF page and customize their appearance.
+ج: الغرض من هذا البرنامج التعليمي هو إرشادك خلال عملية رسم الخطوط باستخدام Aspose.PDF لـ .NET. ستتعلم كيفية إنشاء خطوط على صفحة PDF وتخصيص مظهرها.
 
-#### Q: What prerequisites are required before starting?
+#### س: ما هي المتطلبات الأساسية المطلوبة قبل البدء؟
 
-A: Before you begin, ensure you have installed the Aspose.PDF library and set up your development environment. Basic knowledge of C# programming is also recommended.
+ج: قبل أن تبدأ، تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك. يوصى أيضًا بالمعرفة الأساسية ببرمجة C#.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### س: كيف أحدد الدليل لحفظ ملف PDF؟
 
-A: Modify the "dataDir" variable in the provided source code to indicate the directory where you want to save the resulting PDF file.
+ج: قم بتعديل متغير "dataDir" في كود المصدر المقدم للإشارة إلى الدليل الذي تريد حفظ ملف PDF الناتج فيه.
 
-#### Q: How do I create lines on a PDF page?
+#### س: كيف أقوم بإنشاء خطوط على صفحة PDF؟
 
-A: The tutorial demonstrates creating a Graph object with the dimensions of the page and then adding Line objects to it. Modify the coordinates and properties of the Line objects to create the desired lines.
+ج: يوضح البرنامج التعليمي إنشاء كائن رسم بياني بأبعاد الصفحة ثم إضافة كائنات خطية إليه. قم بتعديل إحداثيات وخصائص كائنات الخط لإنشاء الخطوط المطلوبة.
 
-#### Q: Can I customize the appearance of the lines?
+#### س: هل يمكنني تخصيص مظهر الخطوط؟
 
-A: Yes, you can customize the appearance of the lines by modifying the properties of the Line objects. This includes changing their coordinates, color, thickness, and other graphical attributes.
+ج: نعم، يمكنك تخصيص مظهر الخطوط عن طريق تعديل خصائص كائنات الخط. يتضمن ذلك تغيير إحداثياتها ولونها وسمكها والسمات الرسومية الأخرى.
 
-#### Q: How do I save the PDF document after drawing the lines?
+#### س: كيف أحفظ مستند PDF بعد رسم الخطوط؟
 
-A: After adding the Graph object with Line objects to the page, you can save the resulting PDF document using the `pDoc.Save(dataDir + "DrawingLine_out.pdf");` line in the provided source code.
+ج: بعد إضافة كائن الرسم البياني مع كائنات الخط إلى الصفحة، يمكنك حفظ مستند PDF الناتج باستخدام الملف`pDoc.Save(dataDir + "DrawingLine_out.pdf");` سطر في كود المصدر المقدم.
 
-#### Q: Can I draw lines with different angles and orientations?
+#### س: هل يمكنني رسم خطوط بزوايا واتجاهات مختلفة؟
 
-A: Yes, you can draw lines with different angles and orientations by adjusting the coordinates and properties of the Line objects within the Graph.
+ج: نعم، يمكنك رسم خطوط بزوايا واتجاهات مختلفة عن طريق ضبط إحداثيات وخصائص كائنات الخط داخل الرسم البياني.

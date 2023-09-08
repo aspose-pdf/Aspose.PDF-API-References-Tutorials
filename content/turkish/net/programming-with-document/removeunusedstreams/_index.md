@@ -1,33 +1,33 @@
 ---
-title: Remove Unused Streams In PDF File
-linktitle: Remove Unused Streams In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove unused streams in PDF files using Aspose.PDF for .NET. Our step-by-step guide.
+title: PDF Dosyasındaki Kullanılmayan Akışları Kaldır
+linktitle: PDF Dosyasındaki Kullanılmayan Akışları Kaldır
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyalarındaki kullanılmayan akışları nasıl kaldıracağınızı öğrenin. Adım adım kılavuzumuz.
 type: docs
 weight: 270
 url: /tr/net/programming-with-document/removeunusedstreams/
 ---
-In this example, we will discuss how to remove unused streams in PDF files using Aspose.PDF for .NET. We will provide a step-by-step guide on how to do this, including the full source code with explanations.
+Bu örnekte, Aspose.PDF for .NET kullanarak PDF dosyalarındaki kullanılmayan akışların nasıl kaldırılacağını tartışacağız. Açıklamalarla birlikte tam kaynak kodu da dahil olmak üzere, bunun nasıl yapılacağına dair adım adım bir kılavuz sunacağız.
 
-## Step 1: The path to the documents directory
+## Adım 1: Belgeler dizinine giden yol
 
-The first line of the code sets the path to the directory where your PDF document is located. Make sure to replace "YOUR DOCUMENT DIRECTORY" with the actual directory path.
+Kodun ilk satırı, PDF belgenizin bulunduğu dizinin yolunu belirler. "BELGE DİZİNİNİZ"i gerçek dizin yolu ile değiştirdiğinizden emin olun.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the document
+## 2. Adım: Belgeyi açın
 
-The next line of code opens the PDF document using the Aspose.PDF for .NET library.
+Sonraki kod satırı, Aspose.PDF for .NET kütüphanesini kullanarak PDF belgesini açar.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Step 3: Set RemoveUnusedStreams option
+## 3. Adım: RemoveUnusedStreams seçeneğini ayarlayın
 
-The next step is to set the RemoveUnusedStreams option to true. This will remove any unused streams from the PDF document.
+Bir sonraki adım RemoveUnusedStreams seçeneğini true olarak ayarlamaktır. Bu, kullanılmayan akışları PDF belgesinden kaldıracaktır.
 
 ```csharp
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
@@ -36,58 +36,58 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 };
 ```
 
-## Step 4: Optimize PDF document using OptimizationOptions
+## 4. Adım: OptimizationOptions'ı kullanarak PDF belgesini optimize edin
 
-Now that we have set the optimization options, we can optimize the PDF document using the following line of code.
+Artık optimizasyon seçeneklerini ayarladığımıza göre, aşağıdaki kod satırını kullanarak PDF belgesini optimize edebiliriz.
 
 ```csharp
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-## Step 5: Save updated document
+## 5. Adım: Güncellenen belgeyi kaydedin
 
-Finally, we can save the updated document using the Save method of the Document class.
+Son olarak Document sınıfının Save metodunu kullanarak güncellenen belgeyi kaydedebiliriz.
 
 ```csharp
 dataDir = dataDir + "OptimizeDocument_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Example source code for Remove Unused Streams using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Kullanılmayan Akışları Kaldırmak için örnek kaynak kodu
 
-Below is the example source code for removing unused streams using Aspose.PDF for .NET.
+Aşağıda Aspose.PDF for .NET kullanarak kullanılmayan akışları kaldırmak için örnek kaynak kodu verilmiştir.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Set RemoveUsedStreams option 
+// RemoveUsedStreams seçeneğini ayarlayın
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
 	RemoveUnusedStreams = true
 };
-// Optimize PDF document using OptimizationOptions
+// OptimizationOptions'ı kullanarak PDF belgesini optimize edin
 pdfDocument.OptimizeResources(optimizeOptions);
 dataDir = dataDir + "OptimizeDocument_out.pdf";
-// Save updated document
+// Güncellenen belgeyi kaydet
 pdfDocument.Save(dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-Optimizing PDF documents by removing unused streams is essential for enhancing performance and reducing file size. Aspose.PDF for .NET simplifies this process by providing a convenient method to remove unused streams using the `OptimizationOptions`. The step-by-step guide and the provided C# source code make it easy for developers to implement this feature in their .NET applications. By following these instructions, developers can optimize their PDF files effectively and improve overall PDF processing in their .NET projects.
+ Kullanılmayan akışları kaldırarak PDF belgelerini optimize etmek, performansı artırmak ve dosya boyutunu azaltmak için çok önemlidir. Aspose.PDF for .NET, kullanılmayan akışları kaldırmak için kullanışlı bir yöntem sağlayarak bu süreci basitleştirir.`OptimizationOptions`. Adım adım kılavuz ve sağlanan C# kaynak kodu, geliştiricilerin bu özelliği .NET uygulamalarında uygulamasını kolaylaştırır. Geliştiriciler bu talimatları izleyerek PDF dosyalarını etkili bir şekilde optimize edebilir ve .NET projelerindeki genel PDF işlemeyi geliştirebilirler.
 
-### FAQ's for remove unused streams in PDF file
+### PDF dosyasındaki kullanılmayan akışları kaldırmak için SSS
 
-#### Q: What are unused streams in a PDF document?
+#### S: Bir PDF belgesinde kullanılmayan akışlar nelerdir?
 
-A: Unused streams in a PDF document are parts of the file that are not referenced or used in the document's content. These streams may include images, fonts, or other resources that are no longer needed but still exist in the PDF file.
+C: Bir PDF belgesindeki kullanılmayan akışlar, belgenin içeriğinde başvurulmayan veya kullanılmayan dosya parçalarıdır. Bu akışlar, artık ihtiyaç duyulmayan ancak PDF dosyasında hâlâ mevcut olan görselleri, yazı tiplerini veya diğer kaynakları içerebilir.
 
-#### Q: How does removing unused streams benefit PDF documents?
+#### S: Kullanılmayan akışların kaldırılması PDF belgelerine nasıl fayda sağlar?
 
-A: Removing unused streams from a PDF document reduces its file size, resulting in faster loading times and improved performance. It helps in optimizing the PDF file for better user experience and efficient storage.
+C: Kullanılmayan akışların bir PDF belgesinden kaldırılması dosya boyutunu azaltır, bu da daha hızlı yükleme süreleri ve gelişmiş performans sağlar. Daha iyi kullanıcı deneyimi ve verimli depolama için PDF dosyasının optimize edilmesine yardımcı olur.
 
-#### Q: Can developers specify which streams to remove using Aspose.PDF for .NET?
+#### S: Geliştiriciler Aspose.PDF for .NET kullanarak hangi akışların kaldırılacağını belirleyebilir mi?
 
-A: Yes, developers can control the removal of unused streams by setting the `RemoveUnusedStreams` option in the `OptimizationOptions`. This gives them the flexibility to choose which streams to remove based on their specific needs.
+ C: Evet, geliştiriciler kullanılmayan akışların kaldırılmasını ayarlayarak kontrol edebilirler.`RemoveUnusedStreams` seçeneği`OptimizationOptions`. Bu onlara, özel ihtiyaçlarına göre hangi akışların kaldırılacağını seçme esnekliği sağlar.

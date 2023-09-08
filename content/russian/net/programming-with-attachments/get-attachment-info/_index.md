@@ -1,50 +1,50 @@
 ---
-title: Get Attachment Info
-linktitle: Get Attachment Info
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get information about a specific attachment in a PDF file with Aspose.PDF for .NET. Step by step guide.
+title: Получить информацию о вложении
+linktitle: Получить информацию о вложении
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как получить информацию о конкретном вложении в PDF-файле с помощью Aspose.PDF для .NET. Пошаговое руководство.
 type: docs
 weight: 50
 url: /ru/net/programming-with-attachments/get-attachment-info/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to get the information about a specific attachment of a PDF file using Aspose.PDF for .NET.
+В этом руководстве мы шаг за шагом познакомим вас со следующим исходным кодом C#, чтобы получить информацию о конкретном вложении PDF-файла с помощью Aspose.PDF для .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Прежде чем начать, убедитесь, что вы установили библиотеку Aspose.PDF и настроили среду разработки. Также есть базовые знания программирования на C#.
 
-### Step 1: Document Directory Setup
+### Шаг 1. Настройка каталога документов
 
-In the source code provided, you need to specify the directory where the PDF file is located from which you want to get the attachment information. Change the "dataDir" variable to the desired directory.
+В предоставленном исходном коде вам необходимо указать каталог, в котором находится PDF-файл, из которого вы хотите получить информацию о вложении. Измените переменную dataDir на нужный каталог.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Шаг 2. Откройте существующий PDF-документ.
 
-We open the existing PDF document using the specified path.
+Открываем существующий PDF-документ по указанному пути.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAttachmentInfo.pdf");
 ```
 
-### Step 3: Obtaining a Specific Attachment
+### Шаг 3: Получение конкретного вложения
 
-We retrieve a specific attachment from the document's attachments collection. In this example, we get the first attachment using index 1.
+Мы извлекаем конкретное вложение из коллекции вложений документа. В этом примере мы получаем первое вложение с индексом 1.
 
 ```csharp
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
 ```
 
-### Step 4: Get File Properties
+### Шаг 4. Получите свойства файла
 
-We display attachment properties such as name, description, MIME type, control hash, date created, date modified, and size.
+Мы отображаем свойства вложения, такие как имя, описание, тип MIME, контрольный хеш, дата создания, дата изменения и размер.
 
 ```csharp
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Check if object parameters contain additional information
+// Проверьте, содержат ли параметры объекта дополнительную информацию
 if (fileSpecification.Params != null)
 {
 Console.WriteLine("Check Hash: {0}", fileSpecification.Params.CheckSum);
@@ -54,21 +54,21 @@ Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 ```
 
-### Sample source code for Get Attachment Info using Aspose.PDF for .NET
+### Пример исходного кода для получения информации о вложении с помощью Aspose.PDF для .NET
  
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "GetAttachmentInfo.pdf");
-// Get particular embedded file
+// Получить конкретный встроенный файл
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
-// Get the file properties
+// Получить свойства файла
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-// Check if parameter object contains the parameters
+//Проверьте, содержит ли объект параметра параметры
 if (fileSpecification.Params != null)
 {
 	Console.WriteLine("CheckSum: {0}",
@@ -82,44 +82,44 @@ if (fileSpecification.Params != null)
 
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we explained how to get the information about a specific attachment of a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and view attachment information from your PDF files.
+В этом уроке мы объяснили, как получить информацию о конкретном вложении PDF-файла с помощью Aspose.PDF для .NET. Теперь вы можете использовать эти знания для извлечения и просмотра информации о вложениях из ваших PDF-файлов.
 
-### FAQ's for get attachment info 
+### Часто задаваемые вопросы по получению информации о вложениях 
 
-#### Q: Why would I need to retrieve information about specific attachments in a PDF document?
+#### Вопрос: Зачем мне нужно получать информацию о конкретных вложениях в PDF-документе?
 
-A: Retrieving attachment information allows you to understand and analyze the details of embedded files within a PDF, helping you manage and work with attachments effectively.
+О: Получение информации о вложениях позволяет вам понимать и анализировать детали встроенных файлов в PDF-файл, помогая эффективно управлять вложениями и работать с ними.
 
-#### Q: What type of information can I gather about a specific attachment using this tutorial?
+#### Вопрос: Какую информацию о конкретном вложении я могу собрать с помощью этого руководства?
 
-A: This tutorial demonstrates how to retrieve and display attachment properties such as name, description, MIME type, control hash, creation date, modification date, and size.
+О: В этом руководстве показано, как получить и отобразить свойства вложения, такие как имя, описание, тип MIME, контрольный хэш, дата создания, дата изменения и размер.
 
-#### Q: How does this tutorial help me gather attachment information using Aspose.PDF for .NET?
+#### Вопрос: Как это руководство поможет мне собрать информацию о вложениях с помощью Aspose.PDF для .NET?
 
-A: This tutorial provides step-by-step instructions and C# source code to access and display information about a specific attachment within a PDF document.
+О: В этом руководстве представлены пошаговые инструкции и исходный код C# для доступа и отображения информации о конкретном вложении в PDF-документе.
 
-#### Q: Can I retrieve information about all attachments instead of a specific attachment using this tutorial?
+#### Вопрос: Могу ли я с помощью этого руководства получить информацию обо всех вложениях, а не об определенном вложении?
 
-A: This tutorial is focused on obtaining information about a specific attachment, but you can adapt the code to loop through all attachments and gather their information.
+О: Это руководство ориентировано на получение информации о конкретном вложении, но вы можете адаптировать код для перебора всех вложений и сбора их информации.
 
-#### Q: What is the purpose of the "Check Hash" property displayed in the attachment information?
+#### Вопрос: Какова цель свойства «Проверить хеш», отображаемого в информации о вложении?
 
-A: The "Check Hash" property represents the control hash value of the attachment, which can be used to verify the integrity of the attachment.
+О: Свойство «Проверить хэш» представляет собой контрольное хэш-значение вложения, которое можно использовать для проверки целостности вложения.
 
-#### Q: How can I modify this code to retrieve information about attachments with different indices?
+#### Вопрос: Как изменить этот код, чтобы получать информацию о вложениях с разными индексами?
 
-A: You can change the index value (e.g., `pdfDocument.EmbeddedFiles[1]`) to retrieve information about attachments at different indices within the PDF document.
+ О: Вы можете изменить значение индекса (например,`pdfDocument.EmbeddedFiles[1]`) для получения информации о вложениях по различным индексам в PDF-документе.
 
-#### Q: Can I use this knowledge to gather information from password-protected PDF files?
+#### Вопрос: Могу ли я использовать эти знания для сбора информации из PDF-файлов, защищенных паролем?
 
-A: Yes, you can apply similar principles to gather attachment information from password-protected PDF files using Aspose.PDF for .NET.
+О: Да, вы можете применить аналогичные принципы для сбора информации о вложениях из PDF-файлов, защищенных паролем, с помощью Aspose.PDF для .NET.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of obtaining attachment information?
+#### Вопрос: Как Aspose.PDF для .NET упрощает процесс получения информации о вложениях?
 
-A: Aspose.PDF for .NET provides an intuitive API that allows you to access and manipulate attachment properties in PDF documents with ease.
+О: Aspose.PDF для .NET предоставляет интуитивно понятный API, который позволяет вам легко получать доступ к свойствам вложений в PDF-документах и манипулировать ими.
 
-#### Q: Are there specific scenarios where gathering attachment information is recommended?
+#### Вопрос: Существуют ли конкретные сценарии, в которых рекомендуется собирать информацию о вложениях?
 
-A: Gathering attachment information is valuable when you need to understand the details of embedded files, such as verifying their properties or auditing attachments in a document.
+О: Сбор информации о вложениях полезен, когда вам нужно понять детали внедренных файлов, например, проверить их свойства или проверить вложения в документе.

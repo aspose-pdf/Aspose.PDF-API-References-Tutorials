@@ -1,83 +1,83 @@
 ---
-title: Update Links In PDF File
-linktitle: Update Links In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to update links in PDF file with Aspose.PDF for .NET.
+title: Actualizar enlaces en un archivo PDF
+linktitle: Actualizar enlaces en un archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda cómo actualizar enlaces en archivos PDF con Aspose.PDF para .NET.
 type: docs
 weight: 120
 url: /es/net/programming-with-links-and-actions/update-links/
 ---
-Learn how to update links in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+Aprenda cómo actualizar enlaces en archivos PDF usando Aspose.PDF para .NET con esta guía paso a paso.
 
-## Step 1: Setting up the environment
+## Paso 1: configurar el entorno
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+Asegúrese de haber configurado su entorno de desarrollo con un proyecto C# y las referencias Aspose.PDF adecuadas.
 
-## Step 2: Loading the PDF file
+## Paso 2: cargar el archivo PDF
 
-Set the directory path of your documents and upload the PDF file using the following code:
+Establezca la ruta del directorio de sus documentos y cargue el archivo PDF usando el siguiente código:
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// Cargue el archivo PDF
 Document doc = new Document(dataDir + "UpdateLinks.pdf");
 ```
 
-## Step 3: Editing the link
+## Paso 3: editar el enlace
 
-Get the link annotation to modify using the following code:
+Obtenga la anotación del enlace para modificar usando el siguiente código:
 
 ```csharp
 LinkAnnotation linkAnnot = (LinkAnnotation)doc.Pages[1].Annotations[1];
 ```
 
-You can adjust the `[1]` indices to select a specific page or annotation.
+ Puedes ajustar el`[1]` índices para seleccionar una página o anotación específica.
 
-Next, modify the link by changing the destination:
+A continuación, modifique el enlace cambiando el destino:
 
 ```csharp
 GoToAction goToAction = (GoToAction)linkAnnot.Action;
 goToAction.Destination = new Aspose.Pdf.Annotations.XYZExplicitDestination(1, 1, 2, 2);
 ```
 
-The first parameter represents the subject of the document, the second is the destination page number. The fifth argument is the zoom factor when displaying the respective page. When set to 2, the page will be displayed at 200% zoom.
+El primer parámetro representa el asunto del documento, el segundo es el número de página de destino. El quinto argumento es el factor de zoom al mostrar la página respectiva. Cuando se establece en 2, la página se mostrará con un zoom del 200%.
 
-## Step 4: Save the document with the updated link
+## Paso 4: guarde el documento con el enlace actualizado
 
-Save the document with the updated link using the `Save` method:
+ Guarde el documento con el enlace actualizado utilizando el`Save` método:
 
 ```csharp
 dataDir = dataDir + "PDFLINK_Modified_UpdateLinks_out.pdf";
 doc.Save(dataDir);
 ```
 
-## Step 5: Displaying the result
+## Paso 5: Mostrar el resultado
 
-Display a message indicating that the links were updated successfully and specify the location of the saved file:
+Muestre un mensaje indicando que los enlaces se actualizaron correctamente y especifique la ubicación del archivo guardado:
 
 ```csharp
 Console.WriteLine("\nLinks updated successfully.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Update Links using Aspose.PDF for .NET 
+### Código fuente de muestra para actualizar enlaces usando Aspose.PDF para .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// La ruta al directorio de documentos.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the PDF file
+	// Cargue el archivo PDF
 	Document doc = new Document(dataDir + "UpdateLinks.pdf");
-	// Get the first link annotation from first page of document
+	// Obtenga la anotación del primer enlace de la primera página del documento
 	LinkAnnotation linkAnnot = (LinkAnnotation)doc.Pages[1].Annotations[1];
-	// Modification link: change link destination
+	// Enlace de modificación: cambiar destino del enlace
 	GoToAction goToAction = (GoToAction)linkAnnot.Action;
-	// Specify the destination for link object
-	// The first parameter is document object, second is destination page number.
-	// The 5ht argument is zoom factor when displaying the respective page. When using 2, the page will be displayed in 200% zoom
+	// Especificar el destino del objeto de enlace
+	// El primer parámetro es el objeto del documento, el segundo es el número de página de destino.
+	// El quinto argumento es el factor de zoom al mostrar la página respectiva. Al usar 2, la página se mostrará con un zoom del 200 %.
 	goToAction.Destination = new Aspose.Pdf.Annotations.XYZExplicitDestination(1, 1, 2, 2);
 	dataDir = dataDir + "PDFLINK_Modified_UpdateLinks_out.pdf";
-	// Save the document with updated link
+	// Guarde el documento con el enlace actualizado.
 	doc.Save(dataDir);
 	Console.WriteLine("\nLinks updated successfully.\nFile saved at " + dataDir);
 }
@@ -87,50 +87,50 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Conclusión
 
-Congratulation ! You now know how to update links in a PDF file using Aspose.PDF for .NET. Use this knowledge to customize links in your PDF documents and create interactive experiences for users.
+¡Enhorabuena! Ahora sabe cómo actualizar enlaces en un archivo PDF usando Aspose.PDF para .NET. Utilice este conocimiento para personalizar enlaces en sus documentos PDF y crear experiencias interactivas para los usuarios.
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+Ahora que ha completado esta guía, puede aplicar estos conceptos a sus propios proyectos y explorar más a fondo las funciones que ofrece Aspose.PDF para .NET.
 
-### FAQ's for update links in PDF file 
+### Preguntas frecuentes sobre enlaces de actualización en archivos PDF 
 
-#### Q: Why would I want to update links in a PDF document?
+#### P: ¿Por qué querría actualizar enlaces en un documento PDF?
 
-A: Updating links in a PDF document allows you to modify the behavior and destination of hyperlinks, enabling you to create more interactive and user-friendly PDF files.
+R: Actualizar enlaces en un documento PDF le permite modificar el comportamiento y el destino de los hipervínculos, lo que le permite crear archivos PDF más interactivos y fáciles de usar.
 
-#### Q: How can I benefit from updating links in my PDF documents?
+#### P: ¿Cómo puedo beneficiarme de la actualización de enlaces en mis documentos PDF?
 
-A: By updating links, you can ensure that users are directed to the correct pages or external resources, enhancing the navigation experience within your PDF files.
+R: Al actualizar los enlaces, puede asegurarse de que los usuarios sean dirigidos a las páginas o recursos externos correctos, mejorando la experiencia de navegación dentro de sus archivos PDF.
 
-#### Q: Can I update multiple links in a single PDF document?
+#### P: ¿Puedo actualizar varios enlaces en un solo documento PDF?
 
-A: Yes, you can use the provided code as a basis to iterate through all link annotations and modify their destinations or behavior as needed.
+R: Sí, puede utilizar el código proporcionado como base para recorrer todas las anotaciones de enlaces y modificar sus destinos o comportamiento según sea necesario.
 
-#### Q: What does the `GoToAction` class do in the provided code?
+####  P: ¿Qué significa el`GoToAction` class do in the provided code?
 
-A: The `GoToAction` class represents an action that navigates to a specific page within the PDF document. It allows you to change the destination of a link annotation.
+ R: El`GoToAction` La clase representa una acción que navega a una página específica dentro del documento PDF. Le permite cambiar el destino de una anotación de enlace.
 
-#### Q: How do I adjust the destination page and zoom level for a link?
+#### P: ¿Cómo ajusto la página de destino y el nivel de zoom de un enlace?
 
-A: In the provided code, you can modify the arguments passed to the `XYZExplicitDestination` constructor. The first parameter is the destination page number, and the fifth parameter controls the zoom factor.
+ R: En el código proporcionado, puede modificar los argumentos pasados al`XYZExplicitDestination`constructor. El primer parámetro es el número de página de destino y el quinto parámetro controla el factor de zoom.
 
-#### Q: Is it possible to update other attributes of a link, such as its appearance?
+#### P: ¿Es posible actualizar otros atributos de un enlace, como su apariencia?
 
-A: This tutorial focuses on updating link destinations. However, you can explore the Aspose.PDF documentation for more information on customizing link appearances.
+R: Este tutorial se centra en actualizar los destinos de los enlaces. Sin embargo, puede explorar la documentación de Aspose.PDF para obtener más información sobre cómo personalizar la apariencia de los enlaces.
 
-#### Q: What happens if I specify an invalid destination page number?
+#### P: ¿Qué sucede si especifico un número de página de destino no válido?
 
-A: If you specify an invalid destination page number, the link may lead to an incorrect or non-existent page within the PDF document.
+R: Si especifica un número de página de destino no válido, el enlace puede conducir a una página incorrecta o inexistente dentro del documento PDF.
 
-#### Q: Can I revert the link modifications if needed?
+#### P: ¿Puedo revertir las modificaciones del enlace si es necesario?
 
-A: Yes, you can store the original link annotations before modification and use that information to revert the links to their original state if necessary.
+R: Sí, puede almacenar las anotaciones de los enlaces originales antes de modificarlas y utilizar esa información para revertir los enlaces a su estado original si es necesario.
 
-#### Q: How can I test if the links have been successfully updated?
+#### P: ¿Cómo puedo comprobar si los enlaces se han actualizado correctamente?
 
-A: After applying the provided code to update the links, open the modified PDF file and verify that the links navigate to the specified pages with the correct zoom level.
+R: Después de aplicar el código proporcionado para actualizar los enlaces, abra el archivo PDF modificado y verifique que los enlaces naveguen a las páginas especificadas con el nivel de zoom correcto.
 
-#### Q: Does updating links affect the overall structure or content of the PDF document?
+#### P: ¿La actualización de enlaces afecta la estructura general o el contenido del documento PDF?
 
-A: No, updating links only modifies the behavior and destination of the links. It does not affect the content or structure of the PDF document.
+R: No, la actualización de enlaces solo modifica el comportamiento y destino de los enlaces. No afecta el contenido ni la estructura del documento PDF.

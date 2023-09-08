@@ -1,127 +1,127 @@
 ---
-title: Add Attachment to PDFA
-linktitle: Add Attachment to PDFA
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add attachments to your PDF/A files using Aspose.PDF for .NET.
+title: Agregar archivo adjunto a PDFA
+linktitle: Agregar archivo adjunto a PDFA
+second_title: Aspose.PDF para referencia de API .NET
+description: Agregue fácilmente archivos adjuntos a sus archivos PDF/A usando Aspose.PDF para .NET.
 type: docs
 weight: 10
 url: /es/net/document-conversion/add-attachment-to-pdfa/
 ---
-In this tutorial, we will guide you step by step on how to add an attachment to a PDF/A file using Aspose.PDF for .NET. We'll explain each step using C# code examples and provide step-by-step instructions to help you follow along easily.
+En este tutorial, lo guiaremos paso a paso sobre cómo agregar un archivo adjunto a un archivo PDF/A usando Aspose.PDF para .NET. Explicaremos cada paso utilizando ejemplos de código C# y proporcionaremos instrucciones paso a paso para ayudarle a seguirlo fácilmente.
 
-## Introduction
+## Introducción
 
-Attachments can be valuable additions to PDF files, as they allow you to include additional files such as relevant images, documents, or media. With Aspose.PDF for .NET, you can easily add attachments to your PDF files and ensure they are included in the final result.
+Los archivos adjuntos pueden ser valiosas adiciones a los archivos PDF, ya que le permiten incluir archivos adicionales, como imágenes, documentos o medios relevantes. Con Aspose.PDF para .NET, puede agregar fácilmente archivos adjuntos a sus archivos PDF y asegurarse de que se incluyan en el resultado final.
 
-## Environment setup
+## Configuración del entorno
 
-Before starting the implementation, let's first configure our development environment to work with Aspose.PDF for .NET.
+Antes de comenzar la implementación, primero configuremos nuestro entorno de desarrollo para que funcione con Aspose.PDF para .NET.
 
-1. Install Visual Studio or any other IDE suitable for C# development.
-2. Create a new C# project.
-3. Install the Aspose.PDF for .NET package via NuGet to add the necessary dependencies.
+1. Instale Visual Studio o cualquier otro IDE adecuado para el desarrollo de C#.
+2. Cree un nuevo proyecto de C#.
+3. Instale el paquete Aspose.PDF para .NET a través de NuGet para agregar las dependencias necesarias.
 
-## Step 1: Load existing PDF file
+## Paso 1: cargue el archivo PDF existente
 
-To add an attachment, we first need to upload an existing PDF file. Follow these steps to upload the document using Aspose.PDF for .NET:
+Para agregar un archivo adjunto, primero debemos cargar un archivo PDF existente. Siga estos pasos para cargar el documento usando Aspose.PDF para .NET:
 
 ```csharp
-// Path to the documents directory.
+// Ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Instantiate a new Document instance to load the existing file
+// Crear una nueva instancia de documento para cargar el archivo existente
 Aspose.Pdf.Document doc = new Document(dataDir + "input.pdf");
 ```
 
-In the code above, replace `"YOUR DOCUMENTS DIRECTORY"` with the actual path of the directory where your input PDF document is located. This code initializes a new instance of the `Document` class and loads the existing PDF file.
+ En el código anterior, reemplace`"YOUR DOCUMENTS DIRECTORY"`con la ruta real del directorio donde se encuentra su documento PDF de entrada. Este código inicializa una nueva instancia del`Document` class y carga el archivo PDF existente.
 
-## Step 2: Creating the file specification for the attachment
+## Paso 2: Crear la especificación del archivo para el archivo adjunto
 
-To add an attachment, we need to create a file spec that defines the properties of the attachment. Follow these steps to create the file specification:
+Para agregar un archivo adjunto, necesitamos crear una especificación de archivo que defina las propiedades del archivo adjunto. Siga estos pasos para crear la especificación del archivo:
 
 ```csharp
-// Path to the documents directory.
+// Ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Specify the new file to add as an attachment
+// Especifique el nuevo archivo para agregar como archivo adjunto
 FileSpecification fileSpecification = new FileSpecification(dataDir + "aspose-logo.jpg", "Large image file");
 ```
 
-In the code above, replace `"YOUR DOCUMENTS DIRECTORY"` with the actual path of the directory where your image file to add is located. The file specification is created using the `FileSpecification` class, specifying the file path and a description.
+ En el código anterior, reemplace`"YOUR DOCUMENTS DIRECTORY"` con la ruta real del directorio donde se encuentra el archivo de imagen que desea agregar. La especificación del archivo se crea utilizando el`FileSpecification` clase, especificando la ruta del archivo y una descripción.
 
-## Step 3: Adding the attachment to the document
+## Paso 3: Agregar el archivo adjunto al documento
 
-Now that we have the file specification, we can add it to the document's attachments collection. Follow these steps to add the attachment:
+Ahora que tenemos la especificación del archivo, podemos agregarlo a la colección de archivos adjuntos del documento. Siga estos pasos para agregar el archivo adjunto:
 
 ```csharp
-// Add the attachment to the collection of
+// Agregue el archivo adjunto a la colección de
 
   document attachments
 doc.EmbeddedFiles.Add(fileSpecification);
 ```
 
-In the code above, we use the `Add` method of the document`s `EmbeddedFiles` collection to add the file specification as an attachment.
+ En el código anterior, utilizamos el`Add` método del documento`s `Colección EmbeddedFiles para agregar la especificación del archivo como archivo adjunto.
 
-## Step 4: Convert to PDF/A_3a
+## Paso 4: Convertir a PDF/A_3a
 
-For the attachment to be included in the resulting file, we need to convert to PDF/A_3a format. Follow these steps to perform the conversion:
+Para que el archivo adjunto se incluya en el archivo resultante, debemos convertirlo al formato PDF/A_3a. Siga estos pasos para realizar la conversión:
 
 ```csharp
-// Perform the conversion to PDF/A_3a format
+// Realizar la conversión al formato PDF/A_3a
 doc.Convert(dataDir + "log.txt", Aspose.Pdf.PdfFormat.PDF_A_3A, ConvertErrorAction.Delete);
 ```
 
-In the code above, we use the `Convert` method to convert the document using the `"log.txt"` log file. We specify the output format using the `PdfFormat.PDF_A_3A` enum and specify the action to take on conversion error with `ConvertErrorAction.Delete`.
+ En el código anterior, utilizamos el`Convert` método para convertir el documento utilizando el`"log.txt"` archivo de registro. Especificamos el formato de salida usando el`PdfFormat.PDF_A_3A` enumerar y especificar la acción a realizar en caso de error de conversión con`ConvertErrorAction.Delete`.
 
-## Step 5: Save the resulting file
+## Paso 5: guarde el archivo resultante
 
-Finally, we save the modified PDF document with the added attachment. Follow these steps to save the resulting file:
+Finalmente, guardamos el documento PDF modificado con el archivo adjunto agregado. Siga estos pasos para guardar el archivo resultante:
 
 ```csharp
-// Save the resulting file
+// Guarde el archivo resultante
 doc.Save(dataDir + "AddAttachmentToPDFA_out.pdf");
 ```
 
-In the code above, we use the `Save` method to save the document with the file name `"AddAttachmentToPDFA_out.pdf"`. Be sure to specify the appropriate path where you want to save the resulting file.
+ En el código anterior, utilizamos el`Save` método para guardar el documento con el nombre del archivo`"AddAttachmentToPDFA_out.pdf"`. Asegúrese de especificar la ruta adecuada donde desea guardar el archivo resultante.
 
-### Example source code for add attachment to PDFA using Aspose.PDF for .NET
+### Código fuente de ejemplo para agregar archivos adjuntos a PDFA usando Aspose.PDF para .NET
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document instance to load existing file
+// Crear una instancia de documento para cargar un archivo existente
 Aspose.Pdf.Document doc = new Document(dataDir + "input.pdf");
-// Setup new file to be added as attachment
+// Configurar un nuevo archivo para agregarlo como archivo adjunto
 FileSpecification fileSpecification = new FileSpecification(dataDir + "aspose-logo.jpg", "Large Image file");
-// Add attachment to document's attachment collection
+//Agregar archivo adjunto a la colección de archivos adjuntos del documento
 doc.EmbeddedFiles.Add(fileSpecification);
-// Perform conversion to PDF/A_3a so attachment is included in resultnat file
+// Realice la conversión a PDF/A_3a para que el archivo adjunto se incluya en el archivo resultante
 doc.Convert(dataDir + "log.txt", Aspose.Pdf.PdfFormat.PDF_A_3A, ConvertErrorAction.Delete);
-// Save resultant file
+// Guardar archivo resultante
 doc.Save(dataDir + "AddAttachmentToPDFA_out.pdf");
 
 Console.WriteLine("\nAttachment added successfully to PDF/A file.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, you learned how to add an attachment to a PDF/A file using Aspose.PDF for .NET. We've covered every step of the process, from loading the existing document to converting and saving the resulting file. Using the provided code examples, you can easily integrate this functionality into your own projects. Experiment with Aspose.PDF for .NET and discover the possibilities it offers for advanced manipulation of PDF files.
+En este tutorial, aprendió cómo agregar un archivo adjunto a un archivo PDF/A usando Aspose.PDF para .NET. Hemos cubierto cada paso del proceso, desde cargar el documento existente hasta convertir y guardar el archivo resultante. Utilizando los ejemplos de código proporcionados, puede integrar fácilmente esta funcionalidad en sus propios proyectos. Experimente con Aspose.PDF para .NET y descubra las posibilidades que ofrece para la manipulación avanzada de archivos PDF.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is Aspose.PDF for .NET?
+#### P: ¿Qué es Aspose.PDF para .NET?
 
-A: Aspose.PDF for .NET is a powerful PDF manipulation and processing library for .NET applications. It allows developers to create, edit, convert, and manipulate PDF files programmatically.
+R: Aspose.PDF para .NET es una poderosa biblioteca de manipulación y procesamiento de PDF para aplicaciones .NET. Permite a los desarrolladores crear, editar, convertir y manipular archivos PDF mediante programación.
 
-#### Q: What is the purpose of adding attachments to PDF files?
+#### P: ¿Cuál es el propósito de agregar archivos adjuntos a archivos PDF?
 
-A: Adding attachments to PDF files allows you to include additional files, such as images, documents, or media, within the PDF document. This can be useful for providing supplementary information or related resources.
+R: Agregar archivos adjuntos a archivos PDF le permite incluir archivos adicionales, como imágenes, documentos o medios, dentro del documento PDF. Esto puede resultar útil para proporcionar información complementaria o recursos relacionados.
 
-#### Q: Can I add multiple attachments to a PDF document using Aspose.PDF for .NET?
+#### P: ¿Puedo agregar varios archivos adjuntos a un documento PDF usando Aspose.PDF para .NET?
 
-A: Yes, you can add multiple attachments to a PDF document using Aspose.PDF for .NET. Simply create multiple `FileSpecification` objects, each representing a different attachment, and add them to the `EmbeddedFiles` collection of the document.
+ R: Sí, puede agregar varios archivos adjuntos a un documento PDF utilizando Aspose.PDF para .NET. Simplemente cree múltiples`FileSpecification` objetos, cada uno de los cuales representa un archivo adjunto diferente, y agréguelos al`EmbeddedFiles` recogida del documento.
 
-#### Q: How does the conversion to PDF/A_3a format impact the attachment?
+#### P: ¿Cómo afecta la conversión al formato PDF/A_3a al archivo adjunto?
 
-A: The conversion to PDF/A_3a format ensures that the attachment is included in the resulting PDF/A document. PDF/A_3a is a standard for long-term archiving of electronic documents, and by converting to this format, the attachment becomes a permanent part of the PDF document.
+R: La conversión al formato PDF/A_3a garantiza que el archivo adjunto se incluya en el documento PDF/A resultante. PDF/A_3a es un estándar para el archivado a largo plazo de documentos electrónicos y, al convertirlo a este formato, el archivo adjunto se convierte en una parte permanente del documento PDF.

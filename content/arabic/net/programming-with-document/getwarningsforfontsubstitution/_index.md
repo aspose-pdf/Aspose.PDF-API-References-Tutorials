@@ -1,47 +1,47 @@
 ---
-title: Get Warnings For Font Substitution
-linktitle: Get Warnings For Font Substitution
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use the GetWarningsForFontSubstitution feature of Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document.
+title: احصل على تحذيرات لاستبدال الخط
+linktitle: احصل على تحذيرات لاستبدال الخط
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخدام ميزة GetWarningsForFontSubstitution في Aspose.PDF لـ .NET لاكتشاف تحذيرات استبدال الخط عند فتح مستند PDF.
 type: docs
 weight: 190
 url: /ar/net/programming-with-document/getwarningsforfontsubstitution/
 ---
-Aspose.PDF for .NET is a popular PDF manipulation library that enables developers to create, edit, and convert PDF files in their .NET applications. One of the features offered by this library is the ability to detect font substitution warnings when a PDF document is opened. This tutorial will guide you through the steps of using the `GetWarningsForFontSubstitution` feature of Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document.
+Aspose.PDF for .NET هي مكتبة شائعة لمعالجة ملفات PDF تتيح للمطورين إنشاء ملفات PDF وتحريرها وتحويلها في تطبيقات .NET الخاصة بهم. إحدى الميزات التي تقدمها هذه المكتبة هي القدرة على اكتشاف تحذيرات استبدال الخط عند فتح مستند PDF. سيرشدك هذا البرنامج التعليمي خلال خطوات استخدام`GetWarningsForFontSubstitution` ميزة Aspose.PDF لـ .NET لاكتشاف تحذيرات استبدال الخط عند فتح مستند PDF.
 
-## Step 1: Install Aspose.PDF for .NET
+## الخطوة 1: تثبيت Aspose.PDF لـ .NET
 
-To use Aspose.PDF for .NET in your .NET applications, you must first install the library. You can download the latest version of the library from the [Aspose.PDF for .NET download page](https://relases.aspose.com/pdf/net).
+ لاستخدام Aspose.PDF لـ .NET في تطبيقات .NET الخاصة بك، يجب عليك أولاً تثبيت المكتبة. يمكنك تنزيل أحدث إصدار من المكتبة من[صفحة تنزيل Aspose.PDF لـ .NET](https://relases.aspose.com/pdf/net).
 
-Once you have downloaded the library, extract the contents of the ZIP file to a folder on your computer. You will then need to add a reference to the Aspose.PDF for .NET DLL in your .NET project.
+بمجرد تنزيل المكتبة، قم باستخراج محتويات الملف المضغوط إلى مجلد على جهاز الكمبيوتر الخاص بك. ستحتاج بعد ذلك إلى إضافة مرجع إلى Aspose.PDF لـ .NET DLL في مشروع .NET الخاص بك.
 
-## Step 2: Load the PDF Document
+## الخطوة 2: قم بتحميل مستند PDF
 
-Once you have installed Aspose.PDF for .NET and added a reference to the DLL in your .NET project, you can begin using the `GetWarningsForFontSubstitution` feature to detect font substitution warnings when opening a PDF document.
+بمجرد تثبيت Aspose.PDF لـ .NET وإضافة مرجع إلى DLL في مشروع .NET الخاص بك، يمكنك البدء في استخدام`GetWarningsForFontSubstitution` ميزة لاكتشاف تحذيرات استبدال الخط عند فتح مستند PDF.
 
-The first step in using this feature is to load the PDF document that you want to detect font substitution warnings for. To do this, you can use the following code:
+الخطوة الأولى في استخدام هذه الميزة هي تحميل مستند PDF الذي تريد اكتشاف تحذيرات استبدال الخط له. للقيام بذلك، يمكنك استخدام الكود التالي:
 
 ```csharp
-// The path to the PDF document
+// المسار إلى وثيقة PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open the PDF document
+//افتح مستند بي دي إف
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-In the above code, replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your PDF document is located. This code will load the PDF document into a `Document` object, which you can then use to detect font substitution warnings.
+ في الكود أعلاه، استبدل`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل الذي يوجد به مستند PDF الخاص بك. سيقوم هذا الرمز بتحميل مستند PDF إلى ملف`Document` الكائن، والذي يمكنك بعد ذلك استخدامه للكشف عن تحذيرات استبدال الخط.
 
-## Step 3: Detect Font Substitution Warnings
+## الخطوة 3: اكتشاف تحذيرات استبدال الخط
 
-To detect font substitution warnings when opening a PDF document, you can use the following code:
+للكشف عن تحذيرات استبدال الخط عند فتح مستند PDF، يمكنك استخدام الكود التالي:
 
 ```csharp
 doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
 ```
 
-In the above code, `OnFontSubstitution` is a method that will be called whenever a font substitution warning is detected. You can customize this method to handle the font substitution warning in any way that you like.
+ في الكود أعلاه،`OnFontSubstitution`هي الطريقة التي سيتم استدعاؤها عند اكتشاف تحذير لاستبدال الخط. يمكنك تخصيص هذه الطريقة للتعامل مع تحذير استبدال الخط بأي طريقة تريدها.
 
-Here is an example implementation of the `OnFontSubstitution` method:
+ فيما يلي مثال على تنفيذ`OnFontSubstitution` طريقة:
 
 ```csharp
 private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
@@ -50,47 +50,47 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 }
 ```
 
-In the above code, the `OnFontSubstitution` method simply outputs the original font name and the substituted font name to the console whenever a font substitution warning is detected. You can customize this method to handle the font substitution warning in any way that you like.
+ في الكود أعلاه،`OnFontSubstitution` تقوم الطريقة ببساطة بإخراج اسم الخط الأصلي واسم الخط البديل إلى وحدة التحكم عند اكتشاف تحذير باستبدال الخط. يمكنك تخصيص هذه الطريقة للتعامل مع تحذير استبدال الخط بأي طريقة تريدها.
 
-### Example source code for Get Warnings For Font Substitution using Aspose.NET for PDF
+### مثال على الكود المصدري للحصول على تحذيرات لاستبدال الخط باستخدام Aspose.NET لـ PDF
 
-Here is the full source code for detecting font substitution warnings when opening a PDF document using the `GetWarningsForFontSubstitution` feature of Aspose.PDF for .NET:
+ إليك الكود المصدري الكامل لاكتشاف تحذيرات استبدال الخط عند فتح مستند PDF باستخدام الملف`GetWarningsForFontSubstitution` ميزة Aspose.PDF لـ .NET:
 
 ```csharp
-// The path to the PDF document
+// المسار إلى وثيقة PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open the PDF document
+//افتح مستند بي دي إف
 Document doc = new Document(dataDir + "input.pdf");
 
-// Detect font substitution warnings
+// كشف تحذيرات استبدال الخط
 doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
 
-// Handle font substitution warning
+// التعامل مع تحذير استبدال الخط
 private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
 {
     Console.WriteLine("Font substitution: {0} => {1}", e.OriginalFontName, e.SubstitutedFontName);
 }
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we have discussed how to use Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document. By subscribing to the `FontSubstitution` event, developers can detect font substitution situations and handle them according to their application's needs. Aspose.PDF for .NET provides a straightforward API to detect and handle font substitution warnings, helping developers ensure the visual fidelity and consistency of PDF documents across different systems.
+ في هذا البرنامج التعليمي، ناقشنا كيفية استخدام Aspose.PDF لـ .NET لاكتشاف تحذيرات استبدال الخط عند فتح مستند PDF. من خلال الاشتراك في`FontSubstitution`الحدث، يمكن للمطورين اكتشاف مواقف استبدال الخطوط والتعامل معها وفقًا لاحتياجات تطبيقاتهم. يوفر Aspose.PDF for .NET واجهة برمجة تطبيقات مباشرة لاكتشاف تحذيرات استبدال الخطوط والتعامل معها، مما يساعد المطورين على ضمان الدقة المرئية واتساق مستندات PDF عبر الأنظمة المختلفة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is font substitution in a PDF document?
+#### س: ما هو استبدال الخط في مستند PDF؟
 
-A: Font substitution in a PDF document occurs when a font used in the document is not available or embedded in the file. In such cases, the viewer or printer substitutes the missing font with a similar one that is available on the system. Font substitution can affect the appearance and layout of the document.
+ج: يحدث استبدال الخط في مستند PDF عندما لا يكون الخط المستخدم في المستند متاحًا أو مضمنًا في الملف. في مثل هذه الحالات، يقوم العارض أو الطابعة باستبدال الخط المفقود بخط مماثل متوفر على النظام. يمكن أن يؤثر استبدال الخط على مظهر المستند وتخطيطه.
 
-#### Q: Why is font substitution important to detect?
+#### س: ما أهمية اكتشاف استبدال الخط؟
 
-A: Font substitution is important to detect because it can impact the visual fidelity and layout of the PDF document. Detecting font substitution warnings allows developers to identify situations where fonts are being substituted and take appropriate actions to ensure the document's visual appearance is consistent across different systems.
+ج: من المهم اكتشاف استبدال الخط لأنه يمكن أن يؤثر على الدقة المرئية وتخطيط مستند PDF. يسمح اكتشاف تحذيرات استبدال الخطوط للمطورين بتحديد المواقف التي يتم فيها استبدال الخطوط واتخاذ الإجراءات المناسبة لضمان اتساق المظهر المرئي للمستند عبر الأنظمة المختلفة.
 
-#### Q: How can I handle font substitution warnings?
+#### س: كيف يمكنني التعامل مع تحذيرات استبدال الخط؟
 
-A: You can handle font substitution warnings by subscribing to the `FontSubstitution` event of the `Document` class and providing a custom method to handle the event. In this custom method, you can log the font substitution warnings, notify users, or take other actions based on your application's requirements.
+ ج: يمكنك التعامل مع تحذيرات استبدال الخط من خلال الاشتراك في`FontSubstitution` حدث`Document` فئة وتوفير طريقة مخصصة للتعامل مع الحدث. في هذه الطريقة المخصصة، يمكنك تسجيل تحذيرات استبدال الخط، أو إخطار المستخدمين، أو اتخاذ إجراءات أخرى بناءً على متطلبات التطبيق الخاص بك.
 
-#### Q: Can I customize the handling of font substitution warnings?
+#### س: هل يمكنني تخصيص طريقة التعامل مع تحذيرات استبدال الخط؟
 
-A: Yes, you can customize the handling of font substitution warnings by providing a custom method to handle the `FontSubstitution` event. In this custom method, you can log the font substitution warnings, notify users, or take any other appropriate actions based on your application's requirements.
+ ج: نعم، يمكنك تخصيص التعامل مع تحذيرات استبدال الخط من خلال توفير طريقة مخصصة للتعامل مع`FontSubstitution`حدث. في هذه الطريقة المخصصة، يمكنك تسجيل تحذيرات استبدال الخط، أو إخطار المستخدمين، أو اتخاذ أي إجراءات أخرى مناسبة بناءً على متطلبات التطبيق الخاص بك.

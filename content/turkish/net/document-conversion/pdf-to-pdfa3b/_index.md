@@ -1,90 +1,90 @@
 ---
-title: PDF To PDFA3b
-linktitle: PDF To PDFA3b
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert PDF to PDF/A-3b using Aspose.PDF for .NET.
+title: PDF'den PDFA3b'ye
+linktitle: PDF'den PDFA3b'ye
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF'yi PDF/A-3b'ye dönüştürmek için adım adım kılavuz.
 type: docs
 weight: 150
 url: /tr/net/document-conversion/pdf-to-pdfa3b/
 ---
-In this tutorial, we will walk you through the process of converting a PDF file to PDF/A-3b format using Aspose.PDF for .NET. PDF/A-3b is an ISO standard for embedding files and data in a PDF document. By following the steps below, you will be able to convert PDF files to PDF/A-3b format.
+Bu eğitimde, Aspose.PDF for .NET'i kullanarak bir PDF dosyasını PDF/A-3b formatına dönüştürme sürecinde size yol göstereceğiz. PDF/A-3b, dosyaları ve verileri bir PDF belgesine gömmek için kullanılan bir ISO standardıdır. Aşağıdaki adımları takip ederek PDF dosyalarını PDF/A-3b formatına dönüştürebileceksiniz.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Önkoşullar
+Başlamadan önce aşağıdaki önkoşulları karşıladığınızdan emin olun:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- C# programlama dili hakkında temel bilgiler.
+- Sisteminizde yüklü olan .NET için Aspose.PDF kütüphanesi.
+- Visual Studio gibi bir geliştirme ortamı.
 
-## Step 1: Opening the source PDF document
-In this step, we will open the source PDF file using Aspose.PDF for .NET. Follow the code below:
+## 1. Adım: Kaynak PDF belgesini açma
+Bu adımda kaynak PDF dosyasını Aspose.PDF for .NET kullanarak açacağız. Aşağıdaki kodu izleyin:
 
 ```csharp
-// Path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the source PDF document
+// Kaynak PDF belgesini açın
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+ Değiştirdiğinizden emin olun`"YOUR DOCUMENTS DIRECTORY"` PDF dosyanızın bulunduğu gerçek dizinle.
 
-## Step 2: Convert to PDF/A-3b
-After opening the PDF file, we can proceed with the conversion to PDF/A-3b format. Use the following code:
+## 2. Adım: PDF/A-3b'ye dönüştürün
+PDF dosyasını açtıktan sonra PDF/A-3b formatına dönüştürme işlemine geçebiliriz. Aşağıdaki kodu kullanın:
 
 ```csharp
-// Convert to PDF/A-3b format
+// PDF/A-3b formatına dönüştürün
 pdfDocument.Convert(new MemoryStream(), PdfFormat.PDF_A_3B, ConvertErrorAction.Delete);
 ```
 
-The above code converts the PDF file to PDF/A-3b format and removes any conversion errors.
+Yukarıdaki kod, PDF dosyasını PDF/A-3b formatına dönüştürür ve tüm dönüştürme hatalarını ortadan kaldırır.
 
-## Step 3: Saving the resulting PDF/A-3b file
-After the conversion is complete, we need to save the resulting PDF/A-3b file. Here is the last step:
+## 3. Adım: Ortaya çıkan PDF/A-3b dosyasını kaydetme
+Dönüşüm tamamlandıktan sonra ortaya çıkan PDF/A-3b dosyasını kaydetmemiz gerekiyor. İşte son adım:
 
 ```csharp
 dataDir = dataDir + "PDFToPDFA3b_out.pdf";
-// Save the output document
+// Çıktı belgesini kaydet
 pdfDocument.Save(dataDir);
 ```
 
-Replace `"YOUR DOCUMENTS DIRECTORY"` with the desired directory where you want to save the output PDF/A-3b file.
+ Yer değiştirmek`"YOUR DOCUMENTS DIRECTORY"` çıktı PDF/A-3b dosyasını kaydetmek istediğiniz dizini seçin.
 
-### Example source code for PDF to PDFA3b using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak PDF'den PDFA3b'ye dönüştürme için örnek kaynak kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "input.pdf");            
 
 pdfDocument.Convert(new MemoryStream(), PdfFormat.PDF_A_3B, ConvertErrorAction.Delete);
 
 dataDir = dataDir + "PDFToPDFA3b_out.pdf";
-// Save output document
+// Çıktı belgesini kaydet
 pdfDocument.Save(dataDir);
 
 Console.WriteLine("\nPDF file converted to PDF/A-3B format.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of converting a PDF file to PDF/A-3b format using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to convert PDF files to PDF/A-3b format. This feature is useful when you want to embed additional files and data into a PDF document that conforms to the PDF/A-3b standard.
+## Çözüm
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasını PDF/A-3b formatına dönüştürme işlemini adım adım ele aldık. Yukarıda özetlenen talimatları izleyerek artık PDF dosyalarını PDF/A-3b formatına dönüştürebilmelisiniz. Bu özellik, PDF/A-3b standardına uygun bir PDF belgesine ek dosyalar ve veriler eklemek istediğinizde kullanışlıdır.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is PDF/A-3b, and how does it differ from other PDF/A standards?
+#### S: PDF/A-3b nedir ve diğer PDF/A standartlarından farkı nedir?
 
-A: PDF/A-3b is an ISO standard that allows for embedding files and data into a PDF document, making it self-contained and ensuring long-term preservation. Unlike other PDF/A standards, such as PDF/A-1 and PDF/A-2, PDF/A-3b enables the inclusion of additional files and data within the PDF document. This feature makes it suitable for archiving and exchanging complex and interactive documents.
+C: PDF/A-3b, dosyaların ve verilerin bir PDF belgesine gömülmesine olanak tanıyan, belgenin bağımsız olmasını sağlayan ve uzun süreli koruma sağlayan bir ISO standardıdır. PDF/A-1 ve PDF/A-2 gibi diğer PDF/A standartlarından farklı olarak PDF/A-3b, PDF belgesine ek dosya ve verilerin dahil edilmesini sağlar. Bu özellik, onu karmaşık ve etkileşimli belgelerin arşivlenmesi ve paylaşılması için uygun hale getirir.
 
-#### Q: Can I include multiple files and data within a PDF/A-3b document?
+#### S: Bir PDF/A-3b belgesine birden fazla dosya ve veri ekleyebilir miyim?
 
-A: Yes, one of the main advantages of PDF/A-3b is its ability to include multiple files and data within the PDF document. You can embed various types of files, such as XML, spreadsheets, images, or other PDF files, along with the main PDF content. As a result, the PDF/A-3b document becomes a self-contained package containing all the necessary elements.
+C: Evet, PDF/A-3b'nin temel avantajlarından biri, PDF belgesine birden fazla dosya ve veri ekleme yeteneğidir. Ana PDF içeriğinin yanı sıra XML, e-tablolar, resimler veya diğer PDF dosyaları gibi çeşitli dosya türlerini gömebilirsiniz. Sonuç olarak PDF/A-3b belgesi, gerekli tüm öğeleri içeren bağımsız bir paket haline gelir.
 
-#### Q: What happens if there are errors during the PDF to PDF/A-3b conversion process?
+#### S: PDF'den PDF/A-3b'ye dönüştürme işlemi sırasında hatalar olursa ne olur?
 
-A: When converting a PDF to PDF/A-3b format using Aspose.PDF for .NET, you have control over how errors are handled. The `Convert` method's `ConvertErrorAction` parameter determines the action to take when encountering errors. In the provided code example, the `ConvertErrorAction.Delete` parameter is used, which means any errors encountered during conversion will result in the deletion of the pages with errors.
+ C: Aspose.PDF for .NET'i kullanarak bir PDF'yi PDF/A-3b formatına dönüştürürken, hataların nasıl işleneceği üzerinde kontrol sahibi olursunuz.`Convert` yöntemin`ConvertErrorAction` parametresi hatalarla karşılaşıldığında yapılacak eylemi belirler. Sağlanan kod örneğinde,`ConvertErrorAction.Delete` parametresi kullanılır, yani dönüştürme sırasında karşılaşılan hatalar, hatalı sayfaların silinmesine neden olur.
 
-#### Q: Is PDF/A-3b suitable for long-term document preservation?
+#### S: PDF/A-3b uzun süreli belge saklamaya uygun mudur?
 
-A: Yes, PDF/A-3b is designed specifically for long-term preservation of electronic documents. By embedding additional files and data, it ensures that all necessary components are included within the PDF document itself, reducing the risk of information loss or external dependencies over time. This feature makes it suitable for archiving documents in a way that guarantees long-term accessibility and consistency.
+C: Evet, PDF/A-3b özellikle elektronik belgelerin uzun süreli saklanması için tasarlanmıştır. Ek dosyalar ve veriler yerleştirerek, gerekli tüm bileşenlerin PDF belgesinin kendisinde yer almasını sağlayarak zaman içinde bilgi kaybı veya harici bağımlılık riskini azaltır. Bu özellik, belgeleri uzun vadeli erişilebilirlik ve tutarlılığı garanti edecek şekilde arşivlemeye uygun hale getirir.

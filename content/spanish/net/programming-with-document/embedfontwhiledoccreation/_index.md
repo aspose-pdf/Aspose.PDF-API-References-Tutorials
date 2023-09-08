@@ -1,48 +1,48 @@
 ---
-title: Embed Font While PDF Doc Creation
-linktitle: Embed Font While PDF Doc Creation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to embed a font while creating a PDF document using Aspose.PDF for .NET. Ensure correct display on different devices.
+title: Incrustar fuente mientras se crea un documento PDF
+linktitle: Incrustar fuente mientras se crea un documento PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a incrustar una fuente mientras crea un documento PDF usando Aspose.PDF para .NET. Garantiza una visualización correcta en diferentes dispositivos.
 type: docs
 weight: 140
 url: /es/net/programming-with-document/embedfontwhiledoccreation/
 ---
-In this tutorial, we will discuss how to embed a font while creating a PDF document using Aspose.PDF for .NET. Aspose.PDF for .NET is a powerful library that allows developers to create, edit, and manipulate PDF documents programmatically. This library provides a wide range of features to work with PDF documents, including adding text, images, tables, and much more. Embedding fonts while creating a PDF document is a common requirement for developers who want to ensure that the PDF document displays correctly on different devices, regardless of whether the required fonts are installed on those devices or not.
+En este tutorial, discutiremos cómo incrustar una fuente mientras creamos un documento PDF usando Aspose.PDF para .NET. Aspose.PDF para .NET es una poderosa biblioteca que permite a los desarrolladores crear, editar y manipular documentos PDF mediante programación. Esta biblioteca proporciona una amplia gama de funciones para trabajar con documentos PDF, incluida la adición de texto, imágenes, tablas y mucho más. Incrustar fuentes al crear un documento PDF es un requisito común para los desarrolladores que desean asegurarse de que el documento PDF se muestre correctamente en diferentes dispositivos, independientemente de si las fuentes requeridas están instaladas en esos dispositivos o no.
 
-## Step 1: Create a new C# Console Application
-To get started, create a new C# Console Application in Visual Studio. You can name it whatever you like. Once the project is created, you need to add a reference to the Aspose.PDF for .NET library.
+## Paso 1: crear una nueva aplicación de consola C#
+Para comenzar, cree una nueva aplicación de consola C# en Visual Studio. Puedes nombrarlo como quieras. Una vez creado el proyecto, debe agregar una referencia a la biblioteca Aspose.PDF para .NET.
 
-## Step 2: Import the Aspose.PDF Namespace
-Add the following line of code at the top of your C# file to import the Aspose.PDF namespace:
+## Paso 2: Importe el espacio de nombres Aspose.PDF
+Agregue la siguiente línea de código en la parte superior de su archivo C# para importar el espacio de nombres Aspose.PDF:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Instantiate a Pdf Object
-Instantiate a Pdf object by calling its empty constructor:
+## Paso 3: crear una instancia de un objeto PDF
+Cree una instancia de un objeto Pdf llamando a su constructor vacío:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Step 4: Create a Section in the Pdf Object
-Create a section in the Pdf object:
+## Paso 4: crear una sección en el objeto PDF
+Cree una sección en el objeto PDF:
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## Step 5: Add Text to the Section
-Add text to the section:
+## Paso 5: agregue texto a la sección
+Agregue texto a la sección:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
 Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
 ```
 
-## Step 6: Set the Font and Embed It
-Set the font and embed it:
+## Paso 6: configure la fuente e incrústela
+Configure la fuente e incrústela:
 
 ```csharp
 Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
@@ -53,25 +53,25 @@ fragment.Segments.Add(segment);
 page.Paragraphs.Add(fragment);
 ```
 
-## Step 7: Save the PDF Document
-Once you have embedded the font while creating the PDF document, you need to save the document:
+## Paso 7: guarde el documento PDF
+Una vez que haya incrustado la fuente mientras creaba el documento PDF, deberá guardar el documento:
 
 ```csharp
 dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-// Save PDF Document
+// Guardar documento PDF
 doc.Save(dataDir);
 ```
 
-### Example Source Code for Embed Font While Doc Creation using Aspose.PDF for .NET
+### Ejemplo de código fuente para incrustar fuentes durante la creación de documentos usando Aspose.PDF para .NET
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Pdf object by calling its empty constructor
+// Crear una instancia de un objeto Pdf llamando a su constructor vacío
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Create a section in the Pdf object
+// Crear una sección en el objeto PDF.
 Aspose.Pdf.Page page = doc.Pages.Add();
 
 Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
@@ -85,31 +85,31 @@ fragment.Segments.Add(segment);
 page.Paragraphs.Add(fragment);
 
 dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-// Save PDF Document
+// Guardar documento PDF
 doc.Save(dataDir);
 ```
 
-## Conclusion
-In this tutorial, we have discussed how to embed a font while creating a PDF document using Aspose.PDF for .NET. Aspose.PDF for .NET provides a simple and easy-to-use API to work with PDF documents, including adding and embedding fonts. Embedding fonts while creating a PDF document is an important step to ensure that the document is displayed correctly on different devices, regardless of whether the required fonts are installed on those devices or not.
+## Conclusión
+En este tutorial, analizamos cómo incrustar una fuente al crear un documento PDF usando Aspose.PDF para .NET. Aspose.PDF para .NET proporciona una API sencilla y fácil de usar para trabajar con documentos PDF, incluida la adición e incrustación de fuentes. Incrustar fuentes al crear un documento PDF es un paso importante para garantizar que el documento se muestre correctamente en diferentes dispositivos, independientemente de si las fuentes requeridas están instaladas en esos dispositivos o no.
 
-### FAQ's for embed font while PDF doc creation
+### Preguntas frecuentes sobre incrustar fuentes durante la creación de documentos PDF
 
-#### Q: Why is embedding fonts while creating a PDF document important?
+#### P: ¿Por qué es importante incrustar fuentes al crear un documento PDF?
 
-A: Embedding fonts while creating a PDF document is important to ensure that the document is displayed correctly on different devices, even if the required fonts are not installed on those devices. This helps maintain the document's intended appearance and prevents font substitution issues.
+R: Incrustar fuentes al crear un documento PDF es importante para garantizar que el documento se muestre correctamente en diferentes dispositivos, incluso si las fuentes requeridas no están instaladas en esos dispositivos. Esto ayuda a mantener la apariencia deseada del documento y evita problemas de sustitución de fuentes.
 
-#### Q: How can I embed fonts while creating a PDF document using Aspose.PDF for .NET?
+#### P: ¿Cómo puedo incrustar fuentes mientras creo un documento PDF usando Aspose.PDF para .NET?
 
-A: You can embed fonts while creating a PDF document using Aspose.PDF for .NET by specifying the font and setting the `IsEmbedded` property to `true`. This ensures that the font data is embedded in the PDF file.
+R: Puede incrustar fuentes mientras crea un documento PDF usando Aspose.PDF para .NET especificando la fuente y configurando el`IsEmbedded` propiedad a`true`. Esto garantiza que los datos de la fuente estén incrustados en el archivo PDF.
 
-#### Q: Can I specify a custom font while embedding it in a PDF document?
+#### P: ¿Puedo especificar una fuente personalizada al incrustarla en un documento PDF?
 
-A: Yes, you can specify a custom font while embedding it in a PDF document using Aspose.PDF for .NET. This allows you to use specific fonts that suit your design requirements.
+R: Sí, puede especificar una fuente personalizada mientras la incrusta en un documento PDF usando Aspose.PDF para .NET. Esto le permite utilizar fuentes específicas que se adapten a sus requisitos de diseño.
 
-#### Q: Is Aspose.PDF for .NET compatible with various font formats?
+#### P: ¿Aspose.PDF para .NET es compatible con varios formatos de fuente?
 
-A: Yes, Aspose.PDF for .NET is compatible with various font formats, including TrueType, OpenType, and Type 1 fonts. It can embed fonts in a PDF document regardless of their format.
+R: Sí, Aspose.PDF para .NET es compatible con varios formatos de fuentes, incluidas las fuentes TrueType, OpenType y Type 1. Puede incrustar fuentes en un documento PDF independientemente de su formato.
 
-#### Q: Can I customize the font embedding process?
+#### P: ¿Puedo personalizar el proceso de incrustación de fuentes?
 
-A: Yes, you can customize the font embedding process using Aspose.PDF for .NET. You can specify the font and set properties such as `IsEmbedded` to control how the font is embedded in the PDF document.
+ R: Sí, puedes personalizar el proceso de incrustación de fuentes usando Aspose.PDF para .NET. Puede especificar la fuente y establecer propiedades como`IsEmbedded` para controlar cómo se incrusta la fuente en el documento PDF.

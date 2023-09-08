@@ -1,49 +1,49 @@
 ---
-title: Set Expiry Date In PDF File
-linktitle: Set Expiry Date In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set expiry date in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+title: Imposta la data di scadenza nel file PDF
+linktitle: Imposta la data di scadenza nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come impostare la data di scadenza nel file PDF utilizzando Aspose.PDF per .NET con questa guida passo passo.
 type: docs
 weight: 300
 url: /it/net/programming-with-document/setexpirydate/
 ---
-Aspose.PDF for .NET is a powerful library that provides various features for working with PDF files. One such feature is the ability to set an expiry date for a PDF document. In this tutorial, we will walk you through the process of setting an expiry date for a PDF document using Aspose.PDF for .NET. 
+Aspose.PDF per .NET è una potente libreria che fornisce varie funzionalità per lavorare con file PDF. Una di queste funzionalità è la possibilità di impostare una data di scadenza per un documento PDF. In questo tutorial ti guideremo attraverso il processo di impostazione di una data di scadenza per un documento PDF utilizzando Aspose.PDF per .NET. 
 
-## Step 1: Set the path to the document directory
+## Passaggio 1: impostare il percorso della directory dei documenti
 
-Before we start, we need to set the path to the directory where our PDF document is located. We will store this path in a variable called "dataDir".
+Prima di iniziare, dobbiamo impostare il percorso della directory in cui si trova il nostro documento PDF. Memorizzeremo questo percorso in una variabile chiamata "dataDir".
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Creating a new PDF document
+## Passaggio 2: creazione di un nuovo documento PDF
 
-To create a new PDF document, we need to instantiate a new `Aspose.Pdf.Document` object. We can do this using the following code:
+ Per creare un nuovo documento PDF, dobbiamo istanziarne uno nuovo`Aspose.Pdf.Document` oggetto. Possiamo farlo utilizzando il seguente codice:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Step 3: Adding a new page to the PDF document
+## Passaggio 3: aggiunta di una nuova pagina al documento PDF
 
-Once we have created the PDF document, we can add a new page to it. We can do this using the following code:
+Una volta creato il documento PDF, possiamo aggiungervi una nuova pagina. Possiamo farlo utilizzando il seguente codice:
 
 ```csharp
 doc.Pages.Add();
 ```
 
-## Step 4: Adding Text to the PDF Document
+## Passaggio 4: aggiunta di testo al documento PDF
 
-After adding a page to the PDF document, we can add text to it using the `Paragraphs` collection. We can do this using the following code:
+Dopo aver aggiunto una pagina al documento PDF, possiamo aggiungervi del testo utilizzando il file`Paragraphs` collezione. Possiamo farlo utilizzando il seguente codice:
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
 ```
 
-## Step 5: Setting PDF expiry date using JavaScript
+## Passaggio 5: impostazione della data di scadenza del PDF utilizzando JavaScript
 
-To set the PDF expiry date, we need to create a JavaScript object. We can do this using the following code:
+Per impostare la data di scadenza del PDF, dobbiamo creare un oggetto JavaScript. Possiamo farlo utilizzando il seguente codice:
 
 ```csharp
 JavascriptAction javaScript = new JavascriptAction(
@@ -54,37 +54,37 @@ JavascriptAction javaScript = new JavascriptAction(
 + "if (today.getTime() > expiry.getTime())"
 + "app.alert('The file is expired. You need a new one.');");
 
-// Set JavaScript as PDF open action
+// Imposta JavaScript come azione di apertura PDF
 doc.OpenAction = javaScript;
 ```
 
-In this code, we are setting the expiry date to May 2017.
+In questo codice fissiamo la data di scadenza a maggio 2017.
 
-## Step 6: Save the PDF File
+## Passaggio 6: salva il file PDF
 
-After you've set the expiry date, you need to save the PDF file. To do this, you can use the `Save` method of the `Document` object and pass in the path to where you want to save the updated PDF file.
+ Dopo aver impostato la data di scadenza, è necessario salvare il file PDF. Per fare questo, puoi usare il file`Save` metodo del`Document` oggetto e passare il percorso in cui si desidera salvare il file PDF aggiornato.
 
 ```csharp
 dataDir = dataDir + "SetExpiryDate_out.pdf";
-// Save PDF Document
+// Salva documento PDF
 doc.Save(dataDir);
 ```
 
-### Example source code for Set Expiry Date using Aspose.PDF for .NET
+### Codice sorgente di esempio per Imposta data di scadenza utilizzando Aspose.PDF per .NET
 
-Here's the complete example source code for setting expiry date using Aspose.PDF for .NET:
+Ecco il codice sorgente di esempio completo per impostare la data di scadenza utilizzando Aspose.PDF per .NET:
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document object
+// Istanziare l'oggetto Documento
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-// Add page to pages collection of PDF file
+// Aggiungi una raccolta di pagine a pagine di file PDF
 doc.Pages.Add();
-// Add text fragment to paragraphs collection of page object
+// Aggiungi frammento di testo alla raccolta di paragrafi dell'oggetto pagina
 doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
-// Create JavaScript object to set PDF expiry date
+// Crea un oggetto JavaScript per impostare la data di scadenza del PDF
 JavascriptAction javaScript = new JavascriptAction(
 "var year=2017;"
 + "var month=5;"
@@ -92,28 +92,28 @@ JavascriptAction javaScript = new JavascriptAction(
 + "expiry = new Date(year, month);"
 + "if (today.getTime() > expiry.getTime())"
 + "app.alert('The file is expired. You need a new one.');");
-// Set JavaScript as PDF open action
+// Imposta JavaScript come azione di apertura PDF
 doc.OpenAction = javaScript;
 
 dataDir = dataDir + "SetExpiryDate_out.pdf";
-// Save PDF Document
+// Salva documento PDF
 doc.Save(dataDir);
 ```
 
-## Conclusion
+## Conclusione
 
-Setting an expiry date for a PDF document using Aspose.PDF for .NET is a useful feature to ensure that the document is only valid for a specified period. By following the step-by-step guide and using the provided C# source code, developers can easily set the expiry date and create PDFs with time-limited validity. This feature can be particularly helpful for documents that need to be accessed or distributed for a limited duration.
+Impostare una data di scadenza per un documento PDF utilizzando Aspose.PDF per .NET è una funzionalità utile per garantire che il documento sia valido solo per un periodo specificato. Seguendo la guida passo passo e utilizzando il codice sorgente C# fornito, gli sviluppatori possono facilmente impostare la data di scadenza e creare PDF con validità limitata nel tempo. Questa funzionalità può essere particolarmente utile per i documenti a cui è necessario accedere o distribuire per un periodo limitato.
 
-### FAQ's for set expiry date in PDF file
+### Domande frequenti sulla data di scadenza impostata nel file PDF
 
-#### Q: Can I set a different expiry date for the PDF document?
+#### D: Posso impostare una data di scadenza diversa per il documento PDF?
 
-A: Yes, you can set a different expiry date for the PDF document by modifying the JavaScript code in Step 5. In the provided example, the expiry date is set to May 2017. To set a different expiry date, you need to modify the `year` and `month` variables in the JavaScript code to the desired year and month.
+ R: Sì, puoi impostare una data di scadenza diversa per il documento PDF modificando il codice JavaScript nel passaggio 5. Nell'esempio fornito, la data di scadenza è impostata su maggio 2017. Per impostare una data di scadenza diversa, è necessario modificare il`year` E`month` variabili nel codice JavaScript all'anno e al mese desiderati.
 
-#### Q: What happens when the PDF document has expired?
+#### D: Cosa succede quando il documento PDF è scaduto?
 
-A: When the PDF document has expired, as specified in the JavaScript code, the viewer will display an alert message indicating that the file is expired and that the user needs a new one. This alert message will be shown when the PDF is opened.
+R: Quando il documento PDF è scaduto, come specificato nel codice JavaScript, il visualizzatore visualizzerà un messaggio di avviso indicando che il file è scaduto e che l'utente ne ha bisogno di uno nuovo. Questo messaggio di avviso verrà visualizzato all'apertura del PDF.
 
-#### Q: Can I use a specific time for the expiry date instead of just the date?
+#### D: Posso utilizzare un'ora specifica per la data di scadenza anziché solo la data?
 
-A: Yes, you can set a specific time for the expiry date in the JavaScript code. By modifying the `expiry` variable in the JavaScript code to include the desired time, you can set a specific time for the expiry date.
+ R: Sì, puoi impostare un'ora specifica per la data di scadenza nel codice JavaScript. Modificando il`expiry` variabile nel codice JavaScript per includere l'ora desiderata, è possibile impostare un'ora specifica per la data di scadenza.

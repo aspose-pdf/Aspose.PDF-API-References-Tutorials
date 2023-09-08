@@ -1,49 +1,49 @@
 ---
-title: Combo Box
-linktitle: Combo Box
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create combo box list in your PDF documents using Aspose.PDF for .NET.
+title: Boîte combo
+linktitle: Boîte combo
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Créez facilement une liste de zones de liste déroulante dans vos documents PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 30
 url: /fr/net/programming-with-forms/combo-box/
 ---
-In this tutorial, we will show you how to create a combo box list using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+Dans ce didacticiel, nous allons vous montrer comment créer une liste de zones de liste déroulante à l'aide d'Aspose.PDF pour .NET. Nous expliquerons le code source C# étape par étape pour vous guider tout au long de ce processus.
 
-## Step 1: Preparation
+## Étape 1 : Préparation
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Tout d'abord, assurez-vous d'avoir importé les bibliothèques nécessaires et défini le chemin d'accès au répertoire des documents :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a Document Object
+## Étape 2 : créer un objet de document
 
-Create a Document object to hold the PDF form:
+Créez un objet Document pour contenir le formulaire PDF :
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 3: Add a page
+## Étape 3 : Ajouter une page
 
-Add a page to the document:
+Ajoutez une page au document :
 
 ```csharp
 doc.Pages.Add();
 ```
 
-## Step 4: Instantiate a ComboBoxField Object
+## Étape 4 : instancier un objet ComboBoxField
 
-Instantiate a ComboBoxField object with the desired dimensions:
+Instanciez un objet ComboBoxField avec les dimensions souhaitées :
 
 ```csharp
 ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
 ```
 
-## Step 5: Add options to the drop-down list
+## Étape 5 : Ajouter des options à la liste déroulante
 
-Add the desired options to the drop-down list:
+Ajoutez les options souhaitées à la liste déroulante :
 
 ```csharp
 combo.AddOption("Red");
@@ -52,44 +52,44 @@ combo.AddOption("Green");
 combo.AddOption("Blue");
 ```
 
-## Step 6: Add the combo box list to the form
+## Étape 6 : Ajoutez la liste déroulante au formulaire
 
-Add the ComboBoxField object to the Document Form Fields collection:
+Ajoutez l'objet ComboBoxField à la collection Document Form Fields :
 
 ```csharp
 doc.Form.Add(combo);
 ```
 
-## Step 7: Save the document
+## Étape 7 : Enregistrez le document
 
-Save the PDF document:
+Enregistrez le document PDF :
 
 ```csharp
 dataDir = dataDir + "ComboBox_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Combo Box using Aspose.PDF for .NET 
+### Exemple de code source pour Combo Box utilisant Aspose.PDF pour .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Le chemin d'accès au répertoire des documents.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Create Document object
+	// Créer un objet Document
 	Document doc = new Document();
-	// Add page to document object
+	// Ajouter une page à l'objet document
 	doc.Pages.Add();
-	// Instantiate ComboBox Field object
+	// Instancier l'objet ComboBox Field
 	ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
-	// Add option to ComboBox
+	// Ajouter une option à ComboBox
 	combo.AddOption("Red");
 	combo.AddOption("Yellow");
 	combo.AddOption("Green");
 	combo.AddOption("Blue");
-	// Add combo box object to form fields collection of document object
+	// Ajouter un objet de zone de liste déroulante à la collection de champs de formulaire de l'objet de document
 	doc.Form.Add(combo);
 	dataDir = dataDir + "ComboBox_out.pdf";
-	// Save the PDF document
+	// Enregistrez le document PDF
 	doc.Save(dataDir);
 	Console.WriteLine("\nCombobox field added successfully.\nFile saved at " + dataDir);
 }
@@ -101,26 +101,26 @@ catch (Exception ex)
 
 ## Conclusion
 
-In this tutorial, we learned how to create a combo box list using Aspose.PDF for .NET. By following these steps, you can easily add a combo box list to your PDF documents using Aspose.PDF.
+Dans ce didacticiel, nous avons appris à créer une liste déroulante à l'aide d'Aspose.PDF pour .NET. En suivant ces étapes, vous pouvez facilement ajouter une liste de zones de liste déroulante à vos documents PDF à l'aide d'Aspose.PDF.
 
-### FAQ's
+### FAQ
 
-#### Q: Can I customize the appearance of the combo box list using Aspose.PDF for .NET?
+#### Q : Puis-je personnaliser l’apparence de la liste déroulante à l’aide d’Aspose.PDF pour .NET ?
 
-A: Yes, you can customize the appearance of the combo box list using Aspose.PDF for .NET. You can set properties such as font size, color, background color, border style, and more to match your desired look and feel.
+R : Oui, vous pouvez personnaliser l'apparence de la liste déroulante à l'aide d'Aspose.PDF pour .NET. Vous pouvez définir des propriétés telles que la taille de la police, la couleur, la couleur d'arrière-plan, le style de bordure, etc., pour correspondre à l'apparence souhaitée.
 
-#### Q: Can I set default selected options in the combo box list?
+#### Q : Puis-je définir les options sélectionnées par défaut dans la liste déroulante ?
 
-A: Yes, you can set default selected options in the combo box list using Aspose.PDF for .NET. You can use the `Selected` property of the `ComboBoxField` object to mark one or more options as selected by default.
+ R : Oui, vous pouvez définir les options sélectionnées par défaut dans la liste déroulante à l'aide d'Aspose.PDF pour .NET. Vous pouvez utiliser le`Selected` propriété du`ComboBoxField` objet pour marquer une ou plusieurs options comme sélectionnées par défaut.
 
-#### Q: How can I retrieve the selected value from the combo box list after the user makes a selection?
+#### Q : Comment puis-je récupérer la valeur sélectionnée dans la liste déroulante une fois que l'utilisateur a effectué une sélection ?
 
-A: You can retrieve the selected value from the combo box list using Aspose.PDF for .NET. After the user makes a selection, you can access the `Value` property of the `ComboBoxField` object to obtain the selected value.
+ R : Vous pouvez récupérer la valeur sélectionnée dans la liste déroulante à l'aide d'Aspose.PDF pour .NET. Une fois que l'utilisateur a effectué une sélection, vous pouvez accéder au`Value` propriété du`ComboBoxField`objet pour obtenir la valeur sélectionnée.
 
-#### Q: Is it possible to add event handlers or actions to the combo box list?
+#### Q : Est-il possible d'ajouter des gestionnaires d'événements ou des actions à la liste déroulante ?
 
-A: Yes, Aspose.PDF for .NET allows you to add event handlers or actions to the combo box list. You can associate JavaScript actions, such as `OnValueChanged`, to the combo box list to perform specific actions when the user selects an option.
+ R : Oui, Aspose.PDF pour .NET vous permet d'ajouter des gestionnaires d'événements ou des actions à la liste déroulante. Vous pouvez associer des actions JavaScript, telles que`OnValueChanged`, à la liste des zones de liste déroulante pour effectuer des actions spécifiques lorsque l'utilisateur sélectionne une option.
 
-#### Q: Can I add tooltips or descriptions to the options in the combo box list?
+#### Q : Puis-je ajouter des info-bulles ou des descriptions aux options de la liste déroulante ?
 
-A: Yes, you can add tooltips or descriptions to the options in the combo box list using Aspose.PDF for .NET. You can set the `AlternateName` property of each option to provide a tooltip or description that will be displayed when the user hovers over the option.
+ R : Oui, vous pouvez ajouter des info-bulles ou des descriptions aux options de la liste déroulante à l'aide d'Aspose.PDF pour .NET. Vous pouvez définir le`AlternateName` propriété de chaque option pour fournir une info-bulle ou une description qui sera affichée lorsque l'utilisateur survole l'option.

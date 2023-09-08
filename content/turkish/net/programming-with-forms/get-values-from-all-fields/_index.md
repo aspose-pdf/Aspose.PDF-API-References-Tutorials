@@ -1,33 +1,33 @@
 ---
-title: Get Values From All Fields In PDF Document
-linktitle: Get Values From All Fields In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get the values of all form fields in PDF document with Aspose.PDF for .NET.
+title: PDF Belgesindeki Tüm Alanlardan Değer Al
+linktitle: PDF Belgesindeki Tüm Alanlardan Değer Al
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF belgesindeki tüm form alanlarının değerlerini kolayca alın.
 type: docs
 weight: 150
 url: /tr/net/programming-with-forms/get-values-from-all-fields/
 ---
-In this tutorial, we will show you how to get the values of all form fields in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+Bu eğitimde size Aspose.PDF for .NET kullanarak bir PDF belgesindeki tüm form alanlarının değerlerini nasıl alacağınızı göstereceğiz. Bu süreçte size yol göstermek için C# kaynak kodunu adım adım açıklayacağız.
 
-## Step 1: Preparation
+## Adım 1: Hazırlık
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Gerekli kitaplıkları içe aktardığınızdan ve belgeler dizininizin yolunu ayarladığınızdan emin olun:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the document
+## 2. Adım: Belgeyi açın
 
-Open the PDF document:
+PDF belgesini açın:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetValuesFromAllFields.pdf");
 ```
 
-## Step 3: Get values for all fields
+## 3. Adım: Tüm alanlar için değerleri alın
 
-Loop through all the form fields in the document and get their names and values:
+Belgedeki tüm form alanları arasında dolaşın ve adlarını ve değerlerini alın:
 
 ```csharp
 foreach(Field formField in pdfDocument.Form)
@@ -37,13 +37,13 @@ Console.WriteLine("Value: {0}", formField.Value);
 }
 ```
 
-### Sample source code for Get Values From All Fields using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Tüm Alanlardan Değer Al için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "GetValuesFromAllFields.pdf");
-// Get values from all fields
+// Tüm alanlardan değer alın
 foreach (Field formField in pdfDocument.Form)
 {
 	Console.WriteLine("Field Name : {0} ", formField.PartialName);
@@ -51,28 +51,28 @@ foreach (Field formField in pdfDocument.Form)
 }
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to get the values of all form fields in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily extract the values of all form fields from your PDF documents using Aspose.PDF.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesindeki tüm form alanlarının değerlerini nasıl elde edeceğimizi öğrendik. Bu adımları takip ederek Aspose.PDF'yi kullanarak tüm form alanlarının değerlerini PDF belgelerinizden kolayca çıkarabilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: Can I modify the values of form fields while retrieving them using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak form alanlarının değerlerini alırken değiştirebilir miyim?
 
-A: Yes, you can modify the values of form fields while retrieving them using Aspose.PDF for .NET. Once you have the `Field` object representing a form field, you can update its `Value` property with the desired value. After making the necessary changes, you can save the updated PDF document to reflect the changes.
+ C: Evet, Aspose.PDF for .NET'i kullanarak form alanlarının değerlerini alırken değiştirebilirsiniz. Bir kez sahip olduğunuzda`Field` Bir form alanını temsil eden nesneyi güncelleyebilirsiniz.`Value`İstenilen değere sahip özellik. Gerekli değişiklikleri yaptıktan sonra güncellenen PDF belgesini değişiklikleri yansıtacak şekilde kaydedebilirsiniz.
 
-#### Q: How can I filter and retrieve specific form fields based on their types (e.g., text fields, checkboxes)?
+#### S: Belirli form alanlarını türlerine göre (örneğin, metin alanları, onay kutuları) nasıl filtreleyebilir ve alabilirim?
 
-A: To retrieve specific form fields based on their types, you can use conditional statements or LINQ queries to filter the fields of interest. You can check the type of each form field using the field's `FieldType` property, and then retrieve the values accordingly.
+ C: Türlerine göre belirli form alanlarını almak için, ilgi alanlarını filtrelemek üzere koşullu ifadeleri veya LINQ sorgularını kullanabilirsiniz. Her form alanının türünü, alanın`FieldType` özelliği ve ardından buna göre değerleri alın.
 
-#### Q: What happens if the PDF document has no form fields?
+#### S: PDF belgesinde form alanı yoksa ne olur?
 
-A: If the PDF document does not contain any form fields, the `pdfDocument.Form` property will return an empty collection. In such cases, the loop to retrieve values will not execute, and no values will be displayed.
+ C: PDF belgesi herhangi bir form alanı içermiyorsa,`pdfDocument.Form` özellik boş bir koleksiyon döndürecektir. Bu gibi durumlarda, değerlerin alınmasına yönelik döngü yürütülmeyecek ve hiçbir değer görüntülenmeyecektir.
 
-#### Q: Can I extract the form field values in a specific order or sort them alphabetically?
+#### S: Form alanı değerlerini belirli bir sıraya göre çıkarabilir miyim veya bunları alfabetik olarak sıralayabilir miyim?
 
-A: The order in which the form fields are retrieved depends on the underlying structure of the PDF document. Aspose.PDF for .NET returns the form fields in the order they were added to the document. If you want to display or process the form fields in a specific order, you can implement custom sorting logic based on your requirements.
+C: Form alanlarının alınma sırası PDF belgesinin temel yapısına bağlıdır. Aspose.PDF for .NET form alanlarını belgeye eklendikleri sıraya göre döndürür. Form alanlarını belirli bir sırayla görüntülemek veya işlemek istiyorsanız gereksinimlerinize göre özel sıralama mantığı uygulayabilirsiniz.
 
-#### Q: How can I handle encrypted PDF documents with password-protected form fields?
+#### S: Şifre korumalı form alanlarıyla şifrelenmiş PDF belgelerini nasıl işleyebilirim?
 
-A: Aspose.PDF for .NET provides features to work with encrypted PDF documents and password-protected form fields. Before loading the document, you can set the password using the `pdfDocument.Password` property to access the secured PDF document and its form fields.
+ C: Aspose.PDF for .NET, şifrelenmiş PDF belgeleri ve parola korumalı form alanlarıyla çalışma özellikleri sağlar. Belgeyi yüklemeden önce, parolayı kullanarak ayarlayabilirsiniz.`pdfDocument.Password` Güvenli PDF belgesine ve form alanlarına erişim özelliği.

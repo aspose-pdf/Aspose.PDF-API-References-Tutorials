@@ -1,36 +1,36 @@
 ---
-title: Determine Correct Password In PDF File
-linktitle: Determine Correct Password In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to determine the correct password in PDF file with Aspose.PDF for .NET.
+title: تحديد كلمة المرور الصحيحة في ملف PDF
+linktitle: تحديد كلمة المرور الصحيحة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تحديد كلمة المرور الصحيحة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 30
 url: /ar/net/programming-with-security-and-signatures/determine-correct-password/
 ---
-In this tutorial, we'll walk you through the process of determining the correct password in PDF file using Aspose.PDF for .NET. This feature allows you to check if a PDF file is password protected and find the correct password from a predefined list.
+في هذا البرنامج التعليمي، سنرشدك خلال عملية تحديد كلمة المرور الصحيحة في ملف PDF باستخدام Aspose.PDF لـ .NET. تتيح لك هذه الميزة التحقق مما إذا كان ملف PDF محميًا بكلمة مرور والعثور على كلمة المرور الصحيحة من قائمة محددة مسبقًا.
 
-## Step 1: Prerequisites
+## الخطوة 1: المتطلبات الأساسية
 
-Before you begin, make sure you have the following prerequisites:
+قبل البدء، تأكد من توفر المتطلبات الأساسية التالية:
 
-- Basic knowledge of the C# programming language
-- Installing Visual Studio on your machine
-- Aspose.PDF library for .NET installed
+- المعرفة الأساسية بلغة البرمجة C#
+- تثبيت Visual Studio على جهازك
+- تم تثبيت مكتبة Aspose.PDF لـ .NET
 
-## Step 2: Environment setup
+## الخطوة 2: إعداد البيئة
 
-To get started, follow these steps to set up your development environment:
+للبدء، اتبع الخطوات التالية لإعداد بيئة التطوير الخاصة بك:
 
-1. Open Visual Studio and create a new C# project.
-2. Import the required namespaces into your code file:
+1. افتح Visual Studio وقم بإنشاء مشروع C# جديد.
+2. قم باستيراد مساحات الأسماء المطلوبة إلى ملف التعليمات البرمجية الخاص بك:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Loading source PDF file
+## الخطوة 3: تحميل ملف PDF المصدر
 
-The first step is to upload the source PDF file you want to verify. In this example, we assume that you have a PDF file named "IsPasswordProtected.pdf" in the specified directory.
+الخطوة الأولى هي تحميل ملف PDF المصدر الذي تريد التحقق منه. في هذا المثال، نفترض أن لديك ملف PDF باسم "IsPasswordProtected.pdf" في الدليل المحدد.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -38,21 +38,21 @@ PdfFileInfo info = new PdfFileInfo();
 info.BindPdf(dataDir + "IsPasswordProtected.pdf");
 ```
 
-Be sure to replace the placeholders with the actual locations of your PDF file.
+تأكد من استبدال العناصر النائبة بالمواقع الفعلية لملف PDF الخاص بك.
 
-## Step 4: Determine Source PDF Encryption
+## الخطوة 4: تحديد مصدر تشفير PDF
 
-Once you have uploaded the source PDF file, you can determine if it is encrypted using the `IsEncrypted` method of the `PdfFileInfo` object.
+بمجرد قيامك بتحميل ملف PDF المصدر، يمكنك تحديد ما إذا كان مشفرًا باستخدام ملف`IsEncrypted` طريقة`PdfFileInfo` هدف.
 
 ```csharp
 Console.WriteLine("The file is password protected: " + info.IsEncrypted);
 ```
 
-This statement displays whether the PDF file is password protected or not.
+يعرض هذا البيان ما إذا كان ملف PDF محميًا بكلمة مرور أم لا.
 
-## Step 5: Finding the correct password
+## الخطوة 5: العثور على كلمة المرور الصحيحة
 
-Next, we will search for the correct password using a predefined list of passwords. We go through each password in the list and try to load the PDF document with that password.
+بعد ذلك، سنبحث عن كلمة المرور الصحيحة باستخدام قائمة كلمات المرور المحددة مسبقًا. نتصفح كل كلمة مرور في القائمة ونحاول تحميل مستند PDF بكلمة المرور هذه.
 
 ```csharp
 String[] passwords = new String[5] { "test", "test1", "test2", "test3", "sample" };
@@ -71,17 +71,17 @@ Console.WriteLine("The password " + passwords[passwordcount] + " is not correct.
 }
 ```
 
-This loop tests each word of pass from the list. If the password is correct, the number of pages in the document is displayed. Otherwise, a message indicating that the password is not correct is displayed.
+تختبر هذه الحلقة كل كلمة مرور من القائمة. إذا كانت كلمة المرور صحيحة، فسيتم عرض عدد الصفحات في المستند. وإلا، سيتم عرض رسالة تشير إلى أن كلمة المرور غير صحيحة.
 
 
-### Sample source code for Determine Correct Password using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتحديد كلمة المرور الصحيحة باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";            
-// Load source PDF file
+// تحميل ملف PDF المصدر
 PdfFileInfo info = new PdfFileInfo();
 info.BindPdf(dataDir + "IsPasswordProtected.pdf");
-// Determine if the source PDF is encrypted
+// تحديد ما إذا كان ملف PDF المصدر مشفرًا
 Console.WriteLine("File is password protected " + info.IsEncrypted);
 String[] passwords = new String[5] { "test", "test1", "test2", "test3", "sample" };
 for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
@@ -99,48 +99,48 @@ for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have successfully determined the correct password for a PDF file using Aspose.PDF for .NET. This tutorial covered the step-by-step process, from verifying file encryption to finding the correct password from a predefined list. Now you can use this feature to check and find the correct password of your PDF files.
+تهنئة ! لقد نجحت في تحديد كلمة المرور الصحيحة لملف PDF باستخدام Aspose.PDF لـ .NET. يغطي هذا البرنامج التعليمي العملية خطوة بخطوة، بدءًا من التحقق من تشفير الملفات وحتى العثور على كلمة المرور الصحيحة من قائمة محددة مسبقًا. يمكنك الآن استخدام هذه الميزة للتحقق من كلمة المرور الصحيحة لملفات PDF الخاصة بك والعثور عليها.
 
-### FAQ's for determine correct password in PDF file
+### الأسئلة الشائعة لتحديد كلمة المرور الصحيحة في ملف PDF
 
-#### Q: What is the purpose of this tutorial?
+#### س: ما هو الغرض من هذا البرنامج التعليمي؟
 
-A: This tutorial aims to guide you through the process of determining the correct password for a PDF file using Aspose.PDF for .NET. This feature allows you to check whether a PDF file is password protected and attempt to find the correct password from a predefined list.
+ج: يهدف هذا البرنامج التعليمي إلى إرشادك خلال عملية تحديد كلمة المرور الصحيحة لملف PDF باستخدام Aspose.PDF لـ .NET. تتيح لك هذه الميزة التحقق مما إذا كان ملف PDF محميًا بكلمة مرور ومحاولة العثور على كلمة المرور الصحيحة من قائمة محددة مسبقًا.
 
-#### Q: What prerequisites are required before starting?
+#### س: ما هي المتطلبات الأساسية المطلوبة قبل البدء؟
 
-A: Before you begin, make sure you have a basic understanding of the C# programming language, have Visual Studio installed on your machine, and have the Aspose.PDF library for .NET installed.
+ج: قبل أن تبدأ، تأكد من أن لديك الفهم الأساسي للغة البرمجة C#، ومن تثبيت Visual Studio على جهازك، ومن تثبيت مكتبة Aspose.PDF لـ .NET.
 
-#### Q: How do I set up the development environment?
+#### س: كيف أقوم بإعداد بيئة التطوير؟
 
-A: Follow the provided steps to set up your development environment, including creating a new C# project in Visual Studio, and importing the required namespaces.
+ج: اتبع الخطوات المتوفرة لإعداد بيئة التطوير الخاصة بك، بما في ذلك إنشاء مشروع C# جديد في Visual Studio، واستيراد مساحات الأسماء المطلوبة.
 
-#### Q: How do I determine if a PDF file is encrypted?
+#### س: كيف يمكنني تحديد ما إذا كان ملف PDF مشفرًا؟
 
-A: Use the `PdfFileInfo` class to bind the source PDF file. Then, use the `IsEncrypted` property to determine if the PDF file is password protected.
+ ج: استخدم`PdfFileInfo` فئة لربط ملف PDF المصدر. ثم استخدم`IsEncrypted` خاصية لتحديد ما إذا كان ملف PDF محمي بكلمة مرور.
 
-#### Q: How can I find the correct password for a PDF file?
+#### س: كيف يمكنني العثور على كلمة المرور الصحيحة لملف PDF؟
 
-A: After determining that the PDF file is encrypted, you can attempt to find the correct password by using a predefined list of passwords. The provided sample code demonstrates how to loop through the list, try each password, and determine if the password is correct.
+ج: بعد التأكد من تشفير ملف PDF، يمكنك محاولة العثور على كلمة المرور الصحيحة باستخدام قائمة كلمات المرور المحددة مسبقًا. يوضح نموذج التعليمة البرمجية المتوفر كيفية تكرار القائمة وتجربة كل كلمة مرور وتحديد ما إذا كانت كلمة المرور صحيحة.
 
-#### Q: What happens if the correct password is found?
+#### س: ماذا يحدث إذا تم العثور على كلمة المرور الصحيحة؟
 
-A: If the correct password is found, the sample code will display the number of pages in the PDF document.
+ج: إذا تم العثور على كلمة المرور الصحيحة، فسيعرض نموذج التعليمات البرمجية عدد الصفحات في مستند PDF.
 
-#### Q: What if the password is not correct?
+#### س: ماذا لو كانت كلمة المرور غير صحيحة؟
 
-A: If the password is not correct, the sample code will catch the `InvalidPasswordException` and display a message indicating that the password is not correct.
+ ج: إذا كانت كلمة المرور غير صحيحة، فسيتم اكتشاف رمز العينة`InvalidPasswordException` وعرض رسالة تشير إلى أن كلمة المرور غير صحيحة.
 
-#### Q: Can I use a different list of passwords?
+#### س: هل يمكنني استخدام قائمة مختلفة من كلمات المرور؟
 
-A: Yes, you can modify the `passwords` array in the sample code to include the passwords you want to test.
+ ج: نعم، يمكنك تعديل`passwords` المصفوفة في نموذج التعليمات البرمجية لتضمين كلمات المرور التي تريد اختبارها.
 
-#### Q: How do I know the password has been successfully determined?
+#### س: كيف أعرف أنه تم تحديد كلمة المرور بنجاح؟
 
-A: If the sample code successfully loads the PDF document with a password and displays the number of pages, it means that the correct password has been determined.
+ج: إذا نجح نموذج التعليمات البرمجية في تحميل مستند PDF بكلمة مرور وعرض عدد الصفحات، فهذا يعني أنه تم تحديد كلمة المرور الصحيحة.
 
-#### Q: How can I ensure the security of my passwords while testing?
+#### س: كيف يمكنني التأكد من أمان كلمات المرور الخاصة بي أثناء الاختبار؟
 
-A: Be cautious when using a predefined list of passwords, and avoid using sensitive or confidential passwords for testing purposes. Additionally, remove or modify the testing code before deploying your application.
+ج: كن حذرًا عند استخدام قائمة كلمات المرور المحددة مسبقًا، وتجنب استخدام كلمات المرور الحساسة أو السرية لأغراض الاختبار. بالإضافة إلى ذلك، قم بإزالة رمز الاختبار أو تعديله قبل نشر التطبيق الخاص بك.

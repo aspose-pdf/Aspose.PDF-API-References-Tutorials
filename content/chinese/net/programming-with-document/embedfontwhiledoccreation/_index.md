@@ -1,48 +1,48 @@
 ---
-title: Embed Font While PDF Doc Creation
-linktitle: Embed Font While PDF Doc Creation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to embed a font while creating a PDF document using Aspose.PDF for .NET. Ensure correct display on different devices.
+title: 创建 PDF 文档时嵌入字体
+linktitle: 创建 PDF 文档时嵌入字体
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 创建 PDF 文档时嵌入字体。确保在不同设备上正确显示。
 type: docs
 weight: 140
 url: /zh/net/programming-with-document/embedfontwhiledoccreation/
 ---
-In this tutorial, we will discuss how to embed a font while creating a PDF document using Aspose.PDF for .NET. Aspose.PDF for .NET is a powerful library that allows developers to create, edit, and manipulate PDF documents programmatically. This library provides a wide range of features to work with PDF documents, including adding text, images, tables, and much more. Embedding fonts while creating a PDF document is a common requirement for developers who want to ensure that the PDF document displays correctly on different devices, regardless of whether the required fonts are installed on those devices or not.
+在本教程中，我们将讨论如何在使用 Aspose.PDF for .NET 创建 PDF 文档时嵌入字体。 Aspose.PDF for .NET 是一个功能强大的库，允许开发人员以编程方式创建、编辑和操作 PDF 文档。该库提供了广泛的处理 PDF 文档的功能，包括添加文本、图像、表格等。对于希望确保 PDF 文档在不同设备上正确显示的开发人员来说，在创建 PDF 文档时嵌入字体是一个常见要求，无论这些设备上是否安装了所需的字体。
 
-## Step 1: Create a new C# Console Application
-To get started, create a new C# Console Application in Visual Studio. You can name it whatever you like. Once the project is created, you need to add a reference to the Aspose.PDF for .NET library.
+## 步骤 1：创建一个新的 C# 控制台应用程序
+首先，在 Visual Studio 中创建一个新的 C# 控制台应用程序。您可以将其命名为任何您喜欢的名称。创建项目后，您需要添加对 Aspose.PDF for .NET 库的引用。
 
-## Step 2: Import the Aspose.PDF Namespace
-Add the following line of code at the top of your C# file to import the Aspose.PDF namespace:
+## 第2步：导入Aspose.PDF命名空间
+在 C# 文件顶部添加以下代码行以导入 Aspose.PDF 命名空间：
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Instantiate a Pdf Object
-Instantiate a Pdf object by calling its empty constructor:
+## 第 3 步：实例化 Pdf 对象
+通过调用空构造函数来实例化 Pdf 对象：
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Step 4: Create a Section in the Pdf Object
-Create a section in the Pdf object:
+## 步骤 4：在 Pdf 对象中创建一个部分
+在 Pdf 对象中创建一个部分：
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## Step 5: Add Text to the Section
-Add text to the section:
+## 第 5 步：将文本添加到该部分
+将文本添加到该部分：
 
 ```csharp
 Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
 Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
 ```
 
-## Step 6: Set the Font and Embed It
-Set the font and embed it:
+## 第6步：设置字体并嵌入
+设置字体并嵌入：
 
 ```csharp
 Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
@@ -53,25 +53,25 @@ fragment.Segments.Add(segment);
 page.Paragraphs.Add(fragment);
 ```
 
-## Step 7: Save the PDF Document
-Once you have embedded the font while creating the PDF document, you need to save the document:
+## 第7步：保存PDF文档
+在创建 PDF 文档时嵌入字体后，您需要保存文档：
 
 ```csharp
 dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-// Save PDF Document
+//保存 PDF 文档
 doc.Save(dataDir);
 ```
 
-### Example Source Code for Embed Font While Doc Creation using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 创建文档时嵌入字体的示例源代码
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Pdf object by calling its empty constructor
+//通过调用其空构造函数来实例化 Pdf 对象
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Create a section in the Pdf object
+//在 Pdf 对象中创建一个部分
 Aspose.Pdf.Page page = doc.Pages.Add();
 
 Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
@@ -85,31 +85,31 @@ fragment.Segments.Add(segment);
 page.Paragraphs.Add(fragment);
 
 dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-// Save PDF Document
+//保存 PDF 文档
 doc.Save(dataDir);
 ```
 
-## Conclusion
-In this tutorial, we have discussed how to embed a font while creating a PDF document using Aspose.PDF for .NET. Aspose.PDF for .NET provides a simple and easy-to-use API to work with PDF documents, including adding and embedding fonts. Embedding fonts while creating a PDF document is an important step to ensure that the document is displayed correctly on different devices, regardless of whether the required fonts are installed on those devices or not.
+## 结论
+在本教程中，我们讨论了如何在使用 Aspose.PDF for .NET 创建 PDF 文档时嵌入字体。 Aspose.PDF for .NET 提供了一个简单易用的 API 来处理 PDF 文档，包括添加和嵌入字体。创建 PDF 文档时嵌入字体是确保文档在不同设备上正确显示的重要步骤，无论这些设备上是否安装了所需的字体。
 
-### FAQ's for embed font while PDF doc creation
+### 创建 PDF 文档时嵌入字体的常见问题解答
 
-#### Q: Why is embedding fonts while creating a PDF document important?
+#### 问：为什么创建 PDF 文档时嵌入字体很重要？
 
-A: Embedding fonts while creating a PDF document is important to ensure that the document is displayed correctly on different devices, even if the required fonts are not installed on those devices. This helps maintain the document's intended appearance and prevents font substitution issues.
+答：创建 PDF 文档时嵌入字体对于确保文档在不同设备上正确显示非常重要，即使这些设备上没有安装所需的字体。这有助于保持文档的预期外观并防止字体替换问题。
 
-#### Q: How can I embed fonts while creating a PDF document using Aspose.PDF for .NET?
+#### 问：使用 Aspose.PDF for .NET 创建 PDF 文档时如何嵌入字体？
 
-A: You can embed fonts while creating a PDF document using Aspose.PDF for .NET by specifying the font and setting the `IsEmbedded` property to `true`. This ensures that the font data is embedded in the PDF file.
+答：您可以在使用 Aspose.PDF for .NET 创建 PDF 文档时嵌入字体，方法是指定字体并设置`IsEmbedded`财产给`true`。这可确保字体数据嵌入到 PDF 文件中。
 
-#### Q: Can I specify a custom font while embedding it in a PDF document?
+#### 问：我可以在将自定义字体嵌入 PDF 文档时指定该字体吗？
 
-A: Yes, you can specify a custom font while embedding it in a PDF document using Aspose.PDF for .NET. This allows you to use specific fonts that suit your design requirements.
+答：是的，您可以在使用 Aspose.PDF for .NET 将自定义字体嵌入到 PDF 文档中时指定自定义字体。这允许您使用适合您的设计要求的特定字体。
 
-#### Q: Is Aspose.PDF for .NET compatible with various font formats?
+#### 问：Aspose.PDF for .NET 是否兼容各种字体格式？
 
-A: Yes, Aspose.PDF for .NET is compatible with various font formats, including TrueType, OpenType, and Type 1 fonts. It can embed fonts in a PDF document regardless of their format.
+答：是的，Aspose.PDF for .NET 与各种字体格式兼容，包括 TrueType、OpenType 和 Type 1 字体。它可以在 PDF 文档中嵌入字体，无论其格式如何。
 
-#### Q: Can I customize the font embedding process?
+#### 问：我可以自定义字体嵌入过程吗？
 
-A: Yes, you can customize the font embedding process using Aspose.PDF for .NET. You can specify the font and set properties such as `IsEmbedded` to control how the font is embedded in the PDF document.
+答：是的，您可以使用 Aspose.PDF for .NET 自定义字体嵌入过程。您可以指定字体并设置属性，例如`IsEmbedded`控制字体在 PDF 文档中的嵌入方式。

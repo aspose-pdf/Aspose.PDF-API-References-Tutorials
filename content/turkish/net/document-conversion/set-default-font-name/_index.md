@@ -1,38 +1,38 @@
 ---
-title: Set Default Font Name
-linktitle: Set Default Font Name
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to set default font name in PDF file using Aspose.PDF for .NET.
+title: Varsayılan Yazı Tipi Adını Ayarla
+linktitle: Varsayılan Yazı Tipi Adını Ayarla
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasında varsayılan yazı tipi adını ayarlamak için adım adım kılavuz.
 type: docs
 weight: 270
 url: /tr/net/document-conversion/set-default-font-name/
 ---
-In this tutorial, we will show you how to set the default font name in a PDF file using Aspose.PDF for .NET. Sometimes when you extract images from a PDF file, you may encounter missing font issues. By specifying a default font name, you can ensure that extracted text will be displayed correctly. Follow the steps below to set the default font name in a PDF file.
+Bu eğitimde size Aspose.PDF for .NET kullanarak bir PDF dosyasında varsayılan yazı tipi adını nasıl ayarlayacağınızı göstereceğiz. Bazen bir PDF dosyasından görsel ayıkladığınızda eksik yazı tipi sorunlarıyla karşılaşabilirsiniz. Varsayılan bir yazı tipi adı belirterek, çıkarılan metnin doğru şekilde görüntülenmesini sağlayabilirsiniz. Bir PDF dosyasında varsayılan yazı tipi adını ayarlamak için aşağıdaki adımları izleyin.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Önkoşullar
+Başlamadan önce aşağıdaki önkoşulları karşıladığınızdan emin olun:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- C# programlama dili hakkında temel bilgiler.
+- Sisteminizde yüklü olan .NET için Aspose.PDF kütüphanesi.
+- Visual Studio gibi bir geliştirme ortamı.
 
-## Step 1: Loading the PDF document
-The first step is to load the PDF document into a `Document` object. Use the following code:
+## 1. Adım: PDF belgesini yükleme
+ İlk adım, PDF belgesini bir`Document` nesne. Aşağıdaki kodu kullanın:
 
 ```csharp
-// Path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 {
-     // Code to add
+     // Eklenecek kod
 }
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+ Değiştirdiğinizden emin olun`"YOUR DOCUMENTS DIRECTORY"` PDF dosyanızın bulunduğu gerçek dizinle.
 
-## Step 2: Set default font name
-Next, we'll set the default font name using the `DefaultFontName` option of the `RenderingOptions` object. Use the following code:
+## 2. Adım: Varsayılan yazı tipi adını ayarlayın
+ Daha sonra, varsayılan yazı tipi adını kullanarak ayarlayacağız.`DefaultFontName` seçeneği`RenderingOptions` nesne. Aşağıdaki kodu kullanın:
 
 ```csharp
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
@@ -45,26 +45,26 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
          ro.DefaultFontName = "Arial";
          pngDevice.RenderingOptions = ro;
         
-         // Code to add
+         // Eklenecek kod
      }
 }
 ```
 
-Be sure to replace `"Arial"` with the desired font name.
+ Değiştirdiğinizden emin olun`"Arial"` İstenilen yazı tipi adı ile.
 
-## Step 3: Image Extraction
-Next, we will extract the image from the specified page of the PDF document. Use the following code:
+## Adım 3: Görüntü Çıkarma
+Daha sonra görüntüyü PDF belgesinin belirtilen sayfasından çıkaracağız. Aşağıdaki kodu kullanın:
 
 ```csharp
 pngDevice.Process(pdfDocument.Pages[1], imageStream);
 ```
 
-Be sure to specify the correct page number in `pdfDocument.Pages[1]`.
+ Doğru sayfa numarasını belirttiğinizden emin olun.`pdfDocument.Pages[1]`.
 
-### Example source code for Set Default Font Name using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Varsayılan Yazı Tipi Adını Ayarla için örnek kaynak kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
@@ -81,27 +81,27 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 }
 ```
 
-## Conclusion
-In this tutorial, we learned how to set the default font name in a PDF file using Aspose.PDF for .NET. By specifying a default font name, you can ensure that extracted text will be displayed correctly. Use this method to resolve missing font issues when extracting images from PDF files.
+## Çözüm
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasında varsayılan yazı tipi adının nasıl ayarlanacağını öğrendik. Varsayılan bir yazı tipi adı belirterek, çıkarılan metnin doğru şekilde görüntülenmesini sağlayabilirsiniz. PDF dosyalarından görsel ayıklarken eksik yazı tipi sorunlarını çözmek için bu yöntemi kullanın.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET nedir?
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers various functionalities, including setting the default font name in a PDF file.
+C: Aspose.PDF for .NET, geliştiricilerin C# uygulamalarında PDF belgeleriyle çalışmasına olanak tanıyan güçlü bir kitaplıktır. Bir PDF dosyasında varsayılan yazı tipi adını ayarlamak da dahil olmak üzere çeşitli işlevler sunar.
 
-#### Q: Why would I need to set the default font name in a PDF file?
+#### S: Bir PDF dosyasında neden varsayılan yazı tipi adını ayarlamam gerekiyor?
 
-A: Setting the default font name is useful when extracting text from a PDF document. If the PDF contains text with fonts that are not available on the extraction machine, specifying a default font name ensures correct text display.
+C: Varsayılan yazı tipi adını ayarlamak, bir PDF belgesinden metin çıkarırken kullanışlıdır. PDF, çıkarma makinesinde bulunmayan yazı tiplerine sahip metin içeriyorsa, varsayılan bir yazı tipi adının belirtilmesi, metnin doğru görüntülenmesini sağlar.
 
-#### Q: How can I load a PDF document and set the default font name using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak bir PDF belgesini nasıl yükleyebilirim ve varsayılan yazı tipi adını nasıl ayarlayabilirim?
 
-A: To load a PDF document and set the default font name, you can use the `Document` class to load the PDF file and the `RenderingOptions.DefaultFontName` property to specify the desired default font name.
+ C: Bir PDF belgesi yüklemek ve varsayılan yazı tipi adını ayarlamak için`Document`PDF dosyasını yüklemek için sınıf ve`RenderingOptions.DefaultFontName` İstenilen varsayılan yazı tipi adını belirtmek için özellik.
 
-#### Q: Can I choose any font as the default font name?
+#### S: Varsayılan yazı tipi adı olarak herhangi bir yazı tipini seçebilir miyim?
 
-A:Yes, you can choose any font that is available on the extraction machine as the default font name. Use a font that closely matches the missing fonts in the original PDF to ensure accurate text rendering.
+C:Evet, çıkarma makinesinde bulunan herhangi bir yazı tipini varsayılan yazı tipi adı olarak seçebilirsiniz. Doğru metin oluşturmayı sağlamak için orijinal PDF'deki eksik yazı tipleriyle yakından eşleşen bir yazı tipi kullanın.
 
-#### Q: Is setting the default font name a permanent change to the PDF file?
+#### S: Varsayılan yazı tipi adının ayarlanması PDF dosyasında kalıcı bir değişiklik midir?
 
-A: No, setting the default font name using Aspose.PDF for .NET is a temporary change made during text extraction. It does not modify the original PDF file.
+C: Hayır, varsayılan yazı tipi adını Aspose.PDF for .NET kullanarak ayarlamak, metin çıkarma sırasında yapılan geçici bir değişikliktir. Orijinal PDF dosyasını değiştirmez.

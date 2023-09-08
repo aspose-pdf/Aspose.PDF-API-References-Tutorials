@@ -1,74 +1,74 @@
 ---
-title: Replace Missing Fonts
-linktitle: Replace Missing Fonts
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to replace missing fonts in a PDF file using Aspose.PDF for .NET.
+title: Reemplazar fuentes faltantes
+linktitle: Reemplazar fuentes faltantes
+second_title: Aspose.PDF para referencia de API .NET
+description: Guía paso a paso para reemplazar fuentes faltantes en un archivo PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 260
 url: /es/net/document-conversion/replace-missing-fonts/
 ---
-In this tutorial, we will walk you through the process of replacing missing fonts in a PDF file using Aspose.PDF for .NET. When you open a PDF file on a machine where a specific font is missing, there may be font display issues. In such cases, it is possible to substitute the missing font with another font available on the machine. By following the steps below, you will be able to replace missing fonts in a PDF file.
+En este tutorial, lo guiaremos a través del proceso de reemplazar fuentes faltantes en un archivo PDF usando Aspose.PDF para .NET. Cuando abre un archivo PDF en una máquina donde falta una fuente específica, puede haber problemas de visualización de fuentes. En tales casos, es posible sustituir la fuente que falta por otra fuente disponible en la máquina. Si sigue los pasos a continuación, podrá reemplazar las fuentes faltantes en un archivo PDF.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Requisitos previos
+Antes de comenzar, asegúrese de cumplir con los siguientes requisitos previos:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Conocimientos básicos del lenguaje de programación C#.
+- Biblioteca Aspose.PDF para .NET instalada en su sistema.
+- Un entorno de desarrollo como Visual Studio.
 
-## Step 1: Finding the missing font
-The first step is to find the missing font in the PDF file. Use the following code:
+## Paso 1: encontrar la fuente que falta
+El primer paso es encontrar la fuente que falta en el archivo PDF. Utilice el siguiente código:
 
 ```csharp
-// Path to the documents directory.
+// Ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 Aspose.Pdf.Text.Font originalFont = null;
 try
 {
-     // Find the original font
+     // Encuentra la fuente original
      originalFont = FontRepository.FindFont("AgencyFB");
 }
 catch(Exception)
 {
-     // The font is missing on the destination machine
-     // Add simple font substitution
+     // Falta la fuente en la máquina de destino
+     // Agregar sustitución de fuente simple
      FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
 }
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+ Asegúrate de reemplazar`"YOUR DOCUMENTS DIRECTORY"` con el directorio real donde se encuentra su archivo PDF.
 
-## Step 2: Replace missing font
-Next, we'll replace the missing font with another available font. Use the following code:
+## Paso 2: reemplazar la fuente que falta
+A continuación, reemplazaremos la fuente que falta con otra fuente disponible. Utilice el siguiente código:
 
 ```csharp
 var fileNew = new FileInfo(dataDir + "newfile_out.pdf");
 var pdf = new Document(dataDir + "input.pdf");
 
-// Convert the PDF file to PDF/A format with error removal
+// Convierta el archivo PDF a formato PDF/A con eliminación de errores
 pdf.Convert(dataDir + "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
 
-// Save the resulting PDF file
+// Guarde el archivo PDF resultante
 pdf.Save(fileNew.FullName);
 ```
 
-Be sure to replace `"input.pdf"` with the actual path to your original PDF file and `"newfile_out.pdf"` with the desired name for the resulting PDF file.
+ Asegúrate de reemplazar`"input.pdf"` con la ruta real a su archivo PDF original y`"newfile_out.pdf"` con el nombre deseado para el archivo PDF resultante.
 
-## Step 3: Saving the resulting PDF file
-Finally, we'll save the resulting PDF file with the replaced font. Use the following code:
+## Paso 3: guardar el archivo PDF resultante
+Finalmente, guardaremos el archivo PDF resultante con la fuente reemplazada. Utilice el siguiente código:
 
 ```csharp
-// Save the resulting PDF file
+// Guarde el archivo PDF resultante
 pdf.Save(fileNew.FullName);
 ```
 
-Ensures make sure you have set the correct destination path for the resulting PDF file.
+Asegúrate de haber configurado la ruta de destino correcta para el archivo PDF resultante.
 
-### Example source code for Replace Missing Fonts using Aspose.PDF for .NET
+### Código fuente de ejemplo para reemplazar fuentes faltantes usando Aspose.PDF para .NET
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Aspose.Pdf.Text.Font originalFont = null;
@@ -78,7 +78,7 @@ try
 }
 catch (Exception)
 {
-	// Font is missing on destination machine
+	// Falta la fuente en la máquina de destino
 	FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
 }
 var fileNew = new FileInfo(dataDir + "newfile_out.pdf");
@@ -87,27 +87,27 @@ pdf.Convert( dataDir +  "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete
 pdf.Save(fileNew.FullName);
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of replacing missing fonts in a PDF file using Aspose.PDF for .NET. By following the instructions outlined above, you will be able to successfully replace missing fonts in your PDF file.
+## Conclusión
+En este tutorial, cubrimos el proceso paso a paso de reemplazar fuentes faltantes en un archivo PDF usando Aspose.PDF para .NET. Si sigue las instrucciones descritas anteriormente, podrá reemplazar con éxito las fuentes faltantes en su archivo PDF.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is Aspose.PDF for .NET?
+#### P: ¿Qué es Aspose.PDF para .NET?
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers various functionalities, including the ability to replace missing fonts in PDF files.
+R: Aspose.PDF para .NET es una potente biblioteca que permite a los desarrolladores trabajar con documentos PDF en aplicaciones C#. Ofrece varias funcionalidades, incluida la capacidad de reemplazar fuentes faltantes en archivos PDF.
 
-#### Q: Why would I encounter missing fonts in a PDF file?
+#### P: ¿Por qué faltan fuentes en un archivo PDF?
 
-A: Missing fonts in a PDF file can occur when the file is opened on a machine that does not have the necessary fonts installed. This can lead to font substitution, affecting the visual appearance of the document.
+R: La falta de fuentes en un archivo PDF puede ocurrir cuando el archivo se abre en una máquina que no tiene instaladas las fuentes necesarias. Esto puede provocar la sustitución de fuentes, lo que afecta la apariencia visual del documento.
 
-#### Q: How can I find and replace missing fonts in a PDF file using Aspose.PDF for .NET?
+#### P: ¿Cómo puedo encontrar y reemplazar fuentes faltantes en un archivo PDF usando Aspose.PDF para .NET?
 
-A: To find and replace missing fonts, you can use the `FontRepository.FindFont` method to check for the presence of the required font. If the font is missing, you can add a font substitution using the `FontRepository.Substitutions` property.
+ R: Para buscar y reemplazar fuentes faltantes, puede utilizar el`FontRepository.FindFont` método para comprobar la presencia de la fuente requerida. Si falta la fuente, puede agregar una sustitución de fuente usando el`FontRepository.Substitutions` propiedad.
 
-#### Q: Can I customize the font substitution process?
+#### P: ¿Puedo personalizar el proceso de sustitución de fuentes?
 
-A: Yes, you can customize the font substitution process by specifying a different font for the substitution. In the code provided, we used Arial as the substitute for the missing "AgencyFB" font, but you can choose a different font according to your preferences.
+R: Sí, puede personalizar el proceso de sustitución de fuentes especificando una fuente diferente para la sustitución. En el código proporcionado, utilizamos Arial como sustituto de la fuente "AgencyFB" que falta, pero puedes elegir una fuente diferente según tus preferencias.
 
-#### Q: How can I ensure the accuracy of font rendering after substitution?
+#### P: ¿Cómo puedo garantizar la precisión de la representación de fuentes después de la sustitución?
 
-A: Aspose.PDF for .NET provides robust font handling capabilities, ensuring accurate font rendering after substitution. You can preview the resulting PDF file to verify the font replacement.
+R: Aspose.PDF para .NET proporciona capacidades sólidas de manejo de fuentes, lo que garantiza una representación precisa de las fuentes después de la sustitución. Puede obtener una vista previa del archivo PDF resultante para verificar el reemplazo de la fuente.

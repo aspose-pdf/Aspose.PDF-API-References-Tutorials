@@ -1,42 +1,42 @@
 ---
-title: Add Child Bookmark In PDF File
-linktitle: Add Child Bookmark In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add child bookmark in PDF file for more organized browsing with Aspose.PDF for .NET.
+title: Ajouter un signet enfant dans un fichier PDF
+linktitle: Ajouter un signet enfant dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Ajoutez facilement un signet enfant dans un fichier PDF pour une navigation plus organisée avec Aspose.PDF pour .NET.
 type: docs
 weight: 20
 url: /fr/net/programming-with-bookmarks/add-child-bookmark/
 ---
-Adding child bookmarks in PDF file allows for more structured organization and navigation. With Aspose.PDF for .NET, you can easily add a sub-bookmark by following the following source code:
+L'ajout de signets enfants dans un fichier PDF permet une organisation et une navigation plus structurées. Avec Aspose.PDF pour .NET, vous pouvez facilement ajouter un sous-signet en suivant le code source suivant :
 
-## Step 1: Import required libraries
+## Étape 1 : Importer les bibliothèques requises
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Avant de commencer, vous devez importer les bibliothèques nécessaires à votre projet C#. Voici la directive d'importation nécessaire :
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## Étape 2 : Définir le chemin d'accès au dossier de documents
 
-In this step, you need to specify the path to the folder containing the PDF file you want to add a sub-bookmark. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ Dans cette étape, vous devez spécifier le chemin d'accès au dossier contenant le fichier PDF auquel vous souhaitez ajouter un sous-signet. Remplacer`"YOUR DOCUMENT DIRECTORY"`dans le code suivant avec le chemin réel de votre dossier de documents :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Étape 3 : Ouvrez le document PDF
 
-Now we will open the PDF document to which we want to add a sub-bookmark using the following code:
+Nous allons maintenant ouvrir le document PDF auquel nous souhaitons ajouter un sous-signet en utilisant le code suivant :
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddChildBookmark.pdf");
 ```
 
-## Step 4: Create parent bookmark object
+## Étape 4 : Créer un objet de signet parent
 
-In this step, we will create a parent bookmark object using the `OutlineItemCollection` class and set its properties such as title, italic attribute and bold attribute. Here is the corresponding code:
+ Dans cette étape, nous allons créer un objet signet parent en utilisant le`OutlineItemCollection` classe et définissez ses propriétés telles que le titre, l'attribut italique et l'attribut gras. Voici le code correspondant :
 
 ```csharp
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -45,9 +45,9 @@ pdfOutline. Italic = true;
 pdfOutline. Bold = true;
 ```
 
-## Step 5: Create Child Bookmark Object
+## Étape 5 : Créer un objet de signet enfant
 
-In this step, we will create a sub-bookmark object again using the `OutlineItemCollection` class and set its properties. Here is the corresponding code:
+Dans cette étape, nous allons créer à nouveau un objet sous-signet en utilisant le`OutlineItemCollection` classe et définir ses propriétés. Voici le code correspondant :
 
 ```csharp
 OutlineItemCollection pdfChildOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -56,95 +56,95 @@ pdfChildOutline. Italic = true;
 pdfChildOutline. Bold = true;
 ```
 
-## Step 6: Add the sub-bookmark to the parent bookmark
+## Étape 6 : Ajouter le sous-signet au signet parent
 
-Finally, we add the created subbookmark to the parent bookmark's subbookmark collection using the `Add` method of the parent object. Here is the corresponding code:
+ Enfin, nous ajoutons le sous-signet créé à la collection de sous-signets du signet parent en utilisant le`Add` méthode de l’objet parent. Voici le code correspondant :
 
 ```csharp
 pdfOutline.Add(pdfChildOutline);
 ```
 
-## Step 7: Add the parent bookmark to the document's bookmark collection
+## Étape 7 : Ajouter le signet parent à la collection de signets du document
 
-Finally, we add the parent bookmark to the document's bookmark collection using the `Add` method of the `Outlines` property. Here is the corresponding code:
+ Enfin, nous ajoutons le signet parent à la collection de signets du document en utilisant le`Add` méthode du`Outlines` propriété. Voici le code correspondant :
 
 ```csharp
 pdfDocument.Outlines.Add(pdfOutline);
 ```
 
-### Sample source code for Add Child Bookmark using Aspose.PDF for .NET 
+### Exemple de code source pour Ajouter un signet enfant à l’aide d’Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir + "AddChildBookmark.pdf");
-// Create a parent bookmark object
+// Créer un objet signet parent
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfOutline.Title = "Parent Outline";
 pdfOutline.Italic = true;
 pdfOutline.Bold = true;      
-// Create a child bookmark object
+// Créer un objet signet enfant
 OutlineItemCollection pdfChildOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfChildOutline.Title = "Child Outline";
 pdfChildOutline.Italic = true;
 pdfChildOutline.Bold = true;
-// Add child bookmark in parent bookmark's collection
+// Ajouter un signet enfant dans la collection du signet parent
 pdfOutline.Add(pdfChildOutline);
-// Add parent bookmark in the document's outline collection.
+// Ajoutez un signet parent dans la collection de plans du document.
 pdfDocument.Outlines.Add(pdfOutline);
 dataDir = dataDir + "AddChildBookmark_out.pdf";
-// Save output
+// Enregistrer la sortie
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nChild bookmark added successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusion
 
-Congratulation ! Now you have a step by step guide to add a sub-bookmark with Aspose.PDF for .NET. You can use this code to organize and structure your bookmarks in your PDF documents.
+Félicitation ! Vous disposez maintenant d'un guide étape par étape pour ajouter un sous-signet avec Aspose.PDF pour .NET. Vous pouvez utiliser ce code pour organiser et structurer vos signets dans vos documents PDF.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Assurez-vous de consulter la documentation officielle Aspose.PDF pour plus d'informations sur les fonctionnalités avancées de manipulation de signets.
 
-### FAQ's for add child bookmark in PDF file
+### FAQ pour ajouter un signet enfant dans un fichier PDF
 
-#### Q: What are child bookmarks in a PDF file?
+#### Q : Que sont les signets enfants dans un fichier PDF ?
 
-A: Child bookmarks, also known as sub-bookmarks, are navigational elements within a PDF document that are hierarchically structured under a parent bookmark. They provide a way to create a more organized and detailed table of contents for the document.
+R : Les signets enfants, également appelés sous-signets, sont des éléments de navigation dans un document PDF qui sont structurés hiérarchiquement sous un signet parent. Ils permettent de créer une table des matières plus organisée et détaillée pour le document.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### Q : Comment importer les bibliothèques nécessaires pour mon projet C# ?
 
-A: To import the required libraries for your C# project, you can use the following import directive:
+R : Pour importer les bibliothèques requises pour votre projet C#, vous pouvez utiliser la directive d'importation suivante :
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-These libraries provide the necessary classes and functions for working with PDF documents and interactive features.
+Ces bibliothèques fournissent les classes et fonctions nécessaires pour travailler avec des documents PDF et des fonctionnalités interactives.
 
-#### Q: How do I specify the path to the documents folder?
+#### Q : Comment puis-je spécifier le chemin d'accès au dossier de documents ?
 
-A: In the source code provided, you need to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file you want to work with. This ensures that the code correctly locates the target PDF file.
+ R : Dans le code source fourni, vous devez remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel du dossier contenant le fichier PDF avec lequel vous souhaitez travailler. Cela garantit que le code localise correctement le fichier PDF cible.
 
-#### Q: Can I create multiple levels of child bookmarks?
+#### Q : Puis-je créer plusieurs niveaux de favoris enfants ?
 
-A: Yes, you can create multiple levels of child bookmarks by extending the process outlined in the tutorial. By creating parent bookmarks with sub-bookmarks and further nesting them, you can create a hierarchical structure of bookmarks for complex PDF documents.
+R : Oui, vous pouvez créer plusieurs niveaux de signets enfants en étendant le processus décrit dans le didacticiel. En créant des signets parents avec des sous-signets et en les imbriquant davantage, vous pouvez créer une structure hiérarchique de signets pour les documents PDF complexes.
 
-#### Q: What is the purpose of the `OutlineItemCollection` class?
+####  Q : Quel est le but du`OutlineItemCollection` class?
 
-A: The `OutlineItemCollection` class in Aspose.PDF for .NET is used to create and manage outlines, which are essentially bookmarks in a PDF document. This class allows you to set properties such as title, font style, and actions for bookmarks.
+ R : Le`OutlineItemCollection` La classe Aspose.PDF pour .NET est utilisée pour créer et gérer des plans, qui sont essentiellement des signets dans un document PDF. Cette classe vous permet de définir des propriétés telles que le titre, le style de police et les actions des signets.
 
-#### Q: How do I add a sub-bookmark to a parent bookmark?
+#### Q : Comment ajouter un sous-signet à un signet parent ?
 
-A: To add a sub-bookmark to a parent bookmark, you create a new `OutlineItemCollection` object for the sub-bookmark and set its properties. Then, you use the `Add` method of the parent bookmark's `OutlineItemCollection` to add the sub-bookmark to the parent's collection.
+ R : Pour ajouter un sous-signet à un signet parent, vous créez un nouveau`OutlineItemCollection` objet pour le sous-signet et définissez ses propriétés. Ensuite, vous utilisez le`Add` méthode du signet parent`OutlineItemCollection` pour ajouter le sous-signet à la collection parent.
 
-#### Q: Can I customize the appearance of child bookmarks?
+#### Q : Puis-je personnaliser l’apparence des favoris enfants ?
 
-A: Yes, similar to parent bookmarks, you can customize the appearance of child bookmarks by setting properties such as title, font style, and other attributes. This allows you to create visually distinctive and informative bookmarks.
+R : Oui, comme pour les signets parents, vous pouvez personnaliser l'apparence des signets enfants en définissant des propriétés telles que le titre, le style de police et d'autres attributs. Cela vous permet de créer des signets visuellement distinctifs et informatifs.
 
-#### Q: Is Aspose.PDF for .NET compatible with other programming languages?
+#### Q : Aspose.PDF pour .NET est-il compatible avec d'autres langages de programmation ?
 
-A: Aspose.PDF for .NET is specifically designed for C# and .NET environments. However, Aspose offers similar libraries for other programming languages such as Java and Android, each tailored to their respective platforms.
+R : Aspose.PDF pour .NET est spécialement conçu pour les environnements C# et .NET. Cependant, Aspose propose des bibliothèques similaires pour d'autres langages de programmation tels que Java et Android, chacun adapté à leurs plates-formes respectives.
 
-#### Q: How do child bookmarks improve PDF navigation?
+#### Q : Comment les signets enfants améliorent-ils la navigation dans les PDF ?
 
-A: Child bookmarks improve PDF navigation by providing a more structured and organized table of contents. Users can quickly access specific sections of the document through the hierarchical bookmark structure.
+R : Les signets enfants améliorent la navigation dans les PDF en fournissant une table des matières plus structurée et organisée. Les utilisateurs peuvent accéder rapidement à des sections spécifiques du document via la structure hiérarchique des signets.

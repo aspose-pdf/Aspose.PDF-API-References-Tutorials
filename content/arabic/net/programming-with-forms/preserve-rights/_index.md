@@ -1,34 +1,34 @@
 ---
-title: Preserve Rights
-linktitle: Preserve Rights
-second_title: Aspose.PDF for .NET API Reference
-description: Preserve form rights in your PDF documents with Aspose.PDF for .NET.
+title: حفظ الحقوق
+linktitle: حفظ الحقوق
+second_title: Aspose.PDF لمرجع .NET API
+description: حافظ على حقوق النموذج في مستندات PDF الخاصة بك باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 210
 url: /ar/net/programming-with-forms/preserve-rights/
 ---
-In this tutorial, we will show you how to preserve form rights in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+سنوضح لك في هذا البرنامج التعليمي كيفية الحفاظ على حقوق النموذج في مستند PDF باستخدام Aspose.PDF لـ .NET. سنشرح لك كود مصدر C# خطوة بخطوة لإرشادك خلال هذه العملية.
 
-## Step 1: Preparation
+## الخطوة 1: التحضير
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+تأكد من استيراد المكتبات الضرورية وتعيين المسار إلى دليل المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the document
+## الخطوة 2: افتح المستند
 
-Open the source PDF document using a `FileStream` with read and write permission:
+ افتح مستند PDF المصدر باستخدام ملف`FileStream` مع إذن القراءة والكتابة:
 
 ```csharp
 FileStream fs = new FileStream(dataDir + "input.pdf", FileMode.Open, FileAccess.ReadWrite);
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(fs);
 ```
 
-## Step 3: Edit Form Fields
+## الخطوة 3: تحرير حقول النموذج
 
-Go through all the form fields in the document and make the necessary changes. In this example, we're changing the value of a form field that has "A1" in its name:
+قم بمراجعة جميع حقول النموذج في المستند وقم بإجراء التغييرات اللازمة. في هذا المثال، نقوم بتغيير قيمة حقل النموذج الذي يحتوي على "A1" في اسمه:
 
 ```csharp
 foreach(Field formField in pdfDocument.Form)
@@ -41,73 +41,73 @@ textBoxField.Value = "Testing";
 }
 ```
 
-## Step 4: Save the updated document
+## الخطوة 4: احفظ المستند المحدث
 
-Save the modified PDF document:
+احفظ مستند PDF المعدل:
 
 ```csharp
 pdfDocument.Save();
 ```
 
-## Step 5: Close the `FileStream`
+##  الخطوة 5: أغلق`FileStream`
 
-Don't forget to close the `FileStream` object when you're done:
+ لا تنسى إغلاق`FileStream` الكائن عند الانتهاء:
 
 ```csharp
 fs. Close();
 ```
 
-### Sample source code for Preserve Rights using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للحفاظ على الحقوق باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Read the source PDF form with FileAccess of Read and Write.
-// We need ReadWrite permission because after modification,
-// We need to save the updated contents in same document/file.
+// اقرأ نموذج PDF المصدر باستخدام FileAccess للقراءة والكتابة.
+// نحن بحاجة إلى إذن القراءة والكتابة لأنه بعد التعديل،
+// نحتاج إلى حفظ المحتويات المحدثة في نفس المستند/الملف.
 FileStream fs = new FileStream(dataDir + "input.pdf", FileMode.Open, FileAccess.ReadWrite);
-// Instantiate Document instance
+// إنشاء مثيل للمستند
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(fs);
-// Get values from all fields
+// الحصول على القيم من كافة الحقول
 foreach (Field formField in pdfDocument.Form)
 {
-	// If the fullname of field contains A1, perform the operation
+	// إذا كان الاسم الكامل للحقل يحتوي على A1، فقم بإجراء العملية
 	if (formField.FullName.Contains("A1"))
 	{
-		// Cast form field as TextBox
+		// تحويل حقل النموذج إلى TextBox
 		TextBoxField textBoxField = formField as TextBoxField;
-		// Modify field value
+		// تعديل قيمة الحقل
 		textBoxField.Value = "Testing";
 	}
 }
-// Save the updated document in save FileStream
+// احفظ المستند المحدث في حفظ FileStream
 pdfDocument.Save();
-// Close the File Stream object
+// قم بإغلاق كائن تدفق الملفات
 fs.Close();
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to preserve the rights of a form in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily access form fields and make specific changes while preserving access and write permissions.
+في هذا البرنامج التعليمي، تعلمنا كيفية الحفاظ على حقوق النموذج في مستند PDF باستخدام Aspose.PDF لـ .NET. باتباع هذه الخطوات، يمكنك بسهولة الوصول إلى حقول النموذج وإجراء تغييرات محددة مع الحفاظ على أذونات الوصول والكتابة.
 
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Can I preserve the rights of specific form fields without affecting others in the PDF document?
+#### س: هل يمكنني الحفاظ على حقوق حقول نموذج معينة دون التأثير على الحقول الأخرى في مستند PDF؟
 
-A: Yes, by using the `FullName` property of the form fields, you can target specific form fields for preservation while leaving others unaffected.
+ ج: نعم، وذلك باستخدام`FullName` خاصية حقول النموذج، يمكنك استهداف حقول نموذج معينة للحفظ مع ترك الحقول الأخرى دون أن تتأثر.
 
-#### Q: Can I preserve the rights of a form in a password-protected PDF document?
+#### س: هل يمكنني الحفاظ على حقوق النموذج في مستند PDF محمي بكلمة مرور؟
 
-A: Yes, Aspose.PDF for .NET allows you to preserve the rights of a form even in password-protected PDF documents, as long as you provide the correct password to access and modify the file.
+ج: نعم، يسمح لك Aspose.PDF for .NET بالحفاظ على حقوق النموذج حتى في مستندات PDF المحمية بكلمة مرور، طالما قمت بتوفير كلمة المرور الصحيحة للوصول إلى الملف وتعديله.
 
-#### Q: What happens if I attempt to modify form fields without the appropriate access rights?
+#### س: ماذا يحدث إذا حاولت تعديل حقول النموذج دون حقوق الوصول المناسبة؟
 
-A: If you attempt to modify form fields without the appropriate access rights, the changes will not be saved in the PDF document, and you may receive an exception or an error message.
+ج: إذا حاولت تعديل حقول النموذج دون حقوق الوصول المناسبة، فلن يتم حفظ التغييرات في مستند PDF، وقد تتلقى استثناءً أو رسالة خطأ.
 
-#### Q: Is Aspose.PDF for .NET compatible with all versions of .NET Framework?
+#### س: هل يتوافق Aspose.PDF for .NET مع كافة إصدارات .NET Framework؟
 
-A: Yes, Aspose.PDF for .NET is compatible with all versions of .NET Framework, including .NET Core and .NET Standard.
+ج: نعم، Aspose.PDF for .NET متوافق مع كافة إصدارات .NET Framework، بما في ذلك .NET Core و.NET Standard.
 
-#### Q: Can I preserve form rights in a PDF document programmatically in other programming languages besides C#?
+#### س: هل يمكنني الحفاظ على حقوق النموذج في مستند PDF برمجياً بلغات برمجة أخرى إلى جانب C#؟
 
-A: Yes, Aspose.PDF for .NET supports various programming languages, such as VB.NET and ASP.NET, in addition to C#.
+ج: نعم، يدعم Aspose.PDF for .NET لغات البرمجة المختلفة، مثل VB.NET وASP.NET، بالإضافة إلى C#.

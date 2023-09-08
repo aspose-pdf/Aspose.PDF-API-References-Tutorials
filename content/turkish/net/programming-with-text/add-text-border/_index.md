@@ -1,59 +1,59 @@
 ---
-title: Add Text Border In PDF File
-linktitle: Add Text Border In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a text border in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasına Metin Kenarlığı Ekleme
+linktitle: PDF Dosyasına Metin Kenarlığı Ekleme
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasına nasıl metin kenarlığı ekleyeceğinizi öğrenin.
 type: docs
 weight: 70
 url: /tr/net/programming-with-text/add-text-border/
 ---
-This tutorial will guide you through the process of adding a text border in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Bu eğitim, Aspose.PDF for .NET kullanarak PDF dosyasına metin kenarlığı ekleme sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları gösterir.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Gereksinimler
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Makinenizde kurulu Visual Studio veya başka herhangi bir C# derleyicisi.
+- Aspose.PDF for .NET kitaplığı. Resmi Aspose web sitesinden indirebilir veya yüklemek için NuGet gibi bir paket yöneticisi kullanabilirsiniz.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## 1. Adım: Projeyi ayarlayın
+1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
+2. Aspose.PDF for .NET kitaplığına bir referans ekleyin.
 
-## Step 2: Import required namespaces
-In the code file where you want to add the text border, add the following using directive at the top of the file:
+## 2. Adım: Gerekli ad alanlarını içe aktarın
+Metin kenarlığını eklemek istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki kullanma yönergesini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## 3. Adım: Belge dizinini ayarlayın
+ Kodda yazan satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belgelerinizin saklandığı dizinin yolu ile birlikte.
 
-## Step 4: Create a new Document object
-Instantiate a new `Document` object by adding the following line of code:
+## 4. Adım: Yeni bir Belge nesnesi oluşturun
+ Yeni bir örnek oluştur`Document` Aşağıdaki kod satırını ekleyerek nesne:
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document by using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `pdfPage`.
+## 5. Adım: Belgeye bir sayfa ekleyin
+ kullanarak belgeye yeni bir sayfa ekleyin.`Add` yöntemi`Pages`Toplamak. Verilen kodda yeni sayfa değişkene atanır.`pdfPage`.
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
-## Step 6: Create a TextFragment
-Create a `TextFragment` object and provide the desired text. Set the position of the text fragment using the `Position` property. In the provided code, the text is set to "main text" and positioned at (100, 600) on the page.
+## Adım 6: Bir TextFragment Oluşturun
+ Oluşturmak`TextFragment` nesneyi seçin ve istediğiniz metni sağlayın. kullanarak metin parçasının konumunu ayarlayın.`Position` mülk. Verilen kodda metin "ana metin" olarak ayarlanıp sayfada (100, 600) konumuna konumlandırılmıştır.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
 ```
 
-## Step 7: Set text properties
-Customize the text properties such as font size, font type, background color, foreground color, etc. In the provided code, properties such as font size, font, background color, foreground color, and stroking color are set for the text fragment.
+## 7. Adım: Metin özelliklerini ayarlayın
+Yazı tipi boyutu, yazı tipi, arka plan rengi, ön plan rengi vb. gibi metin özelliklerini özelleştirin. Sağlanan kodda, metin parçası için yazı tipi boyutu, yazı tipi, arka plan rengi, ön plan rengi ve kontur rengi gibi özellikler ayarlanır.
 
 ```csharp
 textFragment.TextState.FontSize = 12;
@@ -63,104 +63,104 @@ textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
 textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
-## Step 8: Enable text border
-To enable the text border, set the `DrawTextRectangleBorder` property of the text fragment's `TextState` to `true`.
+## 8. Adım: Metin kenarlığını etkinleştirin
+ Metin kenarlığını etkinleştirmek için`DrawTextRectangleBorder`metin parçasının özelliği`TextState` ile`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
 ```
 
-## Step 9: Add the TextFragment to the page
-Use the `TextBuilder` class to add the `TextFragment` object to the page.
+## 9. Adım: TextFragment'i sayfaya ekleyin
+ Kullan`TextBuilder` eklenecek sınıf`TextFragment` sayfaya itiraz ediyorum.
 
 ```csharp
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
 ```
 
-## Step 10: Save the PDF document
-Save the PDF document using the `Save` method of the `Document` object. Specify the output file path that you set in Step 3.
+## Adım 10: PDF belgesini kaydedin
+ PDF belgesini kullanarak kaydedin.`Save` yöntemi`Document` nesne. 3. Adımda ayarladığınız çıktı dosyası yolunu belirtin.
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
-### Sample source code for Add Text Border using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Metin Kenarlığı Ekleme için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create new document object 
+// Yeni belge nesnesi oluştur
 Document pdfDocument = new Document();
-// Get particular page
+// Belirli bir sayfayı al
 Page pdfPage = (Page)pdfDocument.Pages.Add();
-// Create text fragment
+// Metin parçası oluştur
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
-// Set text properties
+// Metin özelliklerini ayarlama
 textFragment.TextState.FontSize = 12;
 textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-// Set StrokingColor property for drawing border (stroking) around text rectangle
+// Metin dikdörtgeninin etrafına kenarlık (kontur) çizmek için StrokingColor özelliğini ayarlayın
 textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
-// Set DrawTextRectangleBorder property value to true
+// DrawTextRectangleBorder özellik değerini true olarak ayarlayın
 textFragment.TextState.DrawTextRectangleBorder = true;
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
-// Save the document
+// Belgeyi kaydet
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
-## Conclusion
-You have successfully added a text border to your PDF document using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## Çözüm
+Aspose.PDF for .NET'i kullanarak PDF belgenize başarılı bir şekilde metin kenarlığı eklediniz. Ortaya çıkan PDF dosyası artık belirtilen çıktı dosyası yolunda bulunabilir.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the main focus of this tutorial?
+#### S: Bu eğitimin ana odağı nedir?
 
-A: This tutorial guides you through the process of adding a text border to a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the necessary steps to achieve this.
+C: Bu eğitim, Aspose.PDF for .NET kitaplığını kullanarak bir PDF dosyasına metin kenarlığı ekleme sürecinde size yol gösterir. Sağlanan C# kaynak kodu, bunu başarmak için gerekli adımları gösterir.
 
-#### Q: Which namespaces do I need to import for this tutorial?
+#### S: Bu eğitim için hangi ad alanlarını içe aktarmam gerekiyor?
 
-A: In the code file where you want to add the text border, import the following namespaces at the beginning of the file:
+C: Metin kenarlığını eklemek istediğiniz kod dosyasında, dosyanın başına aşağıdaki ad alanlarını içe aktarın:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### S: Belge dizinini nasıl belirlerim?
 
-A: In the code, locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ A: Kodda satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
 
-#### Q: How do I create a Document object?
+#### S: Bir Belge nesnesini nasıl oluşturabilirim?
 
-A: In Step 4, you'll instantiate a new `Document` object using the following line of code:
+ C: 4. Adımda yeni bir örnek oluşturacaksınız.`Document` aşağıdaki kod satırını kullanarak nesne:
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-#### Q: How do I add a page to the document?
+#### S: Belgeye nasıl sayfa eklerim?
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection:
+ C: 5. Adımda belgeye yeni bir sayfa ekleyeceksiniz.`Add` yöntemi`Pages` Toplamak:
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
-#### Q: How do I create a TextFragment and set its position?
+#### S: TextFragment'i nasıl oluşturabilirim ve konumunu nasıl ayarlayabilirim?
 
-A: In Step 6, you'll create a `TextFragment` object and set its position on the page using the `Position` property:
+ C: 6. Adımda bir`TextFragment`kullanarak nesneyi seçin ve sayfadaki konumunu ayarlayın.`Position` mülk:
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
 ```
 
-#### Q: How can I customize the text properties, including the text border?
+#### S: Metin kenarlığı da dahil olmak üzere metin özelliklerini nasıl özelleştirebilirim?
 
-A: In Step 7, you'll customize various text properties such as font size, font type, background color, foreground color, and text border:
+C: 7. Adımda yazı tipi boyutu, yazı tipi türü, arka plan rengi, ön plan rengi ve metin kenarlığı gibi çeşitli metin özelliklerini özelleştireceksiniz:
 
 ```csharp
 textFragment.TextState.FontSize = 12;
@@ -171,23 +171,23 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 textFragment.TextState.DrawTextRectangleBorder = true;
 ```
 
-#### Q: How do I add the TextFragment to the PDF document?
+#### S: TextFragment'i PDF belgesine nasıl eklerim?
 
-A: In Step 9, you'll use the `TextBuilder` class to add the `TextFragment` object to the page:
+ C: 9. Adımda şunları kullanacaksınız:`TextBuilder` eklenecek sınıf`TextFragment` sayfaya itiraz:
 
 ```csharp
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
 ```
 
-#### Q: How do I save the resulting PDF document?
+#### S: Ortaya çıkan PDF belgesini nasıl kaydederim?
 
-A: After adding the text with a border, use the `Save` method of the `Document` object to save the PDF document:
+ C: Metni kenarlıklı olarak ekledikten sonra,`Save` yöntemi`Document` PDF belgesini kaydetmek için nesne:
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
-#### Q: What is the main takeaway from this tutorial?
+#### S: Bu eğitimden çıkan ana sonuç nedir?
 
-A: By following this tutorial, you've successfully learned how to enhance your PDF document by adding a text border using Aspose.PDF for .NET. This can be particularly useful for emphasizing specific text content within your PDF files.
+C: Bu eğitimi takip ederek Aspose.PDF for .NET kullanarak metin kenarlığı ekleyerek PDF belgenizi nasıl geliştireceğinizi başarıyla öğrendiniz. Bu, özellikle PDF dosyalarınızdaki belirli metin içeriğini vurgulamak için yararlı olabilir.

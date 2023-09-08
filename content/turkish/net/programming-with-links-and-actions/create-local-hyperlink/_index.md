@@ -1,17 +1,17 @@
 ---
-title: Create Local Hyperlink In PDF File
-linktitle: Create Local Hyperlink In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create local hyperlinks in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasında Yerel Köprü Oluşturun
+linktitle: PDF Dosyasında Yerel Köprü Oluşturun
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak PDF dosyasında kolayca yerel köprüler oluşturun.
 type: docs
 weight: 40
 url: /tr/net/programming-with-links-and-actions/create-local-hyperlink/
 ---
-Creating local hyperlinks in PDF file lets you create clickable links that take users to other pages in the same PDF document. With Aspose.PDF for .NET, you can easily create such links by following the following source code:
+PDF dosyasında yerel köprüler oluşturmak, kullanıcıları aynı PDF belgesindeki diğer sayfalara yönlendiren tıklanabilir bağlantılar oluşturmanıza olanak tanır. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu izleyerek bu tür bağlantıları kolayca oluşturabilirsiniz:
 
-## Step 1: Import Required Libraries
+## 1. Adım: Gerekli Kitaplıkları İçe Aktarın
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Başlamadan önce C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. Gerekli ithalat direktifi aşağıdadır:
 
 ```csharp
 using Aspose.Pdf;
@@ -19,25 +19,25 @@ using Aspose.Pdf.Text;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## 2. Adım: Belgeler klasörünün yolunu ayarlayın
 
-In this step, you need to specify the path to the folder where you want to save the resulting PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ Bu adımda, ortaya çıkan PDF dosyasını kaydetmek istediğiniz klasörün yolunu belirtmeniz gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"`belgeler klasörünüzün gerçek yolunu içeren aşağıdaki kodda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Create an instance of Document
+## 3. Adım: Belgenin bir örneğini oluşturun
 
-We will create an instance of the `Document` class to represent our PDF document. Here is the corresponding code:
+ Bunun bir örneğini oluşturacağız`Document` PDF belgemizi temsil edecek sınıf. İşte ilgili kod:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 4: Add page and text with hyperlinks
+## 4. Adım: Köprülerle sayfa ve metin ekleyin
 
-In this step, we are going to add a page to our PDF document and add some text containing local hyperlinks. We will define the target pages for each link. Here is the corresponding code:
+Bu adımda PDF belgemize bir sayfa ekleyeceğiz ve yerel köprüler içeren bazı metinler ekleyeceğiz. Her bağlantı için hedef sayfaları tanımlayacağız. İşte ilgili kod:
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -56,90 +56,90 @@ text. Hyperlink = link;
 page.Paragraphs.Add(text);
 ```
 
-## Step 5: Save the updated document
+## 5. Adım: Güncellenen belgeyi kaydedin
 
-Now let's save the updated PDF file using the `Save` method of the `doc` object. Here is the corresponding code:
+ Şimdi güncellenen PDF dosyasını kullanarak kaydedelim.`Save` yöntemi`doc` nesne. İşte ilgili kod:
 
 ```csharp
 dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Create Local Hyperlink using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Yerel Köprü Oluşturma için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Document instance
+// Belge örneği oluştur
 Document doc = new Document();
-// Add page to pages collection of PDF file
+// PDF dosyasının sayfa koleksiyonuna sayfa ekle
 Page page = doc.Pages.Add();
-// Create Text Fragment instance
+// Metin Parçası örneği oluştur
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("link page number test to page 7");
-// Create local hyperlink instance
+// Yerel köprü örneği oluştur
 Aspose.Pdf.LocalHyperlink link = new Aspose.Pdf.LocalHyperlink();
-// Set target page for link instance
+// Bağlantı örneği için hedef sayfayı ayarlayın
 link.TargetPageNumber = 7;
-// Set TextFragment hyperlink
+// TextFragment köprüsünü ayarla
 text.Hyperlink = link;
-// Add text to paragraphs collection of Page
+//Sayfanın paragraf koleksiyonuna metin ekleme
 page.Paragraphs.Add(text);
-// Create new TextFragment instance
+// Yeni TextFragment örneği oluştur
 text = new TextFragment("link page number test to page 1");
-// TextFragment should be added over new page
+// TextFragment yeni sayfaya eklenmelidir
 text.IsInNewPage = true;
-// Create another local hyperlink instance
+// Başka bir yerel köprü örneği oluşturun
 link = new LocalHyperlink();
-// Set Target page for second hyperlink
+// İkinci köprü için Hedef sayfayı ayarlayın
 link.TargetPageNumber = 1;
-// Set link for second TextFragment
+// İkinci TextFragment için bağlantıyı ayarla
 text.Hyperlink = link;
-// Add text to paragraphs collection of page object
+// Sayfa nesnesinin paragraf koleksiyonuna metin ekleme
 page.Paragraphs.Add(text);    
 dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
-// Save updated document
+// Güncellenen belgeyi kaydet
 doc.Save(dataDir);
 Console.WriteLine("\nLocal hyperlink created successfully.\nFile saved at " + dataDir);            
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! Now you have a step by step guide to create local hyperlinks in a PDF using Aspose.PDF for .NET. You can use this code to create clickable links that take users to other pages in the same document.
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF'de yerel köprüler oluşturmak için adım adım kılavuza sahipsiniz. Kullanıcıları aynı belgedeki diğer sayfalara yönlendiren tıklanabilir bağlantılar oluşturmak için bu kodu kullanabilirsiniz.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced hyperlinking features.
+Gelişmiş köprü oluşturma özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
 
-### FAQ's for create local hyperlink in PDF file
+### PDF dosyasında yerel köprü oluşturmaya ilişkin SSS
 
-#### Q: What are local hyperlinks in a PDF file?
+#### S: PDF dosyasındaki yerel köprüler nelerdir?
 
-A: Local hyperlinks in a PDF file are clickable links that navigate users to different pages within the same document. These links enhance navigation and allow readers to quickly access relevant sections.
+C: Bir PDF dosyasındaki yerel köprüler, kullanıcıları aynı belge içindeki farklı sayfalara yönlendiren tıklanabilir bağlantılardır. Bu bağlantılar gezinmeyi geliştirir ve okuyucuların ilgili bölümlere hızlı bir şekilde erişmesine olanak tanır.
 
-#### Q: How can local hyperlinks benefit my PDF document?
+#### S: Yerel köprüler PDF belgeme nasıl fayda sağlayabilir?
 
-A: Local hyperlinks provide an efficient way to connect related content within the same PDF document. They improve user experience by enabling readers to quickly jump to specific sections without scrolling through the entire document.
+C: Yerel köprüler, ilgili içeriği aynı PDF belgesine bağlamak için etkili bir yol sağlar. Okuyucuların tüm belgeyi kaydırmadan belirli bölümlere hızlı bir şekilde atlamasını sağlayarak kullanıcı deneyimini geliştirir.
 
-#### Q: How does Aspose.PDF for .NET support the creation of local hyperlinks?
-A: Aspose.PDF for .NET offers comprehensive support for creating local hyperlinks. The step-by-step tutorial provided in this guide demonstrates how to add local hyperlinks to your PDF document using C#.
+#### S: Aspose.PDF for .NET yerel köprülerin oluşturulmasını nasıl destekliyor?
+C: Aspose.PDF for .NET, yerel köprüler oluşturmak için kapsamlı destek sunar. Bu kılavuzda sağlanan adım adım eğitim, C# kullanarak PDF belgenize yerel köprülerin nasıl ekleneceğini gösterir.
 
-#### Q: Can I customize the appearance of local hyperlinks?
+#### S: Yerel köprülerin görünümünü özelleştirebilir miyim?
 
-A: Yes, you can customize the appearance of local hyperlinks, including text color and style, to ensure they match your document's design and provide a consistent visual experience.
+C: Evet, belgenizin tasarımıyla eşleştiğinden ve tutarlı bir görsel deneyim sağladığından emin olmak için yerel köprülerin görünümünü metin rengi ve stili dahil olmak üzere özelleştirebilirsiniz.
 
-#### Q: Is it possible to create multiple local hyperlinks within a single PDF page?
+#### S: Tek bir PDF sayfasında birden çok yerel köprü oluşturmak mümkün müdür?
 
-A: Absolutely! You can create multiple local hyperlinks within a single PDF page, allowing readers to jump to various sections or pages as needed. Each local hyperlink can be tailored to its respective target.
+C: Kesinlikle! Tek bir PDF sayfasında birden fazla yerel köprü oluşturarak okuyucuların ihtiyaç duydukları çeşitli bölümlere veya sayfalara atlamalarına olanak tanıyabilirsiniz. Her yerel köprü, ilgili hedefine göre uyarlanabilir.
 
-#### Q: Can I link to specific sections of a page using local hyperlinks?
+#### S: Yerel köprüleri kullanarak bir sayfanın belirli bölümlerine bağlantı verebilir miyim?
 
-A: While local hyperlinks typically navigate to entire pages, you can create anchors or bookmarks within your PDF document to achieve targeted linking. Aspose.PDF for .NET supports various hyperlinking options.
+C: Yerel köprüler genellikle sayfaların tamamına giderken, hedeflenen bağlantılara ulaşmak için PDF belgenizde bağlantılar veya yer imleri oluşturabilirsiniz. Aspose.PDF for .NET çeşitli köprü oluşturma seçeneklerini destekler.
 
-#### Q: How can I verify that my local hyperlinks are functioning correctly?
+#### S: Yerel köprülerimin düzgün çalıştığını nasıl doğrulayabilirim?
 
-A: By following the tutorial and sample code provided, you can confidently create functional local hyperlinks. You can test the links by opening the generated PDF document and clicking on the hyperlinked text.
+C: Sağlanan öğreticiyi ve örnek kodu takip ederek, işlevsel yerel köprüleri güvenle oluşturabilirsiniz. Oluşturulan PDF belgesini açıp köprü bağlantılı metne tıklayarak bağlantıları test edebilirsiniz.
 
-#### Q: Are there any limitations when using local hyperlinks?
+#### S: Yerel köprüleri kullanırken herhangi bir sınırlama var mı?
 
-A: Local hyperlinks are an effective way to enhance document navigation, but it's important to ensure that the document's structure remains clear and intuitive. Properly labeled hyperlinks and anchors contribute to a positive user experience.
+C: Yerel köprüler belgede gezinmeyi geliştirmenin etkili bir yoludur, ancak belgenin yapısının açık ve sezgisel kalmasını sağlamak önemlidir. Düzgün etiketlenmiş köprüler ve bağlantılar olumlu bir kullanıcı deneyimine katkıda bulunur.
 
-#### Q: Can I create local hyperlinks within tables or images?
+#### S: Tablolar veya resimler içinde yerel köprüler oluşturabilir miyim?
 
-A: Yes, you can create local hyperlinks within various elements of your PDF document, including tables, images, and text. Aspose.PDF for .NET offers flexibility in adding hyperlinks to different types of content.
+C: Evet, PDF belgenizin tablolar, resimler ve metin dahil çeşitli öğelerinde yerel köprüler oluşturabilirsiniz. Aspose.PDF for .NET, farklı içerik türlerine köprü ekleme konusunda esneklik sunar.

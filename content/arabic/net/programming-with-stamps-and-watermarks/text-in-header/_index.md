@@ -1,51 +1,51 @@
 ---
-title: Text In Header Of PDF File
-linktitle: Text In Header Of PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text in the header of PDF file with Aspose.PDF for .NET.
+title: النص في رأس ملف PDF
+linktitle: النص في رأس ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة نص في رأس ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 190
 url: /ar/net/programming-with-stamps-and-watermarks/text-in-header/
 ---
-In this tutorial, we are going to learn how to add text in the header of PDF file using Aspose.PDF for .NET. Follow the steps below:
+في هذا البرنامج التعليمي، سنتعلم كيفية إضافة نص في رأس ملف PDF باستخدام Aspose.PDF for .NET. اتبع الخطوات التالية:
 
-## Step 1: Project preparation
+## الخطوة 1: إعداد المشروع
 
-Make sure you have installed Aspose.PDF for .NET and created a C# project.
+تأكد من تثبيت Aspose.PDF لـ .NET وإنشاء مشروع C#.
 
-## Step 2: Importing namespaces
+## الخطوة 2: استيراد مساحات الأسماء
 
-Add the following namespaces to your C# source file:
+أضف مساحات الأسماء التالية إلى ملف مصدر C# الخاص بك:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Opening the document
+## الخطوة 3: فتح المستند
 
-Open the existing PDF document using the path provided:
+افتح مستند PDF الموجود باستخدام المسار المقدم:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "TextinHeader.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to your documents directory.
+تأكد من استبدال "دليل مستنداتك" بالمسار الفعلي لدليل مستنداتك.
 
-## Step 4: Creating Header Text
+## الخطوة 4: إنشاء نص الرأس
 
-Create a new text stamp with the text you want to add in the header:
+قم بإنشاء طابع نصي جديد بالنص الذي تريد إضافته في الرأس:
 
 ```csharp
 TextStamp textStamp = new TextStamp("Header text");
 ```
 
-You can customize the text by changing its properties like top margin, horizontal alignment, and vertical alignment.
+يمكنك تخصيص النص عن طريق تغيير خصائصه مثل الهامش العلوي والمحاذاة الأفقية والمحاذاة الرأسية.
 
-## Step 5: Add header text to all pages
+## الخطوة 5: إضافة نص الرأس إلى جميع الصفحات
 
-Go through all the pages of the PDF document and add the text stamp in the header:
+تصفح جميع صفحات مستند PDF وأضف ختم النص في الرأس:
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -54,80 +54,80 @@ foreach(Page page in pdfDocument.Pages)
 }
 ```
 
-## Step 6: Saving the PDF Document
+## الخطوة 6: حفظ مستند PDF
 
-Once the header text has been added on all pages, save the updated PDF document:
+بمجرد إضافة نص الرأس في جميع الصفحات، احفظ مستند PDF المحدث:
 
 ```csharp
 pdfDocument.Save(dataDir + "TextinHeader_out.pdf");
 Console.WriteLine("\nText in header added successfully.\nFile saved at: " + dataDir);
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+تأكد من استبدال "دليل المستندات الخاص بك" بالمسار الفعلي للدليل الذي تريد حفظ مستند PDF فيه.
 
-### Sample source code for Textin Header using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Textin Header باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir+ "TextinHeader.pdf");
 
-// Create header
+// إنشاء رأس
 TextStamp textStamp = new TextStamp("Header Text");
 
-// Set properties of the stamp
+// تعيين خصائص الطوابع
 textStamp.TopMargin = 10;
 textStamp.HorizontalAlignment = HorizontalAlignment.Center;
 textStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Add header on all pages
+// إضافة رأس على كافة الصفحات
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(textStamp);
 }
 
-// Save updated document
+// حفظ المستند المحدث
 pdfDocument.Save(dataDir+ "TextinHeader_out.pdf");
 Console.WriteLine("\nText in header added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have learned how to add text in the header of a PDF document using Aspose.PDF for .NET. You can now customize your headers by adding additional text to your PDF documents.
+تهنئة ! لقد تعلمت كيفية إضافة نص في رأس مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن تخصيص رؤوسك عن طريق إضافة نص إضافي إلى مستندات PDF الخاصة بك.
 
-### FAQ's for text in header of PDF file
+### الأسئلة الشائعة للنص الموجود في رأس ملف PDF
 
-#### Q: What is the purpose of adding text in the header of a PDF document?
+#### س: ما هو الغرض من إضافة نص في رأس مستند PDF؟
 
-A: Adding text in the header of a PDF document allows you to include important information, such as titles, document names, dates, or any other text that you want to appear consistently at the top of each page.
+ج: تتيح لك إضافة نص في رأس مستند PDF تضمين معلومات مهمة، مثل العناوين أو أسماء المستندات أو التواريخ أو أي نص آخر تريده أن يظهر بشكل متسق في أعلى كل صفحة.
 
-#### Q: How does the provided C# source code achieve the addition of text in the header of a PDF document?
+#### س: كيف يحقق كود مصدر C# المقدم إضافة نص في رأس مستند PDF؟
 
-A: The code demonstrates the process of opening an existing PDF document, creating a text stamp with the desired header text, customizing the text properties, adding the text stamp to all pages, and finally saving the updated PDF document with the added header text.
+ج: يوضح الكود عملية فتح مستند PDF موجود، وإنشاء ختم نصي بنص الرأس المطلوب، وتخصيص خصائص النص، وإضافة ختم النص إلى جميع الصفحات، وأخيرًا حفظ مستند PDF المحدث مع نص الرأس المضاف.
 
-#### Q: Can I modify the appearance of the header text, such as its font, size, color, and alignment?
+#### س: هل يمكنني تعديل مظهر نص الرأس، مثل الخط والحجم واللون والمحاذاة؟
 
-A: Yes, you can customize the appearance of the header text by modifying the properties of the `TextStamp` object. The code example includes setting properties like top margin, horizontal alignment, and vertical alignment. You can also adjust the font, size, color, and other text-related properties.
+ ج: نعم، يمكنك تخصيص مظهر نص الرأس عن طريق تعديل خصائص الملف`TextStamp`هدف. يتضمن مثال التعليمات البرمجية خصائص الإعداد مثل الهامش العلوي، والمحاذاة الأفقية، والمحاذاة الرأسية. يمكنك أيضًا ضبط الخط والحجم واللون والخصائص الأخرى المتعلقة بالنص.
 
-#### Q: Is it possible to add different text to each page's header?
+#### س: هل من الممكن إضافة نص مختلف إلى رأس كل صفحة؟
 
-A: Yes, you can add different text to each page's header by creating separate `TextStamp` objects with different text content or properties and then adding them to specific pages as needed.
+ ج: نعم، يمكنك إضافة نص مختلف إلى رأس كل صفحة عن طريق إنشاء نص منفصل`TextStamp` كائنات ذات محتوى أو خصائص نصية مختلفة ثم إضافتها إلى صفحات محددة حسب الحاجة.
 
-#### Q: How do I ensure the header text appears consistently on every page of the PDF document?
+#### س: كيف أتأكد من ظهور نص الرأس بشكل متسق في كل صفحة من مستند PDF؟
 
-A: By using a loop that iterates through all the pages of the PDF document and adding the same text stamp to each page, you ensure that the header text appears consistently on every page.
+ج: باستخدام حلقة تتكرر عبر جميع صفحات مستند PDF وإضافة نفس ختم النص إلى كل صفحة، فإنك تضمن ظهور نص الرأس بشكل متسق في كل صفحة.
 
-#### Q: Can I add multiple lines of text or format the header text with line breaks?
+#### س: هل يمكنني إضافة عدة أسطر من النص أو تنسيق نص الرأس مع فواصل الأسطر؟
 
-A: Yes, you can add multiple lines of text to the header by including line breaks in the text string. For example, you can use the escape sequence `\n` to indicate a line break in the text.
+ ج: نعم، يمكنك إضافة عدة أسطر من النص إلى الرأس عن طريق تضمين فواصل الأسطر في السلسلة النصية. على سبيل المثال، يمكنك استخدام تسلسل الهروب`\n` للإشارة إلى فاصل أسطر في النص.
 
-#### Q: What happens if I want to add different content to the header and footer of the same PDF document?
+#### س: ماذا يحدث إذا أردت إضافة محتوى مختلف إلى رأس وتذييل مستند PDF نفسه؟
 
-A: To add different content to the header and footer sections, you would follow similar steps for both sections. The code demonstrates adding text to the header; you can use a similar approach to add text to the footer.
+ج: لإضافة محتوى مختلف إلى قسمي الرأس والتذييل، يجب عليك اتباع خطوات مماثلة لكلا القسمين. يوضح الكود إضافة نص إلى الرأس؛ يمكنك استخدام أسلوب مماثل لإضافة نص إلى التذييل.
 
-#### Q: Is it possible to add images or other elements alongside the header text using this approach?
+#### س: هل من الممكن إضافة صور أو عناصر أخرى إلى جانب نص الرأس باستخدام هذا الأسلوب؟
 
-A: While the provided code specifically demonstrates adding text to the header, you can extend the approach to add other elements like images, lines, shapes, or any other content to the header section using the Aspose.PDF library.
+ج: بينما يوضح الكود المقدم على وجه التحديد إضافة نص إلى الرأس، يمكنك توسيع النهج لإضافة عناصر أخرى مثل الصور أو الخطوط أو الأشكال أو أي محتوى آخر إلى قسم الرأس باستخدام مكتبة Aspose.PDF.

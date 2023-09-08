@@ -1,161 +1,161 @@
 ---
-title: Convert Image Stream to PDF File
-linktitle: Convert Image Stream to PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily convert an image stream to PDF file with Aspose.PDF for .NET.
+title: Konvertieren Sie den Bildstream in eine PDF-Datei
+linktitle: Konvertieren Sie den Bildstream in eine PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Konvertieren Sie mit Aspose.PDF für .NET ganz einfach einen Bildstream in eine PDF-Datei.
 type: docs
 weight: 70
 url: /de/net/programming-with-images/convert-image-stream-to-pdf/
 ---
-This guide will take you step by step how to convert an image stream to PDF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+In dieser Anleitung erfahren Sie Schritt für Schritt, wie Sie mit Aspose.PDF für .NET einen Bildstream in eine PDF-Datei konvertieren. Stellen Sie sicher, dass Sie Ihre Umgebung bereits eingerichtet haben, und führen Sie die folgenden Schritte aus:
 
-## Step 1: Define the document directory
+## Schritt 1: Definieren Sie das Dokumentenverzeichnis
 
-Before you start, make sure you set the correct directory for the documents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your image is located.
+ Bevor Sie beginnen, stellen Sie sicher, dass Sie das richtige Verzeichnis für die Dokumente festgelegt haben. Ersetzen`"YOUR DOCUMENT DIRECTORY"` Geben Sie im Code den Pfad zu dem Verzeichnis ein, in dem sich Ihr Bild befindet.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Instantiate a Document object
+## Schritt 2: Instanziieren Sie ein Document-Objekt
 
-In this step, we will instantiate a `Document` object using the empty constructor of the `Aspose.Pdf.Document` class.
+ In diesem Schritt werden wir a instanziieren`Document` Objekt mit dem leeren Konstruktor des`Aspose.Pdf.Document` Klasse.
 
 ```csharp
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 ```
 
-## Step 3: Add a page to the PDF document
+## Schritt 3: Fügen Sie dem PDF-Dokument eine Seite hinzu
 
-Add a page to the PDF document using the `Add` method of the `Pages` object of `pdf1`.
+ Fügen Sie mit dem eine Seite zum PDF-Dokument hinzu`Add` Methode der`Pages` Gegenstand von`pdf1`.
 
 ```csharp
 Aspose.Pdf.Page sec = pdf1.Pages.Add();
 ```
 
-## Step 4: Read the image stream
+## Schritt 4: Lesen Sie den Bildstream
 
-In this step we will create a `FileStream` object to read the image file from the stream.
+ In diesem Schritt erstellen wir eine`FileStream` Objekt zum Lesen der Bilddatei aus dem Stream.
 
 ```csharp
 FileStream fs = File.OpenRead(dataDir + "aspose.jpg");
 ```
 
-## Step 5: Read the image into a byte array
+## Schritt 5: Lesen Sie das Bild in ein Byte-Array ein
 
-Read the image from the stream and store it in a byte array using the `Read` method of the `fs` object.
+ Lesen Sie das Bild aus dem Stream und speichern Sie es mithilfe von in einem Byte-Array`Read` Methode der`fs` Objekt.
 
 ```csharp
 byte[] data = new byte[fs.Length];
 fs.Read(data, 0, data.Length);
 ```
 
-## Step 6: Create a MemoryStream object from the byte array
+## Schritt 6: Erstellen Sie ein MemoryStream-Objekt aus dem Byte-Array
 
-Create a `MemoryStream` object from the byte array containing the image.
+ Ein ... kreieren`MemoryStream` Objekt aus dem Byte-Array, das das Bild enthält.
 
 ```csharp
 MemoryStream ms = new MemoryStream(data);
 ```
 
-## Step 7: Create an Image Object
+## Schritt 7: Erstellen Sie ein Bildobjekt
 
-In this step, we will create an `Image` object using the `Aspose.Pdf.Image` class. Specify the stream of the image using the `ImageStream` property and pass the `ms` object we created earlier.
+ In diesem Schritt erstellen wir eine`Image` Objekt mit der`Aspose.Pdf.Image` Klasse. Geben Sie den Stream des Bildes mit an`ImageStream` Eigentum und übergeben Sie die`ms` Objekt, das wir zuvor erstellt haben.
 
 ```csharp
 Aspose.Pdf.Image imageht = new Aspose.Pdf.Image();
 imageht. ImageStream = ms;
 ```
 
-## Step 8: Add the Image object to the Paragraphs collection
+## Schritt 8: Fügen Sie das Image-Objekt zur Paragraphs-Sammlung hinzu
 
-Add the `imageht` object to the `Paragraphs` collection of the `sec` section.
+ Ergänzen Sie die`imageht` Einspruch gegen die`Paragraphs` Sammlung der`sec` Abschnitt.
 
 ```csharp
 sec.Paragraphs.Add(imageht);
 ```
 
-## Step 9: Save the PDF document
+## Schritt 9: Speichern Sie das PDF-Dokument
 
-Save the PDF document using the `Save` method of the `pdf1` object. Specify the output path of the PDF file.
+ Speichern Sie das PDF-Dokument mit`Save` Methode der`pdf1` Objekt. Geben Sie den Ausgabepfad der PDF-Datei an.
 
 ```csharp
 pdf1.Save(dataDir + "ConvertMemoryStreamImageToPdf_out.pdf");
 ```
 
-## Step 10: Close the MemoryStream object
+## Schritt 10: Schließen Sie das MemoryStream-Objekt
 
-Close the `ms` object using the `Close` method to release the resources.
+ Schließe`ms` Objekt mit der`Close` Methode zur Freigabe der Ressourcen.
 
 ```csharp
 ms. Close();
 ```
 
-### Sample source code for Convert Image Stream to PDF using Aspose.PDF for .NET 
+### Beispielquellcode für die Konvertierung von Bildstreams in PDF mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document instance by calling its empty constructor
+//Instanziieren Sie eine Dokumentinstanz, indem Sie ihren leeren Konstruktor aufrufen
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
-// Add a Page into the pdf document
+// Fügen Sie dem PDF-Dokument eine Seite hinzu
 Aspose.Pdf.Page sec = pdf1.Pages.Add();
-// Create a FileStream object to read the imag file
+// Erstellen Sie ein FileStream-Objekt, um die Bilddatei zu lesen
 FileStream fs = File.OpenRead(dataDir + "aspose.jpg");
-// Read the image into Byte array
+// Lesen Sie das Bild in ein Byte-Array ein
 byte[] data = new byte[fs.Length];
 fs.Read(data, 0, data.Length);
-// Create a MemoryStream object from image Byte array
+// Erstellen Sie ein MemoryStream-Objekt aus dem Bild-Byte-Array
 MemoryStream ms = new MemoryStream(data);
-// Create an image object
+// Erstellen Sie ein Bildobjekt
 Aspose.Pdf.Image imageht = new Aspose.Pdf.Image();
-// Specify the image source as MemoryStream
+// Geben Sie die Bildquelle als MemoryStream an
 imageht.ImageStream = ms;
-// Add image object into the Paragraphs collection of the section
+// Fügen Sie ein Bildobjekt zur Paragraphs-Sammlung des Abschnitts hinzu
 sec.Paragraphs.Add(imageht);
-// Save the Pdf
+// Speichern Sie das PDF
 pdf1.Save(dataDir + "ConvertMemoryStreamImageToPdf_out.pdf");
-// Close the MemoryStream Object
+// Schließen Sie das MemoryStream-Objekt
 ms.Close();
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You have successfully converted an image stream to a PDF file using Aspose.PDF for .NET. The generated PDF file is saved in the specified directory. You can now use this PDF file in your projects or applications.
+Herzlichen Glückwunsch! Sie haben einen Bildstream mit Aspose.PDF für .NET erfolgreich in eine PDF-Datei konvertiert. Die generierte PDF-Datei wird im angegebenen Verzeichnis gespeichert. Sie können diese PDF-Datei nun in Ihren Projekten oder Anwendungen verwenden.
 
-### FAQ's
+### FAQs
 
-#### Q: What is the purpose of converting an image stream to a PDF file using Aspose.PDF for .NET?
+#### F: Was ist der Zweck der Konvertierung eines Bildstreams in eine PDF-Datei mit Aspose.PDF für .NET?
 
-A: Converting an image stream to a PDF file can be useful for incorporating images into PDF documents, creating image-based PDFs, or embedding images within textual content.
+A: Das Konvertieren eines Bildstreams in eine PDF-Datei kann nützlich sein, um Bilder in PDF-Dokumente einzubinden, bildbasierte PDFs zu erstellen oder Bilder in Textinhalte einzubetten.
 
-#### Q: How does Aspose.PDF for .NET assist in the conversion of an image stream to a PDF file?
+#### F: Wie unterstützt Aspose.PDF für .NET bei der Konvertierung eines Bildstreams in eine PDF-Datei?
 
-A: Aspose.PDF for .NET provides a convenient and step-by-step process to create a PDF document, read an image stream, and embed the image into the PDF file.
+A: Aspose.PDF für .NET bietet einen bequemen und schrittweisen Prozess zum Erstellen eines PDF-Dokuments, zum Lesen eines Bildstreams und zum Einbetten des Bilds in die PDF-Datei.
 
-#### Q: Why is defining the document directory important in the image stream to PDF conversion process?
+#### F: Warum ist die Definition des Dokumentverzeichnisses bei der Konvertierung von Bildstreams in PDF wichtig?
 
-A: Specifying the document directory ensures that the image stream and the resulting PDF file are correctly located in the desired output path.
+A: Durch die Angabe des Dokumentverzeichnisses wird sichergestellt, dass der Bildstream und die resultierende PDF-Datei korrekt im gewünschten Ausgabepfad liegen.
 
-#### Q: How do I create a PDF document using Aspose.PDF for .NET in the image stream to PDF conversion process?
+#### F: Wie erstelle ich ein PDF-Dokument mit Aspose.PDF für .NET im Bildstream-zu-PDF-Konvertierungsprozess?
 
-A: Instantiate a `Document` object using the `Aspose.Pdf.Document` class's empty constructor to create the PDF document.
+ A: Instanziieren Sie a`Document` Objekt mit der`Aspose.Pdf.Document` Der leere Konstruktor der Klasse zum Erstellen des PDF-Dokuments.
 
-#### Q: What is the role of the `Pages` object in the image stream to PDF conversion process?
+####  F: Welche Rolle spielt das`Pages` object in the image stream to PDF conversion process?
 
-A: The `Pages` object allows you to add pages to the PDF document and manage its content.
+ A: Die`Pages` Mit dem Objekt können Sie Seiten zum PDF-Dokument hinzufügen und dessen Inhalt verwalten.
 
-#### Q: How does the image stream read and processed in the image stream to PDF conversion process?
+#### F: Wie wird der Bildstream bei der Konvertierung von Bildstreams in PDF gelesen und verarbeitet?
 
-A: The image stream is read using a `FileStream` object, and its contents are stored in a byte array. The byte array is then used to create a `MemoryStream` object, which is subsequently used to create an `Image` object.
+ A: Der Bildstream wird mit a gelesen`FileStream` Objekt, und sein Inhalt wird in einem Byte-Array gespeichert. Das Byte-Array wird dann zum Erstellen eines verwendet`MemoryStream` Objekt, das anschließend zum Erstellen eines verwendet wird`Image` Objekt.
 
-#### Q: How is the image embedded in the PDF document during the conversion process?
+#### F: Wie wird das Bild während des Konvertierungsprozesses in das PDF-Dokument eingebettet?
 
-A: An `Image` object is created using the `Aspose.Pdf.Image` class, and the image stream is assigned to the `ImageStream` property. The `Image` object is then added to the `Paragraphs` collection of the PDF document.
+ A: Ein`Image` Objekt wird mit erstellt`Aspose.Pdf.Image` Klasse, und der Bildstream wird der zugewiesen`ImageStream` Eigentum. Der`Image` Das Objekt wird dann dem hinzugefügt`Paragraphs` Sammlung des PDF-Dokuments.
 
-#### Q: Can I customize the image's position, size, or other attributes in the resulting PDF file?
+#### F: Kann ich die Position, Größe oder andere Attribute des Bildes in der resultierenden PDF-Datei anpassen?
 
-A: Yes, you can modify the image's position, size, and other attributes by adjusting the properties of the `Image` object before adding it to the `Paragraphs` collection.
+ A: Ja, Sie können die Position, Größe und andere Attribute des Bildes ändern, indem Sie die Eigenschaften des Bildes anpassen`Image` Objekt, bevor Sie es dem hinzufügen`Paragraphs` Sammlung.
 
-#### Q: What is the final step in the image stream to PDF conversion process?
+#### F: Was ist der letzte Schritt bei der Konvertierung von Bilddaten in PDF?
 
-A: The PDF document is saved using the `Save` method of the `Document` object, and the `MemoryStream` object is closed using the `Close` method to release resources.
+ A: Das PDF-Dokument wird mit gespeichert`Save` Methode der`Document` Objekt und das`MemoryStream` Das Objekt wird mit dem geschlossen`Close` Methode zur Freigabe von Ressourcen.

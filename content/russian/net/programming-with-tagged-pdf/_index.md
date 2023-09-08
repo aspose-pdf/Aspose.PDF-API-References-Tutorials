@@ -1,38 +1,38 @@
 ---
-title: Programming with Tagged PDF
-linktitle: Programming with Tagged PDF
+title: Программирование с PDF с тегами
+linktitle: Программирование с PDF с тегами
 type: docs
 weight: 24
 url: /ru/net/programming-with-tagged-pdf/
-description: Check out Aspose.PDF for .NET's Programming with Tagged PDF tutorials to master tagged PDF manipulation and generation.
+description: Ознакомьтесь с учебными пособиями по программированию Aspose.PDF для .NET с использованием PDF с тегами, чтобы освоить обработку и создание PDF с тегами.
 ---
 
-Aspose.PDF for .NET's "Programming with Tagged PDFs" tutorials walk you through using this library to manipulate and generate tagged PDFs. Learn how to create content structures, manage tagged elements, validate PDF/UA compliance, and improve accessibility of PDF documents. These tutorials give you an in-depth understanding of programming with tagged PDFs and help you get the most out of the power of Aspose.PDF for .NET.
+В учебных пособиях Aspose.PDF for .NET «Программирование PDF-файлов с тегами» вы узнаете, как использовать эту библиотеку для управления и создания PDF-файлов с тегами. Узнайте, как создавать структуры контента, управлять элементами с тегами, проверять соответствие PDF/UA и улучшать доступность PDF-документов. Эти учебные пособия дают вам глубокое понимание программирования с использованием PDF-файлов с тегами и помогают максимально эффективно использовать возможности Aspose.PDF для .NET.
 
-## Tutorials
-| Title | Description |
+## Учебники
+| Заголовок | Описание |
 | --- | --- | 
-| [Access Children Elements](./access-children-elements/) | Step-by-step guide to accessing and editing child elements of a PDF document using Aspose.PDF for .NET. Personalize your PDF content. |  
-| [Add Structure Element Into Element](./add-structure-element-into-element/) | Step-by-step guide to add structure element to element in PDF document using Aspose.PDF for .NET. |  
-| [Create Note Structure Element](./create-note-structure-element/) | Step-by-step guide to create structured note items in a PDF document using Aspose.PDF for .NET. |  
-| [Create PDF with Tagged Image](./create-pdf-with-tagged-image/) | Step by step guide to create PDF with tagged image using Aspose.PDF for .NET. |  
-| [Create PDF with Tagged Text](./create-pdf-with-tagged-text/) | Step by step guide to create a PDF with tagged text using Aspose.PDF for .NET. |  
-| [Create Structure Elements](./create-structure-elements/) | In this tutorial, you will learn how to use Aspose.PDF for .NET to create structural elements in a tagged PDF document. |  
-| [Create Structure Elements Tree](./create-structure-elements-tree/) | Create a structure of tree elements using Aspose.PDF for .NET. Step by step guide to create a structured PDF document. |  
-| [Create Table Element](./create-table-element/) | Step by step guide to create an array element with Aspose.PDF for .NET. Generate dynamic PDFs with tables easily. |  
-| [Custom Tag Name](./custom-tag-name/) | Step-by-step guide to using a custom tag name with Aspose.PDF for .NET. Improve the structure of your PDFs with custom tags. |  
-| [Illustration Structure Elements](./illustration-structure-elements/) | Step-by-step guide to using illustration assets with Aspose.PDF for .NET. Enhance the presentation of your PDFs with images. |  
-| [Inline Structure Elements](./inline-structure-elements/) | Step-by-step guide to using online structural elements with Aspose.PDF for .NET. Organize your PDFs with headings and paragraphs. |  
-| [Link Structure Elements](./link-structure-elements/) | Step-by-step guide to using link structure elements with Aspose.PDF for .NET. Create hyperlinks in your PDF documents. |  
-| [Root Structure](./root-structure/) | Step-by-step guide to using root structure elements with Aspose.PDF for .NET to access the root and StructTreeRoot object of the PDF document. |  
-| [Setup Language And Title](./setup-language-and-title/) | Step-by-step guide to configure the language and title of a PDF document with Aspose.PDF for .NET. Create personalized multilingual documents. |  
-| [Structure Elements Properties In PDF File](./structure-elements-properties/) | Step-by-step guide to working with structural element properties in PDF file with Aspose.PDF for .NET. Create information-rich structural elements. |  
-| [Style Table Cell](./style-table-cell/) | Learn how to style table cells with Aspose.PDF for .NET: step-by-step guide to creating and customizing tables. |  
-| [Style Table Element](./style-table-element/) | Learn how to format table element with Aspose.PDF for .NET. Step-by-step guide to customize styles and properties. |  
-| [Style Table Row](./style-table-row/) | Learn how to customize table rows with Aspose.PDF for .NET step by step guide to styling and formatting rows. |  
-| [Style Text Structure In PDF File](./style-text-structure/) | Learn how to format text structure in PDF file with Aspose.PDF for .NET. Step-by-step guide to style text. |  
-| [Tagged PDF Content](./tagged-pdf-content/) | Learn how to work with tagged content in a PDF document with Aspose.PDF for .NET. A step-by-step guide to using tags. |  
-| [Tag Image In Existing PDF](./tag-image-in-existing-pdf/) | Learn how to mark up an image in an existing PDF with Aspose.PDF for .NET. A Step-by-Step Guide to Adding Tags to Images. |  
-| [Text Block Structure Elements](./text-block-structure-elements/) | Learn how to use Aspose.PDF for .NET to add text block structure elements, such as headings and tagged paragraphs, to an existing PDF document. |  
-| [Text Structure Elements In PDF File](./text-structure-elements/) | Learn how to add text structure elements in PDF file using Aspose.PDF for .NET. Improve the structure and accessibility of your PDFs. |  
-| [Validate PDF File](./validate-pdf/) | Learn how to validate a PDF file with Aspose.PDF for .NET. Check its compliance with standards and generate a validation report. |  
+| [Доступ к дочерним элементам](./access-children-elements/) | Пошаговое руководство по доступу и редактированию дочерних элементов PDF-документа с помощью Aspose.PDF для .NET. Персонализируйте содержимое PDF-файла. |  
+| [Добавить элемент структуры в элемент](./add-structure-element-into-element/) | Пошаговое руководство по добавлению элемента структуры к элементу в PDF-документе с помощью Aspose.PDF для .NET. |  
+| [Создать элемент структуры заметки](./create-note-structure-element/) | Пошаговое руководство по созданию структурированных элементов заметок в документе PDF с использованием Aspose.PDF для .NET. |  
+| [Создать PDF с изображением с тегами](./create-pdf-with-tagged-image/) | Пошаговое руководство по созданию PDF-файла с изображением с тегами с помощью Aspose.PDF для .NET. |  
+| [Создать PDF с текстом с тегами](./create-pdf-with-tagged-text/) | Пошаговое руководство по созданию PDF-файла с текстом с тегами с помощью Aspose.PDF для .NET. |  
+| [Создание элементов структуры](./create-structure-elements/) | В этом руководстве вы узнаете, как использовать Aspose.PDF для .NET для создания структурных элементов в PDF-документе с тегами. |  
+| [Создать дерево элементов структуры](./create-structure-elements-tree/) | Создайте структуру элементов дерева, используя Aspose.PDF для .NET. Пошаговое руководство по созданию структурированного PDF-документа. |  
+| [Создать элемент таблицы](./create-table-element/) | Пошаговое руководство по созданию элемента массива с помощью Aspose.PDF для .NET. Легко создавайте динамические PDF-файлы с таблицами. |  
+| [Имя пользовательского тега](./custom-tag-name/) | Пошаговое руководство по использованию собственного имени тега в Aspose.PDF для .NET. Улучшите структуру ваших PDF-файлов с помощью пользовательских тегов. |  
+| [Элементы структуры иллюстрации](./illustration-structure-elements/) | Пошаговое руководство по использованию ресурсов иллюстраций с Aspose.PDF для .NET. Улучшите представление ваших PDF-файлов с помощью изображений. |  
+| [Элементы встроенной структуры](./inline-structure-elements/) | Пошаговое руководство по использованию онлайн-структурных элементов с Aspose.PDF для .NET. Организуйте свои PDF-файлы с помощью заголовков и абзацев. |  
+| [Элементы структуры ссылок](./link-structure-elements/) | Пошаговое руководство по использованию элементов структуры ссылок в Aspose.PDF для .NET. Создавайте гиперссылки в PDF-документах. |  
+| [Корневая структура](./root-structure/) | Пошаговое руководство по использованию элементов корневой структуры с Aspose.PDF для .NET для доступа к корню и объекту StructTreeRoot PDF-документа. |  
+| [Настройка языка и названия](./setup-language-and-title/) | Пошаговое руководство по настройке языка и заголовка PDF-документа с помощью Aspose.PDF для .NET. Создавайте персонализированные многоязычные документы. |  
+| [Свойства элементов конструкции в PDF-файле](./structure-elements-properties/) | Пошаговое руководство по работе со свойствами элемента конструкции в PDF-файле с помощью Aspose.PDF для .NET. Создавайте насыщенные информацией структурные элементы. |  
+| [Ячейка таблицы стилей](./style-table-cell/) | Узнайте, как стилизовать ячейки таблицы с помощью Aspose.PDF для .NET: пошаговое руководство по созданию и настройке таблиц. |  
+| [Элемент таблицы стилей](./style-table-element/) | Узнайте, как форматировать элемент таблицы с помощью Aspose.PDF для .NET. Пошаговое руководство по настройке стилей и свойств. |  
+| [Строка таблицы стилей](./style-table-row/) | Узнайте, как настроить строки таблицы с помощью Aspose.PDF для .NET, пошаговое руководство по стилизации и форматированию строк. |  
+| [Структура текста стиля в PDF-файле](./style-text-structure/) | Узнайте, как форматировать текстовую структуру в PDF-файле с помощью Aspose.PDF для .NET. Пошаговое руководство по стилизации текста. |  
+| [PDF-контент с тегами](./tagged-pdf-content/) | Узнайте, как работать с размеченным содержимым в PDF-документе с помощью Aspose.PDF для .NET. Пошаговое руководство по использованию тегов. |  
+| [Пометить изображение в существующем PDF-файле](./tag-image-in-existing-pdf/) | Узнайте, как разметить изображение в существующем PDF-файле с помощью Aspose.PDF для .NET. Пошаговое руководство по добавлению тегов к изображениям. |  
+| [Элементы структуры текстового блока](./text-block-structure-elements/) | Узнайте, как использовать Aspose.PDF для .NET для добавления элементов структуры текстового блока, таких как заголовки и абзацы с тегами, в существующий документ PDF. |  
+| [Элементы текстовой структуры в PDF-файле](./text-structure-elements/) | Узнайте, как добавлять элементы текстовой структуры в файл PDF с помощью Aspose.PDF для .NET. Улучшите структуру и доступность ваших PDF-файлов. |  
+| [Проверка PDF-файла](./validate-pdf/) | Узнайте, как проверить файл PDF с помощью Aspose.PDF для .NET. Проверьте его соответствие стандартам и сформируйте отчет о проверке. |  

@@ -1,23 +1,23 @@
 ---
-title: Add lnk Annotation
-linktitle: Add lnk Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add Ink Annotation feature to PDF documents in C# using Aspose.PDF for .NET with step-by-step guide and full source code.
+title: lnk Ek Açıklaması Ekle
+linktitle: lnk Ek Açıklaması Ekle
+second_title: .NET API Referansı için Aspose.PDF
+description: Adım adım kılavuz ve tam kaynak koduyla Aspose.PDF for .NET kullanarak C#'ta PDF belgelerine Mürekkep Açıklaması özelliğini nasıl ekleyeceğinizi öğrenin.
 type: docs
 weight: 20
 url: /tr/net/annotations/addlnkannotation/
 ---
-Aspose.PDF for .NET is a powerful library that enables developers to perform various PDF operations. One such operation is adding Ink Annotation to PDF documents. In this article, we will provide a step-by-step guide to explain the C# source code for adding Ink Annotation using Aspose.PDF for .NET. Let's get started!
+Aspose.PDF for .NET, geliştiricilerin çeşitli PDF işlemlerini gerçekleştirmesine olanak tanıyan güçlü bir kütüphanedir. Böyle bir işlem, PDF belgelerine Mürekkep Açıklaması eklemektir. Bu makalede, Aspose.PDF for .NET kullanarak Mürekkep Açıklaması eklemek için C# kaynak kodunu açıklayan adım adım bir kılavuz sunacağız. Başlayalım!
 
-## Understanding the Ink Annotation Feature of Aspose.PDF for .NET
+## Aspose.PDF for .NET'in Mürekkep Açıklaması Özelliğini Anlamak
 
-Before diving into the C# source code, let's first understand what Ink Annotation is and its uses.
+C# kaynak koduna dalmadan önce, Mürekkep Açıklamasının ne olduğunu ve kullanımlarını anlayalım.
 
-Ink Annotation is a way to draw freeform ink annotations on PDF documents. It allows you to create annotations with a stylus or a mouse. This feature is useful in situations where you need to draw diagrams, sketches, or other types of annotations.
+Mürekkep Açıklaması, PDF belgelerine serbest biçimli mürekkep açıklamaları çizmenin bir yoludur. Bir kalem veya fare ile açıklamalar oluşturmanıza olanak tanır. Bu özellik diyagramlar, çizimler veya diğer türde açıklamaları çizmeniz gereken durumlarda kullanışlıdır.
 
-## Step 1: Creating a New Document
+## Adım 1: Yeni Bir Belge Oluşturma
 
-The first step in adding Ink Annotation to a PDF document is to create a new instance of the Document class. This is achieved using the following code snippet:
+Bir PDF belgesine Mürekkep Açıklaması eklemenin ilk adımı, Belge sınıfının yeni bir örneğini oluşturmaktır. Bu, aşağıdaki kod parçacığı kullanılarak elde edilir:
 
 ```csharp
 string dataDir = "YOUR DATA DIRECTORY";
@@ -25,11 +25,11 @@ Document doc = new Document();
 Page pdfPage = doc.Pages.Add();
 ```
 
-Here, we create a new instance of the Document class and add a new page to it.
+Burada Document sınıfının yeni bir örneğini oluşturup ona yeni bir sayfa ekliyoruz.
 
-## Step 2: Creating Ink Annotation
+## Adım 2: Mürekkep Açıklaması Oluşturma
 
-The next step is to create an instance of the InkAnnotation class. This is done using the following code snippet:
+Bir sonraki adım InkAnnotation sınıfının bir örneğini oluşturmaktır. Bu, aşağıdaki kod parçacığı kullanılarak yapılır:
 
 ```csharp
 System.Drawing.Rectangle drect = new System.Drawing.Rectangle();
@@ -54,25 +54,25 @@ ia.Opacity = 0.5;
 pdfPage.Annotations.Add(ia);
 ```
 
-Here, we first create a rectangle using the System.Drawing.Rectangle class and convert it to Aspose.Pdf.Rectangle using the FromRect method. We then create an instance of the InkAnnotation class using the rectangle, a list of points, and the page where the annotation is added.
+Burada öncelikle System.Drawing.Rectangle sınıfını kullanarak bir dikdörtgen oluşturuyoruz ve bunu FromRect yöntemini kullanarak Aspose.Pdf.Rectangle'a dönüştürüyoruz. Daha sonra dikdörtgeni, noktaların listesini ve açıklamanın eklendiği sayfayı kullanarak InkAnnotation sınıfının bir örneğini oluştururuz.
 
-We then set various properties of the InkAnnotation, such as the title, color, cap style, border, and opacity. Finally, we add the annotation to the page using the Annotations.Add method.
+Daha sonra InkAnnotation'ın başlık, renk, kapak stili, kenarlık ve opaklık gibi çeşitli özelliklerini ayarlıyoruz. Son olarak Annotations.Add metodunu kullanarak açıklamayı sayfaya ekliyoruz.
 
-## Step 3: Saving the Document
+## Adım 3: Belgeyi Kaydetme
 
-The final step is to save the PDF document with the Ink Annotation added. This is achieved using the following code snippet:
+Son adım, PDF belgesini Mürekkep Açıklaması eklenmiş olarak kaydetmektir. Bu, aşağıdaki kod parçacığı kullanılarak elde edilir:
 
 ```csharp
 dataDir = dataDir + "AddlnkAnnotation_out.pdf";
 doc.Save(dataDir);
 ```
 
-Here, we concatenate the output file name to the data directory and save the document using the Save method.
+Burada çıktı dosyası adını veri dizinine birleştirip Save yöntemini kullanarak belgeyi kaydediyoruz.
 
-### Example source code for Adding Ink Annotation using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Mürekkep Açıklaması Eklemek için örnek kaynak kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DATA DIRECTORY";
 
 
@@ -100,32 +100,32 @@ ia.Opacity = 0.5;
 pdfPage.Annotations.Add(ia);
 
 dataDir = dataDir + "AddlnkAnnotation_out.pdf";
-// Save output file
+// Çıkış dosyasını kaydet
 doc.Save(dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we explored how to add Ink Annotations to a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and C# source code provided, developers can easily implement Ink Annotation functionality in their PDF processing applications.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesine Mürekkep Açıklamalarının nasıl ekleneceğini araştırdık. Geliştiriciler, sağlanan adım adım kılavuzu ve C# kaynak kodunu takip ederek, Mürekkep Açıklaması işlevini PDF işleme uygulamalarında kolayca uygulayabilirler.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is an Ink Annotation in a PDF document?
+#### S: PDF belgesindeki Mürekkep Açıklaması nedir?
 
-A: An Ink Annotation in a PDF document allows users to draw freeform ink annotations using a stylus or mouse. It is commonly used to add hand-drawn sketches, diagrams, or other freehand annotations to a PDF.
+C: PDF belgesindeki Mürekkep Açıklaması, kullanıcıların kalem veya fare kullanarak serbest biçimli mürekkep açıklamaları çizmesine olanak tanır. PDF'ye elle çizilmiş çizimler, diyagramlar veya diğer serbest el açıklamalarını eklemek için yaygın olarak kullanılır.
 
-#### Q: Can I customize the appearance of the Ink Annotation?
+#### S: Mürekkep Açıklamasının görünümünü özelleştirebilir miyim?
 
-A: Yes, Aspose.PDF for .NET provides various properties to customize the appearance of the Ink Annotation, such as color, opacity, cap style, border width, and more. Developers can adjust these properties to meet their specific requirements.
+C: Evet, Aspose.PDF for .NET, Mürekkep Açıklamasının görünümünü özelleştirmek için renk, opaklık, kapak stili, kenarlık genişliği ve daha fazlası gibi çeşitli özellikler sağlar. Geliştiriciler bu özellikleri kendi özel gereksinimlerini karşılayacak şekilde ayarlayabilir.
 
-#### Q: Is it possible to add multiple Ink Annotations to a single PDF page?
+#### S: Tek bir PDF sayfasına birden fazla Mürekkep Açıklaması eklemek mümkün mü?
 
-A: Yes, you can add multiple Ink Annotations to a single PDF page using Aspose.PDF for .NET. Each Ink Annotation can have its own set of points and customized appearance.
+C: Evet, Aspose.PDF for .NET'i kullanarak tek bir PDF sayfasına birden fazla Mürekkep Açıklaması ekleyebilirsiniz. Her Mürekkep Açıklamasının kendine ait noktaları ve özelleştirilmiş görünümü olabilir.
 
-#### Q: Can I add Ink Annotations to existing PDF documents?
+#### S: Mevcut PDF belgelerine Mürekkep Açıklamaları ekleyebilir miyim?
 
-A: Yes, Aspose.PDF for .NET allows you to add Ink Annotations to both newly created PDF documents and existing PDF files. You can open an existing PDF, add Ink Annotations, and save the updated document.
+C: Evet, Aspose.PDF for .NET, hem yeni oluşturulan PDF belgelerine hem de mevcut PDF dosyalarına Mürekkep Açıklamaları eklemenizi sağlar. Mevcut bir PDF'yi açabilir, Mürekkep Açıklamaları ekleyebilir ve güncellenen belgeyi kaydedebilirsiniz.
 
-#### Q: What are some common use cases for Ink Annotations in PDF documents?
+#### S: PDF belgelerindeki Mürekkep Açıklamalarının yaygın kullanım durumları nelerdir?
 
-A: Ink Annotations are useful for a wide range of applications, including adding signatures or handwritten notes to PDF forms, annotating architectural blueprints or engineering drawings, and marking up documents for collaborative review.
+C: Mürekkep Açıklamaları, PDF formlarına imzalar veya el yazısı notlar ekleme, mimari planlara veya mühendislik çizimlerine açıklama ekleme ve ortak inceleme için belgeleri işaretleme dahil olmak üzere çok çeşitli uygulamalar için kullanışlıdır.

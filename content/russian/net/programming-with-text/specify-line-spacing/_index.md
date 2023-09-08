@@ -1,28 +1,28 @@
 ---
-title: Specify Line Spacing In PDF File
-linktitle: Specify Line Spacing In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to specify line spacing in PDF file using Aspose.PDF for .NET.
+title: Укажите межстрочный интервал в PDF-файле
+linktitle: Укажите межстрочный интервал в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как указать межстрочный интервал в файле PDF с помощью Aspose.PDF для .NET.
 type: docs
 weight: 510
 url: /ru/net/programming-with-text/specify-line-spacing/
 ---
-This tutorial explains how to specify line spacing in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the process step by step.
+В этом руководстве объясняется, как указать межстрочный интервал в файле PDF с помощью Aspose.PDF для .NET. Приведенный исходный код C# демонстрирует процесс шаг за шагом.
 
-## Prerequisites
+## Предварительные условия
 
-Before proceeding with the tutorial, make sure you have the following:
+Прежде чем продолжить обучение, убедитесь, что у вас есть следующее:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Базовые знания языка программирования C#.
+- Установлена библиотека Aspose.PDF для .NET. Вы можете получить его с веб-сайта Aspose или использовать NuGet для установки в свой проект.
 
-## Step 1: Set up the project
+## Шаг 1. Настройте проект
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Начните с создания нового проекта C# в предпочитаемой вами интегрированной среде разработки (IDE) и добавьте ссылку на библиотеку Aspose.PDF для .NET.
 
-## Step 2: Import necessary namespaces
+## Шаг 2. Импортируйте необходимые пространства имен.
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Добавьте следующие директивы using в начало файла C#, чтобы импортировать необходимые пространства имен:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,44 +30,44 @@ using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-## Step 3: Set the path to the document directory
+## Шаг 3. Установите путь к каталогу документов.
 
-Set the path to your document directory using the `dataDir` variable:
+ Задайте путь к каталогу вашего документа, используя`dataDir` переменная:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Заменять`"YOUR DOCUMENT DIRECTORY"` с фактическим путем к каталогу вашего документа.
 
-## Step 4: Load the input PDF file
+## Шаг 4. Загрузите входной PDF-файл.
 
-Load the input PDF file using the `Document` class:
+ Загрузите входной PDF-файл, используя`Document` сорт:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 5: Create TextFormattingOptions
+## Шаг 5. Создайте параметры форматирования текста
 
-Create a `TextFormattingOptions` object and set the line spacing mode to `FullSize`:
+ Создать`TextFormattingOptions` объект и установите режим межстрочного интервала на`FullSize`:
 
 ```csharp
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 ```
 
-## Step 6: Create a TextFragment
+## Шаг 6. Создайте TextFragment
 
-Create a `TextFragment` object and specify the text content:
+ Создать`TextFragment` объект и укажите текстовое содержимое:
 
 ```csharp
 TextFragment textFragment = new TextFragment("Hello world");
 ```
 
-## Step 7: Load the font file (optional)
+## Шаг 7. Загрузите файл шрифта (необязательно).
 
-If you want to use a specific font for the text, load the TrueType font file into a `FileStream` object:
+ Если вы хотите использовать для текста определенный шрифт, загрузите файл шрифта TrueType в`FileStream` объект:
 
 ```csharp
 string fontFile = dataDir + "HPSimplified.TTF";
@@ -77,111 +77,111 @@ using (FileStream fontStream = File.OpenRead(fontFile))
 }
 ```
 
-Replace `"HPSimplified.TTF"` with the actual font file name.
+ Заменять`"HPSimplified.TTF"` с фактическим именем файла шрифта.
 
-## Step 8: Specify the text position and line spacing
+## Шаг 8. Укажите положение текста и межстрочный интервал.
 
-Set the position for the text fragment and assign the `TextFormattingOptions` to the `TextState.FormattingOptions` property:
+ Задайте положение фрагмента текста и назначьте`TextFormattingOptions` к`TextState.FormattingOptions` свойство:
 
 ```csharp
 textFragment.Position = new Position(100, 600);
 textFragment.TextState.FormattingOptions = formattingOptions;
 ```
 
-## Step 9: Add the text to the document
+## Шаг 9: Добавьте текст в документ
 
-Add the text fragment to the document, either by appending it to a `TextBuilder` or directly to a page's `Paragraphs` collection:
+ Добавьте фрагмент текста в документ, либо добавив его в`TextBuilder` или непосредственно на страницу`Paragraphs` коллекция:
 
 ```csharp
 var page = doc.Pages.Add();
 page.Paragraphs.Add(textFragment);
 ```
 
-## Step 10: Save the resulting PDF document
+## Шаг 10: Сохраните полученный PDF-документ.
 
-Save the modified PDF document:
+Сохраните измененный PDF-документ:
 
 ```csharp
 dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
 doc.Save(dataDir);
 ```
 
-Make sure to replace `"SpecifyLineSpacing_out.pdf"` with the desired output file name.
+ Обязательно замените`"SpecifyLineSpacing_out.pdf"` с желаемым именем выходного файла.
 
-### Sample source code for Specify Line Spacing using Aspose.PDF for .NET 
+### Пример исходного кода для указания межстрочного интервала с помощью Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string fontFile = dataDir + "HPSimplified.TTF";
-// Load input PDF file
+// Загрузить входной PDF-файл
 Document doc = new Document();
-//Create TextFormattingOptions with LineSpacingMode.FullSize
+//Создайте TextFormattingOptions с помощью LineSpacingMode.FullSize
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
-// Create text builder object for first page of document
-//TextBuilder textBuilder = new TextBuilder(doc.Pages[1]);
-// Create text fragment with sample string
+// Создать объект построителя текста для первой страницы документа
+//TextBuilder textBuilder = новый TextBuilder(doc.Pages[1]);
+// Создать фрагмент текста с образцом строки
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
-	// Load the TrueType font into stream object
+	// Загрузите шрифт TrueType в объект потока.
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
-		// Set the font name for text string
+		//Установите имя шрифта для текстовой строки
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		// Specify the position for Text Fragment
+		// Укажите положение фрагмента текста
 		textFragment.Position = new Position(100, 600);
-		//Set TextFormattingOptions of current fragment to predefined(which points to LineSpacingMode.FullSize)
+		//Установите для TextFormattingOptions текущего фрагмента значение предопределенное (что указывает на LineSpacingMode.FullSize)
 		textFragment.TextState.FormattingOptions = formattingOptions;
-		// Add the text to TextBuilder so that it can be placed over the PDF file
+		// Добавьте текст в TextBuilder, чтобы его можно было разместить поверх PDF-файла.
 		//textBuilder.AppendText(textFragment);
 		var page = doc.Pages.Add();
 		page.Paragraphs.Add(textFragment);
 	}
 	dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
-	// Save resulting PDF document
+	// Сохраните полученный PDF-документ.
 	doc.Save(dataDir);
 }
 ```
 
-## Conclusion
+## Заключение
 
-Congratulations! You have successfully learned how to specify line spacing in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to saving the modified document. You can now incorporate this code into your own C# projects to customize the line spacing of text in PDF files.
+Поздравляем! Вы успешно научились указывать межстрочный интервал в PDF-документе с помощью Aspose.PDF для .NET. В этом руководстве представлено пошаговое руководство: от настройки проекта до сохранения измененного документа. Теперь вы можете включить этот код в свои собственные проекты C#, чтобы настроить межстрочный интервал текста в файлах PDF.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of the "Specify Line Spacing In PDF File" tutorial?
+#### Вопрос: Какова цель руководства «Указание межстрочного интервала в PDF-файле»?
 
-A: The "Specify Line Spacing In PDF File" tutorial aims to guide users on how to use the Aspose.PDF library for .NET to customize the line spacing of text within a PDF document. The tutorial provides step-by-step instructions and C# code samples to demonstrate the process.
+О: Учебное пособие «Указание межстрочного интервала в PDF-файле» призвано помочь пользователям использовать библиотеку Aspose.PDF для .NET для настройки межстрочного интервала текста в PDF-документе. В руководстве представлены пошаговые инструкции и примеры кода C# для демонстрации процесса.
 
-#### Q: How does this tutorial help in specifying line spacing within a PDF document?
+#### Вопрос: Как это руководство помогает указать межстрочный интервал в документе PDF?
 
-A: This tutorial helps users understand how to utilize the capabilities of Aspose.PDF for .NET to specify line spacing for text in a PDF document. By following the provided steps and code examples, users can adjust the line spacing according to their preferences.
+О: Это руководство помогает пользователям понять, как использовать возможности Aspose.PDF для .NET для указания межстрочного интервала для текста в PDF-документе. Следуя предоставленным шагам и примерам кода, пользователи могут настроить межстрочный интервал в соответствии со своими предпочтениями.
 
-#### Q: What prerequisites are required to follow this tutorial?
+#### Вопрос: Какие предварительные условия необходимы для изучения этого руководства?
 
-A: Before starting the tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or install it in your project using NuGet.
+О: Прежде чем приступить к изучению руководства, вы должны иметь базовое представление о языке программирования C#. Кроме того, вам необходимо установить библиотеку Aspose.PDF for .NET. Вы можете получить его с веб-сайта Aspose или установить в свой проект с помощью NuGet.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### Вопрос: Как мне настроить свой проект для использования этого руководства?
 
-A: To get started, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This enables you to leverage the library's features for working with PDF documents and customizing line spacing.
+О: Для начала создайте новый проект C# в предпочитаемой вами интегрированной среде разработки (IDE) и добавьте ссылку на библиотеку Aspose.PDF для .NET. Это позволяет вам использовать возможности библиотеки для работы с PDF-документами и настройки межстрочного интервала.
 
-#### Q: Can I use this tutorial to specify line spacing for any type of text?
+#### Вопрос: Могу ли я использовать это руководство для указания межстрочного интервала для любого типа текста?
 
-A: Yes, this tutorial provides instructions on how to specify line spacing for any text content within a PDF document using Aspose.PDF for .NET. You can use the provided code samples to adjust the line spacing of text according to your needs.
+О: Да, в этом руководстве представлены инструкции о том, как указать межстрочный интервал для любого текстового содержимого в PDF-документе с помощью Aspose.PDF для .NET. Вы можете использовать предоставленные примеры кода, чтобы настроить межстрочный интервал текста в соответствии с вашими потребностями.
 
-#### Q: How do I specify the line spacing mode in the tutorial?
+#### Вопрос: Как указать режим межстрочного интервала в руководстве?
 
-A: The tutorial demonstrates how to create a `TextFormattingOptions` object and set its `LineSpacing` property to `TextFormattingOptions.LineSpacingMode.FullSize`. This mode specifies full line spacing for the text content.
+ О: В этом уроке показано, как создать`TextFormattingOptions` объект и установите его`LineSpacing` собственность`TextFormattingOptions.LineSpacingMode.FullSize`. В этом режиме задается полный межстрочный интервал для текстового содержимого.
 
-#### Q: How can I load a specific font for the text?
+#### Вопрос: Как загрузить для текста определенный шрифт?
 
-A: If you wish to use a specific font for the text content, the tutorial provides guidance on how to load a TrueType font file into a `FileStream` object and set it as the font for the `TextFragment`. This enables you to customize the font of the text along with its line spacing.
+ О: Если вы хотите использовать определенный шрифт для текстового содержимого, в руководстве приведены инструкции по загрузке файла шрифта TrueType в файл.`FileStream` объект и установите его в качестве шрифта для`TextFragment`. Это позволяет вам настроить шрифт текста и его межстрочный интервал.
 
-#### Q: How do I customize the position of the text within the PDF document?
+#### Вопрос: Как настроить положение текста в PDF-документе?
 
-A: To customize the position of the text, create a `TextFragment` object and set its `Position` property to the desired coordinates (X and Y). This allows you to control where the text is placed within the PDF document.
+ О: Чтобы настроить положение текста, создайте`TextFragment` объект и установите его`Position`свойство к нужным координатам (X и Y). Это позволяет вам контролировать расположение текста в PDF-документе.
 
-#### Q: Can I apply these line spacing modifications to existing PDF documents?
+#### Вопрос: Могу ли я применить эти изменения межстрочного интервала к существующим PDF-документам?
 
-A: Yes, you can modify line spacing for text in existing PDF documents. The tutorial demonstrates how to create a `TextFragment` with the specified line spacing and position, and then add it to a page's `Paragraphs` collection.
+ О: Да, вы можете изменить межстрочный интервал для текста в существующих PDF-документах. В уроке показано, как создать`TextFragment` с указанным межстрочным интервалом и положением, а затем добавьте его в файл страницы.`Paragraphs` коллекция.

@@ -1,17 +1,17 @@
 ---
-title: Customize Page Numbes While Adding TOC
-linktitle: Customize Page Numbes While Adding TOC
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to customize page numbers while adding a table of contents (TOC) using Aspose.PDF for .NET with this step-by-step guide and code example.
+title: Anpassa sidnummer när du lägger till innehållsförteckning
+linktitle: Anpassa sidnummer när du lägger till innehållsförteckning
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du anpassar sidnummer samtidigt som du lägger till en innehållsförteckning (TOC) med Aspose.PDF för .NET med denna steg-för-steg-guide och kodexempel.
 type: docs
 weight: 100
 url: /sv/net/programming-with-document/customizepagenumbeswhileaddingtoc/
 ---
-In this tutoria, we will explore how to customize page numbers while adding a table of contents (TOC) using Aspose.PDF for .NET. We will provide step-by-step guidance, along with a code example, to help you achieve this.
+I den här handledningen kommer vi att utforska hur man anpassar sidnummer samtidigt som man lägger till en innehållsförteckning (TOC) med Aspose.PDF för .NET. Vi kommer att ge steg-för-steg-vägledning, tillsammans med ett kodexempel, för att hjälpa dig uppnå detta.
 
-## Step 1: Loading an existing PDF file
+## Steg 1: Ladda en befintlig PDF-fil
 
-First, we need to load an existing PDF file. For this tutorial, we will use the file "42824.pdf" located in the "YOUR DOCUMENT DIRECTORY" directory. Replace this directory path with the actual path to your document directory.
+Först måste vi ladda en befintlig PDF-fil. För den här handledningen kommer vi att använda filen "42824.pdf" som finns i katalogen "DIN DOKUMENTKATOLOG". Ersätt denna katalogsökväg med den faktiska sökvägen till din dokumentkatalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -20,17 +20,17 @@ string outFile = dataDir + "42824_out.pdf";
 Document doc = new Document(inFile);
 ```
 
-## Step 2: Adding a TOC page
+## Steg 2: Lägga till en innehållsförteckningssida
 
-Next, we need to add a new page at the beginning of the document to serve as the TOC page. We can achieve this by using the `Insert()` method of the `Pages` collection of the `Document` object.
+ Därefter måste vi lägga till en ny sida i början av dokumentet för att fungera som innehållsförteckningssida. Vi kan uppnå detta genom att använda`Insert()` metod för`Pages` samling av`Document` objekt.
 
 ```csharp
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
 ```
 
-## Step 3: Creating a TOC object
+## Steg 3: Skapa ett TOC-objekt
 
-To create a TOC object, we first need to create a `TocInfo` object and set its properties. In this tutorial, we will set the title of the TOC to "Table Of Contents" and the page number prefix to "P".
+ För att skapa ett TOC-objekt måste vi först skapa ett`TocInfo` objekt och ställ in dess egenskaper. I den här handledningen kommer vi att ställa in titeln på innehållsförteckningen till "Innehållsförteckning" och sidnummerprefixet till "P".
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -42,99 +42,99 @@ tocInfo.PageNumbersPrefix = "P";
 tocPage.TocInfo = tocInfo;
 ```
 
-## Step 4: Creating TOC entries
+## Steg 4: Skapa TOC-poster
 
-To create TOC entries, we need to loop through all the pages of the document, except for the TOC page, and create a heading object for each page. We can then add the heading object to the TOC page and specify its destination page.
+För att skapa TOC-poster måste vi gå igenom alla sidor i dokumentet, förutom innehållsförteckningssidan, och skapa ett rubrikobjekt för varje sida. Vi kan sedan lägga till rubrikobjektet på TOC-sidan och ange dess målsida.
 
 ```csharp
 for (int i = 1; i < doc.Pages.Count; i++)
 {
-    // Create Heading object
+    // Skapa rubrikobjekt
     Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
     TextSegment segment2 = new TextSegment();
     heading2.TocPage = tocPage;
     heading2.Segments.Add(segment2);
-    // Specify the destination page for heading object
+    // Ange målsidan för rubrikobjektet
     heading2.DestinationPage = doc.Pages[i + 1];
-    // Destination page
+    // Destinationssida
     heading2.Top = doc.Pages[i + 1].Rect.Height;
-    // Destination coordinate
+    // Destinationskoordinat
     segment2.Text = "Page " + i.ToString();
-    // Add heading to page containing TOC
+    // Lägg till rubrik på sidan som innehåller innehållsförteckningen
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
-## Step 5: Saving the updated document
+## Steg 5: Spara det uppdaterade dokumentet
 
-Finally, we need to save the updated document to a new file. We can achieve this by using the `Save()` method of the `Document` object.
+Slutligen måste vi spara det uppdaterade dokumentet till en ny fil. Vi kan uppnå detta genom att använda`Save()` metod för`Document` objekt.
 
 ```csharp
 doc.Save(outFile);
 ```
 
-### Example source code for customizing page numbes while adding TOC using Aspose.PDF for .NET
+### Exempel på källkod för att anpassa sidnummer samtidigt som TOC läggs till med Aspose.PDF för .NET
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "42824.pdf";
 string outFile = dataDir + "42824_out.pdf";
-// Load an existing PDF files
+// Ladda en befintlig PDF-fil
 Document doc = new Document(inFile);
-// Get access to first page of PDF file
+// Få tillgång till första sidan av PDF-filen
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
-// Create object to represent TOC information
+// Skapa objekt för att representera TOC-information
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
-// Set the title for TOC
+// Ställ in titeln för TOC
 tocInfo.Title = title;
 tocInfo.PageNumbersPrefix = "P";
 tocPage.TocInfo = tocInfo;
 for (int i = 1; i<doc.Pages.Count; i++)
 {
-	// Create Heading object
+	// Skapa rubrikobjekt
 	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
 	TextSegment segment2 = new TextSegment();
 	heading2.TocPage = tocPage;
 	heading2.Segments.Add(segment2);
-	// Specify the destination page for heading object
+	// Ange målsidan för rubrikobjektet
 	heading2.DestinationPage = doc.Pages[i + 1];
-	// Destination page
+	// Destinationssida
 	heading2.Top = doc.Pages[i + 1].Rect.Height;
-	// Destination coordinate
+	// Destinationskoordinat
 	segment2.Text = "Page " + i.ToString();
-	// Add heading to page containing TOC
+	// Lägg till rubrik på sidan som innehåller innehållsförteckningen
 	tocPage.Paragraphs.Add(heading2);
 }
 
-// Save the updated document
+// Spara det uppdaterade dokumentet
 doc.Save(outFile);
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we have provided step-by-step guidance on how to customize page numbers while adding a TOC using Aspose.PDF for .NET. We have also provided a code example that you can use as a reference when implementing this feature in your
+I den här handledningen har vi gett steg-för-steg-vägledning om hur man anpassar sidnummer samtidigt som man lägger till en innehållsförteckning med Aspose.PDF för .NET. Vi har också tillhandahållit ett kodexempel som du kan använda som referens när du implementerar den här funktionen i din
 
 ### FAQ's
 
-#### Q: What is a table of contents (TOC) in a PDF document?
+#### F: Vad är en innehållsförteckning (TOC) i ett PDF-dokument?
 
-A: A table of contents (TOC) in a PDF document is a navigational aid that provides an organized list of document sections or chapters along with their corresponding page numbers. It allows readers to quickly navigate to specific sections within the document.
+S: En innehållsförteckning (TOC) i ett PDF-dokument är ett navigeringshjälpmedel som tillhandahåller en organiserad lista över dokumentavsnitt eller kapitel tillsammans med motsvarande sidnummer. Det låter läsare snabbt navigera till specifika avsnitt i dokumentet.
 
-#### Q:Why would I want to customize page numbers in a TOC?
+#### F: Varför skulle jag vilja anpassa sidnummer i en innehållsförteckning?
 
-A: Customizing page numbers in a TOC can be useful when you want to use a specific page numbering format or include additional information along with the page numbers. It allows you to create a more personalized and informative table of contents.
+S: Att anpassa sidnummer i en innehållsförteckning kan vara användbart när du vill använda ett specifikt sidnumreringsformat eller inkludera ytterligare information tillsammans med sidnumren. Det låter dig skapa en mer personlig och informativ innehållsförteckning.
 
-#### Q: Can I include hyperlinks in the TOC to link to specific sections or pages within the PDF document?
+#### F: Kan jag inkludera hyperlänkar i innehållsförteckningen för att länka till specifika avsnitt eller sidor i PDF-dokumentet?
 
-A: Yes, Aspose.PDF for .NET allows you to create hyperlinks in the TOC that link to specific sections or pages within the PDF document. This enhances the interactivity and navigation of the PDF document.
+S: Ja, Aspose.PDF för .NET låter dig skapa hyperlänkar i innehållsförteckningen som länkar till specifika avsnitt eller sidor i PDF-dokumentet. Detta förbättrar PDF-dokumentets interaktivitet och navigering.
 
-#### Q: Is Aspose.PDF for .NET compatible with PDF/A standards?
+#### F: Är Aspose.PDF för .NET kompatibel med PDF/A-standarder?
 
-A: Yes, Aspose.PDF for .NET supports PDF/A standards, including PDF/A-1, PDF/A-2, and PDF/A-3. It allows you to create PDF documents that comply with archiving and long-term preservation requirements.
+S: Ja, Aspose.PDF för .NET stöder PDF/A-standarder, inklusive PDF/A-1, PDF/A-2 och PDF/A-3. Det låter dig skapa PDF-dokument som uppfyller kraven för arkivering och långsiktigt bevarande.
 
-#### Q: Can I add more formatting to the TOC entries, such as font styles or colors?
+#### F: Kan jag lägga till mer formatering till innehållsförteckningsposterna, som typsnittsstilar eller färger?
 
-A: Yes, you can add additional formatting to the TOC entries, such as font styles, colors, and font sizes, using Aspose.PDF for .NET. This allows you to customize the appearance of the TOC as per your requirements.
+S: Ja, du kan lägga till ytterligare formatering till innehållsförteckningen, såsom teckensnitt, färger och teckenstorlekar, med Aspose.PDF för .NET. Detta gör att du kan anpassa utseendet på innehållsförteckningen enligt dina krav.

@@ -1,51 +1,51 @@
 ---
-title: Determine Line Break In PDF File
-linktitle: Determine Line Break In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to determine line breaks in PDF file using Aspose.PDF for .NET.
+title: Déterminer le saut de ligne dans un fichier PDF
+linktitle: Déterminer le saut de ligne dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment déterminer les sauts de ligne dans un fichier PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 130
 url: /fr/net/programming-with-text/determine-line-break/
 ---
-This tutorial will guide you through the process of determining line breaks in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Ce didacticiel vous guidera tout au long du processus de détermination des sauts de ligne dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Le code source C# fourni montre les étapes nécessaires.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Exigences
+Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio ou tout autre compilateur C# installé sur votre machine.
+- Aspose.PDF pour la bibliothèque .NET. Vous pouvez le télécharger depuis le site officiel d'Aspose ou utiliser un gestionnaire de packages comme NuGet pour l'installer.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Étape 1 : Configurer le projet
+1. Créez un nouveau projet C# dans votre environnement de développement préféré.
+2. Ajoutez une référence à la bibliothèque Aspose.PDF pour .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to determine line breaks, add the following using directives at the top of the file:
+## Étape 2 : Importer les espaces de noms requis
+Dans le fichier de code dans lequel vous souhaitez déterminer les sauts de ligne, ajoutez les directives using suivantes en haut du fichier :
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Étape 3 : Définir le répertoire des documents
+ Dans le code, localisez la ligne qui dit`string dataDir = "YOUR DOCUMENT DIRECTORY";` et remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin d'accès au répertoire où sont stockés vos documents.
 
-## Step 4: Create a new Document instance
-Instantiate a new `Document` object by adding the following line of code:
+## Étape 4 : Créer une nouvelle instance de document
+ Instancier un nouveau`Document` objet en ajoutant la ligne de code suivante :
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `page`.
+## Étape 5 : Ajouter une page au document
+ Ajoutez une nouvelle page au document à l'aide du`Add` méthode du`Pages`collection. Dans le code fourni, la nouvelle page est affectée à la variable`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 6: Add text fragments with line breaks
-Create a loop to add multiple text fragments to the page, each containing a paragraph with line breaks.
+## Étape 6 : Ajouter des fragments de texte avec des sauts de ligne
+Créez une boucle pour ajouter plusieurs fragments de texte à la page, chacun contenant un paragraphe avec des sauts de ligne.
 
 ```csharp
 for (int i = 0; i < 4; i++)
@@ -56,8 +56,8 @@ for (int i = 0; i < 4; i++)
 }
 ```
 
-## Step 7: Save the PDF document and extract line break information
-Save the PDF document using the `Save` method of the `Document` object. Then, extract the line break information using the `GetNotifications` method of the desired page.
+## Étape 7 : Enregistrez le document PDF et extrayez les informations de saut de ligne
+ Enregistrez le document PDF à l'aide du`Save` méthode du`Document` objet. Ensuite, extrayez les informations de saut de ligne à l'aide du`GetNotifications` méthode de la page souhaitée.
 
 ```csharp
 doc.Save(dataDir + "DetermineLineBreak_out.pdf");
@@ -65,9 +65,9 @@ string notifications = doc.Pages[1].GetNotifications();
 File.WriteAllText(dataDir + "notifications_out.txt", notifications);
 ```
 
-### Sample source code for Determine Line Break using Aspose.PDF for .NET 
+### Exemple de code source pour déterminer le saut de ligne à l'aide d'Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 Page page = doc.Pages.Add();
@@ -83,47 +83,47 @@ File.WriteAllText(dataDir + "notifications_out.txt", notifications);
 ```
 
 ## Conclusion
-You have successfully determined line breaks in a PDF document using Aspose.PDF for .NET. The line break information has been extracted and saved to a text file.
+Vous avez réussi à déterminer les sauts de ligne dans un document PDF à l'aide d'Aspose.PDF pour .NET. Les informations de saut de ligne ont été extraites et enregistrées dans un fichier texte.
 
-### FAQ's
+### FAQ
 
-#### Q: What is the main focus of this tutorial?
+#### Q : Quel est l’objectif principal de ce didacticiel ?
 
-A: This tutorial is focused on guiding you through the process of determining line breaks in a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the necessary steps to achieve this.
+R : Ce didacticiel a pour objectif de vous guider tout au long du processus de détermination des sauts de ligne dans un fichier PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Le code source C# fourni montre les étapes nécessaires pour y parvenir.
 
-#### Q: Which namespaces should I import for this tutorial?
+#### Q : Quels espaces de noms dois-je importer pour ce didacticiel ?
 
-A: In the code file where you want to determine line breaks, import the following namespaces at the beginning of the file:
+R : Dans le fichier de code dans lequel vous souhaitez déterminer les sauts de ligne, importez les espaces de noms suivants au début du fichier :
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-#### Q: How do I specify the document directory?
+#### Q : Comment spécifier le répertoire des documents ?
 
-A: In the code, find the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ R : Dans le code, recherchez la ligne`string dataDir = "YOUR DOCUMENT DIRECTORY";` et remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel vers votre répertoire de documents.
 
-#### Q: How do I create a new Document instance?
+#### Q : Comment créer une nouvelle instance de document ?
 
-A: In Step 4, you'll instantiate a new `Document` object using the provided code.
+ R : À l'étape 4, vous allez instancier un nouveau`Document` objet en utilisant le code fourni.
 
-#### Q: How do I add a page to the document?
+#### Q : Comment ajouter une page au document ?
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection.
+ R : À l'étape 5, vous ajouterez une nouvelle page au document à l'aide de l'outil`Add` méthode du`Pages` collection.
 
-#### Q: How do I add text fragments with line breaks?
+#### Q : Comment ajouter des fragments de texte avec des sauts de ligne ?
 
-A: In Step 6, you'll create a loop to add multiple text fragments to the page, each containing a paragraph with line breaks.
+R : À l'étape 6, vous allez créer une boucle pour ajouter plusieurs fragments de texte à la page, chacun contenant un paragraphe avec des sauts de ligne.
 
-#### Q: How do I save the PDF document and extract line break information?
+#### Q : Comment puis-je enregistrer le document PDF et extraire les informations de saut de ligne ?
 
-A: In Step 7, you'll save the PDF document using the `Save` method of the `Document` object. Then, you'll extract the line break information using the `GetNotifications` method of the desired page and save it to a text file.
+ R : À l'étape 7, vous enregistrerez le document PDF à l'aide du`Save` méthode du`Document` objet. Ensuite, vous extrayez les informations de saut de ligne à l'aide de la commande`GetNotifications` méthode de la page souhaitée et enregistrez-la dans un fichier texte.
 
-#### Q: What is the purpose of the extracted line break information?
+#### Q : A quoi servent les informations de saut de ligne extraites ?
 
-A: The extracted line break information provides details about the line breaks and notifications present in the PDF document. This can be useful for analyzing and understanding how text and paragraphs are structured within the document.
+R : Les informations de saut de ligne extraites fournissent des détails sur les sauts de ligne et les notifications présentes dans le document PDF. Cela peut être utile pour analyser et comprendre la façon dont le texte et les paragraphes sont structurés dans le document.
 
-#### Q: What is the main takeaway from this tutorial?
+#### Q : Quel est le principal point à retenir de ce didacticiel ?
 
-A: By following this tutorial, you've learned how to determine line breaks in a PDF document using Aspose.PDF for .NET. You can use this knowledge to extract and analyze line break information from PDF files programmatically.
+R : En suivant ce didacticiel, vous avez appris à déterminer les sauts de ligne dans un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez utiliser ces connaissances pour extraire et analyser les informations de saut de ligne à partir de fichiers PDF par programmation.

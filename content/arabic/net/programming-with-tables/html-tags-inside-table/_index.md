@@ -1,19 +1,19 @@
 ---
-title: HTML Tags Inside Table In PDF File
-linktitle: HTML Tags Inside Table In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use HTML tags inside a table in PDF file with Aspose.PDF for .NET.
+title: علامات HTML داخل الجدول في ملف PDF
+linktitle: علامات HTML داخل الجدول في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخدام علامات HTML داخل جدول في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 100
 url: /ar/net/programming-with-tables/html-tags-inside-table/
 ---
-In this tutorial, we are going to learn how to use HTML tags inside a table in a PDF document using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to insert HTML content into a table in a PDF document. Let's start!
+في هذا البرنامج التعليمي، سنتعلم كيفية استخدام علامات HTML داخل جدول في مستند PDF باستخدام Aspose.PDF for .NET. سنشرح الكود المصدري في لغة C# خطوة بخطوة. في نهاية هذا البرنامج التعليمي، ستعرف كيفية إدراج محتوى HTML في جدول في مستند PDF. لنبدأ!
 
-## Step 1: Setting up the environment
-Make sure you have configured your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## الخطوة 1: تهيئة البيئة
+تأكد من أنك قمت بتكوين بيئة تطوير C# الخاصة بك باستخدام Aspose.PDF لـ .NET. أضف المرجع إلى المكتبة واستورد مساحات الأسماء الضرورية.
 
-## Step 2: Creating table data
-We create a DataTable containing a "data" column of type String. We then add rows to this DataTable using HTML content.
+## الخطوة الثانية: إنشاء بيانات الجدول
+نقوم بإنشاء DataTable يحتوي على عمود "بيانات" من النوع String. نقوم بعد ذلك بإضافة صفوف إلى DataTable باستخدام محتوى HTML.
 
 ```csharp
 DataTable dt = new DataTable("Employee");
@@ -30,8 +30,8 @@ dr[0] = "<li>UPHS/Presbyterian - Dept. of Emergency Medicine: 51 N. 39th Street 
 dt.Rows.Add(dr);
 ```
 
-## Step 3: Creating the Document and Table
-We create a new PDF document and add a page in this document. Next, we initialize an instance of the Table class and set the table properties.
+## الخطوة 3: إنشاء المستند والجدول
+نقوم بإنشاء مستند PDF جديد ونضيف صفحة في هذا المستند. بعد ذلك، نقوم بتهيئة مثيل لفئة الجدول وتعيين خصائص الجدول.
 
 ```csharp
 Document doc = new Document();
@@ -48,31 +48,31 @@ margin. Bottom = 1.0F;
 tableProvider. DefaultCellPadding = margin;
 ```
 
-## Step 4: Importing data into the table
-We import the data from the DataTable into the table using the "ImportDataTable" method. We specify method parameters to indicate which range of rows and columns of the DataTable should be imported.
+## الخطوة 4: استيراد البيانات إلى الجدول
+نقوم باستيراد البيانات من DataTable إلى الجدول باستخدام طريقة "ImportDataTable". نحدد معلمات الطريقة للإشارة إلى نطاق الصفوف والأعمدة التي يجب استيرادها في DataTable.
 
 ```csharp
 tableProvider.ImportDataTable(dt, false, 0, 0, 3, 1, true);
 ```
 
-## Step 5: Adding the table to the document
-We add the table to the document page.
+## الخطوة 5: إضافة الجدول إلى المستند
+نضيف الجدول إلى صفحة الوثيقة.
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(tableProvider);
 ```
 
-## Stage 6: Saving the document
-We save the PDF document with the table containing HTML content.
+## المرحلة 6: حفظ الوثيقة
+نقوم بحفظ مستند PDF بالجدول الذي يحتوي على محتوى HTML.
 
 ```csharp
 doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 ```
 
-### Example source code for HTML Tags Inside Table using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لعلامات HTML داخل الجدول باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 DataTable dt = new DataTable("Employee");
@@ -90,13 +90,13 @@ dt.Rows.Add(dr);
 
 Document doc = new Document();
 doc.Pages.Add();
-// Initializes a new instance of the Table
+// تهيئة مثيل جديد للجدول
 Aspose.Pdf.Table tableProvider = new Aspose.Pdf.Table();
-//Set column widths of the table
+//ضبط عرض أعمدة الجدول
 tableProvider.ColumnWidths = "400 50 ";
-// Set the table border color as LightGray
+// قم بتعيين لون حدود الجدول باللون LightGray
 tableProvider.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.5F, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// Set the border for table cells
+// تعيين الحدود لخلايا الجدول
 tableProvider.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.5F, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 2.5F;
@@ -110,27 +110,27 @@ doc.Pages[1].Paragraphs.Add(tableProvider);
 doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 ```
 
-## Conclusion
-In this tutorial, we learned how to use HTML tags inside a table in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to insert HTML content into table cells in a PDF document using C#.
+## خاتمة
+في هذا البرنامج التعليمي، تعلمنا كيفية استخدام علامات HTML داخل جدول في مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الدليل التفصيلي لإدراج محتوى HTML في خلايا الجدول في مستند PDF باستخدام لغة C#.
 
-### FAQs for HTML tags inside table in PDF file
+### الأسئلة الشائعة حول علامات HTML داخل الجدول في ملف PDF
 
-#### Q: Can I use other HTML tags and attributes inside the table cells?
+#### س: هل يمكنني استخدام علامات وسمات HTML الأخرى داخل خلايا الجدول؟
 
-A: Yes, you can use various HTML tags and attributes inside the table cells, such as `<b>`, `<i>`, `<a>`, and many more. Aspose.PDF for .NET supports a wide range of HTML elements and styles that you can use to format the content within the table cells.
+ ج: نعم، يمكنك استخدام علامات وسمات HTML المختلفة داخل خلايا الجدول، مثل`<b>`, `<i>`, `<a>`، و أكثر من ذلك بكثير. يدعم Aspose.PDF for .NET نطاقًا واسعًا من عناصر وأنماط HTML التي يمكنك استخدامها لتنسيق المحتوى داخل خلايا الجدول.
 
-#### Q: Can I apply CSS styles to the HTML content inside the table cells?
+#### س: هل يمكنني تطبيق أنماط CSS على محتوى HTML داخل خلايا الجدول؟
 
-A: Yes, you can apply CSS styles to the HTML content inside the table cells. Aspose.PDF for .NET provides support for basic CSS styles that can be applied to the HTML elements.
+ج: نعم، يمكنك تطبيق أنماط CSS على محتوى HTML داخل خلايا الجدول. يوفر Aspose.PDF for .NET دعمًا لأنماط CSS الأساسية التي يمكن تطبيقها على عناصر HTML.
 
-#### Q: Is it possible to add images along with HTML content inside the table cells?
+#### س: هل من الممكن إضافة صور مع محتوى HTML داخل خلايا الجدول؟
 
-A: Yes, you can add images along with HTML content inside the table cells. You can use HTML `<img>` tags to include images from various sources, such as local files or URLs.
+ ج: نعم، يمكنك إضافة صور مع محتوى HTML داخل خلايا الجدول. يمكنك استخدام HTML`<img>` علامات لتضمين صور من مصادر مختلفة، مثل الملفات المحلية أو عناوين URL.
 
-#### Q: How can I specify different column widths for the table?
+#### س: كيف يمكنني تحديد عروض أعمدة مختلفة للجدول؟
 
-A: You can specify different column widths for the table using the `ColumnWidths` property of the table. The property takes a string containing space-separated values, where each value represents the width of a column in points.
+ ج: يمكنك تحديد عروض أعمدة مختلفة للجدول باستخدام الأمر`ColumnWidths` خاصية الجدول. تأخذ الخاصية سلسلة تحتوي على قيم مفصولة بمسافات، حيث تمثل كل قيمة عرض العمود بالنقاط.
 
-#### Q: Can I use nested tables inside a cell with HTML content?
+#### س: هل يمكنني استخدام الجداول المتداخلة داخل خلية تحتوي على محتوى HTML؟
 
-A: Yes, you can use nested tables inside a cell with HTML content. You can create separate table instances and add them as part of the HTML content inside a cell to achieve the nesting effect.
+ج: نعم، يمكنك استخدام الجداول المتداخلة داخل خلية تحتوي على محتوى HTML. يمكنك إنشاء مثيلات جدول منفصلة وإضافتها كجزء من محتوى HTML داخل الخلية لتحقيق تأثير التداخل.

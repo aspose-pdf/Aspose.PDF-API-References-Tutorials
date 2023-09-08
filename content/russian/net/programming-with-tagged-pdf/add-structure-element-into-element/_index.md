@@ -1,28 +1,28 @@
 ---
-title: Add Structure Element Into Element
-linktitle: Add Structure Element Into Element
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to add structure element to element in PDF document using Aspose.PDF for .NET.
+title: Добавить элемент структуры в элемент
+linktitle: Добавить элемент структуры в элемент
+second_title: Справочник по Aspose.PDF для .NET API
+description: Пошаговое руководство по добавлению элемента структуры к элементу в PDF-документе с помощью Aspose.PDF для .NET.
 type: docs
 weight: 20
 url: /ru/net/programming-with-tagged-pdf/add-structure-element-into-element/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to add a structure element to an element in a PDF document using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. Using the marked content structure features of Aspose.PDF, you can create a hierarchical structure in your PDF document.
+В этом уроке мы предоставим вам пошаговое руководство о том, как добавить элемент структуры к элементу в PDF-документе с помощью Aspose.PDF для .NET. Aspose.PDF — это мощная библиотека, которая позволяет программно создавать, манипулировать и конвертировать PDF-документы. Используя отмеченные функции структуры содержимого Aspose.PDF, вы можете создать иерархическую структуру в своем PDF-документе.
 
-## Prerequisites
+## Предварительные условия
 
-Before you begin, make sure you have the following prerequisites in place:
+Прежде чем начать, убедитесь, что у вас есть следующие предварительные условия:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. Visual Studio установлена с .NET Framework.
+2. Библиотека Aspose.PDF для .NET.
 
-## Step 1: Project Setup
+## Шаг 1: Настройка проекта
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+Для начала создайте новый проект в Visual Studio и добавьте ссылку на библиотеку Aspose.PDF для .NET. Вы можете скачать библиотеку с официального сайта Aspose и установить ее на свой компьютер.
 
-## Step 2: Import the necessary namespaces
+## Шаг 2. Импортируйте необходимые пространства имен.
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+В файл кода C# импортируйте пространства имен, необходимые для доступа к классам и методам, предоставляемым Aspose.PDF:
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Step 3: Creating the PDF document and defining the structured elements
+## Шаг 3. Создание PDF-документа и определение структурированных элементов.
 
-Use the following code to create a PDF document and define the structured elements:
+Используйте следующий код, чтобы создать документ PDF и определить структурированные элементы:
 
 ```csharp
 
@@ -96,31 +96,31 @@ p4.AppendChild(span42);
 p4.SetText(".");
 ```
 
-This code creates an empty PDF document and adds structured elements such as paragraphs and spans. Each structure element is created using the methods provided by Aspose.PDF.
+Этот код создает пустой PDF-документ и добавляет структурированные элементы, такие как абзацы и интервалы. Каждый элемент структуры создается с использованием методов, предоставляемых Aspose.PDF.
 
-## Step 4: Saving the PDF Document
+## Шаг 4. Сохранение PDF-документа
 
-Use the following code to save the PDF document:
+Используйте следующий код, чтобы сохранить PDF-документ:
 
 ```csharp
 document. Save(outFile);
 ```
 
-This code saves the PDF document with the structured elements to a specified file.
+Этот код сохраняет PDF-документ со структурированными элементами в указанный файл.
 
-### Sample source code for Add Structure Element Into Element using Aspose.PDF for .NET 
+### Пример исходного кода для добавления элемента структуры в элемент с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
 string logFile = dataDir + "46144_log.xml";
-// Creation document and getting Tagged Pdf Content
+// Создание документа и получение размеченного PDF-контента
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
-// Setting Title and Nature Language for document
+// Настройка заголовка и естественного языка для документа
 taggedContent.SetTitle("Text Elements Example");
 taggedContent.SetLanguage("en-US");
-// Getting Root structure element (Document structure element)
+// Получение элемента структуры Root (Элемент структуры документа)
 StructureElement rootElement = taggedContent.RootElement;
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
@@ -164,53 +164,53 @@ span42.SetText("Span_42");
 p4.AppendChild(span41);
 p4.AppendChild(span42);
 p4.SetText(".");
-// Save Tagged Pdf Document
+// Сохранить PDF-документ с тегами
 document.Save(outFile);
-// Checking PDF/UA compliance
+// Проверка соответствия PDF/UA
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, you learned how to add a structure element to an element in a PDF document using Aspose.PDF for .NET. Using the marked content structure features of Aspose.PDF, you can create a hierarchical structure in your PDF document, which makes it easier to manage and navigate through content.
+В этом уроке вы узнали, как добавить элемент структуры к элементу в PDF-документе с помощью Aspose.PDF для .NET. Используя отмеченные функции структуры содержимого Aspose.PDF, вы можете создать иерархическую структуру в своем PDF-документе, что упрощает управление содержимым и навигацию по нему.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of adding a structure element to an element in a PDF document using Aspose.PDF for .NET?
+#### Вопрос: Какова цель добавления элемента структуры к элементу в PDF-документе с помощью Aspose.PDF для .NET?
 
-A: Adding a structure element to an element in a PDF document using Aspose.PDF for .NET allows you to create a hierarchical structure within the document's content. This hierarchical structure enhances the organization and navigation of the content, making it easier to manage and access specific elements.
+О: Добавление элемента структуры к элементу в PDF-документе с помощью Aspose.PDF для .NET позволяет вам создать иерархическую структуру внутри содержимого документа. Эта иерархическая структура улучшает организацию и навигацию по контенту, упрощая управление отдельными элементами и доступ к ним.
 
-#### Q: How does the Aspose.PDF library assist in adding structure elements to a PDF document?
+#### Вопрос: Как библиотека Aspose.PDF помогает добавлять элементы структуры в документ PDF?
 
-A: Aspose.PDF for .NET is a powerful library that provides capabilities for creating, manipulating, and converting PDF documents programmatically. In this tutorial, the library's marked content structure features are leveraged to create and append structure elements to the PDF document's content.
+О: Aspose.PDF для .NET — это мощная библиотека, предоставляющая возможности для программного создания, управления и преобразования PDF-документов. В этом руководстве отмеченные функции структуры содержимого библиотеки используются для создания и добавления элементов структуры к содержимому PDF-документа.
 
-#### Q: What are the prerequisites for adding structure elements to a PDF document using Aspose.PDF for .NET?
+#### Вопрос: Каковы предварительные условия для добавления элементов структуры в PDF-документ с помощью Aspose.PDF для .NET?
 
-A: Before you begin, ensure that you have Visual Studio installed with the .NET framework and have the Aspose.PDF library for .NET referenced in your project.
+О: Прежде чем начать, убедитесь, что у вас установлена Visual Studio с платформой .NET и в вашем проекте есть ссылка на библиотеку Aspose.PDF для .NET.
 
-#### Q: How does the provided C# code create and append structure elements to the PDF document's content?
+#### Вопрос: Как предоставленный код C# создает и добавляет элементы структуры к содержимому PDF-документа?
 
-A: The code demonstrates how to create a PDF document, define a root structure element, and append various structured elements such as paragraphs and spans to it. Each structured element is created using methods provided by Aspose.PDF, allowing you to build a hierarchical structure.
+О: Код демонстрирует, как создать PDF-документ, определить корневой элемент структуры и добавить к нему различные структурированные элементы, такие как абзацы и диапазоны. Каждый структурированный элемент создается с использованием методов Aspose.PDF, что позволяет вам построить иерархическую структуру.
 
-#### Q: Can I customize the types of structure elements that I append to the PDF document?
+#### Вопрос: Могу ли я настроить типы элементов структуры, которые я добавляю в PDF-документ?
 
-A: Yes, you can customize the types of structure elements by exploring different methods provided by the Aspose.PDF library. The code showcases paragraphs and spans as examples, but you can create and append other types of structured elements as needed.
+О: Да, вы можете настраивать типы элементов структуры, изучая различные методы, предоставляемые библиотекой Aspose.PDF. В коде в качестве примеров показаны абзацы и диапазоны, но при необходимости вы можете создавать и добавлять другие типы структурированных элементов.
 
-#### Q: How do I define the hierarchical relationship between the added structure elements?
+#### Вопрос: Как определить иерархическую связь между добавляемыми элементами структуры?
 
-A: The hierarchical relationship between structure elements is defined by the order in which you append them to their parent elements. In the code, the parent-child relationships are established by using the `AppendChild` method.
+ О: Иерархические отношения между элементами структуры определяются порядком, в котором вы добавляете их к родительским элементам. В коде отношения родитель-потомок устанавливаются с помощью`AppendChild` метод.
 
-#### Q: What are the benefits of creating a hierarchical structure in a PDF document?
+#### Вопрос: Каковы преимущества создания иерархической структуры в PDF-документе?
 
-A: Creating a hierarchical structure in a PDF document enhances its accessibility, navigation, and organization. It allows assistive technologies to better interpret and convey the document's content, making it more user-friendly for individuals with disabilities.
+О: Создание иерархической структуры в PDF-документе повышает его доступность, навигацию и организацию. Это позволяет ассистивным технологиям лучше интерпретировать и передавать содержание документа, делая его более удобным для людей с ограниченными возможностями.
 
-#### Q: How can I validate PDF/UA compliance after adding structure elements?
+#### Вопрос: Как я могу проверить соответствие PDF/UA после добавления элементов структуры?
 
-A: The code provided in the tutorial demonstrates how to validate PDF/UA compliance using the `Validate` method. By validating the document against the PDF/UA standard, you can ensure that the added structure elements conform to accessibility guidelines.
+ О: Код, представленный в руководстве, демонстрирует, как проверить соответствие PDF/UA с помощью`Validate` метод. Проверив документ на соответствие стандарту PDF/UA, вы можете убедиться, что добавленные элементы структуры соответствуют рекомендациям по обеспечению доступности.
 
-#### Q: Can I use this approach to add structure elements to an existing PDF document?
+#### Вопрос: Могу ли я использовать этот подход для добавления элементов структуры в существующий PDF-документ?
 
-A: Yes, you can modify the provided approach to add structure elements to an existing PDF document. Instead of creating a new document, you would load the existing document using Aspose.PDF and then follow similar steps to append structure elements.
+О: Да, вы можете изменить предоставленный подход, чтобы добавить элементы структуры в существующий PDF-документ. Вместо создания нового документа вы должны загрузить существующий документ с помощью Aspose.PDF, а затем выполнить аналогичные шаги для добавления элементов структуры.

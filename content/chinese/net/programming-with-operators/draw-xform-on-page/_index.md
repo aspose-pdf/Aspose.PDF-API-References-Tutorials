@@ -1,28 +1,28 @@
 ---
-title: Draw XForm On Page
-linktitle: Draw XForm On Page
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to drawing an XForm form on a PDF page using Aspose.PDF for .NET. Add and position the form on the page.
+title: 在页面上绘制 XForm
+linktitle: 在页面上绘制 XForm
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 在 PDF 页面上绘制 XForm 表单的分步指南。添加表单并将其放置在页面上。
 type: docs
 weight: 10
 url: /zh/net/programming-with-operators/draw-xform-on-page/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to draw an XForm on a page using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. Using the operators provided by Aspose.PDF, you can add and position an XForm form on an existing PDF page.
+在本教程中，我们将为您提供有关如何使用 Aspose.PDF for .NET 在页面上绘制 XForm 的分步指南。 Aspose.PDF 是一个功能强大的库，允许您以编程方式创建、操作和转换 PDF 文档。使用 Aspose.PDF 提供的运算符，您可以在现有 PDF 页面上添加和定位 XForm 表单。
 
-## Prerequisites
+## 先决条件
 
-Before you begin, make sure you have the following prerequisites in place:
+在开始之前，请确保您具备以下先决条件：
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. 随 .NET Framework 安装的 Visual Studio。
+2. 适用于 .NET 的 Aspose.PDF 库。
 
-## Step 1: Project Setup
+## 第 1 步：项目设置
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+首先，在 Visual Studio 中创建一个新项目并添加对 Aspose.PDF for .NET 库的引用。您可以从Aspose官方网站下载该库并将其安装到您的计算机上。
 
-## Step 2: Import the necessary namespaces
+## 第 2 步：导入必要的命名空间
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+在您的 C# 代码文件中，导入访问 Aspose.PDF 提供的类和方法所需的命名空间：
 
 ```csharp
 using System;
@@ -31,9 +31,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Operators;
 ```
 
-## Step 3: Setting file paths
+## 第三步：设置文件路径
 
-Define the file paths for the background image, the input PDF file and the output PDF file:
+定义背景图像、输入PDF文件和输出PDF文件的文件路径：
 
 ```csharp
 string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
@@ -42,69 +42,69 @@ string inFile = dataDir + "DrawXFormOnPage.pdf";
 string outFile = dataDir + "blank-sample2_out.pdf";
 ```
 
-Be sure to specify the actual file paths on your machine.
+请务必指定计算机上的实际文件路径。
 
-## Step 4: Loading the input PDF file
+## 第 4 步：加载输入 PDF 文件
 
-Use the following code to load the input PDF file:
+使用以下代码加载输入 PDF 文件：
 
 ```csharp
 using (Document doc = new Document(inFile))
 {
 OperatorCollection pageContents = doc.Pages[1].Contents;
-// The following code uses the GSave/GRestore operators
-// The code uses the ContatenateMatrix operator to position the XForm
-// The code uses the Do operator to draw the XForm on the page
-// GSave/GRestore operators wrap existing content
-// this is done to get the initial graphics state at the end of the existing content
-// otherwise there may be unwanted transformations left at the end of the chain of existing operators
+//以下代码使用 GSave/GRestore 运算符
+//该代码使用 ContatenateMatrix 运算符来定位 XForm
+//代码使用Do操作符在页面上绘制XForm
+// GSave/GRestore 运算符包装现有内容
+//这样做是为了在现有内容末尾获取初始图形状态
+//否则，现有操作符链的末端可能会留下不需要的转换
 pageContents. Insert(1, new GSave());
 pageContents. Add(new GRestore());
-// Add GSave operator to properly reset graphics state after new commands
+//添加 GSave 运算符以在新命令后正确重置图形状态
 pageContents. Add(new GSave());
 
-// Create the XForm
+//创建 XForm
 XForm form = XForm.CreateNewForm(doc.Pages[1], doc);
 doc.Pages[1].Resources.Forms.Add(form);
 form.Contents.Add(new GSave());
-// Set the width and height of the image
+//设置图像的宽度和高度
 form.Contents.Add(new ConcatenateMatrix(200, 0, 0, 200, 0, 0));
-// Load the image into a stream
+//将图像加载到流中
 Stream imageStream = new FileStream(imageFile, FileMode.Open);
-// Add the image to the XForm resource images collection
+//将图像添加到 XForm 资源图像集合
 form.Resources.Images.Add(imageStream);
 XImage ximage = form.Resources.Images[form.Resources.Images.Count];
-// Using the Do operator: this operator draws the image
+//使用 Do 运算符：该运算符绘制图像
 form.Contents.Add(new Do(ximage.Name));
 form.Contents.Add(new GRestore());
 
 pageContents. Add(new GSave());
-// Position the XForm at coordinates x=100 and y=500
+//将 XForm 放置在坐标 x=100 和 y=500 处
 pageContents. Add(new ConcatenateMatrix(1, 0, 0, 1, 100, 500));
-// Draw the XForm with the Do operator
+//使用 Do 运算符绘制 XForm
 pageContents.Add(new Do(form.Name));
 pageContents. Add(new GRestore());
 
 pageContents. Add(new GSave());
-// Position the XForm at coordinates x=100 and y=300
+//将 XForm 放置在坐标 x=100 和 y=300 处
 pageContents. Add(new ConcatenateMatrix(1, 0, 0, 1, 100, 300));
-// Draw the XForm with the Do operator
+//使用 Do 运算符绘制 XForm
 pageContents.Add(new Do(form.Name));
 pageContents. Add(new GRestore());
 
-// Restore graphics state with GRestore after GSave
+//GSave 之后使用 GRestore 恢复图形状态
 pageContents. Add(new GRestore());
 doc.Save(outFile);
 }
 ```
 
-Be sure to specify the actual file paths and adjust the page number and XForm positions as needed.
+请务必指定实际文件路径并根据需要调整页码和 XForm 位置。
 
-### Sample source code for Draw XForm On Page using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 在页面上绘制 XForm 的示例源代码
  
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string imageFile = dataDir+ "aspose-logo.jpg";
 string inFile = dataDir + "DrawXFormOnPage.pdf";
@@ -112,65 +112,65 @@ string outFile = dataDir + "blank-sample2_out.pdf";
 using (Document doc = new Document(inFile))
 {
 	OperatorCollection pageContents = doc.Pages[1].Contents;
-	// The sample demonstrates 
-	// GSave/GRestore operators usage
-	// ContatenateMatrix operator usage to position xForm
-	// Do operator usage to draw xForm on page
-	// Wrap existing contents with GSave/GRestore operators pair
-	//        this is to get initial graphics state at the and of existing contents
-	//        otherwise there might remain some undesirable transformations at the end of existing operators chain
+	//示例演示了
+	//GSave/GRestore 运算符用法
+	//ContatenateMatrix 运算符用于定位 xForm
+	//使用运算符在页面上绘制 xForm
+	//使用 GSave/GRestore 运算符对包装现有内容
+	//这是为了获取现有内容的初始图形状态
+	//否则，现有运营商链的末端可能会残留一些不良的转变
 	pageContents.Insert(1, new Aspose.Pdf.Operators.GSave());
 	pageContents.Add(new Aspose.Pdf.Operators.GRestore());
-	// Add save graphics state operator to properly clear graphics state after new commands
+	//添加保存图形状态运算符以在新命令后正确清除图形状态
 	pageContents.Add(new Aspose.Pdf.Operators.GSave());
 	#region create xForm
-	// Create xForm
+	//创建xForm
 	XForm form = XForm.CreateNewForm(doc.Pages[1], doc);
 	doc.Pages[1].Resources.Forms.Add(form);
 	form.Contents.Add(new Aspose.Pdf.Operators.GSave());
-	// Define image width and heigh
+	//定义图像宽度和高度
 	form.Contents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(200, 0, 0, 200, 0, 0));
-	// Load image into stream
+	//将图像加载到流中
 	Stream imageStream = new FileStream(imageFile, FileMode.Open);
-	// Add image to Images collection of the XForm Resources
+	//将图像添加到 XForm 资源的图像集合中
 	form.Resources.Images.Add(imageStream);
 	XImage ximage = form.Resources.Images[form.Resources.Images.Count];
-	// Using Do operator: this operator draws image
+	//使用 Do 运算符：该运算符绘制图像
 	form.Contents.Add(new Aspose.Pdf.Operators.Do(ximage.Name));
 	form.Contents.Add(new Aspose.Pdf.Operators.GRestore());
 	#endregion
 	pageContents.Add(new Aspose.Pdf.Operators.GSave());
-	// Place form to the x=100 y=500 coordinates
+	//将表单放置到 x=100 y=500 坐标
 	pageContents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(1, 0, 0, 1, 100, 500));
-	// Draw form with Do operator
+	//使用 Do 运算符绘制表格
 	pageContents.Add(new Aspose.Pdf.Operators.Do(form.Name));
 	pageContents.Add(new Aspose.Pdf.Operators.GRestore());
 	pageContents.Add(new Aspose.Pdf.Operators.GSave());
-	// Place form to the x=100 y=300 coordinates
+	//将表单放置到 x=100 y=300 坐标
 	pageContents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(1, 0, 0, 1, 100, 300));
-	// Draw form with Do operator
+	//使用 Do 运算符绘制表格
 	pageContents.Add(new Aspose.Pdf.Operators.Do(form.Name));
 	pageContents.Add(new Aspose.Pdf.Operators.GRestore());
-	// Restore grahics state with GRestore after the GSave
+	//GSave 之后使用 GRestore 恢复图形状态
 	pageContents.Add(new Aspose.Pdf.Operators.GRestore());
 	doc.Save(outFile);                
 }
 
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, you learned how to draw an XForm form on a PDF page using Aspose.PDF for .NET. By following the steps described, you will be able to add and position an XForm form on an existing page, thus giving more flexibility to your PDF documents.
+在本教程中，您学习了如何使用 Aspose.PDF for .NET 在 PDF 页面上绘制 XForm 表单。通过执行所描述的步骤，您将能够在现有页面上添加和定位 XForm 表单，从而为 PDF 文档提供更大的灵活性。
 
-### FAQ's for draw XForm on page
+### 页面上绘制 XForm 的常见问题解答
 
-#### Q: What is an XForm in Aspose.PDF?
+#### 问：Aspose.PDF 中的 XForm 是什么？
 
-A: An XForm is a reusable graphical object in a PDF document. It allows you to define and draw complex graphics, images, or text that can be reused multiple times on different pages.
+答：XForm 是 PDF 文档中可重用的图形对象。它允许您定义和绘制可以在不同页面上多次重复使用的复杂图形、图像或文本。
 
-#### Q: How do I import the necessary namespaces for Aspose.PDF?
+#### 问：如何导入 Aspose.PDF 所需的命名空间？
 
-A: In your C# code file, use the `using` directive to import the required namespaces for accessing the classes and methods provided by Aspose.PDF:
+答：在您的 C# 代码文件中，使用`using`指令导入访问 Aspose.PDF 提供的类和方法所需的命名空间：
 ```csharp
 using System;
 using System.IO;
@@ -178,42 +178,42 @@ using Aspose.Pdf;
 using Aspose.Pdf.Operators;
 ```
 
-#### Q: What is the purpose of the GSave and GRestore operators?
+#### 问：GSave 和 GRestore 运算符的目的是什么？
 
-A: The `GSave` and `GRestore` operators in Aspose.PDF are used to save and restore the graphics state. They help ensure that transformations and settings applied to one section of the content do not affect subsequent sections.
+答： 的`GSave`和`GRestore`Aspose.PDF中的运算符用于保存和恢复图形状态。它们有助于确保应用于内容某一部分的转换和设置不会影响后续部分。
 
-#### Q: How do I define an XForm using Aspose.PDF?
+#### 问：如何使用 Aspose.PDF 定义 XForm？
 
-A: To create an XForm, use the `XForm.CreateNewForm` method and add it to the `Resources.Forms` collection of a specific page. You can then add content to the XForm's `Contents` property.
+答：要创建 XForm，请使用`XForm.CreateNewForm`方法并将其添加到`Resources.Forms`特定页面的集合。然后您可以将内容添加到 XForm 的`Contents`财产。
 
-#### Q: How can I draw an image within an XForm?
+#### 问：如何在 XForm 中绘制图像？
 
-A: Load the image into a stream and add it to the `Resources.Images` collection of the XForm. Use the `Do` operator within the XForm's `Contents` to draw the image.
+ A：将图像加载到流中并将其添加到`Resources.Images`XForm 的集合。使用`Do`XForm 中的运算符`Contents`绘制图像。
 
-#### Q: How do I position an XForm on a PDF page?
+#### 问：如何在 PDF 页面上放置 XForm？
 
-A: To position an XForm on a page, use the `ConcatenateMatrix` operator within the page's `Contents`. Adjust the matrix parameters to specify the translation (position) and scaling of the XForm.
+答：要将 XForm 放置在页面上，请使用`ConcatenateMatrix`页面内的运算符`Contents`。调整矩阵参数以指定 XForm 的平移（位置）和缩放。
 
-#### Q: Can I draw multiple XForms on the same page?
+#### 问：我可以在同一页上绘制多个 XForm 吗？
 
-A: Yes, you can draw multiple XForms on the same page by adjusting the `ConcatenateMatrix` parameters to position each XForm at different coordinates.
+答：是的，您可以在同一页面上绘制多个 XForm，只需调整`ConcatenateMatrix`将每个 XForm 定位在不同坐标的参数。
 
-#### Q: Can I modify the content of an XForm after it's created?
+#### 问：XForm 创建后可以修改其内容吗？
 
-A: Yes, you can modify an XForm's contents after creation by adding additional operators to its `Contents` property.
+答：是的，您可以在创建后通过向其添加附加运算符来修改 XForm 的内容`Contents`财产。
 
-#### Q: What happens if I omit the GSave and GRestore operators?
+#### 问：如果我省略 GSave 和 GRestore 运算符，会发生什么情况？
 
-A: Omitting the GSave and GRestore operators may lead to unwanted transformations or settings being applied to subsequent content. Using them helps maintain a clean graphics state.
+答：省略 GSave 和 GRestore 运算符可能会导致不必要的转换或设置应用于后续内容。使用它们有助于保持干净的图形状态。
 
-#### Q: Can I reuse XForms across different pages of the PDF document?
+#### 问：我可以在 PDF 文档的不同页面上重复使用 XForms 吗？
 
-A: Yes, you can reuse XForms on multiple pages by adding the same XForm to the `Resources.Forms` collection of different pages.
+答：是的，您可以通过将相同的 XForm 添加到页面来在多个页面上重复使用 XForm。`Resources.Forms`不同页面的集合。
 
-#### Q: Is there a limit to the number of XForms I can create?
+#### 问：我可以创建的 XForm 数量有限制吗？
 
-A: While there is no strict limit to the number of XForms you can create, keep in mind that too many XForms may impact performance and memory usage. Use them judiciously.
+答：虽然对可以创建的 XForm 数量没有严格限制，但请记住，太多的 XForm 可能会影响性能和内存使用。明智地使用它们。
 
-#### Q: Can I rotate an XForm or apply other transformations?
+#### 问：我可以旋转 XForm 或应用其他转换吗？
 
-A: Yes, you can use the `ConcatenateMatrix` operator to apply transformations such as rotation, scaling, and translation to an XForm.
+答：是的，您可以使用`ConcatenateMatrix`运算符将旋转、缩放和平移等变换应用到 XForm。

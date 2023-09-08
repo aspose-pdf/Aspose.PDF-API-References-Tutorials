@@ -1,52 +1,52 @@
 ---
-title: Add Text Stamp In PDF File
-linktitle: Add Text Stamp In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily add a text stamp in PDF file with Aspose.PDF for .NET.
+title: PDF Dosyasına Metin Damgası Ekleme
+linktitle: PDF Dosyasına Metin Damgası Ekleme
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasına kolayca metin damgası eklemeyi öğrenin.
 type: docs
 weight: 50
 url: /tr/net/programming-with-stamps-and-watermarks/add-text-stamp/
 ---
-In this tutorial, we will take you step by step on how to add a text stamp in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to add a custom text stamp to a specific page of the PDF file.
+Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasına nasıl metin damgası ekleyeceğinizi adım adım anlatacağız. PDF dosyasının belirli bir sayfasına özel metin damgası eklemek için sağlanan C# kaynak kodunu nasıl kullanacağınızı size göstereceğiz.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Kurulu bir .NET geliştirme ortamı.
+- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
 
-## Step 2: Loading the PDF document
+## Adım 2: PDF belgesini yükleme
 
-The first step is to load the existing PDF document into your project. Here's how:
+İlk adım mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+"BELGELERİNİZ DİZİNİ"ni, PDF belgenizin bulunduğu dizine giden gerçek yolla değiştirdiğinizden emin olun.
 
-## Step 3: Creating the text buffer
+## 3. Adım: Metin arabelleğini oluşturma
 
-Now that you have uploaded the PDF document, you can create the text stamp to add. Here's how to do it:
+Artık PDF belgesini yüklediğinize göre eklenecek metin damgasını oluşturabilirsiniz. Bunu nasıl yapacağınız aşağıda açıklanmıştır:
 
 ```csharp
-// Create the text buffer
+// Metin arabelleğini oluşturun
 TextStamp textStamp = new TextStamp("Example Stamp");
 ```
 
-The code above creates a new text buffer containing the specified text.
+Yukarıdaki kod, belirtilen metni içeren yeni bir metin arabelleği oluşturur.
 
-## Step 4: Configuring Text Stamp Properties
+## Adım 4: Metin Damgası Özelliklerini Yapılandırma
 
-Before adding the text stamp to the PDF document, you can configure various properties of the stamp, such as background, position, rotation, font, size, etc. Here's how:
+Metin damgasını PDF belgesine eklemeden önce damganın arka plan, konum, döndürme, yazı tipi, boyut vb. çeşitli özelliklerini yapılandırabilirsiniz. Bunu şu şekilde yapabilirsiniz:
 
 ```csharp
-// Configure text buffer properties
+// Metin arabelleği özelliklerini yapılandırma
 textStamp. Background = true;
 textStamp. XIndent = 100;
 textStamp. YIndent = 100;
@@ -57,107 +57,107 @@ textStamp.TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
 textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Aqua);
 ```
 
-You can adjust these properties according to your needs.
+Bu özellikleri ihtiyaçlarınıza göre ayarlayabilirsiniz.
 
-## Step 5: Add Text Stamp to PDF
+## Adım 5: PDF'ye Metin Damgası Ekleme
 
-Now that the text stamp is ready, you can add it to a specific page of the PDF document. Here's how:
+Artık metin damgası hazır olduğuna göre onu PDF belgesinin belirli bir sayfasına ekleyebilirsiniz. İşte nasıl:
 
 ```csharp
-// Add text buffer to specific page
+//Belirli bir sayfaya metin arabelleği ekleyin
 pdfDocument.Pages[1].AddStamp(textStamp);
 ```
 
-The code above adds the text stamp to the first page of the PDF document. You can specify another page if needed.
+Yukarıdaki kod, metin damgasını PDF belgesinin ilk sayfasına ekler. Gerekirse başka bir sayfa belirtebilirsiniz.
 
-## Step 6: Save the output document
+## Adım 6: Çıktı belgesini kaydedin
 
-Once you have added the text stamp, you can save the edited PDF document. Here's how:
+Metin damgasını ekledikten sonra düzenlenen PDF belgesini kaydedebilirsiniz. İşte nasıl:
 
 ```csharp
-// Save the output document
+// Çıktı belgesini kaydet
 pdfDocument.Save(dataDir);
 ```
 
-The code above saves the modified PDF document in the specified directory.
+Yukarıdaki kod, değiştirilen PDF belgesini belirtilen dizine kaydeder.
 
-### Sample source code for Add Text Stamp using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Metin Damgası Ekleme için örnek kaynak kodu 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
 
-// Create text stamp
+// Metin damgası oluştur
 TextStamp textStamp = new TextStamp("Sample Stamp");
 
-// Set whether stamp is background
+// Damganın arka planda olup olmayacağını ayarlayın
 textStamp.Background = true;
 
-// Set origin
+// Başlangıç noktasını ayarla
 textStamp.XIndent = 100;
 textStamp.YIndent = 100;
 
-// Rotate stamp
+// Damgayı döndür
 textStamp.Rotate = Rotation.on90;
 
-// Set text properties
+// Metin özelliklerini ayarlama
 textStamp.TextState.Font = FontRepository.FindFont("Arial");
 textStamp.TextState.FontSize = 14.0F;
 textStamp.TextState.FontStyle = FontStyles.Bold;
 textStamp.TextState.FontStyle = FontStyles.Italic;
 textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Aqua);
 
-// Add stamp to particular page
+// Belirli bir sayfaya damga ekle
 pdfDocument.Pages[1].AddStamp(textStamp);
 dataDir = dataDir + "AddTextStamp_out.pdf";
 
-// Save output document
+// Çıktı belgesini kaydet
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nText stamp added successfully.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have learned how to add a text stamp using Aspose.PDF for .NET. Now you can apply this knowledge to your own projects to add custom text stamps to PDF documents.
+Tebrikler! Aspose.PDF for .NET'i kullanarak nasıl metin damgası ekleyeceğinizi öğrendiniz. Artık PDF belgelerine özel metin damgaları eklemek için bu bilgiyi kendi projelerinize uygulayabilirsiniz.
 
-### FAQ's for add text stamp in PDF file
+### PDF dosyasına metin damgası eklemek için SSS
 
-#### Q: What is the purpose of adding a text stamp in a PDF file using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF dosyasına metin damgası eklemenin amacı nedir?
 
-A: Adding a text stamp allows you to place custom text on a specific page of a PDF document. This feature is useful for adding labels, comments, watermarks, or any other textual information to enhance the document's content and provide additional context.
+C: Metin damgası eklemek, özel metni bir PDF belgesinin belirli bir sayfasına yerleştirmenize olanak tanır. Bu özellik, belgenin içeriğini geliştirmek ve ek bağlam sağlamak amacıyla etiketler, yorumlar, filigranlar veya diğer metinsel bilgileri eklemek için kullanışlıdır.
 
-#### Q: Can I customize the appearance of the text stamp, such as font, size, color, and rotation?
+#### S: Metin damgasının yazı tipi, boyutu, rengi ve döndürme gibi görünümünü özelleştirebilir miyim?
 
-A: Yes, you can fully customize the appearance of the text stamp. The provided C# source code demonstrates how to set various properties of the `TextStamp` object, including font, font size, font style, text color, background color, and rotation.
+ C: Evet, metin damgasının görünümünü tamamen özelleştirebilirsiniz. Sağlanan C# kaynak kodu, C#'ın çeşitli özelliklerinin nasıl ayarlanacağını gösterir.`TextStamp` yazı tipi, yazı tipi boyutu, yazı tipi stili, metin rengi, arka plan rengi ve döndürme dahil olmak üzere nesne.
 
-#### Q: Is it possible to add multiple text stamps to different pages of the same PDF document?
+#### S: Aynı PDF belgesinin farklı sayfalarına birden fazla metin damgası eklemek mümkün müdür?
 
-A: Absolutely, you can add multiple text stamps to different pages of the same PDF document. The tutorial's provided code allows you to specify the target page for adding the text stamp, making it versatile for different pages within the document.
+C: Kesinlikle, aynı PDF belgesinin farklı sayfalarına birden fazla metin damgası ekleyebilirsiniz. Eğitimin sağladığı kod, metin damgasını eklemek için hedef sayfayı belirlemenize olanak tanır ve belge içindeki farklı sayfalar için onu çok yönlü hale getirir.
 
-#### Q: How do I specify the position of the text stamp within the PDF document?
+#### S: Metin damgasının PDF belgesindeki konumunu nasıl belirlerim?
 
-A: You can customize the position of the text stamp by modifying the `XIndent` and `YIndent` properties of the `TextStamp` object. These properties define the coordinates of the stamp's top-left corner relative to the origin of the page.
+ C: Metin damgasının konumunu değiştirerek özelleştirebilirsiniz.`XIndent` Ve`YIndent` özellikleri`TextStamp` nesne. Bu özellikler damganın sol üst köşesinin koordinatlarını sayfanın kaynağına göre tanımlar.
 
-#### Q: Can I apply this method to existing PDF documents to add text stamps?
+#### S: Metin damgaları eklemek için bu yöntemi mevcut PDF belgelerine uygulayabilir miyim?
 
-A: Yes, you can apply this method to existing PDF documents to add text stamps. The tutorial's provided code demonstrates how to load an existing PDF document and add a text stamp to a specific page.
+C: Evet, metin damgaları eklemek için bu yöntemi mevcut PDF belgelerine uygulayabilirsiniz. Eğitimde sağlanan kod, mevcut bir PDF belgesinin nasıl yükleneceğini ve belirli bir sayfaya metin damgasının nasıl ekleneceğini gösterir.
 
-#### Q: Can I add both background and foreground colors to the text stamp?
+#### S: Metin damgasına hem arka plan hem de ön plan renkleri ekleyebilir miyim?
 
-A: Yes, you can add both background and foreground colors to the text stamp. By setting the `Background` property to `true`, you can provide a colored background for the text stamp. Additionally, you can set the `TextState.ForegroundColor` property to specify the color of the text itself.
+ C: Evet, metin damgasına hem arka plan hem de ön plan renkleri ekleyebilirsiniz. Ayarlayarak`Background` mülkiyet`true` metin damgası için renkli bir arka plan sağlayabilirsiniz. Ek olarak,`TextState.ForegroundColor` Metnin rengini belirtme özelliği.
 
-#### Q: How can I ensure that the text stamp does not obscure the underlying content of the PDF document?
+#### S: Metin damgasının PDF belgesinin temel içeriğini gizlememesini nasıl sağlayabilirim?
 
-A: When adding a text stamp, be mindful of its placement to ensure that it does not obstruct critical information or negatively affect the document's readability. You can adjust the `XIndent` and `YIndent` properties to position the text stamp appropriately.
+ C: Bir metin damgası eklerken, kritik bilgileri engellemediğinden veya belgenin okunabilirliğini olumsuz etkilemediğinden emin olmak için yerleşimine dikkat edin. Ayarlayabilirsiniz`XIndent` Ve`YIndent` metin damgasını uygun şekilde konumlandırmak için özellikler.
 
-#### Q: Can I use this method to add stamps other than text, such as images or logos?
+#### S: Bu yöntemi metin dışında resim veya logo gibi damgalar eklemek için kullanabilir miyim?
 
-A: This specific tutorial focuses on adding text stamps, but you can similarly add other types of stamps, such as images or logos, using Aspose.PDF for .NET. The process involves creating the appropriate stamp object and configuring its properties.
+C: Bu özel eğitim metin damgaları eklemeye odaklanıyor ancak Aspose.PDF for .NET'i kullanarak benzer şekilde resim veya logo gibi diğer damga türlerini de ekleyebilirsiniz. Süreç, uygun damga nesnesinin oluşturulmasını ve özelliklerinin yapılandırılmasını içerir.
 
-#### Q: How can I automate the process of adding text stamps to multiple PDF documents?
+#### S: Birden fazla PDF belgesine metin damgası ekleme işlemini nasıl otomatikleştirebilirim?
 
-A: You can automate the process of adding text stamps to multiple PDF documents by creating a script or program that iterates through a list of documents and applies the same text stamping process to each one.
+C: Bir belge listesi üzerinde yinelenen ve her birine aynı metin damgalama işlemini uygulayan bir komut dosyası veya program oluşturarak, birden fazla PDF belgesine metin damgası ekleme işlemini otomatikleştirebilirsiniz.

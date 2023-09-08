@@ -1,28 +1,28 @@
 ---
-title: Create PDF with Tagged Image
-linktitle: Create PDF with Tagged Image
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to create PDF with tagged image using Aspose.PDF for .NET.
+title: Créer un PDF avec une image balisée
+linktitle: Créer un PDF avec une image balisée
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Guide étape par étape pour créer un PDF avec une image balisée à l’aide d’Aspose.PDF pour .NET.
 type: docs
 weight: 40
 url: /fr/net/programming-with-tagged-pdf/create-pdf-with-tagged-image/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to create a PDF document with a tagged image using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. Using the tagged content structure features of Aspose.PDF, you can add tagged images to your PDF document.
+Dans ce didacticiel, nous vous fournirons un guide étape par étape sur la façon de créer un document PDF avec une image balisée à l'aide d'Aspose.PDF pour .NET. Aspose.PDF est une bibliothèque puissante qui vous permet de créer, manipuler et convertir des documents PDF par programme. Grâce aux fonctionnalités de structure de contenu balisé d'Aspose.PDF, vous pouvez ajouter des images balisées à votre document PDF.
 
-## Prerequisites
+## Conditions préalables
 
-Before you begin, make sure you have the following prerequisites in place:
+Avant de commencer, assurez-vous que les conditions préalables suivantes sont remplies :
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. Visual Studio installé avec le framework .NET.
+2. La bibliothèque Aspose.PDF pour .NET.
 
-## Step 1: Project Setup
+## Étape 1 : Configuration du projet
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+Pour commencer, créez un nouveau projet dans Visual Studio et ajoutez une référence à la bibliothèque Aspose.PDF pour .NET. Vous pouvez télécharger la bibliothèque depuis le site officiel d'Aspose et l'installer sur votre ordinateur.
 
-## Step 2: Import the necessary namespaces
+## Étape 2 : Importez les espaces de noms nécessaires
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+Dans votre fichier de code C#, importez les espaces de noms requis pour accéder aux classes et méthodes fournies par Aspose.PDF :
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Step 3: Creating the PDF document with a tagged image
+## Étape 3 : Création du document PDF avec une image balisée
 
-Use the following code to create a PDF document with a tagged image:
+Utilisez le code suivant pour créer un document PDF avec une image balisée :
 
 ```csharp
 string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
@@ -49,22 +49,22 @@ figure1.SetTag("Fig");
 figure1.SetImage(dataDir + @"aspose-logo.jpg");
 ```
 
-This code creates an empty PDF document and adds a tagged image using the methods provided by Aspose.PDF. The image is specified with alt text, title, and tag.
+Ce code crée un document PDF vide et ajoute une image balisée à l'aide des méthodes fournies par Aspose.PDF. L'image est spécifiée avec un texte alternatif, un titre et une balise.
 
-## Step 4: Saving the PDF Document
+## Étape 4 : Enregistrement du document PDF
 
-Use the following code to save the PDF document:
+Utilisez le code suivant pour enregistrer le document PDF :
 
 ```csharp
 document.Save(dataDir + "PDFwithTaggedImage.pdf");
 ```
 
-This code saves the PDF document with the tagged image to a specified file.
+Ce code enregistre le document PDF avec l'image balisée dans un fichier spécifié.
 
-### Sample source code for Create PDFwith Tagged Image using Aspose.PDF for .NET 
+### Exemple de code source pour créer un PDF avec une image balisée à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
@@ -75,55 +75,55 @@ taggedContent.RootElement.AppendChild(figure1);
 figure1.AlternativeText = "Aspose Logo";
 figure1.Title = "Image 1";
 figure1.SetTag("Fig");
-// Add image with resolution 300 DPI (by default)
+// Ajouter une image avec une résolution de 300 DPI (par défaut)
 figure1.SetImage(dataDir + @"aspose-logo.jpg");
-// Save PDF Document
+// Enregistrer le document PDF
 document.Save(dataDir + "PDFwithTaggedImage.pdf");
 
 ```
 
 ## Conclusion
 
-In this tutorial, you learned how to create a PDF document with a tagged image using Aspose.PDF for .NET. Tagged images add additional, structured information to your PDF document.
+Dans ce didacticiel, vous avez appris à créer un document PDF avec une image balisée à l'aide d'Aspose.PDF pour .NET. Les images balisées ajoutent des informations supplémentaires et structurées à votre document PDF.
 
-### FAQ's
+### FAQ
 
-#### Q: What is the purpose of creating a PDF document with a tagged image using Aspose.PDF for .NET?
+#### Q : Quel est le but de créer un document PDF avec une image balisée à l'aide d'Aspose.PDF pour .NET ?
 
-A: Creating a PDF document with a tagged image using Aspose.PDF for .NET allows you to add tagged images to the document's content. Tagged images provide structured information, such as alt text and titles, enhancing accessibility and organization.
+R : La création d'un document PDF avec une image balisée à l'aide d'Aspose.PDF pour .NET vous permet d'ajouter des images balisées au contenu du document. Les images balisées fournissent des informations structurées, telles que du texte alternatif et des titres, améliorant ainsi l'accessibilité et l'organisation.
 
-#### Q: How does the Aspose.PDF library assist in creating a PDF document with a tagged image?
+#### Q : Comment la bibliothèque Aspose.PDF aide-t-elle à créer un document PDF avec une image balisée ?
 
-A: Aspose.PDF for .NET is a robust library that provides functionalities for creating, manipulating, and converting PDF documents programmatically. In this tutorial, the library's tagged content structure features are used to add a tagged image to the PDF document.
+: Aspose.PDF pour .NET est une bibliothèque robuste qui fournit des fonctionnalités pour créer, manipuler et convertir des documents PDF par programme. Dans ce didacticiel, les fonctionnalités de structure de contenu balisé de la bibliothèque sont utilisées pour ajouter une image balisée au document PDF.
 
-#### Q: What are the prerequisites for creating a PDF document with a tagged image using Aspose.PDF for .NET?
+#### Q : Quelles sont les conditions préalables à la création d'un document PDF avec une image balisée à l'aide d'Aspose.PDF pour .NET ?
 
-A: Before you begin, ensure that you have Visual Studio installed with the .NET framework and have the Aspose.PDF library for .NET referenced in your project.
+R : Avant de commencer, assurez-vous que Visual Studio est installé avec le framework .NET et que la bibliothèque Aspose.PDF pour .NET est référencée dans votre projet.
 
-#### Q: How does the provided C# code create a PDF document with a tagged image?
+#### Q : Comment le code C# fourni crée-t-il un document PDF avec une image balisée ?
 
-A: The code demonstrates how to create a PDF document, define a tagged image element, and add it to the document's content. The tagged image includes alt text, a title, and a tag using methods provided by Aspose.PDF.
+R : Le code montre comment créer un document PDF, définir un élément d'image balisé et l'ajouter au contenu du document. L'image balisée comprend un texte alternatif, un titre et une balise utilisant les méthodes fournies par Aspose.PDF.
 
-#### Q: Can I use different image formats for the tagged image?
+#### Q : Puis-je utiliser différents formats d'image pour l'image taguée ?
 
-A: Yes, you can use different image formats for the tagged image, such as JPEG, PNG, GIF, etc. The code example provided in the tutorial uses a JPEG image, but you can replace it with the path to an image file in your preferred format.
+R : Oui, vous pouvez utiliser différents formats d'image pour l'image balisée, tels que JPEG, PNG, GIF, etc. L'exemple de code fourni dans le didacticiel utilise une image JPEG, mais vous pouvez la remplacer par le chemin d'accès à un fichier image dans votre format préféré.
 
-#### Q: How is the alternative text (alt text) used in tagged images?
+#### Q : Comment le texte alternatif (texte alternatif) est-il utilisé dans les images taguées ?
 
-A: Alt text provides a textual description of the image, which is read aloud by screen readers for visually impaired users. In the provided code, the alt text is set using the `AlternativeText` property of the `IllustrationElement` representing the tagged image.
+ R : Le texte alternatif fournit une description textuelle de l'image, qui est lue à haute voix par des lecteurs d'écran destinés aux utilisateurs malvoyants. Dans le code fourni, le texte alternatif est défini à l'aide du`AlternativeText` propriété du`IllustrationElement` représentant l’image taguée.
 
-#### Q: How does the `SetTitle` method contribute to the PDF document's tagged image?
+####  Q : Comment le`SetTitle` method contribute to the PDF document's tagged image?
 
-A: The `SetTitle` method sets the title of the PDF document's tagged content, providing additional context for the tagged image. This title can help identify the purpose or subject of the tagged content.
+ R : Le`SetTitle` La méthode définit le titre du contenu balisé du document PDF, fournissant un contexte supplémentaire pour l'image balisée. Ce titre peut aider à identifier le but ou le sujet du contenu tagué.
 
-#### Q: Can I customize the tag and title of the tagged image?
+#### Q : Puis-je personnaliser la balise et le titre de l'image balisée ?
 
-A: Yes, you can customize the tag and title of the tagged image using the `SetTag` and `Title` methods of the `IllustrationElement`. The code example demonstrates how to set the tag to "Fig" and the title to "Picture 1."
+ R : Oui, vous pouvez personnaliser la balise et le titre de l'image balisée à l'aide du`SetTag` et`Title` méthodes du`IllustrationElement`. L'exemple de code montre comment définir la balise sur « Fig » et le titre sur « Image 1 ».
 
-#### Q: How can I ensure that the tagged image is accessible and compliant with accessibility standards?
+#### Q : Comment puis-je m'assurer que l'image taguée est accessible et conforme aux normes d'accessibilité ?
 
-A: By using the tagged content structure features of Aspose.PDF and providing alt text and other relevant information, you contribute to the accessibility of the tagged image. Ensuring compliance with accessibility standards involves following best practices for alt text and document structure.
+: En utilisant les fonctionnalités de structure de contenu balisé d'Aspose.PDF et en fournissant du texte alternatif et d'autres informations pertinentes, vous contribuez à l'accessibilité de l'image balisée. Garantir le respect des normes d’accessibilité implique de suivre les meilleures pratiques en matière de texte alternatif et de structure des documents.
 
-#### Q: Is it possible to add multiple tagged images to the same PDF document using similar techniques?
+#### Q : Est-il possible d'ajouter plusieurs images balisées au même document PDF en utilisant des techniques similaires ?
 
-A: Yes, you can add multiple tagged images to the same PDF document using similar techniques. You would create additional `IllustrationElement` instances for each tagged image and customize their properties as needed.
+ R : Oui, vous pouvez ajouter plusieurs images balisées au même document PDF en utilisant des techniques similaires. Vous créeriez des`IllustrationElement` instances pour chaque image balisée et personnalisez leurs propriétés selon vos besoins.

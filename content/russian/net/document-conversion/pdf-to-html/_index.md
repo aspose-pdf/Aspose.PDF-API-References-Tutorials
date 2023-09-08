@@ -1,76 +1,76 @@
 ---
-title: PDF To HTML
-linktitle: PDF To HTML
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert PDF to HTML using Aspose.PDF for .NET.
+title: PDF в HTML
+linktitle: PDF в HTML
+second_title: Справочник по Aspose.PDF для .NET API
+description: Пошаговое руководство по преобразованию PDF в HTML с помощью Aspose.PDF для .NET.
 type: docs
 weight: 130
 url: /ru/net/document-conversion/pdf-to-html/
 ---
-In this tutorial, we'll walk you through the process of converting a PDF file to HTML format using Aspose.PDF for .NET. The PDF format is commonly used to view and share documents, while the HTML format is used to create web pages. By following the steps below, you will be able to convert PDF files to HTML format.
+В этом уроке мы познакомим вас с процессом преобразования PDF-файла в формат HTML с помощью Aspose.PDF для .NET. Формат PDF обычно используется для просмотра и обмена документами, а формат HTML используется для создания веб-страниц. Выполнив следующие действия, вы сможете конвертировать PDF-файлы в формат HTML.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Предварительные условия
+Прежде чем начать, убедитесь, что вы соответствуете следующим предварительным условиям:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Базовые знания языка программирования C#.
+- Библиотека Aspose.PDF для .NET, установленная в вашей системе.
+- Среда разработки, такая как Visual Studio.
 
-## Step 1: Opening the source PDF document
-In this step, we will open the source PDF file using Aspose.PDF for .NET. Follow the code below:
+## Шаг 1. Открытие исходного PDF-документа.
+На этом этапе мы откроем исходный PDF-файл с помощью Aspose.PDF для .NET. Следуйте приведенному ниже коду:
 
 ```csharp
-// Path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the source PDF document
+// Откройте исходный PDF-документ
 Document pdfDocument = new Document(dataDir + "PDFToHTML.pdf");
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+ Обязательно замените`"YOUR DOCUMENTS DIRECTORY"` с фактическим каталогом, в котором находится ваш PDF-файл.
 
-## Step 2: PDF to HTML conversion
-After opening the PDF file, we can proceed with the conversion into HTML format. Use the following code:
+## Шаг 2. Преобразование PDF в HTML
+После открытия PDF-файла мы можем приступить к преобразованию в формат HTML. Используйте следующий код:
 
 ```csharp
-// Save the file in HTML format
+//Сохраните файл в формате HTML.
 pdfDocument.Save(dataDir + "output_out.html", SaveFormat.Html);
 ```
 
-The above code converts the PDF file to HTML format and saves it as `"output_out.html"` file.
+ Приведенный выше код преобразует файл PDF в формат HTML и сохраняет его как`"output_out.html"` файл.
 
-Replace `"YOUR DOCUMENTS DIRECTORY"` with the desired directory where you want to save the output HTML file.
+ Заменять`"YOUR DOCUMENTS DIRECTORY"` с желаемым каталогом, в котором вы хотите сохранить выходной HTML-файл.
 
-### Example source code for PDF to HTML using Aspose.PDF for .NET
+### Пример исходного кода для преобразования PDF в HTML с использованием Aspose.PDF для .NET
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open the source PDF document
+// Откройте исходный PDF-документ
 Document pdfDocument = new Document(dataDir + "PDFToHTML.pdf");
 
-// Save the file into MS document format
+// Сохраните файл в формате документа MS.
 pdfDocument.Save(dataDir + "output_out.html", SaveFormat.Html);
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of converting a PDF file to HTML format using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to convert PDF files to HTML format. This feature is useful when you want to embed PDF content into web pages or other applications that support HTML format.
+## Заключение
+В этом уроке мы рассмотрели пошаговый процесс преобразования PDF-файла в формат HTML с помощью Aspose.PDF для .NET. Следуя инструкциям, изложенным выше, теперь вы сможете конвертировать PDF-файлы в формат HTML. Эта функция полезна, если вы хотите встроить PDF-содержимое в веб-страницы или другие приложения, поддерживающие формат HTML.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: Can I control the output structure of the HTML file during conversion?
+#### Вопрос: Могу ли я контролировать структуру вывода HTML-файла во время преобразования?
 
-A: Yes, Aspose.PDF for .NET allows you to control the output structure of the HTML file during conversion. You can specify options such as the conversion mode, whether to create separate folders for resources, and more. These options can be set through the `HtmlSaveOptions` class.
+ О: Да, Aspose.PDF для .NET позволяет вам контролировать структуру вывода HTML-файла во время преобразования. Вы можете указать такие параметры, как режим преобразования, создавать ли отдельные папки для ресурсов и многое другое. Эти параметры можно настроить через`HtmlSaveOptions` сорт.
 
-#### Q: Does Aspose.PDF for .NET support converting complex PDFs to HTML format?
+#### Вопрос: Поддерживает ли Aspose.PDF for .NET преобразование сложных PDF-файлов в формат HTML?
 
-A: Aspose.PDF for .NET provides comprehensive support for converting complex PDFs to HTML format. However, in some cases, highly intricate PDFs with advanced graphics, special fonts, or complex layouts might require additional adjustments or manual post-processing of the generated HTML file.
+О: Aspose.PDF для .NET обеспечивает комплексную поддержку преобразования сложных PDF-файлов в формат HTML. Однако в некоторых случаях очень сложные PDF-файлы с расширенной графикой, специальными шрифтами или сложными макетами могут потребовать дополнительных настроек или ручной постобработки созданного HTML-файла.
 
-#### Q: Can I extract images and other resources from the PDF during the conversion process?
+#### Вопрос: Могу ли я извлечь изображения и другие ресурсы из PDF-файла в процессе преобразования?
 
-A: Yes, Aspose.PDF for .NET allows you to extract images and other resources embedded in the PDF during the conversion process. You can enable the option to create separate folders for resources, which will save the images and other assets in a separate directory, and then reference them in the converted HTML file.
+О: Да, Aspose.PDF для .NET позволяет извлекать изображения и другие ресурсы, встроенные в PDF-файл, в процессе преобразования. Вы можете включить опцию создания отдельных папок для ресурсов, при этом изображения и другие ресурсы будут сохраняться в отдельном каталоге, а затем ссылаться на них в преобразованном HTML-файле.
 
-#### Q: How can I handle hyperlinks and bookmarks in the output HTML file?
+#### Вопрос: Как обрабатывать гиперссылки и закладки в выходном HTML-файле?
 
-A: Aspose.PDF for .NET preserves hyperlinks and bookmarks during the PDF to HTML conversion. The links and bookmarks present in the original PDF will be retained in the converted HTML file, making it possible to navigate within the generated HTML content.
+О: Aspose.PDF для .NET сохраняет гиперссылки и закладки во время преобразования PDF в HTML. Ссылки и закладки, присутствующие в исходном PDF-файле, будут сохранены в преобразованном HTML-файле, что позволит перемещаться по сгенерированному HTML-содержимому.

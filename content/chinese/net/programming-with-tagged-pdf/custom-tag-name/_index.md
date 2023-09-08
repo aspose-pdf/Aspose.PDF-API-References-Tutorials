@@ -1,66 +1,66 @@
 ---
-title: Custom Tag Name
-linktitle: Custom Tag Name
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to using a custom tag name with Aspose.PDF for .NET. Improve the structure of your PDFs with custom tags.
+title: 自定义标签名称
+linktitle: 自定义标签名称
+second_title: Aspose.PDF for .NET API 参考
+description: 在 Aspose.PDF for .NET 中使用自定义标签名称的分步指南。使用自定义标签改进 PDF 的结构。
 type: docs
 weight: 90
 url: /zh/net/programming-with-tagged-pdf/custom-tag-name/
 ---
-In this step-by-step guide, we'll walk you through how to use a custom tag name with Aspose.PDF for .NET. Aspose.PDF is a powerful library that lets you manipulate PDF documents programmatically. Using custom tags allows you to add specific structural information to your PDF document, making it easier to use and easier to access.
+在本分步指南中，我们将引导您了解如何在 Aspose.PDF for .NET 中使用自定义标签名称。 Aspose.PDF 是一个功能强大的库，可让您以编程方式操作 PDF 文档。使用自定义标签可让您向 PDF 文档添加特定的结构信息，使其更易于使用和访问。
 
-Let's dive into the code and learn how to use a custom tag name with Aspose.PDF for .NET.
+让我们深入研究代码并了解如何在 Aspose.PDF for .NET 中使用自定义标签名称。
 
-## Prerequisites
+## 先决条件
 
-Before you begin, make sure you have the following:
+在开始之前，请确保您具备以下条件：
 
-1. Aspose.PDF library for .NET installed.
-2. A basic knowledge of the C# programming language.
+1. 安装了适用于.NET 的 Aspose.PDF 库。
+2. C# 编程语言的基础知识。
 
-## Step 1: Setting up the environment
+## 第一步：搭建环境
 
-To get started, open your C# development environment and create a new project. Make sure you have added a reference to the Aspose.PDF library for .NET in your project.
+首先，打开 C# 开发环境并创建一个新项目。确保您已在项目中添加对 .NET 的 Aspose.PDF 库的引用。
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating the document
+## 第 2 步：创建文档
 
-The first step is to create a new PDF document using the `Document` class.
+第一步是使用以下命令创建一个新的 PDF 文档`Document`班级。
 
 ```csharp
-// Create the PDF document
+//创建 PDF 文档
 Document document = new Document();
 ```
 
-## Step 3: Work with tagged content
+## 第 3 步：处理标记内容
 
-Then we get the tagged content of the document to work with.
+然后我们获取要使用的文档的标记内容。
 
 ```csharp
-// Get the tagged content of the document
+//获取文档的标记内容
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 4: Set document title and language
+## 步骤 4：设置文档标题和语言
 
-We can now set the document title and language.
+我们现在可以设置文档标题和语言。
 
 ```csharp
-// Define the document title and language
+//定义文档标题和语言
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 5: Create Logical Structure Elements
+## 第 5 步：创建逻辑结构元素
 
-Now let's create some logical structure elements to organize our content.
+现在让我们创建一些逻辑结构元素来组织我们的内容。
 
 ```csharp
-// Create logical structure elements
+//创建逻辑结构元素
 SectElement sect = taggedContent.CreateSectElement();
 taggedContent.RootElement.AppendChild(sect);
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
@@ -97,34 +97,34 @@ p3.AppendChild(span3);
 p4.AppendChild(span4);
 ```
 
-Here we create paragraph elements and span elements for our content, and assign custom tags to them.
+在这里，我们为内容创建段落元素和跨度元素，并为其分配自定义标签。
 
-## Step 6: Save the tagged PDF document
+## 步骤 6：保存标记的 PDF 文档
 
-Finally, we save the tagged PDF document.
+最后，我们保存标记的 PDF 文档。
 
 ```csharp
-// Save the tagged PDF document
+//保存标记的 PDF 文档
 document.Save(dataDir + "CustomTag.pdf");
 ```
 
-### Sample source code for Custom Tag Name using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 自定义标签名称的示例源代码 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+//创建 PDF 文档
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+//获取与 TaggedPdf 一起使用的内容
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+//设置文档网的标题和语言
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Create Logical Structure Elements
+//创建逻辑结构元素
 SectElement sect = taggedContent.CreateSectElement();
 taggedContent.RootElement.AppendChild(sect);
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
@@ -160,53 +160,53 @@ p2.AppendChild(span2);
 p3.AppendChild(span3);
 p4.AppendChild(span4);
 
-// Save Tagged Pdf Document
+//保存标记的 PDF 文档
 document.Save(dataDir + "CustomTag.pdf");
 
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have learned how to use a custom tag name with Aspose.PDF for .NET. You can now add specific structural information to your PDF document using custom tags. Explore more features of Aspose.PDF to discover its full potential.
+恭喜！您已经了解了如何在 Aspose.PDF for .NET 中使用自定义标签名称。您现在可以使用自定义标签将特定的结构信息添加到 PDF 文档中。探索 Aspose.PDF 的更多功能以发现其全部潜力。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is a custom tag name in the context of PDF documents, and why would I use it with Aspose.PDF for .NET?
+#### 问：PDF 文档上下文中的自定义标签名称是什么？为什么我要将其与 Aspose.PDF for .NET 一起使用？
 
-A: A custom tag name in a PDF document is a user-defined label that provides specific structural information to the document's content. Using custom tag names with Aspose.PDF for .NET allows you to enhance the accessibility and organization of the PDF document, making it easier to navigate, understand, and interact with.
+答：PDF 文档中的自定义标签名称是用户定义的标签，为文档内容提供特定的结构信息。在 Aspose.PDF for .NET 中使用自定义标签名称可以增强 PDF 文档的可访问性和组织性，使其更易于导航、理解和交互。
 
-#### Q: How does Aspose.PDF for .NET facilitate the use of custom tag names in PDF documents?
+#### 问：Aspose.PDF for .NET 如何促进在 PDF 文档中使用自定义标签名称？
 
-A: Aspose.PDF for .NET provides a set of classes and methods that enable you to create, manipulate, and assign custom tag names to different structural elements within a PDF document. This helps you add semantic meaning and context to the document's content.
+答：Aspose.PDF for .NET 提供了一组类和方法，使您能够创建、操作自定义标签名称并将其分配给 PDF 文档中的不同结构元素。这可以帮助您向文档内容添加语义和上下文。
 
-#### Q: What role does the `taggedContent` object play in using custom tag names?
+#### 问： 有何作用`taggedContent` object play in using custom tag names?
 
-A: The `taggedContent` object, obtained from the document's `TaggedContent` property, allows you to work with structured elements in the PDF document. You can create, organize, and assign custom tag names to these elements, enhancing the document's semantic structure.
+答： 的`taggedContent`对象，从文档中获取`TaggedContent`属性，允许您使用 PDF 文档中的结构化元素。您可以创建、组织自定义标签名称并将其分配给这些元素，从而增强文档的语义结构。
 
-#### Q: How do custom tag names improve document accessibility and usability?
+#### 问：自定义标签名称如何提高文档的可访问性和可用性？
 
-A: Custom tag names provide additional context and semantics to the document's content, which improves its accessibility for assistive technologies and enhances the overall user experience. Screen readers and other assistive devices can use custom tag names to convey meaningful information to users.
+答：自定义标签名称为文档内容提供了额外的上下文和语义，从而提高了辅助技术的可访问性并增强了整体用户体验。屏幕阅读器和其他辅助设备可以使用自定义标签名称向用户传达有意义的信息。
 
-#### Q: Can I use custom tag names for various types of structural elements in a PDF document?
+#### 问：我可以为 PDF 文档中的各种类型的结构元素使用自定义标签名称吗？
 
-A: Yes, you can assign custom tag names to a wide range of structural elements, including paragraphs, spans, sections, and more. This allows you to categorize and label different parts of the document's content, creating a more organized and understandable layout.
+答：是的，您可以将自定义标签名称分配给各种结构元素，包括段落、跨度、部分等。这使您可以对文档内容的不同部分进行分类和标记，从而创建更有条理且易于理解的布局。
 
-#### Q: How do I define and assign custom tag names to elements in a PDF document using Aspose.PDF for .NET?
+#### 问：如何使用 Aspose.PDF for .NET 定义自定义标签名称并将其分配给 PDF 文档中的元素？
 
-A: You can define and assign custom tag names by creating logical structure elements, such as paragraphs and spans, and then using the `SetTag` method to assign the desired custom tag name to these elements. The provided code example demonstrates this process.
+答：您可以通过创建逻辑结构元素（例如段落和跨度）来定义和分配自定义标签名称，然后使用`SetTag`方法将所需的自定义标签名称分配给这些元素。提供的代码示例演示了此过程。
 
-#### Q: How do I ensure that the custom tag names I use are compatible with accessibility standards and best practices?
+#### 问：如何确保我使用的自定义标签名称符合辅助功能标准和最佳实践？
 
-A: When choosing custom tag names, it's recommended to follow accessibility guidelines and use descriptive and meaningful labels that accurately represent the content. Consulting relevant accessibility standards and documentation can help you select appropriate custom tag names.
+答：选择自定义标签名称时，建议遵循可访问性指南，并使用能够准确表示内容的描述性且有意义的标签。查阅相关的辅助功能标准和文档可以帮助您选择合适的自定义标签名称。
 
-#### Q: Can I combine the use of custom tag names with other PDF manipulation features offered by Aspose.PDF for .NET?
+#### 问：我可以将自定义标签名称的使用与 Aspose.PDF for .NET 提供的其他 PDF 操作功能结合起来吗？
 
-A: Absolutely! You can combine the use of custom tag names with other features of Aspose.PDF for .NET, such as creating tables, adding images, inserting hyperlinks, and more. This allows you to create rich and accessible PDF documents with structured content.
+答：当然！您可以将自定义标签名称的使用与 Aspose.PDF for .NET 的其他功能结合起来，例如创建表格、添加图像、插入超链接等。这使您可以创建具有结构化内容的丰富且易于访问的 PDF 文档。
 
-#### Q: How can I validate the effectiveness of using custom tag names for accessibility and usability in my PDF documents?
+#### 问：如何验证在 PDF 文档中使用自定义标签名称的可访问性和可用性的有效性？
 
-A: You can validate the effectiveness of custom tag names by using assistive technologies like screen readers to navigate and interact with the PDF document. Additionally, you can test the document's compliance with accessibility standards and guidelines using tools and validators.
+答：您可以使用屏幕阅读器等辅助技术来导航 PDF 文档并与之交互，从而验证自定义标签名称的有效性。此外，您可以使用工具和验证器测试文档是否符合可访问性标准和指南。
 
-#### Q: How can I extend this knowledge to create more complex document structures and utilize custom tag names for advanced scenarios?
+#### 问：如何扩展这些知识来创建更复杂的文档结构并在高级场景中使用自定义标签名称？
 
-A: You can extend this knowledge by exploring additional features of Aspose.PDF for .NET, such as creating nested structure elements, using custom tags for form fields, incorporating multimedia elements, and more. The library's documentation and examples provide guidance for these advanced scenarios.
+答：您可以通过探索 Aspose.PDF for .NET 的其他功能来扩展这些知识，例如创建嵌套结构元素、使用表单字段的自定义标签、合并多媒体元素等等。该库的文档和示例为这些高级场景提供了指导。

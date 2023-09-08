@@ -1,64 +1,64 @@
 ---
-title: Style Table Element
-linktitle: Style Table Element
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to format table element with Aspose.PDF for .NET. Step-by-step guide to customize styles and properties.
+title: Stil Tablosu Öğesi
+linktitle: Stil Tablosu Öğesi
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile tablo öğesini nasıl formatlayacağınızı öğrenin. Stilleri ve özellikleri özelleştirmek için adım adım kılavuz.
 type: docs
 weight: 170
 url: /tr/net/programming-with-tagged-pdf/style-table-element/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step to format the array element using Aspose.PDF for .NET. Follow the instructions below to understand how to customize the styles and properties of the array element.
+Bu ayrıntılı eğitimde, dizi öğesini Aspose.PDF for .NET kullanarak formatlamak için sağlanan C# kaynak kodunu adım adım anlatacağız. Dizi öğesinin stillerini ve özelliklerini nasıl özelleştireceğinizi anlamak için aşağıdaki talimatları izleyin.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+Başlamadan önce geliştirme ortamınızı Aspose.PDF for .NET'i kullanacak şekilde yapılandırdığınızdan emin olun. Buna Aspose.PDF kütüphanesinin kurulması ve projenizin buna referans verecek şekilde yapılandırılması da dahildir.
 
-## Step 2: Creating a document
+## 2. Adım: Belge oluşturma
 
-In this step, we will create a new document object Aspose.PDF.
+Bu adımda yeni bir belge nesnesi Aspose.PDF oluşturacağız.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Document creation
+// Belge oluşturma
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example of table formatting");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We have created a new document and set the document title and language.
+Yeni bir belge oluşturduk ve belge başlığını ve dilini belirledik.
 
-## Step 3: Obtaining the root structure element
+## Adım 3: Kök yapı öğesinin elde edilmesi
 
-In this step we will get the root structure element for our document.
+Bu adımda belgemiz için kök yapı elemanını alacağız.
 
 ```csharp
-// Obtain the root structure element
+//Kök yapı öğesini edinin
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We got the root structure element which will serve as a container for the array element.
+Dizi elemanı için kap görevi görecek kök yapı elemanını elde ettik.
 
-## Step 4: Creating the array structure element
+## Adım 4: Dizi yapısı öğesinin oluşturulması
 
-Now let's create a new table structure element for our document.
+Şimdi belgemiz için yeni bir tablo yapısı öğesi oluşturalım.
 
 ```csharp
-// Create the array structure element
+// Dizi yapısı öğesini oluşturun
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 ```
 
-We have created a new array structure element and added it to the root structure element.
+Yeni bir dizi yapısı elemanı oluşturduk ve onu kök yapı elemanına ekledik.
 
-## Step 5: Customizing Array Element Styles and Properties
+## Adım 5: Dizi Öğesi Stillerini ve Özelliklerini Özelleştirme
 
-In this step, we will customize the styles and properties of the array element.
+Bu adımda dizi öğesinin stillerini ve özelliklerini özelleştireceğiz.
 
 ```csharp
-// Customize the styles and properties of the array element
+// Dizi öğesinin stillerini ve özelliklerini özelleştirme
 tableElement.BackgroundColor = Color.Beige;
 tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
 tableElement. Alignment = HorizontalAlignment. Center;
@@ -77,30 +77,30 @@ tableElement. Top = 40F;
 tableElement.RepeatingColumnsCount = 2;
 tableElement.RepeatingRowsCount = 3;
 
-// Customize the style of repeated lines
+// Tekrarlanan çizgilerin stilini özelleştirin
 TextState rowStyle = new TextState();
 rowStyle.BackgroundColor = Color.LightCoral;
 tableElement.RepeatingRowsStyle = rowStyle;
 ```
 
-We used various properties to customize the table element, such as background color, borders, alignment, default cell style, margins, column width, etc.
+Tablo öğesini özelleştirmek için arka plan rengi, kenarlıklar, hizalama, varsayılan hücre stili, kenar boşlukları, sütun genişliği vb. gibi çeşitli özellikler kullandık.
 
-## Step 6: Add table headers, body and footer
+## 6. Adım: Tablo üstbilgilerini, gövdesini ve altbilgisini ekleyin
 
-Now let's add the table headers, body and footer to the table element.
+Şimdi tablo elemanına tablo başlıklarını, gövdesini ve altbilgisini ekleyelim.
 ```csharp
-// Add table headers
+// Tablo başlıkları ekleyin
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
 
-// Number of rows and columns in the table
+// Tablodaki satır ve sütun sayısı
 int rowCount = 10;
 int colCount = 5;
 int rowIndex;
 int colIndex;
 
-// Create the table header row
+// Tablo başlığı satırını oluşturun
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Header Row";
 
@@ -110,7 +110,7 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
      theElement.SetText(string.Format("Header {0}", colIndex));
 }
 
-// Add the rows of the table body
+//Tablo gövdesinin satırlarını ekleyin
 for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 {
      TableTRElement trElement = tableTBodyElement.CreateTR();
@@ -123,7 +123,7 @@ for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
      }
 }
 
-// Add the footing line of the table
+// Tablonun temel çizgisini ekleyin
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Footline";
 
@@ -134,49 +134,49 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-We added the headers, body rows, and footer row to the table using the corresponding elements.
+İlgili öğeleri kullanarak üstbilgileri, gövde satırlarını ve altbilgi satırını tabloya ekledik.
 
-## Step 7: Saving the tagged PDF document
+## 7. Adım: Etiketli PDF belgesini kaydetme
 
-Now that we've created our document with the styled table element, we'll save it as a tagged PDF document.
+Artık belgemizi stillendirilmiş tablo öğesiyle oluşturduğumuza göre, onu etiketli bir PDF belgesi olarak kaydedeceğiz.
 
 ```csharp
-// Save the tagged PDF document
+// Etiketli PDF belgesini kaydedin
 document.Save(dataDir + "StyleTableElement.pdf");
 ```
 
-We saved the tagged PDF document in the specified directory.
+Etiketli PDF belgesini belirtilen dizine kaydettik.
 
-## Step 8: PDF/UA compliance validation
+## 8. Adım: PDF/UA uyumluluk doğrulaması
 
-Next, we will validate the PDF/UA conformity of our document.
+Daha sonra belgemizin PDF/UA uygunluğunu doğrulayacağız.
 
 ```csharp
-// PDF/UA compliance check
+// PDF/UA uyumluluk kontrolü
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-We uploaded the tagged PDF document and validated its PDF/UA compliance by generating an XML report.
+Etiketli PDF belgesini yükledik ve bir XML raporu oluşturarak PDF/UA uyumluluğunu doğruladık.
 
-### Sample source code for Style Table Element using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Stil Tablosu Öğesi için örnek kaynak kodu 
 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create document
+// Doküman oluştur
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table style");
 taggedContent.SetLanguage("en-US");
 
-// Get root structure element
+// Kök yapı öğesini alın
 StructureElement rootElement = taggedContent.RootElement;
 
-// Create table structure element
+// Tablo yapısı öğesi oluştur
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 tableElement.BackgroundColor = Color.Beige;
@@ -231,62 +231,62 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 	tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
 
-// Save Tagged Pdf Document
+// Etiketli Pdf Belgesini Kaydet
 document.Save(dataDir + "StyleTableElement.pdf");
 
-// Checking PDF/UA compliance
+// PDF/UA uyumluluğunu kontrol etme
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to format the array element with Aspose.PDF for .NET. We customized the styles and properties of the table element, added headers, body rows, and a footer, saved the tagged PDF document, and validated its PDF/UA compliance.
+Bu eğitimde dizi öğesini Aspose.PDF for .NET ile nasıl formatlayacağımızı öğrendik. Tablo öğesinin stillerini ve özelliklerini özelleştirdik, üstbilgiler, gövde satırları ve altbilgi ekledik, etiketli PDF belgesini kaydettik ve PDF/UA uyumluluğunu doğruladık.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of this tutorial on formatting the array element using Aspose.PDF for .NET?
+#### S: Dizi öğesini Aspose.PDF for .NET kullanarak biçimlendirmeye yönelik bu eğitimin amacı nedir?
 
-A: The goal of this tutorial is to guide you through the process of formatting the array element in a PDF document using Aspose.PDF for .NET. It provides step-by-step instructions and C# source code examples to help you customize the styles and properties of the array element.
+C: Bu eğitimin amacı, Aspose.PDF for .NET kullanarak bir PDF belgesindeki dizi öğesini formatlama sürecinde size rehberlik etmektir. Dizi öğesinin stillerini ve özelliklerini özelleştirmenize yardımcı olmak için adım adım talimatlar ve C# kaynak kodu örnekleri sağlar.
 
-#### Q: What are the prerequisites for following this tutorial?
+#### S: Bu eğitimi takip etmenin önkoşulları nelerdir?
 
-A: Before you start, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+C: Başlamadan önce, geliştirme ortamınızı Aspose.PDF for .NET'i kullanacak şekilde ayarladığınızdan emin olun. Bu, Aspose.PDF kütüphanesinin kurulmasını ve projenizin buna referans verecek şekilde yapılandırılmasını içerir.
 
-#### Q: How can I create a new PDF document and set its title and language using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak yeni bir PDF belgesini nasıl oluşturabilir ve başlığını ve dilini nasıl ayarlayabilirim?
 
-A: To create a new PDF document, you need to create a `Document` object from the Aspose.PDF library. The tutorial's provided C# source code demonstrates how to create a document and set its title and language properties.
+ C: Yeni bir PDF belgesi oluşturmak için bir`Document` Aspose.PDF kütüphanesinden nesne. Eğitimde sağlanan C# kaynak kodu, bir belgenin nasıl oluşturulacağını ve başlık ve dil özelliklerinin nasıl ayarlanacağını gösterir.
 
-#### Q: What is the significance of the root structure element in a PDF document?
+#### S: Bir PDF belgesindeki kök yapı öğesinin önemi nedir?
 
-A: The root structure element acts as a container for other structure elements, helping to organize and categorize the content of the PDF document. It plays a crucial role in establishing the logical structure of the document.
+C: Kök yapı öğesi, diğer yapı öğeleri için bir kap görevi görerek PDF belgesinin içeriğinin düzenlenmesine ve kategorize edilmesine yardımcı olur. Belgenin mantıksal yapısının oluşturulmasında çok önemli bir rol oynar.
 
-#### Q: How do I create and customize an array structure element using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak bir dizi yapısı öğesini nasıl oluşturup özelleştirebilirim?
 
-A: You can create an array structure element using the `CreateTableElement()` method. The tutorial's source code provides examples of customizing various properties of the table element, such as background color, borders, alignment, column width, and more.
+ C: Aşağıdakileri kullanarak bir dizi yapısı öğesi oluşturabilirsiniz:`CreateTableElement()` yöntem. Eğitimin kaynak kodu, tablo öğesinin arka plan rengi, kenarlıklar, hizalama, sütun genişliği ve daha fazlası gibi çeşitli özelliklerinin özelleştirilmesine ilişkin örnekler sağlar.
 
-#### Q: Can I customize the styles and properties of table cells within the array element?
+#### S: Dizi öğesi içindeki tablo hücrelerinin stillerini ve özelliklerini özelleştirebilir miyim?
 
-A: Yes, the tutorial covers how to customize the styles and properties of the entire table element, including headers, body rows, and footer. However, it doesn't specifically address customizing individual table cells.
+C: Evet, eğitimde üstbilgiler, gövde satırları ve altbilgi dahil olmak üzere tüm tablo öğesinin stillerinin ve özelliklerinin nasıl özelleştirileceği anlatılmaktadır. Ancak, ayrı ayrı tablo hücrelerinin özelleştirilmesine özel olarak değinmez.
 
-#### Q: How can I add headers, body rows, and a footer to the table element?
+#### S: Tablo öğesine nasıl üst bilgi, gövde satırları ve alt bilgi ekleyebilirim?
 
-A: The tutorial explains how to create and add headers, body rows, and a footer to the table element using the appropriate methods provided by Aspose.PDF for .NET.
+C: Bu eğitimde Aspose.PDF for .NET tarafından sağlanan uygun yöntemleri kullanarak başlıkların, gövde satırlarının ve alt bilginin nasıl oluşturulacağı ve tablo öğesine nasıl ekleneceği açıklanmaktadır.
 
-#### Q: What is PDF/UA compliance, and how can I validate it for my tagged PDF document?
+#### S: PDF/UA uyumluluğu nedir ve bunu etiketli PDF belgem için nasıl doğrulayabilirim?
 
-A: PDF/UA compliance ensures that the PDF document conforms to accessibility standards, making it more accessible to users with disabilities. The tutorial demonstrates how to validate PDF/UA conformity using the `Validate()` method and generate an XML compliance report.
+ C: PDF/UA uyumluluğu, PDF belgesinin erişilebilirlik standartlarına uygun olmasını sağlayarak onu engelli kullanıcılar için daha erişilebilir hale getirir. Eğitimde PDF/UA uyumluluğunun nasıl doğrulanacağı gösterilmektedir.`Validate()` yöntemini kullanın ve bir XML uyumluluk raporu oluşturun.
 
-#### Q: How can I incorporate these concepts into my own .NET applications?
+#### S: Bu kavramları kendi .NET uygulamalarıma nasıl dahil edebilirim?
 
-A: You can use the provided C# source code examples as a guide to implementing array element formatting in your own .NET applications. Modify and adapt the code to match your requirements and integrate it into your projects.
+C: Sağlanan C# kaynak kodu örneklerini, dizi öğesi biçimlendirmesini kendi .NET uygulamalarınızda uygulamaya yönelik bir kılavuz olarak kullanabilirsiniz. Kodu gereksinimlerinize uyacak şekilde değiştirin ve uyarlayın ve projelerinize entegre edin.
 
-#### Q: Are there any recommended best practices for formatting array elements in PDF documents?
+#### S: PDF belgelerindeki dizi öğelerini biçimlendirmek için önerilen en iyi uygulamalar var mı?
 
-A: When formatting array elements (tables), consider the readability and accessibility of the content. Use clear and legible fonts, appropriate colors, and maintain a consistent layout. Validate PDF/UA compliance to ensure accessibility standards are met.
+C: Dizi öğelerini (tabloları) biçimlendirirken içeriğin okunabilirliğini ve erişilebilirliğini göz önünde bulundurun. Açık ve okunaklı yazı tipleri, uygun renkler kullanın ve tutarlı bir düzen sağlayın. Erişilebilirlik standartlarının karşılandığından emin olmak için PDF/UA uyumluluğunu doğrulayın.
 
-#### Q: What other features of Aspose.PDF for .NET can I explore for PDF document customization?
+#### S: PDF belge özelleştirmesi için Aspose.PDF for .NET'in başka hangi özelliklerini keşfedebilirim?
 
-A: Aspose.PDF for .NET offers a range of features for PDF document customization, including text manipulation, image insertion, form field management, digital signatures, annotations, and more. Consult the official documentation and resources to explore additional functionalities.
+C: Aspose.PDF for .NET, PDF belgesi özelleştirmesi için metin işleme, görüntü ekleme, form alanı yönetimi, dijital imzalar, açıklamalar ve daha fazlasını içeren bir dizi özellik sunar. Ek işlevleri keşfetmek için resmi belgelere ve kaynaklara bakın.

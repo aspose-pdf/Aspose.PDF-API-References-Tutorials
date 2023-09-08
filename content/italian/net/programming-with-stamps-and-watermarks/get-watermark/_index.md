@@ -1,59 +1,59 @@
 ---
-title: Get Watermark From PDF File
-linktitle: Get Watermark From PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract watermarks from PDF file with Aspose.PDF for .NET.
+title: Ottieni filigrana dal file PDF
+linktitle: Ottieni filigrana dal file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come estrarre filigrane da file PDF con Aspose.PDF per .NET.
 type: docs
 weight: 100
 url: /it/net/programming-with-stamps-and-watermarks/get-watermark/
 ---
-In this tutorial, we will take you step by step on how to get a watermark from PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to iterate through the artifacts of a specific page and get the watermark type, text, and location.
+In questo tutorial ti guideremo passo dopo passo su come ottenere una filigrana da un file PDF utilizzando Aspose.PDF per .NET. Ti mostreremo come utilizzare il codice sorgente C# fornito per scorrere gli artefatti di una pagina specifica e ottenere il tipo, il testo e la posizione della filigrana.
 
-## Step 1: Setting up the environment
+## Passaggio 1: configurazione dell'ambiente
 
-Before you begin, make sure you have the following:
+Prima di iniziare, assicurati di avere quanto segue:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Un ambiente di sviluppo .NET installato.
+- La libreria Aspose.PDF per .NET scaricata e a cui si fa riferimento nel progetto.
 
-## Step 2: Loading the PDF document
+## Passaggio 2: caricamento del documento PDF
 
-The first step is to load the existing PDF document into your project. Here's how:
+Il primo passo è caricare il documento PDF esistente nel tuo progetto. Ecco come:
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the PDF document
+//Apri il documento PDF
 Document pdfDocument = new Document(dataDir + "watermark.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Assicurati di sostituire "LA TUA DIRECTORY DOCUMENTI" con il percorso effettivo della directory in cui si trova il tuo documento PDF.
 
-## Step 3: Getting the watermark
+## Passaggio 3: ottenere la filigrana
 
-Now that you have loaded the PDF document, you can iterate through the specific page artifacts to get the watermark information. Here's how:
+Ora che hai caricato il documento PDF, puoi scorrere gli artefatti specifici della pagina per ottenere le informazioni sulla filigrana. Ecco come:
 
 ```csharp
-// Browse artifacts and get watermark subtype, text and location
+// Sfoglia gli artefatti e ottieni sottotipo, testo e posizione della filigrana
 foreach(Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
      Console.WriteLine(artifact.Subtype + " " + artifact.Text + " " + artifact.Rectangle);
 }
 ```
 
-The above code loops through all artifacts on the first page of the PDF document and displays the subtype, text, and rectangle (location) of each watermark encountered.
+Il codice precedente scorre tutti gli artefatti sulla prima pagina del documento PDF e visualizza il sottotipo, il testo e il rettangolo (posizione) di ogni filigrana incontrata.
 
-### Sample source code for Get Watermark using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Get Watermark utilizzando Aspose.PDF per .NET 
 ```csharp
 
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Apri documento
 Document pdfDocument = new Document( dataDir +  "watermark.pdf");
 
-// Iterate through and get tub-type, text and location of artifact
+// Scorri e ottieni il tipo di vasca, il testo e la posizione dell'artefatto
 foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
 	Console.WriteLine(artifact.Subtype + " " + artifact.Text + " " + artifact.Rectangle);
@@ -61,48 +61,48 @@ foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation ! You have learned how to get watermark information from a PDF document using Aspose.PDF for .NET. Now you can use this knowledge to analyze and process watermarks in your PDF documents.
+Congratulazioni! Hai imparato come ottenere informazioni sulla filigrana da un documento PDF utilizzando Aspose.PDF per .NET. Ora puoi utilizzare questa conoscenza per analizzare ed elaborare le filigrane nei tuoi documenti PDF.
 
-### FAQ's for get watermark from PDF file
+### Domande frequenti su come ottenere la filigrana dal file PDF
 
-#### Q: What is a watermark in a PDF document, and why would I need to extract its information?
+#### D: Cos'è una filigrana in un documento PDF e perché dovrei estrarne le informazioni?
 
-A: A watermark in a PDF document is a recognizable image or text that is superimposed onto the content of the document, often to indicate its status, ownership, or confidential nature. Extracting watermark information can be useful for analyzing document authenticity, identifying document source, or processing documents based on watermark presence.
+R: Una filigrana in un documento PDF è un'immagine o un testo riconoscibile sovrapposto al contenuto del documento, spesso per indicarne lo stato, la proprietà o la natura riservata. L'estrazione delle informazioni sulla filigrana può essere utile per analizzare l'autenticità del documento, identificare l'origine del documento o elaborare i documenti in base alla presenza della filigrana.
 
-#### Q: How does the provided C# source code help in extracting watermark information from a PDF file?
+#### D: In che modo il codice sorgente C# fornito aiuta a estrarre le informazioni sulla filigrana da un file PDF?
 
-A: The provided code demonstrates how to load an existing PDF document, iterate through the artifacts of a specific page, and extract information about watermarks. It does this by accessing the `Subtype`, `Text`, and `Rectangle` properties of each artifact.
+ R: Il codice fornito dimostra come caricare un documento PDF esistente, scorrere gli artefatti di una pagina specifica ed estrarre informazioni sulle filigrane. Lo fa accedendo al file`Subtype`, `Text` , E`Rectangle` proprietà di ciascun artefatto.
 
-#### Q: What does the `Subtype` property of an artifact represent?
+####  D: Cosa significa`Subtype` property of an artifact represent?
 
-A: The `Subtype` property of an artifact represents the type of the artifact. For watermarks, it indicates that the artifact is a watermark.
+ R: Il`Subtype` La proprietà di un artefatto rappresenta il tipo dell'artefatto. Per le filigrane, indica che l'artefatto è una filigrana.
 
-#### Q: How does the code determine the location (rectangle) of the watermark on the page?
+#### D: In che modo il codice determina la posizione (rettangolo) della filigrana sulla pagina?
 
-A: The code uses the `Rectangle` property of the artifact to determine the location of the watermark. The `Rectangle` property represents the bounding rectangle of the artifact on the page.
+ R: Il codice utilizza il file`Rectangle` proprietà dell'artefatto per determinare la posizione della filigrana. IL`Rectangle` La proprietà rappresenta il rettangolo di delimitazione dell'artefatto sulla pagina.
 
-#### Q: Can I modify the code to extract additional information about the watermark, such as its appearance or color?
+#### D: Posso modificare il codice per estrarre informazioni aggiuntive sulla filigrana, come l'aspetto o il colore?
 
-A: Yes, you can modify the code to access other properties of the artifact, such as its appearance or color, if such information is available and relevant to your use case.
+R: Sì, puoi modificare il codice per accedere ad altre proprietà dell'artefatto, come l'aspetto o il colore, se tali informazioni sono disponibili e pertinenti al tuo caso d'uso.
 
-#### Q: Can I extract watermark information from multiple pages of a PDF document using this code?
+#### D: Posso estrarre informazioni sulla filigrana da più pagine di un documento PDF utilizzando questo codice?
 
-A: Yes, you can modify the code to iterate through artifacts on multiple pages by changing the page index in the loop to access artifacts from different pages.
+R: Sì, puoi modificare il codice per scorrere gli artefatti su più pagine modificando l'indice della pagina nel ciclo per accedere agli artefatti da pagine diverse.
 
-#### Q: What happens if there are no watermarks on the specified page?
+#### D: Cosa succede se non sono presenti filigrane nella pagina specificata?
 
-A: If there are no watermarks on the specified page, the loop will not execute, and no watermark information will be displayed.
+R: Se non sono presenti filigrane nella pagina specificata, il ciclo non verrà eseguito e non verranno visualizzate informazioni sulla filigrana.
 
-#### Q: How can I use the extracted watermark information for further processing?
+#### D: Come posso utilizzare le informazioni sulla filigrana estratte per ulteriori elaborazioni?
 
-A: The extracted watermark information can be used for various purposes, such as logging, analysis, reporting, or automation of specific actions based on the presence or properties of watermarks.
+R: Le informazioni sulla filigrana estratte possono essere utilizzate per vari scopi, come registrazione, analisi, reporting o automazione di azioni specifiche in base alla presenza o alle proprietà delle filigrane.
 
-#### Q: Can I modify this code to extract information about other types of artifacts in a PDF document?
+#### D: Posso modificare questo codice per estrarre informazioni su altri tipi di elementi in un documento PDF?
 
-A: Yes, you can modify the code to extract information about other types of artifacts by accessing their properties using a similar approach.
+R: Sì, puoi modificare il codice per estrarre informazioni su altri tipi di artefatti accedendo alle loro proprietà utilizzando un approccio simile.
 
-#### Q: How can I access watermarks that are not artifacts but are part of the PDF content?
+#### D: Come posso accedere alle filigrane che non sono artefatti ma fanno parte del contenuto PDF?
 
-A: Watermarks that are not artifacts may be part of the PDF content itself, such as images or text. To extract information about these types of watermarks, you may need to analyze the PDF content and identify specific elements that represent the watermarks.
+R: Le filigrane che non sono artefatti possono far parte del contenuto stesso del PDF, come immagini o testo. Per estrarre informazioni su questi tipi di filigrane, potrebbe essere necessario analizzare il contenuto del PDF e identificare elementi specifici che rappresentano le filigrane.

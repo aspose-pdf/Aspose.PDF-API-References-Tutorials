@@ -1,44 +1,44 @@
 ---
-title: Get Hyperlink Text In PDF File
-linktitle: Get Hyperlink Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract hyperlink text in PDF file using Aspose.PDF for .NET.
+title: الحصول على نص الارتباط التشعبي في ملف PDF
+linktitle: الحصول على نص الارتباط التشعبي في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخراج نص الارتباط التشعبي في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 70
 url: /ar/net/programming-with-links-and-actions/get-hyperlink-text/
 ---
-Learn how to extract text from hyperlinks in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+تعرف على كيفية استخراج النص من الارتباطات التشعبية في ملف PDF باستخدام Aspose.PDF لـ .NET باستخدام هذا الدليل التفصيلي خطوة بخطوة.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+تأكد من أنك قمت بإعداد بيئة التطوير الخاصة بك باستخدام مشروع C# ومراجع Aspose.PDF المناسبة.
 
-## Step 2: Loading the PDF file
+## الخطوة 2: تحميل ملف PDF
 
-Set the directory path of your documents and upload the PDF file using the following code:
+قم بتعيين مسار الدليل لمستنداتك وقم بتحميل ملف PDF باستخدام الكود التالي:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// قم بتحميل ملف PDF
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Navigating through the pages of the document
+## الخطوة 3: التنقل عبر صفحات المستند
 
-Iterate through each page of the document using a `foreach` loop:
+ قم بالتكرار خلال كل صفحة من المستند باستخدام أ`foreach` حلقة:
 
 ```csharp
 foreach(Page page in document.Pages)
 {
-     // Display link annotations
+     // عرض التعليقات التوضيحية للارتباط
      ShowLinkAnnotations(page);
 }
 ```
 
-## Step 4: Error Handling
+## الخطوة 4: معالجة الأخطاء
 
-Add error handling to catch any exception and display the corresponding error message:
+أضف معالجة الأخطاء لاكتشاف أي استثناء وعرض رسالة الخطأ المقابلة:
 
 ```csharp
 catch (Exception ex)
@@ -47,18 +47,18 @@ catch (Exception ex)
 }
 ```
 
-### Sample source code for Get Hyperlink Text using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للحصول على نص الارتباط التشعبي باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// المسار إلى دليل المستندات.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the PDF file
+	// قم بتحميل ملف PDF
 	Document document = new Document(dataDir + "input.pdf");
-	// Iterate through each page of PDF
+	// قم بالتكرار خلال كل صفحة من صفحات PDF
 	foreach (Page page in document.Pages)
 	{
-		// Show link annotation
+		// إظهار التعليق التوضيحي للارتباط
 		ShowLinkAnnotations(page);
 	}
 }
@@ -68,42 +68,42 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You now know how to extract hyperlink text from a PDF file using Aspose.PDF for .NET. You can use this knowledge to deal with hyperlinks in your projects and automate tasks related to PDF files.
+تهنئة ! أنت تعرف الآن كيفية استخراج نص الارتباط التشعبي من ملف PDF باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذه المعرفة للتعامل مع الارتباطات التشعبية في مشاريعك وأتمتة المهام المتعلقة بملفات PDF.
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+الآن وبعد أن أكملت هذا الدليل، يمكنك تطبيق هذه المفاهيم على مشاريعك الخاصة واستكشاف الميزات التي يقدمها Aspose.PDF لـ .NET بشكل أكبر.
 
-### FAQs for get hyperlink text in PDF file
+### الأسئلة الشائعة للحصول على نص الارتباط التشعبي في ملف PDF
 
-#### Q: What is hyperlink text in a PDF file?
+#### س: ما هو نص الارتباط التشعبي في ملف PDF؟
 
-A: Hyperlink text in a PDF file refers to the visible text that users click on to navigate to a specific location or resource, such as a URL, another page in the same document, or an external document.
+ج: يشير نص الارتباط التشعبي في ملف PDF إلى النص المرئي الذي ينقر عليه المستخدمون للانتقال إلى موقع أو مورد محدد، مثل عنوان URL، أو صفحة أخرى في نفس المستند، أو مستند خارجي.
 
-#### Q: How does extracting hyperlink text benefit my PDF document analysis?
+#### س: كيف يفيد استخراج نص الارتباط التشعبي تحليل مستند PDF الخاص بي؟
 
-A: Extracting hyperlink text allows you to gather and analyze the descriptive labels of hyperlinks within a PDF document. This information can be used for link validation, content categorization, and metadata extraction.
+ج: يتيح لك استخراج نص الارتباط التشعبي جمع وتحليل التسميات الوصفية للارتباطات التشعبية داخل مستند PDF. يمكن استخدام هذه المعلومات للتحقق من صحة الارتباط وتصنيف المحتوى واستخراج البيانات التعريفية.
 
-#### Q: How can Aspose.PDF for .NET help in extracting hyperlink text?
+#### س: كيف يمكن لـ Aspose.PDF for .NET المساعدة في استخراج نص الارتباط التشعبي؟
 
-A: Aspose.PDF for .NET provides robust APIs for extracting hyperlink text. This tutorial provides a step-by-step guide on how to accomplish this task using C#.
+ج: يوفر Aspose.PDF for .NET واجهات برمجة تطبيقات قوية لاستخراج نص الارتباط التشعبي. يوفر هذا البرنامج التعليمي دليلاً خطوة بخطوة حول كيفية إنجاز هذه المهمة باستخدام C#.
 
-#### Q: Can I extract hyperlink text selectively based on specific criteria?
+#### س: هل يمكنني استخراج نص الارتباط التشعبي بشكل انتقائي بناءً على معايير محددة؟
 
-A: Yes, you can selectively extract hyperlink text by iterating through each page of the PDF document and accessing the text associated with hyperlink annotations.
+ج: نعم، يمكنك استخراج نص الارتباط التشعبي بشكل انتقائي من خلال التكرار خلال كل صفحة من مستند PDF والوصول إلى النص المرتبط بالتعليقات التوضيحية للارتباط التشعبي.
 
-#### Q: Are there any limitations when extracting hyperlink text?
+#### س: هل هناك أي قيود عند استخراج نص الارتباط التشعبي؟
 
-A: The accuracy of hyperlink text extraction depends on the formatting and layout of the PDF document. Complex graphical elements or non-standard hyperlink representations might require additional handling.
+ج: تعتمد دقة استخراج نص الارتباط التشعبي على تنسيق مستند PDF وتخطيطه. قد تتطلب العناصر الرسومية المعقدة أو تمثيلات الارتباط التشعبي غير القياسية معالجة إضافية.
 
-#### Q: Can I extract hyperlink text from password-protected PDF documents?
+#### س: هل يمكنني استخراج نص الارتباط التشعبي من مستندات PDF محمية بكلمة مرور؟
 
-A: Aspose.PDF for .NET can extract hyperlink text from password-protected PDF documents as long as you provide the appropriate authentication credentials when loading the document.
+ج: يمكن لـ Aspose.PDF for .NET استخراج نص الارتباط التشعبي من مستندات PDF محمية بكلمة مرور طالما أنك توفر بيانات اعتماد المصادقة المناسبة عند تحميل المستند.
 
-#### Q: How can I utilize the extracted hyperlink text in my application?
+#### س: كيف يمكنني الاستفادة من نص الارتباط التشعبي المستخرج في طلبي؟
 
-A: Once you've extracted the hyperlink text, you can analyze, categorize, or display it as needed within your application. You can also incorporate it into reports or data analysis.
+ج: بمجرد استخراج نص الارتباط التشعبي، يمكنك تحليله أو تصنيفه أو عرضه حسب الحاجة داخل تطبيقك. يمكنك أيضًا دمجها في التقارير أو تحليل البيانات.
 
-#### Q: Is it possible to extract other attributes of hyperlinks, such as URLs or destinations?
+#### س: هل من الممكن استخراج سمات أخرى للارتباطات التشعبية، مثل عناوين URL أو الوجهات؟
 
-A: This tutorial focuses on extracting hyperlink text. To extract other attributes like URLs or destinations, you can refer to the official Aspose.PDF documentation for advanced hyperlink handling.
+ج: يركز هذا البرنامج التعليمي على استخراج نص الارتباط التشعبي. لاستخراج سمات أخرى مثل عناوين URL أو الوجهات، يمكنك الرجوع إلى وثائق Aspose.PDF الرسمية للتعامل المتقدم مع الارتباطات التشعبية.

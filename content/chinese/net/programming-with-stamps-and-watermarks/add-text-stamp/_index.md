@@ -1,52 +1,52 @@
 ---
-title: Add Text Stamp In PDF File
-linktitle: Add Text Stamp In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily add a text stamp in PDF file with Aspose.PDF for .NET.
+title: 在 PDF 文件中添加文本印记
+linktitle: 在 PDF 文件中添加文本印记
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中轻松添加文本图章。
 type: docs
 weight: 50
 url: /zh/net/programming-with-stamps-and-watermarks/add-text-stamp/
 ---
-In this tutorial, we will take you step by step on how to add a text stamp in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to add a custom text stamp to a specific page of the PDF file.
+在本教程中，我们将逐步指导您如何使用 Aspose.PDF for .NET 在 PDF 文件中添加文本图章。我们将向您展示如何使用提供的 C# 源代码将自定义文本图章添加到 PDF 文件的特定页面。
 
-## Step 1: Setting up the environment
+## 第一步：搭建环境
 
-Before you begin, make sure you have the following:
+在开始之前，请确保您具备以下条件：
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- 已安装的 .NET 开发环境。
+- 下载用于 .NET 的 Aspose.PDF 库并在您的项目中引用。
 
-## Step 2: Loading the PDF document
+## 第 2 步：加载 PDF 文档
 
-The first step is to load the existing PDF document into your project. Here's how:
+第一步是将现有的 PDF 文档加载到您的项目中。就是这样：
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the document
+//打开文档
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+请务必将“您的文档目录”替换为 PDF 文档所在目录的实际路径。
 
-## Step 3: Creating the text buffer
+## 第 3 步：创建文本缓冲区
 
-Now that you have uploaded the PDF document, you can create the text stamp to add. Here's how to do it:
+现在您已经上传了 PDF 文档，您可以创建要添加的文本图章。操作方法如下：
 
 ```csharp
-// Create the text buffer
+//创建文本缓冲区
 TextStamp textStamp = new TextStamp("Example Stamp");
 ```
 
-The code above creates a new text buffer containing the specified text.
+上面的代码创建一个包含指定文本的新文本缓冲区。
 
-## Step 4: Configuring Text Stamp Properties
+## 步骤 4：配置文本图章属性
 
-Before adding the text stamp to the PDF document, you can configure various properties of the stamp, such as background, position, rotation, font, size, etc. Here's how:
+在将文本图章添加到 PDF 文档之前，您可以配置图章的各种属性，例如背景、位置、旋转、字体、大小等。操作方法如下：
 
 ```csharp
-// Configure text buffer properties
+//配置文本缓冲区属性
 textStamp. Background = true;
 textStamp. XIndent = 100;
 textStamp. YIndent = 100;
@@ -57,107 +57,107 @@ textStamp.TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
 textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Aqua);
 ```
 
-You can adjust these properties according to your needs.
+您可以根据需要调整这些属性。
 
-## Step 5: Add Text Stamp to PDF
+## 第 5 步：将文本图章添加到 PDF
 
-Now that the text stamp is ready, you can add it to a specific page of the PDF document. Here's how:
+现在文本图章已准备就绪，您可以将其添加到 PDF 文档的特定页面。就是这样：
 
 ```csharp
-// Add text buffer to specific page
+//将文本缓冲区添加到特定页面
 pdfDocument.Pages[1].AddStamp(textStamp);
 ```
 
-The code above adds the text stamp to the first page of the PDF document. You can specify another page if needed.
+上面的代码将文本图章添加到 PDF 文档的第一页。如果需要，您可以指定另一个页面。
 
-## Step 6: Save the output document
+## 步骤 6：保存输出文档
 
-Once you have added the text stamp, you can save the edited PDF document. Here's how:
+添加文本图章后，您可以保存编辑后的 PDF 文档。就是这样：
 
 ```csharp
-// Save the output document
+//保存输出文档
 pdfDocument.Save(dataDir);
 ```
 
-The code above saves the modified PDF document in the specified directory.
+上面的代码将修改后的PDF文档保存在指定目录中。
 
-### Sample source code for Add Text Stamp using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 添加文本图章的示例源代码 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
 
-// Create text stamp
+//创建文本印章
 TextStamp textStamp = new TextStamp("Sample Stamp");
 
-// Set whether stamp is background
+//设置图章是否为背景
 textStamp.Background = true;
 
-// Set origin
+//设置原点
 textStamp.XIndent = 100;
 textStamp.YIndent = 100;
 
-// Rotate stamp
+//旋转图章
 textStamp.Rotate = Rotation.on90;
 
-// Set text properties
+//设置文本属性
 textStamp.TextState.Font = FontRepository.FindFont("Arial");
 textStamp.TextState.FontSize = 14.0F;
 textStamp.TextState.FontStyle = FontStyles.Bold;
 textStamp.TextState.FontStyle = FontStyles.Italic;
 textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Aqua);
 
-// Add stamp to particular page
+//添加图章到特定页面
 pdfDocument.Pages[1].AddStamp(textStamp);
 dataDir = dataDir + "AddTextStamp_out.pdf";
 
-// Save output document
+//保存输出文档
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nText stamp added successfully.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have learned how to add a text stamp using Aspose.PDF for .NET. Now you can apply this knowledge to your own projects to add custom text stamps to PDF documents.
+恭喜！您已经了解了如何使用 Aspose.PDF for .NET 添加文本图章。现在您可以将这些知识应用到您自己的项目中，以将自定义文本图章添加到 PDF 文档中。
 
-### FAQ's for add text stamp in PDF file
+### 在 PDF 文件中添加文本印记的常见问题解答
 
-#### Q: What is the purpose of adding a text stamp in a PDF file using Aspose.PDF for .NET?
+#### 问：使用 Aspose.PDF for .NET 在 PDF 文件中添加文本图章的目的是什么？
 
-A: Adding a text stamp allows you to place custom text on a specific page of a PDF document. This feature is useful for adding labels, comments, watermarks, or any other textual information to enhance the document's content and provide additional context.
+答：添加文本图章允许您将自定义文本放置在 PDF 文档的特定页面上。此功能对于添加标签、注释、水印或任何其他文本信息以增强文档内容并提供附加上下文非常有用。
 
-#### Q: Can I customize the appearance of the text stamp, such as font, size, color, and rotation?
+#### 问：我可以自定义文本图章的外观，例如字体、大小、颜色和旋转吗？
 
-A: Yes, you can fully customize the appearance of the text stamp. The provided C# source code demonstrates how to set various properties of the `TextStamp` object, including font, font size, font style, text color, background color, and rotation.
+答：是的，您可以完全自定义文本图章的外观。提供的C#源代码演示了如何设置各种属性`TextStamp`对象，包括字体、字体大小、字体样式、文本颜色、背景颜色和旋转。
 
-#### Q: Is it possible to add multiple text stamps to different pages of the same PDF document?
+#### 问：是否可以在同一 PDF 文档的不同页面上添加多个文本印记？
 
-A: Absolutely, you can add multiple text stamps to different pages of the same PDF document. The tutorial's provided code allows you to specify the target page for adding the text stamp, making it versatile for different pages within the document.
+答：当然，您可以将多个文本图章添加到同一 PDF 文档的不同页面。本教程提供的代码允许您指定添加文本图章的目标页面，使其适用于文档中的不同页面。
 
-#### Q: How do I specify the position of the text stamp within the PDF document?
+#### 问：如何指定 PDF 文档中文本印记的位置？
 
-A: You can customize the position of the text stamp by modifying the `XIndent` and `YIndent` properties of the `TextStamp` object. These properties define the coordinates of the stamp's top-left corner relative to the origin of the page.
+ A：您可以通过修改`XIndent`和`YIndent`的属性`TextStamp`目的。这些属性定义图章左上角相对于页面原点的坐标。
 
-#### Q: Can I apply this method to existing PDF documents to add text stamps?
+#### 问：我可以将此方法应用于现有 PDF 文档来添加文本图章吗？
 
-A: Yes, you can apply this method to existing PDF documents to add text stamps. The tutorial's provided code demonstrates how to load an existing PDF document and add a text stamp to a specific page.
+答：是的，您可以将此方法应用于现有的 PDF 文档来添加文本图章。本教程提供的代码演示了如何加载现有 PDF 文档并将文本图章添加到特定页面。
 
-#### Q: Can I add both background and foreground colors to the text stamp?
+#### 问：我可以为文本图章添加背景色和前景色吗？
 
-A: Yes, you can add both background and foreground colors to the text stamp. By setting the `Background` property to `true`, you can provide a colored background for the text stamp. Additionally, you can set the `TextState.ForegroundColor` property to specify the color of the text itself.
+答：是的，您可以为文本图章添加背景色和前景色。通过设置`Background`财产给`true`，您可以为文本图章提供彩色背景。此外，您还可以设置`TextState.ForegroundColor`属性来指定文本本身的颜色。
 
-#### Q: How can I ensure that the text stamp does not obscure the underlying content of the PDF document?
+#### 问：如何确保文本印记不会遮盖 PDF 文档的底层内容？
 
-A: When adding a text stamp, be mindful of its placement to ensure that it does not obstruct critical information or negatively affect the document's readability. You can adjust the `XIndent` and `YIndent` properties to position the text stamp appropriately.
+答：添加文本印记时，请注意其位置，以确保它不会遮挡关键信息或对文档的可读性产生负面影响。您可以调整`XIndent`和`YIndent`属性来适当定位文本图章。
 
-#### Q: Can I use this method to add stamps other than text, such as images or logos?
+#### 问：我可以使用此方法添加文本以外的图章，例如图像或徽标吗？
 
-A: This specific tutorial focuses on adding text stamps, but you can similarly add other types of stamps, such as images or logos, using Aspose.PDF for .NET. The process involves creating the appropriate stamp object and configuring its properties.
+答：本教程重点介绍添加文本图章，但您也可以使用 Aspose.PDF for .NET 以类似方式添加其他类型的图章，例如图像或徽标。该过程涉及创建适当的图章对象并配置其属性。
 
-#### Q: How can I automate the process of adding text stamps to multiple PDF documents?
+#### 问：如何自动执行向多个 PDF 文档添加文本图章的过程？
 
-A: You can automate the process of adding text stamps to multiple PDF documents by creating a script or program that iterates through a list of documents and applies the same text stamping process to each one.
+答：您可以通过创建一个脚本或程序来自动执行向多个 PDF 文档添加文本印记的过程，该脚本或程序会迭代文档列表并对每个文档应用相同的文本印记过程。

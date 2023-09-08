@@ -1,134 +1,134 @@
 ---
-title: Add Line Object In PDF File
-linktitle: Add Line Object In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a custom line object in a PDF file using Aspose.PDF for .NET.
+title: 在 PDF 文件中添加线条对象
+linktitle: 在 PDF 文件中添加线条对象
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中添加自定义线条对象。
 type: docs
 weight: 30
 url: /zh/net/programming-with-graphs/add-line-object/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to add a line object using Aspose.PDF for .NET.
+在本教程中，我们将引导您逐步完成以下 C# 源代码，以使用 Aspose.PDF for .NET 添加线条对象。
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+在开始之前，请确保您已经安装了 Aspose.PDF 库并设置了开发环境。还具备 C# 编程的基础知识。
 
-## Step 1: Document Directory Setup
+## 第 1 步：文档目录设置
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+在提供的源代码中，您需要指定要保存生成的 PDF 文件的目录。将“dataDir”变量更改为所需的目录。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating a Document Instance and Adding a Page
+## 第2步：创建文档实例并添加页面
 
-We create an instance of the Document class and add a page to this document.
+我们创建 Document 类的一个实例并向该文档添加一个页面。
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Creating a Graph Object and adding it to the page
+## 第 3 步：创建图形对象并将其添加到页面
 
-We create a Graph object with specified dimensions and add it to the page's paragraph collection.
+我们创建一个具有指定尺寸的 Graph 对象并将其添加到页面的段落集合中。
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
 page.Paragraphs.Add(graph);
 ```
 
-## Step 4: Create Line Object and Add to Chart
+## 第 4 步：创建线条对象并添加到图表
 
-We create a Line object with the specified coordinates and add it to the chart's shape collection.
+我们使用指定的坐标创建一个 Line 对象，并将其添加到图表的形状集合中。
 
 ```csharp
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
 graph.Shapes.Add(line);
 ```
 
-## Step 5: Line Setup
+## 第 5 步：线路设置
 
-We can specify properties for the line, such as dash type and dash phase.
+我们可以指定线条的属性，例如虚线类型和虚线相位。
 
 ```csharp
 line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
 line.GraphInfo.DashPhase = 1;
 ```
 
-## Step 6: Saving the PDF File
+## 步骤 6：保存 PDF 文件
 
-Finally, we save the resulting PDF file with the name "AddLineObject_out.pdf" in the specified directory.
+最后，我们将生成的 PDF 文件以名称“AddLineObject_out.pdf”保存在指定目录中。
 
 ```csharp
 doc.Save(dataDir + "AddLineObject_out.pdf");
 ```
 
-### Sample source code for Add Line Object using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 添加线条对象的示例源代码 
 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Document instance
+//创建文档实例
 Document doc = new Document();
-// Add page to pages collection of PDF file
+//将页面添加到 PDF 文件的页面集合
 Page page = doc.Pages.Add();
-// Create Graph instance
+//创建图实例
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
-// Add graph object to paragraphs collection of page instance
+//将图形对象添加到页面实例的段落集合中
 page.Paragraphs.Add(graph);
-// Create Rectangle instance
+//创建矩形实例
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
-// Specify fill color for Graph object
+//指定 Graph 对象的填充颜色
 line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
 line.GraphInfo.DashPhase = 1;
-// Add rectangle object to shapes collection of Graph object
+//将矩形对象添加到图形对象的形状集合中
 graph.Shapes.Add(line);
 dataDir = dataDir + "AddLineObject_out.pdf";
-// Save PDF file
+//保存 PDF 文件
 doc.Save(dataDir);
 Console.WriteLine("\nLine object added successfully to pdf.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we have explained step by step how to add a line object using Aspose.PDF for .NET. You can now use this knowledge to create PDF documents with custom lines in your applications.
+在本教程中，我们逐步解释了如何使用 Aspose.PDF for .NET 添加线条对象。您现在可以利用这些知识在应用程序中创建带有自定义行的 PDF 文档。
 
-### FAQ's for add line object in PDF file
+### 在 PDF 文件中添加线条对象的常见问题解答
 
-#### Q: What is the purpose of this tutorial?
+#### 问：本教程的目的是什么？
 
-A: This tutorial aims to guide you through the process of adding a line object using Aspose.PDF for .NET to enhance your PDF documents.
+答：本教程旨在指导您完成使用 Aspose.PDF for .NET 添加线条对象以增强 PDF 文档的过程。
 
-#### Q: What prerequisites are required before starting?
+#### 问：开始之前需要什么先决条件？
 
-A: Before you begin, make sure you have installed the Aspose.PDF library and set up your development environment. Additionally, having a basic understanding of C# programming is recommended.
+答：开始之前，请确保您已经安装了 Aspose.PDF 库并设置了开发环境。此外，建议对 C# 编程有基本的了解。
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### 问：如何指定PDF文件的保存目录？
 
-A: In the provided source code, you can modify the "dataDir" variable to indicate the directory where you want to save the resulting PDF file.
+答：在提供的源代码中，您可以修改“dataDir”变量以指示要保存生成的 PDF 文件的目录。
 
-#### Q: What is the purpose of the Graph object?
+#### 问：Graph 对象的用途是什么？
 
-A: The Graph object serves as a container for drawing elements. It is created with specified dimensions and added to the page's paragraph collection.
+答：Graph 对象充当绘图元素的容器。它是使用指定的尺寸创建的，并添加到页面的段落集合中。
 
-#### Q: How can I add a line object to the PDF document?
+#### 问：如何在 PDF 文档中添加线条对象？
 
-A: To add a line object, create an instance of the Line class with specified coordinates and add it to the graph's shape collection.
+答：要添加线条对象，请创建具有指定坐标的 Line 类的实例，并将其添加到图形的形状集合中。
 
-#### Q: Can I customize the appearance of the line?
+#### 问：我可以自定义线路的外观吗？
 
-A: Yes, you can customize the appearance of the line by setting properties such as dash type and dash phase using the GraphInfo property of the Line object.
+答：是的，您可以通过使用 Line 对象的 GraphInfo 属性设置破折号类型和破折号相位等属性来自定义线条的外观。
 
-#### Q: What is the purpose of specifying the dash array and dash phase?
+#### 问：指定破折号数组和破折号相位的目的是什么？
 
-A: The dash array and dash phase properties allow you to create dashed or dotted lines with specific patterns.
+答：虚线阵列和虚线阶段属性允许您创建具有特定图案的虚线或点线。
 
-#### Q: How can I save the PDF file after adding the line object?
+#### 问：添加线条对象后如何保存PDF文件？
 
-A: After adding the line object, you can save the resulting PDF file using the `doc.Save(dataDir + "AddLineObject_out.pdf");` line in the provided source code.
+答：添加线条对象后，您可以使用以下命令保存生成的 PDF 文件：`doc.Save(dataDir + "AddLineObject_out.pdf");`提供的源代码中的行。
 
-#### Q: Is there a sample source code available?
+#### 问：有可用的示例源代码吗？
 
-A: Yes, the tutorial includes a sample source code that you can refer to for implementing the steps described.
+答：是的，本教程包含示例源代码，您可以参考它来实现所描述的步骤。

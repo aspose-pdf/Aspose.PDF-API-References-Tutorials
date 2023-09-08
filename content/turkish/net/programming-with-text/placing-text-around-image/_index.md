@@ -1,50 +1,50 @@
 ---
-title: Placing Text Around Image In PDF File
-linktitle: Placing Text Around Image In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to place text around an image in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasında Görüntünün Çevresine Metin Yerleştirme
+linktitle: PDF Dosyasında Görüntünün Çevresine Metin Yerleştirme
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak PDF dosyasındaki bir görüntünün çevresine nasıl metin yerleştireceğinizi öğrenin.
 type: docs
 weight: 260
 url: /tr/net/programming-with-text/placing-text-around-image/
 ---
-In this tutorial, we will explain how to place text around an image in PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of creating a table, adding an image, and positioning text around the image using the provided C# source code.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak PDF dosyasındaki bir görüntünün çevresine nasıl metin yerleştireceğimizi açıklayacağız. Sağlanan C# kaynak kodunu kullanarak tablo oluşturma, resim ekleme ve resmin etrafına metin yerleştirme işlemlerini adım adım gerçekleştireceğiz.
 
-## Requirements
+## Gereksinimler
 
-Before you begin, ensure that you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- Aspose.PDF for .NET kütüphanesi kuruldu.
+- C# programlamanın temel anlayışı.
 
-## Step 1: Set up the Document Directory
+## 1. Adım: Belge Dizinini Ayarlayın
 
-First, you need to set the path to the directory where you want to save the generated PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your desired directory.
+ Öncelikle oluşturulan PDF dosyasını kaydetmek istediğiniz dizinin yolunu ayarlamanız gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir`İstediğiniz dizinin yolunu içeren değişken.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a Document and Page
+## 2. Adım: Bir Belge ve Sayfa Oluşturun
 
-Next, we create a `Document` object and add a page to it using the `Pages.Add()` method.
+ Daha sonra bir tane oluşturuyoruz`Document` nesneyi kullanın ve ona bir sayfa ekleyin.`Pages.Add()` yöntem.
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## Step 3: Create a Table
+## 3. Adım: Tablo Oluşturun
 
-We create a table using the `Table` class and add it to the paragraphs collection of the page.
+ kullanarak bir tablo oluşturuyoruz.`Table` sınıfını seçin ve sayfanın paragraf koleksiyonuna ekleyin.
 
 ```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
 page.Paragraphs.Add(table1);
 ```
 
-## Step 4: Set Table Column Widths and Margins
+## Adım 4: Tablo Sütunu Genişliklerini ve Kenar Boşluklarını Ayarlayın
 
-We set the column widths of the table and create a `MarginInfo` object to set the margins.
+ Tablonun sütun genişliklerini ayarlayıp bir tablo oluşturuyoruz.`MarginInfo` Kenar boşluklarını ayarlama nesnesi.
 
 ```csharp
 table1. ColumnWidths = "120,270";
@@ -56,9 +56,9 @@ margin. Bottom = 5f;
 table1. DefaultCellPadding = margin;
 ```
 
-## Step 5: Add an Image to the Table
+## Adım 5: Tabloya Bir Resim Ekleme
 
-We create an `Image` object, specify the image file path, and set the fixed height and width of the image. Then, we add the image to the paragraphs collection of the table cell.
+ Biz bir yaratıyoruz`Image` nesneyi seçin, görüntü dosyası yolunu belirtin ve görüntünün sabit yüksekliğini ve genişliğini ayarlayın. Daha sonra görüntüyü tablo hücresinin paragraf koleksiyonuna ekliyoruz.
 
 ```csharp
 Aspose.Pdf.Image logo = new Aspose.Pdf.Image();
@@ -69,9 +69,9 @@ row1.Cells.Add();
 row1.Cells[0].Paragraphs.Add(logo);
 ```
 
-## Step 6: Add Text Around the Image
+## Adım 6: Resmin Çevresine Metin Ekleyin
 
-We create string variables containing HTML-formatted text and create an `HtmlFragment` object. Then, we add the HTML text to the table cell containing the image.
+ HTML biçimli metin içeren dize değişkenleri oluştururuz ve`HtmlFragment`nesne. Daha sonra HTML metnini görselin bulunduğu tablo hücresine ekliyoruz.
 
 ```csharp
 string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b>Aspose.Pdf for .NET</b></font>";
@@ -82,9 +82,9 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 ```
 
-## Step 7: Add Additional Text
+## Adım 7: Ek Metin Ekleyin
 
-We create another `HtmlFragment` object containing additional HTML-formatted text and add it to a separate table cell.
+ Başka bir tane yaratıyoruz`HtmlFragment` ek HTML biçimli metin içeren nesneyi seçin ve bunu ayrı bir tablo hücresine ekleyin.
 
 ```csharp
 string SecondRowString = "<font face=\"Arial\" size=2>Aspose.Pdf for .NET supports the creation of PDF files through API and XML or XSL-FO templates. Aspose.Pdf for .NET is very easy to use and is provided with 14 fully featured demos written in both C# and Visual Basic.</font>";
@@ -92,118 +92,118 @@ Aspose.Pdf.HtmlFragment SecondRowText = new Aspose.Pdf.HtmlFragment(SecondRowStr
 SecondRow.Cells[0].Paragraphs.Add(SecondRowText);
 ```
 
-## Step 8: Save the PDF Document
+## Adım 8: PDF Belgesini Kaydedin
 
-Finally, we save the PDF document to the specified output file.
+Son olarak PDF belgesini belirtilen çıktı dosyasına kaydediyoruz.
 
 ```csharp
 doc.Save(dataDir + "PlacingTextAroundImage_out.pdf");
 ```
 
-### Sample source code for Placing Text Around Image using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Görüntünün Etrafına Metin Yerleştirmek için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate document object 
+// Belge nesnesini somutlaştır
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-// Create a page in the Pdf 
+// Pdf'de bir sayfa oluşturun
 Aspose.Pdf.Page page = doc.Pages.Add();
-// Instantiate a table object 
+// Bir tablo nesnesinin örneğini oluşturma
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-// Add the table in paragraphs collection of the desired section 
+// Tabloyu istediğiniz bölümün paragraf koleksiyonuna ekleyin
 page.Paragraphs.Add(table1);
-// Set with column widths of the table 
+// Tablonun sütun genişliklerine göre ayarlama
 table1.ColumnWidths = "120 270";
-// Create MarginInfo object and set its left, bottom, right and top margins 
+// MarginInfo nesnesi oluşturun ve sol, alt, sağ ve üst kenar boşluklarını ayarlayın
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 5f;
 margin.Left = 5f;
 margin.Right = 5f;
 margin.Bottom = 5f;
-// Set the default cell padding to the MarginInfo object 
+// Varsayılan hücre dolgusunu MarginInfo nesnesine ayarlayın
 table1.DefaultCellPadding = margin;
-// Create rows in the table and then cells in the rows 
+// Tabloda satırlar ve ardından satırlarda hücreler oluşturun
 Aspose.Pdf.Row row1 = table1.Rows.Add();
-// Create an image object
+// Bir görüntü nesnesi oluşturun
 Aspose.Pdf.Image logo = new Aspose.Pdf.Image();
-// Specify the image file path
+// Görüntü dosyası yolunu belirtin
 logo.File = dataDir + "aspose-logo.jpg";
-// Specify the image Fixed Height
+// Görüntünün Sabit Yüksekliğini belirtin
 logo.FixHeight = 120;
-// Specify the image Fixed Width
+// Resmin Sabit Genişliğini Belirleyin
 logo.FixWidth = 110;
 row1.Cells.Add();
-// Add the image to paragraphs collection of the table cell
+// Görüntüyü tablo hücresinin paragraf koleksiyonuna ekleyin
 row1.Cells[0].Paragraphs.Add(logo);
-// Create string variables with text containing html tags 
+// Html etiketleri içeren metinlerle dize değişkenleri oluşturun
 string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b> Aspose.Pdf for .NET</b></font>";
 string BodyString1 = "<font face=\"Arial\" size=2><br/>Aspose.Pdf for .NET is a non-graphical PDF� document reporting component that enables .NET applications to <b> create PDF documents from scratch </b> without utilizing Adobe Acrobat�. Aspose.Pdf for .NET is very affordably priced and offers a wealth of strong features including: compression, tables, graphs, images, hyperlinks, security and custom fonts. </font>";
-// Create a text object to be added to the right of image
+//Resmin sağına eklenecek bir metin nesnesi oluşturun
 Aspose.Pdf.HtmlFragment TitleText = new Aspose.Pdf.HtmlFragment(TitleString + BodyString1);
 row1.Cells.Add();
-// Add the text paragraphs containing HTML text to the table cell
+// HTML metnini içeren metin paragraflarını tablo hücresine ekleme
 row1.Cells[1].Paragraphs.Add(TitleText);
-// Set the vertical alignment of the row contents as Top
+// Satır içeriklerinin dikey hizalamasını Üst olarak ayarlayın
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// Create rows in the table and then cells in the rows
+// Tabloda satırlar ve ardından satırlarda hücreler oluşturun
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
-// Set the row span value for Second row as 2
+// İkinci satırın satır aralığı değerini 2 olarak ayarlayın
 SecondRow.Cells[0].ColSpan = 2;
-// Set the vertical alignment of the second row as Top
+// İkinci satırın dikey hizalamasını Üst olarak ayarlayın
 SecondRow.Cells[0].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
 string SecondRowString = "<font face=\"Arial\" size=2>Aspose.Pdf for .NET supports the creation of PDF files through API and XML or XSL-FO templates. Aspose.Pdf for .NET is very easy to use and is provided with 14 fully featured demos written in both C# and Visual Basic.</font>";
 Aspose.Pdf.HtmlFragment SecondRowText = new Aspose.Pdf.HtmlFragment(SecondRowString);
-// Add the text paragraphs containing HTML text to the table cell
+// HTML metnini içeren metin paragraflarını tablo hücresine ekleme
 SecondRow.Cells[0].Paragraphs.Add(SecondRowText);
-// Save the Pdf file
+// Pdf dosyasını kaydedin
 doc.Save(dataDir + "PlacingTextAroundImage_out.pdf");
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, you have learned how to place text around an image in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can create a table, add an image, and position text around the image in a PDF document.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesindeki bir görüntünün çevresine nasıl metin yerleştireceğinizi öğrendiniz. Adım adım kılavuzu izleyerek ve sağlanan C# kodunu çalıştırarak bir tablo oluşturabilir, bir görüntü ekleyebilir ve bir PDF belgesinde metni görüntünün etrafına konumlandırabilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of the "Placing Text Around Image In PDF File" tutorial?
+#### S: "PDF Dosyasındaki Görüntünün Çevresine Metin Yerleştirme" eğitiminin amacı nedir?
 
-A: The "Placing Text Around Image In PDF File" tutorial demonstrates how to use the Aspose.PDF library for .NET to place text around an image in a PDF document. The tutorial provides a step-by-step guide and C# source code to help you create a table, add an image, and position text around the image.
+C: "PDF Dosyasındaki Görüntünün Çevresine Metin Yerleştirme" eğitimi, bir PDF belgesindeki bir görüntünün çevresine metin yerleştirmek için .NET için Aspose.PDF kütüphanesinin nasıl kullanılacağını gösterir. Öğreticide, tablo oluşturmanıza, görüntü eklemenize ve metni görüntünün çevresine konumlandırmanıza yardımcı olacak adım adım kılavuz ve C# kaynak kodu sağlanır.
 
-#### Q: Why would I want to place text around an image in a PDF document?
+#### S: Neden bir PDF belgesindeki bir görüntünün çevresine metin yerleştirmek isteyeyim?
 
-A: Placing text around an image enhances the visual presentation of your PDF documents, making them more engaging and informative. This technique is often used in documents, brochures, reports, and other materials where you want to combine images and text in an aesthetically pleasing manner.
+C: Bir görüntünün etrafına metin yerleştirmek, PDF belgelerinizin görsel sunumunu geliştirerek onları daha ilgi çekici ve bilgilendirici hale getirir. Bu teknik genellikle görselleri ve metni estetik açıdan hoş bir şekilde birleştirmek istediğiniz belgelerde, broşürlerde, raporlarda ve diğer materyallerde kullanılır.
 
-#### Q: How do I set up the document directory?
+#### S: Belge dizinini nasıl ayarlarım?
 
-A: To set up the document directory:
+C: Belge dizinini ayarlamak için:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where you want to save the generated PDF file.
+1.  Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` oluşturulan PDF dosyasını kaydetmek istediğiniz dizinin yolunu içeren değişken.
 
-#### Q: How do I create a table and add an image to it?
+#### S: Bir tabloyu nasıl oluşturup ona resim eklerim?
 
-A: The tutorial guides you through the process of creating a table using the `Table` class and adding an image to the table using the `Image` class. You will specify the image file path, height, and width before adding it to a table cell.
+ C: Eğitim, aşağıdakileri kullanarak bir tablo oluşturma sürecinde size rehberlik eder:`Table` sınıfını kullanarak tabloya bir resim eklemek`Image` sınıf. Görüntü dosyasının yolunu, yüksekliğini ve genişliğini tablo hücresine eklemeden önce belirteceksiniz.
 
-#### Q: How do I position text around the image?
+#### S: Metni görüntünün etrafına nasıl yerleştiririm?
 
-A: To position text around the image, you will create HTML-formatted text using the `HtmlFragment` class. This text will contain both a title and body text. You will then add this HTML text to a table cell that is adjacent to the image cell.
+ C: Metni görüntünün çevresine konumlandırmak için HTML biçimli metin oluşturacaksınız.`HtmlFragment` sınıf. Bu metin hem başlık hem de gövde metnini içerecektir. Daha sonra bu HTML metnini resim hücresine bitişik bir tablo hücresine ekleyeceksiniz.
 
-#### Q: Can I customize the appearance of the text and image?
+#### S: Metnin ve görselin görünümünü özelleştirebilir miyim?
 
-A: Yes, you can customize the appearance of the text and image using HTML tags and properties. For example, you can set font sizes, colors, styles, and alignment for the text. Additionally, you can adjust the size and dimensions of the image.
+C: Evet, HTML etiketlerini ve özelliklerini kullanarak metnin ve görselin görünümünü özelleştirebilirsiniz. Örneğin metnin yazı tipi boyutlarını, renklerini, stillerini ve hizalamasını ayarlayabilirsiniz. Ayrıca görüntünün boyutunu ve boyutlarını da ayarlayabilirsiniz.
 
-#### Q: How do I save the PDF document?
+#### S: PDF belgesini nasıl kaydederim?
 
-A: After adding the image and text to the table, you can save the PDF document using the `Save` method of the `Document` class. Provide the desired output file path as an argument to the `Save` method.
+ C: Görüntüyü ve metni tabloya ekledikten sonra, PDF belgesini`Save` yöntemi`Document` sınıf. Argüman olarak istenen çıktı dosyası yolunu sağlayın.`Save` yöntem.
 
-#### Q: What is the expected output of this tutorial?
+#### S: Bu eğitimin beklenen çıktısı nedir?
 
-A: By following the tutorial and executing the provided C# code, you will generate a PDF document that demonstrates how to place text around an image. The output document will contain a table with an image and text positioned around it.
+C: Öğreticiyi takip ederek ve verilen C# kodunu çalıştırarak, metnin bir görüntünün etrafına nasıl yerleştirileceğini gösteren bir PDF belgesi oluşturacaksınız. Çıktı belgesi, etrafına resim ve metin yerleştirilmiş bir tablo içerecektir.
 
-#### Q: Can I use different image formats other than JPG?
+#### S: JPG dışında farklı resim formatlarını kullanabilir miyim?
 
-A: Yes, you can use different image formats supported by the Aspose.PDF library, such as PNG, BMP, GIF, and more. When creating the `Image` object, specify the file path of the desired image format.
+ C: Evet, Aspose.PDF kütüphanesi tarafından desteklenen PNG, BMP, GIF ve daha fazlası gibi farklı görüntü formatlarını kullanabilirsiniz. oluştururken`Image` nesneyi istediğiniz görüntü formatının dosya yolunu belirtin.
 
-#### Q: Is a valid Aspose License required for this tutorial?
+#### S: Bu eğitim için geçerli bir Aspose Lisansı gerekli mi?
 
-A: Yes, a valid Aspose License is required for this tutorial to work correctly. You can purchase a full license or obtain a 30-day temporary license from the Aspose website.
+C: Evet, bu eğitimin düzgün çalışması için geçerli bir Aspose Lisansı gereklidir. Aspose web sitesinden tam lisans satın alabilir veya 30 günlük geçici lisans alabilirsiniz.

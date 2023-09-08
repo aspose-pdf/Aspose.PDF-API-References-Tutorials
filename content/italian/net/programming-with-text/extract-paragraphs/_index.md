@@ -1,26 +1,26 @@
 ---
-title: Extract Paragraphs In PDF File
-linktitle: Extract Paragraphs In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract paragraphs in PDF file using Aspose.PDF for .NET.
+title: Estrai paragrafi nel file PDF
+linktitle: Estrai paragrafi nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come estrarre i paragrafi nel file PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 160
 url: /it/net/programming-with-text/extract-paragraphs/
 ---
-This tutorial will guide you through the process of extracting paragraphs in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Questo tutorial ti guiderà attraverso il processo di estrazione dei paragrafi nel file PDF utilizzando Aspose.PDF per .NET. Il codice sorgente C# fornito illustra i passaggi necessari.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Requisiti
+Prima di iniziare, assicurati di avere quanto segue:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio o qualsiasi altro compilatore C# installato sul tuo computer.
+- Aspose.PDF per la libreria .NET. Puoi scaricarlo dal sito Web ufficiale di Aspose o utilizzare un gestore di pacchetti come NuGet per installarlo.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Passaggio 1: impostare il progetto
+1. Crea un nuovo progetto C# nel tuo ambiente di sviluppo preferito.
+2. Aggiungere un riferimento alla libreria Aspose.PDF per .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to extract paragraphs, add the following using directives at the top of the file:
+## Passaggio 2: importa gli spazi dei nomi richiesti
+Nel file di codice in cui desideri estrarre i paragrafi, aggiungi le seguenti direttive using nella parte superiore del file:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,26 +28,26 @@ using System;
 using System.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Passaggio 3: imposta la directory dei documenti
+ Nel codice, individua la riga che dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso della directory in cui sono archiviati i tuoi documenti.
 
-## Step 4: Open the PDF document
-Open an existing PDF document using the `Document` constructor and passing the path to the input PDF file.
+## Passaggio 4: apri il documento PDF
+ Apri un documento PDF esistente utilizzando il file`Document`costruttore e passando il percorso al file PDF di input.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 5: Extract paragraphs
-Instantiate the `ParagraphAbsorber` class and use its `Visit` method to extract paragraphs from the document.
+## Passaggio 5: estrai i paragrafi
+ Istanziare il`ParagraphAbsorber` class e usalo`Visit` metodo per estrarre paragrafi dal documento.
 
 ```csharp
 ParagraphAbsorber absorb = new ParagraphAbsorber();
 absorb.Visit(doc);
 ```
 
-## Step 6: Iterate through paragraphs
-Loop through the extracted paragraphs to access the text contents. Use nested loops to traverse through sections and lines within each paragraph.
+## Passaggio 6: scorrere i paragrafi
+Scorri i paragrafi estratti per accedere ai contenuti del testo. Utilizza cicli nidificati per attraversare sezioni e righe all'interno di ciascun paragrafo.
 
 ```csharp
 foreach(PageMarkup markup in absorber.PageMarkups)
@@ -77,13 +77,13 @@ foreach(PageMarkup markup in absorber.PageMarkups)
 }
 ```
 
-### Sample source code for Extract Paragraphs using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Estrai paragrafi utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open an existing PDF file
+//Apri un file PDF esistente
 Document doc = new Document(dataDir + "input.pdf");
-// Instantiate ParagraphAbsorber
+// Istanzia ParagraphAbsorber
 ParagraphAbsorber absorber = new ParagraphAbsorber();
 absorber.Visit(doc);
 foreach (PageMarkup markup in absorber.PageMarkups)
@@ -113,18 +113,18 @@ foreach (PageMarkup markup in absorber.PageMarkups)
 }
 ```
 
-## Conclusion
-You have successfully extracted paragraphs from a PDF document using Aspose.PDF for .NET. The extracted paragraphs have been displayed in the console window.
+## Conclusione
+Hai estratto con successo i paragrafi da un documento PDF utilizzando Aspose.PDF per .NET. I paragrafi estratti sono stati visualizzati nella finestra della console.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: What is the purpose of this tutorial?
+#### D: Qual è lo scopo di questo tutorial?
 
-A: This tutorial aims to guide you through the process of extracting paragraphs from a PDF file using Aspose.PDF for .NET. The accompanying C# source code provides practical steps for achieving this task.
+R: Questo tutorial ha lo scopo di guidarti attraverso il processo di estrazione dei paragrafi da un file PDF utilizzando Aspose.PDF per .NET. Il codice sorgente C# allegato fornisce passaggi pratici per eseguire questa attività.
 
-#### Q: What namespaces should I import?
+#### D: Quali spazi dei nomi devo importare?
 
-A: In the code file where you intend to extract paragraphs, include the following using directives at the beginning of the file:
+R: Nel file di codice in cui intendi estrarre i paragrafi, includi le seguenti direttive using all'inizio del file:
 
 ```csharp
 using Aspose.Pdf;
@@ -132,22 +132,22 @@ using System;
 using System.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### D: Come posso specificare la directory dei documenti?
 
-A: Locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` in the code and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ R: Individua la linea`string dataDir = "YOUR DOCUMENT DIRECTORY";` nel codice e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory dei documenti.
 
-#### Q: How do I open an existing PDF document?
+#### D: Come posso aprire un documento PDF esistente?
 
-A: In Step 4, you'll open an existing PDF document using the `Document` constructor and providing the path to the input PDF file.
+ R: Nel passaggio 4, aprirai un documento PDF esistente utilizzando il file`Document` costruttore e fornendo il percorso del file PDF di input.
 
-#### Q: How do I extract paragraphs from the document?
+#### D: Come estraggo i paragrafi dal documento?
 
-A: Step 5 involves creating an instance of the `ParagraphAbsorber` class and using its `Visit` method to extract paragraphs from the PDF document.
+ R: Il passaggio 5 prevede la creazione di un'istanza del file`ParagraphAbsorber` class e utilizzando its`Visit` metodo per estrarre paragrafi dal documento PDF.
 
-#### Q: How do I iterate through the extracted paragraphs?
+#### D: Come posso scorrere i paragrafi estratti?
 
-A: Step 6 guides you through looping through the extracted paragraphs. Nested loops are used to traverse sections and lines within each paragraph, ultimately accessing and displaying the text contents.
+R: Il passaggio 6 ti guida attraverso il ciclo dei paragrafi estratti. I cicli nidificati vengono utilizzati per attraversare sezioni e righe all'interno di ciascun paragrafo, accedendo e visualizzando infine il contenuto del testo.
 
-#### Q: What is the key takeaway from this tutorial?
+#### D: Qual è il punto chiave di questo tutorial?
 
-A: By following this tutorial, you've learned how to extract paragraphs from a PDF document using Aspose.PDF for .NET. The extracted paragraphs have been displayed in the console window, providing you with valuable insight into the document's content structure.
+R: Seguendo questo tutorial, hai imparato come estrarre paragrafi da un documento PDF utilizzando Aspose.PDF per .NET. I paragrafi estratti sono stati visualizzati nella finestra della console, fornendoti preziose informazioni sulla struttura del contenuto del documento.

@@ -1,50 +1,50 @@
 ---
-title: Placing Text Around Image In PDF File
-linktitle: Placing Text Around Image In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to place text around an image in PDF file using Aspose.PDF for .NET.
+title: Размещение текста вокруг изображения в PDF-файле
+linktitle: Размещение текста вокруг изображения в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как разместить текст вокруг изображения в файле PDF с помощью Aspose.PDF для .NET.
 type: docs
 weight: 260
 url: /ru/net/programming-with-text/placing-text-around-image/
 ---
-In this tutorial, we will explain how to place text around an image in PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of creating a table, adding an image, and positioning text around the image using the provided C# source code.
+В этом уроке мы объясним, как разместить текст вокруг изображения в PDF-файле с помощью библиотеки Aspose.PDF для .NET. Мы пройдем пошаговый процесс создания таблицы, добавления изображения и размещения текста вокруг изображения, используя предоставленный исходный код C#.
 
-## Requirements
+## Требования
 
-Before you begin, ensure that you have the following:
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- Установлена библиотека Aspose.PDF для .NET.
+- Базовое понимание программирования на C#.
 
-## Step 1: Set up the Document Directory
+## Шаг 1. Настройте каталог документов
 
-First, you need to set the path to the directory where you want to save the generated PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your desired directory.
+ Сначала вам нужно указать путь к каталогу, в котором вы хотите сохранить созданный PDF-файл. Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir`переменная с путем к желаемому каталогу.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a Document and Page
+## Шаг 2. Создайте документ и страницу.
 
-Next, we create a `Document` object and add a page to it using the `Pages.Add()` method.
+ Далее мы создаем`Document` объект и добавьте к нему страницу с помощью`Pages.Add()` метод.
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## Step 3: Create a Table
+## Шаг 3: Создайте таблицу
 
-We create a table using the `Table` class and add it to the paragraphs collection of the page.
+ Создаем таблицу с помощью`Table` class и добавьте его в коллекцию абзацев страницы.
 
 ```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
 page.Paragraphs.Add(table1);
 ```
 
-## Step 4: Set Table Column Widths and Margins
+## Шаг 4. Установите ширину и поля столбцов таблицы
 
-We set the column widths of the table and create a `MarginInfo` object to set the margins.
+ Мы устанавливаем ширину столбцов таблицы и создаем`MarginInfo` объект для установки полей.
 
 ```csharp
 table1. ColumnWidths = "120,270";
@@ -56,9 +56,9 @@ margin. Bottom = 5f;
 table1. DefaultCellPadding = margin;
 ```
 
-## Step 5: Add an Image to the Table
+## Шаг 5. Добавьте изображение в таблицу
 
-We create an `Image` object, specify the image file path, and set the fixed height and width of the image. Then, we add the image to the paragraphs collection of the table cell.
+ Мы создаем`Image` объект, укажите путь к файлу изображения и установите фиксированную высоту и ширину изображения. Затем мы добавляем изображение в коллекцию абзацев ячейки таблицы.
 
 ```csharp
 Aspose.Pdf.Image logo = new Aspose.Pdf.Image();
@@ -69,9 +69,9 @@ row1.Cells.Add();
 row1.Cells[0].Paragraphs.Add(logo);
 ```
 
-## Step 6: Add Text Around the Image
+## Шаг 6. Добавьте текст вокруг изображения
 
-We create string variables containing HTML-formatted text and create an `HtmlFragment` object. Then, we add the HTML text to the table cell containing the image.
+ Мы создаем строковые переменные, содержащие текст в формате HTML, и создаем`HtmlFragment`объект. Затем мы добавляем текст HTML в ячейку таблицы, содержащую изображение.
 
 ```csharp
 string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b>Aspose.Pdf for .NET</b></font>";
@@ -82,9 +82,9 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 ```
 
-## Step 7: Add Additional Text
+## Шаг 7: Добавьте дополнительный текст
 
-We create another `HtmlFragment` object containing additional HTML-formatted text and add it to a separate table cell.
+ Мы создаем еще один`HtmlFragment` объект, содержащий дополнительный текст в формате HTML, и добавьте его в отдельную ячейку таблицы.
 
 ```csharp
 string SecondRowString = "<font face=\"Arial\" size=2>Aspose.Pdf for .NET supports the creation of PDF files through API and XML or XSL-FO templates. Aspose.Pdf for .NET is very easy to use and is provided with 14 fully featured demos written in both C# and Visual Basic.</font>";
@@ -92,118 +92,118 @@ Aspose.Pdf.HtmlFragment SecondRowText = new Aspose.Pdf.HtmlFragment(SecondRowStr
 SecondRow.Cells[0].Paragraphs.Add(SecondRowText);
 ```
 
-## Step 8: Save the PDF Document
+## Шаг 8. Сохраните PDF-документ.
 
-Finally, we save the PDF document to the specified output file.
+Наконец, мы сохраняем PDF-документ в указанный выходной файл.
 
 ```csharp
 doc.Save(dataDir + "PlacingTextAroundImage_out.pdf");
 ```
 
-### Sample source code for Placing Text Around Image using Aspose.PDF for .NET 
+### Пример исходного кода для размещения текста вокруг изображения с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate document object 
+// Создать экземпляр объекта документа
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-// Create a page in the Pdf 
+// Создать страницу в PDF
 Aspose.Pdf.Page page = doc.Pages.Add();
-// Instantiate a table object 
+// Создать экземпляр табличного объекта
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-// Add the table in paragraphs collection of the desired section 
+// Добавьте таблицу в коллекцию абзацев нужного раздела
 page.Paragraphs.Add(table1);
-// Set with column widths of the table 
+// Задается шириной столбца таблицы
 table1.ColumnWidths = "120 270";
-// Create MarginInfo object and set its left, bottom, right and top margins 
+// Создайте объект MarginInfo и установите его левое, нижнее, правое и верхнее поля.
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 5f;
 margin.Left = 5f;
 margin.Right = 5f;
 margin.Bottom = 5f;
-// Set the default cell padding to the MarginInfo object 
+// Установите заполнение ячеек по умолчанию для объекта MarginInfo.
 table1.DefaultCellPadding = margin;
-// Create rows in the table and then cells in the rows 
+// Создайте строки в таблице, а затем ячейки в строках.
 Aspose.Pdf.Row row1 = table1.Rows.Add();
-// Create an image object
+// Создайте объект изображения
 Aspose.Pdf.Image logo = new Aspose.Pdf.Image();
-// Specify the image file path
+// Укажите путь к файлу изображения
 logo.File = dataDir + "aspose-logo.jpg";
-// Specify the image Fixed Height
+// Укажите изображение с фиксированной высотой
 logo.FixHeight = 120;
-// Specify the image Fixed Width
+// Укажите фиксированную ширину изображения
 logo.FixWidth = 110;
 row1.Cells.Add();
-// Add the image to paragraphs collection of the table cell
+// Добавьте изображение в коллекцию абзацев ячейки таблицы.
 row1.Cells[0].Paragraphs.Add(logo);
-// Create string variables with text containing html tags 
+// Создание строковых переменных с текстом, содержащим теги HTML.
 string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b> Aspose.Pdf for .NET</b></font>";
 string BodyString1 = "<font face=\"Arial\" size=2><br/>Aspose.Pdf for .NET is a non-graphical PDF� document reporting component that enables .NET applications to <b> create PDF documents from scratch </b> without utilizing Adobe Acrobat�. Aspose.Pdf for .NET is very affordably priced and offers a wealth of strong features including: compression, tables, graphs, images, hyperlinks, security and custom fonts. </font>";
-// Create a text object to be added to the right of image
+//Создайте текстовый объект, который будет добавлен справа от изображения.
 Aspose.Pdf.HtmlFragment TitleText = new Aspose.Pdf.HtmlFragment(TitleString + BodyString1);
 row1.Cells.Add();
-// Add the text paragraphs containing HTML text to the table cell
+// Добавьте текстовые абзацы, содержащие текст HTML, в ячейку таблицы.
 row1.Cells[1].Paragraphs.Add(TitleText);
-// Set the vertical alignment of the row contents as Top
+// Установите вертикальное выравнивание содержимого строки как «Сверху».
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// Create rows in the table and then cells in the rows
+// Создайте строки в таблице, а затем ячейки в строках.
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
-// Set the row span value for Second row as 2
+// Установите значение диапазона строк для второй строки как 2.
 SecondRow.Cells[0].ColSpan = 2;
-// Set the vertical alignment of the second row as Top
+// Установите вертикальное выравнивание второй строки как Верхнее.
 SecondRow.Cells[0].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
 string SecondRowString = "<font face=\"Arial\" size=2>Aspose.Pdf for .NET supports the creation of PDF files through API and XML or XSL-FO templates. Aspose.Pdf for .NET is very easy to use and is provided with 14 fully featured demos written in both C# and Visual Basic.</font>";
 Aspose.Pdf.HtmlFragment SecondRowText = new Aspose.Pdf.HtmlFragment(SecondRowString);
-// Add the text paragraphs containing HTML text to the table cell
+// Добавьте текстовые абзацы, содержащие текст HTML, в ячейку таблицы.
 SecondRow.Cells[0].Paragraphs.Add(SecondRowText);
-// Save the Pdf file
+// Сохраните PDF-файл
 doc.Save(dataDir + "PlacingTextAroundImage_out.pdf");
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, you have learned how to place text around an image in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can create a table, add an image, and position text around the image in a PDF document.
+В этом уроке вы узнали, как разместить текст вокруг изображения в PDF-документе с помощью библиотеки Aspose.PDF для .NET. Следуя пошаговому руководству и выполнив предоставленный код C#, вы можете создать таблицу, добавить изображение и расположить текст вокруг изображения в документе PDF.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of the "Placing Text Around Image In PDF File" tutorial?
+#### Вопрос: Какова цель урока «Размещение текста вокруг изображения в PDF-файле»?
 
-A: The "Placing Text Around Image In PDF File" tutorial demonstrates how to use the Aspose.PDF library for .NET to place text around an image in a PDF document. The tutorial provides a step-by-step guide and C# source code to help you create a table, add an image, and position text around the image.
+О: Учебное пособие «Размещение текста вокруг изображения в PDF-файле» демонстрирует, как использовать библиотеку Aspose.PDF для .NET для размещения текста вокруг изображения в PDF-документе. Учебное пособие содержит пошаговое руководство и исходный код C#, которые помогут вам создать таблицу, добавить изображение и расположить текст вокруг изображения.
 
-#### Q: Why would I want to place text around an image in a PDF document?
+#### Вопрос: Зачем мне размещать текст вокруг изображения в PDF-документе?
 
-A: Placing text around an image enhances the visual presentation of your PDF documents, making them more engaging and informative. This technique is often used in documents, brochures, reports, and other materials where you want to combine images and text in an aesthetically pleasing manner.
+О: Размещение текста вокруг изображения улучшает визуальное представление PDF-документов, делая их более привлекательными и информативными. Этот прием часто используется в документах, брошюрах, отчетах и других материалах, где требуется эстетично объединить изображения и текст.
 
-#### Q: How do I set up the document directory?
+#### Вопрос: Как настроить каталог документов?
 
-A: To set up the document directory:
+О: Чтобы настроить каталог документов:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where you want to save the generated PDF file.
+1.  Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir` переменная с путем к каталогу, в котором вы хотите сохранить созданный PDF-файл.
 
-#### Q: How do I create a table and add an image to it?
+#### Вопрос: Как создать таблицу и добавить в нее изображение?
 
-A: The tutorial guides you through the process of creating a table using the `Table` class and adding an image to the table using the `Image` class. You will specify the image file path, height, and width before adding it to a table cell.
+ О: Данное руководство проведет вас через процесс создания таблицы с помощью`Table` класс и добавление изображения в таблицу с помощью`Image` сорт. Прежде чем добавлять его в ячейку таблицы, вы укажете путь, высоту и ширину файла изображения.
 
-#### Q: How do I position text around the image?
+#### Вопрос: Как расположить текст вокруг изображения?
 
-A: To position text around the image, you will create HTML-formatted text using the `HtmlFragment` class. This text will contain both a title and body text. You will then add this HTML text to a table cell that is adjacent to the image cell.
+ О: Чтобы разместить текст вокруг изображения, вы создадите текст в формате HTML, используя`HtmlFragment` сорт. Этот текст будет содержать как заголовок, так и основной текст. Затем вы добавите этот HTML-текст в ячейку таблицы, расположенную рядом с ячейкой изображения.
 
-#### Q: Can I customize the appearance of the text and image?
+#### Вопрос: Могу ли я настроить внешний вид текста и изображения?
 
-A: Yes, you can customize the appearance of the text and image using HTML tags and properties. For example, you can set font sizes, colors, styles, and alignment for the text. Additionally, you can adjust the size and dimensions of the image.
+О: Да, вы можете настроить внешний вид текста и изображения с помощью тегов и свойств HTML. Например, вы можете установить размеры шрифта, цвета, стили и выравнивание текста. Дополнительно вы можете настроить размер и размеры изображения.
 
-#### Q: How do I save the PDF document?
+#### Вопрос: Как сохранить PDF-документ?
 
-A: After adding the image and text to the table, you can save the PDF document using the `Save` method of the `Document` class. Provide the desired output file path as an argument to the `Save` method.
+ О: После добавления изображения и текста в таблицу вы можете сохранить PDF-документ с помощью`Save` метод`Document` сорт. Укажите желаемый путь к выходному файлу в качестве аргумента`Save` метод.
 
-#### Q: What is the expected output of this tutorial?
+#### Вопрос: Каков ожидаемый результат этого руководства?
 
-A: By following the tutorial and executing the provided C# code, you will generate a PDF document that demonstrates how to place text around an image. The output document will contain a table with an image and text positioned around it.
+О: Следуя инструкциям и выполнив предоставленный код C#, вы создадите PDF-документ, демонстрирующий, как разместить текст вокруг изображения. Выходной документ будет содержать таблицу с изображением и текстом, расположенными вокруг нее.
 
-#### Q: Can I use different image formats other than JPG?
+#### Вопрос: Могу ли я использовать другие форматы изображений, кроме JPG?
 
-A: Yes, you can use different image formats supported by the Aspose.PDF library, such as PNG, BMP, GIF, and more. When creating the `Image` object, specify the file path of the desired image format.
+ О: Да, вы можете использовать различные форматы изображений, поддерживаемые библиотекой Aspose.PDF, такие как PNG, BMP, GIF и другие. При создании`Image` объект, укажите путь к файлу нужного формата изображения.
 
-#### Q: Is a valid Aspose License required for this tutorial?
+#### Вопрос: Требуется ли для работы с этим руководством действующая лицензия Aspose?
 
-A: Yes, a valid Aspose License is required for this tutorial to work correctly. You can purchase a full license or obtain a 30-day temporary license from the Aspose website.
+О: Да, для корректной работы этого руководства требуется действующая лицензия Aspose. Вы можете приобрести полную лицензию или получить 30-дневную временную лицензию на веб-сайте Aspose.

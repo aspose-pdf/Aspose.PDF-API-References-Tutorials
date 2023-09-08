@@ -1,57 +1,57 @@
 ---
-title: Update Child Bookmarks In PDF File
-linktitle: Update Child Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily update child bookmarks in PDF file with Aspose.PDF for .NET.
+title: Mettre à jour les signets enfants dans un fichier PDF
+linktitle: Mettre à jour les signets enfants dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Mettez facilement à jour les signets enfants dans un fichier PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 110
 url: /fr/net/programming-with-bookmarks/update-child-bookmarks/
 ---
-Updating child bookmarks in PDF file allows you to modify the properties of specific bookmarks within a parent bookmark. With Aspose.PDF for .NET, you can easily update child bookmarks by following the following source code:
+La mise à jour des signets enfants dans un fichier PDF vous permet de modifier les propriétés de signets spécifiques au sein d'un signet parent. Avec Aspose.PDF pour .NET, vous pouvez facilement mettre à jour les signets enfants en suivant le code source suivant :
 
-## Step 1: Import required libraries
+## Étape 1 : Importer les bibliothèques requises
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Avant de commencer, vous devez importer les bibliothèques nécessaires à votre projet C#. Voici la directive d'importation nécessaire :
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Étape 2 : Définir le chemin d'accès au dossier de documents
 
-In this step, you need to specify the path to the folder containing the PDF file you want to update. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ Dans cette étape, vous devez spécifier le chemin d'accès au dossier contenant le fichier PDF que vous souhaitez mettre à jour. Remplacer`"YOUR DOCUMENT DIRECTORY"`dans le code suivant avec le chemin réel de votre dossier de documents :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Étape 3 : Ouvrez le document PDF
 
-Now we will open the PDF document we want to update using the following code:
+Nous allons maintenant ouvrir le document PDF que nous souhaitons mettre à jour en utilisant le code suivant :
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
 ```
 
-## Step 4: Get parent bookmark object
+## Étape 4 : Obtenir l'objet de signet parent
 
-In this step, we are going to get the specific parent bookmark object from which we want to update the child bookmarks. In the example below, we retrieve the parent bookmark at index 1 (the second bookmark in the bookmarks collection). You can adjust the index according to your needs. Here is the corresponding code:
+Dans cette étape, nous allons obtenir l'objet signet parent spécifique à partir duquel nous souhaitons mettre à jour les signets enfants. Dans l'exemple ci-dessous, nous récupérons le signet parent à l'index 1 (le deuxième signet de la collection de signets). Vous pouvez ajuster l'index selon vos besoins. Voici le code correspondant :
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-## Step 5: Get Child Bookmark Object
+## Étape 5 : Obtenir l'objet de signet enfant
 
-Now let's get the specific child bookmark object we want to update. In the example below, we retrieve the child bookmark at index 1 (the second child bookmark in the collection of child bookmarks of the parent bookmark). You can adjust the index according to your needs. Here is the corresponding code:
+Obtenons maintenant l'objet de signet enfant spécifique que nous souhaitons mettre à jour. Dans l'exemple ci-dessous, nous récupérons le marque-page enfant à l'index 1 (le deuxième marque-page enfant dans la collection de marque-pages enfants du marque-page parent). Vous pouvez ajuster l'index selon vos besoins. Voici le code correspondant :
 
 ```csharp
 OutlineItemCollection childOutline = pdfOutline[1];
 ```
 
-## Step 6: Update child bookmark properties
+## Étape 6 : Mettre à jour les propriétés du favori enfant
 
-Now let's update the child bookmark properties such as title, italic style, and bold style. You can adjust these properties according to your needs. Here is the corresponding code:
+Mettons maintenant à jour les propriétés du signet enfant telles que le titre, le style italique et le style gras. Vous pouvez ajuster ces propriétés en fonction de vos besoins. Voici le code correspondant :
 
 ```csharp
 childOutline.Title = "Updated Outline";
@@ -59,93 +59,93 @@ childOutline. Italic = true;
 childOutline. Bold = true;
 ```
 
-## Step 7: Save the updated file
+## Étape 7 : Enregistrez le fichier mis à jour
 
-Now let's save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ Enregistrons maintenant le fichier PDF mis à jour en utilisant le`Save` méthode du`pdfDocument` objet. Voici le code correspondant :
 
 ```csharp
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Update Child Bookmarks using Aspose.PDF for .NET 
+### Exemple de code source pour mettre à jour les signets enfants à l’aide d’Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
-// Get a bookmark object
+// Obtenir un objet signet
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
-// Get child bookmark object
+//Obtenir un objet de signet enfant
 OutlineItemCollection childOutline = pdfOutline[1];
 childOutline.Title = "Updated Outline";
 childOutline.Italic = true;
 childOutline.Bold = true;
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";            
-// Save output
+// Enregistrer la sortie
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nChild bookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusion
 
-Congratulation ! You now have a step-by-step guide to updating child bookmarks with Aspose.PDF for .NET. You can use this code to modify the properties of child bookmarks in your PDF documents.
+Félicitation ! Vous disposez désormais d'un guide étape par étape pour mettre à jour les signets enfants avec Aspose.PDF pour .NET. Vous pouvez utiliser ce code pour modifier les propriétés des signets enfants dans vos documents PDF.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Assurez-vous de consulter la documentation officielle Aspose.PDF pour plus d'informations sur les fonctionnalités avancées de manipulation de signets.
 
-### FAQ's for update child bookmarks in PDF file
+### FAQ pour mettre à jour les signets enfants dans un fichier PDF
 
-#### Q: What are child bookmarks in a PDF file?
+#### Q : Que sont les signets enfants dans un fichier PDF ?
 
-A: Child bookmarks are bookmarks that are nested within a parent bookmark. They allow you to create a hierarchical structure for navigating through a PDF document's content.
+R : Les signets enfants sont des signets imbriqués dans un signet parent. Ils vous permettent de créer une structure hiérarchique pour naviguer dans le contenu d'un document PDF.
 
-#### Q: Why would I need to update child bookmarks?
+#### Q : Pourquoi devrais-je mettre à jour les favoris enfants ?
 
-A: Updating child bookmarks is useful when you want to modify the properties, titles, or styles of specific bookmarks within a parent bookmark. This helps customize the document's navigational structure.
+R : La mise à jour des signets enfants est utile lorsque vous souhaitez modifier les propriétés, les titres ou les styles de signets spécifiques au sein d'un signet parent. Cela permet de personnaliser la structure de navigation du document.
 
-#### Q: How do I import the required libraries for my C# project?
+#### Q : Comment importer les bibliothèques requises pour mon projet C# ?
 
-A: To import the necessary libraries for your C# project, include the following import directive:
+R : Pour importer les bibliothèques nécessaires à votre projet C#, incluez la directive d'importation suivante :
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive enables you to access the classes and methods needed for working with PDF documents and bookmarks.
+Cette directive vous permet d'accéder aux classes et méthodes nécessaires pour travailler avec des documents PDF et des signets.
 
-#### Q: How do I specify the path to the documents folder?
+#### Q : Comment puis-je spécifier le chemin d'accès au dossier de documents ?
 
-A: Replace `"YOUR DOCUMENT DIRECTORY"` in the provided source code with the actual path to the folder containing the PDF file you want to update.
+ R : Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le code source fourni avec le chemin réel vers le dossier contenant le fichier PDF que vous souhaitez mettre à jour.
 
-#### Q: How do I open a PDF document for updating child bookmarks?
+#### Q : Comment puis-je ouvrir un document PDF pour mettre à jour les favoris enfants ?
 
-A: To open a PDF document for updating child bookmarks, use the following code:
+R : Pour ouvrir un document PDF afin de mettre à jour les signets enfants, utilisez le code suivant :
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
 ```
 
-Replace `"UpdateChildBookmarks.pdf"` with the actual file name.
+ Remplacer`"UpdateChildBookmarks.pdf"` avec le nom réel du fichier.
 
-#### Q: How do I get the parent bookmark object from which I want to update child bookmarks?
+#### Q : Comment puis-je obtenir l'objet signet parent à partir duquel je souhaite mettre à jour les signets enfants ?
 
-A: To retrieve a specific parent bookmark for updating child bookmarks, access the `Outlines` property of the `pdfDocument` object. In the example below, we retrieve the parent bookmark at index 1:
+ R : Pour récupérer un signet parent spécifique afin de mettre à jour les signets enfants, accédez au`Outlines` propriété du`pdfDocument` objet. Dans l'exemple ci-dessous, nous récupérons le signet parent à l'index 1 :
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-#### Q: How do I get the child bookmark object I want to update?
+#### Q : Comment puis-je obtenir l'objet signet enfant que je souhaite mettre à jour ?
 
-A: To retrieve a specific child bookmark for updating, access the `OutlineItemCollection` of the parent bookmark. In the example below, we retrieve the child bookmark at index 1:
+ R : Pour récupérer un favori enfant spécifique pour le mettre à jour, accédez au`OutlineItemCollection` du signet parent. Dans l'exemple ci-dessous, nous récupérons le favori enfant à l'index 1 :
 
 ```csharp
 OutlineItemCollection childOutline = pdfOutline[1];
 ```
 
-#### Q: What child bookmark properties can I update?
+#### Q : Quelles propriétés de favoris enfants puis-je mettre à jour ?
 
-A: You can update various properties of a child bookmark, such as its title, italic style, and bold style. Customize these properties according to your needs:
+R : Vous pouvez mettre à jour diverses propriétés d'un signet enfant, telles que son titre, son style italique et son style gras. Personnalisez ces propriétés selon vos besoins :
 
 ```csharp
 childOutline.Title = "Updated Outline";
@@ -153,13 +153,13 @@ childOutline.Italic = true;
 childOutline.Bold = true;
 ```
 
-#### Q: Can I update multiple child bookmarks using this method?
+#### Q : Puis-je mettre à jour plusieurs favoris enfants à l’aide de cette méthode ?
 
-A: Yes, you can repeat steps 4 to 7 for each child bookmark you want to update. Modify the parent index and child index as needed.
+R : Oui, vous pouvez répéter les étapes 4 à 7 pour chaque favori enfant que vous souhaitez mettre à jour. Modifiez l'index parent et l'index enfant selon vos besoins.
 
-#### Q: How do I save the updated PDF file?
+#### Q : Comment puis-je enregistrer le fichier PDF mis à jour ?
 
-A: Save the updated PDF file using the `Save` method of the `pdfDocument` object:
+ R : Enregistrez le fichier PDF mis à jour à l'aide du`Save` méthode du`pdfDocument` objet:
 
 ```csharp
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";

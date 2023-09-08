@@ -1,49 +1,49 @@
 ---
-title: Grouped Check Boxes In PDF Document
-linktitle: Grouped Check Boxes In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create grouped checkboxes in PDF document with Aspose.PDF for .NET.
+title: Grupperade kryssrutor i PDF-dokument
+linktitle: Grupperade kryssrutor i PDF-dokument
+second_title: Aspose.PDF för .NET API Referens
+description: Skapa enkelt grupperade kryssrutor i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 170
 url: /sv/net/programming-with-forms/grouped-check-boxes/
 ---
-In this tutorial, we will show you how to create grouped checkboxes in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+I den här handledningen kommer vi att visa dig hur du skapar grupperade kryssrutor i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara C#-källkoden steg för steg för att guida dig genom denna process.
 
-## Step 1: Preparation
+## Steg 1: Förberedelser
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Se till att du har importerat de nödvändiga biblioteken och ange sökvägen till din dokumentkatalog:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiate a Document Object
+## Steg 2: Instantiera ett dokumentobjekt
 
-Instantiate a Document object:
+Instantiera ett dokumentobjekt:
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-## Step 3: Add page to PDF document
+## Steg 3: Lägg till sida till PDF-dokument
 
-Add a page to the PDF document:
+Lägg till en sida i PDF-dokumentet:
 
 ```csharp
 Page page = pdfDocument.Pages.Add();
 ```
 
-## Step 4: Instantiate a RadioButtonField Object
+## Steg 4: Instantiera ett RadioButtonField-objekt
 
-Instantiate a RadioButtonField object with the page number as argument:
+Instantiera ett RadioButtonField-objekt med sidnumret som argument:
 
 ```csharp
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Step 5: Add radio button options
+## Steg 5: Lägg till alternativ för alternativknappar
 
-Add radio button options using the RadioButtonOptionField object and specify their position using the Rectangle object:
+Lägg till alternativknappsalternativ med RadioButtonOptionField-objektet och ange deras position med hjälp av Rectangle-objektet:
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
@@ -54,9 +54,9 @@ radio.Add(opt1);
 radio.Add(opt2);
 ```
 
-## Step 6: Customize radio button options
+## Steg 6: Anpassa alternativ för alternativknappar
 
-Customize radio button options by setting their style, border, and appearance:
+Anpassa alternativen för alternativknappar genom att ställa in deras stil, ram och utseende:
 
 ```csharp
 opt1.Style = BoxStyle.Square;
@@ -69,36 +69,36 @@ opt2.Border.Width = 1;
 opt2.Border.Style = BorderStyle.Solid;
 ```
 
-## Step 7: Add the radio buttons to the form
+## Steg 7: Lägg till alternativknapparna i formuläret
 
-Add the radio buttons to the document form object:
+Lägg till alternativknapparna till dokumentformulärobjektet:
 
 ```csharp
 pdfDocument.Form.Add(radio);
 ```
 
-## Step 8: Save the document
+## Steg 8: Spara dokumentet
 
-Save the PDF document:
+Spara PDF-dokumentet:
 
 ```csharp
 dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Grouped Check Boxes using Aspose.PDF for .NET 
+### Exempel på källkod för grupperade kryssrutor med Aspose.PDF för .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Sökvägen till dokumentkatalogen.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Instantiate Document object
+	// Instantiera dokumentobjekt
 	Document pdfDocument = new Document();
-	// Add a page to PDF file
+	// Lägg till en sida i PDF-filen
 	Page page = pdfDocument.Pages.Add();
-	// Instatiate RadioButtonField object with page number as argument
+	// Instatera RadioButtonField-objekt med sidnummer som argument
 	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Add first radio button option and also specify its origin using Rectangle object
+	// Lägg till första alternativknappsalternativet och ange även dess ursprung med Rectangle-objektet
 	RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
 	RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
 	opt1.OptionName = "Test1";
@@ -117,10 +117,10 @@ try
 	opt2.Border.Width = 1;
 	opt2.Border.Style = BorderStyle.Solid;
 	opt2.Characteristics.Border = System.Drawing.Color.Black;
-	// Add radio button to form object of Document object
+	// Lägg till alternativknapp för att bilda objekt av dokumentobjekt
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
-	// Save the PDF document
+	// Spara PDF-dokumentet
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nGrouped checkboxes added successfully.\nFile saved at " + dataDir);
 }
@@ -130,28 +130,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we learned how to create grouped checkboxes in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily add custom radio button options and bundle them in your PDF documents using Aspose.PDF.
+I den här handledningen lärde vi oss hur man skapar grupperade kryssrutor i ett PDF-dokument med Aspose.PDF för .NET. Genom att följa dessa steg kan du enkelt lägga till anpassade alternativ för alternativknappar och bunta dem i dina PDF-dokument med Aspose.PDF.
 
 ### FAQ's
 
-#### Q: What are grouped checkboxes in a PDF document?
+#### F: Vad är grupperade kryssrutor i ett PDF-dokument?
 
-A: Grouped checkboxes in a PDF document refer to a set of radio button options that are grouped together. Radio buttons allow users to select only one option from a group of mutually exclusive choices. When one radio button is selected, the others in the same group are automatically deselected. This grouping behavior is useful when you want to present users with multiple options but limit their selection to one choice only.
+S: Grupperade kryssrutor i ett PDF-dokument hänvisar till en uppsättning alternativknappar som är grupperade. Radioknappar tillåter användare att bara välja ett alternativ från en grupp av ömsesidigt uteslutande val. När en alternativknapp väljs avmarkeras de andra i samma grupp automatiskt. Detta grupperingsbeteende är användbart när du vill ge användarna flera alternativ men begränsa deras val till endast ett val.
 
-#### Q: Can I customize the appearance of grouped checkboxes in Aspose.PDF for .NET?
+#### F: Kan jag anpassa utseendet på grupperade kryssrutor i Aspose.PDF för .NET?
 
-A: Yes, you can customize the appearance of grouped checkboxes in Aspose.PDF for .NET. The API provides various options to set the style, border, and appearance of radio button options. You can define the position of each option, choose between different box styles (e.g., square, circle, cross), and adjust the border properties to achieve the desired visual representation.
+S: Ja, du kan anpassa utseendet på grupperade kryssrutor i Aspose.PDF för .NET. API:et tillhandahåller olika alternativ för att ställa in stil, ram och utseende för alternativknappsalternativ. Du kan definiera positionen för varje alternativ, välja mellan olika boxstilar (t.ex. kvadrat, cirkel, kors) och justera gränsegenskaperna för att uppnå önskad visuell representation.
 
-#### Q: How do I add grouped checkboxes to a specific page in a PDF document?
+#### F: Hur lägger jag till grupperade kryssrutor på en specifik sida i ett PDF-dokument?
 
-A: To add grouped checkboxes to a specific page in a PDF document, you need to instantiate a `RadioButtonField` object with the desired page number as an argument. Then, create `RadioButtonOptionField` objects representing each radio button option and specify their position using the `Rectangle` object. Finally, add these options to the `RadioButtonField` and customize their appearance as needed before adding the `RadioButtonField` to the document form.
+S: För att lägga till grupperade kryssrutor på en specifik sida i ett PDF-dokument måste du instansiera en`RadioButtonField` objekt med önskat sidnummer som argument. Skapa sedan`RadioButtonOptionField` objekt som representerar varje alternativknapp och ange deras position med hjälp av`Rectangle` objekt. Lägg slutligen till dessa alternativ till`RadioButtonField` och anpassa deras utseende efter behov innan du lägger till`RadioButtonField` till dokumentformuläret.
 
-#### Q: Can I add multiple groups of checkboxes to a single PDF document?
+#### F: Kan jag lägga till flera grupper av kryssrutor i ett enda PDF-dokument?
 
-A: Yes, you can add multiple groups of checkboxes to a single PDF document. Each group should have a unique `RadioButtonField` object, and the `RadioButtonOptionField` objects within each group should share the same page and unique names for their options. This ensures that the radio buttons within each group function correctly, and the selections are mutually exclusive.
+ S: Ja, du kan lägga till flera grupper av kryssrutor i ett enda PDF-dokument. Varje grupp ska ha en unik`RadioButtonField` objekt och`RadioButtonOptionField` objekt inom varje grupp ska dela samma sida och unika namn för sina alternativ. Detta säkerställer att radioknapparna inom varje grupp fungerar korrekt och att valen utesluter varandra.
 
-#### Q: Are grouped checkboxes supported in all PDF viewers and applications?
+#### F: Stöds grupperade kryssrutor i alla PDF-läsare och applikationer?
 
-A: Yes, grouped checkboxes are supported in all standard-compliant PDF viewers and applications. The PDF specification defines radio buttons and their grouping behavior, making them universally recognized in the PDF format. However, it's essential to test the functionality in different PDF viewers to ensure consistent behavior across various platforms.
+S: Ja, grupperade kryssrutor stöds i alla standardkompatibla PDF-läsare och applikationer. PDF-specifikationen definierar alternativknappar och deras grupperingsbeteende, vilket gör dem allmänt igenkända i PDF-formatet. Det är dock viktigt att testa funktionaliteten i olika PDF-läsare för att säkerställa konsekvent beteende på olika plattformar.

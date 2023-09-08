@@ -1,26 +1,26 @@
 ---
-title: Programming with Bookmarks
-linktitle: Programming with Bookmarks
+title: Programación con marcadores
+linktitle: Programación con marcadores
 type: docs
 weight: 19
 url: /es/net/programming-with-bookmarks/
-description: Learn how to manipulate, manage and customize bookmarks in your PDF documents for better navigation and improved user experience.
+description: Aprenda a manipular, administrar y personalizar marcadores en sus documentos PDF para una mejor navegación y una mejor experiencia de usuario.
 ---
-Aspose.PDF for .NET's tutorials on programming with bookmarks walk you through the steps to manipulate and manage bookmarks in your PDF documents. Learn how to create, edit and delete bookmarks to make it easier to navigate and organize your PDF files.
+Los tutoriales de Aspose.PDF para .NET sobre programación con marcadores lo guiarán a través de los pasos para manipular y administrar marcadores en sus documentos PDF. Aprenda a crear, editar y eliminar marcadores para facilitar la navegación y la organización de sus archivos PDF.
 
-Additionally, these tutorials show you how to customize bookmark properties, such as titles, actions, and hierarchical levels, to improve the user experience and make your PDF documents more interactive and user-friendly. Master the use of bookmarks in your PDF projects with these step-by-step guides.
+Además, estos tutoriales le muestran cómo personalizar las propiedades de los marcadores, como títulos, acciones y niveles jerárquicos, para mejorar la experiencia del usuario y hacer que sus documentos PDF sean más interactivos y fáciles de usar. Domine el uso de marcadores en sus proyectos PDF con estas guías paso a paso.
 
-## Tutorials
-| Title | Description |
+## Tutoriales
+| Título | Descripción |
 | --- | --- | 
-| [Add Bookmark In PDF File](./add-bookmark/) | Easily add bookmark in PDF file for improved navigation with Aspose.PDF for .NET. |  
-| [Add Child Bookmark In PDF File](./add-child-bookmark/) | Easily add child bookmark in PDF file for more organized browsing with Aspose.PDF for .NET. |  
-| [Delete All Bookmarks In PDF File](./delete-all-bookmarks/) | Easily delete all bookmarks in PDF file with Aspose.PDF for .NET. |  
-| [Delete Particular Bookmark In PDF File](./delete-particular-bookmark/) | Easily delete a particular bookmark in PDF file with Aspose.PDF for .NET. |  
-| [Expand Bookmarks In PDF File](./expand-bookmarks/) | Easily expand bookmarks in PDF file for improved navigation with Aspose.PDF for .NET. |  
-| [Get Bookmark Page Number In PDF File](./get-bookmark-page-number/) | Easily get bookmark page number in PDF file with Aspose.PDF for .NET. |  
-| [Get Bookmarks In PDF File](./get-bookmarks/) | Easily get bookmark in PDF file with Aspose.PDF for .NET. |  
-| [Get Child Bookmarks In PDF File](./get-child-bookmarks/) | Easily get child bookmarks in PDF file with Aspose.PDF for .NET. |  
-| [Inherit Zoom In PDF File](./inherit-zoom/) | Easily inherit bookmark zoom in PDF file with Aspose.PDF for .NET. |  
-| [Update Bookmarks In PDF File](./update-bookmarks/) | Easily update bookmarks in PDF file with Aspose.PDF for .NET. |  
-| [Update Child Bookmarks In PDF File](./update-child-bookmarks/) | Easily update child bookmarks in PDF file with Aspose.PDF for .NET. |  
+| [Agregar marcador en archivo PDF](./add-bookmark/) | Agregue fácilmente un marcador en un archivo PDF para mejorar la navegación con Aspose.PDF para .NET. |  
+| [Agregar marcador infantil en un archivo PDF](./add-child-bookmark/) | Agregue fácilmente un marcador secundario en un archivo PDF para una navegación más organizada con Aspose.PDF para .NET. |  
+| [Eliminar todos los marcadores en un archivo PDF](./delete-all-bookmarks/) | Elimine fácilmente todos los marcadores en un archivo PDF con Aspose.PDF para .NET. |  
+| [Eliminar un marcador particular en un archivo PDF](./delete-particular-bookmark/) | Elimine fácilmente un marcador particular en un archivo PDF con Aspose.PDF para .NET. |  
+| [Expandir marcadores en un archivo PDF](./expand-bookmarks/) | Amplíe fácilmente los marcadores en un archivo PDF para mejorar la navegación con Aspose.PDF para .NET. |  
+| [Obtener el número de página del marcador en un archivo PDF](./get-bookmark-page-number/) | Obtenga fácilmente el número de página del marcador en un archivo PDF con Aspose.PDF para .NET. |  
+| [Obtener marcadores en un archivo PDF](./get-bookmarks/) | Obtenga fácilmente un marcador en un archivo PDF con Aspose.PDF para .NET. |  
+| [Obtener marcadores infantiles en un archivo PDF](./get-child-bookmarks/) | Obtenga fácilmente marcadores secundarios en archivos PDF con Aspose.PDF para .NET. |  
+| [Heredar acercar archivo PDF](./inherit-zoom/) | Herede fácilmente el zoom de marcadores en un archivo PDF con Aspose.PDF para .NET. |  
+| [Actualizar marcadores en un archivo PDF](./update-bookmarks/) | Actualice fácilmente los marcadores en archivos PDF con Aspose.PDF para .NET. |  
+| [Actualizar marcadores secundarios en un archivo PDF](./update-child-bookmarks/) | Actualice fácilmente los marcadores secundarios en un archivo PDF con Aspose.PDF para .NET. |  

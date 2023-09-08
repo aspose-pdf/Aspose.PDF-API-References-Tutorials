@@ -1,33 +1,33 @@
 ---
-title: TIFF To PDF Performance Improvement
-linktitle: TIFF To PDF Performance Improvement
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to improve TIFF to PDF conversion performance with Aspose.PDF for .NET.
+title: تحسين أداء TIFF إلى PDF
+linktitle: تحسين أداء TIFF إلى PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لتحسين أداء تحويل TIFF إلى PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 310
 url: /ar/net/document-conversion/tiff-to-pdf-performance-improvement/
 ---
-In this tutorial, we will walk you through step-by-step how to improve the performance of converting TIFF files to PDF using the Aspose.PDF library for .NET. We'll detail the provided C# source code and show you how to implement it in your own projects. By the end of this tutorial, you will be able to perform faster and more efficient conversions of TIFF files to PDF.
+في هذا البرنامج التعليمي، سنرشدك خطوة بخطوة حول كيفية تحسين أداء تحويل ملفات TIFF إلى PDF باستخدام مكتبة Aspose.PDF لـ .NET. سنقوم بتفصيل كود مصدر C# المقدم ونوضح لك كيفية تنفيذه في مشاريعك الخاصة. بحلول نهاية هذا البرنامج التعليمي، ستكون قادرًا على إجراء تحويلات أسرع وأكثر كفاءة لملفات TIFF إلى PDF.
 
-## Step 1: Set Documents Directory
+## الخطوة 1: قم بتعيين دليل المستندات
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
-Replace `"YOUR DOCUMENTS DIRECTORY"` with the path where you saved your files.
+ يستبدل`"YOUR DOCUMENTS DIRECTORY"` بالمسار الذي قمت بحفظ ملفاتك فيه.
 
-## Step 2: Get List of TIFF Files
+## الخطوة 2: احصل على قائمة ملفات TIFF
 ```csharp
 string[] files = System.IO.Directory.GetFiles(dataDir, "*.tif");
 ```
-Get a list of TIFF files present in the specified directory.
+احصل على قائمة بملفات TIFF الموجودة في الدليل المحدد.
 
-## Step 3: Instantiate a Document object
+## الخطوة 3: إنشاء كائن مستند
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
-Create an instance of the Document object.
+قم بإنشاء مثيل لكائن المستند.
 
-## Step 4: Browse Files and Add to PDF Document
+## الخطوة 4: تصفح الملفات وأضفها إلى مستند PDF
 ```csharp
 foreach (string myFile in files)
 {
@@ -56,41 +56,41 @@ foreach (string myFile in files)
      image1.ImageScale = 0.95F;
 }
 ```
-Go through each TIFF file, load it as a `Bitmap` object, then add it to the PDF document. Parameters such as margins, resolution and scale of the image are also configured.
+ انتقل إلى كل ملف TIFF، وقم بتحميله كملف`Bitmap` الكائن، ثم قم بإضافته إلى مستند PDF. يتم أيضًا تكوين المعلمات مثل الهوامش والدقة وحجم الصورة.
 
-## Step 5: Save the Resulting PDF File
+## الخطوة 5: احفظ ملف PDF الناتج
 ```csharp
 doc.Save(dataDir + "PerformaceImprovement_out.pdf");
 ```
-Save the resulting PDF document to the specified directory.
+احفظ مستند PDF الناتج في الدليل المحدد.
 
-### Example source code for TIFF to PDF Performance Improvement using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لتحسين أداء TIFF إلى PDF باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Get a list of tiff image files
+// احصل على قائمة بملفات صور tiff
 string[] files = System.IO.Directory.GetFiles(dataDir, "*.tif");
 
-// Instantiate a Document object
+// إنشاء مثيل لكائن المستند
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Navigate through the files and them in the pdf file
+// التنقل بين الملفات وفي ملف pdf
 foreach (string myFile in files)
 {
 
-	// Load all tiff files in byte array
+	// قم بتحميل جميع ملفات tiff في صفيف بايت
 	FileStream fs = new FileStream(myFile, FileMode.Open, FileAccess.Read);
 	byte[] tmpBytes = new byte[fs.Length];
 	fs.Read(tmpBytes, 0, Convert.ToInt32(fs.Length));
 
 	MemoryStream mystream = new MemoryStream(tmpBytes);
 	Bitmap b = new Bitmap(mystream);
-	// Create a new Page in the Pdf document
+	// قم بإنشاء صفحة جديدة في مستند Pdf
 	Aspose.Pdf.Page currpage = doc.Pages.Add();
 
-	// Set margins so image will fit, etc.
+	// قم بتعيين الهوامش بحيث تناسب الصورة، وما إلى ذلك.
 	currpage.PageInfo.Margin.Top = 5;
 	currpage.PageInfo.Margin.Bottom = 5;
 	currpage.PageInfo.Margin.Left = 5;
@@ -99,45 +99,45 @@ foreach (string myFile in files)
 	currpage.PageInfo.Width = (b.Width / b.HorizontalResolution) * 72;
 	currpage.PageInfo.Height = (b.Height / b.VerticalResolution) * 72;
 
-	// Create an image object
+	// إنشاء كائن الصورة
 	Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-	// Add the image into paragraphs collection of the page
+	// إضافة الصورة إلى مجموعة فقرات الصفحة
 	currpage.Paragraphs.Add(image1);
 
-	// Set IsBlackWhite property to true for performance improvement
+	// اضبط الخاصية IsBlackWhite على القيمة true لتحسين الأداء
 	image1.IsBlackWhite = true;
-	// Set the ImageStream to a MemoryStream object
+	// قم بتعيين ImageStream إلى كائن MemoryStream
 	image1.ImageStream = mystream;
-	// Set desired image scale
+	// ضبط مقياس الصورة المطلوب
 	image1.ImageScale = 0.95F;
 }
 
-// Save the Pdf
+// احفظ ملف PDF
 doc.Save(dataDir + "PerformaceImprovement_out.pdf");
 ```
 
-## Conclusion
-In this tutorial, we learned how to improve the performance of converting TIFF files to PDF using the Aspose.PDF library for .NET. By following the steps provided, you will be able to achieve faster and more efficient conversions of TIFF files to PDF. Obtain precise and professional results while optimizing the performance of your application
+## خاتمة
+في هذا البرنامج التعليمي، تعلمنا كيفية تحسين أداء تحويل ملفات TIFF إلى PDF باستخدام مكتبة Aspose.PDF لـ .NET. باتباع الخطوات المقدمة، ستتمكن من تحقيق تحويلات أسرع وأكثر كفاءة لملفات TIFF إلى PDF. احصل على نتائج دقيقة واحترافية مع تحسين أداء تطبيقك
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is Aspose.PDF for .NET?
+#### س: ما هو Aspose.PDF لـ .NET؟
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers various functionalities, including converting TIFF files to PDF.
+ج: Aspose.PDF for .NET هي مكتبة قوية تمكن المطورين من العمل مع مستندات PDF في تطبيقات C#. وهو يوفر وظائف متنوعة، بما في ذلك تحويل ملفات TIFF إلى PDF.
 
-#### Q: Why would I want to improve the performance of TIFF to PDF conversion?
+#### س: لماذا أرغب في تحسين أداء تحويل TIFF إلى PDF؟
 
-A: Improving the performance of TIFF to PDF conversion can significantly enhance the efficiency of your application, especially when dealing with a large number of TIFF files. Faster conversions result in improved user experience and reduced processing time.
+ج: يمكن أن يؤدي تحسين أداء تحويل TIFF إلى PDF إلى تحسين كفاءة تطبيقك بشكل كبير، خاصة عند التعامل مع عدد كبير من ملفات TIFF. تؤدي التحويلات الأسرع إلى تحسين تجربة المستخدم وتقليل وقت المعالجة.
 
-#### Q: How can I set the directory for the TIFF files?
+#### س: كيف يمكنني تعيين الدليل لملفات TIFF؟
 
-A: You can set the directory for the TIFF files by replacing the `"YOUR DOCUMENTS DIRECTORY"` placeholder in the code with the actual path where your TIFF files are located.
+ ج: يمكنك تعيين الدليل لملفات TIFF عن طريق استبدال ملف`"YOUR DOCUMENTS DIRECTORY"` عنصر نائب في الكود مع المسار الفعلي حيث توجد ملفات TIFF الخاصة بك.
 
-#### Q: What optimizations are applied in the code snippet to improve performance?
+#### س: ما هي التحسينات التي تم تطبيقها في مقتطف الشفرة لتحسين الأداء؟
 
-A: The code snippet uses various techniques to enhance the conversion performance, such as setting margins, configuring image resolution and scale, and setting the `IsBlackWhite` property to true. These optimizations help streamline the conversion process.
+ ج: يستخدم مقتطف الشفرة تقنيات مختلفة لتحسين أداء التحويل، مثل تعيين الهوامش، وتكوين دقة الصورة وحجمها، وتعيين`IsBlackWhite`الملكية إلى صحيح. تساعد هذه التحسينات على تبسيط عملية التحويل.
 
-#### Q: Can I customize the image properties in the resulting PDF?
+#### س: هل يمكنني تخصيص خصائص الصورة في ملف PDF الناتج؟
 
-A: Yes, you can customize the image properties in the resulting PDF, such as scale, resolution, and margins, to achieve the desired layout and appearance.
+ج: نعم، يمكنك تخصيص خصائص الصورة في ملف PDF الناتج، مثل الحجم والدقة والهوامش، لتحقيق التخطيط والمظهر المطلوب.

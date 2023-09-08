@@ -1,71 +1,71 @@
 ---
-title: Select Radio Button In PDF Document
-linktitle: Select Radio Button In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to select a radio button in PDF document using Aspose.PDF for .NET.
+title: PDF Belgesinde Radyo Düğmesini Seçin
+linktitle: PDF Belgesinde Radyo Düğmesini Seçin
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF belgesinde radyo düğmesinin nasıl seçileceğini öğrenin.
 type: docs
 weight: 250
 url: /tr/net/programming-with-forms/select-radio-button/
 ---
-Here is a detailed tutorial on how to select a radio button using Aspose.PDF for .NET. Follow these steps:
+Aspose.PDF for .NET kullanarak bir radyo düğmesinin nasıl seçileceğine dair ayrıntılı bir eğitimi burada bulabilirsiniz. Bu adımları takip et:
 
-## Step 1: Start by defining the directory of your documents by specifying the path in the `dataDir` variable.
+##  Adım 1: Dosyadaki yolu belirterek belgelerinizin dizinini tanımlayarak başlayın.`dataDir` variable.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the PDF document using the `Document` class and the document path.
+##  Adım 2: PDF belgesini kullanarak açın.`Document` class and the document path.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "RadioButton.pdf");
 ```
 
-## Step 3: Get the radio button field from the document form.
+## Adım 3: Belge formundan radyo düğmesi alanını alın.
 
 ```csharp
 RadioButtonField radioField = pdfDocument.Form["radio"] as RadioButtonField;
 ```
 
-## Step 4: Specify the index of the radio button to select from the group.
+## Adım 4: Gruptan seçim yapılacak radyo düğmesinin dizinini belirtin.
 
 ```csharp
 radioField. Selected = 2;
 ```
 
-## Step 5: Set the output path for the edited PDF file.
+## Adım 5: Düzenlenen PDF dosyasının çıktı yolunu ayarlayın.
 
 ```csharp
 dataDir = dataDir + "SelectRadioButton_out.pdf";
 ```
 
-## Step 6: Save the modified PDF file.
+## Adım 6: Değiştirilen PDF dosyasını kaydedin.
 
 ```csharp
 pdfDocument.Save(dataDir);
 ```
 
-## Step 7: Display a confirmation message and the location of the saved file.
+## Adım 7: Bir onay mesajı ve kaydedilen dosyanın konumunu görüntüleyin.
 
 ```csharp
 Console.WriteLine("\nRadio button successfully selected in group.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Select Radio Button using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Seçim Radyo Düğmesi için örnek kaynak kodu 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Belgeler dizininin yolu.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Open document
+	// Belgeyi aç
 	Document pdfDocument = new Document(dataDir + "RadioButton.pdf");
-	// Get a field
+	// Bir alan al
 	RadioButtonField radioField = pdfDocument.Form["radio"] as RadioButtonField;
-	// Specify the index of radio button from group
+	// Gruptan radyo düğmesinin dizinini belirtin
 	radioField.Selected = 2;
 	dataDir = dataDir + "SelectRadioButton_out.pdf";
-	// Save the PDF file
+	// PDF dosyasını kaydedin
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nRadioButton from group selected successfully.\nFile saved at " + dataDir);
 }
@@ -75,29 +75,29 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to select a radio button using Aspose.PDF for .NET. By following the steps outlined above, you can manipulate and modify radio buttons in your PDF documents using Aspose.PDF for .NET.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir radyo düğmesinin nasıl seçileceğini öğrendik. Yukarıda özetlenen adımları takip ederek Aspose.PDF for .NET'i kullanarak PDF belgelerinizdeki radyo düğmelerini yönetebilir ve değiştirebilirsiniz.
 
 
-### FAQ's
+### SSS'ler
 
-#### Q: Can I select multiple radio buttons in a group using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir grupta birden fazla radyo butonu seçebilir miyim?
 
-A: No, radio buttons in a group are designed to be mutually exclusive. You can only select one radio button at a time within a group, and selecting one will automatically deselect any previously selected radio button in the same group.
+C: Hayır, bir gruptaki radyo düğmeleri birbirini dışlayacak şekilde tasarlanmıştır. Bir grup içinde aynı anda yalnızca bir radyo düğmesini seçebilirsiniz ve birini seçtiğinizde, aynı gruptaki önceden seçilmiş herhangi bir radyo düğmesinin seçimi otomatik olarak kaldırılır.
 
-#### Q: How do I retrieve the selected radio button in a group using Aspose.PDF for .NET?
+#### S: Seçilen radyo düğmesini Aspose.PDF for .NET kullanarak bir grupta nasıl alırım?
 
-A: To retrieve the selected radio button in a group, you can use the `Selected` property of the `RadioButtonField` class. It will return the index of the selected radio button within the group.
+ C: Bir grupta seçilen radyo düğmesini almak için`Selected` mülkiyeti`RadioButtonField` sınıf. Grup içinde seçilen radyo düğmesinin dizinini döndürecektir.
 
-#### Q: Can I customize the appearance of the selected radio button in the PDF document?
+#### S: Seçilen radyo düğmesinin görünümünü PDF belgesinde özelleştirebilir miyim?
 
-A: Yes, you can customize the appearance of the selected radio button using Aspose.PDF for .NET. You can modify its color, size, border style, and other visual attributes to match your desired appearance.
+C: Evet, Aspose.PDF for .NET'i kullanarak seçilen radyo düğmesinin görünümünü özelleştirebilirsiniz. İstediğiniz görünüme uyacak şekilde rengini, boyutunu, kenarlık stilini ve diğer görsel özelliklerini değiştirebilirsiniz.
 
-#### Q: Is it possible to create new radio button groups programmatically using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak programlı olarak yeni radyo düğmesi grupları oluşturmak mümkün müdür?
 
-A: Yes, you can create new radio button groups programmatically using Aspose.PDF for .NET. You can add new radio buttons to the document's form and specify the same group name for each radio button to create a new group.
+C: Evet, Aspose.PDF for .NET'i kullanarak programlı olarak yeni radyo düğmesi grupları oluşturabilirsiniz. Yeni bir grup oluşturmak için belgenin formuna yeni radyo düğmeleri ekleyebilir ve her radyo düğmesi için aynı grup adını belirtebilirsiniz.
 
-#### Q: Does Aspose.PDF for .NET support working with interactive PDF forms?
+#### S: Aspose.PDF for .NET etkileşimli PDF formlarıyla çalışmayı destekliyor mu?
 
-A: Yes, Aspose.PDF for .NET fully supports working with interactive PDF forms, including radio buttons, text fields, checkboxes, and other form elements. You can easily read, modify, and create interactive PDF forms using the library.
+C: Evet, Aspose.PDF for .NET, radyo düğmeleri, metin alanları, onay kutuları ve diğer form öğeleri dahil olmak üzere etkileşimli PDF formlarıyla çalışmayı tamamen destekler. Kitaplığı kullanarak etkileşimli PDF formlarını kolayca okuyabilir, değiştirebilir ve oluşturabilirsiniz.

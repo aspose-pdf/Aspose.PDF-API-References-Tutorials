@@ -1,50 +1,50 @@
 ---
-title: Get Individual Attachment In PDF File
-linktitle: Get Individual Attachment In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get an individual attachment in PDF file with Aspose.PDF for .NET. 
+title: Получить индивидуальное вложение в PDF-файле
+linktitle: Получить индивидуальное вложение в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как получить отдельное вложение в PDF-файле с помощью Aspose.PDF для .NET.
 type: docs
 weight: 60
 url: /ru/net/programming-with-attachments/get-individual-attachment/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to get an individual attachment of a PDF file using Aspose.PDF for .NET.
+В этом руководстве мы шаг за шагом познакомим вас со следующим исходным кодом C#, чтобы получить отдельное вложение PDF-файла с помощью Aspose.PDF для .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Прежде чем начать, убедитесь, что вы установили библиотеку Aspose.PDF и настроили среду разработки. Также есть базовые знания программирования на C#.
 
-### Step 1: Document Directory Setup
+### Шаг 1. Настройка каталога документов
 
-In the provided source code, you need to specify the directory where the PDF file is located from which you want to get the individual attachment. Change the "dataDir" variable to the desired directory.
+В предоставленном исходном коде вам необходимо указать каталог, в котором находится PDF-файл, из которого вы хотите получить отдельное вложение. Измените переменную dataDir на нужный каталог.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Шаг 2. Откройте существующий PDF-документ.
 
-We open the existing PDF document using the specified path.
+Открываем существующий PDF-документ по указанному пути.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetIndividualAttachment.pdf");
 ```
 
-### Step 3: Obtaining a Specific Attachment
+### Шаг 3: Получение конкретного вложения
 
-We retrieve a specific attachment from the document's attachments collection. In this example, we get the first attachment using index 1.
+Мы извлекаем конкретное вложение из коллекции вложений документа. В этом примере мы получаем первое вложение с индексом 1.
 
 ```csharp
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
 ```
 
-### Step 4: Get File Properties
+### Шаг 4. Получите свойства файла
 
-We display attachment properties such as name, description, MIME type, control hash, date created, date modified, and size.
+Мы отображаем свойства вложения, такие как имя, описание, тип MIME, контрольный хеш, дата создания, дата изменения и размер.
 
 ```csharp
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Check if object parameters contain additional information
+// Проверьте, содержат ли параметры объекта дополнительную информацию
 if (fileSpecification.Params != null)
 {
 Console.WriteLine("Check Hash: {0}", fileSpecification.Params.CheckSum);
@@ -54,9 +54,9 @@ Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 ```
 
-### Step 5: Retrieve attachment and save to file
+### Шаг 5. Получите вложение и сохраните его в файл.
 
-We retrieve the content of the attachment and save it to a text file. In this example, the file is saved with the name "test_out.txt".
+Мы извлекаем содержимое вложения и сохраняем его в текстовый файл. В этом примере файл сохраняется с именем «test_out.txt».
 
 ```csharp
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
@@ -66,21 +66,21 @@ fileStream.Write(fileContent, 0, fileContent.Length);
 fileStream.Close();
 ```
 
-### Sample source code for Get Individual Attachment using Aspose.PDF for .NET 
+### Пример исходного кода для получения индивидуального вложения с помощью Aspose.PDF для .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "GetIndividualAttachment.pdf");
-// Get particular embedded file
+// Получить конкретный встроенный файл
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
-// Get the file properties
+// Получить свойства файла
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-// Check if parameter object contains the parameters
+//Проверьте, содержит ли объект параметра параметры
 if (fileSpecification.Params != null)
 {
 	Console.WriteLine("CheckSum: {0}",
@@ -91,7 +91,7 @@ if (fileSpecification.Params != null)
 	fileSpecification.Params.ModDate);
 	Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
-// Get the attachment and write to file or stream
+// Получите вложение и запишите в файл или поток.
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
 fileSpecification.Contents.Read(fileContent, 0, fileContent.Length);
 FileStream fileStream = new FileStream(dataDir + "test_out" + ".txt", FileMode.Create);
@@ -100,44 +100,44 @@ fileStream.Close();
 
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we explained how to get an individual attachment from a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and save attachments from your PDF files.
+В этом уроке мы объяснили, как получить отдельное вложение из файла PDF с помощью Aspose.PDF для .NET. Теперь вы можете использовать эти знания для извлечения и сохранения вложений из ваших PDF-файлов.
 
-### FAQs for get individual attachment in PDF file
+### Часто задаваемые вопросы о получении отдельного вложения в PDF-файле
 
-#### Q: What is the purpose of getting an individual attachment from a PDF document?
+#### Вопрос: Какова цель получения отдельного вложения из PDF-документа?
 
-A: Getting an individual attachment allows you to extract and save a specific embedded file within a PDF, which can be useful for further analysis or manipulation.
+О: Получение отдельного вложения позволяет вам извлечь и сохранить определенный встроенный файл в PDF-файл, который может быть полезен для дальнейшего анализа или манипулирования.
 
-#### Q: How can I benefit from this tutorial in my PDF-related tasks?
+#### Вопрос: Какую пользу я могу получить от этого руководства при выполнении задач, связанных с PDF?
 
-A: This tutorial provides step-by-step instructions and C# source code to retrieve and save a particular attachment from a PDF document using Aspose.PDF for .NET.
+О: В этом руководстве представлены пошаговые инструкции и исходный код C# для извлечения и сохранения определенного вложения из PDF-документа с помощью Aspose.PDF для .NET.
 
-#### Q: What attachment properties can I access using this tutorial?
+#### Вопрос: К каким свойствам вложений я могу получить доступ с помощью этого руководства?
 
-A: You can access attachment properties such as name, description, MIME type, control hash, creation date, modification date, and size of the specific attachment.
+О: Вы можете получить доступ к свойствам вложения, таким как имя, описание, тип MIME, контрольный хеш, дата создания, дата изменения и размер конкретного вложения.
 
-#### Q: Can I modify the code to get attachments other than the first attachment?
+#### Вопрос: Могу ли я изменить код, чтобы получать вложения, отличные от первого вложения?
 
-A: Absolutely, you can adjust the index (e.g., `pdfDocument.EmbeddedFiles[1]`) to retrieve attachments at different indices within the PDF.
+ О: Конечно, вы можете настроить индекс (например,`pdfDocument.EmbeddedFiles[1]`) для извлечения вложений по разным индексам в PDF-файле.
 
-#### Q: How do I save the retrieved attachment to a file?
+#### Вопрос: Как сохранить полученное вложение в файл?
 
-A: This tutorial provides code to retrieve the attachment's content and save it to a text file with a specified name.
+О: В этом руководстве представлен код для получения содержимого вложения и сохранения его в текстовый файл с указанным именем.
 
-#### Q: What is the significance of the "Check Hash" property in attachment information?
+#### Вопрос: Каково значение свойства «Проверить хеш» в информации о вложении?
 
-A: The "Check Hash" property represents the control hash value of the attachment, which can be used to verify the integrity of the attachment.
+О: Свойство «Проверить хэш» представляет собой контрольное хэш-значение вложения, которое можно использовать для проверки целостности вложения.
 
-#### Q: Can I extend this knowledge to extract attachments with specific criteria, such as file type?
+#### Вопрос: Могу ли я расширить эти знания, чтобы извлекать вложения по определенным критериям, например по типу файла?
 
-A: Yes, you can enhance the code to filter attachments based on specific criteria such as file type or other properties.
+О: Да, вы можете улучшить код для фильтрации вложений на основе определенных критериев, таких как тип файла или другие свойства.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of extracting individual attachments?
+#### Вопрос: Как Aspose.PDF для .NET упрощает процесс извлечения отдельных вложений?
 
-A: Aspose.PDF for .NET provides a user-friendly API that facilitates the extraction and manipulation of attachments within PDF documents.
+О: Aspose.PDF для .NET предоставляет удобный API, который облегчает извлечение и манипулирование вложениями в PDF-документах.
 
-#### Q: Is this tutorial relevant for password-protected PDF files as well?
+#### Вопрос. Подходит ли это руководство и для PDF-файлов, защищенных паролем?
 
-A: Yes, you can adapt similar techniques to retrieve individual attachments from password-protected PDF files using Aspose.PDF for .NET.
+О: Да, вы можете адаптировать аналогичные методы для извлечения отдельных вложений из PDF-файлов, защищенных паролем, с помощью Aspose.PDF для .NET.

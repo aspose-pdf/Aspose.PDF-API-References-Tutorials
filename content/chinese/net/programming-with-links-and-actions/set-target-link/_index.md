@@ -1,85 +1,85 @@
 ---
-title: Set Target Link In PDF File
-linktitle: Set Target Link In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set a target link in PDF file using Aspose.PDF for .NET.
+title: 在 PDF 文件中设置目标链接
+linktitle: 在 PDF 文件中设置目标链接
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中设置目标链接。
 type: docs
 weight: 100
 url: /zh/net/programming-with-links-and-actions/set-target-link/
 ---
-Learn how to set a target link in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+通过此分步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 文件中设置目标链接。
 
-## Step 1: Setting up the environment
+## 第一步：搭建环境
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+确保您已使用 C# 项目和适当的 Aspose.PDF 参考设置开发环境。
 
-## Step 2: Loading the PDF file
+## 第 2 步：加载 PDF 文件
 
-Set the directory path of your documents and upload the PDF file using the following code:
+使用以下代码设置文档的目录路径并上传 PDF 文件：
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+//加载 PDF 文件
 Document document = new Document(dataDir + "UpdateLinks.pdf");
 ```
 
-## Step 3: Editing the target link
+## 步骤 3：编辑目标链接
 
-Get the link annotation to modify using the following code:
+使用以下代码获取要修改的链接注释：
 
 ```csharp
 LinkAnnotation linkAnnot = (LinkAnnotation)document.Pages[1].Annotations[1];
 GoToRemoteAction goToR = (GoToRemoteAction)linkAnnot.Action;
 ```
 
-You can adjust the `[1]` indices to select a specific page or annotation.
+您可以调整`[1]`用于选择特定页面或注释的索引。
 
-Next, update the destination without updating the file:
+接下来，更新目标而不更新文件：
 
 ```csharp
 goToR.Destination = new XYZExplicitDestination(2, 0, 0, 1.5);
 ```
 
-And if you also want to update the file:
+如果您还想更新该文件：
 
 ```csharp
 goToR.File = new FileSpecification(dataDir + "input.pdf");
 ```
 
-## Step 4: Save the document with the updated link
+## 步骤 4：使用更新后的链接保存文档
 
-Save the document with the updated link using the `Save` method:
+使用以下命令保存包含更新链接的文档`Save`方法：
 
 ```csharp
 dataDir = dataDir + "SetTargetLink_out.pdf";
 document. Save(dataDir);
 ```
 
-## Step 5: Displaying the result
+## 第5步：显示结果
 
-Display a message indicating that the target link was successfully configured and specify the location of the saved file:
+显示一条消息，指示目标链接已成功配置并指定保存文件的位置：
 
 ```csharp
 Console.WriteLine("\nConfiguration of target link successful.\nFile saved at location: " + dataDir);
 ```
 
-### Sample source code for Set Target Link using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 设置目标链接的示例源代码 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	//文档目录的路径。
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the PDF file
+	//加载 PDF 文件
 	Document document = new Document(dataDir + "UpdateLinks.pdf");
 	LinkAnnotation linkAnnot = (LinkAnnotation)document.Pages[1].Annotations[1];
 	GoToRemoteAction goToR = (GoToRemoteAction)linkAnnot.Action;
-	// Next line update destination, do not update file
+	//下一行更新目标，不更新文件
 	goToR.Destination = new XYZExplicitDestination(2, 0, 0, 1.5);
-	// Next line update file
+	//下一行更新文件
 	goToR.File = new FileSpecification(dataDir +  "input.pdf");
 	dataDir = dataDir + "SetTargetLink_out.pdf";
-	// Save the document with updated link
+	//使用更新的链接保存文档
 	document.Save(dataDir);
 	Console.WriteLine("\nTarget link setup successfully.\nFile saved at " + dataDir);
 }
@@ -89,54 +89,54 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You now know how to set a target link in a PDF file using Aspose.PDF for .NET. Use this knowledge to customize links in your PDF documents and create interactive experiences for users.
+恭喜！您现在知道如何使用 Aspose.PDF for .NET 在 PDF 文件中设置目标链接。使用这些知识来自定义 PDF 文档中的链接并为用户创建交互式体验。
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+现在您已经完成了本指南，您可以将这些概念应用到您自己的项目中，并进一步探索 Aspose.PDF for .NET 提供的功能。
 
-### FAQ's for set target link in PDF file
+### PDF 文件中设置目标链接的常见问题解答
 
-#### Q: What is a target link in a PDF file?
+#### 问：PDF 文件中的目标链接是什么？
 
-A: A target link in a PDF file is a clickable link that navigates the reader to a specific destination within the same document or to another PDF file.
+答：PDF 文件中的目标链接是可单击的链接，可将读者导航到同一文档中的特定目标或另一个 PDF 文件。
 
-#### Q: Why would I want to set a target link in a PDF file?
+#### 问：为什么要在 PDF 文件中设置目标链接？
 
-A: Setting target links allows you to create a seamless navigation experience within a PDF document or link to specific sections or pages within other PDF files.
+答：设置目标链接允许您在 PDF 文档中创建无缝导航体验，或链接到其他 PDF 文件中的特定部分或页面。
 
-#### Q: How does Aspose.PDF for .NET help in setting target links?
+#### 问：Aspose.PDF for .NET 如何帮助设置目标链接？
 
-A: Aspose.PDF for .NET provides APIs to manipulate various aspects of PDF files, including creating and modifying links. This tutorial demonstrates how to set a target link using C# code.
+答：Aspose.PDF for .NET 提供 API 来操作 PDF 文件的各个方面，包括创建和修改链接。本教程演示如何使用 C# 代码设置目标链接。
 
-#### Q: Can I set target links to navigate to specific pages within the same document?
+#### 问：我可以设置目标链接来导航到同一文档中的特定页面吗？
 
-A: Yes, Aspose.PDF for .NET enables you to set target links to navigate to specific pages within the same document.
+答：是的，Aspose.PDF for .NET 使您能够设置目标链接以导航到同一文档中的特定页面。
 
-#### Q: Can I set target links to navigate to specific pages in another PDF file?
+#### 问：我可以设置目标链接来导航到另一个 PDF 文件中的特定页面吗？
 
-A: Yes, you can set target links to navigate to specific pages within another PDF file using Aspose.PDF for .NET.
+答：是的，您可以使用 Aspose.PDF for .NET 设置目标链接以导航到另一个 PDF 文件中的特定页面。
 
-#### Q: Are there any limitations to setting target links?
+#### 问：设置目标链接有什么限制吗？
 
-A: Target links can only navigate within the same document or to specific pages within other PDF files. They cannot directly link to specific content within other documents.
+答：目标链接只能在同一文档中导航或导航到其他 PDF 文件中的特定页面。它们无法直接链接到其他文档中的特定内容。
 
-#### Q: How can I customize the appearance of a target link?
+#### 问：如何自定义目标链接的外观？
 
-A: The appearance of a target link, such as its color and style, can be customized using the properties provided by Aspose.PDF for .NET.
+答：可以使用 Aspose.PDF for .NET 提供的属性来自定义目标链接的外观，例如其颜色和样式。
 
-#### Q: Can I set multiple target links in the same PDF document?
+#### 问：我可以在同一个PDF文档中设置多个目标链接吗？
 
-A: Yes, you can set multiple target links in the same PDF document. Simply repeat the process for each link you want to create.
+答：是的，您可以在同一个 PDF 文档中设置多个目标链接。只需对您要创建的每个链接重复该过程即可。
 
-#### Q: Can I set a target link using a specific shape or text?
+#### 问：我可以使用特定形状或文本设置目标链接吗？
 
-A: Yes, you can attach a target link to specific shapes or text within the PDF document using the appropriate properties and methods provided by Aspose.PDF for .NET.
+答：是的，您可以使用 Aspose.PDF for .NET 提供的适当属性和方法将目标链接附加到 PDF 文档中的特定形状或文本。
 
-#### Q: How can I test if the target link is working as intended?
+#### 问：如何测试目标链接是否按预期工作？
 
-A: After setting the target link using the provided code, open the modified PDF and click on the link to ensure it navigates to the desired destination.
+答：使用提供的代码设置目标链接后，打开修改后的 PDF 并单击链接以确保其导航到所需的目的地。
 
-#### Q: Can I set target links in password-protected PDFs?
+#### 问：我可以在受密码保护的 PDF 中设置目标链接吗？
 
-A: Yes, you can set target links in password-protected PDFs as long as you provide the appropriate credentials to access and modify the document.
+答：是的，只要您提供适当的凭据来访问和修改文档，您就可以在受密码保护的 PDF 中设置目标链接。

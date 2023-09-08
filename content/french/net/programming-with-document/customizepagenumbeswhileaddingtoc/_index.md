@@ -1,17 +1,17 @@
 ---
-title: Customize Page Numbes While Adding TOC
-linktitle: Customize Page Numbes While Adding TOC
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to customize page numbers while adding a table of contents (TOC) using Aspose.PDF for .NET with this step-by-step guide and code example.
+title: Personnaliser les numéros de page lors de l'ajout de la table des matières
+linktitle: Personnaliser les numéros de page lors de l'ajout de la table des matières
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Apprenez à personnaliser les numéros de page tout en ajoutant une table des matières (TOC) à l'aide d'Aspose.PDF pour .NET avec ce guide étape par étape et cet exemple de code.
 type: docs
 weight: 100
 url: /fr/net/programming-with-document/customizepagenumbeswhileaddingtoc/
 ---
-In this tutoria, we will explore how to customize page numbers while adding a table of contents (TOC) using Aspose.PDF for .NET. We will provide step-by-step guidance, along with a code example, to help you achieve this.
+Dans ce didacticiel, nous explorerons comment personnaliser les numéros de page tout en ajoutant une table des matières (TOC) à l'aide d'Aspose.PDF pour .NET. Nous vous fournirons des conseils étape par étape, ainsi qu'un exemple de code, pour vous aider à y parvenir.
 
-## Step 1: Loading an existing PDF file
+## Étape 1 : Chargement d'un fichier PDF existant
 
-First, we need to load an existing PDF file. For this tutorial, we will use the file "42824.pdf" located in the "YOUR DOCUMENT DIRECTORY" directory. Replace this directory path with the actual path to your document directory.
+Tout d’abord, nous devons charger un fichier PDF existant. Pour ce tutoriel, nous utiliserons le fichier « 42824.pdf » situé dans le répertoire « VOTRE RÉPERTOIRE DE DOCUMENTS ». Remplacez ce chemin de répertoire par le chemin réel de votre répertoire de documents.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -20,17 +20,17 @@ string outFile = dataDir + "42824_out.pdf";
 Document doc = new Document(inFile);
 ```
 
-## Step 2: Adding a TOC page
+## Étape 2 : Ajouter une page de table des matières
 
-Next, we need to add a new page at the beginning of the document to serve as the TOC page. We can achieve this by using the `Insert()` method of the `Pages` collection of the `Document` object.
+ Ensuite, nous devons ajouter une nouvelle page au début du document pour servir de page TOC. Nous pouvons y parvenir en utilisant le`Insert()` méthode du`Pages` collecte des`Document` objet.
 
 ```csharp
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
 ```
 
-## Step 3: Creating a TOC object
+## Étape 3 : Création d'un objet TOC
 
-To create a TOC object, we first need to create a `TocInfo` object and set its properties. In this tutorial, we will set the title of the TOC to "Table Of Contents" and the page number prefix to "P".
+ Pour créer un objet TOC, nous devons d'abord créer un`TocInfo` objet et définir ses propriétés. Dans ce didacticiel, nous définirons le titre de la table des matières sur « Table des matières » et le préfixe du numéro de page sur « P ».
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -42,99 +42,99 @@ tocInfo.PageNumbersPrefix = "P";
 tocPage.TocInfo = tocInfo;
 ```
 
-## Step 4: Creating TOC entries
+## Étape 4 : Création d'entrées de table des matières
 
-To create TOC entries, we need to loop through all the pages of the document, except for the TOC page, and create a heading object for each page. We can then add the heading object to the TOC page and specify its destination page.
+Pour créer des entrées de table des matières, nous devons parcourir toutes les pages du document, à l'exception de la page de table des matières, et créer un objet de titre pour chaque page. Nous pouvons ensuite ajouter l'objet de titre à la page TOC et spécifier sa page de destination.
 
 ```csharp
 for (int i = 1; i < doc.Pages.Count; i++)
 {
-    // Create Heading object
+    // Créer un objet de titre
     Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
     TextSegment segment2 = new TextSegment();
     heading2.TocPage = tocPage;
     heading2.Segments.Add(segment2);
-    // Specify the destination page for heading object
+    // Spécifier la page de destination pour l'objet d'en-tête
     heading2.DestinationPage = doc.Pages[i + 1];
-    // Destination page
+    // Page de destination
     heading2.Top = doc.Pages[i + 1].Rect.Height;
-    // Destination coordinate
+    // Coordonnées de destination
     segment2.Text = "Page " + i.ToString();
-    // Add heading to page containing TOC
+    // Ajouter un en-tête à la page contenant la table des matières
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
-## Step 5: Saving the updated document
+## Étape 5 : Sauvegarde du document mis à jour
 
-Finally, we need to save the updated document to a new file. We can achieve this by using the `Save()` method of the `Document` object.
+Enfin, nous devons enregistrer le document mis à jour dans un nouveau fichier. Nous pouvons y parvenir en utilisant le`Save()` méthode du`Document` objet.
 
 ```csharp
 doc.Save(outFile);
 ```
 
-### Example source code for customizing page numbes while adding TOC using Aspose.PDF for .NET
+### Exemple de code source pour personnaliser les numéros de page lors de l'ajout d'une table des matières à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "42824.pdf";
 string outFile = dataDir + "42824_out.pdf";
-// Load an existing PDF files
+// Charger un fichier PDF existant
 Document doc = new Document(inFile);
-// Get access to first page of PDF file
+// Accédez à la première page du fichier PDF
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
-// Create object to represent TOC information
+// Créer un objet pour représenter les informations de la table des matières
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
-// Set the title for TOC
+// Définir le titre de la table des matières
 tocInfo.Title = title;
 tocInfo.PageNumbersPrefix = "P";
 tocPage.TocInfo = tocInfo;
 for (int i = 1; i<doc.Pages.Count; i++)
 {
-	// Create Heading object
+	// Créer un objet de titre
 	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
 	TextSegment segment2 = new TextSegment();
 	heading2.TocPage = tocPage;
 	heading2.Segments.Add(segment2);
-	// Specify the destination page for heading object
+	// Spécifier la page de destination pour l'objet d'en-tête
 	heading2.DestinationPage = doc.Pages[i + 1];
-	// Destination page
+	// Page de destination
 	heading2.Top = doc.Pages[i + 1].Rect.Height;
-	// Destination coordinate
+	// Coordonnées de destination
 	segment2.Text = "Page " + i.ToString();
-	// Add heading to page containing TOC
+	// Ajouter un en-tête à la page contenant la table des matières
 	tocPage.Paragraphs.Add(heading2);
 }
 
-// Save the updated document
+// Enregistrez le document mis à jour
 doc.Save(outFile);
 ```
 
 ## Conclusion
 
-In this tutorial, we have provided step-by-step guidance on how to customize page numbers while adding a TOC using Aspose.PDF for .NET. We have also provided a code example that you can use as a reference when implementing this feature in your
+Dans ce didacticiel, nous avons fourni des conseils étape par étape sur la façon de personnaliser les numéros de page lors de l'ajout d'une table des matières à l'aide d'Aspose.PDF pour .NET. Nous avons également fourni un exemple de code que vous pouvez utiliser comme référence lors de l'implémentation de cette fonctionnalité dans votre
 
-### FAQ's
+### FAQ
 
-#### Q: What is a table of contents (TOC) in a PDF document?
+#### Q : Qu'est-ce qu'une table des matières (TOC) dans un document PDF ?
 
-A: A table of contents (TOC) in a PDF document is a navigational aid that provides an organized list of document sections or chapters along with their corresponding page numbers. It allows readers to quickly navigate to specific sections within the document.
+R : Une table des matières (TOC) dans un document PDF est une aide à la navigation qui fournit une liste organisée de sections ou de chapitres de document ainsi que leurs numéros de page correspondants. Il permet aux lecteurs de naviguer rapidement vers des sections spécifiques du document.
 
-#### Q:Why would I want to customize page numbers in a TOC?
+#### Q :Pourquoi voudrais-je personnaliser les numéros de page dans une table des matières ?
 
-A: Customizing page numbers in a TOC can be useful when you want to use a specific page numbering format or include additional information along with the page numbers. It allows you to create a more personalized and informative table of contents.
+R : La personnalisation des numéros de page dans une table des matières peut être utile lorsque vous souhaitez utiliser un format de numérotation de page spécifique ou inclure des informations supplémentaires avec les numéros de page. Il vous permet de créer une table des matières plus personnalisée et informative.
 
-#### Q: Can I include hyperlinks in the TOC to link to specific sections or pages within the PDF document?
+#### Q : Puis-je inclure des hyperliens dans la table des matières pour créer des liens vers des sections ou des pages spécifiques du document PDF ?
 
-A: Yes, Aspose.PDF for .NET allows you to create hyperlinks in the TOC that link to specific sections or pages within the PDF document. This enhances the interactivity and navigation of the PDF document.
+R : Oui, Aspose.PDF pour .NET vous permet de créer des hyperliens dans la table des matières qui renvoient vers des sections ou des pages spécifiques du document PDF. Cela améliore l’interactivité et la navigation du document PDF.
 
-#### Q: Is Aspose.PDF for .NET compatible with PDF/A standards?
+#### Q : Aspose.PDF pour .NET est-il compatible avec les normes PDF/A ?
 
-A: Yes, Aspose.PDF for .NET supports PDF/A standards, including PDF/A-1, PDF/A-2, and PDF/A-3. It allows you to create PDF documents that comply with archiving and long-term preservation requirements.
+R : Oui, Aspose.PDF pour .NET prend en charge les normes PDF/A, notamment PDF/A-1, PDF/A-2 et PDF/A-3. Il vous permet de créer des documents PDF conformes aux exigences d'archivage et de conservation à long terme.
 
-#### Q: Can I add more formatting to the TOC entries, such as font styles or colors?
+#### Q : Puis-je ajouter davantage de mise en forme aux entrées de la table des matières, comme des styles de police ou des couleurs ?
 
-A: Yes, you can add additional formatting to the TOC entries, such as font styles, colors, and font sizes, using Aspose.PDF for .NET. This allows you to customize the appearance of the TOC as per your requirements.
+: Oui, vous pouvez ajouter une mise en forme supplémentaire aux entrées de la table des matières, comme des styles de police, des couleurs et des tailles de police, à l'aide d'Aspose.PDF pour .NET. Cela vous permet de personnaliser l'apparence de la table des matières selon vos besoins.

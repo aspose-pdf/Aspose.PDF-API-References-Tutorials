@@ -1,52 +1,52 @@
 ---
-title: Add Text Stamp In PDF File
-linktitle: Add Text Stamp In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily add a text stamp in PDF file with Aspose.PDF for .NET.
+title: Добавить текстовый штамп в PDF-файл
+linktitle: Добавить текстовый штамп в PDF-файл
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как легко добавить текстовый штамп в PDF-файл с помощью Aspose.PDF для .NET.
 type: docs
 weight: 50
 url: /ru/net/programming-with-stamps-and-watermarks/add-text-stamp/
 ---
-In this tutorial, we will take you step by step on how to add a text stamp in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to add a custom text stamp to a specific page of the PDF file.
+В этом уроке мы шаг за шагом покажем вам, как добавить текстовый штамп в PDF-файл с помощью Aspose.PDF для .NET. Мы покажем вам, как использовать предоставленный исходный код C# для добавления пользовательского текстового штампа на определенную страницу PDF-файла.
 
-## Step 1: Setting up the environment
+## Шаг 1. Настройка среды
 
-Before you begin, make sure you have the following:
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Установленная среда разработки .NET.
+- Библиотека Aspose.PDF для .NET загружена и используется в вашем проекте.
 
-## Step 2: Loading the PDF document
+## Шаг 2. Загрузка PDF-документа
 
-The first step is to load the existing PDF document into your project. Here's how:
+Первым шагом является загрузка существующего PDF-документа в ваш проект. Вот как:
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Обязательно замените «КАТАЛОГ ВАШИХ ДОКУМЕНТОВ» фактическим путем к каталогу, в котором находится ваш PDF-документ.
 
-## Step 3: Creating the text buffer
+## Шаг 3. Создание текстового буфера
 
-Now that you have uploaded the PDF document, you can create the text stamp to add. Here's how to do it:
+Теперь, когда вы загрузили PDF-документ, вы можете создать текстовый штамп для добавления. Вот как это сделать:
 
 ```csharp
-// Create the text buffer
+// Создать текстовый буфер
 TextStamp textStamp = new TextStamp("Example Stamp");
 ```
 
-The code above creates a new text buffer containing the specified text.
+Приведенный выше код создает новый текстовый буфер, содержащий указанный текст.
 
-## Step 4: Configuring Text Stamp Properties
+## Шаг 4. Настройка свойств текстового штампа
 
-Before adding the text stamp to the PDF document, you can configure various properties of the stamp, such as background, position, rotation, font, size, etc. Here's how:
+Прежде чем добавлять текстовый штамп в документ PDF, вы можете настроить различные свойства штампа, такие как фон, положение, поворот, шрифт, размер и т. д. Вот как это сделать:
 
 ```csharp
-// Configure text buffer properties
+// Настройка свойств текстового буфера
 textStamp. Background = true;
 textStamp. XIndent = 100;
 textStamp. YIndent = 100;
@@ -57,107 +57,107 @@ textStamp.TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
 textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Aqua);
 ```
 
-You can adjust these properties according to your needs.
+Вы можете настроить эти свойства в соответствии с вашими потребностями.
 
-## Step 5: Add Text Stamp to PDF
+## Шаг 5. Добавьте текстовый штамп в PDF
 
-Now that the text stamp is ready, you can add it to a specific page of the PDF document. Here's how:
+Теперь, когда текстовый штамп готов, вы можете добавить его на определенную страницу PDF-документа. Вот как:
 
 ```csharp
-// Add text buffer to specific page
+//Добавить текстовый буфер на определенную страницу
 pdfDocument.Pages[1].AddStamp(textStamp);
 ```
 
-The code above adds the text stamp to the first page of the PDF document. You can specify another page if needed.
+Приведенный выше код добавляет текстовый штамп на первую страницу PDF-документа. При необходимости вы можете указать другую страницу.
 
-## Step 6: Save the output document
+## Шаг 6: Сохраните выходной документ
 
-Once you have added the text stamp, you can save the edited PDF document. Here's how:
+Добавив текстовый штамп, вы можете сохранить отредактированный PDF-документ. Вот как:
 
 ```csharp
-// Save the output document
+// Сохраните выходной документ
 pdfDocument.Save(dataDir);
 ```
 
-The code above saves the modified PDF document in the specified directory.
+Приведенный выше код сохраняет измененный PDF-документ в указанном каталоге.
 
-### Sample source code for Add Text Stamp using Aspose.PDF for .NET 
+### Пример исходного кода для добавления текстового штампа с использованием Aspose.PDF для .NET 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
 
-// Create text stamp
+// Создать текстовый штамп
 TextStamp textStamp = new TextStamp("Sample Stamp");
 
-// Set whether stamp is background
+// Установите, является ли штамп фоном
 textStamp.Background = true;
 
-// Set origin
+// Установить начало координат
 textStamp.XIndent = 100;
 textStamp.YIndent = 100;
 
-// Rotate stamp
+// Поворот штампа
 textStamp.Rotate = Rotation.on90;
 
-// Set text properties
+// Установить свойства текста
 textStamp.TextState.Font = FontRepository.FindFont("Arial");
 textStamp.TextState.FontSize = 14.0F;
 textStamp.TextState.FontStyle = FontStyles.Bold;
 textStamp.TextState.FontStyle = FontStyles.Italic;
 textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Aqua);
 
-// Add stamp to particular page
+// Добавить штамп на определенную страницу
 pdfDocument.Pages[1].AddStamp(textStamp);
 dataDir = dataDir + "AddTextStamp_out.pdf";
 
-// Save output document
+// Сохранить выходной документ
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nText stamp added successfully.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You have learned how to add a text stamp using Aspose.PDF for .NET. Now you can apply this knowledge to your own projects to add custom text stamps to PDF documents.
+Поздравляем! Вы узнали, как добавить текстовый штамп с помощью Aspose.PDF для .NET. Теперь вы можете применить эти знания в своих проектах, добавляя собственные текстовые штампы в PDF-документы.
 
-### FAQ's for add text stamp in PDF file
+### Часто задаваемые вопросы по добавлению текстового штампа в файл PDF
 
-#### Q: What is the purpose of adding a text stamp in a PDF file using Aspose.PDF for .NET?
+#### Вопрос: Какова цель добавления текстового штампа в PDF-файл с помощью Aspose.PDF для .NET?
 
-A: Adding a text stamp allows you to place custom text on a specific page of a PDF document. This feature is useful for adding labels, comments, watermarks, or any other textual information to enhance the document's content and provide additional context.
+О: Добавление текстового штампа позволяет разместить собственный текст на определенной странице PDF-документа. Эта функция полезна для добавления меток, комментариев, водяных знаков или любой другой текстовой информации для улучшения содержимого документа и предоставления дополнительного контекста.
 
-#### Q: Can I customize the appearance of the text stamp, such as font, size, color, and rotation?
+#### Вопрос: Могу ли я настроить внешний вид текстового штампа, например шрифт, размер, цвет и поворот?
 
-A: Yes, you can fully customize the appearance of the text stamp. The provided C# source code demonstrates how to set various properties of the `TextStamp` object, including font, font size, font style, text color, background color, and rotation.
+ О: Да, вы можете полностью настроить внешний вид текстового штампа. Приведенный исходный код C# демонстрирует, как устанавливать различные свойства`TextStamp` объект, включая шрифт, размер шрифта, стиль шрифта, цвет текста, цвет фона и вращение.
 
-#### Q: Is it possible to add multiple text stamps to different pages of the same PDF document?
+#### Вопрос: Можно ли добавить несколько текстовых штампов на разные страницы одного и того же PDF-документа?
 
-A: Absolutely, you can add multiple text stamps to different pages of the same PDF document. The tutorial's provided code allows you to specify the target page for adding the text stamp, making it versatile for different pages within the document.
+О: Конечно, вы можете добавить несколько текстовых штампов на разные страницы одного и того же PDF-документа. Код, предоставленный в руководстве, позволяет указать целевую страницу для добавления текстового штампа, что делает его универсальным для разных страниц документа.
 
-#### Q: How do I specify the position of the text stamp within the PDF document?
+#### Вопрос: Как указать положение текстового штампа в PDF-документе?
 
-A: You can customize the position of the text stamp by modifying the `XIndent` and `YIndent` properties of the `TextStamp` object. These properties define the coordinates of the stamp's top-left corner relative to the origin of the page.
+ О: Вы можете настроить положение текстового штампа, изменив`XIndent` и`YIndent` свойства`TextStamp` объект. Эти свойства определяют координаты верхнего левого угла штампа относительно начала координат страницы.
 
-#### Q: Can I apply this method to existing PDF documents to add text stamps?
+#### Вопрос: Могу ли я применить этот метод к существующим PDF-документам, чтобы добавить текстовые штампы?
 
-A: Yes, you can apply this method to existing PDF documents to add text stamps. The tutorial's provided code demonstrates how to load an existing PDF document and add a text stamp to a specific page.
+О: Да, вы можете применить этот метод к существующим PDF-документам, чтобы добавить текстовые штампы. Код, предоставленный в руководстве, демонстрирует, как загрузить существующий PDF-документ и добавить текстовый штамп на определенную страницу.
 
-#### Q: Can I add both background and foreground colors to the text stamp?
+#### Вопрос: Могу ли я добавить к текстовому штампу цвета фона и переднего плана?
 
-A: Yes, you can add both background and foreground colors to the text stamp. By setting the `Background` property to `true`, you can provide a colored background for the text stamp. Additionally, you can set the `TextState.ForegroundColor` property to specify the color of the text itself.
+ О: Да, к текстовому штампу можно добавить цвета фона и переднего плана. Установив`Background` собственность`true` , вы можете предоставить цветной фон для текстового штампа. Кроме того, вы можете установить`TextState.ForegroundColor` свойство, позволяющее указать цвет самого текста.
 
-#### Q: How can I ensure that the text stamp does not obscure the underlying content of the PDF document?
+#### Вопрос: Как я могу гарантировать, что текстовый штамп не закрывает основное содержимое PDF-документа?
 
-A: When adding a text stamp, be mindful of its placement to ensure that it does not obstruct critical information or negatively affect the document's readability. You can adjust the `XIndent` and `YIndent` properties to position the text stamp appropriately.
+ О: Добавляя текстовый штамп, обратите внимание на его размещение, чтобы он не загораживал важную информацию и не ухудшал читаемость документа. Вы можете настроить`XIndent` и`YIndent` свойства для правильного размещения текстового штампа.
 
-#### Q: Can I use this method to add stamps other than text, such as images or logos?
+#### Вопрос: Могу ли я использовать этот метод для добавления штампов, отличных от текста, например изображений или логотипов?
 
-A: This specific tutorial focuses on adding text stamps, but you can similarly add other types of stamps, such as images or logos, using Aspose.PDF for .NET. The process involves creating the appropriate stamp object and configuring its properties.
+О: В этом конкретном руководстве основное внимание уделяется добавлению текстовых штампов, но вы можете аналогичным образом добавлять и другие типы штампов, например изображения или логотипы, используя Aspose.PDF для .NET. Этот процесс включает в себя создание соответствующего объекта штампа и настройку его свойств.
 
-#### Q: How can I automate the process of adding text stamps to multiple PDF documents?
+#### Вопрос: Как автоматизировать процесс добавления текстовых отметок в несколько PDF-документов?
 
-A: You can automate the process of adding text stamps to multiple PDF documents by creating a script or program that iterates through a list of documents and applies the same text stamping process to each one.
+О: Вы можете автоматизировать процесс добавления текстовых отметок к нескольким PDF-документам, создав сценарий или программу, которая перебирает список документов и применяет один и тот же процесс текстовых отметок к каждому из них.

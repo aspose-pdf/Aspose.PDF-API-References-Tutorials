@@ -1,107 +1,107 @@
 ---
-title: Page To PNG
-linktitle: Page To PNG
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert a page to PNG format using Aspose.PDF for .NET.
+title: الصفحة إلى PNG
+linktitle: الصفحة إلى PNG
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لتحويل الصفحة إلى تنسيق PNG باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 220
 url: /ar/net/programming-with-images/page-to-png/
 ---
-In this tutorial, we will walk you through how to convert a page to PNG format using Aspose.PDF for .NET. Follow these steps to perform this operation easily.
+سنرشدك في هذا البرنامج التعليمي إلى كيفية تحويل صفحة إلى تنسيق PNG باستخدام Aspose.PDF لـ .NET. اتبع هذه الخطوات لتنفيذ هذه العملية بسهولة.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- Visual Studio or any other development environment installed and configured.
-- A basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed. You can download it from Aspose official website.
+- تم تثبيت وتكوين Visual Studio أو أي بيئة تطوير أخرى.
+- معرفة أساسية بلغة البرمجة C#.
+- تم تثبيت مكتبة Aspose.PDF لـ .NET. يمكنك تنزيله من موقع Aspose الرسمي.
 
-## Step 1: Loading the PDF document
+## الخطوة 1: تحميل وثيقة PDF
 
-To get started, use the following code to load the PDF document:
+للبدء، استخدم الكود التالي لتحميل مستند PDF:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Open the document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "PageToPNG.pdf");
 ```
 
-Be sure to provide the correct path to your PDF document.
+تأكد من توفير المسار الصحيح لمستند PDF الخاص بك.
 
-## Step 2: Convert page to PNG
+## الخطوة 2: تحويل الصفحة إلى PNG
 
-Next, we will convert a specific page of the PDF document to PNG format. Use the following code:
+بعد ذلك، سنقوم بتحويل صفحة معينة من مستند PDF إلى تنسيق PNG. استخدم الكود التالي:
 
 ```csharp
 using (FileStream imageStream = new FileStream(dataDir + "aspose-logo.png", FileMode.Create))
 {
-// Create a Resolution object
+// إنشاء كائن القرار
 Resolution resolution = new Resolution(300);
-// Create a PNG device with the specified attributes (Width, Height, Resolution)
+// إنشاء جهاز PNG بالسمات المحددة (العرض، الارتفاع، الدقة)
 PngDevice pngDevice = new PngDevice(resolution);
-// Convert a specific page and save the image to the stream
+// تحويل صفحة معينة وحفظ الصورة في الدفق
 pngDevice.Process(pdfDocument.Pages[1], imageStream);
-// Close the stream
+// أغلق الدفق
 imageStream.Close();
 }
 ```
 
-Be sure to provide the desired path and filename for the output PNG image.
+تأكد من توفير المسار المطلوب واسم الملف لصورة PNG الناتجة.
 
-### Sample source code for Page To PNG using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Page To PNG باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "PageToPNG.pdf");
 using (FileStream imageStream = new FileStream(dataDir + "aspose-logo.png", FileMode.Create))
 {
-	// Create Resolution object
+	// إنشاء كائن القرار
 	Resolution resolution = new Resolution(300);
-	// Create PNG device with specified attributes (Width, Height, Resolution)
+	// إنشاء جهاز PNG بالسمات المحددة (العرض والارتفاع والدقة)
 	PngDevice pngDevice = new PngDevice(resolution);
-	// Convert a particular page and save the image to stream
+	//تحويل صفحة معينة وحفظ الصورة للبث
 	pngDevice.Process(pdfDocument.Pages[1], imageStream);
-	// Close stream
+	// إغلاق الدفق
 	imageStream.Close();
 }
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have successfully converted a page to PNG format using Aspose.PDF for .NET. You can now apply this method to your own projects to extract specific pages from PDF files and save them as PNG images.
+تهنئة ! لقد نجحت في تحويل الصفحة إلى تنسيق PNG باستخدام Aspose.PDF لـ .NET. يمكنك الآن تطبيق هذه الطريقة على مشاريعك الخاصة لاستخراج صفحات محددة من ملفات PDF وحفظها كصور PNG.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of converting a PDF page to PNG format using Aspose.PDF for .NET?
+#### س: ما هو الغرض من تحويل صفحة PDF إلى تنسيق PNG باستخدام Aspose.PDF لـ .NET؟
 
-A: Converting a PDF page to PNG format allows you to extract a specific page from a PDF document and save it as a high-quality image in PNG format. This can be useful for various applications, including graphics editing and web display.
+ج: يتيح لك تحويل صفحة PDF إلى تنسيق PNG استخراج صفحة معينة من مستند PDF وحفظها كصورة عالية الجودة بتنسيق PNG. يمكن أن يكون هذا مفيدًا للعديد من التطبيقات، بما في ذلك تحرير الرسومات وعرض الويب.
 
-#### Q: Why would I want to convert a PDF page to PNG format?
+#### س: لماذا أرغب في تحويل صفحة PDF إلى تنسيق PNG؟
 
-A: Converting a PDF page to PNG format can be beneficial when you need to use a specific page from a PDF document in graphics-related projects, presentations, or web applications.
+ج: يمكن أن يكون تحويل صفحة PDF إلى تنسيق PNG مفيدًا عندما تحتاج إلى استخدام صفحة معينة من مستند PDF في المشروعات ذات الصلة بالرسومات أو العروض التقديمية أو تطبيقات الويب.
 
-#### Q: What is the purpose of the `PngDevice` class in the conversion process?
+####  س: ما هو الغرض من`PngDevice` class in the conversion process?
 
-A: The `PngDevice` class is used to create a PNG device that facilitates the conversion of a PDF page to PNG format. It allows you to specify attributes such as width, height, and resolution for the resulting PNG image.
+ ج: ال`PngDevice` يتم استخدام الفئة لإنشاء جهاز PNG الذي يسهل تحويل صفحة PDF إلى تنسيق PNG. يسمح لك بتحديد سمات مثل العرض والارتفاع والدقة لصورة PNG الناتجة.
 
-#### Q: How can I customize the resolution and dimensions of the PNG image during conversion?
+#### س: كيف يمكنني تخصيص دقة وأبعاد صورة PNG أثناء التحويل؟
 
-A: To customize the resolution and dimensions, create a `Resolution` object with the desired resolution, and then create a `PngDevice` object by specifying the width, height, and the created `Resolution` object.
+ ج: لتخصيص الدقة والأبعاد، قم بإنشاء ملف`Resolution` الكائن بالدقة المطلوبة، ثم قم بإنشاء ملف`PngDevice` الكائن عن طريق تحديد العرض والارتفاع والشكل الذي تم إنشاؤه`Resolution` هدف.
 
-#### Q: Can I convert a specific page from a PDF document to PNG format?
+#### س: هل يمكنني تحويل صفحة معينة من مستند PDF إلى تنسيق PNG؟
 
-A: Yes, you can convert a specific page from a PDF document to PNG format by using the `Process` method of the `PngDevice` class and passing the desired PDF page to the method.
+ ج: نعم، يمكنك تحويل صفحة معينة من مستند PDF إلى تنسيق PNG باستخدام`Process` طريقة`PngDevice` class وتمرير صفحة PDF المطلوبة إلى الطريقة.
 
-#### Q: How do I save the converted PNG image to a file?
+#### س: كيف يمكنني حفظ صورة PNG المحولة إلى ملف؟
 
-A: After converting the PDF page to PNG format, you can save the PNG image to a file stream using the `FileStream` class. Specify the desired path and file name for the PNG image.
+ ج: بعد تحويل صفحة PDF إلى تنسيق PNG، يمكنك حفظ صورة PNG في تدفق ملف باستخدام الملف`FileStream` فصل. حدد المسار المطلوب واسم الملف لصورة PNG.
 
-#### Q: Is it necessary to close the file stream after the conversion process?
+#### س: هل من الضروري إغلاق دفق الملف بعد عملية التحويل؟
 
-A: Yes, it is important to close the file stream after the conversion process to release system resources and ensure proper handling of the converted PNG image.
+ج: نعم، من المهم إغلاق دفق الملف بعد عملية التحويل لتحرير موارد النظام وضمان المعالجة السليمة لصورة PNG المحولة.
 
-#### Q: How can I apply this conversion method to my own projects?
+#### س: كيف يمكنني تطبيق طريقة التحويل هذه على مشاريعي الخاصة؟
 
-A: You can integrate the provided code into your own projects to automate the conversion of PDF pages to PNG format. Modify the code as needed to suit your project's requirements and to process multiple pages if required.
+ج: يمكنك دمج الكود المقدم في مشاريعك الخاصة لأتمتة تحويل صفحات PDF إلى تنسيق PNG. قم بتعديل الكود حسب الحاجة ليناسب متطلبات مشروعك ولمعالجة صفحات متعددة إذا لزم الأمر.

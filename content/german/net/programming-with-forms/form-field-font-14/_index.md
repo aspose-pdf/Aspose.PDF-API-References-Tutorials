@@ -1,57 +1,57 @@
 ---
-title: Form Field Font 14
-linktitle: Form Field Font 14
-second_title: Aspose.PDF for .NET API Reference
-description: Easily configure the font of form fields in your PDF documents with Aspose.PDF for .NET.
+title: Formularfeld-Schriftart 14
+linktitle: Formularfeld-Schriftart 14
+second_title: Aspose.PDF für .NET API-Referenz
+description: Konfigurieren Sie ganz einfach die Schriftart von Formularfeldern in Ihren PDF-Dokumenten mit Aspose.PDF für .NET.
 type: docs
 weight: 110
 url: /de/net/programming-with-forms/form-field-font-14/
 ---
-In this tutorial, we will show you how to configure the font of a form field using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+In diesem Tutorial zeigen wir Ihnen, wie Sie die Schriftart eines Formularfelds mit Aspose.PDF für .NET konfigurieren. Wir erklären Ihnen Schritt für Schritt den C#-Quellcode, um Sie durch diesen Prozess zu führen.
 
-## Step 1: Preparation
+## Schritt 1: Vorbereitung
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Stellen Sie zunächst sicher, dass Sie die erforderlichen Bibliotheken importiert haben und legen Sie den Pfad zum Dokumentenverzeichnis fest:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the document
+## Schritt 2: Öffnen Sie das Dokument
 
-Open the existing PDF document:
+Öffnen Sie das vorhandene PDF-Dokument:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "FormFieldFont14.pdf");
 ```
 
-## Step 3: Get a particular form field
+## Schritt 3: Holen Sie sich ein bestimmtes Formularfeld
 
-Get the desired form field (in this example, we're using the "textbox1" field):
+Rufen Sie das gewünschte Formularfeld ab (in diesem Beispiel verwenden wir das Feld „textbox1“):
 
 ```csharp
 Aspose.Pdf.Forms.Field field = pdfDocument.Form["textbox1"] as Aspose.Pdf.Forms.Field;
 ```
 
-## Step 4: Create a font object
+## Schritt 4: Erstellen Sie ein Schriftartobjekt
 
-Create a font object for the new font you want to use (for example, "ComicSansMS"):
+Erstellen Sie ein Schriftartobjekt für die neue Schriftart, die Sie verwenden möchten (z. B. „ComicSansMS“):
 
 ```csharp
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("ComicSansMS");
 ```
 
-## Step 5: Configure font information for the form field
+## Schritt 5: Konfigurieren Sie Schriftartinformationen für das Formularfeld
 
-Configure the font information for the form field using the font created earlier:
+Konfigurieren Sie die Schriftartinformationen für das Formularfeld mithilfe der zuvor erstellten Schriftart:
 
 ```csharp
 field.DefaultAppearance = new Aspose.Pdf.Forms.DefaultAppearance(font, 14, System.Drawing.Color.Black);
 ```
 
-## Step 6: Save the updated document
+## Schritt 6: Speichern Sie das aktualisierte Dokument
 
-Save the updated PDF document:
+Speichern Sie das aktualisierte PDF-Dokument:
 
 ```csharp
 dataDir = dataDir + "FormFieldFont14_out.pdf";
@@ -59,46 +59,46 @@ pdfDocument.Save(dataDir);
 ```
 
 
-### Sample source code for Form Field Font 14 using Aspose.PDF for .NET 
+### Beispielquellcode für Form Field Font 14 mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "FormFieldFont14.pdf");
-// Get particular form field from document
+// Holen Sie sich ein bestimmtes Formularfeld aus dem Dokument
 Aspose.Pdf.Forms.Field field = pdfDocument.Form["textbox1"] as Aspose.Pdf.Forms.Field;
-// Create font object
+// Schriftartobjekt erstellen
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("ComicSansMS");
-// Set the font information for form field
+// Legen Sie die Schriftartinformationen für das Formularfeld fest
 // Field.DefaultAppearance = new Aspose.Pdf.Forms.in.DefaultAppearance(font, 10, System.Drawing.Color.Black);
 dataDir = dataDir + "FormFieldFont14_out.pdf";
-// Save updated document
+// Aktualisiertes Dokument speichern
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nForm field font setup successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we learned how to configure the font of a form field using Aspose.PDF for .NET. By following these steps, you can easily specify the font and font size for form fields in your PDF documents using Aspose.PDF.
+In diesem Tutorial haben wir gelernt, wie man die Schriftart eines Formularfelds mit Aspose.PDF für .NET konfiguriert. Wenn Sie diese Schritte befolgen, können Sie mit Aspose.PDF ganz einfach die Schriftart und Schriftgröße für Formularfelder in Ihren PDF-Dokumenten festlegen.
 
-### FAQ's
+### FAQs
 
-#### Q: Can I use any font for form fields in Aspose.PDF for .NET?
+#### F: Kann ich eine beliebige Schriftart für Formularfelder in Aspose.PDF für .NET verwenden?
 
-A: Yes, you can use any TrueType or OpenType font for form fields in Aspose.PDF for .NET. As long as the font is available and installed on the system or accessible through the FontRepository, you can use it to customize the appearance of form field text.
+A: Ja, Sie können jede TrueType- oder OpenType-Schriftart für Formularfelder in Aspose.PDF für .NET verwenden. Solange die Schriftart verfügbar und auf dem System installiert oder über das FontRepository zugänglich ist, können Sie sie verwenden, um das Erscheinungsbild des Formularfeldtexts anzupassen.
 
-#### Q: How do I find the available fonts in Aspose.PDF for .NET?
+#### F: Wie finde ich die verfügbaren Schriftarten in Aspose.PDF für .NET?
 
-A: To find the available fonts in Aspose.PDF for .NET, you can use the `FontRepository.GetAvailableFonts()` method. This method returns an array of available fonts that you can use for form fields or any other text-related operations in your PDF document.
+ A: Um die verfügbaren Schriftarten in Aspose.PDF für .NET zu finden, können Sie die verwenden`FontRepository.GetAvailableFonts()`Methode. Diese Methode gibt ein Array verfügbarer Schriftarten zurück, die Sie für Formularfelder oder andere textbezogene Vorgänge in Ihrem PDF-Dokument verwenden können.
 
-#### Q: Can I change the font size for form fields to any value?
+#### F: Kann ich die Schriftgröße für Formularfelder auf einen beliebigen Wert ändern?
 
-A: Yes, you can change the font size for form fields to any positive numeric value using Aspose.PDF for .NET. However, it is essential to ensure that the font size is appropriate for the specific form field and does not lead to text truncation or overlapping with other elements in the document.
+A: Ja, Sie können die Schriftgröße für Formularfelder mit Aspose.PDF für .NET in einen beliebigen positiven numerischen Wert ändern. Es ist jedoch unbedingt darauf zu achten, dass die Schriftgröße für das jeweilige Formularfeld geeignet ist und nicht zu Textkürzungen oder Überschneidungen mit anderen Elementen im Dokument führt.
 
-#### Q: Can I change the font color for form fields?
+#### F: Kann ich die Schriftfarbe für Formularfelder ändern?
 
-A: Yes, you can change the font color for form fields using Aspose.PDF for .NET. In the provided C# source code, the font color is set to black (`System.Drawing.Color.Black`), but you can customize it to any other valid color value.
+A: Ja, Sie können die Schriftfarbe für Formularfelder mit Aspose.PDF für .NET ändern. Im bereitgestellten C#-Quellcode ist die Schriftfarbe auf Schwarz eingestellt (`System.Drawing.Color.Black`), aber Sie können es an jeden anderen gültigen Farbwert anpassen.
 
-#### Q: How can I align the text within the form field?
+#### F: Wie kann ich den Text im Formularfeld ausrichten?
 
-A: To align the text within the form field, you can use the `Multiline` property of the form field and set it to true. This property enables multiline text within the form field, allowing you to control the text alignment with line breaks and carriage returns.
+ A: Um den Text im Formularfeld auszurichten, können Sie das verwenden`Multiline`Eigenschaft des Formularfelds und setzen Sie sie auf true. Diese Eigenschaft ermöglicht mehrzeiligen Text im Formularfeld, sodass Sie die Textausrichtung mit Zeilenumbrüchen und Wagenrückläufen steuern können.

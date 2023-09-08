@@ -1,54 +1,54 @@
 ---
-title: Validate PDF File
-linktitle: Validate PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to validate a PDF file with Aspose.PDF for .NET. Check its compliance with standards and generate a validation report.
+title: التحقق من صحة ملف PDF
+linktitle: التحقق من صحة ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية التحقق من صحة ملف PDF باستخدام Aspose.PDF لـ .NET. التحقق من امتثالها للمعايير وإنشاء تقرير التحقق من الصحة.
 type: docs
 weight: 240
 url: /ar/net/programming-with-tagged-pdf/validate-pdf/
 ---
-In this tutorial, we will walk you through how to validate a PDF file using Aspose.PDF for .NET. Follow the instructions below to understand how to use the provided C# source code to validate a PDF file and generate a validation report.
+في هذا البرنامج التعليمي، سنرشدك إلى كيفية التحقق من صحة ملف PDF باستخدام Aspose.PDF لـ .NET. اتبع الإرشادات أدناه لفهم كيفية استخدام كود مصدر C# المقدم للتحقق من صحة ملف PDF وإنشاء تقرير التحقق من الصحة.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+قبل أن تبدأ، تأكد من تكوين بيئة التطوير الخاصة بك لاستخدام Aspose.PDF لـ .NET. يتضمن ذلك تثبيت مكتبة Aspose.PDF وتكوين مشروعك للرجوع إليه.
 
-## Step 2: Preparing the PDF document
+## الخطوة 2: إعداد وثيقة PDF
 
-Place your PDF file to be validated in the specified directory. Be sure to adjust the file path in the source code using your own docs directory.
+ضع ملف PDF الخاص بك ليتم التحقق من صحته في الدليل المحدد. تأكد من ضبط مسار الملف في الكود المصدري باستخدام دليل المستندات الخاص بك.
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// PDF input file path
+// مسار ملف إدخال PDF
 string inputFileName = dataDir + "StructureElements.pdf";
 
-// Path of the validation report output file
+// مسار ملف إخراج تقرير التحقق من الصحة
 string outputLogName = dataDir + "ua-20.xml";
 ```
 
-Make sure that your PDF file to be validated is correctly specified in the source code.
+تأكد من تحديد ملف PDF الخاص بك المراد التحقق من صحته بشكل صحيح في كود المصدر.
 
-## Step 3: PDF Validation
+## الخطوة 3: التحقق من صحة PDF
 
-In this step, we will use Aspose.PDF for .NET to validate the specified PDF document and generate a validation report.
+في هذه الخطوة، سوف نستخدم Aspose.PDF for .NET للتحقق من صحة مستند PDF المحدد وإنشاء تقرير التحقق من الصحة.
 
 ```csharp
-// Open the PDF document
+//افتح مستند بي دي إف
 using (var document = new Aspose.Pdf.Document(inputFileName))
 {
-// Validate the PDF document
+// التحقق من صحة وثيقة PDF
 bool isValid = document.Validate(outputLogName, Aspose.Pdf.PdfFormat.PDF_UA_1);
 }
 ```
 
-We opened the PDF document and validated its format using Aspose.PDF for .NET. The validation result will be stored in the specified report file.
+لقد فتحنا مستند PDF وتحققنا من تنسيقه باستخدام Aspose.PDF لـ .NET. سيتم تخزين نتيجة التحقق من الصحة في ملف التقرير المحدد.
 
-### Sample source code for Validate PDF using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للتحقق من صحة PDF باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inputFileName = dataDir + "StructureElements.pdf";
 string outputLogName = dataDir + "ua-20.xml";
@@ -60,40 +60,40 @@ using (var document = new Aspose.Pdf.Document(inputFileName))
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to use Aspose.PDF for .NET to validate a PDF document and generate a validation report. Validating the PDF allows you to ensure that it conforms to standards and guarantees its accessibility. Use these features to improve the quality of your PDF documents.
+في هذا البرنامج التعليمي، تعلمنا كيفية استخدام Aspose.PDF لـ .NET للتحقق من صحة مستند PDF وإنشاء تقرير التحقق من الصحة. يتيح لك التحقق من صحة ملف PDF التأكد من مطابقته للمعايير ويضمن إمكانية الوصول إليه. استخدم هذه الميزات لتحسين جودة مستندات PDF الخاصة بك.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of this tutorial on validating a PDF file using Aspose.PDF for .NET?
+#### س: ما هو الغرض من هذا البرنامج التعليمي حول التحقق من صحة ملف PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: The primary goal of this tutorial is to guide you through the process of validating a PDF file using Aspose.PDF for .NET. By following the provided instructions and using the provided C# source code, you can ensure that your PDF document adheres to specified standards and generate a validation report.
+ج: الهدف الأساسي من هذا البرنامج التعليمي هو إرشادك خلال عملية التحقق من صحة ملف PDF باستخدام Aspose.PDF لـ .NET. باتباع الإرشادات المقدمة واستخدام كود مصدر C# المقدم، يمكنك التأكد من أن مستند PDF الخاص بك يلتزم بالمعايير المحددة وإنشاء تقرير التحقق من الصحة.
 
-#### Q: What are the prerequisites for validating a PDF file using Aspose.PDF for .NET?
+#### س: ما هي المتطلبات الأساسية للتحقق من صحة ملف PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Before you begin, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+ج: قبل أن تبدأ، تأكد من أنك قمت بإعداد بيئة التطوير الخاصة بك لاستخدام Aspose.PDF لـ .NET. يتضمن ذلك تثبيت مكتبة Aspose.PDF وتكوين مشروعك للرجوع إليه.
 
-#### Q: How do I prepare the PDF document for validation using Aspose.PDF for .NET?
+#### س: كيف أقوم بإعداد مستند PDF للتحقق من صحته باستخدام Aspose.PDF لـ .NET؟
 
-A: You need to place the PDF file you want to validate in the specified directory. Adjust the file path in the source code to point to your PDF document. The tutorial provides the necessary source code and guidance.
+ج: تحتاج إلى وضع ملف PDF الذي تريد التحقق من صحته في الدليل المحدد. اضبط مسار الملف في الكود المصدري للإشارة إلى مستند PDF الخاص بك. يوفر البرنامج التعليمي التعليمات البرمجية المصدر والإرشادات اللازمة.
 
-#### Q: What does the PDF validation process involve using Aspose.PDF for .NET?
+#### س: ما الذي تتضمنه عملية التحقق من صحة PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: The tutorial demonstrates how to use Aspose.PDF for .NET to open and validate a specified PDF document. The validation process ensures that the PDF conforms to a specific standard (PDF/UA-1 in this case). The result of the validation is stored in a validation report.
+ج: يوضح البرنامج التعليمي كيفية استخدام Aspose.PDF لـ .NET لفتح مستند PDF محدد والتحقق من صحته. تضمن عملية التحقق أن ملف PDF يتوافق مع معيار محدد (PDF/UA-1 في هذه الحالة). يتم تخزين نتيجة التحقق من الصحة في تقرير التحقق من الصحة.
 
-#### Q: How can I generate a validation report for a PDF document using Aspose.PDF for .NET?
+#### س: كيف يمكنني إنشاء تقرير التحقق من صحة مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: The provided C# source code examples show how to open a PDF document, validate it using Aspose.PDF for .NET, and generate a validation report. The `Validate` method is used for this purpose.
+ ج: توضح أمثلة التعليمات البرمجية المصدر لـ C# كيفية فتح مستند PDF والتحقق من صحته باستخدام Aspose.PDF لـ .NET وإنشاء تقرير التحقق من الصحة. ال`Validate` يتم استخدام الطريقة لهذا الغرض.
 
-#### Q: What is the significance of PDF validation and generating a validation report?
+#### س: ما هي أهمية التحقق من صحة PDF وإنشاء تقرير التحقق من الصحة؟
 
-A: Validating a PDF document ensures that it adheres to standards and guidelines, such as PDF/UA, which is specifically focused on accessibility. A validation report provides valuable information about any issues or areas of non-compliance within the PDF document.
+ج: يضمن التحقق من صحة مستند PDF التزامه بالمعايير والإرشادات، مثل PDF/UA، الذي يركز بشكل خاص على إمكانية الوصول. يوفر تقرير التحقق من الصحة معلومات قيمة حول أي مشكلات أو مجالات عدم الامتثال داخل مستند PDF.
 
-#### Q: Can I customize the validation process or specify different standards for validation using Aspose.PDF for .NET?
+#### س: هل يمكنني تخصيص عملية التحقق من الصحة أو تحديد معايير مختلفة للتحقق من الصحة باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can customize the validation process by choosing different validation standards, such as PDF/A or PDF/X, and by configuring additional validation options. The provided C# source code focuses on PDF/UA validation, but you can explore the official documentation for more options.
+ج: نعم، يمكنك تخصيص عملية التحقق من الصحة عن طريق اختيار معايير التحقق المختلفة، مثل PDF/A أو PDF/X، وعن طريق تكوين خيارات التحقق الإضافية. يركز كود مصدر C# المقدم على التحقق من صحة PDF/UA، ولكن يمكنك استكشاف الوثائق الرسمية لمزيد من الخيارات.
 
-#### Q: How can I interpret and utilize the validation report generated by Aspose.PDF for .NET?
+#### س: كيف يمكنني تفسير واستخدام تقرير التحقق من الصحة الذي تم إنشاؤه بواسطة Aspose.PDF لـ .NET؟
 
-A: The validation report provides detailed information about any validation errors or warnings within the PDF document. It helps you identify and address issues related to accessibility and compliance. You can review the report to make necessary improvements.
+ج: يوفر تقرير التحقق من الصحة معلومات مفصلة حول أي أخطاء أو تحذيرات في التحقق من الصحة داخل مستند PDF. يساعدك على تحديد ومعالجة المشكلات المتعلقة بإمكانية الوصول والامتثال. يمكنك مراجعة التقرير لإجراء التحسينات اللازمة.

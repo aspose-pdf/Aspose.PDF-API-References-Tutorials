@@ -1,21 +1,21 @@
 ---
-title: Programming with Attachments
-linktitle: Programming with Attachments
+title: 使用附件编程
+linktitle: 使用附件编程
 type: docs
 weight: 18
 url: /zh/net/programming-with-attachments/
-description: Learn how to manipulate attachments in PDF documents, including adding, extracting and deleting them, to improve the functionality of PDF files.
+description: 了解如何操作 PDF 文档中的附件，包括添加、提取和删除附件，以改进 PDF 文件的功能。
 ---
-The Aspose.PDF for .NET tutorials on programming with attachments provide step-by-step instructions for working with attachments in PDF documents. Learn how to add, extract and delete attachments, as well as manage their properties.
+Aspose.PDF for .NET 有关附件编程的教程提供了处理 PDF 文档中附件的分步说明。了解如何添加、提取和删除附件以及管理其属性。
 
-These tutorials will guide you through the different steps to manipulate attachments in your PDF documents, allowing you to improve the functionality and interactivity of your PDF files.
+这些教程将指导您完成操作 PDF 文档中附件的不同步骤，从而提高 PDF 文件的功能和交互性。
 
-## Tutorials
-| Title | Description |
+## 教程
+| 标题 | 描述 |
 | --- | --- | 
-| [Add Attachment In PDF File](./add-attachment/) | Learn how to add attachment in PDF file using Aspose.PDF for .NET.  |  
-| [Delete All Attachments In PDF File](./delete-all-attachments/) | Learn how to remove all attachments in PDF file using Aspose.PDF for .NET.  |  
-| [Disable Files Compression In PDF File](./disable-files-compression/) | Learn how to disable file compression in PDF file with Aspose.PDF for .NET.  |  
-| [Get All The Attachments In PDF File](./get-all-the-attachments/) | Learn how to get all attachments in PDF file with Aspose.PDF for .NET.  |  
-| [Get Attachment Info](./get-attachment-info/) | Learn how to get information about a specific attachment in a PDF file with Aspose.PDF for .NET. |  
-| [Get Individual Attachment In PDF File](./get-individual-attachment/) | Learn how to get an individual attachment in PDF file with Aspose.PDF for .NET.  |  
+| [在 PDF 文件中添加附件](./add-attachment/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中添加附件。  |  
+| [删除 PDF 文件中的所有附件](./delete-all-attachments/) | 了解如何使用 Aspose.PDF for .NET 删除 PDF 文件中的所有附件。  |  
+| [禁用 PDF 文件中的文件压缩](./disable-files-compression/) | 了解如何使用 Aspose.PDF for .NET 禁用 PDF 文件中的文件压缩。  |  
+| [获取PDF文件中的所有附件](./get-all-the-attachments/) | 了解如何使用 Aspose.PDF for .NET 获取 PDF 文件中的所有附件。  |  
+| [获取附件信息](./get-attachment-info/) | 了解如何使用 Aspose.PDF for .NET 获取有关 PDF 文件中特定附件的信息。 |  
+| [获取 PDF 文件中的单独附件](./get-individual-attachment/) | 了解如何使用 Aspose.PDF for .NET 获取 PDF 文件中的单个附件。  |  

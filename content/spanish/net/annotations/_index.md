@@ -1,29 +1,29 @@
 ---
-title: Programming with Annotations
-linktitle: Programming with Annotations
+title: Programación con anotaciones
+linktitle: Programación con anotaciones
 type: docs
 weight: 12
 url: /es/net/annotations/
-description: Programming with Annotations includes API Tutorials and code-snippets of Aspose.PDF for .NET that includes adding annotation, deleting annotation, getting annotation info, and many more.
+description: La programación con anotaciones incluye tutoriales de API y fragmentos de código de Aspose.PDF para .NET que incluyen agregar anotaciones, eliminar anotaciones, obtener información de anotaciones y mucho más.
 ---
-A comprehensive collection of tutorials showcasing how to work with annotations in PDF documents using Aspose.PDF for .NET. It provides a wide range of code snippets demonstrating how to create and manipulate various types of annotations such as text, line, circle, rectangle, polygon, hyperlink, and many more. Each example includes the complete C# code along with a detailed explanation of the code's functionality and the expected output. Its an excellent resource for .NET developers who want to learn how to work with annotations in PDF documents using Aspose.PDF.
+Una colección completa de tutoriales que muestran cómo trabajar con anotaciones en documentos PDF usando Aspose.PDF para .NET. Proporciona una amplia gama de fragmentos de código que demuestran cómo crear y manipular varios tipos de anotaciones, como texto, línea, círculo, rectángulo, polígono, hipervínculo y muchas más. Cada ejemplo incluye el código C# completo junto con una explicación detallada de la funcionalidad del código y el resultado esperado. Es un excelente recurso para desarrolladores .NET que desean aprender a trabajar con anotaciones en documentos PDF utilizando Aspose.PDF.
 
-## Tutorials
-| Title | Description |
+## Tutoriales
+| Título | Descripción |
 | --- | --- | 
-| [Add PDF Annotation](./addannotation/) | Learn how to add text PDF annotations with Aspose.PDF for .NET using this C# source code. Customize your annotations with specific details and icons. |  
-| [Add lnk Annotation](./addlnkannotation/) | Learn how to add Ink Annotation feature to PDF documents in C# using Aspose.PDF for .NET with step-by-step guide and full source code. |  
-| [Add Swf File As PDF Annotation](./addswffileasannotation/) | Learn how to add SWF files as PDF annotations in Aspose.PDF for .NET with this step-by-step guide. |  
-| [Delete All Annotations From Page](./deleteallannotationsfrompage/) | Learn how to delete all annotations from a PDF page with Aspose.PDF for .NET using this step-by-step guide. |  
-| [Delete Particular Annotation In PDF File](./deleteparticularannotation/) | Learn how to delete a particular annotation in PDF file using Aspose.PDF for .NET with this step-by-step guide. |  
-| [Extract Highlighted Text In PDF File](./extracthighlightedtext/) | Learn how to extract highlighted text in PDF file using Aspose.PDF for .NET with this step-by-step guide. |  
-| [Get All Annotations From Page](./getallannotationsfrompage/) | Learn how to use Aspose.PDF for .NET to retrieve all annotations from a PDF page with this step-by-step guide. |  
-| [Get Particular Annotation In PDF File](./getparticularannotation/) | Learn how to use Aspose.PDF for .NET to get particular annotation in PDF file with this step-by-step guide.  |  
-| [Get Resource Of Annotation](./getresourceofannotation/) | Learn how to retrieve the resource of an annotation using Aspose.PDF for .NET with this step-by-step guide.  |  
-| [Invisible Annotation In PDF File](./invisibleannotation/) | Learn how to invisible annotation in PDF file using C# source code with Aspose.PDF for .NET. Step-by-step guide. |  
-| [lnk Annotation Line Width](./lnkannotationlinewidth/) | This article provides a step-by-step guide for setting the line width of the lnk Annotation using Aspose.PDF for .NET. |  
-| [Redact Page](./redactpage/) | This article explains how to redact a PDF page using Aspose.PDF for .NET, including step-by-step instructions and example source code. |  
-| [Set Callout Property In PDF File](./setcalloutproperty/) | Learn how to set Callout Property in PDF file using Aspose.PDF for .NET. Customize annotations with callout lines, text color, and ending styles. |  
-| [Set Free Text Annotation Formatting](./setfreetextannotationformatting/) | This article provides a step-by-step guide on how to create a free text annotation and specify its contents using Aspose.PDF for .NET. |  
-| [Strike Out Words](./strikeoutwords/) | This article provides a step-by-step guide to using Aspose.PDF for .NET's Strike Out Words feature, including step by step guide and explanations. |  
-| [Update Free Text PDF Annotation](./updatefreetextannotation/) | Learn how to update free text PDF annotation feature of Aspose.PDF for .NET using C# source code. |  
+| [Agregar anotación PDF](./addannotation/) | Aprenda a agregar anotaciones de texto en PDF con Aspose.PDF para .NET usando este código fuente de C#. Personaliza tus anotaciones con detalles e íconos específicos. |  
+| [Agregar anotación de enlace](./addlnkannotation/) | Aprenda cómo agregar la función Ink Annotation a documentos PDF en C# usando Aspose.PDF para .NET con una guía paso a paso y el código fuente completo. |  
+| [Agregar archivo Swf como anotación PDF](./addswffileasannotation/) | Aprenda cómo agregar archivos SWF como anotaciones PDF en Aspose.PDF para .NET con esta guía paso a paso. |  
+| [Eliminar todas las anotaciones de la página](./deleteallannotationsfrompage/) | Aprenda cómo eliminar todas las anotaciones de una página PDF con Aspose.PDF para .NET usando esta guía paso a paso. |  
+| [Eliminar anotación particular en un archivo PDF](./deleteparticularannotation/) | Aprenda cómo eliminar una anotación particular en un archivo PDF usando Aspose.PDF para .NET con esta guía paso a paso. |  
+| [Extraer texto resaltado en un archivo PDF](./extracthighlightedtext/) | Aprenda cómo extraer texto resaltado en un archivo PDF usando Aspose.PDF para .NET con esta guía paso a paso. |  
+| [Obtener todas las anotaciones de la página](./getallannotationsfrompage/) | Aprenda a utilizar Aspose.PDF para .NET para recuperar todas las anotaciones de una página PDF con esta guía paso a paso. |  
+| [Obtenga una anotación particular en un archivo PDF](./getparticularannotation/) | Aprenda a utilizar Aspose.PDF para .NET para obtener una anotación particular en un archivo PDF con esta guía paso a paso.  |  
+| [Obtener recurso de anotación](./getresourceofannotation/) | Aprenda cómo recuperar el recurso de una anotación usando Aspose.PDF para .NET con esta guía paso a paso.  |  
+| [Anotación invisible en archivo PDF](./invisibleannotation/) | Aprenda a realizar anotaciones invisibles en archivos PDF utilizando el código fuente C# con Aspose.PDF para .NET. Guía paso por paso. |  
+| [Ancho de línea de anotación lnk](./lnkannotationlinewidth/) | Este artículo proporciona una guía paso a paso para configurar el ancho de línea de la anotación lnk usando Aspose.PDF para .NET. |  
+| [Redactar página](./redactpage/) | Este artículo explica cómo redactar una página PDF usando Aspose.PDF para .NET, incluidas instrucciones paso a paso y código fuente de ejemplo. |  
+| [Establecer propiedad de llamada en archivo PDF](./setcalloutproperty/) | Aprenda a configurar la propiedad de llamada en un archivo PDF usando Aspose.PDF para .NET. Personalice las anotaciones con líneas de leyenda, color de texto y estilos finales. |  
+| [Establecer formato de anotación de texto libre](./setfreetextannotationformatting/) | Este artículo proporciona una guía paso a paso sobre cómo crear una anotación de texto libre y especificar su contenido usando Aspose.PDF para .NET. |  
+| [Tachar palabras](./strikeoutwords/) | Este artículo proporciona una guía paso a paso para usar Aspose.PDF para la función Tachar palabras de .NET, incluida una guía paso a paso y explicaciones. |  
+| [Actualizar la anotación de PDF de texto libre](./updatefreetextannotation/) | Aprenda cómo actualizar la función de anotación de PDF de texto libre de Aspose.PDF para .NET usando el código fuente C#. |  

@@ -1,82 +1,82 @@
 ---
-title: Get Value From Field In PDF Document
-linktitle: Get Value From Field In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get the value of a form field in PDF document with Aspose.PDF for .NET.
+title: Получить значение из поля в PDF-документе
+linktitle: Получить значение из поля в PDF-документе
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко получите значение поля формы в PDF-документе с помощью Aspose.PDF для .NET.
 type: docs
 weight: 140
 url: /ru/net/programming-with-forms/get-value-from-field/
 ---
-In this tutorial, we will show you how to get the value of a form field using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+В этом уроке мы покажем вам, как получить значение поля формы с помощью Aspose.PDF для .NET. Мы шаг за шагом объясним исходный код C#, чтобы помочь вам в этом процессе.
 
-## Step 1: Preparation
+## Шаг 1: Подготовка
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Убедитесь, что вы импортировали необходимые библиотеки и указали путь к каталогу с вашими документами:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the document
+## Шаг 2. Откройте документ.
 
-Open the PDF document:
+Откройте PDF-документ:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetValueFromField.pdf");
 ```
 
-## Step 3: Get Field
+## Шаг 3: Получите поле
 
-Get the desired form field (in this example, we're using the "textbox1" field):
+Получите нужное поле формы (в этом примере мы используем поле «textbox1»):
 
 ```csharp
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 ```
 
-## Step 4: Get field value
+## Шаг 4. Получите значение поля
 
-Get the field value using the `Value` property:
+ Получите значение поля, используя`Value` свойство:
 
 ```csharp
 Console.WriteLine("PartialName: {0}", textBoxField.PartialName);
 Console.WriteLine("Value: {0}", textBoxField.Value);
 ```
 
-### Sample source code for Get Value From Field using Aspose.PDF for .NET 
+### Пример исходного кода для получения значения из поля с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "GetValueFromField.pdf");
-// Get a field
+// Получить поле
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
-// Get field value
+// Получить значение поля
 Console.WriteLine("PartialName : {0} ", textBoxField.PartialName);
 Console.WriteLine("Value : {0} ", textBoxField.Value);
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we learned how to get the value of a form field using Aspose.PDF for .NET. By following these steps, you can easily extract the value of a specific form field in your PDF documents using Aspose.PDF.
+В этом уроке мы узнали, как получить значение поля формы с помощью Aspose.PDF для .NET. Следуя этим шагам, вы можете легко извлечь значение определенного поля формы в ваших PDF-документах с помощью Aspose.PDF.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: Can I get the value of a form field without knowing its name beforehand?
+#### Вопрос: Могу ли я получить значение поля формы, не зная заранее его имени?
 
-A: No, you need to know the name or partial name of the form field to get its value using Aspose.PDF for .NET. The `pdfDocument.Form["fieldname"]` syntax requires the exact name or partial name of the form field to access its properties, including the value.
+ О: Нет, вам нужно знать имя или часть имени поля формы, чтобы получить его значение с помощью Aspose.PDF для .NET.`pdfDocument.Form["fieldname"]` Синтаксис требует точного имени или части имени поля формы для доступа к его свойствам, включая значение.
 
-#### Q: What if the form field does not exist in the PDF document?
+#### Вопрос: Что делать, если поле формы не существует в PDF-документе?
 
-A: If the form field does not exist in the PDF document, the `pdfDocument.Form["fieldname"]` syntax will return `null`. It's essential to handle such cases by checking for `null` before accessing the properties of the form field to avoid exceptions.
+ О: Если поле формы не существует в PDF-документе,`pdfDocument.Form["fieldname"]` синтаксис вернется`null` . Очень важно обрабатывать такие случаи, проверяя наличие`null` перед доступом к свойствам поля формы, чтобы избежать исключений.
 
-#### Q: How can I handle different types of form fields (e.g., checkboxes, radio buttons) to get their values?
+#### Вопрос: Как я могу обрабатывать различные типы полей формы (например, флажки, переключатели), чтобы получать их значения?
 
-A: To handle different types of form fields, you can use the appropriate field classes available in Aspose.PDF for .NET. For example, use `CheckBoxField` to work with checkboxes and `RadioButtonField` to work with radio buttons. Once you have the correct field object, you can access its properties, including the value.
+ О: Для обработки различных типов полей формы вы можете использовать соответствующие классы полей, доступные в Aspose.PDF для .NET. Например, используйте`CheckBoxField` работать с флажками и`RadioButtonField`для работы с радиокнопками. Если у вас есть правильный объект поля, вы можете получить доступ к его свойствам, включая значение.
 
-#### Q: Can I get the values of multiple form fields at once?
+#### Вопрос: Могу ли я получить значения сразу нескольких полей формы?
 
-A: Yes, you can get the values of multiple form fields at once by iterating through the form fields collection using a loop or LINQ queries. This way, you can access the value of each form field in the PDF document programmatically.
+О: Да, вы можете получить значения нескольких полей формы одновременно, перебирая коллекцию полей формы с помощью цикла или запросов LINQ. Таким образом, вы можете программно получить доступ к значению каждого поля формы в PDF-документе.
 
-#### Q: Is it possible to modify the value of a form field and save the changes back to the PDF document?
+#### Вопрос: Можно ли изменить значение поля формы и сохранить изменения обратно в PDF-документ?
 
-A: Yes, you can modify the value of a form field using Aspose.PDF for .NET and save the changes back to the PDF document. After updating the `Value` property of the form field, you can use the `pdfDocument.Save()` method to save the changes to the original PDF document.
+ О: Да, вы можете изменить значение поля формы с помощью Aspose.PDF для .NET и сохранить изменения обратно в документ PDF. После обновления`Value` свойство поля формы, вы можете использовать`pdfDocument.Save()` метод для сохранения изменений в исходном PDF-документе.

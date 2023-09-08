@@ -1,17 +1,17 @@
 ---
-title: Sign With Smart Card Using PDF File Signature
-linktitle: Sign With Smart Card Using PDF File Signature
-second_title: Aspose.PDF for .NET API Reference
-description: Sign your PDF files securely with a smart card using Aspose.PDF for .NET.
+title: PDF Dosya İmzasını Kullanarak Akıllı Kartla İmzalayın
+linktitle: PDF Dosya İmzasını Kullanarak Akıllı Kartla İmzalayın
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyalarınızı akıllı kartla güvenli bir şekilde imzalayın.
 type: docs
 weight: 110
 url: /tr/net/programming-with-security-and-signatures/sign-with-smart-card-using-pdf-file-signature/
 ---
-Digital signing with a smart card is a secure way to sign PDF files. With Aspose.PDF for .NET, you can easily sign a PDF file using a smart card by following the following source code:
+Akıllı kartla dijital imzalama, PDF dosyalarını imzalamanın güvenli bir yoludur. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu takip ederek akıllı kart kullanarak bir PDF dosyasını kolayca imzalayabilirsiniz:
 
-## Step 1: Import required libraries
+## 1. Adım: Gerekli kitaplıkları içe aktarın
 
-Before you begin, you need to import the necessary libraries for your C# project. Here are the necessary import directives:
+Başlamadan önce C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. Gerekli ithalat direktifleri şunlardır:
 
 ```csharp
 using Aspose.Pdf;
@@ -20,32 +20,32 @@ using Aspose.Pdf.Forms;
 using System.Security.Cryptography.X509Certificates;
 ```
 
-## Step 2: Set path to documents folder
+## 2. Adım: Belgeler klasörünün yolunu ayarlayın
 
-In this step, you need to specify the path to the folder containing the PDF file you want to sign. Replace `"YOUR DOCUMENTS DIRECTORY"` in the following code with the actual path to your documents folder:
+ Bu adımda imzalamak istediğiniz PDF dosyasının bulunduğu klasörün yolunu belirtmeniz gerekiyor. Yer değiştirmek`"YOUR DOCUMENTS DIRECTORY"`belgeler klasörünüzün gerçek yolunu içeren aşağıdaki kodda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 3: Load the PDF document
+## 3. Adım: PDF belgesini yükleyin
 
-Now we will load the PDF document to be signed using the following code:
+Şimdi aşağıdaki kodu kullanarak imzalanacak PDF belgesini yükleyeceğiz:
 
 ```csharp
 Document doc = new Document(dataDir + "blank.pdf");
 ```
 
-## Step 4: Perform the signature with the smart card
+## Adım 4: İmzayı akıllı kartla gerçekleştirin
 
-In this step, we will perform the signature with the smart card using the `PdfFileSignature` class from the `Facades` library. We select the smart card certificate from the Windows certificate store and specify the necessary signing information. Here is the corresponding code:
+ Bu adımda akıllı kart ile imza işlemini gerçekleştireceğiz.`PdfFileSignature` gelen sınıf`Facades`kütüphane. Windows sertifika deposundan akıllı kart sertifikasını seçiyoruz ve gerekli imzalama bilgilerini belirliyoruz. İşte ilgili kod:
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature())
 {
      pdfSign.BindPdf(doc);
 
-     // Select the certificate in the store
+     // Mağazadaki sertifikayı seçin
      X509Store store = new X509Store(StoreLocation.CurrentUser);
      store.Open(OpenFlags.ReadOnly);
      X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
@@ -57,9 +57,9 @@ using (PdfFileSignature pdfSign = new PdfFileSignature())
 }
 ```
 
-## Step 5: Verify Signature
+## Adım 5: İmzayı Doğrulayın
 
-Finally, we verify the signature of the signed PDF file using the `PdfFileSignature` class. We get the signature names and check them one by one. If a signature fails verification, an exception is thrown. Here is the corresponding code:
+ Son olarak, imzalanan PDF dosyasının imzasını kullanarak doğrularız.`PdfFileSignature` sınıf. İmza isimlerini alıp tek tek kontrol ediyoruz. Bir imzanın doğrulaması başarısız olursa bir istisna oluşturulur. İşte ilgili kod:
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature2.pdf")))
@@ -75,18 +75,18 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 }
 ```
 
-### Sample source code for Sign With Smart Card Using Pdf File Signature using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Pdf Dosya İmzası Kullanarak Akıllı Kartla İmzalama için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document doc = new Document(dataDir + "blank.pdf");
 using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature())
 {
 	pdfSign.BindPdf(doc);
-	// Sign with certificate selection in the windows certificate store
+	// Windows sertifika deposunda sertifika seçimiyle imzalayın
 	System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
 	store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-	// Manually chose the certificate in the store
+	// Sertifikayı mağazada manuel olarak seçtiniz
 	System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
 	Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0]);
 	pdfSign.SignatureAppearance = dataDir + "demo.png";
@@ -106,50 +106,50 @@ using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature(new Docum
 }
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation! You now have a step-by-step guide to signing a PDF file with a smart card using Aspose.PDF for .NET. You can use this code to add secure digital signatures to your PDF documents.
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF dosyasını akıllı kartla imzalamak için adım adım bir kılavuza sahipsiniz. PDF belgelerinize güvenli dijital imzalar eklemek için bu kodu kullanabilirsiniz.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced digital signature and certificate management features.
+Gelişmiş dijital imza ve sertifika yönetimi özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
 
-### FAQ's
+### SSS'ler
 
-#### Q: Why should I consider signing PDF files with a smart card?
+#### S: PDF dosyalarını neden akıllı kartla imzalamayı düşünmeliyim?
 
-A: Signing PDF files with a smart card enhances security by ensuring the authenticity and integrity of the document. Smart card-based signatures provide a higher level of trust and compliance.
+C: PDF dosyalarının akıllı kartla imzalanması, belgenin orijinalliğini ve bütünlüğünü sağlayarak güvenliği artırır. Akıllı kart tabanlı imzalar daha yüksek düzeyde güven ve uyumluluk sağlar.
 
-#### Q: How does smart card-based digital signing work?
+#### S: Akıllı kart tabanlı dijital imzalama nasıl çalışır?
 
-A: Smart card-based digital signing involves using a cryptographic key stored on a smart card to create a unique digital signature. This signature is attached to the PDF file, allowing recipients to verify the document's origin and integrity.
+C: Akıllı kart tabanlı dijital imzalama, benzersiz bir dijital imza oluşturmak için akıllı kartta saklanan bir şifreleme anahtarının kullanılmasını içerir. Bu imza, PDF dosyasına eklenerek alıcıların belgenin kökenini ve bütünlüğünü doğrulamasına olanak tanır.
 
-#### Q: What is the role of Aspose.PDF for .NET in smart card-based signing?
+#### S: Aspose.PDF for .NET'in akıllı kart tabanlı imzalamadaki rolü nedir?
 
-A: Aspose.PDF for .NET provides a comprehensive set of tools and libraries to facilitate smart card-based digital signing of PDF files. It simplifies the process and ensures secure document signing.
+C: Aspose.PDF for .NET, PDF dosyalarının akıllı kart tabanlı dijital imzalanmasını kolaylaştırmak için kapsamlı bir araç ve kitaplık seti sağlar. Süreci basitleştirir ve güvenli belge imzalamayı sağlar.
 
-#### Q: Can I choose a specific smart card certificate for signing?
+#### S: İmzalamak için belirli bir akıllı kart sertifikasını seçebilir miyim?
 
-A: Yes, you can select a specific smart card certificate from the Windows certificate store for signing. Aspose.PDF for .NET allows you to seamlessly integrate certificate selection into your application.
+C: Evet, imzalamak için Windows sertifika deposundan belirli bir akıllı kart sertifikasını seçebilirsiniz. Aspose.PDF for .NET, sertifika seçimini uygulamanıza sorunsuz bir şekilde entegre etmenize olanak tanır.
 
-#### Q: How does the provided source code handle smart card-based signing?
+#### S: Sağlanan kaynak kodu akıllı kart tabanlı imzalamayı nasıl işliyor?
 
-A: The source code demonstrates how to bind a PDF document, select a smart card certificate, specify signing information, and create a digital signature. It also shows how to verify the signature's validity.
+C: Kaynak kodu, bir PDF belgesinin nasıl ciltleneceğini, akıllı kart sertifikasının nasıl seçileceğini, imzalama bilgilerinin nasıl belirleneceğini ve dijital imzanın nasıl oluşturulacağını gösterir. Ayrıca imzanın geçerliliğinin nasıl doğrulanacağını da gösterir.
 
-#### Q: Can I apply multiple signatures using smart cards in a single PDF file?
+#### S: Tek bir PDF dosyasında akıllı kartlar kullanarak birden fazla imza uygulayabilir miyim?
 
-A: Absolutely, you can apply multiple smart card-based signatures to a single PDF file. Each signature is unique and contributes to the document's overall security.
+C: Kesinlikle, tek bir PDF dosyasına birden fazla akıllı kart tabanlı imza uygulayabilirsiniz. Her imza benzersizdir ve belgenin genel güvenliğine katkıda bulunur.
 
-#### Q: What if a signature fails verification during the verification step?
+#### S: Doğrulama adımı sırasında bir imza doğrulamada başarısız olursa ne olur?
 
-A: If a signature fails verification, an exception is thrown, indicating that the signature is not valid. This ensures that only valid and trusted signatures are accepted.
+C: Bir imzanın doğrulaması başarısız olursa imzanın geçerli olmadığını belirten bir istisna oluşturulur. Bu, yalnızca geçerli ve güvenilir imzaların kabul edilmesini sağlar.
 
-#### Q: Is smart card-based signing compatible with all types of PDF documents?
+#### S: Akıllı kart tabanlı imzalama her tür PDF belgesiyle uyumlu mudur?
 
-A: Yes, smart card-based signing is compatible with all types of PDF documents. You can apply digital signatures to various types of PDF files, including forms, reports, and more.
+C: Evet, akıllı kart tabanlı imzalama her tür PDF belgesiyle uyumludur. Dijital imzaları formlar, raporlar ve daha fazlası dahil olmak üzere çeşitli PDF dosyalarına uygulayabilirsiniz.
 
-#### Q: How can I learn more about advanced digital signature and certificate management?
+#### S: Gelişmiş dijital imza ve sertifika yönetimi hakkında nasıl daha fazla bilgi edinebilirim?
 
-A: Explore the official Aspose.PDF documentation for detailed insights into advanced digital signature features, certificate management, and best practices for ensuring document security.
+C: Gelişmiş dijital imza özelliklerine, sertifika yönetimine ve belge güvenliğini sağlamaya yönelik en iyi uygulamalara ilişkin ayrıntılı bilgiler için resmi Aspose.PDF belgelerini inceleyin.
 
-#### Q: Where can I find further assistance or support for implementing smart card-based signing?
+#### S: Akıllı kart tabanlı imzalamayı uygulamak için nereden daha fazla yardım veya destek bulabilirim?
 
-A: For additional guidance and support, reach out to the Aspose.PDF community forums or refer to the documentation for comprehensive information on smart card-based signing.
+C: Daha fazla rehberlik ve destek için Aspose.PDF topluluk forumlarına ulaşın veya akıllı kart tabanlı imzalama hakkında kapsamlı bilgi için belgelere bakın.

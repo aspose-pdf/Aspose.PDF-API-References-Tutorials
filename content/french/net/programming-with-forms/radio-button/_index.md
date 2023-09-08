@@ -1,92 +1,92 @@
 ---
-title: Radio Button
-linktitle: Radio Button
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add radio buttons to your PDF documents with Aspose.PDF for .NET.
+title: Bouton radio
+linktitle: Bouton radio
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Ajoutez facilement des boutons radio à vos documents PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 220
 url: /fr/net/programming-with-forms/radio-button/
 ---
-In this tutorial, we will show you how to add a radio button in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+Dans ce didacticiel, nous allons vous montrer comment ajouter un bouton radio dans un document PDF à l'aide d'Aspose.PDF pour .NET. Nous expliquerons le code source C# étape par étape pour vous guider tout au long de ce processus.
 
-## Step 1: Preparation
+## Étape 1 : Préparation
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Assurez-vous d'avoir importé les bibliothèques nécessaires et défini le chemin d'accès à votre répertoire de documents :
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiate a Document Object
+## Étape 2 : instancier un objet de document
 
-Instantiate a Document object to create a new PDF document:
+Instanciez un objet Document pour créer un nouveau document PDF :
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-## Step 3: Add a page
+## Étape 3 : Ajouter une page
 
-Add a page to the PDF document:
+Ajouter une page au document PDF :
 
 ```csharp
 pdfDocument.Pages.Add();
 ```
 
-## Step 4: Instantiate a RadioButtonField Object
+## Étape 4 : instancier un objet RadioButtonField
 
-Instantiate a RadioButtonField object specifying the page number as an argument:
+Instanciez un objet RadioButtonField en spécifiant le numéro de page comme argument :
 
 ```csharp
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Step 5: Add radio button options
+## Étape 5 : Ajouter des options de boutons radio
 
-Add radio button options to the RadioButtonField object by specifying the coordinates of each option with a Rectangle object:
+Ajoutez des options de bouton radio à l'objet RadioButtonField en spécifiant les coordonnées de chaque option avec un objet Rectangle :
 
 ```csharp
 radio.AddOption("Test", new Rectangle(0, 0, 20, 20));
 radio.AddOption("Test1", new Rectangle(20, 20, 40, 40));
 ```
 
-## Step 6: Add the radio button to the form
+## Étape 6 : Ajoutez le bouton radio au formulaire
 
-Add the radio button to the document's Form object:
+Ajoutez le bouton radio à l'objet Form du document :
 
 ```csharp
 pdfDocument.Form.Add(radio);
 ```
 
-## Step 7: Save the PDF Document
+## Étape 7 : Enregistrez le document PDF
 
-Save the created PDF document:
+Enregistrez le document PDF créé :
 
 ```csharp
 dataDir = dataDir + "RadioButton_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Radio Button using Aspose.PDF for .NET 
+### Exemple de code source pour le bouton radio utilisant Aspose.PDF pour .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Le chemin d'accès au répertoire des documents.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Instantiate Document object
+	// Instancier l'objet Document
 	Document pdfDocument = new Document();
-	// Add a page to PDF file
+	// Ajouter une page au fichier PDF
 	pdfDocument.Pages.Add();
-	// Instatiate RadioButtonField object with page number as argument
+	// Instancier un objet RadioButtonField avec le numéro de page comme argument
 	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Add first radio button option and also specify its origin using Rectangle object
+	// Ajoutez la première option de bouton radio et spécifiez également son origine à l'aide de l'objet Rectangle
 	radio.AddOption("Test", new Rectangle(0, 0, 20, 20));
-	// Add second radio button option
+	// Ajouter une deuxième option de bouton radio
 	radio.AddOption("Test1", new Rectangle(20, 20, 40, 40));
-	// Add radio button to form object of Document object
+	// Ajouter un bouton radio pour former un objet de l'objet Document
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "RadioButton_out.pdf";
-	// Save the PDF file
+	// Enregistrez le fichier PDF
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nRadio button field added successfully.\nFile saved at " + dataDir);
 }
@@ -98,27 +98,27 @@ catch (Exception ex)
 
 ## Conclusion
 
-In this tutorial, we learned how to add a radio button in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily create a radio button and place it on a specific page in your PDF document.
+Dans ce didacticiel, nous avons appris à ajouter un bouton radio dans un document PDF à l'aide d'Aspose.PDF pour .NET. En suivant ces étapes, vous pouvez facilement créer un bouton radio et le placer sur une page spécifique de votre document PDF.
 
 
-### FAQ's
+### FAQ
 
-#### Q: Can I customize the appearance of the radio button, such as its size and color?
+#### Q : Puis-je personnaliser l’apparence du bouton radio, comme sa taille et sa couleur ?
 
-A: Yes, you can customize the appearance of the radio button using the `Rectangle` object's coordinates to define its size and position. Aspose.PDF for .NET allows you to adjust the radio button's appearance to suit your needs.
+ R : Oui, vous pouvez personnaliser l'apparence du bouton radio à l'aide du bouton`Rectangle` les coordonnées de l'objet pour définir sa taille et sa position. Aspose.PDF pour .NET vous permet d'ajuster l'apparence du bouton radio en fonction de vos besoins.
 
-#### Q: Can I add multiple radio buttons with different groups on the same page?
+#### Q : Puis-je ajouter plusieurs boutons radio avec différents groupes sur la même page ?
 
-A: Yes, you can add multiple radio buttons with different groups on the same page. Each group of radio buttons can have a unique name, and only one option within each group can be selected at a time.
+R : Oui, vous pouvez ajouter plusieurs boutons radio avec différents groupes sur la même page. Chaque groupe de boutons radio peut avoir un nom unique et une seule option au sein de chaque groupe peut être sélectionnée à la fois.
 
-#### Q: How can I add a label or text description to the radio button options?
+#### Q : Comment puis-je ajouter une étiquette ou une description textuelle aux options des boutons radio ?
 
-A: To add a label or text description to the radio button options, you can use the `TextStamp` class from Aspose.PDF for .NET to overlay text on the PDF document at specific coordinates.
+ R : Pour ajouter une étiquette ou une description textuelle aux options du bouton radio, vous pouvez utiliser l'option`TextStamp`classe d'Aspose.PDF pour .NET pour superposer du texte sur le document PDF à des coordonnées spécifiques.
 
-#### Q: Is Aspose.PDF for .NET compatible with all versions of .NET Framework?
+#### Q : Aspose.PDF pour .NET est-il compatible avec toutes les versions de .NET Framework ?
 
-A: Yes, Aspose.PDF for .NET is compatible with all versions of .NET Framework, including .NET Core and .NET Standard.
+R : Oui, Aspose.PDF pour .NET est compatible avec toutes les versions de .NET Framework, y compris .NET Core et .NET Standard.
 
-#### Q: Can I programmatically control the selection of a radio button option in the PDF document?
+#### Q : Puis-je contrôler par programme la sélection d’une option de bouton radio dans le document PDF ?
 
-A: Yes, you can programmatically control the selection of a radio button option using the `IsSelected` property of the `RadioButtonOption` class. This property allows you to set a specific option as selected.
+ R : Oui, vous pouvez contrôler par programme la sélection d'une option de bouton radio à l'aide de l'option`IsSelected` propriété du`RadioButtonOption` classe. Cette propriété vous permet de définir une option spécifique comme sélectionnée.

@@ -1,41 +1,41 @@
 ---
-title: Replaceable Symbols In Header Footer
-linktitle: Replaceable Symbols In Header Footer
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use replaceable symbols in the header and footer of a PDF document using Aspose.PDF for .NET.
+title: 页眉页脚中的可替换符号
+linktitle: 页眉页脚中的可替换符号
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文档的页眉和页脚中使用可替换符号。
 type: docs
 weight: 320
 url: /zh/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-In this tutorial, we will explain how to use replaceable symbols in the header and footer of a PDF document using the Aspose.PDF library for .NET. We will go through the step-by-step process of creating a PDF, setting margins, adding header and footer with replaceable symbols, and saving the PDF using the provided C# source code.
+在本教程中，我们将解释如何使用 .NET 的 Aspose.PDF 库在 PDF 文档的页眉和页脚中使用可替换符号。我们将逐步完成创建 PDF、设置边距、使用可替换符号添加页眉和页脚以及使用提供的 C# 源代码保存 PDF 的过程。
 
-## Prerequisites
+## 先决条件
 
-Before you begin, ensure that you have the following:
+在开始之前，请确保您具备以下条件：
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- 安装了 Aspose.PDF for .NET 库。
+- 对 C# 编程有基本了解。
 
-## Step 1: Set up the Document Directory
+## 第 1 步：设置文档目录
 
-First, you need to set the path to the directory where you want to save the generated PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your desired directory.
+首先，您需要设置要保存生成的 PDF 文件的目录路径。代替`"YOUR DOCUMENT DIRECTORY"`在里面`dataDir`变量包含您所需目录的路径。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a PDF Document and Page
+## 第 2 步：创建 PDF 文档和页面
 
-Next, we create a new PDF document and add a page to it using the `Document` class and `Page` class from the Aspose.PDF library.
+接下来，我们创建一个新的 PDF 文档并使用以下命令向其中添加页面`Document`类和`Page`来自 Aspose.PDF 库的类。
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Set Margins
+## 第 3 步：设置边距
 
-We set the margins for the page using the `MarginInfo` class. Adjust the margin values according to your requirements.
+我们使用以下命令设置页面的边距`MarginInfo`班级。根据您的要求调整边距值。
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -46,9 +46,9 @@ marginInfo.Right = 50;
 page.PageInfo.Margin = marginInfo;
 ```
 
-## Step 4: Add Header with Replaceable Symbols
+## 步骤 4：添加带有可替换符号的标题
 
-We create a `HeaderFooter` object for the page and add a `TextFragment` with replaceable symbols to it.
+我们创建一个`HeaderFooter`页面对象并添加`TextFragment`带有可替换的符号。
 
 ```csharp
 HeaderFooter hfFirst = new HeaderFooter();
@@ -57,7 +57,7 @@ hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
 
 TextFragment t1 = new TextFragment("report title");
-// Set text properties if desired
+//如果需要，设置文本属性
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
 t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
@@ -67,12 +67,12 @@ t1.TextState.LineSpacing = 5f;
 
 hfFirst.Paragraphs.Add(t1);
 
-// Add more TextFragments or customize as needed
+//添加更多 TextFragments 或根据需要进行自定义
 ```
 
-## Step 5: Add Footer with Replaceable Symbols
+## 第 5 步：添加带有可替换符号的页脚
 
-Similarly, we create a `HeaderFooter` object for the page footer and add `TextFragment` objects with replaceable symbols to it.
+同样，我们创建一个`HeaderFooter`页面页脚对象并添加`TextFragment`带有可替换符号的对象。
 
 ```csharp
 HeaderFooter hfFoot = new HeaderFooter();
@@ -84,14 +84,14 @@ TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
 
-// Add more TextFragments or customize as needed
+//添加更多 TextFragments 或根据需要进行自定义
 
 hfFoot.Paragraphs.Add(tab2);
 ```
 
-## Step 6: Save the PDF Document
+## 步骤 6：保存 PDF 文档
 
-Finally, we save the PDF document to the specified output file.
+最后，我们将PDF文档保存到指定的输出文件中。
 
 ```csharp
 dataDir = dataDir + "ReplaceableSymbolsInHeaderFooter_out.pdf";
@@ -99,9 +99,9 @@ doc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols replaced successfully in the header and footer.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Replaceable Symbols In Header Footer using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 在页眉页脚中替换符号的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 Page page = doc.Pages.Add();
@@ -110,13 +110,13 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Assign the marginInfo instance to Margin property of sec1.PageInfo
+//将 marginInfo 实例分配给 sec1.PageInfo 的 Margin 属性
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
 hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
-// Instantiate a Text paragraph that will store the content to show as header
+//实例化一个文本段落，该段落将存储要显示为标题的内容
 TextFragment t1 = new TextFragment("report title");
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
@@ -132,48 +132,48 @@ t2.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 t2.TextState.LineSpacing = 5f;
 t2.TextState.FontSize = 12;
 hfFirst.Paragraphs.Add(t2);
-// Create a HeaderFooter object for the section
+//为该部分创建 HeaderFooter 对象
 HeaderFooter hfFoot = new HeaderFooter();
-// Set the HeaderFooter object to odd & even footer
+//将 HeaderFooter 对象设置为奇数页脚和偶数页脚
 page.Footer = hfFoot;
 hfFoot.Margin.Left = 50;
 hfFoot.Margin.Right = 50;
-// Add a text paragraph containing current page number of total number of pages
+//添加包含当前页码占总页数的文本段落
 TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
-// Instantiate a table object
+//实例化一个表对象
 Table tab2 = new Table();
-// Add the table in paragraphs collection of the desired section
+//将表格添加到所需部分的段落集合中
 hfFoot.Paragraphs.Add(tab2);
-// Set with column widths of the table
+//设置表格的列宽
 tab2.ColumnWidths = "165 172 165";
-// Create rows in the table and then cells in the rows
+//在表中创建行，然后在行中创建单元格
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
 row3.Cells.Add();
-// Set the vertical allignment of the text as center alligned
+//设置文本的垂直对齐方式为居中对齐
 row3.Cells[0].Alignment = Aspose.Pdf.HorizontalAlignment.Left;
 row3.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-// Sec1.Paragraphs.Add(New Text("Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a#$NL" + "daily basis to ensure it contains the most up to date versions of each of our Java components. #$NL " + "Using Aspose.Total for Java developers can create a wide range of applications. #$NL #$NL #$NP" + "Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a#$NL" + "daily basis to ensure it contains the most up to date versions of each of our Java components. #$NL " + "Using Aspose.Total for Java developers can create a wide range of applications. #$NL #$NL #$NP" + "Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a#$NL" + "daily basis to ensure it contains the most up to date versions of each of our Java components. #$NL " + "Using Aspose.Total for Java developers can create a wide range of applications. #$NL #$NL"))
+//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java 是 Aspose 提供的每个 Java 组件的编译。它是在#$NL" + "每日基础上编译的，以确保它包含每个组件的最新版本#$NL " + "使用 Aspose.Total for Java 开发人员可以创建广泛的应用程序。#$NL #$NL #$NP" + "Aspose.Total for Java 是每个 Java 组件的编译由 Aspose 提供。它每天进行编译，以确保它包含我们每个 Java 组件的最新版本。#$NL" + "Java 开发人员使用 Aspose.Total 可以创建广泛的#$NL #$NL #$NP" + "Aspose.Total for Java 是 Aspose 提供的每个 Java 组件的编译。它每天进行编译，以确保它包含最多的内容我们每个 Java 组件的最新版本。#$NL " + "Java 开发人员使用 Aspose.Total 可以创建广泛的应用程序。#$NL #$NL"))
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
 table.DefaultCellPadding = new MarginInfo();
 table.DefaultCellPadding.Top = 10;
 table.DefaultCellPadding.Bottom = 10;
-// Add the table in paragraphs collection of the desired section
+//将表格添加到所需部分的段落集合中
 page.Paragraphs.Add(table);
-// Set default cell border using BorderInfo object
+//使用 BorderInfo 对象设置默认单元格边框
 table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
-// Set table border using another customized BorderInfo object
+//使用另一个自定义的 BorderInfo 对象设置表格边框
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// Create rows in the table and then cells in the rows
+//在表中创建行，然后在行中创建单元格
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -201,54 +201,54 @@ doc.Save(dataDir);
 Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, you have learned how to use replaceable symbols in the header and footer of a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can create a PDF, set margins, add header and footer with replaceable symbols, and save the PDF.
+在本教程中，您学习了如何使用 .NET 的 Aspose.PDF 库在 PDF 文档的页眉和页脚中使用可替换符号。通过遵循分步指南并执行提供的 C# 代码，您可以创建 PDF、设置边距、添加带有可替换符号的页眉和页脚，以及保存 PDF。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of the "Replaceable Symbols In Header Footer" tutorial?
+#### 问：“页眉页脚中的可替换符号”教程的目的是什么？
 
-A: The "Replaceable Symbols In Header Footer" tutorial aims to guide you through the process of using the Aspose.PDF library for .NET to add replaceable symbols to the header and footer of a PDF document. Replaceable symbols allow you to dynamically replace specific placeholders with actual values when generating the PDF.
+答：“页眉页脚中的可替换符号”教程旨在指导您完成使用 .NET 的 Aspose.PDF 库向 PDF 文档的页眉和页脚添加可替换符号的过程。可替换符号允许您在生成 PDF 时用实际值动态替换特定占位符。
 
-#### Q: What are replaceable symbols in the context of a PDF header and footer?
+#### 问：PDF 页眉和页脚上下文中的可替换符号有哪些？
 
-A: Replaceable symbols are placeholders that you can insert into the header and footer of a PDF document. These symbols act as dynamic placeholders for values that can be filled in at runtime, such as page numbers, dates, and custom information.
+答：可替换符号是可以插入 PDF 文档页眉和页脚中的占位符。这些符号充当可在运行时填充的值的动态占位符，例如页码、日期和自定义信息。
 
-#### Q: Why would I want to use replaceable symbols in a PDF header and footer?
+#### 问：为什么我要在 PDF 页眉和页脚中使用可替换符号？
 
-A: Replaceable symbols in the header and footer are useful when you want to include dynamic information in your PDF documents, such as page numbers, dates, or other variable data that may change when the document is generated.
+答：当您想要在 PDF 文档中包含动态信息（例如页码、日期或生成文档时可能会更改的其他可变数据）时，页眉和页脚中的可替换符号非常有用。
 
-#### Q: How can I set the margins for the PDF page?
+#### 问：如何设置PDF页面的边距？
 
-A: You can set the margins for the PDF page using the `MarginInfo` class and assigning it to the `Margin` property of the `PageInfo` of the page. Adjust the margin values as needed.
+答：您可以使用以下命令设置 PDF 页面的边距`MarginInfo`类并将其分配给`Margin`的财产`PageInfo`页面的。根据需要调整边距值。
 
-#### Q: How do I add replaceable symbols to the header and footer?
+#### 问：如何向页眉和页脚添加可替换符号？
 
-A: You can add replaceable symbols by creating a `HeaderFooter` object for the header and footer of the page. Then, you can add `TextFragment` objects with the desired text, including replaceable symbols, to the `Paragraphs` collection of the `HeaderFooter` object.
+答：您可以通过创建一个来添加可替换符号`HeaderFooter`页面的页眉和页脚对象。然后，您可以添加`TextFragment`具有所需文本（包括可替换符号）的对象`Paragraphs`的集合`HeaderFooter`目的。
 
-#### Q: Can I customize the appearance of the replaceable symbols?
+#### 问：我可以自定义可替换符号的外观吗？
 
-A: Yes, you can customize the appearance of the replaceable symbols by modifying the properties of the `TextFragment` objects that contain the symbols. You can set properties such as font, font size, color, alignment, and line spacing.
+答：是的，您可以通过修改可替换符号的属性来自定义可替换符号的外观。`TextFragment`包含符号的对象。您可以设置字体、字体大小、颜色、对齐方式和行距等属性。
 
-#### Q: What kind of replaceable symbols can I use?
+#### 问：我可以使用什么类型的可替换符号？
 
-A: You can use a variety of replaceable symbols, such as:
+答：您可以使用多种可替换的符号，例如：
 
-- `$p`: Current page number.
-- `$P`: Total number of pages.
-- `$d`: Current date.
-- `$t`: Current time.
-- Custom placeholders you define.
+- `$p`：当前页码。
+- `$P`：总页数。
+- `$d`： 当前日期。
+- `$t`： 当前时间。
+- 您定义的自定义占位符。
 
-#### Q: Can I include other text and formatting around the replaceable symbols?
+#### 问：我可以在可替换符号周围包含其他文本和格式吗？
 
-A: Yes, you can include other text and formatting around the replaceable symbols within the `TextFragment` objects. This allows you to create more complex headers and footers that incorporate dynamic and static content.
+答：是的，您可以在可替换符号周围包含其他文本和格式`TextFragment`对象。这允许您创建包含动态和静态内容的更复杂的页眉和页脚。
 
-#### Q: How can I save the generated PDF document?
+#### 问：如何保存生成的PDF文档？
 
-A: To save the generated PDF document, you can use the `Save` method of the `Document` class. Provide the desired output file path and name as an argument.
+ A：要保存生成的PDF文档，您可以使用`Save`的方法`Document`班级。提供所需的输出文件路径和名称作为参数。
 
-#### Q: Is a valid Aspose License required for this tutorial?
+#### 问：本教程需要有效的 Aspose 许可证吗？
 
-A: Yes, a valid Aspose License is required to execute the code successfully in this tutorial. You can obtain a full license or a 30-day temporary license from the Aspose website.
+答：是的，需要有效的 Aspose 许可证才能成功执行本教程中的代码。您可以从 Aspose 网站获取完整许可证或 30 天临时许可证。

@@ -1,42 +1,42 @@
 ---
-title: Add Bookmark In PDF File
-linktitle: Add Bookmark In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add bookmark in PDF file for improved navigation with Aspose.PDF for .NET.
+title: Aggiungi segnalibro nel file PDF
+linktitle: Aggiungi segnalibro nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Aggiungi facilmente un segnalibro nel file PDF per una migliore navigazione con Aspose.PDF per .NET.
 type: docs
 weight: 10
 url: /it/net/programming-with-bookmarks/add-bookmark/
 ---
-Adding bookmarks in a PDF file allows easy and quick navigation. With Aspose.PDF for .NET, you can easily add a bookmark in PDF file by following the following source code:
+L'aggiunta di segnalibri in un file PDF consente una navigazione facile e veloce. Con Aspose.PDF per .NET, puoi facilmente aggiungere un segnalibro nel file PDF seguendo il seguente codice sorgente:
 
-## Step 1: Import required libraries
+## Passaggio 1: importa le librerie richieste
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Prima di iniziare, devi importare le librerie necessarie per il tuo progetto C#. Ecco la necessaria direttiva sulle importazioni:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## Passaggio 2: imposta il percorso della cartella dei documenti
 
-In this step, you need to specify the path to the folder containing the PDF file you want to add a bookmark to. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ In questo passaggio, devi specificare il percorso della cartella contenente il file PDF a cui desideri aggiungere un segnalibro. Sostituire`"YOUR DOCUMENT DIRECTORY"`nel seguente codice con il percorso effettivo della cartella dei documenti:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Passaggio 3: apri il documento PDF
 
-Now we will open the PDF document to which we want to add a bookmark using the following code:
+Ora apriremo il documento PDF a cui vogliamo aggiungere un segnalibro utilizzando il seguente codice:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddBookmark.pdf");
 ```
 
-## Step 4: Create bookmark object
+## Passaggio 4: crea un oggetto segnalibro
 
-In this step, we will create a bookmark object using `OutlineItemCollection` class and set its properties such as title, italic attribute, bold attribute and action to perform when clicked. Here is the corresponding code:
+ In questo passaggio creeremo un oggetto segnalibro utilizzando`OutlineItemCollection` classe e impostarne le proprietà come titolo, attributo corsivo, attributo grassetto e azione da eseguire quando si fa clic. Ecco il codice corrispondente:
 
 ```csharp
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -46,80 +46,80 @@ pdfOutline. Bold = true;
 pdfOutline.Action = new GoToAction(pdfDocument.Pages[1]);
 ```
 
-## Step 5: Add bookmark to document
+## Passaggio 5: aggiungi il segnalibro al documento
 
-Finally, we add the created bookmark to the document's bookmark collection using the `Add` method of the `Outlines` property. Here is the corresponding code:
+ Infine, aggiungiamo il segnalibro creato alla raccolta di segnalibri del documento utilizzando il file`Add` metodo del`Outlines` proprietà. Ecco il codice corrispondente:
 
 ```csharp
 pdfDocument.Outlines.Add(pdfOutline);
 ```
 
-### Sample source code for Add Bookmark using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Aggiungi segnalibro utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Apri documento
 Document pdfDocument = new Document(dataDir + "AddBookmark.pdf");
-// Create a bookmark object
+// Crea un oggetto segnalibro
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfOutline.Title = "Test Outline";
 pdfOutline.Italic = true;
 pdfOutline.Bold = true;
-// Set the destination page number
+// Imposta il numero della pagina di destinazione
 pdfOutline.Action = new GoToAction(pdfDocument.Pages[1]);
-// Add bookmark in the document's outline collection.
+// Aggiungi segnalibro nella raccolta di strutture del documento.
 pdfDocument.Outlines.Add(pdfOutline);
 dataDir = dataDir + "AddBookmark_out.pdf";
-// Save output
+// Salva l'output
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nBookmark added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation ! Now you have a step by step guide to add a bookmark using Aspose.PDF for .NET. You can use this code to improve navigation in your PDF documents by adding custom bookmarks.
+Congratulazioni! Ora hai una guida passo passo per aggiungere un segnalibro utilizzando Aspose.PDF per .NET. Puoi utilizzare questo codice per migliorare la navigazione nei tuoi documenti PDF aggiungendo segnalibri personalizzati.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Assicurati di controllare la documentazione ufficiale Aspose.PDF per ulteriori informazioni sulle funzionalità avanzate di manipolazione dei segnalibri.
 
 
-### FAQ's for add bookmark in PDF file
+### Domande frequenti sull'aggiunta di segnalibri nel file PDF
 
-#### Q: What are bookmarks in a PDF file?
+#### D: Cosa sono i segnalibri in un file PDF?
 
-A: Bookmarks, also known as outlines, are interactive elements that provide navigation and structure within a PDF document. They allow users to quickly jump to specific sections or pages.
+R: I segnalibri, noti anche come contorni, sono elementi interattivi che forniscono navigazione e struttura all'interno di un documento PDF. Consentono agli utenti di passare rapidamente a sezioni o pagine specifiche.
 
-#### Q: Why would I need to add bookmarks to a PDF file?
+#### D: Perché dovrei aggiungere segnalibri a un file PDF?
 
-A: Adding bookmarks to a PDF file improves user experience and makes it easier for readers to navigate through the document's content. Bookmarks can serve as a table of contents or provide quick access to important sections.
+R: L'aggiunta di segnalibri a un file PDF migliora l'esperienza dell'utente e rende più semplice per i lettori navigare nel contenuto del documento. I segnalibri possono fungere da sommario o fornire un rapido accesso a sezioni importanti.
 
-#### Q: How do I import the required libraries for my C# project?
+#### D: Come posso importare le librerie richieste per il mio progetto C#?
 
-A: To import the necessary libraries for your C# project, include the following import directives:
+R: Per importare le librerie necessarie per il tuo progetto C#, includi le seguenti direttive di importazione:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-These directives enable you to access the classes and methods needed for working with PDF documents and bookmarks.
+Queste direttive consentono di accedere alle classi e ai metodi necessari per lavorare con documenti PDF e segnalibri.
 
-#### Q: How do I specify the path to the documents folder?
+#### D: Come posso specificare il percorso della cartella dei documenti?
 
-A: Replace `"YOUR DOCUMENT DIRECTORY"` in the provided source code with the actual path to the folder containing the PDF file you want to add a bookmark to.
+ R: Sostituisci`"YOUR DOCUMENT DIRECTORY"` nel codice sorgente fornito con il percorso effettivo della cartella contenente il file PDF a cui desideri aggiungere un segnalibro.
 
-#### Q: How do I open a PDF document for adding bookmarks?
+#### D: Come posso aprire un documento PDF per aggiungere segnalibri?
 
-A: To open a PDF document for adding bookmarks, use the following code:
+R: Per aprire un documento PDF per aggiungere segnalibri, utilizzare il seguente codice:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddBookmark.pdf");
 ```
 
-Replace `"AddBookmark.pdf"` with the actual file name.
+ Sostituire`"AddBookmark.pdf"` con il nome effettivo del file.
 
-#### Q: How do I create a bookmark object?
+#### D: Come posso creare un oggetto segnalibro?
 
-A: To create a bookmark object, use the `OutlineItemCollection` class. Customize its properties such as title, italic style, bold style, and action to perform when clicked.
+ R: Per creare un oggetto segnalibro, utilizzare il file`OutlineItemCollection` classe. Personalizza le sue proprietà come titolo, stile corsivo, stile grassetto e azione da eseguire quando si fa clic.
 
 ```csharp
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -129,39 +129,39 @@ pdfOutline.Bold = true;
 pdfOutline.Action = new GoToAction(pdfDocument.Pages[1]);
 ```
 
-#### Q: What is the purpose of the `Action` property in a bookmark?
+####  D: Qual è lo scopo di`Action` property in a bookmark?
 
-A: The `Action` property specifies the action to be performed when the bookmark is clicked. In this example, we use the `GoToAction` class to navigate to a specific page (page 2 in this case).
+ R: Il`Action` La proprietà specifica l'azione da eseguire quando si fa clic sul segnalibro. In questo esempio utilizziamo il file`GoToAction`class per passare a una pagina specifica (pagina 2 in questo caso).
 
-#### Q: How do I add the bookmark to the document?
+#### D: Come faccio ad aggiungere il segnalibro al documento?
 
-A: Use the `Add` method of the `Outlines` property to add the created bookmark to the document's bookmark collection.
+ R: Usa il`Add` metodo del`Outlines` proprietà per aggiungere il segnalibro creato alla raccolta di segnalibri del documento.
 
 ```csharp
 pdfDocument.Outlines.Add(pdfOutline);
 ```
 
-#### Q: Can I add multiple bookmarks using this method?
+#### D: Posso aggiungere più segnalibri utilizzando questo metodo?
 
-A: Yes, you can repeat steps 4 to 8 to add multiple bookmarks to the document. Customize each bookmark's properties and actions as needed.
+R: Sì, puoi ripetere i passaggi da 4 a 8 per aggiungere più segnalibri al documento. Personalizza le proprietà e le azioni di ciascun segnalibro secondo necessità.
 
-#### Q: How do I save the updated PDF file?
+#### D: Come posso salvare il file PDF aggiornato?
 
-A: Save the updated PDF file using the `Save` method of the `pdfDocument` object:
+ R: Salva il file PDF aggiornato utilizzando il file`Save` metodo del`pdfDocument` oggetto:
 
 ```csharp
 dataDir = dataDir + "AddBookmark_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-#### Q: How can I confirm that the bookmarks have been added?
+#### D: Come posso verificare che i segnalibri siano stati aggiunti?
 
-A: Open the generated PDF file to verify that the specified bookmarks have been added to the document.
+R: Apri il file PDF generato per verificare che i segnalibri specificati siano stati aggiunti al documento.
 
-#### Q: Is there a limit to the number of bookmarks I can add?
+#### D: Esiste un limite al numero di segnalibri che posso aggiungere?
 
-A: There is generally no strict limit to the number of bookmarks you can add, but consider the document's size and complexity for optimal performance.
+R: Generalmente non esiste un limite rigido al numero di segnalibri che è possibile aggiungere, ma per ottenere prestazioni ottimali è necessario considerare le dimensioni e la complessità del documento.
 
-#### Q: Can I customize the appearance of bookmarks?
+#### D: Posso personalizzare l'aspetto dei segnalibri?
 
-A: Yes, you can further customize bookmark appearance, color, style, and other attributes using Aspose.PDF features.
+R: Sì, puoi personalizzare ulteriormente l'aspetto, il colore, lo stile e altri attributi dei segnalibri utilizzando le funzionalità Aspose.PDF.

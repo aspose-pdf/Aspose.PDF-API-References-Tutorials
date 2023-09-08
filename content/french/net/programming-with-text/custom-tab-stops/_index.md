@@ -1,52 +1,52 @@
 ---
-title: Custom Tab Stops In PDF File
-linktitle: Custom Tab Stops In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create custom tab stops in PDF file using Aspose.PDF for .NET.
+title: Taquets de tabulation personnalisés dans un fichier PDF
+linktitle: Taquets de tabulation personnalisés dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment créer des taquets de tabulation personnalisés dans un fichier PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 120
 url: /fr/net/programming-with-text/custom-tab-stops/
 ---
 
-This tutorial will guide you through the process of creating custom tab stops in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Ce didacticiel vous guidera tout au long du processus de création de taquets de tabulation personnalisés dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Le code source C# fourni montre les étapes nécessaires.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Exigences
+Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio ou tout autre compilateur C# installé sur votre machine.
+- Aspose.PDF pour la bibliothèque .NET. Vous pouvez le télécharger depuis le site officiel d'Aspose ou utiliser un gestionnaire de packages comme NuGet pour l'installer.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Étape 1 : Configurer le projet
+1. Créez un nouveau projet C# dans votre environnement de développement préféré.
+2. Ajoutez une référence à la bibliothèque Aspose.PDF pour .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to create custom tab stops, add the following using directives at the top of the file:
+## Étape 2 : Importer les espaces de noms requis
+Dans le fichier de code dans lequel vous souhaitez créer des taquets de tabulation personnalisés, ajoutez les directives using suivantes en haut du fichier :
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Étape 3 : Définir le répertoire des documents
+ Dans le code, localisez la ligne qui dit`string dataDir = "YOUR DOCUMENT DIRECTORY";` et remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin d'accès au répertoire où sont stockés vos documents.
 
-## Step 4: Create a new Document instance
-Instantiate a new `Document` object by adding the following line of code:
+## Étape 4 : Créer une nouvelle instance de document
+ Instancier un nouveau`Document` objet en ajoutant la ligne de code suivante :
 
 ```csharp
 Document _pdfdocument = new Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `page`.
+## Étape 5 : Ajouter une page au document
+ Ajoutez une nouvelle page au document à l'aide du`Add` méthode du`Pages`collection. Dans le code fourni, la nouvelle page est affectée à la variable`page`.
 
 ```csharp
 Page page = _pdfdocument.Pages.Add();
 ```
 
-## Step 6: Create custom tab stops
-Create a `TabStops` object and add custom tab stops to it. Set the alignment type and leader type for each tab stop.
+## Étape 6 : Créer des taquets de tabulation personnalisés
+ Créer un`TabStops` objet et ajoutez-y des taquets de tabulation personnalisés. Définissez le type d'alignement et le type de repère pour chaque taquet de tabulation.
 
 ```csharp
 TabStops ts = new TabStops();
@@ -63,8 +63,8 @@ ts3.AlignmentType = TabAlignmentType.Left;
 ts3.LeaderType = TabLeaderType.Dot;
 ```
 
-## Step 7: Create text fragments with tab stops
-Create `TextFragment` objects and pass the custom tab stops to them. Use the special characters `#$TAB` to indicate the tab stops within the text.
+## Étape 7 : Créer des fragments de texte avec des taquets de tabulation
+ Créer`TextFragment` objets et transmettez-leur les taquets de tabulation personnalisés. Utilisez les caractères spéciaux`#$TAB` pour indiquer les taquets de tabulation dans le texte.
 
 ```csharp
 TextFragment header = new TextFragment("This is an example of forming a table with TAB stops", ts);
@@ -82,17 +82,17 @@ page.Paragraphs.Add(text1);
 page.Paragraphs.Add(text2);
 ```
 
-## Step 8: Save the PDF document
-Save the PDF document using the `Save` method of the `Document` object.
+## Étape 8 : Enregistrez le document PDF
+ Enregistrez le document PDF à l'aide du`Save` méthode du`Document` objet.
 
 ```csharp
 _pdfdocument.Save(dataDir);
 Console.WriteLine("\nCustom tab stops setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Custom Tab Stops using Aspose.PDF for .NET 
+### Exemple de code source pour les taquets de tabulation personnalisés utilisant Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document _pdfdocument = new Document();
 Page page = _pdfdocument.Pages.Add();
@@ -124,47 +124,47 @@ Console.WriteLine("\nCustom tab stops setup successfully.\nFile saved at " + dat
 ```
 
 ## Conclusion
-You have successfully created a PDF document with custom tab stops using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+Vous avez créé avec succès un document PDF avec des taquets de tabulation personnalisés à l'aide d'Aspose.PDF pour .NET. Le fichier PDF résultant peut maintenant être trouvé au chemin du fichier de sortie spécifié.
 
-### FAQ's
+### FAQ
 
-#### Q: What is the focus of this tutorial?
+#### Q : Quel est l'objet de ce didacticiel ?
 
-A: This tutorial is focused on guiding you through the process of creating custom tab stops in a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the necessary steps to achieve this.
+R : Ce didacticiel a pour objectif de vous guider tout au long du processus de création de taquets de tabulation personnalisés dans un fichier PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Le code source C# fourni montre les étapes nécessaires pour y parvenir.
 
-#### Q: Which namespaces should I import for this tutorial?
+#### Q : Quels espaces de noms dois-je importer pour ce didacticiel ?
 
-A: In the code file where you want to create custom tab stops, import the following namespaces at the beginning of the file:
+R : Dans le fichier de code dans lequel vous souhaitez créer des taquets de tabulation personnalisés, importez les espaces de noms suivants au début du fichier :
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### Q : Comment spécifier le répertoire des documents ?
 
-A: In the code, find the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ R : Dans le code, recherchez la ligne`string dataDir = "YOUR DOCUMENT DIRECTORY";` et remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel vers votre répertoire de documents.
 
-#### Q: How do I create a new Document instance?
+#### Q : Comment créer une nouvelle instance de document ?
 
-A: In Step 4, you'll instantiate a new `Document` object using the provided code.
+ R : À l'étape 4, vous allez instancier un nouveau`Document` objet en utilisant le code fourni.
 
-#### Q: How do I add a page to the document?
+#### Q : Comment ajouter une page au document ?
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection.
+ R : À l'étape 5, vous ajouterez une nouvelle page au document à l'aide de l'outil`Add` méthode du`Pages` collection.
 
-#### Q: How do I create custom tab stops?
+#### Q : Comment puis-je créer des taquets de tabulation personnalisés ?
 
-A: In Step 6, you'll create a `TabStops` object and add custom tab stops to it. You'll also set alignment and leader types for each tab stop.
+ R : À l'étape 6, vous allez créer un`TabStops` objet et ajoutez-y des taquets de tabulation personnalisés. Vous définirez également l’alignement et les types de repères pour chaque taquet de tabulation.
 
-#### Q: How do I create text fragments with tab stops?
+#### Q : Comment créer des fragments de texte avec des taquets de tabulation ?
 
-A: In Step 7, you'll create `TextFragment` objects and pass the custom tab stops to them. You'll use the special characters `#$TAB` to indicate the tab stops within the text.
+ R : À l'étape 7, vous allez créer`TextFragment` objets et transmettez-leur les taquets de tabulation personnalisés. Vous utiliserez les caractères spéciaux`#$TAB` pour indiquer les taquets de tabulation dans le texte.
 
-#### Q: How do I save the PDF document?
+#### Q : Comment puis-je enregistrer le document PDF ?
 
-A: In Step 8, you'll save the PDF document using the `Save` method of the `Document` object.
+ R : À l'étape 8, vous enregistrerez le document PDF à l'aide du`Save` méthode du`Document` objet.
 
-#### Q: What is the main takeaway from this tutorial?
+#### Q : Quel est le principal point à retenir de ce didacticiel ?
 
-A: By following this tutorial, you've learned how to create a PDF document with custom tab stops using Aspose.PDF for .NET. This can be useful for organizing and aligning text in a structured manner.
+R : En suivant ce didacticiel, vous avez appris à créer un document PDF avec des taquets de tabulation personnalisés à l'aide d'Aspose.PDF pour .NET. Cela peut être utile pour organiser et aligner le texte de manière structurée.

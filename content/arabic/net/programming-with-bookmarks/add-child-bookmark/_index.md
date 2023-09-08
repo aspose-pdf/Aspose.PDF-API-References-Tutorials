@@ -1,42 +1,42 @@
 ---
-title: Add Child Bookmark In PDF File
-linktitle: Add Child Bookmark In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add child bookmark in PDF file for more organized browsing with Aspose.PDF for .NET.
+title: إضافة إشارة مرجعية فرعية في ملف PDF
+linktitle: إضافة إشارة مرجعية فرعية في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: يمكنك بسهولة إضافة إشارة مرجعية فرعية في ملف PDF لتصفح أكثر تنظيمًا باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 20
 url: /ar/net/programming-with-bookmarks/add-child-bookmark/
 ---
-Adding child bookmarks in PDF file allows for more structured organization and navigation. With Aspose.PDF for .NET, you can easily add a sub-bookmark by following the following source code:
+تتيح إضافة الإشارات المرجعية الفرعية في ملف PDF مزيدًا من التنظيم والتنقل. باستخدام Aspose.PDF for .NET، يمكنك بسهولة إضافة إشارة مرجعية فرعية باتباع التعليمات البرمجية المصدر التالية:
 
-## Step 1: Import required libraries
+## الخطوة 1: استيراد المكتبات المطلوبة
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+قبل أن تبدأ، تحتاج إلى استيراد المكتبات اللازمة لمشروع C# الخاص بك. فيما يلي توجيه الاستيراد الضروري:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## الخطوة 2: تعيين المسار إلى مجلد المستندات
 
-In this step, you need to specify the path to the folder containing the PDF file you want to add a sub-bookmark. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ في هذه الخطوة، تحتاج إلى تحديد المسار إلى المجلد الذي يحتوي على ملف PDF الذي تريد إضافة إشارة مرجعية فرعية إليه. يستبدل`"YOUR DOCUMENT DIRECTORY"`في الكود التالي مع المسار الفعلي لمجلد المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## الخطوة 3: افتح مستند PDF
 
-Now we will open the PDF document to which we want to add a sub-bookmark using the following code:
+سنقوم الآن بفتح مستند PDF الذي نريد إضافة إشارة مرجعية فرعية إليه باستخدام الكود التالي:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddChildBookmark.pdf");
 ```
 
-## Step 4: Create parent bookmark object
+## الخطوة 4: إنشاء كائن الإشارة المرجعية الأصل
 
-In this step, we will create a parent bookmark object using the `OutlineItemCollection` class and set its properties such as title, italic attribute and bold attribute. Here is the corresponding code:
+ في هذه الخطوة، سنقوم بإنشاء كائن إشارة مرجعية أصل باستخدام الملف`OutlineItemCollection` فئة وتعيين خصائصها مثل العنوان والسمة المائلة والسمة الغامقة. هنا هو الكود المقابل:
 
 ```csharp
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -45,9 +45,9 @@ pdfOutline. Italic = true;
 pdfOutline. Bold = true;
 ```
 
-## Step 5: Create Child Bookmark Object
+## الخطوة 5: إنشاء كائن إشارة مرجعية فرعية
 
-In this step, we will create a sub-bookmark object again using the `OutlineItemCollection` class and set its properties. Here is the corresponding code:
+في هذه الخطوة، سنقوم بإنشاء كائن إشارة مرجعية فرعية مرة أخرى باستخدام الملف`OutlineItemCollection` الطبقة وتعيين خصائصها. هنا هو الكود المقابل:
 
 ```csharp
 OutlineItemCollection pdfChildOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -56,95 +56,95 @@ pdfChildOutline. Italic = true;
 pdfChildOutline. Bold = true;
 ```
 
-## Step 6: Add the sub-bookmark to the parent bookmark
+## الخطوة 6: أضف الإشارة المرجعية الفرعية إلى الإشارة المرجعية الأصلية
 
-Finally, we add the created subbookmark to the parent bookmark's subbookmark collection using the `Add` method of the parent object. Here is the corresponding code:
+ أخيرًا، نضيف الإشارة الفرعية التي تم إنشاؤها إلى مجموعة الإشارات الفرعية الخاصة بالإشارات المرجعية الأصلية باستخدام`Add` طريقة الكائن الأصل. هنا هو الكود المقابل:
 
 ```csharp
 pdfOutline.Add(pdfChildOutline);
 ```
 
-## Step 7: Add the parent bookmark to the document's bookmark collection
+## الخطوة 7: أضف الإشارة المرجعية الأصلية إلى مجموعة الإشارات المرجعية للمستند
 
-Finally, we add the parent bookmark to the document's bookmark collection using the `Add` method of the `Outlines` property. Here is the corresponding code:
+ وأخيرًا، نضيف الإشارة المرجعية الأصلية إلى مجموعة الإشارات المرجعية للمستند باستخدام`Add` طريقة`Outlines` ملكية. هنا هو الكود المقابل:
 
 ```csharp
 pdfDocument.Outlines.Add(pdfOutline);
 ```
 
-### Sample source code for Add Child Bookmark using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإضافة إشارة مرجعية فرعية باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "AddChildBookmark.pdf");
-// Create a parent bookmark object
+// قم بإنشاء كائن إشارة مرجعية أصل
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfOutline.Title = "Parent Outline";
 pdfOutline.Italic = true;
 pdfOutline.Bold = true;      
-// Create a child bookmark object
+// إنشاء كائن إشارة مرجعية فرعية
 OutlineItemCollection pdfChildOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfChildOutline.Title = "Child Outline";
 pdfChildOutline.Italic = true;
 pdfChildOutline.Bold = true;
-// Add child bookmark in parent bookmark's collection
+// أضف إشارة مرجعية فرعية في مجموعة الإشارات المرجعية الأصلية
 pdfOutline.Add(pdfChildOutline);
-// Add parent bookmark in the document's outline collection.
+// أضف الإشارة المرجعية الأصلية في مجموعة المخطط التفصيلي للمستند.
 pdfDocument.Outlines.Add(pdfOutline);
 dataDir = dataDir + "AddChildBookmark_out.pdf";
-// Save output
+// حفظ الإخراج
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nChild bookmark added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! Now you have a step by step guide to add a sub-bookmark with Aspose.PDF for .NET. You can use this code to organize and structure your bookmarks in your PDF documents.
+تهنئة ! الآن لديك دليل خطوة بخطوة لإضافة إشارة مرجعية فرعية باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الرمز لتنظيم الإشارات المرجعية وهيكلتها في مستندات PDF الخاصة بك.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+تأكد من مراجعة وثائق Aspose.PDF الرسمية لمزيد من المعلومات حول ميزات معالجة الإشارات المرجعية المتقدمة.
 
-### FAQ's for add child bookmark in PDF file
+### الأسئلة الشائعة لإضافة إشارة مرجعية فرعية في ملف PDF
 
-#### Q: What are child bookmarks in a PDF file?
+#### س: ما هي الإشارات المرجعية الفرعية في ملف PDF؟
 
-A: Child bookmarks, also known as sub-bookmarks, are navigational elements within a PDF document that are hierarchically structured under a parent bookmark. They provide a way to create a more organized and detailed table of contents for the document.
+ج: الإشارات المرجعية الفرعية، والمعروفة أيضًا باسم الإشارات المرجعية الفرعية، هي عناصر تنقل داخل مستند PDF تم تنظيمها بشكل هرمي تحت الإشارة المرجعية الأصلية. أنها توفر طريقة لإنشاء جدول محتويات أكثر تنظيماً وتفصيلاً للمستند.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### س: كيف يمكنني استيراد المكتبات اللازمة لمشروع C# الخاص بي؟
 
-A: To import the required libraries for your C# project, you can use the following import directive:
+ج: لاستيراد المكتبات المطلوبة لمشروعك C#، يمكنك استخدام توجيه الاستيراد التالي:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-These libraries provide the necessary classes and functions for working with PDF documents and interactive features.
+توفر هذه المكتبات الفئات والوظائف اللازمة للعمل مع مستندات PDF والميزات التفاعلية.
 
-#### Q: How do I specify the path to the documents folder?
+#### س: كيف أحدد المسار إلى مجلد المستندات؟
 
-A: In the source code provided, you need to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file you want to work with. This ensures that the code correctly locates the target PDF file.
+ ج: في التعليمات البرمجية المصدر المقدمة، تحتاج إلى استبدال`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي للمجلد الذي يحتوي على ملف PDF الذي تريد العمل معه. وهذا يضمن أن الكود يحدد موقع ملف PDF المستهدف بشكل صحيح.
 
-#### Q: Can I create multiple levels of child bookmarks?
+#### س: هل يمكنني إنشاء مستويات متعددة من الإشارات المرجعية الفرعية؟
 
-A: Yes, you can create multiple levels of child bookmarks by extending the process outlined in the tutorial. By creating parent bookmarks with sub-bookmarks and further nesting them, you can create a hierarchical structure of bookmarks for complex PDF documents.
+ج: نعم، يمكنك إنشاء مستويات متعددة من الإشارات المرجعية الفرعية عن طريق توسيع العملية الموضحة في البرنامج التعليمي. من خلال إنشاء إشارات مرجعية أصلية مع إشارات مرجعية فرعية ودمجها بشكل أكبر، يمكنك إنشاء بنية هرمية للإشارات المرجعية لمستندات PDF المعقدة.
 
-#### Q: What is the purpose of the `OutlineItemCollection` class?
+####  س: ما هو الغرض من`OutlineItemCollection` class?
 
-A: The `OutlineItemCollection` class in Aspose.PDF for .NET is used to create and manage outlines, which are essentially bookmarks in a PDF document. This class allows you to set properties such as title, font style, and actions for bookmarks.
+ ج: ال`OutlineItemCollection` يتم استخدام الفئة في Aspose.PDF لـ .NET لإنشاء وإدارة الخطوط العريضة، والتي هي في الأساس إشارات مرجعية في مستند PDF. تتيح لك هذه الفئة تعيين خصائص مثل العنوان ونمط الخط وإجراءات الإشارات المرجعية.
 
-#### Q: How do I add a sub-bookmark to a parent bookmark?
+#### س: كيف يمكنني إضافة إشارة مرجعية فرعية إلى الإشارة المرجعية الأصلية؟
 
-A: To add a sub-bookmark to a parent bookmark, you create a new `OutlineItemCollection` object for the sub-bookmark and set its properties. Then, you use the `Add` method of the parent bookmark's `OutlineItemCollection` to add the sub-bookmark to the parent's collection.
+ ج: لإضافة إشارة مرجعية فرعية إلى الإشارة المرجعية الأصلية، عليك إنشاء إشارة مرجعية جديدة`OutlineItemCollection` كائن للإشارة المرجعية الفرعية وتعيين خصائصها. وبعد ذلك، يمكنك استخدام`Add` طريقة الإشارة المرجعية الأصل`OutlineItemCollection` لإضافة الإشارة المرجعية الفرعية إلى مجموعة الوالدين.
 
-#### Q: Can I customize the appearance of child bookmarks?
+#### س: هل يمكنني تخصيص مظهر الإشارات المرجعية الفرعية؟
 
-A: Yes, similar to parent bookmarks, you can customize the appearance of child bookmarks by setting properties such as title, font style, and other attributes. This allows you to create visually distinctive and informative bookmarks.
+ج: نعم، كما هو الحال مع الإشارات المرجعية الأصلية، يمكنك تخصيص مظهر الإشارات المرجعية الفرعية عن طريق تعيين خصائص مثل العنوان ونمط الخط والسمات الأخرى. يتيح لك هذا إنشاء إشارات مرجعية مميزة وغنية بالمعلومات.
 
-#### Q: Is Aspose.PDF for .NET compatible with other programming languages?
+#### س: هل يتوافق Aspose.PDF for .NET مع لغات البرمجة الأخرى؟
 
-A: Aspose.PDF for .NET is specifically designed for C# and .NET environments. However, Aspose offers similar libraries for other programming languages such as Java and Android, each tailored to their respective platforms.
+ج: تم تصميم Aspose.PDF for .NET خصيصًا لبيئات C# و.NET. ومع ذلك، يقدم Aspose مكتبات مماثلة للغات البرمجة الأخرى مثل Java وAndroid، كل منها مصمم خصيصًا ليناسب منصاته الخاصة.
 
-#### Q: How do child bookmarks improve PDF navigation?
+#### س: كيف تعمل الإشارات المرجعية الفرعية على تحسين التنقل في ملفات PDF؟
 
-A: Child bookmarks improve PDF navigation by providing a more structured and organized table of contents. Users can quickly access specific sections of the document through the hierarchical bookmark structure.
+ج: تعمل الإشارات المرجعية الفرعية على تحسين التنقل في ملفات PDF من خلال توفير جدول محتويات أكثر تنظيمًا وتنظيمًا. يمكن للمستخدمين الوصول بسرعة إلى أقسام معينة من المستند من خلال بنية الإشارات المرجعية الهرمية.

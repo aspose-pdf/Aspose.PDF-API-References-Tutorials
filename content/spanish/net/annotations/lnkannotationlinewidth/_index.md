@@ -1,31 +1,31 @@
 ---
-title: lnk Annotation Line Width
-linktitle: lnk Annotation Line Width
-second_title: Aspose.PDF for .NET API Reference
-description: This article provides a step-by-step guide for setting the line width of the lnk Annotation using Aspose.PDF for .NET.
+title: Ancho de línea de anotación lnk
+linktitle: Ancho de línea de anotación lnk
+second_title: Aspose.PDF para referencia de API .NET
+description: Este artículo proporciona una guía paso a paso para configurar el ancho de línea de la anotación lnk usando Aspose.PDF para .NET.
 type: docs
 weight: 110
 url: /es/net/annotations/lnkannotationlinewidth/
 ---
-Aspose.PDF is a powerful and widely-used tool for working with PDF files in .NET applications. It provides a variety of features for creating, editing, and manipulating PDF files, including the ability to add annotations to pages. In this tutorial, we will explain how to set the line width of a link annotation using Aspose.PDF for .NET.
+Aspose.PDF es una herramienta potente y ampliamente utilizada para trabajar con archivos PDF en aplicaciones .NET. Proporciona una variedad de funciones para crear, editar y manipular archivos PDF, incluida la capacidad de agregar anotaciones a las páginas. En este tutorial, explicaremos cómo configurar el ancho de línea de una anotación de enlace usando Aspose.PDF para .NET.
 
-Once you have these prerequisites, create a new console application project in Visual Studio. Then, add a reference to the Aspose.PDF for .NET library by right-clicking on the project in the Solution Explorer, selecting "Manage NuGet Packages," and searching for "Aspose.PDF" in the NuGet Package Manager.
+Una vez que tenga estos requisitos previos, cree un nuevo proyecto de aplicación de consola en Visual Studio. Luego, agregue una referencia a la biblioteca Aspose.PDF para .NET haciendo clic derecho en el proyecto en el Explorador de soluciones, seleccionando "Administrar paquetes NuGet" y buscando "Aspose.PDF" en el Administrador de paquetes NuGet.
 
-To add a lnk annotation to a PDF document, follow these steps:
+Para agregar una anotación de enlace a un documento PDF, siga estos pasos:
 
-## Step 1: Create a new `Document` object.
+##  Paso 1: crear un nuevo`Document` object.
 ```csharp
 Document doc = new Document();
 ```
-## Step 2: Add a new page to the document.
+## Paso 2: agregue una nueva página al documento.
 ```csharp
 doc.Pages.Add();
 ```
-## Step 3: Create a list of `Point` arrays that represent the ink gesture for the annotation.
+##  Paso 3: Crea una lista de`Point` arrays that represent the ink gesture for the annotation.
 ```csharp
 IList<Point[]> inkList = new List<Point[]>();
 ```
-## Step 4: Create a new `LineInfo` object that defines the properties of the ink gesture.
+##  Paso 4: Crea un nuevo`LineInfo` object that defines the properties of the ink gesture.
 ```csharp
 LineInfo lineInfo = new LineInfo();
 lineInfo.VerticeCoordinate = new float[] { 55, 55, 70, 70, 70, 90, 150, 60 };
@@ -33,7 +33,7 @@ lineInfo.Visibility = true;
 lineInfo.LineColor = System.Drawing.Color.Red;
 lineInfo.LineWidth = 2;
 ```
-## Step 5: Create a new `Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
+##  Paso 5: Crea un nuevo`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
 ```csharp
 int length = lineInfo.VerticeCoordinate.Length / 2;
 Aspose.Pdf.Point[] gesture = new Aspose.Pdf.Point[length];
@@ -42,24 +42,24 @@ for (int i = 0; i < length; i++)
     gesture[i] = new Aspose.Pdf.Point(lineInfo.VerticeCoordinate[2 * i], lineInfo.VerticeCoordinate[2 * i + 1]);
 }
 ```
-## Step 6: Add the gesture to the list of ink gestures.
+## Paso 6: agregue el gesto a la lista de gestos de lápiz.
 ```csharp
 inkList.Add(gesture);
 ```
-## Step 7: Create a new `InkAnnotation` object that represents the link annotation.
+##  Paso 7: Crea un nuevo`InkAnnotation` object that represents the link annotation.
 ```csharp
 InkAnnotation a1 = new InkAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), inkList);
 ```
-## Step 8: Set the subject and title of the annotation.
+## Paso 8: establezca el asunto y el título de la anotación.
 ```csharp
 a1.Subject = "Test";
 a1.Title = "Title";
 ```
-## Step 9: Set the color of the annotation.
+## Paso 9: establece el color de la anotación.
 ```csharp
 a1.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
 ```
-## Step 10: Create a new `Border` object that defines the properties of the annotation's border.
+##  Paso 10: Crea un nuevo`Border` object that defines the properties of the annotation's border.
 ```csharp
 Border border = new Border(a1);
 border.Width = 3;
@@ -67,21 +67,21 @@ border.Effect = BorderEffect.Cloudy;
 border.Dash = new Dash(1, 1);
 border.Style = BorderStyle.Solid;
 ```
-## Step 11: Add the annotation to the page.
+## Paso 11: agregue la anotación a la página.
 ```csharp
 doc.Pages[1].Annotations.Add(a1);
 ```
-## Step 12: Save the document to a file.
+## Paso 12: guarde el documento en un archivo.
 ```csharp
-// Save output file
+// Guardar archivo de salida
 doc.Save(dataDir);
 
 
 ```
-### The example shows lnk Annotation Line Width with Aspose.PDF for .NET
+### El ejemplo muestra el ancho de línea de anotación de lnk con Aspose.PDF para .NET
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document();
@@ -112,32 +112,32 @@ border.Style = BorderStyle.Solid;
 doc.Pages[1].Annotations.Add(a1);
 
 dataDir = dataDir + "lnkAnnotationLineWidth_out.pdf";
-// Save output file
+// Guardar archivo de salida
 doc.Save(dataDir);
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, we learned how to set the line width of a link annotation in a PDF document using Aspose.PDF for .NET. Aspose.PDF for .NET provides a wide range of tools and features for working with PDF documents, including the ability to create and customize link annotations. By following the step-by-step guide and using the provided C# source code, developers can easily add interactive links to their PDF documents, enhancing the user experience and interactivity of their applications. Aspose.PDF for .NET is a versatile library that empowers .NET developers to work with PDF files efficiently and effectively.
+En este tutorial, aprendimos cómo configurar el ancho de línea de una anotación de enlace en un documento PDF usando Aspose.PDF para .NET. Aspose.PDF para .NET proporciona una amplia gama de herramientas y funciones para trabajar con documentos PDF, incluida la capacidad de crear y personalizar anotaciones de enlaces. Siguiendo la guía paso a paso y utilizando el código fuente C# proporcionado, los desarrolladores pueden agregar fácilmente enlaces interactivos a sus documentos PDF, mejorando la experiencia del usuario y la interactividad de sus aplicaciones. Aspose.PDF para .NET es una biblioteca versátil que permite a los desarrolladores de .NET trabajar con archivos PDF de manera eficiente y efectiva.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is a link annotation in a PDF document?
+#### P: ¿Qué es una anotación de enlace en un documento PDF?
 
-A: A link annotation in a PDF document is an interactive element that allows you to create hyperlinks or actions that direct the user to another location within the same document, an external website, or a different PDF document.
+R: Una anotación de enlace en un documento PDF es un elemento interactivo que le permite crear hipervínculos o acciones que dirigen al usuario a otra ubicación dentro del mismo documento, un sitio web externo o un documento PDF diferente.
 
-#### Q: How can I set the line width of a link annotation using Aspose.PDF for .NET?
+#### P: ¿Cómo puedo configurar el ancho de línea de una anotación de enlace usando Aspose.PDF para .NET?
 
-A: To set the line width of a link annotation using Aspose.PDF for .NET, you can create an `InkAnnotation` object and specify the line width property.
+R: Para establecer el ancho de línea de una anotación de enlace usando Aspose.PDF para .NET, puede crear una`InkAnnotation` objeto y especifique la propiedad de ancho de línea.
 
-#### Q: What properties can be customized for a link annotation in Aspose.PDF for .NET?
+#### P: ¿Qué propiedades se pueden personalizar para una anotación de enlace en Aspose.PDF para .NET?
 
-A: You can customize various properties of a link annotation in Aspose.PDF for .NET, such as its location, size, color, border properties (width, style, dash pattern, and effect), subject, title, and visibility.
+R: Puede personalizar varias propiedades de una anotación de enlace en Aspose.PDF para .NET, como su ubicación, tamaño, color, propiedades del borde (ancho, estilo, patrón de guiones y efecto), asunto, título y visibilidad.
 
-#### Q: Can I create a link annotation that contains multiple ink gestures?
+#### P: ¿Puedo crear una anotación de enlace que contenga varios gestos de lápiz?
 
-A: Yes, you can create a link annotation that contains multiple ink gestures by adding multiple `Point` arrays to the `InkAnnotation` object.
+ R: Sí, puedes crear una anotación de enlace que contenga múltiples gestos de lápiz agregando múltiples`Point` matrices a la`InkAnnotation` objeto.
 
-#### Q: How can I add a link annotation to a specific page of the PDF document?
+#### P: ¿Cómo puedo agregar una anotación de enlace a una página específica del documento PDF?
 
-A: To add a link annotation to a specific page of the PDF document, you need to specify the page number when creating the `InkAnnotation` object. For example, `new InkAnnotation(doc.Pages[1], ...)` adds the link annotation to the first page.
+ R: Para agregar una anotación de enlace a una página específica del documento PDF, debe especificar el número de página al crear el`InkAnnotation` objeto. Por ejemplo,`new InkAnnotation(doc.Pages[1], ...)` agrega la anotación del enlace a la primera página.

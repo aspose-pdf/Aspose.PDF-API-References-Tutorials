@@ -1,52 +1,52 @@
 ---
-title: Style Table Cell
-linktitle: Style Table Cell
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to style table cells with Aspose.PDF for .NET. Step-by-step guide to creating and customizing tables.
+title: Stil Tablosu Hücresi
+linktitle: Stil Tablosu Hücresi
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile tablo hücrelerine nasıl stil uygulayacağınızı öğrenin. Tabloları oluşturmaya ve özelleştirmeye yönelik adım adım kılavuz.
 type: docs
 weight: 160
 url: /tr/net/programming-with-tagged-pdf/style-table-cell/
 ---
-Welcome to this detailed tutorial on formatting table cells using Aspose.PDF for .NET. In this guide, we will explain in detail each step of the provided C# source code to help you understand how to style table cells. Make sure you've installed Aspose.PDF for .NET and set up your development environment before you begin.
+Aspose.PDF for .NET kullanarak tablo hücrelerini biçimlendirmeye ilişkin bu ayrıntılı eğitime hoş geldiniz. Bu kılavuzda, tablo hücrelerine nasıl stil uygulayacağınızı anlamanıza yardımcı olmak için sağlanan C# kaynak kodunun her adımını ayrıntılı olarak açıklayacağız. Başlamadan önce Aspose.PDF for .NET'i yüklediğinizden ve geliştirme ortamınızı kurduğunuzdan emin olun.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+Başlamadan önce geliştirme ortamınızı Aspose.PDF for .NET'i kullanacak şekilde yapılandırdığınızdan emin olun. Buna Aspose.PDF kütüphanesinin kurulması ve projenizin buna referans verecek şekilde yapılandırılması da dahildir.
 
-## Step 2: Creating a document
+## 2. Adım: Belge oluşturma
 
-In this step, we will create a new document object Aspose.PDF.
+Bu adımda yeni bir belge nesnesi Aspose.PDF oluşturacağız.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Document creation
+// Belge oluşturma
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example of table cell formatting");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We have created a new document and set the document title and language.
+Yeni bir belge oluşturduk ve belge başlığını ve dilini belirledik.
 
-## Step 3: Obtaining the root structure element
+## Adım 3: Kök yapı öğesinin elde edilmesi
 
-In this step we will get the root structure element for our document.
+Bu adımda belgemiz için kök yapı elemanını alacağız.
 
 ```csharp
-// Obtain the root structure element
+//Kök yapı öğesini edinin
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We got the root structure element which will serve as a container for the array elements.
+Dizi elemanları için kap görevi görecek kök yapı elemanını elde ettik.
 
-## Step 4: Creating the array structure element
+## Adım 4: Dizi yapısı öğesinin oluşturulması
 
-Now let's create a new table structure element for our document.
+Şimdi belgemiz için yeni bir tablo yapısı öğesi oluşturalım.
 
 ```csharp
-// Create the array structure element
+// Dizi yapısı öğesini oluşturun
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
@@ -54,21 +54,21 @@ TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
 ```
 
-We have created a new array structure element and added it to the root structure element. We also created the table header, body, and footer elements.
+Yeni bir dizi yapısı elemanı oluşturduk ve onu kök yapı elemanına ekledik. Ayrıca tablo üstbilgisi, gövdesi ve altbilgi öğelerini de oluşturduk.
 
-## Step 5: Adding table headers
+## 5. Adım: Tablo üstbilgilerini ekleme
 
-In this step we will add the table headers to our table.
+Bu adımda tablo başlıklarını tablomuza ekleyeceğiz.
 
 ```csharp
-// Number of rows and columns in the table
+// Tablodaki satır ve sütun sayısı
 int rowCount = 4;
 int colCount = 4;
 
 int rowIndex;
 int colIndex;
 
-// Create the table header row
+// Tablo başlığı satırını oluşturun
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Header Row";
 
@@ -84,11 +84,11 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-We created a header row for our table and added header cells with formatting properties such as background color, borders, margins, and alignment.
+Tablomuz için bir başlık satırı oluşturduk ve arka plan rengi, kenarlıklar, kenar boşlukları ve hizalama gibi biçimlendirme özelliklerine sahip başlık hücreleri ekledik.
 
-## Step 6: Adding the table body rows
+## Adım 6: Tablo gövdesi satırlarını ekleme
 
-Now let's add the table body rows to our table.
+Şimdi tablo gövdesi satırlarını tablomuza ekleyelim.
 ```csharp
 for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 {
@@ -137,11 +137,11 @@ for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 }
 ```
 
-We added rows to the body of the table using loops to iterate over each table cell. We set formatting properties for each cell, such as background color, borders, margins, text alignment, etc.
+Her tablo hücresi üzerinde yineleme yapmak için döngüler kullanarak tablonun gövdesine satırlar ekledik. Her hücre için arka plan rengi, kenarlıklar, kenar boşlukları, metin hizalaması vb. gibi biçimlendirme özelliklerini ayarlarız.
 
-## Step 7: Adding the footer
+## Adım 7: Altbilgiyi ekleme
 
-Finally, we'll add the table footer to our table.
+Son olarak tablo altbilgisini tablomuza ekleyeceğiz.
 
 ```csharp
 TableTRElement footTrElement = tableTFootElement.CreateTR();
@@ -154,50 +154,50 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-We created a footer for our table and added footer cells with text.
+Tablomuz için bir alt bilgi oluşturduk ve metin içeren alt bilgi hücreleri ekledik.
 
 
 
-## Step 8: Saving the tagged PDF document
+## Adım 8: Etiketli PDF belgesini kaydetme
 
-Now that we've created our document with the styled table, we'll save it as a tagged PDF document.
+Artık belgemizi stil tablosuyla oluşturduğumuza göre, onu etiketli bir PDF belgesi olarak kaydedeceğiz.
 
 ```csharp
-// Save the tagged PDF document
+// Etiketli PDF belgesini kaydedin
 document.Save(dataDir + "StyleTableCell.pdf");
 ```
 
-We saved the tagged PDF document in the specified directory.
+Etiketli PDF belgesini belirtilen dizine kaydettik.
 
-## Step 9: PDF/UA compliance validation
+## 9. Adım: PDF/UA uyumluluk doğrulaması
 
-Next, we will validate the PDF/UA conformity of our document.
+Daha sonra belgemizin PDF/UA uygunluğunu doğrulayacağız.
 
 ```csharp
-// PDF/UA compliance check
+// PDF/UA uyumluluk kontrolü
 document = new Document(dataDir + "StyleTableCell.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableCell.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-We uploaded the tagged PDF document and validated its PDF/UA compliance by generating an XML report.
+Etiketli PDF belgesini yükledik ve bir XML raporu oluşturarak PDF/UA uyumluluğunu doğruladık.
 
-### Sample source code for Style Table Cell using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Stil Tablosu Hücresi için örnek kaynak kodu 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create document
+// Doküman oluştur
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table cell style");
 taggedContent.SetLanguage("en-US");
 
-// Get root structure element
+// Kök yapı öğesini alın
 StructureElement rootElement = taggedContent.RootElement;
 
-// Create table structure element
+// Tablo yapısı öğesi oluştur
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
@@ -267,58 +267,58 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 	tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
 
-// Save Tagged Pdf Document
+// Etiketli Pdf Belgesini Kaydet
 document.Save(dataDir + "StyleTableCell.pdf");
 
-// Checking PDF/UA compliance
+// PDF/UA uyumluluğunu kontrol etme
 document = new Document(dataDir + "StyleTableCell.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableCell.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to style table cells using Aspose.PDF for .NET. We've seen how to create a document, add a table with headers, body rows, and a footer, and customize cell styles. Finally, we saved the tagged PDF document and validated its PDF/UA compliance. You can now use Aspose.PDF for .NET to create and style tables in your .NET applications.
+Bu eğitimde Aspose.PDF for .NET kullanarak tablo hücrelerine nasıl stil uygulayacağımızı öğrendik. Bir belgenin nasıl oluşturulacağını, üstbilgiler, gövde satırları ve altbilgi içeren bir tablonun nasıl ekleneceğini ve hücre stillerinin nasıl özelleştirileceğini gördük. Son olarak etiketli PDF belgesini kaydettik ve PDF/UA uyumluluğunu doğruladık. Artık .NET uygulamalarınızda tablolar oluşturmak ve stil vermek için Aspose.PDF for .NET'i kullanabilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of this tutorial on formatting table cells using Aspose.PDF for .NET?
+#### S: Tablo hücrelerini Aspose.PDF for .NET kullanarak biçimlendirmeye yönelik bu eğitimin amacı nedir?
 
-A: This tutorial aims to provide a comprehensive guide on how to style table cells in a PDF document using the Aspose.PDF library for .NET. It covers step-by-step instructions and C# source code examples to help you understand and implement table cell formatting.
+C: Bu eğitimin amacı, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesindeki tablo hücrelerine nasıl stil uygulanacağı konusunda kapsamlı bir kılavuz sağlamaktır. Tablo hücresi biçimlendirmesini anlamanıza ve uygulamanıza yardımcı olacak adım adım talimatları ve C# kaynak kodu örneklerini kapsar.
 
-#### Q: What are the prerequisites for following this tutorial?
+#### S: Bu eğitimi takip etmenin önkoşulları nelerdir?
 
-A: Before you begin, ensure that you have installed Aspose.PDF for .NET and have set up your development environment. This includes configuring your project to reference the Aspose.PDF library.
+C: Başlamadan önce Aspose.PDF for .NET'i yüklediğinizden ve geliştirme ortamınızı kurduğunuzdan emin olun. Buna projenizi Aspose.PDF kütüphanesine referans verecek şekilde yapılandırmak da dahildir.
 
-#### Q: How do I create a new PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak nasıl yeni bir PDF belgesi oluşturabilirim?
 
-A: To create a new PDF document, you need to instantiate a `Document` object from the Aspose.PDF library. The provided C# source code demonstrates how to create a document and set its title and language.
+C: Yeni bir PDF belgesi oluşturmak için bir örnek oluşturmanız gerekir.`Document` Aspose.PDF kütüphanesinden nesne. Sağlanan C# kaynak kodu, bir belgenin nasıl oluşturulacağını ve başlığının ve dilinin nasıl ayarlanacağını gösterir.
 
-#### Q: What is the significance of the root structure element in a PDF document?
+#### S: Bir PDF belgesindeki kök yapı öğesinin önemi nedir?
 
-A: The root structure element serves as a container for other structure elements, helping organize and categorize the content of the PDF document. It plays a crucial role in establishing the logical structure of the document.
+C: Kök yapı öğesi, diğer yapı öğeleri için bir kap görevi görerek PDF belgesinin içeriğinin düzenlenmesine ve kategorize edilmesine yardımcı olur. Belgenin mantıksal yapısının oluşturulmasında çok önemli bir rol oynar.
 
-#### Q: How can I create a table structure element and customize its appearance using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak bir tablo yapısı öğesini nasıl oluşturabilir ve görünümünü nasıl özelleştirebilirim?
 
-A: You can create a table structure element using the `CreateTableElement()` method. The provided source code demonstrates how to customize the appearance of the table, including its header, body, and footer, by setting properties such as background color, borders, margins, and alignment.
+ C: Aşağıdakileri kullanarak bir tablo yapısı öğesi oluşturabilirsiniz:`CreateTableElement()` yöntem. Sağlanan kaynak kodu, arka plan rengi, kenarlıklar, kenar boşlukları ve hizalama gibi özellikleri ayarlayarak tablonun üstbilgisi, gövdesi ve altbilgisi dahil görünümünün nasıl özelleştirileceğini gösterir.
 
-#### Q: Can I add multiple rows and columns to the table body and customize their formatting?
+#### S: Tablo gövdesine birden çok satır ve sütun ekleyip bunların biçimlendirmesini özelleştirebilir miyim?
 
-A: Yes, the tutorial demonstrates how to add multiple rows and columns to the table body using loops. It also provides examples of customizing cell formatting, such as background color, borders, text alignment, font style, and more.
+C: Evet, eğitimde döngüler kullanılarak tablo gövdesine birden fazla satır ve sütunun nasıl ekleneceği gösterilmektedir. Ayrıca arka plan rengi, kenarlıklar, metin hizalaması, yazı tipi stili ve daha fazlası gibi hücre biçimlendirmesinin özelleştirilmesine ilişkin örnekler de sağlar.
 
-#### Q: What is the purpose of validating PDF/UA compliance, and how can I perform this validation?
+#### S: PDF/UA uyumluluğunu doğrulamanın amacı nedir ve bu doğrulamayı nasıl gerçekleştirebilirim?
 
-A: Validating PDF/UA compliance ensures that the PDF document adheres to accessibility standards, making it more accessible to users with disabilities. The tutorial shows how to validate PDF/UA conformity using the `Validate()` method and generate an XML report.
+ C: PDF/UA uyumluluğunun doğrulanması, PDF belgesinin erişilebilirlik standartlarına uygun olmasını sağlayarak onu engelli kullanıcılar için daha erişilebilir hale getirir. Eğitimde PDF/UA uyumluluğunun nasıl doğrulanacağı gösterilmektedir.`Validate()` yöntemini kullanın ve bir XML raporu oluşturun.
 
-#### Q: How can I apply these concepts to my own .NET applications?
+#### S: Bu kavramları kendi .NET uygulamalarıma nasıl uygulayabilirim?
 
-A: You can use the provided C# source code examples as a guide to implementing table cell formatting in your own .NET applications. Customize the code as needed to suit your requirements and integrate it into your projects.
+C: Sağlanan C# kaynak kodu örneklerini, tablo hücresi biçimlendirmesini kendi .NET uygulamalarınızda uygulamaya yönelik bir kılavuz olarak kullanabilirsiniz. Kodu gereksinimlerinize uyacak şekilde özelleştirin ve projelerinize entegre edin.
 
-#### Q: Are there any recommended best practices for styling table cells in PDF documents?
+#### S: PDF belgelerinde tablo hücrelerini şekillendirmek için önerilen en iyi uygulamalar var mı?
 
-A: When styling table cells, consider the needs of your audience, including accessibility requirements. Use contrasting colors, appropriate fonts, and clear cell alignment to enhance readability. Additionally, validate PDF/UA compliance to ensure accessibility standards are met.
+C: Tablo hücrelerini şekillendirirken erişilebilirlik gereksinimleri de dahil olmak üzere hedef kitlenizin ihtiyaçlarını göz önünde bulundurun. Okunabilirliği artırmak için kontrast renkler, uygun yazı tipleri ve net hücre hizalaması kullanın. Ayrıca erişilebilirlik standartlarının karşılandığından emin olmak için PDF/UA uyumluluğunu doğrulayın.
 
-#### Q: What other features of Aspose.PDF for .NET can I explore for PDF document manipulation?
+#### S: Aspose.PDF for .NET'in diğer hangi özelliklerini PDF belgesi manipülasyonu için keşfedebilirim?
 
-A: Aspose.PDF for .NET offers a wide range of features for PDF document manipulation, including text extraction, image insertion, form field management, digital signatures, and more. Explore the official documentation and resources to learn about additional functionalities.
+C: Aspose.PDF for .NET, PDF belge işleme için metin çıkarma, görüntü ekleme, form alanı yönetimi, dijital imzalar ve daha fazlasını içeren çok çeşitli özellikler sunar. Ek işlevler hakkında bilgi edinmek için resmi belgeleri ve kaynakları keşfedin.

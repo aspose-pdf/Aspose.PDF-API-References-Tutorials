@@ -1,101 +1,101 @@
 ---
-title: Determine Required Field In PDF Form
-linktitle: Determine Required Field In PDF Form
-second_title: Aspose.PDF for .NET API Reference
-description: Easily determine required fields in PDF form using Aspose.PDF for .NET.
+title: Определите обязательное поле в форме PDF
+linktitle: Определите обязательное поле в форме PDF
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко определите обязательные поля в форме PDF, используя Aspose.PDF для .NET.
 type: docs
 weight: 60
 url: /ru/net/programming-with-forms/determine-required-field/
 ---
-In this tutorial, we will show you how to determine the required fields of a PDF form using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+В этом уроке мы покажем вам, как определить обязательные поля формы PDF с помощью Aspose.PDF для .NET. Мы шаг за шагом объясним исходный код C#, чтобы помочь вам в этом процессе.
 
-## Step 1: Preparation
+## Шаг 1: Подготовка
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Сначала убедитесь, что вы импортировали необходимые библиотеки и задали путь к каталогу документов:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load source PDF file
+## Шаг 2. Загрузите исходный PDF-файл.
 
-Load the source PDF file:
+Загрузите исходный PDF-файл:
 
 ```csharp
 Document pdf = new Document(dataDir + "DetermineRequiredField.pdf");
 ```
 
-## Step 3: Instantiate the Form Object
+## Шаг 3. Создайте экземпляр объекта формы
 
-Instantiate a Form object for the PDF:
+Создайте экземпляр объекта формы для PDF-файла:
 
 ```csharp
 Aspose.Pdf.Facades.Form pdfForm = new Aspose.Pdf.Facades.Form(pdf);
 ```
 
-## Step 4: Cycle through each form field
+## Шаг 4. Прокрутите каждое поле формы.
 
-Go through each field of the PDF form:
+Просмотрите каждое поле PDF-формы:
 
 ```csharp
 foreach(Field field in pdf.Form.Fields)
 {
-// Determine if the field is marked as required or not
+// Определите, отмечено ли поле как обязательное или нет.
 bool isRequired = pdfForm.IsRequiredField(field.FullName);
 if (isRequired)
 {
-// Display if the field is marked as required or not
+// Отображать, отмечено ли поле как обязательное или нет.
 Console.WriteLine("The field " + field.FullName + " is required");
 }
 }
 ```
 
-### Sample source code for Determine Required Field using Aspose.PDF for .NET 
+### Пример исходного кода для определения обязательного поля с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF file
+// Загрузить исходный PDF-файл
 Document pdf = new Document(dataDir + "DetermineRequiredField.pdf");
-// Instantiate Form object
+//Создать экземпляр объекта формы
 Aspose.Pdf.Facades.Form pdfForm = new Aspose.Pdf.Facades.Form(pdf);
-// Iterate through each field inside PDF form
+// Перебирать каждое поле внутри формы PDF.
 foreach (Field field in pdf.Form.Fields)
 {
-	// Determine if the field is marked as required or not
+	// Определите, отмечено ли поле как обязательное или нет.
 	bool isRequired = pdfForm.IsRequiredField(field.FullName);
 	if (isRequired)
 	{
-		// Print either the field is marked as required or not
+		// Распечатайте либо поле отмечено как обязательное, либо нет.
 		Console.WriteLine("The field named " + field.FullName + " is required");
 	}
 }
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we learned how to determine the required fields of a PDF form using Aspose.PDF for .NET. By following these steps, you can easily check which fields are marked as required in your PDF form using Aspose.PDF.
+В этом уроке мы узнали, как определить обязательные поля формы PDF с помощью Aspose.PDF для .NET. Выполнив эти шаги, вы можете легко проверить, какие поля помечены как обязательные в вашей форме PDF, используя Aspose.PDF.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: Can I determine if a form field is required in a PDF form using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я определить, требуется ли поле формы в форме PDF, используя Aspose.PDF для .NET?
 
-A: Yes, you can determine if a form field is required in a PDF form using Aspose.PDF for .NET. As shown in the tutorial, you can use the `IsRequiredField` method of the `Aspose.Pdf.Facades.Form` class to check if a specific field is marked as required.
+ О: Да, вы можете определить, требуется ли поле формы в форме PDF, используя Aspose.PDF для .NET. Как показано в руководстве, вы можете использовать`IsRequiredField` метод`Aspose.Pdf.Facades.Form` class, чтобы проверить, помечено ли определенное поле как обязательное.
 
-#### Q: How does the `IsRequiredField` method work in Aspose.PDF for .NET?
+####  Вопрос: Как`IsRequiredField` method work in Aspose.PDF for .NET?
 
-A: The `IsRequiredField` method takes the full name of a form field as its parameter and returns a boolean value indicating whether the field is marked as required or not. If the field is required, the method returns `true`; otherwise, it returns `false`.
+ А:`IsRequiredField` Метод принимает полное имя поля формы в качестве параметра и возвращает логическое значение, указывающее, помечено ли поле как обязательное или нет. Если поле является обязательным, метод возвращает`true` ; в противном случае он возвращает`false`.
 
-#### Q: What happens if I pass the name of a non-existent field to the `IsRequiredField` method?
+####  Вопрос: Что произойдет, если я передам имя несуществующего поля в`IsRequiredField` method?
 
-A: If you pass the name of a non-existent field to the `IsRequiredField` method, it will return `false`, indicating that the field is not marked as required because it doesn't exist in the PDF form.
+О: Если вы передадите имя несуществующего поля в`IsRequiredField` метод, он вернет`false`, что указывает на то, что поле не помечено как обязательное, поскольку оно не существует в форме PDF.
 
-#### Q: Can I use the `IsRequiredField` method to determine if a field is required in an XFA form?
+####  Вопрос: Могу ли я использовать`IsRequiredField` method to determine if a field is required in an XFA form?
 
-A: No, the `IsRequiredField` method is designed to work with AcroForms in PDF documents, not with XFA (XML Forms Architecture) forms. XFA forms have different mechanisms for defining field requirements.
+ А: Нет,`IsRequiredField` Метод предназначен для работы с AcroForms в документах PDF, а не с формами XFA (XML Forms Architecture). Формы XFA имеют разные механизмы определения требований к полям.
 
-#### Q: Can I modify the required status of a form field using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я изменить обязательный статус поля формы с помощью Aspose.PDF для .NET?
 
-A: Yes, you can modify the required status of a form field using Aspose.PDF for .NET. The `IsRequired` property of the `Field` class allows you to set or change the required status of a form field. For example, to mark a field as required, you can use:
+ О: Да, вы можете изменить требуемый статус поля формы, используя Aspose.PDF для .NET.`IsRequired` собственность`Field` Класс позволяет установить или изменить необходимый статус поля формы. Например, чтобы пометить поле как обязательное, вы можете использовать:
 
 ```csharp
 field.IsRequired = true;

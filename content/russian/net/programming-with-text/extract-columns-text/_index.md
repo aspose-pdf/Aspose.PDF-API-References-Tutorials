@@ -1,26 +1,26 @@
 ---
-title: Extract Columns Text In PDF File
-linktitle: Extract Columns Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract columns text in PDF file using Aspose.PDF for .NET.
+title: Извлечь текст столбцов в PDF-файл
+linktitle: Извлечь текст столбцов в PDF-файл
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как извлечь текст столбцов из PDF-файла с помощью Aspose.PDF для .NET.
 type: docs
 weight: 150
 url: /ru/net/programming-with-text/extract-columns-text/
 ---
-This tutorial will guide you through the process of extracting columns text in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Это руководство проведет вас через процесс извлечения текста столбцов в PDF-файл с помощью Aspose.PDF для .NET. Приведенный исходный код C# демонстрирует необходимые шаги.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Требования
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio или любой другой компилятор C#, установленный на вашем компьютере.
+- Aspose.PDF для библиотеки .NET. Вы можете скачать его с официального сайта Aspose или использовать для установки менеджер пакетов, например NuGet.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Шаг 1. Настройте проект
+1. Создайте новый проект C# в предпочитаемой вами среде разработки.
+2. Добавьте ссылку на библиотеку Aspose.PDF для .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to extract columns text, add the following using directives at the top of the file:
+## Шаг 2. Импортируйте необходимые пространства имен.
+В файл кода, из которого вы хотите извлечь текст столбцов, добавьте следующие директивы в верхней части файла:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,18 +28,18 @@ using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Шаг 3. Установите каталог документов.
+ В коде найдите строку с надписью`string dataDir = "YOUR DOCUMENT DIRECTORY";` и заменить`"YOUR DOCUMENT DIRECTORY"` с путем к каталогу, в котором хранятся ваши документы.
 
-## Step 4: Open the PDF document
-Open an existing PDF document using the `Document` constructor and passing the path to the input PDF file.
+## Шаг 4. Откройте PDF-документ.
+ Откройте существующий PDF-документ с помощью`Document`конструктор и передав путь к входному PDF-файлу.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
 ```
 
-## Step 5: Adjust the font size
-Reduce the font size of the text fragments by a factor of 0.7 to enhance readability and better represent columnar text.
+## Шаг 5. Отрегулируйте размер шрифта.
+Уменьшите размер шрифта текстовых фрагментов в 0,7 раза, чтобы улучшить читаемость и лучше представить столбчатый текст.
 
 ```csharp
 TextFragmentAbsorber tfa = new TextFragmentAbsorber();
@@ -51,8 +51,8 @@ foreach(TextFragment tf in tfc)
 }
 ```
 
-## Step 6: Extract text from columns
-Save the modified PDF document to a memory stream and reload it as a new document. Then, use the `TextAbsorber` class to extract text from the columns.
+## Шаг 6. Извлеките текст из столбцов
+ Сохраните измененный PDF-документ в потоке памяти и перезагрузите его как новый документ. Затем используйте`TextAbsorber` класс для извлечения текста из столбцов.
 
 ```csharp
 Stream st = new MemoryStream();
@@ -64,8 +64,8 @@ String extractedText = textAbsorber.Text;
 textAbsorber.Visit(pdfDocument);
 ```
 
-## Step 7: Save the extracted text
-Save the extracted text to a text file at the specified output file path.
+## Шаг 7: Сохраните извлеченный текст
+Сохраните извлеченный текст в текстовый файл по указанному пути к выходному файлу.
 
 ```csharp
 dataDir = dataDir + "ExtractColumnsText_out.txt";
@@ -73,18 +73,18 @@ File.WriteAllText(dataDir, extractedText);
 Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Extract Columns Text using Aspose.PDF for .NET 
+### Пример исходного кода для извлечения текста столбцов с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");                
 TextFragmentAbsorber tfa = new TextFragmentAbsorber();
 pdfDocument.Pages.Accept(tfa);
 TextFragmentCollection tfc = tfa.TextFragments;
 foreach (TextFragment tf in tfc)
 {
-	// Need to reduce font size at least for 70%
+	// Необходимо уменьшить размер шрифта хотя бы на 70%
 	tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
 }
 Stream st = new MemoryStream();
@@ -99,18 +99,18 @@ System.IO.File.WriteAllText(dataDir, extractedText);
 Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-You have successfully extracted columns text from a PDF document using Aspose.PDF for .NET. The extracted text has been saved to the specified output file.
+## Заключение
+Вы успешно извлекли текст столбцов из PDF-документа с помощью Aspose.PDF для .NET. Извлеченный текст был сохранен в указанный выходной файл.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of this tutorial?
+#### Вопрос: Какова цель этого урока?
 
-A: This tutorial offers a step-by-step guide on extracting columns of text from a PDF file using Aspose.PDF for .NET. The accompanying C# source code provides a practical demonstration of the required procedures.
+О: В этом руководстве представлено пошаговое руководство по извлечению столбцов текста из файла PDF с помощью Aspose.PDF для .NET. Прилагаемый исходный код C# обеспечивает практическую демонстрацию необходимых процедур.
 
-#### Q: What namespaces should I import?
+#### Вопрос: Какие пространства имен мне следует импортировать?
 
-A: In the code file where you intend to extract columns of text, include the following using directives at the beginning of the file:
+О: В файл кода, из которого вы собираетесь извлечь столбцы текста, включите в начало файла следующие директивы using:
 
 ```csharp
 using Aspose.Pdf;
@@ -118,30 +118,30 @@ using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-#### Q: How do I specify the document directory?
+#### Вопрос: Как указать каталог документа?
 
-A: Locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` in the code and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ A: Найдите строку`string dataDir = "YOUR DOCUMENT DIRECTORY";` в коде и замените`"YOUR DOCUMENT DIRECTORY"` с фактическим путем к каталогу вашего документа.
 
-#### Q: How do I open an existing PDF document?
+#### Вопрос: Как открыть существующий PDF-документ?
 
-A: In Step 4, you'll open an existing PDF document using the `Document` constructor and providing the path to the input PDF file.
+ О: На шаге 4 вы откроете существующий PDF-документ, используя`Document` конструктор и указав путь к входному PDF-файлу.
 
-#### Q: Why is the font size adjusted?
+#### Вопрос: Почему корректируется размер шрифта?
 
-A: Step 5 involves reducing the font size of text fragments by a factor of 0.7. This adjustment enhances readability and more accurately represents columnar text.
+О: Шаг 5 предполагает уменьшение размера шрифта текстовых фрагментов в 0,7 раза. Эта настройка повышает читаемость и более точно представляет столбчатый текст.
 
-#### Q: How do I extract text from columns?
+#### Вопрос: Как извлечь текст из столбцов?
 
-A: Step 6 consists of saving the modified PDF document to a memory stream, reloading it as a new document, and then using the `TextAbsorber` class to extract text from the columns.
+ О: Шаг 6 состоит из сохранения измененного PDF-документа в потоке памяти, его перезагрузки как нового документа и последующего использования`TextAbsorber` класс для извлечения текста из столбцов.
 
-#### Q: What is the purpose of saving the extracted text?
+#### Вопрос: Какова цель сохранения извлеченного текста?
 
-A: In Step 7, you'll save the extracted text to a text file at the specified output file path.
+О: На шаге 7 вы сохраните извлеченный текст в текстовый файл по указанному пути к выходному файлу.
 
-#### Q: Why reduce the font size before extraction?
+#### Вопрос: Зачем уменьшать размер шрифта перед извлечением?
 
-A: Reducing the font size helps ensure that the extracted text aligns properly within the columns, providing a more accurate representation of the original layout.
+О: Уменьшение размера шрифта помогает обеспечить правильное выравнивание извлеченного текста по столбцам, обеспечивая более точное представление исходного макета.
 
-#### Q: What is the key takeaway from this tutorial?
+#### Вопрос: Каков основной вывод из этого урока?
 
-A: By following this tutorial, you've acquired the knowledge and skills needed to extract columns of text from a PDF document using Aspose.PDF for .NET. The resulting text has been saved to the specified output file.
+О: Следуя этому руководству, вы приобрели знания и навыки, необходимые для извлечения столбцов текста из PDF-документа с помощью Aspose.PDF для .NET. Полученный текст был сохранен в указанный выходной файл.

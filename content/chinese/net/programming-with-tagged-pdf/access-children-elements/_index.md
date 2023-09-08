@@ -1,28 +1,28 @@
 ---
-title: Access Children Elements
-linktitle: Access Children Elements
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to accessing and editing child elements of a PDF document using Aspose.PDF for .NET. Personalize your PDF content.
+title: 访问儿童元素
+linktitle: 访问儿童元素
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 访问和编辑 PDF 文档子元素的分步指南。个性化您的 PDF 内容。
 type: docs
 weight: 10
 url: /zh/net/programming-with-tagged-pdf/access-children-elements/
 ---
-In this tutorial, we will provide you with a step-by-step guide on accessing child elements of a PDF document using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. Using the marked content structure features of Aspose.PDF, you can access and modify the properties of structured elements in a PDF document.
+在本教程中，我们将为您提供有关使用 Aspose.PDF for .NET 访问 PDF 文档的子元素的分步指南。 Aspose.PDF 是一个功能强大的库，允许您以编程方式创建、操作和转换 PDF 文档。使用Aspose.PDF的标记内容结构功能，您可以访问和修改PDF文档中结构化元素的属性。
 
-## Prerequisites
+## 先决条件
 
-Before you begin, make sure you have the following prerequisites in place:
+在开始之前，请确保您具备以下先决条件：
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. 随 .NET Framework 安装的 Visual Studio。
+2. 适用于 .NET 的 Aspose.PDF 库。
 
-## Step 1: Project Setup
+## 第 1 步：项目设置
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+首先，在 Visual Studio 中创建一个新项目并添加对 Aspose.PDF for .NET 库的引用。您可以从Aspose官方网站下载该库并将其安装到您的计算机上。
 
-## Step 2: Import the necessary namespaces
+## 第 2 步：导入必要的命名空间
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+在您的 C# 代码文件中，导入访问 Aspose.PDF 提供的类和方法所需的命名空间：
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Step 3: Loading the PDF Document and Accessing Child Elements
+## 步骤 3：加载 PDF 文档并访问子元素
 
-Use the following code to load the PDF document and access the child elements:
+使用以下代码加载 PDF 文档并访问子元素：
 
 ```csharp
 string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
@@ -45,7 +45,7 @@ foreach(Element element in elementList)
 if (element is StructureElement)
 {
 StructureElement structureElement = element as StructureElement;
-// Access the properties of the element
+//访问元素的属性
 string title = structureElement.Title;
 string language = structureElement.Language;
 string actualText = structureElement.ActualText;
@@ -55,11 +55,11 @@ string alternativeText = structureElement.AlternativeText;
 }
 ```
 
-This code allows you to access the child elements of the root of the PDF document structure and get the properties of each element.
+此代码允许您访问 PDF 文档结构根的子元素并获取每个元素的属性。
 
-## Step 4: Accessing Root Element Children and Changing Properties
+## 第 4 步：访问根元素子元素并更改属性
 
-Use the following code to access the children of the root element and modify the properties:
+使用以下代码访问根元素的子元素并修改属性：
 
 ```csharp
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
@@ -69,7 +69,7 @@ foreach(Element element in elementList)
 if (element is StructureElement)
 {
 StructureElement structureElement = element as StructureElement;
-// Modify the properties of the element
+//修改元素的属性
 structureElement.Title = "title";
 structureElement.Language = "fr-FR";
 structureElement.ActualText = "actual text";
@@ -79,25 +79,25 @@ structureElement.AlternativeText = "alt";
 }
 ```
 
-This code allows you to access the children of the first element of the root element and modify the properties of each element.
+此代码允许您访问根元素的第一个元素的子元素并修改每个元素的属性。
 
 
-### Sample source code for Access Children Elements using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 访问子元素的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open Pdf Document
+//打开 PDF 文档
 Document document = new Document(dataDir + "StructureElementsTree.pdf");
-// Get Content for work with TaggedPdf
+//获取与 TaggedPdf 一起使用的内容
 ITaggedContent taggedContent = document.TaggedContent;
-// Access to root element(s)
+//访问根元素
 ElementList elementList = taggedContent.StructTreeRootElement.ChildElements;
 foreach (Element element in elementList)
 {
 	if (element is StructureElement)
 	{
 		StructureElement structureElement = element as StructureElement;
-		// Get properties
+		//获取属性
 		string title = structureElement.Title;
 		string language = structureElement.Language;
 		string actualText = structureElement.ActualText;
@@ -105,14 +105,14 @@ foreach (Element element in elementList)
 		string alternativeText = structureElement.AlternativeText;
 	}
 }
-// Access to children elements of first element in root element
+//访问根元素中第一个元素的子元素
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
 foreach (Element element in elementList)
 {
 	if (element is StructureElement)
 	{
 		StructureElement structureElement = element as StructureElement;
-		// Set properties
+		//设置属性
 		structureElement.Title = "title";
 		structureElement.Language = "fr-FR";
 		structureElement.ActualText = "actual text";
@@ -120,43 +120,43 @@ foreach (Element element in elementList)
 		structureElement.AlternativeText = "alt";
 	}
 }
-// Save Tagged Pdf Document
+//保存标记的 PDF 文档
 document.Save(dataDir + "AccessChildrenElements.pdf");
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, you learned how to access child elements of a PDF document and how to modify element properties using Aspose.PDF for .NET. This allows you to customize and manipulate the structured elements in a PDF document according to your needs.
+在本教程中，您学习了如何访问 PDF 文档的子元素以及如何使用 Aspose.PDF for .NET 修改元素属性。这使您可以根据需要自定义和操作 PDF 文档中的结构化元素。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of accessing child elements in a PDF document using Aspose.PDF for .NET?
+#### 问：使用 Aspose.PDF for .NET 访问 PDF 文档中的子元素的目的是什么？
 
-A: Accessing child elements in a PDF document using Aspose.PDF for .NET allows you to programmatically manipulate and customize the structured elements within the document. This can include modifying properties, such as titles, languages, actual text, expansion text, and alternative text, to enhance the accessibility and presentation of the document.
+答：使用 Aspose.PDF for .NET 访问 PDF 文档中的子元素允许您以编程方式操作和自定义文档中的结构化元素。这可以包括修改属性，例如标题、语言、实际文本、扩展文本和替代文本，以增强文档的可访问性和呈现。
 
-#### Q: What is the role of the Aspose.PDF library in this process?
+#### 问：Aspose.PDF 库在此过程中的作用是什么？
 
-A: Aspose.PDF for .NET is a powerful library that provides various features for creating, manipulating, and converting PDF documents programmatically. In this tutorial, the library is used to load a PDF document, access tagged content and structured elements, and modify their properties.
+答：Aspose.PDF for .NET 是一个功能强大的库，它提供了以编程方式创建、操作和转换 PDF 文档的各种功能。在本教程中，该库用于加载 PDF 文档、访问标记内容和结构化元素以及修改它们的属性。
 
-#### Q: What are the prerequisites for working with child elements in a PDF document using Aspose.PDF for .NET?
+#### 问：使用 Aspose.PDF for .NET 处理 PDF 文档中的子元素有哪些先决条件？
 
-A: Before you begin, ensure that you have Visual Studio installed with the .NET framework and have the Aspose.PDF library for .NET referenced in your project.
+答：开始之前，请确保您已安装了带有 .NET 框架的 Visual Studio，并在项目中引用了适用于 .NET 的 Aspose.PDF 库。
 
-#### Q: How does the provided C# code allow for accessing and modifying child elements in a PDF document?
+#### 问：所提供的 C# 代码如何允许访问和修改 PDF 文档中的子元素？
 
-A: The code demonstrates how to load a PDF document, access the tagged content, and traverse through the child elements of the root and specific elements. It showcases how to retrieve properties of structured elements and how to modify those properties to customize the document.
+答：代码演示了如何加载PDF文档、访问标记内容、遍历根元素和特定元素的子元素。它展示了如何检索结构化元素的属性以及如何修改这些属性以自定义文档。
 
-#### Q: Can I access and modify other properties of the child elements beyond the ones shown in the code?
+#### 问：除了代码中显示的属性之外，我还可以访问和修改子元素的其他属性吗？
 
-A: Yes, you can access and modify various other properties of the child elements using similar techniques. The properties demonstrated in the code (title, language, actual text, etc.) are just examples, and you can explore the Aspose.PDF documentation to discover more properties and methods available for manipulation.
+答：是的，您可以使用类似的技术访问和修改子元素的各种其他属性。代码中演示的属性（标题、语言、实际文本等）只是示例，您可以浏览 Aspose.PDF 文档以发现更多可用于操作的属性和方法。
 
-#### Q: How do I identify which child elements I want to access within the PDF document?
-A: The code provides an example of accessing the child elements of the root element and a specific element within it. You can identify the elements you want to access based on their hierarchy and structure within the tagged content of the PDF document.
+#### 问：如何确定要访问 PDF 文档中的哪些子元素？
+答：代码提供了访问根元素的子元素以及其中的特定元素的示例。您可以根据 PDF 文档标记内容中的层次结构和结构来识别要访问的元素。
 
-#### Q: Is it possible to add new child elements or delete existing ones using this approach?
+#### 问：是否可以使用这种方法添加新的子元素或删除现有的子元素？
 
-A: While the provided code focuses on accessing and modifying existing child elements, you can extend the approach to add new child elements or delete existing ones by using appropriate methods provided by the Aspose.PDF library.
+答：虽然提供的代码侧重于访问和修改现有子元素，但您可以使用 Aspose.PDF 库提供的适当方法扩展该方法以添加新子元素或删除现有子元素。
 
-#### Q: Can I use this approach to work with nested child elements within the PDF document?
+#### 问：我可以使用这种方法来处理 PDF 文档中的嵌套子元素吗？
 
-A: Yes, you can apply similar techniques to access and modify nested child elements within the PDF document's structure. By traversing through the hierarchy of elements, you can access and manipulate elements at various levels.
+答：是的，您可以应用类似的技术来访问和修改 PDF 文档结构中的嵌套子元素。通过遍历元素的层次结构，您可以访问和操作各个级别的元素。

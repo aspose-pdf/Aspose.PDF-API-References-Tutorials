@@ -1,90 +1,90 @@
 ---
-title: Move Form Field
-linktitle: Move Form Field
-second_title: Aspose.PDF for .NET API Reference
-description: Easily move form fields around in your PDF documents with Aspose.PDF for .NET.
+title: Form Alanını Taşı
+linktitle: Form Alanını Taşı
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile form alanlarını PDF belgelerinizde kolayca taşıyın.
 type: docs
 weight: 200
 url: /tr/net/programming-with-forms/move-form-field/
 ---
-In this tutorial, we will show you how to move a form field in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+Bu eğitimde size Aspose.PDF for .NET kullanarak bir PDF belgesindeki form alanını nasıl taşıyacağınızı göstereceğiz. Bu süreçte size yol göstermek için C# kaynak kodunu adım adım açıklayacağız.
 
-## Step 1: Preparation
+## Adım 1: Hazırlık
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Gerekli kitaplıkları içe aktardığınızdan ve belgeler dizininizin yolunu ayarladığınızdan emin olun:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the document
+## 2. Adım: Belgeyi yükleyin
 
-Load the existing PDF document:
+Mevcut PDF belgesini yükleyin:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "MoveFormField.pdf");
 ```
 
-## Step 3: Get the form field
+## 3. Adım: Form alanını alın
 
-Get the form field you want to move:
+Taşımak istediğiniz form alanını alın:
 
 ```csharp
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 ```
 
-## Step 4: Change Field Location
+## 4. Adım: Saha Konumunu Değiştirin
 
-Change the location of the form field by defining a new rectangular area:
+Yeni bir dikdörtgen alan tanımlayarak form alanının konumunu değiştirin:
 
 ```csharp
 textBoxField.Rect = new Aspose.Pdf.Rectangle(300, 400, 600, 500);
 ```
 
-## Step 5: Save the edited document
+## 5. Adım: Düzenlenen belgeyi kaydedin
 
-Save the modified PDF document:
+Değiştirilen PDF belgesini kaydedin:
 
 ```csharp
 dataDir = dataDir + "MoveFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Move Form Field using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Form Alanını Taşı için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "MoveFormField.pdf");
-// Get a field
+// Bir alan al
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
-// Modify field location
+// Alan konumunu değiştir
 textBoxField.Rect = new Aspose.Pdf.Rectangle(300, 400, 600, 500);
 dataDir = dataDir + "MoveFormField_out.pdf";
-// Save modified document
+// Değiştirilen belgeyi kaydet
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nForm field moved successfully to a new location.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to move a form field in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily navigate to a specific field and change its location as needed.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesindeki form alanını nasıl taşıyacağımızı öğrendik. Bu adımları izleyerek belirli bir alana kolayca gidebilir ve gerektiğinde konumunu değiştirebilirsiniz.
 
 
-### FAQ's
+### SSS'ler
 
-#### Q: Can I move multiple form fields within a single PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak tek bir PDF belgesinde birden fazla form alanını taşıyabilir miyim?
 
-A: Yes, you can move multiple form fields within a single PDF document using Aspose.PDF for .NET. Simply repeat the process for each form field you want to relocate.
+C: Evet, Aspose.PDF for .NET'i kullanarak birden fazla form alanını tek bir PDF belgesinde taşıyabilirsiniz. Yerini değiştirmek istediğiniz her form alanı için işlemi tekrarlamanız yeterlidir.
 
-#### Q: Will moving a form field affect its associated data or functionality?
+#### S: Bir form alanının taşınması, ilgili verileri veya işlevselliği etkiler mi?
 
-A: No, moving a form field does not affect its associated data or functionality. The form field retains all its properties and values after being moved to a new location.
+C: Hayır, bir form alanının taşınması, onunla ilişkili verileri veya işlevselliği etkilemez. Form alanı, yeni bir konuma taşındıktan sonra tüm özelliklerini ve değerlerini korur.
 
-#### Q: How can I determine the exact coordinates for the new location of the form field?
+#### S: Form alanının yeni konumunun tam koordinatlarını nasıl belirleyebilirim?
 
-A: You can specify the new location using the `Aspose.Pdf.Rectangle` class, where you define the X and Y coordinates of the top-left corner and the X and Y coordinates of the bottom-right corner of the rectangular area.
+ C: Yeni konumu şunu kullanarak belirleyebilirsiniz:`Aspose.Pdf.Rectangle` dikdörtgen alanın sol üst köşesinin X ve Y koordinatlarını ve sağ alt köşesinin X ve Y koordinatlarını tanımladığınız sınıf.
 
-#### Q: Is Aspose.PDF for .NET compatible with both Windows and Linux environments?
+#### S: Aspose.PDF for .NET hem Windows hem de Linux ortamlarıyla uyumlu mudur?
 
-A: Yes, Aspose.PDF for .NET is compatible with both Windows and Linux environments, providing flexibility for developers to work in their preferred operating systems.
+C: Evet, Aspose.PDF for .NET, hem Windows hem de Linux ortamlarıyla uyumludur ve geliştiricilere tercih ettikleri işletim sistemlerinde çalışma esnekliği sağlar.

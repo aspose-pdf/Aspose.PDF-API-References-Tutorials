@@ -1,50 +1,50 @@
 ---
-title: Get PDF Properties
-linktitle: Get PDF Properties
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to get PDF properties like box dimensions and rotation using Aspose.PDF for .NET.
+title: PDF Özelliklerini Alın
+linktitle: PDF Özelliklerini Alın
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak kutu boyutları ve döndürme gibi PDF özelliklerini elde etmek için adım adım kılavuz.
 type: docs
 weight: 100
 url: /tr/net/programming-with-pdf-pages/get-properties/
 ---
-In this tutorial, we'll walk you through the step-by-step process to get the properties of a PDF using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to access different properties of a PDF page such as art box, crop box, crop box, etc., using Aspose.PDF for .NET.
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF'nin özelliklerini elde etmek için size adım adım yol göstereceğiz. Birlikte verilen C# kaynak kodunu açıklayacağız ve bu özelliği anlamanıza ve kendi projelerinizde uygulamanıza yardımcı olacak kapsamlı bir kılavuz sunacağız. Bu eğitimin sonunda Aspose.PDF for .NET'i kullanarak bir PDF sayfasının resim kutusu, kırpma kutusu, kırpma kutusu vb. gibi farklı özelliklerine nasıl erişeceğinizi öğreneceksiniz.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## Önkoşullar
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- C# programlama dili hakkında temel bilgi
+- Aspose.PDF for .NET, geliştirme ortamınızda yüklü
 
-## Step 1: Set document directory
-First, you need to set the path to your documents directory. This is the location of the PDF file whose properties you want to get. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
+## 1. Adım: Belge dizinini ayarlayın
+Öncelikle belgeler dizininizin yolunu ayarlamanız gerekir. Bu, özelliklerini almak istediğiniz PDF dosyasının konumudur. "BELGELERİNİZ DİZİNİ"ni uygun yolla değiştirin.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the PDF document
-Next, you need to open the PDF document using the `Document` class of Aspose.PDF. Be sure to specify the correct path to the PDF file.
+## 2. Adım: PDF belgesini açın
+ Daha sonra, PDF belgesini kullanarak açmanız gerekir.`Document` Aspose.PDF sınıfı. PDF dosyasının doğru yolunu belirttiğinizden emin olun.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
 ```
 
-## Step 3: Access the Page Collection
-Now you can access the document's pages collection using the `Pages` property of the `pdfDocument` object.
+## 3. Adım: Sayfa Koleksiyonuna Erişin
+ Artık belgenin sayfa koleksiyonuna şunu kullanarak erişebilirsiniz:`Pages` mülkiyeti`pdfDocument` nesne.
 
 ```csharp
 PageCollection pageCollection = pdfDocument.Pages;
 ```
 
-## Step 4: Go to a specific page
-Then you can jump to a specific page using the index of the page in the collection. In the example below, we access the second page (index 1).
+## 4. Adım: Belirli bir sayfaya gidin
+Daha sonra koleksiyondaki sayfanın dizinini kullanarak belirli bir sayfaya atlayabilirsiniz. Aşağıdaki örnekte ikinci sayfaya (indeks 1) erişiyoruz.
 
 ```csharp
 Page pdfPage = pageCollection[1];
 ```
 
-## Step 5: Get page properties
-Now you can get the different properties of the PDF page, such as art box, crop box, crop box, etc., by using the corresponding properties of the `pdfPage` object.
+## 5. Adım: Sayfa özelliklerini alın
+ Artık PDF sayfasının resim kutusu, kırpma kutusu, kırpma kutusu vb. gibi farklı özelliklerini, PDF sayfasının ilgili özelliklerini kullanarak elde edebilirsiniz.`pdfPage` nesne.
 
 ```csharp
 Console.WriteLine("ArtBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
@@ -59,19 +59,19 @@ Console.WriteLine("Page number: {0}", pdfPage.Number);
 Console.WriteLine("Rotate: {0}", pdfPage.Rotate);
 ```
 
-### Sample source code for Get Properties using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Get Properties için örnek kaynak kodu 
 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
-// Get page collection
+// Sayfa koleksiyonunu alın
 PageCollection pageCollection = pdfDocument.Pages;
-// Get particular page
+// Belirli bir sayfayı al
 Page pdfPage = pageCollection[1];
-// Get page properties
+// Sayfa özelliklerini al
 System.Console.WriteLine("ArtBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
 System.Console.WriteLine("BleedBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.BleedBox.Height, pdfPage.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
 System.Console.WriteLine("CropBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, pdfPage.CropBox.URX, pdfPage.CropBox.URY);
@@ -83,44 +83,44 @@ System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
 
 ```
 
-## Conclusion
-Congratulation ! You have successfully obtained the properties of a PDF using Aspose.PDF for .NET. You learned how to open a PDF document, navigate to a specific page, and get various page properties, such as dimension boxes and rotation. You can now use this information to customize the handling of your PDF files based on their properties.
+## Çözüm
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF'nin özelliklerini başarıyla elde ettiniz. Bir PDF belgesini nasıl açacağınızı, belirli bir sayfaya nasıl gideceğinizi ve boyut kutuları ve döndürme gibi çeşitli sayfa özelliklerini nasıl alacağınızı öğrendiniz. Artık bu bilgiyi, PDF dosyalarınızın özelliklerine göre işlenmesini özelleştirmek için kullanabilirsiniz.
 
-Be sure to check out the official Aspose.PDF for .NET documentation for more information on advanced features and customization possibilities.
+Gelişmiş özellikler ve kişiselleştirme olanakları hakkında daha fazla bilgi için resmi Aspose.PDF for .NET belgelerine göz atmayı unutmayın.
 
-### FAQ's
+### SSS'ler
 
-#### Q: How can I get the properties of a PDF using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF'nin özelliklerini nasıl edinebilirim?
 
-A: To get the properties of a PDF using Aspose.PDF for .NET, you can follow these steps:
+C: Aspose.PDF for .NET kullanarak bir PDF'nin özelliklerini almak için şu adımları takip edebilirsiniz:
 
-1. Set the document directory by specifying the path to the PDF file whose properties you want to retrieve.
-2. Open the PDF document using the `Document` class of Aspose.PDF, providing the correct path to the PDF file.
-3. Access the document's pages collection using the `Pages` property of the `pdfDocument` object.
-4. Jump to a specific page using the index of the page in the collection (indexing starts from 1).
-5. Get the different properties of the PDF page, such as ArtBox, BleedBox, CropBox, MediaBox, TrimBox, Rect, Page Number, and Rotation, by using the corresponding properties of the `pdfPage` object.
+1. Özelliklerini almak istediğiniz PDF dosyasının yolunu belirterek belge dizinini ayarlayın.
+2.  PDF belgesini kullanarak açın.`Document` Aspose.PDF sınıfı, PDF dosyasının doğru yolunu sağlar.
+3.  kullanarak belgenin sayfa koleksiyonuna erişin.`Pages` mülkiyeti`pdfDocument` nesne.
+4. Koleksiyondaki sayfanın dizinini kullanarak belirli bir sayfaya atlayın (dizin oluşturma 1'den başlar).
+5.  İlgili özellikleri kullanarak PDF sayfasının ArtBox, BleedBox, CropBox, MediaBox, TrimBox, Rect, Page Number ve Rotation gibi farklı özelliklerini elde edin.`pdfPage` nesne.
 
-#### Q: What are the different properties of a PDF page that I can retrieve using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak alabileceğim bir PDF sayfasının farklı özellikleri nelerdir?
 
-A: You can retrieve various properties of a PDF page using Aspose.PDF for .NET, such as:
+C: Aspose.PDF for .NET'i kullanarak bir PDF sayfasının çeşitli özelliklerini alabilirsiniz, örneğin:
 
-- ArtBox: Represents the dimensions of the page's artwork.
-- BleedBox: Represents the dimensions of the page's bleed.
-- CropBox: Represents the dimensions of the page's visible content after cropping.
-- MediaBox: Represents the dimensions of the page's physical media.
-- TrimBox: Represents the dimensions of the page's trimmed content.
-- Rect: Represents the dimensions of the page's bounding box.
-- Page Number: Represents the page number in the document.
-- Rotate: Represents the rotation angle of the page.
+- ArtBox: Sayfanın resminin boyutlarını temsil eder.
+- BleedBox: Sayfanın taşma payının boyutlarını temsil eder.
+- CropBox: Sayfanın kırpıldıktan sonra görünen içeriğinin boyutlarını temsil eder.
+- MediaBox: Sayfanın fiziksel ortamının boyutlarını temsil eder.
+- TrimBox: Sayfanın kırpılan içeriğinin boyutlarını temsil eder.
+- Dikdörtgen: Sayfanın sınırlayıcı kutusunun boyutlarını temsil eder.
+- Sayfa Numarası: Dokümandaki sayfa numarasını temsil eder.
+- Döndür: Sayfanın dönme açısını temsil eder.
 
-#### Q: How do I access a specific page in the PDF document to retrieve its properties?
+#### S: Özelliklerini almak için PDF belgesindeki belirli bir sayfaya nasıl erişirim?
 
-A: To access a specific page in the PDF document and retrieve its properties, you can use the `Pages` property of the `pdfDocument` object to access the document's pages collection. Then, you can use the index of the page in the collection to jump to the desired page. For example, to access the second page, you can use `pdfDocument.Pages[1]` (indexing starts from 1).
+ C: PDF belgesindeki belirli bir sayfaya erişmek ve özelliklerini almak için`Pages` mülkiyeti`pdfDocument` belgenin sayfa koleksiyonuna erişmek için nesne. Daha sonra istediğiniz sayfaya atlamak için koleksiyondaki sayfanın dizinini kullanabilirsiniz. Örneğin ikinci sayfaya erişmek için şunu kullanabilirsiniz:`pdfDocument.Pages[1]` (indeksleme 1'den başlar).
 
-#### Q: Can I perform operations on the retrieved properties, such as modifying or resizing the page boxes?
+#### S: Alınan özellikler üzerinde sayfa kutularını değiştirmek veya yeniden boyutlandırmak gibi işlemler gerçekleştirebilir miyim?
 
-A: Yes, once you retrieve the properties of a PDF page using Aspose.PDF for .NET, you can perform various operations on them. For example, you can modify the dimensions of the page boxes, rotate the page, or use the retrieved information for custom processing and manipulation of the PDF document.
+C: Evet, Aspose.PDF for .NET'i kullanarak bir PDF sayfasının özelliklerini aldığınızda, bunlar üzerinde çeşitli işlemler gerçekleştirebilirsiniz. Örneğin, sayfa kutularının boyutlarını değiştirebilir, sayfayı döndürebilir veya alınan bilgileri PDF belgesinin özel işlenmesi ve işlenmesi için kullanabilirsiniz.
 
-#### Q: Does Aspose.PDF for .NET support extracting properties from encrypted or password-protected PDF files?
+#### S: Aspose.PDF for .NET, şifrelenmiş veya parola korumalı PDF dosyalarından özellik çıkarmayı destekliyor mu?
 
-A: Yes, Aspose.PDF for .NET supports extracting properties from encrypted or password-protected PDF files. As long as you provide the correct password to open the PDF document, you can access and retrieve its properties using the same approach demonstrated in the tutorial.
+C: Evet, Aspose.PDF for .NET, şifrelenmiş veya parola korumalı PDF dosyalarından özelliklerin çıkarılmasını destekler. PDF belgesini açmak için doğru parolayı sağladığınız sürece, eğitimde gösterilen yaklaşımın aynısını kullanarak belgenin özelliklerine erişebilir ve bunları alabilirsiniz.

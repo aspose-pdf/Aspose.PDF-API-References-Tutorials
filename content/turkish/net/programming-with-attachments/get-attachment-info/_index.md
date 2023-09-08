@@ -1,50 +1,50 @@
 ---
-title: Get Attachment Info
-linktitle: Get Attachment Info
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get information about a specific attachment in a PDF file with Aspose.PDF for .NET. Step by step guide.
+title: Ek Bilgisini Al
+linktitle: Ek Bilgisini Al
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile bir PDF dosyasındaki belirli bir ek hakkında nasıl bilgi alacağınızı öğrenin. Adım adım rehber.
 type: docs
 weight: 50
 url: /tr/net/programming-with-attachments/get-attachment-info/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to get the information about a specific attachment of a PDF file using Aspose.PDF for .NET.
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasının belirli bir eki hakkında bilgi almak için aşağıdaki C# kaynak kodunu adım adım anlatacağız.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ayrıca temel C# programlama bilgisine sahip olmak.
 
-### Step 1: Document Directory Setup
+### Adım 1: Belge Dizini Kurulumu
 
-In the source code provided, you need to specify the directory where the PDF file is located from which you want to get the attachment information. Change the "dataDir" variable to the desired directory.
+Verilen kaynak kodunda, ek bilgisini almak istediğiniz PDF dosyasının bulunduğu dizini belirtmeniz gerekmektedir. "dataDir" değişkenini istediğiniz dizine değiştirin.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### 2. Adım: Mevcut PDF belgesini açın
 
-We open the existing PDF document using the specified path.
+Mevcut PDF belgesini belirtilen yolu kullanarak açıyoruz.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAttachmentInfo.pdf");
 ```
 
-### Step 3: Obtaining a Specific Attachment
+### Adım 3: Belirli Bir Ekin Edinilmesi
 
-We retrieve a specific attachment from the document's attachments collection. In this example, we get the first attachment using index 1.
+Belgenin ekler koleksiyonundan belirli bir eki alıyoruz. Bu örnekte, dizin 1'i kullanarak ilk eki alıyoruz.
 
 ```csharp
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
 ```
 
-### Step 4: Get File Properties
+### Adım 4: Dosya Özelliklerini Alın
 
-We display attachment properties such as name, description, MIME type, control hash, date created, date modified, and size.
+Ad, açıklama, MIME türü, kontrol karması, oluşturulma tarihi, değiştirilme tarihi ve boyut gibi ek özelliklerini görüntüleriz.
 
 ```csharp
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Check if object parameters contain additional information
+// Nesne parametrelerinin ek bilgi içerip içermediğini kontrol edin
 if (fileSpecification.Params != null)
 {
 Console.WriteLine("Check Hash: {0}", fileSpecification.Params.CheckSum);
@@ -54,21 +54,21 @@ Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 ```
 
-### Sample source code for Get Attachment Info using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Ek Bilgisi Alma için örnek kaynak kodu
  
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "GetAttachmentInfo.pdf");
-// Get particular embedded file
+// Belirli bir gömülü dosyayı alın
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
-// Get the file properties
+// Dosya özelliklerini alın
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-// Check if parameter object contains the parameters
+//Parametre nesnesinin parametreleri içerip içermediğini kontrol edin
 if (fileSpecification.Params != null)
 {
 	Console.WriteLine("CheckSum: {0}",
@@ -82,44 +82,44 @@ if (fileSpecification.Params != null)
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we explained how to get the information about a specific attachment of a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and view attachment information from your PDF files.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF dosyasının belirli bir eki hakkında nasıl bilgi alınacağını açıkladık. Artık bu bilgiyi PDF dosyalarınızdaki ek bilgilerini ayıklamak ve görüntülemek için kullanabilirsiniz.
 
-### FAQ's for get attachment info 
+### Ek bilgilerini almak için SSS'ler 
 
-#### Q: Why would I need to retrieve information about specific attachments in a PDF document?
+#### S: Bir PDF belgesindeki belirli eklerle ilgili bilgileri neden almam gerekiyor?
 
-A: Retrieving attachment information allows you to understand and analyze the details of embedded files within a PDF, helping you manage and work with attachments effectively.
+C: Ek bilgilerini almak, PDF içindeki gömülü dosyaların ayrıntılarını anlamanıza ve analiz etmenize olanak tanıyarak, ekleri etkili bir şekilde yönetmenize ve bunlarla çalışmanıza yardımcı olur.
 
-#### Q: What type of information can I gather about a specific attachment using this tutorial?
+#### S: Bu öğreticiyi kullanarak belirli bir ek hakkında ne tür bilgiler toplayabilirim?
 
-A: This tutorial demonstrates how to retrieve and display attachment properties such as name, description, MIME type, control hash, creation date, modification date, and size.
+C: Bu eğitimde ad, açıklama, MIME türü, kontrol karması, oluşturulma tarihi, değişiklik tarihi ve boyut gibi ek özelliklerinin nasıl alınacağı ve görüntüleneceği gösterilmektedir.
 
-#### Q: How does this tutorial help me gather attachment information using Aspose.PDF for .NET?
+#### S: Bu eğitim Aspose.PDF for .NET kullanarak ek bilgilerini toplamama nasıl yardımcı oluyor?
 
-A: This tutorial provides step-by-step instructions and C# source code to access and display information about a specific attachment within a PDF document.
+C: Bu eğitimde, bir PDF belgesindeki belirli bir ek hakkındaki bilgilere erişmek ve bunları görüntülemek için adım adım talimatlar ve C# kaynak kodu sağlanır.
 
-#### Q: Can I retrieve information about all attachments instead of a specific attachment using this tutorial?
+#### S: Bu öğreticiyi kullanarak belirli bir ek yerine tüm eklerle ilgili bilgi alabilir miyim?
 
-A: This tutorial is focused on obtaining information about a specific attachment, but you can adapt the code to loop through all attachments and gather their information.
+C: Bu eğitim, belirli bir ek hakkında bilgi edinmeye odaklanmıştır, ancak kodu, tüm eklerin arasında dolaşıp bilgilerini toplayacak şekilde uyarlayabilirsiniz.
 
-#### Q: What is the purpose of the "Check Hash" property displayed in the attachment information?
+#### S: Ek bilgilerinde görüntülenen "Karma Kontrolü" özelliğinin amacı nedir?
 
-A: The "Check Hash" property represents the control hash value of the attachment, which can be used to verify the integrity of the attachment.
+C: "Karma Kontrolü" özelliği, ekin bütünlüğünü doğrulamak için kullanılabilen ekin kontrol karma değerini temsil eder.
 
-#### Q: How can I modify this code to retrieve information about attachments with different indices?
+#### S: Farklı dizinlere sahip ekler hakkında bilgi almak için bu kodu nasıl değiştirebilirim?
 
-A: You can change the index value (e.g., `pdfDocument.EmbeddedFiles[1]`) to retrieve information about attachments at different indices within the PDF document.
+ C: İndeks değerini değiştirebilirsiniz (örn.`pdfDocument.EmbeddedFiles[1]`) PDF belgesindeki farklı dizinlerdeki ekler hakkında bilgi almak için.
 
-#### Q: Can I use this knowledge to gather information from password-protected PDF files?
+#### S: Bu bilgiyi parola korumalı PDF dosyalarından bilgi toplamak için kullanabilir miyim?
 
-A: Yes, you can apply similar principles to gather attachment information from password-protected PDF files using Aspose.PDF for .NET.
+C: Evet, Aspose.PDF for .NET'i kullanarak parola korumalı PDF dosyalarından ek bilgileri toplamak için benzer ilkeleri uygulayabilirsiniz.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of obtaining attachment information?
+#### S: Aspose.PDF for .NET, ek bilgilerini alma sürecini nasıl basitleştirir?
 
-A: Aspose.PDF for .NET provides an intuitive API that allows you to access and manipulate attachment properties in PDF documents with ease.
+C: Aspose.PDF for .NET, PDF belgelerindeki ek özelliklerine kolaylıkla erişmenizi ve bunları değiştirmenizi sağlayan sezgisel bir API sağlar.
 
-#### Q: Are there specific scenarios where gathering attachment information is recommended?
+#### S: Ek bilgilerinin toplanmasının önerildiği belirli senaryolar var mı?
 
-A: Gathering attachment information is valuable when you need to understand the details of embedded files, such as verifying their properties or auditing attachments in a document.
+C: Ek bilgilerini toplamak, özelliklerini doğrulamak veya bir belgedeki ekleri denetlemek gibi gömülü dosyaların ayrıntılarını anlamanız gerektiğinde değerlidir.

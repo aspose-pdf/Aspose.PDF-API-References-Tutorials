@@ -1,43 +1,43 @@
 ---
-title: Get All The Attachments In PDF File
-linktitle: Get All The Attachments In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get all attachments in PDF file with Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: Obtenez toutes les pièces jointes dans un fichier PDF
+linktitle: Obtenez toutes les pièces jointes dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment obtenir toutes les pièces jointes dans un fichier PDF avec Aspose.PDF pour .NET. Guide étape par étape pour une manipulation facile.
 type: docs
 weight: 40
 url: /fr/net/programming-with-attachments/get-all-the-attachments/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to get all attachments in PDF file using Aspose.PDF for .NET.
+Dans ce didacticiel, nous vous guiderons étape par étape à travers le code source C# suivant pour obtenir toutes les pièces jointes d'un fichier PDF à l'aide d'Aspose.PDF pour .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Assurez-vous d'avoir installé la bibliothèque Aspose.PDF et configuré votre environnement de développement avant de commencer. Posséder également des connaissances de base en programmation C#.
 
-### Step 1: Document Directory Setup
+### Étape 1 : configuration du répertoire de documents
 
-In the provided source code, you need to specify the directory where the PDF file is located from which you want to get the attachments. Change the "dataDir" variable to the desired directory.
+Dans le code source fourni, vous devez spécifier le répertoire où se trouve le fichier PDF à partir duquel vous souhaitez obtenir les pièces jointes. Remplacez la variable "dataDir" par le répertoire souhaité.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Étape 2 : Ouvrez le document PDF existant
 
-We open the existing PDF document using the specified path.
+Nous ouvrons le document PDF existant en utilisant le chemin spécifié.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
 ```
 
-### Step 3: Obtaining the Attachments Collection
+### Étape 3 : Obtention de la collection de pièces jointes
 
-We get the collection of attachments from the document.
+Nous obtenons la collection de pièces jointes du document.
 
 ```csharp
 EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
 ```
 
-### Step 4: Retrieving attachments
+### Étape 4 : Récupération des pièces jointes
 
-We go through the collection to get all the attachments and display their information. We also save attachments in individual files.
+Nous parcourons la collection pour récupérer toutes les pièces jointes et afficher leurs informations. Nous enregistrons également les pièces jointes dans des fichiers individuels.
 
 ```csharp
 int count = 1;
@@ -47,7 +47,7 @@ Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Check if object parameters contain additional information
+// Vérifiez si les paramètres de l'objet contiennent des informations supplémentaires
 if (fileSpecification.Params != null)
 {
 Console.WriteLine("CheckSum: {0}", fileSpecification.Params.CheckSum);
@@ -56,7 +56,7 @@ Console.WriteLine("Modified date: {0}", fileSpecification.Params.ModDate);
 Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 
-// Retrieve the attachment and save in a file
+// Récupérer la pièce jointe et l'enregistrer dans un fichier
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
 fileSpecification.Contents.Read(fileContent, 0, fileContent.Length);
 FileStream fileStream = new FileStream(dataDir + count + "_out" + ".txt", FileMode.Create);
@@ -68,27 +68,27 @@ count += 1;
 ```
 
 
-### Sample source code for Get Allthe Attachments using Aspose.PDF for .NET 
+### Exemple de code source pour obtenir toutes les pièces jointes à l'aide d'Aspose.PDF pour .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Get embedded files collection
+// Obtenir la collection de fichiers intégrés
 EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
-// Get count of the embedded files
+// Obtenez le nombre de fichiers intégrés
 Console.WriteLine("Total files : {0}", embeddedFiles.Count);
 int count = 1;
-// Loop through the collection to get all the attachments
+// Parcourez la collection pour obtenir toutes les pièces jointes
 foreach (FileSpecification fileSpecification in embeddedFiles)
 {
 	Console.WriteLine("Name: {0}", fileSpecification.Name);
 	Console.WriteLine("Description: {0}",
 	fileSpecification.Description);
 	Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-	// Check if parameter object contains the parameters
+	//Vérifiez si l'objet paramètre contient les paramètres
 	if (fileSpecification.Params != null)
 	{
 		Console.WriteLine("CheckSum: {0}",
@@ -99,7 +99,7 @@ foreach (FileSpecification fileSpecification in embeddedFiles)
 		fileSpecification.Params.ModDate);
 		Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 	}
-	// Get the attachment and write to file or stream
+	// Obtenez la pièce jointe et écrivez dans un fichier ou un flux
 	byte[] fileContent = new byte[fileSpecification.Contents.Length];
 	fileSpecification.Contents.Read(fileContent, 0,
 	fileContent.Length);
@@ -114,42 +114,42 @@ foreach (FileSpecification fileSpecification in embeddedFiles)
 
 ## Conclusion
 
-In this tutorial, we explained how to get all attachments from a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and manipulate attachments from your PDF files.
+Dans ce didacticiel, nous avons expliqué comment obtenir toutes les pièces jointes d'un fichier PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais utiliser ces connaissances pour extraire et manipuler les pièces jointes de vos fichiers PDF.
 
-## FAQ's for get all the attachments in PDF file
+## FAQ pour obtenir toutes les pièces jointes dans un fichier PDF
 
-#### Q: Why would I need to retrieve all attachments from a PDF document?
+#### Q : Pourquoi devrais-je récupérer toutes les pièces jointes d'un document PDF ?
 
-A: Retrieving attachments allows you to access and manipulate additional files embedded within a PDF, which can be useful for archiving, sharing, or further processing.
+R : La récupération de pièces jointes vous permet d'accéder et de manipuler des fichiers supplémentaires intégrés dans un PDF, ce qui peut être utile pour l'archivage, le partage ou un traitement ultérieur.
 
-#### Q: What types of files can be attached to a PDF document?
+#### Q : Quels types de fichiers peuvent être joints à un document PDF ?
 
-A: PDF documents can contain a wide range of attached files, including images, documents, spreadsheets, audio files, and more.
+R : Les documents PDF peuvent contenir un large éventail de fichiers joints, notamment des images, des documents, des feuilles de calcul, des fichiers audio, etc.
 
-#### Q: How does this tutorial help me retrieve attachments from a PDF using Aspose.PDF for .NET?
+#### Q : Comment ce didacticiel m'aide-t-il à récupérer les pièces jointes d'un PDF à l'aide d'Aspose.PDF pour .NET ?
 
-A: This tutorial provides step-by-step instructions and C# source code to access and retrieve all attachments within a PDF document.
+R : Ce didacticiel fournit des instructions étape par étape et du code source C# pour accéder et récupérer toutes les pièces jointes d'un document PDF.
 
-#### Q: Can I retrieve specific attachments instead of all attachments using this tutorial?
+#### Q : Puis-je récupérer des pièces jointes spécifiques au lieu de toutes les pièces jointes à l'aide de ce didacticiel ?
 
-A: Yes, you can modify the provided code to selectively retrieve attachments based on your requirements.
+R : Oui, vous pouvez modifier le code fourni pour récupérer sélectivement les pièces jointes en fonction de vos besoins.
 
-#### Q: What information about each attachment can I obtain using this tutorial?
+#### Q : Quelles informations sur chaque pièce jointe puis-je obtenir à l'aide de ce didacticiel ?
 
-A: This tutorial demonstrates how to retrieve and display details such as the attachment's name, description, MIME type, creation date, modification date, and size.
+R : Ce didacticiel montre comment récupérer et afficher des détails tels que le nom, la description, le type MIME, la date de création, la date de modification et la taille de la pièce jointe.
 
-#### Q: How are the retrieved attachments saved using this tutorial?
+#### Q : Comment les pièces jointes récupérées sont-elles enregistrées à l'aide de ce didacticiel ?
 
-A: The tutorial guides you through saving each retrieved attachment as a separate file in the specified directory.
+R : Le didacticiel vous guide tout au long de l'enregistrement de chaque pièce jointe récupérée en tant que fichier distinct dans le répertoire spécifié.
 
-#### Q: Can I use this knowledge to extract attachments from password-protected PDF files?
+#### Q : Puis-je utiliser ces connaissances pour extraire des pièces jointes de fichiers PDF protégés par mot de passe ?
 
-A: Yes, you can apply similar principles to retrieve attachments from password-protected PDF files using Aspose.PDF for .NET.
+R : Oui, vous pouvez appliquer des principes similaires pour récupérer des pièces jointes à partir de fichiers PDF protégés par mot de passe à l'aide d'Aspose.PDF pour .NET.
 
-#### Q: How does Aspose.PDF for .NET facilitate attachment retrieval?
+#### Q : Comment Aspose.PDF pour .NET facilite-t-il la récupération des pièces jointes ?
 
-A: Aspose.PDF for .NET provides an intuitive API that allows you to access and manipulate attachments in PDF documents easily.
+R : Aspose.PDF pour .NET fournit une API intuitive qui vous permet d'accéder et de manipuler facilement les pièces jointes des documents PDF.
 
-#### Q: Are there specific scenarios where retrieving attachments is recommended?
+#### Q : Existe-t-il des scénarios spécifiques dans lesquels la récupération des pièces jointes est recommandée ?
 
-A: Retrieving attachments is useful when you need to access files embedded within a PDF, such as extracting images, audio files, or additional documents.
+R : La récupération de pièces jointes est utile lorsque vous devez accéder à des fichiers intégrés dans un PDF, par exemple pour extraire des images, des fichiers audio ou des documents supplémentaires.

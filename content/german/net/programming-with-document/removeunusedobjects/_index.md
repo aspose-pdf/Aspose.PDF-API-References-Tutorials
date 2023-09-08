@@ -1,33 +1,33 @@
 ---
-title: Remove Unused Objects In PDF File
-linktitle: Remove Unused Objects In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to remove unused objects in PDF file with this step-by-step guide.
+title: Entfernen Sie nicht verwendete Objekte in der PDF-Datei
+linktitle: Entfernen Sie nicht verwendete Objekte in der PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie in dieser Schritt-für-Schritt-Anleitung, wie Sie Aspose.PDF für .NET verwenden, um nicht verwendete Objekte in einer PDF-Datei zu entfernen.
 type: docs
 weight: 260
 url: /de/net/programming-with-document/removeunusedobjects/
 ---
-If you're looking for a way to remove unused objects in your PDF file using Aspose.PDF for .NET, you're in the right place. This step-by-step guide will show you how to use the C# source code provided to accomplish this task.
+Wenn Sie nach einer Möglichkeit suchen, mit Aspose.PDF für .NET nicht verwendete Objekte in Ihrer PDF-Datei zu entfernen, sind Sie hier richtig. Diese Schritt-für-Schritt-Anleitung zeigt Ihnen, wie Sie den bereitgestellten C#-Quellcode verwenden, um diese Aufgabe auszuführen.
 
-## Step 1: Set the directory path
+## Schritt 1: Legen Sie den Verzeichnispfad fest
 
-First, you need to set the path to your document directory by replacing "YOUR DOCUMENT DIRECTORY" with the appropriate path.
+Zuerst müssen Sie den Pfad zu Ihrem Dokumentverzeichnis festlegen, indem Sie „IHR DOKUMENTVERZEICHNIS“ durch den entsprechenden Pfad ersetzen.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the PDF document
+## Schritt 2: Öffnen Sie das PDF-Dokument
 
-Next, you need to open the PDF document that you want to optimize by using the following code:
+Als nächstes müssen Sie das PDF-Dokument öffnen, das Sie optimieren möchten, indem Sie den folgenden Code verwenden:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Step 3: Set RemoveUnusedObjects option
+## Schritt 3: Legen Sie die Option „RemoveUnusedObjects“ fest
 
-To remove unused objects in your PDF document, you need to set the RemoveUnusedObjects option to "true" as follows:
+Um nicht verwendete Objekte in Ihrem PDF-Dokument zu entfernen, müssen Sie die Option RemoveUnusedObjects wie folgt auf „true“ setzen:
 
 ```csharp
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
@@ -36,58 +36,58 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 };
 ```
 
-## Step 4: Optimize PDF document using OptimizationOptions
+## Schritt 4: Optimieren Sie das PDF-Dokument mit OptimizationOptions
 
-Now, you can optimize your PDF document by using the OptimizeResources method with the optimization options you just set:
+Jetzt können Sie Ihr PDF-Dokument optimieren, indem Sie die OptimizeResources-Methode mit den gerade festgelegten Optimierungsoptionen verwenden:
 
 ```csharp
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-## Step 5: Save the updated document
+## Schritt 5: Speichern Sie das aktualisierte Dokument
 
-Finally, you can save the updated document with the following code:
+Abschließend können Sie das aktualisierte Dokument mit dem folgenden Code speichern:
 
 ```csharp
 dataDir = dataDir + "OptimizeDocument_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-That's it! You've successfully removed unused objects from your PDF document using Aspose.PDF for .NET.
+Das ist es! Sie haben mithilfe von Aspose.PDF für .NET erfolgreich nicht verwendete Objekte aus Ihrem PDF-Dokument entfernt.
 
-### Example source code for Remove Unused Objects using Aspose.PDF for .NET:
+### Beispielquellcode zum Entfernen nicht verwendeter Objekte mit Aspose.PDF für .NET:
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Set RemoveUsedObject option 
+// Legen Sie die Option „RemoveUsedObject“ fest
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
 	RemoveUnusedObjects = true
 };
-// Optimize PDF document using OptimizationOptions
+// Optimieren Sie PDF-Dokumente mit OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
 dataDir = dataDir + "OptimizeDocument_out.pdf";
-// Save updated document
+// Aktualisiertes Dokument speichern
 pdfDocument.Save(dataDir);
 ```
 
-## Conclusion
+## Abschluss
 
-Optimizing PDF documents by removing unused objects is an essential step to improve file size and overall performance. Aspose.PDF for .NET simplifies this process by providing a straightforward method to remove unused objects using the `OptimizationOptions`. By following the step-by-step guide and using the provided C# source code, developers can easily optimize their PDF documents and achieve more efficient and faster PDF processing in their .NET applications.
+ Die Optimierung von PDF-Dokumenten durch Entfernen ungenutzter Objekte ist ein wesentlicher Schritt zur Verbesserung der Dateigröße und der Gesamtleistung. Aspose.PDF für .NET vereinfacht diesen Prozess, indem es eine unkomplizierte Methode zum Entfernen nicht verwendeter Objekte mithilfe von bietet`OptimizationOptions`. Indem Entwickler der Schritt-für-Schritt-Anleitung folgen und den bereitgestellten C#-Quellcode verwenden, können sie ihre PDF-Dokumente einfach optimieren und eine effizientere und schnellere PDF-Verarbeitung in ihren .NET-Anwendungen erreichen.
 
-### FAQ's for remove unused objects in PDF file
+### FAQs zum Entfernen nicht verwendeter Objekte in PDF-Dateien
 
-#### Q: What are unused objects in a PDF document?
+#### F: Was sind unbenutzte Objekte in einem PDF-Dokument?
 
-A: Unused objects in a PDF document are elements such as fonts, images, annotations, or other resources that are no longer referenced or used in the document's content. Removing these unused objects can significantly reduce the file size and optimize the PDF document.
+A: Nicht verwendete Objekte in einem PDF-Dokument sind Elemente wie Schriftarten, Bilder, Anmerkungen oder andere Ressourcen, auf die nicht mehr verwiesen wird oder die im Inhalt des Dokuments nicht mehr verwendet werden. Durch das Entfernen dieser nicht verwendeten Objekte kann die Dateigröße erheblich reduziert und das PDF-Dokument optimiert werden.
 
-#### Q: How does removing unused objects benefit PDF documents?
+#### F: Welchen Nutzen hat das Entfernen ungenutzter Objekte für PDF-Dokumente?
 
-A: Removing unused objects from a PDF document reduces its file size, leading to faster loading times, improved performance, and reduced storage space. It also helps in ensuring a more efficient user experience when sharing or distributing the PDF files.
+A: Durch das Entfernen nicht verwendeter Objekte aus einem PDF-Dokument wird dessen Dateigröße verringert, was zu schnelleren Ladezeiten, verbesserter Leistung und weniger Speicherplatz führt. Es trägt auch dazu bei, eine effizientere Benutzererfahrung beim Teilen oder Verteilen der PDF-Dateien zu gewährleisten.
 
-#### Q: Can developers control which unused objects to remove using Aspose.PDF for .NET?
+#### F: Können Entwickler mit Aspose.PDF für .NET steuern, welche nicht verwendeten Objekte entfernt werden sollen?
 
-A: Yes, developers can control the removal of unused objects by setting the `RemoveUnusedObjects` option in the `OptimizationOptions`. This allows them to decide whether to remove all unused objects or retain certain objects based on their specific requirements.
+ A: Ja, Entwickler können das Entfernen nicht verwendeter Objekte steuern, indem sie das festlegen`RemoveUnusedObjects` Option in der`OptimizationOptions`. Dadurch können sie je nach ihren spezifischen Anforderungen entscheiden, ob sie alle nicht verwendeten Objekte entfernen oder bestimmte Objekte behalten möchten.

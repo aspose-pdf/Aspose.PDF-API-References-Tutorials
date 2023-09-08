@@ -1,47 +1,47 @@
 ---
-title: Retrieve Form Field In Tab Order
-linktitle: Retrieve Form Field In Tab Order
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to retrieve form fields in tab order using Aspose.PDF for .NET.
+title: Hämta formulärfält i tabbordning
+linktitle: Hämta formulärfält i tabbordning
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du hämtar formulärfält i tabbordning med Aspose.PDF för .NET.
 type: docs
 weight: 240
 url: /sv/net/programming-with-forms/retrieve-form-field-in-tab-order/
 ---
-When working with PDF documents in C# using Aspose.PDF for .NET, you may come across a scenario where you need to retrieve form fields in a specific tab order. This can be useful when you want to perform operations on form fields based on their tab sequence. In this tutorial, we will guide you step by step on how to retrieve form fields in tab order using Aspose.PDF for .NET.
+När du arbetar med PDF-dokument i C# med Aspose.PDF för .NET kan du stöta på ett scenario där du behöver hämta formulärfält i en specifik tabbordning. Detta kan vara användbart när du vill utföra operationer på formulärfält baserat på deras fliksekvens. I den här handledningen guidar vi dig steg för steg om hur du hämtar formulärfält i tabbordning med Aspose.PDF för .NET.
 
-## Requirements
+## Krav
 
-Before we begin, make sure you have the following prerequisites:
+Innan vi börjar, se till att du har följande förutsättningar:
 
-- Visual Studio installed on your system
-- Aspose.PDF for .NET library installed
+- Visual Studio installerat på ditt system
+- Aspose.PDF för .NET-biblioteket installerat
 
-Now, let's dive into the steps to retrieve form fields in tab order.
+Låt oss nu dyka in i stegen för att hämta formulärfält i tabbordning.
 
-## Step 1: Setting the Document Directory
+## Steg 1: Ställa in dokumentkatalogen
 
-To start with, you need to set the document directory where your PDF document is located. You can do this by specifying the path to the directory in the `dataDir` variable.
+ Till att börja med måste du ställa in dokumentkatalogen där ditt PDF-dokument finns. Du kan göra detta genom att ange sökvägen till katalogen i`dataDir` variabel.
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Byta ut`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
 
-## Step 2: Loading the PDF Document
+## Steg 2: Ladda PDF-dokumentet
 
-In this step, we will load the PDF document using Aspose.PDF for .NET. The `Document` class provides the ability to load and manipulate PDF documents.
+ I det här steget kommer vi att ladda PDF-dokumentet med Aspose.PDF för .NET. De`Document` klass ger möjligheten att ladda och manipulera PDF-dokument.
 
 ```csharp
 Document doc = new Document(dataDir + "Test2.pdf");
 ```
 
-Here, `"Test2.pdf"` is the name of the PDF document you want to load. Make sure the document is present in the specified document directory.
+ Här,`"Test2.pdf"`är namnet på PDF-dokumentet du vill ladda. Se till att dokumentet finns i den angivna dokumentkatalogen.
 
-## Step 3: Retrieving Form Fields in Tab Order
+## Steg 3: Hämta formulärfält i tabbordning
 
-To retrieve form fields in tab order, we need to access the `FieldsInTabOrder` property of the `Page` class. This property returns a list of form fields sorted by their tab sequence.
+ För att hämta formulärfält i tabbordning måste vi komma åt`FieldsInTabOrder` egendom av`Page` klass. Den här egenskapen returnerar en lista med formulärfält sorterade efter deras fliksekvens.
 
 ```csharp
 Page page = doc.Pages[1];
@@ -53,11 +53,11 @@ foreach (Field field in fields)
 }
 ```
 
-In the above code snippet, we retrieve the form fields from the second page (`doc.Pages[1]`) and iterate through each field to concatenate their partial names into the `s` variable. You can modify this code snippet based on your specific requirements.
+I kodavsnittet ovan hämtar vi formulärfälten från den andra sidan (`doc.Pages[1]` ) och iterera genom varje fält för att sammanfoga deras delnamn till`s` variabel. Du kan ändra detta kodavsnitt baserat på dina specifika krav.
 
-## Step 4: Modifying the Tab Order
+## Steg 4: Ändra flikordningen
 
-If you want to modify the tab order of form fields, you can do so by accessing the `TabOrder` property of each field and assigning a new tab order value. Here's an example:
+ Om du vill ändra tabbordningen för formulärfält kan du göra det genom att gå till`TabOrder` egenskapen för varje fält och tilldela ett nytt tabbordningsvärde. Här är ett exempel:
 
 ```csharp
 (doc.Form[3] as Field).TabOrder = 1;
@@ -65,21 +65,21 @@ If you want to modify the tab order of form fields, you can do so by accessing t
 (doc.Form[2] as Field).TabOrder = 3;
 ```
 
-In the above code snippet, we assign new tab order values to three form fields (`doc.Form[3]`, `doc.Form[1]`, and `doc.Form[2]`). Adjust the field indices and tab order values according to your specific requirements.
+I kodavsnittet ovan tilldelar vi nya tabbordningsvärden till tre formulärfält (`doc.Form[3]`, `doc.Form[1]` , och`doc.Form[2]`). Justera fältindex och tabbordningsvärden enligt dina specifika krav.
 
-## Step 5: Saving the Modified Document
+## Steg 5: Spara det ändrade dokumentet
 
-After modifying the tab order of form fields, you need to save the modified document. You can do this using the `Save` method of the `Document` class.
+ Efter att ha ändrat tabbordningen för formulärfält måste du spara det ändrade dokumentet. Du kan göra detta med hjälp av`Save` metod för`Document` klass.
 
 ```csharp
 doc.Save(dataDir + "39522_out.pdf");
 ```
 
-Here, `"39522_out.pdf"` is the name of the output file where the modified document will be saved. Specify the desired name and location for the output file.
+ Här,`"39522_out.pdf"` är namnet på utdatafilen där det ändrade dokumentet kommer att sparas. Ange önskat namn och plats för utdatafilen.
 
-### Sample source code for Retrieve Form Field In Tab Order using Aspose.PDF for .NET 
+### Exempel på källkod för Hämta formulärfält i flikordning med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "Test2.pdf");
 Page page = doc.Pages[1];
@@ -106,29 +106,29 @@ foreach (Field field in doc1.Form)
 }
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we learned how to retrieve form fields in tab order using Aspose.PDF for .NET. We covered the steps involved in loading a PDF document, retrieving form fields in tab order, modifying the tab order, and saving the modified document. By following these steps, you can efficiently work with form fields and customize their tab sequence as per your requirements.
+I den här handledningen lärde vi oss hur man hämtar formulärfält i tabbordning med Aspose.PDF för .NET. Vi täckte stegen som är involverade i att ladda ett PDF-dokument, hämta formulärfält i tabbordning, ändra tabbordningen och spara det ändrade dokumentet. Genom att följa dessa steg kan du effektivt arbeta med formulärfält och anpassa deras fliksekvens enligt dina krav.
 
 
 ### FAQ's
 
-#### Q: How can I use the retrieved form fields in my C# code for further processing?
+#### F: Hur kan jag använda de hämtade formulärfälten i min C#-kod för vidare bearbetning?
 
-A: You can use the retrieved form fields in your C# code by accessing their properties such as `Value`, `Name`, `Rect`, etc. These properties allow you to read and modify the form field data as needed.
+ S: Du kan använda de hämtade formulärfälten i din C#-kod genom att komma åt deras egenskaper som t.ex`Value`, `Name`, `Rect`etc. Dessa egenskaper låter dig läsa och ändra formulärfältsdata efter behov.
 
-#### Q: Can I retrieve form fields from all pages of the PDF document in tab order?
+#### F: Kan jag hämta formulärfält från alla sidor i PDF-dokumentet i tabbordning?
 
-A: Yes, you can retrieve form fields from all pages of the PDF document by iterating through each page and accessing the `FieldsInTabOrder` property as shown in the tutorial. This will give you form fields sorted by their tab sequence across all pages.
+ S: Ja, du kan hämta formulärfält från alla sidor i PDF-dokumentet genom att iterera genom varje sida och komma åt`FieldsInTabOrder` egenskap som visas i handledningen. Detta ger dig formulärfält sorterade efter deras fliksekvens på alla sidor.
 
-#### Q: Is it possible to retrieve only specific types of form fields, such as text fields or checkboxes, in tab order?
+#### F: Är det möjligt att bara hämta specifika typer av formulärfält, såsom textfält eller kryssrutor, i tabbordning?
 
-A: Yes, you can filter form fields based on their types, such as text fields or checkboxes, after retrieving them in tab order. You can use conditional statements to check the type of each form field and process them accordingly.
+S: Ja, du kan filtrera formulärfält baserat på deras typer, såsom textfält eller kryssrutor, efter att ha hämtat dem i tabbordning. Du kan använda villkorliga uttalanden för att kontrollera typen av varje formulärfält och bearbeta dem därefter.
 
-#### Q: Can I retrieve form fields based on their names instead of tab order?
+#### F: Kan jag hämta formulärfält baserat på deras namn istället för tabbordning?
 
-A: Yes, you can retrieve form fields based on their names by using the `doc.Form` collection and specifying the field name as an index. For example, `doc.Form["fieldName"]` will retrieve the form field with the specified name.
+ S: Ja, du kan hämta formulärfält baserat på deras namn genom att använda`doc.Form` samling och ange fältnamnet som ett index. Till exempel,`doc.Form["fieldName"]`kommer att hämta formulärfältet med det angivna namnet.
 
-#### Q: Does Aspose.PDF for .NET support working with encrypted PDF documents?
+#### F: Stöder Aspose.PDF för .NET arbete med krypterade PDF-dokument?
 
-A: Yes, Aspose.PDF for .NET provides support for working with encrypted PDF documents. You can load and manipulate encrypted PDF files using appropriate password parameters.
+S: Ja, Aspose.PDF för .NET ger stöd för att arbeta med krypterade PDF-dokument. Du kan ladda och manipulera krypterade PDF-filer med lämpliga lösenordsparametrar.

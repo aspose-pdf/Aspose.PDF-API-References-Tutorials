@@ -1,51 +1,51 @@
 ---
-title: Remove Hyperlinks After Converting From Html
-linktitle: Remove Hyperlinks After Converting From Html
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to remove hyperlinks after converting HTML to PDF using Aspose.PDF for .NET.
+title: Html'den Dönüştürdükten Sonra Köprüleri Kaldır
+linktitle: Html'den Dönüştürdükten Sonra Köprüleri Kaldır
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak HTML'yi PDF'ye dönüştürdükten sonra köprüleri kaldırmak için adım adım kılavuz.
 type: docs
 weight: 250
 url: /tr/net/document-conversion/remove-hyperlinks-after-converting-from-html/
 ---
-In this tutorial, we'll walk you through the process of removing hyperlinks from a PDF file generated from an HTML file using Aspose.PDF for .NET. Hyperlinks are clickable links that may redirect to other pages or websites. By following the steps below, you will be able to remove hyperlinks from the resulting PDF file.
+Bu eğitimde, Aspose.PDF for .NET kullanılarak bir HTML dosyasından oluşturulan PDF dosyasındaki köprüleri kaldırma sürecinde size yol göstereceğiz. Köprüler, diğer sayfalara veya web sitelerine yönlendirme yapabilen tıklanabilir bağlantılardır. Aşağıdaki adımları izleyerek, ortaya çıkan PDF dosyasından köprüleri kaldırabileceksiniz.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Önkoşullar
+Başlamadan önce aşağıdaki önkoşulları karşıladığınızdan emin olun:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- C# programlama dili hakkında temel bilgiler.
+- Sisteminizde yüklü olan .NET için Aspose.PDF kütüphanesi.
+- Visual Studio gibi bir geliştirme ortamı.
 
-## Step 1: Loading HTML file and removing hyperlinks
-At this step, we will load the HTML file and remove the hyperlinks from the resulting PDF document. Use the following code:
+## 1. Adım: HTML dosyasını yükleme ve köprüleri kaldırma
+Bu adımda HTML dosyasını yükleyeceğiz ve ortaya çıkan PDF belgesindeki köprüleri kaldıracağız. Aşağıdaki kodu kullanın:
 
 ```csharp
-// Path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the HTML file using the HTML loading options
+// HTML yükleme seçeneklerini kullanarak HTML dosyasını yükleyin
 Document doc = new Document(dataDir + "SampleHtmlFile.html", new HtmlLoadOptions());
 
-// Browse the annotations of the first page of the document
+// Belgenin ilk sayfasındaki ek açıklamalara göz atın
 foreach(Annotation a in doc.Pages[1].Annotations)
 {
-     // Check if the annotation is a link
+     // Ek açıklamanın bir bağlantı olup olmadığını kontrol edin
      if (a.AnnotationType == AnnotationType.Link)
      {
          LinkAnnotation the = (LinkAnnotation)a;
         
-         // Check if the action is of type GoToURIAction
+         // Eylemin GoToURIAction türünde olup olmadığını kontrol edin
          if (the.Action is GoToURIAction)
          {
              GoToURIAction gta = (GoToURIAction)the.Action;
              gta.URI = "";
             
-             // Use a text fragment absorber to find matching text fragments
+             // Eşleşen metin parçalarını bulmak için bir metin parçası emici kullanın
              TextFragmentAbsorber tfa = new TextFragmentAbsorber();
              tfa.TextSearchOptions = new TextSearchOptions(a.Rect);
              doc.Pages[a.PageIndex].Accept(tfa);
             
-             // Loop through matching text fragments and remove attributes from hyperlinks
+             // Eşleşen metin parçaları arasında dolaşın ve köprülerden nitelikleri kaldırın
              foreach(TextFragment tf in tfa.TextFragments)
              {
                  tf.TextState.Underline = false;
@@ -53,28 +53,28 @@ foreach(Annotation a in doc.Pages[1].Annotations)
              }
          }
         
-         // Remove the annotation from the page
+         // Ek açıklamayı sayfadan kaldırın
          doc.Pages[a.PageIndex].Annotations.Delete(a);
      }
 }
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your HTML file is located.
+ Değiştirdiğinizden emin olun`"YOUR DOCUMENTS DIRECTORY"` HTML dosyanızın bulunduğu gerçek dizinle.
 
-## Step 2: Saving the resulting PDF file
-Finally, we'll save the resulting PDF file without the hyperlinks. Use the following code:
+## Adım 2: Ortaya çıkan PDF dosyasını kaydetme
+Son olarak, ortaya çıkan PDF dosyasını köprüler olmadan kaydedeceğiz. Aşağıdaki kodu kullanın:
 
 ```csharp
-// Save the resulting PDF file
+// Ortaya çıkan PDF dosyasını kaydedin
 doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 ```
 
-The code above saves the resulting PDF file with the filename `"RemoveHyperlinksFromText_out.pdf"`.
+ Yukarıdaki kod, ortaya çıkan PDF dosyasını dosya adıyla kaydeder.`"RemoveHyperlinksFromText_out.pdf"`.
 
-### Example source code for Remove Hyperlinks After Converting From Html using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Html'den Dönüştürdükten Sonra Köprüleri Kaldırmak için örnek kaynak kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document(dataDir + "SampleHtmlFile.html", new HtmlLoadOptions());
@@ -103,27 +103,27 @@ foreach (Annotation a in doc.Pages[1].Annotations)
 doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of removing hyperlinks from a PDF file generated from an HTML file using Aspose.PDF for .NET. By following the instructions described above, you will be able to successfully remove hyperlinks from the resulting PDF file.
+## Çözüm
+Bu eğitimde, Aspose.PDF for .NET kullanılarak bir HTML dosyasından oluşturulan bir PDF dosyasındaki köprüleri adım adım kaldırma işlemini ele aldık. Yukarıda açıklanan talimatları izleyerek, ortaya çıkan PDF dosyasından köprüleri başarıyla kaldırabileceksiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET nedir?
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers a wide range of functionalities, including the ability to convert HTML files to PDF and manipulate PDF content.
+C: Aspose.PDF for .NET, geliştiricilerin C# uygulamalarında PDF belgeleriyle çalışmasına olanak tanıyan güçlü bir kitaplıktır. HTML dosyalarını PDF'ye dönüştürme ve PDF içeriğini değiştirme yeteneği de dahil olmak üzere çok çeşitli işlevler sunar.
 
-#### Q: Why would I want to remove hyperlinks from a PDF file?
+#### S: Bir PDF dosyasındaki köprüleri neden kaldırmak isteyeyim?
 
-A: There are various reasons for removing hyperlinks from a PDF file. For example, you might want to eliminate external links for printing or archiving purposes or ensure that the PDF content is not navigable via hyperlinks.
+C: Bir PDF dosyasından köprüleri kaldırmanın çeşitli nedenleri vardır. Örneğin, yazdırma veya arşivleme amacıyla harici bağlantıları ortadan kaldırmak veya PDF içeriğinin köprüler aracılığıyla gezinilemez olmasını sağlamak isteyebilirsiniz.
 
-#### Q: How can I load an HTML file and remove hyperlinks using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak bir HTML dosyasını nasıl yükleyebilirim ve köprüleri nasıl kaldırabilirim?
 
-A: To load an HTML file and remove hyperlinks, you can use Aspose.PDF for .NET's `HtmlLoadOptions` class. Iterate through the annotations of the PDF pages to find link annotations and modify their attributes.
+ C: Bir HTML dosyası yüklemek ve köprüleri kaldırmak için Aspose.PDF for .NET'i kullanabilirsiniz.`HtmlLoadOptions` sınıf. Bağlantı ek açıklamalarını bulmak ve niteliklerini değiştirmek için PDF sayfalarındaki ek açıklamaları yineleyin.
 
-#### Q: Can I customize the output filename for the resulting PDF?
+#### S: Ortaya çıkan PDF için çıktı dosya adını özelleştirebilir miyim?
 
-A: Yes, you can customize the output filename for the resulting PDF file by modifying the code that saves the PDF document. Simply change the desired filename in the `doc.Save()` method.
+C: Evet, PDF belgesini kaydeden kodu değiştirerek, ortaya çıkan PDF dosyasının çıktı dosya adını özelleştirebilirsiniz. İstediğiniz dosya adını değiştirmeniz yeterlidir.`doc.Save()` yöntem.
 
-#### Q: Is it possible to selectively remove hyperlinks based on certain criteria?
+#### S: Köprüleri belirli kriterlere göre seçerek kaldırmak mümkün müdür?
 
-A: Yes, you can selectively remove hyperlinks based on specific criteria. For example, you can choose to remove only external links or links pointing to specific URLs.
+C: Evet, belirli ölçütlere göre köprüleri seçerek kaldırabilirsiniz. Örneğin, yalnızca harici bağlantıları veya belirli URL'lere işaret eden bağlantıları kaldırmayı seçebilirsiniz.

@@ -1,26 +1,26 @@
 ---
-title: Add Tooltip To Text In PDF File
-linktitle: Add Tooltip To Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add tooltips to text in PDF file using Aspose.PDF for .NET.
+title: 将工具提示添加到 PDF 文件中的文本
+linktitle: 将工具提示添加到 PDF 文件中的文本
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 将工具提示添加到 PDF 文件中的文本。
 type: docs
 weight: 90
 url: /zh/net/programming-with-text/add-tooltip-to-text/
 ---
-This tutorial will guide you through the process of adding tooltips to text in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+本教程将指导您完成使用 Aspose.PDF for .NET 将工具提示添加到 PDF 文件中的文本的过程。提供的 C# 源代码演示了必要的步骤。
 
-## Requirements
-Before you begin, ensure that you have the following:
+## 要求
+在开始之前，请确保您具备以下条件：
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio 或计算机上安装的任何其他 C# 编译器。
+- Aspose.PDF for .NET 库。您可以从 Aspose 官方网站下载它或使用 NuGet 等包管理器来安装它。
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## 第 1 步：设置项目
+1. 在您首选的开发环境中创建一个新的 C# 项目。
+2. 添加对 Aspose.PDF for .NET 库的引用。
 
-## Step 2: Import required namespaces
-In the code file where you want to add tooltips to text, add the following using directives at the top of the file:
+## 第2步：导入所需的命名空间
+在要向文本添加工具提示的代码文件中，在文件顶部添加以下 using 指令：
 
 ```csharp
 using Aspose.Pdf;
@@ -28,11 +28,11 @@ using Aspose.Pdf.Forms;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## 第三步：设置文档目录
+在代码中，找到显示以下内容的行`string dataDir = "YOUR DOCUMENT DIRECTORY";`并替换`"YOUR DOCUMENT DIRECTORY"`以及存储文档的目录的路径。
 
-## Step 4: Create a sample document with text
-Create a new `Document` object and add pages with text fragments. In the provided code, two text fragments are added to the document with the respective tooltip text.
+## 步骤 4：创建带有文本的示例文档
+创建一个新的`Document`对象并添加带有文本片段的页面。在提供的代码中，两个文本片段与各自的工具提示文本一起添加到文档中。
 
 ```csharp
 Document doc = new Document();
@@ -41,8 +41,8 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 ```
 
-## Step 5: Open the document and find the text fragments
-Load the created document using the `Document` constructor and find the text fragments that need tooltips using `TextFragmentAbsorber`.
+## 步骤5：打开文档并找到文本片段
+使用以下命令加载创建的文档`Document`构造函数并使用以下命令查找需要工具提示的文本片段`TextFragmentAbsorber`.
 
 ```csharp
 Document document = new Document(outputFile);
@@ -51,8 +51,8 @@ document.Pages.Accept(absorb);
 TextFragmentCollection textFragments = absorb.TextFragments;
 ```
 
-## Step 6: Add tooltips to the text fragments
-Loop through the extracted text fragments and create invisible buttons at their positions. Assign the desired tooltip text to the `AlternateName` property of the `ButtonField`. Add the button fields to the document's form.
+## 第 6 步：向文本片段添加工具提示
+循环遍历提取的文本片段并在其位置创建不可见的按钮。将所需的工具提示文本分配给`AlternateName`的财产`ButtonField`。将按钮字段添加到文档的表单中。
 
 ```csharp
 foreach(TextFragment fragment in textFragments)
@@ -63,8 +63,8 @@ foreach(TextFragment fragment in textFragments)
 }
 ```
 
-## Step 7: Repeat for additional text fragments with long tooltips
-Repeat steps 5 and 6 for text fragments with long tooltips. Modify the search criteria and tooltip text accordingly.
+## 第 7 步：对带有长工具提示的其他文本片段重复此操作
+对于带有长工具提示的文本片段，重复步骤 5 和 6。相应地修改搜索条件和工具提示文本。
 
 ```csharp
 absorb = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
@@ -79,49 +79,49 @@ foreach(TextFragment fragment in textFragments)
 }
 ```
 
-## Step 8: Save the modified document
-Save the modified PDF document using the `Save` method of the `Document` object.
+## 步骤8：保存修改后的文档
+使用以下命令保存修改后的 PDF 文档`Save`的方法`Document`目的。
 
 ```csharp
 document. Save(outputFile);
 ```
 
-### Sample source code for Add Tooltip To Text using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 将工具提示添加到文本的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outputFile = dataDir + "Tooltip_out.pdf";
-// Create sample document with text
+//创建带有文本的示例文档
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a tooltip"));
 doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a very long tooltip"));
 doc.Save(outputFile);
-// Open document with text
+//打开包含文本的文档
 Document document = new Document(outputFile);
-// Create TextAbsorber object to find all the phrases matching the regular expression
+//创建 TextAbsorber 对象以查找与正则表达式匹配的所有短语
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-// Accept the absorber for the document pages
+//接受文档页面的吸收器
 document.Pages.Accept(absorber);
-// Get the extracted text fragments
+//获取提取的文本片段
 TextFragmentCollection textFragments = absorber.TextFragments;
-// Loop through the fragments
+//循环遍历片段
 foreach (TextFragment fragment in textFragments)
 {
-	// Create invisible button on text fragment position
+	//在文本片段位置创建不可见按钮
 	ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-	// AlternateName value will be displayed as tooltip by a viewer application
+	//AlternateName 值将由查看器应用程序显示为工具提示
 	field.AlternateName = "Tooltip for text.";
-	// Add button field to the document
+	//将按钮字段添加到文档中
 	document.Form.Add(field);
 }
-// Next will be sapmle of very long tooltip
+//接下来是很长的工具提示的样本
 absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
 document.Pages.Accept(absorber);
 textFragments = absorber.TextFragments;
 foreach (TextFragment fragment in textFragments)
 {
 	ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-	// Set very long text
+	//设置很长的文本
 	field.AlternateName = "Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
 							" sed do eiusmod tempor incididunt ut labore et dolore magna" +
 							" aliqua. Ut enim ad minim veniam, quis nostrud exercitation" +
@@ -132,22 +132,22 @@ foreach (TextFragment fragment in textFragments)
 							" deserunt mollit anim id est laborum.";
 	document.Form.Add(field);
 }
-// Save document
+//保存文档
 document.Save(outputFile);
 ```
 
-## Conclusion
-You have successfully added tooltips to text in a PDF document using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## 结论
+您已使用 Aspose.PDF for .NET 成功将工具提示添加到 PDF 文档中的文本。现在可以在指定的输出文件路径中找到生成的 PDF 文件。
 
-## FAQs
+## 常见问题解答
 
-#### Q: What is the focus of this tutorial?
+#### 问：本教程的重点是什么？
 
-A: This tutorial focuses on adding tooltips to text within a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the steps required to achieve this.
+答：本教程重点介绍使用 Aspose.PDF for .NET 库向 PDF 文件中的文本添加工具提示。提供的 C# 源代码演示了实现此目的所需的步骤。
 
-#### Q: Which namespaces need to be imported for this tutorial?
+#### 问：本教程需要导入哪些命名空间？
 
-A: In the code file where you want to add tooltips to text, import the following namespaces at the beginning of the file:
+答：在要向文本添加工具提示的代码文件中，在文件开头导入以下命名空间：
 
 ```csharp
 using Aspose.Pdf;
@@ -155,30 +155,30 @@ using Aspose.Pdf.Forms;
 using Aspose.Pdf.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### 问：如何指定文档目录？
 
-A: In the code, find the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ A：在代码中找到这一行`string dataDir = "YOUR DOCUMENT DIRECTORY";`并替换`"YOUR DOCUMENT DIRECTORY"`与文档目录的实际路径。
 
-#### Q: How can I create a sample document with text?
+#### 问：如何创建带有文本的示例文档？
 
-A: In Step 4, you'll create a new `Document` object and add pages with text fragments. The code provided adds two text fragments with respective tooltip text.
+答：在第 4 步中，您将创建一个新的`Document`对象并添加带有文本片段的页面。提供的代码添加了两个文本片段以及各自的工具提示文本。
 
-#### Q: How do I open the document and find the text fragments?
+#### 问：如何打开文档并找到文本片段？
 
-A: In Step 5, you'll load the created document using the `Document` constructor and find the text fragments requiring tooltips using the `TextFragmentAbsorber`.
+答：在第 5 步中，您将使用以下命令加载创建的文档`Document`构造函数并使用以下命令查找需要工具提示的文本片段`TextFragmentAbsorber`.
 
-#### Q: How do I add tooltips to the text fragments?
+#### 问：如何向文本片段添加工具提示？
 
-A: In Step 6, you'll loop through the extracted text fragments and create invisible buttons at their positions. The tooltip text is assigned to the `AlternateName` property of the `ButtonField`, which is added to the document's form.
+答：在第 6 步中，您将循环遍历提取的文本片段并在其位置创建不可见的按钮。工具提示文本被分配给`AlternateName`的财产`ButtonField`，它被添加到文档的表单中。
 
-#### Q: How do I repeat the process for additional text fragments with long tooltips?
+#### 问：如何对带有长工具提示的其他文本片段重复该过程？
 
-A: For text fragments with long tooltips, repeat Steps 5 and 6. Modify the search criteria and tooltip text accordingly.
+答：对于带有长工具提示的文本片段，重复步骤 5 和 6。相应地修改搜索条件和工具提示文本。
 
-#### Q: How do I save the modified document?
+#### 问：如何保存修改后的文档？
 
-A: In Step 8, you'll save the modified PDF document using the `Save` method of the `Document` object.
+答：在步骤 8 中，您将使用以下命令保存修改后的 PDF 文档：`Save`的方法`Document`目的。
 
-#### Q: What is the main takeaway from this tutorial?
+#### 问：本教程的主要内容是什么？
 
-A: By following this tutorial, you've learned how to enhance your PDF document by adding tooltips to text using Aspose.PDF for .NET. This can provide valuable additional information for readers when they interact with the PDF content.
+答：通过学习本教程，您已经了解了如何使用 Aspose.PDF for .NET 向文本添加工具提示来增强 PDF 文档。这可以在读者与 PDF 内容交互时为他们提供有价值的附加信息。

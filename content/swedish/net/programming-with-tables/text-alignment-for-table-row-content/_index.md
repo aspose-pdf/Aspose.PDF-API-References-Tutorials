@@ -1,45 +1,45 @@
 ---
-title: Text Alignment For Table Row Content
-linktitle: Text Alignment For Table Row Content
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to align row content in a PDF table using Aspose.PDF for .NET.
+title: Textjustering för tabellradinnehåll
+linktitle: Textjustering för tabellradinnehåll
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du justerar radinnehåll i en PDF-tabell med Aspose.PDF för .NET.
 type: docs
 weight: 210
 url: /sv/net/programming-with-tables/text-alignment-for-table-row-content/
 ---
-In this tutorial, we will guide you step by step to align the contents of a row in a table of a PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+I den här handledningen guidar vi dig steg för steg för att anpassa innehållet i en rad i en tabell i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och visa dig hur du implementerar den.
 
-## Step 1: Creating the PDF document
-First, we'll create the PDF document:
+## Steg 1: Skapa PDF-dokumentet
+Först skapar vi PDF-dokumentet:
 
 ```csharp
 var dataDir = "YOUR DOCUMENTS DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Step 2: Table initialization
-Next, we will initialize the table:
+## Steg 2: Tabellinitiering
+Därefter kommer vi att initiera tabellen:
 
 ```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 ```
 
-## Step 3: Setting the table border color
-We will configure the table border color:
+## Steg 3: Ställa in bordets kantfärg
+Vi kommer att konfigurera tabellkantfärgen:
 
 ```csharp
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-## Step 4: Configuring the table cell border
-We are going to configure the table cell border:
+## Steg 4: Konfigurera tabellcellskanten
+Vi kommer att konfigurera tabellcellsgränsen:
 
 ```csharp
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-## Step 5: Loop to add 10 rows to the table
-We will now use a loop to add 10 rows to the table:
+## Steg 5: Slinga för att lägga till 10 rader i tabellen
+Vi kommer nu att använda en slinga för att lägga till 10 rader i tabellen:
 
 ```csharp
 for (int row_count = 0; row_count < 10; row_count++)
@@ -53,15 +53,15 @@ for (int row_count = 0; row_count < 10; row_count++)
 }
 ```
 
-## Step 6: Configuring the vertical line alignment
-We are going to configure the vertical alignment of the rows of the table:
+## Steg 6: Konfigurera den vertikala linjejusteringen
+Vi kommer att konfigurera den vertikala justeringen av tabellens rader:
 
 ```csharp
 row.VerticalAlignment = VerticalAlignment.Center;
 ```
 
-## Step 7: Adding content to row cells
-We are going to add content to the row cells:
+## Steg 7: Lägga till innehåll i radceller
+Vi kommer att lägga till innehåll i radcellerna:
 
 ```csharp
 row.Cells.Add("Column("+row_count+",1)"+DateTime.Now.Ticks);
@@ -69,38 +69,38 @@ row.Cells.Add("Column("+row_count+",2)");
 row.Cells.Add("Column("+row_count+",3)");
 ```
 
-## Step 8: Adding the table to the document page
-Now let's add the table to the document page:
+## Steg 8: Lägga till tabellen på dokumentsidan
+Låt oss nu lägga till tabellen på dokumentsidan:
 
 ```csharp
 Page tocPage = doc.Pages.Add();
 tocPage.Paragraphs.Add(table);
 ```
 
-## Step 9: Saving the PDF document
-Finally, we will save the PDF document:
+## Steg 9: Spara PDF-dokumentet
+Slutligen kommer vi att spara PDF-dokumentet:
 
 ```csharp
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-### Example source code for Text Alignment For Table Row Content using Aspose.PDF for .NET
+### Exempel på källkod för textjustering för tabellradsinnehåll med Aspose.PDF för .NET
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create PDF document
+// Skapa PDF-dokument
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-// Initializes a new instance of the Table
+// Initierar en ny instans av tabellen
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Set the table border color as LightGray
+// Ställ in bordets kantfärg som ljusgrå
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// set the border for table cells
+// ställ in gränsen för tabellceller
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// create a loop to add 10 rows
+// skapa en slinga för att lägga till 10 rader
 for (int row_count = 0; row_count < 10; row_count++)
 {
-	// add row to table
+	// lägg till rad i tabellen
 	Aspose.Pdf.Row row = table.Rows.Add();
 	row.VerticalAlignment = VerticalAlignment.Center;
 
@@ -109,33 +109,33 @@ for (int row_count = 0; row_count < 10; row_count++)
 	row.Cells.Add("Column (" + row_count + ", 3)");
 }
 Page tocPage = doc.Pages.Add();
-// Add table object to first page of input document
+// Lägg till tabellobjekt på första sidan i inmatningsdokumentet
 tocPage.Paragraphs.Add(table);
-// Save updated document containing table object
+// Spara uppdaterat dokument som innehåller tabellobjekt
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to align the contents of a row in a table in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to create a document, initialize a table, configure border and alignment, add content, and save the PDF document. Now you can apply this knowledge to your own projects.
+## Slutsats
+Grattis! Du har nu lärt dig hur du justerar innehållet i en rad i en tabell i ett PDF-dokument med Aspose.PDF för .NET. Den här steg-för-steg-guiden visade hur du skapar ett dokument, initierar en tabell, konfigurerar kantlinje och justering, lägger till innehåll och sparar PDF-dokumentet. Nu kan du tillämpa denna kunskap i dina egna projekt.
 
 ### FAQ's
 
-#### Q: How can I align the contents of the table cells horizontally?
+#### F: Hur kan jag justera innehållet i tabellcellerna horisontellt?
 
-A: You can align the contents of the table cells horizontally by setting the `HorizontalAlign` property of the cell's `TextState` object. For example, to center-align the text, use `cell.TextState.HorizontalAlignment = HorizontalAlignment.Center`. You can also set it to `HorizontalAlignment.Left` or `HorizontalAlignment.Right` for left and right alignment, respectively.
+ S: Du kan justera innehållet i tabellcellerna horisontellt genom att ställa in`HorizontalAlign` egenskap hos cellens`TextState` objekt. Använd till exempel för att centrera texten`cell.TextState.HorizontalAlignment = HorizontalAlignment.Center` . Du kan också ställa in den på`HorizontalAlignment.Left` eller`HorizontalAlignment.Right` för vänster- respektive högerjustering.
 
-#### Q: Can I apply different border styles and colors to individual cells within the table?
+#### F: Kan jag använda olika kantstilar och färger på enskilda celler i tabellen?
 
-A: Yes, you can apply different border styles and colors to individual cells within the table. To customize the border for a specific cell, set the `cell.Border` property to a new `BorderInfo` object with the desired settings, such as border sides, width, and color.
+ S: Ja, du kan använda olika kantstilar och färger på enskilda celler i tabellen. För att anpassa gränsen för en specifik cell, ställ in`cell.Border` egendom till en ny`BorderInfo`objekt med önskade inställningar, såsom kantsidor, bredd och färg.
 
-#### Q: How can I adjust the vertical alignment of the table content within the cells?
+#### F: Hur kan jag justera den vertikala justeringen av tabellinnehållet i cellerna?
 
-A: You can adjust the vertical alignment of the table content within the cells by setting the `VerticalAlignment` property of the row to `VerticalAlignment.Center`, `VerticalAlignment.Top`, or `VerticalAlignment.Bottom`. This property controls the vertical alignment of all cells in that row.
+ S: Du kan justera den vertikala justeringen av tabellinnehållet i cellerna genom att ställa in`VerticalAlignment` radens egendom till`VerticalAlignment.Center`, `VerticalAlignment.Top` , eller`VerticalAlignment.Bottom`. Den här egenskapen styr den vertikala justeringen av alla celler i den raden.
 
-#### Q: Is it possible to add more columns or rows to the table dynamically?
+#### F: Är det möjligt att lägga till fler kolumner eller rader i tabellen dynamiskt?
 
-A: Yes, you can add more columns and rows to the table dynamically by using the `table.Rows.Add()` method to add new rows and the `row.Cells.Add()` method to add new cells to the rows. You can do this inside loops or based on your specific requirements.
+ S: Ja, du kan lägga till fler kolumner och rader i tabellen dynamiskt genom att använda`table.Rows.Add()` metod för att lägga till nya rader och`row.Cells.Add()` metod för att lägga till nya celler i raderna. Du kan göra detta inuti slingor eller baserat på dina specifika krav.
 
-#### Q: How can I set a background color for specific cells or the entire table?
+#### F: Hur kan jag ställa in en bakgrundsfärg för specifika celler eller hela tabellen?
 
-A: To set a background color for specific cells or the entire table, use the `BackgroundColor` property of the `Cell` or `Table` object. For example, to set the background color of a cell, use `cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.
+ S: För att ställa in en bakgrundsfärg för specifika celler eller hela tabellen, använd`BackgroundColor` egendom av`Cell` eller`Table` objekt. Använd till exempel för att ställa in bakgrundsfärgen för en cell`cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.

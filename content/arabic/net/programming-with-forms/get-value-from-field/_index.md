@@ -1,82 +1,82 @@
 ---
-title: Get Value From Field In PDF Document
-linktitle: Get Value From Field In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get the value of a form field in PDF document with Aspose.PDF for .NET.
+title: احصل على القيمة من الحقل في مستند PDF
+linktitle: احصل على القيمة من الحقل في مستند PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: احصل بسهولة على قيمة حقل النموذج في مستند PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 140
 url: /ar/net/programming-with-forms/get-value-from-field/
 ---
-In this tutorial, we will show you how to get the value of a form field using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+سنوضح لك في هذا البرنامج التعليمي كيفية الحصول على قيمة حقل النموذج باستخدام Aspose.PDF لـ .NET. سنشرح لك كود مصدر C# خطوة بخطوة لإرشادك خلال هذه العملية.
 
-## Step 1: Preparation
+## الخطوة 1: التحضير
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+تأكد من استيراد المكتبات الضرورية وتعيين المسار إلى دليل المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the document
+## الخطوة 2: افتح المستند
 
-Open the PDF document:
+افتح مستند PDF:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetValueFromField.pdf");
 ```
 
-## Step 3: Get Field
+## الخطوة 3: الحصول على الحقل
 
-Get the desired form field (in this example, we're using the "textbox1" field):
+احصل على حقل النموذج المطلوب (في هذا المثال، نستخدم الحقل "textbox1"):
 
 ```csharp
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 ```
 
-## Step 4: Get field value
+## الخطوة 4: الحصول على قيمة الحقل
 
-Get the field value using the `Value` property:
+ احصل على قيمة الحقل باستخدام`Value` ملكية:
 
 ```csharp
 Console.WriteLine("PartialName: {0}", textBoxField.PartialName);
 Console.WriteLine("Value: {0}", textBoxField.Value);
 ```
 
-### Sample source code for Get Value From Field using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للحصول على قيمة من الحقل باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "GetValueFromField.pdf");
-// Get a field
+// احصل على حقل
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
-// Get field value
+// الحصول على قيمة الحقل
 Console.WriteLine("PartialName : {0} ", textBoxField.PartialName);
 Console.WriteLine("Value : {0} ", textBoxField.Value);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to get the value of a form field using Aspose.PDF for .NET. By following these steps, you can easily extract the value of a specific form field in your PDF documents using Aspose.PDF.
+في هذا البرنامج التعليمي، تعلمنا كيفية الحصول على قيمة حقل النموذج باستخدام Aspose.PDF لـ .NET. باتباع هذه الخطوات، يمكنك بسهولة استخراج قيمة حقل نموذج معين في مستندات PDF الخاصة بك باستخدام Aspose.PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Can I get the value of a form field without knowing its name beforehand?
+#### س: هل يمكنني الحصول على قيمة حقل نموذج دون معرفة اسمه مسبقًا؟
 
-A: No, you need to know the name or partial name of the form field to get its value using Aspose.PDF for .NET. The `pdfDocument.Form["fieldname"]` syntax requires the exact name or partial name of the form field to access its properties, including the value.
+ ج: لا، أنت بحاجة إلى معرفة الاسم أو الاسم الجزئي لحقل النموذج للحصول على قيمته باستخدام Aspose.PDF لـ .NET. ال`pdfDocument.Form["fieldname"]` يتطلب بناء الجملة الاسم الدقيق أو الاسم الجزئي لحقل النموذج للوصول إلى خصائصه، بما في ذلك القيمة.
 
-#### Q: What if the form field does not exist in the PDF document?
+#### س: ماذا لو كان حقل النموذج غير موجود في مستند PDF؟
 
-A: If the form field does not exist in the PDF document, the `pdfDocument.Form["fieldname"]` syntax will return `null`. It's essential to handle such cases by checking for `null` before accessing the properties of the form field to avoid exceptions.
+ ج: إذا لم يكن حقل النموذج موجودًا في مستند PDF، فسيتم`pdfDocument.Form["fieldname"]` سوف يعود بناء الجملة`null` . من الضروري التعامل مع مثل هذه الحالات عن طريق التحقق منها`null` قبل الوصول إلى خصائص حقل النموذج لتجنب الاستثناءات.
 
-#### Q: How can I handle different types of form fields (e.g., checkboxes, radio buttons) to get their values?
+#### س: كيف يمكنني التعامل مع أنواع مختلفة من حقول النموذج (على سبيل المثال، خانات الاختيار وأزرار الاختيار) للحصول على قيمها؟
 
-A: To handle different types of form fields, you can use the appropriate field classes available in Aspose.PDF for .NET. For example, use `CheckBoxField` to work with checkboxes and `RadioButtonField` to work with radio buttons. Once you have the correct field object, you can access its properties, including the value.
+ ج: للتعامل مع أنواع مختلفة من حقول النماذج، يمكنك استخدام فئات الحقول المناسبة المتوفرة في Aspose.PDF لـ .NET. على سبيل المثال، استخدم`CheckBoxField` للعمل مع خانات الاختيار و`RadioButtonField`للعمل مع أزرار الاختيار. بمجرد حصولك على كائن الحقل الصحيح، يمكنك الوصول إلى خصائصه، بما في ذلك القيمة.
 
-#### Q: Can I get the values of multiple form fields at once?
+#### س: هل يمكنني الحصول على قيم حقول النموذج المتعددة في وقت واحد؟
 
-A: Yes, you can get the values of multiple form fields at once by iterating through the form fields collection using a loop or LINQ queries. This way, you can access the value of each form field in the PDF document programmatically.
+ج: نعم، يمكنك الحصول على قيم حقول نماذج متعددة مرة واحدة عن طريق التكرار عبر مجموعة حقول النموذج باستخدام حلقة أو استعلامات LINQ. بهذه الطريقة، يمكنك الوصول إلى قيمة كل حقل نموذج في وثيقة PDF برمجياً.
 
-#### Q: Is it possible to modify the value of a form field and save the changes back to the PDF document?
+#### س: هل من الممكن تعديل قيمة حقل النموذج وحفظ التغييرات مرة أخرى في مستند PDF؟
 
-A: Yes, you can modify the value of a form field using Aspose.PDF for .NET and save the changes back to the PDF document. After updating the `Value` property of the form field, you can use the `pdfDocument.Save()` method to save the changes to the original PDF document.
+ ج: نعم، يمكنك تعديل قيمة حقل النموذج باستخدام Aspose.PDF لـ .NET وحفظ التغييرات مرة أخرى في مستند PDF. بعد تحديث`Value` خاصية حقل النموذج، يمكنك استخدام`pdfDocument.Save()` طريقة لحفظ التغييرات على مستند PDF الأصلي.

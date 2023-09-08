@@ -1,33 +1,33 @@
 ---
-title: Strike Out Words
-linktitle: Strike Out Words
-second_title: Aspose.PDF for .NET API Reference
-description: This article provides a step-by-step guide to using Aspose.PDF for .NET's Strike Out Words feature, including step by step guide and explanations
+title: Вычеркнуть слова
+linktitle: Вычеркнуть слова
+second_title: Справочник по Aspose.PDF для .NET API
+description: В этой статье представлено пошаговое руководство по использованию Aspose.PDF для функции «Зачеркнуть слова» в .NET, включая пошаговое руководство и пояснения.
 type: docs
 weight: 150
 url: /ru/net/annotations/strikeoutwords/
 ---
-Aspose.PDF for .NET is a PDF document manipulation and processing library that provides various features to create, modify, and convert PDF files. One of the useful features that Aspose.PDF provides is the ability to strike out words or phrases in a PDF document using C# source code. In this article, we will provide a step-by-step guide on how to strike out words using Aspose.PDF for .NET.
+Aspose.PDF для .NET — это библиотека манипулирования и обработки PDF-документов, которая предоставляет различные функции для создания, изменения и преобразования PDF-файлов. Одной из полезных функций, предоставляемых Aspose.PDF, является возможность вычеркивать слова или фразы в PDF-документе с использованием исходного кода C#. В этой статье мы предоставим пошаговое руководство о том, как вычеркивать слова с помощью Aspose.PDF для .NET.
 
-## Step 1: Loading the PDF document
-The first step is to load the PDF document that you want to modify. In this tutorial, we will load a PDF document named "input.pdf" from the "YOUR DOCUMENT DIRECTORY" folder. 
+## Шаг 1. Загрузка PDF-документа
+Первый шаг — загрузить PDF-документ, который вы хотите изменить. В этом уроке мы загрузим PDF-документ с именем «input.pdf» из папки «ВАШ ДОКУМЕНТНЫЙ КАТАЛОГ». 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## Step 2: Searching for text fragments
-To strike out specific words or phrases in the PDF document, you first need to search for them. Aspose.PDF provides a TextFragmentAbsorber class that can be used to search for a specific text fragment in the PDF document.
+## Шаг 2: Поиск фрагментов текста
+Чтобы вычеркнуть определенные слова или фразы в документе PDF, сначала необходимо выполнить их поиск. Aspose.PDF предоставляет класс TextFragmentAbsorber, который можно использовать для поиска определенного фрагмента текста в PDF-документе.
 
 ```csharp
 Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
 ```
 
-In the above code, we are searching for the text fragment "Estoque" in the PDF document. You can modify this to search for any other word or phrase that you want to strike out.
+В приведенном выше коде мы ищем текстовый фрагмент «Estoque» в PDF-документе. Вы можете изменить это, чтобы искать любое другое слово или фразу, которую вы хотите вычеркнуть.
 
-## Step 3: Striking out the text fragments
-After finding the text fragments, the next step is to strike them out. Aspose.PDF provides a StrikeOutAnnotation class that can be used to create a strike-out annotation for the text fragment. 
+## Шаг 3. Вычеркивание фрагментов текста
+После обнаружения фрагментов текста следующим шагом будет их вычеркивание. Aspose.PDF предоставляет класс StrikeOutAnnotation, который можно использовать для создания зачеркнутой аннотации для текстового фрагмента. 
 
 ```csharp
 Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle((float)textFragment.Position.XIndent, (float)textFragment.Position.YIndent, (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width, (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
@@ -39,46 +39,46 @@ strikeOut.Color = Aspose.Pdf.Color.Red;
 textFragment.Page.Annotations.Add(strikeOut);
 ```
 
-In the above code, we are creating a strike-out annotation for each text fragment that we found. We are setting the opacity, border, and color of the strike-out annotation as well.
+В приведенном выше коде мы создаем зачеркнутую аннотацию для каждого найденного фрагмента текста. Мы также устанавливаем непрозрачность, границу и цвет зачеркнутой аннотации.
 
-## Step 4: Saving the modified PDF document
-After striking out the text fragments, the save the modified document.
+## Шаг 4. Сохранение измененного PDF-документа.
+После вычеркивания фрагментов текста сохраните измененный документ.
 
 ```csharp
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
 
-### Example source code for Strike Out Words using Aspose.PDF for .NET
+### Пример исходного кода для вычеркивания слов с использованием Aspose.PDF для .NET
 
 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Открыть документ
 Document document = new Document(dataDir + "input.pdf");
 
-// Create TextFragment Absorber instance to search particular text fragment
+// Создайте экземпляр TextFragment Absorber для поиска определенного фрагмента текста.
 Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
-// Iterate through pages of PDF document
+// Перебирать страницы PDF-документа
 for (int i = 1; i <= document.Pages.Count; i++)
 {
-	// Get first page of PDF document
+	// Получить первую страницу PDF-документа
 	Page page = document.Pages[1];
 	page.Accept(textFragmentAbsorber);
 }
 
-// Create a collection of Absorbed text
+// Создайте коллекцию поглощенного текста.
 Aspose.Pdf.Text.TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 
-// Iterate on above collection
+//Перебрать вышеуказанную коллекцию
 for (int j = 1; j <= textFragmentCollection.Count; j++)
 {
 	Aspose.Pdf.Text.TextFragment textFragment = textFragmentCollection[j];
 
-	// Get rectangular dimensions of TextFragment object  	
+	// Получить прямоугольные размеры объекта TextFragment
 	Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
 				(float)textFragment.Position.XIndent,
 				(float)textFragment.Position.YIndent,
@@ -87,39 +87,39 @@ for (int j = 1; j <= textFragmentCollection.Count; j++)
 				(float)textFragment.Position.YIndent +
 				(float)textFragment.Rectangle.Height);
 
-	// Instantiate StrikeOut Annotation instance
+	// Создание экземпляра аннотации StrikeOut
 	StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-	// Set opacity for annotation
+	// Установить непрозрачность аннотации
 	strikeOut.Opacity = .80f;
-	// Set the border for annotation instance
+	// Установите границу для экземпляра аннотации
 	strikeOut.Border = new Border(strikeOut);
-	// Set the color of annotation
+	// Установить цвет аннотации
 	strikeOut.Color = Aspose.Pdf.Color.Red;
-	// Add annotation to annotations collection of TextFragment
+	// Добавить аннотацию в коллекцию аннотаций TextFragment
 	textFragment.Page.Annotations.Add(strikeOut);
 }
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we learned how to use Aspose.PDF for .NET to strike out specific words in a PDF document. By following the step-by-step guide and using the provided C# source code, you can easily load a PDF document, search for specific text fragments, and create strike-out annotations to visually mark and strike out those words. Aspose.PDF for .NET provides a simple and effective way to manipulate PDF documents programmatically, making it a valuable tool for developers working with PDF files in .NET applications.
+В этом уроке мы узнали, как использовать Aspose.PDF для .NET для вычеркивания определенных слов в PDF-документе. Следуя пошаговому руководству и используя предоставленный исходный код C#, вы можете легко загрузить PDF-документ, искать определенные фрагменты текста и создавать зачеркивающие аннотации, чтобы визуально отмечать и зачеркивать эти слова. Aspose.PDF для .NET предоставляет простой и эффективный способ программного управления PDF-документами, что делает его ценным инструментом для разработчиков, работающих с PDF-файлами в приложениях .NET.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is Aspose.PDF for .NET?
+#### Вопрос: Что такое Aspose.PDF для .NET?
 
-A: Aspose.PDF for .NET is a powerful library that allows developers to create, edit, and manipulate PDF documents programmatically in .NET applications. It provides a wide range of features to work with PDF files, including text extraction, annotation handling, form filling, and much more.
+О: Aspose.PDF для .NET — это мощная библиотека, которая позволяет разработчикам программно создавать, редактировать и манипулировать PDF-документами в приложениях .NET. Он предоставляет широкий спектр функций для работы с PDF-файлами, включая извлечение текста, обработку аннотаций, заполнение форм и многое другое.
 
-#### Q: Can I use Aspose.PDF for .NET to strike out specific words in a PDF document?
+#### Вопрос: Могу ли я использовать Aspose.PDF для .NET, чтобы вычеркивать определенные слова в PDF-документе?
 
-A: Yes, Aspose.PDF for .NET provides functionality to search for specific text fragments in a PDF document and then create strike-out annotations to visually mark and strike out those words.
+О: Да, Aspose.PDF для .NET предоставляет функциональные возможности для поиска определенных фрагментов текста в PDF-документе, а затем создания зачеркивающих аннотаций для визуального выделения и зачеркивания этих слов.
 
-#### Q: How do I specify the text I want to strike out in the PDF document?
+#### Вопрос: Как указать текст, который я хочу зачеркнуть в PDF-документе?
 
-A: To specify the text you want to strike out, you can use the `TextFragmentAbsorber` class provided by Aspose.PDF for .NET. It allows you to search for a specific text fragment in the PDF document based on your desired criteria.
+ О: Чтобы указать текст, который вы хотите зачеркнуть, вы можете использовать`TextFragmentAbsorber` класс, предоставленный Aspose.PDF для .NET. Он позволяет вам искать определенный фрагмент текста в PDF-документе по желаемым критериям.
 
-#### Q: Can I customize the appearance of the strike-out annotation?
+#### Вопрос: Могу ли я настроить внешний вид зачеркнутой аннотации?
 
-A: Yes, you can customize various properties of the strike-out annotation, such as the opacity, border style, and color. This allows you to tailor the appearance of the strike-out annotation to your specific requirements.
+О: Да, вы можете настроить различные свойства зачеркнутой аннотации, такие как непрозрачность, стиль границы и цвет. Это позволяет адаптировать внешний вид зачеркнутой аннотации к вашим конкретным требованиям.

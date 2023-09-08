@@ -1,22 +1,22 @@
 ---
-title: Set Field Limit
-linktitle: Set Field Limit
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set a field boundary in a PDF document using Aspose.PDF for .NET.
+title: Alan Sınırını Ayarla
+linktitle: Alan Sınırını Ayarla
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak bir PDF belgesinde alan sınırını nasıl ayarlayacağınızı öğrenin.
 type: docs
 weight: 260
 url: /tr/net/programming-with-forms/set-field-limit/
 ---
-Here is a detailed tutorial on how to set a field boundary using Aspose.PDF for .NET. Follow these steps:
+Burada Aspose.PDF for .NET kullanılarak alan sınırının nasıl belirleneceğine ilişkin ayrıntılı bir eğitim bulunmaktadır. Bu adımları takip et:
 
-## Step 1: Start by defining the directory of your documents by specifying the path in the `dataDir` variable.
+##  Adım 1: Dosyadaki yolu belirterek belgelerinizin dizinini tanımlayarak başlayın.`dataDir` variable.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Add the field with a boundary using the `FormEditor` class.
+##  Adım 2: Sınırı olan alanı şunu kullanarak ekleyin:`FormEditor` class.
 
 ```csharp
 FormEditor form = new FormEditor();
@@ -24,29 +24,29 @@ form.BindPdf(dataDir + "input.pdf");
 form.SetFieldLimit("textbox1", 15);
 ```
 
-## Step 3: Set the output path for the edited PDF file.
+## Adım 3: Düzenlenen PDF dosyasının çıktı yolunu ayarlayın.
 
 ```csharp
 dataDir = dataDir + "SetFieldLimit_out.pdf";
 ```
 
-## Step 4: Save the modified PDF file.
+## Adım 4: Değiştirilen PDF dosyasını kaydedin.
 
 ```csharp
 form.Save(dataDir);
 ```
 
-## Step 5: Display a confirmation message and the location of the saved file.
+## Adım 5: Bir onay mesajı ve kaydedilen dosyanın konumunu görüntüleyin.
 
 ```csharp
 Console.WriteLine("\nField added successfully with limit.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Set Field Limit using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Alan Sınırını Ayarla için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Adding Field with limit
+// Sınırlı Alan Ekleme
 FormEditor form = new FormEditor();
 form.BindPdf( dataDir + "input.pdf");
 form.SetFieldLimit("textbox1", 15);
@@ -55,29 +55,29 @@ form.Save(dataDir);
 Console.WriteLine("\nField added successfully with limit.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to set a field boundary using Aspose.PDF for .NET. By following the steps outlined above, you can manipulate and set limits for form fields in your PDF documents using Aspose.PDF for .NET.
+Bu eğitimde Aspose.PDF for .NET kullanarak alan sınırının nasıl belirleneceğini öğrendik. Yukarıda özetlenen adımları takip ederek Aspose.PDF for .NET'i kullanarak PDF belgelerinizdeki form alanlarını değiştirebilir ve sınırlar ayarlayabilirsiniz.
 
 
-### FAQ's
+### SSS'ler
 
-#### Q: Can I set different limits for different form fields in the same PDF document?
+#### S: Aynı PDF belgesindeki farklı form alanları için farklı sınırlar ayarlayabilir miyim?
 
-A: Yes, you can set different limits for different form fields in the same PDF document using Aspose.PDF for .NET. Simply specify the desired field name and the corresponding limit for each form field in your code.
+C: Evet, Aspose.PDF for .NET'i kullanarak aynı PDF belgesindeki farklı form alanları için farklı sınırlar belirleyebilirsiniz. İstediğiniz alan adını ve kodunuzdaki her form alanı için karşılık gelen sınırı belirtmeniz yeterlidir.
 
-#### Q: How do I remove a field boundary or limit using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak bir alan sınırını veya sınırını nasıl kaldırabilirim?
 
-A: To remove a field boundary or limit, you can use the `RemoveFieldLimit` method of the `FormEditor` class and specify the name of the form field from which you want to remove the limit.
+ C: Bir alan sınırını veya limitini kaldırmak için`RemoveFieldLimit` yöntemi`FormEditor` class'a gidin ve sınırı kaldırmak istediğiniz form alanının adını belirtin.
 
-#### Q: Does Aspose.PDF for .NET support setting field limits for checkboxes and radio buttons?
+#### S: Aspose.PDF for .NET, onay kutuları ve radyo düğmeleri için alan sınırlarını ayarlamayı destekliyor mu?
 
-A: No, field limits are applicable to text fields only. Aspose.PDF for .NET does not support setting field limits for checkboxes and radio buttons.
+C: Hayır, alan sınırları yalnızca metin alanları için geçerlidir. Aspose.PDF for .NET, onay kutuları ve radyo düğmeleri için alan sınırlarının ayarlanmasını desteklemez.
 
-#### Q: Can I customize the appearance of the field boundary using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak saha sınırının görünümünü özelleştirebilir miyim?
 
-A: No, field limits set using Aspose.PDF for .NET are not visible in the PDF document's visual representation. They are used to control the input length and data entry for text fields, but they do not affect the appearance of the form fields.
+C: Hayır, Aspose.PDF for .NET kullanılarak belirlenen alan sınırları, PDF belgesinin görsel sunumunda görünmez. Metin alanlarının giriş uzunluğunu ve veri girişini kontrol etmek için kullanılırlar ancak form alanlarının görünümünü etkilemezler.
 
-#### Q: Is it possible to set field limits for multiple fields simultaneously using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak birden fazla alan için alan sınırlarını aynı anda ayarlamak mümkün müdür?
 
-A: Yes, you can set field limits for multiple fields simultaneously by iterating through each form field and using the `SetFieldLimit` method for each field with the desired limit.
+C: Evet, her form alanını yineleyerek ve`SetFieldLimit` İstenilen limit ile her alan için yöntem.

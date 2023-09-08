@@ -1,34 +1,34 @@
 ---
-title: Add And Search Hidden Text In PDF File
-linktitle: Add And Search Hidden Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to add and search hidden text in PDF file using Aspose.PDF for .NET.
+title: إضافة وبحث النص المخفي في ملف PDF
+linktitle: إضافة وبحث النص المخفي في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لإضافة نص مخفي والبحث فيه في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 20
 url: /ar/net/programming-with-text/add-and-search-hidden-text/
 ---
-In this tutorial, we will walk you through how to add and search hidden text in PDF file using Aspose.PDF for .NET. Follow these steps to perform this operation easily.
+في هذا البرنامج التعليمي، سنرشدك إلى كيفية إضافة النص المخفي والبحث فيه في ملف PDF باستخدام Aspose.PDF for .NET. اتبع هذه الخطوات لتنفيذ هذه العملية بسهولة.
 
-## 1. Prerequisites
+## 1. المتطلبات الأساسية
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- Visual Studio or any other development environment installed and configured.
-- A basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed. You can download it from Aspose official website.
+- تم تثبيت وتكوين Visual Studio أو أي بيئة تطوير أخرى.
+- معرفة أساسية بلغة البرمجة C#.
+- تم تثبيت مكتبة Aspose.PDF لـ .NET. يمكنك تنزيله من موقع Aspose الرسمي.
 
-## 2. Creating the PDF document with hidden text
+## 2. إنشاء مستند PDF بنص مخفي
 
-To get started, use the following code to create a new PDF document containing hidden text:
+للبدء، استخدم الكود التالي لإنشاء مستند PDF جديد يحتوي على نص مخفي:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Create a document
+// قم بإنشاء مستند
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Page page = doc.Pages.Add();
 TextFragment frag1 = new TextFragment("This is common text.");
 TextFragment frag2 = new TextFragment("This is invisible text.");
-// Set text property - invisible
+// تعيين خاصية النص - غير مرئية
 frag2.TextState.Invisible = true;
 page.Paragraphs.Add(frag1);
 page.Paragraphs.Add(frag2);
@@ -36,11 +36,11 @@ doc.Save(dataDir + "39400_out.pdf");
 doc.Dispose();
 ```
 
-Be sure to provide the desired path and filename for the PDF document.
+تأكد من توفير المسار واسم الملف المطلوبين لمستند PDF.
 
-## 3. Search for text in the document
+## 3. ابحث عن نص في المستند
 
-Next, we will search the hidden text in the PDF document. Use the following code:
+بعد ذلك، سوف نقوم بالبحث في النص المخفي في وثيقة PDF. استخدم الكود التالي:
 
 ```csharp
 doc = new Aspose.Pdf.Document(dataDir + "39400_out.pdf");
@@ -48,61 +48,61 @@ TextFragmentAbsorber absorb = new TextFragmentAbsorber();
 absorb.Visit(doc.Pages[1]);
 foreach(TextFragment fragment in absorber.TextFragments)
 {
-// Do something with the fragments
+//افعل شيئًا بالشظايا
 Console.WriteLine("Text '{0}' at position {1}, invisibility: {2} ",
 fragment.Text, fragment.Position.ToString(), fragment.TextState.Invisible);
 }
 doc.Dispose();
 ```
 
-This will search the hidden text in the second page of the PDF document and display the relevant information.
+سيؤدي هذا إلى البحث في النص المخفي في الصفحة الثانية من مستند PDF وعرض المعلومات ذات الصلة.
 
-### Sample source code for Add And Search Hidden Text using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإضافة نص مخفي والبحث فيه باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Create document with hidden text
+//إنشاء مستند بنص مخفي
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Page page = doc.Pages.Add();
 TextFragment frag1 = new TextFragment("This is common text.");
 TextFragment frag2 = new TextFragment("This is invisible text.");
-//Set text property - invisible
+//تعيين خاصية النص - غير مرئية
 frag2.TextState.Invisible = true;
 page.Paragraphs.Add(frag1);
 page.Paragraphs.Add(frag2);
 doc.Save(dataDir + "39400_out.pdf");
 doc.Dispose();
-//Search text in the document
+//البحث عن نص في الوثيقة
 doc = new Aspose.Pdf.Document(dataDir + "39400_out.pdf");
 TextFragmentAbsorber absorber = new TextFragmentAbsorber();
 absorber.Visit(doc.Pages[1]);
 foreach (TextFragment fragment in absorber.TextFragments)
 {
-	//Do something with fragments
+	//افعل شيئًا بالشظايا
 	Console.WriteLine("Text '{0}' on pos {1} invisibility: {2} ",
 	fragment.Text, fragment.Position.ToString(), fragment.TextState.Invisible);
 }
 doc.Dispose();
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have successfully added and found hidden text in a PDF document using Aspose.PDF for .NET. You can now apply this method to your own projects to manipulate and search hidden text in PDF files.
+تهنئة ! لقد نجحت في إضافة النص المخفي والعثور عليه في مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن تطبيق هذه الطريقة على مشاريعك الخاصة لمعالجة النص المخفي والبحث فيه في ملفات PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is Aspose.PDF for .NET?
+#### س: ما هو Aspose.PDF لـ .NET؟
 
-A: Aspose.PDF for .NET is a robust library that empowers developers to create, manipulate, and transform PDF documents within .NET applications.
+ج: Aspose.PDF for .NET هي مكتبة قوية تمكّن المطورين من إنشاء مستندات PDF ومعالجتها وتحويلها ضمن تطبيقات .NET.
 
-#### Q: Can hidden text be used for watermarking purposes?
+#### س: هل يمكن استخدام النص المخفي لأغراض وضع العلامات المائية؟
 
-A: Absolutely! Hidden text can serve as an effective means of watermarking PDF documents, adding an extra layer of security.
+ج: بالتأكيد! يمكن أن يكون النص المخفي بمثابة وسيلة فعالة لوضع علامة مائية على مستندات PDF، مما يضيف طبقة إضافية من الأمان.
 
-#### Q: Is it possible to reveal hidden text in a PDF document?
+#### س: هل من الممكن الكشف عن النص المخفي في وثيقة PDF؟
 
-A: Yes, the process of searching and revealing hidden text within a PDF document can be achieved using the techniques outlined in this tutorial.
+ج: نعم، يمكن تحقيق عملية البحث عن النص المخفي والكشف عنه داخل مستند PDF باستخدام التقنيات الموضحة في هذا البرنامج التعليمي.
 
-#### Q: What other functionalities does Aspose.PDF for .NET offer?
+#### س: ما هي الوظائف الأخرى التي يقدمها Aspose.PDF لـ .NET؟
 
-A: Beyond hidden text manipulation, Aspose.PDF for .NET provides a wide array of features, including PDF generation, conversion, encryption, and more.
+ج: بعيدًا عن معالجة النص المخفي، يوفر Aspose.PDF for .NET مجموعة واسعة من الميزات، بما في ذلك إنشاء PDF وتحويله وتشفيره والمزيد.

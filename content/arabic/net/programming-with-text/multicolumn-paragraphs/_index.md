@@ -1,40 +1,40 @@
 ---
-title: Multicolumn Paragraphs In PDF File
-linktitle: Multicolumn Paragraphs In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to work with multicolumn paragraphs in PDF file using Aspose.PDF for .NET.
+title: فقرات متعددة الأعمدة في ملف PDF
+linktitle: فقرات متعددة الأعمدة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية العمل مع فقرات متعددة الأعمدة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 250
 url: /ar/net/programming-with-text/multicolumn-paragraphs/
 ---
-In this tutorial, we will explain how to work with multicolumn paragraphs in PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of manipulating and accessing multicolumn paragraphs using the provided C# source code.
+في هذا البرنامج التعليمي، سنشرح كيفية العمل مع الفقرات متعددة الأعمدة في ملف PDF باستخدام مكتبة Aspose.PDF لـ .NET. سنخوض عملية خطوة بخطوة لمعالجة الفقرات متعددة الأعمدة والوصول إليها باستخدام كود مصدر C# المقدم.
 
-## Requirements
+## متطلبات
 
-Before you begin, ensure that you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- تم تثبيت Aspose.PDF لمكتبة .NET.
+- فهم أساسي للبرمجة C#.
 
-## Step 1: Set up the Document Directory
+## الخطوة 1: إعداد دليل المستندات
 
-First, you need to set the path to the directory where your input PDF file is located. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF file.
+ أولاً، تحتاج إلى تعيين المسار إلى الدليل الذي يوجد به ملف PDF الذي قمت بإدخاله. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى ملف PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the PDF Document
+## الخطوة 2: قم بتحميل مستند PDF
 
-Next, we load the input PDF document using the `Document` class from the Aspose.PDF library.
+ بعد ذلك، نقوم بتحميل مستند PDF المدخل باستخدام ملف`Document` فئة من مكتبة Aspose.PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "MultiColumnPdf.pdf");
 ```
 
-## Step 3: Access Multicolumn Paragraphs
+## الخطوة 3: الوصول إلى الفقرات متعددة الأعمدة
 
-We use the `ParagraphAbsorber` class to absorb and visit the paragraphs in the PDF document. We then retrieve the page markups and access the multicolumn paragraphs.
+ نحن نستخدم ال`ParagraphAbsorber` فئة لاستيعاب وزيارة الفقرات في وثيقة PDF. نقوم بعد ذلك باسترداد علامات الصفحة والوصول إلى الفقرات متعددة الأعمدة.
 
 ```csharp
 ParagraphAbsorber absorb = new ParagraphAbsorber();
@@ -42,45 +42,45 @@ absorb.Visit(doc);
 PageMarkup markup = absorb.PageMarkups[0];
 ```
 
-## Step 4: Work with Multicolumn Paragraphs
+## الخطوة 4: العمل مع الفقرات متعددة الأعمدة
 
-We access specific sections and paragraphs within the multicolumn structure and print their text.
+نحن نصل إلى أقسام وفقرات محددة داخل البنية متعددة الأعمدة ونطبع نصها.
 
 ```csharp
 Console.WriteLine("IsMulticolumnParagraphsAllowed == false\r\n");
 
-// Accessing the last paragraph in a section
+// الوصول إلى الفقرة الأخيرة في القسم
 MarkupSection section = markup.Sections[2];
 MarkupParagraph paragraph = section.Paragraphs[section.Paragraphs.Count - 1];
 Console.WriteLine("Section at {0} last paragraph text:\r\n", section.Rectangle.ToString());
 Console.WriteLine(paragraph.Text);
 
-// Accessing the first paragraph in a section
+// الوصول إلى الفقرة الأولى في القسم
 section = markup. Sections[1];
 paragraph = section.Paragraphs[0];
 Console.WriteLine("\r\nSection at {0} first paragraph text:\r\n", section.Rectangle.ToString());
 Console.WriteLine(paragraph.Text);
 
-// Enabling multicolumn paragraphs
+// تمكين الفقرات متعددة الأعمدة
 markup.IsMulticolumnParagraphsAllowed = true;
 Console.WriteLine("\r\nIsMulticolumnParagraphsAllowed == true\r\n");
 
-// Accessing the last paragraph in a section after enabling multicolumn paragraphs
+// الوصول إلى الفقرة الأخيرة في القسم بعد تمكين الفقرات متعددة الأعمدة
 section = markup. Sections[2];
 paragraph = section.Paragraphs[section.Paragraphs.Count - 1];
 Console.WriteLine("Section at {0} last paragraph text:\r\n", section.Rectangle.ToString());
 Console.WriteLine(paragraph.Text);
 
-// Accessing the first paragraph in a section after enabling multicolumn paragraphs
+//الوصول إلى الفقرة الأولى في القسم بعد تمكين الفقرات متعددة الأعمدة
 section = markup. Sections[1];
 paragraph = section.Paragraphs[0];
 Console.WriteLine("\r\nSection at {0} first paragraph text:\r\n", section.Rectangle.ToString());
 Console.WriteLine(paragraph.Text);
 ```
 
-### Sample source code for Multicolumn Paragraphs using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للفقرات متعددة الأعمدة باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "MultiColumnPdf.pdf");
 ParagraphAbsorber absorber = new ParagraphAbsorber();
@@ -107,42 +107,42 @@ Console.WriteLine("\r\nSection at {0} first paragraph text:\r\n", section.Rectan
 Console.WriteLine(paragraph.Text);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, you have learned how to work with multicolumn paragraphs in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can access and manipulate multicolumn paragraphs in a PDF document.
+في هذا البرنامج التعليمي، تعلمت كيفية العمل مع فقرات متعددة الأعمدة في مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. باتباع الدليل الموضح خطوة بخطوة وتنفيذ كود C# المقدم، يمكنك الوصول إلى الفقرات متعددة الأعمدة ومعالجتها في مستند PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of the "Multicolumn Paragraphs In PDF File" tutorial?
+#### س: ما هو الغرض من البرنامج التعليمي "الفقرات متعددة الأعمدة في ملف PDF"؟
 
-A: The "Multicolumn Paragraphs In PDF File" tutorial demonstrates how to work with multicolumn paragraphs in a PDF document using the Aspose.PDF library for .NET. The tutorial provides a step-by-step guide and C# source code to help you access and manipulate multicolumn paragraphs.
+ج: يوضح البرنامج التعليمي "الفقرات متعددة الأعمدة في ملف PDF" كيفية العمل مع الفقرات متعددة الأعمدة في مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. يوفر البرنامج التعليمي دليلاً خطوة بخطوة وكود مصدر C# لمساعدتك في الوصول إلى الفقرات متعددة الأعمدة ومعالجتها.
 
-#### Q: Why would I want to work with multicolumn paragraphs in a PDF document?
+#### س: لماذا أرغب في العمل مع فقرات متعددة الأعمدة في مستند PDF؟
 
-A: Working with multicolumn paragraphs allows you to create more sophisticated and visually appealing layouts for your PDF documents. Multicolumn paragraphs are often used to improve readability and enhance the overall presentation of content.
+ج: يتيح لك العمل مع فقرات متعددة الأعمدة إنشاء تخطيطات أكثر تعقيدًا وجاذبية بصريًا لمستندات PDF الخاصة بك. غالبًا ما تُستخدم الفقرات متعددة الأعمدة لتحسين إمكانية القراءة وتحسين العرض العام للمحتوى.
 
-#### Q: How do I set up the document directory?
+#### س: كيف أقوم بإعداد دليل المستندات؟
 
-A: To set up the document directory:
+ج: لإعداد دليل المستندات:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your input PDF file is located.
+1.  يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى الدليل حيث يوجد ملف PDF المدخل الخاص بك.
 
-#### Q: How do I load the PDF document and access multicolumn paragraphs?
+#### س: كيف يمكنني تحميل مستند PDF والوصول إلى فقرات متعددة الأعمدة؟
 
-A: In the tutorial, the `Document` class is used to load the input PDF document. The `ParagraphAbsorber` class is then employed to absorb and visit the paragraphs in the PDF document. The `PageMarkup` class is used to access the multicolumn paragraphs.
+ ج: في البرنامج التعليمي،`Document` يتم استخدام الفئة لتحميل مستند PDF الإدخال. ال`ParagraphAbsorber` يتم بعد ذلك استخدام الفصل لاستيعاب وزيارة الفقرات الموجودة في مستند PDF. ال`PageMarkup` يتم استخدام الفصل للوصول إلى الفقرات متعددة الأعمدة.
 
-#### Q: How do I work with specific multicolumn paragraphs?
+#### س: كيف يمكنني التعامل مع فقرات محددة متعددة الأعمدة؟
 
-A: The tutorial guides you through the process of accessing specific sections and paragraphs within the multicolumn structure using the `MarkupSection` and `MarkupParagraph` classes. It demonstrates how to print the text of these paragraphs.
+ ج: يرشدك البرنامج التعليمي خلال عملية الوصول إلى أقسام وفقرات محددة داخل البنية متعددة الأعمدة باستخدام`MarkupSection` و`MarkupParagraph` الطبقات. ويوضح كيفية طباعة نص هذه الفقرات.
 
-#### Q: How do I enable multicolumn paragraphs?
+#### س: كيف يمكنني تمكين الفقرات متعددة الأعمدة؟
 
-A: To enable multicolumn paragraphs, you can set the `IsMulticolumnParagraphsAllowed` property of the `PageMarkup` object to `true`.
+ ج: لتمكين الفقرات متعددة الأعمدة، يمكنك تعيين`IsMulticolumnParagraphsAllowed` ملكية`PageMarkup` يعترض على`true`.
 
-#### Q: What is the expected output of this tutorial?
+#### س: ما هو الناتج المتوقع من هذا البرنامج التعليمي؟
 
-A: After following the tutorial and executing the provided C# code, you will be able to access and manipulate multicolumn paragraphs in a PDF document. The tutorial demonstrates how to work with different sections and paragraphs within the multicolumn structure.
+ج: بعد اتباع البرنامج التعليمي وتنفيذ كود C# المقدم، ستتمكن من الوصول إلى الفقرات متعددة الأعمدة ومعالجتها في مستند PDF. يوضح البرنامج التعليمي كيفية العمل مع الأقسام والفقرات المختلفة داخل البنية متعددة الأعمدة.
 
-#### Q: Can I customize the appearance of multicolumn paragraphs?
+#### س: هل يمكنني تخصيص مظهر الفقرات متعددة الأعمدة؟
 
-A: This tutorial focuses on accessing and manipulating the content of multicolumn paragraphs rather than their appearance. However, you can use other features of the Aspose.PDF library to customize the appearance of your PDF document, such as setting fonts, colors, and styles.
+ج: يركز هذا البرنامج التعليمي على الوصول إلى محتوى الفقرات متعددة الأعمدة ومعالجتها بدلاً من مظهرها. ومع ذلك، يمكنك استخدام ميزات أخرى في مكتبة Aspose.PDF لتخصيص مظهر مستند PDF الخاص بك، مثل تعيين الخطوط والألوان والأنماط.

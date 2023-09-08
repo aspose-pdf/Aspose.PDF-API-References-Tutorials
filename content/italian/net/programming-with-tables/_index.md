@@ -1,36 +1,36 @@
 ---
-title: Programming with Tables
-linktitle: Programming with Tables
+title: Programmazione con tabelle
+linktitle: Programmazione con tabelle
 type: docs
 weight: 14
 url: /it/net/programming-with-tables/
-description: Learn how to program with tables in Aspose.PDF for .NET with step-by-step tutorials.
+description: Scopri come programmare con le tabelle in Aspose.PDF per .NET con tutorial passo passo.
 ---
-Programming with Tables tutorials guide you through the essential concepts and techniques for working with tables in Aspose.PDF. These tutorials will help you understand how to create and customize tables, add cells, set styles, and format data. You'll also learn how to merge and split cells, add column and row headers, and apply calculations to table data. Clear code examples and step-by-step explanations will help you quickly master table manipulation in Aspose.PDF for .NET.
+I tutorial di programmazione con tabelle ti guidano attraverso i concetti e le tecniche essenziali per lavorare con le tabelle in Aspose.PDF. Questi tutorial ti aiuteranno a capire come creare e personalizzare tabelle, aggiungere celle, impostare stili e formattare i dati. Imparerai anche come unire e dividere celle, aggiungere intestazioni di colonne e righe e applicare calcoli ai dati della tabella. Chiari esempi di codice e spiegazioni dettagliate ti aiuteranno a padroneggiare rapidamente la manipolazione delle tabelle in Aspose.PDF per .NET.
 
-Whether you are a beginner or an experienced developer, the Programming with Tables in Aspose.PDF for .NET tutorials will provide you with the knowledge and skills to create visually appealing and well-structured presentations with professional tables and organized data. Explore the tutorials now and discover the possibilities offered by Aspose.PDF for the advanced manipulation of tables in your .NET projects.
+Che tu sia un principiante o uno sviluppatore esperto, i tutorial Programmazione con tabelle in Aspose.PDF per .NET ti forniranno le conoscenze e le competenze per creare presentazioni visivamente accattivanti e ben strutturate con tabelle professionali e dati organizzati. Esplora subito i tutorial e scopri le possibilità offerte da Aspose.PDF per la manipolazione avanzata delle tabelle nei tuoi progetti .NET.
 
-## Tutorials
-| Title | Description |
+## Tutorial
+| Titolo | Descrizione |
 | --- | --- | 
-| [Add Image in a Table Cell](./add-image-in-a-table-cell/) | Add an image in a table cell with Aspose.PDF for .NET a step-by-step guide for precise manipulation of images in PDF documents. |  
-| [Add Repeating Column In PDF Document](./add-repeating-column/) | Learn how to add a repeating column in PDF document using Aspose.PDF for .NET. |  
-| [Add SVG Object In PDF File](./add-svg-object/) | Easily add SVG objects in PDF file using Aspose.PDF for .NET. |  
-| [Add Table In PDF File](./add-table/) | Easily add tables in PDF file using Aspose.PDF for .NET. |  
-| [Auto Fit To Window](./auto-fit-to-window/) | Step-by-step guide to use Aspose.PDF for .NET and achieve auto fit to window in PDF generation. |  
-| [Determine Table Break In PDF File](./determine-table-break/) | Learn how to determine table breaks in PDF file using Aspose.PDF for .NET. |  
-| [Export Excel Worksheet Data To Table](./export-excel-worksheet-data-to-table/) | Export data from an Excel sheet to a PDF table using Aspose.PDF for .NET. |  
-| [Extract Border In PDF File](./extract-border/) | Learn how to extract the border in PDF file using Aspose.PDF for .NET. |  
-| [Get Table Width In PDF File](./get-table-width/) | Learn how to get the width of a table in PDF file using Aspose.PDF for .NET. |  
-| [HTML Tags Inside Table In PDF File](./html-tags-inside-table/) | Learn how to use HTML tags inside a table in PDF file with Aspose.PDF for .NET. |  
-| [Insert Page Break In PDF File](./insert-page-break/) | Learn how to insert a page break in PDF file using Aspose.PDF for .NET. |  
-| [Integrate With Database In PDF File](./integrate-with-database/) | Embed data from a database in PDF file using Aspose.PDF for .NET. |  
-| [Manipulate Table In PDF File](./manipulate-table/) | Easily manipulate table in PDF file with Aspose.PDF for .NET. |  
-| [Margins Or Padding](./margins-or-padding/) | Learn how to set margins or padding in a table using Aspose.PDF for .NET. |  
-| [Remove Multiple Tables In PDF Document](./remove-multiple-tables/) | Learn how to remove multiple tables in PDF document using Aspose.PDF for .NET. |  
-| [Remove Table In PDF Document](./remove-table/) | Learn how to remove a table in PDF document using Aspose.PDF for .NET. |  
-| [Render Table In PDF Document](./render-table/) | Learn how to display a table in PDF document using Aspose.PDF for .NET. |  
-| [Replace Table In PDF Document](./replace-table/) | Learn how to replace a table in PDF document using Aspose.PDF for .NET. |  
-| [Rounded Corner Table In PDF Document](./rounded-corner-table/) | Learn how to create a rounded corner table in PDF document using Aspose.PDF for .NET. |  
-| [Set Border In PDF To Table](./set-border/) | Learn how to set a border in PDF to table with Aspose.PDF for .NET. |  
-| [Text Alignment For Table Row Content](./text-alignment-for-table-row-content/) | Learn how to align row content in a PDF table using Aspose.PDF for .NET. |  
+| [Aggiungi immagine in una cella di tabella](./add-image-in-a-table-cell/) | Aggiungi un'immagine in una cella di tabella con Aspose.PDF per .NET una guida passo passo per la manipolazione precisa delle immagini nei documenti PDF. |  
+| [Aggiungi colonna ripetuta nel documento PDF](./add-repeating-column/) | Scopri come aggiungere una colonna ripetuta nel documento PDF utilizzando Aspose.PDF per .NET. |  
+| [Aggiungi oggetto SVG nel file PDF](./add-svg-object/) | Aggiungi facilmente oggetti SVG nel file PDF utilizzando Aspose.PDF per .NET. |  
+| [Aggiungi tabella nel file PDF](./add-table/) | Aggiungi facilmente tabelle nel file PDF utilizzando Aspose.PDF per .NET. |  
+| [Adattamento automatico alla finestra](./auto-fit-to-window/) | Guida passo passo per utilizzare Aspose.PDF per .NET e ottenere l'adattamento automatico alla finestra nella generazione di PDF. |  
+| [Determina l'interruzione della tabella nel file PDF](./determine-table-break/) | Scopri come determinare le interruzioni di tabella nel file PDF utilizzando Aspose.PDF per .NET. |  
+| [Esporta i dati del foglio di lavoro Excel nella tabella](./export-excel-worksheet-data-to-table/) | Esporta i dati da un foglio Excel a una tabella PDF utilizzando Aspose.PDF per .NET. |  
+| [Estrai bordo nel file PDF](./extract-border/) | Scopri come estrarre il bordo nel file PDF utilizzando Aspose.PDF per .NET. |  
+| [Ottieni la larghezza della tabella nel file PDF](./get-table-width/) | Scopri come ottenere la larghezza di una tabella nel file PDF utilizzando Aspose.PDF per .NET. |  
+| [Tag HTML all'interno della tabella nel file PDF](./html-tags-inside-table/) | Scopri come utilizzare i tag HTML all'interno di una tabella nel file PDF con Aspose.PDF per .NET. |  
+| [Inserisci interruzione di pagina nel file PDF](./insert-page-break/) | Scopri come inserire un'interruzione di pagina nel file PDF utilizzando Aspose.PDF per .NET. |  
+| [Integrazione con il database nel file PDF](./integrate-with-database/) | Incorpora dati da un database in un file PDF utilizzando Aspose.PDF per .NET. |  
+| [Manipolare la tabella nel file PDF](./manipulate-table/) | Manipola facilmente la tabella nel file PDF con Aspose.PDF per .NET. |  
+| [Margini o imbottitura](./margins-or-padding/) | Scopri come impostare i margini o il riempimento in una tabella utilizzando Aspose.PDF per .NET. |  
+| [Rimuovi più tabelle nel documento PDF](./remove-multiple-tables/) | Scopri come rimuovere più tabelle nel documento PDF utilizzando Aspose.PDF per .NET. |  
+| [Rimuovi tabella nel documento PDF](./remove-table/) | Scopri come rimuovere una tabella nel documento PDF utilizzando Aspose.PDF per .NET. |  
+| [Tabella di rendering nel documento PDF](./render-table/) | Scopri come visualizzare una tabella nel documento PDF utilizzando Aspose.PDF per .NET. |  
+| [Sostituisci tabella nel documento PDF](./replace-table/) | Scopri come sostituire una tabella nel documento PDF utilizzando Aspose.PDF per .NET. |  
+| [Tavolo ad angolo arrotondato nel documento PDF](./rounded-corner-table/) | Scopri come creare una tabella con angoli arrotondati nel documento PDF utilizzando Aspose.PDF per .NET. |  
+| [Imposta il bordo nel PDF nella tabella](./set-border/) | Scopri come impostare un bordo nel PDF nella tabella con Aspose.PDF per .NET. |  
+| [Allineamento del testo per il contenuto della riga della tabella](./text-alignment-for-table-row-content/) | Scopri come allineare il contenuto della riga in una tabella PDF utilizzando Aspose.PDF per .NET. |  

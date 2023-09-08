@@ -1,35 +1,35 @@
 ---
-title: Add TOC To PDF File
-linktitle: Add TOC To PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a table of contents to PDF file using Aspose.PDF for .NET. Step-by-step guide with example source code. Boost document navigation!
+title: PDF Dosyasına TOC Ekle
+linktitle: PDF Dosyasına TOC Ekle
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasına içindekiler tablosunu nasıl ekleyeceğinizi öğrenin. Örnek kaynak koduyla adım adım kılavuz. Belge navigasyonunu artırın!
 type: docs
 weight: 40
 url: /tr/net/programming-with-document/addtoc/
 ---
-In this tutorial, we will explore how to use the Add TOC (Table of Contents) to PDF file feature of Aspose.PDF for .NET to add a table of contents to PDF documents. We will provide a step-by-step guide and explain the C# source code required to achieve this. By the end of this tutorial, you will be able to generate a PDF document with a table of contents using Aspose.PDF for .NET.
+Bu eğitimde, Aspose.PDF for .NET'in PDF dosyasına TOC (İçindekiler Tablosu) Ekle özelliğinin PDF belgelerine içindekiler tablosu eklemek için nasıl kullanılacağını inceleyeceğiz. Adım adım bir kılavuz sunacağız ve bunu başarmak için gereken C# kaynak kodunu açıklayacağız. Bu eğitimin sonunda Aspose.PDF for .NET'i kullanarak içindekiler tablosu içeren bir PDF belgesi oluşturabileceksiniz.
 
 
-## Step 1: Load the existing PDF file
+## 1. Adım: Mevcut PDF dosyasını yükleyin
 
-To get started, we need to load an existing PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your PDF file:
+ Başlamak için mevcut bir PDF dosyasını yüklememiz gerekiyor. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF dosyanızın gerçek yolunu içeren aşağıdaki kodda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "AddTOC.pdf");
 ```
 
-## Step 2: Create a new page for the table of contents
+## 2. Adım: İçindekiler tablosu için yeni bir sayfa oluşturun
 
-We will create a new page to hold the table of contents. The following code inserts a new page at index 1:
+İçindekiler tablosunu tutmak için yeni bir sayfa oluşturacağız. Aşağıdaki kod, dizin 1'e yeni bir sayfa ekler:
 
 ```csharp
 Page tocPage = doc.Pages.Insert(1);
 ```
 
-## Step 3: Define the table of contents information
+## 3. Adım: İçindekiler bilgilerini tanımlayın
 
-Next, we need to define the table of contents information. We will set the title and other properties of the table of contents. Add the following code:
+Daha sonra içindekiler bilgisini tanımlamamız gerekiyor. İçindekiler tablosunun başlığını ve diğer özelliklerini ayarlayacağız. Aşağıdaki kodu ekleyin:
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -41,9 +41,9 @@ tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 ```
 
-## Step 4: Create TOC elements
+## 4. Adım: İçindekiler öğelerini oluşturun
 
-Now, we will create the elements of the table of contents. In this tutorial, we will create four TOC elements corresponding to different pages. Modify the following code as per your requirements:
+Şimdi içindekiler tablosunun elemanlarını oluşturacağız. Bu derste farklı sayfalara karşılık gelen dört TOC öğesi oluşturacağız. Aşağıdaki kodu gereksinimlerinize göre değiştirin:
 
 ```csharp
 string[] titles = new string[4];
@@ -67,9 +67,9 @@ for (int i = 0; i < 2; i++)
 }
 ```
 
-## Step 5: Save the updated document
+## 5. Adım: Güncellenen belgeyi kaydedin
 
-Finally, we need to save the modified document with the table of contents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code below with the desired output file path:
+ Son olarak, değiştirilen belgeyi içindekiler tablosuyla birlikte kaydetmemiz gerekiyor. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` istenen çıktı dosyası yolu ile aşağıdaki kodda:
 
 ```csharp
 dataDir = dataDir + "TOC_out.pdf";
@@ -77,30 +77,30 @@ doc.Save(dataDir);
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
-### Example source code for Adding TOC to PDF documents using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak PDF belgelerine TOC eklemek için örnek kaynak kodu
 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load an existing PDF files
+// Mevcut bir PDF dosyasını yükleyin
 Document doc = new Document(dataDir + "AddTOC.pdf");
 
-// Get access to first page of PDF file
+// PDF dosyasının ilk sayfasına erişin
 Page tocPage = doc.Pages.Insert(1);
 
-// Create object to represent TOC information
+// İçindekiler bilgisini temsil edecek nesne oluşturun
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
 
-// Set the title for TOC
+// İçindekiler başlığını ayarlayın
 tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 
-// Create string objects which will be used as TOC elements
+//TOC öğeleri olarak kullanılacak dize nesneleri oluşturun
 string[] titles = new string[4];
 titles[0] = "First page";
 titles[1] = "Second page";
@@ -108,53 +108,53 @@ titles[2] = "Third page";
 titles[3] = "Fourth page";
 for (int i = 0; i < 2; i++)
 {
-	// Create Heading object
+	// Başlık nesnesi oluştur
 	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
 	TextSegment segment2 = new TextSegment();
 	heading2.TocPage = tocPage;
 	heading2.Segments.Add(segment2);
 
-	// Specify the destination page for heading object
+	// Başlık nesnesi için hedef sayfayı belirtin
 	heading2.DestinationPage = doc.Pages[i + 2];
 
-	// Destination page
+	// Hedef sayfası
 	heading2.Top = doc.Pages[i + 2].Rect.Height;
 
-	// Destination coordinate
+	// Hedef koordinatı
 	segment2.Text = titles[i];
 
-	// Add heading to page containing TOC
+	// İçindekiler içeren sayfaya başlık ekleyin
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";
-// Save the updated document
+// Güncellenen belgeyi kaydet
 doc.Save(dataDir);
 
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we explored how to add a table of contents (TOC) to PDF documents using Aspose.PDF for .NET. By following the step-by-step guide and utilizing the provided C# source code, you can easily generate a PDF document with a table of contents. The TOC enhances the document's usability, allowing users to navigate to specific sections or pages more efficiently. Aspose.PDF for .NET provides a robust and user-friendly solution for working with PDF files in .NET applications, enabling you to create dynamic and interactive PDF documents with ease.
+Bu eğitimde Aspose.PDF for .NET kullanarak PDF belgelerine içindekiler tablosunun (TOC) nasıl ekleneceğini araştırdık. Adım adım kılavuzu takip ederek ve sağlanan C# kaynak kodunu kullanarak, kolayca içindekiler tablosu içeren bir PDF belgesi oluşturabilirsiniz. İçindekiler belgesinin kullanılabilirliğini geliştirerek kullanıcıların belirli bölümlere veya sayfalara daha verimli bir şekilde gitmesine olanak tanır. Aspose.PDF for .NET, .NET uygulamalarında PDF dosyalarıyla çalışmak için sağlam ve kullanıcı dostu bir çözüm sunarak kolaylıkla dinamik ve etkileşimli PDF belgeleri oluşturmanıza olanak tanır.
 
-### FAQ's for add TOC to PDF file
+### PDF dosyasına TOC eklemek için SSS
 
-#### Q: What is Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET nedir?
 
-A: Aspose.PDF for .NET is a powerful library that allows developers to work with PDF files in .NET applications effectively. It provides a wide range of features for creating, manipulating, and managing PDF documents programmatically.
+C: Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarındaki PDF dosyalarıyla etkili bir şekilde çalışmasına olanak tanıyan güçlü bir kitaplıktır. PDF belgelerini programlı olarak oluşturmak, değiştirmek ve yönetmek için çok çeşitli özellikler sunar.
 
-#### Q: What is the purpose of adding a table of contents (TOC) to a PDF document?
+#### S: Bir PDF belgesine içindekiler tablosu (TOC) eklemenin amacı nedir?
 
-A: The table of contents (TOC) provides a navigational aid for users, enabling them to quickly jump to specific sections or pages within the PDF document. It improves the document's usability and user experience.
+C: İçindekiler tablosu (TOC), kullanıcılara PDF belgesindeki belirli bölümlere veya sayfalara hızlı bir şekilde atlamalarını sağlayan bir gezinme yardımı sağlar. Belgenin kullanılabilirliğini ve kullanıcı deneyimini geliştirir.
 
-#### Q: How do I add a table of contents to a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesine içindekiler tablosunu nasıl eklerim?
 
-A: To add a table of contents to a PDF document using Aspose.PDF for .NET, you need to create a new page to hold the TOC, define the table of contents information, and then create TOC elements that correspond to specific pages or sections in the document.
+C: Aspose.PDF for .NET kullanarak bir PDF belgesine içindekiler tablosu eklemek için, TOC'yi tutacak yeni bir sayfa oluşturmanız, içindekiler tablosu bilgilerini tanımlamanız ve ardından belirli sayfalara veya bunlara karşılık gelen TOC öğeleri oluşturmanız gerekir. belgedeki bölümler.
 
-#### Q: Can I customize the appearance of the table of contents?
+#### S: İçindekiler tablosunun görünümünü özelleştirebilir miyim?
 
-A: Yes, you can customize the appearance of the table of contents by setting various properties of the TOC elements, such as font size, font style, and alignment. Aspose.PDF for .NET provides flexibility in designing the TOC to match your desired look and feel.
+C: Evet, içindekiler tablosu öğelerinin yazı tipi boyutu, yazı tipi stili ve hizalama gibi çeşitli özelliklerini ayarlayarak içindekiler tablosunun görünümünü özelleştirebilirsiniz. Aspose.PDF for .NET, TOC'yi istediğiniz görünüm ve hisle eşleşecek şekilde tasarlama konusunda esneklik sağlar.
 
-#### Q: Is Aspose.PDF for .NET suitable for adding advanced features to PDF documents?
+#### S: Aspose.PDF for .NET, PDF belgelerine gelişmiş özellikler eklemek için uygun mudur?
 
-A: Absolutely, Aspose.PDF for .NET is a feature-rich library that allows you to add advanced functionalities to PDF documents, including interactive elements, form fields, digital signatures, and more.
+C: Kesinlikle, Aspose.PDF for .NET, PDF belgelerine etkileşimli öğeler, form alanları, dijital imzalar ve daha fazlasını içeren gelişmiş işlevler eklemenizi sağlayan, zengin özelliklere sahip bir kitaplıktır.

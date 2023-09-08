@@ -1,38 +1,38 @@
 ---
-title: Set Radio Button Caption
-linktitle: Set Radio Button Caption
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to set the caption for a radio button in a PDF form.
+title: 设置单选按钮标题
+linktitle: 设置单选按钮标题
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 设置 PDF 表单中单选按钮的标题。
 type: docs
 weight: 280
 url: /zh/net/programming-with-forms/set-radio-button-caption/
 ---
-In this guide, we will explain step by step how to use the Aspose.PDF library for .NET to define the caption of a radio button in a PDF form. We'll show you how to access the radio button field, create a new radio button option, and customize the button caption.
+在本指南中，我们将逐步解释如何使用 .NET 的 Aspose.PDF 库来定义 PDF 表单中单选按钮的标题。我们将向您展示如何访问单选按钮字段、创建新的单选按钮选项以及自定义按钮标题。
 
-## Step 1: Configuring the document directory
+## 第1步：配置文档目录
 
-The first step is to configure the document directory where the PDF form you want to work on is located. You can use the `dataDir` variable to specify the directory path.
+第一步是配置您要处理的 PDF 表单所在的文档目录。您可以使用`dataDir`变量来指定目录路径。
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual path to your documents directory.
+一定要更换`"YOUR DOCUMENTS DIRECTORY"`与文档目录的实际路径。
 
-## Step 2: Loading the source PDF form
+## 第 2 步：加载源 PDF 表单
 
-In this step, we will load the source PDF form using the `Aspose.Pdf.Facades.Form` class of Aspose.PDF.
+在此步骤中，我们将使用以下命令加载源 PDF 表单`Aspose.Pdf.Facades.Form`Aspose.PDF 类。
 
 ```csharp
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
 ```
 
-Make sure that the PDF file containing the form is present in the specified documents directory.
+确保包含表单的 PDF 文件存在于指定的文档目录中。
 
-## Step 3: Editing the radio button caption
+## 步骤 3：编辑单选按钮标题
 
-We'll loop through the form field names and search for radio button fields. If a matching field is found, we'll create a new radio button option with a custom caption and add it to the existing field.
+我们将循环遍历表单字段名称并搜索单选按钮字段。如果找到匹配的字段，我们将创建一个带有自定义标题的新单选按钮选项，并将其添加到现有字段中。
 
 ```csharp
 foreach(var item in form1.FieldNames)
@@ -47,15 +47,15 @@ var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
 updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
 updatedFragment.TextState.FontSize = 10;
 updatedFragment.TextState.LineSpacing = 6.32f;
-// Create a TextParagraph object
+//创建一个 TextParagraph 对象
 TextParagraph par = new TextParagraph();
-// Set paragraph position
+//设置段落位置
 par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-// Specify word wrap mode
+//指定自动换行模式
 by.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-// Add the new TextFragment to the paragraph
+//将新的 TextFragment 添加到段落中
 par.AppendLine(updatedFragment);
-// Add the TextParagraph using TextBuilder
+//使用 TextBuilder 添加 TextParagraph
 TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
 textBuilder.AppendParagraph(par);
 field0.DeleteOption("item1");
@@ -63,23 +63,23 @@ field0.DeleteOption("item1");
 }
 ```
 
-Customize the caption radio button and other settings as needed.
+根据需要自定义标题单选按钮和其他设置。
 
-## Step 4: Saving the Resulting PDF
+## 第 4 步：保存生成的 PDF
 
-Now that we are done modifying the radio button caption, we can save the resulting PDF using the `Save` method of the `Document` class.
+现在我们已经完成了单选按钮标题的修改，我们可以使用以下命令保存生成的 PDF：`Save`的方法`Document`班级。
 
 ```csharp
 PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 ```
 
-Be sure to specify the full path and filename for the resulting PDF.
+请务必指定生成的 PDF 的完整路径和文件名。
 
-### Sample source code for Set Radio Button Caption using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 设置单选按钮标题的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+//加载源 PDF 表单
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
 Document PDF_Template_PDF_HTML = new Document(dataDir + "RadioButtonField.pdf");
 foreach (var item in form1.FieldNames)
@@ -96,15 +96,15 @@ foreach (var item in form1.FieldNames)
 		updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
 		updatedFragment.TextState.FontSize = 10;
 		updatedFragment.TextState.LineSpacing = 6.32f;
-		// Create TextParagraph object
+		//创建 TextParagraph 对象
 		TextParagraph par = new TextParagraph();
-		// Set paragraph position
+		//设置段落位置
 		par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-		// Specify word wraping mode
+		//指定自动换行模式
 		par.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-		// Add new TextFragment to paragraph
+		//添加新的 TextFragment 到段落
 		par.AppendLine(updatedFragment);
-		// Add the TextParagraph using TextBuilder
+		//使用 TextBuilder 添加 TextParagraph
 		TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
 		textBuilder.AppendParagraph(par);
 		field0.DeleteOption("item1");
@@ -113,28 +113,28 @@ foreach (var item in form1.FieldNames)
 PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 ```
 
-## Conclusion
+## 结论
 
-In this guide, we learned how to use the Aspose.PDF library for .NET to set the caption for a radio button in a PDF form. By following the described steps, you can customize the radio button options and change the caption as needed. Feel free to further explore the features of Aspose.PDF for .NET to expand the possibilities of manipulating PDF files.
+在本指南中，我们学习了如何使用 .NET 的 Aspose.PDF 库来设置 PDF 表单中单选按钮的标题。通过执行所描述的步骤，您可以自定义单选按钮选项并根据需要更改标题。请随意进一步探索 Aspose.PDF for .NET 的功能，以扩展处理 PDF 文件的可能性。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: Can I use Aspose.PDF for .NET to set captions for radio buttons in a PDF form?
+#### 问：我可以使用 Aspose.PDF for .NET 为 PDF 表单中的单选按钮设置标题吗？
 
-A: Yes, you can use Aspose.PDF for .NET to set captions for radio buttons in a PDF form. The provided sample source code demonstrates how to access the radio button field, create a new radio button option with a custom caption, and update the existing field.
+答：是的，您可以使用 Aspose.PDF for .NET 为 PDF 表单中的单选按钮设置标题。提供的示例源代码演示了如何访问单选按钮字段、创建带有自定义标题的新单选按钮选项以及更新现有字段。
 
-#### Q: How can I customize the appearance of the radio button caption, such as font size and color?
+#### 问：如何自定义单选按钮标题的外观，例如字体大小和颜色？
 
-A: You can customize the appearance of the radio button caption by adjusting the properties of the `TextFragment` used for the caption. For example, you can set the font, font size, color, line spacing, and other text formatting options.
+答：您可以通过调整单选按钮标题的属性来自定义单选按钮标题的外观。`TextFragment`用于标题。例如，您可以设置字体、字体大小、颜色、行距和其他文本格式选项。
 
-#### Q: Is it possible to add multiple radio button options with different captions to a single radio button group?
+#### 问：是否可以将具有不同标题的多个单选按钮选项添加到单个单选按钮组中？
 
-A: Yes, you can add multiple radio button options with different captions to a single radio button group. Each option will represent a different choice, and users can select only one option from the group.
+答：是的，您可以将具有不同标题的多个单选按钮选项添加到单个单选按钮组中。每个选项都代表一个不同的选择，用户只能从该组中选择一个选项。
 
-#### Q: Can I use Aspose.PDF for .NET to modify other form fields in a PDF document?
+#### 问：我可以使用 Aspose.PDF for .NET 修改 PDF 文档中的其他表单字段吗？
 
-A: Yes, Aspose.PDF for .NET provides a comprehensive set of features to manipulate various form fields in a PDF document, such as text fields, checkboxes, dropdown lists, and more. You can use the library to set values, modify appearances, and add interactivity to form fields.
+答：是的，Aspose.PDF for .NET 提供了一套全面的功能来操作 PDF 文档中的各种表单字段，例如文本字段、复选框、下拉列表等。您可以使用该库来设置值、修改外观以及为表单字段添加交互性。
 
-#### Q: Does Aspose.PDF for .NET support working with PDFs generated from other sources, such as scanned documents?
+#### 问：Aspose.PDF for .NET 是否支持处理从其他来源（例如扫描文档）生成的 PDF？
 
-A: Yes, Aspose.PDF for .NET supports working with PDFs generated from various sources, including scanned documents. The library provides OCR (Optical Character Recognition) capabilities to extract text from scanned PDFs and manipulate the content programmatically.
+答：是的，Aspose.PDF for .NET 支持处理从各种来源生成的 PDF，包括扫描文档。该库提供 OCR（光学字符识别）功能，可从扫描的 PDF 中提取文本并以编程方式操作内容。

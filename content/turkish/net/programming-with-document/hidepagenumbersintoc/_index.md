@@ -1,45 +1,45 @@
 ---
-title: Hide Page Numbers In TOC
-linktitle: Hide Page Numbers In TOC
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to hide page numbers in a table of contents using Aspose.PDF for .NET with this step-by-step guide.
+title: İçindekiler Tablosunda Sayfa Numaralarını Gizle
+linktitle: İçindekiler Tablosunda Sayfa Numaralarını Gizle
+second_title: .NET API Referansı için Aspose.PDF
+description: Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak içindekiler tablosundaki sayfa numaralarını nasıl gizleyeceğinizi öğrenin.
 type: docs
 weight: 220
 url: /tr/net/programming-with-document/hidepagenumbersintoc/
 ---
-In this article, we will discuss the implementation of the Hide Page Numbers In TOC feature of Aspose.PDF for .NET using C#. We will start with a brief introduction to Aspose.PDF for .NET and then dive into the step-by-step guide to implement this feature. 
+Bu yazıda Aspose.PDF for .NET'in TOC'deki Sayfa Numaralarını Gizle özelliğinin C# kullanarak uygulanmasını tartışacağız. Aspose.PDF for .NET'e kısa bir girişle başlayacağız ve ardından bu özelliği uygulamaya yönelik adım adım kılavuza geçeceğiz. 
 
-## Introduction to Aspose.PDF for .NET
+## Aspose.PDF for .NET'e giriş
 
-Aspose.PDF for .NET is a powerful PDF manipulation component that allows developers to create, edit, and manipulate PDF files programmatically. It provides a wide range of features and functionalities that make it easy to work with PDF documents. Aspose.PDF for .NET supports both 32-bit and 64-bit operating systems and can be used with .NET Framework, .NET Core, and Xamarin platforms. 
+Aspose.PDF for .NET, geliştiricilerin PDF dosyalarını programlı olarak oluşturmasına, düzenlemesine ve işlemesine olanak tanıyan güçlü bir PDF işleme bileşenidir. PDF belgeleriyle çalışmayı kolaylaştıran çok çeşitli özellikler ve işlevler sunar. Aspose.PDF for .NET hem 32 bit hem de 64 bit işletim sistemlerini destekler ve .NET Framework, .NET Core ve Xamarin platformlarıyla kullanılabilir. 
 
-## What is Hide Page Numbers In TOC feature?
+## İçindekiler Tablosunda Sayfa Numaralarını Gizle özelliği nedir?
 
-Table Of Contents (TOC) is an essential part of a PDF document that provides users with a quick overview of the content. Sometimes, users may want to hide page numbers in the TOC to make it more user-friendly. Aspose.PDF for .NET provides a built-in feature to hide page numbers in the TOC. This feature can be used to create more user-friendly PDF documents. 
+İçindekiler Tablosu (TOC), kullanıcılara içeriğe hızlı bir genel bakış sağlayan bir PDF belgesinin önemli bir parçasıdır. Bazen kullanıcılar, TOC'yi daha kullanıcı dostu hale getirmek için sayfa numaralarını gizlemek isteyebilir. Aspose.PDF for .NET, TOC'deki sayfa numaralarını gizlemek için yerleşik bir özellik sağlar. Bu özellik, daha kullanıcı dostu PDF belgeleri oluşturmak için kullanılabilir. 
 
-## Prerequisites
+## Önkoşullar
 
-To follow this tutorial, you will need the following:
+Bu öğreticiyi takip etmek için aşağıdakilere ihtiyacınız olacak:
 
-- Visual Studio 2010 or later
-- Aspose.PDF for .NET installed on your system
-- Basic knowledge of C# programming language
+- Visual Studio 2010 veya üzeri
+- Aspose.PDF for .NET sisteminizde yüklü
+- C# programlama dili hakkında temel bilgi
 
-## Step-by-step guide to implement Hide Page Numbers In TOC feature
+## İçindekiler Tablosunda Sayfa Numaralarını Gizle özelliğini uygulamaya yönelik adım adım kılavuz
 
-Follow the steps below to implement the Hide Page Numbers In TOC feature using Aspose.PDF for .NET:
+Aspose.PDF for .NET kullanarak İçindekiler Tablosunda Sayfa Numaralarını Gizle özelliğini uygulamak için aşağıdaki adımları izleyin:
 
-## Step 1: Create a new C# console application in Visual Studio
+## Adım 1: Visual Studio'da yeni bir C# konsol uygulaması oluşturun
 
-Open Visual Studio and create a new C# console application.
+Visual Studio'yu açın ve yeni bir C# konsol uygulaması oluşturun.
 
-## Step 2: Add reference to Aspose.PDF for .NET
+## Adım 2: Aspose.PDF for .NET'e referans ekleyin
 
-Right-click on the References folder in your project and select Add Reference. Browse to the location where Aspose.PDF for .NET is installed on your system and add a reference to it.
+Projenizdeki Referanslar klasörüne sağ tıklayın ve Referans Ekle'yi seçin. Aspose.PDF for .NET'in sisteminizde kurulu olduğu konuma göz atın ve buraya bir referans ekleyin.
 
-## Step 1: Create a new PDF document
+## 1. Adım: Yeni bir PDF belgesi oluşturun
 
-Create a new PDF document using the following code:
+Aşağıdaki kodu kullanarak yeni bir PDF belgesi oluşturun:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -47,9 +47,9 @@ string outFile = dataDir + "HiddenPageNumbers_out.pdf";
 Document doc = new Document();
 ```
 
-## Step 2: Create a TOC page
+## 2. Adım: İçindekiler sayfası oluşturun
 
-Create a new page for the TOC and add it to the PDF document using the following code:
+İçindekiler için yeni bir sayfa oluşturun ve aşağıdaki kodu kullanarak bunu PDF belgesine ekleyin:
 
 ```csharp
 Page tocPage = doc.Pages.Add();
@@ -60,17 +60,17 @@ title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
 ```
 
-## Step 3: Add list section to the sections collection of PDF document
+## 3. Adım: PDF belgesinin bölümler koleksiyonuna liste bölümünü ekleyin
 
-Add the list section to the sections collection of the PDF document using the following code:
+Aşağıdaki kodu kullanarak liste bölümünü PDF belgesinin bölümler koleksiyonuna ekleyin:
 
 ```csharp
 tocPage.TocInfo = tocInfo;
 ```
 
-## Step 4: Define the format of the four levels list
+## 4. Adım: Dört düzey listesinin biçimini tanımlayın
 
-Define the format of the four levels list by setting the left margins and text format settings of each level using the following code:
+Aşağıdaki kodu kullanarak her düzeyin sol kenar boşluklarını ve metin biçimi ayarlarını ayarlayarak dört düzey listesinin biçimini tanımlayın:
 
 ```csharp
 tocInfo.IsShowPageNumbers = false;
@@ -85,7 +85,7 @@ tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
 Page page = doc.Pages.Add();
 ```
 
-## Step 5: Add four headings in the section
+## Adım 5: Bölüme dört başlık ekleyin
 
 ```csharp
 
@@ -104,10 +104,10 @@ doc.Save(outFile);
 
 ```
 
-### Example Source Code for Hide Page Numbers In TOC using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak TOC'deki Sayfa Numaralarını Gizlemek için Örnek Kaynak Kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "HiddenPageNumbers_out.pdf";
 Document doc = new Document();
@@ -117,10 +117,10 @@ TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
-//Add the list section to the sections collection of the Pdf document
+//Liste bölümünü Pdf belgesinin bölümler koleksiyonuna ekleyin
 tocPage.TocInfo = tocInfo;
-//Define the format of the four levels list by setting the left margins and
-//text format settings of each level
+//Sol kenar boşluklarını ayarlayarak dört düzey listesinin biçimini tanımlayın ve
+//her düzeyin metin biçimi ayarları
 
 tocInfo.IsShowPageNumbers = false;
 tocInfo.FormatArrayLength = 4;
@@ -132,7 +132,7 @@ tocInfo.FormatArray[1].TextState.FontSize = 10;
 tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
 tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
 Page page = doc.Pages.Add();
-//Add four headings in the section
+//Bölüme dört başlık ekleyin
 for (int Level = 1; Level != 5; Level++)
 	{ 
 		Heading heading2 = new Heading(Level); 
@@ -147,20 +147,20 @@ for (int Level = 1; Level != 5; Level++)
 doc.Save(outFile);
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we explored how to work with XMP metadata in a PDF document using Aspose.PDF for .NET. XMP metadata provides valuable information about the PDF document, including its title, author, creation date, and more. Aspose.PDF for .NET allows developers to access and manipulate this metadata, providing a flexible and powerful API for working with PDF documents.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesinde XMP meta verileriyle nasıl çalışılacağını araştırdık. XMP meta verileri, PDF belgesi hakkında başlığı, yazarı, oluşturulma tarihi ve daha fazlasını içeren değerli bilgiler sağlar. Aspose.PDF for .NET, geliştiricilerin bu meta verilere erişmesine ve bunları değiştirmesine olanak tanıyarak PDF belgeleriyle çalışmak için esnek ve güçlü bir API sağlar.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is XMP metadata in a PDF document?
+#### S: Bir PDF belgesindeki XMP meta verileri nedir?
 
-A: XMP (Extensible Metadata Platform) metadata in a PDF document is a standard format for storing metadata information about the document. It includes details such as document title, author, creation date, keywords, and more. XMP metadata provides a structured and standardized way to store and share information about the PDF document.
+C: PDF belgesindeki XMP (Genişletilebilir Meta Veri Platformu) meta verileri, belge hakkındaki meta veri bilgilerini depolamak için kullanılan standart bir formattır. Belge başlığı, yazar, oluşturulma tarihi, anahtar kelimeler ve daha fazlası gibi ayrıntıları içerir. XMP meta verileri, PDF belgesi hakkındaki bilgileri depolamak ve paylaşmak için yapılandırılmış ve standartlaştırılmış bir yol sağlar.
 
-#### Q: Can I modify the XMP metadata of a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak bir PDF belgesinin XMP meta verilerini değiştirebilir miyim?
 
-A: Yes, you can modify the XMP metadata of a PDF document programmatically using Aspose.PDF for .NET. You can access the `Info` property of the `Document` object, which gives you access to the XMP metadata properties. You can then update the values of these properties to modify the XMP metadata of the PDF document.
+ C: Evet, Aspose.PDF for .NET'i kullanarak bir PDF belgesinin XMP meta verilerini programlı olarak değiştirebilirsiniz. Şuraya erişebilirsiniz:`Info` mülkiyeti`Document` XMP meta veri özelliklerine erişmenizi sağlayan nesne. Daha sonra PDF belgesinin XMP meta verilerini değiştirmek için bu özelliklerin değerlerini güncelleyebilirsiniz.
 
-#### Q: Can I extract custom XMP metadata properties from a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinden özel XMP meta veri özelliklerini çıkarabilir miyim?
 
-A: Yes, you can extract custom XMP metadata properties from a PDF document using Aspose.PDF for .NET. You can use the `Metadata` property of the `Document` object, which provides access to all the XMP metadata properties of the PDF document. You can then extract custom properties and use their values as needed.
+ C: Evet, Aspose.PDF for .NET'i kullanarak özel XMP meta veri özelliklerini bir PDF belgesinden çıkarabilirsiniz. Şunu kullanabilirsiniz:`Metadata` mülkiyeti`Document`PDF belgesinin tüm XMP meta veri özelliklerine erişim sağlayan nesne. Daha sonra özel özellikleri çıkarabilir ve değerlerini gerektiği gibi kullanabilirsiniz.

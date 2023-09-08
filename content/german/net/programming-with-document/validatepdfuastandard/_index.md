@@ -1,85 +1,85 @@
 ---
-title: Validate PDF UA Standard
-linktitle: Validate PDF UA Standard
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to validate PDF/UA standard using C# code. Step-by-step guide.
+title: Validieren Sie den PDF UA-Standard
+linktitle: Validieren Sie den PDF UA-Standard
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie Aspose.PDF für .NET verwenden, um den PDF/UA-Standard mithilfe von C#-Code zu validieren. Schritt für Schritt Anleitung.
 type: docs
 weight: 400
 url: /de/net/programming-with-document/validatepdfuastandard/
 ---
-Aspose.PDF for .NET is a powerful library that provides various features for working with PDF documents. One of its features is the ability to validate PDF documents for PDF/UA standard compliance. In this article, we will provide step-by-step guidance on how to use Aspose.PDF for .NET to get and validate PDF/UA standard compliance using C# code.
+Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die verschiedene Funktionen für die Arbeit mit PDF-Dokumenten bietet. Eine seiner Funktionen ist die Möglichkeit, PDF-Dokumente auf Konformität mit dem PDF/UA-Standard zu überprüfen. In diesem Artikel geben wir eine Schritt-für-Schritt-Anleitung zur Verwendung von Aspose.PDF für .NET, um die PDF/UA-Standardkonformität mithilfe von C#-Code zu erreichen und zu validieren.
 
-## Step 1: Defining the Document Directory Path
+## Schritt 1: Definieren des Dokumentverzeichnispfads
 
-Next, we need to define the path to the directory where our PDF document is located. You can do this by adding the following code snippet:
+Als nächstes müssen wir den Pfad zu dem Verzeichnis definieren, in dem sich unser PDF-Dokument befindet. Sie können dies tun, indem Sie den folgenden Codeausschnitt hinzufügen:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual path to your PDF document directory.
+Ersetzen Sie „IHR DOKUMENTVERZEICHNIS“ durch den tatsächlichen Pfad zu Ihrem PDF-Dokumentverzeichnis.
 
-## Step 2: Opening the PDF Document
+## Schritt 2: Öffnen des PDF-Dokuments
 
-After defining the document directory path, we can open our PDF document using the following code:
+Nachdem wir den Dokumentverzeichnispfad definiert haben, können wir unser PDF-Dokument mit dem folgenden Code öffnen:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
 ```
 
-This code creates a new `Document` object from our PDF file located in the specified directory.
+ Dieser Code erstellt einen neuen`Document` Objekt aus unserer PDF-Datei, die sich im angegebenen Verzeichnis befindet.
 
-## Step 3: Validating the PDF for PDF/UA
+## Schritt 3: Validierung des PDF für PDF/UA
 
-Now that we have opened the PDF document, we can use Aspose.PDF for .NET to validate the document for PDF/UA compliance. The following code snippet will do the job:
+Nachdem wir das PDF-Dokument geöffnet haben, können wir Aspose.PDF für .NET verwenden, um das Dokument auf PDF/UA-Konformität zu validieren. Der folgende Codeausschnitt erledigt die Aufgabe:
 
 ```csharp
 bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1);
 ```
 
-This code validates the PDF document for PDF/UA standard compliance and generates a validation report in the specified XML file. The validation result is stored in the `isValidPdfUa` variable, which is of boolean data type.
+ Dieser Code validiert das PDF-Dokument auf Konformität mit dem PDF/UA-Standard und generiert einen Validierungsbericht in der angegebenen XML-Datei. Das Validierungsergebnis wird im gespeichert`isValidPdfUa` Variable, die vom Datentyp boolean ist.
 
-### Example source code for Get Validate PDFUAstandard using Aspose.PDF for .NET
+### Beispielquellcode für Get Validate PDFUAstandard mit Aspose.PDF für .NET
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
 
-// Validate PDF for PDF/UA
+// PDF für PDF/UA validieren
 bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1); 
 ```
 
-## Conclusion
+## Abschluss
 
-Ensuring that PDF documents are accessible to all users, including those with disabilities, is vital for creating inclusive and user-friendly content. Aspose.PDF for .NET simplifies the process of validating PDF documents against the PDF/UA standard, helping developers create more accessible PDFs.
+Für die Erstellung integrativer und benutzerfreundlicher Inhalte ist es von entscheidender Bedeutung, sicherzustellen, dass PDF-Dokumente für alle Benutzer zugänglich sind, auch für Menschen mit Behinderungen. Aspose.PDF für .NET vereinfacht den Prozess der Validierung von PDF-Dokumenten anhand des PDF/UA-Standards und hilft Entwicklern, leichter zugängliche PDFs zu erstellen.
 
-### FAQ's
+### FAQs
 
-#### Q: What is the PDF/UA standard, and why is it important to validate PDF documents against it?
+#### F: Was ist der PDF/UA-Standard und warum ist es wichtig, PDF-Dokumente anhand dieses Standards zu validieren?
 
-A: The PDF/UA standard, also known as "Universal Accessibility," ensures that PDF documents are accessible to individuals with disabilities, such as visual impairments. Validating PDF documents against PDF/UA standard compliance helps in creating documents that are inclusive and accessible to a broader audience.
+A: Der PDF/UA-Standard, auch bekannt als „Universal Accessibility“, stellt sicher, dass PDF-Dokumente für Menschen mit Behinderungen, beispielsweise Sehbehinderungen, zugänglich sind. Die Validierung von PDF-Dokumenten anhand der PDF/UA-Standardkonformität hilft bei der Erstellung von Dokumenten, die umfassend und für ein breiteres Publikum zugänglich sind.
 
-#### Q: How do I define the document directory path in the C# code?
+#### F: Wie definiere ich den Dokumentverzeichnispfad im C#-Code?
 
-A: To define the path to the directory where your PDF document is located, use the following code snippet:
+A: Um den Pfad zu dem Verzeichnis zu definieren, in dem sich Ihr PDF-Dokument befindet, verwenden Sie den folgenden Codeausschnitt:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual path to the directory containing your PDF document.
+Ersetzen Sie „IHR DOKUMENTVERZEICHNIS“ durch den tatsächlichen Pfad zu dem Verzeichnis, das Ihr PDF-Dokument enthält.
 
-#### Q: Can I validate PDF documents against other PDF standards using Aspose.PDF for .NET?
+#### F: Kann ich PDF-Dokumente mit Aspose.PDF für .NET anhand anderer PDF-Standards validieren?
 
-A: Yes, Aspose.PDF for .NET provides support for validating PDF documents against various PDF standards, including PDF/A and PDF/X standards. You can specify the desired standard when using the `Validate` method.
+ A: Ja, Aspose.PDF für .NET bietet Unterstützung für die Validierung von PDF-Dokumenten anhand verschiedener PDF-Standards, einschließlich PDF/A- und PDF/X-Standards. Bei der Verwendung können Sie den gewünschten Standard angeben`Validate` Methode.
 
-#### Q: How can I check if a PDF document passed the PDF/UA validation?
+#### F: Wie kann ich überprüfen, ob ein PDF-Dokument die PDF/UA-Validierung bestanden hat?
 
-A: After calling the `Validate` method, the boolean variable `isValidPdfUa` will store the validation result. If the value of `isValidPdfUa` is `true`, the PDF document complies with the PDF/UA standard; otherwise, it does not.
+ A: Nach dem Anruf`Validate` Methode, die boolesche Variable`isValidPdfUa` speichert das Validierungsergebnis. Wenn der Wert von`isValidPdfUa` Ist`true`, das PDF-Dokument entspricht dem PDF/UA-Standard; andernfalls ist dies nicht der Fall.
 
-#### Q: Are there any specific accessibility requirements for PDF/UA compliance?
+#### F: Gibt es spezielle Barrierefreiheitsanforderungen für die PDF/UA-Konformität?
 
-A: Yes, PDF/UA compliance requires documents to meet specific accessibility criteria, such as providing alternative text for images, logical reading order, proper document structure, and text equivalents for non-text content.
+A: Ja, die PDF/UA-Konformität erfordert, dass Dokumente bestimmte Barrierefreiheitskriterien erfüllen, wie z. B. die Bereitstellung von alternativem Text für Bilder, eine logische Lesereihenfolge, eine ordnungsgemäße Dokumentstruktur und Textäquivalente für Nicht-Text-Inhalte.

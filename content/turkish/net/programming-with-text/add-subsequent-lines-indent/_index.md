@@ -1,51 +1,51 @@
 ---
-title: Add Subsequent Lines Indent In PDF File
-linktitle: Add Subsequent Lines Indent In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add subsequent lines indent to text in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasına Sonraki Satır Girintisini Ekle
+linktitle: PDF Dosyasına Sonraki Satır Girintisini Ekle
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki metne sonraki satır girintilerini nasıl ekleyeceğinizi öğrenin.
 type: docs
 weight: 60
 url: /tr/net/programming-with-text/add-subsequent-lines-indent/
 ---
-This tutorial will guide you through the process of adding subsequent lines indent to text in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Bu eğitim, Aspose.PDF for .NET kullanarak PDF dosyasındaki metne girintili sonraki satırları ekleme sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları gösterir.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Gereksinimler
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Makinenizde kurulu Visual Studio veya başka herhangi bir C# derleyicisi.
+- Aspose.PDF for .NET kitaplığı. Resmi Aspose web sitesinden indirebilir veya yüklemek için NuGet gibi bir paket yöneticisi kullanabilirsiniz.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## 1. Adım: Projeyi ayarlayın
+1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
+2. Aspose.PDF for .NET kitaplığına bir referans ekleyin.
 
-## Step 2: Import required namespaces
-In the code file where you want to add subsequent lines indent, add the following using directive at the top of the file:
+## 2. Adım: Gerekli ad alanlarını içe aktarın
+Sonraki satır girintisini eklemek istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki kullanma yönergesini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## 3. Adım: Belge dizinini ayarlayın
+ Kodda yazan satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belgelerinizin saklandığı dizinin yolu ile birlikte.
 
-## Step 4: Create a new Document object
-Instantiate a new `Document` object by adding the following line of code:
+## 4. Adım: Yeni bir Belge nesnesi oluşturun
+ Yeni bir örnek oluştur`Document` Aşağıdaki kod satırını ekleyerek nesne:
 
 ```csharp
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document by using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `page`.
+## 5. Adım: Belgeye bir sayfa ekleyin
+ kullanarak belgeye yeni bir sayfa ekleyin.`Add` yöntemi`Pages`Toplamak. Verilen kodda yeni sayfa değişkene atanır.`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
-## Step 6: Create a TextFragment with subsequent lines indent
-Instantiate a `TextFragment` object and provide the desired text. In the provided code, the text is assigned to the variable `text`. Then, initialize `TextFormattingOptions` for the `TextFragment` and specify the `SubsequentLinesIndent` value.
+## Adım 6: Sonraki satır girintileriyle bir TextFragment oluşturun
+ Bir örnek oluştur`TextFragment` nesneyi seçin ve istediğiniz metni sağlayın. Sağlanan kodda metin değişkene atanır`text` . Ardından, başlat`TextFormattingOptions` için`TextFragment`ve şunu belirtin`SubsequentLinesIndent` değer.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -55,15 +55,15 @@ text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 };
 ```
 
-## Step 7: Add the TextFragment to the page
-Add the `TextFragment` object to the paragraphs collection of the page.
+## Adım 7: TextFragment'i sayfaya ekleyin
+ Ekle`TextFragment` sayfanın paragraf koleksiyonuna itiraz edin.
 
 ```csharp
 page.Paragraphs.Add(text);
 ```
 
-## Step 8: Repeat steps 6 and 7 for additional lines
-To add subsequent lines with the same indent, repeat steps 6 and 7 for each line. Update the text content as needed.
+## Adım 8: Ek satırlar için 6. ve 7. adımları tekrarlayın
+Aynı girintiye sahip sonraki satırları eklemek için her satır için 6. ve 7. adımları tekrarlayın. Metin içeriğini gerektiği gibi güncelleyin.
 
 ```csharp
 text = new Aspose.Pdf.Text.TextFragment("Line2");
@@ -76,22 +76,22 @@ text = new Aspose.Pdf.Text.TextFragment("Line5");
 page.Paragraphs.Add(text);
 ```
 
-## Step 9: Save the PDF document
-Save the PDF document using the `Save` method of the `Document` object. Specify the output file path.
+## 9. Adım: PDF belgesini kaydedin
+ PDF belgesini kullanarak kaydedin.`Save` yöntemi`Document` nesne. Çıkış dosyası yolunu belirtin.
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-### Sample source code for Add Subsequent Lines Indent using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Sonraki Satır Girintilerini Ekleme için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create new document object 
+// Yeni belge nesnesi oluştur
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// Initilize TextFormattingOptions for the text fragment and specify SubsequentLinesIndent value
+// Metin parçası için TextFormattingOptions'ı başlatın ve NextLinesIndent değerini belirtin
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -108,47 +108,47 @@ page.Paragraphs.Add(text);
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-## Conclusion
-You have successfully added subsequent lines indent to text using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## Çözüm
+Aspose.PDF for .NET'i kullanarak metne sonraki satır girintilerini başarıyla eklediniz. Ortaya çıkan PDF dosyası artık belirtilen çıktı dosyası yolunda bulunabilir.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the focus of this tutorial?
+#### S: Bu eğitimin odak noktası nedir?
 
-A: This tutorial provides a comprehensive guide on how to add subsequent lines indent to text in a PDF file using the Aspose.PDF for .NET library. It includes C# source code examples to illustrate the steps required for achieving this.
+C: Bu eğitim, Aspose.PDF for .NET kitaplığını kullanarak bir PDF dosyasındaki metne sonraki satır girintilerinin nasıl ekleneceği konusunda kapsamlı bir kılavuz sağlar. Bunu başarmak için gerekli adımları gösteren C# kaynak kodu örneklerini içerir.
 
-#### Q: Which namespaces do I need to import for this tutorial?
+#### S: Bu eğitim için hangi ad alanlarını içe aktarmam gerekiyor?
 
-A: In the code file where you intend to add subsequent lines indent, import the following namespaces at the beginning of the file:
+C: Sonraki satır girintisini eklemeyi planladığınız kod dosyasında, dosyanın başına aşağıdaki ad alanlarını içe aktarın:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### S: Belge dizinini nasıl belirlerim?
 
-A: In the code, locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ A: Kodda satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
 
-#### Q: How do I create a Document object?
+#### S: Bir Belge nesnesini nasıl oluşturabilirim?
 
-A: In Step 4, you'll instantiate a new `Document` object using the following line of code:
+ C: 4. Adımda yeni bir örnek oluşturacaksınız.`Document` aşağıdaki kod satırını kullanarak nesne:
 
 ```csharp
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
-#### Q: How do I add a page to the document?
+#### S: Belgeye nasıl sayfa eklerim?
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection:
+ C: 5. Adımda belgeye yeni bir sayfa ekleyeceksiniz.`Add` yöntemi`Pages` Toplamak:
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
-#### Q: How can I add subsequent lines indent to text?
+#### S: Metne sonraki satır girintilerini nasıl ekleyebilirim?
 
-A: In Step 6, you'll create a `TextFragment` object and assign the desired text to it. Then, you'll initialize `TextFormattingOptions` for the `TextFragment` and specify the `SubsequentLinesIndent` value:
+ C: 6. Adımda bir`TextFragment` nesneyi seçin ve ona istediğiniz metni atayın. Daha sonra başlatacaksınız`TextFormattingOptions` için`TextFragment`ve şunu belirtin`SubsequentLinesIndent` değer:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -158,26 +158,26 @@ text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 };
 ```
 
-#### Q: How do I add the TextFragment to the PDF document?
+#### S: TextFragment'i PDF belgesine nasıl eklerim?
 
-A: In Step 7, you'll add the `TextFragment` object (`text`) to the paragraphs collection of the page:
+ C: 7. Adımda şunu ekleyeceksiniz:`TextFragment` nesne (`text`) sayfanın paragraf koleksiyonuna:
 
 ```csharp
 page.Paragraphs.Add(text);
 ```
 
-#### Q: Can I repeat the process for additional lines?
+#### S: İşlemi ek satırlar için tekrarlayabilir miyim?
 
-A: Yes, in Step 8, you can repeat the process for additional lines with the same indent by creating new `TextFragment` objects and adding them to the paragraphs collection of the page.
+ C: Evet, 8. Adımda, yeni satırlar oluşturarak aynı girintiye sahip ek satırlar için işlemi tekrarlayabilirsiniz.`TextFragment` nesneleri ve bunları sayfanın paragraf koleksiyonuna ekleme.
 
-#### Q: How do I save the resulting PDF document?
+#### S: Ortaya çıkan PDF belgesini nasıl kaydederim?
 
-A: After adding the text with subsequent lines indent, use the `Save` method of the `Document` object to save the PDF document:
+ C: Metni sonraki satır girintileriyle ekledikten sonra,`Save` yöntemi`Document` PDF belgesini kaydetmek için nesne:
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-#### Q: What is the key takeaway from this tutorial?
+#### S: Bu eğitimden çıkarılacak önemli sonuç nedir?
 
-A: By following this tutorial, you've successfully learned how to enhance the readability of text in a PDF document by adding subsequent lines indent using Aspose.PDF for .NET. This technique can be useful for various types of documents and reports.
+C: Bu eğitimi takip ederek, Aspose.PDF for .NET kullanarak sonraki satır girintilerini ekleyerek bir PDF belgesindeki metnin okunabilirliğini nasıl geliştireceğinizi başarıyla öğrendiniz. Bu teknik çeşitli belge ve rapor türleri için yararlı olabilir.

@@ -1,59 +1,59 @@
 ---
-title: Page Number Stamps In PDF File
-linktitle: Page Number Stamps In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add page number stamps in PDF file with Aspose.PDF for .NET.
+title: طوابع رقم الصفحة في ملف PDF
+linktitle: طوابع رقم الصفحة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة طوابع أرقام الصفحات في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 160
 url: /ar/net/programming-with-stamps-and-watermarks/page-number-stamps/
 ---
-In this tutorial, we will guide you step by step on how to add page number stamps in PDF file using Aspose.PDF for .NET. We'll use the provided C# source code to open an existing PDF document, create a page number stamp, set its properties, and add it to a specific page in the PDF file.
+في هذا البرنامج التعليمي، سنرشدك خطوة بخطوة حول كيفية إضافة طوابع أرقام الصفحات في ملف PDF باستخدام Aspose.PDF لـ .NET. سنستخدم كود مصدر C# المقدم لفتح مستند PDF موجود، وإنشاء ختم رقم الصفحة، وتعيين خصائصه، وإضافته إلى صفحة معينة في ملف PDF.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- بيئة تطوير .NET مثبتة.
+- تم تنزيل مكتبة Aspose.PDF الخاصة بـ .NET والإشارة إليها في مشروعك.
 
-## Step 2: Loading the existing PDF document
+## الخطوة 2: تحميل مستند PDF الموجود
 
-The first step is to load the existing PDF document into your project. Here's how:
+الخطوة الأولى هي تحميل مستند PDF الموجود في مشروعك. إليك الطريقة:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the existing PDF document
+// افتح مستند PDF الموجود
 Document pdfDocument = new Document(dataDir + "PageNumberStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+تأكد من استبدال "دليل المستندات الخاص بك" بالمسار الفعلي للدليل الذي يوجد به مستند PDF الخاص بك.
 
-## Step 3: Creating and Configuring the Page Numbering Stamp
+## الخطوة 3: إنشاء وتكوين ختم ترقيم الصفحات
 
-Now that the PDF document is loaded, we can create a page numbering buffer and configure it according to our needs. Here's how:
+الآن بعد أن تم تحميل مستند PDF، يمكننا إنشاء مخزن مؤقت لترقيم الصفحات وتكوينه وفقًا لاحتياجاتنا. إليك الطريقة:
 
 ```csharp
-// Create a page number buffer
+// إنشاء مخزن مؤقت لرقم الصفحة
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
 
-// Define if the buffer is in the background or not
+// تحديد ما إذا كان المخزن المؤقت في الخلفية أم لا
 pageNumberStamp.Background = false;
 
-// Format of the page numbering buffer
+// تنسيق المخزن المؤقت لترقيم الصفحات
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
 
-// Bottom margin of page numbering buffer
+// الهامش السفلي للمخزن المؤقت لترقيم الصفحات
 pageNumberStamp.BottomMargin = 10;
 
-// Horizontal alignment of the page numbering buffer
+// محاذاة أفقية للمخزن المؤقت لترقيم الصفحات
 pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
 
-// Start number of page numbering
+// بداية ترقيم الصفحات
 pageNumberStamp.StartingNumber = 1;
 
-// Set page number buffer text properties
+// تعيين خصائص النص المخزن المؤقت لرقم الصفحة
 pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
 pageNumberStamp.TextState.FontSize = 14.0F;
 pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
@@ -61,108 +61,108 @@ pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
 pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 ```
 
-The above code creates a page number stamp with properties like page number format, bottom margin, horizontal alignment, starting number and text properties.
+يقوم الكود أعلاه بإنشاء طابع رقم الصفحة بخصائص مثل تنسيق رقم الصفحة والهامش السفلي والمحاذاة الأفقية ورقم البداية وخصائص النص.
 
-## Step 4: Adding the page number stamp to a specific page
+## الخطوة 4: إضافة ختم رقم الصفحة إلى صفحة معينة
 
-Once the page number stamp is configured, we can add it to a specific page of the PDF document. Here's how:
+بمجرد تكوين ختم رقم الصفحة، يمكننا إضافته إلى صفحة معينة من مستند PDF. إليك الطريقة:
 
 ```csharp
-// Add the page number buffer to a specific page
+// إضافة المخزن المؤقت لرقم الصفحة إلى صفحة معينة
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 ```
 
-The above code adds the page number stamp to the first page of the PDF document. You can change the page number as needed.
+يضيف الكود أعلاه ختم رقم الصفحة إلى الصفحة الأولى من مستند PDF. يمكنك تغيير رقم الصفحة حسب الحاجة.
 
-## Step 5: Saving the modified PDF document
+## الخطوة 5: حفظ مستند PDF المعدل
 
-Once the page number stamp is added to the PDF document, we can save the modified PDF document. Here's how:
+بمجرد إضافة ختم رقم الصفحة إلى مستند PDF، يمكننا حفظ مستند PDF المعدل. إليك الطريقة:
 
 ```csharp
-// Save the modified PDF document
+// احفظ مستند PDF المعدل
 pdfDocument.Save(dataDir + "PageNumberStamp_out.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the edited PDF document.
+تأكد من استبدال "دليل المستندات الخاص بك" بالمسار الفعلي للدليل الذي تريد حفظ مستند PDF المحرر فيه.
 
-### Sample source code for Page Number Stamps using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لطوابع أرقام الصفحات باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir+ "PageNumberStamp.pdf");
 
-// Create page number stamp
+// إنشاء ختم رقم الصفحة
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
 
-// Whether the stamp is background
+// ما إذا كان الختم هو الخلفية
 pageNumberStamp.Background = false;
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
 pageNumberStamp.BottomMargin = 10;
 pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
 pageNumberStamp.StartingNumber = 1;
 
-// Set text properties
+// تعيين خصائص النص
 pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
 pageNumberStamp.TextState.FontSize = 14.0F;
 pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
 pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
 pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 
-// Add stamp to particular page
+// إضافة طابع إلى صفحة معينة
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 dataDir = dataDir + "PageNumberStamp_out.pdf";
 
-// Save output document
+// حفظ مستند الإخراج
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have learned how to add page number stamps to a PDF document using Aspose.PDF for .NET. You can now personalize your PDF documents by adding clear and informative page numbers.
+تهنئة ! لقد تعلمت كيفية إضافة طوابع أرقام الصفحات إلى مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن تخصيص مستندات PDF الخاصة بك عن طريق إضافة أرقام صفحات واضحة وغنية بالمعلومات.
 
-### FAQ's for page number stamps in PDF file
+### الأسئلة الشائعة حول طوابع أرقام الصفحات في ملف PDF
 
-#### Q: What is a Page Number Stamp, and how is it used to add page numbers to a PDF file?
+#### س: ما هو ختم رقم الصفحة، وكيف يتم استخدامه لإضافة أرقام الصفحات إلى ملف PDF؟
 
-A: A Page Number Stamp is a feature in Aspose.PDF that allows you to add dynamic page numbers to specific pages of a PDF document. In this tutorial, it's achieved by creating a PageNumberStamp object, configuring its properties, and adding it to a designated page.
+ج: يعد ختم رقم الصفحة إحدى الميزات الموجودة في Aspose.PDF والتي تسمح لك بإضافة أرقام صفحات ديناميكية إلى صفحات محددة من مستند PDF. في هذا البرنامج التعليمي، يتم تحقيق ذلك عن طريق إنشاء كائن PageNumberStamp، وتكوين خصائصه، وإضافته إلى صفحة معينة.
 
-#### Q: How does the provided C# source code accomplish adding page number stamps to a PDF file?
+#### س: كيف ينجز كود مصدر C# المقدم إضافة طوابع أرقام الصفحات إلى ملف PDF؟
 
-A: The code demonstrates how to load an existing PDF document, create a PageNumberStamp, set various properties (such as format, font, alignment, etc.), and then add the stamp to a specific page. The stamp automatically calculates the total page count and inserts the correct page numbers.
+ج: يوضح الكود كيفية تحميل مستند PDF موجود، وإنشاء PageNumberStamp، وتعيين خصائص مختلفة (مثل التنسيق، والخط، والمحاذاة، وما إلى ذلك)، ثم إضافة الختم إلى صفحة معينة. يقوم الختم تلقائيًا بحساب إجمالي عدد الصفحات وإدراج أرقام الصفحات الصحيحة.
 
-#### Q: Can I customize the appearance of the page number, such as font style, color, and size?
+#### س: هل يمكنني تخصيص مظهر رقم الصفحة، مثل نمط الخط واللون والحجم؟
 
-A: Absolutely, you can customize the appearance of the page number stamp by adjusting properties like font, font size, font style (bold, italic, etc.), and text color.
+ج: بالتأكيد، يمكنك تخصيص مظهر ختم رقم الصفحة عن طريق ضبط خصائص مثل الخط وحجم الخط ونمط الخط (غامق ومائل وما إلى ذلك) ولون النص.
 
-#### Q: Is it possible to add page number stamps to multiple pages within a PDF document?
+#### س: هل من الممكن إضافة طوابع أرقام الصفحات إلى صفحات متعددة داخل مستند PDF؟
 
-A: Yes, you can add page number stamps to multiple pages by creating multiple PageNumberStamp objects and adding each one to the desired pages.
+ج: نعم، يمكنك إضافة طوابع أرقام الصفحات إلى صفحات متعددة عن طريق إنشاء كائنات PageNumberStamp متعددة وإضافة كل منها إلى الصفحات المطلوبة.
 
-#### Q: Can I choose whether the page number stamp appears as part of the page's content or as a background element?
+#### س: هل يمكنني اختيار ظهور ختم رقم الصفحة كجزء من محتوى الصفحة أو كعنصر خلفية؟
 
-A: Yes, you can control whether the page number stamp appears as part of the page's content or as a background element by setting the `Background` property of the PageNumberStamp.
+ ج: نعم، يمكنك التحكم في ظهور ختم رقم الصفحة كجزء من محتوى الصفحة أو كعنصر خلفية عن طريق ضبط الإعداد`Background` خاصية PageNumberStamp.
 
-#### Q: How do I specify the format of the page number, including the total page count?
+#### س: كيف يمكنني تحديد تنسيق رقم الصفحة، بما في ذلك إجمالي عدد الصفحات؟
 
-A: The code uses the `Format` property of the PageNumberStamp to specify the format of the page number. The macro "# of" is used to represent the total page count.
+ ج: يستخدم الكود`Format`خاصية PageNumberStamp لتحديد تنسيق رقم الصفحة. يتم استخدام الماكرو "# of" لتمثيل إجمالي عدد الصفحات.
 
-#### Q: What happens if I add the same page number stamp to multiple pages?
+#### س: ماذا يحدث إذا قمت بإضافة نفس ختم رقم الصفحة إلى صفحات متعددة؟
 
-A: Adding the same PageNumberStamp instance to multiple pages will display the correct page numbers for each page. The stamp automatically adjusts the page number and total page count.
+ج: ستؤدي إضافة نفس مثيل PageNumberStamp إلى صفحات متعددة إلى عرض أرقام الصفحات الصحيحة لكل صفحة. يقوم الختم تلقائيًا بضبط رقم الصفحة وإجمالي عدد الصفحات.
 
-#### Q: Can I add page number stamps to header or footer sections of a PDF document?
+#### س: هل يمكنني إضافة طوابع أرقام الصفحات إلى أقسام الرأس أو التذييل في مستند PDF؟
 
-A: While PageNumberStamps are typically added directly to the page's content, you can use FloatingBox or other techniques to position them in header or footer sections.
+ج: بينما تتم عادةً إضافة PageNumberStamps مباشرة إلى محتوى الصفحة، يمكنك استخدام FloatingBox أو تقنيات أخرى لوضعها في أقسام الرأس أو التذييل.
 
-#### Q: How do I specify the position of the page number stamp on the page?
+#### س: كيف أحدد موضع ختم رقم الصفحة على الصفحة؟
 
-A: The `BottomMargin` and `HorizontalAlignment` properties of the PageNumberStamp allow you to control the position of the stamp within the page.
+ ج: ال`BottomMargin` و`HorizontalAlignment` تسمح لك خصائص PageNumberStamp بالتحكم في موضع الختم داخل الصفحة.
 
-#### Q: What if I want to start page numbering from a different number rather than 1?
+#### س: ماذا لو كنت أرغب في بدء ترقيم الصفحات من رقم مختلف بدلاً من الرقم 1؟
 
-A: You can set the `StartingNumber` property of the PageNumberStamp to specify the starting page number.
+ ج: يمكنك ضبط`StartingNumber`خاصية PageNumberStamp لتحديد رقم صفحة البداية.

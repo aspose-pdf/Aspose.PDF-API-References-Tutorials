@@ -1,50 +1,50 @@
 ---
-title: Get Attachment Info
-linktitle: Get Attachment Info
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get information about a specific attachment in a PDF file with Aspose.PDF for .NET. Step by step guide.
+title: Få bifogad information
+linktitle: Få bifogad information
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du får information om en specifik bilaga i en PDF-fil med Aspose.PDF för .NET. Steg för steg guide.
 type: docs
 weight: 50
 url: /sv/net/programming-with-attachments/get-attachment-info/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to get the information about a specific attachment of a PDF file using Aspose.PDF for .NET.
+I den här handledningen går vi igenom följande C#-källkod steg för steg för att få information om en specifik bilaga till en PDF-fil med Aspose.PDF för .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
 
-### Step 1: Document Directory Setup
+### Steg 1: Installation av dokumentkatalog
 
-In the source code provided, you need to specify the directory where the PDF file is located from which you want to get the attachment information. Change the "dataDir" variable to the desired directory.
+I den angivna källkoden måste du ange katalogen där PDF-filen finns från vilken du vill hämta bifogad information. Ändra variabeln "dataDir" till önskad katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Steg 2: Öppna det befintliga PDF-dokumentet
 
-We open the existing PDF document using the specified path.
+Vi öppnar det befintliga PDF-dokumentet med den angivna sökvägen.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAttachmentInfo.pdf");
 ```
 
-### Step 3: Obtaining a Specific Attachment
+### Steg 3: Skaffa en specifik bilaga
 
-We retrieve a specific attachment from the document's attachments collection. In this example, we get the first attachment using index 1.
+Vi hämtar en specifik bilaga från dokumentets bilagasamling. I det här exemplet får vi den första bilagan med hjälp av index 1.
 
 ```csharp
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
 ```
 
-### Step 4: Get File Properties
+### Steg 4: Hämta filegenskaper
 
-We display attachment properties such as name, description, MIME type, control hash, date created, date modified, and size.
+Vi visar bifogade egenskaper som namn, beskrivning, MIME-typ, kontrollhash, datum skapat, ändringsdatum och storlek.
 
 ```csharp
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Check if object parameters contain additional information
+// Kontrollera om objektparametrar innehåller ytterligare information
 if (fileSpecification.Params != null)
 {
 Console.WriteLine("Check Hash: {0}", fileSpecification.Params.CheckSum);
@@ -54,21 +54,21 @@ Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 ```
 
-### Sample source code for Get Attachment Info using Aspose.PDF for .NET
+### Exempel på källkod för att få bifogad information med Aspose.PDF för .NET
  
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "GetAttachmentInfo.pdf");
-// Get particular embedded file
+// Skaffa en speciell inbäddad fil
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
-// Get the file properties
+// Hämta filegenskaperna
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-// Check if parameter object contains the parameters
+//Kontrollera om parameterobjektet innehåller parametrarna
 if (fileSpecification.Params != null)
 {
 	Console.WriteLine("CheckSum: {0}",
@@ -82,44 +82,44 @@ if (fileSpecification.Params != null)
 
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we explained how to get the information about a specific attachment of a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and view attachment information from your PDF files.
+I den här handledningen förklarade vi hur man får information om en specifik bilaga till en PDF-fil med Aspose.PDF för .NET. Du kan nu använda denna kunskap för att extrahera och visa bifogad information från dina PDF-filer.
 
-### FAQ's for get attachment info 
+### Vanliga frågor för att få bifogad information 
 
-#### Q: Why would I need to retrieve information about specific attachments in a PDF document?
+#### F: Varför skulle jag behöva hämta information om specifika bilagor i ett PDF-dokument?
 
-A: Retrieving attachment information allows you to understand and analyze the details of embedded files within a PDF, helping you manage and work with attachments effectively.
+S: Genom att hämta information om bilagor kan du förstå och analysera detaljerna i inbäddade filer i en PDF, vilket hjälper dig att hantera och arbeta med bilagor på ett effektivt sätt.
 
-#### Q: What type of information can I gather about a specific attachment using this tutorial?
+#### F: Vilken typ av information kan jag samla in om en specifik bilaga med den här handledningen?
 
-A: This tutorial demonstrates how to retrieve and display attachment properties such as name, description, MIME type, control hash, creation date, modification date, and size.
+S: Den här handledningen visar hur man hämtar och visar bifogade egenskaper som namn, beskrivning, MIME-typ, kontrollhash, skapandedatum, ändringsdatum och storlek.
 
-#### Q: How does this tutorial help me gather attachment information using Aspose.PDF for .NET?
+#### F: Hur hjälper den här handledningen mig att samla in bifogad information med Aspose.PDF för .NET?
 
-A: This tutorial provides step-by-step instructions and C# source code to access and display information about a specific attachment within a PDF document.
+S: Denna handledning innehåller steg-för-steg-instruktioner och C#-källkod för att komma åt och visa information om en specifik bilaga i ett PDF-dokument.
 
-#### Q: Can I retrieve information about all attachments instead of a specific attachment using this tutorial?
+#### F: Kan jag hämta information om alla bilagor istället för en specifik bilaga med den här handledningen?
 
-A: This tutorial is focused on obtaining information about a specific attachment, but you can adapt the code to loop through all attachments and gather their information.
+S: Den här handledningen är inriktad på att få information om en specifik bilaga, men du kan anpassa koden för att gå igenom alla bilagor och samla information om dem.
 
-#### Q: What is the purpose of the "Check Hash" property displayed in the attachment information?
+#### F: Vad är syftet med egenskapen "Check Hash" som visas i den bifogade informationen?
 
-A: The "Check Hash" property represents the control hash value of the attachment, which can be used to verify the integrity of the attachment.
+S: Egenskapen "Check Hash" representerar kontrollhashvärdet för bilagan, som kan användas för att verifiera bilagans integritet.
 
-#### Q: How can I modify this code to retrieve information about attachments with different indices?
+#### F: Hur kan jag ändra den här koden för att hämta information om bilagor med olika index?
 
-A: You can change the index value (e.g., `pdfDocument.EmbeddedFiles[1]`) to retrieve information about attachments at different indices within the PDF document.
+ S: Du kan ändra indexvärdet (t.ex.`pdfDocument.EmbeddedFiles[1]`) för att hämta information om bilagor vid olika index i PDF-dokumentet.
 
-#### Q: Can I use this knowledge to gather information from password-protected PDF files?
+#### F: Kan jag använda denna kunskap för att samla information från lösenordsskyddade PDF-filer?
 
-A: Yes, you can apply similar principles to gather attachment information from password-protected PDF files using Aspose.PDF for .NET.
+S: Ja, du kan tillämpa liknande principer för att samla in bifogad information från lösenordsskyddade PDF-filer med Aspose.PDF för .NET.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of obtaining attachment information?
+#### F: Hur förenklar Aspose.PDF för .NET processen för att få bifogad information?
 
-A: Aspose.PDF for .NET provides an intuitive API that allows you to access and manipulate attachment properties in PDF documents with ease.
+S: Aspose.PDF för .NET tillhandahåller ett intuitivt API som gör att du enkelt kan komma åt och manipulera bifogade egenskaper i PDF-dokument.
 
-#### Q: Are there specific scenarios where gathering attachment information is recommended?
+#### F: Finns det specifika scenarier där insamling av bifogad information rekommenderas?
 
-A: Gathering attachment information is valuable when you need to understand the details of embedded files, such as verifying their properties or auditing attachments in a document.
+S: Att samla in bilagainformation är värdefullt när du behöver förstå detaljerna i inbäddade filer, som att verifiera deras egenskaper eller granska bilagor i ett dokument.

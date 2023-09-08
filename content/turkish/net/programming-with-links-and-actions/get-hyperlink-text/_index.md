@@ -1,44 +1,44 @@
 ---
-title: Get Hyperlink Text In PDF File
-linktitle: Get Hyperlink Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract hyperlink text in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasında Köprü Metnini Alın
+linktitle: PDF Dosyasında Köprü Metnini Alın
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki köprü metnini nasıl çıkaracağınızı öğrenin.
 type: docs
 weight: 70
 url: /tr/net/programming-with-links-and-actions/get-hyperlink-text/
 ---
-Learn how to extract text from hyperlinks in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak PDF dosyasındaki köprülerden metin çıkarmayı öğrenin.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+Geliştirme ortamınızı bir C# projesi ve uygun Aspose.PDF referanslarıyla kurduğunuzdan emin olun.
 
-## Step 2: Loading the PDF file
+## Adım 2: PDF dosyasını yükleme
 
-Set the directory path of your documents and upload the PDF file using the following code:
+Belgelerinizin dizin yolunu ayarlayın ve aşağıdaki kodu kullanarak PDF dosyasını yükleyin:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// PDF dosyasını yükleyin
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Navigating through the pages of the document
+## 3. Adım: Belgenin sayfalarında gezinme
 
-Iterate through each page of the document using a `foreach` loop:
+ kullanarak belgenin her sayfasını yineleyin.`foreach` döngü:
 
 ```csharp
 foreach(Page page in document.Pages)
 {
-     // Display link annotations
+     // Bağlantı ek açıklamalarını görüntüle
      ShowLinkAnnotations(page);
 }
 ```
 
-## Step 4: Error Handling
+## Adım 4: Hata İşleme
 
-Add error handling to catch any exception and display the corresponding error message:
+Herhangi bir istisnayı yakalamak ve ilgili hata mesajını görüntülemek için hata işlemeyi ekleyin:
 
 ```csharp
 catch (Exception ex)
@@ -47,18 +47,18 @@ catch (Exception ex)
 }
 ```
 
-### Sample source code for Get Hyperlink Text using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Köprü Metni Alma için örnek kaynak kodu 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Belgeler dizininin yolu.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the PDF file
+	// PDF dosyasını yükleyin
 	Document document = new Document(dataDir + "input.pdf");
-	// Iterate through each page of PDF
+	// PDF'nin her sayfasını yineleyin
 	foreach (Page page in document.Pages)
 	{
-		// Show link annotation
+		// Bağlantı ek açıklamasını göster
 		ShowLinkAnnotations(page);
 	}
 }
@@ -68,42 +68,42 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You now know how to extract hyperlink text from a PDF file using Aspose.PDF for .NET. You can use this knowledge to deal with hyperlinks in your projects and automate tasks related to PDF files.
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF dosyasından köprü metnini nasıl çıkaracağınızı biliyorsunuz. Bu bilgiyi projelerinizdeki köprülerle ilgilenmek ve PDF dosyalarıyla ilgili görevleri otomatikleştirmek için kullanabilirsiniz.
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+Artık bu kılavuzu tamamladığınıza göre, bu kavramları kendi projelerinize uygulayabilir ve Aspose.PDF for .NET'in sunduğu özellikleri daha fazla keşfedebilirsiniz.
 
-### FAQs for get hyperlink text in PDF file
+### PDF dosyasında köprü metni almak için SSS
 
-#### Q: What is hyperlink text in a PDF file?
+#### S: PDF dosyasındaki köprü metni nedir?
 
-A: Hyperlink text in a PDF file refers to the visible text that users click on to navigate to a specific location or resource, such as a URL, another page in the same document, or an external document.
+C: PDF dosyasındaki köprü metni, kullanıcıların URL, aynı belgedeki başka bir sayfa veya harici bir belge gibi belirli bir konuma veya kaynağa gitmek için tıkladıkları görünür metni ifade eder.
 
-#### Q: How does extracting hyperlink text benefit my PDF document analysis?
+#### S: Köprü metnini çıkarmanın PDF belge analizime nasıl faydası olur?
 
-A: Extracting hyperlink text allows you to gather and analyze the descriptive labels of hyperlinks within a PDF document. This information can be used for link validation, content categorization, and metadata extraction.
+C: Köprü metninin çıkarılması, bir PDF belgesindeki köprülerin açıklayıcı etiketlerini toplayıp analiz etmenize olanak tanır. Bu bilgiler bağlantı doğrulama, içerik sınıflandırması ve meta veri çıkarma için kullanılabilir.
 
-#### Q: How can Aspose.PDF for .NET help in extracting hyperlink text?
+#### S: Aspose.PDF for .NET, köprü metninin çıkarılmasına nasıl yardımcı olabilir?
 
-A: Aspose.PDF for .NET provides robust APIs for extracting hyperlink text. This tutorial provides a step-by-step guide on how to accomplish this task using C#.
+C: Aspose.PDF for .NET, köprü metnini çıkarmak için güçlü API'ler sağlar. Bu eğitimde, bu görevin C# kullanılarak nasıl gerçekleştirileceğine ilişkin adım adım bir kılavuz sağlanmaktadır.
 
-#### Q: Can I extract hyperlink text selectively based on specific criteria?
+#### S: Köprü metnini belirli ölçütlere göre seçici olarak çıkarabilir miyim?
 
-A: Yes, you can selectively extract hyperlink text by iterating through each page of the PDF document and accessing the text associated with hyperlink annotations.
+C: Evet, PDF belgesinin her sayfasını yineleyerek ve köprü ek açıklamalarıyla ilişkili metne erişerek köprü metnini seçerek çıkarabilirsiniz.
 
-#### Q: Are there any limitations when extracting hyperlink text?
+#### S: Köprü metnini çıkarırken herhangi bir sınırlama var mı?
 
-A: The accuracy of hyperlink text extraction depends on the formatting and layout of the PDF document. Complex graphical elements or non-standard hyperlink representations might require additional handling.
+C: Köprü metni çıkarmanın doğruluğu, PDF belgesinin formatına ve düzenine bağlıdır. Karmaşık grafik öğeler veya standart dışı köprü gösterimleri ek işlem gerektirebilir.
 
-#### Q: Can I extract hyperlink text from password-protected PDF documents?
+#### S: Parola korumalı PDF belgelerinden köprü metni çıkarabilir miyim?
 
-A: Aspose.PDF for .NET can extract hyperlink text from password-protected PDF documents as long as you provide the appropriate authentication credentials when loading the document.
+C: Aspose.PDF for .NET, belgeyi yüklerken uygun kimlik doğrulama bilgilerini sağladığınız sürece parola korumalı PDF belgelerinden köprü metni çıkarabilir.
 
-#### Q: How can I utilize the extracted hyperlink text in my application?
+#### S: Çıkarılan köprü metnini uygulamamda nasıl kullanabilirim?
 
-A: Once you've extracted the hyperlink text, you can analyze, categorize, or display it as needed within your application. You can also incorporate it into reports or data analysis.
+C: Köprü metnini çıkardıktan sonra, onu uygulamanızda gerektiği şekilde analiz edebilir, kategorilere ayırabilir veya görüntüleyebilirsiniz. Ayrıca bunu raporlara veya veri analizine de dahil edebilirsiniz.
 
-#### Q: Is it possible to extract other attributes of hyperlinks, such as URLs or destinations?
+#### S: Köprülerin URL'ler veya hedefler gibi diğer niteliklerini çıkarmak mümkün müdür?
 
-A: This tutorial focuses on extracting hyperlink text. To extract other attributes like URLs or destinations, you can refer to the official Aspose.PDF documentation for advanced hyperlink handling.
+C: Bu eğitim köprü metninin çıkarılmasına odaklanmaktadır. URL'ler veya hedefler gibi diğer nitelikleri çıkarmak için gelişmiş köprü yönetimi için resmi Aspose.PDF belgelerine başvurabilirsiniz.

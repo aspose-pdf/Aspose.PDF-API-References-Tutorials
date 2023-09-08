@@ -1,111 +1,111 @@
 ---
-title: Remove Table In PDF Document
-linktitle: Remove Table In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove a table in PDF document using Aspose.PDF for .NET.
+title: Tabelle im PDF-Dokument entfernen
+linktitle: Tabelle im PDF-Dokument entfernen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET eine Tabelle in einem PDF-Dokument entfernen.
 type: docs
 weight: 160
 url: /de/net/programming-with-tables/remove-table/
 ---
-In this tutorial, we will guide you step by step to remove a table in PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch das Entfernen einer Tabelle in einem PDF-Dokument mit Aspose.PDF für .NET. Wir erklären Ihnen den bereitgestellten C#-Quellcode und zeigen Ihnen, wie Sie ihn implementieren.
 
-## Step 1: Loading the existing PDF document
-First, you need to load the existing PDF document using the following code:
+## Schritt 1: Laden des vorhandenen PDF-Dokuments
+Zuerst müssen Sie das vorhandene PDF-Dokument mit dem folgenden Code laden:
 
 ```csharp
-// Path to the documents directory
+// Pfad zum Dokumentenverzeichnis
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the existing PDF document
+// Laden Sie das vorhandene PDF-Dokument
 Document pdfDocument = new Document(dataDir + "Table_input.pdf");
 ```
 
-## Step 2: Creating the TableAbsorber object to find the tables
-Next, we'll create a TableAbsorber object to find the tables in the PDF document:
+## Schritt 2: Erstellen des TableAbsorber-Objekts zum Suchen der Tabellen
+Als Nächstes erstellen wir ein TableAbsorber-Objekt, um die Tabellen im PDF-Dokument zu finden:
 
 ```csharp
-// Create a TableAbsorber object to find the tables
+// Erstellen Sie ein TableAbsorber-Objekt, um die Tabellen zu finden
 TableAbsorber absorber = new TableAbsorber();
 ```
 
-## Step 3: Visit the first page with the absorber
-We will now visit the first page of the PDF document using the absorber:
+## Schritt 3: Besuchen Sie die erste Seite mit dem Absorber
+Wir besuchen nun die erste Seite des PDF-Dokuments mit dem Absorber:
 
 ```csharp
-// Visit the first page with the absorber
+// Besuchen Sie die erste Seite mit dem Absorber
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
-## Step 4: Getting the first table on the page
-To be able to remove the table, we will obtain the first table of the page:
+## Schritt 4: Erste Tabelle auf der Seite erstellen
+Um die Tabelle entfernen zu können, erhalten wir die erste Tabelle der Seite:
 
 ```csharp
-// Get the first table on the page
+// Holen Sie sich die erste Tabelle auf der Seite
 AbsorbedTable table = absorb.TableList[0];
 ```
 
-## Step 5: Deleting the table
-Now let's remove the table using the absorber:
+## Schritt 5: Tabelle löschen
+Jetzt entfernen wir den Tisch mit dem Absorber:
 
 ```csharp
-// remove the table
+// Entfernen Sie den Tisch
 absorb.Remove(table);
 ```
 
-## Step 6: Save PDF
-Finally, we save the modified PDF document:
+## Schritt 6: PDF speichern
+Abschließend speichern wir das geänderte PDF-Dokument:
 
 ```csharp
-// Save the PDF
+// Speichern Sie das PDF
 pdfDocument.Save(dataDir + "Table_out.pdf");
 ```
 
-### Example source code for Remove Table using Aspose.PDF for .NET
+### Beispielquellcode für Remove Table mit Aspose.PDF für .NET
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load existing PDF document
+// Vorhandenes PDF-Dokument laden
 Document pdfDocument = new Document(dataDir + "Table_input.pdf");
 
-// Create TableAbsorber object to find tables
+// Erstellen Sie ein TableAbsorber-Objekt, um Tabellen zu finden
 TableAbsorber absorber = new TableAbsorber();
 
-// Visit first page with absorber
+// Besuchen Sie die erste Seite mit Absorber
 absorber.Visit(pdfDocument.Pages[1]);
 
-// Get first table on the page
+// Holen Sie sich die erste Tabelle auf der Seite
 AbsorbedTable table = absorber.TableList[0];
 
-// Remove the table
+// Entfernen Sie den Tisch
 absorber.Remove(table);
 
-// Save PDF
+// PDF speichern
 pdfDocument.Save(dataDir + "Table_out.pdf");
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to remove a table in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to load the document, find the table, and remove it. Now you can apply this knowledge to your own projects.
+## Abschluss
+Herzlichen Glückwunsch! Sie haben jetzt erfahren, wie Sie mit Aspose.PDF für .NET eine Tabelle in einem PDF-Dokument entfernen. Diese Schritt-für-Schritt-Anleitung zeigte Ihnen, wie Sie das Dokument laden, die Tabelle finden und entfernen. Jetzt können Sie dieses Wissen auf Ihre eigenen Projekte anwenden.
 
-### FAQ's for remove table in PDF document
+### FAQs zum Entfernen einer Tabelle in einem PDF-Dokument
 
-#### Q: Can I remove multiple tables from a PDF document using this method?
+#### F: Kann ich mit dieser Methode mehrere Tabellen aus einem PDF-Dokument entfernen?
 
-A: No, the provided example code is designed to remove only one table from the PDF document. If you want to remove multiple tables, you need to modify the code accordingly. One approach is to loop through the `absorb.TableList` and remove each table one by one. However, keep in mind that removing multiple tables may require additional logic and considerations to avoid unintended consequences.
+ A: Nein, der bereitgestellte Beispielcode dient dazu, nur eine Tabelle aus dem PDF-Dokument zu entfernen. Wenn Sie mehrere Tabellen entfernen möchten, müssen Sie den Code entsprechend ändern. Ein Ansatz besteht darin, die Schleife zu durchlaufen`absorb.TableList` und entfernen Sie jeden Tisch einzeln. Bedenken Sie jedoch, dass das Entfernen mehrerer Tabellen möglicherweise zusätzliche Logik und Überlegungen erfordert, um unbeabsichtigte Folgen zu vermeiden.
 
-#### Q: What happens if the specified page does not contain any tables?
+#### F: Was passiert, wenn die angegebene Seite keine Tabellen enthält?
 
-A: If the specified page does not contain any tables, the code will throw an `IndexOutOfRangeException` when attempting to access `absorb.TableList[0]`. To avoid this issue, you should check if `absorb.TableList` contains any elements before accessing the table.
+ A: Wenn die angegebene Seite keine Tabellen enthält, löst der Code eine aus`IndexOutOfRangeException` beim Zugriffsversuch`absorb.TableList[0]` . Um dieses Problem zu vermeiden, sollten Sie prüfen, ob`absorb.TableList`enthält alle Elemente, bevor auf die Tabelle zugegriffen wird.
 
-#### Q: Can I remove tables from pages other than the first page?
+#### F: Kann ich Tabellen von anderen Seiten als der ersten Seite entfernen?
 
-A: Yes, you can remove tables from pages other than the first page by changing the page index in `pdfDocument.Pages[1]`. For example, to remove a table from the second page, use `pdfDocument.Pages[2]`.
+ A: Ja, Sie können Tabellen von anderen Seiten als der ersten Seite entfernen, indem Sie den Seitenindex in ändern`pdfDocument.Pages[1]` . Um beispielsweise eine Tabelle von der zweiten Seite zu entfernen, verwenden Sie`pdfDocument.Pages[2]`.
 
-#### Q: Will removing a table affect the layout and formatting of the remaining content in the PDF document?
+#### F: Hat das Entfernen einer Tabelle Auswirkungen auf das Layout und die Formatierung des verbleibenden Inhalts im PDF-Dokument?
 
-A: Yes, removing a table will impact the layout and formatting of the remaining content in the PDF document. When a table is removed, the content below the table may shift up to fill the empty space. This can lead to changes in the overall appearance of the document. It is essential to consider the document's structure and layout before removing any table.
+A: Ja, das Entfernen einer Tabelle wirkt sich auf das Layout und die Formatierung des verbleibenden Inhalts im PDF-Dokument aus. Wenn eine Tabelle entfernt wird, wird der Inhalt unter der Tabelle möglicherweise nach oben verschoben, um den leeren Raum zu füllen. Dies kann zu Veränderungen im Gesamterscheinungsbild des Dokuments führen. Es ist wichtig, die Struktur und das Layout des Dokuments zu berücksichtigen, bevor Sie eine Tabelle entfernen.
 
-#### Q: Can I undo the removal of a table after saving the document?
+#### F: Kann ich das Entfernen einer Tabelle nach dem Speichern des Dokuments rückgängig machen?
 
-A: No, once you save the modified PDF document after removing a table, the changes are permanent, and you cannot undo the removal of the table. Therefore, it is crucial to make backups of your original documents before performing any modifications to ensure data integrity.
+A: Nein, sobald Sie das geänderte PDF-Dokument nach dem Entfernen einer Tabelle speichern, sind die Änderungen dauerhaft und Sie können das Entfernen der Tabelle nicht rückgängig machen. Daher ist es wichtig, vor der Durchführung von Änderungen Sicherungskopien Ihrer Originaldokumente zu erstellen, um die Datenintegrität sicherzustellen.

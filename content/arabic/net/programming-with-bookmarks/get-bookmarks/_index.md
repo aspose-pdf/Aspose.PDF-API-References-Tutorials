@@ -1,41 +1,41 @@
 ---
-title: Get Bookmarks In PDF File
-linktitle: Get Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get bookmark in PDF file with Aspose.PDF for .NET.
+title: الحصول على الإشارات المرجعية في ملف PDF
+linktitle: الحصول على الإشارات المرجعية في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: احصل بسهولة على إشارة مرجعية في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 70
 url: /ar/net/programming-with-bookmarks/get-bookmarks/
 ---
-Retrieving bookmark in PDF file can be useful for analyzing the document's structure and navigational information. With Aspose.PDF for .NET, you can easily get the bookmarks by following the following source code:
+يمكن أن يكون استرداد الإشارة المرجعية في ملف PDF مفيدًا لتحليل بنية المستند ومعلومات التنقل. باستخدام Aspose.PDF for .NET، يمكنك بسهولة الحصول على الإشارات المرجعية باتباع التعليمات البرمجية المصدر التالية:
 
-## Step 1: Import required libraries
+## الخطوة 1: استيراد المكتبات المطلوبة
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+قبل أن تبدأ، تحتاج إلى استيراد المكتبات اللازمة لمشروع C# الخاص بك. فيما يلي توجيه الاستيراد الضروري:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## الخطوة 2: تعيين المسار إلى مجلد المستندات
 
-In this step, you need to specify the path to the folder containing the PDF file you want to extract the bookmarks from. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ في هذه الخطوة، تحتاج إلى تحديد المسار إلى المجلد الذي يحتوي على ملف PDF الذي تريد استخراج الإشارات المرجعية منه. يستبدل`"YOUR DOCUMENT DIRECTORY"`في الكود التالي مع المسار الفعلي لمجلد المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## الخطوة 3: افتح مستند PDF
 
-Now we are going to open the PDF document from which we want to extract the bookmarks using the following code:
+سنقوم الآن بفتح مستند PDF الذي نريد استخراج الإشارات المرجعية منه باستخدام الكود التالي:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetBookmarks.pdf");
 ```
 
-## Step 4: Browse Bookmarks
+## الخطوة 4: تصفح الإشارات المرجعية
 
-In this step, we will iterate over all the bookmarks in the document using a `foreach` loop. For each bookmark, we will display the information such as title, italic style, bold style and color. Here is the corresponding code:
+ في هذه الخطوة، سنقوم بالتكرار على جميع الإشارات المرجعية الموجودة في المستند باستخدام ملف`foreach`حلقة. بالنسبة لكل إشارة مرجعية، سنعرض المعلومات مثل العنوان والنمط المائل والنمط الغامق واللون. هنا هو الكود المقابل:
 
 ```csharp
 foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
@@ -47,13 +47,13 @@ foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-### Sample source code for Get Bookmarks using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للحصول على الإشارات المرجعية باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "GetBookmarks.pdf");
-// Loop through all the bookmarks
+// قم بالمرور عبر جميع الإشارات المرجعية
 foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 {
 	Console.WriteLine(outlineItem.Title);
@@ -63,49 +63,49 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! Now you have a step by step guide to get bookmarks with Aspose.PDF for .NET. You can use this code to parse bookmarks and extract information associated with each bookmark in your PDF documents.
+تهنئة ! الآن لديك دليل خطوة بخطوة للحصول على الإشارات المرجعية باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الرمز لتحليل الإشارات المرجعية واستخراج المعلومات المرتبطة بكل إشارة مرجعية في مستندات PDF الخاصة بك.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+تأكد من مراجعة وثائق Aspose.PDF الرسمية لمزيد من المعلومات حول ميزات معالجة الإشارات المرجعية المتقدمة.
 
-### FAQ's for get bookmarks in PDF file
+### الأسئلة الشائعة للحصول على الإشارات المرجعية في ملف PDF
 
-#### Q: What are bookmarks in a PDF file?
+#### س: ما هي الإشارات المرجعية في ملف PDF؟
 
-A: Bookmarks in a PDF file are interactive elements that allow users to quickly navigate to specific sections or pages within the document. Bookmarks enhance the user experience by providing shortcuts to relevant content.
+ج: الإشارات المرجعية في ملف PDF هي عناصر تفاعلية تتيح للمستخدمين التنقل بسرعة إلى أقسام أو صفحات معينة داخل المستند. تعمل الإشارات المرجعية على تحسين تجربة المستخدم من خلال توفير اختصارات للمحتوى ذي الصلة.
 
-#### Q: Why would I want to retrieve bookmarks from a PDF file?
+#### س: لماذا أرغب في استرداد الإشارات المرجعية من ملف PDF؟
 
-A: Retrieving bookmarks helps you analyze the organization of a document and understand its hierarchy. It's particularly useful for documents with complex structures or multiple sections.
+ج: يساعدك استرداد الإشارات المرجعية على تحليل تنظيم المستند وفهم تسلسله الهرمي. إنه مفيد بشكل خاص للمستندات ذات الهياكل المعقدة أو الأقسام المتعددة.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### س: كيف يمكنني استيراد المكتبات اللازمة لمشروع C# الخاص بي؟
 
-A: To import the required library for your C# project, use the following import directive:
+ج: لاستيراد المكتبة المطلوبة لمشروع C# الخاص بك، استخدم توجيه الاستيراد التالي:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive enables you to access the classes and methods provided by Aspose.PDF for .NET.
+يمكّنك هذا التوجيه من الوصول إلى الفئات والأساليب التي يوفرها Aspose.PDF لـ .NET.
 
-#### Q: How do I specify the path to the documents folder?
+#### س: كيف أحدد المسار إلى مجلد المستندات؟
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to extract bookmarks. This ensures that the code can locate the target PDF file.
+ ج: في كود المصدر المقدم، استبدل`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي للمجلد الذي يحتوي على ملف PDF الذي تريد استخراج الإشارات المرجعية منه. وهذا يضمن أن الكود يمكنه تحديد موقع ملف PDF المستهدف.
 
-#### Q: How do I open a PDF document to extract bookmarks?
+#### س: كيف يمكنني فتح مستند PDF لاستخراج الإشارات المرجعية؟
 
-A: To open a PDF document for bookmark extraction, use the following code:
+ج: لفتح مستند PDF لاستخراج الإشارة المرجعية، استخدم الكود التالي:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetBookmarks.pdf");
 ```
 
-Replace `"GetBookmarks.pdf"` with the actual file name.
+ يستبدل`"GetBookmarks.pdf"` مع اسم الملف الفعلي.
 
-#### Q: How do I iterate through and display bookmark information?
+#### س: كيف يمكنني التكرار وعرض معلومات الإشارة المرجعية؟
 
-A: Loop through all the bookmarks in the document using a `foreach` loop. For each bookmark, display information such as the title, italic style, bold style, and color:
+ ج: قم بالتمرير عبر كافة الإشارات المرجعية الموجودة في المستند باستخدام ملف`foreach` حلقة. بالنسبة لكل إشارة مرجعية، قم بعرض معلومات مثل العنوان والنمط المائل والنمط الغامق واللون:
 
 ```csharp
 foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
@@ -117,18 +117,18 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-#### Q: Can I extract other properties of bookmarks using a similar approach?
+#### س: هل يمكنني استخراج خصائص أخرى للإشارات المرجعية باستخدام أسلوب مماثل؟
 
-A: Yes, you can extract various properties of bookmarks using the `OutlineItemCollection` object. Refer to the Aspose.PDF documentation for a comprehensive list of available properties.
+ ج: نعم، يمكنك استخراج خصائص مختلفة للإشارات المرجعية باستخدام الملف`OutlineItemCollection` هدف. راجع وثائق Aspose.PDF للحصول على قائمة شاملة بالخصائص المتاحة.
 
-#### Q: How do I save changes to the PDF file after extracting bookmark information?
+#### س: كيف يمكنني حفظ التغييرات في ملف PDF بعد استخراج معلومات الإشارة المرجعية؟
 
-A: Bookmark extraction does not modify the original PDF file. If you want to save any changes or perform other operations, you can explore additional methods provided by Aspose.PDF for .NET.
+ج: لا يؤدي استخراج الإشارة المرجعية إلى تعديل ملف PDF الأصلي. إذا كنت تريد حفظ أية تغييرات أو إجراء عمليات أخرى، فيمكنك استكشاف الطرق الإضافية التي يوفرها Aspose.PDF لـ .NET.
 
-#### Q: What if the document has nested bookmarks?
+#### س: ماذا لو كان المستند يحتوي على إشارات مرجعية متداخلة؟
 
-A: If the document has nested bookmarks, the provided code will still iterate through and display each bookmark's information, including nested bookmarks.
+ج: إذا كان المستند يحتوي على إشارات مرجعية متداخلة، فسيستمر التعليمة البرمجية المتوفرة في التكرار وعرض معلومات كل إشارة مرجعية، بما في ذلك الإشارات المرجعية المتداخلة.
 
-#### Q: Is there a limit to the number of bookmarks I can retrieve?
+#### س: هل هناك حد لعدد الإشارات المرجعية التي يمكنني استرجاعها؟
 
-A: There is typically no strict limit to the number of bookmarks you can retrieve using this method. However, very large documents with an excessive number of bookmarks may require efficient memory management.
+ج: لا يوجد عادةً حد صارم لعدد الإشارات المرجعية التي يمكنك استرجاعها باستخدام هذه الطريقة. ومع ذلك، قد تتطلب المستندات الكبيرة جدًا والتي تحتوي على عدد كبير من الإشارات المرجعية إدارة فعالة للذاكرة.

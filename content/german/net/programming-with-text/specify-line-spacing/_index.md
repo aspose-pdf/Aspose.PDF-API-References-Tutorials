@@ -1,28 +1,28 @@
 ---
-title: Specify Line Spacing In PDF File
-linktitle: Specify Line Spacing In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to specify line spacing in PDF file using Aspose.PDF for .NET.
+title: Geben Sie den Zeilenabstand in der PDF-Datei an
+linktitle: Geben Sie den Zeilenabstand in der PDF-Datei an
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET den Zeilenabstand in einer PDF-Datei festlegen.
 type: docs
 weight: 510
 url: /de/net/programming-with-text/specify-line-spacing/
 ---
-This tutorial explains how to specify line spacing in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the process step by step.
+In diesem Tutorial wird erläutert, wie Sie mit Aspose.PDF für .NET den Zeilenabstand in einer PDF-Datei festlegen. Der bereitgestellte C#-Quellcode demonstriert den Prozess Schritt für Schritt.
 
-## Prerequisites
+## Voraussetzungen
 
-Before proceeding with the tutorial, make sure you have the following:
+Bevor Sie mit dem Tutorial fortfahren, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Grundkenntnisse der Programmiersprache C#.
+- Aspose.PDF für .NET-Bibliothek installiert. Sie können es von der Aspose-Website herunterladen oder NuGet verwenden, um es in Ihrem Projekt zu installieren.
 
-## Step 1: Set up the project
+## Schritt 1: Richten Sie das Projekt ein
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Erstellen Sie zunächst ein neues C#-Projekt in Ihrer bevorzugten integrierten Entwicklungsumgebung (IDE) und fügen Sie einen Verweis auf die Aspose.PDF für .NET-Bibliothek hinzu.
 
-## Step 2: Import necessary namespaces
+## Schritt 2: Importieren Sie die erforderlichen Namespaces
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Fügen Sie am Anfang Ihrer C#-Datei die folgenden using-Anweisungen hinzu, um die erforderlichen Namespaces zu importieren:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,44 +30,44 @@ using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-## Step 3: Set the path to the document directory
+## Schritt 3: Legen Sie den Pfad zum Dokumentverzeichnis fest
 
-Set the path to your document directory using the `dataDir` variable:
+ Legen Sie den Pfad zu Ihrem Dokumentverzeichnis mit fest`dataDir` Variable:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
 
-## Step 4: Load the input PDF file
+## Schritt 4: Laden Sie die Eingabe-PDF-Datei
 
-Load the input PDF file using the `Document` class:
+ Laden Sie die Eingabe-PDF-Datei mit`Document` Klasse:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 5: Create TextFormattingOptions
+## Schritt 5: Erstellen Sie TextFormattingOptions
 
-Create a `TextFormattingOptions` object and set the line spacing mode to `FullSize`:
+ Ein ... kreieren`TextFormattingOptions` Objekt und stellen Sie den Zeilenabstandsmodus auf ein`FullSize`:
 
 ```csharp
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 ```
 
-## Step 6: Create a TextFragment
+## Schritt 6: Erstellen Sie ein TextFragment
 
-Create a `TextFragment` object and specify the text content:
+ Ein ... kreieren`TextFragment` Objekt und geben Sie den Textinhalt an:
 
 ```csharp
 TextFragment textFragment = new TextFragment("Hello world");
 ```
 
-## Step 7: Load the font file (optional)
+## Schritt 7: Laden Sie die Schriftartdatei (optional)
 
-If you want to use a specific font for the text, load the TrueType font file into a `FileStream` object:
+ Wenn Sie eine bestimmte Schriftart für den Text verwenden möchten, laden Sie die TrueType-Schriftartdatei in ein`FileStream` Objekt:
 
 ```csharp
 string fontFile = dataDir + "HPSimplified.TTF";
@@ -77,111 +77,111 @@ using (FileStream fontStream = File.OpenRead(fontFile))
 }
 ```
 
-Replace `"HPSimplified.TTF"` with the actual font file name.
+ Ersetzen`"HPSimplified.TTF"` mit dem tatsächlichen Namen der Schriftartdatei.
 
-## Step 8: Specify the text position and line spacing
+## Schritt 8: Geben Sie die Textposition und den Zeilenabstand an
 
-Set the position for the text fragment and assign the `TextFormattingOptions` to the `TextState.FormattingOptions` property:
+ Legen Sie die Position für das Textfragment fest und weisen Sie es zu`TextFormattingOptions` zum`TextState.FormattingOptions` Eigentum:
 
 ```csharp
 textFragment.Position = new Position(100, 600);
 textFragment.TextState.FormattingOptions = formattingOptions;
 ```
 
-## Step 9: Add the text to the document
+## Schritt 9: Fügen Sie den Text zum Dokument hinzu
 
-Add the text fragment to the document, either by appending it to a `TextBuilder` or directly to a page's `Paragraphs` collection:
+ Fügen Sie das Textfragment zum Dokument hinzu, indem Sie es entweder an eine anhängen`TextBuilder` oder direkt zu einer Seite`Paragraphs` Sammlung:
 
 ```csharp
 var page = doc.Pages.Add();
 page.Paragraphs.Add(textFragment);
 ```
 
-## Step 10: Save the resulting PDF document
+## Schritt 10: Speichern Sie das resultierende PDF-Dokument
 
-Save the modified PDF document:
+Speichern Sie das geänderte PDF-Dokument:
 
 ```csharp
 dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
 doc.Save(dataDir);
 ```
 
-Make sure to replace `"SpecifyLineSpacing_out.pdf"` with the desired output file name.
+ Unbedingt austauschen`"SpecifyLineSpacing_out.pdf"` mit dem gewünschten Ausgabedateinamen.
 
-### Sample source code for Specify Line Spacing using Aspose.PDF for .NET 
+### Beispielquellcode für „Zeilenabstand angeben“ mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string fontFile = dataDir + "HPSimplified.TTF";
-// Load input PDF file
+// Laden Sie die Eingabe-PDF-Datei
 Document doc = new Document();
-//Create TextFormattingOptions with LineSpacingMode.FullSize
+//Erstellen Sie TextFormattingOptions mit LineSpacingMode.FullSize
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
-// Create text builder object for first page of document
+// Erstellen Sie ein Texterstellungsobjekt für die erste Seite des Dokuments
 //TextBuilder textBuilder = new TextBuilder(doc.Pages[1]);
-// Create text fragment with sample string
+// Erstellen Sie ein Textfragment mit einer Beispielzeichenfolge
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
-	// Load the TrueType font into stream object
+	// Laden Sie die TrueType-Schriftart in das Stream-Objekt
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
-		// Set the font name for text string
+		//Legen Sie den Schriftartnamen für die Textzeichenfolge fest
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		// Specify the position for Text Fragment
+		// Geben Sie die Position für das Textfragment an
 		textFragment.Position = new Position(100, 600);
-		//Set TextFormattingOptions of current fragment to predefined(which points to LineSpacingMode.FullSize)
+		//Setzen Sie TextFormattingOptions des aktuellen Fragments auf vordefiniert (was auf LineSpacingMode.FullSize zeigt).
 		textFragment.TextState.FormattingOptions = formattingOptions;
-		// Add the text to TextBuilder so that it can be placed over the PDF file
+		// Fügen Sie den Text zu TextBuilder hinzu, damit er über der PDF-Datei platziert werden kann
 		//textBuilder.AppendText(textFragment);
 		var page = doc.Pages.Add();
 		page.Paragraphs.Add(textFragment);
 	}
 	dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
-	// Save resulting PDF document
+	// Speichern Sie das resultierende PDF-Dokument
 	doc.Save(dataDir);
 }
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulations! You have successfully learned how to specify line spacing in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to saving the modified document. You can now incorporate this code into your own C# projects to customize the line spacing of text in PDF files.
+Glückwunsch! Sie haben erfolgreich gelernt, wie Sie mit Aspose.PDF für .NET den Zeilenabstand in einem PDF-Dokument festlegen. Dieses Tutorial bietet eine Schritt-für-Schritt-Anleitung vom Einrichten des Projekts bis zum Speichern des geänderten Dokuments. Sie können diesen Code jetzt in Ihre eigenen C#-Projekte integrieren, um den Zeilenabstand von Text in PDF-Dateien anzupassen.
 
-### FAQ's
+### FAQs
 
-#### Q: What is the purpose of the "Specify Line Spacing In PDF File" tutorial?
+#### F: Was ist der Zweck des Tutorials „Zeilenabstand in PDF-Datei festlegen“?
 
-A: The "Specify Line Spacing In PDF File" tutorial aims to guide users on how to use the Aspose.PDF library for .NET to customize the line spacing of text within a PDF document. The tutorial provides step-by-step instructions and C# code samples to demonstrate the process.
+A: Das Tutorial „Zeilenabstand in PDF-Datei festlegen“ soll Benutzern zeigen, wie sie mit der Aspose.PDF-Bibliothek für .NET den Zeilenabstand von Text in einem PDF-Dokument anpassen können. Das Tutorial bietet Schritt-für-Schritt-Anleitungen und C#-Codebeispiele zur Veranschaulichung des Prozesses.
 
-#### Q: How does this tutorial help in specifying line spacing within a PDF document?
+#### F: Wie hilft dieses Tutorial bei der Angabe des Zeilenabstands in einem PDF-Dokument?
 
-A: This tutorial helps users understand how to utilize the capabilities of Aspose.PDF for .NET to specify line spacing for text in a PDF document. By following the provided steps and code examples, users can adjust the line spacing according to their preferences.
+A: Dieses Tutorial hilft Benutzern zu verstehen, wie sie die Funktionen von Aspose.PDF für .NET nutzen können, um den Zeilenabstand für Text in einem PDF-Dokument festzulegen. Durch Befolgen der bereitgestellten Schritte und Codebeispiele können Benutzer den Zeilenabstand nach ihren Wünschen anpassen.
 
-#### Q: What prerequisites are required to follow this tutorial?
+#### F: Welche Voraussetzungen sind erforderlich, um diesem Tutorial folgen zu können?
 
-A: Before starting the tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or install it in your project using NuGet.
+A: Bevor Sie mit dem Tutorial beginnen, sollten Sie über grundlegende Kenntnisse der Programmiersprache C# verfügen. Darüber hinaus muss die Bibliothek Aspose.PDF für .NET installiert sein. Sie können es von der Aspose-Website herunterladen oder mit NuGet in Ihrem Projekt installieren.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### F: Wie richte ich mein Projekt ein, um diesem Tutorial zu folgen?
 
-A: To get started, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This enables you to leverage the library's features for working with PDF documents and customizing line spacing.
+A: Erstellen Sie zunächst ein neues C#-Projekt in Ihrer bevorzugten integrierten Entwicklungsumgebung (IDE) und fügen Sie einen Verweis auf die Bibliothek Aspose.PDF für .NET hinzu. Dadurch können Sie die Funktionen der Bibliothek zum Arbeiten mit PDF-Dokumenten und zum Anpassen des Zeilenabstands nutzen.
 
-#### Q: Can I use this tutorial to specify line spacing for any type of text?
+#### F: Kann ich dieses Tutorial verwenden, um den Zeilenabstand für jede Art von Text festzulegen?
 
-A: Yes, this tutorial provides instructions on how to specify line spacing for any text content within a PDF document using Aspose.PDF for .NET. You can use the provided code samples to adjust the line spacing of text according to your needs.
+A: Ja, dieses Tutorial enthält Anweisungen zum Festlegen des Zeilenabstands für beliebige Textinhalte in einem PDF-Dokument mithilfe von Aspose.PDF für .NET. Mit den bereitgestellten Codebeispielen können Sie den Zeilenabstand des Textes Ihren Bedürfnissen entsprechend anpassen.
 
-#### Q: How do I specify the line spacing mode in the tutorial?
+#### F: Wie lege ich den Zeilenabstandsmodus im Tutorial fest?
 
-A: The tutorial demonstrates how to create a `TextFormattingOptions` object and set its `LineSpacing` property to `TextFormattingOptions.LineSpacingMode.FullSize`. This mode specifies full line spacing for the text content.
+ A: Das Tutorial zeigt, wie man ein erstellt`TextFormattingOptions` Objekt und legen Sie es fest`LineSpacing` Eigentum zu`TextFormattingOptions.LineSpacingMode.FullSize`. Dieser Modus legt den vollen Zeilenabstand für den Textinhalt fest.
 
-#### Q: How can I load a specific font for the text?
+#### F: Wie kann ich eine bestimmte Schriftart für den Text laden?
 
-A: If you wish to use a specific font for the text content, the tutorial provides guidance on how to load a TrueType font file into a `FileStream` object and set it as the font for the `TextFragment`. This enables you to customize the font of the text along with its line spacing.
+ A: Wenn Sie eine bestimmte Schriftart für den Textinhalt verwenden möchten, bietet das Tutorial Anleitungen zum Laden einer TrueType-Schriftartdatei in eine`FileStream` Objekt und legen Sie es als Schriftart für das fest`TextFragment`. Dadurch können Sie die Schriftart des Textes sowie den Zeilenabstand anpassen.
 
-#### Q: How do I customize the position of the text within the PDF document?
+#### F: Wie kann ich die Position des Textes im PDF-Dokument anpassen?
 
-A: To customize the position of the text, create a `TextFragment` object and set its `Position` property to the desired coordinates (X and Y). This allows you to control where the text is placed within the PDF document.
+ A: Um die Position des Textes anzupassen, erstellen Sie eine`TextFragment` Objekt und legen Sie es fest`Position`Eigenschaft auf die gewünschten Koordinaten (X und Y). Dadurch können Sie steuern, wo der Text im PDF-Dokument platziert wird.
 
-#### Q: Can I apply these line spacing modifications to existing PDF documents?
+#### F: Kann ich diese Zeilenabstandsänderungen auf vorhandene PDF-Dokumente anwenden?
 
-A: Yes, you can modify line spacing for text in existing PDF documents. The tutorial demonstrates how to create a `TextFragment` with the specified line spacing and position, and then add it to a page's `Paragraphs` collection.
+ A: Ja, Sie können den Zeilenabstand für Text in vorhandenen PDF-Dokumenten ändern. Das Tutorial zeigt, wie man eine erstellt`TextFragment` mit dem angegebenen Zeilenabstand und der angegebenen Position und fügen Sie es dann einer Seite hinzu`Paragraphs` Sammlung.

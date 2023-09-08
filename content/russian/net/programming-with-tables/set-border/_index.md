@@ -1,87 +1,87 @@
 ---
-title: Set Border In PDF To Table
-linktitle: Set Border In PDF To Table
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set a border in PDF to table with Aspose.PDF for .NET.
+title: Установить границу в PDF в таблицу
+linktitle: Установить границу в PDF в таблицу
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как установить границу таблицы в PDF с помощью Aspose.PDF для .NET.
 type: docs
 weight: 200
 url: /ru/net/programming-with-tables/set-border/
 ---
-In this tutorial, we will guide you step by step to set a border in a table of a PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+В этом уроке мы шаг за шагом покажем вам, как установить границу в таблице PDF-документа с помощью Aspose.PDF для .NET. Мы объясним предоставленный исходный код C# и покажем, как его реализовать.
 
-## Step 1: Instantiating the Document object
-First, we'll instantiate a Document object:
+## Шаг 1. Создание экземпляра объекта Document
+Сначала мы создадим экземпляр объекта Document:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 2: Adding a page to the PDF document
-Next, we'll add a page to the PDF document:
+## Шаг 2. Добавление страницы в PDF-документ
+Далее мы добавим страницу в PDF-документ:
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Creating the BorderInfo object
-We will now create a BorderInfo object to define the border of the table:
+## Шаг 3. Создание объекта BorderInfo
+Теперь мы создадим объект BorderInfo, чтобы определить границу таблицы:
 
 ```csharp
 Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
 ```
 
-## Step 4: Specifying top and bottom borders
-We'll specify that the top and bottom borders will be double:
+## Шаг 4. Указание верхней и нижней границ
+Укажем, что верхняя и нижняя границы будут двойными:
 
 ```csharp
 border.Top.IsDoubled = true;
 border.Bottom.IsDoubled = true;
 ```
 
-## Step 5: Instantiating the Table object
-Now let's instantiate a Table object:
+## Шаг 5. Создание экземпляра объекта таблицы
+Теперь давайте создадим экземпляр объекта Table:
 
 ```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 ```
 
-## Step 6: Specifying column widths
-We will specify the widths of the columns of the table:
+## Шаг 6. Указание ширины столбцов
+Укажем ширины столбцов таблицы:
 
 ```csharp
 table. ColumnWidths = "100";
 ```
 
-## Step 7: Creating the Row Object
-We will create a Row object:
+## Шаг 7: Создание объекта строки
+Мы создадим объект Row:
 
 ```csharp
 Aspose.Pdf.Row row = table.Rows.Add();
 ```
 
-## Step 8: Adding a cell to the row
-Next, we'll add a cell to the row:
+## Шаг 8. Добавление ячейки в строку
+Далее мы добавим ячейку в строку:
 
 ```csharp
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
 ```
 
-## Step 9: Setting the cell border
-We are going to define the border of the cell (double border):
+## Шаг 9: Установка границы ячейки
+Мы собираемся определить границу ячейки (двойную границу):
 
 ```csharp
 cell. Border = border;
 ```
 
-## Step 10: Adding the table to the page
-Now let's add the table to the document page:
+## Шаг 10: Добавление таблицы на страницу
+Теперь добавим таблицу на страницу документа:
 
 ```csharp
 page.Paragraphs.Add(table);
 ```
 
-## Step 11: Save PDF document
-Finally, we will save the PDF document:
+## Шаг 11: Сохраните PDF-документ
+Наконец, мы сохраним PDF-документ:
 
 ```csharp
 dataDir = dataDir + "TableBorderTest_out.pdf";
@@ -90,62 +90,62 @@ doc.Save(dataDir);
 Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Example source code for Set Border using Aspose.PDF for .NET
+### Пример исходного кода для установки границы с использованием Aspose.PDF для .NET
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document object
+// Создать экземпляр объекта документа
 Document doc = new Document();
-// Add page to PDF document
+// Добавить страницу в PDF-документ
 Page page = doc.Pages.Add();
-// Create BorderInfo object
+// Создать объект BorderInfo
 Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
-// Specify that Top border will be double
+//Укажите, что верхняя граница будет двойной.
 border.Top.IsDoubled = true;
-// Specify that bottom border will be double
+// Укажите, что нижняя граница будет двойной.
 border.Bottom.IsDoubled = true;
-// Instantiate Table object
+// Создать экземпляр объекта таблицы
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Specify Columns width information
+// Укажите информацию о ширине столбцов
 table.ColumnWidths = "100";
-// Create Row object
+// Создать объект строки
 Aspose.Pdf.Row row = table.Rows.Add();
-// Add a Table cell to cells collection of row
+// Добавить ячейку таблицы в коллекцию ячеек строки
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
-// Set the border for cell object (double border)
+// Установите границу объекта ячейки (двойная граница)
 cell.Border = border;
-// Add table to paragraphs collection of Page
+// Добавить таблицу в коллекцию абзацев страницы
 page.Paragraphs.Add(table);
 dataDir = dataDir + "TableBorderTest_out.pdf";
-// Save the PDF document
+// Сохраните PDF-документ
 doc.Save(dataDir);
 
 Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to set a border in a table of a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to create a document, add a page, configure the table border, and save the PDF document. Now you can apply this knowledge to your own projects.
+## Заключение
+Поздравляем! Теперь вы узнали, как установить границу в таблице PDF-документа с помощью Aspose.PDF для .NET. В этом пошаговом руководстве показано, как создать документ, добавить страницу, настроить границу таблицы и сохранить документ PDF. Теперь вы можете применить эти знания в своих проектах.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: Can I set different border styles (e.g., dashed or dotted) for the table's top and bottom borders?
+#### Вопрос: Могу ли я установить разные стили границ (например, пунктирные или пунктирные) для верхней и нижней границ таблицы?
 
-A: Yes, you can set different border styles for the table's top and bottom borders by modifying the `border.Top.Style` and `border.Bottom.Style` properties in the provided C# source code. Aspose.PDF for .NET allows you to choose from various border styles, including Solid, Dashed, Dotted, Double, and more.
+ О: Да, вы можете установить разные стили границ для верхней и нижней границ таблицы, изменив`border.Top.Style` и`border.Bottom.Style`свойства в предоставленном исходном коде C#. Aspose.PDF для .NET позволяет выбирать различные стили границ, включая сплошную, пунктирную, пунктирную, двойную и другие.
 
-#### Q: How can I set the color of the table's border?
+#### Вопрос: Как задать цвет границы таблицы?
 
-A: You can set the color of the table's border by modifying the `border.Color` property in the C# source code. Simply provide the desired color, such as `Aspose.Pdf.Color.Red` or any other valid color representation, to customize the border color.
+ О: Вы можете установить цвет границы таблицы, изменив`border.Color` свойство в исходном коде C#. Просто укажите желаемый цвет, например`Aspose.Pdf.Color.Red` или любое другое допустимое цветовое представление, чтобы настроить цвет границы.
 
-#### Q: Is it possible to apply borders to individual cells within the table with different settings (e.g., different colors or border styles)?
+#### Вопрос: Можно ли применить границы к отдельным ячейкам таблицы с разными настройками (например, разными цветами или стилями границ)?
 
-A: Yes, you can apply borders to individual cells within the table with different settings by configuring the `cell.Border` property for each cell individually. This allows you to have cell-specific border styles and colors based on your requirements.
+ О: Да, вы можете применить границы к отдельным ячейкам таблицы с различными настройками, настроив`cell.Border` свойство для каждой ячейки индивидуально. Это позволяет вам использовать стили и цвета границ для конкретных ячеек в зависимости от ваших требований.
 
-#### Q: Can I remove the border from specific sides of the table (e.g., left and right borders)?
+#### Вопрос: Могу ли я удалить границу с определенных сторон таблицы (например, с левой и правой границ)?
 
-A: Yes, you can remove the border from specific sides of the table by modifying the `border.Left`, `border.Right`, `border.Top`, and `border.Bottom` properties in the C# source code. Setting these properties to `null` will remove the border from the corresponding sides of the table.
+ О: Да, вы можете удалить границу с определенных сторон таблицы, изменив`border.Left`, `border.Right`, `border.Top` , и`border.Bottom`свойства в исходном коде C#. Установка этих свойств на`null` удалит границу с соответствующих сторон таблицы.
 
-#### Q: How can I adjust the thickness of the table's border?
+#### Вопрос: Как настроить толщину границы таблицы?
 
-A: You can adjust the thickness of the table's border by modifying the `border.Width` property in the C# source code. Simply set the desired border width (in points) to achieve the desired thickness.
+ О: Вы можете настроить толщину границы таблицы, изменив`border.Width` свойство в исходном коде C#. Просто установите желаемую ширину границы (в пунктах), чтобы добиться желаемой толщины.

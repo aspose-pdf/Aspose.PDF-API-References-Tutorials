@@ -1,96 +1,96 @@
 ---
-title: Get Zoom Factor In PDF File
-linktitle: Get Zoom Factor In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to get the zoom factor in PDF file with this step-by-step guide.
+title: PDF Dosyasında Yakınlaştırma Faktörünü Alın
+linktitle: PDF Dosyasında Yakınlaştırma Faktörünü Alın
+second_title: .NET API Referansı için Aspose.PDF
+description: Bu adım adım kılavuzla PDF dosyasında yakınlaştırma faktörünü elde etmek için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin.
 type: docs
 weight: 210
 url: /tr/net/programming-with-document/getzoomfactor/
 ---
-Aspose.PDF for .NET is a PDF manipulation library that provides many features to perform various operations on PDF documents. One of these features is the ability to get the zoom factor in PDF file. In this tutorial, we will explain how to use Aspose.PDF for .NET to get the zoom factor in PDF file using C# source code.
+Aspose.PDF for .NET, PDF belgeleri üzerinde çeşitli işlemler gerçekleştirmek için birçok özellik sağlayan bir PDF işleme kitaplığıdır. Bu özelliklerden biri de PDF dosyasında yakınlaştırma faktörünü alabilme yeteneğidir. Bu eğitimde, C# kaynak kodunu kullanarak PDF dosyasındaki yakınlaştırma faktörünü elde etmek için Aspose.PDF for .NET'in nasıl kullanılacağını açıklayacağız.
 
 
-## Step 1: Instantiate new Document object
+## 1. Adım: Yeni Belge nesnesini örnekleyin
 
-The first step to getting the zoom factor of a PDF file using Aspose.PDF for .NET is to instantiate a new `Document` object. The `Document` object represents a PDF document that can be loaded from a file or a stream.
+ Aspose.PDF for .NET kullanarak bir PDF dosyasının yakınlaştırma faktörünü elde etmenin ilk adımı yeni bir örnek oluşturmaktır.`Document` nesne.`Document` nesne, bir dosyadan veya akıştan yüklenebilen bir PDF belgesini temsil eder.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate new Document object
+// Yeni Belge nesnesini başlat
 Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
 ```
 
-In the above code, we have created a `Document` object by passing the path of the PDF file to the constructor of the `Document` class. You need to replace "YOUR DOCUMENT DIRECTORY" with the actual path of the directory where your PDF file is located.
+ Yukarıdaki kodda bir tane oluşturduk.`Document` PDF dosyasının yolunu yapıcısına ileterek nesneyi`Document` sınıf. "BELGE DİZİNİ"ni, PDF dosyanızın bulunduğu dizinin gerçek yolu ile değiştirmeniz gerekir.
 
-## Step 2: Create GoToAction object
+## 2. Adım: GoToAction nesnesini oluşturun
 
-The next step is to create a `GoToAction` object. A `GoToAction` object represents an action that goes to a specific destination in a PDF document. In our case, we want to get the zoom factor of the PDF file, so we will use the `OpenAction` property of the `Document` object to get the `GoToAction` object.
+ Bir sonraki adım bir oluşturmaktır`GoToAction` nesne. A`GoToAction`nesne, bir PDF belgesinde belirli bir hedefe giden bir eylemi temsil eder. Bizim durumumuzda, PDF dosyasının yakınlaştırma faktörünü almak istiyoruz, bu nedenle`OpenAction` mülkiyeti`Document` almak için nesne`GoToAction` nesne.
 
 ```csharp
-// Create GoToAction object
+// GoToAction nesnesi oluştur
 GoToAction action = doc.OpenAction as GoToAction;
 ```
 
-In the above code, we have created a `GoToAction` object by casting the `OpenAction` property of the `Document` object to `GoToAction`.
+ Yukarıdaki kodda bir tane oluşturduk.`GoToAction` döküm yaparak nesneyi`OpenAction` mülkiyeti`Document` itiraz etmek`GoToAction`.
 
-## Step 3: Get the Zoom factor of PDF file
+## 3. Adım: PDF dosyasının Yakınlaştırma faktörünü alın
 
-The third step is to get the zoom factor of the PDF file. We can get the zoom factor of the PDF file by accessing the `Destination` property of the `GoToAction` object and then casting it to `XYZExplicitDestination`. The `XYZExplicitDestination` class represents a destination in a PDF document that specifies the coordinates and zoom factor to go to.
+ Üçüncü adım, PDF dosyasının yakınlaştırma faktörünü elde etmektir. PDF dosyasının yakınlaştırma faktörünü şuraya erişerek alabiliriz:`Destination` mülkiyeti`GoToAction` nesne ve sonra onu yayına almak`XYZExplicitDestination` .`XYZExplicitDestination` sınıf, bir PDF belgesinde gidilecek koordinatları ve yakınlaştırma faktörünü belirten bir hedefi temsil eder.
 
 ```csharp
-// Get the Zoom factor of PDF file
-System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Document zoom value;
+// PDF dosyasının Yakınlaştırma faktörünü alın
+System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Belge yakınlaştırma değeri;
 ```
 
-In the above code, we have accessed the `Destination` property of the `GoToAction` object and then cast it to `XYZExplicitDestination`. After that, we have accessed the `Zoom` property of the `XYZExplicitDestination` object to get the zoom factor of the PDF file.
+ Yukarıdaki kodda şuraya ulaştık:`Destination` mülkiyeti`GoToAction` nesneyi seçin ve ardından onu yayınlayın`XYZExplicitDestination` . Bundan sonra şuraya eriştik:`Zoom` mülkiyeti`XYZExplicitDestination` PDF dosyasının yakınlaştırma faktörünü almak için nesneyi kullanın.
 
-## Step 4: Output the Zoom factor
+## Adım 4: Yakınlaştırma faktörünün çıktısını alın
 
-The final step is to output the zoom factor of the PDF file. We can use the `System.Console.WriteLine`
+ Son adım, PDF dosyasının yakınlaştırma faktörünün çıktısını almaktır. Şunu kullanabiliriz:`System.Console.WriteLine`
 
 ```csharp
-// Get the Zoom factor of PDF file
-System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Document zoom value;
+// PDF dosyasının Yakınlaştırma faktörünü alın
+System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Belge yakınlaştırma değeri;
 ```        
 
-### Example Source Code for Get Zoom Factor using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Yakınlaştırma Faktörü Alma için Örnek Kaynak Kodu
 
-Here's the complete example source code for Get Zoom Factor using Aspose.PDF for .NET:
+Aspose.PDF for .NET kullanarak Get Zoom Factor'un tam örnek kaynak kodunu burada bulabilirsiniz:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate new Document object
+// Yeni Belge nesnesini başlat
 Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
 
-// Create GoToAction object
+// GoToAction nesnesi oluştur
 GoToAction action = doc.OpenAction as GoToAction;
 
-// Get the Zoom factor of PDF file
-System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Document zoom value;
+// PDF dosyasının Yakınlaştırma faktörünü alın
+System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Belge yakınlaştırma değeri;
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we have explored how to use Aspose.PDF for .NET to get the zoom factor of a PDF file. The zoom factor is a crucial aspect of a PDF document, as it determines the initial display size when opened in a viewer. By accessing and utilizing the zoom factor, developers can customize the viewing experience for end-users. Aspose.PDF for .NET provides a simple and effective API to retrieve the zoom factor and other navigation-related information from a PDF document, empowering developers to build feature-rich and interactive PDF applications.
+Bu eğitimde, bir PDF dosyasının yakınlaştırma faktörünü elde etmek için Aspose.PDF for .NET'in nasıl kullanılacağını araştırdık. Yakınlaştırma faktörü, bir görüntüleyicide açıldığında ilk görüntü boyutunu belirlediği için PDF belgesinin çok önemli bir özelliğidir. Geliştiriciler, yakınlaştırma faktörüne erişerek ve onu kullanarak, son kullanıcılar için görüntüleme deneyimini özelleştirebilir. Aspose.PDF for .NET, yakınlaştırma faktörünü ve gezinmeyle ilgili diğer bilgileri bir PDF belgesinden almak için basit ve etkili bir API sağlayarak geliştiricilerin zengin özelliklere sahip ve etkileşimli PDF uygulamaları oluşturmasına olanak tanır.
 
-### FAQ's for get zoom factor in PDF file
+### PDF dosyasında yakınlaştırma faktörünü almak için SSS
 
-#### Q: What is the zoom factor in a PDF file?
+#### S: Bir PDF dosyasındaki yakınlaştırma faktörü nedir?
 
-A: The zoom factor in a PDF file refers to the level of magnification applied to the document when it is viewed. It determines the initial display size of the PDF file on the screen. A zoom factor of 1.0 represents the actual size (100% zoom), while a zoom factor greater than 1.0 represents an enlargement, and a zoom factor less than 1.0 represents a reduction.
+C: Bir PDF dosyasındaki yakınlaştırma faktörü, görüntülendiğinde belgeye uygulanan büyütme düzeyini ifade eder. PDF dosyasının ekranda ilk görüntülenme boyutunu belirler. 1,0'lık bir yakınlaştırma faktörü gerçek boyutu temsil eder (%100 yakınlaştırma), 1,0'dan büyük bir yakınlaştırma faktörü bir büyütmeyi temsil eder ve 1,0'dan küçük bir yakınlaştırma faktörü bir küçültmeyi temsil eder.
 
-#### Q: How can I use the zoom factor information in my application?
+#### S: Yakınlaştırma faktörü bilgisini uygulamamda nasıl kullanabilirim?
 
-A: You can use the zoom factor information to customize the initial display size of a PDF document when it is opened in a viewer. For example, you can set a specific zoom factor to ensure that the PDF is displayed at a particular size or fit the entire page to the viewer's window.
+C: Bir PDF belgesinin görüntüleyicide açıldığında ilk görüntülenme boyutunu özelleştirmek için yakınlaştırma faktörü bilgisini kullanabilirsiniz. Örneğin, PDF'nin belirli bir boyutta görüntülenmesini sağlamak veya sayfanın tamamını izleyicinin penceresine sığdırmak için belirli bir yakınlaştırma faktörü ayarlayabilirsiniz.
 
-#### Q: Can I modify the zoom factor of a PDF document programmatically using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak bir PDF belgesinin yakınlaştırma faktörünü programlı olarak değiştirebilir miyim?
 
-A: Yes, you can modify the zoom factor of a PDF document programmatically using Aspose.PDF for .NET. You can set the zoom factor for specific actions, such as `GoToAction` or `GoToRemoteAction`, to control how the document is displayed when the user interacts with links or bookmarks.
+ C: Evet, Aspose.PDF for .NET'i kullanarak bir PDF belgesinin yakınlaştırma faktörünü programlı olarak değiştirebilirsiniz. Aşağıdakiler gibi belirli eylemler için yakınlaştırma faktörünü ayarlayabilirsiniz:`GoToAction` veya`GoToRemoteAction`Kullanıcı bağlantılar veya yer imleriyle etkileşimde bulunduğunda belgenin nasıl görüntüleneceğini kontrol etmek için.
 
-#### Q: Are there other ways to navigate to specific locations in a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinde belirli konumlara gitmenin başka yolları var mı?
 
-A: Yes, Aspose.PDF for .NET provides various features to navigate to specific locations in a PDF document. Besides using `GoToAction`, you can use other actions like `GoToURIAction` to open a URL, `GoToEmbeddedAction` to navigate to embedded files, and `GoToNamedAction` to go to named destinations within the PDF document.
+ C: Evet, Aspose.PDF for .NET, bir PDF belgesindeki belirli konumlara gitmek için çeşitli özellikler sağlar. Kullanmanın yanı sıra`GoToAction` gibi diğer eylemleri kullanabilirsiniz.`GoToURIAction` bir URL'yi açmak için,`GoToEmbeddedAction` katıştırılmış dosyalara gitmek için ve`GoToNamedAction` PDF belgesindeki adlandırılmış hedeflere gitmek için.

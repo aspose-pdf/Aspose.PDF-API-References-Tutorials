@@ -1,61 +1,61 @@
 ---
-title: Structure Elements Properties In PDF File
-linktitle: Structure Elements Properties In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to working with structural element properties in PDF file with Aspose.PDF for .NET. Create information-rich structural elements.
+title: PDF Dosyasındaki Yapı Elemanlarının Özellikleri
+linktitle: PDF Dosyasındaki Yapı Elemanlarının Özellikleri
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasındaki yapısal eleman özellikleriyle çalışmak için adım adım kılavuz. Bilgi açısından zengin yapısal öğeler oluşturun.
 type: docs
 weight: 150
 url: /tr/net/programming-with-tagged-pdf/structure-elements-properties/
 ---
-In this guide, we are going to show you how to work with structural element properties in PDF file using the Aspose.PDF library for .NET. Aspose.PDF is a powerful library that lets you programmatically create, manipulate, and convert PDF files.
+Bu kılavuzda, .NET için Aspose.PDF kütüphanesini kullanarak PDF dosyasındaki yapısal eleman özellikleriyle nasıl çalışılacağını göstereceğiz. Aspose.PDF, PDF dosyalarını programlı olarak oluşturmanıza, değiştirmenize ve dönüştürmenize olanak tanıyan güçlü bir kitaplıktır.
 
-Let's dive into the code and learn how to work with structure element properties in a PDF document using Aspose.PDF for .NET.
+Kodun derinliklerine inelim ve Aspose.PDF for .NET kullanarak bir PDF belgesinde yapı elemanı özellikleriyle nasıl çalışılacağını öğrenelim.
 
-## Prerequisites
+## Önkoşullar
 
-Before you start, make sure you have installed Aspose.PDF for .NET and set up your development environment.
+Başlamadan önce Aspose.PDF for .NET'i yüklediğinizden ve geliştirme ortamınızı kurduğunuzdan emin olun.
 
-## Step 1: Creating the document
+## 1. Adım: Belgeyi oluşturma
 
-The first step is to create a new PDF document using the `Document` class.
+ İlk adım, kullanarak yeni bir PDF belgesi oluşturmaktır.`Document` sınıf.
 
 ```csharp
-// Create the PDF document
+// PDF belgesini oluşturun
 Document document = new Document();
 ```
 
-## Step 2: Access tagged content
+## 2. Adım: Etiketli içeriğe erişin
 
-Next, we access the tagged content of the document using the `ITaggedContent` object.
+ Daha sonra belgenin etiketli içeriğine şu komutu kullanarak erişiriz:`ITaggedContent` nesne.
 
 ```csharp
-// Access tagged content
+// Etiketli içeriğe erişme
 Tagged.ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 3: Set title and language
+## 3. Adım: Başlığı ve dili ayarlayın
 
-Now we can set the document title and language using the `SetTitle` and `SetLanguage` methods of the `ITaggedContent` object.
+ Artık belge başlığını ve dilini aşağıdaki komutu kullanarak ayarlayabiliriz:`SetTitle` Ve`SetLanguage` yöntemleri`ITaggedContent` nesne.
 
 ```csharp
-// Define the title of the document
+// Belgenin başlığını tanımlayın
 taggedContent.SetTitle("Tagged PDF document");
 
-// Set the document language
+// Belge dilini ayarlayın
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 4: Creating structural elements
+## Adım 4: Yapısal elemanların oluşturulması
 
-Then we create the structural elements in the PDF document. In this example, we will create a section element (`SectElement`) and a header element (`HeaderElement`).
+Daha sonra PDF belgesinde yapısal elemanları oluşturuyoruz. Bu örnekte bir bölüm öğesi oluşturacağız (`SectElement`) ve bir başlık öğesi (`HeaderElement`).
 
 ```csharp
-// Create a section element
+// Bölüm öğesi oluşturma
 StructureElement rootElement = taggedContent.RootElement;
 SectElement sect = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect);
 
-// Create a header element
+// Başlık öğesi oluşturma
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 sect.AppendChild(h1);
 h1.SetText("Header");
@@ -66,32 +66,32 @@ h1.ExpansionText = "Expansion Text";
 h1.ActualText = "Actual Text";
 ```
 
-## Step 5: Save the tagged PDF document
+## 5. Adım: Etiketli PDF belgesini kaydedin
 
-Finally, we save the tagged PDF document.
+Son olarak etiketlenen PDF belgesini kaydediyoruz.
 
 ```csharp
-// Save the tagged PDF document
+// Etiketli PDF belgesini kaydedin
 document.Save(dataDir + "StructureElementsProperties.pdf");
 ```
 
-### Sample source code for Structure Elements Properties using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Yapı Elemanları Özellikleri için örnek kaynak kodu 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// Pdf Belgesi Oluştur
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// TaggedPdf ile çalışmaya yönelik İçerik edinin
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+// Documnet için Başlığı ve Dili Ayarlayın
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Create Structure Elements
+// Yapı Elemanları Oluşturun
 StructureElement rootElement = taggedContent.RootElement;
 SectElement sect = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect);
@@ -104,53 +104,53 @@ h1.AlternativeText = "Alternative Text";
 h1.ExpansionText = "Expansion Text";
 h1.ActualText = "Actual Text";
 
-// Save Tagged Pdf Document
+// Etiketli Pdf Belgesini Kaydet
 document.Save(dataDir + "StructureElementsProperties.pdf");
 
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You now know how to work with structural element properties in a PDF document using Aspose.PDF for .NET. You can further explore the features of Aspose.PDF to create personalized PDF documents with information-rich structure elements.
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesinde yapısal eleman özellikleriyle nasıl çalışılacağını biliyorsunuz. Bilgi açısından zengin yapı öğelerine sahip kişiselleştirilmiş PDF belgeleri oluşturmak için Aspose.PDF'in özelliklerini daha fazla keşfedebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What are structural element properties in a PDF document, and why are they important?
+#### S: Bir PDF belgesindeki yapısal öğe özellikleri nelerdir ve bunlar neden önemlidir?
 
-A: Structural element properties define characteristics of elements in a tagged PDF document, enhancing accessibility and organization. Properties such as title, language, alternative text, expansion text, and actual text provide context and assistive information for users.
+C: Yapısal öğe özellikleri, etiketli bir PDF belgesindeki öğelerin özelliklerini tanımlayarak erişilebilirliği ve düzeni geliştirir. Başlık, dil, alternatif metin, genişletme metni ve gerçek metin gibi özellikler, kullanıcılara bağlam ve yardımcı bilgiler sağlar.
 
-#### Q: How does Aspose.PDF for .NET help work with structural element properties in a PDF document?
+#### S: Aspose.PDF for .NET, bir PDF belgesindeki yapısal eleman özellikleriyle çalışmaya nasıl yardımcı olur?
 
-A: Aspose.PDF for .NET provides APIs to create and manipulate structural elements with various properties. You can set properties such as title, language, alternative text, expansion text, and actual text to enhance the semantic structure and accessibility of the document.
+C: Aspose.PDF for .NET, çeşitli özelliklere sahip yapısal elemanları oluşturmak ve değiştirmek için API'ler sağlar. Belgenin anlamsal yapısını ve erişilebilirliğini geliştirmek için başlık, dil, alternatif metin, genişletme metni ve gerçek metin gibi özellikleri ayarlayabilirsiniz.
 
-#### Q: What is the role of the `SetTitle` and `SetLanguage` methods in working with structural element properties?
+####  S: Rolü nedir?`SetTitle` and `SetLanguage` methods in working with structural element properties?
 
-A: The `SetTitle` and `SetLanguage` methods of the `ITaggedContent` object allow you to set the document title and language, which influence structural element properties. Setting the title and language ensures consistency and meaningful metadata for the document.
+ C:`SetTitle` Ve`SetLanguage` yöntemleri`ITaggedContent`nesne, yapısal eleman özelliklerini etkileyen belge başlığını ve dilini ayarlamanıza olanak tanır. Başlığın ve dilin ayarlanması, belge için tutarlılık ve anlamlı meta veriler sağlar.
 
-#### Q: How can I create and manipulate structural elements in a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak bir PDF belgesindeki yapısal öğeleri nasıl oluşturabilir ve değiştirebilirim?
 
-A: You can create and manipulate structural elements using Aspose.PDF for .NET by accessing the tagged content of the document. Create structural elements, such as `SectElement` and `HeaderElement`, and set properties like text, title, language, alternative text, expansion text, and actual text.
+ C: Belgenin etiketli içeriğine erişerek Aspose.PDF for .NET'i kullanarak yapısal öğeler oluşturabilir ve değiştirebilirsiniz. Gibi yapısal öğeler oluşturun`SectElement` Ve`HeaderElement`ve metin, başlık, dil, alternatif metin, genişletme metni ve gerçek metin gibi özellikleri ayarlayın.
 
-#### Q: Can I specify different properties for different structural elements in a PDF document?
+#### S: Bir PDF belgesindeki farklı yapısal öğeler için farklı özellikler belirtebilir miyim?
 
-A: Yes, you can specify different properties for different structural elements in a PDF document. For example, you can set unique titles, languages, and accessibility properties for each structural element to provide comprehensive context for assistive technologies.
+C: Evet, bir PDF belgesindeki farklı yapısal öğeler için farklı özellikler belirleyebilirsiniz. Örneğin, yardımcı teknolojiler için kapsamlı bağlam sağlamak amacıyla her yapısal öğe için benzersiz başlıklar, diller ve erişilebilirlik özellikleri ayarlayabilirsiniz.
 
-#### Q: What is the purpose of alternative text, expansion text, and actual text in structural elements?
+#### S: Yapısal öğelerdeki alternatif metin, genişletme metni ve gerçek metnin amacı nedir?
 
-A: Alternative text provides a descriptive alternative for images or non-text elements, aiding accessibility. Expansion text offers additional information when content is expanded. Actual text specifies the text equivalent of a visual element, enhancing text extraction and search capabilities.
+C: Alternatif metin, görseller veya metin dışı öğeler için açıklayıcı bir alternatif sunarak erişilebilirliğe yardımcı olur. Genişletme metni, içerik genişletildiğinde ek bilgiler sunar. Gerçek metin, görsel bir öğenin metin eşdeğerini belirterek metin çıkarma ve arama yeteneklerini geliştirir.
 
-#### Q: How can I ensure that the structural element properties I set are properly reflected in the final PDF document?
+#### S: Ayarladığım yapısal eleman özelliklerinin son PDF belgesine düzgün şekilde yansıtıldığından nasıl emin olabilirim?
 
-A: You can verify the structural element properties by examining the PDF document's properties and metadata. Additionally, you can use PDF viewers, accessibility tools, or text extraction to confirm that the set properties are accurately represented.
+C: PDF belgesinin özelliklerini ve meta verilerini inceleyerek yapısal eleman özelliklerini doğrulayabilirsiniz. Ayrıca, ayarlanan özelliklerin doğru şekilde temsil edildiğini doğrulamak için PDF görüntüleyicileri, erişilebilirlik araçlarını veya metin ayıklamayı kullanabilirsiniz.
 
-#### Q: Are there any best practices to follow when working with structural element properties in a PDF document?
+#### S: Bir PDF belgesinde yapısal öğe özellikleriyle çalışırken izlenecek en iyi uygulamalar var mı?
 
-A: When working with structural element properties, consider the needs of diverse users. Provide meaningful titles, accurate languages, and descriptive alternative text to ensure accessibility and an enhanced user experience.
+C: Yapısal eleman özellikleriyle çalışırken farklı kullanıcıların ihtiyaçlarını göz önünde bulundurun. Erişilebilirliği ve gelişmiş kullanıcı deneyimini sağlamak için anlamlı başlıklar, doğru diller ve açıklayıcı alternatif metinler sağlayın.
 
-#### Q: Can I modify or update the properties of existing structural elements in a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak bir PDF belgesindeki mevcut yapısal öğelerin özelliklerini değiştirebilir veya güncelleyebilir miyim?
 
-A: Yes, you can modify or update the properties of existing structural elements using Aspose.PDF for .NET. Load the document, access the tagged content, navigate to the desired structural element, and use the available methods to update its properties.
+C: Evet, Aspose.PDF for .NET'i kullanarak mevcut yapısal elemanların özelliklerini değiştirebilir veya güncelleyebilirsiniz. Belgeyi yükleyin, etiketli içeriğe erişin, istenen yapısal öğeye gidin ve özelliklerini güncellemek için mevcut yöntemleri kullanın.
 
-#### Q: How can I use structural element properties to create information-rich PDF documents?
+#### S: Bilgi açısından zengin PDF belgeleri oluşturmak için yapısal öğe özelliklerini nasıl kullanabilirim?
 
-A: By leveraging structural element properties, you can create information-rich PDF documents that offer enhanced accessibility and context. Use properties such as title, language, and alternative text to provide comprehensive details about document structure and content.
+C: Yapısal öğe özelliklerinden yararlanarak gelişmiş erişilebilirlik ve bağlam sunan, bilgi açısından zengin PDF belgeleri oluşturabilirsiniz. Belge yapısı ve içeriği hakkında kapsamlı ayrıntılar sağlamak için başlık, dil ve alternatif metin gibi özellikleri kullanın.

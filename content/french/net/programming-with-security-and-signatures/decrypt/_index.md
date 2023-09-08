@@ -1,56 +1,56 @@
 ---
-title: Decrypt PDF File
-linktitle: Decrypt PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to decrypt PDF file using Aspose.PDF for .NET.
+title: Décrypter le fichier PDF
+linktitle: Décrypter le fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment décrypter un fichier PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 20
 url: /fr/net/programming-with-security-and-signatures/decrypt/
 ---
-In this tutorial, we will guide you through the process of decrypt PDF file using Aspose.PDF for .NET. This library allows you to open an existing PDF file, decrypt it and save the updated version. This feature is useful when you need to remove the password from a PDF file for easier access.
+Dans ce didacticiel, nous vous guiderons tout au long du processus de décryptage du fichier PDF à l'aide d'Aspose.PDF pour .NET. Cette bibliothèque vous permet d'ouvrir un fichier PDF existant, de le décrypter et d'enregistrer la version mise à jour. Cette fonctionnalité est utile lorsque vous devez supprimer le mot de passe d'un fichier PDF pour un accès plus facile.
 
-## Step 1: Prerequisites
+## Étape 1 : prérequis
 
-Before you begin, make sure you have the following prerequisites:
+Avant de commencer, assurez-vous de disposer des prérequis suivants :
 
-- Basic knowledge of the C# programming language
-- Installing Visual Studio on your machine
-- Aspose.PDF library for .NET installed
+- Connaissance de base du langage de programmation C#
+- Installer Visual Studio sur votre ordinateur
+- Bibliothèque Aspose.PDF pour .NET installée
 
-## Step 2: Environment setup
+## Étape 2 : Configuration de l'environnement
 
-To get started, follow these steps to set up your development environment:
+Pour commencer, suivez ces étapes pour configurer votre environnement de développement :
 
-1. Open Visual Studio and create a new C# project.
-2. Install Aspose.PDF library for .NET using NuGet package manager.
-3. Import the required namespaces into your code file:
+1. Ouvrez Visual Studio et créez un nouveau projet C#.
+2. Installez la bibliothèque Aspose.PDF pour .NET à l'aide du gestionnaire de packages NuGet.
+3. Importez les espaces de noms requis dans votre fichier de code :
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Opening the PDF document
+## Étape 3 : Ouverture du document PDF
 
-The first step is to open the PDF document you want to decrypt. In this example, we assume that you have a PDF file named "Decrypt.pdf" in the specified directory.
+La première étape consiste à ouvrir le document PDF que vous souhaitez décrypter. Dans cet exemple, nous supposons que vous disposez d'un fichier PDF nommé « Decrypt.pdf » dans le répertoire spécifié.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document document = new Document(dataDir + "Decrypt.pdf", "password");
 ```
 
-Be sure to replace the placeholders with the actual locations and passwords you want to use.
+Assurez-vous de remplacer les espaces réservés par les emplacements et les mots de passe réels que vous souhaitez utiliser.
 
-## Step 4: PDF decryption
+## Étape 4 : Décryptage du PDF
 
-Once you have opened the PDF document, you can decrypt it using the `Decrypt` method. No parameters are required for this method.
+ Une fois que vous avez ouvert le document PDF, vous pouvez le décrypter à l'aide du`Decrypt` méthode. Aucun paramètre n'est requis pour cette méthode.
 
 ```csharp
 document. Decrypt();
 ```
 
-## Step 5: Save updated PDF
+## Étape 5 : Enregistrez le PDF mis à jour
 
-After decrypting the PDF, you need to save the updated version of the document. Specify the output file path and use the `Save` method to save the document.
+ Après avoir déchiffré le PDF, vous devez enregistrer la version mise à jour du document. Spécifiez le chemin du fichier de sortie et utilisez le`Save` méthode pour enregistrer le document.
 
 ```csharp
 dataDir = dataDir + "Decrypt_out.pdf";
@@ -58,57 +58,57 @@ document. Save(dataDir);
 Console.WriteLine("\nPDF file decrypted successfully.\nFile saved at " + dataDir);
 ```
 
-The updated PDF will be saved to the specified location.
+Le PDF mis à jour sera enregistré à l'emplacement spécifié.
 
-### Sample source code for Decrypt using Aspose.PDF for .NET 
+### Exemple de code source pour Décrypter à l’aide d’Aspose.PDF pour .NET 
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Open document
+// Ouvrir le document
 Document document = new Document(dataDir+ "Decrypt.pdf", "password");
-// Decrypt PDF
+//Décrypter le PDF
 document.Decrypt();
 dataDir = dataDir + "Decrypt_out.pdf";
-// Save updated PDF
+// Enregistrer le PDF mis à jour
 document.Save(dataDir);
 Console.WriteLine("\nPDF file decrypted successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusion
 
-Congratulation ! You have successfully decrypted a PDF file using Aspose.PDF for .NET. This tutorial covered the step-by-step process from opening the document to saving the updated version. You can now use this feature to remove passwords from your PDF files.
+Félicitation ! Vous avez réussi à déchiffrer un fichier PDF à l'aide d'Aspose.PDF pour .NET. Ce didacticiel a couvert le processus étape par étape depuis l'ouverture du document jusqu'à l'enregistrement de la version mise à jour. Vous pouvez désormais utiliser cette fonctionnalité pour supprimer les mots de passe de vos fichiers PDF.
 
-### FAQ's for decrypt PDF file
+### FAQ pour décrypter un fichier PDF
 
-#### Q: What is the purpose of this tutorial?
+#### Q : Quel est le but de ce tutoriel ?
 
-A: This tutorial aims to guide you through the process of decrypting a PDF file using Aspose.PDF for .NET. The library allows you to remove the password from an existing PDF document and save the updated version, providing easier access to the file.
+R : Ce didacticiel vise à vous guider tout au long du processus de décryptage d'un fichier PDF à l'aide d'Aspose.PDF pour .NET. La bibliothèque vous permet de supprimer le mot de passe d'un document PDF existant et d'enregistrer la version mise à jour, offrant ainsi un accès plus facile au fichier.
 
-#### Q: What prerequisites are required before starting?
+#### Q : Quels sont les prérequis requis avant de commencer ?
 
-A: Before you begin, make sure you have a basic understanding of the C# programming language, have Visual Studio installed on your machine, and have the Aspose.PDF library for .NET installed.
+R : Avant de commencer, assurez-vous d'avoir une compréhension de base du langage de programmation C#, d'avoir installé Visual Studio sur votre ordinateur et d'avoir installé la bibliothèque Aspose.PDF pour .NET.
 
-#### Q: How do I set up the development environment?
+#### Q : Comment configurer l’environnement de développement ?
 
-A: Follow the provided steps to set up your development environment, including creating a new C# project in Visual Studio, installing the Aspose.PDF library for .NET using NuGet Package Manager, and importing the required namespaces.
+R : suivez les étapes fournies pour configurer votre environnement de développement, notamment la création d'un nouveau projet C# dans Visual Studio, l'installation de la bibliothèque Aspose.PDF pour .NET à l'aide de NuGet Package Manager et l'importation des espaces de noms requis.
 
-#### Q: How do I open an existing PDF document?
+#### Q : Comment puis-je ouvrir un document PDF existant ?
 
-A: Use the `Document` class to open the PDF document you want to decrypt. Replace "Decrypt.pdf" with the actual file name and provide the password for decryption.
+ R : Utilisez le`Document` classe pour ouvrir le document PDF que vous souhaitez déchiffrer. Remplacez « Decrypt.pdf » par le nom réel du fichier et fournissez le mot de passe pour le décryptage.
 
-#### Q: How can I decrypt a PDF document?
+#### Q : Comment puis-je décrypter un document PDF ?
 
-A: Once you have opened the PDF document, use the `Decrypt` method on the `Document` object. No parameters are required for this method.
+ R : Une fois que vous avez ouvert le document PDF, utilisez le`Decrypt` méthode sur le`Document` objet. Aucun paramètre n'est requis pour cette méthode.
 
-#### Q: Can I specify different passwords for decryption?
+#### Q : Puis-je spécifier différents mots de passe pour le décryptage ?
 
-A: No, the `Decrypt` method does not require any parameters. It assumes that the password provided during opening the document is the decryption password.
+ R : Non, le`Decrypt` La méthode ne nécessite aucun paramètre. Il suppose que le mot de passe fourni lors de l'ouverture du document est le mot de passe de décryptage.
 
-#### Q: How do I save the decrypted PDF document?
+#### Q : Comment puis-je enregistrer le document PDF déchiffré ?
 
-A: After decrypting the PDF, use the `Save` method on the `Document` object to save the updated PDF document. Specify the output file path where the decrypted PDF will be saved.
+ R : Après avoir décrypté le PDF, utilisez le`Save` méthode sur le`Document` objet pour enregistrer le document PDF mis à jour. Spécifiez le chemin du fichier de sortie où le PDF déchiffré sera enregistré.
 
-#### Q: How can I ensure the security of my decrypted PDF files?
+#### Q : Comment puis-je assurer la sécurité de mes fichiers PDF décryptés ?
 
-A: Once a PDF is decrypted, it no longer requires a password for access. Be cautious when sharing decrypted PDFs, as they may no longer have the same level of security as password-protected files.
+R : Une fois qu’un PDF est déchiffré, il ne nécessite plus de mot de passe pour y accéder. Soyez prudent lorsque vous partagez des PDF décryptés, car ils peuvent ne plus avoir le même niveau de sécurité que les fichiers protégés par mot de passe.

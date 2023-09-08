@@ -1,182 +1,182 @@
 ---
-title: Add SVG Object In PDF File
-linktitle: Add SVG Object In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add SVG objects in PDF file using Aspose.PDF for .NET.
+title: 在 PDF 文件中添加 SVG 对象
+linktitle: 在 PDF 文件中添加 SVG 对象
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 在 PDF 文件中轻松添加 SVG 对象。
 type: docs
 weight: 30
 url: /zh/net/programming-with-tables/add-svg-object/
 ---
-In this tutorial, we will learn how to add an SVG object in PDF file using the Aspose.PDF for .NET library. SVG (Scalable Vector Graphics) is a popular format for vector graphics that can be easily scaled without losing quality. With Aspose.PDF, you can add SVG objects to your PDF documents programmatically.
+在本教程中，我们将学习如何使用 Aspose.PDF for .NET 库在 PDF 文件中添加 SVG 对象。 SVG（可缩放矢量图形）是一种流行的矢量图形格式，可以轻松缩放而不损失质量。使用 Aspose.PDF，您可以以编程方式将 SVG 对象添加到 PDF 文档中。
 
-## Requirements
+## 要求
 
-Before we begin, make sure you have the following:
+在我们开始之前，请确保您具备以下条件：
 
-- Visual Studio installed
-- Aspose.PDF for .NET library installed
+- 安装了 Visual Studio
+- 安装了 Aspose.PDF for .NET 库
 
-## Step 1: Set up the Environment
+## 第 1 步：设置环境
 
-First, let's set up the environment by creating a new C# project in Visual Studio. Open Visual Studio and follow these steps:
+首先，我们通过在 Visual Studio 中创建一个新的 C# 项目来设置环境。打开 Visual Studio 并按照以下步骤操作：
 
-1. Click on "File" > "New" > "Project" to create a new project.
-2. Select "Console App (.NET Framework)" or "Console App (.NET Core)" template, depending on your setup.
-3. Choose a suitable name and location for your project, then click "Create."
+1. 单击“文件”>“新建”>“项目”创建一个新项目。
+2. 根据您的设置，选择“控制台应用程序 (.NET Framework)”或“控制台应用程序 (.NET Core)”模板。
+3. 为您的项目选择合适的名称和位置，然后单击“创建”。
 
-## Step 2: Create Document and Image Objects
+## 第 2 步：创建文档和图像对象
 
-In this step, we will create the necessary objects for our PDF document and SVG image. Open the C# file of your project and add the following code:
+在此步骤中，我们将为 PDF 文档和 SVG 图像创建必要的对象。打开项目的 C# 文件并添加以下代码：
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instant Document object
+//即时文档对象
 Document doc = new Document();
-// Create an image instance
+//创建图像实例
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 ```
 
-## Step 3: Set Image Properties
+## 步骤 3：设置图像属性
 
-Next, we will set the properties for our SVG image. We will specify the file type as SVG, the path to the SVG file, and the dimensions of the image. Add the following code after the previous step:
+接下来，我们将为 SVG 图像设置属性。我们将指定文件类型为 SVG、SVG 文件的路径以及图像的尺寸。在上一步之后添加以下代码：
 
 ```csharp
-// Set image type as SVG
+//将图像类型设置为 SVG
 img.FileType = Aspose.Pdf.ImageFileType.Svg;
-// Path for source file
+//源文件路径
 img.File = dataDir + "SVGToPDF.svg";
-// Set width for image instance
+//设置图像实例的宽度
 img. FixWidth = 50;
-// Set height for image instance
+//设置图像实例的高度
 img.FixHeight = 50;
 ```
 
-## Step 4: Create and Configure the Table
+## 第 4 步：创建并配置表
 
-Now, let's create a table object and set the column widths. We will create a table with two columns, each with a width of 100 units. Add the following code:
+现在，让我们创建一个表格对象并设置列宽。我们将创建一个包含两列的表，每列的宽度为 100 个单位。添加以下代码：
 
 ```csharp
-// Create instance table
+//创建实例表
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Set width for table cells
+//设置表格单元格的宽度
 table. ColumnWidths = "100 100";
 ```
 
-## Step 5: Add Cells to the Table
+## 第 5 步：将单元格添加到表中
 
-In this step, we will add a row and cells to the table. Each row represents a horizontal row in the table, and cells are added to the rows. Add the following code:
+在此步骤中，我们将向表格添加行和单元格。每行代表表中的一个水平行，单元格将添加到这些行中。添加以下代码：
 
 ```csharp
-// Create row object and add it to table instance
+//创建行对象并将其添加到表实例
 Aspose.Pdf.Row row = table.Rows.Add();
-// Create cell object and add it to row instance
+//创建单元格对象并将其添加到行实例
 Aspose.Pdf.Cell cell = row.Cells.Add();
 ```
 
-## Step 6: Add Text and Image to Cells
+## 第 6 步：向单元格添加文本和图像
 
-Next, let's add text and the SVG image to the cells of the table. We will add the text "First cell" to the first cell and the SVG image to the second cell. Add the following code:
+接下来，我们将文本和 SVG 图像添加到表格的单元格中。我们将文本“First cell”添加到第一个单元格，将 SVG 图像添加到第二个单元格。添加以下代码：
 
 ```csharp
-// Add textfragment to paragraphs collection of cell object
+//将文本片段添加到单元格对象的段落集合中
 cell.Paragraphs.Add(new TextFragment("First cell"));
-// Add another cell to row object
+//将另一个单元格添加到行对象
 cell = row. Cells. Add();
-// Add SVG image to paragraphs collection of recently added cell instance
+//将 SVG 图像添加到最近添加的单元格实例的段落集合中
 cell.Paragraphs.Add(img);
 ```
 
-## Step 7: Create and Add a Page to the Document
+## 步骤 7：创建页面并将其添加到文档中
 
-Now, let's create a page object and add it to the document. The table will be added to the paragraphs collection of the page. Add the following code:
+现在，让我们创建一个页面对象并将其添加到文档中。该表格将添加到页面的段落集合中。添加以下代码：
 
 ```csharp
-// Create page object and add it to pages collection of document instance
+//创建页面对象并将其添加到文档实例的页面集合中
 Page page = doc.Pages.Add();
-// Add table to paragraphs collection of page object
+//将表格添加到页面对象的段落集合中
 page.Paragraphs.Add(table);
 ```
 
-## Step 8: Save the PDF File
+## 第 8 步：保存 PDF 文件
 
-Finally, we will save the PDF file to the specified location. Add the following code:
+最后，我们将PDF文件保存到指定位置。添加以下代码：
 
 ```csharp
 dataDir = dataDir + "AddSVGObject_out.pdf";
-// Save PDF file
+//保存 PDF 文件
 doc.Save(dataDir);
 
 Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile saved at " + dataDir);
 ```
 
-### Example source code for add SVG object using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 添加 SVG 对象的示例源代码
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document object
+//实例化文档对象
 Document doc = new Document();
-// Create an image instance
+//创建图像实例
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
-// Set image type as SVG
+//将图像类型设置为 SVG
 img.FileType = Aspose.Pdf.ImageFileType.Svg;
-// Path for source file
+//源文件路径
 img.File = dataDir + "SVGToPDF.svg";
-// Set width for image instance
+//设置图像实例的宽度
 img.FixWidth = 50;
-// Set height for image instance
+//设置图像实例的高度
 img.FixHeight = 50;
-// Create table instance
+//创建表实例
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Set width for table cells
+//设置表格单元格的宽度
 table.ColumnWidths = "100 100";
-// Create row object and add it to table instance
+//创建行对象并将其添加到表实例
 Aspose.Pdf.Row row = table.Rows.Add();
-// Create cell object and add it to row instance
+//创建单元格对象并将其添加到行实例
 Aspose.Pdf.Cell cell = row.Cells.Add();
-// Add textfragment to paragraphs collection of cell object
+//将文本片段添加到单元格对象的段落集合中
 cell.Paragraphs.Add(new TextFragment("First cell"));
-// Add another cell to row object
+//将另一个单元格添加到行对象
 cell = row.Cells.Add();
-// Add SVG image to paragraphs collection of recently added cell instance
+//将 SVG 图像添加到最近添加的单元格实例的段落集合中
 cell.Paragraphs.Add(img);
-// Create page object and add it to pages collection of document instance
+//创建页面对象并将其添加到文档实例的页面集合中
 Page page = doc.Pages.Add();
-// Add table to paragraphs collection of page object
+//将表格添加到页面对象的段落集合中
 page.Paragraphs.Add(table);
 
 dataDir = dataDir + "AddSVGObject_out.pdf";
-// Save PDF file
+//保存 PDF 文件
 doc.Save(dataDir);
 
 Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile saved at " + dataDir);            
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we have learned how to add an SVG object to a PDF file using the Aspose.PDF for .NET library. We covered the step-by-step process of creating a document, setting up the environment, adding an SVG image to a table cell, and saving the PDF file. Now you can incorporate SVG objects into your PDF documents programmatically.
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 库将 SVG 对象添加到 PDF 文件中。我们介绍了创建文档、设置环境、将 SVG 图像添加到表格单元格以及保存 PDF 文件的分步过程。现在，您可以通过编程方式将 SVG 对象合并到 PDF 文档中。
 
-### FAQ's for add SVG object in PDF file
+### 在 PDF 文件中添加 SVG 对象的常见问题解答
 
-#### Q: Can I add multiple SVG objects to the PDF document?
+#### 问：我可以向 PDF 文档添加多个 SVG 对象吗？
 
-A: Yes, you can add multiple SVG objects to the PDF document. Simply create and configure additional `Aspose.Pdf.Image` instances for each SVG image you want to add and then add them to the desired table cells or paragraphs in the PDF document.
+答：是的，您可以将多个 SVG 对象添加到 PDF 文档中。只需创建并配置额外的`Aspose.Pdf.Image`您要添加的每个 SVG 图像的实例，然后将它们添加到 PDF 文档中所需的表格单元格或段落。
 
-#### Q: How can I adjust the size and position of the SVG image in the table cell?
+#### 问：如何调整表格单元格中 SVG 图像的大小和位置？
 
-A: To adjust the size and position of the SVG image in the table cell, you can modify the `FixWidth` and `FixHeight` properties of the `Aspose.Pdf.Image` instance. You can also use other properties like `HorizontalAlignment` and `VerticalAlignment` of the table cell to control the positioning.
+ A：要调整SVG图像在表格单元格中的大小和位置，可以修改`FixWidth`和`FixHeight`的属性`Aspose.Pdf.Image`实例。您还可以使用其他属性，例如`HorizontalAlignment`和`VerticalAlignment`的表格单元格来控制定位。
 
-#### Q: Is it possible to add text alongside the SVG image in the same table cell?
+#### 问：是否可以在同一表格单元格中的 SVG 图像旁边添加文本？
 
-A: Yes, it is possible to add text alongside the SVG image in the same table cell. You can use the `cell.Paragraphs.Add(new TextFragment("Your Text Here"));` method to add text to the cell along with the SVG image.
+答：是的，可以在同一表格单元格中的 SVG 图像旁边添加文本。您可以使用`cell.Paragraphs.Add(new TextFragment("Your Text Here"));`方法将文本与 SVG 图像一起添加到单元格。
 
-#### Q: Can I add hyperlinks to the SVG image?
+#### 问：我可以向 SVG 图像添加超链接吗？
 
-A: Yes, you can add hyperlinks to the SVG image by using the `Hyperlink` property of the `Aspose.Pdf.Image` instance. Set the hyperlink URL or action to make the image clickable.
+答：是的，您可以使用以下命令向 SVG 图像添加超链接：`Hyperlink`的财产`Aspose.Pdf.Image`实例。设置超链接 URL 或操作以使图像可单击。
 
-#### Q: Is Aspose.PDF for .NET compatible with .NET Core 3.1 or later versions?
+#### 问：Aspose.PDF for .NET 与 .NET Core 3.1 或更高版本兼容吗？
 
-A: Yes, Aspose.PDF for .NET is compatible with .NET Core 3.1 and later versions. You can use it in both .NET Framework and .NET Core applications.
+答：是的，Aspose.PDF for .NET 与 .NET Core 3.1 及更高版本兼容。您可以在 .NET Framework 和 .NET Core 应用程序中使用它。

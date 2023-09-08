@@ -1,100 +1,100 @@
 ---
-title: Add Tooltip To Field
-linktitle: Add Tooltip To Field
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a tooltip to a field with Aspose.PDF for .NET.
+title: Добавить подсказку в поле
+linktitle: Добавить подсказку в поле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как добавить всплывающую подсказку в поле с помощью Aspose.PDF для .NET.
 type: docs
 weight: 10
 url: /ru/net/programming-with-forms/add-tooltip-to-field/
 ---
-Aspose.PDF for .NET is a powerful library that allows developers to manipulate PDF documents programmatically. In this tutorial, we will walk through the process of adding a tooltip to a field using Aspose.PDF for .NET. We will provide a step-by-step guide to help you understand and implement this functionality in your C# code.
+Aspose.PDF для .NET — это мощная библиотека, которая позволяет разработчикам программно манипулировать PDF-документами. В этом уроке мы рассмотрим процесс добавления всплывающей подсказки в поле с помощью Aspose.PDF для .NET. Мы предоставим пошаговое руководство, которое поможет вам понять и реализовать эту функциональность в вашем коде C#.
 
-## Step 1: Setting up the project and including Aspose.PDF for .NET
+## Шаг 1. Настройка проекта и включение Aspose.PDF для .NET.
 
-Before we begin, make sure you have Aspose.PDF for .NET installed in your development environment. You can download the library from the official website and follow the installation instructions provided.
+Прежде чем мы начнем, убедитесь, что в вашей среде разработки установлен Aspose.PDF for .NET. Вы можете скачать библиотеку с официального сайта и следовать инструкциям по установке.
 
-Once you have installed Aspose.PDF for .NET, create a new C# project in your preferred Integrated Development Environment (IDE). Add a reference to the Aspose.PDF.dll file in your project to access the library's functionality.
+После установки Aspose.PDF для .NET создайте новый проект C# в предпочитаемой вами интегрированной среде разработки (IDE). Добавьте ссылку на файл Aspose.PDF.dll в свой проект, чтобы получить доступ к функциям библиотеки.
 
-## Step 2: Loading the source PDF form
+## Шаг 2. Загрузка исходной PDF-формы
 
-In this step, we will load the source PDF form that contains the field to which we want to add a tooltip. First, ensure that you have the source PDF form file available in your project directory. You can obtain a sample PDF form or use your own existing form.
+На этом этапе мы загрузим исходную PDF-форму, содержащую поле, к которому мы хотим добавить всплывающую подсказку. Сначала убедитесь, что исходный файл формы PDF доступен в каталоге вашего проекта. Вы можете получить образец формы в формате PDF или использовать существующую форму.
 
-To load the PDF form, use the following code:
+Чтобы загрузить форму PDF, используйте следующий код:
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Загрузить исходную PDF-форму
 Document doc = new Document(dataDir + "AddTooltipToField.pdf");
 ```
 
-Make sure to replace `"AddTooltipToField.pdf"` with the actual filename of your source PDF form.
+ Обязательно замените`"AddTooltipToField.pdf"` с фактическим именем файла исходной PDF-формы.
 
-## Step 3: Adding a tooltip to a text field
+## Шаг 3. Добавление всплывающей подсказки в текстовое поле
 
-Now that we have loaded the source PDF form, we can proceed to add a tooltip to a specific text field. In this example, let's assume that the text field's name is "textbox1".
+Теперь, когда мы загрузили исходную PDF-форму, мы можем приступить к добавлению всплывающей подсказки в определенное текстовое поле. В этом примере предположим, что имя текстового поля — «textbox1».
 
-To add a tooltip to the text field, use the following code:
+Чтобы добавить подсказку в текстовое поле, используйте следующий код:
 
 ```csharp
-// Set the tooltip for textfield
+// Установить всплывающую подсказку для текстового поля
 (doc.Form["textbox1"] as Field).AlternateName = "Text box tool tip";
 ```
 
-Replace `"textbox1"` with the actual name of the text field to which you want to add the tooltip. Also, customize the tooltip text by modifying the value assigned to `AlternateName`.
+ Заменять`"textbox1"` с фактическим именем текстового поля, к которому вы хотите добавить всплывающую подсказку. Кроме того, настройте текст всплывающей подсказки, изменив значение, присвоенное`AlternateName`.
 
-## Step 4: Saving the updated document
+## Шаг 4. Сохранение обновленного документа.
 
-After adding the tooltip to the field, we need to save the updated document. Specify the output file path where you want to save the modified PDF form.
+После добавления всплывающей подсказки в поле нам необходимо сохранить обновленный документ. Укажите путь к выходному файлу, в котором вы хотите сохранить измененную форму PDF.
 
-To save the updated document, use the following code:
+Чтобы сохранить обновленный документ, используйте следующий код:
 
 ```csharp
 dataDir = dataDir + "AddTooltipToField_out.pdf";
-// Save the updated document
+// Сохраните обновленный документ
 doc.Save(dataDir);
 Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 ```
 
-Make sure to provide the desired output file name and path. After executing this code, the modified PDF form with the added tooltip will be saved to the specified location.
+Обязательно укажите желаемое имя и путь выходного файла. После выполнения этого кода измененная PDF-форма с добавленной подсказкой будет сохранена в указанном месте.
 
-### Sample source code for Add Tooltip To Field using Aspose.PDF for .NET 
+### Пример исходного кода для добавления всплывающей подсказки в поле с использованием Aspose.PDF для .NET 
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Загрузить исходную PDF-форму
 Document doc = new Document(dataDir + "AddTooltipToField.pdf");
-// Set the tooltip for textfield
+// Установить всплывающую подсказку для текстового поля
 (doc.Form["textbox1"] as Field).AlternateName = "Text box tool tip";
 dataDir = dataDir + "AddTooltipToField_out.pdf";
-// Save the updated document
+// Сохраните обновленный документ
 doc.Save(dataDir);
 Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Заключение
 
-Congratulations! You have successfully learned how to add a tooltip to a field using Aspose.PDF for .NET. By following the step-by-step guide in this tutorial, you can enhance your PDF forms with tooltips to provide additional information or guidance to the users. Remember to explore the documentation and examples provided by Aspose.PDF for .NET to discover more advanced features and functionalities offered by the library.
+Поздравляем! Вы успешно научились добавлять всплывающую подсказку к полю с помощью Aspose.PDF для .NET. Следуя пошаговым инструкциям в этом руководстве, вы можете улучшить свои PDF-формы с помощью всплывающих подсказок, предоставляющих пользователям дополнительную информацию или рекомендации. Не забудьте изучить документацию и примеры, предоставленные Aspose.PDF для .NET, чтобы узнать о более продвинутых функциях и функциях, предлагаемых библиотекой.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is a tooltip in a PDF form, and why would I use it?
+#### Вопрос: Что такое всплывающая подсказка в форме PDF и зачем мне ее использовать?
 
-A: A tooltip in a PDF form is a small pop-up box that appears when the user hovers their mouse over a specific field. It provides additional information or instructions related to that field. Tooltips are helpful for guiding users, providing explanations, or offering context-specific help in PDF forms.
+О: Подсказка в PDF-форме представляет собой небольшое всплывающее окно, которое появляется, когда пользователь наводит указатель мыши на определенное поле. Он предоставляет дополнительную информацию или инструкции, относящиеся к этому полю. Всплывающие подсказки полезны для руководства пользователями, предоставления пояснений или предоставления контекстной помощи в формах PDF.
 
-#### Q: Can I customize the appearance and behavior of the tooltip?
+#### Вопрос: Могу ли я настроить внешний вид и поведение всплывающей подсказки?
 
-A: Yes, with Aspose.PDF for .NET, you can customize the appearance and behavior of the tooltip. You can set the tooltip text, font, color, and other attributes to match your application's design and requirements.
+О: Да, с помощью Aspose.PDF для .NET вы можете настроить внешний вид и поведение всплывающей подсказки. Вы можете установить текст подсказки, шрифт, цвет и другие атрибуты в соответствии с дизайном и требованиями вашего приложения.
 
-#### Q: Is Aspose.PDF for .NET compatible with other programming languages besides C#?
+#### Вопрос: Совместим ли Aspose.PDF для .NET с другими языками программирования, кроме C#?
 
-A: Yes, Aspose.PDF for .NET is designed to work with other .NET languages such as VB.NET, F#, and more. The library provides consistent functionality across these languages.
+О: Да, Aspose.PDF для .NET предназначен для работы с другими языками .NET, такими как VB.NET, F# и другими. Библиотека обеспечивает согласованную функциональность на всех этих языках.
 
-#### Q: Can I add tooltips to other types of form fields, such as checkboxes or radio buttons?
+#### Вопрос: Могу ли я добавлять всплывающие подсказки к другим типам полей формы, например флажкам или переключателям?
 
-A: Yes, you can add tooltips to various types of form fields, including text fields, checkboxes, radio buttons, combo boxes, and more. The process is similar, and you can access different types of form fields using their names or IDs.
+О: Да, вы можете добавлять всплывающие подсказки к различным типам полей формы, включая текстовые поля, флажки, переключатели, поля со списком и многое другое. Процесс аналогичен, и вы можете получить доступ к различным типам полей формы, используя их имена или идентификаторы.
 
-#### Q: Can I remove or modify the tooltip after it has been added to the field?
+#### Вопрос: Могу ли я удалить или изменить всплывающую подсказку после ее добавления в поле?
 
-A: Yes, you can modify or remove the tooltip from a field even after it has been added using Aspose.PDF for .NET. Simply access the field and update its `AlternateName` property with the new tooltip text or set it to an empty string to remove the tooltip.
+ О: Да, вы можете изменить или удалить всплывающую подсказку из поля даже после того, как она была добавлена с помощью Aspose.PDF для .NET. Просто откройте поле и обновите его.`AlternateName` с новым текстом всплывающей подсказки или задайте для него пустую строку, чтобы удалить всплывающую подсказку.

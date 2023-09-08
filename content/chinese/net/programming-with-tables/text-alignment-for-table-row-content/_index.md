@@ -1,45 +1,45 @@
 ---
-title: Text Alignment For Table Row Content
-linktitle: Text Alignment For Table Row Content
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to align row content in a PDF table using Aspose.PDF for .NET.
+title: 表格行内容的文本对齐
+linktitle: 表格行内容的文本对齐
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 对齐 PDF 表格中的行内容。
 type: docs
 weight: 210
 url: /zh/net/programming-with-tables/text-alignment-for-table-row-content/
 ---
-In this tutorial, we will guide you step by step to align the contents of a row in a table of a PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+在本教程中，我们将逐步指导您使用 Aspose.PDF for .NET 对齐 PDF 文档表格中的行内容。我们将解释提供的 C# 源代码并向您展示如何实现它。
 
-## Step 1: Creating the PDF document
-First, we'll create the PDF document:
+## 第 1 步：创建 PDF 文档
+首先，我们将创建 PDF 文档：
 
 ```csharp
 var dataDir = "YOUR DOCUMENTS DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Step 2: Table initialization
-Next, we will initialize the table:
+## 步骤2：表初始化
+接下来，我们将初始化表：
 
 ```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 ```
 
-## Step 3: Setting the table border color
-We will configure the table border color:
+## 第三步：设置表格边框颜色
+我们将配置表格边框颜色：
 
 ```csharp
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-## Step 4: Configuring the table cell border
-We are going to configure the table cell border:
+## 步骤 4：配置表格单元格边框
+我们将配置表格单元格边框：
 
 ```csharp
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-## Step 5: Loop to add 10 rows to the table
-We will now use a loop to add 10 rows to the table:
+## 第 5 步：循环向表中添加 10 行
+现在，我们将使用循环向表中添加 10 行：
 
 ```csharp
 for (int row_count = 0; row_count < 10; row_count++)
@@ -53,15 +53,15 @@ for (int row_count = 0; row_count < 10; row_count++)
 }
 ```
 
-## Step 6: Configuring the vertical line alignment
-We are going to configure the vertical alignment of the rows of the table:
+## 步骤 6：配置垂直线对齐
+我们将配置表行的垂直对齐方式：
 
 ```csharp
 row.VerticalAlignment = VerticalAlignment.Center;
 ```
 
-## Step 7: Adding content to row cells
-We are going to add content to the row cells:
+## 步骤 7：向行单元格添加内容
+我们将向行单元格添加内容：
 
 ```csharp
 row.Cells.Add("Column("+row_count+",1)"+DateTime.Now.Ticks);
@@ -69,38 +69,38 @@ row.Cells.Add("Column("+row_count+",2)");
 row.Cells.Add("Column("+row_count+",3)");
 ```
 
-## Step 8: Adding the table to the document page
-Now let's add the table to the document page:
+## 步骤8：将表格添加到文档页面
+现在让我们将表格添加到文档页面：
 
 ```csharp
 Page tocPage = doc.Pages.Add();
 tocPage.Paragraphs.Add(table);
 ```
 
-## Step 9: Saving the PDF document
-Finally, we will save the PDF document:
+## 第9步：保存PDF文档
+最后，我们保存PDF文档：
 
 ```csharp
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-### Example source code for Text Alignment For Table Row Content using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 进行表行内容文本对齐的示例源代码
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create PDF document
+//创建 PDF 文档
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-// Initializes a new instance of the Table
+//初始化表的新实例
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Set the table border color as LightGray
+//将表格边框颜色设置为浅灰色
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// set the border for table cells
+//设置表格单元格的边框
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// create a loop to add 10 rows
+//创建一个循环以添加 10 行
 for (int row_count = 0; row_count < 10; row_count++)
 {
-	// add row to table
+	//将行添加到表中
 	Aspose.Pdf.Row row = table.Rows.Add();
 	row.VerticalAlignment = VerticalAlignment.Center;
 
@@ -109,33 +109,33 @@ for (int row_count = 0; row_count < 10; row_count++)
 	row.Cells.Add("Column (" + row_count + ", 3)");
 }
 Page tocPage = doc.Pages.Add();
-// Add table object to first page of input document
+//将表格对象添加到输入文档的第一页
 tocPage.Paragraphs.Add(table);
-// Save updated document containing table object
+//保存包含表对象的更新文档
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to align the contents of a row in a table in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to create a document, initialize a table, configure border and alignment, add content, and save the PDF document. Now you can apply this knowledge to your own projects.
+## 结论
+恭喜！您现在已经了解了如何使用 Aspose.PDF for .NET 对齐 PDF 文档表格中的行内容。本分步指南向您展示了如何创建文档、初始化表格、配置边框和对齐方式、添加内容以及保存 PDF 文档。现在您可以将这些知识应用到您自己的项目中。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: How can I align the contents of the table cells horizontally?
+#### 问：如何水平对齐表格单元格的内容？
 
-A: You can align the contents of the table cells horizontally by setting the `HorizontalAlign` property of the cell's `TextState` object. For example, to center-align the text, use `cell.TextState.HorizontalAlignment = HorizontalAlignment.Center`. You can also set it to `HorizontalAlignment.Left` or `HorizontalAlignment.Right` for left and right alignment, respectively.
+答：您可以通过设置水平对齐表格单元格的内容`HorizontalAlign`细胞的属性`TextState`目的。例如，要居中对齐文本，请使用`cell.TextState.HorizontalAlignment = HorizontalAlignment.Center`。您也可以将其设置为`HorizontalAlignment.Left`或者`HorizontalAlignment.Right`分别用于左对齐和右对齐。
 
-#### Q: Can I apply different border styles and colors to individual cells within the table?
+#### 问：我可以对表格中的各个单元格应用不同的边框样式和颜色吗？
 
-A: Yes, you can apply different border styles and colors to individual cells within the table. To customize the border for a specific cell, set the `cell.Border` property to a new `BorderInfo` object with the desired settings, such as border sides, width, and color.
+答：是的，您可以对表格中的各个单元格应用不同的边框样式和颜色。要自定义特定单元格的边框，请设置`cell.Border`属性为新的`BorderInfo`具有所需设置的对象，例如边框边、宽度和颜色。
 
-#### Q: How can I adjust the vertical alignment of the table content within the cells?
+#### 问：如何调整单元格内表格内容的垂直对齐方式？
 
-A: You can adjust the vertical alignment of the table content within the cells by setting the `VerticalAlignment` property of the row to `VerticalAlignment.Center`, `VerticalAlignment.Top`, or `VerticalAlignment.Bottom`. This property controls the vertical alignment of all cells in that row.
+答：您可以通过设置单元格内的表格内容的垂直对齐方式`VerticalAlignment`行的属性为`VerticalAlignment.Center`, `VerticalAlignment.Top`， 或者`VerticalAlignment.Bottom`。此属性控制该行中所有单元格的垂直对齐方式。
 
-#### Q: Is it possible to add more columns or rows to the table dynamically?
+#### 问：是否可以动态向表添加更多列或行？
 
-A: Yes, you can add more columns and rows to the table dynamically by using the `table.Rows.Add()` method to add new rows and the `row.Cells.Add()` method to add new cells to the rows. You can do this inside loops or based on your specific requirements.
+答：是的，您可以使用以下命令动态向表中添加更多列和行`table.Rows.Add()`添加新行的方法和`row.Cells.Add()`方法将新单元格添加到行中。您可以在循环内或根据您的具体要求执行此操作。
 
-#### Q: How can I set a background color for specific cells or the entire table?
+#### 问：如何为特定单元格或整个表格设置背景颜色？
 
-A: To set a background color for specific cells or the entire table, use the `BackgroundColor` property of the `Cell` or `Table` object. For example, to set the background color of a cell, use `cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.
+答：要为特定单元格或整个表格设置背景颜色，请使用`BackgroundColor`的财产`Cell`或者`Table`目的。例如，要设置单元格的背景颜色，请使用`cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.

@@ -1,101 +1,101 @@
 ---
-title: Delete All Attachments In PDF File
-linktitle: Delete All Attachments In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove all attachments in PDF file using Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: Alle Anhänge in der PDF-Datei löschen
+linktitle: Alle Anhänge in der PDF-Datei löschen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET alle Anhänge in einer PDF-Datei entfernen. Schritt-für-Schritt-Anleitung für einfache Handhabung.
 type: docs
 weight: 20
 url: /de/net/programming-with-attachments/delete-all-attachments/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to remove all attachments in PDF file using Aspose.PDF for .NET.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch den folgenden C#-Quellcode, um alle Anhänge in einer PDF-Datei mit Aspose.PDF für .NET zu entfernen.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert und Ihre Entwicklungsumgebung eingerichtet haben, bevor Sie beginnen. Außerdem verfügen Sie über Grundkenntnisse der C#-Programmierung.
 
-### Step 1: Document Directory Setup
+### Schritt 1: Einrichten des Dokumentenverzeichnisses
 
-In the provided source code, you need to specify the directory where the PDF file is located from which you want to remove the attachments. Change the "dataDir" variable to the desired directory.
+Im bereitgestellten Quellcode müssen Sie das Verzeichnis angeben, in dem sich die PDF-Datei befindet, aus der Sie die Anhänge entfernen möchten. Ändern Sie die Variable „dataDir“ in das gewünschte Verzeichnis.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Schritt 2: Öffnen Sie das vorhandene PDF-Dokument
 
-We open the existing PDF document using the specified path.
+Wir öffnen das vorhandene PDF-Dokument über den angegebenen Pfad.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllAttachments.pdf");
 ```
 
-### Step 3: Remove all attachments
+### Schritt 3: Entfernen Sie alle Anhänge
 
-We remove all attachments from the document.
+Wir entfernen alle Anhänge aus dem Dokument.
 
 ```csharp
 pdfDocument.EmbeddedFiles.Delete();
 ```
 
-### Step 4: Save the Updated File
+### Schritt 4: Speichern Sie die aktualisierte Datei
 
-Finally, we save the updated PDF file with the name "DeleteAllAttachments_out.pdf" in the specified directory.
+Abschließend speichern wir die aktualisierte PDF-Datei mit dem Namen „DeleteAllAttachments_out.pdf“ im angegebenen Verzeichnis.
 
 ```csharp
 pdfDocument.Save(dataDir + "DeleteAllAttachments_out.pdf");
 ```
 
-### Sample source code for Delete All Attachments using Aspose.PDF for .NET 
+### Beispielquellcode zum Löschen aller Anhänge mit Aspose.PDF für .NET 
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "DeleteAllAttachments.pdf");
-// Delete all attachments
+// Löschen Sie alle Anhänge
 pdfDocument.EmbeddedFiles.Delete();
 dataDir = dataDir + "DeleteAllAttachments_out.pdf";
-// Save updated file
+// Aktualisierte Datei speichern
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nAll attachments deleted successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we have explained how to remove all attachments from a PDF file using Aspose.PDF for .NET. You can now use this knowledge to clean up your PDF documents by removing all unwanted attachments.
+In diesem Tutorial haben wir erklärt, wie Sie mit Aspose.PDF für .NET alle Anhänge aus einer PDF-Datei entfernen. Mit diesem Wissen können Sie nun Ihre PDF-Dokumente bereinigen, indem Sie alle unerwünschten Anhänge entfernen.
 
-## FAQ's for delete all attachments in PDF file
+## FAQs zum Löschen aller Anhänge in einer PDF-Datei
 
-#### Q: Why would I need to remove all attachments from a PDF file?
+#### F: Warum sollte ich alle Anhänge aus einer PDF-Datei entfernen?
 
-A: Removing all attachments from a PDF file can help streamline the document, reduce file size, and eliminate any unnecessary or outdated supplementary materials.
+A: Das Entfernen aller Anhänge aus einer PDF-Datei kann dazu beitragen, das Dokument zu optimieren, die Dateigröße zu reduzieren und unnötige oder veraltete Zusatzmaterialien zu entfernen.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of removing all attachments?
+#### F: Wie vereinfacht Aspose.PDF für .NET das Entfernen aller Anhänge?
 
-A: Aspose.PDF for .NET provides a user-friendly API that allows you to easily remove all attachments from a PDF file. The provided source code demonstrates the step-by-step process.
+A: Aspose.PDF für .NET bietet eine benutzerfreundliche API, mit der Sie problemlos alle Anhänge aus einer PDF-Datei entfernen können. Der bereitgestellte Quellcode demonstriert den schrittweisen Prozess.
 
-#### Q: Can I selectively remove specific attachments using this tutorial?
+#### F: Kann ich mit diesem Tutorial gezielt bestimmte Anhänge entfernen?
 
-A: No, this tutorial focuses on removing all attachments from a PDF document. If you need to remove specific attachments, you can explore Aspose.PDF for .NET's API for more advanced attachment management.
+A: Nein, dieses Tutorial konzentriert sich auf das Entfernen aller Anhänge aus einem PDF-Dokument. Wenn Sie bestimmte Anhänge entfernen müssen, können Sie die API von Aspose.PDF für .NET für eine erweiterte Anhangsverwaltung erkunden.
 
-#### Q: Is there a limit to the number of attachments that can be removed using this method?
+#### F: Gibt es eine Grenze für die Anzahl der Anhänge, die mit dieser Methode entfernt werden können?
 
-A: There is no strict limit to the number of attachments that can be removed using this method. However, it's important to note that all attachments within the PDF document will be deleted.
+A: Es gibt keine strenge Begrenzung für die Anzahl der Anhänge, die mit dieser Methode entfernt werden können. Beachten Sie jedoch, dass alle Anhänge im PDF-Dokument gelöscht werden.
 
-#### Q: Will removing attachments affect the main content of the PDF document?
+#### F: Hat das Entfernen von Anhängen Auswirkungen auf den Hauptinhalt des PDF-Dokuments?
 
-A: No, removing attachments will not affect the main content of the PDF document. Only the attachments, such as additional files or materials, will be removed.
+A: Nein, das Entfernen von Anhängen hat keine Auswirkungen auf den Hauptinhalt des PDF-Dokuments. Lediglich die Anhänge, etwa zusätzliche Dateien oder Materialien, werden entfernt.
 
-#### Q: How can I verify that all attachments have been successfully removed?
+#### F: Wie kann ich überprüfen, ob alle Anhänge erfolgreich entfernt wurden?
 
-A: After following the provided source code, you can open the resulting PDF file to confirm that the attachments have been removed from the document.
+A: Nachdem Sie dem bereitgestellten Quellcode gefolgt sind, können Sie die resultierende PDF-Datei öffnen, um zu bestätigen, dass die Anhänge aus dem Dokument entfernt wurden.
 
-#### Q: Can I undo the removal of attachments once it's done?
+#### F: Kann ich das Entfernen von Anhängen rückgängig machen, nachdem es erledigt ist?
 
-A: No, once attachments are removed from the PDF file, the action is irreversible. Make sure to back up your original PDF file before performing this action.
+A: Nein. Sobald Anhänge aus der PDF-Datei entfernt wurden, kann der Vorgang nicht mehr rückgängig gemacht werden. Stellen Sie sicher, dass Sie Ihre ursprüngliche PDF-Datei sichern, bevor Sie diese Aktion ausführen.
 
-#### Q: Are there any file size considerations when removing attachments?
+#### F: Gibt es beim Entfernen von Anhängen irgendwelche Überlegungen zur Dateigröße?
 
-A: Removing attachments can reduce the overall file size of the PDF document, which may lead to improved document performance and sharing efficiency.
+A: Durch das Entfernen von Anhängen kann die Gesamtdateigröße des PDF-Dokuments verringert werden, was zu einer verbesserten Dokumentleistung und Freigabeeffizienz führen kann.
 
-#### Q: Can I automate the process of removing attachments for multiple PDF files?
-A: Yes, you can create a script or program using Aspose.PDF for .NET to automate the process of removing attachments from multiple PDF files in a batch.
+#### F: Kann ich das Entfernen von Anhängen für mehrere PDF-Dateien automatisieren?
+A: Ja, Sie können mit Aspose.PDF für .NET ein Skript oder Programm erstellen, um den Prozess des Entfernens von Anhängen aus mehreren PDF-Dateien in einem Stapel zu automatisieren.

@@ -1,28 +1,28 @@
 ---
-title: Rotate Text Using Paragraph In PDF File
-linktitle: Rotate Text Using Paragraph In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to rotate text using paragraphs in PDF file using Aspose.PDF for .NET.
+title: تدوير النص باستخدام الفقرة في ملف PDF
+linktitle: تدوير النص باستخدام الفقرة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تدوير النص باستخدام الفقرات في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 380
 url: /ar/net/programming-with-text/rotate-text-using-paragraph/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to rotate text using paragraphs. The provided C# source code demonstrates the process step by step.
+يشرح هذا البرنامج التعليمي كيفية استخدام Aspose.PDF لـ .NET لتدوير النص باستخدام الفقرات. يوضح كود مصدر C# المقدم العملية خطوة بخطوة.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before proceeding with the tutorial, make sure you have the following:
+قبل متابعة البرنامج التعليمي، تأكد من أن لديك ما يلي:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- المعرفة الأساسية بلغة البرمجة C#.
+- تم تثبيت Aspose.PDF لمكتبة .NET. يمكنك الحصول عليه من موقع Aspose أو استخدام NuGet لتثبيته في مشروعك.
 
-## Step 1: Set up the project
+## الخطوة 1: إعداد المشروع
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+ابدأ بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة المفضلة لديك (IDE) وأضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET.
 
-## Step 2: Import necessary namespaces
+## الخطوة 2: استيراد مساحات الأسماء الضرورية
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+أضف ما يلي باستخدام التوجيهات في بداية ملف C# الخاص بك لاستيراد مساحات الأسماء المطلوبة:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,39 +30,39 @@ using Aspose.Pdf.Text;
 using Aspose.Pdf.Text.TextBuilder;
 ```
 
-## Step 3: Create the PDF document
+## الخطوة 3: إنشاء مستند PDF
 
-Initialize the `Document` object to create a new PDF document:
+ تهيئة`Document` كائن لإنشاء مستند PDF جديد:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document();
 ```
 
-Make sure to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ تأكد من استبدال`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك.
 
-## Step 4: Add a page
+## الخطوة 4: إضافة صفحة
 
-Get a particular page from the document using the `Pages.Add()` method:
+ احصل على صفحة معينة من المستند باستخدام`Pages.Add()` طريقة:
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
-## Step 5: Create the text paragraph
+## الخطوة 5: إنشاء فقرة النص
 
-Create a `TextParagraph` object and set its position on the page:
+ إنشاء`TextParagraph` الكائن وتعيين موضعه على الصفحة:
 
 ```csharp
 TextParagraph paragraph = new TextParagraph();
 paragraph.Position = new Position(200, 600);
 ```
 
-Adjust the position values as per your requirements.
+اضبط قيم الموضع وفقًا لمتطلباتك.
 
-## Step 6: Create and configure text fragments
+## الخطوة 6: إنشاء وتكوين أجزاء النص
 
-Create multiple `TextFragment` objects and set their text and properties:
+ إنشاء متعددة`TextFragment` الكائنات وتعيين نصها وخصائصها:
 
 ```csharp
 TextFragment textFragment1 = new TextFragment("rotated text");
@@ -80,11 +80,11 @@ textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment3.TextState.Rotation = -45;
 ```
 
-Adjust the text and other properties as desired.
+اضبط النص والخصائص الأخرى حسب الرغبة.
 
-## Step 7: Append text fragments to the paragraph
+## الخطوة 7: إلحاق أجزاء النص بالفقرة
 
-Append the created text fragments to the paragraph using the `AppendLine` method:
+ قم بإلحاق أجزاء النص التي تم إنشاؤها بالفقرة باستخدام`AppendLine` طريقة:
 
 ```csharp
 paragraph.AppendLine(textFragment1);
@@ -92,105 +92,105 @@ paragraph.AppendLine(textFragment2);
 paragraph.AppendLine(textFragment3);
 ```
 
-## Step 8: Create a TextBuilder and append the paragraph
+## الخطوة 8: إنشاء TextBuilder وإلحاق الفقرة
 
-Create a `TextBuilder` object using the `pdfPage` and append the text paragraph to the PDF page:
+ إنشاء`TextBuilder` كائن باستخدام`pdfPage` وإلحاق الفقرة النصية بصفحة PDF:
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(pdfPage);
 textBuilder.AppendParagraph(paragraph);
 ```
 
-## Step 9: Save the PDF document
+## الخطوة 9: احفظ مستند PDF
 
-Save the modified PDF document to a file using the `Save` method:
+ احفظ مستند PDF المعدل في ملف باستخدام الملف`Save` طريقة:
 
 ```csharp
 pdfDocument.Save(dataDir + "TextFragmentTests_Rotated2_out.pdf");
 ```
 
-Make sure to replace `"TextFragmentTests_Rotated2_out.pdf"` with the desired output file name.
+ تأكد من استبدال`"TextFragmentTests_Rotated2_out.pdf"` مع اسم ملف الإخراج المطلوب.
 
-### Sample source code for Rotate Text Using Paragraph using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتدوير النص باستخدام الفقرة باستخدام Aspose.PDF لـ .NET 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Initialize document object
+// تهيئة كائن المستند
 Document pdfDocument = new Document();
-// Get particular page
+// الحصول على صفحة معينة
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 TextParagraph paragraph = new TextParagraph();
 paragraph.Position = new Position(200, 600);
-// Create text fragment
+// إنشاء جزء من النص
 TextFragment textFragment1 = new TextFragment("rotated text");
-// Set text properties
+// تعيين خصائص النص
 textFragment1.TextState.FontSize = 12;
 textFragment1.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-// Set rotation
+// ضبط التدوير
 textFragment1.TextState.Rotation = 45;
-// Create text fragment
+// إنشاء جزء من النص
 TextFragment textFragment2 = new TextFragment("main text");
-// Set text properties
+// تعيين خصائص النص
 textFragment2.TextState.FontSize = 12;
 textFragment2.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-// Create text fragment
+// إنشاء جزء من النص
 TextFragment textFragment3 = new TextFragment("another rotated text");
-// Set text properties
+// تعيين خصائص النص
 textFragment3.TextState.FontSize = 12;
 textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-// Set rotation
+// ضبط التدوير
 textFragment3.TextState.Rotation = -45;
-// Append the text fragments to the paragraph
+// إلحاق أجزاء النص بالفقرة
 paragraph.AppendLine(textFragment1);
 paragraph.AppendLine(textFragment2);
 paragraph.AppendLine(textFragment3);
-// Create TextBuilder object
+// إنشاء كائن TextBuilder
 TextBuilder textBuilder = new TextBuilder(pdfPage);
-// Append the text paragraph to the PDF page
+// إلحاق الفقرة النصية بصفحة PDF
 textBuilder.AppendParagraph(paragraph);
-// Save document
+// حفظ المستند
 pdfDocument.Save(dataDir + "TextFragmentTests_Rotated2_out.pdf");
 ```
 
 
-## Conclusion
+## خاتمة
 
-Congratulations! You have successfully learned how to rotate text using paragraphs in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from creating the document to saving the modified version. You can now incorporate this code into your own C# projects to manipulate text rotation in PDF files.
+تهانينا! لقد تعلمت بنجاح كيفية تدوير النص باستخدام الفقرات في مستند PDF باستخدام Aspose.PDF لـ .NET. قدم هذا البرنامج التعليمي دليلاً خطوة بخطوة، بدءًا من إنشاء المستند وحتى حفظ النسخة المعدلة. يمكنك الآن دمج هذا الرمز في مشاريع C# الخاصة بك لمعالجة تدوير النص في ملفات PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of the "Rotate Text Using Paragraph" tutorial?
+#### س: ما هو الغرض من البرنامج التعليمي "تدوير النص باستخدام الفقرة"؟
 
-A: The "Rotate Text Using Paragraph" tutorial aims to guide you through the process of using the Aspose.PDF library for .NET to rotate text using text paragraphs in a PDF document. The tutorial provides step-by-step instructions and sample code to achieve this functionality.
+ج: يهدف البرنامج التعليمي "تدوير النص باستخدام الفقرة" إلى إرشادك خلال عملية استخدام مكتبة Aspose.PDF لـ .NET لتدوير النص باستخدام فقرات نصية في مستند PDF. يوفر البرنامج التعليمي إرشادات خطوة بخطوة ونموذج التعليمات البرمجية لتحقيق هذه الوظيفة.
 
-#### Q: What is meant by "rotating text using paragraphs"?
+#### س: ما المقصود بـ "تدوير النص باستخدام الفقرات"؟
 
-A: Rotating text using paragraphs refers to the ability to apply rotation to text within a PDF document using text paragraphs. This technique allows you to orient text at different angles or positions within the PDF content.
+ج: يشير تدوير النص باستخدام الفقرات إلى القدرة على تطبيق التدوير على النص داخل مستند PDF باستخدام فقرات نصية. تتيح لك هذه التقنية توجيه النص بزوايا أو مواضع مختلفة داخل محتوى PDF.
 
-#### Q: Why would I want to rotate text in a PDF document?
+#### س: لماذا أرغب في تدوير النص في مستند PDF؟
 
-A: Rotating text in a PDF document can be useful for various purposes, such as emphasizing specific content, creating artistic designs, or improving layout and readability.
+ج: يمكن أن يكون تدوير النص في مستند PDF مفيدًا لأغراض متعددة، مثل التركيز على محتوى معين، أو إنشاء تصميمات فنية، أو تحسين التخطيط وسهولة القراءة.
 
-#### Q: How can I create a new PDF document?
+#### س: كيف يمكنني إنشاء مستند PDF جديد؟
 
-A: To create a new PDF document, initialize a `Document` object from the Aspose.PDF library. You can use this object to add pages and content to the PDF.
+ ج: لإنشاء مستند PDF جديد، قم بتهيئة ملف`Document`كائن من مكتبة Aspose.PDF. يمكنك استخدام هذا الكائن لإضافة صفحات ومحتوى إلى ملف PDF.
 
-#### Q: How do I rotate text using paragraphs?
+#### س: كيف يمكنني تدوير النص باستخدام الفقرات؟
 
-A: To rotate text using paragraphs:
+ج: لتدوير النص باستخدام الفقرات:
 
-1. Create a `TextParagraph` object.
-2. Create `TextFragment` objects with the desired text and rotation angles.
-3. Append the text fragments to the text paragraph.
-4. Create a `TextBuilder` object and append the text paragraph to a specific PDF page.
+1.  إنشاء`TextParagraph` هدف.
+2.  يخلق`TextFragment` الكائنات مع النص المطلوب وزوايا التدوير.
+3. إلحاق أجزاء النص بفقرة النص.
+4.  إنشاء`TextBuilder` كائن وإلحاق الفقرة النصية بصفحة PDF محددة.
 
-#### Q: Can I control the rotation angle of individual text fragments?
+#### س: هل يمكنني التحكم في زاوية تدوير أجزاء النص الفردية؟
 
-A: Yes, you can control the rotation angle of individual `TextFragment` objects by setting the `TextState.Rotation` property. Positive values indicate clockwise rotation, while negative values indicate counterclockwise rotation.
+ ج: نعم، يمكنك التحكم في زاوية دوران الفرد`TextFragment` الكائنات عن طريق تحديد`TextState.Rotation` ملكية. تشير القيم الإيجابية إلى الدوران في اتجاه عقارب الساعة، بينما تشير القيم السالبة إلى الدوران عكس اتجاه عقارب الساعة.
 
-#### Q: Can I apply different rotation angles to different text fragments within the same paragraph?
+#### س: هل يمكنني تطبيق زوايا تدوير مختلفة على أجزاء نص مختلفة داخل نفس الفقرة؟
 
-A: Yes, you can apply different rotation angles to different `TextFragment` objects within the same paragraph by setting the `TextState.Rotation` property of each fragment accordingly.
+ ج: نعم، يمكنك تطبيق زوايا دوران مختلفة على مختلفة`TextFragment` الكائنات داخل نفس الفقرة عن طريق تعيين`TextState.Rotation` خاصية كل جزء وفقا لذلك.
 
-#### Q: How do I save the rotated PDF document?
+#### س: كيف يمكنني حفظ مستند PDF الذي تم تدويره؟
 
-A: To save the rotated PDF document, use the `Save` method of the `Document` object and provide the desired output file path and name.
+ج: لحفظ مستند PDF الذي تم تدويره، استخدم الملف`Save` طريقة`Document` الكائن وتوفير مسار واسم ملف الإخراج المطلوب.

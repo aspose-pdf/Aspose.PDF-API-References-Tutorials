@@ -1,178 +1,178 @@
 ---
-title: Image and Page Number in Header Footer Section
-linktitle: Image and Page Number in Header Footer Section
-second_title: Aspose.PDF for .NET API Reference
-description: Find out how to add an image and a page number in the header and footer of a PDF document with Aspose.
+title: Image et numéro de page dans la section En-tête et Pied de page
+linktitle: Image et numéro de page dans la section En-tête et Pied de page
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment ajouter une image et un numéro de page dans l'en-tête et le pied de page d'un document PDF avec Aspose.
 type: docs
 weight: 110
 url: /fr/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section/
 ---
-In this tutorial, we will guide you step by step on how to add an image and page number in the header and footer section of a PDF document using Aspose.PDF for .NET. We will show you how to use provided C# source code to create a page, set header and footer, add image to header and text with page number to document footer PDF.
+Dans ce didacticiel, nous vous guiderons étape par étape sur la façon d'ajouter une image et un numéro de page dans la section d'en-tête et de pied de page d'un document PDF à l'aide d'Aspose.PDF pour .NET. Nous allons vous montrer comment utiliser le code source C# fourni pour créer une page, définir l'en-tête et le pied de page, ajouter une image à l'en-tête et du texte avec le numéro de page au pied de page du document PDF.
 
-## Step 1: Setting up the environment
+## Étape 1 : Configuration de l'environnement
 
-Before you begin, make sure you have the following:
+Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Un environnement de développement .NET installé.
+- La bibliothèque Aspose.PDF pour .NET téléchargée et référencée dans votre projet.
 
-## Step 2: Creating the PDF Document and Page
+## Étape 2 : Création du document PDF et de la page
 
-The first step is to create a new Document object and a page in the PDF document. Here's how:
+La première étape consiste à créer un nouvel objet Document et une page dans le document PDF. Voici comment:
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a new Document object
+// Créer un nouvel objet Document
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Create a page in the document
+// Créer une page dans le document
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-The code above creates a new Document object and an empty page in the PDF document.
+Le code ci-dessus crée un nouvel objet Document et une page vide dans le document PDF.
 
-## Step 3: Adding the header with an image
+## Étape 3 : Ajout de l'en-tête avec une image
 
-Now that the page is created, we can add a header section with an image. Here's how:
+Maintenant que la page est créée, nous pouvons ajouter une section d'en-tête avec une image. Voici comment:
 
 ```csharp
-// Create a header section
+// Créer une section d'en-tête
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the page header
+// Définir l'en-tête de la page
 page. Header = header;
 
-// Create an Image object
+// Créer un objet Image
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set image path
+// Définir le chemin de l'image
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Add the image to the page header of the PDF document
+// Ajouter l'image à l'en-tête de page du document PDF
 header.Paragraphs.Add(image1);
 ```
 
-The code above creates a header section, sets the page header with this section, and adds an image to the header.
+Le code ci-dessus crée une section d'en-tête, définit l'en-tête de page avec cette section et ajoute une image à l'en-tête.
 
-## Step 4: Adding the footer with the page number
+## Étape 4 : Ajout du pied de page avec le numéro de page
 
-Now that the header is added, we can add a footer section with a page number. Here's how:
+Maintenant que l'en-tête est ajouté, nous pouvons ajouter une section de pied de page avec un numéro de page. Voici comment:
 
 ```csharp
-// Create a footer section
+// Créer une section de pied de page
 Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
 
-// Define the footer of the PDF document
+// Définir le pied de page du document PDF
 page. Footer = footer;
 
-// Create a TextFragment object
+// Créer un objet TextFragment
 Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P)");
 
-// Add the text with the page number to the footer of the PDF document
+// Ajoutez le texte avec le numéro de page au pied de page du document PDF
 footer.Paragraphs.Add(txt);
 ```
 
-The above code creates a footer section, sets the footer of the page with this section and adds a TextFragment containing the text "Page: ($p of $P )"
+Le code ci-dessus crée une section de pied de page, définit le pied de page de la page avec cette section et ajoute un TextFragment contenant le texte "Page : ($p of $P )"
 
-  which displays the page number.
+  qui affiche le numéro de page.
 
-## Step 5: Saving the modified PDF document
+## Étape 5 : Sauvegarde du document PDF modifié
 
-Once the header and footer are added, we can save the modified PDF document. Here's how:
+Une fois l'en-tête et le pied de page ajoutés, nous pouvons enregistrer le document PDF modifié. Voici comment:
 
 ```csharp
-// Save the modified PDF document
+// Enregistrez le document PDF modifié
 doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Le code ci-dessus enregistre le document PDF modifié dans le répertoire spécifié.
 
-### Sample source code for Imageand Page Numberin Header Footersection using Aspose.PDF for .NET 
+### Exemple de code source pour l'image et le numéro de page dans la section de pied de page d'en-tête à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Create a page in the document object
+// Créer une page dans l'objet document
 Aspose.Pdf.Page page = doc.Pages.Add();
 
-// Create Header Section of the document
+// Créer une section d'en-tête du document
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the header for the PDF file
+// Définir l'en-tête du fichier PDF
 page.Header = header;
 
-// Create an image object in the page
+// Créer un objet image dans la page
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set the path of image file
+// Définir le chemin du fichier image
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Add image to Header page of the Pdf file
+// Ajouter une image à la page d'en-tête du fichier PDF
 header.Paragraphs.Add(image1);
 
-// Create a Footer Section of the document
+//Créer une section de pied de page du document
 Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
 
-// Set the footer of the PDF file
+// Définir le pied de page du fichier PDF
 page.Footer = footer;
 
-// Create a Text object
+// Créer un objet Texte
 Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P ) ");
 
-// Add text to Header section of the Pdf file
+// Ajouter du texte à la section d'en-tête du fichier PDF
 footer.Paragraphs.Add(txt);
 
-// Save the Pdf file
+// Enregistrez le fichier PDF
 doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 
 ```
 
 ## Conclusion
 
-Congratulation ! You have learned how to add an image and page number in the header and footer section of a PDF document using Aspose.PDF for .NET. Now you can use this method to customize header and footer in your PDF documents.
+Félicitation ! Vous avez appris à ajouter une image et un numéro de page dans la section d'en-tête et de pied de page d'un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais utiliser cette méthode pour personnaliser l'en-tête et le pied de page de vos documents PDF.
 
-### FAQ's
+### FAQ
 
-#### Q: What is the purpose of adding an image and page number in the header and footer section of a PDF document?
+#### Q : A quoi sert l'ajout d'une image et d'un numéro de page dans la section d'en-tête et de pied de page d'un document PDF ?
 
-A: Adding an image and page number in the header and footer section of a PDF document can enhance its visual appeal, branding, and navigational elements. An image can represent a logo, watermark, or any graphical element, while a page number helps users track their progress and locate specific pages.
+R : L'ajout d'une image et d'un numéro de page dans les sections d'en-tête et de pied de page d'un document PDF peut améliorer son attrait visuel, son image de marque et ses éléments de navigation. Une image peut représenter un logo, un filigrane ou tout autre élément graphique, tandis qu'un numéro de page aide les utilisateurs à suivre leur progression et à localiser des pages spécifiques.
 
-#### Q: How does the provided C# source code help in adding an image and page number to the header and footer of a PDF document?
+#### Q : Comment le code source C# fourni aide-t-il à ajouter une image et un numéro de page à l'en-tête et au pied de page d'un document PDF ?
 
-A: The provided code demonstrates how to create a PDF document, add a page, and then customize the header and footer sections. It shows how to add an image to the header and a text fragment with page numbering to the footer.
+R : Le code fourni montre comment créer un document PDF, ajouter une page, puis personnaliser les sections d'en-tête et de pied de page. Il montre comment ajouter une image à l'en-tête et un fragment de texte avec une numérotation de page au pied de page.
 
-#### Q: Can I use any image format for the header, and how do I specify its path?
+#### Q : Puis-je utiliser n’importe quel format d’image pour l’en-tête et comment spécifier son chemin ?
 
-A: Yes, you can use various image formats (such as JPEG, PNG, GIF, etc.) for the header image. The image's path is specified using the `File` property of the `Aspose.Pdf.Image` object.
+ R : Oui, vous pouvez utiliser différents formats d'image (tels que JPEG, PNG, GIF, etc.) pour l'image d'en-tête. Le chemin de l'image est spécifié à l'aide du`File` propriété du`Aspose.Pdf.Image` objet.
 
-#### Q: How do I customize the appearance and positioning of the image in the header section?
+#### Q : Comment personnaliser l'apparence et le positionnement de l'image dans la section d'en-tête ?
 
-A: You can customize the appearance and positioning of the image by adjusting the properties of the `Aspose.Pdf.Image` object before adding it to the header section. For example, you can set the image's dimensions, alignment, rotation, opacity, etc.
+ R : Vous pouvez personnaliser l'apparence et le positionnement de l'image en ajustant les propriétés du`Aspose.Pdf.Image` objet avant de l’ajouter à la section d’en-tête. Par exemple, vous pouvez définir les dimensions, l'alignement, la rotation, l'opacité de l'image, etc.
 
-#### Q: What is the purpose of the `TextFragment` object used for the footer?
+####  Q : Quel est le but du`TextFragment` object used for the footer?
 
-A: The `TextFragment` object is used to create and format text that will be displayed in the footer section. In the provided code, it is used to display the page number and total page count.
+ R : Le`TextFragment` L'objet est utilisé pour créer et formater le texte qui sera affiché dans la section de pied de page. Dans le code fourni, il est utilisé pour afficher le numéro de page et le nombre total de pages.
 
-#### Q: Can I modify the footer text to include additional information or formatting?
+#### Q : Puis-je modifier le texte du pied de page pour inclure des informations ou un formatage supplémentaires ?
 
-A: Yes, you can modify the footer text by modifying the contents of the `TextFragment` object. You can add additional text, change fonts, colors, and formatting according to your requirements.
+ R : Oui, vous pouvez modifier le texte du pied de page en modifiant le contenu du`TextFragment` objet. Vous pouvez ajouter du texte supplémentaire, modifier les polices, les couleurs et le formatage selon vos besoins.
 
-#### Q: Can I apply different header and footer contents to different pages of the PDF document?
+#### Q : Puis-je appliquer différents contenus d’en-tête et de pied de page à différentes pages du document PDF ?
 
-A: Yes, you can apply different header and footer contents to different pages by creating separate `HeaderFooter` objects and assigning them to specific pages using the `Header` and `Footer` properties of the `Aspose.Pdf.Page` object.
+ R : Oui, vous pouvez appliquer différents contenus d'en-tête et de pied de page à différentes pages en créant des`HeaderFooter` objets et en les attribuant à des pages spécifiques à l'aide du`Header` et`Footer` propriétés du`Aspose.Pdf.Page` objet.
 
-#### Q: How can I further customize the header and footer, such as changing font styles or adding additional elements?
+#### Q : Comment puis-je personnaliser davantage l'en-tête et le pied de page, par exemple en modifiant les styles de police ou en ajoutant des éléments supplémentaires ?
 
-A: You can customize the header and footer by using various classes and properties provided by Aspose.PDF for .NET. For example, you can use different text formatting options, add more paragraphs, images, or even tables to the header and footer sections.
+R : Vous pouvez personnaliser l'en-tête et le pied de page en utilisant diverses classes et propriétés fournies par Aspose.PDF pour .NET. Par exemple, vous pouvez utiliser différentes options de formatage de texte, ajouter plus de paragraphes, d'images ou même de tableaux aux sections d'en-tête et de pied de page.
 
-#### Q: Can I remove or clear the header and footer sections if needed?
+#### Q : Puis-je supprimer ou effacer les sections d’en-tête et de pied de page si nécessaire ?
 
-A: Yes, you can remove or clear the header and footer sections by setting the `Header` and `Footer` properties of the `Aspose.Pdf.Page` object to `null`.
+R : Oui, vous pouvez supprimer ou effacer les sections d'en-tête et de pied de page en définissant l'option`Header` et`Footer` propriétés du`Aspose.Pdf.Page` s'opposer à`null`.
 
-#### Q: How can I ensure that the added image and page number remain consistent across different devices and viewers?
+#### Q : Comment puis-je m'assurer que l'image ajoutée et le numéro de page restent cohérents sur les différents appareils et lecteurs ?
 
-A: Aspose.PDF for .NET provides functionality to create standardized and consistent PDF documents, ensuring that the added image and page number will appear consistently across different devices and PDF viewers.
+R : Aspose.PDF pour .NET fournit des fonctionnalités permettant de créer des documents PDF standardisés et cohérents, garantissant que l'image ajoutée et le numéro de page apparaîtront de manière cohérente sur les différents appareils et visualiseurs PDF.

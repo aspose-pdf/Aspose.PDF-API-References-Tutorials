@@ -1,42 +1,42 @@
 ---
-title: Add Child Bookmark In PDF File
-linktitle: Add Child Bookmark In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add child bookmark in PDF file for more organized browsing with Aspose.PDF for .NET.
+title: Добавить дочернюю закладку в PDF-файл
+linktitle: Добавить дочернюю закладку в PDF-файл
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко добавляйте дочерние закладки в PDF-файл для более организованного просмотра с помощью Aspose.PDF для .NET.
 type: docs
 weight: 20
 url: /ru/net/programming-with-bookmarks/add-child-bookmark/
 ---
-Adding child bookmarks in PDF file allows for more structured organization and navigation. With Aspose.PDF for .NET, you can easily add a sub-bookmark by following the following source code:
+Добавление дочерних закладок в файл PDF обеспечивает более структурированную организацию и навигацию. С помощью Aspose.PDF для .NET вы можете легко добавить вложенную закладку, выполнив следующий исходный код:
 
-## Step 1: Import required libraries
+## Шаг 1. Импортируйте необходимые библиотеки.
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Прежде чем начать, вам необходимо импортировать необходимые библиотеки для вашего проекта C#. Вот необходимая директива импорта:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## Шаг 2. Установите путь к папке с документами.
 
-In this step, you need to specify the path to the folder containing the PDF file you want to add a sub-bookmark. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ На этом этапе вам необходимо указать путь к папке, содержащей PDF-файл, в который вы хотите добавить подзакладку. Заменять`"YOUR DOCUMENT DIRECTORY"`в следующем коде с фактическим путем к папке ваших документов:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Шаг 3. Откройте PDF-документ.
 
-Now we will open the PDF document to which we want to add a sub-bookmark using the following code:
+Теперь мы откроем PDF-документ, к которому хотим добавить подзакладку, используя следующий код:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddChildBookmark.pdf");
 ```
 
-## Step 4: Create parent bookmark object
+## Шаг 4. Создайте объект родительской закладки.
 
-In this step, we will create a parent bookmark object using the `OutlineItemCollection` class and set its properties such as title, italic attribute and bold attribute. Here is the corresponding code:
+ На этом этапе мы создадим объект родительской закладки, используя метод`OutlineItemCollection` class и установите его свойства, такие как заголовок, атрибут курсива и атрибут полужирного шрифта. Вот соответствующий код:
 
 ```csharp
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -45,9 +45,9 @@ pdfOutline. Italic = true;
 pdfOutline. Bold = true;
 ```
 
-## Step 5: Create Child Bookmark Object
+## Шаг 5. Создайте объект дочерней закладки
 
-In this step, we will create a sub-bookmark object again using the `OutlineItemCollection` class and set its properties. Here is the corresponding code:
+На этом этапе мы снова создадим объект подзакладки, используя`OutlineItemCollection` класс и установите его свойства. Вот соответствующий код:
 
 ```csharp
 OutlineItemCollection pdfChildOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -56,95 +56,95 @@ pdfChildOutline. Italic = true;
 pdfChildOutline. Bold = true;
 ```
 
-## Step 6: Add the sub-bookmark to the parent bookmark
+## Шаг 6. Добавьте подзакладку к родительской закладке.
 
-Finally, we add the created subbookmark to the parent bookmark's subbookmark collection using the `Add` method of the parent object. Here is the corresponding code:
+ Наконец, мы добавляем созданную подзакладку в коллекцию подзакладок родительской закладки, используя метод`Add` метод родительского объекта. Вот соответствующий код:
 
 ```csharp
 pdfOutline.Add(pdfChildOutline);
 ```
 
-## Step 7: Add the parent bookmark to the document's bookmark collection
+## Шаг 7. Добавьте родительскую закладку в коллекцию закладок документа.
 
-Finally, we add the parent bookmark to the document's bookmark collection using the `Add` method of the `Outlines` property. Here is the corresponding code:
+ Наконец, мы добавляем родительскую закладку в коллекцию закладок документа, используя метод`Add` метод`Outlines` свойство. Вот соответствующий код:
 
 ```csharp
 pdfDocument.Outlines.Add(pdfOutline);
 ```
 
-### Sample source code for Add Child Bookmark using Aspose.PDF for .NET 
+### Пример исходного кода для добавления дочерней закладки с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "AddChildBookmark.pdf");
-// Create a parent bookmark object
+// Создание объекта родительской закладки
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfOutline.Title = "Parent Outline";
 pdfOutline.Italic = true;
 pdfOutline.Bold = true;      
-// Create a child bookmark object
+// Создание объекта дочерней закладки
 OutlineItemCollection pdfChildOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfChildOutline.Title = "Child Outline";
 pdfChildOutline.Italic = true;
 pdfChildOutline.Bold = true;
-// Add child bookmark in parent bookmark's collection
+// Добавить дочернюю закладку в коллекцию родительских закладок
 pdfOutline.Add(pdfChildOutline);
-// Add parent bookmark in the document's outline collection.
+// Добавьте родительскую закладку в коллекцию структур документа.
 pdfDocument.Outlines.Add(pdfOutline);
 dataDir = dataDir + "AddChildBookmark_out.pdf";
-// Save output
+// Сохранить вывод
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nChild bookmark added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! Now you have a step by step guide to add a sub-bookmark with Aspose.PDF for .NET. You can use this code to organize and structure your bookmarks in your PDF documents.
+Поздравляем! Теперь у вас есть пошаговое руководство по добавлению подзакладки в Aspose.PDF для .NET. Вы можете использовать этот код для организации и структурирования закладок в PDF-документах.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Обязательно ознакомьтесь с официальной документацией Aspose.PDF для получения дополнительной информации о расширенных функциях управления закладками.
 
-### FAQ's for add child bookmark in PDF file
+### Часто задаваемые вопросы по добавлению дочерней закладки в файл PDF
 
-#### Q: What are child bookmarks in a PDF file?
+#### Вопрос: Что такое дочерние закладки в PDF-файле?
 
-A: Child bookmarks, also known as sub-bookmarks, are navigational elements within a PDF document that are hierarchically structured under a parent bookmark. They provide a way to create a more organized and detailed table of contents for the document.
+О. Дочерние закладки, также известные как вложенные закладки, представляют собой элементы навигации внутри PDF-документа, которые иерархически структурированы под родительской закладкой. Они позволяют создать более организованное и подробное оглавление документа.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### Вопрос: Как мне импортировать необходимые библиотеки для моего проекта C#?
 
-A: To import the required libraries for your C# project, you can use the following import directive:
+О: Чтобы импортировать необходимые библиотеки для вашего проекта C#, вы можете использовать следующую директиву импорта:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-These libraries provide the necessary classes and functions for working with PDF documents and interactive features.
+Эти библиотеки предоставляют необходимые классы и функции для работы с PDF-документами и интерактивные функции.
 
-#### Q: How do I specify the path to the documents folder?
+#### Вопрос: Как указать путь к папке с документами?
 
-A: In the source code provided, you need to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file you want to work with. This ensures that the code correctly locates the target PDF file.
+ О: В предоставленном исходном коде необходимо заменить`"YOUR DOCUMENT DIRECTORY"` с фактическим путем к папке, содержащей PDF-файл, с которым вы хотите работать. Это гарантирует, что код правильно найдет целевой PDF-файл.
 
-#### Q: Can I create multiple levels of child bookmarks?
+#### Вопрос: Могу ли я создать несколько уровней дочерних закладок?
 
-A: Yes, you can create multiple levels of child bookmarks by extending the process outlined in the tutorial. By creating parent bookmarks with sub-bookmarks and further nesting them, you can create a hierarchical structure of bookmarks for complex PDF documents.
+О: Да, вы можете создать несколько уровней дочерних закладок, расширив процесс, описанный в руководстве. Создавая родительские закладки с подзакладками и их дальнейшее вложение, вы можете создать иерархическую структуру закладок для сложных PDF-документов.
 
-#### Q: What is the purpose of the `OutlineItemCollection` class?
+####  Вопрос: Какова цель`OutlineItemCollection` class?
 
-A: The `OutlineItemCollection` class in Aspose.PDF for .NET is used to create and manage outlines, which are essentially bookmarks in a PDF document. This class allows you to set properties such as title, font style, and actions for bookmarks.
+ А:`OutlineItemCollection` Класс в Aspose.PDF для .NET используется для создания контуров и управления ими, которые по сути являются закладками в PDF-документе. Этот класс позволяет вам устанавливать такие свойства, как заголовок, стиль шрифта и действия для закладок.
 
-#### Q: How do I add a sub-bookmark to a parent bookmark?
+#### Вопрос: Как добавить подзакладку к родительской закладке?
 
-A: To add a sub-bookmark to a parent bookmark, you create a new `OutlineItemCollection` object for the sub-bookmark and set its properties. Then, you use the `Add` method of the parent bookmark's `OutlineItemCollection` to add the sub-bookmark to the parent's collection.
+ О: Чтобы добавить подзакладку к родительской закладке, вы создаете новую`OutlineItemCollection` объект для вложенной закладки и установите его свойства. Затем вы используете`Add` метод родительской закладки`OutlineItemCollection` чтобы добавить подзакладку в родительскую коллекцию.
 
-#### Q: Can I customize the appearance of child bookmarks?
+#### Вопрос: Могу ли я настроить внешний вид дочерних закладок?
 
-A: Yes, similar to parent bookmarks, you can customize the appearance of child bookmarks by setting properties such as title, font style, and other attributes. This allows you to create visually distinctive and informative bookmarks.
+О: Да, как и в случае с родительскими закладками, вы можете настроить внешний вид дочерних закладок, задав такие свойства, как заголовок, стиль шрифта и другие атрибуты. Это позволяет создавать визуально отличительные и информативные закладки.
 
-#### Q: Is Aspose.PDF for .NET compatible with other programming languages?
+#### Вопрос: Совместим ли Aspose.PDF для .NET с другими языками программирования?
 
-A: Aspose.PDF for .NET is specifically designed for C# and .NET environments. However, Aspose offers similar libraries for other programming languages such as Java and Android, each tailored to their respective platforms.
+О: Aspose.PDF for .NET специально разработан для сред C# и .NET. Однако Aspose предлагает аналогичные библиотеки для других языков программирования, таких как Java и Android, каждая из которых адаптирована для своих платформ.
 
-#### Q: How do child bookmarks improve PDF navigation?
+#### Вопрос: Как дочерние закладки улучшают навигацию по PDF-файлам?
 
-A: Child bookmarks improve PDF navigation by providing a more structured and organized table of contents. Users can quickly access specific sections of the document through the hierarchical bookmark structure.
+О: Дочерние закладки улучшают навигацию по PDF-файлам, обеспечивая более структурированное и организованное оглавление. Пользователи могут быстро получить доступ к определенным разделам документа через иерархическую структуру закладок.

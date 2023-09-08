@@ -1,36 +1,36 @@
 ---
-title: Split To Pages
-linktitle: Split To Pages
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to split a PDF document into individual pages using Aspose.PDF for .NET.
+title: تقسيم إلى صفحات
+linktitle: تقسيم إلى صفحات
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لتقسيم مستند PDF إلى صفحات فردية باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 140
 url: /ar/net/programming-with-pdf-pages/split-to-pages/
 ---
-In this tutorial, we'll walk you through the step-by-step process to split a PDF document into individual pages using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to split a PDF document into multiple PDF files, each containing a single page.
+في هذا البرنامج التعليمي، سنرشدك خلال العملية خطوة بخطوة لتقسيم مستند PDF إلى صفحات فردية باستخدام Aspose.PDF لـ .NET. سنشرح لك التعليمات البرمجية المصدرية المجمعة لـ C# ونزودك بدليل شامل لمساعدتك على فهم هذه الميزة وتنفيذها في مشاريعك الخاصة. في نهاية هذا البرنامج التعليمي، ستعرف كيفية تقسيم مستند PDF إلى ملفات PDF متعددة، يحتوي كل منها على صفحة واحدة.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## المتطلبات الأساسية
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- معرفة أساسية بلغة البرمجة C#
+- تم تثبيت Aspose.PDF لـ .NET في بيئة التطوير الخاصة بك
 
-## Step 1: Define the document directory
-First, you need to set the path to your documents directory. This is where the PDF document you want to split is located. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
+## الخطوة 1: تحديد دليل المستند
+أولاً، تحتاج إلى تعيين المسار إلى دليل المستندات الخاص بك. هذا هو المكان الذي يوجد به مستند PDF الذي تريد تقسيمه. استبدل "دليل المستندات الخاصة بك" بالمسار المناسب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the PDF document
-Then you can open the PDF document to split using the `Document` class of Aspose.PDF. Be sure to specify the correct document path.
+## الخطوة 2: افتح مستند PDF
+ ثم يمكنك فتح مستند PDF لتقسيمه باستخدام الملف`Document` فئة Aspose.PDF. تأكد من تحديد مسار المستند الصحيح.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "SplitToPages.pdf");
 ```
 
-## Step 3: Go through the pages and divide them
-Now you can loop through all pages of the PDF document using a loop. For each page, create a new document and add that page to this new document. Then save the new document using a unique file name for each page.
+## الخطوة 3: تصفح الصفحات وقم بتقسيمها
+يمكنك الآن تكرار جميع صفحات مستند PDF باستخدام حلقة. لكل صفحة، أنشئ مستندًا جديدًا وأضف تلك الصفحة إلى هذا المستند الجديد. ثم احفظ المستند الجديد باستخدام اسم ملف فريد لكل صفحة.
 
 ```csharp
 int pageCount = 1;
@@ -43,16 +43,16 @@ pageCount++;
 }
 ```
 
-### Sample source code for Split To Pages using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتقسيم إلى صفحات باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "SplitToPages.pdf");
 int pageCount = 1;
-// Loop through all the pages
+// حلقة من خلال جميع الصفحات
 foreach (Page pdfPage in pdfDocument.Pages)
 {
 	Document newDocument = new Document();
@@ -63,33 +63,33 @@ foreach (Page pdfPage in pdfDocument.Pages)
 
 ```
 
-## Conclusion
-In this tutorial, we learned how to split a PDF document into individual pages using Aspose.PDF for .NET. By following this step-by-step guide, you can easily split a PDF document into multiple PDF files, each containing a single page. Aspose.PDF offers a powerful and flexible API for working with PDF documents in your projects. Now you can use this feature to perform PDF document splitting operations according to your specific needs.
+## خاتمة
+في هذا البرنامج التعليمي، تعلمنا كيفية تقسيم مستند PDF إلى صفحات فردية باستخدام Aspose.PDF لـ .NET. باتباع هذا الدليل التفصيلي، يمكنك بسهولة تقسيم مستند PDF إلى ملفات PDF متعددة، يحتوي كل منها على صفحة واحدة. يقدم Aspose.PDF واجهة برمجة تطبيقات قوية ومرنة للعمل مع مستندات PDF في مشاريعك. يمكنك الآن استخدام هذه الميزة لإجراء عمليات تقسيم مستندات PDF وفقًا لاحتياجاتك المحددة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: How can I split a PDF document into individual pages using Aspose.PDF for .NET?
+#### س: كيف يمكنني تقسيم مستند PDF إلى صفحات فردية باستخدام Aspose.PDF لـ .NET؟
 
-A: To split a PDF document into individual pages using Aspose.PDF for .NET, you can follow these steps:
+ج: لتقسيم مستند PDF إلى صفحات فردية باستخدام Aspose.PDF لـ .NET، يمكنك اتباع الخطوات التالية:
 
-1. Set the document directory by specifying the path where your original PDF file is located and where you want to save the split PDF files. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
-2. Open the PDF document to split using the `Document` class of Aspose.PDF. Be sure to specify the correct path to the original PDF document.
-3. Loop through all the pages of the PDF document using a loop.
-4. For each page, create a new document using the `Document` class and add that page to this new document using the `Add()` method of the `Pages` property.
-5. Save the new document with a unique file name for each page using the `Save()` method of the `Document` class.
+1. قم بتعيين دليل المستند عن طريق تحديد المسار الذي يوجد به ملف PDF الأصلي الخاص بك والمكان الذي تريد حفظ ملفات PDF المقسمة فيه. استبدل "دليل المستندات الخاصة بك" بالمسار المناسب.
+2.  افتح مستند PDF لتقسيمه باستخدام الملف`Document` فئة Aspose.PDF. تأكد من تحديد المسار الصحيح لمستند PDF الأصلي.
+3. قم بالمرور عبر جميع صفحات مستند PDF باستخدام حلقة.
+4.  لكل صفحة، قم بإنشاء مستند جديد باستخدام`Document` class وأضف تلك الصفحة إلى هذا المستند الجديد باستخدام ملف`Add()` طريقة`Pages` ملكية.
+5.  احفظ المستند الجديد باسم ملف فريد لكل صفحة باستخدام الملف`Save()` طريقة`Document` فصل.
 
-#### Q: Will splitting the PDF document affect the original PDF file?
+#### س: هل يؤثر تقسيم مستند PDF على ملف PDF الأصلي؟
 
-A: No, splitting the PDF document will not affect the original PDF file. Each page is copied to a new document, and the new documents are saved separately, leaving the original PDF file intact.
+ج: لا، لن يؤثر تقسيم مستند PDF على ملف PDF الأصلي. يتم نسخ كل صفحة إلى مستند جديد، ويتم حفظ المستندات الجديدة بشكل منفصل، مع ترك ملف PDF الأصلي كما هو.
 
-#### Q: Can I specify a different file format for the split pages, such as images or text files?
+#### س: هل يمكنني تحديد تنسيق ملف مختلف للصفحات المقسمة، مثل الصور أو الملفات النصية؟
 
-A: The provided C# source code demonstrates how to split the PDF document into separate PDF files for each page. However, you can modify the code to save the split pages in other formats, such as images or text files, depending on your specific requirements.
+ج: يوضح كود مصدر C# كيفية تقسيم مستند PDF إلى ملفات PDF منفصلة لكل صفحة. ومع ذلك، يمكنك تعديل التعليمات البرمجية لحفظ الصفحات المقسمة بتنسيقات أخرى، مثل الصور أو الملفات النصية، وفقًا لمتطلباتك المحددة.
 
-#### Q: Is there a limit to the number of pages that can be split using Aspose.PDF for .NET?
+#### س: هل هناك حد لعدد الصفحات التي يمكن تقسيمها باستخدام Aspose.PDF لـ .NET؟
 
-A: There is no specific limit imposed by Aspose.PDF for .NET on the number of pages that can be split. However, the amount of memory and resources available in your system may affect the performance when working with a large number of pages.
+ج: لا يوجد حد محدد يفرضه Aspose.PDF لـ .NET على عدد الصفحات التي يمكن تقسيمها. ومع ذلك، قد يؤثر حجم الذاكرة والموارد المتوفرة في نظامك على الأداء عند العمل مع عدد كبير من الصفحات.
 
-#### Q: Can I split a specific range of pages from the PDF document?
+#### س: هل يمكنني تقسيم نطاق معين من الصفحات من مستند PDF؟
 
-A: Yes, you can modify the provided source code to split a specific range of pages from the PDF document. Instead of looping through all pages, you can implement logic to select a specific range of pages and create new documents for only those pages.
+ج: نعم، يمكنك تعديل كود المصدر المقدم لتقسيم نطاق معين من الصفحات من مستند PDF. بدلاً من التكرار عبر كافة الصفحات، يمكنك تنفيذ المنطق لتحديد نطاق معين من الصفحات وإنشاء مستندات جديدة لتلك الصفحات فقط.

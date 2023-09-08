@@ -1,32 +1,32 @@
 ---
-title: Hidden Text Block In PDF File
-linktitle: Hidden Text Block In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create hidden text blocks in PDF file using Aspose.PDF for .NET.
+title: Versteckter Textblock in PDF-Datei
+linktitle: Versteckter Textblock in PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET versteckte Textblöcke in einer PDF-Datei erstellen.
 type: docs
 weight: 230
 url: /de/net/programming-with-text/hidden-text-block/
 ---
-In this tutorial, we will explain how to create a hidden text block in PDF file using the Aspose.PDF library for .NET. A hidden text block is a floating text that becomes visible when the mouse cursor hovers over a specific area. We will go through the step-by-step process of creating the hidden text block using the provided C# source code.
+In diesem Tutorial erklären wir, wie Sie mithilfe der Aspose.PDF-Bibliothek für .NET einen versteckten Textblock in einer PDF-Datei erstellen. Ein ausgeblendeter Textblock ist ein schwebender Text, der sichtbar wird, wenn der Mauszeiger über einen bestimmten Bereich schwebt. Wir werden den Prozess der Erstellung des versteckten Textblocks mithilfe des bereitgestellten C#-Quellcodes Schritt für Schritt durchgehen.
 
-## Requirements
+## Anforderungen
 
-Before you begin, ensure that you have the following:
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- Die Aspose.PDF für .NET-Bibliothek installiert.
+- Ein grundlegendes Verständnis der C#-Programmierung.
 
-## Step 1: Set up the Document Directory
+## Schritt 1: Richten Sie das Dokumentenverzeichnis ein
 
-First, you need to set the path to the directory where you want to save the generated PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your desired directory.
+ Zunächst müssen Sie den Pfad zu dem Verzeichnis festlegen, in dem Sie die generierte PDF-Datei speichern möchten. Ersetzen`"YOUR DOCUMENT DIRECTORY"` im`dataDir`Variable mit dem Pfad zu Ihrem gewünschten Verzeichnis.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a Sample Document
+## Schritt 2: Erstellen Sie ein Beispieldokument
 
-In this step, we create a sample PDF document and add a text fragment to it. The text fragment will serve as the trigger for displaying the hidden text block.
+In diesem Schritt erstellen wir ein Beispiel-PDF-Dokument und fügen ein Textfragment hinzu. Das Textfragment dient als Auslöser für die Anzeige des ausgeblendeten Textblocks.
 
 ```csharp
 string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
@@ -35,17 +35,17 @@ doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to d
 doc.Save(outputFile);
 ```
 
-## Step 3: Open the Document
+## Schritt 3: Öffnen Sie das Dokument
 
-Now, we open the previously created document using the `Document` class.
+ Jetzt öffnen wir das zuvor erstellte Dokument mit`Document` Klasse.
 
 ```csharp
 Document document = new Document(outputFile);
 ```
 
-## Step 4: Find the Text Fragment
+## Schritt 4: Finden Sie das Textfragment
 
-We use a `TextFragmentAbsorber` object to find the text fragment that will trigger the display of the hidden text block. In this case, we are searching for the exact text "Move the mouse cursor here to display floating text".
+ Wir benutzen ein`TextFragmentAbsorber` Objekt, um das Textfragment zu finden, das die Anzeige des ausgeblendeten Textblocks auslöst. In diesem Fall suchen wir nach dem genauen Text „Bewegen Sie den Mauszeiger hierher, um schwebenden Text anzuzeigen“.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
@@ -54,9 +54,9 @@ TextFragmentCollection textFragments = absorb.TextFragments;
 TextFragment fragment = textFragments[1];
 ```
 
-## Step 5: Create the Hidden Text Field
+## Schritt 5: Erstellen Sie das ausgeblendete Textfeld
 
-We create a `TextBoxField` object to represent the hidden text field. This field will contain the text that becomes visible when the mouse cursor hovers over the trigger text.
+ Wir erstellen ein`TextBoxField` Objekt zur Darstellung des ausgeblendeten Textfelds. Dieses Feld enthält den Text, der sichtbar wird, wenn sich der Mauszeiger über dem Auslösetext befindet.
 
 ```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
@@ -72,17 +72,17 @@ floatingField.Border.Width = 1;
 floatingField. Multiline = true;
 ```
 
-## Step 6: Add the Hidden Text Field to the Document
+## Schritt 6: Fügen Sie das ausgeblendete Textfeld zum Dokument hinzu
 
-We add the hidden text field to the document's form collection.
+Wir fügen das ausgeblendete Textfeld zur Formularsammlung des Dokuments hinzu.
 
 ```csharp
 document.Form.Add(floatingField);
 ```
 
-## Step 7: Create the Invisible Button
+## Schritt 7: Erstellen Sie die unsichtbare Schaltfläche
 
-We create an invisible button field that will be positioned on top of the trigger text fragment. This button field will have actions associated with mouse enter and exit events.
+Wir erstellen ein unsichtbares Schaltflächenfeld, das über dem Triggertextfragment positioniert wird. Dieses Schaltflächenfeld verfügt über Aktionen, die mit Ein- und Ausstiegsereignissen der Maus verknüpft sind.
 
 ```csharp
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
@@ -91,104 +91,104 @@ buttonField.Actions.OnExit = new HideAction(floatingField);
 document.Form.Add(buttonField);
 ```
 
-## Step 8: Save the Document
+## Schritt 8: Speichern Sie das Dokument
 
-Finally, we save the modified document with the hidden text block.
+Abschließend speichern wir das geänderte Dokument mit dem ausgeblendeten Textblock.
 
 ```csharp
 document. Save(outputFile);
 ```
 
-### Sample source code for Hidden Text Block using Aspose.PDF for .NET 
+### Beispielquellcode für Hidden Text Block mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
-// Create sample document with text
+// Erstellen Sie ein Beispieldokument mit Text
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
 doc.Save(outputFile);
-// Open document with text
+// Dokument mit Text öffnen
 Document document = new Document(outputFile);
-// Create TextAbsorber object to find all the phrases matching the regular expression
+// Erstellen Sie ein TextAbsorber-Objekt, um alle Phrasen zu finden, die dem regulären Ausdruck entsprechen
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-// Accept the absorber for the document pages
+// Akzeptieren Sie den Absorber für die Dokumentseiten
 document.Pages.Accept(absorber);
-// Get the first extracted text fragment
+// Holen Sie sich das erste extrahierte Textfragment
 TextFragmentCollection textFragments = absorber.TextFragments;
 TextFragment fragment = textFragments[1];
-// Create hidden text field for floating text in the specified rectangle of the page
+// Erstellen Sie ein verstecktes Textfeld für schwebenden Text im angegebenen Rechteck der Seite
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-// Set text to be displayed as field value
+// Legen Sie den Text fest, der als Feldwert angezeigt werden soll
 floatingField.Value = "This is the \"floating text field\".";
-// We recommend to make field 'readonly' for this scenario
+// Wir empfehlen, das Feld für dieses Szenario auf „schreibgeschützt“ zu setzen
 floatingField.ReadOnly = true;
-// Set 'hidden' flag to make field invisible on document opening
+// Setzen Sie die Markierung „versteckt“, um das Feld beim Öffnen des Dokuments unsichtbar zu machen
 floatingField.Flags |= AnnotationFlags.Hidden;
-// Setting a unique field name isn't necessary but allowed
+// Das Festlegen eines eindeutigen Feldnamens ist nicht erforderlich, aber zulässig
 floatingField.PartialName = "FloatingField_1";
-// Setting characteristics of field appearance isn't necessary but makes it better
+// Das Festlegen von Eigenschaften der Felddarstellung ist nicht notwendig, macht es aber besser
 floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
 floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
 floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
 floatingField.Border = new Border(floatingField);
 floatingField.Border.Width = 1;
 floatingField.Multiline = true;
-// Add text field to the document
+// Fügen Sie dem Dokument ein Textfeld hinzu
 document.Form.Add(floatingField);
-// Create invisible button on text fragment position
+// Erstellen Sie eine unsichtbare Schaltfläche an der Position des Textfragments
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-// Create new hide action for specified field (annotation) and invisibility flag.
-// (You also may reffer floating field by the name if you specified it above.)
-// Add actions on mouse enter/exit at the invisible button field
+// Erstellen Sie eine neue Ausblenden-Aktion für das angegebene Feld (Anmerkung) und die Unsichtbarkeitsflagge.
+//(Sie können das Floating-Feld auch anhand des Namens referenzieren, wenn Sie ihn oben angegeben haben.)
+// Fügen Sie Aktionen beim Betreten/Verlassen der Maus im unsichtbaren Schaltflächenfeld hinzu
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
-// Add button field to the document
+// Fügen Sie dem Dokument ein Schaltflächenfeld hinzu
 document.Form.Add(buttonField);
-// Save document
+// Dokument speichern
 document.Save(outputFile);
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, you have learned how to create a hidden text block using the Aspose.PDF for .NET library. By following the step-by-step guide, you can generate a PDF document with a hidden text field that becomes visible when the mouse cursor hovers over a specific area. You can customize the appearance and behavior of the hidden text block according to your requirements.
+In diesem Tutorial haben Sie gelernt, wie Sie mit der Bibliothek Aspose.PDF für .NET einen versteckten Textblock erstellen. Wenn Sie der Schritt-für-Schritt-Anleitung folgen, können Sie ein PDF-Dokument mit einem ausgeblendeten Textfeld erstellen, das sichtbar wird, wenn der Mauszeiger über einen bestimmten Bereich fährt. Sie können das Aussehen und Verhalten des ausgeblendeten Textblocks Ihren Anforderungen entsprechend anpassen.
 
-### FAQ's
+### FAQs
 
-#### Q: What is the purpose of the "Hidden Text Block In PDF File" tutorial?
+#### F: Was ist der Zweck des Tutorials „Versteckter Textblock in PDF-Datei“?
 
-A: The "Hidden Text Block In PDF File" tutorial explains how to create a hidden text block in a PDF file using the Aspose.PDF library for .NET. A hidden text block is a floating text that becomes visible when the mouse cursor hovers over a specific area. This tutorial provides a step-by-step guide using C# source code.
+A: Das Tutorial „Versteckter Textblock in einer PDF-Datei“ erklärt, wie man mit der Aspose.PDF-Bibliothek für .NET einen versteckten Textblock in einer PDF-Datei erstellt. Ein ausgeblendeter Textblock ist ein schwebender Text, der sichtbar wird, wenn der Mauszeiger über einen bestimmten Bereich schwebt. Dieses Tutorial bietet eine Schritt-für-Schritt-Anleitung zur Verwendung von C#-Quellcode.
 
-#### Q: Why would I want to create a hidden text block in a PDF file?
+#### F: Warum sollte ich einen versteckten Textblock in einer PDF-Datei erstellen?
 
-A: Creating a hidden text block can be useful for interactive PDF documents where you want to provide additional information or context that only becomes visible when a user hovers their mouse cursor over a designated area.
+A: Das Erstellen eines ausgeblendeten Textblocks kann für interaktive PDF-Dokumente nützlich sein, wenn Sie zusätzliche Informationen oder Kontext bereitstellen möchten, die nur sichtbar werden, wenn ein Benutzer seinen Mauszeiger über einen bestimmten Bereich bewegt.
 
-#### Q: How do I set up the document directory?
+#### F: Wie richte ich das Dokumentenverzeichnis ein?
 
-A: To set up the document directory:
+A: So richten Sie das Dokumentenverzeichnis ein:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where you want to save the generated PDF file.
+1.  Ersetzen`"YOUR DOCUMENT DIRECTORY"` im`dataDir` Variable mit dem Pfad zu dem Verzeichnis, in dem Sie die generierte PDF-Datei speichern möchten.
 
-#### Q: How do I create a sample document and add a text fragment to it?
+#### F: Wie erstelle ich ein Beispieldokument und füge ihm ein Textfragment hinzu?
 
-A: In the tutorial, you use the `Document` class to create a sample PDF document and add a text fragment. This text fragment serves as the trigger for displaying the hidden text block.
+A: Im Tutorial verwenden Sie das`Document` Klasse, um ein Beispiel-PDF-Dokument zu erstellen und ein Textfragment hinzuzufügen. Dieses Textfragment dient als Auslöser für die Anzeige des ausgeblendeten Textblocks.
 
-#### Q: How do I find the text fragment that triggers the hidden text block?
+#### F: Wie finde ich das Textfragment, das den versteckten Textblock auslöst?
 
-A: The tutorial demonstrates how to use a `TextFragmentAbsorber` object to find the text fragment that triggers the display of the hidden text block. It searches for a specific text string within the PDF document.
+ A: Das Tutorial zeigt, wie man a verwendet`TextFragmentAbsorber` Objekt, um das Textfragment zu finden, das die Anzeige des ausgeblendeten Textblocks auslöst. Es sucht nach einer bestimmten Textzeichenfolge im PDF-Dokument.
 
-#### Q: How do I create and customize the hidden text field?
+#### F: Wie erstelle und passe ich das ausgeblendete Textfeld an?
 
-A: You create a `TextBoxField` object to represent the hidden text field. The tutorial provides code to set various properties such as position, value, appearance, and behavior of the hidden text field.
+ A: Sie erstellen eine`TextBoxField` Objekt zur Darstellung des ausgeblendeten Textfelds. Das Tutorial stellt Code zum Festlegen verschiedener Eigenschaften wie Position, Wert, Aussehen und Verhalten des ausgeblendeten Textfelds bereit.
 
-#### Q: How do I create an invisible button associated with the hidden text block?
+#### F: Wie erstelle ich eine unsichtbare Schaltfläche, die dem ausgeblendeten Textblock zugeordnet ist?
 
-A: An invisible button field is created using the `ButtonField` class. This button field is positioned on top of the trigger text fragment and has actions associated with mouse enter and exit events. These actions control the visibility of the hidden text block.
+ A: Ein unsichtbares Schaltflächenfeld wird mit erstellt`ButtonField` Klasse. Dieses Schaltflächenfeld befindet sich über dem Triggertextfragment und verfügt über Aktionen, die mit Ein- und Ausstiegsereignissen der Maus verknüpft sind. Diese Aktionen steuern die Sichtbarkeit des ausgeblendeten Textblocks.
 
-#### Q: Can I customize the appearance of the hidden text block and the trigger area?
+#### F: Kann ich das Erscheinungsbild des ausgeblendeten Textblocks und des Auslösebereichs anpassen?
 
-A: Yes, you can customize various properties of both the hidden text field and the invisible button, including font, color, size, and positioning.
+A: Ja, Sie können verschiedene Eigenschaften sowohl des ausgeblendeten Textfelds als auch der unsichtbaren Schaltfläche anpassen, einschließlich Schriftart, Farbe, Größe und Positionierung.
 
-#### Q: How do I save the modified document with the hidden text block?
+#### F: Wie speichere ich das geänderte Dokument mit dem ausgeblendeten Textblock?
 
-A: The tutorial demonstrates how to save the modified document using the `Save` method of the `Document` class.
+ A: Das Tutorial zeigt, wie man das geänderte Dokument mit speichert`Save` Methode der`Document` Klasse.

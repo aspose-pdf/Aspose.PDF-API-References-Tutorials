@@ -1,59 +1,59 @@
 ---
-title: Extract Text All In PDF File
-linktitle: Extract Text AllIn PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract all text in PDF file using Aspose.PDF for .NET.
+title: Estrai tutto il testo nel file PDF
+linktitle: Estrai testo tutto nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come estrarre tutto il testo nel file PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 180
 url: /it/net/programming-with-text/extract-text-all/
 ---
-This tutorial will guide you through the process of extracting all text in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Questo tutorial ti guiderà attraverso il processo di estrazione di tutto il testo nel file PDF utilizzando Aspose.PDF per .NET. Il codice sorgente C# fornito illustra i passaggi necessari.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Requisiti
+Prima di iniziare, assicurati di avere quanto segue:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio o qualsiasi altro compilatore C# installato sul tuo computer.
+- Aspose.PDF per la libreria .NET. Puoi scaricarlo dal sito Web ufficiale di Aspose o utilizzare un gestore di pacchetti come NuGet per installarlo.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Passaggio 1: impostare il progetto
+1. Crea un nuovo progetto C# nel tuo ambiente di sviluppo preferito.
+2. Aggiungere un riferimento alla libreria Aspose.PDF per .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to extract text, add the following using directives at the top of the file:
+## Passaggio 2: importa gli spazi dei nomi richiesti
+Nel file di codice in cui desideri estrarre il testo, aggiungi le seguenti direttive using nella parte superiore del file:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Passaggio 3: imposta la directory dei documenti
+ Nel codice, individua la riga che dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso della directory in cui sono archiviati i tuoi documenti.
 
-## Step 4: Open the PDF document
-Open an existing PDF document using the `Document` constructor and passing the path to the input PDF file.
+## Passaggio 4: apri il documento PDF
+ Apri un documento PDF esistente utilizzando il file`Document`costruttore e passando il percorso al file PDF di input.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
 ```
 
-## Step 5: Extract all text
-Create a `TextAbsorber` object to extract text from the document. Then, accept the absorber for all the pages.
+## Passaggio 5: estrai tutto il testo
+ Creare un`TextAbsorber`oggetto per estrarre il testo dal documento. Quindi, accettare l'assorbitore per tutte le pagine.
 
 ```csharp
 TextAbsorber textAbsorber = new TextAbsorber();
 pdfDocument.Pages.Accept(textAbsorber);
 ```
 
-## Step 6: Get the extracted text
-Access the extracted text from the `TextAbsorber` object.
+## Passaggio 6: ottieni il testo estratto
+ Accedi al testo estratto dal file`TextAbsorber` oggetto.
 
 ```csharp
 string extractedText = textAbsorber.Text;
 ```
 
-## Step 7: Save the extracted text
-Create a `TextWriter` and open the file where you want to save the extracted text. Write the extracted text to the file and close the stream.
+## Passaggio 7: salva il testo estratto
+ Creare un`TextWriter` e apri il file in cui vuoi salvare il testo estratto. Scrivi il testo estratto nel file e chiudi lo stream.
 
 ```csharp
 TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");
@@ -61,64 +61,64 @@ tw.WriteLine(extractedText);
 tw. Close();
 ```
 
-### Sample source code for Extract Text All using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Extract Text All utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Apri documento
 Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
-// Create TextAbsorber object to extract text
+// Crea un oggetto TextAbsorber per estrarre il testo
 TextAbsorber textAbsorber = new TextAbsorber();
-// Accept the absorber for all the pages
+// Accettare l'assorbitore per tutte le pagine
 pdfDocument.Pages.Accept(textAbsorber);
-// Get the extracted text
+// Ottieni il testo estratto
 string extractedText = textAbsorber.Text;
-// Create a writer and open the file
+// Crea uno scrittore e apri il file
 TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");
-// Write a line of text to the file
+// Scrivere una riga di testo nel file
 tw.WriteLine(extractedText);
-// Close the stream
+// Chiudi il flusso
 tw.Close();
 ```
 
-## Conclusion
-You have successfully extracted all text from a PDF document using Aspose.PDF for .NET. The extracted text has been saved to the specified output file.
+## Conclusione
+Hai estratto con successo tutto il testo da un documento PDF utilizzando Aspose.PDF per .NET. Il testo estratto è stato salvato nel file di output specificato.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: What is the purpose of this tutorial?
+#### D: Qual è lo scopo di questo tutorial?
 
-A: This tutorial serves as a guide to help you extract all text from a PDF file using Aspose.PDF for .NET. The accompanying C# source code provides step-by-step instructions for achieving this task.
+R: Questo tutorial funge da guida per aiutarti a estrarre tutto il testo da un file PDF utilizzando Aspose.PDF per .NET. Il codice sorgente C# allegato fornisce istruzioni dettagliate per eseguire questa attività.
 
-#### Q: What namespaces should I import?
+#### D: Quali spazi dei nomi devo importare?
 
-A: In the code file where you intend to extract text, include the following using directives at the beginning of the file:
+R: Nel file di codice in cui intendi estrarre il testo, includi le seguenti direttive using all'inizio del file:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-#### Q: How do I specify the document directory?
+#### D: Come posso specificare la directory dei documenti?
 
-A: Locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` in the code and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ R: Individua la linea`string dataDir = "YOUR DOCUMENT DIRECTORY";` nel codice e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory dei documenti.
 
-#### Q: How do I open an existing PDF document?
+#### D: Come posso aprire un documento PDF esistente?
 
-A: In Step 4, you'll open an existing PDF document using the `Document` constructor and providing the path to the input PDF file.
+ R: Nel passaggio 4, aprirai un documento PDF esistente utilizzando il file`Document` costruttore e fornendo il percorso del file PDF di input.
 
-#### Q: How do I extract all text from the document?
+#### D: Come estraggo tutto il testo dal documento?
 
-A: Step 5 involves creating a `TextAbsorber` object to extract text from the PDF document. Then, you'll accept the absorber for all the pages.
+ R: Il passaggio 5 prevede la creazione di un file`TextAbsorber` oggetto per estrarre il testo dal documento PDF. Quindi accetterai l'assorbitore per tutte le pagine.
 
-#### Q: How do I access the extracted text?
+#### D: Come posso accedere al testo estratto?
 
-A: Step 6 guides you through accessing the extracted text from the `TextAbsorber` object.
+ R: Il passaggio 6 ti guida attraverso l'accesso al testo estratto dal file`TextAbsorber` oggetto.
 
-#### Q: How do I save the extracted text to a file?
+#### D: Come posso salvare il testo estratto in un file?
 
-A: In Step 7, you'll create a `TextWriter`, open the file where you want to save the extracted text, write the extracted text to the file, and then close the stream.
+ R: Nel passaggio 7 creerai un file`TextWriter`, apri il file in cui desideri salvare il testo estratto, scrivi il testo estratto nel file, quindi chiudi lo stream.
 
-#### Q: What is the key takeaway from this tutorial?
+#### D: Qual è il punto chiave di questo tutorial?
 
-A: By following this tutorial, you've learned how to extract all text from a PDF document using Aspose.PDF for .NET. The extracted text has been saved to a specified output file, enabling you to analyze and manipulate the document's textual content.
+R: Seguendo questo tutorial, hai imparato come estrarre tutto il testo da un documento PDF utilizzando Aspose.PDF per .NET. Il testo estratto è stato salvato in un file di output specificato, consentendoti di analizzare e manipolare il contenuto testuale del documento.

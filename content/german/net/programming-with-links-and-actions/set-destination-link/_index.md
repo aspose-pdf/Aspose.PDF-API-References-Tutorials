@@ -1,76 +1,76 @@
 ---
-title: Set Destination Link In PDF File
-linktitle: Set Destination Link In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set a destination link in PDF file using Aspose.PDF for .NET.
+title: Ziellink in PDF-Datei festlegen
+linktitle: Ziellink in PDF-Datei festlegen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET einen Ziellink in einer PDF-Datei festlegen.
 type: docs
 weight: 90
 url: /de/net/programming-with-links-and-actions/set-destination-link/
 ---
-Learn how to set a destination link in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+Erfahren Sie in dieser Schritt-für-Schritt-Anleitung, wie Sie mit Aspose.PDF für .NET einen Ziellink in einer PDF-Datei festlegen.
 
-## Step 1: Setting up the environment
+## Schritt 1: Einrichten der Umgebung
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+Stellen Sie sicher, dass Sie Ihre Entwicklungsumgebung mit einem C#-Projekt und den entsprechenden Aspose.PDF-Referenzen eingerichtet haben.
 
-## Step 2: Loading the PDF file
+## Schritt 2: Laden der PDF-Datei
 
-Set the directory path of your documents and upload the PDF file using the following code:
+Legen Sie den Verzeichnispfad Ihrer Dokumente fest und laden Sie die PDF-Datei mit dem folgenden Code hoch:
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// Laden Sie die PDF-Datei
 Document doc = new Document(dataDir + "UpdateLinks.pdf");
 ```
 
-## Step 3: Editing the destination link
+## Schritt 3: Bearbeiten des Ziellinks
 
-Get the link annotation to modify using the following code:
+Rufen Sie die zu ändernde Linkanmerkung mit dem folgenden Code ab:
 
 ```csharp
 LinkAnnotation linkAnnot = (LinkAnnotation)doc.Pages[1].Annotations[1];
 ```
 
-You can adjust the `[1]` indices to select a specific page or annotation.
+ Sie können die anpassen`[1]` Indizes, um eine bestimmte Seite oder Anmerkung auszuwählen.
 
-Next, edit the link by changing the link action and setting the target as a web address:
+Bearbeiten Sie als Nächstes den Link, indem Sie die Linkaktion ändern und das Ziel als Webadresse festlegen:
 
 ```csharp
 linkAnnot.Action = new GoToURIAction("www.aspose.com");
 ```
 
-## Step 4: Save the document with the updated link
+## Schritt 4: Speichern Sie das Dokument mit dem aktualisierten Link
 
-Save the document with the updated link using the `Save` method:
+ Speichern Sie das Dokument mit dem aktualisierten Link mithilfe von`Save` Methode:
 
 ```csharp
 dataDir = dataDir + "SetDestinationLink_out.pdf";
 doc.Save(dataDir);
 ```
 
-## Step 5: Displaying the result
+## Schritt 5: Ergebnis anzeigen
 
-Display a message indicating that the destination link was successfully configured and specify the location of the saved file:
+Zeigen Sie eine Meldung an, dass der Ziellink erfolgreich konfiguriert wurde, und geben Sie den Speicherort der gespeicherten Datei an:
 
 ```csharp
 Console.WriteLine("\nDestination link configured successfully.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Set Destination Link using Aspose.PDF for .NET 
+### Beispielquellcode für Set Destination Link mit Aspose.PDF für .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Der Pfad zum Dokumentenverzeichnis.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the PDF file
+	// Laden Sie die PDF-Datei
 	Document doc = new Document(dataDir + "UpdateLinks.pdf");
-	// Get the first link annotation from first page of document
+	// Holen Sie sich die erste Linkanmerkung von der ersten Seite des Dokuments
 	LinkAnnotation linkAnnot = (LinkAnnotation)doc.Pages[1].Annotations[1];
-	// Modification link: change link action and set target as web address
+	// Änderungslink: Linkaktion ändern und Ziel als Webadresse festlegen
 	linkAnnot.Action = new GoToURIAction("www.aspose.com");           
 	dataDir = dataDir + "SetDestinationLink_out.pdf";
-	// Save the document with updated link
+	// Speichern Sie das Dokument mit dem aktualisierten Link
 	doc.Save(dataDir);
 	Console.WriteLine("\nDestination link setup successfully.\nFile saved at " + dataDir);
 }
@@ -80,53 +80,53 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You now know how to set a destination link in a PDF file using Aspose.PDF for .NET. Use this knowledge to customize links in your PDF documents and create interactive experiences for users.
+Herzlichen Glückwunsch! Sie wissen jetzt, wie Sie mit Aspose.PDF für .NET einen Ziellink in einer PDF-Datei festlegen. Nutzen Sie dieses Wissen, um Links in Ihren PDF-Dokumenten anzupassen und interaktive Erlebnisse für Benutzer zu erstellen.
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+Nachdem Sie dieses Handbuch abgeschlossen haben, können Sie diese Konzepte auf Ihre eigenen Projekte anwenden und die von Aspose.PDF für .NET angebotenen Funktionen weiter erkunden.
 
-### FAQ's for set destination link in PDF file
+### FAQs zum Festlegen eines Ziellinks in einer PDF-Datei
 
-#### Q: What is a destination link in a PDF file?
+#### F: Was ist ein Ziellink in einer PDF-Datei?
 
-A: A destination link in a PDF file is a clickable link that navigates the reader to a specific destination within the same document or to an external web address.
+A: Ein Ziellink in einer PDF-Datei ist ein anklickbarer Link, der den Leser zu einem bestimmten Ziel innerhalb desselben Dokuments oder zu einer externen Webadresse führt.
 
-#### Q: Why would I want to set a destination link in a PDF file?
+#### F: Warum sollte ich einen Ziellink in einer PDF-Datei festlegen?
 
-A: Setting destination links allows you to create a seamless navigation experience within a PDF document. It's particularly useful for creating table of contents, index pages, or linking to relevant external resources.
+A: Durch das Festlegen von Ziellinks können Sie ein nahtloses Navigationserlebnis innerhalb eines PDF-Dokuments schaffen. Dies ist besonders nützlich zum Erstellen von Inhaltsverzeichnissen, Indexseiten oder zum Verknüpfen mit relevanten externen Ressourcen.
 
-#### Q: How does Aspose.PDF for .NET help in setting destination links?
-A: Aspose.PDF for .NET provides APIs to manipulate various aspects of PDF files, including creating and modifying links. This tutorial demonstrates how to set a destination link using C# code.
+#### F: Wie hilft Aspose.PDF für .NET beim Festlegen von Ziellinks?
+A: Aspose.PDF für .NET bietet APIs zur Bearbeitung verschiedener Aspekte von PDF-Dateien, einschließlich der Erstellung und Änderung von Links. In diesem Tutorial wird gezeigt, wie Sie mithilfe von C#-Code einen Ziellink festlegen.
 
-#### Q: Can I set destination links to navigate to specific pages within the same document?
+#### F: Kann ich Ziellinks festlegen, um zu bestimmten Seiten innerhalb desselben Dokuments zu navigieren?
 
-A: Yes, Aspose.PDF for .NET enables you to set destination links to navigate to specific pages within the same document.
+A: Ja, mit Aspose.PDF für .NET können Sie Ziellinks festlegen, um zu bestimmten Seiten innerhalb desselben Dokuments zu navigieren.
 
-#### Q: Can I set destination links to navigate to external web addresses?
+#### F: Kann ich Ziellinks festlegen, um zu externen Webadressen zu navigieren?
 
-A: Yes, you can set destination links to navigate to external web addresses, allowing users to access online resources directly from the PDF.
+A: Ja, Sie können Ziellinks festlegen, um zu externen Webadressen zu navigieren, sodass Benutzer direkt aus der PDF-Datei auf Online-Ressourcen zugreifen können.
 
-#### Q: Are there any limitations to setting destination links?
+#### F: Gibt es Einschränkungen beim Festlegen von Ziellinks?
 
-A: Destination links can only navigate within the same document or to external URLs. They cannot directly link to specific content within other documents.
+A: Ziellinks können nur innerhalb desselben Dokuments oder zu externen URLs navigieren. Sie können nicht direkt auf bestimmte Inhalte in anderen Dokumenten verweisen.
 
-#### Q: How do I customize the appearance of a destination link?
+#### F: Wie kann ich das Erscheinungsbild eines Ziellinks anpassen?
 
-A: The appearance of a destination link, such as its color and style, can be customized using the properties provided by Aspose.PDF for .NET.
+A: Das Erscheinungsbild eines Ziellinks, beispielsweise seine Farbe und sein Stil, kann mithilfe der von Aspose.PDF für .NET bereitgestellten Eigenschaften angepasst werden.
 
-#### Q: Can I set multiple destination links in the same PDF document?
+#### F: Kann ich mehrere Ziellinks im selben PDF-Dokument festlegen?
 
-A: Yes, you can set multiple destination links in the same PDF document. Simply repeat the process for each link you want to create.
+A: Ja, Sie können mehrere Ziellinks im selben PDF-Dokument festlegen. Wiederholen Sie den Vorgang einfach für jeden Link, den Sie erstellen möchten.
 
-#### Q: Can I set a destination link using a specific shape or text?
+#### F: Kann ich einen Ziellink mithilfe einer bestimmten Form oder eines bestimmten Textes festlegen?
 
-A: Yes, you can attach a destination link to specific shapes or text within the PDF document using the appropriate properties and methods provided by Aspose.PDF for .NET.
+A: Ja, Sie können mithilfe der entsprechenden Eigenschaften und Methoden von Aspose.PDF für .NET einen Ziellink an bestimmte Formen oder Texte im PDF-Dokument anhängen.
 
-#### Q: How can I test if the destination link is working as intended?
+#### F: Wie kann ich testen, ob der Ziellink wie vorgesehen funktioniert?
 
-A: After setting the destination link using the provided code, open the modified PDF and click on the link to ensure it navigates to the desired destination.
+A: Nachdem Sie den Ziellink mithilfe des bereitgestellten Codes festgelegt haben, öffnen Sie das geänderte PDF und klicken Sie auf den Link, um sicherzustellen, dass er zum gewünschten Ziel führt.
 
-#### Q: Can I set destination links in password-protected PDFs?
+#### F: Kann ich Ziellinks in passwortgeschützten PDFs festlegen?
 
-A: Yes, you can set destination links in password-protected PDFs as long as you provide the appropriate credentials to access and modify the document.
+A: Ja, Sie können Ziellinks in passwortgeschützten PDFs festlegen, sofern Sie die entsprechenden Anmeldeinformationen angeben, um auf das Dokument zuzugreifen und es zu ändern.

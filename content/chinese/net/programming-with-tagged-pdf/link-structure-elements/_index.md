@@ -1,96 +1,96 @@
 ---
-title: Link Structure Elements
-linktitle: Link Structure Elements
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to using link structure elements with Aspose.PDF for .NET. Create hyperlinks in your PDF documents.
+title: 链接结构元素
+linktitle: 链接结构元素
+second_title: Aspose.PDF for .NET API 参考
+description: 将链接结构元素与 Aspose.PDF for .NET 结合使用的分步指南。在 PDF 文档中创建超链接。
 type: docs
 weight: 120
 url: /zh/net/programming-with-tagged-pdf/link-structure-elements/
 ---
-In this step-by-step guide, we'll show you how to use link structure elements with Aspose.PDF for .NET. Aspose.PDF is a powerful library that lets you create and manipulate PDF documents programmatically. Link structure elements allow you to add hyperlinks to your PDF document, allowing users to click the links and navigate to online resources.
+在本分步指南中，我们将向您展示如何将链接结构元素与 Aspose.PDF for .NET 结合使用。 Aspose.PDF 是一个功能强大的库，可让您以编程方式创建和操作 PDF 文档。链接结构元素允许您向 PDF 文档添加超链接，从而允许用户单击链接并导航到在线资源。
 
-Let's dive into the code and learn how to use link structure elements with Aspose.PDF for .NET.
+让我们深入研究代码并了解如何在 Aspose.PDF for .NET 中使用链接结构元素。
 
-## Prerequisites
+## 先决条件
 
-Before you begin, make sure you have the following:
+在开始之前，请确保您具备以下条件：
 
-1. Aspose.PDF library for .NET installed.
-2. A basic knowledge of the C# programming language.
+1. 安装了适用于.NET 的 Aspose.PDF 库。
+2. C# 编程语言的基础知识。
 
-## Step 1: Setting up the environment
+## 第一步：搭建环境
 
-To get started, open your C# development environment and create a new project. Make sure you have added a reference to the Aspose.PDF library for .NET in your project.
+首先，打开 C# 开发环境并创建一个新项目。确保您已在项目中添加对 .NET 的 Aspose.PDF 库的引用。
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 string outFile = dataDir + "LinkStructureElements_Output.pdf";
 string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 ```
 
-## Step 2: Creating the document
+## 第 2 步：创建文档
 
-The first step is to create a new PDF document using the `Document` class.
+第一步是使用以下命令创建一个新的 PDF 文档`Document`班级。
 
 ```csharp
-// Create the PDF document
+//创建 PDF 文档
 Document document = new Document();
 ```
 
-## Step 3: Work with tagged content
+## 第 3 步：处理标记内容
 
-Then we get the tagged content of the document to work with.
+然后我们获取要使用的文档的标记内容。
 
 ```csharp
-// Get the tagged content of the document
+//获取文档的标记内容
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 4: Set document title and language
+## 步骤 4：设置文档标题和语言
 
-We can now set the document title and language.
+我们现在可以设置文档标题和语言。
 
 ```csharp
-// Define the document title and language
+//定义文档标题和语言
 taggedContent.SetTitle("Example Link Items");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 5: Add link structure elements
+## 第5步：添加链接结构元素
 
-Now let's add link structure elements to our document. We will create different types of links, including simple text links, image links, and multi-line links.
+现在让我们将链接结构元素添加到我们的文档中。我们将创建不同类型的链接，包括简单的文本链接、图像链接和多行链接。
 ```csharp
-// Get the root structure element (document structure element)
+//获取根结构元素（文档结构元素）
 StructureElement rootElement = taggedContent.RootElement;
 
-// Add a paragraph with a hyperlink
+//添加带有超链接的段落
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
 LinkElement link1 = taggedContent.CreateLinkElement();
 p1.AppendChild(link1);
-link1.Hyperlink = new WebHyperlink("http://google.com");
+link1.Hyperlink = new WebHyperlink("http://谷歌.com”）；
 link1.SetText("Google");
 link1.AlternateDescriptions = "Link to Google";
 
-// Add a paragraph with a hyperlink containing rich text
+//添加带有包含富文本的超链接的段落
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p2);
 LinkElement link2 = taggedContent.CreateLinkElement();
 p2.AppendChild(link2);
-link2.Hyperlink = new WebHyperlink("http://google.com");
+link2.Hyperlink = new WebHyperlink("http://谷歌.com”）；
 SpanElement span2 = taggedContent.CreateSpanElement();
 span2.SetText("Google");
 link2.AppendChild(span2);
 link2.AlternateDescriptions = "Link to Google";
 
-// Add a paragraph with a hyperlink containing partially formatted text
+//添加带有包含部分格式化文本的超链接的段落
 ParagraphElement p3 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p3);
 LinkElement link3 = taggedContent.CreateLinkElement();
 p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://google.com");
+link3.Hyperlink = new WebHyperlink("http://谷歌.com”）；
 SpanElement span31 = taggedContent.CreateSpanElement();
 span31.SetText("G");
 SpanElement span32 = taggedContent.CreateSpanElement();
@@ -100,21 +100,21 @@ link3.SetText("-");
 link3.AppendChild(span32);
 link3.AlternateDescriptions = "Link to Google";
 
-// Add a paragraph with a multiline hyperlink
+//添加带有多行超链接的段落
 ParagraphElement p4 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p4);
 LinkElement link4 = taggedContent.CreateLinkElement();
 p4.AppendChild(link4);
-link4.Hyperlink = new WebHyperlink("http://google.com");
+link4.Hyperlink = new WebHyperlink("http://谷歌.com”）；
 link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
 link4.AlternateDescriptions = "Link to Google (multiline)";
 
-// Add a paragraph with a hyperlink containing an image
+//添加带有包含图像的超链接的段落
 ParagraphElement p5 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p5);
 LinkElement link5 = taggedContent.CreateLinkElement();
 p5.AppendChild(link5);
-link5.Hyperlink = new WebHyperlink("http://google.com");
+link5.Hyperlink = new WebHyperlink("http://谷歌.com”）；
 FigureElement figure5 = taggedContent.CreateFigureElement();
 figure5.SetImage(imgFile, 1200);
 figure5.AlternativeText = "Google icon";
@@ -126,58 +126,58 @@ link5.AppendChild(figure5);
 link5.AlternateDescriptions = "Link to Google";
 ```
 
-## Step 6: Save the tagged PDF document
+## 步骤 6：保存标记的 PDF 文档
 
-Finally, we save the tagged PDF document.
+最后，我们保存标记的 PDF 文档。
 
 ```csharp
-// Save the tagged PDF document
+//保存标记的 PDF 文档
 document. Save(outFile);
 ```
 
-## Step 7: Check PDF/UA compliance
+## 第 7 步：检查 PDF/UA 合规性
 
-We can also check the document for PDF/UA compliance using the `Validate` method of the `Document` class.
+我们还可以使用以下命令检查文档的 PDF/UA 合规性`Validate`的方法`Document`班级。
 
 ```csharp
-// Check PDF/UA compliance
+//检查 PDF/UA 合规性
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
 
-### Sample source code for Link Structure Elements using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 的链接结构元素的示例源代码 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "LinkStructureElements_Output.pdf";
 string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 
-// Creation document and getting Tagged Pdf Content
+//创建文档并获取标记的 Pdf 内容
 Document document = new Document(); 
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Setting Title and Nature Language for document
+//设置文档的标题和自然语言
 taggedContent.SetTitle("Link Elements Example");
 taggedContent.SetLanguage("en-US");
 
-// Getting Root structure element (Document structure element)
+//获取根结构元素（文档结构元素）
 StructureElement rootElement = taggedContent.RootElement;
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
 LinkElement link1 = taggedContent.CreateLinkElement();
 p1.AppendChild(link1);
-link1.Hyperlink = new WebHyperlink("http://google.com");
+link1.Hyperlink = new WebHyperlink("http://谷歌.com”）；
 link1.SetText("Google");
 link1.AlternateDescriptions = "Link to Google";
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p2);
 LinkElement link2 = taggedContent.CreateLinkElement();
 p2.AppendChild(link2);
-link2.Hyperlink = new WebHyperlink("http://google.com");
+link2.Hyperlink = new WebHyperlink("http://谷歌.com”）；
 SpanElement span2 = taggedContent.CreateSpanElement();
 span2.SetText("Google");
 link2.AppendChild(span2);
@@ -186,7 +186,7 @@ ParagraphElement p3 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p3);
 LinkElement link3 = taggedContent.CreateLinkElement();
 p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://google.com");
+link3.Hyperlink = new WebHyperlink("http://谷歌.com”）；
 SpanElement span31 = taggedContent.CreateSpanElement();
 span31.SetText("G");
 SpanElement span32 = taggedContent.CreateSpanElement();
@@ -199,14 +199,14 @@ ParagraphElement p4 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p4);
 LinkElement link4 = taggedContent.CreateLinkElement();
 p4.AppendChild(link4);
-link4.Hyperlink = new WebHyperlink("http://google.com");
+link4.Hyperlink = new WebHyperlink("http://谷歌.com”）；
 link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
 link4.AlternateDescriptions = "Link to Google (multiline)";
 ParagraphElement p5 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p5);
 LinkElement link5 = taggedContent.CreateLinkElement();
 p5.AppendChild(link5);
-link5.Hyperlink = new WebHyperlink("http://google.com");
+link5.Hyperlink = new WebHyperlink("http://谷歌.com”）；
 FigureElement figure5 = taggedContent.CreateFigureElement();
 figure5.SetImage(imgFile, 1200);
 figure5.AlternativeText = "Google icon";
@@ -217,56 +217,56 @@ linkLayoutAttributes.SetAttribute(placementAttribute);
 link5.AppendChild(figure5);
 link5.AlternateDescriptions = "Link to Google";
 
-// Save Tagged Pdf Document
+//保存标记的 PDF 文档
 document.Save(outFile);
 
-// Checking PDF/UA compliance
+//检查 PDF/UA 合规性
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
-## Conclusion
+## 结论
 
-Congratulation ! You have learned how to use link structure elements with Aspose.PDF for .NET. Now you can create hyperlinks in your PDF documents, allowing users to navigate to online resources. Experiment and explore more features of Aspose.PDF to create interactive and enriched PDF documents.
+恭喜！您已经学习了如何通过 Aspose.PDF for .NET 使用链接结构元素。现在，您可以在 PDF 文档中创建超链接，允许用户导航到在线资源。实验并探索 Aspose.PDF 的更多功能，以创建交互式且丰富的 PDF 文档。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What are link structure elements in a PDF document, and how do they enhance document interactivity?
+#### 问：PDF 文档中的链接结构元素是什么？它们如何增强文档交互性？
 
-A: Link structure elements in a PDF document are used to create hyperlinks that allow users to navigate to online resources or specific locations within the document. These elements enhance interactivity by providing clickable links that enable users to access related content or external websites.
+答：PDF 文档中的链接结构元素用于创建超链接，允许用户导航到在线资源或文档中的特定位置。这些元素通过提供可点击的链接来增强交互性，使用户能够访问相关内容或外部网站。
 
-#### Q: How can link structure elements be beneficial in a PDF document?
+#### 问：链接结构元素在 PDF 文档中有何用处？
 
-A: Link structure elements enhance the user experience by making the PDF document interactive. They provide quick access to additional information, related content, external websites, or specific sections within the document, improving navigation and facilitating information retrieval.
+答：链接结构元素通过使 PDF 文档具有交互性来增强用户体验。它们提供对附加信息、相关内容、外部网站或文档中特定部分的快速访问，从而改进导航并促进信息检索。
 
-#### Q: Can I create different types of hyperlinks using link structure elements in Aspose.PDF for .NET?
+#### 问：我可以使用 Aspose.PDF for .NET 中的链接结构元素创建不同类型的超链接吗？
 
-A: Yes, you can create various types of hyperlinks using link structure elements. Aspose.PDF for .NET allows you to create hyperlinks with plain text, rich text, images, and multi-line descriptions, offering versatility in how you link to external content or locations within the document.
+答：是的，您可以使用链接结构元素创建各种类型的超链接。 Aspose.PDF for .NET 允许您创建纯文本、富文本、图像和多行描述的超链接，为您链接到文档中的外部内容或位置提供了多功能性。
 
-#### Q: How do I set up and initialize link structure elements in a PDF document using Aspose.PDF for .NET?
+#### 问：如何使用 Aspose.PDF for .NET 在 PDF 文档中设置和初始化链接结构元素？
 
-A: To use link structure elements, you first need to create a new PDF document using the `Document` class. Then, obtain the tagged content using the `TaggedContent` property of the document. From there, you can create and customize link structure elements and add them to the root structure element.
+答：要使用链接结构元素，您首先需要使用以下命令创建一个新的 PDF 文档：`Document`班级。然后，使用以下方法获取标记的内容`TaggedContent`文档的属性。从那里，您可以创建和自定义链接结构元素并将它们添加到根结构元素。
 
-#### Q: How can I create a simple text hyperlink using link structure elements?
-A: You can create a simple text hyperlink by creating a `LinkElement` and setting its `Hyperlink` property to a `WebHyperlink` with the URL you want to link to. You can also set the display text of the link using the `SetText` method.
+#### 问：如何使用链接结构元素创建简单的文本超链接？
+答：您可以通过创建一个简单的文本超链接`LinkElement`并设置其`Hyperlink`财产给一个`WebHyperlink`以及您想要链接到的 URL。您还可以使用以下命令设置链接的显示文本`SetText`方法。
 
-#### Q: Is it possible to create hyperlinks with images using link structure elements?
+#### 问：是否可以使用链接结构元素创建带有图像的超链接？
 
-A: Yes, you can create hyperlinks with images using link structure elements. You would create a `LinkElement` and then append a `FigureElement` with an image to it. This allows you to create an image-based hyperlink.
+答：是的，您可以使用链接结构元素创建带有图像的超链接。你会创建一个`LinkElement`然后附加一个`FigureElement`并带有图像。这允许您创建基于图像的超链接。
 
-#### Q: How can I ensure that my PDF document with hyperlinks is compliant with the PDF/UA standard for accessibility?
+#### 问：如何确保带有超链接的 PDF 文档符合 PDF/UA 标准的可访问性？
 
-A: Aspose.PDF for .NET provides the ability to validate your PDF document's compliance with the PDF/UA standard using the `Validate` method of the `Document` class. This ensures that the document's hyperlinks are accessible to users with disabilities.
+答：Aspose.PDF for .NET 能够使用以下方法验证您的 PDF 文档是否符合 PDF/UA 标准：`Validate`的方法`Document`班级。这可确保残障用户可以访问文档的超链接。
 
-#### Q: What are alternate descriptions for link structure elements, and why are they important?
+#### 问：链接结构元素的替代描述是什么，为什么它们很重要？
 
-A: Alternate descriptions (alt text) for link structure elements provide textual descriptions of the hyperlinks. These descriptions are essential for accessibility, allowing users with visual impairments to understand the purpose of the link and its destination.
+答：链接结构元素的替代描述（替代文本）提供超链接的文本描述。这些描述对于可访问性至关重要，可以让有视觉障碍的用户了解链接的用途及其目的地。
 
-#### Q: Can I customize the appearance and behavior of hyperlinks created using link structure elements?
+#### 问：我可以自定义使用链接结构元素创建的超链接的外观和行为吗？
 
-A: While link structure elements primarily focus on creating hyperlinks, you can customize the appearance and behavior of hyperlinks further using other features offered by Aspose.PDF for .NET. This includes specifying colors, styles, and link actions.
+答：虽然链接结构元素主要专注于创建超链接，但您可以使用 Aspose.PDF for .NET 提供的其他功能进一步自定义超链接的外观和行为。这包括指定颜色、样式和链接操作。
 
-#### Q: How do link structure elements contribute to making PDF documents more interactive and user-friendly?
+#### 问：链接结构元素如何有助于使 PDF 文档更具交互性和用户友好性？
 
-A: Link structure elements transform static PDF documents into interactive experiences by adding clickable hyperlinks. This interactivity improves user engagement, enables seamless navigation between related content, and enhances the overall usability of the document.
+答：链接结构元素通过添加可点击的超链接将静态 PDF 文档转换为交互式体验。这种交互性提高了用户参与度，实现了相关内容之间的无缝导航，并增强了文档的整体可用性。

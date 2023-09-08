@@ -1,66 +1,66 @@
 ---
-title: Set Default Font In PDF File
-linktitle: Set Default Font In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set the default font in a PDF file using Aspose.PDF for .NET with this step-by-step guide.
+title: Définir la police par défaut dans le fichier PDF
+linktitle: Définir la police par défaut dans le fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment définir la police par défaut dans un fichier PDF à l'aide d'Aspose.PDF pour .NET avec ce guide étape par étape.
 type: docs
 weight: 280
 url: /fr/net/programming-with-document/setdefaultfont/
 ---
-If you're working with PDF documents in .NET, you may encounter issues where the font used in the PDF is not available on the system where it is being viewed or printed. This can result in the text appearing incorrectly or not at all. Aspose.PDF for .NET provides a solution to this problem by allowing you to set a default font for the document. In this example, how to set the default font using Aspose.PDF for .NET.
+Si vous travaillez avec des documents PDF dans .NET, vous pouvez rencontrer des problèmes où la police utilisée dans le PDF n'est pas disponible sur le système sur lequel il est affiché ou imprimé. Cela peut avoir pour conséquence que le texte s'affiche de manière incorrecte, voire pas du tout. Aspose.PDF pour .NET fournit une solution à ce problème en vous permettant de définir une police par défaut pour le document. Dans cet exemple, comment définir la police par défaut à l'aide d'Aspose.PDF pour .NET.
 
-## Step 1: Set the path to the document directory
+## Étape 1 : Définir le chemin d'accès au répertoire de documents
 
-we need to set the path to the directory where our PDF document is located. We will store this path in a variable called "dataDir".
+nous devons définir le chemin d'accès au répertoire où se trouve notre document PDF. Nous stockerons ce chemin dans une variable appelée "dataDir".
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the PDF document
+## Étape 2 : Charger le document PDF
 
-We'll start by loading an existing PDF document that has missing fonts. In this example, we'll assume that the PDF document is located in the directory specified by the `dataDir` variable.
+ Nous allons commencer par charger un document PDF existant comportant des polices manquantes. Dans cet exemple, nous supposerons que le document PDF se trouve dans le répertoire spécifié par le`dataDir` variable.
 
 ```csharp
 string documentName = dataDir + "input.pdf";
 using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
 using (Document document = new Document(fs))
 {
-    // code goes here
+    // le code va ici
 }
 ```
 
-## Step 3: Set the default font
+## Étape 3 : Définir la police par défaut
 
-Next, we'll set the default font for the PDF document using the `PdfSaveOptions` class. In this example, we'll set the default font to "Arial".
+ Ensuite, nous définirons la police par défaut du document PDF à l'aide du`PdfSaveOptions` classe. Dans cet exemple, nous définirons la police par défaut sur « Arial ».
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
 pdfSaveOptions.DefaultFontName = "Arial";
 ```
 
-## Step 4: Save the updated document
+## Étape 4 : Enregistrez le document mis à jour
 
-Finally, we'll save the updated document to a new file. In this example, we'll save the updated document to a file named "output_out.pdf" in the same directory as the input file.
+Enfin, nous enregistrerons le document mis à jour dans un nouveau fichier. Dans cet exemple, nous enregistrerons le document mis à jour dans un fichier nommé "output_out.pdf" dans le même répertoire que le fichier d'entrée.
 
 ```csharp
 document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 ```
 
-### Example Source Code for Set Default Font using Aspose.PDF for .NET
+### Exemple de code source pour définir la police par défaut à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load an existing PDF document with missing font
+// Charger un document PDF existant avec une police manquante
 string documentName = dataDir + "input.pdf";
 string newName = "Arial";
 using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
 using (Document document = new Document(fs))
 {
 	PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
-	// Specify Default Font Name
+	// Spécifier le nom de police par défaut
 	pdfSaveOptions.DefaultFontName = newName;
 	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 }
@@ -68,18 +68,18 @@ using (Document document = new Document(fs))
 
 ## Conclusion
 
-Setting a default font in PDF documents using Aspose.PDF for .NET is a simple and effective way to ensure that the text is displayed correctly, even if the original fonts are not available. By following the step-by-step guide and using the provided C# source code, developers can easily set the default font and create PDFs that offer a consistent and reliable viewing experience across different environments. This feature is particularly useful in scenarios where the PDFs will be viewed or printed on various systems that may have different font sets installed.
+Définir une police par défaut dans les documents PDF à l'aide d'Aspose.PDF pour .NET est un moyen simple et efficace de garantir que le texte s'affiche correctement, même si les polices d'origine ne sont pas disponibles. En suivant le guide étape par étape et en utilisant le code source C# fourni, les développeurs peuvent facilement définir la police par défaut et créer des PDF offrant une expérience de visualisation cohérente et fiable dans différents environnements. Cette fonctionnalité est particulièrement utile dans les scénarios dans lesquels les fichiers PDF seront visualisés ou imprimés sur divers systèmes sur lesquels différents jeux de polices peuvent être installés.
 
-### FAQ's for set default font in PDF file
+### FAQ pour définir la police par défaut dans un fichier PDF
 
-#### Q: Why is setting a default font important in PDF documents?
+#### Q : Pourquoi est-il important de définir une police par défaut dans les documents PDF ?
 
-A: Setting a default font in PDF documents is important because it ensures that the text will be displayed correctly even if the original fonts are not available on the system where the PDF is being viewed or printed. It helps prevent issues like missing or garbled text, ensuring a consistent and reliable viewing experience.
+R : La définition d'une police par défaut dans les documents PDF est importante car elle garantit que le texte s'affichera correctement même si les polices d'origine ne sont pas disponibles sur le système sur lequel le PDF est affiché ou imprimé. Il permet d'éviter des problèmes tels que du texte manquant ou tronqué, garantissant ainsi une expérience visuelle cohérente et fiable.
 
-#### Q: Can I choose any font as the default font using Aspose.PDF for .NET?
+#### Q : Puis-je choisir n’importe quelle police comme police par défaut à l’aide d’Aspose.PDF pour .NET ?
 
-A: Yes, you can choose any font that is available on the system as the default font using Aspose.PDF for .NET. Simply specify the name of the font in the `DefaultFontName` property of the `PdfSaveOptions` class.
+ R : Oui, vous pouvez choisir n'importe quelle police disponible sur le système comme police par défaut à l'aide d'Aspose.PDF pour .NET. Spécifiez simplement le nom de la police dans le champ`DefaultFontName` propriété du`PdfSaveOptions` classe.
 
-#### Q: What happens if the specified default font is not available on the system?
+#### Q : Que se passe-t-il si la police par défaut spécifiée n'est pas disponible sur le système ?
 
-A: If the specified default font is not available on the system, the PDF viewer will use a fallback font to display the text. It is advisable to choose a commonly available font like Arial or Times New Roman to ensure compatibility across different systems.
+R : Si la police par défaut spécifiée n'est pas disponible sur le système, la visionneuse PDF utilisera une police de secours pour afficher le texte. Il est conseillé de choisir une police couramment disponible comme Arial ou Times New Roman pour garantir la compatibilité entre les différents systèmes.

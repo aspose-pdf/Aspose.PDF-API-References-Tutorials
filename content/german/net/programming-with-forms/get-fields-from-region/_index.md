@@ -1,57 +1,57 @@
 ---
-title: Get Fields From Region In PDF File
-linktitle: Get Fields From Region In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get fields from a specific region in PDF file with Aspose.PDF for .NET.
+title: Holen Sie sich Felder aus der Region in eine PDF-Datei
+linktitle: Holen Sie sich Felder aus der Region in eine PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Mit Aspose.PDF für .NET können Sie ganz einfach Felder aus einer bestimmten Region in einer PDF-Datei abrufen.
 type: docs
 weight: 130
 url: /de/net/programming-with-forms/get-fields-from-region/
 ---
-In this tutorial, we will show you how to get the fields of a specific region in PDF file using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET die Felder einer bestimmten Region in einer PDF-Datei abrufen. Wir erklären Ihnen Schritt für Schritt den C#-Quellcode, um Sie durch diesen Prozess zu führen.
 
-## Step 1: Preparation
+## Schritt 1: Vorbereitung
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Stellen Sie sicher, dass Sie die erforderlichen Bibliotheken importiert und den Pfad zu Ihrem Dokumentenverzeichnis festgelegt haben:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the PDF file
+## Schritt 2: Öffnen Sie die PDF-Datei
 
-Open the PDF file:
+Öffnen Sie die PDF-Datei:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "GetFieldsFromRegion.pdf");
 ```
 
-## Step 3: Create a rectangle object to bound the region
+## Schritt 3: Erstellen Sie ein rechteckiges Objekt, um den Bereich zu begrenzen
 
-Create a rectangle object to bound the region where you want to get the fields:
+Erstellen Sie ein rechteckiges Objekt, um den Bereich zu begrenzen, in dem Sie die Felder erhalten möchten:
 
 ```csharp
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(35, 30, 500, 500);
 ```
 
-## Step 4: Obtain the PDF form
+## Schritt 4: Besorgen Sie sich das PDF-Formular
 
-Get the PDF form of the document:
+Holen Sie sich das PDF-Formular des Dokuments:
 
 ```csharp
 Aspose.Pdf.Forms.Form form = doc.Form;
 ```
 
-## Step 5: Get the fields in the rectangular region
+## Schritt 5: Holen Sie sich die Felder im rechteckigen Bereich
 
-Get the fields located in the specified rectangular region:
+Rufen Sie die Felder ab, die sich im angegebenen rechteckigen Bereich befinden:
 
 ```csharp
 Aspose.Pdf.Forms.Field[] fields = form.GetFieldsInRect(rectangle);
 ```
 
-## Step 6: Display field names and values
+## Schritt 6: Feldnamen und Werte anzeigen
 
-Iterate through the resulting fields and display their names and values:
+Durchlaufen Sie die resultierenden Felder und zeigen Sie deren Namen und Werte an:
 
 ```csharp
 foreach (Field field in fields)
@@ -60,48 +60,48 @@ Console.Out.WriteLine("Field name: " + field.FullName + "-" + "Field value: " + 
 }
 ```
 
-### Sample source code for Get Fields From Region using Aspose.PDF for .NET 
+### Beispielquellcode für „Felder aus Region abrufen“ mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open pdf file
+// PDF-Datei öffnen
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "GetFieldsFromRegion.pdf");
-// Create rectangle object to get fields in that area
+// Erstellen Sie ein rechteckiges Objekt, um Felder in diesem Bereich abzurufen
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(35, 30, 500, 500);
-// Get the PDF form
+// Holen Sie sich das PDF-Formular
 Aspose.Pdf.Forms.Form form = doc.Form;
-// Get fields in the rectangular area
+// Holen Sie sich Felder im rechteckigen Bereich
 Aspose.Pdf.Forms.Field[] fields = form.GetFieldsInRect(rectangle);
-// Display Field names and values
+// Feldnamen und -werte anzeigen
 foreach (Field field in fields)
 {
-	// Display image placement properties for all placements
+	// Bildplatzierungseigenschaften für alle Platzierungen anzeigen
 	Console.Out.WriteLine("Field Name: " + field.FullName + "-" + "Field Value: " + field.Value);
 }
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we learned how to get the fields of a specific region in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily extract the fields located in a given rectangular area of your PDF document using Aspose.PDF.
+In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET die Felder einer bestimmten Region in einem PDF-Dokument abruft. Wenn Sie diese Schritte befolgen, können Sie mit Aspose.PDF ganz einfach die Felder extrahieren, die sich in einem bestimmten rechteckigen Bereich Ihres PDF-Dokuments befinden.
 
-### FAQ's
+### FAQs
 
-#### Q: Can I use this method to get fields from a non-rectangular region in a PDF document?
+#### F: Kann ich diese Methode verwenden, um Felder aus einem nicht rechteckigen Bereich in einem PDF-Dokument abzurufen?
 
-A: No, the provided method `GetFieldsInRect` is specifically designed to retrieve fields located within a rectangular region in a PDF document. If you need to extract fields from a non-rectangular region, you would need to implement custom logic to identify and extract the fields based on other criteria, such as field coordinates or names.
+ A: Nein, die bereitgestellte Methode`GetFieldsInRect` wurde speziell zum Abrufen von Feldern entwickelt, die sich innerhalb eines rechteckigen Bereichs in einem PDF-Dokument befinden. Wenn Sie Felder aus einem nicht rechteckigen Bereich extrahieren müssen, müssen Sie eine benutzerdefinierte Logik implementieren, um die Felder anhand anderer Kriterien wie Feldkoordinaten oder Namen zu identifizieren und zu extrahieren.
 
-#### Q: How can I modify the size or position of the rectangle to get fields from a different region?
+#### F: Wie kann ich die Größe oder Position des Rechtecks ändern, um Felder aus einer anderen Region zu erhalten?
 
-A: To get fields from a different region, you can modify the `Aspose.Pdf.Rectangle` object's parameters used to define the bounding rectangle. The `Rectangle` constructor takes four parameters: `x`, `y`, `width`, and `height`, which represent the top-left corner coordinates and the dimensions of the rectangle. Adjusting these parameters will change the region from which fields are extracted.
+ A: Um Felder aus einer anderen Region zu erhalten, können Sie diese ändern`Aspose.Pdf.Rectangle` Die Parameter des Objekts, die zum Definieren des umgrenzenden Rechtecks verwendet werden. Der`Rectangle` Der Konstruktor benötigt vier Parameter:`x`, `y`, `width` , Und`height`die die Koordinaten der oberen linken Ecke und die Abmessungen des Rechtecks darstellen. Durch Anpassen dieser Parameter wird die Region geändert, aus der Felder extrahiert werden.
 
-#### Q: What if there are no fields within the specified rectangular region?
+#### F: Was passiert, wenn innerhalb des angegebenen rechteckigen Bereichs keine Felder vorhanden sind?
 
-A: If there are no fields within the specified rectangular region, the `GetFieldsInRect` method will return an empty array. You can check the length of the array to determine if there are any fields within the region.
+ A: Wenn innerhalb des angegebenen rechteckigen Bereichs keine Felder vorhanden sind, wird die`GetFieldsInRect` Die Methode gibt ein leeres Array zurück. Sie können die Länge des Arrays überprüfen, um festzustellen, ob innerhalb der Region Felder vorhanden sind.
 
-#### Q: Can I get fields from overlapping regions in a PDF document?
+#### F: Kann ich Felder aus überlappenden Bereichen in einem PDF-Dokument abrufen?
 
-A: Yes, you can get fields from overlapping regions in a PDF document by creating multiple `Aspose.Pdf.Rectangle` objects and calling the `GetFieldsInRect` method for each of them. Overlapping regions will be handled independently, and you will receive separate arrays of fields for each region.
+ A: Ja, Sie können Felder aus überlappenden Bereichen in einem PDF-Dokument erhalten, indem Sie mehrere erstellen`Aspose.Pdf.Rectangle` Objekte und Aufruf der`GetFieldsInRect` Methode für jeden von ihnen. Überlappende Regionen werden unabhängig voneinander behandelt und Sie erhalten für jede Region separate Feldarrays.
 
-#### Q: Is it possible to get fields from a specific page or multiple pages in the PDF document?
+#### F: Ist es möglich, Felder von einer bestimmten Seite oder mehreren Seiten im PDF-Dokument abzurufen?
 
-A: Yes, you can get fields from a specific page or multiple pages in a PDF document. To achieve this, you can load the PDF document, access the desired pages using the `doc.Pages` collection, and then apply the `GetFieldsInRect` method to each page's specific region.
+A: Ja, Sie können Felder von einer bestimmten Seite oder mehreren Seiten in einem PDF-Dokument abrufen. Um dies zu erreichen, können Sie das PDF-Dokument laden und über das auf die gewünschten Seiten zugreifen`doc.Pages` Sammlung, und wenden Sie dann die an`GetFieldsInRect` -Methode auf den spezifischen Bereich jeder Seite anwenden.

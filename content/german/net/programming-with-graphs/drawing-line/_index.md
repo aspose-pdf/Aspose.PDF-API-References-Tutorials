@@ -1,44 +1,44 @@
 ---
-title: Drawing Line
-linktitle: Drawing Line
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to draw a line across a page using Aspose.PDF for .NET. Step-by-step guide to creating custom lines.
+title: Zeichnungslinie
+linktitle: Zeichnungslinie
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET eine Linie über eine Seite zeichnen. Schritt-für-Schritt-Anleitung zum Erstellen benutzerdefinierter Linien.
 type: docs
 weight: 80
 url: /de/net/programming-with-graphs/drawing-line/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to draw a line using Aspose.PDF for .NET.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch den folgenden C#-Quellcode, um mit Aspose.PDF für .NET eine Linie zu zeichnen.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert und Ihre Entwicklungsumgebung eingerichtet haben, bevor Sie beginnen. Außerdem verfügen Sie über Grundkenntnisse der C#-Programmierung.
 
-## Step 1: Document Directory Setup
+## Schritt 1: Einrichten des Dokumentenverzeichnisses
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+Im bereitgestellten Quellcode müssen Sie das Verzeichnis angeben, in dem Sie die resultierende PDF-Datei speichern möchten. Ändern Sie die Variable „dataDir“ in das gewünschte Verzeichnis.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating a Document Instance and Adding a Page
+## Schritt 2: Erstellen einer Dokumentinstanz und Hinzufügen einer Seite
 
-We create an instance of the Document class and add a page to this document.
+Wir erstellen eine Instanz der Document-Klasse und fügen diesem Dokument eine Seite hinzu.
 
 ```csharp
 Document pDoc = new Document();
 Page pg = pDoc.Pages.Add();
 ```
 
-## Step 3: Setting Page Margins
+## Schritt 3: Seitenränder festlegen
 
-We set the page margins to 0 on all sides.
+Wir setzen die Seitenränder auf allen Seiten auf 0.
 
 ```csharp
 pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
 ```
 
-## Step 4: Creating a Graph Object and the First Line
+## Schritt 4: Erstellen eines Diagrammobjekts und der ersten Zeile
 
-We create a Graph object with dimensions equal to those of the page and draw the first line going from the lower left corner to the upper right corner of the page.
+Wir erstellen ein Diagrammobjekt mit Abmessungen, die denen der Seite entsprechen, und zeichnen die erste Linie von der unteren linken Ecke zur oberen rechten Ecke der Seite.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width, (float)pg.PageInfo.Height);
@@ -46,92 +46,92 @@ Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)
 graph.Shapes.Add(line);
 ```
 
-## Step 5: Drawing the second line
+## Schritt 5: Zeichnen Sie die zweite Linie
 
-We draw the second line going from the upper left corner to the lower right corner of the page.
+Wir zeichnen die zweite Linie von der oberen linken Ecke zur unteren rechten Ecke der Seite.
 
 ```csharp
 Aspose.Pdf.Drawing.Line line2 = new Aspose.Pdf.Drawing.Line(new float[] { 0, (float)pg.Rect.URY, (float)pg.PageInfo.Width, (float)pg.Rect. LLX });
 graph.Shapes.Add(line2);
 ```
 
-## Step 6: Adding the Graph Object to the Page
+## Schritt 6: Hinzufügen des Diagrammobjekts zur Seite
 
-We add the Graph object to the page's paragraph collection.
+Wir fügen das Graph-Objekt zur Absatzsammlung der Seite hinzu.
 
 ```csharp
 pg.Paragraphs.Add(graph);
 ```
 
-## Step 7: Saving the Resulting PDF File
+## Schritt 7: Speichern der resultierenden PDF-Datei
 
-Finally, we save the resulting PDF file with the name "DrawingLine_out.pdf" in the specified directory.
+Abschließend speichern wir die resultierende PDF-Datei mit dem Namen „DrawingLine_out.pdf“ im angegebenen Verzeichnis.
 
 ```csharp
 pDoc.Save(dataDir + "DrawingLine_out.pdf");
 ```
 
-### Sample source code for Drawing Line using Aspose.PDF for .NET 
+### Beispielquellcode für Drawing Line mit Aspose.PDF für .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Document instance
+// Dokumentinstanz erstellen
 Document pDoc = new Document();
-// Add page to pages collection of PDF document
+// Seite zur Seitensammlung des PDF-Dokuments hinzufügen
 Page pg = pDoc.Pages.Add();
-// Set page margin on all sides as 0
+// Stellen Sie den Seitenrand auf allen Seiten auf 0 ein
 pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
-// Create Graph object with Width and Height equal to page dimensions
+// Erstellen Sie ein Diagrammobjekt mit Breite und Höhe, die den Seitenabmessungen entsprechen
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width , (float)pg.PageInfo.Height);
-// Create first line object starting from Lower-Left to Top-Right corner of page
+// Erstellen Sie ein Objekt für die erste Zeile, beginnend von der unteren linken bis zur oberen rechten Ecke der Seite
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)pg.Rect.LLX, 0, (float)pg.PageInfo.Width, (float)pg.Rect.URY });
-// Add line to shapes collection of Graph object
+// Fügen Sie der Formensammlung des Graph-Objekts eine Linie hinzu
 graph.Shapes.Add(line);
-// Draw line from Top-Left corner of page to Bottom-Right corner of page
+// Zeichnen Sie eine Linie von der oberen linken Ecke der Seite zur unteren rechten Ecke der Seite
 Aspose.Pdf.Drawing.Line line2 = new Aspose.Pdf.Drawing.Line(new float[] { 0, (float)pg.Rect.URY, (float)pg.PageInfo.Width, (float)pg.Rect.LLX });
-// Add line to shapes collection of Graph object
+// Fügen Sie der Formensammlung des Graph-Objekts eine Linie hinzu
 graph.Shapes.Add(line2);
-// Add Graph object to paragraphs collection of page
+// Fügen Sie ein Diagrammobjekt zur Absatzsammlung der Seite hinzu
 pg.Paragraphs.Add(graph);
 dataDir = dataDir + "DrawingLine_out.pdf";
-// Save PDF file
+// PDF-Datei speichern
 pDoc.Save(dataDir);
 Console.WriteLine("\nLine drawn successfully across the page.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we explained how to draw a line using Aspose.PDF for .NET. You can now use this knowledge to create geometric shapes with custom lines in your PDF files.
+In diesem Tutorial haben wir erklärt, wie man mit Aspose.PDF für .NET eine Linie zeichnet. Sie können dieses Wissen nun nutzen, um geometrische Formen mit benutzerdefinierten Linien in Ihren PDF-Dateien zu erstellen.
 
-### FAQ's
+### FAQs
 
-#### Q: What is the purpose of this tutorial?
+#### F: Was ist der Zweck dieses Tutorials?
 
-A: This tutorial's purpose is to guide you through the process of drawing lines using Aspose.PDF for .NET. You'll learn how to create lines on a PDF page and customize their appearance.
+A: Der Zweck dieses Tutorials besteht darin, Sie durch den Prozess des Zeichnens von Linien mit Aspose.PDF für .NET zu führen. Sie erfahren, wie Sie Linien auf einer PDF-Seite erstellen und deren Aussehen anpassen.
 
-#### Q: What prerequisites are required before starting?
+#### F: Welche Voraussetzungen sind vor dem Start erforderlich?
 
-A: Before you begin, ensure you have installed the Aspose.PDF library and set up your development environment. Basic knowledge of C# programming is also recommended.
+A: Bevor Sie beginnen, stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert und Ihre Entwicklungsumgebung eingerichtet haben. Grundkenntnisse in der C#-Programmierung werden ebenfalls empfohlen.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### F: Wie lege ich das Verzeichnis zum Speichern der PDF-Datei fest?
 
-A: Modify the "dataDir" variable in the provided source code to indicate the directory where you want to save the resulting PDF file.
+A: Ändern Sie die Variable „dataDir“ im bereitgestellten Quellcode, um das Verzeichnis anzugeben, in dem Sie die resultierende PDF-Datei speichern möchten.
 
-#### Q: How do I create lines on a PDF page?
+#### F: Wie erstelle ich Linien auf einer PDF-Seite?
 
-A: The tutorial demonstrates creating a Graph object with the dimensions of the page and then adding Line objects to it. Modify the coordinates and properties of the Line objects to create the desired lines.
+A: Das Tutorial zeigt, wie Sie ein Diagrammobjekt mit den Abmessungen der Seite erstellen und ihm anschließend Linienobjekte hinzufügen. Ändern Sie die Koordinaten und Eigenschaften der Linienobjekte, um die gewünschten Linien zu erstellen.
 
-#### Q: Can I customize the appearance of the lines?
+#### F: Kann ich das Erscheinungsbild der Linien anpassen?
 
-A: Yes, you can customize the appearance of the lines by modifying the properties of the Line objects. This includes changing their coordinates, color, thickness, and other graphical attributes.
+A: Ja, Sie können das Erscheinungsbild der Linien anpassen, indem Sie die Eigenschaften der Linienobjekte ändern. Dazu gehört das Ändern ihrer Koordinaten, Farbe, Dicke und anderer grafischer Attribute.
 
-#### Q: How do I save the PDF document after drawing the lines?
+#### F: Wie speichere ich das PDF-Dokument nach dem Zeichnen der Linien?
 
-A: After adding the Graph object with Line objects to the page, you can save the resulting PDF document using the `pDoc.Save(dataDir + "DrawingLine_out.pdf");` line in the provided source code.
+A: Nachdem Sie das Graph-Objekt mit Line-Objekten zur Seite hinzugefügt haben, können Sie das resultierende PDF-Dokument mit speichern`pDoc.Save(dataDir + "DrawingLine_out.pdf");` Zeile im bereitgestellten Quellcode.
 
-#### Q: Can I draw lines with different angles and orientations?
+#### F: Kann ich Linien mit unterschiedlichen Winkeln und Ausrichtungen zeichnen?
 
-A: Yes, you can draw lines with different angles and orientations by adjusting the coordinates and properties of the Line objects within the Graph.
+A: Ja, Sie können Linien mit unterschiedlichen Winkeln und Ausrichtungen zeichnen, indem Sie die Koordinaten und Eigenschaften der Linienobjekte im Diagramm anpassen.

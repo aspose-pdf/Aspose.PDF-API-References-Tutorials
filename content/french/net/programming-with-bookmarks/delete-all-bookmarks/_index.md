@@ -1,136 +1,136 @@
 ---
-title: Delete All Bookmarks In PDF File
-linktitle: Delete All Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily delete all bookmarks in PDF file with Aspose.PDF for .NET.
+title: Supprimer tous les signets d'un fichier PDF
+linktitle: Supprimer tous les signets d'un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Supprimez facilement tous les signets du fichier PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 30
 url: /fr/net/programming-with-bookmarks/delete-all-bookmarks/
 ---
-# Delete all bookmarks with Aspose.PDF for .NET
+# Supprimez tous les signets avec Aspose.PDF pour .NET
 
-Deleting bookmarks in PDF file may be necessary in some cases. With Aspose.PDF for .NET, you can easily remove all bookmarks by following the following source code:
+La suppression des signets du fichier PDF peut être nécessaire dans certains cas. Avec Aspose.PDF pour .NET, vous pouvez facilement supprimer tous les signets en suivant le code source suivant :
 
-## Step 1: Import required libraries
+## Étape 1 : Importer les bibliothèques requises
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Avant de commencer, vous devez importer les bibliothèques nécessaires à votre projet C#. Voici la directive d'importation nécessaire :
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Étape 2 : Définir le chemin d'accès au dossier de documents
 
-In this step, you need to specify the path to the folder containing the PDF file from which you want to remove bookmarks. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ Dans cette étape, vous devez spécifier le chemin d'accès au dossier contenant le fichier PDF dont vous souhaitez supprimer les signets. Remplacer`"YOUR DOCUMENT DIRECTORY"`dans le code suivant avec le chemin réel de votre dossier de documents :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Étape 3 : Ouvrez le document PDF
 
-Now we are going to open the PDF document from which we want to remove the bookmarks using the following code:
+Nous allons maintenant ouvrir le document PDF dont nous voulons supprimer les signets en utilisant le code suivant :
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
 ```
 
-## Step 4: Delete all bookmarks
+## Étape 4 : Supprimez tous les favoris
 
-In this step, we delete all bookmarks from the document using the `Delete` method of the `Outlines` property. Here is the corresponding code:
+ Dans cette étape, nous supprimons tous les signets du document à l'aide du`Delete` méthode du`Outlines` propriété. Voici le code correspondant :
 
 ```csharp
 pdfDocument.Outlines.Delete();
 ```
 
-## Step 5: Save the updated file
+## Étape 5 : Enregistrez le fichier mis à jour
 
-Finally, we save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ Enfin, nous enregistrons le fichier PDF mis à jour en utilisant le`Save` méthode du`pdfDocument` objet. Voici le code correspondant :
 
 ```csharp
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Delete All Bookmarks using Aspose.PDF for .NET 
+### Exemple de code source pour supprimer tous les signets à l’aide d’Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
-// Delete all bookmarks
+// Supprimer tous les favoris
 pdfDocument.Outlines.Delete();
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
-// Save updated file
+// Enregistrer le fichier mis à jour
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nAll bookmarks deleted successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusion
 
-Congratulation ! Now you have a step by step guide to remove all bookmarks with Aspose.PDF for .NET. You can use this code to clean up your PDF documents by deleting all existing bookmarks.
+Félicitation ! Vous disposez désormais d'un guide étape par étape pour supprimer tous les signets avec Aspose.PDF pour .NET. Vous pouvez utiliser ce code pour nettoyer vos documents PDF en supprimant tous les signets existants.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Assurez-vous de consulter la documentation officielle Aspose.PDF pour plus d'informations sur les fonctionnalités avancées de manipulation de signets.
 
-### FAQ's for delete all bookmarks in PDF file
+### FAQ pour supprimer tous les signets dans un fichier PDF
 
-#### Q: What are bookmarks in a PDF file?
+#### Q : Que sont les signets dans un fichier PDF ?
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They help organize and enhance the user experience when navigating through lengthy content.
+R : Les signets dans un fichier PDF sont des aides à la navigation qui permettent aux utilisateurs d'accéder rapidement à des sections ou des pages spécifiques du document. Ils aident à organiser et à améliorer l’expérience utilisateur lors de la navigation dans un contenu long.
 
-#### Q: Why would I need to delete all bookmarks from a PDF file?
+#### Q : Pourquoi devrais-je supprimer tous les favoris d'un fichier PDF ?
 
-A: There might be cases where you want to remove all bookmarks from a PDF document to simplify its navigation, reorganize its structure, or prepare it for a specific purpose where bookmarks are not needed.
+R : Il peut arriver que vous souhaitiez supprimer tous les signets d'un document PDF pour simplifier sa navigation, réorganiser sa structure ou le préparer à un usage spécifique pour lequel les signets ne sont pas nécessaires.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### Q : Comment importer les bibliothèques nécessaires pour mon projet C# ?
 
-A: To import the required library for your C# project, you can use the following import directive:
+R : Pour importer la bibliothèque requise pour votre projet C#, vous pouvez utiliser la directive d'importation suivante :
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This library provides the classes and methods needed to work with PDF documents.
+Cette bibliothèque fournit les classes et méthodes nécessaires pour travailler avec des documents PDF.
 
-#### Q: How do I specify the path to the documents folder?
+#### Q : Comment puis-je spécifier le chemin d'accès au dossier de documents ?
 
-A: In the source code provided, you need to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to remove bookmarks. This ensures that the code can locate the target PDF file.
+ R : Dans le code source fourni, vous devez remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel du dossier contenant le fichier PDF dont vous souhaitez supprimer les signets. Cela garantit que le code peut localiser le fichier PDF cible.
 
-#### Q: How do I open a PDF document for bookmark removal?
+#### Q : Comment puis-je ouvrir un document PDF pour supprimer les favoris ?
 
-A: To open a PDF document for bookmark removal, use the following code:
+R : Pour ouvrir un document PDF pour supprimer les favoris, utilisez le code suivant :
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
 ```
 
-Replace `"DeleteAllBookmarks.pdf"` with the actual file name.
+ Remplacer`"DeleteAllBookmarks.pdf"` avec le nom réel du fichier.
 
-#### Q: How do I delete all bookmarks from the PDF document?
+#### Q : Comment supprimer tous les favoris du document PDF ?
 
-A: To remove all bookmarks from the PDF document, use the `Delete` method of the `Outlines` property:
+ R : Pour supprimer tous les signets du document PDF, utilisez le`Delete` méthode du`Outlines` propriété:
 
 ```csharp
 pdfDocument.Outlines.Delete();
 ```
 
-#### Q: What happens to the rest of the content when bookmarks are deleted?
+#### Q : Qu'arrive-t-il au reste du contenu lorsque les favoris sont supprimés ?
 
-A: Deleting bookmarks does not affect the content or layout of the PDF document. Only the navigation bookmarks are removed, leaving the actual content intact.
+R : La suppression de signets n'affecte pas le contenu ou la mise en page du document PDF. Seuls les signets de navigation sont supprimés, laissant le contenu réel intact.
 
-#### Q: How do I save the updated PDF file after removing bookmarks?
+#### Q : Comment puis-je enregistrer le fichier PDF mis à jour après avoir supprimé les favoris ?
 
-A: To save the updated PDF file after deleting bookmarks, use the following code:
+R : Pour enregistrer le fichier PDF mis à jour après la suppression des signets, utilisez le code suivant :
 
 ```csharp
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-#### Q: Can I selectively delete specific bookmarks instead of all of them?
+#### Q : Puis-je supprimer sélectivement des favoris spécifiques au lieu de tous ?
 
-A: Yes, you can selectively delete specific bookmarks by targeting them using their index or other properties. The provided source code demonstrates how to delete all bookmarks, but you can modify it to suit your needs.
+R : Oui, vous pouvez supprimer sélectivement des signets spécifiques en les ciblant à l'aide de leur index ou d'autres propriétés. Le code source fourni montre comment supprimer tous les signets, mais vous pouvez le modifier en fonction de vos besoins.
 
-#### Q: Are there any precautions I should take before deleting bookmarks?
+#### Q : Dois-je prendre des précautions avant de supprimer des favoris ?
 
-A: Before deleting bookmarks, make sure to review the document to ensure that bookmark removal will not impact the document's usability or navigation. Consider making a backup of the original document before proceeding.
+R : Avant de supprimer des signets, assurez-vous de consulter le document pour vous assurer que la suppression des signets n'aura pas d'impact sur la convivialité ou la navigation du document. Pensez à faire une sauvegarde du document original avant de continuer.

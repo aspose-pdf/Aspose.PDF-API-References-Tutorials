@@ -1,83 +1,83 @@
 ---
-title: Update Links In PDF File
-linktitle: Update Links In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to update links in PDF file with Aspose.PDF for .NET.
+title: تحديث الروابط في ملف PDF
+linktitle: تحديث الروابط في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تحديث الروابط في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 120
 url: /ar/net/programming-with-links-and-actions/update-links/
 ---
-Learn how to update links in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+تعرف على كيفية تحديث الروابط في ملف PDF باستخدام Aspose.PDF لـ .NET باستخدام هذا الدليل التفصيلي خطوة بخطوة.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+تأكد من أنك قمت بإعداد بيئة التطوير الخاصة بك باستخدام مشروع C# ومراجع Aspose.PDF المناسبة.
 
-## Step 2: Loading the PDF file
+## الخطوة 2: تحميل ملف PDF
 
-Set the directory path of your documents and upload the PDF file using the following code:
+قم بتعيين مسار الدليل لمستنداتك وقم بتحميل ملف PDF باستخدام الكود التالي:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// قم بتحميل ملف PDF
 Document doc = new Document(dataDir + "UpdateLinks.pdf");
 ```
 
-## Step 3: Editing the link
+## الخطوة 3: تحرير الرابط
 
-Get the link annotation to modify using the following code:
+احصل على التعليق التوضيحي للرابط لتعديله باستخدام الكود التالي:
 
 ```csharp
 LinkAnnotation linkAnnot = (LinkAnnotation)doc.Pages[1].Annotations[1];
 ```
 
-You can adjust the `[1]` indices to select a specific page or annotation.
+ يمكنك ضبط`[1]` مؤشرات لتحديد صفحة أو تعليق توضيحي محدد.
 
-Next, modify the link by changing the destination:
+بعد ذلك، قم بتعديل الرابط عن طريق تغيير الوجهة:
 
 ```csharp
 GoToAction goToAction = (GoToAction)linkAnnot.Action;
 goToAction.Destination = new Aspose.Pdf.Annotations.XYZExplicitDestination(1, 1, 2, 2);
 ```
 
-The first parameter represents the subject of the document, the second is the destination page number. The fifth argument is the zoom factor when displaying the respective page. When set to 2, the page will be displayed at 200% zoom.
+تمثل المعلمة الأولى موضوع المستند، والثانية هي رقم صفحة الوجهة. الوسيطة الخامسة هي عامل التكبير/التصغير عند عرض الصفحة المعنية. عند التعيين على 2، سيتم عرض الصفحة بتكبير/تصغير بنسبة 200%.
 
-## Step 4: Save the document with the updated link
+## الخطوة 4: احفظ المستند بالرابط المحدث
 
-Save the document with the updated link using the `Save` method:
+ احفظ المستند بالرابط المحدث باستخدام ملف`Save` طريقة:
 
 ```csharp
 dataDir = dataDir + "PDFLINK_Modified_UpdateLinks_out.pdf";
 doc.Save(dataDir);
 ```
 
-## Step 5: Displaying the result
+## الخطوة 5: عرض النتيجة
 
-Display a message indicating that the links were updated successfully and specify the location of the saved file:
+عرض رسالة تشير إلى أنه تم تحديث الروابط بنجاح وتحديد موقع الملف المحفوظ:
 
 ```csharp
 Console.WriteLine("\nLinks updated successfully.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Update Links using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتحديث الارتباطات باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// المسار إلى دليل المستندات.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the PDF file
+	// قم بتحميل ملف PDF
 	Document doc = new Document(dataDir + "UpdateLinks.pdf");
-	// Get the first link annotation from first page of document
+	// احصل على التعليق التوضيحي للارتباط الأول من الصفحة الأولى من المستند
 	LinkAnnotation linkAnnot = (LinkAnnotation)doc.Pages[1].Annotations[1];
-	// Modification link: change link destination
+	// تعديل الرابط: تغيير وجهة الرابط
 	GoToAction goToAction = (GoToAction)linkAnnot.Action;
-	// Specify the destination for link object
-	// The first parameter is document object, second is destination page number.
-	// The 5ht argument is zoom factor when displaying the respective page. When using 2, the page will be displayed in 200% zoom
+	// حدد الوجهة لكائن الارتباط
+	// المعلمة الأولى هي كائن المستند، والثانية هي رقم صفحة الوجهة.
+	// الوسيطة 5ht هي عامل التكبير/التصغير عند عرض الصفحة المعنية. عند استخدام 2، سيتم عرض الصفحة بتكبير/تصغير بنسبة 200%
 	goToAction.Destination = new Aspose.Pdf.Annotations.XYZExplicitDestination(1, 1, 2, 2);
 	dataDir = dataDir + "PDFLINK_Modified_UpdateLinks_out.pdf";
-	// Save the document with updated link
+	// احفظ المستند بالرابط المحدث
 	doc.Save(dataDir);
 	Console.WriteLine("\nLinks updated successfully.\nFile saved at " + dataDir);
 }
@@ -87,50 +87,50 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You now know how to update links in a PDF file using Aspose.PDF for .NET. Use this knowledge to customize links in your PDF documents and create interactive experiences for users.
+تهنئة ! أنت تعرف الآن كيفية تحديث الروابط في ملف PDF باستخدام Aspose.PDF لـ .NET. استخدم هذه المعرفة لتخصيص الروابط في مستندات PDF الخاصة بك وإنشاء تجارب تفاعلية للمستخدمين.
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+الآن وبعد أن أكملت هذا الدليل، يمكنك تطبيق هذه المفاهيم على مشاريعك الخاصة واستكشاف الميزات التي يقدمها Aspose.PDF لـ .NET بشكل أكبر.
 
-### FAQ's for update links in PDF file 
+### الأسئلة الشائعة حول روابط التحديث في ملف PDF 
 
-#### Q: Why would I want to update links in a PDF document?
+#### س: لماذا أرغب في تحديث الروابط في مستند PDF؟
 
-A: Updating links in a PDF document allows you to modify the behavior and destination of hyperlinks, enabling you to create more interactive and user-friendly PDF files.
+ج: يتيح لك تحديث الارتباطات في مستند PDF تعديل سلوك الارتباطات التشعبية ووجهتها، مما يتيح لك إنشاء ملفات PDF أكثر تفاعلية وسهلة الاستخدام.
 
-#### Q: How can I benefit from updating links in my PDF documents?
+#### س: كيف يمكنني الاستفادة من تحديث الروابط في مستندات PDF الخاصة بي؟
 
-A: By updating links, you can ensure that users are directed to the correct pages or external resources, enhancing the navigation experience within your PDF files.
+ج: من خلال تحديث الروابط، يمكنك التأكد من توجيه المستخدمين إلى الصفحات الصحيحة أو الموارد الخارجية، مما يعزز تجربة التنقل داخل ملفات PDF الخاصة بك.
 
-#### Q: Can I update multiple links in a single PDF document?
+#### س: هل يمكنني تحديث روابط متعددة في مستند PDF واحد؟
 
-A: Yes, you can use the provided code as a basis to iterate through all link annotations and modify their destinations or behavior as needed.
+ج: نعم، يمكنك استخدام الكود المقدم كأساس للتكرار عبر جميع التعليقات التوضيحية للارتباط وتعديل وجهاتها أو سلوكها حسب الحاجة.
 
-#### Q: What does the `GoToAction` class do in the provided code?
+####  س: ماذا يفعل`GoToAction` class do in the provided code?
 
-A: The `GoToAction` class represents an action that navigates to a specific page within the PDF document. It allows you to change the destination of a link annotation.
+ ج: ال`GoToAction` تمثل الفئة إجراءً ينتقل إلى صفحة معينة داخل مستند PDF. يسمح لك بتغيير وجهة التعليق التوضيحي للارتباط.
 
-#### Q: How do I adjust the destination page and zoom level for a link?
+#### س: كيف يمكنني ضبط الصفحة الوجهة ومستوى التكبير/التصغير للارتباط؟
 
-A: In the provided code, you can modify the arguments passed to the `XYZExplicitDestination` constructor. The first parameter is the destination page number, and the fifth parameter controls the zoom factor.
+ ج: في الكود المقدم، يمكنك تعديل الوسائط التي تم تمريرها إلى ملف`XYZExplicitDestination`البناء. المعلمة الأولى هي رقم صفحة الوجهة، والمعلمة الخامسة تتحكم في عامل التكبير/التصغير.
 
-#### Q: Is it possible to update other attributes of a link, such as its appearance?
+#### س: هل من الممكن تحديث سمات أخرى للارتباط، مثل مظهره؟
 
-A: This tutorial focuses on updating link destinations. However, you can explore the Aspose.PDF documentation for more information on customizing link appearances.
+ج: يركز هذا البرنامج التعليمي على تحديث وجهات الارتباط. ومع ذلك، يمكنك استكشاف وثائق Aspose.PDF لمزيد من المعلومات حول تخصيص مظاهر الارتباط.
 
-#### Q: What happens if I specify an invalid destination page number?
+#### س: ماذا يحدث إذا قمت بتحديد رقم صفحة وجهة غير صالح؟
 
-A: If you specify an invalid destination page number, the link may lead to an incorrect or non-existent page within the PDF document.
+ج: إذا قمت بتحديد رقم صفحة وجهة غير صالح، فقد يؤدي الارتباط إلى صفحة غير صحيحة أو غير موجودة داخل مستند PDF.
 
-#### Q: Can I revert the link modifications if needed?
+#### س: هل يمكنني التراجع عن تعديلات الارتباط إذا لزم الأمر؟
 
-A: Yes, you can store the original link annotations before modification and use that information to revert the links to their original state if necessary.
+ج: نعم، يمكنك تخزين التعليقات التوضيحية للرابط الأصلي قبل التعديل واستخدام تلك المعلومات لإعادة الروابط إلى حالتها الأصلية إذا لزم الأمر.
 
-#### Q: How can I test if the links have been successfully updated?
+#### س: كيف يمكنني اختبار ما إذا تم تحديث الروابط بنجاح؟
 
-A: After applying the provided code to update the links, open the modified PDF file and verify that the links navigate to the specified pages with the correct zoom level.
+ج: بعد تطبيق الكود المقدم لتحديث الروابط، افتح ملف PDF المعدل وتأكد من أن الروابط تنتقل إلى الصفحات المحددة بمستوى التكبير الصحيح.
 
-#### Q: Does updating links affect the overall structure or content of the PDF document?
+#### س: هل يؤثر تحديث الروابط على البنية العامة لمستند PDF أو محتواه؟
 
-A: No, updating links only modifies the behavior and destination of the links. It does not affect the content or structure of the PDF document.
+ج: لا، تحديث الروابط يؤدي فقط إلى تعديل سلوك الروابط ووجهتها. ولا يؤثر على محتوى أو بنية وثيقة PDF.

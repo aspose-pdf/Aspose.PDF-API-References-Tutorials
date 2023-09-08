@@ -1,33 +1,33 @@
 ---
-title: Redact Page
-linktitle: Redact Page
-second_title: Aspose.PDF for .NET API Reference
-description: This article explains how to redact a PDF page using Aspose.PDF for .NET, including step-by-step instructions and example source code.
+title: تنقيح الصفحة
+linktitle: تنقيح الصفحة
+second_title: Aspose.PDF لمرجع .NET API
+description: تشرح هذه المقالة كيفية تنقيح صفحة PDF باستخدام Aspose.PDF لـ .NET، بما في ذلك الإرشادات خطوة بخطوة ومثال للتعليمات البرمجية المصدر.
 type: docs
 weight: 120
 url: /ar/net/annotations/redactpage/
 ---
-If you're looking to redact sensitive information from a PDF document using Aspose.PDF for .NET, you're in luck! Here's a step-by-step guide to get you started:
+إذا كنت تتطلع إلى تنقيح معلومات حساسة من مستند PDF باستخدام Aspose.PDF لـ .NET، فأنت محظوظ! فيما يلي دليل خطوة بخطوة للبدء:
 
-## Step 1: In the code, set the path to the directory where your PDF document is located:
+## الخطوة 1: في الكود، قم بتعيين المسار إلى الدليل الذي يوجد به مستند PDF الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the PDF document:
+## الخطوة 2: افتح مستند PDF:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Create a RedactionAnnotation instance for a specific page region:
+## الخطوة 3: إنشاء مثيل RedactionAnnotation لمنطقة صفحة معينة:
 
 ```csharp
 RedactionAnnotation annot = new RedactionAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(200, 500, 300, 600));
 ```
 
-## Step 4: Set the fill color, border color, and text color of the redaction annotation:
+## الخطوة 4: قم بتعيين لون التعبئة ولون الحدود ولون نص التعليق التوضيحي للتنقيح:
 
 ```csharp
 annot.FillColor = Aspose.Pdf.Color.Green;
@@ -35,95 +35,95 @@ annot.BorderColor = Aspose.Pdf.Color.Yellow;
 annot.Color = Aspose.Pdf.Color.Blue;
 ```
 
-## Step 5: Set the text to be printed on the redaction annotation and its alignment:
+## الخطوة 5: قم بتعيين النص المراد طباعته على التعليق التوضيحي للتنقيح ومحاذاته:
 
 ```csharp
 annot.OverlayText = "REDACTED";
 annot.TextAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 ```
 
-## Step 6: Repeat the overlay text over the redaction annotation:
+## الخطوة 6: كرر نص التراكب فوق التعليق التوضيحي للتنقيح:
 
 ```csharp
 annot.Repeat = true;
 ```
 
-## Step 7: Add the annotation to the annotations collection of the first page:
+## الخطوة 7: أضف التعليق التوضيحي إلى مجموعة التعليقات التوضيحية للصفحة الأولى:
 
 ```csharp
 doc.Pages[1].Annotations.Add(annot);
 ```
 
-## Step 8: Flatten the annotation and redact page contents, i.e., remove text and images under the redacted annotation:
+## الخطوة 8: تسوية التعليق التوضيحي وتنقيح محتويات الصفحة، أي إزالة النص والصور الموجودة أسفل التعليق التوضيحي المنقح:
 
 ```csharp
 annot.Redact();
 ```
 
-## Step 9: Set the path and name of the output PDF file:
+## الخطوة 9: قم بتعيين مسار واسم ملف PDF الناتج:
 
 ```csharp
 dataDir = dataDir + "RedactPage_out.pdf";
 ```
 
-## Step 10: Save the PDF document with the redacted page:
+## الخطوة 10: احفظ مستند PDF مع الصفحة المنقحة:
 
 ```csharp
 doc.Save(dataDir);
 ```
 
-That's it! You have successfully redacted a page of your PDF document using Aspose.PDF for .NET.
+هذا كل شيء! لقد نجحت في تنقيح صفحة من مستند PDF الخاص بك باستخدام Aspose.PDF لـ .NET.
 
-### Example source code for Redact Page using Aspose.PDF for .NET:
+### مثال على التعليمات البرمجية المصدر لصفحة Redact باستخدام Aspose.PDF لـ .NET:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document doc = new Document(dataDir + "input.pdf");
 
-// Create RedactionAnnotation instance for specific page region
+// قم بإنشاء مثيل RedactionAnnotation لمنطقة صفحة معينة
 RedactionAnnotation annot = new RedactionAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(200, 500, 300, 600));
 annot.FillColor = Aspose.Pdf.Color.Green;
 annot.BorderColor = Aspose.Pdf.Color.Yellow;
 annot.Color = Aspose.Pdf.Color.Blue;
-// Text to be printed on redact annotation
+// النص المراد طباعته على التعليق التوضيحي المنقح
 annot.OverlayText = "REDACTED";
 annot.TextAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-// Repat Overlay text over redact Annotation
+// كرر تراكب النص فوق التعليق التوضيحي المنقح
 annot.Repeat = true;
-// Add annotation to annotations collection of first page
+// إضافة تعليق توضيحي إلى مجموعة التعليقات التوضيحية للصفحة الأولى
 doc.Pages[1].Annotations.Add(annot);
-// Flattens annotation and redacts page contents (i.e. removes text and image
-// Under redacted annotation)
+// تسوية التعليقات التوضيحية وتنقيح محتويات الصفحة (أي إزالة النص والصورة
+// تحت الشرح المنقح)
 annot.Redact();
 dataDir = dataDir + "RedactPage_out.pdf";
 doc.Save(dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we explored how to redact a page in a PDF document using Aspose.PDF for .NET. Redaction is an essential feature for securely removing sensitive information from PDF documents, ensuring data privacy and security. By following the step-by-step guide and using the provided C# source code, developers can easily add redaction functionality to their applications, improving the data security and compliance of their PDF documents. Aspose.PDF for .NET offers a robust set of tools for working with PDF files, providing efficient and effective redaction capabilities along with various other PDF operations.
+في هذا البرنامج التعليمي، اكتشفنا كيفية تنقيح صفحة في مستند PDF باستخدام Aspose.PDF لـ .NET. يعد التنقيح ميزة أساسية لإزالة المعلومات الحساسة بشكل آمن من مستندات PDF، مما يضمن خصوصية البيانات وأمانها. من خلال اتباع الدليل الموضح خطوة بخطوة واستخدام كود مصدر C# المقدم، يمكن للمطورين بسهولة إضافة وظيفة التنقيح إلى تطبيقاتهم، مما يؤدي إلى تحسين أمان البيانات والامتثال لمستندات PDF الخاصة بهم. يوفر Aspose.PDF for .NET مجموعة قوية من الأدوات للعمل مع ملفات PDF، مما يوفر إمكانات تنقيح تتسم بالكفاءة والفعالية إلى جانب العديد من عمليات PDF الأخرى.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is redaction in a PDF document?
+#### س: ما هو التنقيح في وثيقة PDF؟
 
-A: Redaction in a PDF document is the process of permanently removing or obscuring sensitive or confidential information from the document. This ensures that the redacted information cannot be accessed or viewed, providing data security and privacy.
+ج: التنقيح في مستند PDF هو عملية إزالة أو إخفاء المعلومات الحساسة أو السرية من المستند بشكل دائم. وهذا يضمن عدم إمكانية الوصول إلى المعلومات المنقحة أو عرضها، مما يوفر أمان البيانات والخصوصية.
 
-#### Q: Can I redact multiple areas of a page in a PDF document?
+#### س: هل يمكنني تنقيح مناطق متعددة من الصفحة في مستند PDF؟
 
-A: Yes, with Aspose.PDF for .NET, you can create multiple `RedactionAnnotation` instances to redact multiple areas of a page in a PDF document. Each `RedactionAnnotation` can be customized with different fill colors, border colors, overlay texts, and other properties.
+ج: نعم، باستخدام Aspose.PDF لـ .NET، يمكنك إنشاء ملفات متعددة`RedactionAnnotation` مثيلات لتنقيح مناطق متعددة من الصفحة في مستند PDF. كل`RedactionAnnotation` يمكن تخصيصها بألوان تعبئة مختلفة وألوان حدود ونصوص متراكبة وخصائص أخرى.
 
-#### Q: Does redaction in Aspose.PDF for .NET permanently remove the redacted information?
+#### س: هل يؤدي التنقيح في Aspose.PDF لـ .NET إلى إزالة المعلومات المنقحة بشكل دائم؟
 
-A: Yes, redaction in Aspose.PDF for .NET permanently removes the redacted information from the PDF document. Once redaction is performed and the document is saved, the redacted information cannot be recovered.
+ج: نعم، يؤدي التنقيح في Aspose.PDF لـ .NET إلى إزالة المعلومات المنقحة من مستند PDF بشكل دائم. بمجرد إجراء التنقيح وحفظ المستند، لا يمكن استرداد المعلومات المنقحة.
 
-#### Q: Can I redact text and images under the redacted area in a PDF document?
+#### س: هل يمكنني تنقيح النصوص والصور الموجودة أسفل المنطقة المنقحة في مستند PDF؟
 
-A: Yes, when you call the `Redact()` method on the `RedactionAnnotation` object, it will not only add a redaction overlay to the specified area but also remove the underlying text and images from that area.
+ ج: نعم، عند الاتصال`Redact()` الطريقة على`RedactionAnnotation` الكائن، فلن يقوم فقط بإضافة تراكب تنقيح إلى المنطقة المحددة ولكن أيضًا إزالة النص والصور الأساسية من تلك المنطقة.
 
-#### Q: Can Aspose.PDF for .NET redact multiple pages in a PDF document?
+#### س: هل يمكن لـ Aspose.PDF لـ .NET تنقيح صفحات متعددة في مستند PDF؟
 
-A: Yes, you can create `RedactionAnnotation` instances for multiple pages in a PDF document to redact sensitive information from multiple pages.
+ ج: نعم، يمكنك إنشاء`RedactionAnnotation` مثيلات لصفحات متعددة في مستند PDF لتنقيح المعلومات الحساسة من صفحات متعددة.

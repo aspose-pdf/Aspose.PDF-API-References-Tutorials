@@ -1,49 +1,49 @@
 ---
-title: Combo Box
-linktitle: Combo Box
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create combo box list in your PDF documents using Aspose.PDF for .NET.
+title: صندوق التحرير
+linktitle: صندوق التحرير
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بإنشاء قائمة مربعات التحرير والسرد بسهولة في مستندات PDF الخاصة بك باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 30
 url: /ar/net/programming-with-forms/combo-box/
 ---
-In this tutorial, we will show you how to create a combo box list using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+سنوضح لك في هذا البرنامج التعليمي كيفية إنشاء قائمة مربعات التحرير والسرد باستخدام Aspose.PDF لـ .NET. سنشرح لك كود مصدر C# خطوة بخطوة لإرشادك خلال هذه العملية.
 
-## Step 1: Preparation
+## الخطوة 1: التحضير
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+أولاً، تأكد من استيراد المكتبات اللازمة وتعيين المسار إلى دليل المستندات:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a Document Object
+## الخطوة 2: إنشاء كائن مستند
 
-Create a Document object to hold the PDF form:
+قم بإنشاء كائن مستند للاحتفاظ بنموذج PDF:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 3: Add a page
+## الخطوة 3: إضافة صفحة
 
-Add a page to the document:
+إضافة صفحة إلى المستند:
 
 ```csharp
 doc.Pages.Add();
 ```
 
-## Step 4: Instantiate a ComboBoxField Object
+## الخطوة 4: إنشاء كائن ComboBoxField
 
-Instantiate a ComboBoxField object with the desired dimensions:
+إنشاء مثيل لكائن ComboBoxField بالأبعاد المطلوبة:
 
 ```csharp
 ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
 ```
 
-## Step 5: Add options to the drop-down list
+## الخطوة 5: إضافة خيارات إلى القائمة المنسدلة
 
-Add the desired options to the drop-down list:
+أضف الخيارات المطلوبة إلى القائمة المنسدلة:
 
 ```csharp
 combo.AddOption("Red");
@@ -52,44 +52,44 @@ combo.AddOption("Green");
 combo.AddOption("Blue");
 ```
 
-## Step 6: Add the combo box list to the form
+## الخطوة 6: أضف قائمة مربع التحرير والسرد إلى النموذج
 
-Add the ComboBoxField object to the Document Form Fields collection:
+أضف كائن ComboBoxField إلى مجموعة حقول نموذج المستند:
 
 ```csharp
 doc.Form.Add(combo);
 ```
 
-## Step 7: Save the document
+## الخطوة 7: احفظ المستند
 
-Save the PDF document:
+احفظ مستند PDF:
 
 ```csharp
 dataDir = dataDir + "ComboBox_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Combo Box using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Combo Box باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// المسار إلى دليل المستندات.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Create Document object
+	// إنشاء كائن المستند
 	Document doc = new Document();
-	// Add page to document object
+	// إضافة صفحة إلى كائن المستند
 	doc.Pages.Add();
-	// Instantiate ComboBox Field object
+	// إنشاء كائن حقل ComboBox
 	ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
-	// Add option to ComboBox
+	// إضافة خيار إلى ComboBox
 	combo.AddOption("Red");
 	combo.AddOption("Yellow");
 	combo.AddOption("Green");
 	combo.AddOption("Blue");
-	// Add combo box object to form fields collection of document object
+	// إضافة كائن مربع التحرير والسرد إلى مجموعة حقول النموذج لكائن المستند
 	doc.Form.Add(combo);
 	dataDir = dataDir + "ComboBox_out.pdf";
-	// Save the PDF document
+	// احفظ مستند PDF
 	doc.Save(dataDir);
 	Console.WriteLine("\nCombobox field added successfully.\nFile saved at " + dataDir);
 }
@@ -99,28 +99,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to create a combo box list using Aspose.PDF for .NET. By following these steps, you can easily add a combo box list to your PDF documents using Aspose.PDF.
+في هذا البرنامج التعليمي، تعلمنا كيفية إنشاء قائمة مربعات التحرير والسرد باستخدام Aspose.PDF لـ .NET. باتباع هذه الخطوات، يمكنك بسهولة إضافة قائمة مربع التحرير والسرد إلى مستندات PDF الخاصة بك باستخدام Aspose.PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Can I customize the appearance of the combo box list using Aspose.PDF for .NET?
+#### س: هل يمكنني تخصيص مظهر قائمة مربعات التحرير والسرد باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can customize the appearance of the combo box list using Aspose.PDF for .NET. You can set properties such as font size, color, background color, border style, and more to match your desired look and feel.
+ج: نعم، يمكنك تخصيص مظهر قائمة مربعات التحرير والسرد باستخدام Aspose.PDF لـ .NET. يمكنك تعيين خصائص مثل حجم الخط واللون ولون الخلفية ونمط الحدود والمزيد لتتناسب مع الشكل والمظهر المطلوبين.
 
-#### Q: Can I set default selected options in the combo box list?
+#### س: هل يمكنني تعيين الخيارات المحددة الافتراضية في قائمة مربع التحرير والسرد؟
 
-A: Yes, you can set default selected options in the combo box list using Aspose.PDF for .NET. You can use the `Selected` property of the `ComboBoxField` object to mark one or more options as selected by default.
+ ج: نعم، يمكنك تعيين الخيارات المحددة الافتراضية في قائمة مربع التحرير والسرد باستخدام Aspose.PDF لـ .NET. يمكنك استخدام ال`Selected` ملكية`ComboBoxField` كائن لوضع علامة على خيار واحد أو أكثر على أنه محدد افتراضيًا.
 
-#### Q: How can I retrieve the selected value from the combo box list after the user makes a selection?
+#### س: كيف يمكنني استرداد القيمة المحددة من قائمة مربع التحرير والسرد بعد قيام المستخدم بإجراء التحديد؟
 
-A: You can retrieve the selected value from the combo box list using Aspose.PDF for .NET. After the user makes a selection, you can access the `Value` property of the `ComboBoxField` object to obtain the selected value.
+ ج: يمكنك استرداد القيمة المحددة من قائمة مربعات التحرير والسرد باستخدام Aspose.PDF لـ .NET. بعد أن يقوم المستخدم بالاختيار، يمكنك الوصول إلى`Value` ملكية`ComboBoxField`كائن للحصول على القيمة المحددة.
 
-#### Q: Is it possible to add event handlers or actions to the combo box list?
+#### س: هل من الممكن إضافة معالجات الأحداث أو الإجراءات إلى قائمة مربع التحرير والسرد؟
 
-A: Yes, Aspose.PDF for .NET allows you to add event handlers or actions to the combo box list. You can associate JavaScript actions, such as `OnValueChanged`, to the combo box list to perform specific actions when the user selects an option.
+ ج: نعم، يسمح لك Aspose.PDF for .NET بإضافة معالجات الأحداث أو الإجراءات إلى قائمة مربعات التحرير والسرد. يمكنك ربط إجراءات JavaScript، مثل`OnValueChanged`، إلى قائمة مربع التحرير والسرد لتنفيذ إجراءات محددة عندما يحدد المستخدم خيارًا.
 
-#### Q: Can I add tooltips or descriptions to the options in the combo box list?
+#### س: هل يمكنني إضافة تلميحات أدوات أو أوصاف إلى الخيارات الموجودة في قائمة مربعات التحرير والسرد؟
 
-A: Yes, you can add tooltips or descriptions to the options in the combo box list using Aspose.PDF for .NET. You can set the `AlternateName` property of each option to provide a tooltip or description that will be displayed when the user hovers over the option.
+ ج: نعم، يمكنك إضافة تلميحات أدوات أو أوصاف إلى الخيارات الموجودة في قائمة مربعات التحرير والسرد باستخدام Aspose.PDF لـ .NET. يمكنك ضبط`AlternateName` خاصية كل خيار لتوفير تلميح أداة أو وصف سيتم عرضه عندما يقوم المستخدم بالتمرير فوق الخيار.

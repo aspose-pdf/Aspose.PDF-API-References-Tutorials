@@ -1,150 +1,150 @@
 ---
-title: Text Structure Elements In PDF File
-linktitle: Text Structure Elements In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text structure elements in PDF file using Aspose.PDF for .NET. Improve the structure and accessibility of your PDFs.
+title: Elementos de estructura de texto en archivo PDF
+linktitle: Elementos de estructura de texto en archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a agregar elementos de estructura de texto en un archivo PDF usando Aspose.PDF para .NET. Mejore la estructura y accesibilidad de sus archivos PDF.
 type: docs
 weight: 230
 url: /es/net/programming-with-tagged-pdf/text-structure-elements/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step to create text structure elements in a tagged PDF file using Aspose.PDF for .NET. Follow the instructions below to understand how to add text structure elements to your PDF file.
+En este tutorial detallado, lo guiaremos paso a paso a través del código fuente de C# proporcionado para crear elementos de estructura de texto en un archivo PDF etiquetado usando Aspose.PDF para .NET. Siga las instrucciones a continuación para comprender cómo agregar elementos de estructura de texto a su archivo PDF.
 
-## Step 1: Setting up the environment
+## Paso 1: configurar el entorno
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+Antes de comenzar, asegúrese de haber configurado su entorno de desarrollo para usar Aspose.PDF para .NET. Esto incluye instalar la biblioteca Aspose.PDF y configurar su proyecto para hacer referencia a ella.
 
-## Step 2: Creating the PDF document
+## Paso 2: crear el documento PDF
 
-In this step, we will create a new PDF document object with Aspose.PDF.
+En este paso, crearemos un nuevo objeto de documento PDF con Aspose.PDF.
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create the PDF document
+// Crear el documento PDF
 Document document = new Document();
 ```
 
-We have created a new PDF document with Aspose.PDF.
+Hemos creado un nuevo documento PDF con Aspose.PDF.
 
-## Step 3: Get tagged content and set title and language
+## Paso 3: obtenga contenido etiquetado y establezca el título y el idioma
 
-Now let's get the tagged content of the PDF document and set the document title and language.
+Ahora obtengamos el contenido etiquetado del documento PDF y configuremos el título y el idioma del documento.
 
 ```csharp
-// Get tagged content
+// Obtener contenido etiquetado
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Define the document title and language
+// Definir el título y el idioma del documento.
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We have set the title and language of the tagged PDF document.
+Hemos configurado el título y el idioma del documento PDF etiquetado.
 
-## Step 4: Obtaining the root structure element
+## Paso 4: Obtención del elemento de estructura raíz
 
-Now let's get the root structure element of the PDF document.
+Ahora obtengamos el elemento de estructura raíz del documento PDF.
 
 ```csharp
-// Obtain the root structure element
+//Obtener el elemento de estructura raíz.
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We have obtained the root structure element of the PDF document.
+Hemos obtenido el elemento de estructura raíz del documento PDF.
 
-## Step 5: Adding the paragraph structure element
+## Paso 5: agregar el elemento de estructura de párrafo
 
-Now let's add a paragraph structure element to our PDF document.
+Ahora agreguemos un elemento de estructura de párrafo a nuestro documento PDF.
 
 ```csharp
-// Create the paragraph structure element
+// Crear el elemento de estructura de párrafo
 ParagraphElement p = taggedContent.CreateParagraphElement();
 
-// Definition of the text of the paragraph structure element
+// Definición del texto del elemento de estructura de párrafo.
 p.SetText("Paragraph.");
 
-// Add the paragraph structure element to the root structure element
+// Agregue el elemento de estructura de párrafo al elemento de estructura raíz
 rootElement.AppendChild(p);
 ```
 
-We added a paragraph structure element with text to our PDF document.
+Agregamos un elemento de estructura de párrafo con texto a nuestro documento PDF.
 
-## Step 6: Saving the PDF Document
+## Paso 6: guardar el documento PDF
 
-Now that we're done editing the PDF document, let's save it to a file.
+Ahora que hemos terminado de editar el documento PDF, guardémoslo en un archivo.
 
 ```csharp
-// Save the tagged PDF document
+// Guarde el documento PDF etiquetado
 document.Save(dataDir + "ElementDeStructureDeTexte.pdf");
 ```
 
-We saved the PDF document tagged with the text structure element in the specified directory.
+Guardamos el documento PDF etiquetado con el elemento de estructura de texto en el directorio especificado.
 
 
-### Sample source code for Text Structure Elements using Aspose.PDF for .NET 
+### Código fuente de muestra para elementos de estructura de texto usando Aspose.PDF para .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// Crear documento PDF
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// Obtenga contenido para trabajar con TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+// Establecer título e idioma para Documnet
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Get Root Structure Elements
+// Obtener elementos de estructura raíz
 StructureElement rootElement = taggedContent.RootElement;
 ParagraphElement p = taggedContent.CreateParagraphElement();
 
-// Set Text to Text Structure Element
+// Establecer texto en elemento de estructura de texto
 p.SetText("Paragraph.");
 rootElement.AppendChild(p);
 
-// Save Tagged Pdf Document
+// Guardar documento PDF etiquetado
 document.Save(dataDir + "TextStructureElement.pdf");
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, we learned how to use Aspose.PDF for .NET to add text structure elements to a PDF document. You can now use these features to improve the structure and accessibility of your PDF documents.
+En este tutorial, aprendimos cómo usar Aspose.PDF para .NET para agregar elementos de estructura de texto a un documento PDF. Ahora puede utilizar estas funciones para mejorar la estructura y accesibilidad de sus documentos PDF.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is the main objective of this tutorial on creating text structure elements in a tagged PDF file using Aspose.PDF for .NET?
+#### P: ¿Cuál es el objetivo principal de este tutorial sobre la creación de elementos de estructura de texto en un archivo PDF etiquetado usando Aspose.PDF para .NET?
 
-A: The primary focus of this tutorial is to guide you through the process of adding text structure elements to a tagged PDF document using Aspose.PDF for .NET. The tutorial provides step-by-step instructions and C# source code examples to help you enhance the structure and accessibility of your PDF files.
+R: El objetivo principal de este tutorial es guiarlo a través del proceso de agregar elementos de estructura de texto a un documento PDF etiquetado usando Aspose.PDF para .NET. El tutorial proporciona instrucciones paso a paso y ejemplos de código fuente C# para ayudarle a mejorar la estructura y accesibilidad de sus archivos PDF.
 
-#### Q: What prerequisites are necessary for following this tutorial on text structure elements in a tagged PDF file?
+#### P: ¿Qué requisitos previos son necesarios para seguir este tutorial sobre elementos de estructura de texto en un archivo PDF etiquetado?
 
-A: Before you start, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+R: Antes de comenzar, asegúrese de haber configurado su entorno de desarrollo para utilizar Aspose.PDF para .NET. Esto implica instalar la biblioteca Aspose.PDF y configurar su proyecto para hacer referencia a ella.
 
-#### Q: How can I create a new PDF document and add text structure elements using Aspose.PDF for .NET?
+#### P: ¿Cómo puedo crear un nuevo documento PDF y agregar elementos de estructura de texto usando Aspose.PDF para .NET?
 
-A: The tutorial includes C# source code examples that demonstrate how to create a new PDF document and add a paragraph text structure element using Aspose.PDF for .NET.
+R: El tutorial incluye ejemplos de código fuente de C# que demuestran cómo crear un nuevo documento PDF y agregar un elemento de estructura de texto de párrafo usando Aspose.PDF para .NET.
 
-#### Q: What is the significance of adding text structure elements to a tagged PDF document?
+#### P: ¿Cuál es la importancia de agregar elementos de estructura de texto a un documento PDF etiquetado?
 
-A: Adding text structure elements enhances the semantic structure of a PDF document. This improves accessibility for screen readers and other assistive technologies, making it easier for users to navigate and comprehend the content.
+R: Agregar elementos de estructura de texto mejora la estructura semántica de un documento PDF. Esto mejora la accesibilidad para los lectores de pantalla y otras tecnologías de asistencia, lo que facilita a los usuarios la navegación y la comprensión del contenido.
 
-#### Q: How do I set the title and language of a tagged PDF document using Aspose.PDF for .NET?
+#### P: ¿Cómo configuro el título y el idioma de un documento PDF etiquetado usando Aspose.PDF para .NET?
 
-A: The tutorial provides C# source code examples that illustrate how to set the title and language of a tagged PDF document using Aspose.PDF for .NET.
+R: El tutorial proporciona ejemplos de código fuente de C# que ilustran cómo configurar el título y el idioma de un documento PDF etiquetado usando Aspose.PDF para .NET.
 
-#### Q: How can I create a paragraph text structure element in a PDF document using Aspose.PDF for .NET?
+#### P: ¿Cómo puedo crear un elemento de estructura de texto de párrafo en un documento PDF usando Aspose.PDF para .NET?
 
-A: The tutorial includes C# source code examples that demonstrate how to create a paragraph text structure element using the `CreateParagraphElement()` method and add text to it using the `SetText()` method. The paragraph is then appended to the root structure element of the tagged PDF document.
+ R: El tutorial incluye ejemplos de código fuente de C# que demuestran cómo crear un elemento de estructura de texto de párrafo utilizando el`CreateParagraphElement()`método y agregarle texto usando el`SetText()` método. Luego, el párrafo se agrega al elemento de estructura raíz del documento PDF etiquetado.
 
-#### Q: Can I customize the appearance and formatting of the text structure elements I add to the PDF document?
+#### P: ¿Puedo personalizar la apariencia y el formato de los elementos de la estructura de texto que agrego al documento PDF?
 
-A: Text structure elements primarily focus on semantic structure and accessibility. While you can set text content and potentially apply basic formatting, extensive appearance customization is typically achieved through other PDF features such as styling, fonts, and annotations.
+R: Los elementos de la estructura del texto se centran principalmente en la estructura semántica y la accesibilidad. Si bien puede configurar el contenido del texto y potencialmente aplicar formato básico, generalmente se logra una amplia personalización de la apariencia a través de otras características del PDF, como estilos, fuentes y anotaciones.
 
-#### Q: How does the provided sample source code assist in adding text structure elements to a PDF document?
+#### P: ¿Cómo ayuda el código fuente de muestra proporcionado a agregar elementos de estructura de texto a un documento PDF?
 
-A: The sample source code serves as a practical reference for implementing the creation of text structure elements in a tagged PDF document using Aspose.PDF for .NET. You can use this code as a starting point and modify it to suit your specific requirements.
+R: El código fuente de muestra sirve como referencia práctica para implementar la creación de elementos de estructura de texto en un documento PDF etiquetado utilizando Aspose.PDF para .NET. Puede utilizar este código como punto de partida y modificarlo para adaptarlo a sus requisitos específicos.

@@ -1,28 +1,28 @@
 ---
-title: Draw XForm On Page
-linktitle: Draw XForm On Page
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to drawing an XForm form on a PDF page using Aspose.PDF for .NET. Add and position the form on the page.
+title: XForm auf Seite zeichnen
+linktitle: XForm auf Seite zeichnen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Schritt-für-Schritt-Anleitung zum Zeichnen eines XForm-Formulars auf einer PDF-Seite mit Aspose.PDF für .NET. Fügen Sie das Formular hinzu und positionieren Sie es auf der Seite.
 type: docs
 weight: 10
 url: /de/net/programming-with-operators/draw-xform-on-page/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to draw an XForm on a page using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. Using the operators provided by Aspose.PDF, you can add and position an XForm form on an existing PDF page.
+In diesem Tutorial stellen wir Ihnen eine Schritt-für-Schritt-Anleitung zum Zeichnen einer XForm auf einer Seite mit Aspose.PDF für .NET zur Verfügung. Aspose.PDF ist eine leistungsstarke Bibliothek, mit der Sie PDF-Dokumente programmgesteuert erstellen, bearbeiten und konvertieren können. Mithilfe der von Aspose.PDF bereitgestellten Operatoren können Sie ein XForm-Formular auf einer vorhandenen PDF-Seite hinzufügen und positionieren.
 
-## Prerequisites
+## Voraussetzungen
 
-Before you begin, make sure you have the following prerequisites in place:
+Bevor Sie beginnen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. Visual Studio mit .NET Framework installiert.
+2. Die Aspose.PDF-Bibliothek für .NET.
 
-## Step 1: Project Setup
+## Schritt 1: Projekteinrichtung
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+Erstellen Sie zunächst ein neues Projekt in Visual Studio und fügen Sie einen Verweis auf die Aspose.PDF für .NET-Bibliothek hinzu. Sie können die Bibliothek von der offiziellen Website von Aspose herunterladen und auf Ihrem Computer installieren.
 
-## Step 2: Import the necessary namespaces
+## Schritt 2: Importieren Sie die erforderlichen Namespaces
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+Importieren Sie in Ihre C#-Codedatei die Namespaces, die für den Zugriff auf die von Aspose.PDF bereitgestellten Klassen und Methoden erforderlich sind:
 
 ```csharp
 using System;
@@ -31,9 +31,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Operators;
 ```
 
-## Step 3: Setting file paths
+## Schritt 3: Dateipfade festlegen
 
-Define the file paths for the background image, the input PDF file and the output PDF file:
+Definieren Sie die Dateipfade für das Hintergrundbild, die Eingabe-PDF-Datei und die Ausgabe-PDF-Datei:
 
 ```csharp
 string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
@@ -42,69 +42,69 @@ string inFile = dataDir + "DrawXFormOnPage.pdf";
 string outFile = dataDir + "blank-sample2_out.pdf";
 ```
 
-Be sure to specify the actual file paths on your machine.
+Geben Sie unbedingt die tatsächlichen Dateipfade auf Ihrem Computer an.
 
-## Step 4: Loading the input PDF file
+## Schritt 4: Laden der Eingabe-PDF-Datei
 
-Use the following code to load the input PDF file:
+Verwenden Sie den folgenden Code, um die Eingabe-PDF-Datei zu laden:
 
 ```csharp
 using (Document doc = new Document(inFile))
 {
 OperatorCollection pageContents = doc.Pages[1].Contents;
-// The following code uses the GSave/GRestore operators
-// The code uses the ContatenateMatrix operator to position the XForm
-// The code uses the Do operator to draw the XForm on the page
-// GSave/GRestore operators wrap existing content
-// this is done to get the initial graphics state at the end of the existing content
-// otherwise there may be unwanted transformations left at the end of the chain of existing operators
+// Der folgende Code verwendet die GSave/GRestore-Operatoren
+// Der Code verwendet den ContatenateMatrix-Operator, um die XForm zu positionieren
+// Der Code verwendet den Do-Operator, um die XForm auf der Seite zu zeichnen
+// GSave/GRestore-Operatoren umschließen vorhandenen Inhalt
+// Dies geschieht, um den anfänglichen Grafikstatus am Ende des vorhandenen Inhalts zu erhalten
+// andernfalls kann es sein, dass am Ende der Kette vorhandener Operatoren unerwünschte Transformationen zurückbleiben
 pageContents. Insert(1, new GSave());
 pageContents. Add(new GRestore());
-// Add GSave operator to properly reset graphics state after new commands
+// Fügen Sie den GSave-Operator hinzu, um den Grafikstatus nach neuen Befehlen ordnungsgemäß zurückzusetzen
 pageContents. Add(new GSave());
 
-// Create the XForm
+// Erstellen Sie die XForm
 XForm form = XForm.CreateNewForm(doc.Pages[1], doc);
 doc.Pages[1].Resources.Forms.Add(form);
 form.Contents.Add(new GSave());
-// Set the width and height of the image
+// Legen Sie die Breite und Höhe des Bildes fest
 form.Contents.Add(new ConcatenateMatrix(200, 0, 0, 200, 0, 0));
-// Load the image into a stream
+// Laden Sie das Bild in einen Stream
 Stream imageStream = new FileStream(imageFile, FileMode.Open);
-// Add the image to the XForm resource images collection
+// Fügen Sie das Bild zur XForm-Ressourcenbildersammlung hinzu
 form.Resources.Images.Add(imageStream);
 XImage ximage = form.Resources.Images[form.Resources.Images.Count];
-// Using the Do operator: this operator draws the image
+// Verwendung des Do-Operators: Dieser Operator zeichnet das Bild
 form.Contents.Add(new Do(ximage.Name));
 form.Contents.Add(new GRestore());
 
 pageContents. Add(new GSave());
-// Position the XForm at coordinates x=100 and y=500
+//Positionieren Sie die XForm an den Koordinaten x=100 und y=500
 pageContents. Add(new ConcatenateMatrix(1, 0, 0, 1, 100, 500));
-// Draw the XForm with the Do operator
+// Zeichnen Sie die XForm mit dem Do-Operator
 pageContents.Add(new Do(form.Name));
 pageContents. Add(new GRestore());
 
 pageContents. Add(new GSave());
-// Position the XForm at coordinates x=100 and y=300
+// Positionieren Sie die XForm an den Koordinaten x=100 und y=300
 pageContents. Add(new ConcatenateMatrix(1, 0, 0, 1, 100, 300));
-// Draw the XForm with the Do operator
+// Zeichnen Sie die XForm mit dem Do-Operator
 pageContents.Add(new Do(form.Name));
 pageContents. Add(new GRestore());
 
-// Restore graphics state with GRestore after GSave
+// Stellen Sie den Grafikstatus mit GRestore nach GSave wieder her
 pageContents. Add(new GRestore());
 doc.Save(outFile);
 }
 ```
 
-Be sure to specify the actual file paths and adjust the page number and XForm positions as needed.
+Geben Sie unbedingt die tatsächlichen Dateipfade an und passen Sie die Seitenzahl und XForm-Positionen nach Bedarf an.
 
-### Sample source code for Draw XForm On Page using Aspose.PDF for .NET
+### Beispielquellcode für Draw XForm On Page mit Aspose.PDF für .NET
  
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string imageFile = dataDir+ "aspose-logo.jpg";
 string inFile = dataDir + "DrawXFormOnPage.pdf";
@@ -112,65 +112,65 @@ string outFile = dataDir + "blank-sample2_out.pdf";
 using (Document doc = new Document(inFile))
 {
 	OperatorCollection pageContents = doc.Pages[1].Contents;
-	// The sample demonstrates 
-	// GSave/GRestore operators usage
-	// ContatenateMatrix operator usage to position xForm
-	// Do operator usage to draw xForm on page
-	// Wrap existing contents with GSave/GRestore operators pair
-	//        this is to get initial graphics state at the and of existing contents
-	//        otherwise there might remain some undesirable transformations at the end of existing operators chain
+	// Das Beispiel zeigt
+	// Verwendung der GSave/GRestore-Operatoren
+	// Verwendung des ContatenateMatrix-Operators zur Positionierung von xForm
+	// Verwenden Sie den Operator, um xForm auf der Seite zu zeichnen
+	// Umschließen Sie vorhandene Inhalte mit dem GSave/GRestore-Operatorpaar
+	// Dies dient dazu, den anfänglichen Grafikstatus am Ende vorhandener Inhalte zu erhalten
+	// Andernfalls könnten am Ende der bestehenden Operatorkette einige unerwünschte Transformationen verbleiben
 	pageContents.Insert(1, new Aspose.Pdf.Operators.GSave());
 	pageContents.Add(new Aspose.Pdf.Operators.GRestore());
-	// Add save graphics state operator to properly clear graphics state after new commands
+	// Fügen Sie den Operator „Grafikstatus speichern“ hinzu, um den Grafikstatus nach neuen Befehlen ordnungsgemäß zu löschen
 	pageContents.Add(new Aspose.Pdf.Operators.GSave());
 	#region create xForm
-	// Create xForm
+	// xForm erstellen
 	XForm form = XForm.CreateNewForm(doc.Pages[1], doc);
 	doc.Pages[1].Resources.Forms.Add(form);
 	form.Contents.Add(new Aspose.Pdf.Operators.GSave());
-	// Define image width and heigh
+	// Definieren Sie die Bildbreite und -höhe
 	form.Contents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(200, 0, 0, 200, 0, 0));
-	// Load image into stream
+	// Bild in Stream laden
 	Stream imageStream = new FileStream(imageFile, FileMode.Open);
-	// Add image to Images collection of the XForm Resources
+	//Bild zur Bildersammlung der XForm-Ressourcen hinzufügen
 	form.Resources.Images.Add(imageStream);
 	XImage ximage = form.Resources.Images[form.Resources.Images.Count];
-	// Using Do operator: this operator draws image
+	// Verwenden des Do-Operators: Dieser Operator zeichnet ein Bild
 	form.Contents.Add(new Aspose.Pdf.Operators.Do(ximage.Name));
 	form.Contents.Add(new Aspose.Pdf.Operators.GRestore());
 	#endregion
 	pageContents.Add(new Aspose.Pdf.Operators.GSave());
-	// Place form to the x=100 y=500 coordinates
+	// Platzieren Sie das Formular an den Koordinaten x=100 y=500
 	pageContents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(1, 0, 0, 1, 100, 500));
-	// Draw form with Do operator
+	// Zeichnen Sie ein Formular mit dem Do-Operator
 	pageContents.Add(new Aspose.Pdf.Operators.Do(form.Name));
 	pageContents.Add(new Aspose.Pdf.Operators.GRestore());
 	pageContents.Add(new Aspose.Pdf.Operators.GSave());
-	// Place form to the x=100 y=300 coordinates
+	// Platzieren Sie das Formular an den x=100 y=300-Koordinaten
 	pageContents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(1, 0, 0, 1, 100, 300));
-	// Draw form with Do operator
+	// Zeichnen Sie ein Formular mit dem Do-Operator
 	pageContents.Add(new Aspose.Pdf.Operators.Do(form.Name));
 	pageContents.Add(new Aspose.Pdf.Operators.GRestore());
-	// Restore grahics state with GRestore after the GSave
+	// Stellen Sie den Grafikstatus mit GRestore nach dem GSave wieder her
 	pageContents.Add(new Aspose.Pdf.Operators.GRestore());
 	doc.Save(outFile);                
 }
 
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, you learned how to draw an XForm form on a PDF page using Aspose.PDF for .NET. By following the steps described, you will be able to add and position an XForm form on an existing page, thus giving more flexibility to your PDF documents.
+In diesem Tutorial haben Sie gelernt, wie Sie mit Aspose.PDF für .NET ein XForm-Formular auf einer PDF-Seite zeichnen. Wenn Sie die beschriebenen Schritte befolgen, können Sie ein XForm-Formular auf einer vorhandenen Seite hinzufügen und positionieren und so Ihren PDF-Dokumenten mehr Flexibilität verleihen.
 
-### FAQ's for draw XForm on page
+### FAQs zum Zeichnen von XForm auf Seite
 
-#### Q: What is an XForm in Aspose.PDF?
+#### F: Was ist ein XForm in Aspose.PDF?
 
-A: An XForm is a reusable graphical object in a PDF document. It allows you to define and draw complex graphics, images, or text that can be reused multiple times on different pages.
+A: Ein XForm ist ein wiederverwendbares grafisches Objekt in einem PDF-Dokument. Sie können damit komplexe Grafiken, Bilder oder Texte definieren und zeichnen, die auf verschiedenen Seiten mehrfach wiederverwendet werden können.
 
-#### Q: How do I import the necessary namespaces for Aspose.PDF?
+#### F: Wie importiere ich die erforderlichen Namespaces für Aspose.PDF?
 
-A: In your C# code file, use the `using` directive to import the required namespaces for accessing the classes and methods provided by Aspose.PDF:
+ A: Verwenden Sie in Ihrer C#-Codedatei die`using` Direktive zum Importieren der erforderlichen Namespaces für den Zugriff auf die von Aspose.PDF bereitgestellten Klassen und Methoden:
 ```csharp
 using System;
 using System.IO;
@@ -178,42 +178,42 @@ using Aspose.Pdf;
 using Aspose.Pdf.Operators;
 ```
 
-#### Q: What is the purpose of the GSave and GRestore operators?
+#### F: Was ist der Zweck der GSave- und GRestore-Operatoren?
 
-A: The `GSave` and `GRestore` operators in Aspose.PDF are used to save and restore the graphics state. They help ensure that transformations and settings applied to one section of the content do not affect subsequent sections.
+ A: Die`GSave` Und`GRestore`Operatoren in Aspose.PDF werden zum Speichern und Wiederherstellen des Grafikstatus verwendet. Sie tragen dazu bei, dass Transformationen und Einstellungen, die auf einen Abschnitt des Inhalts angewendet werden, keine Auswirkungen auf nachfolgende Abschnitte haben.
 
-#### Q: How do I define an XForm using Aspose.PDF?
+#### F: Wie definiere ich ein XForm mit Aspose.PDF?
 
-A: To create an XForm, use the `XForm.CreateNewForm` method and add it to the `Resources.Forms` collection of a specific page. You can then add content to the XForm's `Contents` property.
+ A: Um eine XForm zu erstellen, verwenden Sie die`XForm.CreateNewForm` Methode und fügen Sie sie der hinzu`Resources.Forms` Sammlung einer bestimmten Seite. Anschließend können Sie Inhalte zu den XForms hinzufügen`Contents` Eigentum.
 
-#### Q: How can I draw an image within an XForm?
+#### F: Wie kann ich ein Bild innerhalb einer XForm zeichnen?
 
-A: Load the image into a stream and add it to the `Resources.Images` collection of the XForm. Use the `Do` operator within the XForm's `Contents` to draw the image.
+ A: Laden Sie das Bild in einen Stream und fügen Sie es hinzu`Resources.Images` Sammlung der XForm. Benutzen Sie die`Do` Operator innerhalb der XForm's`Contents` um das Bild zu zeichnen.
 
-#### Q: How do I position an XForm on a PDF page?
+#### F: Wie positioniere ich ein XForm auf einer PDF-Seite?
 
-A: To position an XForm on a page, use the `ConcatenateMatrix` operator within the page's `Contents`. Adjust the matrix parameters to specify the translation (position) and scaling of the XForm.
+ A: Um ein XForm auf einer Seite zu positionieren, verwenden Sie die`ConcatenateMatrix` Operator innerhalb der Seite`Contents`. Passen Sie die Matrixparameter an, um die Übersetzung (Position) und Skalierung der XForm festzulegen.
 
-#### Q: Can I draw multiple XForms on the same page?
+#### F: Kann ich mehrere XForms auf derselben Seite zeichnen?
 
-A: Yes, you can draw multiple XForms on the same page by adjusting the `ConcatenateMatrix` parameters to position each XForm at different coordinates.
+ A: Ja, Sie können mehrere XForms auf derselben Seite zeichnen, indem Sie die anpassen`ConcatenateMatrix`Parameter, um jede XForm an unterschiedlichen Koordinaten zu positionieren.
 
-#### Q: Can I modify the content of an XForm after it's created?
+#### F: Kann ich den Inhalt einer XForm ändern, nachdem sie erstellt wurde?
 
-A: Yes, you can modify an XForm's contents after creation by adding additional operators to its `Contents` property.
+ A: Ja, Sie können den Inhalt einer XForm nach der Erstellung ändern, indem Sie ihr zusätzliche Operatoren hinzufügen`Contents` Eigentum.
 
-#### Q: What happens if I omit the GSave and GRestore operators?
+#### F: Was passiert, wenn ich die Operatoren GSave und GRestore weglasse?
 
-A: Omitting the GSave and GRestore operators may lead to unwanted transformations or settings being applied to subsequent content. Using them helps maintain a clean graphics state.
+A: Das Weglassen der Operatoren GSave und GRestore kann dazu führen, dass unerwünschte Transformationen oder Einstellungen auf nachfolgende Inhalte angewendet werden. Ihre Verwendung trägt dazu bei, einen sauberen Grafikzustand aufrechtzuerhalten.
 
-#### Q: Can I reuse XForms across different pages of the PDF document?
+#### F: Kann ich XForms auf verschiedenen Seiten des PDF-Dokuments wiederverwenden?
 
-A: Yes, you can reuse XForms on multiple pages by adding the same XForm to the `Resources.Forms` collection of different pages.
+ A: Ja, Sie können XForms auf mehreren Seiten wiederverwenden, indem Sie dasselbe XForm hinzufügen`Resources.Forms` Sammlung verschiedener Seiten.
 
-#### Q: Is there a limit to the number of XForms I can create?
+#### F: Gibt es eine Begrenzung für die Anzahl der XForms, die ich erstellen kann?
 
-A: While there is no strict limit to the number of XForms you can create, keep in mind that too many XForms may impact performance and memory usage. Use them judiciously.
+A: Es gibt zwar keine strikte Beschränkung für die Anzahl der XForms, die Sie erstellen können. Beachten Sie jedoch, dass zu viele XForms die Leistung und Speichernutzung beeinträchtigen können. Setzen Sie sie mit Bedacht ein.
 
-#### Q: Can I rotate an XForm or apply other transformations?
+#### F: Kann ich eine XForm drehen oder andere Transformationen anwenden?
 
-A: Yes, you can use the `ConcatenateMatrix` operator to apply transformations such as rotation, scaling, and translation to an XForm.
+ A: Ja, Sie können das verwenden`ConcatenateMatrix`Operator zum Anwenden von Transformationen wie Rotation, Skalierung und Translation auf eine XForm.

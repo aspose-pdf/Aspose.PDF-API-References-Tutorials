@@ -1,40 +1,40 @@
 ---
-title: Rearrange Contents Using Text Replacement
-linktitle: Rearrange Contents Using Text Replacement
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to rearrange contents in a PDF document using text replacement with Aspose.PDF for .NET.
+title: Переупорядочение содержимого с помощью замены текста
+linktitle: Переупорядочение содержимого с помощью замены текста
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как изменить порядок содержимого в PDF-документе с помощью замены текста с помощью Aspose.PDF для .NET.
 type: docs
 weight: 270
 url: /ru/net/programming-with-text/rearrange-contents-using-text-replacement/
 ---
-In this tutorial, we will explain how to rearrange contents in a PDF document by using text replacement with the Aspose.PDF library for .NET. We will go through the step-by-step process of loading a PDF, searching for specific text fragments, replacing the text, and saving the modified PDF using the provided C# source code.
+В этом уроке мы объясним, как изменить порядок содержимого в PDF-документе, используя замену текста с помощью библиотеки Aspose.PDF для .NET. Мы пройдем пошаговый процесс загрузки PDF-файла, поиска определенных фрагментов текста, замены текста и сохранения измененного PDF-файла, используя предоставленный исходный код C#.
 
-## Requirements
+## Требования
 
-Before you begin, ensure that you have the following:
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- Установлена библиотека Aspose.PDF для .NET.
+- Базовое понимание программирования на C#.
 
-## Step 1: Set up the Document Directory
+## Шаг 1. Настройте каталог документов
 
-First, you need to set the path to the directory where your PDF files are located. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF files.
+ Во-первых, вам нужно указать путь к каталогу, в котором находятся ваши PDF-файлы. Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir` переменная с путем к вашим PDF-файлам.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the Source PDF
+## Шаг 2. Загрузите исходный PDF-файл
 
-Next, we load the source PDF document using the `Document` class from the Aspose.PDF library.
+ Затем мы загружаем исходный PDF-документ, используя`Document` класс из библиотеки Aspose.PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "ExtractTextPage.pdf");
 ```
 
-## Step 3: Search and Replace Text Fragments
+## Шаг 3. Поиск и замена фрагментов текста
 
-We create a `TextFragmentAbsorber` object with a regular expression to search for specific text fragments. Then, we iterate through the text fragments, customize their font, size, color, and replace the text.
+ Мы создаем`TextFragmentAbsorber` объект с регулярным выражением для поиска определенных фрагментов текста. Затем перебираем фрагменты текста, настраиваем их шрифт, размер, цвет и заменяем текст.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("[TextFragmentAbsorber,companyname,Textbox,50]");
@@ -49,9 +49,9 @@ foreach(TextFragment textFragment in textFragmentAbsorber.TextFragments)
 }
 ```
 
-## Step 4: Save the Modified PDF
+## Шаг 4. Сохраните измененный PDF-файл.
 
-Finally, we save the modified PDF document to the specified output file.
+Наконец, мы сохраняем измененный PDF-документ в указанный выходной файл.
 
 ```csharp
 dataDir = dataDir + "RearrangeContentsUsingTextReplacement_out.pdf";
@@ -59,79 +59,79 @@ doc.Save(dataDir);
 Console.WriteLine("\nContents rearranged successfully using text replacement.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Rearrange Contents Using Text Replacement using Aspose.PDF for .NET 
+### Пример исходного кода для изменения порядка содержимого с помощью замены текста с использованием Aspose.PDF для .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Путь к каталогу документов.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load source PDF file
+	// Загрузить исходный PDF-файл
 	Document doc = new Document(dataDir + "ExtractTextPage.pdf");
-	// Create TextFragment Absorber object with regular expression
+	// Создайте объект TextFragment Absorber с регулярным выражением.
 	TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("[TextFragmentAbsorber,companyname,Textbox,50]");
 	doc.Pages.Accept(textFragmentAbsorber);
-	// Replace each TextFragment
+	// Замените каждый TextFragment
 	foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
 	{
-		// Set font of text fragment being replaced
+		// Установить шрифт заменяемого фрагмента текста
 		textFragment.TextState.Font = FontRepository.FindFont("Arial");
-		// Set font size
+		// Установить размер шрифта
 		textFragment.TextState.FontSize = 12;
 		textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Navy;
-		// Replace the text with larger string than placeholder
+		// Замените текст строкой большей, чем заполнитель.
 		textFragment.Text = "This is a Larger String for the Testing of this issue";
 	}
 	dataDir = dataDir + "RearrangeContentsUsingTextReplacement_out.pdf";
-	// Save resultant PDF
+	// Сохранить полученный PDF-файл
 	doc.Save(dataDir);
 	Console.WriteLine("\nContents rearranged successfully using text replacement.\nFile saved at " + dataDir);
 }
 catch (Exception ex)
 {
-	Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase full license or get 30 day temporary license from http:// Www.aspose.com/purchase/default.aspx.");
+	Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase full license or get 30 day temporary license from http:// www.aspose.com/purchase/default.aspx.");
 }
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, you have learned how to rearrange contents in a PDF document by using text replacement with the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can search for specific text fragments, customize their appearance, and replace the text in a PDF document.
+В этом руководстве вы узнали, как изменить порядок содержимого в PDF-документе, используя замену текста с помощью библиотеки Aspose.PDF для .NET. Следуя пошаговому руководству и выполнив предоставленный код C#, вы сможете искать определенные фрагменты текста, настраивать их внешний вид и заменять текст в PDF-документе.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of the "Rearrange Contents Using Text Replacement" tutorial?
+#### Вопрос: Какова цель урока «Изменение содержимого с помощью замены текста»?
 
-A: The "Rearrange Contents Using Text Replacement" tutorial demonstrates how to use the Aspose.PDF library for .NET to rearrange contents in a PDF document by performing text replacement. The tutorial provides a step-by-step guide and C# source code to help you load a PDF, search for specific text fragments, replace the text, and save the modified PDF.
+О: Учебное пособие «Изменение содержимого с помощью замены текста» демонстрирует, как использовать библиотеку Aspose.PDF для .NET для изменения порядка содержимого в PDF-документе путем выполнения замены текста. Учебное пособие содержит пошаговое руководство и исходный код C#, которые помогут вам загрузить PDF-файл, выполнить поиск определенных фрагментов текста, заменить текст и сохранить измененный PDF-файл.
 
-#### Q: Why would I want to rearrange contents in a PDF document?
+#### Вопрос: Зачем мне менять порядок содержимого в PDF-документе?
 
-A: Rearranging contents in a PDF document can be useful for various purposes, such as updating text, reformatting layout, or making corrections. This technique allows you to dynamically modify the content of a PDF while preserving its structure and appearance.
+О: Изменение содержимого PDF-документа может быть полезно для различных целей, например для обновления текста, переформатирования макета или внесения исправлений. Этот метод позволяет динамически изменять содержимое PDF-файла, сохраняя его структуру и внешний вид.
 
-#### Q: How do I set up the document directory?
+#### Вопрос: Как настроить каталог документов?
 
-A: To set up the document directory:
+О: Чтобы настроить каталог документов:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your PDF files are located.
+1.  Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir` переменная с путем к каталогу, в котором находятся ваши PDF-файлы.
 
-#### Q: How do I perform text replacement in a PDF document?
+#### Вопрос: Как выполнить замену текста в PDF-документе?
 
-A: The tutorial guides you through the process of searching for specific text fragments in a PDF using the `TextFragmentAbsorber` class. It demonstrates how to customize the appearance of the text fragments and replace their content.
+ О: В этом руководстве рассказывается о процессе поиска определенных фрагментов текста в PDF-файле с помощью`TextFragmentAbsorber`сорт. Демонстрируется, как настроить внешний вид текстовых фрагментов и заменить их содержимое.
 
-#### Q: Can I customize the font, size, and color of the replaced text?
+#### Вопрос: Могу ли я настроить шрифт, размер и цвет заменяемого текста?
 
-A: Yes, you can customize the font, size, and color of the replaced text by modifying the `TextState` properties of the `TextFragment` object. The tutorial provides an example of how to set the font, font size, and foreground color of the text.
+ О: Да, вы можете настроить шрифт, размер и цвет заменяемого текста, изменив`TextState` свойства`TextFragment` объект. В учебнике приведен пример установки шрифта, размера шрифта и цвета переднего плана текста.
 
-#### Q: How do I save the modified PDF document?
+#### Вопрос: Как сохранить измененный PDF-документ?
 
-A: After performing text replacement and customizing the text fragments, you can save the modified PDF document using the `Save` method of the `Document` class. Provide the desired output file path as an argument to the `Save` method.
+ О: После выполнения замены текста и настройки фрагментов текста вы можете сохранить измененный PDF-документ с помощью`Save` метод`Document` сорт. Укажите желаемый путь к выходному файлу в качестве аргумента`Save` метод.
 
-#### Q: What is the expected output of this tutorial?
+#### Вопрос: Каков ожидаемый результат этого руководства?
 
-A: By following the tutorial and executing the provided C# code, you will generate a modified PDF document where specific text fragments have been replaced and customized according to your specifications.
+О: Следуя инструкциям и выполнив предоставленный код C#, вы создадите модифицированный PDF-документ, в котором определенные фрагменты текста будут заменены и настроены в соответствии с вашими требованиями.
 
-#### Q: Can I use different regular expressions for text search?
+#### Вопрос: Могу ли я использовать разные регулярные выражения для текстового поиска?
 
-A: Yes, you can use different regular expressions to search for specific text fragments in the PDF document. The example provided in the tutorial demonstrates how to create a `TextFragmentAbsorber` object with a specific regular expression to search for and replace text.
+ О: Да, вы можете использовать разные регулярные выражения для поиска определенных фрагментов текста в PDF-документе. Пример, представленный в руководстве, демонстрирует, как создать`TextFragmentAbsorber`объект с определенным регулярным выражением для поиска и замены текста.
 
-#### Q: Is a valid Aspose License required for this tutorial?
+#### Вопрос: Требуется ли для работы с этим руководством действующая лицензия Aspose?
 
-A: Yes, a valid Aspose License is required for this tutorial to work correctly. You can purchase a full license or obtain a 30-day temporary license from the Aspose website.
+О: Да, для корректной работы этого руководства требуется действующая лицензия Aspose. Вы можете приобрести полную лицензию или получить 30-дневную временную лицензию на веб-сайте Aspose.

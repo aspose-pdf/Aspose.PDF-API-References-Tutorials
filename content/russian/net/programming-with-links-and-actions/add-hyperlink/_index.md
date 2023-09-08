@@ -1,17 +1,17 @@
 ---
-title: Add Hyperlink In PDF File
-linktitle: Add Hyperlink In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add interactive hyperlinks in PDF file with Aspose.PDF for .NET.
+title: Добавить гиперссылку в PDF-файл
+linktitle: Добавить гиперссылку в PDF-файл
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко добавляйте интерактивные гиперссылки в PDF-файл с помощью Aspose.PDF для .NET.
 type: docs
 weight: 10
 url: /ru/net/programming-with-links-and-actions/add-hyperlink/
 ---
-Adding hyperlinks in PDF file allows you to create interactive hyperlinks to other pages, websites, or destinations in the document. With Aspose.PDF for .NET, you can easily add hyperlinks by following the following source code:
+Добавление гиперссылок в файл PDF позволяет создавать интерактивные гиперссылки на другие страницы, веб-сайты или места назначения в документе. С помощью Aspose.PDF для .NET вы можете легко добавлять гиперссылки, следуя следующему исходному коду:
 
-## Step 1: Import required libraries
+## Шаг 1. Импортируйте необходимые библиотеки.
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Прежде чем начать, вам необходимо импортировать необходимые библиотеки для вашего проекта C#. Вот необходимая директива импорта:
 
 ```csharp
 using Aspose.Pdf;
@@ -19,25 +19,25 @@ using Aspose.Pdf.Annotations;
 using Aspose.Pdf.Text;
 ```
 
-## Step 2: Set path to documents folder
+## Шаг 2. Установите путь к папке с документами.
 
-In this step, you need to specify the path to the folder containing the PDF file you want to add a hyperlink to. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+На этом этапе вам необходимо указать путь к папке, содержащей PDF-файл, к которому вы хотите добавить гиперссылку. Заменять`"YOUR DOCUMENT DIRECTORY"`в следующем коде с фактическим путем к папке ваших документов:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Шаг 3. Откройте PDF-документ.
 
-Now we will open the PDF document to which we want to add a hyperlink using the following code:
+Теперь мы откроем PDF-документ, к которому хотим добавить гиперссылку, используя следующий код:
 
 ```csharp
 Document document = new Document(dataDir + "AddHyperlink.pdf");
 ```
 
-## Step 4: Create a link
+## Шаг 4. Создайте ссылку
 
-In this step, we will create a hyperlink using the `LinkAnnotation` annotation. We will specify the contact details and area of the link, the type of link and the content of the link. Here is the corresponding code:
+ На этом этапе мы создадим гиперссылку, используя`LinkAnnotation` аннотация. Мы укажем контактные данные и область ссылки, тип ссылки и содержание ссылки. Вот соответствующий код:
 
 ```csharp
 Page page = document.Pages[1];
@@ -49,9 +49,9 @@ link. Action = new GoToURIAction("www.aspose.com");
 page.Annotations.Add(link);
 ```
 
-## Step 5: Add additional text
+## Шаг 5. Добавьте дополнительный текст.
 
-In addition to the hyperlink, we can also add additional text using the `FreeTextAnnotation` annotation. We will specify coordinates, text appearance and text content. Here is the corresponding code:
+ Помимо гиперссылки мы также можем добавить дополнительный текст, используя`FreeTextAnnotation` аннотация. Укажем координаты, внешний вид текста и текстовое содержание. Вот соответствующий код:
 
 ```csharp
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(document.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), new DefaultAppearance(Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman"), 10, System .Drawing.Color.Blue));
@@ -60,83 +60,83 @@ textAnnotation. Border = border;
 document.Pages[1].Annotations.Add(textAnnotation);
 ```
 
-## Step 6: Save the updated file
+## Шаг 6. Сохраните обновленный файл.
 
-Now let's save the updated PDF file using the `Save` method of the `document` object. Here is the corresponding code:
+ Теперь давайте сохраним обновленный PDF-файл, используя`Save` метод`document` объект. Вот соответствующий код:
 
 ```csharp
 dataDir = dataDir + "AddHyperlink_out.pdf";
 document. Save(dataDir);
 ```
 
-### Sample source code for Add Hyperlink using Aspose.PDF for .NET 
+### Пример исходного кода для добавления гиперссылки с помощью Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document document = new Document(dataDir + "AddHyperlink.pdf");
-// Create link
+// Создать ссылку
 Page page = document.Pages[1];
-// Create Link annotation object
+// Создать объект аннотации ссылки
 LinkAnnotation link = new LinkAnnotation(page, new Aspose.Pdf.Rectangle(100, 100, 300, 300));
-// Create border object for LinkAnnotation
+// Создайте объект границы для LinkAnnotation.
 Border border = new Border(link);
-// Set the border width value as 0
+// Установите значение ширины границы как 0.
 border.Width = 0;
-// Set the border for LinkAnnotation
+// Установите границу для LinkAnnotation
 link.Border = border;
-// Specify the link type as remote URI
+// Укажите тип ссылки как удаленный URI.
 link.Action = new GoToURIAction("www.aspose.com");
-// Add link annotation to annotations collection of first page of PDF file
+//Добавить аннотацию ссылки в коллекцию аннотаций первой страницы PDF-файла.
 page.Annotations.Add(link);
-// Create Free Text annotation
+// Создать аннотацию произвольного текста
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(document.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), new DefaultAppearance(Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman"), 10, System.Drawing.Color.Blue));
-// String to be added as Free text
+// Строка, которую нужно добавить как произвольный текст
 textAnnotation.Contents = "Link to Aspose website";
-// Set the border for Free Text Annotation
+// Установите границу для произвольной текстовой аннотации
 textAnnotation.Border = border;
-// Add FreeText annotation to annotations collection of first page of Document
+// Добавить аннотацию FreeText в коллекцию аннотаций первой страницы документа.
 document.Pages[1].Annotations.Add(textAnnotation);
 dataDir = dataDir + "AddHyperlink_out.pdf";
-// Save updated document
+// Сохранить обновленный документ
 document.Save(dataDir);
 Console.WriteLine("\nHyperlink added successfully.\nFile saved at " + dataDir);            
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You now have a step-by-step guide to adding hyperlinks with Aspose.PDF for .NET. You can use this code to create interactive links in your PDF documents.
+Поздравляем! Теперь у вас есть пошаговое руководство по добавлению гиперссылок с помощью Aspose.PDF для .NET. Вы можете использовать этот код для создания интерактивных ссылок в ваших PDF-документах.
 
-### FAQ's for add hyperlink in PDF file
+### Часто задаваемые вопросы по добавлению гиперссылки в файл PDF
 
-#### Q: Why should I consider adding hyperlinks to my PDF files?
+#### Вопрос: Почему мне следует рассмотреть возможность добавления гиперссылок в мои PDF-файлы?
 
-A: Adding hyperlinks to your PDF files enhances user experience by allowing readers to easily navigate to other pages, websites, or destinations within the document. It provides a seamless way to access additional resources or related information.
+О: Добавление гиперссылок в PDF-файлы повышает удобство работы пользователей, позволяя читателям легко переходить на другие страницы, веб-сайты или места назначения в документе. Он обеспечивает простой способ доступа к дополнительным ресурсам или соответствующей информации.
 
-#### Q: Is Aspose.PDF for .NET suitable for beginners?
+#### Вопрос: Подходит ли Aspose.PDF для .NET новичкам?
 
-A: Yes, Aspose.PDF for .NET is beginner-friendly. The step-by-step tutorial provided in this guide simplifies the process of adding hyperlinks to PDF files, making it accessible to developers of varying skill levels.
+О: Да, Aspose.PDF для .NET удобен для новичков. Пошаговое руководство, представленное в этом руководстве, упрощает процесс добавления гиперссылок в файлы PDF, делая его доступным для разработчиков с разным уровнем квалификации.
 
-#### Q: Can I customize the appearance of the hyperlinks?
+#### Вопрос: Могу ли я настроить внешний вид гиперссылок?
 
-A: Absolutely! Aspose.PDF for .NET offers customization options for hyperlink appearance, including text color, style, and formatting. This allows you to match the hyperlinks to the overall design of your document.
+А: Абсолютно! Aspose.PDF для .NET предлагает параметры настройки внешнего вида гиперссылок, включая цвет, стиль и форматирование текста. Это позволяет вам согласовать гиперссылки с общим дизайном вашего документа.
 
-#### Q: Are hyperlinks supported in all types of PDF documents?
+#### Вопрос: Поддерживаются ли гиперссылки во всех типах PDF-документов?
 
-A: Yes, hyperlinks can be added to various types of PDF documents, including text-based documents, images, and multimedia-rich files. Aspose.PDF for .NET ensures that the hyperlinks are functional across different PDF formats.
+О: Да, гиперссылки можно добавлять к различным типам PDF-документов, включая текстовые документы, изображения и мультимедийные файлы. Aspose.PDF для .NET гарантирует работоспособность гиперссылок в различных форматах PDF.
 
-#### Q: What other functionalities does Aspose.PDF for .NET offer?
+#### Вопрос: Какие еще функции предлагает Aspose.PDF для .NET?
 
-A: Aspose.PDF for .NET is a robust library that provides a wide range of features, including PDF generation, manipulation, conversion, and extraction. It supports working with text, images, annotations, and more, making it a versatile tool for PDF-related tasks.
+О: Aspose.PDF для .NET — это надежная библиотека, предоставляющая широкий спектр функций, включая создание, обработку, преобразование и извлечение PDF-файлов. Он поддерживает работу с текстом, изображениями, аннотациями и многим другим, что делает его универсальным инструментом для задач, связанных с PDF.
 
-#### Q: Can hyperlinks be added to specific sections within the document?
+#### Вопрос: Можно ли добавлять гиперссылки в определенные разделы документа?
 
-A: Yes, using the `LinkAnnotation` annotation, you can create hyperlinks that direct users to specific sections within the PDF document. This feature is particularly useful for creating interactive table of contents or reference links.
+ О: Да, используя`LinkAnnotation` аннотации, вы можете создавать гиперссылки, которые направляют пользователей к определенным разделам PDF-документа. Эта функция особенно полезна для создания интерактивного оглавления или справочных ссылок.
 
-#### Q: Are there any limitations to adding hyperlinks in PDF files?
+#### Вопрос: Существуют ли какие-либо ограничения на добавление гиперссылок в PDF-файлы?
 
-A: While Aspose.PDF for .NET offers comprehensive hyperlink functionality, it's important to ensure that the linked content remains accessible and up-to-date. Hyperlinks to external websites should be regularly verified to avoid broken links.
+О: Хотя Aspose.PDF для .NET предлагает комплексную функциональность гиперссылок, важно гарантировать, что связанный контент остается доступным и актуальным. Гиперссылки на внешние веб-сайты следует регулярно проверять, чтобы избежать неработающих ссылок.
 
-#### Q: Can I create hyperlinks to external files using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я создавать гиперссылки на внешние файлы с помощью Aspose.PDF для .NET?
 
-A: Yes, in addition to web URLs, you can create hyperlinks that lead to external files, such as other PDF documents, images, or multimedia files. Aspose.PDF for .NET provides the flexibility to link to various types of resources.
+О: Да, помимо веб-URL-адресов вы можете создавать гиперссылки, ведущие на внешние файлы, например другие PDF-документы, изображения или мультимедийные файлы. Aspose.PDF для .NET обеспечивает гибкость при создании ссылок на различные типы ресурсов.

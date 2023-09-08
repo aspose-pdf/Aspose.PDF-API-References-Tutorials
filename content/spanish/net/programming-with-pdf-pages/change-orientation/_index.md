@@ -1,36 +1,36 @@
 ---
-title: Change Orientation
-linktitle: Change Orientation
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to change page orientation of a PDF with Aspose.PDF for .NET. Easy to follow and implement in your projects.
+title: Cambiar orientación
+linktitle: Cambiar orientación
+second_title: Aspose.PDF para referencia de API .NET
+description: Guía paso a paso para cambiar la orientación de la página de un PDF con Aspose.PDF para .NET. Fácil de seguir e implementar en sus proyectos.
 type: docs
 weight: 10
 url: /es/net/programming-with-pdf-pages/change-orientation/
 ---
-In this tutorial, we'll walk you through the step-by-step process to change the page orientation of a PDF document using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to change the page orientation of your PDF documents using Aspose.PDF for .NET.
+En este tutorial, lo guiaremos paso a paso para cambiar la orientación de la página de un documento PDF usando Aspose.PDF para .NET. Explicaremos el código fuente de C# incluido y le proporcionaremos una guía completa para ayudarle a comprender e implementar esta característica en sus propios proyectos. Al final de este tutorial, sabrá cómo cambiar la orientación de la página de sus documentos PDF usando Aspose.PDF para .NET.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## Requisitos previos
+Antes de comenzar, asegúrese de tener lo siguiente:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- Un conocimiento básico del lenguaje de programación C#.
+- Aspose.PDF para .NET instalado en su entorno de desarrollo
 
-## Step 1: Define the document directory
-First, you need to set the path to your documents directory. This is the location where your input PDF file is located and where you want to save your modified output PDF file. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
+## Paso 1: definir el directorio de documentos
+Primero, debe establecer la ruta a su directorio de documentos. Esta es la ubicación donde se encuentra su archivo PDF de entrada y donde desea guardar su archivo PDF de salida modificado. Reemplace "SU DIRECTORIO DE DOCUMENTOS" con la ruta adecuada.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the PDF document
-Then you can load the PDF document from the input file using the `Document` class of Aspose.PDF. Be sure to specify the correct path to the PDF file.
+## Paso 2: Cargue el documento PDF
+ Luego puede cargar el documento PDF desde el archivo de entrada usando el`Document` clase de Aspose.PDF. Asegúrese de especificar la ruta correcta al archivo PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Change page orientation
-Now we are going to go through each page of the document and change its orientation. For each page, we modify the dimensions of the media box (`MediaBox`) by swapping the width and height, then we adjust the coordinates of the media box to maintain the position of the page. Finally, we set the page rotation to 90 degrees.
+## Paso 3: cambiar la orientación de la página
+Ahora vamos a revisar cada página del documento y cambiar su orientación. Para cada página, modificamos las dimensiones del cuadro de medios (`MediaBox`) intercambiando el ancho y el alto, luego ajustamos las coordenadas del cuadro de medios para mantener la posición de la página. Finalmente, configuramos la rotación de la página a 90 grados.
 
 ```csharp
 foreach(Page page in doc.Pages)
@@ -46,19 +46,19 @@ page. Rotate = Rotate. on90;
 }
 ```
 
-## Step 4: Save the modified PDF document
-Finally, you can save the modified PDF document to an output file using the `Save()` method of the `Document` class. Be sure to specify the correct path and file name.
+## Paso 4: guarde el documento PDF modificado
+ Finalmente, puede guardar el documento PDF modificado en un archivo de salida usando el`Save()` método de la`Document`clase. Asegúrese de especificar la ruta y el nombre de archivo correctos.
 
 ```csharp
 dataDir = dataDir + "ChangeOrientation_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Change Orientation using Aspose.PDF for .NET 
+### Código fuente de muestra para cambiar la orientación usando Aspose.PDF para .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 foreach (Page page in doc.Pages)
@@ -67,45 +67,45 @@ foreach (Page page in doc.Pages)
 	double newHeight = r.Width;
 	double newWidth = r.Height;
 	double newLLX = r.LLX;
-	//  We must to move page upper in order to compensate changing page size
-	// (lower edge of the page is 0,0 and information is usually placed from the
-	//  Top of the page. That's why we move lover edge upper on difference between
-	//  Old and new height.
+	// Debemos mover la página hacia arriba para compensar el cambio de tamaño de página.
+	// (el borde inferior de la página es 0,0 y la información generalmente se coloca desde el
+	// Parte superior de la página. Es por eso que movemos el borde del amante hacia arriba en la diferencia entre
+	// Altura vieja y nueva.
 	double newLLY = r.LLY + (r.Height - newHeight);
 	page.MediaBox = new Aspose.Pdf.Rectangle(newLLX, newLLY, newLLX + newWidth, newLLY + newHeight);
-	// Sometimes we also need to set CropBox (if it was set in original file)
+	// A veces también necesitamos configurar CropBox (si se configuró en el archivo original)
 	page.CropBox = new Aspose.Pdf.Rectangle(newLLX, newLLY, newLLX + newWidth, newLLY + newHeight);
-	// Setting Rotation angle of page
+	// Configuración del ángulo de rotación de la página
 	page.Rotate = Rotation.on90;
 }
 dataDir = dataDir + "ChangeOrientation_out.pdf";
-// Save output file
+// Guardar archivo de salida
 doc.Save(dataDir);
 System.Console.WriteLine("\nPage orientation changed successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
-In this tutorial, we learned how to change the page orientation of a PDF document using Aspose.PDF for .NET. By following the steps outlined above, you can easily implement this functionality in your own projects. Feel free to explore the Aspose.PDF documentation further to discover other useful features for working with PDF files.
+## Conclusión
+En este tutorial, aprendimos cómo cambiar la orientación de la página de un documento PDF usando Aspose.PDF para .NET. Si sigue los pasos descritos anteriormente, podrá implementar fácilmente esta funcionalidad en sus propios proyectos. No dude en explorar más la documentación de Aspose.PDF para descubrir otras funciones útiles para trabajar con archivos PDF.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is the purpose of changing the page orientation in a PDF document?
+#### P: ¿Cuál es el propósito de cambiar la orientación de la página en un documento PDF?
 
-A: Changing the page orientation in a PDF document allows you to rotate the content of the page by 90 degrees. This can be useful in scenarios where the original content needs to be displayed or printed in a different orientation, such as switching from portrait to landscape mode or vice versa.
+R: Cambiar la orientación de la página en un documento PDF le permite rotar el contenido de la página 90 grados. Esto puede resultar útil en situaciones en las que el contenido original debe mostrarse o imprimirse en una orientación diferente, como cambiar del modo vertical al horizontal o viceversa.
 
-#### Q: Can I change the orientation of specific pages in the PDF document?
+#### P: ¿Puedo cambiar la orientación de páginas específicas en el documento PDF?
 
-A: Yes, you can change the orientation of specific pages in the PDF document. In the provided C# source code, the `foreach` loop is used to go through each page of the document and change its orientation. If you only want to change the orientation of specific pages, you can modify the loop to target those pages based on their page numbers or other criteria.
+ R: Sí, puedes cambiar la orientación de páginas específicas en el documento PDF. En el código fuente de C# proporcionado, el`foreach` El bucle se utiliza para recorrer cada página del documento y cambiar su orientación. Si solo desea cambiar la orientación de páginas específicas, puede modificar el bucle para apuntar a esas páginas según sus números de página u otros criterios.
 
-#### Q: Does changing the page orientation affect the layout of the content on the page?
+#### P: ¿Cambiar la orientación de la página afecta el diseño del contenido de la página?
 
-A: Yes, changing the page orientation will affect the layout of the content on the page. The content will be rotated by 90 degrees, and the width and height of the page will be swapped. As a result, the placement and alignment of the content on the page may change.
+R: Sí, cambiar la orientación de la página afectará el diseño del contenido de la página. El contenido se rotará 90 grados y se intercambiará el ancho y el alto de la página. Como resultado, la ubicación y alineación del contenido de la página pueden cambiar.
 
-#### Q: Can I rotate the page by an angle other than 90 degrees?
+#### P: ¿Puedo girar la página en un ángulo distinto de 90 grados?
 
-A: In the provided C# source code, the page rotation is set to 90 degrees using `page.Rotate = Rotate.on90;`. However, you can change the rotation angle to other values if needed. For example, you can use `Rotate.on180` to rotate the page by 180 degrees or `Rotate.on270` to rotate it by 270 degrees.
+ R: En el código fuente de C# proporcionado, la rotación de la página se establece en 90 grados usando`page.Rotate = Rotate.on90;` . Sin embargo, puede cambiar el ángulo de rotación a otros valores si es necesario. Por ejemplo, puedes usar`Rotate.on180` para rotar la página 180 grados o`Rotate.on270` para girarlo 270 grados.
 
-#### Q: How do I handle the page content that overflows after changing the orientation?
+#### P: ¿Cómo manejo el contenido de la página que se desborda después de cambiar la orientación?
 
-A: When changing the page orientation, the dimensions of the page may change, which can result in content overflow. To handle this, you may need to adjust the layout and formatting of the content on the page. You can use features provided by Aspose.PDF for .NET, such as resizing elements, adjusting margins, or reorganizing content, to ensure that the page content fits properly after the orientation change.
+R: Al cambiar la orientación de la página, las dimensiones de la página pueden cambiar, lo que puede provocar un desbordamiento de contenido. Para solucionar esto, es posible que deba ajustar el diseño y el formato del contenido de la página. Puede utilizar las funciones proporcionadas por Aspose.PDF para .NET, como cambiar el tamaño de los elementos, ajustar los márgenes o reorganizar el contenido, para garantizar que el contenido de la página se ajuste correctamente después del cambio de orientación.

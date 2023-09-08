@@ -1,123 +1,123 @@
 ---
-title: Disable Files Compression In PDF File
-linktitle: Disable Files Compression In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to disable file compression in PDF file with Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: Отключить сжатие файлов в PDF-файле
+linktitle: Отключить сжатие файлов в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как отключить сжатие файлов PDF с помощью Aspose.PDF для .NET. Пошаговое руководство для облегчения работы.
 type: docs
 weight: 30
 url: /ru/net/programming-with-attachments/disable-files-compression/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to disable file compression in PDF using Aspose.PDF for .NET.
+В этом руководстве мы шаг за шагом познакомим вас со следующим исходным кодом C#, чтобы отключить сжатие файлов в PDF с помощью Aspose.PDF для .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Прежде чем начать, убедитесь, что вы установили библиотеку Aspose.PDF и настроили среду разработки. Также есть базовые знания программирования на C#.
 
-### Step 1: Document Directory Setup
+### Шаг 1. Настройка каталога документов
 
-In the provided source code, you need to specify the directory where the PDF file is located that you want to disable file compression. Change the "dataDir" variable to the desired directory.
+В предоставленном исходном коде вам необходимо указать каталог, в котором находится PDF-файл, сжатие файлов которого вы хотите отключить. Измените переменную dataDir на нужный каталог.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Шаг 2. Откройте существующий PDF-документ.
 
-We open the existing PDF document using the specified path.
+Открываем существующий PDF-документ по указанному пути.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
 ```
 
-### Step 3: Setting up the new file to add as an attachment
+### Шаг 3. Настройка нового файла для добавления в качестве вложения.
 
-We configure the new file that we want to add as an attachment. In this example, we add a text file with the name "test_out.txt" and a description "Example text file".
+Мы настраиваем новый файл, который хотим добавить в качестве вложения. В этом примере мы добавляем текстовый файл с именем «test_out.txt» и описанием «Пример текстового файла».
 
 ```csharp
 FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
 ```
 
-### Step 4: Disable File Compression
+### Шаг 4. Отключите сжатие файлов
 
-We disable file compression by setting the Encoding property of the FileSpecification object to FileEncoding.None.
+Мы отключаем сжатие файлов, устанавливая для свойства Encoding объекта FileSpecification значение FileEncoding.None.
 
 ```csharp
 fileSpecification.Encoding = FileEncoding.None;
 ```
 
-### Step 5: Adding the attachment to the document's attachments collection
+### Шаг 5. Добавление вложения в коллекцию вложений документа.
 
-We add the attachment to the document's attachments collection.
+Мы добавляем вложение в коллекцию вложений документа.
 
 ```csharp
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 ```
 
-### Step 6: Save the new output file
+### Шаг 6. Сохраните новый выходной файл.
 
-Finally, we save the resulting new PDF file with the name "DisableFilesCompression_out.pdf" in the specified directory.
+Наконец, мы сохраняем полученный новый PDF-файл с именем «DisableFilesCompression_out.pdf» в указанном каталоге.
 
 ```csharp
 pdfDocument.Save(dataDir + "DisableFilesCompression_out.pdf");
 ```
 
 
-### Sample source code for Disable Files Compression using Aspose.PDF for .NET 
+### Пример исходного кода для отключения сжатия файлов с использованием Aspose.PDF для .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Setup new file to be added as attachment
+// Настройте новый файл для добавления в качестве вложения
 FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-// Specify Encoding proparty setting it to FileEncoding.None
+// Укажите способ кодирования, установив для него значение FileEncoding.None.
 fileSpecification.Encoding = FileEncoding.None;
-// Add attachment to document's attachment collection
+//Добавить вложение в коллекцию вложений документа
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 dataDir = dataDir + "DisableFilesCompression_out.pdf";
-// Save new output
+// Сохранить новый вывод
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we explained how to disable file compression in a PDF using Aspose.PDF for .NET. You can now use this knowledge to maintain the integrity of attached files without compression.
+В этом уроке мы объяснили, как отключить сжатие файлов в PDF с помощью Aspose.PDF для .NET. Теперь вы можете использовать эти знания для сохранения целостности прикрепленных файлов без сжатия.
 
-## FAQ's for disable files compression in PDF file
+## Часто задаваемые вопросы по отключению сжатия файлов в PDF-файле
 
-#### Q: Why would I want to disable file compression in a PDF document?
+#### Вопрос: Зачем мне отключать сжатие файлов в PDF-документе?
 
-A: Disabling file compression ensures that attached files within a PDF document remain uncompressed, preserving their original quality and content.
+О: Отключение сжатия файлов гарантирует, что прикрепленные файлы в PDF-документе останутся несжатыми, сохраняя их исходное качество и содержимое.
 
-#### Q: How does disabling file compression benefit PDF attachments?
+#### Вопрос: Как отключение сжатия файлов дает преимущества вложениям PDF?
 
-A: Disabling compression prevents any loss of data or quality that can occur during the compression process, ensuring that attached files are presented as-is.
+О: Отключение сжатия предотвращает любую потерю данных или качества, которая может произойти в процессе сжатия, гарантируя, что прикрепленные файлы будут представлены как есть.
 
-#### Q: Can I selectively disable compression for specific attachments using this tutorial?
+#### Вопрос: Могу ли я выборочно отключить сжатие для определенных вложений, используя это руководство?
 
-A: Yes, this tutorial guides you through disabling file compression for individual attachments in a PDF document, providing fine-grained control.
+О: Да, это руководство поможет вам отключить сжатие файлов для отдельных вложений в PDF-документе, обеспечивая детальный контроль.
 
-#### Q: What types of attachments can I disable compression for?
+#### Вопрос: Для каких типов вложений можно отключить сжатие?
 
-A: You can disable compression for any type of attachment, such as images, documents, spreadsheets, and more, ensuring their integrity is maintained.
+О: Вы можете отключить сжатие для любого типа вложений, например изображений, документов, электронных таблиц и т. д., гарантируя сохранение их целостности.
 
-#### Q: Does disabling compression affect the overall file size of the PDF document?
+#### Вопрос: Влияет ли отключение сжатия на общий размер PDF-документа?
 
-A: Disabling compression for attachments might lead to a slight increase in the overall file size of the PDF document, as uncompressed files take up more space.
+О: Отключение сжатия вложений может привести к небольшому увеличению общего размера файла PDF-документа, поскольку несжатые файлы занимают больше места.
 
-#### Q: How does Aspose.PDF for .NET facilitate the process of disabling file compression?
+#### Вопрос: Как Aspose.PDF for .NET упрощает процесс отключения сжатия файлов?
 
-A: Aspose.PDF for .NET provides an easy-to-use API that allows you to disable file compression for attachments, as demonstrated in the provided source code.
+О: Aspose.PDF для .NET предоставляет простой в использовании API, который позволяет отключить сжатие файлов для вложений, как показано в предоставленном исходном коде.
 
-#### Q: Can I re-enable compression for attachments later if needed?
+#### Вопрос: Могу ли я позже снова включить сжатие вложений, если это необходимо?
 
-A: Yes, you can modify the attachment's settings to enable compression again if necessary.
+О: Да, вы можете изменить настройки вложения, чтобы при необходимости снова включить сжатие.
 
-#### Q: What happens if I open the PDF on a device or software that supports compression?
+#### Вопрос: Что произойдет, если я открою PDF-файл на устройстве или в программе, поддерживающей сжатие?
 
-A: If you open the PDF on a device or software that supports compression, the attachment might be displayed uncompressed, potentially affecting file size and rendering performance.
+О: Если вы открываете PDF-файл на устройстве или в программном обеспечении, поддерживающем сжатие, вложение может отображаться в несжатом виде, что потенциально влияет на размер файла и производительность рендеринга.
 
-#### Q: Are there specific scenarios where disabling compression is recommended?
+#### Вопрос: Существуют ли конкретные сценарии, в которых рекомендуется отключить сжатие?
 
-A: Disabling compression is recommended for attachments where maintaining the original quality and data integrity is a priority, such as high-resolution images or sensitive documents.
+О: Отключение сжатия рекомендуется для вложений, для которых сохранение исходного качества и целостности данных является приоритетом, например изображений с высоким разрешением или конфиденциальных документов.

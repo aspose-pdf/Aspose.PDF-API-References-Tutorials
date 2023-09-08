@@ -1,77 +1,77 @@
 ---
-title: Margins Or Padding
-linktitle: Margins Or Padding
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set margins or padding in a table using Aspose.PDF for .NET.
+title: Margini o imbottitura
+linktitle: Margini o imbottitura
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come impostare i margini o il riempimento in una tabella utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 140
 url: /it/net/programming-with-tables/margins-or-padding/
 ---
-In this tutorial, we will guide you through the step-by-step process of using Aspose.PDF for .NET to set margins or padding in a table. We will provide explanations and code snippets to help you understand and implement this functionality in your C# source code.
+In questo tutorial, ti guideremo attraverso il processo passo passo dell'utilizzo di Aspose.PDF per .NET per impostare i margini o il riempimento in una tabella. Forniremo spiegazioni e frammenti di codice per aiutarti a comprendere e implementare questa funzionalità nel tuo codice sorgente C#.
 
-## Step 1: Setting up the Document and Page
-To begin, you need to set up the document and page using the following code:
+## Passaggio 1: impostazione del documento e della pagina
+Per iniziare, devi impostare il documento e la pagina utilizzando il seguente codice:
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate the Document object by calling its empty constructor
+// Crea un'istanza dell'oggetto Document chiamando il suo costruttore vuoto
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 2: Creating a Table
-Next, we will create a table object using the Aspose.Pdf.Table class:
+## Passaggio 2: creazione di una tabella
+Successivamente, creeremo un oggetto tabella utilizzando la classe Aspose.Pdf.Table:
 
 ```csharp
-// Instantiate a table object
+// Istanziare un oggetto tabella
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-// Add the table to the paragraphs collection of the desired section
+// Aggiungi la tabella alla raccolta di paragrafi della sezione desiderata
 page.Paragraphs.Add(tab1);
 ```
 
-## Step 3: Setting Column Widths and Default Cell Border
-To set the column widths and default cell border of the table, use the following code:
+## Passaggio 3: impostazione della larghezza delle colonne e del bordo della cella predefinito
+Per impostare la larghezza delle colonne e il bordo predefinito della cella della tabella, utilizzare il seguente codice:
 
 ```csharp
-// Set the column widths of the table
+// Imposta la larghezza delle colonne della tabella
 tab1. ColumnWidths = "50 50 50";
-// Set the default cell border using the BorderInfo object
+// Imposta il bordo predefinito della cella utilizzando l'oggetto BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 ```
 
-## Step 4: Setting Table Border and Cell Padding
-To set the table border and cell padding, create a MarginInfo object and set its properties:
+## Passaggio 4: impostazione del bordo della tabella e del riempimento della cella
+Per impostare il bordo della tabella e il riempimento delle celle, crea un oggetto MarginInfo e imposta le sue proprietà:
 
 ```csharp
-// Create a MarginInfo object and set its left, bottom, right, and top margins
+// Crea un oggetto MarginInfo e impostane i margini sinistro, inferiore, destro e superiore
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin. Top = 5f;
 margin. Left = 5f;
 margin. Right = 5f;
 margin. Bottom = 5f;
 
-// Set the default cell padding to the MarginInfo object
+// Imposta il riempimento cella predefinito sull'oggetto MarginInfo
 tab1. DefaultCellPadding = margin;
 
-// Set the table border using another customized BorderInfo object
+// Imposta il bordo della tabella utilizzando un altro oggetto BorderInfo personalizzato
 tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
 ```
 
-## Step 5: Adding Rows and Cells
-Now, let's add rows and cells to the table. We will create a new row and add cells to it:
+## Passaggio 5: aggiunta di righe e celle
+Ora aggiungiamo righe e celle alla tabella. Creeremo una nuova riga e aggiungeremo celle ad essa:
 
 ```csharp
-// Create rows in the table and then cells in the rows
+// Crea righe nella tabella e poi celle nelle righe
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
 row1.Cells.Add();
 ```
 
-## Step 6: Adding Text to Cells
-To add text to a cell, create a TextFragment object and add it to the desired cell:
+## Passaggio 6: aggiunta di testo alle celle
+Per aggiungere testo a una cella, crea un oggetto TextFragment e aggiungilo alla cella desiderata:
 
 ```csharp
 TextFragment mytext = new TextFragment("col3 with large text string");
@@ -79,86 +79,86 @@ row1.Cells[2].Paragraphs.Add(mytext);
 row1.Cells[2].IsWordWrapped = false;
 ```
 
-## Step 7: Saving the PDF
-To save the PDF document, use the following code:
+## Passaggio 7: salvataggio del PDF
+Per salvare il documento PDF, utilizzare il seguente codice:
 
 ```csharp
 dataDir = dataDir + "MarginsOrPadding_out.pdf";
-// Save the PDF
+// Salva il PDF
 doc.Save(dataDir);
 
 Console.WriteLine("\nCell and table border width setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Example source code for Margins Or Padding using Aspose.PDF for .NET
+### Codice sorgente di esempio per margini o imbottitura utilizzando Aspose.PDF per .NET
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instntiate the Document object by calling its empty constructor
+// Istanziare l'oggetto Document chiamando il suo costruttore vuoto
 Document doc = new Document();
 Page page = doc.Pages.Add();
-// Instantiate a table object
+// Istanziare un oggetto tabella
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-// Add the table in paragraphs collection of the desired section
+// Aggiungi la tabella nella raccolta paragrafi della sezione desiderata
 page.Paragraphs.Add(tab1);
-// Set with column widths of the table
+// Impostato con la larghezza delle colonne della tabella
 tab1.ColumnWidths = "50 50 50";
-// Set default cell border using BorderInfo object
+// Imposta il bordo predefinito della cella utilizzando l'oggetto BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-// Set table border using another customized BorderInfo object
+// Imposta il bordo della tabella utilizzando un altro oggetto BorderInfo personalizzato
 tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-// Create MarginInfo object and set its left, bottom, right and top margins
+// Crea un oggetto MarginInfo e imposta i margini sinistro, inferiore, destro e superiore
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 5f;
 margin.Left = 5f;
 margin.Right = 5f;
 margin.Bottom = 5f;
-// Set the default cell padding to the MarginInfo object
+// Imposta il riempimento cella predefinito sull'oggetto MarginInfo
 tab1.DefaultCellPadding = margin;
-// Create rows in the table and then cells in the rows
+// Crea righe nella tabella e poi celle nelle righe
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
 row1.Cells.Add();
 TextFragment mytext = new TextFragment("col3 with large text string");
-// Row1.Cells.Add("col3 with large text string to be placed inside cell");
+// Row1.Cells.Add("col3 con stringa di testo di grandi dimensioni da inserire all'interno della cella");
 row1.Cells[2].Paragraphs.Add(mytext);
 row1.Cells[2].IsWordWrapped = false;
-// Row1.Cells[2].Paragraphs[0].FixedWidth= 80;
+// Riga1.Cells[2].Paragrafi[0].FixedWidth= 80;
 Aspose.Pdf.Row row2 = tab1.Rows.Add();
 row2.Cells.Add("item1");
 row2.Cells.Add("item2");
 row2.Cells.Add("item3");
 dataDir = dataDir + "MarginsOrPadding_out.pdf";
-// Save the Pdf
+// Salva il PDF
 doc.Save(dataDir);
 
 Console.WriteLine("\nCell and table border width setup successfully.\nFile saved at " + dataDir); 
 ```
 
-## Conclusion
-Congratulations! You have successfully learned how to set margins or padding in a table using Aspose.PDF for .NET. This knowledge will help you enhance your document formatting capabilities and make your tables visually appealing.
+## Conclusione
+Congratulazioni! Hai imparato con successo come impostare i margini o il riempimento in una tabella utilizzando Aspose.PDF per .NET. Questa conoscenza ti aiuterà a migliorare le tue capacità di formattazione dei documenti e a rendere le tue tabelle visivamente accattivanti.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: Can I set different margins or padding for individual cells in a table?
+#### D: Posso impostare margini o spaziatura interna diversi per le singole celle di una tabella?
 
-A: Yes, you can set different margins or padding for individual cells in a table using Aspose.PDF for .NET. In the provided example, we set the default cell padding for the entire table using the `DefaultCellPadding` property. To set different padding for specific cells, you can access the `MarginInfo` of each cell individually and modify their margins.
+R: Sì, puoi impostare margini o riempimento diversi per le singole celle in una tabella utilizzando Aspose.PDF per .NET. Nell'esempio fornito, impostiamo il riempimento predefinito delle celle per l'intera tabella utilizzando il metodo`DefaultCellPadding` proprietà. Per impostare un riempimento diverso per celle specifiche, puoi accedere a`MarginInfo` di ogni cella individualmente e modificarne i margini.
 
-#### Q: How can I change the border color or style of the table?
+#### D: Come posso cambiare il colore o lo stile del bordo della tabella?
 
-A: To change the border color or style of the table, you can modify the `Color` and `Width` properties of the `BorderInfo` object. In the given example, we set the border color to black and a width of 1F (one point) using `tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);`. You can adjust the color and width as per your requirements.
+ R: Per cambiare il colore o lo stile del bordo della tabella, puoi modificare il file`Color` E`Width` proprietà del`BorderInfo` oggetto. Nell'esempio fornito, impostiamo il colore del bordo su nero e una larghezza di 1F (un punto) utilizzando`tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);`. Puoi regolare il colore e la larghezza in base alle tue esigenze.
 
-#### Q: Is it possible to add headers or footers to the table?
+#### D: È possibile aggiungere intestazioni o piè di pagina alla tabella?
 
-A: Yes, you can add headers or footers to the table using Aspose.PDF for .NET. Headers and footers are typically separate rows that contain additional information such as column labels, table titles, or summary data. You can create additional rows, style them differently, and add them above or below the table content.
+R: Sì, puoi aggiungere intestazioni o piè di pagina alla tabella utilizzando Aspose.PDF per .NET. Intestazioni e piè di pagina sono in genere righe separate che contengono informazioni aggiuntive come etichette di colonna, titoli di tabella o dati di riepilogo. Puoi creare righe aggiuntive, darle uno stile diverso e aggiungerle sopra o sotto il contenuto della tabella.
 
-#### Q: How do I adjust the text alignment within a table cell?
+#### D: Come posso regolare l'allineamento del testo all'interno di una cella di tabella?
 
-A: To adjust the text alignment within a table cell, you can use the `HorizontalAlignment` and `VerticalAlignment` properties of the `TextFragment` object. For example, to center-align the text horizontally, you can set `mytext.HorizontalAlignment = HorizontalAlignment.Center;`. Similarly, you can set `mytext.VerticalAlignment` to control the vertical alignment.
+ R: Per regolare l'allineamento del testo all'interno di una cella di tabella, puoi utilizzare`HorizontalAlignment` E`VerticalAlignment` proprietà del`TextFragment` oggetto. Ad esempio, per centrare il testo orizzontalmente, puoi impostare`mytext.HorizontalAlignment = HorizontalAlignment.Center;` . Allo stesso modo, puoi impostare`mytext.VerticalAlignment` per controllare l'allineamento verticale.
 
-#### Q: Can I add images to the table cells instead of text?
+#### D: Posso aggiungere immagini alle celle della tabella invece del testo?
 
-A: Yes, you can add images to the table cells using Aspose.PDF for .NET. Instead of creating a `TextFragment` object, you can create an `Image` object, load the image file, and add it to the desired cell using the `cell.Paragraphs.Add(image);` method. This allows you to insert images into the table alongside text content.
+ R: Sì, puoi aggiungere immagini alle celle della tabella utilizzando Aspose.PDF per .NET. Invece di creare a`TextFragment` oggetto, puoi creare un file`Image` oggetto, caricare il file immagine e aggiungerlo alla cella desiderata utilizzando il comando`cell.Paragraphs.Add(image);` metodo. Ciò consente di inserire immagini nella tabella insieme al contenuto testuale.

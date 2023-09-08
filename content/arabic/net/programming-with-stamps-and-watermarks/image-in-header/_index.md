@@ -1,141 +1,141 @@
 ---
-title: Image In Header
-linktitle: Image In Header
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add an image in the header section of a PDF document with Aspose.PDF for .NET.
+title: الصورة في الرأس
+linktitle: الصورة في الرأس
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة صورة في قسم الرأس لمستند PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 140
 url: /ar/net/programming-with-stamps-and-watermarks/image-in-header/
 ---
-In this tutorial, we will guide you step by step on how to add an image in the header section of a PDF document using Aspose.PDF for .NET. We will use the provided C# source code to open an existing PDF document, create an image buffer, set its properties, and add it to all pages of the PDF document.
+في هذا البرنامج التعليمي، سنرشدك خطوة بخطوة حول كيفية إضافة صورة في قسم الرأس لمستند PDF باستخدام Aspose.PDF لـ .NET. سوف نستخدم كود مصدر C# المقدم لفتح مستند PDF موجود، وإنشاء مخزن مؤقت للصورة، وتعيين خصائصه، وإضافته إلى جميع صفحات مستند PDF.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- بيئة تطوير .NET مثبتة.
+- تم تنزيل مكتبة Aspose.PDF الخاصة بـ .NET والإشارة إليها في مشروعك.
 
-## Step 2: Loading the existing PDF document
+## الخطوة 2: تحميل مستند PDF الموجود
 
-The first step is to load the existing PDF document into your project. Here's how:
+الخطوة الأولى هي تحميل مستند PDF الموجود في مشروعك. إليك الطريقة:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the existing PDF document
+// افتح مستند PDF الموجود
 Document pdfDocument = new Document(dataDir + "ImageinHeader.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+تأكد من استبدال "دليل المستندات الخاص بك" بالمسار الفعلي للدليل الذي يوجد به مستند PDF الخاص بك.
 
-## Step 3: Creating and adding the image in the header section
+## الخطوة 3: إنشاء الصورة وإضافتها في قسم الرأس
 
-Now that the PDF document is loaded, we can create an image buffer and add it to all pages of the document as a header section. Here's how:
+الآن بعد أن تم تحميل مستند PDF، يمكننا إنشاء مخزن مؤقت للصور وإضافته إلى جميع صفحات المستند كقسم رأس. إليك الطريقة:
 
 ```csharp
-// Create the frame buffer
+// إنشاء المخزن المؤقت للإطار
 ImageStamp imageStamp = new ImageStamp(dataDir + "aspose-logo.jpg");
 
-// Set image buffer properties
+// تعيين خصائص المخزن المؤقت للصورة
 imageStamp.TopMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Add image buffer to all pages
+// إضافة المخزن المؤقت للصورة إلى كافة الصفحات
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
 }
 ```
 
-The above code creates an image buffer from the "aspose-logo.jpg" file and sets its properties, such as top margin, horizontal and vertical alignment. Then the image stamp is added to all pages of the PDF document as a header section.
+يقوم التعليمة البرمجية أعلاه بإنشاء مخزن مؤقت للصورة من ملف "aspose-logo.jpg" وتعيين خصائصه، مثل الهامش العلوي والمحاذاة الأفقية والرأسية. ثم تتم إضافة ختم الصورة إلى جميع صفحات مستند PDF كقسم رأس.
 
-## Step 4: Saving the modified PDF document
+## الخطوة 4: حفظ مستند PDF المعدل
 
-Once the image is added in the header section, we can save the modified PDF document. Here's how:
+بمجرد إضافة الصورة في قسم الرأس، يمكننا حفظ مستند PDF المعدل. إليك الطريقة:
 
 ```csharp
-// Save the modified PDF document
+// احفظ مستند PDF المعدل
 pdfDocument.Save(dataDir + "ImageinHeader_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+يحفظ الكود أعلاه مستند PDF المحرر في الدليل المحدد.
 
-### Sample source code for Imagein Header using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Imagein Header باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir+ "ImageinHeader.pdf");
 
-// Create header
+// إنشاء رأس
 ImageStamp imageStamp = new ImageStamp(dataDir+ "aspose-logo.jpg");
 
-// Set properties of the stamp
+// تعيين خصائص الطوابع
 imageStamp.TopMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Add header on all pages
+// إضافة رأس على كافة الصفحات
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(imageStamp);
 }
 dataDir = dataDir + "ImageinHeader_out.pdf";
 
-// Save updated document
+// حفظ المستند المحدث
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImage in header added successfully.\nFile saved at " + dataDir);                        
 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have learned how to add an image in the header section of a PDF document using Aspose.PDF for .NET. You can now customize the headers of your PDF documents by adding images.
+تهنئة ! لقد تعلمت كيفية إضافة صورة في قسم الرأس لمستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن تخصيص رؤوس مستندات PDF الخاصة بك عن طريق إضافة الصور.
 
-### FAQ's for image in header
+### الأسئلة الشائعة للصورة في الرأس
 
-#### Q: What is the purpose of adding an image in the header section of a PDF document?
+#### س: ما هو الغرض من إضافة صورة في قسم الرأس لمستند PDF؟
 
-A: Adding an image in the header section of a PDF document allows you to include visual elements, such as a logo or branding, at the top of every page. This can enhance the overall look and feel of the PDF content.
+ج: تتيح لك إضافة صورة في قسم الرأس لمستند PDF تضمين عناصر مرئية، مثل الشعار أو العلامة التجارية، في أعلى كل صفحة. يمكن أن يؤدي ذلك إلى تحسين الشكل والمظهر العام لمحتوى PDF.
 
-#### Q: How does the provided C# source code achieve adding an image to the header section of a PDF document?
+#### س: كيف يمكن للكود المصدري لـ C# المقدم إضافة صورة إلى قسم الرأس في مستند PDF؟
 
-A: The provided code demonstrates how to load an existing PDF document, create an `ImageStamp` object from an image file, set properties such as top margin and alignment, and then add the image stamp to the header of all pages.
+ ج: يوضح الكود المقدم كيفية تحميل مستند PDF موجود، وإنشاء ملف`ImageStamp` كائن من ملف صورة، وقم بتعيين خصائص مثل الهامش العلوي والمحاذاة، ثم قم بإضافة ختم الصورة إلى رأس كل الصفحات.
 
-#### Q: Can I adjust the position and alignment of the image within the header section?
+#### س: هل يمكنني ضبط موضع الصورة ومحاذاتها داخل قسم الرأس؟
 
-A: Yes, you can adjust the position and alignment of the image within the header section by modifying the properties of the `ImageStamp` object. The code snippet sets properties such as `TopMargin`, `HorizontalAlignment`, and `VerticalAlignment`.
+ ج: نعم، يمكنك ضبط موضع الصورة ومحاذاتها داخل قسم الرأس عن طريق تعديل خصائص`ImageStamp` هدف. يقوم مقتطف الكود بتعيين خصائص مثل`TopMargin`, `HorizontalAlignment` ، و`VerticalAlignment`.
 
-#### Q: Is it possible to add different images to the header section on different pages of the PDF document?
+#### س: هل من الممكن إضافة صور مختلفة إلى قسم الرأس في صفحات مختلفة من مستند PDF؟
 
-A: Yes, you can add different images to the header section on different pages by creating separate `ImageStamp` objects with different image files and properties, and then adding them to specific pages.
+ ج: نعم، يمكنك إضافة صور مختلفة إلى قسم الرأس في صفحات مختلفة عن طريق إنشاء صور منفصلة`ImageStamp` كائنات ذات ملفات صور وخصائص مختلفة، ثم إضافتها إلى صفحات محددة.
 
-#### Q: How does the code ensure that the image is added to all pages of the PDF document's header section?
+#### س: كيف يضمن الكود إضافة الصورة إلى جميع صفحات قسم رأس مستند PDF؟
 
-A: The provided code uses a `foreach` loop to iterate through all pages of the PDF document and adds the same `ImageStamp` to each page's header section.
+ج: يستخدم الكود المقدم أ`foreach` حلقة للتكرار عبر جميع صفحات مستند PDF وإضافة نفس الشيء`ImageStamp`إلى قسم رأس كل صفحة.
 
-#### Q: Can I add other elements, such as text or shapes, to the header section using a similar approach?
+#### س: هل يمكنني إضافة عناصر أخرى، مثل النص أو الأشكال، إلى قسم الرأس باستخدام أسلوب مماثل؟
 
-A: Yes, you can add other elements like text or shapes to the header section using a similar approach by creating the appropriate stamp objects (e.g., `TextStamp`) and setting their properties accordingly.
+ ج: نعم، يمكنك إضافة عناصر أخرى مثل النص أو الأشكال إلى قسم الرأس باستخدام أسلوب مماثل عن طريق إنشاء كائنات الطوابع المناسبة (على سبيل المثال،`TextStamp`) وتعيين خصائصها وفقا لذلك.
 
-#### Q: How do I specify the path to the image file that I want to add to the header?
+#### س: كيف أحدد المسار إلى ملف الصورة الذي أريد إضافته إلى الرأس؟
 
-A: The path to the image file is specified when creating the `ImageStamp` object, as shown in the code. Make sure to provide the correct path to the image file.
+ ج: يتم تحديد المسار إلى ملف الصورة عند إنشاء الملف`ImageStamp` الكائن، كما هو موضح في التعليمات البرمجية. تأكد من توفير المسار الصحيح لملف الصورة.
 
-#### Q: Can I customize the image's size within the header section?
+#### س: هل يمكنني تخصيص حجم الصورة داخل قسم الرأس؟
 
-A: Yes, you can customize the image's size within the header section by adjusting the dimensions of the `ImageStamp` using properties like `Width` and `Height`.
+ ج: نعم، يمكنك تخصيص حجم الصورة داخل قسم الرأس عن طريق ضبط أبعاد الصورة`ImageStamp` باستخدام خصائص مثل`Width` و`Height`.
 
-#### Q: Is it possible to remove or replace the image in the header section after it has been added?
+#### س: هل يمكن إزالة الصورة أو استبدالها في قسم الرأس بعد إضافتها؟
 
-A: Yes, you can remove or replace the image in the header section by modifying the contents of the `ImageStamp` object or removing the stamp from specific pages.
+ ج: نعم، يمكنك إزالة الصورة أو استبدالها في قسم الرأس عن طريق تعديل محتويات الملف`ImageStamp` كائن أو إزالة الختم من صفحات محددة.
 
-#### Q: How does the code handle scenarios where the image's dimensions exceed the available space in the header?
+#### س: كيف يتعامل الكود مع السيناريوهات التي تتجاوز فيها أبعاد الصورة المساحة المتوفرة في الرأس؟
 
-A: The code sets properties such as `TopMargin`, `HorizontalAlignment`, and `VerticalAlignment` to control the positioning and alignment of the image. Ensure that these properties are adjusted to prevent any overlap or layout issues.
+ ج: يقوم الكود بتعيين خصائص مثل`TopMargin`, `HorizontalAlignment` ، و`VerticalAlignment` للتحكم في موضع الصورة ومواءمتها. تأكد من تعديل هذه الخصائص لمنع أي تداخل أو مشاكل في التخطيط.

@@ -1,114 +1,114 @@
 ---
-title: Counting Artifacts In PDF File
-linktitle: Counting Artifacts In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily count watermarks in PDF file with Aspose.PDF for .NET.
+title: عد القطع الأثرية في ملف PDF
+linktitle: عد القطع الأثرية في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية حساب العلامات المائية بسهولة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 60
 url: /ar/net/programming-with-stamps-and-watermarks/counting-artifacts/
 ---
-In this tutorial, we will take you step by step on how to count artifacts in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to count the number of "watermark" artifacts on a specific page of the PDF file.
+في هذا البرنامج التعليمي، سنأخذك خطوة بخطوة حول كيفية حساب عدد العناصر في ملف PDF باستخدام Aspose.PDF لـ .NET. سنوضح لك كيفية استخدام كود مصدر C# المقدم لحساب عدد عناصر "العلامة المائية" في صفحة معينة من ملف PDF.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- بيئة تطوير .NET مثبتة.
+- تم تنزيل مكتبة Aspose.PDF الخاصة بـ .NET والإشارة إليها في مشروعك.
 
-## Step 2: Loading the PDF document
+## الخطوة 2: تحميل مستند PDF
 
-The first step is to load the existing PDF document into your project. Here's how:
+الخطوة الأولى هي تحميل مستند PDF الموجود في مشروعك. إليك الطريقة:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "watermark.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+تأكد من استبدال "دليل المستندات الخاص بك" بالمسار الفعلي للدليل الذي يوجد به مستند PDF الخاص بك.
 
-## Step 3: Count artifacts
+## الخطوة 3: عد القطع الأثرية
 
-Now that you have loaded the PDF document, you can count the "watermark" type artifacts on a specific page of the document. Here's how:
+الآن بعد أن قمت بتحميل مستند PDF، يمكنك حساب نتائج نوع "العلامة المائية" في صفحة معينة من المستند. إليك الطريقة:
 
 ```csharp
-// Initialize the counter
+// تهيئة العداد
 int count = 0;
 
-// Loop through all first page artifacts
+// قم بالمراجعة عبر جميع عناصر الصفحة الأولى
 foreach(Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
-     // If the artifact subtype is "watermark", increment the counter
+     //إذا كان النوع الفرعي للمنتج هو "علامة مائية"، قم بزيادة العداد
      if (artifact.Subtype == Artifact.ArtifactSubtype.Watermark)
          count++;
 }
 
-// Display the number of "watermark" type artifacts
+// عرض عدد القطع الأثرية من نوع "العلامة المائية".
 Console.WriteLine("The page contains " + count + " watermarks");
 ```
 
-The above code loops through all the artifacts on the first page of the PDF document and increments the counter for each "watermark" type artifact encountered.
+يتكرر الكود أعلاه عبر جميع العناصر الموجودة في الصفحة الأولى من مستند PDF ويزيد العداد لكل قطعة أثرية من نوع "العلامة المائية" تتم مواجهتها.
 
-### Sample source code for Counting Artifacts using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لحساب عدد القطع الأثرية باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document pdfDocument = new Document( dataDir +  "watermark.pdf");
 
 int count = 0;
 foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
-	// If artifact type is watermark, increate the counter
+	// إذا كان نوع القطعة الأثرية عبارة عن علامة مائية، فقم بإنشاء العداد
 	if (artifact.Subtype == Artifact.ArtifactSubtype.Watermark) count++;
 }
 Console.WriteLine("Page contains " + count + " watermarks");
 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You learned how to count "watermark" artifacts in a PDF document using Aspose.PDF for .NET. You can now use this knowledge to perform specific analysis and processing on artifacts in your PDF documents.
+تهنئة ! لقد تعلمت كيفية حساب عدد العناصر "العلامة المائية" في مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام هذه المعرفة لإجراء تحليل ومعالجة محددة للعناصر الموجودة في مستندات PDF الخاصة بك.
 
-### FAQ's for counting artifacts in PDF file
+### الأسئلة الشائعة لحساب القطع الأثرية في ملف PDF
 
-#### Q: What are artifacts in a PDF document, and why would I need to count them?
+#### س: ما هي القطع الأثرية الموجودة في مستند PDF، ولماذا أحتاج إلى عدها؟
 
-A: Artifacts in a PDF document are elements that don't directly affect the content or appearance of the document but are included for specific purposes, such as accessibility or metadata. Counting artifacts can help you identify and analyze specific elements within a PDF, such as watermarks, annotations, or hidden content.
+ج: العناصر الموجودة في مستند PDF هي عناصر لا تؤثر بشكل مباشر على محتوى المستند أو مظهره ولكنها مضمنة لأغراض محددة، مثل إمكانية الوصول أو البيانات التعريفية. يمكن أن يساعدك عد العناصر في تحديد وتحليل عناصر معينة داخل ملف PDF، مثل العلامات المائية أو التعليقات التوضيحية أو المحتوى المخفي.
 
-#### Q: How do I determine the type of artifacts to count in a PDF document using Aspose.PDF for .NET?
+#### س: كيف يمكنني تحديد نوع العناصر التي سيتم احتسابها في مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: The provided C# source code demonstrates how to count "watermark" artifacts on a specific page of a PDF document. You can modify the code to count artifacts of different types by changing the `ArtifactSubtype` comparison to the desired subtype, such as "Annotation," "Stamp," or "Link."
+ ج: يوضح كود مصدر C# كيفية حساب آثار "العلامة المائية" على صفحة معينة من مستند PDF. يمكنك تعديل الكود لإحصاء القطع الأثرية من أنواع مختلفة عن طريق تغيير`ArtifactSubtype` المقارنة بالنوع الفرعي المطلوب، مثل "التعليق التوضيحي" أو "الختم" أو "الرابط".
 
-#### Q: Can I count artifacts on multiple pages of a PDF document?
+#### س: هل يمكنني حساب عدد القطع الأثرية في صفحات متعددة من مستند PDF؟
 
-A: Yes, you can extend the code to loop through artifacts on multiple pages of a PDF document by iterating through the `pdfDocument.Pages` collection and counting artifacts on each page.
+ ج: نعم، يمكنك توسيع التعليمات البرمجية للتكرار عبر العناصر الموجودة على صفحات متعددة من مستند PDF عن طريق التكرار عبر`pdfDocument.Pages` جمع وإحصاء القطع الأثرية في كل صفحة.
 
-#### Q: How can I use the counted artifact information for further processing?
+#### س: كيف يمكنني استخدام معلومات القطع الأثرية التي تم إحصاؤها لمزيد من المعالجة؟
 
-A: Once you have counted the desired artifacts, you can use the information for various purposes, such as generating reports, performing targeted modifications, or validating the presence of specific elements within the PDF document.
+ج: بمجرد قيامك بإحصاء العناصر المطلوبة، يمكنك استخدام المعلومات لأغراض مختلفة، مثل إنشاء التقارير أو إجراء تعديلات مستهدفة أو التحقق من وجود عناصر محددة داخل مستند PDF.
 
-#### Q: Can I customize the counting process to consider additional attributes or conditions of artifacts?
+#### س: هل يمكنني تخصيص عملية العد لمراعاة السمات أو الشروط الإضافية للمصنوعات اليدوية؟
 
-A: Absolutely, you can customize the counting process to consider additional attributes or conditions by adding more conditional checks within the loop. For example, you could count artifacts based on a combination of artifact subtype and color.
+ج: بالتأكيد، يمكنك تخصيص عملية العد لمراعاة السمات أو الشروط الإضافية عن طريق إضافة المزيد من عمليات التحقق الشرطية داخل الحلقة. على سبيل المثال، يمكنك حساب عدد القطع الأثرية استنادًا إلى مجموعة من النوع الفرعي للقطعة الأثرية ولونها.
 
-#### Q: What if my PDF document contains multiple types of artifacts, not just watermarks?
+#### س: ماذا لو كان مستند PDF الخاص بي يحتوي على أنواع متعددة من العناصر، وليس فقط علامات مائية؟
 
-A: While the tutorial focuses on counting watermark artifacts, you can adapt the code to count different types of artifacts by adjusting the `ArtifactSubtype` comparison to the desired subtype you want to count.
+ ج: بينما يركز البرنامج التعليمي على حساب عدد عناصر العلامة المائية، يمكنك تعديل الكود لحساب أنواع مختلفة من العناصر عن طريق ضبط`ArtifactSubtype` مقارنة بالنوع الفرعي المطلوب الذي تريد حسابه.
 
-#### Q: How can I apply this knowledge to automate artifact counting for a large batch of PDF documents?
+#### س: كيف يمكنني تطبيق هذه المعرفة لأتمتة عملية عد العناصر لمجموعة كبيرة من مستندات PDF؟
 
-A: You can create a script or program that iterates through a list of PDF documents and performs the artifact counting process for each document, generating reports or storing the counts for analysis.
+ج: يمكنك إنشاء برنامج نصي أو برنامج يتكرر عبر قائمة مستندات PDF وينفذ عملية عد القطع الأثرية لكل مستند، أو إنشاء تقارير أو تخزين الأعداد للتحليل.
 
-#### Q: Is it possible to count artifacts with specific attributes, such as artifacts of a certain color or size?
+#### س: هل يمكن حصر القطع الأثرية بصفات معينة مثل القطع الأثرية ذات لون أو حجم معين؟
 
-A: Yes, you can enhance the code to count artifacts with specific attributes. Within the loop, you can include additional conditional checks to consider attributes like color, size, or position of artifacts.
+ج: نعم، يمكنك تحسين الكود لإحصاء القطع الأثرية ذات سمات محددة. داخل الحلقة، يمكنك تضمين عمليات فحص شرطية إضافية للنظر في السمات مثل اللون أو الحجم أو موضع العناصر.
 
-#### Q: Can I use this approach to count other types of elements, such as annotations or text objects?
+#### س: هل يمكنني استخدام هذا الأسلوب لحساب أنواع أخرى من العناصر، مثل التعليقات التوضيحية أو الكائنات النصية؟
 
-A: Yes, you can adapt the provided source code to count other types of elements, such as annotations or text objects, by modifying the loop and conditional checks accordingly.
+ج: نعم، يمكنك تعديل الكود المصدري المقدم لحساب أنواع أخرى من العناصر، مثل التعليقات التوضيحية أو الكائنات النصية، عن طريق تعديل الحلقة والتحققات الشرطية وفقًا لذلك.

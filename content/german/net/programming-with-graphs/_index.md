@@ -1,23 +1,23 @@
 ---
-title: Programming with Graphs
-linktitle: Programming with Graphs
+title: Programmieren mit Graphen
+linktitle: Programmieren mit Graphen
 type: docs
 weight: 16
 url: /de/net/programming-with-Graphs/
-description: Find tutorials on programming with graphics in Aspose.PDF for .NET. Learn how to create and customize graphics in your PDF documents.
+description: In Aspose.PDF für .NET finden Sie Tutorials zum Programmieren mit Grafiken. Erfahren Sie, wie Sie Grafiken in Ihren PDF-Dokumenten erstellen und anpassen.
 ---
-Programming with Graphs tutorials will guide you through the different steps to create and manipulate graphics in your PDF files. You will learn how to draw lines, rectangles, custom shapes, as well as how to configure colors and fill patterns. Additionally, the tutorials will show you how to control the Z order of objects, customize the length of dashes, and use transparent colors. With this knowledge, you will be able to create visually appealing and interactive presentations in your PDF documents using Aspose.PDF for .NET.
+Tutorials zum Programmieren mit Diagrammen führen Sie durch die verschiedenen Schritte zum Erstellen und Bearbeiten von Grafiken in Ihren PDF-Dateien. Sie erfahren, wie Sie Linien, Rechtecke und benutzerdefinierte Formen zeichnen sowie Farben und Füllmuster konfigurieren. Darüber hinaus zeigen Ihnen die Tutorials, wie Sie die Z-Reihenfolge von Objekten steuern, die Länge von Strichen anpassen und transparente Farben verwenden. Mit diesem Wissen können Sie mit Aspose.PDF für .NET optisch ansprechende und interaktive Präsentationen in Ihren PDF-Dokumenten erstellen.
 
-Programming tutorials with graphics from Aspose.PDF for .NET are designed for developers of all levels, from beginners to the most experienced. Each step is explained in detail with clear code examples and step-by-step explanations. The tutorials come with extensive documentation that provides additional information and references to help you deepen your knowledge. Whether you want to create visual reports, diagrams, or illustrations in your PDF files, these tutorials will provide you with the knowledge to accomplish your graphical programming tasks with ease and efficiency.
+Programmier-Tutorials mit Grafiken von Aspose.PDF für .NET richten sich an Entwickler aller Niveaus, vom Anfänger bis zum erfahrensten. Jeder Schritt wird ausführlich mit anschaulichen Codebeispielen und Schritt-für-Schritt-Erklärungen erläutert. Zu den Tutorials gehört eine ausführliche Dokumentation, die zusätzliche Informationen und Referenzen bereitstellt, die Ihnen helfen, Ihr Wissen zu vertiefen. Unabhängig davon, ob Sie visuelle Berichte, Diagramme oder Illustrationen in Ihren PDF-Dateien erstellen möchten, vermitteln Ihnen diese Tutorials das Wissen, mit dem Sie Ihre grafischen Programmieraufgaben einfach und effizient erledigen können.
 
 ## Tutorials
-| Title | Description |
+| Titel | Beschreibung |
 | --- | --- | 
-| [Add Drawing In PDF File](./add-drawing/) | Learn how to add drawing in PDF file using Aspose.PDF for .NET. Follow this step-by-step guide to create attractive PDF documents with drawing features. |  
-| [Add Drawing With Gradient Fill](./add-drawing-with-gradient-fill/) | Learn how to add a drawing with gradient fill with Aspose.PDF for .NET. Step by step tutorial to create attractive PDF documents. |  
-| [Add Line Object In PDF File](./add-line-object/) | Learn how to add a custom line object in a PDF file using Aspose.PDF for .NET. |  
-| [Control Rectangle Z Order](./control-rectangle-z-order/) | Learn how to control the Z-order of rectangles in a PDF file using Aspose.PDF for .NET.  |  
-| [Create Filled Rectangle](./create-filled-rectangle/) | Learn how to create a filled rectangle with Aspose.PDF for .NET. Step by step guide to customize fill color. |  
-| [Create Rectangle With Alpha Color](./create-rectangle-with-alpha-color/) | Learn how to create a rectangle with transparent color using Aspose.PDF for .NET. Step-by-step guide to customize transparency. |  
-| [Dash Length](./dash-length/) | Learn how to set the length of dashes with Aspose.PDF for .NET. Step by step guide to customize dash patterns. |  
-| [Drawing Line](./drawing-line/) | Learn how to draw a line across a page using Aspose.PDF for .NET. Step-by-step guide to creating custom lines. |  
+| [Zeichnung in PDF-Datei hinzufügen](./add-drawing/) | Erfahren Sie, wie Sie mit Aspose.PDF für .NET eine Zeichnung in eine PDF-Datei einfügen. Befolgen Sie diese Schritt-für-Schritt-Anleitung, um attraktive PDF-Dokumente mit Zeichenfunktionen zu erstellen. |  
+| [Zeichnung mit Verlaufsfüllung hinzufügen](./add-drawing-with-gradient-fill/) | Erfahren Sie, wie Sie mit Aspose.PDF für .NET eine Zeichnung mit Farbverlaufsfüllung hinzufügen. Schritt-für-Schritt-Anleitung zum Erstellen attraktiver PDF-Dokumente. |  
+| [Linienobjekt in PDF-Datei hinzufügen](./add-line-object/) | Erfahren Sie, wie Sie mit Aspose.PDF für .NET ein benutzerdefiniertes Linienobjekt in eine PDF-Datei hinzufügen. |  
+| [Steuern Sie die Z-Reihenfolge des Rechtecks](./control-rectangle-z-order/) | Erfahren Sie, wie Sie die Z-Reihenfolge von Rechtecken in einer PDF-Datei mit Aspose.PDF für .NET steuern.  |  
+| [Erstellen Sie ein gefülltes Rechteck](./create-filled-rectangle/) | Erfahren Sie, wie Sie mit Aspose.PDF für .NET ein gefülltes Rechteck erstellen. Schritt-für-Schritt-Anleitung zum Anpassen der Füllfarbe. |  
+| [Erstellen Sie ein Rechteck mit Alpha-Farbe](./create-rectangle-with-alpha-color/) | Erfahren Sie, wie Sie mit Aspose.PDF für .NET ein Rechteck mit transparenter Farbe erstellen. Schritt-für-Schritt-Anleitung zum Anpassen der Transparenz. |  
+| [Strichlänge](./dash-length/) | Erfahren Sie, wie Sie die Länge von Bindestrichen mit Aspose.PDF für .NET festlegen. Schritt-für-Schritt-Anleitung zum Anpassen von Strichmustern. |  
+| [Zeichnungslinie](./drawing-line/) | Erfahren Sie, wie Sie mit Aspose.PDF für .NET eine Linie über eine Seite zeichnen. Schritt-für-Schritt-Anleitung zum Erstellen benutzerdefinierter Linien. |  

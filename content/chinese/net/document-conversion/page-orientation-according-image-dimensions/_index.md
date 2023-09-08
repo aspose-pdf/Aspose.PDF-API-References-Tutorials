@@ -1,143 +1,143 @@
 ---
-title: Page Orientation According Image Dimensions
-linktitle: Page Orientation According Image Dimensions
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to set page orientation based on image dimensions with Aspose.PDF for .NET.
+title: 根据图像尺寸确定页面方向
+linktitle: 根据图像尺寸确定页面方向
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 根据图像尺寸设置页面方向的分步指南。
 type: docs
 weight: 80
 url: /zh/net/document-conversion/page-orientation-according-image-dimensions/
 ---
-In this tutorial, we'll walk you through the process of setting page orientation based on an image's dimensions using Aspose.PDF for .NET. We will loop through a list of JPG images in a given directory and automatically adjust the page orientation based on the width of each image. Follow the steps below to achieve this.
+在本教程中，我们将引导您完成使用 Aspose.PDF for .NET 根据图像尺寸设置页面方向的过程。我们将循环遍历给定目录中的 JPG 图像列表，并根据每个图像的宽度自动调整页面方向。请按照以下步骤来实现此目的。
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## 先决条件
+在开始之前，请确保满足以下先决条件：
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- C# 编程语言的基础知识。
+- 您的系统上安装了适用于 .NET 的 Aspose.PDF 库。
+- 开发环境，例如 Visual Studio。
 
-## Step 1: Browse JPG images
-At this step, we will browse all JPG images in a given directory. Follow the code below:
+## 第 1 步：浏览 JPG 图像
+在此步骤中，我们将浏览给定目录中的所有 JPG 图像。请按照以下代码操作：
 
 ```csharp
-// Path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a new PDF document
+//创建新的 PDF 文档
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Retrieve the names of all JPG files in a particular directory
+//检索特定目录中所有 JPG 文件的名称
 string[] fileEntries = Directory.GetFiles(dataDir, "*.JPG");
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your JPG images are located.
+一定要更换`"YOUR DOCUMENTS DIRECTORY"`与 JPG 图像所在的实际目录。
 
-## Step 2: Creation of the page and the image
-After browsing the JPG files, we will create a page and an image for each file. Use the following code:
+## 第2步：创建页面和图像
+浏览 JPG 文件后，我们将为每个文件创建一个页面和一个图像。使用以下代码：
 
 ```csharp
 int counter;
 for (counter = 0; counter < fileEntries.Length - 1; counter++)
 {
-// Create a Page object
+//创建页面对象
 Aspose.Pdf.Page page = doc.Pages.Add();
 
-// Create an Image object
+//创建图像对象
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 image1.File = fileEntries[counter];
 ```
 
-## Step 3: Checking image dimensions
-Now let's check the dimensions of each image to determine the page orientation. Use the following code:
+## 第 3 步：检查图像尺寸
+现在让我们检查每个图像的尺寸以确定页面方向。使用以下代码：
 
 ```csharp
-// Create a BitMap object to get information from the image file
+//创建 BitMap 对象以从图像文件中获取信息
 Bitmap myimage = new Bitmap(fileEntries[counter]);
 
-// Check if the width of the image is greater than the width of the page or not
+//检查图像的宽度是否大于页面的宽度
 if (myimage.Width > page.PageInfo.Width)
 //
 
   If the width of the image is greater than the width of the page, set the page orientation to landscape
 page.PageInfo.IsLandscape = true;
 else
-// If the width of the image is less than the width of the page, set the orientation of the page to portrait
+//如果图像的宽度小于页面的宽度，请将页面方向设置为纵向
 page.PageInfo.IsLandscape = false;
 ```
 
-## Step 4: Adding the image to the PDF document
-After checking the dimensions of the image, we will add the image to the PDF document's paragraph collection. Use the following code:
+## 步骤 4：将图像添加到 PDF 文档
+检查图像的尺寸后，我们将把图像添加到 PDF 文档的段落集合中。使用以下代码：
 
 ```csharp
-// Add the image to the paragraph collection of the PDF document
+//将图像添加到PDF文档的段落集合中
 page.Paragraphs.Add(image1);
 ```
 
-## Step 5: Saving the PDF file
-Once we have added all the images to the PDF document, we can now save the resulting PDF file. Here is the last step:
+## 步骤 5：保存 PDF 文件
+将所有图像添加到 PDF 文档后，我们现在可以保存生成的 PDF 文件。这是最后一步：
 
 ```csharp
-// Save the PDF file
+//保存 PDF 文件
 doc.Save(dataDir + "SetPageOrientation_out.pdf");
 ```
 
-Replace `"YOUR DOCUMENTS DIRECTORY"` with the desired directory where you want to save the output PDF file.
+代替`"YOUR DOCUMENTS DIRECTORY"`以及要保存输出 PDF 文件的所需目录。
 
-### Example source code for Page Orientation According Image Dimensions using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 根据图像尺寸确定页面方向的示例源代码
 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Retrieve names of all the JPG files in a particular Directory
+//检索特定目录中所有 JPG 文件的名称
 string[] fileEntries = Directory.GetFiles(dataDir, "*.JPG");
 
 int counter;
 for (counter = 0; counter < fileEntries.Length - 1; counter++)
 {
-	// Create a page object
+	//创建页面对象
 	Aspose.Pdf.Page page = doc.Pages.Add();
 
-	// Creat an image object
+	//创建图像对象
 	Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 	image1.File = fileEntries[counter];
 
-	// Create a BitMap object in order to get the information of image file
+	//创建一个BitMap对象以获取图像文件的信息
 	Bitmap myimage = new Bitmap(fileEntries[counter]);
-	// Check if the width of the image file is greater than Page width or not
+	//检查图像文件的宽度是否大于页面宽度
 	if (myimage.Width > page.PageInfo.Width)
-		// If the Image width is greater than page width, then set the page orientation to Landscape
+		//如果图像宽度大于页面宽度，则将页面方向设置为横向
 		page.PageInfo.IsLandscape = true;
 	else
-		// If the Image width is less than page width, then set the page orientation to Portrait
+		//如果图像宽度小于页面宽度，则将页面方向设置为纵向
 		page.PageInfo.IsLandscape = false;
-	// Add the image to paragraphs collection of the PDF document 
+	//将图像添加到 PDF 文档的段落集合中
 	page.Paragraphs.Add(image1);
 }
-// Save the Pdf file
+//保存 PDF 文件
 doc.Save(dataDir + "SetPageOrientation_out.pdf");
 ```
 
-## Conclusion
-In this tutorial, we've covered the step-by-step process of setting page orientation based on an image's dimensions using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to create a PDF document with the correct page orientation for each image. This feature is useful when you have images of different sizes and want to embed them into a PDF document.
+## 结论
+在本教程中，我们介绍了使用 Aspose.PDF for .NET 根据图像尺寸设置页面方向的分步过程。按照上述说明，您现在应该能够创建每个图像具有正确页面方向的 PDF 文档。当您有不同尺寸的图像并希望将它们嵌入到 PDF 文档中时，此功能非常有用。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: Can I use other image formats instead of JPG for setting page orientation based on image dimensions?
+#### 问：我可以使用其他图像格式代替 JPG 来根据图像尺寸设置页面方向吗？
 
-A: Yes, you can use other image formats such as PNG, BMP, or GIF in addition to JPG for setting page orientation based on image dimensions. The provided code loops through all image files with the ".JPG" extension, but you can modify it to include other image formats as well.
+答：是的，除了 JPG 之外，您还可以使用其他图像格式（例如 PNG、BMP 或 GIF）来根据图像尺寸设置页面方向。提供的代码循环遍历所有扩展名为“.JPG”的图像文件，但您也可以修改它以包含其他图像格式。
 
-#### Q: What happens if an image's dimensions are exactly equal to the page width?
+#### 问：如果图像的尺寸恰好等于页面宽度会发生什么？
 
-A: If an image's width is exactly equal to the page width, the page orientation will be set to portrait. In the code provided, the page orientation is set to landscape only if the image's width is greater than the page width.
+答：如果图像的宽度恰好等于页面宽度，则页面方向将设置为纵向。在提供的代码中，仅当图像的宽度大于页面宽度时，页面方向才设置为横向。
 
-#### Q: Can I customize the page orientation logic based on specific requirements?
+#### 问：我可以根据具体需求定制页面方向逻辑吗？
 
-A: Yes, you can customize the page orientation logic based on specific requirements. For example, you can set a threshold value to determine when the page orientation should be set to landscape or portrait. Additionally, you can consider factors such as image height or aspect ratio to determine the page orientation.
+A：是的，您可以根据具体需求自定义页面方向逻辑。例如，您可以设置阈值来确定何时应将页面方向设置为横向或纵向。此外，您可以考虑图像高度或宽高比等因素来确定页面方向。
 
-#### Q: Can I add other content, such as text or tables, to the PDF document along with the images?
+#### 问：我可以将其他内容（例如文本或表格）与图像一起添加到 PDF 文档中吗？
 
-A: Yes, you can add other content, such as text or tables, to the PDF document along with the images. Aspose.PDF for .NET provides a rich set of features to manipulate PDF documents, including adding text, images, tables, and other elements to the pages.
+答：是的，您可以将其他内容（例如文本或表格）与图像一起添加到 PDF 文档中。 Aspose.PDF for .NET 提供了一组丰富的功能来操作 PDF 文档，包括向页面添加文本、图像、表格和其他元素。

@@ -1,27 +1,27 @@
 ---
-title: Programming with Security and Signatures
-linktitle: Programming with Security and Signatures
+title: Güvenlik ve İmzalarla Programlama
+linktitle: Güvenlik ve İmzalarla Programlama
 type: docs
 weight: 17
 url: /tr/net/programming-with-security-and-signatures/
-description: Programming with Security and Signatures tutorial teaches you how to secure and sign your PDF documents, ensuring confidentiality and authenticity.
+description: Güvenlik ve İmzalarla Programlama eğitimi, PDF belgelerinizi nasıl güvence altına alacağınızı ve imzalayacağınızı, gizlilik ve özgünlüğü nasıl sağlayacağınızı öğretir.
 ---
-Programming with Security and Signatures tutorial walks you through security and signatures features for PDF documents. You will learn how to protect your PDF files with passwords, add digital signatures and verify the integrity of signed documents.
+Güvenlik ve İmzalarla Programlama eğitimi, PDF belgeleri için güvenlik ve imza özellikleri konusunda size yol gösterir. PDF dosyalarınızı şifrelerle nasıl koruyacağınızı, dijital imzaları nasıl ekleyeceğinizi ve imzalı belgelerin bütünlüğünü nasıl doğrulayacağınızı öğreneceksiniz.
 
-The tutorial gives you a detailed overview of methods and techniques to ensure the confidentiality and authenticity of your PDF files. You'll learn how to manage digital certificates, add security permissions, apply security policies, and more. Using these tutorials, you will be able to secure your PDF documents reliably and professionally.
+Eğitimde, PDF dosyalarınızın gizliliğini ve orijinalliğini sağlamaya yönelik yöntem ve tekniklere ilişkin ayrıntılı bir genel bakış sunulmaktadır. Dijital sertifikaları nasıl yöneteceğinizi, güvenlik izinlerini nasıl ekleyeceğinizi, güvenlik politikalarını nasıl uygulayacağınızı ve daha fazlasını öğreneceksiniz. Bu eğitimleri kullanarak PDF belgelerinizi güvenilir ve profesyonel bir şekilde güvence altına alabileceksiniz.
 
-## Tutorials
-| Title | Description |
+## Öğreticiler
+| Başlık | Tanım |
 | --- | --- | 
-| [Change Password In PDF File](./change-password/) | Learn how to change the password in PDF file using Aspose.PDF for .NET. |  
-| [Decrypt PDF File](./decrypt/) | Learn how to decrypt PDF file using Aspose.PDF for .NET. |  
-| [Determine Correct Password In PDF File](./determine-correct-password/) | Learn how to determine the correct password in PDF file with Aspose.PDF for .NET. |  
-| [Digitally Sign In PDF File](./digitally-sign/) | Learn how to digitally sign in PDF file with Aspose.PDF for .NET. |  
-| [Digitally Sign With Time Stamp In PDF File](./digitally-sign-with-time-stamp/) | Learn how to perform a digital signature with time stamp in PDF file using Aspose.PDF for .NET. |  
-| [Encrypt PDF File](./encrypt/) | Securely encrypt your PDF files with Aspose.PDF for .NET. |  
-| [Extracting Image](./extracting-image/) | Easily extract images from PDF documents with Aspose.PDF for .NET. |  
-| [Extract Signature Info](./extract-signature-info/) | Extracting signature information using Aspose.PDF for .NET. |  
-| [Is Password Protected](./is-password-protected/) | Easily check if a PDF document is password protected with Aspose.PDF for .NET. |  
-| [Set Privileges In PDF File](./set-privileges/) | Easily set access privileges in PDF file with Aspose.PDF for .NET. |  
-| [Sign With Smart Card Using Pdf File Signature](./sign-with-smart-card-using-pdf-file-signature/) | Sign your PDF files securely with a smart card using Aspose.PDF for .NET. |  
-| [Sign With Smart Card Using Signature Field](./sign-with-smart-card-using-signature-field/) | Sign your PDF files securely with a smart card using Aspose.PDF for .NET. |  
+| [PDF Dosyasında Şifreyi Değiştir](./change-password/) | Aspose.PDF for .NET'i kullanarak PDF dosyasındaki şifreyi nasıl değiştireceğinizi öğrenin. |  
+| [PDF Dosyasının Şifresini Çöz](./decrypt/) | Aspose.PDF for .NET kullanarak PDF dosyasının şifresini nasıl çözeceğinizi öğrenin. |  
+| [PDF Dosyasında Doğru Şifreyi Belirleyin](./determine-correct-password/) | Aspose.PDF for .NET ile PDF dosyasında doğru şifreyi nasıl belirleyeceğinizi öğrenin. |  
+| [Dijital Olarak Oturum Açma PDF Dosyası](./digitally-sign/) | Aspose.PDF for .NET ile PDF dosyasına dijital olarak nasıl imza atacağınızı öğrenin. |  
+| [PDF Dosyasında Zaman Damgasıyla Dijital Olarak İmzalayın](./digitally-sign-with-time-stamp/) | Aspose.PDF for .NET kullanarak PDF dosyasında zaman damgalı dijital imzanın nasıl gerçekleştirileceğini öğrenin. |  
+| [PDF Dosyasını Şifrele](./encrypt/) | Aspose.PDF for .NET ile PDF dosyalarınızı güvenli bir şekilde şifreleyin. |  
+| [Görüntü Çıkarılıyor](./extracting-image/) | Aspose.PDF for .NET ile PDF belgelerinden görüntüleri kolayca çıkarın. |  
+| [İmza Bilgilerini Çıkarın](./extract-signature-info/) | Aspose.PDF for .NET kullanarak imza bilgilerini çıkarma. |  
+| [Şifre Korumalı mı](./is-password-protected/) | Aspose.PDF for .NET ile bir PDF belgesinin parola korumalı olup olmadığını kolayca kontrol edin. |  
+| [PDF Dosyasında Ayrıcalıkları Ayarlayın](./set-privileges/) | Aspose.PDF for .NET ile PDF dosyasındaki erişim ayrıcalıklarını kolayca ayarlayın. |  
+| [Pdf Dosya İmzasını Kullanarak Akıllı Kartla İmzalayın](./sign-with-smart-card-using-pdf-file-signature/) | Aspose.PDF for .NET kullanarak PDF dosyalarınızı akıllı kartla güvenli bir şekilde imzalayın. |  
+| [İmza Alanını Kullanarak Akıllı Kartla İmzalama](./sign-with-smart-card-using-signature-field/) | Aspose.PDF for .NET kullanarak PDF dosyalarınızı akıllı kartla güvenli bir şekilde imzalayın. |  

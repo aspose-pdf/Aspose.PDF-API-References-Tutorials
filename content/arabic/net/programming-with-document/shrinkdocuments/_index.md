@@ -1,81 +1,81 @@
 ---
-title: Shrink PDF Documents
-linktitle: Shrink Documents
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to shrink PDF documents with this step-by-step guide. 
+title: تقليص مستندات PDF
+linktitle: تقليص المستندات
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخدام Aspose.PDF لـ .NET لتقليص مستندات PDF باستخدام هذا الدليل التفصيلي خطوة بخطوة.
 type: docs
 weight: 350
 url: /ar/net/programming-with-document/shrinkdocuments/
 ---
-Aspose.PDF for .NET is a powerful library that enables developers to create, manipulate, and optimize PDF documents using C#. In this tutorial, we will walk through an example of how to use Aspose.PDF to shrink a PDF document.
+Aspose.PDF for .NET هي مكتبة قوية تمكن المطورين من إنشاء مستندات PDF ومعالجتها وتحسينها باستخدام لغة C#. في هذا البرنامج التعليمي، سنتعرف على مثال لكيفية استخدام Aspose.PDF لتصغير مستند PDF.
 
-## Step 1: Loading the PDF Document
+## الخطوة 1: تحميل وثيقة PDF
 
-To shrink a PDF document, we first need to load it into our C# application using Aspose.PDF. In the code below, we specify the path to our PDF document and create a new instance of the `Document` class.
+ لتصغير مستند PDF، نحتاج أولاً إلى تحميله في تطبيقنا C# باستخدام Aspose.PDF. في الكود أدناه، نحدد المسار إلى مستند PDF الخاص بنا وننشئ نسخة جديدة من ملف`Document` فصل.
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "ShrinkDocument.pdf");
 ```
 
-## Step 2: Shrinking the PDF Document
+## الخطوة 2: تقليص مستند PDF
 
-Once we have loaded the PDF document, we can use the `OptimizeResources` method of the `Document` class to optimize the document and potentially shrink its size. Note that this method cannot guarantee document shrinking, as some PDF documents may already be highly optimized.
+ بمجرد أن نقوم بتحميل مستند PDF، يمكننا استخدام الملف`OptimizeResources` طريقة`Document`class لتحسين المستند وربما تقليص حجمه. لاحظ أن هذه الطريقة لا تضمن تقليص حجم المستند، حيث أن بعض مستندات PDF قد تكون مُحسّنة بدرجة كبيرة بالفعل.
 
 ```csharp
-// Optimize PDF document. Note, though, that this method cannot guarantee document shrinking
+// تحسين وثيقة PDF. لكن لاحظ أن هذه الطريقة لا تضمن تقليص حجم المستند
 pdfDocument.OptimizeResources();
 ```
 
-## Step 3: Saving the Updated PDF Document
+## الخطوة 3: حفظ مستند PDF المحدث
 
-After we have optimized the PDF document, we can save the updated version to a new file using the `Save` method of the `Document` class. In the code below, we specify the path and filename of the output file.
+ بعد أن قمنا بتحسين مستند PDF، يمكننا حفظ الإصدار المحدث في ملف جديد باستخدام ملف`Save` طريقة`Document` فصل. في الكود أدناه، نحدد المسار واسم الملف لملف الإخراج.
 
 ```csharp
-// Specify output file path
+// تحديد مسار ملف الإخراج
 string outputFilePath = dataDir + "ShrinkDocument_out.pdf";
-// Save updated document
+// حفظ المستند المحدث
 pdfDocument.Save(outputFilePath);
 ```
 
-### Example Source Code for Shrink Documents using Aspose.PDF for .NET
+### مثال على كود المصدر لتقليص المستندات باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "ShrinkDocument.pdf");
-// Optimize PDF document. Note, though, that this method cannot guarantee document shrinking
+// تحسين وثيقة PDF. لكن لاحظ أن هذه الطريقة لا تضمن تقليص حجم المستند
 pdfDocument.OptimizeResources();
 dataDir = dataDir + "ShrinkDocument_out.pdf";
-// Save updated document
+// حفظ المستند المحدث
 pdfDocument.Save(dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-In conclusion, Aspose.PDF for .NET provides a simple and effective way to shrink PDF documents programmatically using C#. By following the steps outlined in this tutorial, you can optimize large PDF files and reduce their size without compromising the document's quality or content.
+في الختام، يوفر Aspose.PDF for .NET طريقة بسيطة وفعالة لتقليص مستندات PDF برمجيًا باستخدام لغة C#. باتباع الخطوات الموضحة في هذا البرنامج التعليمي، يمكنك تحسين ملفات PDF الكبيرة وتقليل حجمها دون المساس بجودة المستند أو محتواه.
 
-### FAQ's for shrink PDF documents
+### الأسئلة الشائعة لتقليص مستندات PDF
 
-#### Q: Can Aspose.PDF guarantee the shrinking of every PDF document?
+#### س: هل يستطيع Aspose.PDF ضمان تقليص كل مستند PDF؟
 
-A: While Aspose.PDF's `OptimizeResources` method is designed to optimize and potentially shrink PDF documents, it cannot guarantee shrinking for all files. Some PDF documents may already be highly optimized, resulting in little to no reduction in size.
+ج: بينما Aspose.PDF`OptimizeResources` تم تصميم هذه الطريقة لتحسين مستندات PDF وربما تقليصها، إلا أنها لا تضمن تقليص جميع الملفات. قد تكون بعض مستندات PDF قد تم بالفعل تحسينها بدرجة كبيرة، مما يؤدي إلى تقليل حجمها قليلاً أو عدم تقليل حجمها على الإطلاق.
 
-#### Q: Will shrinking a PDF document result in a loss of quality?
+#### س: هل سيؤدي تقليص مستند PDF إلى فقدان الجودة؟
 
-A: Aspose.PDF's optimization process is designed to minimize the file size while preserving the document's quality. In most cases, shrinking a PDF should not noticeably impact the content's quality.
+ج: تم تصميم عملية تحسين Aspose.PDF لتقليل حجم الملف مع الحفاظ على جودة المستند. في معظم الحالات، يجب ألا يؤثر تصغير ملف PDF بشكل ملحوظ على جودة المحتوى.
 
-#### Q: Are there any specific types of PDF documents that benefit the most from optimization?
+#### س: هل هناك أي أنواع محددة من مستندات PDF التي تستفيد أكثر من التحسين؟
 
-A: PDF documents with large images, embedded fonts, or redundant data are more likely to benefit from optimization. Text-heavy documents with minimal graphics may see little reduction in size.
+ج: من المرجح أن تستفيد مستندات PDF التي تحتوي على صور كبيرة أو خطوط مضمنة أو بيانات زائدة من التحسين. قد تشهد المستندات ذات النصوص الثقيلة مع الحد الأدنى من الرسومات انخفاضًا طفيفًا في الحجم.
 
-#### Q: Can I revert the changes made during optimization?
+#### س: هل يمكنني التراجع عن التغييرات التي تم إجراؤها أثناء التحسين؟
 
-A: Aspose.PDF does not make permanent changes to the original document during optimization. The optimization process is performed on a copy of the document, leaving the original intact.
+ج: لا يقوم Aspose.PDF بإجراء تغييرات دائمة على المستند الأصلي أثناء التحسين. يتم تنفيذ عملية التحسين على نسخة من المستند، مع ترك النسخة الأصلية سليمة.
 
-### Q5: Is Aspose.PDF compatible with other programming languages?
+### س5: هل Aspose.PDF متوافق مع لغات البرمجة الأخرى؟
 
-A: Yes, Aspose.PDF is available for various platforms and programming languages, including Java, C++, Python, and more. It provides flexibility for developers working with different technologies.
+ج: نعم، Aspose.PDF متاح للعديد من المنصات ولغات البرمجة، بما في ذلك Java وC++، بايثون، وأكثر من ذلك. يوفر المرونة للمطورين الذين يعملون بتقنيات مختلفة.

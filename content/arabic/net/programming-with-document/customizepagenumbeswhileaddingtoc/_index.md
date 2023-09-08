@@ -1,17 +1,17 @@
 ---
-title: Customize Page Numbes While Adding TOC
-linktitle: Customize Page Numbes While Adding TOC
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to customize page numbers while adding a table of contents (TOC) using Aspose.PDF for .NET with this step-by-step guide and code example.
+title: تخصيص أرقام الصفحات أثناء إضافة جدول المحتويات
+linktitle: تخصيص أرقام الصفحات أثناء إضافة جدول المحتويات
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تخصيص أرقام الصفحات أثناء إضافة جدول محتويات (TOC) باستخدام Aspose.PDF لـ .NET باستخدام هذا الدليل خطوة بخطوة ومثال التعليمات البرمجية.
 type: docs
 weight: 100
 url: /ar/net/programming-with-document/customizepagenumbeswhileaddingtoc/
 ---
-In this tutoria, we will explore how to customize page numbers while adding a table of contents (TOC) using Aspose.PDF for .NET. We will provide step-by-step guidance, along with a code example, to help you achieve this.
+في هذا البرنامج التعليمي، سنستكشف كيفية تخصيص أرقام الصفحات أثناء إضافة جدول محتويات (TOC) باستخدام Aspose.PDF لـ .NET. سنقدم لك إرشادات خطوة بخطوة، بالإضافة إلى مثال التعليمات البرمجية، لمساعدتك في تحقيق ذلك.
 
-## Step 1: Loading an existing PDF file
+## الخطوة 1: تحميل ملف PDF موجود
 
-First, we need to load an existing PDF file. For this tutorial, we will use the file "42824.pdf" located in the "YOUR DOCUMENT DIRECTORY" directory. Replace this directory path with the actual path to your document directory.
+أولاً، نحتاج إلى تحميل ملف PDF موجود. في هذا البرنامج التعليمي، سوف نستخدم الملف "42824.pdf" الموجود في دليل "دليل المستندات الخاص بك". استبدل مسار الدليل هذا بالمسار الفعلي لدليل المستند.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -20,17 +20,17 @@ string outFile = dataDir + "42824_out.pdf";
 Document doc = new Document(inFile);
 ```
 
-## Step 2: Adding a TOC page
+## الخطوة 2: إضافة صفحة جدول المحتويات
 
-Next, we need to add a new page at the beginning of the document to serve as the TOC page. We can achieve this by using the `Insert()` method of the `Pages` collection of the `Document` object.
+ بعد ذلك، نحتاج إلى إضافة صفحة جديدة في بداية المستند لتكون بمثابة صفحة جدول المحتويات. يمكننا تحقيق ذلك باستخدام`Insert()` طريقة`Pages` جمع من`Document` هدف.
 
 ```csharp
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
 ```
 
-## Step 3: Creating a TOC object
+## الخطوة 3: إنشاء كائن TOC
 
-To create a TOC object, we first need to create a `TocInfo` object and set its properties. In this tutorial, we will set the title of the TOC to "Table Of Contents" and the page number prefix to "P".
+ لإنشاء كائن TOC، نحتاج أولاً إلى إنشاء ملف`TocInfo` الكائن وتعيين خصائصه. في هذا البرنامج التعليمي، سنقوم بتعيين عنوان جدول المحتويات إلى "جدول المحتويات" وبادئة رقم الصفحة إلى "P".
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -42,99 +42,99 @@ tocInfo.PageNumbersPrefix = "P";
 tocPage.TocInfo = tocInfo;
 ```
 
-## Step 4: Creating TOC entries
+## الخطوة 4: إنشاء إدخالات جدول المحتويات
 
-To create TOC entries, we need to loop through all the pages of the document, except for the TOC page, and create a heading object for each page. We can then add the heading object to the TOC page and specify its destination page.
+لإنشاء إدخالات جدول المحتويات، نحتاج إلى المرور عبر جميع صفحات المستند، باستثناء صفحة جدول المحتويات، وإنشاء كائن عنوان لكل صفحة. يمكننا بعد ذلك إضافة كائن العنوان إلى صفحة جدول المحتويات وتحديد الصفحة الوجهة الخاصة به.
 
 ```csharp
 for (int i = 1; i < doc.Pages.Count; i++)
 {
-    // Create Heading object
+    // إنشاء كائن العنوان
     Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
     TextSegment segment2 = new TextSegment();
     heading2.TocPage = tocPage;
     heading2.Segments.Add(segment2);
-    // Specify the destination page for heading object
+    // حدد الصفحة الوجهة لكائن العنوان
     heading2.DestinationPage = doc.Pages[i + 1];
-    // Destination page
+    // صفحة الوجهة
     heading2.Top = doc.Pages[i + 1].Rect.Height;
-    // Destination coordinate
+    // تنسيق الوجهة
     segment2.Text = "Page " + i.ToString();
-    // Add heading to page containing TOC
+    // أضف عنوانًا إلى الصفحة التي تحتوي على جدول المحتويات
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
-## Step 5: Saving the updated document
+## الخطوة 5: حفظ المستند المحدث
 
-Finally, we need to save the updated document to a new file. We can achieve this by using the `Save()` method of the `Document` object.
+وأخيرًا، نحتاج إلى حفظ المستند المحدث في ملف جديد. يمكننا تحقيق ذلك باستخدام`Save()` طريقة`Document` هدف.
 
 ```csharp
 doc.Save(outFile);
 ```
 
-### Example source code for customizing page numbes while adding TOC using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لتخصيص أرقام الصفحات أثناء إضافة جدول المحتويات باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "42824.pdf";
 string outFile = dataDir + "42824_out.pdf";
-// Load an existing PDF files
+// قم بتحميل ملفات PDF الموجودة
 Document doc = new Document(inFile);
-// Get access to first page of PDF file
+// الوصول إلى الصفحة الأولى من ملف PDF
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
-// Create object to represent TOC information
+// قم بإنشاء كائن لتمثيل معلومات جدول المحتويات
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
-// Set the title for TOC
+// قم بتعيين عنوان جدول المحتويات
 tocInfo.Title = title;
 tocInfo.PageNumbersPrefix = "P";
 tocPage.TocInfo = tocInfo;
 for (int i = 1; i<doc.Pages.Count; i++)
 {
-	// Create Heading object
+	// إنشاء كائن العنوان
 	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
 	TextSegment segment2 = new TextSegment();
 	heading2.TocPage = tocPage;
 	heading2.Segments.Add(segment2);
-	// Specify the destination page for heading object
+	// حدد الصفحة الوجهة لكائن العنوان
 	heading2.DestinationPage = doc.Pages[i + 1];
-	// Destination page
+	// صفحة الوجهة
 	heading2.Top = doc.Pages[i + 1].Rect.Height;
-	// Destination coordinate
+	// تنسيق الوجهة
 	segment2.Text = "Page " + i.ToString();
-	// Add heading to page containing TOC
+	// أضف عنوانًا إلى الصفحة التي تحتوي على جدول المحتويات
 	tocPage.Paragraphs.Add(heading2);
 }
 
-// Save the updated document
+// احفظ المستند المحدث
 doc.Save(outFile);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we have provided step-by-step guidance on how to customize page numbers while adding a TOC using Aspose.PDF for .NET. We have also provided a code example that you can use as a reference when implementing this feature in your
+في هذا البرنامج التعليمي، قدمنا إرشادات خطوة بخطوة حول كيفية تخصيص أرقام الصفحات أثناء إضافة جدول محتويات باستخدام Aspose.PDF لـ .NET. لقد قدمنا أيضًا مثالًا للتعليمات البرمجية التي يمكنك استخدامها كمرجع عند تنفيذ هذه الميزة في ملفك
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is a table of contents (TOC) in a PDF document?
+#### س: ما هو جدول المحتويات (TOC) في مستند PDF؟
 
-A: A table of contents (TOC) in a PDF document is a navigational aid that provides an organized list of document sections or chapters along with their corresponding page numbers. It allows readers to quickly navigate to specific sections within the document.
+ج: يعد جدول المحتويات (TOC) الموجود في مستند PDF وسيلة مساعدة للتنقل توفر قائمة منظمة بأقسام الوثيقة أو فصولها بالإضافة إلى أرقام الصفحات المقابلة لها. فهو يسمح للقراء بالانتقال بسرعة إلى أقسام محددة داخل المستند.
 
-#### Q:Why would I want to customize page numbers in a TOC?
+#### س: لماذا أرغب في تخصيص أرقام الصفحات في جدول المحتويات؟
 
-A: Customizing page numbers in a TOC can be useful when you want to use a specific page numbering format or include additional information along with the page numbers. It allows you to create a more personalized and informative table of contents.
+ج: يمكن أن يكون تخصيص أرقام الصفحات في جدول المحتويات مفيدًا عندما تريد استخدام تنسيق معين لترقيم الصفحات أو تضمين معلومات إضافية مع أرقام الصفحات. يسمح لك بإنشاء جدول محتويات أكثر تخصيصًا وغنيًا بالمعلومات.
 
-#### Q: Can I include hyperlinks in the TOC to link to specific sections or pages within the PDF document?
+#### س: هل يمكنني تضمين ارتباطات تشعبية في جدول المحتويات للارتباط بأقسام أو صفحات معينة داخل مستند PDF؟
 
-A: Yes, Aspose.PDF for .NET allows you to create hyperlinks in the TOC that link to specific sections or pages within the PDF document. This enhances the interactivity and navigation of the PDF document.
+ج: نعم، يسمح لك Aspose.PDF for .NET بإنشاء ارتباطات تشعبية في جدول المحتويات التي ترتبط بأقسام أو صفحات محددة داخل مستند PDF. يؤدي ذلك إلى تحسين التفاعل والتنقل في مستند PDF.
 
-#### Q: Is Aspose.PDF for .NET compatible with PDF/A standards?
+#### س: هل يتوافق Aspose.PDF for .NET مع معايير PDF/A؟
 
-A: Yes, Aspose.PDF for .NET supports PDF/A standards, including PDF/A-1, PDF/A-2, and PDF/A-3. It allows you to create PDF documents that comply with archiving and long-term preservation requirements.
+ج: نعم، يدعم Aspose.PDF for .NET معايير PDF/A، بما في ذلك PDF/A-1، وPDF/A-2، وPDF/A-3. يسمح لك بإنشاء مستندات PDF تتوافق مع متطلبات الأرشفة والحفظ على المدى الطويل.
 
-#### Q: Can I add more formatting to the TOC entries, such as font styles or colors?
+#### س: هل يمكنني إضافة المزيد من التنسيق إلى إدخالات جدول المحتويات، مثل أنماط الخطوط أو الألوان؟
 
-A: Yes, you can add additional formatting to the TOC entries, such as font styles, colors, and font sizes, using Aspose.PDF for .NET. This allows you to customize the appearance of the TOC as per your requirements.
+ج: نعم، يمكنك إضافة تنسيق إضافي إلى إدخالات جدول المحتويات، مثل أنماط الخطوط والألوان وأحجام الخطوط، باستخدام Aspose.PDF لـ .NET. يتيح لك ذلك تخصيص مظهر جدول المحتويات وفقًا لمتطلباتك.

@@ -1,83 +1,83 @@
 ---
-title: Dynamic XFA To Acro Form
-linktitle: Dynamic XFA To Acro Form
-second_title: Aspose.PDF for .NET API Reference
-description: Easily convert dynamic XFA To forms to standard AcroForm forms with Aspose.PDF for .NET.
+title: Dynamisk XFA till Acro Form
+linktitle: Dynamisk XFA till Acro Form
+second_title: Aspose.PDF för .NET API Referens
+description: Konvertera enkelt dynamiska XFA To-formulär till vanliga AcroForm-formulär med Aspose.PDF för .NET.
 type: docs
 weight: 70
 url: /sv/net/programming-with-forms/dynamic-xfa-to-acro-form/
 ---
-In this tutorial, we will show you how to convert an XFA To dynamic form to an AcroForm using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+den här handledningen kommer vi att visa dig hur du konverterar en XFA till dynamisk form till en AcroForm med Aspose.PDF för .NET. Vi kommer att förklara C#-källkoden steg för steg för att guida dig genom denna process.
 
-## Step 1: Preparation
+## Steg 1: Förberedelser
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Se först till att du har importerat de nödvändiga biblioteken och ställer in sökvägen till dokumentkatalogen:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the dynamic XFA form
+## Steg 2: Ladda det dynamiska XFA-formuläret
 
-Load the dynamic XFA form:
+Ladda det dynamiska XFA-formuläret:
 
 ```csharp
 Document document = new Document(dataDir + "DynamicXFAToAcroForm.pdf");
 ```
 
-## Step 3: Set Form Type as Standard AcroForm
+## Steg 3: Ställ in Form Type som Standard AcroForm
 
-Set the form type as standard AcroForm:
+Ställ in formulärtypen som standard AcroForm:
 
 ```csharp
 document.Form.Type = FormType.Standard;
 ```
 
-## Step 4: Save the Resulting PDF
+## Steg 4: Spara den resulterande PDF-filen
 
-Save the resulting PDF:
+Spara den resulterande PDF:en:
 
 ```csharp
 dataDir = dataDir + "Standard_AcroForm_out.pdf";
 document. Save(dataDir);
 ```
 
-### Sample source code for Dynamic XFA To Acro Form using Aspose.PDF for .NET 
+### Exempel på källkod för Dynamic XFA To Acro Form med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load dynamic XFA form
+// Ladda dynamiskt XFA-formulär
 Document document = new Document(dataDir + "DynamicXFAToAcroForm.pdf");
-// Set the form fields type as standard AcroForm
+// Ställ in formulärfältstypen som standard AcroForm
 document.Form.Type = FormType.Standard;
 dataDir = dataDir + "Standard_AcroForm_out.pdf";
-// Save the resultant PDF
+// Spara den resulterande PDF-filen
 document.Save(dataDir);
 Console.WriteLine("\nDynamic XFA form converted to standard AcroForm successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we learned how to convert an XFA To dynamic form to a standard AcroForm form using Aspose.PDF for .NET. By following these steps, you can easily convert your dynamic XFATo forms to AcroForms for more common use.
+I den här handledningen lärde vi oss hur man konverterar en XFA till dynamisk form till en standard AcroForm-form med Aspose.PDF för .NET. Genom att följa dessa steg kan du enkelt konvertera dina dynamiska XFATo-formulär till AcroForms för mer vanlig användning.
 
 ### FAQ's
 
-#### Q: What is the difference between a dynamic XFA form and a standard AcroForm?
+#### F: Vad är skillnaden mellan en dynamisk XFA-form och en standard AcroForm?
 
-A: A dynamic XFA (XML Forms Architecture) form is a type of PDF form that uses XML-based data to define its layout and behavior. XFA forms are often used in interactive and data-intensive forms. On the other hand, a standard AcroForm is a more traditional type of PDF form that uses the PDF format itself to define its structure and appearance. AcroForms are widely supported by PDF viewers and can be more compatible with various applications.
+S: Ett dynamiskt XFA-formulär (XML Forms Architecture) är en typ av PDF-formulär som använder XML-baserad data för att definiera dess layout och beteende. XFA-formulär används ofta i interaktiva och dataintensiva former. Å andra sidan är en standard AcroForm en mer traditionell typ av PDF-formulär som använder själva PDF-formatet för att definiera dess struktur och utseende. AcroForms stöds brett av PDF-läsare och kan vara mer kompatibla med olika applikationer.
 
-#### Q: Why would I want to convert a dynamic XFA form to a standard AcroForm?
+#### F: Varför skulle jag vilja konvertera ett dynamiskt XFA-formulär till ett standard AcroForm?
 
-A: Converting a dynamic XFA form to a standard AcroForm can be useful in scenarios where XFA forms are not fully supported or when you want to achieve greater compatibility with different PDF viewers and applications. Standard AcroForms are generally more widely supported across different platforms and devices.
+S: Att konvertera ett dynamiskt XFA-formulär till ett standard AcroForm kan vara användbart i scenarier där XFA-formulär inte stöds fullt ut eller när du vill uppnå större kompatibilitet med olika PDF-läsare och applikationer. Standard AcroForms stöds i allmänhet mer allmänt över olika plattformar och enheter.
 
-#### Q: Can I modify the form fields after converting a dynamic XFA form to a standard AcroForm?
+#### F: Kan jag ändra formulärfälten efter att ha konverterat ett dynamiskt XFA-formulär till ett standard AcroForm?
 
-A: Yes, after converting a dynamic XFA form to a standard AcroForm, you can modify the form fields as needed using Aspose.PDF for .NET. You can add new fields, change their properties, set field values, and perform other form-related operations.
+S: Ja, efter att ha konverterat ett dynamiskt XFA-formulär till ett standard AcroForm, kan du ändra formulärfälten efter behov med Aspose.PDF för .NET. Du kan lägga till nya fält, ändra deras egenskaper, ange fältvärden och utföra andra formulärrelaterade operationer.
 
-#### Q: Are there any limitations or considerations when converting dynamic XFA forms to standard AcroForms?
+#### F: Finns det några begränsningar eller överväganden vid konvertering av dynamiska XFA-formulär till vanliga AcroForms?
 
-A: Yes, there are some limitations to consider when converting dynamic XFA forms to standard AcroForms. XFA forms can have complex and dynamic layouts, including features such as dynamic tables, repeating sections, and form calculations, which may not be fully preserved in the conversion process. Additionally, some specific form field properties unique to XFA forms may not be applicable in AcroForms.
+S: Ja, det finns några begränsningar att tänka på när du konverterar dynamiska XFA-formulär till vanliga AcroForms. XFA-formulär kan ha komplexa och dynamiska layouter, inklusive funktioner som dynamiska tabeller, upprepade avsnitt och formulärberäkningar, som kanske inte bevaras helt i konverteringsprocessen. Dessutom kanske vissa specifika formulärfältsegenskaper som är unika för XFA-formulär inte är tillämpliga i AcroForms.
 
-#### Q: Can I convert a standard AcroForm to a dynamic XFA form using Aspose.PDF for .NET?
+#### F: Kan jag konvertera en standard AcroForm till en dynamisk XFA-form med Aspose.PDF för .NET?
 
-A: Aspose.PDF for .NET currently supports converting dynamic XFA forms to standard AcroForms, but it does not support the reverse operation of converting standard AcroForms to dynamic XFA forms. Converting standard AcroForms to dynamic XFA forms involves more complex transformations and may not be fully supported in all scenarios.
+S: Aspose.PDF för .NET stöder för närvarande konvertering av dynamiska XFA-formulär till vanliga AcroForms, men det stöder inte den omvända operationen av att konvertera standard AcroForms till dynamiska XFA-formulär. Att konvertera standard AcroForms till dynamiska XFA-formulär innebär mer komplexa transformationer och kanske inte stöds fullt ut i alla scenarier.

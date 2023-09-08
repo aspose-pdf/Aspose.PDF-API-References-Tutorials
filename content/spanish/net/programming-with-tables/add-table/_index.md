@@ -1,60 +1,60 @@
 ---
-title: Add Table In PDF File
-linktitle: Add Table In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add tables in PDF file using Aspose.PDF for .NET.
+title: Agregar tabla en archivo PDF
+linktitle: Agregar tabla en archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Agregue fácilmente tablas en archivos PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 40
 url: /es/net/programming-with-tables/add-table/
 ---
-Aspose.PDF for .NET is a powerful library that allows developers to create, manipulate, and transform PDF documents programmatically. In this tutorial, we will guide you through the process of adding a table in PDF file using Aspose.PDF for .NET. We will explain each step of the code snippet provided and provide a comprehensive guide to help you understand and implement the functionality in your own projects.
+Aspose.PDF para .NET es una poderosa biblioteca que permite a los desarrolladores crear, manipular y transformar documentos PDF mediante programación. En este tutorial, lo guiaremos a través del proceso de agregar una tabla en un archivo PDF usando Aspose.PDF para .NET. Explicaremos cada paso del fragmento de código proporcionado y le proporcionaremos una guía completa para ayudarle a comprender e implementar la funcionalidad en sus propios proyectos.
 
-## Introduction
+## Introducción
 
-PDF documents are widely used for sharing and preserving information in a portable format. Adding tables to PDF documents can enhance their visual appearance and make data presentation more organized and structured. Aspose.PDF for .NET provides a convenient way to add tables to existing PDF documents or create new ones from scratch.
+Los documentos PDF se utilizan ampliamente para compartir y conservar información en un formato portátil. Agregar tablas a documentos PDF puede mejorar su apariencia visual y hacer que la presentación de datos esté más organizada y estructurada. Aspose.PDF para .NET proporciona una manera conveniente de agregar tablas a documentos PDF existentes o crear nuevos desde cero.
 
-## What is Aspose.PDF for .NET?
+## ¿Qué es Aspose.PDF para .NET?
 
-Aspose.PDF for .NET is a powerful and feature-rich library that enables .NET developers to create, manipulate, and convert PDF documents programmatically. It provides a wide range of functionalities, including creating PDF files from scratch, modifying existing PDF documents, merging or splitting PDF files, adding text, images, and tables, extracting data from PDFs, and much more. With Aspose.PDF for .NET, developers can automate complex PDF-related tasks and deliver high-quality PDF solutions.
+Aspose.PDF para .NET es una biblioteca potente y rica en funciones que permite a los desarrolladores de .NET crear, manipular y convertir documentos PDF mediante programación. Proporciona una amplia gama de funcionalidades, incluida la creación de archivos PDF desde cero, la modificación de documentos PDF existentes, la combinación o división de archivos PDF, la adición de texto, imágenes y tablas, la extracción de datos de archivos PDF y mucho más. Con Aspose.PDF para .NET, los desarrolladores pueden automatizar tareas complejas relacionadas con PDF y ofrecer soluciones PDF de alta calidad.
 
-## Adding a Table to a PDF Document
+## Agregar una tabla a un documento PDF
 
-To add a table to a PDF document using Aspose.PDF for .NET, follow the step-by-step guide below:
+Para agregar una tabla a un documento PDF usando Aspose.PDF para .NET, siga la guía paso a paso a continuación:
 
-## Step 1: Loading the source PDF document
+## Paso 1: cargar el documento PDF de origen
 
 ```csharp
 string dataDir = RunExamples.GetDataDir_AsposePdf_Tables();
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "AddTable.pdf");
 ```
 
-The code snippet above loads the source PDF document that you want to add the table to. Make sure to provide the correct path to your PDF file.
+El fragmento de código anterior carga el documento PDF de origen al que desea agregar la tabla. Asegúrese de proporcionar la ruta correcta a su archivo PDF.
 
-## Step 2: Initializing a new instance of the Table
+## Paso 2: inicializar una nueva instancia de la tabla
 
 ```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 ```
 
-In this step, we create a new instance of the Table class, which represents a table in a PDF document.
+En este paso, creamos una nueva instancia de la clase Tabla, que representa una tabla en un documento PDF.
 
-## Step 3: Setting the table border color
+## Paso 3: configurar el color del borde de la mesa
 
 ```csharp
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-Here, we set the border color for the table using the BorderInfo class. You can customize the border style, width, and color according to your requirements.
+Aquí, configuramos el color del borde de la tabla usando la clase BorderInfo. Puede personalizar el estilo, el ancho y el color del borde según sus requisitos.
 
-## Step 4: Setting the border for table cells
+## Paso 4: configurar el borde de las celdas de la tabla
 
 ```csharp
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-We also set the border for table cells using the DefaultCellBorder property of the table object. This ensures that each cell in the table has the specified border style, width, and color.
+También configuramos el borde de las celdas de la tabla usando la propiedad DefaultCellBorder del objeto de la tabla. Esto garantiza que cada celda de la tabla tenga el estilo, ancho y color de borde especificados.
 
-## Step 5: Adding rows and cells to the table
+## Paso 5: agregar filas y celdas a la tabla
 
 ```csharp
 for (int row_count = 1; row_count < 10; row_count++)
@@ -68,75 +68,75 @@ for (int row_count = 1; row_count < 10; row_count++)
 }
 ```
 
-In this step, we create a loop to add 10 rows to the table. Within each row, we add three cells with sample data. You can modify the code to add rows and cells according to your specific requirements.
+En este paso, creamos un bucle para agregar 10 filas a la tabla. Dentro de cada fila, agregamos tres celdas con datos de muestra. Puede modificar el código para agregar filas y celdas según sus requisitos específicos.
 
-## Step 6: Adding the table object to the document
+## Paso 6: Agregar el objeto de tabla al documento
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(table);
 dataDir = dataDir + "document_with_table_out.pdf";
-// Save updated document containing table object
+// Guardar documento actualizado que contiene el objeto de tabla
 doc.Save(dataDir);
 Console.WriteLine("\nText added successfully to an existing pdf file.\nFile saved at " + dataDir);       
 ```
 
-Finally, we add the table object to the first page of the PDF document using the Paragraphs collection of the corresponding page.
+Finalmente, agregamos el objeto de tabla a la primera página del documento PDF usando la colección de Párrafos de la página correspondiente.
 
-### Example source code for add table using Aspose.PDF for .NET
+### Código fuente de ejemplo para agregar tabla usando Aspose.PDF para .NET
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load source PDF document
+//Cargar documento PDF de origen
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "AddTable.pdf");
-// Initializes a new instance of the Table
+// Inicializa una nueva instancia de la tabla.
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Set the table border color as LightGray
+// Establecer el color del borde de la mesa como LightGray
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// Set the border for table cells
+// Establecer el borde de las celdas de la tabla
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// Create a loop to add 10 rows
+// Crea un bucle para agregar 10 filas.
 for (int row_count = 1; row_count < 10; row_count++)
 {
-	// Add row to table
+	// Agregar fila a la tabla
 	Aspose.Pdf.Row row = table.Rows.Add();
-	// Add table cells
+	// Agregar celdas de tabla
 	row.Cells.Add("Column (" + row_count + ", 1)");
 	row.Cells.Add("Column (" + row_count + ", 2)");
 	row.Cells.Add("Column (" + row_count + ", 3)");
 }
-// Add table object to first page of input document
+// Agregar objeto de tabla a la primera página del documento de entrada
 doc.Pages[1].Paragraphs.Add(table);
 dataDir = dataDir + "document_with_table_out.pdf";
-// Save updated document containing table object
+// Guardar documento actualizado que contiene el objeto de tabla
 doc.Save(dataDir);
 
 Console.WriteLine("\nText added successfully to an existing pdf file.\nFile saved at " + dataDir);       
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, we have explained the step-by-step process of adding a table to a PDF document using Aspose.PDF for .NET. We covered loading the source PDF document, initializing a new instance of the Table class, setting the table border color and cell borders, adding rows and cells to the table, and adding the table object to the document. By following this guide, you can easily incorporate tables into your PDF documents programmatically and customize them according to your specific needs.
+En este tutorial, explicamos el proceso paso a paso para agregar una tabla a un documento PDF usando Aspose.PDF para .NET. Cubrimos la carga del documento PDF de origen, la inicialización de una nueva instancia de la clase Tabla, la configuración del color del borde de la tabla y los bordes de las celdas, la adición de filas y celdas a la tabla y la adición del objeto de la tabla al documento. Si sigue esta guía, podrá incorporar fácilmente tablas en sus documentos PDF mediante programación y personalizarlas según sus necesidades específicas.
 
-### FAQ's for add table in PDF file
+### Preguntas frecuentes para agregar una tabla en un archivo PDF
 
-#### Q: Can I add more columns to the table?
+#### P: ¿Puedo agregar más columnas a la tabla?
 
-A: Yes, you can add more columns to the table by increasing the number of cells added to each row. In the provided example, each row has three cells representing three columns. You can add more cells to each row to add additional columns.
+R: Sí, puede agregar más columnas a la tabla aumentando la cantidad de celdas agregadas a cada fila. En el ejemplo proporcionado, cada fila tiene tres celdas que representan tres columnas. Puede agregar más celdas a cada fila para agregar columnas adicionales.
 
-#### Q: How can I change the appearance of the table, such as font size and style?
+#### P: ¿Cómo puedo cambiar la apariencia de la tabla, como el tamaño y el estilo de fuente?
 
-A: You can customize the appearance of the table, including font size and style, by setting properties on the `Aspose.Pdf.Table` and `Aspose.Pdf.TextFragment` objects. For example, you can set the `DefaultCellTextState` property to change the font properties of the text in the table cells.
+ R: Puede personalizar la apariencia de la tabla, incluido el tamaño y el estilo de fuente, configurando las propiedades en el`Aspose.Pdf.Table` y`Aspose.Pdf.TextFragment` objetos. Por ejemplo, puede configurar el`DefaultCellTextState` propiedad para cambiar las propiedades de fuente del texto en las celdas de la tabla.
 
-#### Q: Is it possible to merge cells in the table?
+#### P: ¿Es posible fusionar celdas en la tabla?
 
-A: Yes, you can merge cells in the table using the `MergeCells` method of the `Aspose.Pdf.Row` class. This allows you to create cells that span multiple rows and columns.
+ R: Sí, puedes combinar celdas en la tabla usando el`MergeCells` método de la`Aspose.Pdf.Row` clase. Esto le permite crear celdas que abarcan varias filas y columnas.
 
-#### Q: Can I add images or other content to the table cells?
+#### P: ¿Puedo agregar imágenes u otro contenido a las celdas de la tabla?
 
-A: Yes, you can add various types of content to the table cells, including images, text, hyperlinks, and more. You can use the appropriate classes from Aspose.PDF for .NET to add different types of content to the cells.
+R: Sí, puedes agregar varios tipos de contenido a las celdas de la tabla, incluidas imágenes, texto, hipervínculos y más. Puede utilizar las clases apropiadas de Aspose.PDF para .NET para agregar diferentes tipos de contenido a las celdas.
 
-#### Q: Is Aspose.PDF for .NET compatible with .NET 5.0 or later versions?
+#### P: ¿Aspose.PDF para .NET es compatible con .NET 5.0 o versiones posteriores?
 
-A: Yes, Aspose.PDF for .NET is compatible with .NET 5.0 and later versions. It supports various .NET platforms, including .NET Framework, .NET Core, and .NET 5.0+.
+R: Sí, Aspose.PDF para .NET es compatible con .NET 5.0 y versiones posteriores. Es compatible con varias plataformas .NET, incluidas .NET Framework, .NET Core y .NET 5.0+.

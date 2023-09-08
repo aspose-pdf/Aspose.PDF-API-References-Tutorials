@@ -1,128 +1,128 @@
 ---
-title: Configure Metered License Keys In PDF File
-linktitle: Configure Metered License Keys In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to set up a metered license keys in PDF file with Aspose.PDF for .NET and benefit from advanced features.
+title: Ölçülü Lisans Anahtarlarını PDF Dosyasında Yapılandırma
+linktitle: Ölçülü Lisans Anahtarlarını PDF Dosyasında Yapılandırma
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasında ölçülü lisans anahtarları ayarlamak ve gelişmiş özelliklerden yararlanmak için adım adım kılavuz.
 type: docs
 weight: 10
 url: /tr/net/licensing-aspose-pdf/configure-metered-license/
 ---
-In this tutorial, we will walk you through step-by-step how to set up a metered license keys in PDF file with Aspose.PDF for .NET. The metered license allows you to use the advanced features of Aspose.PDF based on your actual consumption.
+Bu eğitimde, Aspose.PDF for .NET ile PDF dosyasında ölçülü lisans anahtarlarının nasıl ayarlanacağını adım adım anlatacağız. Ölçülü lisans, Aspose.PDF'in gelişmiş özelliklerini gerçek tüketiminize göre kullanmanıza olanak tanır.
 
-### Step 1: Configuring License Keys
+### 1. Adım: Lisans Anahtarlarını Yapılandırma
 
-In the source code provided, you must specify the public and private keys of the metered license. Replace the "*****" values with your own keys. These keys will be provided to you when you purchase a metered license from Aspose.
+Sağlanan kaynak kodunda, ölçülü lisansın genel ve özel anahtarlarını belirtmeniz gerekir. "'yi değiştirin*****" değerlerine kendi anahtarlarınızla sahip olacaksınız. Aspose'tan ölçülü lisans satın aldığınızda bu anahtarlar size sağlanacaktır.
 
 ```csharp
 Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
 metered.SetMeteredKey("PUBLIC_KEY", "PRIVATE_KEY");
 ```
 
-### Step 2: Loading the document
+### Adım 2: Belgeyi yükleme
 
-Load the PDF document from disk using the `Document` class of Aspose.PDF.
+ PDF belgesini diskten şunu kullanarak yükleyin:`Document` Aspose.PDF sınıfı.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-### Step 3: Get Document Page Count
+### 3. Adım: Belge Sayfa Sayısını Alın
 
-Use the `Count` property of the `Pages` collection to get the total number of pages in the document.
+ Kullan`Count` mülkiyeti`Pages` Belgedeki toplam sayfa sayısını almak için koleksiyon.
 
 ```csharp
 Console.WriteLine(doc.Pages.Count);
 ```
 
-### Sample source code for Configure Metered License using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Ölçülü Lisansı Yapılandırma için örnek kaynak kodu 
 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// set metered public and private keys
+// ölçülü genel ve özel anahtarları ayarlama
 Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
-// Access the setMeteredKey property and pass public and private keys as parameters
+//setMeteredKey özelliğine erişin ve genel ve özel anahtarları parametre olarak iletin
 metered.SetMeteredKey("*****", "*****");
-// Load the document from disk.
+// Belgeyi diskten yükleyin.
 Document doc = new Document(dataDir + "input.pdf");
-//Get the page count of document
+//Belgenin sayfa sayısını alın
 Console.WriteLine(doc.Pages.Count);
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we explained how to set up a metered license with Aspose.PDF for .NET. By using a metered license, you can benefit from the advanced features of Aspose.PDF based on your actual usage. Make sure to provide valid license keys to use Aspose.PDF with all its features.
+Bu eğitimde Aspose.PDF for .NET ile ölçülü lisansın nasıl kurulacağını açıkladık. Ölçülü lisans kullanarak, gerçek kullanımınıza bağlı olarak Aspose.PDF'in gelişmiş özelliklerinden yararlanabilirsiniz. Aspose.PDF'i tüm özellikleriyle kullanmak için geçerli lisans anahtarlarını sağladığınızdan emin olun.
 
-### FAQ's for configure metered license keys in PDF file
+### PDF dosyasında ölçülü lisans anahtarlarını yapılandırmaya ilişkin SSS'ler
 
-#### Q: What is a metered license in Aspose.PDF?
+#### S: Aspose.PDF'de ölçülü lisans nedir?
 
-A: A metered license in Aspose.PDF is a licensing model that allows you to pay based on your actual consumption of features rather than a fixed license fee. It enables you to use advanced features of Aspose.PDF while paying only for what you use.
+C: Aspose.PDF'deki ölçülü lisans, sabit bir lisans ücreti yerine özelliklerin gerçek tüketimine göre ödeme yapmanızı sağlayan bir lisanslama modelidir. Yalnızca kullandığınız kadar ödeyerek Aspose.PDF'in gelişmiş özelliklerini kullanmanızı sağlar.
 
-#### Q: Why should I use a metered license for Aspose.PDF?
+#### S: Aspose.PDF için neden ölçülü lisans kullanmalıyım?
 
-A: Using a metered license offers cost savings and flexibility. You pay only for the features you use, making it suitable for projects with varying demands. It eliminates the need for upfront licensing fees and allows you to access advanced PDF features.
+C: Ölçülü lisans kullanmak maliyet tasarrufu ve esneklik sunar. Yalnızca kullandığınız özellikler için ödeme yaparsınız, bu da onu değişen taleplere sahip projelere uygun hale getirir. Ön lisans ücreti ihtiyacını ortadan kaldırır ve gelişmiş PDF özelliklerine erişmenizi sağlar.
 
-#### Q: How do I obtain metered license keys?
+#### S: Ölçülü lisans anahtarlarını nasıl edinebilirim?
 
-A: When you purchase a metered license from Aspose, you will receive a pair of public and private keys. These keys will be used to authenticate and enable metered licensing for your Aspose.PDF application.
+C: Aspose'tan ölçülü lisans satın aldığınızda, bir çift genel ve özel anahtar alacaksınız. Bu anahtarlar Aspose.PDF uygulamanızın kimlik doğrulamasını yapmak ve ölçülü lisanslamayı etkinleştirmek için kullanılacaktır.
 
-#### Q: How do I configure metered license keys in Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'te ölçülü lisans anahtarlarını nasıl yapılandırabilirim?
 
-A: To configure metered license keys, use the `SetMeteredKey` method of the `Aspose.Pdf.Metered` class. Replace `"PUBLIC_KEY"` and `"PRIVATE_KEY"` with your actual keys.
+ C: Ölçülü lisans anahtarlarını yapılandırmak için`SetMeteredKey` yöntemi`Aspose.Pdf.Metered` sınıf. Yer değiştirmek`"PUBLIC_KEY"` Ve`"PRIVATE_KEY"` gerçek anahtarlarınızla.
 
 ```csharp
 Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
 metered.SetMeteredKey("PUBLIC_KEY", "PRIVATE_KEY");
 ```
 
-#### Q: How do I load a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesini nasıl yüklerim?
 
-A: To load a PDF document from disk, use the `Document` class of Aspose.PDF and provide the file path.
+ C: Diskten bir PDF belgesi yüklemek için`Document` Aspose.PDF sınıfını seçin ve dosya yolunu belirtin.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-#### Q: How do I get the total page count of a PDF document?
+#### S: Bir PDF belgesinin toplam sayfa sayısını nasıl edinebilirim?
 
-A: To get the total page count of a PDF document, use the `Count` property of the `Pages` collection.
+ C: Bir PDF belgesinin toplam sayfa sayısını öğrenmek için`Count` mülkiyeti`Pages` Toplamak.
 
 ```csharp
 int pageCount = doc.Pages.Count;
 Console.WriteLine("Total pages: " + pageCount);
 ```
 
-#### Q: Can I use metered licensing for other Aspose products?
+#### S: Ölçülü lisanslamayı diğer Aspose ürünleri için kullanabilir miyim?
 
-A: Yes, metered licensing is available for various Aspose products, allowing you to pay based on your usage for a wide range of features.
+C: Evet, çeşitli Aspose ürünleri için ölçülü lisanslama mevcuttur ve çok çeşitli özellikler için kullanımınıza göre ödeme yapmanıza olanak tanır.
 
-#### Q: Is a metered license suitable for all types of projects?
+#### S: Ölçülü lisans her tür projeye uygun mudur?
 
-A: Metered licensing is suitable for projects with varying feature usage. It may not be cost-effective for projects with consistent, high-feature usage.
+C: Ölçülü lisanslama, değişen özellik kullanımına sahip projeler için uygundur. Tutarlı, yüksek özellik kullanımına sahip projeler için uygun maliyetli olmayabilir.
 
-#### Q: Where can I find more information about Aspose.PDF metered licensing?
+#### S: Aspose.PDF ölçülü lisanslama hakkında daha fazla bilgiyi nerede bulabilirim?
 
-A: For more information about metered licensing, pricing, and benefits, visit the [Aspose.PDF Metered Licensing](https://purchase.aspose.com/pricing/pdf/net) page.
+ C: Ölçülü lisanslama, fiyatlandırma ve avantajlar hakkında daha fazla bilgi için şu adresi ziyaret edin:[Aspose.PDF Ölçülü Lisanslama](https://purchase.aspose.com/pricing/pdf/net) sayfa.
 
-#### Q: How do I ensure the security of my metered license keys?
+#### S: Tarifeli lisans anahtarlarımın güvenliğini nasıl sağlayabilirim?
 
-A: Metered license keys are used for authentication and are sensitive information. Ensure they are kept confidential and not shared publicly.
+C: Ölçülü lisans anahtarları kimlik doğrulama için kullanılır ve hassas bilgilerdir. Bunların gizli tutulduğundan ve kamuya açık şekilde paylaşılmadığından emin olun.
 
-#### Q: Can I switch between traditional and metered licensing?
+#### S: Geleneksel ve ölçülü lisanslama arasında geçiş yapabilir miyim?
 
-A: Yes, you can switch between traditional licensing and metered licensing for Aspose.PDF based on your project's requirements.
+C: Evet, projenizin gereksinimlerine göre Aspose.PDF için geleneksel lisanslama ve ölçülü lisanslama arasında geçiş yapabilirsiniz.
 
-#### Q: Can I use a trial version before purchasing a metered license?
+#### S: Ölçülü lisans satın almadan önce deneme sürümünü kullanabilir miyim?
 
-A: Yes, you can try the [free trial version](https://products.aspose.com/pdf/net) of Aspose.PDF to evaluate its features and functionality before purchasing a metered license.
+ C: Evet, deneyebilirsiniz[ücretsiz deneme sürümü](https://products.aspose.com/pdf/net) Ölçülü bir lisans satın almadan önce Aspose.PDF'in özelliklerini ve işlevselliğini değerlendirin.
 
-#### Q: How often should I configure metered license keys?
+#### S: Ölçülü lisans anahtarlarını ne sıklıkla yapılandırmalıyım?
 
-A: You need to configure metered license keys only once when your application starts. It provides access to the advanced features throughout the application's runtime.
+C: Ölçülü lisans anahtarlarını uygulamanız başladığında yalnızca bir kez yapılandırmanız gerekir. Uygulamanın çalışma süresi boyunca gelişmiş özelliklere erişim sağlar.
 
-#### Q: Can I apply metered licensing to an existing application?
+#### S: Ölçülü lisanslamayı mevcut bir uygulamaya uygulayabilir miyim?
 
-A: Yes, you can integrate metered licensing into an existing Aspose.PDF application to benefit from its advantages.
+C: Evet, avantajlarından yararlanmak için ölçülü lisanslamayı mevcut Aspose.PDF uygulamasına entegre edebilirsiniz.

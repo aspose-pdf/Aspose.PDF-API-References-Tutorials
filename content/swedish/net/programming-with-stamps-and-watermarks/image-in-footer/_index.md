@@ -1,139 +1,139 @@
 ---
-title: Image In Footer
-linktitle: Image In Footer
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add an image in the footer section of a PDF document with Aspose.PDF for .NET.
+title: Bild i sidfot
+linktitle: Bild i sidfot
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du lägger till en bild i sidfoten i ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 130
 url: /sv/net/programming-with-stamps-and-watermarks/image-in-footer/
 ---
-In this tutorial, we will guide you step by step on how to add an image in the footer section of a PDF document using Aspose.PDF for .NET. We will use the provided C# source code to open an existing PDF document, create an image buffer, set its properties, and add it to all pages of the PDF document.
+I den här handledningen guidar vi dig steg för steg om hur du lägger till en bild i sidfoten i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att använda den medföljande C#-källkoden för att öppna ett befintligt PDF-dokument, skapa en bildbuffert, ställa in dess egenskaper och lägga till den på alla sidor i PDF-dokumentet.
 
-## Step 1: Setting up the environment
+## Steg 1: Sätta upp miljön
 
-Before you begin, make sure you have the following:
+Innan du börjar, se till att du har följande:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- En installerad .NET-utvecklingsmiljö.
+- Aspose.PDF-biblioteket för .NET laddas ner och refereras till i ditt projekt.
 
-## Step 2: Loading the existing PDF document
+## Steg 2: Laddar det befintliga PDF-dokumentet
 
-The first step is to load the existing PDF document into your project. Here's how:
+Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Här är hur:
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the existing PDF document
+// Öppna det befintliga PDF-dokumentet
 Document pdfDocument = new Document(dataDir + "ImageInFooter.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Var noga med att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till katalogen där ditt PDF-dokument finns.
 
-## Step 3: Creating and adding the image in the footer section
+## Steg 3: Skapa och lägga till bilden i sidfotssektionen
 
-Now that the PDF document is loaded, we can create an image stamp and add it to all the pages of the document. Here's how:
+Nu när PDF-dokumentet är laddat kan vi skapa en bildstämpel och lägga till den på alla sidor i dokumentet. Här är hur:
 
 ```csharp
-// Create the frame buffer
+// Skapa rambufferten
 ImageStamp imageStamp = new ImageStamp(dataDir + "aspose-logo.jpg");
 
-// Set image buffer properties
+// Ställ in bildbuffertegenskaper
 imageStamp.BottomMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-// Add image buffer to all pages
+// Lägg till bildbuffert på alla sidor
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
 }
 ```
 
-The code above creates an image buffer from the "aspose-logo.jpg" file and sets its properties, such as bottom margin, horizontal and vertical alignment. Then the image buffer is added to all pages of the PDF document.
+Koden ovan skapar en bildbuffert från filen "aspose-logo.jpg" och ställer in dess egenskaper, såsom bottenmarginal, horisontell och vertikal justering. Sedan läggs bildbufferten till på alla sidor i PDF-dokumentet.
 
-## Step 4: Saving the modified PDF document
+## Steg 4: Spara det ändrade PDF-dokumentet
 
-Once the image is added to the footer section, we can save the modified PDF document. Here's how:
+När bilden har lagts till i sidfoten kan vi spara det ändrade PDF-dokumentet. Här är hur:
 
 ```csharp
-// Save the modified PDF document
+// Spara det ändrade PDF-dokumentet
 pdfDocument.Save(dataDir + "ImageInFooter_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Ovanstående kod sparar det redigerade PDF-dokumentet i den angivna katalogen.
 
-### Sample source code for Image In Footer using Aspose.PDF for .NET 
+### Exempel på källkod för bild i sidfot med Aspose.PDF för .NET 
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Öppna dokumentet
 Document pdfDocument = new Document(dataDir+ "ImageInFooter.pdf");
 
-// Create footer
+// Skapa sidfot
 ImageStamp imageStamp = new ImageStamp(dataDir+ "aspose-logo.jpg");
 
-// Set properties of the stamp
+// Ställ in egenskaper för stämpeln
 imageStamp.BottomMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-// Add footer on all pages
+// Lägg till sidfot på alla sidor
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(imageStamp);
 }
 dataDir = dataDir + "ImageInFooter_out.pdf";
 
-// Save updated PDF file
+// Spara uppdaterad PDF-fil
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImage in footer added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! You have learned how to add an image in the footer section of a PDF document using Aspose.PDF for .NET. You can now customize the footers of your PDF documents by adding images.
+Grattis! Du har lärt dig hur du lägger till en bild i sidfoten i ett PDF-dokument med Aspose.PDF för .NET. Du kan nu anpassa sidfötterna i dina PDF-dokument genom att lägga till bilder.
 
-### FAQ's for image in footer
+### Vanliga frågor för bild i sidfoten
 
-#### Q: What is the purpose of adding an image to the footer section of a PDF document?
+#### F: Vad är syftet med att lägga till en bild i sidfoten i ett PDF-dokument?
 
-A: Adding an image to the footer section of a PDF document allows you to include visual elements, such as a logo or watermark, at the bottom of every page. This can enhance the branding and aesthetics of the PDF content.
+S: Genom att lägga till en bild i sidfoten i ett PDF-dokument kan du inkludera visuella element, som en logotyp eller vattenstämpel, längst ner på varje sida. Detta kan förbättra varumärket och estetiken hos PDF-innehållet.
 
-#### Q: How does the provided C# source code achieve adding an image to the footer section of a PDF document?
+#### F: Hur kan den medföljande C#-källkoden lägga till en bild i sidfoten i ett PDF-dokument?
 
-A: The provided code demonstrates how to load an existing PDF document, create an `ImageStamp` object from an image file, set properties such as bottom margin and alignment, and then add the image stamp to the footer of all pages.
+ S: Den medföljande koden visar hur man laddar ett befintligt PDF-dokument, skapar ett`ImageStamp` objekt från en bildfil, ställ in egenskaper som bottenmarginal och justering och lägg sedan till bildstämpeln i sidfoten på alla sidor.
 
-#### Q: Can I adjust the position and alignment of the image within the footer section?
+#### F: Kan jag justera bildens position och justering inom sidfoten?
 
-A: Yes, you can adjust the position and alignment of the image within the footer section by modifying the properties of the `ImageStamp` object. The code snippet sets properties such as `BottomMargin`, `HorizontalAlignment`, and `VerticalAlignment`.
+ S: Ja, du kan justera bildens position och justering inom sidfotssektionen genom att ändra egenskaperna för`ImageStamp` objekt. Kodavsnittet ställer in egenskaper som t.ex`BottomMargin`, `HorizontalAlignment` , och`VerticalAlignment`.
 
-#### Q: Is it possible to add different images to the footer section on different pages of the PDF document?
+#### F: Är det möjligt att lägga till olika bilder i sidfoten på olika sidor i PDF-dokumentet?
 
-A: Yes, you can add different images to the footer section on different pages by creating separate `ImageStamp` objects with different image files and properties, and then adding them to specific pages.
+ S: Ja, du kan lägga till olika bilder i sidfoten på olika sidor genom att skapa separata`ImageStamp` objekt med olika bildfiler och egenskaper och sedan lägga till dem på specifika sidor.
 
-#### Q: How does the code ensure that the image is added to all pages of the PDF document?
+#### F: Hur säkerställer koden att bilden läggs till på alla sidor i PDF-dokumentet?
 
-A: The provided code uses a `foreach` loop to iterate through all pages of the PDF document and adds the same `ImageStamp` to each page's footer section.
+S: Den medföljande koden använder en`foreach` loop för att iterera genom alla sidor i PDF-dokumentet och lägger till samma`ImageStamp` till varje sidas sidfotssektion.
 
-#### Q: Can I add other elements, such as text or shapes, to the footer section using a similar approach?
+#### F: Kan jag lägga till andra element, t.ex. text eller former, i sidfotsavsnittet med ett liknande tillvägagångssätt?
 
-A: Yes, you can add other elements like text or shapes to the footer section using a similar approach by creating the appropriate stamp objects (e.g., `TextStamp`) and setting their properties accordingly.
+ S: Ja, du kan lägga till andra element som text eller former i sidfotssektionen med ett liknande tillvägagångssätt genom att skapa lämpliga stämpelobjekt (t.ex.`TextStamp`) och ställer in deras egenskaper i enlighet därmed.
 
-#### Q: How do I specify the path to the image file that I want to add to the footer?
+#### F: Hur anger jag sökvägen till bildfilen som jag vill lägga till i sidfoten?
 
-A: The path to the image file is specified when creating the `ImageStamp` object, as shown in the code. Make sure to provide the correct path to the image file.
+ S: Sökvägen till bildfilen anges när du skapar`ImageStamp` objekt, som visas i koden. Se till att ange rätt sökväg till bildfilen.
 
-#### Q: Can I customize the image's size within the footer section?
+#### F: Kan jag anpassa bildens storlek inom sidfoten?
 
-A: Yes, you can customize the image's size within the footer section by adjusting the dimensions of the `ImageStamp` using properties like `Width` and `Height`.
+ S: Ja, du kan anpassa bildens storlek inom sidfotssektionen genom att justera måtten på`ImageStamp` använda egenskaper som`Width` och`Height`.
 
-#### Q: Is it possible to remove or replace the image in the footer section after it has been added?
+#### F: Är det möjligt att ta bort eller ersätta bilden i sidfoten efter att den har lagts till?
 
-A: Yes, you can remove or replace the image in the footer section by modifying the contents of the `ImageStamp` object or removing the stamp from specific pages.
+ S: Ja, du kan ta bort eller ersätta bilden i sidfotsavsnittet genom att ändra innehållet i`ImageStamp` objekt eller ta bort stämpeln från specifika sidor.
 
-#### Q: How does the code handle scenarios where the image's dimensions exceed the available space in the footer?
+#### F: Hur hanterar koden scenarier där bildens mått överstiger det tillgängliga utrymmet i sidfoten?
 
-A: The code sets properties such as `BottomMargin`, `HorizontalAlignment`, and `VerticalAlignment` to control the positioning and alignment of the image. Ensure that these properties are adjusted to prevent any overlap or layout issues.
+ S: Koden ställer in egenskaper som t.ex`BottomMargin`, `HorizontalAlignment` , och`VerticalAlignment` för att kontrollera placeringen och justeringen av bilden. Se till att dessa egenskaper justeras för att förhindra överlappning eller layoutproblem.

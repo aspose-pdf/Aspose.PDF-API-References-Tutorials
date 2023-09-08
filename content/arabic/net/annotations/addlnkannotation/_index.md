@@ -1,23 +1,23 @@
 ---
-title: Add lnk Annotation
-linktitle: Add lnk Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add Ink Annotation feature to PDF documents in C# using Aspose.PDF for .NET with step-by-step guide and full source code.
+title: إضافة تعليق توضيحي لـ LNK
+linktitle: إضافة تعليق توضيحي لـ LNK
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة ميزة Ink Annotation إلى مستندات PDF في C# باستخدام Aspose.PDF لـ .NET مع دليل خطوة بخطوة وكود المصدر الكامل.
 type: docs
 weight: 20
 url: /ar/net/annotations/addlnkannotation/
 ---
-Aspose.PDF for .NET is a powerful library that enables developers to perform various PDF operations. One such operation is adding Ink Annotation to PDF documents. In this article, we will provide a step-by-step guide to explain the C# source code for adding Ink Annotation using Aspose.PDF for .NET. Let's get started!
+Aspose.PDF for .NET هي مكتبة قوية تمكن المطورين من تنفيذ عمليات PDF المختلفة. إحدى هذه العمليات هي إضافة تعليق توضيحي بالحبر إلى مستندات PDF. في هذه المقالة، سنقدم دليلًا خطوة بخطوة لشرح الكود المصدري لـ C# لإضافة تعليق توضيحي بالحبر باستخدام Aspose.PDF لـ .NET. هيا بنا نبدأ!
 
-## Understanding the Ink Annotation Feature of Aspose.PDF for .NET
+## فهم ميزة التعليقات التوضيحية بالحبر في Aspose.PDF لـ .NET
 
-Before diving into the C# source code, let's first understand what Ink Annotation is and its uses.
+قبل الغوص في الكود المصدري لـ C#، دعونا أولاً نفهم ما هو Ink Annotation واستخداماته.
 
-Ink Annotation is a way to draw freeform ink annotations on PDF documents. It allows you to create annotations with a stylus or a mouse. This feature is useful in situations where you need to draw diagrams, sketches, or other types of annotations.
+التعليقات التوضيحية بالحبر هي طريقة لرسم تعليقات توضيحية بالحبر بشكل حر على مستندات PDF. يسمح لك بإنشاء تعليقات توضيحية باستخدام قلم أو ماوس. تعد هذه الميزة مفيدة في المواقف التي تحتاج فيها إلى رسم مخططات أو رسومات تخطيطية أو أنواع أخرى من التعليقات التوضيحية.
 
-## Step 1: Creating a New Document
+## الخطوة 1: إنشاء مستند جديد
 
-The first step in adding Ink Annotation to a PDF document is to create a new instance of the Document class. This is achieved using the following code snippet:
+الخطوة الأولى في إضافة تعليق توضيحي بالحبر إلى مستند PDF هي إنشاء مثيل جديد لفئة المستند. يتم تحقيق ذلك باستخدام مقتطف الكود التالي:
 
 ```csharp
 string dataDir = "YOUR DATA DIRECTORY";
@@ -25,11 +25,11 @@ Document doc = new Document();
 Page pdfPage = doc.Pages.Add();
 ```
 
-Here, we create a new instance of the Document class and add a new page to it.
+هنا، نقوم بإنشاء مثيل جديد لفئة المستند وإضافة صفحة جديدة إليه.
 
-## Step 2: Creating Ink Annotation
+## الخطوة 2: إنشاء تعليق توضيحي بالحبر
 
-The next step is to create an instance of the InkAnnotation class. This is done using the following code snippet:
+الخطوة التالية هي إنشاء مثيل لفئة InkAnnotation. ويتم ذلك باستخدام مقتطف التعليمات البرمجية التالي:
 
 ```csharp
 System.Drawing.Rectangle drect = new System.Drawing.Rectangle();
@@ -54,25 +54,25 @@ ia.Opacity = 0.5;
 pdfPage.Annotations.Add(ia);
 ```
 
-Here, we first create a rectangle using the System.Drawing.Rectangle class and convert it to Aspose.Pdf.Rectangle using the FromRect method. We then create an instance of the InkAnnotation class using the rectangle, a list of points, and the page where the annotation is added.
+هنا، نقوم أولاً بإنشاء مستطيل باستخدام فئة System.Drawing.Rectangle وتحويله إلى Aspose.Pdf.Rectangle باستخدام طريقة FromRect. نقوم بعد ذلك بإنشاء مثيل لفئة InkAnnotation باستخدام المستطيل وقائمة النقاط والصفحة التي تمت إضافة التعليق التوضيحي فيها.
 
-We then set various properties of the InkAnnotation, such as the title, color, cap style, border, and opacity. Finally, we add the annotation to the page using the Annotations.Add method.
+نقوم بعد ذلك بتعيين خصائص مختلفة للتعليق التوضيحي بالحبر، مثل العنوان واللون ونمط الغطاء والحدود والعتامة. وأخيرًا، نضيف التعليق التوضيحي إلى الصفحة باستخدام طريقة Annotations.Add.
 
-## Step 3: Saving the Document
+## الخطوة 3: حفظ المستند
 
-The final step is to save the PDF document with the Ink Annotation added. This is achieved using the following code snippet:
+الخطوة الأخيرة هي حفظ مستند PDF مع إضافة التعليق التوضيحي بالحبر. يتم تحقيق ذلك باستخدام مقتطف الكود التالي:
 
 ```csharp
 dataDir = dataDir + "AddlnkAnnotation_out.pdf";
 doc.Save(dataDir);
 ```
 
-Here, we concatenate the output file name to the data directory and save the document using the Save method.
+هنا، نقوم بتسلسل اسم ملف الإخراج إلى دليل البيانات وحفظ المستند باستخدام طريقة الحفظ.
 
-### Example source code for Adding Ink Annotation using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لإضافة تعليق توضيحي بالحبر باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DATA DIRECTORY";
 
 
@@ -100,32 +100,32 @@ ia.Opacity = 0.5;
 pdfPage.Annotations.Add(ia);
 
 dataDir = dataDir + "AddlnkAnnotation_out.pdf";
-// Save output file
+// حفظ ملف الإخراج
 doc.Save(dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we explored how to add Ink Annotations to a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and C# source code provided, developers can easily implement Ink Annotation functionality in their PDF processing applications.
+في هذا البرنامج التعليمي، اكتشفنا كيفية إضافة التعليقات التوضيحية بالحبر إلى مستند PDF باستخدام Aspose.PDF لـ .NET. من خلال اتباع الدليل خطوة بخطوة والتعليمة البرمجية المصدر C# المتوفرة، يمكن للمطورين تنفيذ وظيفة Ink Annotation بسهولة في تطبيقات معالجة PDF الخاصة بهم.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is an Ink Annotation in a PDF document?
+#### س: ما هو التعليق التوضيحي بالحبر في مستند PDF؟
 
-A: An Ink Annotation in a PDF document allows users to draw freeform ink annotations using a stylus or mouse. It is commonly used to add hand-drawn sketches, diagrams, or other freehand annotations to a PDF.
+ج: يتيح التعليق التوضيحي بالحبر الموجود في مستند PDF للمستخدمين رسم تعليقات توضيحية بالحبر باستخدام القلم أو الماوس. يتم استخدامه بشكل شائع لإضافة رسومات أو رسوم بيانية أو تعليقات توضيحية أخرى مرسومة يدويًا إلى ملف PDF.
 
-#### Q: Can I customize the appearance of the Ink Annotation?
+#### س: هل يمكنني تخصيص مظهر التعليق التوضيحي بالحبر؟
 
-A: Yes, Aspose.PDF for .NET provides various properties to customize the appearance of the Ink Annotation, such as color, opacity, cap style, border width, and more. Developers can adjust these properties to meet their specific requirements.
+ج: نعم، يوفر Aspose.PDF for .NET خصائص متنوعة لتخصيص مظهر التعليق التوضيحي بالحبر، مثل اللون، والعتامة، ونمط الغطاء، وعرض الحدود، والمزيد. يمكن للمطورين تعديل هذه الخصائص لتلبية متطلباتهم المحددة.
 
-#### Q: Is it possible to add multiple Ink Annotations to a single PDF page?
+#### س: هل من الممكن إضافة تعليقات توضيحية متعددة بالحبر إلى صفحة PDF واحدة؟
 
-A: Yes, you can add multiple Ink Annotations to a single PDF page using Aspose.PDF for .NET. Each Ink Annotation can have its own set of points and customized appearance.
+ج: نعم، يمكنك إضافة تعليقات توضيحية متعددة بالحبر إلى صفحة PDF واحدة باستخدام Aspose.PDF لـ .NET. يمكن أن يكون لكل تعليق توضيحي بالحبر مجموعة نقاط خاصة به ومظهر مخصص.
 
-#### Q: Can I add Ink Annotations to existing PDF documents?
+#### س: هل يمكنني إضافة تعليقات توضيحية بالحبر إلى مستندات PDF الموجودة؟
 
-A: Yes, Aspose.PDF for .NET allows you to add Ink Annotations to both newly created PDF documents and existing PDF files. You can open an existing PDF, add Ink Annotations, and save the updated document.
+ج: نعم، يسمح لك Aspose.PDF for .NET بإضافة تعليقات توضيحية بالحبر إلى كل من مستندات PDF المنشأة حديثًا وملفات PDF الموجودة. يمكنك فتح ملف PDF موجود وإضافة تعليقات توضيحية بالحبر وحفظ المستند المحدث.
 
-#### Q: What are some common use cases for Ink Annotations in PDF documents?
+#### س: ما هي بعض حالات الاستخدام الشائعة للتعليقات التوضيحية بالحبر في مستندات PDF؟
 
-A: Ink Annotations are useful for a wide range of applications, including adding signatures or handwritten notes to PDF forms, annotating architectural blueprints or engineering drawings, and marking up documents for collaborative review.
+ج: تعد التعليقات التوضيحية بالحبر مفيدة لمجموعة واسعة من التطبيقات، بما في ذلك إضافة التوقيعات أو الملاحظات المكتوبة بخط اليد إلى نماذج PDF، والتعليق على المخططات المعمارية أو الرسومات الهندسية، وترميز المستندات للمراجعة التعاونية.

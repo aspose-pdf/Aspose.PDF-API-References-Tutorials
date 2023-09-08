@@ -1,29 +1,29 @@
 ---
-title: Add Repeating Column In PDF Document
-linktitle: Add Repeating Column In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a repeating column in PDF document using Aspose.PDF for .NET.
+title: إضافة عمود متكرر في وثيقة PDF
+linktitle: إضافة عمود متكرر في وثيقة PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة عمود متكرر في مستند PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 20
 url: /ar/net/programming-with-tables/add-repeating-column/
 ---
-In this tutorial, we are going to learn how to add a repeating column in PDF document using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to create a table with a repeating column in a PDF document. Let's start!
+في هذا البرنامج التعليمي، سنتعلم كيفية إضافة عمود متكرر في مستند PDF باستخدام Aspose.PDF لـ .NET. سنشرح الكود المصدري في لغة C# خطوة بخطوة. في نهاية هذا البرنامج التعليمي، ستعرف كيفية إنشاء جدول بعمود متكرر في مستند PDF. لنبدأ!
 
-## Step 1: Setting up the environment
-First, make sure you've set up your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## الخطوة 1: تهيئة البيئة
+أولاً، تأكد من قيامك بإعداد بيئة تطوير C# باستخدام Aspose.PDF لـ .NET. أضف المرجع إلى المكتبة واستورد مساحات الأسماء الضرورية.
 
-## Step 2: Creating the PDF document
-In this step, we create a new PDF document.
+## الخطوة 2: إنشاء وثيقة PDF
+في هذه الخطوة، نقوم بإنشاء مستند PDF جديد.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-We have created an empty PDF document where we can add content.
+لقد أنشأنا مستند PDF فارغًا حيث يمكننا إضافة محتوى.
 
-## Step 3: Creating the tables
-In this step we create a main table (`outerTable`) and a nested table (`mytable`) which will be repeated in the column.
+## الخطوة 3: إنشاء الجداول
+في هذه الخطوة نقوم بإنشاء جدول رئيسي (`outerTable`) وجدول متداخل (`mytable`) والتي سيتم تكرارها في العمود.
 
 ```csharp
 Table outerTable = new Table();
@@ -35,10 +35,10 @@ mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
 ```
 
-We specified table properties such as column width and nested table break mode.
+لقد حددنا خصائص الجدول مثل عرض العمود ووضع فاصل الجدول المتداخل.
 
-## Step 4: Adding the tables to the document
-Now we add the created tables to the PDF document.
+## الخطوة 4: إضافة الجداول إلى المستند
+نقوم الآن بإضافة الجداول التي تم إنشاؤها إلى مستند PDF.
 
 ```csharp
 page.Paragraphs.Add(outerTable);
@@ -49,10 +49,10 @@ mytable.RepeatingColumnsCount = 5;
 page.Paragraphs.Add(mytable);
 ```
 
-We first add the main table (`outerTable`) to the PDF document. Next, we add the nested table (`mytable`) as a paragraph in a cell in the main table. We also specify the number of repeated columns for `mytable` (in this example, 5 columns).
+نقوم أولا بإضافة الجدول الرئيسي (`outerTable`) إلى مستند PDF. بعد ذلك، نضيف الجدول المتداخل (`mytable` ) كفقرة في خلية في الجدول الرئيسي. نحدد أيضًا عدد الأعمدة المتكررة لـ`mytable` (في هذا المثال، 5 أعمدة).
 
-## Step 5: Adding headers and lines
-Now we add the headers and rows to the table.
+## الخطوة 5: إضافة الرؤوس والخطوط
+الآن نضيف الرؤوس والصفوف إلى الجدول.
 
 ```csharp
 Row headerRow = mytable.Rows.Add();
@@ -60,7 +60,7 @@ headerRow.Cells.Add("header 1");
 headerRow.Cells.Add("header 2");
 headerRow.Cells.Add("header 3");
 // ...
-// Add other headers here
+// أضف رؤوسًا أخرى هنا
 
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 {
@@ -69,45 +69,45 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
      row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
      row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
      // ...
-     // Add the other columns here
+     // أضف الأعمدة الأخرى هنا
 }
 ```
 
-We first add the headers to the first row of the table (`headerRow`). Then we add the rows of data from a loop. In this example, we add 6 rows of data.
+نقوم أولاً بإضافة الرؤوس إلى الصف الأول من الجدول (`headerRow`). ثم نضيف صفوف البيانات من الحلقة. في هذا المثال، أضفنا 6 صفوف من البيانات.
 
-## Step 6: Saving the PDF document
-Finally, we save the PDF document to the specified file.
+## الخطوة 6: حفظ وثيقة PDF
+وأخيرًا، نقوم بحفظ مستند PDF في الملف المحدد.
 
 ```csharp
 string outFile = dataDir + "AddRepeatingColumn_out.pdf";
 doc.Save(outFile);
 ```
 
-Make sure to specify the correct directory and filename to save the output PDF file.
+تأكد من تحديد الدليل واسم الملف الصحيحين لحفظ ملف PDF الناتج.
 
-### Example source code for add repeating column using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لإضافة عمود متكرر باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 string outFile = dataDir + "AddRepeatingColumn_out.pdf";
-// Create a new document
+// إنشاء مستند جديد
 Document doc = new Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 
-// Instantiate an outer table that takes up the entire page
+// إنشاء مثيل لجدول خارجي يشغل الصفحة بأكملها
 Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-// Instantiate a table object that will be nested inside outerTable that will break inside the same page
+//قم بإنشاء مثيل لكائن جدول سيتم تداخله داخل جدول خارجي والذي سينفصل داخل نفس الصفحة
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
 
-// Add the outerTable to the page paragraphs
-// Add mytable to outerTable
+// أضف الجدول الخارجي إلى فقرات الصفحة
+// أضف mytable إلى ExternalTable
 page.Paragraphs.Add(outerTable);
 var bodyRow = outerTable.Rows.Add();
 var bodyCell = bodyRow.Cells.Add();
@@ -115,7 +115,7 @@ bodyCell.Paragraphs.Add(mytable);
 mytable.RepeatingColumnsCount = 5;
 page.Paragraphs.Add(mytable);
 
-// Add header Row
+// إضافة صف الرأس
 Aspose.Pdf.Row row = mytable.Rows.Add();
 row.Cells.Add("header 1");
 row.Cells.Add("header 2");
@@ -135,7 +135,7 @@ row.Cells.Add("header 17");
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 
 {
-	// Create rows in the table and then cells in the rows 
+	// قم بإنشاء صفوف في الجدول ثم خلايا في الصفوف
 	Aspose.Pdf.Row row1 = mytable.Rows.Add();
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
@@ -155,27 +155,27 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 doc.Save(outFile);
 ```
 
-## Conclusion
-In this tutorial, we learned how to add a repeating column in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to create tables with repeating columns in your own C# projects.
+## خاتمة
+في هذا البرنامج التعليمي، تعلمنا كيفية إضافة عمود متكرر في مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الدليل التفصيلي لإنشاء جداول ذات أعمدة متكررة في مشاريع C# الخاصة بك.
 
-### FAQ's for add repeating column in PDF document
+### الأسئلة الشائعة لإضافة عمود متكرر في مستند PDF
 
-#### Q: Can I customize the number of repeated columns in the nested table?
+#### س: هل يمكنني تخصيص عدد الأعمدة المتكررة في الجدول المتداخل؟
 
-A: Yes, you can customize the number of repeated columns in the nested table. In the provided example, we set `mytable.RepeatingColumnsCount = 5;`, which means there will be 5 repeated columns. You can change this value to any desired number.
+ ج: نعم، يمكنك تخصيص عدد الأعمدة المتكررة في الجدول المتداخل. في المثال المقدم، قمنا بتعيين`mytable.RepeatingColumnsCount = 5;`مما يعني أنه سيكون هناك 5 أعمدة متكررة. يمكنك تغيير هذه القيمة إلى أي رقم مطلوب.
 
-#### Q: Is it possible to add more rows to the nested table dynamically?
+#### س: هل من الممكن إضافة المزيد من الصفوف إلى الجدول المتداخل ديناميكيًا؟
 
-A: Yes, you can dynamically add more rows to the nested table in the same way as shown in the tutorial. You can use loops or any other logic to add rows based on your data.
+ج: نعم، يمكنك إضافة المزيد من الصفوف ديناميكيًا إلى الجدول المتداخل بنفس الطريقة الموضحة في البرنامج التعليمي. يمكنك استخدام الحلقات أو أي منطق آخر لإضافة صفوف بناءً على بياناتك.
 
-#### Q: Can I apply styles and formatting to the table and its cells?
+#### س: هل يمكنني تطبيق الأنماط والتنسيقات على الجدول وخلاياه؟
 
-A: Yes, you can apply styles and formatting to the table and its cells using Aspose.PDF for .NET. The library provides various properties and methods to customize the appearance of the table and its contents.
+ج: نعم، يمكنك تطبيق الأنماط والتنسيقات على الجدول وخلاياه باستخدام Aspose.PDF لـ .NET. توفر المكتبة خصائص وأساليب متنوعة لتخصيص مظهر الجدول ومحتوياته.
 
-#### Q: Is Aspose.PDF for .NET compatible with .NET Core?
+#### س: هل يتوافق Aspose.PDF for .NET مع .NET Core؟
 
-A: Yes, Aspose.PDF for .NET is compatible with .NET Core. You can use it in both .NET Framework and .NET Core applications.
+ج: نعم، Aspose.PDF لـ .NET متوافق مع .NET Core. يمكنك استخدامه في كل من تطبيقات .NET Framework و.NET Core.
 
-#### Q: Can I use this approach to add repeating columns in an existing PDF document?
+#### س: هل يمكنني استخدام هذا الأسلوب لإضافة أعمدة متكررة في مستند PDF موجود؟
 
-A: Yes, you can use this approach to add repeating columns in an existing PDF document. Simply load the existing document using Aspose.PDF for .NET and follow the same steps to create and add the repeating column.
+ج: نعم، يمكنك استخدام هذا الأسلوب لإضافة أعمدة متكررة في مستند PDF موجود. ما عليك سوى تحميل المستند الموجود باستخدام Aspose.PDF لـ .NET واتباع نفس الخطوات لإنشاء العمود المكرر وإضافته.

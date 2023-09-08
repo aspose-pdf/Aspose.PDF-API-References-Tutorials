@@ -1,37 +1,37 @@
 ---
-title: Embed Font In PDF File
-linktitle: Embed Font In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to embed fonts in a PDF file using Aspose.PDF for .NET with this step-by-step guide. Ensure your documents are displayed correctly on any device.
+title: Intégrer la police dans un fichier PDF
+linktitle: Intégrer la police dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment intégrer des polices dans un fichier PDF à l'aide d'Aspose.PDF pour .NET avec ce guide étape par étape. Assurez-vous que vos documents s’affichent correctement sur n’importe quel appareil.
 type: docs
 weight: 120
 url: /fr/net/programming-with-document/embedfont/
 ---
-In this tutorial, we will discuss how to embed fonts in a PDF file using Aspose.PDF for .NET. Aspose.PDF for .NET is a powerful library that allows developers to create, edit, and manipulate PDF documents programmatically. This library provides a wide range of features to work with PDF documents, including adding text, images, tables, and much more. Embedding fonts in a PDF file is a common requirement for developers who want to ensure that the PDF file is displayed correctly on different devices, regardless of whether the required fonts are installed on those devices or not.
+Dans ce didacticiel, nous verrons comment intégrer des polices dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de créer, modifier et manipuler des documents PDF par programme. Cette bibliothèque offre un large éventail de fonctionnalités pour travailler avec des documents PDF, notamment l'ajout de texte, d'images, de tableaux et bien plus encore. L'intégration de polices dans un fichier PDF est une exigence courante pour les développeurs qui souhaitent s'assurer que le fichier PDF s'affiche correctement sur différents appareils, que les polices requises soient installées ou non sur ces appareils.
 
-## Step 1: Create a new C# Console Application
-To get started, create a new C# Console Application in Visual Studio. You can name it whatever you like. Once the project is created, you need to add a reference to the Aspose.PDF for .NET library.
+## Étape 1 : Créer une nouvelle application console C#
+Pour commencer, créez une nouvelle application console C# dans Visual Studio. Vous pouvez le nommer comme vous le souhaitez. Une fois le projet créé, vous devez ajouter une référence à la bibliothèque Aspose.PDF pour .NET.
 
-## Step 2: Import the Aspose.PDF Namespace
-Add the following line of code at the top of your C# file to import the Aspose.PDF namespace:
+## Étape 2 : Importer l'espace de noms Aspose.PDF
+Ajoutez la ligne de code suivante en haut de votre fichier C# pour importer l'espace de noms Aspose.PDF :
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Load an Existing PDF File
-To embed fonts in an existing PDF file, you need to load that file using the Document class. The following code demonstrates how to load an existing PDF file:
+## Étape 3 : Charger un fichier PDF existant
+Pour intégrer des polices dans un fichier PDF existant, vous devez charger ce fichier à l'aide de la classe Document. Le code suivant montre comment charger un fichier PDF existant :
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load an existing PDF file
+// Charger un fichier PDF existant
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 4: Iterate through all the Pages
-Once you have loaded the PDF file, you need to iterate through all the pages in the document. For each page, you need to check if any fonts are used, and if so, you need to embed those fonts. The following code demonstrates how to iterate through all the pages in the PDF file and embed the fonts:
+## Étape 4 : Parcourir toutes les pages
+Une fois que vous avez chargé le fichier PDF, vous devez parcourir toutes les pages du document. Pour chaque page, vous devez vérifier si des polices sont utilisées et, si tel est le cas, vous devez intégrer ces polices. Le code suivant montre comment parcourir toutes les pages du fichier PDF et intégrer les polices :
 
 ```csharp
 foreach (Page page in doc.Pages)
@@ -40,20 +40,20 @@ foreach (Page page in doc.Pages)
     {
         foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
         {
-            // Check if font is already embedded
+            // Vérifiez si la police est déjà intégrée
             if (!pageFont.IsEmbedded)
                 pageFont.IsEmbedded = true;
         }
     }
 
-    // Check for the Form objects
+    // Rechercher les objets Form
     foreach (XForm form in page.Resources.Forms)
     {
         if (form.Resources.Fonts != null)
         {
             foreach (Aspose.Pdf.Text.Font formFont in form.Resources.Fonts)
             {
-                // Check if the font is embedded
+                // Vérifiez si la police est intégrée
                 if (!formFont.IsEmbedded)
                     formFont.IsEmbedded = true;
             }
@@ -62,50 +62,50 @@ foreach (Page page in doc.Pages)
 }
 ```
 
-## Step 5: Save the PDF Document
-Once you have embedded all the fonts in the PDF file, you need to save the document. The following code demonstrates how to save the PDF file:
+## Étape 5 : Enregistrez le document PDF
+Une fois que vous avez intégré toutes les polices dans le fichier PDF, vous devez enregistrer le document. Le code suivant montre comment enregistrer le fichier PDF :
 
 ```csharp
 dataDir = dataDir + "EmbedFont_out.pdf";
-// Save PDF Document
+// Enregistrer le document PDF
 doc.Save(dataDir);
 
 Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " + dataDir);
 ```
 
-### Example source code for Embed Font using Aspose.PDF for .NET
+### Exemple de code source pour Embed Font utilisant Aspose.PDF pour .NET
 
-Here is the full source code for embedding a font using Aspose.PDF for .NET.
+Voici le code source complet pour intégrer une police à l'aide d'Aspose.PDF pour .NET.
 
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load an existing PDF files
+// Charger un fichier PDF existant
 Document doc = new Document(dataDir + "input.pdf");
 
-// Iterate through all the pages
+// Parcourez toutes les pages
 foreach (Page page in doc.Pages)
 {
 	if (page.Resources.Fonts != null)
 	{
 		foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
 		{
-			// Check if font is already embedded
+			// Vérifiez si la police est déjà intégrée
 			if (!pageFont.IsEmbedded)
 				pageFont.IsEmbedded = true;
 		}
 	}
 
-	// Check for the Form objects
+	// Rechercher les objets Form
 	foreach (XForm form in page.Resources.Forms)
 	{
 		if (form.Resources.Fonts != null)
 		{
 			foreach (Aspose.Pdf.Text.Font formFont in form.Resources.Fonts)
 			{
-				// Check if the font is embedded
+				// Vérifiez si la police est intégrée
 				if (!formFont.IsEmbedded)
 					formFont.IsEmbedded = true;
 			}
@@ -113,34 +113,34 @@ foreach (Page page in doc.Pages)
 	}
 }
 dataDir = dataDir + "EmbedFont_out.pdf";
-// Save PDF Document
+// Enregistrer le document PDF
 doc.Save(dataDir);
 
 Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " + dataDir);
 ```
 
 
-## Conclusion embed font in PDF file
-In this article, we have discussed how to embed fonts in a PDF file using Aspose.PDF for .NET. Aspose.PDF for .NET provides a simple and easy-to-use API to work with PDF documents, including adding and embedding fonts. Embedding fonts in a PDF file is an important step to ensure that the document is displayed correctly on different devices, regardless of whether the required fonts are installed on those devices
+## Conclusion intégrer la police dans le fichier PDF
+Dans cet article, nous avons expliqué comment intégrer des polices dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Aspose.PDF pour .NET fournit une API simple et facile à utiliser pour travailler avec des documents PDF, y compris l'ajout et l'intégration de polices. L'intégration de polices dans un fichier PDF est une étape importante pour garantir que le document s'affiche correctement sur différents appareils, que les polices requises soient installées ou non sur ces appareils.
 
-### FAQ's
+### FAQ
 
-#### Q: Why is embedding fonts in a PDF file important?
+#### Q : Pourquoi est-il important d'incorporer des polices dans un fichier PDF ?
 
-A: Embedding fonts in a PDF file is essential to ensure that the document appears correctly on different devices and systems. When fonts are embedded, they become a part of the PDF file, eliminating the dependency on external fonts installed on the viewing device.
+R : L'intégration de polices dans un fichier PDF est essentielle pour garantir que le document s'affiche correctement sur différents appareils et systèmes. Lorsque les polices sont intégrées, elles font partie du fichier PDF, éliminant ainsi la dépendance aux polices externes installées sur le périphérique de visualisation.
 
-#### Q: Can I embed all fonts used in a PDF file?
+#### Q : Puis-je intégrer toutes les polices utilisées dans un fichier PDF ?
 
-A: Yes, you can embed all fonts used in a PDF file. Aspose.PDF for .NET provides a straightforward approach to iterate through all the fonts used in a PDF file and embed them to ensure accurate rendering on various devices.
+R : Oui, vous pouvez intégrer toutes les polices utilisées dans un fichier PDF. Aspose.PDF pour .NET fournit une approche simple pour parcourir toutes les polices utilisées dans un fichier PDF et les intégrer pour garantir un rendu précis sur différents appareils.
 
-#### Q: Is Aspose.PDF for .NET compatible with different font formats?
+#### Q : Aspose.PDF pour .NET est-il compatible avec différents formats de police ?
 
-A: Yes, Aspose.PDF for .NET supports various font formats, including TrueType, OpenType, Type 1, and CFF fonts. It can embed fonts in the PDF file regardless of their format.
+R : Oui, Aspose.PDF pour .NET prend en charge différents formats de police, notamment les polices TrueType, OpenType, Type 1 et CFF. Il peut intégrer des polices dans le fichier PDF quel que soit leur format.
 
-#### Q: Does embedding fonts increase the file size of the PDF document?
+#### Q : L'intégration de polices augmente-t-elle la taille du fichier PDF ?
 
-A: Yes, embedding fonts in a PDF document can increase the file size, as the font data is included within the PDF file itself. However, this ensures that the document's appearance remains consistent, regardless of the font availability on the viewing device.
+R : Oui, l'intégration de polices dans un document PDF peut augmenter la taille du fichier, car les données de police sont incluses dans le fichier PDF lui-même. Toutefois, cela garantit que l'apparence du document reste cohérente, quelle que soit la disponibilité des polices sur le périphérique de visualisation.
 
-#### Q: Can I customize the font embedding process?
+#### Q : Puis-je personnaliser le processus d’intégration des polices ?
 
-A: Yes, Aspose.PDF for .NET allows you to customize the font embedding process. You can choose which fonts to embed, exclude specific fonts, or embed only specific subsets of a font to optimize the file size.
+R : Oui, Aspose.PDF pour .NET vous permet de personnaliser le processus d'intégration des polices. Vous pouvez choisir les polices à intégrer, exclure des polices spécifiques ou intégrer uniquement des sous-ensembles spécifiques d'une police pour optimiser la taille du fichier.

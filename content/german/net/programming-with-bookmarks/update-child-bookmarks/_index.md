@@ -1,57 +1,57 @@
 ---
-title: Update Child Bookmarks In PDF File
-linktitle: Update Child Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily update child bookmarks in PDF file with Aspose.PDF for .NET.
+title: Untergeordnete Lesezeichen in der PDF-Datei aktualisieren
+linktitle: Untergeordnete Lesezeichen in der PDF-Datei aktualisieren
+second_title: Aspose.PDF für .NET API-Referenz
+description: Aktualisieren Sie untergeordnete Lesezeichen in PDF-Dateien ganz einfach mit Aspose.PDF für .NET.
 type: docs
 weight: 110
 url: /de/net/programming-with-bookmarks/update-child-bookmarks/
 ---
-Updating child bookmarks in PDF file allows you to modify the properties of specific bookmarks within a parent bookmark. With Aspose.PDF for .NET, you can easily update child bookmarks by following the following source code:
+Durch das Aktualisieren untergeordneter Lesezeichen in einer PDF-Datei können Sie die Eigenschaften bestimmter Lesezeichen innerhalb eines übergeordneten Lesezeichens ändern. Mit Aspose.PDF für .NET können Sie untergeordnete Lesezeichen einfach aktualisieren, indem Sie dem folgenden Quellcode folgen:
 
-## Step 1: Import required libraries
+## Schritt 1: Erforderliche Bibliotheken importieren
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Bevor Sie beginnen, müssen Sie die erforderlichen Bibliotheken für Ihr C#-Projekt importieren. Hier ist die notwendige Importanweisung:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Schritt 2: Legen Sie den Pfad zum Dokumentenordner fest
 
-In this step, you need to specify the path to the folder containing the PDF file you want to update. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ In diesem Schritt müssen Sie den Pfad zu dem Ordner angeben, der die PDF-Datei enthält, die Sie aktualisieren möchten. Ersetzen`"YOUR DOCUMENT DIRECTORY"`Geben Sie im folgenden Code den tatsächlichen Pfad zu Ihrem Dokumentenordner ein:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Schritt 3: Öffnen Sie das PDF-Dokument
 
-Now we will open the PDF document we want to update using the following code:
+Jetzt öffnen wir das PDF-Dokument, das wir aktualisieren möchten, mit dem folgenden Code:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
 ```
 
-## Step 4: Get parent bookmark object
+## Schritt 4: Übergeordnetes Lesezeichenobjekt abrufen
 
-In this step, we are going to get the specific parent bookmark object from which we want to update the child bookmarks. In the example below, we retrieve the parent bookmark at index 1 (the second bookmark in the bookmarks collection). You can adjust the index according to your needs. Here is the corresponding code:
+In diesem Schritt rufen wir das spezifische übergeordnete Lesezeichenobjekt ab, dessen untergeordnete Lesezeichen wir aktualisieren möchten. Im folgenden Beispiel rufen wir das übergeordnete Lesezeichen an Index 1 ab (das zweite Lesezeichen in der Lesezeichensammlung). Sie können den Index Ihren Bedürfnissen entsprechend anpassen. Hier ist der entsprechende Code:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-## Step 5: Get Child Bookmark Object
+## Schritt 5: Untergeordnetes Lesezeichenobjekt abrufen
 
-Now let's get the specific child bookmark object we want to update. In the example below, we retrieve the child bookmark at index 1 (the second child bookmark in the collection of child bookmarks of the parent bookmark). You can adjust the index according to your needs. Here is the corresponding code:
+Lassen Sie uns nun das spezifische untergeordnete Lesezeichenobjekt abrufen, das wir aktualisieren möchten. Im folgenden Beispiel rufen wir das untergeordnete Lesezeichen an Index 1 ab (das zweite untergeordnete Lesezeichen in der Sammlung untergeordneter Lesezeichen des übergeordneten Lesezeichens). Sie können den Index Ihren Bedürfnissen entsprechend anpassen. Hier ist der entsprechende Code:
 
 ```csharp
 OutlineItemCollection childOutline = pdfOutline[1];
 ```
 
-## Step 6: Update child bookmark properties
+## Schritt 6: Aktualisieren Sie die Eigenschaften untergeordneter Lesezeichen
 
-Now let's update the child bookmark properties such as title, italic style, and bold style. You can adjust these properties according to your needs. Here is the corresponding code:
+Jetzt aktualisieren wir die Eigenschaften des untergeordneten Lesezeichens wie Titel, Kursivschrift und Fettschrift. Sie können diese Eigenschaften entsprechend Ihren Bedürfnissen anpassen. Hier ist der entsprechende Code:
 
 ```csharp
 childOutline.Title = "Updated Outline";
@@ -59,93 +59,93 @@ childOutline. Italic = true;
 childOutline. Bold = true;
 ```
 
-## Step 7: Save the updated file
+## Schritt 7: Speichern Sie die aktualisierte Datei
 
-Now let's save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ Speichern wir nun die aktualisierte PDF-Datei mit`Save` Methode der`pdfDocument` Objekt. Hier ist der entsprechende Code:
 
 ```csharp
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Update Child Bookmarks using Aspose.PDF for .NET 
+### Beispielquellcode für die Aktualisierung untergeordneter Lesezeichen mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
-// Get a bookmark object
+// Holen Sie sich ein Lesezeichenobjekt
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
-// Get child bookmark object
+//Untergeordnetes Lesezeichenobjekt abrufen
 OutlineItemCollection childOutline = pdfOutline[1];
 childOutline.Title = "Updated Outline";
 childOutline.Italic = true;
 childOutline.Bold = true;
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";            
-// Save output
+// Ausgabe speichern
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nChild bookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You now have a step-by-step guide to updating child bookmarks with Aspose.PDF for .NET. You can use this code to modify the properties of child bookmarks in your PDF documents.
+Herzlichen Glückwunsch! Sie haben jetzt eine Schritt-für-Schritt-Anleitung zum Aktualisieren untergeordneter Lesezeichen mit Aspose.PDF für .NET. Mit diesem Code können Sie die Eigenschaften untergeordneter Lesezeichen in Ihren PDF-Dokumenten ändern.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Weitere Informationen zu erweiterten Funktionen zur Lesezeichenmanipulation finden Sie unbedingt in der offiziellen Aspose.PDF-Dokumentation.
 
-### FAQ's for update child bookmarks in PDF file
+### FAQs zum Aktualisieren untergeordneter Lesezeichen in PDF-Dateien
 
-#### Q: What are child bookmarks in a PDF file?
+#### F: Was sind untergeordnete Lesezeichen in einer PDF-Datei?
 
-A: Child bookmarks are bookmarks that are nested within a parent bookmark. They allow you to create a hierarchical structure for navigating through a PDF document's content.
+A: Untergeordnete Lesezeichen sind Lesezeichen, die in einem übergeordneten Lesezeichen verschachtelt sind. Sie ermöglichen Ihnen, eine hierarchische Struktur für die Navigation durch den Inhalt eines PDF-Dokuments zu erstellen.
 
-#### Q: Why would I need to update child bookmarks?
+#### F: Warum sollte ich untergeordnete Lesezeichen aktualisieren?
 
-A: Updating child bookmarks is useful when you want to modify the properties, titles, or styles of specific bookmarks within a parent bookmark. This helps customize the document's navigational structure.
+A: Das Aktualisieren untergeordneter Lesezeichen ist nützlich, wenn Sie die Eigenschaften, Titel oder Stile bestimmter Lesezeichen innerhalb eines übergeordneten Lesezeichens ändern möchten. Dies hilft dabei, die Navigationsstruktur des Dokuments anzupassen.
 
-#### Q: How do I import the required libraries for my C# project?
+#### F: Wie importiere ich die erforderlichen Bibliotheken für mein C#-Projekt?
 
-A: To import the necessary libraries for your C# project, include the following import directive:
+A: Um die erforderlichen Bibliotheken für Ihr C#-Projekt zu importieren, fügen Sie die folgende Importanweisung ein:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive enables you to access the classes and methods needed for working with PDF documents and bookmarks.
+Mit dieser Direktive können Sie auf die Klassen und Methoden zugreifen, die für die Arbeit mit PDF-Dokumenten und Lesezeichen erforderlich sind.
 
-#### Q: How do I specify the path to the documents folder?
+#### F: Wie lege ich den Pfad zum Dokumentenordner fest?
 
-A: Replace `"YOUR DOCUMENT DIRECTORY"` in the provided source code with the actual path to the folder containing the PDF file you want to update.
+ A: Ersetzen`"YOUR DOCUMENT DIRECTORY"` Geben Sie im bereitgestellten Quellcode den tatsächlichen Pfad zu dem Ordner an, der die PDF-Datei enthält, die Sie aktualisieren möchten.
 
-#### Q: How do I open a PDF document for updating child bookmarks?
+#### F: Wie öffne ich ein PDF-Dokument zum Aktualisieren untergeordneter Lesezeichen?
 
-A: To open a PDF document for updating child bookmarks, use the following code:
+A: Um ein PDF-Dokument zum Aktualisieren untergeordneter Lesezeichen zu öffnen, verwenden Sie den folgenden Code:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
 ```
 
-Replace `"UpdateChildBookmarks.pdf"` with the actual file name.
+ Ersetzen`"UpdateChildBookmarks.pdf"` mit dem tatsächlichen Dateinamen.
 
-#### Q: How do I get the parent bookmark object from which I want to update child bookmarks?
+#### F: Wie erhalte ich das übergeordnete Lesezeichenobjekt, dessen untergeordnete Lesezeichen ich aktualisieren möchte?
 
-A: To retrieve a specific parent bookmark for updating child bookmarks, access the `Outlines` property of the `pdfDocument` object. In the example below, we retrieve the parent bookmark at index 1:
+ A: Um ein bestimmtes übergeordnetes Lesezeichen zum Aktualisieren untergeordneter Lesezeichen abzurufen, greifen Sie auf zu`Outlines` Eigentum der`pdfDocument` Objekt. Im folgenden Beispiel rufen wir das übergeordnete Lesezeichen bei Index 1 ab:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-#### Q: How do I get the child bookmark object I want to update?
+#### F: Wie erhalte ich das untergeordnete Lesezeichenobjekt, das ich aktualisieren möchte?
 
-A: To retrieve a specific child bookmark for updating, access the `OutlineItemCollection` of the parent bookmark. In the example below, we retrieve the child bookmark at index 1:
+ A: Um ein bestimmtes untergeordnetes Lesezeichen zum Aktualisieren abzurufen, greifen Sie auf zu`OutlineItemCollection` des übergeordneten Lesezeichens. Im folgenden Beispiel rufen wir das untergeordnete Lesezeichen bei Index 1 ab:
 
 ```csharp
 OutlineItemCollection childOutline = pdfOutline[1];
 ```
 
-#### Q: What child bookmark properties can I update?
+#### F: Welche Eigenschaften untergeordneter Lesezeichen kann ich aktualisieren?
 
-A: You can update various properties of a child bookmark, such as its title, italic style, and bold style. Customize these properties according to your needs:
+A: Sie können verschiedene Eigenschaften eines untergeordneten Lesezeichens aktualisieren, z. B. den Titel, die Kursivschrift und die Fettschrift. Passen Sie diese Eigenschaften an Ihre Bedürfnisse an:
 
 ```csharp
 childOutline.Title = "Updated Outline";
@@ -153,13 +153,13 @@ childOutline.Italic = true;
 childOutline.Bold = true;
 ```
 
-#### Q: Can I update multiple child bookmarks using this method?
+#### F: Kann ich mit dieser Methode mehrere untergeordnete Lesezeichen aktualisieren?
 
-A: Yes, you can repeat steps 4 to 7 for each child bookmark you want to update. Modify the parent index and child index as needed.
+A: Ja, Sie können die Schritte 4 bis 7 für jedes untergeordnete Lesezeichen wiederholen, das Sie aktualisieren möchten. Ändern Sie den übergeordneten Index und den untergeordneten Index nach Bedarf.
 
-#### Q: How do I save the updated PDF file?
+#### F: Wie speichere ich die aktualisierte PDF-Datei?
 
-A: Save the updated PDF file using the `Save` method of the `pdfDocument` object:
+ A: Speichern Sie die aktualisierte PDF-Datei mit`Save` Methode der`pdfDocument` Objekt:
 
 ```csharp
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";

@@ -1,104 +1,104 @@
 ---
-title: Get PDF Page Dimensions
-linktitle: Get PDF Page Dimensions
-second_title: Aspose.PDF for .NET API Reference
-description: In this tutorial, we explain how to get PDF page dimensions and perform manipulations using Aspose.PDF for .NET. Detailed steps are provided to guide you through the process.
+title: الحصول على أبعاد صفحة PDF
+linktitle: الحصول على أبعاد صفحة PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: في هذا البرنامج التعليمي، نشرح كيفية الحصول على أبعاد صفحة PDF وإجراء عمليات المعالجة باستخدام Aspose.PDF لـ .NET. يتم توفير الخطوات التفصيلية لإرشادك خلال هذه العملية.
 type: docs
 weight: 60
 url: /ar/net/programming-with-pdf-pages/get-dimensions/
 ---
-In this tutorial, we'll walk you through the step-by-step process of getting page dimensions in a PDF file using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to get the dimensions of a page in a PDF file using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك خلال العملية خطوة بخطوة للحصول على أبعاد الصفحة في ملف PDF باستخدام Aspose.PDF لـ .NET. سنشرح لك التعليمات البرمجية المصدرية المجمعة لـ C# ونزودك بدليل شامل لمساعدتك على فهم هذه الميزة وتنفيذها في مشاريعك الخاصة. في نهاية هذا البرنامج التعليمي، ستعرف كيفية الحصول على أبعاد الصفحة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## المتطلبات الأساسية
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- معرفة أساسية بلغة البرمجة C#
+- تم تثبيت Aspose.PDF لـ .NET في بيئة التطوير الخاصة بك
 
-## Step 1: Define the document directory
-First, you need to set the path to your documents directory. This is the location where your PDF file is located. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
+## الخطوة 1: تحديد دليل المستند
+أولاً، تحتاج إلى تعيين المسار إلى دليل المستندات الخاص بك. هذا هو الموقع الذي يوجد به ملف PDF الخاص بك. استبدل "دليل المستندات الخاصة بك" بالمسار المناسب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the PDF document
-Then you can open the PDF file using the `Document` class of Aspose.PDF. Be sure to specify the correct path to the PDF file.
+## الخطوة 2: افتح مستند PDF
+ ثم يمكنك فتح ملف PDF باستخدام`Document` فئة Aspose.PDF. تأكد من تحديد المسار الصحيح لملف PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
 ```
 
-## Step 3: Add a blank page (if needed)
-If the PDF document already contains pages, you can jump to an existing page using the index `1` (the first page has an index of 1). Otherwise, you can add a new page to the document.
+## الخطوة 3: إضافة صفحة فارغة (إذا لزم الأمر)
+ إذا كان مستند PDF يحتوي بالفعل على صفحات، فيمكنك الانتقال إلى صفحة موجودة باستخدام الفهرس`1` (الصفحة الأولى تحتوي على فهرس 1). بخلاف ذلك، يمكنك إضافة صفحة جديدة إلى المستند.
 
 ```csharp
 Page page = pdfDocument.Pages.Count > 0? pdfDocument.Pages[1] : pdfDocument.Pages.Add();
 ```
 
-## Step 4: Get page dimensions
-You can now get the page dimensions using the `GetPageRect()` method of the `Page` object. This method returns a `Rectangle` object containing the dimensions of the page. You can access the width and height using the `Width` and `Height` properties.
+## الخطوة 4: الحصول على أبعاد الصفحة
+ يمكنك الآن الحصول على أبعاد الصفحة باستخدام`GetPageRect()` طريقة`Page` هدف. ترجع هذه الطريقة أ`Rectangle` كائن يحتوي على أبعاد الصفحة. يمكنك الوصول إلى العرض والارتفاع باستخدام`Width` و`Height` ملكيات.
 
 ```csharp
 Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);
 ```
 
-## Step 5: Rotate the page
-If you want to rotate the page, you can use the `Rotate` property of the `Page` object. In this example, the page is rotated 90 degrees.
+## الخطوة 5: قم بتدوير الصفحة
+ إذا كنت تريد تدوير الصفحة، يمكنك استخدام`Rotate` ملكية`Page`هدف. في هذا المثال، يتم تدوير الصفحة بمقدار 90 درجة.
 
 ```csharp
 page. Rotate = Rotate. on90;
 ```
 
-## Step 6: Get page dimensions again
-After page rotation, you can get the page dimensions again using the `GetPageRect()` method.
+## الخطوة 6: الحصول على أبعاد الصفحة مرة أخرى
+ بعد تدوير الصفحة، يمكنك الحصول على أبعاد الصفحة مرة أخرى باستخدام`GetPageRect()` طريقة.
 
 ```csharp
 Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);
 ```
 
-### Sample source code for Get Dimensions using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للحصول على الأبعاد باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
-// Adds a blank page to pdf document
+// يضيف صفحة فارغة إلى وثيقة PDF
 Page page = pdfDocument.Pages.Count > 0 ? pdfDocument.Pages[1] : pdfDocument.Pages.Add();
-// Get page height and width information
+// الحصول على معلومات ارتفاع وعرض الصفحة
 Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);
-// Rotate page at 90 degree angle
+// تدوير الصفحة بزاوية 90 درجة
 page.Rotate = Rotation.on90;
-// Get page height and width information
+// الحصول على معلومات ارتفاع وعرض الصفحة
 Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);
 
 ```
 
-## Conclusion
-In this tutorial, we learned how to get the dimensions of a page in a PDF file using Aspose.PDF for .NET. By following the steps provided, you can easily extract page dimensions and perform other PDF manipulation operations. Aspose.PDF for .NET offers great flexibility for working with PDF files and allows you to develop powerful and customized solutions.
+## خاتمة
+في هذا البرنامج التعليمي، تعلمنا كيفية الحصول على أبعاد الصفحة في ملف PDF باستخدام Aspose.PDF لـ .NET. باتباع الخطوات المتوفرة، يمكنك بسهولة استخراج أبعاد الصفحة وإجراء عمليات معالجة أخرى لملف PDF. يوفر Aspose.PDF for .NET مرونة كبيرة في العمل مع ملفات PDF ويسمح لك بتطوير حلول قوية ومخصصة.
 
-Feel free to further explore the documentation of Aspose.PDF to discover all the features offered by this library.
+لا تتردد في استكشاف وثائق Aspose.PDF بشكل أكبر لاكتشاف جميع الميزات التي تقدمها هذه المكتبة.
 
-### FAQs for get PDF page dimensions
+### الأسئلة الشائعة للحصول على أبعاد صفحة PDF
 
-#### Q: How can I get the dimensions of a specific page in a PDF file?
+#### س: كيف يمكنني الحصول على أبعاد صفحة معينة في ملف PDF؟
 
-A: To get the dimensions of a specific page in a PDF file, you can use the `GetPageRect()` method of the `Page` object in Aspose.PDF for .NET. This method returns a `Rectangle` object containing the dimensions (width and height) of the page.
+ج: للحصول على أبعاد صفحة معينة في ملف PDF، يمكنك استخدام`GetPageRect()` طريقة`Page` الكائن في Aspose.PDF لـ .NET. ترجع هذه الطريقة أ`Rectangle` كائن يحتوي على الأبعاد (العرض والارتفاع) للصفحة.
 
-#### Q: What does the `GetPageRect(true)` method do in the provided C# source code?
+####  س: ماذا يفعل`GetPageRect(true)` method do in the provided C# source code?
 
-A: The `GetPageRect(true)` method in the provided C# source code returns the dimensions of the page after applying any rotations. If the page is rotated, the method will return the dimensions of the rotated page, which could be different from the original dimensions.
+ ج: ال`GetPageRect(true)` تقوم الطريقة الموجودة في كود مصدر C# المقدم بإرجاع أبعاد الصفحة بعد تطبيق أي عمليات تدوير. إذا تم تدوير الصفحة، فسوف تقوم الطريقة بإرجاع أبعاد الصفحة التي تم تدويرها، والتي قد تكون مختلفة عن الأبعاد الأصلية.
 
-#### Q: Can I get the dimensions of all pages in the PDF document using Aspose.PDF for .NET?
+#### س: هل يمكنني الحصول على أبعاد جميع الصفحات في مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can get the dimensions of all pages in the PDF document by iterating through the `Pages` collection of the `Document` object and using the `GetPageRect(true)` method for each page.
+ ج: نعم، يمكنك الحصول على أبعاد جميع الصفحات في وثيقة PDF عن طريق التكرار من خلال ملف`Pages` جمع من`Document` الكائن واستخدام`GetPageRect(true)` طريقة لكل صفحة
 
-#### Q: How can I determine the orientation of a page (portrait or landscape) based on its dimensions?
+#### س: كيف يمكنني تحديد اتجاه الصفحة (عمودي أو أفقي) بناءً على أبعادها؟
 
-A: To determine the orientation of a page based on its dimensions, you can compare the width and height of the page. If the width is greater than the height, the page is in landscape orientation, and if the height is greater than the width, the page is in portrait orientation.
+ج: لتحديد اتجاه الصفحة بناءً على أبعادها، يمكنك مقارنة عرض الصفحة وارتفاعها. إذا كان العرض أكبر من الارتفاع، تكون الصفحة في الاتجاه الأفقي، وإذا كان الارتفاع أكبر من العرض، تكون الصفحة في الاتجاه العمودي.
 
-#### Q: Can I modify the dimensions of a page using Aspose.PDF for .NET?
+#### س: هل يمكنني تعديل أبعاد الصفحة باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can modify the dimensions of a page in Aspose.PDF for .NET. After getting the `Rectangle` object representing the page dimensions, you can adjust the width and height as per your requirements and then apply the changes to the page.
+ ج: نعم، يمكنك تعديل أبعاد الصفحة في Aspose.PDF لـ .NET. بعد الحصول على`Rectangle` كائن يمثل أبعاد الصفحة، يمكنك ضبط العرض والارتفاع وفقًا لمتطلباتك ثم تطبيق التغييرات على الصفحة.

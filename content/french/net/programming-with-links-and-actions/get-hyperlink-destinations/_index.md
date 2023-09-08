@@ -1,74 +1,74 @@
 ---
-title: Get Hyperlink Destinations In PDF File
-linktitle: Get Hyperlink Destinations In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract hyperlink destinations in PDF file using Aspose.PDF for .NET.
+title: Obtenir les destinations des hyperliens dans un fichier PDF
+linktitle: Obtenir les destinations des hyperliens dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment extraire des destinations de liens hypertexte dans un fichier PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 60
 url: /fr/net/programming-with-links-and-actions/get-hyperlink-destinations/
 ---
-Aspose.PDF for .NET is a powerful library for manipulating and extracting information in PDF file using the C# programming language. In this tutorial, we will focus on extracting hyperlink destinations from a PDF file using Aspose.PDF for .NET.
+Aspose.PDF pour .NET est une bibliothèque puissante permettant de manipuler et d'extraire des informations dans un fichier PDF à l'aide du langage de programmation C#. Dans ce didacticiel, nous nous concentrerons sur l'extraction de destinations de liens hypertexte à partir d'un fichier PDF à l'aide d'Aspose.PDF pour .NET.
 
-## Prerequisites
+## Conditions préalables
 
-Before you begin, make sure you have the following:
+Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
-- An integrated development environment (IDE) such as Visual Studio.
-- The Aspose.PDF library for .NET installed on your machine.
+- Un environnement de développement intégré (IDE) tel que Visual Studio.
+- La bibliothèque Aspose.PDF pour .NET installée sur votre ordinateur.
 
-## Step 1: Setting up the development environment
+## Étape 1 : Configuration de l'environnement de développement
 
-Before you start writing code, you need to set up your development environment by creating a new C# project in your favorite IDE.
+Avant de commencer à écrire du code, vous devez configurer votre environnement de développement en créant un nouveau projet C# dans votre IDE préféré.
 
-## Step 2: Import Aspose.PDF references
+## Étape 2 : Importer les références Aspose.PDF
 
-To use Aspose.PDF for .NET, you need to add the appropriate references to your project. Follow the steps below to import the necessary references:
+Pour utiliser Aspose.PDF pour .NET, vous devez ajouter les références appropriées à votre projet. Suivez les étapes ci-dessous pour importer les références nécessaires :
 
-1. In your project, right-click "References" and select "Add Reference".
-2. In the "Add Reference" window, locate and select the DLL files of Aspose.PDF for .NET.
-3. Click "OK" to import the references into your project.
+1. Dans votre projet, cliquez avec le bouton droit sur "Références" et sélectionnez "Ajouter une référence".
+2. Dans la fenêtre "Ajouter une référence", localisez et sélectionnez les fichiers DLL d'Aspose.PDF pour .NET.
+3. Cliquez sur "OK" pour importer les références dans votre projet.
 
-## Step 3: Loading the PDF File
+## Étape 3 : Chargement du fichier PDF
 
-Before you can extract hyperlink destinations, you must load the PDF file into your application. Use the following code to load the PDF file:
+Avant de pouvoir extraire les destinations des hyperliens, vous devez charger le fichier PDF dans votre application. Utilisez le code suivant pour charger le fichier PDF :
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// Charger le fichier PDF
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-Be sure to specify the correct path to your document directory and the PDF file you want to process.
+Assurez-vous de spécifier le chemin correct vers votre répertoire de documents et le fichier PDF que vous souhaitez traiter.
 
-## Step 4: Navigating the pages of the document
+## Étape 4 : Parcourir les pages du document
 
-Now that the PDF file is loaded, you need to go through all the pages of the document. This will allow you to get
+Maintenant que le fichier PDF est chargé, vous devez parcourir toutes les pages du document. Cela vous permettra d'obtenir
 
-ir the hyperlink annotations present on each page. Use the following code to iterate through the pages of the document:
+ir les annotations de liens hypertextes présentes sur chaque page. Utilisez le code suivant pour parcourir les pages du document :
 
 ```csharp
 foreach(Aspose.Pdf.Page page in document.Pages)
 {
-     // Get the link annotations of a specific page
+     // Obtenir les annotations de lien d'une page spécifique
      AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
      page. Accept(selector);
-     // Create a list to store all the links
+     // Créer une liste pour stocker tous les liens
      IList<Annotation> list = selector. Selected;
-     // Loop through each item in the list
+     // Parcourez chaque élément de la liste
      foreach(LinkAnnotation a in list)
      {
-         // Print destination URL
+         // Imprimer l'URL de destination
          Console.WriteLine("\nDestination: " + (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI + "\n");
      }
 }
 ```
 
-This code loops through each page of the document and selects the hyperlink annotations present on each page. Then it stores these annotations in a list and prints the destination URL for each link.
+Ce code parcourt chaque page du document et sélectionne les annotations de lien hypertexte présentes sur chaque page. Ensuite, il stocke ces annotations dans une liste et imprime l'URL de destination pour chaque lien.
 
-## Step 5: Obtaining Hyperlink Destinations
+## Étape 5 : Obtention des destinations des hyperliens
 
-The last step is to extract the hyperlink destinations from the hyperlink annotations. The following code shows you how to do it:
+La dernière étape consiste à extraire les destinations des hyperliens à partir des annotations des hyperliens. Le code suivant vous montre comment procéder :
 
 ```csharp
 foreach(Aspose.Pdf.Page page in document.Pages)
@@ -79,33 +79,33 @@ foreach(Aspose.Pdf.Page page in document.Pages)
      foreach(LinkAnnotation a in list)
      {
          string destination = (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI;
-         // Use the destination as you wish
+         // Utilisez la destination comme vous le souhaitez
      }
 }
 ```
 
-In this code, we get each hyperlink destination from the link annotations and store the destination in a variable. You can then use this destination as you wish in your application.
+Dans ce code, nous récupérons chaque destination de lien hypertexte à partir des annotations de lien et stockons la destination dans une variable. Vous pourrez ensuite utiliser cette destination à votre guise dans votre candidature.
 
-### Sample source code for Get Hyperlink Destinations using Aspose.PDF for .NET 
+### Exemple de code source pour obtenir des destinations de liens hypertextes à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Le chemin d'accès au répertoire des documents.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the PDF file
+	// Charger le fichier PDF
 	Document document = new Document(dataDir + "input.pdf");
-	// Traverse through all the page of PDF
+	// Parcourez toute la page du PDF
 	foreach (Aspose.Pdf.Page page in document.Pages)
 	{
-		// Get the link annotations from particular page
+		// Obtenez les annotations de lien d'une page particulière
 		AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
 		page.Accept(selector);
-		// Create list holding all the links
+		// Créer une liste contenant tous les liens
 		IList<Annotation> list = selector.Selected;
-		// Iterate through invidiaul item inside list
+		// Parcourir un élément individuel à l'intérieur de la liste
 		foreach (LinkAnnotation a in list)
 		{
-			// Print the destination URL
+			// Imprimer l'URL de destination
 			Console.WriteLine("\nDestination: " + (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI + "\n");
 		}
 	}
@@ -116,36 +116,36 @@ catch (Exception ex)
 }
 ```
 
-### FAQs for get hyperlink destinations in PDF file
+### FAQ pour obtenir des destinations de liens hypertexte dans un fichier PDF
 
-#### Q: What is a hyperlink destination in a PDF file?
+#### Q : Qu'est-ce qu'une destination de lien hypertexte dans un fichier PDF ?
 
-A: A hyperlink destination in a PDF file is a specific location or target that a hyperlink points to. It could be a URL, a page within the same document, or an external document.
+R : Une destination de lien hypertexte dans un fichier PDF est un emplacement ou une cible spécifique vers lequel pointe un lien hypertexte. Il peut s'agir d'une URL, d'une page du même document ou d'un document externe.
 
-#### Q: How can extracting hyperlink destinations benefit my PDF document analysis?
+#### Q : Comment l'extraction de destinations de liens hypertexte peut-elle bénéficier à l'analyse de mon document PDF ?
 
-A: Extracting hyperlink destinations allows you to identify and catalog all the targets that hyperlinks point to within a PDF document. This information can be useful for content validation, link verification, and data analysis.
+R : L'extraction de destinations de liens hypertexte vous permet d'identifier et de cataloguer toutes les cibles vers lesquelles pointent les hyperliens dans un document PDF. Ces informations peuvent être utiles pour la validation du contenu, la vérification des liens et l'analyse des données.
 
-#### Q: How does Aspose.PDF for .NET assist in extracting hyperlink destinations?
+#### Q : Comment Aspose.PDF pour .NET aide-t-il à extraire les destinations des hyperliens ?
 
-A: Aspose.PDF for .NET provides powerful APIs to extract hyperlink destinations with ease. This tutorial demonstrates step-by-step how to extract hyperlink destinations using C#.
+R : Aspose.PDF pour .NET fournit des API puissantes pour extraire facilement les destinations des hyperliens. Ce didacticiel montre étape par étape comment extraire des destinations de liens hypertexte à l'aide de C#.
 
-#### Q: Can I selectively extract hyperlink destinations based on certain criteria?
+#### Q : Puis-je extraire sélectivement les destinations des hyperliens en fonction de certains critères ?
 
-A: Yes, you can selectively extract hyperlink destinations by iterating through the pages of the PDF document and filtering the desired hyperlink annotations based on your criteria.
+R : Oui, vous pouvez extraire de manière sélective les destinations des hyperliens en parcourant les pages du document PDF et en filtrant les annotations des hyperliens souhaitées en fonction de vos critères.
 
-#### Q: Is it possible to extract hyperlink destinations from password-protected PDF documents?
+#### Q : Est-il possible d'extraire des destinations de liens hypertexte à partir de documents PDF protégés par mot de passe ?
 
-A: Aspose.PDF for .NET can extract hyperlink destinations from password-protected PDF documents as long as you provide the necessary authentication credentials when opening the document.
+R : Aspose.PDF pour .NET peut extraire des destinations de liens hypertexte à partir de documents PDF protégés par mot de passe à condition que vous fournissiez les informations d'authentification nécessaires lors de l'ouverture du document.
 
-#### Q: How can I utilize the extracted hyperlink destinations in my application?
+#### Q : Comment puis-je utiliser les destinations des hyperliens extraits dans mon application ?
 
-A: Once you've extracted the hyperlink destinations, you can use them to perform various actions, such as validating link URLs, creating reports, or implementing custom navigation.
+R : Une fois que vous avez extrait les destinations des hyperliens, vous pouvez les utiliser pour effectuer diverses actions, telles que la validation des URL des liens, la création de rapports ou la mise en œuvre d'une navigation personnalisée.
 
-#### Q: Are there any limitations when extracting hyperlink destinations?
+#### Q : Existe-t-il des limitations lors de l'extraction de destinations de liens hypertexte ?
 
-A: While hyperlink destination extraction is powerful, it's essential to consider the structure of the PDF document. Hyperlinks embedded within complex graphics or multimedia content may require additional handling.
+R : Bien que l'extraction de destination de lien hypertexte soit puissante, il est essentiel de prendre en compte la structure du document PDF. Les hyperliens intégrés dans des graphiques complexes ou du contenu multimédia peuvent nécessiter un traitement supplémentaire.
 
-#### Q: Can I extract other attributes of hyperlinks, such as link types or coordinates?
+#### Q : Puis-je extraire d’autres attributs des hyperliens, tels que les types de liens ou les coordonnées ?
 
-A: The tutorial focuses on extracting hyperlink destinations. However, you can refer to the official Aspose.PDF documentation to explore advanced features, including extracting link types and coordinates.
+R : Le didacticiel se concentre sur l'extraction de destinations de liens hypertexte. Cependant, vous pouvez vous référer à la documentation officielle d'Aspose.PDF pour explorer les fonctionnalités avancées, notamment l'extraction des types de liens et des coordonnées.

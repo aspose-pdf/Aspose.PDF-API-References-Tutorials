@@ -1,66 +1,66 @@
 ---
-title: Adding Different Headers In PDF File
-linktitle: Adding Different Headers In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily add different headers to each page in PDF file with Aspose.PDF for .NET.
+title: Добавление разных заголовков в PDF-файл
+linktitle: Добавление разных заголовков в PDF-файл
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как легко добавлять разные заголовки на каждую страницу PDF-файла с помощью Aspose.PDF для .NET.
 type: docs
 weight: 30
 url: /ru/net/programming-with-stamps-and-watermarks/adding-different-headers/
 ---
-In this tutorial, we will take you step by step on how to add different headers in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to add custom headers to each page of the PDF file.
+В этом уроке мы шаг за шагом покажем вам, как добавлять различные заголовки в PDF-файл с помощью Aspose.PDF для .NET. Мы покажем вам, как использовать предоставленный исходный код C# для добавления пользовательских заголовков на каждую страницу PDF-файла.
 
-## Step 1: Setting up the environment
+## Шаг 1. Настройка среды
 
-Before you begin, make sure you have the following:
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Установленная среда разработки .NET.
+- Библиотека Aspose.PDF для .NET загружена и используется в вашем проекте.
 
-## Step 2: Loading the PDF document
+## Шаг 2. Загрузка PDF-документа
 
-The first step is to load the existing PDF document into your project. Here's how:
+Первым шагом является загрузка существующего PDF-документа в ваш проект. Вот как:
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the source document
+// Откройте исходный документ
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "AddingDifferentHeaders.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Обязательно замените «КАТАЛОГ ВАШИХ ДОКУМЕНТОВ» фактическим путем к каталогу, в котором находится ваш PDF-документ.
 
-## Step 3: Creating Header Buffers
+## Шаг 3. Создание буферов заголовков
 
-Now that you have uploaded the PDF document, you can create the header stamps to add. Here's how:
+Теперь, когда вы загрузили PDF-документ, вы можете создать штампы заголовка и добавить их. Вот как:
 
 ```csharp
-// Create three header buffers
+// Создайте три буфера заголовков
 Aspose.Pdf.TextStamp stamp1 = new Aspose.Pdf.TextStamp("Header 1");
 Aspose.Pdf.TextStamp stamp2 = new Aspose.Pdf.TextStamp("Header 2");
 Aspose.Pdf.TextStamp stamp3 = new Aspose.Pdf.TextStamp("Header 3");
 ```
 
-The above code creates three new header buffers containing the specified text.
+Приведенный выше код создает три новых буфера заголовков, содержащих указанный текст.
 
-## Step 4: Configuring header buffer properties
+## Шаг 4. Настройка свойств буфера заголовка
 
-Before adding the header stamps to the PDF document, you can configure different properties for each stamp, such as alignment, size, color, etc. Here's how:
+Прежде чем добавлять штампы заголовка в документ PDF, вы можете настроить различные свойства для каждого штампа, такие как выравнивание, размер, цвет и т. д. Вот как это делается:
 
 ```csharp
-// Configure the first header buffer
+// Настройте первый буфер заголовка
 stamp1.VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
 stamp1.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 stamp1.TextState.FontStyle = FontStyles.Bold;
 stamp1.TextState.ForegroundColor = Color.Red;
 stamp1.TextState.FontSize = 14;
 
-// Configuration of the second header buffer
+// Конфигурация второго буфера заголовка
 stamp2.VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
 stamp2.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 stamp2.Zoom = 10;
 
-// Configure third header buffer
+// Настроить третий буфер заголовка
 stamp3.VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
 stamp3.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 stamp3.RotateAngle = 35;
@@ -68,138 +68,138 @@ stamp3.TextState.BackgroundColor = Color.Pink;
 stamp3.TextState.Font = FontRepository.FindFont("Verdana");
 ```
 
-You can adjust these properties as needed for each header buffer.
+Вы можете настроить эти свойства по мере необходимости для каждого буфера заголовка.
 
-## Step 5: Add Header Stamps to PDF
+## Шаг 5. Добавьте штампы заголовка в PDF
 
-Now that the header stamps are ready, you can add them to each specific page of the PDF document. Here's how:
+Теперь, когда штампы заголовка готовы, вы можете добавить их на каждую конкретную страницу PDF-документа. Вот как:
 
 ```csharp
-// Add header buffers to specific pages
+// Добавляйте буферы заголовков на определенные страницы
 doc.Pages[1].AddStamp(stamp1);
 doc.Pages[2].AddStamp(stamp2);
 doc.Pages[3].AddStamp(stamp3);
 ```
 
-The code above adds each header stamp to the corresponding page of the PDF document.
+Приведенный выше код добавляет каждый штамп заголовка на соответствующую страницу PDF-документа.
 
-## Step 6: Save the output document
+## Шаг 6: Сохраните выходной документ
 
-Once you have added the header stamps, you can save the edited PDF document. Here's how:
+Добавив штампы заголовка, вы можете сохранить отредактированный PDF-документ. Вот как:
 
 ```csharp
-// Save the updated document
+// Сохраните обновленный документ
 doc.Save(dataDir);
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Приведенный выше код сохраняет отредактированный PDF-документ в указанный каталог.
 
-### Sample source code for Adding Different Headers using Aspose.PDF for .NET 
+### Пример исходного кода для добавления разных заголовков с использованием Aspose.PDF для .NET 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open source document
+// Документ с открытым исходным кодом
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "AddingDifferentHeaders.pdf");
 
-// Create three stamps
+// Создайте три штампа
 Aspose.Pdf.TextStamp stamp1 = new Aspose.Pdf.TextStamp("Header 1");
 Aspose.Pdf.TextStamp stamp2 = new Aspose.Pdf.TextStamp("Header 2");
 Aspose.Pdf.TextStamp stamp3 = new Aspose.Pdf.TextStamp("Header 3");
 
-// Set stamp alignment (place stamp on page top, centered horiznotally)
+// Установить выравнивание штампа (поместить штамп вверху страницы по центру по горизонтали)
 stamp1.VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
 stamp1.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 
-// Specify the font style as Bold
+// Укажите стиль шрифта как полужирный.
 stamp1.TextState.FontStyle = FontStyles.Bold;
 
-// Set the text fore ground color information as red
+// Установите информацию о цвете переднего плана текста как красный
 stamp1.TextState.ForegroundColor = Color.Red;
 
-// Specify the font size as 14
+// Укажите размер шрифта 14.
 stamp1.TextState.FontSize = 14;
 
-// Now we need to set the vertical alignment of 2nd stamp object as Top
+// Теперь нам нужно установить вертикальное выравнивание второго объекта штампа как Верхнее.
 stamp2.VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
 
-// Set Horizontal alignment information for stamp as Center aligned
+// Установите информацию о горизонтальном выравнивании для штампа как «Выравнивание по центру».
 stamp2.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 
-// Set the zooming factor for stamp object
+// Установите коэффициент масштабирования для объекта штампа
 stamp2.Zoom = 10;
 
-// Set the formatting of 3rd stamp object
-// Specify the Vertical alignment information for stamp object as TOP
+//Установите форматирование объекта 3-го штампа
+// Укажите информацию о вертикальном выравнивании для объекта штампа как TOP.
 stamp3.VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
 
-// Set the Horizontal alignment inforamtion for stamp object as Center aligned
+// Установите информацию о горизонтальном выравнивании для объекта штампа как выравнивание по центру.
 stamp3.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 
-// Set the rotation angle for stamp object
+// Установите угол поворота объекта штампа
 stamp3.RotateAngle = 35;
 
-// Set pink as background color for stamp
+// Установить розовый цвет фона для печати
 stamp3.TextState.BackgroundColor = Color.Pink;
 
-// Change the font face information for stamp to Verdana
+// Измените информацию о шрифте для штампа на Verdana.
 stamp3.TextState.Font = FontRepository.FindFont("Verdana");
 
-// First stamp is added on first page;
+// Первая марка добавляется на первую страницу;
 doc.Pages[1].AddStamp(stamp1);
 
-// Second stamp is added on second page;
+// Второй штамп добавлен на второй странице;
 doc.Pages[2].AddStamp(stamp2);
 
-// Third stamp is added on third page.
+// Третья марка добавлена на третьей странице.
 doc.Pages[3].AddStamp(stamp3);
 dataDir = dataDir + "multiheader_out.pdf";
 
-// Save the updated document
+// Сохраните обновленный документ
 doc.Save(dataDir);
 Console.WriteLine("\nDifferent headers added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You have learned how to add different headers to each page of a PDF document using Aspose.PDF for .NET. You can now apply this knowledge to your own projects to customize headers for your PDF documents.
+Поздравляем! Вы узнали, как добавлять разные заголовки на каждую страницу PDF-документа с помощью Aspose.PDF для .NET. Теперь вы можете применить эти знания в своих проектах, чтобы настроить заголовки PDF-документов.
 
-### FAQ's for adding different headers in PDF file
+### Часто задаваемые вопросы по добавлению различных заголовков в файл PDF
 
-#### Q: What is the purpose of adding different headers in a PDF file using Aspose.PDF for .NET?
+#### Вопрос: Какова цель добавления разных заголовков в PDF-файл с помощью Aspose.PDF for .NET?
 
-A: Adding different headers to a PDF file using Aspose.PDF for .NET allows you to customize the content displayed at the top of each page. This feature is particularly useful for adding titles, section names, page numbers, and other information that varies across different pages of a PDF document.
+О: Добавление различных заголовков в PDF-файл с помощью Aspose.PDF для .NET позволяет вам настроить содержимое, отображаемое вверху каждой страницы. Эта функция особенно полезна для добавления заголовков, названий разделов, номеров страниц и другой информации, которая различается на разных страницах PDF-документа.
 
-#### Q: Can I customize the appearance of each header, such as alignment, font, size, color, and rotation?
+#### Вопрос: Могу ли я настроить внешний вид каждого заголовка, например выравнивание, шрифт, размер, цвет и поворот?
 
-A: Yes, you can fully customize the appearance of each header stamp. The provided C# source code demonstrates how to set various properties of the `TextStamp` objects for each header, including vertical and horizontal alignment, font style, font size, font color, background color, and rotation angle.
+ О: Да, вы можете полностью настроить внешний вид каждого штампа заголовка. Приведенный исходный код C# демонстрирует, как устанавливать различные свойства`TextStamp` объекты для каждого заголовка, включая вертикальное и горизонтальное выравнивание, стиль шрифта, размер шрифта, цвет шрифта, цвет фона и угол поворота.
 
-#### Q: Is it possible to add multiple header stamps to the same page of a PDF document?
+#### Вопрос: Можно ли добавить несколько штампов заголовка на одну страницу PDF-документа?
 
-A: While the provided tutorial demonstrates adding different headers to distinct pages of a PDF document, you can adapt the code to add multiple header stamps to the same page. This could be useful if you want to display varied headers within the same section.
+О: Хотя в предоставленном руководстве показано добавление разных заголовков на отдельные страницы PDF-документа, вы можете адаптировать код для добавления нескольких штампов заголовков на одну и ту же страницу. Это может быть полезно, если вы хотите отображать разные заголовки в одном разделе.
 
-#### Q: How can I ensure that the headers do not overlap with the main content of the PDF pages?
+#### Вопрос: Как обеспечить, чтобы заголовки не пересекались с основным содержимым страниц PDF?
 
-A: To prevent overlapping, you can adjust the `VerticalAlignment`, `HorizontalAlignment`, and other properties of the `TextStamp` objects. These settings will control where the headers are positioned on the page, allowing you to position them in a way that does not obstruct the main content.
+ О: Чтобы предотвратить перекрытие, вы можете отрегулировать`VerticalAlignment`, `HorizontalAlignment` и другие свойства`TextStamp` объекты. Эти настройки будут контролировать расположение заголовков на странице, позволяя вам расположить их так, чтобы не загораживать основной контент.
 
-#### Q: Can I use this method to add headers to existing PDF documents with varying numbers of pages?
+#### Вопрос: Могу ли я использовать этот метод для добавления заголовков в существующие PDF-документы с различным количеством страниц?
 
-A: Yes, you can adapt the provided source code to add headers to existing PDF documents with varying numbers of pages. Simply adjust the code to match the number of headers you want to add and associate each header with the desired page.
+О: Да, вы можете адаптировать предоставленный исходный код для добавления заголовков в существующие PDF-документы с различным количеством страниц. Просто настройте код так, чтобы он соответствовал количеству заголовков, которые вы хотите добавить, и свяжите каждый заголовок с нужной страницей.
 
-#### Q: What if I want to add headers to specific pages, not just the first three pages?
+#### Вопрос: Что если я хочу добавить заголовки на определенные страницы, а не только на первые три страницы?
 
-A: The tutorial demonstrates adding headers to the first three pages for illustrative purposes. To add headers to specific pages beyond the first three, adjust the code by referencing the corresponding page indices and creating `TextStamp` objects for each page.
+ О: В учебном пособии для наглядности показано добавление заголовков к первым трем страницам. Чтобы добавить заголовки на определенные страницы, помимо первых трех, измените код, ссылаясь на соответствующие индексы страниц и создавая`TextStamp` объекты для каждой страницы.
 
-#### Q: Can I use images as headers instead of text?
+#### Вопрос: Могу ли я использовать изображения в качестве заголовков вместо текста?
 
-A: The provided tutorial focuses on adding text-based headers. However, you can apply a similar approach to add image-based headers using `ImageStamp` objects instead of `TextStamp` objects. This would involve creating and configuring `ImageStamp` objects with desired properties.
+ О: В предоставленном руководстве основное внимание уделяется добавлению текстовых заголовков. Однако вы можете применить аналогичный подход для добавления заголовков на основе изображений, используя`ImageStamp` объекты вместо`TextStamp` объекты. Это потребует создания и настройки`ImageStamp` объекты с желаемыми свойствами.
 
-#### Q: How can I apply this knowledge to add different footers to each page of a PDF document?
+#### Вопрос: Как я могу применить эти знания, чтобы добавить разные нижние колонтитулы на каждую страницу PDF-документа?
 
-A: The same approach demonstrated in this tutorial can be applied to add different footers to each page of a PDF document. Instead of headers, you would create and configure `TextStamp` or `ImageStamp` objects and add them to the bottom of each page using the `AddStamp` method.
+ О: Тот же подход, продемонстрированный в этом руководстве, можно применить для добавления разных нижних колонтитулов на каждую страницу PDF-документа. Вместо заголовков вы должны создать и настроить`TextStamp` или`ImageStamp` объекты и добавляйте их внизу каждой страницы с помощью`AddStamp` метод.
 
-#### Q: Can I automate the process of adding headers to multiple PDF documents in a batch operation?
+#### Вопрос: Могу ли я автоматизировать процесс пакетного добавления заголовков к нескольким PDF-документам?
 
-A: Yes, you can automate the process of adding headers to multiple PDF documents using a script or program that iterates through a list of documents and applies the header stamping process to each document.
+О: Да, вы можете автоматизировать процесс добавления заголовков к нескольким документам PDF с помощью сценария или программы, которая перебирает список документов и применяет процесс штамповки заголовков к каждому документу.

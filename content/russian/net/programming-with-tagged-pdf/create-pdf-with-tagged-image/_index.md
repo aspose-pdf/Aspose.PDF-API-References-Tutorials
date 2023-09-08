@@ -1,28 +1,28 @@
 ---
-title: Create PDF with Tagged Image
-linktitle: Create PDF with Tagged Image
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to create PDF with tagged image using Aspose.PDF for .NET.
+title: Создать PDF с изображением с тегами
+linktitle: Создать PDF с изображением с тегами
+second_title: Справочник по Aspose.PDF для .NET API
+description: Пошаговое руководство по созданию PDF-файла с изображением с тегами с помощью Aspose.PDF для .NET.
 type: docs
 weight: 40
 url: /ru/net/programming-with-tagged-pdf/create-pdf-with-tagged-image/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to create a PDF document with a tagged image using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. Using the tagged content structure features of Aspose.PDF, you can add tagged images to your PDF document.
+В этом уроке мы предоставим вам пошаговое руководство по созданию PDF-документа с изображением с тегами с помощью Aspose.PDF для .NET. Aspose.PDF — это мощная библиотека, которая позволяет программно создавать, манипулировать и конвертировать PDF-документы. Используя функции структуры содержимого с тегами в Aspose.PDF, вы можете добавлять изображения с тегами в свой PDF-документ.
 
-## Prerequisites
+## Предварительные условия
 
-Before you begin, make sure you have the following prerequisites in place:
+Прежде чем начать, убедитесь, что у вас есть следующие предварительные условия:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. Visual Studio установлена с .NET Framework.
+2. Библиотека Aspose.PDF для .NET.
 
-## Step 1: Project Setup
+## Шаг 1: Настройка проекта
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+Для начала создайте новый проект в Visual Studio и добавьте ссылку на библиотеку Aspose.PDF для .NET. Вы можете скачать библиотеку с официального сайта Aspose и установить ее на свой компьютер.
 
-## Step 2: Import the necessary namespaces
+## Шаг 2. Импортируйте необходимые пространства имен.
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+В файл кода C# импортируйте пространства имен, необходимые для доступа к классам и методам, предоставляемым Aspose.PDF:
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Step 3: Creating the PDF document with a tagged image
+## Шаг 3. Создание PDF-документа с размеченным изображением
 
-Use the following code to create a PDF document with a tagged image:
+Используйте следующий код, чтобы создать документ PDF с изображением с тегами:
 
 ```csharp
 string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
@@ -49,22 +49,22 @@ figure1.SetTag("Fig");
 figure1.SetImage(dataDir + @"aspose-logo.jpg");
 ```
 
-This code creates an empty PDF document and adds a tagged image using the methods provided by Aspose.PDF. The image is specified with alt text, title, and tag.
+Этот код создает пустой PDF-документ и добавляет изображение с тегами, используя методы Aspose.PDF. Изображение указывается с помощью замещающего текста, заголовка и тега.
 
-## Step 4: Saving the PDF Document
+## Шаг 4. Сохранение PDF-документа
 
-Use the following code to save the PDF document:
+Используйте следующий код, чтобы сохранить PDF-документ:
 
 ```csharp
 document.Save(dataDir + "PDFwithTaggedImage.pdf");
 ```
 
-This code saves the PDF document with the tagged image to a specified file.
+Этот код сохраняет PDF-документ с отмеченным изображением в указанный файл.
 
-### Sample source code for Create PDFwith Tagged Image using Aspose.PDF for .NET 
+### Пример исходного кода для создания PDF с тегированным изображением с использованием Aspose.PDF для .NET 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
@@ -75,55 +75,55 @@ taggedContent.RootElement.AppendChild(figure1);
 figure1.AlternativeText = "Aspose Logo";
 figure1.Title = "Image 1";
 figure1.SetTag("Fig");
-// Add image with resolution 300 DPI (by default)
+// Добавить изображение с разрешением 300 DPI (по умолчанию)
 figure1.SetImage(dataDir + @"aspose-logo.jpg");
-// Save PDF Document
+// Сохранить PDF-документ
 document.Save(dataDir + "PDFwithTaggedImage.pdf");
 
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, you learned how to create a PDF document with a tagged image using Aspose.PDF for .NET. Tagged images add additional, structured information to your PDF document.
+В этом уроке вы узнали, как создать PDF-документ с изображением с тегами, используя Aspose.PDF для .NET. Изображения с тегами добавляют дополнительную структурированную информацию в ваш PDF-документ.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of creating a PDF document with a tagged image using Aspose.PDF for .NET?
+#### Вопрос: Какова цель создания PDF-документа с изображением с тегами с помощью Aspose.PDF для .NET?
 
-A: Creating a PDF document with a tagged image using Aspose.PDF for .NET allows you to add tagged images to the document's content. Tagged images provide structured information, such as alt text and titles, enhancing accessibility and organization.
+О: Создание PDF-документа с изображением с тегами с помощью Aspose.PDF для .NET позволяет добавлять изображения с тегами к содержимому документа. Изображения с тегами предоставляют структурированную информацию, такую как замещающий текст и заголовки, что повышает доступность и организацию.
 
-#### Q: How does the Aspose.PDF library assist in creating a PDF document with a tagged image?
+#### Вопрос: Как библиотека Aspose.PDF помогает создать PDF-документ с изображением с тегами?
 
-A: Aspose.PDF for .NET is a robust library that provides functionalities for creating, manipulating, and converting PDF documents programmatically. In this tutorial, the library's tagged content structure features are used to add a tagged image to the PDF document.
+О: Aspose.PDF для .NET — это надежная библиотека, предоставляющая функциональные возможности для программного создания, управления и преобразования PDF-документов. В этом руководстве функции структуры содержимого с тегами библиотеки используются для добавления изображения с тегами в документ PDF.
 
-#### Q: What are the prerequisites for creating a PDF document with a tagged image using Aspose.PDF for .NET?
+#### Вопрос: Каковы предварительные условия для создания PDF-документа с изображением с тегами с помощью Aspose.PDF для .NET?
 
-A: Before you begin, ensure that you have Visual Studio installed with the .NET framework and have the Aspose.PDF library for .NET referenced in your project.
+О: Прежде чем начать, убедитесь, что у вас установлена Visual Studio с платформой .NET и в вашем проекте есть ссылка на библиотеку Aspose.PDF для .NET.
 
-#### Q: How does the provided C# code create a PDF document with a tagged image?
+#### Вопрос: Как предоставленный код C# создает PDF-документ с изображением с тегами?
 
-A: The code demonstrates how to create a PDF document, define a tagged image element, and add it to the document's content. The tagged image includes alt text, a title, and a tag using methods provided by Aspose.PDF.
+О: Код демонстрирует, как создать документ PDF, определить элемент изображения с тегом и добавить его к содержимому документа. Изображение с тегами включает в себя замещающий текст, заголовок и тег, используя методы, предоставляемые Aspose.PDF.
 
-#### Q: Can I use different image formats for the tagged image?
+#### Вопрос: Могу ли я использовать разные форматы изображений для отмеченного изображения?
 
-A: Yes, you can use different image formats for the tagged image, such as JPEG, PNG, GIF, etc. The code example provided in the tutorial uses a JPEG image, but you can replace it with the path to an image file in your preferred format.
+О: Да, вы можете использовать разные форматы изображений для помеченного изображения, например JPEG, PNG, GIF и т. д. В примере кода, приведенном в руководстве, используется изображение JPEG, но вы можете заменить его путем к файлу изображения в предпочитаемый вами формат.
 
-#### Q: How is the alternative text (alt text) used in tagged images?
+#### Вопрос: Как альтернативный текст (замещающий текст) используется в изображениях с тегами?
 
-A: Alt text provides a textual description of the image, which is read aloud by screen readers for visually impaired users. In the provided code, the alt text is set using the `AlternativeText` property of the `IllustrationElement` representing the tagged image.
+ О: Замещающий текст представляет собой текстовое описание изображения, которое читается вслух программами чтения с экрана для пользователей с ослабленным зрением. В предоставленном коде альтернативный текст задается с помощью`AlternativeText` собственность`IllustrationElement` представляющее помеченное изображение.
 
-#### Q: How does the `SetTitle` method contribute to the PDF document's tagged image?
+####  Вопрос: Как`SetTitle` method contribute to the PDF document's tagged image?
 
-A: The `SetTitle` method sets the title of the PDF document's tagged content, providing additional context for the tagged image. This title can help identify the purpose or subject of the tagged content.
+ А:`SetTitle` Метод устанавливает заголовок размеченного содержимого PDF-документа, предоставляя дополнительный контекст для размеченного изображения. Этот заголовок может помочь определить цель или тему отмеченного контента.
 
-#### Q: Can I customize the tag and title of the tagged image?
+#### Вопрос: Могу ли я настроить тег и заголовок отмеченного изображения?
 
-A: Yes, you can customize the tag and title of the tagged image using the `SetTag` and `Title` methods of the `IllustrationElement`. The code example demonstrates how to set the tag to "Fig" and the title to "Picture 1."
+ О: Да, вы можете настроить тег и заголовок отмеченного изображения с помощью`SetTag` и`Title` методы`IllustrationElement`. В примере кода показано, как установить тег «Рис» и заголовок «Изображение 1».
 
-#### Q: How can I ensure that the tagged image is accessible and compliant with accessibility standards?
+#### Вопрос: Как я могу гарантировать, что изображение с тегом доступно и соответствует стандартам доступности?
 
-A: By using the tagged content structure features of Aspose.PDF and providing alt text and other relevant information, you contribute to the accessibility of the tagged image. Ensuring compliance with accessibility standards involves following best practices for alt text and document structure.
+О: Используя функции структуры тегированного контента Aspose.PDF и предоставляя замещающий текст и другую соответствующую информацию, вы способствуете доступности изображения с тегами. Обеспечение соответствия стандартам доступности предполагает использование лучших практик в отношении замещающего текста и структуры документа.
 
-#### Q: Is it possible to add multiple tagged images to the same PDF document using similar techniques?
+#### Вопрос: Можно ли добавить несколько изображений с тегами в один и тот же PDF-документ, используя аналогичные методы?
 
-A: Yes, you can add multiple tagged images to the same PDF document using similar techniques. You would create additional `IllustrationElement` instances for each tagged image and customize their properties as needed.
+ О: Да, вы можете добавить несколько изображений с тегами в один и тот же PDF-документ, используя аналогичные методы. Вы бы создали дополнительные`IllustrationElement` экземпляры для каждого помеченного изображения и настройте их свойства по мере необходимости.

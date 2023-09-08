@@ -1,117 +1,117 @@
 ---
-title: Set Privileges In PDF File
-linktitle: Set Privileges In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily set access privileges in PDF file with Aspose.PDF for .NET.
+title: Ställ in privilegier i PDF-fil
+linktitle: Ställ in privilegier i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Ställ enkelt in åtkomstprivilegier i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 100
 url: /sv/net/programming-with-security-and-signatures/set-privileges/
 ---
-It is often necessary to set specific access privileges in PDF file. With Aspose.PDF for .NET, you can easily set access privileges using the following source code:
+Det är ofta nödvändigt att ställa in specifika åtkomstprivilegier i PDF-filen. Med Aspose.PDF för .NET kan du enkelt ställa in åtkomstprivilegier med följande källkod:
 
-## Step 1: Import required libraries
+## Steg 1: Importera nödvändiga bibliotek
 
-Before you begin, you need to import the necessary libraries for your C# project. Here are the necessary import directives:
+Innan du börjar måste du importera de nödvändiga biblioteken för ditt C#-projekt. Här är de nödvändiga importdirektiven:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Steg 2: Ange sökväg till dokumentmappen
 
-In this step, you need to specify the path to the folder containing the PDF file you want to edit. Replace `"YOUR DOCUMENTS DIRECTORY"` in the following code with the actual path to your documents folder:
+ I det här steget måste du ange sökvägen till mappen som innehåller PDF-filen du vill redigera. Byta ut`"YOUR DOCUMENTS DIRECTORY"` följande kod med den faktiska sökvägen till din dokumentmapp:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 3: Load source PDF file
+## Steg 3: Ladda käll-PDF-fil
 
-Now we will load the source PDF file using the following code:
+Nu kommer vi att ladda käll-PDF-filen med följande kod:
 
 ```csharp
 using (Document document = new Document(dataDir + "input.pdf"))
 ```
 
-## Step 4: Set Access Privileges
+## Steg 4: Ställ in åtkomsträttigheter
 
-In this step, we will instantiate the `DocumentPrivilege` object to set the desired access privileges. You can apply restrictions on all privileges using `DocumentPrivilege.ForbidAll`. For example, if you want to only allow screen reading, you can set `AllowScreenReaders` to `true`. Here is the corresponding code:
+ I det här steget kommer vi att instansiera`DocumentPrivilege` objekt för att ställa in önskade åtkomstbehörigheter. Du kan tillämpa begränsningar på alla privilegier med`DocumentPrivilege.ForbidAll` . Om du till exempel bara vill tillåta skärmläsning kan du ställa in`AllowScreenReaders` till`true`. Här är motsvarande kod:
 
 ```csharp
 DocumentPrivilege documentPrivilege = DocumentPrivilege.ForbidAll;
 documentPrivilege.AllowScreenReaders = true;
 ```
 
-## Step 5: Encrypt and save the document
+## Steg 5: Kryptera och spara dokumentet
 
-Finally, we can encrypt the PDF document with a user and owner password using `Encrypt` and specifying the desired encryption algorithm. Then we save the updated document. Here is the corresponding code:
+ Slutligen kan vi kryptera PDF-dokumentet med ett användar- och ägarlösenord med hjälp av`Encrypt` och specificering av den önskade krypteringsalgoritmen. Sedan sparar vi det uppdaterade dokumentet. Här är motsvarande kod:
 
 ```csharp
 document.Encrypt("user", "owner", documentPrivilege, CryptoAlgorithm.AESx128, false);
 document.Save(dataDir + "SetPrivileges_out.pdf");
 ```
 
-### Sample source code for Set Privileges using Aspose.PDF for .NET 
+### Exempel på källkod för Set Privileges med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load a source PDF file
+// Ladda en käll-PDF-fil
 using (Document document = new Document(dataDir + "input.pdf"))
 {
-	// Instantiate Document Privileges object
-	// Apply restrictions on all privileges
+	// Instantiera dokumenträttigheter-objekt
+	// Tillämpa begränsningar för alla privilegier
 	DocumentPrivilege documentPrivilege = DocumentPrivilege.ForbidAll;
-	// Only allow screen reading
+	// Tillåt endast skärmläsning
 	documentPrivilege.AllowScreenReaders = true;
-	// Encrypt the file with User and Owner password.
-	// Need to set the password, so that once the user views the file with user password,
-	// Only screen reading option is enabled
+	// Kryptera filen med användar- och ägarlösenord.
+	// Behöver ställa in lösenordet, så att när användaren tittar på filen med användarlösenordet,
+	// Endast alternativ för skärmläsning är aktiverat
 	document.Encrypt("user", "owner", documentPrivilege, CryptoAlgorithm.AESx128, false);
-	// Save updated document
+	// Spara uppdaterat dokument
 	document.Save(dataDir + "SetPrivileges_out.pdf");
 }
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! You now have a step-by-step guide to set access privileges for a PDF document using Aspose.PDF for .NET. You can use this code to apply specific restrictions and protect your PDF files as needed.
+Grattis! Du har nu en steg-för-steg-guide för att ställa in åtkomstprivilegier för ett PDF-dokument med Aspose.PDF för .NET. Du kan använda den här koden för att tillämpa specifika begränsningar och skydda dina PDF-filer efter behov.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced PDF document security and access privilege management features.
+Var noga med att kolla in den officiella Aspose.PDF-dokumentationen för mer information om avancerad PDF-dokumentsäkerhet och åtkomsthanteringsfunktioner.
 
-### FAQ's for set privileges in PDF file
+### Vanliga frågor för inställda privilegier i PDF-fil
 
-#### Q: Why would I need to set access privileges in a PDF file?
+#### F: Varför skulle jag behöva ställa in åtkomstprivilegier i en PDF-fil?
 
-A: Setting access privileges allows you to control how users interact with your PDF documents. You can restrict actions like printing, copying, and editing to enhance document security.
+S: Genom att ställa in åtkomstprivilegier kan du styra hur användare interagerar med dina PDF-dokument. Du kan begränsa åtgärder som utskrift, kopiering och redigering för att förbättra dokumentsäkerheten.
 
-#### Q: How can I benefit from setting access privileges using Aspose.PDF for .NET?
+#### F: Hur kan jag dra nytta av att ställa in åtkomstprivilegier med Aspose.PDF för .NET?
 
-A: Aspose.PDF for .NET provides a straightforward way to implement access privileges, giving you the power to customize user permissions and protect sensitive content.
+S: Aspose.PDF för .NET ger ett enkelt sätt att implementera åtkomstprivilegier, vilket ger dig möjlighet att anpassa användarbehörigheter och skydda känsligt innehåll.
 
-#### Q: Can I apply different privileges for different users?
+#### F: Kan jag tillämpa olika privilegier för olika användare?
 
-A: Yes, you can set specific access privileges for different user groups, enabling you to fine-tune document access based on user roles.
+S: Ja, du kan ställa in specifika åtkomstprivilegier för olika användargrupper, vilket gör att du kan finjustera dokumentåtkomst baserat på användarroller.
 
-#### Q: What are some common access privileges I can set?
+#### F: Vilka är några vanliga åtkomstprivilegier jag kan ställa in?
 
-A: Common access privileges include allowing or forbidding actions such as printing, copying text or images, modifying the document, and filling form fields.
+S: Vanliga åtkomstbehörigheter inkluderar att tillåta eller förbjuda åtgärder som att skriva ut, kopiera text eller bilder, ändra dokumentet och fylla i formulärfält.
 
-#### Q: How does setting screen reading privilege enhance document accessibility?
+#### F: Hur förbättrar inställningen av skärmläsningsbehörighet dokumenttillgänglighet?
 
-A: Enabling screen reading privilege ensures that users can access the content of the PDF using screen readers, enhancing accessibility for visually impaired individuals.
+S: Aktivering av skärmläsningsbehörighet säkerställer att användare kan komma åt innehållet i PDF:en med skärmläsare, vilket förbättrar tillgängligheten för synskadade individer.
 
-#### Q: Can I set password protection along with access privileges?
+#### F: Kan jag ställa in lösenordsskydd tillsammans med åtkomstprivilegier?
 
-A: Absolutely, you can encrypt your PDF document with passwords while applying access privileges. This provides an extra layer of security.
+S: Absolut, du kan kryptera ditt PDF-dokument med lösenord samtidigt som du använder åtkomstprivilegier. Detta ger ett extra lager av säkerhet.
 
-#### Q: Is there a way to revoke access privileges after applying them?
+#### F: Finns det något sätt att återkalla åtkomstprivilegier efter att ha tillämpat dem?
 
-A: Once access privileges are applied and the document is encrypted, users will need the appropriate password to access the content. The privileges can be modified by altering the source code.
+S: När åtkomstprivilegier har tillämpats och dokumentet är krypterat, kommer användare att behöva rätt lösenord för att komma åt innehållet. Behörigheterna kan ändras genom att ändra källkoden.
 
-#### Q: Are there any performance considerations when setting access privileges?
+#### F: Finns det några prestandaöverväganden när du ställer in åtkomstprivilegier?
 
-A: The performance impact is minimal, as the access privilege settings are applied during encryption, which is a swift process.
+S: Prestandapåverkan är minimal, eftersom åtkomstbehörighetsinställningarna tillämpas under kryptering, vilket är en snabb process.
 
-#### Q: Can I apply access privileges to an existing PDF document?
+#### F: Kan jag tillämpa åtkomstbehörighet till ett befintligt PDF-dokument?
 
-A: Yes, you can use Aspose.PDF for .NET to apply access privileges to both new and existing PDF documents.
+S: Ja, du kan använda Aspose.PDF för .NET för att tillämpa åtkomstprivilegier för både nya och befintliga PDF-dokument.

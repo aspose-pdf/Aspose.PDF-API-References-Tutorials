@@ -1,136 +1,136 @@
 ---
-title: Delete All Bookmarks In PDF File
-linktitle: Delete All Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily delete all bookmarks in PDF file with Aspose.PDF for .NET.
+title: Alle Lesezeichen in der PDF-Datei löschen
+linktitle: Alle Lesezeichen in der PDF-Datei löschen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Mit Aspose.PDF für .NET können Sie ganz einfach alle Lesezeichen in einer PDF-Datei löschen.
 type: docs
 weight: 30
 url: /de/net/programming-with-bookmarks/delete-all-bookmarks/
 ---
-# Delete all bookmarks with Aspose.PDF for .NET
+# Löschen Sie alle Lesezeichen mit Aspose.PDF für .NET
 
-Deleting bookmarks in PDF file may be necessary in some cases. With Aspose.PDF for .NET, you can easily remove all bookmarks by following the following source code:
+In manchen Fällen kann es notwendig sein, Lesezeichen in einer PDF-Datei zu löschen. Mit Aspose.PDF für .NET können Sie alle Lesezeichen ganz einfach entfernen, indem Sie dem folgenden Quellcode folgen:
 
-## Step 1: Import required libraries
+## Schritt 1: Erforderliche Bibliotheken importieren
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Bevor Sie beginnen, müssen Sie die erforderlichen Bibliotheken für Ihr C#-Projekt importieren. Hier ist die notwendige Importanweisung:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Schritt 2: Legen Sie den Pfad zum Dokumentenordner fest
 
-In this step, you need to specify the path to the folder containing the PDF file from which you want to remove bookmarks. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ In diesem Schritt müssen Sie den Pfad zu dem Ordner angeben, der die PDF-Datei enthält, aus der Sie Lesezeichen entfernen möchten. Ersetzen`"YOUR DOCUMENT DIRECTORY"`Geben Sie im folgenden Code den tatsächlichen Pfad zu Ihrem Dokumentenordner ein:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Schritt 3: Öffnen Sie das PDF-Dokument
 
-Now we are going to open the PDF document from which we want to remove the bookmarks using the following code:
+Jetzt öffnen wir das PDF-Dokument, aus dem wir die Lesezeichen entfernen möchten, mit dem folgenden Code:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
 ```
 
-## Step 4: Delete all bookmarks
+## Schritt 4: Alle Lesezeichen löschen
 
-In this step, we delete all bookmarks from the document using the `Delete` method of the `Outlines` property. Here is the corresponding code:
+ In diesem Schritt löschen wir mithilfe von alle Lesezeichen aus dem Dokument`Delete` Methode der`Outlines` Eigentum. Hier ist der entsprechende Code:
 
 ```csharp
 pdfDocument.Outlines.Delete();
 ```
 
-## Step 5: Save the updated file
+## Schritt 5: Speichern Sie die aktualisierte Datei
 
-Finally, we save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ Abschließend speichern wir die aktualisierte PDF-Datei mit`Save` Methode der`pdfDocument` Objekt. Hier ist der entsprechende Code:
 
 ```csharp
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Delete All Bookmarks using Aspose.PDF for .NET 
+### Beispielquellcode für „Alle Lesezeichen löschen“ mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
-// Delete all bookmarks
+// Alle Lesezeichen löschen
 pdfDocument.Outlines.Delete();
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
-// Save updated file
+// Aktualisierte Datei speichern
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nAll bookmarks deleted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! Now you have a step by step guide to remove all bookmarks with Aspose.PDF for .NET. You can use this code to clean up your PDF documents by deleting all existing bookmarks.
+Herzlichen Glückwunsch! Jetzt haben Sie eine Schritt-für-Schritt-Anleitung zum Entfernen aller Lesezeichen mit Aspose.PDF für .NET. Mit diesem Code können Sie Ihre PDF-Dokumente bereinigen, indem Sie alle vorhandenen Lesezeichen löschen.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Weitere Informationen zu erweiterten Funktionen zur Lesezeichenmanipulation finden Sie unbedingt in der offiziellen Aspose.PDF-Dokumentation.
 
-### FAQ's for delete all bookmarks in PDF file
+### FAQs zum Löschen aller Lesezeichen in einer PDF-Datei
 
-#### Q: What are bookmarks in a PDF file?
+#### F: Was sind Lesezeichen in einer PDF-Datei?
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They help organize and enhance the user experience when navigating through lengthy content.
+A: Lesezeichen in einer PDF-Datei sind Navigationshilfen, die es Benutzern ermöglichen, schnell zu bestimmten Abschnitten oder Seiten innerhalb des Dokuments zu springen. Sie helfen dabei, die Benutzererfahrung beim Navigieren durch lange Inhalte zu organisieren und zu verbessern.
 
-#### Q: Why would I need to delete all bookmarks from a PDF file?
+#### F: Warum sollte ich alle Lesezeichen aus einer PDF-Datei löschen?
 
-A: There might be cases where you want to remove all bookmarks from a PDF document to simplify its navigation, reorganize its structure, or prepare it for a specific purpose where bookmarks are not needed.
+A: Es kann Fälle geben, in denen Sie alle Lesezeichen aus einem PDF-Dokument entfernen möchten, um dessen Navigation zu vereinfachen, seine Struktur neu zu organisieren oder es für einen bestimmten Zweck vorzubereiten, bei dem Lesezeichen nicht benötigt werden.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### F: Wie importiere ich die erforderlichen Bibliotheken für mein C#-Projekt?
 
-A: To import the required library for your C# project, you can use the following import directive:
+A: Um die erforderliche Bibliothek für Ihr C#-Projekt zu importieren, können Sie die folgende Importanweisung verwenden:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This library provides the classes and methods needed to work with PDF documents.
+Diese Bibliothek stellt die Klassen und Methoden bereit, die für die Arbeit mit PDF-Dokumenten erforderlich sind.
 
-#### Q: How do I specify the path to the documents folder?
+#### F: Wie lege ich den Pfad zum Dokumentenordner fest?
 
-A: In the source code provided, you need to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to remove bookmarks. This ensures that the code can locate the target PDF file.
+ A: Der bereitgestellte Quellcode muss ersetzt werden`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad zu dem Ordner, der die PDF-Datei enthält, aus der Sie Lesezeichen entfernen möchten. Dadurch wird sichergestellt, dass der Code die Ziel-PDF-Datei finden kann.
 
-#### Q: How do I open a PDF document for bookmark removal?
+#### F: Wie öffne ich ein PDF-Dokument zum Entfernen von Lesezeichen?
 
-A: To open a PDF document for bookmark removal, use the following code:
+A: Um ein PDF-Dokument zum Entfernen von Lesezeichen zu öffnen, verwenden Sie den folgenden Code:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
 ```
 
-Replace `"DeleteAllBookmarks.pdf"` with the actual file name.
+ Ersetzen`"DeleteAllBookmarks.pdf"` mit dem tatsächlichen Dateinamen.
 
-#### Q: How do I delete all bookmarks from the PDF document?
+#### F: Wie lösche ich alle Lesezeichen aus dem PDF-Dokument?
 
-A: To remove all bookmarks from the PDF document, use the `Delete` method of the `Outlines` property:
+ A: Um alle Lesezeichen aus dem PDF-Dokument zu entfernen, verwenden Sie die`Delete` Methode der`Outlines` Eigentum:
 
 ```csharp
 pdfDocument.Outlines.Delete();
 ```
 
-#### Q: What happens to the rest of the content when bookmarks are deleted?
+#### F: Was passiert mit dem restlichen Inhalt, wenn Lesezeichen gelöscht werden?
 
-A: Deleting bookmarks does not affect the content or layout of the PDF document. Only the navigation bookmarks are removed, leaving the actual content intact.
+A: Das Löschen von Lesezeichen hat keine Auswirkungen auf den Inhalt oder das Layout des PDF-Dokuments. Lediglich die Navigations-Lesezeichen werden entfernt, der eigentliche Inhalt bleibt erhalten.
 
-#### Q: How do I save the updated PDF file after removing bookmarks?
+#### F: Wie speichere ich die aktualisierte PDF-Datei, nachdem ich Lesezeichen entfernt habe?
 
-A: To save the updated PDF file after deleting bookmarks, use the following code:
+A: Um die aktualisierte PDF-Datei nach dem Löschen von Lesezeichen zu speichern, verwenden Sie den folgenden Code:
 
 ```csharp
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-#### Q: Can I selectively delete specific bookmarks instead of all of them?
+#### F: Kann ich statt aller Lesezeichen gezielt bestimmte Lesezeichen löschen?
 
-A: Yes, you can selectively delete specific bookmarks by targeting them using their index or other properties. The provided source code demonstrates how to delete all bookmarks, but you can modify it to suit your needs.
+A: Ja, Sie können bestimmte Lesezeichen selektiv löschen, indem Sie sie mithilfe ihres Index oder anderer Eigenschaften gezielt löschen. Der bereitgestellte Quellcode zeigt, wie Sie alle Lesezeichen löschen. Sie können ihn jedoch an Ihre Bedürfnisse anpassen.
 
-#### Q: Are there any precautions I should take before deleting bookmarks?
+#### F: Gibt es irgendwelche Vorsichtsmaßnahmen, die ich treffen sollte, bevor ich Lesezeichen lösche?
 
-A: Before deleting bookmarks, make sure to review the document to ensure that bookmark removal will not impact the document's usability or navigation. Consider making a backup of the original document before proceeding.
+A: Überprüfen Sie vor dem Löschen von Lesezeichen unbedingt das Dokument, um sicherzustellen, dass das Entfernen von Lesezeichen keine Auswirkungen auf die Benutzerfreundlichkeit oder Navigation des Dokuments hat. Erwägen Sie, eine Sicherungskopie des Originaldokuments zu erstellen, bevor Sie fortfahren.

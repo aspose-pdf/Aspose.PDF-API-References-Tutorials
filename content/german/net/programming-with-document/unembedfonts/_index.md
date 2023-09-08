@@ -1,69 +1,69 @@
 ---
-title: Unembed Fonts And Optimize PDF Files
-linktitle: Unembed Fonts And Optimize PDF Files
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to get Unembed Fonts and optimize PDF files. A step-by-step guide.
+title: Entfernen Sie die Einbettung von Schriftarten und optimieren Sie PDF-Dateien
+linktitle: Entfernen Sie die Einbettung von Schriftarten und optimieren Sie PDF-Dateien
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie Aspose.PDF für .NET verwenden, um nicht eingebettete Schriftarten zu erhalten und PDF-Dateien zu optimieren. Eine Schritt-für-Schritt-Anleitung.
 type: docs
 weight: 370
 url: /de/net/programming-with-document/unembedfonts/
 ---
-Aspose.PDF for .NET is a powerful library that provides a wide range of features to work with PDF documents. One of its features is to get unembed fonts from a PDF document. This can be useful if you need to extract fonts from a PDF document and use them in other applications.
+Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die eine Vielzahl von Funktionen für die Arbeit mit PDF-Dokumenten bietet. Eine seiner Funktionen besteht darin, die Einbettung von Schriftarten aus einem PDF-Dokument aufzuheben. Dies kann nützlich sein, wenn Sie Schriftarten aus einem PDF-Dokument extrahieren und in anderen Anwendungen verwenden müssen.
 
-we will provide a step-by-step guide to explain the following C# source code of get unembed fonts feature of Aspose.PDF for .NET.
+Wir stellen eine Schritt-für-Schritt-Anleitung zur Verfügung, um den folgenden C#-Quellcode der Funktion zum Entfernen der Einbettung von Schriftarten von Aspose.PDF für .NET zu erläutern.
 
-## Step 1: Set the path to the document directory
+## Schritt 1: Legen Sie den Pfad zum Dokumentverzeichnis fest
 
-Before we start, we need to set the path to the directory where our PDF document is located. We will store this path in a variable called "dataDir".
+Bevor wir beginnen, müssen wir den Pfad zu dem Verzeichnis festlegen, in dem sich unser PDF-Dokument befindet. Wir werden diesen Pfad in einer Variablen namens „dataDir“ speichern.
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual path to the directory where your PDF document is located.
+Ersetzen Sie „IHR DOKUMENTVERZEICHNIS“ durch den tatsächlichen Pfad zu dem Verzeichnis, in dem sich Ihr PDF-Dokument befindet.
 
-## Step 2: Open the PDF Document
+## Schritt 2: Öffnen Sie das PDF-Dokument
 
-The first step is to load the PDF document that you want to do this, use the `Document` class of Aspose.PDF for .NET. The following code snippet shows how to load the PDF document:
+ Der erste Schritt besteht darin, das gewünschte PDF-Dokument zu laden. Dazu verwenden Sie die`Document` Klasse von Aspose.PDF für .NET. Der folgende Codeausschnitt zeigt, wie das PDF-Dokument geladen wird:
 
 ```csharp
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Step3: Set the UnembedFonts Option
+## Schritt 3: Legen Sie die UnembedFonts-Option fest
 
-To get unembed fonts from the PDF document, you need to set the `UnembedFonts` option to `true`. This option is available in the `OptimizationOptions` class. The following code snippet shows how to set the `UnembedFonts` option:
+ Um die Einbettung von Schriftarten aus dem PDF-Dokument aufzuheben, müssen Sie Folgendes festlegen`UnembedFonts` Option zu`true` . Diese Option ist im verfügbar`OptimizationOptions` Klasse. Der folgende Codeausschnitt zeigt, wie man das festlegt`UnembedFonts` Möglichkeit:
 
 ```csharp
-// Set UnembedFonts option 
+// Legen Sie die Option „UnembedFonts“ fest
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
 	UnembedFonts = true
 };
 ```
 
-## Step 4: Optimize the PDF Document
+## Schritt 4: Optimieren Sie das PDF-Dokument
 
-After setting the `UnembedFonts` option, you can optimize the PDF document using the `OptimizeResources` method of the `Document` class. The following code snippet shows how to optimize the PDF document:
+ Nach dem Einstellen der`UnembedFonts` Mit dieser Option können Sie das PDF-Dokument optimieren`OptimizeResources` Methode der`Document` Klasse. Der folgende Codeausschnitt zeigt, wie Sie das PDF-Dokument optimieren:
 
 ```csharp
-// Optimize PDF document using OptimizationOptions
+// Optimieren Sie PDF-Dokumente mit OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-## Step 5: Save the Updated Document
+## Schritt 5: Speichern Sie das aktualisierte Dokument
 
-Once the PDF document is optimized, you can save the updated document using the `Save` method of the `Document` class. The following code snippet shows how to save the updated document:
+ Sobald das PDF-Dokument optimiert ist, können Sie das aktualisierte Dokument mit speichern`Save` Methode der`Document`Klasse. Der folgende Codeausschnitt zeigt, wie das aktualisierte Dokument gespeichert wird:
 
 ```csharp
-// Save updated document
+// Aktualisiertes Dokument speichern
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 ```
 
-## Step 6: Get the Original and Reduced File Size
+## Schritt 6: Holen Sie sich das Original und die reduzierte Dateigröße
 
-Finally, you can get the original and reduced file size of the PDF document using the `FileInfo` class of System.IO. The following code snippet shows how to get the original and reduced file size:
+ Schließlich können Sie mit dem die ursprüngliche und reduzierte Dateigröße des PDF-Dokuments abrufen`FileInfo` Klasse von System.IO. Der folgende Codeausschnitt zeigt, wie man die ursprüngliche und reduzierte Dateigröße erhält:
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
@@ -71,24 +71,24 @@ var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```
 
-### Example Source Code for Get Unembed Fonts using Aspose.PDF for .NET
+### Beispielquellcode für „Get Unembed Fonts“ mit Aspose.PDF für .NET
 
-Here is the complete example source code for getting unembed fonts from a PDF document using Aspose.PDF for .NET:
+Hier ist der vollständige Beispielquellcode zum Abrufen nicht eingebetteter Schriftarten aus einem PDF-Dokument mit Aspose.PDF für .NET:
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Set UnembedFonts  option 
+// Legen Sie die Option „UnembedFonts“ fest
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
 	UnembedFonts = true
 };
 Console.WriteLine("Start");
-// Optimize PDF document using OptimizationOptions
+// Optimieren Sie PDF-Dokumente mit OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
-// Save updated document
+// Aktualisiertes Dokument speichern
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Finished");
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
@@ -96,23 +96,23 @@ var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we demonstrated how to use Aspose.PDF for .NET to get unembed fonts from a PDF document. By following the step-by-step guide, you can easily implement this feature in your C# applications. Unembedding fonts can be advantageous when you need to work with the extracted fonts separately or ensure consistent font usage across various platforms.
+In diesem Tutorial haben wir gezeigt, wie Sie Aspose.PDF für .NET verwenden, um die Einbettung von Schriftarten aus einem PDF-Dokument aufzuheben. Wenn Sie der Schritt-für-Schritt-Anleitung folgen, können Sie diese Funktion problemlos in Ihren C#-Anwendungen implementieren. Das Aufheben der Einbettung von Schriftarten kann von Vorteil sein, wenn Sie mit den extrahierten Schriftarten separat arbeiten oder eine konsistente Verwendung von Schriftarten auf verschiedenen Plattformen sicherstellen müssen.
 
-## FAQ's
+## FAQs
 
-#### Q: What is the purpose of unembedding fonts from a PDF document?
+#### F: Welchen Zweck hat die Entfernung der Einbettung von Schriftarten aus einem PDF-Dokument?
 
-A: Unembedding fonts from a PDF document allows you to extract the embedded fonts and use them in other applications. This can be useful for ensuring consistent font rendering and preserving the document's visual appearance.
+A: Wenn Sie die Einbettung von Schriftarten aus einem PDF-Dokument entfernen, können Sie die eingebetteten Schriftarten extrahieren und in anderen Anwendungen verwenden. Dies kann nützlich sein, um eine konsistente Schriftartwiedergabe sicherzustellen und das visuelle Erscheinungsbild des Dokuments beizubehalten.
 
-#### Q: How do I specify the path to the document directory in the C# code?
+#### F: Wie gebe ich den Pfad zum Dokumentverzeichnis im C#-Code an?
 
-A: To specify the path to the document directory, replace `"YOUR DOCUMENT DIRECTORY"` in the code with the actual path to the directory where your PDF document is located.
+ A: Um den Pfad zum Dokumentverzeichnis anzugeben, ersetzen Sie`"YOUR DOCUMENT DIRECTORY"` Geben Sie im Code den tatsächlichen Pfad zu dem Verzeichnis an, in dem sich Ihr PDF-Dokument befindet.
 
-#### Q: What does the `UnembedFonts` option do, and where is it set?
+####  F: Was bedeutet das`UnembedFonts` option do, and where is it set?
 
-A: The `UnembedFonts` option, available in the `OptimizationOptions` class, enables or disables the unembedding of fonts from the PDF document. To set this option to `true`, use the following code:
+ A: Die`UnembedFonts` Option, verfügbar in der`OptimizationOptions` -Klasse aktiviert oder deaktiviert das Aufheben der Einbettung von Schriftarten aus dem PDF-Dokument. Um diese Option festzulegen auf`true`, verwenden Sie den folgenden Code:
 
 ```csharp
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
@@ -121,13 +121,13 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 };
 ```
 
-#### Q: Can I revert the changes made during the optimization process?
+#### F: Kann ich die während des Optimierungsprozesses vorgenommenen Änderungen rückgängig machen?
 
-A: Aspose.PDF for .NET does not make permanent changes to the original PDF document during optimization. The optimization process is performed on a copy of the document, leaving the original intact.
+A: Aspose.PDF für .NET nimmt während der Optimierung keine dauerhaften Änderungen am ursprünglichen PDF-Dokument vor. Der Optimierungsprozess wird an einer Kopie des Dokuments durchgeführt, wobei das Original erhalten bleibt.
 
-#### Q: How can I check the original and reduced file size after optimization?
+#### F: Wie kann ich nach der Optimierung die ursprüngliche und reduzierte Dateigröße überprüfen?
 
-A: You can use the `FileInfo` class of `System.IO` to get the original and reduced file size. Here's an example code snippet to achieve this:
+A: Sie können das verwenden`FileInfo` Klasse von`System.IO` um die ursprüngliche und reduzierte Dateigröße zu erhalten. Hier ist ein Beispiel-Codeausschnitt, um dies zu erreichen:
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");

@@ -1,141 +1,141 @@
 ---
-title: Page Number In Header Footer Using Floating Box
-linktitle: Page Number In Header Footer Using Floating Box
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add the page number in the header and footer of a PDF document with Aspose.PDF for .NET.
+title: Sidnummer i sidhuvudet med hjälp av flytande låda
+linktitle: Sidnummer i sidhuvudet med hjälp av flytande låda
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du lägger till sidnumret i sidhuvudet och sidfoten i ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 150
 url: /sv/net/programming-with-stamps-and-watermarks/page-number-in-header-footer-using-floating-box/
 ---
-In this tutorial, we will guide you step by step on how to add page number in header and footer of a PDF document using FloatingBox with Aspose.PDF for .NET. We will use the provided C# source code to create a PDF document, add a page, create a FloatingBox, set its position and add the page number to it, then save the modified PDF document.
+I den här handledningen guidar vi dig steg för steg om hur du lägger till sidnummer i sidhuvud och sidfot i ett PDF-dokument med FloatingBox med Aspose.PDF för .NET. Vi kommer att använda den medföljande C#-källkoden för att skapa ett PDF-dokument, lägga till en sida, skapa en FloatingBox, ställa in dess position och lägga till sidnumret till den, spara sedan det modifierade PDF-dokumentet.
 
-## Step 1: Setting up the environment
+## Steg 1: Sätta upp miljön
 
-Before you begin, make sure you have the following:
+Innan du börjar, se till att du har följande:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- En installerad .NET-utvecklingsmiljö.
+- Aspose.PDF-biblioteket för .NET laddas ner och refereras till i ditt projekt.
 
-## Step 2: Creating the PDF document and adding a page
+## Steg 2: Skapa PDF-dokumentet och lägga till en sida
 
-The first step is to create an instance of the PDF document and add a page to it. Here's how:
+Det första steget är att skapa en instans av PDF-dokumentet och lägga till en sida till det. Här är hur:
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Instantiate the PDF document
+// Instantiera PDF-dokumentet
 Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
 
-// Add a page to the PDF document
+// Lägg till en sida i PDF-dokumentet
 Aspose.Pdf.Page page = pdf.Pages.Add();
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+Var noga med att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till katalogen där du vill spara PDF-dokumentet.
 
-## Step 3: Creating the FloatingBox and adding the page number
+## Steg 3: Skapa FloatingBox och lägg till sidnumret
 
-Now that the page is added to the PDF document, we can create a FloatingBox, set its position, and add the page number to it. Here's how:
+Nu när sidan har lagts till i PDF-dokumentet kan vi skapa en FloatingBox, ställa in dess position och lägga till sidnumret till den. Här är hur:
 
 ```csharp
-// Create a FloatingBox with a width of 140 and a height of 80
+// Skapa en FloatingBox med en bredd på 140 och en höjd på 80
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
 
-// Set the left position of the paragraph
+// Ställ in styckets vänstra position
 box1. Left = 2;
 
-// Set the top position of the paragraph
+// Ställ in styckets översta position
 box1. Top = 10;
 
-// Add the page number to the FloatingBox
+// Lägg till sidnumret i FloatingBox
 box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
 
-// Add the FloatingBox to the page
+// Lägg till FloatingBox på sidan
 page.Paragraphs.Add(box1);
 ```
 
-The code above creates a FloatingBox with a width of 140 and a height of 80. Next, we set its position by specifying the left and top values. Finally, we add the page number to the FloatingBox using a TextFragment containing the syntax "($p/ $P )" which will be replaced with the current page number and the total number of pages.
+Koden ovan skapar en FloatingBox med en bredd på 140 och en höjd på 80. Därefter ställer vi in dess position genom att ange de vänstra och övre värdena. Slutligen lägger vi till sidnumret i FloatingBox med hjälp av ett TextFragment som innehåller syntaxen "($p/ $P )" som kommer att ersättas med det aktuella sidnumret och det totala antalet sidor.
 
-## Step 4: Saving the modified PDF document
+## Steg 4: Spara det ändrade PDF-dokumentet
 
-Once the page number is added to the header or footer using the FloatingBox, we can save the modified PDF document. Here's how:
+När sidnumret har lagts till i sidhuvudet eller sidfoten med FloatingBox kan vi spara det modifierade PDF-dokumentet. Här är hur:
 
 ```csharp
-// Save the modified PDF document
+// Spara det ändrade PDF-dokumentet
 pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Ovanstående kod sparar det redigerade PDF-dokumentet i den angivna katalogen.
 
-### Sample source code for Page Numberin Header Footer Using Floating Box using Aspose.PDF for .NET 
+### Exempel på källkod för sidnummer i sidhuvud med sidfot med flytande box med Aspose.PDF för .NET 
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document instance
+// Instantiera dokumentinstans
 Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
 
-// Add a Page into the pdf document
+// Lägg till en sida i pdf-dokumentet
 Aspose.Pdf.Page page = pdf.Pages.Add();
 
-// Initializes a new instance of the FloatingBox class
+//Initierar en ny instans av FloatingBox-klassen
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
 
-// Float value that indicates left position of the paragraph
+// Flytande värde som anger styckets vänstra position
 box1.Left = 2;
 
-// Float value that indicates top position of the paragraph
+// Flytande värde som anger styckets topposition
 box1.Top = 10;
 
-// Add the macros to the paragraphs collection of the FloatingBox
+// Lägg till makron till styckesamlingen i FloatingBox
 box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
 
-// Add a floatingBox to the page
+// Lägg till en floatingBox på sidan
 page.Paragraphs.Add(box1);
 
-// Save the document
+// Spara dokumentet
 pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
 
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! You have learned how to add page number in header and footer of PDF document using FloatingBox with Aspose.PDF for .NET. You can now customize your headers and footers by adding dynamic information such as page number.
+Grattis! Du har lärt dig hur du lägger till sidnummer i sidhuvud och sidfot i PDF-dokument med FloatingBox med Aspose.PDF för .NET. Du kan nu anpassa dina sidhuvuden och sidfötter genom att lägga till dynamisk information som sidnummer.
 
 ### FAQ's
 
-#### Q: What is a FloatingBox, and how is it used to add page numbers in the header or footer of a PDF document?
+#### F: Vad är en FloatingBox och hur används den för att lägga till sidnummer i sidhuvudet eller sidfoten i ett PDF-dokument?
 
-A: A FloatingBox is a versatile layout element in Aspose.PDF that can hold various content, including text and images. In this tutorial, it's used to create a container for the page number, allowing you to dynamically insert the current page number and total page count into the header or footer.
+S: En FloatingBox är ett mångsidigt layoutelement i Aspose.PDF som kan innehålla olika innehåll, inklusive text och bilder. I den här handledningen används den för att skapa en behållare för sidnumret, så att du dynamiskt kan infoga det aktuella sidnumret och det totala antalet sidor i sidhuvudet eller sidfoten.
 
-#### Q: How does the provided C# source code achieve adding page numbers using a FloatingBox?
+#### F: Hur kan den medföljande C#-källkoden lägga till sidnummer med en FloatingBox?
 
-A: The code snippet demonstrates how to create a PDF document, add a page, create a FloatingBox, set its position within the page, and insert the page number using a TextFragment. The syntax "($p/ $P )" in the TextFragment is replaced with the current page number and total page count.
+S: Kodavsnittet visar hur man skapar ett PDF-dokument, lägger till en sida, skapar en FloatingBox, ställer in dess position på sidan och infogar sidnumret med hjälp av ett TextFragment. Syntaxen "($p/ $P )" i TextFragmentet ersätts med nuvarande sidnummer och totalt antal sidor.
 
-#### Q: Can I customize the appearance and formatting of the page number added using the FloatingBox?
+#### F: Kan jag anpassa utseendet och formateringen av sidnumret som lagts till med FloatingBox?
 
-A: Yes, you can customize the appearance of the page number by modifying the properties of the TextFragment within the FloatingBox. You can change font size, color, style, alignment, and other formatting options.
+S: Ja, du kan anpassa utseendet på sidnumret genom att ändra egenskaperna för TextFragment i FloatingBox. Du kan ändra teckenstorlek, färg, stil, justering och andra formateringsalternativ.
 
-#### Q: Is it possible to add different dynamic elements, such as date and time, to the header or footer using a similar approach?
+#### F: Är det möjligt att lägga till olika dynamiska element, såsom datum och tid, i sidhuvudet eller sidfoten med ett liknande tillvägagångssätt?
 
-A: Absolutely, you can add different dynamic elements like date, time, document metadata, or custom text by modifying the TextFragment content within the FloatingBox. You can use macros like "($p/ $P )" for page numbers or "($date)" for the current date.
+S: Absolut, du kan lägga till olika dynamiska element som datum, tid, dokumentmetadata eller anpassad text genom att ändra TextFragment-innehållet i FloatingBox. Du kan använda makron som "($p/ $P )" för sidnummer eller "($date)" för det aktuella datumet.
 
-#### Q: How do I specify the position of the FloatingBox within the header or footer section?
-A: The provided code sets the position of the FloatingBox using the `Left` and `Top` properties. You can adjust these values to position the FloatingBox as desired within the header or footer section.
+#### F: Hur anger jag positionen för FloatingBox i sidhuvudet eller sidfoten?
+ S: Den medföljande koden ställer in positionen för FloatingBox med hjälp av`Left` och`Top` egenskaper. Du kan justera dessa värden för att placera FloatingBox efter önskemål inom sidhuvudet eller sidfoten.
 
-#### Q: Can I use a different font or style for the page number in the header or footer?
+#### F: Kan jag använda ett annat teckensnitt eller stil för sidnumret i sidhuvudet eller sidfoten?
 
-A: Yes, you can customize the font, style, and other formatting properties of the page number text by modifying the TextFragment properties within the FloatingBox.
+S: Ja, du kan anpassa teckensnitt, stil och andra formateringsegenskaper för sidnummertexten genom att ändra TextFragment-egenskaperna i FloatingBox.
 
-#### Q: What happens if the content in the FloatingBox exceeds its dimensions?
+#### F: Vad händer om innehållet i FloatingBox överskrider dess dimensioner?
 
-A: If the content within the FloatingBox exceeds its dimensions, it may be cut off or layout issues may arise. Ensure that the dimensions of the FloatingBox are suitable for accommodating the content, and consider adjusting the page layout if needed.
+S: Om innehållet i FloatingBox överskrider dess dimensioner, kan det skäras av eller layoutproblem kan uppstå. Se till att måtten på FloatingBox är lämpliga för innehållet och överväg att justera sidlayouten om det behövs.
 
-#### Q: Is it possible to add multiple FloatingBoxes with different content to the header or footer of the same page?
+#### F: Är det möjligt att lägga till flera FloatingBoxes med olika innehåll i sidhuvudet eller sidfoten på samma sida?
 
-A: Yes, you can add multiple FloatingBoxes with different content to the header or footer of the same page by creating separate FloatingBox instances and adding them to the page's Paragraphs collection.
+S: Ja, du kan lägga till flera FloatingBoxar med olika innehåll i sidhuvudet eller sidfoten på samma sida genom att skapa separata FloatingBox-instanser och lägga till dem i sidans Paragraphs-samling.
 
-#### Q: Can I use the FloatingBox approach to add content to other sections of the PDF document, such as the body or margins?
+#### F: Kan jag använda FloatingBox-metoden för att lägga till innehåll till andra delar av PDF-dokumentet, till exempel brödtexten eller marginalerna?
 
-A: While FloatingBoxes are commonly used for headers and footers, you can also use them to add content to other sections of the PDF document, such as the body or margins, by positioning them accordingly within the page.
+S: Även om FloatingBoxes vanligtvis används för sidhuvuden och sidfötter, kan du också använda dem för att lägga till innehåll i andra delar av PDF-dokumentet, såsom brödtexten eller marginalerna, genom att placera dem på sidan.

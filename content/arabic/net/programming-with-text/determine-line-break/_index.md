@@ -1,51 +1,51 @@
 ---
-title: Determine Line Break In PDF File
-linktitle: Determine Line Break In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to determine line breaks in PDF file using Aspose.PDF for .NET.
+title: تحديد فاصل الأسطر في ملف PDF
+linktitle: تحديد فاصل الأسطر في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تحديد فواصل الأسطر في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 130
 url: /ar/net/programming-with-text/determine-line-break/
 ---
-This tutorial will guide you through the process of determining line breaks in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+سيرشدك هذا البرنامج التعليمي خلال عملية تحديد فواصل الأسطر في ملف PDF باستخدام Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم الخطوات اللازمة.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## متطلبات
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio أو أي مترجم C# آخر مثبت على جهازك.
+- Aspose.PDF لمكتبة .NET. يمكنك تنزيله من موقع Aspose الرسمي أو استخدام مدير الحزم مثل NuGet لتثبيته.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## الخطوة 1: إعداد المشروع
+1. قم بإنشاء مشروع C# جديد في بيئة التطوير المفضلة لديك.
+2. قم بإضافة مرجع إلى Aspose.PDF لمكتبة .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to determine line breaks, add the following using directives at the top of the file:
+## الخطوة 2: استيراد مساحات الأسماء المطلوبة
+في ملف التعليمات البرمجية الذي تريد تحديد فواصل الأسطر فيه، أضف ما يلي باستخدام التوجيهات الموجودة في أعلى الملف:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## الخطوة 3: قم بتعيين دليل المستند
+ في الكود، حدد السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدال`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل حيث يتم تخزين المستندات الخاصة بك.
 
-## Step 4: Create a new Document instance
-Instantiate a new `Document` object by adding the following line of code:
+## الخطوة 4: إنشاء مثيل مستند جديد
+ إنشاء مثيل جديد`Document` كائن عن طريق إضافة السطر التالي من التعليمات البرمجية:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `page`.
+## الخطوة 5: إضافة صفحة إلى المستند
+ أضف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages`مجموعة. في الكود المقدم، يتم تعيين الصفحة الجديدة للمتغير`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 6: Add text fragments with line breaks
-Create a loop to add multiple text fragments to the page, each containing a paragraph with line breaks.
+## الخطوة 6: إضافة أجزاء نصية مع فواصل الأسطر
+قم بإنشاء حلقة لإضافة أجزاء نصية متعددة إلى الصفحة، تحتوي كل منها على فقرة بها فواصل أسطر.
 
 ```csharp
 for (int i = 0; i < 4; i++)
@@ -56,8 +56,8 @@ for (int i = 0; i < 4; i++)
 }
 ```
 
-## Step 7: Save the PDF document and extract line break information
-Save the PDF document using the `Save` method of the `Document` object. Then, extract the line break information using the `GetNotifications` method of the desired page.
+## الخطوة 7: احفظ مستند PDF واستخرج معلومات فاصل الأسطر
+ احفظ مستند PDF باستخدام`Save` طريقة`Document` هدف. ثم قم باستخراج معلومات فاصل الأسطر باستخدام الملف`GetNotifications` طريقة الصفحة المطلوبة
 
 ```csharp
 doc.Save(dataDir + "DetermineLineBreak_out.pdf");
@@ -65,9 +65,9 @@ string notifications = doc.Pages[1].GetNotifications();
 File.WriteAllText(dataDir + "notifications_out.txt", notifications);
 ```
 
-### Sample source code for Determine Line Break using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتحديد فاصل الأسطر باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 Page page = doc.Pages.Add();
@@ -82,48 +82,48 @@ string notifications = doc.Pages[1].GetNotifications();
 File.WriteAllText(dataDir + "notifications_out.txt", notifications);
 ```
 
-## Conclusion
-You have successfully determined line breaks in a PDF document using Aspose.PDF for .NET. The line break information has been extracted and saved to a text file.
+## خاتمة
+لقد نجحت في تحديد فواصل الأسطر في مستند PDF باستخدام Aspose.PDF لـ .NET. تم استخراج معلومات فاصل الأسطر وحفظها في ملف نصي.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the main focus of this tutorial?
+#### س: ما هو التركيز الرئيسي لهذا البرنامج التعليمي؟
 
-A: This tutorial is focused on guiding you through the process of determining line breaks in a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the necessary steps to achieve this.
+ج: يركز هذا البرنامج التعليمي على إرشادك خلال عملية تحديد فواصل الأسطر في ملف PDF باستخدام مكتبة Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم الخطوات اللازمة لتحقيق ذلك.
 
-#### Q: Which namespaces should I import for this tutorial?
+#### س: ما هي مساحات الأسماء التي يجب علي استيرادها لهذا البرنامج التعليمي؟
 
-A: In the code file where you want to determine line breaks, import the following namespaces at the beginning of the file:
+ج: في ملف التعليمات البرمجية الذي تريد تحديد فواصل الأسطر فيه، قم باستيراد مساحات الأسماء التالية في بداية الملف:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-#### Q: How do I specify the document directory?
+#### س: كيف أحدد دليل المستندات؟
 
-A: In the code, find the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ ج: في الكود، ابحث عن السطر`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدال`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك.
 
-#### Q: How do I create a new Document instance?
+#### س: كيف يمكنني إنشاء مثيل مستند جديد؟
 
-A: In Step 4, you'll instantiate a new `Document` object using the provided code.
+ ج: في الخطوة 4، ستقوم بإنشاء نسخة جديدة`Document` الكائن باستخدام الكود المقدم.
 
-#### Q: How do I add a page to the document?
+#### س: كيف يمكنني إضافة صفحة إلى المستند؟
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection.
+ ج: في الخطوة 5، ستضيف صفحة جديدة إلى المستند باستخدام الملف`Add` طريقة`Pages` مجموعة.
 
-#### Q: How do I add text fragments with line breaks?
+#### س: كيف يمكنني إضافة أجزاء نصية مع فواصل الأسطر؟
 
-A: In Step 6, you'll create a loop to add multiple text fragments to the page, each containing a paragraph with line breaks.
+ج: في الخطوة 6، ستقوم بإنشاء حلقة لإضافة أجزاء نصية متعددة إلى الصفحة، تحتوي كل منها على فقرة بها فواصل أسطر.
 
-#### Q: How do I save the PDF document and extract line break information?
+#### س: كيف يمكنني حفظ مستند PDF واستخراج معلومات فاصل الأسطر؟
 
-A: In Step 7, you'll save the PDF document using the `Save` method of the `Document` object. Then, you'll extract the line break information using the `GetNotifications` method of the desired page and save it to a text file.
+ ج: في الخطوة 7، ستحفظ مستند PDF باستخدام ملف`Save` طريقة`Document` هدف. بعد ذلك، ستقوم باستخراج معلومات فاصل الأسطر باستخدام ملف`GetNotifications` طريقة الصفحة المطلوبة وحفظها في ملف نصي.
 
-#### Q: What is the purpose of the extracted line break information?
+#### س: ما هو الغرض من معلومات فاصل الأسطر المستخرجة؟
 
-A: The extracted line break information provides details about the line breaks and notifications present in the PDF document. This can be useful for analyzing and understanding how text and paragraphs are structured within the document.
+ج: توفر معلومات فاصل الأسطر المستخرجة تفاصيل حول فواصل الأسطر والإشعارات الموجودة في مستند PDF. يمكن أن يكون ذلك مفيدًا لتحليل وفهم كيفية تنظيم النص والفقرات داخل المستند.
 
-#### Q: What is the main takeaway from this tutorial?
+#### س: ما هي الوجبات الرئيسية من هذا البرنامج التعليمي؟
 
-A: By following this tutorial, you've learned how to determine line breaks in a PDF document using Aspose.PDF for .NET. You can use this knowledge to extract and analyze line break information from PDF files programmatically.
+ج: باتباع هذا البرنامج التعليمي، تعلمت كيفية تحديد فواصل الأسطر في مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذه المعرفة لاستخراج وتحليل معلومات فاصل الأسطر من ملفات PDF برمجياً.

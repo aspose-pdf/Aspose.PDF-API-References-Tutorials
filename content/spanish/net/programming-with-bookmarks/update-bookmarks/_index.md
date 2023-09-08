@@ -1,49 +1,49 @@
 ---
-title: Update Bookmarks In PDF File
-linktitle: Update Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily update bookmarks in PDF file with Aspose.PDF for .NET.
+title: Actualizar marcadores en un archivo PDF
+linktitle: Actualizar marcadores en un archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Actualice fácilmente los marcadores en archivos PDF con Aspose.PDF para .NET.
 type: docs
 weight: 100
 url: /es/net/programming-with-bookmarks/update-bookmarks/
 ---
-Updating bookmarks in PDF file is often necessary to reflect changes or updates in the structure or content of the document. With Aspose.PDF for .NET, you can easily update bookmarks by following the following source code:
+A menudo es necesario actualizar los marcadores en un archivo PDF para reflejar cambios o actualizaciones en la estructura o el contenido del documento. Con Aspose.PDF para .NET, puede actualizar fácilmente los marcadores siguiendo el siguiente código fuente:
 
-## Step 1: Import required libraries
+## Paso 1: importar las bibliotecas necesarias
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Antes de comenzar, debe importar las bibliotecas necesarias para su proyecto C#. Aquí está la directiva de importación necesaria:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Paso 2: establezca la ruta a la carpeta de documentos
 
-In this step, you need to specify the path to the folder containing the PDF file you want to update. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ En este paso, debe especificar la ruta a la carpeta que contiene el archivo PDF que desea actualizar. Reemplazar`"YOUR DOCUMENT DIRECTORY"`en el siguiente código con la ruta real a su carpeta de documentos:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Paso 3: abre el documento PDF
 
-Now we will open the PDF document we want to update using the following code:
+Ahora abriremos el documento PDF que queremos actualizar usando el siguiente código:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateBookmarks.pdf");
 ```
 
-## Step 4: Get bookmark object
+## Paso 4: obtener el objeto marcador
 
-In this step, we'll get the specific bookmark object we want to update. In the example below, we retrieve the bookmark at index 1 (the second bookmark in the bookmarks collection). You can adjust the index according to your needs. Here is the corresponding code:
+En este paso, obtendremos el objeto de marcador específico que queremos actualizar. En el siguiente ejemplo, recuperamos el marcador en el índice 1 (el segundo marcador de la colección de marcadores). Puede ajustar el índice según sus necesidades. Aquí está el código correspondiente:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-## Step 5: Update bookmark properties
+## Paso 5: actualice las propiedades del marcador
 
-Now let's update the bookmark properties such as title, italic style, and bold style. You can adjust these properties according to your needs. Here is the corresponding code:
+Ahora actualicemos las propiedades del marcador, como título, estilo en cursiva y estilo en negrita. Puede ajustar estas propiedades según sus necesidades. Aquí está el código correspondiente:
 
 ```csharp
 pdfOutline.Title = "Updated Outline";
@@ -51,79 +51,79 @@ pdfOutline. Italic = true;
 pdfOutline. Bold = true;
 ```
 
-## Step 6: Save the updated file
+## Paso 6: guarde el archivo actualizado
 
-Now let's save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ Ahora guardemos el archivo PDF actualizado usando el`Save` método de la`pdfDocument` objeto. Aquí está el código correspondiente:
 
 ```csharp
 dataDir = dataDir + "UpdateBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Update Bookmarks using Aspose.PDF for .NET 
+### Código fuente de muestra para actualizar marcadores usando Aspose.PDF para .NET 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Abrir documento
 Document pdfDocument = new Document(dataDir + "UpdateBookmarks.pdf");
-// Get a bookmark object
+// Obtener un objeto de marcador
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 pdfOutline.Title = "Updated Outline";
 pdfOutline.Italic = true;
 pdfOutline.Bold = true;
 dataDir = dataDir + "UpdateBookmarks_out.pdf";
-// Save output
+// Guardar salida
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nBookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Conclusión
 
-Congratulation ! Now you have a step-by-step guide to updating bookmarks with Aspose.PDF for .NET. You can use this code to change the titles and styles of bookmarks in your PDF documents.
+¡Enhorabuena! Ahora tiene una guía paso a paso para actualizar marcadores con Aspose.PDF para .NET. Puede utilizar este código para cambiar los títulos y estilos de los marcadores en sus documentos PDF.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Asegúrese de consultar la documentación oficial de Aspose.PDF para obtener más información sobre las funciones avanzadas de manipulación de marcadores.
 
-### FAQ's for update bookmarks in PDF file
+### Preguntas frecuentes para actualizar marcadores en un archivo PDF
 
-#### Q: Why would I need to update bookmarks in a PDF file?
+#### P: ¿Por qué necesitaría actualizar los marcadores en un archivo PDF?
 
-A: Updating bookmarks is essential when you want to reflect changes or updates in the structure, content, or appearance of a PDF document. It ensures that the bookmarks accurately represent the document's organization.
+R: Actualizar los marcadores es esencial cuando desea reflejar cambios o actualizaciones en la estructura, el contenido o la apariencia de un documento PDF. Garantiza que los marcadores representen con precisión la organización del documento.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### P: ¿Cómo importo las bibliotecas necesarias para mi proyecto C#?
 
-A: To import the required libraries for your C# project, include the following import directive:
+R: Para importar las bibliotecas necesarias para su proyecto C#, incluya la siguiente directiva de importación:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive allows you to access the classes and methods needed to work with PDF documents and bookmarks.
+Esta directiva le permite acceder a las clases y métodos necesarios para trabajar con documentos y marcadores PDF.
 
-#### Q: How do I specify the path to the documents folder?
+#### P: ¿Cómo especifico la ruta a la carpeta de documentos?
 
-A: Replace `"YOUR DOCUMENT DIRECTORY"` in the provided source code with the actual path to the folder containing the PDF file you want to update.
+ R: Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el código fuente proporcionado con la ruta real a la carpeta que contiene el archivo PDF que desea actualizar.
 
-#### Q: How do I open a PDF document for updating bookmarks?
+#### P: ¿Cómo abro un documento PDF para actualizar los marcadores?
 
-A: To open a PDF document for updating bookmarks, use the following code:
+R: Para abrir un documento PDF y actualizar los marcadores, utilice el siguiente código:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateBookmarks.pdf");
 ```
 
-Replace `"UpdateBookmarks.pdf"` with the actual file name.
+ Reemplazar`"UpdateBookmarks.pdf"` con el nombre del archivo real.
 
-#### Q: How do I get the bookmark object I want to update?
+#### P: ¿Cómo obtengo el objeto marcador que deseo actualizar?
 
-A: To retrieve a specific bookmark for updating, access the `Outlines` property of the `pdfDocument` object. In the example below, we retrieve the bookmark at index 1:
+ R: Para recuperar un marcador específico y actualizarlo, acceda al`Outlines` propiedad de la`pdfDocument` objeto. En el siguiente ejemplo, recuperamos el marcador en el índice 1:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-#### Q: What bookmark properties can I update?
+#### P: ¿Qué propiedades de marcadores puedo actualizar?
 
-A: You can update various properties of a bookmark, such as its title, italic style, and bold style. Customize these properties according to your needs:
+R: Puede actualizar varias propiedades de un marcador, como su título, estilo en cursiva y estilo en negrita. Personaliza estas propiedades según tus necesidades:
 
 ```csharp
 pdfOutline.Title = "Updated Outline";
@@ -131,23 +131,23 @@ pdfOutline.Italic = true;
 pdfOutline.Bold = true;
 ```
 
-#### Q: How do I save the updated PDF file?
+#### P: ¿Cómo guardo el archivo PDF actualizado?
 
-A: Save the updated PDF file using the `Save` method of the `pdfDocument` object:
+ R: Guarde el archivo PDF actualizado usando el`Save` método de la`pdfDocument` objeto:
 
 ```csharp
 dataDir = dataDir + "UpdateBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-#### Q: Can I update multiple bookmarks using this method?
+#### P: ¿Puedo actualizar varios marcadores usando este método?
 
-A: Yes, you can repeat steps 4 to 6 for each bookmark you want to update. Modify the index and properties as needed.
+R: Sí, puedes repetir los pasos del 4 al 6 para cada marcador que quieras actualizar. Modifique el índice y las propiedades según sea necesario.
 
-#### Q: Is there a limit to the number of bookmarks I can update?
+#### P: ¿Existe un límite en la cantidad de marcadores que puedo actualizar?
 
-A: There is typically no strict limit to the number of bookmarks you can update. However, very large documents with numerous bookmarks may require efficient memory management.
+R: Por lo general, no existe un límite estricto para la cantidad de marcadores que puede actualizar. Sin embargo, los documentos muy grandes con numerosos marcadores pueden requerir una gestión eficiente de la memoria.
 
-#### Q: How can I confirm that the bookmarks have been updated?
+#### P: ¿Cómo puedo confirmar que los marcadores se han actualizado?
 
-A: Open the generated PDF file to verify that the specified bookmark updates have been applied.
+R: Abra el archivo PDF generado para verificar que se hayan aplicado las actualizaciones de marcadores especificadas.

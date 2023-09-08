@@ -1,136 +1,136 @@
 ---
-title: Delete All Bookmarks In PDF File
-linktitle: Delete All Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily delete all bookmarks in PDF file with Aspose.PDF for .NET.
+title: Удалить все закладки в PDF-файле
+linktitle: Удалить все закладки в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко удалите все закладки в PDF-файле с помощью Aspose.PDF для .NET.
 type: docs
 weight: 30
 url: /ru/net/programming-with-bookmarks/delete-all-bookmarks/
 ---
-# Delete all bookmarks with Aspose.PDF for .NET
+# Удалите все закладки с помощью Aspose.PDF для .NET.
 
-Deleting bookmarks in PDF file may be necessary in some cases. With Aspose.PDF for .NET, you can easily remove all bookmarks by following the following source code:
+Удаление закладок в PDF-файле может потребоваться в некоторых случаях. С помощью Aspose.PDF для .NET вы можете легко удалить все закладки, выполнив следующий исходный код:
 
-## Step 1: Import required libraries
+## Шаг 1. Импортируйте необходимые библиотеки.
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Прежде чем начать, вам необходимо импортировать необходимые библиотеки для вашего проекта C#. Вот необходимая директива импорта:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Шаг 2. Установите путь к папке с документами.
 
-In this step, you need to specify the path to the folder containing the PDF file from which you want to remove bookmarks. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ На этом шаге вам необходимо указать путь к папке, содержащей PDF-файл, из которого вы хотите удалить закладки. Заменять`"YOUR DOCUMENT DIRECTORY"`в следующем коде с фактическим путем к папке ваших документов:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Шаг 3. Откройте PDF-документ.
 
-Now we are going to open the PDF document from which we want to remove the bookmarks using the following code:
+Теперь мы собираемся открыть PDF-документ, из которого хотим удалить закладки, используя следующий код:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
 ```
 
-## Step 4: Delete all bookmarks
+## Шаг 4. Удалите все закладки
 
-In this step, we delete all bookmarks from the document using the `Delete` method of the `Outlines` property. Here is the corresponding code:
+ На этом этапе мы удаляем все закладки из документа с помощью`Delete` метод`Outlines` свойство. Вот соответствующий код:
 
 ```csharp
 pdfDocument.Outlines.Delete();
 ```
 
-## Step 5: Save the updated file
+## Шаг 5. Сохраните обновленный файл.
 
-Finally, we save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ Наконец, мы сохраняем обновленный PDF-файл, используя`Save` метод`pdfDocument` объект. Вот соответствующий код:
 
 ```csharp
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Delete All Bookmarks using Aspose.PDF for .NET 
+### Пример исходного кода для удаления всех закладок с помощью Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
-// Delete all bookmarks
+// Удалить все закладки
 pdfDocument.Outlines.Delete();
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
-// Save updated file
+// Сохранить обновленный файл
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nAll bookmarks deleted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! Now you have a step by step guide to remove all bookmarks with Aspose.PDF for .NET. You can use this code to clean up your PDF documents by deleting all existing bookmarks.
+Поздравляем! Теперь у вас есть пошаговое руководство по удалению всех закладок с помощью Aspose.PDF для .NET. Вы можете использовать этот код для очистки PDF-документов, удалив все существующие закладки.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Обязательно ознакомьтесь с официальной документацией Aspose.PDF для получения дополнительной информации о расширенных функциях управления закладками.
 
-### FAQ's for delete all bookmarks in PDF file
+### Часто задаваемые вопросы по удалению всех закладок в PDF-файле
 
-#### Q: What are bookmarks in a PDF file?
+#### Вопрос: Что такое закладки в PDF-файле?
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They help organize and enhance the user experience when navigating through lengthy content.
+О: Закладки в PDF-файле — это средства навигации, которые позволяют пользователям быстро переходить к определенным разделам или страницам документа. Они помогают организовать и улучшить работу пользователя при навигации по длинному контенту.
 
-#### Q: Why would I need to delete all bookmarks from a PDF file?
+#### Вопрос: Зачем мне удалять все закладки из PDF-файла?
 
-A: There might be cases where you want to remove all bookmarks from a PDF document to simplify its navigation, reorganize its structure, or prepare it for a specific purpose where bookmarks are not needed.
+О: Могут быть случаи, когда вы захотите удалить все закладки из PDF-документа, чтобы упростить навигацию по нему, реорганизовать его структуру или подготовить его для определенной цели, когда закладки не нужны.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### Вопрос: Как мне импортировать необходимые библиотеки для моего проекта C#?
 
-A: To import the required library for your C# project, you can use the following import directive:
+О: Чтобы импортировать необходимую библиотеку для вашего проекта C#, вы можете использовать следующую директиву импорта:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This library provides the classes and methods needed to work with PDF documents.
+Эта библиотека предоставляет классы и методы, необходимые для работы с PDF-документами.
 
-#### Q: How do I specify the path to the documents folder?
+#### Вопрос: Как указать путь к папке с документами?
 
-A: In the source code provided, you need to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to remove bookmarks. This ensures that the code can locate the target PDF file.
+ О: В предоставленном исходном коде необходимо заменить`"YOUR DOCUMENT DIRECTORY"` с фактическим путем к папке, содержащей PDF-файл, из которого вы хотите удалить закладки. Это гарантирует, что код сможет найти целевой PDF-файл.
 
-#### Q: How do I open a PDF document for bookmark removal?
+#### Вопрос: Как открыть PDF-документ для удаления закладок?
 
-A: To open a PDF document for bookmark removal, use the following code:
+О: Чтобы открыть PDF-документ для удаления закладок, используйте следующий код:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
 ```
 
-Replace `"DeleteAllBookmarks.pdf"` with the actual file name.
+ Заменять`"DeleteAllBookmarks.pdf"` с фактическим именем файла.
 
-#### Q: How do I delete all bookmarks from the PDF document?
+#### Вопрос: Как удалить все закладки из PDF-документа?
 
-A: To remove all bookmarks from the PDF document, use the `Delete` method of the `Outlines` property:
+ О: Чтобы удалить все закладки из PDF-документа, используйте команду`Delete` метод`Outlines` свойство:
 
 ```csharp
 pdfDocument.Outlines.Delete();
 ```
 
-#### Q: What happens to the rest of the content when bookmarks are deleted?
+#### Вопрос: Что происходит с остальным содержимым при удалении закладок?
 
-A: Deleting bookmarks does not affect the content or layout of the PDF document. Only the navigation bookmarks are removed, leaving the actual content intact.
+О: Удаление закладок не влияет на содержимое или макет PDF-документа. Удалены только навигационные закладки, оставляя фактическое содержимое нетронутым.
 
-#### Q: How do I save the updated PDF file after removing bookmarks?
+#### Вопрос: Как сохранить обновленный PDF-файл после удаления закладок?
 
-A: To save the updated PDF file after deleting bookmarks, use the following code:
+О: Чтобы сохранить обновленный PDF-файл после удаления закладок, используйте следующий код:
 
 ```csharp
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-#### Q: Can I selectively delete specific bookmarks instead of all of them?
+#### Вопрос: Могу ли я выборочно удалить определенные закладки, а не все?
 
-A: Yes, you can selectively delete specific bookmarks by targeting them using their index or other properties. The provided source code demonstrates how to delete all bookmarks, but you can modify it to suit your needs.
+О: Да, вы можете выборочно удалять определенные закладки, нацеливаясь на них с помощью их индекса или других свойств. Приведенный исходный код демонстрирует, как удалить все закладки, но вы можете изменить его в соответствии со своими потребностями.
 
-#### Q: Are there any precautions I should take before deleting bookmarks?
+#### Вопрос: Какие меры предосторожности следует предпринять перед удалением закладок?
 
-A: Before deleting bookmarks, make sure to review the document to ensure that bookmark removal will not impact the document's usability or navigation. Consider making a backup of the original document before proceeding.
+О: Прежде чем удалять закладки, обязательно просмотрите документ, чтобы убедиться, что удаление закладки не повлияет на удобство использования или навигацию по документу. Прежде чем продолжить, рассмотрите возможность создания резервной копии исходного документа.

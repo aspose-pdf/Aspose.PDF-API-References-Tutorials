@@ -1,86 +1,86 @@
 ---
-title: Table In Header Footer Section
-linktitle: Table In Header Footer Section
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a table in the header/footer section of a PDF document with Aspose.PDF for .NET.
+title: Таблица в разделе верхнего колонтитула
+linktitle: Таблица в разделе верхнего колонтитула
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как добавить таблицу в верхний/нижний колонтитул PDF-документа с помощью Aspose.PDF для .NET.
 type: docs
 weight: 170
 url: /ru/net/programming-with-stamps-and-watermarks/table-in-header-footer-section/
 ---
-In this tutorial, we will guide you step by step on how to add a table in the header or footer section of a PDF document using Aspose.PDF for .NET. The provided C# source code shows you how to create an empty PDF document, add a page, configure the header section, create a table, add rows and cells to the table, and finally save the PDF document.
+В этом уроке мы шаг за шагом покажем вам, как добавить таблицу в верхний или нижний колонтитул PDF-документа с помощью Aspose.PDF для .NET. В предоставленном исходном коде C# показано, как создать пустой документ PDF, добавить страницу, настроить раздел заголовка, создать таблицу, добавить в нее строки и ячейки и, наконец, сохранить документ PDF.
 
-## Step 1: Setting up the environment
+## Шаг 1. Настройка среды
 
-Before you begin, make sure you have the following:
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Установленная среда разработки .NET.
+- Библиотека Aspose.PDF для .NET загружена и используется в вашем проекте.
 
-## Step 2: Creating the PDF Document and Page
+## Шаг 2. Создание PDF-документа и страницы
 
-The first step is to create an instance of the `Document` class and add a page to the document. Here's how:
+ Первым шагом является создание экземпляра`Document` class и добавьте страницу в документ. Вот как:
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Instantiate a Document object
+// Создать экземпляр объекта Document
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
 
-// Create a page in the PDF document
+// Создать страницу в PDF-документе
 Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+Обязательно замените «КАТАЛОГ ВАШИХ ДОКУМЕНТОВ» фактическим путем к каталогу, в котором вы хотите сохранить PDF-документ.
 
-## Step 3: Configuring the header section
+## Шаг 3. Настройка раздела заголовка
 
-Now we will configure the header section of the PDF document by creating an instance of the `HeaderFooter` class. Here's how:
+ Теперь мы настроим раздел заголовка PDF-документа, создав экземпляр`HeaderFooter` сорт. Вот как:
 
 ```csharp
-// Create a header section for the PDF file
+// Создайте раздел заголовка для PDF-файла.
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Define the header section for the page
+// Определите раздел заголовка для страницы
 page. Header = header;
 
-// Set the top margin of the header section
+// Установите верхнее поле раздела заголовка
 header. Margin. Top = 20;
 ```
 
-## Step 4: Creating the table
+## Шаг 4: Создание таблицы
 
-Now we are going to create a table using the `Table` class and add it to the heading section's paragraph collection. Here's how:
+ Теперь мы собираемся создать таблицу, используя`Table` class и добавьте его в коллекцию абзацев раздела заголовка. Вот как:
 
 ```csharp
-// Instantiate a Table object
+// Создать экземпляр объекта таблицы
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Add the table to the paragraphs collection of the header section
+// Добавьте таблицу в коллекцию абзацев раздела заголовка.
 header.Paragraphs.Add(tab1);
 
-// Define the widths of the columns of the table
+// Определить ширину столбцов таблицы
 tab1.ColumnWidths = "60,300";
 ```
 
-The code above creates a table with two columns of specified widths.
+Приведенный выше код создает таблицу с двумя столбцами указанной ширины.
 
-## Step 5: Add rows and cells to the table
+## Шаг 5. Добавьте в таблицу строки и ячейки.
 
-Now we will add rows and cells to the table using the `Row` class and the `Cell` class. Here's how:
+ Теперь мы добавим строки и ячейки в таблицу, используя`Row` класс и`Cell` сорт. Вот как:
 
 ```csharp
-// Create a row in the table and add cells
+// Создайте строку в таблице и добавьте ячейки
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Table in header section");
 row1.BackgroundColor = Color.Gray;
 
-// Merge the first cell of the first row
+// Объединить первую ячейку первой строки
 tab1.Rows[0].Cells[0].ColSpan = 2;
 tab1.Rows[0].Cells[0].DefaultCellTextState.ForegroundColor = Color.Cyan;
 tab1.Rows[0].Cells[0].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
 
-// Create another row in the table and add a cell with an image
+// Создайте еще одну строку в таблице и добавьте ячейку с изображением.
 Aspose.Pdf.Row row2 = tab1.Rows.Add();
 row2.BackgroundColor = Color.White;
 Aspose.Pdf.Cell cell2 = row2.Cells.Add();
@@ -94,128 +94,128 @@ row2.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
 row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 ```
 
-## Step 6: Saving the PDF Document
+## Шаг 6. Сохранение PDF-документа
 
-Once the table has been added to the header section, we can save the PDF document. Here's how:
+После добавления таблицы в раздел заголовка мы можем сохранить PDF-документ. Вот как:
 
 ```csharp
-// Save the PDF file
+// Сохраните PDF-файл
 pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+Обязательно замените «КАТАЛОГ ВАШИХ ДОКУМЕНТОВ» фактическим путем к каталогу, в котором вы хотите сохранить PDF-документ.
 
-### Sample source code for Table In Header Footer Section using Aspose.PDF for .NET 
+### Пример исходного кода для раздела «Таблица в нижнем колонтитуле» с использованием Aspose.PDF для .NET 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document instance by calling empty constructor
+// Создать экземпляр экземпляра документа, вызвав пустой конструктор
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
 
-// Create a page in the pdf document
+// Создать страницу в pdf документе
 Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 
-// Create a Header Section of the PDF file
+// Создайте раздел заголовка PDF-файла.
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the Odd Header for the PDF file
+//Установите нечетный заголовок для файла PDF
 page.Header = header;
 
-// Set the top margin for the header section
+// Установите верхнее поле для раздела заголовка
 header.Margin.Top = 20;
 
-// Instantiate a table object
+// Создать экземпляр табличного объекта
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Add the table in paragraphs collection of the desired section
+// Добавьте таблицу в коллекцию абзацев нужного раздела
 header.Paragraphs.Add(tab1);
 
-// Set default cell border using BorderInfo object
+// Установите границу ячейки по умолчанию, используя объект BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 
-// Set with column widths of the table
+// Задается шириной столбца таблицы
 tab1.ColumnWidths = "60 300";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose-logo.jpg";
 
-// Create rows in the table and then cells in the rows
+// Создайте строки в таблице, а затем ячейки в строках.
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Table in Header Section");
 row1.BackgroundColor = Color.Gray;
 
-// Set the row span value for first row as 2
+// Установите значение диапазона строк для первой строки как 2.
 tab1.Rows[0].Cells[0].ColSpan = 2;
 tab1.Rows[0].Cells[0].DefaultCellTextState.ForegroundColor = Color.Cyan;
 tab1.Rows[0].Cells[0].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
 
-// Create rows in the table and then cells in the rows
+// Создайте строки в таблице, а затем ячейки в строках.
 Aspose.Pdf.Row row2 = tab1.Rows.Add();
 
-// Set the background color for Row2
+// Установите цвет фона для строки 2.
 row2.BackgroundColor = Color.White;
 
-// Add the cell which holds the image
+// Добавьте ячейку, содержащую изображение
 Aspose.Pdf.Cell cell2 = row2.Cells.Add();
 
-// Set the image width to 60
+// Установите ширину изображения 60.
 img.FixWidth = 60;
 
-// Add the image to the table cell
+// Добавьте изображение в ячейку таблицы
 cell2.Paragraphs.Add(img);
 row2.Cells.Add("Logo is looking fine !");
 row2.Cells[1].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
 
-// Set the vertical allignment of the text as center alligned
+// Установите вертикальное выравнивание текста по центру.
 row2.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
 row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 
-// Save the Pdf file
+// Сохраните PDF-файл
 pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You have learned how to add a table in the header or footer section of a PDF document using Aspose.PDF for .NET. You can now customize your headers and footers by adding tables to display additional information in your PDF documents.
+Поздравляем! Вы узнали, как добавить таблицу в верхний или нижний колонтитул PDF-документа с помощью Aspose.PDF для .NET. Теперь вы можете настраивать верхние и нижние колонтитулы, добавляя таблицы для отображения дополнительной информации в PDF-документах.
 
-### FAQ's for table in header footer section
+### Часто задаваемые вопросы по таблице в разделе верхнего колонтитула
 
-#### Q: What is the purpose of adding a table in the header or footer section of a PDF document?
+#### Вопрос: Какова цель добавления таблицы в верхний или нижний колонтитул PDF-документа?
 
-A: Adding a table in the header or footer section of a PDF document allows you to display structured and organized information such as titles, subtitles, logos, or any other content that you want to appear consistently on each page of the document.
+О: Добавление таблицы в верхний или нижний колонтитул PDF-документа позволяет отображать структурированную и организованную информацию, такую как заголовки, субтитры, логотипы или любой другой контент, который вы хотите последовательно отображать на каждой странице документа.
 
-#### Q: How does the provided C# source code achieve the addition of a table in the header or footer section of a PDF document?
+#### Вопрос: Как предоставленный исходный код C# позволяет добавить таблицу в верхний или нижний колонтитул PDF-документа?
 
-A: The code demonstrates the process of creating an empty PDF document, adding a page, configuring the header section, creating a table with rows and cells, and finally saving the PDF document. The result is a table displayed in the header section of the PDF document.
+О: Код демонстрирует процесс создания пустого PDF-документа, добавления страницы, настройки раздела заголовка, создания таблицы со строками и ячейками и, наконец, сохранения PDF-документа. Результатом является таблица, отображаемая в разделе заголовка PDF-документа.
 
-#### Q: Can I customize the appearance of the table cells, such as borders, background color, and text style?
+#### Вопрос: Могу ли я настроить внешний вид ячеек таблицы, например границы, цвет фона и стиль текста?
 
-A: Yes, you can customize the appearance of the table cells by setting properties like cell borders, background color, text style, font, font size, and more.
+О: Да, вы можете настроить внешний вид ячеек таблицы, задав такие свойства, как границы ячеек, цвет фона, стиль текста, шрифт, размер шрифта и многое другое.
 
-#### Q: How is the table added to the header section of the PDF document?
+#### Вопрос: Как таблица добавляется в заголовок PDF-документа?
 
-A: The code adds the table to the paragraphs collection of the header section, which ensures that the table is displayed in the header of each page.
+О: Код добавляет таблицу в коллекцию абзацев раздела заголовка, что гарантирует отображение таблицы в заголовке каждой страницы.
 
-#### Q: Can I add more rows and cells to the table as needed?
+#### Вопрос: Могу ли я при необходимости добавлять в таблицу дополнительные строки и ячейки?
 
-A: Absolutely, you can add more rows and cells to the table by using the `Rows.Add()` and `Cells.Add()` methods. This allows you to structure the table content as desired.
+ О: Конечно, вы можете добавить в таблицу больше строк и ячеек, используя`Rows.Add()` и`Cells.Add()` методы. Это позволяет структурировать содержимое таблицы по желанию.
 
-#### Q: Is it possible to adjust the width of the table columns?
-A: Yes, you can adjust the width of the table columns using the `ColumnWidths` property. This enables you to control the layout of the table.
+#### Вопрос: Можно ли регулировать ширину столбцов таблицы?
+ О: Да, вы можете настроить ширину столбцов таблицы с помощью`ColumnWidths` свойство. Это позволяет вам управлять макетом таблицы.
 
-#### Q: How can I span cells across multiple columns or rows within the table?
-A: To span cells across multiple columns, you can use the `ColSpan` property of the corresponding cell. Similarly, you can use the `RowSpan` property to span cells across multiple rows.
+#### Вопрос: Как распределить ячейки по нескольким столбцам или строкам таблицы?
+ О: Чтобы распределить ячейки по нескольким столбцам, вы можете использовать`ColSpan` свойство соответствующей ячейки. Аналогичным образом вы можете использовать`RowSpan` свойство охватывать ячейки по нескольким строкам.
 
-#### Q: What happens if I want to add a table to both the header and footer sections of the PDF document?
+#### Вопрос: Что произойдет, если я захочу добавить таблицу как в верхний, так и в нижний колонтитул PDF-документа?
 
-A: You can follow a similar approach for both the header and footer sections. Simply create a `HeaderFooter` instance for the footer, configure it, and add the table to its paragraphs collection.
+О: Вы можете использовать аналогичный подход как для верхнего, так и для нижнего колонтитула. Просто создайте`HeaderFooter` экземпляр нижнего колонтитула, настройте его и добавьте таблицу в коллекцию абзацев.
 
-#### Q: Can I use images within the table cells, and how is that achieved?
+#### Вопрос: Могу ли я использовать изображения в ячейках таблицы и как это достигается?
 
-A: Yes, you can add images within table cells. The code example demonstrates adding an image to a cell by creating an `Image` object, setting its file path and dimensions, and then adding it to a cell's paragraphs.
+ О: Да, вы можете добавлять изображения в ячейки таблицы. В примере кода показано добавление изображения в ячейку путем создания`Image` объект, задав путь к его файлу и размеры, а затем добавив его в абзацы ячейки.
 
-#### Q: How do I ensure the table appears consistently across all pages in the PDF document?
+#### Вопрос: Как обеспечить единообразное отображение таблицы на всех страницах PDF-документа?
 
-A: When you add the table to the header or footer section using the `HeaderFooter` instance, Aspose.PDF ensures that the table appears consistently on each page, providing a uniform layout.
+ О: Когда вы добавляете таблицу в раздел верхнего или нижнего колонтитула с помощью`HeaderFooter` Например, Aspose.PDF обеспечивает единообразное отображение таблицы на каждой странице, обеспечивая единообразный макет.

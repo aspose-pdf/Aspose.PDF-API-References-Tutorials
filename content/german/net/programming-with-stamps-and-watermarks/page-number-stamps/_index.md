@@ -1,59 +1,59 @@
 ---
-title: Page Number Stamps In PDF File
-linktitle: Page Number Stamps In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add page number stamps in PDF file with Aspose.PDF for .NET.
+title: Seitenzahlenstempel in PDF-Datei
+linktitle: Seitenzahlenstempel in PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Seitenzahlenstempel in eine PDF-Datei einfügen.
 type: docs
 weight: 160
 url: /de/net/programming-with-stamps-and-watermarks/page-number-stamps/
 ---
-In this tutorial, we will guide you step by step on how to add page number stamps in PDF file using Aspose.PDF for .NET. We'll use the provided C# source code to open an existing PDF document, create a page number stamp, set its properties, and add it to a specific page in the PDF file.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch das Hinzufügen von Seitenzahlstempeln in einer PDF-Datei mit Aspose.PDF für .NET. Wir verwenden den bereitgestellten C#-Quellcode, um ein vorhandenes PDF-Dokument zu öffnen, einen Seitenzahlstempel zu erstellen, seine Eigenschaften festzulegen und ihn einer bestimmten Seite in der PDF-Datei hinzuzufügen.
 
-## Step 1: Setting up the environment
+## Schritt 1: Einrichten der Umgebung
 
-Before you begin, make sure you have the following:
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Eine installierte .NET-Entwicklungsumgebung.
+- Die Aspose.PDF-Bibliothek für .NET wurde heruntergeladen und in Ihrem Projekt referenziert.
 
-## Step 2: Loading the existing PDF document
+## Schritt 2: Laden des vorhandenen PDF-Dokuments
 
-The first step is to load the existing PDF document into your project. Here's how:
+Der erste Schritt besteht darin, das vorhandene PDF-Dokument in Ihr Projekt zu laden. Hier ist wie:
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the existing PDF document
+// Öffnen Sie das vorhandene PDF-Dokument
 Document pdfDocument = new Document(dataDir + "PageNumberStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Ersetzen Sie „IHR DOKUMENTENVERZEICHNIS“ unbedingt durch den tatsächlichen Pfad zu dem Verzeichnis, in dem sich Ihr PDF-Dokument befindet.
 
-## Step 3: Creating and Configuring the Page Numbering Stamp
+## Schritt 3: Erstellen und Konfigurieren des Seitennummerierungsstempels
 
-Now that the PDF document is loaded, we can create a page numbering buffer and configure it according to our needs. Here's how:
+Nachdem das PDF-Dokument nun geladen ist, können wir einen Seitennummerierungspuffer erstellen und ihn entsprechend unseren Anforderungen konfigurieren. Hier ist wie:
 
 ```csharp
-// Create a page number buffer
+// Erstellen Sie einen Seitenzahlpuffer
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
 
-// Define if the buffer is in the background or not
+// Legen Sie fest, ob der Puffer im Hintergrund läuft oder nicht
 pageNumberStamp.Background = false;
 
-// Format of the page numbering buffer
+// Format des Seitennummerierungspuffers
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
 
-// Bottom margin of page numbering buffer
+// Unterer Rand des Seitennummerierungspuffers
 pageNumberStamp.BottomMargin = 10;
 
-// Horizontal alignment of the page numbering buffer
+// Horizontale Ausrichtung des Seitennummerierungspuffers
 pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
 
-// Start number of page numbering
+// Startnummer der Seitennummerierung
 pageNumberStamp.StartingNumber = 1;
 
-// Set page number buffer text properties
+// Legen Sie die Texteigenschaften für den Seitenzahlpuffer fest
 pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
 pageNumberStamp.TextState.FontSize = 14.0F;
 pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
@@ -61,108 +61,108 @@ pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
 pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 ```
 
-The above code creates a page number stamp with properties like page number format, bottom margin, horizontal alignment, starting number and text properties.
+Der obige Code erstellt einen Seitenzahlenstempel mit Eigenschaften wie Seitenzahlenformat, unterer Rand, horizontale Ausrichtung, Startzahl und Texteigenschaften.
 
-## Step 4: Adding the page number stamp to a specific page
+## Schritt 4: Hinzufügen des Seitenzahlstempels zu einer bestimmten Seite
 
-Once the page number stamp is configured, we can add it to a specific page of the PDF document. Here's how:
+Sobald der Seitenzahlstempel konfiguriert ist, können wir ihn einer bestimmten Seite des PDF-Dokuments hinzufügen. Hier ist wie:
 
 ```csharp
-// Add the page number buffer to a specific page
+// Fügen Sie den Seitenzahlpuffer einer bestimmten Seite hinzu
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 ```
 
-The above code adds the page number stamp to the first page of the PDF document. You can change the page number as needed.
+Der obige Code fügt den Seitenzahlstempel zur ersten Seite des PDF-Dokuments hinzu. Sie können die Seitenzahl nach Bedarf ändern.
 
-## Step 5: Saving the modified PDF document
+## Schritt 5: Speichern des geänderten PDF-Dokuments
 
-Once the page number stamp is added to the PDF document, we can save the modified PDF document. Here's how:
+Sobald der Seitenzahlstempel zum PDF-Dokument hinzugefügt wurde, können wir das geänderte PDF-Dokument speichern. Hier ist wie:
 
 ```csharp
-// Save the modified PDF document
+// Speichern Sie das geänderte PDF-Dokument
 pdfDocument.Save(dataDir + "PageNumberStamp_out.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the edited PDF document.
+Ersetzen Sie „IHR DOKUMENTENVERZEICHNIS“ unbedingt durch den tatsächlichen Pfad zu dem Verzeichnis, in dem Sie das bearbeitete PDF-Dokument speichern möchten.
 
-### Sample source code for Page Number Stamps using Aspose.PDF for .NET 
+### Beispielquellcode für Seitenzahlstempel mit Aspose.PDF für .NET 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir+ "PageNumberStamp.pdf");
 
-// Create page number stamp
+// Erstellen Sie einen Seitenzahlstempel
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
 
-// Whether the stamp is background
+// Ob der Stempel Hintergrund ist
 pageNumberStamp.Background = false;
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
 pageNumberStamp.BottomMargin = 10;
 pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
 pageNumberStamp.StartingNumber = 1;
 
-// Set text properties
+// Texteigenschaften festlegen
 pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
 pageNumberStamp.TextState.FontSize = 14.0F;
 pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
 pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
 pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 
-// Add stamp to particular page
+// Stempel zu einer bestimmten Seite hinzufügen
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 dataDir = dataDir + "PageNumberStamp_out.pdf";
 
-// Save output document
+// Ausgabedokument speichern
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You have learned how to add page number stamps to a PDF document using Aspose.PDF for .NET. You can now personalize your PDF documents by adding clear and informative page numbers.
+Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET Seitenzahlenstempel zu einem PDF-Dokument hinzufügen. Sie können Ihre PDF-Dokumente jetzt personalisieren, indem Sie klare und informative Seitenzahlen hinzufügen.
 
-### FAQ's for page number stamps in PDF file
+### FAQs zu Seitenzahlstempeln in PDF-Dateien
 
-#### Q: What is a Page Number Stamp, and how is it used to add page numbers to a PDF file?
+#### F: Was ist ein Seitenzahlenstempel und wie wird er zum Hinzufügen von Seitenzahlen zu einer PDF-Datei verwendet?
 
-A: A Page Number Stamp is a feature in Aspose.PDF that allows you to add dynamic page numbers to specific pages of a PDF document. In this tutorial, it's achieved by creating a PageNumberStamp object, configuring its properties, and adding it to a designated page.
+A: Ein Seitenzahlstempel ist eine Funktion in Aspose.PDF, mit der Sie dynamische Seitenzahlen zu bestimmten Seiten eines PDF-Dokuments hinzufügen können. In diesem Tutorial wird dies erreicht, indem ein PageNumberStamp-Objekt erstellt, seine Eigenschaften konfiguriert und es einer bestimmten Seite hinzugefügt wird.
 
-#### Q: How does the provided C# source code accomplish adding page number stamps to a PDF file?
+#### F: Wie ermöglicht der bereitgestellte C#-Quellcode das Hinzufügen von Seitenzahlstempeln zu einer PDF-Datei?
 
-A: The code demonstrates how to load an existing PDF document, create a PageNumberStamp, set various properties (such as format, font, alignment, etc.), and then add the stamp to a specific page. The stamp automatically calculates the total page count and inserts the correct page numbers.
+A: Der Code zeigt, wie man ein vorhandenes PDF-Dokument lädt, einen PageNumberStamp erstellt, verschiedene Eigenschaften festlegt (z. B. Format, Schriftart, Ausrichtung usw.) und dann den Stempel einer bestimmten Seite hinzufügt. Der Stempel berechnet automatisch die Gesamtseitenzahl und fügt die richtigen Seitenzahlen ein.
 
-#### Q: Can I customize the appearance of the page number, such as font style, color, and size?
+#### F: Kann ich das Erscheinungsbild der Seitenzahl anpassen, z. B. Schriftart, Farbe und Größe?
 
-A: Absolutely, you can customize the appearance of the page number stamp by adjusting properties like font, font size, font style (bold, italic, etc.), and text color.
+A: Auf jeden Fall können Sie das Erscheinungsbild des Seitenzahlenstempels anpassen, indem Sie Eigenschaften wie Schriftart, Schriftgröße, Schriftstil (fett, kursiv usw.) und Textfarbe anpassen.
 
-#### Q: Is it possible to add page number stamps to multiple pages within a PDF document?
+#### F: Ist es möglich, Seitenzahlstempel auf mehreren Seiten innerhalb eines PDF-Dokuments hinzuzufügen?
 
-A: Yes, you can add page number stamps to multiple pages by creating multiple PageNumberStamp objects and adding each one to the desired pages.
+A: Ja, Sie können Seitenzahlstempel zu mehreren Seiten hinzufügen, indem Sie mehrere PageNumberStamp-Objekte erstellen und jedes einzelne den gewünschten Seiten hinzufügen.
 
-#### Q: Can I choose whether the page number stamp appears as part of the page's content or as a background element?
+#### F: Kann ich wählen, ob der Seitenzahlstempel als Teil des Seiteninhalts oder als Hintergrundelement angezeigt wird?
 
-A: Yes, you can control whether the page number stamp appears as part of the page's content or as a background element by setting the `Background` property of the PageNumberStamp.
+ A: Ja, Sie können steuern, ob der Seitenzahlstempel als Teil des Seiteninhalts oder als Hintergrundelement angezeigt wird, indem Sie festlegen`Background` Eigenschaft des PageNumberStamp.
 
-#### Q: How do I specify the format of the page number, including the total page count?
+#### F: Wie lege ich das Format der Seitenzahl fest, einschließlich der Gesamtseitenzahl?
 
-A: The code uses the `Format` property of the PageNumberStamp to specify the format of the page number. The macro "# of" is used to represent the total page count.
+ A: Der Code verwendet die`Format`-Eigenschaft des PageNumberStamp, um das Format der Seitenzahl anzugeben. Das Makro „# of“ wird verwendet, um die Gesamtseitenzahl darzustellen.
 
-#### Q: What happens if I add the same page number stamp to multiple pages?
+#### F: Was passiert, wenn ich den gleichen Seitenzahlenstempel auf mehreren Seiten anbringe?
 
-A: Adding the same PageNumberStamp instance to multiple pages will display the correct page numbers for each page. The stamp automatically adjusts the page number and total page count.
+A: Durch das Hinzufügen derselben PageNumberStamp-Instanz zu mehreren Seiten werden für jede Seite die richtigen Seitenzahlen angezeigt. Der Stempel passt die Seitenzahl und die Gesamtseitenzahl automatisch an.
 
-#### Q: Can I add page number stamps to header or footer sections of a PDF document?
+#### F: Kann ich den Kopf- oder Fußzeilenabschnitten eines PDF-Dokuments Seitenzahlenstempel hinzufügen?
 
-A: While PageNumberStamps are typically added directly to the page's content, you can use FloatingBox or other techniques to position them in header or footer sections.
+A: Während PageNumberStamps normalerweise direkt zum Inhalt der Seite hinzugefügt werden, können Sie FloatingBox oder andere Techniken verwenden, um sie in Kopf- oder Fußzeilenabschnitten zu positionieren.
 
-#### Q: How do I specify the position of the page number stamp on the page?
+#### F: Wie lege ich die Position des Seitenzahlstempels auf der Seite fest?
 
-A: The `BottomMargin` and `HorizontalAlignment` properties of the PageNumberStamp allow you to control the position of the stamp within the page.
+ A: Die`BottomMargin` Und`HorizontalAlignment` Mit den Eigenschaften von PageNumberStamp können Sie die Position des Stempels innerhalb der Seite steuern.
 
-#### Q: What if I want to start page numbering from a different number rather than 1?
+#### F: Was passiert, wenn ich die Seitennummerierung mit einer anderen Nummer als mit 1 beginnen möchte?
 
-A: You can set the `StartingNumber` property of the PageNumberStamp to specify the starting page number.
+ A: Sie können das einstellen`StartingNumber`Eigenschaft des PageNumberStamp, um die erste Seitenzahl anzugeben.

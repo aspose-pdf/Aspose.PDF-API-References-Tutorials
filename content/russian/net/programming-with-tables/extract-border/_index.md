@@ -1,28 +1,28 @@
 ---
-title: Extract Border In PDF File
-linktitle: Extract Border In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract the border in PDF file using Aspose.PDF for .NET.
+title: Извлечь границу из PDF-файла
+linktitle: Извлечь границу из PDF-файла
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как извлечь границу в PDF-файле с помощью Aspose.PDF для .NET.
 type: docs
 weight: 80
 url: /ru/net/programming-with-tables/extract-border/
 ---
-In this tutorial, we are going to learn how to extract the border in PDF file using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to extract the border from a PDF document and save it as an image. Let's start!
+В этом уроке мы узнаем, как извлечь границу в PDF-файле с помощью Aspose.PDF для .NET. Мы объясним исходный код на C# шаг за шагом. В конце этого урока вы узнаете, как извлечь рамку из PDF-документа и сохранить ее как изображение. Давайте начнем!
 
-## Step 1: Setting up the environment
-First, make sure you've set up your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## Шаг 1. Настройка среды
+Сначала убедитесь, что вы настроили свою среду разработки C# с помощью Aspose.PDF для .NET. Добавьте ссылку на библиотеку и импортируйте необходимые пространства имен.
 
-## Step 2: Loading the PDF Document
-In this step, we load the PDF document from the specified file.
+## Шаг 2. Загрузка PDF-документа
+На этом этапе мы загружаем PDF-документ из указанного файла.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENT DIRECTORY" with the actual directory where your PDF file is located.
+Обязательно замените «КАТАЛОГ ВАШЕГО ДОКУМЕНТА» на фактический каталог, в котором находится ваш PDF-файл.
 
-## Step 3: Edge Extraction
-We will extract the border from the PDF document by iterating over the operations contained in the document.
+## Шаг 3: Извлечение краев
+Мы извлечем границу из PDF-документа, перебирая операции, содержащиеся в документе.
 
 ```csharp
 Stack graphicsState = new Stack();
@@ -36,38 +36,38 @@ System.Drawing.Color strokeColor = System.Drawing.Color.FromArgb(0, 0, 0);
 
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 {
-     // Process all content operations
+     // Обрабатывать все операции с контентом
      foreach(Operator op in doc.Pages[1].Contents)
      {
-         // Check the type of operation
+         // Проверьте тип операции
          // ...
-         // Add code to process each operation
+         // Добавьте код для обработки каждой операции
      }
 }
 ```
 
-We create a `graphicsState` stack to store graphics states, a bitmap image to capture the extracted border, a `GraphicsPath` object to store drawing paths, and other variables to track state and colors.
+ Мы создаем`graphicsState` стек для хранения графических состояний, растровое изображение для захвата извлеченной границы,`GraphicsPath` объект для хранения путей рисования и другие переменные для отслеживания состояния и цветов.
 
-## Step 4: Transaction Processing
-In this step, we process each operation of the document to extract the border.
+## Шаг 4: Обработка транзакции
+На этом этапе мы обрабатываем каждую операцию документа для извлечения границы.
 
 ```csharp
-// Check the type of operation
+// Проверьте тип операции
 if (opSaveState != null)
 {
-     // Save the previous state and push the current state to the top of the stack
+     // Сохраните предыдущее состояние и поместите текущее состояние на вершину стека.
      graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
      lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 }
 else if (opRestoreState != null)
 {
-     // Delete the current state and restore previous state
+     // Удалить текущее состояние и восстановить предыдущее состояние
      graphicsState. Pop();
      lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 }
 else if (opCtm != null)
 {
-     // Retrieve the current transformation matrix
+     // Получить текущую матрицу преобразования
      System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
          (float)opCtm.Matrix.A,
          (float)opCtm.Matrix.B,
@@ -76,41 +76,41 @@ else if (opCtm != null)
          (float)opCtm.Matrix.E,
          (float)opCtm.Matrix.F);
 
-     // Multiply the current matrix with the state matrix
+     // Умножьте текущую матрицу на матрицу состояний
      ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
      lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 }
 else if (opMoveTo != null)
 {
-     // Update the last drawing point
+     // Обновить последнюю точку рисования
      lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
 }
 else if (opLineTo != null)
 {
-     // Process the drawing of a line
+     // Обработка рисования линии
      // ...
-     // Add code to handle drawing a line
+     // Добавьте код для обработки рисования линии
 }
 // ...
-// Add else if blocks for other operations
+// Добавьте else if блоки для других операций
 ```
 
-We check the type of operation using conditions and run the appropriate code for each operation.
+Мы проверяем тип операции с помощью условий и запускаем соответствующий код для каждой операции.
 
-## Step 5: Backup Image
-Finally, we save the bitmap image containing the extracted border to a specified file.
+## Шаг 5: Резервное изображение
+Наконец, мы сохраняем растровое изображение, содержащее извлеченную рамку, в указанный файл.
 
 ```csharp
 dataDir = dataDir + "ExtractBorder_out.png";
 bitmap.Save(dataDir, ImageFormat.Png);
 ```
 
-Be sure to specify the correct directory and filename to save the output image.
+Обязательно укажите правильный каталог и имя файла для сохранения выходного изображения.
 
-### Example source code for Extract Border using Aspose.PDF for .NET
+### Пример исходного кода для извлечения границы с использованием Aspose.PDF для .NET
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document(dataDir + "input.pdf");
@@ -118,9 +118,9 @@ Document doc = new Document(dataDir + "input.pdf");
 Stack graphicsState = new Stack();
 System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageInfo.Width, (int)doc.Pages[1].PageInfo.Height);
 System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-// Default ctm matrix value is 1,0,0,1,0,0
+// Значение матрицы ctm по умолчанию — 1,0,0,1,0,0.
 System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
-// System.Drawing coordinate system is top left based, while pdf coordinate system is low left based, so we have to apply the inversion matrix
+//Система координат System.Drawing основана на левом верхнем углу, а система координат PDF — на нижнем левом углу, поэтому нам нужно применить матрицу инверсии.
 System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, (float)doc.Pages[1].PageInfo.Height);
 System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
 System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
@@ -131,7 +131,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 	gr.SmoothingMode = SmoothingMode.HighQuality;
 	graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
 
-	// Process all the contents commands
+	// Обработать все команды содержимого
 	foreach (Operator op in doc.Pages[1].Contents)
 	{
 		Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
@@ -149,13 +149,13 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			// Save previous state and push current state to the top of the stack
+			//Сохраните предыдущее состояние и поместите текущее состояние в начало стека.
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
 		else if (opRestoreState != null)
 		{
-			// Throw away current state and restore previous one
+			// Выбросить текущее состояние и восстановить предыдущее
 			graphicsState.Pop();
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -169,7 +169,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 				(float)opCtm.Matrix.E,
 				(float)opCtm.Matrix.F);
 
-			// Multiply current matrix with the state matrix
+			// Умножьте текущую матрицу на матрицу состояний.
 			((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -232,27 +232,27 @@ bitmap.Save(dataDir, ImageFormat.Png);
 Console.WriteLine("\nBorder extracted successfully as image.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-In this tutorial, we learned how to extract the border from a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to extract border from other PDF documents.
+## Заключение
+В этом уроке мы узнали, как извлечь рамку из PDF-документа с помощью Aspose.PDF для .NET. Вы можете использовать это пошаговое руководство, чтобы извлечь рамку из других PDF-документов.
 
-### FAQ's for extract border in PDF file
+### Часто задаваемые вопросы по извлечению границы в PDF-файле
 
-#### Q: What is the purpose of extracting the border from a PDF file?
+#### Вопрос: Какова цель извлечения границы из PDF-файла?
 
-A: Extracting the border from a PDF file can be useful for various purposes. It allows you to isolate and analyze the structural elements of the document, such as tables, diagrams, or graphical elements. You can use the extracted border to identify the layout, dimensions, and positioning of the content within the PDF document.
+О: Извлечение границы из PDF-файла может быть полезно для различных целей. Он позволяет изолировать и анализировать структурные элементы документа, такие как таблицы, диаграммы или графические элементы. Вы можете использовать извлеченную рамку, чтобы определить макет, размеры и расположение содержимого в PDF-документе.
 
-#### Q: Can I extract the border from specific pages or areas within the PDF document?
+#### Вопрос: Могу ли я извлечь рамку из определенных страниц или областей PDF-документа?
 
-A: Yes, you can modify the provided C# source code to extract the border from specific pages or regions within the PDF document. By manipulating the `doc.Pages` collection and specifying custom criteria, you can choose to extract the border from particular pages or areas of interest.
+О: Да, вы можете изменить предоставленный исходный код C#, чтобы извлечь границу из определенных страниц или областей PDF-документа. Манипулируя`doc.Pages` сбора и указания пользовательских критериев, вы можете выбрать выделение границы из определенных страниц или областей, представляющих интерес.
 
-#### Q: How can I customize the output image format and quality?
+#### Вопрос: Как настроить формат и качество выходного изображения?
 
-A: In the provided C# code, the extracted border is saved as a PNG image. If you want to change the output image format, you can modify the `ImageFormat.Png` parameter in the `bitmap.Save` method to other supported image formats, such as JPEG, BMP, or GIF. Additionally, you can adjust the image quality or compression settings based on your requirements.
+ О: В предоставленном коде C# извлеченная граница сохраняется как изображение PNG. Если вы хотите изменить формат выходного изображения, вы можете изменить`ImageFormat.Png` параметр в`bitmap.Save` в другие поддерживаемые форматы изображений, такие как JPEG, BMP или GIF. Кроме того, вы можете настроить качество изображения или параметры сжатия в соответствии с вашими требованиями.
 
-#### Q: What other operations can I perform on the extracted border?
+#### Вопрос: Какие еще операции можно выполнить с выделенной границей?
 
-A: Once you have extracted the border as an image, you can further process it using image processing libraries or algorithms. You can analyze the image, apply image filters, detect patterns, or perform OCR (Optical Character Recognition) to extract text from the image if needed.
+О: После того как вы извлекли границу в виде изображения, вы можете дополнительно обработать ее с помощью библиотек или алгоритмов обработки изображений. Вы можете анализировать изображение, применять фильтры изображений, обнаруживать шаблоны или выполнять OCR (оптическое распознавание символов), чтобы при необходимости извлечь текст из изображения.
 
-#### Q: Are there any limitations or considerations when extracting borders from complex PDF documents?
+#### Вопрос: Существуют ли какие-либо ограничения или соображения при извлечении границ из сложных PDF-документов?
 
-A: The extraction process may vary depending on the complexity of the PDF document. Complex PDFs with multiple layers, transparency, or advanced graphics might require additional processing or adjustments to accurately extract the border. It's essential to thoroughly test the extraction process on various PDF documents to ensure reliable results.
+О: Процесс извлечения может различаться в зависимости от сложности PDF-документа. Сложные PDF-файлы с несколькими слоями, прозрачностью или расширенной графикой могут потребовать дополнительной обработки или корректировок для точного выделения границы. Очень важно тщательно протестировать процесс извлечения различных PDF-документов, чтобы обеспечить надежные результаты.

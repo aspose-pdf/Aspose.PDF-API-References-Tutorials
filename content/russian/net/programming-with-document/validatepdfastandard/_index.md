@@ -1,81 +1,81 @@
 ---
-title: Validate PDF Files A Standard
-linktitle: Validate PDF A Standard
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to validate PDF files for PDFAStandard with this step-by-step guide.
+title: Проверка PDF-файлов — стандарт
+linktitle: Подтвердите стандарт PDF A
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как использовать Aspose.PDF для .NET для проверки PDF-файлов на соответствие PDFAStandard, с помощью этого пошагового руководства.
 type: docs
 weight: 390
 url: /ru/net/programming-with-document/validatepdfastandard/
 ---
-Aspose.PDF for .NET is a powerful library that allows you to create, edit, and manipulate PDF files programmatically using the C# language. One of the key features of Aspose.PDF for .NET is the ability to validate PDF files against various PDF standards, including PDF/A-1a. In this article, we will provide a step-by-step guide on how to use the "Get Validate PDFAStandard" feature of Aspose.PDF for .NET. 
+Aspose.PDF для .NET — это мощная библиотека, которая позволяет создавать, редактировать и манипулировать PDF-файлами программно с использованием языка C#. Одной из ключевых особенностей Aspose.PDF для .NET является возможность проверки PDF-файлов на соответствие различным стандартам PDF, включая PDF/A-1a. В этой статье мы предоставим пошаговое руководство по использованию функции «Получить проверку PDFAStandard» в Aspose.PDF для .NET. 
 
-## Step 1: Defining the Document Directory Path
+## Шаг 1. Определение пути к каталогу документов
 
-we need to define the path to the directory where our PDF document is located. You can do this by adding the following code snippet:
+нам нужно определить путь к каталогу, в котором находится наш PDF-документ. Вы можете сделать это, добавив следующий фрагмент кода:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
-After installing Aspose.PDF for .NET, you need to add a reference to the library in your project. To do this, open your C# project in Visual Studio and right-click on the "References" folder in the Solution Explorer. Select "Add Reference" from the context menu and browse to the location where you installed Aspose.PDF for .NET. Select the "Aspose.PDF.dll" file and click "OK" to add the reference to your project.
+После установки Aspose.PDF для .NET вам необходимо добавить ссылку на библиотеку в ваш проект. Для этого откройте проект C# в Visual Studio и щелкните правой кнопкой мыши папку «Ссылки» в обозревателе решений. Выберите «Добавить ссылку» в контекстном меню и перейдите к месту, где вы установили Aspose.PDF для .NET. Выберите файл «Aspose.PDF.dll» и нажмите «ОК», чтобы добавить ссылку в ваш проект.
 
-## Step 2: Opening the PDF Document
+## Шаг 2. Открытие PDF-документа
 
-To validate a PDF document using Aspose.PDF for .NET, you first need to load the PDF document into the memory. In the example code provided, the path to the PDF document is specified using the "dataDir" variable. Replace this variable with the actual path to your PDF document.
+Чтобы проверить PDF-документ с помощью Aspose.PDF для .NET, сначала необходимо загрузить PDF-документ в память. В приведенном примере кода путь к PDF-документу указывается с помощью переменной dataDir. Замените эту переменную фактическим путем к вашему PDF-документу.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 ```
 
-## Step 3: Validating the PDF Document
+## Шаг 3. Проверка PDF-документа
 
-After loading the PDF document, you can use the "Validate" method of the "Document" class to validate the document against the PDF/A-1a standard. In the example code provided, the validation result is saved to an XML file named "validation-result-A1A.xml" in the same directory as the PDF document.
+После загрузки PDF-документа вы можете использовать метод «Проверить» класса «Документ», чтобы проверить документ на соответствие стандарту PDF/A-1a. В приведенном примере кода результат проверки сохраняется в XML-файле с именем «validation-result-A1A.xml» в том же каталоге, что и PDF-документ.
 
 ```csharp
-// Validate PDF for PDF/A-1a
+// Проверка PDF на наличие PDF/A-1a
 pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
 
-### Example source code for Get Validate PDFAStandard using Aspose.PDF for .NET
+### Пример исходного кода для Get Validate PDFAStandard с использованием Aspose.PDF для .NET
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 
-// Validate PDF for PDF/A-1a
+// Проверка PDF на наличие PDF/A-1a
 pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
 
-## Conclusion
+## Заключение
 
-Validating PDF files against various PDF standards is an important aspect of working with PDF files in a professional environment. Aspose.PDF for .NET provides a powerful and easy-to-use API for validating PDF files against various PDF standards, including PDF/A-1a. By following the step-by-step guide provided in this article, you can quickly and easily validate your PDF files using Aspose.PDF for .NET.
+Проверка PDF-файлов на соответствие различным стандартам PDF — важный аспект работы с PDF-файлами в профессиональной среде. Aspose.PDF для .NET предоставляет мощный и простой в использовании API для проверки PDF-файлов на соответствие различным стандартам PDF, включая PDF/A-1a. Следуя пошаговому руководству, представленному в этой статье, вы сможете быстро и легко проверить свои PDF-файлы с помощью Aspose.PDF для .NET.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the significance of validating PDF files against PDF/A-1a standard?
+#### Вопрос: Каково значение проверки PDF-файлов на соответствие стандарту PDF/A-1a?
 
-A: Validating PDF files against the PDF/A-1a standard ensures that the documents comply with specific archiving standards. This standard is designed for long-term preservation and ensures that PDFs maintain their integrity and accessibility over time.
+О: Проверка PDF-файлов на соответствие стандарту PDF/A-1a гарантирует соответствие документов конкретным стандартам архивирования. Этот стандарт предназначен для долгосрочного хранения и гарантирует, что PDF-файлы сохранят свою целостность и доступность с течением времени.
 
-#### Q: How do I define the document directory path in the C# code?
+#### Вопрос: Как определить путь к каталогу документов в коде C#?
 
-A: To define the path to the directory where your PDF document is located, use the following code snippet:
+О: Чтобы определить путь к каталогу, в котором находится ваш PDF-документ, используйте следующий фрагмент кода:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual path to the directory containing your PDF document.
+Замените «ВАШ КАТАЛОГ ДОКУМЕНТОВ» фактическим путем к каталогу, содержащему ваш PDF-документ.
 
-#### Q: Is it necessary to add a reference to Aspose.PDF for .NET in my project?
+#### Вопрос: Нужно ли добавлять ссылку на Aspose.PDF для .NET в мой проект?
 
-A: Yes, after installing Aspose.PDF for .NET, you need to add a reference to the library in your project. This can be done in Visual Studio by right-clicking on the "References" folder in the Solution Explorer, selecting "Add Reference," and browsing to the location of "Aspose.PDF.dll."
+О: Да, после установки Aspose.PDF для .NET вам необходимо добавить ссылку на библиотеку в ваш проект. Это можно сделать в Visual Studio, щелкнув правой кнопкой мыши папку «Ссылки» в обозревателе решений, выбрав «Добавить ссылку» и перейдя к расположению «Aspose.PDF.dll».
 
-#### Q: Can I validate PDF files against other PDF standards using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я проверить PDF-файлы на соответствие другим стандартам PDF с помощью Aspose.PDF для .NET?
 
-A: Yes, Aspose.PDF for .NET supports validation against various PDF standards, including PDF/A-1b and PDF/X standards. You can specify the desired standard when using the `Validate` method.
+ О: Да, Aspose.PDF для .NET поддерживает проверку на соответствие различным стандартам PDF, включая стандарты PDF/A-1b и PDF/X. Вы можете указать желаемый стандарт при использовании`Validate` метод.
 
-#### Q: Where does the validation result get saved after using the `Validate` method?
+####  Вопрос: Где сохраняется результат проверки после использования`Validate` method?
 
-A: The validation result is saved to an XML file named "validation-result-A1A.xml," which will be located in the same directory as the PDF document being validated.
+О: Результат проверки сохраняется в XML-файле с именем «validation-result-A1A.xml», который будет расположен в том же каталоге, что и проверяемый PDF-документ.

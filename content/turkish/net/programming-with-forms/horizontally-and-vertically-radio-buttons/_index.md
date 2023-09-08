@@ -1,96 +1,96 @@
 ---
-title: Horizontally And Vertically Radio Buttons
-linktitle: Horizontally And Vertically Radio Buttons
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create horizontal and vertical radio buttons in your PDF documents with Aspose.PDF for .NET.
+title: Yatay ve Dikey Radyo Düğmeleri
+linktitle: Yatay ve Dikey Radyo Düğmeleri
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF belgelerinizde kolayca yatay ve dikey radyo düğmeleri oluşturun.
 type: docs
 weight: 180
 url: /tr/net/programming-with-forms/horizontally-and-vertically-radio-buttons/
 ---
-In this tutorial, we will show you how to create horizontally and vertically arranged radio buttons in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+Bu eğitimde size Aspose.PDF for .NET kullanarak bir PDF belgesinde yatay ve dikey olarak düzenlenmiş radyo düğmelerinin nasıl oluşturulacağını göstereceğiz. Bu süreçte size yol göstermek için C# kaynak kodunu adım adım açıklayacağız.
 
-## Step 1: Preparation
+## Adım 1: Hazırlık
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Gerekli kitaplıkları içe aktardığınızdan ve belgeler dizininizin yolunu ayarladığınızdan emin olun:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the document
+## 2. Adım: Belgeyi yükleyin
 
-Load the existing PDF document:
+Mevcut PDF belgesini yükleyin:
 
 ```csharp
 FormEditor formEditor = new FormEditor();
 formEditor.BindPdf(dataDir + "input.pdf");
 ```
 
-## Step 3: Customize radio button options
+## 3. Adım: Radyo düğmesi seçeneklerini özelleştirin
 
-Customize radio button options by setting the following properties:
+Aşağıdaki özellikleri ayarlayarak radyo düğmesi seçeneklerini özelleştirin:
 
 ```csharp
-formEditor. RadioGap = 4; // Distance between two radio button options
-formEditor. RadioHoriz = true; // Horizontal layout of radio buttons
-formEditor.RadioButtonItemSize = 20; // Size of radio buttons
-formEditor.Facade.BorderWidth = 1; // Width of radio button border
-formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Radio button border color
+formEditor. RadioGap = 4; // İki radyo düğmesi seçeneği arasındaki mesafe
+formEditor. RadioHoriz = true; //Radyo düğmelerinin yatay düzeni
+formEditor.RadioButtonItemSize = 20; // Radyo düğmelerinin boyutu
+formEditor.Facade.BorderWidth = 1; // Radyo düğmesi kenarlığının genişliği
+formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Radyo düğmesi kenarlık rengi
 ```
 
-## Step 4: Add Horizontal Radio Buttons
+## Adım 4: Yatay Radyo Düğmeleri Ekleyin
 
-Add radio buttons arranged horizontally by specifying the options and position of the field:
+Alanın seçeneklerini ve konumunu belirterek yatay olarak düzenlenmiş radyo düğmeleri ekleyin:
 
 ```csharp
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
 ```
 
-## Step 5: Add vertical radio buttons
+## 5. Adım: Dikey radyo düğmeleri ekleyin
 
-Add radio buttons arranged vertically by specifying the options and position of the field:
+Alanın seçeneklerini ve konumunu belirterek dikey olarak düzenlenmiş radyo düğmeleri ekleyin:
 
 ```csharp
-formEditor. RadioHoriz = false; // Vertical layout of radio buttons
+formEditor. RadioHoriz = false; // Radyo düğmelerinin dikey düzeni
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
 ```
 
-## Step 6: Save the document
+## Adım 6: Belgeyi kaydedin
 
-Save the modified PDF document:
+Değiştirilen PDF belgesini kaydedin:
 
 ```csharp
 dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
 ```
 
-### Sample source code for Horizontally And Vertically Radio Buttons using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Yatay ve Dikey Radyo Düğmeleri için örnek kaynak kodu 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Belgeler dizininin yolu.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the previously saved document
+	// Daha önce kaydedilen belgeyi yükleyin
 	FormEditor formEditor = new FormEditor();
 	formEditor.BindPdf(dataDir + "input.pdf");
-	// RadioGap is distance between two radio button options. 
+	// RadioGap, iki radyo düğmesi seçeneği arasındaki mesafedir.
 	formEditor.RadioGap = 4;
-	// Add horizontal radio button
+	// Yatay radyo düğmesi ekle
 	formEditor.RadioHoriz = true;
-	// RadioButtonItemSize if size of radio button item.
+	// RadioButtonItemSize eğer radyo düğmesi öğesinin boyutuysa.
 	formEditor.RadioButtonItemSize = 20;
 	formEditor.Facade.BorderWidth = 1;
 	formEditor.Facade.BorderColor = System.Drawing.Color.Black;
 	formEditor.Items = new string[] { "First", "Second", "Third" };
 	formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
-	// Add other radio button situated vertically
+	// Dikey olarak yerleştirilmiş başka bir radyo düğmesi ekleyin
 	formEditor.RadioHoriz = false;
 	formEditor.Items = new string[] { "First", "Second", "Third" };
 	formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
 	dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
-	// Save the PDF document
+	// PDF belgesini kaydedin
 	formEditor.Save(dataDir);
 	Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
 }
@@ -100,28 +100,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to create horizontally and vertically arranged radio buttons in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily customize the layout of radio buttons and add them to your PDF documents using Aspose.PDF.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesinde yatay ve dikey olarak düzenlenmiş radyo düğmelerinin nasıl oluşturulacağını öğrendik. Bu adımları izleyerek radyo düğmelerinin düzenini kolayca özelleştirebilir ve Aspose.PDF'yi kullanarak bunları PDF belgelerinize ekleyebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What are horizontally and vertically arranged radio buttons in a PDF document?
+#### S: Bir PDF belgesinde yatay ve dikey olarak düzenlenmiş radyo düğmeleri nelerdir?
 
-A: Horizontally and vertically arranged radio buttons in a PDF document refer to the layout orientation of radio button options. Horizontal layout places the radio button options side by side, allowing users to make a selection from left to right. Vertical layout, on the other hand, stacks the radio button options on top of each other, enabling users to make a selection from top to bottom.
+C: Bir PDF belgesindeki yatay ve dikey olarak düzenlenmiş radyo düğmeleri, radyo düğmesi seçeneklerinin düzen yönünü belirtir. Yatay düzen, radyo düğmesi seçeneklerini yan yana yerleştirerek kullanıcıların soldan sağa seçim yapmasına olanak tanır. Dikey düzen ise radyo düğmesi seçeneklerini üst üste istifleyerek kullanıcıların yukarıdan aşağıya seçim yapmasına olanak tanır.
 
-#### Q: How do I customize the appearance of radio button options in Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'teki radyo düğmesi seçeneklerinin görünümünü nasıl özelleştiririm?
 
-A: You can customize the appearance of radio button options in Aspose.PDF for .NET by adjusting several properties. The API provides options to set the distance between two radio button options (`RadioGap`), the layout orientation (`RadioHoriz`), the size of radio button items (`RadioButtonItemSize`), the border width and color of radio buttons, and more.
+C: Çeşitli özellikleri ayarlayarak Aspose.PDF for .NET'teki radyo düğmesi seçeneklerinin görünümünü özelleştirebilirsiniz. API, iki radyo düğmesi seçeneği arasındaki mesafeyi ayarlama seçenekleri sunar (`RadioGap`), düzen yönü (`RadioHoriz`), radyo düğmesi öğelerinin boyutu (`RadioButtonItemSize`), kenarlık genişliği ve radyo düğmelerinin rengi ve daha fazlası.
 
-#### Q: Can I add both horizontal and vertical radio buttons to the same PDF document?
+#### S: Aynı PDF belgesine hem yatay hem de dikey radyo düğmeleri ekleyebilir miyim?
 
-A: Yes, you can add both horizontal and vertical radio buttons to the same PDF document using Aspose.PDF for .NET. The sample source code provided in the tutorial demonstrates how to first add radio buttons arranged horizontally and then add another set of radio buttons arranged vertically to the same PDF document.
+C: Evet, Aspose.PDF for .NET'i kullanarak aynı PDF belgesine hem yatay hem de dikey radyo düğmeleri ekleyebilirsiniz. Öğreticide sağlanan örnek kaynak kodu, aynı PDF belgesine ilk olarak yatay olarak düzenlenmiş radyo düğmelerinin nasıl ekleneceğini ve ardından dikey olarak düzenlenmiş başka bir radyo düğmesi kümesinin nasıl ekleneceğini gösterir.
 
-#### Q: Can I set different radio button options for each group of radio buttons?
+#### S: Her radyo düğmesi grubu için farklı radyo düğmesi seçeneklerini ayarlayabilir miyim?
 
-A: Yes, you can set different radio button options for each group of radio buttons. Each group should have a unique `RadioButtonField` object, and the `RadioButtonOptionField` objects within each group should share the same page and unique names for their options. This ensures that the radio buttons within each group function correctly, and the selections are mutually exclusive.
+ C: Evet, her radyo düğmesi grubu için farklı radyo düğmesi seçeneklerini ayarlayabilirsiniz. Her grubun kendine özgü bir özelliği olmalı`RadioButtonField` nesne ve`RadioButtonOptionField` her gruptaki nesneler, seçenekleri için aynı sayfayı ve benzersiz adları paylaşmalıdır. Bu, her gruptaki radyo düğmelerinin doğru çalışmasını ve seçimlerin birbirini dışlamasını sağlar.
 
-#### Q: Are the layout and appearance settings of radio buttons supported in all PDF viewers and applications?
+#### S: Radyo düğmelerinin düzeni ve görünüm ayarları tüm PDF görüntüleyicilerde ve uygulamalarda destekleniyor mu?
 
-A: Yes, the layout and appearance settings of radio buttons are supported in all standard-compliant PDF viewers and applications. The PDF specification defines radio buttons and their various attributes, making them universally recognized in the PDF format. However, it's essential to test the appearance and behavior of radio buttons in different PDF viewers to ensure consistent rendering across various platforms.
+C: Evet, radyo düğmelerinin düzeni ve görünüm ayarları tüm standart uyumlu PDF görüntüleyicilerde ve uygulamalarda desteklenir. PDF spesifikasyonu, radyo düğmelerini ve bunların çeşitli niteliklerini tanımlayarak bunların evrensel olarak PDF formatında tanınmasını sağlar. Ancak çeşitli platformlarda tutarlı görüntüleme sağlamak için radyo düğmelerinin görünümünü ve davranışını farklı PDF görüntüleyicilerde test etmek önemlidir.

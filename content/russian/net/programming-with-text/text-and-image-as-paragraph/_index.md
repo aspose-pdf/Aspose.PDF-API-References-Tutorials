@@ -1,28 +1,28 @@
 ---
-title: Text And Image As Paragraph In PDF File
-linktitle: Text And Image As Paragraph In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text and an image as inline paragraphs in PDF file using Aspose.PDF for .NET.
+title: Текст и изображение как абзац в PDF-файле
+linktitle: Текст и изображение как абзац в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как добавить текст и изображение в виде встроенных абзацев в файл PDF с помощью Aspose.PDF для .NET.
 type: docs
 weight: 530
 url: /ru/net/programming-with-text/text-and-image-as-paragraph/
 ---
-This tutorial explains how to add text and an image as inline paragraphs in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the process step by step.
+В этом руководстве объясняется, как добавить текст и изображение в виде встроенных абзацев в файл PDF с помощью Aspose.PDF для .NET. Приведенный исходный код C# демонстрирует процесс шаг за шагом.
 
-## Prerequisites
+## Предварительные условия
 
-Before proceeding with the tutorial, make sure you have the following:
+Прежде чем продолжить обучение, убедитесь, что у вас есть следующее:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Базовые знания языка программирования C#.
+- Установлена библиотека Aspose.PDF для .NET. Вы можете получить его с веб-сайта Aspose или использовать NuGet для установки в свой проект.
 
-## Step 1: Set up the project
+## Шаг 1. Настройте проект
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Начните с создания нового проекта C# в предпочитаемой вами интегрированной среде разработки (IDE) и добавьте ссылку на библиотеку Aspose.PDF для .NET.
 
-## Step 2: Import necessary namespaces
+## Шаг 2. Импортируйте необходимые пространства имен.
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Добавьте следующие директивы using в начало файла C#, чтобы импортировать необходимые пространства имен:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,52 +30,52 @@ using Aspose.Pdf.Text;
 using Aspose.Pdf.Drawing;
 ```
 
-## Step 3: Set the path to the document directory
+## Шаг 3. Установите путь к каталогу документов.
 
-Set the path to your document directory using the `dataDir` variable:
+ Задайте путь к каталогу вашего документа, используя`dataDir` переменная:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Заменять`"YOUR DOCUMENT DIRECTORY"` с фактическим путем к каталогу вашего документа.
 
-## Step 4: Create a new Document and Page
+## Шаг 4. Создайте новый документ и страницу.
 
-Create a new `Document` object and add a page to its pages collection:
+ Создать новый`Document` объект и добавьте страницу в его коллекцию страниц:
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 5: Create a TextFragment and add it as a paragraph
+## Шаг 5. Создайте TextFragment и добавьте его как абзац.
 
-Create a `TextFragment` object and add it to the paragraphs collection of the page:
+ Создать`TextFragment` объект и добавьте его в коллекцию абзацев страницы:
 
 ```csharp
 TextFragment text = new TextFragment("Hello World.. ");
 page.Paragraphs.Add(text);
 ```
 
-## Step 6: Add an image as an inline paragraph
+## Шаг 6. Добавьте изображение в качестве встроенного абзаца.
 
-Create an `Aspose.Pdf.Image` object and set it as an inline paragraph so that it appears right after the previous paragraph:
+ Создать`Aspose.Pdf.Image` объект и установите его как встроенный абзац, чтобы он отображался сразу после предыдущего абзаца:
 
 ```csharp
 Aspose.Pdf.Image image = new Aspose.Pdf.Image();
 image.IsInLineParagraph = true;
 image.File = dataDir + "aspose-logo.jpg";
-image.FixHeight = 30; // Optional: Set image height
-image.FixWidth = 100; // Optional: Set image width
+image.FixHeight = 30; // Необязательно: установите высоту изображения.
+image.FixWidth = 100; // Необязательно: установите ширину изображения
 page.Paragraphs.Add(image);
 ```
 
-Replace `"aspose-logo.jpg"` with the actual image file name and adjust the optional image height and width as desired.
+ Заменять`"aspose-logo.jpg"` с фактическим именем файла изображения и отрегулируйте дополнительную высоту и ширину изображения по желанию.
 
-## Step 7: Add another TextFragment as an inline paragraph
+## Шаг 7. Добавьте еще один TextFragment в качестве встроенного абзаца.
 
-Re-initialize the `TextFragment` object with different content and add it as an inline paragraph:
+ Повторно инициализируйте`TextFragment` объект с другим содержимым и добавьте его как встроенный абзац:
 
 ```csharp
 text = new TextFragment(" Hello Again..");
@@ -83,87 +83,87 @@ text.IsInLineParagraph = true;
 page.Paragraphs.Add(text);
 ```
 
-## Step 8: Save the PDF document
+## Шаг 8. Сохраните PDF-документ.
 
-Save the modified PDF document:
+Сохраните измененный PDF-документ:
 
 ```csharp
 dataDir = dataDir + "TextAndImageAsParagraph_out.pdf";
 doc.Save(dataDir);
 ```
 
-Make sure to replace `"TextAndImageAsParagraph_out.pdf"` with the desired output file name.
+ Обязательно замените`"TextAndImageAsParagraph_out.pdf"` с желаемым именем выходного файла.
 
-### Sample source code for Text And Image As Paragraph using Aspose.PDF for .NET 
+### Пример исходного кода для текста и изображения как абзаца с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document instance
+// Создать экземпляр экземпляра документа
 Document doc = new Document();
-// Add page to pages collection of Document instance
+// Добавить страницу в коллекцию страниц экземпляра документа
 Page page = doc.Pages.Add();
-// Create TextFragmnet
+// Создать текстфрагмнет
 TextFragment text = new TextFragment("Hello World.. ");
-// Add text fragment to paragraphs collection of Page object
+// Добавить фрагмент текста в коллекцию абзацев объекта Page
 page.Paragraphs.Add(text);
-// Create an image instance
+// Создать экземпляр изображения
 Aspose.Pdf.Image image = new Aspose.Pdf.Image();
-// Set image as inline paragraph so that it appears right after 
-// The previous paragraph object (TextFragment)
+// Установите изображение как встроенный абзац, чтобы оно появлялось сразу после
+// Объект предыдущего абзаца (TextFragment)
 image.IsInLineParagraph = true;
-// Specify image file path 
+// Укажите путь к файлу изображения
 image.File = dataDir + "aspose-logo.jpg";
-// Set image Height (optional)
+// Установить высоту изображения (необязательно)
 image.FixHeight = 30;
-// Set Image Width (optional)
+// Установите ширину изображения (необязательно)
 image.FixWidth = 100;
-// Add image to paragraphs collection of page object
+// Добавить изображение в коллекцию абзацев объекта страницы
 page.Paragraphs.Add(image);
-// Re-initialize TextFragment object with different contents
+// Повторно инициализировать объект TextFragment с другим содержимым
 text = new TextFragment(" Hello Again..");
-// Set TextFragment as inline paragraph
+// Установить TextFragment как встроенный абзац
 text.IsInLineParagraph = true;
-// Add newly created TextFragment to paragraphs collection of page
+// Добавить вновь созданный TextFragment в коллекцию абзацев страницы.
 page.Paragraphs.Add(text);
 dataDir = dataDir + "TextAndImageAsParagraph_out.pdf";
 doc.Save(dataDir);
 Console.WriteLine("\nText and image added successfully as an inline paragraphs.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Заключение
 
-Congratulations! You have successfully learned how to add text and an image as inline paragraphs in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to saving the modified document. You can now incorporate this code into your own C# projects to customize the layout of text and images in PDF files.
+Поздравляем! Вы успешно научились добавлять текст и изображения в виде встроенных абзацев в документ PDF с помощью Aspose.PDF для .NET. В этом руководстве представлено пошаговое руководство: от настройки проекта до сохранения измененного документа. Теперь вы можете включить этот код в свои собственные проекты C#, чтобы настроить макет текста и изображений в файлах PDF.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of the "Text And Image As Paragraph In PDF File" tutorial?
+#### Вопрос: Какова цель урока «Текст и изображение как абзац в PDF-файле»?
 
-A: The "Text And Image As Paragraph In PDF File" tutorial aims to guide users on how to add both text and images as inline paragraphs within a PDF document using Aspose.PDF for .NET. The tutorial provides step-by-step instructions and C# code samples to demonstrate the process.
+О: Учебное пособие «Текст и изображение как абзац в PDF-файле» призвано помочь пользователям добавить текст и изображения в виде встроенных абзацев в PDF-документ с помощью Aspose.PDF для .NET. В руководстве представлены пошаговые инструкции и примеры кода C# для демонстрации процесса.
 
-#### Q: How does this tutorial help in adding text and images as inline paragraphs?
+#### Вопрос: Как это руководство помогает добавлять текст и изображения в виде встроенных абзацев?
 
-A: This tutorial helps users understand how to use Aspose.PDF for .NET to incorporate both text and images as inline paragraphs within a PDF document. By following the provided steps and code examples, users can create PDF files with custom layouts that combine text and images.
+О: Это руководство помогает пользователям понять, как использовать Aspose.PDF для .NET для включения текста и изображений в виде встроенных абзацев в PDF-документ. Следуя предоставленным инструкциям и примерам кода, пользователи могут создавать PDF-файлы с настраиваемыми макетами, сочетающими текст и изображения.
 
-#### Q: What prerequisites are required to follow this tutorial?
+#### Вопрос: Какие предварительные условия необходимы для изучения этого руководства?
 
-A: Before starting the tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or install it in your project using NuGet.
+О: Прежде чем приступить к изучению руководства, вы должны иметь базовое представление о языке программирования C#. Кроме того, вам необходимо установить библиотеку Aspose.PDF for .NET. Вы можете получить его с веб-сайта Aspose или установить в свой проект с помощью NuGet.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### Вопрос: Как мне настроить свой проект для использования этого руководства?
 
-A: To begin, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This allows you to utilize the library's features for working with PDF documents, text fragments, and images.
+О: Для начала создайте новый проект C# в предпочитаемой вами интегрированной среде разработки (IDE) и добавьте ссылку на библиотеку Aspose.PDF для .NET. Это позволяет использовать возможности библиотеки для работы с PDF-документами, фрагментами текста и изображениями.
 
-#### Q: Can I use this tutorial to add multiple text and image paragraphs in a PDF?
+#### Вопрос: Могу ли я использовать это руководство для добавления нескольких абзацев текста и изображений в PDF-файл?
 
-A: Yes, you can use the provided code samples to add multiple instances of both text and image paragraphs within the same PDF document. This tutorial demonstrates how to create inline paragraphs, making it easy to include different combinations of text and images.
+О: Да, вы можете использовать предоставленные примеры кода для добавления нескольких экземпляров абзацев текста и изображений в один и тот же PDF-документ. В этом руководстве показано, как создавать встроенные абзацы, упрощая включение различных комбинаций текста и изображений.
 
-#### Q: How do I specify the content and appearance of the text paragraphs and images?
+#### Вопрос: Как указать содержание и внешний вид текстовых абзацев и изображений?
 
-A: The tutorial demonstrates how to create `TextFragment` objects to represent text paragraphs and `Aspose.Pdf.Image` objects to represent images. You can customize the content, dimensions, and appearance of both text and images using the provided code samples.
+ A: В учебнике показано, как создать`TextFragment`объекты для представления текстовых абзацев и`Aspose.Pdf.Image` объекты для представления изображений. Вы можете настроить содержимое, размеры и внешний вид текста и изображений, используя предоставленные примеры кода.
 
-#### Q: Can I adjust the layout of the inline paragraphs?
+#### Вопрос: Могу ли я настроить расположение встроенных абзацев?
 
-A: Yes, you can adjust the layout of inline paragraphs by controlling their positioning, dimensions, and order within the page. The tutorial shows how to set inline attributes, such as `IsInLineParagraph`, to control the layout of text and image paragraphs.
+ О: Да, вы можете настроить макет встроенных абзацев, управляя их расположением, размерами и порядком на странице. В этом руководстве показано, как установить встроенные атрибуты, такие как`IsInLineParagraph`, для управления расположением абзацев текста и изображений.
 
-#### Q: How do I save the modified PDF document?
+#### Вопрос: Как сохранить измененный PDF-документ?
 
-A: To save the modified PDF document, you can use the `Save` method of the `Document` object. The tutorial provides code samples that demonstrate how to save the resulting PDF document.
+ О: Чтобы сохранить измененный PDF-документ, вы можете использовать`Save` метод`Document` объект. В руководстве представлены примеры кода, демонстрирующие, как сохранить полученный PDF-документ.

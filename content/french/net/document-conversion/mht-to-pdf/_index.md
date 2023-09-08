@@ -1,75 +1,75 @@
 ---
-title: MHT To PDF
-linktitle: MHT To PDF
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert MHT to PDF using Aspose.PDF for .NET.
+title: MHT en PDF
+linktitle: MHT en PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Guide étape par étape pour convertir MHT en PDF à l’aide d’Aspose.PDF pour .NET.
 type: docs
 weight: 70
 url: /fr/net/document-conversion/mht-to-pdf/
 ---
-In this tutorial, we will guide you through the process of converting an MHT file to PDF using Aspose.PDF for .NET. MHT (MIME HTML) is a format used to save a complete web page, including images and associated content. By following the steps below, you will be able to convert MHT files to PDF format.
+Dans ce didacticiel, nous vous guiderons tout au long du processus de conversion d'un fichier MHT en PDF à l'aide d'Aspose.PDF pour .NET. MHT (MIME HTML) est un format utilisé pour enregistrer une page Web complète, y compris les images et le contenu associé. En suivant les étapes ci-dessous, vous pourrez convertir les fichiers MHT au format PDF.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Conditions préalables
+Avant de commencer, assurez-vous de remplir les conditions préalables suivantes :
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Connaissance de base du langage de programmation C#.
+- Bibliothèque Aspose.PDF pour .NET installée sur votre système.
+- Un environnement de développement tel que Visual Studio.
 
-## Step 1: Loading MHT file
-In this step we will load the MHT file using Aspose.PDF for .NET. Follow the code below:
+## Étape 1 : Chargement du fichier MHT
+Dans cette étape, nous allons charger le fichier MHT à l'aide d'Aspose.PDF pour .NET. Suivez le code ci-dessous :
 
 ```csharp
-// Path to the documents directory.
+// Chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 MhtLoadOptions options = new MhtLoadOptions();
 
-// Load the document
+// Charger le document
 Document document = new Document(dataDir + "test.mht", options);
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your MHT file is located.
+ Assurez-vous de remplacer`"YOUR DOCUMENTS DIRECTORY"` avec le répertoire réel où se trouve votre fichier MHT.
 
-## Step 2: MHT to PDF conversion
-After loading the MHT file, we can proceed with the conversion to PDF. Use the following code:
+## Étape 2 : Conversion MHT en PDF
+Après avoir chargé le fichier MHT, nous pouvons procéder à la conversion en PDF. Utilisez le code suivant :
 
 ```csharp
-// Save the output as a PDF document
+// Enregistrez la sortie sous forme de document PDF
 document.Save(dataDir + "MHTToPDF_out.pdf");
 ```
 
-The code above converts the MHT file to PDF format and saves it as the filename `"MHTToPDF_out.pdf"`.
+ Le code ci-dessus convertit le fichier MHT au format PDF et l'enregistre sous le nom de fichier.`"MHTToPDF_out.pdf"`.
 
-### Example source code for MHT to PDF using Aspose.PDF for .NET
+### Exemple de code source pour MHT en PDF à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 MhtLoadOptions options = new MhtLoadOptions();
-// Load document
+// Charger le document
 Document document = new Document(dataDir  + "test.mht", options);
-// Save the output as PDF document
+// Enregistrez la sortie sous forme de document PDF
 document.Save(dataDir + "MHTToPDF_out.pdf");
 ```
 
 ## Conclusion
-In this tutorial, we covered the step-by-step process of converting an MHT file to PDF using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to convert MHT files to PDF format. This feature can be useful when you need to convert entire web pages into PDF documents.
+Dans ce didacticiel, nous avons couvert le processus étape par étape de conversion d'un fichier MHT en PDF à l'aide d'Aspose.PDF pour .NET. En suivant les instructions décrites ci-dessus, vous devriez maintenant pouvoir convertir les fichiers MHT au format PDF. Cette fonctionnalité peut être utile lorsque vous devez convertir des pages Web entières en documents PDF.
 
-### FAQ's
+### FAQ
 
-#### Q: Does Aspose.PDF for .NET support converting MHT files with embedded images to PDF?
+#### Q : Aspose.PDF pour .NET prend-il en charge la conversion de fichiers MHT contenant des images intégrées au format PDF ?
 
-A: Yes, Aspose.PDF for .NET supports converting MHT files with embedded images to PDF. The library can handle the complete web page content, including images and associated resources, and convert it into a PDF document.
+: Oui, Aspose.PDF pour .NET prend en charge la conversion de fichiers MHT contenant des images intégrées au format PDF. La bibliothèque peut gérer le contenu complet de la page Web, y compris les images et les ressources associées, et le convertir en document PDF.
 
-#### Q: Can I customize the PDF output during the MHT to PDF conversion process?
+#### Q : Puis-je personnaliser la sortie PDF pendant le processus de conversion MHT en PDF ?
 
-A: Yes, Aspose.PDF for .NET provides various options to customize the PDF output during the MHT to PDF conversion process. You can set properties such as page size, orientation, margins, and more to control the appearance of the resulting PDF document.
+R : Oui, Aspose.PDF pour .NET propose diverses options pour personnaliser la sortie PDF pendant le processus de conversion MHT en PDF. Vous pouvez définir des propriétés telles que la taille de la page, l'orientation, les marges, etc. pour contrôler l'apparence du document PDF résultant.
 
-#### Q: Does Aspose.PDF for .NET preserve hyperlinks and formatting from the original MHT file in the PDF output?
+#### Q : Aspose.PDF pour .NET conserve-t-il les hyperliens et le formatage du fichier MHT d'origine dans la sortie PDF ?
 
-A: Yes, Aspose.PDF for .NET preserves hyperlinks and formatting from the original MHT file in the PDF output. The library ensures that the converted PDF retains the same layout and content as the source MHT file.
+R : Oui, Aspose.PDF pour .NET conserve les hyperliens et le formatage du fichier MHT d'origine dans la sortie PDF. La bibliothèque garantit que le PDF converti conserve la même mise en page et le même contenu que le fichier MHT source.
 
-#### Q: Can I convert multiple MHT files to separate PDF documents using Aspose.PDF for .NET?
+#### Q : Puis-je convertir plusieurs fichiers MHT en documents PDF distincts à l'aide d'Aspose.PDF pour .NET ?
 
-A: Yes, you can convert multiple MHT files to separate PDF documents using Aspose.PDF for .NET. Simply load each MHT file and save it as a separate PDF document with a unique filename.
+: Oui, vous pouvez convertir plusieurs fichiers MHT en documents PDF distincts à l'aide d'Aspose.PDF pour .NET. Chargez simplement chaque fichier MHT et enregistrez-le en tant que document PDF distinct avec un nom de fichier unique.

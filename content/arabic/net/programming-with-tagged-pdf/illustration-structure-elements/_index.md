@@ -1,66 +1,66 @@
 ---
-title: Illustration Structure Elements
-linktitle: Illustration Structure Elements
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to using illustration assets with Aspose.PDF for .NET. Enhance the presentation of your PDFs with images.
+title: عناصر هيكل التوضيح
+linktitle: عناصر هيكل التوضيح
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لاستخدام أصول الرسم التوضيحي مع Aspose.PDF لـ .NET. تعزيز عرض ملفات PDF الخاصة بك مع الصور.
 type: docs
 weight: 100
 url: /ar/net/programming-with-tagged-pdf/illustration-structure-elements/
 ---
-In this step-by-step guide, we are going to show you how to use illustration structure elements with Aspose.PDF for .NET. Aspose.PDF is a powerful library that lets you manipulate PDF documents programmatically. Illustration structure elements allow you to add images and figures to your PDF document, improving its visual presentation and understanding.
+في هذا الدليل خطوة بخطوة، سنوضح لك كيفية استخدام عناصر بنية الرسم التوضيحي مع Aspose.PDF لـ .NET. Aspose.PDF هي مكتبة قوية تتيح لك التعامل مع مستندات PDF برمجيًا. تتيح لك عناصر هيكل الرسم التوضيحي إضافة صور وأشكال إلى مستند PDF الخاص بك، مما يؤدي إلى تحسين عرضه المرئي وفهمه.
 
-Let's dive into the code and learn how to use illustration structure elements with Aspose.PDF for .NET.
+دعنا نتعمق في التعليمات البرمجية ونتعلم كيفية استخدام عناصر بنية الرسم التوضيحي مع Aspose.PDF لـ .NET.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-1. Aspose.PDF library for .NET installed.
-2. A basic knowledge of the C# programming language.
+1. تم تثبيت مكتبة Aspose.PDF لـ .NET.
+2. معرفة أساسية بلغة البرمجة C#.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-To get started, open your C# development environment and create a new project. Make sure you have added a reference to the Aspose.PDF library for .NET in your project.
+للبدء، افتح بيئة تطوير C# الخاصة بك وقم بإنشاء مشروع جديد. تأكد من إضافة مرجع إلى مكتبة Aspose.PDF لـ .NET في مشروعك.
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating the document
+## الخطوة 2: إنشاء الوثيقة
 
-The first step is to create a new PDF document using the `Document` class.
+ الخطوة الأولى هي إنشاء مستند PDF جديد باستخدام الملف`Document` فصل.
 
 ```csharp
-// Create the PDF document
+// قم بإنشاء مستند PDF
 Document document = new Document();
 ```
 
-## Step 3: Work with tagged content
+## الخطوة 3: العمل مع المحتوى الموسوم
 
-Then we get the tagged content of the document to work with.
+ثم نحصل على المحتوى المميز للمستند للعمل معه.
 
 ```csharp
-// Get the tagged content of the document
+// احصل على المحتوى المميز للمستند
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 4: Set document title and language
+## الخطوة 4: تعيين عنوان المستند واللغة
 
-We can now set the document title and language.
+يمكننا الآن تعيين عنوان المستند واللغة.
 
 ```csharp
-// Define the document title and language
+// تحديد عنوان الوثيقة واللغة
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 5: Add artwork
+## الخطوة 5: إضافة عمل فني
 
-Now let's add illustrative elements, such as images and figures, to our document.
+الآن دعونا نضيف عناصر توضيحية، مثل الصور والأشكال، إلى وثيقتنا.
 
 ```csharp
-// Underdevelopment
+// تحت التطوير
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
 figure1.AlternativeText = "Figure One";
@@ -69,34 +69,34 @@ figure1.SetTag("Fig1");
 figure1.SetImage("image.png");
 ```
 
-Here we create an illustration structure element, give it an alt text, title, custom tag, and associate an image with it.
+نقوم هنا بإنشاء عنصر هيكل توضيحي، وإعطائه نصًا بديلًا وعنوانًا وعلامة مخصصة وربط صورة به.
 
-## Step 6: Save the tagged PDF document
+## الخطوة 6: احفظ مستند PDF الذي تم وضع علامة عليه
 
-Finally, we save the tagged PDF document.
+وأخيرًا، نقوم بحفظ مستند PDF الذي تم وضع علامة عليه.
 
 ```csharp
-// Save the tagged PDF document
+// احفظ مستند PDF الذي تم وضع علامة عليه
 document.Save(dataDir + "IllustrationStructureElements.pdf");
 ```
 
-### Sample source code for Illustration Structure Elements using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لعناصر هيكل التوضيح باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// إنشاء مستند PDF
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// احصل على محتوى للعمل مع TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+// قم بتعيين العنوان واللغة لـ Documnet
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Under Development
+// تحت التطوير
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
 figure1.AlternativeText = "Figure One";
@@ -104,53 +104,53 @@ figure1.Title = "Image 1";
 figure1.SetTag("Fig1");
 figure1.SetImage("image.png");
 
-// Save Tagged Pdf Document
+// حفظ وثيقة PDF ذات العلامات
 document.Save(dataDir + "IllustrationStructureElements.pdf");
 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have learned how to use illustration structure elements with Aspose.PDF for .NET. You can now add images and figures to your PDF document to enhance its visual presentation. Explore more features of Aspose.PDF to discover its full potential.
+تهنئة ! لقد تعلمت كيفية استخدام عناصر بنية الرسم التوضيحي مع Aspose.PDF لـ .NET. يمكنك الآن إضافة صور وأشكال إلى مستند PDF الخاص بك لتحسين العرض المرئي. اكتشف المزيد من ميزات Aspose.PDF لاكتشاف إمكاناته الكاملة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What are illustration structure elements in a PDF document, and how do they enhance visual presentation?
+#### س: ما هي عناصر هيكل التوضيح في مستند PDF، وكيف تعمل على تحسين العرض المرئي؟
 
-A: Illustration structure elements in a PDF document allow you to incorporate visual content such as images and figures. By using illustration structure elements with Aspose.PDF for .NET, you can enhance the visual presentation of your PDF documents, making them more engaging and informative.
+ج: تتيح لك عناصر هيكل الرسم التوضيحي في مستند PDF دمج محتوى مرئي مثل الصور والأشكال. باستخدام عناصر هيكل الرسم التوضيحي مع Aspose.PDF for .NET، يمكنك تحسين العرض المرئي لمستندات PDF الخاصة بك، مما يجعلها أكثر جاذبية وغنية بالمعلومات.
 
-#### Q: How does Aspose.PDF for .NET facilitate the use of illustration structure elements?
+#### س: كيف يسهل Aspose.PDF for .NET استخدام عناصر بنية الرسم التوضيحي؟
 
-A: Aspose.PDF for .NET provides a set of classes and methods that enable you to create, manipulate, and add illustration structure elements to your PDF documents. These elements can include images, figures, and other visual content.
+ج: يوفر Aspose.PDF for .NET مجموعة من الفئات والأساليب التي تمكنك من إنشاء عناصر بنية توضيحية ومعالجتها وإضافتها إلى مستندات PDF الخاصة بك. يمكن أن تتضمن هذه العناصر الصور والأشكال والمحتويات المرئية الأخرى.
 
-#### Q: What role does the `taggedContent` object play in using illustration structure elements?
+####  س: ما هو الدور الذي يقوم به`taggedContent` object play in using illustration structure elements?
 
-A: The `taggedContent` object, obtained from the document's `TaggedContent` property, allows you to work with structured elements in the PDF document. You can create, organize, and add illustration structure elements to enhance the document's visual representation.
+ ج: ال`taggedContent` الكائن، الذي تم الحصول عليه من الوثيقة`TaggedContent`الخاصية، تسمح لك بالعمل مع العناصر المنظمة في وثيقة PDF. يمكنك إنشاء عناصر بنية توضيحية وتنظيمها وإضافتها لتحسين التمثيل المرئي للمستند.
 
-#### Q: How do illustration structure elements improve the understanding of the PDF document's content?
+#### س: كيف تعمل عناصر هيكل الرسم التوضيحي على تحسين فهم محتوى مستند PDF؟
 
-A: Illustration structure elements provide visual context and support to the textual content of a PDF document. They help convey complex information, data, or concepts through images and figures, making the content easier to comprehend and remember.
+ج: توفر عناصر هيكل الرسم التوضيحي سياقًا مرئيًا ودعمًا للمحتوى النصي لمستند PDF. فهي تساعد في نقل المعلومات أو البيانات أو المفاهيم المعقدة من خلال الصور والأشكال، مما يجعل المحتوى أسهل في الفهم والتذكر.
 
-#### Q: What types of visual content can be added using illustration structure elements?
+#### س: ما أنواع المحتوى المرئي التي يمكن إضافتها باستخدام عناصر هيكل الرسم التوضيحي؟
 
-A: Illustration structure elements can be used to add a variety of visual content, including images, charts, graphs, diagrams, and other types of artwork that enhance the document's visual appeal and storytelling.
+ج: يمكن استخدام عناصر هيكل الرسم التوضيحي لإضافة مجموعة متنوعة من المحتوى المرئي، بما في ذلك الصور والمخططات والرسوم البيانية والرسوم البيانية وأنواع أخرى من الأعمال الفنية التي تعزز المظهر البصري للمستند وسرد القصص.
 
-#### Q: How do I create and add an image to a PDF document using illustration structure elements in Aspose.PDF for .NET?
+#### س: كيف يمكنني إنشاء صورة وإضافتها إلى مستند PDF باستخدام عناصر هيكل الرسم التوضيحي في Aspose.PDF لـ .NET؟
 
-A: You can create an illustration structure element using the `CreateFigureElement` method, assign alt text, title, and custom tags to it, and associate an image file using the `SetImage` method. The provided code example demonstrates this process.
+ج: يمكنك إنشاء عنصر هيكل توضيحي باستخدام ملف`CreateFigureElement` الطريقة، وقم بتعيين نص بديل وعنوان وعلامات مخصصة لها، ثم قم بربط ملف صورة باستخدام الملف`SetImage` طريقة. يوضح المثال التعليمات البرمجية المتوفرة هذه العملية.
 
-#### Q: Can I customize the appearance and attributes of illustration structure elements?
+#### س: هل يمكنني تخصيص مظهر وسمات عناصر هيكل الرسم التوضيحي؟
 
-A: Yes, you can customize the appearance and attributes of illustration structure elements by setting properties such as alt text, title, custom tags, image sources, and more. This allows you to tailor the visual representation to your document's needs.
+ج: نعم، يمكنك تخصيص مظهر وسمات عناصر بنية الرسم التوضيحي عن طريق تعيين خصائص مثل النص البديل والعنوان والعلامات المخصصة ومصادر الصور والمزيد. يتيح لك ذلك تخصيص التمثيل المرئي ليناسب احتياجات وثيقتك.
 
-#### Q: How can I ensure that the images and figures I add using illustration structure elements are accessible?
+#### س: كيف يمكنني التأكد من إمكانية الوصول إلى الصور والأشكال التي أقوم بإضافتها باستخدام عناصر هيكل الرسم التوضيحي؟
 
-A: To ensure accessibility, provide meaningful alt text that accurately describes the content of the images or figures. This alt text is read by screen readers and other assistive technologies, making the visual content accessible to all users.
+ج: لضمان إمكانية الوصول، قم بتوفير نص بديل ذي معنى يصف بدقة محتوى الصور أو الأشكال. تتم قراءة هذا النص البديل بواسطة برامج قراءة الشاشة والتقنيات المساعدة الأخرى، مما يجعل المحتوى المرئي في متناول جميع المستخدمين.
 
-#### Q: Can I use illustration structure elements in combination with other PDF manipulation features offered by Aspose.PDF for .NET?
+#### س: هل يمكنني استخدام عناصر بنية الرسم التوضيحي مع ميزات معالجة PDF الأخرى التي يقدمها Aspose.PDF لـ .NET؟
 
-A: Absolutely! You can combine illustration structure elements with other features of Aspose.PDF for .NET, such as adding text, creating tables, inserting hyperlinks, and more. This allows you to create visually appealing and informative PDF documents.
+ج: بالتأكيد! يمكنك دمج عناصر هيكل الرسم التوضيحي مع الميزات الأخرى لـ Aspose.PDF لـ .NET، مثل إضافة نص وإنشاء الجداول وإدراج الارتباطات التشعبية والمزيد. يتيح لك هذا إنشاء مستندات PDF جذابة وغنية بالمعلومات.
 
-#### Q: How can I further explore and utilize illustration structure elements for advanced document design and visual storytelling?
+#### س: كيف يمكنني استكشاف عناصر هيكل التوضيح واستخدامها بشكل أكبر لتصميم المستندات المتقدمة وسرد القصص المرئية؟
 
-A: To delve deeper, you can explore advanced features of Aspose.PDF for .NET, such as creating interactive elements, embedding multimedia, utilizing different image formats, and optimizing visual content for various devices. The library's documentation and examples provide guidance for these advanced scenarios.
+ج: للتعمق بشكل أعمق، يمكنك استكشاف الميزات المتقدمة لـ Aspose.PDF لـ .NET، مثل إنشاء عناصر تفاعلية، وتضمين الوسائط المتعددة، واستخدام تنسيقات الصور المختلفة، وتحسين المحتوى المرئي لمختلف الأجهزة. توفر وثائق المكتبة وأمثلتها إرشادات لهذه السيناريوهات المتقدمة.

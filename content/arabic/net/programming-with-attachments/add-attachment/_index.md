@@ -1,113 +1,113 @@
 ---
-title: Add Attachment In PDF File
-linktitle: Add Attachment In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add attachment in PDF file using Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: إضافة مرفق في ملف PDF
+linktitle: إضافة مرفق في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة مرفق في ملف PDF باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة لسهولة التعامل.
 type: docs
 weight: 10
 url: /ar/net/programming-with-attachments/add-attachment/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to add an attachment in PDF file using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك عبر التعليمات البرمجية المصدر لـ C# التالية خطوة بخطوة لإضافة مرفق في ملف PDF باستخدام Aspose.PDF لـ .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك قبل البدء. لديك أيضًا معرفة أساسية ببرمجة C#.
 
-### Step 1: Document Directory Setup
+### الخطوة 1: إعداد دليل المستندات
 
-In the provided source code, you need to specify the directory where the PDF file you want to add the attachment is located. Change the "dataDir" variable to the desired directory.
+في الكود المصدري المقدم، تحتاج إلى تحديد الدليل الذي يوجد به ملف PDF الذي تريد إضافة المرفق إليه. قم بتغيير المتغير "dataDir" إلى الدليل المطلوب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### الخطوة 2: افتح مستند PDF الموجود
 
-We open the existing PDF document using the specified path.
+نفتح مستند PDF الموجود باستخدام المسار المحدد.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddAttachment.pdf");
 ```
 
-### Step 3: Setting up the new file to add as an attachment
+### الخطوة 3: إعداد الملف الجديد لإضافته كمرفق
 
-We configure the new file that we want to add as an attachment. In this example, we add a text file with the name "test.txt" and a description "Example text file".
+نقوم بتكوين الملف الجديد الذي نريد إضافته كمرفق. في هذا المثال، قمنا بإضافة ملف نصي بالاسم "test.txt" ووصف "مثال لملف نصي".
 
 ```csharp
 FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
 ```
 
-### Step 4: Adding the attachment to the document's attachments collection
+### الخطوة 4: إضافة المرفق إلى مجموعة مرفقات المستند
 
-We add the attachment to the document's attachments collection.
+نقوم بإضافة المرفق إلى مجموعة مرفقات الوثيقة.
 
 ```csharp
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 ```
 
-### Step 5: Saving the new output file
+### الخطوة 5: حفظ ملف الإخراج الجديد
 
-Finally, we save the resulting new PDF file with the name "AddAttachment_out.pdf" in the specified directory.
+أخيرًا، نقوم بحفظ ملف PDF الجديد الناتج باسم "AddAttachment_out.pdf" في الدليل المحدد.
 
 ```csharp
 pdfDocument.Save(dataDir + "AddAttachment_out.pdf");
 ```
 
-### Sample source code for Add Attachment using Aspose.PDF for .NET
+### نموذج التعليمات البرمجية المصدر لإضافة مرفق باستخدام Aspose.PDF لـ .NET
  
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "AddAttachment.pdf");
-// Setup new file to be added as attachment
+// إعداد ملف جديد لإضافته كمرفق
 FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
-// Add attachment to document's attachment collection
+//إضافة مرفق إلى مجموعة مرفقات المستند
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 dataDir = dataDir + "AddAttachment_out.pdf";
-// Save new output
+// حفظ الإخراج الجديد
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nSample text file attached successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we explained how to add an attachment to a PDF file using Aspose.PDF for .NET. You can now use this knowledge to add additional files as attachments to your PDF documents.
+في هذا البرنامج التعليمي، شرحنا كيفية إضافة مرفق إلى ملف PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام هذه المعرفة لإضافة ملفات إضافية كمرفقات إلى مستندات PDF الخاصة بك.
 
-### FAQ's for add attachment in PDF file
+### الأسئلة الشائعة لإضافة مرفق في ملف PDF
 
-#### Q: Why would I need to add attachments to a PDF file?
+#### س: لماذا أحتاج إلى إضافة مرفقات إلى ملف PDF؟
 
-A: Adding attachments to a PDF file allows you to include supplementary materials, such as supporting documents, images, or files, which can provide additional context or information to the PDF's content.
+ج: تتيح لك إضافة مرفقات إلى ملف PDF تضمين مواد تكميلية، مثل المستندات أو الصور أو الملفات الداعمة، والتي يمكن أن توفر سياقًا أو معلومات إضافية لمحتوى ملف PDF.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of adding attachments?
+#### س: كيف يعمل Aspose.PDF for .NET على تبسيط عملية إضافة المرفقات؟
 
-A: Aspose.PDF for .NET provides a streamlined API that allows you to easily add attachments to PDF files. The provided source code demonstrates step-by-step how to accomplish this task.
+ج: يوفر Aspose.PDF for .NET واجهة برمجة تطبيقات مبسطة تسمح لك بإضافة المرفقات إلى ملفات PDF بسهولة. يوضح الكود المصدري المقدم كيفية إنجاز هذه المهمة خطوة بخطوة.
 
-#### Q: What types of files can be attached to a PDF using Aspose.PDF for .NET?
+#### س: ما أنواع الملفات التي يمكن إرفاقها بملف PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Aspose.PDF for .NET supports attaching various types of files, including text files, images, documents, spreadsheets, and more, as long as they are accessible from your development environment.
+ج: يدعم Aspose.PDF for .NET إرفاق أنواع مختلفة من الملفات، بما في ذلك الملفات النصية والصور والمستندات وجداول البيانات والمزيد، طالما أنه يمكن الوصول إليها من بيئة التطوير الخاصة بك.
 
-#### Q: Is there a limit to the number of attachments that can be added to a PDF file?
+#### س: هل هناك حد لعدد المرفقات التي يمكن إضافتها إلى ملف PDF؟
 
-A: There is no strict limit to the number of attachments that can be added, but it's important to consider the overall file size and potential impact on document performance.
+ج: لا يوجد حد صارم لعدد المرفقات التي يمكن إضافتها، ولكن من المهم مراعاة الحجم الإجمالي للملف والتأثير المحتمل على أداء المستند.
 
-#### Q: Can I customize the description of the attached files?
+#### س: هل يمكنني تخصيص وصف الملفات المرفقة؟
 
-A: Yes, you can customize the description of each attached file. This description provides additional context for the attached file and helps users understand its purpose.
+ج: نعم، يمكنك تخصيص وصف كل ملف مرفق. يوفر هذا الوصف سياقًا إضافيًا للملف المرفق ويساعد المستخدمين على فهم الغرض منه.
 
-#### Q: Are there any file size considerations when adding attachments?
+#### س: هل هناك أي اعتبارات لحجم الملف عند إضافة المرفقات؟
 
-A: While attachments can increase the overall file size of the PDF, Aspose.PDF for .NET ensures efficient attachment handling to minimize any negative impact on document performance.
+ج: على الرغم من أن المرفقات يمكن أن تزيد الحجم الإجمالي لملف PDF، إلا أن Aspose.PDF for .NET يضمن معالجة فعالة للمرفقات لتقليل أي تأثير سلبي على أداء المستند.
 
-#### Q: Can attachments be added to specific pages within the PDF document?
+#### س: هل يمكن إضافة المرفقات إلى صفحات محددة داخل مستند PDF؟
 
-A: Attachments are associated with the entire PDF document, rather than specific pages. They are accessible to users through the attachment panel in PDF viewers.
+ج: ترتبط المرفقات بمستند PDF بأكمله، وليس بصفحات محددة. يمكن للمستخدمين الوصول إليها من خلال لوحة المرفقات في عارضات PDF.
 
-#### Q: How can I verify that the attachment was added successfully?
+#### س: كيف يمكنني التأكد من إضافة المرفق بنجاح؟
 
-A: After following the provided source code, you can open the resulting PDF file to confirm that the attached file is accessible through the attachment panel.
+ج: بعد اتباع التعليمات البرمجية المصدر المقدمة، يمكنك فتح ملف PDF الناتج للتأكد من إمكانية الوصول إلى الملف المرفق من خلال لوحة المرفقات.
 
-#### Q: Can I remove or update attachments after they have been added?
+#### س: هل يمكنني إزالة المرفقات أو تحديثها بعد إضافتها؟
 
-A: Yes, you can modify or remove attachments from a PDF file using Aspose.PDF for .NET's API, giving you flexibility in managing attachments as needed.
+ج: نعم، يمكنك تعديل أو إزالة المرفقات من ملف PDF باستخدام Aspose.PDF لـ .NET's API، مما يمنحك المرونة في إدارة المرفقات حسب الحاجة.

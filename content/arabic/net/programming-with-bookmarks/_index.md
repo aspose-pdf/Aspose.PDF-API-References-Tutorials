@@ -1,26 +1,26 @@
 ---
-title: Programming with Bookmarks
-linktitle: Programming with Bookmarks
+title: البرمجة مع الإشارات المرجعية
+linktitle: البرمجة مع الإشارات المرجعية
 type: docs
 weight: 19
 url: /ar/net/programming-with-bookmarks/
-description: Learn how to manipulate, manage and customize bookmarks in your PDF documents for better navigation and improved user experience.
+description: تعرف على كيفية التعامل مع الإشارات المرجعية وإدارتها وتخصيصها في مستندات PDF الخاصة بك لتحسين التنقل وتحسين تجربة المستخدم.
 ---
-Aspose.PDF for .NET's tutorials on programming with bookmarks walk you through the steps to manipulate and manage bookmarks in your PDF documents. Learn how to create, edit and delete bookmarks to make it easier to navigate and organize your PDF files.
+ترشدك البرامج التعليمية الخاصة بـ Aspose.PDF for .NET حول البرمجة باستخدام الإشارات المرجعية خلال خطوات التعامل مع الإشارات المرجعية وإدارتها في مستندات PDF الخاصة بك. تعرف على كيفية إنشاء الإشارات المرجعية وتحريرها وحذفها لتسهيل التنقل في ملفات PDF وتنظيمها.
 
-Additionally, these tutorials show you how to customize bookmark properties, such as titles, actions, and hierarchical levels, to improve the user experience and make your PDF documents more interactive and user-friendly. Master the use of bookmarks in your PDF projects with these step-by-step guides.
+بالإضافة إلى ذلك، توضح لك هذه البرامج التعليمية كيفية تخصيص خصائص الإشارة المرجعية، مثل العناوين والإجراءات والمستويات الهرمية، لتحسين تجربة المستخدم وجعل مستندات PDF الخاصة بك أكثر تفاعلية وسهولة في الاستخدام. أتقن استخدام الإشارات المرجعية في مشاريع PDF الخاصة بك باستخدام هذه الأدلة خطوة بخطوة.
 
-## Tutorials
-| Title | Description |
+## دروس
+| عنوان | وصف |
 | --- | --- | 
-| [Add Bookmark In PDF File](./add-bookmark/) | Easily add bookmark in PDF file for improved navigation with Aspose.PDF for .NET. |  
-| [Add Child Bookmark In PDF File](./add-child-bookmark/) | Easily add child bookmark in PDF file for more organized browsing with Aspose.PDF for .NET. |  
-| [Delete All Bookmarks In PDF File](./delete-all-bookmarks/) | Easily delete all bookmarks in PDF file with Aspose.PDF for .NET. |  
-| [Delete Particular Bookmark In PDF File](./delete-particular-bookmark/) | Easily delete a particular bookmark in PDF file with Aspose.PDF for .NET. |  
-| [Expand Bookmarks In PDF File](./expand-bookmarks/) | Easily expand bookmarks in PDF file for improved navigation with Aspose.PDF for .NET. |  
-| [Get Bookmark Page Number In PDF File](./get-bookmark-page-number/) | Easily get bookmark page number in PDF file with Aspose.PDF for .NET. |  
-| [Get Bookmarks In PDF File](./get-bookmarks/) | Easily get bookmark in PDF file with Aspose.PDF for .NET. |  
-| [Get Child Bookmarks In PDF File](./get-child-bookmarks/) | Easily get child bookmarks in PDF file with Aspose.PDF for .NET. |  
-| [Inherit Zoom In PDF File](./inherit-zoom/) | Easily inherit bookmark zoom in PDF file with Aspose.PDF for .NET. |  
-| [Update Bookmarks In PDF File](./update-bookmarks/) | Easily update bookmarks in PDF file with Aspose.PDF for .NET. |  
-| [Update Child Bookmarks In PDF File](./update-child-bookmarks/) | Easily update child bookmarks in PDF file with Aspose.PDF for .NET. |  
+| [إضافة إشارة مرجعية في ملف PDF](./add-bookmark/) | أضف إشارة مرجعية بسهولة في ملف PDF لتحسين التنقل باستخدام Aspose.PDF لـ .NET. |  
+| [إضافة إشارة مرجعية فرعية في ملف PDF](./add-child-bookmark/) | يمكنك بسهولة إضافة إشارة مرجعية فرعية في ملف PDF لتصفح أكثر تنظيمًا باستخدام Aspose.PDF لـ .NET. |  
+| [حذف كافة الإشارات المرجعية في ملف PDF](./delete-all-bookmarks/) | احذف جميع الإشارات المرجعية في ملف PDF بسهولة باستخدام Aspose.PDF لـ .NET. |  
+| [حذف إشارة مرجعية معينة في ملف PDF](./delete-particular-bookmark/) | يمكنك بسهولة حذف إشارة مرجعية معينة في ملف PDF باستخدام Aspose.PDF لـ .NET. |  
+| [توسيع الإشارات المرجعية في ملف PDF](./expand-bookmarks/) | قم بتوسيع الإشارات المرجعية بسهولة في ملف PDF لتحسين التنقل باستخدام Aspose.PDF لـ .NET. |  
+| [احصل على رقم صفحة الإشارة المرجعية في ملف PDF](./get-bookmark-page-number/) | احصل بسهولة على رقم صفحة الإشارة المرجعية في ملف PDF باستخدام Aspose.PDF لـ .NET. |  
+| [الحصول على الإشارات المرجعية في ملف PDF](./get-bookmarks/) | احصل بسهولة على إشارة مرجعية في ملف PDF باستخدام Aspose.PDF لـ .NET. |  
+| [الحصول على الإشارات المرجعية للأطفال في ملف PDF](./get-child-bookmarks/) | احصل بسهولة على الإشارات المرجعية الفرعية في ملف PDF باستخدام Aspose.PDF لـ .NET. |  
+| [وراثة التكبير في ملف PDF](./inherit-zoom/) | يمكنك بسهولة توارث تكبير الإشارة المرجعية في ملف PDF باستخدام Aspose.PDF لـ .NET. |  
+| [تحديث الإشارات المرجعية في ملف PDF](./update-bookmarks/) | قم بتحديث الإشارات المرجعية في ملف PDF بسهولة باستخدام Aspose.PDF لـ .NET. |  
+| [تحديث الإشارات المرجعية التابعة في ملف PDF](./update-child-bookmarks/) | يمكنك بسهولة تحديث الإشارات المرجعية الفرعية في ملف PDF باستخدام Aspose.PDF لـ .NET. |  

@@ -1,95 +1,95 @@
 ---
-title: Fill XFAFields
-linktitle: Fill XFAFields
-second_title: Aspose.PDF for .NET API Reference
-description: Easily fill XFA fields in your PDF documents using Aspose.PDF for .NET.
+title: Remplir les champs XFA
+linktitle: Remplir les champs XFA
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Remplissez facilement les champs XFA dans vos documents PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 90
 url: /fr/net/programming-with-forms/fill-xfafields/
 ---
-In this tutorial, we will show you how to fill XFA fields using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+Dans ce didacticiel, nous allons vous montrer comment remplir les champs XFA à l'aide d'Aspose.PDF pour .NET. Nous expliquerons le code source C# étape par étape pour vous guider tout au long de ce processus.
 
-## Step 1: Preparation
+## Étape 1 : Préparation
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Tout d'abord, assurez-vous d'avoir importé les bibliothèques nécessaires et défini le chemin d'accès au répertoire des documents :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the XFA form
+## Étape 2 : Chargez le formulaire XFA
 
-Load the XFA form:
+Chargez le formulaire XFA :
 
 ```csharp
 Document doc = new Document(dataDir + "FillXFAFields.pdf");
 ```
 
-## Step 3: Get XFA Field Names
+## Étape 3 : obtenir les noms de champs XFA
 
-Get the form's XFA field names:
+Obtenez les noms des champs XFA du formulaire :
 
 ```csharp
 string[] names = doc.Form.XFA.FieldNames;
 ```
 
-## Step 4: Set Field Values
+## Étape 4 : Définir les valeurs des champs
 
-Set the XFA field values using the names obtained earlier:
+Définissez les valeurs du champ XFA en utilisant les noms obtenus précédemment :
 
 ```csharp
 doc.Form.XFA[names[0]] = "Field 0";
 doc.Form.XFA[names[1]] = "Field 1";
 ```
 
-## Step 5: Save the updated document
+## Étape 5 : Enregistrez le document mis à jour
 
-Save the updated PDF document:
+Enregistrez le document PDF mis à jour :
 
 ```csharp
 dataDir = dataDir + "Filled_XFA_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Fill XFAFields using Aspose.PDF for .NET 
+### Exemple de code source pour remplir XFAFields à l'aide d'Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load XFA form
+// Charger le formulaire XFA
 Document doc = new Document(dataDir + "FillXFAFields.pdf");
-// Get names of XFA form fields
+// Obtenir les noms des champs du formulaire XFA
 string[] names = doc.Form.XFA.FieldNames;
-// Set field values
+// Définir les valeurs des champs
 doc.Form.XFA[names[0]] = "Field 0";
 doc.Form.XFA[names[1]] = "Field 1";
 dataDir = dataDir + "Filled_XFA_out.pdf";
-// Save the updated document
+// Enregistrez le document mis à jour
 doc.Save(dataDir);
 Console.WriteLine("\nXFA fields filled successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusion
 
-In this tutorial, we learned how to fill XFA fields using Aspose.PDF for .NET. By following these steps, you can easily change the values of XFA fields in your PDF documents using Aspose.PDF.
+Dans ce didacticiel, nous avons appris à remplir les champs XFA à l'aide d'Aspose.PDF pour .NET. En suivant ces étapes, vous pouvez facilement modifier les valeurs des champs XFA dans vos documents PDF à l'aide d'Aspose.PDF.
 
-### FAQ's
+### FAQ
 
-#### Q: What is XFA (XML Forms Architecture)?
+#### Q : Qu'est-ce que XFA (architecture de formulaires XML) ?
 
-A: XFA stands for XML Forms Architecture, which is an XML-based format for defining interactive forms in PDF documents. XFA forms are typically more complex than traditional AcroForms and can include dynamic content and scripting. Aspose.PDF for .NET provides support for filling XFA form fields.
+: XFA signifie XML Forms Architecture, qui est un format basé sur XML permettant de définir des formulaires interactifs dans des documents PDF. Les formulaires XFA sont généralement plus complexes que les AcroForms traditionnels et peuvent inclure du contenu et des scripts dynamiques. Aspose.PDF pour .NET prend en charge le remplissage des champs de formulaire XFA.
 
-#### Q: Can I fill XFA fields in any PDF document?
+#### Q : Puis-je remplir les champs XFA dans n’importe quel document PDF ?
 
-A: Not all PDF documents contain XFA forms. XFA forms are less common than traditional AcroForms. You can determine if a PDF document contains an XFA form by checking the `doc.Form.Type` property. If the value is `FormType.Xfa`, the document contains an XFA form, and you can proceed with filling its fields using `doc.Form.XFA`.
+ R : Tous les documents PDF ne contiennent pas de formulaires XFA. Les formulaires XFA sont moins courants que les AcroForms traditionnels. Vous pouvez déterminer si un document PDF contient un formulaire XFA en cochant la case`doc.Form.Type` propriété. Si la valeur est`FormType.Xfa` , le document contient un formulaire XFA et vous pouvez procéder au remplissage de ses champs en utilisant`doc.Form.XFA`.
 
-#### Q: How do I find the names of XFA form fields in a PDF document?
+#### Q : Comment trouver les noms des champs de formulaire XFA dans un document PDF ?
 
-A: To find the names of XFA form fields in a PDF document, you can use the `doc.Form.XFA.FieldNames` property, which returns an array of strings containing the names of all XFA fields in the document.
+ R : Pour rechercher les noms des champs de formulaire XFA dans un document PDF, vous pouvez utiliser l'outil`doc.Form.XFA.FieldNames` propriété, qui renvoie un tableau de chaînes contenant les noms de tous les champs XFA du document.
 
-#### Q: Can I fill XFA fields with dynamic data from an external data source?
+#### Q : Puis-je remplir les champs XFA avec des données dynamiques provenant d’une source de données externe ?
 
-A: Yes, you can populate XFA fields with dynamic data from an external data source. Before setting the field values, retrieve the data from the source, and use the names of the XFA fields to set their values programmatically.
+: Oui, vous pouvez remplir les champs XFA avec des données dynamiques provenant d'une source de données externe. Avant de définir les valeurs des champs, récupérez les données de la source et utilisez les noms des champs XFA pour définir leurs valeurs par programme.
 
-#### Q: Are there any limitations when working with XFA forms in Aspose.PDF for .NET?
+#### Q : Existe-t-il des limitations lors de l'utilisation de formulaires XFA dans Aspose.PDF pour .NET ?
 
-A: Aspose.PDF for .NET provides support for filling XFA form fields, but it may not fully support all complex features and functionalities of XFA forms. Some advanced XFA-specific features, such as scripting or dynamic layout changes, may not be fully supported in Aspose.PDF for .NET.
+R : Aspose.PDF pour .NET prend en charge le remplissage des champs de formulaire XFA, mais il peut ne pas prendre entièrement en charge toutes les caractéristiques et fonctionnalités complexes des formulaires XFA. Certaines fonctionnalités avancées spécifiques à XFA, telles que les scripts ou les modifications de mise en page dynamique, peuvent ne pas être entièrement prises en charge dans Aspose.PDF pour .NET.

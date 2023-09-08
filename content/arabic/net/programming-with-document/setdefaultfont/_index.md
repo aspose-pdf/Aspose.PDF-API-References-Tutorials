@@ -1,85 +1,85 @@
 ---
-title: Set Default Font In PDF File
-linktitle: Set Default Font In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set the default font in a PDF file using Aspose.PDF for .NET with this step-by-step guide.
+title: تعيين الخط الافتراضي في ملف PDF
+linktitle: تعيين الخط الافتراضي في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تعيين الخط الافتراضي في ملف PDF باستخدام Aspose.PDF لـ .NET باستخدام هذا الدليل التفصيلي خطوة بخطوة.
 type: docs
 weight: 280
 url: /ar/net/programming-with-document/setdefaultfont/
 ---
-If you're working with PDF documents in .NET, you may encounter issues where the font used in the PDF is not available on the system where it is being viewed or printed. This can result in the text appearing incorrectly or not at all. Aspose.PDF for .NET provides a solution to this problem by allowing you to set a default font for the document. In this example, how to set the default font using Aspose.PDF for .NET.
+إذا كنت تعمل مع مستندات PDF في .NET، فقد تواجه مشكلات حيث لا يتوفر الخط المستخدم في ملف PDF على النظام الذي يتم عرضه أو طباعته فيه. يمكن أن يؤدي هذا إلى ظهور النص بشكل غير صحيح أو عدم ظهوره على الإطلاق. يوفر Aspose.PDF for .NET حلاً لهذه المشكلة عن طريق السماح لك بتعيين خط افتراضي للمستند. في هذا المثال، كيفية تعيين الخط الافتراضي باستخدام Aspose.PDF لـ .NET.
 
-## Step 1: Set the path to the document directory
+## الخطوة 1: قم بتعيين المسار إلى دليل المستند
 
-we need to set the path to the directory where our PDF document is located. We will store this path in a variable called "dataDir".
+نحتاج إلى تعيين المسار إلى الدليل الذي يوجد به مستند PDF الخاص بنا. سنقوم بتخزين هذا المسار في متغير يسمى "dataDir".
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the PDF document
+## الخطوة 2: قم بتحميل مستند PDF
 
-We'll start by loading an existing PDF document that has missing fonts. In this example, we'll assume that the PDF document is located in the directory specified by the `dataDir` variable.
+ سنبدأ بتحميل مستند PDF موجود به خطوط مفقودة. في هذا المثال، سنفترض أن مستند PDF موجود في الدليل المحدد بواسطة الملف`dataDir` عامل.
 
 ```csharp
 string documentName = dataDir + "input.pdf";
 using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
 using (Document document = new Document(fs))
 {
-    // code goes here
+    // الكود يذهب هنا
 }
 ```
 
-## Step 3: Set the default font
+## الخطوة 3: تعيين الخط الافتراضي
 
-Next, we'll set the default font for the PDF document using the `PdfSaveOptions` class. In this example, we'll set the default font to "Arial".
+ بعد ذلك، سنقوم بتعيين الخط الافتراضي لمستند PDF باستخدام الملف`PdfSaveOptions` فصل. في هذا المثال، سنقوم بتعيين الخط الافتراضي إلى "Arial".
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
 pdfSaveOptions.DefaultFontName = "Arial";
 ```
 
-## Step 4: Save the updated document
+## الخطوة 4: احفظ المستند المحدث
 
-Finally, we'll save the updated document to a new file. In this example, we'll save the updated document to a file named "output_out.pdf" in the same directory as the input file.
+وأخيرًا، سنقوم بحفظ المستند المحدث في ملف جديد. في هذا المثال، سنقوم بحفظ المستند المحدث في ملف يسمى "output_out.pdf" في نفس الدليل مثل ملف الإدخال.
 
 ```csharp
 document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 ```
 
-### Example Source Code for Set Default Font using Aspose.PDF for .NET
+### مثال على كود المصدر لتعيين الخط الافتراضي باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load an existing PDF document with missing font
+// قم بتحميل مستند PDF موجود بخط مفقود
 string documentName = dataDir + "input.pdf";
 string newName = "Arial";
 using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
 using (Document document = new Document(fs))
 {
 	PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
-	// Specify Default Font Name
+	// حدد اسم الخط الافتراضي
 	pdfSaveOptions.DefaultFontName = newName;
 	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 }
 ```
 
-## Conclusion
+## خاتمة
 
-Setting a default font in PDF documents using Aspose.PDF for .NET is a simple and effective way to ensure that the text is displayed correctly, even if the original fonts are not available. By following the step-by-step guide and using the provided C# source code, developers can easily set the default font and create PDFs that offer a consistent and reliable viewing experience across different environments. This feature is particularly useful in scenarios where the PDFs will be viewed or printed on various systems that may have different font sets installed.
+يعد تعيين خط افتراضي في مستندات PDF باستخدام Aspose.PDF لـ .NET طريقة بسيطة وفعالة لضمان عرض النص بشكل صحيح، حتى إذا لم تكن الخطوط الأصلية متوفرة. من خلال اتباع الدليل خطوة بخطوة واستخدام كود مصدر C# المقدم، يمكن للمطورين بسهولة تعيين الخط الافتراضي وإنشاء ملفات PDF التي توفر تجربة عرض متسقة وموثوقة عبر بيئات مختلفة. تعتبر هذه الميزة مفيدة بشكل خاص في السيناريوهات التي سيتم فيها عرض ملفات PDF أو طباعتها على أنظمة مختلفة قد تكون بها مجموعات خطوط مختلفة مثبتة.
 
-### FAQ's for set default font in PDF file
+### الأسئلة الشائعة لتعيين الخط الافتراضي في ملف PDF
 
-#### Q: Why is setting a default font important in PDF documents?
+#### س: لماذا يعد تعيين الخط الافتراضي مهمًا في مستندات PDF؟
 
-A: Setting a default font in PDF documents is important because it ensures that the text will be displayed correctly even if the original fonts are not available on the system where the PDF is being viewed or printed. It helps prevent issues like missing or garbled text, ensuring a consistent and reliable viewing experience.
+ج: يعد تعيين الخط الافتراضي في مستندات PDF أمرًا مهمًا لأنه يضمن عرض النص بشكل صحيح حتى إذا لم تكن الخطوط الأصلية متوفرة على النظام الذي يتم فيه عرض ملف PDF أو طباعته. فهو يساعد على منع حدوث مشكلات مثل النص المفقود أو المشوه، مما يضمن تجربة مشاهدة متسقة وموثوقة.
 
-#### Q: Can I choose any font as the default font using Aspose.PDF for .NET?
+#### س: هل يمكنني اختيار أي خط ليكون الخط الافتراضي باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can choose any font that is available on the system as the default font using Aspose.PDF for .NET. Simply specify the name of the font in the `DefaultFontName` property of the `PdfSaveOptions` class.
+ ج: نعم، يمكنك اختيار أي خط متوفر على النظام كخط افتراضي باستخدام Aspose.PDF لـ .NET. ما عليك سوى تحديد اسم الخط في ملف`DefaultFontName` ملكية`PdfSaveOptions` فصل.
 
-#### Q: What happens if the specified default font is not available on the system?
+#### س: ماذا يحدث إذا كان الخط الافتراضي المحدد غير متوفر على النظام؟
 
-A: If the specified default font is not available on the system, the PDF viewer will use a fallback font to display the text. It is advisable to choose a commonly available font like Arial or Times New Roman to ensure compatibility across different systems.
+ج: إذا لم يكن الخط الافتراضي المحدد متاحًا على النظام، فسيستخدم عارض PDF خطًا احتياطيًا لعرض النص. يُنصح باختيار خط متاح بشكل شائع مثل Arial أو Times New Roman لضمان التوافق عبر الأنظمة المختلفة.

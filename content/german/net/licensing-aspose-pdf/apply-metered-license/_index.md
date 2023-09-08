@@ -1,128 +1,128 @@
 ---
-title: Configure Metered License Keys In PDF File
-linktitle: Configure Metered License Keys In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to set up a metered license keys in PDF file with Aspose.PDF for .NET and benefit from advanced features.
+title: Konfigurieren Sie gemessene Lizenzschlüssel in einer PDF-Datei
+linktitle: Konfigurieren Sie gemessene Lizenzschlüssel in einer PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Schritt-für-Schritt-Anleitung zum Einrichten eines gemessenen Lizenzschlüssels in einer PDF-Datei mit Aspose.PDF für .NET und zum Profitieren von erweiterten Funktionen.
 type: docs
 weight: 10
 url: /de/net/licensing-aspose-pdf/configure-metered-license/
 ---
-In this tutorial, we will walk you through step-by-step how to set up a metered license keys in PDF file with Aspose.PDF for .NET. The metered license allows you to use the advanced features of Aspose.PDF based on your actual consumption.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch die Einrichtung eines gemessenen Lizenzschlüssels in einer PDF-Datei mit Aspose.PDF für .NET. Mit der gemessenen Lizenz können Sie die erweiterten Funktionen von Aspose.PDF basierend auf Ihrem tatsächlichen Verbrauch nutzen.
 
-### Step 1: Configuring License Keys
+### Schritt 1: Lizenzschlüssel konfigurieren
 
-In the source code provided, you must specify the public and private keys of the metered license. Replace the "*****" values with your own keys. These keys will be provided to you when you purchase a metered license from Aspose.
+Im bereitgestellten Quellcode müssen Sie den öffentlichen und privaten Schlüssel der gemessenen Lizenz angeben. Ersetze das "*****"-Werte mit Ihren eigenen Schlüsseln. Diese Schlüssel werden Ihnen beim Kauf einer Messlizenz von Aspose zur Verfügung gestellt.
 
 ```csharp
 Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
 metered.SetMeteredKey("PUBLIC_KEY", "PRIVATE_KEY");
 ```
 
-### Step 2: Loading the document
+### Schritt 2: Laden des Dokuments
 
-Load the PDF document from disk using the `Document` class of Aspose.PDF.
+ Laden Sie das PDF-Dokument mit von der Festplatte`Document` Klasse von Aspose.PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-### Step 3: Get Document Page Count
+### Schritt 3: Ermitteln Sie die Seitenzahl des Dokuments
 
-Use the `Count` property of the `Pages` collection to get the total number of pages in the document.
+ Benutzen Sie die`Count` Eigentum der`Pages` Sammlung, um die Gesamtzahl der Seiten im Dokument zu erhalten.
 
 ```csharp
 Console.WriteLine(doc.Pages.Count);
 ```
 
-### Sample source code for Configure Metered License using Aspose.PDF for .NET 
+### Beispielquellcode für die Konfiguration einer gemessenen Lizenz mit Aspose.PDF für .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// set metered public and private keys
+// Legen Sie gemessene öffentliche und private Schlüssel fest
 Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
-// Access the setMeteredKey property and pass public and private keys as parameters
+//Greifen Sie auf die Eigenschaft setMeteredKey zu und übergeben Sie öffentliche und private Schlüssel als Parameter
 metered.SetMeteredKey("*****", "*****");
-// Load the document from disk.
+// Laden Sie das Dokument von der Festplatte.
 Document doc = new Document(dataDir + "input.pdf");
-//Get the page count of document
+//Ermitteln Sie die Seitenzahl des Dokuments
 Console.WriteLine(doc.Pages.Count);
 
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we explained how to set up a metered license with Aspose.PDF for .NET. By using a metered license, you can benefit from the advanced features of Aspose.PDF based on your actual usage. Make sure to provide valid license keys to use Aspose.PDF with all its features.
+In diesem Tutorial haben wir erklärt, wie man mit Aspose.PDF für .NET eine getaktete Lizenz einrichtet. Durch die Verwendung einer gebührenpflichtigen Lizenz können Sie basierend auf Ihrer tatsächlichen Nutzung von den erweiterten Funktionen von Aspose.PDF profitieren. Stellen Sie sicher, dass Sie gültige Lizenzschlüssel bereitstellen, um Aspose.PDF mit all seinen Funktionen nutzen zu können.
 
-### FAQ's for configure metered license keys in PDF file
+### FAQs zum Konfigurieren gemessener Lizenzschlüssel in einer PDF-Datei
 
-#### Q: What is a metered license in Aspose.PDF?
+#### F: Was ist eine gemessene Lizenz in Aspose.PDF?
 
-A: A metered license in Aspose.PDF is a licensing model that allows you to pay based on your actual consumption of features rather than a fixed license fee. It enables you to use advanced features of Aspose.PDF while paying only for what you use.
+A: Bei einer gebührenpflichtigen Lizenz in Aspose.PDF handelt es sich um ein Lizenzmodell, bei dem Sie statt einer festen Lizenzgebühr auf der Grundlage Ihrer tatsächlichen Nutzung von Funktionen bezahlen können. Damit können Sie die erweiterten Funktionen von Aspose.PDF nutzen und nur für das bezahlen, was Sie auch nutzen.
 
-#### Q: Why should I use a metered license for Aspose.PDF?
+#### F: Warum sollte ich eine getaktete Lizenz für Aspose.PDF verwenden?
 
-A: Using a metered license offers cost savings and flexibility. You pay only for the features you use, making it suitable for projects with varying demands. It eliminates the need for upfront licensing fees and allows you to access advanced PDF features.
+A: Die Verwendung einer gebührenpflichtigen Lizenz bietet Kosteneinsparungen und Flexibilität. Sie zahlen nur für die von Ihnen genutzten Funktionen, sodass es für Projekte mit unterschiedlichen Anforderungen geeignet ist. Dadurch entfallen vorab Lizenzgebühren und Sie können auf erweiterte PDF-Funktionen zugreifen.
 
-#### Q: How do I obtain metered license keys?
+#### F: Wie erhalte ich kostenpflichtige Lizenzschlüssel?
 
-A: When you purchase a metered license from Aspose, you will receive a pair of public and private keys. These keys will be used to authenticate and enable metered licensing for your Aspose.PDF application.
+A: Wenn Sie eine gebührenpflichtige Lizenz von Aspose erwerben, erhalten Sie ein Paar öffentlicher und privater Schlüssel. Diese Schlüssel werden zur Authentifizierung und Aktivierung der getakteten Lizenzierung Ihrer Aspose.PDF-Anwendung verwendet.
 
-#### Q: How do I configure metered license keys in Aspose.PDF for .NET?
+#### F: Wie konfiguriere ich gemessene Lizenzschlüssel in Aspose.PDF für .NET?
 
-A: To configure metered license keys, use the `SetMeteredKey` method of the `Aspose.Pdf.Metered` class. Replace `"PUBLIC_KEY"` and `"PRIVATE_KEY"` with your actual keys.
+ A: Um gemessene Lizenzschlüssel zu konfigurieren, verwenden Sie die`SetMeteredKey` Methode der`Aspose.Pdf.Metered` Klasse. Ersetzen`"PUBLIC_KEY"` Und`"PRIVATE_KEY"` mit Ihren tatsächlichen Schlüsseln.
 
 ```csharp
 Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
 metered.SetMeteredKey("PUBLIC_KEY", "PRIVATE_KEY");
 ```
 
-#### Q: How do I load a PDF document using Aspose.PDF for .NET?
+#### F: Wie lade ich ein PDF-Dokument mit Aspose.PDF für .NET?
 
-A: To load a PDF document from disk, use the `Document` class of Aspose.PDF and provide the file path.
+ A: Um ein PDF-Dokument von der Festplatte zu laden, verwenden Sie die`Document` Klasse von Aspose.PDF und geben Sie den Dateipfad an.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-#### Q: How do I get the total page count of a PDF document?
+#### F: Wie erhalte ich die Gesamtseitenzahl eines PDF-Dokuments?
 
-A: To get the total page count of a PDF document, use the `Count` property of the `Pages` collection.
+ A: Um die Gesamtseitenzahl eines PDF-Dokuments zu ermitteln, verwenden Sie die`Count` Eigentum der`Pages` Sammlung.
 
 ```csharp
 int pageCount = doc.Pages.Count;
 Console.WriteLine("Total pages: " + pageCount);
 ```
 
-#### Q: Can I use metered licensing for other Aspose products?
+#### F: Kann ich die getaktete Lizenzierung für andere Aspose-Produkte verwenden?
 
-A: Yes, metered licensing is available for various Aspose products, allowing you to pay based on your usage for a wide range of features.
+A: Ja, für verschiedene Aspose-Produkte ist eine stundenweise Lizenzierung verfügbar, sodass Sie für eine Vielzahl von Funktionen basierend auf Ihrer Nutzung bezahlen können.
 
-#### Q: Is a metered license suitable for all types of projects?
+#### F: Ist eine gebührenpflichtige Lizenz für alle Arten von Projekten geeignet?
 
-A: Metered licensing is suitable for projects with varying feature usage. It may not be cost-effective for projects with consistent, high-feature usage.
+A: Die getaktete Lizenzierung eignet sich für Projekte mit unterschiedlicher Funktionsnutzung. Für Projekte mit konsistenter Nutzung zahlreicher Funktionen ist dies möglicherweise nicht kosteneffektiv.
 
-#### Q: Where can I find more information about Aspose.PDF metered licensing?
+#### F: Wo finde ich weitere Informationen zur gebührenpflichtigen Lizenzierung von Aspose.PDF?
 
-A: For more information about metered licensing, pricing, and benefits, visit the [Aspose.PDF Metered Licensing](https://purchase.aspose.com/pricing/pdf/net) page.
+ A: Weitere Informationen zu gebührenpflichtiger Lizenzierung, Preisen und Vorteilen finden Sie unter[Aspose.PDF-Metered-Lizenzierung](https://purchase.aspose.com/pricing/pdf/net) Seite.
 
-#### Q: How do I ensure the security of my metered license keys?
+#### F: Wie stelle ich die Sicherheit meiner gemessenen Lizenzschlüssel sicher?
 
-A: Metered license keys are used for authentication and are sensitive information. Ensure they are kept confidential and not shared publicly.
+A: Bezahlte Lizenzschlüssel werden zur Authentifizierung verwendet und stellen vertrauliche Informationen dar. Stellen Sie sicher, dass sie vertraulich behandelt und nicht öffentlich geteilt werden.
 
-#### Q: Can I switch between traditional and metered licensing?
+#### F: Kann ich zwischen herkömmlicher und gebührenpflichtiger Lizenzierung wechseln?
 
-A: Yes, you can switch between traditional licensing and metered licensing for Aspose.PDF based on your project's requirements.
+A: Ja, Sie können für Aspose.PDF je nach den Anforderungen Ihres Projekts zwischen der herkömmlichen Lizenzierung und der getakteten Lizenzierung wechseln.
 
-#### Q: Can I use a trial version before purchasing a metered license?
+#### F: Kann ich eine Testversion verwenden, bevor ich eine gebührenpflichtige Lizenz kaufe?
 
-A: Yes, you can try the [free trial version](https://products.aspose.com/pdf/net) of Aspose.PDF to evaluate its features and functionality before purchasing a metered license.
+ A: Ja, Sie können es versuchen[kostenlose Testversion](https://products.aspose.com/pdf/net) von Aspose.PDF, um dessen Merkmale und Funktionalitäten zu bewerten, bevor Sie eine gebührenpflichtige Lizenz erwerben.
 
-#### Q: How often should I configure metered license keys?
+#### F: Wie oft sollte ich gemessene Lizenzschlüssel konfigurieren?
 
-A: You need to configure metered license keys only once when your application starts. It provides access to the advanced features throughout the application's runtime.
+A: Sie müssen gemessene Lizenzschlüssel nur einmal konfigurieren, wenn Ihre Anwendung gestartet wird. Es bietet Zugriff auf die erweiterten Funktionen während der gesamten Laufzeit der Anwendung.
 
-#### Q: Can I apply metered licensing to an existing application?
+#### F: Kann ich eine getaktete Lizenzierung auf eine bestehende Anwendung anwenden?
 
-A: Yes, you can integrate metered licensing into an existing Aspose.PDF application to benefit from its advantages.
+A: Ja, Sie können die getaktete Lizenzierung in eine bestehende Aspose.PDF-Anwendung integrieren, um von deren Vorteilen zu profitieren.

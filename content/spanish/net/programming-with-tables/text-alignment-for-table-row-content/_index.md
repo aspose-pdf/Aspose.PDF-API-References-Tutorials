@@ -1,45 +1,45 @@
 ---
-title: Text Alignment For Table Row Content
-linktitle: Text Alignment For Table Row Content
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to align row content in a PDF table using Aspose.PDF for .NET.
+title: Alineación de texto para el contenido de la fila de la tabla
+linktitle: Alineación de texto para el contenido de la fila de la tabla
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a alinear el contenido de las filas en una tabla PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 210
 url: /es/net/programming-with-tables/text-alignment-for-table-row-content/
 ---
-In this tutorial, we will guide you step by step to align the contents of a row in a table of a PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+En este tutorial, lo guiaremos paso a paso para alinear el contenido de una fila en una tabla de un documento PDF usando Aspose.PDF para .NET. Explicaremos el código fuente de C# proporcionado y le mostraremos cómo implementarlo.
 
-## Step 1: Creating the PDF document
-First, we'll create the PDF document:
+## Paso 1: crear el documento PDF
+Primero, crearemos el documento PDF:
 
 ```csharp
 var dataDir = "YOUR DOCUMENTS DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Step 2: Table initialization
-Next, we will initialize the table:
+## Paso 2: inicialización de la tabla
+A continuación, inicializaremos la tabla:
 
 ```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 ```
 
-## Step 3: Setting the table border color
-We will configure the table border color:
+## Paso 3: configurar el color del borde de la mesa
+Configuraremos el color del borde de la tabla:
 
 ```csharp
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-## Step 4: Configuring the table cell border
-We are going to configure the table cell border:
+## Paso 4: Configurar el borde de la celda de la tabla
+Vamos a configurar el borde de la celda de la tabla:
 
 ```csharp
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-## Step 5: Loop to add 10 rows to the table
-We will now use a loop to add 10 rows to the table:
+## Paso 5: bucle para agregar 10 filas a la tabla
+Ahora usaremos un bucle para agregar 10 filas a la tabla:
 
 ```csharp
 for (int row_count = 0; row_count < 10; row_count++)
@@ -53,15 +53,15 @@ for (int row_count = 0; row_count < 10; row_count++)
 }
 ```
 
-## Step 6: Configuring the vertical line alignment
-We are going to configure the vertical alignment of the rows of the table:
+## Paso 6: Configurar la alineación de la línea vertical
+Vamos a configurar la alineación vertical de las filas de la tabla:
 
 ```csharp
 row.VerticalAlignment = VerticalAlignment.Center;
 ```
 
-## Step 7: Adding content to row cells
-We are going to add content to the row cells:
+## Paso 7: agregar contenido a las celdas de la fila
+Vamos a agregar contenido a las celdas de la fila:
 
 ```csharp
 row.Cells.Add("Column("+row_count+",1)"+DateTime.Now.Ticks);
@@ -69,38 +69,38 @@ row.Cells.Add("Column("+row_count+",2)");
 row.Cells.Add("Column("+row_count+",3)");
 ```
 
-## Step 8: Adding the table to the document page
-Now let's add the table to the document page:
+## Paso 8: Agregar la tabla a la página del documento
+Ahora agreguemos la tabla a la página del documento:
 
 ```csharp
 Page tocPage = doc.Pages.Add();
 tocPage.Paragraphs.Add(table);
 ```
 
-## Step 9: Saving the PDF document
-Finally, we will save the PDF document:
+## Paso 9: Guardar el documento PDF
+Finalmente guardaremos el documento PDF:
 
 ```csharp
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-### Example source code for Text Alignment For Table Row Content using Aspose.PDF for .NET
+### Código fuente de ejemplo para alineación de texto para contenido de fila de tabla usando Aspose.PDF para .NET
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create PDF document
+// Crear documento PDF
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-// Initializes a new instance of the Table
+// Inicializa una nueva instancia de la tabla.
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Set the table border color as LightGray
+// Establecer el color del borde de la mesa como LightGray
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// set the border for table cells
+// establecer el borde de las celdas de la tabla
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// create a loop to add 10 rows
+// crear un bucle para agregar 10 filas
 for (int row_count = 0; row_count < 10; row_count++)
 {
-	// add row to table
+	// agregar fila a la tabla
 	Aspose.Pdf.Row row = table.Rows.Add();
 	row.VerticalAlignment = VerticalAlignment.Center;
 
@@ -109,33 +109,33 @@ for (int row_count = 0; row_count < 10; row_count++)
 	row.Cells.Add("Column (" + row_count + ", 3)");
 }
 Page tocPage = doc.Pages.Add();
-// Add table object to first page of input document
+// Agregar objeto de tabla a la primera página del documento de entrada
 tocPage.Paragraphs.Add(table);
-// Save updated document containing table object
+// Guardar documento actualizado que contiene el objeto de tabla
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to align the contents of a row in a table in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to create a document, initialize a table, configure border and alignment, add content, and save the PDF document. Now you can apply this knowledge to your own projects.
+## Conclusión
+¡Enhorabuena! Ahora ha aprendido cómo alinear el contenido de una fila en una tabla en un documento PDF usando Aspose.PDF para .NET. Esta guía paso a paso le mostró cómo crear un documento, inicializar una tabla, configurar el borde y la alineación, agregar contenido y guardar el documento PDF. Ahora puedes aplicar este conocimiento a tus propios proyectos.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: How can I align the contents of the table cells horizontally?
+#### P: ¿Cómo puedo alinear horizontalmente el contenido de las celdas de la tabla?
 
-A: You can align the contents of the table cells horizontally by setting the `HorizontalAlign` property of the cell's `TextState` object. For example, to center-align the text, use `cell.TextState.HorizontalAlignment = HorizontalAlignment.Center`. You can also set it to `HorizontalAlignment.Left` or `HorizontalAlignment.Right` for left and right alignment, respectively.
+ R: Puede alinear el contenido de las celdas de la tabla horizontalmente configurando el`HorizontalAlign` propiedad de la célula`TextState` objeto. Por ejemplo, para alinear el texto al centro, utilice`cell.TextState.HorizontalAlignment = HorizontalAlignment.Center` . También puedes configurarlo en`HorizontalAlignment.Left` o`HorizontalAlignment.Right` para alineación izquierda y derecha, respectivamente.
 
-#### Q: Can I apply different border styles and colors to individual cells within the table?
+#### P: ¿Puedo aplicar diferentes estilos y colores de borde a celdas individuales dentro de la tabla?
 
-A: Yes, you can apply different border styles and colors to individual cells within the table. To customize the border for a specific cell, set the `cell.Border` property to a new `BorderInfo` object with the desired settings, such as border sides, width, and color.
+ R: Sí, puedes aplicar diferentes estilos y colores de borde a celdas individuales dentro de la tabla. Para personalizar el borde de una celda específica, establezca el`cell.Border` propiedad a una nueva`BorderInfo`objeto con la configuración deseada, como lados del borde, ancho y color.
 
-#### Q: How can I adjust the vertical alignment of the table content within the cells?
+#### P: ¿Cómo puedo ajustar la alineación vertical del contenido de la tabla dentro de las celdas?
 
-A: You can adjust the vertical alignment of the table content within the cells by setting the `VerticalAlignment` property of the row to `VerticalAlignment.Center`, `VerticalAlignment.Top`, or `VerticalAlignment.Bottom`. This property controls the vertical alignment of all cells in that row.
+ R: Puede ajustar la alineación vertical del contenido de la tabla dentro de las celdas configurando el`VerticalAlignment` propiedad de la fila a`VerticalAlignment.Center`, `VerticalAlignment.Top` , o`VerticalAlignment.Bottom`. Esta propiedad controla la alineación vertical de todas las celdas de esa fila.
 
-#### Q: Is it possible to add more columns or rows to the table dynamically?
+#### P: ¿Es posible agregar más columnas o filas a la tabla de forma dinámica?
 
-A: Yes, you can add more columns and rows to the table dynamically by using the `table.Rows.Add()` method to add new rows and the `row.Cells.Add()` method to add new cells to the rows. You can do this inside loops or based on your specific requirements.
+ R: Sí, puede agregar más columnas y filas a la tabla dinámicamente usando el`table.Rows.Add()` método para agregar nuevas filas y el`row.Cells.Add()` Método para agregar nuevas celdas a las filas. Puede hacer esto dentro de bucles o según sus requisitos específicos.
 
-#### Q: How can I set a background color for specific cells or the entire table?
+#### P: ¿Cómo puedo establecer un color de fondo para celdas específicas o para toda la tabla?
 
-A: To set a background color for specific cells or the entire table, use the `BackgroundColor` property of the `Cell` or `Table` object. For example, to set the background color of a cell, use `cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.
+ R: Para establecer un color de fondo para celdas específicas o para toda la tabla, use el`BackgroundColor` propiedad de la`Cell` o`Table` objeto. Por ejemplo, para establecer el color de fondo de una celda, use`cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.

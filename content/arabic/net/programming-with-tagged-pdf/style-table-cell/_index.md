@@ -1,52 +1,52 @@
 ---
-title: Style Table Cell
-linktitle: Style Table Cell
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to style table cells with Aspose.PDF for .NET. Step-by-step guide to creating and customizing tables.
+title: نمط خلية الجدول
+linktitle: نمط خلية الجدول
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تصميم خلايا الجدول باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة لإنشاء الجداول وتخصيصها.
 type: docs
 weight: 160
 url: /ar/net/programming-with-tagged-pdf/style-table-cell/
 ---
-Welcome to this detailed tutorial on formatting table cells using Aspose.PDF for .NET. In this guide, we will explain in detail each step of the provided C# source code to help you understand how to style table cells. Make sure you've installed Aspose.PDF for .NET and set up your development environment before you begin.
+مرحبًا بك في هذا البرنامج التعليمي التفصيلي حول تنسيق خلايا الجدول باستخدام Aspose.PDF لـ .NET. في هذا الدليل، سنشرح بالتفصيل كل خطوة من التعليمات البرمجية المصدر لـ C# لمساعدتك على فهم كيفية تصميم خلايا الجدول. تأكد من تثبيت Aspose.PDF لـ .NET وإعداد بيئة التطوير الخاصة بك قبل البدء.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+قبل أن تبدأ، تأكد من تكوين بيئة التطوير الخاصة بك لاستخدام Aspose.PDF لـ .NET. يتضمن ذلك تثبيت مكتبة Aspose.PDF وتكوين مشروعك للرجوع إليه.
 
-## Step 2: Creating a document
+## الخطوة 2: إنشاء مستند
 
-In this step, we will create a new document object Aspose.PDF.
+في هذه الخطوة، سنقوم بإنشاء كائن مستند جديد Aspose.PDF.
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Document creation
+// إنشاء الوثيقة
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example of table cell formatting");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We have created a new document and set the document title and language.
+لقد أنشأنا مستندًا جديدًا وقمنا بتعيين عنوان المستند ولغته.
 
-## Step 3: Obtaining the root structure element
+## الخطوة 3: الحصول على عنصر البنية الجذرية
 
-In this step we will get the root structure element for our document.
+في هذه الخطوة سوف نحصل على عنصر البنية الجذرية لمستندنا.
 
 ```csharp
-// Obtain the root structure element
+//الحصول على عنصر البنية الجذرية
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We got the root structure element which will serve as a container for the array elements.
+لقد حصلنا على عنصر البنية الجذرية الذي سيكون بمثابة حاوية لعناصر المصفوفة.
 
-## Step 4: Creating the array structure element
+## الخطوة 4: إنشاء عنصر هيكل الصفيف
 
-Now let's create a new table structure element for our document.
+لنقم الآن بإنشاء عنصر هيكل جدول جديد لمستندنا.
 
 ```csharp
-// Create the array structure element
+// إنشاء عنصر هيكل الصفيف
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
@@ -54,21 +54,21 @@ TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
 ```
 
-We have created a new array structure element and added it to the root structure element. We also created the table header, body, and footer elements.
+لقد أنشأنا عنصر بنية صفيف جديدًا وأضفناه إلى عنصر البنية الجذرية. لقد أنشأنا أيضًا عناصر رأس الجدول ونصه وتذييله.
 
-## Step 5: Adding table headers
+## الخطوة 5: إضافة رؤوس الجدول
 
-In this step we will add the table headers to our table.
+في هذه الخطوة سنقوم بإضافة رؤوس الجدول إلى طاولتنا.
 
 ```csharp
-// Number of rows and columns in the table
+// عدد الصفوف والأعمدة في الجدول
 int rowCount = 4;
 int colCount = 4;
 
 int rowIndex;
 int colIndex;
 
-// Create the table header row
+// قم بإنشاء صف رأس الجدول
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Header Row";
 
@@ -84,11 +84,11 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-We created a header row for our table and added header cells with formatting properties such as background color, borders, margins, and alignment.
+لقد أنشأنا صف رأس لجدولنا وأضفنا خلايا رأس بخصائص التنسيق مثل لون الخلفية والحدود والهوامش والمحاذاة.
 
-## Step 6: Adding the table body rows
+## الخطوة 6: إضافة صفوف نص الجدول
 
-Now let's add the table body rows to our table.
+الآن دعونا نضيف صفوف نص الجدول إلى طاولتنا.
 ```csharp
 for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 {
@@ -137,11 +137,11 @@ for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 }
 ```
 
-We added rows to the body of the table using loops to iterate over each table cell. We set formatting properties for each cell, such as background color, borders, margins, text alignment, etc.
+أضفنا صفوفًا إلى نص الجدول باستخدام حلقات للتكرار فوق كل خلية في الجدول. نقوم بتعيين خصائص التنسيق لكل خلية، مثل لون الخلفية والحدود والهوامش ومحاذاة النص وما إلى ذلك.
 
-## Step 7: Adding the footer
+## الخطوة 7: إضافة التذييل
 
-Finally, we'll add the table footer to our table.
+وأخيرًا، سنضيف تذييل الجدول إلى طاولتنا.
 
 ```csharp
 TableTRElement footTrElement = tableTFootElement.CreateTR();
@@ -154,50 +154,50 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-We created a footer for our table and added footer cells with text.
+لقد أنشأنا تذييلًا لجدولنا وأضفنا خلايا تذييل تحتوي على نص.
 
 
 
-## Step 8: Saving the tagged PDF document
+## الخطوة 8: حفظ مستند PDF الذي تم وضع علامة عليه
 
-Now that we've created our document with the styled table, we'll save it as a tagged PDF document.
+الآن بعد أن أنشأنا مستندنا بالجدول المصمم، سنقوم بحفظه كمستند PDF ذو علامات.
 
 ```csharp
-// Save the tagged PDF document
+// احفظ مستند PDF الذي تم وضع علامة عليه
 document.Save(dataDir + "StyleTableCell.pdf");
 ```
 
-We saved the tagged PDF document in the specified directory.
+لقد حفظنا مستند PDF الذي تم وضع علامة عليه في الدليل المحدد.
 
-## Step 9: PDF/UA compliance validation
+## الخطوة 9: التحقق من صحة التوافق مع PDF/UA
 
-Next, we will validate the PDF/UA conformity of our document.
+بعد ذلك، سوف نقوم بالتحقق من مطابقة PDF/UA لوثيقتنا.
 
 ```csharp
-// PDF/UA compliance check
+// فحص التوافق مع PDF/UA
 document = new Document(dataDir + "StyleTableCell.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableCell.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-We uploaded the tagged PDF document and validated its PDF/UA compliance by generating an XML report.
+لقد قمنا بتحميل مستند PDF الذي تم وضع علامة عليه وتحققنا من امتثاله لـ PDF/UA من خلال إنشاء تقرير XML.
 
-### Sample source code for Style Table Cell using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Style Table Cell باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create document
+// إنشاء مستند
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table cell style");
 taggedContent.SetLanguage("en-US");
 
-// Get root structure element
+// الحصول على عنصر هيكل الجذر
 StructureElement rootElement = taggedContent.RootElement;
 
-// Create table structure element
+// إنشاء عنصر هيكل الجدول
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
@@ -267,58 +267,58 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 	tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
 
-// Save Tagged Pdf Document
+// حفظ وثيقة PDF ذات العلامات
 document.Save(dataDir + "StyleTableCell.pdf");
 
-// Checking PDF/UA compliance
+// التحقق من توافق PDF/UA
 document = new Document(dataDir + "StyleTableCell.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableCell.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to style table cells using Aspose.PDF for .NET. We've seen how to create a document, add a table with headers, body rows, and a footer, and customize cell styles. Finally, we saved the tagged PDF document and validated its PDF/UA compliance. You can now use Aspose.PDF for .NET to create and style tables in your .NET applications.
+في هذا البرنامج التعليمي، تعلمنا كيفية تصميم خلايا الجدول باستخدام Aspose.PDF لـ .NET. لقد رأينا كيفية إنشاء مستند وإضافة جدول يحتوي على رؤوس وصفوف نص وتذييل وتخصيص أنماط الخلايا. أخيرًا، قمنا بحفظ مستند PDF الذي تم وضع علامة عليه وتحققنا من امتثاله لـ PDF/UA. يمكنك الآن استخدام Aspose.PDF لـ .NET لإنشاء الجداول وتصميمها في تطبيقات .NET الخاصة بك.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of this tutorial on formatting table cells using Aspose.PDF for .NET?
+#### س: ما هو الغرض من هذا البرنامج التعليمي حول تنسيق خلايا الجدول باستخدام Aspose.PDF لـ .NET؟
 
-A: This tutorial aims to provide a comprehensive guide on how to style table cells in a PDF document using the Aspose.PDF library for .NET. It covers step-by-step instructions and C# source code examples to help you understand and implement table cell formatting.
+ج: يهدف هذا البرنامج التعليمي إلى توفير دليل شامل حول كيفية تصميم خلايا الجدول في مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. وهو يغطي إرشادات خطوة بخطوة وأمثلة التعليمات البرمجية المصدر لـ C# لمساعدتك على فهم تنسيق خلايا الجدول وتنفيذه.
 
-#### Q: What are the prerequisites for following this tutorial?
+#### س: ما هي المتطلبات الأساسية لمتابعة هذا البرنامج التعليمي؟
 
-A: Before you begin, ensure that you have installed Aspose.PDF for .NET and have set up your development environment. This includes configuring your project to reference the Aspose.PDF library.
+ج: قبل أن تبدأ، تأكد من أنك قمت بتثبيت Aspose.PDF لـ .NET وقمت بإعداد بيئة التطوير الخاصة بك. يتضمن ذلك تكوين مشروعك للإشارة إلى مكتبة Aspose.PDF.
 
-#### Q: How do I create a new PDF document using Aspose.PDF for .NET?
+#### س: كيف يمكنني إنشاء مستند PDF جديد باستخدام Aspose.PDF لـ .NET؟
 
-A: To create a new PDF document, you need to instantiate a `Document` object from the Aspose.PDF library. The provided C# source code demonstrates how to create a document and set its title and language.
+ج: لإنشاء مستند PDF جديد، تحتاج إلى إنشاء نسخة`Document` كائن من مكتبة Aspose.PDF. يوضح كود مصدر C# المقدم كيفية إنشاء مستند وتعيين عنوانه ولغته.
 
-#### Q: What is the significance of the root structure element in a PDF document?
+#### س: ما هي أهمية عنصر البنية الجذرية في مستند PDF؟
 
-A: The root structure element serves as a container for other structure elements, helping organize and categorize the content of the PDF document. It plays a crucial role in establishing the logical structure of the document.
+ج: يعمل عنصر البنية الجذرية كحاوية لعناصر البنية الأخرى، مما يساعد على تنظيم وتصنيف محتوى مستند PDF. إنه يلعب دورًا حاسمًا في إنشاء البنية المنطقية للوثيقة.
 
-#### Q: How can I create a table structure element and customize its appearance using Aspose.PDF for .NET?
+#### س: كيف يمكنني إنشاء عنصر هيكل جدول وتخصيص مظهره باستخدام Aspose.PDF لـ .NET؟
 
-A: You can create a table structure element using the `CreateTableElement()` method. The provided source code demonstrates how to customize the appearance of the table, including its header, body, and footer, by setting properties such as background color, borders, margins, and alignment.
+ ج: يمكنك إنشاء عنصر هيكل الجدول باستخدام ملف`CreateTableElement()` طريقة. يوضح الكود المصدري المقدم كيفية تخصيص مظهر الجدول، بما في ذلك رأسه ونصه وتذييله، عن طريق تعيين خصائص مثل لون الخلفية والحدود والهوامش والمحاذاة.
 
-#### Q: Can I add multiple rows and columns to the table body and customize their formatting?
+#### س: هل يمكنني إضافة صفوف وأعمدة متعددة إلى نص الجدول وتخصيص تنسيقها؟
 
-A: Yes, the tutorial demonstrates how to add multiple rows and columns to the table body using loops. It also provides examples of customizing cell formatting, such as background color, borders, text alignment, font style, and more.
+ج: نعم، يوضح البرنامج التعليمي كيفية إضافة صفوف وأعمدة متعددة إلى نص الجدول باستخدام الحلقات. كما يوفر أيضًا أمثلة لتخصيص تنسيق الخلايا، مثل لون الخلفية والحدود ومحاذاة النص ونمط الخط والمزيد.
 
-#### Q: What is the purpose of validating PDF/UA compliance, and how can I perform this validation?
+#### س: ما هو الغرض من التحقق من صحة توافق PDF/UA، وكيف يمكنني إجراء هذا التحقق من الصحة؟
 
-A: Validating PDF/UA compliance ensures that the PDF document adheres to accessibility standards, making it more accessible to users with disabilities. The tutorial shows how to validate PDF/UA conformity using the `Validate()` method and generate an XML report.
+ ج: يضمن التحقق من توافق PDF/UA أن مستند PDF يلتزم بمعايير إمكانية الوصول، مما يجعله في متناول المستخدمين ذوي الإعاقة. يوضح البرنامج التعليمي كيفية التحقق من صحة مطابقة PDF/UA باستخدام ملف`Validate()` الطريقة وإنشاء تقرير XML.
 
-#### Q: How can I apply these concepts to my own .NET applications?
+#### س: كيف يمكنني تطبيق هذه المفاهيم على تطبيقات .NET الخاصة بي؟
 
-A: You can use the provided C# source code examples as a guide to implementing table cell formatting in your own .NET applications. Customize the code as needed to suit your requirements and integrate it into your projects.
+ج: يمكنك استخدام أمثلة التعليمات البرمجية المصدر C# المتوفرة كدليل لتنفيذ تنسيق خلايا الجدول في تطبيقات .NET الخاصة بك. قم بتخصيص الكود حسب الحاجة ليناسب متطلباتك ودمجه في مشاريعك.
 
-#### Q: Are there any recommended best practices for styling table cells in PDF documents?
+#### س: هل هناك أي أفضل الممارسات الموصى بها لتصميم خلايا الجدول في مستندات PDF؟
 
-A: When styling table cells, consider the needs of your audience, including accessibility requirements. Use contrasting colors, appropriate fonts, and clear cell alignment to enhance readability. Additionally, validate PDF/UA compliance to ensure accessibility standards are met.
+ج: عند تصميم خلايا الجدول، ضع في اعتبارك احتياجات جمهورك، بما في ذلك متطلبات إمكانية الوصول. استخدم الألوان المتباينة والخطوط المناسبة ومحاذاة الخلايا الواضحة لتحسين إمكانية القراءة. بالإضافة إلى ذلك، التحقق من صحة توافق PDF/UA لضمان استيفاء معايير إمكانية الوصول.
 
-#### Q: What other features of Aspose.PDF for .NET can I explore for PDF document manipulation?
+#### س: ما هي الميزات الأخرى لـ Aspose.PDF لـ .NET التي يمكنني استكشافها لمعالجة مستندات PDF؟
 
-A: Aspose.PDF for .NET offers a wide range of features for PDF document manipulation, including text extraction, image insertion, form field management, digital signatures, and more. Explore the official documentation and resources to learn about additional functionalities.
+ج: يوفر Aspose.PDF for .NET نطاقًا واسعًا من الميزات لمعالجة مستندات PDF، بما في ذلك استخراج النص وإدراج الصور وإدارة حقل النموذج والتوقيعات الرقمية والمزيد. استكشف الوثائق والموارد الرسمية للتعرف على الوظائف الإضافية.

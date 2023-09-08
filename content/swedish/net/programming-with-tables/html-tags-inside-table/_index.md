@@ -1,19 +1,19 @@
 ---
-title: HTML Tags Inside Table In PDF File
-linktitle: HTML Tags Inside Table In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use HTML tags inside a table in PDF file with Aspose.PDF for .NET.
+title: HTML-taggar inuti tabellen i PDF-fil
+linktitle: HTML-taggar inuti tabellen i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du använder HTML-taggar i en tabell i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 100
 url: /sv/net/programming-with-tables/html-tags-inside-table/
 ---
-In this tutorial, we are going to learn how to use HTML tags inside a table in a PDF document using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to insert HTML content into a table in a PDF document. Let's start!
+den här handledningen ska vi lära oss hur man använder HTML-taggar i en tabell i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara källkoden i C# steg för steg. I slutet av denna handledning kommer du att veta hur du infogar HTML-innehåll i en tabell i ett PDF-dokument. Låt oss börja!
 
-## Step 1: Setting up the environment
-Make sure you have configured your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## Steg 1: Sätta upp miljön
+Se till att du har konfigurerat din C#-utvecklingsmiljö med Aspose.PDF för .NET. Lägg till referensen till biblioteket och importera de nödvändiga namnrymden.
 
-## Step 2: Creating table data
-We create a DataTable containing a "data" column of type String. We then add rows to this DataTable using HTML content.
+## Steg 2: Skapa tabelldata
+Vi skapar en DataTable som innehåller en "data" kolumn av typen String. Vi lägger sedan till rader i denna datatabell med HTML-innehåll.
 
 ```csharp
 DataTable dt = new DataTable("Employee");
@@ -30,8 +30,8 @@ dr[0] = "<li>UPHS/Presbyterian - Dept. of Emergency Medicine: 51 N. 39th Street 
 dt.Rows.Add(dr);
 ```
 
-## Step 3: Creating the Document and Table
-We create a new PDF document and add a page in this document. Next, we initialize an instance of the Table class and set the table properties.
+## Steg 3: Skapa dokumentet och tabellen
+Vi skapar ett nytt PDF-dokument och lägger till en sida i detta dokument. Därefter initierar vi en instans av klassen Tabell och ställer in tabellegenskaperna.
 
 ```csharp
 Document doc = new Document();
@@ -48,31 +48,31 @@ margin. Bottom = 1.0F;
 tableProvider. DefaultCellPadding = margin;
 ```
 
-## Step 4: Importing data into the table
-We import the data from the DataTable into the table using the "ImportDataTable" method. We specify method parameters to indicate which range of rows and columns of the DataTable should be imported.
+## Steg 4: Importera data till tabellen
+Vi importerar data från DataTable till tabellen med metoden "ImportDataTable". Vi anger metodparametrar för att indikera vilket rad- och kolumnområde i DataTable som ska importeras.
 
 ```csharp
 tableProvider.ImportDataTable(dt, false, 0, 0, 3, 1, true);
 ```
 
-## Step 5: Adding the table to the document
-We add the table to the document page.
+## Steg 5: Lägga till tabellen i dokumentet
+Vi lägger till tabellen på dokumentsidan.
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(tableProvider);
 ```
 
-## Stage 6: Saving the document
-We save the PDF document with the table containing HTML content.
+## Steg 6: Spara dokumentet
+Vi sparar PDF-dokumentet med tabellen som innehåller HTML-innehåll.
 
 ```csharp
 doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 ```
 
-### Example source code for HTML Tags Inside Table using Aspose.PDF for .NET
+### Exempel på källkod för HTML-taggar Inside Table med Aspose.PDF för .NET
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 DataTable dt = new DataTable("Employee");
@@ -90,13 +90,13 @@ dt.Rows.Add(dr);
 
 Document doc = new Document();
 doc.Pages.Add();
-// Initializes a new instance of the Table
+// Initierar en ny instans av tabellen
 Aspose.Pdf.Table tableProvider = new Aspose.Pdf.Table();
-//Set column widths of the table
+//Ställ in tabellens kolumnbredd
 tableProvider.ColumnWidths = "400 50 ";
-// Set the table border color as LightGray
+// Ställ in bordets kantfärg som ljusgrå
 tableProvider.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.5F, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// Set the border for table cells
+// Ställ in gränsen för tabellceller
 tableProvider.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.5F, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 2.5F;
@@ -110,27 +110,27 @@ doc.Pages[1].Paragraphs.Add(tableProvider);
 doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 ```
 
-## Conclusion
-In this tutorial, we learned how to use HTML tags inside a table in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to insert HTML content into table cells in a PDF document using C#.
+## Slutsats
+I den här handledningen lärde vi oss hur man använder HTML-taggar i en tabell i ett PDF-dokument med Aspose.PDF för .NET. Du kan använda den här steg-för-steg-guiden för att infoga HTML-innehåll i tabellceller i ett PDF-dokument med C#.
 
-### FAQs for HTML tags inside table in PDF file
+### Vanliga frågor om HTML-taggar i tabell i PDF-fil
 
-#### Q: Can I use other HTML tags and attributes inside the table cells?
+#### F: Kan jag använda andra HTML-taggar och attribut i tabellcellerna?
 
-A: Yes, you can use various HTML tags and attributes inside the table cells, such as `<b>`, `<i>`, `<a>`, and many more. Aspose.PDF for .NET supports a wide range of HTML elements and styles that you can use to format the content within the table cells.
+ S: Ja, du kan använda olika HTML-taggar och attribut inuti tabellcellerna, som t.ex`<b>`, `<i>`, `<a>`och många fler. Aspose.PDF för .NET stöder ett brett utbud av HTML-element och stilar som du kan använda för att formatera innehållet i tabellcellerna.
 
-#### Q: Can I apply CSS styles to the HTML content inside the table cells?
+#### F: Kan jag tillämpa CSS-stilar på HTML-innehållet i tabellcellerna?
 
-A: Yes, you can apply CSS styles to the HTML content inside the table cells. Aspose.PDF for .NET provides support for basic CSS styles that can be applied to the HTML elements.
+S: Ja, du kan använda CSS-stilar på HTML-innehållet i tabellcellerna. Aspose.PDF för .NET ger stöd för grundläggande CSS-stilar som kan appliceras på HTML-elementen.
 
-#### Q: Is it possible to add images along with HTML content inside the table cells?
+#### F: Är det möjligt att lägga till bilder tillsammans med HTML-innehåll i tabellcellerna?
 
-A: Yes, you can add images along with HTML content inside the table cells. You can use HTML `<img>` tags to include images from various sources, such as local files or URLs.
+ S: Ja, du kan lägga till bilder tillsammans med HTML-innehåll i tabellcellerna. Du kan använda HTML`<img>` taggar för att inkludera bilder från olika källor, till exempel lokala filer eller webbadresser.
 
-#### Q: How can I specify different column widths for the table?
+#### F: Hur kan jag ange olika kolumnbredder för tabellen?
 
-A: You can specify different column widths for the table using the `ColumnWidths` property of the table. The property takes a string containing space-separated values, where each value represents the width of a column in points.
+ S: Du kan ange olika kolumnbredder för tabellen med hjälp av`ColumnWidths` tabellens egendom. Egenskapen tar en sträng som innehåller mellanslagsseparerade värden, där varje värde representerar bredden på en kolumn i punkter.
 
-#### Q: Can I use nested tables inside a cell with HTML content?
+#### F: Kan jag använda kapslade tabeller inuti en cell med HTML-innehåll?
 
-A: Yes, you can use nested tables inside a cell with HTML content. You can create separate table instances and add them as part of the HTML content inside a cell to achieve the nesting effect.
+S: Ja, du kan använda kapslade tabeller inuti en cell med HTML-innehåll. Du kan skapa separata tabellinstanser och lägga till dem som en del av HTML-innehållet i en cell för att uppnå kapslingseffekten.

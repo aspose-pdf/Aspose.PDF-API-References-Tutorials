@@ -1,58 +1,58 @@
 ---
-title: Extract Highlighted Text In PDF File
-linktitle: Extract Highlighted Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract highlighted text in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+title: Extrahieren Sie hervorgehobenen Text in einer PDF-Datei
+linktitle: Extrahieren Sie hervorgehobenen Text in einer PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie in dieser Schritt-für-Schritt-Anleitung, wie Sie mit Aspose.PDF für .NET hervorgehobenen Text in einer PDF-Datei extrahieren.
 type: docs
 weight: 60
 url: /de/net/annotations/extracthighlightedtext/
 ---
-To extract highlighted text in PDF file, you can use the Aspose.PDF for .NET API. This API provides a simple way to retrieve all the text that has been highlighted in a document.
+Um hervorgehobenen Text in einer PDF-Datei zu extrahieren, können Sie die Aspose.PDF für .NET-API verwenden. Diese API bietet eine einfache Möglichkeit, den gesamten Text abzurufen, der in einem Dokument hervorgehoben wurde.
 
-## Step 1: Load the PDF document
+## Schritt 1: Laden Sie das PDF-Dokument
 
-The first step in extracting highlighted text in PDF file is to load the document using the Aspose.PDF for .NET API. You can do this by creating a new instance of the `Document` class and passing the path to the PDF document as a parameter. 
+ Der erste Schritt beim Extrahieren von hervorgehobenem Text in einer PDF-Datei besteht darin, das Dokument mithilfe der Aspose.PDF für .NET-API zu laden. Sie können dies tun, indem Sie eine neue Instanz von erstellen`Document` Klasse und Übergabe des Pfads zum PDF-Dokument als Parameter. 
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir ="YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 ```
 
-## Step 2: Loop through all annotations
+## Schritt 2: Durchlaufen Sie alle Anmerkungen
 
-The next step is to loop through all the annotations in the PDF document. You can do this using a `foreach` loop, like so:
+ Der nächste Schritt besteht darin, alle Anmerkungen im PDF-Dokument zu durchlaufen. Sie können dies mit a tun`foreach` Schleife, etwa so:
 
 ```csharp
 foreach (Annotation annotation in doc.Pages[1].Annotations)
 {
-	// Code goes here
+	// Code kommt hierher
 }
 ```
 
-## Step 3: Filter text markup annotations
+## Schritt 3: Text-Markup-Anmerkungen filtern
 
-Inside the `foreach` loop, you will need to filter out all the annotations that are not text markup annotations. You can do this by checking if the annotation is an instance of the `TextMarkupAnnotation` class.
+ Im Inneren`foreach` In der Schleife müssen Sie alle Anmerkungen herausfiltern, die keine Textmarkierungsanmerkungen sind. Sie können dies tun, indem Sie prüfen, ob die Anmerkung eine Instanz von ist`TextMarkupAnnotation` Klasse.
 
 ```csharp
 if (annotation is TextMarkupAnnotation)
 {
-	// Code goes here
+	// Code kommt hierher
 }
 ```
 
-## Step 4: Retrieve highlighted text fragments
+## Schritt 4: Hervorgehobene Textfragmente abrufen
 
-Once you have filtered out all the text markup annotations, you can retrieve the highlighted text fragments for each annotation. You can do this by calling the `GetMarkedTextFragments()` method on the `TextMarkupAnnotation` object.
+ Nachdem Sie alle Text-Markup-Anmerkungen herausgefiltert haben, können Sie die hervorgehobenen Textfragmente für jede Anmerkung abrufen. Sie können dies tun, indem Sie die anrufen`GetMarkedTextFragments()` Methode auf der`TextMarkupAnnotation` Objekt.
 
 ```csharp
 TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
 TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
 ```
 
-## Step 5: Display the highlighted text
+## Schritt 5: Zeigen Sie den hervorgehobenen Text an
 
-Finally, you can display the highlighted text to the user. You can do this by looping through each `TextFragment` object in the `TextFragmentCollection` and calling the `Text` property.
+ Abschließend können Sie dem Benutzer den hervorgehobenen Text anzeigen. Sie können dies tun, indem Sie jeden durchlaufen`TextFragment` Objekt in der`TextFragmentCollection` und das Aufrufen des`Text` Eigentum.
 
 ```csharp
 foreach (TextFragment tf in collection)
@@ -61,10 +61,10 @@ foreach (TextFragment tf in collection)
 }
 ```
 
-### Example source code for Extract Highlighted Text using Aspose.PDF for .NET
+### Beispielquellcode zum Extrahieren von hervorgehobenem Text mit Aspose.PDF für .NET
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir ="YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 
@@ -82,28 +82,28 @@ foreach (Annotation annotation in doc.Pages[1].Annotations)
 }
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we explored how to extract highlighted text from a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and using the provided C# source code, developers can easily extract and manage highlighted text in their PDF documents.
+In diesem Tutorial haben wir untersucht, wie Sie mit Aspose.PDF für .NET hervorgehobenen Text aus einem PDF-Dokument extrahieren. Durch Befolgen der Schritt-für-Schritt-Anleitung und Verwendung des bereitgestellten C#-Quellcodes können Entwickler hervorgehobenen Text in ihren PDF-Dokumenten einfach extrahieren und verwalten.
 
-### FAQ's for extract highlighted text in PDF file
+### FAQs zum Extrahieren von hervorgehobenem Text in einer PDF-Datei
 
-#### Q: What are text markup annotations in a PDF document?
+#### F: Was sind Textmarkierungsanmerkungen in einem PDF-Dokument?
 
-A: Text markup annotations are annotations that highlight or mark specific text in a PDF document. Examples of text markup annotations include highlights, underlines, and strikethroughs.
+A: Textmarkup-Anmerkungen sind Anmerkungen, die bestimmten Text in einem PDF-Dokument hervorheben oder markieren. Beispiele für Textmarkierungsanmerkungen sind Hervorhebungen, Unterstreichungen und Durchstreichungen.
 
-#### Q: Can I extract text from other types of annotations using Aspose.PDF for .NET?
+#### F: Kann ich mit Aspose.PDF für .NET Text aus anderen Arten von Anmerkungen extrahieren?
 
-A: Yes, Aspose.PDF for .NET provides various methods to extract text from different types of annotations, including text markup annotations, free text annotations, and more.
+A: Ja, Aspose.PDF für .NET bietet verschiedene Methoden zum Extrahieren von Text aus verschiedenen Arten von Anmerkungen, einschließlich Textmarkierungsanmerkungen, Freitextanmerkungen und mehr.
 
-#### Q: Does Aspose.PDF for .NET support extracting text from password-protected PDF files?
+#### F: Unterstützt Aspose.PDF für .NET das Extrahieren von Text aus passwortgeschützten PDF-Dateien?
 
-A: Yes, Aspose.PDF for .NET supports extracting text from password-protected PDF files. You need to provide the correct password when loading the PDF document using the `Document` class.
+ A: Ja, Aspose.PDF für .NET unterstützt das Extrahieren von Text aus passwortgeschützten PDF-Dateien. Sie müssen das richtige Passwort angeben, wenn Sie das PDF-Dokument mit laden`Document` Klasse.
 
-#### Q: Can I filter highlighted text based on other criteria, such as color or author?
+#### F: Kann ich hervorgehobenen Text nach anderen Kriterien filtern, beispielsweise nach Farbe oder Autor?
 
-A: Yes, you can filter highlighted text based on other criteria, such as color, author, or creation date. Aspose.PDF for .NET provides methods to access and filter annotations based on their properties.
+A: Ja, Sie können hervorgehobenen Text nach anderen Kriterien filtern, z. B. nach Farbe, Autor oder Erstellungsdatum. Aspose.PDF für .NET bietet Methoden für den Zugriff auf und das Filtern von Anmerkungen basierend auf ihren Eigenschaften.
 
-#### Q: Is it possible to save the extracted highlighted text to a separate file?
+#### F: Ist es möglich, den extrahierten hervorgehobenen Text in einer separaten Datei zu speichern?
 
-A: Yes, you can save the extracted highlighted text to a separate file or store it in a data structure for further processing or analysis.
+A: Ja, Sie können den extrahierten hervorgehobenen Text in einer separaten Datei speichern oder ihn zur weiteren Verarbeitung oder Analyse in einer Datenstruktur speichern.

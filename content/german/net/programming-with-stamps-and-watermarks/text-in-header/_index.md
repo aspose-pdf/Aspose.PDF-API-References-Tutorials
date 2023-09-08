@@ -1,51 +1,51 @@
 ---
-title: Text In Header Of PDF File
-linktitle: Text In Header Of PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text in the header of PDF file with Aspose.PDF for .NET.
+title: Text im Header der PDF-Datei
+linktitle: Text im Header der PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Text in die Kopfzeile einer PDF-Datei einfügen.
 type: docs
 weight: 190
 url: /de/net/programming-with-stamps-and-watermarks/text-in-header/
 ---
-In this tutorial, we are going to learn how to add text in the header of PDF file using Aspose.PDF for .NET. Follow the steps below:
+In diesem Tutorial lernen wir, wie man mit Aspose.PDF für .NET Text in die Kopfzeile einer PDF-Datei einfügt. Folgen Sie den unteren Schritten:
 
-## Step 1: Project preparation
+## Schritt 1: Projektvorbereitung
 
-Make sure you have installed Aspose.PDF for .NET and created a C# project.
+Stellen Sie sicher, dass Sie Aspose.PDF für .NET installiert und ein C#-Projekt erstellt haben.
 
-## Step 2: Importing namespaces
+## Schritt 2: Namespaces importieren
 
-Add the following namespaces to your C# source file:
+Fügen Sie Ihrer C#-Quelldatei die folgenden Namespaces hinzu:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Opening the document
+## Schritt 3: Öffnen des Dokuments
 
-Open the existing PDF document using the path provided:
+Öffnen Sie das vorhandene PDF-Dokument über den angegebenen Pfad:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "TextinHeader.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to your documents directory.
+Stellen Sie sicher, dass Sie „IHR DOKUMENTENVERZEICHNIS“ durch den tatsächlichen Pfad zu Ihrem Dokumentenverzeichnis ersetzen.
 
-## Step 4: Creating Header Text
+## Schritt 4: Kopfzeilentext erstellen
 
-Create a new text stamp with the text you want to add in the header:
+Erstellen Sie einen neuen Textstempel mit dem Text, den Sie in der Kopfzeile hinzufügen möchten:
 
 ```csharp
 TextStamp textStamp = new TextStamp("Header text");
 ```
 
-You can customize the text by changing its properties like top margin, horizontal alignment, and vertical alignment.
+Sie können den Text anpassen, indem Sie seine Eigenschaften wie oberen Rand, horizontale Ausrichtung und vertikale Ausrichtung ändern.
 
-## Step 5: Add header text to all pages
+## Schritt 5: Kopfzeilentext zu allen Seiten hinzufügen
 
-Go through all the pages of the PDF document and add the text stamp in the header:
+Gehen Sie alle Seiten des PDF-Dokuments durch und fügen Sie den Textstempel in der Kopfzeile ein:
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -54,80 +54,80 @@ foreach(Page page in pdfDocument.Pages)
 }
 ```
 
-## Step 6: Saving the PDF Document
+## Schritt 6: Speichern des PDF-Dokuments
 
-Once the header text has been added on all pages, save the updated PDF document:
+Sobald der Kopfzeilentext auf allen Seiten hinzugefügt wurde, speichern Sie das aktualisierte PDF-Dokument:
 
 ```csharp
 pdfDocument.Save(dataDir + "TextinHeader_out.pdf");
 Console.WriteLine("\nText in header added successfully.\nFile saved at: " + dataDir);
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+Ersetzen Sie unbedingt „VERZEICHNIS IHRER DOKUMENTE“ durch den tatsächlichen Pfad zu dem Verzeichnis, in dem Sie das PDF-Dokument speichern möchten.
 
-### Sample source code for Textin Header using Aspose.PDF for .NET 
+### Beispielquellcode für Textin Header mit Aspose.PDF für .NET 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir+ "TextinHeader.pdf");
 
-// Create header
+// Kopfzeile erstellen
 TextStamp textStamp = new TextStamp("Header Text");
 
-// Set properties of the stamp
+// Legen Sie die Eigenschaften des Stempels fest
 textStamp.TopMargin = 10;
 textStamp.HorizontalAlignment = HorizontalAlignment.Center;
 textStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Add header on all pages
+// Kopfzeile auf allen Seiten hinzufügen
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(textStamp);
 }
 
-// Save updated document
+// Aktualisiertes Dokument speichern
 pdfDocument.Save(dataDir+ "TextinHeader_out.pdf");
 Console.WriteLine("\nText in header added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You have learned how to add text in the header of a PDF document using Aspose.PDF for .NET. You can now customize your headers by adding additional text to your PDF documents.
+Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET Text in die Kopfzeile eines PDF-Dokuments einfügen. Sie können jetzt Ihre Kopfzeilen anpassen, indem Sie Ihren PDF-Dokumenten zusätzlichen Text hinzufügen.
 
-### FAQ's for text in header of PDF file
+### FAQs zum Text im Header einer PDF-Datei
 
-#### Q: What is the purpose of adding text in the header of a PDF document?
+#### F: Welchen Zweck hat das Hinzufügen von Text in der Kopfzeile eines PDF-Dokuments?
 
-A: Adding text in the header of a PDF document allows you to include important information, such as titles, document names, dates, or any other text that you want to appear consistently at the top of each page.
+A: Durch das Hinzufügen von Text in der Kopfzeile eines PDF-Dokuments können Sie wichtige Informationen wie Titel, Dokumentnamen, Datumsangaben oder jeden anderen Text einfügen, der konsistent oben auf jeder Seite angezeigt werden soll.
 
-#### Q: How does the provided C# source code achieve the addition of text in the header of a PDF document?
+#### F: Wie erreicht der bereitgestellte C#-Quellcode das Hinzufügen von Text in der Kopfzeile eines PDF-Dokuments?
 
-A: The code demonstrates the process of opening an existing PDF document, creating a text stamp with the desired header text, customizing the text properties, adding the text stamp to all pages, and finally saving the updated PDF document with the added header text.
+A: Der Code demonstriert den Vorgang des Öffnens eines vorhandenen PDF-Dokuments, des Erstellens eines Textstempels mit dem gewünschten Kopfzeilentext, des Anpassens der Texteigenschaften, des Hinzufügens des Textstempels zu allen Seiten und schließlich des Speicherns des aktualisierten PDF-Dokuments mit dem hinzugefügten Kopfzeilentext.
 
-#### Q: Can I modify the appearance of the header text, such as its font, size, color, and alignment?
+#### F: Kann ich das Erscheinungsbild des Kopfzeilentexts ändern, z. B. Schriftart, Größe, Farbe und Ausrichtung?
 
-A: Yes, you can customize the appearance of the header text by modifying the properties of the `TextStamp` object. The code example includes setting properties like top margin, horizontal alignment, and vertical alignment. You can also adjust the font, size, color, and other text-related properties.
+ A: Ja, Sie können das Erscheinungsbild des Kopfzeilentexts anpassen, indem Sie die Eigenschaften des ändern`TextStamp`Objekt. Das Codebeispiel umfasst das Festlegen von Eigenschaften wie oberer Rand, horizontale Ausrichtung und vertikale Ausrichtung. Sie können auch Schriftart, Größe, Farbe und andere textbezogene Eigenschaften anpassen.
 
-#### Q: Is it possible to add different text to each page's header?
+#### F: Ist es möglich, der Kopfzeile jeder Seite einen anderen Text hinzuzufügen?
 
-A: Yes, you can add different text to each page's header by creating separate `TextStamp` objects with different text content or properties and then adding them to specific pages as needed.
+ A: Ja, Sie können der Kopfzeile jeder Seite unterschiedlichen Text hinzufügen, indem Sie einen separaten Text erstellen`TextStamp` Objekte mit unterschiedlichem Textinhalt oder unterschiedlichen Eigenschaften erstellen und sie dann nach Bedarf zu bestimmten Seiten hinzufügen.
 
-#### Q: How do I ensure the header text appears consistently on every page of the PDF document?
+#### F: Wie stelle ich sicher, dass der Kopfzeilentext auf jeder Seite des PDF-Dokuments einheitlich angezeigt wird?
 
-A: By using a loop that iterates through all the pages of the PDF document and adding the same text stamp to each page, you ensure that the header text appears consistently on every page.
+A: Indem Sie eine Schleife verwenden, die alle Seiten des PDF-Dokuments durchläuft und jeder Seite den gleichen Textstempel hinzufügt, stellen Sie sicher, dass der Kopfzeilentext auf jeder Seite konsistent angezeigt wird.
 
-#### Q: Can I add multiple lines of text or format the header text with line breaks?
+#### F: Kann ich mehrere Textzeilen hinzufügen oder den Kopfzeilentext mit Zeilenumbrüchen formatieren?
 
-A: Yes, you can add multiple lines of text to the header by including line breaks in the text string. For example, you can use the escape sequence `\n` to indicate a line break in the text.
+ A: Ja, Sie können der Kopfzeile mehrere Textzeilen hinzufügen, indem Sie Zeilenumbrüche in die Textzeichenfolge einfügen. Sie können beispielsweise die Escape-Sequenz verwenden`\n` um einen Zeilenumbruch im Text anzuzeigen.
 
-#### Q: What happens if I want to add different content to the header and footer of the same PDF document?
+#### F: Was passiert, wenn ich der Kopf- und Fußzeile desselben PDF-Dokuments unterschiedliche Inhalte hinzufügen möchte?
 
-A: To add different content to the header and footer sections, you would follow similar steps for both sections. The code demonstrates adding text to the header; you can use a similar approach to add text to the footer.
+A: Um den Kopf- und Fußzeilenabschnitten unterschiedliche Inhalte hinzuzufügen, führen Sie für beide Abschnitte ähnliche Schritte aus. Der Code demonstriert das Hinzufügen von Text zur Kopfzeile. Sie können einen ähnlichen Ansatz verwenden, um Text zur Fußzeile hinzuzufügen.
 
-#### Q: Is it possible to add images or other elements alongside the header text using this approach?
+#### F: Ist es mit diesem Ansatz möglich, Bilder oder andere Elemente neben dem Kopfzeilentext hinzuzufügen?
 
-A: While the provided code specifically demonstrates adding text to the header, you can extend the approach to add other elements like images, lines, shapes, or any other content to the header section using the Aspose.PDF library.
+A: Während der bereitgestellte Code speziell das Hinzufügen von Text zur Kopfzeile demonstriert, können Sie den Ansatz mithilfe der Aspose.PDF-Bibliothek erweitern, um andere Elemente wie Bilder, Linien, Formen oder andere Inhalte zum Kopfzeilenabschnitt hinzuzufügen.

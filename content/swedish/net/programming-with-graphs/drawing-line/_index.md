@@ -1,44 +1,44 @@
 ---
-title: Drawing Line
-linktitle: Drawing Line
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to draw a line across a page using Aspose.PDF for .NET. Step-by-step guide to creating custom lines.
+title: Rita linje
+linktitle: Rita linje
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du drar en linje över en sida med Aspose.PDF för .NET. Steg-för-steg-guide för att skapa anpassade linjer.
 type: docs
 weight: 80
 url: /sv/net/programming-with-graphs/drawing-line/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to draw a line using Aspose.PDF for .NET.
+I den här handledningen går vi igenom följande C#-källkod steg för steg för att rita en linje med Aspose.PDF för .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
 
-## Step 1: Document Directory Setup
+## Steg 1: Installation av dokumentkatalog
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+den medföljande källkoden måste du ange katalogen där du vill spara den resulterande PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating a Document Instance and Adding a Page
+## Steg 2: Skapa en dokumentinstans och lägga till en sida
 
-We create an instance of the Document class and add a page to this document.
+Vi skapar en instans av klassen Document och lägger till en sida i detta dokument.
 
 ```csharp
 Document pDoc = new Document();
 Page pg = pDoc.Pages.Add();
 ```
 
-## Step 3: Setting Page Margins
+## Steg 3: Ställa in sidmarginaler
 
-We set the page margins to 0 on all sides.
+Vi sätter sidmarginalerna till 0 på alla sidor.
 
 ```csharp
 pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
 ```
 
-## Step 4: Creating a Graph Object and the First Line
+## Steg 4: Skapa ett grafobjekt och den första raden
 
-We create a Graph object with dimensions equal to those of the page and draw the first line going from the lower left corner to the upper right corner of the page.
+Vi skapar ett Graph-objekt med dimensioner lika med sidans och ritar den första linjen som går från det nedre vänstra hörnet till det övre högra hörnet på sidan.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width, (float)pg.PageInfo.Height);
@@ -46,92 +46,92 @@ Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)
 graph.Shapes.Add(line);
 ```
 
-## Step 5: Drawing the second line
+## Steg 5: Rita den andra linjen
 
-We draw the second line going from the upper left corner to the lower right corner of the page.
+Vi ritar den andra linjen som går från det övre vänstra hörnet till det nedre högra hörnet på sidan.
 
 ```csharp
 Aspose.Pdf.Drawing.Line line2 = new Aspose.Pdf.Drawing.Line(new float[] { 0, (float)pg.Rect.URY, (float)pg.PageInfo.Width, (float)pg.Rect. LLX });
 graph.Shapes.Add(line2);
 ```
 
-## Step 6: Adding the Graph Object to the Page
+## Steg 6: Lägga till grafobjektet på sidan
 
-We add the Graph object to the page's paragraph collection.
+Vi lägger till Graph-objektet i sidans styckesamling.
 
 ```csharp
 pg.Paragraphs.Add(graph);
 ```
 
-## Step 7: Saving the Resulting PDF File
+## Steg 7: Spara den resulterande PDF-filen
 
-Finally, we save the resulting PDF file with the name "DrawingLine_out.pdf" in the specified directory.
+Slutligen sparar vi den resulterande PDF-filen med namnet "DrawingLine_out.pdf" i den angivna katalogen.
 
 ```csharp
 pDoc.Save(dataDir + "DrawingLine_out.pdf");
 ```
 
-### Sample source code for Drawing Line using Aspose.PDF for .NET 
+### Exempel på källkod för Drawing Line med Aspose.PDF för .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Document instance
+// Skapa dokumentinstans
 Document pDoc = new Document();
-// Add page to pages collection of PDF document
+// Lägg till sida till sidor samling av PDF-dokument
 Page pg = pDoc.Pages.Add();
-// Set page margin on all sides as 0
+// Ställ in sidmarginalen på alla sidor som 0
 pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
-// Create Graph object with Width and Height equal to page dimensions
+// Skapa grafobjekt med bredd och höjd lika med sidmåtten
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width , (float)pg.PageInfo.Height);
-// Create first line object starting from Lower-Left to Top-Right corner of page
+// Skapa första radens objekt från Nedre vänstra till övre högra hörnet på sidan
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)pg.Rect.LLX, 0, (float)pg.PageInfo.Width, (float)pg.Rect.URY });
-// Add line to shapes collection of Graph object
+// Lägg till linje i formsamlingen av Graph-objekt
 graph.Shapes.Add(line);
-// Draw line from Top-Left corner of page to Bottom-Right corner of page
+// Rita en linje från det övre vänstra hörnet på sidan till det nedre högra hörnet på sidan
 Aspose.Pdf.Drawing.Line line2 = new Aspose.Pdf.Drawing.Line(new float[] { 0, (float)pg.Rect.URY, (float)pg.PageInfo.Width, (float)pg.Rect.LLX });
-// Add line to shapes collection of Graph object
+// Lägg till linje i formsamlingen av Graph-objekt
 graph.Shapes.Add(line2);
-// Add Graph object to paragraphs collection of page
+// Lägg till Graph-objekt till styckesamlingen på sidan
 pg.Paragraphs.Add(graph);
 dataDir = dataDir + "DrawingLine_out.pdf";
-// Save PDF file
+// Spara PDF-fil
 pDoc.Save(dataDir);
 Console.WriteLine("\nLine drawn successfully across the page.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we explained how to draw a line using Aspose.PDF for .NET. You can now use this knowledge to create geometric shapes with custom lines in your PDF files.
+I den här handledningen förklarade vi hur man ritar en linje med Aspose.PDF för .NET. Du kan nu använda denna kunskap för att skapa geometriska former med anpassade linjer i dina PDF-filer.
 
 ### FAQ's
 
-#### Q: What is the purpose of this tutorial?
+#### F: Vad är syftet med denna handledning?
 
-A: This tutorial's purpose is to guide you through the process of drawing lines using Aspose.PDF for .NET. You'll learn how to create lines on a PDF page and customize their appearance.
+S: Syftet med denna handledning är att guida dig genom processen att rita linjer med Aspose.PDF för .NET. Du lär dig hur du skapar linjer på en PDF-sida och anpassar deras utseende.
 
-#### Q: What prerequisites are required before starting?
+#### F: Vilka förutsättningar krävs innan start?
 
-A: Before you begin, ensure you have installed the Aspose.PDF library and set up your development environment. Basic knowledge of C# programming is also recommended.
+S: Innan du börjar, se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö. Grundläggande kunskaper i C#-programmering rekommenderas också.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### F: Hur anger jag katalogen för att spara PDF-filen?
 
-A: Modify the "dataDir" variable in the provided source code to indicate the directory where you want to save the resulting PDF file.
+S: Ändra "dataDir"-variabeln i den medföljande källkoden för att ange katalogen där du vill spara den resulterande PDF-filen.
 
-#### Q: How do I create lines on a PDF page?
+#### F: Hur skapar jag rader på en PDF-sida?
 
-A: The tutorial demonstrates creating a Graph object with the dimensions of the page and then adding Line objects to it. Modify the coordinates and properties of the Line objects to create the desired lines.
+S: Handledningen visar att man skapar ett grafobjekt med sidans dimensioner och sedan lägger till linjeobjekt till det. Ändra koordinaterna och egenskaperna för linjeobjekten för att skapa önskade linjer.
 
-#### Q: Can I customize the appearance of the lines?
+#### F: Kan jag anpassa utseendet på linjerna?
 
-A: Yes, you can customize the appearance of the lines by modifying the properties of the Line objects. This includes changing their coordinates, color, thickness, and other graphical attributes.
+S: Ja, du kan anpassa utseendet på linjerna genom att ändra egenskaperna för linjeobjekten. Detta inkluderar att ändra deras koordinater, färg, tjocklek och andra grafiska attribut.
 
-#### Q: How do I save the PDF document after drawing the lines?
+#### F: Hur sparar jag PDF-dokumentet efter att ha ritat linjerna?
 
-A: After adding the Graph object with Line objects to the page, you can save the resulting PDF document using the `pDoc.Save(dataDir + "DrawingLine_out.pdf");` line in the provided source code.
+S: Efter att ha lagt till Graph-objektet med linjeobjekt på sidan kan du spara det resulterande PDF-dokumentet med hjälp av`pDoc.Save(dataDir + "DrawingLine_out.pdf");` rad i den medföljande källkoden.
 
-#### Q: Can I draw lines with different angles and orientations?
+#### F: Kan jag rita linjer med olika vinklar och orienteringar?
 
-A: Yes, you can draw lines with different angles and orientations by adjusting the coordinates and properties of the Line objects within the Graph.
+S: Ja, du kan rita linjer med olika vinklar och orienteringar genom att justera koordinaterna och egenskaperna för linjeobjekten i grafen.

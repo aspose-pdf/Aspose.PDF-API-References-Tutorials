@@ -1,44 +1,44 @@
 ---
-title: Zoom To Page Contents In PDF File
-linktitle: Zoom To Page Contents In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to zoom to page contents in PDF file using Aspose.PDF for .NET. Enhance your PDF documents according to your specific needs.
+title: تكبير محتويات الصفحة في ملف PDF
+linktitle: تكبير محتويات الصفحة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لتكبير محتويات الصفحة في ملف PDF باستخدام Aspose.PDF لـ .NET. قم بتحسين مستندات PDF الخاصة بك وفقًا لاحتياجاتك الخاصة.
 type: docs
 weight: 160
 url: /ar/net/programming-with-pdf-pages/zoom-to-page-contents/
 ---
-In this tutorial, we'll walk you through the step-by-step process to zoom in on the page contents in PDF file using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to zoom the page content of a PDF file using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك خلال العملية خطوة بخطوة لتكبير محتويات الصفحة في ملف PDF باستخدام Aspose.PDF لـ .NET. سنشرح لك التعليمات البرمجية المصدرية المجمعة لـ C# ونزودك بدليل شامل لمساعدتك على فهم هذه الميزة وتنفيذها في مشاريعك الخاصة. في نهاية هذا البرنامج التعليمي، ستعرف كيفية تكبير محتوى الصفحة لملف PDF باستخدام Aspose.PDF لـ .NET.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## المتطلبات الأساسية
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- معرفة أساسية بلغة البرمجة C#
+- تم تثبيت Aspose.PDF لـ .NET في بيئة التطوير الخاصة بك
 
-## Step 1: Define the document directory
-First, you need to set the path to your documents directory. This is where the PDF files you want to process are located. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
+## الخطوة 1: تحديد دليل المستند
+أولاً، تحتاج إلى تعيين المسار إلى دليل المستندات الخاص بك. هذا هو المكان الذي توجد فيه ملفات PDF التي تريد معالجتها. استبدل "دليل المستندات الخاصة بك" بالمسار المناسب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the source PDF file
-Then you can load the source PDF file using the `Document` class of Aspose.PDF. Be sure to specify the correct path to the PDF file.
+## الخطوة 2: قم بتحميل ملف PDF المصدر
+ ثم يمكنك تحميل ملف PDF المصدر باستخدام الملف`Document` فئة Aspose.PDF. تأكد من تحديد المسار الصحيح لملف PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Set Page Content Zoom
-To zoom in on the content of the page, we need to do the following:
+## الخطوة 3: ضبط تكبير محتوى الصفحة
+لتكبير محتوى الصفحة، علينا القيام بما يلي:
 
-- Recover the rectangular area of the first page of the PDF.
-- Instantiate the `PdfPageEditor` class.
-- Link the source PDF to the `PdfPageEditor` instance.
-- Define the zoom coefficient according to the width and height of the rectangle.
-- Update page size using rectangle dimensions.
+- استرجع المساحة المستطيلة للصفحة الأولى من ملف PDF.
+-  إنشاء مثيل`PdfPageEditor` فصل.
+-  ربط ملف PDF المصدر بـ`PdfPageEditor` مثال.
+- حدد معامل التكبير حسب عرض المستطيل وارتفاعه.
+- تحديث حجم الصفحة باستخدام أبعاد المستطيل.
 
-Here is the corresponding code:
+هنا هو الكود المقابل:
 
 ```csharp
 Aspose.Pdf.Rectangle rect = doc.Pages[1].Rect;
@@ -48,69 +48,69 @@ ppe.Zoom = (float)(rect.Width / rect.Height);
 ppe.PageSize = new Aspose.Pdf.PageSize((float)rect.Height, (float)rect.Width);
 ```
 
-## Step 4: Save the output PDF file
-Finally, you can save the modified PDF file using the `Save()` method of the `Document` class. Be sure to specify the correct path and file name.
+## الخطوة 4: احفظ ملف PDF الناتج
+ وأخيرًا، يمكنك حفظ ملف PDF المعدل باستخدام ملف`Save()` طريقة`Document`فصل. تأكد من تحديد المسار الصحيح واسم الملف.
 
 ```csharp
 dataDir = dataDir + "ZoomToPageContents_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Zoom To Page Contents using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتكبير/تصغير محتويات الصفحة باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF file
+// تحميل ملف PDF المصدر
 Document doc = new Document(dataDir + "input.pdf");
-// Get rectangular region of first page of PDF
+// احصل على منطقة مستطيلة من الصفحة الأولى من ملف PDF
 Aspose.Pdf.Rectangle rect = doc.Pages[1].Rect;
-// Instantiate PdfPageEditor instance
+// إنشاء مثيل لـ PdfPageEditor
 PdfPageEditor ppe = new PdfPageEditor();
-// Bind source PDF
+// ربط مصدر PDF
 ppe.BindPdf(dataDir + "input.pdf");
-// Set zoom coefficient
+// ضبط معامل التكبير
 ppe.Zoom = (float)(rect.Width / rect.Height);
-// Update page size
+// تحديث حجم الصفحة
 ppe.PageSize = new Aspose.Pdf.PageSize((float)rect.Height, (float)rect.Width);
 dataDir = dataDir + "ZoomToPageContents_out.pdf";
-// Save output file
+// حفظ ملف الإخراج
 doc.Save(dataDir);
 System.Console.WriteLine("\nZoom to page contents applied successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
-In this tutorial, we learned how to zoom in on the page content of a PDF file using Aspose.PDF for .NET. By following this step-by-step guide, you can easily apply zoom to page content in your PDF files. Aspose.PDF offers a powerful and flexible API for working with PDF files and performing various operations, including zooming on page content. Use this knowledge to customize and enhance your PDF documents to your specific needs.
+## خاتمة
+في هذا البرنامج التعليمي، تعلمنا كيفية تكبير محتوى الصفحة لملف PDF باستخدام Aspose.PDF لـ .NET. باتباع هذا الدليل المفصّل خطوة بخطوة، يمكنك بسهولة تطبيق التكبير/التصغير على محتوى الصفحة في ملفات PDF الخاصة بك. يوفر Aspose.PDF واجهة برمجة تطبيقات قوية ومرنة للعمل مع ملفات PDF وإجراء عمليات متنوعة، بما في ذلك تكبير محتوى الصفحة. استخدم هذه المعرفة لتخصيص مستندات PDF الخاصة بك وتحسينها وفقًا لاحتياجاتك المحددة.
 
-### FAQ's for zoom to page contents in PDF file
+### الأسئلة الشائعة حول تكبير محتويات الصفحة في ملف PDF
 
-#### Q: How can I zoom in on the page content of a PDF file using Aspose.PDF for .NET?
+#### س: كيف يمكنني تكبير محتوى الصفحة لملف PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: To zoom in on the page content of a PDF file using Aspose.PDF for .NET, you can follow these steps:
+ج: لتكبير محتوى الصفحة لملف PDF باستخدام Aspose.PDF لـ .NET، يمكنك اتباع الخطوات التالية:
 
-1. Set the document directory by specifying the path where your source PDF file is located and where you want to save the modified PDF file. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
-2. Load the source PDF file using the `Document` class of Aspose.PDF. Be sure to specify the correct path to the PDF file.
-3. Recover the rectangular area of the first page of the PDF using the `Rect` property of the `Page` object.
-4. Instantiate the `PdfPageEditor` class to perform the zooming operation.
-5. Link the source PDF to the `PdfPageEditor` instance using the `BindPdf()` method.
-6. Define the zoom coefficient according to the width and height of the retrieved rectangle.
-7. Update the page size using the rectangle dimensions and the `PageSize` property of the `PdfPageEditor` instance.
-8. Save the modified PDF file using the `Save()` method of the `Document` class. Be sure to specify the correct path and file name.
+1. قم بتعيين دليل المستند عن طريق تحديد المسار الذي يوجد به ملف PDF المصدر الخاص بك والمكان الذي تريد حفظ ملف PDF المعدل فيه. استبدل "دليل المستندات الخاصة بك" بالمسار المناسب.
+2.  قم بتحميل ملف PDF المصدر باستخدام ملف`Document` فئة Aspose.PDF. تأكد من تحديد المسار الصحيح لملف PDF.
+3.  قم باستعادة المساحة المستطيلة للصفحة الأولى من ملف PDF باستخدام`Rect` ملكية`Page` هدف.
+4.  إنشاء مثيل`PdfPageEditor` فئة لإجراء عملية التكبير.
+5.  ربط ملف PDF المصدر بـ`PdfPageEditor` المثال باستخدام`BindPdf()` طريقة.
+6. حدد معامل التكبير/التصغير وفقًا لعرض وارتفاع المستطيل المسترد.
+7.  قم بتحديث حجم الصفحة باستخدام أبعاد المستطيل و`PageSize` ملكية`PdfPageEditor` مثال.
+8.  احفظ ملف PDF المعدل باستخدام ملف`Save()` طريقة`Document`فصل. تأكد من تحديد المسار الصحيح واسم الملف.
 
-#### Q: Can I apply the zoom effect to multiple pages in the PDF file simultaneously?
+#### س: هل يمكنني تطبيق تأثير التكبير/التصغير على صفحات متعددة في ملف PDF في وقت واحد؟
 
-A: Yes, you can modify the provided source code to apply the zoom effect to multiple pages in the PDF file simultaneously. Instead of using `doc.Pages[1]` to retrieve the first page, you can use a loop to access and process all pages in the document. Simply adjust the code to zoom and update each page as needed.
+ ج: نعم، يمكنك تعديل كود المصدر المقدم لتطبيق تأثير التكبير/التصغير على صفحات متعددة في ملف PDF في وقت واحد. بدلا من استخدام`doc.Pages[1]`لاسترداد الصفحة الأولى، يمكنك استخدام حلقة للوصول إلى كافة الصفحات في المستند ومعالجتها. ما عليك سوى ضبط الرمز لتكبير/تصغير كل صفحة وتحديثها حسب الحاجة.
 
-#### Q: How does the zoom coefficient affect the page content in the PDF file?
+#### س: كيف يؤثر معامل التكبير على محتوى الصفحة في ملف PDF؟
 
-A: The zoom coefficient determines the level of zoom applied to the page content in the PDF file. It is calculated by dividing the width of the rectangular area of the first page by its height. The resulting value represents the ratio between width and height, which is used to determine the zoom level. A higher zoom coefficient will increase the zoom level, making the content appear larger, while a lower coefficient will reduce the zoom level, making the content appear smaller.
+ج: يحدد معامل التكبير/التصغير مستوى التكبير/التصغير المطبق على محتوى الصفحة في ملف PDF. ويتم حسابه بقسمة عرض المساحة المستطيلة للصفحة الأولى على ارتفاعها. تمثل القيمة الناتجة النسبة بين العرض والارتفاع، والتي يتم استخدامها لتحديد مستوى التكبير/التصغير. سيؤدي معامل التكبير الأعلى إلى زيادة مستوى التكبير، مما يجعل المحتوى يبدو أكبر، في حين أن المعامل الأقل سيقلل من مستوى التكبير، مما يجعل المحتوى يبدو أصغر.
 
-#### Q: Will zooming in on the page content affect the overall layout of the PDF document?
+#### س: هل يؤثر تكبير محتوى الصفحة على التخطيط العام لمستند PDF؟
 
-A: Yes, applying zoom to the page content will affect the overall layout of the PDF document, specifically the appearance of the page content. The content will be scaled according to the specified zoom coefficient, resulting in a different display of text, images, and other elements on the page.
+ج: نعم، سيؤثر تطبيق التكبير/التصغير على محتوى الصفحة على التخطيط العام لمستند PDF، وتحديدًا مظهر محتوى الصفحة. سيتم تغيير حجم المحتوى وفقًا لمعامل التكبير/التصغير المحدد، مما يؤدي إلى عرض مختلف للنص والصور والعناصر الأخرى على الصفحة.
 
-#### Q: Is it possible to revert the zoom effect and restore the original page content size?
+#### س: هل من الممكن التراجع عن تأثير التكبير واستعادة حجم محتوى الصفحة الأصلي؟
 
-A: No, once you have applied the zoom effect and saved the modified PDF file, it is not possible to revert the zoom effect directly using Aspose.PDF for .NET. The zooming operation permanently alters the content size in the output file. If you wish to preserve the original page content size, it is recommended to keep a copy of the original PDF file before applying the zoom operation.
+ج: لا، بمجرد تطبيق تأثير التكبير/التصغير وحفظ ملف PDF المعدل، لن يكون من الممكن إرجاع تأثير التكبير/التصغير مباشرةً باستخدام Aspose.PDF لـ .NET. تعمل عملية التكبير/التصغير على تغيير حجم المحتوى في ملف الإخراج بشكل دائم. إذا كنت ترغب في الحفاظ على حجم محتوى الصفحة الأصلي، فمن المستحسن الاحتفاظ بنسخة من ملف PDF الأصلي قبل تطبيق عملية التكبير/التصغير.

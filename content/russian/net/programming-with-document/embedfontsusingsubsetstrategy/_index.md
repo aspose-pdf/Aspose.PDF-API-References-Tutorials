@@ -1,93 +1,93 @@
 ---
-title: Embed Fonts In PDF File With Subset Strategy
-linktitle: Embed Fonts With Subset Strategy
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to embed fonts in a PDF file with Subset Strategy using Aspose.PDF for .NET. Optimize your PDF size by embedding only necessary characters.
+title: Встроить шрифты в PDF-файл с помощью стратегии подмножества
+linktitle: Встраивание шрифтов с помощью стратегии подмножества
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как встроить шрифты в PDF-файл с помощью стратегии подмножества, используя Aspose.PDF для .NET. Оптимизируйте размер PDF-файла, встраивая только необходимые символы.
 type: docs
 weight: 130
 url: /ru/net/programming-with-document/embedfontsusingsubsetstrategy/
 ---
-In this tutorial, we will discuss how to embed fonts in a PDF file with a subset strategy using Aspose.PDF for .NET. Aspose.PDF for .NET is a powerful library that allows developers to create, edit, and manipulate PDF documents programmatically. Embedding fonts in a PDF file is an important step to ensure that the document is displayed correctly on different devices, regardless of whether the required fonts are installed on those devices or not.
+В этом уроке мы обсудим, как встроить шрифты в PDF-файл с помощью стратегии подмножества, используя Aspose.PDF для .NET. Aspose.PDF для .NET — это мощная библиотека, которая позволяет разработчикам программно создавать, редактировать и манипулировать PDF-документами. Встраивание шрифтов в PDF-файл — важный шаг для обеспечения корректного отображения документа на разных устройствах, независимо от того, установлены ли на этих устройствах необходимые шрифты или нет.
 
-## Step 1: Create a new C# Console Application
-To get started, create a new C# Console Application in Visual Studio. You can name it whatever you like. Once the project is created, you need to add a reference to the Aspose.PDF for .NET library.
+## Шаг 1. Создайте новое консольное приложение C#.
+Для начала создайте новое консольное приложение C# в Visual Studio. Вы можете назвать его как угодно. После создания проекта вам необходимо добавить ссылку на библиотеку Aspose.PDF for .NET.
 
-## Step 2: Import the Aspose.PDF Namespace
-Add the following line of code at the top of your C# file to import the Aspose.PDF namespace:
+## Шаг 2. Импортируйте пространство имен Aspose.PDF.
+Добавьте следующую строку кода в начало вашего файла C#, чтобы импортировать пространство имен Aspose.PDF:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Load an Existing PDF File
-To embed fonts in an existing PDF file, you need to load that file using the Document class. The following code demonstrates how to load an existing PDF file:
+## Шаг 3. Загрузите существующий PDF-файл
+Чтобы встроить шрифты в существующий PDF-файл, вам необходимо загрузить этот файл с помощью класса Document. Следующий код демонстрирует, как загрузить существующий PDF-файл:
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load an existing PDF file
+// Загрузите существующий PDF-файл
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 4: Embed Fonts with Subset Strategy
-Aspose.PDF for .NET provides two strategies for font embedding: SubsetAllFonts and SubsetEmbeddedFontsOnly.
+## Шаг 4. Встраивание шрифтов с использованием стратегии подмножества
+Aspose.PDF для .NET предоставляет две стратегии внедрения шрифтов: SubsetAllFonts и SubsetEmbeddedFontsOnly.
 
-The SubsetAllFonts strategy will embed all fonts in the document as a subset. A subset is a portion of the font that contains only the characters used in the document. This strategy is useful for reducing the file size of the PDF document.
+Стратегия SubsetAllFonts встроит все шрифты в документ как подмножество. Подмножество — это часть шрифта, содержащая только символы, используемые в документе. Эта стратегия полезна для уменьшения размера файла PDF-документа.
 
-The SubsetEmbeddedFontsOnly strategy will embed only the subset of fonts that are already embedded in the document. If a font is not embedded, it will not be affected by this strategy.
+Стратегия SubsetEmbeddedFontsOnly встраивает только то подмножество шрифтов, которое уже встроено в документ. Если шрифт не встроен, эта стратегия не повлияет на него.
 
-The following code demonstrates how to embed fonts in a PDF file with a subset strategy:
+Следующий код демонстрирует, как встроить шрифты в PDF-файл с помощью стратегии подмножества:
 
 ```csharp
-// All fonts will be embedded as subset into document in case of SubsetAllFonts.
+// В случае SubsetAllFonts все шрифты будут встроены в документ как подмножество.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
 
-// Font subset will be embedded for fully embedded fonts but fonts which are not embedded into document will not be affected.
+// Подмножество шрифтов будет встроено для полностью встроенных шрифтов, но шрифты, которые не встроены в документ, не будут затронуты.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
 ```
 
-## Step 5: Save the PDF Document
-Once you have embedded all the fonts in the PDF file with a subset strategy, you need to save the document. The following code demonstrates how to save the PDF file:
+## Шаг 5. Сохраните PDF-документ.
+После того как вы встроили все шрифты в PDF-файл с помощью стратегии подмножества, вам необходимо сохранить документ. Следующий код демонстрирует, как сохранить файл PDF:
 
 ```csharp
 doc.Save(dataDir + "Output_out.pdf");
 ```
 
-### Example source code for embeding fonts with subset strategy using Aspose.PDF for .NET. 
+### Пример исходного кода для встраивания шрифтов со стратегией подмножества с использованием Aspose.PDF для .NET. 
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
-// All fonts will be embedded as subset into document in case of SubsetAllFonts.
+// В случае SubsetAllFonts все шрифты будут встроены в документ как подмножество.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-// Font subset will be embedded for fully embedded fonts but fonts which are not embedded into document will not be affected.
+// Подмножество шрифтов будет встроено для полностью встроенных шрифтов, но шрифты, которые не встроены в документ, не будут затронуты.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
 doc.Save(dataDir + "Output_out.pdf");
 ```
 
-## Conclusion
-In this article, we have discussed how to embed fonts in a PDF file with a subset strategy using Aspose.PDF for .NET. Aspose.PDF for .NET provides a simple and easy-to-use API to work with PDF documents, including adding and embedding fonts with different strategies. Embedding fonts in a PDF file is an important step to ensure that the document is displayed correctly on different devices, and the subset strategy is a useful feature to reduce the file size of the PDF document.
+## Заключение
+В этой статье мы обсудили, как встроить шрифты в PDF-файл с помощью стратегии подмножества, используя Aspose.PDF для .NET. Aspose.PDF для .NET предоставляет простой и удобный API для работы с PDF-документами, включая добавление и встраивание шрифтов с различными стратегиями. Встраивание шрифтов в файл PDF — это важный шаг, обеспечивающий правильное отображение документа на разных устройствах, а стратегия подмножества — полезная функция, позволяющая уменьшить размер файла PDF-документа.
 
-### FAQ's for embed fonts in PDF file with subset strategy
+### Часто задаваемые вопросы по встраиванию шрифтов в PDF-файл со стратегией подмножества
 
-#### Q: What is a subset strategy for font embedding in a PDF file?
+#### Вопрос. Какова стратегия встраивания шрифтов в PDF-файл?
 
-A: A subset strategy for font embedding in a PDF file means that only a portion of the font containing the characters used in the document will be embedded. This helps reduce the file size of the PDF document by eliminating unnecessary font data.
+Ответ: Стратегия подмножества встраивания шрифтов в PDF-файл означает, что будет встроена только часть шрифта, содержащая символы, используемые в документе. Это помогает уменьшить размер файла PDF-документа за счет удаления ненужных данных шрифта.
 
-#### Q: What is the difference between SubsetAllFonts and SubsetEmbeddedFontsOnly strategies?
+#### Вопрос: В чем разница между стратегиями SubsetAllFonts и SubsetEmbeddedFontsOnly?
 
-A: The `SubsetAllFonts` strategy will embed all fonts in the document as a subset, while the `SubsetEmbeddedFontsOnly` strategy will only embed the subset of fonts that are already embedded in the document. The latter strategy will not affect fonts that are not already embedded.
+ А:`SubsetAllFonts`стратегия встроит все шрифты в документ как подмножество, а`SubsetEmbeddedFontsOnly` Стратегия будет встраивать только то подмножество шрифтов, которые уже встроены в документ. Последняя стратегия не повлияет на шрифты, которые еще не встроены.
 
-#### Q: Why is font embedding with a subset strategy important?
+#### Вопрос: Почему важно встраивание шрифтов с помощью стратегии подмножества?
 
-A: Font embedding with a subset strategy is important to ensure that the PDF file contains the necessary font data for displaying text correctly, while also keeping the file size smaller by including only the characters used in the document.
+О: Встраивание шрифтов с помощью стратегии подмножества важно для обеспечения того, чтобы файл PDF содержал необходимые данные шрифта для правильного отображения текста, а также для сохранения меньшего размера файла за счет включения только символов, используемых в документе.
 
-#### Q: Can I use Aspose.PDF for .NET to embed fonts with different strategies?
+#### Вопрос: Могу ли я использовать Aspose.PDF для .NET для встраивания шрифтов с различными стратегиями?
 
-A: Yes, Aspose.PDF for .NET provides various strategies for font embedding, including `SubsetAllFonts` and `SubsetEmbeddedFontsOnly`. You can choose the appropriate strategy based on your requirements.
+ О: Да, Aspose.PDF для .NET предоставляет различные стратегии встраивания шрифтов, в том числе`SubsetAllFonts` и`SubsetEmbeddedFontsOnly`. Вы можете выбрать подходящую стратегию, исходя из ваших требований.
 
-#### Q: Is Aspose.PDF for .NET a reliable library for working with PDF documents?
+#### Вопрос: Является ли Aspose.PDF for .NET надежной библиотекой для работы с PDF-документами?
 
-A: Yes, Aspose.PDF for .NET is a reliable and powerful library for working with PDF documents. It provides extensive features for creating, editing, and manipulating PDF files in .NET applications.
+О: Да, Aspose.PDF для .NET — это надежная и мощная библиотека для работы с PDF-документами. Он предоставляет обширные возможности для создания, редактирования и управления PDF-файлами в приложениях .NET.

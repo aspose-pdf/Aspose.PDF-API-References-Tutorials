@@ -1,51 +1,51 @@
 ---
-title: Add Subsequent Lines Indent In PDF File
-linktitle: Add Subsequent Lines Indent In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add subsequent lines indent to text in PDF file using Aspose.PDF for .NET.
+title: Agregar sangría de líneas posteriores en un archivo PDF
+linktitle: Agregar sangría de líneas posteriores en un archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a agregar sangría de líneas posteriores al texto en un archivo PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 60
 url: /es/net/programming-with-text/add-subsequent-lines-indent/
 ---
-This tutorial will guide you through the process of adding subsequent lines indent to text in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Este tutorial lo guiará a través del proceso de agregar sangría de líneas posteriores al texto en un archivo PDF usando Aspose.PDF para .NET. El código fuente de C# proporcionado demuestra los pasos necesarios.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Requisitos
+Antes de comenzar, asegúrese de tener lo siguiente:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio o cualquier otro compilador de C# instalado en su máquina.
+- Aspose.PDF para la biblioteca .NET. Puede descargarlo del sitio web oficial de Aspose o utilizar un administrador de paquetes como NuGet para instalarlo.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Paso 1: configurar el proyecto
+1. Cree un nuevo proyecto de C# en su entorno de desarrollo preferido.
+2. Agregue una referencia a la biblioteca Aspose.PDF para .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to add subsequent lines indent, add the following using directive at the top of the file:
+## Paso 2: importar los espacios de nombres necesarios
+En el archivo de código donde desea agregar sangría de líneas posteriores, agregue la siguiente directiva de uso en la parte superior del archivo:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Paso 3: configurar el directorio de documentos
+ En el código, localice la línea que dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` y reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta al directorio donde están almacenados sus documentos.
 
-## Step 4: Create a new Document object
-Instantiate a new `Document` object by adding the following line of code:
+## Paso 4: crea un nuevo objeto de documento
+ Crear una instancia nueva`Document` objeto agregando la siguiente línea de código:
 
 ```csharp
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document by using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `page`.
+## Paso 5: agregue una página al documento
+ Agregue una nueva página al documento usando el`Add` método de la`Pages`recopilación. En el código proporcionado, la nueva página se asigna a la variable`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
-## Step 6: Create a TextFragment with subsequent lines indent
-Instantiate a `TextFragment` object and provide the desired text. In the provided code, the text is assigned to the variable `text`. Then, initialize `TextFormattingOptions` for the `TextFragment` and specify the `SubsequentLinesIndent` value.
+## Paso 6: cree un fragmento de texto con sangría de líneas posteriores
+ Crear una instancia de`TextFragment` objeto y proporcione el texto deseado. En el código proporcionado, el texto se asigna a la variable.`text` . Luego, inicializa`TextFormattingOptions` Para el`TextFragment` especificar el`SubsequentLinesIndent` valor.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -55,15 +55,15 @@ text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 };
 ```
 
-## Step 7: Add the TextFragment to the page
-Add the `TextFragment` object to the paragraphs collection of the page.
+## Paso 7: agregue el fragmento de texto a la página
+ Añade el`TextFragment` oponerse a la recopilación de párrafos de la página.
 
 ```csharp
 page.Paragraphs.Add(text);
 ```
 
-## Step 8: Repeat steps 6 and 7 for additional lines
-To add subsequent lines with the same indent, repeat steps 6 and 7 for each line. Update the text content as needed.
+## Paso 8: repita los pasos 6 y 7 para líneas adicionales
+Para agregar líneas posteriores con la misma sangría, repita los pasos 6 y 7 para cada línea. Actualice el contenido del texto según sea necesario.
 
 ```csharp
 text = new Aspose.Pdf.Text.TextFragment("Line2");
@@ -76,22 +76,22 @@ text = new Aspose.Pdf.Text.TextFragment("Line5");
 page.Paragraphs.Add(text);
 ```
 
-## Step 9: Save the PDF document
-Save the PDF document using the `Save` method of the `Document` object. Specify the output file path.
+## Paso 9: guarde el documento PDF
+ Guarde el documento PDF usando el`Save` método de la`Document` objeto. Especifique la ruta del archivo de salida.
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-### Sample source code for Add Subsequent Lines Indent using Aspose.PDF for .NET 
+### Código fuente de muestra para agregar sangría de líneas posteriores usando Aspose.PDF para .NET 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create new document object 
+// Crear nuevo objeto de documento
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// Initilize TextFormattingOptions for the text fragment and specify SubsequentLinesIndent value
+// Inicie TextFormattingOptions para el fragmento de texto y especifique el valor de SubsiguienteLinesIndent
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -108,47 +108,47 @@ page.Paragraphs.Add(text);
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-## Conclusion
-You have successfully added subsequent lines indent to text using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## Conclusión
+Ha agregado correctamente sangría de líneas posteriores al texto utilizando Aspose.PDF para .NET. El archivo PDF resultante ahora se puede encontrar en la ruta del archivo de salida especificada.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is the focus of this tutorial?
+#### P: ¿Cuál es el enfoque de este tutorial?
 
-A: This tutorial provides a comprehensive guide on how to add subsequent lines indent to text in a PDF file using the Aspose.PDF for .NET library. It includes C# source code examples to illustrate the steps required for achieving this.
+R: Este tutorial proporciona una guía completa sobre cómo agregar sangrías de líneas posteriores al texto en un archivo PDF usando la biblioteca Aspose.PDF para .NET. Incluye ejemplos de código fuente de C# para ilustrar los pasos necesarios para lograrlo.
 
-#### Q: Which namespaces do I need to import for this tutorial?
+#### P: ¿Qué espacios de nombres necesito importar para este tutorial?
 
-A: In the code file where you intend to add subsequent lines indent, import the following namespaces at the beginning of the file:
+R: En el archivo de código donde desea agregar sangría de líneas posteriores, importe los siguientes espacios de nombres al principio del archivo:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### P: ¿Cómo especifico el directorio de documentos?
 
-A: In the code, locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ R: En el código, localice la línea`string dataDir = "YOUR DOCUMENT DIRECTORY";` y reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta real a su directorio de documentos.
 
-#### Q: How do I create a Document object?
+#### P: ¿Cómo creo un objeto Documento?
 
-A: In Step 4, you'll instantiate a new `Document` object using the following line of code:
+ R: En el paso 4, creará una instancia de un nuevo`Document` objeto usando la siguiente línea de código:
 
 ```csharp
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
-#### Q: How do I add a page to the document?
+#### P: ¿Cómo agrego una página al documento?
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection:
+ R: En el paso 5, agregará una nueva página al documento usando el`Add` método de la`Pages` recopilación:
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
-#### Q: How can I add subsequent lines indent to text?
+#### P: ¿Cómo puedo agregar sangría de líneas posteriores al texto?
 
-A: In Step 6, you'll create a `TextFragment` object and assign the desired text to it. Then, you'll initialize `TextFormattingOptions` for the `TextFragment` and specify the `SubsequentLinesIndent` value:
+ R: En el paso 6, creará un`TextFragment` objeto y asignarle el texto deseado. Luego, inicializarás`TextFormattingOptions` Para el`TextFragment` especificar el`SubsequentLinesIndent` valor:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -158,26 +158,26 @@ text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 };
 ```
 
-#### Q: How do I add the TextFragment to the PDF document?
+#### P: ¿Cómo agrego el fragmento de texto al documento PDF?
 
-A: In Step 7, you'll add the `TextFragment` object (`text`) to the paragraphs collection of the page:
+ R: En el paso 7, agregará el`TextFragment` objeto (`text`) a la colección de párrafos de la página:
 
 ```csharp
 page.Paragraphs.Add(text);
 ```
 
-#### Q: Can I repeat the process for additional lines?
+#### P: ¿Puedo repetir el proceso para líneas adicionales?
 
-A: Yes, in Step 8, you can repeat the process for additional lines with the same indent by creating new `TextFragment` objects and adding them to the paragraphs collection of the page.
+ R: Sí, en el Paso 8, puede repetir el proceso para líneas adicionales con la misma sangría creando nuevas`TextFragment` objetos y agregarlos a la colección de párrafos de la página.
 
-#### Q: How do I save the resulting PDF document?
+#### P: ¿Cómo guardo el documento PDF resultante?
 
-A: After adding the text with subsequent lines indent, use the `Save` method of the `Document` object to save the PDF document:
+ R: Después de agregar el texto con sangría de líneas posteriores, use el`Save` método de la`Document` objeto para guardar el documento PDF:
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-#### Q: What is the key takeaway from this tutorial?
+#### P: ¿Cuál es la conclusión clave de este tutorial?
 
-A: By following this tutorial, you've successfully learned how to enhance the readability of text in a PDF document by adding subsequent lines indent using Aspose.PDF for .NET. This technique can be useful for various types of documents and reports.
+R: Al seguir este tutorial, habrá aprendido cómo mejorar la legibilidad del texto en un documento PDF agregando sangría de líneas posteriores usando Aspose.PDF para .NET. Esta técnica puede resultar útil para varios tipos de documentos e informes.

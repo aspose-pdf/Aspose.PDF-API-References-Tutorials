@@ -1,134 +1,134 @@
 ---
-title: Add Line Object In PDF File
-linktitle: Add Line Object In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a custom line object in a PDF file using Aspose.PDF for .NET.
+title: إضافة كائن سطر في ملف PDF
+linktitle: إضافة كائن سطر في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة كائن سطر مخصص في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 30
 url: /ar/net/programming-with-graphs/add-line-object/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to add a line object using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك خلال التعليمات البرمجية المصدر لـ C# التالية خطوة بخطوة لإضافة كائن سطر باستخدام Aspose.PDF لـ .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك قبل البدء. لديك أيضًا معرفة أساسية ببرمجة C#.
 
-## Step 1: Document Directory Setup
+## الخطوة 1: إعداد دليل المستندات
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+في كود المصدر المقدم، تحتاج إلى تحديد الدليل الذي تريد حفظ ملف PDF الناتج فيه. قم بتغيير المتغير "dataDir" إلى الدليل المطلوب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating a Document Instance and Adding a Page
+## الخطوة 2: إنشاء مثيل مستند وإضافة صفحة
 
-We create an instance of the Document class and add a page to this document.
+نقوم بإنشاء مثيل لفئة المستند وإضافة صفحة إلى هذا المستند.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Creating a Graph Object and adding it to the page
+## الخطوة 3: إنشاء كائن رسم بياني وإضافته إلى الصفحة
 
-We create a Graph object with specified dimensions and add it to the page's paragraph collection.
+نقوم بإنشاء كائن رسم بياني بأبعاد محددة ونضيفه إلى مجموعة فقرات الصفحة.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
 page.Paragraphs.Add(graph);
 ```
 
-## Step 4: Create Line Object and Add to Chart
+## الخطوة 4: إنشاء كائن خطي وإضافته إلى المخطط
 
-We create a Line object with the specified coordinates and add it to the chart's shape collection.
+نقوم بإنشاء كائن خطي بالإحداثيات المحددة ونضيفه إلى مجموعة أشكال المخطط.
 
 ```csharp
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
 graph.Shapes.Add(line);
 ```
 
-## Step 5: Line Setup
+## الخطوة 5: إعداد الخط
 
-We can specify properties for the line, such as dash type and dash phase.
+يمكننا تحديد خصائص الخط، مثل نوع الشرطة ومرحلة الشرطة.
 
 ```csharp
 line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
 line.GraphInfo.DashPhase = 1;
 ```
 
-## Step 6: Saving the PDF File
+## الخطوة 6: حفظ ملف PDF
 
-Finally, we save the resulting PDF file with the name "AddLineObject_out.pdf" in the specified directory.
+أخيرًا، نقوم بحفظ ملف PDF الناتج باسم "AddLineObject_out.pdf" في الدليل المحدد.
 
 ```csharp
 doc.Save(dataDir + "AddLineObject_out.pdf");
 ```
 
-### Sample source code for Add Line Object using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإضافة كائن سطر باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Document instance
+// إنشاء مثيل المستند
 Document doc = new Document();
-// Add page to pages collection of PDF file
+// إضافة صفحة إلى مجموعة الصفحات من ملف PDF
 Page page = doc.Pages.Add();
-// Create Graph instance
+// إنشاء مثيل الرسم البياني
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
-// Add graph object to paragraphs collection of page instance
+// إضافة كائن الرسم البياني إلى مجموعة الفقرات من مثيل الصفحة
 page.Paragraphs.Add(graph);
-// Create Rectangle instance
+// إنشاء مثيل مستطيل
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
-// Specify fill color for Graph object
+// تحديد لون التعبئة لكائن الرسم البياني
 line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
 line.GraphInfo.DashPhase = 1;
-// Add rectangle object to shapes collection of Graph object
+// إضافة كائن مستطيل إلى مجموعة أشكال كائن الرسم البياني
 graph.Shapes.Add(line);
 dataDir = dataDir + "AddLineObject_out.pdf";
-// Save PDF file
+// حفظ ملف PDF
 doc.Save(dataDir);
 Console.WriteLine("\nLine object added successfully to pdf.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we have explained step by step how to add a line object using Aspose.PDF for .NET. You can now use this knowledge to create PDF documents with custom lines in your applications.
+في هذا البرنامج التعليمي، شرحنا خطوة بخطوة كيفية إضافة كائن سطر باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام هذه المعرفة لإنشاء مستندات PDF بخطوط مخصصة في تطبيقاتك.
 
-### FAQ's for add line object in PDF file
+### الأسئلة الشائعة لإضافة كائن سطر في ملف PDF
 
-#### Q: What is the purpose of this tutorial?
+#### س: ما هو الغرض من هذا البرنامج التعليمي؟
 
-A: This tutorial aims to guide you through the process of adding a line object using Aspose.PDF for .NET to enhance your PDF documents.
+ج: يهدف هذا البرنامج التعليمي إلى إرشادك خلال عملية إضافة كائن سطري باستخدام Aspose.PDF لـ .NET لتحسين مستندات PDF الخاصة بك.
 
-#### Q: What prerequisites are required before starting?
+#### س: ما هي المتطلبات الأساسية المطلوبة قبل البدء؟
 
-A: Before you begin, make sure you have installed the Aspose.PDF library and set up your development environment. Additionally, having a basic understanding of C# programming is recommended.
+ج: قبل أن تبدأ، تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك. بالإضافة إلى ذلك، يوصى بالحصول على فهم أساسي لبرمجة C#.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### س: كيف أحدد الدليل لحفظ ملف PDF؟
 
-A: In the provided source code, you can modify the "dataDir" variable to indicate the directory where you want to save the resulting PDF file.
+ج: في الكود المصدري المقدم، يمكنك تعديل متغير "dataDir" للإشارة إلى الدليل الذي تريد حفظ ملف PDF الناتج فيه.
 
-#### Q: What is the purpose of the Graph object?
+#### س: ما هو الغرض من كائن الرسم البياني؟
 
-A: The Graph object serves as a container for drawing elements. It is created with specified dimensions and added to the page's paragraph collection.
+ج: كائن الرسم البياني بمثابة حاوية لعناصر الرسم. يتم إنشاؤه بأبعاد محددة وإضافته إلى مجموعة فقرات الصفحة.
 
-#### Q: How can I add a line object to the PDF document?
+#### س: كيف يمكنني إضافة كائن سطري إلى مستند PDF؟
 
-A: To add a line object, create an instance of the Line class with specified coordinates and add it to the graph's shape collection.
+ج: لإضافة كائن خطي، قم بإنشاء مثيل لفئة الخط بإحداثيات محددة وأضفه إلى مجموعة أشكال الرسم البياني.
 
-#### Q: Can I customize the appearance of the line?
+#### س: هل يمكنني تخصيص مظهر الخط؟
 
-A: Yes, you can customize the appearance of the line by setting properties such as dash type and dash phase using the GraphInfo property of the Line object.
+ج: نعم، يمكنك تخصيص مظهر الخط عن طريق تعيين خصائص مثل نوع الشرطة ومرحلة الشرطة باستخدام خاصية GraphInfo لكائن الخط.
 
-#### Q: What is the purpose of specifying the dash array and dash phase?
+#### س: ما هو الغرض من تحديد مصفوفة الشرطة ومرحلة الشرطة؟
 
-A: The dash array and dash phase properties allow you to create dashed or dotted lines with specific patterns.
+ج: تتيح لك خصائص مصفوفة الشرطة ومرحلة الشرطة إنشاء خطوط متقطعة أو منقطة بأنماط محددة.
 
-#### Q: How can I save the PDF file after adding the line object?
+#### س: كيف يمكنني حفظ ملف PDF بعد إضافة كائن السطر؟
 
-A: After adding the line object, you can save the resulting PDF file using the `doc.Save(dataDir + "AddLineObject_out.pdf");` line in the provided source code.
+ ج: بعد إضافة كائن الخط، يمكنك حفظ ملف PDF الناتج باستخدام الملف`doc.Save(dataDir + "AddLineObject_out.pdf");` سطر في كود المصدر المقدم.
 
-#### Q: Is there a sample source code available?
+#### س: هل هناك نموذج للكود المصدري متاح؟
 
-A: Yes, the tutorial includes a sample source code that you can refer to for implementing the steps described.
+ج: نعم، يتضمن البرنامج التعليمي نموذجًا للتعليمات البرمجية المصدرية التي يمكنك الرجوع إليها لتنفيذ الخطوات الموضحة.

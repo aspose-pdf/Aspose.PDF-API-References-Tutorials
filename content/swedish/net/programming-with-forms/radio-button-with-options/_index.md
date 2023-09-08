@@ -1,34 +1,34 @@
 ---
-title: Radio Button With Options
-linktitle: Radio Button With Options
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add a radio button with options to a PDF document using Aspose.PDF for .NET.
+title: Radioknapp med alternativ
+linktitle: Radioknapp med alternativ
+second_title: Aspose.PDF för .NET API Referens
+description: Lägg enkelt till en alternativknapp med alternativ till ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 230
 url: /sv/net/programming-with-forms/radio-button-with-options/
 ---
 
-In this tutorial, we will show you how to add a radio button with options to a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+I den här handledningen kommer vi att visa dig hur du lägger till en alternativknapp med alternativ till ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara C#-källkoden steg för steg för att guida dig genom denna process.
 
-## Step 1: Preparation
+## Steg 1: Förberedelser
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Se till att du har importerat de nödvändiga biblioteken och ange sökvägen till din dokumentkatalog:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiate a Document Object
+## Steg 2: Instantiera ett dokumentobjekt
 
-Instantiate a Document object to create a new PDF document:
+Instantiera ett dokumentobjekt för att skapa ett nytt PDF-dokument:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 3: Add page and table
+## Steg 3: Lägg till sida och tabell
 
-Add a page to the document and create a table to hold the radio button options:
+Lägg till en sida i dokumentet och skapa en tabell för att hålla alternativen för alternativknapparna:
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -37,9 +37,9 @@ table. ColumnWidths = "120 120 120";
 page.Paragraphs.Add(table);
 ```
 
-## Step 4: Instantiate a RadioButtonField Object
+## Steg 4: Instantiera ett RadioButtonField-objekt
 
-Instantiate a RadioButtonField object to represent the radio button:
+Instantiera ett RadioButtonField-objekt för att representera alternativknappen:
 
 ```csharp
 RadioButtonField rf = new RadioButtonField(page);
@@ -47,9 +47,9 @@ rf. PartialName = "radio";
 doc.Form.Add(rf, 1);
 ```
 
-## Step 5: Add radio button options
+## Steg 5: Lägg till alternativ för alternativknappar
 
-Add the radio button options to the RadioButtonField object:
+Lägg till alternativknappsalternativen till RadioButtonField-objektet:
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField();
@@ -69,9 +69,9 @@ rf.Add(opt2);
 rf.Add(opt3);
 ```
 
-## Step 6: Customize radio button options
+## Steg 6: Anpassa alternativ för alternativknappar
 
-Customize radio button options by setting attributes such as border, text color, and caption text:
+Anpassa alternativknappsalternativ genom att ställa in attribut som kantlinje, textfärg och bildtext:
 
 ```csharp
 opt1.Border = new Border(opt1);
@@ -81,13 +81,13 @@ opt1.Characteristics.Border = System.Drawing.Color.Black;
 opt1.DefaultAppearance.TextColor = System.Drawing.Color.Red;
 opt1.Caption = new TextFragment("Item1");
 
-// Repeat the same steps for opt2 and opt3
+// Upprepa samma steg för opt2 och opt3
 
 ```
 
-## Step 7: Add the radio button options to the table
+## Steg 7: Lägg till alternativknappsalternativen i tabellen
 
-Add the radio button options to the table to display them:
+Lägg till alternativknappsalternativen i tabellen för att visa dem:
 
 ```csharp
 Cell c1 = table.Rows.Add().Cells.Add();
@@ -99,20 +99,20 @@ c2.Paragraphs.Add(opt2);
 c3.Paragraphs.Add(opt3);
 ```
 
-## Step 8: Save the PDF Document
+## Steg 8: Spara PDF-dokumentet
 
-Save the created PDF document:
+Spara det skapade PDF-dokumentet:
 
 ```csharp
 dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Radio Button With Options using Aspose.PDF for .NET 
+### Exempel på källkod för radioknapp med alternativ med Aspose.PDF för .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Sökvägen till dokumentkatalogen.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	Document doc = new Document();
 	Page page = doc.Pages.Add();
@@ -163,7 +163,7 @@ try
 	c2.Paragraphs.Add(opt2);
 	c3.Paragraphs.Add(opt3);
 	dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
-	// Save the PDF file
+	// Spara PDF-filen
 	doc.Save(dataDir);
 	Console.WriteLine("\nRadio button field with three options added successfully.\nFile saved at " + dataDir);
 }
@@ -173,6 +173,6 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! You have successfully added a radio button with options to a PDF document using Aspose.PDF for .NET. You can now use this method to create interactive forms in your PDF documents.
+Grattis! Du har framgångsrikt lagt till en alternativknapp med alternativ till ett PDF-dokument med Aspose.PDF för .NET. Du kan nu använda den här metoden för att skapa interaktiva formulär i dina PDF-dokument.

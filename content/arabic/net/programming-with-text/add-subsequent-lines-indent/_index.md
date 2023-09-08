@@ -1,51 +1,51 @@
 ---
-title: Add Subsequent Lines Indent In PDF File
-linktitle: Add Subsequent Lines Indent In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add subsequent lines indent to text in PDF file using Aspose.PDF for .NET.
+title: إضافة مسافة بادئة للأسطر اللاحقة في ملف PDF
+linktitle: إضافة مسافة بادئة للأسطر اللاحقة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة مسافة بادئة للأسطر اللاحقة إلى النص في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 60
 url: /ar/net/programming-with-text/add-subsequent-lines-indent/
 ---
-This tutorial will guide you through the process of adding subsequent lines indent to text in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+سيرشدك هذا البرنامج التعليمي خلال عملية إضافة مسافة بادئة للأسطر اللاحقة إلى النص في ملف PDF باستخدام Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم الخطوات اللازمة.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## متطلبات
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio أو أي مترجم C# آخر مثبت على جهازك.
+- Aspose.PDF لمكتبة .NET. يمكنك تنزيله من موقع Aspose الرسمي أو استخدام مدير الحزم مثل NuGet لتثبيته.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## الخطوة 1: إعداد المشروع
+1. قم بإنشاء مشروع C# جديد في بيئة التطوير المفضلة لديك.
+2. قم بإضافة مرجع إلى Aspose.PDF لمكتبة .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to add subsequent lines indent, add the following using directive at the top of the file:
+## الخطوة 2: استيراد مساحات الأسماء المطلوبة
+في ملف التعليمات البرمجية الذي تريد إضافة مسافة بادئة للأسطر اللاحقة فيه، أضف ما يلي باستخدام التوجيه في أعلى الملف:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## الخطوة 3: قم بتعيين دليل المستند
+ في الكود، حدد السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدال`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل حيث يتم تخزين المستندات الخاصة بك.
 
-## Step 4: Create a new Document object
-Instantiate a new `Document` object by adding the following line of code:
+## الخطوة 4: إنشاء كائن مستند جديد
+ إنشاء مثيل جديد`Document` كائن عن طريق إضافة السطر التالي من التعليمات البرمجية:
 
 ```csharp
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document by using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `page`.
+## الخطوة 5: إضافة صفحة إلى المستند
+ أضف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages`مجموعة. في الكود المقدم، يتم تعيين الصفحة الجديدة للمتغير`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
-## Step 6: Create a TextFragment with subsequent lines indent
-Instantiate a `TextFragment` object and provide the desired text. In the provided code, the text is assigned to the variable `text`. Then, initialize `TextFormattingOptions` for the `TextFragment` and specify the `SubsequentLinesIndent` value.
+## الخطوة 6: إنشاء TextFragment مع وضع مسافة بادئة للأسطر اللاحقة
+ إنشاء مثيل أ`TextFragment` الكائن وتقديم النص المطلوب. في الكود المقدم، يتم تعيين النص للمتغير`text` . ثم قم بالتهيئة`TextFormattingOptions` ل`TextFragment`وتحديد`SubsequentLinesIndent` قيمة.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -55,15 +55,15 @@ text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 };
 ```
 
-## Step 7: Add the TextFragment to the page
-Add the `TextFragment` object to the paragraphs collection of the page.
+## الخطوة 7: أضف TextFragment إلى الصفحة
+ أضف ال`TextFragment` الاعتراض على مجموعة الفقرات من الصفحة.
 
 ```csharp
 page.Paragraphs.Add(text);
 ```
 
-## Step 8: Repeat steps 6 and 7 for additional lines
-To add subsequent lines with the same indent, repeat steps 6 and 7 for each line. Update the text content as needed.
+## الخطوة 8: كرر الخطوتين 6 و 7 للخطوط الإضافية
+لإضافة أسطر لاحقة بنفس المسافة البادئة، كرر الخطوتين 6 و7 لكل سطر. قم بتحديث محتوى النص حسب الحاجة.
 
 ```csharp
 text = new Aspose.Pdf.Text.TextFragment("Line2");
@@ -76,22 +76,22 @@ text = new Aspose.Pdf.Text.TextFragment("Line5");
 page.Paragraphs.Add(text);
 ```
 
-## Step 9: Save the PDF document
-Save the PDF document using the `Save` method of the `Document` object. Specify the output file path.
+## الخطوة 9: احفظ مستند PDF
+ احفظ مستند PDF باستخدام`Save` طريقة`Document` هدف. تحديد مسار ملف الإخراج.
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-### Sample source code for Add Subsequent Lines Indent using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإضافة مسافة بادئة للأسطر اللاحقة باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create new document object 
+// إنشاء كائن مستند جديد
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// Initilize TextFormattingOptions for the text fragment and specify SubsequentLinesIndent value
+// قم بتهيئة TextFormattingOptions لجزء النص وحدد قيمة SubsequentLinesIndent
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -108,47 +108,47 @@ page.Paragraphs.Add(text);
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-## Conclusion
-You have successfully added subsequent lines indent to text using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## خاتمة
+لقد نجحت في إضافة مسافة بادئة للأسطر اللاحقة إلى النص باستخدام Aspose.PDF لـ .NET. يمكن الآن العثور على ملف PDF الناتج في مسار ملف الإخراج المحدد.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the focus of this tutorial?
+#### س: ما هو محور هذا البرنامج التعليمي؟
 
-A: This tutorial provides a comprehensive guide on how to add subsequent lines indent to text in a PDF file using the Aspose.PDF for .NET library. It includes C# source code examples to illustrate the steps required for achieving this.
+ج: يوفر هذا البرنامج التعليمي دليلاً شاملاً حول كيفية إضافة مسافة بادئة للأسطر اللاحقة إلى النص في ملف PDF باستخدام مكتبة Aspose.PDF لـ .NET. يتضمن أمثلة على التعليمات البرمجية المصدر لـ C# لتوضيح الخطوات المطلوبة لتحقيق ذلك.
 
-#### Q: Which namespaces do I need to import for this tutorial?
+#### س: ما هي مساحات الأسماء التي أحتاج إلى استيرادها لهذا البرنامج التعليمي؟
 
-A: In the code file where you intend to add subsequent lines indent, import the following namespaces at the beginning of the file:
+ج: في ملف التعليمات البرمجية الذي تنوي إضافة مسافة بادئة للأسطر اللاحقة فيه، قم باستيراد مساحات الأسماء التالية في بداية الملف:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### س: كيف أحدد دليل المستندات؟
 
-A: In the code, locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ ج: في الكود، حدد موقع السطر`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدال`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك.
 
-#### Q: How do I create a Document object?
+#### س: كيف أقوم بإنشاء كائن مستند؟
 
-A: In Step 4, you'll instantiate a new `Document` object using the following line of code:
+ ج: في الخطوة 4، ستقوم بإنشاء نسخة جديدة`Document` كائن باستخدام السطر التالي من التعليمات البرمجية:
 
 ```csharp
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
-#### Q: How do I add a page to the document?
+#### س: كيف يمكنني إضافة صفحة إلى المستند؟
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection:
+ ج: في الخطوة 5، ستضيف صفحة جديدة إلى المستند باستخدام الملف`Add` طريقة`Pages` مجموعة:
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
-#### Q: How can I add subsequent lines indent to text?
+#### س: كيف يمكنني إضافة مسافة بادئة للأسطر اللاحقة إلى النص؟
 
-A: In Step 6, you'll create a `TextFragment` object and assign the desired text to it. Then, you'll initialize `TextFormattingOptions` for the `TextFragment` and specify the `SubsequentLinesIndent` value:
+ ج: في الخطوة 6، ستقوم بإنشاء ملف`TextFragment` الكائن وتعيين النص المطلوب له. بعد ذلك، سوف تقوم بالتهيئة`TextFormattingOptions` ل`TextFragment`وتحديد`SubsequentLinesIndent` قيمة:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -158,26 +158,26 @@ text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 };
 ```
 
-#### Q: How do I add the TextFragment to the PDF document?
+#### س: كيف يمكنني إضافة TextFragment إلى مستند PDF؟
 
-A: In Step 7, you'll add the `TextFragment` object (`text`) to the paragraphs collection of the page:
+ ج: في الخطوة 7، عليك إضافة`TextFragment` هدف (`text`) إلى مجموعة الفقرات من الصفحة:
 
 ```csharp
 page.Paragraphs.Add(text);
 ```
 
-#### Q: Can I repeat the process for additional lines?
+#### س: هل يمكنني تكرار العملية لخطوط إضافية؟
 
-A: Yes, in Step 8, you can repeat the process for additional lines with the same indent by creating new `TextFragment` objects and adding them to the paragraphs collection of the page.
+ ج: نعم، في الخطوة 8، يمكنك تكرار العملية لأسطر إضافية بنفس المسافة البادئة عن طريق إنشاء خطوط جديدة`TextFragment` الكائنات وإضافتها إلى مجموعة الفقرات بالصفحة.
 
-#### Q: How do I save the resulting PDF document?
+#### س: كيف يمكنني حفظ مستند PDF الناتج؟
 
-A: After adding the text with subsequent lines indent, use the `Save` method of the `Document` object to save the PDF document:
+ ج: بعد إضافة النص مع المسافة البادئة للأسطر اللاحقة، استخدم`Save` طريقة`Document` كائن لحفظ مستند PDF:
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-#### Q: What is the key takeaway from this tutorial?
+#### س: ما هي الوجبات الرئيسية من هذا البرنامج التعليمي؟
 
-A: By following this tutorial, you've successfully learned how to enhance the readability of text in a PDF document by adding subsequent lines indent using Aspose.PDF for .NET. This technique can be useful for various types of documents and reports.
+ج: باتباع هذا البرنامج التعليمي، تكون قد تعلمت بنجاح كيفية تحسين إمكانية قراءة النص في مستند PDF عن طريق إضافة مسافة بادئة للأسطر اللاحقة باستخدام Aspose.PDF لـ .NET. يمكن أن تكون هذه التقنية مفيدة لأنواع مختلفة من المستندات والتقارير.

@@ -1,86 +1,86 @@
 ---
-title: Rounded Corner Table In PDF Document
-linktitle: Rounded Corner Table In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create a rounded corner table in PDF document using Aspose.PDF for .NET.
+title: PDF 文档中的圆角表
+linktitle: PDF 文档中的圆角表
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文档中创建圆角表格。
 type: docs
 weight: 190
 url: /zh/net/programming-with-tables/rounded-corner-table/
 ---
-In this tutorial, we will guide you step by step to create a rounded corner table in PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+在本教程中，我们将逐步指导您使用 Aspose.PDF for .NET 在 PDF 文档中创建圆角表格。我们将解释提供的 C# 源代码并向您展示如何实现它。
 
-## Step 1: Creating the table
-First, we will create the table using the following code:
+## 第 1 步：创建表
+首先，我们将使用以下代码创建表：
 
 ```csharp
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 ```
 
-## Step 2: Rounded Corner Style Setup
-Next, we'll configure the rounded corner style for the table:
+## 第2步：圆角样式设置
+接下来，我们将为表格配置圆角样式：
 
 ```csharp
 tab1.CornerStyle = Aspose.Pdf.BorderCornerStyle.Round;
 ```
 
-## Step 3: Table Border Setup
-To give the table a rounded corner border, we need to create a BorderInfo object and configure it with the appropriate parameters:
+## 步骤 3：表格边框设置
+为了给表格一个圆角边框，我们需要创建一个 BorderInfo 对象并使用适当的参数配置它：
 
 ```csharp
-// Create a GraphInfo object to set the border color
+//创建GraphInfo对象来设置边框颜色
 GraphInfo graph = new GraphInfo();
 graph.Color = Aspose.Pdf.Color.Red;
 
-// Create an empty BorderInfo object
+//创建一个空的 BorderInfo 对象
 BorderInfo bInfo = new BorderInfo(BorderSide.All, graph);
 
-// Set the radius of the rounded border to 15
+//将圆角边框的半径设置为 15
 bInfo.RoundedBorderRadius = 15;
 
-// Apply border information to the table
+//将边框信息应用到表中
 tab1.Border = bInfo;
 ```
 
-### Example source code for Rounded Corner Table using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 的圆角表的示例源代码
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 GraphInfo graph = new GraphInfo();
 graph.Color = Aspose.Pdf.Color.Red;
-// Create a blank BorderInfo object
+//创建一个空白的 BorderInfo 对象
 BorderInfo bInfo = new BorderInfo(BorderSide.All, graph);
-// Set the border a rounder border where radius of round is 15
+//将边框设置为更圆的边框，其中圆的半径为 15
 bInfo.RoundedBorderRadius = 15;
-// Set the table Corner style as Round.
+//将表角样式设置为圆形。
 tab1.CornerStyle = Aspose.Pdf.BorderCornerStyle.Round;
-// Set the table border information
+//设置表格边框信息
 tab1.Border = bInfo;
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to create a rounded corner table in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to set up the rounded corner style and table border. Now you can apply this knowledge to your own projects.
+## 结论
+恭喜！您现在已经了解了如何使用 Aspose.PDF for .NET 在 PDF 文档中创建圆角表格。本分步指南向您展示了如何设置圆角样式和表格边框。现在您可以将这些知识应用到您自己的项目中。
 
-### FAQ's for rounded corner table in PDF document
+### PDF 文档中圆角桌的常见问题解答
 
-#### Q: Can I customize the radius of the rounded corners for the table?
+#### 问：我可以自定义桌子的圆角半径吗？
 
-A: Yes, you can customize the radius of the rounded corners for the table by modifying the value of the `bInfo.RoundedBorderRadius` property in the provided C# source code. Simply set the desired radius value (in points) to achieve the desired rounded corner appearance.
+A：是的，您可以通过修改 的值来自定义表格的圆角半径。`bInfo.RoundedBorderRadius`提供的 C# 源代码中的属性。只需设置所需的半径值（以磅为单位）即可实现所需的圆角外观。
 
-#### Q: Can I apply rounded corners to individual cells within the table?
+#### 问：我可以对表格中的各个单元格应用圆角吗？
 
-A: No, the rounded corner style is applied to the entire table as a whole. Aspose.PDF for .NET currently does not provide built-in support for applying rounded corners to individual cells within the table.
+A：不是，圆角样式是应用于整个桌子的整体。 Aspose.PDF for .NET 目前不提供对表格内各个单元格应用圆角的内置支持。
 
-#### Q: Can I change the color of the rounded corner border?
+#### 问：我可以更改圆角边框的颜色吗？
 
-A: Yes, you can change the color of the rounded corner border by modifying the value of the `graph.Color` property in the C# source code. Simply provide the desired color, such as `Aspose.Pdf.Color.Red` or any other valid color representation.
+ A：是的，可以通过修改圆角边框的值来改变圆角边框的颜色`graph.Color`C# 源代码中的属性。只需提供所需的颜色，例如`Aspose.Pdf.Color.Red`或任何其他有效的颜色表示。
 
-#### Q: Is it possible to apply different corner styles (e.g., square and rounded) to different tables within the same PDF document?
+#### 问：是否可以对同一 PDF 文档中的不同表格应用不同的角样式（例如方形和圆形）？
 
-A: Yes, it is possible to apply different corner styles to different tables within the same PDF document. You can create multiple tables and configure their corner styles individually based on your requirements.
+答：是的，可以对同一 PDF 文档中的不同表格应用不同的角样式。您可以创建多个表格并根据您的要求单独配置其角样式。
 
-#### Q: Can I adjust the thickness of the rounded corner border?
+#### 问：我可以调整圆角边框的粗细吗？
 
-A: Yes, you can adjust the thickness of the rounded corner border by modifying the `BorderInfo` object's properties in the C# source code. For example, you can set the `bInfo.Width` property to adjust the border's thickness.
+ A：是的，您可以通过修改圆角边框的粗细来调整`BorderInfo`C# 源代码中对象的属性。例如，您可以设置`bInfo.Width`属性来调整边框的粗细。

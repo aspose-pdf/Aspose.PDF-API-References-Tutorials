@@ -1,103 +1,103 @@
 ---
-title: Set XMPMetadata In PDF File
-linktitle: Set XMPMetadata In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set XMPMetadata in PDF file using Aspose.PDF for .NET. Follow this step-by-step guide.
+title: Legen Sie XMPMetadata in der PDF-Datei fest
+linktitle: Legen Sie XMPMetadata in der PDF-Datei fest
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET XMPMetadaten in einer PDF-Datei festlegen. Befolgen Sie diese Schritt-für-Schritt-Anleitung.
 type: docs
 weight: 330
 url: /de/net/programming-with-document/setxmpmetadata/
 ---
-In this article, we'll provide a step-by-step guide on how to use Aspose.PDF for .NET to set XMP metadata in a PDF file. We'll provide a full example source code at the end of the article.
+In diesem Artikel stellen wir eine Schritt-für-Schritt-Anleitung zur Verwendung von Aspose.PDF für .NET zum Festlegen von XMP-Metadaten in einer PDF-Datei bereit. Am Ende des Artikels stellen wir einen vollständigen Beispielquellcode zur Verfügung.
 
-## Step 1: Set the path to the document directory
+## Schritt 1: Legen Sie den Pfad zum Dokumentverzeichnis fest
 
-Before we start, we need to set the path to the directory where our PDF document is located. We will store this path in a variable called "dataDir".
+Bevor wir beginnen, müssen wir den Pfad zu dem Verzeichnis festlegen, in dem sich unser PDF-Dokument befindet. Wir werden diesen Pfad in einer Variablen namens „dataDir“ speichern.
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Make sure to replace `YOUR DOCUMENT DIRECTORY` with the actual path to your PDF file.
+ Unbedingt austauschen`YOUR DOCUMENT DIRECTORY` mit dem tatsächlichen Pfad zu Ihrer PDF-Datei.
 
-## Step 2: Open the PDF File
+## Schritt 2: Öffnen Sie die PDF-Datei
 
-The first step is to open the PDF file you want to set XMP metadata for. To do this, you'll need to create a new `Document` object and pass in the path to your PDF file.
+ Der erste Schritt besteht darin, die PDF-Datei zu öffnen, für die Sie XMP-Metadaten festlegen möchten. Dazu müssen Sie ein neues erstellen`Document` Objekt und übergeben Sie den Pfad zu Ihrer PDF-Datei.
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
 ```
 
-## Step 3: Set XMP Metadata Properties
+## Schritt 3: Legen Sie die XMP-Metadateneigenschaften fest
 
-Now that you have your PDF file open, you can start setting XMP metadata properties. The properties you set will depend on your specific needs, but here are some common properties you might want to set:
+Nachdem Sie Ihre PDF-Datei geöffnet haben, können Sie mit dem Festlegen der XMP-Metadateneigenschaften beginnen. Welche Eigenschaften Sie festlegen, hängt von Ihren spezifischen Anforderungen ab, aber hier sind einige allgemeine Eigenschaften, die Sie möglicherweise festlegen möchten:
 
-- `xmp:CreateDate`: The creation date of the PDF file.
-- `xmp:Nickname`: A nickname or alias for the PDF file.
-- `xmp:CustomProperty`: A custom property with a value you specify.
+- `xmp:CreateDate`: Das Erstellungsdatum der PDF-Datei.
+- `xmp:Nickname`: Ein Spitzname oder Alias für die PDF-Datei.
+- `xmp:CustomProperty`: Eine benutzerdefinierte Eigenschaft mit einem von Ihnen angegebenen Wert.
 
-To set these properties, you can use the `Metadata` property of the `Document` object. Here's an example:
+ Um diese Eigenschaften festzulegen, können Sie die verwenden`Metadata` Eigentum der`Document` Objekt. Hier ist ein Beispiel:
 
 ```csharp
-// Set properties
+// Eigenschaften festlegen
 pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
 pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
 pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
 ```
 
-In this tutorial, we're setting the creation date to the current date and time, the nickname to "Nickname", and a custom property to "Custom Value". You can replace these values with your own.
+In diesem Tutorial setzen wir das Erstellungsdatum auf das aktuelle Datum und die aktuelle Uhrzeit, den Spitznamen auf „Spitzname“ und eine benutzerdefinierte Eigenschaft auf „Benutzerdefinierter Wert“. Sie können diese Werte durch Ihre eigenen ersetzen.
 
-## Step 4: Save the PDF File
+## Schritt 4: Speichern Sie die PDF-Datei
 
-After you've set the XMP metadata properties, you need to save the PDF file. To do this, you can use the `Save` method of the `Document` object and pass in the path to where you want to save the updated PDF file.
+ Nachdem Sie die XMP-Metadateneigenschaften festgelegt haben, müssen Sie die PDF-Datei speichern. Dazu können Sie die verwenden`Save` Methode der`Document` Objekt und übergeben Sie den Pfad zu dem Ort, an dem Sie die aktualisierte PDF-Datei speichern möchten.
 
 ```csharp
 dataDir = dataDir + "SetXMPMetadata_out.pdf";
-// Save document
+// Dokument speichern
 pdfDocument.Save(dataDir);
 ```
 
-### Example Source Code for Set XMPMetadata using Aspose.PDF for .NET
+### Beispielquellcode für Set XMPMetadata mit Aspose.PDF für .NET
 
-Here's the complete example source code for setting XMPMetadata using Aspose.PDF for .NET:
+Hier ist der vollständige Beispielquellcode zum Festlegen von XMPMetadata mit Aspose.PDF für .NET:
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
 
-// Set properties
+// Eigenschaften festlegen
 pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
 pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
 pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
 
 dataDir = dataDir + "SetXMPMetadata_out.pdf";
-// Save document
+// Dokument speichern
 pdfDocument.Save(dataDir);
 
 Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Abschluss
 
-Aspose.PDF for .NET offers a straightforward way to set XMP metadata in PDF files, enabling you to add descriptive information and properties to your documents. The step-by-step guide provided above shows you how to set various XMP metadata properties using C# source code. Additionally, you can customize the XMP metadata to match your specific needs and business requirements. With Aspose.PDF for .NET, managing PDF metadata becomes efficient and allows for better organization and searchability of your PDF documents.
+Aspose.PDF für .NET bietet eine einfache Möglichkeit, XMP-Metadaten in PDF-Dateien festzulegen, sodass Sie Ihren Dokumenten beschreibende Informationen und Eigenschaften hinzufügen können. Die oben bereitgestellte Schritt-für-Schritt-Anleitung zeigt Ihnen, wie Sie verschiedene XMP-Metadateneigenschaften mithilfe von C#-Quellcode festlegen. Darüber hinaus können Sie die XMP-Metadaten an Ihre spezifischen Bedürfnisse und Geschäftsanforderungen anpassen. Mit Aspose.PDF für .NET wird die Verwaltung von PDF-Metadaten effizienter und ermöglicht eine bessere Organisation und Durchsuchbarkeit Ihrer PDF-Dokumente.
 
-### FAQ's forSet XMPMetadata in PDF file
+### FAQs zum Festlegen von XMP-Metadaten in einer PDF-Datei
 
-#### Q: What is XMP metadata in a PDF file, and why is it important?
+#### F: Was sind XMP-Metadaten in einer PDF-Datei und warum sind sie wichtig?
 
-A: XMP (Extensible Metadata Platform) is a standard for embedding metadata in various file formats, including PDF. XMP metadata in a PDF file allows you to add descriptive information and properties to the document, such as creation date, author, title, keywords, and custom properties. It is essential for better organization, searchability, and archiving of PDF documents.
+A: XMP (Extensible Metadata Platform) ist ein Standard zum Einbetten von Metadaten in verschiedene Dateiformate, einschließlich PDF. Mit XMP-Metadaten in einer PDF-Datei können Sie dem Dokument beschreibende Informationen und Eigenschaften hinzufügen, wie z. B. Erstellungsdatum, Autor, Titel, Schlüsselwörter und benutzerdefinierte Eigenschaften. Dies ist für eine bessere Organisation, Durchsuchbarkeit und Archivierung von PDF-Dokumenten unerlässlich.
 
-#### Q: Can I set other XMP metadata properties besides the ones mentioned in the example?
+#### F: Kann ich neben den im Beispiel genannten auch andere XMP-Metadateneigenschaften festlegen?
 
-A: Yes, you can set a wide range of XMP metadata properties depending on your specific requirements. Some common properties include `dc:title` (document title), `dc:creator` (document creator), `dc:description` (document description), `pdf:Keywords` (document keywords), and more. The XMP specification offers various standard namespaces and custom namespaces for setting different types of metadata.
+ A: Ja, Sie können je nach Ihren spezifischen Anforderungen eine Vielzahl von XMP-Metadateneigenschaften festlegen. Zu den allgemeinen Eigenschaften gehören:`dc:title` (Dokumenttitel),`dc:creator` (Dokumentersteller),`dc:description` (Dokumentbeschreibung),`pdf:Keywords` (Dokumentschlüsselwörter) und mehr. Die XMP-Spezifikation bietet verschiedene Standard-Namespaces und benutzerdefinierte Namespaces zum Festlegen verschiedener Arten von Metadaten.
 
-#### Q: Is it possible to retrieve and read XMP metadata from an existing PDF file?
+#### F: Ist es möglich, XMP-Metadaten aus einer vorhandenen PDF-Datei abzurufen und zu lesen?
 
-A: Yes, Aspose.PDF for .NET provides the ability to read and retrieve XMP metadata from an existing PDF file. You can use the `Metadata` property of the `Document` class to access the XMP metadata and retrieve the values of specific properties.
+ A: Ja, Aspose.PDF für .NET bietet die Möglichkeit, XMP-Metadaten aus einer vorhandenen PDF-Datei zu lesen und abzurufen. Du kannst den ... benutzen`Metadata` Eigentum der`Document` Klasse, um auf die XMP-Metadaten zuzugreifen und die Werte bestimmter Eigenschaften abzurufen.

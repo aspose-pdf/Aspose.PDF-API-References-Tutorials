@@ -1,57 +1,57 @@
 ---
-title: Get Fields From Region In PDF File
-linktitle: Get Fields From Region In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get fields from a specific region in PDF file with Aspose.PDF for .NET.
+title: الحصول على الحقول من المنطقة في ملف PDF
+linktitle: الحصول على الحقول من المنطقة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: يمكنك بسهولة الحصول على الحقول من منطقة معينة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 130
 url: /ar/net/programming-with-forms/get-fields-from-region/
 ---
-In this tutorial, we will show you how to get the fields of a specific region in PDF file using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+سنوضح لك في هذا البرنامج التعليمي كيفية الحصول على حقول منطقة معينة في ملف PDF باستخدام Aspose.PDF لـ .NET. سنشرح لك كود مصدر C# خطوة بخطوة لإرشادك خلال هذه العملية.
 
-## Step 1: Preparation
+## الخطوة 1: التحضير
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+تأكد من استيراد المكتبات الضرورية وتعيين المسار إلى دليل المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the PDF file
+## الخطوة 2: افتح ملف PDF
 
-Open the PDF file:
+افتح ملف PDF:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "GetFieldsFromRegion.pdf");
 ```
 
-## Step 3: Create a rectangle object to bound the region
+## الخطوة 3: إنشاء كائن مستطيل لربط المنطقة
 
-Create a rectangle object to bound the region where you want to get the fields:
+قم بإنشاء كائن مستطيل لربط المنطقة التي تريد الحصول على الحقول فيها:
 
 ```csharp
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(35, 30, 500, 500);
 ```
 
-## Step 4: Obtain the PDF form
+## الخطوة 4: الحصول على نموذج PDF
 
-Get the PDF form of the document:
+احصل على نموذج PDF للوثيقة:
 
 ```csharp
 Aspose.Pdf.Forms.Form form = doc.Form;
 ```
 
-## Step 5: Get the fields in the rectangular region
+## الخطوة 5: احصل على الحقول في المنطقة المستطيلة
 
-Get the fields located in the specified rectangular region:
+احصل على الحقول الموجودة في المنطقة المستطيلة المحددة:
 
 ```csharp
 Aspose.Pdf.Forms.Field[] fields = form.GetFieldsInRect(rectangle);
 ```
 
-## Step 6: Display field names and values
+## الخطوة 6: عرض أسماء الحقول وقيمها
 
-Iterate through the resulting fields and display their names and values:
+كرر الحقول الناتجة واعرض أسمائها وقيمها:
 
 ```csharp
 foreach (Field field in fields)
@@ -60,48 +60,48 @@ Console.Out.WriteLine("Field name: " + field.FullName + "-" + "Field value: " + 
 }
 ```
 
-### Sample source code for Get Fields From Region using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للحصول على الحقول من المنطقة باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open pdf file
+// فتح ملف pdf
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "GetFieldsFromRegion.pdf");
-// Create rectangle object to get fields in that area
+// قم بإنشاء كائن مستطيل للحصول على الحقول في تلك المنطقة
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(35, 30, 500, 500);
-// Get the PDF form
+// الحصول على نموذج PDF
 Aspose.Pdf.Forms.Form form = doc.Form;
-// Get fields in the rectangular area
+// الحصول على الحقول في المنطقة المستطيلة
 Aspose.Pdf.Forms.Field[] fields = form.GetFieldsInRect(rectangle);
-// Display Field names and values
+// عرض أسماء الحقول والقيم
 foreach (Field field in fields)
 {
-	// Display image placement properties for all placements
+	// عرض خصائص موضع الصورة لجميع المواضع
 	Console.Out.WriteLine("Field Name: " + field.FullName + "-" + "Field Value: " + field.Value);
 }
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to get the fields of a specific region in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily extract the fields located in a given rectangular area of your PDF document using Aspose.PDF.
+في هذا البرنامج التعليمي، تعلمنا كيفية الحصول على حقول منطقة معينة في مستند PDF باستخدام Aspose.PDF لـ .NET. باتباع هذه الخطوات، يمكنك بسهولة استخراج الحقول الموجودة في منطقة مستطيلة معينة من مستند PDF الخاص بك باستخدام Aspose.PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Can I use this method to get fields from a non-rectangular region in a PDF document?
+#### س: هل يمكنني استخدام هذه الطريقة للحصول على حقول من منطقة غير مستطيلة في مستند PDF؟
 
-A: No, the provided method `GetFieldsInRect` is specifically designed to retrieve fields located within a rectangular region in a PDF document. If you need to extract fields from a non-rectangular region, you would need to implement custom logic to identify and extract the fields based on other criteria, such as field coordinates or names.
+ ج: لا، الطريقة المقدمة`GetFieldsInRect` تم تصميمه خصيصًا لاسترداد الحقول الموجودة داخل منطقة مستطيلة في مستند PDF. إذا كنت بحاجة إلى استخراج الحقول من منطقة غير مستطيلة، فستحتاج إلى تنفيذ منطق مخصص لتحديد الحقول واستخراجها بناءً على معايير أخرى، مثل إحداثيات الحقل أو الأسماء.
 
-#### Q: How can I modify the size or position of the rectangle to get fields from a different region?
+#### س: كيف يمكنني تعديل حجم المستطيل أو موضعه للحصول على حقول من منطقة مختلفة؟
 
-A: To get fields from a different region, you can modify the `Aspose.Pdf.Rectangle` object's parameters used to define the bounding rectangle. The `Rectangle` constructor takes four parameters: `x`, `y`, `width`, and `height`, which represent the top-left corner coordinates and the dimensions of the rectangle. Adjusting these parameters will change the region from which fields are extracted.
+ ج: للحصول على حقول من منطقة مختلفة، يمكنك تعديل الملف`Aspose.Pdf.Rectangle` معلمات الكائن المستخدمة لتحديد المستطيل المحيط. ال`Rectangle` يأخذ المنشئ أربع معلمات:`x`, `y`, `width` ، و`height`والتي تمثل إحداثيات الزاوية العلوية اليسرى وأبعاد المستطيل. سيؤدي ضبط هذه المعلمات إلى تغيير المنطقة التي يتم استخراج الحقول منها.
 
-#### Q: What if there are no fields within the specified rectangular region?
+#### س: ماذا لو لم تكن هناك حقول داخل المنطقة المستطيلة المحددة؟
 
-A: If there are no fields within the specified rectangular region, the `GetFieldsInRect` method will return an empty array. You can check the length of the array to determine if there are any fields within the region.
+ ج: إذا لم تكن هناك حقول داخل المنطقة المستطيلة المحددة، فسيتم`GetFieldsInRect` ستُرجع الطريقة مصفوفة فارغة. يمكنك التحقق من طول المصفوفة لتحديد ما إذا كان هناك أي حقول داخل المنطقة.
 
-#### Q: Can I get fields from overlapping regions in a PDF document?
+#### س: هل يمكنني الحصول على حقول من مناطق متداخلة في مستند PDF؟
 
-A: Yes, you can get fields from overlapping regions in a PDF document by creating multiple `Aspose.Pdf.Rectangle` objects and calling the `GetFieldsInRect` method for each of them. Overlapping regions will be handled independently, and you will receive separate arrays of fields for each region.
+ ج: نعم، يمكنك الحصول على حقول من مناطق متداخلة في مستند PDF عن طريق إنشاء حقول متعددة`Aspose.Pdf.Rectangle` الكائنات واستدعاء`GetFieldsInRect` طريقة لكل منهم. سيتم التعامل مع المناطق المتداخلة بشكل مستقل، وستتلقى صفائف منفصلة من الحقول لكل منطقة.
 
-#### Q: Is it possible to get fields from a specific page or multiple pages in the PDF document?
+#### س: هل من الممكن الحصول على حقول من صفحة معينة أو عدة صفحات في مستند PDF؟
 
-A: Yes, you can get fields from a specific page or multiple pages in a PDF document. To achieve this, you can load the PDF document, access the desired pages using the `doc.Pages` collection, and then apply the `GetFieldsInRect` method to each page's specific region.
+ج: نعم، يمكنك الحصول على حقول من صفحة معينة أو عدة صفحات في مستند PDF. لتحقيق ذلك، يمكنك تحميل مستند PDF، والوصول إلى الصفحات المطلوبة باستخدام الملف`doc.Pages` جمع، ومن ثم تطبيق`GetFieldsInRect` طريقة لمنطقة محددة لكل صفحة.

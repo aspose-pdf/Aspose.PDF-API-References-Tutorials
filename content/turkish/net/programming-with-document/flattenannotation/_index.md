@@ -1,35 +1,35 @@
 ---
-title: Flatten Annotation In PDF File
-linktitle: Flatten Annotation In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to flatten annotations in PDF file using Aspose.PDF for .NET. Preserve annotations and prevent accidental alteration.
+title: PDF Dosyasında Ek Açıklamayı Düzleştir
+linktitle: PDF Dosyasında Ek Açıklamayı Düzleştir
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki açıklamaları nasıl düzleştireceğinizi öğrenin. Ek açıklamaları koruyun ve yanlışlıkla değiştirilmesini önleyin.
 type: docs
 weight: 150
 url: /tr/net/programming-with-document/flattenannotation/
 ---
-Aspose.PDF for .NET is a powerful library that enables developers to work with PDF file programmatically. One of the features that it provides is the ability to flatten annotations in PDF file. Flattening annotations in a PDF document means that the annotations become part of the document content and can no longer be edited or deleted. This is useful when you want to ensure that the annotations are preserved and cannot be accidentally altered.
+Aspose.PDF for .NET, geliştiricilerin PDF dosyasıyla programlı olarak çalışmasını sağlayan güçlü bir kütüphanedir. Sağladığı özelliklerden biri, PDF dosyasındaki ek açıklamaları düzleştirme yeteneğidir. Bir PDF belgesindeki ek açıklamaların düzleştirilmesi, ek açıklamaların belge içeriğinin bir parçası haline geldiği ve artık düzenlenemeyeceği veya silinemeyeceği anlamına gelir. Bu, ek açıklamaların korunduğundan ve yanlışlıkla değiştirilemeyeceğinden emin olmak istediğinizde kullanışlıdır.
 
-In this tutorial, we will discuss how to use Aspose.PDF for .NET to flatten annotations in a PDF document. We will provide a step-by-step guide on how to do this, along with example source code.
+Bu eğitimde, bir PDF belgesindeki açıklamaları düzleştirmek için Aspose.PDF for .NET'in nasıl kullanılacağını tartışacağız. Örnek kaynak koduyla birlikte bunun nasıl yapılacağına dair adım adım bir kılavuz sunacağız.
 
-## Step 1: Create a new C# Console Application
-To get started, create a new C# Console Application in Visual Studio. You can name it whatever you like. Once the project is created, you need to add a reference to the Aspose.PDF for .NET library.
+## 1. Adım: Yeni bir C# Konsol Uygulaması oluşturun
+Başlamak için Visual Studio'da yeni bir C# Konsol Uygulaması oluşturun. İstediğiniz ismi verebilirsiniz. Proje oluşturulduktan sonra Aspose.PDF for .NET kütüphanesine bir referans eklemeniz gerekir.
 
-## Step 2: Import the Aspose.PDF Namespace
-Add the following line of code at the top of your C# file to import the Aspose.PDF namespace:
+## Adım 2: Aspose.PDF Ad Alanını İçe Aktarın
+Aspose.PDF ad alanını içe aktarmak için C# dosyanızın en üstüne aşağıdaki kod satırını ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Open the PDF Document
-Open the PDF document that you want to flatten:
+## 3. Adım: PDF Belgesini açın
+Düzleştirmek istediğiniz PDF belgesini açın:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Step 4: Flatten the Annotations
-Flatten the annotations in the PDF document:
+## 4. Adım: Ek Açıklamaları Düzleştirin
+PDF belgesindeki ek açıklamaları düzleştirin:
 
 ```csharp
 foreach (var page in pdfDocument.Pages)
@@ -41,22 +41,22 @@ foreach (var page in pdfDocument.Pages)
 }
 ```
 
-## Step 5: Save the Updated Document
-Save the updated document:
+## Adım 5: Güncellenen Belgeyi Kaydedin
+Güncellenen belgeyi kaydedin:
 
 ```csharp
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("\nFlattened annotation successfully.\nFile saved at " + dataDir);
 ```
 
-### Example source code for Flatten Annotation using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Açıklamaları Düzleştir için örnek kaynak kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Flatten annotations
+// Ek açıklamaları düzleştir
 foreach (var page in pdfDocument.Pages)
 {
 	foreach (var annotation in page.Annotations)
@@ -65,25 +65,25 @@ foreach (var page in pdfDocument.Pages)
 	}
 
 }
-// Save updated document
+// Güncellenen belgeyi kaydet
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 
 Console.WriteLine("\nFlattened annotation successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-In this tutorial, we have discussed how to flatten annotations in a PDF document using Aspose.PDF for .NET. Flattening annotations in a PDF document is a useful feature that ensures that the annotations are preserved and cannot be accidentally altered. Aspose.PDF for .NET provides a simple and easy-to-use API to work with PDF documents, including flattening annotations. 
+## Çözüm
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesindeki açıklamaların nasıl düzleştirileceğini tartıştık. Bir PDF belgesindeki ek açıklamaları düzleştirmek, ek açıklamaların korunmasını ve kazara değiştirilmemesini sağlayan kullanışlı bir özelliktir. Aspose.PDF for .NET, düzleştirme açıklamaları da dahil olmak üzere PDF belgeleriyle çalışmak için basit ve kullanımı kolay bir API sağlar. 
 
-### FAQ's for flatten annotation in PDF file
+### PDF dosyasındaki düzleştirme açıklamasına ilişkin SSS
 
-#### Q: What are annotations in a PDF document?
+#### S: PDF belgesindeki ek açıklamalar nelerdir?
 
-A: Annotations in a PDF document are additional elements or notes that can be added to the document to provide extra information or interactivity. Annotations can include text, images, links, comments, and more.
+C: Bir PDF belgesindeki ek açıklamalar, ekstra bilgi veya etkileşim sağlamak amacıyla belgeye eklenebilecek ek öğeler veya notlardır. Ek açıklamalar metin, görseller, bağlantılar, yorumlar ve daha fazlasını içerebilir.
 
-#### Q: Why would I want to flatten annotations in a PDF document?
+#### S: Bir PDF belgesindeki ek açıklamaları neden düzleştirmek isteyeyim?
 
-A: Flattening annotations in a PDF document is useful when you want to ensure that the annotations become a part of the document content and cannot be edited or deleted. It helps in preserving the annotations as part of the document.
+C: Bir PDF belgesindeki ek açıklamaları düzleştirmek, ek açıklamaların belge içeriğinin bir parçası olmasını ve düzenlenememesini veya silinememesini sağlamak istediğinizde kullanışlıdır. Ek açıklamaların belgenin bir parçası olarak korunmasına yardımcı olur.
 
-#### Q: Can I selectively flatten annotations in a PDF document?
+#### S: Bir PDF belgesindeki ek açıklamaları seçerek düzleştirebilir miyim?
 
-A: Yes, you can selectively flatten annotations in a PDF document using Aspose.PDF for .NET. You can choose to flatten specific annotations or all annotations on a particular page or across the entire document.
+C: Evet, Aspose.PDF for .NET'i kullanarak bir PDF belgesindeki açıklamaları seçerek düzleştirebilirsiniz. Belirli bir sayfadaki veya belgenin tamamındaki belirli ek açıklamaları veya tüm ek açıklamaları düzleştirmeyi seçebilirsiniz.

@@ -1,141 +1,141 @@
 ---
-title: Page Number In Header Footer Using Floating Box
-linktitle: Page Number In Header Footer Using Floating Box
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add the page number in the header and footer of a PDF document with Aspose.PDF for .NET.
+title: 页眉页脚中使用浮动框的页码
+linktitle: 页眉页脚中使用浮动框的页码
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文档的页眉和页脚中添加页码。
 type: docs
 weight: 150
 url: /zh/net/programming-with-stamps-and-watermarks/page-number-in-header-footer-using-floating-box/
 ---
-In this tutorial, we will guide you step by step on how to add page number in header and footer of a PDF document using FloatingBox with Aspose.PDF for .NET. We will use the provided C# source code to create a PDF document, add a page, create a FloatingBox, set its position and add the page number to it, then save the modified PDF document.
+在本教程中，我们将逐步指导您如何使用 FloatingBox 和 Aspose.PDF for .NET 在 PDF 文档的页眉和页脚中添加页码。我们将使用提供的 C# 源代码创建 PDF 文档，添加页面，创建 FloatingBox，设置其位置并添加页码，然后保存修改后的 PDF 文档。
 
-## Step 1: Setting up the environment
+## 第一步：搭建环境
 
-Before you begin, make sure you have the following:
+在开始之前，请确保您具备以下条件：
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- 已安装的 .NET 开发环境。
+- 下载用于 .NET 的 Aspose.PDF 库并在您的项目中引用。
 
-## Step 2: Creating the PDF document and adding a page
+## 第 2 步：创建 PDF 文档并添加页面
 
-The first step is to create an instance of the PDF document and add a page to it. Here's how:
+第一步是创建 PDF 文档的实例并向其中添加页面。就是这样：
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Instantiate the PDF document
+//实例化 PDF 文档
 Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
 
-// Add a page to the PDF document
+//向 PDF 文档添加页面
 Aspose.Pdf.Page page = pdf.Pages.Add();
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+请务必将“您的文档目录”替换为您要保存 PDF 文档的目录的实际路径。
 
-## Step 3: Creating the FloatingBox and adding the page number
+## 第三步：创建FloatingBox并添加页码
 
-Now that the page is added to the PDF document, we can create a FloatingBox, set its position, and add the page number to it. Here's how:
+现在页面已添加到 PDF 文档中，我们可以创建一个 FloatingBox，设置其位置，并向其添加页码。就是这样：
 
 ```csharp
-// Create a FloatingBox with a width of 140 and a height of 80
+//创建一个宽度为 140、高度为 80 的 FloatingBox
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
 
-// Set the left position of the paragraph
+//设置段落的左侧位置
 box1. Left = 2;
 
-// Set the top position of the paragraph
+//设置段落顶部位置
 box1. Top = 10;
 
-// Add the page number to the FloatingBox
+//将页码添加到 FloatingBox
 box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
 
-// Add the FloatingBox to the page
+//将FloatingBox添加到页面中
 page.Paragraphs.Add(box1);
 ```
 
-The code above creates a FloatingBox with a width of 140 and a height of 80. Next, we set its position by specifying the left and top values. Finally, we add the page number to the FloatingBox using a TextFragment containing the syntax "($p/ $P )" which will be replaced with the current page number and the total number of pages.
+上面的代码创建了一个宽度为 140、高度为 80 的 FloatingBox。接下来，我们通过指定 left 和 top 值来设置其位置。最后，我们使用包含语法“($p/ $P )”的 TextFragment 将页码添加到 FloatingBox，该语法将替换为当前页码和总页数。
 
-## Step 4: Saving the modified PDF document
+## 第四步：保存修改后的PDF文档
 
-Once the page number is added to the header or footer using the FloatingBox, we can save the modified PDF document. Here's how:
+使用 FloatingBox 将页码添加到页眉或页脚后，我们就可以保存修改后的 PDF 文档。就是这样：
 
 ```csharp
-// Save the modified PDF document
+//保存修改后的PDF文档
 pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+上述代码将编辑后的PDF文档保存到指定目录。
 
-### Sample source code for Page Numberin Header Footer Using Floating Box using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 使用浮动框在页眉页脚中页码的示例源代码 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document instance
+//实例化文档实例
 Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
 
-// Add a Page into the pdf document
+//将页面添加到 pdf 文档中
 Aspose.Pdf.Page page = pdf.Pages.Add();
 
-// Initializes a new instance of the FloatingBox class
+//初始化 FloatingBox 类的新实例
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
 
-// Float value that indicates left position of the paragraph
+//指示段落左侧位置的浮点值
 box1.Left = 2;
 
-// Float value that indicates top position of the paragraph
+//指示段落顶部位置的浮点值
 box1.Top = 10;
 
-// Add the macros to the paragraphs collection of the FloatingBox
+//将宏添加到 FloatingBox 的段落集合中
 box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
 
-// Add a floatingBox to the page
+//给页面添加一个floatingBox
 page.Paragraphs.Add(box1);
 
-// Save the document
+//保存文档
 pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
 
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have learned how to add page number in header and footer of PDF document using FloatingBox with Aspose.PDF for .NET. You can now customize your headers and footers by adding dynamic information such as page number.
+恭喜！您已经学习了如何使用 FloatingBox 和 Aspose.PDF for .NET 在 PDF 文档的页眉和页脚中添加页码。现在，您可以通过添加页码等动态信息来自定义页眉和页脚。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is a FloatingBox, and how is it used to add page numbers in the header or footer of a PDF document?
+#### 问：什么是 FloatingBox，如何使用它在 PDF 文档的页眉或页脚中添加页码？
 
-A: A FloatingBox is a versatile layout element in Aspose.PDF that can hold various content, including text and images. In this tutorial, it's used to create a container for the page number, allowing you to dynamically insert the current page number and total page count into the header or footer.
+答：FloatingBox 是 Aspose.PDF 中的多功能布局元素，可以容纳各种内容，包括文本和图像。在本教程中，它用于创建页码容器，允许您动态地将当前页码和总页数插入页眉或页脚中。
 
-#### Q: How does the provided C# source code achieve adding page numbers using a FloatingBox?
+#### Q：提供的C#源码是如何实现使用FloatingBox添加页码的？
 
-A: The code snippet demonstrates how to create a PDF document, add a page, create a FloatingBox, set its position within the page, and insert the page number using a TextFragment. The syntax "($p/ $P )" in the TextFragment is replaced with the current page number and total page count.
+答：该代码片段演示了如何创建 PDF 文档、添加页面、创建 FloatingBox、设置其在页面内的位置以及使用 TextFragment 插入页码。 TextFragment 中的语法“($p/ $P )”被替换为当前页码和总页数。
 
-#### Q: Can I customize the appearance and formatting of the page number added using the FloatingBox?
+#### 问：我可以自定义使用 FloatingBox 添加的页码的外观和格式吗？
 
-A: Yes, you can customize the appearance of the page number by modifying the properties of the TextFragment within the FloatingBox. You can change font size, color, style, alignment, and other formatting options.
+答：是的，您可以通过修改 FloatingBox 内 TextFragment 的属性来自定义页码的外观。您可以更改字体大小、颜色、样式、对齐方式和其他格式选项。
 
-#### Q: Is it possible to add different dynamic elements, such as date and time, to the header or footer using a similar approach?
+#### 问：是否可以使用类似的方法向页眉或页脚添加不同的动态元素（例如日期和时间）？
 
-A: Absolutely, you can add different dynamic elements like date, time, document metadata, or custom text by modifying the TextFragment content within the FloatingBox. You can use macros like "($p/ $P )" for page numbers or "($date)" for the current date.
+答：当然，您可以通过修改 FloatingBox 中的 TextFragment 内容来添加不同的动态元素，例如日期、时间、文档元数据或自定义文本。您可以使用“($p/ $P )”等宏来表示页码，或使用“($date)”来表示当前日期。
 
-#### Q: How do I specify the position of the FloatingBox within the header or footer section?
-A: The provided code sets the position of the FloatingBox using the `Left` and `Top` properties. You can adjust these values to position the FloatingBox as desired within the header or footer section.
+#### 问：如何指定 FloatingBox 在页眉或页脚部分中的位置？
+答：提供的代码使用以下命令设置 FloatingBox 的位置`Left`和`Top`特性。您可以调整这些值以根据需要在页眉或页脚部分中定位 FloatingBox。
 
-#### Q: Can I use a different font or style for the page number in the header or footer?
+#### 问：页眉或页脚中的页码可以使用不同的字体或样式吗？
 
-A: Yes, you can customize the font, style, and other formatting properties of the page number text by modifying the TextFragment properties within the FloatingBox.
+答：是的，您可以通过修改 FloatingBox 中的 TextFragment 属性来自定义页码文本的字体、样式和其他格式属性。
 
-#### Q: What happens if the content in the FloatingBox exceeds its dimensions?
+#### 问：如果 FloatingBox 中的内容超出其尺寸会发生什么？
 
-A: If the content within the FloatingBox exceeds its dimensions, it may be cut off or layout issues may arise. Ensure that the dimensions of the FloatingBox are suitable for accommodating the content, and consider adjusting the page layout if needed.
+答：如果 FloatingBox 内的内容超出其尺寸，则可能会被截断或出现布局问题。确保 FloatingBox 的尺寸适合容纳内容，并根据需要考虑调整页面布局。
 
-#### Q: Is it possible to add multiple FloatingBoxes with different content to the header or footer of the same page?
+#### 问：是否可以在同一页面的页眉或页脚添加多个不同内容的FloatingBox？
 
-A: Yes, you can add multiple FloatingBoxes with different content to the header or footer of the same page by creating separate FloatingBox instances and adding them to the page's Paragraphs collection.
+答：是的，您可以通过创建单独的 FloatingBox 实例并将它们添加到页面的 Paragraphs 集合中，将多个具有不同内容的 FloatingBox 添加到同一页面的页眉或页脚。
 
-#### Q: Can I use the FloatingBox approach to add content to other sections of the PDF document, such as the body or margins?
+#### 问：我可以使用 FloatingBox 方法将内容添加到 PDF 文档的其他部分，例如正文或页边距吗？
 
-A: While FloatingBoxes are commonly used for headers and footers, you can also use them to add content to other sections of the PDF document, such as the body or margins, by positioning them accordingly within the page.
+答：虽然 FloatingBox 通常用于页眉和页脚，但您也可以使用它们将内容添加到 PDF 文档的其他部分，例如正文或页边距，方法是将它们相应地定位在页面内。

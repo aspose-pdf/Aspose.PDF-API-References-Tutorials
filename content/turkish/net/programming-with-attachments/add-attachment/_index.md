@@ -1,113 +1,113 @@
 ---
-title: Add Attachment In PDF File
-linktitle: Add Attachment In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add attachment in PDF file using Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: PDF Dosyasına Ek Ekle
+linktitle: PDF Dosyasına Ek Ekle
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasına nasıl eklenti ekleyeceğinizi öğrenin. Kolay kullanım için adım adım kılavuz.
 type: docs
 weight: 10
 url: /tr/net/programming-with-attachments/add-attachment/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to add an attachment in PDF file using Aspose.PDF for .NET.
+Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasına ek eklemek için aşağıdaki C# kaynak kodunu adım adım anlatacağız.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ayrıca temel C# programlama bilgisine sahip olmak.
 
-### Step 1: Document Directory Setup
+### Adım 1: Belge Dizini Kurulumu
 
-In the provided source code, you need to specify the directory where the PDF file you want to add the attachment is located. Change the "dataDir" variable to the desired directory.
+Verilen kaynak kodunda, ekini eklemek istediğiniz PDF dosyasının bulunduğu dizini belirtmeniz gerekmektedir. "dataDir" değişkenini istediğiniz dizine değiştirin.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### 2. Adım: Mevcut PDF belgesini açın
 
-We open the existing PDF document using the specified path.
+Mevcut PDF belgesini belirtilen yolu kullanarak açıyoruz.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddAttachment.pdf");
 ```
 
-### Step 3: Setting up the new file to add as an attachment
+### 3. Adım: Yeni dosyayı ek olarak eklenecek şekilde ayarlama
 
-We configure the new file that we want to add as an attachment. In this example, we add a text file with the name "test.txt" and a description "Example text file".
+Ek olarak eklemek istediğimiz yeni dosyayı yapılandırıyoruz. Bu örnekte, "test.txt" adında ve "Örnek metin dosyası" açıklamasına sahip bir metin dosyası ekliyoruz.
 
 ```csharp
 FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
 ```
 
-### Step 4: Adding the attachment to the document's attachments collection
+### 4. Adım: Eki belgenin ekler koleksiyonuna ekleme
 
-We add the attachment to the document's attachments collection.
+Eki, belgenin ekler koleksiyonuna ekliyoruz.
 
 ```csharp
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 ```
 
-### Step 5: Saving the new output file
+### Adım 5: Yeni çıktı dosyasını kaydetme
 
-Finally, we save the resulting new PDF file with the name "AddAttachment_out.pdf" in the specified directory.
+Son olarak ortaya çıkan yeni PDF dosyasını "AddAttachment_out.pdf" ismiyle belirtilen dizine kaydediyoruz.
 
 ```csharp
 pdfDocument.Save(dataDir + "AddAttachment_out.pdf");
 ```
 
-### Sample source code for Add Attachment using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Ek Ekleme için örnek kaynak kodu
  
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "AddAttachment.pdf");
-// Setup new file to be added as attachment
+// Ek olarak eklenecek yeni dosyayı ayarlayın
 FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
-// Add attachment to document's attachment collection
+//Belgenin ek koleksiyonuna ek ekleyin
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 dataDir = dataDir + "AddAttachment_out.pdf";
-// Save new output
+// Yeni çıktıyı kaydet
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nSample text file attached successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we explained how to add an attachment to a PDF file using Aspose.PDF for .NET. You can now use this knowledge to add additional files as attachments to your PDF documents.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF dosyasına nasıl eklenti ekleneceğini anlattık. Artık bu bilgiyi PDF belgelerinize ek olarak ek dosyalar eklemek için kullanabilirsiniz.
 
-### FAQ's for add attachment in PDF file
+### PDF dosyasına eklenti eklemek için SSS
 
-#### Q: Why would I need to add attachments to a PDF file?
+#### S: Bir PDF dosyasına neden ek eklemem gerekiyor?
 
-A: Adding attachments to a PDF file allows you to include supplementary materials, such as supporting documents, images, or files, which can provide additional context or information to the PDF's content.
+C: Bir PDF dosyasına ekler eklemek, PDF'nin içeriğine ek bağlam veya bilgi sağlayabilecek destekleyici belgeler, resimler veya dosyalar gibi ek materyaller eklemenize olanak tanır.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of adding attachments?
+#### S: Aspose.PDF for .NET, ek ekleme sürecini nasıl basitleştirir?
 
-A: Aspose.PDF for .NET provides a streamlined API that allows you to easily add attachments to PDF files. The provided source code demonstrates step-by-step how to accomplish this task.
+C: Aspose.PDF for .NET, PDF dosyalarına kolayca eklentiler eklemenizi sağlayan basitleştirilmiş bir API sağlar. Sağlanan kaynak kodu, bu görevin nasıl gerçekleştirileceğini adım adım gösterir.
 
-#### Q: What types of files can be attached to a PDF using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanılarak bir PDF'ye ne tür dosyalar eklenebilir?
 
-A: Aspose.PDF for .NET supports attaching various types of files, including text files, images, documents, spreadsheets, and more, as long as they are accessible from your development environment.
+C: Aspose.PDF for .NET, geliştirme ortamınızdan erişilebildiği sürece metin dosyaları, görseller, belgeler, elektronik tablolar ve daha fazlasını içeren çeşitli dosya türlerinin eklenmesini destekler.
 
-#### Q: Is there a limit to the number of attachments that can be added to a PDF file?
+#### S: Bir PDF dosyasına eklenebilecek ek sayısında bir sınır var mı?
 
-A: There is no strict limit to the number of attachments that can be added, but it's important to consider the overall file size and potential impact on document performance.
+C: Eklenebilecek eklerin sayısı konusunda kesin bir sınırlama yoktur ancak genel dosya boyutunun ve belge performansı üzerindeki potansiyel etkinin dikkate alınması önemlidir.
 
-#### Q: Can I customize the description of the attached files?
+#### S: Ekli dosyaların açıklamasını özelleştirebilir miyim?
 
-A: Yes, you can customize the description of each attached file. This description provides additional context for the attached file and helps users understand its purpose.
+C: Evet, ekli her dosyanın açıklamasını özelleştirebilirsiniz. Bu açıklama, ekli dosya için ek bağlam sağlar ve kullanıcıların dosyanın amacını anlamalarına yardımcı olur.
 
-#### Q: Are there any file size considerations when adding attachments?
+#### S: Ek eklerken dosya boyutuna dikkat edilmesi gerekiyor mu?
 
-A: While attachments can increase the overall file size of the PDF, Aspose.PDF for .NET ensures efficient attachment handling to minimize any negative impact on document performance.
+C: Ekler PDF'nin genel dosya boyutunu artırabilirken, Aspose.PDF for .NET, belge performansı üzerindeki olumsuz etkileri en aza indirgemek için etkili ek yönetimi sağlar.
 
-#### Q: Can attachments be added to specific pages within the PDF document?
+#### S: PDF belgesindeki belirli sayfalara ekler eklenebilir mi?
 
-A: Attachments are associated with the entire PDF document, rather than specific pages. They are accessible to users through the attachment panel in PDF viewers.
+C: Ekler belirli sayfalar yerine PDF belgesinin tamamıyla ilişkilendirilir. Kullanıcılar, PDF görüntüleyicilerdeki ek paneli aracılığıyla bunlara erişebilir.
 
-#### Q: How can I verify that the attachment was added successfully?
+#### S: Ekin başarıyla eklendiğini nasıl doğrulayabilirim?
 
-A: After following the provided source code, you can open the resulting PDF file to confirm that the attached file is accessible through the attachment panel.
+C: Sağlanan kaynak kodunu izledikten sonra, ekteki dosyaya ek panelinden erişilebildiğini doğrulamak için ortaya çıkan PDF dosyasını açabilirsiniz.
 
-#### Q: Can I remove or update attachments after they have been added?
+#### S: Ekleri ekledikten sonra kaldırabilir veya güncelleyebilir miyim?
 
-A: Yes, you can modify or remove attachments from a PDF file using Aspose.PDF for .NET's API, giving you flexibility in managing attachments as needed.
+C: Evet, Aspose.PDF for .NET'in API'sini kullanarak bir PDF dosyasındaki ekleri değiştirebilir veya kaldırabilirsiniz; bu, ekleri gerektiği gibi yönetme konusunda size esneklik sağlar.

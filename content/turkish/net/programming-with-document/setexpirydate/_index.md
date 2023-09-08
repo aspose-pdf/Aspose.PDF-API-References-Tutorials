@@ -1,49 +1,49 @@
 ---
-title: Set Expiry Date In PDF File
-linktitle: Set Expiry Date In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set expiry date in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+title: PDF Dosyasında Son Kullanma Tarihini Ayarlayın
+linktitle: PDF Dosyasında Son Kullanma Tarihini Ayarlayın
+second_title: .NET API Referansı için Aspose.PDF
+description: Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak PDF dosyasında son kullanma tarihini nasıl ayarlayacağınızı öğrenin.
 type: docs
 weight: 300
 url: /tr/net/programming-with-document/setexpirydate/
 ---
-Aspose.PDF for .NET is a powerful library that provides various features for working with PDF files. One such feature is the ability to set an expiry date for a PDF document. In this tutorial, we will walk you through the process of setting an expiry date for a PDF document using Aspose.PDF for .NET. 
+Aspose.PDF for .NET, PDF dosyalarıyla çalışmak için çeşitli özellikler sağlayan güçlü bir kütüphanedir. Bu özelliklerden biri, bir PDF belgesi için son kullanma tarihi belirleme yeteneğidir. Bu eğitimde, Aspose.PDF for .NET'i kullanarak bir PDF belgesi için son kullanma tarihi belirleme sürecinde size yol göstereceğiz. 
 
-## Step 1: Set the path to the document directory
+## 1. Adım: Belge dizininin yolunu ayarlayın
 
-Before we start, we need to set the path to the directory where our PDF document is located. We will store this path in a variable called "dataDir".
+Başlamadan önce PDF belgemizin bulunduğu dizinin yolunu ayarlamamız gerekiyor. Bu yolu "dataDir" adlı bir değişkende saklayacağız.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Creating a new PDF document
+## 2. Adım: Yeni bir PDF belgesi oluşturma
 
-To create a new PDF document, we need to instantiate a new `Aspose.Pdf.Document` object. We can do this using the following code:
+ Yeni bir PDF belgesi oluşturmak için yeni bir örnek oluşturmamız gerekiyor`Aspose.Pdf.Document` nesne. Bunu aşağıdaki kodu kullanarak yapabiliriz:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Step 3: Adding a new page to the PDF document
+## 3. Adım: PDF belgesine yeni bir sayfa ekleme
 
-Once we have created the PDF document, we can add a new page to it. We can do this using the following code:
+PDF belgesini oluşturduktan sonra ona yeni bir sayfa ekleyebiliriz. Bunu aşağıdaki kodu kullanarak yapabiliriz:
 
 ```csharp
 doc.Pages.Add();
 ```
 
-## Step 4: Adding Text to the PDF Document
+## Adım 4: PDF Belgesine Metin Ekleme
 
-After adding a page to the PDF document, we can add text to it using the `Paragraphs` collection. We can do this using the following code:
+PDF belgesine bir sayfa ekledikten sonra ona metin ekleyebiliriz.`Paragraphs` Toplamak. Bunu aşağıdaki kodu kullanarak yapabiliriz:
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
 ```
 
-## Step 5: Setting PDF expiry date using JavaScript
+## 5. Adım: JavaScript kullanarak PDF'nin son kullanma tarihini ayarlama
 
-To set the PDF expiry date, we need to create a JavaScript object. We can do this using the following code:
+PDF'nin son kullanma tarihini ayarlamak için bir JavaScript nesnesi oluşturmamız gerekir. Bunu aşağıdaki kodu kullanarak yapabiliriz:
 
 ```csharp
 JavascriptAction javaScript = new JavascriptAction(
@@ -54,37 +54,37 @@ JavascriptAction javaScript = new JavascriptAction(
 + "if (today.getTime() > expiry.getTime())"
 + "app.alert('The file is expired. You need a new one.');");
 
-// Set JavaScript as PDF open action
+// JavaScript'i PDF açma eylemi olarak ayarla
 doc.OpenAction = javaScript;
 ```
 
-In this code, we are setting the expiry date to May 2017.
+Bu kodda son kullanma tarihini Mayıs 2017 olarak ayarlıyoruz.
 
-## Step 6: Save the PDF File
+## Adım 6: PDF Dosyasını Kaydedin
 
-After you've set the expiry date, you need to save the PDF file. To do this, you can use the `Save` method of the `Document` object and pass in the path to where you want to save the updated PDF file.
+ Son kullanma tarihini belirledikten sonra PDF dosyasını kaydetmeniz gerekir. Bunu yapmak için şunları kullanabilirsiniz:`Save` yöntemi`Document` nesneyi seçin ve güncellenmiş PDF dosyasını kaydetmek istediğiniz yere giden yolu iletin.
 
 ```csharp
 dataDir = dataDir + "SetExpiryDate_out.pdf";
-// Save PDF Document
+// PDF Belgesini Kaydet
 doc.Save(dataDir);
 ```
 
-### Example source code for Set Expiry Date using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Sona Erme Tarihini Ayarla için örnek kaynak kodu
 
-Here's the complete example source code for setting expiry date using Aspose.PDF for .NET:
+Aspose.PDF for .NET'i kullanarak son kullanma tarihini ayarlamak için kaynak kodunun tamamını burada bulabilirsiniz:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document object
+// Belge nesnesini somutlaştır
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-// Add page to pages collection of PDF file
+// PDF dosyasının sayfa koleksiyonuna sayfa ekle
 doc.Pages.Add();
-// Add text fragment to paragraphs collection of page object
+// Sayfa nesnesinin paragraf koleksiyonuna metin parçası ekleme
 doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
-// Create JavaScript object to set PDF expiry date
+// PDF'nin son kullanma tarihini ayarlamak için JavaScript nesnesi oluşturun
 JavascriptAction javaScript = new JavascriptAction(
 "var year=2017;"
 + "var month=5;"
@@ -92,28 +92,28 @@ JavascriptAction javaScript = new JavascriptAction(
 + "expiry = new Date(year, month);"
 + "if (today.getTime() > expiry.getTime())"
 + "app.alert('The file is expired. You need a new one.');");
-// Set JavaScript as PDF open action
+// JavaScript'i PDF açma eylemi olarak ayarla
 doc.OpenAction = javaScript;
 
 dataDir = dataDir + "SetExpiryDate_out.pdf";
-// Save PDF Document
+// PDF Belgesini Kaydet
 doc.Save(dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-Setting an expiry date for a PDF document using Aspose.PDF for .NET is a useful feature to ensure that the document is only valid for a specified period. By following the step-by-step guide and using the provided C# source code, developers can easily set the expiry date and create PDFs with time-limited validity. This feature can be particularly helpful for documents that need to be accessed or distributed for a limited duration.
+Aspose.PDF for .NET kullanarak bir PDF belgesi için son kullanma tarihi belirlemek, belgenin yalnızca belirli bir süre için geçerli olmasını sağlayan kullanışlı bir özelliktir. Geliştiriciler, adım adım kılavuzu izleyerek ve sağlanan C# kaynak kodunu kullanarak son kullanma tarihini kolayca ayarlayabilir ve süresi sınırlı geçerliliğe sahip PDF'ler oluşturabilir. Bu özellik, sınırlı bir süre boyunca erişilmesi veya dağıtılması gereken belgeler için özellikle yararlı olabilir.
 
-### FAQ's for set expiry date in PDF file
+### PDF dosyasında son kullanma tarihini ayarlamak için SSS
 
-#### Q: Can I set a different expiry date for the PDF document?
+#### S: PDF belgesi için farklı bir son kullanma tarihi ayarlayabilir miyim?
 
-A: Yes, you can set a different expiry date for the PDF document by modifying the JavaScript code in Step 5. In the provided example, the expiry date is set to May 2017. To set a different expiry date, you need to modify the `year` and `month` variables in the JavaScript code to the desired year and month.
+ C: Evet, 5. Adımda JavaScript kodunu değiştirerek PDF belgesi için farklı bir son kullanma tarihi belirleyebilirsiniz. Verilen örnekte son kullanma tarihi Mayıs 2017 olarak ayarlanmıştır. Farklı bir son kullanma tarihi ayarlamak için,`year` Ve`month` JavaScript kodundaki değişkenleri istenen yıl ve aya göre ayarlayın.
 
-#### Q: What happens when the PDF document has expired?
+#### S: PDF belgesinin süresi dolduğunda ne olur?
 
-A: When the PDF document has expired, as specified in the JavaScript code, the viewer will display an alert message indicating that the file is expired and that the user needs a new one. This alert message will be shown when the PDF is opened.
+C: JavaScript kodunda belirtildiği gibi PDF belgesinin süresi dolduğunda, görüntüleyici dosyanın süresinin dolduğunu ve kullanıcının yeni bir dosyaya ihtiyacı olduğunu belirten bir uyarı mesajı görüntüler. Bu uyarı mesajı PDF açıldığında gösterilecektir.
 
-#### Q: Can I use a specific time for the expiry date instead of just the date?
+#### S: Son kullanma tarihi olarak yalnızca tarih yerine belirli bir saati kullanabilir miyim?
 
-A: Yes, you can set a specific time for the expiry date in the JavaScript code. By modifying the `expiry` variable in the JavaScript code to include the desired time, you can set a specific time for the expiry date.
+ C: Evet, JavaScript kodunda son kullanma tarihi için belirli bir zaman ayarlayabilirsiniz. Değiştirerek`expiry` İstenilen süreyi eklemek için JavaScript kodundaki değişkene, son kullanma tarihi için belirli bir süre ayarlayabilirsiniz.

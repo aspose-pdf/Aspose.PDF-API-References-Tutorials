@@ -1,56 +1,56 @@
 ---
-title: Decrypt PDF File
-linktitle: Decrypt PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to decrypt PDF file using Aspose.PDF for .NET.
+title: 解密PDF文件
+linktitle: 解密PDF文件
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 解密 PDF 文件。
 type: docs
 weight: 20
 url: /zh/net/programming-with-security-and-signatures/decrypt/
 ---
-In this tutorial, we will guide you through the process of decrypt PDF file using Aspose.PDF for .NET. This library allows you to open an existing PDF file, decrypt it and save the updated version. This feature is useful when you need to remove the password from a PDF file for easier access.
+在本教程中，我们将指导您完成使用 Aspose.PDF for .NET 解密 PDF 文件的过程。该库允许您打开现有的 PDF 文件，对其进行解密并保存更新的版本。当您需要从 PDF 文件中删除密码以便于访问时，此功能非常有用。
 
-## Step 1: Prerequisites
+## 第 1 步：先决条件
 
-Before you begin, make sure you have the following prerequisites:
+在开始之前，请确保您具备以下先决条件：
 
-- Basic knowledge of the C# programming language
-- Installing Visual Studio on your machine
-- Aspose.PDF library for .NET installed
+- C# 编程语言的基础知识
+- 在您的计算机上安装 Visual Studio
+- 已安装适用于 .NET 的 Aspose.PDF 库
 
-## Step 2: Environment setup
+## 第2步：环境设置
 
-To get started, follow these steps to set up your development environment:
+首先，请按照以下步骤设置您的开发环境：
 
-1. Open Visual Studio and create a new C# project.
-2. Install Aspose.PDF library for .NET using NuGet package manager.
-3. Import the required namespaces into your code file:
+1. 打开 Visual Studio 并创建一个新的 C# 项目。
+2. 使用 NuGet 包管理器安装适用于 .NET 的 Aspose.PDF 库。
+3. 将所需的命名空间导入到您的代码文件中：
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Opening the PDF document
+## 步骤 3：打开 PDF 文档
 
-The first step is to open the PDF document you want to decrypt. In this example, we assume that you have a PDF file named "Decrypt.pdf" in the specified directory.
+第一步是打开您要解密的PDF文档。在此示例中，我们假设您在指定目录中有一个名为“Decrypt.pdf”的 PDF 文件。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document document = new Document(dataDir + "Decrypt.pdf", "password");
 ```
 
-Be sure to replace the placeholders with the actual locations and passwords you want to use.
+请务必将占位符替换为您要使用的实际位置和密码。
 
-## Step 4: PDF decryption
+## 第四步：PDF解密
 
-Once you have opened the PDF document, you can decrypt it using the `Decrypt` method. No parameters are required for this method.
+打开 PDF 文档后，您可以使用以下命令对其进行解密`Decrypt`方法。此方法不需要任何参数。
 
 ```csharp
 document. Decrypt();
 ```
 
-## Step 5: Save updated PDF
+## 第 5 步：保存更新的 PDF
 
-After decrypting the PDF, you need to save the updated version of the document. Specify the output file path and use the `Save` method to save the document.
+解密 PDF 后，您需要保存文档的更新版本。指定输出文件路径并使用`Save`保存文档的方法。
 
 ```csharp
 dataDir = dataDir + "Decrypt_out.pdf";
@@ -58,57 +58,57 @@ document. Save(dataDir);
 Console.WriteLine("\nPDF file decrypted successfully.\nFile saved at " + dataDir);
 ```
 
-The updated PDF will be saved to the specified location.
+更新后的 PDF 将保存到指定位置。
 
-### Sample source code for Decrypt using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 进行解密的示例源代码 
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Open document
+//打开文档
 Document document = new Document(dataDir+ "Decrypt.pdf", "password");
-// Decrypt PDF
+//解密PDF
 document.Decrypt();
 dataDir = dataDir + "Decrypt_out.pdf";
-// Save updated PDF
+//保存更新的 PDF
 document.Save(dataDir);
 Console.WriteLine("\nPDF file decrypted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have successfully decrypted a PDF file using Aspose.PDF for .NET. This tutorial covered the step-by-step process from opening the document to saving the updated version. You can now use this feature to remove passwords from your PDF files.
+恭喜！您已使用 Aspose.PDF for .NET 成功解密 PDF 文件。本教程介绍了从打开文档到保存更新版本的分步过程。您现在可以使用此功能从 PDF 文件中删除密码。
 
-### FAQ's for decrypt PDF file
+### PDF 文件解密常见问题解答
 
-#### Q: What is the purpose of this tutorial?
+#### 问：本教程的目的是什么？
 
-A: This tutorial aims to guide you through the process of decrypting a PDF file using Aspose.PDF for .NET. The library allows you to remove the password from an existing PDF document and save the updated version, providing easier access to the file.
+答：本教程旨在指导您完成使用 Aspose.PDF for .NET 解密 PDF 文件的过程。该库允许您从现有 PDF 文档中删除密码并保存更新版本，从而更轻松地访问该文件。
 
-#### Q: What prerequisites are required before starting?
+#### 问：开始之前需要什么先决条件？
 
-A: Before you begin, make sure you have a basic understanding of the C# programming language, have Visual Studio installed on your machine, and have the Aspose.PDF library for .NET installed.
+答：开始之前，请确保您对 C# 编程语言有基本的了解，在您的计算机上安装了 Visual Studio，并且安装了适用于 .NET 的 Aspose.PDF 库。
 
-#### Q: How do I set up the development environment?
+#### 问：如何搭建开发环境？
 
-A: Follow the provided steps to set up your development environment, including creating a new C# project in Visual Studio, installing the Aspose.PDF library for .NET using NuGet Package Manager, and importing the required namespaces.
+答：按照提供的步骤设置您的开发环境，包括在 Visual Studio 中创建新的 C# 项目、使用 NuGet 包管理器安装适用于 .NET 的 Aspose.PDF 库，以及导入所需的命名空间。
 
-#### Q: How do I open an existing PDF document?
+#### 问：如何打开现有的 PDF 文档？
 
-A: Use the `Document` class to open the PDF document you want to decrypt. Replace "Decrypt.pdf" with the actual file name and provide the password for decryption.
+答：使用`Document`类来打开要解密的 PDF 文档。将“Decrypt.pdf”替换为实际文件名并提供解密密码。
 
-#### Q: How can I decrypt a PDF document?
+#### 问：如何解密 PDF 文档？
 
-A: Once you have opened the PDF document, use the `Decrypt` method on the `Document` object. No parameters are required for this method.
+答：打开 PDF 文档后，使用`Decrypt`方法上的`Document`目的。此方法不需要任何参数。
 
-#### Q: Can I specify different passwords for decryption?
+#### 问：我可以指定不同的解密密码吗？
 
-A: No, the `Decrypt` method does not require any parameters. It assumes that the password provided during opening the document is the decryption password.
+答：不，该`Decrypt`方法不需要任何参数。它假定打开文档时提供的密码是解密密码。
 
-#### Q: How do I save the decrypted PDF document?
+#### 问：如何保存解密后的PDF文档？
 
-A: After decrypting the PDF, use the `Save` method on the `Document` object to save the updated PDF document. Specify the output file path where the decrypted PDF will be saved.
+ A：解密PDF后，使用`Save`方法上的`Document`对象保存更新的 PDF 文档。指定保存解密的 PDF 的输出文件路径。
 
-#### Q: How can I ensure the security of my decrypted PDF files?
+#### 问：如何确保解密后的 PDF 文件的安全性？
 
-A: Once a PDF is decrypted, it no longer requires a password for access. Be cautious when sharing decrypted PDFs, as they may no longer have the same level of security as password-protected files.
+答：PDF 解密后，就不再需要密码即可访问。共享解密的 PDF 时要小心，因为它们可能不再具有与受密码保护的文件相同的安全级别。

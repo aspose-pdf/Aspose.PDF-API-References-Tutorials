@@ -1,22 +1,22 @@
 ---
-title: Allow Resuse Page Content
-linktitle: Allow Resuse Page Content
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to optimize PDFs by enabling "Allow Resuse Page Content" feature using Aspose.PDF for .NET. Reduce file size and improve performance.
+title: Разрешить повторное использование содержимого страницы
+linktitle: Разрешить повторное использование содержимого страницы
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как оптимизировать PDF-файлы, включив функцию «Разрешить повторное использование содержимого страницы» с помощью Aspose.PDF для .NET. Уменьшите размер файла и улучшите производительность.
 type: docs
 weight: 50
 url: /ru/net/programming-with-document/allowresusepagecontent/
 ---
-In this tutorial, we will explain how to enable the "Allow Resuse Page Content" feature using Aspose.PDF for .NET. This feature optimizes the PDF document by reusing page content, reducing file size and improving performance. Follow the step-by-step guide below:
+В этом руководстве мы объясним, как включить функцию «Разрешить повторное использование содержимого страницы» с помощью Aspose.PDF для .NET. Эта функция оптимизирует документ PDF за счет повторного использования содержимого страницы, уменьшения размера файла и повышения производительности. Следуйте пошаговому руководству ниже:
 
-## Step 1: Load the PDF document
+## Шаг 1. Загрузите PDF-документ.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Step 2: Set the AllowReusePageContent option
+## Шаг 2. Установите параметр AllowReusePageContent.
 
 ```csharp
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
@@ -25,19 +25,19 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 };
 ```
 
-## Step 3: Optimize the PDF document
+## Шаг 3. Оптимизируйте PDF-документ
 
 ```csharp
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-## Step 4: Save the updated document
+## Шаг 4. Сохраните обновленный документ.
 
 ```csharp
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 ```
 
-## Step 5: Check the file size reduction
+## Шаг 5. Проверьте уменьшение размера файла.
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
@@ -45,18 +45,18 @@ var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```
 
-Congratulations! You have successfully allowed reuse of page content in your PDF document.
+Поздравляем! Вы успешно разрешили повторное использование содержимого страницы в вашем PDF-документе.
 
-### Example source code for Allowing Reuse of Page Content using Aspose.PDF for .NET:
+### Пример исходного кода для разрешения повторного использования содержимого страницы с использованием Aspose.PDF для .NET:
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 
-// Set AllowReusePageContent option
+// Установите параметр AllowReusePageContent.
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
     AllowReusePageContent = true
@@ -64,10 +64,10 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 
 Console.WriteLine("Start");
 
-// Optimize PDF document using OptimizationOptions
+// Оптимизация PDF-документа с помощью OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
 
-// Save updated document
+// Сохранить обновленный документ
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 
 Console.WriteLine("Finished");
@@ -79,30 +79,30 @@ Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length,
 Console.WriteLine("\nAllowed reuse of page content successfully.\nFile saved at " + dataDir);
 ```
 
-Now you can effectively optimize your PDF documents by allowing reuse of page content.
+Теперь вы можете эффективно оптимизировать свои PDF-документы, разрешив повторное использование содержимого страницы.
 
-## Conclusion
+## Заключение
 
-In this tutorial, we explained how to enable the "Allow Reuse Page Content" feature using Aspose.PDF for .NET. By following the provided step-by-step guide and utilizing the C# source code, you can effectively optimize your PDF documents by allowing reuse of page content. This optimization results in smaller PDF files, which can lead to faster loading times and improved performance when handling large PDF documents. Aspose.PDF for .NET provides a robust and user-friendly solution for PDF optimization, enabling you to create efficient and high-quality PDF files with ease.
+В этом руководстве мы объяснили, как включить функцию «Разрешить повторное использование содержимого страницы» с помощью Aspose.PDF для .NET. Следуя предоставленному пошаговому руководству и используя исходный код C#, вы сможете эффективно оптимизировать PDF-документы, разрешив повторное использование содержимого страницы. Эта оптимизация приводит к уменьшению размера PDF-файлов, что может привести к ускорению загрузки и повышению производительности при обработке больших PDF-документов. Aspose.PDF для .NET предоставляет надежное и удобное решение для оптимизации PDF, позволяющее с легкостью создавать эффективные и высококачественные PDF-файлы.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of enabling the "Allow Reuse Page Content" feature in a PDF document?
+#### Вопрос: Какова цель включения функции «Разрешить повторное использование содержимого страницы» в PDF-документе?
 
-A: Enabling the "Allow Reuse Page Content" feature in a PDF document optimizes the file by reusing page content, which reduces the file size and improves overall performance. This optimization results in smaller PDF files without compromising on content quality.
+О: Включение функции «Разрешить повторное использование содержимого страницы» в PDF-документе оптимизирует файл за счет повторного использования содержимого страницы, что уменьшает размер файла и повышает общую производительность. Эта оптимизация приводит к уменьшению файлов PDF без ущерба для качества контента.
 
-#### Q: How does the "Allow Reuse Page Content" feature work?
+#### Вопрос: Как работает функция «Разрешить повторное использование содержимого страницы»?
 
-A: When the "Allow Reuse Page Content" feature is enabled, identical page objects within the PDF document are shared and reused, instead of being duplicated for each occurrence. This sharing of page content significantly reduces the overall file size.
+О: Когда функция «Разрешить повторное использование содержимого страницы» включена, идентичные объекты страниц в PDF-документе используются совместно и повторно, а не дублируются для каждого экземпляра. Такое совместное использование содержимого страницы значительно уменьшает общий размер файла.
 
-#### Q: Can I revert the optimization and restore the original document?
+#### Вопрос: Могу ли я отменить оптимизацию и восстановить исходный документ?
 
-A: No, once the optimization with "Allow Reuse Page Content" is performed and the PDF document is saved, the changes are permanent. It is advisable to keep a backup of the original document before performing any optimization.
+О: Нет, после выполнения оптимизации с помощью параметра «Разрешить повторное использование содержимого страницы» и сохранения PDF-документа изменения становятся постоянными. Перед выполнением какой-либо оптимизации рекомендуется сохранить резервную копию исходного документа.
 
-#### Q: Will enabling this feature affect the visual appearance or content of the PDF document?
+#### Вопрос: Повлияет ли включение этой функции на внешний вид или содержимое PDF-документа?
 
-A: Enabling the "Allow Reuse Page Content" feature does not affect the visual appearance or content of the PDF document. It solely optimizes the internal structure of the file to reduce redundancy and enhance efficiency.
+О: Включение функции «Разрешить повторное использование содержимого страницы» не влияет на внешний вид или содержимое PDF-документа. Он оптимизирует исключительно внутреннюю структуру файла, чтобы уменьшить избыточность и повысить эффективность.
 
-#### Q: Is Aspose.PDF for .NET a reliable solution for PDF optimization and manipulation?
+#### Вопрос: Является ли Aspose.PDF для .NET надежным решением для оптимизации и обработки PDF-файлов?
 
-A: Yes, Aspose.PDF for .NET is a reliable and feature-rich library for PDF optimization and manipulation. It offers extensive options to optimize PDF files, including reducing file size, removing unused resources, and enhancing overall performance.
+О: Да, Aspose.PDF для .NET — это надежная и многофункциональная библиотека для оптимизации и обработки PDF-файлов. Он предлагает широкие возможности для оптимизации PDF-файлов, включая уменьшение размера файла, удаление неиспользуемых ресурсов и повышение общей производительности.

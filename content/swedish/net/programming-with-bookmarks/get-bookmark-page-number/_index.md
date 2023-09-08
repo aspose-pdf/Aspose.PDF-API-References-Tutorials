@@ -1,57 +1,57 @@
 ---
-title: Get Bookmark Page Number In PDF File
-linktitle: Get Bookmark Page Number In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get bookmark page number in PDF file with Aspose.PDF for .NET.
+title: Få bokmärkesidnummer i PDF-fil
+linktitle: Få bokmärkesidnummer i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Få enkelt bokmärkes sidnummer i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 60
 url: /sv/net/programming-with-bookmarks/get-bookmark-page-number/
 ---
-Retrieving page numbers associated with bookmarks in PDF file can be useful for navigation. With Aspose.PDF for .NET, you can easily get the page number of bookmarks by following the following source code:
+Att hämta sidnummer associerade med bokmärken i PDF-fil kan vara användbart för navigering. Med Aspose.PDF för .NET kan du enkelt få sidnumret för bokmärken genom att följa följande källkod:
 
-## Step 1: Import required libraries
+## Steg 1: Importera nödvändiga bibliotek
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Innan du börjar måste du importera de nödvändiga biblioteken för ditt C#-projekt. Här är det nödvändiga importdirektivet:
 
 ```csharp
 using Aspose.Pdf.Facades;
 ```
 
-## Step 2: Set path to documents folder
+## Steg 2: Ange sökväg till dokumentmappen
 
-In this step, you need to specify the path to the folder containing the PDF file you want to extract the bookmark page numbers from. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ I det här steget måste du ange sökvägen till mappen som innehåller PDF-filen som du vill extrahera bokmärkets sidnummer från. Byta ut`"YOUR DOCUMENT DIRECTORY"` följande kod med den faktiska sökvägen till din dokumentmapp:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Create the bookmark editor
+## Steg 3: Skapa bokmärkesredigeraren
 
-Now we will create a `PdfBookmarkEditor` object to manipulate the bookmarks of the document. Use the following code:
+ Nu ska vi skapa en`PdfBookmarkEditor` objekt för att manipulera dokumentets bokmärken. Använd följande kod:
 
 ```csharp
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
 ```
 
-## Step 4: Open the PDF File
+## Steg 4: Öppna PDF-filen
 
-In this step, we open the PDF file using the `BindPdf` method of the bookmark editor. Here is the corresponding code:
+ I det här steget öppnar vi PDF-filen med hjälp av`BindPdf` metod för bokmärkesredigeraren. Här är motsvarande kod:
 
 ```csharp
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
 ```
 
-## Step 5: Extract bookmarks
+## Steg 5: Extrahera bokmärken
 
-Now we will extract the bookmarks from the document using the `ExtractBookmarks` method of the bookmark editor. Here is the corresponding code:
+ Nu kommer vi att extrahera bokmärkena från dokumentet med hjälp av`ExtractBookmarks` metod för bokmärkesredigeraren. Här är motsvarande kod:
 
 ```csharp
 Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 ```
 
-## Step 6: Browse bookmarks and get page numbers
+## Steg 6: Bläddra i bokmärken och få sidnummer
 
-Finally, we loop through the extracted bookmarks and get the page numbers associated with each bookmark using a `foreach` loop. Here is the corresponding code:
+ Slutligen går vi igenom de extraherade bokmärkena och får sidnumren som är associerade med varje bokmärke med hjälp av en`foreach` slinga. Här är motsvarande kod:
 
 ```csharp
 foreach (Bookmark bookmark in bookmarks)
@@ -67,15 +67,15 @@ foreach (Bookmark bookmark in bookmarks)
 }
 ```
 
-### Sample source code for Get Bookmark Page Number using Aspose.PDF for .NET 
+### Exempel på källkod för Get Bookmark Page Number med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create PdfBookmarkEditor
+// Skapa PdfBookmarkEditor
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
-// Open PDF file
+// Öppna PDF-fil
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
-// Extract bookmarks
+// Extrahera bokmärken
 Aspose.Pdf.Facades.Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 foreach (Aspose.Pdf.Facades.Bookmark bookmark in bookmarks)
 {
@@ -90,65 +90,65 @@ foreach (Aspose.Pdf.Facades.Bookmark bookmark in bookmarks)
 }
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! Now you have a step by step guide to getting bookmark page numbers with Aspose.PDF for .NET. You can use this code to retrieve the navigation information associated with each bookmark in your PDF documents.
+Grattis! Nu har du en steg-för-steg-guide för att få bokmärkessidnummer med Aspose.PDF för .NET. Du kan använda den här koden för att hämta navigeringsinformationen som är kopplad till varje bokmärke i dina PDF-dokument.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Se till att kolla in den officiella Aspose.PDF-dokumentationen för mer information om avancerade bokmärkesmanipuleringsfunktioner.
 
-### FAQ's for get bookmark page number in PDF file
+### Vanliga frågor för att få bokmärkes sidnummer i PDF-fil
 
-#### Q: What are bookmarks in a PDF file?
+#### F: Vad är bokmärken i en PDF-fil?
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They enhance the user experience by providing shortcuts to relevant content.
+S: Bokmärken i en PDF-fil är navigeringshjälpmedel som gör att användare snabbt kan hoppa till specifika avsnitt eller sidor i dokumentet. De förbättrar användarupplevelsen genom att tillhandahålla genvägar till relevant innehåll.
 
-#### Q: Why would I want to retrieve bookmark page numbers from a PDF file?
+#### F: Varför skulle jag vilja hämta bokmärkessidnummer från en PDF-fil?
 
-A: Retrieving bookmark page numbers helps users navigate through a document more effectively, providing a clear indication of where each bookmark leads. This is particularly useful for longer documents with multiple sections.
+S: Att hämta sidnummer för bokmärken hjälper användare att navigera genom ett dokument mer effektivt, vilket ger en tydlig indikation på vart varje bokmärke leder. Detta är särskilt användbart för längre dokument med flera avsnitt.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### F: Hur importerar jag de nödvändiga biblioteken för mitt C#-projekt?
 
-A: To import the required library for your C# project, use the following import directive:
+S: För att importera det nödvändiga biblioteket för ditt C#-projekt, använd följande importdirektiv:
 
 ```csharp
 using Aspose.Pdf.Facades;
 ```
 
-This directive allows you to utilize the classes and methods provided by Aspose.PDF for .NET.
+Detta direktiv låter dig använda klasserna och metoderna som tillhandahålls av Aspose.PDF för .NET.
 
-#### Q: How do I specify the path to the documents folder?
+#### F: Hur anger jag sökvägen till dokumentmappen?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to extract bookmark page numbers. This ensures that the code can locate the target PDF file.
+ S: I den medföljande källkoden, ersätt`"YOUR DOCUMENT DIRECTORY"`med den faktiska sökvägen till mappen som innehåller PDF-filen från vilken du vill extrahera sidnummer för bokmärken. Detta säkerställer att koden kan hitta mål-PDF-filen.
 
-#### Q: How do I create a bookmark editor?
+#### F: Hur skapar jag en bokmärkesredigerare?
 
-A: To create a bookmark editor, use the following code:
+S: För att skapa en bokmärkesredigerare, använd följande kod:
 
 ```csharp
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
 ```
 
-#### Q: How do I open a PDF file for bookmark manipulation?
+#### F: Hur öppnar jag en PDF-fil för bokmärkesmanipulation?
 
-A: To open a PDF file for extracting bookmark information, use the following code:
+S: För att öppna en PDF-fil för att extrahera bokmärkesinformation, använd följande kod:
 
 ```csharp
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
 ```
 
-Replace `"GetBookmarks.pdf"` with the actual file name.
+ Byta ut`"GetBookmarks.pdf"` med det faktiska filnamnet.
 
-#### Q: How do I extract bookmarks from the PDF file?
+#### F: Hur extraherar jag bokmärken från PDF-filen?
 
-A: To extract bookmarks from the PDF file, use the `ExtractBookmarks` method of the bookmark editor:
+ S: För att extrahera bokmärken från PDF-filen, använd`ExtractBookmarks` metod för bokmärkesredigeraren:
 
 ```csharp
 Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 ```
 
-#### Q: How do I retrieve and display bookmark page numbers?
+#### F: Hur hämtar och visar jag sidnummer för bokmärken?
 
-A: Loop through the extracted bookmarks using a `foreach` loop and access the `PageNumber` property of each bookmark to retrieve and display its associated page number:
+ S: Gå igenom de extraherade bokmärkena med hjälp av en`foreach` loop och få tillgång till`PageNumber` egenskapen för varje bokmärke för att hämta och visa dess tillhörande sidnummer:
 
 ```csharp
 foreach (Bookmark bookmark in bookmarks)
@@ -159,10 +159,10 @@ foreach (Bookmark bookmark in bookmarks)
 }
 ```
 
-#### Q: Can I modify bookmark properties using this approach?
+#### F: Kan jag ändra bokmärkesegenskaper med den här metoden?
 
-A: While this tutorial focuses on retrieving bookmark page numbers, you can modify other bookmark properties using the same `Bookmark` object and associated properties.
+ S: Även om den här handledningen fokuserar på att hämta bokmärkes sidnummer, kan du ändra andra bokmärkesegenskaper med samma`Bookmark`objekt och tillhörande egenskaper.
 
-#### Q: How do I save the updated PDF file after extracting bookmark information?
+#### F: Hur sparar jag den uppdaterade PDF-filen efter att ha extraherat bokmärkesinformation?
 
-A: Bookmark extraction does not modify the original PDF file. If you want to save any changes, you can do so using other methods provided by Aspose.PDF for .NET.
+S: Bokmärkesextraktion ändrar inte den ursprungliga PDF-filen. Om du vill spara några ändringar kan du göra det med andra metoder som tillhandahålls av Aspose.PDF för .NET.

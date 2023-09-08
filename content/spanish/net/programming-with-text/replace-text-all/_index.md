@@ -1,49 +1,49 @@
 ---
-title: Replace Text All In PDF File
-linktitle: Replace Text All In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to replace all text in PDF file using Aspose.PDF for .NET.
+title: Reemplazar todo el texto en un archivo PDF
+linktitle: Reemplazar todo el texto en un archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda cómo reemplazar todo el texto en un archivo PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 350
 url: /es/net/programming-with-text/replace-text-all/
 ---
-In this tutorial, we will explain how to replace all text in PDF file using the Aspose.PDF library for .NET. We will provide a step-by-step guide along with the necessary C# source code.
+En este tutorial, explicaremos cómo reemplazar todo el texto en un archivo PDF usando la biblioteca Aspose.PDF para .NET. Proporcionaremos una guía paso a paso junto con el código fuente C# necesario.
 
-## Prerequisites
+## Requisitos previos
 
-Before you begin, make sure you have the following:
+Antes de comenzar, asegúrese de tener lo siguiente:
 
-- Aspose.PDF for .NET library installed.
-- Basic understanding of C# programming.
+- Aspose.PDF para la biblioteca .NET instalada.
+- Conocimientos básicos de programación en C#.
 
-## Step 1: Set up the Document Directory
+## Paso 1: configurar el directorio de documentos
 
-Set the path to the directory where you have the input PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF file.
+ Establezca la ruta al directorio donde tiene el archivo PDF de entrada. Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir` variable con la ruta a su archivo PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the PDF Document
+## Paso 2: cargue el documento PDF
 
-Load the PDF document using the `Document` class from the Aspose.PDF library.
+ Cargue el documento PDF usando el`Document` clase de la biblioteca Aspose.PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
 ```
 
-## Step 3: Search and Replace Text
+## Paso 3: buscar y reemplazar texto
 
-Create a `TextFragmentAbsorber` object to find all instances of the input search phrase. Accept the absorber for all the pages of the PDF document to extract the text fragments.
+ Crear un`TextFragmentAbsorber` objeto para encontrar todas las instancias de la frase de búsqueda de entrada. Acepte el absorbente de todas las páginas del documento PDF para extraer los fragmentos de texto.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
 
-## Step 4: Replace Text
+## Paso 4: reemplazar texto
 
-Loop through the extracted text fragments and replace the text as required. Update the text and other properties such as font, font size, foreground color, and background color.
+Recorra los fragmentos de texto extraídos y reemplace el texto según sea necesario. Actualice el texto y otras propiedades como fuente, tamaño de fuente, color de primer plano y color de fondo.
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
@@ -56,9 +56,9 @@ foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
 }
 ```
 
-## Step 5: Save the Modified PDF
+## Paso 5: guarde el PDF modificado
 
-Save the modified PDF document to the specified output file.
+Guarde el documento PDF modificado en el archivo de salida especificado.
 
 ```csharp
 dataDir = dataDir + "ReplaceTextAll_out.pdf";
@@ -66,22 +66,22 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nText replaced successfully.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Replace Text All using Aspose.PDF for .NET 
+### Código fuente de muestra para Reemplazar todo el texto usando Aspose.PDF para .NET 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Abrir documento
 Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
-// Create TextAbsorber object to find all instances of the input search phrase
+// Cree un objeto TextAbsorber para encontrar todas las instancias de la frase de búsqueda de entrada
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-// Accept the absorber for all the pages
+// Aceptar el absorbente para todas las páginas.
 pdfDocument.Pages.Accept(textFragmentAbsorber);
-// Get the extracted text fragments
+// Obtenga los fragmentos de texto extraídos
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Loop through the fragments
+// Recorre los fragmentos
 foreach (TextFragment textFragment in textFragmentCollection)
 {
-	// Update text and other properties
+	// Actualizar texto y otras propiedades
 	textFragment.Text = "TEXT";
 	textFragment.TextState.Font = FontRepository.FindFont("Verdana");
 	textFragment.TextState.FontSize = 22;
@@ -89,56 +89,56 @@ foreach (TextFragment textFragment in textFragmentCollection)
 	textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
 }
 dataDir = dataDir + "ReplaceTextAll_out.pdf";
-// Save resulting PDF document.
+// Guarde el documento PDF resultante.
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nText replaced  successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, you have learned how to replace all text in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can load a PDF document, search for the desired text, replace it, and save the modified PDF.
+En este tutorial, aprendió cómo reemplazar todo el texto en un documento PDF usando la biblioteca Aspose.PDF para .NET. Si sigue la guía paso a paso y ejecuta el código C# proporcionado, puede cargar un documento PDF, buscar el texto deseado, reemplazarlo y guardar el PDF modificado.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is the purpose of the "Replace Text All In PDF File" tutorial?
+#### P: ¿Cuál es el propósito del tutorial "Reemplazar todo el texto en un archivo PDF"?
 
-A: The "Replace Text All In PDF File" tutorial aims to guide you through the process of using the Aspose.PDF library for .NET to replace all instances of a specific text in a PDF document. It provides a step-by-step guide along with sample C# code.
+R: El tutorial "Reemplazar todo el texto en un archivo PDF" tiene como objetivo guiarlo a través del proceso de uso de la biblioteca Aspose.PDF para .NET para reemplazar todas las instancias de un texto específico en un documento PDF. Proporciona una guía paso a paso junto con un código C# de muestra.
 
-#### Q: Why would I want to replace all instances of text in a PDF document?
+#### P: ¿Por qué querría reemplazar todas las instancias de texto en un documento PDF?
 
-A: Replacing all instances of a specific text in a PDF document can be necessary when you need to update or standardize the content throughout the document. This process can be especially useful for ensuring consistency in document content and formatting.
+R: Puede ser necesario reemplazar todas las instancias de un texto específico en un documento PDF cuando necesita actualizar o estandarizar el contenido en todo el documento. Este proceso puede resultar especialmente útil para garantizar la coherencia en el contenido y el formato del documento.
 
-#### Q: How do I set up the document directory?
+#### P: ¿Cómo configuro el directorio de documentos?
 
-A: To set up the document directory:
+R: Para configurar el directorio de documentos:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your input PDF file is located.
+1.  Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir` variable con la ruta al directorio donde se encuentra su archivo PDF de entrada.
 
-#### Q: How do I replace all instances of text in a PDF document?
+#### P: ¿Cómo reemplazo todas las instancias de texto en un documento PDF?
 
-A: The tutorial guides you through the following steps:
+R: El tutorial lo guía a través de los siguientes pasos:
 
-1. Load the PDF document using the `Document` class.
-2. Create a `TextFragmentAbsorber` object to find all instances of the input search phrase. Accept the absorber for all the pages of the PDF document to extract the text fragments.
-3. Loop through the extracted text fragments and replace the text. Update other properties like font, font size, foreground color, and background color as required.
-4. Save the modified PDF document.
+1.  Cargue el documento PDF usando el`Document` clase.
+2.  Crear un`TextFragmentAbsorber` objeto para encontrar todas las instancias de la frase de búsqueda de entrada. Acepte el absorbente de todas las páginas del documento PDF para extraer los fragmentos de texto.
+3. Recorra los fragmentos de texto extraídos y reemplace el texto. Actualice otras propiedades como fuente, tamaño de fuente, color de primer plano y color de fondo según sea necesario.
+4. Guarde el documento PDF modificado.
 
-#### Q: Can I replace text based on a case-sensitive search?
+#### P: ¿Puedo reemplazar texto según una búsqueda que distinga entre mayúsculas y minúsculas?
 
-A: Yes, you can modify the `TextFragmentAbsorber` search text to perform a case-sensitive search. Simply provide the exact text you want to search for, and the absorber will match it accordingly.
+ R: Sí, puedes modificar el`TextFragmentAbsorber` buscar texto para realizar una búsqueda que distinga entre mayúsculas y minúsculas. Simplemente proporcione el texto exacto que desea buscar y el absorbente lo coincidirá en consecuencia.
 
-#### Q: Is font replacement optional when replacing text?
+#### P: ¿Es opcional el reemplazo de fuente al reemplazar texto?
 
-A: Yes, font replacement is optional. If you don't specify a new font, the text will retain the font of the original text fragment.
+R: Sí, el reemplazo de fuente es opcional. Si no especifica una nueva fuente, el texto conservará la fuente del fragmento de texto original.
 
-#### Q: How can I replace text in specific sections of the PDF document?
+#### P: ¿Cómo puedo reemplazar texto en secciones específicas del documento PDF?
 
-A: You can adapt the loop through the text fragments to include conditional statements based on the position of the text fragments. This way, you can choose to replace text only in specific sections of the PDF.
+R: Puede adaptar el bucle a través de los fragmentos de texto para incluir declaraciones condicionales según la posición de los fragmentos de texto. De esta manera, puedes optar por reemplazar texto sólo en secciones específicas del PDF.
 
-#### Q: What is the expected outcome of executing the provided code?
+#### P: ¿Cuál es el resultado esperado al ejecutar el código proporcionado?
 
-A: By following the tutorial and running the provided C# code, you will replace all instances of the specified text in the PDF document. The replaced text will have the properties you specified, such as font, font size, foreground color, and background color.
+R: Si sigue el tutorial y ejecuta el código C# proporcionado, reemplazará todas las instancias del texto especificado en el documento PDF. El texto reemplazado tendrá las propiedades que especificó, como fuente, tamaño de fuente, color de primer plano y color de fondo.
 
-#### Q: Can I use this approach to replace non-text elements, such as images or annotations?
+#### P: ¿Puedo utilizar este método para reemplazar elementos que no son de texto, como imágenes o anotaciones?
 
-A: No, this tutorial focuses specifically on replacing text in a PDF document. If you need to replace non-text elements, you would need to follow different procedures or use other Aspose.PDF features.
+R: No, este tutorial se centra específicamente en reemplazar texto en un documento PDF. Si necesita reemplazar elementos que no son de texto, deberá seguir procedimientos diferentes o utilizar otras funciones de Aspose.PDF.

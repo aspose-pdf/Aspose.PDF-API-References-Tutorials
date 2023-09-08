@@ -1,59 +1,59 @@
 ---
-title: Create Multi Column Pdf
-linktitle: Create Multi Column Pdf
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create a multi column PDF using Aspose.PDF for .NET.
+title: Çok Sütunlu Pdf Oluştur
+linktitle: Çok Sütunlu Pdf Oluştur
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak çok sütunlu bir PDF'nin nasıl oluşturulacağını öğrenin.
 type: docs
 weight: 110
 url: /tr/net/programming-with-text/create-multi-column-pdf/
 ---
-This tutorial will guide you through the process of creating a multi column PDF using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Bu eğitim, Aspose.PDF for .NET kullanarak çok sütunlu bir PDF oluşturma sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları gösterir.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Gereksinimler
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Makinenizde kurulu Visual Studio veya başka herhangi bir C# derleyicisi.
+- Aspose.PDF for .NET kitaplığı. Resmi Aspose web sitesinden indirebilir veya yüklemek için NuGet gibi bir paket yöneticisi kullanabilirsiniz.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## 1. Adım: Projeyi ayarlayın
+1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
+2. Aspose.PDF for .NET kitaplığına bir referans ekleyin.
 
-## Step 2: Import required namespaces
-In the code file where you want to create a multi column PDF, add the following using directives at the top of the file:
+## 2. Adım: Gerekli ad alanlarını içe aktarın
+Çok sütunlu bir PDF oluşturmak istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki kullanarak yönergeleri ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Drawing;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## 3. Adım: Belge dizinini ayarlayın
+ Kodda yazan satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belgelerinizin saklandığı dizinin yolu ile birlikte.
 
-## Step 4: Create a new Document instance
-Instantiate a new `Document` object by adding the following line of code:
+## 4. Adım: Yeni bir Belge örneği oluşturun
+ Yeni bir örnek oluştur`Document` Aşağıdaki kod satırını ekleyerek nesne:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 5: Set the page margins
-Specify the left and right margin information for the PDF file using the `PageInfo.Margin` property of the `Document`.
+## 5. Adım: Sayfa kenar boşluklarını ayarlayın
+ PDF dosyası için sol ve sağ kenar boşluğu bilgilerini aşağıdaki düğmeyi kullanarak belirtin:`PageInfo.Margin` mülkiyeti`Document`.
 
 ```csharp
 doc.PageInfo.Margin.Left = 40;
 doc.PageInfo.Margin.Right = 40;
 ```
 
-## Step 6: Add a page to the document
-Add a new page to the document using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `page`.
+## 6. Adım: Belgeye bir sayfa ekleyin
+ kullanarak belgeye yeni bir sayfa ekleyin.`Add` yöntemi`Pages`Toplamak. Verilen kodda yeni sayfa değişkene atanır.`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 7: Create a Graph object and add a line
-Create a new `Graph` object with specific dimensions and add a line to it. Then, add the `Graph` object to the `Paragraphs` collection of the page.
+## Adım 7: Bir Grafik nesnesi oluşturun ve bir çizgi ekleyin
+ Yeni bir tane oluştur`Graph` belirli boyutlara sahip nesneyi seçin ve ona bir çizgi ekleyin. Daha sonra şunu ekleyin:`Graph` itiraz`Paragraphs` sayfanın toplanması.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
@@ -63,8 +63,8 @@ graph1.Shapes.Add(l1);
 page.Paragraphs.Add(graph1);
 ```
 
-## Step 8: Add heading text with HTML formatting
-Create an `HtmlFragment` object and set its content to the desired HTML text. Then, add the fragment to the `Paragraphs` collection of the page.
+## 8. Adım: HTML biçimlendirmesiyle başlık metnini ekleyin
+ Oluşturduğunuz bir`HtmlFragment` nesnesini seçin ve içeriğini istediğiniz HTML metnine ayarlayın. Daha sonra parçayı şuraya ekleyin:`Paragraphs` sayfanın toplanması.
 
 ```csharp
 string s = "<font face=\"Times New Roman\" size=4>" +
@@ -74,8 +74,8 @@ HtmlFragment heading_text = new HtmlFragment(s);
 page.Paragraphs.Add(heading_text);
 ```
 
-## Step 9: Create a FloatingBox with multiple columns
-Create a `FloatingBox` object and set the number of columns and column spacing. Then, add text fragments and a line to the `Paragraphs` collection of the `FloatingBox`.
+## Adım 9: Birden çok sütuna sahip bir FloatingBox oluşturun
+ Oluşturmak`FloatingBox` nesneyi seçin ve sütun sayısını ve sütun aralığını ayarlayın. Daha sonra metin parçalarını ve bir satırı ekleyin.`Paragraphs` koleksiyonu`FloatingBox`.
 
 ```csharp
 Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
@@ -100,41 +100,41 @@ box.Paragraphs.Add(graph2);
 page.Paragraphs.Add(box);
 ```
 
-## Step 10: Save the PDF document
-Save the PDF document using the `Save` method of the `Document` object.
+## Adım 10: PDF belgesini kaydedin
+ PDF belgesini kullanarak kaydedin.`Save` yöntemi`Document` nesne.
 
 ```csharp
 doc.Save(dataDir);
 ```
 
-### Sample source code for Create Multi Column Pdf using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Çok Sütunlu PDF Oluşturma için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
-// Specify the left margin info for the PDF file
+// PDF dosyası için sol kenar boşluğu bilgisini belirtin
 doc.PageInfo.Margin.Left = 40;
-// Specify the Right margin info for the PDF file
+//PDF dosyası için Sağ kenar boşluğu bilgisini belirtin
 doc.PageInfo.Margin.Right = 40;
 Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
-// Add the line to paraphraphs collection of section object
+// Satırı bölüm nesnesinin paragraf koleksiyonuna ekleyin
 page.Paragraphs.Add(graph1);
-// Specify the coordinates for the line
+// Çizginin koordinatlarını belirtin
 float[] posArr = new float[] { 1, 2, 500, 2 };
 Aspose.Pdf.Drawing.Line l1 = new Aspose.Pdf.Drawing.Line(posArr);
 graph1.Shapes.Add(l1);
-// Create string variables with text containing html tags
+// Html etiketleri içeren metinlerle dize değişkenleri oluşturun
 string s = "<font face=\"Times New Roman\" size=4>" +
 "<strong> How to Steer Clear of money scams</<strong> "
 + "</font>";
-// Create text paragraphs containing HTML text
+// HTML metni içeren metin paragrafları oluşturun
 HtmlFragment heading_text = new HtmlFragment(s);
 page.Paragraphs.Add(heading_text);
 Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
-// Add four columns in the section
+// Bölüme dört sütun ekleyin
 box.ColumnInfo.ColumnCount = 2;
-// Set the spacing between the columns
+// Sütunlar arasındaki boşluğu ayarlayın
 box.ColumnInfo.ColumnSpacing = "5";
 box.ColumnInfo.ColumnWidths = "105 105";
 TextFragment text1 = new TextFragment("By A Googler (The Official Google Blog)");
@@ -143,73 +143,73 @@ text1.TextState.LineSpacing = 2;
 box.Paragraphs.Add(text1);
 text1.TextState.FontSize = 10;
 text1.TextState.FontStyle = FontStyles.Italic;
-// Create a graphs object to draw a line
+// Çizgi çizmek için bir grafik nesnesi oluşturun
 Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
-// Specify the coordinates for the line
+// Çizginin koordinatlarını belirtin
 float[] posArr2 = new float[] { 1, 10, 100, 10 };
 Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
 graph2.Shapes.Add(l2);
-// Add the line to paragraphs collection of section object
+// Satırı bölüm nesnesinin paragraf koleksiyonuna ekleyin
 box.Paragraphs.Add(graph2);
 TextFragment text2 = new TextFragment(@"Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam. Pellentesque sit amet elit. Vestibulum interdum pellentesque augue. Cras mollis arcu sit amet purus. Donec augue. Nam mollis tortor a elit. Nulla viverra nisl vel mauris. Vivamus sapien. nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et,nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.");
 box.Paragraphs.Add(text2);
 page.Paragraphs.Add(box);
 dataDir = dataDir + "CreateMultiColumnPdf_out.pdf";
-// Save PDF file
+// PDF dosyasını kaydet
 doc.Save(dataDir);
 Console.WriteLine("\nMulti column pdf file created successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-You have successfully created a multi column PDF using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## Çözüm
+Aspose.PDF for .NET'i kullanarak başarıyla çok sütunlu bir PDF oluşturdunuz. Ortaya çıkan PDF dosyası artık belirtilen çıktı dosyası yolunda bulunabilir.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the focus of this tutorial?
+#### S: Bu eğitimin odak noktası nedir?
 
-This tutorial is focused on guiding you through the process of creating a multi-column PDF using the Aspose.PDF for .NET library. The provided C# source code demonstrates the necessary steps to achieve this.
+Bu eğitim, Aspose.PDF for .NET kitaplığını kullanarak çok sütunlu bir PDF oluşturma sürecinde size rehberlik etmeye odaklanmıştır. Sağlanan C# kaynak kodu, bunu başarmak için gerekli adımları gösterir.
 
-#### Q: Which namespaces should I import for this tutorial?
+#### S: Bu eğitim için hangi ad alanlarını içe aktarmalıyım?
 
-A: In the code file where you want to create a multi-column PDF, import the following namespaces at the beginning of the file:
+C: Çok sütunlu bir PDF oluşturmak istediğiniz kod dosyasında, dosyanın başında aşağıdaki ad alanlarını içe aktarın:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Drawing;
 ```
 
-#### Q: How do I specify the document directory?
+#### S: Belge dizinini nasıl belirlerim?
 
-A: In the code, find the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ A: Kodda satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
 
-#### Q: How do I create a new Document instance?
+#### S: Yeni bir Belge örneğini nasıl oluşturabilirim?
 
-A: In Step 4, you'll instantiate a new `Document` object using the provided code.
+ C: 4. Adımda yeni bir örnek oluşturacaksınız.`Document` sağlanan kodu kullanarak nesne.
 
-#### Q: How do I set the page margins?
+#### S: Sayfa kenar boşluklarını nasıl ayarlarım?
 
-A: In Step 5, you'll use the `PageInfo.Margin` property of the `Document` to specify the left and right margin information for the PDF file.
+ C: 5. Adımda şunları kullanacaksınız:`PageInfo.Margin` mülkiyeti`Document` PDF dosyası için sol ve sağ kenar boşluğu bilgilerini belirtmek için.
 
-#### Q: How do I add a page to the document?
+#### S: Belgeye nasıl sayfa eklerim?
 
-A: In Step 6, you'll add a new page to the document using the `Add` method of the `Pages` collection.
+ C: 6. Adımda belgeye yeni bir sayfa ekleyeceksiniz.`Add` yöntemi`Pages` Toplamak.
 
-#### Q: How do I create a Graph object and add a line?
+#### S: Graph nesnesini nasıl oluşturup çizgi eklerim?
 
-A: In Step 7, you'll create a new `Graph` object, add a line to it, and then add the `Graph` object to the `Paragraphs` collection of the page.
+ C: 7. Adımda yeni bir`Graph` nesneye bir satır ekleyin ve ardından`Graph` itiraz`Paragraphs` sayfanın toplanması.
 
-#### Q: How do I add heading text with HTML formatting?
+#### S: HTML biçimlendirmesiyle başlık metnini nasıl eklerim?
 
-A: In Step 8, you'll create an `HtmlFragment` object and set its content to the desired HTML text, then add the fragment to the `Paragraphs` collection of the page.
+ C: 8. Adımda bir`HtmlFragment` nesnesini seçin ve içeriğini istediğiniz HTML metnine ayarlayın, ardından parçayı`Paragraphs` sayfanın toplanması.
 
-#### Q: How do I create a FloatingBox with multiple columns?
+#### S: Birden fazla sütuna sahip bir FloatingBox'ı nasıl oluşturabilirim?
 
-A: In Step 9, you'll create a `FloatingBox` object with multiple columns and column spacing, then add text fragments and a line to the `Paragraphs` collection of the `FloatingBox`.
+ C: 9. Adımda bir`FloatingBox` birden çok sütun ve sütun aralığına sahip nesneyi seçin, ardından metin parçaları ve bir satır ekleyin.`Paragraphs` koleksiyonu`FloatingBox`.
 
-#### Q: How do I save the PDF document?
+#### S: PDF belgesini nasıl kaydederim?
 
-A: In Step 10, you'll save the PDF document using the `Save` method of the `Document` object.
+ C: 10. Adımda, PDF belgesini aşağıdaki komutu kullanarak kaydedeceksiniz:`Save` yöntemi`Document` nesne.
 
-#### Q: What is the main takeaway from this tutorial?
+#### S: Bu eğitimden çıkan ana sonuç nedir?
 
-A: By following this tutorial, you've learned how to create a multi-column PDF document using Aspose.PDF for .NET. This can be useful for displaying content in a structured and organized layout.
+C: Bu eğitimi takip ederek Aspose.PDF for .NET kullanarak çok sütunlu bir PDF belgesinin nasıl oluşturulacağını öğrendiniz. Bu, içeriği yapılandırılmış ve organize bir düzende görüntülemek için yararlı olabilir.

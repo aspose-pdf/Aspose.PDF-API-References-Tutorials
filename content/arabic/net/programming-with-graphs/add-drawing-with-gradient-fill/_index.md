@@ -1,54 +1,54 @@
 ---
-title: Add Drawing With Gradient Fill
-linktitle: Add Drawing With Gradient Fill
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a drawing with gradient fill with Aspose.PDF for .NET. Step by step tutorial to create attractive PDF documents.
+title: إضافة رسم مع تعبئة متدرجة
+linktitle: إضافة رسم مع تعبئة متدرجة
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة رسم بتعبئة متدرجة باستخدام Aspose.PDF لـ .NET. برنامج تعليمي خطوة بخطوة لإنشاء مستندات PDF جذابة.
 type: docs
 weight: 20
 url: /ar/net/programming-with-graphs/add-drawing-with-gradient-fill/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to add a drawing with gradient fill to programming with graphics using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك عبر التعليمات البرمجية المصدر لـ C# التالية خطوة بخطوة لإضافة رسم بتعبئة متدرجة إلى البرمجة باستخدام الرسومات باستخدام Aspose.PDF لـ .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك قبل البدء. لديك أيضًا معرفة أساسية ببرمجة C#.
 
-## Step 1: Document Directory Setup
+## الخطوة 1: إعداد دليل المستندات
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+في كود المصدر المقدم، تحتاج إلى تحديد الدليل الذي تريد حفظ ملف PDF الناتج فيه. قم بتغيير المتغير "dataDir" إلى الدليل المطلوب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiating a Document Object and Adding a Page
+## الخطوة 2: إنشاء كائن مستند وإضافة صفحة
 
-We create an instance of the Document class and add a page to this document.
+نقوم بإنشاء مثيل لفئة المستند وإضافة صفحة إلى هذا المستند.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Creating a Graph Object and Adding it to the Page
+## الخطوة 3: إنشاء كائن رسم بياني وإضافته إلى الصفحة
 
-We create a Graph object with specified dimensions and add it to the page's paragraph collection.
+نقوم بإنشاء كائن رسم بياني بأبعاد محددة ونضيفه إلى مجموعة فقرات الصفحة.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300, 300);
 page.Paragraphs.Add(graph);
 ```
 
-## Step 4: Create Rectangle Object and Add to Chart
+## الخطوة 4: إنشاء كائن مستطيل وإضافته إلى المخطط
 
-We create a Rectangle object with specified dimensions and add it to the chart's shape collection.
+نقوم بإنشاء كائن مستطيل بأبعاد محددة ونضيفه إلى مجموعة أشكال المخطط.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(0, 0, 300, 300);
 graph.Shapes.Add(rect);
 ```
 
-## Step 5: Configuring Gradient Fill
+## الخطوة 5: تكوين التعبئة المتدرجة
 
-We configure the gradient fill for the rectangle using the GradientAxialShading class.
+نقوم بتكوين التعبئة المتدرجة للمستطيل باستخدام فئة GradientAxialShading.
 
 ```csharp
 rect.GraphInfo.FillColor = new Aspose.Pdf.Color
@@ -61,21 +61,21 @@ End = new Point(300, 300)
 };
 ```
 
-This creates a gradient fill from red to blue, from point (0, 0) to point (300, 300).
+يؤدي هذا إلى إنشاء تعبئة متدرجة من الأحمر إلى الأزرق، من النقطة (0، 0) إلى النقطة (300، 300).
 
-## Step 6: Saving the PDF File
+## الخطوة 6: حفظ ملف PDF
 
-Finally, we save the resulting PDF file with the name "AddDrawingWithGradientFill_out.pdf" in the specified directory.
+أخيرًا، نقوم بحفظ ملف PDF الناتج بالاسم "AddDrawingWithGradientFill_out.pdf" في الدليل المحدد.
 
 ```csharp
 doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ```
 
-### Sample source code for Add Drawing With Gradient Fill using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإضافة رسم باستخدام تعبئة متدرجة باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 Page page = doc.Pages.Add();
@@ -94,44 +94,44 @@ rect.GraphInfo.FillColor = new Aspose.Pdf.Color
 doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 
 ```
-## Conclusion
+## خاتمة
 
-In this tutorial, we have explained step by step how to add a drawing with a gradient fill to programming with graphics using Aspose.PDF for .NET. Now you can use this knowledge to create attractive PDF documents with custom designs and gradient fills.
+في هذا البرنامج التعليمي، شرحنا خطوة بخطوة كيفية إضافة رسم بتعبئة متدرجة إلى برمجة الرسومات باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام هذه المعرفة لإنشاء مستندات PDF جذابة بتصميمات مخصصة وتعبئة متدرجة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of this tutorial?
+#### س: ما هو الغرض من هذا البرنامج التعليمي؟
 
-A: This tutorial aims to guide you through the process of adding a drawing with gradient fill to programming with graphics using Aspose.PDF for .NET.
+ج: يهدف هذا البرنامج التعليمي إلى إرشادك خلال عملية إضافة رسم بتعبئة متدرجة إلى برمجة الرسومات باستخدام Aspose.PDF لـ .NET.
 
-#### Q: What prerequisites are required before starting?
+#### س: ما هي المتطلبات الأساسية المطلوبة قبل البدء؟
 
-A: Before you begin, ensure that you have installed the Aspose.PDF library and set up your development environment. Additionally, having a basic understanding of C# programming is recommended.
+ج: قبل أن تبدأ، تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك. بالإضافة إلى ذلك، يوصى بالحصول على فهم أساسي لبرمجة C#.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### س: كيف أحدد الدليل لحفظ ملف PDF؟
 
-A: In the provided source code, you can change the value of the "dataDir" variable to indicate the directory where you want to save the resulting PDF file.
+ج: في الكود المصدري المقدم، يمكنك تغيير قيمة المتغير "dataDir" للإشارة إلى الدليل الذي تريد حفظ ملف PDF الناتج فيه.
 
-#### Q: What is the purpose of the Graph object?
+#### س: ما هو الغرض من كائن الرسم البياني؟
 
-A: The Graph object serves as a container for the drawing elements. It is created with specified dimensions and added to the page's paragraph collection.
+ج: يعمل كائن الرسم البياني كحاوية لعناصر الرسم. يتم إنشاؤه بأبعاد محددة وإضافته إلى مجموعة فقرات الصفحة.
 
-#### Q: How can I configure gradient fill for a shape?
+#### س: كيف يمكنني تكوين التعبئة المتدرجة للشكل؟
 
-A: To configure gradient fill, you can set the FillColor property of a shape's GraphInfo using the GradientAxialShading class. This allows you to define the start and end points of the gradient and the colors to transition between.
+ج: لتكوين التعبئة المتدرجة، يمكنك تعيين خاصية fillColor الخاصة بـ GraphInfo للشكل باستخدام فئة GradientAxialShading. يتيح لك هذا تحديد نقاط البداية والنهاية للتدرج والألوان التي سيتم الانتقال بينها.
 
-#### Q: Can I customize the colors and direction of the gradient fill?
+#### س: هل يمكنني تخصيص الألوان واتجاه التعبئة المتدرجة؟
 
-A: Yes, you can customize the colors and direction of the gradient fill by adjusting the Color objects and specifying the start and end points of the GradientAxialShading.
+ج: نعم، يمكنك تخصيص الألوان واتجاه التعبئة المتدرجة عن طريق ضبط كائنات اللون وتحديد نقاط البداية والنهاية لـ GradientAxialShading.
 
-#### Q: What is the final step of the tutorial?
+#### س: ما هي الخطوة الأخيرة من البرنامج التعليمي؟
 
-A: The final step involves saving the resulting PDF file with the name "AddDrawingWithGradientFill_out.pdf" in the specified directory.
+ج: تتضمن الخطوة الأخيرة حفظ ملف PDF الناتج بالاسم "AddDrawingWithGradientFill_out.pdf" في الدليل المحدد.
 
-#### Q: Is there a sample source code available?
+#### س: هل هناك نموذج للكود المصدري متاح؟
 
-A: Yes, the tutorial provides a sample source code that you can use as a reference to implement the steps described.
+ج: نعم، يوفر البرنامج التعليمي نموذجًا للتعليمات البرمجية المصدرية التي يمكنك استخدامها كمرجع لتنفيذ الخطوات الموضحة.
 
-#### Q: Can I apply gradient fill to other shapes besides rectangles?
+#### س: هل يمكنني تطبيق تعبئة متدرجة على أشكال أخرى إلى جانب المستطيلات؟
 
-A: Yes, you can apply gradient fill to other shapes as well. The process involves configuring the FillColor property of the shape's GraphInfo using the GradientAxialShading class.
+ج: نعم، يمكنك تطبيق تعبئة متدرجة على الأشكال الأخرى أيضًا. تتضمن العملية تكوين خاصية fillColor الخاصة بـ GraphInfo للشكل باستخدام فئة GradientAxialShading.

@@ -1,17 +1,17 @@
 ---
-title: Sign With Smart Card Using Signature Field
-linktitle: Sign With Smart Card Using Signature Field
-second_title: Aspose.PDF for .NET API Reference
-description: Sign your PDF files securely with a smart card using Aspose.PDF for .NET.
+title: Firmare con la Smart Card utilizzando il campo firma
+linktitle: Firmare con la Smart Card utilizzando il campo firma
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Firma i tuoi file PDF in modo sicuro con una smart card utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 120
 url: /it/net/programming-with-security-and-signatures/sign-with-smart-card-using-signature-field/
 ---
-Digital signing with a smart card is a secure way to sign PDF files. With Aspose.PDF for .NET, you can easily sign a PDF file using a signature field and a smart card by following the following source code:
+La firma digitale con una smart card è un modo sicuro per firmare file PDF. Con Aspose.PDF per .NET, puoi firmare facilmente un file PDF utilizzando un campo firma e una smart card seguendo il seguente codice sorgente:
 
-## Step 1: Import required libraries
+## Passaggio 1: importa le librerie richieste
 
-Before you begin, you need to import the necessary libraries for your C# project. Here are the necessary import directives:
+Prima di iniziare, devi importare le librerie necessarie per il tuo progetto C#. Ecco le direttive di importazione necessarie:
 
 ```csharp
 using Aspose.Pdf;
@@ -19,17 +19,17 @@ using Aspose.Pdf.Forms;
 using System.Security.Cryptography.X509Certificates;
 ```
 
-## Step 2: Set path to documents folder
+## Passaggio 2: imposta il percorso della cartella dei documenti
 
-In this step, you need to specify the path to the folder containing the PDF file you want to sign. Replace `"YOUR DOCUMENTS DIRECTORY"` in the following code with the actual path to your documents folder:
+ In questo passaggio, devi specificare il percorso della cartella contenente il file PDF che desideri firmare. Sostituire`"YOUR DOCUMENTS DIRECTORY"`nel seguente codice con il percorso effettivo della cartella dei documenti:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 3: Copy and open the PDF document
+## Passaggio 3: copia e apri il documento PDF
 
-Now we will copy and open the PDF document to be signed using the following code:
+Ora copieremo e apriremo il documento PDF da firmare utilizzando il seguente codice:
 
 ```csharp
 File.Copy(dataDir + "blank.pdf", dataDir + "externalSignature1.pdf", true);
@@ -38,15 +38,15 @@ using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMo
 {
      using (Document doc = new Document(fs))
      {
-         // Create a signature field
+         // Crea un campo per la firma
          SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
 
-         // Select the certificate in the store
+         // Seleziona il certificato nel negozio
          X509Store store = new X509Store(StoreLocation.CurrentUser);
          store.Open(OpenFlags.ReadOnly);
          X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
         
-         // Create an external signature with the necessary information
+         // Crea una firma esterna con le informazioni necessarie
          ExternalSignature externalSignature = new ExternalSignature(sel[0])
          {
              Authority = "Me",
@@ -62,9 +62,9 @@ using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMo
 }
 ```
 
-## Step 4: Verify Signature
+## Passaggio 4: verifica la firma
 
-Finally, we verify the signature of the signed PDF file using the `PdfFileSignature` class. We get the signature names and check them one by one. If a signature fails verification, an exception is thrown. Here is the corresponding code:
+ Infine, verifichiamo la firma del file PDF firmato utilizzando il file`PdfFileSignature` classe. Otteniamo i nomi delle firme e li controlliamo uno per uno. Se una firma non supera la verifica, viene generata un'eccezione. Ecco il codice corrispondente:
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature1.pdf")))
@@ -80,9 +80,9 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 }
 ```
 
-### Sample source code for Sign With Smart Card Using Signature Field using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Firma con smart card utilizzando il campo firma utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 File.Copy(dataDir + "blank.pdf", dataDir + "externalSignature1.pdf", true);
 using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMode.Open, FileAccess.ReadWrite))
@@ -90,10 +90,10 @@ using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMo
 	using (Document doc = new Document(fs))
 	{
 		SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
-		// Sign with certificate selection in the windows certificate store
+		// Accedi con la selezione del certificato nell'archivio certificati di Windows
 		System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
 		store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-		// Manually chose the certificate in the store
+		// Scegli manualmente il certificato nel negozio
 		System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
 		Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0])
 		{
@@ -120,50 +120,50 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 }
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation ! You now have a step-by-step guide to signing a PDF file with a smart card using a signature field with Aspose.PDF for .NET. You can use this code to add secure digital signatures to your PDF documents.
+Congratulazioni! Ora hai una guida passo passo per firmare un file PDF con una smart card utilizzando un campo firma con Aspose.PDF per .NET. Puoi utilizzare questo codice per aggiungere firme digitali sicure ai tuoi documenti PDF.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced digital signature and certificate management features.
+Assicurati di controllare la documentazione ufficiale Aspose.PDF per ulteriori informazioni sulla firma digitale avanzata e sulle funzionalità di gestione dei certificati.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: What is the benefit of using a signature field for digital signing with a smart card?
+#### D: Qual è il vantaggio di utilizzare un campo firma per la firma digitale con una smart card?
 
-A: Using a signature field for digital signing with a smart card provides a designated area within the PDF where the signature is applied. This enhances document clarity and ensures the signature's authenticity.
+R: L'utilizzo di un campo firma per la firma digitale con una smart card fornisce un'area designata all'interno del PDF in cui viene applicata la firma. Ciò migliora la chiarezza del documento e garantisce l'autenticità della firma.
 
-#### Q: How does the Aspose.PDF for .NET library facilitate smart card-based digital signing with a signature field?
+#### D: In che modo la libreria Aspose.PDF per .NET facilita la firma digitale basata su smart card con un campo firma?
 
-A: Aspose.PDF for .NET simplifies the process of creating a signature field, selecting a smart card certificate, and applying a digital signature to a specific area within the PDF document.
+R: Aspose.PDF per .NET semplifica il processo di creazione di un campo firma, selezione di un certificato smart card e applicazione di una firma digitale a un'area specifica all'interno del documento PDF.
 
-#### Q: Why is selecting a specific certificate important for smart card-based signing?
+#### D: Perché è importante selezionare un certificato specifico per la firma basata su smart card?
 
-A: Selecting a specific certificate allows you to uniquely identify the signer and ensure the integrity of the signature. This helps establish trust and compliance with digital signing standards.
+R: La selezione di un certificato specifico consente di identificare in modo univoco il firmatario e garantire l'integrità della firma. Ciò aiuta a stabilire fiducia e conformità con gli standard di firma digitale.
 
-#### Q: How does the provided source code handle the smart card-based signing process with a signature field?
+#### D: In che modo il codice sorgente fornito gestisce il processo di firma basato su smart card con un campo firma?
 
-A: The source code demonstrates how to create a signature field, select a smart card certificate, and apply a digital signature with specific signing information. It also shows how to verify the signature's validity.
+R: Il codice sorgente mostra come creare un campo firma, selezionare un certificato smart card e applicare una firma digitale con informazioni di firma specifiche. Mostra anche come verificare la validità della firma.
 
-#### Q: Can I customize the appearance of the signature field?
+#### D: Posso personalizzare l'aspetto del campo della firma?
 
-A: Yes, you can customize the appearance of the signature field, such as its size, position, and visual representation, to align with your document's layout.
+R: Sì, puoi personalizzare l'aspetto del campo della firma, ad esempio dimensioni, posizione e rappresentazione visiva, per allinearlo al layout del documento.
 
-#### Q: What happens if a signature fails verification during the verification step?
+#### D: Cosa succede se una firma non supera la verifica durante la fase di verifica?
 
-A: If a signature fails verification, an exception is thrown, indicating that the signature is not valid. This ensures that only valid and trusted signatures are accepted.
+R: Se una firma non supera la verifica, viene generata un'eccezione che indica che la firma non è valida. Ciò garantisce che vengano accettate solo firme valide e attendibili.
 
-#### Q: Can I apply multiple signature fields and smart card-based signatures to a single PDF document?
+#### D: Posso applicare più campi firma e firme basate su smart card a un singolo documento PDF?
 
-A: Absolutely, you can apply multiple signature fields and smart card-based signatures to different areas of the same PDF document, providing multiple layers of security.
+R: Assolutamente sì, puoi applicare più campi firma e firme basate su smart card a diverse aree dello stesso documento PDF, fornendo più livelli di sicurezza.
 
-#### Q: How does using a signature field enhance the overall document signing process?
+#### D: In che modo l'utilizzo di un campo firma migliora il processo complessivo di firma del documento?
 
-A: Using a signature field streamlines the document signing process, as it guides the signer to place their signature in a designated area, making the signing process more organized and user-friendly.
+R: L'utilizzo di un campo firma semplifica il processo di firma del documento, poiché guida il firmatario a posizionare la propria firma in un'area designata, rendendo il processo di firma più organizzato e facile da usare.
 
-#### Q: Are there any limitations to using signature fields with smart card-based signing?
+#### D: Esistono limitazioni all'utilizzo dei campi firma con la firma basata su smart card?
 
-A: There are no inherent limitations to using signature fields with smart card-based signing. However, it's important to ensure that the chosen signature field location doesn't obscure important document content.
+R: Non esistono limitazioni intrinseche all'utilizzo dei campi firma con la firma basata su smart card. Tuttavia, è importante garantire che la posizione del campo della firma scelta non oscuri il contenuto importante del documento.
 
-#### Q: Where can I find further assistance or support for implementing smart card-based signing with a signature field?
+#### D: Dove posso trovare ulteriore assistenza o supporto per l'implementazione della firma basata su smart card con un campo per la firma?
 
-A: For additional guidance and support, you can refer to the official Aspose.PDF documentation and community forums, which offer valuable insights and solutions for implementing secure digital signatures.
+R: Per ulteriore assistenza e supporto, è possibile fare riferimento alla documentazione ufficiale Aspose.PDF e ai forum della community, che offrono preziosi approfondimenti e soluzioni per l'implementazione di firme digitali sicure.

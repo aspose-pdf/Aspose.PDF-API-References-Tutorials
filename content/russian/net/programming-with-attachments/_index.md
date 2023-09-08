@@ -1,21 +1,21 @@
 ---
-title: Programming with Attachments
-linktitle: Programming with Attachments
+title: Программирование с вложениями
+linktitle: Программирование с вложениями
 type: docs
 weight: 18
 url: /ru/net/programming-with-attachments/
-description: Learn how to manipulate attachments in PDF documents, including adding, extracting and deleting them, to improve the functionality of PDF files.
+description: Узнайте, как манипулировать вложениями в документах PDF, включая их добавление, извлечение и удаление, чтобы улучшить функциональность файлов PDF.
 ---
-The Aspose.PDF for .NET tutorials on programming with attachments provide step-by-step instructions for working with attachments in PDF documents. Learn how to add, extract and delete attachments, as well as manage their properties.
+Учебные пособия Aspose.PDF для .NET по программированию с вложениями содержат пошаговые инструкции по работе с вложениями в PDF-документах. Узнайте, как добавлять, извлекать и удалять вложения, а также управлять их свойствами.
 
-These tutorials will guide you through the different steps to manipulate attachments in your PDF documents, allowing you to improve the functionality and interactivity of your PDF files.
+Эти учебные пособия проведут вас через различные шаги по управлению вложениями в ваших PDF-документах, что позволит вам улучшить функциональность и интерактивность ваших PDF-файлов.
 
-## Tutorials
-| Title | Description |
+## Учебники
+| Заголовок | Описание |
 | --- | --- | 
-| [Add Attachment In PDF File](./add-attachment/) | Learn how to add attachment in PDF file using Aspose.PDF for .NET.  |  
-| [Delete All Attachments In PDF File](./delete-all-attachments/) | Learn how to remove all attachments in PDF file using Aspose.PDF for .NET.  |  
-| [Disable Files Compression In PDF File](./disable-files-compression/) | Learn how to disable file compression in PDF file with Aspose.PDF for .NET.  |  
-| [Get All The Attachments In PDF File](./get-all-the-attachments/) | Learn how to get all attachments in PDF file with Aspose.PDF for .NET.  |  
-| [Get Attachment Info](./get-attachment-info/) | Learn how to get information about a specific attachment in a PDF file with Aspose.PDF for .NET. |  
-| [Get Individual Attachment In PDF File](./get-individual-attachment/) | Learn how to get an individual attachment in PDF file with Aspose.PDF for .NET.  |  
+| [Добавить вложение в PDF-файл](./add-attachment/) | Узнайте, как добавить вложение в файл PDF с помощью Aspose.PDF для .NET.  |  
+| [Удалить все вложения в PDF-файле](./delete-all-attachments/) | Узнайте, как удалить все вложения в файле PDF с помощью Aspose.PDF для .NET.  |  
+| [Отключить сжатие файлов в PDF-файле](./disable-files-compression/) | Узнайте, как отключить сжатие файлов PDF с помощью Aspose.PDF для .NET.  |  
+| [Получить все вложения в PDF-файле](./get-all-the-attachments/) | Узнайте, как получить все вложения в файл PDF с помощью Aspose.PDF для .NET.  |  
+| [Получить информацию о вложении](./get-attachment-info/) | Узнайте, как получить информацию о конкретном вложении в PDF-файле с помощью Aspose.PDF для .NET. |  
+| [Получить индивидуальное вложение в PDF-файле](./get-individual-attachment/) | Узнайте, как получить отдельное вложение в PDF-файле с помощью Aspose.PDF для .NET.  |  

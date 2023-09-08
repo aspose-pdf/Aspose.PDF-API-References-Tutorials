@@ -1,81 +1,81 @@
 ---
-title: Validate PDF Files A Standard
-linktitle: Validate PDF A Standard
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to validate PDF files for PDFAStandard with this step-by-step guide.
+title: PDF Dosyalarını Doğrulayın Bir Standart
+linktitle: PDF A Standardını Doğrulayın
+second_title: .NET API Referansı için Aspose.PDF
+description: Bu adım adım kılavuzla PDFAStandard için PDF dosyalarını doğrulamak amacıyla Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin.
 type: docs
 weight: 390
 url: /tr/net/programming-with-document/validatepdfastandard/
 ---
-Aspose.PDF for .NET is a powerful library that allows you to create, edit, and manipulate PDF files programmatically using the C# language. One of the key features of Aspose.PDF for .NET is the ability to validate PDF files against various PDF standards, including PDF/A-1a. In this article, we will provide a step-by-step guide on how to use the "Get Validate PDFAStandard" feature of Aspose.PDF for .NET. 
+Aspose.PDF for .NET, C# dilini kullanarak PDF dosyalarını programlı olarak oluşturmanıza, düzenlemenize ve değiştirmenize olanak tanıyan güçlü bir kitaplıktır. Aspose.PDF for .NET'in en önemli özelliklerinden biri, PDF dosyalarını, PDF/A-1a dahil olmak üzere çeşitli PDF standartlarına göre doğrulama yeteneğidir. Bu yazıda Aspose.PDF for .NET'in "Get Validate PDFASstandard" özelliğinin nasıl kullanılacağı hakkında adım adım bir kılavuz sunacağız. 
 
-## Step 1: Defining the Document Directory Path
+## Adım 1: Belge Dizini Yolunu Tanımlama
 
-we need to define the path to the directory where our PDF document is located. You can do this by adding the following code snippet:
+PDF belgemizin bulunduğu dizinin yolunu tanımlamamız gerekiyor. Bunu aşağıdaki kod parçacığını ekleyerek yapabilirsiniz:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
-After installing Aspose.PDF for .NET, you need to add a reference to the library in your project. To do this, open your C# project in Visual Studio and right-click on the "References" folder in the Solution Explorer. Select "Add Reference" from the context menu and browse to the location where you installed Aspose.PDF for .NET. Select the "Aspose.PDF.dll" file and click "OK" to add the reference to your project.
+Aspose.PDF for .NET'i yükledikten sonra projenizdeki kütüphaneye bir referans eklemeniz gerekir. Bunu yapmak için C# projenizi Visual Studio'da açın ve Solution Explorer'daki "Referanslar" klasörüne sağ tıklayın. İçerik menüsünden "Referans Ekle"yi seçin ve Aspose.PDF for .NET'i kurduğunuz konuma göz atın. Referansı projenize eklemek için "Aspose.PDF.dll" dosyasını seçin ve "Tamam"a tıklayın.
 
-## Step 2: Opening the PDF Document
+## Adım 2: PDF Belgesini Açma
 
-To validate a PDF document using Aspose.PDF for .NET, you first need to load the PDF document into the memory. In the example code provided, the path to the PDF document is specified using the "dataDir" variable. Replace this variable with the actual path to your PDF document.
+Aspose.PDF for .NET kullanarak bir PDF belgesini doğrulamak için öncelikle PDF belgesini belleğe yüklemeniz gerekir. Sağlanan örnek kodda, PDF belgesinin yolu "dataDir" değişkeni kullanılarak belirtilmiştir. Bu değişkeni PDF belgenizin gerçek yoluyla değiştirin.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 ```
 
-## Step 3: Validating the PDF Document
+## 3. Adım: PDF Belgesini Doğrulama
 
-After loading the PDF document, you can use the "Validate" method of the "Document" class to validate the document against the PDF/A-1a standard. In the example code provided, the validation result is saved to an XML file named "validation-result-A1A.xml" in the same directory as the PDF document.
+PDF belgesini yükledikten sonra belgeyi PDF/A-1a standardına göre doğrulamak için "Belge" sınıfının "Doğrulama" yöntemini kullanabilirsiniz. Verilen örnek kodda doğrulama sonucu, PDF belgesiyle aynı dizinde "validation-result-A1A.xml" adlı bir XML dosyasına kaydedilir.
 
 ```csharp
-// Validate PDF for PDF/A-1a
+// PDF/A-1a için PDF'yi doğrulayın
 pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
 
-### Example source code for Get Validate PDFAStandard using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Validate PDFASstandart'ı Al için örnek kaynak kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 
-// Validate PDF for PDF/A-1a
+// PDF/A-1a için PDF'yi doğrulayın
 pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
 
-## Conclusion
+## Çözüm
 
-Validating PDF files against various PDF standards is an important aspect of working with PDF files in a professional environment. Aspose.PDF for .NET provides a powerful and easy-to-use API for validating PDF files against various PDF standards, including PDF/A-1a. By following the step-by-step guide provided in this article, you can quickly and easily validate your PDF files using Aspose.PDF for .NET.
+PDF dosyalarını çeşitli PDF standartlarına göre doğrulamak, profesyonel bir ortamda PDF dosyalarıyla çalışmanın önemli bir yönüdür. Aspose.PDF for .NET, PDF dosyalarını PDF/A-1a dahil olmak üzere çeşitli PDF standartlarına göre doğrulamak için güçlü ve kullanımı kolay bir API sağlar. Bu makalede verilen adım adım kılavuzu takip ederek Aspose.PDF for .NET'i kullanarak PDF dosyalarınızı hızlı ve kolay bir şekilde doğrulayabilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the significance of validating PDF files against PDF/A-1a standard?
+#### S: PDF dosyalarını PDF/A-1a standardına göre doğrulamanın önemi nedir?
 
-A: Validating PDF files against the PDF/A-1a standard ensures that the documents comply with specific archiving standards. This standard is designed for long-term preservation and ensures that PDFs maintain their integrity and accessibility over time.
+C: PDF dosyalarının PDF/A-1a standardına göre doğrulanması, belgelerin belirli arşivleme standartlarına uygun olmasını sağlar. Bu standart, uzun süreli koruma için tasarlanmıştır ve PDF'lerin zaman içinde bütünlüğünü ve erişilebilirliğini korumasını sağlar.
 
-#### Q: How do I define the document directory path in the C# code?
+#### S: C# kodunda belge dizini yolunu nasıl tanımlarım?
 
-A: To define the path to the directory where your PDF document is located, use the following code snippet:
+C: PDF belgenizin bulunduğu dizinin yolunu tanımlamak için aşağıdaki kod parçacığını kullanın:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual path to the directory containing your PDF document.
+"BELGE DİZİNİNİZ" ifadesini, PDF belgenizi içeren dizinin gerçek yoluyla değiştirin.
 
-#### Q: Is it necessary to add a reference to Aspose.PDF for .NET in my project?
+#### S: Projemde Aspose.PDF for .NET'e bir referans eklemem gerekiyor mu?
 
-A: Yes, after installing Aspose.PDF for .NET, you need to add a reference to the library in your project. This can be done in Visual Studio by right-clicking on the "References" folder in the Solution Explorer, selecting "Add Reference," and browsing to the location of "Aspose.PDF.dll."
+C: Evet, Aspose.PDF for .NET'i kurduktan sonra projenize kütüphaneye bir referans eklemeniz gerekiyor. Bu, Visual Studio'da Solution Explorer'daki "Referanslar" klasörüne sağ tıklayarak, "Referans Ekle"yi seçerek ve "Aspose.PDF.dll" konumuna göz atarak yapılabilir.
 
-#### Q: Can I validate PDF files against other PDF standards using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak PDF dosyalarını diğer PDF standartlarına göre doğrulayabilir miyim?
 
-A: Yes, Aspose.PDF for .NET supports validation against various PDF standards, including PDF/A-1b and PDF/X standards. You can specify the desired standard when using the `Validate` method.
+ C: Evet, Aspose.PDF for .NET, PDF/A-1b ve PDF/X standartları da dahil olmak üzere çeşitli PDF standartlarına göre doğrulamayı destekler. Kullanırken istediğiniz standardı belirleyebilirsiniz.`Validate` yöntem.
 
-#### Q: Where does the validation result get saved after using the `Validate` method?
+####  S: Kullandıktan sonra doğrulama sonucu nereye kaydediliyor?`Validate` method?
 
-A: The validation result is saved to an XML file named "validation-result-A1A.xml," which will be located in the same directory as the PDF document being validated.
+C: Doğrulama sonucu, doğrulanan PDF belgesiyle aynı dizinde yer alacak olan "validation-result-A1A.xml" adlı bir XML dosyasına kaydedilir.

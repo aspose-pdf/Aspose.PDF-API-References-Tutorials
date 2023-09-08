@@ -1,26 +1,26 @@
 ---
-title: Programming with Bookmarks
-linktitle: Programming with Bookmarks
+title: 使用书签编程
+linktitle: 使用书签编程
 type: docs
 weight: 19
 url: /zh/net/programming-with-bookmarks/
-description: Learn how to manipulate, manage and customize bookmarks in your PDF documents for better navigation and improved user experience.
+description: 了解如何操作、管理和自定义 PDF 文档中的书签，以实现更好的导航和改进的用户体验。
 ---
-Aspose.PDF for .NET's tutorials on programming with bookmarks walk you through the steps to manipulate and manage bookmarks in your PDF documents. Learn how to create, edit and delete bookmarks to make it easier to navigate and organize your PDF files.
+Aspose.PDF for .NET 有关书签编程的教程将引导您完成在 PDF 文档中操作和管理书签的步骤。了解如何创建、编辑和删除书签，以便更轻松地导航和组织 PDF 文件。
 
-Additionally, these tutorials show you how to customize bookmark properties, such as titles, actions, and hierarchical levels, to improve the user experience and make your PDF documents more interactive and user-friendly. Master the use of bookmarks in your PDF projects with these step-by-step guides.
+此外，这些教程还向您展示如何自定义书签属性，例如标题、操作和层次结构级别，以改善用户体验并使您的 PDF 文档更具交互性和用户友好性。通过这些分步指南掌握书签在 PDF 项目中的使用。
 
-## Tutorials
-| Title | Description |
+## 教程
+| 标题 | 描述 |
 | --- | --- | 
-| [Add Bookmark In PDF File](./add-bookmark/) | Easily add bookmark in PDF file for improved navigation with Aspose.PDF for .NET. |  
-| [Add Child Bookmark In PDF File](./add-child-bookmark/) | Easily add child bookmark in PDF file for more organized browsing with Aspose.PDF for .NET. |  
-| [Delete All Bookmarks In PDF File](./delete-all-bookmarks/) | Easily delete all bookmarks in PDF file with Aspose.PDF for .NET. |  
-| [Delete Particular Bookmark In PDF File](./delete-particular-bookmark/) | Easily delete a particular bookmark in PDF file with Aspose.PDF for .NET. |  
-| [Expand Bookmarks In PDF File](./expand-bookmarks/) | Easily expand bookmarks in PDF file for improved navigation with Aspose.PDF for .NET. |  
-| [Get Bookmark Page Number In PDF File](./get-bookmark-page-number/) | Easily get bookmark page number in PDF file with Aspose.PDF for .NET. |  
-| [Get Bookmarks In PDF File](./get-bookmarks/) | Easily get bookmark in PDF file with Aspose.PDF for .NET. |  
-| [Get Child Bookmarks In PDF File](./get-child-bookmarks/) | Easily get child bookmarks in PDF file with Aspose.PDF for .NET. |  
-| [Inherit Zoom In PDF File](./inherit-zoom/) | Easily inherit bookmark zoom in PDF file with Aspose.PDF for .NET. |  
-| [Update Bookmarks In PDF File](./update-bookmarks/) | Easily update bookmarks in PDF file with Aspose.PDF for .NET. |  
-| [Update Child Bookmarks In PDF File](./update-child-bookmarks/) | Easily update child bookmarks in PDF file with Aspose.PDF for .NET. |  
+| [在 PDF 文件中添加书签](./add-bookmark/) | 使用 Aspose.PDF for .NET 在 PDF 文件中轻松添加书签以改进导航。 |  
+| [在 PDF 文件中添加子书签](./add-child-bookmark/) | 使用 Aspose.PDF for .NET 在 PDF 文件中轻松添加子书签，以便更有条理地浏览。 |  
+| [删除PDF文件中的所有书签](./delete-all-bookmarks/) | 使用 Aspose.PDF for .NET 轻松删除 PDF 文件中的所有书签。 |  
+| [删除 PDF 文件中的特定书签](./delete-particular-bookmark/) | 使用 Aspose.PDF for .NET 轻松删除 PDF 文件中的特定书签。 |  
+| [展开 PDF 文件中的书签](./expand-bookmarks/) | 使用 Aspose.PDF for .NET 轻松扩展 PDF 文件中的书签以改进导航。 |  
+| [获取 PDF 文件中的书签页码](./get-bookmark-page-number/) | 使用 Aspose.PDF for .NET 轻松获取 PDF 文件中的书签页码。 |  
+| [获取 PDF 文件中的书签](./get-bookmarks/) | 使用 Aspose.PDF for .NET 轻松获取 PDF 文件中的书签。 |  
+| [获取 PDF 文件中的子书签](./get-child-bookmarks/) | 使用 Aspose.PDF for .NET 轻松获取 PDF 文件中的子书签。 |  
+| [继承放大 PDF 文件](./inherit-zoom/) | 使用 Aspose.PDF for .NET 轻松继承 PDF 文件中的书签缩放。 |  
+| [更新 PDF 文件中的书签](./update-bookmarks/) | 使用 Aspose.PDF for .NET 轻松更新 PDF 文件中的书签。 |  
+| [更新 PDF 文件中的子书签](./update-child-bookmarks/) | 使用 Aspose.PDF for .NET 轻松更新 PDF 文件中的子书签。 |  

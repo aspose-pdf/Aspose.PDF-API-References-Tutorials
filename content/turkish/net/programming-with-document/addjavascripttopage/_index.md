@@ -1,119 +1,119 @@
 ---
-title: Add Java Script To PDF File
-linktitle: Add Java Script PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add JavaScript to PDF file using Aspose.PDF for .NET. Step-by-step guide with code tutorials for document and page level scripting.
+title: PDF Dosyasına Java Komut Dosyası Ekleme
+linktitle: Java Komut Dosyası PDF Dosyası Ekle
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasına nasıl JavaScript ekleyeceğinizi öğrenin. Belge ve sayfa düzeyinde komut dosyası oluşturmaya yönelik kod eğitimlerini içeren adım adım kılavuz.
 type: docs
 weight: 10
 url: /tr/net/programming-with-document/addjavascripttopage/
 ---
-To add JavaScript to a PDF file, we will use Aspose.PDF for .NET. This library provides a simple and efficient way to work with PDF files in .NET applications. The following steps will guide you through the process of adding JavaScript to a PDF file using Aspose.PDF for .NET.
+Bir PDF dosyasına JavaScript eklemek için Aspose.PDF for .NET'i kullanacağız. Bu kitaplık, .NET uygulamalarında PDF dosyalarıyla çalışmanın basit ve etkili bir yolunu sağlar. Aşağıdaki adımlar Aspose.PDF for .NET kullanarak bir PDF dosyasına JavaScript ekleme sürecinde size yol gösterecektir.
 
-## Step 1: Load the PDF File
+## 1. Adım: PDF Dosyasını Yükleyin
 
-The first step is to load the PDF file that you want to add JavaScript to. You can do this using the `Document` class provided by Aspose.PDF for .NET. The `Document` class provides methods for loading, saving, and manipulating PDF files.
+ İlk adım, JavaScript eklemek istediğiniz PDF dosyasını yüklemektir. Bunu kullanarak yapabilirsiniz`Document` sınıf Aspose.PDF for .NET tarafından sağlanmıştır.`Document` class, PDF dosyalarını yüklemek, kaydetmek ve değiştirmek için yöntemler sağlar.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load an existing PDF files
+// Mevcut bir PDF dosyasını yükleyin
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 2: Add JavaScript at Document Level
+## 2. Adım: Belge Düzeyinde JavaScript ekleyin
 
-To add JavaScript at the document level, we will use the `JavascriptAction` class provided by Aspose.PDF for .NET. This class allows you to specify the JavaScript statement that you want to add to the PDF file.
+Belge düzeyinde JavaScript eklemek için şunu kullanacağız:`JavascriptAction` sınıf Aspose.PDF for .NET tarafından sağlanmıştır. Bu sınıf, PDF dosyasına eklemek istediğiniz JavaScript ifadesini belirtmenize olanak tanır.
 
 ```csharp
-// Adding JavaScript at Document Level
-// Instantiate JavascriptAction with desired JavaScript statement
+// Belge Düzeyinde JavaScript Ekleme
+// İstediğiniz JavaScript ifadesiyle JavascriptAction örneğini oluşturun
 JavascriptAction javaScript = new JavascriptAction("this.print({bUI:true,bSilent:false,bShrinkToFit:true});");
 
-// Assign JavascriptAction object to desired action of Document
+// Belgenin istenen eylemine JavascriptAction nesnesini atayın
 doc.OpenAction = javaScript;
 ```
 
-In this tutorial, we are adding a JavaScript statement that will print the PDF file with the specified options when the document is opened.
+Bu eğitimde, PDF dosyasını belge açıldığında belirtilen seçeneklerle yazdıracak bir JavaScript ifadesi ekliyoruz.
 
-## Step 3: Add JavaScript at Page Level
+## 3. Adım: Sayfa Düzeyinde JavaScript ekleyin
 
-To add JavaScript at the page level, we will use the `JavascriptAction` class and the `Actions` property provided by Aspose.PDF for .NET. This property allows you to specify JavaScript statements that will be executed when the page is opened or closed.
+ Sayfa düzeyinde JavaScript eklemek için şunu kullanacağız:`JavascriptAction` sınıf ve`Actions` Aspose.PDF for .NET tarafından sağlanan özellik. Bu özellik, sayfa açıldığında veya kapatıldığında yürütülecek JavaScript ifadelerini belirtmenize olanak tanır.
 
 ```csharp
-// Adding JavaScript at Page Level
+// Sayfa Düzeyinde JavaScript Ekleme
 doc.Pages[2].Actions.OnOpen = new JavascriptAction("app.alert('page 1 opened')");
 doc.Pages[2].Actions.OnClose = new JavascriptAction("app.alert('page 1 closed')");
 ```
 
-In this tutorial, we are adding JavaScript statements that will display an alert message when the page is opened or closed.
+Bu eğitimde, sayfa açıldığında veya kapatıldığında bir uyarı mesajı görüntüleyecek JavaScript ifadeleri ekliyoruz.
 
-## Step 4: Save the PDF File
+## Adım 4: PDF Dosyasını Kaydedin
 
-After you have added the JavaScript to the PDF file, you need to save the modified file. You can do this using the `Save` method provided by the `Document` class.
+JavaScript'i PDF dosyasına ekledikten sonra değiştirilen dosyayı kaydetmeniz gerekir. Bunu kullanarak yapabilirsiniz`Save` tarafından sağlanan yöntem`Document` sınıf.
 
 ```csharp
 dataDir = dataDir + "JavaScript-Added_out.pdf";
-// Save PDF Document
+// PDF Belgesini Kaydet
 doc.Save(dataDir);
 
 Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);
 ```
 
-This code will save the modified PDF file to the specified directory.
+Bu kod, değiştirilen PDF dosyasını belirtilen dizine kaydedecektir.
 
-### Example source code for Add Java Script To Page using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Sayfaya Java Komut Dosyası Ekleme için örnek kaynak kodu
 
 ```csharp
             
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load an existing PDF files
+// Mevcut bir PDF dosyasını yükleyin
 Document doc = new Document(dataDir + "input.pdf");
 
-// Adding JavaScript at Document Level
-// Instantiate JavascriptAction with desried JavaScript statement
+// Belge Düzeyinde JavaScript Ekleme
+// İstenilen JavaScript ifadesiyle JavascriptAction örneğini oluşturun
 JavascriptAction javaScript = new JavascriptAction("this.print({bUI:true,bSilent:false,bShrinkToFit:true});");
 
-// Assign JavascriptAction object to desired action of Document
+// Belgenin istenen eylemine JavascriptAction nesnesini atayın
 doc.OpenAction = javaScript;
 
-// Adding JavaScript at Page Level
+// Sayfa Düzeyinde JavaScript Ekleme
 doc.Pages[2].Actions.OnOpen = new JavascriptAction("app.alert('page 1 opened')");
 doc.Pages[2].Actions.OnClose = new JavascriptAction("app.alert('page 1 closed')");
 
 dataDir = dataDir + "JavaScript-Added_out.pdf";
-// Save PDF Document
+// PDF Belgesini Kaydet
 doc.Save(dataDir);
 
 Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);     
 ```
 
-## Conclusion
+## Çözüm
 
-In this article, we have explained how to add JavaScript to a PDF file at both the document level and the page level using Aspose.PDF for .NET. We have provided step-by-step instructions and included the full source code for each example. With this knowledge, you can add JavaScript to your PDF files and customize their behavior according to your needs.
+Bu yazıda Aspose.PDF for .NET kullanarak bir PDF dosyasına hem belge düzeyinde hem de sayfa düzeyinde JavaScript'in nasıl ekleneceğini açıkladık. Her örnek için adım adım talimatlar sağladık ve tam kaynak kodunu ekledik. Bu bilgiyle PDF dosyalarınıza JavaScript ekleyebilir ve davranışlarını ihtiyaçlarınıza göre özelleştirebilirsiniz.
 
 
-### FAQ's for add java script to PDF file
+### PDF dosyasına java betiği eklemek için SSS
 
-#### Q: What is Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET nedir?
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF files in .NET applications. It provides a wide range of features for creating, modifying, and manipulating PDF documents.
+C: Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarında PDF dosyalarıyla çalışmasına olanak tanıyan güçlü bir kitaplıktır. PDF belgelerini oluşturmak, değiştirmek ve işlemek için çok çeşitli özellikler sunar.
 
-#### Q: Can I add JavaScript to a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesine JavaScript ekleyebilir miyim?
 
-A: Yes, Aspose.PDF for .NET allows you to add JavaScript to both the document level and the page level of a PDF file, enabling you to create dynamic and interactive PDF documents.
+C: Evet, Aspose.PDF for .NET, bir PDF dosyasının hem belge düzeyine hem de sayfa düzeyine JavaScript eklemenizi sağlayarak dinamik ve etkileşimli PDF belgeleri oluşturmanıza olanak tanır.
 
-#### Q: How do I load an existing PDF file using Aspose.PDF for .NET?
+#### S: Mevcut bir PDF dosyasını Aspose.PDF for .NET kullanarak nasıl yüklerim?
 
-A: You can load an existing PDF file using the `Document` class and its methods, as shown in the step-by-step guide.
+ C: Mevcut bir PDF dosyasını kullanarak yükleyebilirsiniz.`Document` Adım adım kılavuzda gösterildiği gibi sınıf ve yöntemleri.
 
-#### Q: What types of JavaScript actions can I add to a PDF document?
+#### S: Bir PDF belgesine ne tür JavaScript eylemleri ekleyebilirim?
 
-A: With Aspose.PDF for .NET, you can add a wide variety of JavaScript actions, such as printing, alert messages, form field manipulation, and more.
+C: Aspose.PDF for .NET ile yazdırma, uyarı mesajları, form alanı düzenleme ve daha fazlası gibi çok çeşitli JavaScript eylemleri ekleyebilirsiniz.
 
-#### Q: Is Aspose.PDF for .NET suitable for commercial projects?
+#### S: Aspose.PDF for .NET ticari projeler için uygun mudur?
 
-A: Yes, Aspose.PDF for .NET is a reliable and robust library that is commonly used in commercial projects for PDF manipulation and generation tasks.
+C: Evet, Aspose.PDF for .NET, ticari projelerde PDF düzenleme ve oluşturma görevleri için yaygın olarak kullanılan güvenilir ve sağlam bir kitaplıktır.
 

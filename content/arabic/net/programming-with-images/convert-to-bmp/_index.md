@@ -1,118 +1,118 @@
 ---
-title: Convert To BMP
-linktitle: Convert To BMP
-second_title: Aspose.PDF for .NET API Reference
-description: Easily convert PDF to individual BMP images with Aspose.PDF for .NET.
+title: تحويل إلى BMP
+linktitle: تحويل إلى BMP
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بتحويل PDF بسهولة إلى صور BMP فردية باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 90
 url: /ar/net/programming-with-images/convert-to-bmp/
 ---
-This guide will take you step by step how to convert a PDF file to individual BMP images using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+سيأخذك هذا الدليل خطوة بخطوة حول كيفية تحويل ملف PDF إلى صور BMP فردية باستخدام Aspose.PDF لـ .NET. تأكد من أنك قمت بالفعل بإعداد بيئتك واتبع الخطوات التالية:
 
-## Step 1: Define the document directory
+## الخطوة 1: تحديد دليل المستند
 
-Before you start, make sure you set the correct directory for the documents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+ قبل البدء، تأكد من تعيين الدليل الصحيح للمستندات. يستبدل`"YOUR DOCUMENT DIRECTORY"` في الكود الذي يحتوي على المسار إلى الدليل الذي يوجد به مستند PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the document
+## الخطوة 2: افتح المستند
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+في هذه الخطوة، سنقوم بفتح مستند PDF باستخدام الملف`Document` فئة Aspose.PDF. استخدم ال`Document` منشئ وتمرير المسار إلى وثيقة PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddImage.pdf");
 ```
 
-## Step 3: Convert each page to BMP
+## الخطوة 3: تحويل كل صفحة إلى BMP
 
-In this step, we will go through each page of the PDF document and convert them into individual BMP images. We will use a `for` loop to iterate through all the pages.
+في هذه الخطوة، سنراجع كل صفحة من مستند PDF ونقوم بتحويلها إلى صور BMP فردية. سوف نستخدم أ`for` حلقة للتكرار عبر جميع الصفحات.
 
 ```csharp
 for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 {
-     // Create a stream to save the BMP image
+     // قم بإنشاء دفق لحفظ صورة BMP
      using (FileStream imageStream = new FileStream("image" + pageCount + "_out" + ".bmp", FileMode.Create))
      {
-         // Create a Resolution object
+         // إنشاء كائن القرار
          Resolution resolution = new Resolution(300);
         
-         // Create a BMP device with the specified attributes
-         // Width, Height, Resolution, Page Size
+         // قم بإنشاء جهاز BMP بالسمات المحددة
+         // العرض، الارتفاع، الدقة، حجم الصفحة
          BmpDevice bmpDevice = new BmpDevice(resolution);
         
-         // Convert a specific page and save the image to the stream
+         // تحويل صفحة معينة وحفظ الصورة في الدفق
          bmpDevice.Process(pdfDocument.Pages[pageCount], imageStream);
         
-         // Close the stream
+         // أغلق الدفق
          imageStream.Close();
      }
 }
 ```
 
-### Sample source code for Convert To BMP using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للتحويل إلى BMP باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "AddImage.pdf");
 for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 {
 	using (FileStream imageStream = new FileStream("image" + pageCount + "_out" + ".bmp", FileMode.Create))
 	{
-		// Create Resolution object
+		// إنشاء كائن القرار
 		Resolution resolution = new Resolution(300);
-		// Create BMP device with specified attributes
-		// Width, Height, Resolution, PageSize
+		// إنشاء جهاز BMP بالسمات المحددة
+		// العرض، الارتفاع، الدقة، حجم الصفحة
 		BmpDevice bmpDevice = new BmpDevice(resolution);
-		// Convert a particular page and save the image to stream
+		//تحويل صفحة معينة وحفظ الصورة للبث
 		bmpDevice.Process(pdfDocument.Pages[pageCount], imageStream);
-		// Close stream
+		// إغلاق الدفق
 		imageStream.Close();
 	}
 } 
 Console.WriteLine("\nPDF file converted to bmp successfully!"); 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have successfully converted a PDF file to individual BMP images using Aspose.PDF for .NET. BMP images are saved in the specified directory. You can now use these images in your projects or applications.
+تهنئة ! لقد نجحت في تحويل ملف PDF إلى صور BMP فردية باستخدام Aspose.PDF لـ .NET. يتم حفظ صور BMP في الدليل المحدد. يمكنك الآن استخدام هذه الصور في مشاريعك أو تطبيقاتك.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of converting a PDF file to individual BMP images using Aspose.PDF for .NET?
+#### س: ما هو الغرض من تحويل ملف PDF إلى صور BMP فردية باستخدام Aspose.PDF لـ .NET؟
 
-A: Converting a PDF file to individual BMP images allows you to extract each page of the PDF as a separate image in BMP format, which can be useful for various visualization and processing purposes.
+ج: يتيح لك تحويل ملف PDF إلى صور BMP فردية استخراج كل صفحة من ملف PDF كصورة منفصلة بتنسيق BMP، وهو ما يمكن أن يكون مفيدًا لمختلف أغراض التصور والمعالجة.
 
-#### Q: How does Aspose.PDF for .NET facilitate the conversion of a PDF file to BMP images?
+#### س: كيف يسهل Aspose.PDF for .NET تحويل ملف PDF إلى صور BMP؟
 
-A: Aspose.PDF for .NET provides a step-by-step process to open a PDF document, iterate through each page, create a BMP device, convert the page to a BMP image, and save it to a specified directory.
+ج: يوفر Aspose.PDF for .NET عملية خطوة بخطوة لفتح مستند PDF، والتكرار خلال كل صفحة، وإنشاء جهاز BMP، وتحويل الصفحة إلى صورة BMP، وحفظها في دليل محدد.
 
-#### Q: Why is it important to define the document directory before starting the conversion process?
+#### س: لماذا من المهم تحديد دليل المستند قبل بدء عملية التحويل؟
 
-A: Specifying the document directory ensures that the PDF document is correctly located and the resulting BMP images are saved in the desired output path.
+ج: يضمن تحديد دليل المستند تحديد موقع مستند PDF بشكل صحيح وحفظ صور BMP الناتجة في مسار الإخراج المطلوب.
 
-#### Q: How does the `Document` class in Aspose.PDF for .NET help in the conversion process?
+####  س: كيف`Document` class in Aspose.PDF for .NET help in the conversion process?
 
-A: The `Document` class allows you to open, manipulate, and save PDF documents. In this case, it is used to load the PDF document that you want to convert to BMP images.
+ ج: ال`Document` يتيح لك الفصل فتح مستندات PDF ومعالجتها وحفظها. في هذه الحالة، يتم استخدامه لتحميل مستند PDF الذي تريد تحويله إلى صور BMP.
 
-#### Q: What role does the `BmpDevice` class play in the conversion process?
+####  س: ما هو الدور الذي يقوم به`BmpDevice` class play in the conversion process?
 
-A: The `BmpDevice` class helps convert PDF pages into BMP images. It allows you to specify attributes such as width, height, resolution, and page size for the resulting BMP images.
+ ج: ال`BmpDevice` يساعد الفصل على تحويل صفحات PDF إلى صور BMP. يسمح لك بتحديد سمات مثل العرض والارتفاع والدقة وحجم الصفحة لصور BMP الناتجة.
 
-#### Q: How is each page of the PDF document converted to an individual BMP image?
+#### س: كيف يتم تحويل كل صفحة من مستند PDF إلى صورة BMP فردية؟
 
-A: A `for` loop is used to iterate through each page of the PDF document. For each page, a BMP device is created with specified attributes, and the `Process` method is used to convert the page to a BMP image and save it to the stream.
+ ج: أ`for` يتم استخدام الحلقة للتكرار خلال كل صفحة من مستند PDF. لكل صفحة، يتم إنشاء جهاز BMP مع سمات محددة، و`Process`يتم استخدام الطريقة لتحويل الصفحة إلى صورة BMP وحفظها في الدفق.
 
-#### Q: Can I adjust the resolution or other attributes of the resulting BMP images during the conversion process?
+#### س: هل يمكنني ضبط الدقة أو السمات الأخرى لصور BMP الناتجة أثناء عملية التحويل؟
 
-A: Yes, you can modify attributes such as resolution, width, height, and page size by configuring the `BmpDevice` object before converting each page.
+ ج: نعم، يمكنك تعديل سمات مثل الدقة والعرض والارتفاع وحجم الصفحة عن طريق تكوين`BmpDevice` كائن قبل تحويل كل صفحة.
 
-#### Q: How can I utilize the generated BMP images in my projects or applications after the conversion?
+#### س: كيف يمكنني الاستفادة من صور BMP التي تم إنشاؤها في مشاريعي أو تطبيقاتي بعد التحويل؟
 
-A: The resulting BMP images can be integrated into your projects or applications for various purposes, such as embedding them in reports, presentations, or web applications.
+ج: يمكن دمج صور BMP الناتجة في مشاريعك أو تطبيقاتك لأغراض مختلفة، مثل تضمينها في التقارير أو العروض التقديمية أو تطبيقات الويب.
 
-#### Q: Is there any limit to the number of BMP images that can be generated from a PDF file using this conversion process?
+#### س: هل هناك أي حد لعدد صور BMP التي يمكن إنشاؤها من ملف PDF باستخدام عملية التحويل هذه؟
 
-A: The number of BMP images generated depends on the number of pages in the PDF document. Each page will be converted into a separate BMP image.
+ج: يعتمد عدد صور BMP التي تم إنشاؤها على عدد الصفحات في مستند PDF. سيتم تحويل كل صفحة إلى صورة BMP منفصلة.

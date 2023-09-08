@@ -1,39 +1,39 @@
 ---
-title: Get Width Of Text Dynamically
-linktitle: Get Width Of Text Dynamically
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to dynamically get the width of text using Aspose.PDF for .NET.
+title: Динамическое получение ширины текста
+linktitle: Динамическое получение ширины текста
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как динамически получать ширину текста с помощью Aspose.PDF для .NET.
 type: docs
 weight: 220
 url: /ru/net/programming-with-text/get-width-of-text-dynamically/
 ---
-In this tutorial, we will explain how to use Aspose.PDF for .NET to dynamically measure the width of text in C#. This can be useful when you need to determine the size of a text string before rendering it on a PDF document. We will guide you through the provided C# source code step by step.
+В этом руководстве мы объясним, как использовать Aspose.PDF для .NET для динамического измерения ширины текста в C#. Это может быть полезно, когда вам нужно определить размер текстовой строки перед ее отображением в документе PDF. Мы шаг за шагом проведем вас через предоставленный исходный код C#.
 
-## Prerequisites
+## Предварительные условия
 
-Before you begin, make sure you have the following:
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- Aspose.PDF for .NET library installed.
-- Visual Studio or any other C# development environment.
+- Установлена библиотека Aspose.PDF для .NET.
+- Visual Studio или любая другая среда разработки C#.
 
-## Step 1: Set the Document Directory
+## Шаг 1. Установите каталог документов
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are located. This will be used to store any generated PDF files.
+ Заменять`"YOUR DOCUMENT DIRECTORY"`с путем к каталогу, в котором находятся ваши документы. Он будет использоваться для хранения любых созданных PDF-файлов.
 
-## Step 2: Find the Font
+## Шаг 2: Найдите шрифт
 
 ```csharp
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("Arial");
 ```
 
-The code above finds the Arial font using the `FindFont` method from the `FontRepository` class. If you want to use a different font, replace `"Arial"` with the desired font name.
+ Приведенный выше код находит шрифт Arial, используя`FindFont` метод из`FontRepository` сорт. Если вы хотите использовать другой шрифт, замените`"Arial"` с желаемым именем шрифта.
 
-## Step 3: Set the Text State
+## Шаг 3. Установите состояние текста
 
 ```csharp
 TextState ts = new TextState();
@@ -41,9 +41,9 @@ ts.Font = font;
 ts.FontSize = 14;
 ```
 
-Here, we create a new `TextState` object and set its properties. We assign the previously found font (`font`) and set the font size to 14. Adjust the font size as needed.
+ Здесь мы создаем новый`TextState` объект и установите его свойства. Назначаем ранее найденный шрифт (`font`) и установите размер шрифта 14. Отрегулируйте размер шрифта по мере необходимости.
 
-## Step 4: Measure the Width of Text
+## Шаг 4. Измерьте ширину текста
 
 ```csharp
 if (Math.Abs(font.MeasureString("A", 14) - 9.337) > 0.001)
@@ -61,11 +61,11 @@ for (char c = 'A'; c <= 'z'; c++)
 }
 ```
 
-The code above demonstrates how to measure the width of text using both the font directly (`font.MeasureString`) and the text state (`ts.MeasureString`). It includes some validation checks to ensure the measurements are accurate.
+Приведенный выше код демонстрирует, как измерить ширину текста напрямую, используя шрифт (`font.MeasureString`) и состояние текста (`ts.MeasureString`). Он включает в себя некоторые проверочные проверки для обеспечения точности измерений.
 
-### Sample source code for Get Width Of Text Dynamically using Aspose.PDF for .NET 
+### Пример исходного кода для динамического получения ширины текста с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("Arial");
 TextState ts = new TextState();
@@ -85,36 +85,36 @@ for (char c = 'A'; c <= 'z'; c++)
 ```
 
 
-## Conclusion
+## Заключение
 
-You have learned how to use Aspose.PDF for .NET to dynamically measure the width of text in C#. By following the steps outlined in this tutorial, you can accurately determine the width of text strings before rendering them in a PDF document.
+Вы узнали, как использовать Aspose.PDF для .NET для динамического измерения ширины текста в C#. Следуя шагам, описанным в этом руководстве, вы сможете точно определить ширину текстовых строк перед их отображением в PDF-документе.
 
-## FAQs
+## Часто задаваемые вопросы
 
-#### Q: What is the purpose of the "Get Width Of Text Dynamically" tutorial?
+#### Вопрос: Какова цель урока «Динамическое получение ширины текста»?
 
-A: The "Get Width Of Text Dynamically" tutorial explains how to use Aspose.PDF for .NET to dynamically measure the width of text in C#. This is particularly useful when you need to determine the size of a text string before rendering it on a PDF document.
+Ответ: В учебнике «Динамическое получение ширины текста» объясняется, как использовать Aspose.PDF для .NET для динамического измерения ширины текста в C#. Это особенно полезно, когда вам нужно определить размер текстовой строки перед ее отображением в документе PDF.
 
-#### Q: Why would I need to measure the width of text dynamically?
+#### Вопрос: Зачем мне нужно динамически измерять ширину текста?
 
-A: Measuring text width dynamically allows you to accurately determine the space required for text before rendering it. This is crucial for layout design, alignment, and ensuring that text fits correctly within designated areas in your PDF document.
+О: Динамическое измерение ширины текста позволяет точно определить пространство, необходимое для текста, перед его рендерингом. Это имеет решающее значение для разработки макета, выравнивания и обеспечения правильного размещения текста в определенных областях PDF-документа.
 
-#### Q: How do I find the font to be used for text measurement?
+#### Вопрос: Как найти шрифт, который будет использоваться для измерения текста?
 
-A: In the tutorial, you use the `FontRepository.FindFont` method to locate the desired font. The example uses the Arial font, but you can replace `"Arial"` with the name of any other font you want to use.
+О: В этом уроке вы используете`FontRepository.FindFont` метод поиска нужного шрифта. В примере используется шрифт Arial, но вы можете заменить его`"Arial"` с названием любого другого шрифта, который вы хотите использовать.
 
-#### Q: What is the purpose of the `TextState` class?
+####  Вопрос: Какова цель`TextState` class?
 
-A: The `TextState` class is used to set text formatting properties such as font and font size. It allows you to define how the text will be presented.
+ А:`TextState` Класс используется для установки свойств форматирования текста, таких как шрифт и размер шрифта. Это позволяет вам определить, как будет представлен текст.
 
-#### Q: How do I measure the width of text using font and text state?
+#### Вопрос: Как измерить ширину текста, используя шрифт и состояние текста?
 
-A: The tutorial demonstrates how to measure the width of text using both the font directly (`font.MeasureString`) and the text state (`ts.MeasureString`). It includes validation checks to ensure measurement accuracy.
+О: В учебнике показано, как измерить ширину текста напрямую, используя шрифт (`font.MeasureString`) и состояние текста (`ts.MeasureString`). Он включает в себя проверочные проверки для обеспечения точности измерений.
 
-#### Q: Can I use this technique for different font sizes and styles?
+#### Вопрос: Могу ли я использовать эту технику для разных размеров и стилей шрифтов?
 
-A: Yes, you can modify the font size and other properties in the `TextState` object to measure text width for different sizes and styles.
+ О: Да, вы можете изменить размер шрифта и другие свойства в`TextState` объект для измерения ширины текста для разных размеров и стилей.
 
-#### Q: What does the conclusion of the tutorial emphasize?
+#### Вопрос: Что подчеркивается в заключении урока?
 
-A: The conclusion summarizes the tutorial's content and highlights that you've learned how to dynamically measure text width in a PDF document using Aspose.PDF for .NET and C#. This knowledge can contribute to improving your PDF layout design and rendering accuracy.
+О: В заключении суммируется содержание руководства и подчеркивается, что вы научились динамически измерять ширину текста в PDF-документе с помощью Aspose.PDF для .NET и C#. Эти знания могут способствовать улучшению дизайна макета PDF и точности рендеринга.

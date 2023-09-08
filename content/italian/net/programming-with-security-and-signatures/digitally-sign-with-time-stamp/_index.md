@@ -1,37 +1,37 @@
 ---
-title: Digitally Sign With Time Stamp In PDF File
-linktitle: Digitally Sign With Time Stamp In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to perform a digital signature with time stamp in PDF file using Aspose.PDF for .NET.
+title: Firma digitale con timestamp nel file PDF
+linktitle: Firma digitale con timestamp nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come eseguire una firma digitale con timestamp nel file PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 50
 url: /it/net/programming-with-security-and-signatures/digitally-sign-with-time-stamp/
 ---
-In this tutorial, we will walk you through the process of digitally signing in PDF file with time stamp using Aspose.PDF for .NET. The digital signature with timestamp guarantees the authenticity and integrity of the document, by adding an electronic fingerprint with a timestamp.
+In questo tutorial, ti guideremo attraverso il processo di firma digitale nel file PDF con timestamp utilizzando Aspose.PDF per .NET. La firma digitale con marca temporale garantisce l'autenticità e l'integrità del documento, mediante l'apposizione di un'impronta digitale dotata di marca temporale.
 
-## Step 1: Prerequisites
+## Passaggio 1: prerequisiti
 
-Before you begin, make sure you have the following prerequisites:
+Prima di iniziare, assicurati di avere i seguenti prerequisiti:
 
-- Basic knowledge of the C# programming language
-- Installing Visual Studio on your machine
-- Aspose.PDF library for .NET installed
+- Conoscenza base del linguaggio di programmazione C#
+- Installazione di Visual Studio sul tuo computer
+- Libreria Aspose.PDF per .NET installata
 
-## Step 2: Environment setup
+## Passaggio 2: configurazione dell'ambiente
 
-To get started, follow these steps to set up your development environment:
+Per iniziare, segui questi passaggi per configurare il tuo ambiente di sviluppo:
 
-1. Open Visual Studio and create a new C# project.
-2. Import the required namespaces into your code file:
+1. Apri Visual Studio e crea un nuovo progetto C#.
+2. Importa gli spazi dei nomi richiesti nel file di codice:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Forms;
 ```
 
-## Step 3: Digital signature with timestamp
+## Passaggio 3: firma digitale con marca temporale
 
-The first step is to perform the digital signature with timestamp on the PDF file. The provided code shows how to achieve this signature with Aspose.PDF for .NET.
+Il primo passo è eseguire la firma digitale con marca temporale sul file PDF. Il codice fornito mostra come ottenere questa firma con Aspose.PDF per .NET.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -50,11 +50,11 @@ using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
 }
 ```
 
-This code loads a PDF file, creates a digital signature with timestamp using a PFX file (private key) and the specified timestamp parameters. The signature is then added to the PDF file and saved with the suffix "_out".
+Questo codice carica un file PDF, crea una firma digitale con timestamp utilizzando un file PFX (chiave privata) e i parametri di timestamp specificati. La firma viene quindi aggiunta al file PDF e salvata con il suffisso "_fuori".
 
-### Sample source code for Digitally Sign With Time Stamp using Aspose.PDF for .NET 
+### Codice sorgente di esempio per la firma digitale con timestamp utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 string pfxFile = "";
 using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
@@ -62,66 +62,66 @@ using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
 	using (PdfFileSignature signature = new PdfFileSignature(document))
 	{
 		PKCS7 pkcs = new PKCS7(pfxFile, "pfx_password");
-		TimestampSettings timestampSettings = new TimestampSettings("https:\\your_timestamp_settings", "user:password"); // User/Password can be omitted
+		TimestampSettings timestampSettings = new TimestampSettings("https:\\your_timestamp_settings", "user:password"); // Utente/Password possono essere omessi
 		pkcs.TimestampSettings = timestampSettings;
 		System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-		// Create any of the three signature types
+		// Crea uno qualsiasi dei tre tipi di firma
 		signature.Sign(1, "Signature Reason", "Contact", "Location", true, rect, pkcs);
-		// Save output PDF file
+		// Salva il file PDF di output
 		signature.Save(dataDir + "DigitallySignWithTimeStamp_out.pdf");
 	}
 }
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation ! You have successfully performed a digital signature with timestamp on a PDF file using Aspose.PDF for .NET. This tutorial covered the step-by-step process from creating the signature to saving the updated PDF file. You can now use this feature to add digital signatures with timestamp to your PDF files.
+Congratulazioni! Hai eseguito con successo una firma digitale con timestamp su un file PDF utilizzando Aspose.PDF per .NET. Questo tutorial ha coperto il processo passo passo dalla creazione della firma al salvataggio del file PDF aggiornato. Ora puoi utilizzare questa funzionalità per aggiungere firme digitali con timestamp ai tuoi file PDF.
 
-### FAQ's for digitally sign with time stamp in PDF file
+### Domande frequenti sulla firma digitale con timestamp nel file PDF
 
-#### Q: What is the purpose of digitally signing with a timestamp?
+#### D: Qual è lo scopo della firma digitale con un timestamp?
 
-A: Digitally signing with a timestamp adds an electronic fingerprint with a timestamp to a PDF file, ensuring the document's authenticity and integrity at a specific point in time.
+R: La firma digitale con un timestamp aggiunge un'impronta digitale elettronica con un timestamp a un file PDF, garantendo l'autenticità e l'integrità del documento in un momento specifico.
 
-#### Q: What prerequisites are needed to start this tutorial?
+#### D: Quali prerequisiti sono necessari per iniziare questo tutorial?
 
-A: Before you begin, ensure you have a basic understanding of the C# programming language, have Visual Studio installed, and have the Aspose.PDF library for .NET installed.
+R: Prima di iniziare, assicurati di avere una conoscenza di base del linguaggio di programmazione C#, di avere installato Visual Studio e di avere installata la libreria Aspose.PDF per .NET.
 
-#### Q: How can I set up my development environment?
+#### D: Come posso configurare il mio ambiente di sviluppo?
 
-A: Follow the provided steps to set up your development environment, including creating a new C# project in Visual Studio and importing the necessary namespaces.
+R: seguire i passaggi forniti per configurare l'ambiente di sviluppo, inclusa la creazione di un nuovo progetto C# in Visual Studio e l'importazione degli spazi dei nomi necessari.
 
-#### Q: How do I add a digital signature with a timestamp to a PDF?
+#### D: Come posso aggiungere una firma digitale con un timestamp a un PDF?
 
-A: The provided sample code demonstrates how to load a PDF file, create a digital signature with a timestamp using a PFX file (private key) and specified timestamp settings, add the signature to the PDF file, and save the updated file.
+R: Il codice di esempio fornito dimostra come caricare un file PDF, creare una firma digitale con un timestamp utilizzando un file PFX (chiave privata) e impostazioni di timestamp specificate, aggiungere la firma al file PDF e salvare il file aggiornato.
 
-#### Q: What is a PFX file, and why is it used in the example?
+#### D: Cos'è un file PFX e perché viene utilizzato nell'esempio?
 
-A: A PFX (Personal Exchange Format) file contains a private key and certificate. It's used here to provide cryptographic functionality for digital signatures. Ensure you replace the placeholder with your PFX file and password.
+R: Un file PFX (Personal Exchange Format) contiene una chiave privata e un certificato. Viene utilizzato qui per fornire funzionalità crittografica per le firme digitali. Assicurati di sostituire il segnaposto con il file PFX e la password.
 
-#### Q: What are TimestampSettings?
+#### D: Cosa sono le impostazioni di timestamp?
 
-A: TimestampSettings define the settings for the timestamp server used to add the electronic timestamp to the signature. It includes the timestamp server URL and optional user credentials.
+R: TimestampSettings definisce le impostazioni per il server di marca temporale utilizzato per aggiungere la marca temporale elettronica alla firma. Include l'URL del server timestamp e le credenziali utente facoltative.
 
-#### Q: Can I use a timestamp server other than the one in the example?
-A: Yes, you can use any compatible timestamp server. Replace the URL and, if required, provide the appropriate user credentials in the `TimestampSettings` object.
+#### D: Posso utilizzare un server timestamp diverso da quello nell'esempio?
+ R: Sì, puoi utilizzare qualsiasi server di marcatura temporale compatibile. Sostituisci l'URL e, se richiesto, fornisci le credenziali utente appropriate nel file`TimestampSettings` oggetto.
 
-#### Q: What is the purpose of specifying the signature rectangle?
+#### D: Qual è lo scopo di specificare il rettangolo della firma?
 
-A: The signature rectangle defines the position and dimensions of the digital signature appearance on the PDF page. Adjust these values to position the signature as desired.
+R: Il rettangolo della firma definisce la posizione e le dimensioni dell'aspetto della firma digitale sulla pagina PDF. Regola questi valori per posizionare la firma come desiderato.
 
-#### Q: What happens if the timestamp server is unavailable during signing?
+#### D: Cosa succede se il server timestamp non è disponibile durante la firma?
 
-A: If the timestamp server is unavailable during signing, the process may fail or take longer. Ensure your timestamp server is reliable and accessible.
+R: Se il server timestamp non è disponibile durante la firma, il processo potrebbe non riuscire o richiedere più tempo. Assicurati che il tuo server timestamp sia affidabile e accessibile.
 
-#### Q: How can I verify the presence of a timestamp in the signed PDF?
+#### D: Come posso verificare la presenza di un timestamp nel PDF firmato?
 
-A: You can examine the signed PDF using the sample code provided. The `TimestampSettings` you used during signing should be available in the signature details.
+ R: Puoi esaminare il PDF firmato utilizzando il codice di esempio fornito. IL`TimestampSettings` utilizzato durante la firma dovrebbe essere disponibile nei dettagli della firma.
 
-#### Q: Are digital signatures with timestamps legally binding?
+#### D: Le firme digitali con marca temporale sono legalmente vincolanti?
 
-A: Digital signatures with timestamps hold legal value in many jurisdictions and are often considered more reliable than simple digital signatures. Consult legal experts in your jurisdiction for specific regulations.
+R: Le firme digitali con timestamp hanno valore legale in molte giurisdizioni e sono spesso considerate più affidabili delle semplici firme digitali. Consulta gli esperti legali della tua giurisdizione per conoscere le normative specifiche.
 
-#### Q: Can I add multiple digital signatures with timestamps to a PDF?
+#### D: Posso aggiungere più firme digitali con timestamp a un PDF?
 
-A: Yes, you can add multiple digital signatures with timestamps to a PDF file by calling the signature creation process multiple times. Each signature will have its own timestamp.
+R: Sì, puoi aggiungere più firme digitali con timestamp a un file PDF richiamando più volte il processo di creazione della firma. Ogni firma avrà il proprio timestamp.

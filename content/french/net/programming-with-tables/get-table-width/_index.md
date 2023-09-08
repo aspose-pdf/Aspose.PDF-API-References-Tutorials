@@ -1,27 +1,27 @@
 ---
-title: Get Table Width In PDF File
-linktitle: Get Table Width In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get the width of a table in PDF file using Aspose.PDF for .NET.
+title: Obtenir la largeur du tableau dans un fichier PDF
+linktitle: Obtenir la largeur du tableau dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment obtenir la largeur d'un tableau dans un fichier PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 90
 url: /fr/net/programming-with-tables/get-table-width/
 ---
-In this tutorial, we are going to learn how to get the width of a table in PDF file using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to get the width of a table in a PDF document. Let's start!
+Dans ce tutoriel, nous allons apprendre comment obtenir la largeur d'un tableau dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Nous expliquerons le code source en C# étape par étape. A la fin de ce tutoriel, vous saurez comment obtenir la largeur d'un tableau dans un document PDF. Commençons!
 
-## Step 1: Setting up the environment
-First, make sure you've set up your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## Étape 1 : Configuration de l'environnement
+Tout d'abord, assurez-vous d'avoir configuré votre environnement de développement C# avec Aspose.PDF pour .NET. Ajoutez la référence à la bibliothèque et importez les espaces de noms nécessaires.
 
-## Step 2: Creating a New Document and Page
-We create a new PDF document and add a page in this document.
+## Étape 2 : Création d'un nouveau document et d'une nouvelle page
+Nous créons un nouveau document PDF et ajoutons une page dans ce document.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Initializing a new table
-We initialize a new table and set the column fit to "AutoFitToContent".
+## Étape 3 : initialiser une nouvelle table
+Nous initialisons une nouvelle table et définissons l'ajustement de la colonne sur "AutoFitToContent".
 
 ```csharp
 Table table = new Table
@@ -30,8 +30,8 @@ ColumnAdjustment = ColumnAdjustment.AutoFitToContent
 };
 ```
 
-## Step 4: Add row and cells in table
-We add a row in the table and add cells in that row.
+## Étape 4 : Ajouter une ligne et des cellules dans le tableau
+Nous ajoutons une ligne dans le tableau et ajoutons des cellules dans cette ligne.
 
 ```csharp
 Row row = table.Rows.Add();
@@ -39,57 +39,57 @@ Cell cell = row.Cells.Add("Text of cell 1");
 cell = row.Cells.Add("Text from cell 2");
 ```
 
-## Step 5: Get table width
-We use the "GetWidth()" method to get the width of the table.
+## Étape 5 : Obtenir la largeur du tableau
+Nous utilisons la méthode "GetWidth()" pour obtenir la largeur du tableau.
 
 ```csharp
 Console.WriteLine(table.GetWidth());
 ```
 
-### Example source code for get Table Width using Aspose.PDF for .NET
+### Exemple de code source pour obtenir la largeur de la table à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
-// Create a new document
+// Créer un nouveau document
 Document doc = new Document();
-// Add page in document
+// Ajouter une page dans le document
 Page page = doc.Pages.Add();
-// Initialize new table
+// Initialiser une nouvelle table
 Table table = new Table
 {
 	ColumnAdjustment = ColumnAdjustment.AutoFitToContent
 };
-// Add row in table 
+// Ajouter une ligne dans le tableau
 Row row = table.Rows.Add();
-// Add cell in table
+// Ajouter une cellule dans le tableau
 Cell cell = row.Cells.Add("Cell 1 text");
 cell = row.Cells.Add("Cell 2 text");
-// Get table width
+// Obtenir la largeur du tableau
 Console.WriteLine(table.GetWidth());
 
 System.Console.WriteLine("Extracted table width succesfully!");
 ```
 
 ## Conclusion
-In this tutorial, we learned how to get the width of a table in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to get table widths in your own C# projects.
+Dans ce didacticiel, nous avons appris comment obtenir la largeur d'un tableau dans un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez utiliser ce guide étape par étape pour obtenir les largeurs de table dans vos propres projets C#.
 
-### FAQ's for get table width in PDF file
+### FAQ pour obtenir la largeur du tableau dans un fichier PDF
 
-#### Q: Can I modify the column adjustment of the table to a fixed width instead of AutoFitToContent?
+#### Q : Puis-je modifier l'ajustement des colonnes du tableau sur une largeur fixe au lieu de AutoFitToContent ?
 
-A: Yes, you can adjust the column width to a fixed value by setting the `ColumnAdjustment` property to `ColumnAdjustment.FixedColumnWidth`. After setting this property, you can specify the desired width for each column using the `ColumnWidths` property of the table.
+ R : Oui, vous pouvez ajuster la largeur de la colonne à une valeur fixe en définissant le`ColumnAdjustment` propriété à`ColumnAdjustment.FixedColumnWidth` . Après avoir défini cette propriété, vous pouvez spécifier la largeur souhaitée pour chaque colonne à l'aide du`ColumnWidths` propriété de la table.
 
-#### Q: What if the table spans across multiple pages? Will the `GetWidth()` method still provide accurate results?
+####  Q : Que se passe-t-il si le tableau s'étend sur plusieurs pages ? Sera le`GetWidth()` method still provide accurate results?
 
-A: The `GetWidth()` method calculates the width of the table based on its content within the current page. If the table spans across multiple pages, you may need to iterate through each page and sum up the widths of the table on each page to get the overall width of the complete table.
+ R : Le`GetWidth()` La méthode calcule la largeur du tableau en fonction de son contenu dans la page actuelle. Si le tableau s'étend sur plusieurs pages, vous devrez peut-être parcourir chaque page et résumer les largeurs du tableau sur chaque page pour obtenir la largeur totale du tableau complet.
 
-#### Q: Can I get the individual column widths of the table using Aspose.PDF for .NET?
+#### Q : Puis-je obtenir les largeurs de colonnes individuelles du tableau à l’aide d’Aspose.PDF pour .NET ?
 
-A: Yes, you can retrieve the individual column widths of the table using the `ColumnWidths` property. It returns a string that represents the width of each column separated by spaces. You can then parse this string to get the width of each column.
+ : Oui, vous pouvez récupérer les largeurs de colonnes individuelles du tableau à l'aide de l'outil`ColumnWidths` propriété. Il renvoie une chaîne qui représente la largeur de chaque colonne séparée par des espaces. Vous pouvez ensuite analyser cette chaîne pour obtenir la largeur de chaque colonne.
 
-#### Q: Is it possible to get the height of the table using Aspose.PDF for .NET?
+#### Q : Est-il possible d'obtenir la hauteur du tableau en utilisant Aspose.PDF pour .NET ?
 
-A: Yes, you can get the height of the table using the `GetHeight()` method of the table. This method returns the total height of the table based on its content and layout.
+ R : Oui, vous pouvez obtenir la hauteur de la table en utilisant le`GetHeight()` méthode du tableau. Cette méthode renvoie la hauteur totale du tableau en fonction de son contenu et de sa disposition.
 
-#### Q: Can I adjust the table width based on specific content in each cell?
+#### Q : Puis-je ajuster la largeur du tableau en fonction du contenu spécifique de chaque cellule ?
 
-A: Yes, you can adjust the table width based on specific content in each cell by setting the `ColumnAdjustment` property to `ColumnAdjustment.AutoFitToContent`. Aspose.PDF for .NET will automatically adjust the column widths to fit the content in each cell.
+ R : Oui, vous pouvez ajuster la largeur du tableau en fonction du contenu spécifique de chaque cellule en définissant le`ColumnAdjustment` propriété à`ColumnAdjustment.AutoFitToContent`. Aspose.PDF pour .NET ajustera automatiquement la largeur des colonnes pour s'adapter au contenu de chaque cellule.

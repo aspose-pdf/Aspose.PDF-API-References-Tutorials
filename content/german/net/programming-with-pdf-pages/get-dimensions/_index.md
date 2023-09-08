@@ -1,104 +1,104 @@
 ---
-title: Get PDF Page Dimensions
-linktitle: Get PDF Page Dimensions
-second_title: Aspose.PDF for .NET API Reference
-description: In this tutorial, we explain how to get PDF page dimensions and perform manipulations using Aspose.PDF for .NET. Detailed steps are provided to guide you through the process.
+title: Holen Sie sich PDF-Seitenabmessungen
+linktitle: Holen Sie sich PDF-Seitenabmessungen
+second_title: Aspose.PDF für .NET API-Referenz
+description: In diesem Tutorial erklären wir, wie Sie mit Aspose.PDF für .NET PDF-Seitenabmessungen erhalten und Manipulationen durchführen. Es werden detaillierte Schritte bereitgestellt, die Sie durch den Prozess führen.
 type: docs
 weight: 60
 url: /de/net/programming-with-pdf-pages/get-dimensions/
 ---
-In this tutorial, we'll walk you through the step-by-step process of getting page dimensions in a PDF file using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to get the dimensions of a page in a PDF file using Aspose.PDF for .NET.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch den Prozess zum Abrufen von Seitenabmessungen in einer PDF-Datei mit Aspose.PDF für .NET. Wir erklären Ihnen den gebündelten C#-Quellcode und stellen Ihnen eine umfassende Anleitung zur Verfügung, die Ihnen hilft, diese Funktion zu verstehen und in Ihren eigenen Projekten zu implementieren. Am Ende dieses Tutorials erfahren Sie, wie Sie mit Aspose.PDF für .NET die Abmessungen einer Seite in einer PDF-Datei ermitteln.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## Voraussetzungen
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- Grundkenntnisse der Programmiersprache C#
+- Aspose.PDF für .NET in Ihrer Entwicklungsumgebung installiert
 
-## Step 1: Define the document directory
-First, you need to set the path to your documents directory. This is the location where your PDF file is located. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
+## Schritt 1: Definieren Sie das Dokumentenverzeichnis
+Zuerst müssen Sie den Pfad zu Ihrem Dokumentenverzeichnis festlegen. Dies ist der Speicherort, an dem sich Ihre PDF-Datei befindet. Ersetzen Sie „IHR DOKUMENTENVERZEICHNIS“ durch den entsprechenden Pfad.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the PDF document
-Then you can open the PDF file using the `Document` class of Aspose.PDF. Be sure to specify the correct path to the PDF file.
+## Schritt 2: Öffnen Sie das PDF-Dokument
+ Anschließend können Sie die PDF-Datei mit öffnen`Document` Klasse von Aspose.PDF. Stellen Sie sicher, dass Sie den korrekten Pfad zur PDF-Datei angeben.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
 ```
 
-## Step 3: Add a blank page (if needed)
-If the PDF document already contains pages, you can jump to an existing page using the index `1` (the first page has an index of 1). Otherwise, you can add a new page to the document.
+## Schritt 3: Fügen Sie eine leere Seite hinzu (falls erforderlich)
+ Wenn das PDF-Dokument bereits Seiten enthält, können Sie über den Index zu einer vorhandenen Seite springen`1` (Die erste Seite hat einen Index von 1). Andernfalls können Sie dem Dokument eine neue Seite hinzufügen.
 
 ```csharp
 Page page = pdfDocument.Pages.Count > 0? pdfDocument.Pages[1] : pdfDocument.Pages.Add();
 ```
 
-## Step 4: Get page dimensions
-You can now get the page dimensions using the `GetPageRect()` method of the `Page` object. This method returns a `Rectangle` object containing the dimensions of the page. You can access the width and height using the `Width` and `Height` properties.
+## Schritt 4: Seitenabmessungen ermitteln
+ Sie können jetzt die Seitenabmessungen mithilfe von ermitteln`GetPageRect()` Methode der`Page` Objekt. Diese Methode gibt a zurück`Rectangle` Objekt, das die Abmessungen der Seite enthält. Auf die Breite und Höhe können Sie über zugreifen`Width` Und`Height` Eigenschaften.
 
 ```csharp
 Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);
 ```
 
-## Step 5: Rotate the page
-If you want to rotate the page, you can use the `Rotate` property of the `Page` object. In this example, the page is rotated 90 degrees.
+## Schritt 5: Drehen Sie die Seite
+ Wenn Sie die Seite drehen möchten, können Sie die verwenden`Rotate` Eigentum der`Page`Objekt. In diesem Beispiel wird die Seite um 90 Grad gedreht.
 
 ```csharp
 page. Rotate = Rotate. on90;
 ```
 
-## Step 6: Get page dimensions again
-After page rotation, you can get the page dimensions again using the `GetPageRect()` method.
+## Schritt 6: Ermitteln Sie die Seitenabmessungen erneut
+ Nach der Seitendrehung können Sie die Seitenabmessungen mithilfe von erneut abrufen`GetPageRect()` Methode.
 
 ```csharp
 Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);
 ```
 
-### Sample source code for Get Dimensions using Aspose.PDF for .NET 
+### Beispielquellcode für Get Dimensions mit Aspose.PDF für .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
-// Adds a blank page to pdf document
+// Fügt dem PDF-Dokument eine leere Seite hinzu
 Page page = pdfDocument.Pages.Count > 0 ? pdfDocument.Pages[1] : pdfDocument.Pages.Add();
-// Get page height and width information
+// Informationen zur Seitenhöhe und -breite abrufen
 Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);
-// Rotate page at 90 degree angle
+// Seite im 90-Grad-Winkel drehen
 page.Rotate = Rotation.on90;
-// Get page height and width information
+// Informationen zur Seitenhöhe und -breite abrufen
 Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);
 
 ```
 
-## Conclusion
-In this tutorial, we learned how to get the dimensions of a page in a PDF file using Aspose.PDF for .NET. By following the steps provided, you can easily extract page dimensions and perform other PDF manipulation operations. Aspose.PDF for .NET offers great flexibility for working with PDF files and allows you to develop powerful and customized solutions.
+## Abschluss
+In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET die Abmessungen einer Seite in einer PDF-Datei ermittelt. Wenn Sie die bereitgestellten Schritte befolgen, können Sie ganz einfach Seitenabmessungen extrahieren und andere PDF-Manipulationsvorgänge durchführen. Aspose.PDF für .NET bietet große Flexibilität für die Arbeit mit PDF-Dateien und ermöglicht Ihnen die Entwicklung leistungsstarker und maßgeschneiderter Lösungen.
 
-Feel free to further explore the documentation of Aspose.PDF to discover all the features offered by this library.
+Erkunden Sie gerne die Dokumentation von Aspose.PDF weiter, um alle Funktionen dieser Bibliothek zu entdecken.
 
-### FAQs for get PDF page dimensions
+### FAQs zum Abrufen von PDF-Seitenabmessungen
 
-#### Q: How can I get the dimensions of a specific page in a PDF file?
+#### F: Wie kann ich die Abmessungen einer bestimmten Seite in einer PDF-Datei ermitteln?
 
-A: To get the dimensions of a specific page in a PDF file, you can use the `GetPageRect()` method of the `Page` object in Aspose.PDF for .NET. This method returns a `Rectangle` object containing the dimensions (width and height) of the page.
+A: Um die Abmessungen einer bestimmten Seite in einer PDF-Datei zu erhalten, können Sie die verwenden`GetPageRect()` Methode der`Page` Objekt in Aspose.PDF für .NET. Diese Methode gibt a zurück`Rectangle` Objekt, das die Abmessungen (Breite und Höhe) der Seite enthält.
 
-#### Q: What does the `GetPageRect(true)` method do in the provided C# source code?
+####  F: Was bedeutet das`GetPageRect(true)` method do in the provided C# source code?
 
-A: The `GetPageRect(true)` method in the provided C# source code returns the dimensions of the page after applying any rotations. If the page is rotated, the method will return the dimensions of the rotated page, which could be different from the original dimensions.
+ A: Die`GetPageRect(true)` Die Methode im bereitgestellten C#-Quellcode gibt die Abmessungen der Seite nach Anwendung etwaiger Drehungen zurück. Wenn die Seite gedreht wird, gibt die Methode die Abmessungen der gedrehten Seite zurück, die von den ursprünglichen Abmessungen abweichen können.
 
-#### Q: Can I get the dimensions of all pages in the PDF document using Aspose.PDF for .NET?
+#### F: Kann ich mit Aspose.PDF für .NET die Abmessungen aller Seiten im PDF-Dokument abrufen?
 
-A: Yes, you can get the dimensions of all pages in the PDF document by iterating through the `Pages` collection of the `Document` object and using the `GetPageRect(true)` method for each page.
+ A: Ja, Sie können die Abmessungen aller Seiten im PDF-Dokument ermitteln, indem Sie die durchlaufen`Pages` Sammlung der`Document` Objekt und Verwendung der`GetPageRect(true)` Methode für jede Seite.
 
-#### Q: How can I determine the orientation of a page (portrait or landscape) based on its dimensions?
+#### F: Wie kann ich die Ausrichtung einer Seite (Hoch- oder Querformat) anhand ihrer Abmessungen bestimmen?
 
-A: To determine the orientation of a page based on its dimensions, you can compare the width and height of the page. If the width is greater than the height, the page is in landscape orientation, and if the height is greater than the width, the page is in portrait orientation.
+A: Um die Ausrichtung einer Seite anhand ihrer Abmessungen zu bestimmen, können Sie die Breite und Höhe der Seite vergleichen. Wenn die Breite größer als die Höhe ist, befindet sich die Seite im Querformat. Wenn die Höhe größer als die Breite ist, befindet sich die Seite im Hochformat.
 
-#### Q: Can I modify the dimensions of a page using Aspose.PDF for .NET?
+#### F: Kann ich die Abmessungen einer Seite mit Aspose.PDF für .NET ändern?
 
-A: Yes, you can modify the dimensions of a page in Aspose.PDF for .NET. After getting the `Rectangle` object representing the page dimensions, you can adjust the width and height as per your requirements and then apply the changes to the page.
+ A: Ja, Sie können die Abmessungen einer Seite in Aspose.PDF für .NET ändern. Nach Erhalt der`Rectangle` Wenn Sie ein Objekt haben, das die Seitenabmessungen darstellt, können Sie die Breite und Höhe entsprechend Ihren Anforderungen anpassen und die Änderungen dann auf die Seite anwenden.

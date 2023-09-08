@@ -1,59 +1,59 @@
 ---
-title: Add Text Border In PDF File
-linktitle: Add Text Border In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a text border in PDF file using Aspose.PDF for .NET.
+title: Lägg till textkant i PDF-fil
+linktitle: Lägg till textkant i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du lägger till en textram i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 70
 url: /sv/net/programming-with-text/add-text-border/
 ---
-This tutorial will guide you through the process of adding a text border in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Denna handledning guidar dig genom processen att lägga till en textram i PDF-fil med Aspose.PDF för .NET. Den medföljande C#-källkoden visar de nödvändiga stegen.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Krav
+Innan du börjar, se till att du har följande:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio eller någon annan C#-kompilator installerad på din maskin.
+- Aspose.PDF för .NET-bibliotek. Du kan ladda ner den från den officiella Aspose-webbplatsen eller använda en pakethanterare som NuGet för att installera den.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Steg 1: Konfigurera projektet
+1. Skapa ett nytt C#-projekt i din föredragna utvecklingsmiljö.
+2. Lägg till en referens till Aspose.PDF för .NET-biblioteket.
 
-## Step 2: Import required namespaces
-In the code file where you want to add the text border, add the following using directive at the top of the file:
+## Steg 2: Importera nödvändiga namnrymder
+I kodfilen där du vill lägga till textkanten, lägg till följande med hjälp av direktivet överst i filen:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Steg 3: Ställ in dokumentkatalogen
+ I koden, lokalisera raden som säger`string dataDir = "YOUR DOCUMENT DIRECTORY";` och byt ut`"YOUR DOCUMENT DIRECTORY"` med sökvägen till katalogen där dina dokument är lagrade.
 
-## Step 4: Create a new Document object
-Instantiate a new `Document` object by adding the following line of code:
+## Steg 4: Skapa ett nytt dokumentobjekt
+ Instantiera en ny`Document` objekt genom att lägga till följande kodrad:
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document by using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `pdfPage`.
+## Steg 5: Lägg till en sida i dokumentet
+ Lägg till en ny sida i dokumentet med hjälp av`Add` metod för`Pages`samling. I den angivna koden är den nya sidan tilldelad variabeln`pdfPage`.
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
-## Step 6: Create a TextFragment
-Create a `TextFragment` object and provide the desired text. Set the position of the text fragment using the `Position` property. In the provided code, the text is set to "main text" and positioned at (100, 600) on the page.
+## Steg 6: Skapa ett TextFragment
+ Skapa en`TextFragment` objekt och ge önskad text. Ställ in positionen för textfragmentet med hjälp av`Position` fast egendom. I den medföljande koden är texten inställd på "huvudtext" och placerad vid (100, 600) på sidan.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
 ```
 
-## Step 7: Set text properties
-Customize the text properties such as font size, font type, background color, foreground color, etc. In the provided code, properties such as font size, font, background color, foreground color, and stroking color are set for the text fragment.
+## Steg 7: Ställ in textegenskaper
+Anpassa textegenskaperna som teckenstorlek, typsnitt, bakgrundsfärg, förgrundsfärg etc. I den medföljande koden ställs egenskaper som teckenstorlek, teckensnitt, bakgrundsfärg, förgrundsfärg och streckfärg in för textfragmentet.
 
 ```csharp
 textFragment.TextState.FontSize = 12;
@@ -63,104 +63,104 @@ textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
 textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
-## Step 8: Enable text border
-To enable the text border, set the `DrawTextRectangleBorder` property of the text fragment's `TextState` to `true`.
+## Steg 8: Aktivera textkant
+ För att aktivera textramen, ställ in`DrawTextRectangleBorder`egenskapen hos textfragmentet`TextState` till`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
 ```
 
-## Step 9: Add the TextFragment to the page
-Use the `TextBuilder` class to add the `TextFragment` object to the page.
+## Steg 9: Lägg till TextFragment på sidan
+ Använd`TextBuilder` klass för att lägga till`TextFragment` invända mot sidan.
 
 ```csharp
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
 ```
 
-## Step 10: Save the PDF document
-Save the PDF document using the `Save` method of the `Document` object. Specify the output file path that you set in Step 3.
+## Steg 10: Spara PDF-dokumentet
+ Spara PDF-dokumentet med hjälp av`Save` metod för`Document` objekt. Ange sökvägen till utdatafilen som du ställde in i steg 3.
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
-### Sample source code for Add Text Border using Aspose.PDF for .NET 
+### Exempel på källkod för Add Text Border med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create new document object 
+// Skapa nytt dokumentobjekt
 Document pdfDocument = new Document();
-// Get particular page
+// Skaffa en speciell sida
 Page pdfPage = (Page)pdfDocument.Pages.Add();
-// Create text fragment
+// Skapa textfragment
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
-// Set text properties
+// Ställ in textegenskaper
 textFragment.TextState.FontSize = 12;
 textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-// Set StrokingColor property for drawing border (stroking) around text rectangle
+// Ställ in StrokingColor-egenskapen för att rita en ram (stryka) runt textrektangeln
 textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
-// Set DrawTextRectangleBorder property value to true
+// Ställ in egenskapsvärdet för DrawTextRectangleBorder till true
 textFragment.TextState.DrawTextRectangleBorder = true;
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
-// Save the document
+// Spara dokumentet
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
-## Conclusion
-You have successfully added a text border to your PDF document using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## Slutsats
+Du har framgångsrikt lagt till en textram till ditt PDF-dokument med Aspose.PDF för .NET. Den resulterande PDF-filen kan nu hittas på den angivna sökvägen för utdatafilen.
 
 ### FAQ's
 
-#### Q: What is the main focus of this tutorial?
+#### F: Vad är huvudfokus för denna handledning?
 
-A: This tutorial guides you through the process of adding a text border to a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the necessary steps to achieve this.
+S: Denna handledning guidar dig genom processen att lägga till en textram till en PDF-fil med Aspose.PDF för .NET-biblioteket. Den medföljande C#-källkoden visar de nödvändiga stegen för att uppnå detta.
 
-#### Q: Which namespaces do I need to import for this tutorial?
+#### F: Vilka namnutrymmen behöver jag importera för den här handledningen?
 
-A: In the code file where you want to add the text border, import the following namespaces at the beginning of the file:
+S: I kodfilen där du vill lägga till textkanten, importera följande namnområden i början av filen:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### F: Hur anger jag dokumentkatalogen?
 
-A: In the code, locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ S: Lokalisera raden i koden`string dataDir = "YOUR DOCUMENT DIRECTORY";` och byt ut`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
 
-#### Q: How do I create a Document object?
+#### F: Hur skapar jag ett dokumentobjekt?
 
-A: In Step 4, you'll instantiate a new `Document` object using the following line of code:
+ S: I steg 4 kommer du att instansiera en ny`Document` objekt med följande kodrad:
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-#### Q: How do I add a page to the document?
+#### F: Hur lägger jag till en sida i dokumentet?
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection:
+ S: I steg 5 lägger du till en ny sida i dokumentet med hjälp av`Add` metod för`Pages` samling:
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
-#### Q: How do I create a TextFragment and set its position?
+#### F: Hur skapar jag ett TextFragment och ställer in dess position?
 
-A: In Step 6, you'll create a `TextFragment` object and set its position on the page using the `Position` property:
+ S: I steg 6 skapar du en`TextFragment`objekt och ställ in dess position på sidan med hjälp av`Position` fast egendom:
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
 ```
 
-#### Q: How can I customize the text properties, including the text border?
+#### F: Hur kan jag anpassa textegenskaperna, inklusive textkanten?
 
-A: In Step 7, you'll customize various text properties such as font size, font type, background color, foreground color, and text border:
+S: I steg 7 kommer du att anpassa olika textegenskaper som teckenstorlek, teckensnitt, bakgrundsfärg, förgrundsfärg och textkant:
 
 ```csharp
 textFragment.TextState.FontSize = 12;
@@ -171,23 +171,23 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 textFragment.TextState.DrawTextRectangleBorder = true;
 ```
 
-#### Q: How do I add the TextFragment to the PDF document?
+#### F: Hur lägger jag till TextFragment i PDF-dokumentet?
 
-A: In Step 9, you'll use the `TextBuilder` class to add the `TextFragment` object to the page:
+ S: I steg 9 kommer du att använda`TextBuilder` klass för att lägga till`TextFragment` invända mot sidan:
 
 ```csharp
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
 ```
 
-#### Q: How do I save the resulting PDF document?
+#### F: Hur sparar jag det resulterande PDF-dokumentet?
 
-A: After adding the text with a border, use the `Save` method of the `Document` object to save the PDF document:
+ S: När du har lagt till texten med en ram, använd`Save` metod för`Document` objekt för att spara PDF-dokumentet:
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
-#### Q: What is the main takeaway from this tutorial?
+#### F: Vad är det viktigaste med den här handledningen?
 
-A: By following this tutorial, you've successfully learned how to enhance your PDF document by adding a text border using Aspose.PDF for .NET. This can be particularly useful for emphasizing specific text content within your PDF files.
+S: Genom att följa den här handledningen har du framgångsrikt lärt dig hur du förbättrar ditt PDF-dokument genom att lägga till en textram med Aspose.PDF för .NET. Detta kan vara särskilt användbart för att betona specifikt textinnehåll i dina PDF-filer.

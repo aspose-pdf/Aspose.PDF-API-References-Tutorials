@@ -1,28 +1,28 @@
 ---
-title: Search Text And Draw Rectangle
-linktitle: Search Text And Draw Rectangle
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to search for text in a PDF, draw rectangles around the found text, and save the modified document using Aspose.PDF for .NET.
+title: Buscar texto y dibujar rectángulo
+linktitle: Buscar texto y dibujar rectángulo
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a buscar texto en un PDF, dibujar rectángulos alrededor del texto encontrado y guardar el documento modificado usando Aspose.PDF para .NET.
 type: docs
 weight: 460
 url: /es/net/programming-with-text/search-text-and-draw-rectangle/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to search for specific text in a PDF document, draw a rectangle around the found text, and save the modified document. The provided C# source code demonstrates the process step by step.
+Este tutorial explica cómo usar Aspose.PDF para .NET para buscar texto específico en un documento PDF, dibujar un rectángulo alrededor del texto encontrado y guardar el documento modificado. El código fuente de C# proporcionado demuestra el proceso paso a paso.
 
-## Prerequisites
+## Requisitos previos
 
-Before proceeding with the tutorial, make sure you have the following:
+Antes de continuar con el tutorial, asegúrese de tener lo siguiente:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Conocimientos básicos del lenguaje de programación C#.
+- Aspose.PDF para la biblioteca .NET instalada. Puede obtenerlo del sitio web de Aspose o utilizar NuGet para instalarlo en su proyecto.
 
-## Step 1: Set up the project
+## Paso 1: configurar el proyecto
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Comience creando un nuevo proyecto C# en su entorno de desarrollo integrado (IDE) preferido y agregue una referencia a la biblioteca Aspose.PDF para .NET.
 
-## Step 2: Import necessary namespaces
+## Paso 2: importar los espacios de nombres necesarios
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Agregue las siguientes directivas de uso al principio de su archivo C# para importar los espacios de nombres requeridos:
 
 ```csharp
 using Aspose.Pdf;
@@ -31,56 +31,56 @@ using Aspose.Pdf.Content;
 using Aspose.Pdf.Facades;
 ```
 
-## Step 3: Set the path to the document directory
+## Paso 3: establezca la ruta al directorio de documentos
 
-Set the path to your document directory using the `dataDir` variable:
+ Establezca la ruta a su directorio de documentos usando el`dataDir` variable:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta real a su directorio de documentos.
 
-## Step 4: Load the PDF document
+## Paso 4: cargue el documento PDF
 
-Load the PDF document using the `Document` class:
+ Cargue el documento PDF usando el`Document` clase:
 
 ```csharp
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 ```
 
-Replace `"SearchAndGetTextFromAll.pdf"` with the actual name of your PDF file.
+ Reemplazar`"SearchAndGetTextFromAll.pdf"` con el nombre real de su archivo PDF.
 
-## Step 5: Create a TextFragmentAbsorber
+## Paso 5: crear un TextFragmentAbsorber
 
-Create a `TextFragmentAbsorber` object to find all instances of the input search phrase:
+ Crear un`TextFragmentAbsorber` objeto para encontrar todas las instancias de la frase de búsqueda de entrada:
 
 ```csharp
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
 
-Replace `@"[\S]+"` with your desired regular expression pattern.
+ Reemplazar`@"[\S]+"` con el patrón de expresión regular que desee.
 
-## Step 6: Enable regular expression search
+## Paso 6: habilite la búsqueda de expresiones regulares
 
-Enable regular expression search by setting the `TextSearchOptions` property of the absorber:
+ Habilite la búsqueda de expresiones regulares configurando el`TextSearchOptions` propiedad del absorbente:
 
 ```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;
 ```
 
-## Step 7: Search on all pages
+## Paso 7: buscar en todas las páginas
 
-Accept the absorber for all the pages of the document:
+Acepta el absorbente para todas las páginas del documento:
 
 ```csharp
 document.Pages.Accept(textAbsorber);
 ```
 
-## Step 8: Draw a rectangle around the found text
+## Paso 8: dibuja un rectángulo alrededor del texto encontrado
 
-Create a `PdfContentEditor` object and loop through the retrieved text fragments, drawing a rectangle around each text segment:
+ Crear un`PdfContentEditor` objeto y recorra los fragmentos de texto recuperados, dibujando un rectángulo alrededor de cada segmento de texto:
 
 ```csharp
 var editor = new PdfContentEditor(document);
@@ -93,24 +93,24 @@ foreach (TextFragment textFragment in textAbsorber.TextFragments)
 }
 ```
 
-## Step 9: Save the modified document
+## Paso 9: guarde el documento modificado
 
-Save the modified document:
+Guarde el documento modificado:
 
 ```csharp
 dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
 document.Save(dataDir);
 ```
 
-Make sure to replace `"SearchTextAndDrawRectangle_out.pdf"` with the desired output file name.
+ Asegúrate de reemplazar`"SearchTextAndDrawRectangle_out.pdf"` con el nombre del archivo de salida deseado.
 
-### Sample source code for Search Text And Draw Rectangle using Aspose.PDF for .NET 
+### Código fuente de muestra para buscar texto y dibujar rectángulo usando Aspose.PDF para .NET 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Abrir documento
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-// Create TextAbsorber object to find all the phrases matching the regular expression
+// Cree un objeto TextAbsorber para encontrar todas las frases que coincidan con la expresión regular
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;
@@ -128,48 +128,48 @@ document.Save(dataDir);
 Console.WriteLine("\nRectangle drawn successfully on searched text.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Conclusión
 
-Congratulations! You have successfully learned how to search for specific text in a PDF document, draw a rectangle around the found text, and save the modified document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to performing the required actions. You can now incorporate this code into your own C# projects to manipulate text and draw rectangles in PDF files.
+¡Felicidades! Ha aprendido con éxito cómo buscar texto específico en un documento PDF, dibujar un rectángulo alrededor del texto encontrado y guardar el documento modificado usando Aspose.PDF para .NET. Este tutorial proporciona una guía paso a paso, desde la configuración del proyecto hasta la realización de las acciones necesarias. Ahora puede incorporar este código en sus propios proyectos de C# para manipular texto y dibujar rectángulos en archivos PDF.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is the purpose of the "Search Text And Draw Rectangle" tutorial?
+#### P: ¿Cuál es el propósito del tutorial "Buscar texto y dibujar rectángulo"?
 
-A: The "Search Text And Draw Rectangle" tutorial aims to guide users through the process of using the Aspose.PDF library for .NET to search for specific text within a PDF document, draw rectangles around the found text segments, and save the modified document. The tutorial provides detailed instructions and C# code samples to illustrate each step of the process.
+R: El tutorial "Buscar texto y dibujar rectángulo" tiene como objetivo guiar a los usuarios a través del proceso de uso de la biblioteca Aspose.PDF para .NET para buscar texto específico dentro de un documento PDF, dibujar rectángulos alrededor de los segmentos de texto encontrados y guardar el texto modificado. documento. El tutorial proporciona instrucciones detalladas y ejemplos de código C# para ilustrar cada paso del proceso.
 
-#### Q: How does this tutorial help in drawing rectangles around specific text in a PDF document?
+#### P: ¿Cómo ayuda este tutorial a dibujar rectángulos alrededor de un texto específico en un documento PDF?
 
-A: This tutorial provides a comprehensive guide on how to locate and draw rectangles around specific text segments within a PDF document. It demonstrates the process of setting up a project, loading a PDF document, enabling regular expression search, drawing rectangles around found text segments, and saving the modified PDF.
+R: Este tutorial proporciona una guía completa sobre cómo ubicar y dibujar rectángulos alrededor de segmentos de texto específicos dentro de un documento PDF. Demuestra el proceso de configurar un proyecto, cargar un documento PDF, habilitar la búsqueda de expresiones regulares, dibujar rectángulos alrededor de segmentos de texto encontrados y guardar el PDF modificado.
 
-#### Q: What prerequisites are required to follow this tutorial?
+#### P: ¿Qué requisitos previos se requieren para seguir este tutorial?
 
-A: Before starting the tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or install it in your project using NuGet.
+R: Antes de comenzar el tutorial, debes tener un conocimiento básico del lenguaje de programación C#. Además, debe tener instalada la biblioteca Aspose.PDF para .NET. Puede obtenerlo del sitio web de Aspose o instalarlo en su proyecto usando NuGet.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### P: ¿Cómo configuro mi proyecto para seguir este tutorial?
 
-A: Begin by creating a new C# project in your preferred integrated development environment (IDE). Then, add a reference to the Aspose.PDF for .NET library to your project. This will enable you to use the library's functionality to manipulate PDF documents.
+R: Comience creando un nuevo proyecto de C# en su entorno de desarrollo integrado (IDE) preferido. Luego, agregue una referencia a la biblioteca Aspose.PDF para .NET a su proyecto. Esto le permitirá utilizar la funcionalidad de la biblioteca para manipular documentos PDF.
 
-#### Q: Can I draw rectangles around specific text using this tutorial?
+#### P: ¿Puedo dibujar rectángulos alrededor de un texto específico usando este tutorial?
 
-A: Yes, the tutorial focuses on drawing rectangles around specific text segments within a PDF document. It demonstrates how to locate the desired text using regular expressions, create rectangles around the identified text segments, and save the modified PDF.
+R: Sí, el tutorial se centra en dibujar rectángulos alrededor de segmentos de texto específicos dentro de un documento PDF. Demuestra cómo ubicar el texto deseado usando expresiones regulares, crear rectángulos alrededor de los segmentos de texto identificados y guardar el PDF modificado.
 
-#### Q: How can I specify the text I want to search for and draw rectangles around?
+#### P: ¿Cómo puedo especificar el texto que quiero buscar y dibujar rectángulos alrededor de él?
 
-A: To specify the text you want to search for and draw rectangles around, create a `TextFragmentAbsorber` object and set its pattern using the `Text` parameter. Replace the default pattern `@"[\S]+"` in the tutorial's code with your desired regular expression pattern.
+ R: Para especificar el texto que desea buscar y dibujar rectángulos alrededor, cree un`TextFragmentAbsorber` objeto y establecer su patrón usando el`Text` parámetro. Reemplazar el patrón predeterminado`@"[\S]+"` en el código del tutorial con el patrón de expresión regular que desee.
 
-#### Q: How do I enable regular expression search for text?
+#### P: ¿Cómo habilito la búsqueda de texto con expresiones regulares?
 
-A: Regular expression search is enabled by creating a `TextSearchOptions` object and setting its value to `true`. Assign this object to the `TextSearchOptions` property of the `TextFragmentAbsorber` instance. This ensures that the regular expression pattern is used during text search.
+ R: La búsqueda de expresiones regulares se habilita creando un`TextSearchOptions` objeto y estableciendo su valor en`true` . Asigne este objeto al`TextSearchOptions` propiedad de la`TextFragmentAbsorber` instancia. Esto garantiza que se utilice el patrón de expresión regular durante la búsqueda de texto.
 
-#### Q: How do I draw rectangles around the found text?
+#### P: ¿Cómo dibujo rectángulos alrededor del texto encontrado?
 
-A: After identifying the text segments using the `TextFragmentAbsorber`, the tutorial provides a loop to iterate through these segments. For each text segment, the tutorial demonstrates how to create a rectangle around it using the `DrawBox` method and specify the rectangle's appearance.
+ R: Después de identificar los segmentos de texto usando el`TextFragmentAbsorber` , el tutorial proporciona un bucle para recorrer estos segmentos. Para cada segmento de texto, el tutorial demuestra cómo crear un rectángulo alrededor de él usando el`DrawBox` método y especificar la apariencia del rectángulo.
 
-#### Q: What are the steps to save the modified PDF with drawn rectangles?
+#### P: ¿Cuáles son los pasos para guardar el PDF modificado con rectángulos dibujados?
 
-A: After drawing rectangles around the desired text segments, use the `Document` class's `Save` method to save the modified document. The tutorial's sample code showcases how to save the edited PDF and display a success message.
+R: Después de dibujar rectángulos alrededor de los segmentos de texto deseados, use el`Document` clase`Save` Método para guardar el documento modificado. El código de muestra del tutorial muestra cómo guardar el PDF editado y mostrar un mensaje de éxito.
 
-#### Q: Can I customize the appearance of the drawn rectangles?
+#### P: ¿Puedo personalizar la apariencia de los rectángulos dibujados?
 
-A: Yes, you can customize the appearance of the drawn rectangles. In the tutorial's sample code, the `DrawBox` method is used to create rectangles. You can modify properties such as color, style, and thickness to customize the appearance of the drawn rectangles.
+ R: Sí, puedes personalizar la apariencia de los rectángulos dibujados. En el código de muestra del tutorial, el`DrawBox` El método se utiliza para crear rectángulos. Puede modificar propiedades como el color, el estilo y el grosor para personalizar la apariencia de los rectángulos dibujados.

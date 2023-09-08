@@ -1,38 +1,38 @@
 ---
-title: Set Radio Button Caption
-linktitle: Set Radio Button Caption
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to set the caption for a radio button in a PDF form.
+title: Установить заголовок переключателя
+linktitle: Установить заголовок переключателя
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как использовать Aspose.PDF для .NET, чтобы установить заголовок для переключателя в форме PDF.
 type: docs
 weight: 280
 url: /ru/net/programming-with-forms/set-radio-button-caption/
 ---
-In this guide, we will explain step by step how to use the Aspose.PDF library for .NET to define the caption of a radio button in a PDF form. We'll show you how to access the radio button field, create a new radio button option, and customize the button caption.
+В этом руководстве мы шаг за шагом объясним, как использовать библиотеку Aspose.PDF для .NET для определения заголовка переключателя в форме PDF. Мы покажем вам, как получить доступ к полю переключателя, создать новый параметр переключателя и настроить заголовок кнопки.
 
-## Step 1: Configuring the document directory
+## Шаг 1. Настройка каталога документов
 
-The first step is to configure the document directory where the PDF form you want to work on is located. You can use the `dataDir` variable to specify the directory path.
+ Первым шагом является настройка каталога документов, в котором находится PDF-форма, над которой вы хотите работать. Вы можете использовать`dataDir` переменная для указания пути к каталогу.
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual path to your documents directory.
+ Обязательно замените`"YOUR DOCUMENTS DIRECTORY"` с фактическим путем к каталогу ваших документов.
 
-## Step 2: Loading the source PDF form
+## Шаг 2. Загрузка исходной PDF-формы
 
-In this step, we will load the source PDF form using the `Aspose.Pdf.Facades.Form` class of Aspose.PDF.
+ На этом этапе мы загрузим исходную PDF-форму, используя`Aspose.Pdf.Facades.Form` класс Aspose.PDF.
 
 ```csharp
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
 ```
 
-Make sure that the PDF file containing the form is present in the specified documents directory.
+Убедитесь, что PDF-файл, содержащий форму, присутствует в указанном каталоге документов.
 
-## Step 3: Editing the radio button caption
+## Шаг 3. Редактирование заголовка переключателя
 
-We'll loop through the form field names and search for radio button fields. If a matching field is found, we'll create a new radio button option with a custom caption and add it to the existing field.
+Мы пройдемся по именам полей формы и найдем поля переключателей. Если подходящее поле найдено, мы создадим новый переключатель с настраиваемым заголовком и добавим его в существующее поле.
 
 ```csharp
 foreach(var item in form1.FieldNames)
@@ -47,15 +47,15 @@ var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
 updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
 updatedFragment.TextState.FontSize = 10;
 updatedFragment.TextState.LineSpacing = 6.32f;
-// Create a TextParagraph object
+// Создайте объект TextParagraph.
 TextParagraph par = new TextParagraph();
-// Set paragraph position
+// Установить положение абзаца
 par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-// Specify word wrap mode
+// Укажите режим переноса слов
 by.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-// Add the new TextFragment to the paragraph
+// Добавьте новый TextFragment в абзац.
 par.AppendLine(updatedFragment);
-// Add the TextParagraph using TextBuilder
+// Добавьте TextParagraph с помощью TextBuilder
 TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
 textBuilder.AppendParagraph(par);
 field0.DeleteOption("item1");
@@ -63,23 +63,23 @@ field0.DeleteOption("item1");
 }
 ```
 
-Customize the caption radio button and other settings as needed.
+Настройте переключатель заголовка и другие параметры по мере необходимости.
 
-## Step 4: Saving the Resulting PDF
+## Шаг 4. Сохранение полученного PDF-файла
 
-Now that we are done modifying the radio button caption, we can save the resulting PDF using the `Save` method of the `Document` class.
+ Теперь, когда мы закончили изменять заголовок переключателя, мы можем сохранить полученный PDF-файл, используя команду`Save` метод`Document` сорт.
 
 ```csharp
 PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 ```
 
-Be sure to specify the full path and filename for the resulting PDF.
+Обязательно укажите полный путь и имя файла полученного PDF-файла.
 
-### Sample source code for Set Radio Button Caption using Aspose.PDF for .NET 
+### Пример исходного кода для установки заголовка переключателя с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Загрузить исходную PDF-форму
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
 Document PDF_Template_PDF_HTML = new Document(dataDir + "RadioButtonField.pdf");
 foreach (var item in form1.FieldNames)
@@ -96,15 +96,15 @@ foreach (var item in form1.FieldNames)
 		updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
 		updatedFragment.TextState.FontSize = 10;
 		updatedFragment.TextState.LineSpacing = 6.32f;
-		// Create TextParagraph object
+		// Создать объект TextParagraph
 		TextParagraph par = new TextParagraph();
-		// Set paragraph position
+		// Установить положение абзаца
 		par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-		// Specify word wraping mode
+		// Укажите режим переноса слов
 		par.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-		// Add new TextFragment to paragraph
+		// Добавить новый TextFragment в абзац
 		par.AppendLine(updatedFragment);
-		// Add the TextParagraph using TextBuilder
+		// Добавьте TextParagraph с помощью TextBuilder
 		TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
 		textBuilder.AppendParagraph(par);
 		field0.DeleteOption("item1");
@@ -113,28 +113,28 @@ foreach (var item in form1.FieldNames)
 PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 ```
 
-## Conclusion
+## Заключение
 
-In this guide, we learned how to use the Aspose.PDF library for .NET to set the caption for a radio button in a PDF form. By following the described steps, you can customize the radio button options and change the caption as needed. Feel free to further explore the features of Aspose.PDF for .NET to expand the possibilities of manipulating PDF files.
+В этом руководстве мы узнали, как использовать библиотеку Aspose.PDF для .NET, чтобы установить заголовок для переключателя в форме PDF. Выполнив описанные шаги, вы можете настроить параметры переключателя и при необходимости изменить заголовок. Не стесняйтесь продолжить изучение возможностей Aspose.PDF для .NET, чтобы расширить возможности управления PDF-файлами.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: Can I use Aspose.PDF for .NET to set captions for radio buttons in a PDF form?
+#### Вопрос: Могу ли я использовать Aspose.PDF для .NET для установки заголовков переключателей в форме PDF?
 
-A: Yes, you can use Aspose.PDF for .NET to set captions for radio buttons in a PDF form. The provided sample source code demonstrates how to access the radio button field, create a new radio button option with a custom caption, and update the existing field.
+О: Да, вы можете использовать Aspose.PDF для .NET, чтобы установить подписи для переключателей в форме PDF. Предоставленный пример исходного кода демонстрирует, как получить доступ к полю переключателя, создать новый параметр переключателя с настраиваемым заголовком и обновить существующее поле.
 
-#### Q: How can I customize the appearance of the radio button caption, such as font size and color?
+#### Вопрос: Как настроить внешний вид заголовка переключателя, например размер и цвет шрифта?
 
-A: You can customize the appearance of the radio button caption by adjusting the properties of the `TextFragment` used for the caption. For example, you can set the font, font size, color, line spacing, and other text formatting options.
+ О: Вы можете настроить внешний вид заголовка переключателя, настроив свойства переключателя.`TextFragment` используется для подписи. Например, вы можете установить шрифт, размер шрифта, цвет, межстрочный интервал и другие параметры форматирования текста.
 
-#### Q: Is it possible to add multiple radio button options with different captions to a single radio button group?
+#### Вопрос: Можно ли добавить несколько переключателей с разными заголовками в одну группу переключателей?
 
-A: Yes, you can add multiple radio button options with different captions to a single radio button group. Each option will represent a different choice, and users can select only one option from the group.
+О: Да, вы можете добавить несколько вариантов переключателей с разными заголовками в одну группу переключателей. Каждый вариант представляет собой отдельный вариант, и пользователи могут выбрать только один вариант из группы.
 
-#### Q: Can I use Aspose.PDF for .NET to modify other form fields in a PDF document?
+#### Вопрос: Могу ли я использовать Aspose.PDF для .NET для изменения других полей формы в PDF-документе?
 
-A: Yes, Aspose.PDF for .NET provides a comprehensive set of features to manipulate various form fields in a PDF document, such as text fields, checkboxes, dropdown lists, and more. You can use the library to set values, modify appearances, and add interactivity to form fields.
+О: Да, Aspose.PDF для .NET предоставляет полный набор функций для управления различными полями форм в PDF-документе, такими как текстовые поля, флажки, раскрывающиеся списки и многое другое. Вы можете использовать библиотеку для установки значений, изменения внешнего вида и добавления интерактивности в поля форм.
 
-#### Q: Does Aspose.PDF for .NET support working with PDFs generated from other sources, such as scanned documents?
+#### Вопрос: Поддерживает ли Aspose.PDF for .NET работу с PDF-файлами, созданными из других источников, например, отсканированных документов?
 
-A: Yes, Aspose.PDF for .NET supports working with PDFs generated from various sources, including scanned documents. The library provides OCR (Optical Character Recognition) capabilities to extract text from scanned PDFs and manipulate the content programmatically.
+О: Да, Aspose.PDF для .NET поддерживает работу с PDF-файлами, созданными из различных источников, включая отсканированные документы. Библиотека предоставляет возможности OCR (оптического распознавания символов) для извлечения текста из отсканированных PDF-файлов и программного управления содержимым.

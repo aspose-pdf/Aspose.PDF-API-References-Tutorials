@@ -1,28 +1,28 @@
 ---
-title: Add Structure Element Into Element
-linktitle: Add Structure Element Into Element
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to add structure element to element in PDF document using Aspose.PDF for .NET.
+title: أضف عنصر الهيكل إلى العنصر
+linktitle: أضف عنصر الهيكل إلى العنصر
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لإضافة عنصر هيكلي إلى عنصر في مستند PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 20
 url: /ar/net/programming-with-tagged-pdf/add-structure-element-into-element/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to add a structure element to an element in a PDF document using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. Using the marked content structure features of Aspose.PDF, you can create a hierarchical structure in your PDF document.
+في هذا البرنامج التعليمي، سنزودك بدليل خطوة بخطوة حول كيفية إضافة عنصر هيكل إلى عنصر في مستند PDF باستخدام Aspose.PDF لـ .NET. Aspose.PDF هي مكتبة قوية تتيح لك إنشاء مستندات PDF ومعالجتها وتحويلها برمجيًا. باستخدام ميزات بنية المحتوى المحددة في Aspose.PDF، يمكنك إنشاء هيكل هرمي في مستند PDF الخاص بك.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before you begin, make sure you have the following prerequisites in place:
+قبل البدء، تأكد من توفر المتطلبات الأساسية التالية:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. تم تثبيت Visual Studio مع إطار عمل .NET.
+2. مكتبة Aspose.PDF لـ .NET.
 
-## Step 1: Project Setup
+## الخطوة 1: إعداد المشروع
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+للبدء، قم بإنشاء مشروع جديد في Visual Studio وقم بإضافة مرجع إلى مكتبة Aspose.PDF لـ .NET. يمكنك تنزيل المكتبة من موقع Aspose الرسمي وتثبيتها على جهازك.
 
-## Step 2: Import the necessary namespaces
+## الخطوة 2: استيراد مساحات الأسماء الضرورية
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+في ملف التعليمات البرمجية C# الخاص بك، قم باستيراد مساحات الأسماء المطلوبة للوصول إلى الفئات والأساليب التي يوفرها Aspose.PDF:
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Step 3: Creating the PDF document and defining the structured elements
+## الخطوة 3: إنشاء مستند PDF وتحديد العناصر المنظمة
 
-Use the following code to create a PDF document and define the structured elements:
+استخدم الكود التالي لإنشاء مستند PDF وتحديد العناصر المنظمة:
 
 ```csharp
 
@@ -96,31 +96,31 @@ p4.AppendChild(span42);
 p4.SetText(".");
 ```
 
-This code creates an empty PDF document and adds structured elements such as paragraphs and spans. Each structure element is created using the methods provided by Aspose.PDF.
+يقوم هذا الكود بإنشاء مستند PDF فارغ وإضافة عناصر منظمة مثل الفقرات والامتدادات. يتم إنشاء كل عنصر هيكلي باستخدام الطرق التي يوفرها Aspose.PDF.
 
-## Step 4: Saving the PDF Document
+## الخطوة 4: حفظ مستند PDF
 
-Use the following code to save the PDF document:
+استخدم الكود التالي لحفظ مستند PDF:
 
 ```csharp
 document. Save(outFile);
 ```
 
-This code saves the PDF document with the structured elements to a specified file.
+يحفظ هذا الرمز مستند PDF مع العناصر المنظمة في ملف محدد.
 
-### Sample source code for Add Structure Element Into Element using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإضافة عنصر هيكلي إلى عنصر باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
 string logFile = dataDir + "46144_log.xml";
-// Creation document and getting Tagged Pdf Content
+// إنشاء مستند والحصول على محتوى Pdf ذو علامة
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
-// Setting Title and Nature Language for document
+// تحديد العنوان واللغة الطبيعية للمستند
 taggedContent.SetTitle("Text Elements Example");
 taggedContent.SetLanguage("en-US");
-// Getting Root structure element (Document structure element)
+// الحصول على عنصر بنية الجذر (عنصر بنية المستند)
 StructureElement rootElement = taggedContent.RootElement;
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
@@ -164,53 +164,53 @@ span42.SetText("Span_42");
 p4.AppendChild(span41);
 p4.AppendChild(span42);
 p4.SetText(".");
-// Save Tagged Pdf Document
+// حفظ وثيقة PDF ذات العلامات
 document.Save(outFile);
-// Checking PDF/UA compliance
+// التحقق من توافق PDF/UA
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, you learned how to add a structure element to an element in a PDF document using Aspose.PDF for .NET. Using the marked content structure features of Aspose.PDF, you can create a hierarchical structure in your PDF document, which makes it easier to manage and navigate through content.
+في هذا البرنامج التعليمي، تعلمت كيفية إضافة عنصر هيكل إلى عنصر في مستند PDF باستخدام Aspose.PDF لـ .NET. باستخدام ميزات بنية المحتوى المحددة في Aspose.PDF، يمكنك إنشاء هيكل هرمي في مستند PDF الخاص بك، مما يسهل إدارة المحتوى والتنقل خلاله.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of adding a structure element to an element in a PDF document using Aspose.PDF for .NET?
+#### س: ما هو الغرض من إضافة عنصر هيكل إلى عنصر في مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Adding a structure element to an element in a PDF document using Aspose.PDF for .NET allows you to create a hierarchical structure within the document's content. This hierarchical structure enhances the organization and navigation of the content, making it easier to manage and access specific elements.
+ج: تتيح لك إضافة عنصر هيكل إلى عنصر في مستند PDF باستخدام Aspose.PDF لـ .NET إنشاء هيكل هرمي داخل محتوى المستند. يعمل هذا الهيكل الهرمي على تحسين تنظيم المحتوى والتنقل فيه، مما يسهل إدارة عناصر محددة والوصول إليها.
 
-#### Q: How does the Aspose.PDF library assist in adding structure elements to a PDF document?
+#### س: كيف تساعد مكتبة Aspose.PDF في إضافة عناصر هيكلية إلى مستند PDF؟
 
-A: Aspose.PDF for .NET is a powerful library that provides capabilities for creating, manipulating, and converting PDF documents programmatically. In this tutorial, the library's marked content structure features are leveraged to create and append structure elements to the PDF document's content.
+ج: Aspose.PDF for .NET هي مكتبة قوية توفر إمكانيات لإنشاء مستندات PDF ومعالجتها وتحويلها برمجيًا. في هذا البرنامج التعليمي، يتم الاستفادة من ميزات بنية المحتوى المميزة بالمكتبة لإنشاء عناصر هيكل وإلحاقها بمحتوى مستند PDF.
 
-#### Q: What are the prerequisites for adding structure elements to a PDF document using Aspose.PDF for .NET?
+#### س: ما هي المتطلبات الأساسية لإضافة عناصر هيكلية إلى مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Before you begin, ensure that you have Visual Studio installed with the .NET framework and have the Aspose.PDF library for .NET referenced in your project.
+ج: قبل أن تبدأ، تأكد من تثبيت Visual Studio مع إطار عمل .NET وأن مكتبة Aspose.PDF الخاصة بـ .NET مشار إليها في مشروعك.
 
-#### Q: How does the provided C# code create and append structure elements to the PDF document's content?
+#### س: كيف يقوم كود C# المقدم بإنشاء عناصر هيكلية وإلحاقها بمحتوى مستند PDF؟
 
-A: The code demonstrates how to create a PDF document, define a root structure element, and append various structured elements such as paragraphs and spans to it. Each structured element is created using methods provided by Aspose.PDF, allowing you to build a hierarchical structure.
+ج: يوضح الكود كيفية إنشاء مستند PDF، وتحديد عنصر البنية الجذرية، وإلحاق عناصر منظمة مختلفة مثل الفقرات والامتدادات به. يتم إنشاء كل عنصر منظم باستخدام الأساليب التي يوفرها Aspose.PDF، مما يسمح لك ببناء هيكل هرمي.
 
-#### Q: Can I customize the types of structure elements that I append to the PDF document?
+#### س: هل يمكنني تخصيص أنواع عناصر البنية التي أقوم بإلحاقها بمستند PDF؟
 
-A: Yes, you can customize the types of structure elements by exploring different methods provided by the Aspose.PDF library. The code showcases paragraphs and spans as examples, but you can create and append other types of structured elements as needed.
+ج: نعم، يمكنك تخصيص أنواع عناصر البنية من خلال استكشاف الطرق المختلفة التي توفرها مكتبة Aspose.PDF. تعرض التعليمات البرمجية الفقرات والامتدادات كأمثلة، ولكن يمكنك إنشاء وإلحاق أنواع أخرى من العناصر المنظمة حسب الحاجة.
 
-#### Q: How do I define the hierarchical relationship between the added structure elements?
+#### س: كيف يمكنني تحديد العلاقة الهرمية بين عناصر البنية المضافة؟
 
-A: The hierarchical relationship between structure elements is defined by the order in which you append them to their parent elements. In the code, the parent-child relationships are established by using the `AppendChild` method.
+ ج: يتم تحديد العلاقة الهرمية بين عناصر البنية بالترتيب الذي تقوم به بإلحاقها بالعناصر الأصلية الخاصة بها. في التعليمات البرمجية، يتم إنشاء العلاقات بين الوالدين والطفل باستخدام`AppendChild` طريقة.
 
-#### Q: What are the benefits of creating a hierarchical structure in a PDF document?
+#### س: ما هي فوائد إنشاء هيكل هرمي في مستند PDF؟
 
-A: Creating a hierarchical structure in a PDF document enhances its accessibility, navigation, and organization. It allows assistive technologies to better interpret and convey the document's content, making it more user-friendly for individuals with disabilities.
+ج: يؤدي إنشاء هيكل هرمي في مستند PDF إلى تحسين إمكانية الوصول إليه والتنقل فيه وتنظيمه. فهو يسمح للتقنيات المساعدة بتفسير محتوى المستند ونقله بشكل أفضل، مما يجعله أكثر سهولة في الاستخدام للأفراد ذوي الإعاقة.
 
-#### Q: How can I validate PDF/UA compliance after adding structure elements?
+#### س: كيف يمكنني التحقق من توافق PDF/UA بعد إضافة عناصر الهيكل؟
 
-A: The code provided in the tutorial demonstrates how to validate PDF/UA compliance using the `Validate` method. By validating the document against the PDF/UA standard, you can ensure that the added structure elements conform to accessibility guidelines.
+ ج: يوضح الكود الموجود في البرنامج التعليمي كيفية التحقق من صحة توافق PDF/UA باستخدام ملف`Validate` طريقة. من خلال التحقق من صحة المستند مقابل معيار PDF/UA، يمكنك التأكد من أن عناصر البنية المضافة تتوافق مع إرشادات إمكانية الوصول.
 
-#### Q: Can I use this approach to add structure elements to an existing PDF document?
+#### س: هل يمكنني استخدام هذا الأسلوب لإضافة عناصر هيكلية إلى مستند PDF موجود؟
 
-A: Yes, you can modify the provided approach to add structure elements to an existing PDF document. Instead of creating a new document, you would load the existing document using Aspose.PDF and then follow similar steps to append structure elements.
+ج: نعم، يمكنك تعديل النهج المقدم لإضافة عناصر هيكلية إلى مستند PDF موجود. بدلاً من إنشاء مستند جديد، يمكنك تحميل المستند الموجود باستخدام Aspose.PDF ثم اتباع خطوات مماثلة لإلحاق عناصر البنية.

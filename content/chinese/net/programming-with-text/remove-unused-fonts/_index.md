@@ -1,40 +1,40 @@
 ---
-title: Remove Unused Fonts In PDF File
-linktitle: Remove Unused Fonts In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove unused fonts in PDF file using Aspose.PDF for .NET.
+title: 删除 PDF 文件中未使用的字体
+linktitle: 删除 PDF 文件中未使用的字体
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 删除 PDF 文件中未使用的字体。
 type: docs
 weight: 300
 url: /zh/net/programming-with-text/remove-unused-fonts/
 ---
-In this tutorial, we will explain how to remove unused fonts in PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of loading a PDF, identifying and removing unused fonts, and saving the updated PDF using the provided C# source code.
+在本教程中，我们将解释如何使用 .NET 的 Aspose.PDF 库删除 PDF 文件中未使用的字体。我们将逐步完成加载 PDF、识别和删除未使用的字体以及使用提供的 C# 源代码保存更新的 PDF 的过程。
 
-## Requirements
+## 要求
 
-Before you begin, ensure that you have the following:
+在开始之前，请确保您具备以下条件：
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- 安装了 Aspose.PDF for .NET 库。
+- 对 C# 编程有基本了解。
 
-## Step 1: Set up the Document Directory
+## 第 1 步：设置文档目录
 
-First, you need to set the path to the directory where your PDF files are located. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF files.
+首先，您需要设置 PDF 文件所在目录的路径。代替`"YOUR DOCUMENT DIRECTORY"`在里面`dataDir`变量包含 PDF 文件的路径。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the Source PDF
+## 第 2 步：加载源 PDF
 
-Next, we load the source PDF document using the `Document` class from the Aspose.PDF library.
+接下来，我们使用以下命令加载源 PDF 文档`Document`来自 Aspose.PDF 库的类。
 
 ```csharp
 Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
 ```
 
-## Step 3: Identify and Remove Unused Fonts
+## 第 3 步：识别并删除未使用的字体
 
-We create a `TextFragmentAbsorber` object with the `TextEditOptions` parameter set to `TextEditOptions.FontReplace.RemoveUnusedFonts`. This option allows us to identify and remove unused fonts in the PDF document. We then iterate through all the `TextFragments` and set the font to a desired font.
+我们创建一个`TextFragmentAbsorber`对象与`TextEditOptions`参数设置为`TextEditOptions.FontReplace.RemoveUnusedFonts`。此选项允许我们识别并删除 PDF 文档中未使用的字体。然后我们迭代所有的`TextFragments`并将字体设置为所需的字体。
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
@@ -46,9 +46,9 @@ foreach(TextFragment textFragment in absorber.TextFragments)
 }
 ```
 
-## Step 4: Save the Updated PDF
+## 第 4 步：保存更新后的 PDF
 
-Finally, we save the updated PDF document to the specified output file.
+最后，我们将更新后的 PDF 文档保存到指定的输出文件中。
 
 ```csharp
 dataDir = dataDir + "RemoveUnusedFonts_out.pdf";
@@ -56,78 +56,78 @@ doc.Save(dataDir);
 Console.WriteLine("\nUnused fonts removed successfully from the PDF document.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Remove Unused Fonts using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 删除未使用的字体的示例源代码 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	//文档目录的路径。
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load source PDF file
+	//加载源 PDF 文件
 	Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
 	doc.Pages.Accept(absorber);
-	// Iterate through all the TextFragments
+	//遍历所有 TextFragments
 	foreach (TextFragment textFragment in absorber.TextFragments)
 	{
 		textFragment.TextState.Font = FontRepository.FindFont("Arial, Bold");
 	}
 	dataDir = dataDir + "RemoveUnusedFonts_out.pdf";
-	// Save updated document
+	//保存更新的文档
 	doc.Save(dataDir);
 	Console.WriteLine("\nUnused fonts removed successfully from pdf document.\nFile saved at " + dataDir);
 }
 catch (Exception ex)
 {
-	Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase full license or get 30 day temporary license from http:// Www.aspose.com/purchase/default.aspx.");
+	Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase full license or get 30 day temporary license from http://www.aspose.com/purchase/default.aspx.");
 }
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, you have learned how to remove unused fonts from a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can load a PDF, identify and remove unused fonts, and save the updated PDF.
+在本教程中，您学习了如何使用 .NET 的 Aspose.PDF 库从 PDF 文档中删除未使用的字体。通过遵循分步指南并执行提供的 C# 代码，您可以加载 PDF、识别和删除未使用的字体以及保存更新的 PDF。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of the "Remove Unused Fonts In PDF File" tutorial?
+#### 问：“删除 PDF 文件中未使用的字体”教程的目的是什么？
 
-A: The "Remove Unused Fonts In PDF File" tutorial explains how to use the Aspose.PDF library for .NET to remove unused fonts from a PDF document. The tutorial guides you through the process of loading a PDF, identifying and removing unused fonts, and saving the updated PDF.
+答：“删除 PDF 文件中未使用的字体”教程介绍了如何使用 .NET 的 Aspose.PDF 库从 PDF 文档中删除未使用的字体。本教程将指导您完成加载 PDF、识别和删除未使用的字体以及保存更新的 PDF 的过程。
 
-#### Q: Why would I want to remove unused fonts from a PDF document?
+#### 问：为什么我要从 PDF 文档中删除未使用的字体？
 
-A: Removing unused fonts from a PDF document can help reduce the file size and optimize the document for better performance. This is particularly useful when dealing with PDFs that contain embedded fonts that are not actually used in the document's content.
+答：从 PDF 文档中删除未使用的字体有助于减小文件大小并优化文档以获得更好的性能。这在处理包含文档内容中实际未使用的嵌入字体的 PDF 时特别有用。
 
-#### Q: How do I set up the document directory?
+#### 问：如何设置文档目录？
 
-A: To set up the document directory:
+A：设置文档目录：
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your PDF files are located.
+1. 代替`"YOUR DOCUMENT DIRECTORY"`在里面`dataDir`变量包含 PDF 文件所在目录的路径。
 
-#### Q: How do I remove unused fonts from a PDF document using the Aspose.PDF library?
+#### 问：如何使用 Aspose.PDF 库从 PDF 文档中删除未使用的字体？
 
-A: The tutorial guides you through the process step by step:
+答：本教程将逐步指导您完成整个过程：
 
-1. Open the PDF document using the `Document` class.
-2. Create a `TextFragmentAbsorber` object with `TextEditOptions` set to `FontReplace.RemoveUnusedFonts`.
-3. Accept the absorber to identify and remove unused fonts from the PDF.
-4. Iterate through all `TextFragments` and set the font to a desired font.
-5. Save the updated PDF document.
+1. 使用以下命令打开 PDF 文档`Document`班级。
+2. 创建一个`TextFragmentAbsorber`对象与`TextEditOptions`设置`FontReplace.RemoveUnusedFonts`.
+3. 接受吸收器以识别并删除 PDF 中未使用的字体。
+4. 遍历所有`TextFragments`并将字体设置为所需的字体。
+5. 保存更新的 PDF 文档。
 
-#### Q: What is the purpose of the `TextEditOptions.FontReplace.RemoveUnusedFonts` parameter?
+#### 问：这样做的目的是什么`TextEditOptions.FontReplace.RemoveUnusedFonts` parameter?
 
-A: The `TextEditOptions.FontReplace.RemoveUnusedFonts` parameter instructs the `TextFragmentAbsorber` to identify and remove unused fonts from the PDF document.
+答： 的`TextEditOptions.FontReplace.RemoveUnusedFonts`参数指示`TextFragmentAbsorber`识别并删除 PDF 文档中未使用的字体。
 
-#### Q: Can I replace unused fonts with a font of my choice?
+#### 问：我可以用我选择的字体替换未使用的字体吗？
 
-A: Yes, you can modify the code to replace unused fonts with a font of your choice. In the provided sample code, the font "Arial, Bold" is used as a replacement.
+答：是的，您可以修改代码，将未使用的字体替换为您选择的字体。在提供的示例代码中，使用字体“Arial, Bold”作为替换。
 
-#### Q: How does the `TextFragmentAbsorber` work to remove unused fonts?
+#### 问：如何`TextFragmentAbsorber` work to remove unused fonts?
 
-A: The `TextFragmentAbsorber` is configured with the `TextEditOptions.FontReplace.RemoveUnusedFonts` parameter, which identifies unused fonts within the text fragments of the PDF. After absorption, you can iterate through the `TextFragments` and set their fonts to desired replacement fonts.
+答： 的`TextFragmentAbsorber`配置为`TextEditOptions.FontReplace.RemoveUnusedFonts`参数，用于标识 PDF 文本片段中未使用的字体。吸收后，可以迭代`TextFragments`并将其字体设置为所需的替换字体。
 
-#### Q: What is the expected outcome of executing the provided code?
+#### 问：执行所提供的代码的预期结果是什么？
 
-A: By following the tutorial and running the provided C# code, you will remove unused fonts from the input PDF document and save the updated version as the output PDF file.
+答：通过遵循教程并运行提供的 C# 代码，您将从输入 PDF 文档中删除未使用的字体，并将更新的版本保存为输出 PDF 文件。
 
-#### Q: Can I modify the code to remove fonts only from specific pages or areas?
+#### 问：我可以修改代码以仅从特定页面或区域删除字体吗？
 
-A: The provided code focuses on removing unused fonts from the entire PDF document. If you want to target specific pages or regions for font removal, you would need to modify the approach and use more complex logic to identify unused fonts in those areas.
+答：提供的代码重点是从整个 PDF 文档中删除未使用的字体。如果您想要针对特定页面或区域进行字体删除，则需要修改方法并使用更复杂的逻辑来识别这些区域中未使用的字体。

@@ -1,59 +1,59 @@
 ---
-title: Get Watermark From PDF File
-linktitle: Get Watermark From PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract watermarks from PDF file with Aspose.PDF for .NET.
+title: الحصول على العلامة المائية من ملف PDF
+linktitle: الحصول على العلامة المائية من ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخراج العلامات المائية من ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 100
 url: /ar/net/programming-with-stamps-and-watermarks/get-watermark/
 ---
-In this tutorial, we will take you step by step on how to get a watermark from PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to iterate through the artifacts of a specific page and get the watermark type, text, and location.
+في هذا البرنامج التعليمي، سنأخذك خطوة بخطوة حول كيفية الحصول على علامة مائية من ملف PDF باستخدام Aspose.PDF لـ .NET. سنوضح لك كيفية استخدام كود مصدر C# المقدم للتكرار عبر العناصر الموجودة في صفحة معينة والحصول على نوع العلامة المائية والنص والموقع.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- بيئة تطوير .NET مثبتة.
+- تم تنزيل مكتبة Aspose.PDF الخاصة بـ .NET والإشارة إليها في مشروعك.
 
-## Step 2: Loading the PDF document
+## الخطوة 2: تحميل مستند PDF
 
-The first step is to load the existing PDF document into your project. Here's how:
+الخطوة الأولى هي تحميل مستند PDF الموجود في مشروعك. إليك الطريقة:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the PDF document
+//افتح مستند بي دي إف
 Document pdfDocument = new Document(dataDir + "watermark.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+تأكد من استبدال "دليل المستندات الخاص بك" بالمسار الفعلي للدليل الذي يوجد به مستند PDF الخاص بك.
 
-## Step 3: Getting the watermark
+## الخطوة 3: الحصول على العلامة المائية
 
-Now that you have loaded the PDF document, you can iterate through the specific page artifacts to get the watermark information. Here's how:
+الآن بعد أن قمت بتحميل مستند PDF، يمكنك التكرار من خلال عناصر الصفحة المحددة للحصول على معلومات العلامة المائية. إليك الطريقة:
 
 ```csharp
-// Browse artifacts and get watermark subtype, text and location
+// تصفح القطع الأثرية واحصل على النوع الفرعي للعلامة المائية والنص والموقع
 foreach(Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
      Console.WriteLine(artifact.Subtype + " " + artifact.Text + " " + artifact.Rectangle);
 }
 ```
 
-The above code loops through all artifacts on the first page of the PDF document and displays the subtype, text, and rectangle (location) of each watermark encountered.
+يتكرر الكود أعلاه عبر جميع العناصر الموجودة في الصفحة الأولى من مستند PDF ويعرض النوع الفرعي والنص والمستطيل (الموقع) لكل علامة مائية تمت مواجهتها.
 
-### Sample source code for Get Watermark using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للحصول على علامة مائية باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document pdfDocument = new Document( dataDir +  "watermark.pdf");
 
-// Iterate through and get tub-type, text and location of artifact
+// قم بالتكرار واحصل على نوع الحوض والنص وموقع القطعة الأثرية
 foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
 	Console.WriteLine(artifact.Subtype + " " + artifact.Text + " " + artifact.Rectangle);
@@ -61,48 +61,48 @@ foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have learned how to get watermark information from a PDF document using Aspose.PDF for .NET. Now you can use this knowledge to analyze and process watermarks in your PDF documents.
+تهنئة ! لقد تعلمت كيفية الحصول على معلومات العلامة المائية من مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام هذه المعرفة لتحليل العلامات المائية ومعالجتها في مستندات PDF الخاصة بك.
 
-### FAQ's for get watermark from PDF file
+### الأسئلة الشائعة للحصول على علامة مائية من ملف PDF
 
-#### Q: What is a watermark in a PDF document, and why would I need to extract its information?
+#### س: ما هي العلامة المائية في مستند PDF، ولماذا أحتاج إلى استخراج معلوماتها؟
 
-A: A watermark in a PDF document is a recognizable image or text that is superimposed onto the content of the document, often to indicate its status, ownership, or confidential nature. Extracting watermark information can be useful for analyzing document authenticity, identifying document source, or processing documents based on watermark presence.
+ج: العلامة المائية في مستند PDF هي صورة أو نص يمكن التعرف عليه يتم تثبيته على محتوى المستند، غالبًا للإشارة إلى حالته أو ملكيته أو طبيعته السرية. يمكن أن يكون استخراج معلومات العلامة المائية مفيدًا لتحليل صحة المستند أو تحديد مصدر المستند أو معالجة المستندات بناءً على وجود العلامة المائية.
 
-#### Q: How does the provided C# source code help in extracting watermark information from a PDF file?
+#### س: كيف يساعد كود المصدر C# المقدم في استخراج معلومات العلامة المائية من ملف PDF؟
 
-A: The provided code demonstrates how to load an existing PDF document, iterate through the artifacts of a specific page, and extract information about watermarks. It does this by accessing the `Subtype`, `Text`, and `Rectangle` properties of each artifact.
+ ج: يوضح الكود المقدم كيفية تحميل مستند PDF موجود، والتكرار من خلال العناصر الموجودة في صفحة معينة، واستخراج المعلومات حول العلامات المائية. ويتم ذلك عن طريق الوصول إلى`Subtype`, `Text` ، و`Rectangle` خصائص كل قطعة أثرية.
 
-#### Q: What does the `Subtype` property of an artifact represent?
+####  س: ماذا يفعل`Subtype` property of an artifact represent?
 
-A: The `Subtype` property of an artifact represents the type of the artifact. For watermarks, it indicates that the artifact is a watermark.
+ ج: ال`Subtype` خاصية قطعة أثرية تمثل نوع القطعة الأثرية. بالنسبة للعلامات المائية، فهو يشير إلى أن القطعة الأثرية هي علامة مائية.
 
-#### Q: How does the code determine the location (rectangle) of the watermark on the page?
+#### س: كيف يحدد الكود موقع (مستطيل) العلامة المائية في الصفحة؟
 
-A: The code uses the `Rectangle` property of the artifact to determine the location of the watermark. The `Rectangle` property represents the bounding rectangle of the artifact on the page.
+ ج: يستخدم الكود`Rectangle` خاصية القطعة الأثرية لتحديد موقع العلامة المائية. ال`Rectangle` تمثل الخاصية المستطيل المحيط بالقطعة الأثرية على الصفحة.
 
-#### Q: Can I modify the code to extract additional information about the watermark, such as its appearance or color?
+#### س: هل يمكنني تعديل الكود لاستخراج معلومات إضافية حول العلامة المائية مثل شكلها أو لونها؟
 
-A: Yes, you can modify the code to access other properties of the artifact, such as its appearance or color, if such information is available and relevant to your use case.
+ج: نعم، يمكنك تعديل الكود للوصول إلى خصائص أخرى للمنتج، مثل مظهره أو لونه، إذا كانت هذه المعلومات متاحة وذات صلة بحالة الاستخدام الخاصة بك.
 
-#### Q: Can I extract watermark information from multiple pages of a PDF document using this code?
+#### س: هل يمكنني استخراج معلومات العلامة المائية من صفحات متعددة من مستند PDF باستخدام هذا الرمز؟
 
-A: Yes, you can modify the code to iterate through artifacts on multiple pages by changing the page index in the loop to access artifacts from different pages.
+ج: نعم، يمكنك تعديل التعليمات البرمجية للتكرار عبر العناصر الموجودة على صفحات متعددة عن طريق تغيير فهرس الصفحة في الحلقة للوصول إلى العناصر من صفحات مختلفة.
 
-#### Q: What happens if there are no watermarks on the specified page?
+#### س: ماذا يحدث إذا لم تكن هناك علامات مائية على الصفحة المحددة؟
 
-A: If there are no watermarks on the specified page, the loop will not execute, and no watermark information will be displayed.
+ج: إذا لم تكن هناك علامات مائية على الصفحة المحددة، فلن يتم تنفيذ الحلقة، ولن يتم عرض معلومات العلامة المائية.
 
-#### Q: How can I use the extracted watermark information for further processing?
+#### س: كيف يمكنني استخدام معلومات العلامة المائية المستخرجة لمزيد من المعالجة؟
 
-A: The extracted watermark information can be used for various purposes, such as logging, analysis, reporting, or automation of specific actions based on the presence or properties of watermarks.
+ج: يمكن استخدام معلومات العلامة المائية المستخرجة لأغراض مختلفة، مثل التسجيل أو التحليل أو إعداد التقارير أو أتمتة إجراءات محددة بناءً على وجود العلامات المائية أو خصائصها.
 
-#### Q: Can I modify this code to extract information about other types of artifacts in a PDF document?
+#### س: هل يمكنني تعديل هذا الرمز لاستخراج معلومات حول أنواع أخرى من القطع الأثرية في مستند PDF؟
 
-A: Yes, you can modify the code to extract information about other types of artifacts by accessing their properties using a similar approach.
+ج: نعم، يمكنك تعديل التعليمات البرمجية لاستخراج معلومات حول أنواع أخرى من القطع الأثرية عن طريق الوصول إلى خصائصها باستخدام أسلوب مماثل.
 
-#### Q: How can I access watermarks that are not artifacts but are part of the PDF content?
+#### س: كيف يمكنني الوصول إلى العلامات المائية التي ليست عناصر فنية ولكنها جزء من محتوى PDF؟
 
-A: Watermarks that are not artifacts may be part of the PDF content itself, such as images or text. To extract information about these types of watermarks, you may need to analyze the PDF content and identify specific elements that represent the watermarks.
+ج: العلامات المائية التي ليست منتجات قد تكون جزءًا من محتوى PDF نفسه، مثل الصور أو النصوص. لاستخراج معلومات حول هذه الأنواع من العلامات المائية، قد تحتاج إلى تحليل محتوى PDF وتحديد عناصر محددة تمثل العلامات المائية.

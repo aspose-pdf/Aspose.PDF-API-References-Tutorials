@@ -1,28 +1,28 @@
 ---
-title: Load License From Stream Object
-linktitle: Load License From Stream Object
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to load a license from a Stream object using Aspose.PDF for .NET. Unlock additional features.
+title: Lisansı Akış Nesnesinden Yükle
+linktitle: Lisansı Akış Nesnesinden Yükle
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak bir Stream nesnesinden lisans yüklemek için adım adım kılavuz. Ek özelliklerin kilidini açın.
 type: docs
 weight: 30
 url: /tr/net/licensing-aspose-pdf/load-license-from-stream-object/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to load a license from a Stream object using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. By uploading a license, you can unlock additional features offered by Aspose.PDF.
+Bu eğitimde size Aspose.PDF for .NET kullanarak bir Stream nesnesinden lisansın nasıl yükleneceği konusunda adım adım bir kılavuz sunacağız. Aspose.PDF, PDF belgelerini programlı olarak oluşturmanıza, değiştirmenize ve dönüştürmenize olanak tanıyan güçlü bir kütüphanedir. Bir lisans yükleyerek Aspose.PDF tarafından sunulan ek özelliklerin kilidini açabilirsiniz.
 
-## Prerequisites
+## Önkoşullar
 
-Before you begin, make sure you have the following prerequisites in place:
+Başlamadan önce aşağıdaki önkoşulların mevcut olduğundan emin olun:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. .NET framework ile yüklenen Visual Studio.
+2. .NET için Aspose.PDF kütüphanesi.
 
-## Step 1: Project Setup
+## Adım 1: Proje Kurulumu
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+Başlamak için Visual Studio'da yeni bir proje oluşturun ve Aspose.PDF for .NET kitaplığına bir referans ekleyin. Kütüphaneyi Aspose resmi web sitesinden indirebilir ve makinenize kurabilirsiniz.
 
-## Step 2: Import the necessary namespaces
+## 2. Adım: Gerekli ad alanlarını içe aktarın
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+Aspose.PDF tarafından sağlanan sınıflara ve yöntemlere erişmek için gereken ad alanlarını C# kod dosyanıza aktarın:
 
 ```csharp
 using System;
@@ -30,124 +30,124 @@ using System.IO;
 using Aspose.Pdf;
 ```
 
-## Step 3: Defining the document directory
+## Adım 3: Belge dizinini tanımlama
 
-Before uploading the license, you must specify the path to the documents directory where your license file is located. For example :
+Lisansı yüklemeden önce lisans dosyanızın bulunduğu belgeler dizininin yolunu belirtmelisiniz. Örneğin :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Be sure to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the documents directory on your machine.
+ Değiştirdiğinizden emin olun`"YOUR DOCUMENT DIRECTORY"` makinenizdeki belgeler dizininin gerçek yolunu içerir.
 
-## Step 4: License Object Initialization
+## Adım 4: Lisans Nesnesinin Başlatılması
 
-After setting the document directory, you need to initialize the license object of Aspose.PDF. Use the following line of code to initialize the license object:
+Belge dizinini ayarladıktan sonra Aspose.PDF'in lisans nesnesini başlatmanız gerekir. Lisans nesnesini başlatmak için aşağıdaki kod satırını kullanın:
 
 ```csharp
 Aspose.Pdf.License license = new Aspose.Pdf.License();
 ```
 
-## Step 5: Loading the license from a Stream object
+## 5. Adım: Lisansı bir Stream nesnesinden yükleme
 
-Once the license object is initialized, you can load the license from a Stream object. Use the following lines of code to load the license:
+Lisans nesnesi başlatıldığında lisansı bir Stream nesnesinden yükleyebilirsiniz. Lisansı yüklemek için aşağıdaki kod satırlarını kullanın:
 
 ```csharp
 FileStream myStream = new FileStream("PATH_TO_LICENSE_FILE", FileMode.Open);
 license.SetLicense(myStream);
 ```
 
-Be sure to replace `"PATH_TO_LICENSE_FILE"` with the actual path to the license file on your machine.
+ Değiştirdiğinizden emin olun`"PATH_TO_LICENSE_FILE"` makinenizdeki lisans dosyasının gerçek yolunu içerir.
 
-## Step 6: License Upload Confirmation
+## Adım 6: Lisans Yükleme Onayı
 
-After loading the license, you can display a confirmation message to check if the license has been loaded successfully. Use the following line of code to display a message in the console:
+Lisansı yükledikten sonra lisansın başarıyla yüklenip yüklenmediğini kontrol etmek için bir onay mesajı görüntüleyebilirsiniz. Konsolda bir mesaj görüntülemek için aşağıdaki kod satırını kullanın:
 
 ```csharp
 Console.WriteLine("License loaded successfully.");
 ```
 
-### Sample source code for Load License From Stream Object using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Akış Nesnesinden Lisans Yükleme için örnek kaynak kodu 
 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Initialize license object
+// Lisans nesnesini başlat
 Aspose.Pdf.License license = new Aspose.Pdf.License();
-// Load license in FileStream
+// Lisansı FileStream'e yükleyin
 FileStream myStream = new FileStream("PATH_TO_LICENSE_FILE", FileMode.Open);
-// Set license
+//Lisansı ayarla
 license.SetLicense(myStream);
 Console.WriteLine("License set successfully.");
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, you learned how to load a license from a Stream object using Aspose.PDF for .NET. By following the described steps, you will be able to unlock the additional features offered by Aspose.PDF and use the library optimally in your C# projects.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir Stream nesnesinden nasıl lisans yükleyeceğinizi öğrendiniz. Açıklanan adımları takip ederek Aspose.PDF tarafından sunulan ek özelliklerin kilidini açabilecek ve kütüphaneyi C# projelerinizde en iyi şekilde kullanabileceksiniz.
 
-### FAQ's for load license from stream object
+### Akış nesnesinden lisans yüklemeye ilişkin SSS
 
-#### Q: What is the advantage of loading a license from a Stream object?
+#### S: Bir Stream nesnesinden lisans yüklemenin avantajı nedir?
 
-A: Loading a license from a Stream object allows you to provide the license data directly from a stream, which can be useful in scenarios where the license file is stored in memory or retrieved from a remote source.
+C: Bir Akış nesnesinden lisans yüklemek, lisans verilerini doğrudan bir akıştan sağlamanıza olanak tanır; bu, lisans dosyasının bellekte saklandığı veya uzak bir kaynaktan alındığı senaryolarda faydalı olabilir.
 
-#### Q: How do I import the necessary namespaces for Aspose.PDF?
+#### S: Aspose.PDF için gerekli ad alanlarını nasıl içe aktarabilirim?
 
-A: In your C# code file, use the `using` directive to import the required namespaces for accessing the classes and methods provided by Aspose.PDF and System.IO:
+ C: C# kod dosyanızda şunu kullanın:`using` Aspose.PDF ve System.IO tarafından sağlanan sınıflara ve yöntemlere erişim için gerekli ad alanlarını içe aktarma yönergesi:
 ```csharp
 using System;
 using System.IO;
 using Aspose.Pdf;
 ```
 
-#### Q: How do I define the document directory for the license file?
+#### S: Lisans dosyası için belge dizinini nasıl tanımlarım?
 
-A: Before uploading the license, specify the path to the documents directory where your license file is located. Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the documents directory on your machine.
+ C: Lisansı yüklemeden önce, lisans dosyanızın bulunduğu belgeler dizininin yolunu belirtin. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` makinenizdeki belgeler dizininin gerçek yolunu içerir.
 
-#### Q: How do I initialize the license object?
+#### S: Lisans nesnesini nasıl başlatabilirim?
 
-A: After setting the document directory, initialize the license object of Aspose.PDF using the following line of code:
+C: Belge dizinini ayarladıktan sonra aşağıdaki kod satırını kullanarak Aspose.PDF'in lisans nesnesini başlatın:
 ```csharp
 Aspose.Pdf.License license = new Aspose.Pdf.License();
 ```
 
-#### Q: How do I load the license from a Stream object?
+#### S: Lisansı bir Stream nesnesinden nasıl yüklerim?
 
-A: Load the license from a Stream object using the `SetLicense` method of the license object. Create a `FileStream` and pass it to the method. Replace `"PATH_TO_LICENSE_FILE"` with the actual path to the license file on your machine:
+ C: Lisansı kullanarak bir Stream nesnesinden yükleyin.`SetLicense` lisans nesnesinin yöntemi. Oluşturmak`FileStream`ve onu yönteme aktarın. Yer değiştirmek`"PATH_TO_LICENSE_FILE"` makinenizdeki lisans dosyasının gerçek yolu ile:
 ```csharp
 FileStream myStream = new FileStream("PATH_TO_LICENSE_FILE", FileMode.Open);
 license.SetLicense(myStream);
 ```
 
-#### Q: How do I confirm that the license has been loaded successfully?
+#### S: Lisansın başarıyla yüklendiğini nasıl doğrularım?
 
-A: After loading the license, display a confirmation message to check if the license has been loaded successfully. Use the following line of code to display a message in the console:
+C: Lisansı yükledikten sonra lisansın başarıyla yüklenip yüklenmediğini kontrol etmek için bir onay mesajı görüntüleyin. Konsolda bir mesaj görüntülemek için aşağıdaki kod satırını kullanın:
 ```csharp
 Console.WriteLine("License loaded successfully.");
 ```
 
-#### Q: Can I use a Stream from a remote source to load the license?
+#### S: Lisansı yüklemek için uzak bir kaynaktan Akış kullanabilir miyim?
 
-A: Yes, you can use a `MemoryStream` or other stream types to load a license from a remote source or from memory.
+ C: Evet, kullanabilirsiniz`MemoryStream` Lisansı uzak bir kaynaktan veya bellekten yüklemek için veya diğer akış türlerini kullanın.
 
-#### Q: Do I need to close the FileStream after loading the license?
+#### S: Lisansı yükledikten sonra FileStream'i kapatmam gerekir mi?
 
-A: Yes, it is recommended to close the `FileStream` or release the stream resources after loading the license to ensure proper memory management.
+ C: Evet, kapatılması önerilir.`FileStream` veya uygun bellek yönetimini sağlamak için lisansı yükledikten sonra akış kaynaklarını serbest bırakın.
 
-#### Q: Can I load the license from a byte array instead of a FileStream?
+#### S: Lisansı FileStream yerine bir bayt dizisinden yükleyebilir miyim?
 
-A: Yes, you can convert a byte array to a `MemoryStream` and then use the `SetLicense` method to load the license from the stream.
+ C: Evet, bir bayt dizisini bir diziye dönüştürebilirsiniz.`MemoryStream` ve sonra şunu kullanın:`SetLicense` Lisansı akıştan yükleme yöntemi.
 
-#### Q: Is the loaded license valid for the entire application?
+#### S: Yüklenen lisans uygulamanın tamamı için geçerli mi?
 
-A: Yes, once the license is loaded using the `SetLicense` method, it remains active for the entire application domain and enables the additional features for all instances of Aspose.PDF objects.
+ C: Evet, lisans kullanılarak yüklendikten sonra`SetLicense` yöntemiyle tüm uygulama alanı için aktif kalır ve Aspose.PDF nesnelerinin tüm örnekleri için ek özellikleri etkinleştirir.
 
-#### Q: How do I learn more about licensing in Aspose.PDF?
+#### S: Aspose.PDF'de lisanslama hakkında nasıl daha fazla bilgi edinebilirim?
 
-A: For more information about licensing, pricing, and related details, visit the [Aspose.PDF Licensing](https://purchase.aspose.com/pricing/pdf/net) page.
+C: Lisanslama, fiyatlandırma ve ilgili ayrıntılar hakkında daha fazla bilgi için şu adresi ziyaret edin:[Aspose.PDF Lisanslama](https://purchase.aspose.com/pricing/pdf/net) sayfa.
 
-#### Q: Can I use a trial version of Aspose.PDF before loading a license?
+#### S: Lisans yüklemeden önce Aspose.PDF'in deneme sürümünü kullanabilir miyim?
 
-A: Yes, you can use the trial version of Aspose.PDF to evaluate its features. However, to unlock the full potential of the library, you need to load a valid license.
+C: Evet, özelliklerini değerlendirmek için Aspose.PDF'in deneme sürümünü kullanabilirsiniz. Ancak kütüphanenin tüm potansiyelini açığa çıkarmak için geçerli bir lisans yüklemeniz gerekir.

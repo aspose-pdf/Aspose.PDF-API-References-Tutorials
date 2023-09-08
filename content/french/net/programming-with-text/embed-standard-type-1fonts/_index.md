@@ -1,50 +1,50 @@
 ---
-title: Embed Standard Type 1Fonts In PDF File
-linktitle: Embed Standard Type 1Fonts In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to embed standard Type 1 fonts in PDF file using Aspose.PDF for .NET.
+title: Intégrer des polices standard de type 1 dans un fichier PDF
+linktitle: Intégrer des polices standard de type 1 dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment intégrer des polices standard de type 1 dans un fichier PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 140
 url: /fr/net/programming-with-text/embed-standard-type-1fonts/
 ---
-This tutorial will guide you through the process of embedding standard Type 1 fonts in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Ce didacticiel vous guidera tout au long du processus d'intégration des polices standard de type 1 dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Le code source C# fourni montre les étapes nécessaires.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Exigences
+Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio ou tout autre compilateur C# installé sur votre machine.
+- Aspose.PDF pour la bibliothèque .NET. Vous pouvez le télécharger depuis le site officiel d'Aspose ou utiliser un gestionnaire de packages comme NuGet pour l'installer.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Étape 1 : Configurer le projet
+1. Créez un nouveau projet C# dans votre environnement de développement préféré.
+2. Ajoutez une référence à la bibliothèque Aspose.PDF pour .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to embed standard Type 1 fonts, add the following using directive at the top of the file:
+## Étape 2 : Importer les espaces de noms requis
+Dans le fichier de code dans lequel vous souhaitez intégrer les polices standard de type 1, ajoutez la directive using suivante en haut du fichier :
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Étape 3 : Définir le répertoire des documents
+ Dans le code, localisez la ligne qui dit`string dataDir = "YOUR DOCUMENT DIRECTORY";` et remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin d'accès au répertoire où sont stockés vos documents.
 
-## Step 4: Load the existing PDF document
-Load an existing PDF document using the `Document` constructor and passing the path to the input PDF file.
+## Étape 4 : Charger le document PDF existant
+ Chargez un document PDF existant à l'aide du`Document`constructeur et en transmettant le chemin d’accès au fichier PDF d’entrée.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-## Step 5: Set the EmbedStandardFonts property
-Set the `EmbedStandardFonts` property of the document to `true` in order to enable embedding standard Type 1 fonts.
+## Étape 5 : définissez la propriété EmbedStandardFonts
+ Met le`EmbedStandardFonts` propriété du document à`true` afin de permettre l'intégration de polices standard de type 1.
 
 ```csharp
 pdfDocument.EmbedStandardFonts = true;
 ```
 
-## Step 6: Embed fonts in each page
-Loop through each page of the PDF document and check if the fonts are already embedded. If not, set the `IsEmbedded` property to `true` to embed the font.
+## Étape 6 : Incorporer des polices dans chaque page
+ Parcourez chaque page du document PDF et vérifiez si les polices sont déjà intégrées. Sinon, réglez le`IsEmbedded` propriété à`true` pour intégrer la police.
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -62,20 +62,20 @@ foreach(Page page in pdfDocument.Pages)
 }
 ```
 
-## Step 7: Save the updated PDF document
-Save the updated PDF document using the `Save` method of the `Document` object, specifying the output file path.
+## Étape 7 : Enregistrez le document PDF mis à jour
+ Enregistrez le document PDF mis à jour à l'aide du`Save` méthode du`Document` objet, spécifiant le chemin du fichier de sortie.
 
 ```csharp
 pdfDocument.Save(dataDir + "EmbeddedFonts-updated_out.pdf");
 ```
 
-### Sample source code for Embed Standard Type 1Fonts using Aspose.PDF for .NET 
+### Exemple de code source pour intégrer des polices standard de type 1 à l'aide d'Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load an existing PDF Document
+// Charger un document PDF existant
 Document pdfDocument = new Document(dataDir + "input.pdf");
-// Set EmbedStandardFonts property of document
+// Définir la propriété EmbedStandardFonts du document
 pdfDocument.EmbedStandardFonts = true;
 foreach (Aspose.Pdf.Page page in pdfDocument.Pages)
 {
@@ -83,7 +83,7 @@ foreach (Aspose.Pdf.Page page in pdfDocument.Pages)
 	{
 		foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
 		{
-			// Check if font is already embedded
+			// Vérifiez si la police est déjà intégrée
 			if (!pageFont.IsEmbedded)
 			{
 				pageFont.IsEmbedded = true;
@@ -95,46 +95,46 @@ pdfDocument.Save(dataDir + "EmbeddedFonts-updated_out.pdf");
 ```
 
 ## Conclusion
-You have successfully embedded standard Type 1 fonts in a PDF document using Aspose.PDF for .NET. The updated PDF file with embedded fonts has been saved at the specified output file path.
+Vous avez intégré avec succès des polices standard de type 1 dans un document PDF à l'aide d'Aspose.PDF pour .NET. Le fichier PDF mis à jour avec les polices intégrées a été enregistré dans le chemin du fichier de sortie spécifié.
 
-### FAQ's
+### FAQ
 
-#### Q: What is the focus of this tutorial?
+#### Q : Quel est l'objet de ce didacticiel ?
 
-A: This tutorial provides a step-by-step guide to embedding standard Type 1 fonts in a PDF file using the Aspose.PDF for .NET library. The accompanying C# source code demonstrates the necessary procedures.
+R : Ce didacticiel fournit un guide étape par étape pour intégrer des polices standard de type 1 dans un fichier PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Le code source C# fourni illustre les procédures nécessaires.
 
-#### Q: Which namespace do I need to import?
+#### Q : Quel espace de noms dois-je importer ?
 
-A: In the code file where you intend to embed standard Type 1 fonts, include the following namespace at the top of the file:
+R : Dans le fichier de code dans lequel vous souhaitez intégrer les polices standard de type 1, incluez l'espace de noms suivant en haut du fichier :
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-#### Q: How do I specify the document directory?
+#### Q : Comment spécifier le répertoire des documents ?
 
-A: Locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` in the code and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ R : Localisez la ligne`string dataDir = "YOUR DOCUMENT DIRECTORY";` dans le code et remplacez`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel vers votre répertoire de documents.
 
-#### Q: How do I load an existing PDF document?
+#### Q : Comment charger un document PDF existant ?
 
-A: In Step 4, you'll load an existing PDF document using the `Document` constructor and providing the path to the input PDF file.
+ R : À l'étape 4, vous chargerez un document PDF existant à l'aide du`Document` constructeur et fournissant le chemin d’accès au fichier PDF d’entrée.
 
-#### Q: What is the purpose of the `EmbedStandardFonts` property?
+####  Q : Quel est le but du`EmbedStandardFonts` property?
 
-A: In Step 5, you'll set the `EmbedStandardFonts` property of the document to `true`, enabling the embedding of standard Type 1 fonts.
+ R : À l'étape 5, vous définirez le`EmbedStandardFonts` propriété du document à`true`, permettant l'intégration de polices standard de type 1.
 
-#### Q: How do I embed fonts in each page?
+#### Q : Comment intégrer des polices dans chaque page ?
 
-A: Step 6 involves looping through each page of the PDF document. For fonts that are not already embedded, you'll set the `IsEmbedded` property to `true` to embed the font.
+ R : L'étape 6 consiste à parcourir chaque page du document PDF. Pour les polices qui ne sont pas déjà intégrées, vous définirez le`IsEmbedded` propriété à`true` pour intégrer la police.
 
-#### Q: How do I save the updated PDF document?
+#### Q : Comment puis-je enregistrer le document PDF mis à jour ?
 
-A: In Step 7, you'll use the `Save` method of the `Document` object to save the updated PDF document, specifying the output file path.
+ R : À l'étape 7, vous utiliserez le`Save` méthode du`Document` objet pour enregistrer le document PDF mis à jour, en spécifiant le chemin du fichier de sortie.
 
-#### Q: What is the significance of embedding fonts in a PDF document?
+#### Q : Quelle est l’importance de l’intégration de polices dans un document PDF ?
 
-A: Embedding fonts ensures that the fonts used in the PDF are included within the file itself. This guarantees consistent display of text even if the recipient's system does not have the required fonts installed.
+R : L'intégration de polices garantit que les polices utilisées dans le PDF sont incluses dans le fichier lui-même. Cela garantit un affichage cohérent du texte même si le système du destinataire ne dispose pas des polices requises installées.
 
-#### Q: What's the main takeaway from this tutorial?
+#### Q : Quel est le principal point à retenir de ce didacticiel ?
 
-A: By following this tutorial, you've gained the knowledge and skills to embed standard Type 1 fonts in a PDF document using Aspose.PDF for .NET. This ensures the proper rendering of text across different systems.
+R : En suivant ce didacticiel, vous avez acquis les connaissances et les compétences nécessaires pour intégrer des polices standard de type 1 dans un document PDF à l'aide d'Aspose.PDF pour .NET. Cela garantit le rendu correct du texte sur différents systèmes.

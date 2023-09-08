@@ -1,107 +1,107 @@
 ---
-title: Get XFAProperties
-linktitle: Get XFAProperties
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get XFA properties of form fields in your PDF documents with Aspose.PDF for .NET.
+title: Skaffa XFAProperties
+linktitle: Skaffa XFAProperties
+second_title: Aspose.PDF för .NET API Referens
+description: Få enkelt XFA-egenskaper för formulärfält i dina PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 160
 url: /sv/net/programming-with-forms/get-xfaproperties/
 ---
-In this tutorial, we will show you how to get XFA properties of form fields in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+I den här handledningen kommer vi att visa dig hur du får XFA-egenskaper för formulärfält i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara C#-källkoden steg för steg för att guida dig genom denna process.
 
-## Step 1: Preparation
+## Steg 1: Förberedelser
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Se till att du har importerat de nödvändiga biblioteken och ange sökvägen till din dokumentkatalog:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the XFA form
+## Steg 2: Ladda XFA-formuläret
 
-Load the XFA form from the PDF document:
+Ladda XFA-formuläret från PDF-dokumentet:
 
 ```csharp
 Document doc = new Document(dataDir + "GetXFAProperties.pdf");
 ```
 
-## Step 3: Get field names
+## Steg 3: Få fältnamn
 
-Get XFA field names:
+Få XFA-fältnamn:
 
 ```csharp
 string[] names = doc.Form.XFA.FieldNames;
 ```
 
-## Step 4: Set Field Values
+## Steg 4: Ställ in fältvärden
 
-Set values for XFA fields:
+Ange värden för XFA-fält:
 
 ```csharp
 doc.Form.XFA[names[0]] = "Field 0";
 doc.Form.XFA[names[1]] = "Field 1";
 ```
 
-## Step 5: Get fields position
+## Steg 5: Få fältposition
 
-Get the position of XFA fields:
+Få positionen för XFA-fält:
 
 ```csharp
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["x"].Value);
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["y"].Value);
 ```
 
-## Step 6: Save the updated document
+## Steg 6: Spara det uppdaterade dokumentet
 
-Save the updated PDF document:
+Spara det uppdaterade PDF-dokumentet:
 
 ```csharp
 dataDir = dataDir + "Filled_XFA_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Get XFAProperties using Aspose.PDF for .NET 
+### Exempel på källkod för Get XFAProperties med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load XFA form
+// Ladda XFA-formuläret
 Document doc = new Document(dataDir + "GetXFAProperties.pdf");
 string[] names = doc.Form.XFA.FieldNames;
-// Set field values
+// Ställ in fältvärden
 doc.Form.XFA[names[0]] = "Field 0";
 doc.Form.XFA[names[1]] = "Field 1";
-// Get field position
+// Få fältposition
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["x"].Value);
-// Get field position
+// Få fältposition
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["y"].Value);
 dataDir = dataDir + "Filled_XFA_out.pdf";
-// Save the updated document
+// Spara det uppdaterade dokumentet
 doc.Save(dataDir);
 Console.WriteLine("\nXFA fields properties retrieved successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we learned how to get XFA properties of form fields in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily extract XFA field information, such as positions, from PDF documents using Aspose.PDF.
+I den här handledningen lärde vi oss hur man får XFA-egenskaper för formulärfält i ett PDF-dokument med Aspose.PDF för .NET. Genom att följa dessa steg kan du enkelt extrahera XFA-fältinformation, såsom positioner, från PDF-dokument med Aspose.PDF.
 
 ### FAQ's
 
-#### Q: What are XFA properties in a PDF document?
+#### F: Vad är XFA-egenskaper i ett PDF-dokument?
 
-A: XFA (XML Forms Architecture) properties in a PDF document refer to the XML-based structure used to define dynamic forms with complex layouts and interactive features. XFA allows for rich form design and data handling in PDF documents, enabling features such as calculations, validations, and dynamic content. Aspose.PDF for .NET provides APIs to work with XFA forms and retrieve various properties, including field names, values, positions, and more.
+S: XFA-egenskaper (XML Forms Architecture) i ett PDF-dokument hänvisar till den XML-baserade strukturen som används för att definiera dynamiska formulär med komplexa layouter och interaktiva funktioner. XFA möjliggör rik formdesign och datahantering i PDF-dokument, vilket möjliggör funktioner som beräkningar, valideringar och dynamiskt innehåll. Aspose.PDF för .NET tillhandahåller API:er för att arbeta med XFA-formulär och hämta olika egenskaper, inklusive fältnamn, värden, positioner och mer.
 
-#### Q: Can I modify XFA properties using Aspose.PDF for .NET?
+#### F: Kan jag ändra XFA-egenskaper med Aspose.PDF för .NET?
 
-A: Yes, you can modify XFA properties using Aspose.PDF for .NET. The API allows you to access and update the values of XFA form fields programmatically. You can set new values for XFA fields, update their positions, change appearances, and perform other actions to customize the XFA form dynamically.
+S: Ja, du kan ändra XFA-egenskaper med Aspose.PDF för .NET. API:et låter dig komma åt och uppdatera värdena för XFA-formulärfält programmatiskt. Du kan ställa in nya värden för XFA-fält, uppdatera deras positioner, ändra utseende och utföra andra åtgärder för att anpassa XFA-formuläret dynamiskt.
 
-#### Q: How can I determine if a PDF document contains XFA forms?
+#### F: Hur kan jag avgöra om ett PDF-dokument innehåller XFA-formulär?
 
-A: To determine if a PDF document contains XFA forms, you can check whether the `Form` property of the `Document` object is null or not. If the document contains XFA forms, the `Form` property will be available, and you can proceed with further XFA-related operations.
+ S: För att avgöra om ett PDF-dokument innehåller XFA-formulär kan du kontrollera om`Form` egendom av`Document`objektet är null eller inte. Om dokumentet innehåller XFA-formulär,`Form` egendom kommer att vara tillgänglig och du kan fortsätta med ytterligare XFA-relaterade operationer.
 
-#### Q: Are XFA forms supported in all PDF viewers and applications?
+#### F: Stöds XFA-formulär i alla PDF-läsare och applikationer?
 
-A: While XFA forms provide rich interactive form features, they may not be supported in all PDF viewers and applications. Some PDF viewers may only support AcroForm-based forms, which are another form type used in PDF documents. It's essential to consider the compatibility of XFA forms with the target audience and the intended use of the PDF document.
+S: Även om XFA-formulär ger rika interaktiva formulärfunktioner, kanske de inte stöds i alla PDF-läsare och applikationer. Vissa PDF-läsare kanske bara stöder AcroForm-baserade formulär, som är en annan formulärtyp som används i PDF-dokument. Det är viktigt att överväga XFA-formulärens kompatibilitet med målgruppen och den avsedda användningen av PDF-dokumentet.
 
-#### Q: Can I convert XFA forms to AcroForm-based forms using Aspose.PDF for .NET?
+#### F: Kan jag konvertera XFA-formulär till AcroForm-baserade formulär med Aspose.PDF för .NET?
 
-A: Aspose.PDF for .NET provides capabilities to convert XFA forms to AcroForm-based forms. By converting XFA forms to AcroForm, you can ensure broader compatibility with various PDF viewers and applications that may not fully support XFA. You can follow the appropriate APIs and techniques to perform the conversion as per your requirements.
+S: Aspose.PDF för .NET ger möjlighet att konvertera XFA-formulär till AcroForm-baserade formulär. Genom att konvertera XFA-formulär till AcroForm kan du säkerställa bredare kompatibilitet med olika PDF-läsare och applikationer som kanske inte fullt ut stöder XFA. Du kan följa lämpliga API:er och tekniker för att utföra konverteringen enligt dina krav.

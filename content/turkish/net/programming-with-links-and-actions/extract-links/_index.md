@@ -1,42 +1,42 @@
 ---
-title: Extract Links In PDF File
-linktitle: Extract Links In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily extract links in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasındaki Bağlantıları Çıkart
+linktitle: PDF Dosyasındaki Bağlantıları Çıkart
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak PDF dosyasındaki bağlantıları kolayca çıkarın.
 type: docs
 weight: 50
 url: /tr/net/programming-with-links-and-actions/extract-links/
 ---
-Extracting links in PDF file allows you to recover all the hypertext links present in the document. With Aspose.PDF for .NET, you can easily extract these links by following the following source code:
+PDF dosyasındaki bağlantıların çıkarılması, belgede bulunan tüm köprü metni bağlantılarını kurtarmanıza olanak tanır. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu takip ederek bu bağlantıları kolayca çıkarabilirsiniz:
 
-## Step 1: Import Required Libraries
+## 1. Adım: Gerekli Kitaplıkları İçe Aktarın
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Başlamadan önce C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. Gerekli ithalat direktifi aşağıdadır:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Annotations;
 ```
 
-## Step 2: Set path to documents folder
+## 2. Adım: Belgeler klasörünün yolunu ayarlayın
 
-In this step, you need to specify the path to the folder containing the PDF file from which you want to extract the links. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ Bu adımda, bağlantıları çıkarmak istediğiniz PDF dosyasını içeren klasörün yolunu belirtmeniz gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"`belgeler klasörünüzün gerçek yolunu içeren aşağıdaki kodda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## 3. Adım: PDF belgesini açın
 
-We will open the PDF document using the `Document` class. Here is the corresponding code:
+PDF belgesini kullanarak açacağız.`Document` sınıf. İşte ilgili kod:
 
 ```csharp
 Document document = new Document(dataDir + "ExtractLinks.pdf");
 ```
 
-## Step 4: Extract links
+## 4. Adım: Bağlantıları çıkarın
 
-In this step, we will extract the links present in the PDF document using the `AnnotationSelector` class. Here is the corresponding code:
+ Bu adımda, PDF belgesinde bulunan bağlantıları kullanarak çıkaracağız.`AnnotationSelector` sınıf. İşte ilgili kod:
 
 ```csharp
 Page page = document.Pages[1];
@@ -46,73 +46,73 @@ IList<Annotation> list = selector. Selected;
 Annotation annotation = (Annotation)list[0];
 ```
 
-## Step 5: Save the updated document
+## 5. Adım: Güncellenen belgeyi kaydedin
 
-Now let's save the updated PDF file using the `Save` method of the `document` object. Here is the corresponding code:
+ Şimdi güncellenen PDF dosyasını kullanarak kaydedelim.`Save` yöntemi`document` nesne. İşte ilgili kod:
 
 ```csharp
 dataDir = dataDir + "ExtractLinks_out.pdf";
 document. Save(dataDir);
 ```
 
-### Sample source code for Extract Links using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Bağlantıları Çıkarma için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document document = new Document(dataDir+ "ExtractLinks.pdf");
-// Extract actions
+// Eylemleri çıkar
 Page page = document.Pages[1];
 AnnotationSelector selector = new AnnotationSelector(new LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
 page.Accept(selector);
 IList<Annotation> list = selector.Selected;
 Annotation annotation = (Annotation)list[0];
 dataDir = dataDir + "ExtractLinks_out.pdf";
-// Save updated document
+// Güncellenen belgeyi kaydet
 document.Save(dataDir);
 Console.WriteLine("\nLinks extracted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You now have a step-by-step guide to extract links from a PDF document using Aspose.PDF for .NET. You can use this code to retrieve all the hyperlinks present in the document.
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesinden bağlantıları ayıklamak için adım adım bir kılavuza sahipsiniz. Belgede bulunan tüm köprüleri almak için bu kodu kullanabilirsiniz.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced link extraction features.
+Gelişmiş bağlantı çıkarma özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
 
-### FAQ's for extract links in PDF file
+### PDF dosyasındaki bağlantıları ayıklamak için SSS
 
-#### Q: What is link extraction in a PDF file?
+#### S: PDF dosyasındaki bağlantı çıkarma nedir?
 
-A: Link extraction in a PDF file refers to the process of recovering all the hypertext links present within the document. This allows you to retrieve URLs, internal document links, and other interactive elements.
+C: Bir PDF dosyasındaki bağlantı çıkarma, belgede bulunan tüm köprü metni bağlantılarının kurtarılması işlemini ifade eder. Bu, URL'leri, dahili belge bağlantılarını ve diğer etkileşimli öğeleri almanızı sağlar.
 
-#### Q: How can link extraction benefit my PDF document analysis?
+#### S: Bağlantı çıkarma, PDF belge analizime nasıl fayda sağlayabilir?
 
-A: Link extraction is valuable for various purposes, such as content validation, data mining, and analysis. It enables you to identify and catalog all the links within a PDF document for further exploration.
+C: Bağlantı çıkarma, içerik doğrulama, veri madenciliği ve analiz gibi çeşitli amaçlar için değerlidir. Daha fazla araştırma için bir PDF belgesindeki tüm bağlantıları tanımlamanıza ve kataloglamanıza olanak tanır.
 
-#### Q: How does Aspose.PDF for .NET support link extraction?
+#### S: Aspose.PDF for .NET bağlantı çıkarmayı nasıl destekler?
 
-A: Aspose.PDF for .NET provides powerful APIs to extract links from PDF documents with ease. The step-by-step tutorial outlined in this guide demonstrates how to extract links using C#.
+C: Aspose.PDF for .NET, PDF belgelerinden bağlantıları kolaylıkla çıkarmak için güçlü API'ler sağlar. Bu kılavuzda özetlenen adım adım eğitim, C# kullanarak bağlantıların nasıl çıkarılacağını gösterir.
 
-#### Q: Can I extract specific types of links, such as hyperlinks or internal document links?
+#### S: Köprüler veya dahili belge bağlantıları gibi belirli bağlantı türlerini çıkarabilir miyim?
 
-A: Yes, you can selectively extract specific types of links using the `AnnotationSelector` class. This allows you to filter and retrieve the desired links based on your requirements.
+ C: Evet, belirli türdeki bağlantıları seçerek çıkarabilirsiniz.`AnnotationSelector` sınıf. Bu, gereksinimlerinize göre istediğiniz bağlantıları filtrelemenize ve almanıza olanak tanır.
 
-#### Q: Is it possible to extract links from specific pages of a PDF document?
+#### S: Bir PDF belgesinin belirli sayfalarından bağlantıları çıkarmak mümkün müdür?
 
-A: Absolutely! You can extract links from specific pages of a PDF document by specifying the target page using the `Document.Pages` collection. This enables you to focus on particular sections.
+ C: Kesinlikle! Hedef sayfayı belirterek, bir PDF belgesinin belirli sayfalarından bağlantıları çıkarabilirsiniz.`Document.Pages` Toplamak. Bu, belirli bölümlere odaklanmanızı sağlar.
 
-#### Q: What format are the extracted links returned in?
+#### S: Çıkarılan bağlantılar hangi formatta döndürülür?
 
-A: The extracted links are returned as instances of the `Annotation` class. You can process and analyze these annotations to retrieve link details, including target URLs and link types.
+ C: Çıkarılan bağlantılar, örnekleri olarak döndürülür.`Annotation` sınıf. Hedef URL'ler ve bağlantı türleri de dahil olmak üzere bağlantı ayrıntılarını almak için bu ek açıklamaları işleyebilir ve analiz edebilirsiniz.
 
-#### Q: How can I verify that link extraction is accurate?
+#### S: Bağlantı çıkarmanın doğru olduğunu nasıl doğrulayabilirim?
 
-A: By following the tutorial and sample code provided, you can ensure accurate link extraction. You can analyze the extracted annotations and validate the URLs and link attributes.
+C: Sağlanan eğitimi ve örnek kodu takip ederek doğru bağlantı çıkarmayı sağlayabilirsiniz. Çıkarılan ek açıklamaları analiz edebilir ve URL'leri ve bağlantı özelliklerini doğrulayabilirsiniz.
 
-#### Q: Are there any limitations when extracting links?
+#### S: Bağlantıları çıkarırken herhangi bir sınırlama var mı?
 
-A: While link extraction is a powerful feature, it's important to consider the structure of the PDF document. Links embedded within images, tables, or multimedia content may require additional handling.
+C: Bağlantı çıkarma güçlü bir özellik olsa da PDF belgesinin yapısını dikkate almak önemlidir. Resimlere, tablolara veya multimedya içeriğine gömülü bağlantılar ek işlem gerektirebilir.
 
-#### Q: Can I extract links from password-protected PDF documents?
+#### S: Parola korumalı PDF belgelerinden bağlantıları çıkarabilir miyim?
 
-A: Aspose.PDF for .NET can extract links from password-protected PDF documents as long as you provide the necessary authentication credentials when opening the document.
+C: Aspose.PDF for .NET, belgeyi açarken gerekli kimlik doğrulama bilgilerini sağladığınız sürece parola korumalı PDF belgelerinden bağlantıları çıkarabilir.

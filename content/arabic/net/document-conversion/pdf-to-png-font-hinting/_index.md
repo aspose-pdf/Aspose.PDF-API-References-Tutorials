@@ -1,81 +1,81 @@
 ---
-title: PDF To PNG Font Hinting
-linktitle: PDF To PNG Font Hinting
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert PDF to PNG with font hinting using Aspose.PDF for .NET.
+title: PDF إلى PNG تلميح الخط
+linktitle: PDF إلى PNG تلميح الخط
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لتحويل PDF إلى PNG مع تلميحات الخط باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 160
 url: /ar/net/document-conversion/pdf-to-png-font-hinting/
 ---
-In this tutorial, we'll walk you through the process of converting a PDF to PNG images using Aspose.PDF for .NET, while enabling font hinting. Font hinting is a technique that improves the readability of small fonts. By following the steps below, you will be able to convert every page of the PDF to a PNG image with font hinting.
+في هذا البرنامج التعليمي، سنرشدك خلال عملية تحويل ملف PDF إلى صور PNG باستخدام Aspose.PDF لـ .NET، مع تمكين تلميحات الخطوط. تعتبر تلميحات الخطوط تقنية تعمل على تحسين إمكانية قراءة الخطوط الصغيرة. باتباع الخطوات الموضحة أدناه، ستتمكن من تحويل كل صفحة من ملف PDF إلى صورة PNG مع تلميح للخط.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## المتطلبات الأساسية
+قبل البدء، تأكد من استيفاء المتطلبات الأساسية التالية:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- المعرفة الأساسية بلغة البرمجة C#.
+- مكتبة Aspose.PDF لـ .NET مثبتة على نظامك.
+- بيئة تطوير مثل Visual Studio.
 
-## Step 1: Opening the source PDF document
-In this step, we will open the source PDF file using Aspose.PDF for .NET. Follow the code below:
+## الخطوة 1: فتح مستند PDF المصدر
+في هذه الخطوة، سنقوم بفتح ملف PDF المصدر باستخدام Aspose.PDF لـ .NET. اتبع الكود أدناه:
 
 ```csharp
-// Path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Open the document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+ تأكد من استبدال`"YOUR DOCUMENTS DIRECTORY"` مع الدليل الفعلي الذي يوجد به ملف PDF الخاص بك.
 
-## Step 2: Enable font hinting
-After opening the PDF file, we will enable font hinting using the rendering options. Use the following code:
+## الخطوة 2: تمكين تلميحات الخط
+بعد فتح ملف PDF، سنقوم بتمكين تلميحات الخط باستخدام خيارات العرض. استخدم الكود التالي:
 
 ```csharp
-// Create rendering options to enable font hinting
+// قم بإنشاء خيارات العرض لتمكين تلميحات الخط
 RenderingOptions opts = new RenderingOptions();
 opts. UseFontHinting = true;
 ```
 
-## Step 3: Convert to PNG images
-Now we are going to convert each page of the PDF to a PNG image with font hinting. Use the following code:
+## الخطوة 3: تحويل إلى صور PNG
+سنقوم الآن بتحويل كل صفحة من ملف PDF إلى صورة PNG مع تلميح الخط. استخدم الكود التالي:
 
 ```csharp
 for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 {
      using (FileStream imageStream = new FileStream(dataDir + "image" + pageCount + "_out" + ".png", FileMode.Create))
      {
-         // Create a PNGDevice object with the specified attributes
-         // Width, Height, Resolution, Quality
-         // Quality [0-100], 100 is the maximum
-         // Create a Resolution object
+         // قم بإنشاء كائن PNGDevice بالسمات المحددة
+         // العرض، الارتفاع، الدقة، الجودة
+         // الجودة [0-100]، 100 هو الحد الأقصى
+         // إنشاء كائن القرار
          Resolution resolution = new Resolution(300);
          PngDevice pngDevice = new PngDevice(resolution);
-         // Set predefined rendering options
+         // قم بتعيين خيارات العرض المحددة مسبقًا
          pngDevice.RenderingOptions = opts;
 
-         // Convert a specific page and save the image to the stream
+         // تحويل صفحة معينة وحفظ الصورة في الدفق
          pngDevice.Process(pdfDocument.Pages[pageCount], imageStream);
 
-         // Close the stream
+         // أغلق الدفق
          imageStream.Close();
      }
 }
 ```
 
-The code above converts each page of the PDF to a PNG image with font hinting and saves each image as a separate PNG file.
+يقوم الكود أعلاه بتحويل كل صفحة من ملف PDF إلى صورة PNG مع تلميح الخط وحفظ كل صورة كملف PNG منفصل.
 
-### Example source code for PDF to PNGFont Hinting using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لـ PDF إلى PNGFont Hinting باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 try
 {
 	
-	// The path to the documents directory.
+	// المسار إلى دليل المستندات.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Open document
+	// افتح المستند
 	Document pdfDocument = new Document(dataDir + "input.pdf");
-	// Create Aspose.Pdf.RenderingOptions to enable font hinting
+	// قم بإنشاء Aspose.Pdf.RenderingOptions لتمكين تلميحات الخط
 	RenderingOptions opts = new RenderingOptions();
 	opts.UseFontHinting = true;
 	
@@ -83,19 +83,19 @@ try
 	{
 		using (FileStream imageStream = new FileStream(dataDir + "image" + pageCount + "_out" + ".png", FileMode.Create))
 		{
-			// Create PNG device with specified attributes
-			// Width, Height, Resolution, Quality
-			// Quality [0-100], 100 is Maximum
-			// Create Resolution object
+			// قم بإنشاء جهاز PNG بالسمات المحددة
+			// العرض، الارتفاع، الدقة، الجودة
+			// الجودة [0-100]، 100 هو الحد الأقصى
+			// إنشاء كائن القرار
 			Resolution resolution = new Resolution(300);
 			PngDevice pngDevice = new PngDevice(resolution);
-			// Set predefined rendering options
+			// قم بتعيين خيارات العرض المحددة مسبقًا
 			pngDevice.RenderingOptions = opts;
 
-			// Convert a particular page and save the image to stream
+			//تحويل صفحة معينة وحفظ الصورة للبث
 			pngDevice.Process(pdfDocument.Pages[pageCount], imageStream);
 
-			// Close stream
+			// إغلاق الدفق
 			imageStream.Close();
 		}
 	}
@@ -107,23 +107,23 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of converting PDF to PNG images with font hinting using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to convert every page of the PDF to a PNG image with font hinting. This feature is useful when you want to maintain the readability of small fonts when converting to PNG images.
+## خاتمة
+في هذا البرنامج التعليمي، قمنا بتغطية عملية تحويل PDF إلى صور PNG خطوة بخطوة مع تلميحات الخط باستخدام Aspose.PDF لـ .NET. باتباع الإرشادات الموضحة أعلاه، يجب أن تكون الآن قادرًا على تحويل كل صفحة من ملف PDF إلى صورة PNG مع تلميح للخط. تكون هذه الميزة مفيدة عندما تريد الحفاظ على إمكانية قراءة الخطوط الصغيرة عند التحويل إلى صور PNG.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is font hinting, and why is it important when converting PDF to PNG?
+#### س: ما هو تلميح الخط، ولماذا هو مهم عند تحويل PDF إلى PNG؟
 
-A: Font hinting is a technique used to improve the readability of small fonts by adjusting their shapes and positioning. When converting PDF to PNG images, enabling font hinting ensures that the text in the resulting PNG images remains legible and clear, especially for small font sizes. This is important for maintaining the quality and readability of text when converting PDF documents to images.
+ج: إن تلميحات الخط هي تقنية تستخدم لتحسين إمكانية قراءة الخطوط الصغيرة عن طريق ضبط أشكالها وموضعها. عند تحويل صور PDF إلى PNG، يضمن تمكين تلميحات الخط أن يظل النص الموجود في صور PNG الناتجة واضحًا ومقروءًا، خاصة بالنسبة لأحجام الخطوط الصغيرة. يعد هذا أمرًا مهمًا للحفاظ على جودة النص وسهولة قراءته عند تحويل مستندات PDF إلى صور.
 
-#### Q: How does font hinting affect the PNG conversion process?
+#### س: كيف تؤثر تلميحات الخط على عملية تحويل PNG؟
 
-A: Font hinting affects the way the text is rendered in the resulting PNG images during the PDF to PNG conversion process. By enabling font hinting, the Aspose.PDF library adjusts the font rendering to ensure that small fonts retain their clarity and readability, making the PNG images more visually appealing and legible.
+ج: تؤثر تلميحات الخط على طريقة عرض النص في صور PNG الناتجة أثناء عملية التحويل من PDF إلى PNG. من خلال تمكين تلميحات الخطوط، تقوم مكتبة Aspose.PDF بضبط عرض الخطوط للتأكد من احتفاظ الخطوط الصغيرة بالوضوح وسهولة القراءة، مما يجعل صور PNG أكثر جاذبية بصريًا ومقروءة.
 
-#### Q: Can I adjust the font hinting settings to customize the PNG conversion?
+#### س: هل يمكنني ضبط إعدادات تلميحات الخط لتخصيص تحويل PNG؟
 
-A: Yes, the Aspose.PDF for .NET library provides options to customize the PNG conversion process, including font hinting settings. In the provided code example, the `UseFontHinting` property of the `RenderingOptions` object is set to `true` to enable font hinting. You can further fine-tune the conversion process by adjusting other properties in the `RenderingOptions` class according to your requirements.
+ ج: نعم، توفر مكتبة Aspose.PDF لـ .NET خيارات لتخصيص عملية تحويل PNG، بما في ذلك إعدادات تلميحات الخط. في مثال التعليمات البرمجية المقدم،`UseFontHinting` ملكية`RenderingOptions` تم تعيين الكائن على`true` لتمكين تلميحات الخط. يمكنك تحسين عملية التحويل بشكل أكبر عن طريق ضبط الخصائص الأخرى في ملف`RenderingOptions` الطبقة وفقا لمتطلباتك.
 
-#### Q: How are the PNG images saved in the PNG conversion process?
+#### س: كيف يتم حفظ صور PNG في عملية تحويل PNG؟
 
-A: In the provided code example, each page of the PDF document is converted to a separate PNG image. The PNG images are saved as individual files with filenames following the pattern "image{pageCount}_out.png", where `{pageCount}` is the number of the page being converted. Each PNG image represents one page of the original PDF document.
+ج: في مثال التعليمات البرمجية المقدم، يتم تحويل كل صفحة من مستند PDF إلى صورة PNG منفصلة. يتم حفظ صور PNG كملفات فردية بأسماء ملفات تتبع النمط "image{pageCount}_ out.png"، حيث`{pageCount}` هو رقم الصفحة التي يتم تحويلها. تمثل كل صورة PNG صفحة واحدة من مستند PDF الأصلي.

@@ -1,28 +1,28 @@
 ---
-title: Digitally Sign In PDF File
-linktitle: Digitally Sign In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to digitally sign in PDF file with Aspose.PDF for .NET.
+title: تسجيل الدخول رقميا في ملف PDF
+linktitle: تسجيل الدخول رقميا في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تسجيل الدخول رقميًا إلى ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 40
 url: /ar/net/programming-with-security-and-signatures/digitally-sign/
 ---
-In this tutorial, we will walk you through the process of digitally signing in PDF file using Aspose.PDF for .NET. The digital signature guarantees the authenticity and integrity of the document, by adding a unique electronic fingerprint.
+في هذا البرنامج التعليمي، سنرشدك خلال عملية تسجيل الدخول رقميًا إلى ملف PDF باستخدام Aspose.PDF لـ .NET. يضمن التوقيع الرقمي صحة الوثيقة وسلامتها، وذلك عن طريق إضافة بصمة إلكترونية فريدة.
 
-## Step 1: Prerequisites
+## الخطوة 1: المتطلبات الأساسية
 
-Before you begin, make sure you have the following prerequisites:
+قبل البدء، تأكد من توفر المتطلبات الأساسية التالية:
 
-- Basic knowledge of the C# programming language
-- Installing Visual Studio on your machine
-- Aspose.PDF library for .NET installed
+- المعرفة الأساسية بلغة البرمجة C#
+- تثبيت Visual Studio على جهازك
+- تم تثبيت مكتبة Aspose.PDF لـ .NET
 
-## Step 2: Environment setup
+## الخطوة 2: إعداد البيئة
 
-To get started, follow these steps to set up your development environment:
+للبدء، اتبع الخطوات التالية لإعداد بيئة التطوير الخاصة بك:
 
-1. Open Visual Studio and create a new C# project.
-2. Import the required namespaces into your code file:
+1. افتح Visual Studio وقم بإنشاء مشروع C# جديد.
+2. قم باستيراد مساحات الأسماء المطلوبة إلى ملف التعليمات البرمجية الخاص بك:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,9 +30,9 @@ using Aspose.Pdf.Forms;
 using System.Collections.Generic;
 ```
 
-## Step 3: Digital signature
+## الخطوة 3: التوقيع الرقمي
 
-The first step is to digitally sign the PDF file. The provided code shows how to make a digital signature with Aspose.PDF for .NET.
+الخطوة الأولى هي التوقيع رقميًا على ملف PDF. يوضح الكود المقدم كيفية عمل توقيع رقمي باستخدام Aspose.PDF لـ .NET.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -53,11 +53,11 @@ using (Document document = new Document(inFile))
 }
 ```
 
-This code loads a PDF file, creates a digital signature with a specified appearance, then saves the PDF file with the added signature.
+يقوم هذا الرمز بتحميل ملف PDF، وإنشاء توقيع رقمي بمظهر محدد، ثم حفظ ملف PDF مع التوقيع المضاف.
 
-## Step 4: Signature Verification
+## الخطوة 4: التحقق من التوقيع
 
-After adding the digital signature, you can check if the PDF file contains a valid signature.
+بعد إضافة التوقيع الرقمي، يمكنك التحقق مما إذا كان ملف PDF يحتوي على توقيع صالح.
 
 ```csharp
 using(Document document = new Document(outFile))
@@ -73,7 +73,7 @@ using(Document document = new Document(outFile))
                  {
                      if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms)
                      {
-                         // Do something
+                         // قم بعمل ما
                      }
                  }
              }
@@ -82,13 +82,13 @@ using(Document document = new Document(outFile))
 }
 ```
 
-This code verifies the first signature of the PDF file and performs additional actions if the signature is certified and has specific permissions.
+يتحقق هذا الرمز من التوقيع الأول لملف PDF وينفذ إجراءات إضافية إذا كان التوقيع معتمدًا وله أذونات محددة.
 
-### Sample source code for Digitally Sign using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للتوقيع الرقمي باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// المسار إلى دليل المستندات.
 	string dataDir = "YOUR DOCUMENTS DIRECTORY";
 	string pbxFile = "";
 	string inFile = dataDir + @"DigitallySign.pdf";
@@ -97,14 +97,14 @@ try
 	{
 		using (PdfFileSignature signature = new PdfFileSignature(document))
 		{
-			PKCS7 pkcs = new PKCS7(pbxFile, "WebSales"); // Use PKCS7/PKCS7Detached objects
+			PKCS7 pkcs = new PKCS7(pbxFile, "WebSales"); // استخدم كائنات PKCS7/PKCS7Detached
 			DocMDPSignature docMdpSignature = new DocMDPSignature(pkcs, DocMDPAccessPermissions.FillingInForms);
 			System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-			// Set signature appearance
+			// ضبط مظهر التوقيع
 			signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
-			// Create any of the three signature types
+			// قم بإنشاء أي من أنواع التوقيع الثلاثة
 			signature.Certify(1, "Signature Reason", "Contact", "Location", true, rect, docMdpSignature);
-			// Save output PDF file
+			// حفظ ملف PDF الناتج
 			signature.Save(outFile);
 		}
 	}
@@ -113,15 +113,15 @@ try
 		using (PdfFileSignature signature = new PdfFileSignature(document))
 		{
 			IList<string> sigNames = signature.GetSignNames();
-			if (sigNames.Count > 0) // Any signatures?
+			if (sigNames.Count > 0) // أي التوقيعات؟
 			{
-				if (signature.VerifySigned(sigNames[0] as string)) // Verify first one
+				if (signature.VerifySigned(sigNames[0] as string)) // التحقق من أول واحد
 				{
-					if (signature.IsCertified) // Certified?
+					if (signature.IsCertified) // معتمد؟
 					{
-						if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) // Get access permission
+						if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) // الحصول على إذن الوصول
 						{
-							// Do something
+							// قم بعمل ما
 						}
 					}
 				}
@@ -135,48 +135,48 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have successfully performed a digital signature on a PDF file using Aspose.PDF for .NET. This tutorial covered the step-by-step process, from adding the digital signature to verifying its validity. You can now use this feature to secure your PDF files with digital signatures.
+تهنئة ! لقد نجحت في تنفيذ توقيع رقمي على ملف PDF باستخدام Aspose.PDF لـ .NET. يغطي هذا البرنامج التعليمي العملية خطوة بخطوة، بدءًا من إضافة التوقيع الرقمي وحتى التحقق من صحته. يمكنك الآن استخدام هذه الميزة لتأمين ملفات PDF الخاصة بك بالتوقيعات الرقمية.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of this tutorial?
+#### س: ما هو الغرض من هذا البرنامج التعليمي؟
 
-A: This tutorial guides you through the process of digitally signing a PDF file using Aspose.PDF for .NET. Digital signatures add an electronic fingerprint to ensure the authenticity and integrity of the document.
+ج: يرشدك هذا البرنامج التعليمي خلال عملية التوقيع الرقمي على ملف PDF باستخدام Aspose.PDF لـ .NET. تضيف التوقيعات الرقمية بصمة إلكترونية لضمان صحة الوثيقة وسلامتها.
 
-#### Q: What prerequisites are required before starting?
+#### س: ما هي المتطلبات الأساسية المطلوبة قبل البدء؟
 
-A: Before you begin, ensure you have a basic understanding of the C# programming language, have Visual Studio installed, and have the Aspose.PDF library for .NET installed.
+ج: قبل أن تبدأ، تأكد من أن لديك الفهم الأساسي للغة البرمجة C#، ومن تثبيت Visual Studio، ومن تثبيت مكتبة Aspose.PDF لـ .NET.
 
-#### Q: How do I set up the development environment?
+#### س: كيف أقوم بإعداد بيئة التطوير؟
 
-A: Follow the provided steps to set up your development environment, including creating a new C# project in Visual Studio, and importing the required namespaces.
+ج: اتبع الخطوات المتوفرة لإعداد بيئة التطوير الخاصة بك، بما في ذلك إنشاء مشروع C# جديد في Visual Studio، واستيراد مساحات الأسماء المطلوبة.
 
-#### Q: How do I add a digital signature to a PDF file?
+#### س: كيف يمكنني إضافة توقيع رقمي إلى ملف PDF؟
 
-A: The provided sample code demonstrates how to load a PDF file, create a digital signature, specify appearance, and save the signed PDF file. The digital signature is added using the `Certify` method of the `PdfFileSignature` object.
+ ج: يوضح نموذج التعليمات البرمجية المقدم كيفية تحميل ملف PDF وإنشاء توقيع رقمي وتحديد المظهر وحفظ ملف PDF الموقع. تتم إضافة التوقيع الرقمي باستخدام`Certify` طريقة`PdfFileSignature` هدف.
 
-#### Q: How do I verify the validity of a digital signature?
+#### س: كيف يمكنني التحقق من صحة التوقيع الرقمي؟
 
-A: After adding the digital signature, you can use the sample code to verify the validity of the signature. It checks if the signature is certified and has specific access permissions.
+ج: بعد إضافة التوقيع الرقمي، يمكنك استخدام نموذج التعليمات البرمجية للتحقق من صحة التوقيع. يتحقق مما إذا كان التوقيع معتمدًا ولديه أذونات وصول محددة.
 
-#### Q: What does the `PKCS7` object represent?
+####  س: ماذا يفعل`PKCS7` object represent?
 
-A: The `PKCS7` object is used to provide the cryptographic functionality for digital signatures. It is used to create the digital signature in the provided sample code.
+ ج: ال`PKCS7` يتم استخدام الكائن لتوفير وظيفة التشفير للتوقيعات الرقمية. يتم استخدامه لإنشاء التوقيع الرقمي في نموذج التعليمات البرمجية المقدم.
 
-#### Q: Can I customize the appearance of the digital signature?
+#### س: هل يمكنني تخصيص مظهر التوقيع الرقمي؟
 
-A: Yes, you can customize the appearance of the digital signature by specifying the path to an image in the `SignatureAppearance` property of the `PdfFileSignature` object.
+ ج: نعم، يمكنك تخصيص مظهر التوقيع الرقمي عن طريق تحديد المسار إلى الصورة في الملف`SignatureAppearance` ملكية`PdfFileSignature` هدف.
 
-#### Q: What happens if the signature is not valid?
+#### س: ماذا يحدث إذا كان التوقيع غير صالح؟
 
-A: If the signature is not valid, the verification process will fail, and the corresponding actions within the verification code block will not be executed.
+ج: إذا كان التوقيع غير صالح، فستفشل عملية التحقق، ولن يتم تنفيذ الإجراءات المقابلة داخل كتلة رمز التحقق.
 
-#### Q: How can I ensure the security of my digital signatures?
+#### س: كيف يمكنني ضمان أمان التوقيعات الرقمية الخاصة بي؟
 
-A: Digital signatures are secure by design and use cryptographic techniques to ensure authenticity and integrity. Ensure that you keep your private key secure and follow best practices for handling digital signatures.
+ج: التوقيعات الرقمية آمنة حسب التصميم وتستخدم تقنيات التشفير لضمان الأصالة والنزاهة. تأكد من الحفاظ على أمان مفتاحك الخاص واتباع أفضل الممارسات للتعامل مع التوقيعات الرقمية.
 
-#### Q: Can I add multiple digital signatures to a PDF?
+#### س: هل يمكنني إضافة توقيعات رقمية متعددة إلى ملف PDF؟
 
-A: Yes, you can add multiple digital signatures to a PDF file using the `PdfFileSignature` object's `Sign` or `Certify` methods. Each signature will have its own appearance and configuration.
+ ج: نعم، يمكنك إضافة توقيعات رقمية متعددة إلى ملف PDF باستخدام`PdfFileSignature` أشياء`Sign` أو`Certify` طُرق. سيكون لكل توقيع مظهره وتكوينه الخاص.

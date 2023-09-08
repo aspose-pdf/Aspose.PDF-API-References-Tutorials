@@ -1,101 +1,101 @@
 ---
-title: Delete All Attachments In PDF File
-linktitle: Delete All Attachments In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove all attachments in PDF file using Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: Удалить все вложения в PDF-файле
+linktitle: Удалить все вложения в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как удалить все вложения в файле PDF с помощью Aspose.PDF для .NET. Пошаговое руководство для облегчения работы.
 type: docs
 weight: 20
 url: /ru/net/programming-with-attachments/delete-all-attachments/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to remove all attachments in PDF file using Aspose.PDF for .NET.
+В этом руководстве мы шаг за шагом проведем вас по следующему исходному коду C#, чтобы удалить все вложения в файле PDF с помощью Aspose.PDF для .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Прежде чем начать, убедитесь, что вы установили библиотеку Aspose.PDF и настроили среду разработки. Также есть базовые знания программирования на C#.
 
-### Step 1: Document Directory Setup
+### Шаг 1. Настройка каталога документов
 
-In the provided source code, you need to specify the directory where the PDF file is located from which you want to remove the attachments. Change the "dataDir" variable to the desired directory.
+В предоставленном исходном коде вам необходимо указать каталог, в котором находится PDF-файл, из которого вы хотите удалить вложения. Измените переменную dataDir на нужный каталог.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Шаг 2. Откройте существующий PDF-документ.
 
-We open the existing PDF document using the specified path.
+Открываем существующий PDF-документ по указанному пути.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllAttachments.pdf");
 ```
 
-### Step 3: Remove all attachments
+### Шаг 3. Удалите все вложения.
 
-We remove all attachments from the document.
+Удаляем все вложения из документа.
 
 ```csharp
 pdfDocument.EmbeddedFiles.Delete();
 ```
 
-### Step 4: Save the Updated File
+### Шаг 4. Сохраните обновленный файл
 
-Finally, we save the updated PDF file with the name "DeleteAllAttachments_out.pdf" in the specified directory.
+Наконец, мы сохраняем обновленный PDF-файл с именем «DeleteAllAttachments_out.pdf» в указанном каталоге.
 
 ```csharp
 pdfDocument.Save(dataDir + "DeleteAllAttachments_out.pdf");
 ```
 
-### Sample source code for Delete All Attachments using Aspose.PDF for .NET 
+### Пример исходного кода для удаления всех вложений с помощью Aspose.PDF для .NET 
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "DeleteAllAttachments.pdf");
-// Delete all attachments
+// Удалить все вложения
 pdfDocument.EmbeddedFiles.Delete();
 dataDir = dataDir + "DeleteAllAttachments_out.pdf";
-// Save updated file
+// Сохранить обновленный файл
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nAll attachments deleted successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we have explained how to remove all attachments from a PDF file using Aspose.PDF for .NET. You can now use this knowledge to clean up your PDF documents by removing all unwanted attachments.
+В этом уроке мы объяснили, как удалить все вложения из файла PDF с помощью Aspose.PDF для .NET. Теперь вы можете использовать эти знания для очистки ваших PDF-документов, удалив все нежелательные вложения.
 
-## FAQ's for delete all attachments in PDF file
+## Часто задаваемые вопросы по удалению всех вложений в PDF-файле
 
-#### Q: Why would I need to remove all attachments from a PDF file?
+#### Вопрос: Зачем мне удалять все вложения из PDF-файла?
 
-A: Removing all attachments from a PDF file can help streamline the document, reduce file size, and eliminate any unnecessary or outdated supplementary materials.
+О: Удаление всех вложений из PDF-файла может помочь упростить документ, уменьшить размер файла и исключить ненужные или устаревшие дополнительные материалы.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of removing all attachments?
+#### Вопрос: Как Aspose.PDF for .NET упрощает процесс удаления всех вложений?
 
-A: Aspose.PDF for .NET provides a user-friendly API that allows you to easily remove all attachments from a PDF file. The provided source code demonstrates the step-by-step process.
+О: Aspose.PDF для .NET предоставляет удобный API, который позволяет легко удалять все вложения из PDF-файла. Предоставленный исходный код демонстрирует пошаговый процесс.
 
-#### Q: Can I selectively remove specific attachments using this tutorial?
+#### Вопрос: Могу ли я выборочно удалить определенные вложения, используя это руководство?
 
-A: No, this tutorial focuses on removing all attachments from a PDF document. If you need to remove specific attachments, you can explore Aspose.PDF for .NET's API for more advanced attachment management.
+О: Нет, в этом руководстве основное внимание уделяется удалению всех вложений из PDF-документа. Если вам нужно удалить определенные вложения, вы можете изучить API Aspose.PDF for .NET для более расширенного управления вложениями.
 
-#### Q: Is there a limit to the number of attachments that can be removed using this method?
+#### Вопрос: Есть ли ограничение на количество вложений, которые можно удалить этим методом?
 
-A: There is no strict limit to the number of attachments that can be removed using this method. However, it's important to note that all attachments within the PDF document will be deleted.
+О: Строгого ограничения на количество вложений, которые можно удалить с помощью этого метода, не существует. Однако важно отметить, что все вложения в PDF-документе будут удалены.
 
-#### Q: Will removing attachments affect the main content of the PDF document?
+#### Вопрос: Повлияет ли удаление вложений на основное содержимое PDF-документа?
 
-A: No, removing attachments will not affect the main content of the PDF document. Only the attachments, such as additional files or materials, will be removed.
+О: Нет, удаление вложений не повлияет на основное содержимое PDF-документа. Будут удалены только вложения, такие как дополнительные файлы или материалы.
 
-#### Q: How can I verify that all attachments have been successfully removed?
+#### Вопрос: Как я могу убедиться, что все вложения успешно удалены?
 
-A: After following the provided source code, you can open the resulting PDF file to confirm that the attachments have been removed from the document.
+О: Следуя предоставленному исходному коду, вы можете открыть полученный PDF-файл и убедиться, что вложения удалены из документа.
 
-#### Q: Can I undo the removal of attachments once it's done?
+#### Вопрос: Могу ли я отменить удаление вложений после завершения?
 
-A: No, once attachments are removed from the PDF file, the action is irreversible. Make sure to back up your original PDF file before performing this action.
+О: Нет. После удаления вложений из PDF-файла действие становится необратимым. Перед выполнением этого действия обязательно создайте резервную копию исходного PDF-файла.
 
-#### Q: Are there any file size considerations when removing attachments?
+#### Вопрос: Есть ли какие-либо соображения по поводу размера файла при удалении вложений?
 
-A: Removing attachments can reduce the overall file size of the PDF document, which may lead to improved document performance and sharing efficiency.
+О: Удаление вложений может уменьшить общий размер файла PDF-документа, что может привести к повышению производительности документа и эффективности совместного использования.
 
-#### Q: Can I automate the process of removing attachments for multiple PDF files?
-A: Yes, you can create a script or program using Aspose.PDF for .NET to automate the process of removing attachments from multiple PDF files in a batch.
+#### Вопрос: Могу ли я автоматизировать процесс удаления вложений для нескольких файлов PDF?
+О: Да, вы можете создать сценарий или программу, используя Aspose.PDF для .NET, чтобы автоматизировать процесс пакетного удаления вложений из нескольких файлов PDF.

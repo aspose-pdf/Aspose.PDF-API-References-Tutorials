@@ -1,37 +1,37 @@
 ---
-title: Store Image In XImage Collection
-linktitle: Store Image In XImage Collection
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to store an image in XImage collection using Aspose.PDF for .NET.
+title: 将图像存储在 XImage 集合中
+linktitle: 将图像存储在 XImage 集合中
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 在 XImage 集合中存储图像的分步指南。
 type: docs
 weight: 290
 url: /zh/net/programming-with-images/store-image-in-ximage-collection/
 ---
-In this tutorial, we will walk you through how to store an image in the XImage collection using Aspose.PDF for .NET. Follow these steps to perform this operation easily.
+在本教程中，我们将引导您了解如何使用 Aspose.PDF for .NET 在 XImage 集合中存储图像。请按照以下步骤轻松执行此操作。
 
-## Prerequisites
+## 先决条件
 
-Before you begin, make sure you have the following:
+在开始之前，请确保您具备以下条件：
 
-- Visual Studio or any other development environment installed and configured.
-- A basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed. You can download it from Aspose official website.
+- 安装并配置 Visual Studio 或任何其他开发环境。
+- C# 编程语言的基础知识。
+- 安装了适用于.NET 的 Aspose.PDF 库。您可以从Aspose官方网站下载。
 
-## Step 1: PDF document initialization
+## 第1步：PDF文档初始化
 
-To get started, use the following code to initialize a new PDF document:
+首先，使用以下代码初始化一个新的 PDF 文档：
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Initialize the document
+//初始化文档
 Aspose.Pdf.Document document = new Document();
 document.Pages.Add();
 Page page = document.Pages[1];
 ```
 
-## Step 2: Adding the image to the XImage collection
+## 步骤 2：将图像添加到 XImage 集合中
 
-Next, we'll add the image to the XImage collection of the PDF document. Use the following code:
+接下来，我们将图像添加到 PDF 文档的 XImage 集合中。使用以下代码：
 
 ```csharp
 FileStream imageStream = new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open);
@@ -39,16 +39,16 @@ page.Resources.Images.Add(imageStream, ImageFilterType.Flate);
 XImage ximage = page.Resources.Images[page.Resources.Images.Count];
 ```
 
-Be sure to provide the correct path to the image source file.
+请务必提供图像源文件的正确路径。
 
-## Step 3: Placement of the image on the page
+## 步骤 3：将图像放置在页面上
 
-Now let's place the image on the page of the PDF document. Use the following code:
+现在让我们将图像放置在 PDF 文档的页面上。使用以下代码：
 
 ```csharp
 page. Contents. Add(new GSave());
 
-// Set coordinates
+//设置坐标
 int lowerLeftX = 0;
 int lowerLeftY = 0;
 int upperRightX = 600;
@@ -56,29 +56,29 @@ int upperRightY = 600;
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(lowerLeftX, lowerLeftY, upperRightX, upperRightY);
 Matrix matrix = new Matrix(new double[] {rectangle.URX - rectangle.LLX, 0, 0, rectangle.URY - rectangle.LLY, rectangle.LLX, rectangle.LLY});
 
-// Using the ConcatenateMatrix operator: define how the image should be placed
+//使用 ConcatenateMatrix 运算符：定义图像的放置方式
 page.Contents.Add(new ConcatenateMatrix(matrix));
 page.Contents.Add(new Do(ximage.Name));
 page. Contents. Add(new GRestore());
 ```
 
-This will place the image at the specified coordinates on the page.
+这会将图像放置在页面上的指定坐标处。
 
-## Step 4: Saving the PDF document
+## 步骤 4：保存 PDF 文档
 
-Finally, we'll save the updated PDF document. Use the following code:
+最后，我们将保存更新后的 PDF 文档。使用以下代码：
 
 ```csharp
 document.Save(dataDir + "FlateDecodeCompression.pdf");
 ```
 
-Be sure to provide the desired path and filename for the final PDF document.
+请务必提供最终 PDF 文档所需的路径和文件名。
 
-### Sample source code for Store Image In XImage Collection using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 在 XImage Collection 中存储图像的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Initialize Document
+//初始化文档
 Aspose.Pdf.Document document = new Document();
 document.Pages.Add();
 Page page = document.Pages[1];
@@ -86,58 +86,58 @@ FileStream imageStream = new FileStream(dataDir + "aspose-logo.jpg", FileMode.Op
 page.Resources.Images.Add(imageStream, ImageFilterType.Flate);
 XImage ximage = page.Resources.Images[page.Resources.Images.Count];
 page.Contents.Add(new GSave());
-// Set coordinates
+//设置坐标
 int lowerLeftX = 0;
 int lowerLeftY = 0;
 int upperRightX = 600;
 int upperRightY = 600;
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(lowerLeftX, lowerLeftY, upperRightX, upperRightY);
 Matrix matrix = new Matrix(new double[] {rectangle.URX - rectangle.LLX, 0, 0, rectangle.URY - rectangle.LLY, rectangle.LLX, rectangle.LLY});
-// Using ConcatenateMatrix (concatenate matrix) operator: defines how image must be placed
+//使用ConcatenateMatrix（连接矩阵）运算符：定义图像的放置方式
 page.Contents.Add(new ConcatenateMatrix(matrix));
 page.Contents.Add(new Do(ximage.Name));
 page.Contents.Add(new GRestore());
 document.Save(dataDir + "FlateDecodeCompression.pdf");
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have successfully stored an image in the XImage collection using Aspose.PDF for .NET. You can now apply this method to your own projects to manipulate and personalize images in PDF files.
+恭喜！您已使用 Aspose.PDF for .NET 成功将图像存储在 XImage 集合中。您现在可以将此方法应用到您自己的项目中，以操作和个性化 PDF 文件中的图像。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of storing an image in the XImage collection using Aspose.PDF for .NET?
+#### 问：使用 Aspose.PDF for .NET 在 XImage 集合中存储图像的目的是什么？
 
-A: Storing an image in the XImage collection allows you to efficiently manage and use images within a PDF document. This approach enables you to manipulate, customize, and personalize images before placing them on specific pages.
+答：将图像存储在 XImage 集合中可以让您有效地管理和使用 PDF 文档中的图像。这种方法使您能够在将图像放置到特定页面之前对其进行操作、自定义和个性化。
 
-#### Q: How does storing an image in the XImage collection differ from directly placing an image on a PDF page?
+#### 问：在 XImage 集合中存储图像与直接将图像放置在 PDF 页面上有何不同？
 
-A: Storing an image in the XImage collection provides a more organized and reusable way to manage images. Instead of directly placing an image on a page, you store it in the collection and can then refer to it by name when needed, allowing for easier management and modification.
+答：将图像存储在 XImage 集合中提供了一种更有组织性和可重用性的图像管理方式。您无需将图像直接放置在页面上，而是将其存储在集合中，然后可以在需要时通过名称引用它，从而更轻松地管理和修改。
 
-#### Q: Can I add multiple images to the XImage collection within a single PDF document?
+#### 问：我可以在单个 PDF 文档中将多个图像添加到 XImage 集合中吗？
 
-A: Yes, you can add multiple images to the XImage collection within the same PDF document. Each image is assigned a unique name in the collection, which can be used to reference and place the images on different pages.
+答：是的，您可以将多个图像添加到同一 PDF 文档中的 XImage 集合中。每个图像在集合中都被分配了一个唯一的名称，可用于引用图像并将图像放置在不同的页面上。
 
-#### Q: How do I specify the position and size of the image when placing it on a PDF page from the XImage collection?
+#### 问：将 XImage 集合中的图像放置到 PDF 页面上时，如何指定图像的位置和大小？
 
-A: To specify the position and size of the image, you need to define a rectangle and a matrix transformation. The rectangle defines the boundaries of the image, and the matrix transformation specifies how the image should be placed within that rectangle.
+A：要指定图像的位置和大小，需要定义一个矩形和一个矩阵变换。矩形定义图像的边界，矩阵变换指定图像应如何放置在该矩形内。
 
-#### Q: What is the purpose of the `GSave()` and `GRestore()` operators in the code for placing the image?
+#### 问：这样做的目的是什么`GSave()` and `GRestore()` operators in the code for placing the image?
 
-A: The `GSave()` and `GRestore()` operators are used to save and restore the graphics state of the PDF page. This ensures that the operations performed on the page, such as placing the image, do not affect the state of the page after the image is placed.
+答： 的`GSave()`和`GRestore()`运算符用于保存和恢复PDF页面的图形状态。这样可以确保在页面上执行的操作（例如放置图像）不会影响图像放置后页面的状态。
 
-#### Q: Can I apply additional modifications or transformations to the images stored in the XImage collection?
+#### 问：我可以对 XImage 集合中存储的图像应用其他修改或转换吗？
 
-A: Yes, you can apply various modifications and transformations to the images stored in the XImage collection. You can rotate, scale, crop, and perform other transformations using the appropriate operations and techniques provided by Aspose.PDF for .NET.
+答：是的，您可以对 XImage 集合中存储的图像应用各种修改和转换。您可以使用 Aspose.PDF for .NET 提供的适当操作和技术来旋转、缩放、裁剪和执行其他转换。
 
-#### Q: How can I integrate this method into my own projects to store and place images in the XImage collection of a PDF document?
+#### 问：如何将此方法集成到我自己的项目中，以在 PDF 文档的 XImage 集合中存储和放置图像？
 
-A: To integrate this method, follow the outlined steps and modify the code to meet your project's requirements. You can use the XImage collection to store and manage images, then place them on specific pages using the specified coordinates and transformations.
+答：要集成此方法，请按照概述的步骤操作并修改代码以满足您的项目要求。您可以使用 XImage 集合来存储和管理图像，然后使用指定的坐标和转换将它们放置在特定页面上。
 
-#### Q: Are there any considerations or limitations when working with the XImage collection in Aspose.PDF for .NET?
+#### 问：在 Aspose.PDF for .NET 中使用 XImage 集合时是否有任何注意事项或限制？
 
-A: While the XImage collection provides a powerful way to manage and manipulate images, it's important to consider factors such as memory usage and the complexity of the operations performed on the images. Careful management of the collection and efficient use of resources is recommended.
+答：虽然 XImage 集合提供了一种强大的方法来管理和操作图像，但考虑内存使用情况和对图像执行的操作的复杂性等因素也很重要。建议仔细管理收集并有效利用资源。
 
-#### Q: Can I reuse images stored in the XImage collection across multiple PDF documents?
+#### 问：我可以在多个 PDF 文档中重复使用 XImage 集合中存储的图像吗？
 
-A: The XImage collection is specific to each PDF document and is not designed for cross-document reuse. If you need to reuse images across multiple documents, you would need to store and manage them separately for each document.
+答：XImage 集合特定于每个 PDF 文档，并不是为跨文档重用而设计的。如果您需要在多个文档中重复使用图像，则需要为每个文档单独存储和管理它们。

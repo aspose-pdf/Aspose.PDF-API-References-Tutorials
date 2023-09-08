@@ -1,33 +1,33 @@
 ---
-title: Get Values From All Fields In PDF Document
-linktitle: Get Values From All Fields In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get the values of all form fields in PDF document with Aspose.PDF for .NET.
+title: Werte aus allen Feldern im PDF-Dokument abrufen
+linktitle: Werte aus allen Feldern im PDF-Dokument abrufen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Mit Aspose.PDF für .NET können Sie ganz einfach die Werte aller Formularfelder in einem PDF-Dokument abrufen.
 type: docs
 weight: 150
 url: /de/net/programming-with-forms/get-values-from-all-fields/
 ---
-In this tutorial, we will show you how to get the values of all form fields in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET die Werte aller Formularfelder in einem PDF-Dokument abrufen. Wir erklären Ihnen Schritt für Schritt den C#-Quellcode, um Sie durch diesen Prozess zu führen.
 
-## Step 1: Preparation
+## Schritt 1: Vorbereitung
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Stellen Sie sicher, dass Sie die erforderlichen Bibliotheken importiert und den Pfad zu Ihrem Dokumentenverzeichnis festgelegt haben:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the document
+## Schritt 2: Öffnen Sie das Dokument
 
-Open the PDF document:
+Öffnen Sie das PDF-Dokument:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetValuesFromAllFields.pdf");
 ```
 
-## Step 3: Get values for all fields
+## Schritt 3: Werte für alle Felder abrufen
 
-Loop through all the form fields in the document and get their names and values:
+Durchlaufen Sie alle Formularfelder im Dokument und ermitteln Sie deren Namen und Werte:
 
 ```csharp
 foreach(Field formField in pdfDocument.Form)
@@ -37,13 +37,13 @@ Console.WriteLine("Value: {0}", formField.Value);
 }
 ```
 
-### Sample source code for Get Values From All Fields using Aspose.PDF for .NET 
+### Beispielquellcode für „Werte aus allen Feldern abrufen“ mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "GetValuesFromAllFields.pdf");
-// Get values from all fields
+// Holen Sie sich Werte aus allen Feldern
 foreach (Field formField in pdfDocument.Form)
 {
 	Console.WriteLine("Field Name : {0} ", formField.PartialName);
@@ -51,28 +51,28 @@ foreach (Field formField in pdfDocument.Form)
 }
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we learned how to get the values of all form fields in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily extract the values of all form fields from your PDF documents using Aspose.PDF.
+In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET die Werte aller Formularfelder in einem PDF-Dokument erhält. Wenn Sie diese Schritte befolgen, können Sie mit Aspose.PDF ganz einfach die Werte aller Formularfelder aus Ihren PDF-Dokumenten extrahieren.
 
-### FAQ's
+### FAQs
 
-#### Q: Can I modify the values of form fields while retrieving them using Aspose.PDF for .NET?
+#### F: Kann ich die Werte von Formularfeldern ändern, während ich sie mit Aspose.PDF für .NET abrufe?
 
-A: Yes, you can modify the values of form fields while retrieving them using Aspose.PDF for .NET. Once you have the `Field` object representing a form field, you can update its `Value` property with the desired value. After making the necessary changes, you can save the updated PDF document to reflect the changes.
+ A: Ja, Sie können die Werte von Formularfeldern ändern, während Sie sie mit Aspose.PDF für .NET abrufen. Sobald Sie das haben`Field` Wenn Sie ein Objekt haben, das ein Formularfeld darstellt, können Sie es aktualisieren`Value`Immobilie mit dem gewünschten Wert. Nachdem Sie die erforderlichen Änderungen vorgenommen haben, können Sie das aktualisierte PDF-Dokument speichern, um die Änderungen widerzuspiegeln.
 
-#### Q: How can I filter and retrieve specific form fields based on their types (e.g., text fields, checkboxes)?
+#### F: Wie kann ich bestimmte Formularfelder basierend auf ihrem Typ (z. B. Textfelder, Kontrollkästchen) filtern und abrufen?
 
-A: To retrieve specific form fields based on their types, you can use conditional statements or LINQ queries to filter the fields of interest. You can check the type of each form field using the field's `FieldType` property, and then retrieve the values accordingly.
+ A: Um bestimmte Formularfelder basierend auf ihrem Typ abzurufen, können Sie bedingte Anweisungen oder LINQ-Abfragen verwenden, um die gewünschten Felder zu filtern. Sie können den Typ jedes Formularfelds anhand der Felder überprüfen`FieldType` Eigenschaft und rufen Sie dann die Werte entsprechend ab.
 
-#### Q: What happens if the PDF document has no form fields?
+#### F: Was passiert, wenn das PDF-Dokument keine Formularfelder enthält?
 
-A: If the PDF document does not contain any form fields, the `pdfDocument.Form` property will return an empty collection. In such cases, the loop to retrieve values will not execute, and no values will be displayed.
+ A: Wenn das PDF-Dokument keine Formularfelder enthält, wird das`pdfDocument.Form` Die Eigenschaft gibt eine leere Sammlung zurück. In solchen Fällen wird die Schleife zum Abrufen von Werten nicht ausgeführt und es werden keine Werte angezeigt.
 
-#### Q: Can I extract the form field values in a specific order or sort them alphabetically?
+#### F: Kann ich die Formularfeldwerte in einer bestimmten Reihenfolge extrahieren oder alphabetisch sortieren?
 
-A: The order in which the form fields are retrieved depends on the underlying structure of the PDF document. Aspose.PDF for .NET returns the form fields in the order they were added to the document. If you want to display or process the form fields in a specific order, you can implement custom sorting logic based on your requirements.
+A: Die Reihenfolge, in der die Formularfelder abgerufen werden, hängt von der zugrunde liegenden Struktur des PDF-Dokuments ab. Aspose.PDF für .NET gibt die Formularfelder in der Reihenfolge zurück, in der sie dem Dokument hinzugefügt wurden. Wenn Sie die Formularfelder in einer bestimmten Reihenfolge anzeigen oder verarbeiten möchten, können Sie eine individuelle Sortierlogik basierend auf Ihren Anforderungen implementieren.
 
-#### Q: How can I handle encrypted PDF documents with password-protected form fields?
+#### F: Wie kann ich mit verschlüsselten PDF-Dokumenten mit passwortgeschützten Formularfeldern umgehen?
 
-A: Aspose.PDF for .NET provides features to work with encrypted PDF documents and password-protected form fields. Before loading the document, you can set the password using the `pdfDocument.Password` property to access the secured PDF document and its form fields.
+ A: Aspose.PDF für .NET bietet Funktionen zum Arbeiten mit verschlüsselten PDF-Dokumenten und passwortgeschützten Formularfeldern. Vor dem Laden des Dokuments können Sie das Passwort mit festlegen`pdfDocument.Password` -Eigenschaft, um auf das gesicherte PDF-Dokument und seine Formularfelder zuzugreifen.

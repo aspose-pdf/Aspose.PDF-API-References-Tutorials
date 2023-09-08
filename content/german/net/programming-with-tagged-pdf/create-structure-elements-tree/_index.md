@@ -1,53 +1,53 @@
 ---
-title: Create Structure Elements Tree
-linktitle: Create Structure Elements Tree
-second_title: Aspose.PDF for .NET API Reference
-description: Create a structure of tree elements using Aspose.PDF for .NET. Step by step guide to create a structured PDF document.
+title: Erstellen Sie einen Strukturelementbaum
+linktitle: Erstellen Sie einen Strukturelementbaum
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erstellen Sie mit Aspose.PDF für .NET eine Struktur aus Baumelementen. Schritt-für-Schritt-Anleitung zum Erstellen eines strukturierten PDF-Dokuments.
 type: docs
 weight: 70
 url: /de/net/programming-with-tagged-pdf/create-structure-elements-tree/
 ---
-In this step-by-step guide, we will explain the source code in C# to create a structure of tree elements using Aspose.PDF for .NET. We will show you how to create a PDF document with structured elements and how to organize them hierarchically. Using the Aspose.PDF library greatly simplifies the manipulation of PDF elements and provides advanced functionality for working with structured documents.
+In dieser Schritt-für-Schritt-Anleitung erklären wir den Quellcode in C#, um mit Aspose.PDF für .NET eine Struktur aus Baumelementen zu erstellen. Wir zeigen Ihnen, wie Sie ein PDF-Dokument mit strukturierten Elementen erstellen und diese hierarchisch organisieren. Die Verwendung der Aspose.PDF-Bibliothek vereinfacht die Bearbeitung von PDF-Elementen erheblich und bietet erweiterte Funktionen für die Arbeit mit strukturierten Dokumenten.
 
-## Step 1: Setting up the environment
-Before you begin, make sure you've set up your development environment with Aspose.PDF for .NET. Also make sure you have the path to your documents directory set in the `dataDir` variable.
+## Schritt 1: Einrichten der Umgebung
+ Bevor Sie beginnen, stellen Sie sicher, dass Sie Ihre Entwicklungsumgebung mit Aspose.PDF für .NET eingerichtet haben. Stellen Sie außerdem sicher, dass Sie den Pfad zu Ihrem Dokumentenverzeichnis festgelegt haben`dataDir` Variable.
 
-## Step 2: Creating a PDF Document
-To start, we'll create a new PDF document using the `Document` class provided by Aspose.PDF. Here is the code for this step:
+## Schritt 2: Erstellen eines PDF-Dokuments
+ Zunächst erstellen wir ein neues PDF-Dokument mit`Document` Klasse bereitgestellt von Aspose.PDF. Hier ist der Code für diesen Schritt:
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a PDF document
+// Erstellen Sie ein PDF-Dokument
 Document document = new Document();
 ```
 
-## Step 3: Getting content to work with TaggedPdf
-The Aspose.PDF library allows working with structured PDF documents using the concept of Tagged PDF. For this, we need to get a reference to the tagged content item using the document's `TaggedContent` property. Here is the code for this step:
+## Schritt 3: Inhalte mit TaggedPdf zum Laufen bringen
+ Die Aspose.PDF-Bibliothek ermöglicht die Arbeit mit strukturierten PDF-Dokumenten unter Verwendung des Konzepts von Tagged PDF. Dazu müssen wir mithilfe des Dokuments einen Verweis auf das getaggte Inhaltselement erhalten`TaggedContent`Eigentum. Hier ist der Code für diesen Schritt:
 
 ```csharp
-// Get content to work with TaggedPdf
+// Bringen Sie Inhalte mit TaggedPdf zum Einsatz
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 4: Set document title and language
-Before we start creating the structure of the elements, we need to define the title and the language of the document. This can be done using the `SetTitle` and `SetLanguage` methods of the `taggedContent` object. Here is the code for this step:
+## Schritt 4: Dokumenttitel und Sprache festlegen
+ Bevor wir mit der Erstellung der Struktur der Elemente beginnen, müssen wir den Titel und die Sprache des Dokuments definieren. Dies kann mit der erfolgen`SetTitle` Und`SetLanguage` Methoden der`taggedContent` Objekt. Hier ist der Code für diesen Schritt:
 
 ```csharp
-// Define the document title and language
+// Definieren Sie den Titel und die Sprache des Dokuments
 taggedContent.SetTitle("Structured PDF Document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 5: Creating Logical Structure Elements
-Now that we've set up our document and set the title and language, we can start creating logical structure elements. These elements will be organized hierarchically to form the structure tree. Here is the code for this step:
+## Schritt 5: Logische Strukturelemente erstellen
+Nachdem wir nun unser Dokument eingerichtet und Titel und Sprache festgelegt haben, können wir mit der Erstellung logischer Strukturelemente beginnen. Diese Elemente werden hierarchisch organisiert, um den Strukturbaum zu bilden. Hier ist der Code für diesen Schritt:
 
 ```csharp
-// Obtain the root structure element (Document)
+// Erhalten Sie das Stammstrukturelement (Dokument)
 StructureElement rootElement = taggedContent.RootElement;
 
-// Create the logical structure
+// Erstellen Sie die logische Struktur
 SectElement sect1 = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect1);
 
@@ -87,29 +87,29 @@ DivElement div31 = taggedContent.CreateDivElement();
 sect3.AppendChild(div31);
 ```
 
-## Step 6: Saving the tagged PDF document
-Once we have created the element structure, we can save the PDF document. Use the `Save` method of the `document` object to specify the path and name of the PDF file to save. Here is the code for this step:
+## Schritt 6: Speichern des getaggten PDF-Dokuments
+ Nachdem wir die Elementstruktur erstellt haben, können wir das PDF-Dokument speichern. Benutzen Sie die`Save` Methode der`document` -Objekt, um den Pfad und Namen der zu speichernden PDF-Datei anzugeben. Hier ist der Code für diesen Schritt:
 
 ```csharp
-// Save the tagged PDF document
+// Speichern Sie das getaggte PDF-Dokument
 document.Save(dataDir + "StructureElementsTree.pdf");
 ```
 
-### Sample source code for Create Structure Elements Tree using Aspose.PDF for .NET 
+### Beispielquellcode für „Strukturelementbaum erstellen“ mit Aspose.PDF für .NET 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Pdf Document
+// Erstellen Sie ein PDF-Dokument
 Document document = new Document();
-// Get Content for work with TaggedPdf
+// Holen Sie sich Inhalte für die Arbeit mit TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
-// Set Title and Language for Documnet
+// Legen Sie Titel und Sprache für Documentt fest
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
-// Get root structure element (Document)
+// Stammstrukturelement abrufen (Dokument)
 StructureElement rootElement = taggedContent.RootElement;
-// Create Logical Structure
+// Erstellen Sie eine logische Struktur
 SectElement sect1 = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect1);
 SectElement sect2 = taggedContent.CreateSectElement();
@@ -134,52 +134,52 @@ SectElement sect3 = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect3);
 DivElement div31 = taggedContent.CreateDivElement();
 sect3.AppendChild(div31);
-// Save Tagged Pdf Document
+// Markiertes PDF-Dokument speichern
 document.Save(dataDir + "StructureElementsTree.pdf");
 
 ```
 
-## Conclusion
-You have learned how to create a structure of tree elements using Aspose.PDF for .NET. This guide has shown you the steps needed to set up a PDF document, create logical structure elements, and save the final document. By using Aspose.PDF, you can easily manipulate PDF elements and create structured documents.
+## Abschluss
+Sie haben gelernt, wie Sie mit Aspose.PDF für .NET eine Struktur aus Baumelementen erstellen. Dieser Leitfaden hat Ihnen die Schritte gezeigt, die zum Einrichten eines PDF-Dokuments, zum Erstellen logischer Strukturelemente und zum Speichern des endgültigen Dokuments erforderlich sind. Mit Aspose.PDF können Sie PDF-Elemente einfach bearbeiten und strukturierte Dokumente erstellen.
 
-### FAQ's
+### FAQs
 
-#### Q: What is the purpose of creating a structure of tree elements in a PDF document using Aspose.PDF for .NET?
+#### F: Was ist der Zweck der Erstellung einer Struktur aus Baumelementen in einem PDF-Dokument mit Aspose.PDF für .NET?
 
-A: Creating a structure of tree elements in a PDF document using Aspose.PDF for .NET allows you to organize the content hierarchically. This structured approach improves document accessibility, navigation, and semantics, making it easier for users and assistive technologies to interpret and interact with the content.
+A: Durch das Erstellen einer Struktur aus Baumelementen in einem PDF-Dokument mit Aspose.PDF für .NET können Sie den Inhalt hierarchisch organisieren. Dieser strukturierte Ansatz verbessert die Zugänglichkeit, Navigation und Semantik von Dokumenten und erleichtert Benutzern und unterstützenden Technologien die Interpretation und Interaktion mit dem Inhalt.
 
-#### Q: How does the provided C# code create a structure of tree elements in a PDF document?
+#### F: Wie erstellt der bereitgestellte C#-Code eine Struktur aus Baumelementen in einem PDF-Dokument?
 
-A: The code example demonstrates how to create a hierarchical structure of logical elements using the `SectElement`, `DivElement`, and `ArtElement` classes provided by Aspose.PDF. These elements are organized as parent and child nodes, forming a tree-like structure within the document.
+A: Das Codebeispiel zeigt, wie man mit dem eine hierarchische Struktur logischer Elemente erstellt`SectElement`, `DivElement` , Und`ArtElement` Von Aspose.PDF bereitgestellte Klassen. Diese Elemente sind als übergeordnete und untergeordnete Knoten organisiert und bilden eine baumartige Struktur innerhalb des Dokuments.
 
-#### Q: How does the `TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+####  F: Wie funktioniert das?`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 
-A: The `TaggedContent` property provides access to the tagged content features of the PDF document. This allows you to create and manipulate structured elements, define their relationships, and organize them hierarchically, enhancing the document's structure and accessibility.
+ A: Die`TaggedContent` Die Eigenschaft bietet Zugriff auf die markierten Inhaltsfunktionen des PDF-Dokuments. Dadurch können Sie strukturierte Elemente erstellen und bearbeiten, ihre Beziehungen definieren und sie hierarchisch organisieren, wodurch die Struktur und Zugänglichkeit des Dokuments verbessert wird.
 
-#### Q: Why is it important to set the document's title and language using the `SetTitle` and `SetLanguage` methods?
+####  F: Warum ist es wichtig, den Titel und die Sprache des Dokuments mithilfe von festzulegen`SetTitle` and `SetLanguage` methods?
 
-A: Setting the document's title and language using the `SetTitle` and `SetLanguage` methods enhances the accessibility and semantics of the document. It helps users and assistive technologies understand the purpose and language of the document.
+ A: Legen Sie den Titel und die Sprache des Dokuments mit fest`SetTitle` Und`SetLanguage` Methoden verbessern die Zugänglichkeit und Semantik des Dokuments. Es hilft Benutzern und unterstützenden Technologien, den Zweck und die Sprache des Dokuments zu verstehen.
 
-#### Q: How are `SectElement`, `DivElement`, and `ArtElement` used to create the structure tree?
+####  F: Wie geht es?`SectElement`, `DivElement`, and `ArtElement` used to create the structure tree?
 
-A: These classes represent different types of structure elements. `SectElement` is used to create sections, `DivElement` for divisions within sections, and `ArtElement` for artwork or illustrations. By appending child elements to parent elements, you establish a hierarchical structure.
+ A: Diese Klassen repräsentieren verschiedene Arten von Strukturelementen.`SectElement` wird zum Erstellen von Abschnitten verwendet,`DivElement` für Unterteilungen innerhalb von Abschnitten und`ArtElement` für Kunstwerke oder Illustrationen. Durch das Anhängen von untergeordneten Elementen an übergeordnete Elemente erstellen Sie eine hierarchische Struktur.
 
-#### Q: What are the benefits of organizing elements hierarchically in a PDF document?
+#### F: Welche Vorteile bietet die hierarchische Organisation von Elementen in einem PDF-Dokument?
 
-A: Organizing elements hierarchically improves document organization, navigation, and semantics. It allows users and assistive technologies to comprehend the content's structure and relationships, enhancing the overall user experience.
+A: Die hierarchische Organisation von Elementen verbessert die Organisation, Navigation und Semantik von Dokumenten. Es ermöglicht Benutzern und unterstützenden Technologien, die Struktur und Beziehungen des Inhalts zu verstehen und so das gesamte Benutzererlebnis zu verbessern.
 
-#### Q: How does the `Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
+####  F: Wie funktioniert das?`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
 
-A: The `Save` method saves the PDF document along with the hierarchical structure created using the `AppendChild` method. This ensures that the structure remains intact, making the document accessible and well-organized.
+ A: Die`Save` Die Methode speichert das PDF-Dokument zusammen mit der hierarchischen Struktur, die mit erstellt wurde`AppendChild` Methode. Dadurch wird sichergestellt, dass die Struktur intakt bleibt und das Dokument zugänglich und gut organisiert ist.
 
-#### Q: Can I customize the structure tree further by adding other types of logical elements?
+#### F: Kann ich den Strukturbaum weiter anpassen, indem ich andere Arten von logischen Elementen hinzufüge?
 
-A: Yes, you can customize the structure tree further by adding other types of logical elements provided by Aspose.PDF, such as headers, paragraphs, figures, and more. You can experiment with different element types to create a tailored structure.
+A: Ja, Sie können den Strukturbaum weiter anpassen, indem Sie andere Arten von logischen Elementen hinzufügen, die von Aspose.PDF bereitgestellt werden, wie z. B. Überschriften, Absätze, Abbildungen und mehr. Sie können mit verschiedenen Elementtypen experimentieren, um eine maßgeschneiderte Struktur zu erstellen.
 
-#### Q: How can the created structured tree improve document accessibility and usability?
+#### F: Wie kann der erstellte strukturierte Baum die Zugänglichkeit und Benutzerfreundlichkeit von Dokumenten verbessern?
 
-A: The structured tree enhances document accessibility by providing a clear hierarchy and semantic meaning to the content. Assistive technologies and users can navigate, understand, and interpret the document's structure and relationships more effectively.
+A: Der strukturierte Baum verbessert die Zugänglichkeit von Dokumenten, indem er dem Inhalt eine klare Hierarchie und semantische Bedeutung verleiht. Unterstützende Technologien und Benutzer können die Struktur und Beziehungen des Dokuments effektiver navigieren, verstehen und interpretieren.
 
-#### Q: How can I apply this knowledge to create complex structured PDF documents for various use cases?
+#### F: Wie kann ich dieses Wissen anwenden, um komplexe strukturierte PDF-Dokumente für verschiedene Anwendungsfälle zu erstellen?
 
-A: You can build upon this knowledge by combining different types of structure elements and arranging them hierarchically to match the desired content organization. This approach is valuable for creating complex documents such as reports, articles, manuals, and more.
+A: Sie können auf diesem Wissen aufbauen, indem Sie verschiedene Arten von Strukturelementen kombinieren und sie hierarchisch anordnen, um sie an die gewünschte Inhaltsorganisation anzupassen. Dieser Ansatz ist wertvoll für die Erstellung komplexer Dokumente wie Berichte, Artikel, Handbücher und mehr.

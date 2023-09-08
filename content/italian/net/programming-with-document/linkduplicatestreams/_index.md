@@ -1,97 +1,97 @@
 ---
-title: Link Duplicate Streams
-linktitle: Link Duplicate Streams
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET Link Duplicate Streams feature to optimize your PDF documents with this step-by-step guide.
+title: Collega flussi duplicati
+linktitle: Collega flussi duplicati
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come utilizzare Aspose.PDF per la funzione .NET Link Duplicate Streams per ottimizzare i tuoi documenti PDF con questa guida passo passo.
 type: docs
 weight: 230
 url: /it/net/programming-with-document/linkduplicatestreams/
 ---
-Aspose.PDF for .NET is a comprehensive and powerful library that provides a variety of features to work with PDF files. One of its key features is the ability to optimize PDF files. In this article, we will explain how to use the Link Duplicate Streams feature of Aspose.PDF for .NET to optimize PDF files. We will provide step-by-step instructions and include a full source code example to make it easy for developers to follow along.
+Aspose.PDF per .NET è una libreria completa e potente che fornisce una varietà di funzionalità per lavorare con file PDF. Una delle sue caratteristiche principali è la capacità di ottimizzare i file PDF. In questo articolo, spiegheremo come utilizzare la funzionalità Link Duplicate Streams di Aspose.PDF per .NET per ottimizzare i file PDF. Forniremo istruzioni dettagliate e includeremo un esempio di codice sorgente completo per consentire agli sviluppatori di seguirlo facilmente.
 
-## Step 1: Opening the PDF Document
+## Passaggio 1: apertura del documento PDF
 
-To open the PDF document using Aspose.PDF for .NET, follow these steps:
+Per aprire il documento PDF utilizzando Aspose.PDF per .NET, attenersi alla seguente procedura:
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Apri documento
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-In the code above, replace "YOUR DOCUMENT DIRECTORY" with the path to your project directory.
+Nel codice sopra, sostituisci "LA TUA DIRECTORY DOCUMENTI" con il percorso della directory del tuo progetto.
 
-## Step 2: Setting the LinkDuplicateStreams Option
+## Passaggio 2: impostazione dell'opzione LinkDuplicateStreams
 
-To set the LinkDuplicateStreams option, follow these steps:
+Per impostare l'opzione LinkDuplicateStreams, attenersi alla seguente procedura:
 
 ```csharp
-// Set LinkDuplcateStreams option 
+// Imposta l'opzione LinkDuplcateStreams
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
     LinkDuplcateStreams = true
 };
 ```
 
-In the code above, we created a new instance of OptimizationOptions and set the LinkDuplicateStreams option to true.
+Nel codice precedente abbiamo creato una nuova istanza di OptimizationOptions e impostato l'opzione LinkDuplicateStreams su true.
 
-## Step 3: Optimizing the PDF Document
+## Passaggio 3: ottimizzazione del documento PDF
 
-To optimize the PDF document, follow these steps:
+Per ottimizzare il documento PDF, attenersi alla seguente procedura:
 
 ```csharp
-// Optimize PDF document using OptimizationOptions
+// Ottimizza il documento PDF utilizzando le opzioni di ottimizzazione
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-In the code above, we used the OptimizeResources method of the pdfDocument object to optimize the PDF document using the OptimizationOptions we created earlier.
+Nel codice sopra, abbiamo utilizzato il metodo OptimizeResources dell'oggetto pdfDocument per ottimizzare il documento PDF utilizzando OptimizationOptions creato in precedenza.
 
-## Step 4: Saving the Updated Document
+## Passaggio 4: salvataggio del documento aggiornato
 
-To save the updated document, follow these steps:
+Per salvare il documento aggiornato, attenersi alla seguente procedura:
 
 ```csharp
 dataDir = dataDir + "OptimizeDocument_out.pdf";
-// Save updated document
+// Salva documento aggiornato
 pdfDocument.Save(dataDir);
 ```
 
-In the code above, we used the Save method of the pdfDocument object to save the updated document to a new file named "OptimizeDocument_out.pdf" in the project directory.
+Nel codice precedente, abbiamo utilizzato il metodo Save dell'oggetto pdfDocument per salvare il documento aggiornato in un nuovo file denominato "OptimizeDocument_out.pdf" nella directory del progetto.
 
-### Example Source Code for Link Duplicate Streams using Aspose.PDF for .NET
+### Codice sorgente di esempio per flussi duplicati di collegamento utilizzando Aspose.PDF per .NET
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Apri documento
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Set LinkDuplcateStreams option 
+// Imposta l'opzione LinkDuplcateStreams
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
 	LinkDuplcateStreams = true
 };
-// Optimize PDF document using OptimizationOptions
+// Ottimizza il documento PDF utilizzando le opzioni di ottimizzazione
 pdfDocument.OptimizeResources(optimizeOptions);
 dataDir = dataDir + "OptimizeDocument_out.pdf";
-// Save updated document
+// Salva documento aggiornato
 pdfDocument.Save(dataDir);
 ```
 
-## Conclusion
+## Conclusione
 
-The Link Duplicate Streams feature of Aspose.PDF for .NET provides an effective way to optimize PDF files by reducing their size. By identifying and linking duplicate streams, the library helps create more efficient PDF documents without sacrificing data integrity or visual quality. Developers can easily implement this feature using the provided steps and source code example, enhancing the performance and storage efficiency of their PDF files.
+La funzionalità Link Duplicate Streams di Aspose.PDF per .NET fornisce un modo efficace per ottimizzare i file PDF riducendone le dimensioni. Identificando e collegando flussi duplicati, la libreria aiuta a creare documenti PDF più efficienti senza sacrificare l'integrità dei dati o la qualità visiva. Gli sviluppatori possono facilmente implementare questa funzionalità utilizzando i passaggi forniti e l'esempio del codice sorgente, migliorando le prestazioni e l'efficienza di archiviazione dei propri file PDF.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: What is the purpose of the Link Duplicate Streams feature in Aspose.PDF for .NET?
+#### D: Qual è lo scopo della funzionalità Link Duplicate Streams in Aspose.PDF per .NET?
 
-A: The Link Duplicate Streams feature in Aspose.PDF for .NET is used to optimize PDF files by identifying and linking duplicate streams within the document. In a PDF file, there may be duplicate streams (such as images or fonts) that consume unnecessary space. By linking these duplicate streams, the file size can be reduced, resulting in a more efficient and smaller PDF document.
+R: La funzionalità Collega flussi duplicati in Aspose.PDF per .NET viene utilizzata per ottimizzare i file PDF identificando e collegando flussi duplicati all'interno del documento. In un file PDF potrebbero essere presenti flussi duplicati (come immagini o caratteri) che consumano spazio non necessario. Collegando questi flussi duplicati, la dimensione del file può essere ridotta, ottenendo un documento PDF più efficiente e più piccolo.
 
-#### Q: How does the Link Duplicate Streams feature work?
+#### D: Come funziona la funzionalità Collega flussi duplicati?
 
-A: The Link Duplicate Streams feature works by analyzing the content streams of the PDF document and identifying duplicate streams that have the same content. Instead of storing these duplicate streams separately, the feature creates a link between them, effectively sharing the same content. This optimization technique reduces the overall size of the PDF document without affecting its visual appearance or functionality.
+R: La funzionalità Collega flussi duplicati funziona analizzando i flussi di contenuto del documento PDF e identificando i flussi duplicati che hanno lo stesso contenuto. Invece di archiviare separatamente questi flussi duplicati, la funzionalità crea un collegamento tra loro, condividendo di fatto lo stesso contenuto. Questa tecnica di ottimizzazione riduce la dimensione complessiva del documento PDF senza influenzarne l'aspetto visivo o la funzionalità.
 
-#### Q: Can the Link Duplicate Streams feature cause any loss of data or quality in the PDF document?
+#### D: La funzionalità Collega flussi duplicati può causare perdite di dati o di qualità nel documento PDF?
 
-A: No, the Link Duplicate Streams feature does not cause any loss of data or quality in the PDF document. It only optimizes the file size by linking duplicate streams, without altering the content or visual appearance of the document. The feature is designed to ensure that the PDF document remains intact and maintains its original quality.
+R: No, la funzionalità Collega flussi duplicati non causa alcuna perdita di dati o qualità nel documento PDF. Ottimizza solo la dimensione del file collegando flussi duplicati, senza alterare il contenuto o l'aspetto visivo del documento. La funzionalità è progettata per garantire che il documento PDF rimanga intatto e mantenga la sua qualità originale.

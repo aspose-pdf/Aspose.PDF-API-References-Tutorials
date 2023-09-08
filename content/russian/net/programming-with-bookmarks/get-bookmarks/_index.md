@@ -1,41 +1,41 @@
 ---
-title: Get Bookmarks In PDF File
-linktitle: Get Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get bookmark in PDF file with Aspose.PDF for .NET.
+title: Получить закладки в PDF-файле
+linktitle: Получить закладки в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко получить закладку в PDF-файле с помощью Aspose.PDF для .NET.
 type: docs
 weight: 70
 url: /ru/net/programming-with-bookmarks/get-bookmarks/
 ---
-Retrieving bookmark in PDF file can be useful for analyzing the document's structure and navigational information. With Aspose.PDF for .NET, you can easily get the bookmarks by following the following source code:
+Получение закладки в файле PDF может быть полезно для анализа структуры документа и навигационной информации. С помощью Aspose.PDF для .NET вы можете легко получить закладки, выполнив следующий исходный код:
 
-## Step 1: Import required libraries
+## Шаг 1. Импортируйте необходимые библиотеки.
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Прежде чем начать, вам необходимо импортировать необходимые библиотеки для вашего проекта C#. Вот необходимая директива импорта:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Шаг 2. Установите путь к папке с документами.
 
-In this step, you need to specify the path to the folder containing the PDF file you want to extract the bookmarks from. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ На этом этапе вам необходимо указать путь к папке, содержащей PDF-файл, из которого вы хотите извлечь закладки. Заменять`"YOUR DOCUMENT DIRECTORY"`в следующем коде с фактическим путем к папке ваших документов:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Шаг 3. Откройте PDF-документ.
 
-Now we are going to open the PDF document from which we want to extract the bookmarks using the following code:
+Теперь мы собираемся открыть PDF-документ, из которого хотим извлечь закладки, используя следующий код:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetBookmarks.pdf");
 ```
 
-## Step 4: Browse Bookmarks
+## Шаг 4. Просмотр закладок
 
-In this step, we will iterate over all the bookmarks in the document using a `foreach` loop. For each bookmark, we will display the information such as title, italic style, bold style and color. Here is the corresponding code:
+ На этом этапе мы пройдемся по всем закладкам в документе, используя`foreach`петля. Для каждой закладки мы будем отображать такую информацию, как заголовок, курсив, жирный шрифт и цвет. Вот соответствующий код:
 
 ```csharp
 foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
@@ -47,13 +47,13 @@ foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-### Sample source code for Get Bookmarks using Aspose.PDF for .NET 
+### Пример исходного кода для получения закладок с помощью Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "GetBookmarks.pdf");
-// Loop through all the bookmarks
+// Перебрать все закладки
 foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 {
 	Console.WriteLine(outlineItem.Title);
@@ -63,49 +63,49 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! Now you have a step by step guide to get bookmarks with Aspose.PDF for .NET. You can use this code to parse bookmarks and extract information associated with each bookmark in your PDF documents.
+Поздравляем! Теперь у вас есть пошаговое руководство по созданию закладок с помощью Aspose.PDF для .NET. Вы можете использовать этот код для анализа закладок и извлечения информации, связанной с каждой закладкой в ваших PDF-документах.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Обязательно ознакомьтесь с официальной документацией Aspose.PDF для получения дополнительной информации о расширенных функциях управления закладками.
 
-### FAQ's for get bookmarks in PDF file
+### Часто задаваемые вопросы по получению закладок в PDF-файле
 
-#### Q: What are bookmarks in a PDF file?
+#### Вопрос: Что такое закладки в PDF-файле?
 
-A: Bookmarks in a PDF file are interactive elements that allow users to quickly navigate to specific sections or pages within the document. Bookmarks enhance the user experience by providing shortcuts to relevant content.
+О: Закладки в файле PDF — это интерактивные элементы, которые позволяют пользователям быстро переходить к определенным разделам или страницам документа. Закладки повышают удобство работы пользователя, предоставляя ярлыки к соответствующему контенту.
 
-#### Q: Why would I want to retrieve bookmarks from a PDF file?
+#### Вопрос: Зачем мне извлекать закладки из PDF-файла?
 
-A: Retrieving bookmarks helps you analyze the organization of a document and understand its hierarchy. It's particularly useful for documents with complex structures or multiple sections.
+О: Получение закладок помогает проанализировать организацию документа и понять его иерархию. Это особенно полезно для документов со сложной структурой или несколькими разделами.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### Вопрос: Как мне импортировать необходимые библиотеки для моего проекта C#?
 
-A: To import the required library for your C# project, use the following import directive:
+О: Чтобы импортировать необходимую библиотеку для вашего проекта C#, используйте следующую директиву импорта:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive enables you to access the classes and methods provided by Aspose.PDF for .NET.
+Эта директива позволяет вам получить доступ к классам и методам, предоставляемым Aspose.PDF для .NET.
 
-#### Q: How do I specify the path to the documents folder?
+#### Вопрос: Как указать путь к папке с документами?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to extract bookmarks. This ensures that the code can locate the target PDF file.
+ О: В предоставленном исходном коде замените`"YOUR DOCUMENT DIRECTORY"` с фактическим путем к папке, содержащей PDF-файл, из которого вы хотите извлечь закладки. Это гарантирует, что код сможет найти целевой PDF-файл.
 
-#### Q: How do I open a PDF document to extract bookmarks?
+#### Вопрос: Как открыть PDF-документ, чтобы извлечь закладки?
 
-A: To open a PDF document for bookmark extraction, use the following code:
+О: Чтобы открыть PDF-документ для извлечения закладок, используйте следующий код:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetBookmarks.pdf");
 ```
 
-Replace `"GetBookmarks.pdf"` with the actual file name.
+ Заменять`"GetBookmarks.pdf"` с фактическим именем файла.
 
-#### Q: How do I iterate through and display bookmark information?
+#### Вопрос: Как перебирать и отображать информацию о закладках?
 
-A: Loop through all the bookmarks in the document using a `foreach` loop. For each bookmark, display information such as the title, italic style, bold style, and color:
+ A: Прокрутите все закладки в документе, используя`foreach` петля. Для каждой закладки отображайте такую информацию, как заголовок, курсив, полужирный стиль и цвет:
 
 ```csharp
 foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
@@ -117,18 +117,18 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-#### Q: Can I extract other properties of bookmarks using a similar approach?
+#### Вопрос: Могу ли я извлечь другие свойства закладок, используя аналогичный подход?
 
-A: Yes, you can extract various properties of bookmarks using the `OutlineItemCollection` object. Refer to the Aspose.PDF documentation for a comprehensive list of available properties.
+ О: Да, вы можете извлечь различные свойства закладок, используя`OutlineItemCollection` объект. Полный список доступных свойств см. в документации Aspose.PDF.
 
-#### Q: How do I save changes to the PDF file after extracting bookmark information?
+#### Вопрос: Как сохранить изменения в PDF-файле после извлечения информации о закладках?
 
-A: Bookmark extraction does not modify the original PDF file. If you want to save any changes or perform other operations, you can explore additional methods provided by Aspose.PDF for .NET.
+О: Извлечение закладки не изменяет исходный PDF-файл. Если вы хотите сохранить какие-либо изменения или выполнить другие операции, вы можете изучить дополнительные методы, предоставляемые Aspose.PDF для .NET.
 
-#### Q: What if the document has nested bookmarks?
+#### Вопрос: Что делать, если в документе есть вложенные закладки?
 
-A: If the document has nested bookmarks, the provided code will still iterate through and display each bookmark's information, including nested bookmarks.
+О: Если в документе есть вложенные закладки, предоставленный код все равно будет перебирать и отображать информацию о каждой закладке, включая вложенные закладки.
 
-#### Q: Is there a limit to the number of bookmarks I can retrieve?
+#### Вопрос: Существует ли ограничение на количество закладок, которые я могу получить?
 
-A: There is typically no strict limit to the number of bookmarks you can retrieve using this method. However, very large documents with an excessive number of bookmarks may require efficient memory management.
+О: Обычно нет строгих ограничений на количество закладок, которые вы можете получить с помощью этого метода. Однако очень большие документы с чрезмерным количеством закладок могут потребовать эффективного управления памятью.

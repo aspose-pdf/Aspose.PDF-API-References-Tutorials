@@ -1,104 +1,104 @@
 ---
-title: Is Password Protected
-linktitle: Is Password Protected
-second_title: Aspose.PDF for .NET API Reference
-description: Easily check if a PDF document is password protected with Aspose.PDF for .NET.
+title: محمي بكلمة مرور
+linktitle: محمي بكلمة مرور
+second_title: Aspose.PDF لمرجع .NET API
+description: تحقق بسهولة مما إذا كان مستند PDF محميًا بكلمة مرور باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 90
 url: /ar/net/programming-with-security-and-signatures/is-password-protected/
 ---
-It is often important to know if a PDF document is password protected before processing it. With Aspose.PDF for .NET, you can easily check if a PDF document is protected using the following source code:
+غالبًا ما يكون من المهم معرفة ما إذا كان مستند PDF محميًا بكلمة مرور قبل معالجته. باستخدام Aspose.PDF for .NET، يمكنك بسهولة التحقق مما إذا كان مستند PDF محميًا باستخدام كود المصدر التالي:
 
-## Step 1: Import required libraries
+## الخطوة 1: استيراد المكتبات المطلوبة
 
-Before you begin, you need to import the necessary libraries for your C# project. Here are the necessary import directives:
+قبل أن تبدأ، تحتاج إلى استيراد المكتبات اللازمة لمشروع C# الخاص بك. فيما يلي توجيهات الاستيراد الضرورية:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## الخطوة 2: تعيين المسار إلى مجلد المستندات
 
-In this step, you need to specify the path to the folder containing the PDF file you want to check. Replace `"YOUR DOCUMENTS DIRECTORY"` in the following code with the actual path to your documents folder:
+ في هذه الخطوة، تحتاج إلى تحديد المسار إلى المجلد الذي يحتوي على ملف PDF الذي تريد التحقق منه. يستبدل`"YOUR DOCUMENTS DIRECTORY"`في الكود التالي مع المسار الفعلي لمجلد المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 3: Load source PDF document
+## الخطوة 3: تحميل مستند PDF المصدر
 
-Now we will load the source PDF document and check if it is password protected using the following code:
+سنقوم الآن بتحميل مستند PDF المصدر والتحقق مما إذا كان محميًا بكلمة مرور باستخدام الكود التالي:
 
 ```csharp
 PdfFileInfo fileInfo = new PdfFileInfo(dataDir + @"IsPasswordProtected.pdf");
 ```
 
-## Step 4: Check if the PDF is protected
+## الخطوة 4: تحقق مما إذا كان ملف PDF محميًا
 
-In this step, we will determine if the PDF document is password protected using the `IsEncrypted` method of the `PdfFileInfo` object. Here is the corresponding code:
+ في هذه الخطوة، سنحدد ما إذا كان مستند PDF محميًا بكلمة مرور باستخدام ملف`IsEncrypted` طريقة`PdfFileInfo` هدف. هنا هو الكود المقابل:
 
 ```csharp
 bool encrypted = fileInfo.IsEncrypted;
 ```
 
-## Step 5: View Encryption Status
+## الخطوة 5: عرض حالة التشفير
 
-Finally, we can display the current encryption status of the PDF using the `Console.WriteLine` method. Here is the corresponding code:
+ أخيرًا، يمكننا عرض حالة التشفير الحالية لملف PDF باستخدام ملف`Console.WriteLine` طريقة. هنا هو الكود المقابل:
 
 ```csharp
 Console.WriteLine(encrypted.ToString());
 ```
 
-The displayed message will indicate whether the PDF document is password protected or not.
+ستشير الرسالة المعروضة إلى ما إذا كان مستند PDF محميًا بكلمة مرور أم لا.
 
-### Sample source code for Is Password Protected using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ هل محمي بكلمة مرور باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the source PDF doucment
+// قم بتحميل مستند PDF المصدر
 PdfFileInfo fileInfo = new PdfFileInfo(dataDir+ @"IsPasswordProtected.pdf");
-// Determine that source PDF file is Encrypted with password
+// تحديد أن ملف PDF المصدر مشفر بكلمة مرور
 bool encrypted = fileInfo.IsEncrypted;
-// MessageBox displays the current status related to PDf encryption
+// يعرض messageBox الحالة الحالية المتعلقة بتشفير PDf
 Console.WriteLine(encrypted.ToString());
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! Now you have a step by step guide to check if a PDF document is password protected using Aspose.PDF for .NET. You can integrate this code into your own projects to perform specific operations depending on the protection status of the PDF.
+تهنئة ! الآن لديك دليل خطوة بخطوة للتحقق مما إذا كان مستند PDF محميًا بكلمة مرور باستخدام Aspose.PDF لـ .NET. يمكنك دمج هذا الرمز في مشاريعك الخاصة لتنفيذ عمليات محددة اعتمادًا على حالة حماية ملف PDF.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced PDF document security and password management features.
+تأكد من مراجعة وثائق Aspose.PDF الرسمية للحصول على مزيد من المعلومات حول ميزات أمان مستندات PDF المتقدمة وإدارة كلمات المرور.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Why is it important to know if a PDF document is password protected?
+#### س: لماذا من المهم معرفة ما إذا كان مستند PDF محميًا بكلمة مرور؟
 
-A: Knowing if a PDF document is password protected is crucial because it determines whether you can access and manipulate the content within it. Different actions might be required based on the protection status.
+ج: إن معرفة ما إذا كان مستند PDF محميًا بكلمة مرور أمر بالغ الأهمية لأنه يحدد ما إذا كان بإمكانك الوصول إلى المحتوى الموجود بداخله ومعالجته. قد تكون هناك حاجة إلى إجراءات مختلفة بناءً على حالة الحماية.
 
-#### Q: What is the significance of checking PDF protection in a C# project?
+#### س: ما أهمية التحقق من حماية PDF في مشروع C#؟
 
-A: Checking PDF protection in a C# project enables you to automate the process of identifying whether a document is password protected, allowing your application to make informed decisions on further actions.
+ج: يمكّنك التحقق من حماية PDF في مشروع C# من أتمتة عملية تحديد ما إذا كان المستند محميًا بكلمة مرور، مما يسمح لتطبيقك باتخاذ قرارات مستنيرة بشأن الإجراءات الإضافية.
 
-#### Q: Can I use this code to unlock a password-protected PDF?
+#### س: هل يمكنني استخدام هذا الرمز لفتح ملف PDF محمي بكلمة مرور؟
 
-A: No, this code is designed to determine whether a PDF is password protected. Unlocking a password-protected PDF involves a different set of procedures.
+ج: لا، تم تصميم هذا الرمز لتحديد ما إذا كان ملف PDF محميًا بكلمة مرور. يتضمن فتح ملف PDF محمي بكلمة مرور مجموعة مختلفة من الإجراءات.
 
-#### Q: How can I enhance the functionality of my application based on this check?
+#### س: كيف يمكنني تحسين وظائف تطبيقي بناءً على هذا الفحص؟
 
-A: Depending on the outcome of the check, you can tailor your application's behavior. For example, you might prompt for a password if the PDF is protected or proceed with normal operations if it's not.
+ج: اعتمادًا على نتيجة الفحص، يمكنك تخصيص سلوك التطبيق الخاص بك. على سبيل المثال، قد تطالب بكلمة مرور إذا كان ملف PDF محميًا أو متابعة العمليات العادية إذا لم يكن الأمر كذلك.
 
-#### Q: What other security features does Aspose.PDF for .NET offer?
+#### س: ما هي ميزات الأمان الأخرى التي يقدمها Aspose.PDF لـ .NET؟
 
-A: Aspose.PDF for .NET provides various advanced security features, including password-based encryption, digital signatures, access control, and more. These features ensure the confidentiality and integrity of your PDF documents.
+ج: يوفر Aspose.PDF for .NET العديد من ميزات الأمان المتقدمة، بما في ذلك التشفير المستند إلى كلمة المرور والتوقيعات الرقمية والتحكم في الوصول والمزيد. تضمن هذه الميزات سرية وسلامة مستندات PDF الخاصة بك.
 
-#### Q: Can I apply password protection using Aspose.PDF for .NET?
+#### س: هل يمكنني تطبيق الحماية بكلمة مرور باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, Aspose.PDF for .NET allows you to apply password protection to your PDF documents. This helps restrict unauthorized access and ensures document security.
+ج: نعم، يسمح لك Aspose.PDF for .NET بتطبيق الحماية بكلمة مرور على مستندات PDF الخاصة بك. وهذا يساعد على تقييد الوصول غير المصرح به ويضمن أمان المستندات.
 
-#### Q: Are there any performance considerations when using this PDF protection check?
+#### س: هل هناك أي اعتبارات تتعلق بالأداء عند استخدام فحص حماية PDF هذا؟
 
-A: The performance impact of this check is negligible, as it involves only metadata retrieval and does not require extensive processing.
+ج: إن تأثير هذا الفحص على الأداء لا يكاد يذكر، لأنه يتضمن فقط استرجاع بيانات التعريف ولا يتطلب معالجة مكثفة.
 
-#### Q: Is Aspose.PDF for .NET suitable for large-scale applications?
+#### س: هل Aspose.PDF for .NET مناسب للتطبيقات واسعة النطاق؟
 
-A: Absolutely, Aspose.PDF for .NET is well-suited for projects of all sizes, from small applications to large-scale enterprise solutions.
+ج: بالتأكيد، يعد Aspose.PDF for .NET مناسبًا تمامًا للمشاريع بجميع أحجامها، بدءًا من التطبيقات الصغيرة وحتى حلول المؤسسات واسعة النطاق.

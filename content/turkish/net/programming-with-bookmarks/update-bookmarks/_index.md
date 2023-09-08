@@ -1,49 +1,49 @@
 ---
-title: Update Bookmarks In PDF File
-linktitle: Update Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily update bookmarks in PDF file with Aspose.PDF for .NET.
+title: PDF Dosyasındaki Yer İşaretlerini Güncelle
+linktitle: PDF Dosyasındaki Yer İşaretlerini Güncelle
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasındaki yer işaretlerini kolayca güncelleyin.
 type: docs
 weight: 100
 url: /tr/net/programming-with-bookmarks/update-bookmarks/
 ---
-Updating bookmarks in PDF file is often necessary to reflect changes or updates in the structure or content of the document. With Aspose.PDF for .NET, you can easily update bookmarks by following the following source code:
+PDF dosyasındaki yer imlerinin güncellenmesi genellikle belgenin yapısındaki veya içeriğindeki değişiklikleri veya güncellemeleri yansıtmak için gereklidir. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu takip ederek yer işaretlerini kolayca güncelleyebilirsiniz:
 
-## Step 1: Import required libraries
+## 1. Adım: Gerekli kitaplıkları içe aktarın
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Başlamadan önce C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. Gerekli ithalat direktifi aşağıdadır:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## 2. Adım: Belgeler klasörünün yolunu ayarlayın
 
-In this step, you need to specify the path to the folder containing the PDF file you want to update. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ Bu adımda güncellemek istediğiniz PDF dosyasının bulunduğu klasörün yolunu belirtmeniz gerekmektedir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"`belgeler klasörünüzün gerçek yolunu içeren aşağıdaki kodda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## 3. Adım: PDF belgesini açın
 
-Now we will open the PDF document we want to update using the following code:
+Şimdi aşağıdaki kodu kullanarak güncellemek istediğimiz PDF belgesini açacağız:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateBookmarks.pdf");
 ```
 
-## Step 4: Get bookmark object
+## 4. Adım: Yer imi nesnesini alın
 
-In this step, we'll get the specific bookmark object we want to update. In the example below, we retrieve the bookmark at index 1 (the second bookmark in the bookmarks collection). You can adjust the index according to your needs. Here is the corresponding code:
+Bu adımda güncellemek istediğimiz belirli yer imi nesnesini alacağız. Aşağıdaki örnekte, dizin 1'deki yer imini alıyoruz (yer imleri koleksiyonundaki ikinci yer imi). Endeksi ihtiyaçlarınıza göre ayarlayabilirsiniz. İşte ilgili kod:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-## Step 5: Update bookmark properties
+## 5. Adım: Yer imi özelliklerini güncelleyin
 
-Now let's update the bookmark properties such as title, italic style, and bold style. You can adjust these properties according to your needs. Here is the corresponding code:
+Şimdi başlık, italik stil ve kalın stil gibi yer imi özelliklerini güncelleyelim. Bu özellikleri ihtiyaçlarınıza göre ayarlayabilirsiniz. İşte ilgili kod:
 
 ```csharp
 pdfOutline.Title = "Updated Outline";
@@ -51,79 +51,79 @@ pdfOutline. Italic = true;
 pdfOutline. Bold = true;
 ```
 
-## Step 6: Save the updated file
+## 6. Adım: Güncellenen dosyayı kaydedin
 
-Now let's save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ Şimdi güncellenen PDF dosyasını kullanarak kaydedelim.`Save` yöntemi`pdfDocument` nesne. İşte ilgili kod:
 
 ```csharp
 dataDir = dataDir + "UpdateBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Update Bookmarks using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Yer İmlerini Güncelleme için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "UpdateBookmarks.pdf");
-// Get a bookmark object
+// Bir yer imi nesnesi alın
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 pdfOutline.Title = "Updated Outline";
 pdfOutline.Italic = true;
 pdfOutline.Bold = true;
 dataDir = dataDir + "UpdateBookmarks_out.pdf";
-// Save output
+// Çıktıyı kaydet
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nBookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! Now you have a step-by-step guide to updating bookmarks with Aspose.PDF for .NET. You can use this code to change the titles and styles of bookmarks in your PDF documents.
+Tebrikler! Artık Aspose.PDF for .NET ile yer işaretlerini güncelleme konusunda adım adım bir kılavuza sahipsiniz. PDF belgelerinizdeki yer imlerinin başlıklarını ve stillerini değiştirmek için bu kodu kullanabilirsiniz.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Gelişmiş yer imi düzenleme özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
 
-### FAQ's for update bookmarks in PDF file
+### PDF dosyasındaki yer işaretlerini güncellemeye ilişkin SSS
 
-#### Q: Why would I need to update bookmarks in a PDF file?
+#### S: Bir PDF dosyasındaki yer işaretlerini neden güncellemem gerekiyor?
 
-A: Updating bookmarks is essential when you want to reflect changes or updates in the structure, content, or appearance of a PDF document. It ensures that the bookmarks accurately represent the document's organization.
+C: Bir PDF belgesinin yapısındaki, içeriğindeki veya görünümündeki değişiklikleri veya güncellemeleri yansıtmak istediğinizde yer işaretlerini güncellemek çok önemlidir. Yer imlerinin belgenin organizasyonunu doğru şekilde temsil etmesini sağlar.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### S: C# projem için gerekli kitaplıkları nasıl içeri aktarabilirim?
 
-A: To import the required libraries for your C# project, include the following import directive:
+C: C# projeniz için gerekli kitaplıkları içe aktarmak için aşağıdaki içe aktarma yönergesini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive allows you to access the classes and methods needed to work with PDF documents and bookmarks.
+Bu yönerge, PDF belgeleri ve yer imleriyle çalışmak için gereken sınıflara ve yöntemlere erişmenizi sağlar.
 
-#### Q: How do I specify the path to the documents folder?
+#### S: Belgeler klasörünün yolunu nasıl belirlerim?
 
-A: Replace `"YOUR DOCUMENT DIRECTORY"` in the provided source code with the actual path to the folder containing the PDF file you want to update.
+ C: Değiştir`"YOUR DOCUMENT DIRECTORY"` sağlanan kaynak kodunda, güncellemek istediğiniz PDF dosyasını içeren klasörün gerçek yolunu belirtin.
 
-#### Q: How do I open a PDF document for updating bookmarks?
+#### S: Yer işaretlerini güncellemek için bir PDF belgesini nasıl açarım?
 
-A: To open a PDF document for updating bookmarks, use the following code:
+C: Yer imlerini güncellemek amacıyla bir PDF belgesi açmak için aşağıdaki kodu kullanın:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateBookmarks.pdf");
 ```
 
-Replace `"UpdateBookmarks.pdf"` with the actual file name.
+ Yer değiştirmek`"UpdateBookmarks.pdf"` gerçek dosya adı ile.
 
-#### Q: How do I get the bookmark object I want to update?
+#### S: Güncellemek istediğim yer imi nesnesini nasıl edinebilirim?
 
-A: To retrieve a specific bookmark for updating, access the `Outlines` property of the `pdfDocument` object. In the example below, we retrieve the bookmark at index 1:
+ C: Güncelleme amacıyla belirli bir yer imini almak için`Outlines` mülkiyeti`pdfDocument` nesne. Aşağıdaki örnekte, dizin 1'deki yer imini alıyoruz:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-#### Q: What bookmark properties can I update?
+#### S: Hangi yer imi özelliklerini güncelleyebilirim?
 
-A: You can update various properties of a bookmark, such as its title, italic style, and bold style. Customize these properties according to your needs:
+C: Bir yer iminin başlığı, italik stili ve kalın stili gibi çeşitli özelliklerini güncelleyebilirsiniz. Bu özellikleri ihtiyaçlarınıza göre özelleştirin:
 
 ```csharp
 pdfOutline.Title = "Updated Outline";
@@ -131,23 +131,23 @@ pdfOutline.Italic = true;
 pdfOutline.Bold = true;
 ```
 
-#### Q: How do I save the updated PDF file?
+#### S: Güncellenen PDF dosyasını nasıl kaydederim?
 
-A: Save the updated PDF file using the `Save` method of the `pdfDocument` object:
+ C: Güncellenen PDF dosyasını kullanarak kaydedin.`Save` yöntemi`pdfDocument` nesne:
 
 ```csharp
 dataDir = dataDir + "UpdateBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-#### Q: Can I update multiple bookmarks using this method?
+#### S: Bu yöntemi kullanarak birden fazla yer imini güncelleyebilir miyim?
 
-A: Yes, you can repeat steps 4 to 6 for each bookmark you want to update. Modify the index and properties as needed.
+C: Evet, güncellemek istediğiniz her yer imi için 4'ten 6'ya kadar olan adımları tekrarlayabilirsiniz. Dizini ve özellikleri gerektiği gibi değiştirin.
 
-#### Q: Is there a limit to the number of bookmarks I can update?
+#### S: Güncelleyebileceğim yer imlerinin sayısında bir sınır var mı?
 
-A: There is typically no strict limit to the number of bookmarks you can update. However, very large documents with numerous bookmarks may require efficient memory management.
+C: Güncelleyebileceğiniz yer imlerinin sayısı konusunda genellikle kesin bir sınır yoktur. Ancak çok sayıda yer imine sahip çok büyük belgeler, etkin bellek yönetimi gerektirebilir.
 
-#### Q: How can I confirm that the bookmarks have been updated?
+#### S: Yer işaretlerinin güncellendiğini nasıl doğrulayabilirim?
 
-A: Open the generated PDF file to verify that the specified bookmark updates have been applied.
+C: Belirtilen yer imi güncellemelerinin uygulandığını doğrulamak için oluşturulan PDF dosyasını açın.

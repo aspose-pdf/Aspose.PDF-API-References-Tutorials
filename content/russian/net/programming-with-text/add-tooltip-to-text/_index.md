@@ -1,26 +1,26 @@
 ---
-title: Add Tooltip To Text In PDF File
-linktitle: Add Tooltip To Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add tooltips to text in PDF file using Aspose.PDF for .NET.
+title: Добавить подсказку к тексту в PDF-файле
+linktitle: Добавить подсказку к тексту в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как добавлять всплывающие подсказки к тексту в PDF-файле с помощью Aspose.PDF для .NET.
 type: docs
 weight: 90
 url: /ru/net/programming-with-text/add-tooltip-to-text/
 ---
-This tutorial will guide you through the process of adding tooltips to text in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Это руководство проведет вас через процесс добавления всплывающих подсказок к тексту в PDF-файле с помощью Aspose.PDF для .NET. Приведенный исходный код C# демонстрирует необходимые шаги.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Требования
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio или любой другой компилятор C#, установленный на вашем компьютере.
+- Aspose.PDF для библиотеки .NET. Вы можете скачать его с официального сайта Aspose или использовать для установки менеджер пакетов, например NuGet.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Шаг 1. Настройте проект
+1. Создайте новый проект C# в предпочитаемой вами среде разработки.
+2. Добавьте ссылку на библиотеку Aspose.PDF для .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to add tooltips to text, add the following using directives at the top of the file:
+## Шаг 2. Импортируйте необходимые пространства имен.
+В файле кода, в котором вы хотите добавить всплывающие подсказки к тексту, добавьте следующие директивы в верхней части файла:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,11 +28,11 @@ using Aspose.Pdf.Forms;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Шаг 3. Установите каталог документов.
+ В коде найдите строку с надписью`string dataDir = "YOUR DOCUMENT DIRECTORY";` и заменить`"YOUR DOCUMENT DIRECTORY"` с путем к каталогу, в котором хранятся ваши документы.
 
-## Step 4: Create a sample document with text
-Create a new `Document` object and add pages with text fragments. In the provided code, two text fragments are added to the document with the respective tooltip text.
+## Шаг 4. Создайте образец документа с текстом
+ Создать новый`Document` объект и добавлять страницы с фрагментами текста. В предоставленном коде в документ добавляются два текстовых фрагмента с соответствующим текстом подсказки.
 
 ```csharp
 Document doc = new Document();
@@ -41,8 +41,8 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 ```
 
-## Step 5: Open the document and find the text fragments
-Load the created document using the `Document` constructor and find the text fragments that need tooltips using `TextFragmentAbsorber`.
+## Шаг 5: Откройте документ и найдите фрагменты текста.
+ Загрузите созданный документ с помощью`Document` конструктор и найдите фрагменты текста, которым нужны всплывающие подсказки, с помощью`TextFragmentAbsorber`.
 
 ```csharp
 Document document = new Document(outputFile);
@@ -51,8 +51,8 @@ document.Pages.Accept(absorb);
 TextFragmentCollection textFragments = absorb.TextFragments;
 ```
 
-## Step 6: Add tooltips to the text fragments
-Loop through the extracted text fragments and create invisible buttons at their positions. Assign the desired tooltip text to the `AlternateName` property of the `ButtonField`. Add the button fields to the document's form.
+## Шаг 6: Добавьте всплывающие подсказки к текстовым фрагментам
+ Прокрутите извлеченные фрагменты текста и создайте невидимые кнопки на их местах. Назначьте нужный текст всплывающей подсказки`AlternateName` собственность`ButtonField`. Добавьте поля кнопок в форму документа.
 
 ```csharp
 foreach(TextFragment fragment in textFragments)
@@ -63,8 +63,8 @@ foreach(TextFragment fragment in textFragments)
 }
 ```
 
-## Step 7: Repeat for additional text fragments with long tooltips
-Repeat steps 5 and 6 for text fragments with long tooltips. Modify the search criteria and tooltip text accordingly.
+## Шаг 7. Повторите эти действия для дополнительных фрагментов текста с длинными подсказками.
+Повторите шаги 5 и 6 для фрагментов текста с длинными подсказками. Измените критерии поиска и текст всплывающей подсказки соответствующим образом.
 
 ```csharp
 absorb = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
@@ -79,49 +79,49 @@ foreach(TextFragment fragment in textFragments)
 }
 ```
 
-## Step 8: Save the modified document
-Save the modified PDF document using the `Save` method of the `Document` object.
+## Шаг 8. Сохраните измененный документ.
+ Сохраните измененный PDF-документ, используя`Save` метод`Document` объект.
 
 ```csharp
 document. Save(outputFile);
 ```
 
-### Sample source code for Add Tooltip To Text using Aspose.PDF for .NET 
+### Пример исходного кода для добавления всплывающей подсказки в текст с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outputFile = dataDir + "Tooltip_out.pdf";
-// Create sample document with text
+// Создать образец документа с текстом
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a tooltip"));
 doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a very long tooltip"));
 doc.Save(outputFile);
-// Open document with text
+// Открыть документ с текстом
 Document document = new Document(outputFile);
-// Create TextAbsorber object to find all the phrases matching the regular expression
+// Создайте объект TextAbsorber, чтобы найти все фразы, соответствующие регулярному выражению.
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-// Accept the absorber for the document pages
+// Примите поглотитель для страниц документа
 document.Pages.Accept(absorber);
-// Get the extracted text fragments
+// Получить извлеченные фрагменты текста
 TextFragmentCollection textFragments = absorber.TextFragments;
-// Loop through the fragments
+// Перебирать фрагменты
 foreach (TextFragment fragment in textFragments)
 {
-	// Create invisible button on text fragment position
+	// Создать невидимую кнопку в позиции фрагмента текста
 	ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-	// AlternateName value will be displayed as tooltip by a viewer application
+	// Значение AlternateName будет отображаться во всплывающей подсказке приложением просмотра.
 	field.AlternateName = "Tooltip for text.";
-	// Add button field to the document
+	// Добавить поле кнопки в документ
 	document.Form.Add(field);
 }
-// Next will be sapmle of very long tooltip
+// Далее будет образец очень длинной всплывающей подсказки.
 absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
 document.Pages.Accept(absorber);
 textFragments = absorber.TextFragments;
 foreach (TextFragment fragment in textFragments)
 {
 	ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-	// Set very long text
+	// Установить очень длинный текст
 	field.AlternateName = "Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
 							" sed do eiusmod tempor incididunt ut labore et dolore magna" +
 							" aliqua. Ut enim ad minim veniam, quis nostrud exercitation" +
@@ -132,22 +132,22 @@ foreach (TextFragment fragment in textFragments)
 							" deserunt mollit anim id est laborum.";
 	document.Form.Add(field);
 }
-// Save document
+// Сохранить документ
 document.Save(outputFile);
 ```
 
-## Conclusion
-You have successfully added tooltips to text in a PDF document using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## Заключение
+Вы успешно добавили всплывающие подсказки в текст PDF-документа с помощью Aspose.PDF для .NET. Полученный PDF-файл теперь можно найти по указанному пути к выходному файлу.
 
-## FAQs
+## Часто задаваемые вопросы
 
-#### Q: What is the focus of this tutorial?
+#### Вопрос: Чему посвящено это руководство?
 
-A: This tutorial focuses on adding tooltips to text within a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the steps required to achieve this.
+О: В этом руководстве основное внимание уделяется добавлению всплывающих подсказок к тексту в файле PDF с использованием библиотеки Aspose.PDF для .NET. Приведенный исходный код C# демонстрирует шаги, необходимые для достижения этой цели.
 
-#### Q: Which namespaces need to be imported for this tutorial?
+#### Вопрос: Какие пространства имен необходимо импортировать для этого руководства?
 
-A: In the code file where you want to add tooltips to text, import the following namespaces at the beginning of the file:
+О: В файле кода, в котором вы хотите добавить всплывающие подсказки к тексту, импортируйте следующие пространства имен в начало файла:
 
 ```csharp
 using Aspose.Pdf;
@@ -155,30 +155,30 @@ using Aspose.Pdf.Forms;
 using Aspose.Pdf.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### Вопрос: Как указать каталог документа?
 
-A: In the code, find the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ О: В коде найдите строку`string dataDir = "YOUR DOCUMENT DIRECTORY";` и заменить`"YOUR DOCUMENT DIRECTORY"` с фактическим путем к каталогу вашего документа.
 
-#### Q: How can I create a sample document with text?
+#### Вопрос: Как создать образец документа с текстом?
 
-A: In Step 4, you'll create a new `Document` object and add pages with text fragments. The code provided adds two text fragments with respective tooltip text.
+ О: На шаге 4 вы создадите новый`Document` объект и добавлять страницы с фрагментами текста. Предоставленный код добавляет два текстовых фрагмента с соответствующим текстом всплывающей подсказки.
 
-#### Q: How do I open the document and find the text fragments?
+#### Вопрос: Как открыть документ и найти фрагменты текста?
 
-A: In Step 5, you'll load the created document using the `Document` constructor and find the text fragments requiring tooltips using the `TextFragmentAbsorber`.
+ О: На шаге 5 вы загрузите созданный документ, используя`Document` конструктор и найдите фрагменты текста, требующие всплывающих подсказок, с помощью`TextFragmentAbsorber`.
 
-#### Q: How do I add tooltips to the text fragments?
+#### Вопрос: Как добавить подсказки к фрагментам текста?
 
-A: In Step 6, you'll loop through the extracted text fragments and create invisible buttons at their positions. The tooltip text is assigned to the `AlternateName` property of the `ButtonField`, which is added to the document's form.
+ О: На шаге 6 вы пройдете по извлеченным фрагментам текста и создадите невидимые кнопки на их позициях. Текст всплывающей подсказки присваивается`AlternateName` собственность`ButtonField`который добавляется в форму документа.
 
-#### Q: How do I repeat the process for additional text fragments with long tooltips?
+#### Вопрос: Как повторить процедуру для дополнительных фрагментов текста с длинными подсказками?
 
-A: For text fragments with long tooltips, repeat Steps 5 and 6. Modify the search criteria and tooltip text accordingly.
+О: Для фрагментов текста с длинными подсказками повторите шаги 5 и 6. Измените критерии поиска и текст подсказки соответствующим образом.
 
-#### Q: How do I save the modified document?
+#### Вопрос: Как сохранить измененный документ?
 
-A: In Step 8, you'll save the modified PDF document using the `Save` method of the `Document` object.
+ О: На шаге 8 вы сохраните измененный PDF-документ, используя`Save` метод`Document` объект.
 
-#### Q: What is the main takeaway from this tutorial?
+#### Вопрос: Каков основной вывод из этого урока?
 
-A: By following this tutorial, you've learned how to enhance your PDF document by adding tooltips to text using Aspose.PDF for .NET. This can provide valuable additional information for readers when they interact with the PDF content.
+О: Следуя этому руководству, вы узнали, как улучшить свой PDF-документ, добавив всплывающие подсказки к тексту с помощью Aspose.PDF для .NET. Это может предоставить читателям ценную дополнительную информацию при взаимодействии с содержимым PDF.

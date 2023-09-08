@@ -1,69 +1,69 @@
 ---
-title: Inline Structure Elements
-linktitle: Inline Structure Elements
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to using online structural elements with Aspose.PDF for .NET. Organize your PDFs with headings and paragraphs.
+title: Satır İçi Yapı Elemanları
+linktitle: Satır İçi Yapı Elemanları
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile çevrimiçi yapısal elemanların kullanımına ilişkin adım adım kılavuz. PDF'lerinizi başlıklar ve paragraflarla düzenleyin.
 type: docs
 weight: 110
 url: /tr/net/programming-with-tagged-pdf/inline-structure-elements/
 ---
-In this step-by-step guide, we'll show you how to use inline structure elements with Aspose.PDF for .NET. Aspose.PDF is a powerful library that lets you manipulate PDF documents programmatically. Inline structure elements allow you to create a hierarchical structure in your PDF document using headings of different levels and paragraphs.
+Bu adım adım kılavuzda, satır içi yapı elemanlarını Aspose.PDF for .NET ile nasıl kullanacağınızı göstereceğiz. Aspose.PDF, PDF belgelerini programlı olarak değiştirmenizi sağlayan güçlü bir kütüphanedir. Satır içi yapı öğeleri, farklı düzeydeki başlıklar ve paragraflar kullanarak PDF belgenizde hiyerarşik bir yapı oluşturmanıza olanak tanır.
 
-Let's dive into the code and learn how to use inline structure elements with Aspose.PDF for .NET.
+Kodun derinliklerine inelim ve Aspose.PDF for .NET ile satır içi yapı elemanlarının nasıl kullanılacağını öğrenelim.
 
-## Prerequisites
+## Önkoşullar
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-1. Aspose.PDF library for .NET installed.
-2. A basic knowledge of the C# programming language.
+1. .NET için Aspose.PDF kütüphanesi kuruldu.
+2. C# programlama dili hakkında temel bilgi.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-To get started, open your C# development environment and create a new project. Make sure you have added a reference to the Aspose.PDF library for .NET in your project.
+Başlamak için C# geliştirme ortamınızı açın ve yeni bir proje oluşturun. Projenize .NET için Aspose.PDF kütüphanesine bir referans eklediğinizden emin olun.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating the document
+## Adım 2: Belgeyi oluşturma
 
-The first step is to create a new PDF document using the `Document` class.
+ İlk adım, kullanarak yeni bir PDF belgesi oluşturmaktır.`Document` sınıf.
 
 ```csharp
-// Create the PDF document
+// PDF belgesini oluşturun
 Document document = new Document();
 ```
 
-## Step 3: Work with tagged content
+## 3. Adım: Etiketli içerikle çalışın
 
-Then we get the tagged content of the document to work with.
+Daha sonra üzerinde çalışacağımız belgenin etiketli içeriğini alıyoruz.
 
 ```csharp
-// Get the tagged content of the document
+// Belgenin etiketli içeriğini alın
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 4: Set document title and language
+## 4. Adım: Belge başlığını ve dilini ayarlayın
 
-We can now set the document title and language.
+Artık belge başlığını ve dilini ayarlayabiliriz.
 
 ```csharp
-// Define the document title and language
+// Belge başlığını ve dilini tanımlayın
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 5: Add structural elements online
+## 5. Adım: Yapısal öğeleri çevrimiçi olarak ekleyin
 
-Now we are going to add inline structure elements such as headings of different levels and paragraphs to our document.
+Şimdi belgemize farklı düzeylerde başlıklar ve paragraflar gibi satır içi yapı öğeleri ekleyeceğiz.
 
 ```csharp
-// Get the root structure element
+// Kök yapı öğesini alın
 StructureElement rootElement = taggedContent.RootElement;
 
-// Add headers of different levels
+// Farklı düzeylerde başlıklar ekleyin
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
 HeaderElement h3 = taggedContent.CreateHeaderElement(3);
@@ -77,7 +77,7 @@ rootElement.AppendChild(h4);
 rootElement.AppendChild(h5);
 rootElement.AppendChild(h6);
 
-// Add content to each header
+// Her başlığa içerik ekleyin
 SpanElement spanH11 = taggedContent.CreateSpanElement();
 spanH11.SetText("H1.");
 h1.AppendChild(spanH11);
@@ -120,12 +120,12 @@ SpanElement spanH62 = taggedContent.CreateSpanElement();
 spanH62.SetText("Heading level 6");
 h6.AppendChild(spanH62);
 
-// Add a paragraph
+// Paragraf ekle
 ParagraphElement p = taggedContent.CreateParagraphElement();
 p.SetText("P.");
 rootElement.AppendChild(p);
 
-// Add content to the paragraph
+// Paragrafa içerik ekleme
 SpanElement span1 = taggedContent.CreateSpanElement();
 span1.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
 p.AppendChild(span1);
@@ -158,35 +158,35 @@ span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla pur
 p.AppendChild(span10);
 ```
 
-Here we create inline structure elements, such as headings of different levels and a paragraph, and add content to them.
+Burada farklı düzeylerde başlıklar ve paragraf gibi satır içi yapı öğeleri oluşturup bunlara içerik ekliyoruz.
 
-## Step 6: Save the tagged PDF document
+## 6. Adım: Etiketli PDF belgesini kaydedin
 
-Finally, we save the tagged PDF document.
+Son olarak etiketlenen PDF belgesini kaydediyoruz.
 
 ```csharp
-// Save the tagged PDF document
+// Etiketli PDF belgesini kaydedin
 document.Save(dataDir + "InlineStructureElements.pdf");
 ```
 
-### Sample source code for Inline Structure Elements using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Satır İçi Yapı Elemanları için örnek kaynak kodu 
 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// Pdf Belgesi Oluştur
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// TaggedPdf ile çalışmaya yönelik İçerik edinin
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+// Documnet için Başlığı ve Dili Ayarlayın
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Get Root Structure Element
+// Kök Yapı Elemanını Alın
 StructureElement rootElement = taggedContent.RootElement;
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
@@ -270,53 +270,53 @@ SpanElement span10 = taggedContent.CreateSpanElement();
 span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
 p.AppendChild(span10);
 
-// Save Tagged Pdf Document
+// Etiketli Pdf Belgesini Kaydet
 document.Save(dataDir + "InlineStructureElements.pdf");
 
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have learned how to use inline structure elements with Aspose.PDF for .NET. You can now create a hierarchical structure in your PDF document by using headings of different levels and paragraphs. Explore more features of Aspose.PDF to discover its full potential.
+Tebrikler! Aspose.PDF for .NET ile satır içi yapı elemanlarının nasıl kullanılacağını öğrendiniz. Artık farklı düzeylerde başlıklar ve paragraflar kullanarak PDF belgenizde hiyerarşik bir yapı oluşturabilirsiniz. Aspose.PDF'in tüm potansiyelini keşfetmek için diğer özelliklerini keşfedin.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What are inline structure elements in a PDF document, and how do they contribute to creating a hierarchical structure?
+#### S: Bir PDF belgesindeki satır içi yapı öğeleri nelerdir ve bunlar hiyerarşik bir yapı oluşturmaya nasıl katkıda bulunur?
 
-A: Inline structure elements in a PDF document, such as headings of different levels and paragraphs, are used to create a hierarchical structure that organizes and presents content in a structured manner. These elements allow you to establish a clear hierarchy and flow of information within the document.
+C: Bir PDF belgesindeki farklı düzeylerdeki başlıklar ve paragraflar gibi satır içi yapı öğeleri, içeriği yapılandırılmış bir şekilde düzenleyen ve sunan hiyerarşik bir yapı oluşturmak için kullanılır. Bu öğeler, belge içinde net bir hiyerarşi ve bilgi akışı oluşturmanıza olanak tanır.
 
-#### Q: How can inline structure elements enhance the readability and organization of a PDF document?
+#### S: Satır içi yapı öğeleri bir PDF belgesinin okunabilirliğini ve düzenini nasıl geliştirebilir?
 
-A: Inline structure elements, particularly headings and paragraphs, help improve the readability and organization of a PDF document by providing a logical structure. Headings indicate different levels of importance and help readers navigate the content, while paragraphs group related information together.
+C: Satır içi yapı öğeleri, özellikle başlıklar ve paragraflar, mantıksal bir yapı sağlayarak PDF belgesinin okunabilirliğini ve düzenini iyileştirmeye yardımcı olur. Başlıklar farklı önem düzeylerini belirtir ve okuyucuların içerikte gezinmesine yardımcı olur; paragraflar ise ilgili bilgileri bir arada gruplandırır.
 
-#### Q: How does Aspose.PDF for .NET facilitate the use of inline structure elements?
+#### S: Aspose.PDF for .NET satır içi yapı elemanlarının kullanımını nasıl kolaylaştırıyor?
 
-A: Aspose.PDF for .NET offers classes and methods to create and manipulate inline structure elements, such as headings and paragraphs. These elements can be customized, organized hierarchically, and enriched with content to improve the visual presentation and accessibility of the document.
+C: Aspose.PDF for .NET, başlıklar ve paragraflar gibi satır içi yapı öğelerini oluşturmak ve değiştirmek için sınıflar ve yöntemler sunar. Bu öğeler, belgenin görsel sunumunu ve erişilebilirliğini geliştirmek için özelleştirilebilir, hiyerarşik olarak düzenlenebilir ve içerikle zenginleştirilebilir.
 
-#### Q: What is the purpose of the `taggedContent` object in relation to inline structure elements?
+####  Soru: Programın amacı nedir?`taggedContent` object in relation to inline structure elements?
 
-A: The `taggedContent` object, obtained from the `TaggedContent` property of a `Document`, allows you to work with structured elements, including inline structure elements. It enables you to create, customize, and organize headings and paragraphs within the document.
+ C:`taggedContent` elde edilen nesne`TaggedContent` bir mülk`Document`, satır içi yapı öğeleri de dahil olmak üzere yapılandırılmış öğelerle çalışmanıza olanak tanır. Belge içinde başlıklar ve paragraflar oluşturmanıza, özelleştirmenize ve düzenlemenize olanak tanır.
 
-#### Q: How do inline structure elements aid in creating a clear document hierarchy?
+#### S: Satır içi yapı öğeleri net bir belge hiyerarşisi oluşturmaya nasıl yardımcı olur?
 
-A: Inline structure elements, such as headings of varying levels, contribute to establishing a clear and well-defined hierarchy in the document. Readers can quickly identify the main topics, subtopics, and related content, making the document easier to navigate and comprehend.
+C: Farklı düzeylerdeki başlıklar gibi satır içi yapı öğeleri, belgede açık ve iyi tanımlanmış bir hiyerarşi oluşturulmasına katkıda bulunur. Okuyucular ana konuları, alt konuları ve ilgili içeriği hızlı bir şekilde tanımlayabilir, böylece belgede gezinmek ve anlamak daha kolay hale gelir.
 
-#### Q: Can I customize the appearance and formatting of inline structure elements using Aspose.PDF for .NET?
+#### S: Satır içi yapı elemanlarının görünümünü ve formatını Aspose.PDF for .NET kullanarak özelleştirebilir miyim?
 
-A: Yes, you can customize the appearance and formatting of inline structure elements. You can set properties such as font styles, sizes, colors, alignment, indentation, and spacing to achieve the desired visual presentation for headings and paragraphs.
+C: Evet, satır içi yapı öğelerinin görünümünü ve biçimlendirmesini özelleştirebilirsiniz. Başlıklar ve paragraflar için istenen görsel sunumu elde etmek amacıyla yazı tipi stilleri, boyutları, renkleri, hizalaması, girintisi ve aralığı gibi özellikleri ayarlayabilirsiniz.
 
-#### Q: How do I create and add headings of different levels to a PDF document using inline structure elements in Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'teki satır içi yapı öğelerini kullanarak bir PDF belgesine farklı düzeylerde başlıkları nasıl oluşturabilirim ve eklerim?
 
-A: You can create headings of different levels using the `CreateHeaderElement` method and then append them to the root structure element. Subsequently, you can add content to each heading element using the `CreateSpanElement` method to create spans of text.
+ C: Düğmeyi kullanarak farklı düzeylerde başlıklar oluşturabilirsiniz.`CreateHeaderElement` yöntemini kullanın ve ardından bunları kök yapı öğesine ekleyin. Daha sonra, her bir başlık öğesine içerik ekleyebilirsiniz.`CreateSpanElement` metin aralıkları oluşturma yöntemi.
 
-#### Q: Can I use inline structure elements to create lists, bullet points, or other types of content organization in a PDF document?
+#### S: Bir PDF belgesinde listeler, madde işaretleri veya diğer içerik organizasyonu türlerini oluşturmak için satır içi yapı öğelerini kullanabilir miyim?
 
-A: While inline structure elements themselves are primarily used for headings and paragraphs, you can use them in combination with other features offered by Aspose.PDF for .NET to create lists, bullet points, tables, and other types of content organization for a comprehensive document structure.
+C: Satır içi yapı elemanları öncelikle başlıklar ve paragraflar için kullanılsa da bunları Aspose.PDF for .NET'in sunduğu diğer özelliklerle birlikte kullanarak kapsamlı bir içerik organizasyonu için listeler, madde işaretleri, tablolar ve diğer içerik organizasyonu türlerini oluşturabilirsiniz. belge yapısı.
 
-#### Q: How do inline structure elements contribute to document accessibility?
+#### S: Satır içi yapı öğeleri belge erişilebilirliğine nasıl katkıda bulunur?
 
-A: Inline structure elements play a crucial role in enhancing document accessibility. Properly structured headings and paragraphs provide a clear document hierarchy that aids screen readers and other assistive technologies in accurately interpreting and conveying the content to users with disabilities.
+C: Satır içi yapı öğeleri belge erişilebilirliğini artırmada çok önemli bir rol oynar. Düzgün yapılandırılmış başlıklar ve paragraflar, içeriğin engelli kullanıcılara doğru şekilde yorumlanması ve iletilmesinde ekran okuyuculara ve diğer yardımcı teknolojilere yardımcı olan net bir belge hiyerarşisi sağlar.
 
-#### Q: Can I explore more advanced uses of inline structure elements, such as creating interactive elements or embedding multimedia?
+#### S: Satır içi yapı öğelerinin etkileşimli öğeler oluşturma veya multimedya yerleştirme gibi daha gelişmiş kullanımlarını keşfedebilir miyim?
 
-A: Absolutely! While this tutorial focuses on creating headings and paragraphs, Aspose.PDF for .NET offers advanced features to create interactive elements, embed multimedia, add hyperlinks, and more. Check the library's documentation and examples to delve into these advanced capabilities.
+C: Kesinlikle! Bu eğitim başlıklar ve paragraflar oluşturmaya odaklanırken, Aspose.PDF for .NET etkileşimli öğeler oluşturmak, multimedya yerleştirmek, köprüler eklemek ve daha fazlası için gelişmiş özellikler sunar. Bu gelişmiş yetenekleri ayrıntılı olarak incelemek için kitaplığın belgelerine ve örneklerine bakın.

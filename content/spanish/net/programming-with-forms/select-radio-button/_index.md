@@ -1,71 +1,71 @@
 ---
-title: Select Radio Button In PDF Document
-linktitle: Select Radio Button In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to select a radio button in PDF document using Aspose.PDF for .NET.
+title: Seleccionar botón de opción en documento PDF
+linktitle: Seleccionar botón de opción en documento PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a seleccionar un botón de opción en un documento PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 250
 url: /es/net/programming-with-forms/select-radio-button/
 ---
-Here is a detailed tutorial on how to select a radio button using Aspose.PDF for .NET. Follow these steps:
+Aquí hay un tutorial detallado sobre cómo seleccionar un botón de opción usando Aspose.PDF para .NET. Sigue estos pasos:
 
-## Step 1: Start by defining the directory of your documents by specifying the path in the `dataDir` variable.
+##  Paso 1: Comience por definir el directorio de sus documentos especificando la ruta en el`dataDir` variable.
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the PDF document using the `Document` class and the document path.
+##  Paso 2: abra el documento PDF usando el`Document` class and the document path.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "RadioButton.pdf");
 ```
 
-## Step 3: Get the radio button field from the document form.
+## Paso 3: obtenga el campo del botón de opción del formulario del documento.
 
 ```csharp
 RadioButtonField radioField = pdfDocument.Form["radio"] as RadioButtonField;
 ```
 
-## Step 4: Specify the index of the radio button to select from the group.
+## Paso 4: Especifique el índice del botón de opción para seleccionar del grupo.
 
 ```csharp
 radioField. Selected = 2;
 ```
 
-## Step 5: Set the output path for the edited PDF file.
+## Paso 5: establezca la ruta de salida para el archivo PDF editado.
 
 ```csharp
 dataDir = dataDir + "SelectRadioButton_out.pdf";
 ```
 
-## Step 6: Save the modified PDF file.
+## Paso 6: guarde el archivo PDF modificado.
 
 ```csharp
 pdfDocument.Save(dataDir);
 ```
 
-## Step 7: Display a confirmation message and the location of the saved file.
+## Paso 7: muestra un mensaje de confirmación y la ubicación del archivo guardado.
 
 ```csharp
 Console.WriteLine("\nRadio button successfully selected in group.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Select Radio Button using Aspose.PDF for .NET 
+### Código fuente de muestra para Seleccionar botón de opción usando Aspose.PDF para .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// La ruta al directorio de documentos.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Open document
+	// Abrir documento
 	Document pdfDocument = new Document(dataDir + "RadioButton.pdf");
-	// Get a field
+	// conseguir un campo
 	RadioButtonField radioField = pdfDocument.Form["radio"] as RadioButtonField;
-	// Specify the index of radio button from group
+	// Especificar el índice del botón de opción del grupo
 	radioField.Selected = 2;
 	dataDir = dataDir + "SelectRadioButton_out.pdf";
-	// Save the PDF file
+	// Guarde el archivo PDF
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nRadioButton from group selected successfully.\nFile saved at " + dataDir);
 }
@@ -75,29 +75,29 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, we learned how to select a radio button using Aspose.PDF for .NET. By following the steps outlined above, you can manipulate and modify radio buttons in your PDF documents using Aspose.PDF for .NET.
+En este tutorial, aprendimos cómo seleccionar un botón de opción usando Aspose.PDF para .NET. Siguiendo los pasos descritos anteriormente, puede manipular y modificar los botones de opción en sus documentos PDF usando Aspose.PDF para .NET.
 
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: Can I select multiple radio buttons in a group using Aspose.PDF for .NET?
+#### P: ¿Puedo seleccionar varios botones de opción en un grupo usando Aspose.PDF para .NET?
 
-A: No, radio buttons in a group are designed to be mutually exclusive. You can only select one radio button at a time within a group, and selecting one will automatically deselect any previously selected radio button in the same group.
+R: No, los botones de opción de un grupo están diseñados para ser mutuamente excluyentes. Solo puede seleccionar un botón de opción a la vez dentro de un grupo, y al seleccionar uno se anulará automáticamente la selección de cualquier botón de opción previamente seleccionado en el mismo grupo.
 
-#### Q: How do I retrieve the selected radio button in a group using Aspose.PDF for .NET?
+#### P: ¿Cómo recupero el botón de opción seleccionado en un grupo usando Aspose.PDF para .NET?
 
-A: To retrieve the selected radio button in a group, you can use the `Selected` property of the `RadioButtonField` class. It will return the index of the selected radio button within the group.
+ R: Para recuperar el botón de opción seleccionado en un grupo, puede utilizar el`Selected` propiedad de la`RadioButtonField` clase. Devolverá el índice del botón de radio seleccionado dentro del grupo.
 
-#### Q: Can I customize the appearance of the selected radio button in the PDF document?
+#### P: ¿Puedo personalizar la apariencia del botón de opción seleccionado en el documento PDF?
 
-A: Yes, you can customize the appearance of the selected radio button using Aspose.PDF for .NET. You can modify its color, size, border style, and other visual attributes to match your desired appearance.
+R: Sí, puede personalizar la apariencia del botón de opción seleccionado usando Aspose.PDF para .NET. Puede modificar su color, tamaño, estilo de borde y otros atributos visuales para que coincidan con la apariencia deseada.
 
-#### Q: Is it possible to create new radio button groups programmatically using Aspose.PDF for .NET?
+#### P: ¿Es posible crear nuevos grupos de botones de opción mediante programación utilizando Aspose.PDF para .NET?
 
-A: Yes, you can create new radio button groups programmatically using Aspose.PDF for .NET. You can add new radio buttons to the document's form and specify the same group name for each radio button to create a new group.
+R: Sí, puede crear nuevos grupos de botones de opción mediante programación utilizando Aspose.PDF para .NET. Puede agregar nuevos botones de opción al formulario del documento y especificar el mismo nombre de grupo para cada botón de opción para crear un nuevo grupo.
 
-#### Q: Does Aspose.PDF for .NET support working with interactive PDF forms?
+#### P: ¿Aspose.PDF para .NET admite el trabajo con formularios PDF interactivos?
 
-A: Yes, Aspose.PDF for .NET fully supports working with interactive PDF forms, including radio buttons, text fields, checkboxes, and other form elements. You can easily read, modify, and create interactive PDF forms using the library.
+R: Sí, Aspose.PDF para .NET es totalmente compatible con el trabajo con formularios PDF interactivos, incluidos botones de opción, campos de texto, casillas de verificación y otros elementos del formulario. Puede leer, modificar y crear fácilmente formularios PDF interactivos utilizando la biblioteca.

@@ -1,17 +1,17 @@
 ---
-title: Customize Page Numbes While Adding TOC
-linktitle: Customize Page Numbes While Adding TOC
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to customize page numbers while adding a table of contents (TOC) using Aspose.PDF for .NET with this step-by-step guide and code example.
+title: Настройка номеров страниц при добавлении содержания
+linktitle: Настройка номеров страниц при добавлении содержания
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как настроить номера страниц при добавлении оглавления (TOC) с помощью Aspose.PDF для .NET, с помощью этого пошагового руководства и примера кода.
 type: docs
 weight: 100
 url: /ru/net/programming-with-document/customizepagenumbeswhileaddingtoc/
 ---
-In this tutoria, we will explore how to customize page numbers while adding a table of contents (TOC) using Aspose.PDF for .NET. We will provide step-by-step guidance, along with a code example, to help you achieve this.
+В этом уроке мы рассмотрим, как настроить номера страниц при добавлении оглавления (TOC) с помощью Aspose.PDF для .NET. Мы предоставим пошаговые инструкции и пример кода, которые помогут вам в этом.
 
-## Step 1: Loading an existing PDF file
+## Шаг 1. Загрузка существующего PDF-файла
 
-First, we need to load an existing PDF file. For this tutorial, we will use the file "42824.pdf" located in the "YOUR DOCUMENT DIRECTORY" directory. Replace this directory path with the actual path to your document directory.
+Сначала нам нужно загрузить существующий PDF-файл. В этом уроке мы будем использовать файл «42824.pdf», расположенный в каталоге «ВАШ ДОКУМЕНТНЫЙ КАТАЛОГ». Замените этот путь к каталогу фактическим путем к каталогу вашего документа.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -20,17 +20,17 @@ string outFile = dataDir + "42824_out.pdf";
 Document doc = new Document(inFile);
 ```
 
-## Step 2: Adding a TOC page
+## Шаг 2. Добавление страницы содержания
 
-Next, we need to add a new page at the beginning of the document to serve as the TOC page. We can achieve this by using the `Insert()` method of the `Pages` collection of the `Document` object.
+ Далее нам нужно добавить новую страницу в начало документа, которая будет служить страницей содержания. Мы можем добиться этого, используя`Insert()` метод`Pages` коллекция`Document` объект.
 
 ```csharp
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
 ```
 
-## Step 3: Creating a TOC object
+## Шаг 3. Создание объекта TOC
 
-To create a TOC object, we first need to create a `TocInfo` object and set its properties. In this tutorial, we will set the title of the TOC to "Table Of Contents" and the page number prefix to "P".
+ Чтобы создать объект TOC, нам сначала нужно создать`TocInfo` объект и установите его свойства. В этом уроке мы установим для заголовка оглавления значение «Содержание», а для префикса номера страницы — «P».
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -42,99 +42,99 @@ tocInfo.PageNumbersPrefix = "P";
 tocPage.TocInfo = tocInfo;
 ```
 
-## Step 4: Creating TOC entries
+## Шаг 4. Создание записей оглавления
 
-To create TOC entries, we need to loop through all the pages of the document, except for the TOC page, and create a heading object for each page. We can then add the heading object to the TOC page and specify its destination page.
+Чтобы создать записи оглавления, нам нужно просмотреть все страницы документа, кроме страницы оглавления, и создать объект заголовка для каждой страницы. Затем мы можем добавить объект заголовка на страницу содержания и указать его целевую страницу.
 
 ```csharp
 for (int i = 1; i < doc.Pages.Count; i++)
 {
-    // Create Heading object
+    // Создать объект заголовка
     Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
     TextSegment segment2 = new TextSegment();
     heading2.TocPage = tocPage;
     heading2.Segments.Add(segment2);
-    // Specify the destination page for heading object
+    // Укажите целевую страницу для объекта заголовка
     heading2.DestinationPage = doc.Pages[i + 1];
-    // Destination page
+    // Страница назначения
     heading2.Top = doc.Pages[i + 1].Rect.Height;
-    // Destination coordinate
+    // Координата назначения
     segment2.Text = "Page " + i.ToString();
-    // Add heading to page containing TOC
+    // Добавить заголовок на страницу, содержащую оглавление
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
-## Step 5: Saving the updated document
+## Шаг 5: Сохранение обновленного документа
 
-Finally, we need to save the updated document to a new file. We can achieve this by using the `Save()` method of the `Document` object.
+Наконец, нам нужно сохранить обновленный документ в новый файл. Мы можем добиться этого, используя`Save()` метод`Document` объект.
 
 ```csharp
 doc.Save(outFile);
 ```
 
-### Example source code for customizing page numbes while adding TOC using Aspose.PDF for .NET
+### Пример исходного кода для настройки номеров страниц при добавлении оглавления с использованием Aspose.PDF для .NET
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "42824.pdf";
 string outFile = dataDir + "42824_out.pdf";
-// Load an existing PDF files
+// Загрузить существующие PDF-файлы
 Document doc = new Document(inFile);
-// Get access to first page of PDF file
+// Получите доступ к первой странице PDF-файла
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
-// Create object to represent TOC information
+// Создайте объект для представления информации TOC.
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
-// Set the title for TOC
+// Установите заголовок для оглавления
 tocInfo.Title = title;
 tocInfo.PageNumbersPrefix = "P";
 tocPage.TocInfo = tocInfo;
 for (int i = 1; i<doc.Pages.Count; i++)
 {
-	// Create Heading object
+	// Создать объект заголовка
 	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
 	TextSegment segment2 = new TextSegment();
 	heading2.TocPage = tocPage;
 	heading2.Segments.Add(segment2);
-	// Specify the destination page for heading object
+	// Укажите целевую страницу для объекта заголовка
 	heading2.DestinationPage = doc.Pages[i + 1];
-	// Destination page
+	// Страница назначения
 	heading2.Top = doc.Pages[i + 1].Rect.Height;
-	// Destination coordinate
+	// Координата назначения
 	segment2.Text = "Page " + i.ToString();
-	// Add heading to page containing TOC
+	// Добавить заголовок на страницу, содержащую оглавление
 	tocPage.Paragraphs.Add(heading2);
 }
 
-// Save the updated document
+// Сохраните обновленный документ
 doc.Save(outFile);
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we have provided step-by-step guidance on how to customize page numbers while adding a TOC using Aspose.PDF for .NET. We have also provided a code example that you can use as a reference when implementing this feature in your
+В этом руководстве мы предоставили пошаговое руководство по настройке номеров страниц при добавлении оглавления с помощью Aspose.PDF для .NET. Мы также предоставили пример кода, который вы можете использовать в качестве справочного материала при реализации этой функции в своем приложении.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is a table of contents (TOC) in a PDF document?
+#### Вопрос: Что такое оглавление (TOC) в PDF-документе?
 
-A: A table of contents (TOC) in a PDF document is a navigational aid that provides an organized list of document sections or chapters along with their corresponding page numbers. It allows readers to quickly navigate to specific sections within the document.
+О: Оглавление (TOC) в PDF-документе — это средство навигации, которое предоставляет организованный список разделов или глав документа вместе с соответствующими номерами страниц. Это позволяет читателям быстро переходить к определенным разделам документа.
 
-#### Q:Why would I want to customize page numbers in a TOC?
+#### Вопрос: Зачем мне настраивать номера страниц в оглавлении?
 
-A: Customizing page numbers in a TOC can be useful when you want to use a specific page numbering format or include additional information along with the page numbers. It allows you to create a more personalized and informative table of contents.
+О: Настройка номеров страниц в оглавлении может быть полезна, если вы хотите использовать определенный формат нумерации страниц или включить дополнительную информацию вместе с номерами страниц. Это позволяет вам создать более персонализированное и информативное оглавление.
 
-#### Q: Can I include hyperlinks in the TOC to link to specific sections or pages within the PDF document?
+#### Вопрос: Могу ли я включить в оглавление гиперссылки на определенные разделы или страницы PDF-документа?
 
-A: Yes, Aspose.PDF for .NET allows you to create hyperlinks in the TOC that link to specific sections or pages within the PDF document. This enhances the interactivity and navigation of the PDF document.
+О: Да, Aspose.PDF для .NET позволяет создавать гиперссылки в оглавлении, которые ссылаются на определенные разделы или страницы PDF-документа. Это повышает интерактивность и навигацию по PDF-документу.
 
-#### Q: Is Aspose.PDF for .NET compatible with PDF/A standards?
+#### Вопрос: Совместим ли Aspose.PDF для .NET со стандартами PDF/A?
 
-A: Yes, Aspose.PDF for .NET supports PDF/A standards, including PDF/A-1, PDF/A-2, and PDF/A-3. It allows you to create PDF documents that comply with archiving and long-term preservation requirements.
+О: Да, Aspose.PDF для .NET поддерживает стандарты PDF/A, включая PDF/A-1, PDF/A-2 и PDF/A-3. Он позволяет создавать PDF-документы, соответствующие требованиям архивирования и долгосрочного хранения.
 
-#### Q: Can I add more formatting to the TOC entries, such as font styles or colors?
+#### Вопрос: Могу ли я добавить к записям оглавления дополнительное форматирование, например стили шрифтов или цвета?
 
-A: Yes, you can add additional formatting to the TOC entries, such as font styles, colors, and font sizes, using Aspose.PDF for .NET. This allows you to customize the appearance of the TOC as per your requirements.
+О: Да, вы можете добавить дополнительное форматирование к записям TOC, например стили, цвета и размеры шрифтов, используя Aspose.PDF для .NET. Это позволяет вам настроить внешний вид оглавления в соответствии с вашими требованиями.

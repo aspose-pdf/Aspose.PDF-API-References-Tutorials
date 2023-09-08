@@ -1,117 +1,117 @@
 ---
-title: Set Privileges In PDF File
-linktitle: Set Privileges In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily set access privileges in PDF file with Aspose.PDF for .NET.
+title: 在 PDF 文件中设置权限
+linktitle: 在 PDF 文件中设置权限
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 轻松设置 PDF 文件的访问权限。
 type: docs
 weight: 100
 url: /zh/net/programming-with-security-and-signatures/set-privileges/
 ---
-It is often necessary to set specific access privileges in PDF file. With Aspose.PDF for .NET, you can easily set access privileges using the following source code:
+通常需要在 PDF 文件中设置特定的访问权限。借助 Aspose.PDF for .NET，您可以使用以下源代码轻松设置访问权限：
 
-## Step 1: Import required libraries
+## 第1步：导入所需的库
 
-Before you begin, you need to import the necessary libraries for your C# project. Here are the necessary import directives:
+在开始之前，您需要为 C# 项目导入必要的库。以下是必要的导入指令：
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## 步骤 2：设置文档文件夹路径
 
-In this step, you need to specify the path to the folder containing the PDF file you want to edit. Replace `"YOUR DOCUMENTS DIRECTORY"` in the following code with the actual path to your documents folder:
+在此步骤中，您需要指定包含要编辑的 PDF 文件的文件夹的路径。代替`"YOUR DOCUMENTS DIRECTORY"`在以下代码中使用文档文件夹的实际路径：
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 3: Load source PDF file
+## 第 3 步：加载源 PDF 文件
 
-Now we will load the source PDF file using the following code:
+现在我们将使用以下代码加载源 PDF 文件：
 
 ```csharp
 using (Document document = new Document(dataDir + "input.pdf"))
 ```
 
-## Step 4: Set Access Privileges
+## 第 4 步：设置访问权限
 
-In this step, we will instantiate the `DocumentPrivilege` object to set the desired access privileges. You can apply restrictions on all privileges using `DocumentPrivilege.ForbidAll`. For example, if you want to only allow screen reading, you can set `AllowScreenReaders` to `true`. Here is the corresponding code:
+在这一步中，我们将实例化`DocumentPrivilege`对象来设置所需的访问权限。您可以使用对所有权限应用限制`DocumentPrivilege.ForbidAll`。例如，如果您只想允许屏幕阅读，您可以设置`AllowScreenReaders`到`true`。这是相应的代码：
 
 ```csharp
 DocumentPrivilege documentPrivilege = DocumentPrivilege.ForbidAll;
 documentPrivilege.AllowScreenReaders = true;
 ```
 
-## Step 5: Encrypt and save the document
+## 步骤5：加密并保存文档
 
-Finally, we can encrypt the PDF document with a user and owner password using `Encrypt` and specifying the desired encryption algorithm. Then we save the updated document. Here is the corresponding code:
+最后，我们可以使用用户和所有者密码来加密 PDF 文档`Encrypt`并指定所需的加密算法。然后我们保存更新后的文档。这是相应的代码：
 
 ```csharp
 document.Encrypt("user", "owner", documentPrivilege, CryptoAlgorithm.AESx128, false);
 document.Save(dataDir + "SetPrivileges_out.pdf");
 ```
 
-### Sample source code for Set Privileges using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 设置权限的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load a source PDF file
+//加载源 PDF 文件
 using (Document document = new Document(dataDir + "input.pdf"))
 {
-	// Instantiate Document Privileges object
-	// Apply restrictions on all privileges
+	//实例化文档权限对象
+	//对所有权限应用限制
 	DocumentPrivilege documentPrivilege = DocumentPrivilege.ForbidAll;
-	// Only allow screen reading
+	//只允许屏幕阅读
 	documentPrivilege.AllowScreenReaders = true;
-	// Encrypt the file with User and Owner password.
-	// Need to set the password, so that once the user views the file with user password,
-	// Only screen reading option is enabled
+	//使用用户和所有者密码加密文件。
+	//需要设置密码，以便用户一旦用用户密码查看文件，
+	//仅启用屏幕阅读选项
 	document.Encrypt("user", "owner", documentPrivilege, CryptoAlgorithm.AESx128, false);
-	// Save updated document
+	//保存更新的文档
 	document.Save(dataDir + "SetPrivileges_out.pdf");
 }
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You now have a step-by-step guide to set access privileges for a PDF document using Aspose.PDF for .NET. You can use this code to apply specific restrictions and protect your PDF files as needed.
+恭喜！您现在拥有使用 Aspose.PDF for .NET 设置 PDF 文档访问权限的分步指南。您可以使用此代码来应用特定限制并根据需要保护您的 PDF 文件。
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced PDF document security and access privilege management features.
+请务必查看官方 Aspose.PDF 文档，了解有关高级 PDF 文档安全性和访问权限管理功能的更多信息。
 
-### FAQ's for set privileges in PDF file
+### PDF 文件中设置权限的常见问题解答
 
-#### Q: Why would I need to set access privileges in a PDF file?
+#### 问：为什么需要在 PDF 文件中设置访问权限？
 
-A: Setting access privileges allows you to control how users interact with your PDF documents. You can restrict actions like printing, copying, and editing to enhance document security.
+答：设置访问权限允许您控制用户与 PDF 文档的交互方式。您可以限制打印、复印和编辑等操作以增强文档安全性。
 
-#### Q: How can I benefit from setting access privileges using Aspose.PDF for .NET?
+#### 问：使用 Aspose.PDF for .NET 设置访问权限如何受益？
 
-A: Aspose.PDF for .NET provides a straightforward way to implement access privileges, giving you the power to customize user permissions and protect sensitive content.
+答：Aspose.PDF for .NET 提供了一种简单的方法来实现访问权限，使您能够自定义用户权限并保护敏感内容。
 
-#### Q: Can I apply different privileges for different users?
+#### 问：我可以为不同的用户应用不同的权限吗？
 
-A: Yes, you can set specific access privileges for different user groups, enabling you to fine-tune document access based on user roles.
+答：是的，您可以为不同的用户组设置特定的访问权限，从而使您能够根据用户角色微调文档访问权限。
 
-#### Q: What are some common access privileges I can set?
+#### 问：我可以设置哪些常见的访问权限？
 
-A: Common access privileges include allowing or forbidding actions such as printing, copying text or images, modifying the document, and filling form fields.
+答：常见的访问权限包括允许或禁止诸如打印、复制文本或图像、修改文档以及填写表单字段等操作。
 
-#### Q: How does setting screen reading privilege enhance document accessibility?
+#### 问：设置屏幕阅读权限如何增强文档的可访问性？
 
-A: Enabling screen reading privilege ensures that users can access the content of the PDF using screen readers, enhancing accessibility for visually impaired individuals.
+答：启用屏幕阅读权限可确保用户可以使用屏幕阅读器访问 PDF 内容，从而增强视障人士的可访问性。
 
-#### Q: Can I set password protection along with access privileges?
+#### 问：我可以设置密码保护和访问权限吗？
 
-A: Absolutely, you can encrypt your PDF document with passwords while applying access privileges. This provides an extra layer of security.
+答：当然，您可以在应用访问权限的同时使用密码加密您的 PDF 文档。这提供了额外的安全层。
 
-#### Q: Is there a way to revoke access privileges after applying them?
+#### 问：有没有办法在申请后撤销访问权限？
 
-A: Once access privileges are applied and the document is encrypted, users will need the appropriate password to access the content. The privileges can be modified by altering the source code.
+答：应用访问权限并且文档被加密后，用户将需要适当的密码才能访问内容。可以通过更改源代码来修改权限。
 
-#### Q: Are there any performance considerations when setting access privileges?
+#### 问：设置访问权限时是否有任何性能考虑？
 
-A: The performance impact is minimal, as the access privilege settings are applied during encryption, which is a swift process.
+答：对性能的影响很小，因为访问权限设置是在加密过程中应用的，这是一个快速的过程。
 
-#### Q: Can I apply access privileges to an existing PDF document?
+#### 问：我可以对现有 PDF 文档应用访问权限吗？
 
-A: Yes, you can use Aspose.PDF for .NET to apply access privileges to both new and existing PDF documents.
+答：是的，您可以使用 Aspose.PDF for .NET 对新的和现有的 PDF 文档应用访问权限。

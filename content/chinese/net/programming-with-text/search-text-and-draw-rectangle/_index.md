@@ -1,28 +1,28 @@
 ---
-title: Search Text And Draw Rectangle
-linktitle: Search Text And Draw Rectangle
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to search for text in a PDF, draw rectangles around the found text, and save the modified document using Aspose.PDF for .NET.
+title: 搜索文本并绘制矩形
+linktitle: 搜索文本并绘制矩形
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何在 PDF 中搜索文本、在找到的文本周围绘制矩形以及使用 Aspose.PDF for .NET 保存修改后的文档。
 type: docs
 weight: 460
 url: /zh/net/programming-with-text/search-text-and-draw-rectangle/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to search for specific text in a PDF document, draw a rectangle around the found text, and save the modified document. The provided C# source code demonstrates the process step by step.
+本教程介绍如何使用 Aspose.PDF for .NET 搜索 PDF 文档中的特定文本，在找到的文本周围绘制矩形，然后保存修改后的文档。提供的 C# 源代码逐步演示了该过程。
 
-## Prerequisites
+## 先决条件
 
-Before proceeding with the tutorial, make sure you have the following:
+在继续学习本教程之前，请确保您具备以下条件：
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- C# 编程语言的基础知识。
+- 安装了 Aspose.PDF for .NET 库。您可以从 Aspose 网站获取它或使用 NuGet 将其安装到您的项目中。
 
-## Step 1: Set up the project
+## 第 1 步：设置项目
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+首先在您首选的集成开发环境 (IDE) 中创建一个新的 C# 项目，并添加对 Aspose.PDF for .NET 库的引用。
 
-## Step 2: Import necessary namespaces
+## 第2步：导入必要的命名空间
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+在 C# 文件的开头添加以下 using 指令以导入所需的命名空间：
 
 ```csharp
 using Aspose.Pdf;
@@ -31,56 +31,56 @@ using Aspose.Pdf.Content;
 using Aspose.Pdf.Facades;
 ```
 
-## Step 3: Set the path to the document directory
+## 第三步：设置文档目录路径
 
-Set the path to your document directory using the `dataDir` variable:
+使用以下命令设置文档目录的路径`dataDir`多变的：
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+代替`"YOUR DOCUMENT DIRECTORY"`与文档目录的实际路径。
 
-## Step 4: Load the PDF document
+## 第 4 步：加载 PDF 文档
 
-Load the PDF document using the `Document` class:
+使用加载 PDF 文档`Document`班级：
 
 ```csharp
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 ```
 
-Replace `"SearchAndGetTextFromAll.pdf"` with the actual name of your PDF file.
+代替`"SearchAndGetTextFromAll.pdf"`与您的 PDF 文件的实际名称。
 
-## Step 5: Create a TextFragmentAbsorber
+## 第5步：创建一个TextFragmentAbsorber
 
-Create a `TextFragmentAbsorber` object to find all instances of the input search phrase:
+创建一个`TextFragmentAbsorber`对象查找输入搜索短语的所有实例：
 
 ```csharp
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
 
-Replace `@"[\S]+"` with your desired regular expression pattern.
+代替`@"[\S]+"`与您想要的正则表达式模式。
 
-## Step 6: Enable regular expression search
+## 第 6 步：启用正则表达式搜索
 
-Enable regular expression search by setting the `TextSearchOptions` property of the absorber:
+通过设置启用正则表达式搜索`TextSearchOptions`吸收体的特性：
 
 ```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;
 ```
 
-## Step 7: Search on all pages
+## 第7步：在所有页面上搜索
 
-Accept the absorber for all the pages of the document:
+接受文档所有页面的吸收器：
 
 ```csharp
 document.Pages.Accept(textAbsorber);
 ```
 
-## Step 8: Draw a rectangle around the found text
+## 第 8 步：在找到的文本周围画一个矩形
 
-Create a `PdfContentEditor` object and loop through the retrieved text fragments, drawing a rectangle around each text segment:
+创建一个`PdfContentEditor`对象并循环检索到的文本片段，在每个文本片段周围绘制一个矩形：
 
 ```csharp
 var editor = new PdfContentEditor(document);
@@ -93,24 +93,24 @@ foreach (TextFragment textFragment in textAbsorber.TextFragments)
 }
 ```
 
-## Step 9: Save the modified document
+## 步骤9：保存修改后的文档
 
-Save the modified document:
+保存修改后的文档：
 
 ```csharp
 dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
 document.Save(dataDir);
 ```
 
-Make sure to replace `"SearchTextAndDrawRectangle_out.pdf"` with the desired output file name.
+确保更换`"SearchTextAndDrawRectangle_out.pdf"`与所需的输出文件名。
 
-### Sample source code for Search Text And Draw Rectangle using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 搜索文本和绘制矩形的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-// Create TextAbsorber object to find all the phrases matching the regular expression
+//创建 TextAbsorber 对象以查找与正则表达式匹配的所有短语
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;
@@ -128,48 +128,48 @@ document.Save(dataDir);
 Console.WriteLine("\nRectangle drawn successfully on searched text.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## 结论
 
-Congratulations! You have successfully learned how to search for specific text in a PDF document, draw a rectangle around the found text, and save the modified document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to performing the required actions. You can now incorporate this code into your own C# projects to manipulate text and draw rectangles in PDF files.
+恭喜！您已经成功学习了如何在 PDF 文档中搜索特定文本、在找到的文本周围绘制矩形以及使用 Aspose.PDF for .NET 保存修改后的文档。本教程提供了从设置项目到执行所需操作的分步指南。现在，您可以将此代码合并到您自己的 C# 项目中，以操作 PDF 文件中的文本和绘制矩形。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of the "Search Text And Draw Rectangle" tutorial?
+#### 问：“搜索文本并绘制矩形”教程的目的是什么？
 
-A: The "Search Text And Draw Rectangle" tutorial aims to guide users through the process of using the Aspose.PDF library for .NET to search for specific text within a PDF document, draw rectangles around the found text segments, and save the modified document. The tutorial provides detailed instructions and C# code samples to illustrate each step of the process.
+答：“搜索文本并绘制矩形”教程旨在指导用户使用 Aspose.PDF 库 for .NET 在 PDF 文档中搜索特定文本，在找到的文本段周围绘制矩形，并保存修改后的内容。文档。本教程提供了详细的说明和 C# 代码示例来说明该过程的每个步骤。
 
-#### Q: How does this tutorial help in drawing rectangles around specific text in a PDF document?
+#### 问：本教程如何帮助您在 PDF 文档中的特定文本周围绘制矩形？
 
-A: This tutorial provides a comprehensive guide on how to locate and draw rectangles around specific text segments within a PDF document. It demonstrates the process of setting up a project, loading a PDF document, enabling regular expression search, drawing rectangles around found text segments, and saving the modified PDF.
+答：本教程提供了有关如何在 PDF 文档中的特定文本段周围定位和绘制矩形的全面指南。它演示了设置项目、加载 PDF 文档、启用正则表达式搜索、在找到的文本段周围绘制矩形以及保存修改后的 PDF 的过程。
 
-#### Q: What prerequisites are required to follow this tutorial?
+#### 问：学习本教程需要什么先决条件？
 
-A: Before starting the tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or install it in your project using NuGet.
+答：在开始本教程之前，您应该对 C# 编程语言有基本的了解。此外，您需要安装 Aspose.PDF for .NET 库。您可以从 Aspose 网站获取它或使用 NuGet 将其安装到您的项目中。
 
-#### Q: How do I set up my project to follow this tutorial?
+#### 问：如何设置我的项目来遵循本教程？
 
-A: Begin by creating a new C# project in your preferred integrated development environment (IDE). Then, add a reference to the Aspose.PDF for .NET library to your project. This will enable you to use the library's functionality to manipulate PDF documents.
+答：首先在您首选的集成开发环境 (IDE) 中创建一个新的 C# 项目。然后，将对 Aspose.PDF for .NET 库的引用添加到您的项目中。这将使您能够使用库的功能来操作 PDF 文档。
 
-#### Q: Can I draw rectangles around specific text using this tutorial?
+#### 问：我可以使用本教程在特定文本周围绘制矩形吗？
 
-A: Yes, the tutorial focuses on drawing rectangles around specific text segments within a PDF document. It demonstrates how to locate the desired text using regular expressions, create rectangles around the identified text segments, and save the modified PDF.
+答：是的，本教程的重点是在 PDF 文档中的特定文本段周围绘制矩形。它演示了如何使用正则表达式找到所需的文本，在识别的文本段周围创建矩形，以及保存修改后的 PDF。
 
-#### Q: How can I specify the text I want to search for and draw rectangles around?
+#### 问：如何指定要搜索的文本并在其周围绘制矩形？
 
-A: To specify the text you want to search for and draw rectangles around, create a `TextFragmentAbsorber` object and set its pattern using the `Text` parameter. Replace the default pattern `@"[\S]+"` in the tutorial's code with your desired regular expression pattern.
+答：要指定要搜索的文本并在其周围绘制矩形，请创建一个`TextFragmentAbsorber`对象并使用设置其模式`Text`范围。替换默认模式`@"[\S]+"`在教程的代码中添加您所需的正则表达式模式。
 
-#### Q: How do I enable regular expression search for text?
+#### 问：如何启用文本的正则表达式搜索？
 
-A: Regular expression search is enabled by creating a `TextSearchOptions` object and setting its value to `true`. Assign this object to the `TextSearchOptions` property of the `TextFragmentAbsorber` instance. This ensures that the regular expression pattern is used during text search.
+ A：通过创建一个来启用正则表达式搜索`TextSearchOptions`对象并将其值设置为`true`。将此对象分配给`TextSearchOptions`的财产`TextFragmentAbsorber`实例。这可确保在文本搜索期间使用正则表达式模式。
 
-#### Q: How do I draw rectangles around the found text?
+#### 问：如何在找到的文本周围绘制矩形？
 
-A: After identifying the text segments using the `TextFragmentAbsorber`, the tutorial provides a loop to iterate through these segments. For each text segment, the tutorial demonstrates how to create a rectangle around it using the `DrawBox` method and specify the rectangle's appearance.
+ A：使用识别文本段后`TextFragmentAbsorber`，本教程提供了一个循环来迭代这些段。对于每个文本段，本教程演示了如何使用以下命令在其周围创建一个矩形：`DrawBox`方法并指定矩形的外观。
 
-#### Q: What are the steps to save the modified PDF with drawn rectangles?
+#### 问：保存修改后的绘制矩形的PDF的步骤是什么？
 
-A: After drawing rectangles around the desired text segments, use the `Document` class's `Save` method to save the modified document. The tutorial's sample code showcases how to save the edited PDF and display a success message.
+答：在所需的文本段周围绘制矩形后，使用`Document`班级的`Save`方法保存修改后的文档。本教程的示例代码展示了如何保存编辑后的 PDF 并显示成功消息。
 
-#### Q: Can I customize the appearance of the drawn rectangles?
+#### 问：我可以自定义绘制矩形的外观吗？
 
-A: Yes, you can customize the appearance of the drawn rectangles. In the tutorial's sample code, the `DrawBox` method is used to create rectangles. You can modify properties such as color, style, and thickness to customize the appearance of the drawn rectangles.
+答：是的，您可以自定义绘制矩形的外观。在本教程的示例代码中，`DrawBox`方法用于创建矩形。您可以修改颜色、样式和厚度等属性来自定义绘制矩形的外观。

@@ -1,59 +1,59 @@
 ---
-title: Search And Get Images In PDF File
-linktitle: Search And Get Images In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to search and get images in PDF file using Aspose.PDF for .NET.
+title: Sök och hämta bilder i PDF-fil
+linktitle: Sök och hämta bilder i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Steg för steg guide för att söka och få bilder i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 260
 url: /sv/net/programming-with-images/search-and-get-images/
 ---
-In this tutorial, we will walk you through how to search and get images in PDF file using Aspose.PDF for .NET. Follow these steps to perform this operation easily.
+I den här handledningen går vi igenom hur du söker och hämtar bilder i PDF-fil med Aspose.PDF för .NET. Följ dessa steg för att enkelt utföra denna operation.
 
-## Prerequisites
+## Förutsättningar
 
-Before you begin, make sure you have the following:
+Innan du börjar, se till att du har följande:
 
-- Visual Studio or any other development environment installed and configured.
-- A basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed. You can download it from Aspose official website.
+- Visual Studio eller någon annan utvecklingsmiljö installerad och konfigurerad.
+- Grundläggande kunskaper i programmeringsspråket C#.
+- Aspose.PDF-bibliotek för .NET installerat. Du kan ladda ner den från Asposes officiella hemsida.
 
-## Step 1: Loading the PDF document
+## Steg 1: Laddar PDF-dokumentet
 
-To get started, use the following code to load the PDF document:
+För att komma igång använder du följande kod för att ladda PDF-dokumentet:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Open the document
+// Öppna dokumentet
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "SearchAndGetImages.pdf");
 ```
 
-Be sure to provide the correct path to your PDF document.
+Se till att ange rätt sökväg till ditt PDF-dokument.
 
-## Step 2: Searching Image Locations
+## Steg 2: Söka bildplatser
 
-To search the locations of images in the PDF document, use the following code:
+För att söka efter bildernas placering i PDF-dokumentet, använd följande kod:
 
 ```csharp
-// Create an ImagePlacementAbsorber object to search for image locations
+// Skapa ett ImagePlacementAbsorber-objekt för att söka efter bildplatser
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
 
-// Accept the absorber for all the pages of the document
+// Acceptera absorbenten för alla sidor i dokumentet
 doc.Pages.Accept(abs);
 ```
 
-This will collect the locations of the images in the absorber.
+Detta kommer att samla in platserna för bilderna i absorbatorn.
 
-## Step 3: Browse image locations and get images and their properties
+## Steg 3: Bläddra bland bildplatser och hämta bilder och deras egenskaper
 
-Next, we'll browse the collected image locations and get the images and their properties. Use the following code:
+Därefter kommer vi att bläddra bland de insamlade bildplatserna och hämta bilderna och deras egenskaper. Använd följande kod:
 
 ```csharp
 foreach(ImagePlacement imagePlacement in abs.ImagePlacements)
 {
-     // Get the image using the ImagePlacement object
+     // Hämta bilden med hjälp av ImagePlacement-objektet
      XImage image = imagePlacement.Image;
 
-     // Display the image location properties
+     // Visa egenskaperna för bildens plats
      Console.Out.WriteLine("Image Width: " + imagePlacement.Rectangle.Width);
      Console.Out.WriteLine("Image Height: " + imagePlacement.Rectangle.Height);
      Console.Out.WriteLine("LLX of image: " + imagePlacement.Rectangle.LLX);
@@ -63,24 +63,24 @@ foreach(ImagePlacement imagePlacement in abs.ImagePlacements)
 }
 ```
 
-This will browse all image locations, get matching images and display their properties.
+Detta kommer att bläddra igenom alla bildplatser, få matchande bilder och visa deras egenskaper.
 
-### Sample source code for Search And Get Images using Aspose.PDF for .NET 
+### Exempel på källkod för Sök och hämta bilder med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Öppna dokumentet
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "SearchAndGetImages.pdf");
-// Create ImagePlacementAbsorber object to perform image placement search
+// Skapa ImagePlacementAbsorber-objekt för att utföra bildplaceringssökning
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
-// Accept the absorber for all the pages
+// Acceptera absorbenten för alla sidor
 doc.Pages.Accept(abs);
-// Loop through all ImagePlacements, get image and ImagePlacement Properties
+// Gå igenom alla ImagePlacements, få bild och ImagePlacement Properties
 foreach (ImagePlacement imagePlacement in abs.ImagePlacements)
 {
-	// Get the image using ImagePlacement object
+	// Hämta bilden med ImagePlacement-objekt
 	XImage image = imagePlacement.Image;
-	// Display image placement properties for all placements
+	// Visa bildplaceringsegenskaper för alla placeringar
 	Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
 	Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
 	Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
@@ -90,44 +90,44 @@ foreach (ImagePlacement imagePlacement in abs.ImagePlacements)
 }
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! You have successfully searched and obtained images in a PDF document using Aspose.PDF for .NET. Now you can apply this method to your own projects to extract images and get their properties from PDF files.
+Grattis! Du har framgångsrikt sökt och skaffat bilder i ett PDF-dokument med Aspose.PDF för .NET. Nu kan du tillämpa den här metoden på dina egna projekt för att extrahera bilder och få deras egenskaper från PDF-filer.
 
-### FAQ's for search and get images in PDF file
+### Vanliga frågor för att söka och få bilder i PDF-fil
 
-#### Q: What is the purpose of searching and obtaining images in a PDF document using Aspose.PDF for .NET?
+#### F: Vad är syftet med att söka och få bilder i ett PDF-dokument med Aspose.PDF för .NET?
 
-A: Searching and obtaining images in a PDF document allows you to locate and extract images within the PDF file. This can be useful for various purposes such as analyzing the content, verifying image properties, or further processing the images.
+S: Genom att söka och hämta bilder i ett PDF-dokument kan du hitta och extrahera bilder i PDF-filen. Detta kan vara användbart för olika ändamål som att analysera innehållet, verifiera bildegenskaper eller vidarebearbeta bilderna.
 
-#### Q: How does the process of searching for images in a PDF document work?
+#### F: Hur fungerar processen att söka efter bilder i ett PDF-dokument?
 
-A: The process involves using the `ImagePlacementAbsorber` object to perform a search for image placements on all pages of the PDF document. The absorber collects information about the location, size, and resolution of each image within the document.
+ S: Processen involverar att använda`ImagePlacementAbsorber` objekt för att utföra en sökning efter bildplaceringar på alla sidor i PDF-dokumentet. Absorbatorn samlar in information om plats, storlek och upplösning för varje bild i dokumentet.
 
-#### Q: What is the purpose of the `ImagePlacement` object in the code?
+####  F: Vad är syftet med`ImagePlacement` object in the code?
 
-A: The `ImagePlacement` object represents the placement of an image within the PDF document. It provides properties that allow you to access details such as the image's dimensions, coordinates, and resolution.
+ A: Den`ImagePlacement`objekt representerar placeringen av en bild i PDF-dokumentet. Den tillhandahåller egenskaper som låter dig komma åt detaljer som bildens mått, koordinater och upplösning.
 
-#### Q: Can I filter the images that are searched and obtained based on specific criteria?
+#### F: Kan jag filtrera bilderna som söks och erhålls baserat på specifika kriterier?
 
-A: The provided code collects information about all images within the PDF document. If you want to filter images based on specific criteria (e.g., image type, dimensions, resolution), you may need to modify the code to include appropriate filtering conditions.
+S: Den medföljande koden samlar information om alla bilder i PDF-dokumentet. Om du vill filtrera bilder baserat på specifika kriterier (t.ex. bildtyp, dimensioner, upplösning) kan du behöva modifiera koden för att inkludera lämpliga filtreringsvillkor.
 
-#### Q: How can I access the actual image content after obtaining its placement information?
+#### F: Hur kan jag komma åt det faktiska bildinnehållet efter att ha fått placeringsinformationen?
 
-A: The `XImage` object obtained from the `ImagePlacement` object represents the actual image content. You can further process this `XImage` object, such as saving it to a file or displaying it in your application.
+ A: Den`XImage` föremål som erhållits från`ImagePlacement` objektet representerar det faktiska bildinnehållet. Du kan bearbeta detta ytterligare`XImage` objekt, som att spara det i en fil eller visa det i ditt program.
 
-#### Q: What can I do with the obtained image properties?
+#### F: Vad kan jag göra med de erhållna bildegenskaperna?
 
-A: The obtained image properties, such as width, height, coordinates, and resolution, can be used for various purposes. You can analyze the properties, display them to the user, or use them as input for further processing.
+S: De erhållna bildegenskaperna, såsom bredd, höjd, koordinater och upplösning, kan användas för olika ändamål. Du kan analysera egenskaperna, visa dem för användaren eller använda dem som input för vidare bearbetning.
 
-#### Q: Can I modify or edit the images within the PDF document using this method?
+#### F: Kan jag ändra eller redigera bilderna i PDF-dokumentet med den här metoden?
 
-A: The provided code focuses on searching for and obtaining image placement information. To modify or edit images, you may need to integrate additional functionality, such as image manipulation, using the Aspose.PDF library.
+S: Den medföljande koden fokuserar på att söka efter och få information om bildplacering. För att modifiera eller redigera bilder kan du behöva integrera ytterligare funktioner, såsom bildmanipulation, med Aspose.PDF-biblioteket.
 
-#### Q: How can I integrate this method into my own projects?
+#### F: Hur kan jag integrera denna metod i mina egna projekt?
 
-A: To integrate this method into your projects, follow the outlined steps and modify the code as needed. You can use the obtained image placement information and properties according to the requirements of your application.
+S: För att integrera den här metoden i dina projekt, följ de beskrivna stegen och modifiera koden efter behov. Du kan använda den erhållna bildplaceringsinformationen och egenskaperna enligt kraven i din applikation.
 
-#### Q: Does Aspose.PDF for .NET offer other features related to image manipulation in PDF documents?
+#### F: Erbjuder Aspose.PDF för .NET andra funktioner relaterade till bildmanipulation i PDF-dokument?
 
-A: Yes, Aspose.PDF for .NET provides a range of features for working with images in PDF documents, including image insertion, resizing, rotation, extraction, and more. You can explore the library's documentation and examples to discover its full capabilities.
+S: Ja, Aspose.PDF för .NET tillhandahåller en rad funktioner för att arbeta med bilder i PDF-dokument, inklusive infogning av bilder, storleksändring, rotation, extrahering och mer. Du kan utforska bibliotekets dokumentation och exempel för att upptäcka dess fulla möjligheter.

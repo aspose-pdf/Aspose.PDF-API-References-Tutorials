@@ -1,29 +1,29 @@
 ---
-title: Add Remove Javascript To PDF Document
-linktitle: Add Remove Javascript To Doc
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add and remove JavaScript to PDF document using Aspose.PDF for .NET. Step-by-step guide with code tutorials for document-level scripting.
+title: Hinzufügen und Entfernen von Javascript zum PDF-Dokument
+linktitle: Hinzufügen und Entfernen von Javascript zum Dokument
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET JavaScript zu PDF-Dokumenten hinzufügen und entfernen. Schritt-für-Schritt-Anleitung mit Code-Tutorials für die Skripterstellung auf Dokumentebene.
 type: docs
 weight: 30
 url: /de/net/programming-with-document/addremovejavascripttodoc/
 ---
-To add and remove JavaScript to PDF document, we will utilize the Aspose.PDF for .NET library. This powerful library allows us to manipulate PDF files in .NET applications. Follow the step-by-step instructions below to add and remove JavaScript using Aspose.PDF for .NET.
+Um JavaScript zu PDF-Dokumenten hinzuzufügen und zu entfernen, verwenden wir die Bibliothek Aspose.PDF für .NET. Mit dieser leistungsstarken Bibliothek können wir PDF-Dateien in .NET-Anwendungen bearbeiten. Befolgen Sie die nachstehenden Schritt-für-Schritt-Anleitungen, um JavaScript mit Aspose.PDF für .NET hinzuzufügen und zu entfernen.
 
-## Step 1: Create a New PDF Document
+## Schritt 1: Erstellen Sie ein neues PDF-Dokument
 
-Begin by creating a new instance of the `Document` class provided by Aspose.PDF for .NET. This will serve as the PDF document where we will add the JavaScript.
+ Beginnen Sie mit der Erstellung einer neuen Instanz von`Document` Von Aspose.PDF für .NET bereitgestellte Klasse. Dies dient als PDF-Dokument, in das wir das JavaScript einfügen.
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document();
 doc.Pages.Add();
 ```
 
-## Step 2: Add JavaScript at the Document Level
+## Schritt 2: Fügen Sie JavaScript auf Dokumentebene hinzu
 
-To add JavaScript at the document level, use the `JavaScript` property of the `Document` class. Assign JavaScript functions to keys in the JavaScript dictionary.
+ Um JavaScript auf Dokumentebene hinzuzufügen, verwenden Sie die`JavaScript` Eigentum der`Document` Klasse. Weisen Sie den Tasten im JavaScript-Wörterbuch JavaScript-Funktionen zu.
 
 ```csharp
 doc.JavaScript["func1"] = "function func1() { hello(); }";
@@ -31,11 +31,11 @@ doc.JavaScript["func2"] = "function func2() { hello(); }";
 doc.Save(dataDir + "AddJavascript.pdf");
 ```
 
-In this tutorial, we have added two JavaScript functions, `func1` and `func2`, to the PDF document.
+ In diesem Tutorial haben wir zwei JavaScript-Funktionen hinzugefügt:`func1` Und`func2`, zum PDF-Dokument.
 
-## Step 3: Remove Document Level JavaScript
+## Schritt 3: Entfernen Sie JavaScript auf Dokumentebene
 
-To remove JavaScript at the document level, load the PDF document and access the `JavaScript` dictionary. Iterate over the keys and remove the desired JavaScript function.
+ Um JavaScript auf Dokumentebene zu entfernen, laden Sie das PDF-Dokument und greifen Sie auf zu`JavaScript`Wörterbuch. Durchlaufen Sie die Schlüssel und entfernen Sie die gewünschte JavaScript-Funktion.
 
 ```csharp
 Document doc1 = new Document(dataDir + "AddJavascript.pdf");
@@ -50,22 +50,22 @@ doc1.JavaScript.Remove("func1");
 Console.WriteLine("Key 'func1' removed");
 ```
 
-In this tutorial, we remove the `func1` JavaScript function from the PDF document.
+ In diesem Tutorial entfernen wir die`func1` JavaScript-Funktion aus dem PDF-Dokument.
 
-## Step 4: Save and Verify Changes
+## Schritt 4: Änderungen speichern und überprüfen
 
-Save the modified PDF document and verify the changes.
+Speichern Sie das geänderte PDF-Dokument und überprüfen Sie die Änderungen.
 
 ```csharp
 Console.WriteLine("\nJavascript added/removed successfully to a document.");
 ```
 
-This code will save the modified PDF document and display the success message.
+Dieser Code speichert das geänderte PDF-Dokument und zeigt die Erfolgsmeldung an.
 
-### Example source code for Add Remove Javascript from PDF documents using Aspose.PDF for .NET
+### Beispielquellcode für das Hinzufügen und Entfernen von Javascript aus PDF-Dokumenten mit Aspose.PDF für .NET
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document();
@@ -74,7 +74,7 @@ doc.JavaScript["func1"] = "function func1() { hello(); }";
 doc.JavaScript["func2"] = "function func2() { hello(); }";
 doc.Save(dataDir + "AddJavascript.pdf");
 
-// Remove Document level JavaScript
+// Entfernen Sie JavaScript auf Dokumentebene
 Document doc1 = new Document(dataDir + "AddJavascript.pdf");
 IList keys = (System.Collections.IList)doc1.JavaScript.Keys;
 Console.WriteLine("=============================== ");
@@ -90,29 +90,29 @@ Console.WriteLine("=============================== ");
 Console.WriteLine("\nJavascript added/removed successfully to a document.");
 ```
 
-## Conclusion
+## Abschluss
 
-In this article, we have provided a step-by-step guide to adding and removing JavaScript from PDF documents using Aspose.PDF for .NET. By following the instructions and utilizing the provided code tutorials, you can easily incorporate JavaScript into your PDF documents and remove it when needed. JavaScript enables dynamic functionality and interactivity in your PDF files, enhancing the user experience.
+In diesem Artikel haben wir eine Schritt-für-Schritt-Anleitung zum Hinzufügen und Entfernen von JavaScript aus PDF-Dokumenten mit Aspose.PDF für .NET bereitgestellt. Indem Sie den Anweisungen folgen und die bereitgestellten Code-Tutorials nutzen, können Sie JavaScript problemlos in Ihre PDF-Dokumente integrieren und bei Bedarf entfernen. JavaScript ermöglicht dynamische Funktionalität und Interaktivität in Ihren PDF-Dateien und verbessert so das Benutzererlebnis.
 
 
-### FAQ's for add remove javascript to PDF document
+### FAQs zum Hinzufügen und Entfernen von Javascript zu PDF-Dokumenten
 
-#### Q: What is Aspose.PDF for .NET?
+#### F: Was ist Aspose.PDF für .NET?
 
-A: Aspose.PDF for .NET is a powerful library that allows developers to manipulate PDF files in .NET applications effectively. It provides extensive features for working with PDF documents programmatically.
+A: Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die es Entwicklern ermöglicht, PDF-Dateien in .NET-Anwendungen effektiv zu bearbeiten. Es bietet umfangreiche Funktionen für die programmgesteuerte Arbeit mit PDF-Dokumenten.
 
-#### Q: How can I add JavaScript to a PDF document using Aspose.PDF for .NET?
+#### F: Wie kann ich mit Aspose.PDF für .NET JavaScript zu einem PDF-Dokument hinzufügen?
 
-A: You can add JavaScript at the document level using the `JavaScript` property of the `Document` class. Simply assign JavaScript functions to keys in the JavaScript dictionary.
+ A: Sie können JavaScript auf Dokumentebene hinzufügen, indem Sie die verwenden`JavaScript` Eigentum der`Document` Klasse. Weisen Sie den Tasten im JavaScript-Wörterbuch einfach JavaScript-Funktionen zu.
 
-#### Q: Can I remove JavaScript from a PDF document using Aspose.PDF for .NET?
+#### F: Kann ich mit Aspose.PDF für .NET JavaScript aus einem PDF-Dokument entfernen?
 
-A: Yes, you can remove JavaScript from a PDF document by accessing the `JavaScript` dictionary and removing the desired JavaScript function.
+ A: Ja, Sie können JavaScript aus einem PDF-Dokument entfernen, indem Sie auf zugreifen`JavaScript` Wörterbuch und Entfernen der gewünschten JavaScript-Funktion.
 
-#### Q: Is Aspose.PDF for .NET suitable for professional projects?
+#### F: Ist Aspose.PDF für .NET für professionelle Projekte geeignet?
 
-A: Absolutely, Aspose.PDF for .NET is widely used in professional projects for PDF manipulation and generation tasks. It offers high performance and reliable functionality.
+A: Absolut, Aspose.PDF für .NET wird häufig in professionellen Projekten für PDF-Bearbeitungs- und Generierungsaufgaben verwendet. Es bietet hohe Leistung und zuverlässige Funktionalität.
 
-#### Q: What benefits does adding JavaScript to a PDF document provide?
+#### F: Welche Vorteile bietet das Hinzufügen von JavaScript zu einem PDF-Dokument?
 
-A: Adding JavaScript to a PDF document enables you to create interactive and dynamic PDF files. You can implement form validation, perform calculations, and add various interactivity features to enhance user experience.
+A: Durch das Hinzufügen von JavaScript zu einem PDF-Dokument können Sie interaktive und dynamische PDF-Dateien erstellen. Sie können eine Formularvalidierung implementieren, Berechnungen durchführen und verschiedene Interaktivitätsfunktionen hinzufügen, um das Benutzererlebnis zu verbessern.

@@ -1,49 +1,49 @@
 ---
-title: Replace Fonts In PDF File
-linktitle: Replace Fonts In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to replace fonts in PDF file using Aspose.PDF for .NET.
+title: Заменить шрифты в PDF-файле
+linktitle: Заменить шрифты в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как заменить шрифты в файле PDF с помощью Aspose.PDF для .NET.
 type: docs
 weight: 340
 url: /ru/net/programming-with-text/replace-fonts/
 ---
-In this tutorial, we will explain how to replace specific fonts in PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of loading a PDF document, searching for text fragments, identifying the fonts to replace, replacing the fonts, and saving the modified PDF using the provided C# source code.
+В этом уроке мы объясним, как заменить определенные шрифты в файле PDF с помощью библиотеки Aspose.PDF для .NET. Мы пройдем пошаговый процесс загрузки PDF-документа, поиска фрагментов текста, определения шрифтов для замены, замены шрифтов и сохранения измененного PDF-файла с использованием предоставленного исходного кода C#.
 
-## Prerequisites
+## Предварительные условия
 
-Before you begin, ensure that you have the following:
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- Установлена библиотека Aspose.PDF для .NET.
+- Базовое понимание программирования на C#.
 
-## Step 1: Set up the Document Directory
+## Шаг 1. Настройте каталог документов
 
-First, you need to set the path to the directory where you have the input PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF file.
+ Сначала вам нужно указать путь к каталогу, в котором находится входной PDF-файл. Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir` переменная с путем к вашему PDF-файлу.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the PDF Document
+## Шаг 2. Загрузите PDF-документ
 
-Next, we load the PDF document using the `Document` class from the Aspose.PDF library.
+ Затем мы загружаем PDF-документ, используя`Document` класс из библиотеки Aspose.PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 ```
 
-## Step 3: Search and Replace Fonts
+## Шаг 3. Найдите и замените шрифты
 
-We create a `TextFragmentAbsorber` object and set the edit option to remove unused fonts. Then, we accept the absorber for all the pages of the PDF document to search for text fragments.
+ Мы создаем`TextFragmentAbsorber`объект и установите параметр редактирования, чтобы удалить неиспользуемые шрифты. Затем принимаем поглотитель для всех страниц PDF-документа для поиска фрагментов текста.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
 pdfDocument.Pages.Accept(absorber);
 ```
 
-## Step 4: Replace Fonts
+## Шаг 4. Замените шрифты
 
-We traverse through all the text fragments identified by the absorber. If the font name of a text fragment matches the desired font to replace, we replace it with the new font.
+Проходим по всем фрагментам текста, идентифицированным поглотителем. Если имя шрифта фрагмента текста соответствует заменяемому шрифту, мы заменяем его новым шрифтом.
 
 ```csharp
 foreach (TextFragment textFragment in absorber.TextFragments)
@@ -55,9 +55,9 @@ foreach (TextFragment textFragment in absorber.TextFragments)
 }
 ```
 
-## Step 5: Save the Modified PDF
+## Шаг 5. Сохраните измененный PDF-файл
 
-Finally, we save the modified PDF document to the specified output file.
+Наконец, мы сохраняем измененный PDF-документ в указанный выходной файл.
 
 ```csharp
 dataDir = dataDir + "ReplaceFonts_out.pdf";
@@ -65,86 +65,86 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nFonts replaced successfully in the PDF document.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Replace Fonts using Aspose.PDF for .NET 
+### Пример исходного кода для замены шрифтов с помощью Aspose.PDF для .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Путь к каталогу документов.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load source PDF file
+	// Загрузить исходный PDF-файл
 	Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-	// Search text fragments and set edit option as remove unused fonts
+	// Найдите фрагменты текста и установите опцию редактирования, например, удалите неиспользуемые шрифты.
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
-	// Accept the absorber for all the pages
+	// Примите поглотитель для всех страниц
 	pdfDocument.Pages.Accept(absorber);
-	// Traverse through all the TextFragments
+	// Пройти через все TextFragments
 	foreach (TextFragment textFragment in absorber.TextFragments)
 	{
-		// If the font name is ArialMT, replace font name with Arial
+		// Если имя шрифта — ArialMT, замените имя шрифта на Arial.
 		if (textFragment.TextState.Font.FontName == "Arial,Bold")
 		{
 			textFragment.TextState.Font = FontRepository.FindFont("Arial");
 		}
 	}
 	dataDir = dataDir + "ReplaceFonts_out.pdf";
-	// Save updated document
+	// Сохранить обновленный документ
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nFonts replaced successfully in pdf document.\nFile saved at " + dataDir);
 }
 catch (Exception ex)
 {
-	Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase full license or get 30 day temporary license from http:// Www.aspose.com/purchase/default.aspx.");
+	Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase full license or get 30 day temporary license from http:// www.aspose.com/purchase/default.aspx.");
 }
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, you have learned how to replace specific fonts in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can load a PDF document, search for text fragments, identify and replace specific fonts, and save the modified PDF.
+В этом уроке вы узнали, как заменить определенные шрифты в PDF-документе с помощью библиотеки Aspose.PDF для .NET. Следуя пошаговому руководству и выполнив предоставленный код C#, вы сможете загрузить PDF-документ, выполнить поиск фрагментов текста, определить и заменить определенные шрифты, а также сохранить измененный PDF-файл.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of the "Replace Fonts In PDF File" tutorial?
+#### Вопрос: Какова цель урока «Замена шрифтов в PDF-файле»?
 
-A: The "Replace Fonts In PDF File" tutorial demonstrates how to use the Aspose.PDF library for .NET to replace specific fonts in a PDF document. It provides a step-by-step guide on how to load a PDF document, search for text fragments, identify fonts to replace, replace the fonts, and save the modified PDF.
+О: Учебное пособие «Замена шрифтов в PDF-файле» демонстрирует, как использовать библиотеку Aspose.PDF для .NET для замены определенных шрифтов в PDF-документе. Он предоставляет пошаговое руководство по загрузке PDF-документа, поиску фрагментов текста, определению шрифтов для замены, замене шрифтов и сохранению измененного PDF-файла.
 
-#### Q: Why would I want to replace fonts in a PDF document?
+#### Вопрос: Зачем мне заменять шрифты в PDF-документе?
 
-A: Replacing fonts in a PDF document can be necessary when you want to standardize the appearance of the text or improve the compatibility of the document across different devices and platforms. It allows you to ensure consistent typography and formatting.
+О: Замена шрифтов в PDF-документе может потребоваться, если вы хотите стандартизировать внешний вид текста или улучшить совместимость документа на разных устройствах и платформах. Это позволяет обеспечить единообразие типографики и форматирования.
 
-#### Q: How do I set up the document directory?
+#### Вопрос: Как настроить каталог документов?
 
-A: To set up the document directory:
+О: Чтобы настроить каталог документов:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your input PDF file is located.
+1.  Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir` переменная с путем к каталогу, в котором находится входной PDF-файл.
 
-#### Q: How do I replace specific fonts in a PDF document?
+#### Вопрос: Как заменить определенные шрифты в PDF-документе?
 
-A: The tutorial guides you through the process step by step:
+Ответ: Учебное пособие шаг за шагом проведет вас через весь процесс:
 
-1. Load the PDF document using the `Document` class.
-2. Create a `TextFragmentAbsorber` object and set the edit option to remove unused fonts. Accept the absorber for all the pages to search for text fragments.
-3. Traverse through the identified text fragments. If the font name of a text fragment matches the font you want to replace, replace it with the new font.
+1.  Загрузите PDF-документ, используя`Document` сорт.
+2.  Создать`TextFragmentAbsorber` объект и установите параметр редактирования, чтобы удалить неиспользуемые шрифты. Примите поглотитель для всех страниц для поиска фрагментов текста.
+3. Пройдитесь по выявленным фрагментам текста. Если имя шрифта фрагмента текста соответствует шрифту, который вы хотите заменить, замените его новым шрифтом.
 
-#### Q: What is the purpose of using `TextFragmentAbsorber` with font replacement options?
+####  Вопрос: Какова цель использования`TextFragmentAbsorber` with font replacement options?
 
-A: The `TextFragmentAbsorber` with font replacement options allows you to locate text fragments and simultaneously remove unused fonts. This is important to ensure that the replaced fonts are not added as additional resources in the PDF.
+ А:`TextFragmentAbsorber` с возможностью замены шрифтов позволяет находить фрагменты текста и одновременно удалять неиспользуемые шрифты. Это важно для того, чтобы замененные шрифты не были добавлены в PDF-файл в качестве дополнительных ресурсов.
 
-#### Q: How do I identify specific fonts to replace?
+#### Вопрос: Как определить, какие шрифты нужно заменить?
 
-A: By traversing through the text fragments identified by the absorber, you can access the font information for each text fragment. If the font name matches the font you want to replace, you can perform the replacement.
+О: Проходя по фрагментам текста, идентифицированным поглотителем, вы можете получить доступ к информации о шрифте для каждого фрагмента текста. Если имя шрифта соответствует шрифту, который вы хотите заменить, вы можете выполнить замену.
 
-#### Q: What happens if the font to be replaced is not found in a text fragment?
+#### Вопрос: Что произойдет, если заменяемый шрифт не найден во фрагменте текста?
 
-A: If the font to be replaced is not found in a text fragment, the text fragment's font remains unchanged. The replacement will only occur if the font name matches.
+О: Если заменяемый шрифт не найден во фрагменте текста, шрифт фрагмента текста остается неизменным. Замена произойдет только в случае совпадения названия шрифта.
 
-#### Q: Is there a limitation to replacing fonts in this tutorial?
+#### Вопрос: Есть ли ограничение на замену шрифтов в этом уроке?
 
-A: This tutorial focuses on replacing specific fonts in text fragments. If you need to replace fonts in other contexts, such as annotations or form fields, you would need to extend the approach accordingly.
+О: В этом уроке основное внимание уделяется замене определенных шрифтов во фрагментах текста. Если вам нужно заменить шрифты в других контекстах, например в аннотациях или полях формы, вам потребуется соответствующим образом расширить подход.
 
-#### Q: What is the expected outcome of executing the provided code?
+#### Вопрос: Каков ожидаемый результат выполнения предоставленного кода?
 
-A: By following the tutorial and running the provided C# code, you will replace specific fonts in the PDF document. The fonts identified by the criteria you set will be replaced with the new font you specify.
+О: Следуя инструкциям и запустив предоставленный код C#, вы замените определенные шрифты в документе PDF. Шрифты, определенные по заданным вами критериям, будут заменены указанным вами новым шрифтом.
 
-#### Q: Can I use this approach to replace fonts throughout the entire PDF document?
+#### Вопрос: Могу ли я использовать этот подход для замены шрифтов во всем PDF-документе?
 
-A: Yes, you can adapt the code to replace fonts throughout the entire PDF document by traversing through all text fragments and applying the font replacement logic.
+О: Да, вы можете адаптировать код для замены шрифтов по всему PDF-документу, пройдя по всем фрагментам текста и применив логику замены шрифтов.

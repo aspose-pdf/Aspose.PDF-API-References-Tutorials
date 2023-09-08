@@ -1,50 +1,50 @@
 ---
-title: Embed Standard Type 1Fonts In PDF File
-linktitle: Embed Standard Type 1Fonts In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to embed standard Type 1 fonts in PDF file using Aspose.PDF for .NET.
+title: 在 PDF 文件中嵌入标准 Type 1 字体
+linktitle: 在 PDF 文件中嵌入标准 Type 1 字体
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中嵌入标准 Type 1 字体。
 type: docs
 weight: 140
 url: /zh/net/programming-with-text/embed-standard-type-1fonts/
 ---
-This tutorial will guide you through the process of embedding standard Type 1 fonts in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+本教程将指导您完成使用 Aspose.PDF for .NET 在 PDF 文件中嵌入标准 Type 1 字体的过程。提供的 C# 源代码演示了必要的步骤。
 
-## Requirements
-Before you begin, ensure that you have the following:
+## 要求
+在开始之前，请确保您具备以下条件：
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio 或计算机上安装的任何其他 C# 编译器。
+- Aspose.PDF for .NET 库。您可以从 Aspose 官方网站下载它或使用 NuGet 等包管理器来安装它。
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## 第 1 步：设置项目
+1. 在您首选的开发环境中创建一个新的 C# 项目。
+2. 添加对 Aspose.PDF for .NET 库的引用。
 
-## Step 2: Import required namespaces
-In the code file where you want to embed standard Type 1 fonts, add the following using directive at the top of the file:
+## 第2步：导入所需的命名空间
+在要嵌入标准 Type 1 字体的代码文件中，在文件顶部添加以下 using 指令：
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## 第三步：设置文档目录
+在代码中，找到显示以下内容的行`string dataDir = "YOUR DOCUMENT DIRECTORY";`并替换`"YOUR DOCUMENT DIRECTORY"`以及存储文档的目录的路径。
 
-## Step 4: Load the existing PDF document
-Load an existing PDF document using the `Document` constructor and passing the path to the input PDF file.
+## 步骤 4：加载现有 PDF 文档
+使用以下命令加载现有 PDF 文档`Document`构造函数并将路径传递给输入 PDF 文件。
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-## Step 5: Set the EmbedStandardFonts property
-Set the `EmbedStandardFonts` property of the document to `true` in order to enable embedding standard Type 1 fonts.
+## 步骤 5：设置 EmbedStandardFonts 属性
+设置`EmbedStandardFonts`文档的属性`true`为了启用嵌入标准 Type 1 字体。
 
 ```csharp
 pdfDocument.EmbedStandardFonts = true;
 ```
 
-## Step 6: Embed fonts in each page
-Loop through each page of the PDF document and check if the fonts are already embedded. If not, set the `IsEmbedded` property to `true` to embed the font.
+## 第 6 步：在每个页面中嵌入字体
+循环浏览 PDF 文档的每一页并检查字体是否已嵌入。如果没有，请设置`IsEmbedded`财产给`true`嵌入字体。
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -62,20 +62,20 @@ foreach(Page page in pdfDocument.Pages)
 }
 ```
 
-## Step 7: Save the updated PDF document
-Save the updated PDF document using the `Save` method of the `Document` object, specifying the output file path.
+## 步骤7：保存更新后的PDF文档
+使用以下命令保存更新的 PDF 文档`Save`的方法`Document`对象，指定输出文件路径。
 
 ```csharp
 pdfDocument.Save(dataDir + "EmbeddedFonts-updated_out.pdf");
 ```
 
-### Sample source code for Embed Standard Type 1Fonts using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 嵌入标准类型 1Fonts 的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load an existing PDF Document
+//加载现有的 PDF 文档
 Document pdfDocument = new Document(dataDir + "input.pdf");
-// Set EmbedStandardFonts property of document
+//设置文档的 EmbedStandardFonts 属性
 pdfDocument.EmbedStandardFonts = true;
 foreach (Aspose.Pdf.Page page in pdfDocument.Pages)
 {
@@ -83,7 +83,7 @@ foreach (Aspose.Pdf.Page page in pdfDocument.Pages)
 	{
 		foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
 		{
-			// Check if font is already embedded
+			//检查字体是否已经嵌入
 			if (!pageFont.IsEmbedded)
 			{
 				pageFont.IsEmbedded = true;
@@ -94,47 +94,47 @@ foreach (Aspose.Pdf.Page page in pdfDocument.Pages)
 pdfDocument.Save(dataDir + "EmbeddedFonts-updated_out.pdf");
 ```
 
-## Conclusion
-You have successfully embedded standard Type 1 fonts in a PDF document using Aspose.PDF for .NET. The updated PDF file with embedded fonts has been saved at the specified output file path.
+## 结论
+您已使用 Aspose.PDF for .NET 在 PDF 文档中成功嵌入标准 Type 1 字体。带有嵌入字体的更新后的 PDF 文件已保存在指定的输出文件路径中。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the focus of this tutorial?
+#### 问：本教程的重点是什么？
 
-A: This tutorial provides a step-by-step guide to embedding standard Type 1 fonts in a PDF file using the Aspose.PDF for .NET library. The accompanying C# source code demonstrates the necessary procedures.
+答：本教程提供了使用 Aspose.PDF for .NET 库在 PDF 文件中嵌入标准 Type 1 字体的分步指南。随附的 C# 源代码演示了必要的过程。
 
-#### Q: Which namespace do I need to import?
+#### 问：我需要导入哪个命名空间？
 
-A: In the code file where you intend to embed standard Type 1 fonts, include the following namespace at the top of the file:
+答：在要嵌入标准 Type 1 字体的代码文件中，在文件顶部包含以下命名空间：
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-#### Q: How do I specify the document directory?
+#### 问：如何指定文档目录？
 
-A: Locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` in the code and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+答：找到该线`string dataDir = "YOUR DOCUMENT DIRECTORY";`在代码中并替换`"YOUR DOCUMENT DIRECTORY"`与文档目录的实际路径。
 
-#### Q: How do I load an existing PDF document?
+#### 问：如何加载现有的 PDF 文档？
 
-A: In Step 4, you'll load an existing PDF document using the `Document` constructor and providing the path to the input PDF file.
+答：在步骤 4 中，您将使用以下命令加载现有的 PDF 文档：`Document`构造函数并提供输入 PDF 文件的路径。
 
-#### Q: What is the purpose of the `EmbedStandardFonts` property?
+#### 问：这样做的目的是什么`EmbedStandardFonts` property?
 
-A: In Step 5, you'll set the `EmbedStandardFonts` property of the document to `true`, enabling the embedding of standard Type 1 fonts.
+答：在第 5 步中，您将设置`EmbedStandardFonts`文档的属性`true`，启用标准 Type 1 字体的嵌入。
 
-#### Q: How do I embed fonts in each page?
+#### 问：如何在每个页面嵌入字体？
 
-A: Step 6 involves looping through each page of the PDF document. For fonts that are not already embedded, you'll set the `IsEmbedded` property to `true` to embed the font.
+答：第 6 步涉及循环浏览 PDF 文档的每一页。对于尚未嵌入的字体，您将设置`IsEmbedded`财产给`true`嵌入字体。
 
-#### Q: How do I save the updated PDF document?
+#### 问：如何保存更新后的PDF文档？
 
-A: In Step 7, you'll use the `Save` method of the `Document` object to save the updated PDF document, specifying the output file path.
+答：在第 7 步中，您将使用`Save`的方法`Document`对象保存更新的 PDF 文档，指定输出文件路径。
 
-#### Q: What is the significance of embedding fonts in a PDF document?
+#### 问：在 PDF 文档中嵌入字体有何意义？
 
-A: Embedding fonts ensures that the fonts used in the PDF are included within the file itself. This guarantees consistent display of text even if the recipient's system does not have the required fonts installed.
+答：嵌入字体可确保 PDF 中使用的字体包含在文件本身中。即使收件人的系统没有安装所需的字体，这也可以保证文本显示的一致性。
 
-#### Q: What's the main takeaway from this tutorial?
+#### 问：本教程的主要收获是什么？
 
-A: By following this tutorial, you've gained the knowledge and skills to embed standard Type 1 fonts in a PDF document using Aspose.PDF for .NET. This ensures the proper rendering of text across different systems.
+答：通过学习本教程，您已经获得了使用 Aspose.PDF for .NET 在 PDF 文档中嵌入标准 Type 1 字体的知识和技能。这可确保跨不同系统正确呈现文本。

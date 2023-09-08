@@ -1,100 +1,100 @@
 ---
-title: Add Tooltip To Field
-linktitle: Add Tooltip To Field
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a tooltip to a field with Aspose.PDF for .NET.
+title: Agregar información sobre herramientas al campo
+linktitle: Agregar información sobre herramientas al campo
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a agregar información sobre herramientas a un campo con Aspose.PDF para .NET.
 type: docs
 weight: 10
 url: /es/net/programming-with-forms/add-tooltip-to-field/
 ---
-Aspose.PDF for .NET is a powerful library that allows developers to manipulate PDF documents programmatically. In this tutorial, we will walk through the process of adding a tooltip to a field using Aspose.PDF for .NET. We will provide a step-by-step guide to help you understand and implement this functionality in your C# code.
+Aspose.PDF para .NET es una poderosa biblioteca que permite a los desarrolladores manipular documentos PDF mediante programación. En este tutorial, recorreremos el proceso de agregar información sobre herramientas a un campo usando Aspose.PDF para .NET. Le proporcionaremos una guía paso a paso para ayudarlo a comprender e implementar esta funcionalidad en su código C#.
 
-## Step 1: Setting up the project and including Aspose.PDF for .NET
+## Paso 1: configurar el proyecto e incluir Aspose.PDF para .NET
 
-Before we begin, make sure you have Aspose.PDF for .NET installed in your development environment. You can download the library from the official website and follow the installation instructions provided.
+Antes de comenzar, asegúrese de tener Aspose.PDF para .NET instalado en su entorno de desarrollo. Puede descargar la biblioteca desde el sitio web oficial y seguir las instrucciones de instalación proporcionadas.
 
-Once you have installed Aspose.PDF for .NET, create a new C# project in your preferred Integrated Development Environment (IDE). Add a reference to the Aspose.PDF.dll file in your project to access the library's functionality.
+Una vez que haya instalado Aspose.PDF para .NET, cree un nuevo proyecto C# en su entorno de desarrollo integrado (IDE) preferido. Agregue una referencia al archivo Aspose.PDF.dll en su proyecto para acceder a la funcionalidad de la biblioteca.
 
-## Step 2: Loading the source PDF form
+## Paso 2: cargar el formulario PDF de origen
 
-In this step, we will load the source PDF form that contains the field to which we want to add a tooltip. First, ensure that you have the source PDF form file available in your project directory. You can obtain a sample PDF form or use your own existing form.
+En este paso, cargaremos el formulario PDF de origen que contiene el campo al que queremos agregar una información sobre herramientas. Primero, asegúrese de tener el archivo de formulario PDF de origen disponible en el directorio de su proyecto. Puede obtener un formulario PDF de muestra o utilizar su propio formulario existente.
 
-To load the PDF form, use the following code:
+Para cargar el formulario PDF, utilice el siguiente código:
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Cargar formulario PDF fuente
 Document doc = new Document(dataDir + "AddTooltipToField.pdf");
 ```
 
-Make sure to replace `"AddTooltipToField.pdf"` with the actual filename of your source PDF form.
+ Asegúrate de reemplazar`"AddTooltipToField.pdf"` con el nombre de archivo real de su formulario PDF de origen.
 
-## Step 3: Adding a tooltip to a text field
+## Paso 3: Agregar información sobre herramientas a un campo de texto
 
-Now that we have loaded the source PDF form, we can proceed to add a tooltip to a specific text field. In this example, let's assume that the text field's name is "textbox1".
+Ahora que hemos cargado el formulario PDF de origen, podemos proceder a agregar información sobre herramientas a un campo de texto específico. En este ejemplo, supongamos que el nombre del campo de texto es "cuadro de texto1".
 
-To add a tooltip to the text field, use the following code:
+Para agregar información sobre herramientas al campo de texto, use el siguiente código:
 
 ```csharp
-// Set the tooltip for textfield
+// Establecer la información sobre herramientas para el campo de texto
 (doc.Form["textbox1"] as Field).AlternateName = "Text box tool tip";
 ```
 
-Replace `"textbox1"` with the actual name of the text field to which you want to add the tooltip. Also, customize the tooltip text by modifying the value assigned to `AlternateName`.
+ Reemplazar`"textbox1"` con el nombre real del campo de texto al que desea agregar la información sobre herramientas. Además, personalice el texto de información sobre herramientas modificando el valor asignado a`AlternateName`.
 
-## Step 4: Saving the updated document
+## Paso 4: guardar el documento actualizado
 
-After adding the tooltip to the field, we need to save the updated document. Specify the output file path where you want to save the modified PDF form.
+Después de agregar la información sobre herramientas al campo, debemos guardar el documento actualizado. Especifique la ruta del archivo de salida donde desea guardar el formulario PDF modificado.
 
-To save the updated document, use the following code:
+Para guardar el documento actualizado, utilice el siguiente código:
 
 ```csharp
 dataDir = dataDir + "AddTooltipToField_out.pdf";
-// Save the updated document
+// Guardar el documento actualizado
 doc.Save(dataDir);
 Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 ```
 
-Make sure to provide the desired output file name and path. After executing this code, the modified PDF form with the added tooltip will be saved to the specified location.
+Asegúrese de proporcionar el nombre y la ruta del archivo de salida deseado. Después de ejecutar este código, el formulario PDF modificado con la información sobre herramientas agregada se guardará en la ubicación especificada.
 
-### Sample source code for Add Tooltip To Field using Aspose.PDF for .NET 
+### Código fuente de muestra para Agregar información sobre herramientas al campo usando Aspose.PDF para .NET 
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Cargar formulario PDF fuente
 Document doc = new Document(dataDir + "AddTooltipToField.pdf");
-// Set the tooltip for textfield
+// Establecer la información sobre herramientas para el campo de texto
 (doc.Form["textbox1"] as Field).AlternateName = "Text box tool tip";
 dataDir = dataDir + "AddTooltipToField_out.pdf";
-// Save the updated document
+// Guardar el documento actualizado
 doc.Save(dataDir);
 Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Conclusión
 
-Congratulations! You have successfully learned how to add a tooltip to a field using Aspose.PDF for .NET. By following the step-by-step guide in this tutorial, you can enhance your PDF forms with tooltips to provide additional information or guidance to the users. Remember to explore the documentation and examples provided by Aspose.PDF for .NET to discover more advanced features and functionalities offered by the library.
+¡Felicidades! Ha aprendido con éxito cómo agregar información sobre herramientas a un campo usando Aspose.PDF para .NET. Si sigue la guía paso a paso de este tutorial, puede mejorar sus formularios PDF con información sobre herramientas para proporcionar información u orientación adicional a los usuarios. Recuerde explorar la documentación y los ejemplos proporcionados por Aspose.PDF para .NET para descubrir características y funcionalidades más avanzadas que ofrece la biblioteca.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is a tooltip in a PDF form, and why would I use it?
+#### P: ¿Qué es una información sobre herramientas en un formulario PDF y por qué debería usarla?
 
-A: A tooltip in a PDF form is a small pop-up box that appears when the user hovers their mouse over a specific field. It provides additional information or instructions related to that field. Tooltips are helpful for guiding users, providing explanations, or offering context-specific help in PDF forms.
+R: Una información sobre herramientas en un formulario PDF es un pequeño cuadro emergente que aparece cuando el usuario pasa el mouse sobre un campo específico. Proporciona información adicional o instrucciones relacionadas con ese campo. La información sobre herramientas es útil para guiar a los usuarios, proporcionar explicaciones u ofrecer ayuda específica del contexto en formularios PDF.
 
-#### Q: Can I customize the appearance and behavior of the tooltip?
+#### P: ¿Puedo personalizar la apariencia y el comportamiento de la información sobre herramientas?
 
-A: Yes, with Aspose.PDF for .NET, you can customize the appearance and behavior of the tooltip. You can set the tooltip text, font, color, and other attributes to match your application's design and requirements.
+R: Sí, con Aspose.PDF para .NET, puede personalizar la apariencia y el comportamiento de la información sobre herramientas. Puede configurar el texto de la información sobre herramientas, la fuente, el color y otros atributos para que coincidan con el diseño y los requisitos de su aplicación.
 
-#### Q: Is Aspose.PDF for .NET compatible with other programming languages besides C#?
+#### P: ¿Aspose.PDF para .NET es compatible con otros lenguajes de programación además de C#?
 
-A: Yes, Aspose.PDF for .NET is designed to work with other .NET languages such as VB.NET, F#, and more. The library provides consistent functionality across these languages.
+R: Sí, Aspose.PDF para .NET está diseñado para funcionar con otros lenguajes .NET como VB.NET, F# y más. La biblioteca proporciona una funcionalidad consistente en estos idiomas.
 
-#### Q: Can I add tooltips to other types of form fields, such as checkboxes or radio buttons?
+#### P: ¿Puedo agregar información sobre herramientas a otros tipos de campos de formulario, como casillas de verificación o botones de opción?
 
-A: Yes, you can add tooltips to various types of form fields, including text fields, checkboxes, radio buttons, combo boxes, and more. The process is similar, and you can access different types of form fields using their names or IDs.
+R: Sí, puede agregar información sobre herramientas a varios tipos de campos de formulario, incluidos campos de texto, casillas de verificación, botones de opción, cuadros combinados y más. El proceso es similar y puede acceder a diferentes tipos de campos de formulario utilizando sus nombres o ID.
 
-#### Q: Can I remove or modify the tooltip after it has been added to the field?
+#### P: ¿Puedo eliminar o modificar la información sobre herramientas después de agregarla al campo?
 
-A: Yes, you can modify or remove the tooltip from a field even after it has been added using Aspose.PDF for .NET. Simply access the field and update its `AlternateName` property with the new tooltip text or set it to an empty string to remove the tooltip.
+ R: Sí, puede modificar o eliminar la información sobre herramientas de un campo incluso después de haberlo agregado usando Aspose.PDF para .NET. Simplemente acceda al campo y actualice su`AlternateName` propiedad con el nuevo texto de información sobre herramientas o configúrelo en una cadena vacía para eliminar la información sobre herramientas.

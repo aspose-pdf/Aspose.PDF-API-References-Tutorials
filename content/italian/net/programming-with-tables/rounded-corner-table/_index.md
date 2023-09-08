@@ -1,86 +1,86 @@
 ---
-title: Rounded Corner Table In PDF Document
-linktitle: Rounded Corner Table In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create a rounded corner table in PDF document using Aspose.PDF for .NET.
+title: Tavolo ad angolo arrotondato nel documento PDF
+linktitle: Tavolo ad angolo arrotondato nel documento PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come creare una tabella con angoli arrotondati nel documento PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 190
 url: /it/net/programming-with-tables/rounded-corner-table/
 ---
-In this tutorial, we will guide you step by step to create a rounded corner table in PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+In questo tutorial, ti guideremo passo dopo passo per creare una tabella con angoli arrotondati nel documento PDF utilizzando Aspose.PDF per .NET. Spiegheremo il codice sorgente C# fornito e ti mostreremo come implementarlo.
 
-## Step 1: Creating the table
-First, we will create the table using the following code:
+## Passaggio 1: creazione della tabella
+Per prima cosa creeremo la tabella utilizzando il seguente codice:
 
 ```csharp
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 ```
 
-## Step 2: Rounded Corner Style Setup
-Next, we'll configure the rounded corner style for the table:
+## Passaggio 2: impostazione dello stile con angoli arrotondati
+Successivamente, configureremo lo stile degli angoli arrotondati per la tabella:
 
 ```csharp
 tab1.CornerStyle = Aspose.Pdf.BorderCornerStyle.Round;
 ```
 
-## Step 3: Table Border Setup
-To give the table a rounded corner border, we need to create a BorderInfo object and configure it with the appropriate parameters:
+## Passaggio 3: impostazione del bordo della tabella
+Per dare alla tabella un bordo con angoli arrotondati dobbiamo creare un oggetto BorderInfo e configurarlo con gli appositi parametri:
 
 ```csharp
-// Create a GraphInfo object to set the border color
+// Crea un oggetto GraphInfo per impostare il colore del bordo
 GraphInfo graph = new GraphInfo();
 graph.Color = Aspose.Pdf.Color.Red;
 
-// Create an empty BorderInfo object
+// Crea un oggetto BorderInfo vuoto
 BorderInfo bInfo = new BorderInfo(BorderSide.All, graph);
 
-// Set the radius of the rounded border to 15
+// Imposta il raggio del bordo arrotondato su 15
 bInfo.RoundedBorderRadius = 15;
 
-// Apply border information to the table
+// Applicare le informazioni sul bordo alla tabella
 tab1.Border = bInfo;
 ```
 
-### Example source code for Rounded Corner Table using Aspose.PDF for .NET
+### Codice sorgente di esempio per la tabella con angoli arrotondati utilizzando Aspose.PDF per .NET
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 GraphInfo graph = new GraphInfo();
 graph.Color = Aspose.Pdf.Color.Red;
-// Create a blank BorderInfo object
+// Crea un oggetto BorderInfo vuoto
 BorderInfo bInfo = new BorderInfo(BorderSide.All, graph);
-// Set the border a rounder border where radius of round is 15
+// Imposta il bordo su un bordo più arrotondato in cui il raggio dell'arrotondamento è 15
 bInfo.RoundedBorderRadius = 15;
-// Set the table Corner style as Round.
+// Imposta lo stile Angolo della tabella su Rotondo.
 tab1.CornerStyle = Aspose.Pdf.BorderCornerStyle.Round;
-// Set the table border information
+// Imposta le informazioni sul bordo della tabella
 tab1.Border = bInfo;
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to create a rounded corner table in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to set up the rounded corner style and table border. Now you can apply this knowledge to your own projects.
+## Conclusione
+Congratulazioni! Ora hai imparato come creare una tabella con angoli arrotondati in un documento PDF utilizzando Aspose.PDF per .NET. Questa guida passo passo ti ha mostrato come impostare lo stile degli angoli arrotondati e il bordo della tabella. Ora puoi applicare questa conoscenza ai tuoi progetti.
 
-### FAQ's for rounded corner table in PDF document
+### Domande frequenti sul tavolo con angolo arrotondato nel documento PDF
 
-#### Q: Can I customize the radius of the rounded corners for the table?
+#### D: Posso personalizzare il raggio degli angoli arrotondati del tavolo?
 
-A: Yes, you can customize the radius of the rounded corners for the table by modifying the value of the `bInfo.RoundedBorderRadius` property in the provided C# source code. Simply set the desired radius value (in points) to achieve the desired rounded corner appearance.
+R: Sì, puoi personalizzare il raggio degli angoli arrotondati del tavolo modificando il valore di`bInfo.RoundedBorderRadius` proprietà nel codice sorgente C# fornito. È sufficiente impostare il valore del raggio desiderato (in punti) per ottenere l'aspetto degli angoli arrotondati desiderato.
 
-#### Q: Can I apply rounded corners to individual cells within the table?
+#### D: Posso applicare angoli arrotondati alle singole celle della tabella?
 
-A: No, the rounded corner style is applied to the entire table as a whole. Aspose.PDF for .NET currently does not provide built-in support for applying rounded corners to individual cells within the table.
+R: No, lo stile degli angoli arrotondati viene applicato all'intera tabella nel suo insieme. Aspose.PDF per .NET attualmente non fornisce supporto integrato per l'applicazione di angoli arrotondati alle singole celle all'interno della tabella.
 
-#### Q: Can I change the color of the rounded corner border?
+#### D: Posso cambiare il colore del bordo dell'angolo arrotondato?
 
-A: Yes, you can change the color of the rounded corner border by modifying the value of the `graph.Color` property in the C# source code. Simply provide the desired color, such as `Aspose.Pdf.Color.Red` or any other valid color representation.
+ R: Sì, puoi cambiare il colore del bordo dell'angolo arrotondato modificando il valore di`graph.Color` proprietà nel codice sorgente C#. Basta fornire il colore desiderato, ad esempio`Aspose.Pdf.Color.Red` o qualsiasi altra rappresentazione di colore valida.
 
-#### Q: Is it possible to apply different corner styles (e.g., square and rounded) to different tables within the same PDF document?
+#### D: È possibile applicare stili di angoli diversi (ad esempio, quadrati e arrotondati) a tabelle diverse all'interno dello stesso documento PDF?
 
-A: Yes, it is possible to apply different corner styles to different tables within the same PDF document. You can create multiple tables and configure their corner styles individually based on your requirements.
+R: Sì, è possibile applicare stili di angoli diversi a tabelle diverse all'interno dello stesso documento PDF. Puoi creare più tavoli e configurare i loro stili d'angolo individualmente in base alle tue esigenze.
 
-#### Q: Can I adjust the thickness of the rounded corner border?
+#### D: Posso regolare lo spessore del bordo dell'angolo arrotondato?
 
-A: Yes, you can adjust the thickness of the rounded corner border by modifying the `BorderInfo` object's properties in the C# source code. For example, you can set the `bInfo.Width` property to adjust the border's thickness.
+ R: Sì, puoi regolare lo spessore del bordo dell'angolo arrotondato modificando il file`BorderInfo` le proprietà dell'oggetto nel codice sorgente C#. Ad esempio, puoi impostare il file`bInfo.Width` proprietà per regolare lo spessore del bordo.

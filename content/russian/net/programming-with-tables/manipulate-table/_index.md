@@ -1,98 +1,98 @@
 ---
-title: Manipulate Table In PDF File
-linktitle: Manipulate Table In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily manipulate tables in PDF file with Aspose.PDF for .NET.
+title: Манипулировать таблицей в PDF-файле
+linktitle: Манипулировать таблицей в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко манипулируйте таблицами в PDF-файле с помощью Aspose.PDF для .NET.
 type: docs
 weight: 130
 url: /ru/net/programming-with-tables/manipulate-table/
 ---
-In this tutorial, we will walk you through the step-by-step process of manipulating tables in PDF file using Aspose.PDF for .NET. Tables are a common element in PDF documents, and being able to modify their content programmatically can be highly beneficial in various scenarios. We will use the C# source code provided to demonstrate the process.
+В этом уроке мы покажем вам пошаговый процесс управления таблицами в PDF-файле с помощью Aspose.PDF для .NET. Таблицы являются распространенным элементом PDF-документов, и возможность программного изменения их содержимого может быть очень полезной в различных сценариях. Мы будем использовать предоставленный исходный код C# для демонстрации процесса.
 
-## Requirements
+## Требования
 
-Before we begin, make sure you have the following:
+Прежде чем мы начнем, убедитесь, что у вас есть следующее:
 
-- Visual Studio or any other C# development environment installed.
-- Aspose.PDF for .NET library added as a reference to your project.
+- Установлена Visual Studio или любая другая среда разработки C#.
+- Библиотека Aspose.PDF для .NET добавлена в качестве ссылки на ваш проект.
 
-Now, let's dive into the steps required to manipulate tables in a PDF document using Aspose.PDF for .NET.
+Теперь давайте углубимся в шаги, необходимые для управления таблицами в PDF-документе с помощью Aspose.PDF для .NET.
 
-## Step 1: Loading the PDF Document
+## Шаг 1. Загрузка PDF-документа
 
-The first step is to load the existing PDF document into your C# application. You need to provide the path to the directory where your document is located.
+Первым шагом является загрузка существующего PDF-документа в приложение C#. Вам необходимо указать путь к каталогу, в котором находится ваш документ.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual path to the directory where your PDF document is located.
+Замените «КАТАЛОГ ВАШЕГО ДОКУМЕНТА» фактическим путем к каталогу, в котором находится ваш PDF-документ.
 
-## Step 2: Finding Tables in the Document
+## Шаг 2. Поиск таблиц в документе
 
-To manipulate tables, we need to find them within the PDF document. Aspose.PDF for .NET provides a TableAbsorber class that allows us to extract tables from the document. We will create an instance of the TableAbsorber class and visit the desired page of the document.
+Чтобы манипулировать таблицами, нам нужно найти их в PDF-документе. Aspose.PDF для .NET предоставляет класс TableAbsorber, который позволяет нам извлекать таблицы из документа. Мы создадим экземпляр класса TableAbsorber и посетим нужную страницу документа.
 
 ```csharp
 TableAbsorber absorber = new TableAbsorber();
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
-In this example, we are visiting the first page of the document. You can change the page number as per your requirements.
+В этом примере мы посещаем первую страницу документа. Вы можете изменить номер страницы в соответствии с вашими требованиями.
 
-## Step 3: Accessing Table Cells and Text Fragments
+## Шаг 3. Доступ к ячейкам таблицы и фрагментам текста
 
-Once we have the tables, we can access their cells and text fragments for manipulation. In the provided source code, we are accessing the first table, the first cell of its first row, and the second text fragment within that cell.
+Получив таблицы, мы можем получить доступ к их ячейкам и фрагментам текста для манипуляций. В предоставленном исходном коде мы получаем доступ к первой таблице, первой ячейке ее первой строки и второму фрагменту текста внутри этой ячейки.
 
 ```csharp
 TextFragment fragment = absorb.TableList[0].RowList[0].CellList[0].TextFragments[1];
 ```
 
-You can modify the code to target different tables, cells, or text fragments based on your specific needs.
+Вы можете изменить код для использования различных таблиц, ячеек или текстовых фрагментов в соответствии с вашими конкретными потребностями.
 
-## Step 4: Manipulating Table Text
+## Шаг 4. Манипулирование текстом таблицы
 
-With the text fragment accessed, we can now modify its content. In the given example, we are changing the text to "hi world".
+Получив доступ к текстовому фрагменту, мы теперь можем изменить его содержимое. В данном примере мы меняем текст на «привет, мир».
 
 ```csharp
 fragment.Text = "hi world";
 ```
 
-Feel free to replace "hi world" with your desired text.
+Не стесняйтесь заменять «привет, мир» нужным текстом.
 
-## Step 5: Saving the Modified Document
+## Шаг 5: Сохранение измененного документа
 
-Once the desired modifications are made, we need to save the modified PDF document.
+После внесения желаемых изменений нам необходимо сохранить измененный PDF-документ.
 
 ```csharp
 dataDir = dataDir + "ManipulateTable_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-Ensure you provide the path and filename for the modified document.
+Обязательно укажите путь и имя файла для измененного документа.
 
 
-### Example source code for Manipulate Table using Aspose.PDF for .NET
+### Пример исходного кода для манипулирования таблицей с использованием Aspose.PDF для .NET
 
 ```csharp
 try
 {
 	
-	// The path to the documents directory.
+	// Путь к каталогу документов.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Load existing PDF file
+	// Загрузить существующий PDF-файл
 	Document pdfDocument = new Document(dataDir + "input.pdf");
-	// Create TableAbsorber object to find tables
+	// Создайте объект TableAbsorber для поиска таблиц.
 	TableAbsorber absorber = new TableAbsorber();
 
-	// Visit first page with absorber
+	// Посетите первую страницу с поглотителем
 	absorber.Visit(pdfDocument.Pages[1]);
 
-	// Get access to first table on page, their first cell and text fragments in it
+	// Получите доступ к первой таблице на странице, их первой ячейке и фрагментам текста в ней.
 	TextFragment fragment = absorber.TableList[0].RowList[0].CellList[0].TextFragments[1];
 
-	// Change text of the first text fragment in the cell
+	// Изменить текст первого фрагмента текста в ячейке
 	fragment.Text = "hi world";
 	dataDir = dataDir + "ManipulateTable_out.pdf";
 	pdfDocument.Save(dataDir);
@@ -105,28 +105,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we have learned how to manipulate tables in a PDF document using Aspose.PDF for .NET. By following the step-by-step guide, you can easily load a PDF document, find tables, access cells and text fragments, modify table content, and save the modified document. This approach provides flexibility and efficiency when dealing with table manipulation in PDF documents.
+В этом уроке мы узнали, как манипулировать таблицами в PDF-документе с помощью Aspose.PDF для .NET. Следуя пошаговому руководству, вы сможете легко загрузить PDF-документ, найти таблицы, получить доступ к ячейкам и фрагментам текста, изменить содержимое таблицы и сохранить измененный документ. Этот подход обеспечивает гибкость и эффективность при работе с таблицами в документах PDF.
 
-### FAQ's for manipulate table in PDF file
+### Часто задаваемые вопросы по работе с таблицами в PDF-файле
 
-#### Q: Can I manipulate tables in multi-page PDF documents?
+#### Вопрос: Могу ли я манипулировать таблицами в многостраничных PDF-документах?
 
-A: Yes, you can manipulate tables in multi-page PDF documents using Aspose.PDF for .NET. In the provided example, we visited the first page of the document (`pdfDocument.Pages[1]`), but you can loop through all the pages and manipulate tables on each page as needed.
+О: Да, вы можете манипулировать таблицами в многостраничных PDF-документах, используя Aspose.PDF для .NET. В приведенном примере мы посетили первую страницу документа (`pdfDocument.Pages[1]`), но вы можете перебирать все страницы и манипулировать таблицами на каждой странице по мере необходимости.
 
-#### Q: How can I add new rows or columns to an existing table?
+#### Вопрос: Как добавить новые строки или столбцы в существующую таблицу?
 
-A: To add new rows or columns to an existing table, you can use the APIs provided by Aspose.PDF for .NET. You can access the `RowList` and `CellList` properties of the `TableAbsorber.TableList` to add new rows and cells programmatically. Refer to the Aspose.PDF for .NET documentation for detailed information and code examples.
+ О: Чтобы добавить новые строки или столбцы в существующую таблицу, вы можете использовать API, предоставляемые Aspose.PDF для .NET. Вы можете получить доступ к`RowList` и`CellList` свойства`TableAbsorber.TableList` для программного добавления новых строк и ячеек. Подробную информацию и примеры кода см. в документации Aspose.PDF для .NET.
 
-#### Q: Is it possible to remove a table from a PDF document?
+#### Вопрос: Можно ли удалить таблицу из PDF-документа?
 
-A: Yes, you can remove a table from a PDF document using Aspose.PDF for .NET. To achieve this, you can remove the specific `Table` object from the `Page.Paragraphs` collection. You can identify the table to remove by using properties like `Table.NumberOfColumns`, `Table.NumberOfRows`, and other unique identifiers.
+ О: Да, вы можете удалить таблицу из PDF-документа, используя Aspose.PDF для .NET. Для этого вы можете удалить определенные`Table` объект из`Page.Paragraphs` коллекция. Вы можете определить таблицу, которую нужно удалить, используя такие свойства, как`Table.NumberOfColumns`, `Table.NumberOfRows`и другие уникальные идентификаторы.
 
-#### Q: Can I change the formatting (font, color, alignment) of the table text?
+#### Вопрос: Могу ли я изменить форматирование (шрифт, цвет, выравнивание) текста таблицы?
 
-A: Yes, you can change the formatting of the table text using Aspose.PDF for .NET. You can access the `TextState` property of the `TextFragment` object to modify the font, font size, color, and alignment of the text.
+ О: Да, вы можете изменить форматирование текста таблицы с помощью Aspose.PDF для .NET. Вы можете получить доступ к`TextState` собственность`TextFragment` объект для изменения шрифта, размера шрифта, цвета и выравнивания текста.
 
-#### Q: Does Aspose.PDF for .NET support working with tables in PDF forms (AcroForms)?
+#### Вопрос: Поддерживает ли Aspose.PDF for .NET работу с таблицами в формах PDF (AcroForms)?
 
-A: Yes, Aspose.PDF for .NET supports working with tables in PDF forms (AcroForms). You can access and manipulate table elements in PDF forms similar to the approach demonstrated in this tutorial. Aspose.PDF for .NET provides extensive support for working with AcroForms and form fields.
+О: Да, Aspose.PDF для .NET поддерживает работу с таблицами в формах PDF (AcroForms). Вы можете получать доступ к элементам таблицы в формах PDF и манипулировать ими аналогично подходу, продемонстрированному в этом руководстве. Aspose.PDF для .NET обеспечивает обширную поддержку работы с AcroForms и полями форм.

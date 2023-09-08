@@ -1,52 +1,52 @@
 ---
-title: Custom Tab Stops In PDF File
-linktitle: Custom Tab Stops In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create custom tab stops in PDF file using Aspose.PDF for .NET.
+title: علامات التبويب المخصصة تتوقف في ملف PDF
+linktitle: علامات التبويب المخصصة تتوقف في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إنشاء علامات جدولة مخصصة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 120
 url: /ar/net/programming-with-text/custom-tab-stops/
 ---
 
-This tutorial will guide you through the process of creating custom tab stops in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+سيرشدك هذا البرنامج التعليمي خلال عملية إنشاء علامات جدولة مخصصة في ملف PDF باستخدام Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم الخطوات اللازمة.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## متطلبات
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio أو أي مترجم C# آخر مثبت على جهازك.
+- Aspose.PDF لمكتبة .NET. يمكنك تنزيله من موقع Aspose الرسمي أو استخدام مدير الحزم مثل NuGet لتثبيته.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## الخطوة 1: إعداد المشروع
+1. قم بإنشاء مشروع C# جديد في بيئة التطوير المفضلة لديك.
+2. قم بإضافة مرجع إلى Aspose.PDF لمكتبة .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to create custom tab stops, add the following using directives at the top of the file:
+## الخطوة 2: استيراد مساحات الأسماء المطلوبة
+في ملف التعليمات البرمجية الذي تريد إنشاء علامات جدولة مخصصة فيه، أضف ما يلي باستخدام التوجيهات الموجودة في أعلى الملف:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## الخطوة 3: قم بتعيين دليل المستند
+ في الكود، حدد السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدال`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل حيث يتم تخزين المستندات الخاصة بك.
 
-## Step 4: Create a new Document instance
-Instantiate a new `Document` object by adding the following line of code:
+## الخطوة 4: إنشاء مثيل مستند جديد
+ إنشاء مثيل جديد`Document` كائن عن طريق إضافة السطر التالي من التعليمات البرمجية:
 
 ```csharp
 Document _pdfdocument = new Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `page`.
+## الخطوة 5: إضافة صفحة إلى المستند
+ أضف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages`مجموعة. في الكود المقدم، يتم تعيين الصفحة الجديدة للمتغير`page`.
 
 ```csharp
 Page page = _pdfdocument.Pages.Add();
 ```
 
-## Step 6: Create custom tab stops
-Create a `TabStops` object and add custom tab stops to it. Set the alignment type and leader type for each tab stop.
+## الخطوة 6: إنشاء علامات جدولة مخصصة
+ إنشاء`TabStops` كائن وإضافة علامات جدولة مخصصة إليه. قم بتعيين نوع المحاذاة ونوع القائد لكل علامة جدولة.
 
 ```csharp
 TabStops ts = new TabStops();
@@ -63,8 +63,8 @@ ts3.AlignmentType = TabAlignmentType.Left;
 ts3.LeaderType = TabLeaderType.Dot;
 ```
 
-## Step 7: Create text fragments with tab stops
-Create `TextFragment` objects and pass the custom tab stops to them. Use the special characters `#$TAB` to indicate the tab stops within the text.
+## الخطوة 7: إنشاء أجزاء نصية مع توقفات الجدولة
+ يخلق`TextFragment` الكائنات وتمرير علامات الجدولة المخصصة إليها. استخدم الأحرف الخاصة`#$TAB` للإشارة إلى علامات الجدولة داخل النص.
 
 ```csharp
 TextFragment header = new TextFragment("This is an example of forming a table with TAB stops", ts);
@@ -82,17 +82,17 @@ page.Paragraphs.Add(text1);
 page.Paragraphs.Add(text2);
 ```
 
-## Step 8: Save the PDF document
-Save the PDF document using the `Save` method of the `Document` object.
+## الخطوة 8: احفظ مستند PDF
+ احفظ مستند PDF باستخدام`Save` طريقة`Document` هدف.
 
 ```csharp
 _pdfdocument.Save(dataDir);
 Console.WriteLine("\nCustom tab stops setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Custom Tab Stops using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لعلامات التبويب المخصصة باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document _pdfdocument = new Document();
 Page page = _pdfdocument.Pages.Add();
@@ -123,48 +123,48 @@ _pdfdocument.Save(dataDir);
 Console.WriteLine("\nCustom tab stops setup successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-You have successfully created a PDF document with custom tab stops using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## خاتمة
+لقد نجحت في إنشاء مستند PDF مع علامات جدولة مخصصة باستخدام Aspose.PDF لـ .NET. يمكن الآن العثور على ملف PDF الناتج في مسار ملف الإخراج المحدد.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the focus of this tutorial?
+#### س: ما هو محور هذا البرنامج التعليمي؟
 
-A: This tutorial is focused on guiding you through the process of creating custom tab stops in a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the necessary steps to achieve this.
+ج: يركز هذا البرنامج التعليمي على إرشادك خلال عملية إنشاء علامات جدولة مخصصة في ملف PDF باستخدام مكتبة Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم الخطوات اللازمة لتحقيق ذلك.
 
-#### Q: Which namespaces should I import for this tutorial?
+#### س: ما هي مساحات الأسماء التي يجب علي استيرادها لهذا البرنامج التعليمي؟
 
-A: In the code file where you want to create custom tab stops, import the following namespaces at the beginning of the file:
+ج: في ملف التعليمات البرمجية الذي تريد إنشاء علامات جدولة مخصصة فيه، قم باستيراد مساحات الأسماء التالية في بداية الملف:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### س: كيف أحدد دليل المستندات؟
 
-A: In the code, find the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ ج: في الكود، ابحث عن السطر`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدال`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك.
 
-#### Q: How do I create a new Document instance?
+#### س: كيف يمكنني إنشاء مثيل مستند جديد؟
 
-A: In Step 4, you'll instantiate a new `Document` object using the provided code.
+ ج: في الخطوة 4، ستقوم بإنشاء نسخة جديدة`Document` الكائن باستخدام الكود المقدم.
 
-#### Q: How do I add a page to the document?
+#### س: كيف يمكنني إضافة صفحة إلى المستند؟
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection.
+ ج: في الخطوة 5، ستضيف صفحة جديدة إلى المستند باستخدام الملف`Add` طريقة`Pages` مجموعة.
 
-#### Q: How do I create custom tab stops?
+#### س: كيف يمكنني إنشاء علامات جدولة مخصصة؟
 
-A: In Step 6, you'll create a `TabStops` object and add custom tab stops to it. You'll also set alignment and leader types for each tab stop.
+ ج: في الخطوة 6، ستقوم بإنشاء ملف`TabStops` كائن وإضافة علامات جدولة مخصصة إليه. ستقوم أيضًا بتعيين أنواع المحاذاة والخطوط السابقة لكل علامة جدولة.
 
-#### Q: How do I create text fragments with tab stops?
+#### س: كيف يمكنني إنشاء أجزاء نصية تحتوي على علامات جدولة؟
 
-A: In Step 7, you'll create `TextFragment` objects and pass the custom tab stops to them. You'll use the special characters `#$TAB` to indicate the tab stops within the text.
+ ج: في الخطوة 7، ستقوم بالإنشاء`TextFragment` الكائنات وتمرير علامات الجدولة المخصصة إليها. ستستخدم الأحرف الخاصة`#$TAB` للإشارة إلى علامات الجدولة داخل النص.
 
-#### Q: How do I save the PDF document?
+#### س: كيف أحفظ وثيقة PDF؟
 
-A: In Step 8, you'll save the PDF document using the `Save` method of the `Document` object.
+ ج: في الخطوة 8، ستحفظ مستند PDF باستخدام الملف`Save` طريقة`Document` هدف.
 
-#### Q: What is the main takeaway from this tutorial?
+#### س: ما هي الوجبات الرئيسية من هذا البرنامج التعليمي؟
 
-A: By following this tutorial, you've learned how to create a PDF document with custom tab stops using Aspose.PDF for .NET. This can be useful for organizing and aligning text in a structured manner.
+ج: باتباع هذا البرنامج التعليمي، تعلمت كيفية إنشاء مستند PDF بعلامات جدولة مخصصة باستخدام Aspose.PDF لـ .NET. يمكن أن يكون هذا مفيدًا لتنظيم النص ومحاذاته بطريقة منظمة.

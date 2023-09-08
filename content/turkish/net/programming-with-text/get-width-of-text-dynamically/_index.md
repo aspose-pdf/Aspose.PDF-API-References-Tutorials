@@ -1,39 +1,39 @@
 ---
-title: Get Width Of Text Dynamically
-linktitle: Get Width Of Text Dynamically
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to dynamically get the width of text using Aspose.PDF for .NET.
+title: Metin Genişliğini Dinamik Olarak Alın
+linktitle: Metin Genişliğini Dinamik Olarak Alın
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak metnin genişliğini dinamik olarak nasıl elde edeceğinizi öğrenin.
 type: docs
 weight: 220
 url: /tr/net/programming-with-text/get-width-of-text-dynamically/
 ---
-In this tutorial, we will explain how to use Aspose.PDF for .NET to dynamically measure the width of text in C#. This can be useful when you need to determine the size of a text string before rendering it on a PDF document. We will guide you through the provided C# source code step by step.
+Bu eğitimde, C#'ta metin genişliğini dinamik olarak ölçmek için Aspose.PDF for .NET'in nasıl kullanılacağını açıklayacağız. Bu, bir metin dizesini PDF belgesinde oluşturmadan önce boyutunu belirlemeniz gerektiğinde yararlı olabilir. Sağlanan C# kaynak kodu konusunda size adım adım rehberlik edeceğiz.
 
-## Prerequisites
+## Önkoşullar
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Aspose.PDF for .NET library installed.
-- Visual Studio or any other C# development environment.
+- Aspose.PDF for .NET kütüphanesi kuruldu.
+- Visual Studio veya başka herhangi bir C# geliştirme ortamı.
 
-## Step 1: Set the Document Directory
+## 1. Adım: Belge Dizinini Ayarlayın
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are located. This will be used to store any generated PDF files.
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"`belgelerinizin bulunduğu dizinin yolu ile birlikte. Bu, oluşturulan PDF dosyalarını depolamak için kullanılacaktır.
 
-## Step 2: Find the Font
+## Adım 2: Yazı Tipini Bulun
 
 ```csharp
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("Arial");
 ```
 
-The code above finds the Arial font using the `FindFont` method from the `FontRepository` class. If you want to use a different font, replace `"Arial"` with the desired font name.
+ Yukarıdaki kod Arial yazı tipini aşağıdaki komutu kullanarak bulur:`FindFont` gelen yöntem`FontRepository` sınıf. Farklı bir yazı tipi kullanmak istiyorsanız değiştirin`"Arial"` İstenilen yazı tipi adı ile.
 
-## Step 3: Set the Text State
+## 3. Adım: Metin Durumunu Ayarlayın
 
 ```csharp
 TextState ts = new TextState();
@@ -41,9 +41,9 @@ ts.Font = font;
 ts.FontSize = 14;
 ```
 
-Here, we create a new `TextState` object and set its properties. We assign the previously found font (`font`) and set the font size to 14. Adjust the font size as needed.
+ Burada yeni bir tane oluşturuyoruz`TextState` nesneyi seçin ve özelliklerini ayarlayın. Daha önce bulunan yazı tipini atarız (`font`) ve yazı tipi boyutunu 14 olarak ayarlayın. Yazı tipi boyutunu gerektiği gibi ayarlayın.
 
-## Step 4: Measure the Width of Text
+## Adım 4: Metnin Genişliğini Ölçün
 
 ```csharp
 if (Math.Abs(font.MeasureString("A", 14) - 9.337) > 0.001)
@@ -61,11 +61,11 @@ for (char c = 'A'; c <= 'z'; c++)
 }
 ```
 
-The code above demonstrates how to measure the width of text using both the font directly (`font.MeasureString`) and the text state (`ts.MeasureString`). It includes some validation checks to ensure the measurements are accurate.
+Yukarıdaki kod, hem yazı tipini hem de doğrudan kullanarak metnin genişliğinin nasıl ölçüleceğini gösterir (`font.MeasureString`) ve metin durumu (`ts.MeasureString`). Ölçümlerin doğru olduğundan emin olmak için bazı doğrulama kontrolleri içerir.
 
-### Sample source code for Get Width Of Text Dynamically using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Dinamik Olarak Metin Genişliğini Al için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("Arial");
 TextState ts = new TextState();
@@ -85,36 +85,36 @@ for (char c = 'A'; c <= 'z'; c++)
 ```
 
 
-## Conclusion
+## Çözüm
 
-You have learned how to use Aspose.PDF for .NET to dynamically measure the width of text in C#. By following the steps outlined in this tutorial, you can accurately determine the width of text strings before rendering them in a PDF document.
+C#'ta metnin genişliğini dinamik olarak ölçmek için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrendiniz. Bu eğitimde özetlenen adımları izleyerek metin dizelerinin genişliğini, bunları bir PDF belgesinde oluşturmadan önce doğru bir şekilde belirleyebilirsiniz.
 
-## FAQs
+## SSS
 
-#### Q: What is the purpose of the "Get Width Of Text Dynamically" tutorial?
+#### S: "Metnin Genişliğini Dinamik Olarak Al" eğitiminin amacı nedir?
 
-A: The "Get Width Of Text Dynamically" tutorial explains how to use Aspose.PDF for .NET to dynamically measure the width of text in C#. This is particularly useful when you need to determine the size of a text string before rendering it on a PDF document.
+C: "Metnin Genişliğini Dinamik Olarak Al" eğitimi, C#'ta metnin genişliğini dinamik olarak ölçmek için Aspose.PDF for .NET'in nasıl kullanılacağını açıklıyor. Bu, özellikle bir metin dizesini PDF belgesinde oluşturmadan önce boyutunu belirlemeniz gerektiğinde kullanışlıdır.
 
-#### Q: Why would I need to measure the width of text dynamically?
+#### S: Metnin genişliğini neden dinamik olarak ölçmem gerekiyor?
 
-A: Measuring text width dynamically allows you to accurately determine the space required for text before rendering it. This is crucial for layout design, alignment, and ensuring that text fits correctly within designated areas in your PDF document.
+C: Metin genişliğini dinamik olarak ölçmek, metni oluşturmadan önce gerekli alanı doğru bir şekilde belirlemenize olanak tanır. Bu, düzen tasarımı, hizalama ve metnin PDF belgenizdeki belirlenen alanlara doğru şekilde sığmasını sağlamak için çok önemlidir.
 
-#### Q: How do I find the font to be used for text measurement?
+#### S: Metin ölçümü için kullanılacak yazı tipini nasıl bulabilirim?
 
-A: In the tutorial, you use the `FontRepository.FindFont` method to locate the desired font. The example uses the Arial font, but you can replace `"Arial"` with the name of any other font you want to use.
+C: Eğitimde şunları kullanacaksınız:`FontRepository.FindFont` İstenilen yazı tipini bulma yöntemi. Örnek Arial yazı tipini kullanıyor ancak değiştirebilirsiniz`"Arial"` Kullanmak istediğiniz başka bir yazı tipinin adıyla.
 
-#### Q: What is the purpose of the `TextState` class?
+####  Soru: Programın amacı nedir?`TextState` class?
 
-A: The `TextState` class is used to set text formatting properties such as font and font size. It allows you to define how the text will be presented.
+ C:`TextState` sınıfı, yazı tipi ve yazı tipi boyutu gibi metin biçimlendirme özelliklerini ayarlamak için kullanılır. Metnin nasıl sunulacağını tanımlamanıza olanak tanır.
 
-#### Q: How do I measure the width of text using font and text state?
+#### S: Yazı tipini ve metin durumunu kullanarak metnin genişliğini nasıl ölçebilirim?
 
-A: The tutorial demonstrates how to measure the width of text using both the font directly (`font.MeasureString`) and the text state (`ts.MeasureString`). It includes validation checks to ensure measurement accuracy.
+C: Eğitimde, hem yazı tipini hem de doğrudan kullanarak metnin genişliğinin nasıl ölçüleceği gösterilmektedir (`font.MeasureString`) ve metin durumu (`ts.MeasureString`). Ölçüm doğruluğunu sağlamak için doğrulama kontrollerini içerir.
 
-#### Q: Can I use this technique for different font sizes and styles?
+#### S: Bu tekniği farklı yazı tipi boyutları ve stilleri için kullanabilir miyim?
 
-A: Yes, you can modify the font size and other properties in the `TextState` object to measure text width for different sizes and styles.
+ C: Evet, yazı tipi boyutunu ve diğer özellikleri değiştirebilirsiniz.`TextState` Farklı boyut ve stiller için metin genişliğini ölçmek için nesne.
 
-#### Q: What does the conclusion of the tutorial emphasize?
+#### S: Eğitimin sonucu neyi vurguluyor?
 
-A: The conclusion summarizes the tutorial's content and highlights that you've learned how to dynamically measure text width in a PDF document using Aspose.PDF for .NET and C#. This knowledge can contribute to improving your PDF layout design and rendering accuracy.
+C: Sonuç bölümü eğitimin içeriğini özetlemekte ve Aspose.PDF for .NET ve C# kullanarak bir PDF belgesindeki metin genişliğini dinamik olarak nasıl ölçeceğinizi öğrendiğinizi vurgulamaktadır. Bu bilgi, PDF mizanpaj tasarımınızı ve işleme doğruluğunu iyileştirmenize katkıda bulunabilir.

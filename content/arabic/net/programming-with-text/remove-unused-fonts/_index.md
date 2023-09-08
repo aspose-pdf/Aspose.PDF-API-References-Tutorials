@@ -1,40 +1,40 @@
 ---
-title: Remove Unused Fonts In PDF File
-linktitle: Remove Unused Fonts In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove unused fonts in PDF file using Aspose.PDF for .NET.
+title: إزالة الخطوط غير المستخدمة في ملف PDF
+linktitle: إزالة الخطوط غير المستخدمة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إزالة الخطوط غير المستخدمة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 300
 url: /ar/net/programming-with-text/remove-unused-fonts/
 ---
-In this tutorial, we will explain how to remove unused fonts in PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of loading a PDF, identifying and removing unused fonts, and saving the updated PDF using the provided C# source code.
+سنشرح في هذا البرنامج التعليمي كيفية إزالة الخطوط غير المستخدمة في ملف PDF باستخدام مكتبة Aspose.PDF لـ .NET. سنتابع عملية تحميل ملف PDF خطوة بخطوة، وتحديد الخطوط غير المستخدمة وإزالتها، وحفظ ملف PDF المحدث باستخدام كود مصدر C# المقدم.
 
-## Requirements
+## متطلبات
 
-Before you begin, ensure that you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- تم تثبيت Aspose.PDF لمكتبة .NET.
+- فهم أساسي للبرمجة C#.
 
-## Step 1: Set up the Document Directory
+## الخطوة 1: إعداد دليل المستندات
 
-First, you need to set the path to the directory where your PDF files are located. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF files.
+ أولاً، تحتاج إلى تعيين المسار إلى الدليل الذي توجد به ملفات PDF الخاصة بك. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى ملفات PDF الخاصة بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the Source PDF
+## الخطوة 2: قم بتحميل ملف PDF المصدر
 
-Next, we load the source PDF document using the `Document` class from the Aspose.PDF library.
+ بعد ذلك، نقوم بتحميل مستند PDF المصدر باستخدام الملف`Document` فئة من مكتبة Aspose.PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
 ```
 
-## Step 3: Identify and Remove Unused Fonts
+## الخطوة 3: تحديد الخطوط غير المستخدمة وإزالتها
 
-We create a `TextFragmentAbsorber` object with the `TextEditOptions` parameter set to `TextEditOptions.FontReplace.RemoveUnusedFonts`. This option allows us to identify and remove unused fonts in the PDF document. We then iterate through all the `TextFragments` and set the font to a desired font.
+ نقوم بإنشاء أ`TextFragmentAbsorber` كائن مع`TextEditOptions` تم تعيين المعلمة على`TextEditOptions.FontReplace.RemoveUnusedFonts` . يتيح لنا هذا الخيار تحديد الخطوط غير المستخدمة وإزالتها في مستند PDF. ثم نقوم بالتكرار من خلال كل`TextFragments` وضبط الخط على الخط المطلوب.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
@@ -46,9 +46,9 @@ foreach(TextFragment textFragment in absorber.TextFragments)
 }
 ```
 
-## Step 4: Save the Updated PDF
+## الخطوة 4: احفظ ملف PDF المحدث
 
-Finally, we save the updated PDF document to the specified output file.
+أخيرًا، نقوم بحفظ مستند PDF المحدث في ملف الإخراج المحدد.
 
 ```csharp
 dataDir = dataDir + "RemoveUnusedFonts_out.pdf";
@@ -56,23 +56,23 @@ doc.Save(dataDir);
 Console.WriteLine("\nUnused fonts removed successfully from the PDF document.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Remove Unused Fonts using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإزالة الخطوط غير المستخدمة باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// المسار إلى دليل المستندات.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load source PDF file
+	// تحميل ملف PDF المصدر
 	Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
 	doc.Pages.Accept(absorber);
-	// Iterate through all the TextFragments
+	// التكرار من خلال جميع TextFragments
 	foreach (TextFragment textFragment in absorber.TextFragments)
 	{
 		textFragment.TextState.Font = FontRepository.FindFont("Arial, Bold");
 	}
 	dataDir = dataDir + "RemoveUnusedFonts_out.pdf";
-	// Save updated document
+	// حفظ المستند المحدث
 	doc.Save(dataDir);
 	Console.WriteLine("\nUnused fonts removed successfully from pdf document.\nFile saved at " + dataDir);
 }
@@ -82,52 +82,52 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, you have learned how to remove unused fonts from a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can load a PDF, identify and remove unused fonts, and save the updated PDF.
+في هذا البرنامج التعليمي، تعلمت كيفية إزالة الخطوط غير المستخدمة من مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. باتباع الدليل الموضح خطوة بخطوة وتنفيذ كود C# المقدم، يمكنك تحميل ملف PDF وتحديد الخطوط غير المستخدمة وإزالتها وحفظ ملف PDF المحدث.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of the "Remove Unused Fonts In PDF File" tutorial?
+#### س: ما هو الغرض من البرنامج التعليمي "إزالة الخطوط غير المستخدمة في ملف PDF"؟
 
-A: The "Remove Unused Fonts In PDF File" tutorial explains how to use the Aspose.PDF library for .NET to remove unused fonts from a PDF document. The tutorial guides you through the process of loading a PDF, identifying and removing unused fonts, and saving the updated PDF.
+ج: يشرح البرنامج التعليمي "إزالة الخطوط غير المستخدمة في ملف PDF" كيفية استخدام مكتبة Aspose.PDF لـ .NET لإزالة الخطوط غير المستخدمة من مستند PDF. يرشدك البرنامج التعليمي خلال عملية تحميل ملف PDF، وتحديد الخطوط غير المستخدمة وإزالتها، وحفظ ملف PDF المحدث.
 
-#### Q: Why would I want to remove unused fonts from a PDF document?
+#### س: لماذا أرغب في إزالة الخطوط غير المستخدمة من مستند PDF؟
 
-A: Removing unused fonts from a PDF document can help reduce the file size and optimize the document for better performance. This is particularly useful when dealing with PDFs that contain embedded fonts that are not actually used in the document's content.
+ج: يمكن أن تساعد إزالة الخطوط غير المستخدمة من مستند PDF في تقليل حجم الملف وتحسين المستند للحصول على أداء أفضل. يعد هذا مفيدًا بشكل خاص عند التعامل مع ملفات PDF التي تحتوي على خطوط مضمنة لا يتم استخدامها فعليًا في محتوى المستند.
 
-#### Q: How do I set up the document directory?
+#### س: كيف أقوم بإعداد دليل المستندات؟
 
-A: To set up the document directory:
+ج: لإعداد دليل المستندات:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your PDF files are located.
+1.  يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى الدليل حيث توجد ملفات PDF الخاصة بك.
 
-#### Q: How do I remove unused fonts from a PDF document using the Aspose.PDF library?
+#### س: كيف يمكنني إزالة الخطوط غير المستخدمة من مستند PDF باستخدام مكتبة Aspose.PDF؟
 
-A: The tutorial guides you through the process step by step:
+ج: يرشدك البرنامج التعليمي خلال العملية خطوة بخطوة:
 
-1. Open the PDF document using the `Document` class.
-2. Create a `TextFragmentAbsorber` object with `TextEditOptions` set to `FontReplace.RemoveUnusedFonts`.
-3. Accept the absorber to identify and remove unused fonts from the PDF.
-4. Iterate through all `TextFragments` and set the font to a desired font.
-5. Save the updated PDF document.
+1.  افتح مستند PDF باستخدام`Document` فصل.
+2.  إنشاء`TextFragmentAbsorber` كائن مع`TextEditOptions` ضبط ل`FontReplace.RemoveUnusedFonts`.
+3. اقبل أداة الامتصاص لتحديد الخطوط غير المستخدمة وإزالتها من ملف PDF.
+4.  التكرار من خلال الكل`TextFragments` وضبط الخط على الخط المطلوب.
+5. احفظ مستند PDF المحدث.
 
-#### Q: What is the purpose of the `TextEditOptions.FontReplace.RemoveUnusedFonts` parameter?
+####  س: ما هو الغرض من`TextEditOptions.FontReplace.RemoveUnusedFonts` parameter?
 
-A: The `TextEditOptions.FontReplace.RemoveUnusedFonts` parameter instructs the `TextFragmentAbsorber` to identify and remove unused fonts from the PDF document.
+ ج: ال`TextEditOptions.FontReplace.RemoveUnusedFonts` المعلمة ترشد`TextFragmentAbsorber` لتحديد وإزالة الخطوط غير المستخدمة من مستند PDF.
 
-#### Q: Can I replace unused fonts with a font of my choice?
+#### س: هل يمكنني استبدال الخطوط غير المستخدمة بخط من اختياري؟
 
-A: Yes, you can modify the code to replace unused fonts with a font of your choice. In the provided sample code, the font "Arial, Bold" is used as a replacement.
+ج: نعم، يمكنك تعديل الكود لاستبدال الخطوط غير المستخدمة بخط من اختيارك. في نموذج التعليمات البرمجية المتوفرة، يتم استخدام الخط "Arial, Bold" كبديل.
 
-#### Q: How does the `TextFragmentAbsorber` work to remove unused fonts?
+####  س: كيف`TextFragmentAbsorber` work to remove unused fonts?
 
-A: The `TextFragmentAbsorber` is configured with the `TextEditOptions.FontReplace.RemoveUnusedFonts` parameter, which identifies unused fonts within the text fragments of the PDF. After absorption, you can iterate through the `TextFragments` and set their fonts to desired replacement fonts.
+ ج: ال`TextFragmentAbsorber` تم تكوينه مع`TextEditOptions.FontReplace.RemoveUnusedFonts` المعلمة، التي تحدد الخطوط غير المستخدمة داخل أجزاء النص في ملف PDF. بعد الاستيعاب، يمكنك التكرار من خلال`TextFragments` وقم بتعيين الخطوط الخاصة بهم على الخطوط البديلة المطلوبة.
 
-#### Q: What is the expected outcome of executing the provided code?
+#### س: ما هي النتيجة المتوقعة من تنفيذ الكود المقدم؟
 
-A: By following the tutorial and running the provided C# code, you will remove unused fonts from the input PDF document and save the updated version as the output PDF file.
+ج: باتباع البرنامج التعليمي وتشغيل كود C# المقدم، سوف تقوم بإزالة الخطوط غير المستخدمة من مستند PDF المدخل وحفظ الإصدار المحدث كملف PDF الناتج.
 
-#### Q: Can I modify the code to remove fonts only from specific pages or areas?
+#### س: هل يمكنني تعديل التعليمات البرمجية لإزالة الخطوط من صفحات أو مناطق معينة فقط؟
 
-A: The provided code focuses on removing unused fonts from the entire PDF document. If you want to target specific pages or regions for font removal, you would need to modify the approach and use more complex logic to identify unused fonts in those areas.
+ج: يركز الكود المقدم على إزالة الخطوط غير المستخدمة من مستند PDF بأكمله. إذا كنت تريد استهداف صفحات أو مناطق معينة لإزالة الخطوط، فستحتاج إلى تعديل النهج واستخدام منطق أكثر تعقيدًا لتحديد الخطوط غير المستخدمة في تلك المناطق.

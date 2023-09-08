@@ -1,57 +1,57 @@
 ---
-title: Form Field Font 14
-linktitle: Form Field Font 14
-second_title: Aspose.PDF for .NET API Reference
-description: Easily configure the font of form fields in your PDF documents with Aspose.PDF for .NET.
+title: Police du champ de formulaire 14
+linktitle: Police du champ de formulaire 14
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Configurez facilement la police des champs de formulaire dans vos documents PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 110
 url: /fr/net/programming-with-forms/form-field-font-14/
 ---
-In this tutorial, we will show you how to configure the font of a form field using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+Dans ce didacticiel, nous allons vous montrer comment configurer la police d'un champ de formulaire à l'aide d'Aspose.PDF pour .NET. Nous expliquerons le code source C# étape par étape pour vous guider tout au long de ce processus.
 
-## Step 1: Preparation
+## Étape 1 : Préparation
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Tout d'abord, assurez-vous d'avoir importé les bibliothèques nécessaires et défini le chemin d'accès au répertoire des documents :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the document
+## Étape 2 : ouvrez le document
 
-Open the existing PDF document:
+Ouvrez le document PDF existant :
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "FormFieldFont14.pdf");
 ```
 
-## Step 3: Get a particular form field
+## Étape 3 : Obtenez un champ de formulaire particulier
 
-Get the desired form field (in this example, we're using the "textbox1" field):
+Obtenez le champ de formulaire souhaité (dans cet exemple, nous utilisons le champ "textbox1") :
 
 ```csharp
 Aspose.Pdf.Forms.Field field = pdfDocument.Form["textbox1"] as Aspose.Pdf.Forms.Field;
 ```
 
-## Step 4: Create a font object
+## Étape 4 : Créer un objet police
 
-Create a font object for the new font you want to use (for example, "ComicSansMS"):
+Créez un objet police pour la nouvelle police que vous souhaitez utiliser (par exemple, "ComicSansMS") :
 
 ```csharp
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("ComicSansMS");
 ```
 
-## Step 5: Configure font information for the form field
+## Étape 5 : Configurer les informations de police pour le champ du formulaire
 
-Configure the font information for the form field using the font created earlier:
+Configurez les informations de police pour le champ du formulaire à l'aide de la police créée précédemment :
 
 ```csharp
 field.DefaultAppearance = new Aspose.Pdf.Forms.DefaultAppearance(font, 14, System.Drawing.Color.Black);
 ```
 
-## Step 6: Save the updated document
+## Étape 6 : Enregistrez le document mis à jour
 
-Save the updated PDF document:
+Enregistrez le document PDF mis à jour :
 
 ```csharp
 dataDir = dataDir + "FormFieldFont14_out.pdf";
@@ -59,46 +59,46 @@ pdfDocument.Save(dataDir);
 ```
 
 
-### Sample source code for Form Field Font 14 using Aspose.PDF for .NET 
+### Exemple de code source pour Form Field Font 14 à l’aide d’Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir + "FormFieldFont14.pdf");
-// Get particular form field from document
+// Obtenir un champ de formulaire particulier à partir du document
 Aspose.Pdf.Forms.Field field = pdfDocument.Form["textbox1"] as Aspose.Pdf.Forms.Field;
-// Create font object
+// Créer un objet de police
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("ComicSansMS");
-// Set the font information for form field
+// Définir les informations de police pour le champ du formulaire
 // Field.DefaultAppearance = new Aspose.Pdf.Forms.in.DefaultAppearance(font, 10, System.Drawing.Color.Black);
 dataDir = dataDir + "FormFieldFont14_out.pdf";
-// Save updated document
+// Enregistrer le document mis à jour
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nForm field font setup successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusion
 
-In this tutorial, we learned how to configure the font of a form field using Aspose.PDF for .NET. By following these steps, you can easily specify the font and font size for form fields in your PDF documents using Aspose.PDF.
+Dans ce didacticiel, nous avons appris à configurer la police d'un champ de formulaire à l'aide d'Aspose.PDF pour .NET. En suivant ces étapes, vous pouvez facilement spécifier la police et la taille de la police des champs de formulaire dans vos documents PDF à l'aide d'Aspose.PDF.
 
-### FAQ's
+### FAQ
 
-#### Q: Can I use any font for form fields in Aspose.PDF for .NET?
+#### Q : Puis-je utiliser n'importe quelle police pour les champs de formulaire dans Aspose.PDF pour .NET ?
 
-A: Yes, you can use any TrueType or OpenType font for form fields in Aspose.PDF for .NET. As long as the font is available and installed on the system or accessible through the FontRepository, you can use it to customize the appearance of form field text.
+R : Oui, vous pouvez utiliser n'importe quelle police TrueType ou OpenType pour les champs de formulaire dans Aspose.PDF pour .NET. Tant que la police est disponible et installée sur le système ou accessible via FontRepository, vous pouvez l'utiliser pour personnaliser l'apparence du texte des champs de formulaire.
 
-#### Q: How do I find the available fonts in Aspose.PDF for .NET?
+#### Q : Comment puis-je trouver les polices disponibles dans Aspose.PDF pour .NET ?
 
-A: To find the available fonts in Aspose.PDF for .NET, you can use the `FontRepository.GetAvailableFonts()` method. This method returns an array of available fonts that you can use for form fields or any other text-related operations in your PDF document.
+ R : Pour trouver les polices disponibles dans Aspose.PDF pour .NET, vous pouvez utiliser le`FontRepository.GetAvailableFonts()`méthode. Cette méthode renvoie un tableau de polices disponibles que vous pouvez utiliser pour les champs de formulaire ou toute autre opération liée au texte dans votre document PDF.
 
-#### Q: Can I change the font size for form fields to any value?
+#### Q : Puis-je modifier la taille de la police des champs de formulaire en n'importe quelle valeur ?
 
-A: Yes, you can change the font size for form fields to any positive numeric value using Aspose.PDF for .NET. However, it is essential to ensure that the font size is appropriate for the specific form field and does not lead to text truncation or overlapping with other elements in the document.
+R : Oui, vous pouvez modifier la taille de la police des champs de formulaire en n'importe quelle valeur numérique positive à l'aide d'Aspose.PDF pour .NET. Cependant, il est essentiel de s'assurer que la taille de la police est adaptée au champ de formulaire spécifique et n'entraîne pas de troncature du texte ou de chevauchement avec d'autres éléments du document.
 
-#### Q: Can I change the font color for form fields?
+#### Q : Puis-je modifier la couleur de la police des champs de formulaire ?
 
-A: Yes, you can change the font color for form fields using Aspose.PDF for .NET. In the provided C# source code, the font color is set to black (`System.Drawing.Color.Black`), but you can customize it to any other valid color value.
+R : Oui, vous pouvez modifier la couleur de la police des champs de formulaire à l'aide d'Aspose.PDF pour .NET. Dans le code source C# fourni, la couleur de la police est définie sur noir (`System.Drawing.Color.Black`), mais vous pouvez le personnaliser avec n'importe quelle autre valeur de couleur valide.
 
-#### Q: How can I align the text within the form field?
+#### Q : Comment puis-je aligner le texte dans le champ du formulaire ?
 
-A: To align the text within the form field, you can use the `Multiline` property of the form field and set it to true. This property enables multiline text within the form field, allowing you to control the text alignment with line breaks and carriage returns.
+ R : Pour aligner le texte dans le champ du formulaire, vous pouvez utiliser le`Multiline`propriété du champ de formulaire et définissez-la sur true. Cette propriété active le texte multiligne dans le champ du formulaire, vous permettant de contrôler l'alignement du texte avec les sauts de ligne et les retours chariot.

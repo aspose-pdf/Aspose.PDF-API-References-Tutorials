@@ -1,26 +1,26 @@
 ---
-title: Extract Paragraphs In PDF File
-linktitle: Extract Paragraphs In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract paragraphs in PDF file using Aspose.PDF for .NET.
+title: 提取 PDF 文件中的段落
+linktitle: 提取 PDF 文件中的段落
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 提取 PDF 文件中的段落。
 type: docs
 weight: 160
 url: /zh/net/programming-with-text/extract-paragraphs/
 ---
-This tutorial will guide you through the process of extracting paragraphs in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+本教程将指导您完成使用 Aspose.PDF for .NET 提取 PDF 文件中的段落的过程。提供的 C# 源代码演示了必要的步骤。
 
-## Requirements
-Before you begin, ensure that you have the following:
+## 要求
+在开始之前，请确保您具备以下条件：
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio 或计算机上安装的任何其他 C# 编译器。
+- Aspose.PDF for .NET 库。您可以从 Aspose 官方网站下载它或使用 NuGet 等包管理器来安装它。
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## 第 1 步：设置项目
+1. 在您首选的开发环境中创建一个新的 C# 项目。
+2. 添加对 Aspose.PDF for .NET 库的引用。
 
-## Step 2: Import required namespaces
-In the code file where you want to extract paragraphs, add the following using directives at the top of the file:
+## 第2步：导入所需的命名空间
+在要提取段落的代码文件中，在文件顶部添加以下 using 指令：
 
 ```csharp
 using Aspose.Pdf;
@@ -28,26 +28,26 @@ using System;
 using System.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## 第三步：设置文档目录
+在代码中，找到显示以下内容的行`string dataDir = "YOUR DOCUMENT DIRECTORY";`并替换`"YOUR DOCUMENT DIRECTORY"`以及存储文档的目录的路径。
 
-## Step 4: Open the PDF document
-Open an existing PDF document using the `Document` constructor and passing the path to the input PDF file.
+## 步骤 4：打开 PDF 文档
+使用以下命令打开现有 PDF 文档`Document`构造函数并将路径传递给输入 PDF 文件。
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 5: Extract paragraphs
-Instantiate the `ParagraphAbsorber` class and use its `Visit` method to extract paragraphs from the document.
+## 第五步：提取段落
+实例化`ParagraphAbsorber`类并使用它的`Visit`从文档中提取段落的方法。
 
 ```csharp
 ParagraphAbsorber absorb = new ParagraphAbsorber();
 absorb.Visit(doc);
 ```
 
-## Step 6: Iterate through paragraphs
-Loop through the extracted paragraphs to access the text contents. Use nested loops to traverse through sections and lines within each paragraph.
+## 第 6 步：遍历段落
+循环浏览提取的段落以访问文本内容。使用嵌套循环遍历每个段落中的部分和行。
 
 ```csharp
 foreach(PageMarkup markup in absorber.PageMarkups)
@@ -77,13 +77,13 @@ foreach(PageMarkup markup in absorber.PageMarkups)
 }
 ```
 
-### Sample source code for Extract Paragraphs using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 提取段落的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open an existing PDF file
+//打开现有的 PDF 文件
 Document doc = new Document(dataDir + "input.pdf");
-// Instantiate ParagraphAbsorber
+//实例化 ParagraphAbsorber
 ParagraphAbsorber absorber = new ParagraphAbsorber();
 absorber.Visit(doc);
 foreach (PageMarkup markup in absorber.PageMarkups)
@@ -113,18 +113,18 @@ foreach (PageMarkup markup in absorber.PageMarkups)
 }
 ```
 
-## Conclusion
-You have successfully extracted paragraphs from a PDF document using Aspose.PDF for .NET. The extracted paragraphs have been displayed in the console window.
+## 结论
+您已使用 Aspose.PDF for .NET 成功从 PDF 文档中提取段落。提取的段落已显示在控制台窗口中。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of this tutorial?
+#### 问：本教程的目的是什么？
 
-A: This tutorial aims to guide you through the process of extracting paragraphs from a PDF file using Aspose.PDF for .NET. The accompanying C# source code provides practical steps for achieving this task.
+答：本教程旨在指导您完成使用 Aspose.PDF for .NET 从 PDF 文件中提取段落的过程。随附的 C# 源代码提供了实现此任务的实用步骤。
 
-#### Q: What namespaces should I import?
+#### 问：我应该导入哪些命名空间？
 
-A: In the code file where you intend to extract paragraphs, include the following using directives at the beginning of the file:
+答：在要提取段落的代码文件中，在文件开头包含以下 using 指令：
 
 ```csharp
 using Aspose.Pdf;
@@ -132,22 +132,22 @@ using System;
 using System.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### 问：如何指定文档目录？
 
-A: Locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` in the code and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+答：找到该线`string dataDir = "YOUR DOCUMENT DIRECTORY";`在代码中并替换`"YOUR DOCUMENT DIRECTORY"`与文档目录的实际路径。
 
-#### Q: How do I open an existing PDF document?
+#### 问：如何打开现有的 PDF 文档？
 
-A: In Step 4, you'll open an existing PDF document using the `Document` constructor and providing the path to the input PDF file.
+答：在步骤 4 中，您将使用以下命令打开现有的 PDF 文档：`Document`构造函数并提供输入 PDF 文件的路径。
 
-#### Q: How do I extract paragraphs from the document?
+#### 问：如何从文档中提取段落？
 
-A: Step 5 involves creating an instance of the `ParagraphAbsorber` class and using its `Visit` method to extract paragraphs from the PDF document.
+答：第 5 步涉及创建一个实例`ParagraphAbsorber`类并使用它的`Visit`从 PDF 文档中提取段落的方法。
 
-#### Q: How do I iterate through the extracted paragraphs?
+#### 问：如何迭代提取的段落？
 
-A: Step 6 guides you through looping through the extracted paragraphs. Nested loops are used to traverse sections and lines within each paragraph, ultimately accessing and displaying the text contents.
+答：第 6 步将引导您循环浏览提取的段落。嵌套循环用于遍历每个段落中的节和行，最终访问和显示文本内容。
 
-#### Q: What is the key takeaway from this tutorial?
+#### 问：本教程的主要内容是什么？
 
-A: By following this tutorial, you've learned how to extract paragraphs from a PDF document using Aspose.PDF for .NET. The extracted paragraphs have been displayed in the console window, providing you with valuable insight into the document's content structure.
+答：通过学习本教程，您已经了解了如何使用 Aspose.PDF for .NET 从 PDF 文档中提取段落。提取的段落已显示在控制台窗口中，为您提供对文档内容结构的宝贵见解。

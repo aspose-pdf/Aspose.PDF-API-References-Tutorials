@@ -1,17 +1,17 @@
 ---
-title: Sign With Smart Card Using Signature Field
-linktitle: Sign With Smart Card Using Signature Field
-second_title: Aspose.PDF for .NET API Reference
-description: Sign your PDF files securely with a smart card using Aspose.PDF for .NET.
+title: 使用签名字段通过智能卡进行签名
+linktitle: 使用签名字段通过智能卡进行签名
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 通过智能卡安全地签署您的 PDF 文件。
 type: docs
 weight: 120
 url: /zh/net/programming-with-security-and-signatures/sign-with-smart-card-using-signature-field/
 ---
-Digital signing with a smart card is a secure way to sign PDF files. With Aspose.PDF for .NET, you can easily sign a PDF file using a signature field and a smart card by following the following source code:
+使用智能卡进行数字签名是签署 PDF 文件的安全方式。借助 Aspose.PDF for .NET，您可以按照以下源代码使用签名字段和智能卡轻松签署 PDF 文件：
 
-## Step 1: Import required libraries
+## 第1步：导入所需的库
 
-Before you begin, you need to import the necessary libraries for your C# project. Here are the necessary import directives:
+在开始之前，您需要为 C# 项目导入必要的库。以下是必要的导入指令：
 
 ```csharp
 using Aspose.Pdf;
@@ -19,17 +19,17 @@ using Aspose.Pdf.Forms;
 using System.Security.Cryptography.X509Certificates;
 ```
 
-## Step 2: Set path to documents folder
+## 步骤 2：设置文档文件夹路径
 
-In this step, you need to specify the path to the folder containing the PDF file you want to sign. Replace `"YOUR DOCUMENTS DIRECTORY"` in the following code with the actual path to your documents folder:
+在此步骤中，您需要指定包含要签名的 PDF 文件的文件夹的路径。代替`"YOUR DOCUMENTS DIRECTORY"`在以下代码中使用文档文件夹的实际路径：
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 3: Copy and open the PDF document
+## 步骤 3：复制并打开 PDF 文档
 
-Now we will copy and open the PDF document to be signed using the following code:
+现在我们将使用以下代码复制并打开要签名的PDF文档：
 
 ```csharp
 File.Copy(dataDir + "blank.pdf", dataDir + "externalSignature1.pdf", true);
@@ -38,15 +38,15 @@ using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMo
 {
      using (Document doc = new Document(fs))
      {
-         // Create a signature field
+         //创建签名字段
          SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
 
-         // Select the certificate in the store
+         //选择商店中的证书
          X509Store store = new X509Store(StoreLocation.CurrentUser);
          store.Open(OpenFlags.ReadOnly);
          X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
         
-         // Create an external signature with the necessary information
+         //使用必要的信息创建外部签名
          ExternalSignature externalSignature = new ExternalSignature(sel[0])
          {
              Authority = "Me",
@@ -62,9 +62,9 @@ using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMo
 }
 ```
 
-## Step 4: Verify Signature
+## 第 4 步：验证签名
 
-Finally, we verify the signature of the signed PDF file using the `PdfFileSignature` class. We get the signature names and check them one by one. If a signature fails verification, an exception is thrown. Here is the corresponding code:
+最后，我们使用以下命令验证已签名 PDF 文件的签名：`PdfFileSignature`班级。我们拿到签名名字，一一核对。如果签名验证失败，则会抛出异常。这是相应的代码：
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature1.pdf")))
@@ -80,9 +80,9 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 }
 ```
 
-### Sample source code for Sign With Smart Card Using Signature Field using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 使用签名字段通过智能卡进行签名的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 File.Copy(dataDir + "blank.pdf", dataDir + "externalSignature1.pdf", true);
 using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMode.Open, FileAccess.ReadWrite))
@@ -90,10 +90,10 @@ using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMo
 	using (Document doc = new Document(fs))
 	{
 		SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
-		// Sign with certificate selection in the windows certificate store
+		//使用 Windows 证书存储中的证书选择进行签名
 		System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
 		store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-		// Manually chose the certificate in the store
+		//手动选择商店中的证书
 		System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
 		Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0])
 		{
@@ -120,50 +120,50 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 }
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You now have a step-by-step guide to signing a PDF file with a smart card using a signature field with Aspose.PDF for .NET. You can use this code to add secure digital signatures to your PDF documents.
+恭喜！现在，您已获得使用 Aspose.PDF for .NET 的签名字段，通过智能卡对 PDF 文件进行签名的分步指南。您可以使用此代码向 PDF 文档添加安全数字签名。
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced digital signature and certificate management features.
+请务必查看官方 Aspose.PDF 文档，以获取有关高级数字签名和证书管理功能的更多信息。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the benefit of using a signature field for digital signing with a smart card?
+#### 问：使用签名字段通过智能卡进行数字签名有什么好处？
 
-A: Using a signature field for digital signing with a smart card provides a designated area within the PDF where the signature is applied. This enhances document clarity and ensures the signature's authenticity.
+答：使用智能卡的签名字段进行数字签名可在 PDF 中提供应用签名的指定区域。这增强了文档的清晰度并确保签名的真实性。
 
-#### Q: How does the Aspose.PDF for .NET library facilitate smart card-based digital signing with a signature field?
+#### 问：Aspose.PDF for .NET 库如何通过签名字段促进基于智能卡的数字签名？
 
-A: Aspose.PDF for .NET simplifies the process of creating a signature field, selecting a smart card certificate, and applying a digital signature to a specific area within the PDF document.
+答：Aspose.PDF for .NET 简化了创建签名字段、选择智能卡证书以及将数字签名应用于 PDF 文档中特定区域的过程。
 
-#### Q: Why is selecting a specific certificate important for smart card-based signing?
+#### 问：为什么选择特定证书对于基于智能卡的签名很重要？
 
-A: Selecting a specific certificate allows you to uniquely identify the signer and ensure the integrity of the signature. This helps establish trust and compliance with digital signing standards.
+答：选择特定的证书可以唯一标识签名者并保证签名的完整性。这有助于建立信任并遵守数字签名标准。
 
-#### Q: How does the provided source code handle the smart card-based signing process with a signature field?
+#### 问：所提供的源代码如何使用签名字段处理基于智能卡的签名过程？
 
-A: The source code demonstrates how to create a signature field, select a smart card certificate, and apply a digital signature with specific signing information. It also shows how to verify the signature's validity.
+答：源代码演示了如何创建签名字段、选择智能卡证书以及应用具有特定签名信息的数字签名。它还展示了如何验证签名的有效性。
 
-#### Q: Can I customize the appearance of the signature field?
+#### 问：我可以自定义签名字段的外观吗？
 
-A: Yes, you can customize the appearance of the signature field, such as its size, position, and visual representation, to align with your document's layout.
+答：是的，您可以自定义签名字段的外观，例如其大小、位置和视觉表示，以与文档的布局保持一致。
 
-#### Q: What happens if a signature fails verification during the verification step?
+#### 问：如果签名在验证步骤中验证失败怎么办？
 
-A: If a signature fails verification, an exception is thrown, indicating that the signature is not valid. This ensures that only valid and trusted signatures are accepted.
+答：如果签名验证失败，会抛出异常，表明签名无效。这确保了仅接受有效且可信的签名。
 
-#### Q: Can I apply multiple signature fields and smart card-based signatures to a single PDF document?
+#### 问：我可以将多个签名字段和基于智能卡的签名应用于单个 PDF 文档吗？
 
-A: Absolutely, you can apply multiple signature fields and smart card-based signatures to different areas of the same PDF document, providing multiple layers of security.
+答：当然，您可以将多个签名字段和基于智能卡的签名应用于同一 PDF 文档的不同区域，从而提供多层安全性。
 
-#### Q: How does using a signature field enhance the overall document signing process?
+#### 问：使用签名字段如何增强整个文档签名流程？
 
-A: Using a signature field streamlines the document signing process, as it guides the signer to place their signature in a designated area, making the signing process more organized and user-friendly.
+答：使用签名字段可以简化文档签名过程，因为它可以引导签名者将签名放在指定区域，使签名过程更有条理、更人性化。
 
-#### Q: Are there any limitations to using signature fields with smart card-based signing?
+#### 问：在基于智能卡的签名中使用签名字段是否有任何限制？
 
-A: There are no inherent limitations to using signature fields with smart card-based signing. However, it's important to ensure that the chosen signature field location doesn't obscure important document content.
+答：使用基于智能卡的签名的签名字段没有固有的限制。但是，重要的是要确保所选的签名字段位置不会掩盖重要的文档内容。
 
-#### Q: Where can I find further assistance or support for implementing smart card-based signing with a signature field?
+#### 问：在哪里可以找到有关使用签名字段实施基于智能卡的签名的进一步帮助或支持？
 
-A: For additional guidance and support, you can refer to the official Aspose.PDF documentation and community forums, which offer valuable insights and solutions for implementing secure digital signatures.
+答：如需更多指导和支持，您可以参考 Aspose.PDF 官方文档和社区论坛，它们为实现安全数字签名提供了宝贵的见解和解决方案。

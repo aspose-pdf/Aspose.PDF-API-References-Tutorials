@@ -1,17 +1,17 @@
 ---
-title: Sign With Smart Card Using Signature Field
-linktitle: Sign With Smart Card Using Signature Field
-second_title: Aspose.PDF for .NET API Reference
-description: Sign your PDF files securely with a smart card using Aspose.PDF for .NET.
+title: قم بالتوقيع باستخدام البطاقة الذكية باستخدام حقل التوقيع
+linktitle: قم بالتوقيع باستخدام البطاقة الذكية باستخدام حقل التوقيع
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بتوقيع ملفات PDF الخاصة بك بشكل آمن باستخدام البطاقة الذكية باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 120
 url: /ar/net/programming-with-security-and-signatures/sign-with-smart-card-using-signature-field/
 ---
-Digital signing with a smart card is a secure way to sign PDF files. With Aspose.PDF for .NET, you can easily sign a PDF file using a signature field and a smart card by following the following source code:
+يعد التوقيع الرقمي باستخدام البطاقة الذكية طريقة آمنة لتوقيع ملفات PDF. باستخدام Aspose.PDF for .NET، يمكنك بسهولة توقيع ملف PDF باستخدام حقل التوقيع والبطاقة الذكية باتباع التعليمات البرمجية المصدر التالية:
 
-## Step 1: Import required libraries
+## الخطوة 1: استيراد المكتبات المطلوبة
 
-Before you begin, you need to import the necessary libraries for your C# project. Here are the necessary import directives:
+قبل أن تبدأ، تحتاج إلى استيراد المكتبات اللازمة لمشروع C# الخاص بك. فيما يلي توجيهات الاستيراد الضرورية:
 
 ```csharp
 using Aspose.Pdf;
@@ -19,17 +19,17 @@ using Aspose.Pdf.Forms;
 using System.Security.Cryptography.X509Certificates;
 ```
 
-## Step 2: Set path to documents folder
+## الخطوة 2: تعيين المسار إلى مجلد المستندات
 
-In this step, you need to specify the path to the folder containing the PDF file you want to sign. Replace `"YOUR DOCUMENTS DIRECTORY"` in the following code with the actual path to your documents folder:
+ في هذه الخطوة، تحتاج إلى تحديد المسار إلى المجلد الذي يحتوي على ملف PDF الذي تريد التوقيع عليه. يستبدل`"YOUR DOCUMENTS DIRECTORY"`في الكود التالي مع المسار الفعلي لمجلد المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 3: Copy and open the PDF document
+## الخطوة 3: انسخ وافتح مستند PDF
 
-Now we will copy and open the PDF document to be signed using the following code:
+الآن سنقوم بنسخ وفتح وثيقة PDF للتوقيع عليها باستخدام الكود التالي:
 
 ```csharp
 File.Copy(dataDir + "blank.pdf", dataDir + "externalSignature1.pdf", true);
@@ -38,15 +38,15 @@ using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMo
 {
      using (Document doc = new Document(fs))
      {
-         // Create a signature field
+         // إنشاء حقل التوقيع
          SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
 
-         // Select the certificate in the store
+         // حدد الشهادة في المتجر
          X509Store store = new X509Store(StoreLocation.CurrentUser);
          store.Open(OpenFlags.ReadOnly);
          X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
         
-         // Create an external signature with the necessary information
+         // قم بإنشاء توقيع خارجي بالمعلومات اللازمة
          ExternalSignature externalSignature = new ExternalSignature(sel[0])
          {
              Authority = "Me",
@@ -62,9 +62,9 @@ using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMo
 }
 ```
 
-## Step 4: Verify Signature
+## الخطوة 4: التحقق من التوقيع
 
-Finally, we verify the signature of the signed PDF file using the `PdfFileSignature` class. We get the signature names and check them one by one. If a signature fails verification, an exception is thrown. Here is the corresponding code:
+ أخيرًا، نقوم بالتحقق من توقيع ملف PDF الموقع باستخدام ملف`PdfFileSignature` فصل. نحصل على أسماء التوقيع ونتحقق منها واحدًا تلو الآخر. إذا فشل التوقيع في التحقق، فسيتم طرح استثناء. هنا هو الكود المقابل:
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature1.pdf")))
@@ -80,9 +80,9 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 }
 ```
 
-### Sample source code for Sign With Smart Card Using Signature Field using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للتسجيل باستخدام البطاقة الذكية باستخدام حقل التوقيع باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 File.Copy(dataDir + "blank.pdf", dataDir + "externalSignature1.pdf", true);
 using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMode.Open, FileAccess.ReadWrite))
@@ -90,10 +90,10 @@ using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMo
 	using (Document doc = new Document(fs))
 	{
 		SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
-		// Sign with certificate selection in the windows certificate store
+		// قم بالتوقيع باستخدام اختيار الشهادة في متجر شهادات Windows
 		System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
 		store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-		// Manually chose the certificate in the store
+		// اختيار الشهادة يدويًا في المتجر
 		System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
 		Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0])
 		{
@@ -120,50 +120,50 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 }
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You now have a step-by-step guide to signing a PDF file with a smart card using a signature field with Aspose.PDF for .NET. You can use this code to add secure digital signatures to your PDF documents.
+تهنئة ! لديك الآن دليل خطوة بخطوة لتوقيع ملف PDF باستخدام بطاقة ذكية باستخدام حقل التوقيع باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الرمز لإضافة توقيعات رقمية آمنة إلى مستندات PDF الخاصة بك.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced digital signature and certificate management features.
+تأكد من مراجعة وثائق Aspose.PDF الرسمية لمزيد من المعلومات حول ميزات التوقيع الرقمي وإدارة الشهادات المتقدمة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the benefit of using a signature field for digital signing with a smart card?
+#### س: ما فائدة استخدام حقل التوقيع للتوقيع الرقمي بالبطاقة الذكية؟
 
-A: Using a signature field for digital signing with a smart card provides a designated area within the PDF where the signature is applied. This enhances document clarity and ensures the signature's authenticity.
+ج: يوفر استخدام حقل التوقيع للتوقيع الرقمي باستخدام البطاقة الذكية منطقة مخصصة داخل ملف PDF حيث يتم تطبيق التوقيع. وهذا يعزز وضوح الوثيقة ويضمن صحة التوقيع.
 
-#### Q: How does the Aspose.PDF for .NET library facilitate smart card-based digital signing with a signature field?
+#### س: كيف يقوم Aspose.PDF لمكتبة .NET بتسهيل التوقيع الرقمي المعتمد على البطاقة الذكية باستخدام حقل التوقيع؟
 
-A: Aspose.PDF for .NET simplifies the process of creating a signature field, selecting a smart card certificate, and applying a digital signature to a specific area within the PDF document.
+ج: يعمل Aspose.PDF for .NET على تبسيط عملية إنشاء حقل التوقيع، واختيار شهادة البطاقة الذكية، وتطبيق التوقيع الرقمي على منطقة معينة داخل مستند PDF.
 
-#### Q: Why is selecting a specific certificate important for smart card-based signing?
+#### س: ما سبب أهمية اختيار شهادة معينة للتوقيع المعتمد على البطاقة الذكية؟
 
-A: Selecting a specific certificate allows you to uniquely identify the signer and ensure the integrity of the signature. This helps establish trust and compliance with digital signing standards.
+ج: يتيح لك تحديد شهادة معينة تحديد هوية المُوقع بشكل فريد والتأكد من سلامة التوقيع. ويساعد ذلك في بناء الثقة والامتثال لمعايير التوقيع الرقمي.
 
-#### Q: How does the provided source code handle the smart card-based signing process with a signature field?
+#### س: كيف يتعامل كود المصدر المقدم مع عملية التوقيع المعتمدة على البطاقة الذكية مع حقل التوقيع؟
 
-A: The source code demonstrates how to create a signature field, select a smart card certificate, and apply a digital signature with specific signing information. It also shows how to verify the signature's validity.
+ج: يوضح الكود المصدري كيفية إنشاء حقل توقيع، وتحديد شهادة بطاقة ذكية، وتطبيق توقيع رقمي بمعلومات توقيع محددة. كما يوضح كيفية التحقق من صحة التوقيع.
 
-#### Q: Can I customize the appearance of the signature field?
+#### س: هل يمكنني تخصيص مظهر حقل التوقيع؟
 
-A: Yes, you can customize the appearance of the signature field, such as its size, position, and visual representation, to align with your document's layout.
+ج: نعم، يمكنك تخصيص مظهر حقل التوقيع، مثل حجمه وموضعه وتمثيله المرئي، ليتوافق مع تخطيط المستند.
 
-#### Q: What happens if a signature fails verification during the verification step?
+#### س: ماذا يحدث إذا فشل التحقق من التوقيع أثناء خطوة التحقق؟
 
-A: If a signature fails verification, an exception is thrown, indicating that the signature is not valid. This ensures that only valid and trusted signatures are accepted.
+ج: إذا فشل التوقيع في التحقق، فسيتم طرح استثناء يشير إلى أن التوقيع غير صالح. وهذا يضمن قبول التوقيعات الصحيحة والموثوقة فقط.
 
-#### Q: Can I apply multiple signature fields and smart card-based signatures to a single PDF document?
+#### س: هل يمكنني تطبيق حقول توقيع متعددة وتوقيعات مستندة إلى البطاقة الذكية على مستند PDF واحد؟
 
-A: Absolutely, you can apply multiple signature fields and smart card-based signatures to different areas of the same PDF document, providing multiple layers of security.
+ج: بالتأكيد، يمكنك تطبيق حقول توقيع متعددة وتوقيعات مستندة إلى البطاقة الذكية على مناطق مختلفة من نفس مستند PDF، مما يوفر طبقات متعددة من الأمان.
 
-#### Q: How does using a signature field enhance the overall document signing process?
+#### س: كيف يؤدي استخدام حقل التوقيع إلى تحسين عملية توقيع المستند بشكل عام؟
 
-A: Using a signature field streamlines the document signing process, as it guides the signer to place their signature in a designated area, making the signing process more organized and user-friendly.
+ج: يؤدي استخدام حقل التوقيع إلى تبسيط عملية توقيع المستند، لأنه يرشد المُوقع إلى وضع توقيعه في منطقة معينة، مما يجعل عملية التوقيع أكثر تنظيمًا وسهولة في الاستخدام.
 
-#### Q: Are there any limitations to using signature fields with smart card-based signing?
+#### س: هل هناك أي قيود على استخدام حقول التوقيع مع التوقيع المعتمد على البطاقة الذكية؟
 
-A: There are no inherent limitations to using signature fields with smart card-based signing. However, it's important to ensure that the chosen signature field location doesn't obscure important document content.
+ج: لا توجد قيود متأصلة على استخدام حقول التوقيع مع التوقيع المستند إلى البطاقة الذكية. ومع ذلك، من المهم التأكد من أن موقع حقل التوقيع المختار لا يحجب محتوى المستند المهم.
 
-#### Q: Where can I find further assistance or support for implementing smart card-based signing with a signature field?
+#### س: أين يمكنني العثور على مزيد من المساعدة أو الدعم لتنفيذ التوقيع المستند إلى البطاقة الذكية باستخدام حقل التوقيع؟
 
-A: For additional guidance and support, you can refer to the official Aspose.PDF documentation and community forums, which offer valuable insights and solutions for implementing secure digital signatures.
+ج: للحصول على إرشادات ودعم إضافيين، يمكنك الرجوع إلى وثائق Aspose.PDF الرسمية ومنتديات المجتمع، التي تقدم رؤى وحلولًا قيمة لتنفيذ التوقيعات الرقمية الآمنة.

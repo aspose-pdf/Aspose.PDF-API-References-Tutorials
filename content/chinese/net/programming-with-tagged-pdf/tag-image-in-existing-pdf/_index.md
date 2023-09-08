@@ -1,70 +1,70 @@
 ---
-title: Tag Image In Existing PDF
-linktitle: Tag Image In Existing PDF
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to mark up an image in an existing PDF with Aspose.PDF for .NET. A Step-by-Step Guide to Adding Tags to Images.
+title: 在现有 PDF 中标记图像
+linktitle: 在现有 PDF 中标记图像
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在现有 PDF 中标记图像。向图像添加标签的分步指南。
 type: docs
 weight: 210
 url: /zh/net/programming-with-tagged-pdf/tag-image-in-existing-pdf/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step to mark up an image in an existing PDF using Aspose.PDF for .NET. Follow the instructions below to understand how to add tags to an image in a PDF.
+在这个详细的教程中，我们将引导您逐步完成所提供的 C# 源代码，以使用 Aspose.PDF for .NET 在现有 PDF 中标记图像。请按照以下说明了解如何向 PDF 中的图像添加标签。
 
-## Step 1: Setting up the environment
+## 第一步：搭建环境
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+在开始之前，请确保您已将开发环境配置为使用 Aspose.PDF for .NET。这包括安装 Aspose.PDF 库并配置您的项目以引用它。
 
-## Step 2: Open the existing PDF document
+## 步骤 2：打开现有 PDF 文档
 
-In this step, we will open an existing PDF document using Aspose.PDF.
+在此步骤中，我们将使用 Aspose.PDF 打开现有的 PDF 文档。
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Input and output file paths
+//输入和输出文件路径
 string inFile = dataDir + "TH.pdf";
 string outFile = dataDir + "TH_out.pdf";
 string logFile = dataDir + "TH_out.xml";
 
-// Open the document
+//打开文档
 Document document = new Document(inFile);
 ```
 
-We opened the existing PDF document using Aspose.PDF.
+我们使用 Aspose.PDF 打开现有的 PDF 文档。
 
-## Step 3: Obtain Tagged Content and Root Structure Element
+## 步骤3：获取标记内容和根结构元素
 
-Now we will get the tagged content of the PDF document and the corresponding root structure element.
+现在我们将获取PDF文档的标记内容以及相应的根结构元素。
 
 ```csharp
-// Get tagged content and root structure element
+//获取标记内容和根结构元素
 ITaggedContent taggedContent = document.TaggedContent;
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We got the tagged content of the PDF document and the corresponding root structure element.
+我们得到了PDF文档的标记内容以及对应的根结构元素。
 
-## Step 4: Setting the title for the tagged PDF document
+## 步骤 4：设置带标签的 PDF 文档的标题
 
-Now let's set the title for the tagged PDF document.
+现在让我们为带标签的 PDF 文档设置标题。
 
 ```csharp
-// Define the title for the tagged PDF document
+//定义带标签的 PDF 文档的标题
 taggedContent.SetTitle("Document with images");
 ```
 
-We have set the title for the tagged PDF document.
+我们已经为带标签的 PDF 文档设置了标题。
 
-## Step 5: Assign alt texts and bounding box to the image
+## 第 5 步：为图像指定替代文本和边框
 
-Now, for each image element, we'll assign alt text and a bounding box.
+现在，对于每个图像元素，我们将分配替代文本和边界框。
 
 ```csharp
 foreach(FigureElement figureElement in rootElement.FindElements<FigureElement>(true))
 {
-     // Assign alternative text to the image
+     //为图像指定替代文本
      figureElement.AlternativeText = "Alternative text for image (technique 2)";
-     // Create and assign the bounding box (bbox)
+     //创建并分配边界框 (bbox)
      StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
      bboxAttribute.SetRectangleValue(new Rectangle(0.0, 0.0, 100.0, 100.0));
      StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
@@ -72,131 +72,131 @@ foreach(FigureElement figureElement in rootElement.FindElements<FigureElement>(t
 }
 ```
 
-We've assigned alt text and a bounding box to each image element in the PDF document.
+我们已为 PDF 文档中的每个图像元素分配了替代文本和边界框。
 
-## Step 6: Moving the Span element into the paragraph
+## 第 6 步：将 Span 元素移动到段落中
 
-Now let's move the Span element into the paragraph.
+现在让我们将 Span 元素移动到段落中。
 
 ```csharp
-// Move Span element into paragraph (find incorrect span and paragraph in first TD)
+//将 Span 元素移至段落中（在第一个 TD 中找到不正确的 span 和段落）
 TableElement tableElement = rootElement.FindElements<TableElement>(true)[0];
 SpanElement spanElement = tableElement.FindElements<SpanElement>(true)[0];
 TableTDElement firstTdElement = tableElement.FindElements<TableTDElement>(true)[0];
 ParagraphElement paragraph = firstTdElement.FindElements<ParagraphElement>(true)[0];
 
-// Move the Span element in the paragraph
+//移动段落中的 Span 元素
 spanElement.ChangeParentElement(paragraph);
 ```
 
-We moved the Span element into the specified paragraph.
+我们将 Span 元素移动到指定的段落中。
 
-## Step 7: Saving the modified PDF document
+## 步骤7：保存修改后的PDF文档
 
-Now that we have made the necessary changes, we will save the modified PDF document.
+现在我们已经进行了必要的更改，我们将保存修改后的 PDF 文档。
 
 ```csharp
-// Save the PDF document
+//保存 PDF 文档
 document. Save(outFile);
 ```
 
-We saved the modified PDF document in the specified directory.
+我们将修改后的PDF文档保存在指定目录中。
 
-### Sample source code for Tag Image In Existing PDF using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 在现有 PDF 中标记图像的示例源代码 
 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "TH.pdf";
 string outFile = dataDir + "TH_out.pdf";
 string logFile = dataDir + "TH_out.xml";
 
-// Open document
+//打开文档
 Document document = new Document(inFile);
 
-// Gets tagged content and root structure element
+//获取标记内容和根结构元素
 ITaggedContent taggedContent = document.TaggedContent;
 StructureElement rootElement = taggedContent.RootElement;
 
-// Set title for tagged pdf document
+//设置带标签的 pdf 文档的标题
 taggedContent.SetTitle("Document with images");
 foreach (FigureElement figureElement in rootElement.FindElements<FigureElement>(true))
 {
-	// Set Alternative Text  for Figure
+	//设置图形的替代文本
 	figureElement.AlternativeText = "Figure alternative text (technique 2)";
-	// Create and Set BBox Attribute
+	//创建并设置 BBox 属性
 	StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
 	bboxAttribute.SetRectangleValue(new Rectangle(0.0, 0.0, 100.0, 100.0));
 	StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
 	figureLayoutAttributes.SetAttribute(bboxAttribute);
 }
 
-// Move Span Element into Paragraph (find wrong span and paragraph in first TD)
+//将 Span 元素移至段落中（在第一个 TD 中找到错误的 Span 和段落）
 TableElement tableElement = rootElement.FindElements<TableElement>(true)[0];
 SpanElement spanElement = tableElement.FindElements<SpanElement>(true)[0];
 TableTDElement firstTdElement = tableElement.FindElements<TableTDElement>(true)[0];
 ParagraphElement paragraph = firstTdElement.FindElements<ParagraphElement>(true)[0];
 
-// Move Span Element into Paragraph
+//将 Span 元素移至段落中
 spanElement.ChangeParentElement(paragraph);
 
-// Save document
+//保存文档
 document.Save(outFile);
 
-// Checking PDF/UA Compliance for out document
+//检查文档的 PDF/UA 合规性
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we learned how to mark up an image in an existing PDF using Aspose.PDF for .NET. You can now use Aspose.PDF to add tags and make edits to images in your PDF documents.
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 在现有 PDF 中标记图像。您现在可以使用 Aspose.PDF 添加标签并对 PDF 文档中的图像进行编辑。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the main objective of this tutorial on tagging images in an existing PDF using Aspose.PDF for .NET?
+#### 问：本教程关于使用 Aspose.PDF for .NET 在现有 PDF 中标记图像的主要目标是什么？
 
-A: The primary goal of this tutorial is to guide you through the process of marking up an image within an existing PDF document using Aspose.PDF for .NET. The tutorial provides step-by-step instructions and C# source code examples to help you understand how to assign alternative text and bounding boxes to images, move elements within the document, and add tags to images.
+答：本教程的主要目标是指导您完成使用 Aspose.PDF for .NET 在现有 PDF 文档中标记图像的过程。本教程提供分步说明和 C# 源代码示例，帮助您了解如何向图像分配替代文本和边框、移动文档中的元素以及向图像添加标签。
 
-#### Q: What are the prerequisites for following this tutorial on tagging images in a PDF using Aspose.PDF for .NET?
+#### 问：学习本教程使用 Aspose.PDF for .NET 在 PDF 中标记图像有哪些先决条件？
 
-A: Before you start, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+答：开始之前，请确保您已设置开发环境以使用 Aspose.PDF for .NET。这涉及安装 Aspose.PDF 库并配置您的项目以引用它。
 
-#### Q: How can I open an existing PDF document and access its tagged content using Aspose.PDF for .NET?
+#### 问：如何使用 Aspose.PDF for .NET 打开现有 PDF 文档并访问其标记内容？
 
-A: The tutorial provides C# source code examples that demonstrate how to open an existing PDF document using Aspose.PDF for .NET and access its tagged content for further manipulation.
+答：本教程提供了 C# 源代码示例，演示如何使用 Aspose.PDF for .NET 打开现有 PDF 文档并访问其标记内容以进行进一步操作。
 
-#### Q: What is the purpose of assigning alternative text and bounding boxes to images in a PDF document?
+#### 问：为 PDF 文档中的图像分配替代文本和边框的目的是什么？
 
-A: Assigning alternative text and bounding boxes to images enhances accessibility by providing descriptive text for images and defining their layout and position within the document. This information is crucial for screen readers and other assistive technologies.
+答：为图像分配替代文本和边框可以通过为图像提供描述性文本并定义其在文档中的布局和位置来增强可访问性。此信息对于屏幕阅读器和其他辅助技术至关重要。
 
-#### Q: How can I set the title for a tagged PDF document using Aspose.PDF for .NET?
+#### 问：如何使用 Aspose.PDF for .NET 设置带标签的 PDF 文档的标题？
 
-A: The tutorial includes C# source code examples that illustrate how to set the title for a tagged PDF document using Aspose.PDF for .NET.
+答：本教程包括 C# 源代码示例，说明如何使用 Aspose.PDF for .NET 设置标记的 PDF 文档的标题。
 
-#### Q: What does the process of moving elements within a PDF document involve?
+#### 问：在 PDF 文档中移动元素的过程涉及哪些内容？
 
-A: Moving elements within a PDF document involves changing the parent element of a particular element. In this tutorial, you'll learn how to move a Span element into a specified Paragraph element within a table.
+答：在 PDF 文档中移动元素涉及更改特定元素的父元素。在本教程中，您将了解如何将 Span 元素移动到表中指定的 Paragraph 元素中。
 
-#### Q: How do I save the modified PDF document after adding tags and making edits to images?
+#### 问：添加标签和编辑图像后，如何保存修改后的PDF文档？
 
-A: Once you've added tags, assigned alternative text, set bounding boxes, and made edits to the PDF document, you can use the provided C# source code examples to save the modified PDF document using the `Save()` method.
+答：添加标签、分配替代文本、设置边界框并对 PDF 文档进行编辑后，您可以使用提供的 C# 源代码示例来保存修改后的 PDF 文档，方法是使用`Save()`方法。
 
-#### Q: What is the purpose of the sample source code provided in the tutorial?
+#### 问：教程中提供的示例源代码的用途是什么？
 
-A: The sample source code serves as a practical reference for implementing image tagging and manipulation using Aspose.PDF for .NET. You can use this code as a starting point and modify it to suit your specific requirements.
+答：示例源代码可作为使用 Aspose.PDF for .NET 实现图像标记和操作的实用参考。您可以使用此代码作为起点并对其进行修改以满足您的特定要求。
 
-#### Q: Can I apply these techniques to other types of elements in a PDF document, not just images?
+#### 问：我可以将这些技术应用于 PDF 文档中的其他类型的元素，而不仅仅是图像吗？
 
-A: Yes, the techniques demonstrated in this tutorial can be adapted to work with various types of elements within a PDF document. You can apply similar principles to tag and manipulate other elements such as text, tables, and more.
+答：是的，本教程中演示的技术可以适用于 PDF 文档中的各种类型的元素。您可以应用类似的原则来标记和操作其他元素，例如文本、表格等。
 
-#### Q: How can I validate the PDF/UA compliance of the modified PDF document?
+#### 问：如何验证修改后的 PDF 文档的 PDF/UA 合规性？
 
-A: The tutorial provides C# source code examples that show how to validate the PDF/UA compliance of the modified PDF document by using the `Validate()` method and generating an XML report.
+答：本教程提供了 C# 源代码示例，展示了如何使用以下命令验证修改后的 PDF 文档的 PDF/UA 合规性：`Validate()`方法并生成 XML 报告。
 
-#### Q: What other features does Aspose.PDF for .NET offer for working with PDF documents?
+#### 问：Aspose.PDF for .NET 还提供哪些其他功能来处理 PDF 文档？
 
-A: Aspose.PDF for .NET offers a wide range of features for working with PDF documents, including text manipulation, image insertion, table creation, form field management, digital signatures, annotations, and more. Consult the official documentation and resources for further exploration.
+答：Aspose.PDF for .NET 提供了广泛的处理 PDF 文档的功能，包括文本操作、图像插入、表格创建、表单字段管理、数字签名、注释等。请查阅官方文档和资源以进行进一步探索。

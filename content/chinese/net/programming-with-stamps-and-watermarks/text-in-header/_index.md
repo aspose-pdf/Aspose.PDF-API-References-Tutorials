@@ -1,51 +1,51 @@
 ---
-title: Text In Header Of PDF File
-linktitle: Text In Header Of PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text in the header of PDF file with Aspose.PDF for .NET.
+title: PDF 文件标题中的文本
+linktitle: PDF 文件标题中的文本
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件的页眉中添加文本。
 type: docs
 weight: 190
 url: /zh/net/programming-with-stamps-and-watermarks/text-in-header/
 ---
-In this tutorial, we are going to learn how to add text in the header of PDF file using Aspose.PDF for .NET. Follow the steps below:
+在本教程中，我们将学习如何使用 Aspose.PDF for .NET 在 PDF 文件的标题中添加文本。请按照以下步骤操作：
 
-## Step 1: Project preparation
+## 第一步：项目准备
 
-Make sure you have installed Aspose.PDF for .NET and created a C# project.
+确保您已安装 Aspose.PDF for .NET 并创建了 C# 项目。
 
-## Step 2: Importing namespaces
+## 第 2 步：导入命名空间
 
-Add the following namespaces to your C# source file:
+将以下命名空间添加到 C# 源文件中：
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Opening the document
+## 步骤 3：打开文档
 
-Open the existing PDF document using the path provided:
+使用提供的路径打开现有的 PDF 文档：
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "TextinHeader.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to your documents directory.
+请务必将“您的文档目录”替换为文档目录的实际路径。
 
-## Step 4: Creating Header Text
+## 第 4 步：创建标题文本
 
-Create a new text stamp with the text you want to add in the header:
+使用要添加到标题中的文本创建一个新的文本图章：
 
 ```csharp
 TextStamp textStamp = new TextStamp("Header text");
 ```
 
-You can customize the text by changing its properties like top margin, horizontal alignment, and vertical alignment.
+您可以通过更改文本属性（例如上边距、水平对齐方式和垂直对齐方式）来自定义文本。
 
-## Step 5: Add header text to all pages
+## 步骤 5：向所有页面添加标题文本
 
-Go through all the pages of the PDF document and add the text stamp in the header:
+浏览 PDF 文档的所有页面并在页眉中添加文本图章：
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -54,80 +54,80 @@ foreach(Page page in pdfDocument.Pages)
 }
 ```
 
-## Step 6: Saving the PDF Document
+## 第6步：保存PDF文档
 
-Once the header text has been added on all pages, save the updated PDF document:
+在所有页面上添加标题文本后，保存更新的 PDF 文档：
 
 ```csharp
 pdfDocument.Save(dataDir + "TextinHeader_out.pdf");
 Console.WriteLine("\nText in header added successfully.\nFile saved at: " + dataDir);
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+请务必将“您的文档目录”替换为您要保存 PDF 文档的目录的实际路径。
 
-### Sample source code for Textin Header using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 的 Textin 标头的示例源代码 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir+ "TextinHeader.pdf");
 
-// Create header
+//创建标题
 TextStamp textStamp = new TextStamp("Header Text");
 
-// Set properties of the stamp
+//设置图章的属性
 textStamp.TopMargin = 10;
 textStamp.HorizontalAlignment = HorizontalAlignment.Center;
 textStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Add header on all pages
+//在所有页面上添加标题
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(textStamp);
 }
 
-// Save updated document
+//保存更新的文档
 pdfDocument.Save(dataDir+ "TextinHeader_out.pdf");
 Console.WriteLine("\nText in header added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have learned how to add text in the header of a PDF document using Aspose.PDF for .NET. You can now customize your headers by adding additional text to your PDF documents.
+恭喜！您已经了解了如何使用 Aspose.PDF for .NET 在 PDF 文档的页眉中添加文本。现在，您可以通过向 PDF 文档添加其他文本来自定义标题。
 
-### FAQ's for text in header of PDF file
+### PDF 文件标题中文本的常见问题解答
 
-#### Q: What is the purpose of adding text in the header of a PDF document?
+#### 问：在 PDF 文档的页眉中添加文本的目的是什么？
 
-A: Adding text in the header of a PDF document allows you to include important information, such as titles, document names, dates, or any other text that you want to appear consistently at the top of each page.
+答：在 PDF 文档的页眉中添加文本可让您包含重要信息，例如标题、文档名称、日期或您希望在每页顶部一致显示的任何其他文本。
 
-#### Q: How does the provided C# source code achieve the addition of text in the header of a PDF document?
+#### 问：提供的C#源码是如何实现PDF文档页眉添加文本的？
 
-A: The code demonstrates the process of opening an existing PDF document, creating a text stamp with the desired header text, customizing the text properties, adding the text stamp to all pages, and finally saving the updated PDF document with the added header text.
+答：该代码演示了打开现有 PDF 文档、创建带有所需标题文本的文本图章、自定义文本属性、将文本图章添加到所有页面，最后保存带有添加的标题文本的更新的 PDF 文档的过程。
 
-#### Q: Can I modify the appearance of the header text, such as its font, size, color, and alignment?
+#### 问：我可以修改标题文本的外观，例如字体、大小、颜色和对齐方式吗？
 
-A: Yes, you can customize the appearance of the header text by modifying the properties of the `TextStamp` object. The code example includes setting properties like top margin, horizontal alignment, and vertical alignment. You can also adjust the font, size, color, and other text-related properties.
+答：是的，您可以通过修改标题文本的属性来自定义标题文本的外观。`TextStamp`目的。该代码示例包括设置上边距、水平对齐和垂直对齐等属性。您还可以调整字体、大小、颜色和其他与文本相关的属性。
 
-#### Q: Is it possible to add different text to each page's header?
+#### 问：是否可以在每个页面的标题中添加不同的文本？
 
-A: Yes, you can add different text to each page's header by creating separate `TextStamp` objects with different text content or properties and then adding them to specific pages as needed.
+答：是的，您可以通过创建单独的页面向每个页面的标题添加不同的文本`TextStamp`具有不同文本内容或属性的对象，然后根据需要将它们添加到特定页面。
 
-#### Q: How do I ensure the header text appears consistently on every page of the PDF document?
+#### 问：如何确保页眉文本在 PDF 文档的每一页上一致显示？
 
-A: By using a loop that iterates through all the pages of the PDF document and adding the same text stamp to each page, you ensure that the header text appears consistently on every page.
+答：通过使用循环遍历 PDF 文档的所有页面并向每个页面添加相同的文本图章，可以确保标题文本在每个页面上一致显示。
 
-#### Q: Can I add multiple lines of text or format the header text with line breaks?
+#### 问：我可以添加多行文本或使用换行符格式化标题文本吗？
 
-A: Yes, you can add multiple lines of text to the header by including line breaks in the text string. For example, you can use the escape sequence `\n` to indicate a line break in the text.
+答：是的，您可以通过在文本字符串中包含换行符来向标题添加多行文本。例如，您可以使用转义序列`\n`指示文本中的换行符。
 
-#### Q: What happens if I want to add different content to the header and footer of the same PDF document?
+#### 问：如果我想在同一个 PDF 文档的页眉和页脚中添加不同的内容，会发生什么情况？
 
-A: To add different content to the header and footer sections, you would follow similar steps for both sections. The code demonstrates adding text to the header; you can use a similar approach to add text to the footer.
+答：要向页眉和页脚部分添加不同的内容，您将为这两个部分执行类似的步骤。该代码演示了向标题添加文本；您可以使用类似的方法将文本添加到页脚。
 
-#### Q: Is it possible to add images or other elements alongside the header text using this approach?
+#### 问：是否可以使用这种方法在标题文本旁边添加图像或其他元素？
 
-A: While the provided code specifically demonstrates adding text to the header, you can extend the approach to add other elements like images, lines, shapes, or any other content to the header section using the Aspose.PDF library.
+答：虽然提供的代码专门演示了向页眉添加文本，但您可以扩展该方法，使用 Aspose.PDF 库将其他元素（例如图像、线条、形状或任何其他内容）添加到页眉部分。

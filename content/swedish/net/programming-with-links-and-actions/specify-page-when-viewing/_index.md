@@ -1,145 +1,145 @@
 ---
-title: Specify Page When Viewing
-linktitle: Specify Page When Viewing
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to specify a page when viewing a PDF using Aspose.PDF for .NET.
+title: Ange sida vid visning
+linktitle: Ange sida vid visning
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du anger en sida när du visar en PDF med Aspose.PDF för .NET.
 type: docs
 weight: 110
 url: /sv/net/programming-with-links-and-actions/specify-page-when-viewing/
 ---
-Learn how to specify a page when viewing a PDF file using Aspose.PDF for .NET with this step-by-step guide.
+Lär dig hur du anger en sida när du visar en PDF-fil med Aspose.PDF för .NET med denna steg-för-steg-guide.
 
-## Step 1: Setting up the environment
+## Steg 1: Sätta upp miljön
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+Se till att du har konfigurerat din utvecklingsmiljö med ett C#-projekt och lämpliga Aspose.PDF-referenser.
 
-## Step 2: Loading the PDF file
+## Steg 2: Laddar PDF-filen
 
-Set the directory path of your documents and upload the PDF file using the following code:
+Ställ in katalogsökvägen för dina dokument och ladda upp PDF-filen med följande kod:
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// Ladda PDF-filen
 Document doc = new Document(dataDir + "SpecifyPageWhenViewing.pdf");
 ```
 
-## Step 3: Specifying the target page
+## Steg 3: Ange målsidan
 
-Get the target page instance using the following code:
+Hämta målsidesinstansen med följande kod:
 
 ```csharp
 Page page2 = doc.Pages[2];
 ```
 
-You can adjust the index `[2]` to select the desired page.
+ Du kan justera indexet`[2]` för att välja önskad sida.
 
-## Step 4: Configuring the zoom setting
+## Steg 4: Konfigurera zoominställningen
 
-Create a variable to set the target page zoom factor:
+Skapa en variabel för att ställa in målsidans zoomfaktor:
 
 ```csharp
 double zoom = 1;
 ```
 
-You can adjust the zoom value according to your needs.
+Du kan justera zoomvärdet efter dina behov.
 
-## Step 5: Create the navigation action
+## Steg 5: Skapa navigeringsåtgärden
 
-Create an instance of the navigation action using the specified target page:
+Skapa en instans av navigeringsåtgärden med den angivna målsidan:
 
 ```csharp
 GoToAction action = new GoToAction(doc.Pages[2]);
 ```
 
-## Step 6: Setting the destination
+## Steg 6: Ställ in destination
 
-Set the destination to go to the target page using coordinates and zoom:
+Ställ in destinationen för att gå till målsidan med hjälp av koordinater och zoom:
 
 ```csharp
 action.Destination = new XYZExplicitDestination(page2, 0, page2.Rect.Height, zoom);
 ```
 
-## Step 7: Configuring the Document Open Action
+## Steg 7: Konfigurera åtgärden Dokumentöppning
 
-Set the document open action with the created navigation action:
+Ställ in handlingen för att öppna dokumentet med den skapade navigeringsåtgärden:
 
 ```csharp
 doc. OpenAction = action;
 ```
 
-## Step 8: Save the updated document
+## Steg 8: Spara det uppdaterade dokumentet
 
-Save the updated document using the `Save` method:
+ Spara det uppdaterade dokumentet med hjälp av`Save` metod:
 
 ```csharp
 doc.Save(dataDir + "goto2page_out.pdf");
 ```
 
-### Sample source code for Specify Page When Viewing using Aspose.PDF for .NET 
+### Exempel på källkod för Specificera sida vid visning med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load the PDF file
+// Ladda PDF-filen
 Document doc = new Document(dataDir + "SpecifyPageWhenViewing.pdf");
-// Get the instance of second page of document
+// Hämta instansen av dokumentets andra sida
 Page page2 = doc.Pages[2];
-// Create the variable to set the zoom factor of target page
+// Skapa variabeln för att ställa in zoomfaktorn för målsidan
 double zoom = 1;
-// Create GoToAction instance
+// Skapa GoToAction-instans
 GoToAction action = new GoToAction(doc.Pages[2]);
-// Go to 2 page
+// Gå till 2 sida
 action.Destination = new XYZExplicitDestination(page2, 0, page2.Rect.Height, zoom);
-// Set the document open action
+// Ställ in handlingen för att öppna dokumentet
 doc.OpenAction = action;
-// Save updated document
+// Spara uppdaterat dokument
 doc.Save(dataDir + "goto2page_out.pdf");
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! You now know how to specify a page when viewing a PDF using Aspose.PDF for .NET. Use this knowledge to customize the user viewing experience in your PDF documents.
+Grattis! Du vet nu hur du anger en sida när du visar en PDF med Aspose.PDF för .NET. Använd denna kunskap för att anpassa användarens visningsupplevelse i dina PDF-dokument.
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+Nu när du har slutfört den här guiden kan du tillämpa dessa koncept på dina egna projekt och utforska funktionerna som erbjuds av Aspose.PDF för .NET.
 
 ### FAQ's 
 
-#### Q: What is the purpose of specifying a target page when viewing a PDF file?
+#### F: Vad är syftet med att ange en målsida när du visar en PDF-fil?
 
-A: Specifying a target page allows you to control which page of a PDF document is displayed when the file is opened. This can enhance the user experience by directing them to a specific page of interest.
+S: Genom att ange en målsida kan du styra vilken sida i ett PDF-dokument som ska visas när filen öppnas. Detta kan förbättra användarupplevelsen genom att dirigera dem till en specifik sida av intresse.
 
-#### Q: How can specifying a target page be useful in PDF documents?
+#### F: Hur kan det vara användbart att ange en målsida i PDF-dokument?
 
-A: Specifying a target page is beneficial when you want to guide users to a particular section or content within a PDF document without requiring them to manually navigate through the pages.
+S: Att ange en målsida är fördelaktigt när du vill guida användare till ett visst avsnitt eller innehåll i ett PDF-dokument utan att de behöver navigera genom sidorna manuellt.
 
-#### Q: How does Aspose.PDF for .NET facilitate specifying a target page for viewing?
+#### F: Hur underlättar Aspose.PDF för .NET att ange en målsida för visning?
 
-A: Aspose.PDF for .NET provides APIs that allow you to set the initial view of a PDF document, including the target page, zoom level, and other display properties.
+S: Aspose.PDF för .NET tillhandahåller API:er som låter dig ställa in den initiala vyn för ett PDF-dokument, inklusive målsida, zoomnivå och andra visningsegenskaper.
 
-#### Q: Can I specify any page to be the target page?
+#### F: Kan jag ange vilken sida som helst som målsida?
 
-A: Yes, you can specify any page within the PDF document as the target page for viewing. Simply use the appropriate index to select the desired page.
+S: Ja, du kan ange vilken sida som helst i PDF-dokumentet som målsida för visning. Använd helt enkelt lämpligt index för att välja önskad sida.
 
-#### Q: What is the significance of the zoom factor when specifying a target page?
+#### F: Vilken betydelse har zoomfaktorn när du anger en målsida?
 
-A: The zoom factor determines the level of magnification applied to the target page when the PDF document is opened. It controls how much content is displayed within the viewport.
+S: Zoomfaktorn avgör graden av förstoring som tillämpas på målsidan när PDF-dokumentet öppnas. Den styr hur mycket innehåll som visas i visningsporten.
 
-#### Q: Can I set different zoom factors for different target pages?
+#### F: Kan jag ställa in olika zoomfaktorer för olika målsidor?
 
-A: Yes, you can set different zoom factors for different target pages by creating separate `GoToAction` instances and configuring their destinations accordingly.
+S: Ja, du kan ställa in olika zoomfaktorer för olika målsidor genom att skapa separata`GoToAction` instanser och konfigurera deras destinationer därefter.
 
-#### Q: Are there any limitations to specifying a target page?
+#### F: Finns det några begränsningar för att ange en målsida?
 
-A: Specifying a target page is limited to controlling the initial view when the PDF is opened. It does not affect user interactions or navigation once the PDF is displayed.
+S: Att ange en målsida är begränsat till att styra den initiala vyn när PDF-filen öppnas. Det påverkar inte användarinteraktioner eller navigering när PDF-filen väl visas.
 
-#### Q: Can I use this feature to create presentations within a PDF document?
+#### F: Kan jag använda den här funktionen för att skapa presentationer i ett PDF-dokument?
 
-A: Yes, you can use this feature to create presentation-like experiences within a PDF document, guiding users through different sections or topics.
+S: Ja, du kan använda den här funktionen för att skapa presentationsliknande upplevelser i ett PDF-dokument, för att guida användare genom olika avsnitt eller ämnen.
 
-#### Q: Can I customize other aspects of the initial view, such as page layout?
+#### F: Kan jag anpassa andra aspekter av den ursprungliga vyn, till exempel sidlayout?
 
-A: Yes, Aspose.PDF for .NET provides properties to customize other aspects of the initial view, including page layout, page mode, and more.
+S: Ja, Aspose.PDF för .NET tillhandahåller egenskaper för att anpassa andra aspekter av den initiala vyn, inklusive sidlayout, sidläge och mer.
 
-#### Q: How can I test if the specified target page and zoom factor are working as intended?
+#### F: Hur kan jag testa om den angivna målsidan och zoomfaktorn fungerar som avsett?
 
-A: After applying the provided code to specify the target page and zoom factor, open the modified PDF file and verify that it opens with the correct page and zoom level.
+S: Efter att ha använt den medföljande koden för att ange målsidan och zoomfaktorn, öppna den modifierade PDF-filen och verifiera att den öppnas med rätt sida och zoomnivå.

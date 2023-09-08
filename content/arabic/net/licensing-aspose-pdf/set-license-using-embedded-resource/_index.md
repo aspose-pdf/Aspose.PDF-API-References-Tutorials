@@ -1,122 +1,122 @@
 ---
-title: Set License Using Embedded Resource
-linktitle: Set License Using Embedded Resource
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to setting a license using an embedded resource with Aspose.PDF for .NET. Unlock full features.
+title: قم بتعيين الترخيص باستخدام الموارد المضمنة
+linktitle: قم بتعيين الترخيص باستخدام الموارد المضمنة
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لإعداد ترخيص باستخدام مورد مضمن مع Aspose.PDF لـ .NET. فتح الميزات الكاملة.
 type: docs
 weight: 50
 url: /ar/net/licensing-aspose-pdf/set-license-using-embedded-resource/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to set a license using an embedded resource with Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. By setting a license, you can unlock the full features offered by Aspose.PDF.
+في هذا البرنامج التعليمي، سنزودك بدليل خطوة بخطوة حول كيفية تعيين ترخيص باستخدام مورد مضمن مع Aspose.PDF لـ .NET. Aspose.PDF هي مكتبة قوية تتيح لك إنشاء مستندات PDF ومعالجتها وتحويلها برمجيًا. من خلال تعيين ترخيص، يمكنك فتح الميزات الكاملة التي يقدمها Aspose.PDF.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before you begin, make sure you have the following prerequisites in place:
+قبل البدء، تأكد من توفر المتطلبات الأساسية التالية:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. تم تثبيت Visual Studio مع إطار عمل .NET.
+2. مكتبة Aspose.PDF لـ .NET.
 
-## Step 1: Project Setup
+## الخطوة 1: إعداد المشروع
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+للبدء، قم بإنشاء مشروع جديد في Visual Studio وقم بإضافة مرجع إلى مكتبة Aspose.PDF لـ .NET. يمكنك تنزيل المكتبة من موقع Aspose الرسمي وتثبيتها على جهازك.
 
-## Step 2: Import the necessary namespaces
+## الخطوة 2: استيراد مساحات الأسماء الضرورية
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+في ملف التعليمات البرمجية C# الخاص بك، قم باستيراد مساحات الأسماء المطلوبة للوصول إلى الفئات والأساليب التي يوفرها Aspose.PDF:
 
 ```csharp
 using System;
 using Aspose.Pdf;
 ```
 
-## Step 3: Setting the license from the embedded resource
+## الخطوة 3: تعيين الترخيص من المورد المضمن
 
-After importing the necessary namespaces, you can set the license using an embedded resource. Use the following line of code to set the license:
+بعد استيراد مساحات الأسماء الضرورية، يمكنك تعيين الترخيص باستخدام مورد مضمن. استخدم السطر التالي من التعليمات البرمجية لتعيين الترخيص:
 
 ```csharp
 Aspose.Pdf.License license = new Aspose.Pdf.License();
 license.SetLicense("MergedAPI.Aspose.Total.lic");
 ```
 
-Make sure the `"MergedAPI.Aspose.Total.lic"` license file is included in your project's embedded resources.
+ تأكد من أن`"MergedAPI.Aspose.Total.lic"` يتم تضمين ملف الترخيص في الموارد المضمنة لمشروعك.
 
-## Step 4: Confirming the license definition
+## الخطوة الرابعة: تأكيد تعريف الترخيص
 
-After setting the license, you can display a confirmation message to check whether the license has been set successfully. Use the following line of code to display a message in the console:
+بعد تعيين الترخيص، يمكنك عرض رسالة تأكيد للتحقق مما إذا كان قد تم تعيين الترخيص بنجاح. استخدم سطر التعليمات البرمجية التالي لعرض رسالة في وحدة التحكم:
 
 ```csharp
 Console.WriteLine("License set successfully.");
 ```
 
 
-### Sample source code for Set License Using Embedded Resource using Aspose.PDF for .NET
+### نموذج التعليمات البرمجية المصدر لتعيين الترخيص باستخدام الموارد المضمنة باستخدام Aspose.PDF لـ .NET
  
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Initialize license object
+// تهيئة كائن الترخيص
 Aspose.Pdf.License license = new Aspose.Pdf.License();
-// Set license
+//تعيين الترخيص
 license.SetLicense("MergedAPI.Aspose.Total.lic");
 Console.WriteLine("License set successfully.");
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, you learned how to set a license using an embedded resource with Aspose.PDF for .NET. By following the described steps, you will be able to unlock the full functionality offered by Aspose.PDF and use the library optimally in your C# projects.
+في هذا البرنامج التعليمي، تعلمت كيفية تعيين ترخيص باستخدام مورد مضمن مع Aspose.PDF لـ .NET. باتباع الخطوات الموضحة، ستتمكن من فتح الوظائف الكاملة التي يقدمها Aspose.PDF واستخدام المكتبة على النحو الأمثل في مشاريع C# الخاصة بك.
 
-### FAQ's for set license using embedded resource
+### الأسئلة الشائعة لتعيين الترخيص باستخدام الموارد المضمنة
 
-#### Q: Why should I set a license using an embedded resource?
+#### س: لماذا يجب علي تعيين ترخيص باستخدام مورد مضمن؟
 
-A: Setting a license using an embedded resource ensures that your licensing information is securely stored within your application. It allows you to unlock the full features offered by Aspose.PDF while keeping your licensing information confidential.
+ج: يضمن تعيين ترخيص باستخدام مورد مضمن تخزين معلومات الترخيص الخاصة بك بشكل آمن داخل التطبيق الخاص بك. يتيح لك فتح الميزات الكاملة التي يقدمها Aspose.PDF مع الحفاظ على سرية معلومات الترخيص الخاصة بك.
 
-#### Q: How do I import the necessary namespaces for Aspose.PDF?
+#### س: كيف يمكنني استيراد مساحات الأسماء الضرورية لـ Aspose.PDF؟
 
-A: In your C# code file, use the `using` directive to import the required namespaces for accessing the classes and methods provided by Aspose.PDF:
+ ج: في ملف التعليمات البرمجية C# الخاص بك، استخدم ملف`using` توجيه لاستيراد مساحات الأسماء المطلوبة للوصول إلى الفئات والأساليب التي يوفرها Aspose.PDF:
 ```csharp
 using System;
 using Aspose.Pdf;
 ```
 
-#### Q: What is an embedded resource?
+#### س: ما هو المورد المضمن؟
 
-A: An embedded resource is a file that is included within your application's assembly. It can be accessed and used directly from your code.
+ج: المورد المضمن هو ملف تم تضمينه في مجموعة التطبيق الخاص بك. يمكن الوصول إليه واستخدامه مباشرة من التعليمات البرمجية الخاصة بك.
 
-#### Q: How do I include the license file as an embedded resource?
+#### س: كيف يمكنني تضمين ملف الترخيص كمورد مضمن؟
 
-A: To include the license file as an embedded resource, add the license file to your project and set its Build Action property to "Embedded Resource."
+ج: لتضمين ملف الترخيص كمورد مضمن، قم بإضافة ملف الترخيص إلى مشروعك وقم بتعيين خاصية Build Action الخاصة به إلى "Embedded Resource".
 
-#### Q: How do I set the license using an embedded resource?
+#### س: كيف أقوم بتعيين الترخيص باستخدام مورد مضمن؟
 
-A: After importing the necessary namespaces, you can set the license using the provided code snippet. Replace `"MergedAPI.Aspose.Total.lic"` with the correct path to your embedded license resource.
+ ج: بعد استيراد مساحات الأسماء الضرورية، يمكنك تعيين الترخيص باستخدام مقتطف التعليمات البرمجية المقدم. يستبدل`"MergedAPI.Aspose.Total.lic"` بالمسار الصحيح لمورد الترخيص المضمن الخاص بك.
 
-#### Q: Can I use multiple embedded license resources in the same project?
+#### س: هل يمكنني استخدام موارد ترخيص مضمنة متعددة في نفس المشروع؟
 
-A: Yes, you can use multiple embedded license resources in the same project by initializing separate `Aspose.Pdf.License` objects and setting each license individually.
+ ج: نعم، يمكنك استخدام موارد ترخيص مضمنة متعددة في نفس المشروع عن طريق تهيئة منفصلة`Aspose.Pdf.License` الكائنات وتعيين كل ترخيص على حدة.
 
-#### Q: What happens if I change the license file?
+#### س: ماذا يحدث إذا قمت بتغيير ملف الترخيص؟
 
-A: If you need to update the license, replace the existing embedded license file with the new one and make sure to update the file path in the `SetLicense` method accordingly.
+ ج: إذا كنت بحاجة إلى تحديث الترخيص، فاستبدل ملف الترخيص المضمن الحالي بالملف الجديد وتأكد من تحديث مسار الملف في`SetLicense` الطريقة وفقا لذلك.
 
-#### Q: Can I set a license using an embedded resource for other Aspose libraries?
+#### س: هل يمكنني تعيين ترخيص باستخدام مصدر مضمن لمكتبات Aspose الأخرى؟
 
-A: Yes, the process of setting a license using an embedded resource is similar across different Aspose libraries. However, each library may have its own specifics, so refer to the documentation for the relevant library.
+ج: نعم، عملية تعيين الترخيص باستخدام مورد مضمن متشابهة عبر مكتبات Aspose المختلفة. ومع ذلك، قد يكون لكل مكتبة تفاصيلها الخاصة، لذا راجع الوثائق الخاصة بالمكتبة ذات الصلة.
 
-#### Q: Is it necessary to set the license using an embedded resource?
+#### س: هل من الضروري تعيين الترخيص باستخدام مورد مضمن؟
 
-A: While it's not mandatory, setting the license using an embedded resource is a recommended practice to keep your licensing information secure and ensure smooth functionality.
+ج: على الرغم من أن ذلك ليس إلزاميًا، إلا أن تعيين الترخيص باستخدام مورد مضمن يعد ممارسة موصى بها للحفاظ على أمان معلومات الترخيص الخاصة بك وضمان الأداء السلس.
 
-#### Q: Can I use an embedded license with a trial version of Aspose.PDF?
+#### س: هل يمكنني استخدام ترخيص مضمن مع إصدار تجريبي من Aspose.PDF؟
 
-A: Yes, you can use an embedded license with a trial version of Aspose.PDF. However, for full functionality, it's recommended to use a valid license.
+ج: نعم، يمكنك استخدام ترخيص مضمن مع إصدار تجريبي من Aspose.PDF. ومع ذلك، للحصول على الوظائف الكاملة، يوصى باستخدام ترخيص صالح.
 
-#### Q: How do I obtain a valid license for Aspose.PDF?
+#### س: كيف يمكنني الحصول على ترخيص صالح لـ Aspose.PDF؟
 
-A: You can obtain a valid license by purchasing it from the [Aspose.PDF Purchase](https://purchase.aspose.com/pricing/pdf/net) page.
+ ج: يمكنك الحصول على ترخيص ساري المفعول عن طريق شرائه من[Aspose.PDF الشراء](https://purchase.aspose.com/pricing/pdf/net) صفحة.
 
-#### Q: Where can I obtain more information about setting licenses for Aspose products?
+#### س: أين يمكنني الحصول على مزيد من المعلومات حول تعيين التراخيص لمنتجات Aspose؟
 
-A: For more information about setting licenses, embedding resources, and related details, refer to the [Aspose Licensing Documentation](https://docs.aspose.com/pdf/net/licensing/) page.
+ج: لمزيد من المعلومات حول إعداد التراخيص وتضمين الموارد والتفاصيل ذات الصلة، راجع[Aspose وثائق الترخيص](https://docs.aspose.com/pdf/net/licensing/) صفحة.

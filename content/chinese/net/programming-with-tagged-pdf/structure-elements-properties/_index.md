@@ -1,61 +1,61 @@
 ---
-title: Structure Elements Properties In PDF File
-linktitle: Structure Elements Properties In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to working with structural element properties in PDF file with Aspose.PDF for .NET. Create information-rich structural elements.
+title: PDF 文件中的结构元素属性
+linktitle: PDF 文件中的结构元素属性
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 处理 PDF 文件中的结构元素属性的分步指南。创建信息丰富的结构元素。
 type: docs
 weight: 150
 url: /zh/net/programming-with-tagged-pdf/structure-elements-properties/
 ---
-In this guide, we are going to show you how to work with structural element properties in PDF file using the Aspose.PDF library for .NET. Aspose.PDF is a powerful library that lets you programmatically create, manipulate, and convert PDF files.
+在本指南中，我们将向您展示如何使用 .NET 的 Aspose.PDF 库处理 PDF 文件中的结构元素属性。 Aspose.PDF 是一个功能强大的库，可让您以编程方式创建、操作和转换 PDF 文件。
 
-Let's dive into the code and learn how to work with structure element properties in a PDF document using Aspose.PDF for .NET.
+让我们深入研究代码并了解如何使用 Aspose.PDF for .NET 处理 PDF 文档中的结构元素属性。
 
-## Prerequisites
+## 先决条件
 
-Before you start, make sure you have installed Aspose.PDF for .NET and set up your development environment.
+在开始之前，请确保您已安装 Aspose.PDF for .NET 并设置您的开发环境。
 
-## Step 1: Creating the document
+## 第 1 步：创建文档
 
-The first step is to create a new PDF document using the `Document` class.
+第一步是使用以下命令创建一个新的 PDF 文档`Document`班级。
 
 ```csharp
-// Create the PDF document
+//创建 PDF 文档
 Document document = new Document();
 ```
 
-## Step 2: Access tagged content
+## 第 2 步：访问标记的内容
 
-Next, we access the tagged content of the document using the `ITaggedContent` object.
+接下来，我们使用以下方法访问文档的标记内容`ITaggedContent`目的。
 
 ```csharp
-// Access tagged content
+//访问标记的内容
 Tagged.ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 3: Set title and language
+## 第 3 步：设置标题和语言
 
-Now we can set the document title and language using the `SetTitle` and `SetLanguage` methods of the `ITaggedContent` object.
+现在我们可以使用以下命令设置文档标题和语言`SetTitle`和`SetLanguage`的方法`ITaggedContent`目的。
 
 ```csharp
-// Define the title of the document
+//定义文档的标题
 taggedContent.SetTitle("Tagged PDF document");
 
-// Set the document language
+//设置文档语言
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 4: Creating structural elements
+## 第 4 步：创建结构元素
 
-Then we create the structural elements in the PDF document. In this example, we will create a section element (`SectElement`) and a header element (`HeaderElement`).
+然后我们在 PDF 文档中创建结构元素。在此示例中，我们将创建一个部分元素 (`SectElement`) 和一个标头元素 (`HeaderElement`）。
 
 ```csharp
-// Create a section element
+//创建一个部分元素
 StructureElement rootElement = taggedContent.RootElement;
 SectElement sect = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect);
 
-// Create a header element
+//创建标题元素
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 sect.AppendChild(h1);
 h1.SetText("Header");
@@ -66,32 +66,32 @@ h1.ExpansionText = "Expansion Text";
 h1.ActualText = "Actual Text";
 ```
 
-## Step 5: Save the tagged PDF document
+## 步骤 5：保存标记的 PDF 文档
 
-Finally, we save the tagged PDF document.
+最后，我们保存标记的 PDF 文档。
 
 ```csharp
-// Save the tagged PDF document
+//保存标记的 PDF 文档
 document.Save(dataDir + "StructureElementsProperties.pdf");
 ```
 
-### Sample source code for Structure Elements Properties using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 的结构元素属性示例源代码 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+//创建 PDF 文档
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+//获取与 TaggedPdf 一起使用的内容
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+//设置文档网的标题和语言
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Create Structure Elements
+//创建结构元素
 StructureElement rootElement = taggedContent.RootElement;
 SectElement sect = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect);
@@ -104,53 +104,53 @@ h1.AlternativeText = "Alternative Text";
 h1.ExpansionText = "Expansion Text";
 h1.ActualText = "Actual Text";
 
-// Save Tagged Pdf Document
+//保存标记的 PDF 文档
 document.Save(dataDir + "StructureElementsProperties.pdf");
 
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You now know how to work with structural element properties in a PDF document using Aspose.PDF for .NET. You can further explore the features of Aspose.PDF to create personalized PDF documents with information-rich structure elements.
+恭喜！您现在知道如何使用 Aspose.PDF for .NET 处理 PDF 文档中的结构元素属性。您可以进一步探索Aspose.PDF的功能，以创建具有信息丰富的结构元素的个性化PDF文档。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What are structural element properties in a PDF document, and why are they important?
+#### 问：PDF 文档中的结构元素属性是什么？为什么它们很重要？
 
-A: Structural element properties define characteristics of elements in a tagged PDF document, enhancing accessibility and organization. Properties such as title, language, alternative text, expansion text, and actual text provide context and assistive information for users.
+答：结构元素属性定义了带标签的 PDF 文档中元素的特征，从而增强了可访问性和组织性。标题、语言、替代文本、扩展文本和实际文本等属性为用户提供上下文和辅助信息。
 
-#### Q: How does Aspose.PDF for .NET help work with structural element properties in a PDF document?
+#### 问：Aspose.PDF for .NET 如何帮助处理 PDF 文档中的结构元素属性？
 
-A: Aspose.PDF for .NET provides APIs to create and manipulate structural elements with various properties. You can set properties such as title, language, alternative text, expansion text, and actual text to enhance the semantic structure and accessibility of the document.
+答：Aspose.PDF for .NET 提供 API 来创建和操作具有各种属性的结构元素。您可以设置标题、语言、替代文本、扩展文本和实际文本等属性，以增强文档的语义结构和可访问性。
 
-#### Q: What is the role of the `SetTitle` and `SetLanguage` methods in working with structural element properties?
+#### 问： 的作用是什么`SetTitle` and `SetLanguage` methods in working with structural element properties?
 
-A: The `SetTitle` and `SetLanguage` methods of the `ITaggedContent` object allow you to set the document title and language, which influence structural element properties. Setting the title and language ensures consistency and meaningful metadata for the document.
+答： 的`SetTitle`和`SetLanguage`的方法`ITaggedContent`对象允许您设置影响结构元素属性的文档标题和语言。设置标题和语言可确保文档元数据的一致性和有意义。
 
-#### Q: How can I create and manipulate structural elements in a PDF document using Aspose.PDF for .NET?
+#### 问：如何使用 Aspose.PDF for .NET 创建和操作 PDF 文档中的结构元素？
 
-A: You can create and manipulate structural elements using Aspose.PDF for .NET by accessing the tagged content of the document. Create structural elements, such as `SectElement` and `HeaderElement`, and set properties like text, title, language, alternative text, expansion text, and actual text.
+答：您可以通过访问文档的标记内容，使用 Aspose.PDF for .NET 创建和操作结构元素。创建结构元素，例如`SectElement`和`HeaderElement`，并设置文本、标题、语言、替代文本、扩展文本和实际文本等属性。
 
-#### Q: Can I specify different properties for different structural elements in a PDF document?
+#### 问：我可以为 PDF 文档中的不同结构元素指定不同的属性吗？
 
-A: Yes, you can specify different properties for different structural elements in a PDF document. For example, you can set unique titles, languages, and accessibility properties for each structural element to provide comprehensive context for assistive technologies.
+答：是的，您可以为 PDF 文档中的不同结构元素指定不同的属性。例如，您可以为每个结构元素设置唯一的标题、语言和辅助功能属性，以为辅助技术提供全面的上下文。
 
-#### Q: What is the purpose of alternative text, expansion text, and actual text in structural elements?
+#### 问：结构元素中的替代文本、扩展文本和实际文本的目的是什么？
 
-A: Alternative text provides a descriptive alternative for images or non-text elements, aiding accessibility. Expansion text offers additional information when content is expanded. Actual text specifies the text equivalent of a visual element, enhancing text extraction and search capabilities.
+答：替代文本为图像或非文本元素提供了描述性替代方案，有助于辅助访问。扩展文本在内容扩展时提供附加信息。实际文本指定视觉元素的等效文本，从而增强文本提取和搜索功能。
 
-#### Q: How can I ensure that the structural element properties I set are properly reflected in the final PDF document?
+#### 问：如何确保我设置的结构元素属性正确反映在最终的 PDF 文档中？
 
-A: You can verify the structural element properties by examining the PDF document's properties and metadata. Additionally, you can use PDF viewers, accessibility tools, or text extraction to confirm that the set properties are accurately represented.
+答：您可以通过检查 PDF 文档的属性和元数据来验证结构元素属性。此外，您可以使用 PDF 查看器、辅助工具或文本提取来确认所设置的属性是否得到准确表示。
 
-#### Q: Are there any best practices to follow when working with structural element properties in a PDF document?
+#### 问：在 PDF 文档中使用结构元素属性时，是否有可遵循的最佳实践？
 
-A: When working with structural element properties, consider the needs of diverse users. Provide meaningful titles, accurate languages, and descriptive alternative text to ensure accessibility and an enhanced user experience.
+答：在处理结构元素属性时，请考虑不同用户的需求。提供有意义的标题、准确的语言和描述性替代文本，以确保可访问性和增强的用户体验。
 
-#### Q: Can I modify or update the properties of existing structural elements in a PDF document using Aspose.PDF for .NET?
+#### 问：我可以使用 Aspose.PDF for .NET 修改或更新 PDF 文档中现有结构元素的属性吗？
 
-A: Yes, you can modify or update the properties of existing structural elements using Aspose.PDF for .NET. Load the document, access the tagged content, navigate to the desired structural element, and use the available methods to update its properties.
+答：是的，您可以使用 Aspose.PDF for .NET 修改或更新现有结构元素的属性。加载文档，访问标记的内容，导航到所需的结构元素，并使用可用的方法更新其属性。
 
-#### Q: How can I use structural element properties to create information-rich PDF documents?
+#### 问：如何使用结构元素属性来创建信息丰富的 PDF 文档？
 
-A: By leveraging structural element properties, you can create information-rich PDF documents that offer enhanced accessibility and context. Use properties such as title, language, and alternative text to provide comprehensive details about document structure and content.
+答：通过利用结构元素属性，您可以创建信息丰富的 PDF 文档，从而提供增强的可访问性和上下文。使用标题、语言和替代文本等属性提供有关文档结构和内容的全面详细信息。

@@ -1,64 +1,64 @@
 ---
-title: Style Table Element
-linktitle: Style Table Element
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to format table element with Aspose.PDF for .NET. Step-by-step guide to customize styles and properties.
+title: 样式表元素
+linktitle: 样式表元素
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 设置表格元素的格式。自定义样式和属性的分步指南。
 type: docs
 weight: 170
 url: /zh/net/programming-with-tagged-pdf/style-table-element/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step to format the array element using Aspose.PDF for .NET. Follow the instructions below to understand how to customize the styles and properties of the array element.
+在这个详细的教程中，我们将引导您逐步完成所提供的 C# 源代码，以使用 Aspose.PDF for .NET 格式化数组元素。请按照以下说明了解如何自定义数组元素的样式和属性。
 
-## Step 1: Setting up the environment
+## 第一步：搭建环境
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+在开始之前，请确保您已将开发环境配置为使用 Aspose.PDF for .NET。这包括安装 Aspose.PDF 库并配置您的项目以引用它。
 
-## Step 2: Creating a document
+## 第 2 步：创建文档
 
-In this step, we will create a new document object Aspose.PDF.
+在这一步中，我们将创建一个新的文档对象Aspose.PDF。
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Document creation
+//文档创建
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example of table formatting");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We have created a new document and set the document title and language.
+我们创建了一个新文档并设置了文档标题和语言。
 
-## Step 3: Obtaining the root structure element
+## 第三步：获取根结构元素
 
-In this step we will get the root structure element for our document.
+在此步骤中，我们将获取文档的根结构元素。
 
 ```csharp
-// Obtain the root structure element
+//获取根结构元素
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We got the root structure element which will serve as a container for the array element.
+我们得到了根结构元素，它将用作数组元素的容器。
 
-## Step 4: Creating the array structure element
+## 第四步：创建数组结构元素
 
-Now let's create a new table structure element for our document.
+现在让我们为文档创建一个新的表结构元素。
 
 ```csharp
-// Create the array structure element
+//创建数组结构元素
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 ```
 
-We have created a new array structure element and added it to the root structure element.
+我们创建了一个新的数组结构元素并将其添加到根结构元素中。
 
-## Step 5: Customizing Array Element Styles and Properties
+## 第 5 步：自定义数组元素样式和属性
 
-In this step, we will customize the styles and properties of the array element.
+在此步骤中，我们将自定义数组元素的样式和属性。
 
 ```csharp
-// Customize the styles and properties of the array element
+//自定义数组元素的样式和属性
 tableElement.BackgroundColor = Color.Beige;
 tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
 tableElement. Alignment = HorizontalAlignment. Center;
@@ -77,30 +77,30 @@ tableElement. Top = 40F;
 tableElement.RepeatingColumnsCount = 2;
 tableElement.RepeatingRowsCount = 3;
 
-// Customize the style of repeated lines
+//自定义重复线的样式
 TextState rowStyle = new TextState();
 rowStyle.BackgroundColor = Color.LightCoral;
 tableElement.RepeatingRowsStyle = rowStyle;
 ```
 
-We used various properties to customize the table element, such as background color, borders, alignment, default cell style, margins, column width, etc.
+我们使用各种属性来自定义表格元素，例如背景颜色、边框、对齐方式、默认单元格样式、边距、列宽等。
 
-## Step 6: Add table headers, body and footer
+## 第 6 步：添加表头、正文和页脚
 
-Now let's add the table headers, body and footer to the table element.
+现在让我们将表头、正文和页脚添加到表元素中。
 ```csharp
-// Add table headers
+//添加表格标题
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
 
-// Number of rows and columns in the table
+//表中的行数和列数
 int rowCount = 10;
 int colCount = 5;
 int rowIndex;
 int colIndex;
 
-// Create the table header row
+//创建表标题行
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Header Row";
 
@@ -110,7 +110,7 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
      theElement.SetText(string.Format("Header {0}", colIndex));
 }
 
-// Add the rows of the table body
+//添加表体的行
 for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 {
      TableTRElement trElement = tableTBodyElement.CreateTR();
@@ -123,7 +123,7 @@ for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
      }
 }
 
-// Add the footing line of the table
+//添加表格的底脚线
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Footline";
 
@@ -134,49 +134,49 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-We added the headers, body rows, and footer row to the table using the corresponding elements.
+我们使用相应的元素将标题行、正文行和页脚行添加到表中。
 
-## Step 7: Saving the tagged PDF document
+## 步骤 7：保存标记的 PDF 文档
 
-Now that we've created our document with the styled table element, we'll save it as a tagged PDF document.
+现在我们已经使用样式表元素创建了文档，我们将其保存为带标签的 PDF 文档。
 
 ```csharp
-// Save the tagged PDF document
+//保存标记的 PDF 文档
 document.Save(dataDir + "StyleTableElement.pdf");
 ```
 
-We saved the tagged PDF document in the specified directory.
+我们将标记的PDF文档保存在指定的目录中。
 
-## Step 8: PDF/UA compliance validation
+## 第 8 步：PDF/UA 合规性验证
 
-Next, we will validate the PDF/UA conformity of our document.
+接下来，我们将验证文档的 PDF/UA 一致性。
 
 ```csharp
-// PDF/UA compliance check
+//PDF/UA 合规性检查
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-We uploaded the tagged PDF document and validated its PDF/UA compliance by generating an XML report.
+我们上传了带标签的 PDF 文档，并通过生成 XML 报告来验证其 PDF/UA 合规性。
 
-### Sample source code for Style Table Element using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 的样式表元素示例源代码 
 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create document
+//创建文档
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table style");
 taggedContent.SetLanguage("en-US");
 
-// Get root structure element
+//获取根结构元素
 StructureElement rootElement = taggedContent.RootElement;
 
-// Create table structure element
+//创建表结构元素
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 tableElement.BackgroundColor = Color.Beige;
@@ -231,62 +231,62 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 	tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
 
-// Save Tagged Pdf Document
+//保存标记的 PDF 文档
 document.Save(dataDir + "StyleTableElement.pdf");
 
-// Checking PDF/UA compliance
+//检查 PDF/UA 合规性
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we learned how to format the array element with Aspose.PDF for .NET. We customized the styles and properties of the table element, added headers, body rows, and a footer, saved the tagged PDF document, and validated its PDF/UA compliance.
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 格式化数组元素。我们定制了表格元素的样式和属性，添加了页眉、正文行和页脚，保存了标记的 PDF 文档，并验证了其 PDF/UA 合规性。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of this tutorial on formatting the array element using Aspose.PDF for .NET?
+#### 问：本教程使用 Aspose.PDF for .NET 格式化数组元素的目的是什么？
 
-A: The goal of this tutorial is to guide you through the process of formatting the array element in a PDF document using Aspose.PDF for .NET. It provides step-by-step instructions and C# source code examples to help you customize the styles and properties of the array element.
+答：本教程的目标是指导您完成使用 Aspose.PDF for .NET 在 PDF 文档中格式化数组元素的过程。它提供分步说明和 C# 源代码示例，帮助您自定义数组元素的样式和属性。
 
-#### Q: What are the prerequisites for following this tutorial?
+#### 问：学习本教程的先决条件是什么？
 
-A: Before you start, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+答：开始之前，请确保您已设置开发环境以使用 Aspose.PDF for .NET。这涉及安装 Aspose.PDF 库并配置您的项目以引用它。
 
-#### Q: How can I create a new PDF document and set its title and language using Aspose.PDF for .NET?
+#### 问：如何使用 Aspose.PDF for .NET 创建新的 PDF 文档并设置其标题和语言？
 
-A: To create a new PDF document, you need to create a `Document` object from the Aspose.PDF library. The tutorial's provided C# source code demonstrates how to create a document and set its title and language properties.
+答：要创建一个新的 PDF 文档，您需要创建一个`Document`来自 Aspose.PDF 库的对象。本教程提供的 C# 源代码演示了如何创建文档并设置其标题和语言属性。
 
-#### Q: What is the significance of the root structure element in a PDF document?
+#### 问：PDF 文档中的根结构元素有何意义？
 
-A: The root structure element acts as a container for other structure elements, helping to organize and categorize the content of the PDF document. It plays a crucial role in establishing the logical structure of the document.
+答：根结构元素充当其他结构元素的容器，有助于组织和分类 PDF 文档的内容。它在建立文档的逻辑结构方面起着至关重要的作用。
 
-#### Q: How do I create and customize an array structure element using Aspose.PDF for .NET?
+#### 问：如何使用 Aspose.PDF for .NET 创建和自定义数组结构元素？
 
-A: You can create an array structure element using the `CreateTableElement()` method. The tutorial's source code provides examples of customizing various properties of the table element, such as background color, borders, alignment, column width, and more.
+答：您可以使用以下命令创建数组结构元素`CreateTableElement()`方法。本教程的源代码提供了自定义表格元素的各种属性的示例，例如背景颜色、边框、对齐方式、列宽度等。
 
-#### Q: Can I customize the styles and properties of table cells within the array element?
+#### 问：我可以自定义数组元素中表格单元格的样式和属性吗？
 
-A: Yes, the tutorial covers how to customize the styles and properties of the entire table element, including headers, body rows, and footer. However, it doesn't specifically address customizing individual table cells.
+答：是的，教程涵盖了如何自定义整个表格元素的样式和属性，包括页眉、正文行和页脚。但是，它并没有专门解决自定义单个表格单元格的问题。
 
-#### Q: How can I add headers, body rows, and a footer to the table element?
+#### 问：如何向表格元素添加页眉、正文行和页脚？
 
-A: The tutorial explains how to create and add headers, body rows, and a footer to the table element using the appropriate methods provided by Aspose.PDF for .NET.
+答：本教程介绍了如何使用 Aspose.PDF for .NET 提供的适当方法创建页眉、正文行和页脚并将其添加到表格元素。
 
-#### Q: What is PDF/UA compliance, and how can I validate it for my tagged PDF document?
+#### 问：什么是 PDF/UA 合规性？如何验证我的已标记 PDF 文档的合规性？
 
-A: PDF/UA compliance ensures that the PDF document conforms to accessibility standards, making it more accessible to users with disabilities. The tutorial demonstrates how to validate PDF/UA conformity using the `Validate()` method and generate an XML compliance report.
+答：PDF/UA 合规性可确保 PDF 文档符合辅助功能标准，从而更方便残障用户使用。本教程演示了如何使用以下方法验证 PDF/UA 一致性`Validate()`方法并生成 XML 合规性报告。
 
-#### Q: How can I incorporate these concepts into my own .NET applications?
+#### 问：如何将这些概念融入到我自己的 .NET 应用程序中？
 
-A: You can use the provided C# source code examples as a guide to implementing array element formatting in your own .NET applications. Modify and adapt the code to match your requirements and integrate it into your projects.
+答：您可以使用提供的 C# 源代码示例作为在您自己的 .NET 应用程序中实现数组元素格式设置的指南。修改和调整代码以满足您的要求并将其集成到您的项目中。
 
-#### Q: Are there any recommended best practices for formatting array elements in PDF documents?
+#### 问：对于格式化 PDF 文档中的数组元素，是否有任何推荐的最佳实践？
 
-A: When formatting array elements (tables), consider the readability and accessibility of the content. Use clear and legible fonts, appropriate colors, and maintain a consistent layout. Validate PDF/UA compliance to ensure accessibility standards are met.
+A：在格式化数组元素（表格）时，要考虑内容的可读性和可访问性。使用清晰易读的字体、适当的颜色并保持一致的布局。验证 PDF/UA 合规性以确保满足辅助功能标准。
 
-#### Q: What other features of Aspose.PDF for .NET can I explore for PDF document customization?
+#### 问：我可以探索 Aspose.PDF for .NET 的哪些其他功能来自定义 PDF 文档？
 
-A: Aspose.PDF for .NET offers a range of features for PDF document customization, including text manipulation, image insertion, form field management, digital signatures, annotations, and more. Consult the official documentation and resources to explore additional functionalities.
+答：Aspose.PDF for .NET 提供了一系列用于 PDF 文档自定义的功能，包括文本操作、图像插入、表单字段管理、数字签名、注释等。请查阅官方文档和资源以探索其他功能。

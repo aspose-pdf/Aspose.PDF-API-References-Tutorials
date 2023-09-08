@@ -1,93 +1,93 @@
 ---
-title: Embed Fonts In PDF File With Subset Strategy
-linktitle: Embed Fonts With Subset Strategy
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to embed fonts in a PDF file with Subset Strategy using Aspose.PDF for .NET. Optimize your PDF size by embedding only necessary characters.
+title: تضمين الخطوط في ملف PDF باستخدام استراتيجية المجموعة الفرعية
+linktitle: تضمين الخطوط مع استراتيجية المجموعة الفرعية
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تضمين الخطوط في ملف PDF باستخدام استراتيجية المجموعة الفرعية باستخدام Aspose.PDF لـ .NET. قم بتحسين حجم ملف PDF الخاص بك عن طريق تضمين الأحرف الضرورية فقط.
 type: docs
 weight: 130
 url: /ar/net/programming-with-document/embedfontsusingsubsetstrategy/
 ---
-In this tutorial, we will discuss how to embed fonts in a PDF file with a subset strategy using Aspose.PDF for .NET. Aspose.PDF for .NET is a powerful library that allows developers to create, edit, and manipulate PDF documents programmatically. Embedding fonts in a PDF file is an important step to ensure that the document is displayed correctly on different devices, regardless of whether the required fonts are installed on those devices or not.
+في هذا البرنامج التعليمي، سنناقش كيفية تضمين الخطوط في ملف PDF باستخدام استراتيجية مجموعة فرعية باستخدام Aspose.PDF لـ .NET. Aspose.PDF for .NET هي مكتبة قوية تتيح للمطورين إنشاء مستندات PDF وتحريرها ومعالجتها برمجيًا. يعد تضمين الخطوط في ملف PDF خطوة مهمة لضمان عرض المستند بشكل صحيح على أجهزة مختلفة، بغض النظر عما إذا كانت الخطوط المطلوبة مثبتة على تلك الأجهزة أم لا.
 
-## Step 1: Create a new C# Console Application
-To get started, create a new C# Console Application in Visual Studio. You can name it whatever you like. Once the project is created, you need to add a reference to the Aspose.PDF for .NET library.
+## الخطوة 1: إنشاء تطبيق وحدة تحكم C# جديد
+للبدء، قم بإنشاء تطبيق C# Console جديد في Visual Studio. يمكنك تسميتها ما تريد. بمجرد إنشاء المشروع، تحتاج إلى إضافة مرجع إلى مكتبة Aspose.PDF لـ .NET.
 
-## Step 2: Import the Aspose.PDF Namespace
-Add the following line of code at the top of your C# file to import the Aspose.PDF namespace:
+## الخطوة 2: استيراد مساحة الاسم Aspose.PDF
+أضف السطر التالي من التعليمات البرمجية في أعلى ملف C# الخاص بك لاستيراد مساحة الاسم Aspose.PDF:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Load an Existing PDF File
-To embed fonts in an existing PDF file, you need to load that file using the Document class. The following code demonstrates how to load an existing PDF file:
+## الخطوة 3: تحميل ملف PDF موجود
+لتضمين الخطوط في ملف PDF موجود، تحتاج إلى تحميل هذا الملف باستخدام فئة المستند. يوضح التعليمة البرمجية التالية كيفية تحميل ملف PDF موجود:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load an existing PDF file
+// قم بتحميل ملف PDF موجود
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 4: Embed Fonts with Subset Strategy
-Aspose.PDF for .NET provides two strategies for font embedding: SubsetAllFonts and SubsetEmbeddedFontsOnly.
+## الخطوة 4: تضمين الخطوط مع استراتيجية المجموعة الفرعية
+يوفر Aspose.PDF for .NET استراتيجيتين لتضمين الخطوط: SubsetAllFonts وSubsetEmbeddedFontsOnly.
 
-The SubsetAllFonts strategy will embed all fonts in the document as a subset. A subset is a portion of the font that contains only the characters used in the document. This strategy is useful for reducing the file size of the PDF document.
+ستقوم استراتيجية SubsetAllFonts بتضمين كافة الخطوط في المستند كمجموعة فرعية. المجموعة الفرعية هي جزء من الخط الذي يحتوي فقط على الأحرف المستخدمة في المستند. هذه الإستراتيجية مفيدة لتقليل حجم ملف مستند PDF.
 
-The SubsetEmbeddedFontsOnly strategy will embed only the subset of fonts that are already embedded in the document. If a font is not embedded, it will not be affected by this strategy.
+ستقوم استراتيجية SubsetEmbeddedFontsOnly بتضمين المجموعة الفرعية من الخطوط المضمنة بالفعل في المستند فقط. إذا لم يتم تضمين الخط، فلن يتأثر بهذه الإستراتيجية.
 
-The following code demonstrates how to embed fonts in a PDF file with a subset strategy:
+يوضح التعليمة البرمجية التالية كيفية تضمين الخطوط في ملف PDF باستخدام استراتيجية مجموعة فرعية:
 
 ```csharp
-// All fonts will be embedded as subset into document in case of SubsetAllFonts.
+// سيتم تضمين جميع الخطوط كمجموعة فرعية في المستند في حالة SubsetAllFonts.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
 
-// Font subset will be embedded for fully embedded fonts but fonts which are not embedded into document will not be affected.
+// سيتم تضمين مجموعة الخطوط الفرعية للخطوط المضمنة بالكامل ولكن الخطوط غير المضمنة في المستند لن تتأثر.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
 ```
 
-## Step 5: Save the PDF Document
-Once you have embedded all the fonts in the PDF file with a subset strategy, you need to save the document. The following code demonstrates how to save the PDF file:
+## الخطوة 5: احفظ مستند PDF
+بمجرد قيامك بتضمين جميع الخطوط في ملف PDF باستخدام إستراتيجية مجموعة فرعية، فإنك تحتاج إلى حفظ المستند. الكود التالي يوضح كيفية حفظ ملف PDF:
 
 ```csharp
 doc.Save(dataDir + "Output_out.pdf");
 ```
 
-### Example source code for embeding fonts with subset strategy using Aspose.PDF for .NET. 
+### مثال على التعليمات البرمجية المصدر لتضمين الخطوط مع استراتيجية المجموعة الفرعية باستخدام Aspose.PDF لـ .NET. 
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
-// All fonts will be embedded as subset into document in case of SubsetAllFonts.
+// سيتم تضمين جميع الخطوط كمجموعة فرعية في المستند في حالة SubsetAllFonts.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-// Font subset will be embedded for fully embedded fonts but fonts which are not embedded into document will not be affected.
+// سيتم تضمين مجموعة الخطوط الفرعية للخطوط المضمنة بالكامل ولكن الخطوط غير المضمنة في المستند لن تتأثر.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
 doc.Save(dataDir + "Output_out.pdf");
 ```
 
-## Conclusion
-In this article, we have discussed how to embed fonts in a PDF file with a subset strategy using Aspose.PDF for .NET. Aspose.PDF for .NET provides a simple and easy-to-use API to work with PDF documents, including adding and embedding fonts with different strategies. Embedding fonts in a PDF file is an important step to ensure that the document is displayed correctly on different devices, and the subset strategy is a useful feature to reduce the file size of the PDF document.
+## خاتمة
+في هذه المقالة، ناقشنا كيفية تضمين الخطوط في ملف PDF باستخدام إستراتيجية مجموعة فرعية باستخدام Aspose.PDF لـ .NET. يوفر Aspose.PDF for .NET واجهة برمجة تطبيقات بسيطة وسهلة الاستخدام للعمل مع مستندات PDF، بما في ذلك إضافة الخطوط وتضمينها باستراتيجيات مختلفة. يعد تضمين الخطوط في ملف PDF خطوة مهمة لضمان عرض المستند بشكل صحيح على أجهزة مختلفة، كما تعد استراتيجية المجموعة الفرعية ميزة مفيدة لتقليل حجم ملف مستند PDF.
 
-### FAQ's for embed fonts in PDF file with subset strategy
+### الأسئلة الشائعة حول تضمين الخطوط في ملف PDF باستخدام إستراتيجية المجموعة الفرعية
 
-#### Q: What is a subset strategy for font embedding in a PDF file?
+#### س: ما هي استراتيجية المجموعة الفرعية لتضمين الخط في ملف PDF؟
 
-A: A subset strategy for font embedding in a PDF file means that only a portion of the font containing the characters used in the document will be embedded. This helps reduce the file size of the PDF document by eliminating unnecessary font data.
+ج: تعني استراتيجية المجموعة الفرعية لتضمين الخط في ملف PDF أنه سيتم تضمين جزء فقط من الخط الذي يحتوي على الأحرف المستخدمة في المستند. يساعد هذا في تقليل حجم ملف مستند PDF عن طريق إزالة بيانات الخط غير الضرورية.
 
-#### Q: What is the difference between SubsetAllFonts and SubsetEmbeddedFontsOnly strategies?
+#### س: ما هو الفرق بين استراتيجيات SubsetAllFonts وSubsetEmbeddedFontsOnly؟
 
-A: The `SubsetAllFonts` strategy will embed all fonts in the document as a subset, while the `SubsetEmbeddedFontsOnly` strategy will only embed the subset of fonts that are already embedded in the document. The latter strategy will not affect fonts that are not already embedded.
+ ج: ال`SubsetAllFonts`ستقوم الإستراتيجية بتضمين كافة الخطوط في المستند كمجموعة فرعية، في حين أن`SubsetEmbeddedFontsOnly` ستقوم الإستراتيجية فقط بتضمين المجموعة الفرعية من الخطوط المضمنة بالفعل في المستند. لن تؤثر الإستراتيجية الأخيرة على الخطوط غير المضمنة بالفعل.
 
-#### Q: Why is font embedding with a subset strategy important?
+#### س: ما سبب أهمية تضمين الخط مع إستراتيجية مجموعة فرعية؟
 
-A: Font embedding with a subset strategy is important to ensure that the PDF file contains the necessary font data for displaying text correctly, while also keeping the file size smaller by including only the characters used in the document.
+ج: يعد تضمين الخط باستخدام إستراتيجية مجموعة فرعية أمرًا مهمًا للتأكد من أن ملف PDF يحتوي على بيانات الخط اللازمة لعرض النص بشكل صحيح، مع الحفاظ أيضًا على حجم الملف أصغر من خلال تضمين الأحرف المستخدمة في المستند فقط.
 
-#### Q: Can I use Aspose.PDF for .NET to embed fonts with different strategies?
+#### س: هل يمكنني استخدام Aspose.PDF لـ .NET لتضمين الخطوط باستراتيجيات مختلفة؟
 
-A: Yes, Aspose.PDF for .NET provides various strategies for font embedding, including `SubsetAllFonts` and `SubsetEmbeddedFontsOnly`. You can choose the appropriate strategy based on your requirements.
+ ج: نعم، يوفر Aspose.PDF for .NET إستراتيجيات متنوعة لتضمين الخطوط، بما في ذلك`SubsetAllFonts` و`SubsetEmbeddedFontsOnly`. يمكنك اختيار الإستراتيجية المناسبة بناءً على متطلباتك.
 
-#### Q: Is Aspose.PDF for .NET a reliable library for working with PDF documents?
+#### س: هل يعد Aspose.PDF for .NET مكتبة موثوقة للعمل مع مستندات PDF؟
 
-A: Yes, Aspose.PDF for .NET is a reliable and powerful library for working with PDF documents. It provides extensive features for creating, editing, and manipulating PDF files in .NET applications.
+ج: نعم، Aspose.PDF for .NET هي مكتبة موثوقة وقوية للتعامل مع مستندات PDF. فهو يوفر ميزات شاملة لإنشاء ملفات PDF وتحريرها ومعالجتها في تطبيقات .NET.

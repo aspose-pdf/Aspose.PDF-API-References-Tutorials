@@ -1,28 +1,28 @@
 ---
-title: Create Note Structure Element
-linktitle: Create Note Structure Element
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to create structured note items in a PDF document using Aspose.PDF for .NET.
+title: Notizstrukturelement erstellen
+linktitle: Notizstrukturelement erstellen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Schritt-für-Schritt-Anleitung zum Erstellen strukturierter Notizelemente in einem PDF-Dokument mit Aspose.PDF für .NET.
 type: docs
 weight: 30
 url: /de/net/programming-with-tagged-pdf/create-note-structure-element/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to create a note structure element in a PDF document using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. Using the marked content structure features of Aspose.PDF, you can add structured notes to your PDF document.
+In diesem Tutorial stellen wir Ihnen eine Schritt-für-Schritt-Anleitung zur Verfügung, wie Sie mit Aspose.PDF für .NET ein Notizstrukturelement in einem PDF-Dokument erstellen. Aspose.PDF ist eine leistungsstarke Bibliothek, mit der Sie PDF-Dokumente programmgesteuert erstellen, bearbeiten und konvertieren können. Mithilfe der markierten Inhaltsstrukturfunktionen von Aspose.PDF können Sie strukturierte Notizen zu Ihrem PDF-Dokument hinzufügen.
 
-## Prerequisites
+## Voraussetzungen
 
-Before you begin, make sure you have the following prerequisites in place:
+Bevor Sie beginnen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. Visual Studio mit .NET Framework installiert.
+2. Die Aspose.PDF-Bibliothek für .NET.
 
-## Step 1: Project Setup
+## Schritt 1: Projekteinrichtung
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+Erstellen Sie zunächst ein neues Projekt in Visual Studio und fügen Sie einen Verweis auf die Aspose.PDF für .NET-Bibliothek hinzu. Sie können die Bibliothek von der offiziellen Website von Aspose herunterladen und auf Ihrem Computer installieren.
 
-## Step 2: Import the necessary namespaces
+## Schritt 2: Importieren Sie die erforderlichen Namespaces
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+Importieren Sie in Ihre C#-Codedatei die Namespaces, die für den Zugriff auf die von Aspose.PDF bereitgestellten Klassen und Methoden erforderlich sind:
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Step 3: Creating the PDF Document and Note Structured Elements
+## Schritt 3: Erstellen des PDF-Dokuments und der strukturierten Notizelemente
 
-Use the following code to create a PDF document and add note structured elements:
+Verwenden Sie den folgenden Code, um ein PDF-Dokument zu erstellen und Notizstrukturelemente hinzuzufügen:
 
 ```csharp
 string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
@@ -62,102 +62,102 @@ note3.SetText("Note with ID = 'note_003'.");
 note3.SetId("note_003");
 ```
 
-This code creates an empty PDF document and adds structured note elements to a paragraph. Each note is created using the methods provided by Aspose.PDF.
+Dieser Code erstellt ein leeres PDF-Dokument und fügt einem Absatz strukturierte Notizelemente hinzu. Jede Notiz wird mit den von Aspose.PDF bereitgestellten Methoden erstellt.
 
-## Step 4: Saving the PDF Document
+## Schritt 4: Speichern des PDF-Dokuments
 
-Use the following code to save the PDF document:
+Verwenden Sie den folgenden Code, um das PDF-Dokument zu speichern:
 
 ```csharp
 document. Save(outFile);
 ```
 
-This code saves the PDF document with the note structured elements to a specified file.
+Dieser Code speichert das PDF-Dokument mit den Notizstrukturelementen in einer angegebenen Datei.
 
-### Sample source code for Create Note Structure Element using Aspose.PDF for .NET 
+### Beispielquellcode zum Erstellen eines Notizstrukturelements mit Aspose.PDF für .NET 
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "45929_doc.pdf";
 string logFile = dataDir + "45929_log.xml";
-// Create Pdf Document
+// Erstellen Sie ein PDF-Dokument
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Sample of Note Elements");
 taggedContent.SetLanguage("en-US");
-// Add Paragraph Element
+// Absatzelement hinzufügen
 ParagraphElement paragraph = taggedContent.CreateParagraphElement();
 taggedContent.RootElement.AppendChild(paragraph);
-// Add NoteElement
+// NoteElement hinzufügen
 NoteElement note1 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note1);
 note1.SetText("Note with auto generate ID. ");
-// Add NoteElement
+// NoteElement hinzufügen
 NoteElement note2 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note2);
 note2.SetText("Note with ID = 'note_002'. ");
 note2.SetId("note_002");
-// Add NoteElement
+// NoteElement hinzufügen
 NoteElement note3 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
-// Must throw exception - Aspose.Pdf.Tagged.TaggedException : Structure element with ID='note_002' already exists
+// Muss eine Ausnahme auslösen – Aspose.Pdf.Tagged.TaggedException: Strukturelement mit ID='note_002' existiert bereits
 //note3.SetId("note_002");
-// Resultant document does not compliance to PDF/UA If ClearId() used for Note Structure Element
+// Das resultierende Dokument entspricht nicht PDF/UA, wenn ClearId() für das Notizstrukturelement verwendet wird
 //note3.ClearId();
-// Save Tagged Pdf Document
+// Markiertes PDF-Dokument speichern
 document.Save(outFile);
-// Checking PDF/UA compliance
+// Überprüfung der PDF/UA-Konformität
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, you learned how to create note structure elements in a PDF document using Aspose.PDF for .NET. Structured note elements allow you to add additional, structured information to your PDF document.
+In diesem Tutorial haben Sie gelernt, wie Sie mit Aspose.PDF für .NET Notizstrukturelemente in einem PDF-Dokument erstellen. Mit strukturierten Notizelementen können Sie Ihrem PDF-Dokument zusätzliche, strukturierte Informationen hinzufügen.
 
-### FAQ's
+### FAQs
 
-#### Q: What is the purpose of creating note structure elements in a PDF document using Aspose.PDF for .NET?
+#### F: Was ist der Zweck der Erstellung von Notizstrukturelementen in einem PDF-Dokument mit Aspose.PDF für .NET?
 
-A: Creating note structure elements in a PDF document using Aspose.PDF for .NET allows you to add structured notes to the document's content. These notes can provide additional context, explanations, or references to specific parts of the content.
+A: Durch das Erstellen von Notizstrukturelementen in einem PDF-Dokument mit Aspose.PDF für .NET können Sie strukturierte Notizen zum Inhalt des Dokuments hinzufügen. Diese Notizen können zusätzlichen Kontext, Erklärungen oder Verweise auf bestimmte Teile des Inhalts bereitstellen.
 
-#### Q: How does the Aspose.PDF library assist in creating note structure elements in a PDF document?
+#### F: Wie unterstützt die Aspose.PDF-Bibliothek die Erstellung von Notizstrukturelementen in einem PDF-Dokument?
 
-A: Aspose.PDF for .NET is a powerful library that provides functionalities for creating, manipulating, and converting PDF documents programmatically. In this tutorial, the library's marked content structure features are used to create structured note elements within the PDF document's content.
+A: Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die Funktionen zum programmgesteuerten Erstellen, Bearbeiten und Konvertieren von PDF-Dokumenten bietet. In diesem Tutorial werden die markierten Inhaltsstrukturfunktionen der Bibliothek verwendet, um strukturierte Notizelemente innerhalb des Inhalts des PDF-Dokuments zu erstellen.
 
-#### Q: What are the prerequisites for creating note structure elements in a PDF document using Aspose.PDF for .NET?
+#### F: Was sind die Voraussetzungen für die Erstellung von Notizstrukturelementen in einem PDF-Dokument mit Aspose.PDF für .NET?
 
-A: Before you begin, ensure that you have Visual Studio installed with the .NET framework and have the Aspose.PDF library for .NET referenced in your project.
+A: Bevor Sie beginnen, stellen Sie sicher, dass Visual Studio mit dem .NET Framework installiert ist und dass in Ihrem Projekt auf die Aspose.PDF-Bibliothek für .NET verwiesen wird.
 
-#### Q: How does the provided C# code create note structure elements in the PDF document's content?
+#### F: Wie erstellt der bereitgestellte C#-Code Notizstrukturelemente im Inhalt des PDF-Dokuments?
 
-A: The code demonstrates how to create a PDF document, define note structured elements, and add them to a paragraph. Each note is created using methods provided by Aspose.PDF, allowing you to incorporate structured notes into the content.
+A: Der Code zeigt, wie man ein PDF-Dokument erstellt, strukturierte Notizelemente definiert und sie einem Absatz hinzufügt. Jede Notiz wird mit den von Aspose.PDF bereitgestellten Methoden erstellt, sodass Sie strukturierte Notizen in den Inhalt integrieren können.
 
-#### Q: Can I customize the content and properties of the note structure elements I create?
+#### F: Kann ich den Inhalt und die Eigenschaften der von mir erstellten Notizstrukturelemente anpassen?
 
-A: Yes, you can customize the content and properties of note structure elements by using the methods and properties provided by the Aspose.PDF library. The code showcases how to set the text and ID of note elements, but you can further customize them as needed.
+A: Ja, Sie können den Inhalt und die Eigenschaften von Notizstrukturelementen anpassen, indem Sie die Methoden und Eigenschaften verwenden, die von der Aspose.PDF-Bibliothek bereitgestellt werden. Der Code zeigt, wie Sie den Text und die ID von Notizelementen festlegen. Sie können diese jedoch nach Bedarf weiter anpassen.
 
-#### Q: How is the hierarchical relationship established between the note structure elements and the document's content?
+#### F: Wie wird die hierarchische Beziehung zwischen den Notizstrukturelementen und dem Inhalt des Dokuments hergestellt?
 
-A: The hierarchical relationship is established by adding note structure elements as children of other structured elements, such as paragraphs. In the code, note elements are appended to a paragraph element using the `AppendChild` method.
+ A: Die hierarchische Beziehung wird durch das Hinzufügen von Notizstrukturelementen als untergeordnete Elemente anderer strukturierter Elemente, z. B. Absätze, hergestellt. Im Code werden Notizelemente mithilfe von an ein Absatzelement angehängt`AppendChild` Methode.
 
-#### Q: Can I assign unique IDs to note structure elements?
+#### F: Kann ich Notizstrukturelementen eindeutige IDs zuweisen?
 
-A: Yes, you can assign unique IDs to note structure elements using the `SetId` method. The code demonstrates how to set the IDs of note elements to unique values.
+A: Ja, Sie können Notizstrukturelementen mithilfe von eindeutige IDs zuweisen`SetId` Methode. Der Code zeigt, wie die IDs von Notizelementen auf eindeutige Werte festgelegt werden.
 
-#### Q: What happens if I attempt to assign a duplicate ID to a note structure element?
+#### F: Was passiert, wenn ich versuche, einem Notizstrukturelement eine doppelte ID zuzuweisen?
 
-A: Attempting to assign a duplicate ID to a note structure element will result in an exception. The code provided in the tutorial includes a comment illustrating this scenario.
+A: Der Versuch, einem Notizstrukturelement eine doppelte ID zuzuweisen, führt zu einer Ausnahme. Der im Tutorial bereitgestellte Code enthält einen Kommentar, der dieses Szenario veranschaulicht.
 
-#### Q: How can I ensure PDF/UA compliance when creating note structure elements?
+#### F: Wie kann ich beim Erstellen von Notizstrukturelementen die PDF/UA-Konformität sicherstellen?
 
-A: The code provided in the tutorial demonstrates how to validate PDF/UA compliance using the `Validate` method. By validating the document against the PDF/UA standard, you can ensure that the added note structure elements adhere to accessibility guidelines.
+ A: Der im Tutorial bereitgestellte Code zeigt, wie die PDF/UA-Konformität mithilfe von validiert wird`Validate` Methode. Durch die Validierung des Dokuments anhand des PDF/UA-Standards können Sie sicherstellen, dass die hinzugefügten Notizstrukturelemente den Barrierefreiheitsrichtlinien entsprechen.
 
-#### Q: Can I use this approach to add note structure elements to an existing PDF document?
+#### F: Kann ich mit diesem Ansatz Notizstrukturelemente zu einem vorhandenen PDF-Dokument hinzufügen?
 
-A: Yes, you can modify the provided approach to add note structure elements to an existing PDF document. Instead of creating a new document, you would load the existing document using Aspose.PDF and then follow similar steps to append note elements.
+A: Ja, Sie können den bereitgestellten Ansatz ändern, um Notizstrukturelemente zu einem vorhandenen PDF-Dokument hinzuzufügen. Anstatt ein neues Dokument zu erstellen, würden Sie das vorhandene Dokument mit Aspose.PDF laden und dann ähnliche Schritte ausführen, um Notizelemente anzuhängen.

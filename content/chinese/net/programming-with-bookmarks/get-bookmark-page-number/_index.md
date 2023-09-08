@@ -1,57 +1,57 @@
 ---
-title: Get Bookmark Page Number In PDF File
-linktitle: Get Bookmark Page Number In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get bookmark page number in PDF file with Aspose.PDF for .NET.
+title: 获取 PDF 文件中的书签页码
+linktitle: 获取 PDF 文件中的书签页码
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 轻松获取 PDF 文件中的书签页码。
 type: docs
 weight: 60
 url: /zh/net/programming-with-bookmarks/get-bookmark-page-number/
 ---
-Retrieving page numbers associated with bookmarks in PDF file can be useful for navigation. With Aspose.PDF for .NET, you can easily get the page number of bookmarks by following the following source code:
+检索与 PDF 文件中的书签关联的页码对于导航非常有用。使用Aspose.PDF for .NET，您可以通过以下源代码轻松获取书签的页码：
 
-## Step 1: Import required libraries
+## 第1步：导入所需的库
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+在开始之前，您需要为 C# 项目导入必要的库。这是必要的导入指令：
 
 ```csharp
 using Aspose.Pdf.Facades;
 ```
 
-## Step 2: Set path to documents folder
+## 步骤 2：设置文档文件夹路径
 
-In this step, you need to specify the path to the folder containing the PDF file you want to extract the bookmark page numbers from. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+在此步骤中，您需要指定包含要从中提取书签页码的 PDF 文件的文件夹的路径。代替`"YOUR DOCUMENT DIRECTORY"`在以下代码中使用文档文件夹的实际路径：
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Create the bookmark editor
+## 第三步：创建书签编辑器
 
-Now we will create a `PdfBookmarkEditor` object to manipulate the bookmarks of the document. Use the following code:
+现在我们将创建一个`PdfBookmarkEditor`对象来操作文档的书签。使用以下代码：
 
 ```csharp
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
 ```
 
-## Step 4: Open the PDF File
+## 第 4 步：打开 PDF 文件
 
-In this step, we open the PDF file using the `BindPdf` method of the bookmark editor. Here is the corresponding code:
+在此步骤中，我们使用以下命令打开 PDF 文件`BindPdf`书签编辑器的方法。这是相应的代码：
 
 ```csharp
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
 ```
 
-## Step 5: Extract bookmarks
+## 第5步：提取书签
 
-Now we will extract the bookmarks from the document using the `ExtractBookmarks` method of the bookmark editor. Here is the corresponding code:
+现在我们将使用以下命令从文档中提取书签`ExtractBookmarks`书签编辑器的方法。这是相应的代码：
 
 ```csharp
 Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 ```
 
-## Step 6: Browse bookmarks and get page numbers
+## 第 6 步：浏览书签并获取页码
 
-Finally, we loop through the extracted bookmarks and get the page numbers associated with each bookmark using a `foreach` loop. Here is the corresponding code:
+最后，我们循环遍历提取的书签，并使用以下方法获取与每个书签关联的页码：`foreach`环形。这是相应的代码：
 
 ```csharp
 foreach (Bookmark bookmark in bookmarks)
@@ -67,15 +67,15 @@ foreach (Bookmark bookmark in bookmarks)
 }
 ```
 
-### Sample source code for Get Bookmark Page Number using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 获取书签页码的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create PdfBookmarkEditor
+//创建Pdf书签编辑器
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
-// Open PDF file
+//打开 PDF 文件
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
-// Extract bookmarks
+//提取书签
 Aspose.Pdf.Facades.Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 foreach (Aspose.Pdf.Facades.Bookmark bookmark in bookmarks)
 {
@@ -90,65 +90,65 @@ foreach (Aspose.Pdf.Facades.Bookmark bookmark in bookmarks)
 }
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! Now you have a step by step guide to getting bookmark page numbers with Aspose.PDF for .NET. You can use this code to retrieve the navigation information associated with each bookmark in your PDF documents.
+恭喜！现在您有了使用 Aspose.PDF for .NET 获取书签页码的分步指南。您可以使用此代码检索与 PDF 文档中每个书签关联的导航信息。
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+请务必查看官方 Aspose.PDF 文档，以获取有关高级书签操作功能的更多信息。
 
-### FAQ's for get bookmark page number in PDF file
+### 获取 PDF 文件中书签页码的常见问题解答
 
-#### Q: What are bookmarks in a PDF file?
+#### 问：PDF 文件中的书签是什么？
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They enhance the user experience by providing shortcuts to relevant content.
+答：PDF 文件中的书签是导航辅助工具，允许用户快速跳转到文档中的特定部分或页面。它们通过提供相关内容的快捷方式来增强用户体验。
 
-#### Q: Why would I want to retrieve bookmark page numbers from a PDF file?
+#### 问：为什么我要从 PDF 文件中检索书签页码？
 
-A: Retrieving bookmark page numbers helps users navigate through a document more effectively, providing a clear indication of where each bookmark leads. This is particularly useful for longer documents with multiple sections.
+答：检索书签页码可以帮助用户更有效地浏览文档，并清楚地指示每个书签的位置。这对于具有多个部分的较长文档特别有用。
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### 问：如何导入 C# 项目所需的库？
 
-A: To import the required library for your C# project, use the following import directive:
+答：要导入 C# 项目所需的库，请使用以下导入指令：
 
 ```csharp
 using Aspose.Pdf.Facades;
 ```
 
-This directive allows you to utilize the classes and methods provided by Aspose.PDF for .NET.
+该指令允许您利用 Aspose.PDF for .NET 提供的类和方法。
 
-#### Q: How do I specify the path to the documents folder?
+#### 问：如何指定文档文件夹的路径？
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to extract bookmark page numbers. This ensures that the code can locate the target PDF file.
+ A：在提供的源代码中，替换`"YOUR DOCUMENT DIRECTORY"`包含要从中提取书签页码的 PDF 文件的文件夹的实际路径。这可确保代码可以找到目标 PDF 文件。
 
-#### Q: How do I create a bookmark editor?
+#### 问：如何创建书签编辑器？
 
-A: To create a bookmark editor, use the following code:
+答：要创建书签编辑器，请使用以下代码：
 
 ```csharp
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
 ```
 
-#### Q: How do I open a PDF file for bookmark manipulation?
+#### 问：如何打开 PDF 文件进行书签操作？
 
-A: To open a PDF file for extracting bookmark information, use the following code:
+A：要打开PDF文件以提取书签信息，请使用以下代码：
 
 ```csharp
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
 ```
 
-Replace `"GetBookmarks.pdf"` with the actual file name.
+代替`"GetBookmarks.pdf"`与实际的文件名。
 
-#### Q: How do I extract bookmarks from the PDF file?
+#### 问：如何从 PDF 文件中提取书签？
 
-A: To extract bookmarks from the PDF file, use the `ExtractBookmarks` method of the bookmark editor:
+答：要从 PDF 文件中提取书签，请使用`ExtractBookmarks`书签编辑器方法：
 
 ```csharp
 Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 ```
 
-#### Q: How do I retrieve and display bookmark page numbers?
+#### 问：如何检索和显示书签页码？
 
-A: Loop through the extracted bookmarks using a `foreach` loop and access the `PageNumber` property of each bookmark to retrieve and display its associated page number:
+ A：使用循环遍历提取的书签`foreach`循环并访问`PageNumber`每个书签的属性来检索并显示其关联的页码：
 
 ```csharp
 foreach (Bookmark bookmark in bookmarks)
@@ -159,10 +159,10 @@ foreach (Bookmark bookmark in bookmarks)
 }
 ```
 
-#### Q: Can I modify bookmark properties using this approach?
+#### 问：我可以使用这种方法修改书签属性吗？
 
-A: While this tutorial focuses on retrieving bookmark page numbers, you can modify other bookmark properties using the same `Bookmark` object and associated properties.
+答：虽然本教程重点介绍检索书签页码，但您可以使用相同的方法修改其他书签属性`Bookmark`对象和相关属性。
 
-#### Q: How do I save the updated PDF file after extracting bookmark information?
+#### 问：提取书签信息后如何保存更新的PDF文件？
 
-A: Bookmark extraction does not modify the original PDF file. If you want to save any changes, you can do so using other methods provided by Aspose.PDF for .NET.
+答：书签提取不会修改原始 PDF 文件。如果您想保存任何更改，可以使用 Aspose.PDF for .NET 提供的其他方法来完成。

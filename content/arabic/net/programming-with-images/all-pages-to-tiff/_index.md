@@ -1,41 +1,41 @@
 ---
-title: All Pages To TIFF
-linktitle: All Pages To TIFF
-second_title: Aspose.PDF for .NET API Reference
-description: Convert all pages of a PDF document to TIFF file with Aspose.PDF for .NET.
+title: جميع الصفحات إلى TIFF
+linktitle: جميع الصفحات إلى TIFF
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بتحويل كافة صفحات مستند PDF إلى ملف TIFF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 20
 url: /ar/net/programming-with-images/all-pages-to-tiff/
 ---
-This guide will take you step by step how to convert all pages of a PDF document to a TIFF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+سيأخذك هذا الدليل خطوة بخطوة حول كيفية تحويل جميع صفحات مستند PDF إلى ملف TIFF باستخدام Aspose.PDF لـ .NET. تأكد من أنك قمت بالفعل بإعداد بيئتك واتبع الخطوات التالية:
 
-## Step 1: Define the document directory
+## الخطوة 1: تحديد دليل المستند
 
-Before you start, make sure you set the correct directory for the documents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+ قبل البدء، تأكد من تعيين الدليل الصحيح للمستندات. يستبدل`"YOUR DOCUMENT DIRECTORY"` في الكود الذي يحتوي على المسار إلى الدليل الذي يوجد به مستند PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the document
+## الخطوة 2: افتح المستند
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+في هذه الخطوة، سنقوم بفتح مستند PDF باستخدام الملف`Document` فئة Aspose.PDF. استخدم ال`Document` منشئ وتمرير المسار إلى وثيقة PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
 ```
 
-## Step 3: Create the Resolution object
+## الخطوة 3: إنشاء كائن الدقة
 
-Create a `Resolution` object to set the resolution of the TIFF image. In this example, we are using a resolution of 300 dpi.
+ إنشاء`Resolution`كائن لتعيين دقة صورة TIFF. في هذا المثال، نستخدم دقة تبلغ 300 نقطة في البوصة.
 
 ```csharp
 Resolution resolution = new Resolution(300);
 ```
 
-## Step 4: Create the TiffSettings object
+## الخطوة 4: إنشاء كائن TiffSettings
 
-Create a `TiffSettings` object to specify settings for the output TIFF file. In this example, we turn off compression, use a default color depth, and set the shape to landscape mode.
+ إنشاء`TiffSettings` كائن لتحديد الإعدادات لملف الإخراج TIFF. في هذا المثال، نقوم بإيقاف تشغيل الضغط، ونستخدم عمق الألوان الافتراضي، ونضبط الشكل على الوضع الأفقي.
 
 ```csharp
 TiffSettings tiffSettings = new TiffSettings();
@@ -45,86 +45,86 @@ tiffSettings.Shape = ShapeType.Landscape;
 tiffSettings.SkipBlankPages = false;
 ```
 
-## Step 5: Create the TIFF device
+## الخطوة 5: إنشاء جهاز TIFF
 
-Create a TIFF device using the `TiffDevice` object, specifying the resolution and TIFF settings.
+ قم بإنشاء جهاز TIFF باستخدام`TiffDevice` الكائن، مع تحديد الدقة وإعدادات TIFF.
 
 ```csharp
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
 ```
 
-## Step 6: Convert all pages and save image
+## الخطوة 6: تحويل كافة الصفحات وحفظ الصورة
 
-Use the `Process` method of the TIFF device to convert all pages of the PDF document and save the image to a TIFF file. Specify the file output path.
+ استخدم ال`Process` طريقة جهاز TIFF لتحويل جميع صفحات مستند PDF وحفظ الصورة في ملف TIFF. حدد مسار إخراج الملف.
 
 ```csharp
 tiffDevice.Process(pdfDocument, dataDir + "AllPagesToTIFF_out.tif");
 System.Console.WriteLine("PDF all pages converted to one tiff file successfully!");
 ```
 
-### Sample source code for All Pages To TIFF using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لجميع الصفحات إلى TIFF باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir+ "PageToTIFF.pdf");
-// Create Resolution object
+// إنشاء كائن القرار
 Resolution resolution = new Resolution(300);
-// Create TiffSettings object
+// إنشاء كائن TiffSettings
 TiffSettings tiffSettings = new TiffSettings();
 tiffSettings.Compression = CompressionType.None;
 tiffSettings.Depth = ColorDepth.Default;
 tiffSettings.Shape = ShapeType.Landscape;
 tiffSettings.SkipBlankPages = false;
-// Create TIFF device
+// إنشاء جهاز TIFF
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-// Convert a particular page and save the image to stream
+//تحويل صفحة معينة وحفظ الصورة للبث
 tiffDevice.Process(pdfDocument, dataDir + "AllPagesToTIFF_out.tif");
 System.Console.WriteLine("PDF all pages converted to one tiff file successfully!");
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have successfully converted all pages of a PDF document to a TIFF file using Aspose.PDF for .NET. You can now use the generated TIFF file in your projects or applications.
+تهنئة ! لقد نجحت في تحويل كافة صفحات مستند PDF إلى ملف TIFF باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام ملف TIFF الذي تم إنشاؤه في مشاريعك أو تطبيقاتك.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of converting all pages of a PDF to a TIFF file?
+#### س: ما هو الغرض من تحويل جميع صفحات ملف PDF إلى ملف TIFF؟
 
-A: Converting all pages of a PDF document to a TIFF file provides advantages such as enhanced image quality, better compression, and broader compatibility with various applications.
+ج: يوفر تحويل جميع صفحات مستند PDF إلى ملف TIFF مزايا مثل جودة الصورة المحسنة والضغط الأفضل والتوافق الأوسع مع التطبيقات المتنوعة.
 
-#### Q: Why should I choose Aspose.PDF for .NET for this conversion task?
+#### س: لماذا يجب أن أختار Aspose.PDF لـ .NET لمهمة التحويل هذه؟
 
-A: Aspose.PDF for .NET offers a reliable and feature-rich API that simplifies the process of converting PDF documents to TIFF format, ensuring accurate results.
+ج: يوفر Aspose.PDF for .NET واجهة برمجة تطبيقات موثوقة وغنية بالميزات تعمل على تبسيط عملية تحويل مستندات PDF إلى تنسيق TIFF، مما يضمن الحصول على نتائج دقيقة.
 
-#### Q: How do I define the document directory before starting the conversion process?
+#### س: كيف يمكنني تحديد دليل المستند قبل البدء في عملية التحويل؟
 
-A: Ensure that you specify the correct directory path for your PDF documents to ensure successful conversion. Replace `"YOUR DOCUMENT DIRECTORY"` with the appropriate path in the provided code snippet.
+ ج: تأكد من تحديد مسار الدليل الصحيح لمستندات PDF الخاصة بك لضمان التحويل الناجح. يستبدل`"YOUR DOCUMENT DIRECTORY"` بالمسار المناسب في مقتطف الشفرة المقدم.
 
-#### Q: What is the significance of opening the PDF document using the `Document` class?
+####  س: ما أهمية فتح مستند PDF باستخدام ملف`Document` class?
 
-A: Using the `Document` class from Aspose.PDF for .NET allows you to manipulate and convert PDF documents efficiently within your .NET application.
+ ج: باستخدام`Document` تتيح لك فئة Aspose.PDF لـ .NET معالجة مستندات PDF وتحويلها بكفاءة داخل تطبيق .NET الخاص بك.
 
-#### Q: How does the `Resolution` object impact the quality of the TIFF image?
+####  س: كيف`Resolution` object impact the quality of the TIFF image?
 
-A: The `Resolution` object sets the image quality of the resulting TIFF file. A higher resolution, such as 300 dpi (dots per inch), produces a clearer and more detailed image.
+ ج: ال`Resolution`يقوم الكائن بتعيين جودة الصورة لملف TIFF الناتج. دقة أعلى، مثل 300 نقطة في البوصة (نقطة في البوصة)، تنتج صورة أكثر وضوحًا وتفصيلاً.
 
-#### Q: Can I customize the settings for the output TIFF file?
+#### س: هل يمكنني تخصيص إعدادات ملف TIFF الناتج؟
 
-A: Absolutely. You can customize various settings, including compression, color depth, and shape, to tailor the output TIFF file according to your requirements.
+ج: بالتأكيد. يمكنك تخصيص إعدادات متنوعة، بما في ذلك الضغط وعمق الألوان والشكل، لتخصيص ملف TIFF الناتج وفقًا لمتطلباتك.
 
-#### Q: What is the role of the `TiffDevice` object in the conversion process?
+####  س: ما هو دور`TiffDevice` object in the conversion process?
 
-A: The `TiffDevice` object acts as a bridge between the PDF document and the output TIFF file, facilitating the conversion of PDF pages into the TIFF format.
+ ج: ال`TiffDevice` يعمل الكائن كجسر بين مستند PDF وملف TIFF الناتج، مما يسهل تحويل صفحات PDF إلى تنسيق TIFF.
 
-#### Q: How can I convert all pages of a PDF document to a single TIFF file?
+#### س: كيف يمكنني تحويل جميع صفحات مستند PDF إلى ملف TIFF واحد؟
 
-A: Utilize the `Process` method of the `TiffDevice` object to efficiently convert all pages of the PDF document into a single TIFF file, which will be saved in the specified output path.
+ ج: الاستفادة من`Process` طريقة`TiffDevice` كائن لتحويل جميع صفحات مستند PDF بكفاءة إلى ملف TIFF واحد، والذي سيتم حفظه في مسار الإخراج المحدد.
 
-#### Q: Can I incorporate the generated TIFF file into other projects or applications?
+#### س: هل يمكنني دمج ملف TIFF الذي تم إنشاؤه في مشاريع أو تطبيقات أخرى؟
 
-A: Certainly. The TIFF file generated through this process can be seamlessly integrated into your projects or applications, enhancing document compatibility.
+ج: بالتأكيد. يمكن دمج ملف TIFF الذي تم إنشاؤه من خلال هذه العملية بسلاسة في مشاريعك أو تطبيقاتك، مما يعزز توافق المستندات.
 
-#### Q: Are there any limitations to the PDF to TIFF conversion using Aspose.PDF for .NET?
+#### س: هل هناك أي قيود على تحويل PDF إلى TIFF باستخدام Aspose.PDF لـ .NET؟
 
-A: While Aspose.PDF for .NET is highly capable, extremely complex PDF documents with intricate formatting may require additional adjustments during the conversion process.
+ج: على الرغم من أن Aspose.PDF for .NET يتمتع بقدرة عالية، إلا أن مستندات PDF المعقدة للغاية ذات التنسيق المعقد قد تتطلب تعديلات إضافية أثناء عملية التحويل.

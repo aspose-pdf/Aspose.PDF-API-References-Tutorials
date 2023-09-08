@@ -1,26 +1,26 @@
 ---
-title: Add Text With Shading Colors In PDF File
-linktitle: Add Text With Shading Colors In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text with shading colors in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasına Gölgelendirme Renkleriyle Metin Ekleme
+linktitle: PDF Dosyasına Gölgelendirme Renkleriyle Metin Ekleme
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak PDF dosyasına gölgelendirme renkleriyle metin eklemeyi öğrenin.
 type: docs
 weight: 80
 url: /tr/net/programming-with-text/add-text-with-shading-colors/
 ---
-This tutorial will guide you through the process of adding text with shading colors in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Bu eğitim, Aspose.PDF for .NET kullanarak PDF dosyasına gölgelendirme renkleriyle metin ekleme sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları gösterir.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Gereksinimler
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Makinenizde kurulu Visual Studio veya başka herhangi bir C# derleyicisi.
+- Aspose.PDF for .NET kitaplığı. Resmi Aspose web sitesinden indirebilir veya yüklemek için NuGet gibi bir paket yöneticisi kullanabilirsiniz.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## 1. Adım: Projeyi ayarlayın
+1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
+2. Aspose.PDF for .NET kitaplığına bir referans ekleyin.
 
-## Step 2: Import required namespaces
-In the code file where you want to add text with shading colors, add the following using directive at the top of the file:
+## 2. Adım: Gerekli ad alanlarını içe aktarın
+Gölgelendirme renklerine sahip metin eklemek istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki kullanma yönergesini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,21 +28,21 @@ using Aspose.Pdf.Text;
 using System.Drawing;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## 3. Adım: Belge dizinini ayarlayın
+ Kodda yazan satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belgelerinizin saklandığı dizinin yolu ile birlikte.
 
-## Step 4: Load the PDF document
-Load the existing PDF document using the `Document` constructor and provide the path to the document file.
+## 4. Adım: PDF belgesini yükleyin
+ Mevcut PDF belgesini kullanarak yükleyin.`Document` yapıcıya gidin ve belge dosyasının yolunu sağlayın.
 
 ```csharp
 using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 {
-     // Code goes here...
+     // Kod buraya gelecek...
 }
 ```
 
-## Step 5: Find the text to modify
-Use `TextFragmentAbsorber` to find the desired text within the document. In the provided code, it looks for the text "Lorem ipsum".
+## 5. Adım: Değiştirilecek metni bulun
+ Kullanmak`TextFragmentAbsorber` Belgede istenen metni bulmak için. Sağlanan kodda "Lorem ipsum" metnini arar.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -50,8 +50,8 @@ pdfDocument.Pages.Accept(absorb);
 TextFragment textFragment = absorb.TextFragments[1];
 ```
 
-## Step 6: Set shading color for the text
-Create a new `Color` object with a pattern colorspace and specify the gradient shading colors. Assign this color to the `ForegroundColor` property of the `TextState` of the `TextFragment` object.
+## 6. Adım: Metin için gölgeleme rengini ayarlayın
+ Yeni bir tane oluştur`Color` Desen renk uzayına sahip nesneyi seçin ve degrade gölgeleme renklerini belirtin. Bu rengi şuna atayın:`ForegroundColor` mülkiyeti`TextState` arasında`TextFragment` nesne.
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
@@ -60,30 +60,30 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 };
 ```
 
-## Step 7: Apply additional text formatting (optional)
-You can apply additional formatting to the text fragment, such as underlining, by modifying the properties of the `TextState` object.
+## 7. Adım: Ek metin biçimlendirmesi uygulayın (isteğe bağlı)
+ Metin parçasının özelliklerini değiştirerek, metin parçasına alt çizgi gibi ek biçimlendirmeler uygulayabilirsiniz.`TextState` nesne.
 
 ```csharp
 textFragment.TextState.Underline = true;
 ```
 
-## Step 8: Save the modified PDF document
-Save the modified PDF document using the `Save` method of the `Document` object.
+## 8. Adım: Değiştirilen PDF belgesini kaydedin
+ Değiştirilen PDF belgesini kullanarak kaydedin.`Save` yöntemi`Document` nesne.
 
 ```csharp
 pdfDocument.Save(dataDir + "text_out.pdf");
 ```
 
-### Sample source code for Add Text With Shading Colors using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Gölgeleme Renkleriyle Metin Ekleme için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 using (Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 {
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
 	pdfDocument.Pages.Accept(absorber);
 	TextFragment textFragment = absorber.TextFragments[1];
-	// Create new color with pattern colorspace
+	// Desen renk alanıyla yeni renk oluşturma
 	textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 	{
 		PatternColorSpace = new Aspose.Pdf.Drawing.GradientAxialShading(Color.Red, Color.Blue)
@@ -93,18 +93,18 @@ using (Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 }
 ```
 
-## Conclusion
-You have successfully added text with shading colors to your PDF document using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## Çözüm
+Aspose.PDF for .NET'i kullanarak PDF belgenize gölgelendirme renklerine sahip metni başarıyla eklediniz. Ortaya çıkan PDF dosyası artık belirtilen çıktı dosyası yolunda bulunabilir.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the main focus of this tutorial?
+#### S: Bu eğitimin ana odağı nedir?
 
-A: This tutorial guides you through the process of adding text with shading colors to a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the necessary steps to achieve this.
+C: Bu eğitim, Aspose.PDF for .NET kütüphanesini kullanarak bir PDF dosyasına gölgelendirme renkleri içeren metin ekleme sürecinde size yol gösterir. Sağlanan C# kaynak kodu, bunu başarmak için gerekli adımları gösterir.
 
-#### Q: Which namespaces do I need to import for this tutorial?
+#### S: Bu eğitim için hangi ad alanlarını içe aktarmam gerekiyor?
 
-A: In the code file where you want to add text with shading colors, import the following namespaces at the beginning of the file:
+C: Gölgelendirme renklerine sahip metin eklemek istediğiniz kod dosyasında, dosyanın başına aşağıdaki ad alanlarını içe aktarın:
 
 ```csharp
 using Aspose.Pdf;
@@ -112,24 +112,24 @@ using Aspose.Pdf.Text;
 using System.Drawing;
 ```
 
-#### Q: How do I specify the document directory?
+#### S: Belge dizinini nasıl belirlerim?
 
-A: In the code, locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ A: Kodda satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
 
-#### Q: How do I load an existing PDF document?
+#### S: Mevcut bir PDF belgesini nasıl yüklerim?
 
-A: In Step 4, you'll load an existing PDF document using the `Document` constructor and providing the path to the document file:
+ C: 4. Adımda, mevcut bir PDF belgesini`Document` yapıcı ve belge dosyasının yolunu sağlama:
 
 ```csharp
 using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 {
-     // Code goes here...
+     // Kod buraya gelecek...
 }
 ```
 
-#### Q: How do I find and modify specific text within the PDF document?
+#### S: PDF belgesindeki belirli metni nasıl bulurum ve değiştiririm?
 
-A: In Step 5, you'll use the `TextFragmentAbsorber` to find the desired text within the document. Then, you can modify its properties:
+ C: 5. Adımda şunları kullanacaksınız:`TextFragmentAbsorber`Belgede istenen metni bulmak için. Daha sonra özelliklerini değiştirebilirsiniz:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -137,9 +137,9 @@ pdfDocument.Pages.Accept(absorber);
 TextFragment textFragment = absorber.TextFragments[1];
 ```
 
-#### Q: How can I set shading colors for the text?
+#### S: Metnin gölgeleme renklerini nasıl ayarlayabilirim?
 
-A: In Step 6, you'll create a new `Color` object with a pattern colorspace and specify the gradient shading colors. Assign this color to the `ForegroundColor` property of the `TextState` of the `TextFragment` object:
+ C: 6. Adımda yeni bir`Color` Desen renk uzayına sahip nesneyi seçin ve degrade gölgeleme renklerini belirtin. Bu rengi şuna atayın:`ForegroundColor` mülkiyeti`TextState` arasında`TextFragment` nesne:
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
@@ -148,22 +148,22 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 };
 ```
 
-#### Q: Can I apply additional text formatting to the modified text?
+#### S: Değiştirilen metne ek metin biçimlendirmesi uygulayabilir miyim?
 
-A: Yes, in Step 7, you can apply additional text formatting such as underlining by modifying the properties of the `TextState` object:
+ C: Evet, 7. Adımda, metnin özelliklerini değiştirerek altını çizme gibi ek metin biçimlendirmeleri uygulayabilirsiniz.`TextState` nesne:
 
 ```csharp
 textFragment.TextState.Underline = true;
 ```
 
-#### Q: How do I save the modified PDF document?
+#### S: Değiştirilen PDF belgesini nasıl kaydederim?
 
-A: In Step 8, you'll save the modified PDF document using the `Save` method of the `Document` object:
+ C: 8. Adımda, değiştirilen PDF belgesini aşağıdaki komutu kullanarak kaydedeceksiniz:`Save` yöntemi`Document` nesne:
 
 ```csharp
 pdfDocument.Save(dataDir + "text_out.pdf");
 ```
 
-#### Q: What is the main takeaway from this tutorial?
+#### S: Bu eğitimden çıkan ana sonuç nedir?
 
-A: By following this tutorial, you've successfully learned how to enhance your PDF document by adding text with shading colors using Aspose.PDF for .NET. This can be particularly useful for highlighting and emphasizing specific text content within your PDF files.
+C: Bu eğitimi takip ederek, Aspose.PDF for .NET'i kullanarak gölgeli renklerle metin ekleyerek PDF belgenizi nasıl geliştireceğinizi başarıyla öğrendiniz. Bu, özellikle PDF dosyalarınızdaki belirli metin içeriğini vurgulamak ve vurgulamak için yararlı olabilir.

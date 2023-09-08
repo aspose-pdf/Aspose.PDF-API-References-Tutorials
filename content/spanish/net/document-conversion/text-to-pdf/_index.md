@@ -1,91 +1,91 @@
 ---
-title: Text To PDF
-linktitle: Text To PDF
-second_title: Aspose.PDF for .NET API Reference
-description: Simple and efficient conversion of text files to PDF using Aspose.PDF for .NET.
+title: Texto a PDF
+linktitle: Texto a PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Conversión simple y eficiente de archivos de texto a PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 300
 url: /es/net/document-conversion/text-to-pdf/
 ---
-This tutorial will walk you through the steps to convert a text file to a PDF file using Aspose.PDF for .NET. Aspose.PDF offers a simple and effective solution for converting plain text to PDF while preserving text formatting and presentation. Follow the steps below to perform this conversion.
+Este tutorial lo guiará a través de los pasos para convertir un archivo de texto a un archivo PDF usando Aspose.PDF para .NET. Aspose.PDF ofrece una solución sencilla y eficaz para convertir texto sin formato a PDF conservando al mismo tiempo el formato y la presentación del texto. Siga los pasos a continuación para realizar esta conversión.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Requisitos previos
+Antes de comenzar, asegúrese de cumplir con los siguientes requisitos previos:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Conocimientos básicos del lenguaje de programación C#.
+- Biblioteca Aspose.PDF para .NET instalada en su sistema.
+- Un entorno de desarrollo como Visual Studio.
 
-## Step 1: Reading the text file
-The first step is to read the contents of the text file using the `StreamReader` class. Use the following code:
+## Paso 1: leer el archivo de texto
+ El primer paso es leer el contenido del archivo de texto usando el`StreamReader` clase. Utilice el siguiente código:
 
 ```csharp
-// Path to the documents directory.
+// Ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Read the text file
+// Leer el archivo de texto
 TextReader tr = new StreamReader(dataDir + "log.txt");
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your text file is located.
+ Asegúrate de reemplazar`"YOUR DOCUMENTS DIRECTORY"`con el directorio real donde se encuentra su archivo de texto.
 
-## Step 2: Creating the PDF document
-The second step is to create a `Document` object which will represent the final PDF document. Use the following code:
+## Paso 2: crear el documento PDF
+ El segundo paso es crear un`Document` objeto que representará el documento PDF final. Utilice el siguiente código:
 
 ```csharp
-// Create a Document object
+// Crear un objeto de documento
 Document doc = new Document();
 ```
 
-## Step 3: Add text to document
-The third step is to add the read text to the page of the PDF document. Use the following code:
+## Paso 3: agregar texto al documento
+El tercer paso es agregar el texto leído a la página del documento PDF. Utilice el siguiente código:
 
 ```csharp
-// Add a new page to the document
+//Agregar una nueva página al documento
 Page page = doc.Pages.Add();
 
-// Create a TextFragment object and pass the read text as an argument
+// Cree un objeto TextFragment y pase el texto leído como argumento
 TextFragment text = new TextFragment(tr.ReadToEnd());
 
-// Add the text paragraph to the page
+// Agregar el párrafo de texto a la página.
 page.Paragraphs.Add(text);
 ```
 
-## Step 4: Saving the PDF file
-Finally, save the resulting PDF file by specifying the desired path and file name. Use the following code:
+## Paso 4: guardar el archivo PDF
+Finalmente, guarde el archivo PDF resultante especificando la ruta deseada y el nombre del archivo. Utilice el siguiente código:
 
 ```csharp
-// Save the resulting PDF file
+// Guarde el archivo PDF resultante
 doc.Save(dataDir + "TexttoPDF_out.pdf");
 ```
 
-Be sure to specify the desired path and filename for the resulting PDF file.
+Asegúrese de especificar la ruta y el nombre de archivo deseados para el archivo PDF resultante.
 
-### Example source code for Text to PDF using Aspose.PDF for .NET
+### Código fuente de ejemplo para texto a PDF usando Aspose.PDF para .NET
 
 ```csharp
 try
 {
 	
-	// The path to the documents directory.
+	// La ruta al directorio de documentos.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Read the source text file
+	// Leer el archivo de texto fuente
 	TextReader tr = new StreamReader(dataDir + "log.txt");
 
-	// Instantiate a Document object by calling its empty constructor
+	// Crear una instancia de un objeto Documento llamando a su constructor vacío
 	Document doc = new Document();
 
-	// Add a new page in Pages collection of Document
+	// Agregar una nueva página en la colección de páginas del documento
 	Page page = doc.Pages.Add();
 
-	// Create an instance of TextFragmet and pass the text from reader object to its constructor as argument
+	// Cree una instancia de TextFragmet y pase el texto del objeto lector a su constructor como argumento
 	TextFragment text = new TextFragment(tr.ReadToEnd());
-	// Text.TextState.Font = FontRepository.FindFont("Arial Unicode MS");
+	//Text.TextState.Font = FontRepository.FindFont("Arial Unicode MS");
 
-	// Add a new text paragraph in paragraphs collection and pass the TextFragment object
+	// Agregue un nuevo párrafo de texto en la colección de párrafos y pase el objeto TextFragment
 	page.Paragraphs.Add(text);
 
-	// Save resultant PDF file
+	// Guarde el archivo PDF resultante
 	doc.Save(dataDir + "TexttoPDF_out.pdf"); 
 	
 }
@@ -95,27 +95,27 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
-In this tutorial, we learned how to convert a text file to a PDF file using Aspose.PDF for .NET. By following the steps given above, you can easily perform this conversion. Use this method to convert your text files to PDF and enjoy the flexibility and quality of Aspose.PDF.
+## Conclusión
+En este tutorial, aprendimos cómo convertir un archivo de texto a un archivo PDF usando Aspose.PDF para .NET. Siguiendo los pasos indicados anteriormente, puede realizar fácilmente esta conversión. Utilice este método para convertir sus archivos de texto a PDF y disfrute de la flexibilidad y calidad de Aspose.PDF.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is Aspose.PDF for .NET?
+#### P: ¿Qué es Aspose.PDF para .NET?
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers various functionalities, including converting plain text to PDF.
+R: Aspose.PDF para .NET es una potente biblioteca que permite a los desarrolladores trabajar con documentos PDF en aplicaciones C#. Ofrece varias funcionalidades, incluida la conversión de texto sin formato a PDF.
 
-#### Q: Why would I want to convert a text file to a PDF?
+#### P: ¿Por qué querría convertir un archivo de texto a PDF?
 
-A: Converting text files to PDF format allows for better document management, sharing, and distribution. PDF files offer consistent formatting across different devices and operating systems.
+R: La conversión de archivos de texto a formato PDF permite una mejor gestión, uso compartido y distribución de documentos. Los archivos PDF ofrecen un formato consistente en diferentes dispositivos y sistemas operativos.
 
-#### Q: How can I load a text file and convert it to a PDF using Aspose.PDF for .NET?
+#### P: ¿Cómo puedo cargar un archivo de texto y convertirlo a PDF usando Aspose.PDF para .NET?
 
-A: To load a text file, you can use the `StreamReader` class to read the contents of the file. Then, create a `Document` object to represent the PDF document. Add a new page and a `TextFragment` containing the text from the text file. Finally, save the resulting PDF using the `Save` method of the `Document` object.
+R: Para cargar un archivo de texto, puede utilizar el`StreamReader` clase para leer el contenido del archivo. Luego, crea un`Document` objeto para representar el documento PDF. Agregar una nueva página y un`TextFragment` que contiene el texto del archivo de texto. Finalmente, guarde el PDF resultante usando el`Save` método de la`Document` objeto.
 
-#### Q: Can I customize the appearance of the text in the PDF?
+#### P: ¿Puedo personalizar la apariencia del texto en el PDF?
 
-A: Yes, Aspose.PDF for .NET provides various options to customize the appearance of text in the resulting PDF, such as font style, size, color, and alignment.
+R: Sí, Aspose.PDF para .NET proporciona varias opciones para personalizar la apariencia del texto en el PDF resultante, como el estilo de fuente, el tamaño, el color y la alineación.
 
-#### Q: Is the text formatting preserved in the resulting PDF?
+#### P: ¿Se conserva el formato del texto en el PDF resultante?
 
-A: Yes, Aspose.PDF for .NET preserves the text formatting and layout during the text to PDF conversion, ensuring accurate representation of the original content.
+R: Sí, Aspose.PDF para .NET conserva el formato y el diseño del texto durante la conversión de texto a PDF, lo que garantiza una representación precisa del contenido original.

@@ -1,128 +1,128 @@
 ---
-title: Configure Metered License Keys In PDF File
-linktitle: Configure Metered License Keys In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to set up a metered license keys in PDF file with Aspose.PDF for .NET and benefit from advanced features.
+title: تكوين مفاتيح الترخيص المقننة في ملف PDF
+linktitle: تكوين مفاتيح الترخيص المقننة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لإعداد مفاتيح ترخيص محدودة في ملف PDF باستخدام Aspose.PDF لـ .NET والاستفادة من الميزات المتقدمة.
 type: docs
 weight: 10
 url: /ar/net/licensing-aspose-pdf/configure-metered-license/
 ---
-In this tutorial, we will walk you through step-by-step how to set up a metered license keys in PDF file with Aspose.PDF for .NET. The metered license allows you to use the advanced features of Aspose.PDF based on your actual consumption.
+في هذا البرنامج التعليمي، سنرشدك خطوة بخطوة إلى كيفية إعداد مفاتيح ترخيص محدودة في ملف PDF باستخدام Aspose.PDF لـ .NET. يتيح لك الترخيص المحدود استخدام الميزات المتقدمة لـ Aspose.PDF بناءً على استهلاكك الفعلي.
 
-### Step 1: Configuring License Keys
+### الخطوة 1: تكوين مفاتيح الترخيص
 
-In the source code provided, you must specify the public and private keys of the metered license. Replace the "*****" values with your own keys. These keys will be provided to you when you purchase a metered license from Aspose.
+في كود المصدر المقدم، يجب عليك تحديد المفاتيح العامة والخاصة للترخيص المقنن. استبدل "*****" القيم بمفاتيحك الخاصة. سيتم توفير هذه المفاتيح لك عند شراء ترخيص مقنن من Aspose.
 
 ```csharp
 Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
 metered.SetMeteredKey("PUBLIC_KEY", "PRIVATE_KEY");
 ```
 
-### Step 2: Loading the document
+### الخطوة 2: تحميل الوثيقة
 
-Load the PDF document from disk using the `Document` class of Aspose.PDF.
+ قم بتحميل مستند PDF من القرص باستخدام الملف`Document` فئة Aspose.PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-### Step 3: Get Document Page Count
+### الخطوة 3: الحصول على عدد صفحات المستند
 
-Use the `Count` property of the `Pages` collection to get the total number of pages in the document.
+ استخدم ال`Count` ملكية`Pages` المجموعة للحصول على العدد الإجمالي للصفحات في المستند.
 
 ```csharp
 Console.WriteLine(doc.Pages.Count);
 ```
 
-### Sample source code for Configure Metered License using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتكوين الترخيص المقنن باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// set metered public and private keys
+// تعيين المفاتيح العامة والخاصة المقننة
 Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
-// Access the setMeteredKey property and pass public and private keys as parameters
+//قم بالوصول إلى خاصية setMeteredKey وتمرير المفاتيح العامة والخاصة كمعلمات
 metered.SetMeteredKey("*****", "*****");
-// Load the document from disk.
+// قم بتحميل المستند من القرص.
 Document doc = new Document(dataDir + "input.pdf");
-//Get the page count of document
+//احصل على عدد صفحات المستند
 Console.WriteLine(doc.Pages.Count);
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we explained how to set up a metered license with Aspose.PDF for .NET. By using a metered license, you can benefit from the advanced features of Aspose.PDF based on your actual usage. Make sure to provide valid license keys to use Aspose.PDF with all its features.
+في هذا البرنامج التعليمي، شرحنا كيفية إعداد ترخيص مقنن باستخدام Aspose.PDF لـ .NET. باستخدام ترخيص محدود، يمكنك الاستفادة من الميزات المتقدمة لـ Aspose.PDF بناءً على استخدامك الفعلي. تأكد من توفير مفاتيح ترخيص صالحة لاستخدام Aspose.PDF بكل ميزاته.
 
-### FAQ's for configure metered license keys in PDF file
+### الأسئلة الشائعة حول تكوين مفاتيح الترخيص المقيدة في ملف PDF
 
-#### Q: What is a metered license in Aspose.PDF?
+#### س: ما هو الترخيص المقنن في Aspose.PDF؟
 
-A: A metered license in Aspose.PDF is a licensing model that allows you to pay based on your actual consumption of features rather than a fixed license fee. It enables you to use advanced features of Aspose.PDF while paying only for what you use.
+ج: الترخيص المحدود في Aspose.PDF هو نموذج ترخيص يسمح لك بالدفع بناءً على استهلاكك الفعلي للميزات بدلاً من رسوم الترخيص الثابتة. فهو يمكّنك من استخدام الميزات المتقدمة لـ Aspose.PDF مع الدفع فقط مقابل ما تستخدمه.
 
-#### Q: Why should I use a metered license for Aspose.PDF?
+#### س: لماذا يجب أن أستخدم ترخيصًا مقننًا لـ Aspose.PDF؟
 
-A: Using a metered license offers cost savings and flexibility. You pay only for the features you use, making it suitable for projects with varying demands. It eliminates the need for upfront licensing fees and allows you to access advanced PDF features.
+ج: يوفر استخدام الترخيص المقنن توفيرًا في التكاليف ومرونة. أنت تدفع فقط مقابل الميزات التي تستخدمها، مما يجعلها مناسبة للمشاريع ذات المتطلبات المختلفة. إنه يلغي الحاجة إلى رسوم الترخيص المسبقة ويسمح لك بالوصول إلى ميزات PDF المتقدمة.
 
-#### Q: How do I obtain metered license keys?
+#### س: كيف يمكنني الحصول على مفاتيح الترخيص المقننة؟
 
-A: When you purchase a metered license from Aspose, you will receive a pair of public and private keys. These keys will be used to authenticate and enable metered licensing for your Aspose.PDF application.
+ج: عند شراء ترخيص مقنن من Aspose، سوف تتلقى زوجًا من المفاتيح العامة والخاصة. سيتم استخدام هذه المفاتيح لمصادقة وتمكين الترخيص المقنن لتطبيق Aspose.PDF الخاص بك.
 
-#### Q: How do I configure metered license keys in Aspose.PDF for .NET?
+#### س: كيف يمكنني تكوين مفاتيح الترخيص المقيدة في Aspose.PDF لـ .NET؟
 
-A: To configure metered license keys, use the `SetMeteredKey` method of the `Aspose.Pdf.Metered` class. Replace `"PUBLIC_KEY"` and `"PRIVATE_KEY"` with your actual keys.
+ ج: لتكوين مفاتيح الترخيص المقيدة، استخدم`SetMeteredKey` طريقة`Aspose.Pdf.Metered` فصل. يستبدل`"PUBLIC_KEY"` و`"PRIVATE_KEY"` بمفاتيحك الفعلية.
 
 ```csharp
 Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
 metered.SetMeteredKey("PUBLIC_KEY", "PRIVATE_KEY");
 ```
 
-#### Q: How do I load a PDF document using Aspose.PDF for .NET?
+#### س: كيف يمكنني تحميل مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: To load a PDF document from disk, use the `Document` class of Aspose.PDF and provide the file path.
+ ج: لتحميل مستند PDF من القرص، استخدم الملف`Document` فئة Aspose.PDF وتوفير مسار الملف.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-#### Q: How do I get the total page count of a PDF document?
+#### س: كيف يمكنني الحصول على إجمالي عدد الصفحات لمستند PDF؟
 
-A: To get the total page count of a PDF document, use the `Count` property of the `Pages` collection.
+ ج: للحصول على إجمالي عدد الصفحات لمستند PDF، استخدم الملف`Count` ملكية`Pages` مجموعة.
 
 ```csharp
 int pageCount = doc.Pages.Count;
 Console.WriteLine("Total pages: " + pageCount);
 ```
 
-#### Q: Can I use metered licensing for other Aspose products?
+#### س: هل يمكنني استخدام الترخيص المقنن لمنتجات Aspose الأخرى؟
 
-A: Yes, metered licensing is available for various Aspose products, allowing you to pay based on your usage for a wide range of features.
+ج: نعم، يتوفر الترخيص المقنن للعديد من منتجات Aspose، مما يسمح لك بالدفع بناءً على استخدامك لمجموعة واسعة من الميزات.
 
-#### Q: Is a metered license suitable for all types of projects?
+#### س: هل الرخصة المقدرة مناسبة لجميع أنواع المشاريع؟
 
-A: Metered licensing is suitable for projects with varying feature usage. It may not be cost-effective for projects with consistent, high-feature usage.
+ج: يعتبر الترخيص المقنن مناسبًا للمشاريع ذات الاستخدام المتنوع للميزات. قد لا يكون ذلك فعالاً من حيث التكلفة بالنسبة للمشاريع ذات الاستخدام المتسق عالي الميزات.
 
-#### Q: Where can I find more information about Aspose.PDF metered licensing?
+#### س: أين يمكنني العثور على مزيد من المعلومات حول ترخيص Aspose.PDF المقنن؟
 
-A: For more information about metered licensing, pricing, and benefits, visit the [Aspose.PDF Metered Licensing](https://purchase.aspose.com/pricing/pdf/net) page.
+ ج: لمزيد من المعلومات حول الترخيص المقنن والأسعار والمزايا، قم بزيارة[Aspose.PDF الترخيص المقنن](https://purchase.aspose.com/pricing/pdf/net) صفحة.
 
-#### Q: How do I ensure the security of my metered license keys?
+#### س: كيف يمكنني ضمان أمان مفاتيح الترخيص المقيّدة الخاصة بي؟
 
-A: Metered license keys are used for authentication and are sensitive information. Ensure they are kept confidential and not shared publicly.
+ج: يتم استخدام مفاتيح الترخيص المقيدة للمصادقة وهي معلومات حساسة. تأكد من الحفاظ على سريتها وعدم مشاركتها علنًا.
 
-#### Q: Can I switch between traditional and metered licensing?
+#### س: هل يمكنني التبديل بين الترخيص التقليدي والترخيص المقنن؟
 
-A: Yes, you can switch between traditional licensing and metered licensing for Aspose.PDF based on your project's requirements.
+ج: نعم، يمكنك التبديل بين الترخيص التقليدي والترخيص المقنن لـ Aspose.PDF بناءً على متطلبات مشروعك.
 
-#### Q: Can I use a trial version before purchasing a metered license?
+#### س: هل يمكنني استخدام الإصدار التجريبي قبل شراء ترخيص مقنن؟
 
-A: Yes, you can try the [free trial version](https://products.aspose.com/pdf/net) of Aspose.PDF to evaluate its features and functionality before purchasing a metered license.
+ ج: نعم، يمكنك تجربة[نسخة تجريبية مجانية](https://products.aspose.com/pdf/net) من Aspose.PDF لتقييم ميزاته ووظائفه قبل شراء ترخيص مقنن.
 
-#### Q: How often should I configure metered license keys?
+#### س: كم مرة يجب أن أقوم بتكوين مفاتيح الترخيص المقيدة؟
 
-A: You need to configure metered license keys only once when your application starts. It provides access to the advanced features throughout the application's runtime.
+ج: تحتاج إلى تكوين مفاتيح الترخيص المقيدة مرة واحدة فقط عند بدء تشغيل التطبيق الخاص بك. فهو يوفر الوصول إلى الميزات المتقدمة طوال وقت تشغيل التطبيق.
 
-#### Q: Can I apply metered licensing to an existing application?
+#### س: هل يمكنني تطبيق الترخيص المقنن على تطبيق موجود؟
 
-A: Yes, you can integrate metered licensing into an existing Aspose.PDF application to benefit from its advantages.
+ج: نعم، يمكنك دمج الترخيص المقنن في تطبيق Aspose.PDF الحالي للاستفادة من مزاياه.

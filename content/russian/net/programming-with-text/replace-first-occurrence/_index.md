@@ -1,49 +1,49 @@
 ---
-title: Replace First Occurrence
-linktitle: Replace First Occurrence
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to replace the first occurrence of text in a PDF document using Aspose.PDF for .NET.
+title: Заменить первое вхождение
+linktitle: Заменить первое вхождение
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как заменить первое вхождение текста в PDF-документе с помощью Aspose.PDF для .NET.
 type: docs
 weight: 330
 url: /ru/net/programming-with-text/replace-first-occurrence/
 ---
-In this tutorial, we will explain how to replace the first occurrence of a specific text in a PDF document using the Aspose.PDF library for .NET. We will go through the step-by-step process of opening a PDF document, finding the first occurrence of the search phrase, replacing the text, updating properties, and saving the modified PDF using the provided C# source code.
+В этом уроке мы объясним, как заменить первое вхождение определенного текста в PDF-документе с помощью библиотеки Aspose.PDF для .NET. Мы пройдем пошаговый процесс открытия PDF-документа, поиска первого вхождения поисковой фразы, замены текста, обновления свойств и сохранения измененного PDF-файла с использованием предоставленного исходного кода C#.
 
-## Prerequisites
+## Предварительные условия
 
-Before you begin, ensure that you have the following:
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- Установлена библиотека Aspose.PDF для .NET.
+- Базовое понимание программирования на C#.
 
-## Step 1: Set up the Document Directory
+## Шаг 1. Настройте каталог документов
 
-First, you need to set the path to the directory where you have the input PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF file.
+ Сначала вам нужно указать путь к каталогу, в котором находится входной PDF-файл. Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir` переменная с путем к вашему PDF-файлу.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the PDF Document
+## Шаг 2. Откройте PDF-документ.
 
-Next, we open the PDF document using the `Document` class from the Aspose.PDF library.
+ Далее мы открываем PDF-документ с помощью`Document` класс из библиотеки Aspose.PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 ```
 
-## Step 3: Find the First Occurrence of the Search Phrase
+## Шаг 3. Найдите первое вхождение поисковой фразы
 
-We create a `TextFragmentAbsorber` object and accept it for all the pages of the PDF document to find all instances of the search phrase.
+ Мы создаем`TextFragmentAbsorber` объект и примите его для всех страниц PDF-документа, чтобы найти все экземпляры поисковой фразы.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
 
-## Step 4: Replace the Text
+## Шаг 4: Замените текст
 
-If the search phrase is found in the PDF document, we retrieve the first occurrence of the text fragment and update its properties with the new text and formatting.
+Если поисковая фраза найдена в PDF-документе, мы извлекаем первое вхождение текстового фрагмента и обновляем его свойства с учетом нового текста и форматирования.
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -57,9 +57,9 @@ if (textFragmentCollection.Count > 0)
 }
 ```
 
-## Step 5: Save the Modified PDF
+## Шаг 5. Сохраните измененный PDF-файл
 
-Finally, we save the modified PDF document to the specified output file.
+Наконец, мы сохраняем измененный PDF-документ в указанный выходной файл.
 
 ```csharp
 dataDir = dataDir + "ReplaceFirstOccurrence_out.pdf";
@@ -67,23 +67,23 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nText replaced successfully.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Replace First Occurrence using Aspose.PDF for .NET 
+### Пример исходного кода для замены первого вхождения с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-// Create TextAbsorber object to find all instances of the input search phrase
+// Создайте объект TextAbsorber, чтобы найти все экземпляры входной поисковой фразы.
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-// Accept the absorber for all the pages
+// Примите поглотитель для всех страниц
 pdfDocument.Pages.Accept(textFragmentAbsorber);
-// Get the extracted text fragments
+// Получить извлеченные фрагменты текста
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 if (textFragmentCollection.Count > 0)
 {
-	// Get first occurance of text and replace
+	// Получить первое появление текста и заменить
 	TextFragment textFragment = textFragmentCollection[1];
-	// Update text and other properties
+	// Обновить текст и другие свойства
 	textFragment.Text = "New Phrase";
 	textFragment.TextState.Font = FontRepository.FindFont("Verdana");
 	textFragment.TextState.FontSize = 22;
@@ -94,51 +94,51 @@ if (textFragmentCollection.Count > 0)
 }
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, you have learned how to replace the first occurrence of a specific text in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can open a PDF document, find the first occurrence of a search phrase, replace the text, update properties, and save the modified PDF.
+В этом уроке вы узнали, как заменить первое вхождение определенного текста в PDF-документе с помощью библиотеки Aspose.PDF для .NET. Следуя пошаговому руководству и выполнив предоставленный код C#, вы можете открыть PDF-документ, найти первое вхождение поисковой фразы, заменить текст, обновить свойства и сохранить измененный PDF-файл.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of the "Replace First Occurrence" tutorial?
+#### Вопрос: Какова цель урока «Замена первого вхождения»?
 
-A: The "Replace First Occurrence" tutorial demonstrates how to use the Aspose.PDF library for .NET to replace the first occurrence of a specific text in a PDF document. It provides step-by-step instructions on how to open a PDF document, locate the first instance of a search phrase, replace the text, update properties, and save the modified PDF.
+О: Учебное пособие «Замена первого вхождения» демонстрирует, как использовать библиотеку Aspose.PDF для .NET для замены первого вхождения определенного текста в PDF-документе. Он предоставляет пошаговые инструкции о том, как открыть документ PDF, найти первый экземпляр поисковой фразы, заменить текст, обновить свойства и сохранить измененный PDF-файл.
 
-#### Q: Why would I want to replace the first occurrence of text in a PDF document?
+#### Вопрос: Зачем мне заменять первое вхождение текста в PDF-документе?
 
-A: Replacing the first occurrence of text in a PDF document is useful when you need to make targeted changes to specific instances of a certain phrase while leaving other occurrences untouched. This approach is often used to update or correct text in a controlled manner.
+О: Замена первого вхождения текста в PDF-документе полезна, когда вам нужно внести целевые изменения в определенные экземпляры определенной фразы, оставляя другие вхождения нетронутыми. Этот подход часто используется для контролируемого обновления или исправления текста.
 
-#### Q: How do I set up the document directory?
+#### Вопрос: Как настроить каталог документов?
 
-A: To set up the document directory:
+О: Чтобы настроить каталог документов:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your input PDF file is located.
+1.  Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir` переменная с путем к каталогу, в котором находится входной PDF-файл.
 
-#### Q: How do I replace the first occurrence of a specific text in a PDF document?
+#### Вопрос: Как заменить первое вхождение определенного текста в PDF-документе?
 
-A: The tutorial guides you through the process step by step:
+Ответ: Учебное пособие шаг за шагом проведет вас через весь процесс:
 
-1. Open a PDF document using the `Document` class.
-2. Create a `TextFragmentAbsorber` object and accept it for all pages to find instances of the search phrase.
-3. If the search phrase is found, retrieve the first occurrence of the text fragment and update its properties with the new text and formatting.
-4. Save the modified PDF document.
+1.  Откройте PDF-документ с помощью`Document` сорт.
+2.  Создать`TextFragmentAbsorber` объект и примите его для всех страниц, чтобы найти экземпляры поисковой фразы.
+3. Если поисковая фраза найдена, извлеките первое вхождение фрагмента текста и обновите его свойства, указав новый текст и форматирование.
+4. Сохраните измененный PDF-документ.
 
-#### Q: What is the purpose of using `TextFragmentAbsorber` to find the first occurrence of the search phrase?
+####  Вопрос: Какова цель использования`TextFragmentAbsorber` to find the first occurrence of the search phrase?
 
-A: The `TextFragmentAbsorber` is used to locate instances of the search phrase within the PDF document. In this tutorial, it helps identify the first occurrence of the text that needs to be replaced.
+ А:`TextFragmentAbsorber` используется для поиска экземпляров поисковой фразы в PDF-документе. В этом уроке это помогает определить первое вхождение текста, который необходимо заменить.
 
-#### Q: How do I update the properties of the text fragment?
+#### Вопрос: Как обновить свойства текстового фрагмента?
 
-A: Once the first occurrence of the text fragment is located, you can update its properties, such as the text itself, font, font size, and text color. This allows you to customize the appearance of the replacement text.
+О: Как только будет обнаружено первое вхождение фрагмента текста, вы можете обновить его свойства, такие как сам текст, шрифт, размер шрифта и цвет текста. Это позволяет настроить внешний вид замещающего текста.
 
-#### Q: Is there a limitation to replacing only the first occurrence of the text?
+#### Вопрос: Есть ли ограничение на замену только первого вхождения текста?
 
-A: Yes, this tutorial specifically focuses on replacing the first occurrence of the text. If you need to replace multiple occurrences of the same text, you can extend the approach by looping through the `TextFragmentCollection` to identify and update each instance.
+ О: Да, в этом уроке особое внимание уделяется замене первого вхождения текста. Если вам нужно заменить несколько вхождений одного и того же текста, вы можете расширить подход, пройдя через цикл`TextFragmentCollection` для идентификации и обновления каждого экземпляра.
 
-#### Q: What is the expected outcome of executing the provided code?
+#### Вопрос: Каков ожидаемый результат выполнения предоставленного кода?
 
-A: By following the tutorial and running the provided C# code, you will replace the first occurrence of the specified text in the PDF document. The replacement text will have updated properties, such as font, font size, and text color.
+О: Следуя инструкциям и запустив предоставленный код C#, вы замените первое вхождение указанного текста в PDF-документе. Заменяющий текст будет иметь обновленные свойства, такие как шрифт, размер шрифта и цвет текста.
 
-#### Q: Can I use this approach to replace other occurrences of the same text?
+#### Вопрос: Могу ли я использовать этот подход для замены других вхождений одного и того же текста?
 
-A: Yes, you can modify the code to loop through the `TextFragmentCollection` to replace multiple occurrences of the same text. Simply extend the logic to identify and update each instance as needed.
+ О: Да, вы можете изменить код для циклического прохождения`TextFragmentCollection` для замены нескольких вхождений одного и того же текста. Просто расширьте логику, чтобы идентифицировать и обновлять каждый экземпляр по мере необходимости.

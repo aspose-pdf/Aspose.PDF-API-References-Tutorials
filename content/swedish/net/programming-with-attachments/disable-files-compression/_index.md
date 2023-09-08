@@ -1,123 +1,123 @@
 ---
-title: Disable Files Compression In PDF File
-linktitle: Disable Files Compression In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to disable file compression in PDF file with Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: Inaktivera filkomprimering i PDF-fil
+linktitle: Inaktivera filkomprimering i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du inaktiverar filkomprimering i PDF-fil med Aspose.PDF för .NET. Steg-för-steg-guide för enkel hantering.
 type: docs
 weight: 30
 url: /sv/net/programming-with-attachments/disable-files-compression/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to disable file compression in PDF using Aspose.PDF for .NET.
+I den här handledningen går vi igenom följande C#-källkod steg för steg för att inaktivera filkomprimering i PDF med Aspose.PDF för .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
 
-### Step 1: Document Directory Setup
+### Steg 1: Installation av dokumentkatalog
 
-In the provided source code, you need to specify the directory where the PDF file is located that you want to disable file compression. Change the "dataDir" variable to the desired directory.
+I den medföljande källkoden måste du ange den katalog där PDF-filen finns som du vill inaktivera filkomprimering. Ändra variabeln "dataDir" till önskad katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Steg 2: Öppna det befintliga PDF-dokumentet
 
-We open the existing PDF document using the specified path.
+Vi öppnar det befintliga PDF-dokumentet med den angivna sökvägen.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
 ```
 
-### Step 3: Setting up the new file to add as an attachment
+### Steg 3: Konfigurera den nya filen för att lägga till som en bilaga
 
-We configure the new file that we want to add as an attachment. In this example, we add a text file with the name "test_out.txt" and a description "Example text file".
+Vi konfigurerar den nya filen som vi vill lägga till som en bilaga. I det här exemplet lägger vi till en textfil med namnet "test_out.txt" och en beskrivning "Exempel på textfil".
 
 ```csharp
 FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
 ```
 
-### Step 4: Disable File Compression
+### Steg 4: Inaktivera filkomprimering
 
-We disable file compression by setting the Encoding property of the FileSpecification object to FileEncoding.None.
+Vi inaktiverar filkomprimering genom att sätta egenskapen Encoding för FileSpecification-objektet till FileEncoding.None.
 
 ```csharp
 fileSpecification.Encoding = FileEncoding.None;
 ```
 
-### Step 5: Adding the attachment to the document's attachments collection
+### Steg 5: Lägga till bilagan till dokumentets samling av bilagor
 
-We add the attachment to the document's attachments collection.
+Vi lägger till bilagan i dokumentets bilagasamling.
 
 ```csharp
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 ```
 
-### Step 6: Save the new output file
+### Steg 6: Spara den nya utdatafilen
 
-Finally, we save the resulting new PDF file with the name "DisableFilesCompression_out.pdf" in the specified directory.
+Slutligen sparar vi den resulterande nya PDF-filen med namnet "DisableFilesCompression_out.pdf" i den angivna katalogen.
 
 ```csharp
 pdfDocument.Save(dataDir + "DisableFilesCompression_out.pdf");
 ```
 
 
-### Sample source code for Disable Files Compression using Aspose.PDF for .NET 
+### Exempel på källkod för Inaktivera filkomprimering med Aspose.PDF för .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Setup new file to be added as attachment
+// Konfigurera ny fil som ska läggas till som bilaga
 FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-// Specify Encoding proparty setting it to FileEncoding.None
+// Ange Encoding proparty och ställ in den på FileEncoding.None
 fileSpecification.Encoding = FileEncoding.None;
-// Add attachment to document's attachment collection
+//Lägg till bilaga till dokumentets bilagasamling
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 dataDir = dataDir + "DisableFilesCompression_out.pdf";
-// Save new output
+// Spara ny utgång
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we explained how to disable file compression in a PDF using Aspose.PDF for .NET. You can now use this knowledge to maintain the integrity of attached files without compression.
+I den här handledningen förklarade vi hur man inaktiverar filkomprimering i en PDF med Aspose.PDF för .NET. Du kan nu använda denna kunskap för att bibehålla integriteten för bifogade filer utan komprimering.
 
-## FAQ's for disable files compression in PDF file
+## Vanliga frågor för att inaktivera filkomprimering i PDF-fil
 
-#### Q: Why would I want to disable file compression in a PDF document?
+#### F: Varför skulle jag vilja inaktivera filkomprimering i ett PDF-dokument?
 
-A: Disabling file compression ensures that attached files within a PDF document remain uncompressed, preserving their original quality and content.
+S: Genom att inaktivera filkomprimering säkerställs att bifogade filer i ett PDF-dokument förblir okomprimerade, vilket bevarar deras ursprungliga kvalitet och innehåll.
 
-#### Q: How does disabling file compression benefit PDF attachments?
+#### F: Hur gynnar det PDF-bilagor att inaktivera filkomprimering?
 
-A: Disabling compression prevents any loss of data or quality that can occur during the compression process, ensuring that attached files are presented as-is.
+S: Inaktivering av komprimering förhindrar förlust av data eller kvalitet som kan uppstå under komprimeringsprocessen, vilket säkerställer att bifogade filer presenteras som de är.
 
-#### Q: Can I selectively disable compression for specific attachments using this tutorial?
+#### F: Kan jag selektivt inaktivera komprimering för specifika bilagor med den här handledningen?
 
-A: Yes, this tutorial guides you through disabling file compression for individual attachments in a PDF document, providing fine-grained control.
+S: Ja, den här handledningen guidar dig genom att inaktivera filkomprimering för enskilda bilagor i ett PDF-dokument, vilket ger finkornig kontroll.
 
-#### Q: What types of attachments can I disable compression for?
+#### F: Vilka typer av bilagor kan jag inaktivera komprimering för?
 
-A: You can disable compression for any type of attachment, such as images, documents, spreadsheets, and more, ensuring their integrity is maintained.
+S: Du kan inaktivera komprimering för alla typer av bilagor, såsom bilder, dokument, kalkylblad och mer, för att säkerställa att deras integritet bibehålls.
 
-#### Q: Does disabling compression affect the overall file size of the PDF document?
+#### F: Påverkar inaktivering av komprimering PDF-dokumentets totala filstorlek?
 
-A: Disabling compression for attachments might lead to a slight increase in the overall file size of the PDF document, as uncompressed files take up more space.
+S: Att inaktivera komprimering för bilagor kan leda till en liten ökning av den totala filstorleken för PDF-dokumentet, eftersom okomprimerade filer tar upp mer utrymme.
 
-#### Q: How does Aspose.PDF for .NET facilitate the process of disabling file compression?
+#### F: Hur underlättar Aspose.PDF för .NET processen att inaktivera filkomprimering?
 
-A: Aspose.PDF for .NET provides an easy-to-use API that allows you to disable file compression for attachments, as demonstrated in the provided source code.
+S: Aspose.PDF för .NET tillhandahåller ett lättanvänt API som låter dig inaktivera filkomprimering för bilagor, vilket visas i den medföljande källkoden.
 
-#### Q: Can I re-enable compression for attachments later if needed?
+#### F: Kan jag återaktivera komprimering för bilagor senare om det behövs?
 
-A: Yes, you can modify the attachment's settings to enable compression again if necessary.
+S: Ja, du kan ändra bilagans inställningar för att aktivera komprimering igen om det behövs.
 
-#### Q: What happens if I open the PDF on a device or software that supports compression?
+#### F: Vad händer om jag öppnar PDF-filen på en enhet eller programvara som stöder komprimering?
 
-A: If you open the PDF on a device or software that supports compression, the attachment might be displayed uncompressed, potentially affecting file size and rendering performance.
+S: Om du öppnar PDF-filen på en enhet eller programvara som stöder komprimering, kan bilagan visas okomprimerad, vilket kan påverka filstorlek och renderingsprestanda.
 
-#### Q: Are there specific scenarios where disabling compression is recommended?
+#### F: Finns det specifika scenarier där inaktivering av komprimering rekommenderas?
 
-A: Disabling compression is recommended for attachments where maintaining the original quality and data integrity is a priority, such as high-resolution images or sensitive documents.
+S: Inaktivering av komprimering rekommenderas för bilagor där bibehållande av originalkvalitet och dataintegritet är en prioritet, till exempel högupplösta bilder eller känsliga dokument.

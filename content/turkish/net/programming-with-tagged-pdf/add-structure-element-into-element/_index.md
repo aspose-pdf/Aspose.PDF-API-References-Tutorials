@@ -1,28 +1,28 @@
 ---
-title: Add Structure Element Into Element
-linktitle: Add Structure Element Into Element
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to add structure element to element in PDF document using Aspose.PDF for .NET.
+title: Elemana Yapı Elemanı Ekleme
+linktitle: Elemana Yapı Elemanı Ekleme
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF belgesindeki öğeye yapı öğesi eklemek için adım adım kılavuz.
 type: docs
 weight: 20
 url: /tr/net/programming-with-tagged-pdf/add-structure-element-into-element/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to add a structure element to an element in a PDF document using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. Using the marked content structure features of Aspose.PDF, you can create a hierarchical structure in your PDF document.
+Bu eğitimde size Aspose.PDF for .NET kullanarak bir PDF belgesindeki bir öğeye yapı öğesinin nasıl ekleneceği konusunda adım adım bir kılavuz sunacağız. Aspose.PDF, PDF belgelerini programlı olarak oluşturmanıza, değiştirmenize ve dönüştürmenize olanak tanıyan güçlü bir kütüphanedir. Aspose.PDF'in işaretlenmiş içerik yapısı özelliklerini kullanarak PDF belgenizde hiyerarşik bir yapı oluşturabilirsiniz.
 
-## Prerequisites
+## Önkoşullar
 
-Before you begin, make sure you have the following prerequisites in place:
+Başlamadan önce aşağıdaki önkoşulların mevcut olduğundan emin olun:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. .NET framework ile yüklenen Visual Studio.
+2. .NET için Aspose.PDF kütüphanesi.
 
-## Step 1: Project Setup
+## Adım 1: Proje Kurulumu
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+Başlamak için Visual Studio'da yeni bir proje oluşturun ve Aspose.PDF for .NET kitaplığına bir referans ekleyin. Kütüphaneyi Aspose resmi web sitesinden indirebilir ve makinenize kurabilirsiniz.
 
-## Step 2: Import the necessary namespaces
+## 2. Adım: Gerekli ad alanlarını içe aktarın
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+Aspose.PDF tarafından sağlanan sınıflara ve yöntemlere erişmek için gereken ad alanlarını C# kod dosyanıza aktarın:
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Step 3: Creating the PDF document and defining the structured elements
+## Adım 3: PDF belgesinin oluşturulması ve yapılandırılmış öğelerin tanımlanması
 
-Use the following code to create a PDF document and define the structured elements:
+PDF belgesi oluşturmak ve yapılandırılmış öğeleri tanımlamak için aşağıdaki kodu kullanın:
 
 ```csharp
 
@@ -96,31 +96,31 @@ p4.AppendChild(span42);
 p4.SetText(".");
 ```
 
-This code creates an empty PDF document and adds structured elements such as paragraphs and spans. Each structure element is created using the methods provided by Aspose.PDF.
+Bu kod boş bir PDF belgesi oluşturur ve paragraflar ve açıklıklar gibi yapılandırılmış öğeler ekler. Her yapı elemanı Aspose.PDF tarafından sağlanan yöntemler kullanılarak oluşturulur.
 
-## Step 4: Saving the PDF Document
+## Adım 4: PDF Belgesini Kaydetme
 
-Use the following code to save the PDF document:
+PDF belgesini kaydetmek için aşağıdaki kodu kullanın:
 
 ```csharp
 document. Save(outFile);
 ```
 
-This code saves the PDF document with the structured elements to a specified file.
+Bu kod, yapılandırılmış öğeleri içeren PDF belgesini belirtilen bir dosyaya kaydeder.
 
-### Sample source code for Add Structure Element Into Element using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Yapı Elemanını Elemana Eklemek için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
 string logFile = dataDir + "46144_log.xml";
-// Creation document and getting Tagged Pdf Content
+// Belge oluşturma ve Etiketli Pdf İçeriği alma
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
-// Setting Title and Nature Language for document
+// Belgenin Başlığını ve Doğa Dilini Ayarlama
 taggedContent.SetTitle("Text Elements Example");
 taggedContent.SetLanguage("en-US");
-// Getting Root structure element (Document structure element)
+// Kök yapı öğesini alma (Belge yapısı öğesi)
 StructureElement rootElement = taggedContent.RootElement;
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
@@ -164,53 +164,53 @@ span42.SetText("Span_42");
 p4.AppendChild(span41);
 p4.AppendChild(span42);
 p4.SetText(".");
-// Save Tagged Pdf Document
+// Etiketli Pdf Belgesini Kaydet
 document.Save(outFile);
-// Checking PDF/UA compliance
+// PDF/UA uyumluluğunu kontrol etme
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, you learned how to add a structure element to an element in a PDF document using Aspose.PDF for .NET. Using the marked content structure features of Aspose.PDF, you can create a hierarchical structure in your PDF document, which makes it easier to manage and navigate through content.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesindeki bir öğeye nasıl yapı öğesi ekleyeceğinizi öğrendiniz. Aspose.PDF'in işaretlenmiş içerik yapısı özelliklerini kullanarak PDF belgenizde hiyerarşik bir yapı oluşturabilirsiniz, bu da içeriği yönetmenizi ve içeriğin içinde gezinmenizi kolaylaştırır.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of adding a structure element to an element in a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesindeki bir öğeye yapı öğesi eklemenin amacı nedir?
 
-A: Adding a structure element to an element in a PDF document using Aspose.PDF for .NET allows you to create a hierarchical structure within the document's content. This hierarchical structure enhances the organization and navigation of the content, making it easier to manage and access specific elements.
+C: Aspose.PDF for .NET kullanarak bir PDF belgesindeki bir öğeye yapı öğesi eklemek, belgenin içeriğinde hiyerarşik bir yapı oluşturmanıza olanak tanır. Bu hiyerarşik yapı, içeriğin organizasyonunu ve gezinmesini geliştirerek belirli öğelerin yönetilmesini ve bunlara erişilmesini kolaylaştırır.
 
-#### Q: How does the Aspose.PDF library assist in adding structure elements to a PDF document?
+#### S: Aspose.PDF kütüphanesi bir PDF belgesine yapı elemanları eklemeye nasıl yardımcı olur?
 
-A: Aspose.PDF for .NET is a powerful library that provides capabilities for creating, manipulating, and converting PDF documents programmatically. In this tutorial, the library's marked content structure features are leveraged to create and append structure elements to the PDF document's content.
+C: Aspose.PDF for .NET, PDF belgelerini programlı olarak oluşturma, değiştirme ve dönüştürme yetenekleri sağlayan güçlü bir kitaplıktır. Bu öğreticide, yapı öğelerini oluşturmak ve PDF belgesinin içeriğine eklemek için kitaplığın işaretli içerik yapısı özelliklerinden yararlanılır.
 
-#### Q: What are the prerequisites for adding structure elements to a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesine yapı elemanları eklemenin önkoşulları nelerdir?
 
-A: Before you begin, ensure that you have Visual Studio installed with the .NET framework and have the Aspose.PDF library for .NET referenced in your project.
+C: Başlamadan önce, Visual Studio'nun .NET framework ile kurulu olduğundan ve projenizde .NET için Aspose.PDF kütüphanesinin referans alındığından emin olun.
 
-#### Q: How does the provided C# code create and append structure elements to the PDF document's content?
+#### S: Sağlanan C# kodu yapı öğelerini nasıl oluşturur ve PDF belgesinin içeriğine ekler?
 
-A: The code demonstrates how to create a PDF document, define a root structure element, and append various structured elements such as paragraphs and spans to it. Each structured element is created using methods provided by Aspose.PDF, allowing you to build a hierarchical structure.
+C: Kod, bir PDF belgesinin nasıl oluşturulacağını, bir kök yapı öğesinin nasıl tanımlanacağını ve buna paragraflar ve açıklıklar gibi çeşitli yapılandırılmış öğelerin nasıl ekleneceğini gösterir. Her yapılandırılmış öğe, Aspose.PDF tarafından sağlanan yöntemler kullanılarak oluşturulur ve hiyerarşik bir yapı oluşturmanıza olanak tanır.
 
-#### Q: Can I customize the types of structure elements that I append to the PDF document?
+#### S: PDF belgesine eklediğim yapı öğelerinin türlerini özelleştirebilir miyim?
 
-A: Yes, you can customize the types of structure elements by exploring different methods provided by the Aspose.PDF library. The code showcases paragraphs and spans as examples, but you can create and append other types of structured elements as needed.
+C: Evet, Aspose.PDF kütüphanesinin sağladığı farklı yöntemleri keşfederek yapı elemanlarının türlerini özelleştirebilirsiniz. Kod, örnek olarak paragrafları ve kapsamları gösterir, ancak gerektiğinde başka türde yapılandırılmış öğeler oluşturabilir ve ekleyebilirsiniz.
 
-#### Q: How do I define the hierarchical relationship between the added structure elements?
+#### S: Eklenen yapı öğeleri arasındaki hiyerarşik ilişkiyi nasıl tanımlarım?
 
-A: The hierarchical relationship between structure elements is defined by the order in which you append them to their parent elements. In the code, the parent-child relationships are established by using the `AppendChild` method.
+ C: Yapı öğeleri arasındaki hiyerarşik ilişki, onları üst öğelerine ekleme sıranıza göre tanımlanır. Kodda ebeveyn-çocuk ilişkileri şu şekilde kurulur:`AppendChild` yöntem.
 
-#### Q: What are the benefits of creating a hierarchical structure in a PDF document?
+#### S: PDF belgesinde hiyerarşik bir yapı oluşturmanın faydaları nelerdir?
 
-A: Creating a hierarchical structure in a PDF document enhances its accessibility, navigation, and organization. It allows assistive technologies to better interpret and convey the document's content, making it more user-friendly for individuals with disabilities.
+C: Bir PDF belgesinde hiyerarşik bir yapı oluşturmak, belgenin erişilebilirliğini, gezinmesini ve organizasyonunu geliştirir. Yardımcı teknolojilerin belgenin içeriğini daha iyi yorumlayıp iletmesine olanak tanıyarak belgeyi engelli bireyler için daha kullanıcı dostu hale getirir.
 
-#### Q: How can I validate PDF/UA compliance after adding structure elements?
+#### S: Yapı öğelerini ekledikten sonra PDF/UA uyumluluğunu nasıl doğrulayabilirim?
 
-A: The code provided in the tutorial demonstrates how to validate PDF/UA compliance using the `Validate` method. By validating the document against the PDF/UA standard, you can ensure that the added structure elements conform to accessibility guidelines.
+ C: Eğitimde sağlanan kod, PDF/UA uyumluluğunun nasıl doğrulanacağını gösterir.`Validate` yöntem. Belgeyi PDF/UA standardına göre doğrulayarak eklenen yapı öğelerinin erişilebilirlik yönergelerine uygun olduğundan emin olabilirsiniz.
 
-#### Q: Can I use this approach to add structure elements to an existing PDF document?
+#### S: Bu yaklaşımı mevcut bir PDF belgesine yapı öğeleri eklemek için kullanabilir miyim?
 
-A: Yes, you can modify the provided approach to add structure elements to an existing PDF document. Instead of creating a new document, you would load the existing document using Aspose.PDF and then follow similar steps to append structure elements.
+C: Evet, mevcut bir PDF belgesine yapı öğeleri eklemek için sağlanan yaklaşımı değiştirebilirsiniz. Yeni bir belge oluşturmak yerine mevcut belgeyi Aspose.PDF kullanarak yükleyebilir ve ardından yapı elemanlarını eklemek için benzer adımları takip edebilirsiniz.

@@ -1,41 +1,41 @@
 ---
-title: Create Document
-linktitle: Create Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create a document with radio buttons using Aspose.PDF for .NET.
+title: Создать документ
+linktitle: Создать документ
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко создайте документ с переключателями, используя Aspose.PDF для .NET.
 type: docs
 weight: 40
 url: /ru/net/programming-with-forms/create-doc/
 ---
-In this tutorial, we will show you how to create a document with radio buttons using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+В этом уроке мы покажем вам, как создать документ с переключателями, используя Aspose.PDF для .NET. Мы шаг за шагом объясним исходный код C#, чтобы помочь вам в этом процессе.
 
-##Step 1: Preparation
+##Шаг 1: Подготовка
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Сначала убедитесь, что вы импортировали необходимые библиотеки и задали путь к каталогу документов:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a new document
+## Шаг 2. Создайте новый документ.
 
-Create a new Document object to hold the PDF document:
+Создайте новый объект Document для хранения PDF-документа:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 3: Add a page
+## Шаг 3. Добавьте страницу
 
-Add a new page to the document:
+Добавьте новую страницу в документ:
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 4: Add a radio button field
+## Шаг 4. Добавьте поле переключателя
 
-Create a radio button field and set its position and size:
+Создайте поле переключателя и задайте его положение и размер:
 
 ```csharp
 RadioButtonField field = new RadioButtonField(page);
@@ -43,9 +43,9 @@ field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 field. PartialName = "NewField";
 ```
 
-## Step 5: Add radio button options
+## Шаг 5. Добавьте параметры переключателя
 
-Add the desired options to the radio button field. You can set the coordinates and size of each option as needed:
+Добавьте нужные параметры в поле переключателя. Вы можете установить координаты и размер каждой опции по мере необходимости:
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField();
@@ -74,39 +74,39 @@ field. Add(opt2);
 field. Add(opt3);
 ```
 
-## Step 6: Add the radio button field to the form
+## Шаг 6. Добавьте поле переключателя в форму.
 
-Add the radio button field to the Document Form Fields collection:
+Добавьте поле переключателя в коллекцию полей формы документа:
 
 ```csharp
 doc.Form.Add(field);
 ```
 
-## Step 7: Save the document
+## Шаг 7: Сохраните документ
 
-Save the PDF document:
+Сохраните PDF-документ:
 
 ```csharp
 dataDir = dataDir + "CreateDoc_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Create Doc using Aspose.PDF for .NET 
+### Пример исходного кода для создания документа с использованием Aspose.PDF для .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Путь к каталогу документов.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Create a new document
+	// Создать новый документ
 	Document doc = new Document();
 	Page page = doc.Pages.Add();
-	// Add radio button field
+	// Добавить поле переключателя
 	RadioButtonField field = new RadioButtonField(page);
 	field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 	field.PartialName = "NewField";
-	// Add radio button options. please note that these options are situated 
-	// Neither horizontally nor vertically. 
-	// You can try to set any coordinates (and even size) for them. 
+	// Добавьте параметры переключателя. обратите внимание, что эти параметры расположены
+	// Ни горизонтально, ни вертикально.
+	// Вы можете попробовать задать им любые координаты (и даже размер).
 	RadioButtonOptionField opt1 = new RadioButtonOptionField();
 	opt1.Rect = new Aspose.Pdf.Rectangle(40, 650, 60, 670);
 	opt1.OptionName = "Item1";
@@ -130,7 +130,7 @@ try
 	field.Add(opt3);
 	doc.Form.Add(field);
 	dataDir = dataDir + "CreateDoc_out.pdf";
-	// Save the PDF document
+	// Сохраните PDF-документ
 	doc.Save(dataDir);
 	Console.WriteLine("\nNew doc with 3 items radio button created successfully.\nFile saved at " + dataDir);
 }
@@ -140,28 +140,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we learned how to create a document with radio buttons using Aspose.PDF for .NET. By following these steps, you can easily add radio buttons to your PDF documents using Aspose.PDF.
+В этом уроке мы узнали, как создать документ с переключателями, используя Aspose.PDF для .NET. Следуя этим шагам, вы можете легко добавлять переключатели в свои PDF-документы с помощью Aspose.PDF.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: Can I customize the appearance of the radio buttons in the document using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я настроить внешний вид переключателей в документе с помощью Aspose.PDF для .NET?
 
-A: Yes, you can customize the appearance of the radio buttons in the document using Aspose.PDF for .NET. You can set properties such as size, color, border style, and more to customize the appearance of the radio buttons.
+О: Да, вы можете настроить внешний вид переключателей в документе с помощью Aspose.PDF для .NET. Вы можете установить такие свойства, как размер, цвет, стиль границы и т. д., чтобы настроить внешний вид переключателей.
 
-#### Q: How can I add radio button groups with mutually exclusive options?
+#### Вопрос: Как добавить группы переключателей с взаимоисключающими параметрами?
 
-A: In order to create mutually exclusive options, you can add multiple radio button fields with the same name. This will ensure that when one option is selected, the other options with the same name will be automatically deselected.
+О: Чтобы создать взаимоисключающие параметры, вы можете добавить несколько полей переключателей с одинаковым именем. Это гарантирует, что при выборе одной опции выбор других опций с таким же именем будет автоматически отменен.
 
-#### Q: Is it possible to set a default selected option for the radio buttons?
+#### Вопрос: Можно ли установить для переключателей опцию, выбранную по умолчанию?
 
-A: Yes, you can set a default selected option for the radio buttons using Aspose.PDF for .NET. You can use the `Selected` property of the `RadioButtonOptionField` object to mark an option as selected by default.
+О: Да, вы можете установить выбранную по умолчанию опцию для переключателей, используя Aspose.PDF для .NET. Вы можете использовать`Selected` собственность`RadioButtonOptionField` объект, чтобы отметить параметр как выбранный по умолчанию.
 
-#### Q: Can I add event handlers to the radio buttons?
+#### Вопрос: Могу ли я добавить обработчики событий к переключателям?
 
-A: Yes, you can add event handlers to the radio buttons using Aspose.PDF for .NET. You can associate JavaScript actions, such as `OnValueChanged`, to the radio buttons to perform specific actions when the user selects an option.
+ О: Да, вы можете добавить обработчики событий к переключателям, используя Aspose.PDF для .NET. Вы можете связать действия JavaScript, например`OnValueChanged`, к переключателям для выполнения определенных действий, когда пользователь выбирает опцию.
 
-#### Q: How can I retrieve the selected option from the radio button group after the user makes a selection?
+#### Вопрос: Как получить выбранный вариант из группы переключателей после того, как пользователь сделает выбор?
 
-A: You can retrieve the selected option from the radio button group using Aspose.PDF for .NET. After the user makes a selection, you can access the `Selected` property of the `RadioButtonOptionField` object to check which option is selected.
+ О: Вы можете получить выбранную опцию из группы переключателей, используя Aspose.PDF для .NET. После того, как пользователь сделает выбор, вы можете получить доступ к`Selected` собственность`RadioButtonOptionField` объект, чтобы проверить, какой вариант выбран.

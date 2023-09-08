@@ -1,49 +1,49 @@
 ---
-title: Expand Bookmarks In PDF File
-linktitle: Expand Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily expand bookmarks in PDF file for improved navigation with Aspose.PDF for .NET.
+title: توسيع الإشارات المرجعية في ملف PDF
+linktitle: توسيع الإشارات المرجعية في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بتوسيع الإشارات المرجعية بسهولة في ملف PDF لتحسين التنقل باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 50
 url: /ar/net/programming-with-bookmarks/expand-bookmarks/
 ---
-Expanding bookmarks in PDF file will display all open bookmarks by default. With Aspose.PDF for .NET, you can easily expand bookmarks by following the following source code:
+سيؤدي توسيع الإشارات المرجعية في ملف PDF إلى عرض جميع الإشارات المرجعية المفتوحة بشكل افتراضي. باستخدام Aspose.PDF for .NET، يمكنك بسهولة توسيع الإشارات المرجعية باتباع التعليمات البرمجية المصدر التالية:
 
-## Step 1: Import required libraries
+## الخطوة 1: استيراد المكتبات المطلوبة
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+قبل أن تبدأ، تحتاج إلى استيراد المكتبات اللازمة لمشروع C# الخاص بك. فيما يلي توجيه الاستيراد الضروري:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## الخطوة 2: تعيين المسار إلى مجلد المستندات
 
-In this step, you need to specify the path to the folder containing the PDF file whose bookmarks you want to expand. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ في هذه الخطوة، تحتاج إلى تحديد المسار إلى المجلد الذي يحتوي على ملف PDF الذي تريد توسيع إشاراته المرجعية. يستبدل`"YOUR DOCUMENT DIRECTORY"`في الكود التالي مع المسار الفعلي لمجلد المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## الخطوة 3: افتح مستند PDF
 
-Now we will open the PDF document whose bookmarks we want to expand using the following code:
+سنفتح الآن مستند PDF الذي نريد توسيع إشاراته المرجعية باستخدام الكود التالي:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 4: Set Page Display Mode
+## الخطوة 4: ضبط وضع عرض الصفحة
 
-In this step, we will set the page display mode to show bookmarks by default. We use the `PageMode` property of the `doc` object to set the desired page mode. Here is the corresponding code:
+في هذه الخطوة، سنقوم بضبط وضع عرض الصفحة لإظهار الإشارات المرجعية بشكل افتراضي. نحن نستخدم ال`PageMode` ملكية`doc` كائن لتعيين وضع الصفحة المطلوب. هنا هو الكود المقابل:
 
 ```csharp
 doc.PageMode = PageMode.UseOutlines;
 ```
 
-## Step 5: Browse bookmarks and expand them
+## الخطوة 5: تصفح الإشارات المرجعية وقم بتوسيعها
 
-Now we'll loop through each bookmark item in the document's bookmarks collection and set each item's open state to `true` to expand them by default. Here is the corresponding code:
+ سنقوم الآن بالتنقل عبر كل عنصر إشارة مرجعية في مجموعة الإشارات المرجعية للمستند وتعيين الحالة المفتوحة لكل عنصر على`true` لتوسيعها بشكل افتراضي. هنا هو الكود المقابل:
 
 ```csharp
 foreach(OutlineItemCollection item in doc.Outlines)
@@ -52,86 +52,86 @@ foreach(OutlineItemCollection item in doc.Outlines)
 }
 ```
 
-## Step 6: Save the updated file
+## الخطوة 6: احفظ الملف المحدث
 
-Finally, we save the updated PDF file using the `Save` method of the `doc` object. Here is the corresponding code:
+ أخيرًا، نقوم بحفظ ملف PDF المحدث باستخدام ملف`Save` طريقة`doc` هدف. هنا هو الكود المقابل:
 
 ```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Expand Bookmarks using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتوسيع الإشارات المرجعية باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document doc = new Document(dataDir + "input.pdf");
-// Set page view mode i.e. show thumbnails, full-screen, show attachment panel
+// ضبط وضع عرض الصفحة، أي إظهار الصور المصغرة، في وضع ملء الشاشة، وإظهار لوحة المرفقات
 doc.PageMode = PageMode.UseOutlines;
-// Traverse through each Ouline item in outlines collection of PDF file
+// قم بالتنقل خلال كل عنصر من عناصر Ouline في مجموعة الخطوط العريضة لملف PDF
 foreach (OutlineItemCollection item in doc.Outlines)
 {
-	// Set open status for outline item
+	// تعيين الحالة المفتوحة لعنصر المخطط التفصيلي
 	item.Open = true;
 }
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
-// Save output
+// حفظ الإخراج
 doc.Save(dataDir);
 Console.WriteLine("\nBookmarks expanded successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You now have a step-by-step guide to developing bookmarks with Aspose.PDF for .NET. You can use this code to show all default bookmarks in your PDF documents.
+تهنئة ! لديك الآن دليل خطوة بخطوة لتطوير الإشارات المرجعية باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الرمز لإظهار جميع الإشارات المرجعية الافتراضية في مستندات PDF الخاصة بك.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+تأكد من مراجعة وثائق Aspose.PDF الرسمية لمزيد من المعلومات حول ميزات معالجة الإشارات المرجعية المتقدمة.
 
-### FAQ's for expand bookmarks in PDF file
+### الأسئلة الشائعة لتوسيع الإشارات المرجعية في ملف PDF
 
-#### Q: What are bookmarks in a PDF file?
+#### س: ما هي الإشارات المرجعية في ملف PDF؟
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They provide a convenient way to access different parts of a document.
+ج: الإشارات المرجعية الموجودة في ملف PDF هي أدوات مساعدة للتنقل تتيح للمستخدمين الانتقال بسرعة إلى أقسام أو صفحات محددة داخل المستند. أنها توفر طريقة ملائمة للوصول إلى أجزاء مختلفة من المستند.
 
-#### Q: Why would I want to expand bookmarks in a PDF file?
+#### س: لماذا أرغب في توسيع الإشارات المرجعية في ملف PDF؟
 
-A: Expanding bookmarks can improve the user experience by displaying all bookmarks in an expanded state by default. This gives users a clear overview of the document's structure and allows them to easily navigate to different sections.
+ج: يمكن أن يؤدي توسيع الإشارات المرجعية إلى تحسين تجربة المستخدم من خلال عرض كافة الإشارات المرجعية في حالة موسعة افتراضيًا. وهذا يمنح المستخدمين نظرة عامة واضحة على بنية المستند ويسمح لهم بالانتقال بسهولة إلى أقسام مختلفة.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### س: كيف يمكنني استيراد المكتبات اللازمة لمشروع C# الخاص بي؟
 
-A: To import the required library for your C# project, use the following import directive:
+ج: لاستيراد المكتبة المطلوبة لمشروع C# الخاص بك، استخدم توجيه الاستيراد التالي:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive allows you to utilize the classes and methods provided by Aspose.PDF for .NET.
+يتيح لك هذا التوجيه الاستفادة من الفئات والأساليب التي يوفرها Aspose.PDF لـ .NET.
 
-#### Q: How do I specify the path to the documents folder?
+#### س: كيف أحدد المسار إلى مجلد المستندات؟
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file that you want to work with. This ensures that the code can locate the target PDF file.
+ ج: في كود المصدر المقدم، استبدل`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي للمجلد الذي يحتوي على ملف PDF الذي تريد العمل معه. وهذا يضمن أن الكود يمكنه تحديد موقع ملف PDF المستهدف.
 
-#### Q: How do I open a PDF document to expand its bookmarks?
+#### س: كيف يمكنني فتح مستند PDF لتوسيع إشاراته المرجعية؟
 
-A: To open a PDF document for expanding bookmarks, use the following code:
+ج: لفتح مستند PDF لتوسيع الإشارات المرجعية، استخدم الكود التالي:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Replace `"input.pdf"` with the actual file name.
+ يستبدل`"input.pdf"` مع اسم الملف الفعلي.
 
-#### Q: How do I set the page display mode to show bookmarks by default?
+#### س: كيف أقوم بضبط وضع عرض الصفحة لإظهار الإشارات المرجعية بشكل افتراضي؟
 
-A: To set the page display mode to show bookmarks by default, use the `PageMode` property of the `doc` object:
+ج: لتعيين وضع عرض الصفحة لإظهار الإشارات المرجعية بشكل افتراضي، استخدم الخيار`PageMode` ملكية`doc` هدف:
 
 ```csharp
 doc.PageMode = PageMode.UseOutlines;
 ```
 
-#### Q: How do I expand all bookmarks in the PDF document?
+#### س: كيف يمكنني توسيع جميع الإشارات المرجعية في مستند PDF؟
 
-A: To expand all bookmarks, loop through each bookmark item in the document's outlines collection and set the `Open` property to `true`:
+ ج: لتوسيع كافة الإشارات المرجعية، قم بالتمرير عبر كل عنصر إشارة مرجعية في مجموعة المخططات التفصيلية للمستند وقم بتعيين`Open` الملكية ل`true`:
 
 ```csharp
 foreach (OutlineItemCollection item in doc.Outlines)
@@ -140,19 +140,19 @@ foreach (OutlineItemCollection item in doc.Outlines)
 }
 ```
 
-#### Q: What happens if a bookmark has nested child bookmarks?
+#### س: ماذا يحدث إذا كانت الإشارة المرجعية تحتوي على إشارات مرجعية فرعية متداخلة؟
 
-A: If a bookmark has nested child bookmarks, expanding the parent bookmark will also expand its child bookmarks, providing a comprehensive view of the document's structure.
+ج: إذا كانت الإشارة المرجعية تحتوي على إشارات مرجعية فرعية متداخلة، فإن توسيع الإشارة المرجعية الأصلية سيؤدي أيضًا إلى توسيع الإشارات المرجعية الفرعية الخاصة بها، مما يوفر رؤية شاملة لبنية المستند.
 
-#### Q: How do I save the updated PDF file after expanding bookmarks?
+#### س: كيف يمكنني حفظ ملف PDF المحدث بعد توسيع الإشارات المرجعية؟
 
-A: To save the updated PDF file after expanding bookmarks, use the following code:
+ج: لحفظ ملف PDF المحدث بعد توسيع الإشارات المرجعية، استخدم الكود التالي:
 
 ```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 doc.Save(dataDir);
 ```
 
-#### Q: Can I customize the appearance of expanded bookmarks?
+#### س: هل يمكنني تخصيص مظهر الإشارات المرجعية الموسعة؟
 
-A: While this tutorial focuses on expanding bookmarks by default, you can customize the appearance of bookmarks using Aspose.PDF's other features and properties.
+ج: بينما يركز هذا البرنامج التعليمي على توسيع الإشارات المرجعية بشكل افتراضي، يمكنك تخصيص مظهر الإشارات المرجعية باستخدام ميزات وخصائص Aspose.PDF الأخرى.

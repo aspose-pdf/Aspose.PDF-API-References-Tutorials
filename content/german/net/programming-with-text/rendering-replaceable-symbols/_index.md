@@ -1,49 +1,49 @@
 ---
-title: Rendering Replaceable Symbols In PDF File
-linktitle: Rendering Replaceable Symbols In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to render replaceable symbols in PDF file using Aspose.PDF for .NET.
+title: Rendern austauschbarer Symbole in einer PDF-Datei
+linktitle: Rendern austauschbarer Symbole in einer PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET ersetzbare Symbole in einer PDF-Datei rendern.
 type: docs
 weight: 310
 url: /de/net/programming-with-text/rendering-replaceable-symbols/
 ---
-In this tutorial, we will explain how to render replaceable symbols in PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of creating a PDF, adding a text fragment with newline markers, setting text properties, positioning the text, and saving the PDF using the provided C# source code.
+In diesem Tutorial erklären wir, wie man ersetzbare Symbole in einer PDF-Datei mithilfe der Aspose.PDF-Bibliothek für .NET rendert. Wir werden den Schritt-für-Schritt-Prozess der Erstellung einer PDF-Datei, dem Hinzufügen eines Textfragments mit Zeilenumbrüchen, dem Festlegen von Texteigenschaften, der Positionierung des Textes und dem Speichern der PDF-Datei mit dem bereitgestellten C#-Quellcode durchgehen.
 
-## Prerequisites
+## Voraussetzungen
 
-Before you begin, ensure that you have the following:
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- Die Aspose.PDF für .NET-Bibliothek installiert.
+- Ein grundlegendes Verständnis der C#-Programmierung.
 
-## Step 1: Set up the Document Directory
+## Schritt 1: Richten Sie das Dokumentenverzeichnis ein
 
-First, you need to set the path to the directory where you want to save the generated PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your desired directory.
+ Zunächst müssen Sie den Pfad zu dem Verzeichnis festlegen, in dem Sie die generierte PDF-Datei speichern möchten. Ersetzen`"YOUR DOCUMENT DIRECTORY"` im`dataDir`Variable mit dem Pfad zu Ihrem gewünschten Verzeichnis.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a PDF Document and Page
+## Schritt 2: Erstellen Sie ein PDF-Dokument und eine Seite
 
-Next, we create a new PDF document and add a page to it using the `Document` class and `Page` class from the Aspose.PDF library.
+ Als nächstes erstellen wir ein neues PDF-Dokument und fügen ihm mithilfe von eine Seite hinzu`Document` Klasse und`Page` Klasse aus der Aspose.PDF-Bibliothek.
 
 ```csharp
 Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page applicationFirstPage = (Aspose.Pdf.Page)pdfApplicationDoc.Pages.Add();
 ```
 
-## Step 3: Add Text Fragment with Newline Markers
+## Schritt 3: Textfragment mit Zeilenumbruchmarkierungen hinzufügen
 
-We create a `TextFragment` object and set its text to include newline markers (`Environment.NewLine`) to represent multiple lines of text.
+ Wir erstellen ein`TextFragment`Objekt und legen Sie fest, dass sein Text Zeilenumbruchmarkierungen enthält (`Environment.NewLine`), um mehrere Textzeilen darzustellen.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment textFragment = new Aspose.Pdf.Text.TextFragment("Applicant Name: " + Environment.NewLine + " Joe Smoe");
 ```
 
-## Step 4: Set Text Fragment Properties
+## Schritt 4: Legen Sie die Eigenschaften des Textfragments fest
 
-We can set various properties for the text fragment if desired, such as font size, font, background color, and foreground color.
+Auf Wunsch können wir verschiedene Eigenschaften für das Textfragment festlegen, wie z. B. Schriftgröße, Schriftart, Hintergrundfarbe und Vordergrundfarbe.
 
 ```csharp
 textFragment.TextState.FontSize = 12;
@@ -52,9 +52,9 @@ textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
 ```
 
-## Step 5: Create Text Paragraph and Position
+## Schritt 5: Textabsatz und Position erstellen
 
-We create a `TextParagraph` object, append the text fragment to the paragraph, and set the position of the paragraph on the page.
+ Wir erstellen ein`TextParagraph` Objekt, hängen Sie das Textfragment an den Absatz an und legen Sie die Position des Absatzes auf der Seite fest.
 
 ```csharp
 TextParagraph par = new TextParagraph();
@@ -62,18 +62,18 @@ par.AppendLine(textFragment);
 par.Position = new Aspose.Pdf.Text.Position(100, 600);
 ```
 
-## Step 6: Add Text Paragraph to the Page
+## Schritt 6: Fügen Sie der Seite einen Textabsatz hinzu
 
-We create a `TextBuilder` object with the page and append the text paragraph to the text builder.
+ Wir erstellen ein`TextBuilder` Objekt mit der Seite und hängen Sie den Textabsatz an den Textgenerator an.
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(applicationFirstPage);
 textBuilder.AppendParagraph(par);
 ```
 
-## Step 7: Save the PDF Document
+## Schritt 7: Speichern Sie das PDF-Dokument
 
-Finally, we save the PDF document to the specified output file.
+Abschließend speichern wir das PDF-Dokument in der angegebenen Ausgabedatei.
 
 ```csharp
 dataDir = dataDir + "RenderingReplaceableSymbols_out.pdf";
@@ -81,82 +81,82 @@ pdfApplicationDoc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols rendered successfully during PDF creation.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Rendering Replaceable Symbols using Aspose.PDF for .NET 
+### Beispielquellcode zum Rendern austauschbarer Symbole mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page applicationFirstPage = (Aspose.Pdf.Page)pdfApplicationDoc.Pages.Add();
-// Initialize new TextFragment with text containing required newline markers
+// Initialisieren Sie ein neues TextFragment mit Text, der die erforderlichen Zeilenumbruchmarkierungen enthält
 Aspose.Pdf.Text.TextFragment textFragment = new Aspose.Pdf.Text.TextFragment("Applicant Name: " + Environment.NewLine + " Joe Smoe");
-// Set text fragment properties if necessary
+// Legen Sie bei Bedarf Textfragmenteigenschaften fest
 textFragment.TextState.FontSize = 12;
 textFragment.TextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman");
 textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-// Create TextParagraph object
+// Erstellen Sie ein TextParagraph-Objekt
 TextParagraph par = new TextParagraph();
-// Add new TextFragment to paragraph
+// Fügen Sie dem Absatz ein neues Textfragment hinzu
 par.AppendLine(textFragment);
-// Set paragraph position
+// Absatzposition festlegen
 par.Position = new Aspose.Pdf.Text.Position(100, 600);
-// Create TextBuilder object
+// Erstellen Sie ein TextBuilder-Objekt
 TextBuilder textBuilder = new TextBuilder(applicationFirstPage);
-// Add the TextParagraph using TextBuilder
+// Fügen Sie den TextParagraph mit TextBuilder hinzu
 textBuilder.AppendParagraph(par);
 dataDir = dataDir + "RenderingReplaceableSymbols_out.pdf";
 pdfApplicationDoc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols render successfully duing pdf creation.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, you have learned how to render replaceable symbols in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can create a PDF, add text with newline markers, set text properties, position the text on the page, and save the PDF.
+In diesem Tutorial haben Sie gelernt, wie Sie mit der Aspose.PDF-Bibliothek für .NET ersetzbare Symbole in einem PDF-Dokument rendern. Indem Sie der Schritt-für-Schritt-Anleitung folgen und den bereitgestellten C#-Code ausführen, können Sie eine PDF-Datei erstellen, Text mit Zeilenumbruchmarkierungen hinzufügen, Texteigenschaften festlegen, den Text auf der Seite positionieren und die PDF-Datei speichern.
 
-### FAQ's
+### FAQs
 
-#### Q: What is the purpose of the "Rendering Replaceable Symbols In PDF File" tutorial?
+#### F: Was ist der Zweck des Tutorials „Ersetzbare Symbole in einer PDF-Datei rendern“?
 
-A: The "Rendering Replaceable Symbols In PDF File" tutorial demonstrates how to use the Aspose.PDF library for .NET to create a PDF document that includes replaceable symbols. These symbols are represented as text fragments with newline markers to create multi-line content.
+A: Das Tutorial „Ersetzbare Symbole in einer PDF-Datei rendern“ zeigt, wie Sie mit der Aspose.PDF-Bibliothek für .NET ein PDF-Dokument erstellen, das austauschbare Symbole enthält. Diese Symbole werden als Textfragmente mit Zeilenumbruchmarkierungen dargestellt, um mehrzeiligen Inhalt zu erstellen.
 
-#### Q: Why would I want to render replaceable symbols in a PDF document?
+#### F: Warum sollte ich ersetzbare Symbole in einem PDF-Dokument rendern wollen?
 
-A: Rendering replaceable symbols is useful when you need to dynamically generate PDF content that includes variable or user-specific information. These symbols act as placeholders that can be replaced with actual data during runtime, such as form field values or personalized details.
+A: Das Rendern austauschbarer Symbole ist nützlich, wenn Sie PDF-Inhalte dynamisch generieren müssen, die variable oder benutzerspezifische Informationen enthalten. Diese Symbole fungieren als Platzhalter, die zur Laufzeit durch tatsächliche Daten ersetzt werden können, beispielsweise Formularfeldwerte oder personalisierte Details.
 
-#### Q: How do I set up the document directory?
+#### F: Wie richte ich das Dokumentenverzeichnis ein?
 
-A: To set up the document directory:
+A: So richten Sie das Dokumentenverzeichnis ein:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where you want to save the generated PDF file.
+1.  Ersetzen`"YOUR DOCUMENT DIRECTORY"` im`dataDir` Variable mit dem Pfad zu dem Verzeichnis, in dem Sie die generierte PDF-Datei speichern möchten.
 
-#### Q: How do I render replaceable symbols in a PDF document using the Aspose.PDF library?
+#### F: Wie rendere ich ersetzbare Symbole in einem PDF-Dokument mithilfe der Aspose.PDF-Bibliothek?
 
-A: The tutorial guides you through the process step by step:
+A: Das Tutorial führt Sie Schritt für Schritt durch den Prozess:
 
-1. Create a new PDF document using the `Document` class.
-2. Add a page to the document using the `Page` class.
-3. Create a `TextFragment` object with newline markers (`Environment.NewLine`) to represent multi-line content.
-4. Customize the text fragment's properties such as font size, font, background color, and foreground color.
-5. Create a `TextParagraph` object, append the text fragment to it, and set the position of the paragraph on the page.
-6. Create a `TextBuilder` object with the page and append the text paragraph to it.
-7. Save the PDF document.
+1.  Erstellen Sie ein neues PDF-Dokument mit`Document` Klasse.
+2.  Fügen Sie mit dem eine Seite zum Dokument hinzu`Page` Klasse.
+3.  Ein ... kreieren`TextFragment` Objekt mit Zeilenumbruchmarkierungen (`Environment.NewLine`), um mehrzeiligen Inhalt darzustellen.
+4. Passen Sie die Eigenschaften des Textfragments wie Schriftgröße, Schriftart, Hintergrundfarbe und Vordergrundfarbe an.
+5.  Ein ... kreieren`TextParagraph` Objekt, hängen Sie das Textfragment daran an und legen Sie die Position des Absatzes auf der Seite fest.
+6.  Ein ... kreieren`TextBuilder` Objekt mit der Seite und hängen Sie den Textabsatz daran an.
+7. Speichern Sie das PDF-Dokument.
 
-#### Q: What is the purpose of using newline markers (`Environment.NewLine`) in the text fragment?
+#### F: Was ist der Zweck der Verwendung von Zeilenumbruchmarkierungen (`Environment.NewLine`) in the text fragment?
 
-A: Newline markers are used to create multi-line content within a single text fragment. By using `Environment.NewLine`, you can indicate where line breaks should occur in the text.
+ A: Zeilenumbruchmarkierungen werden verwendet, um mehrzeiligen Inhalt innerhalb eines einzelnen Textfragments zu erstellen. Durch die Nutzung`Environment.NewLine`können Sie angeben, wo im Text Zeilenumbrüche erfolgen sollen.
 
-#### Q: Can I customize the appearance of the replaceable symbols?
+#### F: Kann ich das Erscheinungsbild der austauschbaren Symbole anpassen?
 
-A: Yes, you can customize various properties of the text fragment, such as font size, font, background color, and foreground color. These properties determine the visual appearance of the replaceable symbols in the PDF document.
+A: Ja, Sie können verschiedene Eigenschaften des Textfragments anpassen, wie z. B. Schriftgröße, Schriftart, Hintergrundfarbe und Vordergrundfarbe. Diese Eigenschaften bestimmen das visuelle Erscheinungsbild der ersetzbaren Symbole im PDF-Dokument.
 
-#### Q: How do I specify the position of the text on the page?
+#### F: Wie lege ich die Position des Textes auf der Seite fest?
 
-A: You can set the position of the text by creating a `TextParagraph` object and using the `Position` property to specify the X and Y coordinates on the page where the paragraph should be positioned.
+ A: Sie können die Position des Textes festlegen, indem Sie eine erstellen`TextParagraph` Objekt und Verwendung der`Position` -Eigenschaft, um die X- und Y-Koordinaten auf der Seite anzugeben, an der der Absatz positioniert werden soll.
 
-#### Q: What is the expected outcome of executing the provided code?
+#### F: Was ist das erwartete Ergebnis der Ausführung des bereitgestellten Codes?
 
-A: By following the tutorial and running the provided C# code, you will create a PDF document that includes replaceable symbols. The replaceable symbols will be represented as text fragments with newline markers and customized properties.
+A: Indem Sie dem Tutorial folgen und den bereitgestellten C#-Code ausführen, erstellen Sie ein PDF-Dokument, das austauschbare Symbole enthält. Die ersetzbaren Symbole werden als Textfragmente mit Zeilenumbruchmarkierungen und benutzerdefinierten Eigenschaften dargestellt.
 
-#### Q: Can I use this approach to dynamically generate personalized PDF documents?
+#### F: Kann ich diesen Ansatz verwenden, um personalisierte PDF-Dokumente dynamisch zu generieren?
 
-A: Yes, this approach is suitable for dynamically generating PDF documents with personalized information. By replacing the replaceable symbols with actual data, you can create customized PDF content for each user or scenario.
+A: Ja, dieser Ansatz eignet sich zur dynamischen Generierung von PDF-Dokumenten mit personalisierten Informationen. Indem Sie die austauschbaren Symbole durch tatsächliche Daten ersetzen, können Sie individuelle PDF-Inhalte für jeden Benutzer oder jedes Szenario erstellen.

@@ -1,51 +1,51 @@
 ---
-title: Determine Line Break In PDF File
-linktitle: Determine Line Break In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to determine line breaks in PDF file using Aspose.PDF for .NET.
+title: Bestimmen Sie den Zeilenumbruch in der PDF-Datei
+linktitle: Bestimmen Sie den Zeilenumbruch in der PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Zeilenumbrüche in einer PDF-Datei bestimmen.
 type: docs
 weight: 130
 url: /de/net/programming-with-text/determine-line-break/
 ---
-This tutorial will guide you through the process of determining line breaks in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Dieses Tutorial führt Sie durch den Prozess der Bestimmung von Zeilenumbrüchen in einer PDF-Datei mit Aspose.PDF für .NET. Der bereitgestellte C#-Quellcode demonstriert die notwendigen Schritte.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Anforderungen
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio oder ein anderer auf Ihrem Computer installierter C#-Compiler.
+- Aspose.PDF für .NET-Bibliothek. Sie können es von der offiziellen Aspose-Website herunterladen oder einen Paketmanager wie NuGet verwenden, um es zu installieren.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Schritt 1: Richten Sie das Projekt ein
+1. Erstellen Sie ein neues C#-Projekt in Ihrer bevorzugten Entwicklungsumgebung.
+2. Fügen Sie einen Verweis auf die Aspose.PDF für .NET-Bibliothek hinzu.
 
-## Step 2: Import required namespaces
-In the code file where you want to determine line breaks, add the following using directives at the top of the file:
+## Schritt 2: Erforderliche Namespaces importieren
+Fügen Sie in der Codedatei, in der Sie Zeilenumbrüche festlegen möchten, die folgenden using-Anweisungen am Anfang der Datei hinzu:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Schritt 3: Legen Sie das Dokumentverzeichnis fest
+ Suchen Sie im Code die Zeile mit der Aufschrift`string dataDir = "YOUR DOCUMENT DIRECTORY";` und ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem Pfad zu dem Verzeichnis, in dem Ihre Dokumente gespeichert sind.
 
-## Step 4: Create a new Document instance
-Instantiate a new `Document` object by adding the following line of code:
+## Schritt 4: Erstellen Sie eine neue Dokumentinstanz
+ Instanziieren Sie eine neue`Document` Objekt durch Hinzufügen der folgenden Codezeile:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `page`.
+## Schritt 5: Fügen Sie dem Dokument eine Seite hinzu
+ Fügen Sie mit dem eine neue Seite zum Dokument hinzu`Add` Methode der`Pages`Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 6: Add text fragments with line breaks
-Create a loop to add multiple text fragments to the page, each containing a paragraph with line breaks.
+## Schritt 6: Textfragmente mit Zeilenumbrüchen hinzufügen
+Erstellen Sie eine Schleife, um der Seite mehrere Textfragmente hinzuzufügen, die jeweils einen Absatz mit Zeilenumbrüchen enthalten.
 
 ```csharp
 for (int i = 0; i < 4; i++)
@@ -56,8 +56,8 @@ for (int i = 0; i < 4; i++)
 }
 ```
 
-## Step 7: Save the PDF document and extract line break information
-Save the PDF document using the `Save` method of the `Document` object. Then, extract the line break information using the `GetNotifications` method of the desired page.
+## Schritt 7: Speichern Sie das PDF-Dokument und extrahieren Sie die Zeilenumbruchinformationen
+ Speichern Sie das PDF-Dokument mit`Save` Methode der`Document` Objekt. Extrahieren Sie dann die Zeilenumbruchinformationen mithilfe von`GetNotifications` Methode der gewünschten Seite.
 
 ```csharp
 doc.Save(dataDir + "DetermineLineBreak_out.pdf");
@@ -65,9 +65,9 @@ string notifications = doc.Pages[1].GetNotifications();
 File.WriteAllText(dataDir + "notifications_out.txt", notifications);
 ```
 
-### Sample source code for Determine Line Break using Aspose.PDF for .NET 
+### Beispielquellcode für „Zeilenumbruch bestimmen“ mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 Page page = doc.Pages.Add();
@@ -82,48 +82,48 @@ string notifications = doc.Pages[1].GetNotifications();
 File.WriteAllText(dataDir + "notifications_out.txt", notifications);
 ```
 
-## Conclusion
-You have successfully determined line breaks in a PDF document using Aspose.PDF for .NET. The line break information has been extracted and saved to a text file.
+## Abschluss
+Sie haben mit Aspose.PDF für .NET erfolgreich Zeilenumbrüche in einem PDF-Dokument ermittelt. Die Zeilenumbruchinformationen wurden extrahiert und in einer Textdatei gespeichert.
 
-### FAQ's
+### FAQs
 
-#### Q: What is the main focus of this tutorial?
+#### F: Was ist der Schwerpunkt dieses Tutorials?
 
-A: This tutorial is focused on guiding you through the process of determining line breaks in a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the necessary steps to achieve this.
+A: Der Schwerpunkt dieses Tutorials liegt darauf, Sie durch den Prozess der Bestimmung von Zeilenumbrüchen in einer PDF-Datei mithilfe der Aspose.PDF für .NET-Bibliothek zu führen. Der bereitgestellte C#-Quellcode demonstriert die notwendigen Schritte, um dies zu erreichen.
 
-#### Q: Which namespaces should I import for this tutorial?
+#### F: Welche Namespaces sollte ich für dieses Tutorial importieren?
 
-A: In the code file where you want to determine line breaks, import the following namespaces at the beginning of the file:
+A: Importieren Sie in der Codedatei, in der Sie Zeilenumbrüche festlegen möchten, die folgenden Namespaces am Anfang der Datei:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-#### Q: How do I specify the document directory?
+#### F: Wie lege ich das Dokumentenverzeichnis fest?
 
-A: In the code, find the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ A: Suchen Sie im Code die Zeile`string dataDir = "YOUR DOCUMENT DIRECTORY";` und ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
 
-#### Q: How do I create a new Document instance?
+#### F: Wie erstelle ich eine neue Dokumentinstanz?
 
-A: In Step 4, you'll instantiate a new `Document` object using the provided code.
+ A: In Schritt 4 instanziieren Sie eine neue`Document` Objekt mithilfe des bereitgestellten Codes.
 
-#### Q: How do I add a page to the document?
+#### F: Wie füge ich dem Dokument eine Seite hinzu?
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection.
+ A: In Schritt 5 fügen Sie dem Dokument eine neue Seite hinzu`Add` Methode der`Pages` Sammlung.
 
-#### Q: How do I add text fragments with line breaks?
+#### F: Wie füge ich Textfragmente mit Zeilenumbrüchen hinzu?
 
-A: In Step 6, you'll create a loop to add multiple text fragments to the page, each containing a paragraph with line breaks.
+A: In Schritt 6 erstellen Sie eine Schleife, um der Seite mehrere Textfragmente hinzuzufügen, die jeweils einen Absatz mit Zeilenumbrüchen enthalten.
 
-#### Q: How do I save the PDF document and extract line break information?
+#### F: Wie speichere ich das PDF-Dokument und extrahiere Zeilenumbruchinformationen?
 
-A: In Step 7, you'll save the PDF document using the `Save` method of the `Document` object. Then, you'll extract the line break information using the `GetNotifications` method of the desired page and save it to a text file.
+ A: In Schritt 7 speichern Sie das PDF-Dokument mit`Save` Methode der`Document` Objekt. Anschließend extrahieren Sie die Zeilenumbruchinformationen mithilfe von`GetNotifications` Methode der gewünschten Seite und speichern Sie sie in einer Textdatei.
 
-#### Q: What is the purpose of the extracted line break information?
+#### F: Welchen Zweck haben die extrahierten Zeilenumbruchinformationen?
 
-A: The extracted line break information provides details about the line breaks and notifications present in the PDF document. This can be useful for analyzing and understanding how text and paragraphs are structured within the document.
+A: Die extrahierten Zeilenumbruchinformationen liefern Details zu den im PDF-Dokument vorhandenen Zeilenumbrüchen und Benachrichtigungen. Dies kann nützlich sein, um zu analysieren und zu verstehen, wie Text und Absätze im Dokument strukturiert sind.
 
-#### Q: What is the main takeaway from this tutorial?
+#### F: Was ist die wichtigste Erkenntnis aus diesem Tutorial?
 
-A: By following this tutorial, you've learned how to determine line breaks in a PDF document using Aspose.PDF for .NET. You can use this knowledge to extract and analyze line break information from PDF files programmatically.
+A: Durch die Befolgung dieses Tutorials haben Sie gelernt, wie Sie mit Aspose.PDF für .NET Zeilenumbrüche in einem PDF-Dokument bestimmen. Sie können dieses Wissen nutzen, um Zeilenumbruchinformationen aus PDF-Dateien programmgesteuert zu extrahieren und zu analysieren.

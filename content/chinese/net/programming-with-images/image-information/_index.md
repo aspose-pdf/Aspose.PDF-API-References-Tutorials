@@ -1,59 +1,59 @@
 ---
-title: Image Information In PDF File
-linktitle: Image Information In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Extract image information in PDF file using Aspose.PDF for .NET.
+title: PDF 文件中的图像信息
+linktitle: PDF 文件中的图像信息
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 提取 PDF 文件中的图像信息。
 type: docs
 weight: 160
 url: /zh/net/programming-with-images/image-information/
 ---
-This guide will take you step by step how to extract information about images in PDF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+本指南将逐步指导您如何使用 Aspose.PDF for .NET 提取 PDF 文件中的图像信息。确保您已设置环境并按照以下步骤操作：
 
-## Step 1: Define the document directory
+## 第1步：定义文档目录
 
-Make sure to set the correct document directory. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+确保设置正确的文档目录。代替`"YOUR DOCUMENT DIRECTORY"`在代码中添加 PDF 文档所在目录的路径。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the source PDF file
+## 第 2 步：加载源 PDF 文件
 
-In this step, we will load the source PDF file using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+在此步骤中，我们将使用以下命令加载源 PDF 文件`Document` Aspose.PDF 类。使用`Document`构造函数并传递 PDF 文档的路径。
 
 ```csharp
 Document doc = new Document(dataDir + "ImageInformation.pdf");
 ```
 
-## Step 3: Set default resolution
+## 步骤 3：设置默认分辨率
 
-In this step, we will set the default resolution for images. In the example, the default resolution is set to 72.
+在此步骤中，我们将设置图像的默认分辨率。在示例中，默认分辨率设置为 72。
 
 ```csharp
 int defaultResolution = 72;
 ```
 
-## Step 4: Initialize objects and counters
+## 第 4 步：初始化对象和计数器
 
-In this step, we will initialize the objects and counters needed to retrieve the image information.
+在此步骤中，我们将初始化检索图像信息所需的对象和计数器。
 
 ```csharp
 System.Collections.Stack graphicsState = new System.Collections.Stack();
 System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
 ```
 
-## Step 5: Cycle through operators on the first page of the document
+## 步骤 5：循环浏览文档首页上的运算符
 
-In this step, we will walk through the operators on the first page of the document to identify image-related operations.
+在此步骤中，我们将遍历文档第一页上的运算符来识别与图像相关的操作。
 
 ```csharp
 foreach(Operator op in doc.Pages[1].Contents)
 {
 ```
 
-## Step 6: Manage operators and extract image information
+## 第6步：管理算子并提取图像信息
 
-In this step, we will manage the different types of operators and extract the information about the images.
+在这一步中，我们将管理不同类型的运算符并提取有关图像的信息。
 
 ```csharp
 Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
@@ -61,7 +61,7 @@ Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GResto
 Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
 Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
 
-// Handle GSave and GRestore operations for transformations
+//处理转换的 GSave 和 GRestore 操作
 if (opSaveState != null)
 {
      graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
@@ -70,10 +70,10 @@ else if (opRestoreState != null)
 {
      graphicsState. Pop();
 }
-// Handle the ConcatenateMatrix operation for transformations
+//处理 ConcatenateMatrix 转换操作
 else if (opCtm != null)
 {
-     // Apply the transformation matrix
+     //应用变换矩阵
      System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
         (float)opCtm.Matrix.A,
         (float)opCtm.Matrix.B,
@@ -86,20 +86,20 @@ else if (opCtm != null)
      ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
      keep on going;
 }
-// Handle the Do operation for images
+//处理图像的Do操作
 else if (opDo != null)
 {
      if (imageNames.Contains(opDo.Name))
      {
-         // Retrieve the image
+         //检索图像
          XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-         // Retrieve the dimensions of the image
+         //检索图像的尺寸
          double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
          double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-         // Calculate the resolution based on the information above
+         //根据以上信息计算分辨率
          double resHorizontal = originalWidth * defaultResolution / scaledWidth;
          double resVertical = originalHeight * defaultResolution / scaledHeight;
-         // Display image information
+         //显示图像信息
          Console.Out.WriteLine(
                  string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
 								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
@@ -108,37 +108,37 @@ else if (opDo != null)
 }
 ```
 
-### Sample source code for Image Information using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 的图像信息示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load the source PDF file
+//加载源 PDF 文件
 Document doc = new Document(dataDir+ "ImageInformation.pdf");
-// Define the default resolution for image
+//定义图像的默认分辨率
 int defaultResolution = 72;
 System.Collections.Stack graphicsState = new System.Collections.Stack();
-// Define array list object which will hold image names
+//定义将保存图像名称的数组列表对象
 System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
-// Insert an object to stack
+//将对象插入堆栈
 graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
-// Get all the operators on first page of document
+//获取文档第一页上的所有运算符
 foreach (Operator op in doc.Pages[1].Contents)
 {
-	// Use GSave/GRestore operators to revert the transformations back to previously set
+	//使用 GSave/GRestore 运算符将转换恢复到先前设置
 	Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
 	Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-	// Instantiate ConcatenateMatrix object as it defines current transformation matrix.
+	//实例化 ConcatenateMatrix 对象，因为它定义当前变换矩阵。
 	Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-	// Create Do operator which draws objects from resources. It draws Form objects and Image objects
+	//创建从资源中提取对象的 Do 运算符。它绘制 Form 对象和 Image 对象
 	Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
 	if (opSaveState != null)
 	{
-		// Save previous state and push current state to the top of the stack
+		//保存之前的状态并将当前状态推入堆栈顶部
 		graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 	}
 	else if (opRestoreState != null)
 	{
-		// Throw away current state and restore previous one
+		//丢弃当前状态并恢复前一个状态
 		graphicsState.Pop();
 	}
 	else if (opCtm != null)
@@ -150,28 +150,28 @@ foreach (Operator op in doc.Pages[1].Contents)
 		   (float)opCtm.Matrix.D,
 		   (float)opCtm.Matrix.E,
 		   (float)opCtm.Matrix.F);
-		// Multiply current matrix with the state matrix
+		//将当前矩阵与状态矩阵相乘
 		((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
 		continue;
 	}
 	else if (opDo != null)
 	{
-		// In case this is an image drawing operator
+		//如果这是一个图像绘制操作员
 		if (imageNames.Contains(opDo.Name))
 		{
 			System.Drawing.Drawing2D.Matrix lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-			// Create XImage object to hold images of first pdf page
+			//创建 XImage 对象来保存第一个 pdf 页的图像
 			XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-			// Get image dimensions
+			//获取图像尺寸
 			double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
 			double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-			// Get Height and Width information of image
+			//获取图像的高度和宽度信息
 			double originalWidth = image.Width;
 			double originalHeight = image.Height;
-			// Compute resolution based on above information
+			//根据以上信息计算分辨率
 			double resHorizontal = originalWidth * defaultResolution / scaledWidth;
 			double resVertical = originalHeight * defaultResolution / scaledHeight;
-			// Display Dimension and Resolution information of each image
+			//显示每张图像的尺寸和分辨率信息
 			Console.Out.WriteLine(
 					string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
 								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
@@ -181,48 +181,48 @@ foreach (Operator op in doc.Pages[1].Contents)
 }
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have now learned how to extract image information in a PDF file using Aspose.PDF for .NET. You can use this information for various image processing tasks in your applications.
+恭喜！您现在已经了解了如何使用 Aspose.PDF for .NET 提取 PDF 文件中的图像信息。您可以将此信息用于应用程序中的各种图像处理任务。
 
-### FAQ's for image information in PDF file
+### PDF 文件中图像信息的常见问题解答
 
-#### Q: What is the purpose of extracting image information from a PDF document using Aspose.PDF for .NET?
+#### 问：使用 Aspose.PDF for .NET 从 PDF 文档中提取图像信息的目的是什么？
 
-A: Extracting image information from a PDF document provides insights into the dimensions, resolution, and other attributes of images within the document. This information can be used for image processing, analysis, or optimization tasks.
+答：从 PDF 文档中提取图像信息可以深入了解文档中图像的尺寸、分辨率和其他属性。该信息可用于图像处理、分析或优化任务。
 
-#### Q: How does Aspose.PDF for .NET assist in extracting image information from a PDF document?
+#### 问：Aspose.PDF for .NET 如何协助从 PDF 文档中提取图像信息？
 
-A: Aspose.PDF for .NET provides tools to access and analyze the content of a PDF document, including its images. The provided code demonstrates how to extract and display image information using various operators.
+答：Aspose.PDF for .NET 提供了访问和分析 PDF 文档内容（包括图像）的工具。提供的代码演示了如何使用各种运算符提取和显示图像信息。
 
-#### Q: What kind of image information can be extracted using this method?
+#### 问：该方法可以提取哪些图像信息？
 
-A: This method allows you to extract and display information such as scaled dimensions, resolution, and image names for images within a PDF document.
+答：此方法允许您提取并显示 PDF 文档中图像的信息，例如缩放尺寸、分辨率和图像名称。
 
-#### Q: How does the code identify and process image-related operators within a PDF document?
+#### 问：代码如何识别和处理 PDF 文档中与图像相关的运算符？
 
-A: The code iterates through the operators on a specified page of the PDF document. It identifies and processes operators related to image operations, transformations, and rendering.
+答：代码会迭代 PDF 文档指定页面上的运算符。它识别并处理与图像操作、转换和渲染相关的运算符。
 
-#### Q: What is the significance of default resolution, and how is it used in the code?
+#### 问：默认解析的意义是什么，在代码中是如何使用的？
 
-A: Default resolution is used as a reference point to calculate the actual resolution of images. The code computes the resolution of each image based on its dimensions and the default resolution setting.
+A：以默认分辨率为参考点来计算图像的实际分辨率。该代码根据每个图像的尺寸和默认分辨率设置计算其分辨率。
 
-#### Q: How can the extracted image information be utilized in real-world scenarios?
+#### 问：提取的图像信息如何应用于现实场景？
 
-A: The extracted image information can be used for tasks such as image quality assessment, image optimization, generating image thumbnails, and facilitating image-related decision-making processes.
+答：提取的图像信息可用于图像质量评估、图像优化、生成图像缩略图以及促进图像相关决策过程等任务。
 
-#### Q: Can I modify the code to extract additional image-related attributes?
+#### 问：我可以修改代码来提取其他与图像相关的属性吗？
 
-A: Yes, you can customize the code to extract additional attributes of images, such as color space, pixel depth, or image type.
+答：是的，您可以自定义代码来提取图像的其他属性，例如色彩空间、像素深度或图像类型。
 
-#### Q: Is the image information extraction process resource-intensive or time-consuming?
+#### 问：图像信息提取过程是否占用资源或耗时？
 
-A: The image information extraction process is efficient and optimized for performance, ensuring minimal impact on resource usage and processing time.
+答：图像信息提取过程高效且针对性能进行了优化，确保对资源使用和处理时间的影响最小。
 
-#### Q: How can developers benefit from identifying and extracting image information from PDF documents?
+#### 问：开发人员如何从 PDF 文档中识别和提取图像信息中受益？
 
-A: Developers can gain insights into the characteristics of images within PDF documents, enabling them to make informed decisions regarding image manipulation, processing, and optimization.
+答：开发人员可以深入了解 PDF 文档中图像的特征，使他们能够就图像操作、处理和优化做出明智的决策。
 
-#### Q: Can this method be used for batch processing of PDF documents containing images?
+#### 问：该方法可以用于批量处理包含图像的PDF文档吗？
 
-A: Yes, this method can be extended for batch processing by iterating through multiple pages or documents, extracting image information, and performing image-related tasks.
+答：是的，该方法可以通过迭代多个页面或文档、提取图像信息以及执行与图像相关的任务来扩展批处理。

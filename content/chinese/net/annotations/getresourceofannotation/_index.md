@@ -1,75 +1,75 @@
 ---
-title: Get Resource Of Annotation
-linktitle: Get Resource Of Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to retrieve the resource of an annotation using Aspose.PDF for .NET with this step-by-step guide.
+title: 获取注释资源
+linktitle: 获取注释资源
+second_title: Aspose.PDF for .NET API 参考
+description: 通过此分步指南，了解如何使用 Aspose.PDF for .NET 检索注释资源。
 type: docs
 weight: 90
 url: /zh/net/annotations/getresourceofannotation/
 ---
-The example shows how to get resource of annotation with Aspose.PDF for .NET. To get the resource of an annotation using Aspose.PDF for .NET, follow these steps:
+该示例展示了如何使用 Aspose.PDF for .NET 获取注释资源。要使用 Aspose.PDF for .NET 获取注释资源，请按照下列步骤操作：
 
-## Step 1: Set the path of the directory where the document is located.
+## 第一步：设置文档所在目录的路径。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the PDF document that contains the annotation whose resource you want to get.
+## 步骤2：打开包含您要获取其资源的注释的PDF文档。
 
 ```csharp
 Document doc = new Document(dataDir + "AddAnnotation.pdf");
 ```
 
-## Step 3: Create an annotation.
+## 步骤 3：创建注释。
 
 ```csharp
 ScreenAnnotation sa = new ScreenAnnotation(doc.Pages[1], new Rectangle(100, 400, 300, 600), dataDir + "AddSwfFileAsAnnotation.swf");
 ```
 
-## Step 4: Add the annotation to a page in the document.
+## 步骤 4：将注释添加到文档中的页面。
 
 ```csharp
 doc.Pages[1].Annotations.Add(sa);
 ```
 
-## Step 5: Save the document.
+## 步骤5：保存文档。
 
 ```csharp
 doc.Save(dataDir + "GetResourceOfAnnotation_Out.pdf");
 ```
 
-## Step 6: Open the modified document.
+## 第六步：打开修改后的文档。
 
 ```csharp
 Document doc1 = new Document(dataDir + "GetResourceOfAnnotation_Out.pdf");
 ```
 
-## Step 7: Get the action of the annotation.
+## 步骤7：获取注解的action。
 
 ```csharp
 RenditionAction action = (doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction;
 ```
 
-## Step 7: Get the rendition of the action.
+## 第7步：获取动作的再现。
 
 ```csharp
 Rendition rendition = ((doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction).Rendition;
 ```
 
-## Step 8: Get the media clip.
+## 第8步：获取媒体剪辑。
 
 ```csharp
 MediaClip clip = (rendition as MediaRendition).MediaClip;
 ```
 
-## Step 9: Get the file specification.
+## 步骤9：获取文件规范。
 
 ```csharp
 FileSpecification data = (clip as MediaClipData).Data;
 ```
 
-## Step 10: Read the data of the media.
+## 步骤10：读取媒体数据。
 
 ```csharp
 MemoryStream ms = new MemoryStream();
@@ -82,41 +82,41 @@ while ((read = source.Read(buffer, 0, buffer.Length)) > 0)
 }
 ```
 
-## Step 11: Print the name of the rendition and the rendition operation.
+## 第11步：打印再现的名称和再现操作。
 
 ```csharp
 Console.WriteLine(rendition.Name);
 Console.WriteLine(action.RenditionOperation);
 ```
 
-By following these steps, you can easily get the resource of an annotation in a PDF document using Aspose.PDF for .NET.
+通过执行以下步骤，您可以使用 Aspose.PDF for .NET 轻松获取 PDF 文档中的注释资源。
 
-### Example source code for Get Resource Of Annotation using Aspose.PDF for .NET:
+### 使用 Aspose.PDF for .NET 获取注释资源的示例源代码：
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+//打开文档
 Document doc = new Document(dataDir + "AddAnnotation.pdf");
-//Create annotation
+//创建注释
 ScreenAnnotation sa = new ScreenAnnotation(doc.Pages[1], new Rectangle(100, 400, 300, 600), dataDir + "AddSwfFileAsAnnotation.swf");
 doc.Pages[1].Annotations.Add(sa);
-// Save Doucument
+//保存文档
 doc.Save(dataDir + "GetResourceOfAnnotation_Out.pdf");
-// Open document
+//打开文档
 Document doc1 = new Document(dataDir + "GetResourceOfAnnotation_Out.pdf");
-//Get action of the annotation
+//获取注解的动作
 RenditionAction action = (doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction;
-//Get rendition of the rendition action
+//获取演绎动作的演绎
 Rendition rendition = ((doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction).Rendition;
-//Media Clip 
+//媒体剪辑
 MediaClip clip = (rendition as MediaRendition).MediaClip;
 FileSpecification data = (clip as MediaClipData).Data;
 MemoryStream ms = new MemoryStream();
 byte[] buffer = new byte[1024];
 int read = 0;
-//Data of media are accessible in FileSpecification.Contents
+//媒体数据可在 FileSpecification.Contents 中访问
 Stream source = data.Contents;
 while ((read = source.Read(buffer, 0, buffer.Length)) > 0)
 {
@@ -126,28 +126,28 @@ Console.WriteLine(rendition.Name);
 Console.WriteLine(action.RenditionOperation);
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we explored how to get the resource of a particular annotation from a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and using the provided C# source code, developers can easily access and manage annotations, including rendition annotations, in their PDF documents.
+在本教程中，我们探讨了如何使用 Aspose.PDF for .NET 从 PDF 文档获取特定注释的资源。通过遵循分步指南并使用提供的 C# 源代码，开发人员可以轻松访问和管理 PDF 文档中的注释，包括再现注释。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is a rendition in the context of PDF annotations?
+#### 问：什么是 PDF 注释上下文中的再现？
 
-A: In the context of PDF annotations, a rendition is a multimedia content presentation. It allows for embedding multimedia, such as audio or video, within the PDF document. The rendition annotation specifies the media to be presented and how it should be played.
+答：在 PDF 注释的上下文中，再现是多媒体内容演示。它允许在 PDF 文档中嵌入多媒体，例如音频或视频。再现注释指定要呈现的媒体及其播放方式。
 
-#### Q: Can I get the name of the media file associated with a rendition annotation?
+#### 问：我可以获得与演绎注释关联的媒体文件的名称吗？
 
-A: Yes, you can get the name of the media file associated with a rendition annotation using Aspose.PDF for .NET. The media file name can be accessed through the `FileSpecification` of the `MediaClip` object.
+答：是的，您可以使用 Aspose.PDF for .NET 获取与再现注释关联的媒体文件的名称。媒体文件名可以通过以下方式访问`FileSpecification`的`MediaClip`目的。
 
-#### Q: Can Aspose.PDF for .NET extract media files from a rendition annotation?
+#### 问：Aspose.PDF for .NET 能否从再现注释中提取媒体文件？
 
-A: Yes, Aspose.PDF for .NET can extract the media data from a rendition annotation, which includes audio or video content, and save it as a separate file.
+答：是的，Aspose.PDF for .NET 可以从再现注释中提取媒体数据（包括音频或视频内容），并将其保存为单独的文件。
 
-#### Q: How can I access the media data of a rendition annotation?
+#### 问：如何访问再现注释的媒体数据？
 
-A: The media data of a rendition annotation can be accessed through the `FileSpecification.Contents` property of the `MediaClipData` object.
+ A：可以通过以下方式访问再现注释的媒体数据：`FileSpecification.Contents`的财产`MediaClipData`目的。
 
-#### Q: Can I modify the media associated with a rendition annotation using Aspose.PDF for .NET?
+#### 问：我可以使用 Aspose.PDF for .NET 修改与再现注释关联的媒体吗？
 
-A: Aspose.PDF for .NET provides methods to access and modify the media data associated with a rendition annotation. You can update or replace the media file used by a rendition annotation.
+答：Aspose.PDF for .NET 提供了访问和修改与再现注释关联的媒体数据的方法。您可以更新或替换再现注释所使用的媒体文件。

@@ -1,56 +1,56 @@
 ---
-title: Decrypt PDF File
-linktitle: Decrypt PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to decrypt PDF file using Aspose.PDF for .NET.
+title: فك تشفير ملف PDF
+linktitle: فك تشفير ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية فك تشفير ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 20
 url: /ar/net/programming-with-security-and-signatures/decrypt/
 ---
-In this tutorial, we will guide you through the process of decrypt PDF file using Aspose.PDF for .NET. This library allows you to open an existing PDF file, decrypt it and save the updated version. This feature is useful when you need to remove the password from a PDF file for easier access.
+في هذا البرنامج التعليمي، سنرشدك خلال عملية فك تشفير ملف PDF باستخدام Aspose.PDF لـ .NET. تتيح لك هذه المكتبة فتح ملف PDF موجود وفك تشفيره وحفظ النسخة المحدثة. تكون هذه الميزة مفيدة عندما تحتاج إلى إزالة كلمة المرور من ملف PDF لتسهيل الوصول إليها.
 
-## Step 1: Prerequisites
+## الخطوة 1: المتطلبات الأساسية
 
-Before you begin, make sure you have the following prerequisites:
+قبل البدء، تأكد من توفر المتطلبات الأساسية التالية:
 
-- Basic knowledge of the C# programming language
-- Installing Visual Studio on your machine
-- Aspose.PDF library for .NET installed
+- المعرفة الأساسية بلغة البرمجة C#
+- تثبيت Visual Studio على جهازك
+- تم تثبيت مكتبة Aspose.PDF لـ .NET
 
-## Step 2: Environment setup
+## الخطوة 2: إعداد البيئة
 
-To get started, follow these steps to set up your development environment:
+للبدء، اتبع الخطوات التالية لإعداد بيئة التطوير الخاصة بك:
 
-1. Open Visual Studio and create a new C# project.
-2. Install Aspose.PDF library for .NET using NuGet package manager.
-3. Import the required namespaces into your code file:
+1. افتح Visual Studio وقم بإنشاء مشروع C# جديد.
+2. قم بتثبيت مكتبة Aspose.PDF لـ .NET باستخدام مدير الحزم NuGet.
+3. قم باستيراد مساحات الأسماء المطلوبة إلى ملف التعليمات البرمجية الخاص بك:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Opening the PDF document
+## الخطوة 3: فتح مستند PDF
 
-The first step is to open the PDF document you want to decrypt. In this example, we assume that you have a PDF file named "Decrypt.pdf" in the specified directory.
+الخطوة الأولى هي فتح مستند PDF الذي تريد فك تشفيره. في هذا المثال، نفترض أن لديك ملف PDF باسم "Decrypt.pdf" في الدليل المحدد.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document document = new Document(dataDir + "Decrypt.pdf", "password");
 ```
 
-Be sure to replace the placeholders with the actual locations and passwords you want to use.
+تأكد من استبدال العناصر النائبة بالمواقع الفعلية وكلمات المرور التي تريد استخدامها.
 
-## Step 4: PDF decryption
+## الخطوة 4: فك تشفير PDF
 
-Once you have opened the PDF document, you can decrypt it using the `Decrypt` method. No parameters are required for this method.
+ بمجرد فتح مستند PDF، يمكنك فك تشفيره باستخدام الملف`Decrypt` طريقة. لا توجد معلمات مطلوبة لهذه الطريقة.
 
 ```csharp
 document. Decrypt();
 ```
 
-## Step 5: Save updated PDF
+## الخطوة 5: حفظ ملف PDF المحدث
 
-After decrypting the PDF, you need to save the updated version of the document. Specify the output file path and use the `Save` method to save the document.
+ بعد فك تشفير ملف PDF، تحتاج إلى حفظ الإصدار المحدث من المستند. حدد مسار ملف الإخراج واستخدم`Save` طريقة حفظ الوثيقة.
 
 ```csharp
 dataDir = dataDir + "Decrypt_out.pdf";
@@ -58,57 +58,57 @@ document. Save(dataDir);
 Console.WriteLine("\nPDF file decrypted successfully.\nFile saved at " + dataDir);
 ```
 
-The updated PDF will be saved to the specified location.
+سيتم حفظ ملف PDF المحدث في الموقع المحدد.
 
-### Sample source code for Decrypt using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لفك التشفير باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Open document
+// افتح المستند
 Document document = new Document(dataDir+ "Decrypt.pdf", "password");
-// Decrypt PDF
+//فك تشفير قوات الدفاع الشعبي
 document.Decrypt();
 dataDir = dataDir + "Decrypt_out.pdf";
-// Save updated PDF
+// حفظ ملف PDF المحدث
 document.Save(dataDir);
 Console.WriteLine("\nPDF file decrypted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have successfully decrypted a PDF file using Aspose.PDF for .NET. This tutorial covered the step-by-step process from opening the document to saving the updated version. You can now use this feature to remove passwords from your PDF files.
+تهنئة ! لقد نجحت في فك تشفير ملف PDF باستخدام Aspose.PDF لـ .NET. يغطي هذا البرنامج التعليمي العملية خطوة بخطوة بدءًا من فتح المستند وحتى حفظ الإصدار المحدث. يمكنك الآن استخدام هذه الميزة لإزالة كلمات المرور من ملفات PDF الخاصة بك.
 
-### FAQ's for decrypt PDF file
+### الأسئلة الشائعة حول فك تشفير ملف PDF
 
-#### Q: What is the purpose of this tutorial?
+#### س: ما هو الغرض من هذا البرنامج التعليمي؟
 
-A: This tutorial aims to guide you through the process of decrypting a PDF file using Aspose.PDF for .NET. The library allows you to remove the password from an existing PDF document and save the updated version, providing easier access to the file.
+ج: يهدف هذا البرنامج التعليمي إلى إرشادك خلال عملية فك تشفير ملف PDF باستخدام Aspose.PDF لـ .NET. تتيح لك المكتبة إزالة كلمة المرور من مستند PDF موجود وحفظ النسخة المحدثة، مما يوفر وصولاً أسهل إلى الملف.
 
-#### Q: What prerequisites are required before starting?
+#### س: ما هي المتطلبات الأساسية المطلوبة قبل البدء؟
 
-A: Before you begin, make sure you have a basic understanding of the C# programming language, have Visual Studio installed on your machine, and have the Aspose.PDF library for .NET installed.
+ج: قبل أن تبدأ، تأكد من أن لديك الفهم الأساسي للغة البرمجة C#، ومن تثبيت Visual Studio على جهازك، ومن تثبيت مكتبة Aspose.PDF لـ .NET.
 
-#### Q: How do I set up the development environment?
+#### س: كيف أقوم بإعداد بيئة التطوير؟
 
-A: Follow the provided steps to set up your development environment, including creating a new C# project in Visual Studio, installing the Aspose.PDF library for .NET using NuGet Package Manager, and importing the required namespaces.
+ج: اتبع الخطوات المتوفرة لإعداد بيئة التطوير الخاصة بك، بما في ذلك إنشاء مشروع C# جديد في Visual Studio، وتثبيت مكتبة Aspose.PDF لـ .NET باستخدام NuGet Package Manager، واستيراد مساحات الأسماء المطلوبة.
 
-#### Q: How do I open an existing PDF document?
+#### س: كيف يمكنني فتح مستند PDF موجود؟
 
-A: Use the `Document` class to open the PDF document you want to decrypt. Replace "Decrypt.pdf" with the actual file name and provide the password for decryption.
+ ج: استخدم`Document` فئة لفتح مستند PDF الذي تريد فك تشفيره. استبدل "Decrypt.pdf" باسم الملف الفعلي وقم بتوفير كلمة المرور لفك التشفير.
 
-#### Q: How can I decrypt a PDF document?
+#### س: كيف يمكنني فك تشفير وثيقة PDF؟
 
-A: Once you have opened the PDF document, use the `Decrypt` method on the `Document` object. No parameters are required for this method.
+ ج: بمجرد فتح مستند PDF، استخدم الملف`Decrypt` الطريقة على`Document` هدف. لا توجد معلمات مطلوبة لهذه الطريقة.
 
-#### Q: Can I specify different passwords for decryption?
+#### س: هل يمكنني تحديد كلمات مرور مختلفة لفك التشفير؟
 
-A: No, the `Decrypt` method does not require any parameters. It assumes that the password provided during opening the document is the decryption password.
+ ج: لا،`Decrypt` الطريقة لا تتطلب أي معلمات. يفترض أن كلمة المرور المقدمة أثناء فتح المستند هي كلمة مرور فك التشفير.
 
-#### Q: How do I save the decrypted PDF document?
+#### س: كيف يمكنني حفظ مستند PDF الذي تم فك تشفيره؟
 
-A: After decrypting the PDF, use the `Save` method on the `Document` object to save the updated PDF document. Specify the output file path where the decrypted PDF will be saved.
+ ج: بعد فك تشفير ملف PDF، استخدم ملف`Save` الطريقة على`Document` كائن لحفظ مستند PDF المحدث. حدد مسار ملف الإخراج حيث سيتم حفظ ملف PDF الذي تم فك تشفيره.
 
-#### Q: How can I ensure the security of my decrypted PDF files?
+#### س: كيف يمكنني ضمان أمان ملفات PDF التي تم فك تشفيرها؟
 
-A: Once a PDF is decrypted, it no longer requires a password for access. Be cautious when sharing decrypted PDFs, as they may no longer have the same level of security as password-protected files.
+ج: بمجرد فك تشفير ملف PDF، فإنه لم يعد يتطلب كلمة مرور للوصول إليه. كن حذرًا عند مشاركة ملفات PDF التي تم فك تشفيرها، لأنها قد لا تتمتع بنفس مستوى الأمان مثل الملفات المحمية بكلمة مرور.

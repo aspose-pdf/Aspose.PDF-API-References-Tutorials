@@ -1,135 +1,135 @@
 ---
-title: Root Structure
-linktitle: Root Structure
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to using root structure elements with Aspose.PDF for .NET to access the root and StructTreeRoot object of the PDF document.
+title: Корневая структура
+linktitle: Корневая структура
+second_title: Справочник по Aspose.PDF для .NET API
+description: Пошаговое руководство по использованию элементов корневой структуры с Aspose.PDF для .NET для доступа к корню и объекту StructTreeRoot PDF-документа.
 type: docs
 weight: 130
 url: /ru/net/programming-with-tagged-pdf/root-structure/
 ---
-In this step-by-step guide, we are going to show you how to use root structure elements with Aspose.PDF for .NET. Aspose.PDF is a powerful library that lets you create and manipulate PDF documents programmatically. Root structure elements allow you to access the StructTreeRoot object of the PDF document and the root structure element.
+В этом пошаговом руководстве мы покажем вам, как использовать элементы корневой структуры с Aspose.PDF для .NET. Aspose.PDF — это мощная библиотека, которая позволяет создавать PDF-документы и управлять ими программно. Элементы корневой структуры позволяют получить доступ к объекту StructTreeRoot документа PDF и элементу корневой структуры.
 
-Let's dive into the code and learn how to use root structure elements with Aspose.PDF for .NET.
+Давайте углубимся в код и узнаем, как использовать элементы корневой структуры с Aspose.PDF для .NET.
 
-## Prerequisites
+## Предварительные условия
 
-Before you begin, make sure you have the following:
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-1. Aspose.PDF library for .NET installed.
-2. A basic knowledge of the C# programming language.
+1. Установлена библиотека Aspose.PDF для .NET.
+2. Базовые знания языка программирования C#.
 
-## Step 1: Setting up the environment
+## Шаг 1. Настройка среды
 
-To get started, open your C# development environment and create a new project. Make sure you have added a reference to the Aspose.PDF library for .NET in your project.
+Для начала откройте среду разработки C# и создайте новый проект. Убедитесь, что вы добавили ссылку на библиотеку Aspose.PDF для .NET в свой проект.
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating the document
+## Шаг 2: Создание документа
 
-The first step is to create a new PDF document using the `Document` class.
+ Первым шагом является создание нового PDF-документа с помощью`Document` сорт.
 
 ```csharp
-// Create the PDF document
+// Создайте PDF-документ
 Document document = new Document();
 ```
 
-## Step 3: Work with tagged content
+## Шаг 3. Работайте с тегированным контентом
 
-Then we get the tagged content of the document to work with.
+Затем мы получаем размеченное содержимое документа для работы.
 
 ```csharp
-// Get the tagged content of the document
+// Получить тегированное содержимое документа
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 4: Set document title and language
+## Шаг 4. Установите название и язык документа.
 
-We can now set the document title and language.
+Теперь мы можем установить заголовок и язык документа.
 
 ```csharp
-// Define the document title and language
+// Определите название документа и язык
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 5: Access the root structure element
+## Шаг 5: Доступ к корневому элементу структуры
 
-Now we can access the document's StructTreeRoot object and root structure element.
+Теперь мы можем получить доступ к объекту StructTreeRoot документа и элементу корневой структуры.
 
 ```csharp
-// Access the root structure element
+// Доступ к корневому элементу структуры
 StructTreeRootElement structTreeRootElement = taggedContent.StructTreeRootElement;
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-### Sample source code for Root Structure using Aspose.PDF for .NET 
+### Пример исходного кода для корневой структуры с использованием Aspose.PDF для .NET 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// Создать PDF-документ
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// Получить контент для работы с TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+// Установите заголовок и язык для Documentnet
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Properties StructTreeRootElement and RootElement are used for access to 
-// StructTreeRoot object of pdf document and to root structure element (Document structure element).
+// Свойства StructTreeRootElement и RootElement используются для доступа к
+// StructTreeRoot объект PDF-документа и корневой элемент структуры (элемент структуры документа).
 StructTreeRootElement structTreeRootElement = taggedContent.StructTreeRootElement;
 StructureElement rootElement = taggedContent.RootElement;
 
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You have learned how to use root structure elements with Aspose.PDF for .NET. You can now access the PDF document's StructTreeRoot object and root structure element to perform advanced operations on the document structure.
+Поздравляем! Вы узнали, как использовать элементы корневой структуры с Aspose.PDF для .NET. Теперь вы можете получить доступ к объекту StructTreeRoot документа PDF и элементу корневой структуры для выполнения дополнительных операций со структурой документа.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What are root structure elements in a PDF document, and how do they provide access to the document's structure?
+#### Вопрос: Что такое элементы корневой структуры PDF-документа и как они обеспечивают доступ к структуре документа?
 
-A: Root structure elements in a PDF document provide access to the document's structure, allowing you to interact with the StructTreeRoot object. They serve as entry points to the logical structure of the document, enabling advanced operations on the document's content.
+Ответ: Элементы корневой структуры PDF-документа предоставляют доступ к структуре документа, позволяя взаимодействовать с объектом StructTreeRoot. Они служат точками входа в логическую структуру документа, позволяя выполнять расширенные операции с содержимым документа.
 
-#### Q: How does Aspose.PDF for .NET facilitate working with root structure elements?
+#### Вопрос: Как Aspose.PDF для .NET упрощает работу с элементами корневой структуры?
 
-A: Aspose.PDF for .NET simplifies working with root structure elements by providing APIs to access the StructTreeRoot object and root structure element. This allows you to navigate and manipulate the document's logical structure programmatically.
+О: Aspose.PDF для .NET упрощает работу с элементами корневой структуры, предоставляя API для доступа к объекту StructTreeRoot и элементу корневой структуры. Это позволяет вам программно перемещаться по логической структуре документа и манипулировать ею.
 
-#### Q: What is the significance of the StructTreeRoot object in a PDF document's logical structure?
+#### Вопрос: Каково значение объекта StructTreeRoot в логической структуре PDF-документа?
 
-A: The StructTreeRoot object represents the root of the document's logical structure hierarchy. It contains a collection of structure elements that define the organization and relationships between different parts of the document.
+Ответ: Объект StructTreeRoot представляет собой корень иерархии логической структуры документа. Он содержит набор структурных элементов, которые определяют организацию и отношения между различными частями документа.
 
-#### Q: How can root structure elements be useful in PDF document manipulation?
+#### Вопрос: Как элементы корневой структуры могут быть полезны при работе с PDF-документами?
 
-A: Root structure elements offer a way to programmatically access and modify the underlying structure of a PDF document. This can be valuable for tasks such as adding, rearranging, or modifying the document's content while preserving its logical structure.
+Ответ: Элементы корневой структуры позволяют программно получать доступ к базовой структуре PDF-документа и изменять ее. Это может быть полезно для таких задач, как добавление, перестановка или изменение содержимого документа с сохранением его логической структуры.
 
-#### Q: Can I use root structure elements to access metadata or properties of a PDF document?
+#### Вопрос: Могу ли я использовать элементы корневой структуры для доступа к метаданным или свойствам PDF-документа?
 
-A: While root structure elements primarily focus on the document's logical structure, you can use them to access metadata and properties indirectly. By navigating the document's structure, you can retrieve information associated with different structure elements.
+О: Хотя элементы корневой структуры в первую очередь ориентированы на логическую структуру документа, вы можете использовать их для косвенного доступа к метаданным и свойствам. Путем навигации по структуре документа вы можете получить информацию, связанную с различными элементами структуры.
 
-#### Q: How does the StructTreeRootElement object relate to the root structure element?
+#### Вопрос: Как объект StructTreeRootElement связан с корневым элементом структуры?
 
-A: The StructTreeRootElement object is the entry point for accessing the StructTreeRoot object, which represents the highest level of the document's logical structure. The root structure element, on the other hand, represents the root element of the document's structure hierarchy.
+О: Объект StructTreeRootElement — это точка входа для доступа к объекту StructTreeRoot, который представляет самый высокий уровень логической структуры документа. С другой стороны, корневой элемент структуры представляет собой корневой элемент иерархии структуры документа.
 
-#### Q: Can I perform advanced operations on a PDF document's logical structure using root structure elements?
+#### Вопрос: Могу ли я выполнять дополнительные операции с логической структурой PDF-документа, используя элементы корневой структуры?
 
-A: Yes, you can perform advanced operations on a PDF document's logical structure using root structure elements. You can traverse the hierarchy, add new structure elements, modify existing ones, and establish relationships between different parts of the document.
+О: Да, вы можете выполнять расширенные операции с логической структурой PDF-документа, используя элементы корневой структуры. Вы можете перемещаться по иерархии, добавлять новые элементы структуры, изменять существующие и устанавливать связи между различными частями документа.
 
-#### Q: Is it possible to create custom structure elements within the PDF document using root structure elements?
+#### Вопрос: Можно ли создавать собственные элементы структуры в PDF-документе, используя элементы корневой структуры?
 
-A: Yes, you can create custom structure elements within the PDF document using root structure elements. This allows you to define and organize the document's structure according to your specific requirements.
+О: Да, вы можете создавать собственные элементы структуры в PDF-документе, используя элементы корневой структуры. Это позволяет вам определить и организовать структуру документа в соответствии с вашими конкретными требованиями.
 
-#### Q: Are there any precautions to consider when working with root structure elements in Aspose.PDF for .NET?
+#### Вопрос: Существуют ли какие-либо меры предосторожности, которые следует учитывать при работе с элементами корневой структуры в Aspose.PDF для .NET?
 
-A: When working with root structure elements, it's important to understand the PDF document's logical structure and the relationships between different elements. Be mindful of the hierarchy and the impact of modifications on the overall document structure.
+О: При работе с элементами корневой структуры важно понимать логическую структуру PDF-документа и связи между различными элементами. Помните об иерархии и влиянии изменений на общую структуру документа.
 
-#### Q: How do root structure elements contribute to making PDF document manipulation more efficient and precise?
+#### Вопрос: Как элементы корневой структуры способствуют повышению эффективности и точности манипулирования PDF-документами?
 
-A: Root structure elements provide a structured approach to manipulating PDF documents. They enable targeted modifications by allowing you to access specific parts of the document's logical structure, leading to more efficient and precise document manipulation.
+Ответ: Элементы корневой структуры обеспечивают структурированный подход к управлению PDF-документами. Они позволяют целенаправленно вносить изменения, предоставляя вам доступ к определенным частям логической структуры документа, что приводит к более эффективному и точному манипулированию документом.

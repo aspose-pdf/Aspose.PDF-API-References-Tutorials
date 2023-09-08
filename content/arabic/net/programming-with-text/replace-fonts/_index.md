@@ -1,49 +1,49 @@
 ---
-title: Replace Fonts In PDF File
-linktitle: Replace Fonts In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to replace fonts in PDF file using Aspose.PDF for .NET.
+title: استبدال الخطوط في ملف PDF
+linktitle: استبدال الخطوط في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استبدال الخطوط في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 340
 url: /ar/net/programming-with-text/replace-fonts/
 ---
-In this tutorial, we will explain how to replace specific fonts in PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of loading a PDF document, searching for text fragments, identifying the fonts to replace, replacing the fonts, and saving the modified PDF using the provided C# source code.
+سنشرح في هذا البرنامج التعليمي كيفية استبدال خطوط معينة في ملف PDF باستخدام مكتبة Aspose.PDF لـ .NET. سنتابع عملية تحميل مستند PDF خطوة بخطوة، والبحث عن أجزاء النص، وتحديد الخطوط المراد استبدالها، واستبدال الخطوط، وحفظ ملف PDF المعدل باستخدام كود مصدر C# المقدم.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before you begin, ensure that you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- تم تثبيت Aspose.PDF لمكتبة .NET.
+- فهم أساسي للبرمجة C#.
 
-## Step 1: Set up the Document Directory
+## الخطوة 1: إعداد دليل المستندات
 
-First, you need to set the path to the directory where you have the input PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF file.
+ أولاً، تحتاج إلى تعيين المسار إلى الدليل حيث يوجد ملف PDF المُدخل. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى ملف PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the PDF Document
+## الخطوة 2: قم بتحميل مستند PDF
 
-Next, we load the PDF document using the `Document` class from the Aspose.PDF library.
+ بعد ذلك، نقوم بتحميل مستند PDF باستخدام الملف`Document` فئة من مكتبة Aspose.PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 ```
 
-## Step 3: Search and Replace Fonts
+## الخطوة 3: البحث عن الخطوط واستبدالها
 
-We create a `TextFragmentAbsorber` object and set the edit option to remove unused fonts. Then, we accept the absorber for all the pages of the PDF document to search for text fragments.
+ نقوم بإنشاء أ`TextFragmentAbsorber`الكائن وقم بتعيين خيار التحرير لإزالة الخطوط غير المستخدمة. بعد ذلك، نقبل الممتص لجميع صفحات مستند PDF للبحث عن أجزاء النص.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
 pdfDocument.Pages.Accept(absorber);
 ```
 
-## Step 4: Replace Fonts
+## الخطوة 4: استبدال الخطوط
 
-We traverse through all the text fragments identified by the absorber. If the font name of a text fragment matches the desired font to replace, we replace it with the new font.
+نحن نجتاز جميع أجزاء النص التي حددها المستوعب. إذا كان اسم الخط الخاص بجزء النص يتطابق مع الخط المطلوب استبداله، فإننا نستبدله بالخط الجديد.
 
 ```csharp
 foreach (TextFragment textFragment in absorber.TextFragments)
@@ -55,9 +55,9 @@ foreach (TextFragment textFragment in absorber.TextFragments)
 }
 ```
 
-## Step 5: Save the Modified PDF
+## الخطوة 5: احفظ ملف PDF المعدل
 
-Finally, we save the modified PDF document to the specified output file.
+وأخيرًا، نقوم بحفظ مستند PDF المعدل في ملف الإخراج المحدد.
 
 ```csharp
 dataDir = dataDir + "ReplaceFonts_out.pdf";
@@ -65,29 +65,29 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nFonts replaced successfully in the PDF document.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Replace Fonts using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لاستبدال الخطوط باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// المسار إلى دليل المستندات.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load source PDF file
+	// تحميل ملف PDF المصدر
 	Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-	// Search text fragments and set edit option as remove unused fonts
+	// ابحث في أجزاء النص وقم بتعيين خيار التحرير لإزالة الخطوط غير المستخدمة
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
-	// Accept the absorber for all the pages
+	// قبول الممتص لجميع الصفحات
 	pdfDocument.Pages.Accept(absorber);
-	// Traverse through all the TextFragments
+	// اجتياز كافة أجزاء النص
 	foreach (TextFragment textFragment in absorber.TextFragments)
 	{
-		// If the font name is ArialMT, replace font name with Arial
+		// إذا كان اسم الخط هو ArialMT، فاستبدل اسم الخط بـ Arial
 		if (textFragment.TextState.Font.FontName == "Arial,Bold")
 		{
 			textFragment.TextState.Font = FontRepository.FindFont("Arial");
 		}
 	}
 	dataDir = dataDir + "ReplaceFonts_out.pdf";
-	// Save updated document
+	// حفظ المستند المحدث
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nFonts replaced successfully in pdf document.\nFile saved at " + dataDir);
 }
@@ -97,54 +97,54 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, you have learned how to replace specific fonts in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can load a PDF document, search for text fragments, identify and replace specific fonts, and save the modified PDF.
+في هذا البرنامج التعليمي، تعلمت كيفية استبدال خطوط معينة في مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. باتباع الدليل خطوة بخطوة وتنفيذ كود C# المقدم، يمكنك تحميل مستند PDF والبحث عن أجزاء النص وتحديد خطوط معينة واستبدالها وحفظ ملف PDF المعدل.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of the "Replace Fonts In PDF File" tutorial?
+#### س: ما هو الغرض من البرنامج التعليمي "استبدال الخطوط في ملف PDF"؟
 
-A: The "Replace Fonts In PDF File" tutorial demonstrates how to use the Aspose.PDF library for .NET to replace specific fonts in a PDF document. It provides a step-by-step guide on how to load a PDF document, search for text fragments, identify fonts to replace, replace the fonts, and save the modified PDF.
+ج: يوضح البرنامج التعليمي "استبدال الخطوط في ملف PDF" كيفية استخدام مكتبة Aspose.PDF لـ .NET لاستبدال خطوط معينة في مستند PDF. فهو يوفر دليلاً خطوة بخطوة حول كيفية تحميل مستند PDF، والبحث عن أجزاء النص، وتحديد الخطوط المراد استبدالها، واستبدال الخطوط، وحفظ ملف PDF المعدل.
 
-#### Q: Why would I want to replace fonts in a PDF document?
+#### س: لماذا أرغب في استبدال الخطوط في مستند PDF؟
 
-A: Replacing fonts in a PDF document can be necessary when you want to standardize the appearance of the text or improve the compatibility of the document across different devices and platforms. It allows you to ensure consistent typography and formatting.
+ج: قد يكون استبدال الخطوط في مستند PDF ضروريًا عندما تريد توحيد مظهر النص أو تحسين توافق المستند عبر الأجهزة والأنظمة الأساسية المختلفة. يسمح لك بضمان الطباعة والتنسيق المتسقين.
 
-#### Q: How do I set up the document directory?
+#### س: كيف أقوم بإعداد دليل المستندات؟
 
-A: To set up the document directory:
+ج: لإعداد دليل المستندات:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your input PDF file is located.
+1.  يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى الدليل حيث يوجد ملف PDF المدخل الخاص بك.
 
-#### Q: How do I replace specific fonts in a PDF document?
+#### س: كيف يمكنني استبدال خطوط معينة في مستند PDF؟
 
-A: The tutorial guides you through the process step by step:
+ج: يرشدك البرنامج التعليمي خلال العملية خطوة بخطوة:
 
-1. Load the PDF document using the `Document` class.
-2. Create a `TextFragmentAbsorber` object and set the edit option to remove unused fonts. Accept the absorber for all the pages to search for text fragments.
-3. Traverse through the identified text fragments. If the font name of a text fragment matches the font you want to replace, replace it with the new font.
+1.  قم بتحميل مستند PDF باستخدام`Document` فصل.
+2.  إنشاء`TextFragmentAbsorber` الكائن وقم بتعيين خيار التحرير لإزالة الخطوط غير المستخدمة. اقبل الممتص لجميع الصفحات للبحث عن أجزاء النص.
+3. اجتياز أجزاء النص المحددة. إذا كان اسم الخط الخاص بجزء النص يتطابق مع الخط الذي تريد استبداله، فاستبدله بالخط الجديد.
 
-#### Q: What is the purpose of using `TextFragmentAbsorber` with font replacement options?
+####  س: ما هو الغرض من الاستخدام`TextFragmentAbsorber` with font replacement options?
 
-A: The `TextFragmentAbsorber` with font replacement options allows you to locate text fragments and simultaneously remove unused fonts. This is important to ensure that the replaced fonts are not added as additional resources in the PDF.
+ ج: ال`TextFragmentAbsorber` مع خيارات استبدال الخط، يمكنك تحديد موقع أجزاء النص وإزالة الخطوط غير المستخدمة في نفس الوقت. يعد هذا أمرًا مهمًا لضمان عدم إضافة الخطوط المستبدلة كموارد إضافية في ملف PDF.
 
-#### Q: How do I identify specific fonts to replace?
+#### س: كيف يمكنني تحديد خطوط معينة لاستبدالها؟
 
-A: By traversing through the text fragments identified by the absorber, you can access the font information for each text fragment. If the font name matches the font you want to replace, you can perform the replacement.
+ج: من خلال المرور عبر أجزاء النص التي تم تحديدها بواسطة أداة الامتصاص، يمكنك الوصول إلى معلومات الخط لكل جزء من النص. إذا كان اسم الخط يطابق الخط الذي تريد استبداله، فيمكنك إجراء الاستبدال.
 
-#### Q: What happens if the font to be replaced is not found in a text fragment?
+#### س: ماذا يحدث إذا لم يتم العثور على الخط المراد استبداله في جزء النص؟
 
-A: If the font to be replaced is not found in a text fragment, the text fragment's font remains unchanged. The replacement will only occur if the font name matches.
+ج: إذا لم يتم العثور على الخط المراد استبداله في جزء النص، فسيظل خط جزء النص بدون تغيير. سيتم الاستبدال فقط في حالة تطابق اسم الخط.
 
-#### Q: Is there a limitation to replacing fonts in this tutorial?
+#### س: هل هناك قيود على استبدال الخطوط في هذا البرنامج التعليمي؟
 
-A: This tutorial focuses on replacing specific fonts in text fragments. If you need to replace fonts in other contexts, such as annotations or form fields, you would need to extend the approach accordingly.
+ج: يركز هذا البرنامج التعليمي على استبدال خطوط معينة في أجزاء النص. إذا كنت بحاجة إلى استبدال الخطوط في سياقات أخرى، مثل التعليقات التوضيحية أو حقول النموذج، فستحتاج إلى توسيع النهج وفقًا لذلك.
 
-#### Q: What is the expected outcome of executing the provided code?
+#### س: ما هي النتيجة المتوقعة من تنفيذ الكود المقدم؟
 
-A: By following the tutorial and running the provided C# code, you will replace specific fonts in the PDF document. The fonts identified by the criteria you set will be replaced with the new font you specify.
+ج: باتباع البرنامج التعليمي وتشغيل كود C# المقدم، سوف تقوم باستبدال خطوط معينة في مستند PDF. سيتم استبدال الخطوط المحددة بواسطة المعايير التي قمت بتعيينها بالخط الجديد الذي تحدده.
 
-#### Q: Can I use this approach to replace fonts throughout the entire PDF document?
+#### س: هل يمكنني استخدام هذا الأسلوب لاستبدال الخطوط في مستند PDF بأكمله؟
 
-A: Yes, you can adapt the code to replace fonts throughout the entire PDF document by traversing through all text fragments and applying the font replacement logic.
+ج: نعم، يمكنك تعديل التعليمات البرمجية لاستبدال الخطوط في مستند PDF بأكمله عن طريق المرور عبر جميع أجزاء النص وتطبيق منطق استبدال الخط.

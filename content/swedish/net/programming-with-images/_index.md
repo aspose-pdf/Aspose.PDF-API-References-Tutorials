@@ -1,43 +1,43 @@
 ---
-title: Programming with Images
-linktitle: Programming with Images
+title: Programmering med bilder
+linktitle: Programmering med bilder
 type: docs
 weight: 22
 url: /sv/net/programming-with-images/
-description: Aspose.PDF for .NET's Programming with Images tutorials teach you how to manipulate and manage images in PDF documents.
+description: Aspose.PDF för .NETs självstudieprogram för programmering med bilder lär dig hur du manipulerar och hanterar bilder i PDF-dokument.
 ---
 
-Aspose.PDF for .NET's "Programming with Images" tutorials walk you through the steps of manipulating and managing images in your PDF documents. Learn how to insert, extract, resize and edit images to create visually rich PDF documents. These step-by-step tutorials provide clear code examples and in-depth explanations to help you master the image-related features of Aspose.PDF for .NET. Improve your PDF programming skills with these practical tutorials and enrich your documents with attractive and informative images.
+Aspose.PDF för .NET:s "Programmering med bilder" handledningar leder dig genom stegen för att manipulera och hantera bilder i dina PDF-dokument. Lär dig hur du infogar, extraherar, ändrar storlek och redigerar bilder för att skapa visuellt rika PDF-dokument. Dessa steg-för-steg handledningar ger tydliga kodexempel och djupgående förklaringar som hjälper dig att bemästra de bildrelaterade funktionerna i Aspose.PDF för .NET. Förbättra dina PDF-programmeringsfärdigheter med dessa praktiska handledningar och berika dina dokument med attraktiva och informativa bilder.
 
-## Tutorials
-| Title | Description |
+## Handledningar
+| Titel | Beskrivning |
 | --- | --- | 
-| [Add Image In PDF File](./add-image/) | Easily add an image to a PDF document using Aspose.PDF for .NET. |  
-| [All Pages To TIFF](./all-pages-to-tiff/) | Convert all pages of a PDF document to TIFF file with Aspose.PDF for .NET. |  
-| [Bradley Algorithm](./bradley-algorithm/) | Convert a PDF document using the Bradley algorithm with Aspose.PDF for .NET. |  
-| [CGM Image to PDF](./cgm-image-to-pdf/) | Easily convert CGM image to PDF with Aspose.PDF for .NET. |  
-| [Convert All Pages To EMF](./convert-all-pages-to-emf/) | Easily convert all pages of a PDF document to EMF files with Aspose.PDF for .NET. |  
-| [Convert All Pages To PNG](./convert-all-pages-to-png/) | Easily convert all pages of a PDF document to PNG files with Aspose.PDF for .NET. |  
-| [Convert Image Stream to PDF File](./convert-image-stream-to-pdf/) | Easily convert an image stream to PDF file with Aspose.PDF for .NET. |  
-| [Convert Page Region To DOM](./convert-page-region-to-dom/) | Easily convert a specific region of a PDF page to a Document Object Model (DOM) with Aspose.PDF for .NET. |  
-| [Convert To BMP](./convert-to-bmp/) | Easily convert PDF to individual BMP images with Aspose.PDF for .NET. |  
-| [Create Thumbnail Images In PDF File](./create-thumbnail-images/) | Easily create thumbnail image in PDF file with Aspose.PDF for .NET. |  
-| [Delete Images From PDF File](./delete-images/) | Easily delete images from PDF file with Aspose.PDF for .NET. |  
-| [Extract Images From PDF File](./extract-images/) | Easily extract images from PDF file with Aspose.PDF for .NET. |  
-| [Fast Shrink Images](./fast-shrink-images/) | Quickly reduce the size of images in a PDF file with Aspose.PDF for .NET. |  
-| [Flate Decode Compression](./flate-decode-compression/) | Efficiently compress images in a PDF using Flate Decode compression with Aspose.PDF for .NET. |  
-| [Identify Images In PDF File](./identify-images/) | Easily identify images in PDF file and determine their color type with Aspose.PDF for .NET. |  
-| [Image Information In PDF File](./image-information/) | Extract image information in PDF file using Aspose.PDF for .NET. |  
-| [Image Placements](./image-placements/) | Learn how to use Aspose.PDF for .NET to place images in a PDF document. |  
-| [Image to PDF](./image-to-pdf/) | Easily convert image to PDF using Aspose.PDF for .NET. |  
-| [Large CGM Image to PDF](./large-cgm-image-to-pdf/) | Easily convert a large CGM image to PDF using Aspose.PDF for .NET. |  
-| [Pages To Images](./pages-to-images/) | Easily convert pages of a PDF document to images with Aspose.PDF for .NET. |  
-| [Page To EMF](./page-to-emf/) | Step by step guide to convert PDF page to EMF format using Aspose.PDF for .NET. |  
-| [Page To PNG](./page-to-png/) | Step by step guide to convert a page to PNG format using Aspose.PDF for .NET. |  
-| [PDF Page To TIFF](./page-to-tiff/) | Step by step guide to convert PDF page to TIFF using Aspose.PDF for .NET. |  
-| [Replace Image In PDF File](./replace-image/) | Step-by-step guide to replacing an image in PDF file using Aspose.PDF for .NET. |  
-| [Resize Images In PDF File](./resize-images/) | Step by step guide to resize images in PDF file using Aspose.PDF for .NET. |  
-| [Search And Get Images In PDF File](./search-and-get-images/) | Step by step guide to search and get images in PDF file using Aspose.PDF for .NET. |  
-| [Set Image Size In PDF File](./set-image-size/) | Step-by-step guide to set the size of an image in PDF file using Aspose.PDF for .NET. |  
-| [Shrink Images In PDF File](./shrink-images/) | Step-by-step guide to reduce the size of images in PDF file using Aspose.PDF for .NET. |  
-| [Store Image In XImage Collection](./store-image-in-ximage-collection/) |  by step guide to store an image in XImage collection using Aspose.PDF for .NET. |  
+| [Lägg till bild i PDF-fil](./add-image/) | Lägg enkelt till en bild i ett PDF-dokument med Aspose.PDF för .NET. |  
+| [Alla sidor till TIFF](./all-pages-to-tiff/) | Konvertera alla sidor i ett PDF-dokument till TIFF-fil med Aspose.PDF för .NET. |  
+| [Bradleys algoritm](./bradley-algorithm/) | Konvertera ett PDF-dokument med Bradley-algoritmen med Aspose.PDF för .NET. |  
+| [CGM-bild till PDF](./cgm-image-to-pdf/) | Konvertera enkelt CGM-bild till PDF med Aspose.PDF för .NET. |  
+| [Konvertera alla sidor till EMF](./convert-all-pages-to-emf/) | Konvertera enkelt alla sidor i ett PDF-dokument till EMF-filer med Aspose.PDF för .NET. |  
+| [Konvertera alla sidor till PNG](./convert-all-pages-to-png/) | Konvertera enkelt alla sidor i ett PDF-dokument till PNG-filer med Aspose.PDF för .NET. |  
+| [Konvertera bildström till PDF-fil](./convert-image-stream-to-pdf/) | Konvertera enkelt en bildström till PDF-fil med Aspose.PDF för .NET. |  
+| [Konvertera sidregion till DOM](./convert-page-region-to-dom/) | Konvertera enkelt en specifik region av en PDF-sida till en Document Object Model (DOM) med Aspose.PDF för .NET. |  
+| [Konvertera till BMP](./convert-to-bmp/) | Konvertera enkelt PDF till individuella BMP-bilder med Aspose.PDF för .NET. |  
+| [Skapa miniatyrbilder i PDF-fil](./create-thumbnail-images/) | Skapa enkelt miniatyrbild i PDF-fil med Aspose.PDF för .NET. |  
+| [Ta bort bilder från PDF-fil](./delete-images/) | Ta enkelt bort bilder från PDF-fil med Aspose.PDF för .NET. |  
+| [Extrahera bilder från PDF-fil](./extract-images/) | Extrahera enkelt bilder från PDF-fil med Aspose.PDF för .NET. |  
+| [Snabbkrympa bilder](./fast-shrink-images/) | Minska snabbt storleken på bilder i en PDF-fil med Aspose.PDF för .NET. |  
+| [Flate Decode Compression](./flate-decode-compression/) | Komprimera bilder effektivt i en PDF med Flate Decode-komprimering med Aspose.PDF för .NET. |  
+| [Identifiera bilder i PDF-fil](./identify-images/) | Identifiera enkelt bilder i PDF-fil och bestäm deras färgtyp med Aspose.PDF för .NET. |  
+| [Bildinformation i PDF-fil](./image-information/) | Extrahera bildinformation i PDF-fil med Aspose.PDF för .NET. |  
+| [Bildplaceringar](./image-placements/) | Lär dig hur du använder Aspose.PDF för .NET för att placera bilder i ett PDF-dokument. |  
+| [Bild till PDF](./image-to-pdf/) | Konvertera enkelt bild till PDF med Aspose.PDF för .NET. |  
+| [Stor CGM-bild till PDF](./large-cgm-image-to-pdf/) | Konvertera enkelt en stor CGM-bild till PDF med Aspose.PDF för .NET. |  
+| [Sidor till bilder](./pages-to-images/) | Konvertera enkelt sidor i ett PDF-dokument till bilder med Aspose.PDF för .NET. |  
+| [Sida till EMF](./page-to-emf/) | Steg för steg guide för att konvertera PDF-sida till EMF-format med Aspose.PDF för .NET. |  
+| [Sida till PNG](./page-to-png/) | Steg för steg guide för att konvertera en sida till PNG-format med Aspose.PDF för .NET. |  
+| [PDF-sida till TIFF](./page-to-tiff/) | Steg för steg guide för att konvertera PDF-sida till TIFF med Aspose.PDF för .NET. |  
+| [Ersätt bild i PDF-fil](./replace-image/) | Steg-för-steg-guide för att ersätta en bild i PDF-fil med Aspose.PDF för .NET. |  
+| [Ändra storlek på bilder i PDF-fil](./resize-images/) | Steg för steg guide för att ändra storlek på bilder i PDF-fil med Aspose.PDF för .NET. |  
+| [Sök och hämta bilder i PDF-fil](./search-and-get-images/) | Steg för steg guide för att söka och få bilder i PDF-fil med Aspose.PDF för .NET. |  
+| [Ställ in bildstorlek i PDF-fil](./set-image-size/) | Steg-för-steg-guide för att ställa in storleken på en bild i PDF-fil med Aspose.PDF för .NET. |  
+| [Krympa bilder i PDF-fil](./shrink-images/) | Steg-för-steg-guide för att minska storleken på bilder i PDF-fil med Aspose.PDF för .NET. |  
+| [Lagra bild i XImage Collection](./store-image-in-ximage-collection/) |  för steg-guide för att lagra en bild i XImage-samlingen med Aspose.PDF för .NET. |  

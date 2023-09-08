@@ -1,19 +1,19 @@
 ---
-title: Insert Page Break In PDF File
-linktitle: Insert Page Break In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to insert a page break in PDF file using Aspose.PDF for .NET.
+title: 在 PDF 文件中插入分页符
+linktitle: 在 PDF 文件中插入分页符
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中插入分页符。
 type: docs
 weight: 110
 url: /zh/net/programming-with-tables/insert-page-break/
 ---
-In this tutorial, we will learn how to insert a page break in PDF file using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to add a page break after a certain number of lines in a table of a PDF document. Let's start!
+在本教程中，我们将学习如何使用 Aspose.PDF for .NET 在 PDF 文件中插入分页符。我们将一步步解释C#的源代码。在本教程结束时，您将了解如何在 PDF 文档表格中的一定行数之后添加分页符。开始吧！
 
-## Step 1: Setting up the environment
-Make sure you have configured your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## 第一步：搭建环境
+确保您已使用 Aspose.PDF for .NET 配置 C# 开发环境。添加对库的引用并导入必要的命名空间。
 
-## Step 2: Creating the Document and Table
-We create a new Document instance and add a page to this document. Next, we create a Table instance to represent our table in the PDF document. We also define the border styles for the table.
+## 第2步：创建文档和表格
+我们创建一个新的 Document 实例并向该文档添加一个页面。接下来，我们创建一个 Table 实例来表示 PDF 文档中的表格。我们还定义了表格的边框样式。
 
 ```csharp
 Document doc = new Document();
@@ -25,8 +25,8 @@ tab.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Asp
 tab. ColumnWidths = "100 100";
 ```
 
-## Step 3: Add rows to table
-We use a loop to add 200 rows to the array. For each row, we create an instance of Row and add two cells with text content.
+## 步骤 3：向表中添加行
+我们使用循环向数组添加 200 行。对于每一行，我们创建一个 Row 实例并添加两个包含文本内容的单元格。
 
 ```csharp
 for (int counter = 0; counter <= 200; counter++)
@@ -42,45 +42,45 @@ for (int counter = 0; counter <= 200; counter++)
      cell2.Paragraphs.Add(new TextFragment("Cell " + counter + ", 1"));
      row. Cells. Add(cell2);
     
-     // When 10 lines are added, we insert a new page break
+     //当添加 10 行时，我们插入一个新的分页符
      if (counter % 10 == 0 && counter != 0)
          row. IsInNewPage = true;
 }
 ```
 
-## Step 4: Adding the table to the document
-We add the table to the paragraphs collection of the document page.
+## 步骤 4：将表格添加到文档中
+我们将表格添加到文档页面的段落集合中。
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(tab);
 ```
 
-## Step 5: Save the document
-We save the PDF document with the page break inserted.
+## 第 5 步：保存文档
+我们保存插入分页符的 PDF 文档。
 
 ```csharp
 doc.Save(dataDir + "InsertPageBreak_out.pdf");
 ```
 
-### Example source code for Insert Page Break using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 插入分页符的示例源代码
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document instance
+//实例化文档实例
 Document doc = new Document();
-// Add page to pages collection of PDF file
+//将页面添加到 PDF 文件的页面集合
 doc.Pages.Add();
-// Create table instance
+//创建表实例
 Aspose.Pdf.Table tab = new Aspose.Pdf.Table();
-// Set border style for table
+//设置表格边框样式
 tab.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Red);
-// Set default border style for table with border color as Red
+//设置表格的默认边框样式，边框颜色为红色
 tab.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Red);
-// Specify table columsn widht
+//指定表列宽度
 tab.ColumnWidths = "100 100";
-// Create a loop to add 200 rows for table
+//创建一个循环为表添加 200 行
 for (int counter = 0; counter <= 200; counter++)
 {
 	Aspose.Pdf.Row row = new Aspose.Pdf.Row();
@@ -90,55 +90,55 @@ for (int counter = 0; counter <= 200; counter++)
 	row.Cells.Add(cell1); Aspose.Pdf.Cell cell2 = new Aspose.Pdf.Cell();
 	cell2.Paragraphs.Add(new TextFragment("Cell " + counter + ", 1"));
 	row.Cells.Add(cell2);
-	// When 10 rows are added, render new row in new page
+	//添加 10 行时，在新页面中呈现新行
 	if (counter % 10 == 0 && counter != 0) row.IsInNewPage = true;
 }
-// Add table to paragraphs collection of PDF file
+//将表格添加到 PDF 文件的段落集合中
 doc.Pages[1].Paragraphs.Add(tab);
 
 dataDir = dataDir + "InsertPageBreak_out.pdf";
-// Save the PDF document
+//保存 PDF 文档
 doc.Save(dataDir);
 
 Console.WriteLine("\nPage break inserted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-In this tutorial, we learned how to insert a page break in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to add a page break after a certain number of lines in a table in a PDF document using C#.
+## 结论
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 在 PDF 文档中插入分页符。您可以使用此分步指南，使用 C# 在 PDF 文档的表格中的特定行数之后添加分页符。
 
-### FAQ's for insert page break in PDF file
+### 在 PDF 文件中插入分页符的常见问题解答
 
-#### Q: How can I change the page size for the new pages created after the page break?
+#### 问：如何更改分页后创建的新页面的页面大小？
 
-A: To change the page size for the new pages created after the page break, you can set the `PageSize` property of the `Page` object. For example, you can use the following code to set the page size to A4:
+答：要更改分页符后创建的新页面的页面大小，您可以设置`PageSize`的财产`Page`目的。例如，您可以使用以下代码将页面尺寸设置为A4：
 
 ```csharp
-// Set the page size to A4
+//将页面大小设置为A4
 doc.Pages[1].SetPageSize(PageSize.A4);
 ```
 
-#### Q: Can I control the page margins for the new pages after the page break?
+#### 问：我可以控制分页后新页面的页边距吗？
 
-A: Yes, you can control the page margins for the new pages after the page break. Use the `Margin` property of the `Page` object to set the page margins. For example, to set all margins to 10 points, you can use the following code:
+答：是的，您可以控制分页后新页面的页边距。使用`Margin`的财产`Page`对象设置页边距。例如，要将所有边距设置为 10 磅，可以使用以下代码：
 
 ```csharp
-// Set all margins to 10 points
+//将所有边距设置为 10 点
 doc.Pages[1].Margin = new MarginInfo(10, 10, 10, 10);
 ```
 
-#### Q: Is it possible to add headers and footers to the new pages after the page break?
+#### 问：分页后的新页面是否可以添加页眉和页脚？
 
-A: Yes, you can add headers and footers to the new pages after the page break. Use the `Page.Header` and `Page.Footer` properties to add content to the header and footer sections of the page. For example:
+答：是的，您可以在分页符后的新页面中添加页眉和页脚。使用`Page.Header`和`Page.Footer`属性将内容添加到页面的页眉和页脚部分。例如：
 
 ```csharp
-// Add header to the new pages
+//将标题添加到新页面
 doc.Pages[1].Header = new HeaderFooter()
 {
     Margin = new MarginInfo(10, 10, 10, 10),
     Paragraphs = { new TextFragment("Header content") }
 };
 
-// Add footer to the new pages
+//将页脚添加到新页面
 doc.Pages[1].Footer = new HeaderFooter()
 {
     Margin = new MarginInfo(10, 10, 10, 10),
@@ -146,10 +146,10 @@ doc.Pages[1].Footer = new HeaderFooter()
 };
 ```
 
-#### Q: Can I insert page breaks at specific locations other than after a certain number of rows?
+#### 问：除了一定数量的行之后，我可以在特定位置插入分页符吗？
 
-A: Yes, you can insert page breaks at specific locations other than after a certain number of rows. You can set the `IsInNewPage` property of a row to `true` to force the table to start a new page after that row.
+答：是的，您可以在特定位置插入分页符，而不是在一定行数之后。您可以设置`IsInNewPage`行的属性为`true`强制表在该行之后开始一个新页面。
 
-#### Q: How can I adjust the page break behavior based on content height?
+#### 问：如何根据内容高度调整分页行为？
 
-A: You can use the `IsBroken` property of the table to enable or disable automatic row breaking across pages. When set to `true`, it allows rows to break across pages based on content height.
+答：您可以使用`IsBroken`表的属性可启用或禁用跨页自动断行。当设置为`true`，它允许根据内容高度跨页面分隔行。

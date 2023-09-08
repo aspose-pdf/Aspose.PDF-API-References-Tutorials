@@ -1,52 +1,52 @@
 ---
-title: Add Text Stamp In PDF File
-linktitle: Add Text Stamp In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily add a text stamp in PDF file with Aspose.PDF for .NET.
+title: Aggiungi timbro di testo nel file PDF
+linktitle: Aggiungi timbro di testo nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come aggiungere facilmente un timbro di testo nel file PDF con Aspose.PDF per .NET.
 type: docs
 weight: 50
 url: /it/net/programming-with-stamps-and-watermarks/add-text-stamp/
 ---
-In this tutorial, we will take you step by step on how to add a text stamp in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to add a custom text stamp to a specific page of the PDF file.
+In questo tutorial, ti guideremo passo dopo passo su come aggiungere un timbro di testo nel file PDF utilizzando Aspose.PDF per .NET. Ti mostreremo come utilizzare il codice sorgente C# fornito per aggiungere un timbro di testo personalizzato a una pagina specifica del file PDF.
 
-## Step 1: Setting up the environment
+## Passaggio 1: configurazione dell'ambiente
 
-Before you begin, make sure you have the following:
+Prima di iniziare, assicurati di avere quanto segue:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Un ambiente di sviluppo .NET installato.
+- La libreria Aspose.PDF per .NET scaricata e a cui si fa riferimento nel progetto.
 
-## Step 2: Loading the PDF document
+## Passaggio 2: caricamento del documento PDF
 
-The first step is to load the existing PDF document into your project. Here's how:
+Il primo passo è caricare il documento PDF esistente nel tuo progetto. Ecco come:
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the document
+// Apri il documento
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Assicurati di sostituire "LA TUA DIRECTORY DOCUMENTI" con il percorso effettivo della directory in cui si trova il tuo documento PDF.
 
-## Step 3: Creating the text buffer
+## Passaggio 3: creazione del buffer di testo
 
-Now that you have uploaded the PDF document, you can create the text stamp to add. Here's how to do it:
+Ora che hai caricato il documento PDF, puoi creare il timbro di testo da aggiungere. Ecco come farlo:
 
 ```csharp
-// Create the text buffer
+// Crea il buffer di testo
 TextStamp textStamp = new TextStamp("Example Stamp");
 ```
 
-The code above creates a new text buffer containing the specified text.
+Il codice sopra crea un nuovo buffer di testo contenente il testo specificato.
 
-## Step 4: Configuring Text Stamp Properties
+## Passaggio 4: configurazione delle proprietà del timbro di testo
 
-Before adding the text stamp to the PDF document, you can configure various properties of the stamp, such as background, position, rotation, font, size, etc. Here's how:
+Prima di aggiungere il timbro di testo al documento PDF, puoi configurare varie proprietà del timbro, come sfondo, posizione, rotazione, carattere, dimensione, ecc. Ecco come:
 
 ```csharp
-// Configure text buffer properties
+// Configurare le proprietà del buffer di testo
 textStamp. Background = true;
 textStamp. XIndent = 100;
 textStamp. YIndent = 100;
@@ -57,107 +57,107 @@ textStamp.TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
 textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Aqua);
 ```
 
-You can adjust these properties according to your needs.
+Puoi modificare queste proprietà in base alle tue esigenze.
 
-## Step 5: Add Text Stamp to PDF
+## Passaggio 5: aggiungi il timbro testo al PDF
 
-Now that the text stamp is ready, you can add it to a specific page of the PDF document. Here's how:
+Ora che il timbro di testo è pronto, puoi aggiungerlo a una pagina specifica del documento PDF. Ecco come:
 
 ```csharp
-// Add text buffer to specific page
+//Aggiungi buffer di testo a una pagina specifica
 pdfDocument.Pages[1].AddStamp(textStamp);
 ```
 
-The code above adds the text stamp to the first page of the PDF document. You can specify another page if needed.
+Il codice sopra aggiunge il timbro di testo alla prima pagina del documento PDF. Se necessario, è possibile specificare un'altra pagina.
 
-## Step 6: Save the output document
+## Passaggio 6: salvare il documento di output
 
-Once you have added the text stamp, you can save the edited PDF document. Here's how:
+Dopo aver aggiunto il timbro di testo, puoi salvare il documento PDF modificato. Ecco come:
 
 ```csharp
-// Save the output document
+// Salvare il documento di output
 pdfDocument.Save(dataDir);
 ```
 
-The code above saves the modified PDF document in the specified directory.
+Il codice sopra salva il documento PDF modificato nella directory specificata.
 
-### Sample source code for Add Text Stamp using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Aggiungi timbro testo utilizzando Aspose.PDF per .NET 
 ```csharp
 
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Apri documento
 Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
 
-// Create text stamp
+// Crea timbro di testo
 TextStamp textStamp = new TextStamp("Sample Stamp");
 
-// Set whether stamp is background
+// Imposta se il timbro deve essere utilizzato come sfondo
 textStamp.Background = true;
 
-// Set origin
+// Imposta l'origine
 textStamp.XIndent = 100;
 textStamp.YIndent = 100;
 
-// Rotate stamp
+// Ruota il timbro
 textStamp.Rotate = Rotation.on90;
 
-// Set text properties
+// Imposta le proprietà del testo
 textStamp.TextState.Font = FontRepository.FindFont("Arial");
 textStamp.TextState.FontSize = 14.0F;
 textStamp.TextState.FontStyle = FontStyles.Bold;
 textStamp.TextState.FontStyle = FontStyles.Italic;
 textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Aqua);
 
-// Add stamp to particular page
+// Aggiungi timbro a una pagina particolare
 pdfDocument.Pages[1].AddStamp(textStamp);
 dataDir = dataDir + "AddTextStamp_out.pdf";
 
-// Save output document
+// Salva il documento di output
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nText stamp added successfully.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation ! You have learned how to add a text stamp using Aspose.PDF for .NET. Now you can apply this knowledge to your own projects to add custom text stamps to PDF documents.
+Congratulazioni! Hai imparato come aggiungere un timbro di testo utilizzando Aspose.PDF per .NET. Ora puoi applicare queste conoscenze ai tuoi progetti per aggiungere timbri di testo personalizzati ai documenti PDF.
 
-### FAQ's for add text stamp in PDF file
+### Domande frequenti sull'aggiunta di un timbro di testo nel file PDF
 
-#### Q: What is the purpose of adding a text stamp in a PDF file using Aspose.PDF for .NET?
+#### D: Qual è lo scopo di aggiungere un timbro di testo in un file PDF utilizzando Aspose.PDF per .NET?
 
-A: Adding a text stamp allows you to place custom text on a specific page of a PDF document. This feature is useful for adding labels, comments, watermarks, or any other textual information to enhance the document's content and provide additional context.
+R: L'aggiunta di un timbro di testo consente di inserire testo personalizzato su una pagina specifica di un documento PDF. Questa funzionalità è utile per aggiungere etichette, commenti, filigrane o qualsiasi altra informazione testuale per migliorare il contenuto del documento e fornire contesto aggiuntivo.
 
-#### Q: Can I customize the appearance of the text stamp, such as font, size, color, and rotation?
+#### D: Posso personalizzare l'aspetto del timbro di testo, ad esempio carattere, dimensione, colore e rotazione?
 
-A: Yes, you can fully customize the appearance of the text stamp. The provided C# source code demonstrates how to set various properties of the `TextStamp` object, including font, font size, font style, text color, background color, and rotation.
+ R: Sì, puoi personalizzare completamente l'aspetto del timbro di testo. Il codice sorgente C# fornito dimostra come impostare varie proprietà di`TextStamp` oggetto, inclusi carattere, dimensione del carattere, stile del carattere, colore del testo, colore dello sfondo e rotazione.
 
-#### Q: Is it possible to add multiple text stamps to different pages of the same PDF document?
+#### D: È possibile aggiungere più timbri di testo a pagine diverse dello stesso documento PDF?
 
-A: Absolutely, you can add multiple text stamps to different pages of the same PDF document. The tutorial's provided code allows you to specify the target page for adding the text stamp, making it versatile for different pages within the document.
+R: Assolutamente sì, puoi aggiungere più timbri di testo a pagine diverse dello stesso documento PDF. Il codice fornito nel tutorial consente di specificare la pagina di destinazione per l'aggiunta del timbro di testo, rendendolo versatile per le diverse pagine del documento.
 
-#### Q: How do I specify the position of the text stamp within the PDF document?
+#### D: Come posso specificare la posizione del timbro di testo all'interno del documento PDF?
 
-A: You can customize the position of the text stamp by modifying the `XIndent` and `YIndent` properties of the `TextStamp` object. These properties define the coordinates of the stamp's top-left corner relative to the origin of the page.
+ R: È possibile personalizzare la posizione del timbro testo modificando il`XIndent` E`YIndent` proprietà del`TextStamp` oggetto. Queste proprietà definiscono le coordinate dell'angolo superiore sinistro del timbro rispetto all'origine della pagina.
 
-#### Q: Can I apply this method to existing PDF documents to add text stamps?
+#### D: Posso applicare questo metodo ai documenti PDF esistenti per aggiungere timbri di testo?
 
-A: Yes, you can apply this method to existing PDF documents to add text stamps. The tutorial's provided code demonstrates how to load an existing PDF document and add a text stamp to a specific page.
+R: Sì, puoi applicare questo metodo ai documenti PDF esistenti per aggiungere timbri di testo. Il codice fornito nel tutorial mostra come caricare un documento PDF esistente e aggiungere un timbro di testo a una pagina specifica.
 
-#### Q: Can I add both background and foreground colors to the text stamp?
+#### D: Posso aggiungere sia i colori di sfondo che quelli di primo piano al timbro di testo?
 
-A: Yes, you can add both background and foreground colors to the text stamp. By setting the `Background` property to `true`, you can provide a colored background for the text stamp. Additionally, you can set the `TextState.ForegroundColor` property to specify the color of the text itself.
+ R: Sì, puoi aggiungere sia i colori di sfondo che quelli di primo piano al timbro di testo. Impostando il`Background` proprietà a`true` , è possibile fornire uno sfondo colorato per il timbro del testo. Inoltre, puoi impostare il file`TextState.ForegroundColor` proprietà per specificare il colore del testo stesso.
 
-#### Q: How can I ensure that the text stamp does not obscure the underlying content of the PDF document?
+#### D: Come posso garantire che il timbro del testo non oscuri il contenuto sottostante del documento PDF?
 
-A: When adding a text stamp, be mindful of its placement to ensure that it does not obstruct critical information or negatively affect the document's readability. You can adjust the `XIndent` and `YIndent` properties to position the text stamp appropriately.
+ R: Quando aggiungi un timbro di testo, fai attenzione alla sua posizione per assicurarti che non ostruisca informazioni critiche o influenzi negativamente la leggibilità del documento. Puoi regolare il`XIndent` E`YIndent` proprietà per posizionare il timbro di testo in modo appropriato.
 
-#### Q: Can I use this method to add stamps other than text, such as images or logos?
+#### D: Posso utilizzare questo metodo per aggiungere timbri diversi dal testo, come immagini o loghi?
 
-A: This specific tutorial focuses on adding text stamps, but you can similarly add other types of stamps, such as images or logos, using Aspose.PDF for .NET. The process involves creating the appropriate stamp object and configuring its properties.
+R: Questo tutorial specifico si concentra sull'aggiunta di timbri di testo, ma puoi allo stesso modo aggiungere altri tipi di timbri, come immagini o loghi, utilizzando Aspose.PDF per .NET. Il processo prevede la creazione dell'oggetto timbro appropriato e la configurazione delle sue proprietà.
 
-#### Q: How can I automate the process of adding text stamps to multiple PDF documents?
+#### D: Come posso automatizzare il processo di aggiunta di timbri di testo a più documenti PDF?
 
-A: You can automate the process of adding text stamps to multiple PDF documents by creating a script or program that iterates through a list of documents and applies the same text stamping process to each one.
+R: È possibile automatizzare il processo di aggiunta di timbri di testo a più documenti PDF creando uno script o un programma che scorre un elenco di documenti e applica lo stesso processo di timbratura di testo a ciascuno di essi.

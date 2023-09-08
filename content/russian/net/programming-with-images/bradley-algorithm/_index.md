@@ -1,50 +1,50 @@
 ---
-title: Bradley Algorithm
-linktitle: Bradley Algorithm
-second_title: Aspose.PDF for .NET API Reference
-description: Convert a PDF document using the Bradley algorithm with Aspose.PDF for .NET.
+title: Алгоритм Брэдли
+linktitle: Алгоритм Брэдли
+second_title: Справочник по Aspose.PDF для .NET API
+description: Конвертируйте PDF-документ с помощью алгоритма Брэдли с помощью Aspose.PDF для .NET.
 type: docs
 weight: 30
 url: /ru/net/programming-with-images/bradley-algorithm/
 ---
-This step-by-step guide explains how to use the Bradley Algorithm with Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+В этом пошаговом руководстве объясняется, как использовать алгоритм Брэдли с Aspose.PDF для .NET. Убедитесь, что вы уже настроили свою среду, и выполните следующие действия:
 
-## Step 1: Define the document directory
+## Шаг 1. Определите каталог документов.
 
-Before you start, make sure you set the correct directory for the documents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+ Прежде чем начать, убедитесь, что вы установили правильный каталог для документов. Заменять`"YOUR DOCUMENT DIRECTORY"` в коде укажите путь к каталогу, в котором находится ваш PDF-документ.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the document
+## Шаг 2. Откройте документ.
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+На этом этапе мы откроем PDF-документ с помощью`Document` класс Aspose.PDF. Использовать`Document` конструктор и передайте путь к PDF-документу.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
 ```
 
-## Step 3: Define output files
+## Шаг 3. Определите выходные файлы
 
-Define the output filenames for the resulting image and the binary image. Replace `"resultant_out.tif"` and `"37116-bin_out.tif"` with the desired names for the output files.
+ Определите имена выходных файлов для результирующего изображения и двоичного изображения. Заменять`"resultant_out.tif"` и`"37116-bin_out.tif"` с желаемыми именами выходных файлов.
 
 ```csharp
 string outputImageFile = dataDir + "resultant_out.tif";
 string outputBinImageFile = dataDir + "37116-bin_out.tif";
 ```
 
-## Step 4: Create the Resolution object
+## Шаг 4. Создайте объект разрешения.
 
-Create a `Resolution` object to set the resolution of the TIFF image. In this example, we are using a resolution of 300 dpi.
+ Создать`Resolution`объект для установки разрешения изображения TIFF. В этом примере мы используем разрешение 300 dpi.
 
 ```csharp
 Resolution resolution = new Resolution(300);
 ```
 
-## Step 5: Create the TiffSettings object
+## Шаг 5. Создайте объект TiffSettings.
 
-Create a `TiffSettings` object to specify settings for the output TIFF file. In this example, we are using LZW compression and a color depth of 1 bit per pixel (1 bpp format).
+ Создать`TiffSettings`объект, чтобы указать настройки выходного файла TIFF. В этом примере мы используем сжатие LZW и глубину цвета 1 бит на пиксель (формат 1 бит на пиксель).
 
 ```csharp
 TiffSettings tiffSettings = new TiffSettings();
@@ -52,25 +52,25 @@ tiffSettings.Compression = CompressionType.LZW;
 tiffSettings.Depth = Aspose.Pdf.Devices.ColorDepth.Format1bpp;
 ```
 
-## Step 6: Create the TIFF device
+## Шаг 6. Создайте устройство TIFF.
 
-Create a TIFF device using the `TiffDevice` object, specifying the resolution and TIFF settings.
+ Создайте устройство TIFF с помощью`TiffDevice` объект, определяющий настройки разрешения и TIFF.
 
 ```csharp
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
 ```
 
-## Step 7: Convert the specific page and save the image
+## Шаг 7. Конвертируйте конкретную страницу и сохраните изображение.
 
-Use the `Process` method of the TIFF device to convert a specific page of the PDF document and save the image to a TIFF file. Specify the file output path.
+ Использовать`Process` метод устройства TIFF для преобразования определенной страницы PDF-документа и сохранения изображения в файл TIFF. Укажите путь вывода файла.
 
 ```csharp
 tiffDevice.Process(pdfDocument, outputImageFile);
 ```
 
-## Step 8: Binarize the image using the Bradley algorithm
+## Шаг 8. Бинаризация изображения с помощью алгоритма Брэдли.
 
-Use the `BinarizeBradley` method of the TIFF device to binarize the image using the Bradley algorithm. This method takes an input stream of the original image and an output stream for the binary image. Specify the binarization threshold (0.1 in this example).
+ Использовать`BinarizeBradley` метод устройства TIFF для бинаризации изображения с использованием алгоритма Брэдли. Этот метод принимает входной поток исходного изображения и выходной поток двоичного изображения. Укажите порог бинаризации (0,1 в этом примере).
 
 ```csharp
 using (FileStream
@@ -84,23 +84,23 @@ tiffDevice. Binarize Bradley(inStream, outStream, 0.1);
 }
 ```
 
-### Sample source code for Bradley Algorithm using Aspose.PDF for .NET 
+### Пример исходного кода алгоритма Брэдли с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir+ "PageToTIFF.pdf");
 string outputImageFile = dataDir + "resultant_out.tif";
 string outputBinImageFile = dataDir + "37116-bin_out.tif";
-// Create Resolution object
+// Создать объект разрешения
 Resolution resolution = new Resolution(300);
-// Create TiffSettings object
+// Создать объект TiffSettings
 TiffSettings tiffSettings = new TiffSettings();
 tiffSettings.Compression = CompressionType.LZW;
 tiffSettings.Depth = Aspose.Pdf.Devices.ColorDepth.Format1bpp;
-// Create TIFF device
+// Создать устройство TIFF
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-// Convert a particular page and save the image to stream
+//Преобразуйте определенную страницу и сохраните изображение для потоковой передачи.
 tiffDevice.Process(pdfDocument, outputImageFile);
 using (FileStream inStream = new FileStream(outputImageFile, FileMode.Open))
 {
@@ -112,43 +112,43 @@ using (FileStream inStream = new FileStream(outputImageFile, FileMode.Open))
 System.Console.WriteLine("Conversion using bradley algorithm performed successfully!");
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You have successfully completed the conversion using the Bradley algorithm with Aspose.PDF for .NET. You can now use the resulting images in your projects or applications.
+Поздравляем! Вы успешно завершили преобразование с использованием алгоритма Брэдли с помощью Aspose.PDF для .NET. Теперь вы можете использовать полученные изображения в своих проектах или приложениях.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the Bradley Algorithm and how does it relate to Aspose.PDF for .NET?
+#### Вопрос: Что такое алгоритм Брэдли и как он связан с Aspose.PDF для .NET?
 
-A: The Bradley Algorithm is an image processing technique used to enhance image quality and clarity. Aspose.PDF for .NET provides a convenient way to apply the Bradley Algorithm to PDF documents, resulting in improved images.
+Ответ: Алгоритм Брэдли — это метод обработки изображений, используемый для повышения качества и четкости изображения. Aspose.PDF для .NET предоставляет удобный способ применения алгоритма Брэдли к документам PDF, что приводит к улучшению изображений.
 
-#### Q: How do I set up my environment for using the Bradley Algorithm with Aspose.PDF for .NET?
+#### Вопрос: Как настроить среду для использования алгоритма Брэдли с Aspose.PDF для .NET?
 
-A: Before you begin, ensure that you have Aspose.PDF for .NET properly installed and your development environment configured.
+О: Прежде чем начать, убедитесь, что у вас правильно установлен Aspose.PDF for .NET и настроена ваша среда разработки.
 
-#### Q: What is the significance of defining the document directory in the Bradley Algorithm process?
+#### Вопрос: Каково значение определения каталога документов в процессе алгоритма Брэдли?
 
-A: Specifying the correct document directory is crucial to ensure that the PDF document is located in the right path for processing.
+О: Указание правильного каталога документа имеет решающее значение для обеспечения того, чтобы PDF-документ находился в правильном пути для обработки.
 
-#### Q: How do I open a PDF document using Aspose.PDF for .NET in the Bradley Algorithm?
+#### Вопрос: Как открыть PDF-документ с помощью Aspose.PDF для .NET в алгоритме Брэдли?
 
-A: Use the `Document` class to open the PDF document, which serves as the input for the Bradley Algorithm process.
+ А: Используйте`Document` class, чтобы открыть PDF-документ, который служит входными данными для процесса алгоритма Брэдли.
 
-#### Q: What is the purpose of defining output filenames for the image and binary image in the Bradley Algorithm process?
+#### Вопрос: Какова цель определения имен выходных файлов для изображения и двоичного изображения в процессе алгоритма Брэдли?
 
-A: Defining output filenames allows you to specify where the resulting image and binary image will be saved after applying the Bradley Algorithm.
+О: Определение имен выходных файлов позволяет вам указать, где результирующее изображение и двоичное изображение будут сохранены после применения алгоритма Брэдли.
 
-#### Q: How does the resolution setting affect the TIFF image quality in the Bradley Algorithm process?
+#### Вопрос: Как настройка разрешения влияет на качество изображения TIFF в процессе алгоритма Брэдли?
 
-A: The resolution setting determines the level of detail and clarity in the resulting TIFF image after applying the Bradley Algorithm.
+О: Настройка разрешения определяет уровень детализации и четкости результирующего изображения TIFF после применения алгоритма Брэдли.
 
-#### Q: What settings can I customize for the output TIFF image in the Bradley Algorithm process?
-A: You can customize settings such as compression type and color depth to achieve the desired output for the TIFF image.
+#### Вопрос: Какие параметры можно настроить для выходного изображения TIFF в процессе алгоритма Брэдли?
+О: Вы можете настроить такие параметры, как тип сжатия и глубину цвета, чтобы добиться желаемого результата для изображения TIFF.
 
-#### Q: How does the TIFF device contribute to the Bradley Algorithm process?
+#### Вопрос: Как устройство TIFF участвует в алгоритме Брэдли?
 
-A: The TIFF device acts as a tool for processing images and applying the Bradley Algorithm, resulting in enhanced image quality.
+О: Устройство TIFF действует как инструмент для обработки изображений и применения алгоритма Брэдли, что приводит к повышению качества изображения.
 
-#### Q: How do I convert a specific page of a PDF document to a TIFF image in the Bradley Algorithm process?
+#### Вопрос: Как преобразовать определенную страницу PDF-документа в изображение TIFF в процессе алгоритма Брэдли?
 
-A: Utilize the `Process` method of the TIFF device to convert a specific page of the PDF document into a TIFF image, which can then be further processed using the Bradley Algorithm.
+ А: Используйте`Process` метод устройства TIFF для преобразования определенной страницы PDF-документа в изображение TIFF, которое затем может быть обработано с использованием алгоритма Брэдли.

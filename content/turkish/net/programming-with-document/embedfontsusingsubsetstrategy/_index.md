@@ -1,93 +1,93 @@
 ---
-title: Embed Fonts In PDF File With Subset Strategy
-linktitle: Embed Fonts With Subset Strategy
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to embed fonts in a PDF file with Subset Strategy using Aspose.PDF for .NET. Optimize your PDF size by embedding only necessary characters.
+title: Alt Küme Stratejisi ile Fontları PDF Dosyasına Gömme
+linktitle: Alt Küme Stratejisiyle Yazı Tiplerini Gömme
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak Alt Küme Stratejisi ile yazı tiplerini bir PDF dosyasına nasıl yerleştireceğinizi öğrenin. Yalnızca gerekli karakterleri yerleştirerek PDF boyutunuzu optimize edin.
 type: docs
 weight: 130
 url: /tr/net/programming-with-document/embedfontsusingsubsetstrategy/
 ---
-In this tutorial, we will discuss how to embed fonts in a PDF file with a subset strategy using Aspose.PDF for .NET. Aspose.PDF for .NET is a powerful library that allows developers to create, edit, and manipulate PDF documents programmatically. Embedding fonts in a PDF file is an important step to ensure that the document is displayed correctly on different devices, regardless of whether the required fonts are installed on those devices or not.
+Bu eğitimde, Aspose.PDF for .NET kullanarak yazı tiplerini bir PDF dosyasına alt küme stratejisiyle nasıl yerleştireceğimizi tartışacağız. Aspose.PDF for .NET, geliştiricilerin PDF belgelerini programlı olarak oluşturmasına, düzenlemesine ve değiştirmesine olanak tanıyan güçlü bir kitaplıktır. Yazı tiplerini bir PDF dosyasına gömmek, gerekli yazı tiplerinin bu aygıtlarda yüklü olup olmadığına bakılmaksızın, belgenin farklı aygıtlarda doğru şekilde görüntülenmesini sağlamak için önemli bir adımdır.
 
-## Step 1: Create a new C# Console Application
-To get started, create a new C# Console Application in Visual Studio. You can name it whatever you like. Once the project is created, you need to add a reference to the Aspose.PDF for .NET library.
+## 1. Adım: Yeni bir C# Konsol Uygulaması oluşturun
+Başlamak için Visual Studio'da yeni bir C# Konsol Uygulaması oluşturun. İstediğiniz ismi verebilirsiniz. Proje oluşturulduktan sonra Aspose.PDF for .NET kütüphanesine bir referans eklemeniz gerekir.
 
-## Step 2: Import the Aspose.PDF Namespace
-Add the following line of code at the top of your C# file to import the Aspose.PDF namespace:
+## Adım 2: Aspose.PDF Ad Alanını İçe Aktarın
+Aspose.PDF ad alanını içe aktarmak için C# dosyanızın en üstüne aşağıdaki kod satırını ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Load an Existing PDF File
-To embed fonts in an existing PDF file, you need to load that file using the Document class. The following code demonstrates how to load an existing PDF file:
+## 3. Adım: Mevcut bir PDF Dosyasını Yükleyin
+Yazı tiplerini mevcut bir PDF dosyasına gömmek için bu dosyayı Document sınıfını kullanarak yüklemeniz gerekir. Aşağıdaki kod mevcut bir PDF dosyasının nasıl yükleneceğini gösterir:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load an existing PDF file
+// Mevcut bir PDF dosyasını yükleyin
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 4: Embed Fonts with Subset Strategy
-Aspose.PDF for .NET provides two strategies for font embedding: SubsetAllFonts and SubsetEmbeddedFontsOnly.
+## Adım 4: Yazı Tiplerini Alt Küme Stratejisiyle Gömme
+Aspose.PDF for .NET yazı tipi gömme için iki strateji sunar: SubsetAllFonts ve SubsetEmbeddedFontsOnly.
 
-The SubsetAllFonts strategy will embed all fonts in the document as a subset. A subset is a portion of the font that contains only the characters used in the document. This strategy is useful for reducing the file size of the PDF document.
+SubsetAllFonts stratejisi belgedeki tüm yazı tiplerini bir alt küme olarak gömecektir. Alt küme, yazı tipinin yalnızca belgede kullanılan karakterleri içeren kısmıdır. Bu strateji, PDF belgesinin dosya boyutunu küçültmek için kullanışlıdır.
 
-The SubsetEmbeddedFontsOnly strategy will embed only the subset of fonts that are already embedded in the document. If a font is not embedded, it will not be affected by this strategy.
+SubsetEmbeddedFontsOnly stratejisi yalnızca belgeye zaten katıştırılmış olan yazı tiplerinin alt kümesini katıştırır. Bir yazı tipi gömülü değilse bu stratejiden etkilenmeyecektir.
 
-The following code demonstrates how to embed fonts in a PDF file with a subset strategy:
+Aşağıdaki kod, alt küme stratejisiyle yazı tiplerinin bir PDF dosyasına nasıl gömüleceğini gösterir:
 
 ```csharp
-// All fonts will be embedded as subset into document in case of SubsetAllFonts.
+// SubsetAllFonts durumunda tüm yazı tipleri belgeye alt küme olarak gömülecektir.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
 
-// Font subset will be embedded for fully embedded fonts but fonts which are not embedded into document will not be affected.
+// Tamamen gömülü yazı tipleri için yazı tipi alt kümesi eklenecektir ancak belgeye gömülü olmayan yazı tipleri etkilenmeyecektir.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
 ```
 
-## Step 5: Save the PDF Document
-Once you have embedded all the fonts in the PDF file with a subset strategy, you need to save the document. The following code demonstrates how to save the PDF file:
+## Adım 5: PDF Belgesini Kaydedin
+Alt küme stratejisiyle tüm yazı tiplerini PDF dosyasına gömdükten sonra belgeyi kaydetmeniz gerekir. Aşağıdaki kod PDF dosyasının nasıl kaydedileceğini gösterir:
 
 ```csharp
 doc.Save(dataDir + "Output_out.pdf");
 ```
 
-### Example source code for embeding fonts with subset strategy using Aspose.PDF for .NET. 
+### Aspose.PDF for .NET kullanarak yazı tiplerini alt küme stratejisiyle gömmek için örnek kaynak kodu. 
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
-// All fonts will be embedded as subset into document in case of SubsetAllFonts.
+// SubsetAllFonts durumunda tüm yazı tipleri belgeye alt küme olarak gömülecektir.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-// Font subset will be embedded for fully embedded fonts but fonts which are not embedded into document will not be affected.
+// Tamamen gömülü yazı tipleri için yazı tipi alt kümesi eklenecektir ancak belgeye gömülü olmayan yazı tipleri etkilenmeyecektir.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
 doc.Save(dataDir + "Output_out.pdf");
 ```
 
-## Conclusion
-In this article, we have discussed how to embed fonts in a PDF file with a subset strategy using Aspose.PDF for .NET. Aspose.PDF for .NET provides a simple and easy-to-use API to work with PDF documents, including adding and embedding fonts with different strategies. Embedding fonts in a PDF file is an important step to ensure that the document is displayed correctly on different devices, and the subset strategy is a useful feature to reduce the file size of the PDF document.
+## Çözüm
+Bu makalede, Aspose.PDF for .NET kullanarak yazı tiplerinin bir PDF dosyasına alt küme stratejisiyle nasıl yerleştirileceğini tartıştık. Aspose.PDF for .NET, farklı stratejilerle yazı tipi ekleme ve gömme de dahil olmak üzere, PDF belgeleriyle çalışmak için basit ve kullanımı kolay bir API sağlar. Yazı tiplerini bir PDF dosyasına gömmek, belgenin farklı cihazlarda doğru şekilde görüntülenmesini sağlamak için önemli bir adımdır ve alt küme stratejisi, PDF belgesinin dosya boyutunu küçültmek için yararlı bir özelliktir.
 
-### FAQ's for embed fonts in PDF file with subset strategy
+### Alt küme stratejisiyle PDF dosyasına yazı tiplerinin yerleştirilmesiyle ilgili SSS
 
-#### Q: What is a subset strategy for font embedding in a PDF file?
+#### S: PDF dosyasına yazı tipi yerleştirmeye yönelik alt küme stratejisi nedir?
 
-A: A subset strategy for font embedding in a PDF file means that only a portion of the font containing the characters used in the document will be embedded. This helps reduce the file size of the PDF document by eliminating unnecessary font data.
+C: PDF dosyasına yazı tipi yerleştirmeye yönelik alt küme stratejisi, belgede kullanılan karakterleri içeren yazı tipinin yalnızca bir kısmının gömüleceği anlamına gelir. Bu, gereksiz yazı tipi verilerini ortadan kaldırarak PDF belgesinin dosya boyutunun azaltılmasına yardımcı olur.
 
-#### Q: What is the difference between SubsetAllFonts and SubsetEmbeddedFontsOnly strategies?
+#### S: SubsetAllFonts ve SubsetEmbeddedFontsOnly stratejileri arasındaki fark nedir?
 
-A: The `SubsetAllFonts` strategy will embed all fonts in the document as a subset, while the `SubsetEmbeddedFontsOnly` strategy will only embed the subset of fonts that are already embedded in the document. The latter strategy will not affect fonts that are not already embedded.
+ C:`SubsetAllFonts`strateji belgedeki tüm yazı tiplerini bir alt küme olarak gömecek,`SubsetEmbeddedFontsOnly` stratejisi yalnızca belgeye zaten gömülü olan yazı tiplerinin alt kümesini gömecektir. İkinci strateji, halihazırda gömülü olmayan yazı tiplerini etkilemeyecektir.
 
-#### Q: Why is font embedding with a subset strategy important?
+#### S: Alt küme stratejisiyle yazı tipi yerleştirme neden önemlidir?
 
-A: Font embedding with a subset strategy is important to ensure that the PDF file contains the necessary font data for displaying text correctly, while also keeping the file size smaller by including only the characters used in the document.
+C: Alt küme stratejisiyle yazı tipi gömme, PDF dosyasının metni doğru şekilde görüntülemek için gerekli yazı tipi verilerini içerdiğinden emin olmak ve aynı zamanda yalnızca belgede kullanılan karakterleri dahil ederek dosya boyutunu daha küçük tutmak açısından önemlidir.
 
-#### Q: Can I use Aspose.PDF for .NET to embed fonts with different strategies?
+#### S: Aspose.PDF for .NET'i farklı stratejilerle yazı tiplerini gömmek için kullanabilir miyim?
 
-A: Yes, Aspose.PDF for .NET provides various strategies for font embedding, including `SubsetAllFonts` and `SubsetEmbeddedFontsOnly`. You can choose the appropriate strategy based on your requirements.
+ C: Evet, Aspose.PDF for .NET yazı tipi yerleştirme için çeşitli stratejiler sunar;`SubsetAllFonts` Ve`SubsetEmbeddedFontsOnly`. İhtiyaçlarınıza göre uygun stratejiyi seçebilirsiniz.
 
-#### Q: Is Aspose.PDF for .NET a reliable library for working with PDF documents?
+#### S: Aspose.PDF for .NET, PDF belgeleriyle çalışmak için güvenilir bir kütüphane midir?
 
-A: Yes, Aspose.PDF for .NET is a reliable and powerful library for working with PDF documents. It provides extensive features for creating, editing, and manipulating PDF files in .NET applications.
+C: Evet, Aspose.PDF for .NET, PDF belgeleriyle çalışmak için güvenilir ve güçlü bir kütüphanedir. .NET uygulamalarında PDF dosyalarını oluşturmak, düzenlemek ve değiştirmek için kapsamlı özellikler sağlar.

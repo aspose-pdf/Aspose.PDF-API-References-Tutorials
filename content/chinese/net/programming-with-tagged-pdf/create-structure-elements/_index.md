@@ -1,54 +1,54 @@
 ---
-title: Create Structure Elements
-linktitle: Create Structure Elements
-second_title: Aspose.PDF for .NET API Reference
-description: In this tutorial, you will learn how to use Aspose.PDF for .NET to create structural elements in a tagged PDF document.
+title: 创建结构元素
+linktitle: 创建结构元素
+second_title: Aspose.PDF for .NET API 参考
+description: 在本教程中，您将学习如何使用 Aspose.PDF for .NET 在标记的 PDF 文档中创建结构元素。
 type: docs
 weight: 60
 url: /zh/net/programming-with-tagged-pdf/create-structure-elements/
 ---
-The following C# source code uses Aspose.PDF for .NET to create structure elements. Follow the steps below to understand how the code works.
+以下 C# 源代码使用 Aspose.PDF for .NET 创建结构元素。请按照以下步骤了解代码的工作原理。
 
-## Step 1: Import the necessary libraries
+## 第1步：导入必要的库
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Define the directory of your documents
+## 第 2 步：定义文档的目录
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-Be sure to specify the correct path to your documents directory.
+请务必指定文档目录的正确路径。
 
-## Step 3: Create a PDF document
+## 步骤 3：创建 PDF 文档
 
 ```csharp
 Document document = new Document();
 ```
 
-We create a new Document object that represents the PDF document.
+我们创建一个新的 Document 对象来表示 PDF 文档。
 
-## Step 4: Get content to work with TaggedPdf
+## 第 4 步：获取可与 TaggedPdf 配合使用的内容
 
 ```csharp
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-We retrieve the tagged content of the PDF document. This will allow us to manipulate structural elements.
+我们检索 PDF 文档的标记内容。这将使我们能够操纵结构元素。
 
-## Step 5: Set document title and language
+## 第 5 步：设置文档标题和语言
 
 ```csharp
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We set the title and language of the tagged PDF document. This improves the accessibility of the document.
+我们设置带标签的 PDF 文档的标题和语言。这提高了文档的可访问性。
 
-## Step 6: Create grouping elements
+## 第 6 步：创建分组元素
 
 ```csharp
 PartElement partElement = taggedContent.CreatePartElement();
@@ -64,9 +64,9 @@ NonStructElement nonStructElement = taggedContent.CreateNonStructElement();
 PrivateElement privateElement = taggedContent.CreatePrivateElement();
 ```
 
-We create different structural elements for grouping content in the PDF document.
+我们创建不同的结构元素来对 PDF 文档中的内容进行分组。
 
-## Step 7: Create paragraph structure elements
+## 步骤 7：创建段落结构元素
 
 ```csharp
 ParagraphElement paragraphElement = taggedContent.CreateParagraphElement();
@@ -74,9 +74,9 @@ HeaderElement headerElement = taggedContent.CreateHeaderElement();
 HeaderElement h1Element = taggedContent.CreateHeaderElement(1);
 ```
 
-We create block-level structural elements for paragraphs and headings. The example above shows the creation of a level 1 header.
+我们为段落和标题创建块级结构元素。上面的示例显示了 1 级标头的创建。
 
-## Step 8: Create inline level structure elements
+## 步骤 8：创建内联层级结构元素
 
 ```csharp
 SpanElement spanElement = taggedContent.CreateSpanElement();
@@ -84,39 +84,39 @@ QuoteElement quoteElement = taggedContent.CreateQuoteElement();
 NoteElement noteElement = taggedContent.CreateNoteElement();
 ```
 
-We create inline level structure elements for the parts of text that appear inside a paragraph or heading.
+我们为出现在段落或标题内的文本部分创建内联级别结构元素。
 
-## Step 9: Create artwork structure elements
+## 第 9 步：创建图稿结构元素
 
 ```csharp
 FigureElement figureElement = taggedContent.CreateFigureElement();
 FormulaElement formulaElement = taggedContent.CreateFormulaElement();
 ```
 
-We create structural elements for the illustrations and mathematical formulas present in the document.
+我们为文档中的插图和数学公式创建结构元素。
 
-## Step 10: Save the tagged PDF document
+## 第10步：保存标记的PDF文档
 
 ```csharp
 document.Save(dataDir + "StructureElements.pdf");
 ```
 
-We save the tagged PDF document with the created structure elements.
+我们使用创建的结构元素保存带标签的 PDF 文档。
 
-### Sample source code for Create Structure Elements using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 创建结构元素的示例源代码 
 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Pdf Document
+//创建 PDF 文档
 Document document = new Document();
-// Get Content for work with TaggedPdf
+//获取与 TaggedPdf 一起使用的内容
 ITaggedContent taggedContent = document.TaggedContent;
-// Set Title and Language for Documnet
+//设置文档网的标题和语言
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
-// Create Grouping Elements
+//创建分组元素
 PartElement partElement = taggedContent.CreatePartElement();
 ArtElement artElement = taggedContent.CreateArtElement();
 SectElement sectElement = taggedContent.CreateSectElement();
@@ -128,18 +128,18 @@ TOCIElement tociElement = taggedContent.CreateTOCIElement();
 IndexElement indexElement = taggedContent.CreateIndexElement();
 NonStructElement nonStructElement = taggedContent.CreateNonStructElement();
 PrivateElement privateElement = taggedContent.CreatePrivateElement();
-// Create Text Block-Level Structure Elements
+//创建文本块级结构元素
 ParagraphElement paragraphElement = taggedContent.CreateParagraphElement();
 HeaderElement headerElement = taggedContent.CreateHeaderElement();
 HeaderElement h1Element = taggedContent.CreateHeaderElement(1);
-// Create Text Inline-Level Structure Elements
+//创建文本内联结构元素
 SpanElement spanElement = taggedContent.CreateSpanElement();
 QuoteElement quoteElement = taggedContent.CreateQuoteElement();
 NoteElement noteElement = taggedContent.CreateNoteElement();
-// Create Illustration Structure Elements
+//创建插图结构元素
 FigureElement figureElement = taggedContent.CreateFigureElement();
 FormulaElement formulaElement = taggedContent.CreateFormulaElement();
-// Methods are under development
+//方法正在开发中
 ListElement listElement = taggedContent.CreateListElement();
 TableElement tableElement = taggedContent.CreateTableElement();
 ReferenceElement referenceElement = taggedContent.CreateReferenceElement();
@@ -150,53 +150,53 @@ AnnotElement annotElement = taggedContent.CreateAnnotElement();
 RubyElement rubyElement = taggedContent.CreateRubyElement();
 WarichuElement warichuElement = taggedContent.CreateWarichuElement();
 FormElement formElement = taggedContent.CreateFormElement();
-// Save Tagged Pdf Document
+//保存标记的 PDF 文档
 document.Save(dataDir + "StructureElements.pdf");
 
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we learned how to use Aspose.PDF for .NET to create structure elements in a tagged PDF document. Structural elements help improve document accessibility and organize content in a meaningful way. Now you can use this knowledge to create structured, easy-to-navigate PDF documents.
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 在标记的 PDF 文档中创建结构元素。结构元素有助于提高文档的可访问性并以有意义的方式组织内容。现在，您可以使用这些知识来创建结构化、易于浏览的 PDF 文档。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of creating structure elements in a PDF document using Aspose.PDF for .NET?
+#### 问：使用 Aspose.PDF for .NET 在 PDF 文档中创建结构元素的目的是什么？
 
-A: Creating structure elements in a PDF document using Aspose.PDF for .NET enhances the accessibility and organization of the document's content. Structure elements provide a hierarchical structure that improves navigation, semantics, and compatibility with assistive technologies.
+答：使用 Aspose.PDF for .NET 在 PDF 文档中创建结构元素可以增强文档内容的可访问性和组织性。结构元素提供了分层结构，可改进导航、语义以及与辅助技术的兼容性。
 
-#### Q: How does the provided C# code create structure elements in a PDF document?
+#### 问：所提供的 C# 代码如何在 PDF 文档中创建结构元素？
 
-A: The code example demonstrates how to create various types of structure elements, including grouping elements (such as parts, sections, and divs), block-level elements (like paragraphs and headings), inline-level elements (span, quote, note), and artwork elements (such as figures and formulas). These structure elements help organize content.
+答：代码示例演示了如何创建各种类型的结构元素，包括分组元素（如部件、节和 div）、块级元素（如段落和标题）、内联级元素（span、quote、note） ）和艺术元素（例如图形和公式）。这些结构元素有助于组织内容。
 
-#### Q: Why is it important to set the document's title and language using the `SetTitle` and `SetLanguage` methods?
+#### 问：为什么使用设置文档的标题和语言很重要`SetTitle` and `SetLanguage` methods?
 
-A: Setting the document's title and language using the `SetTitle` and `SetLanguage` methods improves document accessibility and semantics. The title provides a brief description of the document's purpose, while the language attribute enhances language-specific rendering and accessibility.
+A：使用设置文档的标题和语言`SetTitle`和`SetLanguage`方法提高了文档的可访问性和语义。标题提供了文档用途的简要描述，而语言属性则增强了特定于语言的呈现和可访问性。
 
-#### Q: How do grouping elements, such as `PartElement` and `SectElement`, contribute to the structure of the PDF document?
+#### 问：如何对元素进行分组，例如`PartElement` and `SectElement`, contribute to the structure of the PDF document?
 
-A: Grouping elements create a hierarchical structure within the PDF document, allowing you to logically organize and group related content. This enhances navigation and provides a clear structure for users.
+答：对元素进行分组会在 PDF 文档中创建层次结构，使您能够逻辑地组织和分组相关内容。这增强了导航并为用户提供了清晰的结构。
 
-#### Q: What are block-level and inline-level structure elements, and how do they differ?
+#### 问：什么是块级和内联级结构元素，它们有何不同？
 
-A: Block-level structure elements represent larger blocks of content, such as paragraphs and headings, while inline-level elements represent parts of text within a paragraph or heading, such as spans, quotes, and notes. They help define the hierarchy and relationships of content.
+答：块级结构元素表示较大的内容块，例如段落和标题，而内联级元素表示段落或标题内的文本部分，例如跨度、引号和注释。它们帮助定义内容的层次结构和关系。
 
-#### Q: How do artwork structure elements, like `FigureElement` and `FormulaElement`, contribute to the document?
+#### 问：艺术品如何构造元素，例如`FigureElement` and `FormulaElement`, contribute to the document?
 
-A: Artwork structure elements allow you to add illustrations, figures, and mathematical formulas to the document. They provide a structured way to include visual and mathematical content.
+答：图稿结构元素允许您向文档添加插图、图形和数学公式。它们提供了一种结构化的方式来包含视觉和数学内容。
 
-#### Q: Can I use similar techniques to create other types of structure elements, like lists, tables, or annotations?
+#### 问：我可以使用类似的技术来创建其他类型的结构元素，例如列表、表格或注释吗？
 
-A: Yes, you can use similar techniques to create other types of structure elements like lists, tables, annotations, references, and more. Aspose.PDF provides a wide range of structure element creation methods.
+答：是的，您可以使用类似的技术来创建其他类型的结构元素，例如列表、表格、注释、引用等。 Aspose.PDF提供了多种结构元素创建方法。
 
-#### Q: How does saving the tagged PDF document using the `Save` method ensure the preservation of structure elements?
+#### 问：如何使用PDF文档保存带标签的PDF文档？`Save` method ensure the preservation of structure elements?
 
-A: The `Save` method saves the PDF document along with the created structure elements, ensuring that the document's hierarchical and semantic structure is preserved for accessibility and navigation.
+答： 的`Save`方法将 PDF 文档与创建的结构元素一起保存，确保保留文档的层次结构和语义结构，以便于访问和导航。
 
-#### Q: What benefits do structure elements bring to PDF documents in terms of accessibility and compatibility with assistive technologies?
+#### 问：结构元素在辅助技术的可访问性和兼容性方面为 PDF 文档带来了哪些好处？
 
-A: Structure elements enhance accessibility by providing a meaningful structure and semantics to the document. This allows assistive technologies like screen readers to interpret and convey the document's content more effectively to users with disabilities.
+答：结构元素通过为文档提供有意义的结构和语义来增强可访问性。这使得屏幕阅读器等辅助技术能够更有效地向残障用户解释和传达文档内容。
 
-#### Q: How can I further customize and combine different types of structure elements in my PDF documents?
+#### 问：如何在 PDF 文档中进一步自定义和组合不同类型的结构元素？
 
-A: You can combine and customize structure elements by using appropriate creation methods provided by Aspose.PDF. Experiment with different elements and their properties to create a well-structured and organized PDF document.
+答：您可以使用Aspose.PDF提供的适当的创建方法来组合和自定义结构元素。尝试不同的元素及其属性，以创建结构良好且组织良好的 PDF 文档。

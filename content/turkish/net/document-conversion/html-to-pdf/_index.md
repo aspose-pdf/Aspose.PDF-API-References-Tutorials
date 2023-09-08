@@ -1,26 +1,26 @@
 ---
-title: HTML To PDF
-linktitle: HTML To PDF
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert HTML to PDF using Aspose.PDF for .NET.
+title: HTML'den PDF'ye
+linktitle: HTML'den PDF'ye
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak HTML'yi PDF'ye dönüştürmek için adım adım kılavuz.
 type: docs
 weight: 50
 url: /tr/net/document-conversion/html-to-pdf/
 ---
-In this tutorial, we will walk you through the process of converting an HTML file to PDF using Aspose.PDF for .NET. HTML (HyperText Markup Language) is a markup language used to structure and present web content. By following the steps below, you will be able to convert HTML files to PDF format.
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir HTML dosyasını PDF'ye dönüştürme sürecinde size yol göstereceğiz. HTML (HyperText Markup Language), web içeriğini yapılandırmak ve sunmak için kullanılan bir biçimlendirme dilidir. Aşağıdaki adımları takip ederek HTML dosyalarını PDF formatına dönüştürebileceksiniz.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Önkoşullar
+Başlamadan önce aşağıdaki önkoşulları karşıladığınızdan emin olun:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- C# programlama dili hakkında temel bilgiler.
+- Sisteminizde yüklü olan .NET için Aspose.PDF kütüphanesi.
+- Visual Studio gibi bir geliştirme ortamı.
 
-## Step 1: Loading the HTML file
-In this step, we will load the HTML file using Aspose.PDF for .NET. Follow the code below:
+## 1. Adım: HTML dosyasını yükleme
+Bu adımda HTML dosyasını Aspose.PDF for .NET kullanarak yükleyeceğiz. Aşağıdaki kodu izleyin:
 
 ```csharp
-// Path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 HtmlLoadOptions options = new HtmlLoadOptions();
@@ -29,31 +29,31 @@ options.CustomLoaderOfExternalResources = new LoadOptions.ResourceLoadingStrateg
 Document pdfDocument = new Document(dataDir + "HTMLToPDF.html", options);
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your HTML file is located.
+ Değiştirdiğinizden emin olun`"YOUR DOCUMENTS DIRECTORY"` HTML dosyanızın bulunduğu gerçek dizinle.
 
-## Step 2: HTML loading options
-Now that we've loaded the HTML file, we can specify specific loading options. Use the following code:
+## 2. Adım: HTML yükleme seçenekleri
+Artık HTML dosyasını yüklediğimize göre belirli yükleme seçeneklerini belirtebiliriz. Aşağıdaki kodu kullanın:
 
 ```csharp
 options.CustomLoaderOfExternalResources = new LoadOptions.ResourceLoadingStrategy(SamePictureLoader);
 ```
 
-The code above tells Aspose.PDF to use a custom loading strategy for external resources, such as images. You can customize this policy to suit your needs.
+Yukarıdaki kod Aspose.PDF'e görüntüler gibi harici kaynaklar için özel bir yükleme stratejisi kullanmasını söyler. Bu politikayı ihtiyaçlarınıza uyacak şekilde özelleştirebilirsiniz.
 
-## Step 3: HTML to PDF conversion
-After loading the HTML file and specifying the loading options, we can proceed with the conversion to PDF. Use the following code:
+## 3. Adım: HTML'den PDF'ye dönüştürme
+HTML dosyasını yükleyip yükleme seçeneklerini belirledikten sonra PDF'ye dönüştürme işlemine geçebiliriz. Aşağıdaki kodu kullanın:
 
 ```csharp
 pdfDocument.Save("HTMLToPDF_out.pdf");
 ```
 
-### Example source code for HTML to PDF using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak HTML'den PDF'ye dönüştürme için örnek kaynak kodu
 
 ```csharp
 try
 {
 	
-	// The path to the documents directory.
+	// Belgeler dizininin yolu.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 	HtmlLoadOptions options = new HtmlLoadOptions();
@@ -69,23 +69,23 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
-In this tutorial, we covered the process step by step. step of converting an HTML file to PDF using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to convert HTML files to PDF format. This feature can be useful when you need to generate PDF documents from HTML content.
+## Çözüm
+Bu eğitimde süreci adım adım ele aldık. Aspose.PDF for .NET kullanarak bir HTML dosyasını PDF'ye dönüştürme adımı. Yukarıda özetlenen talimatları izleyerek artık HTML dosyalarını PDF formatına dönüştürebilmelisiniz. Bu özellik, HTML içeriğinden PDF belgeleri oluşturmanız gerektiğinde yararlı olabilir.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET nedir?
 
-A: Aspose.PDF for .NET is a powerful library that allows developers to create, manipulate, and convert PDF documents programmatically in .NET applications. It provides a wide range of features for working with PDF files, including generating PDFs from scratch, converting various file formats to PDF, extracting text and images from PDFs, adding annotations and watermarks, and much more.
+C: Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarında PDF belgelerini programlı olarak oluşturmasına, değiştirmesine ve dönüştürmesine olanak tanıyan güçlü bir kitaplıktır. Sıfırdan PDF oluşturmak, çeşitli dosya formatlarını PDF'ye dönüştürmek, PDF'lerden metin ve görüntü çıkarmak, ek açıklamalar ve filigran eklemek ve çok daha fazlasını içeren, PDF dosyalarıyla çalışmak için çok çeşitli özellikler sunar.
 
-#### Q: Can I convert complex HTML files with embedded styles and scripts to PDF?
+#### S: Gömülü stiller ve komut dosyaları içeren karmaşık HTML dosyalarını PDF'ye dönüştürebilir miyim?
 
-A: Yes, Aspose.PDF for .NET can handle complex HTML files that include embedded styles, scripts, and other elements. The library has built-in rendering capabilities to accurately convert HTML content to PDF format while preserving the layout and formatting.
+C: Evet, Aspose.PDF for .NET, gömülü stiller, komut dosyaları ve diğer öğeleri içeren karmaşık HTML dosyalarını işleyebilir. Kitaplık, düzeni ve biçimlendirmeyi korurken HTML içeriğini doğru bir şekilde PDF biçimine dönüştürmek için yerleşik oluşturma yeteneklerine sahiptir.
 
-#### Q: Is it possible to customize the conversion process for HTML to PDF?
+#### S: HTML'den PDF'ye dönüştürme sürecini özelleştirmek mümkün mü?
 
-A: Yes, Aspose.PDF for .NET offers various options to customize the conversion process for HTML to PDF. You can set loading options, specify custom loading strategies for external resources like images, control page size and orientation, and apply additional settings to meet specific requirements.
+C: Evet, Aspose.PDF for .NET, HTML'den PDF'ye dönüştürme sürecini özelleştirmek için çeşitli seçenekler sunar. Yükleme seçeneklerini ayarlayabilir, resimler gibi harici kaynaklar için özel yükleme stratejileri belirleyebilir, sayfa boyutunu ve yönünü kontrol edebilir ve belirli gereksinimleri karşılamak için ek ayarlar uygulayabilirsiniz.
 
-#### Q: Can I add headers, footers, and other elements to the generated PDF?
+#### S: Oluşturulan PDF'ye üstbilgi, altbilgi ve diğer öğeleri ekleyebilir miyim?
 
-A: Yes, Aspose.PDF for .NET allows you to add headers, footers, watermarks, and other elements to the generated PDF documents. The library provides a comprehensive API for working with PDF elements and positioning them on the page as needed.
+C: Evet, Aspose.PDF for .NET, oluşturulan PDF belgelerine üstbilgiler, altbilgiler, filigranlar ve diğer öğeleri eklemenizi sağlar. Kitaplık, PDF öğeleriyle çalışmak ve bunları sayfada gerektiği gibi konumlandırmak için kapsamlı bir API sağlar.

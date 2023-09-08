@@ -1,50 +1,50 @@
 ---
-title: Get Attachment Info
-linktitle: Get Attachment Info
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get information about a specific attachment in a PDF file with Aspose.PDF for .NET. Step by step guide.
+title: Obtener información del archivo adjunto
+linktitle: Obtener información del archivo adjunto
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda cómo obtener información sobre un archivo adjunto específico en un archivo PDF con Aspose.PDF para .NET. Guía paso por paso.
 type: docs
 weight: 50
 url: /es/net/programming-with-attachments/get-attachment-info/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to get the information about a specific attachment of a PDF file using Aspose.PDF for .NET.
+En este tutorial, lo guiaremos a través del siguiente código fuente de C# paso a paso para obtener información sobre un archivo adjunto específico de un archivo PDF usando Aspose.PDF para .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Asegúrese de haber instalado la biblioteca Aspose.PDF y configurar su entorno de desarrollo antes de comenzar. También tener conocimientos básicos de programación en C#.
 
-### Step 1: Document Directory Setup
+### Paso 1: Configuración del directorio de documentos
 
-In the source code provided, you need to specify the directory where the PDF file is located from which you want to get the attachment information. Change the "dataDir" variable to the desired directory.
+En el código fuente proporcionado, debe especificar el directorio donde se encuentra el archivo PDF del que desea obtener la información adjunta. Cambie la variable "dataDir" al directorio deseado.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Paso 2: abra el documento PDF existente
 
-We open the existing PDF document using the specified path.
+Abrimos el documento PDF existente usando la ruta especificada.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAttachmentInfo.pdf");
 ```
 
-### Step 3: Obtaining a Specific Attachment
+### Paso 3: Obtener un archivo adjunto específico
 
-We retrieve a specific attachment from the document's attachments collection. In this example, we get the first attachment using index 1.
+Recuperamos un archivo adjunto específico de la colección de archivos adjuntos del documento. En este ejemplo, obtenemos el primer archivo adjunto usando el índice 1.
 
 ```csharp
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
 ```
 
-### Step 4: Get File Properties
+### Paso 4: obtener propiedades del archivo
 
-We display attachment properties such as name, description, MIME type, control hash, date created, date modified, and size.
+Mostramos propiedades del archivo adjunto como nombre, descripción, tipo MIME, hash de control, fecha de creación, fecha de modificación y tamaño.
 
 ```csharp
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Check if object parameters contain additional information
+// Compruebe si los parámetros del objeto contienen información adicional
 if (fileSpecification.Params != null)
 {
 Console.WriteLine("Check Hash: {0}", fileSpecification.Params.CheckSum);
@@ -54,21 +54,21 @@ Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 ```
 
-### Sample source code for Get Attachment Info using Aspose.PDF for .NET
+### Código fuente de muestra para obtener información adjunta usando Aspose.PDF para .NET
  
 ```csharp
 
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Abrir documento
 Document pdfDocument = new Document(dataDir + "GetAttachmentInfo.pdf");
-// Get particular embedded file
+// Obtener un archivo incrustado particular
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
-// Get the file properties
+// Obtener las propiedades del archivo
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-// Check if parameter object contains the parameters
+//Compruebe si el objeto de parámetro contiene los parámetros
 if (fileSpecification.Params != null)
 {
 	Console.WriteLine("CheckSum: {0}",
@@ -82,44 +82,44 @@ if (fileSpecification.Params != null)
 
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, we explained how to get the information about a specific attachment of a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and view attachment information from your PDF files.
+En este tutorial, explicamos cómo obtener información sobre un archivo adjunto específico de un archivo PDF usando Aspose.PDF para .NET. Ahora puede utilizar este conocimiento para extraer y ver información adjunta de sus archivos PDF.
 
-### FAQ's for get attachment info 
+### Preguntas frecuentes para obtener información sobre archivos adjuntos 
 
-#### Q: Why would I need to retrieve information about specific attachments in a PDF document?
+#### P: ¿Por qué necesitaría recuperar información sobre archivos adjuntos específicos en un documento PDF?
 
-A: Retrieving attachment information allows you to understand and analyze the details of embedded files within a PDF, helping you manage and work with attachments effectively.
+R: Recuperar información de archivos adjuntos le permite comprender y analizar los detalles de los archivos incrustados dentro de un PDF, lo que le ayuda a administrar y trabajar con archivos adjuntos de manera efectiva.
 
-#### Q: What type of information can I gather about a specific attachment using this tutorial?
+#### P: ¿Qué tipo de información puedo recopilar sobre un archivo adjunto específico usando este tutorial?
 
-A: This tutorial demonstrates how to retrieve and display attachment properties such as name, description, MIME type, control hash, creation date, modification date, and size.
+R: Este tutorial demuestra cómo recuperar y mostrar propiedades de archivos adjuntos como nombre, descripción, tipo MIME, hash de control, fecha de creación, fecha de modificación y tamaño.
 
-#### Q: How does this tutorial help me gather attachment information using Aspose.PDF for .NET?
+#### P: ¿Cómo me ayuda este tutorial a recopilar información adjunta usando Aspose.PDF para .NET?
 
-A: This tutorial provides step-by-step instructions and C# source code to access and display information about a specific attachment within a PDF document.
+R: Este tutorial proporciona instrucciones paso a paso y código fuente C# para acceder y mostrar información sobre un archivo adjunto específico dentro de un documento PDF.
 
-#### Q: Can I retrieve information about all attachments instead of a specific attachment using this tutorial?
+#### P: ¿Puedo recuperar información sobre todos los archivos adjuntos en lugar de uno específico usando este tutorial?
 
-A: This tutorial is focused on obtaining information about a specific attachment, but you can adapt the code to loop through all attachments and gather their information.
+R: Este tutorial se centra en obtener información sobre un archivo adjunto específico, pero puede adaptar el código para recorrer todos los archivos adjuntos y recopilar su información.
 
-#### Q: What is the purpose of the "Check Hash" property displayed in the attachment information?
+#### P: ¿Cuál es el propósito de la propiedad "Check Hash" que se muestra en la información del archivo adjunto?
 
-A: The "Check Hash" property represents the control hash value of the attachment, which can be used to verify the integrity of the attachment.
+R: La propiedad "Check Hash" representa el valor hash de control del archivo adjunto, que se puede utilizar para verificar la integridad del archivo adjunto.
 
-#### Q: How can I modify this code to retrieve information about attachments with different indices?
+#### P: ¿Cómo puedo modificar este código para recuperar información sobre archivos adjuntos con diferentes índices?
 
-A: You can change the index value (e.g., `pdfDocument.EmbeddedFiles[1]`) to retrieve information about attachments at different indices within the PDF document.
+ R: Puede cambiar el valor del índice (p. ej.,`pdfDocument.EmbeddedFiles[1]`) para recuperar información sobre archivos adjuntos en diferentes índices dentro del documento PDF.
 
-#### Q: Can I use this knowledge to gather information from password-protected PDF files?
+#### P: ¿Puedo utilizar este conocimiento para recopilar información de archivos PDF protegidos con contraseña?
 
-A: Yes, you can apply similar principles to gather attachment information from password-protected PDF files using Aspose.PDF for .NET.
+R: Sí, puede aplicar principios similares para recopilar información adjunta de archivos PDF protegidos con contraseña utilizando Aspose.PDF para .NET.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of obtaining attachment information?
+#### P: ¿Cómo simplifica Aspose.PDF para .NET el proceso de obtención de información adjunta?
 
-A: Aspose.PDF for .NET provides an intuitive API that allows you to access and manipulate attachment properties in PDF documents with ease.
+R: Aspose.PDF para .NET proporciona una API intuitiva que le permite acceder y manipular las propiedades de los archivos adjuntos en documentos PDF con facilidad.
 
-#### Q: Are there specific scenarios where gathering attachment information is recommended?
+#### P: ¿Existen escenarios específicos en los que se recomienda recopilar información sobre archivos adjuntos?
 
-A: Gathering attachment information is valuable when you need to understand the details of embedded files, such as verifying their properties or auditing attachments in a document.
+R: Recopilar información de archivos adjuntos es valioso cuando necesita comprender los detalles de archivos incrustados, como verificar sus propiedades o auditar archivos adjuntos en un documento.

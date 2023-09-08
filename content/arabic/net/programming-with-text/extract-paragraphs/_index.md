@@ -1,26 +1,26 @@
 ---
-title: Extract Paragraphs In PDF File
-linktitle: Extract Paragraphs In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract paragraphs in PDF file using Aspose.PDF for .NET.
+title: استخراج الفقرات في ملف PDF
+linktitle: استخراج الفقرات في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخراج الفقرات من ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 160
 url: /ar/net/programming-with-text/extract-paragraphs/
 ---
-This tutorial will guide you through the process of extracting paragraphs in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+سيرشدك هذا البرنامج التعليمي خلال عملية استخراج الفقرات في ملف PDF باستخدام Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم الخطوات اللازمة.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## متطلبات
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio أو أي مترجم C# آخر مثبت على جهازك.
+- Aspose.PDF لمكتبة .NET. يمكنك تنزيله من موقع Aspose الرسمي أو استخدام مدير الحزم مثل NuGet لتثبيته.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## الخطوة 1: إعداد المشروع
+1. قم بإنشاء مشروع C# جديد في بيئة التطوير المفضلة لديك.
+2. قم بإضافة مرجع إلى Aspose.PDF لمكتبة .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to extract paragraphs, add the following using directives at the top of the file:
+## الخطوة 2: استيراد مساحات الأسماء المطلوبة
+في ملف التعليمات البرمجية الذي تريد استخراج الفقرات منه، أضف ما يلي باستخدام التوجيهات الموجودة في أعلى الملف:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,26 +28,26 @@ using System;
 using System.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## الخطوة 3: قم بتعيين دليل المستند
+ في الكود، حدد السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدال`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل حيث يتم تخزين المستندات الخاصة بك.
 
-## Step 4: Open the PDF document
-Open an existing PDF document using the `Document` constructor and passing the path to the input PDF file.
+## الخطوة 4: افتح مستند PDF
+ افتح مستند PDF موجود باستخدام الملف`Document`منشئ وتمرير المسار إلى ملف PDF الإدخال.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 5: Extract paragraphs
-Instantiate the `ParagraphAbsorber` class and use its `Visit` method to extract paragraphs from the document.
+## الخطوة 5: استخراج الفقرات
+ إنشاء مثيل`ParagraphAbsorber` الصف واستخدامه`Visit` طريقة استخراج الفقرات من الوثيقة.
 
 ```csharp
 ParagraphAbsorber absorb = new ParagraphAbsorber();
 absorb.Visit(doc);
 ```
 
-## Step 6: Iterate through paragraphs
-Loop through the extracted paragraphs to access the text contents. Use nested loops to traverse through sections and lines within each paragraph.
+## الخطوة 6: التكرار من خلال الفقرات
+قم بالمرور عبر الفقرات المستخرجة للوصول إلى محتويات النص. استخدم حلقات متداخلة للتنقل عبر الأقسام والأسطر داخل كل فقرة.
 
 ```csharp
 foreach(PageMarkup markup in absorber.PageMarkups)
@@ -77,13 +77,13 @@ foreach(PageMarkup markup in absorber.PageMarkups)
 }
 ```
 
-### Sample source code for Extract Paragraphs using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لاستخراج الفقرات باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open an existing PDF file
+//افتح ملف PDF موجود
 Document doc = new Document(dataDir + "input.pdf");
-// Instantiate ParagraphAbsorber
+// إنشاء مثيل لامتصاص الفقرة
 ParagraphAbsorber absorber = new ParagraphAbsorber();
 absorber.Visit(doc);
 foreach (PageMarkup markup in absorber.PageMarkups)
@@ -113,18 +113,18 @@ foreach (PageMarkup markup in absorber.PageMarkups)
 }
 ```
 
-## Conclusion
-You have successfully extracted paragraphs from a PDF document using Aspose.PDF for .NET. The extracted paragraphs have been displayed in the console window.
+## خاتمة
+لقد نجحت في استخراج الفقرات من مستند PDF باستخدام Aspose.PDF لـ .NET. تم عرض الفقرات المستخرجة في نافذة وحدة التحكم.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of this tutorial?
+#### س: ما هو الغرض من هذا البرنامج التعليمي؟
 
-A: This tutorial aims to guide you through the process of extracting paragraphs from a PDF file using Aspose.PDF for .NET. The accompanying C# source code provides practical steps for achieving this task.
+ج: يهدف هذا البرنامج التعليمي إلى إرشادك خلال عملية استخراج الفقرات من ملف PDF باستخدام Aspose.PDF لـ .NET. يوفر كود مصدر C# المصاحب خطوات عملية لتحقيق هذه المهمة.
 
-#### Q: What namespaces should I import?
+#### س: ما هي مساحات الأسماء التي يجب علي استيرادها؟
 
-A: In the code file where you intend to extract paragraphs, include the following using directives at the beginning of the file:
+ج: في ملف التعليمات البرمجية الذي تنوي استخراج الفقرات منه، قم بتضمين ما يلي باستخدام التوجيهات في بداية الملف:
 
 ```csharp
 using Aspose.Pdf;
@@ -132,22 +132,22 @@ using System;
 using System.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### س: كيف أحدد دليل المستندات؟
 
-A: Locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` in the code and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ ج: تحديد موقع الخط`string dataDir = "YOUR DOCUMENT DIRECTORY";` في التعليمات البرمجية واستبدال`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك.
 
-#### Q: How do I open an existing PDF document?
+#### س: كيف يمكنني فتح مستند PDF موجود؟
 
-A: In Step 4, you'll open an existing PDF document using the `Document` constructor and providing the path to the input PDF file.
+ ج: في الخطوة 4، ستفتح مستند PDF موجودًا باستخدام الملف`Document` منشئ وتوفير المسار إلى ملف PDF الإدخال.
 
-#### Q: How do I extract paragraphs from the document?
+#### س: كيف يمكنني استخراج فقرات من الوثيقة؟
 
-A: Step 5 involves creating an instance of the `ParagraphAbsorber` class and using its `Visit` method to extract paragraphs from the PDF document.
+ ج: تتضمن الخطوة 5 إنشاء مثيل لـ`ParagraphAbsorber` الصف واستخدامه`Visit` طريقة استخراج الفقرات من وثيقة PDF.
 
-#### Q: How do I iterate through the extracted paragraphs?
+#### س: كيف يمكنني التكرار خلال الفقرات المستخرجة؟
 
-A: Step 6 guides you through looping through the extracted paragraphs. Nested loops are used to traverse sections and lines within each paragraph, ultimately accessing and displaying the text contents.
+ج: ترشدك الخطوة 6 خلال التكرار عبر الفقرات المستخرجة. تُستخدم الحلقات المتداخلة لاجتياز الأقسام والأسطر داخل كل فقرة، للوصول في النهاية إلى محتويات النص وعرضها.
 
-#### Q: What is the key takeaway from this tutorial?
+#### س: ما هي الوجبات الرئيسية من هذا البرنامج التعليمي؟
 
-A: By following this tutorial, you've learned how to extract paragraphs from a PDF document using Aspose.PDF for .NET. The extracted paragraphs have been displayed in the console window, providing you with valuable insight into the document's content structure.
+ج: باتباع هذا البرنامج التعليمي، تعلمت كيفية استخراج الفقرات من مستند PDF باستخدام Aspose.PDF لـ .NET. تم عرض الفقرات المستخرجة في نافذة وحدة التحكم، مما يوفر لك رؤية قيمة حول بنية محتوى المستند.

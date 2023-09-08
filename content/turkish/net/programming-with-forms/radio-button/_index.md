@@ -1,92 +1,92 @@
 ---
-title: Radio Button
-linktitle: Radio Button
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add radio buttons to your PDF documents with Aspose.PDF for .NET.
+title: Radyo düğmesi
+linktitle: Radyo düğmesi
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF belgelerinize kolayca radyo düğmeleri ekleyin.
 type: docs
 weight: 220
 url: /tr/net/programming-with-forms/radio-button/
 ---
-In this tutorial, we will show you how to add a radio button in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+Bu eğitimde size Aspose.PDF for .NET kullanarak bir PDF belgesine nasıl radyo düğmesi ekleyeceğinizi göstereceğiz. Bu süreçte size yol göstermek için C# kaynak kodunu adım adım açıklayacağız.
 
-## Step 1: Preparation
+## Adım 1: Hazırlık
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Gerekli kitaplıkları içe aktardığınızdan ve belgeler dizininizin yolunu ayarladığınızdan emin olun:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiate a Document Object
+## Adım 2: Bir Belge Nesnesini Örneklendirin
 
-Instantiate a Document object to create a new PDF document:
+Yeni bir PDF belgesi oluşturmak için bir Belge nesnesi örneği oluşturun:
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-## Step 3: Add a page
+## 3. Adım: Sayfa ekleyin
 
-Add a page to the PDF document:
+PDF belgesine bir sayfa ekleyin:
 
 ```csharp
 pdfDocument.Pages.Add();
 ```
 
-## Step 4: Instantiate a RadioButtonField Object
+## Adım 4: RadioButtonField Nesnesini Örneklendirin
 
-Instantiate a RadioButtonField object specifying the page number as an argument:
+Bağımsız değişken olarak sayfa numarasını belirten bir RadioButtonField nesnesi oluşturun:
 
 ```csharp
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Step 5: Add radio button options
+## 5. Adım: Radyo düğmesi seçeneklerini ekleyin
 
-Add radio button options to the RadioButtonField object by specifying the coordinates of each option with a Rectangle object:
+Her seçeneğin koordinatlarını bir Rectangle nesnesiyle belirterek RadioButtonField nesnesine radyo düğmesi seçenekleri ekleyin:
 
 ```csharp
 radio.AddOption("Test", new Rectangle(0, 0, 20, 20));
 radio.AddOption("Test1", new Rectangle(20, 20, 40, 40));
 ```
 
-## Step 6: Add the radio button to the form
+## Adım 6: Radyo düğmesini forma ekleyin
 
-Add the radio button to the document's Form object:
+Radyo düğmesini belgenin Form nesnesine ekleyin:
 
 ```csharp
 pdfDocument.Form.Add(radio);
 ```
 
-## Step 7: Save the PDF Document
+## Adım 7: PDF Belgesini Kaydedin
 
-Save the created PDF document:
+Oluşturulan PDF belgesini kaydedin:
 
 ```csharp
 dataDir = dataDir + "RadioButton_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Radio Button using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Radio Button için örnek kaynak kodu 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Belgeler dizininin yolu.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Instantiate Document object
+	// Belge nesnesini somutlaştır
 	Document pdfDocument = new Document();
-	// Add a page to PDF file
+	// PDF dosyasına sayfa ekleme
 	pdfDocument.Pages.Add();
-	// Instatiate RadioButtonField object with page number as argument
+	// Bağımsız değişken olarak sayfa numarasıyla RadioButtonField nesnesini başlat
 	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Add first radio button option and also specify its origin using Rectangle object
+	// İlk radyo düğmesi seçeneğini ekleyin ve ayrıca Rectangle nesnesini kullanarak kökenini belirtin
 	radio.AddOption("Test", new Rectangle(0, 0, 20, 20));
-	// Add second radio button option
+	// İkinci radyo düğmesi seçeneğini ekle
 	radio.AddOption("Test1", new Rectangle(20, 20, 40, 40));
-	// Add radio button to form object of Document object
+	// Belge nesnesinin nesnesini oluşturmak için radyo düğmesi ekleyin
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "RadioButton_out.pdf";
-	// Save the PDF file
+	// PDF dosyasını kaydedin
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nRadio button field added successfully.\nFile saved at " + dataDir);
 }
@@ -96,29 +96,29 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to add a radio button in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily create a radio button and place it on a specific page in your PDF document.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesine nasıl radyo düğmesi ekleneceğini öğrendik. Bu adımları izleyerek kolayca bir radyo düğmesi oluşturabilir ve bunu PDF belgenizdeki belirli bir sayfaya yerleştirebilirsiniz.
 
 
-### FAQ's
+### SSS'ler
 
-#### Q: Can I customize the appearance of the radio button, such as its size and color?
+#### S: Radyo düğmesinin boyutu ve rengi gibi görünümünü özelleştirebilir miyim?
 
-A: Yes, you can customize the appearance of the radio button using the `Rectangle` object's coordinates to define its size and position. Aspose.PDF for .NET allows you to adjust the radio button's appearance to suit your needs.
+ C: Evet, radyo düğmesinin görünümünü aşağıdaki düğmeyi kullanarak özelleştirebilirsiniz:`Rectangle` Boyutunu ve konumunu tanımlamak için nesnenin koordinatları. Aspose.PDF for .NET, radyo düğmesinin görünümünü ihtiyaçlarınıza uyacak şekilde ayarlamanıza olanak tanır.
 
-#### Q: Can I add multiple radio buttons with different groups on the same page?
+#### S: Aynı sayfaya farklı gruplara sahip birden fazla radyo düğmesi ekleyebilir miyim?
 
-A: Yes, you can add multiple radio buttons with different groups on the same page. Each group of radio buttons can have a unique name, and only one option within each group can be selected at a time.
+C: Evet, aynı sayfaya farklı gruplara sahip birden fazla radyo düğmesi ekleyebilirsiniz. Her radyo düğmesi grubunun benzersiz bir adı olabilir ve her grup içinde aynı anda yalnızca bir seçenek seçilebilir.
 
-#### Q: How can I add a label or text description to the radio button options?
+#### S: Radyo düğmesi seçeneklerine nasıl etiket veya metin açıklaması ekleyebilirim?
 
-A: To add a label or text description to the radio button options, you can use the `TextStamp` class from Aspose.PDF for .NET to overlay text on the PDF document at specific coordinates.
+ C: Radyo düğmesi seçeneklerine etiket veya metin açıklaması eklemek için`TextStamp`Metni PDF belgesinin üzerine belirli koordinatlarda yerleştirmek için Aspose.PDF for .NET'ten sınıf.
 
-#### Q: Is Aspose.PDF for .NET compatible with all versions of .NET Framework?
+#### S: Aspose.PDF for .NET, .NET Framework'ün tüm sürümleriyle uyumlu mudur?
 
-A: Yes, Aspose.PDF for .NET is compatible with all versions of .NET Framework, including .NET Core and .NET Standard.
+C: Evet, Aspose.PDF for .NET, .NET Core ve .NET Standard da dahil olmak üzere .NET Framework'ün tüm sürümleriyle uyumludur.
 
-#### Q: Can I programmatically control the selection of a radio button option in the PDF document?
+#### S: PDF belgesindeki radyo düğmesi seçeneğinin seçimini programlı olarak kontrol edebilir miyim?
 
-A: Yes, you can programmatically control the selection of a radio button option using the `IsSelected` property of the `RadioButtonOption` class. This property allows you to set a specific option as selected.
+ C: Evet, radyo düğmesi seçeneğinin seçimini programlı olarak kontrol edebilirsiniz.`IsSelected` mülkiyeti`RadioButtonOption` sınıf. Bu özellik, belirli bir seçeneği seçili olarak ayarlamanıza olanak tanır.

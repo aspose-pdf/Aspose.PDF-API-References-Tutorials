@@ -1,237 +1,237 @@
 ---
-title: Export Excel Worksheet Data To Table
-linktitle: Export Excel Worksheet Data To Table
-second_title: Aspose.PDF for .NET API Reference
-description: Export data from an Excel sheet to a PDF table using Aspose.PDF for .NET.
+title: 将 Excel 工作表数据导出到表
+linktitle: 将 Excel 工作表数据导出到表
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 将数据从 Excel 工作表导出到 PDF 表。
 type: docs
 weight: 70
 url: /zh/net/programming-with-tables/export-excel-worksheet-data-to-table/
 ---
-In this tutorial, we will learn how to export data from an Excel worksheet and create a table in a PDF document using the Aspose.PDF for .NET library. We will walk through the source code step by step and explain each section in detail. By the end of this tutorial, you will be able to generate PDF files with tables containing data from Excel worksheets. Let's get started!
+在本教程中，我们将学习如何使用 Aspose.PDF for .NET 库从 Excel 工作表导出数据并在 PDF 文档中创建表格。我们将逐步浏览源代码并详细解释每个部分。在本教程结束时，您将能够生成包含 Excel 工作表数据的表格的 PDF 文件。让我们开始吧！
 
-## Requirements
-Before we begin, make sure you have the following:
+## 要求
+在我们开始之前，请确保您具备以下条件：
 
-- Basic knowledge of C# programming language
-- Visual Studio installed on your machine
-- Aspose.PDF for .NET library added to your project
+- C# 编程语言基础知识
+- 您的计算机上安装了 Visual Studio
+- Aspose.PDF for .NET 库已添加到您的项目中
 
-## Step 1: Setting up the Environment
-To begin, create a new C# project in Visual Studio. Add the reference to the Aspose.PDF for .NET library by right-clicking on your project in the Solution Explorer, selecting "Manage NuGet Packages," and searching for "Aspose.PDF." Install the package and you're ready to go.
+## 第 1 步：设置环境
+首先，在 Visual Studio 中创建一个新的 C# 项目。通过在解决方案资源管理器中右键单击您的项目，选择“管理 NuGet 包”并搜索“Aspose.PDF”，添加对 Aspose.PDF for .NET 库的引用。安装该软件包即可开始使用。
 
-## Step 2: Loading the Excel Worksheet
-In the first step of our code, we define the path to the directory containing the Excel document. Replace "YOUR DOCUMENT DIRECTORY" with the actual directory path where your Excel file is located.
+## 第 2 步：加载 Excel 工作表
+在代码的第一步中，我们定义包含 Excel 文档的目录的路径。将“您的文档目录”替换为 Excel 文件所在的实际目录路径。
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Aspose.Cells.Workbook workbook = new Aspose.Cells.Workbook(new FileStream(dataDir + "newBook1.xlsx", FileMode.Open));
 ```
 
-Here, we use the Aspose.Cells library to load the Excel workbook. Make sure to replace "newBook1.xlsx" with the name of your Excel file.
+在这里，我们使用 Aspose.Cells 库来加载 Excel 工作簿。确保将“newBook1.xlsx”替换为 Excel 文件的名称。
 
-## Step 3: Accessing the Worksheet
-Next, we need to access the first worksheet in the Excel file. We do this using the `Worksheets` collection of the `Workbook` object.
+## 第 3 步：访问工作表
+接下来，我们需要访问 Excel 文件中的第一个工作表。我们使用`Worksheets`的集合`Workbook`目的。
 
 ```csharp
-// Accessing the first worksheet in the Excel file
+//访问 Excel 文件中的第一个工作表
 Aspose.Cells.Worksheet worksheet = workbook.Worksheets[0];
 ```
 
-If your Excel file contains multiple worksheets, you can change the index value `[0]` to access a different worksheet.
+如果您的 Excel 文件包含多个工作表，您可以更改索引值`[0]`访问不同的工作表。
 
-## Step 4: Exporting Data to DataTable
-Now, we will export the contents of the Excel worksheet to a `DataTable` object. We specify the range of cells to export using the `ExportDataTable` method.
+## 第四步：导出数据到DataTable
+现在，我们将 Excel 工作表的内容导出到`DataTable`目的。我们使用以下命令指定要导出的单元格范围`ExportDataTable`方法。
 
 ```csharp
-// Exporting the contents of 7 rows and 2 columns starting from 1st cell to DataTable
+//将从第一个单元格开始的7行2列的内容导出到DataTable
 DataTable dataTable = worksheet.Cells.ExportDataTable(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1, true);
 ```
 
-In this example, we export all rows and columns starting from the first cell (0, 0) to the last cell in the worksheet. Set the appropriate range based on your requirements.
+在此示例中，我们导出工作表中从第一个单元格 (0, 0) 到最后一个单元格的所有行和列。根据您的要求设置合适的范围。
 
-## Step 5: Creating a PDF Document
-Now, we will create a new PDF document using the Aspose.PDF library.
+## 第 5 步：创建 PDF 文档
+现在，我们将使用 Aspose.PDF 库创建一个新的 PDF 文档。
 
 ```csharp
-// Instantiate a Document instance
+//实例化一个 Document 实例
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 ```
 
-This creates an empty PDF document where we can add content.
+这将创建一个空的 PDF 文档，我们可以在其中添加内容。
 
-## Step 6: Adding a Page and Table
-To display the data in a table format, we need to add a page and a table to the PDF document.
+## 步骤 6：添加页面和表格
+为了以表格格式显示数据，我们需要向PDF文档添加页面和表格。
 
 ```csharp
-// Create a page in the document instance
+//在文档实例中创建页面
 Aspose.Pdf.Page sec1 = pdf1.Pages.Add();
 
-// Create a Table object
+//创建一个表对象
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Add the Table object in the paragraphs collection of the section
+//在节的段落集合中添加 Table 对象
 sec1.Paragraphs.Add(tab1);
 ```
 
-Here, we create a new page and a table object. We then add the table to the paragraphs collection of the page.
+在这里，我们创建一个新页面和一个表对象。然后，我们将该表添加到页面的段落集合中。
 
-## Step 7: Setting Table Properties
-Before importing the data, we need to set some properties of the table, such as column widths and default cell borders.
+## 第7步：设置表属性
+在导入数据之前，我们需要设置表格的一些属性，例如列宽和默认单元格边框。
 
 ```csharp
-// Set column widths of the table
+//设置表格的列宽
 tab1.ColumnWidths = "40 100 100";
 
-// Set default cell border of the table using BorderInfo object
+//使用 BorderInfo 对象设置表格的默认单元格边框
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 ```
 
-In this example, we set the column widths to 40, 100, and 100 units. Adjust the values based on your data. We also set the default cell border to display borders on all sides of each cell.
+在此示例中，我们将列宽设置为 40、100 和 100 个单位。根据您的数据调整值。我们还设置默认单元格边框以在每个单元格的所有侧面显示边框。
 
-## Step 8: Importing Data to the Table
-Now, we will import the data from the `DataTable` object into the table using the `ImportDataTable` method.
+## 步骤8：将数据导入表中
+现在，我们将从以下位置导入数据`DataTable`使用以下方法将对象放入表中`ImportDataTable`方法。
 
 ```csharp
-// Import data into the Table object from the DataTable created above
+//将数据从上面创建的 DataTable 导入到 Table 对象中
 tab1.ImportDataTable(dataTable, true, 0, 0, dataTable.Rows.Count + 1, dataTable.Columns.Count);
 ```
 
-Here, we specify the range of rows and columns to import. In this example, we import all rows and columns from the `dataTable` object.
+在这里，我们指定要导入的行和列的范围。在此示例中，我们从以下位置导入所有行和列`dataTable`目的。
 
-## Step 9: Formatting the Table
-To enhance the appearance of the table, we can apply formatting to specific cells or rows. In this step, we will format the first row and alternate rows of the table.
+## 步骤 9：格式化表格
+为了增强表格的外观，我们可以将格式应用于特定的单元格或行。在此步骤中，我们将格式化表的第一行和备用行。
 
 ```csharp
-// Get 1st row from the table
+//获取表中的第一行
 Aspose.Pdf.Row row1 = tab1.Rows[0];
 
-// Format the first row
+//设置第一行的格式
 foreach(Aspose.Pdf.Cell curCell in row1.Cells)
 {
-     // Set the background color of the cells in the first row
-     curCell.BackgroundColor = Color.Blue;// Set the face for the cells in the first row
+     //设置第一行单元格的背景颜色
+     curCell.BackgroundColor = Color.Blue;//设置第一行单元格的面
      curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
     
-     // Set the font color of the cells in the first row
+     //设置第一行单元格的字体颜色
      curCell.DefaultCellTextState.ForegroundColor = Color.Yellow;
     
-     // Set the text alignment for the cells in the first row
+     //设置第一行单元格的文本对齐方式
      curCell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 }
 
-// Alternate row format
+//交替行格式
 for (int All_Rows = 1; All_Rows <= dataTable.Rows.Count; All_Rows++)
 {
      foreach(Aspose.Pdf.Cell curCell in tab1.Rows[All_Rows].Cells)
      {
-         // Set the background color of the cells in alternate rows
+         //设置交替行中单元格的背景颜色
          curCell.BackgroundColor = Color.Gray;
         
-         // Set the text color of the cells in alternate rows
+         //设置交替行中单元格的文本颜色
          curCell.DefaultCellTextState.ForegroundColor = Color.White;
      }
 }
 ```
 
-Here, we iterate through the cells in the first row and set their background color, font face, font color, and text alignment. Then, we iterate through all cells in the alternate rows and set their background and text color.
+在这里，我们迭代第一行中的单元格并设置它们的背景颜色、字体、字体颜色和文本对齐方式。然后，我们迭代交替行中的所有单元格并设置它们的背景和文本颜色。
 
-## Step 10: Saving the PDF Document
-Finally, we save the PDF document to the specified location.
+## 第10步：保存PDF文档
+最后，我们将PDF文档保存到指定位置。
 
 ```csharp
-// Save the PDF
+//保存 PDF
 pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 ```
 
-Make sure to replace "YOUR DOCUMENT DIRECTORY" with the desired directory path and filename for the output PDF file.
+确保将“您的文档目录”替换为输出 PDF 文件所需的目录路径和文件名。
 
-### Example source code for Export Excel Worksheet Data To Table using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 将 Excel 工作表数据导出到表的示例源代码
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Aspose.Cells.Workbook workbook = new Aspose.Cells.Workbook(new FileStream(dataDir + "newBook1.xlsx", FileMode.Open));
-// Accessing the first worksheet in the Excel file
+//访问 Excel 文件中的第一个工作表
 Aspose.Cells.Worksheet worksheet = workbook.Worksheets[0];
-// Exporting the contents of 7 rows and 2 columns starting from 1st cell to DataTable
+//将从第一个单元格开始的7行2列的内容导出到DataTable
 DataTable dataTable = worksheet.Cells.ExportDataTable(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1, true);
 
-// Instantiate a Document instanc
+//实例化文档实例
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
-// Create a page in the document instance
+//在文档实例中创建页面
 Aspose.Pdf.Page sec1 = pdf1.Pages.Add();
 
-// Create a Table object
+//创建一个表对象
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Add the Table object in the paragraphs collection of the section
+//在节的段落集合中添加 Table 对象
 sec1.Paragraphs.Add(tab1);
 
-// Set column widths of the table.  We need to specify the ColumnCount manually.
-// As the curent excel worksheet has three columsn, so we are specifying the same count
+//设置表格的列宽。我们需要手动指定 ColumnCount。
+//由于当前 Excel 工作表具有三列，因此我们指定相同的计数
 tab1.ColumnWidths = "40 100 100";
 
-// Set default cell border of the table using BorderInfo object
+//使用 BorderInfo 对象设置表格的默认单元格边框
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 
-// Import data into the Table object from the DataTable created above
+//将数据从上面创建的 DataTable 导入到 Table 对象中
 tab1.ImportDataTable(dataTable, true, 0, 0, dataTable.Rows.Count + 1, dataTable.Columns.Count);
-// Get 1st row from the table
+//获取表中的第一行
 Aspose.Pdf.Row row1 = tab1.Rows[0];
 
-// Iterate through all cells in the 1st row and set their background color to blue
+//遍历第一行中的所有单元格并将其背景颜色设置为蓝色
 foreach (Aspose.Pdf.Cell curCell in row1.Cells)
 {
-	// Set the background of all the cells in 1st row of the table.
+	//设置表格第一行中所有单元格的背景。
 	curCell.BackgroundColor = Color.Blue;
-	// Set the font face for the cells of 1st row in the table.
+	//设置表中第一行单元格的字体。
 	curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
-	// Set the font Color of all the cells in 1st row of the table.
+	//设置表格第一行中所有单元格的字体颜色。
 	curCell.DefaultCellTextState.ForegroundColor = Color.Yellow;
-	// Set the text allignment for the cells of 1st row as Center.
+	//将第一行单元格的文本对齐方式设置为居中。
 	curCell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 }
 
 for (int All_Rows = 1; All_Rows <= dataTable.Rows.Count; All_Rows++)
 {
-	// Iterate through all cells in the 1st row and set their background color to blue
+	//遍历第一行中的所有单元格并将其背景颜色设置为蓝色
 	foreach (Aspose.Pdf.Cell curCell in tab1.Rows[All_Rows].Cells)
 	{
-		// Set the background color of all the cells except of the 1st row.
+		//设置除第一行之外的所有单元格的背景颜色。
 		curCell.BackgroundColor = Color.Gray;
-		// Set the Text color of all the cells except the 1st row.
+		//设置除第一行之外的所有单元格的文本颜色。
 		curCell.DefaultCellTextState.ForegroundColor = Color.White;
 	}
 }
 
-// Save the Pdf
+//保存 PDF
 pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 ```
 
-## Conclusion
-In this tutorial, we learned how to export data from an Excel worksheet to a PDF table using the Aspose.PDF for .NET library. We covered the step-by-step process of loading the Excel worksheet, creating a PDF document, adding a table, importing data, andformatting the table. You can now generate PDF files with tables containing Excel data programmatically.
+## 结论
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 库将数据从 Excel 工作表导出到 PDF 表格。我们介绍了加载 Excel 工作表、创建 PDF 文档、添加表格、导入数据和设置表格格式的分步过程。您现在可以通过编程方式生成包含 Excel 数据的表格的 PDF 文件。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of exporting Excel worksheet data to a PDF table?
+#### 问：将 Excel 工作表数据导出到 PDF 表格的目的是什么？
 
-A: Exporting Excel worksheet data to a PDF table allows you to present the data in a structured and organized format. It enables you to generate PDF files with tables that contain data from Excel worksheets, making it easier to share and preserve information in a portable document format.
+答：将 Excel 工作表数据导出到 PDF 表格可以让您以结构化且有组织的格式呈现数据。它使您能够生成带有包含 Excel 工作表数据的表格的 PDF 文件，从而更轻松地以便携式文档格式共享和保存信息。
 
-#### Q: Can I customize the appearance of the PDF table?
+#### 问：我可以自定义 PDF 表格的外观吗？
 
-A: Yes, you can customize the appearance of the PDF table using various properties provided by Aspose.PDF for .NET. In the provided C# source code, you can modify the column widths, cell borders, text alignment, font style, and more to suit your specific requirements.
+答：是的，您可以使用 Aspose.PDF for .NET 提供的各种属性来自定义 PDF 表格的外观。在提供的 C# 源代码中，您可以修改列宽、单元格边框、文本对齐方式、字体样式等，以满足您的特定要求。
 
-#### Q: How do I handle Excel files with multiple worksheets?
+#### 问：如何处理包含多个工作表的 Excel 文件？
 
-A: In the provided C# code, we accessed the first worksheet in the Excel file using the index `[0]`. If your Excel file contains multiple worksheets, you can access them by changing the index value accordingly, such as `[1]` for the second worksheet or `[2]` for the third worksheet.
+答：在提供的 C# 代码中，我们使用索引访问了 Excel 文件中的第一个工作表`[0]`。如果您的Excel文件包含多个工作表，您可以通过相应地更改索引值来访问它们，例如`[1]`对于第二个工作表或`[2]`对于第三个工作表。
 
-#### Q: Can I apply different formatting to specific rows or cells in the PDF table?
+#### 问：我可以对 PDF 表格中的特定行或单元格应用不同的格式吗？
 
-A: Yes, you can apply different formatting to specific rows or cells in the PDF table. In the provided C# source code, we demonstrated how to format the first row and alternate rows differently by changing their background color, font style, and font color. You can apply similar formatting techniques to any specific rows or cells as needed.
+答：是的，您可以对 PDF 表格中的特定行或单元格应用不同的格式。在提供的 C# 源代码中，我们演示了如何通过更改背景颜色、字体样式和字体颜色来以不同方式设置第一行和备用行的格式。您可以根据需要将类似的格式化技术应用于任何特定行或单元格。
 
-#### Q: Is Aspose.PDF for .NET the only library that allows exporting Excel data to a PDF table?
+#### 问：Aspose.PDF for .NET 是唯一允许将 Excel 数据导出到 PDF 表格的库吗？
 
-A: Aspose.PDF for .NET is a powerful library for working with PDF documents in .NET applications. While there might be other libraries available, Aspose.PDF for .NET offers a wide range of features and capabilities for generating, manipulating, and exporting PDF files with tables from Excel data, making it a popular choice for such tasks.
+答：Aspose.PDF for .NET 是一个功能强大的库，用于在 .NET 应用程序中处理 PDF 文档。虽然可能还有其他库可用，但 Aspose.PDF for .NET 提供了广泛的特性和功能，用于从 Excel 数据生成、操作和导出带有表格的 PDF 文件，使其成为此类任务的热门选择。

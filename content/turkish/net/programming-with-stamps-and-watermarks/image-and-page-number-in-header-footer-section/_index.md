@@ -1,178 +1,178 @@
 ---
-title: Image and Page Number in Header Footer Section
-linktitle: Image and Page Number in Header Footer Section
-second_title: Aspose.PDF for .NET API Reference
-description: Find out how to add an image and a page number in the header and footer of a PDF document with Aspose.
+title: Üst Bilgi Alt Bilgi Bölümündeki Resim ve Sayfa Numarası
+linktitle: Üst Bilgi Alt Bilgi Bölümündeki Resim ve Sayfa Numarası
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose ile bir PDF belgesinin üstbilgisine ve altbilgisine nasıl resim ve sayfa numarası ekleyeceğinizi öğrenin.
 type: docs
 weight: 110
 url: /tr/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section/
 ---
-In this tutorial, we will guide you step by step on how to add an image and page number in the header and footer section of a PDF document using Aspose.PDF for .NET. We will show you how to use provided C# source code to create a page, set header and footer, add image to header and text with page number to document footer PDF.
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesinin üstbilgi ve altbilgi bölümüne nasıl resim ve sayfa numarası ekleyeceğiniz konusunda size adım adım rehberlik edeceğiz. Bir sayfa oluşturmak, üstbilgi ve altbilgiyi ayarlamak, üstbilgiye resim eklemek ve belge altbilgisi PDF'sine sayfa numarasıyla birlikte metin eklemek için sağlanan C# kaynak kodunu nasıl kullanacağınızı göstereceğiz.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Kurulu bir .NET geliştirme ortamı.
+- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
 
-## Step 2: Creating the PDF Document and Page
+## Adım 2: PDF Belgesini ve Sayfasını Oluşturma
 
-The first step is to create a new Document object and a page in the PDF document. Here's how:
+İlk adım, PDF belgesinde yeni bir Belge nesnesi ve bir sayfa oluşturmaktır. İşte nasıl:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a new Document object
+// Yeni bir Belge nesnesi oluşturun
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Create a page in the document
+// Belgede bir sayfa oluşturun
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-The code above creates a new Document object and an empty page in the PDF document.
+Yukarıdaki kod, PDF belgesinde yeni bir Belge nesnesi ve boş bir sayfa oluşturur.
 
-## Step 3: Adding the header with an image
+## 3. Adım: Resimli başlığı ekleme
 
-Now that the page is created, we can add a header section with an image. Here's how:
+Artık sayfa oluşturulduğuna göre resim içeren bir başlık bölümü ekleyebiliriz. İşte nasıl:
 
 ```csharp
-// Create a header section
+// Başlık bölümü oluşturma
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the page header
+// Sayfa başlığını ayarlayın
 page. Header = header;
 
-// Create an Image object
+// Bir Görüntü nesnesi oluşturma
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set image path
+// Görüntü yolunu ayarla
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Add the image to the page header of the PDF document
+// Görüntüyü PDF belgesinin sayfa başlığına ekleyin
 header.Paragraphs.Add(image1);
 ```
 
-The code above creates a header section, sets the page header with this section, and adds an image to the header.
+Yukarıdaki kod bir başlık bölümü oluşturur, bu bölümle sayfa başlığını ayarlar ve başlığa bir resim ekler.
 
-## Step 4: Adding the footer with the page number
+## Adım 4: Sayfa numarasını içeren alt bilgiyi ekleme
 
-Now that the header is added, we can add a footer section with a page number. Here's how:
+Artık başlık eklendiğine göre sayfa numarası içeren bir alt bilgi bölümü ekleyebiliriz. İşte nasıl:
 
 ```csharp
-// Create a footer section
+// Altbilgi bölümü oluşturma
 Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
 
-// Define the footer of the PDF document
+// PDF belgesinin altbilgisini tanımlayın
 page. Footer = footer;
 
-// Create a TextFragment object
+// TextFragment nesnesi oluşturma
 Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P)");
 
-// Add the text with the page number to the footer of the PDF document
+// Sayfa numarasını içeren metni PDF belgesinin alt bilgisine ekleyin
 footer.Paragraphs.Add(txt);
 ```
 
-The above code creates a footer section, sets the footer of the page with this section and adds a TextFragment containing the text "Page: ($p of $P )"
+Yukarıdaki kod bir altbilgi bölümü oluşturur, bu bölümün bulunduğu sayfanın altbilgisini ayarlar ve "Sayfa: ($p / $P )" metnini içeren bir TextFragment ekler.
 
-  which displays the page number.
+  sayfa numarasını görüntüler.
 
-## Step 5: Saving the modified PDF document
+## Adım 5: Değiştirilen PDF belgesini kaydetme
 
-Once the header and footer are added, we can save the modified PDF document. Here's how:
+Üstbilgi ve altbilgi eklendikten sonra değiştirilen PDF belgesini kaydedebiliriz. İşte nasıl:
 
 ```csharp
-// Save the modified PDF document
+// Değiştirilen PDF belgesini kaydedin
 doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Yukarıdaki kod, düzenlenen PDF belgesini belirtilen dizine kaydeder.
 
-### Sample source code for Imageand Page Numberin Header Footersection using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanılarak Üst Bilgi Alt Bilgi bölümündeki Görüntü ve Sayfa Numarası için örnek kaynak kodu 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Create a page in the document object
+// Belge nesnesinde bir sayfa oluşturun
 Aspose.Pdf.Page page = doc.Pages.Add();
 
-// Create Header Section of the document
+// Belgenin Başlık Bölümünü Oluşturun
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the header for the PDF file
+// PDF dosyasının başlığını ayarlayın
 page.Header = header;
 
-// Create an image object in the page
+// Sayfada bir resim nesnesi oluşturun
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set the path of image file
+// Görüntü dosyasının yolunu ayarlayın
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Add image to Header page of the Pdf file
+// Pdf dosyasının Başlık sayfasına resim ekleyin
 header.Paragraphs.Add(image1);
 
-// Create a Footer Section of the document
+//Belgenin Alt Bilgi Bölümü Oluşturma
 Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
 
-// Set the footer of the PDF file
+// PDF dosyasının altbilgisini ayarlayın
 page.Footer = footer;
 
-// Create a Text object
+// Metin nesnesi oluşturma
 Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P ) ");
 
-// Add text to Header section of the Pdf file
+// Pdf dosyasının Başlık bölümüne metin ekleyin
 footer.Paragraphs.Add(txt);
 
-// Save the Pdf file
+// Pdf dosyasını kaydedin
 doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have learned how to add an image and page number in the header and footer section of a PDF document using Aspose.PDF for .NET. Now you can use this method to customize header and footer in your PDF documents.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesinin üstbilgi ve altbilgi bölümüne nasıl resim ve sayfa numarası ekleyeceğinizi öğrendiniz. Artık PDF belgelerinizdeki üstbilgi ve altbilgiyi özelleştirmek için bu yöntemi kullanabilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of adding an image and page number in the header and footer section of a PDF document?
+#### S: PDF belgesinin üstbilgi ve altbilgi bölümüne resim ve sayfa numarası eklemenin amacı nedir?
 
-A: Adding an image and page number in the header and footer section of a PDF document can enhance its visual appeal, branding, and navigational elements. An image can represent a logo, watermark, or any graphical element, while a page number helps users track their progress and locate specific pages.
+C: Bir PDF belgesinin üstbilgi ve altbilgi bölümüne bir resim ve sayfa numarası eklemek, belgenin görsel çekiciliğini, markasını ve gezinme öğelerini geliştirebilir. Bir resim bir logoyu, filigranı veya herhangi bir grafik öğesini temsil edebilir; sayfa numarası ise kullanıcıların ilerlemelerini takip etmelerine ve belirli sayfaları bulmalarına yardımcı olur.
 
-#### Q: How does the provided C# source code help in adding an image and page number to the header and footer of a PDF document?
+#### S: Sağlanan C# kaynak kodu, bir PDF belgesinin üstbilgisine ve altbilgisine resim ve sayfa numarası eklemede nasıl yardımcı olur?
 
-A: The provided code demonstrates how to create a PDF document, add a page, and then customize the header and footer sections. It shows how to add an image to the header and a text fragment with page numbering to the footer.
+C: Sağlanan kod, bir PDF belgesinin nasıl oluşturulacağını, bir sayfanın nasıl ekleneceğini ve ardından üstbilgi ve altbilgi bölümlerinin nasıl özelleştirileceğini gösterir. Başlığa bir görselin ve alt bilgiye sayfa numaralandırmalı bir metin parçasının nasıl ekleneceğini gösterir.
 
-#### Q: Can I use any image format for the header, and how do I specify its path?
+#### S: Başlık için herhangi bir görüntü formatını kullanabilir miyim ve yolunu nasıl belirleyebilirim?
 
-A: Yes, you can use various image formats (such as JPEG, PNG, GIF, etc.) for the header image. The image's path is specified using the `File` property of the `Aspose.Pdf.Image` object.
+ C: Evet, başlık görseli için çeşitli görsel formatlarını (JPEG, PNG, GIF vb.) kullanabilirsiniz. Resmin yolu kullanılarak belirtilir.`File` mülkiyeti`Aspose.Pdf.Image` nesne.
 
-#### Q: How do I customize the appearance and positioning of the image in the header section?
+#### S: Başlık bölümündeki görselin görünümünü ve konumunu nasıl özelleştiririm?
 
-A: You can customize the appearance and positioning of the image by adjusting the properties of the `Aspose.Pdf.Image` object before adding it to the header section. For example, you can set the image's dimensions, alignment, rotation, opacity, etc.
+ C: Görüntünün özelliklerini ayarlayarak görüntünün görünümünü ve konumunu özelleştirebilirsiniz.`Aspose.Pdf.Image` başlık bölümüne eklemeden önce nesneyi seçin. Örneğin görüntünün boyutlarını, hizalamasını, döndürmesini, opaklığını vb. ayarlayabilirsiniz.
 
-#### Q: What is the purpose of the `TextFragment` object used for the footer?
+####  Soru: Programın amacı nedir?`TextFragment` object used for the footer?
 
-A: The `TextFragment` object is used to create and format text that will be displayed in the footer section. In the provided code, it is used to display the page number and total page count.
+ C:`TextFragment` nesne, altbilgi bölümünde görüntülenecek metni oluşturmak ve biçimlendirmek için kullanılır. Verilen kodda sayfa numarasını ve toplam sayfa sayısını görüntülemek için kullanılmaktadır.
 
-#### Q: Can I modify the footer text to include additional information or formatting?
+#### S: Alt bilgi metnini ek bilgi veya biçimlendirme içerecek şekilde değiştirebilir miyim?
 
-A: Yes, you can modify the footer text by modifying the contents of the `TextFragment` object. You can add additional text, change fonts, colors, and formatting according to your requirements.
+ C: Evet, altbilgi metnini, içeriğini değiştirerek değiştirebilirsiniz.`TextFragment` nesne. Gereksinimlerinize göre ek metin ekleyebilir, yazı tiplerini, renkleri ve biçimlendirmeyi değiştirebilirsiniz.
 
-#### Q: Can I apply different header and footer contents to different pages of the PDF document?
+#### S: PDF belgesinin farklı sayfalarına farklı üstbilgi ve altbilgi içerikleri uygulayabilir miyim?
 
-A: Yes, you can apply different header and footer contents to different pages by creating separate `HeaderFooter` objects and assigning them to specific pages using the `Header` and `Footer` properties of the `Aspose.Pdf.Page` object.
+ C: Evet, ayrı sayfalar oluşturarak farklı sayfalara farklı üstbilgi ve altbilgi içerikleri uygulayabilirsiniz.`HeaderFooter` kullanarak nesneleri belirli sayfalara atamak ve bunları belirli sayfalara atamak`Header` Ve`Footer` özellikleri`Aspose.Pdf.Page` nesne.
 
-#### Q: How can I further customize the header and footer, such as changing font styles or adding additional elements?
+#### S: Yazı tipi stillerini değiştirmek veya ek öğeler eklemek gibi üstbilgi ve altbilgiyi nasıl daha fazla özelleştirebilirim?
 
-A: You can customize the header and footer by using various classes and properties provided by Aspose.PDF for .NET. For example, you can use different text formatting options, add more paragraphs, images, or even tables to the header and footer sections.
+C: Aspose.PDF for .NET tarafından sağlanan çeşitli sınıfları ve özellikleri kullanarak üstbilgi ve altbilgiyi özelleştirebilirsiniz. Örneğin, farklı metin biçimlendirme seçeneklerini kullanabilir, üstbilgi ve altbilgi bölümlerine daha fazla paragraf, resim ve hatta tablo ekleyebilirsiniz.
 
-#### Q: Can I remove or clear the header and footer sections if needed?
+#### S: Gerekirse üst bilgi ve alt bilgi bölümlerini kaldırabilir veya temizleyebilir miyim?
 
-A: Yes, you can remove or clear the header and footer sections by setting the `Header` and `Footer` properties of the `Aspose.Pdf.Page` object to `null`.
+C: Evet, üstbilgi ve altbilgi bölümlerini ayarlayarak kaldırabilir veya temizleyebilirsiniz.`Header` Ve`Footer` özellikleri`Aspose.Pdf.Page` itiraz etmek`null`.
 
-#### Q: How can I ensure that the added image and page number remain consistent across different devices and viewers?
+#### S: Eklenen görselin ve sayfa numarasının farklı cihazlar ve izleyiciler arasında tutarlı kalmasını nasıl sağlayabilirim?
 
-A: Aspose.PDF for .NET provides functionality to create standardized and consistent PDF documents, ensuring that the added image and page number will appear consistently across different devices and PDF viewers.
+C: Aspose.PDF for .NET, standartlaştırılmış ve tutarlı PDF belgeleri oluşturmaya yönelik işlevsellik sağlayarak, eklenen görüntünün ve sayfa numarasının farklı cihazlarda ve PDF görüntüleyicilerde tutarlı bir şekilde görünmesini sağlar.

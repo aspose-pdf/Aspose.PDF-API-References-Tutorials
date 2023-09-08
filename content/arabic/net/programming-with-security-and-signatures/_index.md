@@ -1,27 +1,27 @@
 ---
-title: Programming with Security and Signatures
-linktitle: Programming with Security and Signatures
+title: البرمجة مع الأمن والتوقيعات
+linktitle: البرمجة مع الأمن والتوقيعات
 type: docs
 weight: 17
 url: /ar/net/programming-with-security-and-signatures/
-description: Programming with Security and Signatures tutorial teaches you how to secure and sign your PDF documents, ensuring confidentiality and authenticity.
+description: يعلمك البرنامج التعليمي للبرمجة باستخدام الأمان والتوقيعات كيفية تأمين مستندات PDF الخاصة بك وتوقيعها، مما يضمن السرية والأصالة.
 ---
-Programming with Security and Signatures tutorial walks you through security and signatures features for PDF documents. You will learn how to protect your PDF files with passwords, add digital signatures and verify the integrity of signed documents.
+يرشدك البرنامج التعليمي للبرمجة باستخدام الأمان والتوقيعات إلى ميزات الأمان والتوقيعات لمستندات PDF. سوف تتعلم كيفية حماية ملفات PDF الخاصة بك بكلمات المرور وإضافة التوقيعات الرقمية والتحقق من سلامة المستندات الموقعة.
 
-The tutorial gives you a detailed overview of methods and techniques to ensure the confidentiality and authenticity of your PDF files. You'll learn how to manage digital certificates, add security permissions, apply security policies, and more. Using these tutorials, you will be able to secure your PDF documents reliably and professionally.
+يمنحك البرنامج التعليمي نظرة عامة مفصلة عن الأساليب والتقنيات لضمان سرية وصحة ملفات PDF الخاصة بك. ستتعلم كيفية إدارة الشهادات الرقمية وإضافة أذونات الأمان وتطبيق سياسات الأمان والمزيد. باستخدام هذه البرامج التعليمية، ستتمكن من تأمين مستندات PDF الخاصة بك بشكل موثوق واحترافي.
 
-## Tutorials
-| Title | Description |
+## دروس
+| عنوان | وصف |
 | --- | --- | 
-| [Change Password In PDF File](./change-password/) | Learn how to change the password in PDF file using Aspose.PDF for .NET. |  
-| [Decrypt PDF File](./decrypt/) | Learn how to decrypt PDF file using Aspose.PDF for .NET. |  
-| [Determine Correct Password In PDF File](./determine-correct-password/) | Learn how to determine the correct password in PDF file with Aspose.PDF for .NET. |  
-| [Digitally Sign In PDF File](./digitally-sign/) | Learn how to digitally sign in PDF file with Aspose.PDF for .NET. |  
-| [Digitally Sign With Time Stamp In PDF File](./digitally-sign-with-time-stamp/) | Learn how to perform a digital signature with time stamp in PDF file using Aspose.PDF for .NET. |  
-| [Encrypt PDF File](./encrypt/) | Securely encrypt your PDF files with Aspose.PDF for .NET. |  
-| [Extracting Image](./extracting-image/) | Easily extract images from PDF documents with Aspose.PDF for .NET. |  
-| [Extract Signature Info](./extract-signature-info/) | Extracting signature information using Aspose.PDF for .NET. |  
-| [Is Password Protected](./is-password-protected/) | Easily check if a PDF document is password protected with Aspose.PDF for .NET. |  
-| [Set Privileges In PDF File](./set-privileges/) | Easily set access privileges in PDF file with Aspose.PDF for .NET. |  
-| [Sign With Smart Card Using Pdf File Signature](./sign-with-smart-card-using-pdf-file-signature/) | Sign your PDF files securely with a smart card using Aspose.PDF for .NET. |  
-| [Sign With Smart Card Using Signature Field](./sign-with-smart-card-using-signature-field/) | Sign your PDF files securely with a smart card using Aspose.PDF for .NET. |  
+| [تغيير كلمة المرور في ملف PDF](./change-password/) | تعرف على كيفية تغيير كلمة المرور في ملف PDF باستخدام Aspose.PDF لـ .NET. |  
+| [فك تشفير ملف PDF](./decrypt/) | تعرف على كيفية فك تشفير ملف PDF باستخدام Aspose.PDF لـ .NET. |  
+| [تحديد كلمة المرور الصحيحة في ملف PDF](./determine-correct-password/) | تعرف على كيفية تحديد كلمة المرور الصحيحة في ملف PDF باستخدام Aspose.PDF لـ .NET. |  
+| [تسجيل الدخول رقميا في ملف PDF](./digitally-sign/) | تعرف على كيفية تسجيل الدخول رقميًا إلى ملف PDF باستخدام Aspose.PDF لـ .NET. |  
+| [قم بالتوقيع رقميًا باستخدام الطابع الزمني في ملف PDF](./digitally-sign-with-time-stamp/) | تعرف على كيفية إجراء توقيع رقمي باستخدام الطابع الزمني في ملف PDF باستخدام Aspose.PDF لـ .NET. |  
+| [تشفير ملف PDF](./encrypt/) | قم بتشفير ملفات PDF الخاصة بك بشكل آمن باستخدام Aspose.PDF لـ .NET. |  
+| [استخراج الصورة](./extracting-image/) | يمكنك استخراج الصور بسهولة من مستندات PDF باستخدام Aspose.PDF لـ .NET. |  
+| [استخراج معلومات التوقيع](./extract-signature-info/) | استخراج معلومات التوقيع باستخدام Aspose.PDF لـ .NET. |  
+| [محمي بكلمة مرور](./is-password-protected/) | تحقق بسهولة مما إذا كان مستند PDF محميًا بكلمة مرور باستخدام Aspose.PDF لـ .NET. |  
+| [تعيين الامتيازات في ملف PDF](./set-privileges/) | قم بتعيين امتيازات الوصول بسهولة في ملف PDF باستخدام Aspose.PDF لـ .NET. |  
+| [قم بالتوقيع باستخدام البطاقة الذكية باستخدام توقيع ملف Pdf](./sign-with-smart-card-using-pdf-file-signature/) | قم بتوقيع ملفات PDF الخاصة بك بشكل آمن باستخدام البطاقة الذكية باستخدام Aspose.PDF لـ .NET. |  
+| [قم بالتوقيع باستخدام البطاقة الذكية باستخدام حقل التوقيع](./sign-with-smart-card-using-signature-field/) | قم بتوقيع ملفات PDF الخاصة بك بشكل آمن باستخدام البطاقة الذكية باستخدام Aspose.PDF لـ .NET. |  

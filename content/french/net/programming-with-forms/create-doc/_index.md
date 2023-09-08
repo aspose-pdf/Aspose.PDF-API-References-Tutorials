@@ -1,41 +1,41 @@
 ---
-title: Create Document
-linktitle: Create Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create a document with radio buttons using Aspose.PDF for .NET.
+title: Créer un document
+linktitle: Créer un document
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Créez facilement un document avec des boutons radio à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 40
 url: /fr/net/programming-with-forms/create-doc/
 ---
-In this tutorial, we will show you how to create a document with radio buttons using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+Dans ce didacticiel, nous allons vous montrer comment créer un document avec des boutons radio à l'aide d'Aspose.PDF pour .NET. Nous expliquerons le code source C# étape par étape pour vous guider tout au long de ce processus.
 
-##Step 1: Preparation
+##Étape 1 : Préparation
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Tout d'abord, assurez-vous d'avoir importé les bibliothèques nécessaires et défini le chemin d'accès au répertoire des documents :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a new document
+## Étape 2 : Créer un nouveau document
 
-Create a new Document object to hold the PDF document:
+Créez un nouvel objet Document pour contenir le document PDF :
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 3: Add a page
+## Étape 3 : Ajouter une page
 
-Add a new page to the document:
+Ajoutez une nouvelle page au document :
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 4: Add a radio button field
+## Étape 4 : Ajouter un champ de bouton radio
 
-Create a radio button field and set its position and size:
+Créez un champ de bouton radio et définissez sa position et sa taille :
 
 ```csharp
 RadioButtonField field = new RadioButtonField(page);
@@ -43,9 +43,9 @@ field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 field. PartialName = "NewField";
 ```
 
-## Step 5: Add radio button options
+## Étape 5 : Ajouter des options de boutons radio
 
-Add the desired options to the radio button field. You can set the coordinates and size of each option as needed:
+Ajoutez les options souhaitées au champ du bouton radio. Vous pouvez définir les coordonnées et la taille de chaque option selon vos besoins :
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField();
@@ -74,39 +74,39 @@ field. Add(opt2);
 field. Add(opt3);
 ```
 
-## Step 6: Add the radio button field to the form
+## Étape 6 : Ajoutez le champ du bouton radio au formulaire
 
-Add the radio button field to the Document Form Fields collection:
+Ajoutez le champ du bouton radio à la collection Document Form Fields :
 
 ```csharp
 doc.Form.Add(field);
 ```
 
-## Step 7: Save the document
+## Étape 7 : Enregistrez le document
 
-Save the PDF document:
+Enregistrez le document PDF :
 
 ```csharp
 dataDir = dataDir + "CreateDoc_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Create Doc using Aspose.PDF for .NET 
+### Exemple de code source pour Create Doc à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Le chemin d'accès au répertoire des documents.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Create a new document
+	// Créer un nouveau document
 	Document doc = new Document();
 	Page page = doc.Pages.Add();
-	// Add radio button field
+	// Ajouter un champ de bouton radio
 	RadioButtonField field = new RadioButtonField(page);
 	field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 	field.PartialName = "NewField";
-	// Add radio button options. please note that these options are situated 
-	// Neither horizontally nor vertically. 
-	// You can try to set any coordinates (and even size) for them. 
+	// Ajoutez des options de boutons radio. veuillez noter que ces options sont situées
+	// Ni horizontalement ni verticalement.
+	// Vous pouvez essayer de définir n'importe quelle coordonnée (et même taille) pour eux.
 	RadioButtonOptionField opt1 = new RadioButtonOptionField();
 	opt1.Rect = new Aspose.Pdf.Rectangle(40, 650, 60, 670);
 	opt1.OptionName = "Item1";
@@ -130,7 +130,7 @@ try
 	field.Add(opt3);
 	doc.Form.Add(field);
 	dataDir = dataDir + "CreateDoc_out.pdf";
-	// Save the PDF document
+	// Enregistrez le document PDF
 	doc.Save(dataDir);
 	Console.WriteLine("\nNew doc with 3 items radio button created successfully.\nFile saved at " + dataDir);
 }
@@ -142,26 +142,26 @@ catch (Exception ex)
 
 ## Conclusion
 
-In this tutorial, we learned how to create a document with radio buttons using Aspose.PDF for .NET. By following these steps, you can easily add radio buttons to your PDF documents using Aspose.PDF.
+Dans ce didacticiel, nous avons appris à créer un document avec des boutons radio à l'aide d'Aspose.PDF pour .NET. En suivant ces étapes, vous pouvez facilement ajouter des boutons radio à vos documents PDF à l'aide d'Aspose.PDF.
 
-### FAQ's
+### FAQ
 
-#### Q: Can I customize the appearance of the radio buttons in the document using Aspose.PDF for .NET?
+#### Q : Puis-je personnaliser l'apparence des boutons radio dans le document à l'aide d'Aspose.PDF pour .NET ?
 
-A: Yes, you can customize the appearance of the radio buttons in the document using Aspose.PDF for .NET. You can set properties such as size, color, border style, and more to customize the appearance of the radio buttons.
+R : Oui, vous pouvez personnaliser l'apparence des boutons radio dans le document à l'aide d'Aspose.PDF pour .NET. Vous pouvez définir des propriétés telles que la taille, la couleur, le style de bordure, etc. pour personnaliser l'apparence des boutons radio.
 
-#### Q: How can I add radio button groups with mutually exclusive options?
+#### Q : Comment puis-je ajouter des groupes de boutons radio avec des options mutuellement exclusives ?
 
-A: In order to create mutually exclusive options, you can add multiple radio button fields with the same name. This will ensure that when one option is selected, the other options with the same name will be automatically deselected.
+R : Afin de créer des options mutuellement exclusives, vous pouvez ajouter plusieurs champs de boutons radio portant le même nom. Cela garantira que lorsqu'une option est sélectionnée, les autres options portant le même nom seront automatiquement désélectionnées.
 
-#### Q: Is it possible to set a default selected option for the radio buttons?
+#### Q : Est-il possible de définir une option sélectionnée par défaut pour les boutons radio ?
 
-A: Yes, you can set a default selected option for the radio buttons using Aspose.PDF for .NET. You can use the `Selected` property of the `RadioButtonOptionField` object to mark an option as selected by default.
+ : Oui, vous pouvez définir une option sélectionnée par défaut pour les boutons radio à l'aide d'Aspose.PDF pour .NET. Vous pouvez utiliser le`Selected` propriété du`RadioButtonOptionField` objet pour marquer une option comme sélectionnée par défaut.
 
-#### Q: Can I add event handlers to the radio buttons?
+#### Q : Puis-je ajouter des gestionnaires d’événements aux boutons radio ?
 
-A: Yes, you can add event handlers to the radio buttons using Aspose.PDF for .NET. You can associate JavaScript actions, such as `OnValueChanged`, to the radio buttons to perform specific actions when the user selects an option.
+ R : Oui, vous pouvez ajouter des gestionnaires d'événements aux boutons radio à l'aide d'Aspose.PDF pour .NET. Vous pouvez associer des actions JavaScript, telles que`OnValueChanged`, aux boutons radio pour effectuer des actions spécifiques lorsque l'utilisateur sélectionne une option.
 
-#### Q: How can I retrieve the selected option from the radio button group after the user makes a selection?
+#### Q : Comment puis-je récupérer l'option sélectionnée dans le groupe de boutons radio une fois que l'utilisateur a effectué une sélection ?
 
-A: You can retrieve the selected option from the radio button group using Aspose.PDF for .NET. After the user makes a selection, you can access the `Selected` property of the `RadioButtonOptionField` object to check which option is selected.
+ R : Vous pouvez récupérer l'option sélectionnée dans le groupe de boutons radio à l'aide d'Aspose.PDF pour .NET. Une fois que l'utilisateur a effectué une sélection, vous pouvez accéder au`Selected` propriété du`RadioButtonOptionField` objet pour vérifier quelle option est sélectionnée.

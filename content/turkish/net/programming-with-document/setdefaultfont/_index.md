@@ -1,85 +1,85 @@
 ---
-title: Set Default Font In PDF File
-linktitle: Set Default Font In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set the default font in a PDF file using Aspose.PDF for .NET with this step-by-step guide.
+title: PDF Dosyasında Varsayılan Yazı Tipini Ayarla
+linktitle: PDF Dosyasında Varsayılan Yazı Tipini Ayarla
+second_title: .NET API Referansı için Aspose.PDF
+description: Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak bir PDF dosyasında varsayılan yazı tipini nasıl ayarlayacağınızı öğrenin.
 type: docs
 weight: 280
 url: /tr/net/programming-with-document/setdefaultfont/
 ---
-If you're working with PDF documents in .NET, you may encounter issues where the font used in the PDF is not available on the system where it is being viewed or printed. This can result in the text appearing incorrectly or not at all. Aspose.PDF for .NET provides a solution to this problem by allowing you to set a default font for the document. In this example, how to set the default font using Aspose.PDF for .NET.
+.NET'te PDF belgeleriyle çalışıyorsanız, PDF'de kullanılan yazı tipinin, görüntülendiği veya yazdırıldığı sistemde bulunmadığı sorunlarla karşılaşabilirsiniz. Bu, metnin yanlış görünmesine veya hiç görünmemesine neden olabilir. Aspose.PDF for .NET, belge için varsayılan bir yazı tipi belirlemenize olanak tanıyarak bu soruna bir çözüm sunar. Bu örnekte, Aspose.PDF for .NET kullanılarak varsayılan yazı tipinin nasıl ayarlanacağı anlatılmaktadır.
 
-## Step 1: Set the path to the document directory
+## 1. Adım: Belge dizininin yolunu ayarlayın
 
-we need to set the path to the directory where our PDF document is located. We will store this path in a variable called "dataDir".
+PDF belgemizin bulunduğu dizinin yolunu ayarlamamız gerekiyor. Bu yolu "dataDir" adlı bir değişkende saklayacağız.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the PDF document
+## 2. Adım: PDF belgesini yükleyin
 
-We'll start by loading an existing PDF document that has missing fonts. In this example, we'll assume that the PDF document is located in the directory specified by the `dataDir` variable.
+ Eksik yazı tiplerine sahip mevcut bir PDF belgesini yükleyerek başlayacağız. Bu örnekte, PDF belgesinin, belirtilen dizinde bulunduğunu varsayacağız.`dataDir` değişken.
 
 ```csharp
 string documentName = dataDir + "input.pdf";
 using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
 using (Document document = new Document(fs))
 {
-    // code goes here
+    // kod buraya gelecek
 }
 ```
 
-## Step 3: Set the default font
+## 3. Adım: Varsayılan yazı tipini ayarlayın
 
-Next, we'll set the default font for the PDF document using the `PdfSaveOptions` class. In this example, we'll set the default font to "Arial".
+ Daha sonra, PDF belgesi için varsayılan yazı tipini aşağıdaki komutu kullanarak ayarlayacağız:`PdfSaveOptions` sınıf. Bu örnekte varsayılan yazı tipini "Arial" olarak ayarlayacağız.
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
 pdfSaveOptions.DefaultFontName = "Arial";
 ```
 
-## Step 4: Save the updated document
+## 4. Adım: Güncellenen belgeyi kaydedin
 
-Finally, we'll save the updated document to a new file. In this example, we'll save the updated document to a file named "output_out.pdf" in the same directory as the input file.
+Son olarak güncellenen belgeyi yeni bir dosyaya kaydedeceğiz. Bu örnekte, güncellenen belgeyi giriş dosyasıyla aynı dizinde bulunan "output_out.pdf" adlı bir dosyaya kaydedeceğiz.
 
 ```csharp
 document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 ```
 
-### Example Source Code for Set Default Font using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Varsayılan Yazı Tipini Ayarla için Örnek Kaynak Kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load an existing PDF document with missing font
+// Eksik yazı tipine sahip mevcut bir PDF belgesini yükleyin
 string documentName = dataDir + "input.pdf";
 string newName = "Arial";
 using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
 using (Document document = new Document(fs))
 {
 	PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
-	// Specify Default Font Name
+	// Varsayılan Yazı Tipi Adını Belirtin
 	pdfSaveOptions.DefaultFontName = newName;
 	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 }
 ```
 
-## Conclusion
+## Çözüm
 
-Setting a default font in PDF documents using Aspose.PDF for .NET is a simple and effective way to ensure that the text is displayed correctly, even if the original fonts are not available. By following the step-by-step guide and using the provided C# source code, developers can easily set the default font and create PDFs that offer a consistent and reliable viewing experience across different environments. This feature is particularly useful in scenarios where the PDFs will be viewed or printed on various systems that may have different font sets installed.
+Aspose.PDF for .NET kullanarak PDF belgelerinde varsayılan bir yazı tipi ayarlamak, orijinal yazı tipleri mevcut olmasa bile metnin doğru şekilde görüntülenmesini sağlamanın basit ve etkili bir yoludur. Geliştiriciler, adım adım kılavuzu izleyerek ve sağlanan C# kaynak kodunu kullanarak, varsayılan yazı tipini kolayca ayarlayabilir ve farklı ortamlarda tutarlı ve güvenilir bir görüntüleme deneyimi sunan PDF'ler oluşturabilir. Bu özellik özellikle PDF'lerin farklı yazı tipi setlerinin yüklü olduğu çeşitli sistemlerde görüntüleneceği veya yazdırılacağı senaryolarda kullanışlıdır.
 
-### FAQ's for set default font in PDF file
+### PDF dosyasında varsayılan yazı tipini ayarlamak için SSS
 
-#### Q: Why is setting a default font important in PDF documents?
+#### S: PDF belgelerinde varsayılan yazı tipini ayarlamak neden önemlidir?
 
-A: Setting a default font in PDF documents is important because it ensures that the text will be displayed correctly even if the original fonts are not available on the system where the PDF is being viewed or printed. It helps prevent issues like missing or garbled text, ensuring a consistent and reliable viewing experience.
+C: PDF belgelerinde varsayılan bir yazı tipi ayarlamak önemlidir çünkü bu, orijinal yazı tipleri PDF'nin görüntülendiği veya yazdırıldığı sistemde mevcut olmasa bile metnin doğru şekilde görüntülenmesini sağlar. Eksik veya bozuk metin gibi sorunların önlenmesine yardımcı olarak tutarlı ve güvenilir bir görüntüleme deneyimi sağlar.
 
-#### Q: Can I choose any font as the default font using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak herhangi bir yazı tipini varsayılan yazı tipi olarak seçebilir miyim?
 
-A: Yes, you can choose any font that is available on the system as the default font using Aspose.PDF for .NET. Simply specify the name of the font in the `DefaultFontName` property of the `PdfSaveOptions` class.
+ C: Evet, Aspose.PDF for .NET'i kullanarak sistemde mevcut olan herhangi bir yazı tipini varsayılan yazı tipi olarak seçebilirsiniz. Yazı tipinin adını belirtmeniz yeterlidir.`DefaultFontName` mülkiyeti`PdfSaveOptions` sınıf.
 
-#### Q: What happens if the specified default font is not available on the system?
+#### S: Belirtilen varsayılan yazı tipi sistemde mevcut değilse ne olur?
 
-A: If the specified default font is not available on the system, the PDF viewer will use a fallback font to display the text. It is advisable to choose a commonly available font like Arial or Times New Roman to ensure compatibility across different systems.
+C: Belirtilen varsayılan yazı tipi sistemde mevcut değilse, PDF görüntüleyici metni görüntülemek için bir yedek yazı tipi kullanacaktır. Farklı sistemler arasında uyumluluğu sağlamak için Arial veya Times New Roman gibi yaygın olarak bulunan bir yazı tipini seçmeniz önerilir.

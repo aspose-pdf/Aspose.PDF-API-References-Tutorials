@@ -1,186 +1,186 @@
 ---
-title: Add HTML Using DOM
-linktitle: Add HTML Using DOM
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add HTML content using DOM in Aspose.PDF for .NET.
+title: Fügen Sie HTML mithilfe von DOM hinzu
+linktitle: Fügen Sie HTML mithilfe von DOM hinzu
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie HTML-Inhalte mithilfe von DOM in Aspose.PDF für .NET hinzufügen.
 type: docs
 weight: 40
 url: /de/net/programming-with-text/add-html-using-dom/
 ---
-This tutorial will guide you through the process of adding HTML content using DOM (Document Object Model) in Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Dieses Tutorial führt Sie durch den Prozess des Hinzufügens von HTML-Inhalten mithilfe von DOM (Document Object Model) in Aspose.PDF für .NET. Der bereitgestellte C#-Quellcode demonstriert die notwendigen Schritte.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Anforderungen
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio oder ein anderer auf Ihrem Computer installierter C#-Compiler.
+- Aspose.PDF für .NET-Bibliothek. Sie können es von der offiziellen Aspose-Website herunterladen oder einen Paketmanager wie NuGet verwenden, um es zu installieren.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Schritt 1: Richten Sie das Projekt ein
+1. Erstellen Sie ein neues C#-Projekt in Ihrer bevorzugten Entwicklungsumgebung.
+2. Fügen Sie einen Verweis auf die Aspose.PDF für .NET-Bibliothek hinzu.
 
-## Step 2: Import required namespaces
-In the code file where you want to add the HTML content, add the following using directives at the top of the file:
+## Schritt 2: Erforderliche Namespaces importieren
+Fügen Sie in der Codedatei, in der Sie den HTML-Inhalt hinzufügen möchten, am Anfang der Datei die folgenden using-Anweisungen hinzu:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Set the document directory and output file path
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Schritt 3: Legen Sie das Dokumentverzeichnis und den Ausgabedateipfad fest
+ Suchen Sie im Code die Zeile mit der Aufschrift`string dataDir = "YOUR DOCUMENT DIRECTORY";` und ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem Pfad zu dem Verzeichnis, in dem Ihre Dokumente gespeichert sind.
 
-## Step 4: Create a new Document object
-Instantiate a new `Document` object by adding the following line of code:
+## Schritt 4: Erstellen Sie ein neues Dokumentobjekt
+ Instanziieren Sie eine neue`Document` Objekt durch Hinzufügen der folgenden Codezeile:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document by using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `page`.
+## Schritt 5: Fügen Sie dem Dokument eine Seite hinzu
+ Fügen Sie dem Dokument eine neue Seite hinzu, indem Sie verwenden`Add` Methode der`Pages`Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 6: Create an HtmlFragment with the HTML content
-Instantiate an `HtmlFragment` object and provide the desired HTML content. In the provided code, the HTML content is assigned to the variable `titel`. You can modify the HTML content as needed.
+## Schritt 6: Erstellen Sie ein HtmlFragment mit dem HTML-Inhalt
+ Instanziieren Sie eine`HtmlFragment` Objekt und stellen den gewünschten HTML-Inhalt bereit. Im bereitgestellten Code wird der Variable der HTML-Inhalt zugewiesen`titel`. Sie können den HTML-Inhalt nach Bedarf ändern.
 
 ```csharp
 HtmlFragment titel = new HtmlFragment("<fontsize=10><b><i>Table</i></b></fontsize>");
 ```
 
-## Step 7: Set margin information
-Adjust the bottom and top margin of the HTML fragment if necessary. In the provided code, the bottom margin is set to 10 and the top margin is set to 200.
+## Schritt 7: Randinformationen festlegen
+Passen Sie bei Bedarf den unteren und oberen Rand des HTML-Fragments an. Im bereitgestellten Code ist der untere Rand auf 10 und der obere Rand auf 200 festgelegt.
 
 ```csharp
 title. Margin. Bottom = 10;
 title. Margin. Top = 200;
 ```
 
-## Step 8: Add the HtmlFragment to the page
-Add the `HtmlFragment` object to the paragraphs collection of the page.
+## Schritt 8: Fügen Sie das HtmlFragment zur Seite hinzu
+ Ergänzen Sie die`HtmlFragment` Einspruch gegen die Absätze-Sammlung der Seite einlegen.
 
 ```csharp
 page.Paragraphs.Add(title);
 dataDir = dataDir + "AddHTMLUsingDOM_out.pdf";
 ```
 
-## Step 9: Save the PDF document
-Save the PDF document using the `Save` method of the `Document` object. Specify the output file path that you set in Step 3.
+## Schritt 9: Speichern Sie das PDF-Dokument
+ Speichern Sie das PDF-Dokument mit`Save` Methode der`Document` Objekt. Geben Sie den Ausgabedateipfad an, den Sie in Schritt 3 festgelegt haben.
 
 ```csharp
 doc.Save(dataDir);
 ```
 
-## Step 10: Display the success message
-Display a success message along with the path where the PDF file was saved.
+## Schritt 10: Erfolgsmeldung anzeigen
+Zeigen Sie eine Erfolgsmeldung zusammen mit dem Pfad an, in dem die PDF-Datei gespeichert wurde.
 
 ```csharp
 Console.WriteLine("\nHTML using DOM added successfully.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Add HTMLUsing DOM using Aspose.PDF for .NET 
+### Beispielquellcode für Add HTMLUsing DOM mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document object
+// Dokumentobjekt instanziieren
 Document doc = new Document();
-// Add a page to pages collection of PDF file
+// Fügen Sie eine Seite zur Seitensammlung der PDF-Datei hinzu
 Page page = doc.Pages.Add();
-// Instantiate HtmlFragment with HTML contnets
+// Instanziieren Sie HtmlFragment mit HTML-Inhalten
 HtmlFragment titel = new HtmlFragment("<fontsize=10><b><i>Table</i></b></fontsize>");
-// Set bottom margin information
+// Legen Sie die Informationen zum unteren Rand fest
 titel.Margin.Bottom = 10;
-// Set top margin information
+// Legen Sie die Informationen zum oberen Rand fest
 titel.Margin.Top = 200;
-// Add HTML Fragment to paragraphs collection of page
+// Fügen Sie ein HTML-Fragment zur Absatzsammlung der Seite hinzu
 page.Paragraphs.Add(titel);
 dataDir = dataDir + "AddHTMLUsingDOM_out.pdf";
-// Save PDF file
+// PDF-Datei speichern
 doc.Save(dataDir);
 Console.WriteLine("\nHTML using DOM added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-You have successfully added HTML content using DOM in Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## Abschluss
+Sie haben erfolgreich HTML-Inhalte mithilfe von DOM in Aspose.PDF für .NET hinzugefügt. Die resultierende PDF-Datei befindet sich nun im angegebenen Ausgabedateipfad.
 
-### FAQ's
+### FAQs
 
-#### Q: What is the objective of this tutorial?
+#### F: Was ist das Ziel dieses Tutorials?
 
-A: This tutorial aims to provide a step-by-step guide on how to add HTML content to a PDF document using the Document Object Model (DOM) in Aspose.PDF for .NET. It includes C# source code snippets to help you understand and implement the process.
+A: Dieses Tutorial soll eine Schritt-für-Schritt-Anleitung zum Hinzufügen von HTML-Inhalten zu einem PDF-Dokument mithilfe des Document Object Model (DOM) in Aspose.PDF für .NET bieten. Es enthält C#-Quellcodeausschnitte, die Ihnen helfen, den Prozess zu verstehen und zu implementieren.
 
-#### Q: Which namespaces do I need to import for this tutorial?
+#### F: Welche Namespaces muss ich für dieses Tutorial importieren?
 
-A: In the code file where you plan to add HTML content, import the following namespace at the beginning of the file:
+A: Importieren Sie in der Codedatei, in der Sie HTML-Inhalte hinzufügen möchten, den folgenden Namespace am Anfang der Datei:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-#### Q: How do I specify the document directory and output file path?
+#### F: Wie lege ich das Dokumentverzeichnis und den Ausgabedateipfad fest?
 
-A: In the code, find the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ A: Suchen Sie im Code die Zeile`string dataDir = "YOUR DOCUMENT DIRECTORY";` und ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
 
-#### Q: How do I create a Document object?
+#### F: Wie erstelle ich ein Document-Objekt?
 
-A: In Step 4, instantiate a new `Document` object by adding the following line of code:
+ A: Instanziieren Sie in Schritt 4 eine neue`Document` Objekt durch Hinzufügen der folgenden Codezeile:
 
 ```csharp
 Document doc = new Document();
 ```
 
-#### Q: How do I add a page to the document?
+#### F: Wie füge ich dem Dokument eine Seite hinzu?
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection:
+ A: In Schritt 5 fügen Sie dem Dokument eine neue Seite hinzu`Add` Methode der`Pages` Sammlung:
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-#### Q: How can I set HTML content using the DOM?
+#### F: Wie kann ich HTML-Inhalte mithilfe des DOM festlegen?
 
-A: In Step 6, you'll create an `HtmlFragment` object and assign your desired HTML content to it. The HTML content is assigned to the variable `titel`:
+ A: In Schritt 6 erstellen Sie eine`HtmlFragment` Objekt und weisen Sie ihm Ihren gewünschten HTML-Inhalt zu. Der Variable wird der HTML-Inhalt zugewiesen`titel`:
 
 ```csharp
 HtmlFragment titel = new HtmlFragment("<fontsize=10><b><i>Table</i></b></fontsize>");
 ```
 
-#### Q: Can I adjust the margin of the HTML content?
+#### F: Kann ich den Rand des HTML-Inhalts anpassen?
 
-A: Yes, in Step 7, you can adjust the bottom and top margins of the HTML fragment as needed:
+A: Ja, in Schritt 7 können Sie den unteren und oberen Rand des HTML-Fragments nach Bedarf anpassen:
 
 ```csharp
 titel.Margin.Bottom = 10;
 titel.Margin.Top = 200;
 ```
 
-#### Q: How do I add the HTMLFragment to the PDF document?
+#### F: Wie füge ich das HTMLFragment zum PDF-Dokument hinzu?
 
-A: In Step 8, you'll add the `HtmlFragment` object (`titel`) to the paragraphs collection of the page:
+ A: In Schritt 8 fügen Sie das hinzu`HtmlFragment` Objekt (`titel`) zur Absatzsammlung der Seite:
 
 ```csharp
 page.Paragraphs.Add(titel);
 dataDir = dataDir + "AddHTMLUsingDOM_out.pdf";
 ```
 
-#### Q: How do I save the resulting PDF document?
+#### F: Wie speichere ich das resultierende PDF-Dokument?
 
-A: After adding the HTML content and adjusting margins, use the `Save` method of the `Document` object to save the PDF document:
+ A: Nachdem Sie den HTML-Inhalt hinzugefügt und die Ränder angepasst haben, verwenden Sie die`Save` Methode der`Document` Objekt zum Speichern des PDF-Dokuments:
 
 ```csharp
 doc.Save(dataDir);
 ```
 
-#### Q: Is there a way to verify if the process was successful?
+#### F: Gibt es eine Möglichkeit zu überprüfen, ob der Vorgang erfolgreich war?
 
-A: Certainly, in Step 10, a success message is displayed along with the path where the PDF file was saved:
+A: Natürlich wird in Schritt 10 eine Erfolgsmeldung zusammen mit dem Pfad angezeigt, in dem die PDF-Datei gespeichert wurde:
 
 ```csharp
 Console.WriteLine("\nHTML using DOM added successfully.\nFile saved at " + dataDir);
 ```
 
-#### Q: What is the key takeaway from this tutorial?
+#### F: Was ist die wichtigste Erkenntnis aus diesem Tutorial?
 
-A: By following this tutorial, you've successfully learned how to utilize the Document Object Model (DOM) in Aspose.PDF for .NET to add HTML content to a PDF document. This knowledge empowers you to enhance your PDF generation capabilities.
+A: Durch die Befolgung dieses Tutorials haben Sie erfolgreich gelernt, wie Sie das Document Object Model (DOM) in Aspose.PDF für .NET verwenden, um HTML-Inhalte zu einem PDF-Dokument hinzuzufügen. Dieses Wissen versetzt Sie in die Lage, Ihre Möglichkeiten zur PDF-Generierung zu verbessern.

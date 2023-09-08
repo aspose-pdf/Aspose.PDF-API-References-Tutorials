@@ -1,121 +1,121 @@
 ---
-title: Shrink Images In PDF File
-linktitle: Shrink Images In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to reduce the size of images in PDF file using Aspose.PDF for .NET.
+title: تقليص الصور في ملف PDF
+linktitle: تقليص الصور في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لتقليل حجم الصور في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 280
 url: /ar/net/programming-with-images/shrink-images/
 ---
-In this tutorial, we will tell you how to reduce the size of images in PDF file using Aspose.PDF for .NET. Follow these steps to perform this operation easily.
+سنخبرك في هذا البرنامج التعليمي بكيفية تقليل حجم الصور في ملف PDF باستخدام Aspose.PDF لـ .NET. اتبع هذه الخطوات لتنفيذ هذه العملية بسهولة.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- Visual Studio or any other development environment installed and configured.
-- A basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed. You can download it from Aspose official website.
+- تم تثبيت وتكوين Visual Studio أو أي بيئة تطوير أخرى.
+- معرفة أساسية بلغة البرمجة C#.
+- تم تثبيت مكتبة Aspose.PDF لـ .NET. يمكنك تنزيله من موقع Aspose الرسمي.
 
-## Step 1: Loading the PDF document
+## الخطوة 1: تحميل وثيقة PDF
 
-To get started, use the following code to load the PDF document:
+للبدء، استخدم الكود التالي لتحميل مستند PDF:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Open the document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
 ```
 
-Be sure to provide the correct path to your PDF document.
+تأكد من توفير المسار الصحيح لمستند PDF الخاص بك.
 
-## Step 2: Optimization options initialization
+## الخطوة 2: تهيئة خيارات التحسين
 
-Next, we will initialize the optimization options to reduce the size of the images. Use the following code:
+بعد ذلك، سنقوم بتهيئة خيارات التحسين لتقليل حجم الصور. استخدم الكود التالي:
 
 ```csharp
-// Initialize OptimizationOptions
+// تهيئة خيارات التحسين
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
 
-// Activate the CompressImages option
+// تفعيل خيار ضغط الصور
 optimizeOptions.ImageCompressionOptions.CompressImages = true;
 
-// Set image quality
+// ضبط جودة الصورة
 optimizeOptions.ImageCompressionOptions.ImageQuality = 50;
 ```
 
-You can adjust the optimization settings according to your needs.
+يمكنك ضبط إعدادات التحسين وفقًا لاحتياجاتك.
 
-## Step 3: Optimization of the PDF document
+## الخطوة 3: تحسين وثيقة PDF
 
-Now we are going to optimize the PDF document by reducing the size of the images. Use the following code:
+سنقوم الآن بتحسين مستند PDF عن طريق تقليل حجم الصور. استخدم الكود التالي:
 
 ```csharp
-// Optimize the PDF document using the OptimizationOptions
+// قم بتحسين مستند PDF باستخدام خيارات التحسين
 pdfDocument.OptimizeResources(optimizeOptions);
 
 dataDir = dataDir + "Shrinkimage_out.pdf";
-// Save the updated document
+// احفظ المستند المحدث
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImages successfully reduced.\nFile saved as: " + dataDir);
 ```
 
-Be sure to provide the desired path and filename for the updated PDF document.
+تأكد من توفير المسار واسم الملف المطلوبين لمستند PDF المحدث.
 
-### Sample source code for Shrink Images using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتقليص الصور باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
-// Initialize OptimizationOptions
+// تهيئة خيارات التحسين
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
-// Set CompressImages option
+// اضبط خيار ضغط الصور
 optimizeOptions.ImageCompressionOptions.CompressImages = true;
-// Set ImageQuality option
+// ضبط خيار جودة الصورة
 optimizeOptions.ImageCompressionOptions.ImageQuality = 50;
-// Optimize PDF document using OptimizationOptions
+// تحسين مستند PDF باستخدام OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
 dataDir = dataDir + "Shrinkimage_out.pdf";
-// Save updated document
+// حفظ المستند المحدث
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImage shrinked successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have successfully reduced the size of images in a PDF document using Aspose.PDF for .NET. You can now apply this method to your own projects to optimize the size of images in PDF files.
+تهنئة ! لقد نجحت في تقليل حجم الصور في مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن تطبيق هذه الطريقة على مشاريعك الخاصة لتحسين حجم الصور في ملفات PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Why would I want to reduce the size of images in a PDF document using Aspose.PDF for .NET?
+#### س: لماذا أرغب في تقليل حجم الصور في مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Reducing the size of images in a PDF document helps optimize the overall file size, making it easier to share, store, and distribute the document. It can also improve the document's loading and rendering performance.
+ج: يساعد تقليل حجم الصور في مستند PDF على تحسين الحجم الإجمالي للملف، مما يسهل مشاركة المستند وتخزينه وتوزيعه. يمكنه أيضًا تحسين أداء تحميل وعرض المستند.
 
-#### Q: How does the process of reducing the size of images in a PDF document work?
+#### س: كيف تتم عملية تقليل حجم الصور في مستند PDF؟
 
-A: The process involves initializing optimization options that control the compression and quality settings for images in the PDF. These options are then applied to the PDF document, which compresses the images based on the specified settings.
+ج: تتضمن العملية تهيئة خيارات التحسين التي تتحكم في إعدادات الضغط والجودة للصور الموجودة في ملف PDF. يتم بعد ذلك تطبيق هذه الخيارات على مستند PDF، الذي يقوم بضغط الصور بناءً على الإعدادات المحددة.
 
-#### Q: What are the key optimization settings that can be adjusted to reduce image size in the PDF?
+#### س: ما هي إعدادات التحسين الرئيسية التي يمكن ضبطها لتقليل حجم الصورة في ملف PDF؟
 
-A: The key settings include the activation of the `CompressImages` option and adjusting the `ImageQuality` value. The `CompressImages` option controls whether images should be compressed, and the `ImageQuality` value determines the level of image compression.
+ ج: تتضمن الإعدادات الرئيسية تفعيل`CompressImages` الخيار وضبط`ImageQuality` قيمة. ال`CompressImages` يتحكم الخيار في ما إذا كان يجب ضغط الصور، أم لا`ImageQuality` تحدد القيمة مستوى ضغط الصورة.
 
-#### Q: Can I customize the level of image compression further based on specific requirements?
+#### س: هل يمكنني تخصيص مستوى ضغط الصورة بشكل أكبر بناءً على متطلبات محددة؟
 
-A: Yes, you can adjust the `ImageQuality` value to customize the level of image compression. A higher value (e.g., 75) results in better image quality but larger file size, while a lower value (e.g., 25) reduces image quality but results in a smaller file size.
+ ج: نعم، يمكنك ضبط`ImageQuality` القيمة لتخصيص مستوى ضغط الصورة. تؤدي القيمة الأعلى (على سبيل المثال، 75) إلى جودة صورة أفضل ولكن حجم ملف أكبر، بينما تؤدي القيمة الأقل (على سبيل المثال، 25) إلى تقليل جودة الصورة ولكنها تؤدي إلى حجم ملف أصغر.
 
-#### Q: Are there any limitations or considerations when reducing image size in a PDF document?
+#### س: هل هناك أي قيود أو اعتبارات عند تقليل حجم الصورة في مستند PDF؟
 
-A: While reducing image size can significantly decrease the overall PDF file size, excessively reducing the image quality may result in degradation of image details. It's important to strike a balance between file size and image quality based on your specific needs.
+ج: على الرغم من أن تقليل حجم الصورة يمكن أن يؤدي إلى تقليل الحجم الإجمالي لملف PDF بشكل كبير، إلا أن تقليل جودة الصورة بشكل مفرط قد يؤدي إلى تدهور تفاصيل الصورة. من المهم تحقيق التوازن بين حجم الملف وجودة الصورة بناءً على احتياجاتك المحددة.
 
-#### Q: How does this method affect other content in the PDF document, such as text or vector graphics?
+#### س: كيف تؤثر هذه الطريقة على المحتوى الآخر في مستند PDF، مثل النص أو الرسومات المتجهة؟
 
-A: This method primarily focuses on optimizing the size of images. Text and vector graphics are generally not affected by the image optimization process, so the quality of these elements remains unaffected.
+ج: تركز هذه الطريقة بشكل أساسي على تحسين حجم الصور. بشكل عام، لا تتأثر النصوص والرسومات المتجهة بعملية تحسين الصورة، وبالتالي تظل جودة هذه العناصر غير متأثرة.
 
-#### Q: Can I selectively apply image size reduction to specific images within the PDF document?
+#### س: هل يمكنني تطبيق تقليل حجم الصورة بشكل انتقائي على صور معينة داخل مستند PDF؟
 
-A: As demonstrated in the provided code, the optimization options are applied to the entire PDF document. If you want to selectively apply image size reduction to specific images, you would need to adjust the code to target only those images.
+ج: كما هو موضح في الكود المقدم، يتم تطبيق خيارات التحسين على مستند PDF بأكمله. إذا كنت تريد تطبيق تقليل حجم الصورة بشكل انتقائي على صور معينة، فستحتاج إلى ضبط الكود لاستهداف تلك الصور فقط.
 
-#### Q: Is there a recommended range for the `ImageQuality` value to balance between image size and quality?
+####  س: هل هناك نطاق موصى به لـ`ImageQuality` value to balance between image size and quality?
 
-A: The recommended `ImageQuality` value depends on the specific requirements of your project. Generally, values between 50 and 75 offer a good balance between image quality and file size reduction. You can experiment with different values to find the optimal setting for your needs.
+ ج: الموصى به`ImageQuality` تعتمد القيمة على المتطلبات المحددة لمشروعك. بشكل عام، توفر القيم بين 50 و75 توازنًا جيدًا بين جودة الصورة وتقليل حجم الملف. يمكنك تجربة قيم مختلفة للعثور على الإعداد الأمثل لاحتياجاتك.

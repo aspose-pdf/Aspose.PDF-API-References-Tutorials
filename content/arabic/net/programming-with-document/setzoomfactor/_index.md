@@ -1,84 +1,84 @@
 ---
-title: Set Zoom Factor In PDF File
-linktitle: Set Zoom Factor In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set the zoom factor in PDF file using Aspose.PDF for .NET with our step-by-step guide.
+title: ضبط عامل التكبير في ملف PDF
+linktitle: ضبط عامل التكبير في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية ضبط عامل التكبير/التصغير في ملف PDF باستخدام Aspose.PDF لـ .NET من خلال دليلنا التفصيلي خطوة بخطوة.
 type: docs
 weight: 340
 url: /ar/net/programming-with-document/setzoomfactor/
 ---
-Aspose.PDF for .NET is a powerful API that allows developers to work with PDF documents in their .NET applications. One of the features it provides is the ability to set the zoom factor of a PDF document. In this step-by-step guide, we will explain how to use Aspose.PDF for .NET to set the zoom factor of a PDF document using the provided C# source code.
+Aspose.PDF for .NET عبارة عن واجهة برمجة تطبيقات قوية تسمح للمطورين بالعمل مع مستندات PDF في تطبيقات .NET الخاصة بهم. إحدى الميزات التي يوفرها هي القدرة على ضبط عامل التكبير/التصغير لمستند PDF. في هذا الدليل التفصيلي، سنشرح كيفية استخدام Aspose.PDF لـ .NET لتعيين عامل التكبير/التصغير لمستند PDF باستخدام كود مصدر C# المقدم.
 
-## Step 1: Set the path to the document directory
+## الخطوة 1: قم بتعيين المسار إلى دليل المستند
 
-The first step is to set the path to the directory where the PDF document is located. This can be done by setting the `dataDir` variable to the directory path. 
+ الخطوة الأولى هي تعيين المسار إلى الدليل الذي يوجد به مستند PDF. يمكن القيام بذلك عن طريق ضبط`dataDir` متغير إلى مسار الدليل. 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual directory path where your PDF document is located.
+استبدل "دليل المستندات الخاص بك" بمسار الدليل الفعلي الذي يوجد به مستند PDF الخاص بك.
 
-## Step 2: Instantiate a new Document object
+## الخطوة 2: إنشاء كائن مستند جديد
 
-To work with a PDF document using Aspose.PDF for .NET, we need to create a new `Document` object and load the PDF file into it. 
+ للعمل مع مستند PDF باستخدام Aspose.PDF لـ .NET، نحتاج إلى إنشاء ملف`Document` الكائن وقم بتحميل ملف PDF فيه. 
 
 ```csharp
 Document doc = new Document(dataDir + "SetZoomFactor.pdf");
 ```
 
-This code will create a new `Document` object and load the PDF file named "SetZoomFactor.pdf" from the `dataDir` directory into it.
+ سيؤدي هذا الرمز إلى إنشاء ملف جديد`Document` الكائن وقم بتحميل ملف PDF المسمى "SetZoomFactor.pdf" من الملف`dataDir` الدليل فيه.
 
-## Step 3: Set the zoom factor
+## الخطوة 3: ضبط عامل التكبير
 
-Once the `Document` object is created, we can set the zoom factor of the PDF document. In the following code, we set the zoom factor to 50%.
+ مرة واحدة في`Document`بعد إنشاء الكائن، يمكننا ضبط عامل التكبير/التصغير لمستند PDF. في الكود التالي، قمنا بتعيين عامل التكبير إلى 50%.
 
 ```csharp
 GoToAction action = new GoToAction(new XYZExplicitDestination(1, 0, 0, .5));
 doc.OpenAction = action;
 ```
 
-This code sets the zoom factor to 50% by creating a new `GoToAction` object and passing a `XYZExplicitDestination` object with a zoom factor of 50% to it. The `OpenAction` property of the `Document` object is then set to this `GoToAction` object.
+ يضبط هذا الرمز عامل التكبير/التصغير على 50% عن طريق إنشاء ملف جديد`GoToAction` كائن وتمرير أ`XYZExplicitDestination` كائن مع عامل التكبير 50٪ إليه. ال`OpenAction` ملكية`Document` ثم يتم تعيين الكائن على هذا`GoToAction` هدف.
 
-## Step 4: Save the PDF document
+## الخطوة 4: احفظ مستند PDF
 
-Finally, we can save the modified PDF document to a new file. In the following code, we save the PDF document to a new file named "Zoomed_pdf_out.pdf" in the `dataDir` directory.
+ أخيرًا، يمكننا حفظ مستند PDF المعدل في ملف جديد. في الكود التالي نقوم بحفظ مستند PDF في ملف جديد اسمه "Zoomed_pdf_out.pdf" في المجلد`dataDir` الدليل.
 
 ```csharp
 dataDir = dataDir + "Zoomed_pdf_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Example source code for Set Zoom Factor using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لـ Set Zoom Factor باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate new Document object
+// إنشاء كائن مستند جديد
 Document doc = new Document(dataDir + "SetZoomFactor.pdf");
 
 GoToAction action = new GoToAction(new XYZExplicitDestination(1, 0, 0, .5));
 doc.OpenAction = action;
 dataDir = dataDir + "Zoomed_pdf_out.pdf";
-// Save the document
+// احفظ المستند
 doc.Save(dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Aspose.PDF for .NET provides a simple and efficient way to set the zoom factor of a PDF document using C# code. By following the above steps, you can easily modify the zoom factor of any PDF document in your .NET application.
+يوفر Aspose.PDF for .NET طريقة بسيطة وفعالة لتعيين عامل التكبير/التصغير لمستند PDF باستخدام رمز C#. باتباع الخطوات المذكورة أعلاه، يمكنك بسهولة تعديل عامل التكبير/التصغير لأي مستند PDF في تطبيق .NET الخاص بك.
 
-### FAQs
+### الأسئلة الشائعة
 
-#### Q: What is the zoom factor in a PDF document, and how does it affect viewing?
+#### س: ما هو عامل التكبير في مستند PDF، وكيف يؤثر على العرض؟
 
-A: The zoom factor in a PDF document determines the level of magnification when the document is viewed. It specifies the scale at which the document is displayed, affecting how large or small the content appears on the screen. A zoom factor of 1.0 represents 100% zoom (actual size), while a factor greater than 1.0 zooms in, and a factor less than 1.0 zooms out.
+ج: يحدد عامل التكبير/التصغير في مستند PDF مستوى التكبير عند عرض المستند. وهو يحدد المقياس الذي يتم عرض المستند به، مما يؤثر على حجم المحتوى الذي يظهر على الشاشة سواء كان كبيرًا أو صغيرًا. يمثل عامل التكبير 1.0 تكبيرًا بنسبة 100% (الحجم الفعلي)، بينما يمثل عامل التكبير الأكبر من 1.0 تكبيرًا، والعامل الأقل من 1.0 تصغيرًا.
 
-#### Q: Can I set a specific zoom factor for different pages within the same PDF document?
+#### س: هل يمكنني تعيين عامل تكبير محدد لصفحات مختلفة داخل نفس مستند PDF؟
 
-A: Yes, with Aspose.PDF for .NET, you can set different zoom factors for different pages within the same PDF document. The example source code provided demonstrates how to set the zoom factor for the first page using the `GoToAction` object. You can modify the code to set different zoom factors for other pages as needed.
+ ج: نعم، باستخدام Aspose.PDF for .NET، يمكنك تعيين عوامل تكبير مختلفة لصفحات مختلفة داخل نفس مستند PDF. يوضح مثال التعليمات البرمجية المصدر كيفية تعيين عامل التكبير/التصغير للصفحة الأولى باستخدام`GoToAction` هدف. يمكنك تعديل الكود لتعيين عوامل تكبير مختلفة للصفحات الأخرى حسب الحاجة.
 
-#### Q: How does changing the zoom factor affect printing and saving the PDF document?
+#### س: كيف يؤثر تغيير عامل التكبير على طباعة وحفظ مستند PDF؟
 
-A: Changing the zoom factor using Aspose.PDF for .NET does not affect the actual content of the PDF document itself. It only affects the viewing experience when the document is opened in a PDF viewer. The zoom factor set programmatically will not impact the printed output or the saved PDF file.
+ج: لا يؤثر تغيير عامل التكبير/التصغير باستخدام Aspose.PDF لـ .NET على المحتوى الفعلي لمستند PDF نفسه. فهو يؤثر فقط على تجربة المشاهدة عند فتح المستند في عارض PDF. لن يؤثر عامل التكبير/التصغير الذي تم ضبطه برمجيًا على المخرجات المطبوعة أو ملف PDF المحفوظ.

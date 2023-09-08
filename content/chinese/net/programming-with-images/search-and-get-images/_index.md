@@ -1,59 +1,59 @@
 ---
-title: Search And Get Images In PDF File
-linktitle: Search And Get Images In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to search and get images in PDF file using Aspose.PDF for .NET.
+title: 搜索并获取 PDF 文件中的图像
+linktitle: 搜索并获取 PDF 文件中的图像
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 搜索和获取 PDF 文件中的图像的分步指南。
 type: docs
 weight: 260
 url: /zh/net/programming-with-images/search-and-get-images/
 ---
-In this tutorial, we will walk you through how to search and get images in PDF file using Aspose.PDF for .NET. Follow these steps to perform this operation easily.
+在本教程中，我们将引导您了解如何使用 Aspose.PDF for .NET 搜索和获取 PDF 文件中的图像。请按照以下步骤轻松执行此操作。
 
-## Prerequisites
+## 先决条件
 
-Before you begin, make sure you have the following:
+在开始之前，请确保您具备以下条件：
 
-- Visual Studio or any other development environment installed and configured.
-- A basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed. You can download it from Aspose official website.
+- 安装并配置 Visual Studio 或任何其他开发环境。
+- C# 编程语言的基础知识。
+- 安装了适用于.NET 的 Aspose.PDF 库。您可以从Aspose官方网站下载。
 
-## Step 1: Loading the PDF document
+## 第 1 步：加载 PDF 文档
 
-To get started, use the following code to load the PDF document:
+首先，使用以下代码加载 PDF 文档：
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Open the document
+//打开文档
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "SearchAndGetImages.pdf");
 ```
 
-Be sure to provide the correct path to your PDF document.
+请务必提供 PDF 文档的正确路径。
 
-## Step 2: Searching Image Locations
+## 第 2 步：搜索图像位置
 
-To search the locations of images in the PDF document, use the following code:
+要搜索 PDF 文档中图像的位置，请使用以下代码：
 
 ```csharp
-// Create an ImagePlacementAbsorber object to search for image locations
+//创建 ImagePlacementAbsorber 对象来搜索图像位置
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
 
-// Accept the absorber for all the pages of the document
+//接受文档所有页面的吸收器
 doc.Pages.Accept(abs);
 ```
 
-This will collect the locations of the images in the absorber.
+这将收集吸收体中图像的位置。
 
-## Step 3: Browse image locations and get images and their properties
+## 步骤 3：浏览图像位置并获取图像及其属性
 
-Next, we'll browse the collected image locations and get the images and their properties. Use the following code:
+接下来，我们将浏览收集的图像位置并获取图像及其属性。使用以下代码：
 
 ```csharp
 foreach(ImagePlacement imagePlacement in abs.ImagePlacements)
 {
-     // Get the image using the ImagePlacement object
+     //使用 ImagePlacement 对象获取图像
      XImage image = imagePlacement.Image;
 
-     // Display the image location properties
+     //显示图像位置属性
      Console.Out.WriteLine("Image Width: " + imagePlacement.Rectangle.Width);
      Console.Out.WriteLine("Image Height: " + imagePlacement.Rectangle.Height);
      Console.Out.WriteLine("LLX of image: " + imagePlacement.Rectangle.LLX);
@@ -63,24 +63,24 @@ foreach(ImagePlacement imagePlacement in abs.ImagePlacements)
 }
 ```
 
-This will browse all image locations, get matching images and display their properties.
+这将浏览所有图像位置，获取匹配的图像并显示其属性。
 
-### Sample source code for Search And Get Images using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 搜索和获取图像的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "SearchAndGetImages.pdf");
-// Create ImagePlacementAbsorber object to perform image placement search
+//创建 ImagePlacementAbsorber 对象来执行图像放置搜索
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
-// Accept the absorber for all the pages
+//接受所有页面的吸收器
 doc.Pages.Accept(abs);
-// Loop through all ImagePlacements, get image and ImagePlacement Properties
+//循环遍历所有ImagePlacements，获取图像和ImagePlacement属性
 foreach (ImagePlacement imagePlacement in abs.ImagePlacements)
 {
-	// Get the image using ImagePlacement object
+	//使用 ImagePlacement 对象获取图像
 	XImage image = imagePlacement.Image;
-	// Display image placement properties for all placements
+	//显示所有展示位置的图片展示位置属性
 	Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
 	Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
 	Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
@@ -90,44 +90,44 @@ foreach (ImagePlacement imagePlacement in abs.ImagePlacements)
 }
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have successfully searched and obtained images in a PDF document using Aspose.PDF for .NET. Now you can apply this method to your own projects to extract images and get their properties from PDF files.
+恭喜！您已使用 Aspose.PDF for .NET 成功搜索并获取了 PDF 文档中的图像。现在您可以将此方法应用到您自己的项目中，以从 PDF 文件中提取图像并获取其属性。
 
-### FAQ's for search and get images in PDF file
+### 搜索和获取 PDF 文件中的图像的常见问题解答
 
-#### Q: What is the purpose of searching and obtaining images in a PDF document using Aspose.PDF for .NET?
+#### 问：使用 Aspose.PDF for .NET 搜索和获取 PDF 文档中的图像的目的是什么？
 
-A: Searching and obtaining images in a PDF document allows you to locate and extract images within the PDF file. This can be useful for various purposes such as analyzing the content, verifying image properties, or further processing the images.
+答：搜索和获取 PDF 文档中的图像可以让您在 PDF 文件中定位和提取图像。这可用于各种目的，例如分析内容、验证图像属性或进一步处理图像。
 
-#### Q: How does the process of searching for images in a PDF document work?
+#### 问：在 PDF 文档中搜索图像的过程是如何进行的？
 
-A: The process involves using the `ImagePlacementAbsorber` object to perform a search for image placements on all pages of the PDF document. The absorber collects information about the location, size, and resolution of each image within the document.
+答：该过程涉及使用`ImagePlacementAbsorber`对象在 PDF 文档的所有页面上执行图像位置搜索。吸收器收集有关文档中每个图像的位置、大小和分辨率的信息。
 
-#### Q: What is the purpose of the `ImagePlacement` object in the code?
+#### 问：这样做的目的是什么`ImagePlacement` object in the code?
 
-A: The `ImagePlacement` object represents the placement of an image within the PDF document. It provides properties that allow you to access details such as the image's dimensions, coordinates, and resolution.
+答： 的`ImagePlacement`对象表示 PDF 文档中图像的位置。它提供的属性允许您访问图像的尺寸、坐标和分辨率等详细信息。
 
-#### Q: Can I filter the images that are searched and obtained based on specific criteria?
+#### 问：我可以根据特定条件过滤搜索到的图像吗？
 
-A: The provided code collects information about all images within the PDF document. If you want to filter images based on specific criteria (e.g., image type, dimensions, resolution), you may need to modify the code to include appropriate filtering conditions.
+答：所提供的代码收集有关 PDF 文档中所有图像的信息。如果您想根据特定条件（例如图像类型、尺寸、分辨率）过滤图像，您可能需要修改代码以包含适当的过滤条件。
 
-#### Q: How can I access the actual image content after obtaining its placement information?
+#### Q：获取图片的投放信息后，如何获取实际的图片内容？
 
-A: The `XImage` object obtained from the `ImagePlacement` object represents the actual image content. You can further process this `XImage` object, such as saving it to a file or displaying it in your application.
+答： 的`XImage`从获得的对象`ImagePlacement`对象代表实际的图像内容。您可以进一步处理这个`XImage`对象，例如将其保存到文件或在应用程序中显示它。
 
-#### Q: What can I do with the obtained image properties?
+#### 问：获得的图像属性可以用来做什么？
 
-A: The obtained image properties, such as width, height, coordinates, and resolution, can be used for various purposes. You can analyze the properties, display them to the user, or use them as input for further processing.
+答：获得的图像属性，例如宽度、高度、坐标和分辨率，可以用于多种用途。您可以分析属性，将它们显示给用户，或将它们用作进一步处理的输入。
 
-#### Q: Can I modify or edit the images within the PDF document using this method?
+#### 问：我可以使用此方法修改或编辑 PDF 文档中的图像吗？
 
-A: The provided code focuses on searching for and obtaining image placement information. To modify or edit images, you may need to integrate additional functionality, such as image manipulation, using the Aspose.PDF library.
+A：提供的代码主要是搜索并获取图片投放信息。要修改或编辑图像，您可能需要使用 Aspose.PDF 库集成其他功能，例如图像处理。
 
-#### Q: How can I integrate this method into my own projects?
+#### 问：如何将此方法集成到我自己的项目中？
 
-A: To integrate this method into your projects, follow the outlined steps and modify the code as needed. You can use the obtained image placement information and properties according to the requirements of your application.
+答：要将此方法集成到您的项目中，请按照概述的步骤操作并根据需要修改代码。您可以根据应用程序的要求使用获取的图像放置信息和属性。
 
-#### Q: Does Aspose.PDF for .NET offer other features related to image manipulation in PDF documents?
+#### 问：Aspose.PDF for .NET 是否提供与 PDF 文档中的图像操作相关的其他功能？
 
-A: Yes, Aspose.PDF for .NET provides a range of features for working with images in PDF documents, including image insertion, resizing, rotation, extraction, and more. You can explore the library's documentation and examples to discover its full capabilities.
+答：是的，Aspose.PDF for .NET 提供了一系列用于处理 PDF 文档中的图像的功能，包括图像插入、调整大小、旋转、提取等。您可以浏览该库的文档和示例以发现其全部功能。

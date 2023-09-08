@@ -1,38 +1,38 @@
 ---
-title: Set Radio Button Caption
-linktitle: Set Radio Button Caption
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to set the caption for a radio button in a PDF form.
+title: Définir la légende du bouton radio
+linktitle: Définir la légende du bouton radio
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment utiliser Aspose.PDF pour .NET pour définir la légende d’un bouton radio dans un formulaire PDF.
 type: docs
 weight: 280
 url: /fr/net/programming-with-forms/set-radio-button-caption/
 ---
-In this guide, we will explain step by step how to use the Aspose.PDF library for .NET to define the caption of a radio button in a PDF form. We'll show you how to access the radio button field, create a new radio button option, and customize the button caption.
+Dans ce guide, nous expliquerons étape par étape comment utiliser la bibliothèque Aspose.PDF pour .NET pour définir la légende d'un bouton radio dans un formulaire PDF. Nous allons vous montrer comment accéder au champ du bouton radio, créer une nouvelle option de bouton radio et personnaliser la légende du bouton.
 
-## Step 1: Configuring the document directory
+## Étape 1 : Configuration du répertoire de documents
 
-The first step is to configure the document directory where the PDF form you want to work on is located. You can use the `dataDir` variable to specify the directory path.
+ La première étape consiste à configurer le répertoire de documents où se trouve le formulaire PDF sur lequel vous souhaitez travailler. Vous pouvez utiliser le`dataDir` variable pour spécifier le chemin du répertoire.
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual path to your documents directory.
+ Assurez-vous de remplacer`"YOUR DOCUMENTS DIRECTORY"` avec le chemin réel vers votre répertoire de documents.
 
-## Step 2: Loading the source PDF form
+## Étape 2 : Chargement du formulaire PDF source
 
-In this step, we will load the source PDF form using the `Aspose.Pdf.Facades.Form` class of Aspose.PDF.
+ Dans cette étape, nous allons charger le formulaire PDF source à l'aide du`Aspose.Pdf.Facades.Form` classe d’Aspose.PDF.
 
 ```csharp
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
 ```
 
-Make sure that the PDF file containing the form is present in the specified documents directory.
+Assurez-vous que le fichier PDF contenant le formulaire est présent dans le répertoire de documents spécifié.
 
-## Step 3: Editing the radio button caption
+## Étape 3 : Modification de la légende du bouton radio
 
-We'll loop through the form field names and search for radio button fields. If a matching field is found, we'll create a new radio button option with a custom caption and add it to the existing field.
+Nous allons parcourir les noms des champs du formulaire et rechercher les champs des boutons radio. Si un champ correspondant est trouvé, nous créerons une nouvelle option de bouton radio avec une légende personnalisée et l'ajouterons au champ existant.
 
 ```csharp
 foreach(var item in form1.FieldNames)
@@ -47,15 +47,15 @@ var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
 updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
 updatedFragment.TextState.FontSize = 10;
 updatedFragment.TextState.LineSpacing = 6.32f;
-// Create a TextParagraph object
+// Créer un objet TextParagraph
 TextParagraph par = new TextParagraph();
-// Set paragraph position
+// Définir la position du paragraphe
 par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-// Specify word wrap mode
+// Spécifier le mode retour à la ligne
 by.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-// Add the new TextFragment to the paragraph
+// Ajouter le nouveau TextFragment au paragraphe
 par.AppendLine(updatedFragment);
-// Add the TextParagraph using TextBuilder
+// Ajouter le TextParagraph à l'aide de TextBuilder
 TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
 textBuilder.AppendParagraph(par);
 field0.DeleteOption("item1");
@@ -63,23 +63,23 @@ field0.DeleteOption("item1");
 }
 ```
 
-Customize the caption radio button and other settings as needed.
+Personnalisez le bouton radio de légende et d’autres paramètres selon vos besoins.
 
-## Step 4: Saving the Resulting PDF
+## Étape 4 : Enregistrement du PDF résultant
 
-Now that we are done modifying the radio button caption, we can save the resulting PDF using the `Save` method of the `Document` class.
+ Maintenant que nous avons fini de modifier la légende du bouton radio, nous pouvons enregistrer le PDF résultant en utilisant le`Save` méthode du`Document` classe.
 
 ```csharp
 PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 ```
 
-Be sure to specify the full path and filename for the resulting PDF.
+Assurez-vous de spécifier le chemin complet et le nom de fichier du PDF résultant.
 
-### Sample source code for Set Radio Button Caption using Aspose.PDF for .NET 
+### Exemple de code source pour définir la légende du bouton radio à l'aide d'Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Charger le formulaire PDF source
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
 Document PDF_Template_PDF_HTML = new Document(dataDir + "RadioButtonField.pdf");
 foreach (var item in form1.FieldNames)
@@ -96,15 +96,15 @@ foreach (var item in form1.FieldNames)
 		updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
 		updatedFragment.TextState.FontSize = 10;
 		updatedFragment.TextState.LineSpacing = 6.32f;
-		// Create TextParagraph object
+		// Créer un objet TextParagraph
 		TextParagraph par = new TextParagraph();
-		// Set paragraph position
+		// Définir la position du paragraphe
 		par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-		// Specify word wraping mode
+		// Spécifier le mode de retour à la ligne
 		par.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-		// Add new TextFragment to paragraph
+		// Ajouter un nouveau TextFragment au paragraphe
 		par.AppendLine(updatedFragment);
-		// Add the TextParagraph using TextBuilder
+		// Ajouter le TextParagraph à l'aide de TextBuilder
 		TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
 		textBuilder.AppendParagraph(par);
 		field0.DeleteOption("item1");
@@ -115,26 +115,26 @@ PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 
 ## Conclusion
 
-In this guide, we learned how to use the Aspose.PDF library for .NET to set the caption for a radio button in a PDF form. By following the described steps, you can customize the radio button options and change the caption as needed. Feel free to further explore the features of Aspose.PDF for .NET to expand the possibilities of manipulating PDF files.
+Dans ce guide, nous avons appris à utiliser la bibliothèque Aspose.PDF pour .NET pour définir la légende d'un bouton radio dans un formulaire PDF. En suivant les étapes décrites, vous pouvez personnaliser les options des boutons radio et modifier la légende si nécessaire. N'hésitez pas à explorer davantage les fonctionnalités d'Aspose.PDF pour .NET pour étendre les possibilités de manipulation des fichiers PDF.
 
-### FAQ's
+### FAQ
 
-#### Q: Can I use Aspose.PDF for .NET to set captions for radio buttons in a PDF form?
+#### Q : Puis-je utiliser Aspose.PDF pour .NET pour définir des légendes pour les boutons radio dans un formulaire PDF ?
 
-A: Yes, you can use Aspose.PDF for .NET to set captions for radio buttons in a PDF form. The provided sample source code demonstrates how to access the radio button field, create a new radio button option with a custom caption, and update the existing field.
+: Oui, vous pouvez utiliser Aspose.PDF pour .NET pour définir des légendes pour les boutons radio dans un formulaire PDF. L'exemple de code source fourni montre comment accéder au champ du bouton radio, créer une nouvelle option de bouton radio avec une légende personnalisée et mettre à jour le champ existant.
 
-#### Q: How can I customize the appearance of the radio button caption, such as font size and color?
+#### Q : Comment puis-je personnaliser l'apparence de la légende du bouton radio, comme la taille et la couleur de la police ?
 
-A: You can customize the appearance of the radio button caption by adjusting the properties of the `TextFragment` used for the caption. For example, you can set the font, font size, color, line spacing, and other text formatting options.
+ R : Vous pouvez personnaliser l'apparence de la légende du bouton radio en ajustant les propriétés du`TextFragment` utilisé pour la légende. Par exemple, vous pouvez définir la police, la taille de la police, la couleur, l'espacement des lignes et d'autres options de formatage du texte.
 
-#### Q: Is it possible to add multiple radio button options with different captions to a single radio button group?
+#### Q : Est-il possible d'ajouter plusieurs options de boutons radio avec des légendes différentes à un seul groupe de boutons radio ?
 
-A: Yes, you can add multiple radio button options with different captions to a single radio button group. Each option will represent a different choice, and users can select only one option from the group.
+R : Oui, vous pouvez ajouter plusieurs options de boutons radio avec différentes légendes à un seul groupe de boutons radio. Chaque option représentera un choix différent et les utilisateurs ne pourront sélectionner qu'une seule option dans le groupe.
 
-#### Q: Can I use Aspose.PDF for .NET to modify other form fields in a PDF document?
+#### Q : Puis-je utiliser Aspose.PDF pour .NET pour modifier d'autres champs de formulaire dans un document PDF ?
 
-A: Yes, Aspose.PDF for .NET provides a comprehensive set of features to manipulate various form fields in a PDF document, such as text fields, checkboxes, dropdown lists, and more. You can use the library to set values, modify appearances, and add interactivity to form fields.
+: Oui, Aspose.PDF pour .NET fournit un ensemble complet de fonctionnalités pour manipuler divers champs de formulaire dans un document PDF, tels que des champs de texte, des cases à cocher, des listes déroulantes, etc. Vous pouvez utiliser la bibliothèque pour définir des valeurs, modifier les apparences et ajouter de l'interactivité aux champs de formulaire.
 
-#### Q: Does Aspose.PDF for .NET support working with PDFs generated from other sources, such as scanned documents?
+#### Q : Aspose.PDF pour .NET prend-il en charge l'utilisation de fichiers PDF générés à partir d'autres sources, tels que des documents numérisés ?
 
-A: Yes, Aspose.PDF for .NET supports working with PDFs generated from various sources, including scanned documents. The library provides OCR (Optical Character Recognition) capabilities to extract text from scanned PDFs and manipulate the content programmatically.
+R : Oui, Aspose.PDF pour .NET prend en charge l'utilisation de fichiers PDF générés à partir de diverses sources, y compris les documents numérisés. La bibliothèque fournit des fonctionnalités OCR (Optical Character Recognition) pour extraire le texte des PDF numérisés et manipuler le contenu par programme.

@@ -1,129 +1,129 @@
 ---
-title: Image and Page Number in Header Footer Section Inline
-linktitle: Image and Page Number in Header Footer Section Inline
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add image and page number in header and footer using inline paragraphs with Aspose.PDF for .NET.
+title: Immagine e numero di pagina nella sezione piè di pagina dell'intestazione in linea
+linktitle: Immagine e numero di pagina nella sezione piè di pagina dell'intestazione in linea
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come aggiungere immagine e numero di pagina nell'intestazione e nel piè di pagina utilizzando i paragrafi incorporati con Aspose.PDF per .NET.
 type: docs
 weight: 120
 url: /it/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section-inline/
 ---
-In this tutorial, we will guide you step by step on how to add image and page number in header and footer section of PDF document using Aspose.PDF for .NET. We will use the provided C# source code to create a page, set header and footer, add image and text using inline paragraphs in the header of the PDF document.
+In questo tutorial, ti guideremo passo dopo passo su come aggiungere l'immagine e il numero di pagina nella sezione di intestazione e piè di pagina del documento PDF utilizzando Aspose.PDF per .NET. Utilizzeremo il codice sorgente C# fornito per creare una pagina, impostare intestazione e piè di pagina, aggiungere immagine e testo utilizzando paragrafi incorporati nell'intestazione del documento PDF.
 
-## Step 1: Setting up the environment
+## Passaggio 1: configurazione dell'ambiente
 
-Before you begin, make sure you have the following:
+Prima di iniziare, assicurati di avere quanto segue:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Un ambiente di sviluppo .NET installato.
+- La libreria Aspose.PDF per .NET scaricata e a cui si fa riferimento nel progetto.
 
-## Step 2: Creating the PDF Document and Page
+## Passaggio 2: creazione del documento PDF e della pagina
 
-The first step is to create a new Document object and a page in the PDF document. Here's how:
+Il primo passo è creare un nuovo oggetto Documento e una pagina nel documento PDF. Ecco come:
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a new Document object
+// Crea un nuovo oggetto Documento
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 
-// Create a page in the document
+// Crea una pagina nel documento
 Aspose.Pdf.Page page = pdf1.Pages.Add();
 ```
 
-The code above creates a new Document object and an empty page in the PDF document.
+Il codice sopra crea un nuovo oggetto Document e una pagina vuota nel documento PDF.
 
-## Step 3: Adding the header with an image and inline text
+## Passaggio 3: aggiunta dell'intestazione con un'immagine e testo incorporato
 
-Now that the page is created, we can add a header section with an image and text using inline paragraphs. Here's how:
+Ora che la pagina è stata creata, possiamo aggiungere una sezione di intestazione con un'immagine e un testo utilizzando i paragrafi incorporati. Ecco come:
 
 ```csharp
-// Create a header section
+// Crea una sezione di intestazione
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the page header
+// Imposta l'intestazione della pagina
 page. Header = header;
 
-// Create a TextFragment object for the first inline text
+// Crea un oggetto TextFragment per il primo testo in linea
 Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf is a robust component developed by");
 
-// Specify text color
+// Specificare il colore del testo
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
 
-// Create an Image object for the image
+// Crea un oggetto Immagine per l'immagine
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set image path
+// Imposta il percorso dell'immagine
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Define the dimensions of the image
+// Definire le dimensioni dell'immagine
 image1.FixWidth = 50;
 image1.FixHeight = 20;
 
-// Indicate that the first inline text is an image
+// Indica che il primo testo in linea è un'immagine
 image1.IsInLineParagraph = true;
 
-// Create a second inline text
+// Crea un secondo testo in linea
 Aspose.Pdf.Text.TextFragment txt2 = new Aspose.Pdf.Text.TextFragment(" Pty Ltd.");
 txt2.IsInLineParagraph = true;
 txt2.TextState.ForegroundColor = Color.Maroon;
 
-// Add items to header
+// Aggiungi elementi all'intestazione
 header.Paragraphs.Add(txt1);
 header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
 ```
 
-The code above creates a header section, sets the page header with this section, adds a TextFragment with inline text and an inline Image object.
+Il codice sopra crea una sezione di intestazione, imposta l'intestazione della pagina con questa sezione, aggiunge un TextFragment con testo in linea e un oggetto Image in linea.
 
-## Step 4: Saving the modified PDF document
+## Passaggio 4: salvataggio del documento PDF modificato
 
-Once the header with the image and inline text is added, we can save the modified PDF document. Here's how:
+Una volta aggiunta l'intestazione con l'immagine e il testo incorporato, possiamo salvare il documento PDF modificato. Ecco come:
 
 ```csharp
-// Save the modified PDF document
+// Salva il documento PDF modificato
 pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Il codice precedente salva il documento PDF modificato nella directory specificata.
 
-### Sample source code for Imageand Page Numberin Header Footersection Inline using Aspose.PDF for .NET 
+### Codice sorgente di esempio per immagine e numero di pagina nella sezione piè di pagina dell'intestazione in linea utilizzando Aspose.PDF per .NET 
 ```csharp
 
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate a Document object by calling its empty constructor
+// Crea un'istanza di un oggetto Document chiamando il suo costruttore vuoto
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 
-// Create a page in the Pdf object
+// Crea una pagina nell'oggetto Pdf
 Aspose.Pdf.Page page = pdf1.Pages.Add();
 
-// Create Header Section of the document
+// Crea la sezione di intestazione del documento
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the header for the PDF file
+// Imposta l'intestazione per il file PDF
 page.Header = header;
 
-// Create a Text object
+// Crea un oggetto di testo
 Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf is a Robust component by");
 
-// Specify the color
+// Specificare il colore
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
 
-// Create an image object in the section
+// Crea un oggetto immagine nella sezione
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set the path of image file
+// Imposta il percorso del file immagine
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Set the image width Information
+// Imposta la larghezza dell'immagine Informazioni
 image1.FixWidth = 50;
 image1.FixHeight = 20;
 
-// Indicate seg1's InlineParagraph is a image.
+// Indica che InlineParagraph di seg1 è un'immagine.
 image1.IsInLineParagraph = true;
 Aspose.Pdf.Text.TextFragment txt2 = new Aspose.Pdf.Text.TextFragment(" Pty Ltd.");
 txt2.IsInLineParagraph = true;
@@ -132,53 +132,53 @@ header.Paragraphs.Add(txt1);
 header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
 
-// Save the Pdf
+// Salva il PDF
 pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.pdf");
 
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation ! You have learned how to add an image and page number in the header and footer section of a PDF document using inline paragraphs with Aspose.PDF for .NET. You can now customize the header and footer of your PDF documents flexibly.
+Congratulazioni! Hai imparato come aggiungere un'immagine e un numero di pagina nella sezione intestazione e piè di pagina di un documento PDF utilizzando paragrafi incorporati con Aspose.PDF per .NET. Ora puoi personalizzare in modo flessibile l'intestazione e il piè di pagina dei tuoi documenti PDF.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: What is the advantage of using inline paragraphs for adding an image and text to the header of a PDF document?
+#### D: Qual è il vantaggio di utilizzare i paragrafi incorporati per aggiungere un'immagine e un testo all'intestazione di un documento PDF?
 
-A: Using inline paragraphs allows you to seamlessly integrate images and text within the same paragraph, providing precise control over their placement and formatting. This method is especially useful for creating customized headers with visual elements.
+R: L'uso dei paragrafi incorporati ti consente di integrare perfettamente immagini e testo all'interno dello stesso paragrafo, fornendo un controllo preciso sul loro posizionamento e formattazione. Questo metodo è particolarmente utile per creare intestazioni personalizzate con elementi visivi.
 
-#### Q: How does the provided C# source code achieve inline paragraphs for the header in a PDF document?
+#### D: In che modo il codice sorgente C# fornito ottiene paragrafi in linea per l'intestazione in un documento PDF?
 
-A: The provided code demonstrates how to create a PDF document, add a page, and customize the header using inline paragraphs. It adds a TextFragment with inline text, an inline image, and another inline TextFragment.
+R: Il codice fornito dimostra come creare un documento PDF, aggiungere una pagina e personalizzare l'intestazione utilizzando i paragrafi incorporati. Aggiunge un TextFragment con testo in linea, un'immagine in linea e un altro TextFragment in linea.
 
-#### Q: How do I specify the color of the inline text in the header?
+#### D: Come posso specificare il colore del testo in linea nell'intestazione?
 
-A: The color of the inline text is specified using the `ForegroundColor` property of the `TextState` of the `TextFragment` object.
+ R: Il colore del testo in linea viene specificato utilizzando il file`ForegroundColor` proprietà del`TextState` del`TextFragment` oggetto.
 
-#### Q: Can I adjust the dimensions of the inline image in the header?
+#### D: Posso regolare le dimensioni dell'immagine incorporata nell'intestazione?
 
-A: Yes, you can adjust the dimensions of the inline image using the `FixWidth` and `FixHeight` properties of the `Image` object. This allows you to control the width and height of the image within the header.
+ R: Sì, puoi regolare le dimensioni dell'immagine in linea utilizzando`FixWidth` E`FixHeight` proprietà del`Image` oggetto. Ciò ti consente di controllare la larghezza e l'altezza dell'immagine all'interno dell'intestazione.
 
-#### Q: Can I include additional inline elements, such as hyperlinks or different font styles, in the header?
+#### D: Posso includere ulteriori elementi in linea, come collegamenti ipertestuali o stili di carattere diversi, nell'intestazione?
 
-A: Yes, you can include additional inline elements in the header by creating more `TextFragment` or `Image` objects with the desired properties. This allows you to customize the header further, including hyperlinks, different font styles, or other visual elements.
+ R: Sì, puoi includere ulteriori elementi in linea nell'intestazione creandone altri`TextFragment` O`Image` oggetti con le proprietà desiderate. Ciò ti consente di personalizzare ulteriormente l'intestazione, inclusi collegamenti ipertestuali, diversi stili di carattere o altri elementi visivi.
 
-#### Q: How can I ensure that the inline image and text remain properly aligned and formatted across different devices and viewers?
+#### D: Come posso garantire che l'immagine e il testo in linea rimangano correttamente allineati e formattati su diversi dispositivi e visualizzatori?
 
-A: Aspose.PDF for .NET ensures that inline images and text are properly aligned and formatted, resulting in consistent appearance across different devices and PDF viewers.
+R: Aspose.PDF per .NET garantisce che le immagini e il testo in linea siano correttamente allineati e formattati, risultando in un aspetto coerente su diversi dispositivi e visualizzatori PDF.
 
-#### Q: Can I apply inline paragraphs to the footer section as well?
+#### D: Posso applicare i paragrafi in linea anche alla sezione del piè di pagina?
 
-A: Yes, you can apply the same technique of using inline paragraphs to the footer section by creating a `Footer` object and adding inline elements such as text and images to it.
+ R: Sì, puoi applicare la stessa tecnica di utilizzo dei paragrafi in linea alla sezione del piè di pagina creando un file`Footer` oggetto e aggiungendovi elementi in linea come testo e immagini.
 
-#### Q: Is it possible to combine inline paragraphs with other header or footer customization methods?
+#### D: È possibile combinare i paragrafi in linea con altri metodi di personalizzazione di intestazioni o piè di pagina?
 
-A: Yes, you can combine inline paragraphs with other header or footer customization methods provided by Aspose.PDF for .NET to create more complex and tailored header or footer designs.
+R: Sì, puoi combinare paragrafi in linea con altri metodi di personalizzazione di intestazione o piè di pagina forniti da Aspose.PDF per .NET per creare progetti di intestazione o piè di pagina più complessi e personalizzati.
 
-#### Q: Can I remove or clear the inline elements from the header if needed?
+#### D: Posso rimuovere o cancellare gli elementi in linea dall'intestazione, se necessario?
 
-A: Yes, you can remove or clear the inline elements by modifying the contents of the `HeaderFooter` object and removing the respective inline paragraphs.
+ R: Sì, puoi rimuovere o cancellare gli elementi in linea modificando il contenuto del file`HeaderFooter` oggetto e rimuovendo i rispettivi paragrafi in linea.
 
-#### Q: How can I apply inline paragraphs to specific pages of the PDF document?
+#### D: Come posso applicare paragrafi in linea a pagine specifiche del documento PDF?
 
-A: To apply inline paragraphs to specific pages, you can create separate `HeaderFooter` objects for each page and assign them using the `Header` property of the respective `Aspose.Pdf.Page` objects.
+ R: Per applicare paragrafi in linea a pagine specifiche, puoi crearne di separati`HeaderFooter` oggetti per ogni pagina e assegnarli utilizzando il file`Header` proprietà del rispettivo`Aspose.Pdf.Page` oggetti.

@@ -1,27 +1,27 @@
 ---
-title: Get Table Width In PDF File
-linktitle: Get Table Width In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get the width of a table in PDF file using Aspose.PDF for .NET.
+title: Få tabellbredd i PDF-fil
+linktitle: Få tabellbredd i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du får bredden på en tabell i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 90
 url: /sv/net/programming-with-tables/get-table-width/
 ---
-In this tutorial, we are going to learn how to get the width of a table in PDF file using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to get the width of a table in a PDF document. Let's start!
+den här handledningen ska vi lära oss hur man får bredden på en tabell i PDF-fil med Aspose.PDF för .NET. Vi kommer att förklara källkoden i C# steg för steg. I slutet av denna handledning kommer du att veta hur du får bredden på en tabell i ett PDF-dokument. Låt oss börja!
 
-## Step 1: Setting up the environment
-First, make sure you've set up your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## Steg 1: Sätta upp miljön
+Se först till att du har ställt in din C#-utvecklingsmiljö med Aspose.PDF för .NET. Lägg till referensen till biblioteket och importera de nödvändiga namnrymden.
 
-## Step 2: Creating a New Document and Page
-We create a new PDF document and add a page in this document.
+## Steg 2: Skapa ett nytt dokument och en sida
+Vi skapar ett nytt PDF-dokument och lägger till en sida i detta dokument.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Initializing a new table
-We initialize a new table and set the column fit to "AutoFitToContent".
+## Steg 3: Initiera en ny tabell
+Vi initierar en ny tabell och ställer in kolumnpassningen till "AutoFitToContent".
 
 ```csharp
 Table table = new Table
@@ -30,8 +30,8 @@ ColumnAdjustment = ColumnAdjustment.AutoFitToContent
 };
 ```
 
-## Step 4: Add row and cells in table
-We add a row in the table and add cells in that row.
+## Steg 4: Lägg till rad och celler i tabellen
+Vi lägger till en rad i tabellen och lägger till celler i den raden.
 
 ```csharp
 Row row = table.Rows.Add();
@@ -39,57 +39,57 @@ Cell cell = row.Cells.Add("Text of cell 1");
 cell = row.Cells.Add("Text from cell 2");
 ```
 
-## Step 5: Get table width
-We use the "GetWidth()" method to get the width of the table.
+## Steg 5: Få bordsbredd
+Vi använder metoden "GetWidth()" för att få tabellens bredd.
 
 ```csharp
 Console.WriteLine(table.GetWidth());
 ```
 
-### Example source code for get Table Width using Aspose.PDF for .NET
+### Exempel på källkod för få tabellbredd med Aspose.PDF för .NET
 
 ```csharp
-// Create a new document
+// Skapa ett nytt dokument
 Document doc = new Document();
-// Add page in document
+// Lägg till sida i dokument
 Page page = doc.Pages.Add();
-// Initialize new table
+// Initiera ny tabell
 Table table = new Table
 {
 	ColumnAdjustment = ColumnAdjustment.AutoFitToContent
 };
-// Add row in table 
+// Lägg till rad i tabellen
 Row row = table.Rows.Add();
-// Add cell in table
+// Lägg till cell i tabellen
 Cell cell = row.Cells.Add("Cell 1 text");
 cell = row.Cells.Add("Cell 2 text");
-// Get table width
+// Få bordsbredd
 Console.WriteLine(table.GetWidth());
 
 System.Console.WriteLine("Extracted table width succesfully!");
 ```
 
-## Conclusion
-In this tutorial, we learned how to get the width of a table in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to get table widths in your own C# projects.
+## Slutsats
+den här handledningen lärde vi oss hur man får bredden på en tabell i ett PDF-dokument med Aspose.PDF för .NET. Du kan använda den här steg-för-steg-guiden för att få tabellbredder i dina egna C#-projekt.
 
-### FAQ's for get table width in PDF file
+### Vanliga frågor för att få tabellbredd i PDF-fil
 
-#### Q: Can I modify the column adjustment of the table to a fixed width instead of AutoFitToContent?
+#### F: Kan jag ändra kolumnjusteringen av tabellen till en fast bredd istället för AutoFitToContent?
 
-A: Yes, you can adjust the column width to a fixed value by setting the `ColumnAdjustment` property to `ColumnAdjustment.FixedColumnWidth`. After setting this property, you can specify the desired width for each column using the `ColumnWidths` property of the table.
+ S: Ja, du kan justera kolumnbredden till ett fast värde genom att ställa in`ColumnAdjustment` egendom till`ColumnAdjustment.FixedColumnWidth` . Efter att ha ställt in den här egenskapen kan du ange önskad bredd för varje kolumn med hjälp av`ColumnWidths` tabellens egendom.
 
-#### Q: What if the table spans across multiple pages? Will the `GetWidth()` method still provide accurate results?
+####  F: Vad händer om tabellen sträcker sig över flera sidor? Kommer den`GetWidth()` method still provide accurate results?
 
-A: The `GetWidth()` method calculates the width of the table based on its content within the current page. If the table spans across multiple pages, you may need to iterate through each page and sum up the widths of the table on each page to get the overall width of the complete table.
+ A: Den`GetWidth()` metoden beräknar tabellens bredd baserat på dess innehåll på den aktuella sidan. Om tabellen sträcker sig över flera sidor kan du behöva iterera genom varje sida och summera tabellens bredd på varje sida för att få hela tabellens bredd.
 
-#### Q: Can I get the individual column widths of the table using Aspose.PDF for .NET?
+#### F: Kan jag få tabellens individuella kolumnbredder med Aspose.PDF för .NET?
 
-A: Yes, you can retrieve the individual column widths of the table using the `ColumnWidths` property. It returns a string that represents the width of each column separated by spaces. You can then parse this string to get the width of each column.
+S: Ja, du kan hämta tabellens individuella kolumnbredder med hjälp av`ColumnWidths` fast egendom. Den returnerar en sträng som representerar bredden på varje kolumn separerad med mellanslag. Du kan sedan analysera denna sträng för att få bredden på varje kolumn.
 
-#### Q: Is it possible to get the height of the table using Aspose.PDF for .NET?
+#### F: Är det möjligt att få höjden på bordet med Aspose.PDF för .NET?
 
-A: Yes, you can get the height of the table using the `GetHeight()` method of the table. This method returns the total height of the table based on its content and layout.
+ A: Ja, du kan få höjden på bordet med hjälp av`GetHeight()` tabellens metod. Den här metoden returnerar tabellens totala höjd baserat på dess innehåll och layout.
 
-#### Q: Can I adjust the table width based on specific content in each cell?
+#### F: Kan jag justera tabellbredden baserat på specifikt innehåll i varje cell?
 
-A: Yes, you can adjust the table width based on specific content in each cell by setting the `ColumnAdjustment` property to `ColumnAdjustment.AutoFitToContent`. Aspose.PDF for .NET will automatically adjust the column widths to fit the content in each cell.
+ S: Ja, du kan justera tabellbredden baserat på specifikt innehåll i varje cell genom att ställa in`ColumnAdjustment` egendom till`ColumnAdjustment.AutoFitToContent`. Aspose.PDF för .NET kommer automatiskt att justera kolumnbredderna för att passa innehållet i varje cell.

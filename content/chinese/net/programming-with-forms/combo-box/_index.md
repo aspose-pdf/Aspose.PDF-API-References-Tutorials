@@ -1,49 +1,49 @@
 ---
-title: Combo Box
-linktitle: Combo Box
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create combo box list in your PDF documents using Aspose.PDF for .NET.
+title: 组合框
+linktitle: 组合框
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 在 PDF 文档中轻松创建组合框列表。
 type: docs
 weight: 30
 url: /zh/net/programming-with-forms/combo-box/
 ---
-In this tutorial, we will show you how to create a combo box list using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+在本教程中，我们将向您展示如何使用 Aspose.PDF for .NET 创建组合框列表。我们将逐步解释 C# 源代码，以指导您完成此过程。
 
-## Step 1: Preparation
+## 第 1 步：准备
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+首先，确保您已导入必要的库并设置文档目录的路径：
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a Document Object
+## 第 2 步：创建文档对象
 
-Create a Document object to hold the PDF form:
+创建一个 Document 对象来保存 PDF 表单：
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 3: Add a page
+## 第 3 步：添加页面
 
-Add a page to the document:
+向文档添加页面：
 
 ```csharp
 doc.Pages.Add();
 ```
 
-## Step 4: Instantiate a ComboBoxField Object
+## 第 4 步：实例化 ComboBoxField 对象
 
-Instantiate a ComboBoxField object with the desired dimensions:
+实例化具有所需尺寸的 ComboBoxField 对象：
 
 ```csharp
 ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
 ```
 
-## Step 5: Add options to the drop-down list
+## 步骤 5：将选项添加到下拉列表
 
-Add the desired options to the drop-down list:
+将所需的选项添加到下拉列表中：
 
 ```csharp
 combo.AddOption("Red");
@@ -52,44 +52,44 @@ combo.AddOption("Green");
 combo.AddOption("Blue");
 ```
 
-## Step 6: Add the combo box list to the form
+## 步骤 6：将组合框列表添加到表单中
 
-Add the ComboBoxField object to the Document Form Fields collection:
+将 ComboBoxField 对象添加到文档表单字段集合：
 
 ```csharp
 doc.Form.Add(combo);
 ```
 
-## Step 7: Save the document
+## 第 7 步：保存文档
 
-Save the PDF document:
+保存 PDF 文档：
 
 ```csharp
 dataDir = dataDir + "ComboBox_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Combo Box using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 的组合框示例源代码 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	//文档目录的路径。
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Create Document object
+	//创建文档对象
 	Document doc = new Document();
-	// Add page to document object
+	//将页面添加到文档对象
 	doc.Pages.Add();
-	// Instantiate ComboBox Field object
+	//实例化 ComboBox Field 对象
 	ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
-	// Add option to ComboBox
+	//将选项添加到组合框
 	combo.AddOption("Red");
 	combo.AddOption("Yellow");
 	combo.AddOption("Green");
 	combo.AddOption("Blue");
-	// Add combo box object to form fields collection of document object
+	//添加组合框对象以形成文档对象的字段集合
 	doc.Form.Add(combo);
 	dataDir = dataDir + "ComboBox_out.pdf";
-	// Save the PDF document
+	//保存 PDF 文档
 	doc.Save(dataDir);
 	Console.WriteLine("\nCombobox field added successfully.\nFile saved at " + dataDir);
 }
@@ -99,28 +99,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we learned how to create a combo box list using Aspose.PDF for .NET. By following these steps, you can easily add a combo box list to your PDF documents using Aspose.PDF.
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 创建组合框列表。通过执行以下步骤，您可以使用 Aspose.PDF 轻松地将组合框列表添加到 PDF 文档中。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: Can I customize the appearance of the combo box list using Aspose.PDF for .NET?
+#### 问：我可以使用 Aspose.PDF for .NET 自定义组合框列表的外观吗？
 
-A: Yes, you can customize the appearance of the combo box list using Aspose.PDF for .NET. You can set properties such as font size, color, background color, border style, and more to match your desired look and feel.
+答：是的，您可以使用 Aspose.PDF for .NET 自定义组合框列表的外观。您可以设置字体大小、颜色、背景颜色、边框样式等属性，以匹配您所需的外观和感觉。
 
-#### Q: Can I set default selected options in the combo box list?
+#### 问：我可以在组合框列表中设置默认选择的选项吗？
 
-A: Yes, you can set default selected options in the combo box list using Aspose.PDF for .NET. You can use the `Selected` property of the `ComboBoxField` object to mark one or more options as selected by default.
+答：是的，您可以使用 Aspose.PDF for .NET 在组合框列表中设置默认选定选项。您可以使用`Selected`的财产`ComboBoxField`对象将一个或多个选项标记为默认选择。
 
-#### Q: How can I retrieve the selected value from the combo box list after the user makes a selection?
+#### 问：用户做出选择后，如何从组合框列表中检索所选值？
 
-A: You can retrieve the selected value from the combo box list using Aspose.PDF for .NET. After the user makes a selection, you can access the `Value` property of the `ComboBoxField` object to obtain the selected value.
+答：您可以使用 Aspose.PDF for .NET 从组合框列表中检索所选值。用户做出选择后，您可以访问`Value`的财产`ComboBoxField`对象来获取选定的值。
 
-#### Q: Is it possible to add event handlers or actions to the combo box list?
+#### 问：是否可以将事件处理程序或操作添加到组合框列表中？
 
-A: Yes, Aspose.PDF for .NET allows you to add event handlers or actions to the combo box list. You can associate JavaScript actions, such as `OnValueChanged`, to the combo box list to perform specific actions when the user selects an option.
+答：是的，Aspose.PDF for .NET 允许您将事件处理程序或操作添加到组合框列表中。您可以关联 JavaScript 操作，例如`OnValueChanged`，到组合框列表以在用户选择选项时执行特定操作。
 
-#### Q: Can I add tooltips or descriptions to the options in the combo box list?
+#### 问：我可以向组合框列表中的选项添加工具提示或描述吗？
 
-A: Yes, you can add tooltips or descriptions to the options in the combo box list using Aspose.PDF for .NET. You can set the `AlternateName` property of each option to provide a tooltip or description that will be displayed when the user hovers over the option.
+答：是的，您可以使用 Aspose.PDF for .NET 将工具提示或描述添加到组合框列表中的选项。您可以设置`AlternateName`每个选项的属性，以提供当用户将鼠标悬停在选项上时将显示的工具提示或说明。

@@ -1,66 +1,66 @@
 ---
-title: Illustration Structure Elements
-linktitle: Illustration Structure Elements
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to using illustration assets with Aspose.PDF for .NET. Enhance the presentation of your PDFs with images.
+title: Illustrationsstrukturelemente
+linktitle: Illustrationsstrukturelemente
+second_title: Aspose.PDF für .NET API-Referenz
+description: Schritt-für-Schritt-Anleitung zur Verwendung von Illustrationsressourcen mit Aspose.PDF für .NET. Verbessern Sie die Präsentation Ihrer PDFs mit Bildern.
 type: docs
 weight: 100
 url: /de/net/programming-with-tagged-pdf/illustration-structure-elements/
 ---
-In this step-by-step guide, we are going to show you how to use illustration structure elements with Aspose.PDF for .NET. Aspose.PDF is a powerful library that lets you manipulate PDF documents programmatically. Illustration structure elements allow you to add images and figures to your PDF document, improving its visual presentation and understanding.
+In dieser Schritt-für-Schritt-Anleitung zeigen wir Ihnen, wie Sie Illustrationsstrukturelemente mit Aspose.PDF für .NET verwenden. Aspose.PDF ist eine leistungsstarke Bibliothek, mit der Sie PDF-Dokumente programmgesteuert bearbeiten können. Mithilfe von Illustrationsstrukturelementen können Sie Bilder und Abbildungen zu Ihrem PDF-Dokument hinzufügen und so dessen visuelle Darstellung und Verständlichkeit verbessern.
 
-Let's dive into the code and learn how to use illustration structure elements with Aspose.PDF for .NET.
+Lassen Sie uns in den Code eintauchen und lernen, wie Sie Illustrationsstrukturelemente mit Aspose.PDF für .NET verwenden.
 
-## Prerequisites
+## Voraussetzungen
 
-Before you begin, make sure you have the following:
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-1. Aspose.PDF library for .NET installed.
-2. A basic knowledge of the C# programming language.
+1. Aspose.PDF-Bibliothek für .NET installiert.
+2. Grundkenntnisse der Programmiersprache C#.
 
-## Step 1: Setting up the environment
+## Schritt 1: Einrichten der Umgebung
 
-To get started, open your C# development environment and create a new project. Make sure you have added a reference to the Aspose.PDF library for .NET in your project.
+Öffnen Sie zunächst Ihre C#-Entwicklungsumgebung und erstellen Sie ein neues Projekt. Stellen Sie sicher, dass Sie in Ihrem Projekt einen Verweis auf die Aspose.PDF-Bibliothek für .NET hinzugefügt haben.
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating the document
+## Schritt 2: Erstellen des Dokuments
 
-The first step is to create a new PDF document using the `Document` class.
+ Der erste Schritt besteht darin, ein neues PDF-Dokument mit zu erstellen`Document` Klasse.
 
 ```csharp
-// Create the PDF document
+// Erstellen Sie das PDF-Dokument
 Document document = new Document();
 ```
 
-## Step 3: Work with tagged content
+## Schritt 3: Arbeiten Sie mit getaggten Inhalten
 
-Then we get the tagged content of the document to work with.
+Dann erhalten wir den getaggten Inhalt des Dokuments, mit dem wir arbeiten können.
 
 ```csharp
-// Get the tagged content of the document
+// Rufen Sie den getaggten Inhalt des Dokuments ab
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 4: Set document title and language
+## Schritt 4: Dokumenttitel und Sprache festlegen
 
-We can now set the document title and language.
+Wir können nun den Titel und die Sprache des Dokuments festlegen.
 
 ```csharp
-// Define the document title and language
+// Definieren Sie den Titel und die Sprache des Dokuments
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 5: Add artwork
+## Schritt 5: Bildmaterial hinzufügen
 
-Now let's add illustrative elements, such as images and figures, to our document.
+Fügen wir nun unserem Dokument veranschaulichende Elemente wie Bilder und Abbildungen hinzu.
 
 ```csharp
-// Underdevelopment
+// In Entwicklung
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
 figure1.AlternativeText = "Figure One";
@@ -69,34 +69,34 @@ figure1.SetTag("Fig1");
 figure1.SetImage("image.png");
 ```
 
-Here we create an illustration structure element, give it an alt text, title, custom tag, and associate an image with it.
+Hier erstellen wir ein Illustrationsstrukturelement, geben ihm einen Alternativtext, einen Titel und ein benutzerdefiniertes Tag und verknüpfen ein Bild damit.
 
-## Step 6: Save the tagged PDF document
+## Schritt 6: Speichern Sie das getaggte PDF-Dokument
 
-Finally, we save the tagged PDF document.
+Abschließend speichern wir das getaggte PDF-Dokument.
 
 ```csharp
-// Save the tagged PDF document
+// Speichern Sie das getaggte PDF-Dokument
 document.Save(dataDir + "IllustrationStructureElements.pdf");
 ```
 
-### Sample source code for Illustration Structure Elements using Aspose.PDF for .NET 
+### Beispielquellcode für Illustrationsstrukturelemente mit Aspose.PDF für .NET 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// Erstellen Sie ein PDF-Dokument
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// Holen Sie sich Inhalte für die Arbeit mit TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+// Legen Sie Titel und Sprache für Documentt fest
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Under Development
+// In Entwicklung
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
 figure1.AlternativeText = "Figure One";
@@ -104,53 +104,53 @@ figure1.Title = "Image 1";
 figure1.SetTag("Fig1");
 figure1.SetImage("image.png");
 
-// Save Tagged Pdf Document
+// Markiertes PDF-Dokument speichern
 document.Save(dataDir + "IllustrationStructureElements.pdf");
 
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You have learned how to use illustration structure elements with Aspose.PDF for .NET. You can now add images and figures to your PDF document to enhance its visual presentation. Explore more features of Aspose.PDF to discover its full potential.
+Herzlichen Glückwunsch! Sie haben gelernt, wie Sie Illustrationsstrukturelemente mit Aspose.PDF für .NET verwenden. Sie können Ihrem PDF-Dokument jetzt Bilder und Abbildungen hinzufügen, um seine visuelle Präsentation zu verbessern. Entdecken Sie weitere Funktionen von Aspose.PDF, um sein volles Potenzial zu entdecken.
 
-### FAQ's
+### FAQs
 
-#### Q: What are illustration structure elements in a PDF document, and how do they enhance visual presentation?
+#### F: Was sind Illustrationsstrukturelemente in einem PDF-Dokument und wie verbessern sie die visuelle Präsentation?
 
-A: Illustration structure elements in a PDF document allow you to incorporate visual content such as images and figures. By using illustration structure elements with Aspose.PDF for .NET, you can enhance the visual presentation of your PDF documents, making them more engaging and informative.
+A: Mithilfe von Illustrationsstrukturelementen in einem PDF-Dokument können Sie visuelle Inhalte wie Bilder und Abbildungen integrieren. Durch die Verwendung von Illustrationsstrukturelementen mit Aspose.PDF für .NET können Sie die visuelle Präsentation Ihrer PDF-Dokumente verbessern und sie ansprechender und informativer machen.
 
-#### Q: How does Aspose.PDF for .NET facilitate the use of illustration structure elements?
+#### F: Wie erleichtert Aspose.PDF für .NET die Verwendung von Illustrationsstrukturelementen?
 
-A: Aspose.PDF for .NET provides a set of classes and methods that enable you to create, manipulate, and add illustration structure elements to your PDF documents. These elements can include images, figures, and other visual content.
+A: Aspose.PDF für .NET bietet eine Reihe von Klassen und Methoden, mit denen Sie Illustrationsstrukturelemente erstellen, bearbeiten und zu Ihren PDF-Dokumenten hinzufügen können. Zu diesen Elementen können Bilder, Figuren und andere visuelle Inhalte gehören.
 
-#### Q: What role does the `taggedContent` object play in using illustration structure elements?
+####  F: Welche Rolle spielt das`taggedContent` object play in using illustration structure elements?
 
-A: The `taggedContent` object, obtained from the document's `TaggedContent` property, allows you to work with structured elements in the PDF document. You can create, organize, and add illustration structure elements to enhance the document's visual representation.
+ A: Die`taggedContent` Objekt, das aus dem Dokument stammt`TaggedContent`Mit dieser Eigenschaft können Sie mit strukturierten Elementen im PDF-Dokument arbeiten. Sie können Illustrationsstrukturelemente erstellen, organisieren und hinzufügen, um die visuelle Darstellung des Dokuments zu verbessern.
 
-#### Q: How do illustration structure elements improve the understanding of the PDF document's content?
+#### F: Wie verbessern Illustrationsstrukturelemente das Verständnis des Inhalts des PDF-Dokuments?
 
-A: Illustration structure elements provide visual context and support to the textual content of a PDF document. They help convey complex information, data, or concepts through images and figures, making the content easier to comprehend and remember.
+A: Illustrationsstrukturelemente bieten visuellen Kontext und unterstützen den Textinhalt eines PDF-Dokuments. Sie helfen dabei, komplexe Informationen, Daten oder Konzepte durch Bilder und Zahlen zu vermitteln und so den Inhalt leichter zu verstehen und zu merken.
 
-#### Q: What types of visual content can be added using illustration structure elements?
+#### F: Welche Arten von visuellen Inhalten können mithilfe von Illustrationsstrukturelementen hinzugefügt werden?
 
-A: Illustration structure elements can be used to add a variety of visual content, including images, charts, graphs, diagrams, and other types of artwork that enhance the document's visual appeal and storytelling.
+A: Elemente der Illustrationsstruktur können verwendet werden, um eine Vielzahl visueller Inhalte hinzuzufügen, darunter Bilder, Diagramme, Diagramme und andere Arten von Grafiken, die die visuelle Attraktivität und das Storytelling des Dokuments verbessern.
 
-#### Q: How do I create and add an image to a PDF document using illustration structure elements in Aspose.PDF for .NET?
+#### F: Wie erstelle ich ein Bild und füge es einem PDF-Dokument hinzu, indem ich Illustrationsstrukturelemente in Aspose.PDF für .NET verwende?
 
-A: You can create an illustration structure element using the `CreateFigureElement` method, assign alt text, title, and custom tags to it, and associate an image file using the `SetImage` method. The provided code example demonstrates this process.
+A: Sie können ein Illustrationsstrukturelement mit erstellen`CreateFigureElement` Methode, weisen Sie ihr Alternativtext, Titel und benutzerdefinierte Tags zu und verknüpfen Sie eine Bilddatei mit der`SetImage` Methode. Das bereitgestellte Codebeispiel veranschaulicht diesen Prozess.
 
-#### Q: Can I customize the appearance and attributes of illustration structure elements?
+#### F: Kann ich das Erscheinungsbild und die Attribute von Illustrationsstrukturelementen anpassen?
 
-A: Yes, you can customize the appearance and attributes of illustration structure elements by setting properties such as alt text, title, custom tags, image sources, and more. This allows you to tailor the visual representation to your document's needs.
+A: Ja, Sie können das Erscheinungsbild und die Attribute von Illustrationsstrukturelementen anpassen, indem Sie Eigenschaften wie Alternativtext, Titel, benutzerdefinierte Tags, Bildquellen und mehr festlegen. Dadurch können Sie die visuelle Darstellung an die Anforderungen Ihres Dokuments anpassen.
 
-#### Q: How can I ensure that the images and figures I add using illustration structure elements are accessible?
+#### F: Wie kann ich sicherstellen, dass die Bilder und Abbildungen, die ich mithilfe von Illustrationsstrukturelementen hinzufüge, barrierefrei sind?
 
-A: To ensure accessibility, provide meaningful alt text that accurately describes the content of the images or figures. This alt text is read by screen readers and other assistive technologies, making the visual content accessible to all users.
+A: Um die Barrierefreiheit zu gewährleisten, stellen Sie aussagekräftigen Alternativtext bereit, der den Inhalt der Bilder oder Abbildungen genau beschreibt. Dieser Alternativtext wird von Screenreadern und anderen unterstützenden Technologien gelesen und macht den visuellen Inhalt für alle Benutzer zugänglich.
 
-#### Q: Can I use illustration structure elements in combination with other PDF manipulation features offered by Aspose.PDF for .NET?
+#### F: Kann ich Illustrationsstrukturelemente in Kombination mit anderen PDF-Manipulationsfunktionen verwenden, die Aspose.PDF für .NET bietet?
 
-A: Absolutely! You can combine illustration structure elements with other features of Aspose.PDF for .NET, such as adding text, creating tables, inserting hyperlinks, and more. This allows you to create visually appealing and informative PDF documents.
+A: Auf jeden Fall! Sie können Illustrationsstrukturelemente mit anderen Funktionen von Aspose.PDF für .NET kombinieren, z. B. dem Hinzufügen von Text, dem Erstellen von Tabellen, dem Einfügen von Hyperlinks und mehr. Dadurch können Sie optisch ansprechende und informative PDF-Dokumente erstellen.
 
-#### Q: How can I further explore and utilize illustration structure elements for advanced document design and visual storytelling?
+#### F: Wie kann ich Illustrationsstrukturelemente für erweitertes Dokumentdesign und visuelles Storytelling weiter erforschen und nutzen?
 
-A: To delve deeper, you can explore advanced features of Aspose.PDF for .NET, such as creating interactive elements, embedding multimedia, utilizing different image formats, and optimizing visual content for various devices. The library's documentation and examples provide guidance for these advanced scenarios.
+A: Um tiefer einzutauchen, können Sie die erweiterten Funktionen von Aspose.PDF für .NET erkunden, z. B. das Erstellen interaktiver Elemente, das Einbetten von Multimedia, die Verwendung verschiedener Bildformate und die Optimierung visueller Inhalte für verschiedene Geräte. Die Dokumentation und Beispiele der Bibliothek bieten Anleitungen für diese erweiterten Szenarios.

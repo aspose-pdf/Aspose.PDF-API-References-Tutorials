@@ -1,81 +1,81 @@
 ---
-title: PDF To PNG Font Hinting
-linktitle: PDF To PNG Font Hinting
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert PDF to PNG with font hinting using Aspose.PDF for .NET.
+title: Indice de police PDF vers PNG
+linktitle: Indice de police PDF vers PNG
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Guide étape par étape pour convertir un PDF en PNG avec des indications de police à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 160
 url: /fr/net/document-conversion/pdf-to-png-font-hinting/
 ---
-In this tutorial, we'll walk you through the process of converting a PDF to PNG images using Aspose.PDF for .NET, while enabling font hinting. Font hinting is a technique that improves the readability of small fonts. By following the steps below, you will be able to convert every page of the PDF to a PNG image with font hinting.
+Dans ce didacticiel, nous vous guiderons tout au long du processus de conversion d'un PDF en images PNG à l'aide d'Aspose.PDF pour .NET, tout en activant les indications de police. L’indication de polices est une technique qui améliore la lisibilité des petites polices. En suivant les étapes ci-dessous, vous pourrez convertir chaque page du PDF en image PNG avec des indications de police.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Conditions préalables
+Avant de commencer, assurez-vous de remplir les conditions préalables suivantes :
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Connaissance de base du langage de programmation C#.
+- Bibliothèque Aspose.PDF pour .NET installée sur votre système.
+- Un environnement de développement tel que Visual Studio.
 
-## Step 1: Opening the source PDF document
-In this step, we will open the source PDF file using Aspose.PDF for .NET. Follow the code below:
+## Étape 1 : Ouverture du document PDF source
+Dans cette étape, nous ouvrirons le fichier PDF source à l'aide d'Aspose.PDF pour .NET. Suivez le code ci-dessous :
 
 ```csharp
-// Path to the documents directory.
+// Chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Open the document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+ Assurez-vous de remplacer`"YOUR DOCUMENTS DIRECTORY"` avec le répertoire réel où se trouve votre fichier PDF.
 
-## Step 2: Enable font hinting
-After opening the PDF file, we will enable font hinting using the rendering options. Use the following code:
+## Étape 2 : Activer l'indication de police
+Après avoir ouvert le fichier PDF, nous activerons l’indication de police à l’aide des options de rendu. Utilisez le code suivant :
 
 ```csharp
-// Create rendering options to enable font hinting
+// Créer des options de rendu pour activer les indications de police
 RenderingOptions opts = new RenderingOptions();
 opts. UseFontHinting = true;
 ```
 
-## Step 3: Convert to PNG images
-Now we are going to convert each page of the PDF to a PNG image with font hinting. Use the following code:
+## Étape 3 : Convertir en images PNG
+Nous allons maintenant convertir chaque page du PDF en une image PNG avec des indications de police. Utilisez le code suivant :
 
 ```csharp
 for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 {
      using (FileStream imageStream = new FileStream(dataDir + "image" + pageCount + "_out" + ".png", FileMode.Create))
      {
-         // Create a PNGDevice object with the specified attributes
-         // Width, Height, Resolution, Quality
-         // Quality [0-100], 100 is the maximum
-         // Create a Resolution object
+         // Créer un objet PNGDevice avec les attributs spécifiés
+         // Largeur, hauteur, résolution, qualité
+         // Qualité [0-100], 100 est le maximum
+         // Créer un objet Résolution
          Resolution resolution = new Resolution(300);
          PngDevice pngDevice = new PngDevice(resolution);
-         // Set predefined rendering options
+         // Définir des options de rendu prédéfinies
          pngDevice.RenderingOptions = opts;
 
-         // Convert a specific page and save the image to the stream
+         // Convertissez une page spécifique et enregistrez l'image dans le flux
          pngDevice.Process(pdfDocument.Pages[pageCount], imageStream);
 
-         // Close the stream
+         // Fermer le flux
          imageStream.Close();
      }
 }
 ```
 
-The code above converts each page of the PDF to a PNG image with font hinting and saves each image as a separate PNG file.
+Le code ci-dessus convertit chaque page du PDF en une image PNG avec des indications de police et enregistre chaque image dans un fichier PNG distinct.
 
-### Example source code for PDF to PNGFont Hinting using Aspose.PDF for .NET
+### Exemple de code source pour PDF vers PNGFont Hinting à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
 try
 {
 	
-	// The path to the documents directory.
+	// Le chemin d'accès au répertoire des documents.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Open document
+	// Ouvrir le document
 	Document pdfDocument = new Document(dataDir + "input.pdf");
-	// Create Aspose.Pdf.RenderingOptions to enable font hinting
+	// Créez Aspose.Pdf.RenderingOptions pour activer les indications de police
 	RenderingOptions opts = new RenderingOptions();
 	opts.UseFontHinting = true;
 	
@@ -83,19 +83,19 @@ try
 	{
 		using (FileStream imageStream = new FileStream(dataDir + "image" + pageCount + "_out" + ".png", FileMode.Create))
 		{
-			// Create PNG device with specified attributes
-			// Width, Height, Resolution, Quality
-			// Quality [0-100], 100 is Maximum
-			// Create Resolution object
+			// Créer un périphérique PNG avec les attributs spécifiés
+			// Largeur, hauteur, résolution, qualité
+			// Qualité [0-100], 100 est maximum
+			// Créer un objet Résolution
 			Resolution resolution = new Resolution(300);
 			PngDevice pngDevice = new PngDevice(resolution);
-			// Set predefined rendering options
+			// Définir des options de rendu prédéfinies
 			pngDevice.RenderingOptions = opts;
 
-			// Convert a particular page and save the image to stream
+			//Convertissez une page particulière et enregistrez l'image pour diffuser
 			pngDevice.Process(pdfDocument.Pages[pageCount], imageStream);
 
-			// Close stream
+			// Fermer le flux
 			imageStream.Close();
 		}
 	}
@@ -108,22 +108,22 @@ catch (Exception ex)
 ```
 
 ## Conclusion
-In this tutorial, we covered the step-by-step process of converting PDF to PNG images with font hinting using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to convert every page of the PDF to a PNG image with font hinting. This feature is useful when you want to maintain the readability of small fonts when converting to PNG images.
+Dans ce didacticiel, nous avons couvert le processus étape par étape de conversion d'images PDF en PNG avec des indications de police à l'aide d'Aspose.PDF pour .NET. En suivant les instructions décrites ci-dessus, vous devriez maintenant pouvoir convertir chaque page du PDF en une image PNG avec des indications de police. Cette fonctionnalité est utile lorsque vous souhaitez conserver la lisibilité des petites polices lors de la conversion en images PNG.
 
-### FAQ's
+### FAQ
 
-#### Q: What is font hinting, and why is it important when converting PDF to PNG?
+#### Q : Qu'est-ce que l'indication de police et pourquoi est-elle importante lors de la conversion d'un PDF en PNG ?
 
-A: Font hinting is a technique used to improve the readability of small fonts by adjusting their shapes and positioning. When converting PDF to PNG images, enabling font hinting ensures that the text in the resulting PNG images remains legible and clear, especially for small font sizes. This is important for maintaining the quality and readability of text when converting PDF documents to images.
+R : Les indices de police sont une technique utilisée pour améliorer la lisibilité des petites polices en ajustant leur forme et leur positionnement. Lors de la conversion d'images PDF en images PNG, l'activation de l'indication de police garantit que le texte des images PNG résultantes reste lisible et clair, en particulier pour les petites tailles de police. Ceci est important pour maintenir la qualité et la lisibilité du texte lors de la conversion de documents PDF en images.
 
-#### Q: How does font hinting affect the PNG conversion process?
+#### Q : Comment les indications de police affectent-elles le processus de conversion PNG ?
 
-A: Font hinting affects the way the text is rendered in the resulting PNG images during the PDF to PNG conversion process. By enabling font hinting, the Aspose.PDF library adjusts the font rendering to ensure that small fonts retain their clarity and readability, making the PNG images more visually appealing and legible.
+R : Les indications de police affectent la façon dont le texte est rendu dans les images PNG résultantes pendant le processus de conversion PDF en PNG. En activant les indications de police, la bibliothèque Aspose.PDF ajuste le rendu des polices pour garantir que les petites polices conservent leur clarté et leur lisibilité, rendant les images PNG plus attrayantes et lisibles.
 
-#### Q: Can I adjust the font hinting settings to customize the PNG conversion?
+#### Q : Puis-je ajuster les paramètres d’indication de police pour personnaliser la conversion PNG ?
 
-A: Yes, the Aspose.PDF for .NET library provides options to customize the PNG conversion process, including font hinting settings. In the provided code example, the `UseFontHinting` property of the `RenderingOptions` object is set to `true` to enable font hinting. You can further fine-tune the conversion process by adjusting other properties in the `RenderingOptions` class according to your requirements.
+ R : Oui, la bibliothèque Aspose.PDF pour .NET propose des options pour personnaliser le processus de conversion PNG, y compris les paramètres d'indication de police. Dans l'exemple de code fourni, le`UseFontHinting` propriété du`RenderingOptions` l'objet est défini sur`true` pour activer l'indication de police. Vous pouvez affiner davantage le processus de conversion en ajustant d'autres propriétés dans le`RenderingOptions` classe selon vos besoins.
 
-#### Q: How are the PNG images saved in the PNG conversion process?
+#### Q : Comment les images PNG sont-elles enregistrées lors du processus de conversion PNG ?
 
-A: In the provided code example, each page of the PDF document is converted to a separate PNG image. The PNG images are saved as individual files with filenames following the pattern "image{pageCount}_out.png", where `{pageCount}` is the number of the page being converted. Each PNG image represents one page of the original PDF document.
+R : Dans l'exemple de code fourni, chaque page du document PDF est convertie en une image PNG distincte. Les images PNG sont enregistrées sous forme de fichiers individuels avec des noms de fichiers suivant le modèle "image{pageCount}_ out.png", où`{pageCount}` est le numéro de la page en cours de conversion. Chaque image PNG représente une page du document PDF original.

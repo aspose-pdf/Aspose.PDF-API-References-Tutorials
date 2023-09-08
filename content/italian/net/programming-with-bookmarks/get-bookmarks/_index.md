@@ -1,41 +1,41 @@
 ---
-title: Get Bookmarks In PDF File
-linktitle: Get Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get bookmark in PDF file with Aspose.PDF for .NET.
+title: Ottieni segnalibri nel file PDF
+linktitle: Ottieni segnalibri nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Ottieni facilmente il segnalibro nel file PDF con Aspose.PDF per .NET.
 type: docs
 weight: 70
 url: /it/net/programming-with-bookmarks/get-bookmarks/
 ---
-Retrieving bookmark in PDF file can be useful for analyzing the document's structure and navigational information. With Aspose.PDF for .NET, you can easily get the bookmarks by following the following source code:
+Il recupero dei segnalibri nel file PDF può essere utile per analizzare la struttura del documento e le informazioni di navigazione. Con Aspose.PDF per .NET, puoi facilmente ottenere i segnalibri seguendo il seguente codice sorgente:
 
-## Step 1: Import required libraries
+## Passaggio 1: importa le librerie richieste
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Prima di iniziare, devi importare le librerie necessarie per il tuo progetto C#. Ecco la necessaria direttiva sulle importazioni:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Passaggio 2: imposta il percorso della cartella dei documenti
 
-In this step, you need to specify the path to the folder containing the PDF file you want to extract the bookmarks from. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ In questo passaggio, devi specificare il percorso della cartella contenente il file PDF da cui desideri estrarre i segnalibri. Sostituire`"YOUR DOCUMENT DIRECTORY"`nel seguente codice con il percorso effettivo della cartella dei documenti:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Passaggio 3: apri il documento PDF
 
-Now we are going to open the PDF document from which we want to extract the bookmarks using the following code:
+Ora andremo ad aprire il documento PDF da cui vogliamo estrarre i segnalibri utilizzando il seguente codice:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetBookmarks.pdf");
 ```
 
-## Step 4: Browse Bookmarks
+## Passaggio 4: sfoglia i segnalibri
 
-In this step, we will iterate over all the bookmarks in the document using a `foreach` loop. For each bookmark, we will display the information such as title, italic style, bold style and color. Here is the corresponding code:
+ In questo passaggio, ripeteremo tutti i segnalibri nel documento utilizzando a`foreach`ciclo continuo. Per ogni segnalibro verranno visualizzate informazioni quali titolo, stile corsivo, stile grassetto e colore. Ecco il codice corrispondente:
 
 ```csharp
 foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
@@ -47,13 +47,13 @@ foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-### Sample source code for Get Bookmarks using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Ottieni segnalibri utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Apri documento
 Document pdfDocument = new Document(dataDir + "GetBookmarks.pdf");
-// Loop through all the bookmarks
+// Passa in rassegna tutti i segnalibri
 foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 {
 	Console.WriteLine(outlineItem.Title);
@@ -63,49 +63,49 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation ! Now you have a step by step guide to get bookmarks with Aspose.PDF for .NET. You can use this code to parse bookmarks and extract information associated with each bookmark in your PDF documents.
+Congratulazioni! Ora hai una guida passo passo per ottenere segnalibri con Aspose.PDF per .NET. Puoi utilizzare questo codice per analizzare i segnalibri ed estrarre le informazioni associate a ciascun segnalibro nei tuoi documenti PDF.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Assicurati di controllare la documentazione ufficiale Aspose.PDF per ulteriori informazioni sulle funzionalità avanzate di manipolazione dei segnalibri.
 
-### FAQ's for get bookmarks in PDF file
+### Domande frequenti su come ottenere i segnalibri nel file PDF
 
-#### Q: What are bookmarks in a PDF file?
+#### D: Cosa sono i segnalibri in un file PDF?
 
-A: Bookmarks in a PDF file are interactive elements that allow users to quickly navigate to specific sections or pages within the document. Bookmarks enhance the user experience by providing shortcuts to relevant content.
+R: I segnalibri in un file PDF sono elementi interattivi che consentono agli utenti di navigare rapidamente verso sezioni o pagine specifiche all'interno del documento. I segnalibri migliorano l'esperienza dell'utente fornendo collegamenti ai contenuti pertinenti.
 
-#### Q: Why would I want to retrieve bookmarks from a PDF file?
+#### D: Perché dovrei recuperare i segnalibri da un file PDF?
 
-A: Retrieving bookmarks helps you analyze the organization of a document and understand its hierarchy. It's particularly useful for documents with complex structures or multiple sections.
+R: Il recupero dei segnalibri aiuta ad analizzare l'organizzazione di un documento e a comprenderne la gerarchia. È particolarmente utile per documenti con strutture complesse o più sezioni.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### D: Come posso importare le librerie necessarie per il mio progetto C#?
 
-A: To import the required library for your C# project, use the following import directive:
+R: Per importare la libreria richiesta per il tuo progetto C#, utilizza la seguente direttiva di importazione:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive enables you to access the classes and methods provided by Aspose.PDF for .NET.
+Questa direttiva consente di accedere alle classi e ai metodi forniti da Aspose.PDF per .NET.
 
-#### Q: How do I specify the path to the documents folder?
+#### D: Come posso specificare il percorso della cartella dei documenti?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to extract bookmarks. This ensures that the code can locate the target PDF file.
+ R: Nel codice sorgente fornito, sostituisci`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della cartella contenente il file PDF da cui desideri estrarre i segnalibri. Ciò garantisce che il codice possa individuare il file PDF di destinazione.
 
-#### Q: How do I open a PDF document to extract bookmarks?
+#### D: Come posso aprire un documento PDF per estrarre i segnalibri?
 
-A: To open a PDF document for bookmark extraction, use the following code:
+R: Per aprire un documento PDF per l'estrazione dei segnalibri, utilizzare il seguente codice:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetBookmarks.pdf");
 ```
 
-Replace `"GetBookmarks.pdf"` with the actual file name.
+ Sostituire`"GetBookmarks.pdf"` con il nome effettivo del file.
 
-#### Q: How do I iterate through and display bookmark information?
+#### D: Come posso scorrere e visualizzare le informazioni sui segnalibri?
 
-A: Loop through all the bookmarks in the document using a `foreach` loop. For each bookmark, display information such as the title, italic style, bold style, and color:
+ R: Passa in rassegna tutti i segnalibri nel documento utilizzando a`foreach` ciclo continuo. Per ogni segnalibro, visualizza informazioni quali titolo, stile corsivo, stile grassetto e colore:
 
 ```csharp
 foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
@@ -117,18 +117,18 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-#### Q: Can I extract other properties of bookmarks using a similar approach?
+#### D: Posso estrarre altre proprietà dei segnalibri utilizzando un approccio simile?
 
-A: Yes, you can extract various properties of bookmarks using the `OutlineItemCollection` object. Refer to the Aspose.PDF documentation for a comprehensive list of available properties.
+ R: Sì, puoi estrarre varie proprietà dei segnalibri utilizzando il file`OutlineItemCollection` oggetto. Fare riferimento alla documentazione Aspose.PDF per un elenco completo delle proprietà disponibili.
 
-#### Q: How do I save changes to the PDF file after extracting bookmark information?
+#### D: Come posso salvare le modifiche al file PDF dopo aver estratto le informazioni sui segnalibri?
 
-A: Bookmark extraction does not modify the original PDF file. If you want to save any changes or perform other operations, you can explore additional methods provided by Aspose.PDF for .NET.
+R: L'estrazione dei segnalibri non modifica il file PDF originale. Se desideri salvare eventuali modifiche o eseguire altre operazioni, puoi esplorare metodi aggiuntivi forniti da Aspose.PDF per .NET.
 
-#### Q: What if the document has nested bookmarks?
+#### D: Cosa succede se il documento contiene segnalibri nidificati?
 
-A: If the document has nested bookmarks, the provided code will still iterate through and display each bookmark's information, including nested bookmarks.
+R: Se il documento ha segnalibri nidificati, il codice fornito continuerà a scorrere e visualizzerà le informazioni su ciascun segnalibro, inclusi i segnalibri nidificati.
 
-#### Q: Is there a limit to the number of bookmarks I can retrieve?
+#### D: Esiste un limite al numero di segnalibri che posso recuperare?
 
-A: There is typically no strict limit to the number of bookmarks you can retrieve using this method. However, very large documents with an excessive number of bookmarks may require efficient memory management.
+R: In genere non esiste un limite rigido al numero di segnalibri che è possibile recuperare utilizzando questo metodo. Tuttavia, documenti molto grandi con un numero eccessivo di segnalibri potrebbero richiedere una gestione efficiente della memoria.

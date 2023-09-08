@@ -1,17 +1,17 @@
 ---
-title: Add Hyperlink In PDF File
-linktitle: Add Hyperlink In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add interactive hyperlinks in PDF file with Aspose.PDF for .NET.
+title: Aggiungi collegamento ipertestuale nel file PDF
+linktitle: Aggiungi collegamento ipertestuale nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Aggiungi facilmente collegamenti ipertestuali interattivi nel file PDF con Aspose.PDF per .NET.
 type: docs
 weight: 10
 url: /it/net/programming-with-links-and-actions/add-hyperlink/
 ---
-Adding hyperlinks in PDF file allows you to create interactive hyperlinks to other pages, websites, or destinations in the document. With Aspose.PDF for .NET, you can easily add hyperlinks by following the following source code:
+L'aggiunta di collegamenti ipertestuali nel file PDF consente di creare collegamenti ipertestuali interattivi ad altre pagine, siti Web o destinazioni nel documento. Con Aspose.PDF per .NET, puoi facilmente aggiungere collegamenti ipertestuali seguendo il seguente codice sorgente:
 
-## Step 1: Import required libraries
+## Passaggio 1: importa le librerie richieste
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Prima di iniziare, devi importare le librerie necessarie per il tuo progetto C#. Ecco la necessaria direttiva sulle importazioni:
 
 ```csharp
 using Aspose.Pdf;
@@ -19,25 +19,25 @@ using Aspose.Pdf.Annotations;
 using Aspose.Pdf.Text;
 ```
 
-## Step 2: Set path to documents folder
+## Passaggio 2: imposta il percorso della cartella dei documenti
 
-In this step, you need to specify the path to the folder containing the PDF file you want to add a hyperlink to. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+In questo passaggio, devi specificare il percorso della cartella contenente il file PDF a cui desideri aggiungere un collegamento ipertestuale. Sostituire`"YOUR DOCUMENT DIRECTORY"`nel seguente codice con il percorso effettivo della cartella dei documenti:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Passaggio 3: apri il documento PDF
 
-Now we will open the PDF document to which we want to add a hyperlink using the following code:
+Ora apriremo il documento PDF a cui vogliamo aggiungere un collegamento ipertestuale utilizzando il seguente codice:
 
 ```csharp
 Document document = new Document(dataDir + "AddHyperlink.pdf");
 ```
 
-## Step 4: Create a link
+## Passaggio 4: crea un collegamento
 
-In this step, we will create a hyperlink using the `LinkAnnotation` annotation. We will specify the contact details and area of the link, the type of link and the content of the link. Here is the corresponding code:
+ In questo passaggio, creeremo un collegamento ipertestuale utilizzando il file`LinkAnnotation` annotazione. Specificheremo i dettagli di contatto e l'area del collegamento, il tipo di collegamento e il contenuto del collegamento. Ecco il codice corrispondente:
 
 ```csharp
 Page page = document.Pages[1];
@@ -49,9 +49,9 @@ link. Action = new GoToURIAction("www.aspose.com");
 page.Annotations.Add(link);
 ```
 
-## Step 5: Add additional text
+## Passaggio 5: aggiungi testo aggiuntivo
 
-In addition to the hyperlink, we can also add additional text using the `FreeTextAnnotation` annotation. We will specify coordinates, text appearance and text content. Here is the corresponding code:
+ Oltre al collegamento ipertestuale, possiamo anche aggiungere testo aggiuntivo utilizzando il file`FreeTextAnnotation` annotazione. Specificheremo le coordinate, l'aspetto del testo e il contenuto del testo. Ecco il codice corrispondente:
 
 ```csharp
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(document.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), new DefaultAppearance(Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman"), 10, System .Drawing.Color.Blue));
@@ -60,83 +60,83 @@ textAnnotation. Border = border;
 document.Pages[1].Annotations.Add(textAnnotation);
 ```
 
-## Step 6: Save the updated file
+## Passaggio 6: salva il file aggiornato
 
-Now let's save the updated PDF file using the `Save` method of the `document` object. Here is the corresponding code:
+ Ora salviamo il file PDF aggiornato utilizzando il file`Save` metodo del`document` oggetto. Ecco il codice corrispondente:
 
 ```csharp
 dataDir = dataDir + "AddHyperlink_out.pdf";
 document. Save(dataDir);
 ```
 
-### Sample source code for Add Hyperlink using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Aggiungi collegamento ipertestuale utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Apri documento
 Document document = new Document(dataDir + "AddHyperlink.pdf");
-// Create link
+// Crea collegamento
 Page page = document.Pages[1];
-// Create Link annotation object
+// Crea un oggetto di annotazione del collegamento
 LinkAnnotation link = new LinkAnnotation(page, new Aspose.Pdf.Rectangle(100, 100, 300, 300));
-// Create border object for LinkAnnotation
+// Crea un oggetto bordo per LinkAnnotation
 Border border = new Border(link);
-// Set the border width value as 0
+// Imposta il valore della larghezza del bordo su 0
 border.Width = 0;
-// Set the border for LinkAnnotation
+// Imposta il bordo per LinkAnnotation
 link.Border = border;
-// Specify the link type as remote URI
+// Specificare il tipo di collegamento come URI remoto
 link.Action = new GoToURIAction("www.aspose.com");
-// Add link annotation to annotations collection of first page of PDF file
+//Aggiungi l'annotazione del collegamento alla raccolta di annotazioni della prima pagina del file PDF
 page.Annotations.Add(link);
-// Create Free Text annotation
+// Crea annotazione di testo libero
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(document.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), new DefaultAppearance(Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman"), 10, System.Drawing.Color.Blue));
-// String to be added as Free text
+// Stringa da aggiungere come testo libero
 textAnnotation.Contents = "Link to Aspose website";
-// Set the border for Free Text Annotation
+// Imposta il bordo per l'annotazione di testo libero
 textAnnotation.Border = border;
-// Add FreeText annotation to annotations collection of first page of Document
+// Aggiungi l'annotazione FreeText alla raccolta di annotazioni della prima pagina del documento
 document.Pages[1].Annotations.Add(textAnnotation);
 dataDir = dataDir + "AddHyperlink_out.pdf";
-// Save updated document
+// Salva documento aggiornato
 document.Save(dataDir);
 Console.WriteLine("\nHyperlink added successfully.\nFile saved at " + dataDir);            
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation ! You now have a step-by-step guide to adding hyperlinks with Aspose.PDF for .NET. You can use this code to create interactive links in your PDF documents.
+Congratulazioni! Ora hai una guida passo passo per aggiungere collegamenti ipertestuali con Aspose.PDF per .NET. Puoi utilizzare questo codice per creare collegamenti interattivi nei tuoi documenti PDF.
 
-### FAQ's for add hyperlink in PDF file
+### Domande frequenti per aggiungere un collegamento ipertestuale nel file PDF
 
-#### Q: Why should I consider adding hyperlinks to my PDF files?
+#### D: Perché dovrei considerare l'aggiunta di collegamenti ipertestuali ai miei file PDF?
 
-A: Adding hyperlinks to your PDF files enhances user experience by allowing readers to easily navigate to other pages, websites, or destinations within the document. It provides a seamless way to access additional resources or related information.
+R: L'aggiunta di collegamenti ipertestuali ai file PDF migliora l'esperienza dell'utente consentendo ai lettori di spostarsi facilmente verso altre pagine, siti Web o destinazioni all'interno del documento. Fornisce un modo semplice per accedere a risorse aggiuntive o informazioni correlate.
 
-#### Q: Is Aspose.PDF for .NET suitable for beginners?
+#### D: Aspose.PDF per .NET è adatto ai principianti?
 
-A: Yes, Aspose.PDF for .NET is beginner-friendly. The step-by-step tutorial provided in this guide simplifies the process of adding hyperlinks to PDF files, making it accessible to developers of varying skill levels.
+R: Sì, Aspose.PDF per .NET è adatto ai principianti. Il tutorial passo passo fornito in questa guida semplifica il processo di aggiunta di collegamenti ipertestuali ai file PDF, rendendolo accessibile a sviluppatori con diversi livelli di competenza.
 
-#### Q: Can I customize the appearance of the hyperlinks?
+#### D: Posso personalizzare l'aspetto dei collegamenti ipertestuali?
 
-A: Absolutely! Aspose.PDF for .NET offers customization options for hyperlink appearance, including text color, style, and formatting. This allows you to match the hyperlinks to the overall design of your document.
+R: Assolutamente! Aspose.PDF per .NET offre opzioni di personalizzazione per l'aspetto del collegamento ipertestuale, inclusi colore, stile e formattazione del testo. Ciò ti consente di abbinare i collegamenti ipertestuali al design generale del tuo documento.
 
-#### Q: Are hyperlinks supported in all types of PDF documents?
+#### D: I collegamenti ipertestuali sono supportati in tutti i tipi di documenti PDF?
 
-A: Yes, hyperlinks can be added to various types of PDF documents, including text-based documents, images, and multimedia-rich files. Aspose.PDF for .NET ensures that the hyperlinks are functional across different PDF formats.
+R: Sì, è possibile aggiungere collegamenti ipertestuali a vari tipi di documenti PDF, inclusi documenti basati su testo, immagini e file ricchi di contenuti multimediali. Aspose.PDF per .NET garantisce che i collegamenti ipertestuali siano funzionali in diversi formati PDF.
 
-#### Q: What other functionalities does Aspose.PDF for .NET offer?
+#### D: Quali altre funzionalità offre Aspose.PDF per .NET?
 
-A: Aspose.PDF for .NET is a robust library that provides a wide range of features, including PDF generation, manipulation, conversion, and extraction. It supports working with text, images, annotations, and more, making it a versatile tool for PDF-related tasks.
+R: Aspose.PDF per .NET è una solida libreria che fornisce un'ampia gamma di funzionalità, tra cui la generazione, la manipolazione, la conversione e l'estrazione di PDF. Supporta il lavoro con testo, immagini, annotazioni e altro, rendendolo uno strumento versatile per le attività relative ai PDF.
 
-#### Q: Can hyperlinks be added to specific sections within the document?
+#### D: È possibile aggiungere collegamenti ipertestuali a sezioni specifiche del documento?
 
-A: Yes, using the `LinkAnnotation` annotation, you can create hyperlinks that direct users to specific sections within the PDF document. This feature is particularly useful for creating interactive table of contents or reference links.
+ R: Sì, utilizzando il`LinkAnnotation` annotazione, è possibile creare collegamenti ipertestuali che indirizzano gli utenti a sezioni specifiche all'interno del documento PDF. Questa funzionalità è particolarmente utile per creare sommari interattivi o collegamenti di riferimento.
 
-#### Q: Are there any limitations to adding hyperlinks in PDF files?
+#### D: Esistono limitazioni all'aggiunta di collegamenti ipertestuali nei file PDF?
 
-A: While Aspose.PDF for .NET offers comprehensive hyperlink functionality, it's important to ensure that the linked content remains accessible and up-to-date. Hyperlinks to external websites should be regularly verified to avoid broken links.
+R: Sebbene Aspose.PDF per .NET offra funzionalità di collegamento ipertestuale complete, è importante garantire che il contenuto collegato rimanga accessibile e aggiornato. I collegamenti ipertestuali a siti Web esterni dovrebbero essere verificati regolarmente per evitare collegamenti interrotti.
 
-#### Q: Can I create hyperlinks to external files using Aspose.PDF for .NET?
+#### D: Posso creare collegamenti ipertestuali a file esterni utilizzando Aspose.PDF per .NET?
 
-A: Yes, in addition to web URLs, you can create hyperlinks that lead to external files, such as other PDF documents, images, or multimedia files. Aspose.PDF for .NET provides the flexibility to link to various types of resources.
+R: Sì, oltre agli URL Web, puoi creare collegamenti ipertestuali che portano a file esterni, come altri documenti PDF, immagini o file multimediali. Aspose.PDF per .NET offre la flessibilità di collegarsi a vari tipi di risorse.

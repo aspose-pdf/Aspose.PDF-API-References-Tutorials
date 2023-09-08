@@ -1,61 +1,61 @@
 ---
-title: Identify Images In PDF File
-linktitle: Identify Images In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily identify images in PDF file and determine their color type with Aspose.PDF for .NET.
+title: PDF Dosyasındaki Görüntüleri Tanımlayın
+linktitle: PDF Dosyasındaki Görüntüleri Tanımlayın
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasındaki görüntüleri kolayca tanımlayın ve renk türlerini belirleyin.
 type: docs
 weight: 150
 url: /tr/net/programming-with-images/identify-images/
 ---
-This guide will take you step by step how to identify images in PDF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+Bu kılavuz, Aspose.PDF for .NET kullanarak PDF dosyasındaki görüntüleri nasıl tanımlayacağınızı adım adım anlatacaktır. Ortamınızı zaten kurduğunuzdan emin olun ve aşağıdaki adımları izleyin:
 
-## Step 1: Define the document directory
+## 1. Adım: Belge dizinini tanımlayın
 
-Make sure to set the correct document directory. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+ Doğru belge dizinini ayarladığınızdan emin olun. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF belgenizin bulunduğu dizinin yolunu içeren kodda.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Initialize the counters
+## Adım 2: Sayaçları başlatın
 
-In this step, we will initialize the counters for grayscale images and RGB images.
+Bu adımda gri tonlamalı görüntüler ve RGB görüntüler için sayaçları başlatacağız.
 
 ```csharp
-int grayscaled = 0; // Counter for grayscale images
-int rdg = 0; // Counter for RGB images
+int grayscaled = 0; // Gri tonlamalı görüntüler için sayaç
+int rdg = 0; // RGB görüntüler için sayaç
 ```
 
-## Step 3: Open the PDF document
+## 3. Adım: PDF belgesini açın
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+Bu adımda PDF belgesini aşağıdaki komutu kullanarak açacağız:`Document` Aspose.PDF sınıfı. Kullan`Document` yapıcıya gidin ve yolu PDF belgesine iletin.
 
 ```csharp
 using (Document document = new Document(dataDir + "ExtractImages.pdf"))
 {
 ```
 
-## Step 4: Browse Document Pages
+## Adım 4: Belge Sayfalarına Göz Atın
 
-In this step, we will go through all the pages of the PDF document and identify the images on each page.
+Bu adımda PDF belgesinin tüm sayfalarını inceleyeceğiz ve her sayfadaki görselleri tanımlayacağız.
 
 ```csharp
 foreach(Page page in document.Pages)
 {
 ```
 
-## Step 5: Retrieve image placements
+## 5. Adım: Resim yerleşimlerini alın
 
-In this step, we will use `ImagePlacementAbsorber` to retrieve image placements on each page.
+ Bu adımda kullanacağımız`ImagePlacementAbsorber` Her sayfadaki resim yerleşimlerini almak için.
 
 ```csharp
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
 page. Accept(abs);
 ```
 
-## Step 6: Count the images and identify their color type
+## 6. Adım: Resimleri sayın ve renk türlerini belirleyin
 
-In this step, we will count the number of images on each page and identify their color type (grayscale or RGB).
+Bu adımda, her sayfadaki görsellerin sayısını sayacağız ve renk türlerini (gri tonlamalı veya RGB) belirleyeceğiz.
 
 ```csharp
 Console.WriteLine("Total Images = {0} on page number {1}", abs.ImagePlacements.Count, page.Number);
@@ -78,13 +78,13 @@ foreach(ImagePlacement ia in abs.ImagePlacements)
 }
 ```
 
-### Sample source code for Identify Images using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Görüntü Tanımlama için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Counter for grayscale images
+// Gri tonlamalı görüntüler için sayaç
 int grayscaled = 0;
-// Counter for RGB images
+// RGB görüntüler için sayaç
 int rgd = 0;
 using (Document document = new Document(dataDir + "ExtractImages.pdf"))
 {
@@ -93,7 +93,7 @@ using (Document document = new Document(dataDir + "ExtractImages.pdf"))
 		Console.WriteLine("--------------------------------");
 		ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
 		page.Accept(abs);
-		// Get the count of images over specific page
+		// Belirli bir sayfadaki görsellerin sayısını alın
 		Console.WriteLine("Total Images = {0} over page number {1}", abs.ImagePlacements.Count, page.Number);
 		// Document.Pages[29].Accept(abs);
 		int image_counter = 1;
@@ -117,44 +117,44 @@ using (Document document = new Document(dataDir + "ExtractImages.pdf"))
 }
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have successfully identified images in a PDF using Aspose.PDF for .NET. The images were counted and their color type (grayscale or RGB) was identified. You can now use this information for your specific needs.
+Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF'deki görselleri başarıyla tanımladınız. Görüntüler sayıldı ve renk türleri (gri tonlamalı veya RGB) belirlendi. Artık bu bilgileri özel ihtiyaçlarınız için kullanabilirsiniz.
 
-### FAQ's for identify images in PDF file
+### PDF dosyasındaki görselleri tanımlamak için SSS'ler
 
-#### Q: What is the purpose of identifying images in a PDF document?
+#### S: Bir PDF belgesindeki görüntüleri tanımlamanın amacı nedir?
 
-A: Identifying images in a PDF document helps users analyze and categorize the images based on their color type (grayscale or RGB). This information can be useful for various purposes, such as image processing, data analysis, or quality control.
+C: Bir PDF belgesindeki görüntüleri tanımlamak, kullanıcıların görüntüleri renk türlerine (gri tonlamalı veya RGB) göre analiz etmesine ve kategorilere ayırmasına yardımcı olur. Bu bilgiler görüntü işleme, veri analizi veya kalite kontrol gibi çeşitli amaçlar için yararlı olabilir.
 
-#### Q: How does Aspose.PDF for .NET assist in identifying images within a PDF document?
+#### S: Aspose.PDF for .NET, bir PDF belgesindeki görüntülerin tanımlanmasına nasıl yardımcı olur?
 
-A: Aspose.PDF for .NET provides a straightforward process to open a PDF document, iterate through its pages, and identify images using the `ImagePlacementAbsorber` class.
+ C: Aspose.PDF for .NET, bir PDF belgesini açmak, sayfalarını yinelemek ve görüntüleri tanımlamak için basit bir işlem sağlar.`ImagePlacementAbsorber` sınıf.
 
-#### Q: What is the significance of differentiating between grayscale and RGB images?
+#### S: Gri tonlamalı ve RGB görüntüler arasında ayrım yapmanın önemi nedir?
 
-A: Differentiating between grayscale and RGB images helps in understanding the color composition of images within the PDF document. Grayscale images contain only shades of gray, while RGB images consist of red, green, and blue color channels.
+C: Gri tonlamalı ve RGB görselleri birbirinden ayırmak, PDF belgesindeki görsellerin renk kompozisyonunun anlaşılmasına yardımcı olur. Gri tonlamalı görüntüler yalnızca grinin tonlarını içerirken RGB görüntüler kırmızı, yeşil ve mavi renk kanallarından oluşur.
 
-#### Q: How are grayscale and RGB images counted and identified using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanılarak gri tonlamalı ve RGB görüntüler nasıl sayılır ve tanımlanır?
 
-A: The `ImagePlacementAbsorber` class is used to retrieve image placements on each page. The `GetColorType()` method is then applied to each image placement to determine whether it is grayscale or RGB.
+ C:`ImagePlacementAbsorber` class, her sayfadaki resim yerleşimlerini almak için kullanılır.`GetColorType()` Daha sonra yöntem, gri tonlamalı mı yoksa RGB mi olduğunu belirlemek için her görüntü yerleşimine uygulanır.
 
-#### Q: Can I modify the code to perform additional actions based on image color type?
+#### S: Görüntünün renk türüne göre ek eylemler gerçekleştirmek için kodu değiştirebilir miyim?
 
-A: Yes, you can customize the code to perform specific actions based on the image color type. For example, you can extract grayscale images for further processing or apply different optimization techniques based on color type.
+C: Evet, resmin renk türüne göre belirli eylemleri gerçekleştirmek için kodu özelleştirebilirsiniz. Örneğin, gri tonlamalı görüntüleri daha ileri işlemler için çıkarabilir veya renk türüne göre farklı optimizasyon teknikleri uygulayabilirsiniz.
 
-#### Q: How does the `ImagePlacementAbsorber` class contribute to identifying images?
+####  S: Nasıl`ImagePlacementAbsorber` class contribute to identifying images?
 
-A: The `ImagePlacementAbsorber` class scans a page for image placements, allowing you to retrieve information about images, including their color type.
+ C:`ImagePlacementAbsorber` class, görüntü yerleşimleri için bir sayfayı tarayarak, görüntüler hakkında, renk türleri de dahil olmak üzere bilgi almanıza olanak tanır.
 
-#### Q: Is the identified image count cumulative across all pages of the PDF document?
+#### S: Tanımlanan görsel sayısı PDF belgesinin tüm sayfalarında kümülatif mi?
 
-A: Yes, the image count is cumulative across all pages. The code iterates through each page of the PDF document and counts the images on each page.
+C: Evet, resim sayısı tüm sayfalarda kümülatiftir. Kod, PDF belgesinin her sayfasında yinelenir ve her sayfadaki görüntüleri sayar.
 
-#### Q: Can I use this image identification for automating image-related tasks in PDF documents?
+#### S: Bu görüntü tanımlamayı PDF belgelerindeki görselle ilgili görevleri otomatikleştirmek için kullanabilir miyim?
 
-A: Yes, identifying images in PDF documents can be useful for automating tasks such as image extraction, conversion, or manipulation based on color type.
+C: Evet, PDF belgelerindeki görüntüleri tanımlamak, görüntü çıkarma, dönüştürme veya renk türüne göre düzenleme gibi görevleri otomatikleştirmek için yararlı olabilir.
 
-#### Q: How does this image identification process benefit PDF document processing?
+#### S: Bu görüntü tanımlama süreci PDF belge işlemeye nasıl fayda sağlar?
 
-A: Image identification provides valuable insights into the color composition of images, enabling better understanding and processing of PDF documents containing images.
+C: Görüntü tanımlama, görüntülerin renk kompozisyonuna ilişkin değerli bilgiler sağlayarak, görüntüleri içeren PDF belgelerinin daha iyi anlaşılmasını ve işlenmesini sağlar.

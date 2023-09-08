@@ -1,107 +1,107 @@
 ---
-title: Get XFAProperties
-linktitle: Get XFAProperties
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get XFA properties of form fields in your PDF documents with Aspose.PDF for .NET.
+title: Holen Sie sich XFAProperties
+linktitle: Holen Sie sich XFAProperties
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erhalten Sie mit Aspose.PDF für .NET ganz einfach XFA-Eigenschaften von Formularfeldern in Ihren PDF-Dokumenten.
 type: docs
 weight: 160
 url: /de/net/programming-with-forms/get-xfaproperties/
 ---
-In this tutorial, we will show you how to get XFA properties of form fields in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET XFA-Eigenschaften von Formularfeldern in einem PDF-Dokument abrufen. Wir erklären Ihnen Schritt für Schritt den C#-Quellcode, um Sie durch diesen Prozess zu führen.
 
-## Step 1: Preparation
+## Schritt 1: Vorbereitung
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Stellen Sie sicher, dass Sie die erforderlichen Bibliotheken importiert und den Pfad zu Ihrem Dokumentenverzeichnis festgelegt haben:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the XFA form
+## Schritt 2: Laden Sie das XFA-Formular
 
-Load the XFA form from the PDF document:
+Laden Sie das XFA-Formular aus dem PDF-Dokument:
 
 ```csharp
 Document doc = new Document(dataDir + "GetXFAProperties.pdf");
 ```
 
-## Step 3: Get field names
+## Schritt 3: Feldnamen abrufen
 
-Get XFA field names:
+XFA-Feldnamen abrufen:
 
 ```csharp
 string[] names = doc.Form.XFA.FieldNames;
 ```
 
-## Step 4: Set Field Values
+## Schritt 4: Feldwerte festlegen
 
-Set values for XFA fields:
+Legen Sie Werte für XFA-Felder fest:
 
 ```csharp
 doc.Form.XFA[names[0]] = "Field 0";
 doc.Form.XFA[names[1]] = "Field 1";
 ```
 
-## Step 5: Get fields position
+## Schritt 5: Position der Felder ermitteln
 
-Get the position of XFA fields:
+Ermitteln Sie die Position der XFA-Felder:
 
 ```csharp
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["x"].Value);
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["y"].Value);
 ```
 
-## Step 6: Save the updated document
+## Schritt 6: Speichern Sie das aktualisierte Dokument
 
-Save the updated PDF document:
+Speichern Sie das aktualisierte PDF-Dokument:
 
 ```csharp
 dataDir = dataDir + "Filled_XFA_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Get XFAProperties using Aspose.PDF for .NET 
+### Beispielquellcode für „Get XFAProperties“ mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load XFA form
+// Laden Sie das XFA-Formular
 Document doc = new Document(dataDir + "GetXFAProperties.pdf");
 string[] names = doc.Form.XFA.FieldNames;
-// Set field values
+// Feldwerte festlegen
 doc.Form.XFA[names[0]] = "Field 0";
 doc.Form.XFA[names[1]] = "Field 1";
-// Get field position
+// Feldposition abrufen
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["x"].Value);
-// Get field position
+// Feldposition abrufen
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["y"].Value);
 dataDir = dataDir + "Filled_XFA_out.pdf";
-// Save the updated document
+// Speichern Sie das aktualisierte Dokument
 doc.Save(dataDir);
 Console.WriteLine("\nXFA fields properties retrieved successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we learned how to get XFA properties of form fields in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily extract XFA field information, such as positions, from PDF documents using Aspose.PDF.
+In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET XFA-Eigenschaften von Formularfeldern in einem PDF-Dokument erhält. Wenn Sie diese Schritte befolgen, können Sie mit Aspose.PDF ganz einfach XFA-Feldinformationen, wie z. B. Positionen, aus PDF-Dokumenten extrahieren.
 
-### FAQ's
+### FAQs
 
-#### Q: What are XFA properties in a PDF document?
+#### F: Was sind XFA-Eigenschaften in einem PDF-Dokument?
 
-A: XFA (XML Forms Architecture) properties in a PDF document refer to the XML-based structure used to define dynamic forms with complex layouts and interactive features. XFA allows for rich form design and data handling in PDF documents, enabling features such as calculations, validations, and dynamic content. Aspose.PDF for .NET provides APIs to work with XFA forms and retrieve various properties, including field names, values, positions, and more.
+A: XFA-Eigenschaften (XML Forms Architecture) in einem PDF-Dokument beziehen sich auf die XML-basierte Struktur, die zum Definieren dynamischer Formulare mit komplexen Layouts und interaktiven Funktionen verwendet wird. XFA ermöglicht eine umfassende Formulargestaltung und Datenverarbeitung in PDF-Dokumenten und ermöglicht Funktionen wie Berechnungen, Validierungen und dynamische Inhalte. Aspose.PDF für .NET bietet APIs zum Arbeiten mit XFA-Formularen und zum Abrufen verschiedener Eigenschaften, einschließlich Feldnamen, Werte, Positionen und mehr.
 
-#### Q: Can I modify XFA properties using Aspose.PDF for .NET?
+#### F: Kann ich XFA-Eigenschaften mit Aspose.PDF für .NET ändern?
 
-A: Yes, you can modify XFA properties using Aspose.PDF for .NET. The API allows you to access and update the values of XFA form fields programmatically. You can set new values for XFA fields, update their positions, change appearances, and perform other actions to customize the XFA form dynamically.
+A: Ja, Sie können XFA-Eigenschaften mit Aspose.PDF für .NET ändern. Mit der API können Sie programmgesteuert auf die Werte von XFA-Formularfeldern zugreifen und diese aktualisieren. Sie können neue Werte für XFA-Felder festlegen, ihre Positionen aktualisieren, das Erscheinungsbild ändern und andere Aktionen ausführen, um das XFA-Formular dynamisch anzupassen.
 
-#### Q: How can I determine if a PDF document contains XFA forms?
+#### F: Wie kann ich feststellen, ob ein PDF-Dokument XFA-Formulare enthält?
 
-A: To determine if a PDF document contains XFA forms, you can check whether the `Form` property of the `Document` object is null or not. If the document contains XFA forms, the `Form` property will be available, and you can proceed with further XFA-related operations.
+ A: Um festzustellen, ob ein PDF-Dokument XFA-Formulare enthält, können Sie prüfen, ob die`Form` Eigentum der`Document`Objekt ist null oder nicht. Wenn das Dokument XFA-Formulare enthält, wird die`Form` Die Eigenschaft wird verfügbar sein und Sie können mit weiteren XFA-bezogenen Vorgängen fortfahren.
 
-#### Q: Are XFA forms supported in all PDF viewers and applications?
+#### F: Werden XFA-Formulare in allen PDF-Viewern und -Anwendungen unterstützt?
 
-A: While XFA forms provide rich interactive form features, they may not be supported in all PDF viewers and applications. Some PDF viewers may only support AcroForm-based forms, which are another form type used in PDF documents. It's essential to consider the compatibility of XFA forms with the target audience and the intended use of the PDF document.
+A: Obwohl XFA-Formulare umfangreiche interaktive Formularfunktionen bieten, werden sie möglicherweise nicht in allen PDF-Viewern und -Anwendungen unterstützt. Einige PDF-Viewer unterstützen möglicherweise nur AcroForm-basierte Formulare, einen weiteren Formulartyp, der in PDF-Dokumenten verwendet wird. Es ist wichtig, die Kompatibilität von XFA-Formularen mit der Zielgruppe und dem Verwendungszweck des PDF-Dokuments zu berücksichtigen.
 
-#### Q: Can I convert XFA forms to AcroForm-based forms using Aspose.PDF for .NET?
+#### F: Kann ich XFA-Formulare mit Aspose.PDF für .NET in AcroForm-basierte Formulare konvertieren?
 
-A: Aspose.PDF for .NET provides capabilities to convert XFA forms to AcroForm-based forms. By converting XFA forms to AcroForm, you can ensure broader compatibility with various PDF viewers and applications that may not fully support XFA. You can follow the appropriate APIs and techniques to perform the conversion as per your requirements.
+A: Aspose.PDF für .NET bietet Funktionen zum Konvertieren von XFA-Formularen in AcroForm-basierte Formulare. Durch die Konvertierung von XFA-Formularen in AcroForm können Sie eine umfassendere Kompatibilität mit verschiedenen PDF-Viewern und Anwendungen sicherstellen, die XFA möglicherweise nicht vollständig unterstützen. Sie können die entsprechenden APIs und Techniken befolgen, um die Konvertierung gemäß Ihren Anforderungen durchzuführen.

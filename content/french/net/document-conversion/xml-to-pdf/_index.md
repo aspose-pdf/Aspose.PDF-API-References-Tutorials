@@ -1,92 +1,92 @@
 ---
-title: XML To PDF
-linktitle: XML To PDF
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert XML file to PDF using Aspose.PDF for .NET.
+title: XML en PDF
+linktitle: XML en PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Guide étape par étape pour convertir un fichier XML en PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 330
 url: /fr/net/document-conversion/xml-to-pdf/
 ---
-In this tutorial, we will walk you through how to convert XML file to PDF using Aspose.PDF library for .NET step by step. We'll detail the provided C# source code and show you how to implement it in your own projects. By the end of this tutorial, you will be able to easily convert XML files to PDF documents.
+Dans ce didacticiel, nous vous expliquerons étape par étape comment convertir un fichier XML en PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Nous détaillerons le code source C# fourni et vous montrerons comment l'implémenter dans vos propres projets. À la fin de ce didacticiel, vous serez en mesure de convertir facilement des fichiers XML en documents PDF.
 
-## Step 1: Set Documents Directory
+## Étape 1 : Définir le répertoire des documents
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
-Replace `"YOUR DOCUMENTS DIRECTORY"` with the path where you want to save the generated PDF file.
+ Remplacer`"YOUR DOCUMENTS DIRECTORY"` avec le chemin où vous souhaitez enregistrer le fichier PDF généré.
 
-## Step 2: Instantiate a Document object
+## Étape 2 : Instancier un objet Document
 ```csharp
 Document doc = new Document();
 ```
-Create an instance of the Document object.
+Créez une instance de l'objet Document.
 
-## Step 3: Link the source XML file
+## Étape 3 : Lier le fichier XML source
 ```csharp
 doc.BindXml(dataDir + "sample.xml");
 ```
-Links the source XML file to the document.
+Lie le fichier XML source au document.
 
-## Step 4: Get Page Object Reference from XML
+## Étape 4 : Obtenir la référence d'un objet de page à partir de XML
 ```csharp
 Page page = (Page)doc.GetObjectById("mainSection");
 ```
-Get the Page object reference from the XML using its ID.
+Obtenez la référence de l'objet Page à partir du XML en utilisant son ID.
 
-## Step 5: Get the text segment reference from the XML
+## Étape 5 : Obtenez la référence du segment de texte à partir du XML
 ```csharp
 TextSegment segment = (TextSegment)doc.GetObjectById("boldHtml");
 segment = (TextSegment)doc.GetObjectById("strongHtml");
 ```
-Get reference of text segments from XML using their IDs. You can add more segments as needed.
+Obtenez la référence des segments de texte à partir de XML en utilisant leurs identifiants. Vous pouvez ajouter d'autres segments si nécessaire.
 
-## Step 6: Save the Resulting PDF File
+## Étape 6 : Enregistrez le fichier PDF résultant
 ```csharp
 doc.Save(dataDir + "XMLToPDF_out.pdf");
 ```
-Save the resulting PDF file to the specified directory.
+Enregistrez le fichier PDF résultant dans le répertoire spécifié.
 
-### Example source code for XML to PDF using Aspose.PDF for .NET
+### Exemple de code source pour XML en PDF à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document object
+// Instancier l'objet Document
 Document doc = new Document();
-// Bind source XML file
+// Lier le fichier XML source
 doc.BindXml( dataDir + "sample.xml");
-// Get reference of page object from XML
+// Obtenir la référence de l'objet de page à partir de XML
 Page page = (Page)doc.GetObjectById("mainSection");
-// Get reference of first TextSegment with ID boldHtml
+// Obtenir la référence du premier TextSegment avec l'ID boldHtml
 TextSegment segment = (TextSegment)doc.GetObjectById("boldHtml");
-// Get reference of second TextSegment with ID strongHtml
+// Obtenir la référence du deuxième TextSegment avec l'ID strongHtml
 segment = (TextSegment)doc.GetObjectById("strongHtml");
-// Save resultant PDF file
+// Enregistrer le fichier PDF résultant
 doc.Save(dataDir + "XMLToPDF_out.pdf");
 ```
 
 ## Conclusion
-In this tutorial, we learned how to convert an XML file to PDF using the Aspose.PDF library for .NET. We have detailed the provided C# source code and explained each step of the conversion process. By following these instructions, you can easily integrate XML to PDF conversion functionality into your own .NET applications.
+Dans ce didacticiel, nous avons appris à convertir un fichier XML en PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Nous avons détaillé le code source C# fourni et expliqué chaque étape du processus de conversion. En suivant ces instructions, vous pouvez facilement intégrer la fonctionnalité de conversion XML en PDF dans vos propres applications .NET.
 
-### FAQ's
+### FAQ
 
-#### Q: What is Aspose.PDF for .NET?
+#### Q : Qu'est-ce qu'Aspose.PDF pour .NET ?
 
-A: Aspose.PDF for .NET is a robust library that enables developers to work with PDF documents in C# applications. It offers various features, including the ability to convert XML files to PDF.
+: Aspose.PDF pour .NET est une bibliothèque robuste qui permet aux développeurs de travailler avec des documents PDF dans des applications C#. Il offre diverses fonctionnalités, notamment la possibilité de convertir des fichiers XML en PDF.
 
-#### Q: Why would I want to convert XML to PDF?
+#### Q : Pourquoi voudrais-je convertir du XML en PDF ?
 
-A: Converting XML to PDF can be beneficial for various reasons. It allows you to generate printable, structured documents from XML data, preserving the content and layout in a PDF format. This is useful for reporting, document generation, and archiving purposes.
+R : La conversion de XML en PDF peut être bénéfique pour diverses raisons. Il vous permet de générer des documents imprimables et structurés à partir de données XML, en préservant le contenu et la mise en page au format PDF. Ceci est utile à des fins de création de rapports, de génération de documents et d’archivage.
 
-#### Q: Can I customize the appearance of the PDF output?
+#### Q : Puis-je personnaliser l’apparence de la sortie PDF ?
 
-A: Yes, you can customize the appearance of the PDF output. In the provided code, the segments with IDs "boldHtml" and "strongHtml" are referenced from the XML, and you can modify their formatting as needed.
+R : Oui, vous pouvez personnaliser l'apparence de la sortie PDF. Dans le code fourni, les segments avec les ID « boldHtml » et « strongHtml » sont référencés à partir du XML et vous pouvez modifier leur formatage si nécessaire.
 
-#### Q: Is there a specific structure for the XML file?
+#### Q : Existe-t-il une structure spécifique pour le fichier XML ?
 
-A: The XML file should have a structure that corresponds to the elements and formatting you want to display in the resulting PDF. In the provided code, the IDs "mainSection," "boldHtml," and "strongHtml" are used to reference specific elements in the XML.
+R : Le fichier XML doit avoir une structure qui correspond aux éléments et au format que vous souhaitez afficher dans le PDF résultant. Dans le code fourni, les ID « mainSection », « boldHtml » et « strongHtml » sont utilisés pour référencer des éléments spécifiques dans le XML.
 
-#### Q: Can I add more text segments or elements to the PDF?
+#### Q : Puis-je ajouter plus de segments de texte ou d'éléments au PDF ?
 
-A: Yes, you can add more text segments or elements to the PDF by creating additional elements in the XML file and referencing them using their respective IDs in the C# code.
+R : Oui, vous pouvez ajouter davantage de segments de texte ou d'éléments au PDF en créant des éléments supplémentaires dans le fichier XML et en les référençant à l'aide de leurs ID respectifs dans le code C#.

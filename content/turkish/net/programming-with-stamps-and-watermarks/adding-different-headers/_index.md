@@ -1,66 +1,66 @@
 ---
-title: Adding Different Headers In PDF File
-linktitle: Adding Different Headers In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily add different headers to each page in PDF file with Aspose.PDF for .NET.
+title: PDF Dosyasına Farklı Başlıklar Ekleme
+linktitle: PDF Dosyasına Farklı Başlıklar Ekleme
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasındaki her sayfaya kolayca farklı başlıkları nasıl ekleyeceğinizi öğrenin.
 type: docs
 weight: 30
 url: /tr/net/programming-with-stamps-and-watermarks/adding-different-headers/
 ---
-In this tutorial, we will take you step by step on how to add different headers in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to add custom headers to each page of the PDF file.
+Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasına farklı başlıkların nasıl ekleneceği konusunda size adım adım yol göstereceğiz. PDF dosyasının her sayfasına özel üstbilgiler eklemek için sağlanan C# kaynak kodunu nasıl kullanacağınızı size göstereceğiz.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Kurulu bir .NET geliştirme ortamı.
+- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
 
-## Step 2: Loading the PDF document
+## Adım 2: PDF belgesini yükleme
 
-The first step is to load the existing PDF document into your project. Here's how:
+İlk adım mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the source document
+// Kaynak belgeyi aç
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "AddingDifferentHeaders.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+"BELGELERİNİZ DİZİNİ"ni, PDF belgenizin bulunduğu dizine giden gerçek yolla değiştirdiğinizden emin olun.
 
-## Step 3: Creating Header Buffers
+## Adım 3: Başlık Arabellekleri Oluşturma
 
-Now that you have uploaded the PDF document, you can create the header stamps to add. Here's how:
+Artık PDF belgesini yüklediğinize göre eklenecek başlık damgalarını oluşturabilirsiniz. İşte nasıl:
 
 ```csharp
-// Create three header buffers
+// Üç başlık arabelleği oluşturun
 Aspose.Pdf.TextStamp stamp1 = new Aspose.Pdf.TextStamp("Header 1");
 Aspose.Pdf.TextStamp stamp2 = new Aspose.Pdf.TextStamp("Header 2");
 Aspose.Pdf.TextStamp stamp3 = new Aspose.Pdf.TextStamp("Header 3");
 ```
 
-The above code creates three new header buffers containing the specified text.
+Yukarıdaki kod, belirtilen metni içeren üç yeni başlık arabelleği oluşturur.
 
-## Step 4: Configuring header buffer properties
+## 4. Adım: Başlık arabelleği özelliklerini yapılandırma
 
-Before adding the header stamps to the PDF document, you can configure different properties for each stamp, such as alignment, size, color, etc. Here's how:
+Başlık damgalarını PDF belgesine eklemeden önce, her damga için hizalama, boyut, renk vb. gibi farklı özellikleri yapılandırabilirsiniz. Bunu şu şekilde yapabilirsiniz:
 
 ```csharp
-// Configure the first header buffer
+// İlk başlık arabelleğini yapılandırma
 stamp1.VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
 stamp1.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 stamp1.TextState.FontStyle = FontStyles.Bold;
 stamp1.TextState.ForegroundColor = Color.Red;
 stamp1.TextState.FontSize = 14;
 
-// Configuration of the second header buffer
+// İkinci başlık arabelleğinin konfigürasyonu
 stamp2.VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
 stamp2.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 stamp2.Zoom = 10;
 
-// Configure third header buffer
+// Üçüncü başlık arabelleğini yapılandır
 stamp3.VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
 stamp3.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 stamp3.RotateAngle = 35;
@@ -68,138 +68,138 @@ stamp3.TextState.BackgroundColor = Color.Pink;
 stamp3.TextState.Font = FontRepository.FindFont("Verdana");
 ```
 
-You can adjust these properties as needed for each header buffer.
+Bu özellikleri her başlık arabelleği için gerektiği gibi ayarlayabilirsiniz.
 
-## Step 5: Add Header Stamps to PDF
+## Adım 5: PDF'ye Başlık Damgaları Ekleme
 
-Now that the header stamps are ready, you can add them to each specific page of the PDF document. Here's how:
+Artık başlık damgaları hazır olduğuna göre bunları PDF belgesinin her bir sayfasına ekleyebilirsiniz. İşte nasıl:
 
 ```csharp
-// Add header buffers to specific pages
+// Belirli sayfalara başlık arabellekleri ekleme
 doc.Pages[1].AddStamp(stamp1);
 doc.Pages[2].AddStamp(stamp2);
 doc.Pages[3].AddStamp(stamp3);
 ```
 
-The code above adds each header stamp to the corresponding page of the PDF document.
+Yukarıdaki kod, her başlık damgasını PDF belgesinin ilgili sayfasına ekler.
 
-## Step 6: Save the output document
+## Adım 6: Çıktı belgesini kaydedin
 
-Once you have added the header stamps, you can save the edited PDF document. Here's how:
+Başlık damgalarını ekledikten sonra düzenlenen PDF belgesini kaydedebilirsiniz. İşte nasıl:
 
 ```csharp
-// Save the updated document
+// Güncellenen belgeyi kaydet
 doc.Save(dataDir);
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Yukarıdaki kod, düzenlenen PDF belgesini belirtilen dizine kaydeder.
 
-### Sample source code for Adding Different Headers using Aspose.PDF for .NET 
+### Aspose.PDF for .NET Kullanarak Farklı Başlıklar Eklemek için örnek kaynak kodu 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open source document
+// Açık kaynak belge
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "AddingDifferentHeaders.pdf");
 
-// Create three stamps
+// Üç damga oluştur
 Aspose.Pdf.TextStamp stamp1 = new Aspose.Pdf.TextStamp("Header 1");
 Aspose.Pdf.TextStamp stamp2 = new Aspose.Pdf.TextStamp("Header 2");
 Aspose.Pdf.TextStamp stamp3 = new Aspose.Pdf.TextStamp("Header 3");
 
-// Set stamp alignment (place stamp on page top, centered horiznotally)
+// Damga hizalamasını ayarlayın (damgayı sayfanın üstüne, yatay olarak ortalanmış şekilde yerleştirin)
 stamp1.VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
 stamp1.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 
-// Specify the font style as Bold
+// Yazı tipi stilini Kalın olarak belirtin
 stamp1.TextState.FontStyle = FontStyles.Bold;
 
-// Set the text fore ground color information as red
+// Metnin ön zemin rengi bilgisini kırmızı olarak ayarla
 stamp1.TextState.ForegroundColor = Color.Red;
 
-// Specify the font size as 14
+// Yazı tipi boyutunu 14 olarak belirtin
 stamp1.TextState.FontSize = 14;
 
-// Now we need to set the vertical alignment of 2nd stamp object as Top
+// Şimdi 2. damga nesnesinin dikey hizalamasını Üst olarak ayarlamamız gerekiyor
 stamp2.VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
 
-// Set Horizontal alignment information for stamp as Center aligned
+// Damga için Yatay hizalama bilgilerini Ortaya hizalanmış olarak ayarlayın
 stamp2.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 
-// Set the zooming factor for stamp object
+// Damga nesnesi için yakınlaştırma faktörünü ayarlayın
 stamp2.Zoom = 10;
 
-// Set the formatting of 3rd stamp object
-// Specify the Vertical alignment information for stamp object as TOP
+//3. damga nesnesinin formatını ayarlayın
+// Damga nesnesi için Dikey hizalama bilgisini TOP olarak belirtin
 stamp3.VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
 
-// Set the Horizontal alignment inforamtion for stamp object as Center aligned
+// Damga nesnesi için Yatay hizalama bilgilerini Ortaya hizalanmış olarak ayarlayın
 stamp3.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 
-// Set the rotation angle for stamp object
+// Damga nesnesinin dönüş açısını ayarlayın
 stamp3.RotateAngle = 35;
 
-// Set pink as background color for stamp
+// Damga için arka plan rengi olarak pembeyi ayarla
 stamp3.TextState.BackgroundColor = Color.Pink;
 
-// Change the font face information for stamp to Verdana
+// Damganın yazı tipi yüzü bilgisini Verdana olarak değiştirin
 stamp3.TextState.Font = FontRepository.FindFont("Verdana");
 
-// First stamp is added on first page;
+// İlk damga ilk sayfaya eklenir;
 doc.Pages[1].AddStamp(stamp1);
 
-// Second stamp is added on second page;
+// İkinci damga ikinci sayfaya eklenmiştir;
 doc.Pages[2].AddStamp(stamp2);
 
-// Third stamp is added on third page.
+// Üçüncü damga üçüncü sayfaya eklenmiştir.
 doc.Pages[3].AddStamp(stamp3);
 dataDir = dataDir + "multiheader_out.pdf";
 
-// Save the updated document
+// Güncellenen belgeyi kaydet
 doc.Save(dataDir);
 Console.WriteLine("\nDifferent headers added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have learned how to add different headers to each page of a PDF document using Aspose.PDF for .NET. You can now apply this knowledge to your own projects to customize headers for your PDF documents.
+Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF belgesinin her sayfasına nasıl farklı başlıklar ekleyeceğinizi öğrendiniz. Artık PDF belgelerinizin başlıklarını özelleştirmek için bu bilgiyi kendi projelerinize uygulayabilirsiniz.
 
-### FAQ's for adding different headers in PDF file
+### PDF dosyasına farklı başlıklar eklemeyle ilgili SSS'ler
 
-#### Q: What is the purpose of adding different headers in a PDF file using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF dosyasına farklı başlıklar eklemenin amacı nedir?
 
-A: Adding different headers to a PDF file using Aspose.PDF for .NET allows you to customize the content displayed at the top of each page. This feature is particularly useful for adding titles, section names, page numbers, and other information that varies across different pages of a PDF document.
+C: Aspose.PDF for .NET kullanarak bir PDF dosyasına farklı başlıklar eklemek, her sayfanın üst kısmında görüntülenen içeriği özelleştirmenize olanak tanır. Bu özellik özellikle bir PDF belgesinin farklı sayfalarına göre değişen başlıklar, bölüm adları, sayfa numaraları ve diğer bilgileri eklemek için kullanışlıdır.
 
-#### Q: Can I customize the appearance of each header, such as alignment, font, size, color, and rotation?
+#### S: Her başlığın hizalama, yazı tipi, boyut, renk ve döndürme gibi görünümünü özelleştirebilir miyim?
 
-A: Yes, you can fully customize the appearance of each header stamp. The provided C# source code demonstrates how to set various properties of the `TextStamp` objects for each header, including vertical and horizontal alignment, font style, font size, font color, background color, and rotation angle.
+ C: Evet, her başlık damgasının görünümünü tamamen özelleştirebilirsiniz. Sağlanan C# kaynak kodu, C#'ın çeşitli özelliklerinin nasıl ayarlanacağını gösterir.`TextStamp` dikey ve yatay hizalama, yazı tipi stili, yazı tipi boyutu, yazı tipi rengi, arka plan rengi ve dönüş açısı dahil olmak üzere her başlık için nesneler.
 
-#### Q: Is it possible to add multiple header stamps to the same page of a PDF document?
+#### S: Bir PDF belgesinin aynı sayfasına birden fazla başlık damgası eklemek mümkün müdür?
 
-A: While the provided tutorial demonstrates adding different headers to distinct pages of a PDF document, you can adapt the code to add multiple header stamps to the same page. This could be useful if you want to display varied headers within the same section.
+C: Sağlanan eğitim, bir PDF belgesinin farklı sayfalarına farklı başlıklar eklemeyi gösterse de, aynı sayfaya birden fazla başlık damgası eklemek için kodu uyarlayabilirsiniz. Aynı bölümde çeşitli başlıkları görüntülemek istiyorsanız bu yararlı olabilir.
 
-#### Q: How can I ensure that the headers do not overlap with the main content of the PDF pages?
+#### S: Başlıkların PDF sayfalarının ana içeriğiyle çakışmamasını nasıl sağlayabilirim?
 
-A: To prevent overlapping, you can adjust the `VerticalAlignment`, `HorizontalAlignment`, and other properties of the `TextStamp` objects. These settings will control where the headers are positioned on the page, allowing you to position them in a way that does not obstruct the main content.
+ C: Üst üste binmeyi önlemek için`VerticalAlignment`, `HorizontalAlignment` ve diğer özellikleri`TextStamp` nesneler. Bu ayarlar, başlıkların sayfada nereye konumlandırılacağını kontrol ederek, bunları ana içeriği engellemeyecek şekilde konumlandırmanıza olanak tanır.
 
-#### Q: Can I use this method to add headers to existing PDF documents with varying numbers of pages?
+#### S: Bu yöntemi, farklı sayıda sayfaya sahip mevcut PDF belgelerine başlık eklemek için kullanabilir miyim?
 
-A: Yes, you can adapt the provided source code to add headers to existing PDF documents with varying numbers of pages. Simply adjust the code to match the number of headers you want to add and associate each header with the desired page.
+C: Evet, farklı sayıda sayfaya sahip mevcut PDF belgelerine başlık eklemek için sağlanan kaynak kodunu uyarlayabilirsiniz. Kodu, eklemek istediğiniz başlık sayısıyla eşleşecek şekilde ayarlayın ve her başlığı istediğiniz sayfayla ilişkilendirin.
 
-#### Q: What if I want to add headers to specific pages, not just the first three pages?
+#### S: Yalnızca ilk üç sayfaya değil, belirli sayfalara da başlık eklemek istersem ne olur?
 
-A: The tutorial demonstrates adding headers to the first three pages for illustrative purposes. To add headers to specific pages beyond the first three, adjust the code by referencing the corresponding page indices and creating `TextStamp` objects for each page.
+ C: Eğitimde, açıklama amacıyla ilk üç sayfaya başlık eklenmesi gösterilmektedir. İlk üçün ötesindeki belirli sayfalara başlık eklemek için ilgili sayfa dizinlerine başvurarak ve aşağıdakileri oluşturarak kodu ayarlayın:`TextStamp` Her sayfa için nesneler.
 
-#### Q: Can I use images as headers instead of text?
+#### S: Metin yerine başlık olarak görselleri kullanabilir miyim?
 
-A: The provided tutorial focuses on adding text-based headers. However, you can apply a similar approach to add image-based headers using `ImageStamp` objects instead of `TextStamp` objects. This would involve creating and configuring `ImageStamp` objects with desired properties.
+ C: Sağlanan eğitim, metin tabanlı başlıklar eklemeye odaklanıyor. Ancak görsel tabanlı başlıklar eklemek için benzer bir yaklaşım uygulayabilirsiniz.`ImageStamp` bunun yerine nesneler`TextStamp` nesneler. Bu, oluşturmayı ve yapılandırmayı içerecektir`ImageStamp` İstenilen özelliklere sahip nesneler.
 
-#### Q: How can I apply this knowledge to add different footers to each page of a PDF document?
+#### S: Bir PDF belgesinin her sayfasına farklı altbilgiler eklemek için bu bilgiyi nasıl uygulayabilirim?
 
-A: The same approach demonstrated in this tutorial can be applied to add different footers to each page of a PDF document. Instead of headers, you would create and configure `TextStamp` or `ImageStamp` objects and add them to the bottom of each page using the `AddStamp` method.
+ C: Bu eğitimde gösterilen yaklaşımın aynısı, bir PDF belgesinin her sayfasına farklı altbilgiler eklemek için uygulanabilir. Başlıklar yerine oluşturup yapılandırırsınız`TextStamp` veya`ImageStamp` kullanarak nesneleri her sayfanın altına ekleyin.`AddStamp` yöntem.
 
-#### Q: Can I automate the process of adding headers to multiple PDF documents in a batch operation?
+#### S: Toplu işlemde birden çok PDF belgesine başlık ekleme işlemini otomatikleştirebilir miyim?
 
-A: Yes, you can automate the process of adding headers to multiple PDF documents using a script or program that iterates through a list of documents and applies the header stamping process to each document.
+C: Evet, bir belge listesi boyunca ilerleyen ve başlık damgalama işlemini her belgeye uygulayan bir komut dosyası veya program kullanarak birden çok PDF belgesine başlık ekleme işlemini otomatikleştirebilirsiniz.

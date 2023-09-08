@@ -1,56 +1,56 @@
 ---
-title: Rotate Text Using Text Fragment And Paragraph
-linktitle: Rotate Text Using Text Fragment And Paragraph
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to rotate text using text fragment and paragraph in a PDF document using Aspose.PDF for .NET.
+title: Metin Parçasını ve Paragrafı Kullanarak Metni Döndürme
+linktitle: Metin Parçasını ve Paragrafı Kullanarak Metni Döndürme
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak bir PDF belgesinde metin parçasını ve paragrafı kullanarak metni nasıl döndüreceğinizi öğrenin.
 type: docs
 weight: 400
 url: /tr/net/programming-with-text/rotate-text-using-text-fragment-and-paragraph/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to rotate text using text fragment and paragraph. The provided C# source code demonstrates the process step by step.
+Bu eğitimde, metin parçasını ve paragrafı kullanarak metni döndürmek için Aspose.PDF for .NET'in nasıl kullanılacağı açıklanmaktadır. Sağlanan C# kaynak kodu süreci adım adım gösterir.
 
-## Prerequisites
+## Önkoşullar
 
-Before proceeding with the tutorial, make sure you have the following:
+Eğiticiye devam etmeden önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Temel C# programlama dili bilgisi.
+- Aspose.PDF for .NET kütüphanesi kuruldu. Bunu Aspose web sitesinden edinebilir veya projenize kurmak için NuGet'i kullanabilirsiniz.
 
-## Step 1: Set up the project
+## 1. Adım: Projeyi ayarlayın
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturarak başlayın ve Aspose.PDF for .NET kitaplığına bir referans ekleyin.
 
-## Step 2: Import necessary namespaces
+## 2. Adım: Gerekli ad alanlarını içe aktarın
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Gerekli ad alanlarını içe aktarmak için C# dosyanızın başına aşağıdaki kullanma yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Create the PDF document
+## 3. Adım: PDF belgesini oluşturun
 
-Initialize the `Document` object to create a new PDF document:
+ Başlat`Document` Yeni bir PDF belgesi oluşturmak için nesne:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document();
 ```
 
-Make sure to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Değiştirdiğinizden emin olun`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
 
-## Step 4: Add a page
+## 4. Adım: Sayfa ekleyin
 
-Get a particular page from the document using the `Pages.Add()` method:
+ kullanarak belgeden belirli bir sayfayı alın.`Pages.Add()` yöntem:
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
-## Step 5: Create text fragments
+## 5. Adım: Metin parçaları oluşturun
 
-Create multiple `TextFragment` objects, set their text and properties, and specify the rotation angle:
+ Birden fazla oluştur`TextFragment` nesneleri, metinlerini ve özelliklerini ayarlayın ve dönüş açısını belirtin:
 
 ```csharp
 TextFragment textFragment1 = new TextFragment("main text");
@@ -68,11 +68,11 @@ textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment3.TextState.Rotation = 270;
 ```
 
-Adjust the text, rotation angle, and other properties as desired.
+Metni, döndürme açısını ve diğer özellikleri istediğiniz gibi ayarlayın.
 
-## Step 6: Add text fragments to the page
+## 6. Adım: Sayfaya metin parçaları ekleyin
 
-Add the created text fragments to the page by appending them to the `Paragraphs` collection:
+ Oluşturulan metin parçalarını sayfaya ekleyerek sayfaya ekleyin.`Paragraphs` Toplamak:
 
 ```csharp
 pdfPage.Paragraphs.Add(textFragment1);
@@ -80,85 +80,85 @@ pdfPage.Paragraphs.Add(textFragment2);
 pdfPage.Paragraphs.Add(textFragment3);
 ```
 
-## Step 7: Save the PDF document
+## Adım 7: PDF belgesini kaydedin
 
-Save the modified PDF document to a file using the `Save` method:
+ Değiştirilen PDF belgesini kullanarak bir dosyaya kaydedin.`Save` yöntem:
 
 ```csharp
 pdfDocument.Save(dataDir + "TextFragmentTests_Rotated3_out.pdf");
 ```
 
-Make sure to replace `"TextFragmentTests_Rotated3_out.pdf"` with the desired output file name.
+ Değiştirdiğinizden emin olun`"TextFragmentTests_Rotated3_out.pdf"` İstenilen çıktı dosyası adı ile.
 
-### Sample source code for Rotate Text Using Text Fragment And Paragraph using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Metin Parçası ve Paragraf Kullanarak Metni Döndürme için örnek kaynak kodu 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Initialize document object
+// Belge nesnesini başlat
 Document pdfDocument = new Document();
-// Get particular page
+// Belirli bir sayfayı al
 Page pdfPage = (Page)pdfDocument.Pages.Add();
-// Create text fragment
+// Metin parçası oluştur
 TextFragment textFragment1 = new TextFragment("main text");
-// Set text properties
+// Metin özelliklerini ayarlama
 textFragment1.TextState.FontSize = 12;
 textFragment1.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-// Create text fragment
+// Metin parçası oluştur
 TextFragment textFragment2 = new TextFragment("rotated text");
-// Set text properties
+// Metin özelliklerini ayarlama
 textFragment2.TextState.FontSize = 12;
 textFragment2.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-// Set rotation
+// Döndürmeyi ayarla
 textFragment2.TextState.Rotation = 315;
-// Create text fragment
+// Metin parçası oluştur
 TextFragment textFragment3 = new TextFragment("rotated text");
-// Set text properties
+// Metin özelliklerini ayarlama
 textFragment3.TextState.FontSize = 12;
 textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-// Set rotation
+// Döndürmeyi ayarla
 textFragment3.TextState.Rotation = 270;
 pdfPage.Paragraphs.Add(textFragment1);
 pdfPage.Paragraphs.Add(textFragment2);
 pdfPage.Paragraphs.Add(textFragment3);
-// Save document
+// Belgeyi kaydet
 pdfDocument.Save(dataDir + "TextFragmentTests_Rotated3_out.pdf");
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulations! You have successfully learned how to rotate text using text fragments and paragraphs in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from creating the document to saving the modified version. You can now incorporate this code into your own C# projects to manipulate text rotation in PDF files.
+Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF belgesindeki metin parçalarını ve paragrafları kullanarak metni nasıl döndüreceğinizi başarıyla öğrendiniz. Bu eğitimde, belgenin oluşturulmasından değiştirilen sürümün kaydedilmesine kadar adım adım bir kılavuz sağlanmıştır. Artık PDF dosyalarındaki metin döndürmeyi değiştirmek için bu kodu kendi C# projelerinize dahil edebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of the "Rotate Text Using Text Fragment And Paragraph" tutorial?
+#### S: "Metin Parçasını ve Paragrafı Kullanarak Metni Döndürme" eğitiminin amacı nedir?
 
-A: The "Rotate Text Using Text Fragment And Paragraph" tutorial aims to guide you through the process of using the Aspose.PDF library for .NET to rotate text using both text fragments and paragraphs within a PDF document. The tutorial provides step-by-step instructions and sample code to achieve this functionality.
+C: "Metin Parçası ve Paragraf Kullanarak Metni Döndürme" eğitimi, bir PDF belgesinde hem metin parçalarını hem de paragrafları kullanarak metni döndürmek için .NET için Aspose.PDF kütüphanesini kullanma sürecinde size rehberlik etmeyi amaçlamaktadır. Öğreticide, bu işlevselliğe ulaşmak için adım adım talimatlar ve örnek kod sağlanmaktadır.
 
-#### Q: How does this tutorial differ from the previous text rotation tutorials?
+#### S: Bu eğitimin önceki metin döndürme eğitimlerinden farkı nedir?
 
-A: This tutorial combines the use of text fragments and paragraphs to achieve text rotation within a PDF document. It demonstrates how to rotate text fragments individually and then add them to a page's `Paragraphs` collection to achieve a more comprehensive text rotation effect.
+C: Bu eğitim, bir PDF belgesinde metin döndürmeyi sağlamak için metin parçalarının ve paragrafların kullanımını birleştirir. Metin parçalarının tek tek nasıl döndürüleceğini ve ardından bunların bir sayfanın menüsüne nasıl ekleneceğini gösterir.`Paragraphs` Daha kapsamlı bir metin döndürme efekti elde etmek için koleksiyon.
 
-#### Q: What are the advantages of using text fragments and paragraphs for text rotation?
+#### S: Metin döndürme için metin parçalarını ve paragrafları kullanmanın avantajları nelerdir?
 
-A: Using text fragments and paragraphs together allows for more flexibility in text rotation. Text fragments enable individual rotation and formatting settings, while paragraphs provide structure for arranging and positioning text fragments within a page.
+C: Metin parçalarını ve paragrafları birlikte kullanmak, metin döndürmede daha fazla esneklik sağlar. Metin parçaları ayrı ayrı döndürme ve biçimlendirme ayarlarını mümkün kılarken, paragraflar metin parçalarının bir sayfa içinde düzenlenmesi ve konumlandırılması için yapı sağlar.
 
-#### Q: Can I apply different rotation angles to different text fragments within the same paragraph?
+#### S: Aynı paragraftaki farklı metin parçalarına farklı döndürme açıları uygulayabilir miyim?
 
-A: Yes, you can apply different rotation angles to different `TextFragment` objects within the same paragraph. Each text fragment can have its own rotation angle specified using the `TextState.Rotation` property.
+ C: Evet, farklı yönlere farklı dönüş açıları uygulayabilirsiniz.`TextFragment` aynı paragraftaki nesneler. Her metin parçasının, aşağıdakiler kullanılarak belirlenen kendi dönüş açısı olabilir:`TextState.Rotation` mülk.
 
-#### Q: Is it possible to achieve complex text rotation effects using this method?
+#### S: Bu yöntemi kullanarak karmaşık metin döndürme efektleri elde etmek mümkün müdür?
 
-A: Yes, by combining text fragments with various rotation angles and arranging them within paragraphs, you can achieve complex and customized text rotation effects, enhancing the visual appeal of your PDF documents.
+C: Evet, çeşitli döndürme açılarına sahip metin parçalarını birleştirerek ve bunları paragraflar içinde düzenleyerek, karmaşık ve özelleştirilmiş metin döndürme efektleri elde ederek PDF belgelerinizin görsel çekiciliğini artırabilirsiniz.
 
-#### Q: What steps are involved in rotating text using text fragments and paragraphs?
+#### S: Metin parçalarını ve paragrafları kullanarak metni döndürmek hangi adımları içerir?
 
-A: The steps include:
+C: Adımlar şunları içerir:
 
-1. Setting up the project by creating a new C# project and adding a reference to the Aspose.PDF for .NET library.
-2. Creating the PDF document and adding a page.
-3. Creating text fragments, setting their properties, and specifying rotation angles.
-4. Adding text fragments to the page using the `Paragraphs` collection.
-5. Saving the modified PDF document.
+1. Yeni bir C# projesi oluşturarak ve Aspose.PDF for .NET kütüphanesine bir referans ekleyerek projeyi kurun.
+2. PDF belgesi oluşturma ve sayfa ekleme.
+3. Metin parçaları oluşturma, bunların özelliklerini ayarlama ve döndürme açılarını belirleme.
+4.  Kullanarak sayfaya metin parçaları ekleme`Paragraphs` Toplamak.
+5. Değiştirilen PDF belgesini kaydetme.
 
-#### Q: Can I apply rotation to entire paragraphs?
+#### S: Paragrafların tamamına rotasyon uygulayabilir miyim?
 
-A: Yes, you can apply rotation to entire paragraphs by setting the `TextState.Rotation` property of the paragraph itself. This will rotate all the text fragments within that paragraph.
+ C: Evet, döndürmeyi tüm paragraflara uygulayabilirsiniz.`TextState.Rotation` Paragrafın kendisinin özelliği. Bu, o paragraftaki tüm metin parçalarını döndürecektir.

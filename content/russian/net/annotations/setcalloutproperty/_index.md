@@ -1,41 +1,41 @@
 ---
-title: Set Callout Property In PDF File
-linktitle: Set Callout Property In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set Callout Property in PDF File using Aspose.PDF for .NET. Customize annotations with callout lines, text color, and ending styles.
+title: Установить свойство выноски в PDF-файле
+linktitle: Установить свойство выноски в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как установить свойство выноски в файле PDF с помощью Aspose.PDF для .NET. Настраивайте аннотации с помощью линий выносок, цвета текста и стилей окончания.
 type: docs
 weight: 130
 url: /ru/net/annotations/setcalloutproperty/
 ---
-Aspose.PDF for .NET is a powerful library for creating, manipulating, and converting PDF documents in C#. One of the features provided by this library is the ability to set callout properties for free text annotations in PDF documents. This can be done using the `FreeTextAnnotation` class, which allows you to create annotations with callouts.
+ Aspose.PDF для .NET — это мощная библиотека для создания, управления и преобразования PDF-документов на C#. Одной из функций, предоставляемых этой библиотекой, является возможность устанавливать свойства выносок для произвольных текстовых аннотаций в документах PDF. Это можно сделать с помощью`FreeTextAnnotation` класс, который позволяет создавать аннотации с выносками.
 
-In this tutorial, we will guide you through the process of setting callout properties for a free text annotation using Aspose.PDF for .NET in C#. Follow the steps below to get started.
+В этом руководстве мы проведем вас через процесс настройки свойств выноски для произвольной текстовой аннотации с использованием Aspose.PDF для .NET на C#. Чтобы начать, выполните следующие действия.
 
-## Install Aspose.PDF for .NET
+## Установите Aspose.PDF для .NET
 
-If you haven't already done so, you will need to [download](https://releases.aspose.com/pdf/net/) and install Aspose.PDF for .NET from the Aspose Releases or via NuGet package manager.
+ Если вы еще этого не сделали, вам нужно будет[скачать](https://releases.aspose.com/pdf/net/) и установите Aspose.PDF для .NET из выпусков Aspose или через менеджер пакетов NuGet.
 
-## Step 1: Create a new PDF document
+## Шаг 1. Создайте новый PDF-документ.
 
-Create a new PDF document using the `Document` class provided by Aspose.PDF for .NET.
+ Создайте новый PDF-документ, используя`Document`класс, предоставленный Aspose.PDF для .NET.
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 ```
 
-## Step 2: Add a new page to the document
+## Шаг 2. Добавьте в документ новую страницу.
 
-Add a new page to the document using the `Pages` collection of the `Document` class.
+ Добавьте новую страницу в документ с помощью`Pages` коллекция`Document` сорт.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Set default appearance
+## Шаг 3. Установите внешний вид по умолчанию
 
-Set the default appearance for the free text annotation by creating a new `DefaultAppearance` object and setting its properties such as `TextColor` and `FontSize`.
+ Установите внешний вид по умолчанию для произвольной текстовой аннотации, создав новый`DefaultAppearance` объект и установка его свойств, таких как`TextColor` и`FontSize`.
 
 ```csharp
 DefaultAppearance da = new DefaultAppearance();
@@ -43,9 +43,9 @@ da.TextColor = System.Drawing.Color.Red;
 da.FontSize = 10;
 ```
 
-## Step 4: Create a free text annotation with callout
+## Шаг 4. Создайте произвольную текстовую аннотацию с выноской.
 
-Create a new free text annotation with callout by using the `FreeTextAnnotation` class. Set the `Intent` property to `FreeTextIntent.FreeTextCallout` to specify that this is a callout annotation. Set the `EndingStyle` property to `LineEnding.OpenArrow` to specify the style of the arrow at the end of the callout. Set the `Callout` property to an array of `Point` objects that represent the points on the page where the callout line should be drawn.
+ Создайте новую произвольную текстовую аннотацию с выноской, используя`FreeTextAnnotation` сорт. Установить`Intent` собственность`FreeTextIntent.FreeTextCallout` чтобы указать, что это аннотация выноски. Установить`EndingStyle` собственность`LineEnding.OpenArrow` чтобы указать стиль стрелки в конце выноски. Установить`Callout` свойство массиву`Point` объекты, представляющие точки на странице, где должна быть нарисована линия выноски.
 
 ```csharp
 FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
@@ -57,34 +57,34 @@ fta.Callout = new Point[]
 };
 ```
 
-## Step 5: Add the free text annotation to the page
+## Шаг 5. Добавьте на страницу произвольную текстовую аннотацию.
 
-Add the free text annotation to the page by using the `Annotations` collection of the `Page` class.
+ Добавьте на страницу произвольную текстовую аннотацию с помощью`Annotations` коллекция`Page` сорт.
 
 ```csharp
 page.Annotations.Add(fta);
 ```
 
-## Step 6: Add text to the annotation
+## Шаг 6. Добавьте текст в аннотацию
 
-Add text to the annotation by setting the `RichText` property to a string of formatted XML. In this tutorial, we're setting the text color to red and the font size to 9.
+ Добавьте текст в аннотацию, установив`RichText`свойство в строку форматированного XML. В этом уроке мы устанавливаем красный цвет текста и размер шрифта 9.
 
 ```csharp
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\"  style=\"color:#FF
+fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF
 ```
 
-## Step 7: save the document
+## Шаг 7: сохраните документ
 
-Now save the document by using the following code:
+Теперь сохраните документ, используя следующий код:
 
 ```csharp
 doc.Save(dataDir + "SetCalloutProperty.pdf")
 ```
 
-### Example source code for Set Callout Property using Aspose.PDF for .NET
+### Пример исходного кода для установки свойства выноски с использованием Aspose.PDF для .NET
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document();
@@ -100,28 +100,28 @@ fta.Callout = new Point[]
 	new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
 };
 page.Annotations.Add(fta);
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\"  style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"><span style=\"font-size:9.0pt;font-family:Helvetica\">This is a sample</span></p></body>";
+fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"> <span style=\"font-size:9.0pt;font-family:Helvetica\">Это образец</span></p></body>";
 doc.Save(dataDir + "SetCalloutProperty.pdf");
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we explored how to set callout properties for a free text annotation in a PDF document using Aspose.PDF for .NET. Callout annotations are useful for providing additional information or explanations related to specific areas in a document. Aspose.PDF for .NET provides a wide range of features and capabilities to work with PDF files, including creating and customizing annotations, such as callouts. By following the step-by-step guide and using the provided C# source code, developers can easily implement callout annotations in their PDF documents, enhancing the usability and clarity of their documents. Aspose.PDF for .NET is a versatile and reliable library for PDF operations in .NET applications, offering powerful tools to handle various PDF-related tasks efficiently.
+В этом уроке мы рассмотрели, как установить свойства выноски для произвольной текстовой аннотации в PDF-документе с помощью Aspose.PDF для .NET. Аннотации выносок полезны для предоставления дополнительной информации или пояснений, относящихся к конкретным областям документа. Aspose.PDF для .NET предоставляет широкий спектр функций и возможностей для работы с файлами PDF, включая создание и настройку аннотаций, таких как выноски. Следуя пошаговому руководству и используя предоставленный исходный код C#, разработчики могут легко внедрять аннотации выносок в свои PDF-документы, повышая удобство использования и ясность своих документов. Aspose.PDF для .NET — это универсальная и надежная библиотека для операций с PDF в приложениях .NET, предлагающая мощные инструменты для эффективного решения различных задач, связанных с PDF.
 
-### FAQ's for set callout property in PDF file
+### Часто задаваемые вопросы по настройке свойства выноски в файле PDF
 
-#### Q: What is a callout annotation in a PDF document?
+#### Вопрос: Что такое аннотация выноски в PDF-документе?
 
-A: A callout annotation in a PDF document is a type of annotation that allows you to create a text box with a leader line pointing to a specific area in the document. It is commonly used to provide additional information or comments related to a particular section or element in the document.
+О: Выноска в PDF-документе — это тип примечания, который позволяет создать текстовое поле с выносной линией, указывающей на определенную область документа. Обычно он используется для предоставления дополнительной информации или комментариев, относящихся к определенному разделу или элементу документа.
 
-#### Q: Can I customize the appearance of the callout annotation using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я настроить внешний вид аннотации выноски с помощью Aspose.PDF для .NET?
 
-A: Yes, you can customize various properties of the callout annotation, such as the color, font size, text alignment, line style, arrow style, and more.
+О: Да, вы можете настроить различные свойства аннотации выноски, такие как цвет, размер шрифта, выравнивание текста, стиль линии, стиль стрелки и т. д.
 
-#### Q: How do I add text to the callout annotation?
+#### Вопрос: Как добавить текст в аннотацию выноски?
 
-A: To add text to the callout annotation, you can set the `RichText` property of the `FreeTextAnnotation` object. The `RichText` property takes a string of formatted XML that represents the text to be displayed in the callout annotation.
+ О: Чтобы добавить текст в аннотацию выноски, вы можете установить`RichText` собственность`FreeTextAnnotation` объект.`RichText` Свойство принимает строку форматированного XML, которая представляет текст, отображаемый в аннотации выноски.
 
-#### Q: Can I add multiple callout annotations to a PDF document using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я добавить несколько аннотаций к PDF-документу с помощью Aspose.PDF для .NET?
 
-A: Yes, you can create multiple callout annotations in a PDF document by creating multiple instances of the `FreeTextAnnotation` object and adding them to different pages or locations in the document.
+ О: Да, вы можете создать несколько аннотаций выносок в документе PDF, создав несколько экземпляров`FreeTextAnnotation`объект и добавление их на разные страницы или места в документе.

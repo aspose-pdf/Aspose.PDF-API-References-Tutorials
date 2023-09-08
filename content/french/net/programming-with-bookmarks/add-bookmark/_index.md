@@ -1,42 +1,42 @@
 ---
-title: Add Bookmark In PDF File
-linktitle: Add Bookmark In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add bookmark in PDF file for improved navigation with Aspose.PDF for .NET.
+title: Ajouter un signet dans un fichier PDF
+linktitle: Ajouter un signet dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Ajoutez facilement un signet dans un fichier PDF pour une navigation améliorée avec Aspose.PDF pour .NET.
 type: docs
 weight: 10
 url: /fr/net/programming-with-bookmarks/add-bookmark/
 ---
-Adding bookmarks in a PDF file allows easy and quick navigation. With Aspose.PDF for .NET, you can easily add a bookmark in PDF file by following the following source code:
+L'ajout de signets dans un fichier PDF permet une navigation simple et rapide. Avec Aspose.PDF pour .NET, vous pouvez facilement ajouter un signet dans un fichier PDF en suivant le code source suivant :
 
-## Step 1: Import required libraries
+## Étape 1 : Importer les bibliothèques requises
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Avant de commencer, vous devez importer les bibliothèques nécessaires à votre projet C#. Voici la directive d'importation nécessaire :
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## Étape 2 : Définir le chemin d'accès au dossier de documents
 
-In this step, you need to specify the path to the folder containing the PDF file you want to add a bookmark to. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ Dans cette étape, vous devez spécifier le chemin d'accès au dossier contenant le fichier PDF auquel vous souhaitez ajouter un signet. Remplacer`"YOUR DOCUMENT DIRECTORY"`dans le code suivant avec le chemin réel de votre dossier de documents :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Étape 3 : Ouvrez le document PDF
 
-Now we will open the PDF document to which we want to add a bookmark using the following code:
+Nous allons maintenant ouvrir le document PDF auquel nous souhaitons ajouter un signet en utilisant le code suivant :
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddBookmark.pdf");
 ```
 
-## Step 4: Create bookmark object
+## Étape 4 : Créer un objet de signet
 
-In this step, we will create a bookmark object using `OutlineItemCollection` class and set its properties such as title, italic attribute, bold attribute and action to perform when clicked. Here is the corresponding code:
+ Dans cette étape, nous allons créer un objet signet en utilisant`OutlineItemCollection` classe et définissez ses propriétés telles que le titre, l'attribut italique, l'attribut gras et l'action à effectuer lorsque vous cliquez dessus. Voici le code correspondant :
 
 ```csharp
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -46,80 +46,80 @@ pdfOutline. Bold = true;
 pdfOutline.Action = new GoToAction(pdfDocument.Pages[1]);
 ```
 
-## Step 5: Add bookmark to document
+## Étape 5 : ajouter un signet au document
 
-Finally, we add the created bookmark to the document's bookmark collection using the `Add` method of the `Outlines` property. Here is the corresponding code:
+ Enfin, nous ajoutons le signet créé à la collection de signets du document en utilisant le`Add` méthode du`Outlines` propriété. Voici le code correspondant :
 
 ```csharp
 pdfDocument.Outlines.Add(pdfOutline);
 ```
 
-### Sample source code for Add Bookmark using Aspose.PDF for .NET 
+### Exemple de code source pour Ajouter un signet à l’aide d’Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir + "AddBookmark.pdf");
-// Create a bookmark object
+// Créer un objet signet
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfOutline.Title = "Test Outline";
 pdfOutline.Italic = true;
 pdfOutline.Bold = true;
-// Set the destination page number
+// Définir le numéro de la page de destination
 pdfOutline.Action = new GoToAction(pdfDocument.Pages[1]);
-// Add bookmark in the document's outline collection.
+// Ajoutez un signet dans la collection de plans du document.
 pdfDocument.Outlines.Add(pdfOutline);
 dataDir = dataDir + "AddBookmark_out.pdf";
-// Save output
+// Enregistrer la sortie
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nBookmark added successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusion
 
-Congratulation ! Now you have a step by step guide to add a bookmark using Aspose.PDF for .NET. You can use this code to improve navigation in your PDF documents by adding custom bookmarks.
+Félicitation ! Vous disposez désormais d'un guide étape par étape pour ajouter un signet à l'aide d'Aspose.PDF pour .NET. Vous pouvez utiliser ce code pour améliorer la navigation dans vos documents PDF en ajoutant des signets personnalisés.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Assurez-vous de consulter la documentation officielle Aspose.PDF pour plus d'informations sur les fonctionnalités avancées de manipulation de signets.
 
 
-### FAQ's for add bookmark in PDF file
+### FAQ pour ajouter un signet dans un fichier PDF
 
-#### Q: What are bookmarks in a PDF file?
+#### Q : Que sont les signets dans un fichier PDF ?
 
-A: Bookmarks, also known as outlines, are interactive elements that provide navigation and structure within a PDF document. They allow users to quickly jump to specific sections or pages.
+R : Les signets, également appelés plans, sont des éléments interactifs qui permettent la navigation et la structure dans un document PDF. Ils permettent aux utilisateurs d'accéder rapidement à des sections ou des pages spécifiques.
 
-#### Q: Why would I need to add bookmarks to a PDF file?
+#### Q : Pourquoi devrais-je ajouter des signets à un fichier PDF ?
 
-A: Adding bookmarks to a PDF file improves user experience and makes it easier for readers to navigate through the document's content. Bookmarks can serve as a table of contents or provide quick access to important sections.
+R : L'ajout de signets à un fichier PDF améliore l'expérience utilisateur et permet aux lecteurs de naviguer plus facilement dans le contenu du document. Les signets peuvent servir de table des matières ou fournir un accès rapide aux sections importantes.
 
-#### Q: How do I import the required libraries for my C# project?
+#### Q : Comment importer les bibliothèques requises pour mon projet C# ?
 
-A: To import the necessary libraries for your C# project, include the following import directives:
+R : Pour importer les bibliothèques nécessaires à votre projet C#, incluez les directives d'importation suivantes :
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-These directives enable you to access the classes and methods needed for working with PDF documents and bookmarks.
+Ces directives vous permettent d'accéder aux classes et méthodes nécessaires pour travailler avec des documents et des signets PDF.
 
-#### Q: How do I specify the path to the documents folder?
+#### Q : Comment puis-je spécifier le chemin d'accès au dossier de documents ?
 
-A: Replace `"YOUR DOCUMENT DIRECTORY"` in the provided source code with the actual path to the folder containing the PDF file you want to add a bookmark to.
+ R : Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le code source fourni avec le chemin réel vers le dossier contenant le fichier PDF auquel vous souhaitez ajouter un signet.
 
-#### Q: How do I open a PDF document for adding bookmarks?
+#### Q : Comment puis-je ouvrir un document PDF pour ajouter des signets ?
 
-A: To open a PDF document for adding bookmarks, use the following code:
+R : Pour ouvrir un document PDF et ajouter des signets, utilisez le code suivant :
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddBookmark.pdf");
 ```
 
-Replace `"AddBookmark.pdf"` with the actual file name.
+ Remplacer`"AddBookmark.pdf"` avec le nom réel du fichier.
 
-#### Q: How do I create a bookmark object?
+#### Q : Comment créer un objet signet ?
 
-A: To create a bookmark object, use the `OutlineItemCollection` class. Customize its properties such as title, italic style, bold style, and action to perform when clicked.
+ R : Pour créer un objet signet, utilisez l'outil`OutlineItemCollection` classe. Personnalisez ses propriétés telles que le titre, le style italique, le style gras et l'action à effectuer lorsque vous cliquez dessus.
 
 ```csharp
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -129,39 +129,39 @@ pdfOutline.Bold = true;
 pdfOutline.Action = new GoToAction(pdfDocument.Pages[1]);
 ```
 
-#### Q: What is the purpose of the `Action` property in a bookmark?
+####  Q : Quel est le but du`Action` property in a bookmark?
 
-A: The `Action` property specifies the action to be performed when the bookmark is clicked. In this example, we use the `GoToAction` class to navigate to a specific page (page 2 in this case).
+ R : Le`Action` La propriété spécifie l'action à effectuer lorsque l'utilisateur clique sur le signet. Dans cet exemple, nous utilisons le`GoToAction`class pour accéder à une page spécifique (page 2 dans ce cas).
 
-#### Q: How do I add the bookmark to the document?
+#### Q : Comment ajouter le signet au document ?
 
-A: Use the `Add` method of the `Outlines` property to add the created bookmark to the document's bookmark collection.
+ R : Utilisez le`Add` méthode du`Outlines` propriété pour ajouter le signet créé à la collection de signets du document.
 
 ```csharp
 pdfDocument.Outlines.Add(pdfOutline);
 ```
 
-#### Q: Can I add multiple bookmarks using this method?
+#### Q : Puis-je ajouter plusieurs favoris en utilisant cette méthode ?
 
-A: Yes, you can repeat steps 4 to 8 to add multiple bookmarks to the document. Customize each bookmark's properties and actions as needed.
+R : Oui, vous pouvez répéter les étapes 4 à 8 pour ajouter plusieurs signets au document. Personnalisez les propriétés et les actions de chaque signet selon vos besoins.
 
-#### Q: How do I save the updated PDF file?
+#### Q : Comment puis-je enregistrer le fichier PDF mis à jour ?
 
-A: Save the updated PDF file using the `Save` method of the `pdfDocument` object:
+ R : Enregistrez le fichier PDF mis à jour à l'aide du`Save` méthode du`pdfDocument` objet:
 
 ```csharp
 dataDir = dataDir + "AddBookmark_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-#### Q: How can I confirm that the bookmarks have been added?
+#### Q : Comment puis-je confirmer que les favoris ont été ajoutés ?
 
-A: Open the generated PDF file to verify that the specified bookmarks have been added to the document.
+R : Ouvrez le fichier PDF généré pour vérifier que les signets spécifiés ont été ajoutés au document.
 
-#### Q: Is there a limit to the number of bookmarks I can add?
+#### Q : Y a-t-il une limite au nombre de favoris que je peux ajouter ?
 
-A: There is generally no strict limit to the number of bookmarks you can add, but consider the document's size and complexity for optimal performance.
+R : Il n'y a généralement pas de limite stricte au nombre de signets que vous pouvez ajouter, mais tenez compte de la taille et de la complexité du document pour des performances optimales.
 
-#### Q: Can I customize the appearance of bookmarks?
+#### Q : Puis-je personnaliser l’apparence des favoris ?
 
-A: Yes, you can further customize bookmark appearance, color, style, and other attributes using Aspose.PDF features.
+: Oui, vous pouvez personnaliser davantage l'apparence, la couleur, le style et d'autres attributs des favoris à l'aide des fonctionnalités Aspose.PDF.

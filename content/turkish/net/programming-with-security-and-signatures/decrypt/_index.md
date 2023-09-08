@@ -1,56 +1,56 @@
 ---
-title: Decrypt PDF File
-linktitle: Decrypt PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to decrypt PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasının Şifresini Çöz
+linktitle: PDF Dosyasının Şifresini Çöz
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasının şifresini nasıl çözeceğinizi öğrenin.
 type: docs
 weight: 20
 url: /tr/net/programming-with-security-and-signatures/decrypt/
 ---
-In this tutorial, we will guide you through the process of decrypt PDF file using Aspose.PDF for .NET. This library allows you to open an existing PDF file, decrypt it and save the updated version. This feature is useful when you need to remove the password from a PDF file for easier access.
+Bu eğitimde, Aspose.PDF for .NET'i kullanarak PDF dosyasının şifresini çözme sürecinde size rehberlik edeceğiz. Bu kitaplık, mevcut bir PDF dosyasını açmanıza, şifresini çözmenize ve güncellenmiş sürümü kaydetmenize olanak tanır. Bu özellik, daha kolay erişim için bir PDF dosyasından şifreyi kaldırmanız gerektiğinde kullanışlıdır.
 
-## Step 1: Prerequisites
+## 1. Adım: Önkoşullar
 
-Before you begin, make sure you have the following prerequisites:
+Başlamadan önce aşağıdaki önkoşullara sahip olduğunuzdan emin olun:
 
-- Basic knowledge of the C# programming language
-- Installing Visual Studio on your machine
-- Aspose.PDF library for .NET installed
+- C# programlama dili hakkında temel bilgi
+- Visual Studio'yu makinenize yükleme
+- .NET için Aspose.PDF kütüphanesi kuruldu
 
-## Step 2: Environment setup
+## 2. Adım: Ortam kurulumu
 
-To get started, follow these steps to set up your development environment:
+Başlamak için geliştirme ortamınızı ayarlamak üzere şu adımları izleyin:
 
-1. Open Visual Studio and create a new C# project.
-2. Install Aspose.PDF library for .NET using NuGet package manager.
-3. Import the required namespaces into your code file:
+1. Visual Studio'yu açın ve yeni bir C# projesi oluşturun.
+2. NuGet paket yöneticisini kullanarak .NET için Aspose.PDF kitaplığını yükleyin.
+3. Gerekli ad alanlarını kod dosyanıza aktarın:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Opening the PDF document
+## 3. Adım: PDF belgesini açma
 
-The first step is to open the PDF document you want to decrypt. In this example, we assume that you have a PDF file named "Decrypt.pdf" in the specified directory.
+İlk adım, şifresini çözmek istediğiniz PDF belgesini açmaktır. Bu örnekte belirtilen dizinde "Decrypt.pdf" adında bir PDF dosyanızın olduğunu varsayıyoruz.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document document = new Document(dataDir + "Decrypt.pdf", "password");
 ```
 
-Be sure to replace the placeholders with the actual locations and passwords you want to use.
+Yer tutucuları, kullanmak istediğiniz gerçek konumlar ve şifrelerle değiştirdiğinizden emin olun.
 
-## Step 4: PDF decryption
+## Adım 4: PDF şifre çözme
 
-Once you have opened the PDF document, you can decrypt it using the `Decrypt` method. No parameters are required for this method.
+ PDF belgesini açtıktan sonra, aşağıdaki komutu kullanarak şifresini çözebilirsiniz:`Decrypt` yöntem. Bu yöntem için herhangi bir parametreye gerek yoktur.
 
 ```csharp
 document. Decrypt();
 ```
 
-## Step 5: Save updated PDF
+## 5. Adım: Güncellenen PDF'yi kaydedin
 
-After decrypting the PDF, you need to save the updated version of the document. Specify the output file path and use the `Save` method to save the document.
+ PDF'nin şifresini çözdükten sonra belgenin güncellenmiş sürümünü kaydetmeniz gerekir. Çıktı dosyası yolunu belirtin ve`Save` Belgeyi kaydetme yöntemi.
 
 ```csharp
 dataDir = dataDir + "Decrypt_out.pdf";
@@ -58,57 +58,57 @@ document. Save(dataDir);
 Console.WriteLine("\nPDF file decrypted successfully.\nFile saved at " + dataDir);
 ```
 
-The updated PDF will be saved to the specified location.
+Güncellenen PDF belirtilen konuma kaydedilecektir.
 
-### Sample source code for Decrypt using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Şifre Çözme için örnek kaynak kodu 
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Open document
+// Belgeyi aç
 Document document = new Document(dataDir+ "Decrypt.pdf", "password");
-// Decrypt PDF
+//PDF'nin şifresini çöz
 document.Decrypt();
 dataDir = dataDir + "Decrypt_out.pdf";
-// Save updated PDF
+// Güncellenmiş PDF'yi kaydet
 document.Save(dataDir);
 Console.WriteLine("\nPDF file decrypted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have successfully decrypted a PDF file using Aspose.PDF for .NET. This tutorial covered the step-by-step process from opening the document to saving the updated version. You can now use this feature to remove passwords from your PDF files.
+Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF dosyasının şifresini başarıyla çözdünüz. Bu eğitimde, belgenin açılmasından güncellenmiş sürümün kaydedilmesine kadar adım adım süreç anlatılmıştır. Artık bu özelliği PDF dosyalarınızdan şifreleri kaldırmak için kullanabilirsiniz.
 
-### FAQ's for decrypt PDF file
+### PDF dosyasının şifresini çözmek için SSS
 
-#### Q: What is the purpose of this tutorial?
+#### S: Bu eğitimin amacı nedir?
 
-A: This tutorial aims to guide you through the process of decrypting a PDF file using Aspose.PDF for .NET. The library allows you to remove the password from an existing PDF document and save the updated version, providing easier access to the file.
+C: Bu eğitimin amacı, Aspose.PDF for .NET kullanarak bir PDF dosyasının şifresini çözme sürecinde size rehberlik etmektir. Kitaplık, mevcut bir PDF belgesinden parolayı kaldırmanıza ve güncellenmiş sürümü kaydetmenize olanak tanıyarak dosyaya daha kolay erişim sağlar.
 
-#### Q: What prerequisites are required before starting?
+#### S: Başlamadan önce hangi önkoşullar gereklidir?
 
-A: Before you begin, make sure you have a basic understanding of the C# programming language, have Visual Studio installed on your machine, and have the Aspose.PDF library for .NET installed.
+C: Başlamadan önce, C# programlama dili hakkında temel bilgiye sahip olduğunuzdan, makinenizde Visual Studio'nun kurulu olduğundan ve Aspose.PDF kütüphanesinin .NET için kurulu olduğundan emin olun.
 
-#### Q: How do I set up the development environment?
+#### S: Geliştirme ortamını nasıl kurarım?
 
-A: Follow the provided steps to set up your development environment, including creating a new C# project in Visual Studio, installing the Aspose.PDF library for .NET using NuGet Package Manager, and importing the required namespaces.
+C: Visual Studio'da yeni bir C# projesi oluşturmak, NuGet Paket Yöneticisi'ni kullanarak .NET için Aspose.PDF kitaplığını yüklemek ve gerekli ad alanlarını içe aktarmak da dahil olmak üzere geliştirme ortamınızı kurmak için sağlanan adımları izleyin.
 
-#### Q: How do I open an existing PDF document?
+#### S: Mevcut bir PDF belgesini nasıl açarım?
 
-A: Use the `Document` class to open the PDF document you want to decrypt. Replace "Decrypt.pdf" with the actual file name and provide the password for decryption.
+ C: Kullan`Document` Şifresini çözmek istediğiniz PDF belgesini açmak için sınıf. "Decrypt.pdf" dosyasını gerçek dosya adıyla değiştirin ve şifre çözme için şifreyi sağlayın.
 
-#### Q: How can I decrypt a PDF document?
+#### S: Bir PDF belgesinin şifresini nasıl çözebilirim?
 
-A: Once you have opened the PDF document, use the `Decrypt` method on the `Document` object. No parameters are required for this method.
+ C: PDF belgesini açtıktan sonra`Decrypt` konusundaki yöntem`Document` nesne. Bu yöntem için herhangi bir parametreye gerek yoktur.
 
-#### Q: Can I specify different passwords for decryption?
+#### S: Şifre çözme için farklı şifreler belirleyebilir miyim?
 
-A: No, the `Decrypt` method does not require any parameters. It assumes that the password provided during opening the document is the decryption password.
+ C: Hayır,`Decrypt` Yöntem herhangi bir parametre gerektirmez. Belgeyi açarken verilen şifrenin şifre çözme şifresi olduğunu varsayar.
 
-#### Q: How do I save the decrypted PDF document?
+#### S: Şifresi çözülmüş PDF belgesini nasıl kaydederim?
 
-A: After decrypting the PDF, use the `Save` method on the `Document` object to save the updated PDF document. Specify the output file path where the decrypted PDF will be saved.
+ C: PDF'nin şifresini çözdükten sonra`Save` konusundaki yöntem`Document` Güncellenen PDF belgesini kaydetmek için nesne. Şifresi çözülmüş PDF'nin kaydedileceği çıktı dosyası yolunu belirtin.
 
-#### Q: How can I ensure the security of my decrypted PDF files?
+#### S: Şifresi çözülmüş PDF dosyalarımın güvenliğini nasıl sağlayabilirim?
 
-A: Once a PDF is decrypted, it no longer requires a password for access. Be cautious when sharing decrypted PDFs, as they may no longer have the same level of security as password-protected files.
+C: Bir PDF'nin şifresi çözüldükten sonra erişim için artık şifre gerekmez. Şifresi çözülmüş PDF'leri paylaşırken dikkatli olun; çünkü bunlar artık parola korumalı dosyalarla aynı düzeyde güvenlik sağlayamayabilir.

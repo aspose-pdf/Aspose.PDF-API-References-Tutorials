@@ -1,49 +1,49 @@
 ---
-title: Grouped Check Boxes In PDF Document
-linktitle: Grouped Check Boxes In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create grouped checkboxes in PDF document with Aspose.PDF for .NET.
+title: Gruppierte Kontrollkästchen im PDF-Dokument
+linktitle: Gruppierte Kontrollkästchen im PDF-Dokument
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erstellen Sie mit Aspose.PDF für .NET ganz einfach gruppierte Kontrollkästchen in PDF-Dokumenten.
 type: docs
 weight: 170
 url: /de/net/programming-with-forms/grouped-check-boxes/
 ---
-In this tutorial, we will show you how to create grouped checkboxes in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET gruppierte Kontrollkästchen in einem PDF-Dokument erstellen. Wir erklären Ihnen Schritt für Schritt den C#-Quellcode, um Sie durch diesen Prozess zu führen.
 
-## Step 1: Preparation
+## Schritt 1: Vorbereitung
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Stellen Sie sicher, dass Sie die erforderlichen Bibliotheken importiert und den Pfad zu Ihrem Dokumentenverzeichnis festgelegt haben:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiate a Document Object
+## Schritt 2: Instanziieren Sie ein Dokumentobjekt
 
-Instantiate a Document object:
+Instanziieren Sie ein Document-Objekt:
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-## Step 3: Add page to PDF document
+## Schritt 3: Seite zum PDF-Dokument hinzufügen
 
-Add a page to the PDF document:
+Fügen Sie dem PDF-Dokument eine Seite hinzu:
 
 ```csharp
 Page page = pdfDocument.Pages.Add();
 ```
 
-## Step 4: Instantiate a RadioButtonField Object
+## Schritt 4: Instanziieren Sie ein RadioButtonField-Objekt
 
-Instantiate a RadioButtonField object with the page number as argument:
+Instanziieren Sie ein RadioButtonField-Objekt mit der Seitenzahl als Argument:
 
 ```csharp
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Step 5: Add radio button options
+## Schritt 5: Optionsfelder hinzufügen
 
-Add radio button options using the RadioButtonOptionField object and specify their position using the Rectangle object:
+Fügen Sie Optionsfeldoptionen mithilfe des RadioButtonOptionField-Objekts hinzu und geben Sie ihre Position mithilfe des Rechteckobjekts an:
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
@@ -54,9 +54,9 @@ radio.Add(opt1);
 radio.Add(opt2);
 ```
 
-## Step 6: Customize radio button options
+## Schritt 6: Optionsfeldoptionen anpassen
 
-Customize radio button options by setting their style, border, and appearance:
+Passen Sie die Optionen der Optionsfelder an, indem Sie deren Stil, Rahmen und Erscheinungsbild festlegen:
 
 ```csharp
 opt1.Style = BoxStyle.Square;
@@ -69,36 +69,36 @@ opt2.Border.Width = 1;
 opt2.Border.Style = BorderStyle.Solid;
 ```
 
-## Step 7: Add the radio buttons to the form
+## Schritt 7: Fügen Sie die Optionsfelder zum Formular hinzu
 
-Add the radio buttons to the document form object:
+Fügen Sie die Optionsfelder zum Dokumentformularobjekt hinzu:
 
 ```csharp
 pdfDocument.Form.Add(radio);
 ```
 
-## Step 8: Save the document
+## Schritt 8: Speichern Sie das Dokument
 
-Save the PDF document:
+Speichern Sie das PDF-Dokument:
 
 ```csharp
 dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Grouped Check Boxes using Aspose.PDF for .NET 
+### Beispielquellcode für gruppierte Kontrollkästchen mit Aspose.PDF für .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Der Pfad zum Dokumentenverzeichnis.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Instantiate Document object
+	// Dokumentobjekt instanziieren
 	Document pdfDocument = new Document();
-	// Add a page to PDF file
+	// Fügen Sie einer PDF-Datei eine Seite hinzu
 	Page page = pdfDocument.Pages.Add();
-	// Instatiate RadioButtonField object with page number as argument
+	// Erstellen Sie ein RadioButtonField-Objekt mit der Seitenzahl als Argument
 	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Add first radio button option and also specify its origin using Rectangle object
+	// Fügen Sie die erste Optionsfeldoption hinzu und geben Sie auch deren Ursprung mithilfe des Rechteckobjekts an
 	RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
 	RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
 	opt1.OptionName = "Test1";
@@ -117,10 +117,10 @@ try
 	opt2.Border.Width = 1;
 	opt2.Border.Style = BorderStyle.Solid;
 	opt2.Characteristics.Border = System.Drawing.Color.Black;
-	// Add radio button to form object of Document object
+	// Fügen Sie ein Optionsfeld zum Formularobjekt des Dokumentobjekts hinzu
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
-	// Save the PDF document
+	// Speichern Sie das PDF-Dokument
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nGrouped checkboxes added successfully.\nFile saved at " + dataDir);
 }
@@ -130,28 +130,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we learned how to create grouped checkboxes in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily add custom radio button options and bundle them in your PDF documents using Aspose.PDF.
+In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET gruppierte Kontrollkästchen in einem PDF-Dokument erstellt. Wenn Sie diese Schritte befolgen, können Sie ganz einfach benutzerdefinierte Optionsfeldoptionen hinzufügen und diese mit Aspose.PDF in Ihren PDF-Dokumenten bündeln.
 
-### FAQ's
+### FAQs
 
-#### Q: What are grouped checkboxes in a PDF document?
+#### F: Was sind gruppierte Kontrollkästchen in einem PDF-Dokument?
 
-A: Grouped checkboxes in a PDF document refer to a set of radio button options that are grouped together. Radio buttons allow users to select only one option from a group of mutually exclusive choices. When one radio button is selected, the others in the same group are automatically deselected. This grouping behavior is useful when you want to present users with multiple options but limit their selection to one choice only.
+A: Gruppierte Kontrollkästchen in einem PDF-Dokument beziehen sich auf eine Reihe von Optionsfeldern, die gruppiert sind. Mit Optionsschaltflächen können Benutzer nur eine Option aus einer Gruppe sich gegenseitig ausschließender Optionen auswählen. Wenn ein Optionsfeld ausgewählt ist, werden die anderen in derselben Gruppe automatisch deaktiviert. Dieses Gruppierungsverhalten ist nützlich, wenn Sie Benutzern mehrere Optionen anbieten möchten, ihre Auswahl jedoch auf nur eine Option beschränken möchten.
 
-#### Q: Can I customize the appearance of grouped checkboxes in Aspose.PDF for .NET?
+#### F: Kann ich das Erscheinungsbild gruppierter Kontrollkästchen in Aspose.PDF für .NET anpassen?
 
-A: Yes, you can customize the appearance of grouped checkboxes in Aspose.PDF for .NET. The API provides various options to set the style, border, and appearance of radio button options. You can define the position of each option, choose between different box styles (e.g., square, circle, cross), and adjust the border properties to achieve the desired visual representation.
+A: Ja, Sie können das Erscheinungsbild gruppierter Kontrollkästchen in Aspose.PDF für .NET anpassen. Die API bietet verschiedene Optionen zum Festlegen des Stils, des Rahmens und des Erscheinungsbilds von Optionsfeldoptionen. Sie können die Position jeder Option definieren, zwischen verschiedenen Boxstilen (z. B. Quadrat, Kreis, Kreuz) wählen und die Rahmeneigenschaften anpassen, um die gewünschte visuelle Darstellung zu erzielen.
 
-#### Q: How do I add grouped checkboxes to a specific page in a PDF document?
+#### F: Wie füge ich gruppierte Kontrollkästchen zu einer bestimmten Seite in einem PDF-Dokument hinzu?
 
-A: To add grouped checkboxes to a specific page in a PDF document, you need to instantiate a `RadioButtonField` object with the desired page number as an argument. Then, create `RadioButtonOptionField` objects representing each radio button option and specify their position using the `Rectangle` object. Finally, add these options to the `RadioButtonField` and customize their appearance as needed before adding the `RadioButtonField` to the document form.
+A: Um gruppierte Kontrollkästchen zu einer bestimmten Seite in einem PDF-Dokument hinzuzufügen, müssen Sie ein instanziieren`RadioButtonField` Objekt mit der gewünschten Seitenzahl als Argument. Dann erstellen Sie`RadioButtonOptionField` Objekte, die jede Optionsfeldoption darstellen, und geben ihre Position mithilfe von an`Rectangle` Objekt. Fügen Sie abschließend diese Optionen hinzu`RadioButtonField` und passen Sie ihr Erscheinungsbild nach Bedarf an, bevor Sie das hinzufügen`RadioButtonField` zum Dokumentformular.
 
-#### Q: Can I add multiple groups of checkboxes to a single PDF document?
+#### F: Kann ich einem einzelnen PDF-Dokument mehrere Gruppen von Kontrollkästchen hinzufügen?
 
-A: Yes, you can add multiple groups of checkboxes to a single PDF document. Each group should have a unique `RadioButtonField` object, and the `RadioButtonOptionField` objects within each group should share the same page and unique names for their options. This ensures that the radio buttons within each group function correctly, and the selections are mutually exclusive.
+ A: Ja, Sie können einem einzelnen PDF-Dokument mehrere Gruppen von Kontrollkästchen hinzufügen. Jede Gruppe sollte ein Unikat haben`RadioButtonField` Objekt und das`RadioButtonOptionField` Objekte innerhalb jeder Gruppe sollten dieselbe Seite und eindeutige Namen für ihre Optionen haben. Dadurch wird sichergestellt, dass die Optionsfelder innerhalb jeder Gruppe ordnungsgemäß funktionieren und sich die Auswahlmöglichkeiten gegenseitig ausschließen.
 
-#### Q: Are grouped checkboxes supported in all PDF viewers and applications?
+#### F: Werden gruppierte Kontrollkästchen in allen PDF-Viewern und -Anwendungen unterstützt?
 
-A: Yes, grouped checkboxes are supported in all standard-compliant PDF viewers and applications. The PDF specification defines radio buttons and their grouping behavior, making them universally recognized in the PDF format. However, it's essential to test the functionality in different PDF viewers to ensure consistent behavior across various platforms.
+A: Ja, gruppierte Kontrollkästchen werden in allen standardkonformen PDF-Viewern und -Anwendungen unterstützt. Die PDF-Spezifikation definiert Optionsfelder und ihr Gruppierungsverhalten, wodurch sie im PDF-Format allgemein anerkannt werden. Es ist jedoch wichtig, die Funktionalität in verschiedenen PDF-Viewern zu testen, um ein konsistentes Verhalten auf verschiedenen Plattformen sicherzustellen.

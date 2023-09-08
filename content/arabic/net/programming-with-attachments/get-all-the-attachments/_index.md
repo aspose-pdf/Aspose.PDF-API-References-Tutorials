@@ -1,43 +1,43 @@
 ---
-title: Get All The Attachments In PDF File
-linktitle: Get All The Attachments In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get all attachments in PDF file with Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: احصل على جميع المرفقات في ملف PDF
+linktitle: احصل على جميع المرفقات في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية الحصول على جميع المرفقات في ملف PDF باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة لسهولة التعامل.
 type: docs
 weight: 40
 url: /ar/net/programming-with-attachments/get-all-the-attachments/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to get all attachments in PDF file using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك عبر التعليمات البرمجية المصدر لـ C# التالية خطوة بخطوة للحصول على جميع المرفقات في ملف PDF باستخدام Aspose.PDF لـ .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك قبل البدء. لديك أيضًا معرفة أساسية ببرمجة C#.
 
-### Step 1: Document Directory Setup
+### الخطوة 1: إعداد دليل المستندات
 
-In the provided source code, you need to specify the directory where the PDF file is located from which you want to get the attachments. Change the "dataDir" variable to the desired directory.
+في الكود المصدري المقدم، تحتاج إلى تحديد الدليل الذي يوجد به ملف PDF الذي تريد الحصول على المرفقات منه. قم بتغيير المتغير "dataDir" إلى الدليل المطلوب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### الخطوة 2: افتح مستند PDF الموجود
 
-We open the existing PDF document using the specified path.
+نفتح مستند PDF الموجود باستخدام المسار المحدد.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
 ```
 
-### Step 3: Obtaining the Attachments Collection
+### الخطوة 3: الحصول على مجموعة المرفقات
 
-We get the collection of attachments from the document.
+نحصل على مجموعة المرفقات من الوثيقة.
 
 ```csharp
 EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
 ```
 
-### Step 4: Retrieving attachments
+### الخطوة الرابعة: استرجاع المرفقات
 
-We go through the collection to get all the attachments and display their information. We also save attachments in individual files.
+نتصفح المجموعة للحصول على جميع المرفقات وعرض معلوماتها. نقوم أيضًا بحفظ المرفقات في ملفات فردية.
 
 ```csharp
 int count = 1;
@@ -47,7 +47,7 @@ Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Check if object parameters contain additional information
+// تحقق مما إذا كانت معلمات الكائن تحتوي على معلومات إضافية
 if (fileSpecification.Params != null)
 {
 Console.WriteLine("CheckSum: {0}", fileSpecification.Params.CheckSum);
@@ -56,7 +56,7 @@ Console.WriteLine("Modified date: {0}", fileSpecification.Params.ModDate);
 Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 
-// Retrieve the attachment and save in a file
+// قم باسترجاع المرفق وحفظه في ملف
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
 fileSpecification.Contents.Read(fileContent, 0, fileContent.Length);
 FileStream fileStream = new FileStream(dataDir + count + "_out" + ".txt", FileMode.Create);
@@ -68,27 +68,27 @@ count += 1;
 ```
 
 
-### Sample source code for Get Allthe Attachments using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للحصول على كافة المرفقات باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Get embedded files collection
+// احصل على مجموعة الملفات المضمنة
 EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
-// Get count of the embedded files
+// الحصول على عدد من الملفات المدمجة
 Console.WriteLine("Total files : {0}", embeddedFiles.Count);
 int count = 1;
-// Loop through the collection to get all the attachments
+// قم بالمراجعة عبر المجموعة للحصول على كافة المرفقات
 foreach (FileSpecification fileSpecification in embeddedFiles)
 {
 	Console.WriteLine("Name: {0}", fileSpecification.Name);
 	Console.WriteLine("Description: {0}",
 	fileSpecification.Description);
 	Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-	// Check if parameter object contains the parameters
+	//تحقق مما إذا كان كائن المعلمة يحتوي على المعلمات
 	if (fileSpecification.Params != null)
 	{
 		Console.WriteLine("CheckSum: {0}",
@@ -99,7 +99,7 @@ foreach (FileSpecification fileSpecification in embeddedFiles)
 		fileSpecification.Params.ModDate);
 		Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 	}
-	// Get the attachment and write to file or stream
+	// احصل على المرفق واكتبه في ملف أو دفق
 	byte[] fileContent = new byte[fileSpecification.Contents.Length];
 	fileSpecification.Contents.Read(fileContent, 0,
 	fileContent.Length);
@@ -112,44 +112,44 @@ foreach (FileSpecification fileSpecification in embeddedFiles)
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we explained how to get all attachments from a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and manipulate attachments from your PDF files.
+في هذا البرنامج التعليمي، شرحنا كيفية الحصول على كافة المرفقات من ملف PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام هذه المعرفة لاستخراج المرفقات من ملفات PDF الخاصة بك ومعالجتها.
 
-## FAQ's for get all the attachments in PDF file
+## الأسئلة الشائعة للحصول على جميع المرفقات في ملف PDF
 
-#### Q: Why would I need to retrieve all attachments from a PDF document?
+#### س: لماذا أحتاج إلى استرداد جميع المرفقات من مستند PDF؟
 
-A: Retrieving attachments allows you to access and manipulate additional files embedded within a PDF, which can be useful for archiving, sharing, or further processing.
+ج: يتيح لك استرداد المرفقات الوصول إلى الملفات الإضافية المضمنة في ملف PDF ومعالجتها، مما قد يكون مفيدًا للأرشفة أو المشاركة أو المعالجة الإضافية.
 
-#### Q: What types of files can be attached to a PDF document?
+#### س: ما هي أنواع الملفات التي يمكن إرفاقها بمستند PDF؟
 
-A: PDF documents can contain a wide range of attached files, including images, documents, spreadsheets, audio files, and more.
+ج: يمكن أن تحتوي مستندات PDF على مجموعة واسعة من الملفات المرفقة، بما في ذلك الصور والمستندات وجداول البيانات والملفات الصوتية والمزيد.
 
-#### Q: How does this tutorial help me retrieve attachments from a PDF using Aspose.PDF for .NET?
+#### س: كيف يساعدني هذا البرنامج التعليمي في استرداد المرفقات من ملف PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: This tutorial provides step-by-step instructions and C# source code to access and retrieve all attachments within a PDF document.
+ج: يوفر هذا البرنامج التعليمي إرشادات خطوة بخطوة وكود مصدر C# للوصول إلى جميع المرفقات واستردادها داخل مستند PDF.
 
-#### Q: Can I retrieve specific attachments instead of all attachments using this tutorial?
+#### س: هل يمكنني استرداد مرفقات معينة بدلاً من كافة المرفقات باستخدام هذا البرنامج التعليمي؟
 
-A: Yes, you can modify the provided code to selectively retrieve attachments based on your requirements.
+ج: نعم، يمكنك تعديل الكود المقدم لاسترداد المرفقات بشكل انتقائي بناءً على متطلباتك.
 
-#### Q: What information about each attachment can I obtain using this tutorial?
+#### س: ما هي المعلومات المتعلقة بكل مرفق التي يمكنني الحصول عليها باستخدام هذا البرنامج التعليمي؟
 
-A: This tutorial demonstrates how to retrieve and display details such as the attachment's name, description, MIME type, creation date, modification date, and size.
+ج: يوضح هذا البرنامج التعليمي كيفية استرداد وعرض التفاصيل مثل اسم المرفق والوصف ونوع MIME وتاريخ الإنشاء وتاريخ التعديل والحجم.
 
-#### Q: How are the retrieved attachments saved using this tutorial?
+#### س: كيف يتم حفظ المرفقات المستردة باستخدام هذا البرنامج التعليمي؟
 
-A: The tutorial guides you through saving each retrieved attachment as a separate file in the specified directory.
+ج: يرشدك البرنامج التعليمي خلال حفظ كل مرفق تم استرداده كملف منفصل في الدليل المحدد.
 
-#### Q: Can I use this knowledge to extract attachments from password-protected PDF files?
+#### س: هل يمكنني استخدام هذه المعرفة لاستخراج المرفقات من ملفات PDF محمية بكلمة مرور؟
 
-A: Yes, you can apply similar principles to retrieve attachments from password-protected PDF files using Aspose.PDF for .NET.
+ج: نعم، يمكنك تطبيق مبادئ مماثلة لاسترداد المرفقات من ملفات PDF المحمية بكلمة مرور باستخدام Aspose.PDF لـ .NET.
 
-#### Q: How does Aspose.PDF for .NET facilitate attachment retrieval?
+#### س: كيف يسهل Aspose.PDF for .NET استرجاع المرفقات؟
 
-A: Aspose.PDF for .NET provides an intuitive API that allows you to access and manipulate attachments in PDF documents easily.
+ج: يوفر Aspose.PDF for .NET واجهة برمجة تطبيقات بديهية تسمح لك بالوصول إلى المرفقات في مستندات PDF ومعالجتها بسهولة.
 
-#### Q: Are there specific scenarios where retrieving attachments is recommended?
+#### س: هل هناك سيناريوهات محددة يوصى فيها باسترداد المرفقات؟
 
-A: Retrieving attachments is useful when you need to access files embedded within a PDF, such as extracting images, audio files, or additional documents.
+ج: يعد استرداد المرفقات مفيدًا عندما تحتاج إلى الوصول إلى الملفات المضمنة في ملف PDF، مثل استخراج الصور أو الملفات الصوتية أو المستندات الإضافية.

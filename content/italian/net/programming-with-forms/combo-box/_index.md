@@ -1,49 +1,49 @@
 ---
-title: Combo Box
-linktitle: Combo Box
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create combo box list in your PDF documents using Aspose.PDF for .NET.
+title: Casella combinata
+linktitle: Casella combinata
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Crea facilmente un elenco di caselle combinate nei tuoi documenti PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 30
 url: /it/net/programming-with-forms/combo-box/
 ---
-In this tutorial, we will show you how to create a combo box list using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+In questo tutorial, ti mostreremo come creare un elenco di caselle combinate utilizzando Aspose.PDF per .NET. Spiegheremo il codice sorgente C# passo dopo passo per guidarti attraverso questo processo.
 
-## Step 1: Preparation
+## Passaggio 1: preparazione
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Innanzitutto, assicurati di aver importato le librerie necessarie e di impostare il percorso della directory dei documenti:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a Document Object
+## Passaggio 2: creare un oggetto documento
 
-Create a Document object to hold the PDF form:
+Crea un oggetto Documento per contenere il modulo PDF:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 3: Add a page
+## Passaggio 3: aggiungi una pagina
 
-Add a page to the document:
+Aggiungi una pagina al documento:
 
 ```csharp
 doc.Pages.Add();
 ```
 
-## Step 4: Instantiate a ComboBoxField Object
+## Passaggio 4: creare un'istanza di un oggetto ComboBoxField
 
-Instantiate a ComboBoxField object with the desired dimensions:
+Istanziare un oggetto ComboBoxField con le dimensioni desiderate:
 
 ```csharp
 ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
 ```
 
-## Step 5: Add options to the drop-down list
+## Passaggio 5: aggiungi opzioni all'elenco a discesa
 
-Add the desired options to the drop-down list:
+Aggiungi le opzioni desiderate all'elenco a discesa:
 
 ```csharp
 combo.AddOption("Red");
@@ -52,44 +52,44 @@ combo.AddOption("Green");
 combo.AddOption("Blue");
 ```
 
-## Step 6: Add the combo box list to the form
+## Passaggio 6: aggiungi l'elenco delle caselle combinate al modulo
 
-Add the ComboBoxField object to the Document Form Fields collection:
+Aggiungi l'oggetto ComboBoxField alla raccolta Document Form Fields:
 
 ```csharp
 doc.Form.Add(combo);
 ```
 
-## Step 7: Save the document
+## Passaggio 7: salva il documento
 
-Save the PDF document:
+Salvare il documento PDF:
 
 ```csharp
 dataDir = dataDir + "ComboBox_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Combo Box using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Combo Box utilizzando Aspose.PDF per .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Il percorso della directory dei documenti.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Create Document object
+	// Crea oggetto documento
 	Document doc = new Document();
-	// Add page to document object
+	// Aggiungi pagina all'oggetto documento
 	doc.Pages.Add();
-	// Instantiate ComboBox Field object
+	// Istanziare l'oggetto Campo ComboBox
 	ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
-	// Add option to ComboBox
+	// Aggiungi opzione a ComboBox
 	combo.AddOption("Red");
 	combo.AddOption("Yellow");
 	combo.AddOption("Green");
 	combo.AddOption("Blue");
-	// Add combo box object to form fields collection of document object
+	// Aggiungi un oggetto casella combinata alla raccolta di campi del modulo dell'oggetto documento
 	doc.Form.Add(combo);
 	dataDir = dataDir + "ComboBox_out.pdf";
-	// Save the PDF document
+	// Salva il documento PDF
 	doc.Save(dataDir);
 	Console.WriteLine("\nCombobox field added successfully.\nFile saved at " + dataDir);
 }
@@ -99,28 +99,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Conclusione
 
-In this tutorial, we learned how to create a combo box list using Aspose.PDF for .NET. By following these steps, you can easily add a combo box list to your PDF documents using Aspose.PDF.
+In questo tutorial, abbiamo imparato come creare un elenco di caselle combinate utilizzando Aspose.PDF per .NET. Seguendo questi passaggi, puoi facilmente aggiungere un elenco di caselle combinate ai tuoi documenti PDF utilizzando Aspose.PDF.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: Can I customize the appearance of the combo box list using Aspose.PDF for .NET?
+#### D: Posso personalizzare l'aspetto dell'elenco delle caselle combinate utilizzando Aspose.PDF per .NET?
 
-A: Yes, you can customize the appearance of the combo box list using Aspose.PDF for .NET. You can set properties such as font size, color, background color, border style, and more to match your desired look and feel.
+R: Sì, puoi personalizzare l'aspetto dell'elenco delle caselle combinate utilizzando Aspose.PDF per .NET. Puoi impostare proprietà come dimensione del carattere, colore, colore di sfondo, stile del bordo e altro per adattarlo all'aspetto desiderato.
 
-#### Q: Can I set default selected options in the combo box list?
+#### D: Posso impostare le opzioni selezionate predefinite nell'elenco della casella combinata?
 
-A: Yes, you can set default selected options in the combo box list using Aspose.PDF for .NET. You can use the `Selected` property of the `ComboBoxField` object to mark one or more options as selected by default.
+ R: Sì, è possibile impostare le opzioni selezionate predefinite nell'elenco della casella combinata utilizzando Aspose.PDF per .NET. Puoi usare il`Selected` proprietà del`ComboBoxField` oggetto per contrassegnare una o più opzioni come selezionate per impostazione predefinita.
 
-#### Q: How can I retrieve the selected value from the combo box list after the user makes a selection?
+#### D: Come posso recuperare il valore selezionato dall'elenco della casella combinata dopo che l'utente ha effettuato una selezione?
 
-A: You can retrieve the selected value from the combo box list using Aspose.PDF for .NET. After the user makes a selection, you can access the `Value` property of the `ComboBoxField` object to obtain the selected value.
+ R: È possibile recuperare il valore selezionato dall'elenco della casella combinata utilizzando Aspose.PDF per .NET. Dopo che l'utente ha effettuato una selezione, è possibile accedere al file`Value` proprietà del`ComboBoxField`oggetto per ottenere il valore selezionato.
 
-#### Q: Is it possible to add event handlers or actions to the combo box list?
+#### D: È possibile aggiungere gestori di eventi o azioni all'elenco delle caselle combinate?
 
-A: Yes, Aspose.PDF for .NET allows you to add event handlers or actions to the combo box list. You can associate JavaScript actions, such as `OnValueChanged`, to the combo box list to perform specific actions when the user selects an option.
+ R: Sì, Aspose.PDF per .NET ti consente di aggiungere gestori di eventi o azioni all'elenco della casella combinata. Puoi associare azioni JavaScript, come ad esempio`OnValueChanged`, all'elenco della casella combinata per eseguire azioni specifiche quando l'utente seleziona un'opzione.
 
-#### Q: Can I add tooltips or descriptions to the options in the combo box list?
+#### D: Posso aggiungere suggerimenti o descrizioni alle opzioni nell'elenco della casella combinata?
 
-A: Yes, you can add tooltips or descriptions to the options in the combo box list using Aspose.PDF for .NET. You can set the `AlternateName` property of each option to provide a tooltip or description that will be displayed when the user hovers over the option.
+ R: Sì, puoi aggiungere descrizioni comandi o descrizioni alle opzioni nell'elenco della casella combinata utilizzando Aspose.PDF per .NET. È possibile impostare il`AlternateName` proprietà di ciascuna opzione per fornire una descrizione comando o una descrizione che verrà visualizzata quando l'utente passa il mouse sopra l'opzione.

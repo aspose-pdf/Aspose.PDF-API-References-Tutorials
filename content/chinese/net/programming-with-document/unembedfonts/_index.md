@@ -1,69 +1,69 @@
 ---
-title: Unembed Fonts And Optimize PDF Files
-linktitle: Unembed Fonts And Optimize PDF Files
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to get Unembed Fonts and optimize PDF files. A step-by-step guide.
+title: 取消嵌入字体并优化 PDF 文件
+linktitle: 取消嵌入字体并优化 PDF 文件
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 获取非嵌入字体并优化 PDF 文件。分步指南。
 type: docs
 weight: 370
 url: /zh/net/programming-with-document/unembedfonts/
 ---
-Aspose.PDF for .NET is a powerful library that provides a wide range of features to work with PDF documents. One of its features is to get unembed fonts from a PDF document. This can be useful if you need to extract fonts from a PDF document and use them in other applications.
+Aspose.PDF for .NET 是一个功能强大的库，提供了广泛的处理 PDF 文档的功能。它的功能之一是从 PDF 文档中获取未嵌入的字体。如果您需要从 PDF 文档中提取字体并在其他应用程序中使用它们，这会很有用。
 
-we will provide a step-by-step guide to explain the following C# source code of get unembed fonts feature of Aspose.PDF for .NET.
+我们将提供分步指南来解释 Aspose.PDF for .NET 的获取非嵌入字体功能的以下 C# 源代码。
 
-## Step 1: Set the path to the document directory
+## 第一步：设置文档目录路径
 
-Before we start, we need to set the path to the directory where our PDF document is located. We will store this path in a variable called "dataDir".
+在开始之前，我们需要设置 PDF 文档所在目录的路径。我们将该路径存储在名为“dataDir”的变量中。
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual path to the directory where your PDF document is located.
+将“您的文档目录”替换为 PDF 文档所在目录的实际路径。
 
-## Step 2: Open the PDF Document
+## 第 2 步：打开 PDF 文档
 
-The first step is to load the PDF document that you want to do this, use the `Document` class of Aspose.PDF for .NET. The following code snippet shows how to load the PDF document:
+第一步是加载您想要执行此操作的 PDF 文档，使用`Document`.NET 的 Aspose.PDF 类。以下代码片段展示了如何加载 PDF 文档：
 
 ```csharp
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Step3: Set the UnembedFonts Option
+## 步骤 3：设置 UnembedFonts 选项
 
-To get unembed fonts from the PDF document, you need to set the `UnembedFonts` option to `true`. This option is available in the `OptimizationOptions` class. The following code snippet shows how to set the `UnembedFonts` option:
+要从 PDF 文档中获取未嵌入的字体，您需要设置`UnembedFonts`选项`true`。此选项可在`OptimizationOptions`班级。以下代码片段展示了如何设置`UnembedFonts`选项：
 
 ```csharp
-// Set UnembedFonts option 
+//设置取消嵌入字体选项
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
 	UnembedFonts = true
 };
 ```
 
-## Step 4: Optimize the PDF Document
+## 步骤 4：优化 PDF 文档
 
-After setting the `UnembedFonts` option, you can optimize the PDF document using the `OptimizeResources` method of the `Document` class. The following code snippet shows how to optimize the PDF document:
+设置后`UnembedFonts`选项，您可以使用以下命令优化 PDF 文档`OptimizeResources`的方法`Document`班级。以下代码片段展示了如何优化 PDF 文档：
 
 ```csharp
-// Optimize PDF document using OptimizationOptions
+//使用 OptimizationOptions 优化 PDF 文档
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-## Step 5: Save the Updated Document
+## 第5步：保存更新后的文档
 
-Once the PDF document is optimized, you can save the updated document using the `Save` method of the `Document` class. The following code snippet shows how to save the updated document:
+ PDF 文档优化后，您可以使用以下命令保存更新后的文档：`Save`的方法`Document`班级。以下代码片段显示了如何保存更新的文档：
 
 ```csharp
-// Save updated document
+//保存更新的文档
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 ```
 
-## Step 6: Get the Original and Reduced File Size
+## 第 6 步：获取原始文件大小和缩小后的文件大小
 
-Finally, you can get the original and reduced file size of the PDF document using the `FileInfo` class of System.IO. The following code snippet shows how to get the original and reduced file size:
+最后，您可以使用以下命令获取 PDF 文档的原始文件大小和缩小后的文件大小`FileInfo`System.IO 类。以下代码片段显示了如何获取原始文件大小和缩小后的文件大小：
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
@@ -71,24 +71,24 @@ var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```
 
-### Example Source Code for Get Unembed Fonts using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 获取未嵌入字体的示例源代码
 
-Here is the complete example source code for getting unembed fonts from a PDF document using Aspose.PDF for .NET:
+以下是使用 Aspose.PDF for .NET 从 PDF 文档获取未嵌入字体的完整示例源代码：
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Set UnembedFonts  option 
+//设置取消嵌入字体选项
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
 	UnembedFonts = true
 };
 Console.WriteLine("Start");
-// Optimize PDF document using OptimizationOptions
+//使用 OptimizationOptions 优化 PDF 文档
 pdfDocument.OptimizeResources(optimizeOptions);
-// Save updated document
+//保存更新的文档
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Finished");
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
@@ -96,23 +96,23 @@ var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we demonstrated how to use Aspose.PDF for .NET to get unembed fonts from a PDF document. By following the step-by-step guide, you can easily implement this feature in your C# applications. Unembedding fonts can be advantageous when you need to work with the extracted fonts separately or ensure consistent font usage across various platforms.
+在本教程中，我们演示了如何使用 Aspose.PDF for .NET 从 PDF 文档中获取未嵌入的字体。通过遵循分步指南，您可以在 C# 应用程序中轻松实现此功能。当您需要单独使用提取的字体或确保跨不同平台的字体使用一致时，取消嵌入字体可能会很有用。
 
-## FAQ's
+## 常见问题解答
 
-#### Q: What is the purpose of unembedding fonts from a PDF document?
+#### 问：从 PDF 文档中取消嵌入字体的目的是什么？
 
-A: Unembedding fonts from a PDF document allows you to extract the embedded fonts and use them in other applications. This can be useful for ensuring consistent font rendering and preserving the document's visual appearance.
+答：从 PDF 文档中取消嵌入字体允许您提取嵌入的字体并在其他应用程序中使用它们。这对于确保一致的字体渲染和保留文档的视觉外观非常有用。
 
-#### Q: How do I specify the path to the document directory in the C# code?
+#### Q：如何在C#代码中指定文档目录的路径？
 
-A: To specify the path to the document directory, replace `"YOUR DOCUMENT DIRECTORY"` in the code with the actual path to the directory where your PDF document is located.
+ A：要指定文档目录的路径，替换`"YOUR DOCUMENT DIRECTORY"`在代码中添加 PDF 文档所在目录的实际路径。
 
-#### Q: What does the `UnembedFonts` option do, and where is it set?
+#### 问：什么是`UnembedFonts` option do, and where is it set?
 
-A: The `UnembedFonts` option, available in the `OptimizationOptions` class, enables or disables the unembedding of fonts from the PDF document. To set this option to `true`, use the following code:
+答： 的`UnembedFonts`选项，可在`OptimizationOptions`类，启用或禁用从 PDF 文档中取消嵌入字体。将此选项设置为`true`，使用以下代码：
 
 ```csharp
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
@@ -121,13 +121,13 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 };
 ```
 
-#### Q: Can I revert the changes made during the optimization process?
+#### 问：我可以恢复优化过程中所做的更改吗？
 
-A: Aspose.PDF for .NET does not make permanent changes to the original PDF document during optimization. The optimization process is performed on a copy of the document, leaving the original intact.
+答：Aspose.PDF for .NET 在优化过程中不会对原始 PDF 文档进行永久性更改。优化过程是在文档的副本上执行的，保持原始文档不变。
 
-#### Q: How can I check the original and reduced file size after optimization?
+#### Q：如何查看优化后的原始文件大小和缩小后的文件大小？
 
-A: You can use the `FileInfo` class of `System.IO` to get the original and reduced file size. Here's an example code snippet to achieve this:
+答：您可以使用`FileInfo`类的`System.IO`获取原始文件大小和缩小后的文件大小。下面是实现此目的的示例代码片段：
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");

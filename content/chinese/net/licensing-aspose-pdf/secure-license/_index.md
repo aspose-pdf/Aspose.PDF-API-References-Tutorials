@@ -1,28 +1,28 @@
 ---
-title: Secure License In PDF File
-linktitle: Secure License In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to securing a license in PDF file using Aspose.PDF for .NET. Protect your PDF application from unauthorized access.
+title: PDF 文件中的安全许可证
+linktitle: PDF 文件中的安全许可证
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 保护 PDF 文件中的许可证的分步指南。保护您的 PDF 应用程序免遭未经授权的访问。
 type: docs
 weight: 40
 url: /zh/net/licensing-aspose-pdf/secure-license/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to secure a license in PDF file using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. By securing your license, you can protect your application and features from unauthorized access.
+在本教程中，我们将为您提供有关如何使用 Aspose.PDF for .NET 保护 PDF 文件中的许可证的分步指南。 Aspose.PDF 是一个功能强大的库，允许您以编程方式创建、操作和转换 PDF 文档。通过保护您的许可证，您可以保护您的应用程序和功能免遭未经授权的访问。
 
-## Prerequisites
+## 先决条件
 
-Before you begin, make sure you have the following prerequisites in place:
+在开始之前，请确保您具备以下先决条件：
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. 随 .NET Framework 安装的 Visual Studio。
+2. 适用于 .NET 的 Aspose.PDF 库。
 
-## Step 1: Project Setup
+## 第 1 步：项目设置
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+首先，在 Visual Studio 中创建一个新项目并添加对 Aspose.PDF for .NET 库的引用。您可以从Aspose官方网站下载该库并将其安装到您的计算机上。
 
-## Step 2: Import the necessary namespaces
+## 第 2 步：导入必要的命名空间
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+在您的 C# 代码文件中，导入访问 Aspose.PDF 提供的类和方法所需的命名空间：
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using System.IO;
 using Ionic.Zip;
 ```
 
-## Step 3: Loading the secure license file
+## 步骤 3：加载安全许可证文件
 
-Use the following lines of code to load the secure license file:
+使用以下代码行加载安全许可证文件：
 
 ```csharp
 using (Stream zip = new SecureLicense().GetType().Assembly.GetManifestResourceStream("Aspose.Total.lic.zip"))
@@ -43,13 +43,13 @@ MemoryStream ms = new MemoryStream();
 ZipEntry e = zf["Aspose.Total.lic"];
 e.ExtractWithPassword(ms, "test");
 ms.Position = 0;
-// Use the 'ms' stream containing the secure license
+//使用包含安全许可证的“ms”流
 }
 }
 ```
-Be sure to replace `"Aspose.Total.lic.zip"` with the actual name of your secure license file and `"test"` with the correct password.
+一定要更换`"Aspose.Total.lic.zip"`与您的安全许可证文件的实际名称和`"test"`使用正确的密码。
 
-### Sample source code for Secure License using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 的安全许可证示例源代码 
 
 ```csharp
 using (Stream zip = new SecureLicense().GetType().Assembly.GetManifestResourceStream("Aspose.Total.lic.zip"))
@@ -66,61 +66,61 @@ using (Stream zip = new SecureLicense().GetType().Assembly.GetManifestResourceSt
 ```
 
 
-## Conclusion
+## 结论
 
-In this tutorial, you learned how to secure a license using Aspose.PDF for .NET. By following the steps outlined, you can protect your application and PDF functionality from unauthorized access.
+在本教程中，您学习了如何使用 Aspose.PDF for .NET 来保护许可证。通过执行概述的步骤，您可以保护您的应用程序和 PDF 功能免遭未经授权的访问。
 
-### FAQ's for secure license in PDF file
+### PDF 文件中的安全许可证常见问题解答
 
-#### Q: Why should I secure a license in a PDF file?
+#### 问：为什么我应该在 PDF 文件中获取许可证？
 
-A: Securing a license in a PDF file helps protect your application and features from unauthorized access and usage. It adds an extra layer of security to your software.
+答：保护 PDF 文件中的许可证有助于保护您的应用程序和功能免遭未经授权的访问和使用。它为您的软件增加了额外的安全层。
 
-#### Q: How do I import the necessary namespaces for Aspose.PDF?
+#### 问：如何导入 Aspose.PDF 所需的命名空间？
 
-A: In your C# code file, use the `using` directive to import the required namespaces for accessing the classes and methods provided by Aspose.PDF, and Ionic.Zip:
+答：在您的 C# 代码文件中，使用`using`指令导入访问 Aspose.PDF 和 Ionic.Zip 提供的类和方法所需的命名空间：
 ```csharp
 using System;
 using System.IO;
 using Ionic.Zip;
 ```
 
-#### Q: How do I load the secure license file?
+#### 问：如何加载安全许可证文件？
 
-A: Load the secure license file using the provided code snippet. Replace `"Aspose.Total.lic.zip"` with the actual name of your secure license file and `"test"` with the correct password.
+答：使用提供的代码片段加载安全许可证文件。代替`"Aspose.Total.lic.zip"`与您的安全许可证文件的实际名称和`"test"`使用正确的密码。
 
-#### Q: What is the purpose of the password in the license file extraction?
+#### 问：许可证文件提取中的密码有何用途？
 
-A: The password is used to protect the secure license file within the Zip archive. It ensures that only authorized users with the correct password can access the license.
+答：密码用于保护 Zip 存档中的安全许可证文件。它确保只有具有正确密码的授权用户才能访问许可证。
 
-#### Q: Can I use my own secure license file?
+#### 问：我可以使用自己的安全许可证文件吗？
 
-A: Yes, you can use your own secure license file. Modify the code snippet by replacing `"Aspose.Total.lic.zip"` with the actual name of your secure license file and `"test"` with the correct password.
+答：是的，您可以使用自己的安全许可证文件。修改代码片段，替换为`"Aspose.Total.lic.zip"`与您的安全许可证文件的实际名称和`"test"`使用正确的密码。
 
-#### Q: Is the secure license file encrypted?
+#### 问：安全许可证文件是否已加密？
 
-A: Yes, the secure license file is encrypted within the Zip archive using a password. This adds an additional layer of security to the license.
+答：是的，安全许可证文件在 Zip 存档中使用密码进行加密。这为许可证增加了额外的安全层。
 
-#### Q: How do I access the secure license after loading?
+#### 问：加载后如何访问安全许可证？
 
-A: After loading the secure license, you can access it as a `MemoryStream` named `ms` in the provided code snippet. This stream contains the decrypted secure license data.
+ A：加载安全许可证后，您可以以`MemoryStream`命名的`ms`在提供的代码片段中。该流包含解密的安全许可证数据。
 
-#### Q: Can I load multiple secure licenses in the same PDF file?
+#### 问：我可以在同一个 PDF 文件中加载多个安全许可证吗？
 
-A: Yes, you can load multiple secure licenses in the same PDF file, each with its own password and extraction logic.
+答：是的，您可以在同一个 PDF 文件中加载多个安全许可证，每个许可证都有自己的密码和提取逻辑。
 
-#### Q: Is it necessary to extract the secure license to a `MemoryStream`?
+#### 问：是否需要将安全许可证提取到`MemoryStream`?
 
-A: Extracting the secure license to a `MemoryStream` is a common practice, but you can modify the code to save it to a file or process it in other ways as needed.
+A：将安全许可证提取到`MemoryStream`是一种常见的做法，但您可以修改代码以将其保存到文件或根据需要以其他方式处理它。
 
-#### Q: How do I apply the secure license to Aspose.PDF?
+#### 问：如何将安全许可证应用于 Aspose.PDF？
 
-A: The provided code demonstrates how to load the secure license. To apply the secure license to Aspose.PDF, use the `SetLicense` method as shown in other licensing tutorials.
+答：提供的代码演示了如何加载安全许可证。要将安全许可证应用于 Aspose.PDF，请使用`SetLicense`其他许可教程中所示的方法。
 
-#### Q: Where can I obtain more information about secure licensing in Aspose products?
+#### 问：我在哪里可以获得有关 Aspose 产品安全许可的更多信息？
 
-A: For more information about secure licensing, password protection, and related details, refer to the [Aspose Licensing Documentation](https://docs.aspose.com/pdf/net/licensing/) page.
+答：有关安全许可、密码保护和相关详细信息的更多信息，请参阅[Aspose 许可文档](https://docs.aspose.com/pdf/net/licensing/)页。
 
-#### Q: Can I use a secure license with a trial version of Aspose.PDF?
+#### 问：我可以在 Aspose.PDF 试用版中使用安全许可证吗？
 
-A: Yes, you can use a secure license with a trial version of Aspose.PDF. However, for full functionality, it's recommended to use a valid license.
+答：是的，您可以使用 Aspose.PDF 试用版的安全许可证。但是，为了获得完整的功能，建议使用有效的许可证。

@@ -1,38 +1,38 @@
 ---
-title: Set Default Font Name
-linktitle: Set Default Font Name
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to set default font name in PDF file using Aspose.PDF for .NET.
+title: Establecer nombre de fuente predeterminado
+linktitle: Establecer nombre de fuente predeterminado
+second_title: Aspose.PDF para referencia de API .NET
+description: Guía paso a paso para configurar el nombre de fuente predeterminado en un archivo PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 270
 url: /es/net/document-conversion/set-default-font-name/
 ---
-In this tutorial, we will show you how to set the default font name in a PDF file using Aspose.PDF for .NET. Sometimes when you extract images from a PDF file, you may encounter missing font issues. By specifying a default font name, you can ensure that extracted text will be displayed correctly. Follow the steps below to set the default font name in a PDF file.
+En este tutorial, le mostraremos cómo configurar el nombre de fuente predeterminado en un archivo PDF usando Aspose.PDF para .NET. A veces, cuando extraes imágenes de un archivo PDF, puedes encontrarte con problemas de fuentes que faltan. Al especificar un nombre de fuente predeterminado, puede asegurarse de que el texto extraído se muestre correctamente. Siga los pasos a continuación para configurar el nombre de fuente predeterminado en un archivo PDF.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Requisitos previos
+Antes de comenzar, asegúrese de cumplir con los siguientes requisitos previos:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Conocimientos básicos del lenguaje de programación C#.
+- Biblioteca Aspose.PDF para .NET instalada en su sistema.
+- Un entorno de desarrollo como Visual Studio.
 
-## Step 1: Loading the PDF document
-The first step is to load the PDF document into a `Document` object. Use the following code:
+## Paso 1: cargar el documento PDF
+ El primer paso es cargar el documento PDF en un`Document` objeto. Utilice el siguiente código:
 
 ```csharp
-// Path to the documents directory.
+// Ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 {
-     // Code to add
+     // Código para agregar
 }
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+ Asegúrate de reemplazar`"YOUR DOCUMENTS DIRECTORY"` con el directorio real donde se encuentra su archivo PDF.
 
-## Step 2: Set default font name
-Next, we'll set the default font name using the `DefaultFontName` option of the `RenderingOptions` object. Use the following code:
+## Paso 2: establecer el nombre de fuente predeterminado
+ A continuación, configuraremos el nombre de fuente predeterminado usando el`DefaultFontName` opción de la`RenderingOptions` objeto. Utilice el siguiente código:
 
 ```csharp
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
@@ -45,26 +45,26 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
          ro.DefaultFontName = "Arial";
          pngDevice.RenderingOptions = ro;
         
-         // Code to add
+         // Código para agregar
      }
 }
 ```
 
-Be sure to replace `"Arial"` with the desired font name.
+ Asegúrate de reemplazar`"Arial"` con el nombre de fuente deseado.
 
-## Step 3: Image Extraction
-Next, we will extract the image from the specified page of the PDF document. Use the following code:
+## Paso 3: Extracción de imágenes
+A continuación, extraeremos la imagen de la página especificada del documento PDF. Utilice el siguiente código:
 
 ```csharp
 pngDevice.Process(pdfDocument.Pages[1], imageStream);
 ```
 
-Be sure to specify the correct page number in `pdfDocument.Pages[1]`.
+ Asegúrese de especificar el número de página correcto en`pdfDocument.Pages[1]`.
 
-### Example source code for Set Default Font Name using Aspose.PDF for .NET
+### Código fuente de ejemplo para establecer el nombre de fuente predeterminado usando Aspose.PDF para .NET
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
@@ -81,27 +81,27 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 }
 ```
 
-## Conclusion
-In this tutorial, we learned how to set the default font name in a PDF file using Aspose.PDF for .NET. By specifying a default font name, you can ensure that extracted text will be displayed correctly. Use this method to resolve missing font issues when extracting images from PDF files.
+## Conclusión
+En este tutorial, aprendimos cómo configurar el nombre de fuente predeterminado en un archivo PDF usando Aspose.PDF para .NET. Al especificar un nombre de fuente predeterminado, puede asegurarse de que el texto extraído se muestre correctamente. Utilice este método para resolver problemas de fuentes faltantes al extraer imágenes de archivos PDF.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is Aspose.PDF for .NET?
+#### P: ¿Qué es Aspose.PDF para .NET?
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers various functionalities, including setting the default font name in a PDF file.
+R: Aspose.PDF para .NET es una potente biblioteca que permite a los desarrolladores trabajar con documentos PDF en aplicaciones C#. Ofrece varias funcionalidades, incluida la configuración del nombre de fuente predeterminado en un archivo PDF.
 
-#### Q: Why would I need to set the default font name in a PDF file?
+#### P: ¿Por qué necesitaría configurar el nombre de fuente predeterminado en un archivo PDF?
 
-A: Setting the default font name is useful when extracting text from a PDF document. If the PDF contains text with fonts that are not available on the extraction machine, specifying a default font name ensures correct text display.
+R: Configurar el nombre de fuente predeterminado es útil al extraer texto de un documento PDF. Si el PDF contiene texto con fuentes que no están disponibles en la máquina de extracción, especificar un nombre de fuente predeterminado garantiza una visualización correcta del texto.
 
-#### Q: How can I load a PDF document and set the default font name using Aspose.PDF for .NET?
+#### P: ¿Cómo puedo cargar un documento PDF y configurar el nombre de fuente predeterminado usando Aspose.PDF para .NET?
 
-A: To load a PDF document and set the default font name, you can use the `Document` class to load the PDF file and the `RenderingOptions.DefaultFontName` property to specify the desired default font name.
+ R: Para cargar un documento PDF y establecer el nombre de fuente predeterminado, puede utilizar el`Document`clase para cargar el archivo PDF y el`RenderingOptions.DefaultFontName` propiedad para especificar el nombre de fuente predeterminado deseado.
 
-#### Q: Can I choose any font as the default font name?
+#### P: ¿Puedo elegir cualquier fuente como nombre de fuente predeterminado?
 
-A:Yes, you can choose any font that is available on the extraction machine as the default font name. Use a font that closely matches the missing fonts in the original PDF to ensure accurate text rendering.
+R:Sí, puede elegir cualquier fuente que esté disponible en la máquina de extracción como nombre de fuente predeterminado. Utilice una fuente que coincida estrechamente con las fuentes que faltan en el PDF original para garantizar una representación precisa del texto.
 
-#### Q: Is setting the default font name a permanent change to the PDF file?
+#### P: ¿Establecer el nombre de fuente predeterminado es un cambio permanente en el archivo PDF?
 
-A: No, setting the default font name using Aspose.PDF for .NET is a temporary change made during text extraction. It does not modify the original PDF file.
+R: No, configurar el nombre de fuente predeterminado usando Aspose.PDF para .NET es un cambio temporal que se realiza durante la extracción de texto. No modifica el archivo PDF original.

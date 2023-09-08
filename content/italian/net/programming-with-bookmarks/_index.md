@@ -1,26 +1,26 @@
 ---
-title: Programming with Bookmarks
-linktitle: Programming with Bookmarks
+title: Programmazione con segnalibri
+linktitle: Programmazione con segnalibri
 type: docs
 weight: 19
 url: /it/net/programming-with-bookmarks/
-description: Learn how to manipulate, manage and customize bookmarks in your PDF documents for better navigation and improved user experience.
+description: Scopri come manipolare, gestire e personalizzare i segnalibri nei tuoi documenti PDF per una migliore navigazione e una migliore esperienza utente.
 ---
-Aspose.PDF for .NET's tutorials on programming with bookmarks walk you through the steps to manipulate and manage bookmarks in your PDF documents. Learn how to create, edit and delete bookmarks to make it easier to navigate and organize your PDF files.
+I tutorial di Aspose.PDF per .NET sulla programmazione con i segnalibri ti guidano attraverso i passaggi per manipolare e gestire i segnalibri nei tuoi documenti PDF. Scopri come creare, modificare ed eliminare i segnalibri per facilitare la navigazione e l'organizzazione dei file PDF.
 
-Additionally, these tutorials show you how to customize bookmark properties, such as titles, actions, and hierarchical levels, to improve the user experience and make your PDF documents more interactive and user-friendly. Master the use of bookmarks in your PDF projects with these step-by-step guides.
+Inoltre, questi tutorial mostrano come personalizzare le proprietà dei segnalibri, come titoli, azioni e livelli gerarchici, per migliorare l'esperienza dell'utente e rendere i tuoi documenti PDF più interattivi e facili da usare. Padroneggia l'uso dei segnalibri nei tuoi progetti PDF con queste guide passo passo.
 
-## Tutorials
-| Title | Description |
+## Tutorial
+| Titolo | Descrizione |
 | --- | --- | 
-| [Add Bookmark In PDF File](./add-bookmark/) | Easily add bookmark in PDF file for improved navigation with Aspose.PDF for .NET. |  
-| [Add Child Bookmark In PDF File](./add-child-bookmark/) | Easily add child bookmark in PDF file for more organized browsing with Aspose.PDF for .NET. |  
-| [Delete All Bookmarks In PDF File](./delete-all-bookmarks/) | Easily delete all bookmarks in PDF file with Aspose.PDF for .NET. |  
-| [Delete Particular Bookmark In PDF File](./delete-particular-bookmark/) | Easily delete a particular bookmark in PDF file with Aspose.PDF for .NET. |  
-| [Expand Bookmarks In PDF File](./expand-bookmarks/) | Easily expand bookmarks in PDF file for improved navigation with Aspose.PDF for .NET. |  
-| [Get Bookmark Page Number In PDF File](./get-bookmark-page-number/) | Easily get bookmark page number in PDF file with Aspose.PDF for .NET. |  
-| [Get Bookmarks In PDF File](./get-bookmarks/) | Easily get bookmark in PDF file with Aspose.PDF for .NET. |  
-| [Get Child Bookmarks In PDF File](./get-child-bookmarks/) | Easily get child bookmarks in PDF file with Aspose.PDF for .NET. |  
-| [Inherit Zoom In PDF File](./inherit-zoom/) | Easily inherit bookmark zoom in PDF file with Aspose.PDF for .NET. |  
-| [Update Bookmarks In PDF File](./update-bookmarks/) | Easily update bookmarks in PDF file with Aspose.PDF for .NET. |  
-| [Update Child Bookmarks In PDF File](./update-child-bookmarks/) | Easily update child bookmarks in PDF file with Aspose.PDF for .NET. |  
+| [Aggiungi segnalibro nel file PDF](./add-bookmark/) | Aggiungi facilmente un segnalibro nel file PDF per una migliore navigazione con Aspose.PDF per .NET. |  
+| [Aggiungi segnalibro figlio nel file PDF](./add-child-bookmark/) | Aggiungi facilmente un segnalibro figlio nel file PDF per una navigazione più organizzata con Aspose.PDF per .NET. |  
+| [Elimina tutti i segnalibri nel file PDF](./delete-all-bookmarks/) | Elimina facilmente tutti i segnalibri nel file PDF con Aspose.PDF per .NET. |  
+| [Elimina un segnalibro particolare nel file PDF](./delete-particular-bookmark/) | Elimina facilmente un particolare segnalibro nel file PDF con Aspose.PDF per .NET. |  
+| [Espandi Segnalibri nel file PDF](./expand-bookmarks/) | Espandi facilmente i segnalibri nel file PDF per una migliore navigazione con Aspose.PDF per .NET. |  
+| [Ottieni il numero di pagina del segnalibro nel file PDF](./get-bookmark-page-number/) | Ottieni facilmente il numero di pagina del segnalibro nel file PDF con Aspose.PDF per .NET. |  
+| [Ottieni segnalibri nel file PDF](./get-bookmarks/) | Ottieni facilmente il segnalibro nel file PDF con Aspose.PDF per .NET. |  
+| [Ottieni segnalibri secondari nel file PDF](./get-child-bookmarks/) | Ottieni facilmente i segnalibri secondari nel file PDF con Aspose.PDF per .NET. |  
+| [Eredita il file PDF ingrandito](./inherit-zoom/) | Eredita facilmente lo zoom dei segnalibri nel file PDF con Aspose.PDF per .NET. |  
+| [Aggiorna i segnalibri nel file PDF](./update-bookmarks/) | Aggiorna facilmente i segnalibri nel file PDF con Aspose.PDF per .NET. |  
+| [Aggiorna i segnalibri secondari nel file PDF](./update-child-bookmarks/) | Aggiorna facilmente i segnalibri secondari nel file PDF con Aspose.PDF per .NET. |  

@@ -1,40 +1,40 @@
 ---
-title: Remove All Text In PDF File
-linktitle: Remove All Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove all text in PDF file using Aspose.PDF for .NET.
+title: Удалить весь текст в PDF-файле
+linktitle: Удалить весь текст в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как удалить весь текст в файле PDF с помощью Aspose.PDF для .NET.
 type: docs
 weight: 280
 url: /ru/net/programming-with-text/remove-all-text/
 ---
-In this tutorial, we will explain how to remove all text in PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of opening a PDF, selecting and deleting text from each page, and saving the modified PDF using the provided C# source code.
+В этом уроке мы объясним, как удалить весь текст в файле PDF с помощью библиотеки Aspose.PDF для .NET. Мы пройдем пошаговый процесс открытия PDF-файла, выделения и удаления текста на каждой странице и сохранения измененного PDF-файла, используя предоставленный исходный код C#.
 
-## Requirements
+## Требования
 
-Before you begin, ensure that you have the following:
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- Установлена библиотека Aspose.PDF для .NET.
+- Базовое понимание программирования на C#.
 
-## Step 1: Set up the Document Directory
+## Шаг 1. Настройте каталог документов
 
-First, you need to set the path to the directory where your PDF files are located. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF files.
+ Во-первых, вам нужно указать путь к каталогу, в котором находятся ваши PDF-файлы. Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir` переменная с путем к вашим PDF-файлам.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the PDF Document
+## Шаг 2. Откройте PDF-документ.
 
-Next, we open the PDF document using the `Document` class from the Aspose.PDF library.
+ Далее мы открываем PDF-документ с помощью`Document` класс из библиотеки Aspose.PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "RemoveAllText.pdf");
 ```
 
-## Step 3: Remove Text from Each Page
+## Шаг 3. Удалите текст с каждой страницы
 
-We loop through all the pages of the PDF document and use an `OperatorSelector` to select all text on each page. Then, we delete the selected text.
+ Мы просматриваем все страницы PDF-документа и используем`OperatorSelector` чтобы выделить весь текст на каждой странице. Затем мы удаляем выделенный текст.
 
 ```csharp
 for (int i = 1; i <= pdfDocument.Pages.Count; i++)
@@ -46,74 +46,74 @@ for (int i = 1; i <= pdfDocument.Pages.Count; i++)
 }
 ```
 
-## Step 4: Save the Modified PDF
+## Шаг 4. Сохраните измененный PDF-файл.
 
-Finally, we save the modified PDF document to the specified output file.
+Наконец, мы сохраняем измененный PDF-документ в указанный выходной файл.
 
 ```csharp
 pdfDocument.Save(dataDir + "RemoveAllText_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-### Sample source code for Remove All Text using Aspose.PDF for .NET 
+### Пример исходного кода для удаления всего текста с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "RemoveAllText.pdf");
-// Loop through all pages of PDF Document
+// Пролистывать все страницы PDF-документа
 for (int i = 1; i <= pdfDocument.Pages.Count; i++)
 {
 	Page page = pdfDocument.Pages[i];
 	OperatorSelector operatorSelector = new OperatorSelector(new Aspose.Pdf.Operators.TextShowOperator());
-	// Select all text on the page
+	// Выделить весь текст на странице
 	page.Contents.Accept(operatorSelector);
-	// Delete all text
+	// Удалить весь текст
 	page.Contents.Delete(operatorSelector.Selected);
 }
-// Save the document
+// Сохраните документ
 pdfDocument.Save(dataDir + "RemoveAllText_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, you have learned how to remove all text from a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can open a PDF, select and delete text from each page, and save the modified PDF.
+В этом уроке вы узнали, как удалить весь текст из PDF-документа с помощью библиотеки Aspose.PDF для .NET. Следуя пошаговому руководству и выполнив предоставленный код C#, вы можете открыть PDF-файл, выбрать и удалить текст на каждой странице и сохранить измененный PDF-файл.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of the "Remove All Text In PDF File" tutorial?
+#### Вопрос: Какова цель урока «Удалить весь текст в PDF-файле»?
 
-A: The "Remove All Text In PDF File" tutorial aims to demonstrate how to use the Aspose.PDF library for .NET to remove all text from a PDF document. The tutorial provides a step-by-step guide and C# source code to help you open a PDF document, select and delete text from each page, and save the modified PDF.
+О: Учебное пособие «Удалить весь текст в PDF-файле» призвано продемонстрировать, как использовать библиотеку Aspose.PDF для .NET для удаления всего текста из PDF-документа. Учебное пособие содержит пошаговое руководство и исходный код C#, которые помогут вам открыть PDF-документ, выбрать и удалить текст на каждой странице, а также сохранить измененный PDF-файл.
 
-#### Q: Why would I want to remove all text from a PDF document?
+#### Вопрос: Зачем мне удалять весь текст из PDF-документа?
 
-A: There are various scenarios where removing all text from a PDF document could be useful. For example, you might want to create a redacted version of a document by removing sensitive information, or you might need to generate a visual representation of the document without its textual content.
+О: Существуют различные сценарии, в которых может быть полезно удалить весь текст из PDF-документа. Например, вы можете создать отредактированную версию документа, удалив конфиденциальную информацию, или вам может потребоваться создать визуальное представление документа без его текстового содержимого.
 
-#### Q: How do I set up the document directory?
+#### Вопрос: Как настроить каталог документов?
 
-A: To set up the document directory:
+О: Чтобы настроить каталог документов:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your PDF files are located.
+1.  Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir` переменная с путем к каталогу, в котором находятся ваши PDF-файлы.
 
-#### Q: How do I remove text from each page of a PDF document?
+#### Вопрос: Как удалить текст с каждой страницы PDF-документа?
 
-A: The tutorial guides you through the process of looping through all the pages of a PDF document, selecting all the text on each page using an `OperatorSelector`, and then deleting the selected text.
+ О: В этом руководстве вы пройдете циклически по всем страницам PDF-документа, выделив весь текст на каждой странице с помощью`OperatorSelector`, а затем удалив выделенный текст.
 
-#### Q: Can I selectively remove text from specific pages?
+#### Вопрос: Могу ли я выборочно удалить текст с определенных страниц?
 
-A: Yes, you can modify the loop to selectively remove text from specific pages by specifying the page numbers you want to process. The example provided in the tutorial demonstrates how to loop through all pages, but you can adjust it to meet your requirements.
+О: Да, вы можете изменить цикл, чтобы выборочно удалять текст с определенных страниц, указав номера страниц, которые вы хотите обработать. Пример, представленный в руководстве, демонстрирует, как просмотреть все страницы, но вы можете настроить его в соответствии со своими требованиями.
 
-#### Q: How do I save the modified PDF document?
+#### Вопрос: Как сохранить измененный PDF-документ?
 
-A: After removing text from each page, you can save the modified PDF document using the `Save` method of the `Document` class. Provide the desired output file path and specify the desired save format as arguments to the `Save` method.
+ О: После удаления текста с каждой страницы вы можете сохранить измененный PDF-документ с помощью`Save` метод`Document`сорт. Укажите желаемый путь к выходному файлу и укажите желаемый формат сохранения в качестве аргументов`Save` метод.
 
-#### Q: What is the expected output of this tutorial?
+#### Вопрос: Каков ожидаемый результат этого руководства?
 
-A: By following the tutorial and executing the provided C# code, you will generate a modified PDF document where all the text on each page has been removed.
+О: Следуя инструкциям и выполнив предоставленный код C#, вы создадите модифицированный PDF-документ, в котором весь текст на каждой странице будет удален.
 
-#### Q: Can I use different operators to remove other types of content?
+#### Вопрос: Могу ли я использовать разные операторы для удаления других типов контента?
 
-A: Yes, you can use different operators to target and remove various types of content from a PDF document, such as images or graphical elements. The example provided in the tutorial specifically focuses on removing text.
+О: Да, вы можете использовать разные операторы для выделения и удаления различных типов контента из PDF-документа, например изображений или графических элементов. Пример, представленный в руководстве, специально посвящен удалению текста.
 
-#### Q: Is a valid Aspose License required for this tutorial?
+#### Вопрос: Требуется ли для работы с этим руководством действующая лицензия Aspose?
 
-A: Yes, a valid Aspose License is required for this tutorial to work correctly. You can purchase a full license or obtain a 30-day temporary license from the Aspose website.
+О: Да, для корректной работы этого руководства требуется действующая лицензия Aspose. Вы можете приобрести полную лицензию или получить 30-дневную временную лицензию на веб-сайте Aspose.

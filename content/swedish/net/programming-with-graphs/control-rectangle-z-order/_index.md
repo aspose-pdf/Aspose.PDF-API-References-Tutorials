@@ -1,53 +1,53 @@
 ---
-title: Control Rectangle Z Order In PDF File
-linktitle: Control Rectangle Z Order In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to control the Z-order of rectangles in a PDF file using Aspose.PDF for .NET. 
+title: Kontroll Rectangle Z Order i PDF-fil
+linktitle: Kontroll Rectangle Z Order i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du styr Z-ordningen av rektanglar i en PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 40
 url: /sv/net/programming-with-graphs/control-rectangle-z-order/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to control the Z-order of rectangles using Aspose.PDF for .NET.
+I den här handledningen går vi igenom följande C#-källkod steg för steg för att kontrollera Z-ordningen av rektanglar med Aspose.PDF för .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
 
-## Step 1: Document Directory Setup
+## Steg 1: Installation av dokumentkatalog
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+den medföljande källkoden måste du ange katalogen där du vill spara den resulterande PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiating a Document Object and Adding a Page
+## Steg 2: Instantiera ett dokumentobjekt och lägga till en sida
 
-We create an instance of the Document class and add a page to this document.
+Vi skapar en instans av klassen Document och lägger till en sida i detta dokument.
 
 ```csharp
 Document doc1 = new Document();
 Aspose.Pdf.Page page1 = doc1.Pages.Add();
 ```
 
-## Step 3: Setting up the page size
+## Steg 3: Ställa in sidstorleken
 
-We set the PDF page size using the SetPageSize method.
+Vi ställer in PDF-sidstorleken med metoden SetPageSize.
 
 ```csharp
 page1.SetPageSize(375, 300);
 ```
 
-## Step 4: Setting Page Margins
+## Steg 4: Ställa in sidmarginaler
 
-We can configure the page margins using the properties of the PageInfo object.
+Vi kan konfigurera sidmarginalerna med hjälp av egenskaperna för PageInfo-objektet.
 
 ```csharp
 page1.PageInfo.Margin.Left = 0;
 page1.PageInfo.Margin.Top = 0;
 ```
 
-## Step 5: Add Rectangles with Specified Z Order
+## Steg 5: Lägg till rektanglar med specificerad Z-ordning
 
-We create and add rectangles to the page with different colors and specified Z orders.
+Vi skapar och lägger till rektanglar på sidan med olika färger och specificerade Z-ordningar.
 
 ```csharp
 AddRectangle(page1, 50, 40, 60, 40, Aspose.Pdf.Color.Red, 2);
@@ -55,75 +55,75 @@ AddRectangle(page1, 20, 20, 30, 30, Aspose.Pdf.Color.Blue, 1);
 AddRectangle(page1, 40, 40, 60, 30, Aspose.Pdf.Color.Green, 0);
 ```
 
-## Step 6: Saving the Resulting PDF File
+## Steg 6: Spara den resulterande PDF-filen
 
-Finally, we save the resulting PDF file with the name "ControlRectangleZOrder_out.pdf" in the specified directory.
+Slutligen sparar vi den resulterande PDF-filen med namnet "ControlRectangleZOrder_out.pdf" i den angivna katalogen.
 
 ```csharp
 doc1.Save(dataDir);
 ```
-### Sample source code for Control Rectangle Z Order using Aspose.PDF for .NET 
+### Exempel på källkod för Control Rectangle Z Order med Aspose.PDF för .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document class object
+// Instantiera dokumentklassobjekt
 Document doc1 = new Document();
-/// Add page to pages collection of PDF file
+/// Lägg till sida till sidor samling av PDF-fil
 Aspose.Pdf.Page page1 = doc1.Pages.Add();
-// Set size of PDF page
+// Ställ in storleken på PDF-sidan
 page1.SetPageSize(375, 300);
-// Set left margin for page object as 0
+// Ställ in vänster marginal för sidobjekt som 0
 page1.PageInfo.Margin.Left = 0;
-// Set top margin of page object as 0
+// Ställ in den övre marginalen på sidobjektet som 0
 page1.PageInfo.Margin.Top = 0;
-// Create a new rectangle with Color as Red, Z-Order as 0 and certain dimensions
+// Skapa en ny rektangel med färg som röd, Z-ordning som 0 och vissa dimensioner
 AddRectangle(page1, 50, 40, 60, 40, Aspose.Pdf.Color.Red, 2);
-// Create a new rectangle with Color as Blue, Z-Order as 0 and certain dimensions
+// Skapa en ny rektangel med Color as Blue, Z-Order som 0 och vissa dimensioner
 AddRectangle(page1, 20, 20, 30, 30, Aspose.Pdf.Color.Blue, 1);
-// Create a new rectangle with Color as Green, Z-Order as 0 and certain dimensions
+//Skapa en ny rektangel med Färg som grön, Z-ordning som 0 och vissa dimensioner
 AddRectangle(page1, 40, 40, 60, 30, Aspose.Pdf.Color.Green, 0);
 dataDir = dataDir + "ControlRectangleZOrder_out.pdf";
-// Save resultant PDF file
+// Spara den resulterande PDF-filen
 doc1.Save(dataDir);
 
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we explained how to control the Z-order of rectangles using Aspose.PDF for .NET. You can now use this knowledge to arrange and layer rectangles in your PDF files with precision.
+I den här handledningen förklarade vi hur man styr Z-ordningen av rektanglar med Aspose.PDF för .NET. Du kan nu använda denna kunskap för att arrangera och lagra rektanglar i dina PDF-filer med precision.
 
-### FAQ's control rectangle z order in PDF file
+### FAQ:s kontroll rektangel z-ordning i PDF-fil
 
-#### Q: What is the purpose of this tutorial?
+#### F: Vad är syftet med denna handledning?
 
-A: This tutorial aims to guide you through the process of controlling the Z-order of rectangles using Aspose.PDF for .NET, allowing you to arrange and layer rectangles in your PDF files.
+S: Denna handledning syftar till att guida dig genom processen att kontrollera Z-ordningen av rektanglar med Aspose.PDF för .NET, så att du kan ordna och lagra rektanglar i dina PDF-filer.
 
-#### Q: What prerequisites are required before starting?
+#### F: Vilka förutsättningar krävs innan start?
 
-A: Before you begin, ensure that you have installed the Aspose.PDF library and set up your development environment. Additionally, having a basic understanding of C# programming is recommended.
+S: Innan du börjar, se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö. Dessutom rekommenderas att ha en grundläggande förståelse för C#-programmering.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### F: Hur anger jag katalogen för att spara PDF-filen?
 
-A: In the provided source code, you can modify the "dataDir" variable to indicate the directory where you want to save the resulting PDF file.
+S: I den medföljande källkoden kan du ändra variabeln "dataDir" för att ange katalogen där du vill spara den resulterande PDF-filen.
 
-#### Q: What is the purpose of setting page size and margins?
+#### F: Vad är syftet med att ställa in sidstorlek och marginaler?
 
-A: Setting the page size and margins helps configure the layout of the PDF page and provides a canvas on which you can arrange the rectangles.
+S: Att ställa in sidstorlek och marginaler hjälper till att konfigurera layouten för PDF-sidan och ger en duk där du kan arrangera rektanglarna.
 
-#### Q: How do I add rectangles with specified Z order?
+#### F: Hur lägger jag till rektanglar med angiven Z-ordning?
 
-A: You can create and add rectangles to the page using the `AddRectangle` method, specifying the position, dimensions, color, and Z order for each rectangle.
+ S: Du kan skapa och lägga till rektanglar på sidan med hjälp av`AddRectangle` metod, som anger position, dimensioner, färg och Z-ordning för varje rektangel.
 
-#### Q: What is Z-order, and why is it important?
+#### F: Vad är Z-order, och varför är det viktigt?
 
-A: Z-order determines the stacking order of objects on a page. Objects with higher Z-order values are positioned on top of objects with lower Z-order values, affecting their visibility and layering.
+S: Z-ordningen bestämmer staplingsordningen för objekt på en sida. Objekt med högre Z-ordningsvärden placeras ovanpå objekt med lägre Z-ordningsvärden, vilket påverkar deras synlighet och lager.
 
-#### Q: Can I customize the colors and dimensions of the rectangles?
+#### F: Kan jag anpassa färgerna och dimensionerna på rektanglarna?
 
-A: Yes, you can customize the colors, positions, and dimensions of the rectangles by modifying the parameters passed to the `AddRectangle` method.
+ S: Ja, du kan anpassa färgerna, positionerna och dimensionerna för rektanglarna genom att ändra parametrarna som skickas till`AddRectangle` metod.
 
-#### Q: How do I save the resulting PDF file after arranging the rectangles?
+#### F: Hur sparar jag den resulterande PDF-filen efter att ha arrangerat rektanglarna?
 
-A: After arranging the rectangles, you can save the resulting PDF file using the `doc1.Save(dataDir);` line in the provided source code.
+ S: Efter att ha arrangerat rektanglarna kan du spara den resulterande PDF-filen med hjälp av`doc1.Save(dataDir);` rad i den medföljande källkoden.

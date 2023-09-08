@@ -1,33 +1,33 @@
 ---
-title: Redact Page
-linktitle: Redact Page
-second_title: Aspose.PDF for .NET API Reference
-description: This article explains how to redact a PDF page using Aspose.PDF for .NET, including step-by-step instructions and example source code.
+title: Редактировать страницу
+linktitle: Редактировать страницу
+second_title: Справочник по Aspose.PDF для .NET API
+description: В этой статье объясняется, как отредактировать страницу PDF с помощью Aspose.PDF для .NET, включая пошаговые инструкции и пример исходного кода.
 type: docs
 weight: 120
 url: /ru/net/annotations/redactpage/
 ---
-If you're looking to redact sensitive information from a PDF document using Aspose.PDF for .NET, you're in luck! Here's a step-by-step guide to get you started:
+Если вы хотите отредактировать конфиденциальную информацию из PDF-документа с помощью Aspose.PDF для .NET, вам повезло! Вот пошаговое руководство, которое поможет вам начать:
 
-## Step 1: In the code, set the path to the directory where your PDF document is located:
+## Шаг 1. В коде укажите путь к каталогу, в котором находится ваш PDF-документ:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the PDF document:
+## Шаг 2. Откройте PDF-документ:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Create a RedactionAnnotation instance for a specific page region:
+## Шаг 3. Создайте экземпляр RedactionAnnotation для определенной области страницы:
 
 ```csharp
 RedactionAnnotation annot = new RedactionAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(200, 500, 300, 600));
 ```
 
-## Step 4: Set the fill color, border color, and text color of the redaction annotation:
+## Шаг 4. Установите цвет заливки, цвет границы и цвет текста аннотации редактирования:
 
 ```csharp
 annot.FillColor = Aspose.Pdf.Color.Green;
@@ -35,95 +35,95 @@ annot.BorderColor = Aspose.Pdf.Color.Yellow;
 annot.Color = Aspose.Pdf.Color.Blue;
 ```
 
-## Step 5: Set the text to be printed on the redaction annotation and its alignment:
+## Шаг 5. Установите текст, который будет напечатан в аннотации редактирования, и его выравнивание:
 
 ```csharp
 annot.OverlayText = "REDACTED";
 annot.TextAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 ```
 
-## Step 6: Repeat the overlay text over the redaction annotation:
+## Шаг 6. Повторите наложенный текст поверх аннотации редактирования:
 
 ```csharp
 annot.Repeat = true;
 ```
 
-## Step 7: Add the annotation to the annotations collection of the first page:
+## Шаг 7. Добавьте аннотацию в коллекцию аннотаций первой страницы:
 
 ```csharp
 doc.Pages[1].Annotations.Add(annot);
 ```
 
-## Step 8: Flatten the annotation and redact page contents, i.e., remove text and images under the redacted annotation:
+## Шаг 8. Выровняйте аннотацию и отредактируйте содержимое страницы, т. е. удалите текст и изображения под отредактированной аннотацией:
 
 ```csharp
 annot.Redact();
 ```
 
-## Step 9: Set the path and name of the output PDF file:
+## Шаг 9. Установите путь и имя выходного PDF-файла:
 
 ```csharp
 dataDir = dataDir + "RedactPage_out.pdf";
 ```
 
-## Step 10: Save the PDF document with the redacted page:
+## Шаг 10: Сохраните PDF-документ с отредактированной страницей:
 
 ```csharp
 doc.Save(dataDir);
 ```
 
-That's it! You have successfully redacted a page of your PDF document using Aspose.PDF for .NET.
+Вот и все! Вы успешно отредактировали страницу вашего PDF-документа с помощью Aspose.PDF для .NET.
 
-### Example source code for Redact Page using Aspose.PDF for .NET:
+### Пример исходного кода для страницы Redact с использованием Aspose.PDF для .NET:
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Открыть документ
 Document doc = new Document(dataDir + "input.pdf");
 
-// Create RedactionAnnotation instance for specific page region
+// Создать экземпляр RedactionAnnotation для определенной области страницы.
 RedactionAnnotation annot = new RedactionAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(200, 500, 300, 600));
 annot.FillColor = Aspose.Pdf.Color.Green;
 annot.BorderColor = Aspose.Pdf.Color.Yellow;
 annot.Color = Aspose.Pdf.Color.Blue;
-// Text to be printed on redact annotation
+// Текст, который будет напечатан в аннотации редактирования
 annot.OverlayText = "REDACTED";
 annot.TextAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-// Repat Overlay text over redact Annotation
+// Повторить наложение текста на редактируемую аннотацию
 annot.Repeat = true;
-// Add annotation to annotations collection of first page
+// Добавить аннотацию в коллекцию аннотаций на первой странице
 doc.Pages[1].Annotations.Add(annot);
-// Flattens annotation and redacts page contents (i.e. removes text and image
-// Under redacted annotation)
+// Сглаживает аннотации и редактирует содержимое страницы (т. е. удаляет текст и изображения).
+// Под отредактированной аннотацией)
 annot.Redact();
 dataDir = dataDir + "RedactPage_out.pdf";
 doc.Save(dataDir);
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we explored how to redact a page in a PDF document using Aspose.PDF for .NET. Redaction is an essential feature for securely removing sensitive information from PDF documents, ensuring data privacy and security. By following the step-by-step guide and using the provided C# source code, developers can easily add redaction functionality to their applications, improving the data security and compliance of their PDF documents. Aspose.PDF for .NET offers a robust set of tools for working with PDF files, providing efficient and effective redaction capabilities along with various other PDF operations.
+В этом уроке мы рассмотрели, как отредактировать страницу в PDF-документе с помощью Aspose.PDF для .NET. Редактирование — это важная функция для безопасного удаления конфиденциальной информации из PDF-документов, обеспечивающая конфиденциальность и безопасность данных. Следуя пошаговому руководству и используя предоставленный исходный код C#, разработчики могут легко добавлять в свои приложения функции редактирования, повышая безопасность данных и соответствие своим PDF-документам. Aspose.PDF для .NET предлагает надежный набор инструментов для работы с PDF-файлами, обеспечивая эффективные и действенные возможности редактирования, а также различные другие операции с PDF.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is redaction in a PDF document?
+#### Вопрос: Что такое редактирование PDF-документа?
 
-A: Redaction in a PDF document is the process of permanently removing or obscuring sensitive or confidential information from the document. This ensures that the redacted information cannot be accessed or viewed, providing data security and privacy.
+О: Редактирование PDF-документа — это процесс безвозвратного удаления или сокрытия конфиденциальной информации из документа. Это гарантирует, что отредактированная информация не будет доступна или просмотрена, обеспечивая безопасность и конфиденциальность данных.
 
-#### Q: Can I redact multiple areas of a page in a PDF document?
+#### Вопрос: Могу ли я редактировать несколько областей страницы в PDF-документе?
 
-A: Yes, with Aspose.PDF for .NET, you can create multiple `RedactionAnnotation` instances to redact multiple areas of a page in a PDF document. Each `RedactionAnnotation` can be customized with different fill colors, border colors, overlay texts, and other properties.
+О: Да, с помощью Aspose.PDF для .NET вы можете создавать несколько`RedactionAnnotation` экземпляры для редактирования нескольких областей страницы в PDF-документе. Каждый`RedactionAnnotation` можно настроить с использованием различных цветов заливки, цветов границ, наложения текста и других свойств.
 
-#### Q: Does redaction in Aspose.PDF for .NET permanently remove the redacted information?
+#### Вопрос: Удаляет ли редактирование в Aspose.PDF for .NET отредактированную информацию навсегда?
 
-A: Yes, redaction in Aspose.PDF for .NET permanently removes the redacted information from the PDF document. Once redaction is performed and the document is saved, the redacted information cannot be recovered.
+О: Да, редактирование в Aspose.PDF для .NET навсегда удаляет отредактированную информацию из PDF-документа. После выполнения редактирования и сохранения документа отредактированная информация не может быть восстановлена.
 
-#### Q: Can I redact text and images under the redacted area in a PDF document?
+#### Вопрос: Могу ли я редактировать текст и изображения в отредактированной области PDF-документа?
 
-A: Yes, when you call the `Redact()` method on the `RedactionAnnotation` object, it will not only add a redaction overlay to the specified area but also remove the underlying text and images from that area.
+ О: Да, когда вы позвоните в`Redact()` метод на`RedactionAnnotation` объекта, он не только добавит наложение редактирования в указанную область, но также удалит основной текст и изображения из этой области.
 
-#### Q: Can Aspose.PDF for .NET redact multiple pages in a PDF document?
+#### Вопрос: Может ли Aspose.PDF for .NET редактировать несколько страниц в PDF-документе?
 
-A: Yes, you can create `RedactionAnnotation` instances for multiple pages in a PDF document to redact sensitive information from multiple pages.
+ О: Да, вы можете создать`RedactionAnnotation` экземпляры для нескольких страниц PDF-документа для удаления конфиденциальной информации с нескольких страниц.

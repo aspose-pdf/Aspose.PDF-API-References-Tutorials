@@ -1,45 +1,45 @@
 ---
-title: Dash Length
-linktitle: Dash Length
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set the length of dashes with Aspose.PDF for .NET. Step by step guide to customize dash patterns.
+title: Longitud del guión
+linktitle: Longitud del guión
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a configurar la longitud de los guiones con Aspose.PDF para .NET. Guía paso a paso para personalizar patrones de guiones.
 type: docs
 weight: 70
 url: /es/net/programming-with-graphs/dash-length/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to set the length of dashes using Aspose.PDF for .NET.
+En este tutorial, lo guiaremos a través del siguiente código fuente de C# paso a paso para establecer la longitud de los guiones usando Aspose.PDF para .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Asegúrese de haber instalado la biblioteca Aspose.PDF y configurar su entorno de desarrollo antes de comenzar. También tener conocimientos básicos de programación en C#.
 
-## Step 1: Document Directory Setup
+## Paso 1: Configuración del directorio de documentos
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+En el código fuente proporcionado, debe especificar el directorio donde desea guardar el archivo PDF resultante. Cambie la variable "dataDir" al directorio deseado.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiating a Document Object and Adding a Page
+## Paso 2: crear una instancia de un objeto de documento y agregar una página
 
-We create an instance of the Document class and add a page to this document.
+Creamos una instancia de la clase Documento y agregamos una página a este documento.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Creating a Graph Object and adding it to the page
+## Paso 3: crear un objeto gráfico y agregarlo a la página
 
-We create a Graph object with specified dimensions and add it to the page's paragraph collection.
+Creamos un objeto Graph con dimensiones específicas y lo agregamos a la colección de párrafos de la página.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 page.Paragraphs.Add(canvas);
 ```
 
-## Step 4: Creating a Line Object and Configuring
+## Paso 4: crear un objeto de línea y configurarlo
 
-We create a Line object with the specified coordinates and configure the color and length of the dashes.
+Creamos un objeto Línea con las coordenadas especificadas y configuramos el color y longitud de los guiones.
 
 ```csharp
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
@@ -48,79 +48,79 @@ line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
 line.GraphInfo.DashPhase = 1;
 ```
 
-## Step 5: Adding the Line to the Graph Object
+## Paso 5: agregar la línea al objeto gráfico
 
-We add the line to the shape collection of the Graph object.
+Agregamos la línea a la colección de formas del objeto Graph.
 
 ```csharp
 canvas.Shapes.Add(line);
 ```
 
-## Step 6: Saving the Resulting PDF File
+## Paso 6: guardar el archivo PDF resultante
 
-Finally, we save the resulting PDF file with the name "DashLength_out.pdf" in the specified directory.
+Finalmente, guardamos el archivo PDF resultante con el nombre "DashLength_out.pdf" en el directorio especificado.
 
 ```csharp
 doc.Save(dataDir + "DashLength_out.pdf");
 ```
 
-### Sample source code for Dash Length using Aspose.PDF for .NET 
+### Código fuente de muestra para Dash Longitud usando Aspose.PDF para .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document instance
+// Crear una instancia de documento
 Document doc = new Document();
-// Add page to pages collection of Document object
+// Agregar página a la colección de páginas del objeto Documento
 Page page = doc.Pages.Add();
-// Create Drawing object with certain dimensions
+// Crear objeto de dibujo con ciertas dimensiones
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
-// Add drawing object to paragraphs collection of page instance
+// Agregar objeto de dibujo a la colección de párrafos de la instancia de página
 page.Paragraphs.Add(canvas);
-// Create Line object
+// Crear objeto de línea
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
-// Set color for Line object
+// Establecer color para el objeto Línea
 line.GraphInfo.Color = Aspose.Pdf.Color.Red;
-// Specify dash array for line object
+// Especificar matriz de guiones para objeto de línea
 line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
-// Set the dash phase for Line instance
+// Establecer la fase de guión para la instancia de Línea
 line.GraphInfo.DashPhase = 1;
-// Add line to shapes collection of drawing object
+// Agregar línea a la colección de formas del objeto de dibujo
 canvas.Shapes.Add(line);
 dataDir = dataDir + "DashLength_out.pdf";
-// Save PDF document
+// Guardar documento PDF
 doc.Save(dataDir);
 Console.WriteLine("\nLength dashed successfully in black and white.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, we explained how to set the length of dashes using Aspose.PDF for .NET. Now you can use this knowledge to create lines with custom dash patterns in your PDF files.
+En este tutorial, explicamos cómo configurar la longitud de los guiones usando Aspose.PDF para .NET. Ahora puede utilizar este conocimiento para crear líneas con patrones de guiones personalizados en sus archivos PDF.
 
-## FAQs
+## Preguntas frecuentes
 
-#### Q: What is the purpose of this tutorial?
+#### P: ¿Cuál es el propósito de este tutorial?
 
-A: This tutorial's purpose is to guide you through the process of setting the length of dashes for lines using Aspose.PDF for .NET. You'll learn how to create lines with custom dash patterns in your PDF files.
+R: El propósito de este tutorial es guiarlo a través del proceso de configurar la longitud de los guiones para las líneas usando Aspose.PDF para .NET. Aprenderá a crear líneas con patrones de guiones personalizados en sus archivos PDF.
 
-#### Q: What prerequisites are required before starting?
+#### P: ¿Qué requisitos previos se requieren antes de comenzar?
 
-A: Before you start, ensure that you have installed the Aspose.PDF library and set up your development environment. A basic understanding of C# programming is also recommended.
+R: Antes de comenzar, asegúrese de haber instalado la biblioteca Aspose.PDF y configurado su entorno de desarrollo. También se recomienda un conocimiento básico de la programación en C#.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### P: ¿Cómo especifico el directorio para guardar el archivo PDF?
 
-A: Modify the "dataDir" variable in the provided source code to indicate the directory where you want to save the resulting PDF file.
+R: Modifique la variable "dataDir" en el código fuente proporcionado para indicar el directorio donde desea guardar el archivo PDF resultante.
 
-#### Q: How do I create a line with custom dash patterns?
+#### P: ¿Cómo creo una línea con patrones de guiones personalizados?
 
-A: The tutorial demonstrates creating a Line object and configuring its color, dash array, and dash phase using the `GraphInfo` object. Modify these settings to achieve the desired dash pattern.
+ R: El tutorial demuestra la creación de un objeto Línea y la configuración de su color, matriz de guiones y fase de guión usando el`GraphInfo` objeto. Modifique estas configuraciones para lograr el patrón de guión deseado.
 
-#### Q: Can I customize the color of the line?
+#### P: ¿Puedo personalizar el color de la línea?
 
-A: Yes, you can customize the color of the line by setting the `Color` property of the `GraphInfo` object associated with the Line.
+ R: Sí, puedes personalizar el color de la línea configurando el`Color` propiedad de la`GraphInfo` objeto asociado con la Línea.
 
-#### Q: How do I save the PDF document after setting the dash length?
+#### P: ¿Cómo guardo el documento PDF después de configurar la longitud del guión?
 
-A: After configuring the Line object with the desired dash pattern, you can save the resulting PDF document using the `doc.Save(dataDir + "DashLength_out.pdf");` line in the provided source code.
+ R: Después de configurar el objeto Línea con el patrón de guiones deseado, puede guardar el documento PDF resultante usando el`doc.Save(dataDir + "DashLength_out.pdf");` línea en el código fuente proporcionado.

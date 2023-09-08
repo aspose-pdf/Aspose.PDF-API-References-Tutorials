@@ -1,42 +1,42 @@
 ---
-title: Extract Links In PDF File
-linktitle: Extract Links In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily extract links in PDF file using Aspose.PDF for .NET.
+title: Estrai collegamenti nel file PDF
+linktitle: Estrai collegamenti nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Estrai facilmente i collegamenti nel file PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 50
 url: /it/net/programming-with-links-and-actions/extract-links/
 ---
-Extracting links in PDF file allows you to recover all the hypertext links present in the document. With Aspose.PDF for .NET, you can easily extract these links by following the following source code:
+L'estrazione dei collegamenti nel file PDF consente di recuperare tutti i collegamenti ipertestuali presenti nel documento. Con Aspose.PDF per .NET, puoi facilmente estrarre questi collegamenti seguendo il seguente codice sorgente:
 
-## Step 1: Import Required Libraries
+## Passaggio 1: importa le librerie richieste
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Prima di iniziare, devi importare le librerie necessarie per il tuo progetto C#. Ecco la necessaria direttiva sulle importazioni:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Annotations;
 ```
 
-## Step 2: Set path to documents folder
+## Passaggio 2: imposta il percorso della cartella dei documenti
 
-In this step, you need to specify the path to the folder containing the PDF file from which you want to extract the links. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ In questo passaggio è necessario specificare il percorso della cartella contenente il file PDF da cui si desidera estrarre i collegamenti. Sostituire`"YOUR DOCUMENT DIRECTORY"`nel seguente codice con il percorso effettivo della cartella dei documenti:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Passaggio 3: apri il documento PDF
 
-We will open the PDF document using the `Document` class. Here is the corresponding code:
+Apriremo il documento PDF utilizzando il file`Document` classe. Ecco il codice corrispondente:
 
 ```csharp
 Document document = new Document(dataDir + "ExtractLinks.pdf");
 ```
 
-## Step 4: Extract links
+## Passaggio 4: estrai i collegamenti
 
-In this step, we will extract the links present in the PDF document using the `AnnotationSelector` class. Here is the corresponding code:
+ In questo passaggio, estrarremo i collegamenti presenti nel documento PDF utilizzando il file`AnnotationSelector` classe. Ecco il codice corrispondente:
 
 ```csharp
 Page page = document.Pages[1];
@@ -46,73 +46,73 @@ IList<Annotation> list = selector. Selected;
 Annotation annotation = (Annotation)list[0];
 ```
 
-## Step 5: Save the updated document
+## Passaggio 5: salva il documento aggiornato
 
-Now let's save the updated PDF file using the `Save` method of the `document` object. Here is the corresponding code:
+ Ora salviamo il file PDF aggiornato utilizzando il file`Save` metodo del`document` oggetto. Ecco il codice corrispondente:
 
 ```csharp
 dataDir = dataDir + "ExtractLinks_out.pdf";
 document. Save(dataDir);
 ```
 
-### Sample source code for Extract Links using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Estrai collegamenti utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Apri documento
 Document document = new Document(dataDir+ "ExtractLinks.pdf");
-// Extract actions
+// Estrai azioni
 Page page = document.Pages[1];
 AnnotationSelector selector = new AnnotationSelector(new LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
 page.Accept(selector);
 IList<Annotation> list = selector.Selected;
 Annotation annotation = (Annotation)list[0];
 dataDir = dataDir + "ExtractLinks_out.pdf";
-// Save updated document
+// Salva documento aggiornato
 document.Save(dataDir);
 Console.WriteLine("\nLinks extracted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation ! You now have a step-by-step guide to extract links from a PDF document using Aspose.PDF for .NET. You can use this code to retrieve all the hyperlinks present in the document.
+Congratulazioni! Ora hai una guida passo passo per estrarre collegamenti da un documento PDF utilizzando Aspose.PDF per .NET. È possibile utilizzare questo codice per recuperare tutti i collegamenti ipertestuali presenti nel documento.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced link extraction features.
+Assicurati di controllare la documentazione ufficiale Aspose.PDF per ulteriori informazioni sulle funzionalità avanzate di estrazione dei collegamenti.
 
-### FAQ's for extract links in PDF file
+### Domande frequenti sui collegamenti di estrazione nel file PDF
 
-#### Q: What is link extraction in a PDF file?
+#### D: Cos'è l'estrazione dei collegamenti in un file PDF?
 
-A: Link extraction in a PDF file refers to the process of recovering all the hypertext links present within the document. This allows you to retrieve URLs, internal document links, and other interactive elements.
+R: L'estrazione dei collegamenti in un file PDF si riferisce al processo di recupero di tutti i collegamenti ipertestuali presenti all'interno del documento. Ciò consente di recuperare URL, collegamenti a documenti interni e altri elementi interattivi.
 
-#### Q: How can link extraction benefit my PDF document analysis?
+#### D: In che modo l'estrazione dei collegamenti può apportare vantaggi all'analisi dei documenti PDF?
 
-A: Link extraction is valuable for various purposes, such as content validation, data mining, and analysis. It enables you to identify and catalog all the links within a PDF document for further exploration.
+R: L'estrazione dei collegamenti è utile per vari scopi, ad esempio la convalida dei contenuti, il data mining e l'analisi. Ti consente di identificare e catalogare tutti i collegamenti all'interno di un documento PDF per ulteriori esplorazioni.
 
-#### Q: How does Aspose.PDF for .NET support link extraction?
+#### D: In che modo Aspose.PDF per .NET supporta l'estrazione dei collegamenti?
 
-A: Aspose.PDF for .NET provides powerful APIs to extract links from PDF documents with ease. The step-by-step tutorial outlined in this guide demonstrates how to extract links using C#.
+R: Aspose.PDF per .NET fornisce potenti API per estrarre facilmente collegamenti da documenti PDF. L'esercitazione dettagliata descritta in questa guida illustra come estrarre i collegamenti utilizzando C#.
 
-#### Q: Can I extract specific types of links, such as hyperlinks or internal document links?
+#### D: Posso estrarre tipi specifici di collegamenti, come collegamenti ipertestuali o collegamenti a documenti interni?
 
-A: Yes, you can selectively extract specific types of links using the `AnnotationSelector` class. This allows you to filter and retrieve the desired links based on your requirements.
+ R: Sì, puoi estrarre selettivamente tipi specifici di collegamenti utilizzando il file`AnnotationSelector` classe. Ciò ti consente di filtrare e recuperare i collegamenti desiderati in base alle tue esigenze.
 
-#### Q: Is it possible to extract links from specific pages of a PDF document?
+#### D: È possibile estrarre collegamenti da pagine specifiche di un documento PDF?
 
-A: Absolutely! You can extract links from specific pages of a PDF document by specifying the target page using the `Document.Pages` collection. This enables you to focus on particular sections.
+ R: Assolutamente! È possibile estrarre collegamenti da pagine specifiche di un documento PDF specificando la pagina di destinazione utilizzando il file`Document.Pages` collezione. Ciò ti consente di concentrarti su sezioni particolari.
 
-#### Q: What format are the extracted links returned in?
+#### D: In quale formato vengono restituiti i collegamenti estratti?
 
-A: The extracted links are returned as instances of the `Annotation` class. You can process and analyze these annotations to retrieve link details, including target URLs and link types.
+ R: I collegamenti estratti vengono restituiti come istanze del file`Annotation` classe. Puoi elaborare e analizzare queste annotazioni per recuperare i dettagli del collegamento, inclusi gli URL di destinazione e i tipi di collegamento.
 
-#### Q: How can I verify that link extraction is accurate?
+#### D: Come posso verificare che l'estrazione dei collegamenti sia accurata?
 
-A: By following the tutorial and sample code provided, you can ensure accurate link extraction. You can analyze the extracted annotations and validate the URLs and link attributes.
+R: Seguendo il tutorial e il codice di esempio forniti, puoi garantire un'estrazione accurata dei collegamenti. Puoi analizzare le annotazioni estratte e convalidare gli URL e gli attributi dei collegamenti.
 
-#### Q: Are there any limitations when extracting links?
+#### D: Esistono limitazioni durante l'estrazione dei collegamenti?
 
-A: While link extraction is a powerful feature, it's important to consider the structure of the PDF document. Links embedded within images, tables, or multimedia content may require additional handling.
+R: Sebbene l'estrazione dei collegamenti sia una funzionalità potente, è importante considerare la struttura del documento PDF. I collegamenti incorporati in immagini, tabelle o contenuti multimediali potrebbero richiedere una gestione aggiuntiva.
 
-#### Q: Can I extract links from password-protected PDF documents?
+#### D: Posso estrarre collegamenti da documenti PDF protetti da password?
 
-A: Aspose.PDF for .NET can extract links from password-protected PDF documents as long as you provide the necessary authentication credentials when opening the document.
+R: Aspose.PDF per .NET può estrarre collegamenti da documenti PDF protetti da password purché si forniscano le credenziali di autenticazione necessarie all'apertura del documento.

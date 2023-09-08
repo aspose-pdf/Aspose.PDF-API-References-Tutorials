@@ -1,83 +1,83 @@
 ---
-title: Dynamic XFA To Acro Form
-linktitle: Dynamic XFA To Acro Form
-second_title: Aspose.PDF for .NET API Reference
-description: Easily convert dynamic XFA To forms to standard AcroForm forms with Aspose.PDF for .NET.
+title: Forma dinámica de XFA a Acro
+linktitle: Forma dinámica de XFA a Acro
+second_title: Aspose.PDF para referencia de API .NET
+description: Convierta fácilmente formularios dinámicos XFA a formularios AcroForm estándar con Aspose.PDF para .NET.
 type: docs
 weight: 70
 url: /es/net/programming-with-forms/dynamic-xfa-to-acro-form/
 ---
-In this tutorial, we will show you how to convert an XFA To dynamic form to an AcroForm using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+En este tutorial, le mostraremos cómo convertir un formulario XFA a dinámico a un AcroForm usando Aspose.PDF para .NET. Explicaremos el código fuente de C# paso a paso para guiarlo a través de este proceso.
 
-## Step 1: Preparation
+## Paso 1: preparación
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Primero, asegúrese de haber importado las bibliotecas necesarias y establecer la ruta al directorio de documentos:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the dynamic XFA form
+## Paso 2: cargue el formulario XFA dinámico
 
-Load the dynamic XFA form:
+Cargue el formulario XFA dinámico:
 
 ```csharp
 Document document = new Document(dataDir + "DynamicXFAToAcroForm.pdf");
 ```
 
-## Step 3: Set Form Type as Standard AcroForm
+## Paso 3: Establecer el tipo de formulario como AcroForm estándar
 
-Set the form type as standard AcroForm:
+Establezca el tipo de formulario como AcroForm estándar:
 
 ```csharp
 document.Form.Type = FormType.Standard;
 ```
 
-## Step 4: Save the Resulting PDF
+## Paso 4: guarde el PDF resultante
 
-Save the resulting PDF:
+Guarde el PDF resultante:
 
 ```csharp
 dataDir = dataDir + "Standard_AcroForm_out.pdf";
 document. Save(dataDir);
 ```
 
-### Sample source code for Dynamic XFA To Acro Form using Aspose.PDF for .NET 
+### Código fuente de muestra para Dynamic XFA To Acro Form usando Aspose.PDF para .NET 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load dynamic XFA form
+// Cargar formulario XFA dinámico
 Document document = new Document(dataDir + "DynamicXFAToAcroForm.pdf");
-// Set the form fields type as standard AcroForm
+// Establecer el tipo de campos del formulario como AcroForm estándar
 document.Form.Type = FormType.Standard;
 dataDir = dataDir + "Standard_AcroForm_out.pdf";
-// Save the resultant PDF
+// Guarde el PDF resultante
 document.Save(dataDir);
 Console.WriteLine("\nDynamic XFA form converted to standard AcroForm successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, we learned how to convert an XFA To dynamic form to a standard AcroForm form using Aspose.PDF for .NET. By following these steps, you can easily convert your dynamic XFATo forms to AcroForms for more common use.
+En este tutorial, aprendimos cómo convertir un formulario XFA a dinámico a un formulario AcroForm estándar usando Aspose.PDF para .NET. Siguiendo estos pasos, puede convertir fácilmente sus formularios dinámicos XFATo a AcroForms para un uso más común.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is the difference between a dynamic XFA form and a standard AcroForm?
+#### P: ¿Cuál es la diferencia entre un formulario XFA dinámico y un AcroForm estándar?
 
-A: A dynamic XFA (XML Forms Architecture) form is a type of PDF form that uses XML-based data to define its layout and behavior. XFA forms are often used in interactive and data-intensive forms. On the other hand, a standard AcroForm is a more traditional type of PDF form that uses the PDF format itself to define its structure and appearance. AcroForms are widely supported by PDF viewers and can be more compatible with various applications.
+R: Un formulario XFA (arquitectura de formularios XML) dinámico es un tipo de formulario PDF que utiliza datos basados en XML para definir su diseño y comportamiento. Los formularios XFA se utilizan a menudo en formularios interactivos y con uso intensivo de datos. Por otro lado, un AcroForm estándar es un tipo más tradicional de formulario PDF que utiliza el propio formato PDF para definir su estructura y apariencia. AcroForms es ampliamente compatible con los visores de PDF y puede ser más compatible con varias aplicaciones.
 
-#### Q: Why would I want to convert a dynamic XFA form to a standard AcroForm?
+#### P: ¿Por qué querría convertir un formulario XFA dinámico en un AcroForm estándar?
 
-A: Converting a dynamic XFA form to a standard AcroForm can be useful in scenarios where XFA forms are not fully supported or when you want to achieve greater compatibility with different PDF viewers and applications. Standard AcroForms are generally more widely supported across different platforms and devices.
+R: Convertir un formulario XFA dinámico a un AcroForm estándar puede ser útil en escenarios donde los formularios XFA no son totalmente compatibles o cuando desea lograr una mayor compatibilidad con diferentes visores y aplicaciones de PDF. Los AcroForms estándar generalmente tienen un soporte más amplio en diferentes plataformas y dispositivos.
 
-#### Q: Can I modify the form fields after converting a dynamic XFA form to a standard AcroForm?
+#### P: ¿Puedo modificar los campos del formulario después de convertir un formulario XFA dinámico a un AcroForm estándar?
 
-A: Yes, after converting a dynamic XFA form to a standard AcroForm, you can modify the form fields as needed using Aspose.PDF for .NET. You can add new fields, change their properties, set field values, and perform other form-related operations.
+R: Sí, después de convertir un formulario XFA dinámico a un AcroForm estándar, puede modificar los campos del formulario según sea necesario usando Aspose.PDF para .NET. Puede agregar nuevos campos, cambiar sus propiedades, establecer valores de campo y realizar otras operaciones relacionadas con el formulario.
 
-#### Q: Are there any limitations or considerations when converting dynamic XFA forms to standard AcroForms?
+#### P: ¿Existe alguna limitación o consideración al convertir formularios XFA dinámicos a AcroForms estándar?
 
-A: Yes, there are some limitations to consider when converting dynamic XFA forms to standard AcroForms. XFA forms can have complex and dynamic layouts, including features such as dynamic tables, repeating sections, and form calculations, which may not be fully preserved in the conversion process. Additionally, some specific form field properties unique to XFA forms may not be applicable in AcroForms.
+R: Sí, existen algunas limitaciones a considerar al convertir formularios XFA dinámicos a AcroForms estándar. Los formularios XFA pueden tener diseños complejos y dinámicos, incluidas características como tablas dinámicas, secciones repetidas y cálculos de formulario, que pueden no conservarse por completo en el proceso de conversión. Además, es posible que algunas propiedades de campos de formulario específicas exclusivas de los formularios XFA no sean aplicables en AcroForms.
 
-#### Q: Can I convert a standard AcroForm to a dynamic XFA form using Aspose.PDF for .NET?
+#### P: ¿Puedo convertir un AcroForm estándar en un formulario XFA dinámico usando Aspose.PDF para .NET?
 
-A: Aspose.PDF for .NET currently supports converting dynamic XFA forms to standard AcroForms, but it does not support the reverse operation of converting standard AcroForms to dynamic XFA forms. Converting standard AcroForms to dynamic XFA forms involves more complex transformations and may not be fully supported in all scenarios.
+R: Aspose.PDF para .NET actualmente admite la conversión de formularios XFA dinámicos a AcroForms estándar, pero no admite la operación inversa de convertir AcroForms estándar a formularios XFA dinámicos. La conversión de AcroForms estándar a formularios XFA dinámicos implica transformaciones más complejas y es posible que no sea totalmente compatible en todos los escenarios.

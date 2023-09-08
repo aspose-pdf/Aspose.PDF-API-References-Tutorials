@@ -1,85 +1,85 @@
 ---
-title: PDFA To PDF
-linktitle: PDFA To PDF
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert PDFA to PDF using Aspose.PDF for .NET.
+title: PDFA إلى PDF
+linktitle: PDFA إلى PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لتحويل PDFA إلى PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 100
 url: /ar/net/document-conversion/pdfa-to-pdf/
 ---
-In this tutorial, we'll walk you through the process of converting a PDFA (PDF/A) file to standard PDF format using Aspose.PDF for .NET. The PDFA format is a specific version of the PDF format used to guarantee the long-term archiving of documents. By following the steps below, you will be able to convert a PDFA file to PDF format.
+في هذا البرنامج التعليمي، سنرشدك خلال عملية تحويل ملف PDFA (PDF/A) إلى تنسيق PDF قياسي باستخدام Aspose.PDF لـ .NET. تنسيق PDFA هو إصدار محدد من تنسيق PDF المستخدم لضمان أرشفة المستندات على المدى الطويل. باتباع الخطوات أدناه، ستتمكن من تحويل ملف PDFA إلى تنسيق PDF.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## المتطلبات الأساسية
+قبل البدء، تأكد من استيفاء المتطلبات الأساسية التالية:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- المعرفة الأساسية بلغة البرمجة C#.
+- مكتبة Aspose.PDF لـ .NET مثبتة على نظامك.
+- بيئة تطوير مثل Visual Studio.
 
-## Step 1: Loading the PDFA document
-In this step, we will load the source PDFA file using Aspose.PDF for .NET. Follow the code below:
+## الخطوة 1: تحميل مستند PDFA
+في هذه الخطوة، سنقوم بتحميل ملف PDFA المصدر باستخدام Aspose.PDF لـ .NET. اتبع الكود أدناه:
 
 ```csharp
-// Path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the PDFA document
+// قم بتحميل مستند PDFA
 Document doc = new Document(dataDir + "PDFAToPDF.pdf");
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDFA file is located.
+ تأكد من استبدال`"YOUR DOCUMENTS DIRECTORY"` مع الدليل الفعلي الذي يوجد به ملف PDFA الخاص بك.
 
-## Step 2: Removal of PDF/A compliance information
-Now we are going to remove the PDF/A compliance information from the document. Use the following code:
+## الخطوة 2: إزالة معلومات التوافق الخاصة بـ PDF/A
+سنقوم الآن بإزالة معلومات التوافق الخاصة بـ PDF/A من المستند. استخدم الكود التالي:
 
 ```csharp
-// Delete PDF/A compliance information
+// حذف معلومات الامتثال لملف PDF/A
 doc.RemovePdfaCompliance();
 ```
 
-## Step 3: Saving the resulting PDF file
-Finally, we will save the converted PDFA file to PDF format. Use the following code:
+## الخطوة 3: حفظ ملف PDF الناتج
+وأخيرا، سوف نقوم بحفظ ملف PDFA المحول إلى تنسيق PDF. استخدم الكود التالي:
 
 ```csharp
-// Save the updated document in PDF format
+// احفظ المستند المحدث بتنسيق PDF
 doc.Save(dataDir + "PDFAToPDF_out.pdf");
 ```
 
-The code above saves the converted PDFA file to PDF format with the file name `"PDFAToPDF_out.pdf"`.
+ يحفظ الكود أعلاه ملف PDFA المحول إلى تنسيق PDF باسم الملف`"PDFAToPDF_out.pdf"`.
 
-### Example source code for PDFA to PDF using Aspose.PDF for .NET
+### مثال على الكود المصدري لتحويل PDFA إلى PDF باستخدام Aspose.PDF لـ .NET
 
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document doc = new Document(dataDir + "PDFAToPDF.pdf");
 
-// Remove PDF/A compliance information
+// قم بإزالة معلومات التوافق الخاصة بـ PDF/A
 doc.RemovePdfaCompliance();
-// Save updated document 
+// حفظ المستند المحدث
 doc.Save(dataDir + "PDFAToPDF_out.pdf");
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of converting a PDFA file to PDF format using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to convert a PDFA file to standard PDF format. This feature is useful when you want to remove PDF/A compliance restrictions from a document for more flexible use.
+## خاتمة
+في هذا البرنامج التعليمي، قمنا بتغطية عملية تحويل ملف PDFA إلى تنسيق PDF خطوة بخطوة باستخدام Aspose.PDF لـ .NET. باتباع الإرشادات الموضحة أعلاه، يجب أن تكون الآن قادرًا على تحويل ملف PDFA إلى تنسيق PDF قياسي. تكون هذه الميزة مفيدة عندما تريد إزالة قيود التوافق مع PDF/A من المستند لاستخدام أكثر مرونة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the difference between PDF/A and standard PDF formats?
+#### س: ما الفرق بين تنسيقات PDF/A وتنسيقات PDF القياسية؟
 
-A: PDF/A is a specific version of the PDF format designed for long-term archiving and preservation of electronic documents. It restricts certain features and requires specific elements to ensure the document's future accessibility and reproducibility. Standard PDF, on the other hand, refers to regular PDF documents without the specific requirements and restrictions of PDF/A. Standard PDF files may include interactive elements and features that are not allowed in PDF/A to ensure long-term document preservation.
+ج: إن PDF/A هو إصدار محدد من تنسيق PDF مصمم لأرشفة المستندات الإلكترونية والحفاظ عليها على المدى الطويل. فهو يقيد ميزات معينة ويتطلب عناصر محددة لضمان إمكانية الوصول إلى المستند وإمكانية تكرار نتائجه في المستقبل. من ناحية أخرى، يشير ملف PDF القياسي إلى مستندات PDF العادية دون المتطلبات والقيود المحددة الخاصة بـ PDF/A. قد تتضمن ملفات PDF القياسية عناصر وميزات تفاعلية غير مسموح بها في PDF/A لضمان الحفاظ على المستندات على المدى الطويل.
 
-#### Q: Can the PDF/A compliance information be added back to the converted PDF file if needed?
+#### س: هل يمكن إضافة معلومات توافق PDF/A مرة أخرى إلى ملف PDF المحول إذا لزم الأمر؟
 
-A: Yes, if required, the PDF/A compliance information can be added back to the converted PDF file using Aspose.PDF for .NET. The library provides methods and options to set PDF/A compliance and convert standard PDF files to PDF/A format.
+ج: نعم، إذا لزم الأمر، يمكن إضافة معلومات توافق PDF/A مرة أخرى إلى ملف PDF المحول باستخدام Aspose.PDF لـ .NET. توفر المكتبة طرقًا وخيارات لضبط التوافق مع PDF/A وتحويل ملفات PDF القياسية إلى تنسيق PDF/A.
 
-#### Q: Is it possible to convert encrypted PDF/A files to standard PDF format?
+#### س: هل من الممكن تحويل ملفات PDF/A المشفرة إلى تنسيق PDF القياسي؟
 
-A: Aspose.PDF for .NET can handle encrypted PDF/A files during the conversion process. However, the conversion may require providing the correct password for decryption, depending on the encryption method used in the original PDF/A file.
+ج: يمكن لـ Aspose.PDF for .NET التعامل مع ملفات PDF/A المشفرة أثناء عملية التحويل. ومع ذلك، قد يتطلب التحويل توفير كلمة المرور الصحيحة لفك التشفير، اعتمادًا على طريقة التشفير المستخدمة في ملف PDF/A الأصلي.
 
-#### Q: What are the benefits of converting a PDFA file to standard PDF format?
+#### س: ما هي فوائد تحويل ملف PDFA إلى تنسيق PDF القياسي؟
 
-A: Converting a PDFA file to standard PDF format removes the PDF/A compliance restrictions, allowing for more flexibility in using the document. Standard PDFs can include interactive elements, multimedia, and advanced features that are not supported in PDF/A. This conversion is useful when you want to edit or modify the document, add annotations, or include dynamic content not allowed in the PDF/A format.
+ج: يؤدي تحويل ملف PDFA إلى تنسيق PDF قياسي إلى إزالة قيود التوافق مع PDF/A، مما يسمح بمزيد من المرونة في استخدام المستند. يمكن أن تتضمن ملفات PDF القياسية عناصر تفاعلية ووسائط متعددة وميزات متقدمة غير مدعومة في PDF/A. يكون هذا التحويل مفيدًا عندما تريد تحرير المستند أو تعديله، أو إضافة تعليقات توضيحية، أو تضمين محتوى ديناميكي غير مسموح به في تنسيق PDF/A.

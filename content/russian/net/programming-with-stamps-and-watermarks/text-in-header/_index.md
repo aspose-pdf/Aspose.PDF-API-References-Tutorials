@@ -1,51 +1,51 @@
 ---
-title: Text In Header Of PDF File
-linktitle: Text In Header Of PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text in the header of PDF file with Aspose.PDF for .NET.
+title: Текст в заголовке PDF-файла
+linktitle: Текст в заголовке PDF-файла
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как добавить текст в заголовок PDF-файла с помощью Aspose.PDF для .NET.
 type: docs
 weight: 190
 url: /ru/net/programming-with-stamps-and-watermarks/text-in-header/
 ---
-In this tutorial, we are going to learn how to add text in the header of PDF file using Aspose.PDF for .NET. Follow the steps below:
+В этом уроке мы научимся добавлять текст в заголовок PDF-файла с помощью Aspose.PDF для .NET. Выполните следующие действия:
 
-## Step 1: Project preparation
+## Шаг 1: Подготовка проекта
 
-Make sure you have installed Aspose.PDF for .NET and created a C# project.
+Убедитесь, что вы установили Aspose.PDF для .NET и создали проект C#.
 
-## Step 2: Importing namespaces
+## Шаг 2. Импорт пространств имен
 
-Add the following namespaces to your C# source file:
+Добавьте следующие пространства имен в исходный файл C#:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Opening the document
+## Шаг 3: Открытие документа
 
-Open the existing PDF document using the path provided:
+Откройте существующий PDF-документ, используя указанный путь:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "TextinHeader.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to your documents directory.
+Обязательно замените «КАТАЛОГ ВАШИХ ДОКУМЕНТОВ» фактическим путем к каталогу ваших документов.
 
-## Step 4: Creating Header Text
+## Шаг 4. Создание текста заголовка
 
-Create a new text stamp with the text you want to add in the header:
+Создайте новый текстовый штамп с текстом, который вы хотите добавить в заголовок:
 
 ```csharp
 TextStamp textStamp = new TextStamp("Header text");
 ```
 
-You can customize the text by changing its properties like top margin, horizontal alignment, and vertical alignment.
+Вы можете настроить текст, изменив его свойства, такие как верхнее поле, горизонтальное и вертикальное выравнивание.
 
-## Step 5: Add header text to all pages
+## Шаг 5. Добавьте текст заголовка на все страницы.
 
-Go through all the pages of the PDF document and add the text stamp in the header:
+Просмотрите все страницы PDF-документа и добавьте текстовый штамп в заголовок:
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -54,80 +54,80 @@ foreach(Page page in pdfDocument.Pages)
 }
 ```
 
-## Step 6: Saving the PDF Document
+## Шаг 6. Сохранение PDF-документа
 
-Once the header text has been added on all pages, save the updated PDF document:
+После добавления текста заголовка на все страницы сохраните обновленный PDF-документ:
 
 ```csharp
 pdfDocument.Save(dataDir + "TextinHeader_out.pdf");
 Console.WriteLine("\nText in header added successfully.\nFile saved at: " + dataDir);
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+Обязательно замените «КАТАЛОГ ВАШИХ ДОКУМЕНТОВ» фактическим путем к каталогу, в котором вы хотите сохранить PDF-документ.
 
-### Sample source code for Textin Header using Aspose.PDF for .NET 
+### Пример исходного кода для заголовка Textin с использованием Aspose.PDF для .NET 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir+ "TextinHeader.pdf");
 
-// Create header
+// Создать заголовок
 TextStamp textStamp = new TextStamp("Header Text");
 
-// Set properties of the stamp
+// Установить свойства штампа
 textStamp.TopMargin = 10;
 textStamp.HorizontalAlignment = HorizontalAlignment.Center;
 textStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Add header on all pages
+// Добавить заголовок на все страницы
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(textStamp);
 }
 
-// Save updated document
+// Сохранить обновленный документ
 pdfDocument.Save(dataDir+ "TextinHeader_out.pdf");
 Console.WriteLine("\nText in header added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You have learned how to add text in the header of a PDF document using Aspose.PDF for .NET. You can now customize your headers by adding additional text to your PDF documents.
+Поздравляем! Вы узнали, как добавить текст в заголовок PDF-документа с помощью Aspose.PDF для .NET. Теперь вы можете настроить заголовки, добавив дополнительный текст в PDF-документы.
 
-### FAQ's for text in header of PDF file
+### Часто задаваемые вопросы по тексту в заголовке PDF-файла
 
-#### Q: What is the purpose of adding text in the header of a PDF document?
+#### Вопрос: Какова цель добавления текста в заголовок PDF-документа?
 
-A: Adding text in the header of a PDF document allows you to include important information, such as titles, document names, dates, or any other text that you want to appear consistently at the top of each page.
+О: Добавление текста в заголовок PDF-документа позволяет вам включить важную информацию, такую как заголовки, названия документов, даты или любой другой текст, который вы хотите последовательно отображать вверху каждой страницы.
 
-#### Q: How does the provided C# source code achieve the addition of text in the header of a PDF document?
+#### Вопрос: Как предоставленный исходный код C# обеспечивает добавление текста в заголовок PDF-документа?
 
-A: The code demonstrates the process of opening an existing PDF document, creating a text stamp with the desired header text, customizing the text properties, adding the text stamp to all pages, and finally saving the updated PDF document with the added header text.
+О: Код демонстрирует процесс открытия существующего PDF-документа, создания текстовой отметки с нужным текстом заголовка, настройки свойств текста, добавления текстовой отметки на все страницы и, наконец, сохранения обновленного PDF-документа с добавленным текстом заголовка.
 
-#### Q: Can I modify the appearance of the header text, such as its font, size, color, and alignment?
+#### Вопрос: Могу ли я изменить внешний вид текста заголовка, например его шрифт, размер, цвет и выравнивание?
 
-A: Yes, you can customize the appearance of the header text by modifying the properties of the `TextStamp` object. The code example includes setting properties like top margin, horizontal alignment, and vertical alignment. You can also adjust the font, size, color, and other text-related properties.
+ О: Да, вы можете настроить внешний вид текста заголовка, изменив свойства`TextStamp`объект. Пример кода включает настройку таких свойств, как верхнее поле, горизонтальное и вертикальное выравнивание. Вы также можете настроить шрифт, размер, цвет и другие свойства, связанные с текстом.
 
-#### Q: Is it possible to add different text to each page's header?
+#### Вопрос: Можно ли добавить разный текст в заголовок каждой страницы?
 
-A: Yes, you can add different text to each page's header by creating separate `TextStamp` objects with different text content or properties and then adding them to specific pages as needed.
+ О: Да, вы можете добавить разный текст в заголовок каждой страницы, создав отдельный`TextStamp` объекты с различным текстовым содержимым или свойствами, а затем добавляя их на определенные страницы по мере необходимости.
 
-#### Q: How do I ensure the header text appears consistently on every page of the PDF document?
+#### Вопрос: Как обеспечить единообразное отображение текста заголовка на каждой странице PDF-документа?
 
-A: By using a loop that iterates through all the pages of the PDF document and adding the same text stamp to each page, you ensure that the header text appears consistently on every page.
+О: Используя цикл, который проходит по всем страницам PDF-документа и добавляя один и тот же текстовый штамп на каждую страницу, вы гарантируете, что текст заголовка будет отображаться последовательно на каждой странице.
 
-#### Q: Can I add multiple lines of text or format the header text with line breaks?
+#### Вопрос: Могу ли я добавить несколько строк текста или отформатировать текст заголовка с помощью разрывов строк?
 
-A: Yes, you can add multiple lines of text to the header by including line breaks in the text string. For example, you can use the escape sequence `\n` to indicate a line break in the text.
+ О: Да, вы можете добавить в заголовок несколько строк текста, включив разрывы строк в текстовую строку. Например, вы можете использовать escape-последовательность`\n` для обозначения разрыва строки в тексте.
 
-#### Q: What happens if I want to add different content to the header and footer of the same PDF document?
+#### Вопрос: Что произойдет, если я захочу добавить разное содержимое в верхний и нижний колонтитулы одного и того же PDF-документа?
 
-A: To add different content to the header and footer sections, you would follow similar steps for both sections. The code demonstrates adding text to the header; you can use a similar approach to add text to the footer.
+О: Чтобы добавить разное содержимое в разделы верхнего и нижнего колонтитула, вам следует выполнить аналогичные действия для обоих разделов. Код демонстрирует добавление текста в заголовок; вы можете использовать аналогичный подход для добавления текста в нижний колонтитул.
 
-#### Q: Is it possible to add images or other elements alongside the header text using this approach?
+#### Вопрос: Можно ли с помощью этого подхода добавлять изображения или другие элементы рядом с текстом заголовка?
 
-A: While the provided code specifically demonstrates adding text to the header, you can extend the approach to add other elements like images, lines, shapes, or any other content to the header section using the Aspose.PDF library.
+О: Хотя предоставленный код специально демонстрирует добавление текста в заголовок, вы можете расширить этот подход, добавив в раздел заголовка другие элементы, такие как изображения, линии, фигуры или любой другой контент, с помощью библиотеки Aspose.PDF.

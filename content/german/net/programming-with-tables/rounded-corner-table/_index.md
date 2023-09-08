@@ -1,86 +1,86 @@
 ---
-title: Rounded Corner Table In PDF Document
-linktitle: Rounded Corner Table In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create a rounded corner table in PDF document using Aspose.PDF for .NET.
+title: Abgerundeter Ecktisch im PDF-Dokument
+linktitle: Abgerundeter Ecktisch im PDF-Dokument
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET eine Tabelle mit abgerundeten Ecken in einem PDF-Dokument erstellen.
 type: docs
 weight: 190
 url: /de/net/programming-with-tables/rounded-corner-table/
 ---
-In this tutorial, we will guide you step by step to create a rounded corner table in PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch die Erstellung einer Tabelle mit abgerundeten Ecken in einem PDF-Dokument mit Aspose.PDF für .NET. Wir erklären Ihnen den bereitgestellten C#-Quellcode und zeigen Ihnen, wie Sie ihn implementieren.
 
-## Step 1: Creating the table
-First, we will create the table using the following code:
+## Schritt 1: Erstellen der Tabelle
+Zuerst erstellen wir die Tabelle mit dem folgenden Code:
 
 ```csharp
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 ```
 
-## Step 2: Rounded Corner Style Setup
-Next, we'll configure the rounded corner style for the table:
+## Schritt 2: Einrichtung des abgerundeten Eckenstils
+Als Nächstes konfigurieren wir den Stil mit abgerundeten Ecken für die Tabelle:
 
 ```csharp
 tab1.CornerStyle = Aspose.Pdf.BorderCornerStyle.Round;
 ```
 
-## Step 3: Table Border Setup
-To give the table a rounded corner border, we need to create a BorderInfo object and configure it with the appropriate parameters:
+## Schritt 3: Tabellenrahmen einrichten
+Um der Tabelle einen Rand mit abgerundeten Ecken zu geben, müssen wir ein BorderInfo-Objekt erstellen und es mit den entsprechenden Parametern konfigurieren:
 
 ```csharp
-// Create a GraphInfo object to set the border color
+// Erstellen Sie ein GraphInfo-Objekt, um die Rahmenfarbe festzulegen
 GraphInfo graph = new GraphInfo();
 graph.Color = Aspose.Pdf.Color.Red;
 
-// Create an empty BorderInfo object
+// Erstellen Sie ein leeres BorderInfo-Objekt
 BorderInfo bInfo = new BorderInfo(BorderSide.All, graph);
 
-// Set the radius of the rounded border to 15
+// Stellen Sie den Radius des abgerundeten Randes auf 15 ein
 bInfo.RoundedBorderRadius = 15;
 
-// Apply border information to the table
+// Wenden Sie Randinformationen auf die Tabelle an
 tab1.Border = bInfo;
 ```
 
-### Example source code for Rounded Corner Table using Aspose.PDF for .NET
+### Beispielquellcode für Rounded Corner Table mit Aspose.PDF für .NET
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 GraphInfo graph = new GraphInfo();
 graph.Color = Aspose.Pdf.Color.Red;
-// Create a blank BorderInfo object
+// Erstellen Sie ein leeres BorderInfo-Objekt
 BorderInfo bInfo = new BorderInfo(BorderSide.All, graph);
-// Set the border a rounder border where radius of round is 15
+// Stellen Sie den Rand auf einen runderen Rand ein, wobei der Rundungsradius 15 beträgt
 bInfo.RoundedBorderRadius = 15;
-// Set the table Corner style as Round.
+// Stellen Sie den Eckstil der Tabelle auf „Rund“ ein.
 tab1.CornerStyle = Aspose.Pdf.BorderCornerStyle.Round;
-// Set the table border information
+// Legen Sie die Informationen zum Tabellenrand fest
 tab1.Border = bInfo;
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to create a rounded corner table in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to set up the rounded corner style and table border. Now you can apply this knowledge to your own projects.
+## Abschluss
+Herzlichen Glückwunsch! Sie haben jetzt gelernt, wie Sie mit Aspose.PDF für .NET eine Tabelle mit abgerundeten Ecken in einem PDF-Dokument erstellen. Diese Schritt-für-Schritt-Anleitung zeigte Ihnen, wie Sie den Stil mit abgerundeten Ecken und den Tischrand einrichten. Jetzt können Sie dieses Wissen auf Ihre eigenen Projekte anwenden.
 
-### FAQ's for rounded corner table in PDF document
+### FAQs zum Tisch mit abgerundeten Ecken im PDF-Dokument
 
-#### Q: Can I customize the radius of the rounded corners for the table?
+#### F: Kann ich den Radius der abgerundeten Ecken für den Tisch anpassen?
 
-A: Yes, you can customize the radius of the rounded corners for the table by modifying the value of the `bInfo.RoundedBorderRadius` property in the provided C# source code. Simply set the desired radius value (in points) to achieve the desired rounded corner appearance.
+A: Ja, Sie können den Radius der abgerundeten Ecken für den Tisch anpassen, indem Sie den Wert ändern`bInfo.RoundedBorderRadius` -Eigenschaft im bereitgestellten C#-Quellcode. Stellen Sie einfach den gewünschten Radiuswert (in Punkten) ein, um das gewünschte Erscheinungsbild abgerundeter Ecken zu erzielen.
 
-#### Q: Can I apply rounded corners to individual cells within the table?
+#### F: Kann ich abgerundete Ecken auf einzelne Zellen in der Tabelle anwenden?
 
-A: No, the rounded corner style is applied to the entire table as a whole. Aspose.PDF for .NET currently does not provide built-in support for applying rounded corners to individual cells within the table.
+A: Nein, der Stil mit abgerundeten Ecken wird auf die gesamte Tabelle angewendet. Aspose.PDF für .NET bietet derzeit keine integrierte Unterstützung für die Anwendung abgerundeter Ecken auf einzelne Zellen in der Tabelle.
 
-#### Q: Can I change the color of the rounded corner border?
+#### F: Kann ich die Farbe des Randes mit abgerundeten Ecken ändern?
 
-A: Yes, you can change the color of the rounded corner border by modifying the value of the `graph.Color` property in the C# source code. Simply provide the desired color, such as `Aspose.Pdf.Color.Red` or any other valid color representation.
+ A: Ja, Sie können die Farbe des abgerundeten Eckrahmens ändern, indem Sie den Wert von ändern`graph.Color` Eigenschaft im C#-Quellcode. Geben Sie einfach die gewünschte Farbe an, z`Aspose.Pdf.Color.Red` oder eine andere gültige Farbdarstellung.
 
-#### Q: Is it possible to apply different corner styles (e.g., square and rounded) to different tables within the same PDF document?
+#### F: Ist es möglich, verschiedene Eckenstile (z. B. quadratisch und abgerundet) auf verschiedene Tabellen innerhalb desselben PDF-Dokuments anzuwenden?
 
-A: Yes, it is possible to apply different corner styles to different tables within the same PDF document. You can create multiple tables and configure their corner styles individually based on your requirements.
+A: Ja, es ist möglich, unterschiedliche Eckenstile auf verschiedene Tabellen innerhalb desselben PDF-Dokuments anzuwenden. Sie können mehrere Tische erstellen und deren Eckstile individuell nach Ihren Anforderungen konfigurieren.
 
-#### Q: Can I adjust the thickness of the rounded corner border?
+#### F: Kann ich die Dicke des Randes mit abgerundeten Ecken anpassen?
 
-A: Yes, you can adjust the thickness of the rounded corner border by modifying the `BorderInfo` object's properties in the C# source code. For example, you can set the `bInfo.Width` property to adjust the border's thickness.
+ A: Ja, Sie können die Dicke des Randes mit abgerundeten Ecken anpassen, indem Sie die ändern`BorderInfo` Objekteigenschaften im C#-Quellcode. Sie können beispielsweise Folgendes festlegen:`bInfo.Width` Eigenschaft, um die Dicke des Rahmens anzupassen.

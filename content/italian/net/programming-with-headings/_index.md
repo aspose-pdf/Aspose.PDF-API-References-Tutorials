@@ -1,16 +1,16 @@
 ---
-title: Programming with Headings
-linktitle: Programming with Headings
+title: Programmazione con intestazioni
+linktitle: Programmazione con intestazioni
 type: docs
 weight: 20
 url: /it/net/programming-with-headings/
-description: The Aspose.PDF for .NET tutorials walk you through using headings to improve the structure of your PDF documents.
+description: I tutorial Aspose.PDF per .NET ti guidano attraverso l'utilizzo delle intestazioni per migliorare la struttura dei tuoi documenti PDF.
 ---
-The Aspose.PDF for .NET tutorials take you step-by-step to master programming with headings in your PDF documents. Learn how to add, style and manipulate headings to improve the structure of your PDF files.
+tutorial Aspose.PDF per .NET ti guidano passo passo a padroneggiare la programmazione con le intestazioni nei tuoi documenti PDF. Scopri come aggiungere, stilizzare e manipolare le intestazioni per migliorare la struttura dei tuoi file PDF.
 
-Explore the features of Aspose.PDF for .NET with dedicated tutorials. Learn how to work with headings in your PDF documents, using practical examples and step-by-step explanations. Improve the readability and navigation of your PDF files with these comprehensive resources.
+Esplora le funzionalità di Aspose.PDF per .NET con tutorial dedicati. Scopri come lavorare con le intestazioni nei tuoi documenti PDF, utilizzando esempi pratici e spiegazioni passo passo. Migliora la leggibilità e la navigazione dei tuoi file PDF con queste risorse complete.
 
-## Tutorials
-| Title | Description |
+## Tutorial
+| Titolo | Descrizione |
 | --- | --- | 
-| [Apply Number Style In PDF File](./apply-number-style/) | Learn how to apply a numbering style to headings in PDF file using Aspose.PDF for .NET. Step by step guide. |   
+| [Applica lo stile numero nel file PDF](./apply-number-style/) | Scopri come applicare uno stile di numerazione alle intestazioni nel file PDF utilizzando Aspose.PDF per .NET. Guida passo passo. |   

@@ -1,41 +1,41 @@
 ---
-title: Replaceable Symbols In Header Footer
-linktitle: Replaceable Symbols In Header Footer
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use replaceable symbols in the header and footer of a PDF document using Aspose.PDF for .NET.
+title: الرموز القابلة للاستبدال في تذييل الرأس
+linktitle: الرموز القابلة للاستبدال في تذييل الرأس
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخدام الرموز القابلة للاستبدال في رأس وتذييل مستند PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 320
 url: /ar/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-In this tutorial, we will explain how to use replaceable symbols in the header and footer of a PDF document using the Aspose.PDF library for .NET. We will go through the step-by-step process of creating a PDF, setting margins, adding header and footer with replaceable symbols, and saving the PDF using the provided C# source code.
+سنشرح في هذا البرنامج التعليمي كيفية استخدام الرموز القابلة للاستبدال في رأس وتذييل مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. سنتابع عملية إنشاء ملف PDF خطوة بخطوة، وتعيين الهوامش، وإضافة رأس وتذييل برموز قابلة للاستبدال، وحفظ ملف PDF باستخدام كود مصدر C# المقدم.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before you begin, ensure that you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- تم تثبيت Aspose.PDF لمكتبة .NET.
+- فهم أساسي للبرمجة C#.
 
-## Step 1: Set up the Document Directory
+## الخطوة 1: إعداد دليل المستندات
 
-First, you need to set the path to the directory where you want to save the generated PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your desired directory.
+ أولاً، تحتاج إلى تعيين المسار إلى الدليل الذي تريد حفظ ملف PDF الذي تم إنشاؤه فيه. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir`متغير مع المسار إلى الدليل المطلوب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a PDF Document and Page
+## الخطوة 2: إنشاء مستند وصفحة PDF
 
-Next, we create a new PDF document and add a page to it using the `Document` class and `Page` class from the Aspose.PDF library.
+ بعد ذلك، نقوم بإنشاء مستند PDF جديد ونضيف إليه صفحة باستخدام الملف`Document` الطبقة و`Page` فئة من مكتبة Aspose.PDF.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Set Margins
+## الخطوة 3: تعيين الهوامش
 
-We set the margins for the page using the `MarginInfo` class. Adjust the margin values according to your requirements.
+ قمنا بتعيين هوامش الصفحة باستخدام`MarginInfo`فصل. اضبط قيم الهامش وفقًا لمتطلباتك.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -46,9 +46,9 @@ marginInfo.Right = 50;
 page.PageInfo.Margin = marginInfo;
 ```
 
-## Step 4: Add Header with Replaceable Symbols
+## الخطوة 4: إضافة رأس برموز قابلة للاستبدال
 
-We create a `HeaderFooter` object for the page and add a `TextFragment` with replaceable symbols to it.
+ نقوم بإنشاء أ`HeaderFooter` كائن للصفحة وإضافة أ`TextFragment` مع رموز قابلة للاستبدال لها.
 
 ```csharp
 HeaderFooter hfFirst = new HeaderFooter();
@@ -57,7 +57,7 @@ hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
 
 TextFragment t1 = new TextFragment("report title");
-// Set text properties if desired
+// قم بتعيين خصائص النص إذا رغبت في ذلك
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
 t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
@@ -67,12 +67,12 @@ t1.TextState.LineSpacing = 5f;
 
 hfFirst.Paragraphs.Add(t1);
 
-// Add more TextFragments or customize as needed
+// أضف المزيد من أجزاء النص أو قم بتخصيصها حسب الحاجة
 ```
 
-## Step 5: Add Footer with Replaceable Symbols
+## الخطوة 5: إضافة تذييل برموز قابلة للاستبدال
 
-Similarly, we create a `HeaderFooter` object for the page footer and add `TextFragment` objects with replaceable symbols to it.
+ وبالمثل، نقوم بإنشاء`HeaderFooter` كائن لتذييل الصفحة وإضافة`TextFragment` كائنات ذات رموز قابلة للاستبدال لها.
 
 ```csharp
 HeaderFooter hfFoot = new HeaderFooter();
@@ -84,14 +84,14 @@ TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
 
-// Add more TextFragments or customize as needed
+// أضف المزيد من أجزاء النص أو قم بتخصيصها حسب الحاجة
 
 hfFoot.Paragraphs.Add(tab2);
 ```
 
-## Step 6: Save the PDF Document
+## الخطوة 6: احفظ مستند PDF
 
-Finally, we save the PDF document to the specified output file.
+وأخيرًا، نقوم بحفظ مستند PDF في ملف الإخراج المحدد.
 
 ```csharp
 dataDir = dataDir + "ReplaceableSymbolsInHeaderFooter_out.pdf";
@@ -99,9 +99,9 @@ doc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols replaced successfully in the header and footer.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Replaceable Symbols In Header Footer using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للرموز القابلة للاستبدال في تذييل الرأس باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 Page page = doc.Pages.Add();
@@ -110,13 +110,13 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Assign the marginInfo instance to Margin property of sec1.PageInfo
+// قم بتعيين مثيلMarginInfo لخاصية Margin لـ sec1.PageInfo
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
 hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
-// Instantiate a Text paragraph that will store the content to show as header
+// قم بإنشاء مثيل لفقرة نصية تقوم بتخزين المحتوى لإظهاره كرأس
 TextFragment t1 = new TextFragment("report title");
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
@@ -132,48 +132,48 @@ t2.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 t2.TextState.LineSpacing = 5f;
 t2.TextState.FontSize = 12;
 hfFirst.Paragraphs.Add(t2);
-// Create a HeaderFooter object for the section
+// قم بإنشاء كائن HeaderFooter للمقطع
 HeaderFooter hfFoot = new HeaderFooter();
-// Set the HeaderFooter object to odd & even footer
+// قم بتعيين كائن HeaderFooter على التذييل الفردي والزوجي
 page.Footer = hfFoot;
 hfFoot.Margin.Left = 50;
 hfFoot.Margin.Right = 50;
-// Add a text paragraph containing current page number of total number of pages
+// إضافة فقرة نصية تحتوي على رقم الصفحة الحالية من إجمالي عدد الصفحات
 TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
-// Instantiate a table object
+// إنشاء مثيل لكائن الجدول
 Table tab2 = new Table();
-// Add the table in paragraphs collection of the desired section
+// إضافة الجدول في مجموعة فقرات القسم المطلوب
 hfFoot.Paragraphs.Add(tab2);
-// Set with column widths of the table
+// تعيين مع عرض أعمدة الجدول
 tab2.ColumnWidths = "165 172 165";
-// Create rows in the table and then cells in the rows
+// قم بإنشاء صفوف في الجدول ثم خلايا في الصفوف
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
 row3.Cells.Add();
-// Set the vertical allignment of the text as center alligned
+// قم بتعيين المحاذاة العمودية للنص كمحاذاة للوسط
 row3.Cells[0].Alignment = Aspose.Pdf.HorizontalAlignment.Left;
 row3.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-// Sec1.Paragraphs.Add(New Text("Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a#$NL" + "daily basis to ensure it contains the most up to date versions of each of our Java components. #$NL " + "Using Aspose.Total for Java developers can create a wide range of applications. #$NL #$NL #$NP" + "Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a#$NL" + "daily basis to ensure it contains the most up to date versions of each of our Java components. #$NL " + "Using Aspose.Total for Java developers can create a wide range of applications. #$NL #$NL #$NP" + "Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a#$NL" + "daily basis to ensure it contains the most up to date versions of each of our Java components. #$NL " + "Using Aspose.Total for Java developers can create a wide range of applications. #$NL #$NL"))
+//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java عبارة عن تجميع لكل مكونات Java التي تقدمها Aspose. ويتم تجميعها على أساس #$NL" + "يوميًا للتأكد من أنها تحتوي على أحدث الإصدارات من كل منها من مكونات Java الخاصة بنا. #$NL " + "استخدام Aspose.Total لمطوري Java يمكن أن ينشئ نطاقًا واسعًا من التطبيقات. #$NL #$NL #$NP" + "Aspose.Total لـ Java عبارة عن تجميع لكل مكون Java مقدمة من Aspose. ويتم تجميعها على أساس #$NL" + "يوميًا للتأكد من أنها تحتوي على أحدث الإصدارات لكل مكون من مكونات Java لدينا. #$NL " + "باستخدام Aspose.Total لمطوري Java يمكن إنشاء مجموعة واسعة من مجموعة من التطبيقات. #$NL #$NL #$NP" + "Aspose.Total for Java عبارة عن تجميع لكل مكونات Java التي تقدمها Aspose. ويتم تجميعها على أساس #$NL" + "يوميًا للتأكد من أنها تحتوي على أكبر قدر من التطبيقات إصدارات محدثة لكل مكون من مكونات Java. #$NL " + "باستخدام Aspose.Total لمطوري Java يمكن إنشاء مجموعة واسعة من التطبيقات. #$NL #$NL"))
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
 table.DefaultCellPadding = new MarginInfo();
 table.DefaultCellPadding.Top = 10;
 table.DefaultCellPadding.Bottom = 10;
-// Add the table in paragraphs collection of the desired section
+// إضافة الجدول في مجموعة فقرات القسم المطلوب
 page.Paragraphs.Add(table);
-// Set default cell border using BorderInfo object
+// قم بتعيين حدود الخلية الافتراضية باستخدام كائن BorderInfo
 table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
-// Set table border using another customized BorderInfo object
+// قم بتعيين حدود الجدول باستخدام كائن BorderInfo مخصص آخر
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// Create rows in the table and then cells in the rows
+// قم بإنشاء صفوف في الجدول ثم خلايا في الصفوف
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -201,54 +201,54 @@ doc.Save(dataDir);
 Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, you have learned how to use replaceable symbols in the header and footer of a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can create a PDF, set margins, add header and footer with replaceable symbols, and save the PDF.
+في هذا البرنامج التعليمي، تعلمت كيفية استخدام الرموز القابلة للاستبدال في رأس وتذييل مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. باتباع الدليل خطوة بخطوة وتنفيذ كود C# المقدم، يمكنك إنشاء ملف PDF وتعيين الهوامش وإضافة رأس وتذييل برموز قابلة للاستبدال وحفظ ملف PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of the "Replaceable Symbols In Header Footer" tutorial?
+#### س: ما هو الغرض من البرنامج التعليمي "الرموز القابلة للاستبدال في تذييل الصفحة"؟
 
-A: The "Replaceable Symbols In Header Footer" tutorial aims to guide you through the process of using the Aspose.PDF library for .NET to add replaceable symbols to the header and footer of a PDF document. Replaceable symbols allow you to dynamically replace specific placeholders with actual values when generating the PDF.
+ج: يهدف البرنامج التعليمي "الرموز القابلة للاستبدال في تذييل الرأس" إلى إرشادك خلال عملية استخدام مكتبة Aspose.PDF لـ .NET لإضافة رموز قابلة للاستبدال إلى رأس وتذييل مستند PDF. تتيح لك الرموز القابلة للاستبدال استبدال عناصر نائبة معينة ديناميكيًا بقيم فعلية عند إنشاء ملف PDF.
 
-#### Q: What are replaceable symbols in the context of a PDF header and footer?
+#### س: ما هي الرموز القابلة للاستبدال في سياق رأس وتذييل ملف PDF؟
 
-A: Replaceable symbols are placeholders that you can insert into the header and footer of a PDF document. These symbols act as dynamic placeholders for values that can be filled in at runtime, such as page numbers, dates, and custom information.
+ج: الرموز القابلة للاستبدال هي عناصر نائبة يمكنك إدراجها في رأس وتذييل مستند PDF. تعمل هذه الرموز كعناصر نائبة ديناميكية للقيم التي يمكن ملؤها في وقت التشغيل، مثل أرقام الصفحات والتواريخ والمعلومات المخصصة.
 
-#### Q: Why would I want to use replaceable symbols in a PDF header and footer?
+#### س: لماذا أرغب في استخدام رموز قابلة للاستبدال في رأس وتذييل ملف PDF؟
 
-A: Replaceable symbols in the header and footer are useful when you want to include dynamic information in your PDF documents, such as page numbers, dates, or other variable data that may change when the document is generated.
+ج: تكون الرموز القابلة للاستبدال في الرأس والتذييل مفيدة عندما تريد تضمين معلومات ديناميكية في مستندات PDF الخاصة بك، مثل أرقام الصفحات أو التواريخ أو البيانات المتغيرة الأخرى التي قد تتغير عند إنشاء المستند.
 
-#### Q: How can I set the margins for the PDF page?
+#### س: كيف يمكنني ضبط هوامش صفحة PDF؟
 
-A: You can set the margins for the PDF page using the `MarginInfo` class and assigning it to the `Margin` property of the `PageInfo` of the page. Adjust the margin values as needed.
+ ج: يمكنك ضبط هوامش صفحة PDF باستخدام`MarginInfo` الصف وإسناده إلى`Margin` ملكية`PageInfo` من الصفحة. اضبط قيم الهامش حسب الحاجة.
 
-#### Q: How do I add replaceable symbols to the header and footer?
+#### س: كيف يمكنني إضافة رموز قابلة للاستبدال إلى الرأس والتذييل؟
 
-A: You can add replaceable symbols by creating a `HeaderFooter` object for the header and footer of the page. Then, you can add `TextFragment` objects with the desired text, including replaceable symbols, to the `Paragraphs` collection of the `HeaderFooter` object.
+ ج: يمكنك إضافة رموز قابلة للاستبدال عن طريق إنشاء ملف`HeaderFooter` كائن لرأس وتذييل الصفحة. وبعد ذلك، يمكنك إضافة`TextFragment`الكائنات التي تحتوي على النص المطلوب، بما في ذلك الرموز القابلة للاستبدال، إلى`Paragraphs` جمع من`HeaderFooter` هدف.
 
-#### Q: Can I customize the appearance of the replaceable symbols?
+#### س: هل يمكنني تخصيص مظهر الرموز القابلة للاستبدال؟
 
-A: Yes, you can customize the appearance of the replaceable symbols by modifying the properties of the `TextFragment` objects that contain the symbols. You can set properties such as font, font size, color, alignment, and line spacing.
+ ج: نعم، يمكنك تخصيص مظهر الرموز القابلة للاستبدال عن طريق تعديل خصائص`TextFragment` الكائنات التي تحتوي على الرموز. يمكنك تعيين خصائص مثل الخط وحجم الخط واللون والمحاذاة وتباعد الأسطر.
 
-#### Q: What kind of replaceable symbols can I use?
+#### س: ما نوع الرموز القابلة للاستبدال التي يمكنني استخدامها؟
 
-A: You can use a variety of replaceable symbols, such as:
+ج: يمكنك استخدام مجموعة متنوعة من الرموز القابلة للاستبدال، مثل:
 
-- `$p`: Current page number.
-- `$P`: Total number of pages.
-- `$d`: Current date.
-- `$t`: Current time.
-- Custom placeholders you define.
+- `$p`: رقم الصفحة الحالية.
+- `$P`: إجمالي عدد الصفحات.
+- `$d`: التاريخ الحالي.
+- `$t`: الوقت الحالي.
+- العناصر النائبة المخصصة التي تحددها.
 
-#### Q: Can I include other text and formatting around the replaceable symbols?
+#### س: هل يمكنني تضمين نص وتنسيق آخر حول الرموز القابلة للاستبدال؟
 
-A: Yes, you can include other text and formatting around the replaceable symbols within the `TextFragment` objects. This allows you to create more complex headers and footers that incorporate dynamic and static content.
+ ج: نعم، يمكنك تضمين نص وتنسيقات أخرى حول الرموز القابلة للاستبدال داخل ملف`TextFragment` أشياء. يتيح لك ذلك إنشاء رؤوس وتذييلات أكثر تعقيدًا تتضمن محتوى ديناميكيًا وثابتًا.
 
-#### Q: How can I save the generated PDF document?
+#### س: كيف يمكنني حفظ مستند PDF الذي تم إنشاؤه؟
 
-A: To save the generated PDF document, you can use the `Save` method of the `Document` class. Provide the desired output file path and name as an argument.
+ ج: لحفظ مستند PDF الذي تم إنشاؤه، يمكنك استخدام الملف`Save` طريقة`Document`فصل. قم بتوفير مسار ملف الإخراج المطلوب واسمه كوسيطة.
 
-#### Q: Is a valid Aspose License required for this tutorial?
+#### س: هل يلزم وجود ترخيص Aspose صالح لهذا البرنامج التعليمي؟
 
-A: Yes, a valid Aspose License is required to execute the code successfully in this tutorial. You can obtain a full license or a 30-day temporary license from the Aspose website.
+ج: نعم، مطلوب ترخيص Aspose صالح لتنفيذ التعليمات البرمجية بنجاح في هذا البرنامج التعليمي. يمكنك الحصول على ترخيص كامل أو ترخيص مؤقت لمدة 30 يومًا من موقع Aspose.

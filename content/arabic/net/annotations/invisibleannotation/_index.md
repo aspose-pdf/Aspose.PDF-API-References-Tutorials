@@ -1,74 +1,74 @@
 ---
-title: Invisible Annotation In PDF File
-linktitle: Invisible Annotation In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to invisible annotation in PDF file using C# source code with Aspose.PDF for .NET. Step-by-step guide.
+title: تعليق توضيحي غير مرئي في ملف PDF
+linktitle: تعليق توضيحي غير مرئي في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إخفاء التعليقات التوضيحية في ملف PDF باستخدام كود مصدر C# باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة.
 type: docs
 weight: 100
 url: /ar/net/annotations/invisibleannotation/
 ---
-Annotations in PDF file are a powerful feature that allows you to add extra information or notes to a document without changing the actual content. They can be used to highlight text, draw attention to specific areas of a document, or add comments or feedback.
+تعد التعليقات التوضيحية في ملف PDF ميزة قوية تتيح لك إضافة معلومات أو ملاحظات إضافية إلى المستند دون تغيير المحتوى الفعلي. ويمكن استخدامها لتمييز النص أو جذب الانتباه إلى مناطق معينة في المستند أو إضافة تعليقات أو ملاحظات.
 
-There are many different types of annotations that you can use in PDF documents, including:
+هناك العديد من أنواع التعليقات التوضيحية المختلفة التي يمكنك استخدامها في مستندات PDF، بما في ذلك:
 
-- Text Annotations
-- Link Annotations
-- Stamp Annotations
-- Sound Annotations
-- File Attachment Annotations
-- and many more
+- التعليقات التوضيحية النصية
+- التعليقات التوضيحية الارتباط
+- شروح الطوابع
+- الشروح الصوتية
+- التعليقات التوضيحية لمرفقات الملف
+- و أكثر من ذلك بكثير
 
-## Step 1: Creating an Invisible Annotation in a PDF Document Using Aspose.PDF for .NET
+## الخطوة 1: إنشاء تعليق توضيحي غير مرئي في مستند PDF باستخدام Aspose.PDF لـ .NET
 
-To create an invisible annotation in a PDF document using Aspose.PDF for .NET, we first need to create a `FreeTextAnnotation` object and specify the location and size of the annotation.
+ لإنشاء تعليق توضيحي غير مرئي في مستند PDF باستخدام Aspose.PDF لـ .NET، نحتاج أولاً إلى إنشاء`FreeTextAnnotation` كائن وتحديد موقع وحجم التعليق التوضيحي.
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document doc = new Document(dataDir + "input.pdf");
 
 FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(50, 600, 250, 650), new DefaultAppearance("Helvetica", 16, System.Drawing.Color.Red));
 ```
 
-In the code above, we create a `FreeTextAnnotation` object and specify the location of the annotation on page 2 of the PDF document. We also specify the font type, size, and color for the text that will be displayed in the annotation.
+ في الكود أعلاه، نقوم بإنشاء`FreeTextAnnotation`الكائن وحدد موقع التعليق التوضيحي في الصفحة 2 من مستند PDF. نحدد أيضًا نوع الخط وحجمه ولونه للنص الذي سيتم عرضه في التعليق التوضيحي.
 
-## Step 2: Adding Characteristics to the Invisible Annotation
+## الخطوة 2: إضافة خصائص إلى التعليق التوضيحي غير المرئي
 
-Next, we can add some characteristics to the annotation, such as a border color, background color, or opacity.
+بعد ذلك، يمكننا إضافة بعض الخصائص إلى التعليق التوضيحي، مثل لون الحدود، أو لون الخلفية، أو العتامة.
 
 ```csharp
 annotation.Characteristics.Border = System.Drawing.Color.Red;
 ```
 
-In the code above, we set the border color of the annotation to red.
+في الكود أعلاه، قمنا بتعيين لون حدود التعليق التوضيحي إلى اللون الأحمر.
 
-## Step 3: Setting the Annotation Flags
+## الخطوة 3: إعداد علامات التعليقات التوضيحية
 
-After we have created the annotation and set its characteristics, we can specify the annotation flags. In this tutorial, we want the annotation to be printable, but not viewable.
+بعد أن قمنا بإنشاء التعليق التوضيحي وتعيين خصائصه، يمكننا تحديد علامات التعليق التوضيحي. في هذا البرنامج التعليمي، نريد أن يكون التعليق التوضيحي قابلاً للطباعة، ولكن غير قابل للعرض.
 
 ```csharp
 annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
 doc.Pages[1].Annotations.Add(annotation);
 ```
 
-## Step 4: Saving the Modified PDF Document
+## الخطوة 4: حفظ مستند PDF المعدل
 
-Finally, we can save the modified PDF document with the new invisible annotation.
+أخيرًا، يمكننا حفظ مستند PDF المعدل مع التعليق التوضيحي الجديد غير المرئي.
 
 ```csharp
 dataDir = dataDir + "InvisibleAnnotation_out.pdf";
 doc.Save(dataDir);
 ```
 
-## Example Source Code for How to Invisible Annotation using Aspose.PDF for .NET
+## مثال على كود المصدر لكيفية التعليق التوضيحي غير المرئي باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document doc = new Document(dataDir + "input.pdf");
 
 FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(50, 600, 250, 650), new DefaultAppearance("Helvetica", 16, System.Drawing.Color.Red));
@@ -78,34 +78,34 @@ annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
 doc.Pages[1].Annotations.Add(annotation);
 
 dataDir = dataDir + "InvisibleAnnotation_out.pdf";
-// Save output file
+// حفظ ملف الإخراج
 doc.Save(dataDir);
-// ExEnd:InvisibleAnnotation
+// ExEnd: تعليق توضيحي غير مرئي
 Console.WriteLine("\nAnnotation nvisible successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to create an invisible annotation in a PDF document using Aspose.PDF for .NET. Invisible annotations are a useful feature when you want to add extra information or notes to a document without displaying them to the reader. By following the step-by-step guide and using the provided C# source code, developers can easily create and customize invisible annotations in their PDF documents. Aspose.PDF for .NET provides a comprehensive set of tools for working with annotations, allowing you to enhance the interactivity and usability of your PDF files.
+في هذا البرنامج التعليمي، تعلمنا كيفية إنشاء تعليق توضيحي غير مرئي في مستند PDF باستخدام Aspose.PDF لـ .NET. تعد التعليقات التوضيحية غير المرئية ميزة مفيدة عندما تريد إضافة معلومات أو ملاحظات إضافية إلى مستند دون عرضها للقارئ. باتباع الدليل الموضح خطوة بخطوة واستخدام كود مصدر C# المقدم، يمكن للمطورين بسهولة إنشاء تعليقات توضيحية غير مرئية وتخصيصها في مستندات PDF الخاصة بهم. يوفر Aspose.PDF for .NET مجموعة شاملة من الأدوات للتعامل مع التعليقات التوضيحية، مما يسمح لك بتحسين التفاعل وسهولة الاستخدام لملفات PDF الخاصة بك.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is an invisible annotation in a PDF document?
+#### س: ما هو التعليق التوضيحي غير المرئي في مستند PDF؟
 
-A: An invisible annotation in a PDF document is an annotation that is not visible on the page but contains additional information or notes. It allows you to add comments or feedback without displaying them to the reader.
+ج: التعليق التوضيحي غير المرئي في مستند PDF هو تعليق توضيحي غير مرئي على الصفحة ولكنه يحتوي على معلومات أو ملاحظات إضافية. يسمح لك بإضافة تعليقات أو تعليقات دون عرضها للقارئ.
 
-#### Q: What types of characteristics can be added to an invisible annotation?
+#### س: ما أنواع الخصائص التي يمكن إضافتها إلى التعليق التوضيحي غير المرئي؟
 
-A: Various characteristics can be added to an invisible annotation, such as border color, background color, opacity, font type, size, and color for the text that will be displayed.
+ج: يمكن إضافة خصائص مختلفة إلى تعليق توضيحي غير مرئي، مثل لون الحدود ولون الخلفية والعتامة ونوع الخط والحجم واللون للنص الذي سيتم عرضه.
 
-#### Q: Can I set different annotation flags for an invisible annotation?
+#### س: هل يمكنني تعيين علامات توضيحية مختلفة لتعليق توضيحي غير مرئي؟
 
-A: Yes, you can set different annotation flags for an invisible annotation, depending on your requirements. For example, you can make the annotation printable but not viewable.
+ج: نعم، يمكنك تعيين علامات توضيحية مختلفة لتعليق توضيحي غير مرئي، وفقًا لمتطلباتك. على سبيل المثال، يمكنك جعل التعليق التوضيحي قابلاً للطباعة ولكن غير قابل للعرض.
 
-#### Q: How can I add an invisible annotation to a specific page of the PDF document?
+#### س: كيف يمكنني إضافة تعليق توضيحي غير مرئي إلى صفحة معينة من مستند PDF؟
 
-A: To add an invisible annotation to a specific page of the PDF document, you need to create a `FreeTextAnnotation` object and specify the location and size of the annotation on that page.
+ ج: لإضافة تعليق توضيحي غير مرئي إلى صفحة معينة من مستند PDF، تحتاج إلى إنشاء ملف`FreeTextAnnotation` كائن وحدد موقع وحجم التعليق التوضيحي على تلك الصفحة.
 
-#### Q: Can I modify the characteristics of an existing invisible annotation in a PDF file?
+#### س: هل يمكنني تعديل خصائص التعليق التوضيحي غير المرئي الموجود في ملف PDF؟
 
-A: Yes, you can modify the characteristics of an existing invisible annotation in a PDF file using Aspose.PDF for .NET. You can change the font type, size, color, border color, background color, opacity, and other properties of the annotation.
+ج: نعم، يمكنك تعديل خصائص التعليق التوضيحي غير المرئي الموجود في ملف PDF باستخدام Aspose.PDF لـ .NET. يمكنك تغيير نوع الخط وحجمه ولونه ولون الحدود ولون الخلفية والتعتيم والخصائص الأخرى للتعليق التوضيحي.

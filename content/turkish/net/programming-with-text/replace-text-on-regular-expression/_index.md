@@ -1,51 +1,51 @@
 ---
-title: Replace Text on Regular Expression In PDF File
-linktitle: Replace Texton Regular Expression In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to replace text based on a regular expression in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasındaki Normal İfadedeki Metni Değiştir
+linktitle: PDF Dosyasındaki Texton Normal İfadesini Değiştir
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak PDF dosyasındaki normal ifadeye dayalı metni nasıl değiştireceğinizi öğrenin.
 type: docs
 weight: 360
 url: /tr/net/programming-with-text/replace-text-on-regular-expression/
 ---
-In this tutorial, we will explain how to replace text based on a regular expression in PDF file using the Aspose.PDF library for .NET. We will provide a step-by-step guide along with the necessary C# source code.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak PDF dosyasındaki normal ifadeye dayalı metni nasıl değiştireceğinizi açıklayacağız. Gerekli C# kaynak koduyla birlikte adım adım bir kılavuz sağlayacağız.
 
-## Prerequisites
+## Önkoşullar
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Aspose.PDF for .NET library installed.
-- Basic understanding of C# programming.
+- Aspose.PDF for .NET kütüphanesi kuruldu.
+- C# programlamanın temel anlayışı.
 
-## Step 1: Set up the Document Directory
+## 1. Adım: Belge Dizinini Ayarlayın
 
-Set the path to the directory where you have the input PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF file.
+ Giriş PDF dosyasının bulunduğu dizinin yolunu ayarlayın. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyanızın yolunu içeren değişken.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the PDF Document
+## Adım 2: PDF Belgesini Yükleyin
 
-Load the PDF document using the `Document` class from the Aspose.PDF library.
+ PDF belgesini kullanarak yükleyin`Document` Aspose.PDF kütüphanesinden sınıf.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionPage.pdf");
 ```
 
-## Step 3: Search and Replace Text using Regular Expression
+## 3. Adım: Normal İfade Kullanarak Metni Arayın ve Değiştirin
 
-Create a `TextFragmentAbsorber` object and specify the regular expression pattern to find all the phrases matching the pattern. Set the text search option to enable regular expression usage.
+ Oluşturmak`TextFragmentAbsorber` nesneyi seçin ve kalıpla eşleşen tüm ifadeleri bulmak için normal ifade modelini belirtin. Normal ifade kullanımını etkinleştirmek için metin arama seçeneğini ayarlayın.
 
 ```csharp
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Like 1999-2000
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // 1999-2000 gibi
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textFragmentAbsorber.TextSearchOptions = textSearchOptions;
 pdfDocument.Pages[1].Accept(textFragmentAbsorber);
 ```
 
-## Step 4: Replace Text
+## 4. Adım: Metni Değiştir
 
-Loop through the extracted text fragments and replace the text as required. Update the text and other properties such as font, font size, foreground color, and background color.
+Çıkarılan metin parçaları arasında dolaşın ve metni gerektiği gibi değiştirin. Metni ve yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi diğer özellikleri güncelleyin.
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
@@ -58,9 +58,9 @@ foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
 }
 ```
 
-## Step 5: Save the Modified PDF
+## 5. Adım: Değiştirilen PDF'yi kaydedin
 
-Save the modified PDF document to the specified output file.
+Değiştirilen PDF belgesini belirtilen çıktı dosyasına kaydedin.
 
 ```csharp
 dataDir = dataDir + "ReplaceTextonRegularExpression_out.pdf";
@@ -68,27 +68,27 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nText replaced successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Replace Texton Regular Expression using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Texton Normal İfadesini Değiştir için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionPage.pdf");
-// Create TextAbsorber object to find all the phrases matching the regular expression
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Like 1999-2000
-// Set text search option to specify regular expression usage
+// Normal ifadeyle eşleşen tüm ifadeleri bulmak için TextAbsorber nesnesi oluşturun
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // 1999-2000 gibi
+// Normal ifade kullanımını belirtmek için metin arama seçeneğini ayarlayın
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textFragmentAbsorber.TextSearchOptions = textSearchOptions;
-// Accept the absorber for a single page
+// Tek bir sayfa için emiciyi kabul edin
 pdfDocument.Pages[1].Accept(textFragmentAbsorber);
-// Get the extracted text fragments
+// Çıkarılan metin parçalarını alın
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Loop through the fragments
+// Parçalar arasında döngü yapın
 foreach (TextFragment textFragment in textFragmentCollection)
 {
-	// Update text and other properties
+	// Metni ve diğer özellikleri güncelleme
 	textFragment.Text = "New Phrase";
-	// Set to an instance of an object.
+	// Bir nesnenin örneğine ayarlayın.
 	textFragment.TextState.Font = FontRepository.FindFont("Verdana");
 	textFragment.TextState.FontSize = 22;
 	textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Blue);
@@ -99,55 +99,55 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nText replaced successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, you have learned how to replace text based on a regular expression in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can load a PDF document, search for text using a regular expression, replace it, and save the modified PDF.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesindeki normal ifadeye dayalı metni nasıl değiştireceğinizi öğrendiniz. Adım adım kılavuzu izleyerek ve verilen C# kodunu çalıştırarak bir PDF belgesi yükleyebilir, normal ifade kullanarak metin arayabilir, onu değiştirebilir ve değiştirilen PDF'yi kaydedebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of the "Replace Text on Regular Expression In PDF File" tutorial?
+#### S: "PDF Dosyasındaki Normal İfadedeki Metni Değiştirme" öğreticisinin amacı nedir?
 
-A: The "Replace Text on Regular Expression In PDF File" tutorial aims to guide you through the process of using the Aspose.PDF library for .NET to search for and replace text in a PDF document based on a regular expression. It provides a step-by-step guide along with sample C# code.
+C: "PDF Dosyasındaki Normal İfadede Metni Değiştir" eğitimi, bir PDF belgesinde normal ifadeye dayalı metni aramak ve değiştirmek için Aspose.PDF kütüphanesini .NET kullanma sürecinde size rehberlik etmeyi amaçlamaktadır. Örnek C# koduyla birlikte adım adım bir kılavuz sağlar.
 
-#### Q: Why would I want to use a regular expression to replace text in a PDF document?
+#### S: Bir PDF belgesindeki metni değiştirmek için neden normal ifadeyi kullanmak isteyeyim?
 
-A: Using regular expressions allows you to search for and replace text patterns that follow a specific format, making it a powerful way to manipulate content. This approach is particularly useful when you need to replace text that matches a certain pattern or structure across the PDF document.
+C: Düzenli ifadeleri kullanmak, belirli bir formatı izleyen metin kalıplarını aramanıza ve değiştirmenize olanak tanır, bu da onu içeriği değiştirmenin güçlü bir yolu haline getirir. Bu yaklaşım özellikle PDF belgesinde belirli bir desen veya yapıyla eşleşen metni değiştirmeniz gerektiğinde kullanışlıdır.
 
-#### Q: How do I set up the document directory?
+#### S: Belge dizinini nasıl ayarlarım?
 
-A: To set up the document directory:
+C: Belge dizinini ayarlamak için:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your input PDF file is located.
+1.  Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` giriş PDF dosyanızın bulunduğu dizinin yolunu içeren değişken.
 
-#### Q: How do I replace text based on a regular expression in a PDF document?
+#### S: Bir PDF belgesindeki normal ifadeye dayalı metni nasıl değiştiririm?
 
-A: The tutorial guides you through the following steps:
+C: Eğitim aşağıdaki adımlarda size yol gösterir:
 
-1. Load the PDF document using the `Document` class.
-2. Create a `TextFragmentAbsorber` object and specify the regular expression pattern to find phrases matching the pattern. Set the text search option to enable regular expression usage.
-3. Loop through the extracted text fragments and replace the text. Update other properties like font, font size, foreground color, and background color as required.
-4. Save the modified PDF document.
+1.  PDF belgesini kullanarak yükleyin`Document` sınıf.
+2.  Oluşturmak`TextFragmentAbsorber` nesneyi açın ve kalıpla eşleşen cümleleri bulmak için normal ifade modelini belirtin. Normal ifade kullanımını etkinleştirmek için metin arama seçeneğini ayarlayın.
+3. Çıkarılan metin parçaları arasında dolaşın ve metni değiştirin. Yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi diğer özellikleri gerektiği gibi güncelleyin.
+4. Değiştirilen PDF belgesini kaydedin.
 
-#### Q: Can I replace text using complex regular expressions?
+#### S: Metni karmaşık normal ifadeler kullanarak değiştirebilir miyim?
 
-A: Yes, you can use complex regular expressions to match and replace text in the PDF document. Regular expressions provide a flexible way to identify specific patterns or structures in the text.
+C: Evet, PDF belgesindeki metni eşleştirmek ve değiştirmek için karmaşık normal ifadeler kullanabilirsiniz. Düzenli ifadeler, metindeki belirli kalıpları veya yapıları tanımlamak için esnek bir yol sağlar.
 
-#### Q: What is the purpose of the `TextSearchOptions` class in the tutorial?
+####  Soru: Programın amacı nedir?`TextSearchOptions` class in the tutorial?
 
-A: The `TextSearchOptions` class allows you to specify text search options, such as enabling regular expression usage when searching for text fragments. In the tutorial, it's used to enable regular expression mode for the `TextFragmentAbsorber`.
+ C:`TextSearchOptions`class, metin parçalarını ararken normal ifade kullanımını etkinleştirmek gibi metin arama seçeneklerini belirtmenize olanak tanır. Öğreticide, normal ifade modunu etkinleştirmek için kullanılır.`TextFragmentAbsorber`.
 
-#### Q: Is font replacement optional when using regular expressions to replace text?
+#### S: Metni değiştirmek için normal ifadeler kullanıldığında yazı tipini değiştirmek isteğe bağlı mıdır?
 
-A: Yes, font replacement is optional when using regular expressions to replace text. If you don't specify a new font, the text will retain the font of the original text fragment.
+C: Evet, metni değiştirmek için normal ifadeler kullanıldığında yazı tipinin değiştirilmesi isteğe bağlıdır. Yeni bir yazı tipi belirtmezseniz metin, orijinal metin parçasının yazı tipini koruyacaktır.
 
-#### Q: How can I replace text in multiple pages using a regular expression?
+#### S: Birden çok sayfadaki metni normal ifade kullanarak nasıl değiştirebilirim?
 
-A: You can modify the loop through the text fragments to include all the pages of the PDF document, similar to the tutorial example. This way, you can replace text on multiple pages based on the regular expression pattern.
+C: Öğretici örneğine benzer şekilde, metin parçaları arasındaki döngüyü PDF belgesinin tüm sayfalarını içerecek şekilde değiştirebilirsiniz. Bu şekilde, birden çok sayfadaki metni normal ifade düzenine göre değiştirebilirsiniz.
 
-#### Q: What is the expected outcome of executing the provided code?
+#### S: Sağlanan kodu çalıştırmanın beklenen sonucu nedir?
 
-A: By following the tutorial and running the provided C# code, you will replace text in the PDF document that matches the specified regular expression pattern. The replaced text will have the properties you specified, such as font, font size, foreground color, and background color.
+C: Öğreticiyi takip ederek ve verilen C# kodunu çalıştırarak, PDF belgesindeki metni, belirtilen normal ifade düzeniyle eşleşen metni değiştireceksiniz. Değiştirilen metin, yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi belirttiğiniz özelliklere sahip olacaktır.
 
-#### Q: Can I use this approach to replace text with complex formatting?
+#### S: Metni karmaşık biçimlendirmeyle değiştirmek için bu yaklaşımı kullanabilir miyim?
 
-A: Yes, you can customize the formatting of the replaced text by updating properties like font, font size, foreground color, and background color. This allows you to maintain or modify the formatting as needed.
+C: Evet, yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi özellikleri güncelleyerek değiştirilen metnin biçimlendirmesini özelleştirebilirsiniz. Bu, biçimlendirmeyi gerektiği gibi korumanıza veya değiştirmenize olanak tanır.

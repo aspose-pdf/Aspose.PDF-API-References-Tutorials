@@ -1,107 +1,107 @@
 ---
-title: Get XFAProperties
-linktitle: Get XFAProperties
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get XFA properties of form fields in your PDF documents with Aspose.PDF for .NET.
+title: 获取 XFA 属性
+linktitle: 获取 XFA 属性
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 轻松获取 PDF 文档中表单字段的 XFA 属性。
 type: docs
 weight: 160
 url: /zh/net/programming-with-forms/get-xfaproperties/
 ---
-In this tutorial, we will show you how to get XFA properties of form fields in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+在本教程中，我们将向您展示如何使用 Aspose.PDF for .NET 获取 PDF 文档中表单字段的 XFA 属性。我们将逐步解释 C# 源代码，以指导您完成此过程。
 
-## Step 1: Preparation
+## 第 1 步：准备
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+确保您已导入必要的库并设置文档目录的路径：
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the XFA form
+## 第 2 步：加载 XFA 表单
 
-Load the XFA form from the PDF document:
+从 PDF 文档加载 XFA 表单：
 
 ```csharp
 Document doc = new Document(dataDir + "GetXFAProperties.pdf");
 ```
 
-## Step 3: Get field names
+## 第三步：获取字段名称
 
-Get XFA field names:
+获取 XFA 字段名称：
 
 ```csharp
 string[] names = doc.Form.XFA.FieldNames;
 ```
 
-## Step 4: Set Field Values
+## 步骤 4：设置字段值
 
-Set values for XFA fields:
+设置 XFA 字段的值：
 
 ```csharp
 doc.Form.XFA[names[0]] = "Field 0";
 doc.Form.XFA[names[1]] = "Field 1";
 ```
 
-## Step 5: Get fields position
+## 第5步：获取字段位置
 
-Get the position of XFA fields:
+获取XFA字段的位置：
 
 ```csharp
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["x"].Value);
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["y"].Value);
 ```
 
-## Step 6: Save the updated document
+## 步骤 6：保存更新后的文档
 
-Save the updated PDF document:
+保存更新的 PDF 文档：
 
 ```csharp
 dataDir = dataDir + "Filled_XFA_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Get XFAProperties using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 获取 XFAProperties 的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load XFA form
+//加载 XFA 表单
 Document doc = new Document(dataDir + "GetXFAProperties.pdf");
 string[] names = doc.Form.XFA.FieldNames;
-// Set field values
+//设置字段值
 doc.Form.XFA[names[0]] = "Field 0";
 doc.Form.XFA[names[1]] = "Field 1";
-// Get field position
+//获取字段位置
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["x"].Value);
-// Get field position
+//获取字段位置
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["y"].Value);
 dataDir = dataDir + "Filled_XFA_out.pdf";
-// Save the updated document
+//保存更新后的文档
 doc.Save(dataDir);
 Console.WriteLine("\nXFA fields properties retrieved successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we learned how to get XFA properties of form fields in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily extract XFA field information, such as positions, from PDF documents using Aspose.PDF.
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 获取 PDF 文档中表单字段的 XFA 属性。通过执行这些步骤，您可以使用 Aspose.PDF 轻松从 PDF 文档中提取 XFA 字段信息，例如位置。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What are XFA properties in a PDF document?
+#### 问：PDF 文档中的 XFA 属性是什么？
 
-A: XFA (XML Forms Architecture) properties in a PDF document refer to the XML-based structure used to define dynamic forms with complex layouts and interactive features. XFA allows for rich form design and data handling in PDF documents, enabling features such as calculations, validations, and dynamic content. Aspose.PDF for .NET provides APIs to work with XFA forms and retrieve various properties, including field names, values, positions, and more.
+答：PDF 文档中的 XFA（XML 表单架构）属性是指基于 XML 的结构，用于定义具有复杂布局和交互功能的动态表单。 XFA 允许在 PDF 文档中进行丰富的表单设计和数据处理，从而实现计算、验证和动态内容等功能。 Aspose.PDF for .NET 提供 API 来处理 XFA 表单并检索各种属性，包括字段名称、值、位置等。
 
-#### Q: Can I modify XFA properties using Aspose.PDF for .NET?
+#### 问：我可以使用 Aspose.PDF for .NET 修改 XFA 属性吗？
 
-A: Yes, you can modify XFA properties using Aspose.PDF for .NET. The API allows you to access and update the values of XFA form fields programmatically. You can set new values for XFA fields, update their positions, change appearances, and perform other actions to customize the XFA form dynamically.
+答：是的，您可以使用 Aspose.PDF for .NET 修改 XFA 属性。该 API 允许您以编程方式访问和更新 XFA 表单字段的值。您可以为 XFA 字段设置新值、更新其位置、更改外观以及执行其他操作以动态自定义 XFA 表单。
 
-#### Q: How can I determine if a PDF document contains XFA forms?
+#### 问：如何确定 PDF 文档是否包含 XFA 表单？
 
-A: To determine if a PDF document contains XFA forms, you can check whether the `Form` property of the `Document` object is null or not. If the document contains XFA forms, the `Form` property will be available, and you can proceed with further XFA-related operations.
+答：要判断PDF文档是否包含XFA表单，可以检查PDF文档中是否包含XFA表单。`Form`的财产`Document`对象是否为空。如果文档包含 XFA 表单，则`Form`属性将可用，您可以继续进行进一步的 XFA 相关操作。
 
-#### Q: Are XFA forms supported in all PDF viewers and applications?
+#### 问：所有 PDF 查看器和应用程序都支持 XFA 表单吗？
 
-A: While XFA forms provide rich interactive form features, they may not be supported in all PDF viewers and applications. Some PDF viewers may only support AcroForm-based forms, which are another form type used in PDF documents. It's essential to consider the compatibility of XFA forms with the target audience and the intended use of the PDF document.
+答：虽然 XFA 表单提供了丰富的交互式表单功能，但并非所有 PDF 查看器和应用程序都支持它们。某些 PDF 查看器可能仅支持基于 AcroForm 的表单，这是 PDF 文档中使用的另一种表单类型。必须考虑 XFA 表单与目标受众的兼容性以及 PDF 文档的预期用途。
 
-#### Q: Can I convert XFA forms to AcroForm-based forms using Aspose.PDF for .NET?
+#### 问：我可以使用 Aspose.PDF for .NET 将 XFA 表单转换为基于 AcroForm 的表单吗？
 
-A: Aspose.PDF for .NET provides capabilities to convert XFA forms to AcroForm-based forms. By converting XFA forms to AcroForm, you can ensure broader compatibility with various PDF viewers and applications that may not fully support XFA. You can follow the appropriate APIs and techniques to perform the conversion as per your requirements.
+答：Aspose.PDF for .NET 提供将 XFA 表单转换为基于 AcroForm 的表单的功能。通过将 XFA 表单转换为 AcroForm，您可以确保与可能不完全支持 XFA 的各种 PDF 查看器和应用程序更广泛的兼容性。您可以遵循适当的 API 和技术来根据您的要求执行转换。

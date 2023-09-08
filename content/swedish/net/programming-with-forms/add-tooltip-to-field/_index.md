@@ -1,100 +1,100 @@
 ---
-title: Add Tooltip To Field
-linktitle: Add Tooltip To Field
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a tooltip to a field with Aspose.PDF for .NET.
+title: Lägg till verktygstips i fält
+linktitle: Lägg till verktygstips i fält
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du lägger till ett verktygstips i ett fält med Aspose.PDF för .NET.
 type: docs
 weight: 10
 url: /sv/net/programming-with-forms/add-tooltip-to-field/
 ---
-Aspose.PDF for .NET is a powerful library that allows developers to manipulate PDF documents programmatically. In this tutorial, we will walk through the process of adding a tooltip to a field using Aspose.PDF for .NET. We will provide a step-by-step guide to help you understand and implement this functionality in your C# code.
+Aspose.PDF för .NET är ett kraftfullt bibliotek som tillåter utvecklare att manipulera PDF-dokument programmatiskt. I den här handledningen kommer vi att gå igenom processen att lägga till ett verktygstips till ett fält med Aspose.PDF för .NET. Vi kommer att tillhandahålla en steg-för-steg-guide som hjälper dig att förstå och implementera denna funktionalitet i din C#-kod.
 
-## Step 1: Setting up the project and including Aspose.PDF for .NET
+## Steg 1: Konfigurera projektet och inkludera Aspose.PDF för .NET
 
-Before we begin, make sure you have Aspose.PDF for .NET installed in your development environment. You can download the library from the official website and follow the installation instructions provided.
+Innan vi börjar, se till att du har Aspose.PDF för .NET installerat i din utvecklingsmiljö. Du kan ladda ner biblioteket från den officiella webbplatsen och följa installationsinstruktionerna.
 
-Once you have installed Aspose.PDF for .NET, create a new C# project in your preferred Integrated Development Environment (IDE). Add a reference to the Aspose.PDF.dll file in your project to access the library's functionality.
+När du har installerat Aspose.PDF för .NET, skapa ett nytt C#-projekt i din föredragna Integrated Development Environment (IDE). Lägg till en referens till filen Aspose.PDF.dll i ditt projekt för att komma åt bibliotekets funktionalitet.
 
-## Step 2: Loading the source PDF form
+## Steg 2: Laddar käll-PDF-formuläret
 
-In this step, we will load the source PDF form that contains the field to which we want to add a tooltip. First, ensure that you have the source PDF form file available in your project directory. You can obtain a sample PDF form or use your own existing form.
+det här steget kommer vi att ladda käll-PDF-formuläret som innehåller fältet som vi vill lägga till ett verktygstips till. Se först till att du har PDF-källfilen tillgänglig i din projektkatalog. Du kan få ett exempel på PDF-formulär eller använda ditt eget befintliga formulär.
 
-To load the PDF form, use the following code:
+För att ladda PDF-formuläret, använd följande kod:
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Ladda käll-PDF-formulär
 Document doc = new Document(dataDir + "AddTooltipToField.pdf");
 ```
 
-Make sure to replace `"AddTooltipToField.pdf"` with the actual filename of your source PDF form.
+ Se till att byta ut`"AddTooltipToField.pdf"` med det faktiska filnamnet på ditt PDF-källformulär.
 
-## Step 3: Adding a tooltip to a text field
+## Steg 3: Lägga till ett verktygstips i ett textfält
 
-Now that we have loaded the source PDF form, we can proceed to add a tooltip to a specific text field. In this example, let's assume that the text field's name is "textbox1".
+Nu när vi har laddat käll-PDF-formuläret kan vi fortsätta att lägga till ett verktygstips i ett specifikt textfält. I det här exemplet, låt oss anta att textfältets namn är "textbox1".
 
-To add a tooltip to the text field, use the following code:
+För att lägga till ett verktygstips i textfältet, använd följande kod:
 
 ```csharp
-// Set the tooltip for textfield
+// Ställ in verktygstipset för textfält
 (doc.Form["textbox1"] as Field).AlternateName = "Text box tool tip";
 ```
 
-Replace `"textbox1"` with the actual name of the text field to which you want to add the tooltip. Also, customize the tooltip text by modifying the value assigned to `AlternateName`.
+ Byta ut`"textbox1"` med det faktiska namnet på textfältet som du vill lägga till verktygstipset i. Anpassa även verktygstipstexten genom att ändra värdet som tilldelats`AlternateName`.
 
-## Step 4: Saving the updated document
+## Steg 4: Spara det uppdaterade dokumentet
 
-After adding the tooltip to the field, we need to save the updated document. Specify the output file path where you want to save the modified PDF form.
+Efter att ha lagt till verktygstipset i fältet måste vi spara det uppdaterade dokumentet. Ange sökvägen till utdatafilen där du vill spara det ändrade PDF-formuläret.
 
-To save the updated document, use the following code:
+För att spara det uppdaterade dokumentet, använd följande kod:
 
 ```csharp
 dataDir = dataDir + "AddTooltipToField_out.pdf";
-// Save the updated document
+// Spara det uppdaterade dokumentet
 doc.Save(dataDir);
 Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 ```
 
-Make sure to provide the desired output file name and path. After executing this code, the modified PDF form with the added tooltip will be saved to the specified location.
+Se till att ange önskat utdatafilnamn och sökväg. Efter exekvering av den här koden kommer det modifierade PDF-formuläret med det tillagda verktygstipset att sparas på den angivna platsen.
 
-### Sample source code for Add Tooltip To Field using Aspose.PDF for .NET 
+### Exempel på källkod för Lägg till verktygstips i fält med Aspose.PDF för .NET 
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Ladda käll-PDF-formulär
 Document doc = new Document(dataDir + "AddTooltipToField.pdf");
-// Set the tooltip for textfield
+// Ställ in verktygstipset för textfält
 (doc.Form["textbox1"] as Field).AlternateName = "Text box tool tip";
 dataDir = dataDir + "AddTooltipToField_out.pdf";
-// Save the updated document
+// Spara det uppdaterade dokumentet
 doc.Save(dataDir);
 Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulations! You have successfully learned how to add a tooltip to a field using Aspose.PDF for .NET. By following the step-by-step guide in this tutorial, you can enhance your PDF forms with tooltips to provide additional information or guidance to the users. Remember to explore the documentation and examples provided by Aspose.PDF for .NET to discover more advanced features and functionalities offered by the library.
+Grattis! Du har framgångsrikt lärt dig hur du lägger till ett verktygstips i ett fält med Aspose.PDF för .NET. Genom att följa steg-för-steg-guiden i denna handledning kan du förbättra dina PDF-formulär med verktygstips för att ge ytterligare information eller vägledning till användarna. Kom ihåg att utforska dokumentationen och exemplen som tillhandahålls av Aspose.PDF för .NET för att upptäcka mer avancerade funktioner och funktioner som erbjuds av biblioteket.
 
 ### FAQ's
 
-#### Q: What is a tooltip in a PDF form, and why would I use it?
+#### F: Vad är ett verktygstips i en PDF-form, och varför skulle jag använda det?
 
-A: A tooltip in a PDF form is a small pop-up box that appears when the user hovers their mouse over a specific field. It provides additional information or instructions related to that field. Tooltips are helpful for guiding users, providing explanations, or offering context-specific help in PDF forms.
+S: Ett verktygstips i ett PDF-formulär är en liten popup-ruta som visas när användaren för musen över ett specifikt fält. Den ger ytterligare information eller instruktioner relaterade till det fältet. Verktygstips är användbara för att vägleda användare, ge förklaringar eller erbjuda kontextspecifik hjälp i PDF-formulär.
 
-#### Q: Can I customize the appearance and behavior of the tooltip?
+#### F: Kan jag anpassa verktygstipsets utseende och beteende?
 
-A: Yes, with Aspose.PDF for .NET, you can customize the appearance and behavior of the tooltip. You can set the tooltip text, font, color, and other attributes to match your application's design and requirements.
+S: Ja, med Aspose.PDF för .NET kan du anpassa verktygstipsets utseende och beteende. Du kan ställa in verktygstipsets text, teckensnitt, färg och andra attribut för att matcha din applikations design och krav.
 
-#### Q: Is Aspose.PDF for .NET compatible with other programming languages besides C#?
+#### F: Är Aspose.PDF för .NET kompatibelt med andra programmeringsspråk förutom C#?
 
-A: Yes, Aspose.PDF for .NET is designed to work with other .NET languages such as VB.NET, F#, and more. The library provides consistent functionality across these languages.
+S: Ja, Aspose.PDF för .NET är designat för att fungera med andra .NET-språk som VB.NET, F# och mer. Biblioteket tillhandahåller konsekvent funktionalitet över dessa språk.
 
-#### Q: Can I add tooltips to other types of form fields, such as checkboxes or radio buttons?
+#### F: Kan jag lägga till verktygstips i andra typer av formulärfält, som kryssrutor eller alternativknappar?
 
-A: Yes, you can add tooltips to various types of form fields, including text fields, checkboxes, radio buttons, combo boxes, and more. The process is similar, and you can access different types of form fields using their names or IDs.
+S: Ja, du kan lägga till verktygstips till olika typer av formulärfält, inklusive textfält, kryssrutor, alternativknappar, kombinationsrutor och mer. Processen är liknande, och du kan komma åt olika typer av formulärfält med deras namn eller ID.
 
-#### Q: Can I remove or modify the tooltip after it has been added to the field?
+#### F: Kan jag ta bort eller ändra verktygstipset efter att det har lagts till i fältet?
 
-A: Yes, you can modify or remove the tooltip from a field even after it has been added using Aspose.PDF for .NET. Simply access the field and update its `AlternateName` property with the new tooltip text or set it to an empty string to remove the tooltip.
+ S: Ja, du kan ändra eller ta bort verktygstipset från ett fält även efter att det har lagts till med Aspose.PDF för .NET. Gå bara till fältet och uppdatera det`AlternateName` egenskapen med den nya verktygstipstexten eller ställ in den till en tom sträng för att ta bort verktygstipset.

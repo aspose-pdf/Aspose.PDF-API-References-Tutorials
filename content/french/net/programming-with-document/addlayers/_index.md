@@ -1,36 +1,36 @@
 ---
-title: Add Layers To PDF File
-linktitle: Add Layers To PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add layers to PDF files using Aspose.PDF for .NET. Step-by-step guide with code tutorials for creating and saving layered PDFs.
+title: Ajouter des calques au fichier PDF
+linktitle: Ajouter des calques au fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment ajouter des calques aux fichiers PDF à l'aide d'Aspose.PDF pour .NET. Guide étape par étape avec des didacticiels de code pour créer et enregistrer des PDF en couches.
 type: docs
 weight: 20
 url: /fr/net/programming-with-document/addlayers/
 ---
-To add layers to PDF file, we will utilize Aspose.PDF for .NET. This library allows us to work with PDF files in .NET applications effectively. Follow the step-by-step instructions below to add layers using Aspose.PDF for .NET.
+Pour ajouter des calques au fichier PDF, nous utiliserons Aspose.PDF pour .NET. Cette bibliothèque nous permet de travailler efficacement avec des fichiers PDF dans des applications .NET. Suivez les instructions étape par étape ci-dessous pour ajouter des couches à l'aide d'Aspose.PDF pour .NET.
 
-## Step 1: Create a New PDF Document
+## Étape 1 : Créer un nouveau document PDF
 
-Begin by creating a new instance of the `Document` class provided by Aspose.PDF for .NET. This will serve as the PDF document where we will add the layers.
+ Commencez par créer une nouvelle instance du`Document` classe fournie par Aspose.PDF pour .NET. Cela servira de document PDF où nous ajouterons les calques.
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document();
 ```
 
-## Step 2: Add a Page to the Document
+## Étape 2 : ajouter une page au document
 
-Next, add a page to the document using the `Add` method of the `Pages` collection in the `Document` class.
+ Ensuite, ajoutez une page au document à l'aide du`Add` méthode du`Pages` collecte dans le`Document` classe.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Create and Add Layers to the Page
+## Étape 3 : créer et ajouter des calques à la page
 
-Create instances of the `Layer` class for each layer you want to add to the PDF file. Specify a unique identifier and a name for each layer.
+ Créer des instances de`Layer` classe pour chaque calque que vous souhaitez ajouter au fichier PDF. Spécifiez un identifiant unique et un nom pour chaque couche.
 
 ```csharp
 Layer layer = new Layer("oc1", "Red Line");
@@ -56,11 +56,11 @@ layer.Contents.Add(new Aspose.Pdf.Operators.Stroke());
 page.Layers.Add(layer);
 ```
 
-In this tutorial, we have added three layers with different colors and names to the page.
+Dans ce didacticiel, nous avons ajouté trois calques avec des couleurs et des noms différents à la page.
 
-## Step 4: Save the PDF File
+## Étape 4 : Enregistrez le fichier PDF
 
-Save the modified PDF file using the `Save` method of the `Document` class.
+ Enregistrez le fichier PDF modifié à l'aide du`Save` méthode du`Document` classe.
 
 ```csharp
 dataDir = dataDir + "AddLayers_out.pdf";
@@ -69,12 +69,12 @@ doc.Save(dataDir);
 Console.WriteLine("\nLayers added successfully to PDF file.\nFile saved at " + dataDir);
 ```
 
-This code will save the modified PDF file to the specified directory.
+Ce code enregistrera le fichier PDF modifié dans le répertoire spécifié.
 
-### Example source code for Adding Layers to PDF Pages using Aspose.PDF for .NET
+### Exemple de code source pour l'ajout de calques aux pages PDF à l'aide d'Aspose.PDF pour .NET
 
 ```csharp            
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document();
@@ -107,27 +107,27 @@ Console.WriteLine("\nLayers added successfully to PDF file.\nFile saved at " + d
 
 ## Conclusion
 
-In this article, we have provided a step-by-step guide to adding layers to PDF files using Aspose.PDF for .NET. By following the instructions and utilizing the provided code tutorials, you can easily incorporate layers into your PDF documents. Layers allow you to organize and control the visibility of content, providing a more interactive and customizable experience for your users.
+Dans cet article, nous avons fourni un guide étape par étape pour ajouter des calques aux fichiers PDF à l'aide d'Aspose.PDF pour .NET. En suivant les instructions et en utilisant les didacticiels de code fournis, vous pouvez facilement incorporer des calques dans vos documents PDF. Les calques vous permettent d'organiser et de contrôler la visibilité du contenu, offrant ainsi une expérience plus interactive et personnalisable à vos utilisateurs.
 
 
-### FAQ's for add layers to PDF file
+### FAQ pour ajouter des calques au fichier PDF
 
-#### Q: What is Aspose.PDF for .NET?
+#### Q : Qu'est-ce qu'Aspose.PDF pour .NET ?
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF files effectively in .NET applications. It provides a wide range of features for creating, modifying, and manipulating PDF documents.
+R : Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de travailler efficacement avec des fichiers PDF dans des applications .NET. Il offre un large éventail de fonctionnalités pour créer, modifier et manipuler des documents PDF.
 
-#### Q: What are PDF layers?
+#### Q : Que sont les calques PDF ?
 
-A: PDF layers, also known as Optional Content Groups (OCGs), allow you to control the visibility and appearance of specific content within a PDF file. They are useful for organizing content and creating interactive documents.
+R : Les couches PDF, également appelées groupes de contenu facultatif (OCG), vous permettent de contrôler la visibilité et l'apparence d'un contenu spécifique dans un fichier PDF. Ils sont utiles pour organiser le contenu et créer des documents interactifs.
 
-#### Q: Can I add multiple layers to a PDF file using Aspose.PDF for .NET?
+#### Q : Puis-je ajouter plusieurs calques à un fichier PDF à l'aide d'Aspose.PDF pour .NET ?
 
-A: Yes, you can add multiple layers to a PDF file using Aspose.PDF for .NET. Each layer can have its own unique identifier and name, as demonstrated in the tutorial.
+R : Oui, vous pouvez ajouter plusieurs calques à un fichier PDF à l'aide d'Aspose.PDF pour .NET. Chaque couche peut avoir son propre identifiant et son propre nom, comme démontré dans le didacticiel.
 
-#### Q: How can I customize the appearance of the layers?
+#### Q : Comment puis-je personnaliser l’apparence des calques ?
 
-A: You can customize the appearance of the layers by specifying different properties, such as color, opacity, and visibility. Aspose.PDF for .NET provides various options to achieve this.
+R : Vous pouvez personnaliser l'apparence des calques en spécifiant différentes propriétés, telles que la couleur, l'opacité et la visibilité. Aspose.PDF pour .NET propose diverses options pour y parvenir.
 
-#### Q: Is Aspose.PDF for .NET suitable for professional projects?
+#### Q : Aspose.PDF pour .NET est-il adapté aux projets professionnels ?
 
-A: Yes, Aspose.PDF for .NET is a reliable and widely used library for PDF manipulation in professional projects. It offers extensive functionality and excellent performance for working with PDF files in .NET applications.
+R : Oui, Aspose.PDF pour .NET est une bibliothèque fiable et largement utilisée pour la manipulation de PDF dans les projets professionnels. Il offre des fonctionnalités étendues et d'excellentes performances pour travailler avec des fichiers PDF dans des applications .NET.

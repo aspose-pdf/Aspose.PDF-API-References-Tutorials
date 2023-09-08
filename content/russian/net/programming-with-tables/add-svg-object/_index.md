@@ -1,182 +1,182 @@
 ---
-title: Add SVG Object In PDF File
-linktitle: Add SVG Object In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add SVG objects in PDF file using Aspose.PDF for .NET.
+title: Добавить объект SVG в PDF-файл
+linktitle: Добавить объект SVG в PDF-файл
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко добавляйте объекты SVG в файл PDF с помощью Aspose.PDF для .NET.
 type: docs
 weight: 30
 url: /ru/net/programming-with-tables/add-svg-object/
 ---
-In this tutorial, we will learn how to add an SVG object in PDF file using the Aspose.PDF for .NET library. SVG (Scalable Vector Graphics) is a popular format for vector graphics that can be easily scaled without losing quality. With Aspose.PDF, you can add SVG objects to your PDF documents programmatically.
+В этом уроке мы узнаем, как добавить объект SVG в файл PDF с помощью библиотеки Aspose.PDF для .NET. SVG (масштабируемая векторная графика) — популярный формат векторной графики, который можно легко масштабировать без потери качества. С помощью Aspose.PDF вы можете программно добавлять объекты SVG в ваши PDF-документы.
 
-## Requirements
+## Требования
 
-Before we begin, make sure you have the following:
+Прежде чем мы начнем, убедитесь, что у вас есть следующее:
 
-- Visual Studio installed
-- Aspose.PDF for .NET library installed
+- Visual Studio установлена
+- Установлена библиотека Aspose.PDF для .NET.
 
-## Step 1: Set up the Environment
+## Шаг 1: Настройте среду
 
-First, let's set up the environment by creating a new C# project in Visual Studio. Open Visual Studio and follow these steps:
+Сначала давайте настроим среду, создав новый проект C# в Visual Studio. Откройте Visual Studio и выполните следующие действия:
 
-1. Click on "File" > "New" > "Project" to create a new project.
-2. Select "Console App (.NET Framework)" or "Console App (.NET Core)" template, depending on your setup.
-3. Choose a suitable name and location for your project, then click "Create."
+1. Нажмите «Файл» > «Новый» > «Проект», чтобы создать новый проект.
+2. Выберите шаблон «Консольное приложение (.NET Framework)» или «Консольное приложение (.NET Core)», в зависимости от ваших настроек.
+3. Выберите подходящее имя и местоположение для вашего проекта, затем нажмите «Создать».
 
-## Step 2: Create Document and Image Objects
+## Шаг 2. Создайте объекты документа и изображения
 
-In this step, we will create the necessary objects for our PDF document and SVG image. Open the C# file of your project and add the following code:
+На этом этапе мы создадим необходимые объекты для нашего PDF-документа и SVG-изображения. Откройте файл C# вашего проекта и добавьте следующий код:
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instant Document object
+// Мгновенный объект документа
 Document doc = new Document();
-// Create an image instance
+// Создать экземпляр изображения
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 ```
 
-## Step 3: Set Image Properties
+## Шаг 3. Установите свойства изображения
 
-Next, we will set the properties for our SVG image. We will specify the file type as SVG, the path to the SVG file, and the dimensions of the image. Add the following code after the previous step:
+Далее мы установим свойства нашего SVG-изображения. Мы укажем тип файла SVG, путь к файлу SVG и размеры изображения. Добавьте следующий код после предыдущего шага:
 
 ```csharp
-// Set image type as SVG
+// Установите тип изображения как SVG.
 img.FileType = Aspose.Pdf.ImageFileType.Svg;
-// Path for source file
+// Путь к исходному файлу
 img.File = dataDir + "SVGToPDF.svg";
-// Set width for image instance
+// Установить ширину для экземпляра изображения
 img. FixWidth = 50;
-// Set height for image instance
+// Установить высоту для экземпляра изображения
 img.FixHeight = 50;
 ```
 
-## Step 4: Create and Configure the Table
+## Шаг 4. Создайте и настройте таблицу
 
-Now, let's create a table object and set the column widths. We will create a table with two columns, each with a width of 100 units. Add the following code:
+Теперь давайте создадим объект таблицы и установим ширину столбцов. Мы создадим таблицу с двумя столбцами, каждый шириной 100 единиц. Добавьте следующий код:
 
 ```csharp
-// Create instance table
+// Создать таблицу экземпляров
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Set width for table cells
+// Установить ширину ячеек таблицы
 table. ColumnWidths = "100 100";
 ```
 
-## Step 5: Add Cells to the Table
+## Шаг 5. Добавьте ячейки в таблицу
 
-In this step, we will add a row and cells to the table. Each row represents a horizontal row in the table, and cells are added to the rows. Add the following code:
+На этом этапе мы добавим в таблицу строку и ячейки. Каждая строка представляет собой горизонтальную строку в таблице, и к строкам добавляются ячейки. Добавьте следующий код:
 
 ```csharp
-// Create row object and add it to table instance
+//Создайте объект строки и добавьте его в экземпляр таблицы.
 Aspose.Pdf.Row row = table.Rows.Add();
-// Create cell object and add it to row instance
+// Создайте объект ячейки и добавьте его в экземпляр строки.
 Aspose.Pdf.Cell cell = row.Cells.Add();
 ```
 
-## Step 6: Add Text and Image to Cells
+## Шаг 6. Добавьте текст и изображение в ячейки
 
-Next, let's add text and the SVG image to the cells of the table. We will add the text "First cell" to the first cell and the SVG image to the second cell. Add the following code:
+Далее добавим в ячейки таблицы текст и изображение SVG. Мы добавим текст «Первая ячейка» в первую ячейку и изображение SVG во вторую ячейку. Добавьте следующий код:
 
 ```csharp
-// Add textfragment to paragraphs collection of cell object
+// Добавить текстовый фрагмент в коллекцию абзацев объекта ячейки
 cell.Paragraphs.Add(new TextFragment("First cell"));
-// Add another cell to row object
+// Добавить еще одну ячейку в объект строки
 cell = row. Cells. Add();
-// Add SVG image to paragraphs collection of recently added cell instance
+// Добавить изображение SVG в коллекцию абзацев недавно добавленного экземпляра ячейки.
 cell.Paragraphs.Add(img);
 ```
 
-## Step 7: Create and Add a Page to the Document
+## Шаг 7. Создайте и добавьте страницу в документ
 
-Now, let's create a page object and add it to the document. The table will be added to the paragraphs collection of the page. Add the following code:
+Теперь давайте создадим объект страницы и добавим его в документ. Таблица будет добавлена в коллекцию абзацев на странице. Добавьте следующий код:
 
 ```csharp
-// Create page object and add it to pages collection of document instance
+// Создайте объект страницы и добавьте его в коллекцию страниц экземпляра документа.
 Page page = doc.Pages.Add();
-// Add table to paragraphs collection of page object
+// Добавить таблицу в коллекцию абзацев объекта страницы
 page.Paragraphs.Add(table);
 ```
 
-## Step 8: Save the PDF File
+## Шаг 8. Сохраните PDF-файл.
 
-Finally, we will save the PDF file to the specified location. Add the following code:
+Наконец, мы сохраним PDF-файл в указанном месте. Добавьте следующий код:
 
 ```csharp
 dataDir = dataDir + "AddSVGObject_out.pdf";
-// Save PDF file
+// Сохранить PDF-файл
 doc.Save(dataDir);
 
 Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile saved at " + dataDir);
 ```
 
-### Example source code for add SVG object using Aspose.PDF for .NET
+### Пример исходного кода для добавления объекта SVG с использованием Aspose.PDF для .NET
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document object
+// Создать экземпляр объекта документа
 Document doc = new Document();
-// Create an image instance
+// Создать экземпляр изображения
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
-// Set image type as SVG
+// Установите тип изображения как SVG.
 img.FileType = Aspose.Pdf.ImageFileType.Svg;
-// Path for source file
+// Путь к исходному файлу
 img.File = dataDir + "SVGToPDF.svg";
-// Set width for image instance
+// Установить ширину для экземпляра изображения
 img.FixWidth = 50;
-// Set height for image instance
+// Установить высоту для экземпляра изображения
 img.FixHeight = 50;
-// Create table instance
+// Создать экземпляр таблицы
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Set width for table cells
+// Установить ширину ячеек таблицы
 table.ColumnWidths = "100 100";
-// Create row object and add it to table instance
+//Создайте объект строки и добавьте его в экземпляр таблицы.
 Aspose.Pdf.Row row = table.Rows.Add();
-// Create cell object and add it to row instance
+// Создайте объект ячейки и добавьте его в экземпляр строки.
 Aspose.Pdf.Cell cell = row.Cells.Add();
-// Add textfragment to paragraphs collection of cell object
+// Добавить текстовый фрагмент в коллекцию абзацев объекта ячейки
 cell.Paragraphs.Add(new TextFragment("First cell"));
-// Add another cell to row object
+// Добавить еще одну ячейку в объект строки
 cell = row.Cells.Add();
-// Add SVG image to paragraphs collection of recently added cell instance
+// Добавить изображение SVG в коллекцию абзацев недавно добавленного экземпляра ячейки.
 cell.Paragraphs.Add(img);
-// Create page object and add it to pages collection of document instance
+// Создайте объект страницы и добавьте его в коллекцию страниц экземпляра документа.
 Page page = doc.Pages.Add();
-// Add table to paragraphs collection of page object
+// Добавить таблицу в коллекцию абзацев объекта страницы
 page.Paragraphs.Add(table);
 
 dataDir = dataDir + "AddSVGObject_out.pdf";
-// Save PDF file
+// Сохранить PDF-файл
 doc.Save(dataDir);
 
 Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile saved at " + dataDir);            
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we have learned how to add an SVG object to a PDF file using the Aspose.PDF for .NET library. We covered the step-by-step process of creating a document, setting up the environment, adding an SVG image to a table cell, and saving the PDF file. Now you can incorporate SVG objects into your PDF documents programmatically.
+В этом уроке мы узнали, как добавить объект SVG в файл PDF с помощью библиотеки Aspose.PDF для .NET. Мы рассмотрели пошаговый процесс создания документа, настройки среды, добавления изображения SVG в ячейку таблицы и сохранения файла PDF. Теперь вы можете программно включать объекты SVG в свои PDF-документы.
 
-### FAQ's for add SVG object in PDF file
+### Часто задаваемые вопросы по добавлению объекта SVG в файл PDF
 
-#### Q: Can I add multiple SVG objects to the PDF document?
+#### Вопрос: Могу ли я добавить в документ PDF несколько объектов SVG?
 
-A: Yes, you can add multiple SVG objects to the PDF document. Simply create and configure additional `Aspose.Pdf.Image` instances for each SVG image you want to add and then add them to the desired table cells or paragraphs in the PDF document.
+ О: Да, вы можете добавить в документ PDF несколько объектов SVG. Просто создайте и настройте дополнительные`Aspose.Pdf.Image` экземпляры для каждого изображения SVG, которое вы хотите добавить, а затем добавьте их в нужные ячейки или абзацы таблицы в документе PDF.
 
-#### Q: How can I adjust the size and position of the SVG image in the table cell?
+#### Вопрос: Как настроить размер и положение изображения SVG в ячейке таблицы?
 
-A: To adjust the size and position of the SVG image in the table cell, you can modify the `FixWidth` and `FixHeight` properties of the `Aspose.Pdf.Image` instance. You can also use other properties like `HorizontalAlignment` and `VerticalAlignment` of the table cell to control the positioning.
+ О: Чтобы настроить размер и положение изображения SVG в ячейке таблицы, вы можете изменить`FixWidth` и`FixHeight` свойства`Aspose.Pdf.Image`пример. Вы также можете использовать другие свойства, такие как`HorizontalAlignment` и`VerticalAlignment` ячейки таблицы для управления позиционированием.
 
-#### Q: Is it possible to add text alongside the SVG image in the same table cell?
+#### Вопрос: Можно ли добавить текст рядом с изображением SVG в одну ячейку таблицы?
 
-A: Yes, it is possible to add text alongside the SVG image in the same table cell. You can use the `cell.Paragraphs.Add(new TextFragment("Your Text Here"));` method to add text to the cell along with the SVG image.
+ О: Да, можно добавить текст рядом с изображением SVG в той же ячейке таблицы. Вы можете использовать`cell.Paragraphs.Add(new TextFragment("Your Text Here"));` метод для добавления текста в ячейку вместе с изображением SVG.
 
-#### Q: Can I add hyperlinks to the SVG image?
+#### Вопрос: Могу ли я добавлять гиперссылки к изображению SVG?
 
-A: Yes, you can add hyperlinks to the SVG image by using the `Hyperlink` property of the `Aspose.Pdf.Image` instance. Set the hyperlink URL or action to make the image clickable.
+ О: Да, вы можете добавлять гиперссылки к изображению SVG, используя`Hyperlink` собственность`Aspose.Pdf.Image` пример. Установите URL-адрес гиперссылки или действие, чтобы сделать изображение доступным для клика.
 
-#### Q: Is Aspose.PDF for .NET compatible with .NET Core 3.1 or later versions?
+#### Вопрос: Совместим ли Aspose.PDF для .NET с .NET Core 3.1 или более поздними версиями?
 
-A: Yes, Aspose.PDF for .NET is compatible with .NET Core 3.1 and later versions. You can use it in both .NET Framework and .NET Core applications.
+О: Да, Aspose.PDF для .NET совместим с .NET Core 3.1 и более поздними версиями. Вы можете использовать его как в приложениях .NET Framework, так и в приложениях .NET Core.

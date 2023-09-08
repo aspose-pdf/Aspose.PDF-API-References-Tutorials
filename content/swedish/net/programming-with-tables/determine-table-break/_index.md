@@ -1,28 +1,28 @@
 ---
-title: Determine Table Break In PDF File
-linktitle: Determine Table Break In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to determine table breaks in PDF file using Aspose.PDF for .NET.
+title: Bestäm tabellbrytning i PDF-fil
+linktitle: Bestäm tabellbrytning i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du bestämmer tabellbrytningar i PDF-filer med Aspose.PDF för .NET.
 type: docs
 weight: 60
 url: /sv/net/programming-with-tables/determine-table-break/
 ---
-In this tutorial, we are going to learn how to determine table breaks in PDF file using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to determine if a table exceeds the page margins. Let's start!
+I den här handledningen ska vi lära oss hur man bestämmer tabellbrytningar i PDF-filer med Aspose.PDF för .NET. Vi kommer att förklara källkoden i C# steg för steg. I slutet av denna handledning vet du hur du avgör om en tabell överskrider sidmarginalerna. Låt oss börja!
 
-## Step 1: Setting up the environment
-First, make sure you've set up your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## Steg 1: Sätta upp miljön
+Se först till att du har ställt in din C#-utvecklingsmiljö med Aspose.PDF för .NET. Lägg till referensen till biblioteket och importera de nödvändiga namnrymden.
 
-## Step 2: Creating the PDF document
-In this step, we create a new `Document` object to represent the PDF document.
+## Steg 2: Skapa PDF-dokumentet
+ I det här steget skapar vi en ny`Document` objekt för att representera PDF-dokumentet.
 
 ```csharp
 pdf-Document = new Document();
 ```
 
-This document will be used to add sections and tables.
+Detta dokument kommer att användas för att lägga till avsnitt och tabeller.
 
-## Step 3: Adding a section and a table
-Now we are going to add a section to our PDF document and create a table inside this section.
+## Steg 3: Lägga till ett avsnitt och en tabell
+Nu ska vi lägga till en sektion i vårt PDF-dokument och skapa en tabell i denna sektion.
 
 ```csharp
 Page page = pdf.Pages.Add();
@@ -31,10 +31,10 @@ table1. Margin. Top = 300;
 page.Paragraphs.Add(table1);
 ```
 
-We also specify a top margin of 300 points for the table. You can adjust this value according to your needs.
+Vi anger även en toppmarginal på 300 poäng för tabellen. Du kan justera detta värde efter dina behov.
 
-## Step 4: Table Setup
-In this step, we configure table properties, such as column widths and borders.
+## Steg 4: Tabellinställning
+I det här steget konfigurerar vi tabellegenskaper, såsom kolumnbredder och gränser.
 
 ```csharp
 table1. ColumnWidths = "100 100 100";
@@ -42,10 +42,10 @@ table1.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1F);
 table1.Border = new BorderInfo(BorderSide.All, 1F);
 ```
 
-Here we define the width of the table columns and the cell borders. You can adjust these values according to your preferences.
+Här definierar vi bredden på tabellkolumnerna och cellkanterna. Du kan justera dessa värden enligt dina önskemål.
 
-## Step 5: Add rows and cells to the table
-Now we will create rows and cells in the table using a loop.
+## Steg 5: Lägg till rader och celler i tabellen
+Nu ska vi skapa rader och celler i tabellen med hjälp av en loop.
 
 ```csharp
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
@@ -57,10 +57,10 @@ for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 }
 ```
 
-Here we create 17 rows in the table and add three cells to each row. You can adjust the buckle according to your needs.
+Här skapar vi 17 rader i tabellen och lägger till tre celler i varje rad. Du kan justera spännet efter dina behov.
 
-## Step 6: Determining Table Breaks
-Now we will determine if the table exceeds the page margins by comparing the height of the page with the total height of the objects in the table.
+## Steg 6: Bestämma bordsbrytningar
+Nu kommer vi att avgöra om tabellen överskrider sidmarginalerna genom att jämföra sidans höjd med den totala höjden på objekten i tabellen.
 
 ```csharp
 float PageHeight = (float)pdf.PageInfo.Height;
@@ -70,10 +70,10 @@ if ((PageHeight - TotalObjectsHeight) <= 10)
      Console.WriteLine("The height of the page - Height of objects < 10, the table will be truncated");
 ```
 
-We calculate the height of the page and the total height of the objects taking into account the margins. If the difference is 10 or less, the table exceeds the page margins.
+Vi beräknar höjden på sidan och den totala höjden på objekten med hänsyn till marginalerna. Om skillnaden är 10 eller mindre överskrider tabellen sidmarginalerna.
 
-## Step 7: Saving the PDF document
-Finally, we save the PDF document with the results.
+## Steg 7: Spara PDF-dokumentet
+Slutligen sparar vi PDF-dokumentet med resultatet.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -82,95 +82,95 @@ pdf.Save(dataDir);
 Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
 ```
 
-Be sure to specify the correct document directory. The resulting PDF file will be saved with the determined table breaks.
+Var noga med att ange rätt dokumentkatalog. Den resulterande PDF-filen kommer att sparas med de fastställda tabellbrytningarna.
 
-### Example source code for Determine Table Break using Aspose.PDF for .NET
+### Exempel på källkod för Determine Table Break med Aspose.PDF för .NET
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate an object PDF class
+// Instantiera en objekt-PDF-klass
 Document pdf = new Document();
-// Add the section to PDF document sections collection
+// Lägg till avsnittet i samlingen av PDF-dokumentsektioner
 Aspose.Pdf.Page page = pdf.Pages.Add();
-// Instantiate a table object
+// Instantiera ett tabellobjekt
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
 table1.Margin.Top = 300;
-// Add the table in paragraphs collection of the desired section
+// Lägg till tabellen i styckesamlingen av önskat avsnitt
 page.Paragraphs.Add(table1);
-// Set with column widths of the table
+// Ställ in med tabellens kolumnbredder
 table1.ColumnWidths = "100 100 100";
-// Set default cell border using BorderInfo object
+// Ställ in standardcellkant med hjälp av BorderInfo-objektet
 table1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-// Set table border using another customized BorderInfo object
+// Ställ in tabellkanten med ett annat anpassat BorderInfo-objekt
 table1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-// Create MarginInfo object and set its left, bottom, right and top margins
+// Skapa MarginInfo-objekt och ställ in dess vänstra, nedre, högra och övre marginaler
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 5f;
 margin.Left = 5f;
 margin.Right = 5f;
 margin.Bottom = 5f;
-// Set the default cell padding to the MarginInfo object
+// Ställ in standardcellutfyllnad till MarginInfo-objektet
 table1.DefaultCellPadding = margin;
-// If you increase the counter to 17, table will break 
-// Because it cannot be accommodated any more over this page
+// Om du ökar räknaren till 17 kommer bordet att gå sönder
+// Eftersom det inte kan rymmas längre över denna sida
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	// Create rows in the table and then cells in the rows
+	// Skapa rader i tabellen och sedan celler i raderna
 	Aspose.Pdf.Row row1 = table1.Rows.Add();
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
 }
-// Get the Page Height information
+// Få information om sidhöjd
 float PageHeight = (float)pdf.PageInfo.Height;
-// Get the total height information of Page Top & Bottom margin,
-// Table Top margin and table height.
+// Få information om den totala höjden för sidans övre och nedre marginal,
+// Bordsskivans marginal och bordshöjd.
 float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
 
-// Display Page Height, Table Height, table Top margin and Page Top 
-// And Bottom margin information
+// Visa sidhöjd, bordshöjd, bordsöverkant och sidöverkant
+// Och bottenmarginalinformation
 Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
 
-// Check if we deduct the sume of Page top margin + Page Bottom margin
-// + Table Top margin and table height from Page height and its less
-// Than 10 (an average row can be greater than 10)
+// Kontrollera om vi drar av summan av Sidans övre marginal + Sidans bottenmarginal
+// + Bordsmarginal och bordshöjd från sidans höjd och dess mindre
+// Än 10 (en genomsnittlig rad kan vara större än 10)
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	// If the value is less than 10, then display the message. 
-	// Which shows that another row can not be placed and if we add new 
-	// Row, table will break. It depends upon the row height value.
+	// Om värdet är mindre än 10, visa meddelandet.
+	//Vilket visar att ytterligare en rad inte kan placeras och om vi lägger till nya
+	// Rad, bord kommer att gå sönder. Det beror på radens höjdvärde.
 	Console.WriteLine("Page Height - Objects Height < 10, so table will break");
 
 
 dataDir = dataDir + "DetermineTableBreak_out.pdf";
-// Save the pdf document
+// Spara pdf-dokumentet
 pdf.Save(dataDir);
 
 Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-In this tutorial, we learned how to determine table breaks in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to check if a table exceeds the page margins in your own C# projects.
+## Slutsats
+I den här handledningen lärde vi oss hur man bestämmer tabellbrytningar i ett PDF-dokument med Aspose.PDF för .NET. Du kan använda den här steg-för-steg-guiden för att kontrollera om en tabell överskrider sidmarginalerna i dina egna C#-projekt.
 
-### FAQ's for determine table break in PDF file
+### Vanliga frågor för att bestämma tabellbrytning i PDF-fil
 
-#### Q: What is the purpose of determining table breaks in a PDF document?
+#### F: Vad är syftet med att fastställa tabellbrytningar i ett PDF-dokument?
 
-A: The purpose of determining table breaks in a PDF document is to check if the table exceeds the page margins. This ensures that the table's content is correctly displayed within the available page space. By detecting table breaks, you can handle the content overflow and adjust the table layout accordingly.
+S: Syftet med att fastställa tabellbrytningar i ett PDF-dokument är att kontrollera om tabellen överskrider sidmarginalerna. Detta säkerställer att tabellens innehåll visas korrekt inom det tillgängliga sidutrymmet. Genom att upptäcka tabellbrytningar kan du hantera innehållsspillet och anpassa tabelllayouten därefter.
 
-#### Q: How can I adjust the top margin of the table?
+#### F: Hur kan jag justera den övre marginalen i tabellen?
 
-A: In the provided C# source code, you can adjust the top margin of the table by modifying the value of the `table1.Margin.Top` property. Increase or decrease the value as needed to set the desired top margin for the table.
+ S: I den medföljande C#-källkoden kan du justera den övre marginalen i tabellen genom att ändra värdet på`table1.Margin.Top`fast egendom. Öka eller minska värdet efter behov för att ställa in önskad toppmarginal för tabellen.
 
-#### Q: Can I customize the appearance of the table, such as cell colors and font size?
+#### F: Kan jag anpassa utseendet på tabellen, som cellfärger och teckenstorlek?
 
-A: Yes, you can customize the appearance of the table and its cells using various properties and methods provided by Aspose.PDF for .NET. For example, you can change cell background colors, font size, font family, text alignment, and more. Refer to the official documentation for more information on how to customize the table appearance.
+S: Ja, du kan anpassa utseendet på tabellen och dess celler med hjälp av olika egenskaper och metoder som tillhandahålls av Aspose.PDF för .NET. Du kan till exempel ändra cellbakgrundsfärger, teckenstorlek, teckensnittsfamilj, textjustering och mer. Se den officiella dokumentationen för mer information om hur du anpassar bordets utseende.
 
-#### Q: What happens if the table exceeds the page margins?
+#### F: Vad händer om tabellen överskrider sidmarginalerna?
 
-A: If the table exceeds the page margins, it may result in content truncation or overlapping, making the PDF document less readable and organized. By detecting table breaks and handling the overflow, you can ensure that the content remains properly displayed within the available page area.
+S: Om tabellen överskrider sidmarginalerna kan det leda till att innehållet trunkeras eller överlappar, vilket gör PDF-dokumentet mindre läsbart och organiserat. Genom att upptäcka tabellbrytningar och hantera översvämningen kan du säkerställa att innehållet visas korrekt inom det tillgängliga sidområdet.
 
-#### Q: Can I determine table breaks for multiple tables in the same PDF document?
+#### F: Kan jag fastställa tabellbrytningar för flera tabeller i samma PDF-dokument?
 
-A: Yes, you can determine table breaks for multiple tables in the same PDF document. Simply repeat the steps for each table you want to analyze and adjust the table layout as necessary to prevent content overflow.
+S: Ja, du kan bestämma tabellbrytningar för flera tabeller i samma PDF-dokument. Upprepa helt enkelt stegen för varje tabell du vill analysera och justera tabelllayouten efter behov för att förhindra att innehållet rinner över.

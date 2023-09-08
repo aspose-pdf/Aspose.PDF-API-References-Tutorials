@@ -1,33 +1,33 @@
 ---
-title: Get Values From All Fields In PDF Document
-linktitle: Get Values From All Fields In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get the values of all form fields in PDF document with Aspose.PDF for .NET.
+title: الحصول على القيم من كافة الحقول في وثيقة PDF
+linktitle: الحصول على القيم من كافة الحقول في وثيقة PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: احصل بسهولة على قيم جميع حقول النموذج في مستند PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 150
 url: /ar/net/programming-with-forms/get-values-from-all-fields/
 ---
-In this tutorial, we will show you how to get the values of all form fields in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+سنوضح لك في هذا البرنامج التعليمي كيفية الحصول على قيم جميع حقول النموذج في مستند PDF باستخدام Aspose.PDF for .NET. سنشرح لك كود مصدر C# خطوة بخطوة لإرشادك خلال هذه العملية.
 
-## Step 1: Preparation
+## الخطوة 1: التحضير
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+تأكد من استيراد المكتبات الضرورية وتعيين المسار إلى دليل المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the document
+## الخطوة 2: افتح المستند
 
-Open the PDF document:
+افتح مستند PDF:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetValuesFromAllFields.pdf");
 ```
 
-## Step 3: Get values for all fields
+## الخطوة 3: الحصول على القيم لجميع الحقول
 
-Loop through all the form fields in the document and get their names and values:
+قم بالمراجعة عبر جميع حقول النموذج في المستند واحصل على أسمائها وقيمها:
 
 ```csharp
 foreach(Field formField in pdfDocument.Form)
@@ -37,13 +37,13 @@ Console.WriteLine("Value: {0}", formField.Value);
 }
 ```
 
-### Sample source code for Get Values From All Fields using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للحصول على القيم من كافة الحقول باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "GetValuesFromAllFields.pdf");
-// Get values from all fields
+// الحصول على القيم من كافة الحقول
 foreach (Field formField in pdfDocument.Form)
 {
 	Console.WriteLine("Field Name : {0} ", formField.PartialName);
@@ -51,28 +51,28 @@ foreach (Field formField in pdfDocument.Form)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to get the values of all form fields in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily extract the values of all form fields from your PDF documents using Aspose.PDF.
+في هذا البرنامج التعليمي، تعلمنا كيفية الحصول على قيم جميع حقول النموذج في مستند PDF باستخدام Aspose.PDF لـ .NET. باتباع هذه الخطوات، يمكنك بسهولة استخراج قيم جميع حقول النموذج من مستندات PDF الخاصة بك باستخدام Aspose.PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Can I modify the values of form fields while retrieving them using Aspose.PDF for .NET?
+#### س: هل يمكنني تعديل قيم حقول النموذج أثناء استعادتها باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can modify the values of form fields while retrieving them using Aspose.PDF for .NET. Once you have the `Field` object representing a form field, you can update its `Value` property with the desired value. After making the necessary changes, you can save the updated PDF document to reflect the changes.
+ ج: نعم، يمكنك تعديل قيم حقول النموذج أثناء استعادتها باستخدام Aspose.PDF لـ .NET. بمجرد حصولك على`Field` كائن يمثل حقل نموذج، يمكنك تحديثه`Value`الملكية بالقيمة المطلوبة. بعد إجراء التغييرات اللازمة، يمكنك حفظ مستند PDF المحدث ليعكس التغييرات.
 
-#### Q: How can I filter and retrieve specific form fields based on their types (e.g., text fields, checkboxes)?
+#### س: كيف يمكنني تصفية واسترجاع حقول نموذج معينة بناءً على أنواعها (على سبيل المثال، الحقول النصية وخانات الاختيار)؟
 
-A: To retrieve specific form fields based on their types, you can use conditional statements or LINQ queries to filter the fields of interest. You can check the type of each form field using the field's `FieldType` property, and then retrieve the values accordingly.
+ ج: لاسترداد حقول نموذج محددة بناءً على أنواعها، يمكنك استخدام العبارات الشرطية أو استعلامات LINQ لتصفية الحقول محل الاهتمام. يمكنك التحقق من نوع كل حقل نموذج باستخدام الحقل`FieldType` الخاصية، ثم قم باسترداد القيم وفقًا لذلك.
 
-#### Q: What happens if the PDF document has no form fields?
+#### س: ماذا يحدث إذا لم يكن مستند PDF يحتوي على حقول نموذج؟
 
-A: If the PDF document does not contain any form fields, the `pdfDocument.Form` property will return an empty collection. In such cases, the loop to retrieve values will not execute, and no values will be displayed.
+ ج: إذا كان مستند PDF لا يحتوي على أي حقول نموذج، فسيتم`pdfDocument.Form` سوف تقوم الخاصية بإرجاع مجموعة فارغة. في مثل هذه الحالات، لن يتم تنفيذ حلقة استرداد القيم، ولن يتم عرض أية قيم.
 
-#### Q: Can I extract the form field values in a specific order or sort them alphabetically?
+#### س: هل يمكنني استخراج قيم حقل النموذج بترتيب معين أو فرزها أبجديًا؟
 
-A: The order in which the form fields are retrieved depends on the underlying structure of the PDF document. Aspose.PDF for .NET returns the form fields in the order they were added to the document. If you want to display or process the form fields in a specific order, you can implement custom sorting logic based on your requirements.
+ج: يعتمد الترتيب الذي يتم به استرداد حقول النموذج على البنية الأساسية لمستند PDF. يقوم Aspose.PDF for .NET بإرجاع حقول النموذج بالترتيب الذي تمت إضافتها به إلى المستند. إذا كنت تريد عرض حقول النموذج أو معالجتها بترتيب معين، فيمكنك تنفيذ منطق الفرز المخصص بناءً على متطلباتك.
 
-#### Q: How can I handle encrypted PDF documents with password-protected form fields?
+#### س: كيف يمكنني التعامل مع مستندات PDF المشفرة مع حقول النموذج المحمية بكلمة مرور؟
 
-A: Aspose.PDF for .NET provides features to work with encrypted PDF documents and password-protected form fields. Before loading the document, you can set the password using the `pdfDocument.Password` property to access the secured PDF document and its form fields.
+ ج: يوفر Aspose.PDF for .NET ميزات للعمل مع مستندات PDF المشفرة وحقول النماذج المحمية بكلمة مرور. قبل تحميل المستند، يمكنك تعيين كلمة المرور باستخدام`pdfDocument.Password` الخاصية للوصول إلى مستند PDF المؤمن وحقول النموذج الخاصة به.

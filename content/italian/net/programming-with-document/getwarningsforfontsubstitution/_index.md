@@ -1,47 +1,47 @@
 ---
-title: Get Warnings For Font Substitution
-linktitle: Get Warnings For Font Substitution
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use the GetWarningsForFontSubstitution feature of Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document.
+title: Ricevi avvisi per la sostituzione dei caratteri
+linktitle: Ricevi avvisi per la sostituzione dei caratteri
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come utilizzare la funzionalità GetWarningsForFontSubstitution di Aspose.PDF per .NET per rilevare gli avvisi di sostituzione dei caratteri all'apertura di un documento PDF.
 type: docs
 weight: 190
 url: /it/net/programming-with-document/getwarningsforfontsubstitution/
 ---
-Aspose.PDF for .NET is a popular PDF manipulation library that enables developers to create, edit, and convert PDF files in their .NET applications. One of the features offered by this library is the ability to detect font substitution warnings when a PDF document is opened. This tutorial will guide you through the steps of using the `GetWarningsForFontSubstitution` feature of Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document.
+Aspose.PDF per .NET è una popolare libreria di manipolazione PDF che consente agli sviluppatori di creare, modificare e convertire file PDF nelle loro applicazioni .NET. Una delle funzionalità offerte da questa libreria è la capacità di rilevare gli avvisi di sostituzione dei caratteri quando viene aperto un documento PDF. Questo tutorial ti guiderà attraverso i passaggi di utilizzo di`GetWarningsForFontSubstitution` funzionalità di Aspose.PDF per .NET per rilevare avvisi di sostituzione dei caratteri all'apertura di un documento PDF.
 
-## Step 1: Install Aspose.PDF for .NET
+## Passaggio 1: installare Aspose.PDF per .NET
 
-To use Aspose.PDF for .NET in your .NET applications, you must first install the library. You can download the latest version of the library from the [Aspose.PDF for .NET download page](https://relases.aspose.com/pdf/net).
+ Per utilizzare Aspose.PDF per .NET nelle tue applicazioni .NET, devi prima installare la libreria. È possibile scaricare l'ultima versione della libreria da[Aspose.PDF per la pagina di download di .NET](https://relases.aspose.com/pdf/net).
 
-Once you have downloaded the library, extract the contents of the ZIP file to a folder on your computer. You will then need to add a reference to the Aspose.PDF for .NET DLL in your .NET project.
+Una volta scaricata la libreria, estrai il contenuto del file ZIP in una cartella del tuo computer. Sarà quindi necessario aggiungere un riferimento alla DLL Aspose.PDF per .NET nel progetto .NET.
 
-## Step 2: Load the PDF Document
+## Passaggio 2: carica il documento PDF
 
-Once you have installed Aspose.PDF for .NET and added a reference to the DLL in your .NET project, you can begin using the `GetWarningsForFontSubstitution` feature to detect font substitution warnings when opening a PDF document.
+Dopo aver installato Aspose.PDF per .NET e aggiunto un riferimento alla DLL nel tuo progetto .NET, puoi iniziare a utilizzare il`GetWarningsForFontSubstitution` funzione per rilevare gli avvisi di sostituzione dei caratteri all'apertura di un documento PDF.
 
-The first step in using this feature is to load the PDF document that you want to detect font substitution warnings for. To do this, you can use the following code:
+Il primo passaggio per utilizzare questa funzionalità è caricare il documento PDF per il quale si desidera rilevare gli avvisi di sostituzione dei caratteri. Per fare ciò, puoi utilizzare il seguente codice:
 
 ```csharp
-// The path to the PDF document
+// Il percorso del documento PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open the PDF document
+//Apri il documento PDF
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-In the above code, replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your PDF document is located. This code will load the PDF document into a `Document` object, which you can then use to detect font substitution warnings.
+ Nel codice sopra, sostituisci`"YOUR DOCUMENT DIRECTORY"` con il percorso della directory in cui si trova il documento PDF. Questo codice caricherà il documento PDF in un file`Document` oggetto, che è quindi possibile utilizzare per rilevare gli avvisi di sostituzione dei caratteri.
 
-## Step 3: Detect Font Substitution Warnings
+## Passaggio 3: rilevamento degli avvisi di sostituzione dei caratteri
 
-To detect font substitution warnings when opening a PDF document, you can use the following code:
+Per rilevare gli avvisi di sostituzione dei caratteri all'apertura di un documento PDF, è possibile utilizzare il seguente codice:
 
 ```csharp
 doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
 ```
 
-In the above code, `OnFontSubstitution` is a method that will be called whenever a font substitution warning is detected. You can customize this method to handle the font substitution warning in any way that you like.
+ Nel codice sopra,`OnFontSubstitution`è un metodo che verrà chiamato ogni volta che viene rilevato un avviso di sostituzione del carattere. Puoi personalizzare questo metodo per gestire l'avviso di sostituzione dei caratteri nel modo che preferisci.
 
-Here is an example implementation of the `OnFontSubstitution` method:
+ Ecco un esempio di implementazione di`OnFontSubstitution` metodo:
 
 ```csharp
 private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
@@ -50,47 +50,47 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 }
 ```
 
-In the above code, the `OnFontSubstitution` method simply outputs the original font name and the substituted font name to the console whenever a font substitution warning is detected. You can customize this method to handle the font substitution warning in any way that you like.
+ Nel codice precedente, il`OnFontSubstitution` Il metodo restituisce semplicemente il nome del carattere originale e il nome del carattere sostituito alla console ogni volta che viene rilevato un avviso di sostituzione del carattere. Puoi personalizzare questo metodo per gestire l'avviso di sostituzione dei caratteri nel modo che preferisci.
 
-### Example source code for Get Warnings For Font Substitution using Aspose.NET for PDF
+### Codice sorgente di esempio per Ottieni avvisi per la sostituzione dei caratteri utilizzando Aspose.NET per PDF
 
-Here is the full source code for detecting font substitution warnings when opening a PDF document using the `GetWarningsForFontSubstitution` feature of Aspose.PDF for .NET:
+ Ecco il codice sorgente completo per rilevare gli avvisi di sostituzione dei caratteri quando si apre un documento PDF utilizzando il file`GetWarningsForFontSubstitution` funzionalità di Aspose.PDF per .NET:
 
 ```csharp
-// The path to the PDF document
+// Il percorso del documento PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open the PDF document
+//Apri il documento PDF
 Document doc = new Document(dataDir + "input.pdf");
 
-// Detect font substitution warnings
+// Rileva gli avvisi di sostituzione dei caratteri
 doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
 
-// Handle font substitution warning
+// Gestire l'avviso di sostituzione dei caratteri
 private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
 {
     Console.WriteLine("Font substitution: {0} => {1}", e.OriginalFontName, e.SubstitutedFontName);
 }
 ```
 
-## Conclusion
+## Conclusione
 
-In this tutorial, we have discussed how to use Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document. By subscribing to the `FontSubstitution` event, developers can detect font substitution situations and handle them according to their application's needs. Aspose.PDF for .NET provides a straightforward API to detect and handle font substitution warnings, helping developers ensure the visual fidelity and consistency of PDF documents across different systems.
+ In questo tutorial, abbiamo discusso come utilizzare Aspose.PDF per .NET per rilevare gli avvisi di sostituzione dei caratteri all'apertura di un documento PDF. Iscrivendoti a`FontSubstitution`evento, gli sviluppatori possono rilevare situazioni di sostituzione dei caratteri e gestirle in base alle esigenze della loro applicazione. Aspose.PDF per .NET fornisce un'API semplice per rilevare e gestire gli avvisi di sostituzione dei caratteri, aiutando gli sviluppatori a garantire la fedeltà visiva e la coerenza dei documenti PDF su diversi sistemi.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: What is font substitution in a PDF document?
+#### D: Cos'è la sostituzione dei caratteri in un documento PDF?
 
-A: Font substitution in a PDF document occurs when a font used in the document is not available or embedded in the file. In such cases, the viewer or printer substitutes the missing font with a similar one that is available on the system. Font substitution can affect the appearance and layout of the document.
+R: La sostituzione del carattere in un documento PDF avviene quando un carattere utilizzato nel documento non è disponibile o incorporato nel file. In tali casi, il visualizzatore o la stampante sostituisce il carattere mancante con uno simile disponibile nel sistema. La sostituzione dei caratteri può influire sull'aspetto e sul layout del documento.
 
-#### Q: Why is font substitution important to detect?
+#### D: Perché è importante rilevare la sostituzione dei caratteri?
 
-A: Font substitution is important to detect because it can impact the visual fidelity and layout of the PDF document. Detecting font substitution warnings allows developers to identify situations where fonts are being substituted and take appropriate actions to ensure the document's visual appearance is consistent across different systems.
+R: La sostituzione dei caratteri è importante da rilevare perché può influire sulla fedeltà visiva e sul layout del documento PDF. Il rilevamento degli avvisi di sostituzione dei caratteri consente agli sviluppatori di identificare le situazioni in cui i caratteri vengono sostituiti e intraprendere le azioni appropriate per garantire che l'aspetto visivo del documento sia coerente tra i diversi sistemi.
 
-#### Q: How can I handle font substitution warnings?
+#### D: Come posso gestire gli avvisi di sostituzione dei caratteri?
 
-A: You can handle font substitution warnings by subscribing to the `FontSubstitution` event of the `Document` class and providing a custom method to handle the event. In this custom method, you can log the font substitution warnings, notify users, or take other actions based on your application's requirements.
+ R: Puoi gestire gli avvisi di sostituzione dei caratteri iscrivendoti a`FontSubstitution` evento del`Document` classe e fornendo un metodo personalizzato per gestire l'evento. Con questo metodo personalizzato puoi registrare gli avvisi di sostituzione dei caratteri, avvisare gli utenti o intraprendere altre azioni in base ai requisiti della tua applicazione.
 
-#### Q: Can I customize the handling of font substitution warnings?
+#### D: Posso personalizzare la gestione degli avvisi di sostituzione dei caratteri?
 
-A: Yes, you can customize the handling of font substitution warnings by providing a custom method to handle the `FontSubstitution` event. In this custom method, you can log the font substitution warnings, notify users, or take any other appropriate actions based on your application's requirements.
+ R: Sì, puoi personalizzare la gestione degli avvisi di sostituzione dei caratteri fornendo un metodo personalizzato per gestirli`FontSubstitution`evento. Con questo metodo personalizzato puoi registrare gli avvisi di sostituzione dei caratteri, avvisare gli utenti o intraprendere qualsiasi altra azione appropriata in base ai requisiti della tua applicazione.

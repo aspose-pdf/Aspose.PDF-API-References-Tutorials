@@ -1,17 +1,17 @@
 ---
-title: Sign With Smart Card Using PDF File Signature
-linktitle: Sign With Smart Card Using PDF File Signature
-second_title: Aspose.PDF for .NET API Reference
-description: Sign your PDF files securely with a smart card using Aspose.PDF for .NET.
+title: قم بالتوقيع باستخدام البطاقة الذكية باستخدام توقيع ملف PDF
+linktitle: قم بالتوقيع باستخدام البطاقة الذكية باستخدام توقيع ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بتوقيع ملفات PDF الخاصة بك بشكل آمن باستخدام البطاقة الذكية باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 110
 url: /ar/net/programming-with-security-and-signatures/sign-with-smart-card-using-pdf-file-signature/
 ---
-Digital signing with a smart card is a secure way to sign PDF files. With Aspose.PDF for .NET, you can easily sign a PDF file using a smart card by following the following source code:
+يعد التوقيع الرقمي باستخدام البطاقة الذكية طريقة آمنة لتوقيع ملفات PDF. باستخدام Aspose.PDF for .NET، يمكنك بسهولة توقيع ملف PDF باستخدام بطاقة ذكية باتباع التعليمات البرمجية المصدر التالية:
 
-## Step 1: Import required libraries
+## الخطوة 1: استيراد المكتبات المطلوبة
 
-Before you begin, you need to import the necessary libraries for your C# project. Here are the necessary import directives:
+قبل أن تبدأ، تحتاج إلى استيراد المكتبات اللازمة لمشروع C# الخاص بك. فيما يلي توجيهات الاستيراد الضرورية:
 
 ```csharp
 using Aspose.Pdf;
@@ -20,32 +20,32 @@ using Aspose.Pdf.Forms;
 using System.Security.Cryptography.X509Certificates;
 ```
 
-## Step 2: Set path to documents folder
+## الخطوة 2: تعيين المسار إلى مجلد المستندات
 
-In this step, you need to specify the path to the folder containing the PDF file you want to sign. Replace `"YOUR DOCUMENTS DIRECTORY"` in the following code with the actual path to your documents folder:
+ في هذه الخطوة، تحتاج إلى تحديد المسار إلى المجلد الذي يحتوي على ملف PDF الذي تريد التوقيع عليه. يستبدل`"YOUR DOCUMENTS DIRECTORY"`في الكود التالي مع المسار الفعلي لمجلد المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 3: Load the PDF document
+## الخطوة 3: قم بتحميل مستند PDF
 
-Now we will load the PDF document to be signed using the following code:
+الآن سنقوم بتحميل مستند PDF للتوقيع عليه باستخدام الكود التالي:
 
 ```csharp
 Document doc = new Document(dataDir + "blank.pdf");
 ```
 
-## Step 4: Perform the signature with the smart card
+## الخطوة الرابعة: قم بالتوقيع باستخدام البطاقة الذكية
 
-In this step, we will perform the signature with the smart card using the `PdfFileSignature` class from the `Facades` library. We select the smart card certificate from the Windows certificate store and specify the necessary signing information. Here is the corresponding code:
+ في هذه الخطوة سوف نقوم بالتوقيع بالبطاقة الذكية باستخدام`PdfFileSignature` فئة من`Facades`مكتبة. نختار شهادة البطاقة الذكية من مخزن شهادات Windows ونحدد معلومات التوقيع الضرورية. هنا هو الكود المقابل:
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature())
 {
      pdfSign.BindPdf(doc);
 
-     // Select the certificate in the store
+     // حدد الشهادة في المتجر
      X509Store store = new X509Store(StoreLocation.CurrentUser);
      store.Open(OpenFlags.ReadOnly);
      X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
@@ -57,9 +57,9 @@ using (PdfFileSignature pdfSign = new PdfFileSignature())
 }
 ```
 
-## Step 5: Verify Signature
+## الخطوة 5: التحقق من التوقيع
 
-Finally, we verify the signature of the signed PDF file using the `PdfFileSignature` class. We get the signature names and check them one by one. If a signature fails verification, an exception is thrown. Here is the corresponding code:
+ أخيرًا، نقوم بالتحقق من توقيع ملف PDF الموقع باستخدام ملف`PdfFileSignature` فصل. نحصل على أسماء التوقيع ونتحقق منها واحدًا تلو الآخر. إذا فشل التوقيع في التحقق، فسيتم طرح استثناء. هنا هو الكود المقابل:
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature2.pdf")))
@@ -75,18 +75,18 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 }
 ```
 
-### Sample source code for Sign With Smart Card Using Pdf File Signature using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للتوقيع باستخدام البطاقة الذكية باستخدام توقيع ملف Pdf باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document doc = new Document(dataDir + "blank.pdf");
 using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature())
 {
 	pdfSign.BindPdf(doc);
-	// Sign with certificate selection in the windows certificate store
+	// قم بالتوقيع باستخدام اختيار الشهادة في متجر شهادات Windows
 	System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
 	store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-	// Manually chose the certificate in the store
+	// اختيار الشهادة يدويًا في المتجر
 	System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
 	Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0]);
 	pdfSign.SignatureAppearance = dataDir + "demo.png";
@@ -106,50 +106,50 @@ using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature(new Docum
 }
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation! You now have a step-by-step guide to signing a PDF file with a smart card using Aspose.PDF for .NET. You can use this code to add secure digital signatures to your PDF documents.
+تهنئة! لديك الآن دليل خطوة بخطوة لتوقيع ملف PDF باستخدام بطاقة ذكية باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الرمز لإضافة توقيعات رقمية آمنة إلى مستندات PDF الخاصة بك.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced digital signature and certificate management features.
+تأكد من مراجعة وثائق Aspose.PDF الرسمية لمزيد من المعلومات حول ميزات التوقيع الرقمي وإدارة الشهادات المتقدمة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Why should I consider signing PDF files with a smart card?
+#### س: لماذا يجب أن أفكر في توقيع ملفات PDF باستخدام البطاقة الذكية؟
 
-A: Signing PDF files with a smart card enhances security by ensuring the authenticity and integrity of the document. Smart card-based signatures provide a higher level of trust and compliance.
+ج: إن توقيع ملفات PDF باستخدام البطاقة الذكية يعزز الأمان من خلال ضمان صحة الوثيقة وسلامتها. توفر التوقيعات المستندة إلى البطاقة الذكية مستوى أعلى من الثقة والامتثال.
 
-#### Q: How does smart card-based digital signing work?
+#### س: كيف يعمل التوقيع الرقمي المعتمد على البطاقة الذكية؟
 
-A: Smart card-based digital signing involves using a cryptographic key stored on a smart card to create a unique digital signature. This signature is attached to the PDF file, allowing recipients to verify the document's origin and integrity.
+ج: يتضمن التوقيع الرقمي المعتمد على البطاقة الذكية استخدام مفتاح التشفير المخزن على البطاقة الذكية لإنشاء توقيع رقمي فريد. يتم إرفاق هذا التوقيع بملف PDF، مما يسمح للمستلمين بالتحقق من أصل الوثيقة وسلامتها.
 
-#### Q: What is the role of Aspose.PDF for .NET in smart card-based signing?
+#### س: ما هو دور Aspose.PDF لـ .NET في التوقيع المعتمد على البطاقة الذكية؟
 
-A: Aspose.PDF for .NET provides a comprehensive set of tools and libraries to facilitate smart card-based digital signing of PDF files. It simplifies the process and ensures secure document signing.
+ج: يوفر Aspose.PDF for .NET مجموعة شاملة من الأدوات والمكتبات لتسهيل التوقيع الرقمي القائم على البطاقة الذكية لملفات PDF. إنه يبسط العملية ويضمن التوقيع الآمن للمستندات.
 
-#### Q: Can I choose a specific smart card certificate for signing?
+#### س: هل يمكنني اختيار شهادة بطاقة ذكية معينة للتوقيع عليها؟
 
-A: Yes, you can select a specific smart card certificate from the Windows certificate store for signing. Aspose.PDF for .NET allows you to seamlessly integrate certificate selection into your application.
+ج: نعم، يمكنك تحديد شهادة بطاقة ذكية معينة من مخزن شهادات Windows للتوقيع عليها. يسمح لك Aspose.PDF for .NET بدمج اختيار الشهادة في تطبيقك بسلاسة.
 
-#### Q: How does the provided source code handle smart card-based signing?
+#### س: كيف يتعامل كود المصدر المقدم مع التوقيع المعتمد على البطاقة الذكية؟
 
-A: The source code demonstrates how to bind a PDF document, select a smart card certificate, specify signing information, and create a digital signature. It also shows how to verify the signature's validity.
+ج: يوضح الكود المصدري كيفية ربط مستند PDF، واختيار شهادة البطاقة الذكية، وتحديد معلومات التوقيع، وإنشاء توقيع رقمي. كما يوضح كيفية التحقق من صحة التوقيع.
 
-#### Q: Can I apply multiple signatures using smart cards in a single PDF file?
+#### س: هل يمكنني تطبيق توقيعات متعددة باستخدام البطاقات الذكية في ملف PDF واحد؟
 
-A: Absolutely, you can apply multiple smart card-based signatures to a single PDF file. Each signature is unique and contributes to the document's overall security.
+ج: بالتأكيد، يمكنك تطبيق العديد من التوقيعات المستندة إلى البطاقة الذكية على ملف PDF واحد. كل توقيع فريد من نوعه ويساهم في الأمان العام للمستند.
 
-#### Q: What if a signature fails verification during the verification step?
+#### س: ماذا لو فشل التوقيع في التحقق أثناء خطوة التحقق؟
 
-A: If a signature fails verification, an exception is thrown, indicating that the signature is not valid. This ensures that only valid and trusted signatures are accepted.
+ج: إذا فشل التوقيع في التحقق، فسيتم طرح استثناء يشير إلى أن التوقيع غير صالح. وهذا يضمن قبول التوقيعات الصحيحة والموثوقة فقط.
 
-#### Q: Is smart card-based signing compatible with all types of PDF documents?
+#### س: هل التوقيع المعتمد على البطاقة الذكية متوافق مع جميع أنواع مستندات PDF؟
 
-A: Yes, smart card-based signing is compatible with all types of PDF documents. You can apply digital signatures to various types of PDF files, including forms, reports, and more.
+ج: نعم، التوقيع المعتمد على البطاقة الذكية متوافق مع جميع أنواع مستندات PDF. يمكنك تطبيق التوقيعات الرقمية على أنواع مختلفة من ملفات PDF، بما في ذلك النماذج والتقارير والمزيد.
 
-#### Q: How can I learn more about advanced digital signature and certificate management?
+#### س: كيف يمكنني معرفة المزيد حول التوقيع الرقمي المتقدم وإدارة الشهادات؟
 
-A: Explore the official Aspose.PDF documentation for detailed insights into advanced digital signature features, certificate management, and best practices for ensuring document security.
+ج: استكشف وثائق Aspose.PDF الرسمية للحصول على رؤى تفصيلية حول ميزات التوقيع الرقمي المتقدمة وإدارة الشهادات وأفضل الممارسات لضمان أمان المستندات.
 
-#### Q: Where can I find further assistance or support for implementing smart card-based signing?
+#### س: أين يمكنني العثور على مزيد من المساعدة أو الدعم لتنفيذ التوقيع المعتمد على البطاقة الذكية؟
 
-A: For additional guidance and support, reach out to the Aspose.PDF community forums or refer to the documentation for comprehensive information on smart card-based signing.
+ج: للحصول على إرشادات ودعم إضافيين، تواصل مع منتديات مجتمع Aspose.PDF أو ارجع إلى الوثائق للحصول على معلومات شاملة حول التوقيع المعتمد على البطاقة الذكية.

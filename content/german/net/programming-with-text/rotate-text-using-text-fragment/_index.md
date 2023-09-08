@@ -1,28 +1,28 @@
 ---
-title: Rotate Text Using Text Fragment In PDF File
-linktitle: Rotate Text Using Text Fragment In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to rotate text using text fragments in PDF file using Aspose.PDF for .NET.
+title: Drehen Sie Text mithilfe eines Textfragments in einer PDF-Datei
+linktitle: Drehen Sie Text mithilfe eines Textfragments in einer PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Text mithilfe von Textfragmenten in einer PDF-Datei drehen.
 type: docs
 weight: 390
 url: /de/net/programming-with-text/rotate-text-using-text-fragment/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to rotate text using text fragments in PDF file. The provided C# source code demonstrates the process step by step.
+In diesem Tutorial wird erläutert, wie Sie mit Aspose.PDF für .NET Text mithilfe von Textfragmenten in einer PDF-Datei drehen. Der bereitgestellte C#-Quellcode demonstriert den Prozess Schritt für Schritt.
 
-## Prerequisites
+## Voraussetzungen
 
-Before proceeding with the tutorial, make sure you have the following:
+Bevor Sie mit dem Tutorial fortfahren, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Grundkenntnisse der Programmiersprache C#.
+- Aspose.PDF für .NET-Bibliothek installiert. Sie können es von der Aspose-Website herunterladen oder NuGet verwenden, um es in Ihrem Projekt zu installieren.
 
-## Step 1: Set up the project
+## Schritt 1: Richten Sie das Projekt ein
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Erstellen Sie zunächst ein neues C#-Projekt in Ihrer bevorzugten integrierten Entwicklungsumgebung (IDE) und fügen Sie einen Verweis auf die Aspose.PDF für .NET-Bibliothek hinzu.
 
-## Step 2: Import necessary namespaces
+## Schritt 2: Importieren Sie die erforderlichen Namespaces
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Fügen Sie am Anfang Ihrer C#-Datei die folgenden using-Anweisungen hinzu, um die erforderlichen Namespaces zu importieren:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,28 +30,28 @@ using Aspose.Pdf.Text;
 using Aspose.Pdf.Text.TextBuilder;
 ```
 
-## Step 3: Create the PDF document
+## Schritt 3: Erstellen Sie das PDF-Dokument
 
-Initialize the `Document` object to create a new PDF document:
+ Initialisieren Sie die`Document` Objekt zum Erstellen eines neuen PDF-Dokuments:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document();
 ```
 
-Make sure to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Unbedingt austauschen`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
 
-## Step 4: Add a page
+## Schritt 4: Fügen Sie eine Seite hinzu
 
-Get a particular page from the document using the `Pages.Add()` method:
+ Rufen Sie mit dem eine bestimmte Seite aus dem Dokument ab`Pages.Add()` Methode:
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
-## Step 5: Create text fragments
+## Schritt 5: Textfragmente erstellen
 
-Create multiple `TextFragment` objects, set their text and properties, and specify their positions on the page:
+ Mehrere erstellen`TextFragment` Objekte, legen Sie ihren Text und ihre Eigenschaften fest und geben Sie ihre Positionen auf der Seite an:
 
 ```csharp
 TextFragment textFragment1 = new TextFragment("main text");
@@ -72,11 +72,11 @@ textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment3.TextState.Rotation = 90;
 ```
 
-Adjust the text, positions, and other properties as desired.
+Passen Sie Text, Positionen und andere Eigenschaften nach Bedarf an.
 
-## Step 6: Create a TextBuilder and append text fragments
+## Schritt 6: Erstellen Sie einen TextBuilder und hängen Sie Textfragmente an
 
-Create a `TextBuilder` object using the `pdfPage` and append the text fragments to the PDF page:
+ Ein ... kreieren`TextBuilder` Objekt mit der`pdfPage` und hängen Sie die Textfragmente an die PDF-Seite an:
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(pdfPage);
@@ -85,97 +85,97 @@ textBuilder.AppendText(textFragment2);
 textBuilder.AppendText(textFragment3);
 ```
 
-## Step 7: Save the PDF document
+## Schritt 7: Speichern Sie das PDF-Dokument
 
-Save the modified PDF document to a file using the `Save` method:
+ Speichern Sie das geänderte PDF-Dokument mit in einer Datei`Save` Methode:
 
 ```csharp
 pdfDocument.Save(dataDir + "TextFragmentTests_Rotated1_out.pdf");
 ```
 
-Make sure to replace `"TextFragmentTests_Rotated1_out.pdf"` with the desired output file name.
+ Unbedingt austauschen`"TextFragmentTests_Rotated1_out.pdf"` mit dem gewünschten Ausgabedateinamen.
 
-### Sample source code for Rotate Text Using Text Fragment using Aspose.PDF for .NET 
+### Beispielquellcode für „Text mithilfe von Textfragmenten drehen“ mit Aspose.PDF für .NET 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Initialize document object
+// Dokumentobjekt initialisieren
 Document pdfDocument = new Document();
-// Get particular page
+// Holen Sie sich eine bestimmte Seite
 Page pdfPage = (Page)pdfDocument.Pages.Add();
-// Create text fragment
+// Textfragment erstellen
 TextFragment textFragment1 = new TextFragment("main text");
 textFragment1.Position = new Position(100, 600);
-// Set text properties
+// Texteigenschaften festlegen
 textFragment1.TextState.FontSize = 12;
 textFragment1.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-// Create rotated text fragment
+// Erstellen Sie ein gedrehtes Textfragment
 TextFragment textFragment2 = new TextFragment("rotated text");
 textFragment2.Position = new Position(200, 600);
-// Set text properties
+// Texteigenschaften festlegen
 textFragment2.TextState.FontSize = 12;
 textFragment2.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment2.TextState.Rotation = 45;
-// Create rotated text fragment
+// Erstellen Sie ein gedrehtes Textfragment
 TextFragment textFragment3 = new TextFragment("rotated text");
 textFragment3.Position = new Position(300, 600);
-// Set text properties
+// Texteigenschaften festlegen
 textFragment3.TextState.FontSize = 12;
 textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment3.TextState.Rotation = 90;
-// create TextBuilder object
+// Erstellen Sie ein TextBuilder-Objekt
 TextBuilder textBuilder = new TextBuilder(pdfPage);
-// Append the text fragment to the PDF page
+// Hängen Sie das Textfragment an die PDF-Seite an
 textBuilder.AppendText(textFragment1);
 textBuilder.AppendText(textFragment2);
 textBuilder.AppendText(textFragment3);
-// Save document
+// Dokument speichern
 pdfDocument.Save(dataDir + "TextFragmentTests_Rotated1_out.pdf");
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulations! You have successfully learned how to rotate text using text fragments in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from creating the document to saving the modified version. You can now incorporate this code into your own C# projects to manipulate text rotation in PDF files.
+Glückwunsch! Sie haben erfolgreich gelernt, wie Sie mit Aspose.PDF für .NET Text mithilfe von Textfragmenten in einem PDF-Dokument drehen. Dieses Tutorial bietet eine Schritt-für-Schritt-Anleitung von der Erstellung des Dokuments bis zum Speichern der geänderten Version. Sie können diesen Code jetzt in Ihre eigenen C#-Projekte integrieren, um die Textrotation in PDF-Dateien zu manipulieren.
 
-### FAQ's
+### FAQs
 
-#### Q: What is the purpose of the "Rotate Text Using Text Fragment" tutorial?
+#### F: Was ist der Zweck des Tutorials „Text mithilfe von Textfragmenten drehen“?
 
-A: The "Rotate Text Using Text Fragment" tutorial aims to guide you through the process of using the Aspose.PDF library for .NET to rotate text using text fragments in a PDF document. The tutorial provides step-by-step instructions and sample code to achieve this functionality.
+A: Das Tutorial „Text mithilfe von Textfragmenten drehen“ soll Sie durch den Prozess der Verwendung der Aspose.PDF-Bibliothek für .NET führen, um Text mithilfe von Textfragmenten in einem PDF-Dokument zu drehen. Das Tutorial bietet Schritt-für-Schritt-Anleitungen und Beispielcode, um diese Funktionalität zu erreichen.
 
-#### Q: What is meant by "rotating text using text fragments"?
+#### F: Was versteht man unter „Text mithilfe von Textfragmenten drehen“?
 
-A: Rotating text using text fragments refers to the ability to apply rotation to individual text fragments within a PDF document using the Aspose.PDF library. This technique allows you to control the orientation of text at different angles or positions within the PDF content.
+A: Das Drehen von Text mithilfe von Textfragmenten bezieht sich auf die Möglichkeit, mithilfe der Aspose.PDF-Bibliothek einzelne Textfragmente innerhalb eines PDF-Dokuments zu drehen. Mit dieser Technik können Sie die Ausrichtung von Text in verschiedenen Winkeln oder Positionen innerhalb des PDF-Inhalts steuern.
 
-#### Q: Why would I want to rotate text fragments in a PDF document?
+#### F: Warum sollte ich Textfragmente in einem PDF-Dokument drehen wollen?
 
-A: Rotating text fragments in a PDF document can be useful for various purposes, such as emphasizing specific content, creating artistic designs, or improving layout and readability.
+A: Das Rotieren von Textfragmenten in einem PDF-Dokument kann für verschiedene Zwecke nützlich sein, z. B. um bestimmte Inhalte hervorzuheben, künstlerische Designs zu erstellen oder das Layout und die Lesbarkeit zu verbessern.
 
-#### Q: How do I set up the project for the tutorial?
+#### F: Wie richte ich das Projekt für das Tutorial ein?
 
-A: To set up the project:
+A: So richten Sie das Projekt ein:
 
-1. Create a new C# project in your preferred integrated development environment (IDE).
-2. Add a reference to the Aspose.PDF for .NET library.
-3. Add the necessary using directives to your C# file.
+1. Erstellen Sie ein neues C#-Projekt in Ihrer bevorzugten integrierten Entwicklungsumgebung (IDE).
+2. Fügen Sie einen Verweis auf die Aspose.PDF für .NET-Bibliothek hinzu.
+3. Fügen Sie Ihrer C#-Datei die erforderlichen using-Anweisungen hinzu.
 
-#### Q: How can I create a new PDF document?
+#### F: Wie kann ich ein neues PDF-Dokument erstellen?
 
-A: To create a new PDF document, initialize a `Document` object from the Aspose.PDF library. You can use this object to add pages and content to the PDF.
+ A: Um ein neues PDF-Dokument zu erstellen, initialisieren Sie a`Document`Objekt aus der Aspose.PDF-Bibliothek. Mit diesem Objekt können Sie Seiten und Inhalte zum PDF hinzufügen.
 
-#### Q: How do I rotate text fragments using text fragments?
+#### F: Wie drehe ich Textfragmente mithilfe von Textfragmenten?
 
-A: To rotate text fragments using text fragments:
+A: So drehen Sie Textfragmente mithilfe von Textfragmenten:
 
-1. Create `TextFragment` objects.
-2. Set the text and properties of the text fragments.
-3. Specify the positions of the text fragments on the page.
-4. Set the rotation angle using the `TextState.Rotation` property of the text fragments.
-5. Create a `TextBuilder` object and append the text fragments to the PDF page.
+1.  Erstellen`TextFragment` Objekte.
+2. Legen Sie den Text und die Eigenschaften der Textfragmente fest.
+3. Geben Sie die Positionen der Textfragmente auf der Seite an.
+4.  Stellen Sie den Drehwinkel mit ein`TextState.Rotation` Eigenschaft der Textfragmente.
+5.  Ein ... kreieren`TextBuilder`Objekt und hängen Sie die Textfragmente an die PDF-Seite an.
 
-#### Q: Can I apply different rotation angles to different text fragments?
+#### F: Kann ich unterschiedliche Drehwinkel auf verschiedene Textfragmente anwenden?
 
-A: Yes, you can apply different rotation angles to different `TextFragment` objects. Each text fragment can have its own rotation angle specified using the `TextState.Rotation` property.
+ A: Ja, Sie können unterschiedliche Drehwinkel auf verschiedene anwenden`TextFragment` Objekte. Für jedes Textfragment kann ein eigener Drehwinkel angegeben werden`TextState.Rotation` Eigentum.
 
-#### Q: How do I save the PDF document with rotated text fragments?
+#### F: Wie speichere ich das PDF-Dokument mit gedrehten Textfragmenten?
 
-A: To save the PDF document with rotated text fragments, use the `Save` method of the `Document` object and provide the desired output file path and name.
+ A: Um das PDF-Dokument mit gedrehten Textfragmenten zu speichern, verwenden Sie die`Save` Methode der`Document` Objekt und geben Sie den gewünschten Pfad und Namen der Ausgabedatei an.

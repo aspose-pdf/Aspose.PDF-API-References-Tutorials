@@ -1,125 +1,125 @@
 ---
-title: Encrypt PDF File
-linktitle: Encrypt PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Securely encrypt your PDF file with Aspose.PDF for .NET.
+title: تشفير ملف PDF
+linktitle: تشفير ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بتشفير ملف PDF الخاص بك بشكل آمن باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 60
 url: /ar/net/programming-with-security-and-signatures/encrypt/
 ---
-Encrypting PDF file is an important security measure to protect confidential information. With Aspose.PDF for .NET you can easily encrypt your PDF files using the following source code:
+يعد تشفير ملف PDF إجراءً أمنيًا مهمًا لحماية المعلومات السرية. باستخدام Aspose.PDF for .NET، يمكنك بسهولة تشفير ملفات PDF الخاصة بك باستخدام كود المصدر التالي:
 
-## Step 1: Import required libraries
+## الخطوة 1: استيراد المكتبات المطلوبة
 
-Before you begin, you need to import the necessary libraries for your C# project. Here are the necessary import directives:
+قبل أن تبدأ، تحتاج إلى استيراد المكتبات اللازمة لمشروع C# الخاص بك. فيما يلي توجيهات الاستيراد الضرورية:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## الخطوة 2: تعيين المسار إلى مجلد المستندات
 
-In this step, you need to specify the path to the folder containing the PDF file to be encrypted. Replace `"YOUR DOCUMENTS DIRECTORY"` in the following code with the actual path to your documents folder:
+ في هذه الخطوة، تحتاج إلى تحديد المسار إلى المجلد الذي يحتوي على ملف PDF المراد تشفيره. يستبدل`"YOUR DOCUMENTS DIRECTORY"`في الكود التالي مع المسار الفعلي لمجلد المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## الخطوة 3: افتح مستند PDF
 
-Next, you need to open the PDF document you want to encrypt. Use the following code to load the document:
+بعد ذلك، تحتاج إلى فتح مستند PDF الذي تريد تشفيره. استخدم الكود التالي لتحميل المستند:
 
 ```csharp
 Document document = new Document(dataDir + "Encrypt.pdf");
 ```
 
-## Step 4: Encrypt PDF
+## الخطوة 4: تشفير PDF
 
-Now you can encrypt the PDF using the following code:
+يمكنك الآن تشفير ملف PDF باستخدام الكود التالي:
 
 ```csharp
 document. Encrypt("user", "owner", 0, CryptoAlgorithm.RC4x128);
 ```
 
-In this example, we are using the RC4x128 encryption algorithm with the "user" and "owner" passwords. You can change these settings as needed.
+في هذا المثال، نستخدم خوارزمية التشفير RC4x128 مع كلمات مرور "المستخدم" و"المالك". يمكنك تغيير هذه الإعدادات حسب الحاجة.
 
-## Step 5: Backup Encrypted PDF
+## الخطوة 5: النسخ الاحتياطي لملف PDF المشفر
 
-Finally, you can save the encrypted PDF to the specified location using the following code:
+وأخيرًا، يمكنك حفظ ملف PDF المشفر في الموقع المحدد باستخدام الكود التالي:
 
 ```csharp
 dataDir = dataDir + "Encrypt_out.pdf";
 document. Save(dataDir);
 ```
 
-Be sure to specify the desired path and filename for the encrypted PDF.
+تأكد من تحديد المسار واسم الملف المطلوبين لملف PDF المشفر.
 
-### Sample source code for Encrypt using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Encrypt باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Open document
+// افتح المستند
 Document document = new Document(dataDir+ "Encrypt.pdf");
-// Encrypt PDF
+// تشفير قوات الدفاع الشعبي
 document.Encrypt("user", "owner", 0, CryptoAlgorithm.RC4x128);
 dataDir = dataDir + "Encrypt_out.pdf";
-// Save updated PDF
+// حفظ ملف PDF المحدث
 document.Save(dataDir);
 Console.WriteLine("\nPDF file encrypted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You now have a step-by-step overview of encrypting PDF files using Aspose.PDF for .NET. You can embed this code into your own projects to secure your PDF files with ease.
+تهنئة ! لديك الآن نظرة عامة خطوة بخطوة حول تشفير ملفات PDF باستخدام Aspose.PDF لـ .NET. يمكنك تضمين هذا الرمز في مشاريعك الخاصة لتأمين ملفات PDF الخاصة بك بسهولة.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced encryption and security features.
+تأكد من مراجعة وثائق Aspose.PDF الرسمية لمزيد من المعلومات حول ميزات التشفير والأمان المتقدمة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Why is encrypting PDF files important?
+#### س: ما أهمية تشفير ملفات PDF؟
 
-A: Encrypting PDF files is crucial for protecting confidential information and ensuring the security of sensitive data. Encryption helps prevent unauthorized access and ensures that only authorized individuals can view the contents of the PDF.
+ج: يعد تشفير ملفات PDF أمرًا ضروريًا لحماية المعلومات السرية وضمان أمان البيانات الحساسة. يساعد التشفير على منع الوصول غير المصرح به ويضمن أن الأفراد المصرح لهم فقط هم من يمكنهم عرض محتويات ملف PDF.
 
-#### Q: What is Aspose.PDF for .NET?
+#### س: ما هو Aspose.PDF لـ .NET؟
 
-A: Aspose.PDF for .NET is a library that allows developers to work with PDF files in .NET applications. It provides a wide range of features, including creating, manipulating, and securing PDF documents.
+ج: Aspose.PDF for .NET هي مكتبة تسمح للمطورين بالعمل مع ملفات PDF في تطبيقات .NET. فهو يوفر مجموعة واسعة من الميزات، بما في ذلك إنشاء مستندات PDF ومعالجتها وتأمينها.
 
-#### Q: What are the benefits of encrypting PDF files using Aspose.PDF for .NET?
+#### س: ما هي فوائد تشفير ملفات PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Encrypting PDF files with Aspose.PDF for .NET offers enhanced security by restricting access to the content within the PDF. It helps prevent unauthorized copying, printing, and modifying of the document, ensuring data confidentiality.
+ج: يوفر تشفير ملفات PDF باستخدام Aspose.PDF لـ .NET أمانًا محسنًا عن طريق تقييد الوصول إلى المحتوى الموجود في ملف PDF. فهو يساعد على منع النسخ والطباعة والتعديل غير المصرح به للوثيقة، مما يضمن سرية البيانات.
 
-#### Q: How do I start encrypting PDF files using Aspose.PDF for .NET?
+#### س: كيف أبدأ في تشفير ملفات PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Follow the provided steps to import the necessary libraries, set the path to the documents folder, open the PDF document, encrypt it using specified passwords and encryption algorithms, and save the encrypted PDF to a desired location.
+ج: اتبع الخطوات المتوفرة لاستيراد المكتبات الضرورية، وتعيين المسار إلى مجلد المستندات، وفتح مستند PDF، وتشفيره باستخدام كلمات مرور محددة وخوارزميات تشفير، وحفظ ملف PDF المشفر في الموقع المطلوب.
 
-#### Q: What encryption algorithms does Aspose.PDF for .NET support?
+#### س: ما هي خوارزميات التشفير التي يدعمها Aspose.PDF لـ .NET؟
 
-A: Aspose.PDF for .NET supports various encryption algorithms, including RC4x40, RC4x128, AESx128, and AESx256. You can choose the encryption algorithm that best suits your security requirements.
+ج: يدعم Aspose.PDF for .NET خوارزميات التشفير المختلفة، بما في ذلك RC4x40، وRC4x128، وAESx128، وAESx256. يمكنك اختيار خوارزمية التشفير التي تناسب متطلبات الأمان الخاصة بك.
 
-#### Q: Can I customize the user and owner passwords?
+#### س: هل يمكنني تخصيص كلمات مرور المستخدم والمالك؟
 
-A: Yes, you can specify custom user and owner passwords when encrypting the PDF. The user password is used to open and view the PDF, while the owner password provides additional access rights.
+ج: نعم، يمكنك تحديد كلمات مرور مخصصة للمستخدم والمالك عند تشفير ملف PDF. يتم استخدام كلمة مرور المستخدم لفتح ملف PDF وعرضه، بينما توفر كلمة مرور المالك حقوق وصول إضافية.
 
-#### Q: How do I adjust the encryption settings?
+#### س: كيف يمكنني ضبط إعدادات التشفير؟
 
-A: In the provided sample code, you can adjust the encryption algorithm, passwords, and other settings as needed. Refer to the Aspose.PDF documentation for more details on available options.
+ج: في نموذج التعليمات البرمجية المقدم، يمكنك ضبط خوارزمية التشفير وكلمات المرور والإعدادات الأخرى حسب الحاجة. راجع وثائق Aspose.PDF للحصول على مزيد من التفاصيل حول الخيارات المتاحة.
 
-#### Q: Is the original PDF overwritten during encryption?
+#### س: هل يتم استبدال ملف PDF الأصلي أثناء التشفير؟
 
-A: No, the original PDF file remains unchanged. The encrypted PDF is saved as a new file, and you can specify the output location and filename.
+ج: لا، يبقى ملف PDF الأصلي دون تغيير. يتم حفظ ملف PDF المشفر كملف جديد، ويمكنك تحديد موقع الإخراج واسم الملف.
 
-#### Q: Can I encrypt multiple PDF files in one project?
+#### س: هل يمكنني تشفير ملفات PDF متعددة في مشروع واحد؟
 
-A: Yes, you can use the same encryption process to encrypt multiple PDF files in a single project. Simply repeat the steps for each PDF file you want to encrypt.
+ج: نعم، يمكنك استخدام نفس عملية التشفير لتشفير ملفات PDF متعددة في مشروع واحد. ما عليك سوى تكرار الخطوات لكل ملف PDF تريد تشفيره.
 
-#### Q: Is the encrypted PDF compatible with standard PDF readers?
+#### س: هل ملف PDF المشفر متوافق مع برامج قراءة PDF القياسية؟
 
-A: Yes, the encrypted PDF can be opened and viewed in standard PDF readers. However, users will need to provide the correct password to access the content, depending on the encryption settings you've applied.
+ج: نعم، يمكن فتح ملف PDF المشفر وعرضه في برامج قراءة PDF القياسية. ومع ذلك، سيحتاج المستخدمون إلى تقديم كلمة المرور الصحيحة للوصول إلى المحتوى، اعتمادًا على إعدادات التشفير التي طبقتها.
 
-#### Q: How can I learn more about advanced encryption and security features?
+#### س: كيف يمكنني معرفة المزيد حول ميزات التشفير والأمان المتقدمة؟
 
-A: For more advanced encryption and security features, refer to the official Aspose.PDF documentation. It provides comprehensive information and examples for various encryption scenarios.
+ج: للحصول على المزيد من ميزات التشفير والأمان المتقدمة، راجع وثائق Aspose.PDF الرسمية. فهو يوفر معلومات وأمثلة شاملة لسيناريوهات التشفير المختلفة.
 
-#### Q: Are there any legal considerations when encrypting PDF files?
+#### س: هل هناك أي اعتبارات قانونية عند تشفير ملفات PDF؟
 
-A: Encryption and security measures may have legal implications, especially when handling sensitive or personal data. Consult legal experts to ensure compliance with relevant regulations and data protection laws.
+ج: قد يكون لتدابير التشفير والأمان آثار قانونية، خاصة عند التعامل مع البيانات الحساسة أو الشخصية. استشارة الخبراء القانونيين لضمان الامتثال للوائح وقوانين حماية البيانات ذات الصلة.

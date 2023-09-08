@@ -1,28 +1,28 @@
 ---
-title: Search Text And Draw Rectangle
-linktitle: Search Text And Draw Rectangle
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to search for text in a PDF, draw rectangles around the found text, and save the modified document using Aspose.PDF for .NET.
+title: البحث عن نص ورسم مستطيل
+linktitle: البحث عن نص ورسم مستطيل
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية البحث عن نص في ملف PDF، ورسم مستطيلات حول النص الذي تم العثور عليه، وحفظ المستند المعدل باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 460
 url: /ar/net/programming-with-text/search-text-and-draw-rectangle/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to search for specific text in a PDF document, draw a rectangle around the found text, and save the modified document. The provided C# source code demonstrates the process step by step.
+يشرح هذا البرنامج التعليمي كيفية استخدام Aspose.PDF لـ .NET للبحث عن نص محدد في مستند PDF، ورسم مستطيل حول النص الذي تم العثور عليه، وحفظ المستند المعدل. يوضح كود مصدر C# المقدم العملية خطوة بخطوة.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before proceeding with the tutorial, make sure you have the following:
+قبل متابعة البرنامج التعليمي، تأكد من أن لديك ما يلي:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- المعرفة الأساسية بلغة البرمجة C#.
+- تم تثبيت Aspose.PDF لمكتبة .NET. يمكنك الحصول عليه من موقع Aspose أو استخدام NuGet لتثبيته في مشروعك.
 
-## Step 1: Set up the project
+## الخطوة 1: إعداد المشروع
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+ابدأ بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة المفضلة لديك (IDE) وأضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET.
 
-## Step 2: Import necessary namespaces
+## الخطوة 2: استيراد مساحات الأسماء الضرورية
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+أضف ما يلي باستخدام التوجيهات في بداية ملف C# الخاص بك لاستيراد مساحات الأسماء المطلوبة:
 
 ```csharp
 using Aspose.Pdf;
@@ -31,56 +31,56 @@ using Aspose.Pdf.Content;
 using Aspose.Pdf.Facades;
 ```
 
-## Step 3: Set the path to the document directory
+## الخطوة 3: قم بتعيين المسار إلى دليل المستند
 
-Set the path to your document directory using the `dataDir` variable:
+ قم بتعيين المسار إلى دليل المستند الخاص بك باستخدام`dataDir` عامل:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ يستبدل`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك.
 
-## Step 4: Load the PDF document
+## الخطوة 4: قم بتحميل مستند PDF
 
-Load the PDF document using the `Document` class:
+ قم بتحميل مستند PDF باستخدام`Document` فصل:
 
 ```csharp
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 ```
 
-Replace `"SearchAndGetTextFromAll.pdf"` with the actual name of your PDF file.
+ يستبدل`"SearchAndGetTextFromAll.pdf"` بالاسم الفعلي لملف PDF الخاص بك.
 
-## Step 5: Create a TextFragmentAbsorber
+## الخطوة 5: إنشاء TextFragmentAbsorter
 
-Create a `TextFragmentAbsorber` object to find all instances of the input search phrase:
+ إنشاء`TextFragmentAbsorber` كائن للعثور على كافة مثيلات عبارة البحث المدخلة:
 
 ```csharp
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
 
-Replace `@"[\S]+"` with your desired regular expression pattern.
+ يستبدل`@"[\S]+"` بنمط التعبير العادي الذي تريده.
 
-## Step 6: Enable regular expression search
+## الخطوة 6: تمكين البحث بالتعبير العادي
 
-Enable regular expression search by setting the `TextSearchOptions` property of the absorber:
+ تمكين البحث بالتعبير العادي عن طريق تعيين`TextSearchOptions` خاصية الامتصاص:
 
 ```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;
 ```
 
-## Step 7: Search on all pages
+## الخطوة 7: البحث في جميع الصفحات
 
-Accept the absorber for all the pages of the document:
+قبول المستوعب لجميع صفحات الوثيقة:
 
 ```csharp
 document.Pages.Accept(textAbsorber);
 ```
 
-## Step 8: Draw a rectangle around the found text
+## الخطوة 8: ارسم مستطيلاً حول النص الموجود
 
-Create a `PdfContentEditor` object and loop through the retrieved text fragments, drawing a rectangle around each text segment:
+ إنشاء`PdfContentEditor` الكائن والتكرار عبر أجزاء النص المستردة، مع رسم مستطيل حول كل مقطع نص:
 
 ```csharp
 var editor = new PdfContentEditor(document);
@@ -93,24 +93,24 @@ foreach (TextFragment textFragment in textAbsorber.TextFragments)
 }
 ```
 
-## Step 9: Save the modified document
+## الخطوة 9: احفظ المستند المعدل
 
-Save the modified document:
+احفظ المستند المعدل:
 
 ```csharp
 dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
 document.Save(dataDir);
 ```
 
-Make sure to replace `"SearchTextAndDrawRectangle_out.pdf"` with the desired output file name.
+ تأكد من استبدال`"SearchTextAndDrawRectangle_out.pdf"` مع اسم ملف الإخراج المطلوب.
 
-### Sample source code for Search Text And Draw Rectangle using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Search Text And Draw Rectangle باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-// Create TextAbsorber object to find all the phrases matching the regular expression
+// قم بإنشاء كائن TextAbsorter للعثور على جميع العبارات المطابقة للتعبير العادي
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;
@@ -128,48 +128,48 @@ document.Save(dataDir);
 Console.WriteLine("\nRectangle drawn successfully on searched text.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulations! You have successfully learned how to search for specific text in a PDF document, draw a rectangle around the found text, and save the modified document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to performing the required actions. You can now incorporate this code into your own C# projects to manipulate text and draw rectangles in PDF files.
+تهانينا! لقد تعلمت بنجاح كيفية البحث عن نص معين في مستند PDF، ورسم مستطيل حول النص الذي تم العثور عليه، وحفظ المستند المعدل باستخدام Aspose.PDF لـ .NET. قدم هذا البرنامج التعليمي دليلاً خطوة بخطوة، بدءًا من إعداد المشروع وحتى تنفيذ الإجراءات المطلوبة. يمكنك الآن دمج هذا الرمز في مشاريع C# الخاصة بك لمعالجة النص ورسم المستطيلات في ملفات PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of the "Search Text And Draw Rectangle" tutorial?
+#### س: ما هو الغرض من البرنامج التعليمي "البحث عن نص ورسم مستطيل"؟
 
-A: The "Search Text And Draw Rectangle" tutorial aims to guide users through the process of using the Aspose.PDF library for .NET to search for specific text within a PDF document, draw rectangles around the found text segments, and save the modified document. The tutorial provides detailed instructions and C# code samples to illustrate each step of the process.
+ج: يهدف البرنامج التعليمي "البحث عن نص ورسم مستطيل" إلى توجيه المستخدمين خلال عملية استخدام مكتبة Aspose.PDF لـ .NET للبحث عن نص معين داخل مستند PDF، ورسم مستطيلات حول مقاطع النص التي تم العثور عليها، وحفظ النص المعدل. وثيقة. يوفر البرنامج التعليمي تعليمات تفصيلية وعينات من أكواد C# لتوضيح كل خطوة من خطوات العملية.
 
-#### Q: How does this tutorial help in drawing rectangles around specific text in a PDF document?
+#### س: كيف يساعد هذا البرنامج التعليمي في رسم مستطيلات حول نص معين في مستند PDF؟
 
-A: This tutorial provides a comprehensive guide on how to locate and draw rectangles around specific text segments within a PDF document. It demonstrates the process of setting up a project, loading a PDF document, enabling regular expression search, drawing rectangles around found text segments, and saving the modified PDF.
+ج: يوفر هذا البرنامج التعليمي دليلاً شاملاً حول كيفية تحديد موقع المستطيلات ورسمها حول مقاطع نصية محددة داخل مستند PDF. فهو يوضح عملية إعداد المشروع، وتحميل مستند PDF، وتمكين البحث بالتعبير العادي، ورسم المستطيلات حول أجزاء النص التي تم العثور عليها، وحفظ ملف PDF المعدل.
 
-#### Q: What prerequisites are required to follow this tutorial?
+#### س: ما هي المتطلبات الأساسية المطلوبة لمتابعة هذا البرنامج التعليمي؟
 
-A: Before starting the tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or install it in your project using NuGet.
+ج: قبل البدء في البرنامج التعليمي، يجب أن يكون لديك فهم أساسي للغة البرمجة C#. بالإضافة إلى ذلك، تحتاج إلى تثبيت Aspose.PDF لمكتبة .NET. يمكنك الحصول عليه من موقع Aspose أو تثبيته في مشروعك باستخدام NuGet.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### س: كيف أقوم بإعداد مشروعي لمتابعة هذا البرنامج التعليمي؟
 
-A: Begin by creating a new C# project in your preferred integrated development environment (IDE). Then, add a reference to the Aspose.PDF for .NET library to your project. This will enable you to use the library's functionality to manipulate PDF documents.
+ج: ابدأ بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة المفضلة لديك (IDE). ثم قم بإضافة مرجع إلى مكتبة Aspose.PDF لـ .NET إلى مشروعك. سيمكنك هذا من استخدام وظائف المكتبة لمعالجة مستندات PDF.
 
-#### Q: Can I draw rectangles around specific text using this tutorial?
+#### س: هل يمكنني رسم مستطيلات حول نص معين باستخدام هذا البرنامج التعليمي؟
 
-A: Yes, the tutorial focuses on drawing rectangles around specific text segments within a PDF document. It demonstrates how to locate the desired text using regular expressions, create rectangles around the identified text segments, and save the modified PDF.
+ج: نعم، يركز البرنامج التعليمي على رسم المستطيلات حول مقاطع نصية محددة داخل مستند PDF. ويوضح كيفية تحديد موقع النص المطلوب باستخدام التعبيرات العادية، وإنشاء مستطيلات حول أجزاء النص المحددة، وحفظ ملف PDF المعدل.
 
-#### Q: How can I specify the text I want to search for and draw rectangles around?
+#### س: كيف يمكنني تحديد النص الذي أريد البحث عنه ورسم المستطيلات حوله؟
 
-A: To specify the text you want to search for and draw rectangles around, create a `TextFragmentAbsorber` object and set its pattern using the `Text` parameter. Replace the default pattern `@"[\S]+"` in the tutorial's code with your desired regular expression pattern.
+ ج: لتحديد النص الذي تريد البحث عنه ورسم المستطيلات حوله، قم بإنشاء ملف`TextFragmentAbsorber` كائن وتعيين نمطه باستخدام`Text` معامل. استبدل النمط الافتراضي`@"[\S]+"` في رمز البرنامج التعليمي بنمط التعبير العادي الذي تريده.
 
-#### Q: How do I enable regular expression search for text?
+#### س: كيف يمكنني تمكين البحث بالتعبير العادي عن النص؟
 
-A: Regular expression search is enabled by creating a `TextSearchOptions` object and setting its value to `true`. Assign this object to the `TextSearchOptions` property of the `TextFragmentAbsorber` instance. This ensures that the regular expression pattern is used during text search.
+ ج: يتم تمكين البحث عن التعبير العادي عن طريق إنشاء ملف`TextSearchOptions` الكائن وتحديد قيمته`true` . قم بتعيين هذا الكائن إلى`TextSearchOptions` ملكية`TextFragmentAbsorber` مثال. وهذا يضمن استخدام نمط التعبير العادي أثناء البحث عن النص.
 
-#### Q: How do I draw rectangles around the found text?
+#### س: كيف أرسم مستطيلات حول النص الموجود؟
 
-A: After identifying the text segments using the `TextFragmentAbsorber`, the tutorial provides a loop to iterate through these segments. For each text segment, the tutorial demonstrates how to create a rectangle around it using the `DrawBox` method and specify the rectangle's appearance.
+ ج: بعد تحديد مقاطع النص باستخدام`TextFragmentAbsorber` ، يوفر البرنامج التعليمي حلقة للتكرار عبر هذه المقاطع. لكل مقطع نص، يوضح البرنامج التعليمي كيفية إنشاء مستطيل حوله باستخدام`DrawBox` الطريقة وتحديد مظهر المستطيل.
 
-#### Q: What are the steps to save the modified PDF with drawn rectangles?
+#### س: ما هي خطوات حفظ ملف PDF المعدل بالمستطيلات المرسومة؟
 
-A: After drawing rectangles around the desired text segments, use the `Document` class's `Save` method to save the modified document. The tutorial's sample code showcases how to save the edited PDF and display a success message.
+ج: بعد رسم المستطيلات حول أجزاء النص المطلوبة، استخدم`Document` الطبقة`Save` طريقة حفظ الوثيقة المعدلة. يعرض نموذج التعليمات البرمجية الخاص بالبرنامج التعليمي كيفية حفظ ملف PDF المحرر وعرض رسالة النجاح.
 
-#### Q: Can I customize the appearance of the drawn rectangles?
+#### س: هل يمكنني تخصيص مظهر المستطيلات المرسومة؟
 
-A: Yes, you can customize the appearance of the drawn rectangles. In the tutorial's sample code, the `DrawBox` method is used to create rectangles. You can modify properties such as color, style, and thickness to customize the appearance of the drawn rectangles.
+ ج: نعم، يمكنك تخصيص مظهر المستطيلات المرسومة. في نموذج التعليمات البرمجية للبرنامج التعليمي، فإن`DrawBox` يتم استخدام الطريقة لإنشاء المستطيلات. يمكنك تعديل خصائص مثل اللون والنمط والسمك لتخصيص مظهر المستطيلات المرسومة.

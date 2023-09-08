@@ -1,36 +1,36 @@
 ---
-title: Fit Page Contents In PDF File
-linktitle: Fit Page Contents In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Detailed step-by-step guide to adjusting page contents in PDF file using Aspose.PDF for .NET. Easy implementation and rewarding conclusion.
+title: Seiteninhalte in PDF-Datei anpassen
+linktitle: Seiteninhalte in PDF-Datei anpassen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Detaillierte Schritt-für-Schritt-Anleitung zum Anpassen von Seiteninhalten in PDF-Dateien mit Aspose.PDF für .NET. Einfache Umsetzung und lohnender Abschluss.
 type: docs
 weight: 50
 url: /de/net/programming-with-pdf-pages/fit-page-contents/
 ---
-In this tutorial, we'll walk you through the step-by-step process to adjust page contents in PDF file using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to adjust the content of PDF pages using Aspose.PDF for .NET.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch den Prozess zum Anpassen von Seiteninhalten in einer PDF-Datei mit Aspose.PDF für .NET. Wir erklären Ihnen den gebündelten C#-Quellcode und stellen Ihnen eine umfassende Anleitung zur Verfügung, die Ihnen hilft, diese Funktion zu verstehen und in Ihren eigenen Projekten zu implementieren. Am Ende dieses Tutorials erfahren Sie, wie Sie den Inhalt von PDF-Seiten mit Aspose.PDF für .NET anpassen.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## Voraussetzungen
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- Grundkenntnisse der Programmiersprache C#
+- Aspose.PDF für .NET in Ihrer Entwicklungsumgebung installiert
 
-## Step 1: Define the document directory
-First, you need to set the path to your documents directory. This is the location where your input PDF file is located. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
+## Schritt 1: Definieren Sie das Dokumentenverzeichnis
+Zuerst müssen Sie den Pfad zu Ihrem Dokumentenverzeichnis festlegen. Dies ist der Speicherort, an dem sich Ihre Eingabe-PDF-Datei befindet. Ersetzen Sie „IHR DOKUMENTENVERZEICHNIS“ durch den entsprechenden Pfad.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the PDF document
-Then you can load the PDF document using the `Document` class of Aspose.PDF. Be sure to specify the correct path to the input PDF file.
+## Schritt 2: Laden Sie das PDF-Dokument
+ Anschließend können Sie das PDF-Dokument mit laden`Document` Klasse von Aspose.PDF. Stellen Sie sicher, dass Sie den korrekten Pfad zur Eingabe-PDF-Datei angeben.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Adjust page content
-Now you can cycle through all the pages of the document and adjust the content of each page according to the size of the media box. In the example provided, we adjust the width of the page to render it in landscape mode (landscape) keeping the same height. The new width is calculated based on the aspect ratio of the media box.
+## Schritt 3: Seiteninhalt anpassen
+Jetzt können Sie durch alle Seiten des Dokuments blättern und den Inhalt jeder Seite entsprechend der Größe der Medienbox anpassen. Im bereitgestellten Beispiel passen wir die Breite der Seite an, um sie im Querformat (Querformat) darzustellen und dabei die gleiche Höhe beizubehalten. Die neue Breite wird basierend auf dem Seitenverhältnis der Medienbox berechnet.
 
 ```csharp
 foreach(Page page in doc.Pages)
@@ -41,46 +41,46 @@ foreach(Page page in doc.Pages)
 }
 ```
 
-### Sample source code for Fit Page Contents using Aspose.PDF for .NET 
+### Beispielquellcode für „Seiteninhalte anpassen“ mit Aspose.PDF für .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 foreach (Page page in doc.Pages)
 {
 	Rectangle r = page.MediaBox;
-	// New height the same
+	// Neue Höhe gleich
 	double newHeight = r.Height;
-	// New width is expanded proportionally to make orientation landscape
-	// (we assume that previous orientation is portrait)
+	// Die neue Breite wird proportional erweitert, um die Ausrichtung im Querformat zu ermöglichen
+	// (Wir gehen davon aus, dass die vorherige Ausrichtung das Hochformat ist)
 	double newWidth = r.Height * r.Height / r.Width;
 }          
 
 ```
 
-## Conclusion
-In this tutorial, we learned how to adjust PDF page content using Aspose.PDF for .NET. By following the steps outlined above, you can easily implement this functionality in your own projects. Feel free to explore the Aspose.PDF documentation further to discover other useful features for working with PDF files.
+## Abschluss
+In diesem Tutorial haben wir gelernt, wie man PDF-Seiteninhalte mit Aspose.PDF für .NET anpasst. Wenn Sie die oben beschriebenen Schritte befolgen, können Sie diese Funktionalität problemlos in Ihre eigenen Projekte implementieren. Sehen Sie sich gerne die Aspose.PDF-Dokumentation weiter an, um weitere nützliche Funktionen für die Arbeit mit PDF-Dateien zu entdecken.
 
-### FAQ's for fit page contents in PDF file
+### FAQs zum Anpassen von Seiteninhalten in PDF-Dateien
 
-#### Q: What does the "media box" represent in the context of PDF pages?
+#### F: Was stellt die „Medienbox“ im Kontext von PDF-Seiten dar?
 
-A: In the context of PDF pages, the "media box" represents the bounding box that defines the physical dimensions of the page content. It defines the width, height, and location of the page content within the PDF document.
+A: Im Kontext von PDF-Seiten stellt die „Medienbox“ den Begrenzungsrahmen dar, der die physischen Abmessungen des Seiteninhalts definiert. Es definiert die Breite, Höhe und Position des Seiteninhalts innerhalb des PDF-Dokuments.
 
-#### Q: How does the provided C# source code adjust the page content?
+#### F: Wie passt der bereitgestellte C#-Quellcode den Seiteninhalt an?
 
-A: The provided C# source code adjusts the page content by resizing each page's width to make it appear in landscape mode while keeping the same height. The new width is calculated based on the aspect ratio of the media box, ensuring that the content retains its original proportions.
+A: Der bereitgestellte C#-Quellcode passt den Seiteninhalt an, indem er die Breite jeder Seite so ändert, dass sie im Querformat erscheint und gleichzeitig die gleiche Höhe behält. Die neue Breite wird anhand des Seitenverhältnisses der Medienbox berechnet und stellt sicher, dass der Inhalt seine ursprünglichen Proportionen behält.
 
-#### Q: Can I adjust the page content to fit a specific size or aspect ratio?
+#### F: Kann ich den Seiteninhalt an eine bestimmte Größe oder ein bestimmtes Seitenverhältnis anpassen?
 
-A: Yes, you can adjust the page content to fit a specific size or aspect ratio by modifying the calculation in the provided C# source code. For example, if you want to fit the page content into a fixed size (e.g., 8.5 x 11 inches), you can calculate the new width and height accordingly.
+A: Ja, Sie können den Seiteninhalt an eine bestimmte Größe oder ein bestimmtes Seitenverhältnis anpassen, indem Sie die Berechnung im bereitgestellten C#-Quellcode ändern. Wenn Sie beispielsweise den Seiteninhalt in eine feste Größe (z. B. 8,5 x 11 Zoll) einpassen möchten, können Sie die neue Breite und Höhe entsprechend berechnen.
 
-#### Q: What will happen to the content on the page after adjusting the page size?
+#### F: Was passiert mit dem Inhalt der Seite, nachdem die Seitengröße angepasst wurde?
 
-A: After adjusting the page size using the provided C# source code, the content on the page will be resized proportionally. If the original content's aspect ratio differs significantly from the new aspect ratio, the content may appear stretched or compressed.
+A: Nachdem Sie die Seitengröße mithilfe des bereitgestellten C#-Quellcodes angepasst haben, wird die Größe des Inhalts auf der Seite proportional geändert. Wenn das Seitenverhältnis des ursprünglichen Inhalts erheblich vom neuen Seitenverhältnis abweicht, kann es sein, dass der Inhalt gestreckt oder gestaucht erscheint.
 
-#### Q: Can I adjust the content of specific pages instead of all pages in the PDF document?
+#### F: Kann ich den Inhalt bestimmter Seiten anstelle aller Seiten im PDF-Dokument anpassen?
 
-A: Yes, you can adjust the content of specific pages instead of all pages in the PDF document. In the provided C# source code, the "foreach" loop iterates through all pages in the document. To adjust the content of specific pages, you can use conditional statements within the loop to target only the desired pages.
+A: Ja, Sie können den Inhalt bestimmter Seiten anstelle aller Seiten im PDF-Dokument anpassen. Im bereitgestellten C#-Quellcode durchläuft die „foreach“-Schleife alle Seiten im Dokument. Um den Inhalt bestimmter Seiten anzupassen, können Sie bedingte Anweisungen innerhalb der Schleife verwenden, um nur die gewünschten Seiten anzusprechen.

@@ -1,102 +1,102 @@
 ---
-title: Get Page Count In PDF File
-linktitle: Get Page Count In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to get the page count in PDF file using Aspose.PDF for .NET. Easy to follow and implement in your projects.
+title: Ermitteln Sie die Seitenanzahl in einer PDF-Datei
+linktitle: Ermitteln Sie die Seitenanzahl in einer PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Schritt-für-Schritt-Anleitung zum Ermitteln der Seitenzahl in einer PDF-Datei mit Aspose.PDF für .NET. Einfach zu befolgen und in Ihre Projekte umzusetzen.
 type: docs
 weight: 80
 url: /de/net/programming-with-pdf-pages/get-page-count/
 ---
-In this tutorial, we'll walk you through the step-by-step process to get the page count in PDF file using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to get the page count of a PDF file using Aspose.PDF for .NET.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch den Prozess, um mit Aspose.PDF für .NET die Seitenzahl in einer PDF-Datei zu ermitteln. Wir erklären Ihnen den gebündelten C#-Quellcode und stellen Ihnen eine umfassende Anleitung zur Verfügung, die Ihnen hilft, diese Funktion zu verstehen und in Ihren eigenen Projekten zu implementieren. Am Ende dieses Tutorials erfahren Sie, wie Sie mit Aspose.PDF für .NET die Seitenzahl einer PDF-Datei ermitteln.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## Voraussetzungen
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- Grundkenntnisse der Programmiersprache C#
+- Aspose.PDF für .NET in Ihrer Entwicklungsumgebung installiert
 
-## Step 1: Instantiate a Document object
-First, you need to instantiate a Document object using the Document class of Aspose.PDF.
+## Schritt 1: Instanziieren Sie ein Document-Objekt
+Zunächst müssen Sie ein Document-Objekt mithilfe der Document-Klasse von Aspose.PDF instanziieren.
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 2: Add a page to the document
-Then you can add a page to the document using the `Add()` method of the document's Pages collection.
+## Schritt 2: Fügen Sie dem Dokument eine Seite hinzu
+ Anschließend können Sie mit dem eine Seite zum Dokument hinzufügen`Add()` Methode der Pages-Sammlung des Dokuments.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Create page content
-Now you can create page content by adding TextFragment objects to the Page object's Paragraphs collection. In this example, we add a TextFragment repeated 300 times to simulate a document with longer content.
+## Schritt 3: Seiteninhalt erstellen
+Jetzt können Sie Seiteninhalte erstellen, indem Sie TextFragment-Objekte zur Paragraphs-Sammlung des Page-Objekts hinzufügen. In diesem Beispiel fügen wir ein TextFragment hinzu, das 300 Mal wiederholt wird, um ein Dokument mit längerem Inhalt zu simulieren.
 
 ```csharp
 for (int i = 0; i < 300; i++)
 page.Paragraphs.Add(new TextFragment("Page count test"));
 ```
 
-## Step 4: Processing Paragraphs and Getting Page Count
-Once you have added the content to the page, you need to process the document paragraphs by calling the `ProcessParagraphs()` method. This allows Aspose.PDF to calculate the number of pages accurately.
+## Schritt 4: Absätze verarbeiten und Seitenzahl ermitteln
+ Nachdem Sie den Inhalt zur Seite hinzugefügt haben, müssen Sie die Dokumentabsätze verarbeiten, indem Sie den aufrufen`ProcessParagraphs()` Methode. Dadurch kann Aspose.PDF die Anzahl der Seiten genau berechnen.
 
 ```csharp
 doc.ProcessParagraphs();
 ```
 
-## Step 5: Displaying the number of pages
-Finally, you can view the number of pages in the document by accessing the `Count` property of the Pages collection.
+## Schritt 5: Anzeige der Seitenanzahl
+ Schließlich können Sie die Anzahl der Seiten im Dokument anzeigen, indem Sie auf zugreifen`Count` Eigentum der Pages-Sammlung.
 
 ```csharp
 Console.WriteLine("Number of pages in document = " + doc.Pages.Count);
 ```
 
-### Sample source code for Get Page Count using Aspose.PDF for .NET 
+### Beispielquellcode für „Get Page Count“ mit Aspose.PDF für .NET 
 
 ```csharp
 
-// Instantiate Document instance
+// Dokumentinstanz instanziieren
 Document doc = new Document();
-// Add page to pages collection of PDF file
+// Seite zur Seitensammlung der PDF-Datei hinzufügen
 Page page = doc.Pages.Add();
-// Create loop instance
+// Erstellen Sie eine Schleifeninstanz
 for (int i = 0; i < 300; i++)
-	// Add TextFragment to paragraphs collection of page object
+	// Fügen Sie TextFragment zur Absatzsammlung des Seitenobjekts hinzu
 	page.Paragraphs.Add(new TextFragment("Pages count test"));
-// Process the paragraphs in PDF file to get accurate page count
+// Verarbeiten Sie die Absätze in einer PDF-Datei, um eine genaue Seitenzahl zu erhalten
 doc.ProcessParagraphs();
-// Print number of pages in document
+// Anzahl der Seiten im Dokument drucken
 Console.WriteLine("Number of pages in document = " + doc.Pages.Count);
 
 ```
 
-## Conclusion
-In this tutorial, we learned how to get the page count of a PDF file using Aspose.PDF for .NET. By following the steps outlined above, you can easily implement this functionality in your own projects. Feel free to explore the Aspose.PDF documentation further to discover other useful features for working with PDF files.
+## Abschluss
+In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET die Seitenzahl einer PDF-Datei ermittelt. Wenn Sie die oben beschriebenen Schritte befolgen, können Sie diese Funktionalität problemlos in Ihre eigenen Projekte implementieren. Sehen Sie sich gerne die Aspose.PDF-Dokumentation weiter an, um weitere nützliche Funktionen für die Arbeit mit PDF-Dateien zu entdecken.
 
-### FAQ's for get page count in PDF file
+### FAQs zum Abrufen der Seitenzahl in einer PDF-Datei
 
-#### Q: How can I get the page count of a PDF file using Aspose.PDF for .NET?
+#### F: Wie kann ich mit Aspose.PDF für .NET die Seitenzahl einer PDF-Datei ermitteln?
 
-A: To get the page count of a PDF file, you can follow these steps:
+A: Um die Seitenzahl einer PDF-Datei zu ermitteln, können Sie die folgenden Schritte ausführen:
 
-1. Instantiate a `Document` object using the `Document` class of Aspose.PDF.
-2. Add a page to the document using the `Add()` method of the document's `Pages` collection.
-3. Create page content by adding `TextFragment` objects to the `Page` object's `Paragraphs` collection.
-4. Process the document paragraphs by calling the `ProcessParagraphs()` method to calculate the number of pages accurately.
-5. Access the `Count` property of the `Pages` collection to view the number of pages in the document.
+1.  Instanziieren Sie a`Document` Objekt mit der`Document` Klasse von Aspose.PDF.
+2.  Fügen Sie mit dem eine Seite zum Dokument hinzu`Add()` Methode des Dokuments`Pages` Sammlung.
+3.  Erstellen Sie Seiteninhalte durch Hinzufügen`TextFragment` Gegenstände zum`Page` Objekt`Paragraphs` Sammlung.
+4.  Verarbeiten Sie die Dokumentabsätze, indem Sie die aufrufen`ProcessParagraphs()` Methode zur genauen Berechnung der Seitenanzahl.
+5.  Greife auf ... zu`Count` Eigentum der`Pages` Sammlung, um die Anzahl der Seiten im Dokument anzuzeigen.
 
-#### Q: What if I add more content to the PDF document after processing paragraphs? Will the page count update automatically?
+#### F: Was passiert, wenn ich nach der Verarbeitung von Absätzen weitere Inhalte zum PDF-Dokument hinzufüge? Wird die Seitenzahl automatisch aktualisiert?
 
-A: No, the page count will not update automatically if you add more content to the PDF document after processing paragraphs. To get an accurate page count, you need to call the `ProcessParagraphs()` method again after adding new content.
+ A: Nein, die Seitenzahl wird nicht automatisch aktualisiert, wenn Sie nach der Verarbeitung von Absätzen weitere Inhalte zum PDF-Dokument hinzufügen. Um eine genaue Seitenzahl zu erhalten, müssen Sie die aufrufen`ProcessParagraphs()` Methode erneut nach dem Hinzufügen neuer Inhalte.
 
-#### Q: Can I use Aspose.PDF for .NET to get the page count of a password-protected PDF file?
+#### F: Kann ich Aspose.PDF für .NET verwenden, um die Seitenzahl einer passwortgeschützten PDF-Datei zu ermitteln?
 
-A: Yes, you can use Aspose.PDF for .NET to get the page count of a password-protected PDF file, as long as you have the necessary permissions to open and process the document.
+A: Ja, Sie können Aspose.PDF für .NET verwenden, um die Seitenzahl einer passwortgeschützten PDF-Datei abzurufen, sofern Sie über die erforderlichen Berechtigungen zum Öffnen und Verarbeiten des Dokuments verfügen.
 
-#### Q: Does Aspose.PDF for .NET provide methods to navigate to a specific page in the PDF document?
+#### F: Bietet Aspose.PDF für .NET Methoden zum Navigieren zu einer bestimmten Seite im PDF-Dokument?
 
-A: Yes, Aspose.PDF for .NET provides methods to navigate to a specific page in the PDF document. You can use the `Page` class and its properties to access and manipulate individual pages within the document.
+ A: Ja, Aspose.PDF für .NET bietet Methoden zum Navigieren zu einer bestimmten Seite im PDF-Dokument. Du kannst den ... benutzen`Page` Klasse und ihre Eigenschaften, um auf einzelne Seiten im Dokument zuzugreifen und diese zu bearbeiten.
 
-#### Q: Can I use Aspose.PDF for .NET to extract text or other content from a specific page in the PDF document?
+#### F: Kann ich Aspose.PDF für .NET verwenden, um Text oder andere Inhalte aus einer bestimmten Seite im PDF-Dokument zu extrahieren?
 
-A: Yes, Aspose.PDF for .NET provides powerful features to extract text, images, and other content from specific pages in a PDF document. You can use the `TextFragmentAbsorber` and other classes to achieve this.
+ A: Ja, Aspose.PDF für .NET bietet leistungsstarke Funktionen zum Extrahieren von Text, Bildern und anderen Inhalten aus bestimmten Seiten in einem PDF-Dokument. Du kannst den ... benutzen`TextFragmentAbsorber` und andere Klassen, um dies zu erreichen.

@@ -1,64 +1,64 @@
 ---
-title: Style Table Element
-linktitle: Style Table Element
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to format table element with Aspose.PDF for .NET. Step-by-step guide to customize styles and properties.
+title: Stil bordselement
+linktitle: Stil bordselement
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du formaterar tabellelement med Aspose.PDF för .NET. Steg-för-steg guide för att anpassa stilar och egenskaper.
 type: docs
 weight: 170
 url: /sv/net/programming-with-tagged-pdf/style-table-element/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step to format the array element using Aspose.PDF for .NET. Follow the instructions below to understand how to customize the styles and properties of the array element.
+den här detaljerade handledningen går vi igenom den medföljande C#-källkoden steg för steg för att formatera arrayelementet med Aspose.PDF för .NET. Följ instruktionerna nedan för att förstå hur du anpassar formaten och egenskaperna för arrayelementet.
 
-## Step 1: Setting up the environment
+## Steg 1: Sätta upp miljön
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+Innan du börjar, se till att du har konfigurerat din utvecklingsmiljö för att använda Aspose.PDF för .NET. Detta inkluderar att installera Aspose.PDF-biblioteket och konfigurera ditt projekt för att referera till det.
 
-## Step 2: Creating a document
+## Steg 2: Skapa ett dokument
 
-In this step, we will create a new document object Aspose.PDF.
+I detta steg kommer vi att skapa ett nytt dokumentobjekt Aspose.PDF.
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Document creation
+// Skapande av dokument
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example of table formatting");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We have created a new document and set the document title and language.
+Vi har skapat ett nytt dokument och ställt in dokumentets titel och språk.
 
-## Step 3: Obtaining the root structure element
+## Steg 3: Skaffa rotstrukturelementet
 
-In this step we will get the root structure element for our document.
+I detta steg kommer vi att få rotstrukturelementet för vårt dokument.
 
 ```csharp
-// Obtain the root structure element
+//Skaffa rotstrukturelementet
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We got the root structure element which will serve as a container for the array element.
+Vi fick rotstrukturelementet som kommer att fungera som en behållare för arrayelementet.
 
-## Step 4: Creating the array structure element
+## Steg 4: Skapa arraystrukturelementet
 
-Now let's create a new table structure element for our document.
+Låt oss nu skapa ett nytt tabellstrukturelement för vårt dokument.
 
 ```csharp
-// Create the array structure element
+// Skapa elementet matrisstruktur
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 ```
 
-We have created a new array structure element and added it to the root structure element.
+Vi har skapat ett nytt array-strukturelement och lagt till det i rotstrukturelementet.
 
-## Step 5: Customizing Array Element Styles and Properties
+## Steg 5: Anpassa stilar och egenskaper för matriselement
 
-In this step, we will customize the styles and properties of the array element.
+I det här steget kommer vi att anpassa stilarna och egenskaperna för arrayelementet.
 
 ```csharp
-// Customize the styles and properties of the array element
+// Anpassa stilar och egenskaper för arrayelementet
 tableElement.BackgroundColor = Color.Beige;
 tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
 tableElement. Alignment = HorizontalAlignment. Center;
@@ -77,30 +77,30 @@ tableElement. Top = 40F;
 tableElement.RepeatingColumnsCount = 2;
 tableElement.RepeatingRowsCount = 3;
 
-// Customize the style of repeated lines
+// Anpassa stilen på upprepade rader
 TextState rowStyle = new TextState();
 rowStyle.BackgroundColor = Color.LightCoral;
 tableElement.RepeatingRowsStyle = rowStyle;
 ```
 
-We used various properties to customize the table element, such as background color, borders, alignment, default cell style, margins, column width, etc.
+Vi använde olika egenskaper för att anpassa tabellelementet, såsom bakgrundsfärg, kanter, justering, standardcellstil, marginaler, kolumnbredd, etc.
 
-## Step 6: Add table headers, body and footer
+## Steg 6: Lägg till tabellrubriker, brödtext och sidfot
 
-Now let's add the table headers, body and footer to the table element.
+Låt oss nu lägga till tabellhuvuden, brödtexten och sidfoten till tabellelementet.
 ```csharp
-// Add table headers
+// Lägg till tabellrubriker
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
 
-// Number of rows and columns in the table
+// Antal rader och kolumner i tabellen
 int rowCount = 10;
 int colCount = 5;
 int rowIndex;
 int colIndex;
 
-// Create the table header row
+// Skapa tabellrubrikraden
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Header Row";
 
@@ -110,7 +110,7 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
      theElement.SetText(string.Format("Header {0}", colIndex));
 }
 
-// Add the rows of the table body
+//Lägg till raderna i tabellkroppen
 for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 {
      TableTRElement trElement = tableTBodyElement.CreateTR();
@@ -123,7 +123,7 @@ for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
      }
 }
 
-// Add the footing line of the table
+// Lägg till bordets fotlinje
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Footline";
 
@@ -134,49 +134,49 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-We added the headers, body rows, and footer row to the table using the corresponding elements.
+Vi lade till rubriker, brödrader och sidfotsrader i tabellen med hjälp av motsvarande element.
 
-## Step 7: Saving the tagged PDF document
+## Steg 7: Spara det taggade PDF-dokumentet
 
-Now that we've created our document with the styled table element, we'll save it as a tagged PDF document.
+Nu när vi har skapat vårt dokument med det formaterade tabellelementet, sparar vi det som ett taggat PDF-dokument.
 
 ```csharp
-// Save the tagged PDF document
+// Spara det taggade PDF-dokumentet
 document.Save(dataDir + "StyleTableElement.pdf");
 ```
 
-We saved the tagged PDF document in the specified directory.
+Vi sparade det taggade PDF-dokumentet i den angivna katalogen.
 
-## Step 8: PDF/UA compliance validation
+## Steg 8: PDF/UA-efterlevnadsvalidering
 
-Next, we will validate the PDF/UA conformity of our document.
+Därefter kommer vi att validera PDF/UA-överensstämmelsen för vårt dokument.
 
 ```csharp
-// PDF/UA compliance check
+// PDF/UA-efterlevnadskontroll
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-We uploaded the tagged PDF document and validated its PDF/UA compliance by generating an XML report.
+Vi laddade upp det taggade PDF-dokumentet och validerade dess PDF/UA-efterlevnad genom att skapa en XML-rapport.
 
-### Sample source code for Style Table Element using Aspose.PDF for .NET 
+### Exempel på källkod för Style Table Element med Aspose.PDF för .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create document
+// Skapa dokument
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table style");
 taggedContent.SetLanguage("en-US");
 
-// Get root structure element
+// Få rotstrukturelement
 StructureElement rootElement = taggedContent.RootElement;
 
-// Create table structure element
+// Skapa tabellstrukturelement
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 tableElement.BackgroundColor = Color.Beige;
@@ -231,62 +231,62 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 	tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
 
-// Save Tagged Pdf Document
+// Spara taggat pdf-dokument
 document.Save(dataDir + "StyleTableElement.pdf");
 
-// Checking PDF/UA compliance
+// Kontrollerar PDF/UA-efterlevnad
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we learned how to format the array element with Aspose.PDF for .NET. We customized the styles and properties of the table element, added headers, body rows, and a footer, saved the tagged PDF document, and validated its PDF/UA compliance.
+I den här handledningen lärde vi oss hur man formaterar arrayelementet med Aspose.PDF för .NET. Vi anpassade stilarna och egenskaperna för tabellelementet, lade till rubriker, brödrader och en sidfot, sparade det taggade PDF-dokumentet och validerade dess PDF/UA-kompatibilitet.
 
 ### FAQ's
 
-#### Q: What is the purpose of this tutorial on formatting the array element using Aspose.PDF for .NET?
+#### F: Vad är syftet med den här handledningen om att formatera arrayelementet med Aspose.PDF för .NET?
 
-A: The goal of this tutorial is to guide you through the process of formatting the array element in a PDF document using Aspose.PDF for .NET. It provides step-by-step instructions and C# source code examples to help you customize the styles and properties of the array element.
+S: Målet med denna handledning är att guida dig genom processen att formatera arrayelementet i ett PDF-dokument med Aspose.PDF för .NET. Den ger steg-för-steg-instruktioner och exempel på C#-källkod för att hjälpa dig att anpassa stilarna och egenskaperna för arrayelementet.
 
-#### Q: What are the prerequisites for following this tutorial?
+#### F: Vilka är förutsättningarna för att följa denna handledning?
 
-A: Before you start, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+S: Innan du börjar, se till att du har ställt in din utvecklingsmiljö för att använda Aspose.PDF för .NET. Detta innebär att du installerar Aspose.PDF-biblioteket och konfigurerar ditt projekt för att referera till det.
 
-#### Q: How can I create a new PDF document and set its title and language using Aspose.PDF for .NET?
+#### F: Hur kan jag skapa ett nytt PDF-dokument och ställa in dess titel och språk med Aspose.PDF för .NET?
 
-A: To create a new PDF document, you need to create a `Document` object from the Aspose.PDF library. The tutorial's provided C# source code demonstrates how to create a document and set its title and language properties.
+ S: För att skapa ett nytt PDF-dokument måste du skapa ett`Document` objekt från Aspose.PDF-biblioteket. Handledningens medföljande C#-källkod visar hur man skapar ett dokument och ställer in dess titel- och språkegenskaper.
 
-#### Q: What is the significance of the root structure element in a PDF document?
+#### F: Vilken betydelse har rotstrukturelementet i ett PDF-dokument?
 
-A: The root structure element acts as a container for other structure elements, helping to organize and categorize the content of the PDF document. It plays a crucial role in establishing the logical structure of the document.
+S: Rotstrukturelementet fungerar som en behållare för andra strukturelement och hjälper till att organisera och kategorisera innehållet i PDF-dokumentet. Det spelar en avgörande roll för att fastställa dokumentets logiska struktur.
 
-#### Q: How do I create and customize an array structure element using Aspose.PDF for .NET?
+#### F: Hur skapar och anpassar jag ett arraystrukturelement med Aspose.PDF för .NET?
 
-A: You can create an array structure element using the `CreateTableElement()` method. The tutorial's source code provides examples of customizing various properties of the table element, such as background color, borders, alignment, column width, and more.
+ S: Du kan skapa ett array-strukturelement med hjälp av`CreateTableElement()` metod. Handledningens källkod ger exempel på att anpassa olika egenskaper för tabellelementet, såsom bakgrundsfärg, ramar, justering, kolumnbredd och mer.
 
-#### Q: Can I customize the styles and properties of table cells within the array element?
+#### F: Kan jag anpassa stilarna och egenskaperna för tabellceller i arrayelementet?
 
-A: Yes, the tutorial covers how to customize the styles and properties of the entire table element, including headers, body rows, and footer. However, it doesn't specifically address customizing individual table cells.
+S: Ja, handledningen tar upp hur man anpassar stilar och egenskaper för hela tabellelementet, inklusive sidhuvuden, brödtextrader och sidfot. Det tar dock inte specifikt upp att anpassa individuella tabellceller.
 
-#### Q: How can I add headers, body rows, and a footer to the table element?
+#### F: Hur kan jag lägga till sidhuvuden, brödtextrader och en sidfot i tabellelementet?
 
-A: The tutorial explains how to create and add headers, body rows, and a footer to the table element using the appropriate methods provided by Aspose.PDF for .NET.
+S: Handledningen förklarar hur du skapar och lägger till rubriker, brödrader och en sidfot till tabellelementet med hjälp av lämpliga metoder som tillhandahålls av Aspose.PDF för .NET.
 
-#### Q: What is PDF/UA compliance, and how can I validate it for my tagged PDF document?
+#### F: Vad är PDF/UA-kompatibilitet och hur kan jag validera det för mitt taggade PDF-dokument?
 
-A: PDF/UA compliance ensures that the PDF document conforms to accessibility standards, making it more accessible to users with disabilities. The tutorial demonstrates how to validate PDF/UA conformity using the `Validate()` method and generate an XML compliance report.
+ S: PDF/UA-kompatibilitet säkerställer att PDF-dokumentet överensstämmer med tillgänglighetsstandarder, vilket gör det mer tillgängligt för användare med funktionshinder. Handledningen visar hur man validerar PDF/UA-överensstämmelse med hjälp av`Validate()` metod och generera en XML-efterlevnadsrapport.
 
-#### Q: How can I incorporate these concepts into my own .NET applications?
+#### F: Hur kan jag införliva dessa koncept i mina egna .NET-applikationer?
 
-A: You can use the provided C# source code examples as a guide to implementing array element formatting in your own .NET applications. Modify and adapt the code to match your requirements and integrate it into your projects.
+S: Du kan använda de medföljande C#-källkoden som en guide för att implementera formatering av arrayelement i dina egna .NET-applikationer. Ändra och anpassa koden för att matcha dina krav och integrera den i dina projekt.
 
-#### Q: Are there any recommended best practices for formatting array elements in PDF documents?
+#### F: Finns det några rekommenderade bästa metoder för att formatera matriselement i PDF-dokument?
 
-A: When formatting array elements (tables), consider the readability and accessibility of the content. Use clear and legible fonts, appropriate colors, and maintain a consistent layout. Validate PDF/UA compliance to ensure accessibility standards are met.
+S: När du formaterar arrayelement (tabeller), överväg läsbarheten och tillgängligheten för innehållet. Använd tydliga och läsbara typsnitt, lämpliga färger och bibehåll en konsekvent layout. Validera PDF/UA-efterlevnad för att säkerställa att tillgänglighetsstandarder uppfylls.
 
-#### Q: What other features of Aspose.PDF for .NET can I explore for PDF document customization?
+#### F: Vilka andra funktioner i Aspose.PDF för .NET kan jag utforska för anpassning av PDF-dokument?
 
-A: Aspose.PDF for .NET offers a range of features for PDF document customization, including text manipulation, image insertion, form field management, digital signatures, annotations, and more. Consult the official documentation and resources to explore additional functionalities.
+S: Aspose.PDF för .NET erbjuder en rad funktioner för anpassning av PDF-dokument, inklusive textmanipulering, bildinfogning, formulärfältshantering, digitala signaturer, anteckningar och mer. Se den officiella dokumentationen och resurserna för att utforska ytterligare funktioner.

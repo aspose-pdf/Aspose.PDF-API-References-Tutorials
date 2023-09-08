@@ -1,113 +1,113 @@
 ---
-title: Add Attachment In PDF File
-linktitle: Add Attachment In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add attachment in PDF file using Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: Добавить вложение в PDF-файл
+linktitle: Добавить вложение в PDF-файл
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как добавить вложение в файл PDF с помощью Aspose.PDF для .NET. Пошаговое руководство для облегчения работы.
 type: docs
 weight: 10
 url: /ru/net/programming-with-attachments/add-attachment/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to add an attachment in PDF file using Aspose.PDF for .NET.
+В этом руководстве мы шаг за шагом познакомим вас со следующим исходным кодом C#, чтобы добавить вложение в файл PDF с помощью Aspose.PDF для .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Прежде чем начать, убедитесь, что вы установили библиотеку Aspose.PDF и настроили среду разработки. Также есть базовые знания программирования на C#.
 
-### Step 1: Document Directory Setup
+### Шаг 1. Настройка каталога документов
 
-In the provided source code, you need to specify the directory where the PDF file you want to add the attachment is located. Change the "dataDir" variable to the desired directory.
+В предоставленном исходном коде вам необходимо указать каталог, в котором находится PDF-файл, к которому вы хотите добавить вложение. Измените переменную dataDir на нужный каталог.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Шаг 2. Откройте существующий PDF-документ.
 
-We open the existing PDF document using the specified path.
+Открываем существующий PDF-документ по указанному пути.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddAttachment.pdf");
 ```
 
-### Step 3: Setting up the new file to add as an attachment
+### Шаг 3. Настройка нового файла для добавления в качестве вложения.
 
-We configure the new file that we want to add as an attachment. In this example, we add a text file with the name "test.txt" and a description "Example text file".
+Мы настраиваем новый файл, который хотим добавить в качестве вложения. В этом примере мы добавляем текстовый файл с именем «test.txt» и описанием «Пример текстового файла».
 
 ```csharp
 FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
 ```
 
-### Step 4: Adding the attachment to the document's attachments collection
+### Шаг 4. Добавление вложения в коллекцию вложений документа.
 
-We add the attachment to the document's attachments collection.
+Мы добавляем вложение в коллекцию вложений документа.
 
 ```csharp
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 ```
 
-### Step 5: Saving the new output file
+### Шаг 5: Сохранение нового выходного файла
 
-Finally, we save the resulting new PDF file with the name "AddAttachment_out.pdf" in the specified directory.
+Наконец, мы сохраняем полученный новый PDF-файл с именем «AddAttachment_out.pdf» в указанном каталоге.
 
 ```csharp
 pdfDocument.Save(dataDir + "AddAttachment_out.pdf");
 ```
 
-### Sample source code for Add Attachment using Aspose.PDF for .NET
+### Пример исходного кода для добавления вложения с использованием Aspose.PDF для .NET
  
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "AddAttachment.pdf");
-// Setup new file to be added as attachment
+// Настройте новый файл для добавления в качестве вложения
 FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
-// Add attachment to document's attachment collection
+//Добавить вложение в коллекцию вложений документа
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 dataDir = dataDir + "AddAttachment_out.pdf";
-// Save new output
+// Сохранить новый вывод
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nSample text file attached successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we explained how to add an attachment to a PDF file using Aspose.PDF for .NET. You can now use this knowledge to add additional files as attachments to your PDF documents.
+В этом уроке мы объяснили, как добавить вложение в файл PDF с помощью Aspose.PDF для .NET. Теперь вы можете использовать эти знания для добавления дополнительных файлов в качестве вложений в ваши PDF-документы.
 
-### FAQ's for add attachment in PDF file
+### Часто задаваемые вопросы по добавлению вложений в PDF-файл
 
-#### Q: Why would I need to add attachments to a PDF file?
+#### Вопрос: Зачем мне добавлять вложения в PDF-файл?
 
-A: Adding attachments to a PDF file allows you to include supplementary materials, such as supporting documents, images, or files, which can provide additional context or information to the PDF's content.
+О: Добавление вложений в PDF-файл позволяет включать дополнительные материалы, такие как подтверждающие документы, изображения или файлы, которые могут предоставить дополнительный контекст или информацию к содержимому PDF-файла.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of adding attachments?
+#### Вопрос: Как Aspose.PDF для .NET упрощает процесс добавления вложений?
 
-A: Aspose.PDF for .NET provides a streamlined API that allows you to easily add attachments to PDF files. The provided source code demonstrates step-by-step how to accomplish this task.
+О: Aspose.PDF для .NET предоставляет оптимизированный API, который позволяет легко добавлять вложения к файлам PDF. Предоставленный исходный код шаг за шагом демонстрирует, как выполнить эту задачу.
 
-#### Q: What types of files can be attached to a PDF using Aspose.PDF for .NET?
+#### Вопрос: Какие типы файлов можно прикрепить к PDF-файлу с помощью Aspose.PDF for .NET?
 
-A: Aspose.PDF for .NET supports attaching various types of files, including text files, images, documents, spreadsheets, and more, as long as they are accessible from your development environment.
+О: Aspose.PDF for .NET поддерживает прикрепление различных типов файлов, включая текстовые файлы, изображения, документы, электронные таблицы и т. д., если они доступны из вашей среды разработки.
 
-#### Q: Is there a limit to the number of attachments that can be added to a PDF file?
+#### Вопрос: Существует ли ограничение на количество вложений, которые можно добавить в PDF-файл?
 
-A: There is no strict limit to the number of attachments that can be added, but it's important to consider the overall file size and potential impact on document performance.
+О: Строгого ограничения на количество добавляемых вложений не существует, но важно учитывать общий размер файла и его потенциальное влияние на производительность документа.
 
-#### Q: Can I customize the description of the attached files?
+#### Вопрос: Могу ли я настроить описание прикрепленных файлов?
 
-A: Yes, you can customize the description of each attached file. This description provides additional context for the attached file and helps users understand its purpose.
+О: Да, вы можете настроить описание каждого прикрепленного файла. Это описание предоставляет дополнительный контекст для прикрепленного файла и помогает пользователям понять его назначение.
 
-#### Q: Are there any file size considerations when adding attachments?
+#### Вопрос: Есть ли какие-либо соображения по поводу размера файла при добавлении вложений?
 
-A: While attachments can increase the overall file size of the PDF, Aspose.PDF for .NET ensures efficient attachment handling to minimize any negative impact on document performance.
+О: Хотя вложения могут увеличить общий размер PDF-файла, Aspose.PDF для .NET обеспечивает эффективную обработку вложений, чтобы минимизировать любое негативное влияние на производительность документа.
 
-#### Q: Can attachments be added to specific pages within the PDF document?
+#### Вопрос: Можно ли добавлять вложения на определенные страницы PDF-документа?
 
-A: Attachments are associated with the entire PDF document, rather than specific pages. They are accessible to users through the attachment panel in PDF viewers.
+О: Вложения связаны со всем PDF-документом, а не с отдельными страницами. Они доступны пользователям через панель вложений в программах просмотра PDF.
 
-#### Q: How can I verify that the attachment was added successfully?
+#### Вопрос: Как я могу убедиться, что вложение успешно добавлено?
 
-A: After following the provided source code, you can open the resulting PDF file to confirm that the attached file is accessible through the attachment panel.
+О: Следуя предоставленному исходному коду, вы можете открыть полученный PDF-файл, чтобы убедиться, что прикрепленный файл доступен через панель вложений.
 
-#### Q: Can I remove or update attachments after they have been added?
+#### Вопрос: Могу ли я удалить или обновить вложения после их добавления?
 
-A: Yes, you can modify or remove attachments from a PDF file using Aspose.PDF for .NET's API, giving you flexibility in managing attachments as needed.
+О: Да, вы можете изменять или удалять вложения из файла PDF с помощью API Aspose.PDF для .NET, что дает вам гибкость в управлении вложениями по мере необходимости.

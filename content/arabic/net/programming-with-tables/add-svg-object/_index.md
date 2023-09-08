@@ -1,182 +1,182 @@
 ---
-title: Add SVG Object In PDF File
-linktitle: Add SVG Object In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add SVG objects in PDF file using Aspose.PDF for .NET.
+title: إضافة كائن SVG في ملف PDF
+linktitle: إضافة كائن SVG في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: يمكنك بسهولة إضافة كائنات SVG إلى ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 30
 url: /ar/net/programming-with-tables/add-svg-object/
 ---
-In this tutorial, we will learn how to add an SVG object in PDF file using the Aspose.PDF for .NET library. SVG (Scalable Vector Graphics) is a popular format for vector graphics that can be easily scaled without losing quality. With Aspose.PDF, you can add SVG objects to your PDF documents programmatically.
+في هذا البرنامج التعليمي، سوف نتعلم كيفية إضافة كائن SVG إلى ملف PDF باستخدام مكتبة Aspose.PDF for .NET. يعد SVG (Scalable Vector Graphics) تنسيقًا شائعًا للرسومات المتجهة التي يمكن تغيير حجمها بسهولة دون فقدان الجودة. باستخدام Aspose.PDF، يمكنك إضافة كائنات SVG إلى مستندات PDF الخاصة بك برمجيًا.
 
-## Requirements
+## متطلبات
 
-Before we begin, make sure you have the following:
+قبل أن نبدأ، تأكد من أن لديك ما يلي:
 
-- Visual Studio installed
-- Aspose.PDF for .NET library installed
+- تم تثبيت Visual Studio
+- تم تثبيت Aspose.PDF لمكتبة .NET
 
-## Step 1: Set up the Environment
+## الخطوة 1: إعداد البيئة
 
-First, let's set up the environment by creating a new C# project in Visual Studio. Open Visual Studio and follow these steps:
+أولاً، لنقم بإعداد البيئة عن طريق إنشاء مشروع C# جديد في Visual Studio. افتح Visual Studio واتبع الخطوات التالية:
 
-1. Click on "File" > "New" > "Project" to create a new project.
-2. Select "Console App (.NET Framework)" or "Console App (.NET Core)" template, depending on your setup.
-3. Choose a suitable name and location for your project, then click "Create."
+1. انقر على "ملف" > "جديد" > "مشروع" لإنشاء مشروع جديد.
+2. حدد قالب "تطبيق وحدة التحكم (.NET Framework)" أو "تطبيق وحدة التحكم (.NET Core)"، وفقًا لإعدادك.
+3. اختر اسمًا وموقعًا مناسبًا لمشروعك، ثم انقر على "إنشاء".
 
-## Step 2: Create Document and Image Objects
+## الخطوة 2: إنشاء كائنات المستندات والصور
 
-In this step, we will create the necessary objects for our PDF document and SVG image. Open the C# file of your project and add the following code:
+في هذه الخطوة، سنقوم بإنشاء الكائنات الضرورية لمستند PDF وصورة SVG. افتح ملف C# الخاص بمشروعك وأضف الكود التالي:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instant Document object
+// كائن المستند الفوري
 Document doc = new Document();
-// Create an image instance
+// إنشاء مثيل الصورة
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 ```
 
-## Step 3: Set Image Properties
+## الخطوة 3: تعيين خصائص الصورة
 
-Next, we will set the properties for our SVG image. We will specify the file type as SVG, the path to the SVG file, and the dimensions of the image. Add the following code after the previous step:
+بعد ذلك، سنقوم بتعيين خصائص صورة SVG الخاصة بنا. سنحدد نوع الملف كـ SVG، والمسار إلى ملف SVG، وأبعاد الصورة. أضف الكود التالي بعد الخطوة السابقة:
 
 ```csharp
-// Set image type as SVG
+// قم بتعيين نوع الصورة كـ SVG
 img.FileType = Aspose.Pdf.ImageFileType.Svg;
-// Path for source file
+// مسار الملف المصدر
 img.File = dataDir + "SVGToPDF.svg";
-// Set width for image instance
+// ضبط العرض لمثيل الصورة
 img. FixWidth = 50;
-// Set height for image instance
+// ضبط الارتفاع لمثال الصورة
 img.FixHeight = 50;
 ```
 
-## Step 4: Create and Configure the Table
+## الخطوة 4: إنشاء الجدول وتكوينه
 
-Now, let's create a table object and set the column widths. We will create a table with two columns, each with a width of 100 units. Add the following code:
+الآن، لنقم بإنشاء كائن جدول وضبط عرض الأعمدة. سنقوم بإنشاء جدول مكون من عمودين، عرض كل منهما 100 وحدة. أضف الكود التالي:
 
 ```csharp
-// Create instance table
+// إنشاء جدول المثيلات
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Set width for table cells
+// تعيين العرض لخلايا الجدول
 table. ColumnWidths = "100 100";
 ```
 
-## Step 5: Add Cells to the Table
+## الخطوة 5: إضافة خلايا إلى الجدول
 
-In this step, we will add a row and cells to the table. Each row represents a horizontal row in the table, and cells are added to the rows. Add the following code:
+في هذه الخطوة، سنقوم بإضافة صف وخلايا إلى الجدول. يمثل كل صف صفًا أفقيًا في الجدول، وتتم إضافة الخلايا إلى الصفوف. أضف الكود التالي:
 
 ```csharp
-// Create row object and add it to table instance
+//قم بإنشاء كائن صف وإضافته إلى مثيل الجدول
 Aspose.Pdf.Row row = table.Rows.Add();
-// Create cell object and add it to row instance
+// قم بإنشاء كائن خلية وإضافته إلى مثيل الصف
 Aspose.Pdf.Cell cell = row.Cells.Add();
 ```
 
-## Step 6: Add Text and Image to Cells
+## الخطوة 6: إضافة نص وصورة إلى الخلايا
 
-Next, let's add text and the SVG image to the cells of the table. We will add the text "First cell" to the first cell and the SVG image to the second cell. Add the following code:
+بعد ذلك، دعونا نضيف نصًا وصورة SVG إلى خلايا الجدول. سنضيف النص "الخلية الأولى" إلى الخلية الأولى وصورة SVG إلى الخلية الثانية. أضف الكود التالي:
 
 ```csharp
-// Add textfragment to paragraphs collection of cell object
+// إضافة جزء نصي إلى مجموعة فقرات كائن الخلية
 cell.Paragraphs.Add(new TextFragment("First cell"));
-// Add another cell to row object
+// إضافة خلية أخرى إلى كائن الصف
 cell = row. Cells. Add();
-// Add SVG image to paragraphs collection of recently added cell instance
+// أضف صورة SVG إلى مجموعة الفقرات من مثيل الخلية المضافة مؤخرًا
 cell.Paragraphs.Add(img);
 ```
 
-## Step 7: Create and Add a Page to the Document
+## الخطوة 7: إنشاء وإضافة صفحة إلى المستند
 
-Now, let's create a page object and add it to the document. The table will be added to the paragraphs collection of the page. Add the following code:
+الآن، لنقم بإنشاء كائن صفحة وإضافته إلى المستند. سيتم إضافة الجدول إلى مجموعة الفقرات بالصفحة. أضف الكود التالي:
 
 ```csharp
-// Create page object and add it to pages collection of document instance
+// قم بإنشاء كائن صفحة وإضافته إلى مجموعة الصفحات الخاصة بمثيل المستند
 Page page = doc.Pages.Add();
-// Add table to paragraphs collection of page object
+// إضافة جدول إلى مجموعة الفقرات من كائن الصفحة
 page.Paragraphs.Add(table);
 ```
 
-## Step 8: Save the PDF File
+## الخطوة 8: احفظ ملف PDF
 
-Finally, we will save the PDF file to the specified location. Add the following code:
+وأخيرا، سوف نقوم بحفظ ملف PDF في الموقع المحدد. أضف الكود التالي:
 
 ```csharp
 dataDir = dataDir + "AddSVGObject_out.pdf";
-// Save PDF file
+// حفظ ملف PDF
 doc.Save(dataDir);
 
 Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile saved at " + dataDir);
 ```
 
-### Example source code for add SVG object using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لإضافة كائن SVG باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document object
+// إنشاء مثيل لكائن المستند
 Document doc = new Document();
-// Create an image instance
+// إنشاء مثيل الصورة
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
-// Set image type as SVG
+// قم بتعيين نوع الصورة كـ SVG
 img.FileType = Aspose.Pdf.ImageFileType.Svg;
-// Path for source file
+// مسار الملف المصدر
 img.File = dataDir + "SVGToPDF.svg";
-// Set width for image instance
+// ضبط العرض لمثيل الصورة
 img.FixWidth = 50;
-// Set height for image instance
+// ضبط الارتفاع لمثال الصورة
 img.FixHeight = 50;
-// Create table instance
+// إنشاء مثيل الجدول
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Set width for table cells
+// تعيين العرض لخلايا الجدول
 table.ColumnWidths = "100 100";
-// Create row object and add it to table instance
+//قم بإنشاء كائن صف وإضافته إلى مثيل الجدول
 Aspose.Pdf.Row row = table.Rows.Add();
-// Create cell object and add it to row instance
+// قم بإنشاء كائن خلية وإضافته إلى مثيل الصف
 Aspose.Pdf.Cell cell = row.Cells.Add();
-// Add textfragment to paragraphs collection of cell object
+// إضافة جزء نصي إلى مجموعة فقرات كائن الخلية
 cell.Paragraphs.Add(new TextFragment("First cell"));
-// Add another cell to row object
+// إضافة خلية أخرى إلى كائن الصف
 cell = row.Cells.Add();
-// Add SVG image to paragraphs collection of recently added cell instance
+// أضف صورة SVG إلى مجموعة الفقرات من مثيل الخلية المضافة مؤخرًا
 cell.Paragraphs.Add(img);
-// Create page object and add it to pages collection of document instance
+// قم بإنشاء كائن صفحة وإضافته إلى مجموعة الصفحات الخاصة بمثيل المستند
 Page page = doc.Pages.Add();
-// Add table to paragraphs collection of page object
+// إضافة جدول إلى مجموعة الفقرات من كائن الصفحة
 page.Paragraphs.Add(table);
 
 dataDir = dataDir + "AddSVGObject_out.pdf";
-// Save PDF file
+// حفظ ملف PDF
 doc.Save(dataDir);
 
 Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile saved at " + dataDir);            
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we have learned how to add an SVG object to a PDF file using the Aspose.PDF for .NET library. We covered the step-by-step process of creating a document, setting up the environment, adding an SVG image to a table cell, and saving the PDF file. Now you can incorporate SVG objects into your PDF documents programmatically.
+في هذا البرنامج التعليمي، تعلمنا كيفية إضافة كائن SVG إلى ملف PDF باستخدام مكتبة Aspose.PDF for .NET. لقد قمنا بتغطية العملية خطوة بخطوة لإنشاء مستند، وإعداد البيئة، وإضافة صورة SVG إلى خلية جدول، وحفظ ملف PDF. يمكنك الآن دمج كائنات SVG في مستندات PDF الخاصة بك برمجيًا.
 
-### FAQ's for add SVG object in PDF file
+### الأسئلة الشائعة لإضافة كائن SVG في ملف PDF
 
-#### Q: Can I add multiple SVG objects to the PDF document?
+#### س: هل يمكنني إضافة كائنات SVG متعددة إلى مستند PDF؟
 
-A: Yes, you can add multiple SVG objects to the PDF document. Simply create and configure additional `Aspose.Pdf.Image` instances for each SVG image you want to add and then add them to the desired table cells or paragraphs in the PDF document.
+ ج: نعم، يمكنك إضافة كائنات SVG متعددة إلى مستند PDF. ما عليك سوى إنشاء وتكوين المزيد`Aspose.Pdf.Image` مثيلات لكل صورة SVG تريد إضافتها ثم قم بإضافتها إلى خلايا أو فقرات الجدول المطلوبة في مستند PDF.
 
-#### Q: How can I adjust the size and position of the SVG image in the table cell?
+#### س: كيف يمكنني ضبط حجم وموضع صورة SVG في خلية الجدول؟
 
-A: To adjust the size and position of the SVG image in the table cell, you can modify the `FixWidth` and `FixHeight` properties of the `Aspose.Pdf.Image` instance. You can also use other properties like `HorizontalAlignment` and `VerticalAlignment` of the table cell to control the positioning.
+ ج: لضبط حجم وموضع صورة SVG في خلية الجدول، يمكنك تعديل`FixWidth` و`FixHeight` خصائص`Aspose.Pdf.Image`مثال. يمكنك أيضًا استخدام خصائص أخرى مثل`HorizontalAlignment` و`VerticalAlignment` من خلية الجدول للتحكم في تحديد المواقع.
 
-#### Q: Is it possible to add text alongside the SVG image in the same table cell?
+#### س: هل من الممكن إضافة نص إلى جانب صورة SVG في نفس خلية الجدول؟
 
-A: Yes, it is possible to add text alongside the SVG image in the same table cell. You can use the `cell.Paragraphs.Add(new TextFragment("Your Text Here"));` method to add text to the cell along with the SVG image.
+ ج: نعم، من الممكن إضافة نص بجانب صورة SVG في نفس خلية الجدول. يمكنك استخدام ال`cell.Paragraphs.Add(new TextFragment("Your Text Here"));` طريقة لإضافة نص إلى الخلية مع صورة SVG.
 
-#### Q: Can I add hyperlinks to the SVG image?
+#### س: هل يمكنني إضافة ارتباطات تشعبية إلى صورة SVG؟
 
-A: Yes, you can add hyperlinks to the SVG image by using the `Hyperlink` property of the `Aspose.Pdf.Image` instance. Set the hyperlink URL or action to make the image clickable.
+ ج: نعم، يمكنك إضافة ارتباطات تشعبية إلى صورة SVG باستخدام`Hyperlink` ملكية`Aspose.Pdf.Image` مثال. قم بتعيين عنوان URL للارتباط التشعبي أو الإجراء لجعل الصورة قابلة للنقر عليها.
 
-#### Q: Is Aspose.PDF for .NET compatible with .NET Core 3.1 or later versions?
+#### س: هل يتوافق Aspose.PDF for .NET مع .NET Core 3.1 أو الإصدارات الأحدث؟
 
-A: Yes, Aspose.PDF for .NET is compatible with .NET Core 3.1 and later versions. You can use it in both .NET Framework and .NET Core applications.
+ج: نعم، Aspose.PDF for .NET متوافق مع .NET Core 3.1 والإصدارات الأحدث. يمكنك استخدامه في كل من تطبيقات .NET Framework و.NET Core.

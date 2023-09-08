@@ -1,87 +1,87 @@
 ---
-title: Set Border In PDF To Table
-linktitle: Set Border In PDF To Table
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set a border in PDF to table with Aspose.PDF for .NET.
+title: 将 PDF 中的边框设置为表格
+linktitle: 将 PDF 中的边框设置为表格
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 将 PDF 中的边框设置为表格。
 type: docs
 weight: 200
 url: /zh/net/programming-with-tables/set-border/
 ---
-In this tutorial, we will guide you step by step to set a border in a table of a PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+在本教程中，我们将逐步指导您使用 Aspose.PDF for .NET 在 PDF 文档的表格中设置边框。我们将解释提供的 C# 源代码并向您展示如何实现它。
 
-## Step 1: Instantiating the Document object
-First, we'll instantiate a Document object:
+## 第 1 步：实例化 Document 对象
+首先，我们将实例化一个 Document 对象：
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 2: Adding a page to the PDF document
-Next, we'll add a page to the PDF document:
+## 步骤 2：向 PDF 文档添加页面
+接下来，我们将向 PDF 文档添加页面：
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Creating the BorderInfo object
-We will now create a BorderInfo object to define the border of the table:
+## 第 3 步：创建 BorderInfo 对象
+我们现在将创建一个 BorderInfo 对象来定义表格的边框：
 
 ```csharp
 Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
 ```
 
-## Step 4: Specifying top and bottom borders
-We'll specify that the top and bottom borders will be double:
+## 步骤 4：指定顶部和底部边框
+我们将指定顶部和底部边框为双边框：
 
 ```csharp
 border.Top.IsDoubled = true;
 border.Bottom.IsDoubled = true;
 ```
 
-## Step 5: Instantiating the Table object
-Now let's instantiate a Table object:
+## 第 5 步：实例化 Table 对象
+现在让我们实例化一个 Table 对象：
 
 ```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 ```
 
-## Step 6: Specifying column widths
-We will specify the widths of the columns of the table:
+## 步骤 6：指定列宽
+我们将指定表格列的宽度：
 
 ```csharp
 table. ColumnWidths = "100";
 ```
 
-## Step 7: Creating the Row Object
-We will create a Row object:
+## 第 7 步：创建行对象
+我们将创建一个 Row 对象：
 
 ```csharp
 Aspose.Pdf.Row row = table.Rows.Add();
 ```
 
-## Step 8: Adding a cell to the row
-Next, we'll add a cell to the row:
+## 步骤 8：将单元格添加到行中
+接下来，我们将向该行添加一个单元格：
 
 ```csharp
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
 ```
 
-## Step 9: Setting the cell border
-We are going to define the border of the cell (double border):
+## 第9步：设置单元格边框
+我们将定义单元格的边框（双边框）：
 
 ```csharp
 cell. Border = border;
 ```
 
-## Step 10: Adding the table to the page
-Now let's add the table to the document page:
+## 第10步：将表格添加到页面
+现在让我们将表格添加到文档页面：
 
 ```csharp
 page.Paragraphs.Add(table);
 ```
 
-## Step 11: Save PDF document
-Finally, we will save the PDF document:
+## 第11步：保存PDF文档
+最后，我们保存PDF文档：
 
 ```csharp
 dataDir = dataDir + "TableBorderTest_out.pdf";
@@ -90,62 +90,62 @@ doc.Save(dataDir);
 Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Example source code for Set Border using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 设置边框的示例源代码
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document object
+//实例化文档对象
 Document doc = new Document();
-// Add page to PDF document
+//将页面添加到 PDF 文档
 Page page = doc.Pages.Add();
-// Create BorderInfo object
+//创建BorderInfo对象
 Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
-// Specify that Top border will be double
+//指定顶部边框为双边框
 border.Top.IsDoubled = true;
-// Specify that bottom border will be double
+//指定底部边框为双边框
 border.Bottom.IsDoubled = true;
-// Instantiate Table object
+//实例化表对象
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Specify Columns width information
+//指定列宽信息
 table.ColumnWidths = "100";
-// Create Row object
+//创建行对象
 Aspose.Pdf.Row row = table.Rows.Add();
-// Add a Table cell to cells collection of row
+//将表格单元格添加到行的单元格集合中
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
-// Set the border for cell object (double border)
+//设置单元格对象的边框（双边框）
 cell.Border = border;
-// Add table to paragraphs collection of Page
+//将表格添加到页面的段落集合中
 page.Paragraphs.Add(table);
 dataDir = dataDir + "TableBorderTest_out.pdf";
-// Save the PDF document
+//保存 PDF 文档
 doc.Save(dataDir);
 
 Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to set a border in a table of a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to create a document, add a page, configure the table border, and save the PDF document. Now you can apply this knowledge to your own projects.
+## 结论
+恭喜！您现在已经了解了如何使用 Aspose.PDF for .NET 在 PDF 文档的表格中设置边框。本分步指南向您展示了如何创建文档、添加页面、配置表格边框以及保存 PDF 文档。现在您可以将这些知识应用到您自己的项目中。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: Can I set different border styles (e.g., dashed or dotted) for the table's top and bottom borders?
+#### 问：我可以为表格的顶部和底部边框设置不同的边框样式（例如虚线或点线）吗？
 
-A: Yes, you can set different border styles for the table's top and bottom borders by modifying the `border.Top.Style` and `border.Bottom.Style` properties in the provided C# source code. Aspose.PDF for .NET allows you to choose from various border styles, including Solid, Dashed, Dotted, Double, and more.
+ A：是的，您可以通过修改表格的上下边框设置不同的边框样式`border.Top.Style`和`border.Bottom.Style`提供的 C# 源代码中的属性。 Aspose.PDF for .NET 允许您选择各种边框样式，包括实线、虚线、点线、双线等。
 
-#### Q: How can I set the color of the table's border?
+#### 问：如何设置表格边框的颜色？
 
-A: You can set the color of the table's border by modifying the `border.Color` property in the C# source code. Simply provide the desired color, such as `Aspose.Pdf.Color.Red` or any other valid color representation, to customize the border color.
+ A：可以通过修改表格边框的颜色来设置`border.Color`C# 源代码中的属性。只需提供所需的颜色，例如`Aspose.Pdf.Color.Red`或任何其他有效的颜色表示，以自定义边框颜色。
 
-#### Q: Is it possible to apply borders to individual cells within the table with different settings (e.g., different colors or border styles)?
+#### 问：是否可以将边框应用到具有不同设置（例如，不同颜色或边框样式）的表格内的各个单元格？
 
-A: Yes, you can apply borders to individual cells within the table with different settings by configuring the `cell.Border` property for each cell individually. This allows you to have cell-specific border styles and colors based on your requirements.
+答：是的，您可以通过配置`cell.Border`每个单元格的属性。这允许您根据您的要求拥有特定于单元格的边框样式和颜色。
 
-#### Q: Can I remove the border from specific sides of the table (e.g., left and right borders)?
+#### 问：我可以删除表格特定两侧的边框（例如，左边框和右边框）吗？
 
-A: Yes, you can remove the border from specific sides of the table by modifying the `border.Left`, `border.Right`, `border.Top`, and `border.Bottom` properties in the C# source code. Setting these properties to `null` will remove the border from the corresponding sides of the table.
+答：是的，您可以通过修改`border.Left`, `border.Right`, `border.Top`， 和`border.Bottom`C# 源代码中的属性。将这些属性设置为`null`将删除表格相应边的边框。
 
-#### Q: How can I adjust the thickness of the table's border?
+#### 问：如何调整表格边框的粗细？
 
-A: You can adjust the thickness of the table's border by modifying the `border.Width` property in the C# source code. Simply set the desired border width (in points) to achieve the desired thickness.
+ A：可以通过修改表格边框的粗细来调整`border.Width`C# 源代码中的属性。只需设置所需的边框宽度（以磅为单位）即可达到所需的厚度。

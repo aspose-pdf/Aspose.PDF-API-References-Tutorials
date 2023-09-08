@@ -1,129 +1,129 @@
 ---
-title: Image and Page Number in Header Footer Section Inline
-linktitle: Image and Page Number in Header Footer Section Inline
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add image and page number in header and footer using inline paragraphs with Aspose.PDF for .NET.
+title: 页眉页脚部分内嵌的图像和页码
+linktitle: 页眉页脚部分内嵌的图像和页码
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 的内联段落在页眉和页脚中添加图像和页码。
 type: docs
 weight: 120
 url: /zh/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section-inline/
 ---
-In this tutorial, we will guide you step by step on how to add image and page number in header and footer section of PDF document using Aspose.PDF for .NET. We will use the provided C# source code to create a page, set header and footer, add image and text using inline paragraphs in the header of the PDF document.
+在本教程中，我们将逐步指导您如何使用 Aspose.PDF for .NET 在 PDF 文档的页眉和页脚部分添加图像和页码。我们将使用提供的 C# 源代码创建页面、设置页眉和页脚、使用 PDF 文档页眉中的内联段落添加图像和文本。
 
-## Step 1: Setting up the environment
+## 第一步：搭建环境
 
-Before you begin, make sure you have the following:
+在开始之前，请确保您具备以下条件：
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- 已安装的 .NET 开发环境。
+- 下载用于 .NET 的 Aspose.PDF 库并在您的项目中引用。
 
-## Step 2: Creating the PDF Document and Page
+## 第 2 步：创建 PDF 文档和页面
 
-The first step is to create a new Document object and a page in the PDF document. Here's how:
+第一步是在 PDF 文档中创建一个新的 Document 对象和一个页面。就是这样：
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a new Document object
+//创建一个新的文档对象
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 
-// Create a page in the document
+//在文档中创建页面
 Aspose.Pdf.Page page = pdf1.Pages.Add();
 ```
 
-The code above creates a new Document object and an empty page in the PDF document.
+上面的代码在 PDF 文档中创建一个新的 Document 对象和一个空页面。
 
-## Step 3: Adding the header with an image and inline text
+## 步骤 3：添加带有图像和内嵌文本的标题
 
-Now that the page is created, we can add a header section with an image and text using inline paragraphs. Here's how:
+现在页面已创建，我们可以使用内联段落添加带有图像和文本的标题部分。就是这样：
 
 ```csharp
-// Create a header section
+//创建标题部分
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the page header
+//设置页眉
 page. Header = header;
 
-// Create a TextFragment object for the first inline text
+//为第一个内联文本创建 TextFragment 对象
 Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf is a robust component developed by");
 
-// Specify text color
+//指定文本颜色
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
 
-// Create an Image object for the image
+//为图像创建一个 Image 对象
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set image path
+//设置图片路径
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Define the dimensions of the image
+//定义图像的尺寸
 image1.FixWidth = 50;
 image1.FixHeight = 20;
 
-// Indicate that the first inline text is an image
+//指示第一个内嵌文本是图像
 image1.IsInLineParagraph = true;
 
-// Create a second inline text
+//创建第二个内嵌文本
 Aspose.Pdf.Text.TextFragment txt2 = new Aspose.Pdf.Text.TextFragment(" Pty Ltd.");
 txt2.IsInLineParagraph = true;
 txt2.TextState.ForegroundColor = Color.Maroon;
 
-// Add items to header
+//将项目添加到标题
 header.Paragraphs.Add(txt1);
 header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
 ```
 
-The code above creates a header section, sets the page header with this section, adds a TextFragment with inline text and an inline Image object.
+上面的代码创建一个标题部分，使用此部分设置页面标题，添加一个带有内联文本和内联图像对象的 TextFragment。
 
-## Step 4: Saving the modified PDF document
+## 第四步：保存修改后的PDF文档
 
-Once the header with the image and inline text is added, we can save the modified PDF document. Here's how:
+添加带有图像和内嵌文本的标题后，我们可以保存修改后的 PDF 文档。就是这样：
 
 ```csharp
-// Save the modified PDF document
+//保存修改后的PDF文档
 pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+上述代码将编辑后的PDF文档保存到指定目录。
 
-### Sample source code for Imageand Page Numberin Header Footersection Inline using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 在页眉页脚部分内联中的图像和页码示例源代码 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate a Document object by calling its empty constructor
+//通过调用其空构造函数来实例化 Document 对象
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 
-// Create a page in the Pdf object
+//在 Pdf 对象中创建页面
 Aspose.Pdf.Page page = pdf1.Pages.Add();
 
-// Create Header Section of the document
+//创建文档的标题部分
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the header for the PDF file
+//设置 PDF 文件的标题
 page.Header = header;
 
-// Create a Text object
+//创建文本对象
 Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf is a Robust component by");
 
-// Specify the color
+//指定颜色
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
 
-// Create an image object in the section
+//在该部分中创建图像对象
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set the path of image file
+//设置图片文件路径
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Set the image width Information
+//设置图像宽度信息
 image1.FixWidth = 50;
 image1.FixHeight = 20;
 
-// Indicate seg1's InlineParagraph is a image.
+//指示 seg1 的 InlineParagraph 是图像。
 image1.IsInLineParagraph = true;
 Aspose.Pdf.Text.TextFragment txt2 = new Aspose.Pdf.Text.TextFragment(" Pty Ltd.");
 txt2.IsInLineParagraph = true;
@@ -132,53 +132,53 @@ header.Paragraphs.Add(txt1);
 header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
 
-// Save the Pdf
+//保存 PDF
 pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.pdf");
 
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have learned how to add an image and page number in the header and footer section of a PDF document using inline paragraphs with Aspose.PDF for .NET. You can now customize the header and footer of your PDF documents flexibly.
+恭喜！您已经了解了如何使用 Aspose.PDF for .NET 的内联段落在 PDF 文档的页眉和页脚部分添加图像和页码。您现在可以灵活自定义 PDF 文档的页眉和页脚。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the advantage of using inline paragraphs for adding an image and text to the header of a PDF document?
+#### 问：使用内联段落将图像和文本添加到 PDF 文档的页眉有什么优势？
 
-A: Using inline paragraphs allows you to seamlessly integrate images and text within the same paragraph, providing precise control over their placement and formatting. This method is especially useful for creating customized headers with visual elements.
+答：使用内联段落可以让您将图像和文本无缝集成在同一段落中，从而精确控制它们的位置和格式。此方法对于创建具有视觉元素的自定义标题特别有用。
 
-#### Q: How does the provided C# source code achieve inline paragraphs for the header in a PDF document?
+#### 问：提供的C#源代码如何实现PDF文档中标题的内联段落？
 
-A: The provided code demonstrates how to create a PDF document, add a page, and customize the header using inline paragraphs. It adds a TextFragment with inline text, an inline image, and another inline TextFragment.
+答：提供的代码演示了如何创建 PDF 文档、添加页面以及使用内联段落自定义页眉。它添加一个带有内联文本的 TextFragment、一个内联图像和另一个内联 TextFragment。
 
-#### Q: How do I specify the color of the inline text in the header?
+#### 问：如何指定页眉内嵌文本的颜色？
 
-A: The color of the inline text is specified using the `ForegroundColor` property of the `TextState` of the `TextFragment` object.
+答：内联文本的颜色是使用`ForegroundColor`的财产`TextState`的`TextFragment`目的。
 
-#### Q: Can I adjust the dimensions of the inline image in the header?
+#### 问：我可以调整页眉内嵌图像的尺寸吗？
 
-A: Yes, you can adjust the dimensions of the inline image using the `FixWidth` and `FixHeight` properties of the `Image` object. This allows you to control the width and height of the image within the header.
+答：是的，您可以使用`FixWidth`和`FixHeight`的属性`Image`目的。这允许您控制标题内图像的宽度和高度。
 
-#### Q: Can I include additional inline elements, such as hyperlinks or different font styles, in the header?
+#### 问：我可以在标题中包含其他内联元素，例如超链接或不同的字体样式吗？
 
-A: Yes, you can include additional inline elements in the header by creating more `TextFragment` or `Image` objects with the desired properties. This allows you to customize the header further, including hyperlinks, different font styles, or other visual elements.
+答：是的，您可以通过创建更多内容在标题中包含其他内联元素`TextFragment`或者`Image`具有所需属性的对象。这允许您进一步自定义标题，包括超链接、不同的字体样式或其他视觉元素。
 
-#### Q: How can I ensure that the inline image and text remain properly aligned and formatted across different devices and viewers?
+#### 问：如何确保内嵌图像和文本在不同设备和查看器中保持正确对齐和格式？
 
-A: Aspose.PDF for .NET ensures that inline images and text are properly aligned and formatted, resulting in consistent appearance across different devices and PDF viewers.
+答：Aspose.PDF for .NET 可确保内联图像和文本正确对齐和格式化，从而在不同设备和 PDF 查看器中获得一致的外观。
 
-#### Q: Can I apply inline paragraphs to the footer section as well?
+#### 问：我可以将内联段落也应用到页脚部分吗？
 
-A: Yes, you can apply the same technique of using inline paragraphs to the footer section by creating a `Footer` object and adding inline elements such as text and images to it.
+答：是的，您可以通过创建一个`Footer`对象并向其添加内联元素（例如文本和图像）。
 
-#### Q: Is it possible to combine inline paragraphs with other header or footer customization methods?
+#### 问：是否可以将内联段落与其他页眉或页脚自定义方法结合起来？
 
-A: Yes, you can combine inline paragraphs with other header or footer customization methods provided by Aspose.PDF for .NET to create more complex and tailored header or footer designs.
+答：是的，您可以将内联段落与 Aspose.PDF for .NET 提供的其他页眉或页脚自定义方法结合起来，以创建更复杂和定制的页眉或页脚设计。
 
-#### Q: Can I remove or clear the inline elements from the header if needed?
+#### 问：如果需要，我可以从标题中删除或清除内联元素吗？
 
-A: Yes, you can remove or clear the inline elements by modifying the contents of the `HeaderFooter` object and removing the respective inline paragraphs.
+ A：是的，可以通过修改内容来移除或清除内联元素`HeaderFooter`对象并删除相应的内联段落。
 
-#### Q: How can I apply inline paragraphs to specific pages of the PDF document?
+#### 问：如何将内嵌段落应用于 PDF 文档的特定页面？
 
-A: To apply inline paragraphs to specific pages, you can create separate `HeaderFooter` objects for each page and assign them using the `Header` property of the respective `Aspose.Pdf.Page` objects.
+答：要将内联段落应用于特定页面，您可以创建单独的段落`HeaderFooter`每个页面的对象并使用`Header`各自的财产`Aspose.Pdf.Page`对象。

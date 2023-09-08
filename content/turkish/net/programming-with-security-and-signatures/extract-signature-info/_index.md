@@ -1,45 +1,45 @@
 ---
-title: Extract Signature Info
-linktitle: Extract Signature Info
-second_title: Aspose.PDF for .NET API Reference
-description: Extracting signature information using Aspose.PDF for .NET.
+title: İmza Bilgilerini Çıkarın
+linktitle: İmza Bilgilerini Çıkarın
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak imza bilgilerini çıkarma.
 type: docs
 weight: 80
 url: /tr/net/programming-with-security-and-signatures/extract-signature-info/
 ---
-The process of extracting signature information from a PDF document can be quite useful in various scenarios. Whether you need to validate the authenticity of a signed document or analyze the certificate used for the signature, the Aspose.PDF for .NET library provides a convenient solution. In this tutorial, we will guide you through the step-by-step process of extracting signature information using the C# source code provided.
+Bir PDF belgesinden imza bilgilerinin çıkarılması işlemi, çeşitli senaryolarda oldukça faydalı olabilir. İmzalı bir belgenin gerçekliğini doğrulamanız veya imza için kullanılan sertifikayı analiz etmeniz gerekiyorsa Aspose.PDF for .NET kütüphanesi uygun bir çözüm sunar. Bu öğreticide, sağlanan C# kaynak kodunu kullanarak imza bilgilerinin çıkarılmasına ilişkin adım adım süreçte size rehberlik edeceğiz.
 
-## Requirements
+## Gereksinimler
 
-Before we begin, make sure you have the following prerequisites in place:
+Başlamadan önce aşağıdaki önkoşulların mevcut olduğundan emin olun:
 
-1. Basic knowledge of C# programming language.
-2. Aspose.PDF for .NET library installed on your system.
-3. A valid PDF document with one or more signature fields.
+1. Temel C# programlama dili bilgisi.
+2. Aspose.PDF for .NET kütüphanesi sisteminizde kuruludur.
+3. Bir veya daha fazla imza alanına sahip geçerli bir PDF belgesi.
 
-Now, let's dive into the implementation details.
+Şimdi uygulama detaylarına geçelim.
 
-## Step 1: Importing the Required Libraries
+## 1. Adım: Gerekli Kitaplıkları İçe Aktarma
 
-To get started, you need to import the necessary libraries into your C# project. In this case, we need to import the `Aspose.Pdf` and `System.IO` namespaces. This can be done by adding the following code at the beginning of your C# file:
+ Başlamak için gerekli kitaplıkları C# projenize aktarmanız gerekir. Bu durumda import etmemiz gerekiyor.`Aspose.Pdf` Ve`System.IO` ad alanları. Bu, C# dosyanızın başına aşağıdaki kodu ekleyerek yapılabilir:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-## Step 2: Setting the Document Path
+## Adım 2: Belge Yolunu Ayarlama
 
-Next, you need to set the path to the PDF document you want to extract the signature information from. Replace `"YOUR DOCUMENTS DIRECTORY"` in the following code snippet with the actual path to your document:
+Daha sonra imza bilgilerini çıkarmak istediğiniz PDF belgesinin yolunu ayarlamanız gerekir. Yer değiştirmek`"YOUR DOCUMENTS DIRECTORY"` belgenizin gerçek yolunu içeren aşağıdaki kod parçacığında:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 string input = dataDir + "ExtractSignatureInfo.pdf";
 ```
 
-## Step 3: Extracting Signature Information
+## Adım 3: İmza Bilgilerinin Çıkarılması
 
-Now, let's move on to the main part of the code where we extract the signature information from the PDF document. We iterate through each field in the document's form and check if it is a signature field. If a signature field is found, we proceed with extracting the certificate. Add the following code snippet:
+Şimdi kodun PDF belgesinden imza bilgilerini çıkaracağımız ana kısmına geçelim. Belge formundaki her alanı yineliyoruz ve bunun bir imza alanı olup olmadığını kontrol ediyoruz. İmza alanı bulunursa sertifikayı çıkarmaya devam ederiz. Aşağıdaki kod parçacığını ekleyin:
 
 ```csharp
 using (Document pdfDocument = new Document(input))
@@ -49,7 +49,7 @@ using (Document pdfDocument = new Document(input))
          SignatureField sf = field as SignatureField;
          if (sf != null)
          {
-             // Extract the certificate
+             // Sertifikayı çıkarın
              Stream cerStream = sf.ExtractCertificate();
              if (cerStream != null)
              {
@@ -68,9 +68,9 @@ using (Document pdfDocument = new Document(input))
 }
 ```
 
-## Step 4: Extracting the Certificate
+## Adım 4: Sertifikanın Çıkarılması
 
-In this step, we extract the certificate from the signature field and save it as a file. The extracted certificate can be further analyzed or used for validation purposes. The code snippet below demonstrates the extraction and saving process:
+Bu adımda sertifikayı imza alanından çıkartıp dosya olarak kaydediyoruz. Çıkarılan sertifika daha fazla analiz edilebilir veya doğrulama amacıyla kullanılabilir. Aşağıdaki kod parçacığı, çıkarma ve kaydetme işlemini gösterir:
 
 ```csharp
 Stream cerStream = sf.ExtractCertificate();
@@ -88,11 +88,11 @@ if (cerStream != null)
 }
 ```
 
-## Step 5
+## Adım 5
 
-: Saving the Certificate
+: Sertifikanın Kaydedilmesi
 
-Finally, we save the extracted certificate as a file. In this example, the certificate is saved with the name "input.cer" in the specified directory. You can modify the code to suit your requirements. Here's the code snippet for saving the certificate:
+Son olarak çıkarttığımız sertifikayı dosya olarak kaydediyoruz. Bu örnekte sertifika, belirtilen dizine "input.cer" adıyla kaydedilir. Kodu gereksinimlerinize uyacak şekilde değiştirebilirsiniz. Sertifikayı kaydetmeye yönelik kod pasajı aşağıda verilmiştir:
 
 ```csharp
 using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
@@ -101,13 +101,13 @@ using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew
 }
 ```
 
-That's it! You have successfully extracted signature information using Aspose.PDF for .NET. Feel free to integrate this code into your own applications or modify it according to your needs.
+Bu kadar! Aspose.PDF for .NET'i kullanarak imza bilgilerini başarıyla çıkardınız. Bu kodu kendi uygulamalarınıza entegre etmekten veya ihtiyaçlarınıza göre değiştirmekten çekinmeyin.
 
-### Sample source code for Extract Signature Info using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak İmza Bilgilerini Çıkarma için örnek kaynak kodu 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Belgeler dizininin yolu.
 	string dataDir = "YOUR DOCUMENTS DIRECTORY";
 	string input = dataDir + "ExtractSignatureInfo.pdf";
 	using (Document pdfDocument = new Document(input))
@@ -140,72 +140,72 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we walked through a step-by-step guide on how to extract signature information from a PDF document using the Aspose.PDF for .NET library. We covered the process of importing the required libraries, setting the document path, extracting signature information, extracting the certificate, and saving it to a file. By following these steps, you can easily retrieve signature details and work with them as needed.
+Bu eğitimde, Aspose.PDF for .NET kitaplığını kullanarak bir PDF belgesinden imza bilgilerinin nasıl çıkarılacağına ilişkin adım adım kılavuzu inceledik. Gerekli kitaplıkların içe aktarılması, belge yolunun ayarlanması, imza bilgilerinin çıkarılması, sertifikanın çıkarılması ve bir dosyaya kaydedilmesi sürecini ele aldık. Bu adımları izleyerek imza ayrıntılarını kolayca alabilir ve gerektiğinde onlarla çalışabilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: Why would I need to extract signature information from a PDF document?
+#### S: Neden bir PDF belgesinden imza bilgilerini çıkarmam gerekiyor?
 
-A: Extracting signature information from a PDF document is useful for validating the authenticity of a signed document and analyzing the certificate used for the signature. This process helps ensure the integrity of the signed content and can be essential for legal and security purposes.
+C: Bir PDF belgesinden imza bilgilerinin çıkarılması, imzalı bir belgenin orijinalliğini doğrulamak ve imza için kullanılan sertifikayı analiz etmek için kullanışlıdır. Bu süreç, imzalanan içeriğin bütünlüğünün sağlanmasına yardımcı olur ve yasal ve güvenlik açısından gerekli olabilir.
 
-#### Q: What is Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET nedir?
 
-A: Aspose.PDF for .NET is a library that enables developers to work with PDF documents in .NET applications. It provides a wide range of features for creating, modifying, and interacting with PDF files programmatically.
+C: Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarında PDF belgeleriyle çalışmasına olanak tanıyan bir kitaplıktır. PDF dosyalarını programlı olarak oluşturmak, değiştirmek ve bunlarla etkileşimde bulunmak için çok çeşitli özellikler sağlar.
 
-#### Q: What are the prerequisites for extracting signature information using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak imza bilgilerini çıkarmanın önkoşulları nelerdir?
 
-A: To extract signature information, you need a basic knowledge of the C# programming language, the Aspose.PDF for .NET library installed on your system, and a valid PDF document containing one or more signature fields.
+C: İmza bilgilerini çıkarmak için temel C# programlama dili bilgisine, sisteminizde kurulu Aspose.PDF for .NET kitaplığına ve bir veya daha fazla imza alanı içeren geçerli bir PDF belgesine ihtiyacınız vardır.
 
-#### Q: How do I import the required libraries for the extraction process?
+#### S: Çıkarma işlemi için gerekli kitaplıkları nasıl içe aktarabilirim?
 
-A: You can import the necessary libraries by adding the `using` directives for `Aspose.Pdf` and `System.IO` at the beginning of your C# file. These directives enable you to use the classes and methods required for extracting signature information.
+C: Gerekli kütüphaneleri ekleyerek içe aktarabilirsiniz.`using` için direktifler`Aspose.Pdf` Ve`System.IO` C# dosyanızın başında. Bu yönergeler imza bilgilerini çıkarmak için gereken sınıfları ve yöntemleri kullanmanızı sağlar.
 
-#### Q: How do I specify the PDF document for extracting signature information?
+#### S: İmza bilgilerinin çıkarılması için PDF belgesini nasıl belirlerim?
 
-A: You can set the path to the PDF document by replacing `"YOUR DOCUMENTS DIRECTORY"` with the actual path to your document in the code snippet provided. This path is used to load the PDF document that you want to extract signature information from.
+ C: PDF belgesinin yolunu değiştirerek ayarlayabilirsiniz.`"YOUR DOCUMENTS DIRECTORY"` sağlanan kod pasajında belgenizin gerçek yolunu belirtin. Bu yol, imza bilgilerini çıkarmak istediğiniz PDF belgesini yüklemek için kullanılır.
 
-#### Q: What is the process of extracting signature information from a PDF document?
+#### S: Bir PDF belgesinden imza bilgilerinin çıkarılması süreci nedir?
 
-A: The extraction process involves iterating through the form fields of the PDF document, checking if each field is a signature field, and if so, extracting the associated certificate. The extracted certificate can be saved as a file for further analysis or validation.
+C: Çıkarma işlemi, PDF belgesinin form alanlarının yinelenmesini, her alanın bir imza alanı olup olmadığının kontrol edilmesini ve öyleyse ilgili sertifikanın çıkarılmasını içerir. Çıkarılan sertifika daha fazla analiz veya doğrulama için dosya olarak kaydedilebilir.
 
-#### Q: How is the certificate extracted from a signature field?
+#### S: Sertifika imza alanından nasıl çıkarılır?
 
-A: The certificate is extracted from a signature field using the `ExtractCertificate()` method provided by the `SignatureField` class in Aspose.PDF for .NET. This method returns a stream containing the certificate data.
+C: Sertifika, imza alanından çıkarılır.`ExtractCertificate()` tarafından sağlanan yöntem`SignatureField` Aspose.PDF for .NET'teki sınıf. Bu yöntem, sertifika verilerini içeren bir akış döndürür.
 
-#### Q: How do I save the extracted certificate as a file?
+#### S: Çıkarılan sertifikayı dosya olarak nasıl kaydederim?
 
-A: You can save the extracted certificate as a file by reading the certificate stream and writing its contents to a file using the `FileStream` class. The code provided in the tutorial demonstrates this process.
+ C: Çıkarılan sertifikayı, sertifika akışını okuyup içeriğini bir dosyaya yazarak dosya olarak kaydedebilirsiniz.`FileStream` sınıf. Öğreticide sağlanan kod bu işlemi göstermektedir.
 
-#### Q: Can I use this extracted certificate for signature validation?
+#### S: Çıkarılan bu sertifikayı imza doğrulama için kullanabilir miyim?
 
-A: Yes, the extracted certificate can be used for signature validation. You can analyze the certificate's details and verify its authenticity to ensure the integrity of the signed document.
+C: Evet, çıkarılan sertifika imza doğrulaması için kullanılabilir. İmzalanan belgenin bütünlüğünü sağlamak için sertifikanın ayrıntılarını analiz edebilir ve orijinalliğini doğrulayabilirsiniz.
 
-#### Q: How can I integrate this code into my own applications?
+#### S: Bu kodu kendi uygulamalarıma nasıl entegre edebilirim?
 
-A: You can integrate the provided code into your own C# applications by following the step-by-step guide. Modify the paths and filenames as needed, and incorporate the code into your existing projects.
+C: Sağlanan kodu, adım adım kılavuzu izleyerek kendi C# uygulamalarınıza entegre edebilirsiniz. Yolları ve dosya adlarını gerektiği gibi değiştirin ve kodu mevcut projelerinize ekleyin.
 
-#### Q: Are there other features in Aspose.PDF for .NET related to signature management?
+#### S: Aspose.PDF for .NET'te imza yönetimiyle ilgili başka özellikler var mı?
 
-A: Yes, Aspose.PDF for .NET provides a range of features for working with digital signatures, including signing documents, verifying signatures, and adding timestamp information. You can explore the official documentation for more details on these features.
+C: Evet, Aspose.PDF for .NET dijital imzalarla çalışmak için belgeleri imzalamak, imzaları doğrulamak ve zaman damgası bilgileri eklemek gibi çeşitli özellikler sunar. Bu özellikler hakkında daha fazla ayrıntı için resmi belgeleri inceleyebilirsiniz.
 
-#### Q: Where can I find additional resources for using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanmak için ek kaynakları nerede bulabilirim?
 
-A: For more information, tutorials, and resources on using Aspose.PDF for .NET, [Aspose.PDF for .NET](https://reference.aspose.com/pdf/net/).
+ C: .NET için Aspose.PDF kullanımına ilişkin daha fazla bilgi, eğitim ve kaynak için,[Aspose.PDF for .NET](https://reference.aspose.com/pdf/net/).
 
-#### Q: Is it possible to extract signatures from encrypted PDF documents?
+#### S: Şifrelenmiş PDF belgelerinden imza çıkarmak mümkün müdür?
 
-A: The ability to extract signatures from encrypted PDF documents may depend on the encryption settings and permissions of the document. You may need to ensure that you have the necessary permissions to access and extract signature information.
+C: Şifrelenmiş PDF belgelerinden imza çıkarma yeteneği, belgenin şifreleme ayarlarına ve izinlerine bağlı olabilir. İmza bilgilerine erişmek ve bunları çıkarmak için gerekli izinlere sahip olduğunuzdan emin olmanız gerekebilir.
 
-#### Q: Can I extract multiple signatures from a single PDF document?
+#### S: Tek bir PDF belgesinden birden fazla imzayı çıkarabilir miyim?
 
-A: Yes, you can modify the provided code to iterate through all signature fields in the PDF document and extract signature information from each one. This allows you to extract information about multiple signatures present in the document.
+C: Evet, sağlanan kodu, PDF belgesindeki tüm imza alanlarını yineleyecek ve her birinden imza bilgilerini çıkaracak şekilde değiştirebilirsiniz. Bu, belgede bulunan birden fazla imza hakkında bilgi almanıza olanak tanır.
 
-#### Q: What are some practical use cases for extracting signature information?
+#### S: İmza bilgilerini ayıklamak için bazı pratik kullanım durumları nelerdir?
 
-A: Some practical use cases for extracting signature information include validating the authenticity of digitally signed documents, analyzing certificate details for compliance purposes, and maintaining a record of signatures and signatories for auditing purposes.
+C: İmza bilgilerini çıkarmaya yönelik bazı pratik kullanım örnekleri arasında dijital olarak imzalanmış belgelerin orijinalliğinin doğrulanması, uyumluluk amacıyla sertifika ayrıntılarının analiz edilmesi ve denetim amacıyla imzaların ve imza sahiplerinin kayıtlarının tutulması yer alır.
 
-#### Q: Are there any legal considerations when extracting signature information?
+#### S: İmza bilgilerini alırken herhangi bir yasal husus var mı?
 
-A: Extracting signature information may have legal implications, especially when handling legally binding documents. Ensure that you comply with relevant regulations and laws related to electronic signatures and document authenticity in your jurisdiction.
+C: İmza bilgilerinin çıkarılmasının, özellikle yasal olarak bağlayıcı belgeler kullanılırken yasal sonuçları olabilir. Bulunduğunuz yargı bölgesindeki elektronik imzalar ve belge orijinalliğiyle ilgili ilgili düzenlemelere ve yasalara uyduğunuzdan emin olun.

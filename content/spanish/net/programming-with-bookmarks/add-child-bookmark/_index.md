@@ -1,42 +1,42 @@
 ---
-title: Add Child Bookmark In PDF File
-linktitle: Add Child Bookmark In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add child bookmark in PDF file for more organized browsing with Aspose.PDF for .NET.
+title: Agregar marcador infantil en un archivo PDF
+linktitle: Agregar marcador infantil en un archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Agregue fácilmente un marcador secundario en un archivo PDF para una navegación más organizada con Aspose.PDF para .NET.
 type: docs
 weight: 20
 url: /es/net/programming-with-bookmarks/add-child-bookmark/
 ---
-Adding child bookmarks in PDF file allows for more structured organization and navigation. With Aspose.PDF for .NET, you can easily add a sub-bookmark by following the following source code:
+Agregar marcadores secundarios en un archivo PDF permite una organización y navegación más estructuradas. Con Aspose.PDF para .NET, puede agregar fácilmente un submarcador siguiendo el siguiente código fuente:
 
-## Step 1: Import required libraries
+## Paso 1: importar las bibliotecas necesarias
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Antes de comenzar, debe importar las bibliotecas necesarias para su proyecto C#. Aquí está la directiva de importación necesaria:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## Paso 2: establezca la ruta a la carpeta de documentos
 
-In this step, you need to specify the path to the folder containing the PDF file you want to add a sub-bookmark. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ En este paso, debe especificar la ruta a la carpeta que contiene el archivo PDF al que desea agregar un submarcador. Reemplazar`"YOUR DOCUMENT DIRECTORY"`en el siguiente código con la ruta real a su carpeta de documentos:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Paso 3: abre el documento PDF
 
-Now we will open the PDF document to which we want to add a sub-bookmark using the following code:
+Ahora abriremos el documento PDF al que queremos agregar un submarcador usando el siguiente código:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddChildBookmark.pdf");
 ```
 
-## Step 4: Create parent bookmark object
+## Paso 4: crear un objeto de marcador principal
 
-In this step, we will create a parent bookmark object using the `OutlineItemCollection` class and set its properties such as title, italic attribute and bold attribute. Here is the corresponding code:
+ En este paso, crearemos un objeto de marcador principal usando el`OutlineItemCollection` clase y establezca sus propiedades como título, atributo de cursiva y atributo de negrita. Aquí está el código correspondiente:
 
 ```csharp
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -45,9 +45,9 @@ pdfOutline. Italic = true;
 pdfOutline. Bold = true;
 ```
 
-## Step 5: Create Child Bookmark Object
+## Paso 5: crear un objeto de marcador secundario
 
-In this step, we will create a sub-bookmark object again using the `OutlineItemCollection` class and set its properties. Here is the corresponding code:
+En este paso, crearemos un objeto de submarcador nuevamente usando el`OutlineItemCollection` clase y establecer sus propiedades. Aquí está el código correspondiente:
 
 ```csharp
 OutlineItemCollection pdfChildOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -56,95 +56,95 @@ pdfChildOutline. Italic = true;
 pdfChildOutline. Bold = true;
 ```
 
-## Step 6: Add the sub-bookmark to the parent bookmark
+## Paso 6: agregue el submarcador al marcador principal
 
-Finally, we add the created subbookmark to the parent bookmark's subbookmark collection using the `Add` method of the parent object. Here is the corresponding code:
+ Finalmente, agregamos el submarcador creado a la colección de submarcadores del marcador principal usando el`Add` método del objeto padre. Aquí está el código correspondiente:
 
 ```csharp
 pdfOutline.Add(pdfChildOutline);
 ```
 
-## Step 7: Add the parent bookmark to the document's bookmark collection
+## Paso 7: agregue el marcador principal a la colección de marcadores del documento
 
-Finally, we add the parent bookmark to the document's bookmark collection using the `Add` method of the `Outlines` property. Here is the corresponding code:
+ Finalmente, agregamos el marcador principal a la colección de marcadores del documento usando el`Add` método de la`Outlines` propiedad. Aquí está el código correspondiente:
 
 ```csharp
 pdfDocument.Outlines.Add(pdfOutline);
 ```
 
-### Sample source code for Add Child Bookmark using Aspose.PDF for .NET 
+### Código fuente de muestra para Agregar marcador secundario usando Aspose.PDF para .NET 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Abrir documento
 Document pdfDocument = new Document(dataDir + "AddChildBookmark.pdf");
-// Create a parent bookmark object
+// Crear un objeto de marcador principal
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfOutline.Title = "Parent Outline";
 pdfOutline.Italic = true;
 pdfOutline.Bold = true;      
-// Create a child bookmark object
+// Crear un objeto de marcador secundario
 OutlineItemCollection pdfChildOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfChildOutline.Title = "Child Outline";
 pdfChildOutline.Italic = true;
 pdfChildOutline.Bold = true;
-// Add child bookmark in parent bookmark's collection
+// Agregar marcador secundario en la colección de marcadores principales
 pdfOutline.Add(pdfChildOutline);
-// Add parent bookmark in the document's outline collection.
+// Agregue un marcador principal en la colección de esquemas del documento.
 pdfDocument.Outlines.Add(pdfOutline);
 dataDir = dataDir + "AddChildBookmark_out.pdf";
-// Save output
+// Guardar salida
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nChild bookmark added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Conclusión
 
-Congratulation ! Now you have a step by step guide to add a sub-bookmark with Aspose.PDF for .NET. You can use this code to organize and structure your bookmarks in your PDF documents.
+¡Enhorabuena! Ahora tiene una guía paso a paso para agregar un submarcador con Aspose.PDF para .NET. Puede utilizar este código para organizar y estructurar sus marcadores en sus documentos PDF.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Asegúrese de consultar la documentación oficial de Aspose.PDF para obtener más información sobre las funciones avanzadas de manipulación de marcadores.
 
-### FAQ's for add child bookmark in PDF file
+### Preguntas frecuentes para agregar un marcador infantil en un archivo PDF
 
-#### Q: What are child bookmarks in a PDF file?
+#### P: ¿Qué son los marcadores secundarios en un archivo PDF?
 
-A: Child bookmarks, also known as sub-bookmarks, are navigational elements within a PDF document that are hierarchically structured under a parent bookmark. They provide a way to create a more organized and detailed table of contents for the document.
+R: Los marcadores secundarios, también conocidos como submarcadores, son elementos de navegación dentro de un documento PDF que están estructurados jerárquicamente bajo un marcador principal. Proporcionan una manera de crear una tabla de contenido más organizada y detallada para el documento.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### P: ¿Cómo importo las bibliotecas necesarias para mi proyecto C#?
 
-A: To import the required libraries for your C# project, you can use the following import directive:
+R: Para importar las bibliotecas necesarias para su proyecto C#, puede utilizar la siguiente directiva de importación:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-These libraries provide the necessary classes and functions for working with PDF documents and interactive features.
+Estas bibliotecas proporcionan las clases y funciones necesarias para trabajar con documentos PDF y funciones interactivas.
 
-#### Q: How do I specify the path to the documents folder?
+#### P: ¿Cómo especifico la ruta a la carpeta de documentos?
 
-A: In the source code provided, you need to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file you want to work with. This ensures that the code correctly locates the target PDF file.
+ R: En el código fuente proporcionado, debe reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta real a la carpeta que contiene el archivo PDF con el que desea trabajar. Esto garantiza que el código ubique correctamente el archivo PDF de destino.
 
-#### Q: Can I create multiple levels of child bookmarks?
+#### P: ¿Puedo crear varios niveles de marcadores secundarios?
 
-A: Yes, you can create multiple levels of child bookmarks by extending the process outlined in the tutorial. By creating parent bookmarks with sub-bookmarks and further nesting them, you can create a hierarchical structure of bookmarks for complex PDF documents.
+R: Sí, puedes crear múltiples niveles de marcadores secundarios ampliando el proceso descrito en el tutorial. Al crear marcadores principales con submarcadores y anidarlos aún más, puede crear una estructura jerárquica de marcadores para documentos PDF complejos.
 
-#### Q: What is the purpose of the `OutlineItemCollection` class?
+####  P: ¿Cuál es el propósito de la`OutlineItemCollection` class?
 
-A: The `OutlineItemCollection` class in Aspose.PDF for .NET is used to create and manage outlines, which are essentially bookmarks in a PDF document. This class allows you to set properties such as title, font style, and actions for bookmarks.
+ R: El`OutlineItemCollection` La clase en Aspose.PDF para .NET se utiliza para crear y administrar esquemas, que son esencialmente marcadores en un documento PDF. Esta clase le permite establecer propiedades como título, estilo de fuente y acciones para marcadores.
 
-#### Q: How do I add a sub-bookmark to a parent bookmark?
+#### P: ¿Cómo agrego un submarcador a un marcador principal?
 
-A: To add a sub-bookmark to a parent bookmark, you create a new `OutlineItemCollection` object for the sub-bookmark and set its properties. Then, you use the `Add` method of the parent bookmark's `OutlineItemCollection` to add the sub-bookmark to the parent's collection.
+ R: Para agregar un submarcador a un marcador principal, crea un nuevo`OutlineItemCollection` objeto para el submarcador y establezca sus propiedades. Luego, usas el`Add` método del marcador principal`OutlineItemCollection` para agregar el submarcador a la colección de los padres.
 
-#### Q: Can I customize the appearance of child bookmarks?
+#### P: ¿Puedo personalizar la apariencia de los marcadores infantiles?
 
-A: Yes, similar to parent bookmarks, you can customize the appearance of child bookmarks by setting properties such as title, font style, and other attributes. This allows you to create visually distinctive and informative bookmarks.
+R: Sí, de manera similar a los marcadores principales, puede personalizar la apariencia de los marcadores secundarios configurando propiedades como título, estilo de fuente y otros atributos. Esto le permite crear marcadores visualmente distintivos e informativos.
 
-#### Q: Is Aspose.PDF for .NET compatible with other programming languages?
+#### P: ¿Aspose.PDF para .NET es compatible con otros lenguajes de programación?
 
-A: Aspose.PDF for .NET is specifically designed for C# and .NET environments. However, Aspose offers similar libraries for other programming languages such as Java and Android, each tailored to their respective platforms.
+R: Aspose.PDF para .NET está diseñado específicamente para entornos C# y .NET. Sin embargo, Aspose ofrece bibliotecas similares para otros lenguajes de programación como Java y Android, cada una adaptada a sus respectivas plataformas.
 
-#### Q: How do child bookmarks improve PDF navigation?
+#### P: ¿Cómo mejoran los marcadores secundarios la navegación en PDF?
 
-A: Child bookmarks improve PDF navigation by providing a more structured and organized table of contents. Users can quickly access specific sections of the document through the hierarchical bookmark structure.
+R: Los marcadores secundarios mejoran la navegación del PDF al proporcionar una tabla de contenidos más estructurada y organizada. Los usuarios pueden acceder rápidamente a secciones específicas del documento a través de la estructura jerárquica de marcadores.

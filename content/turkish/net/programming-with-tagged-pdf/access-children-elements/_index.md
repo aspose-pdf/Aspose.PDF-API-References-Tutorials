@@ -1,28 +1,28 @@
 ---
-title: Access Children Elements
-linktitle: Access Children Elements
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to accessing and editing child elements of a PDF document using Aspose.PDF for .NET. Personalize your PDF content.
+title: Alt Öğelere Erişim
+linktitle: Alt Öğelere Erişim
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak bir PDF belgesinin alt öğelerine erişmeye ve bunları düzenlemeye yönelik adım adım kılavuz. PDF içeriğinizi kişiselleştirin.
 type: docs
 weight: 10
 url: /tr/net/programming-with-tagged-pdf/access-children-elements/
 ---
-In this tutorial, we will provide you with a step-by-step guide on accessing child elements of a PDF document using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. Using the marked content structure features of Aspose.PDF, you can access and modify the properties of structured elements in a PDF document.
+Bu eğitimde size Aspose.PDF for .NET kullanarak bir PDF belgesinin alt öğelerine erişme konusunda adım adım bir kılavuz sunacağız. Aspose.PDF, PDF belgelerini programlı olarak oluşturmanıza, değiştirmenize ve dönüştürmenize olanak tanıyan güçlü bir kütüphanedir. Aspose.PDF'in işaretlenmiş içerik yapısı özelliklerini kullanarak, bir PDF belgesindeki yapılandırılmış öğelerin özelliklerine erişebilir ve bunları değiştirebilirsiniz.
 
-## Prerequisites
+## Önkoşullar
 
-Before you begin, make sure you have the following prerequisites in place:
+Başlamadan önce aşağıdaki önkoşulların mevcut olduğundan emin olun:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. .NET framework ile yüklenen Visual Studio.
+2. .NET için Aspose.PDF kütüphanesi.
 
-## Step 1: Project Setup
+## Adım 1: Proje Kurulumu
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+Başlamak için Visual Studio'da yeni bir proje oluşturun ve Aspose.PDF for .NET kitaplığına bir referans ekleyin. Kütüphaneyi Aspose resmi web sitesinden indirebilir ve makinenize kurabilirsiniz.
 
-## Step 2: Import the necessary namespaces
+## 2. Adım: Gerekli ad alanlarını içe aktarın
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+Aspose.PDF tarafından sağlanan sınıflara ve yöntemlere erişmek için gereken ad alanlarını C# kod dosyanıza aktarın:
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Step 3: Loading the PDF Document and Accessing Child Elements
+## Adım 3: PDF Belgesini Yükleme ve Alt Öğelere Erişim
 
-Use the following code to load the PDF document and access the child elements:
+PDF belgesini yüklemek ve alt öğelere erişmek için aşağıdaki kodu kullanın:
 
 ```csharp
 string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
@@ -45,7 +45,7 @@ foreach(Element element in elementList)
 if (element is StructureElement)
 {
 StructureElement structureElement = element as StructureElement;
-// Access the properties of the element
+// Öğenin özelliklerine erişme
 string title = structureElement.Title;
 string language = structureElement.Language;
 string actualText = structureElement.ActualText;
@@ -55,11 +55,11 @@ string alternativeText = structureElement.AlternativeText;
 }
 ```
 
-This code allows you to access the child elements of the root of the PDF document structure and get the properties of each element.
+Bu kod, PDF belge yapısının kökünün alt öğelerine erişmenizi ve her öğenin özelliklerini almanızı sağlar.
 
-## Step 4: Accessing Root Element Children and Changing Properties
+## Adım 4: Kök Eleman Alt Öğelerine Erişim ve Özellikleri Değiştirme
 
-Use the following code to access the children of the root element and modify the properties:
+Kök öğenin alt öğelerine erişmek ve özellikleri değiştirmek için aşağıdaki kodu kullanın:
 
 ```csharp
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
@@ -69,7 +69,7 @@ foreach(Element element in elementList)
 if (element is StructureElement)
 {
 StructureElement structureElement = element as StructureElement;
-// Modify the properties of the element
+// Öğenin özelliklerini değiştirin
 structureElement.Title = "title";
 structureElement.Language = "fr-FR";
 structureElement.ActualText = "actual text";
@@ -79,25 +79,25 @@ structureElement.AlternativeText = "alt";
 }
 ```
 
-This code allows you to access the children of the first element of the root element and modify the properties of each element.
+Bu kod, kök öğenin ilk öğesinin alt öğelerine erişmenizi ve her öğenin özelliklerini değiştirmenizi sağlar.
 
 
-### Sample source code for Access Children Elements using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Access Child Elements için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open Pdf Document
+// Pdf Belgesini Aç
 Document document = new Document(dataDir + "StructureElementsTree.pdf");
-// Get Content for work with TaggedPdf
+// TaggedPdf ile çalışmaya yönelik İçerik edinin
 ITaggedContent taggedContent = document.TaggedContent;
-// Access to root element(s)
+// Kök öğelere erişim
 ElementList elementList = taggedContent.StructTreeRootElement.ChildElements;
 foreach (Element element in elementList)
 {
 	if (element is StructureElement)
 	{
 		StructureElement structureElement = element as StructureElement;
-		// Get properties
+		// Özellikleri al
 		string title = structureElement.Title;
 		string language = structureElement.Language;
 		string actualText = structureElement.ActualText;
@@ -105,14 +105,14 @@ foreach (Element element in elementList)
 		string alternativeText = structureElement.AlternativeText;
 	}
 }
-// Access to children elements of first element in root element
+// Kök öğedeki ilk öğenin alt öğelerine erişim
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
 foreach (Element element in elementList)
 {
 	if (element is StructureElement)
 	{
 		StructureElement structureElement = element as StructureElement;
-		// Set properties
+		// Özellikleri ayarla
 		structureElement.Title = "title";
 		structureElement.Language = "fr-FR";
 		structureElement.ActualText = "actual text";
@@ -120,43 +120,43 @@ foreach (Element element in elementList)
 		structureElement.AlternativeText = "alt";
 	}
 }
-// Save Tagged Pdf Document
+// Etiketli Pdf Belgesini Kaydet
 document.Save(dataDir + "AccessChildrenElements.pdf");
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, you learned how to access child elements of a PDF document and how to modify element properties using Aspose.PDF for .NET. This allows you to customize and manipulate the structured elements in a PDF document according to your needs.
+Bu eğitimde, bir PDF belgesinin alt öğelerine nasıl erişeceğinizi ve Aspose.PDF for .NET kullanarak öğe özelliklerini nasıl değiştireceğinizi öğrendiniz. Bu, bir PDF belgesindeki yapılandırılmış öğeleri ihtiyaçlarınıza göre özelleştirmenize ve değiştirmenize olanak tanır.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of accessing child elements in a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesindeki alt öğelere erişmenin amacı nedir?
 
-A: Accessing child elements in a PDF document using Aspose.PDF for .NET allows you to programmatically manipulate and customize the structured elements within the document. This can include modifying properties, such as titles, languages, actual text, expansion text, and alternative text, to enhance the accessibility and presentation of the document.
+C: Aspose.PDF for .NET kullanarak bir PDF belgesindeki alt öğelere erişmek, belge içindeki yapılandırılmış öğeleri programlı olarak değiştirmenize ve özelleştirmenize olanak tanır. Bu, belgenin erişilebilirliğini ve sunumunu geliştirmek için başlıklar, diller, gerçek metin, genişletme metni ve alternatif metin gibi özelliklerin değiştirilmesini içerebilir.
 
-#### Q: What is the role of the Aspose.PDF library in this process?
+#### S: Aspose.PDF kütüphanesinin bu süreçteki rolü nedir?
 
-A: Aspose.PDF for .NET is a powerful library that provides various features for creating, manipulating, and converting PDF documents programmatically. In this tutorial, the library is used to load a PDF document, access tagged content and structured elements, and modify their properties.
+C: Aspose.PDF for .NET, PDF belgelerini programlı olarak oluşturmak, düzenlemek ve dönüştürmek için çeşitli özellikler sağlayan güçlü bir kitaplıktır. Bu eğitimde kitaplık, bir PDF belgesi yüklemek, etiketli içeriğe ve yapılandırılmış öğelere erişmek ve bunların özelliklerini değiştirmek için kullanılır.
 
-#### Q: What are the prerequisites for working with child elements in a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesindeki alt öğelerle çalışmanın önkoşulları nelerdir?
 
-A: Before you begin, ensure that you have Visual Studio installed with the .NET framework and have the Aspose.PDF library for .NET referenced in your project.
+C: Başlamadan önce, Visual Studio'nun .NET framework ile kurulu olduğundan ve projenizde .NET için Aspose.PDF kütüphanesinin referans alındığından emin olun.
 
-#### Q: How does the provided C# code allow for accessing and modifying child elements in a PDF document?
+#### S: Sağlanan C# kodu, bir PDF belgesindeki alt öğelere erişmeye ve bunları değiştirmeye nasıl izin verir?
 
-A: The code demonstrates how to load a PDF document, access the tagged content, and traverse through the child elements of the root and specific elements. It showcases how to retrieve properties of structured elements and how to modify those properties to customize the document.
+C: Kod, bir PDF belgesinin nasıl yükleneceğini, etiketli içeriğe nasıl erişileceğini ve kökün alt öğeleri ile belirli öğeler arasında nasıl geçiş yapılacağını gösterir. Yapılandırılmış öğelerin özelliklerinin nasıl alınacağını ve belgeyi özelleştirmek için bu özelliklerin nasıl değiştirileceğini gösterir.
 
-#### Q: Can I access and modify other properties of the child elements beyond the ones shown in the code?
+#### S: Alt öğelerin kodda gösterilenlerin dışındaki diğer özelliklerine erişebilir ve bunları değiştirebilir miyim?
 
-A: Yes, you can access and modify various other properties of the child elements using similar techniques. The properties demonstrated in the code (title, language, actual text, etc.) are just examples, and you can explore the Aspose.PDF documentation to discover more properties and methods available for manipulation.
+C: Evet, benzer teknikleri kullanarak alt öğelerin çeşitli diğer özelliklerine erişebilir ve bunları değiştirebilirsiniz. Kodda gösterilen özellikler (başlık, dil, gerçek metin vb.) yalnızca örnektir ve manipülasyona uygun daha fazla özellik ve yöntem keşfetmek için Aspose.PDF belgelerini inceleyebilirsiniz.
 
-#### Q: How do I identify which child elements I want to access within the PDF document?
-A: The code provides an example of accessing the child elements of the root element and a specific element within it. You can identify the elements you want to access based on their hierarchy and structure within the tagged content of the PDF document.
+#### S: PDF belgesinde hangi alt öğelere erişmek istediğimi nasıl belirlerim?
+C: Kod, kök öğenin alt öğelerine ve onun içindeki belirli bir öğeye erişmenin bir örneğini sağlar. Erişmek istediğiniz öğeleri, PDF belgesinin etiketli içeriğindeki hiyerarşilerine ve yapılarına göre tanımlayabilirsiniz.
 
-#### Q: Is it possible to add new child elements or delete existing ones using this approach?
+#### S: Bu yaklaşımı kullanarak yeni alt öğeler eklemek veya mevcut olanları silmek mümkün müdür?
 
-A: While the provided code focuses on accessing and modifying existing child elements, you can extend the approach to add new child elements or delete existing ones by using appropriate methods provided by the Aspose.PDF library.
+C: Sağlanan kod, mevcut alt öğelere erişmeye ve bunları değiştirmeye odaklanırken, Aspose.PDF kütüphanesi tarafından sağlanan uygun yöntemleri kullanarak yaklaşımı yeni alt öğeler eklemek veya mevcut olanları silmek üzere genişletebilirsiniz.
 
-#### Q: Can I use this approach to work with nested child elements within the PDF document?
+#### S: Bu yaklaşımı PDF belgesindeki iç içe geçmiş alt öğelerle çalışmak için kullanabilir miyim?
 
-A: Yes, you can apply similar techniques to access and modify nested child elements within the PDF document's structure. By traversing through the hierarchy of elements, you can access and manipulate elements at various levels.
+C: Evet, PDF belgesinin yapısındaki iç içe geçmiş alt öğelere erişmek ve bunları değiştirmek için benzer teknikleri uygulayabilirsiniz. Öğelerin hiyerarşisinde dolaşarak çeşitli düzeylerdeki öğelere erişebilir ve bunları değiştirebilirsiniz.

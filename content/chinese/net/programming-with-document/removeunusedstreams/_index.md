@@ -1,33 +1,33 @@
 ---
-title: Remove Unused Streams In PDF File
-linktitle: Remove Unused Streams In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove unused streams in PDF files using Aspose.PDF for .NET. Our step-by-step guide.
+title: 删除 PDF 文件中未使用的流
+linktitle: 删除 PDF 文件中未使用的流
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 删除 PDF 文件中未使用的流。我们的分步指南。
 type: docs
 weight: 270
 url: /zh/net/programming-with-document/removeunusedstreams/
 ---
-In this example, we will discuss how to remove unused streams in PDF files using Aspose.PDF for .NET. We will provide a step-by-step guide on how to do this, including the full source code with explanations.
+在此示例中，我们将讨论如何使用 Aspose.PDF for .NET 删除 PDF 文件中未使用的流。我们将提供有关如何执行此操作的分步指南，包括完整的源代码和解释。
 
-## Step 1: The path to the documents directory
+## 第1步：文档目录的路径
 
-The first line of the code sets the path to the directory where your PDF document is located. Make sure to replace "YOUR DOCUMENT DIRECTORY" with the actual directory path.
+代码的第一行设置 PDF 文档所在目录的路径。确保将“您的文档目录”替换为实际的目录路径。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the document
+## 步骤 2：打开文档
 
-The next line of code opens the PDF document using the Aspose.PDF for .NET library.
+下一行代码使用 Aspose.PDF for .NET 库打开 PDF 文档。
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Step 3: Set RemoveUnusedStreams option
+## 步骤3：设置RemoveUnusedStreams选项
 
-The next step is to set the RemoveUnusedStreams option to true. This will remove any unused streams from the PDF document.
+下一步是将 RemoveUnusedStreams 选项设置为 true。这将从 PDF 文档中删除所有未使用的流。
 
 ```csharp
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
@@ -36,58 +36,58 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 };
 ```
 
-## Step 4: Optimize PDF document using OptimizationOptions
+## 步骤 4：使用 OptimizationOptions 优化 PDF 文档
 
-Now that we have set the optimization options, we can optimize the PDF document using the following line of code.
+现在我们已经设置了优化选项，我们可以使用以下代码行优化 PDF 文档。
 
 ```csharp
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-## Step 5: Save updated document
+## 第 5 步：保存更新的文档
 
-Finally, we can save the updated document using the Save method of the Document class.
+最后，我们可以使用 Document 类的 Save 方法保存更新的文档。
 
 ```csharp
 dataDir = dataDir + "OptimizeDocument_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Example source code for Remove Unused Streams using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 删除未使用的流的示例源代码
 
-Below is the example source code for removing unused streams using Aspose.PDF for .NET.
+下面是使用 Aspose.PDF for .NET 删除未使用的流的示例源代码。
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Set RemoveUsedStreams option 
+//设置RemoveUsedStreams选项
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
 	RemoveUnusedStreams = true
 };
-// Optimize PDF document using OptimizationOptions
+//使用 OptimizationOptions 优化 PDF 文档
 pdfDocument.OptimizeResources(optimizeOptions);
 dataDir = dataDir + "OptimizeDocument_out.pdf";
-// Save updated document
+//保存更新的文档
 pdfDocument.Save(dataDir);
 ```
 
-## Conclusion
+## 结论
 
-Optimizing PDF documents by removing unused streams is essential for enhancing performance and reducing file size. Aspose.PDF for .NET simplifies this process by providing a convenient method to remove unused streams using the `OptimizationOptions`. The step-by-step guide and the provided C# source code make it easy for developers to implement this feature in their .NET applications. By following these instructions, developers can optimize their PDF files effectively and improve overall PDF processing in their .NET projects.
+通过删除未使用的流来优化 PDF 文档对于提高性能和减小文件大小至关重要。 Aspose.PDF for .NET 通过提供一种方便的方法来使用以下命令删除未使用的流，从而简化了此过程`OptimizationOptions`。分步指南和提供的 C# 源代码使开发人员可以轻松地在其 .NET 应用程序中实现此功能。通过遵循这些说明，开发人员可以有效优化其 PDF 文件并改进 .NET 项目中的整体 PDF 处理。
 
-### FAQ's for remove unused streams in PDF file
+### 删除 PDF 文件中未使用的流的常见问题解答
 
-#### Q: What are unused streams in a PDF document?
+#### 问：PDF 文档中未使用的流是什么？
 
-A: Unused streams in a PDF document are parts of the file that are not referenced or used in the document's content. These streams may include images, fonts, or other resources that are no longer needed but still exist in the PDF file.
+答：PDF 文档中未使用的流是文档内容中未引用或使用的文件部分。这些流可能包括不再需要但仍存在于 PDF 文件中的图像、字体或其他资源。
 
-#### Q: How does removing unused streams benefit PDF documents?
+#### 问：删除未使用的流对 PDF 文档有何好处？
 
-A: Removing unused streams from a PDF document reduces its file size, resulting in faster loading times and improved performance. It helps in optimizing the PDF file for better user experience and efficient storage.
+答：从 PDF 文档中删除未使用的流可减小文件大小，从而缩短加载时间并提高性能。它有助于优化 PDF 文件，以获得更好的用户体验和高效的存储。
 
-#### Q: Can developers specify which streams to remove using Aspose.PDF for .NET?
+#### 问：开发人员能否指定使用 Aspose.PDF for .NET 删除哪些流？
 
-A: Yes, developers can control the removal of unused streams by setting the `RemoveUnusedStreams` option in the `OptimizationOptions`. This gives them the flexibility to choose which streams to remove based on their specific needs.
+答：是的，开发人员可以通过设置来控制未使用的流的删除`RemoveUnusedStreams`选项中的`OptimizationOptions`。这使他们可以根据自己的具体需求灵活地选择要删除的流。

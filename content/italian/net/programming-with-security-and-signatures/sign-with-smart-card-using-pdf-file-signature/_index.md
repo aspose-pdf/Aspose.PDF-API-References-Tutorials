@@ -1,17 +1,17 @@
 ---
-title: Sign With Smart Card Using PDF File Signature
-linktitle: Sign With Smart Card Using PDF File Signature
-second_title: Aspose.PDF for .NET API Reference
-description: Sign your PDF files securely with a smart card using Aspose.PDF for .NET.
+title: Firma con la smart card utilizzando la firma del file PDF
+linktitle: Firma con la smart card utilizzando la firma del file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Firma i tuoi file PDF in modo sicuro con una smart card utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 110
 url: /it/net/programming-with-security-and-signatures/sign-with-smart-card-using-pdf-file-signature/
 ---
-Digital signing with a smart card is a secure way to sign PDF files. With Aspose.PDF for .NET, you can easily sign a PDF file using a smart card by following the following source code:
+La firma digitale con una smart card è un modo sicuro per firmare file PDF. Con Aspose.PDF per .NET, puoi firmare facilmente un file PDF utilizzando una smart card seguendo il seguente codice sorgente:
 
-## Step 1: Import required libraries
+## Passaggio 1: importa le librerie richieste
 
-Before you begin, you need to import the necessary libraries for your C# project. Here are the necessary import directives:
+Prima di iniziare, devi importare le librerie necessarie per il tuo progetto C#. Ecco le direttive di importazione necessarie:
 
 ```csharp
 using Aspose.Pdf;
@@ -20,32 +20,32 @@ using Aspose.Pdf.Forms;
 using System.Security.Cryptography.X509Certificates;
 ```
 
-## Step 2: Set path to documents folder
+## Passaggio 2: imposta il percorso della cartella dei documenti
 
-In this step, you need to specify the path to the folder containing the PDF file you want to sign. Replace `"YOUR DOCUMENTS DIRECTORY"` in the following code with the actual path to your documents folder:
+ In questo passaggio, devi specificare il percorso della cartella contenente il file PDF che desideri firmare. Sostituire`"YOUR DOCUMENTS DIRECTORY"`nel seguente codice con il percorso effettivo della cartella dei documenti:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 3: Load the PDF document
+## Passaggio 3: carica il documento PDF
 
-Now we will load the PDF document to be signed using the following code:
+Ora caricheremo il documento PDF da firmare utilizzando il seguente codice:
 
 ```csharp
 Document doc = new Document(dataDir + "blank.pdf");
 ```
 
-## Step 4: Perform the signature with the smart card
+## Passaggio 4: eseguire la firma con la smart card
 
-In this step, we will perform the signature with the smart card using the `PdfFileSignature` class from the `Facades` library. We select the smart card certificate from the Windows certificate store and specify the necessary signing information. Here is the corresponding code:
+ In questo passaggio eseguiremo la firma con la smart card utilizzando il file`PdfFileSignature` classe da`Facades`biblioteca. Selezioniamo il certificato della smart card dall'archivio certificati di Windows e specifichiamo le informazioni di firma necessarie. Ecco il codice corrispondente:
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature())
 {
      pdfSign.BindPdf(doc);
 
-     // Select the certificate in the store
+     // Seleziona il certificato nel negozio
      X509Store store = new X509Store(StoreLocation.CurrentUser);
      store.Open(OpenFlags.ReadOnly);
      X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
@@ -57,9 +57,9 @@ using (PdfFileSignature pdfSign = new PdfFileSignature())
 }
 ```
 
-## Step 5: Verify Signature
+## Passaggio 5: verifica la firma
 
-Finally, we verify the signature of the signed PDF file using the `PdfFileSignature` class. We get the signature names and check them one by one. If a signature fails verification, an exception is thrown. Here is the corresponding code:
+ Infine, verifichiamo la firma del file PDF firmato utilizzando il file`PdfFileSignature` classe. Otteniamo i nomi delle firme e li controlliamo uno per uno. Se una firma non supera la verifica, viene generata un'eccezione. Ecco il codice corrispondente:
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature2.pdf")))
@@ -75,18 +75,18 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 }
 ```
 
-### Sample source code for Sign With Smart Card Using Pdf File Signature using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Firma con smart card utilizzando la firma del file Pdf utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document doc = new Document(dataDir + "blank.pdf");
 using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature())
 {
 	pdfSign.BindPdf(doc);
-	// Sign with certificate selection in the windows certificate store
+	// Accedi con la selezione del certificato nell'archivio certificati di Windows
 	System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
 	store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-	// Manually chose the certificate in the store
+	// Scegli manualmente il certificato nel negozio
 	System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
 	Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0]);
 	pdfSign.SignatureAppearance = dataDir + "demo.png";
@@ -106,50 +106,50 @@ using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature(new Docum
 }
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation! You now have a step-by-step guide to signing a PDF file with a smart card using Aspose.PDF for .NET. You can use this code to add secure digital signatures to your PDF documents.
+Congratulazioni! Ora hai una guida passo passo per firmare un file PDF con una smart card utilizzando Aspose.PDF per .NET. Puoi utilizzare questo codice per aggiungere firme digitali sicure ai tuoi documenti PDF.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced digital signature and certificate management features.
+Assicurati di controllare la documentazione ufficiale Aspose.PDF per ulteriori informazioni sulla firma digitale avanzata e sulle funzionalità di gestione dei certificati.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: Why should I consider signing PDF files with a smart card?
+#### D: Perché dovrei prendere in considerazione la firma dei file PDF con una smart card?
 
-A: Signing PDF files with a smart card enhances security by ensuring the authenticity and integrity of the document. Smart card-based signatures provide a higher level of trust and compliance.
+R: La firma di file PDF con una smart card aumenta la sicurezza garantendo l'autenticità e l'integrità del documento. Le firme basate su smart card forniscono un livello più elevato di affidabilità e conformità.
 
-#### Q: How does smart card-based digital signing work?
+#### D: Come funziona la firma digitale basata su smart card?
 
-A: Smart card-based digital signing involves using a cryptographic key stored on a smart card to create a unique digital signature. This signature is attached to the PDF file, allowing recipients to verify the document's origin and integrity.
+R: La firma digitale basata su smart card prevede l'utilizzo di una chiave crittografica archiviata su una smart card per creare una firma digitale univoca. Questa firma è allegata al file PDF, consentendo ai destinatari di verificare l'origine e l'integrità del documento.
 
-#### Q: What is the role of Aspose.PDF for .NET in smart card-based signing?
+#### D: Qual è il ruolo di Aspose.PDF per .NET nella firma basata su smart card?
 
-A: Aspose.PDF for .NET provides a comprehensive set of tools and libraries to facilitate smart card-based digital signing of PDF files. It simplifies the process and ensures secure document signing.
+R: Aspose.PDF per .NET fornisce un set completo di strumenti e librerie per facilitare la firma digitale dei file PDF basata su smart card. Semplifica il processo e garantisce la firma sicura dei documenti.
 
-#### Q: Can I choose a specific smart card certificate for signing?
+#### D: Posso scegliere un certificato smart card specifico per la firma?
 
-A: Yes, you can select a specific smart card certificate from the Windows certificate store for signing. Aspose.PDF for .NET allows you to seamlessly integrate certificate selection into your application.
+R: Sì, puoi selezionare un certificato smart card specifico dall'archivio certificati di Windows per la firma. Aspose.PDF per .NET ti consente di integrare perfettamente la selezione del certificato nella tua applicazione.
 
-#### Q: How does the provided source code handle smart card-based signing?
+#### D: In che modo il codice sorgente fornito gestisce la firma basata su smart card?
 
-A: The source code demonstrates how to bind a PDF document, select a smart card certificate, specify signing information, and create a digital signature. It also shows how to verify the signature's validity.
+R: Il codice sorgente mostra come associare un documento PDF, selezionare un certificato di smart card, specificare le informazioni sulla firma e creare una firma digitale. Mostra anche come verificare la validità della firma.
 
-#### Q: Can I apply multiple signatures using smart cards in a single PDF file?
+#### D: Posso applicare più firme utilizzando le smart card in un singolo file PDF?
 
-A: Absolutely, you can apply multiple smart card-based signatures to a single PDF file. Each signature is unique and contributes to the document's overall security.
+R: Assolutamente sì, puoi applicare più firme basate su smart card a un singolo file PDF. Ogni firma è unica e contribuisce alla sicurezza generale del documento.
 
-#### Q: What if a signature fails verification during the verification step?
+#### D: Cosa succede se una firma non supera la verifica durante la fase di verifica?
 
-A: If a signature fails verification, an exception is thrown, indicating that the signature is not valid. This ensures that only valid and trusted signatures are accepted.
+R: Se una firma non supera la verifica, viene generata un'eccezione che indica che la firma non è valida. Ciò garantisce che vengano accettate solo firme valide e attendibili.
 
-#### Q: Is smart card-based signing compatible with all types of PDF documents?
+#### D: La firma basata su smart card è compatibile con tutti i tipi di documenti PDF?
 
-A: Yes, smart card-based signing is compatible with all types of PDF documents. You can apply digital signatures to various types of PDF files, including forms, reports, and more.
+R: Sì, la firma basata su smart card è compatibile con tutti i tipi di documenti PDF. Puoi applicare firme digitali a vari tipi di file PDF, inclusi moduli, report e altro.
 
-#### Q: How can I learn more about advanced digital signature and certificate management?
+#### D: Come posso ottenere ulteriori informazioni sulla firma digitale avanzata e sulla gestione dei certificati?
 
-A: Explore the official Aspose.PDF documentation for detailed insights into advanced digital signature features, certificate management, and best practices for ensuring document security.
+R: Esplora la documentazione ufficiale Aspose.PDF per approfondimenti dettagliati sulle funzionalità avanzate di firma digitale, sulla gestione dei certificati e sulle migliori pratiche per garantire la sicurezza dei documenti.
 
-#### Q: Where can I find further assistance or support for implementing smart card-based signing?
+#### D: Dove posso trovare ulteriore assistenza o supporto per l'implementazione della firma basata su smart card?
 
-A: For additional guidance and support, reach out to the Aspose.PDF community forums or refer to the documentation for comprehensive information on smart card-based signing.
+R: Per ulteriore assistenza e supporto, contattare i forum della community Aspose.PDF o fare riferimento alla documentazione per informazioni complete sulla firma basata su smart card.

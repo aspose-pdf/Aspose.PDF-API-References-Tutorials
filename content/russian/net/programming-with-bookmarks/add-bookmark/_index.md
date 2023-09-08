@@ -1,42 +1,42 @@
 ---
-title: Add Bookmark In PDF File
-linktitle: Add Bookmark In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add bookmark in PDF file for improved navigation with Aspose.PDF for .NET.
+title: Добавить закладку в PDF-файл
+linktitle: Добавить закладку в PDF-файл
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко добавляйте закладки в PDF-файл для улучшения навигации с помощью Aspose.PDF для .NET.
 type: docs
 weight: 10
 url: /ru/net/programming-with-bookmarks/add-bookmark/
 ---
-Adding bookmarks in a PDF file allows easy and quick navigation. With Aspose.PDF for .NET, you can easily add a bookmark in PDF file by following the following source code:
+Добавление закладок в файл PDF обеспечивает легкую и быструю навигацию. С помощью Aspose.PDF для .NET вы можете легко добавить закладку в файл PDF, выполнив следующий исходный код:
 
-## Step 1: Import required libraries
+## Шаг 1. Импортируйте необходимые библиотеки.
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Прежде чем начать, вам необходимо импортировать необходимые библиотеки для вашего проекта C#. Вот необходимая директива импорта:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## Шаг 2. Установите путь к папке с документами.
 
-In this step, you need to specify the path to the folder containing the PDF file you want to add a bookmark to. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ На этом этапе вам необходимо указать путь к папке, содержащей PDF-файл, к которому вы хотите добавить закладку. Заменять`"YOUR DOCUMENT DIRECTORY"`в следующем коде с фактическим путем к папке ваших документов:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Шаг 3. Откройте PDF-документ.
 
-Now we will open the PDF document to which we want to add a bookmark using the following code:
+Теперь мы откроем PDF-документ, к которому хотим добавить закладку, используя следующий код:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddBookmark.pdf");
 ```
 
-## Step 4: Create bookmark object
+## Шаг 4. Создайте объект закладки.
 
-In this step, we will create a bookmark object using `OutlineItemCollection` class and set its properties such as title, italic attribute, bold attribute and action to perform when clicked. Here is the corresponding code:
+ На этом этапе мы создадим объект закладки, используя`OutlineItemCollection` класс и установите его свойства, такие как заголовок, атрибут курсива, атрибут полужирного шрифта и действие, которое будет выполняться при нажатии. Вот соответствующий код:
 
 ```csharp
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -46,80 +46,80 @@ pdfOutline. Bold = true;
 pdfOutline.Action = new GoToAction(pdfDocument.Pages[1]);
 ```
 
-## Step 5: Add bookmark to document
+## Шаг 5. Добавьте закладку в документ.
 
-Finally, we add the created bookmark to the document's bookmark collection using the `Add` method of the `Outlines` property. Here is the corresponding code:
+ Наконец, мы добавляем созданную закладку в коллекцию закладок документа, используя метод`Add` метод`Outlines` свойство. Вот соответствующий код:
 
 ```csharp
 pdfDocument.Outlines.Add(pdfOutline);
 ```
 
-### Sample source code for Add Bookmark using Aspose.PDF for .NET 
+### Пример исходного кода для добавления закладки с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "AddBookmark.pdf");
-// Create a bookmark object
+// Создать объект закладки
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfOutline.Title = "Test Outline";
 pdfOutline.Italic = true;
 pdfOutline.Bold = true;
-// Set the destination page number
+// Установите номер целевой страницы
 pdfOutline.Action = new GoToAction(pdfDocument.Pages[1]);
-// Add bookmark in the document's outline collection.
+// Добавьте закладку в коллекцию структур документа.
 pdfDocument.Outlines.Add(pdfOutline);
 dataDir = dataDir + "AddBookmark_out.pdf";
-// Save output
+// Сохранить вывод
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nBookmark added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! Now you have a step by step guide to add a bookmark using Aspose.PDF for .NET. You can use this code to improve navigation in your PDF documents by adding custom bookmarks.
+Поздравляем! Теперь у вас есть пошаговое руководство по добавлению закладки с помощью Aspose.PDF для .NET. Вы можете использовать этот код, чтобы улучшить навигацию в PDF-документах, добавив пользовательские закладки.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Обязательно ознакомьтесь с официальной документацией Aspose.PDF для получения дополнительной информации о расширенных функциях управления закладками.
 
 
-### FAQ's for add bookmark in PDF file
+### Часто задаваемые вопросы по добавлению закладки в файл PDF
 
-#### Q: What are bookmarks in a PDF file?
+#### Вопрос: Что такое закладки в PDF-файле?
 
-A: Bookmarks, also known as outlines, are interactive elements that provide navigation and structure within a PDF document. They allow users to quickly jump to specific sections or pages.
+О: Закладки, также известные как структуры, представляют собой интерактивные элементы, обеспечивающие навигацию и структуру в PDF-документе. Они позволяют пользователям быстро переходить к определенным разделам или страницам.
 
-#### Q: Why would I need to add bookmarks to a PDF file?
+#### Вопрос: Зачем мне добавлять закладки в PDF-файл?
 
-A: Adding bookmarks to a PDF file improves user experience and makes it easier for readers to navigate through the document's content. Bookmarks can serve as a table of contents or provide quick access to important sections.
+О: Добавление закладок в PDF-файл улучшает работу пользователя и упрощает навигацию по содержимому документа. Закладки могут служить оглавлением или обеспечивать быстрый доступ к важным разделам.
 
-#### Q: How do I import the required libraries for my C# project?
+#### Вопрос: Как мне импортировать необходимые библиотеки для моего проекта C#?
 
-A: To import the necessary libraries for your C# project, include the following import directives:
+О: Чтобы импортировать необходимые библиотеки для вашего проекта C#, включите следующие директивы импорта:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-These directives enable you to access the classes and methods needed for working with PDF documents and bookmarks.
+Эти директивы позволяют получить доступ к классам и методам, необходимым для работы с PDF-документами и закладками.
 
-#### Q: How do I specify the path to the documents folder?
+#### Вопрос: Как указать путь к папке с документами?
 
-A: Replace `"YOUR DOCUMENT DIRECTORY"` in the provided source code with the actual path to the folder containing the PDF file you want to add a bookmark to.
+ А: заменить`"YOUR DOCUMENT DIRECTORY"` в предоставленном исходном коде с указанием фактического пути к папке, содержащей PDF-файл, к которому вы хотите добавить закладку.
 
-#### Q: How do I open a PDF document for adding bookmarks?
+#### Вопрос: Как открыть PDF-документ для добавления закладок?
 
-A: To open a PDF document for adding bookmarks, use the following code:
+О: Чтобы открыть PDF-документ для добавления закладок, используйте следующий код:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddBookmark.pdf");
 ```
 
-Replace `"AddBookmark.pdf"` with the actual file name.
+ Заменять`"AddBookmark.pdf"` с фактическим именем файла.
 
-#### Q: How do I create a bookmark object?
+#### Вопрос: Как создать объект закладки?
 
-A: To create a bookmark object, use the `OutlineItemCollection` class. Customize its properties such as title, italic style, bold style, and action to perform when clicked.
+ О: Чтобы создать объект закладки, используйте`OutlineItemCollection` сорт. Настройте его свойства, такие как заголовок, курсив, полужирный стиль и действие, выполняемое при нажатии.
 
 ```csharp
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -129,39 +129,39 @@ pdfOutline.Bold = true;
 pdfOutline.Action = new GoToAction(pdfDocument.Pages[1]);
 ```
 
-#### Q: What is the purpose of the `Action` property in a bookmark?
+####  Вопрос: Какова цель`Action` property in a bookmark?
 
-A: The `Action` property specifies the action to be performed when the bookmark is clicked. In this example, we use the `GoToAction` class to navigate to a specific page (page 2 in this case).
+ А:`Action` Свойство определяет действие, которое будет выполнено при щелчке по закладке. В этом примере мы используем`GoToAction`класс для перехода на определенную страницу (в данном случае страницу 2).
 
-#### Q: How do I add the bookmark to the document?
+#### Вопрос: Как добавить закладку в документ?
 
-A: Use the `Add` method of the `Outlines` property to add the created bookmark to the document's bookmark collection.
+ А: Используйте`Add` метод`Outlines` свойство для добавления созданной закладки в коллекцию закладок документа.
 
 ```csharp
 pdfDocument.Outlines.Add(pdfOutline);
 ```
 
-#### Q: Can I add multiple bookmarks using this method?
+#### Вопрос: Могу ли я добавить несколько закладок этим методом?
 
-A: Yes, you can repeat steps 4 to 8 to add multiple bookmarks to the document. Customize each bookmark's properties and actions as needed.
+О: Да, вы можете повторить шаги с 4 по 8, чтобы добавить в документ несколько закладок. Настройте свойства и действия каждой закладки по мере необходимости.
 
-#### Q: How do I save the updated PDF file?
+#### Вопрос: Как сохранить обновленный PDF-файл?
 
-A: Save the updated PDF file using the `Save` method of the `pdfDocument` object:
+ О: Сохраните обновленный PDF-файл, используя`Save` метод`pdfDocument` объект:
 
 ```csharp
 dataDir = dataDir + "AddBookmark_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-#### Q: How can I confirm that the bookmarks have been added?
+#### Вопрос: Как я могу подтвердить, что закладки добавлены?
 
-A: Open the generated PDF file to verify that the specified bookmarks have been added to the document.
+О: Откройте созданный PDF-файл и убедитесь, что указанные закладки добавлены в документ.
 
-#### Q: Is there a limit to the number of bookmarks I can add?
+#### Вопрос: Есть ли ограничение на количество закладок, которые я могу добавить?
 
-A: There is generally no strict limit to the number of bookmarks you can add, but consider the document's size and complexity for optimal performance.
+О. Как правило, строгого ограничения на количество добавляемых закладок не существует, но для оптимальной производительности учитывайте размер и сложность документа.
 
-#### Q: Can I customize the appearance of bookmarks?
+#### Вопрос: Могу ли я настроить внешний вид закладок?
 
-A: Yes, you can further customize bookmark appearance, color, style, and other attributes using Aspose.PDF features.
+О: Да, вы можете дополнительно настроить внешний вид, цвет, стиль и другие атрибуты закладок, используя функции Aspose.PDF.

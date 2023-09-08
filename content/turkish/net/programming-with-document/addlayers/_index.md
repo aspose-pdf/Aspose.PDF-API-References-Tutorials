@@ -1,36 +1,36 @@
 ---
-title: Add Layers To PDF File
-linktitle: Add Layers To PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add layers to PDF files using Aspose.PDF for .NET. Step-by-step guide with code tutorials for creating and saving layered PDFs.
+title: PDF Dosyasına Katman Ekleme
+linktitle: PDF Dosyasına Katman Ekleme
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyalarına nasıl katman ekleyeceğinizi öğrenin. Katmanlı PDF'ler oluşturmaya ve kaydetmeye yönelik kod eğitimlerini içeren adım adım kılavuz.
 type: docs
 weight: 20
 url: /tr/net/programming-with-document/addlayers/
 ---
-To add layers to PDF file, we will utilize Aspose.PDF for .NET. This library allows us to work with PDF files in .NET applications effectively. Follow the step-by-step instructions below to add layers using Aspose.PDF for .NET.
+PDF dosyasına katman eklemek için Aspose.PDF for .NET'i kullanacağız. Bu kütüphane, .NET uygulamalarında PDF dosyalarıyla etkili bir şekilde çalışmamıza olanak tanır. Aspose.PDF for .NET kullanarak katman eklemek için aşağıdaki adım adım talimatları izleyin.
 
-## Step 1: Create a New PDF Document
+## 1. Adım: Yeni Bir PDF Belgesi Oluşturun
 
-Begin by creating a new instance of the `Document` class provided by Aspose.PDF for .NET. This will serve as the PDF document where we will add the layers.
+ Yeni bir örneğini oluşturarak başlayın`Document` sınıf Aspose.PDF for .NET tarafından sağlanmıştır. Bu, katmanları ekleyeceğimiz PDF belgesi görevi görecektir.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document();
 ```
 
-## Step 2: Add a Page to the Document
+## Adım 2: Belgeye Sayfa Ekleme
 
-Next, add a page to the document using the `Add` method of the `Pages` collection in the `Document` class.
+ Daha sonra belgeye şunu kullanarak bir sayfa ekleyin:`Add` yöntemi`Pages` 'daki koleksiyon`Document` sınıf.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Create and Add Layers to the Page
+## 3. Adım: Sayfaya Katmanlar Oluşturun ve Ekleyin
 
-Create instances of the `Layer` class for each layer you want to add to the PDF file. Specify a unique identifier and a name for each layer.
+ Örneklerini oluşturun`Layer` PDF dosyasına eklemek istediğiniz her katman için sınıf. Her katman için benzersiz bir tanımlayıcı ve ad belirtin.
 
 ```csharp
 Layer layer = new Layer("oc1", "Red Line");
@@ -56,11 +56,11 @@ layer.Contents.Add(new Aspose.Pdf.Operators.Stroke());
 page.Layers.Add(layer);
 ```
 
-In this tutorial, we have added three layers with different colors and names to the page.
+Bu dersimizde sayfaya farklı renk ve adlara sahip üç katman ekledik.
 
-## Step 4: Save the PDF File
+## Adım 4: PDF Dosyasını Kaydedin
 
-Save the modified PDF file using the `Save` method of the `Document` class.
+ Değiştirilen PDF dosyasını kullanarak kaydedin.`Save` yöntemi`Document` sınıf.
 
 ```csharp
 dataDir = dataDir + "AddLayers_out.pdf";
@@ -69,12 +69,12 @@ doc.Save(dataDir);
 Console.WriteLine("\nLayers added successfully to PDF file.\nFile saved at " + dataDir);
 ```
 
-This code will save the modified PDF file to the specified directory.
+Bu kod, değiştirilen PDF dosyasını belirtilen dizine kaydedecektir.
 
-### Example source code for Adding Layers to PDF Pages using Aspose.PDF for .NET
+### Aspose.PDF for .NET Kullanarak PDF Sayfalarına Katman Eklemek için örnek kaynak kodu
 
 ```csharp            
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document();
@@ -105,29 +105,29 @@ Console.WriteLine("\nLayers added successfully to PDF file.\nFile saved at " + d
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this article, we have provided a step-by-step guide to adding layers to PDF files using Aspose.PDF for .NET. By following the instructions and utilizing the provided code tutorials, you can easily incorporate layers into your PDF documents. Layers allow you to organize and control the visibility of content, providing a more interactive and customizable experience for your users.
+Bu makalede Aspose.PDF for .NET kullanarak PDF dosyalarına katman ekleme konusunda adım adım bir kılavuz sunduk. Talimatları takip ederek ve sağlanan kod eğitimlerinden yararlanarak katmanları PDF belgelerinize kolayca dahil edebilirsiniz. Katmanlar, içeriğin görünürlüğünü düzenlemenize ve kontrol etmenize olanak tanıyarak kullanıcılarınıza daha etkileşimli ve özelleştirilebilir bir deneyim sunar.
 
 
-### FAQ's for add layers to PDF file
+### PDF dosyasına katman eklemeyle ilgili SSS'ler
 
-#### Q: What is Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET nedir?
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF files effectively in .NET applications. It provides a wide range of features for creating, modifying, and manipulating PDF documents.
+C: Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarında PDF dosyalarıyla etkili bir şekilde çalışmasına olanak tanıyan güçlü bir kitaplıktır. PDF belgelerini oluşturmak, değiştirmek ve işlemek için çok çeşitli özellikler sunar.
 
-#### Q: What are PDF layers?
+#### S: PDF katmanları nedir?
 
-A: PDF layers, also known as Optional Content Groups (OCGs), allow you to control the visibility and appearance of specific content within a PDF file. They are useful for organizing content and creating interactive documents.
+C: İsteğe Bağlı İçerik Grupları (OCG'ler) olarak da bilinen PDF katmanları, bir PDF dosyasındaki belirli içeriğin görünürlüğünü ve görünümünü kontrol etmenize olanak tanır. İçeriği düzenlemek ve etkileşimli belgeler oluşturmak için kullanışlıdırlar.
 
-#### Q: Can I add multiple layers to a PDF file using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF dosyasına birden fazla katman ekleyebilir miyim?
 
-A: Yes, you can add multiple layers to a PDF file using Aspose.PDF for .NET. Each layer can have its own unique identifier and name, as demonstrated in the tutorial.
+C: Evet, Aspose.PDF for .NET'i kullanarak bir PDF dosyasına birden fazla katman ekleyebilirsiniz. Her katmanın, öğreticide gösterildiği gibi, kendi benzersiz tanımlayıcısı ve adı olabilir.
 
-#### Q: How can I customize the appearance of the layers?
+#### S: Katmanların görünümünü nasıl özelleştirebilirim?
 
-A: You can customize the appearance of the layers by specifying different properties, such as color, opacity, and visibility. Aspose.PDF for .NET provides various options to achieve this.
+C: Renk, opaklık ve görünürlük gibi farklı özellikleri belirterek katmanların görünümünü özelleştirebilirsiniz. Aspose.PDF for .NET bunu başarmak için çeşitli seçenekler sunar.
 
-#### Q: Is Aspose.PDF for .NET suitable for professional projects?
+#### S: Aspose.PDF for .NET profesyonel projeler için uygun mudur?
 
-A: Yes, Aspose.PDF for .NET is a reliable and widely used library for PDF manipulation in professional projects. It offers extensive functionality and excellent performance for working with PDF files in .NET applications.
+C: Evet, Aspose.PDF for .NET, profesyonel projelerde PDF manipülasyonu için güvenilir ve yaygın olarak kullanılan bir kütüphanedir. .NET uygulamalarında PDF dosyalarıyla çalışmak için kapsamlı işlevsellik ve mükemmel performans sunar.

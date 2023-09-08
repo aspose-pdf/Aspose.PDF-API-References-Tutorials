@@ -1,44 +1,44 @@
 ---
-title: Determine Progress To PDF File
-linktitle: Determine Progress To PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to determine the progress to a PDF file conversion process using Aspose.PDF for .NET with this step-by-step guide and code example.
+title: تحديد التقدم إلى ملف PDF
+linktitle: تحديد التقدم إلى ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تحديد التقدم المحرز في عملية تحويل ملف PDF باستخدام Aspose.PDF لـ .NET باستخدام هذا الدليل خطوة بخطوة ومثال التعليمات البرمجية.
 type: docs
 weight: 110
 url: /ar/net/programming-with-document/determineprogress/
 ---
-Aspose.PDF for .NET provides a feature that allows you to determine the progress of a PDF file conversion process. In this tutorial, we will provide a step-by-step guide on how to implement this feature using C# and Aspose.PDF for .NET.
+يوفر Aspose.PDF for .NET ميزة تتيح لك تحديد التقدم المحرز في عملية تحويل ملف PDF. في هذا البرنامج التعليمي، سنقدم دليلاً خطوة بخطوة حول كيفية تنفيذ هذه الميزة باستخدام C# وAspose.PDF لـ .NET.
 
-## Step 1: Loading the PDF document
+## الخطوة 1: تحميل وثيقة PDF
 
-The first step is to load the PDF document that you want to convert. For this tutorial, we will use the file "AddTOC.pdf". Replace the path to this file with the path to your own PDF document.
+الخطوة الأولى هي تحميل مستند PDF الذي تريد تحويله. في هذا البرنامج التعليمي، سوف نستخدم الملف "AddTOC.pdf". استبدل المسار إلى هذا الملف بالمسار إلى مستند PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "AddTOC.pdf");
 ```
 
-## Step 2: Setting up the custom progress handler
+## الخطوة 2: إعداد معالج التقدم المخصص
 
-Next, we need to set up the custom progress handler that will be called during the conversion process. In this tutorial, we will use the `ConversionProgressEventHandler` delegate provided by Aspose.PDF for .NET.
+بعد ذلك، نحتاج إلى إعداد معالج التقدم المخصص الذي سيتم استدعاؤه أثناء عملية التحويل. في هذا البرنامج التعليمي، سوف نستخدم`ConversionProgressEventHandler` المفوض المقدم من Aspose.PDF لـ .NET.
 
 ```csharp
 DocSaveOptions saveOptions = new DocSaveOptions();
 saveOptions.CustomProgressHandler = new UnifiedSaveOptions.ConversionProgressEventHandler(ShowProgressOnConsole);
 ```
 
-## Step 3: Saving the PDF document
+## الخطوة 3: حفظ وثيقة PDF
 
-Finally, we need to save the PDF document using the `Save()` method of the `Document` object. We will pass in the custom progress handler that we set up in the previous step as a parameter.
+ أخيرًا، نحتاج إلى حفظ مستند PDF باستخدام ملف`Save()` طريقة`Document` هدف. سنقوم بتمرير معالج التقدم المخصص الذي قمنا بإعداده في الخطوة السابقة كمعلمة.
 
 ```csharp
 dataDir = dataDir + "DetermineProgress_out.pdf";
 pdfDocument.Save(dataDir, saveOptions);
 ```
 
-## Step 4: Implementing the progress handler
+## الخطوة 4: تنفيذ معالج التقدم
 
-To implement the progress handler, we need to define a method that takes a single parameter of type `ConversionProgressEventArgs`. This method will be called during the conversion process to report the progress of the conversion.
+ لتنفيذ معالج التقدم، نحتاج إلى تحديد طريقة تأخذ معلمة واحدة من النوع`ConversionProgressEventArgs`. سيتم استدعاء هذه الطريقة أثناء عملية التحويل للإبلاغ عن تقدم عملية التحويل.
 
 ```csharp
 private void ShowProgressOnConsole(ConversionProgressEventArgs args)
@@ -47,13 +47,13 @@ private void ShowProgressOnConsole(ConversionProgressEventArgs args)
 }
 ```
 
-### Example source code for Determine Progress using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لتحديد التقدم باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "AddTOC.pdf");
 DocSaveOptions saveOptions = new DocSaveOptions();
 saveOptions.CustomProgressHandler = new UnifiedSaveOptions.ConversionProgressEventHandler(ShowProgressOnConsole);
@@ -68,24 +68,24 @@ private void ShowProgressOnConsole(ConversionProgressEventArgs args)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we have provided a step-by-step guide on how to determine the progress of a PDF document's conversion process using Aspose.PDF for .NET. We have also provided a code example that you can use as a reference when implementing this feature in your own application.
+في هذا البرنامج التعليمي، قدمنا دليلًا خطوة بخطوة حول كيفية تحديد التقدم المحرز في عملية تحويل مستند PDF باستخدام Aspose.PDF لـ .NET. لقد قدمنا أيضًا مثالًا للتعليمات البرمجية التي يمكنك استخدامها كمرجع عند تنفيذ هذه الميزة في التطبيق الخاص بك.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Why is it important to determine the progress of a PDF conversion process?
+#### س: لماذا من المهم تحديد التقدم المحرز في عملية تحويل PDF؟
 
-A: Determining the progress of a PDF conversion process is essential for providing feedback to users and monitoring the performance of the conversion. It helps users understand the current status of the conversion and estimate the remaining time.
+ج: يعد تحديد التقدم المحرز في عملية تحويل PDF أمرًا ضروريًا لتقديم الملاحظات للمستخدمين ومراقبة أداء التحويل. يساعد المستخدمين على فهم الوضع الحالي للتحويل وتقدير الوقت المتبقي.
 
-#### Q: How can I determine the progress of a PDF conversion using Aspose.PDF for .NET?
+#### س: كيف يمكنني تحديد التقدم المحرز في تحويل PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Aspose.PDF for .NET provides a custom progress handler feature that allows you to determine the progress of a PDF conversion process. You can set up a custom progress handler using the `ConversionProgressEventHandler` delegate and pass it to the `DocSaveOptions` while saving the PDF document.
+ ج: يوفر Aspose.PDF for .NET ميزة معالج التقدم المخصص الذي يسمح لك بتحديد التقدم المحرز في عملية تحويل PDF. يمكنك إعداد معالج تقدم مخصص باستخدام`ConversionProgressEventHandler` تفويض وتمريره إلى`DocSaveOptions` أثناء حفظ وثيقة PDF.
 
-#### Q: What is a progress handler in Aspose.PDF for .NET?
+#### س: ما هو معالج التقدم في Aspose.PDF لـ .NET؟
 
-A: A progress handler in Aspose.PDF for .NET is a method that is called during a conversion process to report the progress of the conversion. You can define a progress handler using the `ConversionProgressEventHandler` delegate.
+ ج: معالج التقدم في Aspose.PDF لـ .NET هو أسلوب يتم استدعاؤه أثناء عملية التحويل للإبلاغ عن تقدم التحويل. يمكنك تحديد معالج التقدم باستخدام`ConversionProgressEventHandler` مندوب.
 
-#### Q: Is Aspose.PDF for .NET suitable for professional projects involving PDF conversion?
+#### س: هل Aspose.PDF for .NET مناسب للمشاريع الاحترافية التي تتضمن تحويل PDF؟
 
-A: Absolutely, Aspose.PDF for .NET is a powerful library that is widely used in professional projects for PDF conversion and manipulation tasks. It provides comprehensive functionalities and excellent performance for working with PDF files in .NET applications.
+ج: بالتأكيد، Aspose.PDF for .NET هي مكتبة قوية تُستخدم على نطاق واسع في المشاريع الاحترافية لتحويل PDF ومهام المعالجة. فهو يوفر وظائف شاملة وأداء ممتازًا للعمل مع ملفات PDF في تطبيقات .NET.

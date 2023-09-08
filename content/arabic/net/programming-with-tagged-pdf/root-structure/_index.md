@@ -1,135 +1,135 @@
 ---
-title: Root Structure
-linktitle: Root Structure
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to using root structure elements with Aspose.PDF for .NET to access the root and StructTreeRoot object of the PDF document.
+title: هيكل الجذر
+linktitle: هيكل الجذر
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لاستخدام عناصر البنية الجذرية مع Aspose.PDF لـ .NET للوصول إلى الجذر وكائن StructTreeRoot لمستند PDF.
 type: docs
 weight: 130
 url: /ar/net/programming-with-tagged-pdf/root-structure/
 ---
-In this step-by-step guide, we are going to show you how to use root structure elements with Aspose.PDF for .NET. Aspose.PDF is a powerful library that lets you create and manipulate PDF documents programmatically. Root structure elements allow you to access the StructTreeRoot object of the PDF document and the root structure element.
+في هذا الدليل خطوة بخطوة، سنوضح لك كيفية استخدام عناصر البنية الجذرية مع Aspose.PDF لـ .NET. Aspose.PDF هي مكتبة قوية تتيح لك إنشاء مستندات PDF ومعالجتها برمجيًا. تتيح لك عناصر البنية الجذرية الوصول إلى كائن StructTreeRoot الخاص بمستند PDF وعنصر البنية الجذرية.
 
-Let's dive into the code and learn how to use root structure elements with Aspose.PDF for .NET.
+دعنا نتعمق في التعليمات البرمجية ونتعلم كيفية استخدام عناصر البنية الجذرية مع Aspose.PDF لـ .NET.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-1. Aspose.PDF library for .NET installed.
-2. A basic knowledge of the C# programming language.
+1. تم تثبيت مكتبة Aspose.PDF لـ .NET.
+2. معرفة أساسية بلغة البرمجة C#.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-To get started, open your C# development environment and create a new project. Make sure you have added a reference to the Aspose.PDF library for .NET in your project.
+للبدء، افتح بيئة تطوير C# الخاصة بك وقم بإنشاء مشروع جديد. تأكد من إضافة مرجع إلى مكتبة Aspose.PDF لـ .NET في مشروعك.
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating the document
+## الخطوة 2: إنشاء الوثيقة
 
-The first step is to create a new PDF document using the `Document` class.
+ الخطوة الأولى هي إنشاء مستند PDF جديد باستخدام الملف`Document` فصل.
 
 ```csharp
-// Create the PDF document
+// قم بإنشاء مستند PDF
 Document document = new Document();
 ```
 
-## Step 3: Work with tagged content
+## الخطوة 3: العمل مع المحتوى الموسوم
 
-Then we get the tagged content of the document to work with.
+ثم نحصل على المحتوى المميز للمستند للعمل معه.
 
 ```csharp
-// Get the tagged content of the document
+// احصل على المحتوى المميز للمستند
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 4: Set document title and language
+## الخطوة 4: تعيين عنوان المستند واللغة
 
-We can now set the document title and language.
+يمكننا الآن تعيين عنوان المستند واللغة.
 
 ```csharp
-// Define the document title and language
+// تحديد عنوان الوثيقة واللغة
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 5: Access the root structure element
+## الخطوة 5: الوصول إلى عنصر البنية الجذرية
 
-Now we can access the document's StructTreeRoot object and root structure element.
+يمكننا الآن الوصول إلى كائن StructTreeRoot وعنصر البنية الجذرية للمستند.
 
 ```csharp
-// Access the root structure element
+// الوصول إلى عنصر البنية الجذرية
 StructTreeRootElement structTreeRootElement = taggedContent.StructTreeRootElement;
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-### Sample source code for Root Structure using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لبنية الجذر باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// إنشاء مستند PDF
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// احصل على محتوى للعمل مع TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+// قم بتعيين العنوان واللغة لـ Documnet
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Properties StructTreeRootElement and RootElement are used for access to 
-// StructTreeRoot object of pdf document and to root structure element (Document structure element).
+// يتم استخدام الخصائص StructTreeRootElement وRootElement للوصول إلى
+// كائن StructTreeRoot لمستند pdf وعنصر بنية الجذر (عنصر بنية المستند).
 StructTreeRootElement structTreeRootElement = taggedContent.StructTreeRootElement;
 StructureElement rootElement = taggedContent.RootElement;
 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have learned how to use root structure elements with Aspose.PDF for .NET. You can now access the PDF document's StructTreeRoot object and root structure element to perform advanced operations on the document structure.
+تهنئة ! لقد تعلمت كيفية استخدام عناصر البنية الجذرية مع Aspose.PDF لـ .NET. يمكنك الآن الوصول إلى كائن StructTreeRoot وعنصر البنية الجذرية لمستند PDF لإجراء عمليات متقدمة على بنية الوثيقة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What are root structure elements in a PDF document, and how do they provide access to the document's structure?
+#### س: ما هي عناصر البنية الجذرية في مستند PDF، وكيف توفر الوصول إلى بنية المستند؟
 
-A: Root structure elements in a PDF document provide access to the document's structure, allowing you to interact with the StructTreeRoot object. They serve as entry points to the logical structure of the document, enabling advanced operations on the document's content.
+ج: توفر عناصر البنية الجذرية في مستند PDF إمكانية الوصول إلى بنية المستند، مما يسمح لك بالتفاعل مع كائن StructTreeRoot. وهي بمثابة نقاط دخول إلى البنية المنطقية للمستند، مما يتيح إجراء عمليات متقدمة على محتوى المستند.
 
-#### Q: How does Aspose.PDF for .NET facilitate working with root structure elements?
+#### س: كيف يسهل Aspose.PDF for .NET العمل مع عناصر البنية الجذرية؟
 
-A: Aspose.PDF for .NET simplifies working with root structure elements by providing APIs to access the StructTreeRoot object and root structure element. This allows you to navigate and manipulate the document's logical structure programmatically.
+ج: يعمل Aspose.PDF for .NET على تبسيط العمل مع عناصر البنية الجذرية من خلال توفير واجهات برمجة التطبيقات للوصول إلى كائن StructTreeRoot وعنصر البنية الجذرية. يتيح لك ذلك التنقل في البنية المنطقية للمستند ومعالجتها برمجيًا.
 
-#### Q: What is the significance of the StructTreeRoot object in a PDF document's logical structure?
+#### س: ما هي أهمية كائن StructTreeRoot في البنية المنطقية لمستند PDF؟
 
-A: The StructTreeRoot object represents the root of the document's logical structure hierarchy. It contains a collection of structure elements that define the organization and relationships between different parts of the document.
+ج: يمثل كائن StructTreeRoot جذر التسلسل الهرمي للبنية المنطقية للمستند. يحتوي على مجموعة من العناصر الهيكلية التي تحدد التنظيم والعلاقات بين أجزاء مختلفة من المستند.
 
-#### Q: How can root structure elements be useful in PDF document manipulation?
+#### س: كيف يمكن أن تكون عناصر البنية الجذرية مفيدة في معالجة مستندات PDF؟
 
-A: Root structure elements offer a way to programmatically access and modify the underlying structure of a PDF document. This can be valuable for tasks such as adding, rearranging, or modifying the document's content while preserving its logical structure.
+ج: توفر عناصر البنية الجذرية طريقة للوصول إلى البنية الأساسية لمستند PDF وتعديلها برمجيًا. يمكن أن يكون هذا مفيدًا لمهام مثل إضافة محتوى المستند أو إعادة ترتيبه أو تعديله مع الحفاظ على بنيته المنطقية.
 
-#### Q: Can I use root structure elements to access metadata or properties of a PDF document?
+#### س: هل يمكنني استخدام عناصر البنية الجذرية للوصول إلى البيانات التعريفية أو خصائص مستند PDF؟
 
-A: While root structure elements primarily focus on the document's logical structure, you can use them to access metadata and properties indirectly. By navigating the document's structure, you can retrieve information associated with different structure elements.
+ج: بينما تركز عناصر البنية الجذرية بشكل أساسي على البنية المنطقية للمستند، يمكنك استخدامها للوصول إلى بيانات التعريف والخصائص بشكل غير مباشر. من خلال التنقل في بنية المستند، يمكنك استرداد المعلومات المرتبطة بعناصر البنية المختلفة.
 
-#### Q: How does the StructTreeRootElement object relate to the root structure element?
+#### س: كيف يرتبط كائن StructTreeRootElement بعنصر البنية الجذرية؟
 
-A: The StructTreeRootElement object is the entry point for accessing the StructTreeRoot object, which represents the highest level of the document's logical structure. The root structure element, on the other hand, represents the root element of the document's structure hierarchy.
+ج: كائن StructTreeRootElement هو نقطة الدخول للوصول إلى كائن StructTreeRoot، الذي يمثل أعلى مستوى من البنية المنطقية للمستند. من ناحية أخرى، يمثل عنصر البنية الجذرية العنصر الجذري للتسلسل الهرمي لبنية الوثيقة.
 
-#### Q: Can I perform advanced operations on a PDF document's logical structure using root structure elements?
+#### س: هل يمكنني إجراء عمليات متقدمة على البنية المنطقية لمستند PDF باستخدام عناصر البنية الجذرية؟
 
-A: Yes, you can perform advanced operations on a PDF document's logical structure using root structure elements. You can traverse the hierarchy, add new structure elements, modify existing ones, and establish relationships between different parts of the document.
+ج: نعم، يمكنك إجراء عمليات متقدمة على البنية المنطقية لمستند PDF باستخدام عناصر البنية الجذرية. يمكنك اجتياز التسلسل الهرمي وإضافة عناصر بنية جديدة وتعديل العناصر الموجودة وإنشاء علاقات بين أجزاء مختلفة من المستند.
 
-#### Q: Is it possible to create custom structure elements within the PDF document using root structure elements?
+#### س: هل من الممكن إنشاء عناصر بنية مخصصة داخل مستند PDF باستخدام عناصر البنية الجذرية؟
 
-A: Yes, you can create custom structure elements within the PDF document using root structure elements. This allows you to define and organize the document's structure according to your specific requirements.
+ج: نعم، يمكنك إنشاء عناصر بنية مخصصة داخل مستند PDF باستخدام عناصر البنية الجذرية. يتيح لك ذلك تحديد وتنظيم بنية المستند وفقًا لمتطلباتك المحددة.
 
-#### Q: Are there any precautions to consider when working with root structure elements in Aspose.PDF for .NET?
+#### س: هل هناك أي احتياطات يجب مراعاتها عند العمل مع عناصر البنية الجذرية في Aspose.PDF لـ .NET؟
 
-A: When working with root structure elements, it's important to understand the PDF document's logical structure and the relationships between different elements. Be mindful of the hierarchy and the impact of modifications on the overall document structure.
+ج: عند العمل مع عناصر البنية الجذرية، من المهم فهم البنية المنطقية لمستند PDF والعلاقات بين العناصر المختلفة. ضع في اعتبارك التسلسل الهرمي وتأثير التعديلات على البنية العامة للوثيقة.
 
-#### Q: How do root structure elements contribute to making PDF document manipulation more efficient and precise?
+#### س: كيف تساهم عناصر البنية الجذرية في جعل معالجة مستندات PDF أكثر كفاءة ودقة؟
 
-A: Root structure elements provide a structured approach to manipulating PDF documents. They enable targeted modifications by allowing you to access specific parts of the document's logical structure, leading to more efficient and precise document manipulation.
+ج: توفر عناصر البنية الجذرية أسلوبًا منظمًا لمعالجة مستندات PDF. إنها تتيح إجراء تعديلات مستهدفة من خلال السماح لك بالوصول إلى أجزاء محددة من البنية المنطقية للمستند، مما يؤدي إلى معالجة مستند أكثر كفاءة ودقة.

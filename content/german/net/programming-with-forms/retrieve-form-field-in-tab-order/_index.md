@@ -1,47 +1,47 @@
 ---
-title: Retrieve Form Field In Tab Order
-linktitle: Retrieve Form Field In Tab Order
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to retrieve form fields in tab order using Aspose.PDF for .NET.
+title: Formularfeld in Tab-Reihenfolge abrufen
+linktitle: Formularfeld in Tab-Reihenfolge abrufen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Formularfelder in Tab-Reihenfolge abrufen.
 type: docs
 weight: 240
 url: /de/net/programming-with-forms/retrieve-form-field-in-tab-order/
 ---
-When working with PDF documents in C# using Aspose.PDF for .NET, you may come across a scenario where you need to retrieve form fields in a specific tab order. This can be useful when you want to perform operations on form fields based on their tab sequence. In this tutorial, we will guide you step by step on how to retrieve form fields in tab order using Aspose.PDF for .NET.
+Beim Arbeiten mit PDF-Dokumenten in C# unter Verwendung von Aspose.PDF für .NET stoßen Sie möglicherweise auf ein Szenario, in dem Sie Formularfelder in einer bestimmten Tab-Reihenfolge abrufen müssen. Dies kann nützlich sein, wenn Sie Operationen an Formularfeldern basierend auf ihrer Tabulatorreihenfolge ausführen möchten. In diesem Tutorial führen wir Sie Schritt für Schritt durch das Abrufen von Formularfeldern in Tab-Reihenfolge mit Aspose.PDF für .NET.
 
-## Requirements
+## Anforderungen
 
-Before we begin, make sure you have the following prerequisites:
+Bevor wir beginnen, stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllen:
 
-- Visual Studio installed on your system
-- Aspose.PDF for .NET library installed
+- Visual Studio ist auf Ihrem System installiert
+- Aspose.PDF für .NET-Bibliothek installiert
 
-Now, let's dive into the steps to retrieve form fields in tab order.
+Lassen Sie uns nun in die Schritte zum Abrufen von Formularfeldern in Tab-Reihenfolge eintauchen.
 
-## Step 1: Setting the Document Directory
+## Schritt 1: Festlegen des Dokumentenverzeichnisses
 
-To start with, you need to set the document directory where your PDF document is located. You can do this by specifying the path to the directory in the `dataDir` variable.
+ Zunächst müssen Sie das Dokumentverzeichnis festlegen, in dem sich Ihr PDF-Dokument befindet. Sie können dies tun, indem Sie den Pfad zum Verzeichnis im angeben`dataDir` Variable.
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
 
-## Step 2: Loading the PDF Document
+## Schritt 2: Laden des PDF-Dokuments
 
-In this step, we will load the PDF document using Aspose.PDF for .NET. The `Document` class provides the ability to load and manipulate PDF documents.
+ In diesem Schritt laden wir das PDF-Dokument mit Aspose.PDF für .NET. Der`Document` Die Klasse bietet die Möglichkeit, PDF-Dokumente zu laden und zu bearbeiten.
 
 ```csharp
 Document doc = new Document(dataDir + "Test2.pdf");
 ```
 
-Here, `"Test2.pdf"` is the name of the PDF document you want to load. Make sure the document is present in the specified document directory.
+ Hier,`"Test2.pdf"`ist der Name des PDF-Dokuments, das Sie laden möchten. Stellen Sie sicher, dass das Dokument im angegebenen Dokumentverzeichnis vorhanden ist.
 
-## Step 3: Retrieving Form Fields in Tab Order
+## Schritt 3: Formularfelder in Tab-Reihenfolge abrufen
 
-To retrieve form fields in tab order, we need to access the `FieldsInTabOrder` property of the `Page` class. This property returns a list of form fields sorted by their tab sequence.
+ Um Formularfelder in Tab-Reihenfolge abzurufen, müssen wir auf zugreifen`FieldsInTabOrder` Eigentum der`Page` Klasse. Diese Eigenschaft gibt eine Liste von Formularfeldern zurück, sortiert nach ihrer Tabulatorreihenfolge.
 
 ```csharp
 Page page = doc.Pages[1];
@@ -53,11 +53,11 @@ foreach (Field field in fields)
 }
 ```
 
-In the above code snippet, we retrieve the form fields from the second page (`doc.Pages[1]`) and iterate through each field to concatenate their partial names into the `s` variable. You can modify this code snippet based on your specific requirements.
+Im obigen Codeausschnitt rufen wir die Formularfelder von der zweiten Seite ab (`doc.Pages[1]` ) und durchlaufen Sie jedes Feld, um deren Teilnamen zu verketten`s` Variable. Sie können dieses Code-Snippet entsprechend Ihren spezifischen Anforderungen ändern.
 
-## Step 4: Modifying the Tab Order
+## Schritt 4: Ändern der Tab-Reihenfolge
 
-If you want to modify the tab order of form fields, you can do so by accessing the `TabOrder` property of each field and assigning a new tab order value. Here's an example:
+ Wenn Sie die Tab-Reihenfolge von Formularfeldern ändern möchten, können Sie dies tun, indem Sie auf zugreifen`TabOrder` Eigenschaft jedes Felds und Zuweisen eines neuen Tab-Reihenfolgewerts. Hier ist ein Beispiel:
 
 ```csharp
 (doc.Form[3] as Field).TabOrder = 1;
@@ -65,21 +65,21 @@ If you want to modify the tab order of form fields, you can do so by accessing t
 (doc.Form[2] as Field).TabOrder = 3;
 ```
 
-In the above code snippet, we assign new tab order values to three form fields (`doc.Form[3]`, `doc.Form[1]`, and `doc.Form[2]`). Adjust the field indices and tab order values according to your specific requirements.
+Im obigen Codeausschnitt weisen wir drei Formularfeldern neue Tab-Reihenfolgewerte zu (`doc.Form[3]`, `doc.Form[1]` , Und`doc.Form[2]`). Passen Sie die Feldindizes und Tab-Reihenfolgewerte entsprechend Ihren spezifischen Anforderungen an.
 
-## Step 5: Saving the Modified Document
+## Schritt 5: Speichern des geänderten Dokuments
 
-After modifying the tab order of form fields, you need to save the modified document. You can do this using the `Save` method of the `Document` class.
+ Nachdem Sie die Tab-Reihenfolge der Formularfelder geändert haben, müssen Sie das geänderte Dokument speichern. Sie können dies mit dem tun`Save` Methode der`Document` Klasse.
 
 ```csharp
 doc.Save(dataDir + "39522_out.pdf");
 ```
 
-Here, `"39522_out.pdf"` is the name of the output file where the modified document will be saved. Specify the desired name and location for the output file.
+ Hier,`"39522_out.pdf"` ist der Name der Ausgabedatei, in der das geänderte Dokument gespeichert wird. Geben Sie den gewünschten Namen und Speicherort für die Ausgabedatei an.
 
-### Sample source code for Retrieve Form Field In Tab Order using Aspose.PDF for .NET 
+### Beispielquellcode für „Formularfeld in Tab-Reihenfolge abrufen“ mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "Test2.pdf");
 Page page = doc.Pages[1];
@@ -106,29 +106,29 @@ foreach (Field field in doc1.Form)
 }
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we learned how to retrieve form fields in tab order using Aspose.PDF for .NET. We covered the steps involved in loading a PDF document, retrieving form fields in tab order, modifying the tab order, and saving the modified document. By following these steps, you can efficiently work with form fields and customize their tab sequence as per your requirements.
+In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET Formularfelder in Tab-Reihenfolge abruft. Wir haben die Schritte zum Laden eines PDF-Dokuments, zum Abrufen von Formularfeldern in der Tab-Reihenfolge, zum Ändern der Tab-Reihenfolge und zum Speichern des geänderten Dokuments behandelt. Wenn Sie diese Schritte befolgen, können Sie effizient mit Formularfeldern arbeiten und deren Tabulatorreihenfolge an Ihre Anforderungen anpassen.
 
 
-### FAQ's
+### FAQs
 
-#### Q: How can I use the retrieved form fields in my C# code for further processing?
+#### F: Wie kann ich die abgerufenen Formularfelder in meinem C#-Code zur weiteren Verarbeitung verwenden?
 
-A: You can use the retrieved form fields in your C# code by accessing their properties such as `Value`, `Name`, `Rect`, etc. These properties allow you to read and modify the form field data as needed.
+ A: Sie können die abgerufenen Formularfelder in Ihrem C#-Code verwenden, indem Sie auf deren Eigenschaften zugreifen, z`Value`, `Name`, `Rect`usw. Mit diesen Eigenschaften können Sie die Formularfelddaten nach Bedarf lesen und ändern.
 
-#### Q: Can I retrieve form fields from all pages of the PDF document in tab order?
+#### F: Kann ich Formularfelder von allen Seiten des PDF-Dokuments in Tab-Reihenfolge abrufen?
 
-A: Yes, you can retrieve form fields from all pages of the PDF document by iterating through each page and accessing the `FieldsInTabOrder` property as shown in the tutorial. This will give you form fields sorted by their tab sequence across all pages.
+ A: Ja, Sie können Formularfelder von allen Seiten des PDF-Dokuments abrufen, indem Sie jede Seite durchlaufen und auf die zugreifen`FieldsInTabOrder` Eigenschaft wie im Tutorial gezeigt. Dadurch erhalten Sie Formularfelder sortiert nach ihrer Tabulatorreihenfolge auf allen Seiten.
 
-#### Q: Is it possible to retrieve only specific types of form fields, such as text fields or checkboxes, in tab order?
+#### F: Ist es möglich, nur bestimmte Arten von Formularfeldern, z. B. Textfelder oder Kontrollkästchen, in Tab-Reihenfolge abzurufen?
 
-A: Yes, you can filter form fields based on their types, such as text fields or checkboxes, after retrieving them in tab order. You can use conditional statements to check the type of each form field and process them accordingly.
+A: Ja, Sie können Formularfelder nach ihrem Typ filtern, z. B. Textfelder oder Kontrollkästchen, nachdem Sie sie in Tab-Reihenfolge abgerufen haben. Sie können bedingte Anweisungen verwenden, um den Typ jedes Formularfelds zu überprüfen und es entsprechend zu verarbeiten.
 
-#### Q: Can I retrieve form fields based on their names instead of tab order?
+#### F: Kann ich Formularfelder anhand ihrer Namen statt anhand der Tab-Reihenfolge abrufen?
 
-A: Yes, you can retrieve form fields based on their names by using the `doc.Form` collection and specifying the field name as an index. For example, `doc.Form["fieldName"]` will retrieve the form field with the specified name.
+ A: Ja, Sie können Formularfelder anhand ihrer Namen abrufen, indem Sie die verwenden`doc.Form` Sammlung und Angabe des Feldnamens als Index. Zum Beispiel,`doc.Form["fieldName"]`ruft das Formularfeld mit dem angegebenen Namen ab.
 
-#### Q: Does Aspose.PDF for .NET support working with encrypted PDF documents?
+#### F: Unterstützt Aspose.PDF für .NET die Arbeit mit verschlüsselten PDF-Dokumenten?
 
-A: Yes, Aspose.PDF for .NET provides support for working with encrypted PDF documents. You can load and manipulate encrypted PDF files using appropriate password parameters.
+A: Ja, Aspose.PDF für .NET bietet Unterstützung für die Arbeit mit verschlüsselten PDF-Dokumenten. Sie können verschlüsselte PDF-Dateien mit geeigneten Passwortparametern laden und bearbeiten.

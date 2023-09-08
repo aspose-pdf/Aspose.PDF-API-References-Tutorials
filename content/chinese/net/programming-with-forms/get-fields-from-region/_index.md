@@ -1,57 +1,57 @@
 ---
-title: Get Fields From Region In PDF File
-linktitle: Get Fields From Region In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get fields from a specific region in PDF file with Aspose.PDF for .NET.
+title: 从 PDF 文件中的区域获取字段
+linktitle: 从 PDF 文件中的区域获取字段
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 轻松获取 PDF 文件中特定区域的字段。
 type: docs
 weight: 130
 url: /zh/net/programming-with-forms/get-fields-from-region/
 ---
-In this tutorial, we will show you how to get the fields of a specific region in PDF file using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+在本教程中，我们将向您展示如何使用 Aspose.PDF for .NET 获取 PDF 文件中特定区域的字段。我们将逐步解释 C# 源代码，以指导您完成此过程。
 
-## Step 1: Preparation
+## 第 1 步：准备
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+确保您已导入必要的库并设置文档目录的路径：
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the PDF file
+## 第 2 步：打开 PDF 文件
 
-Open the PDF file:
+打开 PDF 文件：
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "GetFieldsFromRegion.pdf");
 ```
 
-## Step 3: Create a rectangle object to bound the region
+## 步骤 3：创建一个矩形对象来界定区域
 
-Create a rectangle object to bound the region where you want to get the fields:
+创建一个矩形对象来界定要获取字段的区域：
 
 ```csharp
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(35, 30, 500, 500);
 ```
 
-## Step 4: Obtain the PDF form
+## 第4步：获取PDF表格
 
-Get the PDF form of the document:
+获取文档的 PDF 形式：
 
 ```csharp
 Aspose.Pdf.Forms.Form form = doc.Form;
 ```
 
-## Step 5: Get the fields in the rectangular region
+## 步骤5：获取矩形区域中的字段
 
-Get the fields located in the specified rectangular region:
+获取位于指定矩形区域的字段：
 
 ```csharp
 Aspose.Pdf.Forms.Field[] fields = form.GetFieldsInRect(rectangle);
 ```
 
-## Step 6: Display field names and values
+## 第 6 步：显示字段名称和值
 
-Iterate through the resulting fields and display their names and values:
+迭代结果字段并显示它们的名称和值：
 
 ```csharp
 foreach (Field field in fields)
@@ -60,48 +60,48 @@ Console.Out.WriteLine("Field name: " + field.FullName + "-" + "Field value: " + 
 }
 ```
 
-### Sample source code for Get Fields From Region using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 从区域获取字段的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open pdf file
+//打开 pdf 文件
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "GetFieldsFromRegion.pdf");
-// Create rectangle object to get fields in that area
+//创建矩形对象以获取该区域中的字段
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(35, 30, 500, 500);
-// Get the PDF form
+//获取 PDF 表格
 Aspose.Pdf.Forms.Form form = doc.Form;
-// Get fields in the rectangular area
+//获取矩形区域内的字段
 Aspose.Pdf.Forms.Field[] fields = form.GetFieldsInRect(rectangle);
-// Display Field names and values
+//显示字段名称和值
 foreach (Field field in fields)
 {
-	// Display image placement properties for all placements
+	//显示所有展示位置的图片展示位置属性
 	Console.Out.WriteLine("Field Name: " + field.FullName + "-" + "Field Value: " + field.Value);
 }
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we learned how to get the fields of a specific region in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily extract the fields located in a given rectangular area of your PDF document using Aspose.PDF.
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 获取 PDF 文档中特定区域的字段。通过执行这些步骤，您可以使用 Aspose.PDF 轻松提取 PDF 文档给定矩形区域中的字段。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: Can I use this method to get fields from a non-rectangular region in a PDF document?
+#### 问：我可以使用此方法从 PDF 文档中的非矩形区域获取字段吗？
 
-A: No, the provided method `GetFieldsInRect` is specifically designed to retrieve fields located within a rectangular region in a PDF document. If you need to extract fields from a non-rectangular region, you would need to implement custom logic to identify and extract the fields based on other criteria, such as field coordinates or names.
+ A：不需要，提供的方法`GetFieldsInRect`专门设计用于检索 PDF 文档中矩形区域内的字段。如果您需要从非矩形区域提取字段，则需要实现自定义逻辑来根据其他条件（例如字段坐标或名称）识别和提取字段。
 
-#### Q: How can I modify the size or position of the rectangle to get fields from a different region?
+#### 问：如何修改矩形的大小或位置以获取不同区域的字段？
 
-A: To get fields from a different region, you can modify the `Aspose.Pdf.Rectangle` object's parameters used to define the bounding rectangle. The `Rectangle` constructor takes four parameters: `x`, `y`, `width`, and `height`, which represent the top-left corner coordinates and the dimensions of the rectangle. Adjusting these parameters will change the region from which fields are extracted.
+ A：要获取不同地区的字段，可以修改`Aspose.Pdf.Rectangle`对象的参数用于定义边界矩形。这`Rectangle`构造函数有四个参数：`x`, `y`, `width`， 和`height`，表示矩形的左上角坐标和尺寸。调整这些参数将更改提取字段的区域。
 
-#### Q: What if there are no fields within the specified rectangular region?
+#### 问：如果指定的矩形区域内没有字段怎么办？
 
-A: If there are no fields within the specified rectangular region, the `GetFieldsInRect` method will return an empty array. You can check the length of the array to determine if there are any fields within the region.
+ A：如果指定的矩形区域内没有字段，则`GetFieldsInRect`方法将返回一个空数组。您可以检查数组的长度以确定该区域内是否有任何字段。
 
-#### Q: Can I get fields from overlapping regions in a PDF document?
+#### 问：我可以从 PDF 文档中的重叠区域获取字段吗？
 
-A: Yes, you can get fields from overlapping regions in a PDF document by creating multiple `Aspose.Pdf.Rectangle` objects and calling the `GetFieldsInRect` method for each of them. Overlapping regions will be handled independently, and you will receive separate arrays of fields for each region.
+答：是的，您可以通过创建多个 PDF 文档中的重叠区域来获取字段`Aspose.Pdf.Rectangle`对象并调用`GetFieldsInRect`他们每个人的方法。重叠区域将被独立处理，并且您将收到每个区域的单独字段数组。
 
-#### Q: Is it possible to get fields from a specific page or multiple pages in the PDF document?
+#### 问：是否可以从 PDF 文档中的特定页面或多个页面获取字段？
 
-A: Yes, you can get fields from a specific page or multiple pages in a PDF document. To achieve this, you can load the PDF document, access the desired pages using the `doc.Pages` collection, and then apply the `GetFieldsInRect` method to each page's specific region.
+答：是的，您可以从 PDF 文档中的特定页面或多个页面获取字段。为此，您可以加载 PDF 文档，使用`doc.Pages`集合，然后应用`GetFieldsInRect`方法到每个页面的特定区域。

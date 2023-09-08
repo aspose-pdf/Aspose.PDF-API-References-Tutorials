@@ -1,85 +1,85 @@
 ---
-title: Validate PDF UA Standard
-linktitle: Validate PDF UA Standard
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to validate PDF/UA standard using C# code. Step-by-step guide.
+title: التحقق من صحة معيار PDF UA
+linktitle: التحقق من صحة معيار PDF UA
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخدام Aspose.PDF لـ .NET للتحقق من صحة معيار PDF/UA باستخدام كود C#. دليل خطوة بخطوة.
 type: docs
 weight: 400
 url: /ar/net/programming-with-document/validatepdfuastandard/
 ---
-Aspose.PDF for .NET is a powerful library that provides various features for working with PDF documents. One of its features is the ability to validate PDF documents for PDF/UA standard compliance. In this article, we will provide step-by-step guidance on how to use Aspose.PDF for .NET to get and validate PDF/UA standard compliance using C# code.
+Aspose.PDF for .NET هي مكتبة قوية توفر ميزات متنوعة للعمل مع مستندات PDF. إحدى ميزاته هي القدرة على التحقق من صحة مستندات PDF للتوافق مع معايير PDF/UA. في هذه المقالة، سنقدم إرشادات خطوة بخطوة حول كيفية استخدام Aspose.PDF لـ .NET للحصول على التوافق القياسي لـ PDF/UA والتحقق من صحته باستخدام كود C#.
 
-## Step 1: Defining the Document Directory Path
+## الخطوة 1: تحديد مسار دليل المستندات
 
-Next, we need to define the path to the directory where our PDF document is located. You can do this by adding the following code snippet:
+بعد ذلك، نحتاج إلى تحديد المسار إلى الدليل الذي يوجد به مستند PDF الخاص بنا. يمكنك القيام بذلك عن طريق إضافة مقتطف التعليمات البرمجية التالي:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual path to your PDF document directory.
+استبدل "دليل المستندات الخاص بك" بالمسار الفعلي لدليل مستندات PDF الخاص بك.
 
-## Step 2: Opening the PDF Document
+## الخطوة 2: فتح مستند PDF
 
-After defining the document directory path, we can open our PDF document using the following code:
+بعد تحديد مسار دليل المستند، يمكننا فتح مستند PDF الخاص بنا باستخدام الكود التالي:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
 ```
 
-This code creates a new `Document` object from our PDF file located in the specified directory.
+ يقوم هذا الرمز بإنشاء ملف جديد`Document` كائن من ملف PDF الخاص بنا الموجود في الدليل المحدد.
 
-## Step 3: Validating the PDF for PDF/UA
+## الخطوة 3: التحقق من صحة ملف PDF لـ PDF/UA
 
-Now that we have opened the PDF document, we can use Aspose.PDF for .NET to validate the document for PDF/UA compliance. The following code snippet will do the job:
+الآن بعد أن فتحنا مستند PDF، يمكننا استخدام Aspose.PDF لـ .NET للتحقق من صحة المستند من أجل توافق PDF/UA. سوف يقوم مقتطف الكود التالي بالمهمة:
 
 ```csharp
 bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1);
 ```
 
-This code validates the PDF document for PDF/UA standard compliance and generates a validation report in the specified XML file. The validation result is stored in the `isValidPdfUa` variable, which is of boolean data type.
+ يتحقق هذا الرمز من صحة مستند PDF من أجل التوافق مع معيار PDF/UA ويقوم بإنشاء تقرير التحقق من الصحة في ملف XML المحدد. يتم تخزين نتيجة التحقق من الصحة في`isValidPdfUa` المتغير، وهو من نوع البيانات المنطقية.
 
-### Example source code for Get Validate PDFUAstandard using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر للحصول على التحقق من صحة PDFUAstandard باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
 
-// Validate PDF for PDF/UA
+// التحقق من صحة PDF لـ PDF/UA
 bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1); 
 ```
 
-## Conclusion
+## خاتمة
 
-Ensuring that PDF documents are accessible to all users, including those with disabilities, is vital for creating inclusive and user-friendly content. Aspose.PDF for .NET simplifies the process of validating PDF documents against the PDF/UA standard, helping developers create more accessible PDFs.
+يعد ضمان إمكانية الوصول إلى مستندات PDF لجميع المستخدمين، بما في ذلك الأشخاص ذوي الإعاقة، أمرًا حيويًا لإنشاء محتوى شامل وسهل الاستخدام. يعمل Aspose.PDF for .NET على تبسيط عملية التحقق من صحة مستندات PDF مقابل معيار PDF/UA، مما يساعد المطورين على إنشاء ملفات PDF يسهل الوصول إليها.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the PDF/UA standard, and why is it important to validate PDF documents against it?
+#### س: ما هو معيار PDF/UA، ولماذا من المهم التحقق من صحة مستندات PDF مقابله؟
 
-A: The PDF/UA standard, also known as "Universal Accessibility," ensures that PDF documents are accessible to individuals with disabilities, such as visual impairments. Validating PDF documents against PDF/UA standard compliance helps in creating documents that are inclusive and accessible to a broader audience.
+ج: يضمن معيار PDF/UA، المعروف أيضًا باسم "إمكانية الوصول الشامل"، إمكانية الوصول إلى مستندات PDF للأفراد ذوي الإعاقات، مثل ضعاف البصر. يساعد التحقق من صحة مستندات PDF مقابل التوافق مع معيار PDF/UA في إنشاء مستندات شاملة ويمكن الوصول إليها من قبل جمهور أوسع.
 
-#### Q: How do I define the document directory path in the C# code?
+#### س: كيف يمكنني تحديد مسار دليل المستند في كود C#؟
 
-A: To define the path to the directory where your PDF document is located, use the following code snippet:
+ج: لتحديد المسار إلى الدليل الذي يوجد به مستند PDF الخاص بك، استخدم مقتطف التعليمات البرمجية التالي:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual path to the directory containing your PDF document.
+استبدل "دليل المستندات الخاص بك" بالمسار الفعلي للدليل الذي يحتوي على مستند PDF الخاص بك.
 
-#### Q: Can I validate PDF documents against other PDF standards using Aspose.PDF for .NET?
+#### س: هل يمكنني التحقق من صحة مستندات PDF مقابل معايير PDF الأخرى باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, Aspose.PDF for .NET provides support for validating PDF documents against various PDF standards, including PDF/A and PDF/X standards. You can specify the desired standard when using the `Validate` method.
+ ج: نعم، يوفر Aspose.PDF for .NET الدعم للتحقق من صحة مستندات PDF مقابل معايير PDF المختلفة، بما في ذلك معايير PDF/A وPDF/X. يمكنك تحديد المعيار المطلوب عند استخدام`Validate` طريقة.
 
-#### Q: How can I check if a PDF document passed the PDF/UA validation?
+#### س: كيف يمكنني التحقق مما إذا كان مستند PDF قد اجتاز التحقق من صحة PDF/UA؟
 
-A: After calling the `Validate` method, the boolean variable `isValidPdfUa` will store the validation result. If the value of `isValidPdfUa` is `true`, the PDF document complies with the PDF/UA standard; otherwise, it does not.
+ ج: بعد الاتصال بـ`Validate` الطريقة، المتغير المنطقي`isValidPdfUa` سيتم تخزين نتيجة التحقق من الصحة. إذا كانت قيمة`isValidPdfUa` يكون`true`، يتوافق مستند PDF مع معيار PDF/UA؛ خلاف ذلك، لا.
 
-#### Q: Are there any specific accessibility requirements for PDF/UA compliance?
+#### س: هل هناك أي متطلبات محددة لإمكانية الوصول للتوافق مع PDF/UA؟
 
-A: Yes, PDF/UA compliance requires documents to meet specific accessibility criteria, such as providing alternative text for images, logical reading order, proper document structure, and text equivalents for non-text content.
+ج: نعم، يتطلب التوافق مع PDF/UA أن تستوفي المستندات معايير إمكانية الوصول المحددة، مثل توفير نص بديل للصور، وترتيب القراءة المنطقي، وبنية المستند المناسبة، ومكافئات النص للمحتوى غير النصي.

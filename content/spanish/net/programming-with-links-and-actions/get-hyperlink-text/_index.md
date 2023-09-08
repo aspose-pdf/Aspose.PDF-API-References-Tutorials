@@ -1,44 +1,44 @@
 ---
-title: Get Hyperlink Text In PDF File
-linktitle: Get Hyperlink Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract hyperlink text in PDF file using Aspose.PDF for .NET.
+title: Obtener texto de hipervínculo en un archivo PDF
+linktitle: Obtener texto de hipervínculo en un archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a extraer texto de hipervínculo en un archivo PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 70
 url: /es/net/programming-with-links-and-actions/get-hyperlink-text/
 ---
-Learn how to extract text from hyperlinks in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+Aprenda a extraer texto de hipervínculos en un archivo PDF usando Aspose.PDF para .NET con esta guía paso a paso.
 
-## Step 1: Setting up the environment
+## Paso 1: configurar el entorno
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+Asegúrese de haber configurado su entorno de desarrollo con un proyecto C# y las referencias Aspose.PDF adecuadas.
 
-## Step 2: Loading the PDF file
+## Paso 2: cargar el archivo PDF
 
-Set the directory path of your documents and upload the PDF file using the following code:
+Establezca la ruta del directorio de sus documentos y cargue el archivo PDF usando el siguiente código:
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// Cargue el archivo PDF
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Navigating through the pages of the document
+## Paso 3: Navegar por las páginas del documento
 
-Iterate through each page of the document using a `foreach` loop:
+ Iterar a través de cada página del documento usando un`foreach` bucle:
 
 ```csharp
 foreach(Page page in document.Pages)
 {
-     // Display link annotations
+     // Mostrar anotaciones de enlaces
      ShowLinkAnnotations(page);
 }
 ```
 
-## Step 4: Error Handling
+## Paso 4: manejo de errores
 
-Add error handling to catch any exception and display the corresponding error message:
+Agregue manejo de errores para detectar cualquier excepción y mostrar el mensaje de error correspondiente:
 
 ```csharp
 catch (Exception ex)
@@ -47,18 +47,18 @@ catch (Exception ex)
 }
 ```
 
-### Sample source code for Get Hyperlink Text using Aspose.PDF for .NET 
+### Código fuente de muestra para obtener texto de hipervínculo usando Aspose.PDF para .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// La ruta al directorio de documentos.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the PDF file
+	// Cargue el archivo PDF
 	Document document = new Document(dataDir + "input.pdf");
-	// Iterate through each page of PDF
+	// Iterar a través de cada página de PDF
 	foreach (Page page in document.Pages)
 	{
-		// Show link annotation
+		// Mostrar anotación de enlace
 		ShowLinkAnnotations(page);
 	}
 }
@@ -68,42 +68,42 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Conclusión
 
-Congratulation ! You now know how to extract hyperlink text from a PDF file using Aspose.PDF for .NET. You can use this knowledge to deal with hyperlinks in your projects and automate tasks related to PDF files.
+¡Enhorabuena! Ahora sabe cómo extraer texto de hipervínculo de un archivo PDF usando Aspose.PDF para .NET. Puede utilizar este conocimiento para manejar hipervínculos en sus proyectos y automatizar tareas relacionadas con archivos PDF.
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+Ahora que ha completado esta guía, puede aplicar estos conceptos a sus propios proyectos y explorar más a fondo las funciones que ofrece Aspose.PDF para .NET.
 
-### FAQs for get hyperlink text in PDF file
+### Preguntas frecuentes para obtener texto de hipervínculo en un archivo PDF
 
-#### Q: What is hyperlink text in a PDF file?
+#### P: ¿Qué es el texto de hipervínculo en un archivo PDF?
 
-A: Hyperlink text in a PDF file refers to the visible text that users click on to navigate to a specific location or resource, such as a URL, another page in the same document, or an external document.
+R: El texto de hipervínculo en un archivo PDF se refiere al texto visible en el que los usuarios hacen clic para navegar a una ubicación o recurso específico, como una URL, otra página del mismo documento o un documento externo.
 
-#### Q: How does extracting hyperlink text benefit my PDF document analysis?
+#### P: ¿Cómo beneficia la extracción de texto de hipervínculo a mi análisis de documentos PDF?
 
-A: Extracting hyperlink text allows you to gather and analyze the descriptive labels of hyperlinks within a PDF document. This information can be used for link validation, content categorization, and metadata extraction.
+R: La extracción de texto de hipervínculo le permite recopilar y analizar las etiquetas descriptivas de los hipervínculos dentro de un documento PDF. Esta información se puede utilizar para la validación de enlaces, la categorización de contenido y la extracción de metadatos.
 
-#### Q: How can Aspose.PDF for .NET help in extracting hyperlink text?
+#### P: ¿Cómo puede ayudar Aspose.PDF para .NET a extraer texto de hipervínculo?
 
-A: Aspose.PDF for .NET provides robust APIs for extracting hyperlink text. This tutorial provides a step-by-step guide on how to accomplish this task using C#.
+R: Aspose.PDF para .NET proporciona API sólidas para extraer texto de hipervínculo. Este tutorial proporciona una guía paso a paso sobre cómo realizar esta tarea usando C#.
 
-#### Q: Can I extract hyperlink text selectively based on specific criteria?
+#### P: ¿Puedo extraer texto de hipervínculo de forma selectiva según criterios específicos?
 
-A: Yes, you can selectively extract hyperlink text by iterating through each page of the PDF document and accessing the text associated with hyperlink annotations.
+R: Sí, puede extraer selectivamente el texto del hipervínculo recorriendo cada página del documento PDF y accediendo al texto asociado con las anotaciones del hipervínculo.
 
-#### Q: Are there any limitations when extracting hyperlink text?
+#### P: ¿Existe alguna limitación al extraer el texto de un hipervínculo?
 
-A: The accuracy of hyperlink text extraction depends on the formatting and layout of the PDF document. Complex graphical elements or non-standard hyperlink representations might require additional handling.
+R: La precisión de la extracción del texto del hipervínculo depende del formato y diseño del documento PDF. Los elementos gráficos complejos o las representaciones de hipervínculos no estándar pueden requerir un manejo adicional.
 
-#### Q: Can I extract hyperlink text from password-protected PDF documents?
+#### P: ¿Puedo extraer texto de hipervínculo de documentos PDF protegidos con contraseña?
 
-A: Aspose.PDF for .NET can extract hyperlink text from password-protected PDF documents as long as you provide the appropriate authentication credentials when loading the document.
+R: Aspose.PDF para .NET puede extraer texto de hipervínculo de documentos PDF protegidos con contraseña siempre que proporcione las credenciales de autenticación adecuadas al cargar el documento.
 
-#### Q: How can I utilize the extracted hyperlink text in my application?
+#### P: ¿Cómo puedo utilizar el texto del hipervínculo extraído en mi aplicación?
 
-A: Once you've extracted the hyperlink text, you can analyze, categorize, or display it as needed within your application. You can also incorporate it into reports or data analysis.
+R: Una vez que haya extraído el texto del hipervínculo, puede analizarlo, categorizarlo o mostrarlo según sea necesario dentro de su aplicación. También puedes incorporarlo en informes o análisis de datos.
 
-#### Q: Is it possible to extract other attributes of hyperlinks, such as URLs or destinations?
+#### P: ¿Es posible extraer otros atributos de los hipervínculos, como URL o destinos?
 
-A: This tutorial focuses on extracting hyperlink text. To extract other attributes like URLs or destinations, you can refer to the official Aspose.PDF documentation for advanced hyperlink handling.
+R: Este tutorial se centra en extraer texto de hipervínculo. Para extraer otros atributos como URL o destinos, puede consultar la documentación oficial de Aspose.PDF para un manejo avanzado de hipervínculos.

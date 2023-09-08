@@ -1,86 +1,86 @@
 ---
-title: Rounded Corner Table In PDF Document
-linktitle: Rounded Corner Table In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create a rounded corner table in PDF document using Aspose.PDF for .NET.
+title: طاولة زاوية مستديرة في وثيقة PDF
+linktitle: طاولة زاوية مستديرة في وثيقة PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إنشاء جدول زاوية مستدير في مستند PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 190
 url: /ar/net/programming-with-tables/rounded-corner-table/
 ---
-In this tutorial, we will guide you step by step to create a rounded corner table in PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+في هذا البرنامج التعليمي، سنرشدك خطوة بخطوة لإنشاء جدول زاوية مستدير في مستند PDF باستخدام Aspose.PDF for .NET. سنشرح لك كود مصدر C# المقدم ونوضح لك كيفية تنفيذه.
 
-## Step 1: Creating the table
-First, we will create the table using the following code:
+## الخطوة 1: إنشاء الجدول
+أولاً سنقوم بإنشاء الجدول باستخدام الكود التالي:
 
 ```csharp
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 ```
 
-## Step 2: Rounded Corner Style Setup
-Next, we'll configure the rounded corner style for the table:
+## الخطوة 2: إعداد نمط الزاوية المستديرة
+بعد ذلك، سنقوم بتكوين نمط الزاوية المستديرة للجدول:
 
 ```csharp
 tab1.CornerStyle = Aspose.Pdf.BorderCornerStyle.Round;
 ```
 
-## Step 3: Table Border Setup
-To give the table a rounded corner border, we need to create a BorderInfo object and configure it with the appropriate parameters:
+## الخطوة 3: إعداد حدود الجدول
+لإعطاء الجدول حدودًا زاوية مستديرة، نحتاج إلى إنشاء كائن BorderInfo وتكوينه باستخدام المعلمات المناسبة:
 
 ```csharp
-// Create a GraphInfo object to set the border color
+// قم بإنشاء كائن GraphInfo لتعيين لون الحدود
 GraphInfo graph = new GraphInfo();
 graph.Color = Aspose.Pdf.Color.Red;
 
-// Create an empty BorderInfo object
+// قم بإنشاء كائن BorderInfo فارغ
 BorderInfo bInfo = new BorderInfo(BorderSide.All, graph);
 
-// Set the radius of the rounded border to 15
+// اضبط نصف قطر الحد المستدير على 15
 bInfo.RoundedBorderRadius = 15;
 
-// Apply border information to the table
+// تطبيق معلومات الحدود على الجدول
 tab1.Border = bInfo;
 ```
 
-### Example source code for Rounded Corner Table using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لـ Rounded Corner Table باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 GraphInfo graph = new GraphInfo();
 graph.Color = Aspose.Pdf.Color.Red;
-// Create a blank BorderInfo object
+// قم بإنشاء كائن BorderInfo فارغ
 BorderInfo bInfo = new BorderInfo(BorderSide.All, graph);
-// Set the border a rounder border where radius of round is 15
+// قم بتعيين الحدود على حد مستدير حيث يكون نصف قطر الجولة 15
 bInfo.RoundedBorderRadius = 15;
-// Set the table Corner style as Round.
+// قم بتعيين نمط زاوية الجدول على أنه مستدير.
 tab1.CornerStyle = Aspose.Pdf.BorderCornerStyle.Round;
-// Set the table border information
+// قم بتعيين معلومات حدود الجدول
 tab1.Border = bInfo;
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to create a rounded corner table in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to set up the rounded corner style and table border. Now you can apply this knowledge to your own projects.
+## خاتمة
+تهنئة ! لقد تعلمت الآن كيفية إنشاء جدول زاوية مستدير في مستند PDF باستخدام Aspose.PDF لـ .NET. يوضح لك هذا الدليل خطوة بخطوة كيفية إعداد نمط الزاوية المستديرة وحدود الجدول. الآن يمكنك تطبيق هذه المعرفة على مشاريعك الخاصة.
 
-### FAQ's for rounded corner table in PDF document
+### الأسئلة الشائعة حول طاولة الزاوية المستديرة في مستند PDF
 
-#### Q: Can I customize the radius of the rounded corners for the table?
+#### س: هل يمكنني تخصيص نصف قطر الزوايا الدائرية للطاولة؟
 
-A: Yes, you can customize the radius of the rounded corners for the table by modifying the value of the `bInfo.RoundedBorderRadius` property in the provided C# source code. Simply set the desired radius value (in points) to achieve the desired rounded corner appearance.
+ج: نعم، يمكنك تخصيص نصف قطر الزوايا الدائرية للجدول عن طريق تعديل قيمة`bInfo.RoundedBorderRadius` الخاصية في كود مصدر C# المقدم. ما عليك سوى ضبط قيمة نصف القطر المطلوبة (بالنقاط) لتحقيق مظهر الزاوية المستديرة المطلوب.
 
-#### Q: Can I apply rounded corners to individual cells within the table?
+#### س: هل يمكنني تطبيق زوايا مستديرة على الخلايا الفردية داخل الجدول؟
 
-A: No, the rounded corner style is applied to the entire table as a whole. Aspose.PDF for .NET currently does not provide built-in support for applying rounded corners to individual cells within the table.
+ج: لا، يتم تطبيق نمط الزاوية المستديرة على الجدول بأكمله ككل. لا يوفر Aspose.PDF for .NET حاليًا دعمًا مدمجًا لتطبيق الزوايا الدائرية على الخلايا الفردية داخل الجدول.
 
-#### Q: Can I change the color of the rounded corner border?
+#### س: هل يمكنني تغيير لون حدود الزاوية المستديرة؟
 
-A: Yes, you can change the color of the rounded corner border by modifying the value of the `graph.Color` property in the C# source code. Simply provide the desired color, such as `Aspose.Pdf.Color.Red` or any other valid color representation.
+ ج: نعم، يمكنك تغيير لون حد الزاوية المستديرة عن طريق تعديل قيمة`graph.Color` الخاصية في كود مصدر C#. ببساطة قم بتوفير اللون المطلوب، مثل`Aspose.Pdf.Color.Red` أو أي تمثيل لوني صالح آخر.
 
-#### Q: Is it possible to apply different corner styles (e.g., square and rounded) to different tables within the same PDF document?
+#### س: هل من الممكن تطبيق أنماط زوايا مختلفة (على سبيل المثال، مربعة ومستديرة) على جداول مختلفة داخل نفس مستند PDF؟
 
-A: Yes, it is possible to apply different corner styles to different tables within the same PDF document. You can create multiple tables and configure their corner styles individually based on your requirements.
+ج: نعم، من الممكن تطبيق أنماط زوايا مختلفة على جداول مختلفة داخل نفس مستند PDF. يمكنك إنشاء جداول متعددة وتكوين أنماط زواياها بشكل فردي بناءً على متطلباتك.
 
-#### Q: Can I adjust the thickness of the rounded corner border?
+#### س: هل يمكنني ضبط سمك حدود الزاوية المستديرة؟
 
-A: Yes, you can adjust the thickness of the rounded corner border by modifying the `BorderInfo` object's properties in the C# source code. For example, you can set the `bInfo.Width` property to adjust the border's thickness.
+ ج: نعم، يمكنك ضبط سمك حدود الزاوية المستديرة عن طريق تعديل`BorderInfo` خصائص الكائن في الكود المصدري لـ C#. على سبيل المثال، يمكنك ضبط`bInfo.Width` خاصية ضبط سمك الحدود.

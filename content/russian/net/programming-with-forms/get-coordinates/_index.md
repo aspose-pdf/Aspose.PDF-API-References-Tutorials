@@ -1,33 +1,33 @@
 ---
-title: Get PDF Form Field Coordinates
-linktitle: Get PDF Form Field Coordinates
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get PDF form field coordinates in your PDF documents with Aspose.PDF for .NET.
+title: Получить координаты полей формы PDF
+linktitle: Получить координаты полей формы PDF
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко получайте координаты полей PDF-формы в ваших PDF-документах с помощью Aspose.PDF для .NET.
 type: docs
 weight: 120
 url: /ru/net/programming-with-forms/get-coordinates/
 ---
-In this tutorial, we will show you how to get PDF form field coordinates using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+В этом уроке мы покажем вам, как получить координаты полей формы PDF с помощью Aspose.PDF для .NET. Мы шаг за шагом объясним исходный код C#, чтобы помочь вам в этом процессе.
 
-## Step 1: Preparation
+## Шаг 1: Подготовка
 
-Make sure you have imported the necessary libraries and set the path to the documents directory:
+Убедитесь, что вы импортировали необходимые библиотеки и задали путь к каталогу документов:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the output document
+## Шаг 2. Загрузите выходной документ
 
-Load the output PDF document:
+Загрузите выходной PDF-документ:
 
 ```csharp
 Document doc1 = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Find added fields
+## Шаг 3. Найдите добавленные поля
 
-Find the added form fields (in this example, we're using the "Item1", "Item2", and "Item3" fields):
+Найдите добавленные поля формы (в этом примере мы используем поля «Элемент1», «Элемент2» и «Элемент3»):
 
 ```csharp
 RadioButtonField field0 = doc1.Form["Item1"] as RadioButtonField;
@@ -35,9 +35,9 @@ RadioButtonField field1 = doc1.Form["Item2"] as RadioButtonField;
 RadioButtonField field2 = doc1.Form["Item3"] as RadioButtonField;
 ```
 
-## Step 4: Display sub-item positions for each field
+## Шаг 4. Отобразите позиции подпунктов для каждого поля.
 
-Cycle through the options for each field and view the coordinates for each sub-item:
+Перебирайте параметры для каждого поля и просматривайте координаты каждого подпункта:
 
 ```csharp
 foreach(RadioButtonOptionField option in field0)
@@ -54,19 +54,19 @@ Console.WriteLine(option.Rect);
 }
 ```
 
-### Sample source code for Get Coordinates using Aspose.PDF for .NET 
+### Пример исходного кода для получения координат с помощью Aspose.PDF для .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Путь к каталогу документов.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the output document 
+	// Загрузите выходной документ
 	Document doc1 = new Document( dataDir + "input.pdf");
-	// Find added fields
+	// Найти добавленные поля
 	RadioButtonField field0 = doc1.Form["Item1"] as RadioButtonField;
 	RadioButtonField field1 = doc1.Form["Item2"] as RadioButtonField;
 	RadioButtonField field2 = doc1.Form["Item3"] as RadioButtonField;
-	// And show positions of sub items for each of them. 
+	// И покажите позиции подпунктов для каждого из них.
 	foreach (RadioButtonOptionField option in field0)
 	{
 		Console.WriteLine(option.Rect);
@@ -86,28 +86,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we learned how to get form field coordinates using Aspose.PDF for .NET. By following these steps, you can easily retrieve the coordinates of your form fields' sub-elements in your PDF documents using Aspose.PDF.
+В этом уроке мы узнали, как получить координаты полей формы с помощью Aspose.PDF для .NET. Следуя этим шагам, вы можете легко получить координаты подэлементов полей формы в ваших PDF-документах с помощью Aspose.PDF.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: Can I use this method to get coordinates for any type of form field in Aspose.PDF for .NET?
+#### Вопрос: Могу ли я использовать этот метод для получения координат любого типа поля формы в Aspose.PDF для .NET?
 
-A: Yes, you can use this method to get coordinates for various types of form fields in Aspose.PDF for .NET. The provided C# source code demonstrates how to get coordinates for RadioButton fields, but you can adapt the same approach for other form field types, such as TextBox, CheckBox, ListBox, and more.
+О: Да, вы можете использовать этот метод для получения координат различных типов полей формы в Aspose.PDF для .NET. Приведенный исходный код C# демонстрирует, как получить координаты для полей RadioButton, но вы можете адаптировать тот же подход для других типов полей формы, таких как TextBox, CheckBox, ListBox и других.
 
-#### Q: How can I modify or adjust the form field coordinates?
+#### Вопрос: Как я могу изменить или настроить координаты полей формы?
 
-A: Form field coordinates are based on the PDF document's coordinate system, where the origin (0,0) is located at the bottom-left corner of the page. To modify or adjust the form field coordinates, you can update the `Rect` property of the respective form field or its sub-items, such as RadioButtonOptionField.
+О: Координаты полей формы основаны на системе координат PDF-документа, где начало координат (0,0) находится в левом нижнем углу страницы. Чтобы изменить или настроить координаты поля формы, вы можете обновить`Rect` свойство соответствующего поля формы или его подэлементов, например RadioButtonOptionField.
 
-#### Q: Can I get the coordinates of form fields added programmatically to a PDF document?
+#### Вопрос: Могу ли я получить координаты полей формы, программно добавленных в PDF-документ?
 
-A: Yes, you can get the coordinates of form fields that were added programmatically to a PDF document. Aspose.PDF for .NET allows you to add form fields dynamically, and once added, you can retrieve their coordinates using the approach demonstrated in this tutorial.
+О: Да, вы можете получить координаты полей формы, которые были программно добавлены в PDF-документ. Aspose.PDF для .NET позволяет динамически добавлять поля формы, и после добавления вы можете получить их координаты, используя подход, продемонстрированный в этом руководстве.
 
-#### Q: What is the purpose of retrieving form field coordinates?
+#### Вопрос: Какова цель получения координат полей формы?
 
-A: Retrieving form field coordinates can be helpful when you need to perform specific layout-related operations or validations on form fields within a PDF document. It allows you to accurately position and align form fields based on their coordinates, ensuring that they appear correctly in the document and provide a seamless user experience.
+О: Получение координат полей формы может оказаться полезным, когда вам необходимо выполнить определенные операции, связанные с макетом, или проверить поля формы в PDF-документе. Он позволяет точно позиционировать и выравнивать поля формы на основе их координат, обеспечивая их правильное отображение в документе и обеспечивая удобство работы с пользователем.
 
-#### Q: Are the form field coordinates expressed in points or another unit?
+#### Вопрос: Координаты полей формы выражаются в пунктах или других единицах измерения?
 
-A: The form field coordinates in Aspose.PDF for .NET are expressed in points. One point is equivalent to 1/72 inch, making it a standard unit of measurement in the PDF format.
+О: Координаты полей формы в Aspose.PDF для .NET выражаются в точках. Одна точка эквивалентна 1/72 дюйма, что делает ее стандартной единицей измерения в формате PDF.

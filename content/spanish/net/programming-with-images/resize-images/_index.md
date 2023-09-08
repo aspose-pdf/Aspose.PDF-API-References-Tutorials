@@ -1,140 +1,140 @@
 ---
-title: Resize Images In PDF File
-linktitle: Resize Images In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to resize images in PDF file using Aspose.PDF for .NET.
+title: Cambiar el tamaño de las imágenes en un archivo PDF
+linktitle: Cambiar el tamaño de las imágenes en un archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Guía paso a paso para cambiar el tamaño de imágenes en archivos PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 250
 url: /es/net/programming-with-images/resize-images/
 ---
-In this tutorial, we will walk you through how to resize images in PDF file using Aspose.PDF for .NET. Follow these steps to perform this operation easily.
+En este tutorial, le explicaremos cómo cambiar el tamaño de las imágenes en un archivo PDF usando Aspose.PDF para .NET. Siga estos pasos para realizar esta operación fácilmente.
 
-## Prerequisites
+## Requisitos previos
 
-Before you begin, make sure you have the following:
+Antes de comenzar, asegúrese de tener lo siguiente:
 
-- Visual Studio or any other development environment installed and configured.
-- A basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed. You can download it from Aspose official website.
+- Visual Studio o cualquier otro entorno de desarrollo instalado y configurado.
+- Conocimientos básicos del lenguaje de programación C#.
+- Biblioteca Aspose.PDF para .NET instalada. Puede descargarlo desde el sitio web oficial de Aspose.
 
-## Step 1: Loading the PDF document
+## Paso 1: cargar el documento PDF
 
-To get started, use the following code to load the PDF document:
+Para comenzar, use el siguiente código para cargar el documento PDF:
 
 ```csharp
-// Initialize the time
+// Inicializar el tiempo
 var time = DateTime.Now.Ticks;
 
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Open the document
+// abrir el documento
 Document pdfDocument = new Document(dataDir + "ResizeImage.pdf");
 ```
 
-Be sure to provide the correct path to your PDF document.
+Asegúrese de proporcionar la ruta correcta a su documento PDF.
 
-## Step 2: Optimization options initialization
+## Paso 2: inicialización de las opciones de optimización
 
-Before resizing the images, we need to initialize the optimization options. Use the following code:
+Antes de cambiar el tamaño de las imágenes, debemos inicializar las opciones de optimización. Utilice el siguiente código:
 
 ```csharp
-// Initialize OptimizationOptions
+// Inicializar opciones de optimización
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
 
-// Activate the CompressImages option
+// Activa la opción Comprimir Imágenes
 optimizeOptions.ImageCompressionOptions.CompressImages = true;
 
-// Set image quality
+// Establecer calidad de imagen
 optimizeOptions.ImageCompressionOptions.ImageQuality = 75;
 
-// Activate the ResizeImages option
+// Activa la opción Cambiar tamaño de imágenes
 optimizeOptions.ImageCompressionOptions.ResizeImages = true;
 
-// Set maximum resolution
+// Establecer resolución máxima
 optimizeOptions.ImageCompressionOptions.MaxResolution = 300;
 ```
 
-You can adjust the optimization settings according to your needs.
+Puede ajustar la configuración de optimización según sus necesidades.
 
-## Step 3: Optimization of the PDF document
+## Paso 3: Optimización del documento PDF
 
-Now we are going to optimize the PDF document using the optimization options we defined. Use the following code:
+Ahora vamos a optimizar el documento PDF usando las opciones de optimización que definimos. Utilice el siguiente código:
 
 ```csharp
-// Optimize the PDF document using the OptimizationOptions
+// Optimice el documento PDF usando las Opciones de optimización
 pdfDocument.OptimizeResources(optimizeOptions);
 
 dataDir = dataDir + "ResizeImages_out.pdf";
-// Save the updated document
+// Guardar el documento actualizado
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImage resized successfully.\nFile saved as: " + dataDir);
 ```
 
-Be sure to provide the desired path and filename for the updated PDF document.
+Asegúrese de proporcionar la ruta y el nombre de archivo deseados para el documento PDF actualizado.
 
-### Sample source code for Resize Images using Aspose.PDF for .NET 
+### Código fuente de muestra para cambiar el tamaño de imágenes usando Aspose.PDF para .NET 
 ```csharp
-// Initialize Time
+// Inicializar tiempo
 var time = DateTime.Now.Ticks;
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Abrir documento
 Document pdfDocument = new Document(dataDir + "ResizeImage.pdf");
-// Initialize OptimizationOptions
+// Inicializar opciones de optimización
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();            
-// Set CompressImages option            
+// Establecer la opción Comprimir Imágenes
 optimizeOptions.ImageCompressionOptions.CompressImages = true;            
-// Set ImageQuality option             
+// Establecer la opción Calidad de imagen
 optimizeOptions.ImageCompressionOptions.ImageQuality = 75;            
-// Set ResizeImage option            
+// Establecer la opción Cambiar tamaño de imagen
 optimizeOptions.ImageCompressionOptions.ResizeImages = true;            
-// Set MaxResolution option            
+// Establecer la opción MaxResolution
 optimizeOptions.ImageCompressionOptions.MaxResolution = 300;
-// Optimize PDF document using OptimizationOptions
+// Optimice el documento PDF usando OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
 dataDir = dataDir + "ResizeImages_out.pdf";
-// Save updated document
+// Guardar documento actualizado
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImage resized successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Conclusión
 
-Congratulation ! You have successfully resized images in a PDF document using Aspose.PDF for .NET. You can now apply this method to your own projects to change the size of images in PDF files.
+¡Enhorabuena! Ha cambiado el tamaño de las imágenes con éxito en un documento PDF utilizando Aspose.PDF para .NET. Ahora puedes aplicar este método a tus propios proyectos para cambiar el tamaño de las imágenes en archivos PDF.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: Why would I want to resize images in a PDF file using Aspose.PDF for .NET?
+#### P: ¿Por qué querría cambiar el tamaño de las imágenes en un archivo PDF usando Aspose.PDF para .NET?
 
-A: Resizing images in a PDF file can help optimize the document's size and improve its performance. It is especially useful when you want to reduce the file size for easier sharing or faster loading of PDF documents.
+R: Cambiar el tamaño de las imágenes en un archivo PDF puede ayudar a optimizar el tamaño del documento y mejorar su rendimiento. Es especialmente útil cuando desea reducir el tamaño del archivo para compartirlo más fácilmente o cargar documentos PDF más rápidamente.
 
-#### Q: How does image resizing impact the quality of images in the PDF document?
+#### P: ¿Cómo afecta el cambio de tamaño de la imagen a la calidad de las imágenes en el documento PDF?
 
-A: Image resizing involves reducing the dimensions and resolution of images, which can result in a smaller file size. While this can reduce image quality to some extent, the `ImageQuality` parameter (`optimizeOptions.ImageCompressionOptions.ImageQuality`) allows you to control the balance between image size and quality.
+ R: Cambiar el tamaño de una imagen implica reducir las dimensiones y la resolución de las imágenes, lo que puede dar como resultado un tamaño de archivo más pequeño. Si bien esto puede reducir la calidad de la imagen hasta cierto punto, la`ImageQuality` parámetro (`optimizeOptions.ImageCompressionOptions.ImageQuality`) le permite controlar el equilibrio entre el tamaño y la calidad de la imagen.
 
-#### Q: What is the purpose of the `MaxResolution` option in the optimization settings?
+####  P: ¿Cuál es el propósito de la`MaxResolution` option in the optimization settings?
 
-A: The `MaxResolution` option (`optimizeOptions.ImageCompressionOptions.MaxResolution`) sets the maximum resolution for images in the PDF document. Images with higher resolutions will be scaled down to this specified value during the optimization process.
+ R: El`MaxResolution` opción (`optimizeOptions.ImageCompressionOptions.MaxResolution`) establece la resolución máxima para las imágenes en el documento PDF. Las imágenes con resoluciones más altas se reducirán a este valor especificado durante el proceso de optimización.
 
-#### Q: How do I adjust the optimization settings for image resizing?
+#### P: ¿Cómo ajusto la configuración de optimización para cambiar el tamaño de la imagen?
 
-A: In the provided code, you can modify the values of the optimization options to achieve the desired image resizing and compression. For example, you can change the `ImageQuality` and `MaxResolution` values to customize the optimization process according to your requirements.
+ R: En el código proporcionado, puede modificar los valores de las opciones de optimización para lograr el cambio de tamaño y la compresión de la imagen deseados. Por ejemplo, puedes cambiar el`ImageQuality` y`MaxResolution` valores para personalizar el proceso de optimización según sus requisitos.
 
-#### Q: Can I selectively resize specific images within the PDF document?
+#### P: ¿Puedo cambiar el tamaño de imágenes específicas de forma selectiva dentro del documento PDF?
 
-A: The provided code optimizes all images in the PDF document using the same optimization settings. If you want to selectively resize specific images, you may need to modify the code to target those images individually.
+R: El código proporcionado optimiza todas las imágenes del documento PDF utilizando la misma configuración de optimización. Si desea cambiar el tamaño de imágenes específicas de forma selectiva, es posible que deba modificar el código para orientar esas imágenes individualmente.
 
-#### Q: How does the `pdfDocument.OptimizeResources` method work in resizing images?
+####  P: ¿Cómo funciona el`pdfDocument.OptimizeResources` method work in resizing images?
 
-A: The `OptimizeResources` method applies the specified optimization options to the PDF document, including image resizing and compression. It helps reduce the file size of the PDF document by applying the defined optimization settings to its resources.
+ R: El`OptimizeResources` El método aplica las opciones de optimización especificadas al documento PDF, incluido el cambio de tamaño y la compresión de la imagen. Ayuda a reducir el tamaño del archivo del documento PDF aplicando la configuración de optimización definida a sus recursos.
 
-#### Q: Is it possible to preview the resized images before saving the PDF document?
+#### P: ¿Es posible obtener una vista previa de las imágenes redimensionadas antes de guardar el documento PDF?
 
-A: The provided code directly optimizes and saves the PDF document with resized images. If you want to preview the resized images before saving, you may need to modify the code to generate preview images as well.
+R: El código proporcionado optimiza y guarda directamente el documento PDF con imágenes redimensionadas. Si desea obtener una vista previa de las imágenes redimensionadas antes de guardarlas, es posible que deba modificar el código para generar imágenes de vista previa también.
 
-#### Q: How do I integrate this image resizing method into my own projects?
+#### P: ¿Cómo integro este método de cambio de tamaño de imagen en mis propios proyectos?
 
-A: To integrate this method into your projects, follow the outlined steps and modify the code as needed. You can automate the process of resizing images in PDF documents by incorporating this code into your application.
+R: Para integrar este método en sus proyectos, siga los pasos descritos y modifique el código según sea necesario. Puede automatizar el proceso de cambio de tamaño de imágenes en documentos PDF incorporando este código en su aplicación.
 
-#### Q: Does the Aspose.PDF for .NET library offer any other capabilities for PDF optimization?
+#### P: ¿La biblioteca Aspose.PDF para .NET ofrece otras capacidades para la optimización de PDF?
 
-A: Yes, the Aspose.PDF for .NET library provides various optimization options beyond image resizing, such as font and text optimization, removing unused objects, and reducing redundant data. You can explore the library's documentation and examples to discover its full range of optimization features.
+R: Sí, la biblioteca Aspose.PDF para .NET proporciona varias opciones de optimización más allá del cambio de tamaño de la imagen, como optimización de fuentes y texto, eliminación de objetos no utilizados y reducción de datos redundantes. Puede explorar la documentación y los ejemplos de la biblioteca para descubrir su gama completa de funciones de optimización.

@@ -1,41 +1,41 @@
 ---
-title: Set Callout Property In PDF File
-linktitle: Set Callout Property In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set Callout Property in PDF File using Aspose.PDF for .NET. Customize annotations with callout lines, text color, and ending styles.
+title: 在 PDF 文件中设置标注属性
+linktitle: 在 PDF 文件中设置标注属性
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中设置标注属性。使用标注线、文本颜色和结束样式自定义注释。
 type: docs
 weight: 130
 url: /zh/net/annotations/setcalloutproperty/
 ---
-Aspose.PDF for .NET is a powerful library for creating, manipulating, and converting PDF documents in C#. One of the features provided by this library is the ability to set callout properties for free text annotations in PDF documents. This can be done using the `FreeTextAnnotation` class, which allows you to create annotations with callouts.
+ Aspose.PDF for .NET 是一个功能强大的库，用于在 C# 中创建、操作和转换 PDF 文档。该库提供的功能之一是能够为 PDF 文档中的自由文本注释设置标注属性。这可以使用以下方法完成`FreeTextAnnotation`类，它允许您使用标注创建注释。
 
-In this tutorial, we will guide you through the process of setting callout properties for a free text annotation using Aspose.PDF for .NET in C#. Follow the steps below to get started.
+在本教程中，我们将指导您完成在 C# 中使用 Aspose.PDF for .NET 设置自由文本注释标注属性的过程。请按照以下步骤开始。
 
-## Install Aspose.PDF for .NET
+## 安装 Aspose.PDF for .NET
 
-If you haven't already done so, you will need to [download](https://releases.aspose.com/pdf/net/) and install Aspose.PDF for .NET from the Aspose Releases or via NuGet package manager.
+如果您还没有这样做，您将需要[下载](https://releases.aspose.com/pdf/net/)并从 Aspose 版本或通过 NuGet 包管理器安装 Aspose.PDF for .NET。
 
-## Step 1: Create a new PDF document
+## 第 1 步：创建一个新的 PDF 文档
 
-Create a new PDF document using the `Document` class provided by Aspose.PDF for .NET.
+使用以下命令创建新的 PDF 文档`Document`Aspose.PDF for .NET 提供的类。
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 ```
 
-## Step 2: Add a new page to the document
+## 步骤 2：向文档添加新页面
 
-Add a new page to the document using the `Pages` collection of the `Document` class.
+使用以下命令向文档添加新页面`Pages`的集合`Document`班级。
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Set default appearance
+## 第 3 步：设置默认外观
 
-Set the default appearance for the free text annotation by creating a new `DefaultAppearance` object and setting its properties such as `TextColor` and `FontSize`.
+通过创建新的文本注释来设置自由文本注释的默认外观`DefaultAppearance`对象并设置其属性，例如`TextColor`和`FontSize`.
 
 ```csharp
 DefaultAppearance da = new DefaultAppearance();
@@ -43,9 +43,9 @@ da.TextColor = System.Drawing.Color.Red;
 da.FontSize = 10;
 ```
 
-## Step 4: Create a free text annotation with callout
+## 步骤 4：创建带有标注的自由文本注释
 
-Create a new free text annotation with callout by using the `FreeTextAnnotation` class. Set the `Intent` property to `FreeTextIntent.FreeTextCallout` to specify that this is a callout annotation. Set the `EndingStyle` property to `LineEnding.OpenArrow` to specify the style of the arrow at the end of the callout. Set the `Callout` property to an array of `Point` objects that represent the points on the page where the callout line should be drawn.
+使用标注创建新的自由文本注释`FreeTextAnnotation`班级。设置`Intent`财产给`FreeTextIntent.FreeTextCallout`指定这是一个标注注释。设置`EndingStyle`财产给`LineEnding.OpenArrow`指定标注末尾的箭头样式。设置`Callout`属性到数组`Point`表示页面上应绘制标注线的点的对象。
 
 ```csharp
 FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
@@ -57,34 +57,34 @@ fta.Callout = new Point[]
 };
 ```
 
-## Step 5: Add the free text annotation to the page
+## 步骤 5：向页面添加自由文本注释
 
-Add the free text annotation to the page by using the `Annotations` collection of the `Page` class.
+使用以下命令将自由文本注释添加到页面`Annotations`的集合`Page`班级。
 
 ```csharp
 page.Annotations.Add(fta);
 ```
 
-## Step 6: Add text to the annotation
+## 第 6 步：向注释添加文本
 
-Add text to the annotation by setting the `RichText` property to a string of formatted XML. In this tutorial, we're setting the text color to red and the font size to 9.
+通过设置将文本添加到注释`RichText`属性为格式化 XML 字符串。在本教程中，我们将文本颜色设置为红色，并将字体大小设置为 9。
 
 ```csharp
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\"  style=\"color:#FF
+fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" 样式=\"颜色:#FF
 ```
 
-## Step 7: save the document
+## 第7步：保存文档
 
-Now save the document by using the following code:
+现在使用以下代码保存文档：
 
 ```csharp
 doc.Save(dataDir + "SetCalloutProperty.pdf")
 ```
 
-### Example source code for Set Callout Property using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 设置标注属性的示例源代码
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document();
@@ -100,28 +100,28 @@ fta.Callout = new Point[]
 	new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
 };
 page.Annotations.Add(fta);
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\"  style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"><span style=\"font-size:9.0pt;font-family:Helvetica\">This is a sample</span></p></body>";
+fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"> <span style=\"font-size:9.0pt;font-family:Helvetica\">这是一个示例</span></p></body>";
 doc.Save(dataDir + "SetCalloutProperty.pdf");
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we explored how to set callout properties for a free text annotation in a PDF document using Aspose.PDF for .NET. Callout annotations are useful for providing additional information or explanations related to specific areas in a document. Aspose.PDF for .NET provides a wide range of features and capabilities to work with PDF files, including creating and customizing annotations, such as callouts. By following the step-by-step guide and using the provided C# source code, developers can easily implement callout annotations in their PDF documents, enhancing the usability and clarity of their documents. Aspose.PDF for .NET is a versatile and reliable library for PDF operations in .NET applications, offering powerful tools to handle various PDF-related tasks efficiently.
+在本教程中，我们探讨了如何使用 Aspose.PDF for .NET 在 PDF 文档中设置自由文本注释的标注属性。标注注释可用于提供与文档中特定区域相关的附加信息或解释。 Aspose.PDF for .NET 提供了广泛的处理 PDF 文件的特性和功能，包括创建和自定义注释，例如标注。通过遵循分步指南并使用提供的 C# 源代码，开发人员可以轻松在 PDF 文档中实现标注注释，从而增强文档的可用性和清晰度。 Aspose.PDF for .NET 是一个多功能且可靠的库，用于 .NET 应用程序中的 PDF 操作，提供强大的工具来高效处理各种 PDF 相关任务。
 
-### FAQ's for set callout property in PDF file
+### 在 PDF 文件中设置标注属性的常见问题解答
 
-#### Q: What is a callout annotation in a PDF document?
+#### 问：什么是 PDF 文档中的标注注释？
 
-A: A callout annotation in a PDF document is a type of annotation that allows you to create a text box with a leader line pointing to a specific area in the document. It is commonly used to provide additional information or comments related to a particular section or element in the document.
+答：PDF 文档中的标注注释是一种注释类型，允许您创建带有指向文档中特定区域的引出线的文本框。它通常用于提供与文档中特定部分或元素相关的附加信息或注释。
 
-#### Q: Can I customize the appearance of the callout annotation using Aspose.PDF for .NET?
+#### 问：我可以使用 Aspose.PDF for .NET 自定义标注注释的外观吗？
 
-A: Yes, you can customize various properties of the callout annotation, such as the color, font size, text alignment, line style, arrow style, and more.
+答：是的，您可以自定义标注注释的各种属性，例如颜色、字体大小、文本对齐方式、线条样式、箭头样式等。
 
-#### Q: How do I add text to the callout annotation?
+#### 问：如何向标注注释添加文本？
 
-A: To add text to the callout annotation, you can set the `RichText` property of the `FreeTextAnnotation` object. The `RichText` property takes a string of formatted XML that represents the text to be displayed in the callout annotation.
+ A：要在标注注释中添加文本，您可以设置`RichText`的财产`FreeTextAnnotation`目的。这`RichText`属性采用格式化 XML 字符串，表示要在标注注释中显示的文本。
 
-#### Q: Can I add multiple callout annotations to a PDF document using Aspose.PDF for .NET?
+#### 问：我可以使用 Aspose.PDF for .NET 将多个标注注释添加到 PDF 文档吗？
 
-A: Yes, you can create multiple callout annotations in a PDF document by creating multiple instances of the `FreeTextAnnotation` object and adding them to different pages or locations in the document.
+答：是的，您可以通过创建多个标注实例来在 PDF 文档中创建多个标注注释。`FreeTextAnnotation`对象并将它们添加到文档中的不同页面或位置。

@@ -1,40 +1,40 @@
 ---
-title: Highlight Character In PDF File
-linktitle: Highlight Character In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to highlight characters in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasındaki Karakteri Vurgula
+linktitle: PDF Dosyasındaki Karakteri Vurgula
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki karakterleri nasıl vurgulayacağınızı öğrenin.
 type: docs
 weight: 240
 url: /tr/net/programming-with-text/highlight-character-in-pdf/
 ---
-In this tutorial, we will explain how to highlight characters in a PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of highlighting characters in a PDF using the provided C# source code.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF dosyasındaki karakterlerin nasıl vurgulanacağını açıklayacağız. Sağlanan C# kaynak kodunu kullanarak bir PDF'deki karakterleri vurgulama işlemini adım adım gerçekleştireceğiz.
 
-## Requirements
+## Gereksinimler
 
-Before you begin, ensure that you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- Aspose.PDF for .NET kütüphanesi kuruldu.
+- C# programlamanın temel anlayışı.
 
-## Step 1: Set up the Document Directory
+## 1. Adım: Belge Dizinini Ayarlayın
 
-First, you need to set the path to the directory where your input PDF file is located. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF file.
+ Öncelikle, giriş PDF dosyanızın bulunduğu dizinin yolunu ayarlamanız gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyanızın yolunu içeren değişken.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the PDF Document
+## Adım 2: PDF Belgesini Yükleyin
 
-Next, we load the input PDF document using the `Aspose.Pdf.Document` class.
+ Daha sonra, giriş PDF belgesini kullanarak yükleriz.`Aspose.Pdf.Document` sınıf.
 
 ```csharp
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Convert PDF to Image
+## 3. Adım: PDF'yi Görüntüye Dönüştürün
 
-To highlight characters, we convert the PDF document to an image using the `PdfConverter` class. We set the resolution for the conversion and retrieve the image as a `Bitmap` object.
+ Karakterleri vurgulamak için PDF belgesini,`PdfConverter` sınıf. Dönüşümün çözünürlüğünü ayarlıyoruz ve görüntüyü bir`Bitmap` nesne.
 
 ```csharp
 int resolution = 150;
@@ -46,34 +46,34 @@ using (MemoryStream ms = new MemoryStream())
      Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
 ```
 
-## Step 4: Highlight Characters
+## Adım 4: Karakterleri Vurgulayın
 
-We loop through each page of the PDF document and use a `TextFragmentAbsorber` object to find all the words in the page. We then iterate over the text fragments, segments, and characters to highlight them using rectangles.
+ PDF belgesinin her sayfasında döngü yaparız ve`TextFragmentAbsorber` sayfadaki tüm kelimeleri bulmak için nesne. Daha sonra dikdörtgenler kullanarak bunları vurgulamak için metin parçalarını, bölümleri ve karakterleri yineliyoruz.
 
 ```csharp
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 {
-     // Set scale and transform
+     //Ölçeği ayarlayın ve dönüştürün
      float scale = resolution / 72f;
      gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
 
-     // Loop through pages
+     // Sayfalar arasında dolaş
      for (int i = 0; i < pdfDocument.Pages.Count; i++)
      {
          Page page = pdfDocument.Pages[1];
 
-         // Find all words in the page
+         // Sayfadaki tüm kelimeleri bulun
          TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
          textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
          page. Accept(textFragmentAbsorber);
          TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 
-         // Loop through text fragments
+         // Metin parçaları arasında döngü yapın
          foreach(TextFragment textFragment in textFragmentCollection)
          {
              if (i == 0)
              {
-                 // Highlight characters
+                 // Karakterleri vurgula
                  gr.DrawRectangle(
                      Think.Yellow,
                      (float)textFragment.Position.XIndent,
@@ -81,10 +81,10 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                      (float)textFragment.Rectangle.Width,
                      (float)textFragment.Rectangle.Height);
 
-                 // Loop through segments
+                 // Segmentler arasında döngü yapın
                  foreach(TextSegment segment in textFragment.Segments)
                  {
-                     // Highlight segment
+                     // Segmenti vurgula
                      gr.DrawRectangle(
                          Think Green,
                          (float)segment.Rectangle.LLX,
@@ -92,10 +92,10 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                          (float)segment.Rectangle.Width,
                          (float)segment.Rectangle.Height);
 
-                     // Loop through characters
+                     // Karakterler arasında döngü yap
                      foreach(CharInfo characterInfo in segment.Characters)
                      {
-                         // Highlightcharacter
+                         // Karakteri vurgula
                          gr.DrawRectangle(
                              Think.Black,
                              (float)characterInfo.Rectangle.LLx,
@@ -110,20 +110,20 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 }
 ```
 
-## Step 5: Save the Output Image
+## Adım 5: Çıktı Görüntüsünü Kaydedin
 
-Finally, we save the modified image with the highlighted characters to the specified output file.
+Son olarak, vurgulanan karakterlerle değiştirilen görüntüyü belirtilen çıktı dosyasına kaydediyoruz.
 
 ```csharp
 dataDir = dataDir + "HighlightCharacterInPDF_out.png";
 bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
 ```
 
-### Sample source code for Highlight Character In PDF using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak PDF'de Karakteri Vurgulama için örnek kaynak kodu 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Belgeler dizininin yolu.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	int resolution = 150;
 	Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
@@ -140,13 +140,13 @@ try
 			for (int i = 0; i < pdfDocument.Pages.Count; i++)
 			{
 				Page page = pdfDocument.Pages[1];
-				// Create TextAbsorber object to find all words
+				// Tüm kelimeleri bulmak için TextAbsorber nesnesi oluşturun
 				TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
 				textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
 				page.Accept(textFragmentAbsorber);
-				// Get the extracted text fragments
+				// Çıkarılan metin parçalarını alın
 				TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-				// Loop through the fragments
+				// Parçalar arasında döngü yapın
 				foreach (TextFragment textFragment in textFragmentCollection)
 				{
 					if (i == 0)
@@ -195,42 +195,42 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, you have learned how to highlight characters in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can highlight characters in a PDF and save the output as an image.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesindeki karakterleri nasıl vurgulayacağınızı öğrendiniz. Adım adım kılavuzu izleyerek ve verilen C# kodunu çalıştırarak, PDF'deki karakterleri vurgulayabilir ve çıktıyı resim olarak kaydedebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of the "Highlight Character In PDF File" tutorial?
+#### S: "PDF Dosyasındaki Karakteri Vurgula" eğitiminin amacı nedir?
 
-A: The "Highlight Character In PDF File" tutorial explains how to use the Aspose.PDF library for .NET to highlight characters within a PDF document. The tutorial provides a step-by-step guide and C# source code to achieve this.
+C: "PDF Dosyasındaki Karakteri Vurgula" eğitimi, bir PDF belgesindeki karakterleri vurgulamak için .NET için Aspose.PDF kütüphanesinin nasıl kullanılacağını açıklar. Öğreticide bunu başarmak için adım adım kılavuz ve C# kaynak kodu sağlanır.
 
-#### Q: Why would I want to highlight characters in a PDF document?
+#### S: Bir PDF belgesindeki karakterleri neden vurgulamak isteyeyim?
 
-A: Highlighting characters in a PDF document can be useful for various purposes, such as emphasizing specific content or making certain text more visible and distinguishable.
+C: Bir PDF belgesindeki karakterleri vurgulamak, belirli içeriği vurgulamak veya belirli metni daha görünür ve ayırt edilebilir kılmak gibi çeşitli amaçlar için yararlı olabilir.
 
-#### Q: How do I set up the document directory?
+#### S: Belge dizinini nasıl ayarlarım?
 
-A: To set up the document directory:
+C: Belge dizinini ayarlamak için:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your input PDF file is located.
+1.  Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` giriş PDF dosyanızın bulunduğu dizinin yolunu içeren değişken.
 
-#### Q: How do I load the PDF document and convert it to an image?
+#### S: PDF belgesini nasıl yükleyebilirim ve onu bir görüntüye nasıl dönüştürebilirim?
 
-A: In the tutorial, the `Aspose.Pdf.Document` class is used to load the input PDF document. Then, the `PdfConverter` class is employed to convert the PDF document to an image. The resolution of the image is set, and the image is retrieved as a `Bitmap` object.
+ C: Eğitimde,`Aspose.Pdf.Document` sınıfı, giriş PDF belgesini yüklemek için kullanılır. Sonra`PdfConverter` PDF belgesini bir görüntüye dönüştürmek için sınıf kullanılır. Görüntünün çözünürlüğü ayarlanır ve görüntü bir`Bitmap` nesne.
 
-#### Q: How do I highlight characters in the PDF document image?
+#### S: PDF belge görüntüsündeki karakterleri nasıl vurgularım?
 
-A: The tutorial guides you through the process of looping through each page of the PDF document, finding words using a `TextFragmentAbsorber`, and iterating through text fragments, segments, and characters to highlight them using rectangles.
+C: Eğitim, PDF belgesinin her sayfasında döngü yaparak kelimeleri bulma sürecinde size rehberlik eder.`TextFragmentAbsorber`ve metin parçalarını, bölümleri ve karakterleri yineleyerek dikdörtgenler kullanarak bunları vurgulayın.
 
-#### Q: Can I customize the appearance of the highlighted characters and segments?
+#### S: Vurgulanan karakterlerin ve bölümlerin görünümünü özelleştirebilir miyim?
 
-A: Yes, you can customize the appearance of the highlighted characters and segments by modifying the colors and styles used in the drawing operations.
+C: Evet, çizim işlemlerinde kullanılan renkleri ve stilleri değiştirerek vurgulanan karakterlerin ve bölümlerin görünümünü özelleştirebilirsiniz.
 
-#### Q: How do I save the modified image with the highlighted characters?
+#### S: Değiştirilen görüntüyü vurgulanan karakterlerle nasıl kaydederim?
 
-A: The tutorial demonstrates how to save the modified image with the highlighted characters to the specified output file using the `Save` method of the `Bitmap` class.
+ C: Eğitimde, vurgulanan karakterlerle değiştirilen görüntünün belirtilen çıktı dosyasına nasıl kaydedileceği gösterilmektedir.`Save` yöntemi`Bitmap` sınıf.
 
-#### Q: Is a valid Aspose License required for this tutorial?
+#### S: Bu eğitim için geçerli bir Aspose Lisansı gerekli mi?
 
-A: Yes, a valid Aspose License is required for this tutorial to work correctly. You can purchase a full license or obtain a 30-day temporary license from the Aspose website.
+C: Evet, bu eğitimin düzgün çalışması için geçerli bir Aspose Lisansı gereklidir. Aspose web sitesinden tam lisans satın alabilir veya 30 günlük geçici lisans alabilirsiniz.

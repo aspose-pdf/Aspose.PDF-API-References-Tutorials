@@ -1,180 +1,180 @@
 ---
-title: Add Image in a Table Cell
-linktitle: Add Image in a Table Cell
-second_title: Aspose.PDF for .NET API Reference
-description: Add an image in a table cell with Aspose.PDF for .NET a step-by-step guide for precise manipulation of images in PDF documents.
+title: Agregar imagen en una celda de tabla
+linktitle: Agregar imagen en una celda de tabla
+second_title: Aspose.PDF para referencia de API .NET
+description: Agregue una imagen en una celda de una tabla con Aspose.PDF para .NET, una guía paso a paso para la manipulación precisa de imágenes en documentos PDF.
 type: docs
 weight: 10
 url: /es/net/programming-with-tables/add-image-in-a-table-cell/
 ---
-In this tutorial, we will guide you through the process of adding an image to a table cell using Aspose.PDF for .NET. The provided C# source code demonstrates how to achieve this functionality. By following the steps outlined below, you will be able to incorporate images into your table cells effectively.
+En este tutorial, lo guiaremos a través del proceso de agregar una imagen a una celda de una tabla usando Aspose.PDF para .NET. El código fuente de C# proporcionado demuestra cómo lograr esta funcionalidad. Si sigue los pasos que se describen a continuación, podrá incorporar imágenes en las celdas de su tabla de manera efectiva.
 
-Before we dive into the code, make sure you have the Aspose.PDF for .NET library installed and referenced in your project.
+Antes de profundizar en el código, asegúrese de tener la biblioteca Aspose.PDF para .NET instalada y referenciada en su proyecto.
 
-## Step 1: Setting up the Document
+## Paso 1: configurar el documento
 
-To begin, we need to create a new instance of the `Document` class from the Aspose.Pdf namespace. This class represents a PDF document.
+ Para comenzar, necesitamos crear una nueva instancia del`Document` clase del espacio de nombres Aspose.Pdf. Esta clase representa un documento PDF.
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate a Document object
+// Crear una instancia de un objeto de documento
 Document pdfDocument = new Document();
 ```
 
-## Step 2: Creating a Page
+## Paso 2: crear una página
 
-Next, we need to add a page to the PDF document. A page serves as a container for the table and other elements.
+A continuación, debemos agregar una página al documento PDF. Una página sirve como contenedor para la mesa y otros elementos.
 
 ```csharp
-// Create a page in the pdf document
+// Crear una página en el documento pdf.
 Page sec1 = pdfDocument.Pages.Add();
 ```
 
-## Step 3: Adding a Table
+## Paso 3: agregar una tabla
 
-In this step, we will create a table by instantiating the `Table` class from the Aspose.Pdf namespace.
+ En este paso, crearemos una tabla creando una instancia del`Table` clase del espacio de nombres Aspose.Pdf.
 
 ```csharp
-// Instantiate a table object
+// Crear una instancia de un objeto de tabla
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 ```
 
-## Step 4: Setting Default Cell Border
+## Paso 4: configurar el borde de celda predeterminado
 
-To ensure consistency, we can set a default cell border using the `DefaultCellBorder` property of the table's `BorderInfo` object.
+ Para garantizar la coherencia, podemos establecer un borde de celda predeterminado usando el`DefaultCellBorder`propiedad de la tabla`BorderInfo` objeto.
 
 ```csharp
-// Set default cell border using BorderInfo object
+// Establecer el borde de celda predeterminado usando el objeto BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 ```
 
-## Step 5: Setting Column Widths
+## Paso 5: configurar el ancho de las columnas
 
-To define the width of each column in the table, we can set the `ColumnWidths` property. Specify the widths as a string with space-separated values.
+ Para definir el ancho de cada columna de la tabla, podemos establecer el`ColumnWidths` propiedad. Especifique los anchos como una cadena con valores separados por espacios.
 
 ```csharp
-// Set with column widths of the table
+// Establecer con anchos de columna de la tabla.
 tab1.ColumnWidths = "100 100 120";
 ```
 
-## Step 6: Adding an Image to a Table Cell
+## Paso 6: agregar una imagen a una celda de la tabla
 
-Now comes the exciting part, adding an image to a table cell. To do this, we will follow these sub-steps:
+Ahora viene la parte interesante: agregar una imagen a una celda de la tabla. Para ello seguiremos estos subpasos:
 
-## Step 6.1: Creating an Image Object
+## Paso 6.1: Crear un objeto de imagen
 
-Create an instance of the `Image` class from the Aspose.Pdf namespace. Set the `File` property to the path of the image file you want to add.
+ Crear una instancia del`Image` clase del espacio de nombres Aspose.Pdf. Selecciona el`File` propiedad a la ruta del archivo de imagen que desea agregar.
 
 ```csharp
-// Create an Image object
+// Crear un objeto de imagen
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose.jpg";
 ```
 
-## Step 6.2: Creating a Row and Cells
+## Paso 6.2: Crear una fila y celdas
 
-To add the image to the table, we first need to create a row and the necessary cells.
+Para agregar la imagen a la tabla, primero necesitamos crear una fila y las celdas necesarias.
 
 ```csharp
-// Create a row in the table
+// Crea una fila en la tabla.
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 
-// Add a text cell to the row
+// Agregar una celda de texto a la fila
 row1.Cells.Add("Sample text in cell");
 
-// Add the cell which holds the image
+// Agrega la celda que contiene la imagen.
 Aspose.Pdf.Cell cell2 = row1.Cells.Add();
 ```
 
-## Step 6.3: Adding the Image to the Table Cell
+## Paso 6.3: Agregar la imagen a la celda de la tabla
 
-Finally, we can add the image to the table cell by adding it as a paragraph within the cell.
+Finalmente, podemos agregar la imagen a la celda de la tabla agregándola como un párrafo dentro de la celda.
 
 ```csharp
-// Add the image to the table cell
+// Agregar la imagen a la celda de la tabla.
 cell2.Paragraphs.Add(img);
 ```
 
-## Step 6.4: Adding Additional Cells
+## Paso 6.4: Agregar celdas adicionales
 
-After adding the image cell, we can add more cells to the row if needed.
+Después de agregar la celda de la imagen, podemos agregar más celdas a la fila si es necesario.
 
 ```csharp
-// Add another cell to the row
+//Agregar otra celda a la fila
 row1.Cells.Add("Previous cell with image");
 
-// Adjust the vertical alignment of the third cell
+// Ajustar la alineación vertical de la tercera celda.
 row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
 ```
 
-## Step 7: Saving the Document
+## Paso 7: guardar el documento
 
-Finally, we can save the modified document to a specified location using the `Save` method.
+ Finalmente, podemos guardar el documento modificado en una ubicación específica usando el`Save` método.
 
 ```csharp
-// Save the Document
+// Guardar el documento
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
-Congratulations! You have successfully learned how to add an image to a table cell using Aspose.PDF for .NET. Feel free to explore further customization options and integrate this functionality into your projects.
+¡Felicidades! Ha aprendido con éxito cómo agregar una imagen a una celda de una tabla usando Aspose.PDF para .NET. No dude en explorar más opciones de personalización e integrar esta funcionalidad en sus proyectos.
 
-### Example source code for add image in a table cell using Aspose.PDF for .NET
+### Código fuente de ejemplo para agregar una imagen en una celda de una tabla usando Aspose.PDF para .NET
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate a Document object
+// Crear una instancia de un objeto de documento
 Document pdfDocument = new Document();
-// Create a page in the pdf document
+// Crear una página en el documento pdf.
 Page sec1 = pdfDocument.Pages.Add();
-// Instantiate a table object
+// Crear una instancia de un objeto de tabla
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-// Add the table in paragraphs collection of the desired page
+// Agregue la tabla en la colección de párrafos de la página deseada.
 sec1.Paragraphs.Add(tab1);
-// Set default cell border using BorderInfo object
+// Establecer el borde de celda predeterminado usando el objeto BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-// Set with column widths of the table
+// Establecer con anchos de columna de la tabla.
 tab1.ColumnWidths = "100 100 120";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose.jpg";
-// Create rows in the table and then cells in the rows
+// Crea filas en la tabla y luego celdas en las filas.
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Sample text in cell");
-// Add the cell which holds the image
+// Agrega la celda que contiene la imagen.
 Aspose.Pdf.Cell cell2 = row1.Cells.Add();
-// Add the image to the table cell
+// Agregar la imagen a la celda de la tabla.
 cell2.Paragraphs.Add(img);
 row1.Cells.Add("Previous cell with image");
 row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
-// Save the Document
+// Guardar el documento
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, we covered a step-by-step guide on how to add an image to a table cell using Aspose.PDF for .NET. We started by setting up the document, creating a page, and adding a table. Then, we set the default cell border and column widths. We demonstrated how to add an image to a table cell and adjust the cell's vertical alignment. Finally, we saved the modified document. By following these steps, you can enhance your PDF documents with images in table cells efficiently.
+En este tutorial, cubrimos una guía paso a paso sobre cómo agregar una imagen a una celda de una tabla usando Aspose.PDF para .NET. Comenzamos configurando el documento, creando una página y agregando una tabla. Luego, configuramos el borde de celda y el ancho de columna predeterminados. Demostramos cómo agregar una imagen a una celda de una tabla y ajustar la alineación vertical de la celda. Finalmente, guardamos el documento modificado. Si sigue estos pasos, podrá mejorar sus documentos PDF con imágenes en las celdas de la tabla de manera eficiente.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: Can I add multiple images to different cells within the same table using Aspose.PDF for .NET?
+#### P: ¿Puedo agregar varias imágenes a diferentes celdas dentro de la misma tabla usando Aspose.PDF para .NET?
 
-A: Yes, you can add multiple images to different cells within the same table using Aspose.PDF for .NET. Simply follow the same process demonstrated in the tutorial for each image you want to add to the table.
+R: Sí, puede agregar varias imágenes a diferentes celdas dentro de la misma tabla usando Aspose.PDF para .NET. Simplemente siga el mismo proceso que se muestra en el tutorial para cada imagen que desee agregar a la tabla.
 
-#### Q: Can I customize the image size and position within the table cell?
+#### P: ¿Puedo personalizar el tamaño y la posición de la imagen dentro de la celda de la tabla?
 
-A: Yes, you can customize the image size and position within the table cell by adjusting the properties of the `Image` object. You can set the image width and height, as well as the alignment within the cell.
+ R: Sí, puede personalizar el tamaño y la posición de la imagen dentro de la celda de la tabla ajustando las propiedades del`Image`objeto. Puede establecer el ancho y el alto de la imagen, así como la alineación dentro de la celda.
 
-#### Q: Can I add images to a table with a dynamic number of rows and columns?
+#### P: ¿Puedo agregar imágenes a una tabla con una cantidad dinámica de filas y columnas?
 
-A: Yes, you can add images to a table with a dynamic number of rows and columns. Aspose.PDF for .NET provides flexibility in creating tables with varying dimensions. You can add rows and cells as needed, and then add images to specific cells accordingly.
+R: Sí, puedes agregar imágenes a una tabla con una cantidad dinámica de filas y columnas. Aspose.PDF para .NET proporciona flexibilidad para crear tablas con diferentes dimensiones. Puede agregar filas y celdas según sea necesario y luego agregar imágenes a celdas específicas en consecuencia.
 
-#### Q: What image formats are supported by Aspose.PDF for .NET for adding images to table cells?
+#### P: ¿Qué formatos de imagen admite Aspose.PDF para .NET para agregar imágenes a las celdas de una tabla?
 
-A: Aspose.PDF for .NET supports a wide range of image formats, including JPEG, PNG, GIF, BMP, and TIFF. You can use images of any of these formats to add them to table cells.
+R: Aspose.PDF para .NET admite una amplia gama de formatos de imagen, incluidos JPEG, PNG, GIF, BMP y TIFF. Puede utilizar imágenes de cualquiera de estos formatos para agregarlas a las celdas de la tabla.
 
-#### Q: Can I add images to tables in an existing PDF document?
+#### P: ¿Puedo agregar imágenes a tablas en un documento PDF existente?
 
-A: Yes, you can add images to tables in an existing PDF document using Aspose.PDF for .NET. Simply load the existing document and follow the same steps to add images to the table as demonstrated in the tutorial.
+R: Sí, puede agregar imágenes a tablas en un documento PDF existente usando Aspose.PDF para .NET. Simplemente cargue el documento existente y siga los mismos pasos para agregar imágenes a la tabla como se muestra en el tutorial.

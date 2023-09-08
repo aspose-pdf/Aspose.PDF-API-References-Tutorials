@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF İşleme API'si
 description: Aspose.PDF for Java'yı kullanarak metni kolayca PDF dosyalarına nasıl dönüştürebileceğinizi öğrenin. Kaynak koduyla adım adım kılavuz.
 type: docs
 weight: 25
-url: /tr/java/pdf-conversion-&-transformation/change-text-to-pdf-files/
+url: /tr/java/pdf-conversion-transformation/change-text-to-pdf-files/
 ---
 
 ## Metni PDF Dosyalarına Dönüştürmeye Giriş

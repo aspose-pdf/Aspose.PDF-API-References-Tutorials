@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF 处理 API
 description: 了解如何使用 Aspose.PDF for Java 将 PDF 转换为 PPTX 格式。带有代码示例的分步指南可实现无缝转换。
 type: docs
 weight: 19
-url: /zh/java/pdf-conversion-&-transformation/convert-pdfs-to-pptx-format/
+url: /zh/java/pdf-conversion-transformation/convert-pdfs-to-pptx-format/
 ---
 
 ## 将 PDF 转换为 PPTX 格式简介

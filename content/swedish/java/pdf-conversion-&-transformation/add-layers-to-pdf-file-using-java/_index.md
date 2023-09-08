@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Lär dig hur du lägger till lager i en PDF-fil med Java med Aspose.PDF för Java. Den här steg-för-steg-guiden innehåller källkod och täcker enkelt PDF-manipulation.
 type: docs
 weight: 33
-url: /sv/java/pdf-conversion-&-transformation/add-layers-to-pdf-file-using-java/
+url: /sv/java/pdf-conversion-transformation/add-layers-to-pdf-file-using-java/
 ---
 den här steg-för-steg-guiden kommer vi att utforska hur man lägger till lager i en PDF-fil med Java med Aspose.PDF för Java-biblioteket. Lager, även kända som valfria innehållsgrupper (OCG), låter dig organisera innehåll i ett PDF-dokument och kontrollera dess synlighet. Detta kan vara särskilt användbart när du vill skapa interaktiva PDF-filer eller tillhandahålla olika vyer av samma dokument.
 

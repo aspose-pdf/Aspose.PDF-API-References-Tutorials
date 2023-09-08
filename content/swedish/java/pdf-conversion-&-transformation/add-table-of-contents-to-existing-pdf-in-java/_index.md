@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Lär dig hur du lägger till en innehållsförteckning till en PDF i Java med Aspose.PDF för Java. Förbättra dokumentnavigeringen med denna steg-för-steg-guide.
 type: docs
 weight: 34
-url: /sv/java/pdf-conversion-&-transformation/add-table-of-contents-to-existing-pdf-in-java/
+url: /sv/java/pdf-conversion-transformation/add-table-of-contents-to-existing-pdf-in-java/
 ---
 
 ## Introduktion

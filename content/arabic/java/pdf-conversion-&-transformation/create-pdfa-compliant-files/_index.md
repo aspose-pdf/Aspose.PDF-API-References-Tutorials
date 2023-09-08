@@ -5,7 +5,7 @@ second_title: Aspose.PDF جافا واجهة برمجة تطبيقات معال�
 description: تعرف على كيفية إنشاء ملفات متوافقة مع PDF/A باستخدام Aspose.PDF لـ Java. دليل خطوة بخطوة مع أمثلة التعليمات البرمجية لملفات PDF المتوافقة مع معايير الصناعة.
 type: docs
 weight: 18
-url: /ar/java/pdf-conversion-&-transformation/create-pdfa-compliant-files/
+url: /ar/java/pdf-conversion-transformation/create-pdfa-compliant-files/
 ---
 
 ## مقدمة

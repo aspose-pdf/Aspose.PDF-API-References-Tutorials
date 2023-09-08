@@ -29,7 +29,7 @@ Aspose.PDF for Java ile PDF açıklama ekleme eğitimlerini keşfedin, PDF'lerin
 Aspose.PDF ile Java'da PDF eklerini yönetmeyi öğrenin. Dosyaları, resimleri ve daha fazlasını PDF'lerinize zahmetsizce ekleyin.
 ### [PDF Yer İmleri](./pdf-bookmarks/)
 Aspose.PDF for Java ile etkileşimli PDF yer imleri oluşturmayı öğrenin. Belgede gezinmeyi ve kullanıcı deneyimini geliştirin.
-### [PDF Dönüştürme ve Dönüştürme](./pdf-conversion-&-transformation/)
+### [PDF Dönüştürme ve Dönüştürme](./pdf-conversion-transformation/)
 Aspose.PDF for Java - Geliştiriciler için Kapsamlı Eğitimler ile PDF Dönüştürme ve Dönüştürmenin Gücünün Kilidini Açın. PDF İşleme Becerilerinizi Bugün Geliştirin!
 ### [PDF Görselleri](./pdf-images/)
 Aspose.PDF for Java ile PDF görüntü işlemeyi keşfedin. PDF'lere zahmetsizce resim eklemeyi, değiştirmeyi ve optimize etmeyi öğrenin.

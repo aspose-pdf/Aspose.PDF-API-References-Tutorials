@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF-Verarbeitungs-API
 description: Transformieren Sie XSL-FO in PDF mit Aspose.PDF für Java. Schritt-für-Schritt-Anleitung, Quellcode und FAQs für eine effiziente Datenkonvertierung.
 type: docs
 weight: 28
-url: /de/java/pdf-conversion-&-transformation/transform-xsl-fo-to-pdf-format/
+url: /de/java/pdf-conversion-transformation/transform-xsl-fo-to-pdf-format/
 ---
 
 Im heutigen digitalen Zeitalter ist eine effiziente Datentransformation für Unternehmen und Organisationen unerlässlich. Eine häufige Anforderung ist die Konvertierung von XSL-FO-Dokumenten (Extensible Stylesheet Language Formatting Objects) in PDF (Portable Document Format). Diese Schritt-für-Schritt-Anleitung zeigt Ihnen, wie Sie dies mit der Aspose.PDF für Java-API erreichen. 

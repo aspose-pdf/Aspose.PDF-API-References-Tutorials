@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF 处理 API
 description: 使用 Aspose.PDF for Java 释放 PDF 转换和转换的力量 - 面向开发人员的综合教程。立即增强您的 PDF 处理技能！
 type: docs
 weight: 13
-url: /zh/java/pdf-conversion-&-transformation/
+url: /zh/java/pdf-conversion-transformation/
 ---
 
 ## Aspose.PDF for Java 简介

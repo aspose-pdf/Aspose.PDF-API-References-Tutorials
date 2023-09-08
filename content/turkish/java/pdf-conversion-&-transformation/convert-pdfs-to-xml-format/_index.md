@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF İşleme API'si
 description: Aspose.PDF for Java ile PDF'leri zahmetsizce XML'e nasıl dönüştüreceğinizi öğrenin. Verimli dönüşüm için adım adım kılavuz ve en iyi uygulamalar.
 type: docs
 weight: 22
-url: /tr/java/pdf-conversion-&-transformation/convert-pdfs-to-xml-format/
+url: /tr/java/pdf-conversion-transformation/convert-pdfs-to-xml-format/
 ---
 
 ## Aspose.PDF for Java kullanarak PDF'leri XML Formatına Dönüştürmeye Giriş

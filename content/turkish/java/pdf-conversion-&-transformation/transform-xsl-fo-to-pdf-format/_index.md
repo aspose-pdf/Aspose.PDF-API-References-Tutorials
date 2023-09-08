@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF İşleme API'si
 description: Aspose.PDF for Java ile XSL-FO'yu PDF'ye dönüştürün. Verimli veri dönüşümü için adım adım kılavuz, kaynak kodu ve SSS.
 type: docs
 weight: 28
-url: /tr/java/pdf-conversion-&-transformation/transform-xsl-fo-to-pdf-format/
+url: /tr/java/pdf-conversion-transformation/transform-xsl-fo-to-pdf-format/
 ---
 
 Günümüzün dijital çağında, işletmeler ve kuruluşlar için verimli veri dönüşümü şarttır. Yaygın gereksinimlerden biri, XSL-FO (Genişletilebilir Stil Sayfası Dili Biçimlendirme Nesneleri) belgelerinin PDF'ye (Taşınabilir Belge Biçimi) dönüştürülmesidir. Bu adım adım kılavuz, Aspose.PDF for Java API'yi kullanarak bunu nasıl başaracağınızı gösterecek. 

@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Konvertera enkelt PDF-filer till XPS-format med Aspose.PDF för Java. Lås upp förbättrad utskrift, säkerhet och kompatibilitet.
 type: docs
 weight: 13
-url: /sv/java/pdf-conversion-&-transformation/convert-pdfs-to-xps-format/
+url: /sv/java/pdf-conversion-transformation/convert-pdfs-to-xps-format/
 ---
 
 ## Introduktion till att konvertera PDF-filer till XPS-format

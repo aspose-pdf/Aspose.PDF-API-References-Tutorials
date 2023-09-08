@@ -5,7 +5,7 @@ second_title: Aspose.PDF جافا واجهة برمجة تطبيقات معال�
 description: تعرف على كيفية تصدير ملفات PDF إلى مصنفات Excel بسهولة باستخدام Aspose.PDF لـ Java. دليل خطوة بخطوة لاستخراج البيانات بسلاسة.
 type: docs
 weight: 16
-url: /ar/java/pdf-conversion-&-transformation/export-pdfs-to-excel-workbooks/
+url: /ar/java/pdf-conversion-transformation/export-pdfs-to-excel-workbooks/
 ---
 
 ## تصدير ملفات PDF إلى مصنفات Excel باستخدام Aspose.PDF لـ Java

@@ -5,7 +5,7 @@ second_title: Aspose.PDF API de procesamiento de PDF Java
 description: Convierta archivos PDF a libros electrónicos EPUB sin esfuerzo con Aspose.PDF para Java. Aprenda paso a paso la conversión de PDF a EPUB y las preguntas frecuentes.
 type: docs
 weight: 15
-url: /es/java/pdf-conversion-&-transformation/convert-pdfs-to-epub-ebooks/
+url: /es/java/pdf-conversion-transformation/convert-pdfs-to-epub-ebooks/
 ---
 
 ## Introducción a la conversión de archivos PDF a libros electrónicos EPUB

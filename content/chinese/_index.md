@@ -31,7 +31,7 @@ Aspose.PDF for .NET 教程和代码片段，用于在应用程序中创建、编
 - [PDF注释](./java/pdf-annotations/)
 - [PDF 附件](./java/pdf-attachments/)
 - [PDF书签](./java/pdf-bookmarks/)
-- [PDF 转换和转换](./java/pdf-conversion-&-transformation/)
+- [PDF 转换和转换](./java/pdf-conversion-transformation/)
 - [PDF图像](./java/pdf-images/)
 - [PDF 图像处理](./java/pdf-image-manipulation/)
 - [PDF 文档链接](./java/pdf-document-links/)

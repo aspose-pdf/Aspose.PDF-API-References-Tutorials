@@ -5,7 +5,7 @@ second_title: Aspose.PDF API de procesamiento de PDF Java
 description: Aprenda a convertir archivos PDF a hojas de cálculo XLSX con Aspose.PDF para Java. Guía paso a paso para una extracción y análisis de datos eficiente.
 type: docs
 weight: 21
-url: /es/java/pdf-conversion-&-transformation/save-pdfs-as-xlsx-spreadsheets/
+url: /es/java/pdf-conversion-transformation/save-pdfs-as-xlsx-spreadsheets/
 ---
 
 Aspose.PDF para Java es una potente API que permite a los desarrolladores trabajar con documentos PDF en aplicaciones Java. En esta guía paso a paso, exploraremos cómo usar Aspose.PDF para Java para convertir archivos PDF en hojas de cálculo XLSX. Esta conversión puede ser increíblemente útil cuando necesita extraer datos tabulares de archivos PDF para su posterior análisis o manipulación en Excel. Recorreremos todo el proceso, desde configurar su entorno Java hasta escribir el código y guardar los datos PDF en un archivo XLSX.

@@ -29,7 +29,7 @@ Explore PDF annotation tutorials with Aspose.PDF for Java, learn to add interact
 Learn to manage PDF attachments in Java with Aspose.PDF. Attach files, images, and more to your PDFs effortlessly.
 ### [PDF Bookmarks](./pdf-bookmarks/)
 Learn to create interactive PDF bookmarks with Aspose.PDF for Java. Elevate document navigation and user experience.
-### [PDF Conversion & Transformation](./pdf-conversion-&-transformation/)
+### [PDF Conversion & Transformation](./pdf-conversion-transformation/)
 Unlock the Power of PDF Conversion & Transformation with Aspose.PDF for Java - Comprehensive Tutorials for Developers. Enhance Your PDF Processing Skills Today!
 ### [PDF Images](./pdf-images/)
 Explore PDF image manipulation with Aspose.PDF for Java. Learn to insert, modify, and optimize images in PDFs effortlessly.

@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF 处理 API
 description: 了解如何使用 Aspose.PDF for Java 创建 PDF/A 兼容文件。包含行业标准 PDF 代码示例的分步指南。
 type: docs
 weight: 18
-url: /zh/java/pdf-conversion-&-transformation/create-pdfa-compliant-files/
+url: /zh/java/pdf-conversion-transformation/create-pdfa-compliant-files/
 ---
 
 ## 介绍

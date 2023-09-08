@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java API обработки PDF
 description: Узнайте, как добавлять слои в PDF-файл с помощью Java с помощью Aspose.PDF для Java. Это пошаговое руководство включает исходный код и позволяет легко манипулировать PDF-файлами.
 type: docs
 weight: 33
-url: /ru/java/pdf-conversion-&-transformation/add-layers-to-pdf-file-using-java/
+url: /ru/java/pdf-conversion-transformation/add-layers-to-pdf-file-using-java/
 ---
 В этом пошаговом руководстве мы рассмотрим, как добавлять слои в PDF-файл с помощью Java с помощью библиотеки Aspose.PDF для Java. Слои, также известные как дополнительные группы контента (OCG), позволяют упорядочивать контент в PDF-документе и контролировать его видимость. Это может быть особенно полезно, если вы хотите создать интерактивные PDF-файлы или предоставить разные представления одного и того же документа.
 

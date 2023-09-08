@@ -5,7 +5,7 @@ second_title: Aspose.PDF جافا واجهة برمجة تطبيقات معال�
 description: تعرف على كيفية تحويل EPUB إلى PDF بسهولة باستخدام Aspose.PDF لـ Java. يعمل دليلنا خطوة بخطوة على تبسيط عملية تحويل EPUB إلى PDF.
 type: docs
 weight: 10
-url: /ar/java/pdf-conversion-&-transformation/convert-epub-to-pdf-format/
+url: /ar/java/pdf-conversion-transformation/convert-epub-to-pdf-format/
 ---
 
 ## مقدمة لتحويل EPUB إلى تنسيق PDF

@@ -31,7 +31,7 @@ Bunlar bazı yararlı kaynaklara bağlantılar:
 - [PDF Ek Açıklamaları](./java/pdf-annotations/)
 - [PDF Ekleri](./java/pdf-attachments/)
 - [PDF Yer İmleri](./java/pdf-bookmarks/)
-- [PDF Dönüştürme ve Dönüştürme](./java/pdf-conversion-&-transformation/)
+- [PDF Dönüştürme ve Dönüştürme](./java/pdf-conversion-transformation/)
 - [PDF Görselleri](./java/pdf-images/)
 - [PDF Görüntü İşleme](./java/pdf-image-manipulation/)
 - [PDF Belge Bağlantıları](./java/pdf-document-links/)

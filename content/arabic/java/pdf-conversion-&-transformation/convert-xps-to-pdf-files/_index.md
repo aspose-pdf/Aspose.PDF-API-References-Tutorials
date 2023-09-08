@@ -5,7 +5,7 @@ second_title: Aspose.PDF جافا واجهة برمجة تطبيقات معال�
 description: تعرف على كيفية تحويل ملفات XPS إلى PDF بسهولة باستخدام Aspose.PDF لـ Java. دليلنا خطوة بخطوة يبسط العملية.
 type: docs
 weight: 27
-url: /ar/java/pdf-conversion-&-transformation/convert-xps-to-pdf-files/
+url: /ar/java/pdf-conversion-transformation/convert-xps-to-pdf-files/
 ---
 
 ## مقدمة إلى Aspose.PDF لجافا

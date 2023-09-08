@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF 处理 API
 description: 了解如何使用 Aspose.PDF for Java 通过 JavaScript 增强 PDF 交互性。包含动态 PDF 源代码的分步指南
 type: docs
 weight: 32
-url: /zh/java/pdf-conversion-&-transformation/adding-javascript-using-dom-in-pdf/
+url: /zh/java/pdf-conversion-transformation/adding-javascript-using-dom-in-pdf/
 ---
 
 ## 介绍

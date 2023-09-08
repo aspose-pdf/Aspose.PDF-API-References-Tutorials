@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF 处理 API
 description: 了解如何使用 Aspose.PDF for Java 轻松将 PCL 文件转换为 PDF。请遵循此分步指南以及代码示例，以实现高效的文档转换。
 type: docs
 weight: 12
-url: /zh/java/pdf-conversion-&-transformation/transform-pcl-to-pdfs/
+url: /zh/java/pdf-conversion-transformation/transform-pcl-to-pdfs/
 ---
 
 在本分步指南中，我们将探索如何使用强大的 Aspose.PDF for Java API 将 PCL（打印机命令语言）文件转换为 PDF。无论您是使用旧的 PCL 文件还是需要将其转换为现代文档管理，本教程都将通过详细的代码示例引导您完成该过程。

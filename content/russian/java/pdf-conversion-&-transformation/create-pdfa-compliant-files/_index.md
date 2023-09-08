@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java API обработки PDF
 description: Узнайте, как создавать файлы, совместимые с PDF/A, с помощью Aspose.PDF для Java. Пошаговое руководство с примерами кода для стандартных PDF-файлов.
 type: docs
 weight: 18
-url: /ru/java/pdf-conversion-&-transformation/create-pdfa-compliant-files/
+url: /ru/java/pdf-conversion-transformation/create-pdfa-compliant-files/
 ---
 
 ## Введение

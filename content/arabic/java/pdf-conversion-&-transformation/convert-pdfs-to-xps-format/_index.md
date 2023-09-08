@@ -5,7 +5,7 @@ second_title: Aspose.PDF جافا واجهة برمجة تطبيقات معال�
 description: قم بتحويل ملفات PDF إلى تنسيق XPS بسهولة باستخدام Aspose.PDF لـ Java. أطلق العنان للطباعة المحسنة والأمان والتوافق.
 type: docs
 weight: 13
-url: /ar/java/pdf-conversion-&-transformation/convert-pdfs-to-xps-format/
+url: /ar/java/pdf-conversion-transformation/convert-pdfs-to-xps-format/
 ---
 
 ## مقدمة لتحويل ملفات PDF إلى تنسيق XPS

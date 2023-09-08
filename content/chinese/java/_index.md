@@ -29,7 +29,7 @@ is_root: true
 学习使用 Aspose.PDF 在 Java 中管理 PDF 附件。轻松将文件、图像等附加到您的 PDF 中。
 ### [PDF书签](./pdf-bookmarks/)
 学习使用 Aspose.PDF for Java 创建交互式 PDF 书签。提升文档导航和用户体验。
-### [PDF 转换和转换](./pdf-conversion-&-transformation/)
+### [PDF 转换和转换](./pdf-conversion-transformation/)
 使用 Aspose.PDF for Java 释放 PDF 转换和转换的力量 - 面向开发人员的综合教程。立即增强您的 PDF 处理技能！
 ### [PDF图像](./pdf-images/)
 使用 Aspose.PDF for Java 探索 PDF 图像操作。了解轻松插入、修改和优化 PDF 中的图像。

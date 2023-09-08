@@ -29,7 +29,7 @@ Entdecken Sie PDF-Anmerkungs-Tutorials mit Aspose.PDF für Java und erfahren Sie
 Erfahren Sie, wie Sie mit Aspose.PDF PDF-Anhänge in Java verwalten. Hängen Sie mühelos Dateien, Bilder und mehr an Ihre PDFs an.
 ### [PDF-Lesezeichen](./pdf-bookmarks/)
 Erfahren Sie, wie Sie mit Aspose.PDF für Java interaktive PDF-Lesezeichen erstellen. Verbessern Sie die Dokumentennavigation und das Benutzererlebnis.
-### [PDF-Konvertierung und -Transformation](./pdf-conversion-&-transformation/)
+### [PDF-Konvertierung und -Transformation](./pdf-conversion-transformation/)
 Nutzen Sie die Möglichkeiten der PDF-Konvertierung und -Transformation mit Aspose.PDF für Java – umfassende Tutorials für Entwickler. Verbessern Sie noch heute Ihre PDF-Verarbeitungsfähigkeiten!
 ### [PDF-Bilder](./pdf-images/)
 Entdecken Sie die Bearbeitung von PDF-Bildern mit Aspose.PDF für Java. Erfahren Sie, wie Sie Bilder mühelos in PDFs einfügen, ändern und optimieren.

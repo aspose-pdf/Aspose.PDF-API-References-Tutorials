@@ -5,7 +5,7 @@ second_title: Aspose.PDF جافا واجهة برمجة تطبيقات معال�
 description: قم بتحويل XML إلى PDF بسهولة باستخدام Aspose.PDF لـ Java. تبسيط تمثيل البيانات ومشاركتها. تعلم كيف في هذا الدليل الشامل.
 type: docs
 weight: 26
-url: /ar/java/pdf-conversion-&-transformation/export-xml-to-pdf-documents/
+url: /ar/java/pdf-conversion-transformation/export-xml-to-pdf-documents/
 ---
 
 ## تصدير XML إلى مستندات PDF باستخدام Aspose.PDF لـ Java

@@ -5,7 +5,7 @@ second_title: Aspose.PDF جافا واجهة برمجة تطبيقات معال�
 description: تعرف على كيفية تحويل ملفات HTML إلى PDF بسهولة باستخدام Aspose.PDF لـ Java. دليل خطوة بخطوة مع أمثلة التعليمات البرمجية لإنشاء المستندات بكفاءة.
 type: docs
 weight: 11
-url: /ar/java/pdf-conversion-&-transformation/convert-html-to-pdf-files/
+url: /ar/java/pdf-conversion-transformation/convert-html-to-pdf-files/
 ---
 
 ## مقدمة لتحويل ملفات HTML إلى PDF

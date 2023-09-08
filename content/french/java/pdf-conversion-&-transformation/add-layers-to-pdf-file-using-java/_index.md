@@ -5,7 +5,7 @@ second_title: Aspose.PDF API de traitement PDF Java
 description: Découvrez comment ajouter des calques à un fichier PDF à l'aide de Java avec Aspose.PDF pour Java. Ce guide étape par étape comprend le code source et couvre facilement la manipulation des PDF.
 type: docs
 weight: 33
-url: /fr/java/pdf-conversion-&-transformation/add-layers-to-pdf-file-using-java/
+url: /fr/java/pdf-conversion-transformation/add-layers-to-pdf-file-using-java/
 ---
 Dans ce guide étape par étape, nous explorerons comment ajouter des calques à un fichier PDF à l'aide de Java avec la bibliothèque Aspose.PDF pour Java. Les calques, également appelés groupes de contenu facultatifs (OCG), vous permettent d'organiser le contenu d'un document PDF et de contrôler sa visibilité. Cela peut être particulièrement utile lorsque vous souhaitez créer des PDF interactifs ou proposer différentes vues du même document.
 

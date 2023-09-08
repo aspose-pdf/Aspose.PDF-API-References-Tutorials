@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Convert PDFs to SVG Images using Aspose.PDF for Java - Step-by-step guide to seamless PDF to SVG conversion with Aspose.PDF for Java.
 type: docs
 weight: 20
-url: /java/pdf-conversion-&-transformation/convert-pdfs-to-svg-images/
+url: /java/pdf-conversion-transformation/convert-pdfs-to-svg-images/
 ---
 
 ## Introduction to Convert PDFs to SVG Images using Aspose.PDF for Java

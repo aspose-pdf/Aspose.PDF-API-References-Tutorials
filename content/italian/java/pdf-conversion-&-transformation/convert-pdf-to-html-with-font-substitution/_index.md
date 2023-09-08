@@ -5,7 +5,7 @@ second_title: Aspose.PDF API di elaborazione PDF Java
 description: Scopri come convertire PDF in HTML con la sostituzione dei caratteri utilizzando Aspose.PDF per Java. Guida passo passo con codice sorgente per conversioni senza interruzioni. Ottimizza subito i tuoi contenuti web!
 type: docs
 weight: 30
-url: /it/java/pdf-conversion-&-transformation/convert-pdf-to-html-with-font-substitution/
+url: /it/java/pdf-conversion-transformation/convert-pdf-to-html-with-font-substitution/
 ---
 
 In questa guida passo passo, esploreremo come convertire un documento PDF in HTML con la sostituzione dei caratteri utilizzando Aspose.PDF per Java. La sostituzione dei caratteri è una funzionalità cruciale quando si ha a che fare con documenti PDF che utilizzano caratteri non immediatamente disponibili in HTML. Al termine di questo tutorial sarai in grado di eseguire conversioni senza interruzioni mantenendo l'integrità del documento.

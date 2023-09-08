@@ -7,7 +7,6 @@ type: docs
 weight: 12
 url: /tr/java/pdf-text-extraction/tagged-pdf-content-extraction-using-java/
 ---
-# Java ve Aspose.PDF for Java kullanarak Etiketli PDF İçeriğini Çıkarma
 
 Etiketli PDF'ler, engelli bireylerin erişebileceği ve aynı zamanda otomatik içerik çıkarmaya yardımcı olacak şekilde yapılandırılmıştır. Bu adım adım kılavuzda, Java ve Aspose.PDF for Java kütüphanesini kullanarak etiketli PDF'lerden içeriğin nasıl çıkarılacağını inceleyeceğiz. Süreci net ve erişilebilir kılmak için kaynak kodu örnekleri sunacağız.
 

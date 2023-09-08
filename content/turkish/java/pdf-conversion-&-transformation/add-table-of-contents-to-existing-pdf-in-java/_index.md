@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF İşleme API'si
 description: Aspose.PDF for Java kullanarak Java'da bir PDF'ye içindekiler tablosunu nasıl ekleyeceğinizi öğrenin. Bu adım adım kılavuzla belgede gezinmeyi geliştirin.
 type: docs
 weight: 34
-url: /tr/java/pdf-conversion-&-transformation/add-table-of-contents-to-existing-pdf-in-java/
+url: /tr/java/pdf-conversion-transformation/add-table-of-contents-to-existing-pdf-in-java/
 ---
 
 ## giriiş

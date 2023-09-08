@@ -31,7 +31,7 @@ Master Aspose.PDF لـ Java مع برامج تعليمية شاملة. قم بإ
 - [تعليقات PDF](./java/pdf-annotations/)
 - [مرفقات PDF](./java/pdf-attachments/)
 - [الإشارات المرجعية لقوات الدفاع الشعبي](./java/pdf-bookmarks/)
-- [تحويل وتحويل PDF](./java/pdf-conversion-&-transformation/)
+- [تحويل وتحويل PDF](./java/pdf-conversion-transformation/)
 - [صور PDF](./java/pdf-images/)
 - [معالجة الصور بصيغة PDF](./java/pdf-image-manipulation/)
 - [روابط وثائق PDF](./java/pdf-document-links/)

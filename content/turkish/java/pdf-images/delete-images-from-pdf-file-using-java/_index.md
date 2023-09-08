@@ -133,15 +133,13 @@ Bu işlem sırasında herhangi bir sorunla karşılaşırsanız Aspose.PDF for J
 
 Bu adım adım kılavuzda, Aspose.PDF for Java'nın yardımıyla Java kullanarak bir PDF dosyasından görüntülerin nasıl silineceğini öğrendik. Bu güçlü kitaplık, süreci basitleştirir ve PDF içeriğinin verimli bir şekilde değiştirilmesine olanak tanır. Hassas bilgileri düzeltmeniz veya PDF dosyalarını optimize etmeniz gerekiyorsa Aspose.PDF for Java, araç setiniz için değerli bir araçtır.
 
-# SSS
+## SSS
 
 ### Aspose.PDF for Java'yı nasıl kurabilirim?
 
  Aspose.PDF for Java'nın kurulumu basittir. Ziyaret edin[Java indirme sayfası için Aspose.PDF](https://releases.aspose.com/pdf/java/) ve özel geliştirme ortamınız için sağlanan kurulum talimatlarını izleyin.
 
 ### Aspose.PDF kullanarak Java'da bir PDF dosyası yükleme işlemi nedir?
-
-?
 
  Aspose.PDF kullanarak Java'ya bir PDF dosyası yüklemek için`Document` Kütüphane tarafından sağlanan sınıf. Basitçe bir`Document` nesnesini seçin ve bu kılavuzdaki örnekte gösterildiği gibi PDF dosyanızın yolunu parametre olarak iletin.
 

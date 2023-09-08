@@ -31,7 +31,7 @@ is_root: true
 - [PDF-аннотации](./java/pdf-annotations/)
 - [PDF-вложения](./java/pdf-attachments/)
 - [PDF-закладки](./java/pdf-bookmarks/)
-- [PDF-конвертация и преобразование](./java/pdf-conversion-&-transformation/)
+- [PDF-конвертация и преобразование](./java/pdf-conversion-transformation/)
 - [PDF-изображения](./java/pdf-images/)
 - [Манипулирование PDF-изображениями](./java/pdf-image-manipulation/)
 - [Ссылки на PDF-документы](./java/pdf-document-links/)

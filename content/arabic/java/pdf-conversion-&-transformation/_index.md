@@ -5,7 +5,7 @@ second_title: Aspose.PDF جافا واجهة برمجة تطبيقات معال�
 description: أطلق العنان لقوة تحويل PDF وتحويله باستخدام Aspose.PDF لـ Java - برامج تعليمية شاملة للمطورين. عزز مهاراتك في معالجة ملفات PDF اليوم!
 type: docs
 weight: 13
-url: /ar/java/pdf-conversion-&-transformation/
+url: /ar/java/pdf-conversion-transformation/
 ---
 
 ## مقدمة إلى Aspose.PDF لجافا

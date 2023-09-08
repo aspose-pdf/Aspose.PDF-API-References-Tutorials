@@ -115,7 +115,7 @@ pdfDocument.save("modified-document.pdf");
 
 In diesem Tutorial haben wir gelernt, wie man mithilfe von Java und der Bibliothek Aspose.PDF für Java eine Tabelle zu einem vorhandenen PDF-Dokument hinzufügt. Sie können das Erscheinungsbild und den Inhalt der Tabelle an Ihre spezifischen Bedürfnisse anpassen. Tabellen sind ein wertvolles Werkzeug, um Daten in einem strukturierten Format in PDF-Dokumenten darzustellen.
 
-# FAQs
+## FAQs
 
 ### Wie kann ich Aspose.PDF für Java installieren?
 

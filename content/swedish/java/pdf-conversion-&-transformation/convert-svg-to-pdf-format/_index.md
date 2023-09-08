@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Lär dig hur du enkelt konverterar SVG till PDF med Aspose.PDF för Java i den här steg-för-steg-guiden. Skapa högkvalitativa PDF-dokument från dina SVG-filer med lätthet.
 type: docs
 weight: 24
-url: /sv/java/pdf-conversion-&-transformation/convert-svg-to-pdf-format/
+url: /sv/java/pdf-conversion-transformation/convert-svg-to-pdf-format/
 ---
 
 ## Introduktion

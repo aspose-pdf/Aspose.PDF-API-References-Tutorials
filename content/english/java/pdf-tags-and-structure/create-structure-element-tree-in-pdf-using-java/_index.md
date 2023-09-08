@@ -76,19 +76,24 @@ In this tutorial, we've demonstrated how to create a Structure Element Tree in a
 
 By following these steps and incorporating structure elements into your PDF documents, you can make your content more accessible and compliant with accessibility standards. This is a vital step in ensuring that your documents are inclusive and user-friendly.
 
-## FAQs:
+## FAQ's
 
 ### What is the purpose of a Structure Element Tree in a PDF document?
-   - A Structure Element Tree represents the logical structure of content within a PDF document, enabling accessibility and effective communication of content to users, especially those with visual impairments.
+
+A Structure Element Tree represents the logical structure of content within a PDF document, enabling accessibility and effective communication of content to users, especially those with visual impairments.
 
 ### How can I add images to a tagged PDF document?
-   - You can use the `com.aspose.pdf.Image` class to add images to a tagged PDF document. Ensure you associate appropriate structure elements with the images for accessibility.
+
+You can use the `com.aspose.pdf.Image` class to add images to a tagged PDF document. Ensure you associate appropriate structure elements with the images for accessibility.
 
 ### Are tagged PDF documents a requirement for accessibility compliance?
-   - Yes, tagged PDF documents are crucial for accessibility compliance, as they provide a structured representation of content that can be interpreted by assistive technologies.
+
+Yes, tagged PDF documents are crucial for accessibility compliance, as they provide a structured representation of content that can be interpreted by assistive technologies.
 
 ### Can I automate the tagging process for existing PDF documents?
-   - Yes, Aspose.PDF for Java provides features to programmatically tag existing PDF documents to make them accessible.
+
+Yes, Aspose.PDF for Java provides features to programmatically tag existing PDF documents to make them accessible.
 
 ### What are some best practices for creating accessible PDF documents?
-   - Some best practices include adding alternative text to images, using proper heading structure, providing descriptive links, and ensuring a logical reading order for content.
+
+Some best practices include adding alternative text to images, using proper heading structure, providing descriptive links, and ensuring a logical reading order for content.

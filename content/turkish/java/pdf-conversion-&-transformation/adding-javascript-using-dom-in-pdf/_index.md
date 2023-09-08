@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF İşleme API'si
 description: Aspose.PDF for Java kullanarak PDF etkileşimini JavaScript ile nasıl geliştireceğinizi öğrenin. Dinamik PDF'ler için kaynak kodunu içeren adım adım kılavuz
 type: docs
 weight: 32
-url: /tr/java/pdf-conversion-&-transformation/adding-javascript-using-dom-in-pdf/
+url: /tr/java/pdf-conversion-transformation/adding-javascript-using-dom-in-pdf/
 ---
 
 ## giriiş

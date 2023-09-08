@@ -7,7 +7,6 @@ type: docs
 weight: 12
 url: /zh/java/pdf-text-extraction/tagged-pdf-content-extraction-using-java/
 ---
-# 使用 Java 和 Aspose.PDF for Java 提取带标签的 PDF 内容
 
 带标签的 PDF 的结构方式使残障人士也可以访问它们，并且还有助于自动内容提取。在本分步指南中，我们将探索如何使用 Java 和 Aspose.PDF for Java 库从带标签的 PDF 中提取内容。我们将提供源代码示例，以使该过程清晰易懂。
 

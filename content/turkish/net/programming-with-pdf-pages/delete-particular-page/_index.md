@@ -84,4 +84,4 @@ C: Dizini aralığın dışında olan (örneğin, 1'den az veya PDF'deki toplam 
 
 #### S: Bir sayfayı silmeden önce PDF belgesindeki toplam sayfa sayısını nasıl belirleyebilirim?
 
- C: PDF belgesindeki toplam sayfa sayısını şuraya erişerek belirleyebilirsiniz:`Count` mülkiyeti`Pages` Toplamak. Örneğin, kullanabilirsiniz`pdfDocument.Pages.Count` toplam sayfa sayısını bulmak için`pdfDocument`.
+ C: PDF belgesindeki toplam sayfa sayısını şuraya erişerek belirleyebilirsiniz:`Count` mülkiyeti`Pages` Toplamak. Örneğin şunları kullanabilirsiniz:`pdfDocument.Pages.Count` toplam sayfa sayısını bulmak için`pdfDocument`.

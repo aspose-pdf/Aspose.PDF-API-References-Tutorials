@@ -91,5 +91,5 @@ Valideringen av PDF-filer i Java med Aspose.PDF för Java är en avgörande åtg
 ### Är Aspose.PDF för Java tillgänglig för fri användning?
    Medan Aspose.PDF för Java är ett kommersiellt bibliotek, utökar det en gratis provperiod för utvärderingsändamål.
 
-## Var kan jag få tillgång till mer omfattande information om Aspose.PDF för Java?
+### Var kan jag få tillgång till mer omfattande information om Aspose.PDF för Java?
     Du kan läsa API-dokumentationen på[https://reference.aspose.com/pdf/java/](https://reference.aspose.com/pdf/java/) för uttömmande insikter och exempel.

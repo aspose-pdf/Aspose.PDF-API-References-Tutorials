@@ -29,7 +29,7 @@ Utforska självstudier för PDF-kommentarer med Aspose.PDF för Java, lär dig a
 Lär dig att hantera PDF-bilagor i Java med Aspose.PDF. Bifoga filer, bilder och mer till dina PDF-filer utan ansträngning.
 ### [PDF-bokmärken](./pdf-bookmarks/)
 Lär dig att skapa interaktiva PDF-bokmärken med Aspose.PDF för Java. Höj dokumentnavigering och användarupplevelse.
-### [PDF-konvertering och transformation](./pdf-conversion-&-transformation/)
+### [PDF-konvertering och transformation](./pdf-conversion-transformation/)
 Lås upp kraften i PDF-konvertering och -transformation med Aspose.PDF för Java - Omfattande handledning för utvecklare. Förbättra dina färdigheter i PDF-bearbetning idag!
 ### [PDF-bilder](./pdf-images/)
 Utforska PDF-bildmanipulation med Aspose.PDF för Java. Lär dig att infoga, ändra och optimera bilder i PDF-filer utan ansträngning.

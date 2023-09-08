@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF İşleme API'si
 description: Aspose.PDF for Java ile Java kullanarak PDF dosyasına nasıl katman ekleyeceğinizi öğrenin. Bu adım adım kılavuz kaynak kodunu içerir ve PDF işlemlerini kolaylıkla kapsar.
 type: docs
 weight: 33
-url: /tr/java/pdf-conversion-&-transformation/add-layers-to-pdf-file-using-java/
+url: /tr/java/pdf-conversion-transformation/add-layers-to-pdf-file-using-java/
 ---
 Bu adım adım kılavuzda, Aspose.PDF for Java kütüphanesi ile Java kullanarak bir PDF dosyasına katmanların nasıl ekleneceğini keşfedeceğiz. İsteğe bağlı içerik grupları (OCG'ler) olarak da bilinen katmanlar, bir PDF belgesindeki içeriği düzenlemenize ve görünürlüğünü kontrol etmenize olanak tanır. Bu, özellikle etkileşimli PDF'ler oluşturmak veya aynı belgenin farklı görünümlerini sağlamak istediğinizde yararlı olabilir.
 

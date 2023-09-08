@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Learn how to add layers to a PDF file using Java with Aspose.PDF for Java. This step-by-step guide includes source code and covers PDF manipulation with ease.
 type: docs
 weight: 33
-url: /java/pdf-conversion-&-transformation/add-layers-to-pdf-file-using-java/
+url: /java/pdf-conversion-transformation/add-layers-to-pdf-file-using-java/
 ---
 In this step-by-step guide, we will explore how to add layers to a PDF file using Java with the Aspose.PDF for Java library. Layers, also known as optional content groups (OCGs), allow you to organize content within a PDF document and control its visibility. This can be particularly useful when you want to create interactive PDFs or provide different views of the same document.
 

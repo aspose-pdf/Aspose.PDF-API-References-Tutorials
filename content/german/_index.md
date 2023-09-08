@@ -31,7 +31,7 @@ Dies sind Links zu einigen nützlichen Ressourcen:
 - [PDF-Anmerkungen](./java/pdf-annotations/)
 - [PDF-Anhänge](./java/pdf-attachments/)
 - [PDF-Lesezeichen](./java/pdf-bookmarks/)
-- [PDF-Konvertierung und -Transformation](./java/pdf-conversion-&-transformation/)
+- [PDF-Konvertierung und -Transformation](./java/pdf-conversion-transformation/)
 - [PDF-Bilder](./java/pdf-images/)
 - [PDF-Bildmanipulation](./java/pdf-image-manipulation/)
 - [Links zu PDF-Dokumenten](./java/pdf-document-links/)

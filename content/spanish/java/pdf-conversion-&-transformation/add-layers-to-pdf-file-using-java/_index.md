@@ -5,7 +5,7 @@ second_title: Aspose.PDF API de procesamiento de PDF Java
 description: Aprenda a agregar capas a un archivo PDF usando Java con Aspose.PDF para Java. Esta guía paso a paso incluye código fuente y cubre la manipulación de PDF con facilidad.
 type: docs
 weight: 33
-url: /es/java/pdf-conversion-&-transformation/add-layers-to-pdf-file-using-java/
+url: /es/java/pdf-conversion-transformation/add-layers-to-pdf-file-using-java/
 ---
 En esta guía paso a paso, exploraremos cómo agregar capas a un archivo PDF usando Java con la biblioteca Aspose.PDF para Java. Las capas, también conocidas como grupos de contenido opcionales (OCG), le permiten organizar el contenido dentro de un documento PDF y controlar su visibilidad. Esto puede resultar especialmente útil cuando desea crear archivos PDF interactivos o proporcionar diferentes vistas del mismo documento.
 

@@ -5,7 +5,7 @@ second_title: Aspose.PDF API de procesamiento de PDF Java
 description: Aprenda a agregar una tabla de contenido a un PDF en Java usando Aspose.PDF para Java. Mejore la navegación de documentos con esta guía paso a paso.
 type: docs
 weight: 34
-url: /es/java/pdf-conversion-&-transformation/add-table-of-contents-to-existing-pdf-in-java/
+url: /es/java/pdf-conversion-transformation/add-table-of-contents-to-existing-pdf-in-java/
 ---
 
 ## Introducción

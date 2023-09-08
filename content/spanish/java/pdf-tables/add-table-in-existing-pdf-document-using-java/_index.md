@@ -115,7 +115,7 @@ pdfDocument.save("modified-document.pdf");
 
 En este tutorial, aprendimos cómo agregar una tabla a un documento PDF existente usando Java y la biblioteca Aspose.PDF para Java. Puede personalizar la apariencia y el contenido de la tabla para satisfacer sus necesidades específicas. Las tablas son una herramienta valiosa para presentar datos en un formato estructurado dentro de documentos PDF.
 
-# Preguntas frecuentes
+## Preguntas frecuentes
 
 ### ¿Cómo puedo instalar Aspose.PDF para Java?
 

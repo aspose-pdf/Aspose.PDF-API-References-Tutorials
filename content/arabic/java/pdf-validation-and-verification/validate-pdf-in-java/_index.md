@@ -91,5 +91,5 @@ public class PDFValidator {
 ### هل Aspose.PDF لـ Java متاح للاستخدام المجاني؟
    على الرغم من أن Aspose.PDF for Java هي مكتبة تجارية، إلا أنها توفر نسخة تجريبية مجانية لأغراض التقييم.
 
-## أين يمكنني الوصول إلى مزيد من المعلومات الشاملة بخصوص Aspose.PDF لـ Java؟
+### أين يمكنني الوصول إلى مزيد من المعلومات الشاملة بخصوص Aspose.PDF لـ Java؟
     يمكنك الاطلاع على وثائق API على[https://reference.aspose.com/pdf/Java/](https://reference.aspose.com/pdf/java/) للحصول على رؤى وأمثلة شاملة.

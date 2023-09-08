@@ -5,7 +5,7 @@ second_title: Aspose.PDF جافا واجهة برمجة تطبيقات معال�
 description: تعرف على كيفية تحويل النص بسهولة إلى ملفات PDF باستخدام Aspose.PDF لـ Java. دليل خطوة بخطوة مع كود المصدر.
 type: docs
 weight: 25
-url: /ar/java/pdf-conversion-&-transformation/change-text-to-pdf-files/
+url: /ar/java/pdf-conversion-transformation/change-text-to-pdf-files/
 ---
 
 ## مقدمة لتغيير النص إلى ملفات PDF

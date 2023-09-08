@@ -5,7 +5,7 @@ second_title: Aspose.PDF جافا واجهة برمجة تطبيقات معال�
 description: تعرف على كيفية تحويل ملفات PDF إلى تنسيق DOC أو DOCX بسهولة باستخدام Aspose.PDF لـ Java. دليل خطوة بخطوة يتضمن التعليمات البرمجية المصدر والأسئلة الشائعة لتحويل المستندات بسلاسة.
 type: docs
 weight: 14
-url: /ar/java/pdf-conversion-&-transformation/change-pdfs-to-doc-or-docx-format/
+url: /ar/java/pdf-conversion-transformation/change-pdfs-to-doc-or-docx-format/
 ---
 
 ## 1 المقدمة

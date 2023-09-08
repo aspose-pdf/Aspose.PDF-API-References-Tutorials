@@ -31,7 +31,7 @@ com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document();
 
 ## Lägga till rubriker till PDF:en
 
-Nu ska vi lägga till några rubriker till vårt PDF-dokument. Dessa rubriker kommer att fungera som avsnitten i vårt dokument. Här är ett exempel på hur du lägger till en rubrik:
+Nu ska vi lägga till några rubriker till vårt PDF-dokument. Dessa rubriker kommer att fungera som avsnitten i vårt dokument. Här är ett exempel på att lägga till en rubrik:
 
 ```java
 // Skapa en rubrik

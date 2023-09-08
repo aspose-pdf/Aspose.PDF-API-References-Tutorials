@@ -7,7 +7,6 @@ type: docs
 weight: 12
 url: /fr/java/pdf-text-extraction/tagged-pdf-content-extraction-using-java/
 ---
-# Extraction de contenu PDF balisé à l'aide de Java et Aspose.PDF pour Java
 
 Les PDF balisés sont structurés de manière à les rendre accessibles aux personnes handicapées et facilitent également l'extraction automatisée du contenu. Dans ce guide étape par étape, nous explorerons comment extraire le contenu de fichiers PDF balisés à l'aide de Java et de la bibliothèque Aspose.PDF pour Java. Nous fournirons des exemples de code source pour rendre le processus clair et accessible.
 

@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF-Verarbeitungs-API
 description: Erfahren Sie, wie Sie mit Aspose.PDF für Java PDF-Dateien mit Schriftartersetzung in HTML konvertieren. Schritt-für-Schritt-Anleitung mit Quellcode für nahtlose Konvertierungen. Optimieren Sie jetzt Ihre Webinhalte!
 type: docs
 weight: 30
-url: /de/java/pdf-conversion-&-transformation/convert-pdf-to-html-with-font-substitution/
+url: /de/java/pdf-conversion-transformation/convert-pdf-to-html-with-font-substitution/
 ---
 
 In dieser Schritt-für-Schritt-Anleitung erfahren Sie, wie Sie mit Aspose.PDF für Java ein PDF-Dokument mit Schriftartersetzung in HTML konvertieren. Die Schriftartersetzung ist eine entscheidende Funktion beim Umgang mit PDF-Dokumenten, die Schriftarten verwenden, die in HTML nicht ohne weiteres verfügbar sind. Am Ende dieses Tutorials werden Sie in der Lage sein, nahtlose Konvertierungen durchzuführen und dabei die Integrität des Dokuments zu wahren.

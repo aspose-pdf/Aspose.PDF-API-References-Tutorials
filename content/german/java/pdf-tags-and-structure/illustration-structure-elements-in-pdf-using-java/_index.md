@@ -98,7 +98,7 @@ Glückwunsch! Sie haben gelernt, wie Sie mit Java und Aspose.PDF Illustrationen 
 
  Wenn Sie Fragen haben oder weitere Hilfe benötigen, schauen Sie sich gerne um[Aspose.PDF für Java-Dokumentation](https://reference.aspose.com/pdf/java/) für detailliertere Details.
 
-##FAQs
+## FAQs
 
 ### Was ist Aspose.PDF für Java?
    Aspose.PDF für Java ist eine robuste Bibliothek für die programmgesteuerte Arbeit mit PDF-Dokumenten in Java-Anwendungen.

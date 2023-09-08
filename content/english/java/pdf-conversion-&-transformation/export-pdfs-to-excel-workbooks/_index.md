@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Learn how to export PDFs to Excel workbooks effortlessly with Aspose.PDF for Java. Step-by-step guide for seamless data extraction.
 type: docs
 weight: 16
-url: /java/pdf-conversion-&-transformation/export-pdfs-to-excel-workbooks/
+url: /java/pdf-conversion-transformation/export-pdfs-to-excel-workbooks/
 ---
 
 ## Export PDFs to Excel Workbooks using Aspose.PDF for Java

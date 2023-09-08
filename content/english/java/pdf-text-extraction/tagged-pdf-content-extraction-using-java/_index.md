@@ -7,7 +7,6 @@ type: docs
 weight: 12
 url: /java/pdf-text-extraction/tagged-pdf-content-extraction-using-java/
 ---
-# Extracting Tagged PDF Content using Java and Aspose.PDF for Java
 
 Tagged PDFs are structured in a way that makes them accessible for individuals with disabilities and also aids in automated content extraction. In this step-by-step guide, we will explore how to extract content from tagged PDFs using Java and the Aspose.PDF for Java library. We will provide source code examples to make the process clear and accessible.
 

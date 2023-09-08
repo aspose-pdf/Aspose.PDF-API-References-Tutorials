@@ -29,7 +29,7 @@ Explorez les didacticiels d'annotation de PDF avec Aspose.PDF pour Java, apprene
 Apprenez à gérer les pièces jointes PDF en Java avec Aspose.PDF. Joignez facilement des fichiers, des images et bien plus à vos PDF.
 ### [Signets PDF](./pdf-bookmarks/)
 Apprenez à créer des signets PDF interactifs avec Aspose.PDF pour Java. Améliorez la navigation dans les documents et l’expérience utilisateur.
-### [Conversion et transformation de PDF](./pdf-conversion-&-transformation/)
+### [Conversion et transformation de PDF](./pdf-conversion-transformation/)
 Libérez la puissance de la conversion et de la transformation PDF avec Aspose.PDF pour Java - Tutoriels complets pour les développeurs. Améliorez vos compétences en traitement de PDF dès aujourd'hui !
 ### [Images PDF](./pdf-images/)
 Explorez la manipulation d'images PDF avec Aspose.PDF pour Java. Apprenez à insérer, modifier et optimiser des images dans des PDF sans effort.

@@ -98,7 +98,7 @@ Tebrikler! Java ve Aspose.PDF kullanarak PDF dosyalarında illüstrasyonlar ve y
 
  Herhangi bir sorunuz varsa veya daha fazla yardıma ihtiyacınız varsa, araştırmaktan çekinmeyin.[Java belgeleri için Aspose.PDF](https://reference.aspose.com/pdf/java/) daha ayrıntılı ayrıntılar için.
 
-##SSS
+## SSS
 
 ### Java için Aspose.PDF nedir?
    Aspose.PDF for Java, Java uygulamalarında PDF belgeleriyle programlı olarak çalışmak için güçlü bir kütüphanedir.

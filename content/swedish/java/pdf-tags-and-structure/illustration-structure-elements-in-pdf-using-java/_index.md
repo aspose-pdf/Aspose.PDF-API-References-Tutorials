@@ -98,7 +98,7 @@ Grattis! Du har lärt dig hur du skapar illustrationer och strukturelement i PDF
 
  Om du har några frågor eller behöver mer hjälp är du välkommen att utforska[Aspose.PDF för Java-dokumentation](https://reference.aspose.com/pdf/java/) för mer djupgående detaljer.
 
-##Vanliga frågor
+## Vanliga frågor
 
 ### Vad är Aspose.PDF för Java?
    Aspose.PDF för Java är ett robust bibliotek för att arbeta med PDF-dokument programmatiskt i Java-applikationer.

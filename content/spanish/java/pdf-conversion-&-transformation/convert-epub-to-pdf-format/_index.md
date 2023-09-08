@@ -5,7 +5,7 @@ second_title: Aspose.PDF API de procesamiento de PDF Java
 description: Aprenda cómo convertir EPUB a PDF sin esfuerzo usando Aspose.PDF para Java. Nuestra guía paso a paso simplifica la conversión de EPUB a PDF.
 type: docs
 weight: 10
-url: /es/java/pdf-conversion-&-transformation/convert-epub-to-pdf-format/
+url: /es/java/pdf-conversion-transformation/convert-epub-to-pdf-format/
 ---
 
 ## Introducción a convertir EPUB a formato PDF

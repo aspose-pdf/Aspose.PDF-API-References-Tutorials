@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF 处理 API
 description: 使用 Aspose.PDF for Java 将 PDF 转换为 SVG 图像 - 使用 Aspose.PDF for Java 将 PDF 无缝转换为 SVG 的分步指南。
 type: docs
 weight: 20
-url: /zh/java/pdf-conversion-&-transformation/convert-pdfs-to-svg-images/
+url: /zh/java/pdf-conversion-transformation/convert-pdfs-to-svg-images/
 ---
 
 ## 使用 Aspose.PDF for Java 将 PDF 转换为 SVG 图像的简介

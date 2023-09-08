@@ -4,7 +4,7 @@ linktitle: Programmering med stämplar och vattenstämplar
 type: docs
 weight: 24
 url: /sv/net/programming-with-stamps-and-watermarks/
-description: Aspose.PDF för .NET:s tutorials för programmering med stämplar och vattenstämplar lär dig hur du lägger till säkerhets- och anpassningselement till dina PDF-dokument.
+description: Aspose.PDF för .NETs tutorials för programmering med stämplar och vattenstämplar lär dig hur du lägger till säkerhets- och anpassningselement till dina PDF-dokument.
 ---
 
 Aspose.PDF:s "Programmering med stämplar och vattenstämplar" tutorials för .NET leder dig genom stegen för att lägga till stämplar och vattenstämplar till dina PDF-dokument. Du kommer att lära dig hur du anpassar stämplar, applicerar text och grafiska vattenstämplar och hanterar deras position och utseende. Dessa handledningar hjälper dig att lägga till ett lager av säkerhet och identifiering till dina PDF-filer på ett enkelt och effektivt sätt.

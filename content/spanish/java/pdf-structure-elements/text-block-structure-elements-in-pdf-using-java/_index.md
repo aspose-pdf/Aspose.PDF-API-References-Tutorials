@@ -2,7 +2,7 @@
 title: Elementos de estructura de bloques de texto en PDF usando Java
 linktitle: Elementos de estructura de bloques de texto en PDF usando Java
 second_title: Aspose.PDF API de procesamiento de PDF Java
-description: Domine los elementos de estructura de bloques de texto PDF en Java: una guía paso a paso utilizando Aspose.PDF para Java.
+description: Domine los elementos de estructura de bloques de texto PDF en Java una guía paso a paso utilizando Aspose.PDF para Java.
 type: docs
 weight: 13
 url: /es/java/pdf-structure-elements/text-block-structure-elements-in-pdf-using-java/

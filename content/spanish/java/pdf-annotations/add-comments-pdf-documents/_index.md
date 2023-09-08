@@ -2,7 +2,7 @@
 title: Agregar comentarios a documentos PDF
 linktitle: Agregar comentarios a documentos PDF
 second_title: Aspose.PDF API de procesamiento de PDF Java
-description: Aprenda a agregar comentarios a documentos PDF utilizando Aspose.PDF para Java: una guía paso a paso con ejemplos de código.
+description: Aprenda a agregar comentarios a documentos PDF utilizando Aspose.PDF para Java una guía paso a paso con ejemplos de código.
 type: docs
 weight: 10
 url: /es/java/pdf-annotations/add-comments-pdf-documents/

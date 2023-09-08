@@ -2,7 +2,7 @@
 title: Stryk ut ord
 linktitle: Stryk ut ord
 second_title: Aspose.PDF för .NET API Referens
-description: Den här artikeln ger en steg-för-steg-guide för hur du använder Aspose.PDF för .NET:s Strike Out Words-funktion, inklusive steg-för-steg-guide och förklaringar
+description: Den här artikeln ger en steg-för-steg-guide för hur du använder Aspose.PDF för .NETs Strike Out Words-funktion, inklusive steg-för-steg-guide och förklaringar
 type: docs
 weight: 150
 url: /sv/net/annotations/strikeoutwords/

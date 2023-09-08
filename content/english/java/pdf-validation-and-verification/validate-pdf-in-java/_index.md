@@ -91,5 +91,5 @@ The validation of PDFs in Java utilizing Aspose.PDF for Java stands as a pivotal
 ### Is Aspose.PDF for Java available for free usage?
    While Aspose.PDF for Java is a commercial library, it extends a free trial for evaluation purposes.
 
-## Where can I access more extensive information regarding Aspose.PDF for Java?
+### Where can I access more extensive information regarding Aspose.PDF for Java?
    You can peruse the API documentation at [https://reference.aspose.com/pdf/java/](https://reference.aspose.com/pdf/java/) for exhaustive insights and examples.

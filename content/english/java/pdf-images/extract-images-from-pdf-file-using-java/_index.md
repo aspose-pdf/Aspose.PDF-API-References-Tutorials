@@ -63,7 +63,7 @@ The extracted images can be saved to your desired location. In the code above, w
 
 In this step-by-step guide, we've learned how to extract images from a PDF file using Java with the Aspose.PDF for Java library. This can be a valuable skill when working with PDF documents in Java applications. Remember to check the Aspose.PDF for Java documentation for more advanced features and customization options.
 
-# FAQs
+## FAQs
 
 ### How do I install Aspose.PDF for Java?
 

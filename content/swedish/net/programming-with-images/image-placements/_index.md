@@ -1,7 +1,7 @@
 ---
 title: Bildplaceringar
 linktitle: Bildplaceringar
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du använder Aspose.PDF för .NET för att placera bilder i ett PDF-dokument.
 type: docs
 weight: 170

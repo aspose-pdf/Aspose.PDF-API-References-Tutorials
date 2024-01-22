@@ -1,7 +1,7 @@
 ---
 title: Lägg till PDF-anteckning
 linktitle: Lägg till anteckning
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du lägger till PDF-textkommentarer med Aspose.PDF för .NET med den här C#-källkoden. Anpassa dina kommentarer med specifika detaljer och ikoner.
 type: docs
 weight: 10
@@ -60,7 +60,7 @@ textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
 
  I den här koden skapar vi en ny`Border`objekt och ställ in dess egenskaper för bredd och streck. Vi ställer sedan in`Border` egenskapen för anteckningen till den nya`Border` objekt. Slutligen ställer vi in`Rect` egenskapen för anteckningen för att specificera dess position och storlek.
 
-## Steg 5: Lägg till anteckningen till PDF-dokumentet
+## Steg 5: Lägg till anteckningen i PDF-dokumentet
 
 När vi har skapat och anpassat anteckningen måste vi lägga till den i PDF-dokumentet. Vi kan använda följande kod för att lägga till kommentaren till PDF-dokumentet:
 

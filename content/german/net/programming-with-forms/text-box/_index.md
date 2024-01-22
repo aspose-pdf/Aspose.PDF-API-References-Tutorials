@@ -18,7 +18,7 @@ In dieser Anleitung erklären wir Ihnen Schritt für Schritt, wie Sie mit der As
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentenverzeichnis.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentenverzeichnis.
 
 ## Schritt 2: Öffnen des PDF-Dokuments
 

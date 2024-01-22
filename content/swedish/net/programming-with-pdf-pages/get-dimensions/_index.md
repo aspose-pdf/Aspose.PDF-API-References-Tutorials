@@ -1,7 +1,7 @@
 ---
 title: Hämta PDF-sidans dimensioner
 linktitle: Hämta PDF-sidans dimensioner
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: I den här handledningen förklarar vi hur man får PDF-sidadimensioner och utför manipulationer med Aspose.PDF för .NET. Detaljerade steg tillhandahålls för att guida dig genom processen.
 type: docs
 weight: 60

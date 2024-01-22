@@ -1,7 +1,7 @@
 ---
 title: Grupperade kryssrutor i PDF-dokument
 linktitle: Grupperade kryssrutor i PDF-dokument
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Skapa enkelt grupperade kryssrutor i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 170

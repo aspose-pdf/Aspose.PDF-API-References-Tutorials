@@ -1,7 +1,7 @@
 ---
 title: Bädda in standardtyp 1-teckensnitt i PDF-fil
 linktitle: Bädda in standardtyp 1-teckensnitt i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du bäddar in standardtyp 1-teckensnitt i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 140

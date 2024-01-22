@@ -1,7 +1,7 @@
 ---
 title: Hämta alla bilagor i PDF-fil
 linktitle: Hämta alla bilagor i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du får alla bilagor i PDF-fil med Aspose.PDF för .NET. Steg-för-steg-guide för enkel hantering.
 type: docs
 weight: 40

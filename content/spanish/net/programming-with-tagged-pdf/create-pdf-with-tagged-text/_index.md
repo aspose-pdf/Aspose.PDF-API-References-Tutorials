@@ -113,11 +113,11 @@ R: El ejemplo de código demuestra cómo crear un documento PDF, definir varios 
 
 #### P: ¿Cómo puedo personalizar los elementos de texto etiquetados, como encabezados y párrafos?
 
- R: Puede personalizar los elementos de texto etiquetados utilizando métodos apropiados, como`CreateHeaderElement` y`CreateParagraphElement` y establecer propiedades como`ActualText` para proporcionar texto y semántica significativa.
+ R: Puede personalizar los elementos de texto etiquetados utilizando métodos apropiados, como`CreateHeaderElement` y`CreateParagraphElement` y establecer propiedades como`ActualText` para proporcionar texto y semántica significativos.
 
 #### P: ¿Puedo agregar otros elementos de texto etiquetados, como listas o enlaces, usando técnicas similares?
 
-R: Sí, puedes agregar otros elementos de texto etiquetados como listas, enlaces u otras estructuras personalizadas utilizando técnicas similares. Aspose.PDF proporciona varios métodos para crear diferentes tipos de contenido etiquetado, lo que le permite mejorar la semántica del documento.
+R: Sí, puedes agregar otros elementos de texto etiquetados como listas, enlaces u otras estructuras personalizadas usando técnicas similares. Aspose.PDF proporciona varios métodos para crear diferentes tipos de contenido etiquetado, lo que le permite mejorar la semántica del documento.
 
 ####  P: ¿Cómo funciona el`SetTitle` method contribute to the PDF document's tagged text?
 

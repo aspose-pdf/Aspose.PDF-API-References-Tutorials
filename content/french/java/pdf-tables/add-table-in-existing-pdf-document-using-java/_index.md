@@ -27,7 +27,7 @@ Avant de commencer, assurez-vous de disposer des prérequis suivants :
 
 ## Ajout de dépendances
 
- Dans votre projet`pom.xml`(si vous utilisez Maven) ou le fichier build.gradle (si vous utilisez Gradle), ajoutez la dépendance suivante :
+ Dans votre projet`pom.xml` (si vous utilisez Maven) ou le fichier build.gradle (si vous utilisez Gradle), ajoutez la dépendance suivante :
 
 ```xml
 <dependencies>

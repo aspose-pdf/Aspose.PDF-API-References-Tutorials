@@ -1,7 +1,7 @@
 ---
 title: Ställ in zoomfaktor i PDF-fil
 linktitle: Ställ in zoomfaktor i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du ställer in zoomfaktorn i PDF-fil med Aspose.PDF för .NET med vår steg-för-steg-guide.
 type: docs
 weight: 340

@@ -1,7 +1,7 @@
 ---
 title: Återge tabell i PDF-dokument
 linktitle: Återge tabell i PDF-dokument
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du visar en tabell i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 170

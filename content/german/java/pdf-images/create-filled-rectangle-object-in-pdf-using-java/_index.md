@@ -20,7 +20,7 @@ Bevor wir beginnen, stellen Sie sicher, dass die folgenden Voraussetzungen erfü
 - Integrierte Entwicklungsumgebung (IDE) wie Eclipse oder IntelliJ
 - Aspose.PDF für Java-Bibliothek heruntergeladen und konfiguriert
 
-## Aspose.PDF für Java einrichten
+## Einrichten von Aspose.PDF für Java
 
 Um zu beginnen, müssen Sie Aspose.PDF für Java von der Website herunterladen. Folge diesen Schritten:
 

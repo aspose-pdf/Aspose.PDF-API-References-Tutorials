@@ -83,4 +83,4 @@ R: Sí, Aspose.PDF para .NET puede manejar archivos PDF complejos con varias pá
 
 #### P: ¿Se pueden convertir archivos PDF protegidos con contraseña al formato XPS utilizando Aspose.PDF para .NET?
 
- R: Sí, Aspose.PDF para .NET admite la conversión de archivos PDF protegidos con contraseña al formato XPS. Al cargar un PDF protegido con contraseña, puede proporcionar la contraseña utilizando el`Document` constructor de clase o estableciendo el`Password` propiedad antes de cargar el PDF.
+ R: Sí, Aspose.PDF para .NET admite la conversión de archivos PDF protegidos con contraseña al formato XPS. Al cargar un PDF protegido con contraseña, puede proporcionar la contraseña utilizando el`Document` constructor de clase o configurando el`Password` propiedad antes de cargar el PDF.

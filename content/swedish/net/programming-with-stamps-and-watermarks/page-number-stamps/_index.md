@@ -1,7 +1,7 @@
 ---
 title: Sidnummerstämplar i PDF-fil
 linktitle: Sidnummerstämplar i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du lägger till sidnummerstämplar i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 160
@@ -125,7 +125,7 @@ Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + da
 
 Grattis! Du har lärt dig hur du lägger till sidnummerstämplar i ett PDF-dokument med Aspose.PDF för .NET. Du kan nu anpassa dina PDF-dokument genom att lägga till tydliga och informativa sidnummer.
 
-### Vanliga frågor om sidnummerstämplar i PDF-fil
+### Vanliga frågor för sidnummerstämplar i PDF-fil
 
 #### F: Vad är en sidnummerstämpel och hur används den för att lägga till sidnummer i en PDF-fil?
 

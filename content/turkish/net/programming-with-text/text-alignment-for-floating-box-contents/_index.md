@@ -150,7 +150,7 @@ C: Evet, bu eğitimde Aspose.PDF for .NET kullanılarak bir PDF belgesindeki kay
 
 #### S: Aynı PDF belgesine farklı hizalamalara sahip birden fazla kayan kutu ekleyebilir miyim?
 
- C: Evet, eğitimde birden fazla öğenin nasıl oluşturulacağı gösterilmektedir`FloatingBox` Farklı dikey ve yatay hizalamalara sahip nesneleri seçin ve bunları aynı PDF belgesine ekleyin. Bu, aynı belgedeki çeşitli hizalamaların etkilerini görmenize olanak tanır.
+ C: Evet, eğitimde birden fazla öğenin nasıl oluşturulacağı gösterilmektedir`FloatingBox` farklı dikey ve yatay hizalamalara sahip nesneleri seçin ve bunları aynı PDF belgesine ekleyin. Bu, aynı belgedeki çeşitli hizalamaların etkilerini görmenize olanak tanır.
 
 #### S: Değiştirilen PDF belgesini nasıl kaydederim?
 

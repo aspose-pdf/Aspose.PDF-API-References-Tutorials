@@ -41,7 +41,7 @@ Artık sayfa PDF belgesine eklendiğine göre bir FloatingBox oluşturabilir, ko
 // 140 genişliğinde ve 80 yüksekliğinde bir FloatingBox oluşturun
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
 
-// Paragrafın sol konumunu ayarlama
+// Paragrafın sol konumunu ayarlayın
 box1. Left = 2;
 
 // Paragrafın üst konumunu ayarlama
@@ -54,7 +54,7 @@ box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
 page.Paragraphs.Add(box1);
 ```
 
-Yukarıdaki kod genişliği 140, yüksekliği 80 olan bir FloatingBox oluşturuyor. Daha sonra sol ve üst değerlerini belirterek konumunu belirliyoruz. Son olarak, mevcut sayfa numarası ve toplam sayfa sayısıyla değiştirilecek "($p/ $P )" sözdizimini içeren bir TextFragment kullanarak sayfa numarasını FloatingBox'a ekliyoruz.
+Yukarıdaki kod genişliği 140, yüksekliği 80 olan bir FloatingBox oluşturuyor. Daha sonra sol ve üst değerlerini belirterek konumunu belirliyoruz. Son olarak, mevcut sayfa numarası ve toplam sayfa sayısıyla değiştirilecek olan "($p/ $P )" sözdizimini içeren bir TextFragment kullanarak sayfa numarasını FloatingBox'a ekliyoruz.
 
 ## Adım 4: Değiştirilen PDF belgesini kaydetme
 

@@ -1,7 +1,7 @@
 ---
 title: Få antal sidor i PDF-fil
 linktitle: Få antal sidor i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg guide för att få antal sidor i PDF-fil med Aspose.PDF för .NET. Enkel att implementera, perfekt för dina projekt.
 type: docs
 weight: 70

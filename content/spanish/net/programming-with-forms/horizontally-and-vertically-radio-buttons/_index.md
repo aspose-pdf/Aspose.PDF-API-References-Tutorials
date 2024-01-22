@@ -34,8 +34,8 @@ Personalice las opciones del botón de opción configurando las siguientes propi
 formEditor. RadioGap = 4; // Distancia entre dos opciones de botón de radio
 formEditor. RadioHoriz = true; //Diseño horizontal de botones de opción.
 formEditor.RadioButtonItemSize = 20; // Tamaño de los botones de opción
-formEditor.Facade.BorderWidth = 1; // Ancho del borde del botón de opción
-formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Color del borde del botón de opción
+formEditor.Facade.BorderWidth = 1; // Ancho del borde del botón de radio
+formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Color del borde del botón de radio
 ```
 
 ## Paso 4: agregue botones de opción horizontales
@@ -75,7 +75,7 @@ try
 	// Cargar el documento previamente guardado
 	FormEditor formEditor = new FormEditor();
 	formEditor.BindPdf(dataDir + "input.pdf");
-	// RadioGap es la distancia entre dos opciones de botones de radio.
+	// RadioGap es la distancia entre dos opciones de botones de opción.
 	formEditor.RadioGap = 4;
 	// Agregar botón de opción horizontal
 	formEditor.RadioHoriz = true;

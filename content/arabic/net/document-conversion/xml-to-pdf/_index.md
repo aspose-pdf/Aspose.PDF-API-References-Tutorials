@@ -38,7 +38,7 @@ Page page = (Page)doc.GetObjectById("mainSection");
 TextSegment segment = (TextSegment)doc.GetObjectById("boldHtml");
 segment = (TextSegment)doc.GetObjectById("strongHtml");
 ```
-احصل على مرجع لأجزاء النص من XML باستخدام معرفاتها. يمكنك إضافة المزيد من القطاعات حسب الحاجة.
+احصل على مرجع لأجزاء النص من XML باستخدام معرفاتها. يمكنك إضافة المزيد من الشرائح حسب الحاجة.
 
 ## الخطوة 6: احفظ ملف PDF الناتج
 ```csharp

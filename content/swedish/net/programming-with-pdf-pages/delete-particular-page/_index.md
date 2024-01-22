@@ -1,7 +1,7 @@
 ---
 title: Ta bort en viss sida i PDF-fil
 linktitle: Ta bort en viss sida i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg guide för att ta bort en specifik sida i PDF-fil med Aspose.PDF för .NET. Lätt att följa och implementera.
 type: docs
 weight: 30

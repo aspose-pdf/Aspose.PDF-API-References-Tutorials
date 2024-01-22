@@ -1,7 +1,7 @@
 ---
 title: Hämta alla kommentarer från sidan
 linktitle: Hämta alla kommentarer från sidan
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du använder Aspose.PDF för .NET för att hämta alla kommentarer från en PDF-sida med denna steg-för-steg-guide.
 type: docs
 weight: 70
@@ -49,7 +49,7 @@ foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
 
 Den här koden går igenom alla anteckningar på första sidan i PDF-dokumentet och tilldelar varje anteckning till variabeln "annotation".
 
-## Steg 5: Skaffa anteckningsegenskaper
+## Steg 5: Hämta anteckningsegenskaper
 
 För att extrahera egenskaperna för varje anteckning kan du lägga till följande kod inuti foreach loop:
 

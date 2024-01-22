@@ -16,7 +16,7 @@ url: /fr/java/pdf-structure-elements/create-pdf-with-tagged-image-in-java/
 
 Avant de plonger dans le code, assurez-vous que les conditions préalables suivantes sont en place :
 
--  Kit de développement Java (JDK) : vous devez installer Java sur votre système. Vous pouvez le télécharger depuis[Le site d'Oracle](https://www.oracle.com/java/technologies/javase-downloads.html).
+-  Kit de développement Java (JDK) : vous devez installer Java sur votre système. Vous pouvez le télécharger depuis[Le site Web d'Oracle](https://www.oracle.com/java/technologies/javase-downloads.html).
 
 -  Aspose.PDF pour Java : vous devez disposer de la bibliothèque Aspose.PDF pour Java. Vous pouvez le télécharger depuis le[Site Aspose](https://releases.aspose.com/pdf/java/).
 

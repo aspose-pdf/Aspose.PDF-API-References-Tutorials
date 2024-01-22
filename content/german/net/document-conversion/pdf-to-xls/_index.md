@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
 
 ## Schritt 2: Instanziieren Sie die Excel-Sicherungsoptionen
 Nach dem Laden der PDF-Datei instanziieren wir die Excel-Speicheroptionen. Verwenden Sie den folgenden Code:

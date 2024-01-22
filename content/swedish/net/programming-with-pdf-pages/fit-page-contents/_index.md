@@ -1,7 +1,7 @@
 ---
 title: Anpassa sidinnehåll i PDF-fil
 linktitle: Anpassa sidinnehåll i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Detaljerad steg-för-steg-guide för att justera sidinnehåll i PDF-fil med Aspose.PDF för .NET. Enkel implementering och givande slutsats.
 type: docs
 weight: 50

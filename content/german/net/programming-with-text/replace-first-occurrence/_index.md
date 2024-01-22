@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Schritt 3: Finden Sie das erste Vorkommen des Suchbegriffs
 
- Wir erstellen ein`TextFragmentAbsorber` Objekt und akzeptieren Sie es für alle Seiten des PDF-Dokuments, um alle Vorkommen des Suchbegriffs zu finden.
+ Wir erstellen eine`TextFragmentAbsorber` Objekt und akzeptieren Sie es für alle Seiten des PDF-Dokuments, um alle Vorkommen des Suchbegriffs zu finden.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");

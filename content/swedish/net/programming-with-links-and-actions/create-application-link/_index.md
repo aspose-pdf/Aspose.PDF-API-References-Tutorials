@@ -1,7 +1,7 @@
 ---
 title: Skapa applikationslänk i PDF-fil
 linktitle: Skapa applikationslänk i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Skapa enkelt programlänkar i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 20

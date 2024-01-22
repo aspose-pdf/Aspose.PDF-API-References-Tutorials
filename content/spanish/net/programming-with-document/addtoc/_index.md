@@ -141,7 +141,7 @@ En este tutorial, exploramos cómo agregar una tabla de contenido (TOC) a docume
 
 #### P: ¿Qué es Aspose.PDF para .NET?
 
-R: Aspose.PDF para .NET es una poderosa biblioteca que permite a los desarrolladores trabajar con archivos PDF en aplicaciones .NET de manera efectiva. Proporciona una amplia gama de funciones para crear, manipular y administrar documentos PDF mediante programación.
+R: Aspose.PDF para .NET es una potente biblioteca que permite a los desarrolladores trabajar con archivos PDF en aplicaciones .NET de forma eficaz. Proporciona una amplia gama de funciones para crear, manipular y administrar documentos PDF mediante programación.
 
 #### P: ¿Cuál es el propósito de agregar una tabla de contenido (TOC) a un documento PDF?
 

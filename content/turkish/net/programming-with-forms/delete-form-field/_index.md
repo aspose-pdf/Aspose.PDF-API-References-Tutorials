@@ -81,7 +81,7 @@ if (pdfDocument.Form.Contains("textbox1"))
 
  C: PDF belgesinde bulunmayan bir form alanını silmeye çalışırsanız,`Delete` yöntem bir hata veya istisna atmaz. Silinecek alan olmadığından hiçbir şey yapmaz.
 
-#### S: Metin alanları, onay kutuları ve radyo düğmeleri gibi farklı türlerdeki form alanlarını silebilir miyim?
+#### S: Metin alanları, onay kutuları ve radyo düğmeleri gibi farklı türdeki form alanlarını silebilir miyim?
 
  C: Evet, aynı yöntemi kullanarak metin alanları, onay kutuları ve radyo düğmeleri gibi farklı türdeki form alanlarını silebilirsiniz.`Delete` Aspose.PDF for .NET'teki yöntem. Silmek istediğiniz alanın adını parametre olarak yönteme iletmeniz yeterlidir.
 

@@ -1,7 +1,7 @@
 ---
 title: Sidorientering enligt bildmått
 linktitle: Sidorientering enligt bildmått
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att ställa in sidorientering baserat på bildmått med Aspose.PDF för .NET.
 type: docs
 weight: 80

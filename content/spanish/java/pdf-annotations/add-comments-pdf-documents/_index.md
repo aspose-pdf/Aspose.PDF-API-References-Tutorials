@@ -18,7 +18,7 @@ Los documentos PDF se han convertido en un estándar para compartir información
 
 ## Crear un documento PDF
 
-Para agregar comentarios a un PDF, primero necesita un documento PDF con el cual trabajar. Puedes crear un nuevo documento PDF usando Aspose.PDF para Java con solo unas pocas líneas de código:
+Para agregar comentarios a un PDF, primero necesita un documento PDF con el que trabajar. Puedes crear un nuevo documento PDF usando Aspose.PDF para Java con solo unas pocas líneas de código:
 
 ```java
 // Inicializar un nuevo documento PDF

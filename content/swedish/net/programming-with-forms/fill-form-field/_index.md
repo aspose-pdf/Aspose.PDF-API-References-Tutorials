@@ -1,7 +1,7 @@
 ---
 title: Fyll i PDF-formulärfält
 linktitle: Fyll i PDF-formulärfält
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Fyll enkelt i formulärfält i dina PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 80

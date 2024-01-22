@@ -88,7 +88,7 @@ A: Bevor Sie beginnen, sollten Sie über grundlegende Kenntnisse der C#-Programm
 
 A: Um Ihr Projekt einzurichten, erstellen Sie ein neues C#-Projekt in der von Ihnen gewählten Entwicklungsumgebung und fügen Sie einen Verweis auf die Aspose.PDF-Bibliothek hinzu. Dadurch erhalten Sie Zugriff auf die erforderlichen Klassen und Methoden.
 
-####  F: Welche Rolle spielt das`CgmImportOptions` class play in the conversion process?
+####  F: Welche Rolle spielt das?`CgmImportOptions` class play in the conversion process?
 
  A: Die`CgmImportOptions` Die Klasse wird verwendet, um Importoptionen für das CGM-Bild anzugeben. Mit dieser Klasse können Sie Parameter wie die Seitengröße und andere relevante Attribute festlegen.
 

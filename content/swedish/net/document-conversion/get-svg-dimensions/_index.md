@@ -1,7 +1,7 @@
 ---
 title: Skaffa SVG Dimensions
 linktitle: Skaffa SVG Dimensions
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg för steg guide för att få SVG-mått med Aspose.PDF för .NET.
 type: docs
 weight: 40
@@ -79,7 +79,7 @@ S: SVG (Scalable Vector Graphics) är ett XML-baserat bildformat som används f�
 
 #### F: Varför använda Aspose.PDF för .NET för SVG till PDF-konvertering?
 
-S: Aspose.PDF för .NET ger ett tillförlitligt och effektivt sätt att hantera SVG-filer och konvertera dem till PDF-format. Den erbjuder olika alternativ och inställningar för att anpassa konverteringsprocessen, som att justera sidstorlek, marginaler och andra egenskaper för att säkerställa korrekt representation i PDF:en.
+S: Aspose.PDF för .NET ger ett tillförlitligt och effektivt sätt att hantera SVG-filer och konvertera dem till PDF-format. Den erbjuder olika alternativ och inställningar för att anpassa konverteringsprocessen, som att justera sidstorlek, marginaler och andra egenskaper för att säkerställa korrekt representation i PDF-filen.
 
 #### F: Kan jag konvertera SVG-filer med komplex grafik och text?
 

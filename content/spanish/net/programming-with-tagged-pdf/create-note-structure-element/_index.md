@@ -104,7 +104,7 @@ paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
 // Debe lanzar una excepción: Aspose.Pdf.Tagged.TaggedException: el elemento de estructura con ID='note_002' ya existe
-//nota3.SetId("nota_002");
+//note3.SetId("nota_002");
 // El documento resultante no cumple con PDF/UA si se utiliza ClearId() para el elemento de estructura de nota
 //nota3.ClearId();
 // Guardar documento PDF etiquetado
@@ -152,7 +152,7 @@ R: Sí, puede asignar identificaciones únicas a los elementos de la estructura 
 
 #### P: ¿Qué sucede si intento asignar una identificación duplicada a un elemento de la estructura de una nota?
 
-R: Intentar asignar una identificación duplicada a un elemento de la estructura de la nota resultará en una excepción. El código proporcionado en el tutorial incluye un comentario que ilustra este escenario.
+R: Intentar asignar una identificación duplicada a un elemento de estructura de nota resultará en una excepción. El código proporcionado en el tutorial incluye un comentario que ilustra este escenario.
 
 #### P: ¿Cómo puedo garantizar la compatibilidad con PDF/UA al crear elementos de estructura de notas?
 

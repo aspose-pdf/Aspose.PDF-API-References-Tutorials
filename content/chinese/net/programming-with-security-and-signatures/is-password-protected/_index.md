@@ -67,7 +67,7 @@ Console.WriteLine(encrypted.ToString());
 
 恭喜！现在，您可以使用 Aspose.PDF for .NET 检查 PDF 文档是否受密码保护的分步指南。您可以将此代码集成到您自己的项目中，以根据 PDF 的保护状态执行特定操作。
 
-请务必查看官方 Aspose.PDF 文档，了解有关高级 PDF 文档安全性和密码管理功能的更多信息。
+请务必查看官方 Aspose.PDF 文档，以获取有关高级 PDF 文档安全性和密码管理功能的更多信息。
 
 ### 常见问题解答
 

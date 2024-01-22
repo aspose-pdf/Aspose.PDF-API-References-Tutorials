@@ -82,7 +82,7 @@ A: Ja, Sie können mit Aspose.PDF für .NET mehrere Formularfelder in einem PDF-
 
 #### F: Was passiert, wenn das Formularfeld, das ich ausfüllen möchte, im PDF-Dokument nicht vorhanden ist?
 
- A: Wenn das Formularfeld, das Sie ausfüllen möchten, nicht im PDF-Dokument vorhanden ist, versuchen Sie, über darauf zuzugreifen`pdfDocument.Form["fieldName"]`wird null zurückgeben. Daher ist es wichtig, sicherzustellen, dass das Formularfeld vorhanden ist, bevor Sie versuchen, es auszufüllen. Bei Bedarf können Sie neue Formularfelder programmgesteuert mit Aspose.PDF für .NET hinzufügen.
+ A: Wenn das Formularfeld, das Sie ausfüllen möchten, nicht im PDF-Dokument vorhanden ist, versuchen Sie, über darauf zuzugreifen`pdfDocument.Form["fieldName"]`wird null zurückgeben. Daher ist es wichtig, sicherzustellen, dass das Formularfeld vorhanden ist, bevor Sie versuchen, es auszufüllen. Bei Bedarf können Sie mit Aspose.PDF für .NET programmgesteuert neue Formularfelder hinzufügen.
 
 #### F: Kann ich Formularfelder mit dynamischen Daten aus einer Datenbank oder einer anderen Datenquelle füllen?
 

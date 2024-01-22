@@ -1,7 +1,7 @@
 ---
 title: Få särskild anteckning i PDF-fil
 linktitle: Få särskild anteckning i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du använder Aspose.PDF för .NET för att få speciell anteckning i PDF-fil med denna steg-för-steg-guide.
 type: docs
 weight: 80

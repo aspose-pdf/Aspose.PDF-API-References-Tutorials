@@ -117,7 +117,7 @@ Ja, Aspose.PDF für Java unterstützt verschiedene Bildformate wie JPEG, PNG, BM
 
 ### Wie kann ich die Transparenz hinzugefügter Bilder steuern?
 
- Sie können die Deckkraft eines Bildes mit einstellen`setOpacity` Methode zur Steuerung der Transparenz.
+ Sie können die Deckkraft eines Bildes mit einstellen`setOpacity` Methode zur Kontrolle der Transparenz.
 
 ### Kann ich das hinzugefügte Bild drehen?
 

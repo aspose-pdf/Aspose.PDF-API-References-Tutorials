@@ -29,7 +29,7 @@ document.Pages.Add();
 Page page = document.Pages[1];
 ```
 
-## Paso 2: agregar la imagen a la colección XImage
+## Paso 2: Agregar la imagen a la colección XImage
 
 A continuación, agregaremos la imagen a la colección XImage del documento PDF. Utilice el siguiente código:
 

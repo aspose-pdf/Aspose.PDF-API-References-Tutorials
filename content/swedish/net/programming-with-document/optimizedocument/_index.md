@@ -1,7 +1,7 @@
 ---
 title: Optimera PDF-dokument
 linktitle: Optimera PDF-dokument
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Optimera PDF-dokument för webben är avgörande för användarupplevelsen. Lär dig hur du gör det med Aspose.PDF för .NET med denna steg-för-steg-guide.
 type: docs
 weight: 240

@@ -81,4 +81,4 @@ doc.Save(dataDir + "SVGToPDF_out.pdf");
 
 #### 问：生成的 PDF 中是否保留了 SVG 的内容质量？
 
-答：是的，Aspose.PDF for .NET 可确保在 SVG 到 PDF 转换过程中保留内容质量和布局，从而确保格式之间的无缝转换。
+答：是的，Aspose.PDF for .NET 可确保在 SVG 到 PDF 转换期间保留内容质量和布局，从而确保格式之间的无缝转换。

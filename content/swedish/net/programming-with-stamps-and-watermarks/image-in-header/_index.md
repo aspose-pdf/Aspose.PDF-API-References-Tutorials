@@ -1,7 +1,7 @@
 ---
 title: Bild I Header
 linktitle: Bild I Header
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du lägger till en bild i rubriken i ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 140

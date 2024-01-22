@@ -20,7 +20,7 @@ Aspose.PDF for .NET'in "Etiketli PDF'lerle Programlama" eğitimleri, etiketli PD
 | [Yapı Elemanları Oluşturun](./create-structure-elements/) | Bu eğitimde, etiketli bir PDF belgesinde yapısal öğeler oluşturmak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğreneceksiniz. |  
 | [Yapı Elemanları Ağacı Oluştur](./create-structure-elements-tree/) | Aspose.PDF for .NET'i kullanarak ağaç öğelerinden oluşan bir yapı oluşturun. Yapılandırılmış bir PDF belgesi oluşturmak için adım adım kılavuz. |  
 | [Tablo Öğesi Oluştur](./create-table-element/) | Aspose.PDF for .NET ile dizi öğesi oluşturmak için adım adım kılavuz. Tablolarla kolayca dinamik PDF'ler oluşturun. |  
-| [Özel Etiket Adı](./custom-tag-name/) | Aspose.PDF for .NET ile özel etiket adı kullanma konusunda adım adım kılavuz. Özel etiketlerle PDF'lerinizin yapısını geliştirin. |  
+| [Özel Etiket Adı](./custom-tag-name/) | Aspose.PDF for .NET ile özel etiket adı kullanma konusunda adım adım kılavuz. Özel etiketlerle PDF'lerinizin yapısını iyileştirin. |  
 | [İllüstrasyon Yapı Elemanları](./illustration-structure-elements/) | Aspose.PDF for .NET ile çizim varlıklarını kullanma konusunda adım adım kılavuz. PDF'lerinizin sunumunu resimlerle geliştirin. |  
 | [Satır İçi Yapı Elemanları](./inline-structure-elements/) | Aspose.PDF for .NET ile çevrimiçi yapısal elemanların kullanımına ilişkin adım adım kılavuz. PDF'lerinizi başlıklar ve paragraflarla düzenleyin. |  
 | [Bağlantı Yapısı Elemanları](./link-structure-elements/) | Aspose.PDF for .NET ile bağlantı yapısı öğelerini kullanma konusunda adım adım kılavuz. PDF belgelerinizde köprüler oluşturun. |  

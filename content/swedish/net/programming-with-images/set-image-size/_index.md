@@ -1,7 +1,7 @@
 ---
 title: Ställ in bildstorlek i PDF-fil
 linktitle: Ställ in bildstorlek i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att ställa in storleken på en bild i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 270
@@ -15,7 +15,7 @@ Innan du börjar, se till att du har följande:
 
 - Visual Studio eller någon annan utvecklingsmiljö installerad och konfigurerad.
 - Grundläggande kunskaper i programmeringsspråket C#.
-- Aspose.PDF-bibliotek för .NET installerat. Du kan ladda ner den från Asposes officiella hemsida.
+- Aspose.PDF-bibliotek för .NET installerat. Du kan ladda ner den från Asposes officiella webbplats.
 
 ## Steg 1: Skapa PDF-dokumentet
 
@@ -45,7 +45,7 @@ img. FixHeight = 100;
 // Ställ in bildtyp till okänd (Okänd)
 img.FileType = Aspose.Pdf.ImageFileType.Unknown;
 
-//Sökväg till bildkällfilen
+//Sökväg till bildens källfil
 img.File = dataDir + "aspose-logo.jpg";
 
 // Lägg till bilden i sidans styckesamling

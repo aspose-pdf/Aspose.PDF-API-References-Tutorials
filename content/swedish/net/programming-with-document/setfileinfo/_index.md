@@ -1,7 +1,7 @@
 ---
 title: Ställ in filinformation i PDF-fil
 linktitle: Ställ in filinformation i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du använder Aspose.PDF för .NET för att ställa in filinformation i PDF-fil med denna steg-för-steg-guide.
 type: docs
 weight: 310

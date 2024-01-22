@@ -38,7 +38,7 @@ A continuación, crearemos una nueva instancia de la clase Aspose.Pdf.Document, 
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Paso 4: agregar una página al documento
+## Paso 4: agregue una página al documento
 
 En este paso, agregaremos una nueva página al documento PDF. Aquí está el fragmento de código:
 

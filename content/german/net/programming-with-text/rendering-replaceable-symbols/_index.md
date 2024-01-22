@@ -35,7 +35,7 @@ Aspose.Pdf.Page applicationFirstPage = (Aspose.Pdf.Page)pdfApplicationDoc.Pages.
 
 ## Schritt 3: Textfragment mit Zeilenumbruchmarkierungen hinzufügen
 
- Wir erstellen ein`TextFragment`Objekt und legen Sie fest, dass sein Text Zeilenumbruchmarkierungen enthält (`Environment.NewLine`), um mehrere Textzeilen darzustellen.
+ Wir erstellen eine`TextFragment`Objekt und legen Sie fest, dass sein Text Zeilenumbruchmarkierungen enthält (`Environment.NewLine`), um mehrere Textzeilen darzustellen.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment textFragment = new Aspose.Pdf.Text.TextFragment("Applicant Name: " + Environment.NewLine + " Joe Smoe");
@@ -54,7 +54,7 @@ textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
 
 ## Schritt 5: Textabsatz und Position erstellen
 
- Wir erstellen ein`TextParagraph` Objekt, hängen Sie das Textfragment an den Absatz an und legen Sie die Position des Absatzes auf der Seite fest.
+ Wir erstellen eine`TextParagraph` Objekt, hängen Sie das Textfragment an den Absatz an und legen Sie die Position des Absatzes auf der Seite fest.
 
 ```csharp
 TextParagraph par = new TextParagraph();
@@ -64,7 +64,7 @@ par.Position = new Aspose.Pdf.Text.Position(100, 600);
 
 ## Schritt 6: Fügen Sie der Seite einen Textabsatz hinzu
 
- Wir erstellen ein`TextBuilder` Objekt mit der Seite und hängen Sie den Textabsatz an den Textgenerator an.
+ Wir erstellen eine`TextBuilder` Objekt mit der Seite und hängen Sie den Textabsatz an den Textgenerator an.
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(applicationFirstPage);

@@ -37,7 +37,7 @@ catch(Exception)
 }
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
 
 ## Schritt 2: Fehlende Schriftart ersetzen
 Als Nächstes ersetzen wir die fehlende Schriftart durch eine andere verfügbare Schriftart. Verwenden Sie den folgenden Code:
@@ -53,7 +53,7 @@ pdf.Convert(dataDir + "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
 pdf.Save(fileNew.FullName);
 ```
 
- Unbedingt ersetzen`"input.pdf"` mit dem tatsächlichen Pfad zu Ihrer Original-PDF-Datei und`"newfile_out.pdf"` mit dem gewünschten Namen für die resultierende PDF-Datei.
+ Unbedingt austauschen`"input.pdf"` mit dem tatsächlichen Pfad zu Ihrer Original-PDF-Datei und`"newfile_out.pdf"` mit dem gewünschten Namen für die resultierende PDF-Datei.
 
 ## Schritt 3: Speichern der resultierenden PDF-Datei
 Abschließend speichern wir die resultierende PDF-Datei mit der ersetzten Schriftart. Verwenden Sie den folgenden Code:

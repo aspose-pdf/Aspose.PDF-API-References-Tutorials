@@ -91,7 +91,7 @@ Toutes nos félicitations! Vous avez appris avec succès comment remplacer une i
 
  Vous pouvez télécharger la bibliothèque Aspose.PDF pour Java à partir de[ici](https://releases.aspose.com/pdf/java/).
 
-### L'utilisation de la bibliothèque Aspose.PDF est-elle gratuite ?
+### La bibliothèque Aspose.PDF est-elle gratuite ?
 
 Aspose.PDF pour Java est une bibliothèque commerciale et vous devrez peut-être acheter une licence pour une utilisation complète. Cependant, il propose une version d'essai gratuite que vous pouvez utiliser à des fins d'évaluation.
 

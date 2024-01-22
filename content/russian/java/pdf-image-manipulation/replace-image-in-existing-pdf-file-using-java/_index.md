@@ -27,7 +27,7 @@ url: /ru/java/pdf-image-manipulation/replace-image-in-existing-pdf-file-using-ja
 
 ## Добавление библиотеки Aspose.PDF для Java
 
-Чтобы добавить библиотеку Aspose.PDF for Java в свой проект, выполните следующие действия:
+Чтобы добавить библиотеку Aspose.PDF for Java в ваш проект, выполните следующие действия:
 
 1. Загрузите библиотеку Aspose.PDF для Java по предоставленной ссылке.
 2. Извлеките загруженный пакет в удобное место в вашей системе.

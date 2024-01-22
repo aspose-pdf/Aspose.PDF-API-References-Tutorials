@@ -100,7 +100,7 @@ R : Oui, vous pouvez utiliser cette méthode pour obtenir les coordonnées de di
 
 R : Les coordonnées des champs de formulaire sont basées sur le système de coordonnées du document PDF, où l'origine (0,0) est située dans le coin inférieur gauche de la page. Pour modifier ou ajuster les coordonnées du champ du formulaire, vous pouvez mettre à jour le`Rect` propriété du champ de formulaire respectif ou de ses sous-éléments, tels que RadioButtonOptionField.
 
-#### Q : Puis-je obtenir les coordonnées des champs de formulaire ajoutés par programmation à un document PDF ?
+#### Q : Puis-je obtenir les coordonnées des champs de formulaire ajoutés par programme à un document PDF ?
 
 R : Oui, vous pouvez obtenir les coordonnées des champs de formulaire qui ont été ajoutés par programme à un document PDF. Aspose.PDF pour .NET vous permet d'ajouter des champs de formulaire de manière dynamique, et une fois ajoutés, vous pouvez récupérer leurs coordonnées en utilisant l'approche démontrée dans ce didacticiel.
 

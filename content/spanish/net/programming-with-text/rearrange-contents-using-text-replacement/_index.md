@@ -100,7 +100,7 @@ En este tutorial, ha aprendido cómo reorganizar el contenido de un documento PD
 
 #### P: ¿Cuál es el propósito del tutorial "Reorganizar contenidos mediante reemplazo de texto"?
 
-R: El tutorial "Reorganizar contenidos mediante reemplazo de texto" demuestra cómo usar la biblioteca Aspose.PDF para .NET para reorganizar contenidos en un documento PDF realizando un reemplazo de texto. El tutorial proporciona una guía paso a paso y un código fuente C# para ayudarle a cargar un PDF, buscar fragmentos de texto específicos, reemplazar el texto y guardar el PDF modificado.
+R: El tutorial "Reorganizar contenidos mediante reemplazo de texto" demuestra cómo usar la biblioteca Aspose.PDF para .NET para reorganizar contenidos en un documento PDF realizando un reemplazo de texto. El tutorial proporciona una guía paso a paso y código fuente C# para ayudarle a cargar un PDF, buscar fragmentos de texto específicos, reemplazar el texto y guardar el PDF modificado.
 
 #### P: ¿Por qué querría reorganizar el contenido de un documento PDF?
 

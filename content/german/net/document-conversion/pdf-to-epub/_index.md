@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "PDFToEPUB.pdf");
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
 
 ## Schritt 2: Instanziieren der EPUB-Speicheroptionen
 Nach dem Laden des PDF-Dokuments instanziieren wir die Speicheroptionen für das EPUB-Format. Verwenden Sie den folgenden Code:

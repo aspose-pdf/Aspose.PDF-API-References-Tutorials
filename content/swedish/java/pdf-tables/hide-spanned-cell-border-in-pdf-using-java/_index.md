@@ -10,7 +10,7 @@ url: /sv/java/pdf-tables/hide-spanned-cell-border-in-pdf-using-java/
 
 ## Introduktion till Hide Spanned Cell Border i PDF med Java
 
-I dagens digitala tidsålder är att generera PDF-dokument dynamiskt en vanlig uppgift för både företag och utvecklare. När du arbetar med PDF-filer kan du stöta på situationer där du behöver dölja cellgränser i en tabell. Den här artikeln guidar dig genom processen för att uppnå detta med Java och Aspose.PDF för Java-biblioteket.
+dagens digitala tidsålder är att generera PDF-dokument dynamiskt en vanlig uppgift för både företag och utvecklare. När du arbetar med PDF-filer kan du stöta på situationer där du behöver dölja cellgränser i en tabell. Den här artikeln guidar dig genom processen för att uppnå detta med Java och Aspose.PDF för Java-biblioteket.
 
 ## Förstå spännade cellgränser i PDF
 

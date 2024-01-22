@@ -83,7 +83,7 @@ Tebrikler! Artık Aspose.PDF for .NET ile yer işaretlerini güncelleme konusund
 
 Gelişmiş yer imi düzenleme özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
 
-### PDF dosyasındaki yer işaretlerini güncellemeye ilişkin SSS
+### PDF dosyasındaki güncelleme yer imleri için SSS
 
 #### S: Bir PDF dosyasındaki yer işaretlerini neden güncellemem gerekiyor?
 

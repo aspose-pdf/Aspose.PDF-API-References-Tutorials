@@ -20,7 +20,7 @@ Avant d'entrer dans les détails de la mise en œuvre, assurons-nous que vous di
 -  Aspose.PDF pour la bibliothèque Java. Vous pouvez le télécharger depuis[ici](https://releases.aspose.com/pdf/java/).
 - Un environnement de développement intégré (IDE) de votre choix, tel qu'Eclipse ou IntelliJ IDEA.
 
-## Étape 1 : Configurer votre projet
+## Étape 1 : Configuration de votre projet
 
 Commencez par créer un nouveau projet Java dans votre IDE et ajoutez la bibliothèque Aspose.PDF pour Java aux dépendances de votre projet. Vous pouvez le faire en incluant le fichier JAR que vous avez téléchargé précédemment.
 
@@ -63,7 +63,7 @@ pdfDocument.save("output.pdf");
 
 ## Conclusion
 
-Toutes nos félicitations! Vous avez supprimé avec succès un champ de formulaire particulier d'un document PDF à l'aide d'Aspose.PDF pour Java. Cela peut être incroyablement utile lorsque vous devez nettoyer ou personnaliser des formulaires PDF par programmation. N'oubliez pas d'inclure la bibliothèque Aspose.PDF pour Java dans votre projet et suivez ces étapes pour obtenir les résultats souhaités.
+Toutes nos félicitations! Vous avez supprimé avec succès un champ de formulaire particulier d'un document PDF à l'aide d'Aspose.PDF pour Java. Cela peut être incroyablement utile lorsque vous devez nettoyer ou personnaliser des formulaires PDF par programme. N'oubliez pas d'inclure la bibliothèque Aspose.PDF pour Java dans votre projet et suivez ces étapes pour obtenir les résultats souhaités.
 
 ## FAQ
 

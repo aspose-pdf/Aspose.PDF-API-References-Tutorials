@@ -1,7 +1,7 @@
 ---
 title: Skapa miniatyrbilder i PDF-fil
 linktitle: Skapa miniatyrbilder i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Skapa enkelt miniatyrbild i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 100

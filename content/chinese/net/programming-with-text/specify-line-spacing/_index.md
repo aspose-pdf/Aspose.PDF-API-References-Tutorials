@@ -79,9 +79,9 @@ using (FileStream fontStream = File.OpenRead(fontFile))
 
 代替`"HPSimplified.TTF"`与实际的字体文件名。
 
-## 第8步：指定文本位置和行间距
+## 第8步：指定文本位置和行距
 
-设置文本片段的位置并分配`TextFormattingOptions`到`TextState.FormattingOptions`财产：
+设置文本片段的位置并指定`TextFormattingOptions`到`TextState.FormattingOptions`财产：
 
 ```csharp
 textFragment.Position = new Position(100, 600);
@@ -158,7 +158,7 @@ if (fontFile != "")
 
 答：本教程帮助用户了解如何利用 Aspose.PDF for .NET 的功能来指定 PDF 文档中文本的行距。通过遵循提供的步骤和代码示例，用户可以根据自己的喜好调整行间距。
 
-#### 问：学习本教程需要什么先决条件？
+#### 问：学习本教程需要满足哪些先决条件？
 
 答：在开始本教程之前，您应该对 C# 编程语言有基本的了解。此外，您需要安装 Aspose.PDF for .NET 库。您可以从 Aspose 网站获取它或使用 NuGet 将其安装到您的项目中。
 

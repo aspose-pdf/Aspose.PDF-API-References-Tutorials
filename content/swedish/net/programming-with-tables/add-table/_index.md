@@ -1,7 +1,7 @@
 ---
 title: Lägg till tabell i PDF-fil
 linktitle: Lägg till tabell i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lägg enkelt till tabeller i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 40

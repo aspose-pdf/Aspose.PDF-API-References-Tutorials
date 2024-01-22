@@ -102,7 +102,7 @@ Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesind
 
 #### S: "İlk Oluşumu Değiştir" öğreticisinin amacı nedir?
 
-C: "İlk Oluşumu Değiştir" eğitimi, bir PDF belgesinde belirli bir metnin ilk geçtiği yeri değiştirmek için Aspose.PDF kütüphanesinin .NET için nasıl kullanılacağını gösterir. Bir PDF belgesinin nasıl açılacağı, bir arama ifadesinin ilk örneğinin nasıl bulunacağı, metnin nasıl değiştirileceği, özelliklerin nasıl güncelleneceği ve değiştirilen PDF'nin nasıl kaydedileceği konusunda adım adım talimatlar sağlar.
+C: "İlk Oluşumu Değiştir" eğitimi, bir PDF belgesindeki belirli bir metnin ilk geçtiği yeri değiştirmek için Aspose.PDF kütüphanesinin .NET için nasıl kullanılacağını gösterir. Bir PDF belgesinin nasıl açılacağı, bir arama ifadesinin ilk örneğinin nasıl bulunacağı, metnin nasıl değiştirileceği, özelliklerin nasıl güncelleneceği ve değiştirilen PDF'nin nasıl kaydedileceği konusunda adım adım talimatlar sağlar.
 
 #### S: Bir PDF belgesinde metnin ilk geçtiği yeri neden değiştirmek isteyeyim?
 

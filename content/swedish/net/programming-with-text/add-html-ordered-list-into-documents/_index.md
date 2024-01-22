@@ -1,7 +1,7 @@
 ---
 title: Lägg till ordnad HTML-lista i dokument
 linktitle: Lägg till HTMLOrdered List i dokument
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du lägger till en HTML-ordnad lista till ett dokument med Aspose.PDF för .NET.
 type: docs
 weight: 30

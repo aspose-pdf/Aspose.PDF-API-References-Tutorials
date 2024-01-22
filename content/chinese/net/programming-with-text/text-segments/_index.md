@@ -115,7 +115,7 @@ textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+
 
 答：本教程帮助用户了解如何利用 Aspose.PDF for .NET 库来搜索 PDF 文档中的特定文本段。通过提供各种代码示例和正则表达式，用户可以自定义文本搜索查询以在 PDF 文件中查找所需内容。
 
-#### 问：学习本教程需要什么先决条件？
+#### 问：学习本教程需要满足哪些先决条件？
 
 答：在开始本教程之前，您应该对 C# 编程语言有基本的了解。此外，您需要安装 Aspose.PDF for .NET 库。您可以从 Aspose 网站获取它或使用 NuGet 将其安装到您的项目中。
 
@@ -123,7 +123,7 @@ textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+
 
 答：首先，在您首选的集成开发环境 (IDE) 中创建一个新的 C# 项目，并添加对 Aspose.PDF for .NET 库的引用。这将使您能够利用该库的功能来处理 PDF 文档和文本片段。
 
-#### 问：如何搜索 PDF 文件中的特定文本片段？
+#### 问：如何搜索 PDF 文件中的特定文本段？
 
  A：要搜索特定的文本片段，您需要创建一个`TextFragmentAbsorber`目的。本教程提供了使用正则表达式的各种代码示例来演示不同的搜索场景。通过修改正则表达式，您可以定义所需的搜索模式。
 

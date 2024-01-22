@@ -87,7 +87,7 @@ Assurez-vous de consulter la documentation officielle Aspose.PDF pour plus d'inf
 
 #### Q : Pourquoi devrais-je mettre à jour les favoris dans un fichier PDF ?
 
-R : La mise à jour des signets est essentielle lorsque vous souhaitez refléter les modifications ou les mises à jour de la structure, du contenu ou de l'apparence d'un document PDF. Cela garantit que les signets représentent fidèlement l'organisation du document.
+R : La mise à jour des signets est essentielle lorsque vous souhaitez refléter les modifications ou les mises à jour de la structure, du contenu ou de l'apparence d'un document PDF. Cela garantit que les signets représentent fidèlement l’organisation du document.
 
 #### Q : Comment importer les bibliothèques nécessaires pour mon projet C# ?
 

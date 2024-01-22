@@ -1,7 +1,7 @@
 ---
 title: Rita XForm på sidan
 linktitle: Rita XForm på sidan
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att rita ett XForm-formulär på en PDF-sida med Aspose.PDF för .NET. Lägg till och placera formuläret på sidan.
 type: docs
 weight: 10
@@ -31,7 +31,7 @@ using Aspose.Pdf;
 using Aspose.Pdf.Operators;
 ```
 
-## Steg 3: Ställa in filsökvägar
+## Steg 3: Ställ in filsökvägar
 
 Definiera filsökvägarna för bakgrundsbilden, indata-PDF-filen och PDF-utdatafilen:
 

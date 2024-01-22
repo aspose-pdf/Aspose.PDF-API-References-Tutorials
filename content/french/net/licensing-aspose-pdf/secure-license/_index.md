@@ -107,7 +107,7 @@ R : Oui, le fichier de licence sécurisé est crypté dans l'archive Zip à l'ai
 
 #### Q : Puis-je charger plusieurs licences sécurisées dans le même fichier PDF ?
 
-R : Oui, vous pouvez charger plusieurs licences sécurisées dans le même fichier PDF, chacune avec son propre mot de passe et sa propre logique d'extraction.
+R : Oui, vous pouvez charger plusieurs licences sécurisées dans le même fichier PDF, chacune avec son propre mot de passe et sa propre logique d'extraction.
 
 ####  Q : Est-il nécessaire d'extraire la licence sécurisée vers un`MemoryStream`?
 

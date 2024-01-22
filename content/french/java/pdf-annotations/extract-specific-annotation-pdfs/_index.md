@@ -103,7 +103,7 @@ Oui, vous pouvez extraire les annotations d'une page spécifique en accédant au
 
 ### Quels autres types d'annotations puis-je extraire à l'aide d'Aspose.PDF pour Java ?
 
-Aspose.PDF pour Java prend en charge différents types d'annotations, notamment les annotations de texte, les annotations de surbrillance, les tampons personnalisés, etc. Vous pouvez adapter les exemples de code pour extraire les types d'annotations spécifiques dont vous avez besoin.
+Aspose.PDF pour Java prend en charge divers types d'annotations, notamment les annotations de texte, les annotations de surbrillance, les tampons personnalisés, etc. Vous pouvez adapter les exemples de code pour extraire les types d'annotations spécifiques dont vous avez besoin.
 
 ### Aspose.PDF pour Java est-il adapté à la gestion de documents PDF volumineux ?
 

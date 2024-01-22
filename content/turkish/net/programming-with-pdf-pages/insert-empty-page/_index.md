@@ -88,6 +88,6 @@ C: Evet, eklemek istediğiniz her ek sayfa için boş sayfa ekleme adımını te
 
 C: Hayır, boş bir sayfa eklemek PDF dosyasındaki mevcut içeriği etkilemez. Yalnızca belirtilen konuma boş bir sayfa ekleyerek içeriğin geri kalanını değiştirmeden bırakır.
 
-#### S: Boş bir sayfa yerine başka bir PDF dosyasından bir sayfa eklemek mümkün mü?
+#### S: Boş bir sayfa yerine başka bir PDF dosyasından bir sayfa eklemek mümkün müdür?
 
 C: Evet, Aspose.PDF for .NET'i kullanarak başka bir PDF dosyasındaki sayfayı mevcut PDF dosyasına eklemek mümkündür. Bunu başarmak için kaynak PDF dosyası için yeni bir Belge nesnesi oluşturabilir, istediğiniz sayfayı alabilir ve ardından bunu hedef PDF belgesine istediğiniz konuma ekleyebilirsiniz.

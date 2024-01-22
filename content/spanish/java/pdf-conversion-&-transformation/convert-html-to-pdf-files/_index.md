@@ -55,7 +55,7 @@ com.aspose.pdf.HtmlLoadOptions loadOptions = new com.aspose.pdf.HtmlLoadOptions(
 pdfDocument.getPages().add().setHtmlContent("Your_HTML_Content", loadOptions);
 ```
 
-### Paso 4: guardar el PDF
+### Paso 4: Guardar el PDF
 
 Finalmente, guarde el documento PDF en la ubicación deseada:
 

@@ -1,7 +1,7 @@
 ---
 title: PDF-operatörer
 linktitle: PDF-operatörer
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att använda PDF-operatörer med Aspose.PDF för .NET. Lägg till en bild på en PDF-sida och ange dess position.
 type: docs
 weight: 20

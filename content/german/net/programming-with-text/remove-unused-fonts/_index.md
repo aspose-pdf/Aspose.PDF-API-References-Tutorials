@@ -34,7 +34,7 @@ Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Schritt 3: Identifizieren und entfernen Sie nicht verwendete Schriftarten
 
- Wir erstellen ein`TextFragmentAbsorber` Objekt mit dem`TextEditOptions` Parameter eingestellt auf`TextEditOptions.FontReplace.RemoveUnusedFonts` . Mit dieser Option können wir nicht verwendete Schriftarten im PDF-Dokument identifizieren und entfernen. Wir durchlaufen dann alle`TextFragments` und stellen Sie die Schriftart auf die gewünschte Schriftart ein.
+ Wir erstellen eine`TextFragmentAbsorber` Objekt mit dem`TextEditOptions` Parameter eingestellt auf`TextEditOptions.FontReplace.RemoveUnusedFonts` . Mit dieser Option können wir nicht verwendete Schriftarten im PDF-Dokument identifizieren und entfernen. Wir durchlaufen dann alle`TextFragments` und stellen Sie die Schriftart auf die gewünschte Schriftart ein.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
@@ -90,7 +90,7 @@ In diesem Tutorial haben Sie gelernt, wie Sie mithilfe der Aspose.PDF-Bibliothek
 
 #### F: Was ist der Zweck des Tutorials „Entfernen nicht verwendeter Schriftarten in PDF-Dateien“?
 
-A: Das Tutorial „Entfernen nicht verwendeter Schriftarten in einer PDF-Datei“ erklärt, wie Sie mit der Aspose.PDF-Bibliothek für .NET nicht verwendete Schriftarten aus einem PDF-Dokument entfernen. Das Tutorial führt Sie durch den Prozess des Ladens einer PDF-Datei, des Identifizierens und Entfernens nicht verwendeter Schriftarten und des Speicherns der aktualisierten PDF-Datei.
+A: Das Tutorial „Entfernen nicht verwendeter Schriftarten in einer PDF-Datei“ erklärt, wie Sie mithilfe der Aspose.PDF-Bibliothek für .NET nicht verwendete Schriftarten aus einem PDF-Dokument entfernen. Das Tutorial führt Sie durch den Prozess des Ladens einer PDF-Datei, des Identifizierens und Entfernens nicht verwendeter Schriftarten und des Speicherns der aktualisierten PDF-Datei.
 
 #### F: Warum sollte ich nicht verwendete Schriftarten aus einem PDF-Dokument entfernen?
 

@@ -179,7 +179,7 @@ R: La agrupación de elementos crea una estructura jerárquica dentro del docume
 
 #### P: ¿Qué son los elementos estructurales a nivel de bloque y a nivel de línea y en qué se diferencian?
 
-R: Los elementos de estructura a nivel de bloque representan bloques más grandes de contenido, como párrafos y encabezados, mientras que los elementos a nivel de línea representan partes de texto dentro de un párrafo o encabezado, como espacios, citas y notas. Ayudan a definir la jerarquía y las relaciones del contenido.
+R: Los elementos de estructura a nivel de bloque representan bloques más grandes de contenido, como párrafos y encabezados, mientras que los elementos de nivel en línea representan partes de texto dentro de un párrafo o encabezado, como espacios, citas y notas. Ayudan a definir la jerarquía y las relaciones del contenido.
 
 ####  P: ¿Cómo estructuran los elementos de la obra de arte, como`FigureElement` and `FormulaElement`, contribute to the document?
 

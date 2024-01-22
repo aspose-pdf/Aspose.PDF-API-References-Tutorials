@@ -99,7 +99,7 @@ R : La spécification du répertoire du document garantit que le document PDF e
 
 #### Q : Comment fonctionne la conversion de chaque page PDF en fichiers EMF individuels ?
 
- R : Un`for` la boucle parcourt chaque page du document PDF. Pour chaque page, une image EMF est générée à l'aide du`EmfDevice`, et l'image résultante est enregistrée dans le répertoire de sortie spécifié.
+ R : Un`for` La boucle parcourt chaque page du document PDF. Pour chaque page, une image EMF est générée à l'aide du`EmfDevice`, et l'image résultante est enregistrée dans le répertoire de sortie spécifié.
 
 #### : Puis-je personnaliser les attributs des fichiers EMF pendant le processus de conversion ?
 

@@ -1,7 +1,7 @@
 ---
 title: Dela upp till sidor
 linktitle: Dela upp till sidor
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att dela upp ett PDF-dokument i enskilda sidor med Aspose.PDF för .NET.
 type: docs
 weight: 140

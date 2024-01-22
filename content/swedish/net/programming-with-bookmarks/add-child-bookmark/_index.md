@@ -1,7 +1,7 @@
 ---
 title: Lägg till barnbokmärke i PDF-fil
 linktitle: Lägg till barnbokmärke i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lägg enkelt till ett barnbokmärke i PDF-fil för mer organiserad surfning med Aspose.PDF för .NET.
 type: docs
 weight: 20
@@ -104,7 +104,7 @@ Grattis! Nu har du en steg-för-steg-guide för att lägga till ett underbokmär
 
 Se till att kolla in den officiella Aspose.PDF-dokumentationen för mer information om avancerade bokmärkesmanipuleringsfunktioner.
 
-### Vanliga frågor för att lägga till barnbokmärke i PDF-fil
+### Vanliga frågor för att lägga till ett barnbokmärke i PDF-fil
 
 #### F: Vad är underordnade bokmärken i en PDF-fil?
 

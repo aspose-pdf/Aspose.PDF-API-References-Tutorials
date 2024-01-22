@@ -41,7 +41,7 @@ textFragment.Page.Annotations.Add(strikeOut);
 
 En el código anterior, estamos creando una anotación tachada para cada fragmento de texto que encontramos. También estamos configurando la opacidad, el borde y el color de la anotación tachada.
 
-## Paso 4: guardar el documento PDF modificado
+## Paso 4: Guardar el documento PDF modificado
 Después de tachar los fragmentos de texto, guarde el documento modificado.
 
 ```csharp
@@ -116,7 +116,7 @@ R: Aspose.PDF para .NET es una potente biblioteca que permite a los desarrollado
 
 R: Sí, Aspose.PDF para .NET proporciona funcionalidad para buscar fragmentos de texto específicos en un documento PDF y luego crear anotaciones tachadas para marcar y tachar visualmente esas palabras.
 
-#### P: ¿Cómo especifico el texto que quiero tachar en el documento PDF?
+#### P: ¿Cómo especifico el texto que deseo tachar en el documento PDF?
 
  R: Para especificar el texto que desea tachar, puede utilizar el`TextFragmentAbsorber` clase proporcionada por Aspose.PDF para .NET. Le permite buscar un fragmento de texto específico en el documento PDF según los criterios deseados.
 

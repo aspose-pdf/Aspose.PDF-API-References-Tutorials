@@ -97,7 +97,7 @@ R: Para ampliar el contenido de la página de un archivo PDF usando Aspose.PDF p
 5.  Vincula el PDF de origen al`PdfPageEditor` instancia utilizando el`BindPdf()` método.
 6. Defina el coeficiente de zoom según el ancho y alto del rectángulo recuperado.
 7.  Actualice el tamaño de la página usando las dimensiones del rectángulo y el`PageSize` propiedad de la`PdfPageEditor` instancia.
-8.  Guarde el archivo PDF modificado utilizando el`Save()` método de la`Document`clase. Asegúrese de especificar la ruta y el nombre de archivo correctos.
+8.  Guarde el archivo PDF modificado usando el`Save()` método de la`Document`clase. Asegúrese de especificar la ruta y el nombre de archivo correctos.
 
 #### P: ¿Puedo aplicar el efecto de zoom a varias páginas del archivo PDF simultáneamente?
 

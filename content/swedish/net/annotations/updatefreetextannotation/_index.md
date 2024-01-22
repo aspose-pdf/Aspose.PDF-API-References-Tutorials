@@ -1,7 +1,7 @@
 ---
 title: Uppdatera fritext PDF-anteckning
 linktitle: Uppdatera fritext PDF-anteckning
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du uppdaterar fritext PDF-anteckningsfunktionen i Aspose.PDF för .NET med C#-källkod.
 type: docs
 weight: 160
@@ -60,7 +60,7 @@ try
     // Öppna dokumentet
     Document doc1 = new Document(dataDir + "input.pdf");
 
-    // Ställ in teckenstorlek och färg på annoteringen:
+    // Ange teckenstorlek och färg på annoteringen:
     (doc1.Pages[1].Annotations[0] as FreeTextAnnotation).TextStyle.FontSize = 18;
     (doc1.Pages[1].Annotations[0] as FreeTextAnnotation).TextStyle.Color = System.Drawing.Color.Green;
                 
@@ -83,7 +83,7 @@ S: Aspose.PDF för .NET är ett robust PDF-manipulerings- och bearbetningsbiblio
 
 #### F: Kan jag uppdatera egenskaperna för en fritextkommentar i ett PDF-dokument med Aspose.PDF för .NET?
 
-S: Ja, Aspose.PDF för .NET tillhandahåller funktionalitet för att uppdatera egenskaperna för fritextkommentarer i ett PDF-dokument. Detta inkluderar att ändra teckenstorlek, teckensnittsfärg och andra textstilsalternativ.
+S: Ja, Aspose.PDF för .NET tillhandahåller funktionalitet för att uppdatera egenskaperna för fritextkommentarer i ett PDF-dokument. Detta inkluderar att ändra teckenstorlek, teckenfärg och andra textstilsalternativ.
 
 #### F: Hur anger jag anteckningen jag vill uppdatera i PDF-dokumentet?
 

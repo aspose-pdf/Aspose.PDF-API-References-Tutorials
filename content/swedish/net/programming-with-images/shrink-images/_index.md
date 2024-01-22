@@ -1,7 +1,7 @@
 ---
 title: Krympa bilder i PDF-fil
 linktitle: Krympa bilder i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att minska storleken på bilder i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 280
@@ -15,7 +15,7 @@ Innan du börjar, se till att du har följande:
 
 - Visual Studio eller någon annan utvecklingsmiljö installerad och konfigurerad.
 - Grundläggande kunskaper i programmeringsspråket C#.
-- Aspose.PDF-bibliotek för .NET installerat. Du kan ladda ner den från Asposes officiella hemsida.
+- Aspose.PDF-bibliotek för .NET installerat. Du kan ladda ner den från Asposes officiella webbplats.
 
 ## Steg 1: Laddar PDF-dokumentet
 
@@ -34,7 +34,7 @@ Se till att ange rätt sökväg till ditt PDF-dokument.
 Därefter kommer vi att initiera optimeringsalternativen för att minska storleken på bilderna. Använd följande kod:
 
 ```csharp
-// Initiera OptimizationOptions
+// Initiera optimeringsalternativ
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
 
 // Aktivera alternativet CompressImages
@@ -68,7 +68,7 @@ Var noga med att ange önskad sökväg och filnamn för det uppdaterade PDF-doku
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
-// Initiera OptimizationOptions
+// Initiera optimeringsalternativ
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
 // Ställ in alternativet CompressImages
 optimizeOptions.ImageCompressionOptions.CompressImages = true;

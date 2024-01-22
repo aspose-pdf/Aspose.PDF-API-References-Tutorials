@@ -66,7 +66,7 @@ Console.WriteLine("\nParticular field deleted successfully.\nFile saved at " + d
 
 答：是的，您可以使用 Aspose.PDF for .NET 一次删除多个表单字段。只需拨打`Delete`您要删除的每个表单字段的方法。
 
-#### 问：在尝试删除表单字段之前如何检查它是否存在？
+#### 问：在尝试删除表单字段之前，如何检查它是否存在？
 
 答：您可以在尝试删除表单字段之前检查它是否存在，方法是使用`Contains`的方法`Form`财产。例如：
 

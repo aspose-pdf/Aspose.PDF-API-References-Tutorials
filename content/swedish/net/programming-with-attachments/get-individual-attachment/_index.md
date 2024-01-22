@@ -1,7 +1,7 @@
 ---
 title: Få individuell bilaga i PDF-fil
 linktitle: Få individuell bilaga i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du får en enskild bilaga i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 60

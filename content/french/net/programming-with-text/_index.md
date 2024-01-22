@@ -21,7 +21,7 @@ Les didacticiels « Programmation avec texte » d'Aspose.PDF pour .NET offrent
 | [Ajouter une info-bulle au texte dans un fichier PDF](./add-tooltip-to-text/) | Découvrez comment ajouter des info-bulles au texte d'un fichier PDF à l'aide d'Aspose.PDF pour .NET. |  
 | [Ajouter du texte transparent dans un fichier PDF](./add-transparent-text/) | Découvrez comment ajouter du texte transparent dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. |  
 | [Créer un PDF multi-colonnes](./create-multi-column-pdf/) | Découvrez comment créer un PDF multi-colonnes à l'aide d'Aspose.PDF pour .NET. |  
-| [Taquets de tabulation personnalisés dans un fichier PDF](./custom-tab-stops/) | Découvrez comment créer des taquets de tabulation personnalisés dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. |  
+| [Taquets de tabulation personnalisés dans le fichier PDF](./custom-tab-stops/) | Découvrez comment créer des taquets de tabulation personnalisés dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. |  
 | [Déterminer le saut de ligne dans un fichier PDF](./determine-line-break/) | Découvrez comment déterminer les sauts de ligne dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. |  
 | [Intégrer des polices standard de type 1 dans un fichier PDF](./embed-standard-type-1fonts/) | Découvrez comment intégrer des polices standard de type 1 dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. |  
 | [Extraire le texte des colonnes dans un fichier PDF](./extract-columns-text/) | Découvrez comment extraire le texte des colonnes dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. |  

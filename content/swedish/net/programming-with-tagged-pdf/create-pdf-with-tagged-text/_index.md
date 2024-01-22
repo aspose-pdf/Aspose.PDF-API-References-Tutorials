@@ -1,7 +1,7 @@
 ---
 title: Skapa PDF med taggad text
 linktitle: Skapa PDF med taggad text
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg för steg guide för att skapa en PDF med taggad text med Aspose.PDF för .NET.
 type: docs
 weight: 50

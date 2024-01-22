@@ -26,7 +26,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
 
 ## Schritt 2: Aktivieren Sie die Schriftartenhinweise
 Nach dem Öffnen der PDF-Datei aktivieren wir mithilfe der Rendering-Optionen Schriftarthinweise. Verwenden Sie den folgenden Code:

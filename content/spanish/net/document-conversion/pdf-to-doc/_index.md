@@ -65,7 +65,7 @@ R: Sí, Aspose.PDF para .NET brinda soporte para convertir archivos PDF protegid
 
 #### P: ¿Existe alguna limitación al convertir archivos PDF complejos a formato DOC?
 
-R: Si bien Aspose.PDF para .NET ofrece capacidades sólidas de conversión de PDF a DOC, es posible que haya ciertos archivos PDF complejos con diseños complejos, gráficos o fuentes personalizadas que podrían tener limitaciones durante el proceso de conversión. Se recomienda probar sus archivos PDF específicos para asegurarse de que el formato DOC de salida cumpla con sus requisitos.
+R: Si bien Aspose.PDF para .NET ofrece sólidas capacidades de conversión de PDF a DOC, es posible que haya ciertos archivos PDF complejos con diseños complejos, gráficos o fuentes personalizadas que podrían tener limitaciones durante el proceso de conversión. Se recomienda probar sus archivos PDF específicos para asegurarse de que el formato DOC de salida cumpla con sus requisitos.
 
 #### P: ¿Puedo conservar el formato y el diseño durante la conversión de PDF a DOC?
 

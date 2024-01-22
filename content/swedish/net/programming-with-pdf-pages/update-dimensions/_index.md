@@ -1,7 +1,7 @@
 ---
 title: Uppdatera PDF-sidans dimensioner
 linktitle: Uppdatera PDF-sidans dimensioner
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att uppdatera PDF-sidans dimensioner med Aspose.PDF för .NET. Kontrollera måtten efter dina behov.
 type: docs
 weight: 150

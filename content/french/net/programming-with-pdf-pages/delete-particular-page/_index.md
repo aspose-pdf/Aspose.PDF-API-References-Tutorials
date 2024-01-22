@@ -37,7 +37,7 @@ pdfDocument.Pages.Delete(2);
 ```
 
 ## Étape 4 : Enregistrez le PDF mis à jour
- Enfin, vous pouvez enregistrer le document PDF mis à jour dans un fichier de sortie à l'aide du`Save()` méthode. Assurez-vous de spécifier le chemin d'accès et le nom de fichier corrects.
+ Enfin, vous pouvez enregistrer le document PDF mis à jour dans un fichier de sortie à l'aide du nom du document.`Save()` méthode. Assurez-vous de spécifier le chemin d'accès et le nom de fichier corrects.
 
 ```csharp
 dataDir = dataDir + "DeleteParticularPage_out.pdf";

@@ -85,7 +85,7 @@ R: No, insertar una página en blanco al final del documento PDF no sobrescribir
 
 #### P: ¿Puedo insertar varias páginas en blanco al final del documento PDF?
 
-R: Sí, puede insertar varias páginas en blanco al final del documento PDF repitiendo el paso para insertar la página en blanco para cada página adicional que desee agregar.
+R: Sí, puede insertar varias páginas en blanco al final del documento PDF repitiendo el paso para insertar la página en blanco por cada página adicional que desee agregar.
 
 #### P: ¿Es posible eliminar una página del final del documento PDF en lugar de agregar una página en blanco?
 

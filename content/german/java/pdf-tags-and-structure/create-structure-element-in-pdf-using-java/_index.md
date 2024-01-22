@@ -64,19 +64,24 @@ In diesem Tutorial haben wir gelernt, wie man mit Java und der Aspose.PDF for Ja
 
 Schauen Sie sich gerne die Aspose.PDF-Dokumentation an[Hier](https://reference.aspose.com/pdf/java/) für erweiterte Funktionen und Anpassungsoptionen.
 
-## FAQs:
+## FAQs
 
-1. ## Was sind Strukturelemente in einem PDF-Dokument?
-   Strukturelemente in einem PDF-Dokument definieren die logische Struktur und Lesereihenfolge des Inhalts und machen PDFs für alle Benutzer zugänglich.
+### Was sind Strukturelemente in einem PDF-Dokument?
 
-2. ## Kann ich Bilder und Tabellen als Strukturelemente hinzufügen?
-   Ja, Sie können Strukturelemente verwenden, um Bilder, Tabellen, Überschriften, Absätze und andere Inhaltstypen in einer PDF-Datei darzustellen.
+Strukturelemente in einem PDF-Dokument definieren die logische Struktur und Lesereihenfolge des Inhalts und machen PDFs für alle Benutzer zugänglich.
 
-3. ## Ist Aspose.PDF die einzige Bibliothek für die Arbeit mit PDFs in Java?
-   Nein, es sind andere Bibliotheken verfügbar, aber Aspose.PDF ist eine leistungsstarke und funktionsreiche Wahl für die PDF-Bearbeitung in Java.
+### Kann ich Bilder und Tabellen als Strukturelemente hinzufügen?
 
-4. ## Wie kann ich das Erscheinungsbild von Strukturelementen anpassen?
-   Sie können CSS-Stile und -Attribute verwenden, um das Erscheinungsbild von Strukturelementen in Ihrem PDF-Dokument anzupassen.
+Ja, Sie können Strukturelemente verwenden, um Bilder, Tabellen, Überschriften, Absätze und andere Inhaltstypen in einer PDF-Datei darzustellen.
 
-5. ## Sind Strukturelemente für alle PDFs erforderlich?
-   Während Strukturelemente für die Barrierefreiheit unerlässlich sind, hängt ihre Verwendung von den spezifischen Anforderungen Ihrer PDF-Dokumente ab.
+### Ist Aspose.PDF die einzige Bibliothek für die Arbeit mit PDFs in Java?
+
+Nein, es sind andere Bibliotheken verfügbar, aber Aspose.PDF ist eine leistungsstarke und funktionsreiche Wahl für die PDF-Bearbeitung in Java.
+
+### Wie kann ich das Erscheinungsbild von Strukturelementen anpassen?
+
+Sie können CSS-Stile und -Attribute verwenden, um das Erscheinungsbild von Strukturelementen in Ihrem PDF-Dokument anzupassen.
+
+### Sind Strukturelemente für alle PDFs erforderlich?
+
+Während Strukturelemente für die Barrierefreiheit unerlässlich sind, hängt ihre Verwendung von den spezifischen Anforderungen Ihrer PDF-Dokumente ab.

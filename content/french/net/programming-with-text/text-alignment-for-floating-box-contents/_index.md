@@ -128,7 +128,7 @@ R : Le didacticiel « Alignement du texte pour le contenu des boîtes flottant
 
 R : Ce didacticiel aide les utilisateurs à comprendre comment utiliser Aspose.PDF pour .NET pour aligner le texte dans des zones flottantes dans un document PDF. En suivant les étapes et les exemples de code fournis, les utilisateurs peuvent personnaliser l'alignement vertical et horizontal du texte dans les zones flottantes.
 
-#### Q : Quels prérequis sont nécessaires pour suivre ce tutoriel ?
+#### Q : Quels prérequis sont requis pour suivre ce tutoriel ?
 
 R : Avant de commencer le didacticiel, vous devez avoir une compréhension de base du langage de programmation C#. De plus, vous devez avoir installé la bibliothèque Aspose.PDF pour .NET. Vous pouvez l'obtenir sur le site Web Aspose ou l'installer dans votre projet à l'aide de NuGet.
 

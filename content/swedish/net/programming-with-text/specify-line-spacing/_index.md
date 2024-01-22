@@ -1,7 +1,7 @@
 ---
 title: Ange radavstånd i PDF-fil
 linktitle: Ange radavstånd i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du anger radavstånd i PDF-filen med Aspose.PDF för .NET.
 type: docs
 weight: 510

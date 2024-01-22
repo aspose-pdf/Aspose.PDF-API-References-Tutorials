@@ -136,4 +136,4 @@ Console.WriteLine("\nImage in footer added successfully.\nFile saved at " + data
 
 #### س: كيف يتعامل الكود مع السيناريوهات التي تتجاوز فيها أبعاد الصورة المساحة المتوفرة في التذييل؟
 
- ج: يقوم الكود بتعيين خصائص مثل`BottomMargin`, `HorizontalAlignment` ، و`VerticalAlignment` للتحكم في موضع الصورة ومواءمتها. تأكد من تعديل هذه الخصائص لمنع أي تداخل أو مشاكل في التخطيط.
+ ج: يقوم الكود بتعيين خصائص مثل`BottomMargin`, `HorizontalAlignment` ، و`VerticalAlignment` للتحكم في موضع الصورة ومواءمتها. تأكد من تعديل هذه الخصائص لمنع أي تداخل أو مشكلات في التخطيط.

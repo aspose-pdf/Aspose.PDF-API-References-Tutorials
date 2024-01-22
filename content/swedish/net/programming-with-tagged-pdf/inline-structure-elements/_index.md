@@ -1,7 +1,7 @@
 ---
 title: Inline strukturelement
 linktitle: Inline strukturelement
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att använda online-strukturelement med Aspose.PDF för .NET. Organisera dina PDF-filer med rubriker och stycken.
 type: docs
 weight: 110

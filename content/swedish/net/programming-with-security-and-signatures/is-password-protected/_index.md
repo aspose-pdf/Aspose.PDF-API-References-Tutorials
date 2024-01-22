@@ -1,7 +1,7 @@
 ---
 title: Är lösenordsskyddad
 linktitle: Är lösenordsskyddad
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Kontrollera enkelt om ett PDF-dokument är lösenordsskyddat med Aspose.PDF för .NET.
 type: docs
 weight: 90

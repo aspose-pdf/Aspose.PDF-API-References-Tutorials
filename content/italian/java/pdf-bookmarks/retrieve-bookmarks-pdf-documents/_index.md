@@ -1,6 +1,6 @@
 ---
-title: Recupera segnalibri da documenti PDF
-linktitle: Recupera segnalibri da documenti PDF
+title: Recupera i segnalibri dai documenti PDF
+linktitle: Recupera i segnalibri dai documenti PDF
 second_title: Aspose.PDF API di elaborazione PDF Java
 description: Scopri come recuperare i segnalibri PDF in modo efficiente utilizzando Aspose.PDF per Java in questa guida completa.
 type: docs

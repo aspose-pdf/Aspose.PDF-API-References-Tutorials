@@ -29,7 +29,7 @@ MhtLoadOptions options = new MhtLoadOptions();
 Document document = new Document(dataDir + "test.mht", options);
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre MHT-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre MHT-Datei befindet.
 
 ## Schritt 2: MHT-zu-PDF-Konvertierung
 Nach dem Laden der MHT-Datei können wir mit der Konvertierung in PDF fortfahren. Verwenden Sie den folgenden Code:

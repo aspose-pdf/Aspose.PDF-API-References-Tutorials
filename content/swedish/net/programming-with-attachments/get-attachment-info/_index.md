@@ -1,7 +1,7 @@
 ---
 title: Få bifogad information
 linktitle: Få bifogad information
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du får information om en specifik bilaga i en PDF-fil med Aspose.PDF för .NET. Steg för steg guide.
 type: docs
 weight: 50
@@ -102,7 +102,7 @@ S: Denna handledning innehåller steg-för-steg-instruktioner och C#-källkod f�
 
 #### F: Kan jag hämta information om alla bilagor istället för en specifik bilaga med den här handledningen?
 
-S: Den här handledningen är inriktad på att få information om en specifik bilaga, men du kan anpassa koden för att gå igenom alla bilagor och samla information om dem.
+S: Den här handledningen är fokuserad på att få information om en specifik bilaga, men du kan anpassa koden för att gå igenom alla bilagor och samla information om dem.
 
 #### F: Vad är syftet med egenskapen "Check Hash" som visas i den bifogade informationen?
 

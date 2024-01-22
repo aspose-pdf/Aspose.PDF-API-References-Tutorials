@@ -37,7 +37,7 @@ Document document = new Document(dataDir + "CreateApplicationLink.pdf");
 
 ## Passaggio 4: creare il collegamento dell'applicazione
 
- In questo passaggio creeremo il collegamento dell'applicazione utilizzando il file`LinkAnnotation`annotazione. Specificheremo le coordinate e l'area del collegamento, nonché l'azione di avvio dell'applicazione. Ecco il codice corrispondente:
+ In questo passaggio creeremo il collegamento dell'applicazione utilizzando il file`LinkAnnotation`annotazione. Specificheremo le coordinate e l'area del collegamento, nonché l'azione di lancio dell'applicazione. Ecco il codice corrispondente:
 
 ```csharp
 Page page = document.Pages[1];

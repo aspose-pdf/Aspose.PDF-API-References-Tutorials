@@ -93,7 +93,7 @@ Sí, Aspose.PDF para Java proporciona amplias capacidades para trabajar con docu
 
 ### ¿Qué pasa si tengo problemas al utilizar Aspose.PDF para Java?
 
-Si encuentra algún problema o tiene preguntas sobre el uso de Aspose.PDF para Java, puede consultar la documentación o buscar ayuda del equipo de soporte de Aspose.
+Si tiene algún problema o tiene preguntas sobre el uso de Aspose.PDF para Java, puede consultar la documentación o buscar ayuda del equipo de soporte de Aspose.
 
 ### ¿Aspose.PDF para Java es de uso gratuito?
 

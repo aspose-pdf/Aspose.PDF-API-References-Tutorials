@@ -1,7 +1,7 @@
 ---
 title: Bradleys algoritm
 linktitle: Bradleys algoritm
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Konvertera ett PDF-dokument med Bradley-algoritmen med Aspose.PDF för .NET.
 type: docs
 weight: 30

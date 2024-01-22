@@ -146,7 +146,7 @@ doc.Pages[1].Footer = new HeaderFooter()
 };
 ```
 
-#### D: Posso inserire interruzioni di pagina in posizioni specifiche diverse da quelle dopo un certo numero di righe?
+#### D: Posso inserire interruzioni di pagina in posizioni specifiche diverse da quelle dopo un determinato numero di righe?
 
  R: Sì, puoi inserire interruzioni di pagina in posizioni specifiche diverse da dopo un certo numero di righe. È possibile impostare il`IsInNewPage` proprietà di una riga a`true` per forzare la tabella a iniziare una nuova pagina dopo quella riga.
 

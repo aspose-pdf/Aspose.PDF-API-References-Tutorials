@@ -1,7 +1,7 @@
 ---
 title: Kombinationsrutan
 linktitle: Kombinationsrutan
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Skapa enkelt kombinationsruta i dina PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 30

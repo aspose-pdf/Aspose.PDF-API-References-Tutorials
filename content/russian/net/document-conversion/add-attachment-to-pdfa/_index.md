@@ -47,7 +47,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 FileSpecification fileSpecification = new FileSpecification(dataDir + "aspose-logo.jpg", "Large image file");
 ```
 
- В приведенном выше коде замените`"YOUR DOCUMENTS DIRECTORY"` с фактическим путем к каталогу, в котором находится добавляемый файл изображения. Спецификация файла создается с помощью`FileSpecification` class, указав путь к файлу и описание.
+ В приведенном выше коде замените`"YOUR DOCUMENTS DIRECTORY"` с фактическим путем к каталогу, в котором находится добавляемый файл изображения. Спецификация файла создается с использованием`FileSpecification` class, указав путь к файлу и описание.
 
 ## Шаг 3. Добавление вложения в документ
 

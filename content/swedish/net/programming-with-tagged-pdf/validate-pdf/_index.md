@@ -1,7 +1,7 @@
 ---
 title: Validera PDF-fil
 linktitle: Validera PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du validerar en PDF-fil med Aspose.PDF för .NET. Kontrollera dess överensstämmelse med standarder och generera en valideringsrapport.
 type: docs
 weight: 240
@@ -84,7 +84,7 @@ S: Handledningen visar hur man använder Aspose.PDF för .NET för att öppna oc
 
 #### F: Hur kan jag skapa en valideringsrapport för ett PDF-dokument med Aspose.PDF för .NET?
 
- S: De medföljande C#-källkoden visar hur man öppnar ett PDF-dokument, validerar det med Aspose.PDF för .NET och genererar en valideringsrapport. De`Validate` metod används för detta ändamål.
+ S: De medföljande C#-källkoden visar hur man öppnar ett PDF-dokument, validerar det med Aspose.PDF för .NET och genererar en valideringsrapport. De`Validate` metoden används för detta ändamål.
 
 #### F: Vad är betydelsen av PDF-validering och att generera en valideringsrapport?
 

@@ -1,7 +1,7 @@
 ---
 title: Ordna om innehållet med hjälp av textersättning
 linktitle: Ordna om innehållet med hjälp av textersättning
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du ordnar om innehållet i ett PDF-dokument med hjälp av textersättning med Aspose.PDF för .NET.
 type: docs
 weight: 270

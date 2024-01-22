@@ -1,7 +1,7 @@
 ---
 title: Lägg till lnk-anteckning
 linktitle: Lägg till lnk-anteckning
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du lägger till funktionen Ink Annotation till PDF-dokument i C# med Aspose.PDF för .NET med steg-för-steg-guide och fullständig källkod.
 type: docs
 weight: 20
@@ -112,11 +112,11 @@ den här handledningen undersökte vi hur man lägger till Ink Annotations till 
 
 #### F: Vad är en bläckanteckning i ett PDF-dokument?
 
-S: En bläckanteckning i ett PDF-dokument låter användare rita bläckanteckningar i fritt format med hjälp av en penna eller mus. Det används ofta för att lägga till handritade skisser, diagram eller andra frihandsanteckningar till en PDF.
+S: En bläckanteckning i ett PDF-dokument låter användare rita bläckanteckningar i fritt format med hjälp av en penna eller mus. Det används vanligtvis för att lägga till handritade skisser, diagram eller andra frihandsanteckningar till en PDF.
 
 #### F: Kan jag anpassa utseendet på bläckanteckningen?
 
-S: Ja, Aspose.PDF för .NET tillhandahåller olika egenskaper för att anpassa utseendet på bläckanteckningen, såsom färg, opacitet, kapsylstil, kantbredd och mer. Utvecklare kan justera dessa egenskaper för att uppfylla deras specifika krav.
+S: Ja, Aspose.PDF för .NET tillhandahåller olika egenskaper för att anpassa utseendet på bläckanteckningen, till exempel färg, opacitet, kapsylstil, kantbredd och mer. Utvecklare kan justera dessa egenskaper för att möta deras specifika krav.
 
 #### F: Är det möjligt att lägga till flera bläckanteckningar på en enda PDF-sida?
 
@@ -128,4 +128,4 @@ S: Ja, Aspose.PDF för .NET låter dig lägga till Ink Annotations till både ny
 
 #### F: Vilka är några vanliga användningsfall för bläckanteckningar i PDF-dokument?
 
-S: Bläckanteckningar är användbara för ett brett spektrum av applikationer, inklusive att lägga till signaturer eller handskrivna anteckningar till PDF-formulär, kommentera arkitektoniska ritningar eller tekniska ritningar och markera dokument för kollaborativ granskning.
+S: Bläckanteckningar är användbara för ett brett spektrum av tillämpningar, inklusive att lägga till signaturer eller handskrivna anteckningar till PDF-formulär, kommentera arkitektoniska ritningar eller tekniska ritningar och markera dokument för gemensam granskning.

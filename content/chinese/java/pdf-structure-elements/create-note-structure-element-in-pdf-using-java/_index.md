@@ -80,7 +80,7 @@ pdfDocument.save("output.pdf");
 
 ## 结论
 
-在本教程中，我们学习了如何使用 Java 和 Aspose.PDF for Java 库在 PDF 中创建注释结构元素。您现在可以通过交互式注释和评论来增强 PDF 文档，为读者提供更丰富的体验。
+在本教程中，我们学习了如何使用 Java 和 Aspose.PDF for Java 库在 PDF 中创建注释结构元素。您现在可以通过交互式注释和评论来增强您的 PDF 文档，为您的读者提供更丰富的体验。
 
 ## 常见问题解答
 

@@ -1,6 +1,6 @@
 ---
-title: Form Alanını Sekme Sırasında Al
-linktitle: Form Alanını Sekme Sırasında Al
+title: Form Alanını Sekme Sırasıyla Al
+linktitle: Form Alanını Sekme Sırasıyla Al
 second_title: .NET API Referansı için Aspose.PDF
 description: Aspose.PDF for .NET'i kullanarak form alanlarını sekme sırasıyla nasıl alacağınızı öğrenin.
 type: docs

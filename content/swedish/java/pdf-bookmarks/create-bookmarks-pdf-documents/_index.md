@@ -37,7 +37,7 @@ import com.aspose.pdf.*;
 
 Låt oss nu fortsätta med att skapa bokmärken i ett PDF-dokument. Vi går igenom processen steg för steg.
 
-### Steg 3: Laddar PDF-dokumentet
+### Steg 3: Ladda PDF-dokumentet
 
 För att arbeta med ett befintligt PDF-dokument måste du först ladda det. Du kan använda följande kodavsnitt för att ladda en PDF-fil:
 
@@ -49,7 +49,7 @@ Document pdfDocument = new Document("your_document.pdf");
 
 ### Steg 4: Lägga till bokmärken
 
- När dokumentet har laddats kan du börja lägga till bokmärken. Bokmärken läggs till i`OutlineCollection` av PDF-dokumentet. Så här skapar du ett bokmärke:
+ När dokumentet har laddats kan du börja lägga till bokmärken. Bokmärken läggs till`OutlineCollection` av PDF-dokumentet. Så här skapar du ett bokmärke:
 
 ```java
 OutlineCollection outlines = pdfDocument.getOutlines();

@@ -207,7 +207,7 @@ Sí, puedes cambiar el color del texto en línea en un PDF usando Aspose.PDF par
 
 ### ¿Cuál es el beneficio de crear archivos PDF accesibles?
 
-Los archivos PDF accesibles benefician a los usuarios con discapacidades al proporcionar características como compatibilidad con lectores de pantalla, opciones de navegación y cumplimiento de estándares de accesibilidad (por ejemplo, PDF/UA).
+Los PDF accesibles benefician a los usuarios con discapacidades al proporcionar características como compatibilidad con lectores de pantalla, opciones de navegación y cumplimiento de estándares de accesibilidad (por ejemplo, PDF/UA).
 
 ### ¿Cómo puedo crear hipervínculos en un PDF?
 

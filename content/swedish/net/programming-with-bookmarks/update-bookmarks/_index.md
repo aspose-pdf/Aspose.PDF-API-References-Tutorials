@@ -1,7 +1,7 @@
 ---
 title: Uppdatera bokmärken i PDF-fil
 linktitle: Uppdatera bokmärken i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Uppdatera enkelt bokmärken i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 100

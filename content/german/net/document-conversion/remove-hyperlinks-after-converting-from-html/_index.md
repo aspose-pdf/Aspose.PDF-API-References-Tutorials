@@ -59,7 +59,7 @@ foreach(Annotation a in doc.Pages[1].Annotations)
 }
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre HTML-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre HTML-Datei befindet.
 
 ## Schritt 2: Speichern der resultierenden PDF-Datei
 Abschließend speichern wir die resultierende PDF-Datei ohne die Hyperlinks. Verwenden Sie den folgenden Code:

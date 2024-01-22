@@ -170,7 +170,7 @@ Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF belgesinin her sayfasına na
 
 #### S: Aspose.PDF for .NET kullanarak bir PDF dosyasına farklı başlıklar eklemenin amacı nedir?
 
-C: Aspose.PDF for .NET kullanarak bir PDF dosyasına farklı başlıklar eklemek, her sayfanın üst kısmında görüntülenen içeriği özelleştirmenize olanak tanır. Bu özellik özellikle bir PDF belgesinin farklı sayfalarına göre değişen başlıklar, bölüm adları, sayfa numaraları ve diğer bilgileri eklemek için kullanışlıdır.
+C: Aspose.PDF for .NET kullanarak bir PDF dosyasına farklı başlıklar eklemek, her sayfanın üst kısmında görüntülenen içeriği özelleştirmenize olanak tanır. Bu özellik özellikle bir PDF belgesinin farklı sayfalarına göre değişen başlıkları, bölüm adlarını, sayfa numaralarını ve diğer bilgileri eklemek için kullanışlıdır.
 
 #### S: Her başlığın hizalama, yazı tipi, boyut, renk ve döndürme gibi görünümünü özelleştirebilir miyim?
 

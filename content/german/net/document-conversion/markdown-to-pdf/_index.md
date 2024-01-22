@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document doc = new Document(dataDir + "sample.md", new MdLoadOptions());
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre Markdown-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre Markdown-Datei befindet.
 
 ## Schritt 2: Konvertierung von Markdown in PDF
 Nach dem Laden der Markdown-Datei können wir mit der Konvertierung in PDF fortfahren. Verwenden Sie den folgenden Code:

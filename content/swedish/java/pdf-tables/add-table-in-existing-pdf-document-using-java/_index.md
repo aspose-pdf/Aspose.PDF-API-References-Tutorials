@@ -10,7 +10,7 @@ url: /sv/java/pdf-tables/add-table-in-existing-pdf-document-using-java/
 
 ## Introduktion till Lägg till tabell i befintliga PDF-dokument med Java
 
-I den här artikeln kommer vi att utforska hur man lägger till en tabell i ett befintligt PDF-dokument med Java. Tabeller är en grundläggande del av många dokument, vilket ger ett strukturerat sätt att visa data. Vi kommer att använda Aspose.PDF för Java-biblioteket för att utföra denna uppgift.
+den här artikeln kommer vi att utforska hur man lägger till en tabell i ett befintligt PDF-dokument med Java. Tabeller är en grundläggande del av många dokument, vilket ger ett strukturerat sätt att visa data. Vi kommer att använda Aspose.PDF för Java-biblioteket för att utföra denna uppgift.
 
 ## Krav
 
@@ -27,7 +27,7 @@ Innan vi börjar, se till att du har följande förutsättningar:
 
 ## Lägga till beroenden
 
- I ditt projekt`pom.xml`(om du använder Maven) eller filen build.gradle (om du använder Gradle), lägg till följande beroende:
+ I ditt projekt`pom.xml` (om du använder Maven) eller filen build.gradle (om du använder Gradle), lägg till följande beroende:
 
 ```xml
 <dependencies>
@@ -113,7 +113,7 @@ pdfDocument.save("modified-document.pdf");
 
 ## Slutsats
 
-den här handledningen har vi lärt oss hur man lägger till en tabell i ett befintligt PDF-dokument med hjälp av Java och Aspose.PDF för Java-biblioteket. Du kan anpassa bordets utseende och innehåll för att möta dina specifika behov. Tabeller är ett värdefullt verktyg för att presentera data i ett strukturerat format i PDF-dokument.
+I den här handledningen har vi lärt oss hur man lägger till en tabell i ett befintligt PDF-dokument med hjälp av Java och Aspose.PDF för Java-biblioteket. Du kan anpassa bordets utseende och innehåll för att möta dina specifika behov. Tabeller är ett värdefullt verktyg för att presentera data i ett strukturerat format i PDF-dokument.
 
 ## FAQ's
 

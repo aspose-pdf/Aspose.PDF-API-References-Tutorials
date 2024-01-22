@@ -1,7 +1,7 @@
 ---
 title: Ändra storlek på bilder i PDF-fil
 linktitle: Ändra storlek på bilder i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg för steg guide för att ändra storlek på bilder i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 250
@@ -15,7 +15,7 @@ Innan du börjar, se till att du har följande:
 
 - Visual Studio eller någon annan utvecklingsmiljö installerad och konfigurerad.
 - Grundläggande kunskaper i programmeringsspråket C#.
-- Aspose.PDF-bibliotek för .NET installerat. Du kan ladda ner den från Asposes officiella hemsida.
+- Aspose.PDF-bibliotek för .NET installerat. Du kan ladda ner den från Asposes officiella webbplats.
 
 ## Steg 1: Laddar PDF-dokumentet
 
@@ -37,7 +37,7 @@ Se till att ange rätt sökväg till ditt PDF-dokument.
 Innan du ändrar storlek på bilderna måste vi initiera optimeringsalternativen. Använd följande kod:
 
 ```csharp
-// Initiera OptimizationOptions
+// Initiera optimeringsalternativ
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
 
 // Aktivera alternativet CompressImages
@@ -79,7 +79,7 @@ var time = DateTime.Now.Ticks;
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "ResizeImage.pdf");
-// Initiera OptimizationOptions
+// Initiera optimeringsalternativ
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();            
 // Ställ in alternativet CompressImages
 optimizeOptions.ImageCompressionOptions.CompressImages = true;            
@@ -109,7 +109,7 @@ S: Att ändra storlek på bilder i en PDF-fil kan hjälpa till att optimera doku
 
 #### F: Hur påverkar bildstorleksändring kvaliteten på bilderna i PDF-dokumentet?
 
- S: Bildstorleksändring innebär att bildernas dimensioner och upplösning minskas, vilket kan resultera i en mindre filstorlek. Även om detta kan försämra bildkvaliteten i viss mån`ImageQuality` parameter (`optimizeOptions.ImageCompressionOptions.ImageQuality`) låter dig kontrollera balansen mellan bildstorlek och kvalitet.
+ S: Bildstorleksändring innebär att bildernas dimensioner och upplösning minskas, vilket kan resultera i en mindre filstorlek. Även om detta kan försämra bildkvaliteten i viss mån`ImageQuality` parameter (`optimizeOptions.ImageCompressionOptions.ImageQuality`) låter dig styra balansen mellan bildstorlek och kvalitet.
 
 ####  F: Vad är syftet med`MaxResolution` option in the optimization settings?
 

@@ -248,7 +248,7 @@ R: Il tutorial fornisce esempi di creazione e aggiunta di intestazioni, righe de
 
 #### D: Cos'è la conformità PDF/UA e come posso convalidarla per il mio documento PDF con tag?
 
- R: La conformità PDF/UA garantisce che il documento PDF sia conforme agli standard di accessibilità, rendendolo più accessibile agli utenti con disabilità. Il tutorial dimostra come convalidare la conformità PDF/UA utilizzando il file`Validate()` metodo e generare un rapporto di conformità XML.
+ R: La conformità PDF/UA garantisce che il documento PDF sia conforme agli standard di accessibilità, rendendolo più accessibile agli utenti con disabilità. Il tutorial dimostra come convalidare la conformità PDF/UA utilizzando il file`Validate()` metodo e generare un report di conformità XML.
 
 #### D: Come posso incorporare questi concetti nelle mie applicazioni .NET?
 

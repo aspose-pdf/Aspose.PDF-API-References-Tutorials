@@ -30,7 +30,7 @@ Aspose.PDF pour Java offre un large éventail de fonctionnalités pour travaille
 Avant de commencer, assurez-vous que les conditions préalables suivantes sont remplies :
 
 - Kit de développement Java (JDK) installé sur votre système.
-- Un éditeur de code tel qu'IntelliJ IDEA ou Eclipse.
+- Un éditeur de code tel que IntelliJ IDEA ou Eclipse.
 -  Aspose.PDF pour la bibliothèque Java. Vous pouvez le télécharger depuis[ici](https://releases.aspose.com/pdf/java/).
 
 ## Configuration de l'environnement

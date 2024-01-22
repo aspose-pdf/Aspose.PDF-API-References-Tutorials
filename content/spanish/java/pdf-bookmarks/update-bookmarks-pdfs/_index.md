@@ -46,7 +46,7 @@ Ahora, creemos un nuevo proyecto Java en su IDE:
 Para trabajar con Aspose.PDF para Java, necesita agregar la biblioteca a su proyecto:
 
 1.  Descargue la biblioteca Aspose.PDF para Java desde[aquí](https://releases.aspose.com/pdf/java/).
-2. Agregue el archivo JAR a la ruta de clases de su proyecto.
+2. Agregue el archivo JAR a la ruta de clase de su proyecto.
 
 ## Actualización de marcadores en archivos PDF
 
@@ -101,7 +101,7 @@ Sí, Aspose.PDF para Java es capaz de manejar documentos PDF de gran tamaño de 
 
 Sí, puede automatizar las actualizaciones de marcadores en el procesamiento por lotes utilizando Aspose.PDF para Java. Puede crear un programa Java para recorrer una colección de archivos PDF y actualizar los marcadores según sea necesario.
 
-### ¿Existen limitaciones o restricciones al utilizar Aspose.PDF para Java para actualizaciones de marcadores?
+### ¿Existe alguna limitación o restricción al utilizar Aspose.PDF para Java para actualizaciones de marcadores?
 
 Si bien Aspose.PDF para Java es una biblioteca versátil, es esencial revisar la documentación y considerar los requisitos o limitaciones específicos según las necesidades de su proyecto. Algunas funciones avanzadas de PDF pueden tener requisitos específicos.
 

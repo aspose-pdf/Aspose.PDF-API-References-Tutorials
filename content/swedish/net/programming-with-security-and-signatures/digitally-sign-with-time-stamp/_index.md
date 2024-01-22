@@ -1,7 +1,7 @@
 ---
 title: Signera digitalt med tidsstämpel i PDF-fil
 linktitle: Signera digitalt med tidsstämpel i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du utför en digital signatur med tidsstämpel i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 50
@@ -67,7 +67,7 @@ using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
 		System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
 		// Skapa någon av de tre signaturtyperna
 		signature.Sign(1, "Signature Reason", "Contact", "Location", true, rect, pkcs);
-		// Spara utdata PDF-fil
+		// Spara utdata-PDF-fil
 		signature.Save(dataDir + "DigitallySignWithTimeStamp_out.pdf");
 	}
 }

@@ -2,7 +2,7 @@
 title: 在 PDF 文件中使用时间戳进行数字签名
 linktitle: 在 PDF 文件中使用时间戳进行数字签名
 second_title: Aspose.PDF for .NET API 参考
-description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中执行带时间戳的数字签名。
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中执行带有时间戳的数字签名。
 type: docs
 weight: 50
 url: /zh/net/programming-with-security-and-signatures/digitally-sign-with-time-stamp/
@@ -50,7 +50,7 @@ using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
 }
 ```
 
-此代码加载 PDF 文件，使用 PFX 文件（私钥）和指定的时间戳参数创建带时间戳的数字签名。然后将签名添加到 PDF 文件中并以后缀“”保存_出去”。
+此代码加载 PDF 文件，使用 PFX 文件（私钥）和指定的时间戳参数创建带有时间戳的数字签名。然后将签名添加到 PDF 文件中并以后缀“”保存_出去”。
 
 ### 使用 Aspose.PDF for .NET 进行数字签名的示例源代码 
 ```csharp
@@ -75,7 +75,7 @@ using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
 
 ## 结论
 
-恭喜！您已使用 Aspose.PDF for .NET 对 PDF 文件成功执行了带时间戳的数字签名。本教程介绍了从创建签名到保存更新的 PDF 文件的分步过程。您现在可以使用此功能向 PDF 文件添加带有时间戳的数字签名。
+恭喜！您已使用 Aspose.PDF for .NET 对 PDF 文件成功执行了带有时间戳的数字签名。本教程介绍了从创建签名到保存更新的 PDF 文件的分步过程。您现在可以使用此功能向 PDF 文件添加带有时间戳的数字签名。
 
 ### 在 PDF 文件中使用时间戳进行数字签名的常见问题解答
 

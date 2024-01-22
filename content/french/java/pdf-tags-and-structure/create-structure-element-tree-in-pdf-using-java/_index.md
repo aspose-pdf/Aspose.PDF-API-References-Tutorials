@@ -76,19 +76,24 @@ Dans ce didacticiel, nous avons montré comment créer une arborescence d'élém
 
 En suivant ces étapes et en incorporant des éléments de structure dans vos documents PDF, vous pouvez rendre votre contenu plus accessible et conforme aux normes d'accessibilité. Il s’agit d’une étape essentielle pour garantir que vos documents sont inclusifs et conviviaux.
 
-## FAQ :
+## FAQ
 
 ### A quoi sert une arborescence d’éléments de structure dans un document PDF ?
-   - Une arborescence d'éléments de structure représente la structure logique du contenu dans un document PDF, permettant l'accessibilité et une communication efficace du contenu aux utilisateurs, en particulier ceux ayant une déficience visuelle.
+
+Une arborescence d'éléments de structure représente la structure logique du contenu dans un document PDF, permettant l'accessibilité et une communication efficace du contenu aux utilisateurs, en particulier ceux ayant une déficience visuelle.
 
 ### Comment puis-je ajouter des images à un document PDF balisé ?
-   -  Vous pouvez utiliser le`com.aspose.pdf.Image` classe pour ajouter des images à un document PDF balisé. Assurez-vous d'associer les éléments de structure appropriés aux images pour plus d'accessibilité.
+
+ Vous pouvez utiliser le`com.aspose.pdf.Image` classe pour ajouter des images à un document PDF balisé. Assurez-vous d'associer les éléments de structure appropriés aux images pour plus d'accessibilité.
 
 ### Les documents PDF balisés sont-ils une exigence pour la conformité en matière d’accessibilité ?
-   - Oui, les documents PDF balisés sont cruciaux pour la conformité en matière d'accessibilité, car ils fournissent une représentation structurée du contenu qui peut être interprété par des technologies d'assistance.
+
+Oui, les documents PDF balisés sont cruciaux pour la conformité en matière d'accessibilité, car ils fournissent une représentation structurée du contenu qui peut être interprété par des technologies d'assistance.
 
 ### Puis-je automatiser le processus de balisage des documents PDF existants ?
-   - Oui, Aspose.PDF pour Java fournit des fonctionnalités permettant de baliser par programme les documents PDF existants afin de les rendre accessibles.
+
+Oui, Aspose.PDF pour Java fournit des fonctionnalités permettant de baliser par programme les documents PDF existants afin de les rendre accessibles.
 
 ### Quelles sont les bonnes pratiques pour créer des documents PDF accessibles ?
-   - Certaines bonnes pratiques incluent l'ajout de texte alternatif aux images, l'utilisation d'une structure de titre appropriée, la fourniture de liens descriptifs et la garantie d'un ordre de lecture logique du contenu.
+
+Certaines bonnes pratiques incluent l'ajout de texte alternatif aux images, l'utilisation d'une structure de titre appropriée, la fourniture de liens descriptifs et la garantie d'un ordre de lecture logique du contenu.

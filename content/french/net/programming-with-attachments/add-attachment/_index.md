@@ -82,7 +82,7 @@ R : L'ajout de pièces jointes à un fichier PDF vous permet d'inclure des él
 
 #### Q : Comment Aspose.PDF pour .NET simplifie-t-il le processus d'ajout de pièces jointes ?
 
-R : Aspose.PDF pour .NET fournit une API simplifiée qui vous permet d'ajouter facilement des pièces jointes aux fichiers PDF. Le code source fourni montre étape par étape comment accomplir cette tâche.
+R : Aspose.PDF pour .NET fournit une API simplifiée qui vous permet d'ajouter facilement des pièces jointes aux fichiers PDF. Le code source fourni montre étape par étape comment accomplir cette tâche.
 
 #### Q : Quels types de fichiers peuvent être joints à un PDF à l’aide d’Aspose.PDF pour .NET ?
 

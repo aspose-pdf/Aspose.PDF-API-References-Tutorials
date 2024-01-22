@@ -77,7 +77,7 @@ Herzlichen Glückwunsch! Sie haben mit Aspose.PDF für .NET erfolgreich ein Bild
 
 A: Das Ersetzen eines Bildes in einer PDF-Datei kann nützlich sein, um Grafiken, Logos oder andere visuelle Elemente in einem PDF-Dokument zu aktualisieren. Damit können Sie Änderungen am Inhalt der PDF-Datei vornehmen, ohne die restliche Struktur oder das Layout des Dokuments zu ändern.
 
-####  F: Welche Rolle spielt das`Document` class play in replacing an image?
+####  F: Welche Rolle spielt das?`Document` class play in replacing an image?
 
  A: Die`Document` Die Klasse aus der Aspose.PDF-Bibliothek wird zum programmgesteuerten Öffnen, Bearbeiten und Speichern von PDF-Dokumenten verwendet. In diesem Tutorial wird es verwendet, um das PDF-Dokument zu öffnen, ein bestimmtes Bild zu ersetzen und das aktualisierte Dokument zu speichern.
 

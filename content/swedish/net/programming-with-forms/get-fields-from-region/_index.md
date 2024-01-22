@@ -1,7 +1,7 @@
 ---
 title: Hämta fält från region i PDF-fil
 linktitle: Hämta fält från region i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Få enkelt fält från en specifik region i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 130
@@ -88,7 +88,7 @@ den här handledningen lärde vi oss hur man hämtar fälten för en specifik re
 
 #### F: Kan jag använda den här metoden för att hämta fält från en icke-rektangulär region i ett PDF-dokument?
 
- S: Nej, den tillhandahållna metoden`GetFieldsInRect` är speciellt utformad för att hämta fält inom ett rektangulärt område i ett PDF-dokument. Om du behöver extrahera fält från en icke-rektangulär region, måste du implementera anpassad logik för att identifiera och extrahera fälten baserat på andra kriterier, såsom fältkoordinater eller namn.
+ S: Nej, den angivna metoden`GetFieldsInRect` är speciellt utformad för att hämta fält inom ett rektangulärt område i ett PDF-dokument. Om du behöver extrahera fält från en icke-rektangulär region, måste du implementera anpassad logik för att identifiera och extrahera fälten baserat på andra kriterier, såsom fältkoordinater eller namn.
 
 #### F: Hur kan jag ändra storleken eller positionen för rektangeln för att få fält från en annan region?
 

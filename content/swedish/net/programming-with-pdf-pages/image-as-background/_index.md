@@ -1,7 +1,7 @@
 ---
 title: Ställ in bild som sidbakgrund i PDF-fil
 linktitle: Ställ in bild som sidbakgrund i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att ställa in en bild som en sidbakgrund i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 110

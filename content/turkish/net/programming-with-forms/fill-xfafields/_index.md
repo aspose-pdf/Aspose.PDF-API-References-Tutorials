@@ -76,7 +76,7 @@ Bu eğitimde Aspose.PDF for .NET kullanarak XFA alanlarının nasıl doldurulaca
 
 #### S: XFA (XML Form Mimarisi) nedir?
 
-C: XFA, PDF belgelerindeki etkileşimli formları tanımlamaya yönelik XML tabanlı bir format olan XML Form Mimarisi anlamına gelir. XFA formları genellikle geleneksel AcroForm'lardan daha karmaşıktır ve dinamik içerik ve komut dosyası içerebilir. Aspose.PDF for .NET, XFA form alanlarının doldurulması için destek sağlar.
+C: XFA, PDF belgelerindeki etkileşimli formları tanımlamak için XML tabanlı bir format olan XML Form Mimarisi anlamına gelir. XFA formları genellikle geleneksel AcroForm'lardan daha karmaşıktır ve dinamik içerik ve komut dosyası içerebilir. Aspose.PDF for .NET, XFA form alanlarının doldurulması için destek sağlar.
 
 #### S: Herhangi bir PDF belgesindeki XFA alanlarını doldurabilir miyim?
 

@@ -25,7 +25,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "ImageInformation.pdf");
 ```
 
-## Étape 3 : définir la résolution par défaut
+## Étape 3 : Définir la résolution par défaut
 
 Dans cette étape, nous définirons la résolution par défaut des images. Dans l'exemple, la résolution par défaut est définie sur 72.
 

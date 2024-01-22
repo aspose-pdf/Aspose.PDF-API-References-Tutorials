@@ -1,7 +1,7 @@
 ---
 title: Sök efter reguljära uttryck i PDF-fil
 linktitle: Sök efter reguljära uttryck i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du söker och hämtar text med reguljära uttryck i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 440
@@ -160,7 +160,7 @@ S: Till att börja, skapa ett nytt C#-projekt i din föredragna integrerade utve
 
 #### F: Hur kan jag aktivera användning av reguljära uttryck för textsökning?
 
- S: Användning av reguljära uttryck aktiveras genom att skapa en`TextSearchOptions` objekt och ange dess värde till`true` . Tilldela detta objekt till`TextSearchOptions` egendom av`TextFragmentAbsorber` exempel. Detta säkerställer att det reguljära uttrycksmönstret tillämpas under textsökning.
+ S: Användning av reguljära uttryck aktiveras genom att skapa en`TextSearchOptions` objekt och ställer in dess värde till`true` . Tilldela detta objekt till`TextSearchOptions` egendom av`TextFragmentAbsorber` exempel. Detta säkerställer att det reguljära uttrycksmönstret tillämpas under textsökning.
 
 #### F: Kan jag hämta textfragment som matchar det reguljära uttrycksmönstret?
 

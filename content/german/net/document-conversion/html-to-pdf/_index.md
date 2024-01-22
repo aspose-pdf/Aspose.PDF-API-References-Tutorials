@@ -29,7 +29,7 @@ options.CustomLoaderOfExternalResources = new LoadOptions.ResourceLoadingStrateg
 Document pdfDocument = new Document(dataDir + "HTMLToPDF.html", options);
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre HTML-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre HTML-Datei befindet.
 
 ## Schritt 2: HTML-Ladeoptionen
 Nachdem wir nun die HTML-Datei geladen haben, können wir bestimmte Ladeoptionen festlegen. Verwenden Sie den folgenden Code:

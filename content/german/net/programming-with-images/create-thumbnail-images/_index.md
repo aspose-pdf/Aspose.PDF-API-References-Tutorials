@@ -108,7 +108,7 @@ A: Durch die Angabe des Dokumentverzeichnisses wird sichergestellt, dass die PDF
 
  A: Die`Document` Mit der Klasse können Sie PDF-Dokumente öffnen und bearbeiten. In diesem Fall werden damit die PDF-Dateien geladen, aus denen Miniaturbilder erstellt werden.
 
-####  F: Welche Rolle spielt das`JpegDevice` class play in the creation of thumbnail images?
+####  F: Welche Rolle spielt das?`JpegDevice` class play in the creation of thumbnail images?
 
  A: Die`JpegDevice` Die Klasse ist für die Konvertierung von PDF-Seiten in JPEG-Bilder verantwortlich, die als Miniaturbilder verwendet werden. Sie können Attribute wie Breite, Höhe, Auflösung und Qualität angeben.
 

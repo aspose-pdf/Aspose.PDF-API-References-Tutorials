@@ -46,7 +46,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 }
 ```
 
- Wir erstellen ein`graphicsState` Stapel zum Speichern von Grafikzuständen, ein Bitmap-Bild zum Erfassen des extrahierten Randes, a`GraphicsPath` Objekt zum Speichern von Zeichenpfaden und anderen Variablen zum Verfolgen von Status und Farben.
+ Wir erstellen eine`graphicsState` Stapel zum Speichern von Grafikzuständen, ein Bitmap-Bild zum Erfassen des extrahierten Randes, a`GraphicsPath` Objekt zum Speichern von Zeichenpfaden und anderen Variablen zum Verfolgen von Status und Farben.
 
 ## Schritt 4: Transaktionsverarbeitung
 In diesem Schritt verarbeiten wir jeden Vorgang des Dokuments, um den Rand zu extrahieren.

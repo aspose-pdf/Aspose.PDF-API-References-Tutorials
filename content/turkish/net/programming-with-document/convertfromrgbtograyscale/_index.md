@@ -78,11 +78,11 @@ C: Bir PDF belgesini RGB'den Gri tonlamaya dönüştürmek, dosya boyutunu küç
 
 #### S: Dönüşümü geri alıp orijinal RGB renklerini geri yükleyebilir miyim?
 
-C: Hayır, RGB'den Gri Tonlamaya dönüşüm geri alınamaz. Dönüştürme gerçekleştirilip PDF belgesi kaydedildikten sonra orijinal RGB renkleri kaybolur. Herhangi bir renk alanı dönüşümü gerçekleştirmeden önce orijinal belgenin yedeğini almanız önerilir.
+C: Hayır, RGB'den Gri Tonlamaya dönüşüm geri döndürülemez. Dönüştürme gerçekleştirilip PDF belgesi kaydedildikten sonra orijinal RGB renkleri kaybolur. Herhangi bir renk alanı dönüşümü gerçekleştirmeden önce orijinal belgenin yedeğini almanız önerilir.
 
 #### S: Gri tonlamaya dönüştürmek PDF belgesinin görsel görünümünü etkiler mi?
 
-C: Evet, bir PDF belgesini Gri tonlamaya dönüştürmek, renk bilgisini kaldırarak siyah beyaz bir gösterime neden olur. Belgenin görsel görünümü değişebilir ancak içeriği ve metni değişmeden kalır.
+C: Evet, bir PDF belgesini Gri tonlamaya dönüştürmek renk bilgisini kaldıracak ve siyah beyaz bir sunumla sonuçlanacaktır. Belgenin görsel görünümü değişebilir ancak içeriği ve metni değişmeden kalır.
 
 #### S: Bu dönüşümü yalnızca belirli sayfalara uygulayabilir miyim?
 

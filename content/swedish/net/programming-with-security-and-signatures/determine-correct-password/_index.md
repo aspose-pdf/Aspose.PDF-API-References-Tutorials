@@ -1,7 +1,7 @@
 ---
 title: Bestäm rätt lösenord i PDF-fil
 linktitle: Bestäm rätt lösenord i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du bestämmer rätt lösenord i PDF-filen med Aspose.PDF för .NET.
 type: docs
 weight: 30
@@ -40,7 +40,7 @@ info.BindPdf(dataDir + "IsPasswordProtected.pdf");
 
 Se till att ersätta platshållarna med de faktiska platserna för din PDF-fil.
 
-## Steg 4: Bestäm källkod för PDF-kryptering
+## Steg 4: Bestäm källa för PDF-kryptering
 
 När du har laddat upp käll-PDF-filen kan du avgöra om den är krypterad med hjälp av`IsEncrypted` metod för`PdfFileInfo` objekt.
 

@@ -2,7 +2,7 @@
 title: PDF Metin Çıkarma
 linktitle: PDF Metin Çıkarma
 second_title: Aspose.PDF Java PDF İşleme API'si
-description: Aspose.PDF for Java ile PDF metin çıkarmayı öğrenin. PDF'lerden verimli metin ayıklamak için adım adım eğitimler edinin.
+description: Aspose.PDF for Java ile PDF metin çıkarmayı öğrenin. PDF'lerden verimli metin ayıklamak için adım adım eğitimler alın.
 type: docs
 weight: 23
 url: /tr/java/pdf-text-extraction/

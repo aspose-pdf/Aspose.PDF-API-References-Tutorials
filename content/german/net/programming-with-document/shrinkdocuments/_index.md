@@ -56,7 +56,7 @@ pdfDocument.Save(dataDir);
 
 ## Abschluss
 
-Zusammenfassend bietet Aspose.PDF für .NET eine einfache und effektive Möglichkeit, PDF-Dokumente programmgesteuert mit C# zu verkleinern. Indem Sie die in diesem Tutorial beschriebenen Schritte befolgen, können Sie große PDF-Dateien optimieren und ihre Größe reduzieren, ohne die Qualität oder den Inhalt des Dokuments zu beeinträchtigen.
+Zusammenfassend lässt sich sagen, dass Aspose.PDF für .NET eine einfache und effektive Möglichkeit bietet, PDF-Dokumente programmgesteuert mit C# zu verkleinern. Indem Sie die in diesem Tutorial beschriebenen Schritte befolgen, können Sie große PDF-Dateien optimieren und ihre Größe reduzieren, ohne die Qualität oder den Inhalt des Dokuments zu beeinträchtigen.
 
 ### FAQs zum Verkleinern von PDF-Dokumenten
 

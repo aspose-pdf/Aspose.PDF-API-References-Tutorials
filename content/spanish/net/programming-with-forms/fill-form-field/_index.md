@@ -74,11 +74,11 @@ En este tutorial, aprendimos cómo completar un campo de formulario usando Aspos
 
 #### P: ¿Puedo completar varios campos de formulario en un documento PDF usando Aspose.PDF para .NET?
 
-R: Sí, puede completar varios campos de formulario en un documento PDF usando Aspose.PDF para .NET. Después de abrir el documento PDF, puede obtener cada campo del formulario individualmente y modificar su valor según sea necesario.
+R: Sí, puede completar varios campos de formulario en un documento PDF utilizando Aspose.PDF para .NET. Después de abrir el documento PDF, puede obtener cada campo del formulario individualmente y modificar su valor según sea necesario.
 
 #### P: ¿Cómo puedo encontrar los nombres de los campos del formulario en un documento PDF?
 
- R: Para encontrar los nombres de los campos de formulario en un documento PDF, puede iterar a través del`pdfDocument.Form.Fields` recopilación. Cada campo del formulario tiene un`FullName` propiedad que contiene su nombre único. Puede utilizar estos nombres para identificar y modificar campos de formulario específicos.
+ R: Para encontrar los nombres de los campos de formulario en un documento PDF, puede recorrer el`pdfDocument.Form.Fields` recopilación. Cada campo del formulario tiene un`FullName` propiedad que contiene su nombre único. Puede utilizar estos nombres para identificar y modificar campos de formulario específicos.
 
 #### P: ¿Qué pasa si el campo del formulario que deseo completar no existe en el documento PDF?
 

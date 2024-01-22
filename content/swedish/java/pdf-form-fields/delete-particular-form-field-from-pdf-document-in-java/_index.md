@@ -69,7 +69,7 @@ Grattis! Du har framgångsrikt tagit bort ett visst formulärfält från ett PDF
 
 ### Hur hittar jag namnet på ett formulärfält i ett PDF-dokument?
 
-Du kan vanligtvis hitta namnet på ett formulärfält genom att inspektera PDF-dokumentets struktur eller genom att använda en PDF-redigerare som låter dig visa formulärfältegenskaper.
+Du kan vanligtvis hitta namnet på ett formulärfält genom att inspektera PDF-dokumentets struktur eller genom att använda en PDF-redigerare som låter dig se formulärfältegenskaper.
 
 ### Finns det några begränsningar för att använda Aspose.PDF för Java?
 

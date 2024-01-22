@@ -1,7 +1,7 @@
 ---
 title: Rita linje
 linktitle: Rita linje
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du drar en linje över en sida med Aspose.PDF för .NET. Steg-för-steg-guide för att skapa anpassade linjer.
 type: docs
 weight: 80

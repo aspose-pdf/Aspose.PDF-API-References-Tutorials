@@ -81,7 +81,7 @@ In questa guida passo passo, abbiamo dimostrato come controllare la qualità del
 
 ### Posso aggiungere più timbri immagine a un singolo PDF?
 
-Sì, puoi aggiungere più timbri immagine a un documento PDF ripetendo la procedura per ciascun timbro immagine che desideri aggiungere.
+Sì, puoi aggiungere più timbri immagine a un documento PDF ripetendo la procedura per ogni timbro immagine che desideri aggiungere.
 
 ### Aspose.PDF per Java è l'unica libreria per questa attività?
 

@@ -57,7 +57,7 @@ Console.WriteLine("Value : {0} ", textBoxField.Value);
 
 ## Conclusión
 
-En este tutorial, aprendimos cómo obtener el valor de un campo de formulario usando Aspose.PDF para .NET. Siguiendo estos pasos, puede extraer fácilmente el valor de un campo de formulario específico en sus documentos PDF usando Aspose.PDF.
+En este tutorial, aprendimos cómo obtener el valor de un campo de formulario usando Aspose.PDF para .NET. Siguiendo estos pasos, puede extraer fácilmente el valor de un campo de formulario específico en sus documentos PDF utilizando Aspose.PDF.
 
 ### Preguntas frecuentes
 

@@ -40,7 +40,7 @@ public class XSLFOTutorial {
             String inputFilePath = "input.fo";
             String outputFilePath = "output.pdf";
 
-            // Инициализация XslFoLoadOptions
+            // Инициализировать XslFoLoadOptions
             XslFoLoadOptions options = new XslFoLoadOptions();
 
             // Загрузите документ XSL-FO

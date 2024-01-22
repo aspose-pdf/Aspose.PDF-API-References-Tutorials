@@ -9,7 +9,7 @@ url: /it/java/pdf-page-manipulation/add-html-string-using-dom-in-java/
 ---
 
 # introduzione
-In questo tutorial esploreremo come aggiungere stringhe HTML ai documenti PDF utilizzando la libreria Aspose.PDF per Java. Aspose.PDF è un potente strumento per lavorare con file PDF in applicazioni Java. L'aggiunta di contenuto HTML a un PDF può essere utile negli scenari in cui desideri includere testo dinamico o formattato nel documento PDF. Ti guideremo attraverso il processo con esempi di codice, quindi iniziamo.
+In questo tutorial esploreremo come aggiungere stringhe HTML ai documenti PDF utilizzando la libreria Aspose.PDF per Java. Aspose.PDF è un potente strumento per lavorare con file PDF nelle applicazioni Java. L'aggiunta di contenuto HTML a un PDF può essere utile negli scenari in cui desideri includere testo dinamico o formattato nel documento PDF. Ti guideremo attraverso il processo con esempi di codice, quindi iniziamo.
 
 ## Prerequisiti
 Prima di iniziare, assicurati di disporre dei seguenti prerequisiti:

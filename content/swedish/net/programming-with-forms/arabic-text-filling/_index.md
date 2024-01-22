@@ -1,7 +1,7 @@
 ---
 title: Arabisk textfyllning
 linktitle: Arabisk textfyllning
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Fyll enkelt i PDF-formulärfält med arabisk text med Aspose.PDF för .NET.
 type: docs
 weight: 20

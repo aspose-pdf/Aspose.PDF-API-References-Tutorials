@@ -26,9 +26,9 @@ Aspose.PDF for Java, geliştiricilerin Java uygulamalarında PDF dosyalarıyla �
 
 ## Resim Damgalarını Anlamak
 
-PDF'lerdeki resim damgaları, bilgi veya markayı iletmek için bir belgeye eklenebilen grafik öğelerdir. Bu eğitimde, kayan kutular içine arka plan olarak resim damgaları eklemeye odaklanacağız; bu, özellikle şablonlar, antetli kağıtlar veya formlar oluşturmak için yararlı olabilir.
+PDF'lerdeki resim damgaları, bilgi veya markayı iletmek için bir belgeye eklenebilen grafik öğelerdir. Bu eğitimde, özellikle şablonlar, antetli kağıtlar veya formlar oluşturmak için yararlı olabilecek kayan kutuların içine arka plan olarak resim damgaları eklemeye odaklanacağız.
 
-## Geliştirme Ortamınızı Hazırlamak
+## Geliştirme Ortamınızı Hazırlama
 
  Koda dalmadan önce geliştirme ortamınızı ayarlamanız gerekir. Java projenizde Aspose.PDF for Java kütüphanesinin kurulu ve yapılandırılmış olduğundan emin olun. Kütüphaneyi adresinden indirebilirsiniz.[Burada](https://releases.aspose.com/pdf/java/).
 

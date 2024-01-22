@@ -42,7 +42,7 @@ Initialisez un nouveau document PDF :
 Document pdfDocument = new Document();
 ```
 
-## Étape 4 : Ajouter des pages au PDF
+## Étape 4 : ajouter des pages au PDF
 
 Ajoutez les pages nécessaires à votre document PDF. Pour chaque page, vous pouvez définir différents en-têtes selon vos besoins. Voici un exemple d'ajout de trois pages :
 

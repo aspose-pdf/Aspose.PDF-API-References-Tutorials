@@ -1,7 +1,7 @@
 ---
 title: Sida till EMF
 linktitle: Sida till EMF
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg för steg guide för att konvertera PDF-sida till EMF-format med Aspose.PDF för .NET.
 type: docs
 weight: 210

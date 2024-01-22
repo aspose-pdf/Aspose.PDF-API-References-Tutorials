@@ -25,7 +25,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc1 = new Document(dataDir + "input.pdf");
 ```
 
- نحن هنا نفتح مستند PDF باستخدام Aspose.PDF`Document`فئة وتحديد المسار إلى ملف PDF الإدخال.
+ نحن هنا نفتح مستند PDF باستخدام ملف Aspose.PDF`Document`فئة وتحديد المسار إلى ملف PDF الإدخال.
 
 ## الخطوة 3: تحديث حجم الخط ولون التعليق التوضيحي للنص المجاني
 

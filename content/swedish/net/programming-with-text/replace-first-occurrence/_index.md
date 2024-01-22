@@ -1,7 +1,7 @@
 ---
 title: Ersätt första förekomsten
 linktitle: Ersätt första förekomsten
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du ersätter den första förekomsten av text i ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 330

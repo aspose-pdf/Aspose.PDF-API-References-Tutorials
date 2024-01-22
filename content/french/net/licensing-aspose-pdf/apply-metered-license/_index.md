@@ -109,7 +109,7 @@ R : Les licences limitées conviennent aux projets avec une utilisation variab
 
 #### Q : Comment puis-je assurer la sécurité de mes clés de licence mesurées ?
 
-R : Les clés de licence limitées sont utilisées pour l'authentification et constituent des informations sensibles. Assurez-vous qu’ils restent confidentiels et ne soient pas partagés publiquement.
+R : Les clés de licence limitées sont utilisées pour l'authentification et constituent des informations sensibles. Assurez-vous qu’ils restent confidentiels et ne sont pas partagés publiquement.
 
 #### Q : Puis-je basculer entre une licence traditionnelle et une licence limitée ?
 

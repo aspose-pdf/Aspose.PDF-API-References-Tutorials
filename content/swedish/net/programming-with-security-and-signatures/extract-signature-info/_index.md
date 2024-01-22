@@ -1,7 +1,7 @@
 ---
 title: Extrahera signaturinformation
 linktitle: Extrahera signaturinformation
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Extrahera signaturinformation med Aspose.PDF för .NET.
 type: docs
 weight: 80

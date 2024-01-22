@@ -1,7 +1,7 @@
 ---
 title: Göm sidnummer i innehållsförteckningen
 linktitle: Göm sidnummer i innehållsförteckningen
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du döljer sidnummer i en innehållsförteckning med Aspose.PDF för .NET med denna steg-för-steg-guide.
 type: docs
 weight: 220

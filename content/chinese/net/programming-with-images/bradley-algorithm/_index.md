@@ -122,7 +122,7 @@ System.Console.WriteLine("Conversion using bradley algorithm performed successfu
 
 答：布拉德利算法是一种图像处理技术，用于增强图像质量和清晰度。 Aspose.PDF for .NET 提供了一种将 Bradley 算法应用于 PDF 文档的便捷方法，从而改善图像质量。
 
-#### 问：如何设置环境以将 Bradley 算法与 Aspose.PDF for .NET 结合使用？
+#### 问：如何设置环境以将 Bradley 算法与 Aspose.PDF for .NET 一起使用？
 
 答：开始之前，请确保您已正确安装 Aspose.PDF for .NET 并配置好您的开发环境。
 

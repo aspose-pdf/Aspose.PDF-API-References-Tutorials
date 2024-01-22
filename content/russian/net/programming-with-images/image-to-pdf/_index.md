@@ -175,7 +175,7 @@ Console.WriteLine("\nImage converted to pdf successfully.\nFile saved at " + dat
 ####  Вопрос 5: Какую роль играет`Document` object play in the image-to-PDF conversion process?
  А:`Document` Объект представляет PDF-документ, который вы создадите. Он действует как контейнер для страниц, абзацев и различных элементов PDF.
 
-#### Вопрос: Как изображение загружается в PDF-документ с помощью Aspose.PDF for .NET?
+#### Вопрос: Как изображение загружается в PDF-документ с помощью Aspose.PDF для .NET?
 
  О: Изображение загружается в PDF-документ путем создания`Aspose.Pdf.Image` объект и присвоение данных изображения его`ImageStream` свойство. Затем этот объект добавляется в`Paragraphs` коллекция PDF-страницы.
 

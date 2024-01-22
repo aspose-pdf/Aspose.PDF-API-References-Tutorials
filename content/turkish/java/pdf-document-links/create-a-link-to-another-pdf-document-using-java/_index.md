@@ -10,7 +10,7 @@ url: /tr/java/pdf-document-links/create-a-link-to-another-pdf-document-using-jav
 
 ## Java Kullanarak Başka Bir PDF Belgesine Bağlantı Oluşturmaya Giriş
 
-Bu eğitimde, Java ve Aspose.PDF for Java kütüphanesini kullanarak başka bir PDF belgesine nasıl bağlantı oluşturulacağını inceleyeceğiz. PDF belgelerindeki bağlantılar, etkileşimli ve birbirine bağlı PDF'ler oluşturmak için inanılmaz derecede yararlı olabilir. İster ek bilgi sağlamak, ister bir dizin oluşturmak, ister yalnızca ilgili belgeleri birbirine bağlamak isteyin, bu kılavuz süreç boyunca size adım adım yol gösterecektir.
+Bu eğitimde, Java ve Aspose.PDF for Java kütüphanesini kullanarak başka bir PDF belgesine nasıl bağlantı oluşturulacağını inceleyeceğiz. PDF belgelerindeki bağlantılar, etkileşimli ve birbirine bağlı PDF'ler oluşturmak için inanılmaz derecede yararlı olabilir. İster ek bilgi sağlamak, ister bir dizin oluşturmak, ister sadece ilgili belgeleri birbirine bağlamak isteyin, bu kılavuz süreç boyunca size adım adım yol gösterecektir.
 
 ## Aspose.PDF for Java'yı Anlamak
 

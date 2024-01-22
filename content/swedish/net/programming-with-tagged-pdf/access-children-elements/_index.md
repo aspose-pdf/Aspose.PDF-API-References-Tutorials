@@ -1,7 +1,7 @@
 ---
 title: Få tillgång till barnelement
 linktitle: Få tillgång till barnelement
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att komma åt och redigera underordnade delar av ett PDF-dokument med Aspose.PDF för .NET. Anpassa ditt PDF-innehåll.
 type: docs
 weight: 10

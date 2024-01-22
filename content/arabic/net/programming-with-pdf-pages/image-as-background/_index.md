@@ -66,7 +66,7 @@ doc.Save(dataDir + "ImageAsBackground_out.pdf");
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // قم بإنشاء كائن مستند جديد
 Document doc = new Document();
-// إضافة صفحة جديدة إلى كائن الوثيقة
+// إضافة صفحة جديدة إلى كائن المستند
 Page page = doc.Pages.Add();
 // إنشاء كائن قطعة أثرية في الخلفية
 BackgroundArtifact background = new BackgroundArtifact();

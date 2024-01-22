@@ -1,7 +1,7 @@
 ---
 title: Hämta PDF-egenskaper
 linktitle: Hämta PDF-egenskaper
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg guide för att få PDF-egenskaper som boxdimensioner och rotation med Aspose.PDF för .NET.
 type: docs
 weight: 100

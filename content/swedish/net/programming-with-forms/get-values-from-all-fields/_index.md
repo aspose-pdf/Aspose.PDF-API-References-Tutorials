@@ -1,7 +1,7 @@
 ---
 title: Få värden från alla fält i PDF-dokument
 linktitle: Få värden från alla fält i PDF-dokument
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Få enkelt värdena för alla formulärfält i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 150

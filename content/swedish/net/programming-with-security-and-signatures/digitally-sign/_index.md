@@ -1,7 +1,7 @@
 ---
 title: Logga in digitalt PDF-fil
 linktitle: Logga in digitalt PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du loggar in en PDF-fil digitalt med Aspose.PDF för .NET.
 type: docs
 weight: 40
@@ -104,7 +104,7 @@ try
 			signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
 			// Skapa någon av de tre signaturtyperna
 			signature.Certify(1, "Signature Reason", "Contact", "Location", true, rect, docMdpSignature);
-			// Spara utdata PDF-fil
+			// Spara utdata-PDF-fil
 			signature.Save(outFile);
 		}
 	}

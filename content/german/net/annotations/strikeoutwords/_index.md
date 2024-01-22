@@ -2,7 +2,7 @@
 title: Wörter durchstreichen
 linktitle: Wörter durchstreichen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Dieser Artikel enthält eine Schritt-für-Schritt-Anleitung zur Verwendung von Aspose.PDF für die Funktion „Wörter durchstreichen“ in .NET, einschließlich Schritt-für-Schritt-Anleitung und Erklärungen
+description: Dieser Artikel enthält eine Schritt-für-Schritt-Anleitung zur Verwendung von Aspose.PDF für die Funktion „Wörter durchstreichen“ in .NET, einschließlich einer Schritt-für-Schritt-Anleitung und Erklärungen
 type: docs
 weight: 150
 url: /de/net/annotations/strikeoutwords/

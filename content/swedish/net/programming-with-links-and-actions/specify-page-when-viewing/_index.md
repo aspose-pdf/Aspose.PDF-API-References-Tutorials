@@ -1,7 +1,7 @@
 ---
 title: Ange sida vid visning
 linktitle: Ange sida vid visning
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du anger en sida när du visar en PDF med Aspose.PDF för .NET.
 type: docs
 weight: 110

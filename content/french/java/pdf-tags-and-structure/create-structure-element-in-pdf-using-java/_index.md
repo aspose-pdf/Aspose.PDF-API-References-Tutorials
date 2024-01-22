@@ -64,19 +64,24 @@ Dans ce didacticiel, nous avons appris à créer des éléments de structure dan
 
 N'hésitez pas à explorer la documentation Aspose.PDF[ici](https://reference.aspose.com/pdf/java/) pour des fonctionnalités plus avancées et des options de personnalisation.
 
-## FAQ :
+## FAQ
 
-1. ## Que sont les éléments de structure dans un document PDF ?
-   Les éléments de structure d'un document PDF définissent la structure logique et l'ordre de lecture du contenu, rendant les PDF accessibles à tous les utilisateurs.
+### Que sont les éléments de structure dans un document PDF ?
 
-2. ## Puis-je ajouter des images et des tableaux comme éléments de structure ?
-   Oui, vous pouvez utiliser des éléments de structure pour représenter des images, des tableaux, des titres, des paragraphes et d'autres types de contenu dans un PDF.
+Les éléments de structure d'un document PDF définissent la structure logique et l'ordre de lecture du contenu, rendant les PDF accessibles à tous les utilisateurs.
 
-3. ## Aspose.PDF est-elle la seule bibliothèque permettant de travailler avec des PDF en Java ?
-   Non, il existe d'autres bibliothèques disponibles, mais Aspose.PDF est un choix puissant et riche en fonctionnalités pour la manipulation de PDF en Java.
+### Puis-je ajouter des images et des tableaux comme éléments de structure ?
 
-4. ## Comment puis-je personnaliser l’apparence des éléments de structure ?
-   Vous pouvez utiliser des styles et des attributs CSS pour personnaliser l'apparence des éléments de structure dans votre document PDF.
+Oui, vous pouvez utiliser des éléments de structure pour représenter des images, des tableaux, des titres, des paragraphes et d'autres types de contenu dans un PDF.
 
-5. ## Les éléments de structure sont-ils obligatoires pour tous les PDF ?
-   Si les éléments de structure sont essentiels à l'accessibilité, leur utilisation dépend des exigences spécifiques de vos documents PDF.
+### Aspose.PDF est-elle la seule bibliothèque permettant de travailler avec des PDF en Java ?
+
+Non, il existe d'autres bibliothèques disponibles, mais Aspose.PDF est un choix puissant et riche en fonctionnalités pour la manipulation de PDF en Java.
+
+### Comment puis-je personnaliser l’apparence des éléments de structure ?
+
+Vous pouvez utiliser des styles et des attributs CSS pour personnaliser l'apparence des éléments de structure dans votre document PDF.
+
+### Les éléments de structure sont-ils obligatoires pour tous les PDF ?
+
+Si les éléments de structure sont essentiels à l'accessibilité, leur utilisation dépend des exigences spécifiques de vos documents PDF.

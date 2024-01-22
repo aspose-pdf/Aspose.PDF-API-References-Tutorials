@@ -82,7 +82,7 @@ Per installare Aspose.PDF per Java, attenersi alla seguente procedura:
 
 ### Posso utilizzare Aspose.PDF per Java gratuitamente?
 
-Aspose.PDF per Java è una libreria commerciale e viene fornita con una versione di prova. Tuttavia, per un utilizzo completo, sarà necessario acquistare una licenza da Aspose.
+Aspose.PDF per Java è una libreria commerciale e viene fornita con una versione di prova. Tuttavia, per un utilizzo completo, dovrai acquistare una licenza da Aspose.
 
 ### È possibile aggiungere testo alternativo alle immagini taggate nel PDF?
 

@@ -20,7 +20,7 @@ Aspose.PDF för .NET Tutorials är en omfattande och detaljerad guide till hur d
 | [Programmering med tabeller](./programming-with-tables/) | Lär dig hur du programmerar med tabeller i Aspose.PDF för .NET med steg-för-steg handledning. | 
 | [Programmering med PDF-sidor](./programming-with-pdf-pages/) | Kolla in programmeringshandledningar med PDF-sidor med Aspose.PDF för .NET. Lär dig hur du manipulerar och anpassar sidorna i PDF-filer. |
 | [Programmering med grafer](./programming-with-graphs/) | Hitta handledningar om programmering med grafik i Aspose.PDF för .NET. Lär dig hur du skapar och anpassar grafik i dina PDF-dokument. |
-| [Programmering med säkerhet och signaturer](./programming-with-security-and-signatures/) | Handledningen Programmering med säkerhet och signaturer lär dig hur du säkrar och signerar dina PDF-dokument, vilket säkerställer konfidentialitet och äkthet. |
+| [Programmering med säkerhet och signaturer](./programming-with-security-and-signatures/) | Handledning för programmering med säkerhet och signaturer lär dig hur du skyddar och signerar dina PDF-dokument, vilket säkerställer konfidentialitet och äkthet. |
 | [Programmering med bilagor](./programming-with-attachments/) | Lär dig hur du manipulerar bilagor i PDF-dokument, inklusive att lägga till, extrahera och ta bort dem, för att förbättra funktionaliteten hos PDF-filer. |
 | [Programmering med bokmärken](./programming-with-bookmarks/) | Lär dig hur du manipulerar, hanterar och anpassar bokmärken i dina PDF-dokument för bättre navigering och förbättrad användarupplevelse. |
 | [Programmering med rubriker](./programming-with-headings/) | Aspose.PDF för .NET-handledningarna leder dig genom att använda rubriker för att förbättra strukturen i dina PDF-dokument. |

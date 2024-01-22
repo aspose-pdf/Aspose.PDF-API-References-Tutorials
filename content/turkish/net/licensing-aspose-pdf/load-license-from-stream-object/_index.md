@@ -91,7 +91,7 @@ Bu eğitimde Aspose.PDF for .NET kullanarak bir Stream nesnesinden nasıl lisans
 
 #### S: Bir Stream nesnesinden lisans yüklemenin avantajı nedir?
 
-C: Bir Akış nesnesinden lisans yüklemek, lisans verilerini doğrudan bir akıştan sağlamanıza olanak tanır; bu, lisans dosyasının bellekte saklandığı veya uzak bir kaynaktan alındığı senaryolarda faydalı olabilir.
+C: Bir Akış nesnesinden lisans yüklemek, lisans verilerini doğrudan bir akıştan sağlamanıza olanak tanır; bu, lisans dosyasının bellekte saklandığı veya uzak bir kaynaktan alındığı senaryolarda yararlı olabilir.
 
 #### S: Aspose.PDF için gerekli ad alanlarını nasıl içe aktarabilirim?
 

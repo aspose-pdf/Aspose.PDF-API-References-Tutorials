@@ -32,7 +32,7 @@ Bevor wir die Konvertierung durchführen, müssen wir die notwendigen Variablen 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentenverzeichnis.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentenverzeichnis.
 
 ## Schritt 4: Seiten in Bilder konvertieren
 Um PDF-Dokumentseiten in Bilder zu konvertieren, gehen Sie folgendermaßen vor:
@@ -117,7 +117,7 @@ A: Das Konvertieren von PDF-Dokumentseiten in einzelne Bilder kann für verschie
 
 #### F: Kann ich die Bildauflösung und -qualität während des Konvertierungsvorgangs anpassen?
 
- A: Ja, Sie können die Bildauflösung und -qualität anpassen, indem Sie ein erstellen`Resolution` Objekt und Angabe der gewünschten Werte. Im bereitgestellten Code`Resolution resolution = new Resolution(300)` stellt die Auflösung auf 300 DPI ein und`JpegDevice jpegDevice = new JpegDevice(resolution, 100)` gibt die Bildqualität mit 100 an.
+ A: Ja, Sie können die Bildauflösung und -qualität anpassen, indem Sie ein erstellen`Resolution` Objekt und Angabe der gewünschten Werte. Im bereitgestellten Code`Resolution resolution = new Resolution(300)` stellt die Auflösung auf 300 DPI ein und`JpegDevice jpegDevice = new JpegDevice(resolution, 100)` Gibt die Bildqualität als 100 an.
 
 #### F: Wie lege ich das Ausgabedateiformat und die Benennung für die konvertierten Bilder fest?
 

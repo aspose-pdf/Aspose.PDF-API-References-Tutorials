@@ -1,7 +1,7 @@
 ---
 title: Lägg till ritning i PDF-fil
 linktitle: Lägg till ritning i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du lägger till ritning i PDF-fil med Aspose.PDF för .NET. Följ den här steg-för-steg-guiden för att skapa attraktiva PDF-dokument med ritfunktioner.
 type: docs
 weight: 10

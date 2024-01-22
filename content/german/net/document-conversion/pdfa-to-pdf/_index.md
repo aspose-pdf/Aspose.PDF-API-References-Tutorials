@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document doc = new Document(dataDir + "PDFAToPDF.pdf");
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDFA-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDFA-Datei befindet.
 
 ## Schritt 2: Entfernung der PDF/A-Konformitätsinformationen
 Jetzt entfernen wir die PDF/A-Konformitätsinformationen aus dem Dokument. Verwenden Sie den folgenden Code:

@@ -107,7 +107,7 @@ In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET ein Optio
 
  A: Ja, Sie können das Erscheinungsbild des Optionsfelds mithilfe von anpassen`Rectangle` Koordinaten des Objekts, um seine Größe und Position zu definieren. Mit Aspose.PDF für .NET können Sie das Erscheinungsbild des Optionsfelds an Ihre Bedürfnisse anpassen.
 
-#### F: Kann ich mehrere Optionsfelder mit unterschiedlichen Gruppen auf derselben Seite hinzufügen?
+#### F: Kann ich auf derselben Seite mehrere Optionsfelder mit unterschiedlichen Gruppen hinzufügen?
 
 A: Ja, Sie können auf derselben Seite mehrere Optionsfelder mit unterschiedlichen Gruppen hinzufügen. Jede Gruppe von Optionsfeldern kann einen eindeutigen Namen haben und es kann jeweils nur eine Option innerhalb jeder Gruppe ausgewählt werden.
 

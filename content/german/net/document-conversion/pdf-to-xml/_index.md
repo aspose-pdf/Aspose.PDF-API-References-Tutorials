@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
 
 ## Schritt 2: Speichern der resultierenden XML-Datei
 Jetzt speichern wir die konvertierte PDF-Datei im XML-Format. Verwenden Sie den folgenden Code:

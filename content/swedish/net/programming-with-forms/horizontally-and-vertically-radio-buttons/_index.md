@@ -1,7 +1,7 @@
 ---
 title: Horisontellt Och Vertikalt Radioknappar
 linktitle: Horisontellt Och Vertikalt Radioknappar
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Skapa enkelt horisontella och vertikala alternativknappar i dina PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 180

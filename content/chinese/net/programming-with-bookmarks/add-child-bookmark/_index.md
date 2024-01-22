@@ -7,7 +7,7 @@ type: docs
 weight: 20
 url: /zh/net/programming-with-bookmarks/add-child-bookmark/
 ---
-在 PDF 文件中添加子书签可以实现更加结构化的组织和导航。使用Aspose.PDF for .NET，您可以通过以下源代码轻松添加子书签：
+在 PDF 文件中添加子书签可以实现更结构化的组织和导航。使用Aspose.PDF for .NET，您可以通过以下源代码轻松添加子书签：
 
 ## 第1步：导入所需的库
 

@@ -96,7 +96,7 @@ R : Oui, vous pouvez définir des privilèges d'accès spécifiques pour diff�
 
 R : Les privilèges d'accès courants incluent l'autorisation ou l'interdiction d'actions telles que l'impression, la copie de texte ou d'images, la modification du document et le remplissage des champs de formulaire.
 
-#### Q : Comment la définition du privilège de lecture d'écran améliore-t-elle l'accessibilité des documents ?
+#### Q : Comment la définition du privilège de lecture d'écran améliore-t-elle l'accessibilité des documents ?
 
 R : L'activation du privilège de lecture d'écran garantit que les utilisateurs peuvent accéder au contenu du PDF à l'aide de lecteurs d'écran, améliorant ainsi l'accessibilité pour les personnes malvoyantes.
 

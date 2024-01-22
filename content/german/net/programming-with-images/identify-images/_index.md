@@ -11,7 +11,7 @@ Diese Anleitung führt Sie Schritt für Schritt durch die Identifizierung von Bi
 
 ## Schritt 1: Definieren Sie das Dokumentenverzeichnis
 
- Stellen Sie sicher, dass Sie das richtige Dokumentenverzeichnis festlegen. Ersetzen`"YOUR DOCUMENT DIRECTORY"` Geben Sie im Code den Pfad zu dem Verzeichnis ein, in dem sich Ihr PDF-Dokument befindet.
+ Stellen Sie sicher, dass Sie das richtige Dokumentverzeichnis festlegen. Ersetzen`"YOUR DOCUMENT DIRECTORY"` Geben Sie im Code den Pfad zu dem Verzeichnis ein, in dem sich Ihr PDF-Dokument befindet.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";

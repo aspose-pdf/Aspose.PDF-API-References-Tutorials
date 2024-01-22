@@ -20,7 +20,7 @@ Bevor wir beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 - Aspose.PDF für Java-Bibliothek
 - Grundkenntnisse der Java-Programmierung
 
-## Aspose.PDF für Java einrichten
+## Einrichten von Aspose.PDF für Java
 
  Laden Sie zunächst die Aspose.PDF für Java-Bibliothek von der Website herunter:[Laden Sie Aspose.PDF für Java herunter](https://releases.aspose.com/pdf/java/)
 

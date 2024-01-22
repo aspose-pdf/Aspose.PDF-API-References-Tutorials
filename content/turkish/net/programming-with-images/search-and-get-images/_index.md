@@ -118,7 +118,7 @@ C: Sağlanan kod, PDF belgesindeki tüm görseller hakkında bilgi toplar. Gör�
 
 #### S: Elde edilen görüntü özellikleriyle ne yapabilirim?
 
-C: Elde edilen görüntü özellikleri (genişlik, yükseklik, koordinatlar ve çözünürlük) çeşitli amaçlarla kullanılabilir. Özellikleri analiz edebilir, kullanıcıya görüntüleyebilir veya daha sonraki işlemler için girdi olarak kullanabilirsiniz.
+C: Elde edilen görüntü özellikleri (genişlik, yükseklik, koordinatlar ve çözünürlük) çeşitli amaçlar için kullanılabilir. Özellikleri analiz edebilir, kullanıcıya görüntüleyebilir veya daha sonraki işlemler için girdi olarak kullanabilirsiniz.
 
 #### S: Bu yöntemi kullanarak PDF belgesindeki görüntüleri değiştirebilir veya düzenleyebilir miyim?
 

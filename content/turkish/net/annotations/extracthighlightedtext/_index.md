@@ -94,7 +94,7 @@ C: Metin işaretleme ek açıklamaları, bir PDF belgesindeki belirli metni vurg
 
 #### S: Aspose.PDF for .NET'i kullanarak diğer açıklama türlerinden metin çıkarabilir miyim?
 
-C: Evet, Aspose.PDF for .NET, metin işaretleme ek açıklamaları, serbest metin ek açıklamaları ve daha fazlası dahil olmak üzere farklı türdeki ek açıklamalardan metin çıkarmak için çeşitli yöntemler sunar.
+C: Evet, Aspose.PDF for .NET, metin işaretleme ek açıklamaları, serbest metin ek açıklamaları ve daha fazlası dahil olmak üzere farklı türdeki ek açıklamalardan metin çıkarmak için çeşitli yöntemler sağlar.
 
 #### S: Aspose.PDF for .NET, parola korumalı PDF dosyalarından metin çıkarmayı destekliyor mu?
 

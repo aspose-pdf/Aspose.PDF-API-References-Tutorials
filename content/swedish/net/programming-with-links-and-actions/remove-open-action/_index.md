@@ -1,7 +1,7 @@
 ---
 title: Ta bort Open Action
 linktitle: Ta bort Open Action
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du tar bort den öppna åtgärden från en PDF med Aspose.PDF för .NET.
 type: docs
 weight: 80

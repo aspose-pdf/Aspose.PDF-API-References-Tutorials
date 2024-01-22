@@ -1,7 +1,7 @@
 ---
 title: Ändra formulärfält i PDF-dokument
 linktitle: Ändra formulärfält i PDF-dokument
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Redigera enkelt formulärfält i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 190

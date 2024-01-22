@@ -121,7 +121,7 @@ Dans ce didacticiel, nous avons fourni des conseils étape par étape sur la fa�
 
 #### Q : Qu'est-ce qu'une table des matières (TOC) dans un document PDF ?
 
-R : Une table des matières (TOC) dans un document PDF est une aide à la navigation qui fournit une liste organisée de sections ou de chapitres de document ainsi que leurs numéros de page correspondants. Il permet aux lecteurs de naviguer rapidement vers des sections spécifiques du document.
+R : Une table des matières (TOC) dans un document PDF est une aide à la navigation qui fournit une liste organisée de sections ou de chapitres de document ainsi que leurs numéros de page correspondants. Il permet aux lecteurs de naviguer rapidement vers des sections spécifiques du document.
 
 #### Q :Pourquoi voudrais-je personnaliser les numéros de page dans une table des matières ?
 

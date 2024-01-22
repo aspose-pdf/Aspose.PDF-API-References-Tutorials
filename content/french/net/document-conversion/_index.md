@@ -4,7 +4,7 @@ linktitle: Conversion de documents
 type: docs
 weight: 11
 url: /fr/net/document-conversion/
-description: Consultez les didacticiels de conversion de documents avec Aspose.PDF pour .NET. Convertissez facilement des fichiers dans différents formats.
+description: Consultez les didacticiels de conversion de documents avec Aspose.PDF pour .NET. Convertissez facilement des fichiers en différents formats.
 ---
 Dans les didacticiels de conversion de documents Aspose.PDF pour .NET, vous apprendrez à convertir différents types de documents tels que Word, Excel, HTML, images, etc. en fichiers PDF. Vous apprendrez à convertir un document existant à l'aide d'options de conversion avancées telles que la mise en page, les polices, les images, les tableaux, etc. Les didacticiels vous guideront également dans la conversion de documents PDF vers d'autres formats, tels que Word, Excel, HTML, images, etc. 
 

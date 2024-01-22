@@ -29,7 +29,7 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 }
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
 
 ## Schritt 2: Legen Sie den Standardschriftnamen fest
  Als Nächstes legen wir den Standardschriftnamen mithilfe von fest`DefaultFontName` Option der`RenderingOptions` Objekt. Verwenden Sie den folgenden Code:
@@ -50,7 +50,7 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 }
 ```
 
- Unbedingt ersetzen`"Arial"` mit dem gewünschten Schriftartnamen.
+ Unbedingt austauschen`"Arial"` mit dem gewünschten Schriftartnamen.
 
 ## Schritt 3: Bildextraktion
 Als nächstes extrahieren wir das Bild von der angegebenen Seite des PDF-Dokuments. Verwenden Sie den folgenden Code:

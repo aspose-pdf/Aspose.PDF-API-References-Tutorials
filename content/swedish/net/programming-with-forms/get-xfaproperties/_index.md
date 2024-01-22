@@ -1,7 +1,7 @@
 ---
 title: Skaffa XFAProperties
 linktitle: Skaffa XFAProperties
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Få enkelt XFA-egenskaper för formulärfält i dina PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 160

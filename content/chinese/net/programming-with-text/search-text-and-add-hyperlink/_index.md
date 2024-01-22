@@ -163,7 +163,7 @@ Console.WriteLine("\nText replaced and hyperlink added successfully based on a r
 
 #### 问：学习本教程需要什么先决条件？
 
-答：开始之前，您应该对 C# 编程语言有基本的了解。此外，您需要安装 Aspose.PDF for .NET 库，该库可以从 Aspose 网站获取或在项目中使用 NuGet 安装。
+答：开始之前，您应该对 C# 编程语言有基本的了解。此外，您还需要安装 Aspose.PDF for .NET 库，该库可以从 Aspose 网站获取或在项目中使用 NuGet 安装。
 
 #### 问：如何设置我的项目来遵循本教程？
 
@@ -185,6 +185,6 @@ Console.WriteLine("\nText replaced and hyperlink added successfully based on a r
 
  A：使用识别文本片段后`TextFragmentAbsorber`，本教程提供了一个循环来迭代这些片段。对于每个文本片段，本教程演示了如何将文本颜色设置为蓝色并使用`CreateWebLink`方法。
 
-#### 问：保存修改后的带超链接的PDF的步骤是什么？
+#### 问：保存修改后的带有超链接的PDF的步骤是什么？
 
  A：将超链接添加到所需的文本片段后，使用`PdfContentEditor`类来保存修改后的文档。本教程的示例代码展示了如何保存编辑后的 PDF、关闭编辑器以及显示成功消息。

@@ -68,7 +68,7 @@ dataDir = dataDir + "UpdateChildBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Aspose.PDF for .NET kullanarak Alt Yer İşaretlerini Güncelleme için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Alt Yer İmlerini Güncelleme için örnek kaynak kodu 
 ```csharp
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

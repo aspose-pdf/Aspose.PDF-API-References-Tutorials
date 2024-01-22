@@ -1,7 +1,7 @@
 ---
 title: Ställ in privilegier i PDF-fil
 linktitle: Ställ in privilegier i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Ställ enkelt in åtkomstprivilegier i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 100
@@ -63,9 +63,9 @@ using (Document document = new Document(dataDir + "input.pdf"))
 	DocumentPrivilege documentPrivilege = DocumentPrivilege.ForbidAll;
 	// Tillåt endast skärmläsning
 	documentPrivilege.AllowScreenReaders = true;
-	// Kryptera filen med användar- och ägarlösenord.
+	// Kryptera filen med användar- och ägarelösenord.
 	// Behöver ställa in lösenordet, så att när användaren tittar på filen med användarlösenordet,
-	// Endast alternativ för skärmläsning är aktiverat
+	// Endast alternativet för skärmläsning är aktiverat
 	document.Encrypt("user", "owner", documentPrivilege, CryptoAlgorithm.AESx128, false);
 	// Spara uppdaterat dokument
 	document.Save(dataDir + "SetPrivileges_out.pdf");

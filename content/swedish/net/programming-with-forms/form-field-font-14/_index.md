@@ -1,7 +1,7 @@
 ---
 title: Formulärfältsteckensnitt 14
 linktitle: Formulärfältsteckensnitt 14
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Konfigurera enkelt teckensnittet för formulärfält i dina PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 110

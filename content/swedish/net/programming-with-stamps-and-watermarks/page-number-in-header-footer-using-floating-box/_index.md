@@ -1,7 +1,7 @@
 ---
 title: Sidnummer i sidhuvudet med hjälp av flytande låda
 linktitle: Sidnummer i sidhuvudet med hjälp av flytande låda
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du lägger till sidnumret i sidhuvudet och sidfoten i ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 150

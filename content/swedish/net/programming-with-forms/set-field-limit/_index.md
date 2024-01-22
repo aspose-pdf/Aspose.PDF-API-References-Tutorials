@@ -1,7 +1,7 @@
 ---
 title: Ställ in fältgräns
 linktitle: Ställ in fältgräns
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du ställer in en fältgräns i ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 260

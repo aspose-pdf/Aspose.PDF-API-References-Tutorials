@@ -10,7 +10,7 @@ url: /it/java/pdf-annotations/remove-annotations-pdf-pages/
 
 ## Introduzione ad Aspose.PDF per Java
 
-Aspose.PDF per Java è una solida libreria che consente agli sviluppatori di lavorare con documenti PDF in applicazioni Java. Fornisce varie funzionalità per creare, manipolare ed estrarre contenuto da file PDF.
+Aspose.PDF per Java è una solida libreria che consente agli sviluppatori di lavorare con documenti PDF nelle applicazioni Java. Fornisce varie funzionalità per creare, manipolare ed estrarre contenuto da file PDF.
 
 ## Prerequisiti
 

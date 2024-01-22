@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "input.pdf");
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
 
 ## Schritt 2: Sofortige PPT-Backup-Optionen
 Nach dem Laden der PDF-Datei instanziieren wir die PPTX-Speicheroptionen. Verwenden Sie den folgenden Code:

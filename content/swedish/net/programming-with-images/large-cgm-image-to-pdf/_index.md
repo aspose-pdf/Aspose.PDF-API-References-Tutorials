@@ -1,7 +1,7 @@
 ---
 title: Stor CGM-bild till PDF
 linktitle: Stor CGMIbild till PDF
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Konvertera enkelt en stor CGM-bild till PDF med Aspose.PDF för .NET.
 type: docs
 weight: 190

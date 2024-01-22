@@ -1,7 +1,7 @@
 ---
 title: Zooma till sidinnehåll i PDF-fil
 linktitle: Zooma till sidinnehåll i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att zooma till sidinnehåll i PDF-fil med Aspose.PDF för .NET. Förbättra dina PDF-dokument enligt dina specifika behov.
 type: docs
 weight: 160

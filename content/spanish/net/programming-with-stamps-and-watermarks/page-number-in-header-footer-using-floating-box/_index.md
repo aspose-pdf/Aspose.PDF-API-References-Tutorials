@@ -56,7 +56,7 @@ page.Paragraphs.Add(box1);
 
 El código anterior crea un FloatingBox con un ancho de 140 y un alto de 80. A continuación, configuramos su posición especificando los valores izquierdo y superior. Finalmente, agregamos el número de página al cuadro flotante usando un TextFragment que contiene la sintaxis "($p/ $P)" que será reemplazada por el número de página actual y el número total de páginas.
 
-## Paso 4: guardar el documento PDF modificado
+## Paso 4: Guardar el documento PDF modificado
 
 Una vez que se agrega el número de página al encabezado o pie de página usando el cuadro flotante, podemos guardar el documento PDF modificado. Así es cómo:
 

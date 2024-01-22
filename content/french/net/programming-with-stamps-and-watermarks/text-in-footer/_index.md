@@ -104,7 +104,7 @@ Félicitation ! Vous avez appris à ajouter du texte dans le pied de page d'un d
 
 #### Q : A quoi sert l’ajout de texte dans le pied de page d’un document PDF ?
 
-R : L'ajout de texte dans le pied de page d'un document PDF vous permet d'inclure des informations importantes, telles que des avis de droits d'auteur, des numéros de page, la version du document ou tout autre texte que vous souhaitez afficher de manière cohérente au bas de chaque page.
+R : L'ajout de texte dans le pied de page d'un document PDF vous permet d'inclure des informations importantes, telles que des avis de droits d'auteur, des numéros de page, la version du document ou tout autre texte que vous souhaitez afficher de manière cohérente au bas de chaque page.
 
 #### Q : Comment le code source C# fourni permet-il d'ajouter du texte dans le pied de page d'un document PDF ?
 

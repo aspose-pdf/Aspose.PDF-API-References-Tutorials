@@ -114,6 +114,6 @@ Aspose.PDF for .NET kullanarak bir PDF belgesi için son kullanma tarihi belirle
 
 C: JavaScript kodunda belirtildiği gibi PDF belgesinin süresi dolduğunda, görüntüleyici dosyanın süresinin dolduğunu ve kullanıcının yeni bir dosyaya ihtiyacı olduğunu belirten bir uyarı mesajı görüntüler. Bu uyarı mesajı PDF açıldığında gösterilecektir.
 
-#### S: Son kullanma tarihi olarak yalnızca tarih yerine belirli bir saati kullanabilir miyim?
+#### S: Son kullanma tarihi olarak yalnızca tarih yerine belirli bir zamanı kullanabilir miyim?
 
  C: Evet, JavaScript kodunda son kullanma tarihi için belirli bir zaman ayarlayabilirsiniz. Değiştirerek`expiry` İstenilen süreyi eklemek için JavaScript kodundaki değişkene, son kullanma tarihi için belirli bir süre ayarlayabilirsiniz.

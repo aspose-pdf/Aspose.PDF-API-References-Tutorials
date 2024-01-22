@@ -1,7 +1,7 @@
 ---
 title: TeX till PDF
 linktitle: TeX till PDF
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Enkel och korrekt konvertering av TeX-filer till PDF med Aspose.PDF för .NET.
 type: docs
 weight: 290

@@ -123,7 +123,7 @@ A: Mithilfe von Illustrationsstrukturelementen in einem PDF-Dokument können Sie
 
 A: Aspose.PDF für .NET bietet eine Reihe von Klassen und Methoden, mit denen Sie Illustrationsstrukturelemente erstellen, bearbeiten und zu Ihren PDF-Dokumenten hinzufügen können. Zu diesen Elementen können Bilder, Figuren und andere visuelle Inhalte gehören.
 
-####  F: Welche Rolle spielt das`taggedContent` object play in using illustration structure elements?
+####  F: Welche Rolle spielt das?`taggedContent` object play in using illustration structure elements?
 
  A: Die`taggedContent` Objekt, das aus dem Dokument stammt`TaggedContent`Mit dieser Eigenschaft können Sie mit strukturierten Elementen im PDF-Dokument arbeiten. Sie können Illustrationsstrukturelemente erstellen, organisieren und hinzufügen, um die visuelle Darstellung des Dokuments zu verbessern.
 

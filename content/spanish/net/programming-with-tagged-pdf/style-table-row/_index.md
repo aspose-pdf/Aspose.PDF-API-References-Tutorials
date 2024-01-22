@@ -39,7 +39,7 @@ En este paso obtendremos el elemento de estructura raíz de nuestro documento.
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-Obtuvimos el elemento de estructura raíz que servirá como contenedor para el elemento de matriz.
+Obtuvimos el elemento de estructura raíz que servirá como contenedor para el elemento de la matriz.
 
 ## Paso 4: crear el elemento de estructura de matriz
 
@@ -116,7 +116,7 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 
 Hemos personalizado varios aspectos de la fila de la tabla, como el color de fondo, los bordes, la altura de la fila, la paginación, el estilo de celda predeterminado y más.
 
-## Paso 6: Guardar el documento PDF etiquetado
+## Paso 6: guardar el documento PDF etiquetado
 
 Ahora que hemos creado nuestro documento con la fila de la tabla con estilo, lo guardaremos como un documento PDF etiquetado.
 ```csharp

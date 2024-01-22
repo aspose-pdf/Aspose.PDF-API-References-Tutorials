@@ -76,7 +76,7 @@ using (Document document = new Document(dataDir + "input.pdf"))
 
 恭喜！您现在拥有使用 Aspose.PDF for .NET 设置 PDF 文档访问权限的分步指南。您可以使用此代码来应用特定限制并根据需要保护您的 PDF 文件。
 
-请务必查看官方 Aspose.PDF 文档，了解有关高级 PDF 文档安全性和访问权限管理功能的更多信息。
+请务必查看官方 Aspose.PDF 文档，以获取有关高级 PDF 文档安全性和访问权限管理功能的更多信息。
 
 ### PDF 文件中设置权限的常见问题解答
 

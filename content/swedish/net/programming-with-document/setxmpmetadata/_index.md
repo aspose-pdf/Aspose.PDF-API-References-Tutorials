@@ -1,7 +1,7 @@
 ---
 title: Ställ in XMPMetadata i PDF-fil
 linktitle: Ställ in XMPMetadata i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du ställer in XMPMetadata i PDF-fil med Aspose.PDF för .NET. Följ denna steg-för-steg-guide.
 type: docs
 weight: 330
@@ -32,7 +32,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
 ```
 
-## Steg 3: Ställ in egenskaper för XMP-metadata
+## Steg 3: Ställ in XMP-metadataegenskaper
 
 Nu när du har din PDF-fil öppen kan du börja ställa in XMP-metadataegenskaper. Vilka egenskaper du anger beror på dina specifika behov, men här är några vanliga egenskaper som du kanske vill ställa in:
 

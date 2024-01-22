@@ -63,7 +63,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 	{
 		// Crea oggetto Risoluzione
 		Resolution resolution = new Resolution(300);
-		// Crea un dispositivo BMP con gli attributi specificati
+		// Crea un dispositivo BMP con attributi specificati
 		// Larghezza, Altezza, Risoluzione, Dimensioni pagina
 		BmpDevice bmpDevice = new BmpDevice(resolution);
 		//Converti una pagina particolare e salva l'immagine in streaming

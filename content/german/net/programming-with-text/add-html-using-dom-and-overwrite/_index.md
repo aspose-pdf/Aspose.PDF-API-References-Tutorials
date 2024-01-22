@@ -64,7 +64,7 @@ title.TextState.FontSize = 20;
 ```
 
 ## Schritt 8: Randinformationen festlegen
-Passen Sie bei Bedarf den unteren und oberen Rand des HTML-Fragments an. Im bereitgestellten Code ist der untere Rand auf 10 und der obere Rand auf 400 eingestellt.
+Passen Sie bei Bedarf den unteren und oberen Rand des HTML-Fragments an. Im bereitgestellten Code ist der untere Rand auf 10 und der obere Rand auf 400 festgelegt.
 
 ```csharp
 title. Margin. Bottom = 10;

@@ -30,7 +30,7 @@ Aspose.Pdf.LoadOptions loadopt = new Aspose.Pdf.PclLoadOptions();
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "hidetext.pcl", loadopt);
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PCL-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PCL-Datei befindet.
 
 ## Schritt 2: PCL-zu-PDF-Konvertierung
 Nach dem Laden der PCL-Datei können wir mit der Konvertierung in PDF fortfahren. Verwenden Sie den folgenden Code:

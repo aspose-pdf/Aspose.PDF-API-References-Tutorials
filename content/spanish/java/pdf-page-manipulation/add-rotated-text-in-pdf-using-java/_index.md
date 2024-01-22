@@ -100,7 +100,7 @@ Mejore sus documentos PDF incorporando texto rotado con facilidad, gracias a las
 
 ## Preguntas frecuentes (Preguntas frecuentes)
 
-### 1. ¿Puedo rotar texto en diferentes ángulos en el mismo PDF?
+### 1. ¿Puedo rotar texto en diferentes ángulos en un mismo PDF?
    Sí, puedes agregar varias instancias de texto rotado con diferentes ángulos al mismo documento PDF. Simplemente repita el proceso descrito en este tutorial para cada fragmento de texto rotado.
 
 ### 2. ¿Cómo puedo cambiar el color del texto rotado?

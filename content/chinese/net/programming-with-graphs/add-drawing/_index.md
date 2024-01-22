@@ -9,7 +9,7 @@ url: /zh/net/programming-with-graphs/add-drawing/
 ---
 应用程序开发通常需要添加绘图和图形等功能，以使文档更具吸引力和信息量。在本文中，我们将逐步指导您使用 Aspose.PDF for .NET 向图形编程添加绘图的 C# 源代码。
 
-在开始之前，请确保您已安装 Aspose.PDF 库并设置您的开发环境。另外，请确保您具备 C# 编程的基本知识。
+在开始之前，请确保您已经安装了 Aspose.PDF 库并设置了开发环境。另外，请确保您具备 C# 编程的基本知识。
 
 ## 步骤 1：Aspose.PDF for .NET 简介及其功能
 

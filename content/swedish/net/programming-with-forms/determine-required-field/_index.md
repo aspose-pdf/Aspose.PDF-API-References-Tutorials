@@ -1,7 +1,7 @@
 ---
 title: Bestäm obligatoriskt fält i PDF-formulär
 linktitle: Bestäm obligatoriskt fält i PDF-formulär
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Bestäm enkelt obligatoriska fält i PDF-form med Aspose.PDF för .NET.
 type: docs
 weight: 60

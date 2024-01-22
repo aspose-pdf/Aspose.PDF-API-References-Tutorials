@@ -2,7 +2,7 @@
 title: Markieren Sie das Bild in einem vorhandenen PDF
 linktitle: Markieren Sie das Bild in einem vorhandenen PDF
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET ein Bild in einer vorhandenen PDF-Datei markieren. Eine Schritt-für-Schritt-Anleitung zum Hinzufügen von Tags zu Bildern.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET ein Bild in einem vorhandenen PDF markieren. Eine Schritt-für-Schritt-Anleitung zum Hinzufügen von Tags zu Bildern.
 type: docs
 weight: 210
 url: /de/net/programming-with-tagged-pdf/tag-image-in-existing-pdf/

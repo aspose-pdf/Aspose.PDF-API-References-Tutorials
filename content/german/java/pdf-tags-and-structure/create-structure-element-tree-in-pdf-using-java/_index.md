@@ -76,19 +76,24 @@ In diesem Tutorial haben wir gezeigt, wie Sie mit Aspose.PDF für Java einen Str
 
 Indem Sie diese Schritte befolgen und Strukturelemente in Ihre PDF-Dokumente integrieren, können Sie Ihre Inhalte zugänglicher machen und den Barrierefreiheitsstandards entsprechen. Dies ist ein wichtiger Schritt, um sicherzustellen, dass Ihre Dokumente umfassend und benutzerfreundlich sind.
 
-## FAQs:
+## FAQs
 
 ### Welchen Zweck hat ein Strukturelementbaum in einem PDF-Dokument?
-   - Ein Strukturelementbaum stellt die logische Struktur des Inhalts innerhalb eines PDF-Dokuments dar und ermöglicht die Zugänglichkeit und effektive Kommunikation des Inhalts für Benutzer, insbesondere für Benutzer mit Sehbehinderungen.
+
+Ein Strukturelementbaum stellt die logische Struktur des Inhalts innerhalb eines PDF-Dokuments dar und ermöglicht die Zugänglichkeit und effektive Kommunikation des Inhalts für Benutzer, insbesondere für Benutzer mit Sehbehinderungen.
 
 ### Wie kann ich Bilder zu einem getaggten PDF-Dokument hinzufügen?
-   -  Du kannst den ... benutzen`com.aspose.pdf.Image` Klasse zum Hinzufügen von Bildern zu einem getaggten PDF-Dokument. Stellen Sie sicher, dass Sie den Bildern zur Barrierefreiheit geeignete Strukturelemente zuordnen.
+
+ Du kannst den ... benutzen`com.aspose.pdf.Image` Klasse zum Hinzufügen von Bildern zu einem getaggten PDF-Dokument. Stellen Sie sicher, dass Sie den Bildern zur Barrierefreiheit geeignete Strukturelemente zuordnen.
 
 ### Sind getaggte PDF-Dokumente eine Voraussetzung für die Einhaltung der Barrierefreiheit?
-   - Ja, mit Tags versehene PDF-Dokumente sind für die Einhaltung der Barrierefreiheit von entscheidender Bedeutung, da sie eine strukturierte Darstellung von Inhalten bieten, die von unterstützenden Technologien interpretiert werden können.
+
+Ja, mit Tags versehene PDF-Dokumente sind für die Einhaltung der Barrierefreiheit von entscheidender Bedeutung, da sie eine strukturierte Darstellung von Inhalten bieten, die von unterstützenden Technologien interpretiert werden können.
 
 ### Kann ich den Tagging-Prozess für vorhandene PDF-Dokumente automatisieren?
-   - Ja, Aspose.PDF für Java bietet Funktionen zum programmgesteuerten Markieren vorhandener PDF-Dokumente, um sie zugänglich zu machen.
+
+Ja, Aspose.PDF für Java bietet Funktionen zum programmgesteuerten Markieren vorhandener PDF-Dokumente, um sie zugänglich zu machen.
 
 ### Was sind einige Best Practices für die Erstellung barrierefreier PDF-Dokumente?
-   - Zu den Best Practices gehören das Hinzufügen von alternativem Text zu Bildern, die Verwendung der richtigen Überschriftenstruktur, die Bereitstellung beschreibender Links und die Sicherstellung einer logischen Lesereihenfolge für Inhalte.
+
+Zu den Best Practices gehören das Hinzufügen von alternativem Text zu Bildern, die Verwendung der richtigen Überschriftenstruktur, die Bereitstellung beschreibender Links und die Sicherstellung einer logischen Lesereihenfolge für Inhalte.

@@ -123,7 +123,7 @@ TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 
 floatingField.Value = "This is the \"floating text field\".";
 // Recomendamos hacer que el campo sea de "solo lectura" para este escenario.
 floatingField.ReadOnly = true;
-// Establecer bandera 'oculta' para hacer que el campo sea invisible al abrir el documento
+// Establezca la bandera 'oculta' para que el campo sea invisible al abrir el documento
 floatingField.Flags |= AnnotationFlags.Hidden;
 // No es necesario establecer un nombre de campo único, pero está permitido
 floatingField.PartialName = "FloatingField_1";

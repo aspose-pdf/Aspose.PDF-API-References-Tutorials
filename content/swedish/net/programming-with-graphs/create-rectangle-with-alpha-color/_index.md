@@ -1,7 +1,7 @@
 ---
 title: Skapa rektangel med alfafärg
 linktitle: Skapa rektangel med alfafärg
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du skapar en rektangel med transparent färg med Aspose.PDF för .NET. Steg-för-steg-guide för att anpassa transparens.
 type: docs
 weight: 60
@@ -126,7 +126,7 @@ S: Innan du börjar, se till att du har installerat Aspose.PDF-biblioteket och s
 
 #### F: Hur anger jag katalogen för att spara PDF-filen?
 
-S: I den medföljande källkoden kan du ändra variabeln "dataDir" för att ange katalogen där du vill spara den resulterande PDF-filen.
+S: I den medföljande källkoden kan du ändra variabeln "dataDir" för att indikera katalogen där du vill spara den resulterande PDF-filen.
 
 #### F: Vad är syftet med Graph-objektet och rektangeln?
 

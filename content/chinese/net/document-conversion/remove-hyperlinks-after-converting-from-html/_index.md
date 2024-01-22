@@ -7,7 +7,7 @@ type: docs
 weight: 250
 url: /zh/net/document-conversion/remove-hyperlinks-after-converting-from-html/
 ---
-在本教程中，我们将引导您完成从使用 Aspose.PDF for .NET 从 HTML 文件生成的 PDF 文件中删除超链接的过程。超链接是可以重定向到其他页面或网站的可点击链接。通过执行以下步骤，您将能够从生成的 PDF 文件中删除超链接。
+在本教程中，我们将引导您完成使用 Aspose.PDF for .NET 从 HTML 文件生成的 PDF 文件中删除超链接的过程。超链接是可以重定向到其他页面或网站的可点击链接。通过执行以下步骤，您将能够从生成的 PDF 文件中删除超链接。
 
 ## 先决条件
 在开始之前，请确保满足以下先决条件：

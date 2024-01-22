@@ -129,7 +129,7 @@ A: Durch die Angabe des Dokumentverzeichnisses wird sichergestellt, dass das PDF
 
  A: Das zugeschnittene PDF-Dokument wird in einem gespeichert`MemoryStream` Objekt, das eine effiziente Bearbeitung des PDF-Inhalts ermöglicht.
 
-####  F: Welche Rolle spielt das`PngDevice` class play in the page region to DOM conversion process?
+####  F: Welche Rolle spielt das?`PngDevice` class play in the page region to DOM conversion process?
 
  A: Die`PngDevice` Die Klasse hilft dabei, das zugeschnittene PDF-Dokument in ein Bildformat wie PNG zu konvertieren, sodass Sie den spezifischen Seitenbereich visualisieren können.
 

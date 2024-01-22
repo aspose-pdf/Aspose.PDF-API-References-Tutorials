@@ -20,7 +20,7 @@ Im zweiten Teil unserer Tutorials konzentrieren wir uns auf den kritischen Aspek
 
 ## Dokumentenintegrität und -konformität
 
-Der letzte Abschnitt unserer Tutorials befasst sich mit der Integrität und Compliance von Dokumenten. Wir führen Sie durch Techniken zur Aufrechterhaltung der strukturellen und inhaltlichen Integrität Ihrer PDFs. Außerdem erfahren Sie, wie Sie Validierungsinformationen, Zeitstempel und Sicherheitsmaßnahmen hinzufügen, um die Dokumentensicherheit zu verbessern. Am Ende dieser Tutorials sind Sie in der Lage, PDFs sicher zu validieren und zu verifizieren und so deren Vertrauenswürdigkeit und Einhaltung von Standards sicherzustellen. Begleiten Sie uns auf dieser Reise und werden Sie ein PDF-Validierungs- und Verifizierungsexperte mit Aspose.PDF für Java.
+Der letzte Abschnitt unserer Tutorials befasst sich mit der Integrität und Compliance von Dokumenten. Wir führen Sie durch Techniken zur Wahrung der strukturellen und inhaltlichen Integrität Ihrer PDFs. Außerdem erfahren Sie, wie Sie Validierungsinformationen, Zeitstempel und Sicherheitsmaßnahmen hinzufügen, um die Dokumentensicherheit zu verbessern. Am Ende dieser Tutorials sind Sie in der Lage, PDFs sicher zu validieren und zu verifizieren und so deren Vertrauenswürdigkeit und Einhaltung von Standards sicherzustellen. Begleiten Sie uns auf dieser Reise und werden Sie ein PDF-Validierungs- und Verifizierungsexperte mit Aspose.PDF für Java.
 
 ## Tutorials zur PDF-Validierung und -Verifizierung
 ### [PDF in Java validieren](./validate-pdf-in-java/)

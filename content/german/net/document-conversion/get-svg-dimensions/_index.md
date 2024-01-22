@@ -29,7 +29,7 @@ loadopt.AdjustPageSize = true;
 var svgDoc = new Document(dataDir + "GetSVGDimensions.svg", loadopt);
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre SVG-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre SVG-Datei befindet.
 
 ## Schritt 2: Anpassung der Seitengröße
 Nachdem wir die SVG-Datei geladen haben, können wir die Seitengröße an den SVG-Inhalt anpassen. Verwenden Sie den folgenden Code:

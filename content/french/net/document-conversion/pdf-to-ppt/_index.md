@@ -79,4 +79,4 @@ R : Aspose.PDF pour .NET est l'une des bibliothèques qui peuvent être utilisé
 
 #### Q : Est-il possible de reconvertir un PPT en PDF à l'aide d'Aspose.PDF pour .NET ?
 
-R : Aspose.PDF pour .NET se concentre principalement sur la manipulation et la conversion de PDF, y compris la conversion de PDF en PPT. Cependant, pour reconvertir des fichiers PPT en PDF, vous aurez besoin d'une autre bibliothèque ou d'un outil prenant spécifiquement en charge la conversion PPT en PDF. Il existe des bibliothèques distinctes disponibles pour gérer les présentations PowerPoint et les convertir au format PDF.
+R : Aspose.PDF pour .NET se concentre principalement sur la manipulation et la conversion de PDF, y compris la conversion de PDF en PPT. Cependant, pour reconvertir des fichiers PPT en PDF, vous aurez besoin d'une autre bibliothèque ou d'un autre outil prenant spécifiquement en charge la conversion PPT en PDF. Il existe des bibliothèques distinctes disponibles pour gérer les présentations PowerPoint et les convertir au format PDF.

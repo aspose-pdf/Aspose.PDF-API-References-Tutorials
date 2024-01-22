@@ -1,7 +1,7 @@
 ---
 title: Utbytbara symboler i sidhuvudet
 linktitle: Utbytbara symboler i sidhuvudet
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du använder utbytbara symboler i sidhuvudet och sidfoten i ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 320
@@ -116,7 +116,7 @@ HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
 hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
-// Instantiera ett textstycke som lagrar innehållet för att visas som rubrik
+// Instantiera ett textstycke som lagrar innehållet så att det visas som rubrik
 TextFragment t1 = new TextFragment("report title");
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
@@ -168,7 +168,7 @@ table.DefaultCellPadding.Top = 10;
 table.DefaultCellPadding.Bottom = 10;
 // Lägg till tabellen i styckesamlingen av önskat avsnitt
 page.Paragraphs.Add(table);
-// Ställ in standardcellkant med hjälp av BorderInfo-objektet
+// Ställ in standardcellkant med BorderInfo-objekt
 table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
 // Ställ in tabellkanten med ett annat anpassat BorderInfo-objekt
 table.Border = new BorderInfo(BorderSide.All, 1f);
@@ -225,7 +225,7 @@ S: Utbytbara symboler i sidhuvudet och sidfoten är användbara när du vill ink
 
 #### F: Hur lägger jag till utbytbara symboler i sidhuvudet och sidfoten?
 
- S: Du kan lägga till utbytbara symboler genom att skapa en`HeaderFooter` objekt för sidhuvudet och sidfoten på sidan. Sedan kan du lägga till`TextFragment`objekt med önskad text, inklusive utbytbara symboler, till`Paragraphs` samling av`HeaderFooter` objekt.
+ S: Du kan lägga till utbytbara symboler genom att skapa en`HeaderFooter` objekt för sidhuvud och sidfot på sidan. Sedan kan du lägga till`TextFragment`objekt med önskad text, inklusive utbytbara symboler, till`Paragraphs` samling av`HeaderFooter` objekt.
 
 #### F: Kan jag anpassa utseendet på de utbytbara symbolerna?
 

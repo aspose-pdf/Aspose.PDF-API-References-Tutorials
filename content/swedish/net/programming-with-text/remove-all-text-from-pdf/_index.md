@@ -1,7 +1,7 @@
 ---
 title: Ta bort all text från PDF
 linktitle: Ta bort all text från PDF
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du tar bort all text från ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 290

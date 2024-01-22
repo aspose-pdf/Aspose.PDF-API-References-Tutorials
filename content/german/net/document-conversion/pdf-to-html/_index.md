@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "PDFToHTML.pdf");
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
 
 ## Schritt 2: Konvertierung von PDF in HTML
 Nach dem Öffnen der PDF-Datei können wir mit der Konvertierung in das HTML-Format fortfahren. Verwenden Sie den folgenden Code:

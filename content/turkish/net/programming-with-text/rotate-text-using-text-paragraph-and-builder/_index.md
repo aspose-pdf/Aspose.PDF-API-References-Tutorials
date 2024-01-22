@@ -197,7 +197,7 @@ C: Metin paragraflarının ve oluşturucuların kullanılması, metin döndürme
 
 C: Kesinlikle. Farklı döndürme açılarına ve biçimlendirme seçeneklerine sahip birden çok metin paragrafını tekrar tekrar oluşturarak, PDF belgelerinizin okunabilirliğini ve estetiğini geliştirebilecek karmaşık ve görsel olarak çekici metin döndürme efektleri elde edebilirsiniz.
 
-#### S: Metin döndürmeyi diğer metin işleme teknikleriyle birleştirmek mümkün mü?
+#### S: Metin döndürmeyi diğer metin işleme teknikleriyle birleştirmek mümkün müdür?
 
 C: Evet, metin döndürmeyi Aspose.PDF kütüphanesinin sağladığı diğer metin işleme teknikleriyle birleştirebilirsiniz. Buna, zengin ve bilgilendirici PDF belgeleri oluşturmak için tablolar, resimler, köprüler ve daha fazlasının eklenmesi de dahildir.
 

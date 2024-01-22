@@ -1,7 +1,7 @@
 ---
 title: Extrahera text från stämpelkommentar
 linktitle: Extrahera text från stämpelkommentar
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du enkelt extraherar text från en stämpelkommentar i dina PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 80

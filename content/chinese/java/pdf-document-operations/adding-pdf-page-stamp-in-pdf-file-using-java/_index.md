@@ -10,7 +10,7 @@ url: /zh/java/pdf-document-operations/adding-pdf-page-stamp-in-pdf-file-using-ja
 
 ## 使用Java在PDF文件中添加PDF页戳简介
 
-PDF 是一种广泛使用的文档共享和归档格式。通常，需要向现有 PDF 文档添加附加信息或品牌。在本教程中，我们将探索如何在 Aspose.PDF for Java 的帮助下使用 Java 添加 PDF 页戳。
+PDF 是一种广泛使用的文档共享和存档格式。通常，需要向现有 PDF 文档添加附加信息或品牌。在本教程中，我们将探索如何在 Aspose.PDF for Java 的帮助下使用 Java 添加 PDF 页戳。
 
 ## 了解 PDF 页面标记
 

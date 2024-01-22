@@ -115,7 +115,7 @@ try
 			IList<string> sigNames = signature.GetSignNames();
 			if (sigNames.Count > 0) // İmza var mı?
 			{
-				if (signature.VerifySigned(sigNames[0] as string)) // İlkini doğrula
+				if (signature.VerifySigned(sigNames[0] as string)) // İlkini doğrulayın
 				{
 					if (signature.IsCertified) // Sertifikalı mı?
 					{

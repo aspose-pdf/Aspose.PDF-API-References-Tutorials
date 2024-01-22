@@ -1,7 +1,7 @@
 ---
 title: Konvertera bildström till PDF-fil
 linktitle: Konvertera bildström till PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Konvertera enkelt en bildström till PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 70

@@ -1,7 +1,7 @@
 ---
-title: lnk Anteckningslinjebredd
-linktitle: lnk Anteckningslinjebredd
-second_title: Aspose.PDF för .NET API Referens
+title: lnk Annotation Line Width
+linktitle: lnk Annotation Line Width
+second_title: Aspose.PDF för .NET API-referens
 description: Den här artikeln ger en steg-för-steg-guide för att ställa in linjebredden för lnk-anteckningen med Aspose.PDF för .NET.
 type: docs
 weight: 110

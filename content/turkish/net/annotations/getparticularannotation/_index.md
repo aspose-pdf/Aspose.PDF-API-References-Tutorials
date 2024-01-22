@@ -75,7 +75,7 @@ C: Evet, Aspose.PDF for .NET ile PDF belgesinin farklı sayfalarından açıklam
 
 #### S: Başlık, konu gibi özelliklerine göre ek açıklamalar almak mümkün müdür?
 
-C: Evet, Aspose.PDF for .NET, başlık, konu veya içerik gibi özelliklerine göre açıklamalara erişme ve bunları filtreleme yöntemleri sağlar. Tüm ek açıklamalar arasında geçiş yapabilir ve filtrelemek istediğiniz belirli özellikleri kontrol edebilirsiniz.
+C: Evet, Aspose.PDF for .NET, başlık, konu veya içerik gibi özelliklerine göre açıklamalara erişme ve bunları filtreleme yöntemleri sunar. Tüm ek açıklamalar arasında geçiş yapabilir ve filtrelemek istediğiniz belirli özellikleri kontrol edebilirsiniz.
 
 #### S: Aspose.PDF for .NET, parola korumalı PDF dosyalarından açıklama almayı destekliyor mu?
 

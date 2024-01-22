@@ -30,7 +30,7 @@ EpubLoadOptions epubload = new EpubLoadOptions();
 Aspose.Pdf.Document pdf = new Aspose.Pdf.Document(dataDir + "EPUBToPDF.epub", epubload);
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre EPUB-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre EPUB-Datei befindet.
 
 ## Schritt 2: Konvertierung von EPUB in PDF
 Nachdem wir nun die EPUB-Datei hochgeladen haben, können wir mit der Konvertierung in PDF fortfahren. Verwenden Sie den folgenden Code:

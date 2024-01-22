@@ -52,7 +52,7 @@ foreach(Page page in pdfDocument.Pages)
 
 El código anterior crea un búfer de imagen a partir del archivo "aspose-logo.jpg" y establece sus propiedades, como el margen superior y la alineación horizontal y vertical. Luego, el sello de imagen se agrega a todas las páginas del documento PDF como sección de encabezado.
 
-## Paso 4: guardar el documento PDF modificado
+## Paso 4: Guardar el documento PDF modificado
 
 Una vez agregada la imagen en la sección del encabezado, podemos guardar el documento PDF modificado. Así es cómo:
 

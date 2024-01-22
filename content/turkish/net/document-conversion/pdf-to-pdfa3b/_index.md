@@ -69,7 +69,7 @@ Console.WriteLine("\nPDF file converted to PDF/A-3B format.\nFile saved at " + d
 ```
 
 ## Çözüm
-Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasını PDF/A-3b formatına dönüştürme işlemini adım adım ele aldık. Yukarıda özetlenen talimatları izleyerek artık PDF dosyalarını PDF/A-3b formatına dönüştürebilmelisiniz. Bu özellik, PDF/A-3b standardına uygun bir PDF belgesine ek dosyalar ve veriler eklemek istediğinizde kullanışlıdır.
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasını PDF/A-3b formatına dönüştürmenin adım adım sürecini ele aldık. Yukarıda özetlenen talimatları izleyerek artık PDF dosyalarını PDF/A-3b formatına dönüştürebilmelisiniz. Bu özellik, PDF/A-3b standardına uygun bir PDF belgesine ek dosyalar ve veriler eklemek istediğinizde kullanışlıdır.
 
 ### SSS'ler
 

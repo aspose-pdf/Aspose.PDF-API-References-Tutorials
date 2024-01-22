@@ -86,7 +86,7 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 
 Creamos una fila de encabezado para nuestra tabla y agregamos celdas de encabezado con propiedades de formato como color de fondo, bordes, márgenes y alineación.
 
-## Paso 6: Agregar las filas del cuerpo de la tabla
+## Paso 6: agregar las filas del cuerpo de la tabla
 
 Ahora agreguemos las filas del cuerpo de la tabla a nuestra tabla.
 ```csharp

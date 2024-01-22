@@ -84,7 +84,7 @@ C: Eğitim, belirli bir PDF belgesini açmak ve doğrulamak için Aspose.PDF for
 
 #### S: Aspose.PDF for .NET kullanarak bir PDF belgesi için nasıl doğrulama raporu oluşturabilirim?
 
- C: Sağlanan C# kaynak kodu örnekleri, bir PDF belgesinin nasıl açılacağını, Aspose.PDF for .NET kullanılarak belgenin nasıl doğrulanacağını ve bir doğrulama raporunun nasıl oluşturulacağını gösterir.`Validate` Bu amaçla yöntem kullanılır.
+ C: Sağlanan C# kaynak kodu örnekleri, bir PDF belgesinin nasıl açılacağını, Aspose.PDF for .NET kullanarak belgenin nasıl doğrulanacağını ve bir doğrulama raporunun nasıl oluşturulacağını gösterir.`Validate` Bu amaçla yöntem kullanılır.
 
 #### S: PDF doğrulamanın ve doğrulama raporu oluşturmanın önemi nedir?
 

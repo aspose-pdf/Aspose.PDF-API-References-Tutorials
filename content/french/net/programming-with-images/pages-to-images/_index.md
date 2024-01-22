@@ -109,7 +109,7 @@ En suivant ce guide étape par étape, vous avez appris à convertir les pages d
 
 #### Q : Pourquoi voudrais-je convertir les pages d'un document PDF en images individuelles à l'aide d'Aspose.PDF pour .NET ?
 
-R : La conversion de pages de documents PDF en images individuelles peut être utile à diverses fins, telles que la création de vignettes d'images, l'extraction de contenu de fichiers PDF pour un traitement ultérieur, la génération d'aperçus d'images et l'intégration de contenu PDF dans des applications orientées image.
+R : La conversion de pages de documents PDF en images individuelles peut être utile à diverses fins, telles que la création de vignettes d'images, l'extraction de contenu de fichiers PDF pour un traitement ultérieur, la génération d'aperçus d'images et l'intégration de contenu PDF dans des applications orientées images.
 
 ####  Q : Comment le`Document` class facilitate the conversion of PDF pages to images?
 

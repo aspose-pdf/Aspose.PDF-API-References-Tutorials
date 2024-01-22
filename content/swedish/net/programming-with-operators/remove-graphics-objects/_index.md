@@ -1,7 +1,7 @@
 ---
 title: Ta bort grafikobjekt i PDF-fil
 linktitle: Ta bort grafikobjekt i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg guide för att ta bort grafiska objekt i PDF-fil med Aspose.PDF för .NET. Anpassa och rensa dina PDF-filer.
 type: docs
 weight: 30

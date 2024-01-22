@@ -30,7 +30,7 @@ Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 string[] fileEntries = Directory.GetFiles(dataDir, "*.JPG");
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre JPG-Bilder befinden.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre JPG-Bilder befinden.
 
 ## Schritt 2: Erstellung der Seite und des Bildes
 Nachdem wir die JPG-Dateien durchsucht haben, erstellen wir für jede Datei eine Seite und ein Bild. Verwenden Sie den folgenden Code:
@@ -83,7 +83,7 @@ doc.Save(dataDir + "SetPageOrientation_out.pdf");
 
  Ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem gewünschten Verzeichnis, in dem Sie die ausgegebene PDF-Datei speichern möchten.
 
-### Beispielquellcode für die Seitenausrichtung entsprechend den Bildabmessungen mit Aspose.PDF für .NET
+### Beispielquellcode für die Seitenausrichtung gemäß Bildabmessungen mit Aspose.PDF für .NET
 
 ```csharp
 

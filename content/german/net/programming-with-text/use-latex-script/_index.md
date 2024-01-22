@@ -142,7 +142,7 @@ Diese Namespaces ermöglichen Ihnen den Zugriff auf die Klassen und Funktionen, 
 
 #### F: Kann ich das im Tutorial verwendete LaTeX-Skript anpassen?
 
- A: Absolut. Die bereitgestellten Codebeispiele zeigen, wie man ein LaTeX-Skript für einen mathematischen Ausdruck einfügt. Sie können die ändern`latexText1` Variable, die beliebige mathematische Formeln oder Ausdrücke enthält, die Sie im PDF-Dokument anzeigen möchten.
+ A: Absolut. Die bereitgestellten Codebeispiele zeigen, wie ein LaTeX-Skript für einen mathematischen Ausdruck eingefügt wird. Sie können die ändern`latexText1` Variable, die beliebige mathematische Formeln oder Ausdrücke enthält, die Sie im PDF-Dokument anzeigen möchten.
 
 #### F: Wie speichere ich das PDF-Dokument, nachdem ich LaTeX-basierten Inhalt hinzugefügt habe?
 

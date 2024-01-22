@@ -33,7 +33,7 @@ Dans cette étape, nous ouvrirons le document PDF en utilisant le`Document` clas
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
 ```
 
-## Étape 4 : initialiser les options d'optimisation
+## Étape 4 : Initialiser les options d'optimisation
 
 Dans cette étape, nous initialiserons les options d'optimisation pour la compression d'image. Créer une instance de`OptimizationOptions` et définissez les options appropriées. Dans cet exemple, nous activons la compression d'image, définissons la qualité de l'image sur 75 et utilisons la version de compression rapide.
 

@@ -40,7 +40,7 @@ Document pdfDocument = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 
  Обязательно замените`"YOUR DOCUMENT DIRECTORY"` с фактическим путем к каталогу вашего документа.
 
-## Шаг 4. Найдите и извлеките текст
+## Шаг 4. Поиск и извлечение текста
 
  Создать`TextFragmentAbsorber` объект, чтобы найти все экземпляры входной поисковой фразы:
 

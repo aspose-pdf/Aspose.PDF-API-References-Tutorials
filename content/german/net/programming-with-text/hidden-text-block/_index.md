@@ -56,7 +56,7 @@ TextFragment fragment = textFragments[1];
 
 ## Schritt 5: Erstellen Sie das ausgeblendete Textfeld
 
- Wir erstellen ein`TextBoxField` Objekt zur Darstellung des ausgeblendeten Textfelds. Dieses Feld enthält den Text, der sichtbar wird, wenn sich der Mauszeiger über dem Auslösetext befindet.
+ Wir erstellen eine`TextBoxField` Objekt zur Darstellung des ausgeblendeten Textfelds. Dieses Feld enthält den Text, der sichtbar wird, wenn sich der Mauszeiger über dem Auslösetext befindet.
 
 ```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));

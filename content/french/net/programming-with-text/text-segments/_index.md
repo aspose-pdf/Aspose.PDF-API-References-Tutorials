@@ -115,7 +115,7 @@ Toutes nos félicitations! Vous avez appris avec succès comment rechercher des 
 
 R : Ce didacticiel aide les utilisateurs à comprendre comment utiliser la bibliothèque Aspose.PDF pour .NET pour rechercher des segments de texte spécifiques dans un document PDF. En fournissant divers exemples de code et expressions régulières, les utilisateurs peuvent personnaliser leurs requêtes de recherche de texte pour trouver le contenu souhaité dans les fichiers PDF.
 
-#### Q : Quels prérequis sont nécessaires pour suivre ce tutoriel ?
+#### Q : Quels prérequis sont requis pour suivre ce tutoriel ?
 
 R : Avant de commencer le didacticiel, vous devez avoir une compréhension de base du langage de programmation C#. De plus, vous devez avoir installé la bibliothèque Aspose.PDF pour .NET. Vous pouvez l'obtenir sur le site Web Aspose ou l'installer dans votre projet à l'aide de NuGet.
 

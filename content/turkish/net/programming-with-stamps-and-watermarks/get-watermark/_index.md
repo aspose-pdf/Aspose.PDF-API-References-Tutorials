@@ -97,7 +97,7 @@ C: Belirtilen sayfada filigran yoksa döngü yürütülmeyecek ve hiçbir filigr
 
 #### S: Çıkarılan filigran bilgilerini daha ileri işlemler için nasıl kullanabilirim?
 
-C: Çıkarılan filigran bilgileri, günlüğe kaydetme, analiz etme, raporlama veya filigranların varlığına veya özelliklerine bağlı olarak belirli eylemlerin otomasyonu gibi çeşitli amaçlar için kullanılabilir.
+C: Çıkarılan filigran bilgileri, günlüğe kaydetme, analiz etme, raporlama veya filigranların varlığına veya özelliklerine bağlı olarak belirli eylemlerin otomasyonu gibi çeşitli amaçlarla kullanılabilir.
 
 #### S: Bir PDF belgesindeki diğer yapı türleri hakkında bilgi çıkarmak için bu kodu değiştirebilir miyim?
 

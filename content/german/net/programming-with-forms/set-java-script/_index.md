@@ -25,7 +25,7 @@ Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentenverzeichnis.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentenverzeichnis.
 
 ## Schritt 2: Laden der Eingabe-PDF-Datei
 

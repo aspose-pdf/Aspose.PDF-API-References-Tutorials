@@ -120,7 +120,7 @@ A: Wenn der Zeitstempelserver während des Signierens nicht verfügbar ist, schl
 
 #### F: Sind digitale Signaturen mit Zeitstempel rechtsverbindlich?
 
-A: Digitale Signaturen mit Zeitstempel haben in vielen Rechtsordnungen rechtlichen Wert und gelten oft als zuverlässiger als einfache digitale Signaturen. Für spezifische Vorschriften wenden Sie sich an Rechtsexperten in Ihrer Gerichtsbarkeit.
+A: Digitale Signaturen mit Zeitstempel haben in vielen Gerichtsbarkeiten rechtlichen Wert und gelten oft als zuverlässiger als einfache digitale Signaturen. Für spezifische Vorschriften wenden Sie sich an Rechtsexperten in Ihrer Gerichtsbarkeit.
 
 #### F: Kann ich einer PDF-Datei mehrere digitale Signaturen mit Zeitstempeln hinzufügen?
 

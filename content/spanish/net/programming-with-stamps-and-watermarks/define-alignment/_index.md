@@ -131,7 +131,7 @@ R: La alineación del texto en un documento PDF se refiere a la posición del te
 
 #### P: ¿Cómo puedo alinear el texto en el centro de un documento PDF usando Aspose.PDF para .NET?
 
- R: El código fuente de C# proporcionado demuestra cómo crear un sello de texto centrado utilizando la biblioteca Aspose.PDF. Al especificar el`HorizontalAlignment` y`VerticalAlignment` propiedades de la`TextStamp` objeto, puede lograr la alineación central tanto horizontal como verticalmente.
+ R: El código fuente de C# proporcionado demuestra cómo crear un sello de texto centrado usando la biblioteca Aspose.PDF. Al especificar el`HorizontalAlignment` y`VerticalAlignment` propiedades de la`TextStamp` objeto, puede lograr la alineación central tanto horizontal como verticalmente.
 
 #### P: ¿Puedo alinear el texto de manera diferente para diferentes partes del documento PDF?
 

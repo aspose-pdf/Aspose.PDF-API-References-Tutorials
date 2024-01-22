@@ -1,7 +1,7 @@
 ---
 title: Dekryptera PDF-fil
 linktitle: Dekryptera PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du dekrypterar en PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 20

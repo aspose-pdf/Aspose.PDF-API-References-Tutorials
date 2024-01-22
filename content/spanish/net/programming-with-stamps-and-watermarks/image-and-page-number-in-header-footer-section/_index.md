@@ -78,7 +78,7 @@ El código anterior crea una sección de pie de página, establece el pie de pá
 
   que muestra el número de página.
 
-## Paso 5: Guardar el documento PDF modificado
+## Paso 5: guardar el documento PDF modificado
 
 Una vez agregados el encabezado y pie de página, podemos guardar el documento PDF modificado. Así es cómo:
 

@@ -1,7 +1,7 @@
 ---
 title: Ta bort visst bokmärke i PDF-fil
 linktitle: Ta bort visst bokmärke i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Ta enkelt bort ett visst bokmärke i PDF-filen med Aspose.PDF för .NET.
 type: docs
 weight: 40
@@ -70,7 +70,7 @@ Grattis! Nu har du en steg-för-steg-guide för att ta bort ett visst bokmärke 
 
 Se till att kolla in den officiella Aspose.PDF-dokumentationen för mer information om avancerade bokmärkesmanipuleringsfunktioner.
 
-### Vanliga frågor för att ta bort ett visst bokmärke i PDF-fil
+### Vanliga frågor för att ta bort ett visst bokmärke i PDF-filen
 
 #### F: Varför skulle jag behöva ta bort ett visst bokmärke från en PDF-fil?
 

@@ -182,7 +182,7 @@ Sí, los marcadores secundarios son compatibles con la mayoría de los visores d
 
 ### ¿Puedo personalizar aún más la apariencia de los marcadores?
 
-Sí, puede personalizar la apariencia de los marcadores ajustando los estilos, colores e íconos del texto para que se adapten al diseño de su documento.
+Sí, puedes personalizar la apariencia de los marcadores ajustando los estilos de texto, colores e íconos para que se adapten al diseño de tu documento.
 
 ### ¿Qué otras acciones puedo agregar a los marcadores?
 

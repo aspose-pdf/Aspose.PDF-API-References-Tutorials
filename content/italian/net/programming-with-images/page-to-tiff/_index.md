@@ -73,7 +73,7 @@ Regola la risoluzione e le altre impostazioni in base alle tue esigenze.
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
 ```
 
-## Passaggio 5: convertire una pagina PDF in TIFF
+## Passaggio 5: conversione di una pagina PDF in TIFF
 
 Ora è il momento di convertire la pagina PDF in TIFF. Possiamo convertire una pagina specifica specificando il numero di pagina. In questo esempio, convertiremo la prima pagina. Utilizza il seguente codice:
 

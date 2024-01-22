@@ -1,7 +1,7 @@
 ---
 title: Hämta Zoom Factor i PDF-fil
 linktitle: Hämta Zoom Factor i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du använder Aspose.PDF för .NET för att få zoomfaktorn i PDF-fil med denna steg-för-steg-guide.
 type: docs
 weight: 210
@@ -22,7 +22,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
 ```
 
- I koden ovan har vi skapat en`Document` objekt genom att skicka sökvägen till PDF-filen till konstruktören av`Document` klass. Du måste ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till katalogen där din PDF-fil finns.
+ I ovanstående kod har vi skapat en`Document` objekt genom att skicka sökvägen till PDF-filen till konstruktören av`Document` klass. Du måste ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till katalogen där din PDF-fil finns.
 
 ## Steg 2: Skapa GoToAction-objekt
 
@@ -33,7 +33,7 @@ Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
 GoToAction action = doc.OpenAction as GoToAction;
 ```
 
- I koden ovan har vi skapat en`GoToAction` objekt genom att gjuta`OpenAction` egendom av`Document` invända mot`GoToAction`.
+ I ovanstående kod har vi skapat en`GoToAction` objekt genom att gjuta`OpenAction` egendom av`Document` invända mot`GoToAction`.
 
 ## Steg 3: Hämta zoomfaktorn för PDF-filen
 

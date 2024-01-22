@@ -1,7 +1,7 @@
 ---
 title: Lägg till linjeobjekt i PDF-fil
 linktitle: Lägg till linjeobjekt i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du lägger till ett anpassat linjeobjekt i en PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 30
@@ -107,7 +107,7 @@ S: Innan du börjar, se till att du har installerat Aspose.PDF-biblioteket och s
 
 #### F: Hur anger jag katalogen för att spara PDF-filen?
 
-S: I den medföljande källkoden kan du ändra variabeln "dataDir" för att ange katalogen där du vill spara den resulterande PDF-filen.
+S: I den medföljande källkoden kan du ändra variabeln "dataDir" för att indikera katalogen där du vill spara den resulterande PDF-filen.
 
 #### F: Vad är syftet med Graph-objektet?
 
@@ -115,7 +115,7 @@ S: Graph-objektet fungerar som en behållare för att rita element. Den skapas m
 
 #### F: Hur kan jag lägga till ett linjeobjekt i PDF-dokumentet?
 
-S: För att lägga till ett linjeobjekt, skapa en instans av klassen Line med specificerade koordinater och lägg till den i grafens formsamling.
+S: För att lägga till ett linjeobjekt, skapa en instans av klassen Line med angivna koordinater och lägg till den i grafens formsamling.
 
 #### F: Kan jag anpassa linjens utseende?
 

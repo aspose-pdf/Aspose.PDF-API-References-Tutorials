@@ -1,7 +1,7 @@
 ---
 title: Sök textsegmentsida i PDF-fil
 linktitle: Sök textsegmentsida i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du söker efter textsegment på en sida i PDF-fil och hämtar deras egenskaper med Aspose.PDF för .NET.
 type: docs
 weight: 470

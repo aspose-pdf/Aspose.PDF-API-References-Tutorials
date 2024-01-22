@@ -1,7 +1,7 @@
 ---
 title: Lägg till textstämpel i PDF-fil
 linktitle: Lägg till textstämpel i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du enkelt lägger till en textstämpel i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 50
@@ -46,7 +46,7 @@ Koden ovan skapar en ny textbuffert som innehåller den angivna texten.
 Innan du lägger till textstämpeln i PDF-dokumentet kan du konfigurera olika egenskaper för stämpeln, såsom bakgrund, position, rotation, teckensnitt, storlek, etc. Så här gör du:
 
 ```csharp
-// Konfigurera egenskaper för textbuffert
+// Konfigurera textbuffertegenskaper
 textStamp. Background = true;
 textStamp. XIndent = 100;
 textStamp. YIndent = 100;

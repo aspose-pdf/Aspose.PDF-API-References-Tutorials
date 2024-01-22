@@ -85,7 +85,7 @@ R: La sustitución de fuentes en un documento PDF ocurre cuando una fuente utili
 
 #### P: ¿Por qué es importante detectar la sustitución de fuentes?
 
-R: Es importante detectar la sustitución de fuentes porque puede afectar la fidelidad visual y el diseño del documento PDF. La detección de advertencias de sustitución de fuentes permite a los desarrolladores identificar situaciones en las que se están sustituyendo fuentes y tomar las medidas adecuadas para garantizar que la apariencia visual del documento sea coherente en los diferentes sistemas.
+R: Es importante detectar la sustitución de fuentes porque puede afectar la fidelidad visual y el diseño del documento PDF. La detección de advertencias de sustitución de fuentes permite a los desarrolladores identificar situaciones en las que se están sustituyendo fuentes y tomar las acciones adecuadas para garantizar que la apariencia visual del documento sea consistente en diferentes sistemas.
 
 #### P: ¿Cómo puedo manejar las advertencias de sustitución de fuentes?
 

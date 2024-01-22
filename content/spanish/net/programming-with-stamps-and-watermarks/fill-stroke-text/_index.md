@@ -120,7 +120,7 @@ fileStamp.Close();
 
 ## Conclusión
 
-¡Enhorabuena! Ha aprendido a rellenar y delinear texto en un documento PDF utilizando Aspose.PDF para .NET. Ahora puedes aplicar este conocimiento para personalizar los colores de relleno y contorno en tus documentos PDF.
+¡Enhorabuena! Ha aprendido a completar y delinear texto en un documento PDF usando Aspose.PDF para .NET. Ahora puedes aplicar este conocimiento para personalizar los colores de relleno y contorno en tus documentos PDF.
 
 ### Preguntas frecuentes para rellenar texto de trazo en un archivo PDF
 

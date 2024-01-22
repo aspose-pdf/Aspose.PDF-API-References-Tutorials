@@ -1,7 +1,7 @@
 ---
 title: Bevara rättigheter
 linktitle: Bevara rättigheter
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Bevara formulärrättigheter i dina PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 210

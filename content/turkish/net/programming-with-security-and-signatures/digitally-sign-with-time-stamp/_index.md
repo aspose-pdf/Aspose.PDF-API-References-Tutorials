@@ -124,4 +124,4 @@ C: Zaman damgalı dijital imzalar birçok yargı alanında yasal değere sahipti
 
 #### S: Bir PDF'ye zaman damgası içeren birden fazla dijital imza ekleyebilir miyim?
 
-C: Evet, imza oluşturma işlemini birden çok kez çağırarak bir PDF dosyasına zaman damgaları içeren birden çok dijital imza ekleyebilirsiniz. Her imzanın kendi zaman damgası olacaktır.
+C: Evet, imza oluşturma sürecini birden çok kez çağırarak bir PDF dosyasına zaman damgaları içeren birden çok dijital imza ekleyebilirsiniz. Her imzanın kendi zaman damgası olacaktır.

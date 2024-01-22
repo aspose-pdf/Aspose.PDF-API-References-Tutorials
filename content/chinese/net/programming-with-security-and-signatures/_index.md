@@ -17,7 +17,7 @@ description: 使用安全和签名进行编程教程教您如何保护和签署 
 | [解密PDF文件](./decrypt/) | 了解如何使用 Aspose.PDF for .NET 解密 PDF 文件。 |  
 | [确定 PDF 文件中的正确密码](./determine-correct-password/) | 了解如何使用 Aspose.PDF for .NET 确定 PDF 文件中的正确密码。 |  
 | [数字登录 PDF 文件](./digitally-sign/) | 了解如何使用 Aspose.PDF for .NET 对 PDF 文件进行数字签名。 |  
-| [在 PDF 文件中使用时间戳进行数字签名](./digitally-sign-with-time-stamp/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中执行带时间戳的数字签名。 |  
+| [在 PDF 文件中使用时间戳进行数字签名](./digitally-sign-with-time-stamp/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中执行带有时间戳的数字签名。 |  
 | [加密 PDF 文件](./encrypt/) | 使用 Aspose.PDF for .NET 安全加密您的 PDF 文件。 |  
 | [提取图像](./extracting-image/) | 使用 Aspose.PDF for .NET 轻松从 PDF 文档中提取图像。 |  
 | [提取签名信息](./extract-signature-info/) | 使用 Aspose.PDF for .NET 提取签名信息。 |  

@@ -34,7 +34,7 @@ Comencemos creando un nuevo proyecto Java en el IDE elegido. Sigue estos pasos:
 A continuación, deberá agregar la biblioteca Aspose.PDF para Java a su proyecto. Así es cómo:
 
 1. Descargue la biblioteca Aspose.PDF para Java del sitio web.
-2. Agregue el archivo JAR a la ruta de clases de su proyecto.
+2. Agregue el archivo JAR a la ruta de clase de su proyecto.
 
 ## Paso 3: cargue el documento PDF
 

@@ -73,7 +73,7 @@ Assurez-vous de consulter la documentation officielle d'Aspose.PDF pour plus d'i
 
 #### Q : Pourquoi est-il important de savoir si un document PDF est protégé par mot de passe ?
 
-R : Il est crucial de savoir si un document PDF est protégé par mot de passe, car cela détermine si vous pouvez accéder et manipuler le contenu qu'il contient. Différentes actions peuvent être nécessaires en fonction de l'état de protection.
+R : Savoir si un document PDF est protégé par mot de passe est crucial car cela détermine si vous pouvez accéder et manipuler le contenu qu'il contient. Différentes actions peuvent être nécessaires en fonction de l'état de protection.
 
 #### Q : Quelle est l’importance de vérifier la protection des PDF dans un projet C# ?
 

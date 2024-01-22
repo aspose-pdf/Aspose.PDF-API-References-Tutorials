@@ -1,7 +1,7 @@
 ---
 title: Konvertera sidregion till DOM
 linktitle: Konvertera sidregion till DOM
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Konvertera enkelt en specifik region av en PDF-sida till en Document Object Model (DOM) med Aspose.PDF för .NET.
 type: docs
 weight: 80

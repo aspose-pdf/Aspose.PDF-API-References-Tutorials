@@ -31,7 +31,7 @@ Per iniziare, crea un nuovo progetto Java nel tuo ambiente di sviluppo integrato
 import com.aspose.pdf.*;
 ```
 
-### Passaggio 2: inizializzare il documento PDF
+### Passaggio 2: inizializza il documento PDF
 
 ```java
 Document document = new Document();

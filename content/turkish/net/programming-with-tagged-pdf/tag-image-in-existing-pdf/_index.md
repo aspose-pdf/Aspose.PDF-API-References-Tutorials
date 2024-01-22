@@ -159,7 +159,7 @@ Bu eğitimde Aspose.PDF for .NET'i kullanarak mevcut bir PDF'deki bir görüntü
 
 #### S: Mevcut bir PDF'deki görüntüleri Aspose.PDF for .NET kullanarak etiketlemeye yönelik bu eğitimin ana amacı nedir?
 
-C: Bu eğitimin temel amacı, Aspose.PDF for .NET kullanarak mevcut bir PDF belgesindeki bir görüntüyü işaretleme sürecinde size rehberlik etmektir. Öğretici, görüntülere alternatif metin ve sınırlayıcı kutular atamayı, belge içindeki öğeleri nasıl taşıyacağınızı ve görüntülere etiket eklemeyi anlamanıza yardımcı olacak adım adım talimatlar ve C# kaynak kodu örnekleri sağlar.
+C: Bu eğitimin temel amacı, Aspose.PDF for .NET'i kullanarak mevcut bir PDF belgesindeki bir görüntüyü işaretleme sürecinde size rehberlik etmektir. Öğretici, görüntülere alternatif metin ve sınırlayıcı kutular atamayı, belge içindeki öğeleri nasıl taşıyacağınızı ve görüntülere etiket eklemeyi anlamanıza yardımcı olacak adım adım talimatlar ve C# kaynak kodu örnekleri sağlar.
 
 #### S: Aspose.PDF for .NET kullanarak PDF'deki görüntüleri etiketlemeye ilişkin bu eğitimi takip etmenin önkoşulları nelerdir?
 
@@ -183,7 +183,7 @@ C: Bir PDF belgesindeki öğelerin taşınması, belirli bir öğenin ana öğes
 
 #### S: Etiketler ekledikten ve görüntülerde düzenlemeler yaptıktan sonra değiştirilen PDF belgesini nasıl kaydedebilirim?
 
- C: Etiketler ekledikten, alternatif metin atadıktan, sınırlayıcı kutuları ayarladıktan ve PDF belgesinde düzenlemeler yaptıktan sonra, değiştirilen PDF belgesini kaydetmek için sağlanan C# kaynak kodu örneklerini kullanabilirsiniz.`Save()` yöntem.
+ C: PDF belgesinde etiketler ekledikten, alternatif metin atadıktan, sınırlayıcı kutular ayarladıktan ve düzenlemeler yaptıktan sonra, değiştirilen PDF belgesini kaydetmek için sağlanan C# kaynak kodu örneklerini kullanabilirsiniz.`Save()` yöntem.
 
 #### S: Eğitimde sağlanan örnek kaynak kodunun amacı nedir?
 

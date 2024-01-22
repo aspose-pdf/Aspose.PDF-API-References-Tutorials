@@ -22,7 +22,7 @@ Tout d’abord, vous devez instancier un objet Document à l’aide de la classe
 Document doc = new Document();
 ```
 
-## Étape 2 : Ajouter une page au document
+## Étape 2 : ajouter une page au document
  Ensuite, vous pouvez ajouter une page au document en utilisant le`Add()` méthode de la collection Pages du document.
 
 ```csharp

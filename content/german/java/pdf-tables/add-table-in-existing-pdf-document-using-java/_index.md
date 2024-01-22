@@ -27,7 +27,7 @@ Bevor wir beginnen, stellen Sie sicher, dass Sie die folgenden Voraussetzungen e
 
 ## Abhängigkeiten hinzufügen
 
- In Ihrem Projekt`pom.xml`(wenn Sie Maven verwenden) oder der Datei build.gradle (wenn Sie Gradle verwenden) fügen Sie die folgende Abhängigkeit hinzu:
+ In Ihrem Projekt`pom.xml` (wenn Sie Maven verwenden) oder der Datei build.gradle (wenn Sie Gradle verwenden) fügen Sie die folgende Abhängigkeit hinzu:
 
 ```xml
 <dependencies>
@@ -92,7 +92,7 @@ row.getCells().add("Location");
 Sie können die Tabelle weiter gestalten, indem Sie die Schriftgröße, die Textfarbe und andere Formatierungsoptionen ändern. Hier ist ein Beispiel:
 
 ```java
-// Schriftgröße festlegen
+// Schriftgröße einstellen
 TextState textState = new TextState();
 textState.setFontSize(12);
 table.setDefaultCellTextState(textState);

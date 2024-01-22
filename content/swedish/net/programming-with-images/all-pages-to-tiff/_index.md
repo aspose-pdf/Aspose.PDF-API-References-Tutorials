@@ -1,7 +1,7 @@
 ---
 title: Alla sidor till TIFF
 linktitle: Alla sidor till TIFF
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Konvertera alla sidor i ett PDF-dokument till TIFF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 20

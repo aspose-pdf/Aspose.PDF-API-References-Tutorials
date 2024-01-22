@@ -32,7 +32,7 @@ Assurez-vous de remplacer « VOTRE RÉPERTOIRE DE DOCUMENTS » par le chemin d
 
 ## Étape 3 : Obtenir le filigrane
 
-Maintenant que vous avez chargé le document PDF, vous pouvez parcourir les artefacts de page spécifiques pour obtenir les informations sur le filigrane. Voici comment:
+Maintenant que vous avez chargé le document PDF, vous pouvez parcourir les artefacts de page spécifiques pour obtenir les informations du filigrane. Voici comment:
 
 ```csharp
 // Parcourez les artefacts et obtenez le sous-type, le texte et l'emplacement du filigrane

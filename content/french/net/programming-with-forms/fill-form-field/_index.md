@@ -78,7 +78,7 @@ R : Oui, vous pouvez remplir plusieurs champs de formulaire dans un document PDF
 
 #### Q : Comment puis-je trouver les noms des champs de formulaire dans un document PDF ?
 
- R : Pour rechercher les noms des champs de formulaire dans un document PDF, vous pouvez parcourir les`pdfDocument.Form.Fields` collection. Chaque champ du formulaire possède un`FullName` propriété qui contient son nom unique. Vous pouvez utiliser ces noms pour identifier et modifier des champs de formulaire spécifiques.
+ R : Pour rechercher les noms des champs de formulaire dans un document PDF, vous pouvez parcourir les`pdfDocument.Form.Fields` collection. Chaque champ de formulaire possède un`FullName` propriété qui contient son nom unique. Vous pouvez utiliser ces noms pour identifier et modifier des champs de formulaire spécifiques.
 
 #### Q : Que se passe-t-il si le champ du formulaire que je souhaite remplir n'existe pas dans le document PDF ?
 

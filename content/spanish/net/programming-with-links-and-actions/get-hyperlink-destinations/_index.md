@@ -55,7 +55,7 @@ foreach(Aspose.Pdf.Page page in document.Pages)
      page. Accept(selector);
      // Crea una lista para almacenar todos los enlaces.
      IList<Annotation> list = selector. Selected;
-     // Recorre cada elemento de la lista
+     // Recorre cada elemento de la lista.
      foreach(LinkAnnotation a in list)
      {
          // Imprimir URL de destino

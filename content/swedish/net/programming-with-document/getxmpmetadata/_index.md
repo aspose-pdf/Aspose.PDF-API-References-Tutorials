@@ -1,7 +1,7 @@
 ---
 title: Skaffa XMP-metadata
 linktitle: Skaffa XMP-metadata
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du använder GetXmpMetadata-funktionen i Aspose.PDF för .NET för att extrahera XMP-metadata från ett PDF-dokument med C#-källkod.
 type: docs
 weight: 200

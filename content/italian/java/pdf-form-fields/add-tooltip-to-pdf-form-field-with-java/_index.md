@@ -70,7 +70,7 @@ Per garantire che i suggerimenti funzionino correttamente, aprire il PDF generat
 
 ## Conclusione
 
-L'aggiunta di descrizioni comandi ai campi del modulo PDF utilizzando Java e Aspose.PDF è un processo semplice. Migliora l'esperienza dell'utente fornendo suggerimenti e istruzioni utili. Puoi personalizzare le descrizioni comando per vari campi modulo nei tuoi documenti PDF.
+L'aggiunta di descrizioni comandi ai campi del modulo PDF utilizzando Java e Aspose.PDF è un processo semplice. Migliora l'esperienza dell'utente fornendo suggerimenti e istruzioni utili. Puoi personalizzare le descrizioni comandi per vari campi modulo nei tuoi documenti PDF.
 
 ## Domande frequenti
 
@@ -88,7 +88,7 @@ Sì, puoi aggiungere descrizioni comando ai campi modulo nei documenti PDF esist
 
 ### Le descrizioni comandi sono supportate in tutti i visualizzatori PDF?
 
-Le descrizioni comandi sono una funzionalità PDF standard e sono supportate dalla maggior parte dei moderni visualizzatori PDF, tra cui Adobe Acrobat Reader e i più diffusi visualizzatori PDF basati sul Web.
+Le descrizioni comandi sono una funzionalità PDF standard e sono supportate dalla maggior parte dei visualizzatori PDF moderni, tra cui Adobe Acrobat Reader e i più diffusi visualizzatori PDF basati sul Web.
 
 ### Posso aggiungere descrizioni comando a elementi non modulo in un PDF?
 

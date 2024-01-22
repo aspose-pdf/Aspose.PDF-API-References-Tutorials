@@ -132,7 +132,7 @@ A: Schritt 5 besteht darin, die Schriftgröße von Textfragmenten um den Faktor 
 
 #### F: Wie extrahiere ich Text aus Spalten?
 
- A: Schritt 6 besteht darin, das geänderte PDF-Dokument in einem Speicherstream zu speichern, es als neues Dokument erneut zu laden und dann zu verwenden`TextAbsorber` Klasse zum Extrahieren von Text aus den Spalten.
+ A: Schritt 6 besteht darin, das geänderte PDF-Dokument in einem Speicherstream zu speichern, es als neues Dokument erneut zu laden und dann das zu verwenden`TextAbsorber` Klasse zum Extrahieren von Text aus den Spalten.
 
 #### F: Zu welchem Zweck wird der extrahierte Text gespeichert?
 

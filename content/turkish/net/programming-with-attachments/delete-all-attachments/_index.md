@@ -71,7 +71,7 @@ C: Bir PDF dosyasındaki tüm eklerin kaldırılması, belgenin daha verimli hal
 
 #### S: Aspose.PDF for .NET tüm eklerin kaldırılması sürecini nasıl basitleştirir?
 
-C: Aspose.PDF for .NET, bir PDF dosyasındaki tüm ekleri kolayca kaldırmanıza olanak tanıyan kullanıcı dostu bir API sağlar. Sağlanan kaynak kodu, işlemi adım adım göstermektedir.
+C: Aspose.PDF for .NET, bir PDF dosyasındaki tüm ekleri kolayca kaldırmanıza olanak tanıyan kullanıcı dostu bir API sağlar. Sağlanan kaynak kodu, işlemi adım adım gösterir.
 
 #### S: Bu öğreticiyi kullanarak belirli ekleri seçerek kaldırabilir miyim?
 

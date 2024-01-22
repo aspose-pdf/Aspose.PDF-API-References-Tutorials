@@ -38,7 +38,7 @@ Configureremo il bordo della cella della tabella:
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-## Passaggio 5: esegui il ciclo per aggiungere 10 righe alla tabella
+## Passaggio 5: esegui il loop per aggiungere 10 righe alla tabella
 Utilizzeremo ora un ciclo per aggiungere 10 righe alla tabella:
 
 ```csharp

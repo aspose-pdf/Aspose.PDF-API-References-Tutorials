@@ -7,7 +7,7 @@ type: docs
 weight: 250
 url: /ar/net/programming-with-images/resize-images/
 ---
-سنرشدك في هذا البرنامج التعليمي إلى كيفية تغيير حجم الصور في ملف PDF باستخدام Aspose.PDF لـ .NET. اتبع هذه الخطوات لتنفيذ هذه العملية بسهولة.
+في هذا البرنامج التعليمي، سنرشدك إلى كيفية تغيير حجم الصور في ملف PDF باستخدام Aspose.PDF لـ .NET. اتبع هذه الخطوات لتنفيذ هذه العملية بسهولة.
 
 ## المتطلبات الأساسية
 
@@ -49,7 +49,7 @@ optimizeOptions.ImageCompressionOptions.ImageQuality = 75;
 // قم بتنشيط خيار تغيير حجم الصور
 optimizeOptions.ImageCompressionOptions.ResizeImages = true;
 
-// ضبط الحد الأقصى للدقة
+// تعيين الحد الأقصى للدقة
 optimizeOptions.ImageCompressionOptions.MaxResolution = 300;
 ```
 

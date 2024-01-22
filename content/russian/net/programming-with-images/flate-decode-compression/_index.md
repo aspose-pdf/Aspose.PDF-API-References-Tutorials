@@ -86,7 +86,7 @@ doc.Save(dataDir + "FlateDecodeCompression.pdf");
 
 ####  Вопрос: Как`ImageEncoding.Flate` option contribute to image optimization in Flate Decode compression?
 
- А:`ImageEncoding.Flate`Параметр определяет использование сжатия Flate Decode для оптимизации изображений в PDF-документе, гарантируя эффективное сжатие изображений с помощью этого метода.
+ А:`ImageEncoding.Flate`Опция определяет использование сжатия Flate Decode для оптимизации изображений в PDF-документе, гарантируя эффективное сжатие изображений с помощью этого метода.
 
 #### Вопрос: Могу ли я выборочно применять сжатие Flate Decode к определенным изображениям в PDF-документе?
 

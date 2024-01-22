@@ -1,6 +1,6 @@
 ---
-title: Obtenir les dimensions d'une page PDF
-linktitle: Obtenir les dimensions d'une page PDF
+title: Obtenir les dimensions de la page PDF
+linktitle: Obtenir les dimensions de la page PDF
 second_title: Aspose.PDF pour la référence de l'API .NET
 description: Dans ce didacticiel, nous expliquons comment obtenir les dimensions d'une page PDF et effectuer des manipulations à l'aide d'Aspose.PDF pour .NET. Des étapes détaillées sont fournies pour vous guider tout au long du processus.
 type: docs

@@ -1,7 +1,7 @@
 ---
 title: Infoga sidbrytning i PDF-fil
 linktitle: Infoga sidbrytning i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du infogar en sidbrytning i PDF-filen med Aspose.PDF för .NET.
 type: docs
 weight: 110

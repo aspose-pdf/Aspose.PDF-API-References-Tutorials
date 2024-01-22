@@ -119,7 +119,7 @@ int defaultResolution = 72;
 System.Collections.Stack graphicsState = new System.Collections.Stack();
 // Görüntü adlarını tutacak dizi listesi nesnesini tanımlayın
 System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
-// Yığılacak bir nesne ekleme
+// Yığınlanacak bir nesne ekleme
 graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
 // Tüm operatörleri belgenin ilk sayfasına alın
 foreach (Operator op in doc.Pages[1].Contents)

@@ -154,7 +154,7 @@ R : Si la vérification d'une signature échoue, une exception est levée, indi
 
 #### Q : Puis-je appliquer plusieurs champs de signature et signatures basées sur une carte à puce à un seul document PDF ?
 
-R : Absolument, vous pouvez appliquer plusieurs champs de signature et signatures basées sur une carte à puce à différentes zones du même document PDF, offrant ainsi plusieurs niveaux de sécurité.
+R : Absolument, vous pouvez appliquer plusieurs champs de signature et signatures basées sur une carte à puce à différentes zones du même document PDF, offrant ainsi plusieurs niveaux de sécurité.
 
 #### Q : Comment l'utilisation d'un champ de signature améliore-t-elle le processus global de signature d'un document ?
 

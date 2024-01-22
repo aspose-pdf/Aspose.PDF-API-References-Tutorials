@@ -114,7 +114,7 @@ C: Kod, mevcut bir PDF belgesini açma, istenen altbilgi metniyle bir metin damg
 
  C: Evet, altbilgi metninin görünümünü, altbilgi metninin özelliklerini değiştirerek özelleştirebilirsiniz.`TextStamp` nesne. Kod örneği, alt kenar boşluğu, yatay hizalama ve dikey hizalama gibi özelliklerin ayarlanmasını içerir. Ayrıca yazı tipini, boyutunu, rengini ve metinle ilgili diğer özellikleri de ayarlayabilirsiniz.
 
-#### S: Her sayfanın alt bilgisine farklı metin eklemek mümkün mü?
+#### S: Her sayfanın alt bilgisine farklı metin eklemek mümkün müdür?
 
  C: Evet, her sayfanın altbilgisine ayrı metinler oluşturarak farklı metinler ekleyebilirsiniz.`TextStamp` farklı metin içeriğine veya özelliklere sahip nesneler oluşturma ve ardından bunları gerektiğinde belirli sayfalara ekleme.
 
@@ -132,4 +132,4 @@ C: Üstbilgi ve altbilgi bölümlerine farklı içerik eklemek için her iki bö
 
 #### S: Bu yaklaşımı kullanarak alt bilgi metninin yanına resim veya başka öğeler eklemek mümkün müdür?
 
-C: Sağlanan kod özellikle altbilgiye metin eklemeyi gösterse de, Aspose.PDF kütüphanesini kullanarak yaklaşımı resimler, çizgiler, şekiller veya diğer herhangi bir içerik gibi diğer öğeleri altbilgi bölümüne ekleyecek şekilde genişletebilirsiniz.
+C: Sağlanan kod özellikle altbilgiye metin eklemeyi gösterse de, Aspose.PDF kütüphanesini kullanarak yaklaşımı resimler, çizgiler, şekiller veya başka herhangi bir içerik gibi diğer öğeleri altbilgi bölümüne ekleyecek şekilde genişletebilirsiniz.

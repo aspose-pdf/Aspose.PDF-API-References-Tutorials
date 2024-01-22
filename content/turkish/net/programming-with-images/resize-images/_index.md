@@ -109,7 +109,7 @@ C: Bir PDF dosyasındaki görüntüleri yeniden boyutlandırmak, belgenin boyutu
 
 #### S: Görüntüyü yeniden boyutlandırma, PDF belgesindeki görüntülerin kalitesini nasıl etkiler?
 
- C: Görüntüyü yeniden boyutlandırma, görüntülerin boyutlarını ve çözünürlüğünü azaltmayı içerir; bu da dosya boyutunun küçülmesine yol açabilir. Bu, görüntü kalitesini bir dereceye kadar düşürebilirken,`ImageQuality` parametre (`optimizeOptions.ImageCompressionOptions.ImageQuality`) görüntü boyutu ve kalitesi arasındaki dengeyi kontrol etmenizi sağlar.
+ C: Görüntüyü yeniden boyutlandırma, görüntülerin boyutlarını ve çözünürlüğünü azaltmayı içerir; bu da dosya boyutunun küçülmesine neden olabilir. Bu, görüntü kalitesini bir dereceye kadar düşürebilirken,`ImageQuality` parametre (`optimizeOptions.ImageCompressionOptions.ImageQuality`) görüntü boyutu ve kalitesi arasındaki dengeyi kontrol etmenizi sağlar.
 
 ####  Soru: Programın amacı nedir?`MaxResolution` option in the optimization settings?
 

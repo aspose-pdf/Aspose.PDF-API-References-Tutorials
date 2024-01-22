@@ -12,7 +12,7 @@ In dieser Schritt-für-Schritt-Anleitung erfahren Sie, wie Sie mithilfe der Prog
 
 ## Einführung
 
-PDF-Dateien enthalten häufig verschiedene Arten von Inhalten, darunter Text, Bilder und Grafiken. In einigen Fällen müssen Sie aus verschiedenen Gründen möglicherweise bestimmte Bilder aus einem PDF-Dokument entfernen, z. B. um vertrauliche Informationen zu schwärzen oder die Dateigröße zu optimieren. Java ist eine vielseitige Programmiersprache und kann Ihnen in Kombination mit Aspose.PDF für Java dabei helfen, diese Aufgabe effizient zu erfüllen.
+PDF-Dateien enthalten häufig verschiedene Arten von Inhalten, darunter Text, Bilder und Grafiken. In einigen Fällen müssen Sie aus verschiedenen Gründen möglicherweise bestimmte Bilder aus einem PDF-Dokument entfernen, z. B. um vertrauliche Informationen zu schwärzen oder die Dateigröße zu optimieren. Java ist eine vielseitige Programmiersprache und kann Ihnen in Kombination mit Aspose.PDF für Java dabei helfen, diese Aufgabe effizient zu lösen.
 
 ## Voraussetzungen
 

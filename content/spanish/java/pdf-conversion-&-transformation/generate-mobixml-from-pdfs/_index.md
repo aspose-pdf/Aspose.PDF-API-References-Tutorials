@@ -24,7 +24,7 @@ Antes de sumergirnos en el proceso de conversión, asegúrese de cumplir con los
 
 1. Cree un nuevo proyecto Java: comience creando un nuevo proyecto Java en su entorno de desarrollo integrado (IDE) favorito. Puede utilizar IntelliJ IDEA, Eclipse o cualquier otro IDE de su elección.
 
-2. Agregue la biblioteca Aspose.PDF para Java: una vez que su proyecto esté configurado, agregue la biblioteca Aspose.PDF para Java a la ruta de clases de su proyecto. Generalmente, esto se puede hacer incluyendo los archivos JAR en las dependencias de su proyecto.
+2. Agregue la biblioteca Aspose.PDF para Java: una vez que su proyecto esté configurado, agregue la biblioteca Aspose.PDF para Java a la ruta de clase de su proyecto. Generalmente, esto se puede hacer incluyendo los archivos JAR en las dependencias de su proyecto.
 
 ## Convertir PDF a MobiXML
 

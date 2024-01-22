@@ -2,7 +2,7 @@
 title: 添加图层到 PDF 文件
 linktitle: 添加图层到 PDF 文件
 second_title: Aspose.PDF for .NET API 参考
-description: 了解如何使用 Aspose.PDF for .NET 向 PDF 文件添加图层。包含用于创建和保存分层 PDF 的代码教程的分步指南。
+description: 了解如何使用 Aspose.PDF for .NET 将图层添加到 PDF 文件。包含用于创建和保存分层 PDF 的代码教程的分步指南。
 type: docs
 weight: 20
 url: /zh/net/programming-with-document/addlayers/
@@ -130,4 +130,4 @@ Console.WriteLine("\nLayers added successfully to PDF file.\nFile saved at " + d
 
 #### 问：Aspose.PDF for .NET 适合专业项目吗？
 
-答：是的，Aspose.PDF for .NET 是一个可靠且广泛使用的库，用于专业项目中的 PDF 操作。它为在 .NET 应用程序中处理 PDF 文件提供了广泛的功能和卓越的性能。
+答：是的，Aspose.PDF for .NET 是一个可靠且广泛使用的库，用于专业项目中的 PDF 操作。它为在 .NET 应用程序中处理 PDF 文件提供了广泛的功能和出色的性能。

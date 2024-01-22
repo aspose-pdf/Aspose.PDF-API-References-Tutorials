@@ -139,4 +139,4 @@ R : Bien qu'Aspose.PDF pour .NET offre une fonctionnalité complète de liens hy
 
 #### Q : Puis-je créer des hyperliens vers des fichiers externes à l’aide d’Aspose.PDF pour .NET ?
 
-: Oui, en plus des URL Web, vous pouvez créer des hyperliens menant vers des fichiers externes, tels que d'autres documents PDF, images ou fichiers multimédia. Aspose.PDF pour .NET offre la flexibilité de créer des liens vers différents types de ressources.
+R : Oui, en plus des URL Web, vous pouvez créer des hyperliens menant vers des fichiers externes, tels que d'autres documents PDF, images ou fichiers multimédia. Aspose.PDF pour .NET offre la flexibilité de créer des liens vers différents types de ressources.

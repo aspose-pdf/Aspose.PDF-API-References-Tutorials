@@ -120,7 +120,7 @@ R: Este tutorial ayuda a los usuarios a comprender cómo aprovechar Aspose.PDF p
 
 R: Para seguir este tutorial con éxito, debe tener conocimientos básicos del lenguaje de programación C#. Además, asegúrese de tener instalada la biblioteca Aspose.PDF para .NET. Puede obtenerlo del sitio web de Aspose o utilizar NuGet para instalarlo en su proyecto.
 
-#### P: ¿Cómo configuro mi proyecto para utilizar script LaTeX en un documento PDF?
+#### P: ¿Cómo configuro mi proyecto para usar script LaTeX en un documento PDF?
 
 R: Para comenzar, cree un nuevo proyecto C# en el entorno de desarrollo integrado (IDE) que elija y agregue una referencia a la biblioteca Aspose.PDF para .NET. Esto le proporcionará las herramientas necesarias para trabajar con documentos PDF y scripts LaTeX.
 

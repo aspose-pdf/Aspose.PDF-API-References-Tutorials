@@ -1,7 +1,7 @@
 ---
 title: Ställ in språk och titel
 linktitle: Ställ in språk och titel
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att konfigurera språket och titeln på ett PDF-dokument med Aspose.PDF för .NET. Skapa personliga flerspråkiga dokument.
 type: docs
 weight: 140

@@ -113,7 +113,7 @@ A: Aspose.PDF für .NET bietet eine zuverlässige und funktionsreiche API, die d
 
 A: Absolut. Sie können verschiedene Einstellungen anpassen, einschließlich Komprimierung, Farbtiefe und Form, um die TIFF-Ausgabedatei an Ihre Anforderungen anzupassen.
 
-####  F: Welche Rolle spielt das`TiffDevice` object in the conversion process?
+####  F: Welche Rolle spielt das?`TiffDevice` object in the conversion process?
 
  A: Die`TiffDevice` Das Objekt fungiert als Brücke zwischen dem PDF-Dokument und der ausgegebenen TIFF-Datei und erleichtert die Konvertierung von PDF-Seiten in das TIFF-Format.
 

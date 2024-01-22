@@ -60,7 +60,7 @@ combo.AddOption("Blue");
 doc.Form.Add(combo);
 ```
 
-## 第 7 步：保存文档
+## 第7步：保存文档
 
 保存 PDF 文档：
 
@@ -121,6 +121,6 @@ catch (Exception ex)
 
 答：是的，Aspose.PDF for .NET 允许您将事件处理程序或操作添加到组合框列表中。您可以关联 JavaScript 操作，例如`OnValueChanged`，到组合框列表以在用户选择选项时执行特定操作。
 
-#### 问：我可以向组合框列表中的选项添加工具提示或描述吗？
+#### 问：我可以向组合框列表中的选项添加工具提示或说明吗？
 
 答：是的，您可以使用 Aspose.PDF for .NET 将工具提示或描述添加到组合框列表中的选项。您可以设置`AlternateName`每个选项的属性，以提供当用户将鼠标悬停在选项上时将显示的工具提示或说明。

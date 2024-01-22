@@ -142,4 +142,4 @@ using System.Text;
 
 #### F: Was ist die wichtigste Erkenntnis aus diesem Tutorial?
 
-A: Durch die Befolgung dieses Tutorials haben Sie gelernt, wie Sie die Textgerätefunktion in Aspose.PDF für .NET nutzen, um Text aus einem PDF-Dokument zu extrahieren. Der extrahierte Text wurde in einer bestimmten Ausgabedatei gespeichert, sodass Sie den extrahierten Inhalt nach Bedarf bearbeiten und nutzen können.
+A: Durch die Befolgung dieses Tutorials haben Sie gelernt, wie Sie die Textgerätefunktion in Aspose.PDF für .NET nutzen, um Text aus einem PDF-Dokument zu extrahieren. Der extrahierte Text wurde in einer bestimmten Ausgabedatei gespeichert, sodass Sie den extrahierten Inhalt nach Bedarf bearbeiten und verwenden können.

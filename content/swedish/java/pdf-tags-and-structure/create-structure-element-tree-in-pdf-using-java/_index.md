@@ -76,19 +76,24 @@ I den här handledningen har vi demonstrerat hur man skapar ett strukturelementt
 
 Genom att följa dessa steg och införliva strukturelement i dina PDF-dokument kan du göra ditt innehåll mer tillgängligt och kompatibelt med tillgänglighetsstandarder. Detta är ett viktigt steg för att säkerställa att dina dokument är inkluderande och användarvänliga.
 
-## Vanliga frågor:
+## FAQ's
 
 ### Vad är syftet med ett strukturelementträd i ett PDF-dokument?
-   - Ett strukturelementträd representerar den logiska strukturen av innehåll i ett PDF-dokument, vilket möjliggör tillgänglighet och effektiv kommunikation av innehåll till användare, särskilt de med synnedsättning.
+
+Ett strukturelementträd representerar den logiska strukturen av innehåll i ett PDF-dokument, vilket möjliggör tillgänglighet och effektiv kommunikation av innehåll till användare, särskilt de med synnedsättning.
 
 ### Hur kan jag lägga till bilder i ett taggat PDF-dokument?
-   -  Du kan använda`com.aspose.pdf.Image` klass för att lägga till bilder till ett taggat PDF-dokument. Se till att du associerar lämpliga strukturelement med bilderna för tillgänglighet.
+
+ Du kan använda`com.aspose.pdf.Image` klass för att lägga till bilder till ett taggat PDF-dokument. Se till att du associerar lämpliga strukturelement med bilderna för tillgänglighet.
 
 ### Är taggade PDF-dokument ett krav för tillgänglighetsefterlevnad?
-   - Ja, taggade PDF-dokument är avgörande för tillgänglighetsefterlevnad, eftersom de ger en strukturerad representation av innehåll som kan tolkas av hjälpmedel.
+
+Ja, taggade PDF-dokument är avgörande för tillgänglighetsefterlevnad, eftersom de ger en strukturerad representation av innehåll som kan tolkas av hjälpmedel.
 
 ### Kan jag automatisera taggningsprocessen för befintliga PDF-dokument?
-   - Ja, Aspose.PDF för Java tillhandahåller funktioner för att programmatiskt tagga befintliga PDF-dokument för att göra dem tillgängliga.
+
+Ja, Aspose.PDF för Java tillhandahåller funktioner för att programmatiskt tagga befintliga PDF-dokument för att göra dem tillgängliga.
 
 ### Vad är några bästa metoder för att skapa tillgängliga PDF-dokument?
-   - Några bästa metoder inkluderar att lägga till alternativ text till bilder, använda korrekt rubrikstruktur, tillhandahålla beskrivande länkar och säkerställa en logisk läsordning för innehåll.
+
+Några bästa metoder inkluderar att lägga till alternativ text till bilder, använda korrekt rubrikstruktur, tillhandahålla beskrivande länkar och säkerställa en logisk läsordning för innehåll.

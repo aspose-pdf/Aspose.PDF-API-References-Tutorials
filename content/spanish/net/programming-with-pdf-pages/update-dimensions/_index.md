@@ -92,7 +92,7 @@ R: Para actualizar las dimensiones de una página específica en un documento PD
 1. Configure el directorio de documentos especificando la ruta donde se encuentra su archivo PDF original y donde desea guardar el archivo PDF actualizado. Reemplace "SU DIRECTORIO DE DOCUMENTOS" con la ruta adecuada.
 2.  Abra el documento PDF existente para actualizarlo usando el`Document` clase de Aspose.PDF. Asegúrese de especificar la ruta correcta al documento PDF original.
 3.  Acceda a la colección de páginas del documento PDF utilizando el`Pages` propiedad de la`Document` clase.
-4. Seleccione la página específica que desea actualizar de la colección de páginas utilizando el índice de la página. En el código fuente de C# proporcionado, estamos usando la segunda página (índice 1).
+4. Seleccione la página específica que desea actualizar de la colección de páginas utilizando el índice de la página. En el código fuente de C# proporcionado, estamos utilizando la segunda página (índice 1).
 5.  Defina el nuevo tamaño de página usando el`SetPageSize()` método de la`Page` objeto. En el ejemplo, configuramos las dimensiones de la página en tamaño A4 (11,7 x 8,3 pulgadas), convertidas a puntos (1 pulgada = 72 puntos).
 6.  Guarde el documento PDF actualizado en un archivo usando el`Save()` método de la`Document`clase. Asegúrese de especificar la ruta y el nombre de archivo correctos.
 

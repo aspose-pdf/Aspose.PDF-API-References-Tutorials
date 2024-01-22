@@ -1,7 +1,7 @@
 ---
 title: Ändra lösenord i PDF-fil
 linktitle: Ändra lösenord i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du ändrar lösenordet i PDF-filen med Aspose.PDF för .NET.
 type: docs
 weight: 10
@@ -29,7 +29,7 @@ För att komma igång, följ dessa steg för att konfigurera din utvecklingsmilj
 using Aspose.Pdf;
 ```
 
-## Steg 3: Laddar PDF-dokumentet
+## Steg 3: Ladda PDF-dokumentet
 
 Det första steget är att ladda PDF-dokumentet som du vill ändra lösenordet för. I det här exemplet antar vi att du har en PDF-fil med namnet "ChangePassword.pdf" i den angivna katalogen.
 

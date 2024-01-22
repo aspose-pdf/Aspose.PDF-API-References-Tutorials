@@ -80,7 +80,7 @@ pdfDocument.save("output.svg", saveOptions);
 
 Speichern Sie das generierte SVG-Bild in einer Datei.
 
-## Ausnahmen behandeln
+## Umgang mit Ausnahmen
 
 Die Ausnahmebehandlung ist von entscheidender Bedeutung, um sicherzustellen, dass Ihr Code unerwartete Situationen ordnungsgemäß bewältigt.
 

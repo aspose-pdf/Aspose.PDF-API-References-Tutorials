@@ -144,7 +144,7 @@ Console.WriteLine("\nText and image added successfully as an inline paragraphs.\
 
 答：本教程帮助用户了解如何使用 Aspose.PDF for .NET 将文本和图像合并为 PDF 文档中的内联段落。通过遵循提供的步骤和代码示例，用户可以创建具有结合文本和图像的自定义布局的 PDF 文件。
 
-#### 问：学习本教程需要什么先决条件？
+#### 问：学习本教程需要满足哪些先决条件？
 
 答：在开始本教程之前，您应该对 C# 编程语言有基本的了解。此外，您需要安装 Aspose.PDF for .NET 库。您可以从 Aspose 网站获取它或使用 NuGet 将其安装到您的项目中。
 

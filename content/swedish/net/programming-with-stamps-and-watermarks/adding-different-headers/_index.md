@@ -1,7 +1,7 @@
 ---
 title: Lägga till olika rubriker i PDF-fil
 linktitle: Lägga till olika rubriker i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du enkelt lägger till olika rubriker till varje sida i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 30
@@ -43,7 +43,7 @@ Aspose.Pdf.TextStamp stamp3 = new Aspose.Pdf.TextStamp("Header 3");
 
 Ovanstående kod skapar tre nya rubrikbuffertar som innehåller den angivna texten.
 
-## Steg 4: Konfigurera header buffertegenskaper
+## Steg 4: Konfigurera rubrikbuffertegenskaper
 
 Innan du lägger till rubrikstämplarna i PDF-dokumentet kan du konfigurera olika egenskaper för varje stämpel, som justering, storlek, färg etc. Så här gör du:
 

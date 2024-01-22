@@ -45,7 +45,7 @@ Ahora especificaremos el diseño del contenido del libro EPUB. Utilice el siguie
 options.ContentRecognitionMode = EpubSaveOptions.RecognitionMode.Flow;
 ```
 
-## Paso 4: Guardar el documento EPUB
+## Paso 4: guardar el documento EPUB
 Una vez que hayamos configurado las opciones de guardado, ya podemos guardar el archivo EPUB resultante. Aquí está el último paso:
 
 ```csharp

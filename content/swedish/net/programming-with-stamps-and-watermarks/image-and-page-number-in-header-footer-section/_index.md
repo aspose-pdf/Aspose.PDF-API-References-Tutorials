@@ -1,7 +1,7 @@
 ---
 title: Bild och sidnummer i sidhuvudsavsnittet
 linktitle: Bild och sidnummer i sidhuvudsavsnittet
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Ta reda på hur du lägger till en bild och ett sidnummer i sidhuvudet och sidfoten i ett PDF-dokument med Aspose.
 type: docs
 weight: 110
@@ -123,7 +123,7 @@ page.Footer = footer;
 // Skapa ett textobjekt
 Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P ) ");
 
-// Lägg till text i rubrikavsnittet i pdf-filen
+// Lägg till text i rubriksektionen i pdf-filen
 footer.Paragraphs.Add(txt);
 
 // Spara pdf-filen

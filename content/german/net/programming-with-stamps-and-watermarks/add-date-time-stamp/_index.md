@@ -77,7 +77,7 @@ Sie können diese Eigenschaften entsprechend Ihren Bedürfnissen anpassen.
 Da der Datums- und Zeitstempel nun fertig ist, können Sie ihn einer bestimmten Seite des PDF-Dokuments hinzufügen. Hier ist wie:
 
 ```csharp
-// Fügen Sie den Stempel zur Briefmarkensammlung der Seite hinzu
+// Fügen Sie den Stempel der Briefmarkensammlung der Seite hinzu
 pdfDocument.Pages[1].AddStamp(textStamp);
 ```
 

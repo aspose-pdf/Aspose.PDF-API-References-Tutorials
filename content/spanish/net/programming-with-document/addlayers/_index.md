@@ -60,7 +60,7 @@ En este tutorial, agregamos tres capas con diferentes colores y nombres a la pá
 
 ## Paso 4: guarde el archivo PDF
 
- Guarde el archivo PDF modificado utilizando el`Save` método de la`Document` clase.
+ Guarde el archivo PDF modificado usando el`Save` método de la`Document` clase.
 
 ```csharp
 dataDir = dataDir + "AddLayers_out.pdf";

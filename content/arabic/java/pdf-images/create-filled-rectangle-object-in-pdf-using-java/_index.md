@@ -30,7 +30,7 @@ url: /ar/java/pdf-images/create-filled-rectangle-object-in-pdf-using-java/
 
 3. قم باستيراد مكتبة Aspose.PDF إلى مشروع Java الخاص بك.
 
-الآن وبعد أن قمنا بإعداد Aspose.PDF لـ Java، فلنتعمق في إنشاء مستطيل مملوء في مستند PDF.
+الآن بعد أن قمنا بإعداد Aspose.PDF لـ Java، فلنتعمق في إنشاء مستطيل مملوء في مستند PDF.
 
 ## إنشاء مستند PDF جديد
 

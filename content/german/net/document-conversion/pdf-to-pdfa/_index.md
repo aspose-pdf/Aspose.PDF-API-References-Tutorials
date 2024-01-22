@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "PDFToPDFA.pdf");
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
 
 ## Schritt 2: Konvertierung in das PDF/A-Format
 Nach dem Öffnen der PDF-Datei können wir mit der Konvertierung in das PDF/A-Format fortfahren. Verwenden Sie den folgenden Code:

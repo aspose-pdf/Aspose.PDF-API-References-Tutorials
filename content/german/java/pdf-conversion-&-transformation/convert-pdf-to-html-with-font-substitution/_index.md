@@ -59,7 +59,7 @@ HtmlSaveOptions saveOptions = new HtmlSaveOptions();
 // Schriftartersetzung aktivieren
 saveOptions.setUseSubstitutions(true);
 
-// Legen Sie bei Bedarf benutzerdefinierte Schriftartzuordnungen fest
+// Legen Sie bei Bedarf benutzerdefinierte Schriftartenzuordnungen fest
 saveOptions.setFontSavingMode(HtmlSaveOptions.FontSavingModes.SAVE_IN_ALL_FORMATS);
 ```
 
@@ -70,7 +70,7 @@ saveOptions.setFontSavingMode(HtmlSaveOptions.FontSavingModes.SAVE_IN_ALL_FORMAT
 pdfDocument.save("output.html", saveOptions);
 ```
 
-## Ausnahmen behandeln
+## Umgang mit Ausnahmen
 
 ```java
 try {

@@ -1,7 +1,7 @@
 ---
 title: Sök och hämta bilder i PDF-fil
 linktitle: Sök och hämta bilder i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg för steg guide för att söka och få bilder i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 260
@@ -15,7 +15,7 @@ Innan du börjar, se till att du har följande:
 
 - Visual Studio eller någon annan utvecklingsmiljö installerad och konfigurerad.
 - Grundläggande kunskaper i programmeringsspråket C#.
-- Aspose.PDF-bibliotek för .NET installerat. Du kan ladda ner den från Asposes officiella hemsida.
+- Aspose.PDF-bibliotek för .NET installerat. Du kan ladda ner den från Asposes officiella webbplats.
 
 ## Steg 1: Laddar PDF-dokumentet
 

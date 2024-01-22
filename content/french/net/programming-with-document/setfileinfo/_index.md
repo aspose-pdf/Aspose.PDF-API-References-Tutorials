@@ -103,4 +103,4 @@ En conclusion, Aspose.PDF pour .NET fournit un moyen simple et efficace de défi
 
 #### Q : La définition des informations sur le fichier modifie-t-elle le document PDF original ?
 
-R : Non, la définition des informations du fichier à l'aide d'Aspose.PDF pour .NET ne modifie pas le document PDF d'origine. Au lieu de cela, il crée un nouveau document PDF avec les informations de fichier mises à jour. Le document PDF original reste inchangé.
+R : Non, la définition des informations de fichier à l'aide d'Aspose.PDF pour .NET ne modifie pas le document PDF d'origine. Au lieu de cela, il crée un nouveau document PDF avec les informations de fichier mises à jour. Le document PDF original reste inchangé.

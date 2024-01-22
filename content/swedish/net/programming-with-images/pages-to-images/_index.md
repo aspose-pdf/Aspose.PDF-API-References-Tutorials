@@ -1,7 +1,7 @@
 ---
 title: Sidor till bilder
 linktitle: Sidor till bilder
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Konvertera enkelt sidor i ett PDF-dokument till bilder med Aspose.PDF för .NET.
 type: docs
 weight: 200

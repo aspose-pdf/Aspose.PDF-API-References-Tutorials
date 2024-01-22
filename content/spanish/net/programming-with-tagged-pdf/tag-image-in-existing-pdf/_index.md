@@ -91,7 +91,7 @@ spanElement.ChangeParentElement(paragraph);
 
 Movimos el elemento Span al párrafo especificado.
 
-## Paso 7: Guardar el documento PDF modificado
+## Paso 7: guardar el documento PDF modificado
 
 Ahora que hemos realizado los cambios necesarios, guardaremos el documento PDF modificado.
 

@@ -1,7 +1,7 @@
 ---
 title: Text i sidfot av PDF-fil
 linktitle: Text i sidfot av PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig att lägga till text i sidfoten i PDF-filen med Aspose.PDF för .NET.
 type: docs
 weight: 180
@@ -128,7 +128,7 @@ S: Genom att använda en slinga som itererar genom alla sidor i PDF-dokumentet o
 
 #### F: Vad händer om jag vill lägga till olika innehåll i sidhuvudet och sidfoten i samma PDF-dokument?
 
-S: För att lägga till olika innehåll i sidhuvuds- och sidfotssektionerna, skulle du följa liknande steg för båda sektionerna. Koden visar hur man lägger till text i sidfoten; du kan använda ett liknande tillvägagångssätt för att lägga till text i rubriken.
+S: För att lägga till olika innehåll i sidhuvuds- och sidfotssektionerna, skulle du följa liknande steg för båda sektionerna. Koden visar att man lägger till text i sidfoten; du kan använda ett liknande tillvägagångssätt för att lägga till text i rubriken.
 
 #### F: Är det möjligt att lägga till bilder eller andra element vid sidan av sidfotstexten med detta tillvägagångssätt?
 

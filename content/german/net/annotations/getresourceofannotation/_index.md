@@ -51,7 +51,7 @@ Document doc1 = new Document(dataDir + "GetResourceOfAnnotation_Out.pdf");
 RenditionAction action = (doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction;
 ```
 
-## Schritt 7: Holen Sie sich die Darstellung der Aktion.
+## Schritt 7: Holen Sie sich die Wiedergabe der Aktion.
 
 ```csharp
 Rendition rendition = ((doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction).Rendition;

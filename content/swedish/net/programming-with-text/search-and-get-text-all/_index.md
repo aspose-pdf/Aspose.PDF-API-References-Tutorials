@@ -1,7 +1,7 @@
 ---
 title: Sök och hämta text allt
 linktitle: Sök och hämta text allt
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du söker och hämtar text från alla sidor i ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 420

@@ -1,7 +1,7 @@
 ---
 title: Lägg till HTML med DOM och PDF-överskrivning
 linktitle: Lägg till HTML med DOM och skriv över
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du lägger till HTML-innehåll med DOM och PDF-överskrivning i Aspose.PDF för .NET.
 type: docs
 weight: 50

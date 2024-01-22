@@ -104,7 +104,7 @@ doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesine matematiksel ifadeler veya formüller eklemek için Latex komut dosyasının nasıl kullanılacağını başarıyla öğrendiniz. Bu eğitimde belge oluşturma, LaTeX komut dosyası içeren bir hücre içeren tablo ekleme ve belgeyi kaydetme konusunda adım adım talimatlar verilmiştir. Matematiksel içeriğe sahip PDF dosyaları oluşturmak için artık bu kodu kendi C# projelerinize dahil edebilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesine matematiksel ifadeler veya formüller eklemek için Latex komut dosyasının nasıl kullanılacağını başarıyla öğrendiniz. Bu eğitimde belge oluşturma, LaTeX komut dosyası içeren bir hücre içeren tablo ekleme ve belgeyi kaydetme konusunda adım adım talimatlar sağlanmıştır. Matematiksel içeriğe sahip PDF dosyaları oluşturmak için artık bu kodu kendi C# projelerinize dahil edebilirsiniz.
 
 ### SSS'ler
 
@@ -114,7 +114,7 @@ C: "PDF Dosyasında Lateks Komut Dosyası Kullan" eğitimi, Aspose.PDF for .NET 
 
 #### S: Bu eğitim, bir PDF belgesindeki matematiksel ifadeler için LaTeX komut dosyasının kullanılmasına nasıl yardımcı olur?
 
-C: Bu eğitim, kullanıcıların Aspose.PDF for .NET'ten yararlanarak LaTeX komut dosyasıyla yazılmış matematiksel ifadeleri veya formülleri bir PDF belgesine nasıl dahil edeceklerini anlamalarına yardımcı olur. Kullanıcılar, sağlanan kod örneklerini takip ederek karmaşık matematiksel içeriğe sahip belgeleri sorunsuz bir şekilde oluşturabilir.
+C: Bu eğitim, kullanıcıların Aspose.PDF for .NET'ten, LaTeX komut dosyasıyla yazılmış matematiksel ifadeleri veya formülleri bir PDF belgesine dahil etmek için nasıl yararlanabileceklerini anlamalarına yardımcı olur. Kullanıcılar, sağlanan kod örneklerini takip ederek karmaşık matematiksel içeriğe sahip belgeleri sorunsuz bir şekilde oluşturabilir.
 
 #### S: Bu öğreticiyi takip etmek için hangi ön koşullar gereklidir?
 
@@ -146,7 +146,7 @@ Bu ad alanları, PDF belgeleri ve LaTeX komut dosyasıyla çalışmak için gere
 
 #### S: LaTeX tabanlı içerik ekledikten sonra PDF belgesini nasıl kaydedebilirim?
 
-C: LaTeX tabanlı içeriği PDF belgesine ekledikten sonra aşağıdaki kod parçasını kullanarak kaydedebilirsiniz:
+C: LaTeX tabanlı içeriği PDF belgesine ekledikten sonra aşağıdaki kod parçacığını kullanarak kaydedebilirsiniz:
 
 ```csharp
 doc.Save(dataDir + "LatextScriptInPdf_out.pdf");

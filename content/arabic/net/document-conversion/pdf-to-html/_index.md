@@ -39,7 +39,7 @@ pdfDocument.Save(dataDir + "output_out.html", SaveFormat.Html);
 
  يقوم الكود أعلاه بتحويل ملف PDF إلى تنسيق HTML وحفظه كملف`"output_out.html"` ملف.
 
- يستبدل`"YOUR DOCUMENTS DIRECTORY"` مع الدليل المطلوب حيث تريد حفظ ملف HTML الناتج.
+ يستبدل`"YOUR DOCUMENTS DIRECTORY"` بالدليل المطلوب حيث تريد حفظ ملف HTML الناتج.
 
 ### مثال على التعليمات البرمجية المصدر لتحويل PDF إلى HTML باستخدام Aspose.PDF لـ .NET
 

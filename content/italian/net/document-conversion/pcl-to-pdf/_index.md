@@ -74,7 +74,7 @@ In questo tutorial, abbiamo trattato il processo passo passo di conversione di u
 
 #### D: Posso personalizzare le impostazioni di output PDF durante la conversione di un file PCL in PDF?
 
- R: Sì, puoi personalizzare le impostazioni di output PDF quando converti un file PCL in PDF utilizzando Aspose.PDF per .NET. IL`PclLoadOptions` La classe utilizzata nel codice fornito consente di specificare varie opzioni, come la regolazione dei margini della pagina e il ridimensionamento, tra le altre. È possibile esplorare la documentazione Aspose.PDF per .NET per trovare ulteriori opzioni per personalizzare il processo di conversione.
+ R: Sì, puoi personalizzare le impostazioni di output PDF quando converti un file PCL in PDF utilizzando Aspose.PDF per .NET. IL`PclLoadOptions` utilizzata nel codice fornito consente di specificare varie opzioni, come la regolazione dei margini della pagina e il ridimensionamento, tra le altre. È possibile esplorare la documentazione Aspose.PDF per .NET per trovare ulteriori opzioni per personalizzare il processo di conversione.
 
 #### D: Esistono limitazioni durante la conversione di file PCL in PDF?
 

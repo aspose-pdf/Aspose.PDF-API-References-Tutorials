@@ -1,7 +1,7 @@
 ---
 title: Tabell i sidhuvud
 linktitle: Tabell i sidhuvud
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du lägger till en tabell i sidhuvudet/sidfoten i ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 170
@@ -132,7 +132,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 // Lägg till tabellen i styckesamlingen av önskat avsnitt
 header.Paragraphs.Add(tab1);
 
-// Ställ in standardcellkant med hjälp av BorderInfo-objektet
+// Ställ in standardcellkant med BorderInfo-objekt
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 
 // Ställ in med tabellens kolumnbredder

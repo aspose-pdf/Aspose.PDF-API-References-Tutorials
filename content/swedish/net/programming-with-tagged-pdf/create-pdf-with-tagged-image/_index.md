@@ -1,7 +1,7 @@
 ---
 title: Skapa PDF med taggad bild
 linktitle: Skapa PDF med taggad bild
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg för steg guide för att skapa PDF med taggad bild med Aspose.PDF för .NET.
 type: docs
 weight: 40

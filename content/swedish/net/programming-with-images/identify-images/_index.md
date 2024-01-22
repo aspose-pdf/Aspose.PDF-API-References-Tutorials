@@ -1,7 +1,7 @@
 ---
 title: Identifiera bilder i PDF-fil
 linktitle: Identifiera bilder i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Identifiera enkelt bilder i PDF-fil och bestäm deras färgtyp med Aspose.PDF för .NET.
 type: docs
 weight: 150

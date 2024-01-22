@@ -87,7 +87,7 @@ R : Le facteur de zoom dans un fichier PDF fait référence au niveau d'agrandi
 
 R : Vous pouvez utiliser les informations sur le facteur de zoom pour personnaliser la taille d'affichage initiale d'un document PDF lorsqu'il est ouvert dans une visionneuse. Par exemple, vous pouvez définir un facteur de zoom spécifique pour garantir que le PDF est affiché à une taille particulière ou adapter la page entière à la fenêtre de la visionneuse.
 
-#### Q : Puis-je modifier le facteur de zoom d'un document PDF par programme à l'aide d'Aspose.PDF pour .NET ?
+#### Q : Puis-je modifier le facteur de zoom d'un document PDF par programmation à l'aide d'Aspose.PDF pour .NET ?
 
  R : Oui, vous pouvez modifier le facteur de zoom d'un document PDF par programmation à l'aide d'Aspose.PDF pour .NET. Vous pouvez définir le facteur de zoom pour des actions spécifiques, telles que`GoToAction` ou`GoToRemoteAction`pour contrôler la façon dont le document est affiché lorsque l'utilisateur interagit avec des liens ou des signets.
 

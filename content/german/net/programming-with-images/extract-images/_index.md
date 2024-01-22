@@ -84,7 +84,7 @@ A: Das Extrahieren von Bildern aus einer PDF-Datei kann für verschiedene Zwecke
 
 A: Aspose.PDF für .NET bietet einen schrittweisen Prozess zum Öffnen eines PDF-Dokuments, zum Zugriff auf bestimmte Bilder und zum Speichern dieser in Bilddateien in verschiedenen Formaten.
 
-####  F: Welche Rolle spielt das`Document` class in Aspose.PDF for .NET play in image extraction?
+####  F: Welche Rolle spielt das?`Document` class in Aspose.PDF for .NET play in image extraction?
 
  A: Die`Document` Die Klasse wird zum Laden und Bearbeiten von PDF-Dokumenten verwendet. In diesem Zusammenhang hilft es beim Öffnen des PDF-Dokuments, aus dem Bilder extrahiert werden.
 

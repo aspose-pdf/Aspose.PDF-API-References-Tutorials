@@ -1,7 +1,7 @@
 ---
 title: Ändra orientering
 linktitle: Ändra orientering
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att ändra sidorientering för en PDF med Aspose.PDF för .NET. Lätt att följa och implementera i dina projekt.
 type: docs
 weight: 10

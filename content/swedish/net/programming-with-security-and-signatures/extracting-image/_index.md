@@ -1,7 +1,7 @@
 ---
 title: Extraherar bild
 linktitle: Extraherar bild
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Extrahera enkelt bilder från PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 70

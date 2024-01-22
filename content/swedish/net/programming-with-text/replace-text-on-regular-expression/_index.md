@@ -1,7 +1,7 @@
 ---
 title: Ersätt text på reguljärt uttryck i PDF-fil
 linktitle: Ersätt Texton Regular Expression i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du ersätter text baserat på ett reguljärt uttryck i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 360
@@ -88,7 +88,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 {
 	// Uppdatera text och andra egenskaper
 	textFragment.Text = "New Phrase";
-	// Ställ in på en instans av ett objekt.
+	// Ställ in en instans av ett objekt.
 	textFragment.TextState.Font = FontRepository.FindFont("Verdana");
 	textFragment.TextState.FontSize = 22;
 	textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Blue);

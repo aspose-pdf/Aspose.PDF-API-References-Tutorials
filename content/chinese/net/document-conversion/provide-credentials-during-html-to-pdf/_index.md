@@ -41,7 +41,7 @@ dataStream.Close();
 response. Close();
 ```
 
-一定要更换`"YOUR DOCUMENTS DIRECTORY"`与您要保存生成的 PDF 文件的实际目录。
+一定要更换`"YOUR DOCUMENTS DIRECTORY"`与您想要保存生成的 PDF 文件的实际目录。
 
 ## 第 2 步：通过提供凭据将 HTML 转换为 PDF
 现在，我们将加载检索到的 HTML 内容并将其转换为 PDF 格式，同时提供适当的凭据。使用以下代码：

@@ -1,7 +1,7 @@
 ---
 title: Hämta dokumentfönstret
 linktitle: Hämta dokumentfönstret
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du använder GetDocumentWindow-funktionen i Aspose.PDF för .NET för att hämta information om ett PDF-dokuments fönsteregenskaper.
 type: docs
 weight: 170

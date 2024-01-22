@@ -1,7 +1,7 @@
 ---
 title: PDF till EPUB
 linktitle: PDF till EPUB
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg för steg guide för att konvertera PDF till EPUB med Aspose.PDF för .NET.
 type: docs
 weight: 120
@@ -64,7 +64,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Ladda PDF-dokument
 Document pdfDocument = new Document(dataDir + "PDFToEPUB.pdf");
 
-// Instantera Epub Spara alternativ
+// Instantiera Epub Spara alternativ
 EpubSaveOptions options = new EpubSaveOptions();
 
 // Ange layouten för innehållet

@@ -1,7 +1,7 @@
 ---
 title: Textsegment i PDF-fil
 linktitle: Textsegment i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du söker efter specifika textsegment i PDF-fil med reguljära uttryck i Aspose.PDF för .NET.
 type: docs
 weight: 540

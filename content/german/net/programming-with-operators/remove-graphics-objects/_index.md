@@ -127,7 +127,7 @@ A: Ja, Aspose.PDF bietet verschiedene Operatoren zum Bearbeiten verschiedener Ar
 
 #### F: Wie kann ich überprüfen, ob die Grafikobjekte erfolgreich entfernt wurden?
 
-A: Sie können das geänderte PDF-Dokument speichern und die Ausgabe mit einem PDF-Viewer oder -Reader visuell überprüfen.
+A: Sie können das geänderte PDF-Dokument speichern und die Ausgabe mit einem PDF-Viewer oder -Reader visuell prüfen.
 
 #### F: Kann ich das Entfernen von Grafikobjekten aus mehreren PDF-Dateien automatisieren?
 

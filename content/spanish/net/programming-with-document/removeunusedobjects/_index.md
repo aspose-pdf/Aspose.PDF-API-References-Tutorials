@@ -88,6 +88,6 @@ R: Los objetos no utilizados en un documento PDF son elementos como fuentes, im�
 
 R: Eliminar los objetos no utilizados de un documento PDF reduce el tamaño del archivo, lo que genera tiempos de carga más rápidos, un mejor rendimiento y un espacio de almacenamiento reducido. También ayuda a garantizar una experiencia de usuario más eficiente al compartir o distribuir archivos PDF.
 
-#### P: ¿Pueden los desarrolladores controlar qué objetos no utilizados eliminar usando Aspose.PDF para .NET?
+#### P: ¿Pueden los desarrolladores controlar qué objetos no utilizados eliminar utilizando Aspose.PDF para .NET?
 
  R: Sí, los desarrolladores pueden controlar la eliminación de objetos no utilizados configurando el`RemoveUnusedObjects` opción en el`OptimizationOptions`. Esto les permite decidir si eliminar todos los objetos no utilizados o conservar ciertos objetos según sus requisitos específicos.

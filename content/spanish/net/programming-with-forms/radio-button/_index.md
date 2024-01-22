@@ -81,7 +81,7 @@ try
 	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 	// Agregue la primera opción de botón de opción y también especifique su origen usando el objeto Rectángulo
 	radio.AddOption("Test", new Rectangle(0, 0, 20, 20));
-	// Agregar segunda opción de botón de radio
+	// Agregar segunda opción de botón de opción
 	radio.AddOption("Test1", new Rectangle(20, 20, 40, 40));
 	// Agregar botón de opción para formar el objeto del objeto Documento
 	pdfDocument.Form.Add(radio);
@@ -121,4 +121,4 @@ R: Sí, Aspose.PDF para .NET es compatible con todas las versiones de .NET Frame
 
 #### P: ¿Puedo controlar mediante programación la selección de una opción de botón de opción en el documento PDF?
 
- R: Sí, puede controlar mediante programación la selección de una opción de botón de opción usando el`IsSelected` propiedad de la`RadioButtonOption` clase. Esta propiedad le permite configurar una opción específica como seleccionada.
+ R: Sí, puede controlar mediante programación la selección de una opción de botón de opción utilizando el`IsSelected` propiedad de la`RadioButtonOption` clase. Esta propiedad le permite configurar una opción específica como seleccionada.

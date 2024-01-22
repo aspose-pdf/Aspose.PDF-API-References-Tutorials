@@ -1,7 +1,7 @@
 ---
 title: Få filinformation i PDF-fil
 linktitle: Få filinformation i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du använder funktionen GetFileInfo i PDF-fil i Aspose.PDF för .NET för att hämta metadatainformation om ett PDF-dokument.
 type: docs
 weight: 180

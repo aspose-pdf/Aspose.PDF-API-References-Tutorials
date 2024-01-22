@@ -97,7 +97,7 @@ Dans ce didacticiel, nous avons expliqué comment créer un rectangle rempli à 
 
 #### Q : Quel est le but de ce tutoriel ?
 
-R : Le but de ce didacticiel est de vous guider tout au long du processus de création d'un rectangle rempli à l'aide d'Aspose.PDF pour .NET, vous permettant d'ajouter des formes géométriques personnalisées avec des couleurs de remplissage à vos fichiers PDF.
+R : Le but de ce didacticiel est de vous guider tout au long du processus de création d'un rectangle rempli à l'aide d'Aspose.PDF pour .NET, vous permettant d'ajouter des formes géométriques personnalisées avec des couleurs de remplissage à vos fichiers PDF.
 
 #### Q : Quels sont les prérequis requis avant de commencer ?
 

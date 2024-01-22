@@ -1,7 +1,7 @@
 ---
 title: Ersätt textsida i PDF-fil
 linktitle: Ersätt textsida i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du ersätter text på en specifik sida i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 370

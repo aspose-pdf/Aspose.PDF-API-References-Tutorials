@@ -1,7 +1,7 @@
 ---
 title: PDF till PDFA
 linktitle: PDF till PDFA
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg för steg guide för att konvertera PDF till PDFA med Aspose.PDF för .NET.
 type: docs
 weight: 140

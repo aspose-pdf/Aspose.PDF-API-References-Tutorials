@@ -258,7 +258,7 @@ A: Aspose.PDF für .NET bietet einen umfassenden Satz an Klassen und Methoden, m
 
 A: Zu den wichtigsten Schritten gehören das Einrichten der Umgebung, das Erstellen des Dokuments, das Abrufen des Stammstrukturelements, das Erstellen eines Tabellenelements, das Definieren von Zeilen und Zellen innerhalb der Tabelle sowie das Festlegen von Formatierungen und Eigenschaften für die Elemente. Das bereitgestellte Codebeispiel veranschaulicht diese Schritte.
 
-####  F: Welche Rolle spielt das`taggedContent` object play in creating an array element?
+####  F: Welche Rolle spielt das?`taggedContent` object play in creating an array element?
 
  A: Die`taggedContent` Objekt, das aus dem Dokument stammt`TaggedContent`Mit dieser Eigenschaft können Sie die Struktur des getaggten Inhalts im PDF-Dokument definieren. Dazu gehört das hierarchische Erstellen und Organisieren von Array-Elementen und ihren untergeordneten Elementen.
 

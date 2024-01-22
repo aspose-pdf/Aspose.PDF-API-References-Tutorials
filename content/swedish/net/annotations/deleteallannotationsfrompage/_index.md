@@ -1,7 +1,7 @@
 ---
 title: Ta bort alla kommentarer från sidan
 linktitle: Ta bort alla kommentarer från sidan
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du tar bort alla kommentarer från en PDF-sida med Aspose.PDF för .NET med hjälp av denna steg-för-steg-guide.
 type: docs
 weight: 40

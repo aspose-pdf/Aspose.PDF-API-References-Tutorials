@@ -104,4 +104,4 @@ Aspose.PDF pour Java est une bibliothèque commerciale et vous devrez peut-être
 
 ### Où puis-je trouver d’autres exemples utilisant Aspose.PDF pour Java ?
 
- Vous pouvez trouver plus d'exemples et une documentation détaillée sur la façon d'utiliser Aspose.PDF pour Java sur le site Web Aspose à l'adresse[ici](https://reference.aspose.com/pdf/java/).
+ Vous pouvez trouver plus d'exemples et une documentation détaillée sur la façon d'utiliser Aspose.PDF pour Java sur le site Web d'Aspose à l'adresse[ici](https://reference.aspose.com/pdf/java/).

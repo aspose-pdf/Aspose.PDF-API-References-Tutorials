@@ -1,7 +1,7 @@
 ---
 title: Bild och sidnummer i sidfotsavsnittet Inline
 linktitle: Bild och sidnummer i sidfotsavsnittet Inline
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du lägger till bild och sidnummer i sidhuvud och sidfot med hjälp av inline-stycken med Aspose.PDF för .NET.
 type: docs
 weight: 120
@@ -75,7 +75,7 @@ header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
 ```
 
-Koden ovan skapar en rubriksektion, ställer in sidhuvudet med denna sektion, lägger till ett TextFragment med infogat text och ett infogat bildobjekt.
+Koden ovan skapar en rubriksektion, ställer in sidhuvudet med denna sektion, lägger till ett TextFragment med inbäddad text och ett inbäddat bildobjekt.
 
 ## Steg 4: Spara det ändrade PDF-dokumentet
 

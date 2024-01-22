@@ -189,7 +189,7 @@ C: Bellek akışının kapatılması, görüntü verileriyle ilişkili sistem ka
 
 #### S: Bu görüntüden PDF'ye dönüştürme kodu, tek bir PDF belgesindeki birden fazla görüntü için kullanılabilir mi?
 
-C: Evet, bu kod birden fazla görüntüyü tek bir PDF belgesine dönüştürecek şekilde uyarlanabilir. İşlemi her görüntü için tekrarlayabilir, bunları ayrı sayfalara ekleyebilir veya gerektiği şekilde düzenleyebilirsiniz.
+C: Evet, bu kod birden fazla görüntüyü tek bir PDF belgesine dönüştürecek şekilde uyarlanabilir. İşlemi her görüntü için tekrarlayabilir, bunları ayrı sayfalara ekleyebilir veya gerektiği gibi düzenleyebilirsiniz.
 
 #### S: Geliştiriciler, görüntüleri PDF'ye dönüştürmek için Aspose.PDF for .NET'i kullanmaktan nasıl yararlanabilirler?
 

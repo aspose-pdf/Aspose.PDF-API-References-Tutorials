@@ -52,7 +52,7 @@ foreach(Page page in pdfDocument.Pages)
 
 El código anterior crea un búfer de imagen a partir del archivo "aspose-logo.jpg" y establece sus propiedades, como el margen inferior y la alineación horizontal y vertical. Luego, el búfer de imagen se agrega a todas las páginas del documento PDF.
 
-## Paso 4: guardar el documento PDF modificado
+## Paso 4: Guardar el documento PDF modificado
 
 Una vez agregada la imagen a la sección de pie de página, podemos guardar el documento PDF modificado. Así es cómo:
 

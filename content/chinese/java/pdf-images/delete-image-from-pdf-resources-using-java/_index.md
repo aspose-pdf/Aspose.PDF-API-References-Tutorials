@@ -56,7 +56,7 @@ Document pdfDocument = new Document("path/to/your/pdf/file.pdf");
 
 ## 从 PDF 文档中删除图像
 
-现在，让我们继续从加载的 PDF 文档中删除图像。您可以根据需要指定图像删除的标准。以下是如何从 PDF 中删除所有图像的基本示例：
+现在，让我们继续从加载的 PDF 文档中删除图像。您可以根据需要指定图像删除的条件。以下是如何从 PDF 中删除所有图像的基本示例：
 
 ```java
 //删除 PDF 中的所有图像

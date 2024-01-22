@@ -27,7 +27,7 @@ url: /ar/java/pdf-tables/add-table-in-existing-pdf-document-using-java/
 
 ## إضافة التبعيات
 
- في مشروعك`pom.xml`(إذا كنت تستخدم Maven) أو ملف build.gradle (إذا كنت تستخدم Gradle)، أضف التبعية التالية:
+ في مشروعك`pom.xml` (إذا كنت تستخدم Maven) أو ملف build.gradle (إذا كنت تستخدم Gradle)، أضف التبعية التالية:
 
 ```xml
 <dependencies>

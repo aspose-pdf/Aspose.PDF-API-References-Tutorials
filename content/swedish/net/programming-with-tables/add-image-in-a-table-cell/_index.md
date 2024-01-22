@@ -1,7 +1,7 @@
 ---
 title: Lägg till bild i en tabellcell
 linktitle: Lägg till bild i en tabellcell
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lägg till en bild i en tabellcell med Aspose.PDF för .NET, en steg-för-steg-guide för exakt manipulering av bilder i PDF-dokument.
 type: docs
 weight: 10
@@ -41,12 +41,12 @@ Page sec1 = pdfDocument.Pages.Add();
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 ```
 
-## Steg 4: Ställ in standardcellgräns
+## Steg 4: Ställ in standardcellkant
 
  För att säkerställa konsekvens kan vi ställa in en standardcellkant med hjälp av`DefaultCellBorder`tabellens egendom`BorderInfo` objekt.
 
 ```csharp
-// Ställ in standardcellkant med hjälp av BorderInfo-objektet
+// Ställ in standardcellkant med BorderInfo-objekt
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 ```
 
@@ -134,7 +134,7 @@ Page sec1 = pdfDocument.Pages.Add();
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 // Lägg till tabellen i styckesamlingen på den önskade sidan
 sec1.Paragraphs.Add(tab1);
-// Ställ in standardcellkant med hjälp av BorderInfo-objektet
+// Ställ in standardcellkant med BorderInfo-objekt
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 // Ställ in med tabellens kolumnbredder
 tab1.ColumnWidths = "100 100 120";

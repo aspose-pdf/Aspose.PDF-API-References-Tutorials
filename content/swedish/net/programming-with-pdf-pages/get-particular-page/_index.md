@@ -1,7 +1,7 @@
 ---
 title: Skaffa en speciell sida
 linktitle: Skaffa en speciell sida
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att extrahera en specifik sida från en PDF-fil med Aspose.PDF för .NET. Lätt att följa och implementera i dina projekt.
 type: docs
 weight: 90

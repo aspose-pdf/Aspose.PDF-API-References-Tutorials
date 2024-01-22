@@ -142,7 +142,7 @@ R : Le didacticiel « Rechercher du texte et dessiner un rectangle » vise à
 
 R : Ce didacticiel fournit un guide complet sur la façon de localiser et de dessiner des rectangles autour de segments de texte spécifiques dans un document PDF. Il montre le processus de configuration d'un projet, de chargement d'un document PDF, d'activation de la recherche d'expressions régulières, de dessin de rectangles autour des segments de texte trouvés et d'enregistrement du PDF modifié.
 
-#### Q : Quels prérequis sont nécessaires pour suivre ce tutoriel ?
+#### Q : Quels prérequis sont requis pour suivre ce tutoriel ?
 
 R : Avant de commencer le didacticiel, vous devez avoir une compréhension de base du langage de programmation C#. De plus, vous devez avoir installé la bibliothèque Aspose.PDF pour .NET. Vous pouvez l'obtenir sur le site Web Aspose ou l'installer dans votre projet à l'aide de NuGet.
 

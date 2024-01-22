@@ -126,4 +126,4 @@ document.Save(dataDir + "PDFwithTaggedImage.pdf");
 
 #### 问：是否可以使用类似的技术将多个标记图像添加到同一个 PDF 文档中？
 
-答：是的，您可以使用类似的技术将多个标记图像添加到同一个 PDF 文档中。您将创建额外的`IllustrationElement`每个标记图像的实例并根据需要自定义其属性。
+答：是的，您可以使用类似的技术将多个标记图像添加到同一 PDF 文档中。您将创建额外的`IllustrationElement`每个标记图像的实例并根据需要自定义其属性。

@@ -1,6 +1,6 @@
 ---
-title: Taquets de tabulation personnalisés dans un fichier PDF
-linktitle: Taquets de tabulation personnalisés dans un fichier PDF
+title: Taquets de tabulation personnalisés dans le fichier PDF
+linktitle: Taquets de tabulation personnalisés dans le fichier PDF
 second_title: Aspose.PDF pour la référence de l'API .NET
 description: Découvrez comment créer des taquets de tabulation personnalisés dans un fichier PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs

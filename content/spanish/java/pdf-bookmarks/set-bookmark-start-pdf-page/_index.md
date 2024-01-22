@@ -10,7 +10,7 @@ url: /es/java/pdf-bookmarks/set-bookmark-start-pdf-page/
 
 ## Introducción a Establecer marcador al inicio de la página PDF
 
-Aspose.PDF para Java es una potente biblioteca para trabajar con documentos PDF en aplicaciones Java. En este tutorial, aprenderemos cómo establecer un marcador al inicio de una página PDF usando Aspose.PDF para Java. Los marcadores son una forma cómoda de navegar por documentos PDF grandes y, con Aspose.PDF, puedes agregarlos fácilmente a tus archivos PDF.
+Aspose.PDF para Java es una poderosa biblioteca para trabajar con documentos PDF en aplicaciones Java. En este tutorial, aprenderemos cómo establecer un marcador al inicio de una página PDF usando Aspose.PDF para Java. Los marcadores son una forma cómoda de navegar por documentos PDF grandes y, con Aspose.PDF, puedes agregarlos fácilmente a tus archivos PDF.
 
 ## ¿Qué es Aspose.PDF para Java?
 

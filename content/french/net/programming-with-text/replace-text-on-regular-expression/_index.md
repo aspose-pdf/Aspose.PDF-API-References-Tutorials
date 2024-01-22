@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "SearchRegularExpressionPage.pdf")
 
 ## Étape 3 : Rechercher et remplacer du texte à l'aide d'une expression régulière
 
- Créer un`TextFragmentAbsorber` objet et spécifiez le modèle d’expression régulière pour trouver toutes les phrases correspondant au modèle. Définissez l’option de recherche de texte pour activer l’utilisation des expressions régulières.
+ Créer un`TextFragmentAbsorber` objet et spécifiez le modèle d’expression régulière pour trouver toutes les expressions correspondant au modèle. Définissez l’option de recherche de texte pour activer l’utilisation des expressions régulières.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Comme 1999-2000

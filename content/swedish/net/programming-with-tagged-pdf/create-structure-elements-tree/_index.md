@@ -1,7 +1,7 @@
 ---
 title: Skapa strukturelementträd
 linktitle: Skapa strukturelementträd
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Skapa en struktur av trädelement med Aspose.PDF för .NET. Steg för steg guide för att skapa ett strukturerat PDF-dokument.
 type: docs
 weight: 70

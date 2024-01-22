@@ -275,7 +275,7 @@ C: Evet, eğitimde üstbilgiler, gövde satırları ve altbilgi dahil olmak üze
 
 C: Bu eğitimde Aspose.PDF for .NET tarafından sağlanan uygun yöntemleri kullanarak başlıkların, gövde satırlarının ve alt bilginin nasıl oluşturulacağı ve tablo öğesine nasıl ekleneceği açıklanmaktadır.
 
-#### S: PDF/UA uyumluluğu nedir ve bunu etiketli PDF belgem için nasıl doğrulayabilirim?
+#### S: PDF/UA uyumluluğu nedir ve etiketli PDF belgem için bunu nasıl doğrulayabilirim?
 
  C: PDF/UA uyumluluğu, PDF belgesinin erişilebilirlik standartlarına uygun olmasını sağlayarak onu engelli kullanıcılar için daha erişilebilir hale getirir. Eğitimde PDF/UA uyumluluğunun nasıl doğrulanacağı gösterilmektedir.`Validate()` yöntemini kullanın ve bir XML uyumluluk raporu oluşturun.
 

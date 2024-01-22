@@ -32,7 +32,7 @@ Document pdfDocument = new Document();
 // Lägg till en sida i dokumentet
 Page page = pdfDocument.getPages().add();
 
-// Ange sidegenskaper (t.ex. mått, marginaler)
+// Ange sidegenskaper (t.ex. dimensioner, marginaler)
 page.setPageSize(new PageSize(600, 400));
 ```
 

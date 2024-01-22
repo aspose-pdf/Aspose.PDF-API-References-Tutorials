@@ -40,5 +40,5 @@ Estos tutoriales también proporcionan ejemplos de código detallados, explicaci
 | [Seleccionar botón de opción en documento PDF](./select-radio-button/) | Aprenda a seleccionar un botón de opción en un documento PDF usando Aspose.PDF para .NET. |  
 | [Establecer límite de campo](./set-field-limit/) | Aprenda a establecer un límite de campo en un documento PDF usando Aspose.PDF para .NET. |  
 | [Establecer secuencia de comandos Java](./set-java-script/) | Aprenda a utilizar Aspose.PDF para .NET para configurar JavaScript en campos de formulario en archivos PDF. |  
-| [Establecer título del botón de radio](./set-radio-button-caption/) | Aprenda a utilizar Aspose.PDF para .NET para configurar el título de un botón de opción en un formulario PDF. |  
+| [Establecer título del botón de opción](./set-radio-button-caption/) | Aprenda a utilizar Aspose.PDF para .NET para configurar el título de un botón de opción en un formulario PDF. |  
 | [Caja de texto](./text-box/) | Aprenda a crear un campo de texto en un documento PDF usando Aspose.PDF para .NET. |  

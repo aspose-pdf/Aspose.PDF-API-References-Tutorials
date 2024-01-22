@@ -146,7 +146,7 @@ A: Ja, Sie können die Textausrichtung für verschiedene Teile des PDF-Dokuments
 
 #### F: Ist es möglich, die Ränder um den Textstempel für ein besseres Layout anzupassen?
 
- A: Ja, Sie können den oberen Rand anpassen`TextStamp` Objekt mit der`TopMargin`Eigentum. Dadurch können Sie den Abstand zwischen dem Textstempel und anderen Elementen auf der Seite steuern.
+ A: Ja, Sie können den oberen Rand anpassen`TextStamp` Objekt mit dem`TopMargin`Eigentum. Dadurch können Sie den Abstand zwischen dem Textstempel und anderen Elementen auf der Seite steuern.
 
 #### F: Kann ich mit diesem Ansatz Text in verschiedenen Winkeln oder Ausrichtungen ausrichten?
 

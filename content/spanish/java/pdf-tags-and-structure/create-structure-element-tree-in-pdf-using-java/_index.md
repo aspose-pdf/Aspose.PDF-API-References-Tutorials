@@ -76,19 +76,24 @@ En este tutorial, hemos demostrado cómo crear un árbol de elementos de estruct
 
 Si sigue estos pasos e incorpora elementos estructurales en sus documentos PDF, puede hacer que su contenido sea más accesible y cumpla con los estándares de accesibilidad. Este es un paso vital para garantizar que sus documentos sean inclusivos y fáciles de usar.
 
-## Preguntas frecuentes:
+## Preguntas frecuentes
 
 ### ¿Cuál es el propósito de un árbol de elementos estructurales en un documento PDF?
-   - Un árbol de elementos de estructura representa la estructura lógica del contenido dentro de un documento PDF, lo que permite la accesibilidad y la comunicación efectiva del contenido a los usuarios, especialmente aquellos con discapacidad visual.
+
+Un árbol de elementos de estructura representa la estructura lógica del contenido dentro de un documento PDF, lo que permite la accesibilidad y la comunicación efectiva del contenido a los usuarios, especialmente aquellos con discapacidad visual.
 
 ### ¿Cómo puedo agregar imágenes a un documento PDF etiquetado?
-   -  Puedes usar el`com.aspose.pdf.Image` clase para agregar imágenes a un documento PDF etiquetado. Asegúrese de asociar elementos de estructura adecuados con las imágenes para mayor accesibilidad.
+
+ Puedes usar el`com.aspose.pdf.Image` clase para agregar imágenes a un documento PDF etiquetado. Asegúrese de asociar elementos de estructura adecuados con las imágenes para mayor accesibilidad.
 
 ### ¿Los documentos PDF etiquetados son un requisito para el cumplimiento de la accesibilidad?
-   - Sí, los documentos PDF etiquetados son cruciales para el cumplimiento de la accesibilidad, ya que proporcionan una representación estructurada del contenido que puede interpretarse mediante tecnologías de asistencia.
+
+Sí, los documentos PDF etiquetados son cruciales para el cumplimiento de la accesibilidad, ya que proporcionan una representación estructurada del contenido que puede interpretarse mediante tecnologías de asistencia.
 
 ### ¿Puedo automatizar el proceso de etiquetado de documentos PDF existentes?
-   - Sí, Aspose.PDF para Java proporciona funciones para etiquetar mediante programación documentos PDF existentes para hacerlos accesibles.
+
+Sí, Aspose.PDF para Java proporciona funciones para etiquetar mediante programación documentos PDF existentes para hacerlos accesibles.
 
 ### ¿Cuáles son algunas de las mejores prácticas para crear documentos PDF accesibles?
-   - Algunas mejores prácticas incluyen agregar texto alternativo a las imágenes, usar una estructura de encabezado adecuada, proporcionar enlaces descriptivos y garantizar un orden de lectura lógico para el contenido.
+
+Algunas mejores prácticas incluyen agregar texto alternativo a las imágenes, usar una estructura de encabezado adecuada, proporcionar enlaces descriptivos y garantizar un orden de lectura lógico para el contenido.

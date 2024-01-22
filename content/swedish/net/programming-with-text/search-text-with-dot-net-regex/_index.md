@@ -1,7 +1,7 @@
 ---
 title: Sök text med Dot Net Regex
 linktitle: Sök text med Dot Net Regex
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du söker efter text med reguljära .NET-uttryck i ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 480

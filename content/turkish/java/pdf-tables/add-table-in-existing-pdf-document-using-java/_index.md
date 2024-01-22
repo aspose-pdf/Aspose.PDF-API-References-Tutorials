@@ -27,7 +27,7 @@ Başlamadan önce aşağıdaki önkoşullara sahip olduğunuzdan emin olun:
 
 ## Bağımlılıklar Ekleme
 
- Projenizde`pom.xml`(Maven kullanıyorsanız) veya build.gradle dosyasına (Gradle kullanıyorsanız), aşağıdaki bağımlılığı ekleyin:
+ Projenizde`pom.xml` (Maven kullanıyorsanız) veya build.gradle dosyasına (Gradle kullanıyorsanız), aşağıdaki bağımlılığı ekleyin:
 
 ```xml
 <dependencies>

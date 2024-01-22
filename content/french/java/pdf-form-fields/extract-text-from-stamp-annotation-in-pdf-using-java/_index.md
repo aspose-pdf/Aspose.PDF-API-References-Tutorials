@@ -29,7 +29,7 @@ Commençons par créer un nouveau projet Java dans l'EDI de votre choix. Suivez 
 1. Ouvrez votre IDE.
 2. Créez un nouveau projet Java et donnez-lui un nom significatif.
 
-## Étape 2 : Ajoutez Aspose.PDF pour Java à votre projet
+## Étape 2 : ajoutez Aspose.PDF pour Java à votre projet
 
 Ensuite, vous devrez ajouter la bibliothèque Aspose.PDF pour Java à votre projet. Voici comment:
 

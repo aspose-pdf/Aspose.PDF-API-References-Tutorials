@@ -1,7 +1,7 @@
 ---
 title: Få värde från fält i PDF-dokument
 linktitle: Få värde från fält i PDF-dokument
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Få enkelt värdet av ett formulärfält i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 140
@@ -79,4 +79,4 @@ S: Ja, du kan få värden för flera formulärfält samtidigt genom att iterera 
 
 #### F: Är det möjligt att ändra värdet på ett formulärfält och spara ändringarna i PDF-dokumentet?
 
- S: Ja, du kan ändra värdet på ett formulärfält med Aspose.PDF för .NET och spara ändringarna i PDF-dokumentet. Efter att ha uppdaterat`Value` egenskapen för formulärfältet kan du använda`pdfDocument.Save()` metod för att spara ändringarna i det ursprungliga PDF-dokumentet.
+ S: Ja, du kan ändra värdet på ett formulärfält med Aspose.PDF för .NET och spara ändringarna i PDF-dokumentet. Efter att ha uppdaterat`Value` egenskapen i formulärfältet kan du använda`pdfDocument.Save()` metod för att spara ändringarna i det ursprungliga PDF-dokumentet.

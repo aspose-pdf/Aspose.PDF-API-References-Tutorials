@@ -88,7 +88,7 @@ public class AddPageNumberStamp {
 
 ## 结论
 
-在本教程中，我们演示了如何使用 Java 和 Aspose.PDF for Java 将页码标记添加到 PDF 文档。页码增强了 PDF 的可用性，让读者更轻松地浏览您的内容。使用 Aspose.PDF for Java，即使对于那些具有基本编程技能的人来说，这项任务也变得简单。立即开始使用自定义页码标记增强您的 PDF 文档。
+在本教程中，我们演示了如何使用 Java 和 Aspose.PDF for Java 将页码标记添加到 PDF 文档。页码增强了 PDF 的可用性，让读者更轻松地浏览您的内容。使用 Aspose.PDF for Java，即使对于那些具有基本编程技能的人来说，这项任务也变得简单。立即开始使用自定义页码图章增强您的 PDF 文档。
 
 ## 常见问题解答
 

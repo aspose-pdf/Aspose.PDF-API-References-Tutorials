@@ -99,7 +99,7 @@ C: "Metnin Genişliğini Dinamik Olarak Al" eğitimi, C#'ta metnin genişliğini
 
 C: Metin genişliğini dinamik olarak ölçmek, metni oluşturmadan önce gerekli alanı doğru bir şekilde belirlemenize olanak tanır. Bu, düzen tasarımı, hizalama ve metnin PDF belgenizdeki belirlenen alanlara doğru şekilde sığmasını sağlamak için çok önemlidir.
 
-#### S: Metin ölçümü için kullanılacak yazı tipini nasıl bulabilirim?
+#### S: Metin ölçümünde kullanılacak yazı tipini nasıl bulurum?
 
 C: Eğitimde şunları kullanacaksınız:`FontRepository.FindFont` İstenilen yazı tipini bulma yöntemi. Örnek Arial yazı tipini kullanıyor ancak değiştirebilirsiniz`"Arial"` Kullanmak istediğiniz başka bir yazı tipinin adıyla.
 

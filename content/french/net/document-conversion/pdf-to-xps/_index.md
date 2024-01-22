@@ -37,7 +37,7 @@ Après avoir chargé le fichier PDF, nous instancierons les options de sauvegard
 Aspose.Pdf.XpsSaveOptions saveOptions = new Aspose.Pdf.XpsSaveOptions();
 ```
 
-## Étape 3 : enregistrement du fichier XPS résultant
+## Étape 3 : Enregistrement du fichier XPS résultant
 Nous allons maintenant enregistrer le fichier PDF converti au format XPS. Utilisez le code suivant :
 
 ```csharp

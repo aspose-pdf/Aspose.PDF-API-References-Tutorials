@@ -1,7 +1,7 @@
 ---
 title: Dolt textblock i pdf-fil
 linktitle: Dolt textblock i pdf-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du skapar dolda textblock i PDF-filer med Aspose.PDF för .NET.
 type: docs
 weight: 230

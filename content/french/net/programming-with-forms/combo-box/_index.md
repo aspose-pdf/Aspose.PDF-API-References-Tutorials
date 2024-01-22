@@ -52,7 +52,7 @@ combo.AddOption("Green");
 combo.AddOption("Blue");
 ```
 
-## Étape 6 : Ajoutez la liste déroulante au formulaire
+## Étape 6 : Ajoutez la liste de zones de liste déroulante au formulaire
 
 Ajoutez l'objet ComboBoxField à la collection Document Form Fields :
 

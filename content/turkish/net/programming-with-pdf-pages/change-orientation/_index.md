@@ -92,7 +92,7 @@ Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesinin sayfa yönünü n
 
 #### S: Bir PDF belgesinde sayfa yönünü değiştirmenin amacı nedir?
 
-C: Bir PDF belgesinde sayfa yönünü değiştirmek, sayfanın içeriğini 90 derece döndürmenize olanak tanır. Bu, orijinal içeriğin dikey moddan yatay moda veya tam tersi gibi farklı bir yönde görüntülenmesi veya yazdırılması gereken senaryolarda yararlı olabilir.
+C: Bir PDF belgesinde sayfa yönünü değiştirmek, sayfanın içeriğini 90 derece döndürmenize olanak tanır. Bu, orijinal içeriğin dikeyden yatay moda veya tam tersi gibi farklı bir yönde görüntülenmesi veya yazdırılması gereken senaryolarda yararlı olabilir.
 
 #### S: PDF belgesindeki belirli sayfaların yönünü değiştirebilir miyim?
 
@@ -104,7 +104,7 @@ C: Evet, sayfa yönünü değiştirmek sayfadaki içeriğin düzenini etkileyece
 
 #### S: Sayfayı 90 dereceden farklı bir açıyla döndürebilir miyim?
 
- C: Sağlanan C# kaynak kodunda sayfa döndürme, kullanılarak 90 dereceye ayarlanmıştır.`page.Rotate = Rotate.on90;` . Ancak gerekirse dönüş açısını başka değerlere değiştirebilirsiniz. Örneğin şunları kullanabilirsiniz:`Rotate.on180` sayfayı 180 derece döndürmek veya`Rotate.on270` 270 derece döndürmek için.
+ C: Sağlanan C# kaynak kodunda sayfa döndürme, kullanılarak 90 dereceye ayarlanmıştır.`page.Rotate = Rotate.on90;` . Ancak gerekirse dönüş açısını başka değerlere değiştirebilirsiniz. Örneğin, kullanabilirsiniz`Rotate.on180` sayfayı 180 derece döndürmek veya`Rotate.on270` 270 derece döndürmek için.
 
 #### S: Yönü değiştirdikten sonra taşan sayfa içeriğini nasıl halledebilirim?
 

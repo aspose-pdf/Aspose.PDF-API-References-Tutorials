@@ -1,7 +1,7 @@
 ---
 title: Inaktivera filkomprimering i PDF-fil
 linktitle: Inaktivera filkomprimering i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du inaktiverar filkomprimering i PDF-fil med Aspose.PDF för .NET. Steg-för-steg-guide för enkel hantering.
 type: docs
 weight: 30
@@ -100,7 +100,7 @@ S: Ja, den här handledningen guidar dig genom att inaktivera filkomprimering f�
 
 #### F: Vilka typer av bilagor kan jag inaktivera komprimering för?
 
-S: Du kan inaktivera komprimering för alla typer av bilagor, såsom bilder, dokument, kalkylblad och mer, för att säkerställa att deras integritet bibehålls.
+S: Du kan inaktivera komprimering för alla typer av bilagor, som bilder, dokument, kalkylblad och mer, för att säkerställa att deras integritet bibehålls.
 
 #### F: Påverkar inaktivering av komprimering PDF-dokumentets totala filstorlek?
 

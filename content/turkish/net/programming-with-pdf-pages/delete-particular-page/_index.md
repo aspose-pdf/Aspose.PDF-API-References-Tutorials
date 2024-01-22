@@ -66,7 +66,7 @@ Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF dosyasından belirli bir say
 
 ### PDF dosyasındaki belirli bir sayfayı silmek için SSS
 
-#### S: Aspose.PDF for .NET kullanarak bir PDF dosyasından birden fazla belirli sayfayı silmek mümkün mü?
+#### S: Aspose.PDF for .NET kullanarak bir PDF dosyasından birden fazla belirli sayfayı silmek mümkün müdür?
 
  C: Evet, Aspose.PDF for .NET'i kullanarak bir PDF dosyasından birden fazla belirli sayfayı silebilirsiniz. Bunu yapmak için şu numarayı arayabilirsiniz:`Delete()` konusundaki yöntem`Pages` birden çok kez koleksiyon, her seferinde silmek istediğiniz sayfanın dizinini belirterek.
 
@@ -84,4 +84,4 @@ C: Dizini aralığın dışında olan (örneğin, 1'den az veya PDF'deki toplam 
 
 #### S: Bir sayfayı silmeden önce PDF belgesindeki toplam sayfa sayısını nasıl belirleyebilirim?
 
- C: PDF belgesindeki toplam sayfa sayısını şuraya erişerek belirleyebilirsiniz:`Count` mülkiyeti`Pages` Toplamak. Örneğin şunları kullanabilirsiniz:`pdfDocument.Pages.Count` toplam sayfa sayısını bulmak için`pdfDocument`.
+ C: PDF belgesindeki toplam sayfa sayısını şuraya erişerek belirleyebilirsiniz:`Count` mülkiyeti`Pages` Toplamak. Örneğin, kullanabilirsiniz`pdfDocument.Pages.Count` toplam sayfa sayısını bulmak için`pdfDocument`.

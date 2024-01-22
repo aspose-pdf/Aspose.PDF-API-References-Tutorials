@@ -1,7 +1,7 @@
 ---
 title: Sök text och lägg till hyperlänk
 linktitle: Sök text och lägg till hyperlänk
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du söker efter text i en PDF, lägger till hyperlänkar till den hittade texten och sparar det modifierade dokumentet med Aspose.PDF för .NET.
 type: docs
 weight: 450
@@ -179,7 +179,7 @@ S: Ja, den här handledningen fokuserar specifikt på att lägga till hyperlänk
 
 #### F: Hur kan jag aktivera reguljära uttryckssökning efter text?
 
- S: Reguljära uttryckssökning aktiveras genom att skapa en`TextSearchOptions` objekt och ange dess värde till`true` . Tilldela detta objekt till`TextSearchOptions` egendom av`TextFragmentAbsorber` exempel. Detta säkerställer att det reguljära uttrycksmönstret tillämpas under textsökning.
+ S: Reguljära uttryckssökning aktiveras genom att skapa en`TextSearchOptions` objekt och ställer in dess värde till`true` . Tilldela detta objekt till`TextSearchOptions` egendom av`TextFragmentAbsorber` exempel. Detta säkerställer att det reguljära uttrycksmönstret tillämpas under textsökning.
 
 #### F: Hur lägger jag till hyperlänkar till den hittade texten?
 

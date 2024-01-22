@@ -131,7 +131,7 @@ R: Puede guardar el documento PDF modificado e inspeccionar visualmente el resul
 
 #### P: ¿Puedo automatizar el proceso de eliminación de objetos gráficos de varios archivos PDF?
 
-R: Sí, puede crear un flujo de trabajo de procesamiento por lotes utilizando Aspose.PDF para automatizar la eliminación de objetos gráficos de múltiples archivos PDF.
+R: Sí, puede crear un flujo de trabajo de procesamiento por lotes utilizando Aspose.PDF para automatizar la eliminación de objetos gráficos de varios archivos PDF.
 
 #### P: ¿Puedo deshacer la eliminación de objetos gráficos una vez eliminados?
 

@@ -1,7 +1,7 @@
 ---
 title: Optimera filstorlek i PDF-fil
 linktitle: Optimera filstorlek i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du optimerar filstorleken i PDF-fil med Aspose.PDF för .NET med hjälp av denna steg-för-steg-guide.
 type: docs
 weight: 250

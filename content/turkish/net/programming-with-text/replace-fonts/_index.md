@@ -123,7 +123,7 @@ C: Eğitim, süreç boyunca size adım adım rehberlik eder:
 
 1.  PDF belgesini kullanarak yükleyin`Document` sınıf.
 2.  Oluşturmak`TextFragmentAbsorber` nesneyi seçin ve kullanılmayan yazı tiplerini kaldırmak için düzenleme seçeneğini ayarlayın. Metin parçalarını aramak için tüm sayfalar için emiciyi kabul edin.
-3. Tanımlanan metin parçaları arasında gezinin. Bir metin parçasının yazı tipi adı değiştirmek istediğiniz yazı tipiyle eşleşiyorsa onu yeni yazı tipiyle değiştirin.
+3. Tanımlanan metin parçaları arasında geçiş yapın. Bir metin parçasının yazı tipi adı değiştirmek istediğiniz yazı tipiyle eşleşiyorsa onu yeni yazı tipiyle değiştirin.
 
 ####  S: Kullanmanın amacı nedir?`TextFragmentAbsorber` with font replacement options?
 

@@ -30,7 +30,7 @@ url: /ar/java/pdf-document-operations/adding-pdf-page-stamp-in-pdf-file-using-ja
 
 ## إضافة التبعيات
 
-قم بإنشاء مشروع Java جديد في IDE الخاص بك وقم بإضافة Aspose.PDF لمكتبة Java إلى تبعيات مشروعك. يمكنك القيام بذلك عن طريق إضافة ملف JAR إلى مسار بناء مشروعك.
+أنشئ مشروع Java جديدًا في IDE الخاص بك وأضف مكتبة Aspose.PDF لـ Java إلى تبعيات مشروعك. يمكنك القيام بذلك عن طريق إضافة ملف JAR إلى مسار بناء مشروعك.
 
 ## إنشاء مشروع جافا
 
@@ -46,7 +46,7 @@ import com.aspose.pdf.*;
 
 ## تعريف وثيقة PDF
 
-للعمل مع وثيقة PDF، تحتاج إلى تعريفه أولاً. لنقم بإنشاء كائن مستند PDF:
+للعمل مع مستند PDF، تحتاج إلى تعريفه أولاً. لنقم بإنشاء كائن مستند PDF:
 
 ```java
 Document pdfDocument = new Document("input.pdf");

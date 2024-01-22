@@ -96,7 +96,7 @@ R: Recuperar información de archivos adjuntos le permite comprender y analizar 
 
 R: Este tutorial demuestra cómo recuperar y mostrar propiedades de archivos adjuntos como nombre, descripción, tipo MIME, hash de control, fecha de creación, fecha de modificación y tamaño.
 
-#### P: ¿Cómo me ayuda este tutorial a recopilar información adjunta usando Aspose.PDF para .NET?
+#### P: ¿Cómo me ayuda este tutorial a recopilar información adjunta utilizando Aspose.PDF para .NET?
 
 R: Este tutorial proporciona instrucciones paso a paso y código fuente C# para acceder y mostrar información sobre un archivo adjunto específico dentro de un documento PDF.
 

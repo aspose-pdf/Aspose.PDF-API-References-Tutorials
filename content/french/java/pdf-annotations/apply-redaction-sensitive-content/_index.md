@@ -48,7 +48,7 @@ Document pdfDocument = new Document("example.pdf");
 
 ## Identifier le contenu sensible
 
-Avant de pouvoir supprimer un contenu sensible, nous devons l’identifier dans le document. Cela peut être fait en recherchant des mots-clés, des modèles ou des expressions régulières spécifiques. Par exemple, si nous souhaitons supprimer toutes les instances d'un numéro de sécurité sociale (SSN) dans le document, nous pouvons utiliser le code suivant :
+Avant de pouvoir supprimer un contenu sensible, nous devons l'identifier dans le document. Cela peut être fait en recherchant des mots-clés, des modèles ou des expressions régulières spécifiques. Par exemple, si nous souhaitons supprimer toutes les instances d'un numéro de sécurité sociale (SSN) dans le document, nous pouvons utiliser le code suivant :
 
 ```java
 // Définir le modèle pour les SSN (exemple)

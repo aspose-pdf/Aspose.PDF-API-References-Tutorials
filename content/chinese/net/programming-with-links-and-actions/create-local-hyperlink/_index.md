@@ -132,7 +132,7 @@ Console.WriteLine("\nLocal hyperlink created successfully.\nFile saved at " + da
 
 答：虽然本地超链接通常导航到整个页面，但您可以在 PDF 文档中创建锚点或书签以实现有针对性的链接。 Aspose.PDF for .NET 支持各种超链接选项。
 
-#### 问：如何验证本地超链接是否正常工作？
+#### 问：如何验证本地超链接是否正常运行？
 
 答：按照提供的教程和示例代码，您可以自信地创建功能性本地超链接。您可以通过打开生成的 PDF 文档并单击超链接文本来测试链接。
 

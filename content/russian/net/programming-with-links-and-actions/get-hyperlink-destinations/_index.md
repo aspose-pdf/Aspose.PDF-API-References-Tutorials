@@ -55,7 +55,7 @@ foreach(Aspose.Pdf.Page page in document.Pages)
      page. Accept(selector);
      // Создайте список для хранения всех ссылок.
      IList<Annotation> list = selector. Selected;
-     // Перебрать каждый элемент в списке
+     // Перебирать каждый элемент в списке
      foreach(LinkAnnotation a in list)
      {
          // Распечатать целевой URL
@@ -97,7 +97,7 @@ try
 	// Пройти через всю страницу PDF
 	foreach (Aspose.Pdf.Page page in document.Pages)
 	{
-		// Получить аннотации ссылок с определенной страницы
+		// Получить аннотации ссылок с конкретной страницы
 		AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
 		page.Accept(selector);
 		// Создать список, содержащий все ссылки

@@ -120,7 +120,7 @@ R: Si el servidor de marca de tiempo no está disponible durante la firma, el pr
 
 #### P: ¿Son legalmente vinculantes las firmas digitales con marcas de tiempo?
 
-R: Las firmas digitales con marcas de tiempo tienen valor legal en muchas jurisdicciones y, a menudo, se consideran más confiables que las simples firmas digitales. Consulte a expertos legales en su jurisdicción para conocer las regulaciones específicas.
+R: Las firmas digitales con marcas de tiempo tienen valor legal en muchas jurisdicciones y a menudo se consideran más confiables que las simples firmas digitales. Consulte a expertos legales en su jurisdicción para conocer las regulaciones específicas.
 
 #### P: ¿Puedo agregar varias firmas digitales con marcas de tiempo a un PDF?
 

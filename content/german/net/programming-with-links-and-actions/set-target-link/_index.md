@@ -91,7 +91,7 @@ catch (Exception ex)
 
 ## Abschluss
 
-Herzlichen Glückwunsch! Sie wissen jetzt, wie Sie mit Aspose.PDF für .NET einen Ziellink in einer PDF-Datei festlegen. Nutzen Sie dieses Wissen, um Links in Ihren PDF-Dokumenten anzupassen und interaktive Erlebnisse für Benutzer zu erstellen.
+Herzlichen Glückwunsch! Sie wissen jetzt, wie Sie mit Aspose.PDF für .NET einen Ziellink in einer PDF-Datei festlegen. Nutzen Sie dieses Wissen, um Links in Ihren PDF-Dokumenten anzupassen und interaktive Erlebnisse für Benutzer zu schaffen.
 
 Nachdem Sie dieses Handbuch abgeschlossen haben, können Sie diese Konzepte auf Ihre eigenen Projekte anwenden und die von Aspose.PDF für .NET angebotenen Funktionen weiter erkunden.
 
@@ -103,7 +103,7 @@ A: Ein Ziellink in einer PDF-Datei ist ein anklickbarer Link, der den Leser zu e
 
 #### F: Warum sollte ich einen Ziellink in einer PDF-Datei festlegen?
 
-A: Durch das Festlegen von Ziellinks können Sie eine nahtlose Navigation in einem PDF-Dokument erstellen oder auf bestimmte Abschnitte oder Seiten in anderen PDF-Dateien verweisen.
+A: Durch das Festlegen von Ziellinks können Sie eine nahtlose Navigation innerhalb eines PDF-Dokuments erstellen oder auf bestimmte Abschnitte oder Seiten in anderen PDF-Dateien verlinken.
 
 #### F: Wie hilft Aspose.PDF für .NET beim Festlegen von Ziellinks?
 

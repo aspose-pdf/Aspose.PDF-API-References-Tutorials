@@ -79,7 +79,7 @@ LeftX, lowerLeftY, upperRightX, upperRightY);
 Matrix matrix = new Matrix(new double[] { rectangle.URX - rectangle.LLX, 0, 0, rectangle.URY - rectangle.LLY, rectangle.LLX, rectangle.LLY });
 ```
 
-## Paso 9: Concatenar matriz para colocar imágenes
+## Paso 9: concatenar matriz para colocar imágenes
 
  Para especificar cómo se debe colocar la imagen en el rectángulo, usamos el`ConcatenateMatrix` operador. Este operador define la matriz de transformación que asigna el espacio de coordenadas de la imagen al espacio de coordenadas de la página.
 

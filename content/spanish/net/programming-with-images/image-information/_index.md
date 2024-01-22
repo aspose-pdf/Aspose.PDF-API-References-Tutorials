@@ -117,7 +117,7 @@ Document doc = new Document(dataDir+ "ImageInformation.pdf");
 // Definir la resolución predeterminada para la imagen.
 int defaultResolution = 72;
 System.Collections.Stack graphicsState = new System.Collections.Stack();
-// Definir un objeto de lista de matriz que contendrá los nombres de las imágenes
+// Definir el objeto de lista de matriz que contendrá los nombres de las imágenes
 System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
 // Insertar un objeto para apilar
 graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));

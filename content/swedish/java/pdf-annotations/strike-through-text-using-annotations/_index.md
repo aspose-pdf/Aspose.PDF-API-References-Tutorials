@@ -78,7 +78,7 @@ Grattis! Du har framgångsrikt lagt till en genomstruken textanteckning till ett
 
 ### Hur ändrar jag färgen på den genomstrukna kommentaren?
 
- För att ändra färgen på den genomstrukna annoteringen kan du använda`setColor` metod och ange önskad färg. I exemplet ställde vi in den på rött med`setColor(com.aspose.pdf.Color.getRed())`.
+ För att ändra färgen på den genomstrukna annoteringen kan du använda`setColor` metod och ange önskad färg. I exemplet ställde vi in det på rött med`setColor(com.aspose.pdf.Color.getRed())`.
 
 ### Kan jag lägga till flera genomstrukna kommentarer i ett enda PDF-dokument?
 

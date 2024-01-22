@@ -101,4 +101,4 @@ R: Sí, Aspose.PDF para .NET garantiza que las ecuaciones matemáticas y los sí
 
 #### P: ¿Aspose.PDF para .NET admite la conversión de archivos PDF protegidos con contraseña al formato TeX?
 
-R: Sí, Aspose.PDF para .NET admite la conversión de archivos PDF protegidos con contraseña al formato TeX. Al cargar un PDF protegido con contraseña, puede proporcionar la contraseña utilizando el`Document` constructor de clase o estableciendo el`Password` propiedad antes de cargar el PDF.
+R: Sí, Aspose.PDF para .NET admite la conversión de archivos PDF protegidos con contraseña al formato TeX. Al cargar un PDF protegido con contraseña, puede proporcionar la contraseña utilizando el`Document` constructor de clase o configurando el`Password` propiedad antes de cargar el PDF.

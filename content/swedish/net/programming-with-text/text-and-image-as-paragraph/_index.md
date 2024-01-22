@@ -1,7 +1,7 @@
 ---
-title: Text Och Bild Som Stycke I PDF-fil
-linktitle: Text Och Bild Som Stycke I PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+title: Text och bild som stycke i pdf-fil
+linktitle: Text och bild som stycke i pdf-fil
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du lägger till text och en bild som inline-stycken i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 530
@@ -40,7 +40,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
  Byta ut`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
 
-## Steg 4: Skapa ett nytt dokument och sida
+## Steg 4: Skapa ett nytt dokument och en sida
 
  Skapa en ny`Document` objekt och lägg till en sida i dess sidsamling:
 

@@ -86,7 +86,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 {
 	using (FileStream imageStream = new FileStream(dataDir + "image" + pageCount + "_out" + ".jpg", FileMode.Create))
 	{
-		// Belirtilen niteliklere sahip JPEG cihazı oluşturun
+		// Belirtilen niteliklere sahip JPEG cihazı oluştur
 		// Genişlik, Yükseklik, Çözünürlük, Kalite
 		// Kalite [0-100], 100 Maksimumdur
 		// Çözünürlük nesnesi oluştur

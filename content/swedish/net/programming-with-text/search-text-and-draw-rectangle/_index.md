@@ -1,7 +1,7 @@
 ---
 title: Sök efter text och rita rektangel
 linktitle: Sök efter text och rita rektangel
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du söker efter text i en PDF, ritar rektanglar runt den hittade texten och sparar det modifierade dokumentet med Aspose.PDF för .NET.
 type: docs
 weight: 460
@@ -160,7 +160,7 @@ S: Ja, handledningen fokuserar på att rita rektanglar runt specifika textsegmen
 
 #### F: Hur aktiverar jag sökning i reguljära uttryck efter text?
 
- S: Reguljära uttryckssökning aktiveras genom att skapa en`TextSearchOptions` objekt och ange dess värde till`true` . Tilldela detta objekt till`TextSearchOptions` egendom av`TextFragmentAbsorber` exempel. Detta säkerställer att det reguljära uttrycksmönstret används under textsökning.
+ S: Reguljära uttryckssökning aktiveras genom att skapa en`TextSearchOptions` objekt och ställer in dess värde till`true` . Tilldela detta objekt till`TextSearchOptions` egendom av`TextFragmentAbsorber` exempel. Detta säkerställer att det reguljära uttrycksmönstret används under textsökning.
 
 #### F: Hur ritar jag rektanglar runt den hittade texten?
 

@@ -1,7 +1,7 @@
 ---
 title: Hämta vattenstämpel från PDF-fil
 linktitle: Hämta vattenstämpel från PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du extraherar vattenstämplar från PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 100

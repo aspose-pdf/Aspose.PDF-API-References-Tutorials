@@ -1,7 +1,7 @@
 ---
 title: Skapa flerskikts PDF-fil Andra tillvägagångssätt
 linktitle: Skapa flerskikts PDF-fil Andra tillvägagångssätt
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du skapar en PDF-fil med flera lager med Aspose.PDF för .NET. Steg-för-steg-guide med källkod för att skapa dynamiska PDF-filer med text och bilder.
 type: docs
 weight: 80

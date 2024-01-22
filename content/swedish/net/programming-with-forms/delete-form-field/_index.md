@@ -1,7 +1,7 @@
 ---
 title: Ta bort formulärfält i PDF-dokument
 linktitle: Ta bort formulärfält i PDF-dokument
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Ta enkelt bort oönskade formulärfält i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 50

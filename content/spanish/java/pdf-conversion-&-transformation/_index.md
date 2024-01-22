@@ -18,7 +18,7 @@ Una de las características destacadas de Aspose.PDF para Java es su capacidad p
 
 ## Transformar contenido PDF
 
-Más allá de la simple conversión, Aspose.PDF para Java le permite transformar el contenido de los documentos PDF. Puede manipular texto, imágenes y anotaciones con precisión. ¿Necesita agregar marcas de agua, fusionar varios archivos PDF o dividir un documento grande en otros más pequeños? Esta biblioteca proporciona las herramientas para realizar estas tareas de manera eficiente. Lo guiaremos a través de estas transformaciones, brindándole fragmentos de código y orientación para hacer que sus documentos PDF sean más dinámicos y se adapten a sus requisitos específicos.
+Más allá de la simple conversión, Aspose.PDF para Java le permite transformar el contenido de los documentos PDF. Puede manipular texto, imágenes y anotaciones con precisión. ¿Necesita agregar marcas de agua, fusionar varios archivos PDF o dividir un documento grande en otros más pequeños? Esta biblioteca proporciona las herramientas para realizar estas tareas de manera eficiente. Lo guiaremos a través de estas transformaciones, proporcionándole fragmentos de código y orientación para que sus documentos PDF sean más dinámicos y se adapten a sus requisitos específicos.
 
 ## Tutoriales de conversión y transformación de PDF
 ### [Convertir formato EPUB a PDF](./convert-epub-to-pdf-format/)

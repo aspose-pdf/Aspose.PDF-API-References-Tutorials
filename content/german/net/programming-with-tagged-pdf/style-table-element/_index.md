@@ -43,7 +43,7 @@ Wir haben das Wurzelstrukturelement erhalten, das als Container für das Array-E
 
 ## Schritt 4: Erstellen des Array-Strukturelements
 
-Erstellen wir nun ein neues Tabellenstrukturelement für unser Dokument.
+Jetzt erstellen wir ein neues Tabellenstrukturelement für unser Dokument.
 
 ```csharp
 // Erstellen Sie das Array-Strukturelement

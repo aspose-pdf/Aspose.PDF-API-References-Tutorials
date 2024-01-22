@@ -36,7 +36,7 @@ Bu eğitimlerde ayrıca anlamanızı ve öğrenmenizi kolaylaştırmak için ayr
 | [Hakları Koruyun](./preserve-rights/) | Aspose.PDF for .NET ile PDF belgelerinizdeki form haklarını koruyun. |  
 | [Radyo düğmesi](./radio-button/) | Aspose.PDF for .NET ile PDF belgelerinize kolayca radyo düğmeleri ekleyin. |  
 | [Seçeneklerle Radyo Düğmesi](./radio-button-with-options/) | Aspose.PDF for .NET'i kullanarak PDF belgesine kolayca seçenekler içeren bir radyo düğmesi ekleyin. |  
-| [Form Alanını Sekme Sırasında Al](./retrieve-form-field-in-tab-order/) | Aspose.PDF for .NET'i kullanarak form alanlarını sekme sırasıyla nasıl alacağınızı öğrenin. |  
+| [Form Alanını Sekme Sırasıyla Al](./retrieve-form-field-in-tab-order/) | Aspose.PDF for .NET'i kullanarak form alanlarını sekme sırasıyla nasıl alacağınızı öğrenin. |  
 | [PDF Belgesinde Radyo Düğmesini Seçin](./select-radio-button/) | Aspose.PDF for .NET kullanarak PDF belgesinde radyo düğmesinin nasıl seçileceğini öğrenin. |  
 | [Alan Sınırını Ayarla](./set-field-limit/) | Aspose.PDF for .NET kullanarak bir PDF belgesinde alan sınırını nasıl ayarlayacağınızı öğrenin. |  
 | [Java Komut Dosyasını Ayarla](./set-java-script/) | PDF dosyalarındaki form alanlarında JavaScript'i ayarlamak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin. |  

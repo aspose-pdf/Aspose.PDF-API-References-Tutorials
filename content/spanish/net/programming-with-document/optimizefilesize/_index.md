@@ -86,7 +86,7 @@ pdfDocument.Save(dataDir);
 
 ## Conclusión
 
-Optimizar el tamaño de los archivos de los documentos PDF es crucial para mejorar el rendimiento y la experiencia del usuario al trabajar con archivos PDF en aplicaciones .NET. Aspose.PDF para .NET simplifica el proceso de optimización al proporcionar una amplia gama de opciones de optimización. Siguiendo la guía paso a paso y utilizando el código fuente de ejemplo proporcionado, los desarrolladores pueden optimizar fácilmente los documentos PDF, lo que da como resultado archivos de menor tamaño y un mejor rendimiento de la aplicación.
+Optimizar el tamaño de los archivos PDF es crucial para mejorar el rendimiento y la experiencia del usuario al trabajar con archivos PDF en aplicaciones .NET. Aspose.PDF para .NET simplifica el proceso de optimización al proporcionar una amplia gama de opciones de optimización. Siguiendo la guía paso a paso y utilizando el código fuente de ejemplo proporcionado, los desarrolladores pueden optimizar fácilmente los documentos PDF, lo que da como resultado archivos de menor tamaño y un mejor rendimiento de la aplicación.
 
 ### Preguntas frecuentes
 

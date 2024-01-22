@@ -1,7 +1,7 @@
 ---
 title: Räkna artefakter i PDF-fil
 linktitle: Räkna artefakter i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du enkelt räknar vattenstämplar i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 60

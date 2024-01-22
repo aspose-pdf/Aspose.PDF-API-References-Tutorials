@@ -1,7 +1,7 @@
 ---
 title: Ställ in kant i PDF till tabell
 linktitle: Ställ in kant i PDF till tabell
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du ställer in en ram i PDF till tabell med Aspose.PDF för .NET.
 type: docs
 weight: 200

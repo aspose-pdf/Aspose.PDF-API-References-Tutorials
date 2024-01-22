@@ -20,7 +20,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "ShrinkDocument.pdf");
 ```
 
-## Passaggio 2: rimpicciolire il documento PDF
+## Passaggio 2: ridurre il documento PDF
 
  Una volta caricato il documento PDF, possiamo utilizzare il file`OptimizeResources` metodo del`Document`class per ottimizzare il documento e potenzialmente ridurne le dimensioni. Tieni presente che questo metodo non può garantire la riduzione dei documenti, poiché alcuni documenti PDF potrebbero già essere altamente ottimizzati.
 

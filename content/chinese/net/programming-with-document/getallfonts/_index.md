@@ -72,7 +72,7 @@ foreach (Aspose.Pdf.Text.Font font in fonts)
 
 #### 问：我可以根据某些条件过滤字体吗？
 
-答：是的，您可以使用 Aspose.PDF for .NET 根据特定条件过滤字体。获取所有字体后，您可以以编程方式分析字体并根据需要应用过滤逻辑。
+答：是的，您可以使用 Aspose.PDF for .NET 根据某些条件过滤字体。获取所有字体后，您可以以编程方式分析字体并根据需要应用过滤逻辑。
 
 #### 问：Aspose.PDF for .NET 是否兼容各种字体格式？
 

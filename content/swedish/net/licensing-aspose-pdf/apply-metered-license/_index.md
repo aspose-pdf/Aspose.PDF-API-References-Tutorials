@@ -1,7 +1,7 @@
 ---
 title: Konfigurera uppmätta licensnycklar i PDF-fil
 linktitle: Konfigurera uppmätta licensnycklar i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg guide för att ställa in en uppmätt licensnycklar i PDF-fil med Aspose.PDF för .NET och dra nytta av avancerade funktioner.
 type: docs
 weight: 10

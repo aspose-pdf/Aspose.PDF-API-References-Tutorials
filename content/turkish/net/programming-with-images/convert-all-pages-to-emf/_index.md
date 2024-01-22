@@ -105,7 +105,7 @@ C: Belge dizininin belirtilmesi, PDF belgesinin doğru şekilde konumlandırılm
 
 C: Evet, EMF dosyalarının genişlik, yükseklik ve çözünürlük gibi özelliklerini özel gereksinimlerinizi karşılayacak şekilde özelleştirebilirsiniz.
 
-#### S: Birden fazla PDF belgesini EMF dosyalarına dönüştürmek için toplu işlem destekleniyor mu?
+#### S: Birden fazla PDF belgesini EMF dosyalarına dönüştürmek için toplu işleme destekleniyor mu?
 
 C: Sağlanan kod pasajı ayrı PDF belgeleri için tasarlanmış olsa da, mantığı birden fazla PDF dosyasını işleyecek şekilde genişleterek toplu işleme uygulayabilirsiniz.
 

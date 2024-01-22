@@ -135,7 +135,7 @@ Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " 
 
 #### س: هل يتوافق Aspose.PDF for .NET مع تنسيقات الخطوط المختلفة؟
 
-ج: نعم، يدعم Aspose.PDF for .NET تنسيقات الخطوط المختلفة، بما في ذلك خطوط TrueType وOpenType وType 1 وCFF. يمكنه تضمين الخطوط في ملف PDF بغض النظر عن تنسيقها.
+ج: نعم، يدعم Aspose.PDF for .NET تنسيقات خطوط متنوعة، بما في ذلك خطوط TrueType وOpenType وType 1 وCFF. يمكنه تضمين الخطوط في ملف PDF بغض النظر عن تنسيقها.
 
 #### س: هل يؤدي تضمين الخطوط إلى زيادة حجم ملف مستند PDF؟
 

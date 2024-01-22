@@ -183,7 +183,7 @@ R: Sí, este tutorial se centra específicamente en agregar hipervínculos a tex
 
 #### P: ¿Cómo agrego hipervínculos al texto encontrado?
 
- R: Después de identificar los fragmentos de texto usando el`TextFragmentAbsorber` , el tutorial proporciona un bucle para recorrer estos fragmentos. Para cada fragmento de texto, el tutorial muestra cómo configurar el color del texto en azul y crear un hipervínculo usando el`CreateWebLink` método.
+ R: Después de identificar los fragmentos de texto usando el`TextFragmentAbsorber` , el tutorial proporciona un bucle para recorrer estos fragmentos. Para cada fragmento de texto, el tutorial demuestra cómo configurar el color del texto en azul y crear un hipervínculo usando el`CreateWebLink` método.
 
 #### P: ¿Cuáles son los pasos para guardar el PDF modificado con hipervínculos?
 

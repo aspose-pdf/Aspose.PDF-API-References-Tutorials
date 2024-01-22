@@ -1,7 +1,7 @@
 ---
 title: Använd Latex Script i PDF-fil
 linktitle: Använd Latex Script i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du använder Latex-skript för att lägga till matematiska uttryck eller formler i ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 550
@@ -59,7 +59,7 @@ LatexFragment ltext1 = new LatexFragment(latexText1, true);
 cell.Paragraphs.Add(ltext1);
 ```
 
- Observera att`true` parametern i`LatexFragment` konstruktorn tar bort latex-styckeindrag.
+ Observera att`true` parametern i`LatexFragment` konstruktorn eliminerar latex-styckeindrag.
 
 ## Steg 6: Lägg till tabellen på sidan
 
@@ -122,7 +122,7 @@ S: För att framgångsrikt följa denna handledning bör du ha en grundläggande
 
 #### F: Hur ställer jag in mitt projekt för att använda LaTeX-skript i ett PDF-dokument?
 
-S: Till att börja med, skapa ett nytt C#-projekt i din valda integrerade utvecklingsmiljö (IDE) och lägg till en referens till Aspose.PDF för .NET-biblioteket. Detta ger dig de nödvändiga verktygen för att arbeta med PDF-dokument och LaTeX-skript.
+S: Till att börja, skapa ett nytt C#-projekt i din valda integrerade utvecklingsmiljö (IDE) och lägg till en referens till Aspose.PDF för .NET-biblioteket. Detta ger dig de nödvändiga verktygen för att arbeta med PDF-dokument och LaTeX-skript.
 
 #### F: Vilka namnutrymmen behöver jag importera för att arbeta med Aspose.PDF för .NET?
 

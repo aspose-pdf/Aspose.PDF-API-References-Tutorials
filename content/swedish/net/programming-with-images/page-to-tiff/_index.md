@@ -1,7 +1,7 @@
 ---
 title: PDF-sida till TIFF
 linktitle: PDF-sida till TIFF
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg för steg guide för att konvertera PDF-sida till TIFF med Aspose.PDF för .NET.
 type: docs
 weight: 230
@@ -64,7 +64,7 @@ tiffSettings.SkipBlankPages = false;
 
 Justera upplösningen och andra inställningar enligt dina krav.
 
-## Steg 4: Skapa en TiffDevice
+## Steg 4: Skapa en Tiff-enhet
 
  För att utföra konverteringen måste vi skapa en`TiffDevice` objekt. Den här enheten kommer att hantera konverteringsprocessen. Använd följande kod:
 

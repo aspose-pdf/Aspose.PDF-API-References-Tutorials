@@ -82,7 +82,7 @@ La convalida dei PDF in Java utilizzando Aspose.PDF per Java costituisce una mis
 ### Cosa comporta la convalida del PDF?
    La convalida PDF comprende l'esame meticoloso di un file PDF per scoprire errori, corruzione o problemi che potrebbero impedirne la funzionalità.
 
-### Perché la convalida dei PDF è di fondamentale importanza?
+### Perché la convalida PDF è di fondamentale importanza?
    La convalida PDF garantisce che i file PDF siano privi di errori e possano essere visualizzati ed elaborati in modo coerente dal software.
 
 ### Aspose.PDF per Java può essere utilizzato per altre attività relative ai PDF?

@@ -34,7 +34,7 @@ HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 Stream dataStream = response. GetResponseStream();
 // Откройте поток с помощью StreamReader для быстрого доступа.
 StreamReader reader = new StreamReader(dataStream);
-// Прочтите содержание.
+// Прочтите содержимое.
 string responseFromServer = reader.ReadToEnd();
 reader. Close();
 dataStream.Close();
@@ -86,7 +86,7 @@ try
 	Stream dataStream = response.GetResponseStream();
 	// Откройте поток с помощью StreamReader для быстрого доступа.
 	StreamReader reader = new StreamReader(dataStream);
-	// Прочтите содержание.
+	// Прочтите содержимое.
 	string responseFromServer = reader.ReadToEnd();
 	reader.Close();
 	dataStream.Close();

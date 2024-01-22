@@ -144,7 +144,7 @@ R : Le didacticiel « Texte et image en tant que paragraphe dans un fichier PDF 
 
 R : Ce didacticiel aide les utilisateurs à comprendre comment utiliser Aspose.PDF pour .NET pour incorporer du texte et des images sous forme de paragraphes en ligne dans un document PDF. En suivant les étapes et les exemples de code fournis, les utilisateurs peuvent créer des fichiers PDF avec des mises en page personnalisées combinant texte et images.
 
-#### Q : Quels prérequis sont nécessaires pour suivre ce tutoriel ?
+#### Q : Quels prérequis sont requis pour suivre ce tutoriel ?
 
 R : Avant de commencer le didacticiel, vous devez avoir une compréhension de base du langage de programmation C#. De plus, vous devez avoir installé la bibliothèque Aspose.PDF pour .NET. Vous pouvez l'obtenir sur le site Web Aspose ou l'installer dans votre projet à l'aide de NuGet.
 

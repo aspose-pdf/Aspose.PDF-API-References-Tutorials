@@ -142,4 +142,4 @@ using System.Text;
 
 #### S: Bu eğitimden çıkarılacak önemli sonuç nedir?
 
-C: Bu eğitimi takip ederek Aspose.PDF for .NET'teki Metin Aygıtı özelliğini kullanarak bir PDF belgesinden metin çıkarmayı öğrendiniz. Çıkarılan metin, belirtilen çıktı dosyasına kaydedilerek, çıkarılan içeriği gerektiği gibi değiştirmenize ve kullanmanıza olanak tanır.
+C: Bu eğitimi takip ederek Aspose.PDF for .NET'teki Metin Aygıtı özelliğinden yararlanarak bir PDF belgesinden metin çıkarmayı öğrendiniz. Çıkarılan metin, belirtilen çıktı dosyasına kaydedilerek, çıkarılan içeriği gerektiği gibi değiştirmenize ve kullanmanıza olanak tanır.

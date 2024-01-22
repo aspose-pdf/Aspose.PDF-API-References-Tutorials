@@ -1,7 +1,7 @@
 ---
 title: Ersätt teckensnitt i PDF-fil
 linktitle: Ersätt teckensnitt i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du ersätter teckensnitt i PDF-filer med Aspose.PDF för .NET.
 type: docs
 weight: 340

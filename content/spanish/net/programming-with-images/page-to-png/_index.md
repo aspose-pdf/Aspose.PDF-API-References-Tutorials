@@ -70,7 +70,7 @@ using (FileStream imageStream = new FileStream(dataDir + "aspose-logo.png", File
 
 ## Conclusión
 
-¡Enhorabuena! Ha convertido con éxito una página al formato PNG utilizando Aspose.PDF para .NET. Ahora puedes aplicar este método a tus propios proyectos para extraer páginas específicas de archivos PDF y guardarlas como imágenes PNG.
+¡Enhorabuena! Ha convertido con éxito una página al formato PNG usando Aspose.PDF para .NET. Ahora puedes aplicar este método a tus propios proyectos para extraer páginas específicas de archivos PDF y guardarlas como imágenes PNG.
 
 ### Preguntas frecuentes
 

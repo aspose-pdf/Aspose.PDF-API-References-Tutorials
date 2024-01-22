@@ -198,7 +198,7 @@ Bu kapsamlı kılavuzda, Java ve Aspose.PDF for Java kullanarak bir PDF belgesin
 
 Evet, Aspose.PDF for Java, çeşitli Java kütüphaneleri ve çerçeveleriyle uyumludur. Spring, JavaFX veya diğer popüler çerçeveleri kullanıyor olsanız da, onu Java uygulamalarınıza entegre edebilirsiniz. Belirli entegrasyon yönergeleri için belgeleri ve kaynakları kontrol ettiğinizden emin olun.
 
-### Aspose.PDF for Java ile oluşturulan bir PDF formunu şifreyle koruyabilir miyim?
+### Aspose.PDF for Java ile oluşturulmuş bir PDF formunu şifreyle koruyabilir miyim?
 
 Kesinlikle! Aspose.PDF for Java, formlar da dahil olmak üzere PDF belgelerinize şifre koruması eklemenizi sağlar. Erişimi ve izinleri kısıtlamak için hem kullanıcı düzeyinde hem de sahip düzeyinde parolalar ayarlayabilirsiniz. Bu güvenlik özelliğinin nasıl uygulanacağına ilişkin ayrıntılı talimatlar için belgelere bakın.
 

@@ -115,7 +115,7 @@ doc.Save(outFile);
 
 ## Conclusión
 
-En este tutorial, proporcionamos orientación paso a paso sobre cómo personalizar los números de página mientras agregamos una tabla de contenido usando Aspose.PDF para .NET. También proporcionamos un ejemplo de código que puede utilizar como referencia al implementar esta característica en su
+En este tutorial, proporcionamos orientación paso a paso sobre cómo personalizar los números de página mientras agregamos una tabla de contenido usando Aspose.PDF para .NET. También proporcionamos un ejemplo de código que puede utilizar como referencia al implementar esta función en su
 
 ### Preguntas frecuentes
 

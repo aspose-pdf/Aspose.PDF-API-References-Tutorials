@@ -43,7 +43,7 @@ FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt"
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 ```
 
-### Шаг 5: Сохранение нового выходного файла
+### Шаг 5. Сохранение нового выходного файла.
 
 Наконец, мы сохраняем полученный новый PDF-файл с именем «AddAttachment_out.pdf» в указанном каталоге.
 

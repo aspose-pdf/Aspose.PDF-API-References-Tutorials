@@ -1,7 +1,7 @@
 ---
 title: Länkstrukturelement
 linktitle: Länkstrukturelement
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att använda länkstrukturelement med Aspose.PDF för .NET. Skapa hyperlänkar i dina PDF-dokument.
 type: docs
 weight: 120

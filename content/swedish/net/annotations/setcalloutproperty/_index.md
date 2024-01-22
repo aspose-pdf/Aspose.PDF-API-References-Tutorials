@@ -1,7 +1,7 @@
 ---
 title: Ställ in bildtextegenskap i PDF-fil
 linktitle: Ställ in bildtextegenskap i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du ställer in bildtextegenskap i PDF-fil med Aspose.PDF för .NET. Anpassa kommentarer med textlinjer, textfärg och avslutningsstilar.
 type: docs
 weight: 130

@@ -47,7 +47,7 @@ ms.Position = 0;
 }
 }
 ```
- Unbedingt ersetzen`"Aspose.Total.lic.zip"` mit dem tatsächlichen Namen Ihrer sicheren Lizenzdatei und`"test"` mit dem richtigen Passwort.
+ Unbedingt austauschen`"Aspose.Total.lic.zip"` mit dem tatsächlichen Namen Ihrer sicheren Lizenzdatei und`"test"` mit dem richtigen Passwort.
 
 ### Beispielquellcode für eine sichere Lizenz mit Aspose.PDF für .NET 
 

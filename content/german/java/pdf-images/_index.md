@@ -16,7 +16,7 @@ Unsere Tutorials führen Sie durch den Prozess des einfachen Einfügens, Ändern
 
 ## Mühelose Bildoptimierung
 
-Die Optimierung von Bildern in PDFs ist unerlässlich, um die Dateigröße zu reduzieren, ohne die Qualität zu beeinträchtigen. Wir befassen uns mit den Feinheiten der Bildoptimierungstechniken und stellen sicher, dass Ihre PDFs effizient und schnell geladen werden. Aspose.PDF für Java bietet die Tools zur Feinabstimmung der Bildkomprimierungs- und Auflösungseinstellungen, sodass Sie die richtige Balance für Ihre spezifischen Anforderungen finden können. Begleiten Sie uns auf dieser bildzentrierten Reise und nutzen Sie das Potenzial von Aspose.PDF für Java bei der Erstellung beeindruckender und effizienter PDF-Dokumente.
+Die Optimierung von Bildern in PDFs ist wichtig, um die Dateigröße zu reduzieren, ohne die Qualität zu beeinträchtigen. Wir befassen uns mit den Feinheiten der Bildoptimierungstechniken und stellen sicher, dass Ihre PDFs effizient und schnell geladen werden. Aspose.PDF für Java bietet die Tools zur Feinabstimmung der Bildkomprimierungs- und Auflösungseinstellungen, sodass Sie die richtige Balance für Ihre spezifischen Anforderungen finden können. Begleiten Sie uns auf dieser bildzentrierten Reise und nutzen Sie das Potenzial von Aspose.PDF für Java bei der Erstellung beeindruckender und effizienter PDF-Dokumente.
 
 ## PDF-Bilder-Tutorials
 ### [Fügen Sie mit Java ein Linienobjekt zu PDF hinzu](./add-line-object-to-pdf-using-java/)

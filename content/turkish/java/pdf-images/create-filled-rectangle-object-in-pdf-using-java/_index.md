@@ -1,6 +1,6 @@
 ---
-title: Java kullanarak PDF'de Dolgulu Dikdörtgen Nesnesi oluşturun
-linktitle: Java kullanarak PDF'de Dolgulu Dikdörtgen Nesnesi oluşturun
+title: Java kullanarak PDF'de Dolgulu Dikdörtgen Nesnesi Oluşturun
+linktitle: Java kullanarak PDF'de Dolgulu Dikdörtgen Nesnesi Oluşturun
 second_title: Aspose.PDF Java PDF İşleme API'si
 description: Aspose.PDF for Java ile Java kullanarak PDF'lerde içi dolu dikdörtgenler oluşturmayı öğrenin. Kod örnekleriyle adım adım eğitim.
 type: docs

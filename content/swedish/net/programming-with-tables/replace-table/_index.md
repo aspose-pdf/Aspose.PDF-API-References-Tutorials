@@ -1,7 +1,7 @@
 ---
 title: Ersätt tabell i PDF-dokument
 linktitle: Ersätt tabell i PDF-dokument
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du ersätter en tabell i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 180
@@ -29,7 +29,7 @@ TableAbsorber absorber = new TableAbsorber();
 ```
 
 ## Steg 3: Besök den första sidan med absorbenten
-Vi kommer nu att besöka den första sidan av PDF-dokumentet med hjälp av absorberaren:
+Vi kommer nu att besöka den första sidan i PDF-dokumentet med hjälp av absorberaren:
 
 ```csharp
 // Besök första sidan med absorbenten

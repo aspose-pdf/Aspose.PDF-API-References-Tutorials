@@ -1,7 +1,7 @@
 ---
 title: Placera text runt bilden i PDF-fil
 linktitle: Placera text runt bilden i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du placerar text runt en bild i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 260

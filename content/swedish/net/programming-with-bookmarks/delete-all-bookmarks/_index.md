@@ -1,7 +1,7 @@
 ---
 title: Ta bort alla bokmärken i PDF-fil
 linktitle: Ta bort alla bokmärken i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Ta enkelt bort alla bokmärken i PDF-filen med Aspose.PDF för .NET.
 type: docs
 weight: 30

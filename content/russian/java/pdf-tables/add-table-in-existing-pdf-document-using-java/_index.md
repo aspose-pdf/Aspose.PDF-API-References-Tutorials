@@ -27,7 +27,7 @@ url: /ru/java/pdf-tables/add-table-in-existing-pdf-document-using-java/
 
 ## Добавление зависимостей
 
- В вашем проекте`pom.xml`(если вы используете Maven) или файл build.gradle (если вы используете Gradle), добавьте следующую зависимость:
+ В вашем проекте`pom.xml` (если вы используете Maven) или файл build.gradle (если вы используете Gradle), добавьте следующую зависимость:
 
 ```xml
 <dependencies>

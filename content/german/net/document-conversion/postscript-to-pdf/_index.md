@@ -30,7 +30,7 @@ LoadOptions options = new PsLoadOptions();
 Document pdfDocument = new Document(dataDir + "input.ps", options);
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PostScript-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PostScript-Datei befindet.
 
 ## Schritt 2: Speichern der resultierenden PDF-Datei
 Abschließend speichern wir die konvertierte PostScript-Datei als PDF. Verwenden Sie den folgenden Code:

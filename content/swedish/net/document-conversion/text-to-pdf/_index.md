@@ -1,7 +1,7 @@
 ---
 title: Text till PDF
 linktitle: Text till PDF
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Enkel och effektiv konvertering av textfiler till PDF med Aspose.PDF för .NET.
 type: docs
 weight: 300
@@ -75,7 +75,7 @@ try
 	// Instantiera ett dokumentobjekt genom att anropa dess tomma konstruktor
 	Document doc = new Document();
 
-	// Lägg till en ny sida i Pages-samlingen av dokument
+	// Lägg till en ny sida i Pages-samlingen av Document
 	Page page = doc.Pages.Add();
 
 	// Skapa en instans av TextFragmet och skicka texten från läsarobjektet till dess konstruktor som argument

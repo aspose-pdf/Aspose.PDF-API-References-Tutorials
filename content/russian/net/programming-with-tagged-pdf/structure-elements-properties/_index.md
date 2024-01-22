@@ -45,7 +45,7 @@ taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Шаг 4. Создание структурных элементов
+## Шаг 4: Создание структурных элементов
 
 Затем мы создаем структурные элементы в PDF-документе. В этом примере мы создадим элемент раздела (`SectElement`) и элемент заголовка (`HeaderElement`).
 

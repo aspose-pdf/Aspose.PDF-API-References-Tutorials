@@ -1,7 +1,7 @@
 ---
 title: Fyll XFAFields
 linktitle: Fyll XFAFields
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Fyll enkelt XFA-fält i dina PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 90

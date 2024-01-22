@@ -1,7 +1,7 @@
 ---
 title: Få barnbokmärken i PDF-fil
 linktitle: Få barnbokmärken i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Få enkelt barnbokmärken i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 80

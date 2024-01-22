@@ -7,7 +7,7 @@ type: docs
 weight: 380
 url: /es/net/programming-with-document/validatepdfabstandard/
 ---
-Si está trabajando con documentos PDF en .NET, es posible que necesite validar el PDF con un estándar como PDF/A. Aspose.PDF para .NET proporciona un método fácil de usar para validar un documento PDF según el estándar PDF/A-1a. En este artículo, proporcionaremos una guía paso a paso para explicar el siguiente código fuente C# para obtener y validar el estándar PDF/A-1a usando Aspose.PDF para .NET.
+Si está trabajando con documentos PDF en .NET, es posible que necesite validar el PDF con un estándar como PDF/A. Aspose.PDF para .NET proporciona un método fácil de usar para validar un documento PDF con el estándar PDF/A-1a. En este artículo, proporcionaremos una guía paso a paso para explicar el siguiente código fuente C# para obtener y validar el estándar PDF/A-1a usando Aspose.PDF para .NET.
 
 ## Paso 1: establezca la ruta al directorio de documentos
 

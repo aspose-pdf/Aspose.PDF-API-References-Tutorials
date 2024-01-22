@@ -61,7 +61,7 @@ for (com.aspose.pdf.XImage image : images) {
 }
 ```
 
-## Ausnahmen behandeln
+## Umgang mit Ausnahmen
 
 Es ist wichtig, Ausnahmen zu behandeln, die während des Prozesses auftreten können, beispielsweise wenn die PDF-Datei nicht gefunden wird oder nicht das richtige Format hat. Erwägen Sie die Verwendung von Try-Catch-Blöcken, um Ausnahmen ordnungsgemäß zu behandeln.
 

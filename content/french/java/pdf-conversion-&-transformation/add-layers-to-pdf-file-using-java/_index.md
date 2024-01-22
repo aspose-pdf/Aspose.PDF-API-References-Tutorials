@@ -19,7 +19,7 @@ Avant de nous lancer dans la mise en œuvre, assurez-vous que les conditions pr�
 ## Étape 1 : Configurez votre environnement de développement Java
 Si vous ne l'avez pas déjà fait, installez le kit de développement Java (JDK) et configurez votre environnement de développement intégré (IDE) préféré. Assurez-vous que votre environnement de développement est prêt pour la programmation Java.
 
-## Étape 2 : Ajoutez Aspose.PDF pour Java à votre projet
+## Étape 2 : ajoutez Aspose.PDF pour Java à votre projet
 Une fois que vous avez configuré votre environnement de développement, vous devez ajouter la bibliothèque Aspose.PDF pour Java à votre projet. Suivez ces étapes:
 
 1. Téléchargez la bibliothèque Aspose.PDF pour Java à partir du site Web.

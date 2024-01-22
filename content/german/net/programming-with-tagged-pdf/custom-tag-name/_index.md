@@ -7,7 +7,7 @@ type: docs
 weight: 90
 url: /de/net/programming-with-tagged-pdf/custom-tag-name/
 ---
-In dieser Schritt-für-Schritt-Anleitung führen wir Sie durch die Verwendung eines benutzerdefinierten Tag-Namens mit Aspose.PDF für .NET. Aspose.PDF ist eine leistungsstarke Bibliothek, mit der Sie PDF-Dokumente programmgesteuert bearbeiten können. Durch die Verwendung benutzerdefinierter Tags können Sie spezifische Strukturinformationen zu Ihrem PDF-Dokument hinzufügen und so die Verwendung und den Zugriff erleichtern.
+In dieser Schritt-für-Schritt-Anleitung führen wir Sie durch die Verwendung eines benutzerdefinierten Tag-Namens mit Aspose.PDF für .NET. Aspose.PDF ist eine leistungsstarke Bibliothek, mit der Sie PDF-Dokumente programmgesteuert bearbeiten können. Durch die Verwendung benutzerdefinierter Tags können Sie spezifische Strukturinformationen zu Ihrem PDF-Dokument hinzufügen und so die Verwendung und den Zugriff vereinfachen.
 
 Lassen Sie uns in den Code eintauchen und lernen, wie Sie mit Aspose.PDF für .NET einen benutzerdefinierten Tag-Namen verwenden.
 
@@ -179,7 +179,7 @@ A: Ein benutzerdefinierter Tag-Name in einem PDF-Dokument ist eine benutzerdefin
 
 A: Aspose.PDF für .NET bietet eine Reihe von Klassen und Methoden, mit denen Sie benutzerdefinierte Tag-Namen erstellen, bearbeiten und verschiedenen Strukturelementen in einem PDF-Dokument zuweisen können. Dies hilft Ihnen, dem Inhalt des Dokuments semantische Bedeutung und Kontext hinzuzufügen.
 
-####  F: Welche Rolle spielt das`taggedContent` object play in using custom tag names?
+####  F: Welche Rolle spielt das?`taggedContent` object play in using custom tag names?
 
  A: Die`taggedContent` Objekt, das aus dem Dokument stammt`TaggedContent` Mit dieser Eigenschaft können Sie mit strukturierten Elementen im PDF-Dokument arbeiten. Sie können diesen Elementen benutzerdefinierte Tag-Namen erstellen, organisieren und zuweisen und so die semantische Struktur des Dokuments verbessern.
 

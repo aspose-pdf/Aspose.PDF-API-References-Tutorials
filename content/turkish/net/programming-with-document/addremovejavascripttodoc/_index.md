@@ -92,7 +92,7 @@ Console.WriteLine("\nJavascript added/removed successfully to a document.");
 
 ## Çözüm
 
-Bu makalede, Aspose.PDF for .NET kullanarak PDF belgelerine JavaScript ekleme ve kaldırma konusunda adım adım bir kılavuz sunduk. Talimatları takip ederek ve sağlanan kod eğitimlerinden yararlanarak, JavaScript'i PDF belgelerinize kolayca dahil edebilir ve gerektiğinde kaldırabilirsiniz. JavaScript, PDF dosyalarınızda dinamik işlevsellik ve etkileşim sağlayarak kullanıcı deneyimini geliştirir.
+Bu makalede Aspose.PDF for .NET kullanarak PDF belgelerine JavaScript ekleme ve kaldırma konusunda adım adım bir kılavuz sunduk. Talimatları takip ederek ve sağlanan kod eğitimlerinden yararlanarak, JavaScript'i PDF belgelerinize kolayca dahil edebilir ve gerektiğinde kaldırabilirsiniz. JavaScript, PDF dosyalarınızda dinamik işlevsellik ve etkileşim sağlayarak kullanıcı deneyimini geliştirir.
 
 
 ### PDF belgesine javascript eklemek ve kaldırmak için SSS
@@ -115,4 +115,4 @@ C: Aspose.PDF for .NET kesinlikle profesyonel projelerde PDF düzenleme ve oluş
 
 #### S: Bir PDF belgesine JavaScript eklemek ne gibi faydalar sağlar?
 
-C: Bir PDF belgesine JavaScript eklemek, etkileşimli ve dinamik PDF dosyaları oluşturmanıza olanak sağlar. Kullanıcı deneyimini geliştirmek için form doğrulama uygulayabilir, hesaplamalar yapabilir ve çeşitli etkileşim özellikleri ekleyebilirsiniz.
+C: Bir PDF belgesine JavaScript eklemek, etkileşimli ve dinamik PDF dosyaları oluşturmanıza olanak tanır. Kullanıcı deneyimini geliştirmek için form doğrulama uygulayabilir, hesaplamalar yapabilir ve çeşitli etkileşim özellikleri ekleyebilirsiniz.

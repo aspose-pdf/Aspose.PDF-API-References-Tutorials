@@ -1,7 +1,7 @@
 ---
 title: Ställ in standardteckensnitt i PDF-fil
 linktitle: Ställ in standardteckensnitt i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du ställer in standardteckensnittet i en PDF-fil med Aspose.PDF för .NET med denna steg-för-steg-guide.
 type: docs
 weight: 280
@@ -74,7 +74,7 @@ Att ställa in ett standardteckensnitt i PDF-dokument med Aspose.PDF för .NET �
 
 #### F: Varför är det viktigt att ställa in ett standardteckensnitt i PDF-dokument?
 
-S: Att ställa in ett standardteckensnitt i PDF-dokument är viktigt eftersom det säkerställer att texten kommer att visas korrekt även om originalteckensnitten inte är tillgängliga i systemet där PDF-filen visas eller skrivs ut. Det hjälper till att förhindra problem som saknad eller förvrängd text, vilket säkerställer en konsekvent och pålitlig tittarupplevelse.
+S: Att ställa in ett standardteckensnitt i PDF-dokument är viktigt eftersom det säkerställer att texten kommer att visas korrekt även om de ursprungliga teckensnitten inte är tillgängliga på systemet där PDF-filen visas eller skrivs ut. Det hjälper till att förhindra problem som saknad eller förvrängd text, vilket säkerställer en konsekvent och pålitlig tittarupplevelse.
 
 #### F: Kan jag välja vilket typsnitt som helst som standardteckensnitt med Aspose.PDF för .NET?
 

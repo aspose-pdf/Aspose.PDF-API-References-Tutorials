@@ -1,7 +1,7 @@
 ---
 title: Skapa flera kolumner pdf
 linktitle: Skapa flera kolumner pdf
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du skapar en PDF med flera kolumner med Aspose.PDF för .NET.
 type: docs
 weight: 110
@@ -52,7 +52,7 @@ doc.PageInfo.Margin.Right = 40;
 Page page = doc.Pages.Add();
 ```
 
-## Steg 7: Skapa ett grafobjekt och lägg till en linje
+## Steg 7: Skapa ett Graph-objekt och lägg till en linje
  Skapa en ny`Graph` objekt med specifika dimensioner och lägg till en linje till det. Lägg sedan till`Graph` invända mot`Paragraphs` samling av sidan.
 
 ```csharp
@@ -64,7 +64,7 @@ page.Paragraphs.Add(graph1);
 ```
 
 ## Steg 8: Lägg till rubriktext med HTML-formatering
- Skapa en`HtmlFragment` objekt och ställ in dess innehåll till önskad HTML-text. Lägg sedan till fragmentet i`Paragraphs` samling av sidan.
+ Skapa en`HtmlFragment` objekt och ställ in dess innehåll till önskad HTML-text. Lägg sedan till fragmentet till`Paragraphs` samling av sidan.
 
 ```csharp
 string s = "<font face=\"Times New Roman\" size=4>" +

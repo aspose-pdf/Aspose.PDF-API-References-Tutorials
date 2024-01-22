@@ -159,7 +159,7 @@ A: Mehrsprachige Inhalte verbessern die Zugänglichkeit und globale Reichweite v
 
  A: Die`SetTitle` Die Methode legt den Titel eines PDF-Dokuments fest, der zur Dokumentidentifizierung, zu Suchergebnissen und zur Organisation verwendet wird. Durch die Bereitstellung eines klaren und aussagekräftigen Titels wird die Zugänglichkeit des Dokuments verbessert und das Benutzererlebnis verbessert.
 
-####  F: Welche Rolle spielt das`SetLanguage` method in PDF document configuration?
+####  F: Welche Rolle spielt das?`SetLanguage` method in PDF document configuration?
 
  A: Die`SetLanguage` Die Methode legt die Standardsprache für das PDF-Dokument fest und gewährleistet so eine genaue Sprachkennzeichnung und Textextraktion. Es trägt dazu bei, die Sprachkonsistenz und Zugänglichkeit im gesamten Dokument aufrechtzuerhalten.
 

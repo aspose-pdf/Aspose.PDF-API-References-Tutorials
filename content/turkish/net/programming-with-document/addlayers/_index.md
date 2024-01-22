@@ -28,7 +28,7 @@ Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## 3. Adım: Sayfaya Katmanlar Oluşturun ve Ekleyin
+## 3. Adım: Sayfaya Katman Oluşturun ve Ekleyin
 
  Örneklerini oluşturun`Layer` PDF dosyasına eklemek istediğiniz her katman için sınıf. Her katman için benzersiz bir tanımlayıcı ve ad belirtin.
 

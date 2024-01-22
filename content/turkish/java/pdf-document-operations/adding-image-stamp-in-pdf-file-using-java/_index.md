@@ -51,7 +51,7 @@ stamp.bindImage("path/to/your/image.png");
 pdfDocument.getPages().get_Item(1).addStamp(stamp);
 ```
 
-## Adım 5: Görüntü Damgasını Özelleştirin
+## 5. Adım: Görüntü Damgasını Özelleştirin
 
 Görüntü damgasının görünümünü ve konumunu gereksinimlerinize göre özelleştirebilirsiniz. Opaklığı, boyutu, döndürmeyi ve diğer özellikleri gerektiği gibi ayarlayın.
 

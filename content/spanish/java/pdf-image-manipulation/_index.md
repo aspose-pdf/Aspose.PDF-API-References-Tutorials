@@ -22,7 +22,7 @@ La capacidad de extraer imágenes de documentos PDF es una habilidad valiosa par
 
 Optimizar imágenes en archivos PDF es esencial para reducir el tamaño del archivo y mejorar el rendimiento del documento. Demostraremos cómo Aspose.PDF para Java le permite optimizar imágenes ajustando su configuración de compresión y calidad. Al final de estos tutoriales, dominará el equilibrio perfecto entre la calidad de la imagen y el tamaño del documento, garantizando una experiencia de usuario fluida.
 
-Únase a nosotros en este viaje para convertirse en un experto en manipulación de imágenes PDF con Aspose.PDF para Java. Si usted es un desarrollador que busca mejorar sus capacidades de procesamiento de documentos o alguien que busca crear archivos PDF visualmente impresionantes, estos tutoriales le permitirán transformar, editar y optimizar imágenes dentro de documentos PDF sin problemas.
+Únase a nosotros en este viaje para convertirse en un experto en manipulación de imágenes PDF con Aspose.PDF para Java. Si es un desarrollador que busca mejorar sus capacidades de procesamiento de documentos o alguien que busca crear archivos PDF visualmente impresionantes, estos tutoriales le permitirán transformar, editar y optimizar imágenes dentro de documentos PDF sin problemas.
 
 ## Tutoriales de manipulación de imágenes PDF
 ### [Agregar imagen a PDF usando Java](./add-image-to-pdf-using-java/)

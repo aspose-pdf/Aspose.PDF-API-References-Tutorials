@@ -135,4 +135,4 @@ pdfDocument.Save(dataDir);
 
 #### 问：可以在不改变原始内容的情况下向现有 PDF 文档添加注释吗？
 
-答：是的，Aspose.PDF for .NET 添加注释作为附加元素，而不会更改 PDF 文档的原始内容。原始 PDF 内容保持不变。
+答：是的，Aspose.PDF for .NET 添加注释作为附加元素，而不改变 PDF 文档的原始内容。原始 PDF 内容保持不变。

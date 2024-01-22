@@ -46,7 +46,7 @@ using (MemoryStream ms = new MemoryStream())
      Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
 ```
 
-## Paso 4: resalta los personajes
+## Paso 4: resaltar personajes
 
  Recorremos cada página del documento PDF y utilizamos un`TextFragmentAbsorber` objeto para encontrar todas las palabras de la página. Luego iteramos sobre los fragmentos, segmentos y caracteres del texto para resaltarlos usando rectángulos.
 

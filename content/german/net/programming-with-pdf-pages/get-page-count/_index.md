@@ -79,7 +79,7 @@ In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET die Seite
 
 A: Um die Seitenzahl einer PDF-Datei zu ermitteln, können Sie die folgenden Schritte ausführen:
 
-1.  Instanziieren Sie a`Document` Objekt mit der`Document` Klasse von Aspose.PDF.
+1.  Instanziieren Sie a`Document` Objekt mit dem`Document` Klasse von Aspose.PDF.
 2.  Fügen Sie mit dem eine Seite zum Dokument hinzu`Add()` Methode des Dokuments`Pages` Sammlung.
 3.  Erstellen Sie Seiteninhalte durch Hinzufügen`TextFragment` Gegenstände zum`Page` Objekt`Paragraphs` Sammlung.
 4.  Verarbeiten Sie die Dokumentabsätze, indem Sie die aufrufen`ProcessParagraphs()` Methode zur genauen Berechnung der Seitenanzahl.

@@ -1,7 +1,7 @@
 ---
 title: Kontroll Rectangle Z Order i PDF-fil
 linktitle: Kontroll Rectangle Z Order i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du styr Z-ordningen av rektanglar i en PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 40
@@ -106,7 +106,7 @@ S: Innan du börjar, se till att du har installerat Aspose.PDF-biblioteket och s
 
 #### F: Hur anger jag katalogen för att spara PDF-filen?
 
-S: I den medföljande källkoden kan du ändra variabeln "dataDir" för att ange katalogen där du vill spara den resulterande PDF-filen.
+S: I den medföljande källkoden kan du ändra variabeln "dataDir" för att indikera katalogen där du vill spara den resulterande PDF-filen.
 
 #### F: Vad är syftet med att ställa in sidstorlek och marginaler?
 

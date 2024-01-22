@@ -72,7 +72,7 @@ if ((PageHeight - TotalObjectsHeight) <= 10)
 
 Calculamos el alto de la página y el alto total de los objetos teniendo en cuenta los márgenes. Si la diferencia es 10 o menos, la tabla excede los márgenes de la página.
 
-## Paso 7: Guardar el documento PDF
+## Paso 7: guardar el documento PDF
 Finalmente guardamos el documento PDF con los resultados.
 
 ```csharp

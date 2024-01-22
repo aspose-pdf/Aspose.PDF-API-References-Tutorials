@@ -94,7 +94,7 @@ paragraph.AppendLine(textFragment3);
 
 ## Schritt 8: Erstellen Sie einen TextBuilder und hängen Sie den Absatz an
 
- Ein ... kreieren`TextBuilder` Objekt mit der`pdfPage` und hängen Sie den Textabsatz an die PDF-Seite an:
+ Ein ... kreieren`TextBuilder` Objekt mit dem`pdfPage` und hängen Sie den Textabsatz an die PDF-Seite an:
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(pdfPage);

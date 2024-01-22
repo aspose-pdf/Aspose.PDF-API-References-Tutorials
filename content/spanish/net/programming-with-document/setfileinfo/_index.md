@@ -7,7 +7,7 @@ type: docs
 weight: 310
 url: /es/net/programming-with-document/setfileinfo/
 ---
-Si está trabajando en un proyecto que requiere administrar archivos PDF usando Aspose.PDF para .NET, una de las características que quizás desee utilizar es la capacidad de configurar información de archivo para un documento PDF. La información del archivo incluye varios detalles como el autor, la fecha de creación, las palabras clave, la fecha de modificación, el tema y el título. Esta guía lo guiará a través del proceso de configuración de la información del archivo para un documento PDF usando el código fuente C# con Aspose.PDF para .NET.
+Si está trabajando en un proyecto que requiere administrar archivos PDF usando Aspose.PDF para .NET, una de las funciones que quizás desee utilizar es la capacidad de configurar información de archivo para un documento PDF. La información del archivo incluye varios detalles como el autor, la fecha de creación, las palabras clave, la fecha de modificación, el tema y el título. Esta guía lo guiará a través del proceso de configuración de la información del archivo para un documento PDF usando el código fuente C# con Aspose.PDF para .NET.
 
 ## Guía paso a paso para configurar la información del archivo usando Aspose.PDF para .NET
 

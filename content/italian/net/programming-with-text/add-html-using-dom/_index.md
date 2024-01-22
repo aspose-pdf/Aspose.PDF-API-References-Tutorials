@@ -50,7 +50,7 @@ Page page = doc.Pages.Add();
 HtmlFragment titel = new HtmlFragment("<fontsize=10><b><i>Table</i></b></fontsize>");
 ```
 
-## Passaggio 7: impostare le informazioni sul margine
+## Passaggio 7: impostare le informazioni sui margini
 Se necessario, regola il margine inferiore e superiore del frammento HTML. Nel codice fornito, il margine inferiore è impostato su 10 e il margine superiore è impostato su 200.
 
 ```csharp

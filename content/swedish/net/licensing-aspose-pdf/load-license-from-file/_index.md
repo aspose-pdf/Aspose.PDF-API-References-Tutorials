@@ -1,7 +1,7 @@
 ---
 title: Ladda licens från fil
 linktitle: Ladda licens från fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg för steg guide för att ladda licens från fil med Aspose.PDF för .NET. Lås upp ytterligare funktioner och använd Aspose.PDF optimalt.
 type: docs
 weight: 20
@@ -87,7 +87,7 @@ I den här handledningen lärde du dig hur du laddar en licens från en fil med 
 
 #### F: Vad är syftet med att ladda en licens i Aspose.PDF?
 
-S: Att ladda en licens i Aspose.PDF låser upp ytterligare funktioner och funktioner i biblioteket, vilket gör att du kan utnyttja dess möjligheter till fullo för att skapa, manipulera och konvertera PDF-dokument programmatiskt.
+S: Att ladda en licens i Aspose.PDF låser upp ytterligare funktioner och funktioner i biblioteket, vilket gör att du kan fullt ut utnyttja dess kapacitet för att skapa, manipulera och konvertera PDF-dokument programmatiskt.
 
 #### F: Hur importerar jag de nödvändiga namnrymden för Aspose.PDF?
 

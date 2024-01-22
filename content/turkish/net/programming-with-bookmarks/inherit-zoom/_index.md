@@ -66,7 +66,7 @@ item. Action = new GoToAction(dest);
 doc. Outlines. Add(item);
 ```
 
-## 8. Adım: Güncellenen dosyayı kaydedin
+## Adım 8: Güncellenen dosyayı kaydedin
 
  Şimdi güncellenen PDF dosyasını kullanarak kaydedelim.`Save` yöntemi`doc` nesne. İşte ilgili kod:
 
@@ -101,7 +101,7 @@ Tebrikler! Artık Aspose.PDF for .NET ile Zoom'u Devralmak için adım adım bir
 
 Gelişmiş yer imi düzenleme özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
 
-### PDF dosyasındaki yakınlaştırmanın devralınması ile ilgili SSS
+### PDF dosyasında yakınlaştırmanın devralınması ile ilgili SSS
 
 #### S: PDF dosyasında yakınlaştırmayı devralma nedir?
 

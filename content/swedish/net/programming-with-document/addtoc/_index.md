@@ -1,7 +1,7 @@
 ---
 title: Lägg till innehållsförteckning till PDF-fil
 linktitle: Lägg till innehållsförteckning till PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du lägger till en innehållsförteckning till en PDF-fil med Aspose.PDF för .NET. Steg-för-steg guide med exempel på källkod. Öka dokumentnavigeringen!
 type: docs
 weight: 40

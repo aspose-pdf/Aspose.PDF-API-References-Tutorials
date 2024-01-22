@@ -60,7 +60,7 @@ bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", P
 
 #### 问：什么是 PDF/UA 标准？为什么根据该标准验证 PDF 文档很重要？
 
-答：PDF/UA 标准，也称为“通用辅助功能”，可确保残障人士（例如视力障碍者）可以访问 PDF 文档。根据 PDF/UA 标准合规性验证 PDF 文档有助于创建具有包容性且可供更广泛受众访问的文档。
+答：PDF/UA 标准，也称为“通用辅助功能”，确保 PDF 文档可供残障人士（例如视力障碍者）访问。根据 PDF/UA 标准合规性验证 PDF 文档有助于创建具有包容性且可供更广泛受众访问的文档。
 
 #### 问：如何在C#代码中定义文档目录路径？
 

@@ -1,7 +1,7 @@
 ---
 title: Ta bort flera tabeller i PDF-dokument
 linktitle: Ta bort flera tabeller i PDF-dokument
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du tar bort flera tabeller i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 150
@@ -29,7 +29,7 @@ TableAbsorber absorber = new TableAbsorber();
 ```
 
 ## Steg 3: Besök den andra sidan med absorbenten
-Vi kommer nu att besöka den andra sidan av PDF-dokumentet med hjälp av absorberaren:
+Vi kommer nu att besöka den andra sidan i PDF-dokumentet med hjälp av absorberaren:
 
 ```csharp
 // Besök den andra sidan med absorbenten

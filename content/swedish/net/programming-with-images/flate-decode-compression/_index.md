@@ -1,7 +1,7 @@
 ---
 title: Flate Decode Compression
 linktitle: Flate Decode Compression
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Komprimera bilder effektivt i en PDF med Flate Decode-komprimering med Aspose.PDF för .NET.
 type: docs
 weight: 140
@@ -56,7 +56,7 @@ doc.Save(dataDir + "FlateDecodeCompression.pdf");
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Öppna dokument
 Document doc = new Document(dataDir + "AddImage.pdf");
-// Initiera OptimizationOptions
+// Initiera optimeringsalternativ
 var optimizationOptions = new Aspose.Pdf.Optimization.OptimizationOptions();
 // För att optimera bilden med FlateDecode Compression ställ in optimeringsalternativen på Flate
 optimizationOptions.ImageCompressionOptions.Encoding = ImageEncoding.Flate;

@@ -1,7 +1,7 @@
 ---
 title: MHT till PDF
 linktitle: MHT till PDF
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg för steg guide för att konvertera MHT till PDF med Aspose.PDF för .NET.
 type: docs
 weight: 70

@@ -76,19 +76,24 @@ Bu eğitimde Aspose.PDF for Java kullanarak bir PDF belgesinde Yapı Elemanı A�
 
 Bu adımları izleyerek ve yapı öğelerini PDF belgelerinize dahil ederek içeriğinizi daha erişilebilir ve erişilebilirlik standartlarıyla uyumlu hale getirebilirsiniz. Bu, belgelerinizin kapsayıcı ve kullanıcı dostu olmasını sağlamak için hayati bir adımdır.
 
-## SSS:
+## SSS'ler
 
 ### Bir PDF belgesindeki Yapı Elemanı Ağacının amacı nedir?
-   - Yapı Öğesi Ağacı, bir PDF belgesi içindeki içeriğin mantıksal yapısını temsil ederek, içeriğin özellikle görme bozukluğu olan kullanıcılar için erişilebilir olmasını ve etkili bir şekilde iletilmesini sağlar.
+
+Yapı Öğesi Ağacı, bir PDF belgesi içindeki içeriğin mantıksal yapısını temsil ederek, içeriğin özellikle görme bozukluğu olan kullanıcılar için erişilebilir olmasını ve etkili bir şekilde iletilmesini sağlar.
 
 ### Etiketli bir PDF belgesine nasıl resim ekleyebilirim?
-   -  Şunu kullanabilirsiniz:`com.aspose.pdf.Image` Etiketli bir PDF belgesine resim eklemek için sınıf. Erişilebilirlik için uygun yapı öğelerini görsellerle ilişkilendirdiğinizden emin olun.
+
+ Şunu kullanabilirsiniz:`com.aspose.pdf.Image` Etiketli bir PDF belgesine resim eklemek için sınıf. Erişilebilirlik için uygun yapı öğelerini görsellerle ilişkilendirdiğinizden emin olun.
 
 ### Etiketli PDF belgeleri erişilebilirlik uyumluluğu için bir gereklilik midir?
-   - Evet, etiketli PDF belgeleri, içeriğin yardımcı teknolojiler tarafından yorumlanabilecek yapılandırılmış bir temsilini sağladıkları için erişilebilirlik uyumluluğu açısından çok önemlidir.
+
+Evet, etiketli PDF belgeleri, içeriğin yardımcı teknolojiler tarafından yorumlanabilecek yapılandırılmış bir temsilini sağladıkları için erişilebilirlik uyumluluğu açısından çok önemlidir.
 
 ### Mevcut PDF belgeleri için etiketleme işlemini otomatikleştirebilir miyim?
-   - Evet, Aspose.PDF for Java, mevcut PDF belgelerini erişilebilir kılmak için programlı olarak etiketlemek için özellikler sağlar.
+
+Evet, Aspose.PDF for Java, mevcut PDF belgelerini erişilebilir kılmak için programlı olarak etiketlemek için özellikler sağlar.
 
 ### Erişilebilir PDF belgeleri oluşturmaya yönelik en iyi uygulamalardan bazıları nelerdir?
-   - En iyi uygulamalardan bazıları görsellere alternatif metin eklemeyi, uygun başlık yapısını kullanmayı, açıklayıcı bağlantılar sağlamayı ve içerik için mantıksal bir okuma sırası sağlamayı içerir.
+
+En iyi uygulamalardan bazıları görsellere alternatif metin eklemeyi, uygun başlık yapısını kullanmayı, açıklayıcı bağlantılar sağlamayı ve içerik için mantıksal bir okuma sırası sağlamayı içerir.

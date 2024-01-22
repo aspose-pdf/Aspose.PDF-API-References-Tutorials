@@ -60,7 +60,7 @@ MemoryStream ms = new MemoryStream(data);
 
 ## Schritt 7: Erstellen Sie ein Bildobjekt
 
- In diesem Schritt erstellen wir eine`Image` Objekt mit der`Aspose.Pdf.Image` Klasse. Geben Sie den Stream des Bildes mit an`ImageStream` Eigentum und übergeben Sie die`ms` Objekt, das wir zuvor erstellt haben.
+ In diesem Schritt erstellen wir eine`Image` Objekt mit dem`Aspose.Pdf.Image` Klasse. Geben Sie den Stream des Bildes mit an`ImageStream` Eigentum und übergeben Sie die`ms` Objekt, das wir zuvor erstellt haben.
 
 ```csharp
 Aspose.Pdf.Image imageht = new Aspose.Pdf.Image();
@@ -85,7 +85,7 @@ pdf1.Save(dataDir + "ConvertMemoryStreamImageToPdf_out.pdf");
 
 ## Schritt 10: Schließen Sie das MemoryStream-Objekt
 
- Schließe`ms` Objekt mit der`Close` Methode zur Freigabe der Ressourcen.
+ Schließe`ms` Objekt mit dem`Close` Methode zur Freigabe der Ressourcen.
 
 ```csharp
 ms. Close();
@@ -138,9 +138,9 @@ A: Durch die Angabe des Dokumentverzeichnisses wird sichergestellt, dass der Bil
 
 #### F: Wie erstelle ich ein PDF-Dokument mit Aspose.PDF für .NET im Bildstream-zu-PDF-Konvertierungsprozess?
 
- A: Instanziieren Sie a`Document` Objekt mit der`Aspose.Pdf.Document` Der leere Konstruktor der Klasse zum Erstellen des PDF-Dokuments.
+ A: Instanziieren Sie a`Document` Objekt mit dem`Aspose.Pdf.Document` Der leere Konstruktor der Klasse zum Erstellen des PDF-Dokuments.
 
-####  F: Welche Rolle spielt das`Pages` object in the image stream to PDF conversion process?
+####  F: Welche Rolle spielt das?`Pages` object in the image stream to PDF conversion process?
 
  A: Die`Pages` Mit dem Objekt können Sie Seiten zum PDF-Dokument hinzufügen und dessen Inhalt verwalten.
 

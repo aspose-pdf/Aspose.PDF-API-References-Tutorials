@@ -1,7 +1,7 @@
 ---
 title: Hämta formulärfält i tabbordning
 linktitle: Hämta formulärfält i tabbordning
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du hämtar formulärfält i tabbordning med Aspose.PDF för .NET.
 type: docs
 weight: 240
@@ -57,7 +57,7 @@ I kodavsnittet ovan hämtar vi formulärfälten från den andra sidan (`doc.Page
 
 ## Steg 4: Ändra flikordningen
 
- Om du vill ändra tabbordningen för formulärfält kan du göra det genom att gå till`TabOrder` egenskapen för varje fält och tilldela ett nytt tabbordningsvärde. Här är ett exempel:
+ Om du vill ändra flikordningen för formulärfält kan du göra det genom att gå till`TabOrder` egenskapen för varje fält och tilldela ett nytt tabulatorvärde. Här är ett exempel:
 
 ```csharp
 (doc.Form[3] as Field).TabOrder = 1;

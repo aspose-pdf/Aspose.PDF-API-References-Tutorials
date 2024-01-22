@@ -30,7 +30,7 @@ Document doc = new Document(dataDir + "input.pdf");
 ```
 
 ## 3. Adım: Sayfa içeriğini ayarlayın
-Artık belgenin tüm sayfaları arasında geçiş yapabilir ve her sayfanın içeriğini ortam kutusunun boyutuna göre ayarlayabilirsiniz. Verilen örnekte, sayfanın genişliğini aynı yüksekliği koruyarak yatay modda (manzara) oluşturacak şekilde ayarlıyoruz. Yeni genişlik, medya kutusunun en boy oranına göre hesaplanır.
+Artık belgenin tüm sayfaları arasında geçiş yapabilir ve her sayfanın içeriğini medya kutusunun boyutuna göre ayarlayabilirsiniz. Verilen örnekte, sayfanın genişliğini aynı yüksekliği koruyarak yatay modda (manzara) oluşturacak şekilde ayarlıyoruz. Yeni genişlik, medya kutusunun en boy oranına göre hesaplanır.
 
 ```csharp
 foreach(Page page in doc.Pages)

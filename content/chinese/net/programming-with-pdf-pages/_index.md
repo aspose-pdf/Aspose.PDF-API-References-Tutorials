@@ -25,7 +25,7 @@ Aspose.PDF for .NET 的“PDF 页面编程”文档提供了分步教程，帮�
 | [获取 PDF 属性](./get-properties/) | 使用 Aspose.PDF for .NET 获取 PDF 属性（例如框尺寸和旋转）的分步指南。 |  
 | [将图像设置为 PDF 文件中的页面背景](./image-as-background/) | 使用 Aspose.PDF for .NET 将图像设置为 PDF 文件中的页面背景的分步指南。 |  
 | [在 PDF 文件中插入空白页](./insert-empty-page/) | 使用 Aspose.PDF for .NET 在 PDF 文件中插入空白页面的分步指南。轻松个性化您的 PDF 文件。 |  
-| [在末尾插入空页](./insert-empty-page-at-end/) | 使用 Aspose.PDF for .NET 在 PDF 文档末尾插入空白页的分步指南。简单又快速！ |  
+| [在末尾插入空页](./insert-empty-page-at-end/) | 使用 Aspose.PDF for .NET 在 PDF 文档末尾插入空白页面的分步指南。简单又快速！ |  
 | [拆分为页面](./split-to-pages/) | 使用 Aspose.PDF for .NET 将 PDF 文档拆分为单独页面的分步指南。 |  
 | [更新 PDF 页面尺寸](./update-dimensions/) | 使用 Aspose.PDF for .NET 更新 PDF 页面尺寸的分步指南。根据您的需要检查尺寸。 |  
 | [缩放至 PDF 文件中的页面内容](./zoom-to-page-contents/) | 使用 Aspose.PDF for .NET 缩放 PDF 文件中的页面内容的分步指南。根据您的具体需求增强您的 PDF 文档。 |  

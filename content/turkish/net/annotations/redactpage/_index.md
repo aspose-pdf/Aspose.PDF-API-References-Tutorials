@@ -122,7 +122,7 @@ C: Evet, Aspose.PDF for .NET'teki redaksiyon, redaksiyona tabi tutulan bilgileri
 
 #### S: Bir PDF belgesinde redakte edilen alanın altındaki metin ve görselleri redaksiyona tabi tutabilir miyim?
 
- C: Evet, aradığınızda`Redact()` konusundaki yöntem`RedactionAnnotation` nesneyi seçtiğinizde, yalnızca belirtilen alana bir redaksiyon kaplaması eklemekle kalmayacak, aynı zamanda o alanın altında yatan metin ve görselleri de kaldıracaktır.
+ C: Evet, aradığınızda`Redact()` konusundaki yöntem`RedactionAnnotation` nesneyi seçtiğinizde, yalnızca belirtilen alana bir redaksiyon kaplaması eklemekle kalmayacak, aynı zamanda o alandaki temel metni ve görüntüleri de kaldıracaktır.
 
 #### S: Aspose.PDF for .NET bir PDF belgesindeki birden fazla sayfayı düzeltebilir mi?
 

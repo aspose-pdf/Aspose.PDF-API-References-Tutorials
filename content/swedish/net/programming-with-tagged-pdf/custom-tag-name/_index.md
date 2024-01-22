@@ -1,7 +1,7 @@
 ---
 title: Anpassat taggnamn
 linktitle: Anpassat taggnamn
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att använda ett anpassat taggnamn med Aspose.PDF för .NET. Förbättra strukturen på dina PDF-filer med anpassade taggar.
 type: docs
 weight: 90

@@ -203,7 +203,7 @@ Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile s
 
 ## 结论
 
-在本教程中，您学习了如何使用 .NET 的 Aspose.PDF 库在 PDF 文档的页眉和页脚中使用可替换符号。通过遵循分步指南并执行提供的 C# 代码，您可以创建 PDF、设置边距、添加带有可替换符号的页眉和页脚，以及保存 PDF。
+在本教程中，您学习了如何使用 .NET 的 Aspose.PDF 库在 PDF 文档的页眉和页脚中使用可替换符号。通过遵循分步指南并执行提供的 C# 代码，您可以创建 PDF、设置边距、添加带有可替换符号的页眉和页脚以及保存 PDF。
 
 ### 常见问题解答
 

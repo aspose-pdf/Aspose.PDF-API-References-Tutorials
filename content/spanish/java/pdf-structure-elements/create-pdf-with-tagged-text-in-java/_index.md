@@ -64,7 +64,7 @@ document.save("tagged_pdf_example.pdf");
 
 ## Conclusión
 
-En esta guía, exploramos cómo crear un PDF etiquetado en Java usando Aspose.PDF para Java. Los archivos PDF etiquetados no sólo son un requisito de accesibilidad, sino también una práctica recomendada para la estructuración de documentos. Si sigue estos pasos, podrá asegurarse de que sus archivos PDF no sólo sean visualmente atractivos sino también inclusivos para todos los usuarios.
+En esta guía, exploramos cómo crear un PDF etiquetado en Java usando Aspose.PDF para Java. Los archivos PDF etiquetados no sólo son un requisito de accesibilidad sino también una práctica recomendada para la estructuración de documentos. Si sigue estos pasos, podrá asegurarse de que sus archivos PDF no sólo sean visualmente atractivos sino también inclusivos para todos los usuarios.
 
 ## Preguntas frecuentes
 

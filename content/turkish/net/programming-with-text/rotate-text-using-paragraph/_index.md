@@ -58,7 +58,7 @@ TextParagraph paragraph = new TextParagraph();
 paragraph.Position = new Position(200, 600);
 ```
 
-Konum değerlerini ihtiyaçlarınıza göre ayarlayın.
+Konum değerlerini gereksinimlerinize göre ayarlayın.
 
 ## 6. Adım: Metin parçaları oluşturun ve yapılandırın
 

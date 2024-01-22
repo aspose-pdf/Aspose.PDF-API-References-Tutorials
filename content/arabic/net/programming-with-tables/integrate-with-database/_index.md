@@ -136,4 +136,4 @@ Console.WriteLine("\nDatabase integrated successfully.\nFile saved at " + dataDi
 
 #### س: كيف يمكنني تصدير مستند PDF مع بيانات قاعدة البيانات المضمنة إلى تنسيقات ملفات مختلفة مثل DOCX أو XLSX؟
 
-ج: يسمح لك Aspose.PDF for .NET بتحويل مستندات PDF إلى تنسيقات ملفات أخرى متنوعة، بما في ذلك DOCX (Microsoft Word) وXLSX (Microsoft Excel). يمكنك استخدام مكتبة Aspose.PDF لـ .NET مع مكتبات Aspose الأخرى مثل Aspose.Words وAspose.Cells لتحقيق ذلك. أولاً، احفظ مستند PDF مع بيانات قاعدة البيانات المضمنة، ثم استخدم مكتبة Aspose المعنية لتحويله إلى تنسيق الملف المطلوب.
+ج: يسمح لك Aspose.PDF for .NET بتحويل مستندات PDF إلى تنسيقات ملفات أخرى متنوعة، بما في ذلك DOCX (Microsoft Word) وXLSX (Microsoft Excel). يمكنك استخدام Aspose.PDF لمكتبة .NET مع مكتبات Aspose الأخرى مثل Aspose.Words وAspose.Cells لتحقيق ذلك. أولاً، احفظ مستند PDF مع بيانات قاعدة البيانات المضمنة، ثم استخدم مكتبة Aspose المعنية لتحويله إلى تنسيق الملف المطلوب.

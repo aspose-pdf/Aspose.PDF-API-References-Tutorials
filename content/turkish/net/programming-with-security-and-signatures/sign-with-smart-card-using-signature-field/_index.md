@@ -136,7 +136,7 @@ C: Akıllı kartla dijital imzalama için bir imza alanının kullanılması, PD
 
 C: Aspose.PDF for .NET, imza alanı oluşturma, akıllı kart sertifikası seçme ve PDF belgesindeki belirli bir alana dijital imza uygulama sürecini basitleştirir.
 
-#### S: Akıllı kart tabanlı imzalama için belirli bir sertifikayı seçmek neden önemlidir?
+#### S: Akıllı kart tabanlı imzalama için belirli bir sertifikanın seçilmesi neden önemlidir?
 
 C: Belirli bir sertifikayı seçmek, imzalayanı benzersiz bir şekilde tanımlamanıza ve imzanın bütünlüğünü sağlamanıza olanak tanır. Bu, güven oluşturulmasına ve dijital imzalama standartlarına uyum sağlanmasına yardımcı olur.
 
@@ -146,7 +146,7 @@ C: Kaynak kodu, imza alanının nasıl oluşturulacağını, akıllı kart serti
 
 #### S: İmza alanının görünümünü özelleştirebilir miyim?
 
-C: Evet, imza alanının boyutunu, konumunu ve görsel gösterimini belgenizin düzeniyle hizalanacak şekilde görünümünü özelleştirebilirsiniz.
+C: Evet, imza alanının boyutunu, konumunu ve görsel temsilini belgenizin düzeniyle hizalanacak şekilde görünümünü özelleştirebilirsiniz.
 
 #### S: Doğrulama adımı sırasında bir imzanın doğrulaması başarısız olursa ne olur?
 

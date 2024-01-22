@@ -103,7 +103,7 @@ A: Das Tutorial stellt C#-Quellcode-Beispiele bereit, die zeigen, wie man ein ne
 
 #### F: Welche Bedeutung hat die Arbeit mit getaggten Inhalten in einem PDF-Dokument?
 
-A: Die Arbeit mit getaggten Inhalten in einem PDF-Dokument erfordert die Verwendung strukturierter Tags, um die semantische Bedeutung der Elemente des Dokuments zu definieren. Dies ist besonders wichtig für die Barrierefreiheit und die Inhaltsextraktion, da es Screenreadern und anderen Technologien ermöglicht, den Inhalt des Dokuments korrekt zu interpretieren.
+A: Die Arbeit mit getaggten Inhalten in einem PDF-Dokument erfordert die Verwendung strukturierter Tags, um die semantische Bedeutung der Elemente des Dokuments zu definieren. Dies ist besonders wichtig für die Barrierefreiheit und die Inhaltsextraktion, da es Screenreadern und anderen Technologien ermöglicht, den Inhalt des Dokuments richtig zu interpretieren.
 
 #### F: Wie kann ich mit Aspose.PDF für .NET den Titel und die Sprache für ein getaggtes PDF-Dokument festlegen?
 

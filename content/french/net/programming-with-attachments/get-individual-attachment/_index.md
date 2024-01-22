@@ -126,7 +126,7 @@ R : Vous pouvez accéder aux propriétés de la pièce jointe telles que le nom
 
 R : Ce didacticiel fournit du code pour récupérer le contenu de la pièce jointe et l'enregistrer dans un fichier texte sous un nom spécifié.
 
-#### Q : Quelle est la signification de la propriété « Vérifier le hachage » dans les informations des pièces jointes ?
+#### Q : Quelle est la signification de la propriété « Check Hash » dans les informations des pièces jointes ?
 
 R : La propriété « Vérifier le hachage » représente la valeur de hachage de contrôle de la pièce jointe, qui peut être utilisée pour vérifier l'intégrité de la pièce jointe.
 

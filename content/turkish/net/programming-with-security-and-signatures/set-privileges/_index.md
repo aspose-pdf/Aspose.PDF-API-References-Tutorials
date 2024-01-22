@@ -94,7 +94,7 @@ C: Evet, farklı kullanıcı grupları için özel erişim ayrıcalıkları beli
 
 #### S: Ayarlayabileceğim bazı genel erişim ayrıcalıkları nelerdir?
 
-C: Ortak erişim ayrıcalıkları arasında yazdırma, metin veya görüntüleri kopyalama, belgeyi değiştirme ve form alanlarını doldurma gibi eylemlere izin verme veya yasaklama yer alır.
+C: Ortak erişim ayrıcalıkları arasında yazdırma, metin veya görselleri kopyalama, belgeyi değiştirme ve form alanlarını doldurma gibi eylemlere izin verme veya yasaklama yer alır.
 
 #### S: Ekran okuma ayrıcalığının ayarlanması belge erişilebilirliğini nasıl artırır?
 

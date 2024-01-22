@@ -41,7 +41,7 @@ taggedContent.SetLanguage("fr-FR");
 ```
 
 ## Paso 5: creación de elementos de estructura lógica
-Ahora que hemos configurado nuestro documento y establecido el título y el idioma, podemos comenzar a crear elementos de estructura lógica. Estos elementos se organizarán jerárquicamente para formar la estructura de árbol. Aquí está el código para este paso:
+Ahora que hemos configurado nuestro documento y establecido el título y el idioma, podemos comenzar a crear elementos de estructura lógica. Estos elementos se organizarán jerárquicamente para formar la estructura del árbol. Aquí está el código para este paso:
 
 ```csharp
 // Obtener el elemento de estructura raíz (Documento)
@@ -87,7 +87,7 @@ DivElement div31 = taggedContent.CreateDivElement();
 sect3.AppendChild(div31);
 ```
 
-## Paso 6: Guardar el documento PDF etiquetado
+## Paso 6: guardar el documento PDF etiquetado
  Una vez que hayamos creado la estructura de elementos, podemos guardar el documento PDF. Utilizar el`Save` método de la`document` objeto para especificar la ruta y el nombre del archivo PDF que se guardará. Aquí está el código para este paso:
 
 ```csharp

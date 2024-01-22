@@ -12,7 +12,7 @@ In dieser Schritt-für-Schritt-Anleitung führen wir Sie durch den Prozess der F
 
 ## Einführung
 
-PDF-Dokumente enthalten häufig komplexe Inhalte wie Tabellen, Bilder und Text. Um sicherzustellen, dass diese Dokumente für alle Benutzer zugänglich sind, ist eine ordnungsgemäße Kennzeichnung unerlässlich. Mit benutzerdefinierten Tag-Namen können Sie aussagekräftige und beschreibende Namen für Elemente in Ihrer PDF-Datei definieren, sodass Bildschirmlesegeräte und andere Hilfstechnologien den Inhalt leichter interpretieren können.
+PDF-Dokumente enthalten häufig komplexe Inhalte wie Tabellen, Bilder und Text. Um sicherzustellen, dass diese Dokumente für alle Benutzer zugänglich sind, ist eine ordnungsgemäße Kennzeichnung unerlässlich. Mit benutzerdefinierten Tag-Namen können Sie aussagekräftige und beschreibende Namen für Elemente in Ihrer PDF-Datei definieren, sodass Bildschirmlesegeräte und andere Hilfstechnologien den Inhalt einfacher interpretieren können.
 
 ## Voraussetzungen
 

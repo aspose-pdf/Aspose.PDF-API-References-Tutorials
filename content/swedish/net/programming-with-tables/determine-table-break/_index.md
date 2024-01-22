@@ -1,7 +1,7 @@
 ---
 title: Bestäm tabellbrytning i PDF-fil
 linktitle: Bestäm tabellbrytning i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du bestämmer tabellbrytningar i PDF-filer med Aspose.PDF för .NET.
 type: docs
 weight: 60
@@ -101,7 +101,7 @@ table1.Margin.Top = 300;
 page.Paragraphs.Add(table1);
 // Ställ in med tabellens kolumnbredder
 table1.ColumnWidths = "100 100 100";
-// Ställ in standardcellkant med hjälp av BorderInfo-objektet
+// Ställ in standardcellkant med BorderInfo-objekt
 table1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 // Ställ in tabellkanten med ett annat anpassat BorderInfo-objekt
 table1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);

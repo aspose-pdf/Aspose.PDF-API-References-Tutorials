@@ -1,7 +1,7 @@
 ---
 title: CGM till PDF-filer
 linktitle: CGM till PDF-filer
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Konvertera enkelt CGM-filer till PDF med Aspose.PDF för .NET.
 type: docs
 weight: 20

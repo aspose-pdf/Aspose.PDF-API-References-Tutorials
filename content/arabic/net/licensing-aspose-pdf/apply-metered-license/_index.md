@@ -34,7 +34,7 @@ Document doc = new Document(dataDir + "input.pdf");
 Console.WriteLine(doc.Pages.Count);
 ```
 
-### نموذج التعليمات البرمجية المصدر لتكوين الترخيص المقنن باستخدام Aspose.PDF لـ .NET 
+### نموذج التعليمات البرمجية المصدر لتكوين الترخيص المحدود باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 

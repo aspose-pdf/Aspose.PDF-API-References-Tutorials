@@ -27,7 +27,7 @@ Antes de comenzar, asegúrese de tener los siguientes requisitos previos:
 
 ## Agregar dependencias
 
- En tu proyecto`pom.xml`(si usas Maven) o el archivo build.gradle (si usas Gradle), agrega la siguiente dependencia:
+ En tu proyecto`pom.xml` (si usas Maven) o el archivo build.gradle (si usas Gradle), agrega la siguiente dependencia:
 
 ```xml
 <dependencies>

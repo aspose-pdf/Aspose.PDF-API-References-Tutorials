@@ -70,7 +70,7 @@ Passen Sie die Werte entsprechend Ihren Anforderungen an.
 
 ### Schritt 5: Fügen Sie das Bild zur PDF-Seite hinzu
 
-Fügen Sie nun das Bild einer bestimmten Seite des PDFs hinzu:
+Fügen Sie nun das Bild einer bestimmten Seite der PDF-Datei hinzu:
 
 ```java
 Page page = pdfDocument.getPages().get_Item(1); // Ersetzen Sie diese durch die gewünschte Seitenzahl

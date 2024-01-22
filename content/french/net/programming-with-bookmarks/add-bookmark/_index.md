@@ -131,7 +131,7 @@ pdfOutline.Action = new GoToAction(pdfDocument.Pages[1]);
 
 ####  Q : Quel est le but du`Action` property in a bookmark?
 
- R : Le`Action` La propriété spécifie l'action à effectuer lorsque l'utilisateur clique sur le signet. Dans cet exemple, nous utilisons le`GoToAction`class pour accéder à une page spécifique (page 2 dans ce cas).
+ R : Le`Action` La propriété spécifie l'action à effectuer lorsque l'on clique sur le signet. Dans cet exemple, nous utilisons le`GoToAction`class pour accéder à une page spécifique (page 2 dans ce cas).
 
 #### Q : Comment ajouter le signet au document ?
 

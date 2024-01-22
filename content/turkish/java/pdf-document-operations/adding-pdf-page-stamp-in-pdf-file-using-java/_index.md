@@ -12,7 +12,7 @@ url: /tr/java/pdf-document-operations/adding-pdf-page-stamp-in-pdf-file-using-ja
 
 PDF'ler belge paylaşımı ve arşivleme için yaygın olarak kullanılan bir formattır. Çoğu zaman mevcut PDF belgelerine ek bilgi veya markalama eklenmesine ihtiyaç duyulur. Bu derste, Aspose.PDF for Java'nın yardımıyla Java kullanarak PDF sayfa damgasının nasıl ekleneceğini keşfedeceğiz.
 
-## PDF Sayfa Damgalarını Anlama
+## PDF Sayfa Damgalarını Anlamak
 
 PDF sayfa damgası, PDF sayfasına kaplama olarak eklenen bir görüntü veya metindir. Bu, filigran, logo, sayfa numaraları veya PDF belgesinin her sayfasında görünmesi gereken diğer bilgileri eklemek için yararlı olabilir.
 

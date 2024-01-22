@@ -123,7 +123,7 @@ A: Strukturelementeigenschaften definieren Eigenschaften von Elementen in einem 
 
 A: Aspose.PDF für .NET bietet APIs zum Erstellen und Bearbeiten von Strukturelementen mit verschiedenen Eigenschaften. Sie können Eigenschaften wie Titel, Sprache, Alternativtext, Erweiterungstext und tatsächlichen Text festlegen, um die semantische Struktur und Zugänglichkeit des Dokuments zu verbessern.
 
-####  F: Welche Rolle spielt das`SetTitle` and `SetLanguage` methods in working with structural element properties?
+####  F: Welche Rolle spielt das?`SetTitle` and `SetLanguage` methods in working with structural element properties?
 
  A: Die`SetTitle` Und`SetLanguage` Methoden der`ITaggedContent`Mit dem Objekt können Sie den Titel und die Sprache des Dokuments festlegen, die sich auf die Eigenschaften des Strukturelements auswirken. Durch die Festlegung von Titel und Sprache werden Konsistenz und aussagekräftige Metadaten für das Dokument sichergestellt.
 

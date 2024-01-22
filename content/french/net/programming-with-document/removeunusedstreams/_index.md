@@ -90,4 +90,4 @@ R : La suppression des flux inutilisés d'un document PDF réduit la taille du
 
 #### Q : Les développeurs peuvent-ils spécifier les flux à supprimer à l'aide d'Aspose.PDF pour .NET ?
 
- R : Oui, les développeurs peuvent contrôler la suppression des flux inutilisés en définissant le`RemoveUnusedStreams` possibilité dans le`OptimizationOptions`. Cela leur donne la possibilité de choisir les flux à supprimer en fonction de leurs besoins spécifiques.
+ R : Oui, les développeurs peuvent contrôler la suppression des flux inutilisés en définissant le paramètre`RemoveUnusedStreams` possibilité dans le`OptimizationOptions`. Cela leur donne la possibilité de choisir les flux à supprimer en fonction de leurs besoins spécifiques.

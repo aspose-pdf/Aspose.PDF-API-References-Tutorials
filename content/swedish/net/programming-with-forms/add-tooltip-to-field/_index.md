@@ -1,7 +1,7 @@
 ---
 title: Lägg till verktygstips i fält
 linktitle: Lägg till verktygstips i fält
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du lägger till ett verktygstips i ett fält med Aspose.PDF för .NET.
 type: docs
 weight: 10

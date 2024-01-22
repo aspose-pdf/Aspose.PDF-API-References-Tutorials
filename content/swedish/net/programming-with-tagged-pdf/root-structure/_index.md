@@ -1,7 +1,7 @@
 ---
 title: Rotstruktur
 linktitle: Rotstruktur
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att använda rotstrukturelement med Aspose.PDF för .NET för att komma åt rot- och StructTreeRoot-objektet i PDF-dokumentet.
 type: docs
 weight: 130
@@ -108,7 +108,7 @@ S: StructTreeRoot-objektet representerar roten till dokumentets logiska struktur
 
 #### F: Hur kan rotstrukturelement vara användbara vid manipulering av PDF-dokument?
 
-S: Rotstrukturelement erbjuder ett sätt att programmatiskt komma åt och ändra den underliggande strukturen för ett PDF-dokument. Detta kan vara värdefullt för uppgifter som att lägga till, ordna om eller ändra dokumentets innehåll samtidigt som dess logiska struktur bevaras.
+S: Rotstrukturelement erbjuder ett sätt att programmässigt komma åt och ändra den underliggande strukturen i ett PDF-dokument. Detta kan vara värdefullt för uppgifter som att lägga till, ordna om eller ändra dokumentets innehåll samtidigt som dess logiska struktur bevaras.
 
 #### F: Kan jag använda rotstrukturelement för att komma åt metadata eller egenskaper för ett PDF-dokument?
 

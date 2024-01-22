@@ -1,7 +1,7 @@
 ---
 title: Bädda in teckensnitt i PDF-fil
 linktitle: Bädda in teckensnitt i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du bäddar in teckensnitt i en PDF-fil med Aspose.PDF för .NET med denna steg-för-steg-guide. Se till att dina dokument visas korrekt på alla enheter.
 type: docs
 weight: 120

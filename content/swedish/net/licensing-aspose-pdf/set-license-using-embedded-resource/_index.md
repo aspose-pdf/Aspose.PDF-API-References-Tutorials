@@ -1,7 +1,7 @@
 ---
 title: Ställ in licens med inbäddad resurs
 linktitle: Ställ in licens med inbäddad resurs
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att ställa in en licens med hjälp av en inbäddad resurs med Aspose.PDF för .NET. Lås upp alla funktioner.
 type: docs
 weight: 50
@@ -99,7 +99,7 @@ S: För att inkludera licensfilen som en inbäddad resurs, lägg till licensfile
 
 #### F: Vad händer om jag ändrar licensfilen?
 
- S: Om du behöver uppdatera licensen, ersätt den befintliga inbäddade licensfilen med den nya och se till att uppdatera filsökvägen i`SetLicense` metoden i enlighet därmed.
+ S: Om du behöver uppdatera licensen, ersätt den befintliga inbäddade licensfilen med den nya och se till att uppdatera filsökvägen i`SetLicense` metod i enlighet därmed.
 
 #### F: Kan jag ställa in en licens med en inbäddad resurs för andra Aspose-bibliotek?
 

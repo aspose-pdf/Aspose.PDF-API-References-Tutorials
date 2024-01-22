@@ -99,7 +99,7 @@ R: La proprietà "ColorType" dell'oggetto "Page" in Aspose.PDF per .NET rapprese
 
 R: Sì, puoi determinare il tipo di colore di una pagina specifica in un documento PDF multipagina utilizzando Aspose.PDF per .NET. Il codice sorgente C# fornito dimostra come scorrere tutte le pagine del documento PDF e analizzare il tipo di colore di ciascuna pagina. Puoi facilmente modificare il codice per analizzare il tipo di colore di una pagina specifica specificando il numero di pagina.
 
-#### D: Cosa indica "ColorType.Unfine"?
+#### D: Cosa indica "ColorType.Unfined"?
 
 R: "ColorType.Unfined" indica che il tipo di colore della pagina non è definito esplicitamente. Ciò può verificarsi in alcuni casi quando il contenuto della pagina non rientra nelle categorie dei colori bianco e nero, scala di grigi o RGB.
 

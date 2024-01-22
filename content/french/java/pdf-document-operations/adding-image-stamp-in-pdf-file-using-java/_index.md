@@ -27,7 +27,7 @@ Passons maintenant aux étapes pour ajouter un tampon d'image à un fichier PDF 
 
 Pour commencer, assurez-vous que Java est installé sur votre système. Vous pouvez télécharger et installer le dernier JDK à partir du site Web d'Oracle. Une fois installé, configurez vos variables d'environnement Java.
 
-## Étape 2 : Ajoutez Aspose.PDF pour Java à votre projet
+## Étape 2 : ajoutez Aspose.PDF pour Java à votre projet
 
 Dans votre projet Java, vous devez inclure la bibliothèque Aspose.PDF. Vous pouvez le faire en ajoutant la bibliothèque en tant que dépendance dans le fichier de construction de votre projet (par exemple, Maven ou Gradle).
 
@@ -84,7 +84,7 @@ Aspose.PDF pour Java est une bibliothèque commerciale et vous devrez peut-être
 
 ### Existe-t-il des limitations sur les formats d'image pris en charge pour le tamponnage ?
 
-Aspose.PDF pour Java prend en charge divers formats d'image tels que PNG, JPEG, GIF et BMP pour le tamponnage. Assurez-vous que votre image est dans l’un de ces formats.
+Aspose.PDF pour Java prend en charge divers formats d'image tels que PNG, JPEG, GIF et BMP pour le tamponnage. Assurez-vous que votre image est dans l'un de ces formats.
 
 ### Où puis-je trouver plus d’exemples et de documentation pour Aspose.PDF pour Java ?
 

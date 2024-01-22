@@ -64,19 +64,24 @@ En este tutorial, aprendimos cómo crear elementos de estructura en un documento
 
 No dude en explorar la documentación de Aspose.PDF[aquí](https://reference.aspose.com/pdf/java/) para funciones más avanzadas y opciones de personalización.
 
-## Preguntas frecuentes:
+## Preguntas frecuentes
 
-1. ## ¿Qué son los elementos estructurales en un documento PDF?
-   Los elementos de estructura de un documento PDF definen la estructura lógica y el orden de lectura del contenido, lo que hace que los archivos PDF sean accesibles para todos los usuarios.
+### ¿Qué son los elementos estructurales en un documento PDF?
 
-2. ## ¿Puedo agregar imágenes y tablas como elementos de estructura?
-   Sí, puedes utilizar elementos de estructura para representar imágenes, tablas, encabezados, párrafos y otros tipos de contenido en un PDF.
+Los elementos de estructura de un documento PDF definen la estructura lógica y el orden de lectura del contenido, lo que hace que los archivos PDF sean accesibles para todos los usuarios.
 
-3. ## ¿Es Aspose.PDF la única biblioteca para trabajar con archivos PDF en Java?
-   No, hay otras bibliotecas disponibles, pero Aspose.PDF es una opción potente y rica en funciones para la manipulación de PDF en Java.
+### ¿Puedo agregar imágenes y tablas como elementos de estructura?
 
-4. ## ¿Cómo puedo personalizar la apariencia de los elementos de la estructura?
-   Puede utilizar estilos y atributos CSS para personalizar la apariencia de los elementos estructurales en su documento PDF.
+Sí, puedes utilizar elementos de estructura para representar imágenes, tablas, encabezados, párrafos y otros tipos de contenido en un PDF.
 
-5. ## ¿Se requieren elementos de estructura para todos los archivos PDF?
-   Si bien los elementos estructurales son esenciales para la accesibilidad, su uso depende de los requisitos específicos de sus documentos PDF.
+### ¿Es Aspose.PDF la única biblioteca para trabajar con archivos PDF en Java?
+
+No, hay otras bibliotecas disponibles, pero Aspose.PDF es una opción potente y rica en funciones para la manipulación de PDF en Java.
+
+### ¿Cómo puedo personalizar la apariencia de los elementos de la estructura?
+
+Puede utilizar estilos y atributos CSS para personalizar la apariencia de los elementos estructurales en su documento PDF.
+
+### ¿Se requieren elementos de estructura para todos los archivos PDF?
+
+Si bien los elementos estructurales son esenciales para la accesibilidad, su uso depende de los requisitos específicos de sus documentos PDF.

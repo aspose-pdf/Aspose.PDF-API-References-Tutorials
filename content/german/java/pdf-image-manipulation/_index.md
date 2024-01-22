@@ -18,7 +18,7 @@ Die Fähigkeit, Bilder aus PDF-Dokumenten zu extrahieren, ist eine wertvolle Fä
 
 Möchten Sie die Optik Ihrer PDF-Dokumente verbessern? Mit Aspose.PDF für Java können Sie Bilder in PDFs einfach bearbeiten und verbessern. Unsere Tutorials führen Sie durch Techniken zum Ändern der Größe, Drehen, Zuschneiden und Anwenden von Filtern auf Bilder direkt in Ihren PDF-Dateien. Sie haben die kreative Freiheit, Ihre PDFs optisch ansprechend und wirkungsvoll zu gestalten.
 
-## Optimieren der Bildleistung
+## Optimierung der Bildleistung
 
 Die Optimierung von Bildern in PDFs ist für die Reduzierung der Dateigröße und die Verbesserung der Dokumentleistung von entscheidender Bedeutung. Wir zeigen Ihnen, wie Sie mit Aspose.PDF für Java Bilder optimieren können, indem Sie deren Komprimierungseinstellungen und Qualität anpassen. Am Ende dieser Tutorials werden Sie in der Lage sein, die perfekte Balance zwischen Bildqualität und Dokumentgröße zu erreichen und so ein reibungsloses Benutzererlebnis zu gewährleisten.
 

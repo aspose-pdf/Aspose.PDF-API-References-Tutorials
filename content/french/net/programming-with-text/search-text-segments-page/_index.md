@@ -77,7 +77,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 ```
 
-## Étape 8 : Parcourez les segments de texte
+## Étape 8 : Parcourez les segments de texte
 
 Parcourez les segments de texte récupérés et accédez à leurs propriétés :
 
@@ -155,7 +155,7 @@ Toutes nos félicitations! Vous avez appris avec succès comment rechercher des 
 
 R : Ce didacticiel montre le processus de localisation et d'extraction de segments de texte spécifiques sur une page particulière d'un document PDF. En suivant les étapes et les exemples de code fournis, les utilisateurs peuvent rechercher efficacement les segments de texte souhaités et récupérer des informations sur leurs propriétés.
 
-#### Q : Quels prérequis sont nécessaires pour suivre ce tutoriel ?
+#### Q : Quels prérequis sont requis pour suivre ce tutoriel ?
 
 R : Avant de commencer le didacticiel, vous devez avoir une compréhension de base du langage de programmation C#. De plus, vous devez avoir installé la bibliothèque Aspose.PDF pour .NET. Vous pouvez l'obtenir sur le site Web Aspose ou l'installer dans votre projet à l'aide de NuGet.
 

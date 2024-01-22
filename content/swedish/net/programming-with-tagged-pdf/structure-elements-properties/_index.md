@@ -1,7 +1,7 @@
 ---
 title: Strukturelementegenskaper i PDF-fil
 linktitle: Strukturelementegenskaper i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att arbeta med strukturella elementegenskaper i PDF-fil med Aspose.PDF för .NET. Skapa informationsrika strukturella element.
 type: docs
 weight: 150

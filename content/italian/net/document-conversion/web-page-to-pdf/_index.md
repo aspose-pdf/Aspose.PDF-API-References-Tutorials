@@ -126,7 +126,7 @@ In questo tutorial, abbiamo imparato come convertire una pagina Web in PDF utili
 
 R: Aspose.PDF per .NET è una potente libreria che consente agli sviluppatori di lavorare con documenti PDF in applicazioni C#. Fornisce varie funzionalità, inclusa la conversione di pagine Web in PDF.
 
-#### D: Perché dovrei convertire una pagina web in PDF?
+#### D: Perché dovrei convertire una pagina Web in PDF?
 
 R: La conversione delle pagine Web in PDF è utile per preservare il layout, la formattazione e le immagini del contenuto Web originale. Ti consente di creare un'istantanea della pagina Web per la visualizzazione offline o la condivisione con altri.
 

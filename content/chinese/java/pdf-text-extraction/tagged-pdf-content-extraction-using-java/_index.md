@@ -83,7 +83,7 @@ public class TaggedPDFExtractor {
 
 ## 结论
 
-使用 Java 和 Aspose.PDF for Java 从标记的 PDF 中提取内容对于各种应用程序（包括辅助功能合规性和数据分析）至关重要。通过遵循本分步指南并利用提供的源代码，您可以轻松地将带标签的 PDF 内容提取合并到您的 Java 应用程序中。
+使用 Java 和 Aspose.PDF for Java 从标记的 PDF 中提取内容对于各种应用程序（包括辅助功能合规性和数据分析）至关重要。通过遵循本分步指南并利用提供的源代码，您可以轻松地将标记的 PDF 内容提取合并到您的 Java 应用程序中。
 
 
 ## 常见问题解答

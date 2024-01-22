@@ -77,7 +77,7 @@ header.Paragraphs.Add(txt2);
 
 El código anterior crea una sección de encabezado, establece el encabezado de la página con esta sección, agrega un TextFragment con texto en línea y un objeto Imagen en línea.
 
-## Paso 4: guardar el documento PDF modificado
+## Paso 4: Guardar el documento PDF modificado
 
 Una vez añadido el encabezado con la imagen y el texto en línea, podremos guardar el documento PDF modificado. Así es cómo:
 

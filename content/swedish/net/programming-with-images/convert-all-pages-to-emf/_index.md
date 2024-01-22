@@ -1,7 +1,7 @@
 ---
 title: Konvertera alla sidor till EMF
 linktitle: Konvertera alla sidor till EMF
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Konvertera enkelt alla sidor i ett PDF-dokument till EMF-filer med Aspose.PDF för .NET.
 type: docs
 weight: 50

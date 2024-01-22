@@ -166,7 +166,7 @@ In questo tutorial hai imparato come posizionare il testo attorno a un'immagine 
 
 ### Domande frequenti
 
-#### D: Qual è lo scopo del tutorial "Posizionamento del testo intorno all'immagine nel file PDF"?
+#### D: Qual è lo scopo del tutorial "Posizionamento del testo attorno all'immagine nel file PDF"?
 
 R: Il tutorial "Posizionamento del testo attorno all'immagine nel file PDF" mostra come utilizzare la libreria Aspose.PDF per .NET per posizionare il testo attorno a un'immagine in un documento PDF. L'esercitazione fornisce una guida dettagliata e codice sorgente C# per aiutarti a creare una tabella, aggiungere un'immagine e posizionare il testo attorno all'immagine.
 
@@ -182,7 +182,7 @@ R: Per impostare la directory dei documenti:
 
 #### D: Come posso creare una tabella e aggiungervi un'immagine?
 
- R: Il tutorial ti guida attraverso il processo di creazione di una tabella utilizzando il file`Table` classe e aggiungendo un'immagine alla tabella utilizzando il comando`Image` classe. Specificherai il percorso, l'altezza e la larghezza del file immagine prima di aggiungerlo a una cella della tabella.
+ R: Il tutorial ti guida attraverso il processo di creazione di una tabella utilizzando il file`Table` classe e aggiungendo un'immagine alla tabella utilizzando il metodo`Image` classe. Specificherai il percorso, l'altezza e la larghezza del file immagine prima di aggiungerlo a una cella della tabella.
 
 #### D: Come posso posizionare il testo attorno all'immagine?
 

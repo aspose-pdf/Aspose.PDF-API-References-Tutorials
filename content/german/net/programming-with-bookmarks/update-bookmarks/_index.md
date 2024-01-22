@@ -91,7 +91,7 @@ A: Das Aktualisieren von Lesezeichen ist wichtig, wenn Sie Änderungen oder Aktu
 
 #### F: Wie importiere ich die erforderlichen Bibliotheken für mein C#-Projekt?
 
-A: Um die erforderlichen Bibliotheken für Ihr C#-Projekt zu importieren, fügen Sie die folgende Importanweisung ein:
+A: Um die erforderlichen Bibliotheken für Ihr C#-Projekt zu importieren, schließen Sie die folgende Importanweisung ein:
 
 ```csharp
 using Aspose.Pdf;

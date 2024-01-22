@@ -26,7 +26,7 @@ Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
 
 ## 第2步：创建GoToAction对象
 
-下一步是创建一个`GoToAction`目的。 A`GoToAction`对象表示前往 PDF 文档中特定目标的操作。在我们的例子中，我们想要获取 PDF 文件的缩放系数，因此我们将使用`OpenAction`的财产`Document`对象得到`GoToAction`目的。
+下一步是创建一个`GoToAction`目的。 A`GoToAction`对象表示前往 PDF 文档中特定目的地的操作。在我们的例子中，我们想要获取 PDF 文件的缩放系数，因此我们将使用`OpenAction`的财产`Document`对象得到`GoToAction`目的。
 
 ```csharp
 //创建GoToAction对象

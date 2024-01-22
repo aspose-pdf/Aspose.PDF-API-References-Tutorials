@@ -76,7 +76,7 @@ När du har skapat PDF-dokumentet med den fyllda rektangeln sparar du det i en f
 pdfDocument.save("FilledRectangle.pdf");
 ```
 
-## Köra koden
+## Kör koden
 
 Kompilera och kör din Java-kod. Du bör nu ha en PDF-fil som heter "FilledRectangle.pdf" med en fylld rektangel.
 

@@ -110,7 +110,7 @@ R: La ricerca e l'ottenimento di immagini in un documento PDF consente di indivi
 
 #### D: Posso filtrare le immagini cercate e ottenute in base a criteri specifici?
 
-R: Il codice fornito raccoglie informazioni su tutte le immagini all'interno del documento PDF. Se desideri filtrare le immagini in base a criteri specifici (ad esempio, tipo di immagine, dimensioni, risoluzione), potrebbe essere necessario modificare il codice per includere condizioni di filtraggio appropriate.
+R: Il codice fornito raccoglie informazioni su tutte le immagini all'interno del documento PDF. Se desideri filtrare le immagini in base a criteri specifici (ad esempio, tipo di immagine, dimensioni, risoluzione), potrebbe essere necessario modificare il codice per includere condizioni di filtro appropriate.
 
 #### D: Come posso accedere al contenuto effettivo dell'immagine dopo aver ottenuto le informazioni sul posizionamento?
 

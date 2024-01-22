@@ -1,7 +1,7 @@
 ---
 title: PDF till SVG
 linktitle: PDF till SVG
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg för steg guide för att konvertera PDF till SVG med Aspose.PDF för .NET.
 type: docs
 weight: 180

@@ -118,7 +118,7 @@ R : Pour configurer le répertoire de documents :
 
 #### Q : Puis-je personnaliser la police, la taille et la couleur du texte remplacé ?
 
- R : Oui, vous pouvez personnaliser la police, la taille et la couleur du texte remplacé en modifiant le`TextState` propriétés du`TextFragment` objet. Le didacticiel fournit un exemple de la manière de définir la police, la taille de la police et la couleur de premier plan du texte.
+ R : Oui, vous pouvez personnaliser la police, la taille et la couleur du texte remplacé en modifiant le`TextState` propriétés du`TextFragment` objet. Le didacticiel fournit un exemple de la façon de définir la police, la taille de la police et la couleur de premier plan du texte.
 
 #### Q : Comment puis-je enregistrer le document PDF modifié ?
 

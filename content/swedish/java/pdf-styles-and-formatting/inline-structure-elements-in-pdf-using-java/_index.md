@@ -31,7 +31,7 @@ Låt oss nu dyka in i hur du kan implementera inline-strukturelement i dina PDF-
 
 Innan vi börjar måste du ställa in din utvecklingsmiljö och installera Aspose.PDF för Java.
 
-## Installerar Aspose.PDF för Java
+## Installera Aspose.PDF för Java
 
 För att installera Aspose.PDF för Java, följ dessa steg:
 
@@ -160,10 +160,10 @@ Aspose.PDF för Java låter dig skapa och hantera inline-strukturelement i ditt 
 
 För att implementera inline-strukturelement i ditt PDF-dokument, följ dessa steg:
 
-### Skapa inline-strukturelement
+### Skapa inline strukturelement
 
 ```java
-// Skapa ett inline strukturelement
+// Skapa ett inline-strukturelement
 InlineTextElement inlineTextElement = new InlineTextElement();
 inlineTextElement.setText("This is an inline structure element.");
 
@@ -171,7 +171,7 @@ inlineTextElement.setText("This is an inline structure element.");
 textFragment.getTextState().setStructureElement(inlineTextElement);
 ```
 
-### Att associera strukturelement med innehåll
+### Associera strukturelement med innehåll
 
 Genom att associera strukturelement med innehåll ger du ytterligare information om textens semantik. Detta är avgörande för tillgängligheten.
 

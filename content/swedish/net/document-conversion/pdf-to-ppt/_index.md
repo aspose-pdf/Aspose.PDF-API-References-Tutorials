@@ -1,7 +1,7 @@
 ---
 title: PDF till PPT
 linktitle: PDF till PPT
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg för steg guide för att konvertera PDF till PPT med Aspose.PDF för .NET.
 type: docs
 weight: 170

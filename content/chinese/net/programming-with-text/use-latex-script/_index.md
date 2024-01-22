@@ -69,7 +69,7 @@ cell.Paragraphs.Add(ltext1);
 page.Paragraphs.Add(table);
 ```
 
-## 第 7 步：保存文档
+## 第7步：保存文档
 
 将文档保存为 PDF 文件：
 
@@ -110,7 +110,7 @@ doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
 
 #### 问：“在 PDF 文件中使用 Latex 脚本”教程的目的是什么？
 
-答：“在 PDF 文件中使用 Latex 脚本”教程旨在指导用户如何使用 Aspose.PDF for .NET 合并 LaTeX 脚本以在 PDF 文档中添加数学表达式或公式。本教程提供了分步说明和 C# 代码示例，用于创建文档、插入包含 LaTeX 脚本的单元格的表格以及保存文档。
+答：“在 PDF 文件中使用 Latex 脚本”教程旨在指导用户如何使用 Aspose.PDF for .NET 将 LaTeX 脚本合并到 PDF 文档中添加数学表达式或公式。本教程提供了分步说明和 C# 代码示例，用于创建文档、插入包含 LaTeX 脚本的单元格的表格以及保存文档。
 
 #### 问：本教程对在 PDF 文档中使用 LaTeX 脚本进行数学表达式有何帮助？
 

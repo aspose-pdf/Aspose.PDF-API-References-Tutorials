@@ -76,7 +76,7 @@ En este tutorial, cubrimos el proceso paso a paso de convertir un archivo PDF a 
 
 #### P: ¿Aspose.PDF para .NET admite la conversión de archivos PDF cifrados o protegidos con contraseña a SVG?
 
-R: Sí, Aspose.PDF para .NET admite la conversión de archivos PDF cifrados o protegidos con contraseña al formato SVG. Cuando carga un PDF protegido con contraseña, puede proporcionar la contraseña utilizando el`Document` constructor de clase o estableciendo el`Password` propiedad antes de cargar el PDF. Aspose.PDF para .NET se encargará del descifrado durante el proceso de conversión de PDF a SVG.
+R: Sí, Aspose.PDF para .NET admite la conversión de archivos PDF cifrados o protegidos con contraseña al formato SVG. Cuando carga un PDF protegido con contraseña, puede proporcionar la contraseña utilizando el`Document` constructor de clase o configurando el`Password` propiedad antes de cargar el PDF. Aspose.PDF para .NET se encargará del descifrado durante el proceso de conversión de PDF a SVG.
 
 #### P: ¿Puedo convertir sólo páginas específicas del PDF a SVG en lugar del documento completo?
 

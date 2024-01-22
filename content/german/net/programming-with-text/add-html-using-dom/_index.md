@@ -51,7 +51,7 @@ HtmlFragment titel = new HtmlFragment("<fontsize=10><b><i>Table</i></b></fontsiz
 ```
 
 ## Schritt 7: Randinformationen festlegen
-Passen Sie bei Bedarf den unteren und oberen Rand des HTML-Fragments an. Im bereitgestellten Code ist der untere Rand auf 10 und der obere Rand auf 200 festgelegt.
+Passen Sie bei Bedarf den unteren und oberen Rand des HTML-Fragments an. Im bereitgestellten Code ist der untere Rand auf 10 und der obere Rand auf 200 eingestellt.
 
 ```csharp
 title. Margin. Bottom = 10;

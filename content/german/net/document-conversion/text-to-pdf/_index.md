@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 TextReader tr = new StreamReader(dataDir + "log.txt");
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"`mit dem tatsächlichen Verzeichnis, in dem sich Ihre Textdatei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"`mit dem tatsächlichen Verzeichnis, in dem sich Ihre Textdatei befindet.
 
 ## Schritt 2: Erstellen des PDF-Dokuments
  Der zweite Schritt besteht darin, eine zu erstellen`Document` Objekt, das das endgültige PDF-Dokument darstellt. Verwenden Sie den folgenden Code:

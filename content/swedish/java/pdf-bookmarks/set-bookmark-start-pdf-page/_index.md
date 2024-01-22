@@ -49,7 +49,7 @@ page.getParagraphs().add(textFragment);
 
 ## Ställa in ett bokmärke i början av en sida
 
- Låt oss nu sätta ett bokmärke till början av sidan vi skapade. Bokmärken läggs till i`Outline` samling av PDF-dokumentet. Du kan ange titeln och målsidan för bokmärket.
+ Låt oss nu sätta ett bokmärke till början av sidan vi skapade. Bokmärken läggs till`Outline` samling av PDF-dokumentet. Du kan ange titeln och målsidan för bokmärket.
 
 ```java
 // Skapa ett bokmärke till början av sidan

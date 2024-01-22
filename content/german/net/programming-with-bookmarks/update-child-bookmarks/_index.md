@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
 
 ## Schritt 4: Übergeordnetes Lesezeichenobjekt abrufen
 
-In diesem Schritt rufen wir das spezifische übergeordnete Lesezeichenobjekt ab, dessen untergeordnete Lesezeichen wir aktualisieren möchten. Im folgenden Beispiel rufen wir das übergeordnete Lesezeichen an Index 1 ab (das zweite Lesezeichen in der Lesezeichensammlung). Sie können den Index Ihren Bedürfnissen entsprechend anpassen. Hier ist der entsprechende Code:
+In diesem Schritt rufen wir das spezifische übergeordnete Lesezeichenobjekt ab, dessen untergeordnete Lesezeichen wir aktualisieren möchten. Im folgenden Beispiel rufen wir das übergeordnete Lesezeichen an Index 1 ab (das zweite Lesezeichen in der Lesezeichensammlung). Sie können den Index nach Ihren Bedürfnissen anpassen. Hier ist der entsprechende Code:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
@@ -43,7 +43,7 @@ OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 
 ## Schritt 5: Untergeordnetes Lesezeichenobjekt abrufen
 
-Lassen Sie uns nun das spezifische untergeordnete Lesezeichenobjekt abrufen, das wir aktualisieren möchten. Im folgenden Beispiel rufen wir das untergeordnete Lesezeichen an Index 1 ab (das zweite untergeordnete Lesezeichen in der Sammlung untergeordneter Lesezeichen des übergeordneten Lesezeichens). Sie können den Index Ihren Bedürfnissen entsprechend anpassen. Hier ist der entsprechende Code:
+Lassen Sie uns nun das spezifische untergeordnete Lesezeichenobjekt abrufen, das wir aktualisieren möchten. Im folgenden Beispiel rufen wir das untergeordnete Lesezeichen an Index 1 ab (das zweite untergeordnete Lesezeichen in der Sammlung untergeordneter Lesezeichen des übergeordneten Lesezeichens). Sie können den Index nach Ihren Bedürfnissen anpassen. Hier ist der entsprechende Code:
 
 ```csharp
 OutlineItemCollection childOutline = pdfOutline[1];

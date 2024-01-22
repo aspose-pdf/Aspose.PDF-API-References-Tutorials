@@ -1,7 +1,7 @@
 ---
 title: Bädda in teckensnitt i PDF-fil med delmängdsstrategi
 linktitle: Bädda in teckensnitt med delmängdsstrategi
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du bäddar in teckensnitt i en PDF-fil med Subset Strategy med Aspose.PDF för .NET. Optimera din PDF-storlek genom att bädda in endast nödvändiga tecken.
 type: docs
 weight: 130

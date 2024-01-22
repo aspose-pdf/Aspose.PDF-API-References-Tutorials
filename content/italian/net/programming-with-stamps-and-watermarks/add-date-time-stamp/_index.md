@@ -56,7 +56,7 @@ annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt");
 TextStamp textStamp = new TextStamp(annotationText);
 ```
 
-Il codice sopra crea un nuovo buffer di testo contenente la data e l'ora correnti.
+Il codice precedente crea un nuovo buffer di testo contenente la data e l'ora correnti.
 
 ## Passaggio 5: configurazione delle proprietà del timbro
 

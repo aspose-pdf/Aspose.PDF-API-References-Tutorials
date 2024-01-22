@@ -1,7 +1,7 @@
 ---
 title: Lägg till PDF-sidastämpel i PDF-fil
 linktitle: Lägg till PDF-sidastämpel i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du enkelt lägger till en PDF-sidastämpel i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 40

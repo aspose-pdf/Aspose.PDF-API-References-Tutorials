@@ -150,7 +150,7 @@ document.Save(dataDir + "StructureElementsTree.pdf");
 
 #### 问：所提供的 C# 代码如何在 PDF 文档中创建树元素结构？
 
-答：该代码示例演示了如何使用以下方法创建逻辑元素的层次结构：`SectElement`, `DivElement`， 和`ArtElement` Aspose.PDF 提供的类。这些元素被组织为父节点和子节点，在文档中形成树状结构。
+答：代码示例演示了如何使用以下方法创建逻辑元素的层次结构：`SectElement`, `DivElement`， 和`ArtElement` Aspose.PDF 提供的类。这些元素被组织为父节点和子节点，在文档中形成树状结构。
 
 #### 问：如何`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 

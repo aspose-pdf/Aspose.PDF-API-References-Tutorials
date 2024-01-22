@@ -1,7 +1,7 @@
 ---
 title: Ställ in Java Script
 linktitle: Ställ in Java Script
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du använder Aspose.PDF för .NET för att ställa in JavaScript i formulärfält i PDF-filer.
 type: docs
 weight: 270
@@ -14,7 +14,7 @@ I den här guiden kommer vi att förklara steg för steg hur man använder Aspos
 Innan du börjar, se till att du har följande:
 
 - En .NET-utvecklingsmiljö installerad på ditt system.
-- Aspose.PDF-biblioteket för .NET. Du kan ladda ner den från Asposes officiella hemsida.
+- Aspose.PDF-biblioteket för .NET. Du kan ladda ner den från Asposes officiella webbplats.
 
 ## Steg 1: Konfigurera dokumentkatalogen
 

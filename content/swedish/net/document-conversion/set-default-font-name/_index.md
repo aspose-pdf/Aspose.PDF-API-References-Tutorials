@@ -1,7 +1,7 @@
 ---
 title: Ställ in standardteckensnittsnamn
 linktitle: Ställ in standardteckensnittsnamn
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg för steg guide för att ställa in standardtypsnittsnamn i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 270

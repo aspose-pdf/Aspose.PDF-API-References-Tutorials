@@ -23,7 +23,7 @@ Nutzen Sie mit Aspose.PDF das Potenzial der PDF-Seitenbearbeitung in Java. Ganz 
 ## Tutorials zur PDF-Seitenmanipulation
 ### [Holen Sie sich das PDF-Hyperlink-Ziel mit Java](./get-pdf-hyperlink-destination-using-java/)
 Erfahren Sie, wie Sie mit Aspose.PDF für Java PDF-Hyperlink-Ziele mithilfe von Java abrufen. Lernen Sie Schritt für Schritt anhand von Codebeispielen in diesem umfassenden Tutorial.
-### [Entfernen Sie die Aktion „Dokument öffnen“ mit Java aus der PDF-Datei](./remove-document-open-action-from-pdf-file-using-java/)
+### [Entfernen Sie die Aktion „Dokument öffnen“ aus der PDF-Datei mit Java](./remove-document-open-action-from-pdf-file-using-java/)
 Erfahren Sie, wie Sie mit Java und Aspose.PDF für Java die Aktion „Dokument öffnen“ aus PDF-Dateien entfernen. Verbessern Sie die Sicherheit und Anpassung.
 ### [Ändern Sie den Farbraum eines PDF-Dokuments mit Java](./change-color-space-of-pdf-document-using-java/)
 Erfahren Sie, wie Sie den Farbraum eines PDF-Dokuments mit Java ändern. Schritt-für-Schritt-Anleitung mit Codebeispielen. Optimieren Sie Ihre PDFs für den Druck und die Anzeige.

@@ -30,7 +30,7 @@ LatexLoadOptions Latexoptions = new LatexLoadOptions();
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "samplefile.tex", Latexoptions);
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre TeX-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre TeX-Datei befindet.
 
 ## Schritt 2: In PDF konvertieren
  Der zweite Schritt besteht darin, das TeX-Dokument mithilfe von in ein PDF-Dokument zu konvertieren`Save` Methode der`Document` Objekt. Verwenden Sie den folgenden Code:

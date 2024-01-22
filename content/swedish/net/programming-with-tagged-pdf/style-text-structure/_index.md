@@ -1,7 +1,7 @@
 ---
 title: Stiltextstruktur i PDF-fil
 linktitle: Stiltextstruktur i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du formaterar textstruktur i PDF-fil med Aspose.PDF för .NET. Steg-för-steg guide till stiltext.
 type: docs
 weight: 190

@@ -172,7 +172,7 @@ A: Durch das Konvertieren eines Bilds in PDF können Sie Bilder in ein PDF-Dokum
 
  A: Die`using` Anweisungen importieren erforderliche Namespaces, sodass Sie Klassen und Methoden aus diesen Namespaces verwenden können, ohne sie vollständig zu qualifizieren. Dies fördert einen saubereren und prägnanteren Code.
 
-####  F5: Welche Rolle spielt das`Document` object play in the image-to-PDF conversion process?
+####  F5: Welche Rolle spielt das?`Document` object play in the image-to-PDF conversion process?
  A: Die`Document` Das Objekt stellt das PDF-Dokument dar, das Sie erstellen. Es fungiert als Container für Seiten, Absätze und verschiedene PDF-Elemente.
 
 #### F: Wie wird ein Bild mit Aspose.PDF für .NET in das PDF-Dokument geladen?

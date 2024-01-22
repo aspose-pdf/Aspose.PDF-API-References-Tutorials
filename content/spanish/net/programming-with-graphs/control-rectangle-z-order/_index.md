@@ -30,7 +30,7 @@ Aspose.Pdf.Page page1 = doc1.Pages.Add();
 
 ## Paso 3: configurar el tamaño de la página
 
-Configuramos el tamaño de la página PDF utilizando el método SetPageSize.
+Configuramos el tamaño de la página PDF usando el método SetPageSize.
 
 ```csharp
 page1.SetPageSize(375, 300);

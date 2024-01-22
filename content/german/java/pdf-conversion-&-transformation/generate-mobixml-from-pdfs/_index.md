@@ -67,7 +67,7 @@ Ja, Aspose.PDF für Java verarbeitet PDFs mit komplexen Layouts effektiv und ste
 
 ### Gibt es Einschränkungen beim MobiXML-Format?
 
-MobiXML weist im Vergleich zu anderen E-Book-Formaten gewisse Einschränkungen auf. Stellen Sie sicher, dass es Ihren spezifischen Anforderungen entspricht, bevor Sie es für die E-Book-Erstellung verwenden.
+MobiXML weist im Vergleich zu anderen E-Book-Formaten bestimmte Einschränkungen auf. Stellen Sie sicher, dass es Ihren spezifischen Anforderungen entspricht, bevor Sie es für die E-Book-Erstellung verwenden.
 
 ### Wo finde ich weitere Dokumentation und Ressourcen für Aspose.PDF für Java?
 

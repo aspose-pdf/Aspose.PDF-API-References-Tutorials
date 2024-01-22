@@ -41,7 +41,7 @@ dataStream.Close();
 response. Close();
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem Sie die resultierende PDF-Datei speichern möchten.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem Sie die resultierende PDF-Datei speichern möchten.
 
 ## Schritt 2: Konvertieren Sie HTML in PDF, indem Sie Anmeldeinformationen angeben
 Jetzt laden wir den abgerufenen HTML-Inhalt und konvertieren ihn unter Angabe der entsprechenden Anmeldeinformationen in das PDF-Format. Verwenden Sie den folgenden Code:

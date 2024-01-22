@@ -148,4 +148,4 @@ R : Oui, vous pouvez utiliser cette méthode pour ajouter différents types d�
 
 #### Q : Est-il possible d'automatiser le processus d'ajout de tampons d'image à plusieurs documents PDF ?
 
-R : Oui, vous pouvez automatiser le processus d'ajout de tampons d'image à plusieurs documents PDF en créant un script ou un programme qui parcourt une liste de documents et applique le même processus d'estampage d'image à chacun d'eux.
+R : Oui, vous pouvez automatiser le processus d'ajout de tampons d'image à plusieurs documents PDF en créant un script ou un programme qui parcourt une liste de documents et applique le même processus d'estampillage d'image à chacun d'eux.

@@ -45,7 +45,7 @@ public class PdfImageDeletion {
 }
 ```
 
-确保更换`"sample.pdf"`以及您的 PDF 文件的路径。
+确保您更换`"sample.pdf"`以及您的 PDF 文件的路径。
 
 ## 识别 PDF 中的图像
 
@@ -119,7 +119,7 @@ public class PdfImageDeletion {
 pdfDocument.save("modified.pdf");
 ```
 
-确保更换`"modified.pdf"`与您想要的输出文件路径。
+确保您更换`"modified.pdf"`与您想要的输出文件路径。
 
 ## 测试结果
 

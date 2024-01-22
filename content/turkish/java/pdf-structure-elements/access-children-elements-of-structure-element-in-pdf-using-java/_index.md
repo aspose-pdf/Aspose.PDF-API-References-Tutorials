@@ -90,7 +90,7 @@ PDF belgelerindeki yapı öğelerinin alt öğelerine erişim, aşağıdakiler g
 
 ## Çözüm
 
-Bu kılavuzda, Java ve Aspose.PDF for Java kullanarak bir PDF belgesindeki bir yapı öğesinin alt öğelerine nasıl erişileceğini araştırdık. Alt öğelerin kurulumunu, gezinmesini, alınmasını ve değiştirilmesini ele aldık. Bu bilgi, Java uygulamalarınızda PDF belgeleriyle daha etkili bir şekilde çalışmanız için fırsatlar sunar.
+Bu kılavuzda, Java ve Aspose.PDF for Java kullanarak bir PDF belgesindeki bir yapı öğesinin alt öğelerine nasıl erişileceğini araştırdık. Alt öğelerin kurulumunu, gezinmesini, alınmasını ve değiştirilmesini ele aldık. Bu bilgi, Java uygulamalarınızda PDF belgeleriyle daha etkili bir şekilde çalışmanız için fırsatlar yaratır.
 
 ## SSS'ler
 

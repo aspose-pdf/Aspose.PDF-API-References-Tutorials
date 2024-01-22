@@ -1,7 +1,7 @@
 ---
 title: Ta bort oanvända strömmar i PDF-fil
 linktitle: Ta bort oanvända strömmar i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du tar bort oanvända strömmar i PDF-filer med Aspose.PDF för .NET. Vår steg-för-steg guide.
 type: docs
 weight: 270
@@ -90,4 +90,4 @@ S: Att ta bort oanvända strömmar från ett PDF-dokument minskar dess filstorle
 
 #### F: Kan utvecklare ange vilka strömmar som ska tas bort med Aspose.PDF för .NET?
 
- S: Ja, utvecklare kan kontrollera borttagningen av oanvända strömmar genom att ställa in`RemoveUnusedStreams` alternativet i`OptimizationOptions`. Detta ger dem flexibiliteten att välja vilka strömmar som ska tas bort baserat på deras specifika behov.
+ S: Ja, utvecklare kan kontrollera borttagningen av oanvända strömmar genom att ställa in`RemoveUnusedStreams` alternativ i`OptimizationOptions`. Detta ger dem flexibiliteten att välja vilka strömmar som ska tas bort baserat på deras specifika behov.

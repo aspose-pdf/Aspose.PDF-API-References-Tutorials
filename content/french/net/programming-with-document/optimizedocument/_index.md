@@ -74,7 +74,7 @@ pdfDocument.Save(dataDir);
 
 #### Q : Comment Aspose.PDF pour .NET optimise-t-il un document PDF ?
 
-R : Aspose.PDF pour .NET optimise un document PDF en effectuant diverses optimisations internes, telles que la suppression des données inutiles, la compression des images et l'élimination des informations redondantes. Ces optimisations réduisent la taille globale du fichier sans compromettre la qualité visuelle ou le contenu du document PDF.
+R : Aspose.PDF pour .NET optimise un document PDF en effectuant diverses optimisations internes, telles que la suppression des données inutiles, la compression des images et l'élimination des informations redondantes. Ces optimisations réduisent la taille globale du fichier sans compromettre la qualité visuelle ou le contenu du document PDF.
 
 #### Q : Y a-t-il des considérations à garder à l’esprit lors de l’optimisation d’un document PDF ?
 

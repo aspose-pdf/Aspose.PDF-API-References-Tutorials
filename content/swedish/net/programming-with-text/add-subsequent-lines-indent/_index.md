@@ -1,7 +1,7 @@
 ---
 title: Lägg till efterföljande rader indrag i PDF-fil
 linktitle: Lägg till efterföljande rader indrag i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du lägger till efterföljande rader indrag i text i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 60

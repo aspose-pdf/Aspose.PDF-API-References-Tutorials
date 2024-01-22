@@ -119,7 +119,7 @@ Das Hinzufügen von Anmerkungen zu PDF-Dokumenten mit Aspose.PDF für .NET biete
 
 #### F: Welche Arten von Anmerkungen können mit Aspose.PDF für .NET hinzugefügt werden?
 
-A: Aspose.PDF für .NET unterstützt verschiedene Arten von Anmerkungen, darunter Textanmerkungen, Stempel, Links, Formen und mehr. Entwickler können das Erscheinungsbild und die Eigenschaften dieser Anmerkungen an ihre spezifischen Bedürfnisse anpassen.
+A: Aspose.PDF für .NET unterstützt verschiedene Arten von Anmerkungen, darunter Textanmerkungen, Stempel, Links, Formen und mehr. Entwickler können das Erscheinungsbild und die Eigenschaften dieser Anmerkungen an ihre spezifischen Anforderungen anpassen.
 
 #### F: Kann ich Anmerkungen zu bestimmten Seiten in einem mehrseitigen PDF-Dokument hinzufügen?
 

@@ -2,7 +2,7 @@
 title: Özel Etiket Adı
 linktitle: Özel Etiket Adı
 second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile özel etiket adı kullanma konusunda adım adım kılavuz. Özel etiketlerle PDF'lerinizin yapısını geliştirin.
+description: Aspose.PDF for .NET ile özel etiket adı kullanma konusunda adım adım kılavuz. Özel etiketlerle PDF'lerinizin yapısını iyileştirin.
 type: docs
 weight: 90
 url: /tr/net/programming-with-tagged-pdf/custom-tag-name/
@@ -183,7 +183,7 @@ C: Aspose.PDF for .NET, bir PDF belgesi içindeki farklı yapısal öğelere öz
 
  C:`taggedContent` belgeden elde edilen nesne`TaggedContent` özelliği, PDF belgesindeki yapılandırılmış öğelerle çalışmanıza olanak tanır. Belgenin anlamsal yapısını geliştirerek bu öğelere özel etiket adları oluşturabilir, düzenleyebilir ve atayabilirsiniz.
 
-#### S: Özel etiket adları belgenin erişilebilirliğini ve kullanılabilirliğini nasıl artırır?
+#### S: Özel etiket adları belgenin erişilebilirliğini ve kullanılabilirliğini nasıl geliştirir?
 
 C: Özel etiket adları, belgenin içeriğine ek bağlam ve anlam bilgisi sağlar, bu da yardımcı teknolojiler için erişilebilirliği artırır ve genel kullanıcı deneyimini geliştirir. Ekran okuyucular ve diğer yardımcı cihazlar, kullanıcılara anlamlı bilgiler iletmek için özel etiket adlarını kullanabilir.
 

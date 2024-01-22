@@ -146,7 +146,7 @@ stamp3.TextState.BackgroundColor = Color.Pink;
 // Ändern Sie die Schriftartinformationen für den Stempel in „Verdana“.
 stamp3.TextState.Font = FontRepository.FindFont("Verdana");
 
-// Der erste Stempel wird auf der ersten Seite hinzugefügt;
+// Der erste Stempel wird auf der ersten Seite hinzugefügt.
 doc.Pages[1].AddStamp(stamp1);
 
 // Der zweite Stempel ist auf der zweiten Seite hinzugefügt;
@@ -184,7 +184,7 @@ A: Während das bereitgestellte Tutorial das Hinzufügen verschiedener Kopfzeile
 
  A: Um Überlappungen zu vermeiden, können Sie die anpassen`VerticalAlignment`, `HorizontalAlignment` , und andere Eigenschaften der`TextStamp` Objekte. Diese Einstellungen steuern, wo die Kopfzeilen auf der Seite positioniert werden, sodass Sie sie so positionieren können, dass sie den Hauptinhalt nicht behindern.
 
-#### F: Kann ich diese Methode verwenden, um Kopfzeilen zu vorhandenen PDF-Dokumenten mit unterschiedlicher Seitenanzahl hinzuzufügen?
+#### F: Kann ich diese Methode verwenden, um Kopfzeilen zu vorhandenen PDF-Dokumenten mit unterschiedlicher Seitenzahl hinzuzufügen?
 
 A: Ja, Sie können den bereitgestellten Quellcode anpassen, um Kopfzeilen zu vorhandenen PDF-Dokumenten mit unterschiedlicher Seitenanzahl hinzuzufügen. Passen Sie einfach den Code an die Anzahl der Kopfzeilen an, die Sie hinzufügen möchten, und verknüpfen Sie jede Kopfzeile mit der gewünschten Seite.
 

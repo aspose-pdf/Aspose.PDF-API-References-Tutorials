@@ -109,7 +109,7 @@ Aspose.PDF for .NET'te DOM kullanarak HTML içeriğini başarıyla eklediniz. Or
 
 #### S: Bu eğitimin amacı nedir?
 
-C: Bu eğitimin amacı, Aspose.PDF for .NET'te Belge Nesne Modeli (DOM) kullanılarak bir PDF belgesine HTML içeriğinin nasıl ekleneceği konusunda adım adım bir kılavuz sağlamaktır. Süreci anlamanıza ve uygulamanıza yardımcı olacak C# kaynak kodu parçacıkları içerir.
+C: Bu eğitimin amacı Aspose.PDF for .NET'te Belge Nesne Modeli (DOM) kullanılarak bir PDF belgesine HTML içeriğinin nasıl ekleneceği konusunda adım adım bir kılavuz sağlamaktır. Süreci anlamanıza ve uygulamanıza yardımcı olacak C# kaynak kodu parçacıkları içerir.
 
 #### S: Bu eğitim için hangi ad alanlarını içe aktarmam gerekiyor?
 

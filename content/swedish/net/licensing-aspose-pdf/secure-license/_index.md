@@ -1,7 +1,7 @@
 ---
 title: Säker licens i PDF-fil
 linktitle: Säker licens i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att säkra en licens i PDF-fil med Aspose.PDF för .NET. Skydda din PDF-applikation från obehörig åtkomst.
 type: docs
 weight: 40

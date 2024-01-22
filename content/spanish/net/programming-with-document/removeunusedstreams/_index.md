@@ -25,7 +25,7 @@ La siguiente línea de código abre el documento PDF utilizando la biblioteca As
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Paso 3: configurar la opción RemoveUnusedStreams
+## Paso 3: Establecer la opción RemoveUnusedStreams
 
 El siguiente paso es establecer la opción RemoveUnusedStreams en verdadero. Esto eliminará cualquier secuencia no utilizada del documento PDF.
 

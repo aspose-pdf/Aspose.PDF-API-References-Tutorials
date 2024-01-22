@@ -33,7 +33,7 @@ Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Étape 3 : définir les marges
+## Étape 3 : Définir les marges
 
  Nous définissons les marges de la page en utilisant le`MarginInfo`classe. Ajustez les valeurs de marge en fonction de vos besoins.
 

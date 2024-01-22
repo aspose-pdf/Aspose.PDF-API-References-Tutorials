@@ -99,4 +99,4 @@ R: Nel codice fornito, la nuova immagine viene caricata da un file JPEG (`aspose
 
 #### D: È possibile sostituire più immagini all'interno di un singolo documento PDF?
 
-R: Sì, puoi sostituire più immagini all'interno di un singolo documento PDF chiamando il file`Replace` per ogni immagine che desideri sostituire. Modificare di conseguenza l'indice e l'origine dell'immagine per ogni sostituzione.
+R: Sì, puoi sostituire più immagini all'interno di un singolo documento PDF chiamando il file`Replace` per ogni immagine che desideri sostituire. Modificare di conseguenza l'indice e l'origine dell'immagine per ciascuna sostituzione.

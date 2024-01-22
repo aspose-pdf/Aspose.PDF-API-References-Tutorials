@@ -94,7 +94,7 @@ Sì, Aspose.PDF per Java fornisce un'ampia gamma di funzionalità per lavorare c
 ### È disponibile una versione di prova di Aspose.PDF per Java?
  Sì, puoi scaricare una versione di prova di Aspose.PDF per Java da[Aspose.Acquisti](https://purchase.aspose.com/temporary-license/) per valutarne le caratteristiche prima di acquistare una licenza.
 
-### Come posso accedere a più tutorial e documentazione Aspose.PDF per Java?
+### Come posso accedere a più Aspose.PDF per tutorial e documentazione Java?
  È possibile trovare tutorial e documentazione completi per Aspose.PDF per Java sul sito Web all'indirizzo[https://reference.aspose.com/pdf/java/](https://reference.aspose.com/pdf/java/).
 
 In questo articolo, abbiamo esplorato come aggiungere un sommario a un documento PDF esistente utilizzando la libreria Aspose.PDF per Java. Questa funzionalità può migliorare notevolmente l'usabilità dei tuoi documenti PDF, consentendo ai lettori di navigare facilmente verso sezioni o capitoli specifici. Inoltre, abbiamo spiegato come personalizzare l'aspetto del sommario e generare numeri di pagina. Aspose.PDF per Java offre un'ampia gamma di funzionalità di manipolazione dei PDF, rendendolo un potente strumento per lavorare con i PDF nelle applicazioni Java. Se hai bisogno di ulteriore assistenza o desideri esplorare più funzionalità di Aspose.PDF per Java, assicurati di consultare la documentazione e i tutorial.

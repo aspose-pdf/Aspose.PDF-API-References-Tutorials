@@ -1,7 +1,7 @@
 ---
 title: Ta bort teckensnitt och optimera PDF-filer
 linktitle: Ta bort teckensnitt och optimera PDF-filer
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du använder Aspose.PDF för .NET för att få Unembed Fonts och optimera PDF-filer. En steg-för-steg-guide.
 type: docs
 weight: 370

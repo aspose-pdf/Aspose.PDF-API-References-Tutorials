@@ -1,7 +1,7 @@
 ---
 title: Skapa strukturelement
 linktitle: Skapa strukturelement
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: I den här handledningen kommer du att lära dig hur du använder Aspose.PDF för .NET för att skapa strukturella element i ett taggat PDF-dokument.
 type: docs
 weight: 60
@@ -167,7 +167,7 @@ S: Att skapa strukturelement i ett PDF-dokument med Aspose.PDF för .NET förbä
 
 #### F: Hur skapar den medföljande C#-koden strukturelement i ett PDF-dokument?
 
-S: Kodexemplet visar hur man skapar olika typer av strukturelement, inklusive grupperingselement (som delar, sektioner och divs), element på blocknivå (som stycken och rubriker), element på inlinenivå (span, citat, not ), och konstverk (som figurer och formler). Dessa strukturelement hjälper till att organisera innehåll.
+S: Kodexemplet visar hur man skapar olika typer av strukturelement, inklusive grupperingselement (som delar, sektioner och div), element på blocknivå (som stycken och rubriker), element på inlinenivå (span, citat, not ), och konstverk (som figurer och formler). Dessa strukturelement hjälper till att organisera innehåll.
 
 ####  F: Varför är det viktigt att ställa in dokumentets titel och språk med hjälp av`SetTitle` and `SetLanguage` methods?
 

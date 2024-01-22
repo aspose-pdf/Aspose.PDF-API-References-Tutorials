@@ -1,7 +1,7 @@
 ---
 title: Lägg till upprepande kolumn i PDF-dokument
 linktitle: Lägg till upprepande kolumn i PDF-dokument
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du lägger till en upprepad kolumn i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 20

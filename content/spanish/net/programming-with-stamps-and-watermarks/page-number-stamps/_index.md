@@ -74,7 +74,7 @@ pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 
 El código anterior agrega el sello del número de página a la primera página del documento PDF. Puede cambiar el número de página según sea necesario.
 
-## Paso 5: Guardar el documento PDF modificado
+## Paso 5: guardar el documento PDF modificado
 
 Una vez que se agrega el sello del número de página al documento PDF, podemos guardar el documento PDF modificado. Así es cómo:
 

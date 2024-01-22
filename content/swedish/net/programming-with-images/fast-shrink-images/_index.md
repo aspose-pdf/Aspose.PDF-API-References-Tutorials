@@ -1,7 +1,7 @@
 ---
 title: Snabbkrympa bilder
 linktitle: Snabbkrympa bilder
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Minska snabbt storleken på bilder i en PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 130
@@ -69,7 +69,7 @@ var time = DateTime.Now.Ticks;
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
-// Initiera OptimizationOptions
+// Initiera optimeringsalternativ
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
 // Ställ in alternativet CompressImages
 optimizeOptions.ImageCompressionOptions.CompressImages = true;

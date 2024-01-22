@@ -12,7 +12,7 @@ Les formulaires PDF sont un outil essentiel pour la collecte et le traitement de
 
 ## Maîtriser les champs de formulaire PDF
 
-Nos tutoriels démarrent avec une base solide sur les champs de formulaire PDF. Vous apprendrez à créer différents types de champs de formulaire, à définir leurs propriétés et à garantir un bon alignement dans vos documents PDF. Que vous ayez besoin de simples champs de saisie de texte ou de cases à cocher pour des questions à choix multiples, vous acquerrez les compétences nécessaires pour les mettre en œuvre de manière transparente.
+Nos didacticiels démarrent avec une base solide sur les champs de formulaire PDF. Vous apprendrez à créer différents types de champs de formulaire, à définir leurs propriétés et à garantir un bon alignement dans vos documents PDF. Que vous ayez besoin de simples champs de saisie de texte ou de cases à cocher pour des questions à choix multiples, vous acquerrez les compétences nécessaires pour les mettre en œuvre de manière transparente.
 
 ## Fonctionnalités avancées des champs de formulaire
 

@@ -37,7 +37,7 @@ Innan vi dyker in i konverteringsprocessen, se till att du har följande föruts
 
 För att komma igång, se till att din Java-miljö är korrekt inställd. Du bör ha din IDE konfigurerad med JDK, och Aspose.PDF för Java-biblioteket bör läggas till i ditt projekts klassväg.
 
-## Importerar Aspose.PDF för Java
+## Importera Aspose.PDF för Java
 
 Importera nödvändig Aspose.PDF för Java-klasser i ditt Java-projekt. Här är ett exempel på importförklaring:
 

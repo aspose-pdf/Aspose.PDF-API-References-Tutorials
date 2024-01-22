@@ -1,7 +1,7 @@
 ---
 title: XML till PDFSet Image Path
 linktitle: XML till PDFSet Image Path
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att ställa in sökvägen för en bild när du konverterar XML till PDF med Aspose.PDF för .NET.
 type: docs
 weight: 340
@@ -88,6 +88,6 @@ S: Ja, du kan använda bilder från en fjärr-URL genom att ange URL:en iställe
 
 S: XML-indatafilen bör ha en struktur som refererar till bilden med hjälp av ett ID. I den medföljande koden används ID "testImg" för att referera till bilden.
 
-#### F: Kan jag lägga till flera bilder i PDF-filen?
+#### F: Kan jag lägga till flera bilder till PDF-filen?
 
 S: Ja, du kan lägga till flera bilder till PDF-filen genom att referera till dem i XML-filen med olika ID:n och ställa in sökvägarna i enlighet därmed.

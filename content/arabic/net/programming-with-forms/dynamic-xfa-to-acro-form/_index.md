@@ -48,7 +48,7 @@ document. Save(dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // تحميل نموذج XFA الديناميكي
 Document document = new Document(dataDir + "DynamicXFAToAcroForm.pdf");
-// قم بتعيين نوع حقول النموذج على أنه AcroForm القياسي
+// قم بتعيين نوع حقول النموذج كـ AcroForm القياسي
 document.Form.Type = FormType.Standard;
 dataDir = dataDir + "Standard_AcroForm_out.pdf";
 // احفظ ملف PDF الناتج

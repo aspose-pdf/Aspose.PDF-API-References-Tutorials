@@ -99,7 +99,7 @@ Aspose.PDF for Java, PDF belgesinde HTML oluşturma için kullanılamayan yazı 
 
 ### Değiştirme için özel yazı tipleri belirtebilir miyim?
 
-Evet, dönüştürme işlemi sırasında hangi yazı tiplerinin kullanılamayan yazı tiplerinin yerini alması gerektiğini belirlemek için özel yazı tipi eşlemeleri tanımlayabilirsiniz. Bu, oyuncu değişikliği üzerinde ayrıntılı kontrol sağlar.
+Evet, dönüştürme işlemi sırasında hangi yazı tiplerinin kullanılamayan yazı tiplerinin yerini alması gerektiğini belirtmek için özel yazı tipi eşlemeleri tanımlayabilirsiniz. Bu, oyuncu değişikliği üzerinde ayrıntılı kontrol sağlar.
 
 ### Yazı tipi değişikliğiyle PDF'yi HTML'ye dönüştürmenin faydaları nelerdir?
 

@@ -20,7 +20,7 @@ Temel bilgilerin ötesine geçerek gelişmiş form alanı özelliklerini derinle
 
 ## Kullanıcı Etkileşimini Geliştirin
 
-PDF formlarında kullanıcı deneyimi çok önemlidir. Eğitimlerimiz size araç ipuçları ekleyerek, görünümleri özelleştirerek ve mantıksal bir sekme sırası sağlayarak kullanıcı etkileşimini nasıl geliştireceğinizi öğretecektir. Bu eğitimlerin sonunda Aspose.PDF for Java'yı kullanarak profesyonel, kullanıcı dostu PDF formları oluşturabilecek donanıma sahip olacak ve veri toplama ve işlemeyi kolaylaştırma olanağına sahip olacaksınız.
+PDF formlarında kullanıcı deneyimi çok önemlidir. Eğitimlerimiz size araç ipuçları ekleyerek, görünümleri özelleştirerek ve mantıksal bir sekme sırası sağlayarak kullanıcı etkileşimini nasıl geliştireceğinizi öğretecektir. Bu eğitimlerin sonunda Aspose.PDF for Java'yı kullanarak profesyonel, kullanıcı dostu PDF formları oluşturma konusunda iyi bir donanıma sahip olacak ve veri toplama ve işlemeyi kolaylaştırma olanağına sahip olacaksınız.
 
 ## PDF Form Alanları Eğitimleri
 ### [Java kullanarak PDF Belgesine Form Alanı Ekleme](./add-form-field-in-pdf-document-using-java/)

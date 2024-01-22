@@ -1,7 +1,7 @@
 ---
 title: Bild till PDF
 linktitle: Bild till PDF
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Konvertera enkelt bild till PDF med Aspose.PDF för .NET.
 type: docs
 weight: 180

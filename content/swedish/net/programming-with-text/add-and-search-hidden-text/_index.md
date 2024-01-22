@@ -1,7 +1,7 @@
 ---
 title: Lägg till och sök dold text i PDF-fil
 linktitle: Lägg till och sök dold text i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att lägga till och söka i dold text i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 20
@@ -15,7 +15,7 @@ Innan du börjar, se till att du har följande:
 
 - Visual Studio eller någon annan utvecklingsmiljö installerad och konfigurerad.
 - Grundläggande kunskaper i programmeringsspråket C#.
-- Aspose.PDF-bibliotek för .NET installerat. Du kan ladda ner den från Asposes officiella hemsida.
+- Aspose.PDF-bibliotek för .NET installerat. Du kan ladda ner den från Asposes officiella webbplats.
 
 ## 2. Skapa PDF-dokumentet med dold text
 

@@ -1,7 +1,7 @@
 ---
 title: Extrahera länkar i PDF-fil
 linktitle: Extrahera länkar i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Extrahera enkelt länkar i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 50

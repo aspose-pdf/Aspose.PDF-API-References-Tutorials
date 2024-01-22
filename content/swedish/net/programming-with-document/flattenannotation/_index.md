@@ -1,7 +1,7 @@
 ---
 title: Platta ut anteckning i PDF-fil
 linktitle: Platta ut anteckning i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du plattar ut kommentarer i PDF-filer med Aspose.PDF för .NET. Bevara anteckningar och förhindra oavsiktliga ändringar.
 type: docs
 weight: 150

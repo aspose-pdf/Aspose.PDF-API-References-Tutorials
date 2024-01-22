@@ -23,7 +23,7 @@ Avant de commencer, assurez-vous que les conditions préalables suivantes sont r
 
 Pour commencer, créez un nouveau projet Java ou ouvrez-en un existant dans lequel vous souhaitez supprimer des tableaux d'un document PDF.
 
-## Étape 2 : Ajoutez Aspose.PDF pour Java à votre projet
+## Étape 2 : ajoutez Aspose.PDF pour Java à votre projet
 
 Vous devez ajouter la bibliothèque Aspose.PDF pour Java à votre projet. Voici comment procéder :
 

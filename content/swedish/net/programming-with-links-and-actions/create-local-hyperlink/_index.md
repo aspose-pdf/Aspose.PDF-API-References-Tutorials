@@ -1,7 +1,7 @@
 ---
 title: Skapa lokal hyperlänk i PDF-fil
 linktitle: Skapa lokal hyperlänk i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Skapa enkelt lokala hyperlänkar i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 40
@@ -79,7 +79,7 @@ Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("link page 
 Aspose.Pdf.LocalHyperlink link = new Aspose.Pdf.LocalHyperlink();
 // Ställ in målsida för länkinstans
 link.TargetPageNumber = 7;
-// Ställ in TextFragment hyperlänk
+// Ställ in TextFragment-hyperlänk
 text.Hyperlink = link;
 //Lägg till text i styckesamlingen på sidan
 page.Paragraphs.Add(text);

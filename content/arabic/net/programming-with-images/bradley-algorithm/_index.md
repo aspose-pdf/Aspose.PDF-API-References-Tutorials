@@ -124,7 +124,7 @@ System.Console.WriteLine("Conversion using bradley algorithm performed successfu
 
 #### س: كيف يمكنني إعداد البيئة الخاصة بي لاستخدام خوارزمية Bradley مع Aspose.PDF لـ .NET؟
 
-ج: قبل البدء، تأكد من تثبيت Aspose.PDF for .NET بشكل صحيح وتكوين بيئة التطوير لديك.
+ج: قبل أن تبدأ، تأكد من تثبيت Aspose.PDF for .NET بشكل صحيح وتكوين بيئة التطوير لديك.
 
 #### س: ما أهمية تحديد دليل المستندات في عملية خوارزمية برادلي؟
 

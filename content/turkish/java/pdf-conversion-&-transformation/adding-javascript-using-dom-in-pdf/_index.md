@@ -79,7 +79,7 @@ com.aspose.pdf.form.Field itemQuantity = new com.aspose.pdf.form.Field();
 itemQuantity.setPartialName("item_quantity");
 pdfDocument.getForm().add(itemQuantity);
 
-// Ürün fiyatı için form alanı oluşturun
+// Ürün fiyatı için bir form alanı oluşturun
 com.aspose.pdf.form.Field itemPrice = new com.aspose.pdf.form.Field();
 itemPrice.setPartialName("item_price");
 pdfDocument.getForm().add(itemPrice);

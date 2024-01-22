@@ -34,7 +34,7 @@ Document doc = new Document(dataDir + "ExtractTextPage.pdf");
 
 ## Schritt 3: Textfragmente suchen und ersetzen
 
- Wir erstellen ein`TextFragmentAbsorber` Objekt mit einem regulären Ausdruck, um nach bestimmten Textfragmenten zu suchen. Anschließend durchlaufen wir die Textfragmente, passen Schriftart, Größe und Farbe an und ersetzen den Text.
+ Wir erstellen eine`TextFragmentAbsorber` Objekt mit einem regulären Ausdruck, um nach bestimmten Textfragmenten zu suchen. Anschließend durchlaufen wir die Textfragmente, passen Schriftart, Größe und Farbe an und ersetzen den Text.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("[TextFragmentAbsorber,companyname,Textbox,50]");
@@ -75,7 +75,7 @@ try
 	{
 		// Legen Sie die Schriftart des zu ersetzenden Textfragments fest
 		textFragment.TextState.Font = FontRepository.FindFont("Arial");
-		// Schriftgröße festlegen
+		// Schriftgröße einstellen
 		textFragment.TextState.FontSize = 12;
 		textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Navy;
 		// Ersetzen Sie den Text durch eine Zeichenfolge, die größer als der Platzhalter ist

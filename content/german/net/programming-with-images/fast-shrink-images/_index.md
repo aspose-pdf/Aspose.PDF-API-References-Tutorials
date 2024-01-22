@@ -19,7 +19,7 @@ var time = DateTime.Now.Ticks;
 
 ## Schritt 2: Definieren Sie das Dokumentenverzeichnis
 
- Stellen Sie sicher, dass Sie das richtige Dokumentenverzeichnis festlegen. Ersetzen`"YOUR DOCUMENT DIRECTORY"` Geben Sie im Code den Pfad zu dem Verzeichnis ein, in dem sich Ihr PDF-Dokument befindet.
+ Stellen Sie sicher, dass Sie das richtige Dokumentverzeichnis festlegen. Ersetzen`"YOUR DOCUMENT DIRECTORY"` Geben Sie im Code den Pfad zu dem Verzeichnis ein, in dem sich Ihr PDF-Dokument befindet.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -88,7 +88,7 @@ Console.WriteLine("\nImage fast shrinked successfully.\nFile saved at " + dataDi
 
 ## Abschluss
 
-Herzlichen Glückwunsch! Mit Aspose.PDF für .NET haben Sie die Größe von Bildern in einer PDF-Datei schnell reduziert. Die optimierte PDF-Datei wird im angegebenen Verzeichnis gespeichert. Sie können diese PDF-Datei jetzt mit reduzierten Bildern für eine effizientere Speicherung oder Freigabe verwenden.
+Herzlichen Glückwunsch! Mit Aspose.PDF für .NET haben Sie die Größe von Bildern in einer PDF schnell reduziert. Die optimierte PDF-Datei wird im angegebenen Verzeichnis gespeichert. Sie können diese PDF-Datei jetzt mit reduzierten Bildern für eine effizientere Speicherung oder Freigabe verwenden.
 
 ### FAQs
 

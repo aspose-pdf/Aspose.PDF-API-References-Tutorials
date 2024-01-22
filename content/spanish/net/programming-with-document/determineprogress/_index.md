@@ -27,7 +27,7 @@ DocSaveOptions saveOptions = new DocSaveOptions();
 saveOptions.CustomProgressHandler = new UnifiedSaveOptions.ConversionProgressEventHandler(ShowProgressOnConsole);
 ```
 
-## Paso 3: Guardar el documento PDF
+## Paso 3: guardar el documento PDF
 
  Finalmente, necesitamos guardar el documento PDF usando el`Save()` método de la`Document` objeto. Pasaremos el controlador de progreso personalizado que configuramos en el paso anterior como parámetro.
 

@@ -74,7 +74,7 @@ In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET eine best
 
 A: Um eine bestimmte Seite aus einer PDF-Datei abzurufen, können Sie die folgenden Schritte ausführen:
 
-1.  Instanziieren Sie a`Document` Objekt mit der`Document` Klasse von Aspose.PDF und öffnen Sie die PDF-Datei.
+1.  Instanziieren Sie a`Document` Objekt mit dem`Document` Klasse von Aspose.PDF und öffnen Sie die PDF-Datei.
 2.  Verwenden Sie den Seitenindex, um zu der spezifischen Seite im Dokument zu springen`Pages` Sammlung. Um beispielsweise die dritte Seite abzurufen, können Sie verwenden`pdfDocument.Pages[2]` (Indizierung beginnt bei 0).
 3.  Speichern Sie die spezifische Seite als separate PDF-Datei, indem Sie eine neue erstellen`Document` Objekt, fügen die abgerufene Seite hinzu und speichern sie dann am gewünschten Ort.
 

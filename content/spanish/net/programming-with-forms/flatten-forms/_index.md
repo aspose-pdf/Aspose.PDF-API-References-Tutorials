@@ -92,4 +92,4 @@ R: Sí, al acoplar formularios se fusionarán todas las anotaciones, incluidas l
 
 #### P: ¿Puedo aplanar selectivamente campos de formulario específicos y dejar otros editables?
 
-R: Sí, puede aplanar selectivamente campos de formulario específicos en un documento PDF y dejar otros editables. En lugar de utilizar el código para aplanar todos los campos del formulario, puede optar por aplanar solo los campos del formulario deseados según sus nombres u otros criterios.
+R: Sí, puede aplanar selectivamente campos de formulario específicos en un documento PDF y dejar otros editables. En lugar de utilizar el código para aplanar todos los campos del formulario, puede optar por aplanar sólo los campos del formulario deseados según sus nombres u otros criterios.

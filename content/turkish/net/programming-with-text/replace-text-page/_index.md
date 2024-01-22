@@ -155,7 +155,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
  Yer değiştirmek`"ReplaceTextPage.pdf"` gerçek dosya adı ile.
 
-#### S: Bu yaklaşımı kullanarak birden fazla sayfadaki metni değiştirebilir miyim?
+#### S: Bu yaklaşımı kullanarak birden çok sayfadaki metni değiştirebilir miyim?
 
  C: Evet, işlemi istediğiniz her sayfa için tekrarlayarak birden fazla sayfadaki metni değiştirebilirsiniz. Sayfa dizinini değiştirin (örn.`pdfDocument.Pages[2]`) üzerinde çalışmak istediğiniz sayfayı belirtmek için.
 

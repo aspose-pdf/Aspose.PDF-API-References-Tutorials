@@ -1,7 +1,7 @@
 ---
 title: PDF till XPS
 linktitle: PDF till XPS
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg för steg guide för att konvertera PDF till XPS med Aspose.PDF för .NET.
 type: docs
 weight: 220

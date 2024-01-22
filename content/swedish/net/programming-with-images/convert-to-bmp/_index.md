@@ -1,7 +1,7 @@
 ---
 title: Konvertera till BMP
 linktitle: Konvertera till BMP
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Konvertera enkelt PDF till individuella BMP-bilder med Aspose.PDF för .NET.
 type: docs
 weight: 90

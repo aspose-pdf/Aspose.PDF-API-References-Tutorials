@@ -1,7 +1,7 @@
 ---
 title: Ärv Zooma in PDF-fil
 linktitle: Ärv Zooma in PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Ärv enkelt bokmärkeszoom i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 90

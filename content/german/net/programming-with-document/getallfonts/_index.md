@@ -64,7 +64,7 @@ In diesem Tutorial haben wir besprochen, wie Sie mit Aspose.PDF für .NET alle i
 
 #### F: Warum sollte ich alle in einem PDF-Dokument verwendeten Schriftarten benötigen?
 
-A: Das Abrufen aller in einem PDF-Dokument verwendeten Schriftarten kann nützlich sein, wenn Sie die Schriftarten für verschiedene Zwecke programmgesteuert analysieren oder bearbeiten müssen, beispielsweise zum Ersetzen oder Anpassen von Schriftarten.
+A: Das Abrufen aller in einem PDF-Dokument verwendeten Schriftarten kann hilfreich sein, wenn Sie die Schriftarten für verschiedene Zwecke programmgesteuert analysieren oder bearbeiten müssen, beispielsweise zum Ersetzen oder Anpassen von Schriftarten.
 
 #### F: Wie kann ich mit Aspose.PDF für .NET alle in einem PDF-Dokument verwendeten Schriftarten abrufen?
 

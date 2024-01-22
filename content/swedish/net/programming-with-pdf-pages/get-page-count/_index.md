@@ -1,7 +1,7 @@
 ---
 title: Hämta sidräkning i PDF-fil
 linktitle: Hämta sidräkning i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg guide för att få sidräkningen i PDF-fil med Aspose.PDF för .NET. Lätt att följa och implementera i dina projekt.
 type: docs
 weight: 80
@@ -82,7 +82,7 @@ S: För att få sidantalet för en PDF-fil kan du följa dessa steg:
 1.  Instantiera en`Document` objekt med hjälp av`Document` klass av Aspose.PDF.
 2.  Lägg till en sida i dokumentet med hjälp av`Add()` metod för dokumentet`Pages` samling.
 3.  Skapa sidinnehåll genom att lägga till`TextFragment` objekt mot`Page` föremål`Paragraphs` samling.
-4.  Bearbeta dokumentstyckena genom att ringa till`ProcessParagraphs()` metod för att beräkna antalet sidor korrekt.
+4.  Bearbeta dokumentets stycken genom att ringa till`ProcessParagraphs()` metod för att beräkna antalet sidor korrekt.
 5.  Få tillgång till`Count` egendom av`Pages` samling för att se antalet sidor i dokumentet.
 
 #### F: Vad händer om jag lägger till mer innehåll i PDF-dokumentet efter att ha bearbetat stycken? Kommer sidräkningen att uppdateras automatiskt?

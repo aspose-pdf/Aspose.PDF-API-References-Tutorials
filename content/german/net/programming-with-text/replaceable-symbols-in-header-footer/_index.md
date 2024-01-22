@@ -48,7 +48,7 @@ page.PageInfo.Margin = marginInfo;
 
 ## Schritt 4: Kopfzeile mit austauschbaren Symbolen hinzufügen
 
- Wir erstellen ein`HeaderFooter` Objekt für die Seite und fügen Sie ein hinzu`TextFragment` mit austauschbaren Symbolen dazu.
+ Wir erstellen eine`HeaderFooter` Objekt für die Seite und fügen Sie ein hinzu`TextFragment` mit austauschbaren Symbolen dazu.
 
 ```csharp
 HeaderFooter hfFirst = new HeaderFooter();

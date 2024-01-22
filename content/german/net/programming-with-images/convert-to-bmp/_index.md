@@ -97,7 +97,7 @@ A: Durch die Angabe des Dokumentverzeichnisses wird sichergestellt, dass das PDF
 
  A: Die`Document` Mit der Klasse können Sie PDF-Dokumente öffnen, bearbeiten und speichern. In diesem Fall wird es zum Laden des PDF-Dokuments verwendet, das Sie in BMP-Bilder konvertieren möchten.
 
-####  F: Welche Rolle spielt das`BmpDevice` class play in the conversion process?
+####  F: Welche Rolle spielt das?`BmpDevice` class play in the conversion process?
 
  A: Die`BmpDevice` Die Klasse hilft beim Konvertieren von PDF-Seiten in BMP-Bilder. Sie können Attribute wie Breite, Höhe, Auflösung und Seitengröße für die resultierenden BMP-Bilder angeben.
 

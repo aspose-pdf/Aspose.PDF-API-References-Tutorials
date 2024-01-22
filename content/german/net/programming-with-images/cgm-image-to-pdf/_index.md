@@ -89,4 +89,4 @@ A: Die Konvertierung von CGM-Bildern in PDF verbessert die Portabilität von Dok
 
 #### F: Gibt es Einschränkungen beim CGM-zu-PDF-Konvertierungsprozess mit Aspose.PDF für .NET?
 
-A: Obwohl Aspose.PDF für .NET vielseitig ist, erfordern komplexe CGM-Bilder mit komplizierten Details möglicherweise zusätzliche Anpassungen, um eine optimale Konvertierung sicherzustellen.
+A: Während Aspose.PDF für .NET vielseitig ist, erfordern komplexe CGM-Bilder mit komplizierten Details möglicherweise zusätzliche Anpassungen, um eine optimale Konvertierung sicherzustellen.

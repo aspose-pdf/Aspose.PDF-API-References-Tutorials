@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "PDFToTeX.pdf");
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
 
 ## Schritt 2: LaTeX-Speicheroptionen instanziieren
 Nachdem wir das Document-Objekt erstellt haben, werden wir die LaTeX-Speicheroptionen instanziieren. Verwenden Sie den folgenden Code:
@@ -48,7 +48,7 @@ string pathToOutputDirectory = dataDir;
 saveOptions.OutDirectoryPath = pathToOutputDirectory;
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem gewünschten Verzeichnis, in dem Sie die ausgegebene TeX-Datei speichern möchten.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem gewünschten Verzeichnis, in dem Sie die ausgegebene TeX-Datei speichern möchten.
 
 ## Schritt 4: Speichern der resultierenden TeX-Datei
 Jetzt speichern wir die konvertierte PDF-Datei im TeX-Format. Verwenden Sie den folgenden Code:

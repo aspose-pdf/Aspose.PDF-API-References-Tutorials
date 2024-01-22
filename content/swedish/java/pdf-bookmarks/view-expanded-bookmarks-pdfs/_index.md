@@ -36,7 +36,7 @@ Importera Aspose.PDF-biblioteket i ditt Java-projekt. Här är ett enkelt exempe
 import com.aspose.pdf.*;
 ```
 
-### Steg 3: Laddar PDF-dokumentet
+### Steg 3: Ladda PDF-dokumentet
 Ladda sedan in PDF-dokumentet du vill arbeta med:
 
 ```java

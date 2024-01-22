@@ -43,7 +43,7 @@ Enfin, nous enregistrons le fichier PDF mis à jour sous le nom "DeleteAllAttach
 pdfDocument.Save(dataDir + "DeleteAllAttachments_out.pdf");
 ```
 
-### Exemple de code source pour supprimer toutes les pièces jointes à l'aide d'Aspose.PDF pour .NET 
+### Exemple de code source pour supprimer toutes les pièces jointes à l’aide d’Aspose.PDF pour .NET 
 
 ```csharp
 // Le chemin d'accès au répertoire des documents.

@@ -115,7 +115,7 @@ A: Bevor Sie beginnen, stellen Sie sicher, dass Sie über grundlegende Kenntniss
 
 #### F: Wie richte ich die Entwicklungsumgebung ein?
 
-A: Befolgen Sie die bereitgestellten Schritte zum Einrichten Ihrer Entwicklungsumgebung, einschließlich der Erstellung eines neuen C#-Projekts in Visual Studio und des Imports der erforderlichen Namespaces.
+A: Befolgen Sie die bereitgestellten Schritte, um Ihre Entwicklungsumgebung einzurichten, einschließlich der Erstellung eines neuen C#-Projekts in Visual Studio und des Imports der erforderlichen Namespaces.
 
 #### F: Wie kann ich feststellen, ob eine PDF-Datei verschlüsselt ist?
 

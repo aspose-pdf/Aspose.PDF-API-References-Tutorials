@@ -1,7 +1,7 @@
 ---
 title: Dynamisk XFA till Acro Form
 linktitle: Dynamisk XFA till Acro Form
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Konvertera enkelt dynamiska XFA To-formulär till vanliga AcroForm-formulär med Aspose.PDF för .NET.
 type: docs
 weight: 70

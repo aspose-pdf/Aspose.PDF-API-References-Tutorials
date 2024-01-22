@@ -121,7 +121,7 @@ textFragments = absorber.TextFragments;
 foreach (TextFragment fragment in textFragments)
 {
 	ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-	// Imposta un testo molto lungo
+	// Imposta testo molto lungo
 	field.AlternateName = "Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
 							" sed do eiusmod tempor incididunt ut labore et dolore magna" +
 							" aliqua. Ut enim ad minim veniam, quis nostrud exercitation" +
@@ -167,7 +167,7 @@ using Aspose.Pdf.Text;
 
  R: Nel passaggio 5, caricherai il documento creato utilizzando il file`Document` costruttore e trova i frammenti di testo che richiedono descrizioni comandi utilizzando il file`TextFragmentAbsorber`.
 
-#### D: Come posso aggiungere descrizioni comandi ai frammenti di testo?
+#### D: Come posso aggiungere descrizioni comando ai frammenti di testo?
 
  R: Nel passaggio 6, scorrerai i frammenti di testo estratti e creerai pulsanti invisibili nelle loro posizioni. Il testo della descrizione comando è assegnato al file`AlternateName` proprietà del`ButtonField`che viene aggiunto al modulo del documento.
 

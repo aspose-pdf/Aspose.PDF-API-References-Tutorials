@@ -1,7 +1,7 @@
 ---
 title: Integrera med databas i PDF-fil
 linktitle: Integrera med databas i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Bädda in data från en databas i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 120

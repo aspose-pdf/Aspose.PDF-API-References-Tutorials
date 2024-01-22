@@ -1,6 +1,6 @@
 ---
-title: Entfernen Sie die Aktion „Dokument öffnen“ mit Java aus der PDF-Datei
-linktitle: Entfernen Sie die Aktion „Dokument öffnen“ mit Java aus der PDF-Datei
+title: Entfernen Sie die Aktion „Dokument öffnen“ aus der PDF-Datei mit Java
+linktitle: Entfernen Sie die Aktion „Dokument öffnen“ aus der PDF-Datei mit Java
 second_title: Aspose.PDF Java PDF-Verarbeitungs-API
 description: Erfahren Sie, wie Sie mit Java und Aspose.PDF für Java die Aktion „Dokument öffnen“ aus PDF-Dateien entfernen. Verbessern Sie die Sicherheit und Anpassung.
 type: docs

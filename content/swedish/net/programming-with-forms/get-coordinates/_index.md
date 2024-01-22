@@ -1,7 +1,7 @@
 ---
 title: Få PDF-formulärfältkoordinater
 linktitle: Få PDF-formulärfältkoordinater
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Få enkelt PDF-formulärfältkoordinater i dina PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 120

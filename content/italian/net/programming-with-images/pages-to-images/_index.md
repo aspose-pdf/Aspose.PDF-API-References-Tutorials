@@ -7,7 +7,7 @@ type: docs
 weight: 200
 url: /it/net/programming-with-images/pages-to-images/
 ---
-In questo tutorial ti guideremo passo dopo passo a convertire le pagine di un documento PDF in singole immagini utilizzando la libreria Aspose.PDF per .NET. Il codice sorgente C# fornito mostra come aprire un documento PDF, creare immagini da ogni pagina e salvarle. Spiegheremo ogni passaggio in dettaglio per aiutarti a comprendere il processo in profondità.
+In questo tutorial ti guideremo passo dopo passo a convertire le pagine di un documento PDF in singole immagini utilizzando la libreria Aspose.PDF per .NET. Il codice sorgente C# fornito mostra come aprire un documento PDF, creare immagini da ciascuna pagina e salvarle. Spiegheremo ogni passaggio in dettaglio per aiutarti a comprendere il processo in profondità.
 
 ## Prerequisiti
 Prima di iniziare, assicurati di avere i seguenti elementi:

@@ -1,7 +1,7 @@
 ---
 title: Extrahera text från sidregion i PDF-fil
 linktitle: Extrahera text från sidregion i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du extraherar text från en specifik region på en sida i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 190

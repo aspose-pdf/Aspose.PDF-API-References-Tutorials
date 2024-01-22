@@ -1,7 +1,7 @@
 ---
 title: Stiltabellcell
 linktitle: Stiltabellcell
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du formaterar tabellceller med Aspose.PDF för .NET. Steg-för-steg-guide för att skapa och anpassa tabeller.
 type: docs
 weight: 160

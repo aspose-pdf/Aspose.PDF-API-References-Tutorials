@@ -42,7 +42,7 @@ string outputBinImageFile = dataDir + "37116-bin_out.tif";
 Resolution resolution = new Resolution(300);
 ```
 
-## 5. Adım: TiffSettings nesnesini oluşturun
+## Adım 5: TiffSettings nesnesini oluşturun
 
  Oluşturmak`TiffSettings`Çıkış TIFF dosyasının ayarlarını belirtmek için nesne. Bu örnekte, LZW sıkıştırmasını ve piksel başına 1 bitlik (1 bpp formatı) renk derinliğini kullanıyoruz.
 

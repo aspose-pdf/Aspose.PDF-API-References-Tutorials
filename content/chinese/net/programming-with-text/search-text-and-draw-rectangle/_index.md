@@ -142,7 +142,7 @@ Console.WriteLine("\nRectangle drawn successfully on searched text.\nFile saved 
 
 答：本教程提供了有关如何在 PDF 文档中的特定文本段周围定位和绘制矩形的全面指南。它演示了设置项目、加载 PDF 文档、启用正则表达式搜索、在找到的文本段周围绘制矩形以及保存修改后的 PDF 的过程。
 
-#### 问：学习本教程需要什么先决条件？
+#### 问：学习本教程需要满足哪些先决条件？
 
 答：在开始本教程之前，您应该对 C# 编程语言有基本的了解。此外，您需要安装 Aspose.PDF for .NET 库。您可以从 Aspose 网站获取它或使用 NuGet 将其安装到您的项目中。
 

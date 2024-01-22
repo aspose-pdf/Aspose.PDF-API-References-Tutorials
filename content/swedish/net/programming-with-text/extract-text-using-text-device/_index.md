@@ -1,7 +1,7 @@
 ---
 title: Extrahera text med hjälp av textenhet
 linktitle: Extrahera text med hjälp av textenhet
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du extraherar text från ett PDF-dokument med hjälp av textenheten i Aspose.PDF för .NET.
 type: docs
 weight: 210

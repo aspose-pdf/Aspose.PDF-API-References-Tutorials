@@ -83,7 +83,7 @@ Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF dosyasının şifresini baş
 
 #### S: Bu eğitimin amacı nedir?
 
-C: Bu eğitimin amacı, Aspose.PDF for .NET kullanarak bir PDF dosyasının şifresini çözme sürecinde size rehberlik etmektir. Kitaplık, mevcut bir PDF belgesinden parolayı kaldırmanıza ve güncellenmiş sürümü kaydetmenize olanak tanıyarak dosyaya daha kolay erişim sağlar.
+C: Bu eğitimin amacı Aspose.PDF for .NET kullanarak bir PDF dosyasının şifresini çözme sürecinde size rehberlik etmektir. Kitaplık, mevcut bir PDF belgesinden parolayı kaldırmanıza ve güncellenmiş sürümü kaydetmenize olanak tanıyarak dosyaya daha kolay erişim sağlar.
 
 #### S: Başlamadan önce hangi önkoşullar gereklidir?
 
@@ -91,7 +91,7 @@ C: Başlamadan önce, C# programlama dili hakkında temel bilgiye sahip olduğun
 
 #### S: Geliştirme ortamını nasıl kurarım?
 
-C: Visual Studio'da yeni bir C# projesi oluşturmak, NuGet Paket Yöneticisi'ni kullanarak .NET için Aspose.PDF kitaplığını yüklemek ve gerekli ad alanlarını içe aktarmak da dahil olmak üzere geliştirme ortamınızı kurmak için sağlanan adımları izleyin.
+C: Visual Studio'da yeni bir C# projesi oluşturmak, NuGet Paket Yöneticisi'ni kullanarak .NET için Aspose.PDF kitaplığını yüklemek ve gerekli ad alanlarını içe aktarmak da dahil olmak üzere geliştirme ortamınızı kurmak için verilen adımları izleyin.
 
 #### S: Mevcut bir PDF belgesini nasıl açarım?
 

@@ -1,7 +1,7 @@
 ---
 title: Lägg till HTML med DOM
 linktitle: Lägg till HTML med DOM
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du lägger till HTML-innehåll med DOM i Aspose.PDF för .NET.
 type: docs
 weight: 40

@@ -71,7 +71,7 @@ doc.EmbeddedFiles.Add(fileSpecification);
 doc.Convert(dataDir + "log.txt", Aspose.Pdf.PdfFormat.PDF_A_3A, ConvertErrorAction.Delete);
 ```
 
-在上面的代码中，我们使用`Convert`方法使用以下方法转换文档`"log.txt"`日志文件。我们使用以下命令指定输出格式`PdfFormat.PDF_A_3A`枚举并指定对转换错误采取的操作`ConvertErrorAction.Delete`.
+在上面的代码中，我们使用`Convert`方法使用以下方法转换文档`"log.txt"`日志档案。我们使用以下命令指定输出格式`PdfFormat.PDF_A_3A`枚举并指定对转换错误采取的操作`ConvertErrorAction.Delete`.
 
 ## 第 5 步：保存结果文件
 

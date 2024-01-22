@@ -29,7 +29,7 @@ Document pdfDocument = new Document(dataDir + "PDFToDOC.pdf");
 
  Assicurati di sostituire`"YOUR DOCUMENTS DIRECTORY"` con la directory effettiva in cui si trova il file PDF.
 
-## Passaggio 2: converti il PDF nel formato DOC
+## Passaggio 2: converti il PDF in formato DOC
 Dopo aver aperto il file PDF, possiamo procedere con la conversione in formato DOC. Utilizza il seguente codice:
 
 ```csharp

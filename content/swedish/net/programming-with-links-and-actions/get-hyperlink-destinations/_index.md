@@ -1,7 +1,7 @@
 ---
 title: Få hyperlänkdestinationer i PDF-fil
 linktitle: Få hyperlänkdestinationer i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du extraherar hyperlänkdestinationer i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 60
@@ -66,7 +66,7 @@ foreach(Aspose.Pdf.Page page in document.Pages)
 
 Denna kod går igenom varje sida i dokumentet och väljer hyperlänksanteckningarna som finns på varje sida. Sedan lagrar den dessa kommentarer i en lista och skriver ut måladressen för varje länk.
 
-## Steg 5: Skaffa hyperlänkdestinationer
+## Steg 5: Få hyperlänkdestinationer
 
 Det sista steget är att extrahera hyperlänkdestinationerna från hyperlänksanteckningarna. Följande kod visar hur du gör:
 

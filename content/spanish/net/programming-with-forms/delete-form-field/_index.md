@@ -64,7 +64,7 @@ En este tutorial, aprendimos cómo eliminar un campo de formulario usando Aspose
 
 #### P: ¿Puedo eliminar varios campos de formulario a la vez usando Aspose.PDF para .NET?
 
- R: Sí, puede eliminar varios campos de formulario a la vez usando Aspose.PDF para .NET. Simplemente llama al`Delete` método para cada campo del formulario que desee eliminar.
+ R: Sí, puede eliminar varios campos de formulario a la vez usando Aspose.PDF para .NET. Simplemente llame al`Delete` método para cada campo del formulario que desee eliminar.
 
 #### P: ¿Cómo puedo comprobar si existe un campo de formulario antes de intentar eliminarlo?
 

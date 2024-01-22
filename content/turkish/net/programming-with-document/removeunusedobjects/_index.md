@@ -82,7 +82,7 @@ pdfDocument.Save(dataDir);
 
 #### S: Bir PDF belgesinde kullanılmayan nesneler nelerdir?
 
-C: Bir PDF belgesindeki kullanılmayan nesneler, artık belgenin içeriğinde referans verilmeyen veya kullanılmayan yazı tipleri, resimler, açıklamalar veya diğer kaynaklar gibi öğelerdir. Kullanılmayan bu nesnelerin kaldırılması, dosya boyutunu önemli ölçüde azaltabilir ve PDF belgesini optimize edebilir.
+C: PDF belgesindeki kullanılmayan nesneler, yazı tipleri, resimler, açıklamalar veya belgenin içeriğinde artık referans verilmeyen veya kullanılmayan diğer kaynaklar gibi öğelerdir. Kullanılmayan bu nesnelerin kaldırılması, dosya boyutunu önemli ölçüde azaltabilir ve PDF belgesini optimize edebilir.
 
 #### S: Kullanılmayan nesnelerin kaldırılması PDF belgelerine nasıl yarar sağlar?
 

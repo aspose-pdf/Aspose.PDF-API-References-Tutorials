@@ -18,7 +18,7 @@ url: /ru/net/programming-with-text/remove-all-text/
 
 ## Шаг 1. Настройте каталог документов
 
- Во-первых, вам нужно указать путь к каталогу, в котором находятся ваши PDF-файлы. Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir` переменная с путем к вашим PDF-файлам.
+ Сначала вам нужно указать путь к каталогу, в котором находятся ваши PDF-файлы. Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir` переменная с путем к вашим PDF-файлам.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -65,7 +65,7 @@ for (int i = 1; i <= pdfDocument.Pages.Count; i++)
 {
 	Page page = pdfDocument.Pages[i];
 	OperatorSelector operatorSelector = new OperatorSelector(new Aspose.Pdf.Operators.TextShowOperator());
-	// Выделить весь текст на странице
+	// Выбрать весь текст на странице
 	page.Contents.Accept(operatorSelector);
 	// Удалить весь текст
 	page.Contents.Delete(operatorSelector.Selected);

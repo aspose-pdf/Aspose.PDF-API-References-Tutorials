@@ -1,7 +1,7 @@
 ---
 title: Ta bort hyperlänkar efter konvertering från HTML
 linktitle: Ta bort hyperlänkar efter konvertering från HTML
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg för steg guide för att ta bort hyperlänkar efter att ha konverterat HTML till PDF med Aspose.PDF för .NET.
 type: docs
 weight: 250

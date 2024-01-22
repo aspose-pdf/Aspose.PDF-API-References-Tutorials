@@ -16,7 +16,7 @@ Anmerkungen sind das Tor zur Interaktivität in PDFs und unsere Tutorials führe
 
 ## Verbesserung der Dokumentenzusammenarbeit
 
-Bei Anmerkungen geht es nicht nur um visuelle Verbesserungen; Sie erleichtern auch die Zusammenarbeit und Kommunikation innerhalb von PDF-Dokumenten. Unsere Tutorials befassen sich intensiv mit dem Aspekt der Zusammenarbeit und zeigen Ihnen, wie Sie Kommentare und Notizen hinzufügen und sogar auf PDF-Seiten zeichnen. Ganz gleich, ob Sie Anmerkungen für den persönlichen Gebrauch, für die Zusammenarbeit im Team oder für Kundenfeedback machen, Sie werden entdecken, wie Aspose.PDF für Java den Prozess vereinfacht und Ihre PDFs interaktiver und informativer macht.
+Bei Anmerkungen geht es nicht nur um visuelle Verbesserungen. Sie erleichtern auch die Zusammenarbeit und Kommunikation innerhalb von PDF-Dokumenten. Unsere Tutorials befassen sich intensiv mit dem Aspekt der Zusammenarbeit und zeigen Ihnen, wie Sie Kommentare und Notizen hinzufügen und sogar auf PDF-Seiten zeichnen. Ganz gleich, ob Sie Anmerkungen für den persönlichen Gebrauch, für die Teamzusammenarbeit oder für Kundenfeedback hinzufügen, Sie werden entdecken, wie Aspose.PDF für Java den Prozess vereinfacht und Ihre PDFs interaktiver und informativer macht.
 
 ## Tutorials zu PDF-Anmerkungen
 ### [Fügen Sie Kommentare zu PDF-Dokumenten hinzu](./add-comments-pdf-documents/)

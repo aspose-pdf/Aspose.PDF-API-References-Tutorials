@@ -1,7 +1,7 @@
 ---
 title: Illustration strukturelement
 linktitle: Illustration strukturelement
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg-guide för att använda illustrationstillgångar med Aspose.PDF för .NET. Förbättra presentationen av dina PDF-filer med bilder.
 type: docs
 weight: 100

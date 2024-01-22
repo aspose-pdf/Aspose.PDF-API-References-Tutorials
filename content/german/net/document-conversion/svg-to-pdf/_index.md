@@ -30,7 +30,7 @@ Aspose.Pdf.LoadOptions loadopt = new Aspose.Pdf.SvgLoadOptions();
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "SVGToPDF.svg", loadopt);
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre SVG-Datei befindet.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre SVG-Datei befindet.
 
 ## Schritt 2: In PDF konvertieren
  Der zweite Schritt besteht darin, das SVG-Dokument mithilfe von in ein PDF-Dokument zu konvertieren`Save` Methode der`Document` Objekt. Verwenden Sie den folgenden Code:

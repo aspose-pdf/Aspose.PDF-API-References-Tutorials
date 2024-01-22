@@ -1,7 +1,7 @@
 ---
 title: Kryptera PDF-fil
 linktitle: Kryptera PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Kryptera din PDF-fil säkert med Aspose.PDF för .NET.
 type: docs
 weight: 60
@@ -96,7 +96,7 @@ S: Följ de medföljande stegen för att importera de nödvändiga biblioteken, 
 
 S: Aspose.PDF för .NET stöder olika krypteringsalgoritmer, inklusive RC4x40, RC4x128, AESx128 och AESx256. Du kan välja den krypteringsalgoritm som bäst passar dina säkerhetskrav.
 
-#### F: Kan jag anpassa användar- och ägarlösenordet?
+#### F: Kan jag anpassa användar- och ägarlösenorden?
 
 S: Ja, du kan ange anpassade användar- och ägarlösenord när du krypterar PDF:en. Användarlösenordet används för att öppna och visa PDF-filen, medan ägarlösenordet ger ytterligare åtkomsträttigheter.
 

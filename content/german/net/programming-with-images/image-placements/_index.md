@@ -24,7 +24,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "PlacementImage.pdf");
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentenverzeichnis, das die PDF-Datei enthält.
+ Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentenverzeichnis, das die PDF-Datei enthält.
 
 ## Schritt 3: Platzierungsinformationen aus Bildern extrahieren
  Nachdem wir nun das PDF-Dokument geladen haben, können wir die Platzierungsinformationen aus den Bildern extrahieren. Wir werden verwenden`ImagePlacementAbsorber`um Bildstellen von der ersten Seite des Dokuments zu übernehmen.

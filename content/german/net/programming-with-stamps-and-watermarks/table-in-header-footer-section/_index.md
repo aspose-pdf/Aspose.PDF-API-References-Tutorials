@@ -200,7 +200,7 @@ A: Der Code fügt die Tabelle zur Absatzsammlung des Kopfzeilenabschnitts hinzu,
 
 #### F: Kann ich der Tabelle nach Bedarf weitere Zeilen und Zellen hinzufügen?
 
- A: Auf jeden Fall können Sie der Tabelle weitere Zeilen und Zellen hinzufügen, indem Sie die verwenden`Rows.Add()` Und`Cells.Add()` Methoden. Dadurch können Sie den Tabelleninhalt nach Ihren Wünschen strukturieren.
+ A: Auf jeden Fall können Sie der Tabelle weitere Zeilen und Zellen hinzufügen, indem Sie die verwenden`Rows.Add()` Und`Cells.Add()` Methoden. Dadurch können Sie den Tabelleninhalt nach Wunsch strukturieren.
 
 #### F: Ist es möglich, die Breite der Tabellenspalten anzupassen?
  A: Ja, Sie können die Breite der Tabellenspalten mit anpassen`ColumnWidths` Eigentum. Dadurch können Sie das Layout der Tabelle steuern.

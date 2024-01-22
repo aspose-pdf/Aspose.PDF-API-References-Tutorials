@@ -1,7 +1,7 @@
 ---
 title: Marginaler eller stoppning
 linktitle: Marginaler eller stoppning
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du ställer in marginaler eller utfyllnad i en tabell med Aspose.PDF för .NET.
 type: docs
 weight: 140
@@ -105,7 +105,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 page.Paragraphs.Add(tab1);
 // Ställ in med tabellens kolumnbredder
 tab1.ColumnWidths = "50 50 50";
-// Ställ in standardcellkant med hjälp av BorderInfo-objektet
+// Ställ in standardcellkant med BorderInfo-objekt
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 // Ställ in tabellkanten med ett annat anpassat BorderInfo-objekt
 tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);

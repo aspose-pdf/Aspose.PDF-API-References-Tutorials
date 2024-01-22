@@ -1,6 +1,6 @@
 ---
-title: حدد زر الاختيار في مستند PDF
-linktitle: حدد زر الاختيار في مستند PDF
+title: حدد زر الاختيار في وثيقة PDF
+linktitle: حدد زر الاختيار في وثيقة PDF
 second_title: Aspose.PDF لمرجع .NET API
 description: تعرف على كيفية تحديد زر اختيار في مستند PDF باستخدام Aspose.PDF لـ .NET.
 type: docs

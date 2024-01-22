@@ -143,7 +143,7 @@ pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.p
 
 ### 常见问题解答
 
-#### 问：使用内联段落将图像和文本添加到 PDF 文档的页眉有什么优势？
+#### 问：使用内联段落将图像和文本添加到 PDF 文档的页眉有什么好处？
 
 答：使用内联段落可以让您将图像和文本无缝集成在同一段落中，从而精确控制它们的位置和格式。此方法对于创建具有视觉元素的自定义标题特别有用。
 

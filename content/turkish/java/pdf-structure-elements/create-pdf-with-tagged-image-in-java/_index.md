@@ -84,7 +84,7 @@ Aspose.PDF for Java'yı yüklemek için şu adımları izleyin:
 
 Aspose.PDF for Java ticari bir kütüphanedir ve deneme sürümüyle birlikte gelir. Ancak tam kapsamlı kullanım için Aspose'tan lisans satın almanız gerekecektir.
 
-### PDF'deki etiketli görsellere alternatif metin eklemek mümkün müdür?
+### PDF'deki etiketli görsellere alternatif metin eklemek mümkün mü?
 
 Evet, Aspose.PDF for Java'yı kullanarak PDF'deki etiketli görsellere alternatif metin (alt metin) ekleyebilirsiniz. Bu erişilebilirlik açısından önemlidir.
 

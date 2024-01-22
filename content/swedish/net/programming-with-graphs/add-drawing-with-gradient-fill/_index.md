@@ -1,7 +1,7 @@
 ---
 title: Lägg till ritning med gradientfyllning
 linktitle: Lägg till ritning med gradientfyllning
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du lägger till en ritning med gradientfyllning med Aspose.PDF för .NET. Steg för steg handledning för att skapa attraktiva PDF-dokument.
 type: docs
 weight: 20

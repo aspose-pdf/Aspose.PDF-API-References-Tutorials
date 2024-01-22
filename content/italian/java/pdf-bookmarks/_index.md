@@ -28,7 +28,7 @@ Scopri come impostare i segnalibri all'inizio delle pagine PDF utilizzando Aspos
 Scopri come eliminare i segnalibri dai file PDF senza sforzo utilizzando Aspose.PDF per Java. La nostra guida passo passo e il codice di esempio lo rendono semplice.
 ### [Visualizza segnalibri espansi nei PDF](./view-expanded-bookmarks-pdfs/)
 Scopri come visualizzare i segnalibri espansi nei PDF utilizzando Aspose.PDF per Java. Migliora la navigazione dei documenti con una guida passo passo.
-### [Recupera segnalibri da documenti PDF](./retrieve-bookmarks-pdf-documents/)
+### [Recupera i segnalibri dai documenti PDF](./retrieve-bookmarks-pdf-documents/)
 Scopri come recuperare i segnalibri PDF in modo efficiente utilizzando Aspose.PDF per Java in questa guida completa.
 ### [Aggiorna i segnalibri nei PDF](./update-bookmarks-pdfs/)
 Scopri come aggiornare i segnalibri PDF in modo efficiente utilizzando Aspose.PDF per Java. La nostra guida passo passo semplifica il processo.

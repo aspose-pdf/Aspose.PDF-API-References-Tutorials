@@ -1,6 +1,6 @@
 ---
-title: Establecer título del botón de radio
-linktitle: Establecer título del botón de radio
+title: Establecer título del botón de opción
+linktitle: Establecer título del botón de opción
 second_title: Aspose.PDF para referencia de API .NET
 description: Aprenda a utilizar Aspose.PDF para .NET para configurar el título de un botón de opción en un formulario PDF.
 type: docs

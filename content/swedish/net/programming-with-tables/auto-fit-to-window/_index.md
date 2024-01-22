@@ -1,7 +1,7 @@
 ---
 title: Autopassa till fönster
 linktitle: Autopassa till fönster
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Steg-för-steg guide för att använda Aspose.PDF för .NET och uppnå autopassning till fönster i PDF-generering.
 type: docs
 weight: 50
@@ -111,7 +111,7 @@ sec1.Paragraphs.Add(tab1);
 tab1.ColumnWidths = "50 50 50";
 tab1.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
 
-// Ställ in standardcellkant med hjälp av BorderInfo-objektet
+// Ställ in standardcellkant med BorderInfo-objekt
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 
 // Ställ in tabellkanten med ett annat anpassat BorderInfo-objekt

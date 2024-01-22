@@ -136,7 +136,7 @@ C: Metin damgası eklemek, özel metni bir PDF belgesinin belirli bir sayfasına
 
 #### S: Aynı PDF belgesinin farklı sayfalarına birden fazla metin damgası eklemek mümkün müdür?
 
-C: Kesinlikle, aynı PDF belgesinin farklı sayfalarına birden fazla metin damgası ekleyebilirsiniz. Eğitimin sağladığı kod, metin damgasını eklemek için hedef sayfayı belirlemenize olanak tanır ve belge içindeki farklı sayfalar için onu çok yönlü hale getirir.
+C: Kesinlikle, aynı PDF belgesinin farklı sayfalarına birden fazla metin damgası ekleyebilirsiniz. Eğitimde sağlanan kod, metin damgasını eklemek için hedef sayfayı belirtmenize olanak tanır, böylece belge içindeki farklı sayfalar için çok yönlü hale gelir.
 
 #### S: Metin damgasının PDF belgesindeki konumunu nasıl belirlerim?
 

@@ -38,7 +38,7 @@ Bevor Sie die Lizenz hochladen, müssen Sie den Pfad zum Dokumentenverzeichnis a
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Unbedingt ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad zum Dokumentenverzeichnis auf Ihrem Computer.
+ Unbedingt austauschen`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad zum Dokumentenverzeichnis auf Ihrem Computer.
 
 ## Schritt 4: Initialisierung des Lizenzobjekts
 
@@ -57,7 +57,7 @@ FileStream myStream = new FileStream("PATH_TO_LICENSE_FILE", FileMode.Open);
 license.SetLicense(myStream);
 ```
 
- Unbedingt ersetzen`"PATH_TO_LICENSE_FILE"` mit dem tatsächlichen Pfad zur Lizenzdatei auf Ihrem Computer.
+ Unbedingt austauschen`"PATH_TO_LICENSE_FILE"` mit dem tatsächlichen Pfad zur Lizenzdatei auf Ihrem Computer.
 
 ## Schritt 6: Bestätigung des Lizenz-Uploads
 

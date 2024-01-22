@@ -101,13 +101,13 @@ Console.WriteLine("\nText replaced successfully based on a regular expression.\n
 
 ## Çözüm
 
-Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesindeki normal ifadeye dayalı metni nasıl değiştireceğinizi öğrendiniz. Adım adım kılavuzu izleyerek ve verilen C# kodunu çalıştırarak bir PDF belgesi yükleyebilir, normal ifade kullanarak metin arayabilir, onu değiştirebilir ve değiştirilen PDF'yi kaydedebilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesindeki normal ifadeye dayalı metni nasıl değiştireceğinizi öğrendiniz. Adım adım kılavuzu izleyerek ve verilen C# kodunu çalıştırarak bir PDF belgesi yükleyebilir, normal ifade kullanarak metin arayabilir, değiştirebilir ve değiştirilen PDF'yi kaydedebilirsiniz.
 
 ### SSS'ler
 
 #### S: "PDF Dosyasındaki Normal İfadedeki Metni Değiştirme" öğreticisinin amacı nedir?
 
-C: "PDF Dosyasındaki Normal İfadede Metni Değiştir" eğitimi, bir PDF belgesinde normal ifadeye dayalı metni aramak ve değiştirmek için Aspose.PDF kütüphanesini .NET kullanma sürecinde size rehberlik etmeyi amaçlamaktadır. Örnek C# koduyla birlikte adım adım bir kılavuz sağlar.
+C: "PDF Dosyasındaki Normal İfadede Metni Değiştir" eğitimi, bir PDF belgesinde normal ifadeye dayalı metni aramak ve değiştirmek için .NET için Aspose.PDF kütüphanesini kullanma sürecinde size rehberlik etmeyi amaçlamaktadır. Örnek C# koduyla birlikte adım adım bir kılavuz sağlar.
 
 #### S: Bir PDF belgesindeki metni değiştirmek için neden normal ifadeyi kullanmak isteyeyim?
 

@@ -1,7 +1,7 @@
 ---
 title: CGM-bild till PDF
 linktitle: CGM-bild till PDF
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Konvertera enkelt CGM-bild till PDF med Aspose.PDF för .NET.
 type: docs
 weight: 40
@@ -53,13 +53,13 @@ Grattis! Du har framgångsrikt konverterat en CGM-fil till PDF med Aspose.PDF f�
 
 #### F: Vad är CGM, och varför skulle jag behöva konvertera en CGM-bild till PDF?
 
-S: CGM står för Computer Graphics Metafile, ett filformat som används för 2D-vektorgrafik. Konvertering av CGM-bilder till PDF-format säkerställer bredare kompatibilitet, enklare delning och förbättrad dokumentintegrering.
+S: CGM står för Computer Graphics Metafile, ett filformat som används för 2D vektorgrafik. Konvertering av CGM-bilder till PDF-format säkerställer bredare kompatibilitet, enklare delning och förbättrad dokumentintegrering.
 
 #### F: Hur underlättar Aspose.PDF för .NET konverteringen av CGM-bilder till PDF?
 
  S: Aspose.PDF för .NET ger en enkel metod för att konvertera CGM-bilder till PDF med hjälp av`PdfProducer` klass, vilket gör processen effektiv och användarvänlig.
 
-#### F: Vad är syftet med att definiera dokumentkatalogen i konverteringsprocessen för CGM till PDF?
+#### F: Vad är syftet med att definiera dokumentkatalogen i CGM till PDF-konverteringsprocessen?
 
 S: Att specificera dokumentkatalogen är viktigt för att lokalisera CGM-indatafilen och bestämma utdatasökvägen för den resulterande PDF-filen.
 

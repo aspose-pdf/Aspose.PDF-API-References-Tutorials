@@ -1,7 +1,7 @@
 ---
 title: Bildinformation i PDF-fil
 linktitle: Bildinformation i PDF-fil
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Extrahera bildinformation i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 160

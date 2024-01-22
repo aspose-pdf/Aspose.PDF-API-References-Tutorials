@@ -129,7 +129,7 @@ R : Aspose.PDF pour .NET fournit un ensemble de classes et de méthodes qui vous
 
 #### Q : Comment les éléments de structure de l'illustration améliorent-ils la compréhension du contenu du document PDF ?
 
-R : Les éléments de structure d'illustration fournissent un contexte visuel et un support au contenu textuel d'un document PDF. Ils aident à transmettre des informations, des données ou des concepts complexes à travers des images et des figures, rendant le contenu plus facile à comprendre et à mémoriser.
+R : Les éléments de structure d’illustration fournissent un contexte visuel et un support au contenu textuel d’un document PDF. Ils aident à transmettre des informations, des données ou des concepts complexes à travers des images et des figures, rendant le contenu plus facile à comprendre et à mémoriser.
 
 #### Q : Quels types de contenu visuel peuvent être ajoutés à l’aide d’éléments de structure d’illustration ?
 

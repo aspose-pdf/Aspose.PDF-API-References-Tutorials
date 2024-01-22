@@ -43,7 +43,7 @@ Wir haben das Wurzelstrukturelement erhalten, das als Container für die Array-E
 
 ## Schritt 4: Erstellen des Array-Strukturelements
 
-Erstellen wir nun ein neues Tabellenstrukturelement für unser Dokument.
+Jetzt erstellen wir ein neues Tabellenstrukturelement für unser Dokument.
 
 ```csharp
 // Erstellen Sie das Array-Strukturelement
@@ -309,7 +309,7 @@ A: Ja, das Tutorial zeigt, wie man mithilfe von Schleifen mehrere Zeilen und Spa
 
 #### F: Was ist der Zweck der Validierung der PDF/UA-Konformität und wie kann ich diese Validierung durchführen?
 
- A: Durch die Validierung der PDF/UA-Konformität wird sichergestellt, dass das PDF-Dokument den Barrierefreiheitsstandards entspricht, sodass es für Benutzer mit Behinderungen besser zugänglich ist. Das Tutorial zeigt, wie Sie die PDF/UA-Konformität mithilfe von validieren`Validate()` Methode und generieren Sie einen XML-Bericht.
+ A: Durch die Validierung der PDF/UA-Konformität wird sichergestellt, dass das PDF-Dokument den Barrierefreiheitsstandards entspricht, wodurch es für Benutzer mit Behinderungen leichter zugänglich wird. Das Tutorial zeigt, wie Sie die PDF/UA-Konformität mithilfe von validieren`Validate()` Methode und generieren Sie einen XML-Bericht.
 
 #### F: Wie kann ich diese Konzepte auf meine eigenen .NET-Anwendungen anwenden?
 

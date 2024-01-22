@@ -1,7 +1,7 @@
 ---
 title: Platta formulär i PDF-dokument
 linktitle: Platta formulär i PDF-dokument
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Platta enkelt ut formulär i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 100

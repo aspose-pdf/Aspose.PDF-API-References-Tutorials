@@ -246,7 +246,7 @@ C: Evet, bir tablo satırındaki tek tek hücrelerin stillerini ve özelliklerin
 
 C: Öğreticide, tablo yapısı öğesine başlıklar, gövde satırları ve alt bilgi oluşturma ve ekleme örnekleri verilmektedir. Bu öğeler, eğitimde açıklanan özellikler kullanılarak daha da özelleştirilebilir.
 
-#### S: PDF/UA uyumluluğu nedir ve bunu etiketli PDF belgem için nasıl doğrulayabilirim?
+#### S: PDF/UA uyumluluğu nedir ve etiketli PDF belgem için bunu nasıl doğrulayabilirim?
 
  C: PDF/UA uyumluluğu, PDF belgesinin erişilebilirlik standartlarına uygun olmasını sağlayarak onu engelli kullanıcılar için daha erişilebilir hale getirir. Eğitimde PDF/UA uyumluluğunun nasıl doğrulanacağı gösterilmektedir.`Validate()` yöntemini kullanın ve bir XML uyumluluk raporu oluşturun.
 

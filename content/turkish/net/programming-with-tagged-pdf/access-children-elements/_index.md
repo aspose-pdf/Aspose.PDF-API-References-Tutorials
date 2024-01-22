@@ -151,7 +151,7 @@ C: Kod, bir PDF belgesinin nasıl yükleneceğini, etiketli içeriğe nasıl eri
 C: Evet, benzer teknikleri kullanarak alt öğelerin çeşitli diğer özelliklerine erişebilir ve bunları değiştirebilirsiniz. Kodda gösterilen özellikler (başlık, dil, gerçek metin vb.) yalnızca örnektir ve manipülasyona uygun daha fazla özellik ve yöntem keşfetmek için Aspose.PDF belgelerini inceleyebilirsiniz.
 
 #### S: PDF belgesinde hangi alt öğelere erişmek istediğimi nasıl belirlerim?
-C: Kod, kök öğenin alt öğelerine ve onun içindeki belirli bir öğeye erişmenin bir örneğini sağlar. Erişmek istediğiniz öğeleri, PDF belgesinin etiketli içeriğindeki hiyerarşilerine ve yapılarına göre tanımlayabilirsiniz.
+C: Kod, kök öğenin alt öğelerine ve içindeki belirli bir öğeye erişmenin bir örneğini sağlar. Erişmek istediğiniz öğeleri, PDF belgesinin etiketli içeriğindeki hiyerarşilerine ve yapılarına göre tanımlayabilirsiniz.
 
 #### S: Bu yaklaşımı kullanarak yeni alt öğeler eklemek veya mevcut olanları silmek mümkün müdür?
 

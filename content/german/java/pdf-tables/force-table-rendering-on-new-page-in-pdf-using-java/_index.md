@@ -92,7 +92,7 @@ Nachdem wir nun die Funktion zum Rendern von Force-Tabellen implementiert haben,
 
 Sie können das Erscheinungsbild der Tabelle weiter verbessern, indem Sie Stile wie Schriftgröße, Zellabstand und Rahmeneinstellungen anwenden, um sie optisch ansprechend zu gestalten.
 
-## Ausnahmen behandeln
+## Umgang mit Ausnahmen
 
 Bei der Arbeit mit der PDF-Generierung ist es wichtig, Ausnahmen ordnungsgemäß zu behandeln. Seien Sie auf mögliche Fehler vorbereitet und integrieren Sie Fehlerbehandlungsmechanismen in Ihren Java-Code.
 

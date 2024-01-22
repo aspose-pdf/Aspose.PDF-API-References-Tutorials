@@ -76,7 +76,7 @@ Passen Sie Text, Positionen und andere Eigenschaften nach Bedarf an.
 
 ## Schritt 6: Erstellen Sie einen TextBuilder und hängen Sie Textfragmente an
 
- Ein ... kreieren`TextBuilder` Objekt mit der`pdfPage` und hängen Sie die Textfragmente an die PDF-Seite an:
+ Ein ... kreieren`TextBuilder` Objekt mit dem`pdfPage` und hängen Sie die Textfragmente an die PDF-Seite an:
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(pdfPage);

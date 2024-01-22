@@ -34,7 +34,7 @@ Aspose.PDF per Java è una potente libreria che ti consente di lavorare con docu
 
 Inizia creando un nuovo progetto Java nel tuo IDE preferito. Assicurati di avere la libreria Aspose.PDF per Java aggiunta alle dipendenze del tuo progetto.
 
-### Passaggio 2: inizializzare il documento PDF
+### Passaggio 2: inizializza il documento PDF
 
 ```java
 // Importa le classi Aspose.PDF necessarie

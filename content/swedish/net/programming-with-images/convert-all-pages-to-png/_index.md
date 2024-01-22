@@ -1,7 +1,7 @@
 ---
 title: Konvertera alla sidor till PNG
 linktitle: Konvertera alla sidor till PNG
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Konvertera enkelt alla sidor i ett PDF-dokument till PNG-filer med Aspose.PDF för .NET.
 type: docs
 weight: 60
@@ -32,7 +32,7 @@ Document pdfDocument = new Document(dataDir + "ConvertAllPagesToPNG.pdf");
 ```csharp
 for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 {
-     // Skapa en stream för att spara PNG-bilden
+     // Skapa en ström för att spara PNG-bilden
      using (FileStream imageStream = new FileStream(dataDir + "image" + pageCount + "_out" + ".png", FileMode.Create))
      {
          // Skapa en PNG-enhet med de angivna attributen

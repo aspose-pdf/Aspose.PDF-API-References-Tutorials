@@ -22,7 +22,7 @@ Kodlamaya dalmadan önce Aspose.PDF for Java'yı kurmanız gerekecek. Bu adımla
 
 ## Bağımlılıklar Ekleme
 
- Aspose.PDF for Java'yı edindikten sonra bunu projenize bağımlılık olarak ekleyin. Maven kullanıyorsanız aşağıdaki bağımlılığı ekleyin.`pom.xml`:
+ Aspose.PDF for Java'yı edindikten sonra bunu projenize bağımlılık olarak ekleyin. Maven kullanıyorsanız aşağıdaki bağımlılığı ekleyin:`pom.xml`:
 
 ```xml
 <dependency>

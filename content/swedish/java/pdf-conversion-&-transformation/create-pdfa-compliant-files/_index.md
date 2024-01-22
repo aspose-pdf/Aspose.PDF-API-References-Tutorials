@@ -14,7 +14,7 @@ Att skapa PDF-dokument som följer PDF/A-standarden säkerställer att dina file
 
 ## Förstå PDF/A-efterlevnad
 
-PDF/A-efterlevnad garanterar att ett dokument kommer att återges på exakt samma sätt i framtiden som det gör idag, oavsett vilken mjukvara eller hårdvara som används. Det säkerställer också att texten i dokumentet är sökbar och valbar.
+PDF/A-kompatibilitet garanterar att ett dokument kommer att återges på exakt samma sätt i framtiden som det gör idag, oavsett vilken mjukvara eller hårdvara som används. Det säkerställer också att texten i dokumentet är sökbar och valbar.
 
 ## Konfigurera din utvecklingsmiljö
 

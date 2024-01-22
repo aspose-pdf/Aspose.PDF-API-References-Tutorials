@@ -1,7 +1,7 @@
 ---
 title: Ställ in radioknappstext
 linktitle: Ställ in radioknappstext
-second_title: Aspose.PDF för .NET API Referens
+second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du använder Aspose.PDF för .NET för att ställa in bildtexten för en alternativknapp i en PDF-form.
 type: docs
 weight: 280
@@ -30,7 +30,7 @@ Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButt
 
 Se till att PDF-filen som innehåller formuläret finns i den angivna dokumentkatalogen.
 
-## Steg 3: Redigera alternativknapptexten
+## Steg 3: Redigera alternativknappstexten
 
 Vi går igenom formulärfältens namn och söker efter alternativknappsfält. Om ett matchande fält hittas skapar vi ett nytt alternativ med en anpassad bildtext och lägger till det i det befintliga fältet.
 

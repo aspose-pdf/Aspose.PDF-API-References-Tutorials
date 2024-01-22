@@ -64,19 +64,24 @@ Bu eğitimde, Java ve Aspose.PDF for Java kütüphanesini kullanarak bir PDF bel
 
 Aspose.PDF belgelerini incelemekten çekinmeyin[Burada](https://reference.aspose.com/pdf/java/) daha gelişmiş özellikler ve kişiselleştirme seçenekleri için.
 
-## SSS:
+## SSS'ler
 
-1. ## Bir PDF belgesindeki yapı öğeleri nelerdir?
-   Bir PDF belgesindeki yapı öğeleri, içeriğin mantıksal yapısını ve okuma sırasını tanımlayarak PDF'lerin tüm kullanıcılar tarafından erişilebilir olmasını sağlar.
+### Bir PDF belgesindeki yapı öğeleri nelerdir?
 
-2. ## Görüntüleri ve tabloları yapı öğesi olarak ekleyebilir miyim?
-   Evet, PDF'deki görüntüleri, tabloları, başlıkları, paragrafları ve diğer içerik türlerini temsil etmek için yapı öğelerini kullanabilirsiniz.
+Bir PDF belgesindeki yapı öğeleri, içeriğin mantıksal yapısını ve okuma sırasını tanımlayarak PDF'lerin tüm kullanıcılar tarafından erişilebilir olmasını sağlar.
 
-3. ## Aspose.PDF, Java'da PDF'lerle çalışmak için kullanılan tek kütüphane midir?
-   Hayır, başka kütüphaneler de mevcut ancak Aspose.PDF, Java'da PDF işleme için güçlü ve zengin özelliklere sahip bir seçimdir.
+### Görüntüleri ve tabloları yapı öğesi olarak ekleyebilir miyim?
 
-4. ## Yapı elemanlarının görünümünü nasıl özelleştirebilirim?
-   PDF belgenizdeki yapı öğelerinin görünümünü özelleştirmek için CSS stillerini ve niteliklerini kullanabilirsiniz.
+Evet, PDF'deki görüntüleri, tabloları, başlıkları, paragrafları ve diğer içerik türlerini temsil etmek için yapı öğelerini kullanabilirsiniz.
 
-5. ## Tüm PDF'ler için yapı öğeleri gerekli midir?
-   Yapı öğeleri erişilebilirlik açısından önemli olsa da bunların kullanımı PDF belgelerinizin özel gereksinimlerine bağlıdır.
+### Aspose.PDF, Java'da PDF'lerle çalışmak için kullanılan tek kütüphane midir?
+
+Hayır, başka kütüphaneler de mevcut ancak Aspose.PDF, Java'da PDF işleme için güçlü ve zengin özelliklere sahip bir seçimdir.
+
+### Yapı elemanlarının görünümünü nasıl özelleştirebilirim?
+
+PDF belgenizdeki yapı öğelerinin görünümünü özelleştirmek için CSS stillerini ve niteliklerini kullanabilirsiniz.
+
+### Tüm PDF'ler için yapı öğeleri gerekli midir?
+
+Yapı öğeleri erişilebilirlik açısından önemli olsa da bunların kullanımı PDF belgelerinizin özel gereksinimlerine bağlıdır.

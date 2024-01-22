@@ -99,7 +99,7 @@ R : La définition du répertoire du document garantit que le document PDF est 
 
 #### Q : Comment fonctionne la conversion de chaque page PDF en fichiers PNG individuels ?
 
- R : Un`for` la boucle parcourt chaque page du document PDF. Pour chaque page, une image PNG est générée à l'aide du`PngDevice`, et l'image résultante est enregistrée dans le répertoire de sortie spécifié.
+ R : Un`for` La boucle parcourt chaque page du document PDF. Pour chaque page, une image PNG est générée à l'aide du`PngDevice`, et l'image résultante est enregistrée dans le répertoire de sortie spécifié.
 
 #### Q : Puis-je personnaliser les attributs des fichiers PNG pendant le processus de conversion ?
 

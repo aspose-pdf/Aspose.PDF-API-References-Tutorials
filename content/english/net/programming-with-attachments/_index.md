@@ -13,9 +13,9 @@ These tutorials will guide you through the different steps to manipulate attachm
 ## Tutorials
 | Title | Description |
 | --- | --- | 
-| [Add Attachment In PDF File](./add-attachment/) | Learn how to add attachment in PDF file using Aspose.PDF for .NET.  |  
-| [Delete All Attachments In PDF File](./delete-all-attachments/) | Learn how to remove all attachments in PDF file using Aspose.PDF for .NET.  |  
-| [Disable Files Compression In PDF File](./disable-files-compression/) | Learn how to disable file compression in PDF file with Aspose.PDF for .NET.  |  
-| [Get All The Attachments In PDF File](./get-all-the-attachments/) | Learn how to get all attachments in PDF file with Aspose.PDF for .NET.  |  
-| [Get Attachment Info](./get-attachment-info/) | Learn how to get information about a specific attachment in a PDF file with Aspose.PDF for .NET. |  
-| [Get Individual Attachment In PDF File](./get-individual-attachment/) | Learn how to get an individual attachment in PDF file with Aspose.PDF for .NET.  |  
+| [Add Attachment In PDF File](./add-attachment/) | Learn how to add attachments to PDF files using Aspose.PDF for .NET with this step-by-step guide. Enhance your documents effortlessly. |  
+| [Delete All Attachments In PDF File](./delete-all-attachments/) | Learn how to delete all attachments in a PDF file using Aspose.PDF for .NET with this step-by-step guide. Simplify your PDF management. |  
+| [Disable Files Compression In PDF File](./disable-files-compression/) | Learn how to disable file compression in PDF files using Aspose.PDF for .NET with this step-by-step guide. Enhance your PDF management skills. |  
+| [Get All The Attachments In PDF File](./get-all-the-attachments/) | Learn how to extract all attachments from a PDF file using Aspose.PDF for .NET in this step-by-step tutorial. |  
+| [Get Attachment Info](./get-attachment-info/) | Learn how to retrieve attachment info from PDF files using Aspose.PDF for .NET in this comprehensive tutorial. |  
+| [Get Individual Attachment In PDF File](./get-individual-attachment/) | Learn how to extract individual attachments from PDF files using Aspose.PDF for .NET in this step-by-step tutorial.  |  

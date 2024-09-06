@@ -1,36 +1,36 @@
 ---
-title: Utwórz plik PDF ze znacznikiem obrazu w Javie
-linktitle: Utwórz plik PDF ze znacznikiem obrazu w Javie
-second_title: Aspose.PDF Interfejs API przetwarzania plików Java w formacie Java
-description: Dowiedz się, jak tworzyć dostępne pliki PDF z oznakowanymi obrazami w Javie przy użyciu Aspose.PDF dla Java. Postępuj zgodnie z naszym przewodnikiem krok po kroku dotyczącym bezproblemowego generowania plików PDF.
+title: Utwórz plik PDF z tagowanym obrazem w Javie
+linktitle: Utwórz plik PDF z tagowanym obrazem w Javie
+second_title: Aspose.PDF Java PDF Processing API
+description: Dowiedz się, jak tworzyć dostępne, oznaczone pliki PDF w Javie przy użyciu Aspose.PDF dla Javy. Postępuj zgodnie z naszym przewodnikiem krok po kroku, aby bezproblemowo generować pliki PDF.
 type: docs
 weight: 13
 url: /pl/java/pdf-structure-elements/create-pdf-with-tagged-image-in-java/
 ---
 
-## Wprowadzenie do tworzenia pliku PDF ze znacznikiem obrazu w Javie przy użyciu Aspose.PDF dla Java
+## Wprowadzenie do tworzenia plików PDF z tagowanymi obrazami w Javie przy użyciu Aspose.PDF dla Javy
 
-epoce cyfrowej tworzenie plików PDF ze znacznikami obrazów jest powszechnym wymogiem w różnych aplikacjach. Otagowane obrazy są niezbędne dla dostępności, zapewniając użytkownikom niedowidzącym dostęp do treści i zrozumienie jej. W tym przewodniku krok po kroku odkryjemy, jak tworzyć pliki PDF ze znacznikami obrazów w Javie przy użyciu Aspose.PDF dla Java. Ta potężna biblioteka zapewnia rozbudowaną obsługę pracy z plikami PDF, w tym możliwość łatwego dodawania oznaczonych obrazów.
+erze cyfrowej tworzenie plików PDF z tagowanymi obrazami jest powszechnym wymogiem dla różnych aplikacji. Oznaczone obrazy są niezbędne dla dostępności, zapewniając, że użytkownicy z dysfunkcją wzroku mogą uzyskać dostęp i zrozumieć treść. W tym przewodniku krok po kroku przyjrzymy się, jak tworzyć pliki PDF z tagowanymi obrazami w Javie przy użyciu Aspose.PDF dla Javy. Ta potężna biblioteka zapewnia szerokie wsparcie dla pracy z plikami PDF, w tym możliwość łatwego dodawania tagowanych obrazów.
 
-## Warunki wstępne
+## Wymagania wstępne
 
-Zanim zagłębimy się w kod, upewnij się, że spełnione są następujące wymagania wstępne:
+Zanim zagłębisz się w kod, upewnij się, że spełnione są następujące wymagania wstępne:
 
--  Zestaw Java Development Kit (JDK): Musisz zainstalować Java w swoim systemie. Można go pobrać z[stronie internetowej Oracle](https://www.oracle.com/java/technologies/javase-downloads.html).
+-  Java Development Kit (JDK): Musisz mieć zainstalowaną Javę w swoim systemie. Możesz ją pobrać z[Strona internetowa Oracle](https://www.oracle.com/java/technologies/javase-downloads.html).
 
--  Aspose.PDF dla Java: Powinieneś mieć bibliotekę Aspose.PDF dla Java. Można go pobrać z[Strona Aspose](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF dla Java: Powinieneś mieć bibliotekę Aspose.PDF dla Java. Możesz ją pobrać z[Strona internetowa Aspose](https://releases.aspose.com/pdf/java/).
 
 ## Konfigurowanie projektu
 
-Zacznijmy od skonfigurowania naszego projektu Java do tworzenia oznakowanych plików PDF. Wykonaj następujące kroki:
+Zacznijmy od skonfigurowania naszego projektu Java do tworzenia oznaczonych plików PDF. Wykonaj następujące kroki:
 
-1. Utwórz projekt Java: Otwórz swoje ulubione środowisko programistyczne Java (takie jak Eclipse lub IntelliJ IDEA) i utwórz nowy projekt Java.
+1. Utwórz projekt Java: Otwórz swoje ulubione środowisko programistyczne Java (np. Eclipse lub IntelliJ IDEA) i utwórz nowy projekt Java.
 
-2. Dodaj bibliotekę Aspose.PDF: Dodaj bibliotekę Aspose.PDF for Java do swojego projektu. Zwykle można to zrobić, dodając plik JAR do ścieżki klas projektu.
+2. Dodaj bibliotekę Aspose.PDF: Dodaj bibliotekę Aspose.PDF for Java do swojego projektu. Zazwyczaj możesz to zrobić, dodając plik JAR do ścieżki klas swojego projektu.
 
-## Tworzenie oznaczonego obrazu PDF
+## Tworzenie pliku PDF z tagowanym obrazem
 
-Teraz, gdy mamy już skonfigurowany projekt, utwórzmy krok po kroku plik PDF ze znacznikami.
+Teraz, gdy mamy już gotowy projekt, możemy krok po kroku utworzyć tagowany obraz PDF.
 
 ### Krok 1: Zainicjuj Aspose.PDF
 
@@ -66,32 +66,32 @@ pdfDocument.save("tagged_image.pdf");
 
 ## Wniosek
 
-Tworzenie oznakowanych plików PDF w Javie przy użyciu Aspose.PDF dla Java jest prostym procesem. Ta biblioteka upraszcza zadanie dodawania obrazów do dokumentów PDF i zapewnia, że są one odpowiednio oznaczone pod kątem dostępności.
+Tworzenie oznaczonych plików PDF z obrazami w Javie przy użyciu Aspose.PDF dla Javy to prosty proces. Ta biblioteka upraszcza zadanie dodawania obrazów do dokumentów PDF i zapewnia, że są one prawidłowo oznaczone pod kątem dostępności.
 
-## Często zadawane pytania
+## Najczęściej zadawane pytania
 
 ### Jak zainstalować Aspose.PDF dla Java?
 
 Aby zainstalować Aspose.PDF dla Java, wykonaj następujące kroki:
 
-1.  Pobierz bibliotekę z[Strona Aspose](https://releases.aspose.com/pdf/java/).
+1.  Pobierz bibliotekę z[Strona internetowa Aspose](https://releases.aspose.com/pdf/java/).
 
-2. Dodaj pobrany plik JAR do ścieżki klas projektu Java.
+2. Dodaj pobrany plik JAR do ścieżki klas swojego projektu Java.
 
-3. Możesz już używać Aspose.PDF dla Java w swoim projekcie.
+3. Możesz już używać Aspose.PDF for Java w swoim projekcie.
 
 ### Czy mogę używać Aspose.PDF dla Java za darmo?
 
-Aspose.PDF dla Java jest biblioteką komercyjną dostępną w wersji próbnej. Jednakże, aby móc w pełni korzystać z programu, będziesz musiał zakupić licencję od Aspose.
+Aspose.PDF for Java jest komercyjną biblioteką i jest dostępna w wersji próbnej. Jednak do pełnego wykorzystania musisz kupić licencję od Aspose.
 
 ### Czy można dodać tekst alternatywny do oznaczonych obrazów w pliku PDF?
 
-Tak, możesz dodać tekst alternatywny (tekst alternatywny) do oznaczonych obrazów w pliku PDF przy użyciu Aspose.PDF dla Java. Jest to niezbędne ze względu na dostępność.
+Tak, możesz dodać tekst alternatywny (alt text) do oznaczonych obrazów w pliku PDF, używając Aspose.PDF dla Java. Jest to niezbędne dla celów dostępności.
 
-### Czy są jakieś inne biblioteki do pracy z plikami PDF w Javie?
+### Czy istnieją inne biblioteki do pracy z plikami PDF w Javie?
 
-Tak, istnieje kilka innych bibliotek do pracy z plikami PDF w Javie, takich jak Apache PDFBox i iText. Jednak Aspose.PDF dla Java jest znany ze swoich solidnych funkcji i łatwości użytkowania.
+Tak, istnieje kilka innych bibliotek do pracy z plikami PDF w Javie, takich jak Apache PDFBox i iText. Jednak Aspose.PDF dla Javy jest znany ze swoich solidnych funkcji i łatwości użytkowania.
 
 ### Gdzie mogę znaleźć więcej dokumentacji dla Aspose.PDF dla Java?
 
- Obszerną dokumentację Aspose.PDF dla Java można znaleźć na stronie[Witryna internetowa z dokumentacją Aspose](https://reference.aspose.com/pdf/java/).
+ Pełną dokumentację Aspose.PDF dla języka Java można znaleźć na stronie[Strona internetowa dokumentacji Aspose](https://reference.aspose.com/pdf/java/).

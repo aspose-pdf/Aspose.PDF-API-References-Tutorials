@@ -1,20 +1,20 @@
 ---
-title: Perataan Teks Untuk Isi Kotak Mengambang Dalam File PDF
-linktitle: Perataan Teks Untuk Isi Kotak Mengambang Dalam File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara menyelaraskan teks dalam kotak mengambang di file PDF menggunakan Aspose.PDF untuk .NET.
+title: Penyelarasan Teks Untuk Konten Kotak Mengambang Dalam File PDF
+linktitle: Penyelarasan Teks Untuk Konten Kotak Mengambang Dalam File PDF
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara menyelaraskan teks dalam kotak mengambang di berkas PDF menggunakan Aspose.PDF untuk .NET.
 type: docs
 weight: 520
 url: /id/net/programming-with-text/text-alignment-for-floating-box-contents/
 ---
-Tutorial ini menjelaskan cara menyelaraskan teks dalam kotak mengambang di file PDF menggunakan Aspose.PDF untuk .NET. Kode sumber C# yang disediakan menunjukkan proses langkah demi langkah.
+Tutorial ini menjelaskan cara menyelaraskan teks dalam kotak mengambang di berkas PDF menggunakan Aspose.PDF untuk .NET. Kode sumber C# yang disediakan menunjukkan proses tersebut langkah demi langkah.
 
 ## Prasyarat
 
 Sebelum melanjutkan tutorial, pastikan Anda memiliki hal berikut:
 
-- Pengetahuan dasar bahasa pemrograman C#.
-- Aspose.PDF untuk perpustakaan .NET diinstal. Anda dapat memperolehnya dari situs Aspose atau menggunakan NuGet untuk menginstalnya di proyek Anda.
+- Pengetahuan dasar tentang bahasa pemrograman C#.
+- Pustaka Aspose.PDF untuk .NET telah terinstal. Anda dapat memperolehnya dari situs web Aspose atau menggunakan NuGet untuk menginstalnya di proyek Anda.
 
 ## Langkah 1: Siapkan proyek
 
@@ -22,7 +22,7 @@ Mulailah dengan membuat proyek C# baru di lingkungan pengembangan terintegrasi (
 
 ## Langkah 2: Impor namespace yang diperlukan
 
-Tambahkan arahan penggunaan berikut di awal file C# Anda untuk mengimpor namespace yang diperlukan:
+Tambahkan perintah berikut di awal file C# Anda untuk mengimpor namespace yang diperlukan:
 
 ```csharp
 using Aspose.Pdf;
@@ -31,7 +31,7 @@ using Aspose.Pdf.Text;
 
 ## Langkah 3: Tetapkan jalur ke direktori dokumen
 
- Tetapkan jalur ke direktori dokumen Anda menggunakan`dataDir` variabel:
+ Atur jalur ke direktori dokumen Anda menggunakan`dataDir` variabel:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -39,7 +39,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
  Mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya ke direktori dokumen Anda.
 
-## Langkah 4: Buat Dokumen baru
+## Langkah 4: Buat Dokumen Baru
 
  Buat yang baru`Document` obyek:
 
@@ -50,7 +50,7 @@ doc.Pages.Add();
 
 ## Langkah 5: Buat Kotak Mengambang dengan Fragmen Teks
 
- Buat banyak`FloatingBox` objek dengan perataan vertikal dan perataan horizontal yang berbeda:
+ Buat beberapa`FloatingBox` Objek dengan perataan vertikal dan perataan horizontal yang berbeda:
 
 ```csharp
 Aspose.Pdf.FloatingBox floatBox = new Aspose.Pdf.FloatingBox(100, 100);
@@ -87,7 +87,7 @@ doc.Save(dataDir + "FloatingBox_alignment_review_out.pdf");
 
  Pastikan untuk mengganti`"FloatingBox_alignment_review_out.pdf"` dengan nama file keluaran yang diinginkan.
 
-### Contoh kode sumber untuk Penyelarasan Teks Untuk Isi Kotak Mengambang menggunakan Aspose.PDF untuk .NET 
+### Contoh kode sumber untuk Penyelarasan Teks untuk Konten Kotak Mengambang menggunakan Aspose.PDF untuk .NET 
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -116,42 +116,42 @@ doc.Save(dataDir + "FloatingBox_alignment_review_out.pdf");
 
 ## Kesimpulan
 
-Selamat! Anda telah berhasil mempelajari cara menyelaraskan teks dalam kotak mengambang di dokumen PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini memberikan panduan langkah demi langkah, mulai dari menyiapkan proyek hingga menyimpan dokumen yang dimodifikasi. Anda sekarang dapat memasukkan kode ini ke dalam proyek C# Anda sendiri untuk menyesuaikan perataan teks dalam kotak mengambang di file PDF.
+Selamat! Anda telah berhasil mempelajari cara menyelaraskan teks dalam kotak mengambang dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini menyediakan panduan langkah demi langkah, mulai dari menyiapkan proyek hingga menyimpan dokumen yang dimodifikasi. Anda sekarang dapat memasukkan kode ini ke dalam proyek C# Anda sendiri untuk menyesuaikan penyelarasan teks dalam kotak mengambang dalam file PDF.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### Q: Apa tujuan dari tutorial "Perataan Teks Untuk Isi Kotak Mengambang Dalam File PDF"?
+#### T: Apa tujuan dari tutorial "Penyelarasan Teks untuk Isi Kotak Mengambang dalam Berkas PDF"?
 
-J: Tutorial "Penyelarasan Teks Untuk Isi Kotak Mengambang Dalam File PDF" bertujuan untuk memandu pengguna tentang cara menyelaraskan teks dalam kotak mengambang dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini memberikan petunjuk langkah demi langkah dan contoh kode C# untuk mendemonstrasikan prosesnya.
+J: Tutorial "Penyelarasan Teks untuk Konten Kotak Mengambang dalam Berkas PDF" bertujuan untuk memandu pengguna tentang cara menyelaraskan teks dalam kotak mengambang dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini menyediakan petunjuk langkah demi langkah dan contoh kode C# untuk menunjukkan prosesnya.
 
-#### T: Bagaimana tutorial ini membantu menyelaraskan teks di dalam kotak mengambang?
+#### T: Bagaimana tutorial ini membantu dalam menyelaraskan teks dalam kotak mengambang?
 
-J: Tutorial ini membantu pengguna memahami cara memanfaatkan Aspose.PDF untuk .NET untuk menyelaraskan teks dalam kotak mengambang di dokumen PDF. Dengan mengikuti langkah-langkah dan contoh kode yang disediakan, pengguna dapat menyesuaikan perataan teks vertikal dan horizontal dalam kotak mengambang.
+J: Tutorial ini membantu pengguna memahami cara menggunakan Aspose.PDF for .NET untuk menyelaraskan teks dalam kotak mengambang dalam dokumen PDF. Dengan mengikuti langkah-langkah dan contoh kode yang diberikan, pengguna dapat menyesuaikan penyelarasan vertikal dan horizontal teks dalam kotak mengambang.
 
-#### Q: Prasyarat apa saja yang diperlukan untuk mengikuti tutorial ini?
+#### T: Prasyarat apa yang diperlukan untuk mengikuti tutorial ini?
 
-A: Sebelum memulai tutorial, Anda harus memiliki pemahaman dasar tentang bahasa pemrograman C#. Selain itu, Anda perlu menginstal perpustakaan Aspose.PDF untuk .NET. Anda dapat memperolehnya dari situs Aspose atau menginstalnya di proyek Anda menggunakan NuGet.
+J: Sebelum memulai tutorial ini, Anda harus memiliki pemahaman dasar tentang bahasa pemrograman C#. Selain itu, Anda perlu menginstal pustaka Aspose.PDF for .NET. Anda dapat memperolehnya dari situs web Aspose atau menginstalnya di proyek Anda menggunakan NuGet.
 
 #### T: Bagaimana cara menyiapkan proyek saya untuk mengikuti tutorial ini?
 
-J: Untuk memulai, buat proyek C# baru di lingkungan pengembangan terintegrasi (IDE) pilihan Anda dan tambahkan referensi ke pustaka Aspose.PDF untuk .NET. Hal ini memungkinkan Anda memanfaatkan fitur perpustakaan untuk bekerja dengan dokumen PDF dan menyelaraskan teks dalam kotak mengambang.
+J: Untuk memulai, buat proyek C# baru di lingkungan pengembangan terpadu (IDE) pilihan Anda dan tambahkan referensi ke pustaka Aspose.PDF untuk .NET. Ini memungkinkan Anda memanfaatkan fitur pustaka untuk bekerja dengan dokumen PDF dan menyelaraskan teks dalam kotak mengambang.
 
-#### T: Dapatkah saya menggunakan tutorial ini untuk meratakan teks dalam jenis kotak mengambang apa pun?
+#### T: Dapatkah saya menggunakan tutorial ini untuk menyelaraskan teks dalam semua jenis kotak mengambang?
 
-J: Ya, tutorial ini memberikan instruksi tentang cara menyelaraskan teks dalam kotak mengambang di dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan contoh kode yang disediakan untuk menyesuaikan perataan teks vertikal dan horizontal dalam kotak mengambang.
+A: Ya, tutorial ini menyediakan petunjuk tentang cara menyelaraskan teks dalam kotak mengambang dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan contoh kode yang disediakan untuk menyesuaikan penyelarasan vertikal dan horizontal teks dalam kotak mengambang.
 
 #### T: Bagaimana cara menentukan perataan teks dalam kotak mengambang?
 
- A: Tutorial ini menunjukkan cara membuat`FloatingBox`objek dan mengaturnya`VerticalAlignment` Dan`HorizontalAlignment` properti untuk mengontrol perataan teks yang terkandung. Anda dapat menyesuaikan properti ini sesuai dengan kebutuhan Anda.
+ A: Tutorial ini menunjukkan cara membuat`FloatingBox`objek dan mengaturnya`VerticalAlignment` Dan`HorizontalAlignment` properti untuk mengontrol perataan teks yang ada. Anda dapat menyesuaikan properti ini sesuai dengan kebutuhan Anda.
 
-#### T: Bagaimana cara menyesuaikan tampilan kotak mengambang?
+#### T: Bagaimana saya dapat menyesuaikan tampilan kotak mengambang?
 
- J: Anda dapat menyesuaikan tampilan kotak mengambang dengan memodifikasi properti seperti batas, ukuran, dan konten teks. Tutorial ini menyediakan contoh kode yang menunjukkan cara membuat dan menata gaya`FloatingBox` objek.
+ A: Anda dapat menyesuaikan tampilan kotak mengambang dengan memodifikasi properti seperti batas, ukuran, dan konten teks. Tutorial ini menyediakan contoh kode yang menunjukkan cara membuat dan memberi gaya pada kotak mengambang.`FloatingBox` objek.
 
 #### T: Dapatkah saya menambahkan beberapa kotak mengambang dengan perataan berbeda dalam dokumen PDF yang sama?
 
- A: Ya, tutorial ini menggambarkan cara membuat banyak`FloatingBox` objek dengan perataan vertikal dan horizontal berbeda dan menambahkannya ke dokumen PDF yang sama. Ini memungkinkan Anda melihat efek berbagai perataan dalam dokumen yang sama.
+ A: Ya, tutorial ini mengilustrasikan cara membuat beberapa`FloatingBox` objek dengan perataan vertikal dan horizontal yang berbeda dan menambahkannya ke dokumen PDF yang sama. Ini memungkinkan Anda melihat efek dari berbagai perataan dalam dokumen yang sama.
 
 #### T: Bagaimana cara menyimpan dokumen PDF yang dimodifikasi?
 
- A: Untuk menyimpan dokumen PDF yang telah dimodifikasi, Anda dapat menggunakan`Save` metode`Document` obyek. Tutorial ini menyediakan contoh kode yang menunjukkan cara menyimpan dokumen PDF yang dihasilkan.
+ A: Untuk menyimpan dokumen PDF yang dimodifikasi, Anda dapat menggunakan`Save` metode dari`Document` objek. Tutorial ini menyediakan contoh kode yang menunjukkan cara menyimpan dokumen PDF yang dihasilkan.

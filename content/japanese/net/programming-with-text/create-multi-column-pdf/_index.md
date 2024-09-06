@@ -2,24 +2,24 @@
 title: 複数列の PDF を作成する
 linktitle: 複数列の PDF を作成する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して複数列の PDF を作成する方法を学びます。
+description: Aspose.PDF for .NET を使用して複数列の PDF を作成する方法を学習します。
 type: docs
 weight: 110
 url: /ja/net/programming-with-text/create-multi-column-pdf/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して複数列の PDF を作成するプロセスを説明します。提供されている C# ソース コードは、必要な手順を示しています。
+このチュートリアルでは、Aspose.PDF for .NET を使用して複数列の PDF を作成する手順を説明します。提供されている C# ソース コードで必要な手順を示します。
 
 ## 要件
-始める前に、以下のものがあることを確認してください。
+始める前に、次のものがあることを確認してください。
 
-- マシンにインストールされている Visual Studio またはその他の C# コンパイラー。
-- .NET ライブラリ用の Aspose.PDF。 Aspose の公式 Web サイトからダウンロードするか、NuGet などのパッケージ マネージャーを使用してインストールできます。
+- マシンにインストールされている Visual Studio またはその他の C# コンパイラ。
+- Aspose.PDF for .NET ライブラリ。公式 Aspose Web サイトからダウンロードするか、NuGet などのパッケージ マネージャーを使用してインストールできます。
 
-## ステップ 1: プロジェクトをセットアップする
+## ステップ1: プロジェクトを設定する
 1. 好みの開発環境で新しい C# プロジェクトを作成します。
 2. Aspose.PDF for .NET ライブラリへの参照を追加します。
 
-## ステップ 2: 必要な名前空間をインポートする
+## ステップ2: 必要な名前空間をインポートする
 複数列の PDF を作成するコード ファイルで、ファイルの先頭に次の using ディレクティブを追加します。
 
 ```csharp
@@ -27,33 +27,33 @@ using Aspose.Pdf;
 using Aspose.Pdf.Drawing;
 ```
 
-## ステップ 3: ドキュメント ディレクトリを設定する
-コード内で、次の行を見つけます。`string dataDir = "YOUR DOCUMENT DIRECTORY";`そして交換してください`"YOUR DOCUMENT DIRECTORY"`ドキュメントが保存されているディレクトリへのパスを置き換えます。
+## ステップ3: ドキュメントディレクトリを設定する
+コード内で、次の行を見つけます。`string dataDir = "YOUR DOCUMENT DIRECTORY";`置き換えて`"YOUR DOCUMENT DIRECTORY"`ドキュメントが保存されているディレクトリへのパスを指定します。
 
-## ステップ 4: 新しい Document インスタンスを作成する
+## ステップ4: 新しいドキュメントインスタンスを作成する
 新しいインスタンスを作成する`Document`次のコード行を追加してオブジェクトを作成します。
 
 ```csharp
 Document doc = new Document();
 ```
 
-## ステップ 5: ページ余白を設定する
-PDF ファイルの左右の余白情報を指定します。`PageInfo.Margin`の財産`Document`.
+## ステップ5: ページの余白を設定する
+PDFファイルの左余白と右余白情報を指定するには、`PageInfo.Margin`の財産`Document`.
 
 ```csharp
 doc.PageInfo.Margin.Left = 40;
 doc.PageInfo.Margin.Right = 40;
 ```
 
-## ステップ 6: ドキュメントにページを追加する
-を使用してドキュメントに新しいページを追加します。`Add`の方法`Pages`コレクション。提供されたコードでは、新しいページが変数に割り当てられます。`page`.
+## ステップ6: ドキュメントにページを追加する
+ドキュメントに新しいページを追加するには、`Add`方法の`Pages`コレクション。提供されたコードでは、新しいページが変数に割り当てられます`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## ステップ 7: グラフ オブジェクトを作成し、線を追加する
-新しいを作成します`Graph`特定の寸法のオブジェクトを作成し、それに線を追加します。次に、`Graph`に反対する`Paragraphs`ページのコレクション。
+## ステップ7: グラフオブジェクトを作成し、線を追加する
+新規作成`Graph`特定の寸法のオブジェクトを作成し、それに線を追加します。次に、`Graph`に反対する`Paragraphs`ページのコレクション。
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
@@ -63,8 +63,8 @@ graph1.Shapes.Add(l1);
 page.Paragraphs.Add(graph1);
 ```
 
-## ステップ 8: HTML 形式で見出しテキストを追加する
-を作成します`HtmlFragment`オブジェクトを作成し、そのコンテンツを目的の HTML テキストに設定します。次に、フラグメントを`Paragraphs`ページのコレクション。
+## ステップ8: HTML形式で見出しテキストを追加する
+作成する`HtmlFragment`オブジェクトを作成し、その内容を希望のHTMLテキストに設定します。次に、フラグメントを`Paragraphs`ページのコレクション。
 
 ```csharp
 string s = "<font face=\"Times New Roman\" size=4>" +
@@ -74,8 +74,8 @@ HtmlFragment heading_text = new HtmlFragment(s);
 page.Paragraphs.Add(heading_text);
 ```
 
-## ステップ 9: 複数の列を含む FloatingBox を作成する
-を作成します`FloatingBox`オブジェクトを選択し、列数と列間隔を設定します。次に、テキストの断片と行を`Paragraphs`のコレクション`FloatingBox`.
+## ステップ9: 複数の列を持つフローティングボックスを作成する
+作成する`FloatingBox`オブジェクトを作成し、列数と列間隔を設定します。次に、テキストフラグメントと線を追加します。`Paragraphs`コレクションの`FloatingBox`.
 
 ```csharp
 Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
@@ -100,8 +100,8 @@ box.Paragraphs.Add(graph2);
 page.Paragraphs.Add(box);
 ```
 
-## ステップ 10: PDF ドキュメントを保存する
-PDF ドキュメントを保存するには、`Save`の方法`Document`物体。
+## ステップ10: PDF文書を保存する
+PDF文書を保存するには、`Save`方法の`Document`物体。
 
 ```csharp
 doc.Save(dataDir);
@@ -109,32 +109,32 @@ doc.Save(dataDir);
 
 ### Aspose.PDF for .NET を使用して複数列の PDF を作成するためのサンプル ソース コード 
 ```csharp
-//ドキュメントディレクトリへのパス。
+//ドキュメント ディレクトリへのパス。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
-//PDF ファイルの左余白情報を指定します
+//PDFファイルの左余白情報を指定します
 doc.PageInfo.Margin.Left = 40;
-//PDF ファイルの右マージン情報を指定します
+//PDFファイルの右余白情報を指定します
 doc.PageInfo.Margin.Right = 40;
 Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
-//セクションオブジェクトのパラフレーズコレクションに行を追加します
+//セクションオブジェクトのパラグラフコレクションに行を追加します
 page.Paragraphs.Add(graph1);
-//線の座標を指定します
+//線の座標を指定する
 float[] posArr = new float[] { 1, 2, 500, 2 };
 Aspose.Pdf.Drawing.Line l1 = new Aspose.Pdf.Drawing.Line(posArr);
 graph1.Shapes.Add(l1);
-//HTMLタグを含むテキストを含む文字列変数を作成する
+//HTMLタグを含むテキストで文字列変数を作成する
 string s = "<font face=\"Times New Roman\" size=4>" +
 "<strong> How to Steer Clear of money scams</<strong> "
 + "</font>";
-//HTML テキストを含むテキスト段落を作成する
+//HTMLテキストを含むテキスト段落を作成する
 HtmlFragment heading_text = new HtmlFragment(s);
 page.Paragraphs.Add(heading_text);
 Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
-//セクションに 4 つの列を追加します
+//セクションに4つの列を追加します
 box.ColumnInfo.ColumnCount = 2;
-//列間の間隔を設定します
+//列間の間隔を設定する
 box.ColumnInfo.ColumnSpacing = "5";
 box.ColumnInfo.ColumnWidths = "105 105";
 TextFragment text1 = new TextFragment("By A Googler (The Official Google Blog)");
@@ -145,7 +145,7 @@ text1.TextState.FontSize = 10;
 text1.TextState.FontStyle = FontStyles.Italic;
 //線を描くグラフオブジェクトを作成する
 Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
-//線の座標を指定します
+//線の座標を指定する
 float[] posArr2 = new float[] { 1, 10, 100, 10 };
 Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
 graph2.Shapes.Add(l2);
@@ -155,61 +155,61 @@ TextFragment text2 = new TextFragment(@"Sed augue tortor, sodales id, luctus et,
 box.Paragraphs.Add(text2);
 page.Paragraphs.Add(box);
 dataDir = dataDir + "CreateMultiColumnPdf_out.pdf";
-//PDFファイルを保存する
+//PDFファイルを保存
 doc.Save(dataDir);
 Console.WriteLine("\nMulti column pdf file created successfully.\nFile saved at " + dataDir);
 ```
 
 ## 結論
-Aspose.PDF for .NET を使用して複数列の PDF が正常に作成されました。作成された PDF ファイルは、指定した出力ファイル パスに表示されます。
+Aspose.PDF for .NET を使用して複数列の PDF を正常に作成しました。結果の PDF ファイルは、指定した出力ファイル パスにあります。
 
 ### よくある質問
 
 #### Q: このチュートリアルの焦点は何ですか?
 
-このチュートリアルは、Aspose.PDF for .NET ライブラリを使用して複数列の PDF を作成するプロセスをガイドすることに重点を置いています。提供されている C# ソース コードは、これを実現するために必要な手順を示しています。
+このチュートリアルでは、Aspose.PDF for .NET ライブラリを使用して複数列の PDF を作成する手順を説明します。提供されている C# ソース コードは、これを実現するために必要な手順を示しています。
 
-#### Q: このチュートリアルではどの名前空間をインポートする必要がありますか?
+#### Q: このチュートリアルではどの名前空間をインポートすればよいですか?
 
-A: 複数列 PDF を作成するコード ファイルで、ファイルの先頭に次の名前空間をインポートします。
+A: 複数列の PDF を作成するコード ファイルで、ファイルの先頭に次の名前空間をインポートします。
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Drawing;
 ```
 
-#### Q: ドキュメント ディレクトリを指定するにはどうすればよいですか?
+#### Q: ドキュメントディレクトリを指定するにはどうすればよいですか?
 
- A: コード内で次の行を見つけます。`string dataDir = "YOUR DOCUMENT DIRECTORY";`そして交換してください`"YOUR DOCUMENT DIRECTORY"`ドキュメントディレクトリへの実際のパスを置き換えます。
+ A: コード内で次の行を見つけてください`string dataDir = "YOUR DOCUMENT DIRECTORY";`置き換えて`"YOUR DOCUMENT DIRECTORY"`ドキュメント ディレクトリへの実際のパスを入力します。
 
 #### Q: 新しい Document インスタンスを作成するにはどうすればよいですか?
 
- A: ステップ 4 では、新しいインスタンスを作成します。`Document`提供されたコードを使用してオブジェクトを作成します。
+ A: ステップ4では、新しいインスタンスを作成します。`Document`提供されたコードを使用してオブジェクトを作成します。
 
-#### Q: ページの余白はどのように設定すればよいですか?
+#### Q: ページの余白を設定するにはどうすればよいですか?
 
- A: ステップ 5 では、`PageInfo.Margin`の財産`Document` PDF ファイルの左右の余白情報を指定します。
+ A: ステップ5では、`PageInfo.Margin`の財産`Document` PDF ファイルの左余白と右余白の情報を指定します。
 
 #### Q: ドキュメントにページを追加するにはどうすればよいですか?
 
- A: ステップ 6 では、`Add`の方法`Pages`コレクション。
+ A: ステップ6では、`Add`方法の`Pages`コレクション。
 
-#### Q: Graph オブジェクトを作成して線を追加するにはどうすればよいですか?
+#### Q: グラフ オブジェクトを作成して線を追加するにはどうすればよいですか?
 
- A: ステップ 7 では、新しい`Graph`オブジェクトに行を追加し、`Graph`に反対する`Paragraphs`ページのコレクション。
+ A: ステップ7では、新しい`Graph`オブジェクトに線を追加し、`Graph`に反対する`Paragraphs`ページのコレクション。
 
 #### Q: HTML 形式で見出しテキストを追加するにはどうすればよいですか?
 
- A: ステップ 8 で、`HtmlFragment`オブジェクトを作成し、そのコンテンツを目的の HTML テキストに設定してから、フラグメントを`Paragraphs`ページのコレクション。
+ A: ステップ8では、`HtmlFragment`オブジェクトを作成し、その内容を目的のHTMLテキストに設定してから、フラグメントを`Paragraphs`ページのコレクション。
 
 #### Q: 複数の列を持つ FloatingBox を作成するにはどうすればよいですか?
 
- A: ステップ 9 で、`FloatingBox`複数の列と列間隔を持つオブジェクトを作成し、テキストの断片と行を追加します。`Paragraphs`のコレクション`FloatingBox`.
+ A: ステップ9では、`FloatingBox`複数の列と列間隔を持つオブジェクトを作成し、テキストフラグメントと線を追加します。`Paragraphs`コレクションの`FloatingBox`.
 
 #### Q: PDF ドキュメントを保存するにはどうすればよいですか?
 
- A: ステップ 10 では、`Save`の方法`Document`物体。
+ A: ステップ10では、`Save`方法の`Document`物体。
 
-#### Q: このチュートリアルの主なポイントは何ですか?
+#### Q: このチュートリアルから得られる主な教訓は何ですか?
 
-A: このチュートリアルに従うことで、Aspose.PDF for .NET を使用して複数列の PDF ドキュメントを作成する方法を学習しました。これは、構造化され整理されたレイアウトでコンテンツを表示する場合に役立ちます。
+A: このチュートリアルでは、Aspose.PDF for .NET を使用して複数列の PDF ドキュメントを作成する方法を学習しました。これは、構造化され整理されたレイアウトでコンテンツを表示する場合に便利です。

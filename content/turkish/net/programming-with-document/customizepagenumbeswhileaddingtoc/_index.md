@@ -1,36 +1,78 @@
 ---
-title: İçindekiler Eklerken Sayfa Numaralarını Özelleştirin
-linktitle: İçindekiler Eklerken Sayfa Numaralarını Özelleştirin
-second_title: .NET API Referansı için Aspose.PDF
-description: Bu adım adım kılavuz ve kod örneğiyle Aspose.PDF for .NET kullanarak içindekiler tablosu (TOC) eklerken sayfa numaralarını nasıl özelleştireceğinizi öğrenin.
+title: İçindekiler Tablosu Eklenirken Sayfa Numaralarını Özelleştir
+linktitle: İçindekiler Tablosu Eklenirken Sayfa Numaralarını Özelleştir
+second_title: Aspose.PDF for .NET API Referansı
+description: Bu kapsamlı eğitimde Aspose.PDF for .NET kullanarak PDF belgelerinize İçindekiler Tablosu eklerken sayfa numaralarını nasıl özelleştireceğinizi öğrenin.
 type: docs
 weight: 100
 url: /tr/net/programming-with-document/customizepagenumbeswhileaddingtoc/
 ---
-Bu eğitimde Aspose.PDF for .NET kullanarak içindekiler tablosu (TOC) eklerken sayfa numaralarının nasıl özelleştirileceğini inceleyeceğiz. Bunu başarmanıza yardımcı olmak için bir kod örneğiyle birlikte adım adım rehberlik sağlayacağız.
+## giriiş
 
-## 1. Adım: Mevcut bir PDF dosyasını yükleme
+Belge yönetimi dünyasında PDF'ler en üst sıradadır. Çeşitli platformlarda belgeleri paylaşmak ve korumak için başvurulan formattır. Peki PDF belgelerinizi İçindekiler Tablosu (TOC) gibi özelliklerle geliştirmek istediğinizde ne olur? İşte tam bu noktada Aspose.PDF for .NET devreye giriyor! Bu güçlü kütüphane, geliştiricilerin PDF dosyalarını kolaylıkla düzenlemelerine olanak tanır ve içerikleri zahmetsizce eklemelerini, değiştirmelerini ve özelleştirmelerini sağlar. Bu eğitimde, Aspose.PDF for .NET kullanarak PDF belgelerinize bir TOC eklerken sayfa numaralarını nasıl özelleştireceğinizi derinlemesine inceleyeceğiz. O halde kodlama şapkanızı alın ve başlayalım!
 
-Öncelikle mevcut bir PDF dosyasını yüklememiz gerekiyor. Bu eğitim için "BELGE DİZİNİNİZ" dizininde bulunan "42824.pdf" dosyasını kullanacağız. Bu dizin yolunu, belge dizininizin gerçek yoluyla değiştirin.
+## Ön koşullar
+
+Koda geçmeden önce, yerinde olması gereken birkaç şey var:
+
+1. Visual Studio: Makinenizde Visual Studio'nun yüklü olduğundan emin olun. Bu bizim geliştirme ortamımız olacak.
+2. .NET için Aspose.PDF: Aspose.PDF kütüphanesini indirip yüklemeniz gerekir. Bunu bulabilirsiniz[Burada](https://releases.aspose.com/pdf/net/).
+3. Temel C# Bilgisi: C# programlamaya aşina olmak, kod parçacıklarını daha iyi anlamanıza yardımcı olacaktır.
+4. Örnek PDF Dosyası: Üzerinde çalışabileceğimiz hazır bir örnek PDF dosyanız olsun. Basit bir tane oluşturabilir veya mevcut bir PDF'yi indirebilirsiniz.
+
+## Paketleri İçe Aktar
+
+Başlamak için gerekli paketleri içe aktarmamız gerekiyor. Visual Studio projenizi açın ve Aspose.PDF kütüphanesine bir referans ekleyin. Bunu NuGet Paket Yöneticisi'ni kullanarak yapabilirsiniz:
+
+1. Çözüm Gezgini’nde projenizin üzerine sağ tıklayın.
+2. "NuGet Paketlerini Yönet" seçeneğini seçin.
+3. "Aspose.PDF" dosyasını arayın ve yükleyin.
+
+```csharp
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Kütüphaneyi kurduktan sonra kodlamaya başlayabilirsiniz!
+
+## Adım 1: Belge Dizininizi Ayarlayın
+
+İlk önce, belge dizinimizi ayarlamamız gerekiyor. Giriş ve çıkış PDF dosyalarımızı burada saklayacağız. 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "42824.pdf";
 string outFile = dataDir + "42824_out.pdf";
+```
+
+Bu kod parçacığında şunu değiştirin:`YOUR DOCUMENT DIRECTORY` PDF dosyalarınızın bulunduğu gerçek yol ile. Bu, mevcut PDF'yi yüklememize ve değiştirilmiş sürümü kaydetmemize yardımcı olacaktır.
+
+## Adım 2: Mevcut PDF Dosyasını Yükleyin
+
+Artık belge dizinimizi ayarladığımıza göre, mevcut PDF dosyasını yükleyelim. 
+
+```csharp
 Document doc = new Document(inFile);
 ```
 
-## 2. Adım: İçindekiler sayfası ekleme
+ Burada yeni bir tane yaratıyoruz`Document` Giriş dosya yolunu geçirerek nesne. Bu, PDF içeriğini programatik olarak düzenlememize olanak tanır.
 
- Daha sonra, belgenin başına TOC sayfası olarak hizmet verecek yeni bir sayfa eklememiz gerekiyor. kullanarak bunu başarabiliriz.`Insert()` yöntemi`Pages` koleksiyonu`Document` nesne.
+## Adım 3: İçindekiler için Yeni Bir Sayfa Ekleyin
+
+Daha sonra PDF'imizde İçindekiler bölümünün bulunacağı yeni bir sayfa oluşturmamız gerekiyor.
 
 ```csharp
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
 ```
 
-## 3. Adım: TOC nesnesi oluşturma
+Bu satır belgenin başına yeni bir sayfa ekler. İçindekiler bu sayfada görüntülenecektir.
 
- Bir TOC nesnesi oluşturmak için öncelikle bir`TocInfo` nesneyi seçin ve özelliklerini ayarlayın. Bu eğitimde, TOC'nin başlığını "İçindekiler Tablosu" ve sayfa numarası önekini "P" olarak ayarlayacağız.
+## Adım 4: İçindekiler Bilgilerini Oluşturun
+
+Şimdi TOC bilgisini temsil edecek bir nesne oluşturalım.
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -42,99 +84,55 @@ tocInfo.PageNumbersPrefix = "P";
 tocPage.TocInfo = tocInfo;
 ```
 
-## 4. Adım: İçindekiler girişlerini oluşturma
+ Bu adımda bir tane oluşturuyoruz`TocInfo` nesneyi seçin ve başlığını "İçindekiler" olarak ayarlayın. Ayrıca yazı tipi boyutunu ve stilini de özelleştiriyoruz.`PageNumbersPrefix` İçindekiler tablosundaki sayfa numaralarının önüne "P" gelecek şekilde ayarlanmıştır.
 
-İçindekiler girdileri oluşturmak için, içindekiler sayfası dışındaki belgenin tüm sayfaları arasında döngü yapmamız ve her sayfa için bir başlık nesnesi oluşturmamız gerekir. Daha sonra başlık nesnesini TOC sayfasına ekleyebilir ve hedef sayfasını belirtebiliriz.
+## Adım 5: İçindekiler Tablosuna Başlıklar Ekleyin
+
+Şimdi eğlenceli kısma geliyoruz! Belgenin sayfaları arasında dolaşacağız ve İçindekiler'imize başlıklar ekleyeceğiz.
 
 ```csharp
 for (int i = 1; i < doc.Pages.Count; i++)
 {
-    // Başlık nesnesi oluştur
     Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
     TextSegment segment2 = new TextSegment();
     heading2.TocPage = tocPage;
     heading2.Segments.Add(segment2);
-    // Başlık nesnesi için hedef sayfayı belirtin
     heading2.DestinationPage = doc.Pages[i + 1];
-    // Hedef sayfası
     heading2.Top = doc.Pages[i + 1].Rect.Height;
-    // Hedef koordinatı
     segment2.Text = "Page " + i.ToString();
-    // İçindekiler içeren sayfaya başlık ekleyin
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
-## 5. Adım: Güncellenen belgeyi kaydetme
+ Bu döngüde yeni bir tane oluşturuyoruz`Heading` her sayfa için nesne. Her başlık için hedef sayfayı ayarlıyoruz ve görüntülenecek metni belirliyoruz, bu da "Sayfa X"tir, burada X sayfa numarasıdır. Son olarak, başlığı TOC sayfasına ekliyoruz.
 
-Son olarak güncellenen belgeyi yeni bir dosyaya kaydetmemiz gerekiyor. kullanarak bunu başarabiliriz.`Save()` yöntemi`Document` nesne.
+## Adım 6: Güncellenen Belgeyi Kaydedin
+
+Gerekli tüm başlıkları ekledikten sonra güncellenmiş dokümanımızı kaydetme zamanı geldi.
 
 ```csharp
 doc.Save(outFile);
 ```
 
-### Aspose.PDF for .NET kullanarak İçindekiler eklerken sayfa numaralarını özelleştirmek için örnek kaynak kodu
-
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string inFile = dataDir + "42824.pdf";
-string outFile = dataDir + "42824_out.pdf";
-// Mevcut bir PDF dosyasını yükleyin
-Document doc = new Document(inFile);
-// PDF dosyasının ilk sayfasına erişin
-Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
-// İçindekiler bilgisini temsil edecek nesne oluşturun
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-// İçindekiler başlığını ayarlayın
-tocInfo.Title = title;
-tocInfo.PageNumbersPrefix = "P";
-tocPage.TocInfo = tocInfo;
-for (int i = 1; i<doc.Pages.Count; i++)
-{
-	// Başlık nesnesi oluştur
-	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-	TextSegment segment2 = new TextSegment();
-	heading2.TocPage = tocPage;
-	heading2.Segments.Add(segment2);
-	// Başlık nesnesi için hedef sayfayı belirtin
-	heading2.DestinationPage = doc.Pages[i + 1];
-	// Hedef sayfası
-	heading2.Top = doc.Pages[i + 1].Rect.Height;
-	// Hedef koordinatı
-	segment2.Text = "Page " + i.ToString();
-	// İçindekiler içeren sayfaya başlık ekleyin
-	tocPage.Paragraphs.Add(heading2);
-}
-
-// Güncellenen belgeyi kaydet
-doc.Save(outFile);
-```
+Bu satır, TOC'yi içeren değiştirilmiş PDF'yi kaydeder. Artık çıktı dosyasını açabilir ve kişiselleştirilmiş İçindekiler Tablonuzu görebilirsiniz!
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for .NET kullanarak TOC eklerken sayfa numaralarının nasıl özelleştirileceği konusunda adım adım rehberlik sağladık. Ayrıca bu özelliği uygulamanıza uygularken referans olarak kullanabileceğiniz bir kod örneği de sunduk.
+Ve işte karşınızda! Aspose.PDF for .NET kullanarak PDF belgenize İçindekiler Tablosu eklerken sayfa numaralarını başarıyla özelleştirdiniz. Bu güçlü kütüphane PDF dosyalarını düzenlemeyi kolaylaştırır ve sadece birkaç satır kodla belgelerinizi önemli ölçüde geliştirebilirsiniz. İster raporlar, ister e-Kitaplar veya başka bir PDF türü oluşturun, bir İçindekiler Tablosuna sahip olmak okuyucularınız için gezinmeyi büyük ölçüde iyileştirebilir. Öyleyse, daha ne bekliyorsunuz? Aspose.PDF'e dalın ve bugün harika PDF'ler oluşturmaya başlayın!
 
-### SSS'ler
+## SSS
 
-#### S: PDF belgesindeki içindekiler tablosu (TOC) nedir?
+### Aspose.PDF for .NET nedir?
+Aspose.PDF for .NET, geliştiricilerin PDF belgelerini programlı bir şekilde oluşturmalarına, düzenlemelerine ve dönüştürmelerine olanak tanıyan bir kütüphanedir.
 
-C: Bir PDF belgesindeki içindekiler tablosu (TOC), ilgili sayfa numaralarıyla birlikte belge bölümlerinin veya bölümlerinin düzenli bir listesini sağlayan bir gezinme yardımcısıdır. Okuyucuların belge içindeki belirli bölümlere hızlı bir şekilde gitmesine olanak tanır.
+### Aspose.PDF'yi ücretsiz kullanabilir miyim?
+ Evet, Aspose kütüphanenin özelliklerini keşfetmeniz için kullanabileceğiniz ücretsiz bir deneme sürümü sunuyor. İndirebilirsiniz[Burada](https://releases.aspose.com/).
 
-#### S:Neden bir İçindekiler Tablosunda sayfa numaralarını özelleştirmek isteyeyim?
+### Aspose.PDF için nasıl destek alabilirim?
+ Aspose forumunu ziyaret ederek destek alabilirsiniz[Burada](https://forum.aspose.com/c/pdf/10).
 
-C: Belirli bir sayfa numaralandırma biçimini kullanmak veya sayfa numaralarıyla birlikte ek bilgiler eklemek istediğinizde, içindekiler tablosundaki sayfa numaralarını özelleştirmek yararlı olabilir. Daha kişiselleştirilmiş ve bilgilendirici bir içindekiler tablosu oluşturmanıza olanak tanır.
+### Geçici lisans var mı?
+ Evet, Aspose.PDF için geçici bir lisans talep edebilirsiniz[Burada](https://purchase.aspose.com/temporary-license/).
 
-#### S: PDF belgesindeki belirli bölümlere veya sayfalara bağlantı vermek için İçindekiler'e köprüler ekleyebilir miyim?
-
-C: Evet, Aspose.PDF for .NET, TOC'de PDF belgesindeki belirli bölümlere veya sayfalara bağlantı veren köprüler oluşturmanıza olanak tanır. Bu, PDF belgesinin etkileşimini ve gezinmesini geliştirir.
-
-#### S: Aspose.PDF for .NET, PDF/A standartlarıyla uyumlu mu?
-
-C: Evet, Aspose.PDF for .NET, PDF/A-1, PDF/A-2 ve PDF/A-3 dahil olmak üzere PDF/A standartlarını destekler. Arşivleme ve uzun süreli saklama gereksinimlerine uygun PDF belgeleri oluşturmanıza olanak tanır.
-
-#### S: İçindekiler girişlerine yazı tipi stilleri veya renkler gibi daha fazla biçimlendirme ekleyebilir miyim?
-
-C: Evet, Aspose.PDF for .NET'i kullanarak TOC girişlerine yazı tipi stilleri, renkler ve yazı tipi boyutları gibi ek biçimlendirmeler ekleyebilirsiniz. Bu, TOC'nin görünümünü gereksinimlerinize göre özelleştirmenize olanak tanır.
+### Aspose.PDF for .NET'i nereden satın alabilirim?
+ .NET için Aspose.PDF'yi satın alabilirsiniz[Burada](https://purchase.aspose.com/buy).

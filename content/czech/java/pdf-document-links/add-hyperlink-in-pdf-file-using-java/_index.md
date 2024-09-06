@@ -24,7 +24,7 @@ Než se pustíme do implementace, ujistěte se, že máte potřebné nástroje a
 - Integrované vývojové prostředí (IDE) dle vašeho výběru (např. Eclipse, IntelliJ IDEA)
 - Aspose.PDF pro knihovnu Java
 
- Knihovnu Aspose.PDF for Java si můžete stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+ Knihovnu Aspose.PDF for Java si můžete stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Přidání hypertextových odkazů do PDF pomocí Aspose.PDF pro Java
 
@@ -72,7 +72,7 @@ page.getAnnotations().add(hyperlink);
 pdfDocument.save("hyperlink_example.pdf");
 ```
 
-A je to! Úspěšně jste přidali hypertextový odkaz na soubor PDF pomocí Aspose.PDF for Java.
+To je vše! Úspěšně jste přidali hypertextový odkaz na soubor PDF pomocí Aspose.PDF for Java.
 
 ## Závěr
 

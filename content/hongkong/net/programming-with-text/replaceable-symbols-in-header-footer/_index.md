@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-text/replaceable-symbols-in-header-footer/
 
 ## 第 1 步：設定文檔目錄
 
-首先，您需要設定要儲存生成的 PDF 檔案的目錄路徑。代替`"YOUR DOCUMENT DIRECTORY"`在裡面`dataDir`變數包含您所需目錄的路徑。
+首先，您需要設定要儲存生成的 PDF 檔案的目錄路徑。代替`"YOUR DOCUMENT DIRECTORY"`在`dataDir`變數包含您所需目錄的路徑。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -160,7 +160,7 @@ row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java 是Aspose 提供的每個Java 元件的編譯。它是在#$NL" + "每日基礎上編譯的，以確保它包含每個元件的最新版本#$NL " + "使用 Aspose.Total for Java 開發人員可以建立廣泛的應用程式。#$NL #$NL #$NP" + "Aspose.Total for Java 是每個 Java 元件的編譯由Aspose 提供。它每天進行編譯，以確保它包含我們每個Java 組件的最新版本。#$NL" + "Java 開發人員使用Aspose.Total 可以創建廣泛的#$NL #$NL #$NP" + "Aspose. Total for Java 是Aspose 提供的每個Java 元件的編譯。它每天進行編譯，以確保它包含最多的內容我們每個Java 元件的最新版本。#$NL " + "Java 開發人員使用Aspose.Total 可以創建廣泛的應用程式。#$NL #$NL"))
+//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java 是Aspose 提供的每個Java 元件的編譯。它是在#$NL" + "每日基礎上編譯的，以確保它包含每個元件的最新版本#$NL " + "使用 Aspose.Total for Java 開發人員可以建立廣泛的應用程式 #$NL #$NL #$NP" + "Aspose.Total for Java 是每個 Java 元件的編譯。提供。 for Java 是Aspose 提供的每個Java 元件的編譯，它每天都會編譯，以確保它包含最多的內容。 。
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
 table.DefaultCellPadding = new MarginInfo();
@@ -203,13 +203,13 @@ Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile s
 
 ## 結論
 
-在本教學中，您學習如何使用 .NET 的 Aspose.PDF 庫在 PDF 文件的頁首和頁尾中使用可替換符號。透過遵循逐步指南並執行提供的 C# 程式碼，您可以建立 PDF、設定邊距、新增帶有可替換符號的頁首和頁尾以及儲存 PDF。
+在本教學中，您學習如何使用 .NET 的 Aspose.PDF 庫在 PDF 文件的頁首和頁尾中使用可替換符號。透過遵循逐步指南並執行提供的 C# 程式碼，您可以建立 PDF、設定邊距、新增帶有可替換符號的頁首和頁腳，以及儲存 PDF。
 
 ### 常見問題解答
 
 #### Q：「頁眉頁腳中的可替換符號」教學的目的為何？
 
-答：「頁首頁尾中的可替換符號」教學課程旨在引導您完成使用 .NET 的 Aspose.PDF 庫為 PDF 文件的頁首和頁尾新增可替換符號的過程。可替換符號可讓您在產生 PDF 時以實際值動態取代特定佔位符。
+答：「頁首頁腳中的可替換符號」教學課程旨在引導您完成使用 .NET 的 Aspose.PDF 庫為 PDF 文件的頁首和頁尾新增可替換符號的過程。可替換符號可讓您在產生 PDF 時以實際值動態取代特定佔位符。
 
 #### Q：PDF 頁首和頁尾上下文中的可替換符號有哪些？
 
@@ -237,8 +237,8 @@ Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile s
 
 - `$p`：當前頁碼。
 - `$P`：總頁數。
-- `$d`： 當前日期。
-- `$t`： 當前時間。
+- `$d`：當前日期。
+- `$t`：當前時間。
 - 您定義的自訂佔位符。
 
 #### Q：我可以在可替換符號周圍包含其他文字和格式嗎？

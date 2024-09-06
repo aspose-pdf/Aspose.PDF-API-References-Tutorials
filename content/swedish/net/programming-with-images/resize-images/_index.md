@@ -109,7 +109,7 @@ S: Att ändra storlek på bilder i en PDF-fil kan hjälpa till att optimera doku
 
 #### F: Hur påverkar bildstorleksändring kvaliteten på bilderna i PDF-dokumentet?
 
- S: Bildstorleksändring innebär att bildernas dimensioner och upplösning minskas, vilket kan resultera i en mindre filstorlek. Även om detta kan försämra bildkvaliteten i viss mån`ImageQuality` parameter (`optimizeOptions.ImageCompressionOptions.ImageQuality`) låter dig styra balansen mellan bildstorlek och kvalitet.
+ S: Bildstorleksändring innebär att bildernas dimensioner och upplösning minskas, vilket kan resultera i en mindre filstorlek. Även om detta kan försämra bildkvaliteten i viss mån`ImageQuality` parameter (`optimizeOptions.ImageCompressionOptions.ImageQuality`) låter dig kontrollera balansen mellan bildstorlek och kvalitet.
 
 ####  F: Vad är syftet med`MaxResolution` option in the optimization settings?
 

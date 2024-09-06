@@ -10,7 +10,7 @@ url: /hu/java/pdf-images/controlling-z-order-of-rectangle-in-pdf-with-java/
 
 ## Bevezetés
 
-A PDF-manipuláció világában az elemek Z-rendjének kezelése kulcsfontosságú, ha ellenőrizni szeretné az objektumok láthatóságát és elhelyezését a PDF-dokumentumban. Ez a cikk a PDF-ben található téglalapok Z-rendjének szabályozását mutatja be az Aspose.PDF for Java használatával, amely egy hatékony Java API a PDF-fájlok kezeléséhez.
+A PDF-kezelés világában az elemek Z-rendjének kezelése kulcsfontosságú, ha ellenőrizni szeretné az objektumok láthatóságát és elhelyezését a PDF-dokumentumban. Ez a cikk a PDF-ben található téglalapok Z-rendjének szabályozását mutatja be az Aspose.PDF for Java használatával, amely egy hatékony Java API a PDF-fájlok kezeléséhez.
 
 ## Z-Order megértése PDF-ekben
 
@@ -76,11 +76,11 @@ pdfDocument.save("output.pdf");
 
 ### 6. lépés: Futtassa a kódot
 
-Hajtsa végre a Java-kódot, és az létrehoz egy PDF-et, amelyben a téglalapok a Z-sorrendjük alapján vannak elrendezve.
+Hajtsa végre a Java-kódot, és az létrehoz egy PDF-fájlt a Z-sorrendjük alapján elrendezett téglalapokkal.
 
 ## Következtetés
 
-Ebben a cikkben megvizsgáltuk a PDF-dokumentumok téglalapjainak Z-rendjének szabályozásának fontosságát, és lépésről lépésre ismertettük az Aspose.PDF for Java használatát. Most már magabiztosan kezelheti a grafikus elemek láthatóságát és elhelyezését PDF-fájljaiban.
+Ebben a cikkben megvizsgáltuk a PDF-dokumentumok téglalapjainak Z-rendjének szabályozásának fontosságát, és lépésről lépésre bemutattuk az Aspose.PDF for Java használatát. Most már magabiztosan kezelheti a grafikus elemek láthatóságát és elhelyezését PDF-fájljaiban.
 
 ## GYIK
 

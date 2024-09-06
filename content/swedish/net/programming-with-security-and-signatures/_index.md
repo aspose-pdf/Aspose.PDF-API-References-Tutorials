@@ -23,5 +23,5 @@ Handledningen ger dig en detaljerad översikt över metoder och tekniker för at
 | [Extrahera signaturinformation](./extract-signature-info/) | Extrahera signaturinformation med Aspose.PDF för .NET. |  
 | [Är lösenordsskyddad](./is-password-protected/) | Kontrollera enkelt om ett PDF-dokument är lösenordsskyddat med Aspose.PDF för .NET. |  
 | [Ställ in privilegier i PDF-fil](./set-privileges/) | Ställ enkelt in åtkomstprivilegier i PDF-fil med Aspose.PDF för .NET. |  
-| [Sign med smartkort med pdf-filsignatur](./sign-with-smart-card-using-pdf-file-signature/) | Signera dina PDF-filer säkert med ett smartkort med Aspose.PDF för .NET. |  
-| [Med Smart Card Använda Signaturfältet](./sign-with-smart-card-using-signature-field/) | Signera dina PDF-filer säkert med ett smartkort med Aspose.PDF för .NET. |  
+| [Signera med smartkort med pdf-filsignatur](./sign-with-smart-card-using-pdf-file-signature/) | Signera dina PDF-filer säkert med ett smartkort med Aspose.PDF för .NET. |  
+| [Sign Med Smart Card Använder Signaturfältet](./sign-with-smart-card-using-signature-field/) | Signera dina PDF-filer säkert med ett smartkort med Aspose.PDF för .NET. |  

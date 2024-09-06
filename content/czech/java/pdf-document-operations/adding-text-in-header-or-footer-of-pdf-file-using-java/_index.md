@@ -17,7 +17,7 @@ V tomto komplexním průvodci prozkoumáme, jak přidat text do záhlaví nebo z
 Než se pustíme do implementace, ujistěte se, že máte splněny následující předpoklady:
 
 - Java Development Kit (JDK) nainstalovaný ve vašem systému.
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Krok 1: Vytvořte nový projekt Java
 
@@ -85,4 +85,4 @@ Absolutně! Aspose.PDF for Java umožňuje přidávat dynamický obsah, jako jso
 
 ### Kde najdu další informace a příklady pro Aspose.PDF pro Javu?
 
- Dokumentaci Aspose.PDF for Java si můžete prohlédnout na adrese[tady](https://reference.aspose.com/pdf/java/) pro podrobné informace a ukázky kódu.
+ Dokumentaci Aspose.PDF for Java si můžete prohlédnout na adrese[zde](https://reference.aspose.com/pdf/java/) pro podrobné informace a ukázky kódu.

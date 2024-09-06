@@ -1,23 +1,23 @@
 ---
-title: Tombol radio
-linktitle: Tombol radio
-second_title: Aspose.PDF untuk Referensi .NET API
+title: Tombol Radio
+linktitle: Tombol Radio
+second_title: Referensi API Aspose.PDF untuk .NET
 description: Tambahkan tombol radio dengan mudah ke dokumen PDF Anda dengan Aspose.PDF untuk .NET.
 type: docs
 weight: 220
 url: /id/net/programming-with-forms/radio-button/
 ---
-Dalam tutorial ini, kami akan menunjukkan cara menambahkan tombol radio di dokumen PDF menggunakan Aspose.PDF untuk .NET. Kami akan menjelaskan kode sumber C# langkah demi langkah untuk memandu Anda melalui proses ini.
+Dalam tutorial ini, kami akan menunjukkan cara menambahkan tombol radio dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Kami akan menjelaskan kode sumber C# langkah demi langkah untuk memandu Anda melalui proses ini.
 
 ## Langkah 1: Persiapan
 
-Pastikan Anda telah mengimpor perpustakaan yang diperlukan dan mengatur jalur ke direktori dokumen Anda:
+Pastikan Anda telah mengimpor pustaka yang diperlukan dan mengatur jalur ke direktori dokumen Anda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Langkah 2: Buat Instansiasi Objek Dokumen
+## Langkah 2: Membuat Instansi Objek Dokumen
 
 Buat instance objek Dokumen untuk membuat dokumen PDF baru:
 
@@ -33,9 +33,9 @@ Tambahkan halaman ke dokumen PDF:
 pdfDocument.Pages.Add();
 ```
 
-## Langkah 4: Buat instance Objek RadioButtonField
+## Langkah 4: Membuat Instansiasi Objek RadioButtonField
 
-Buat instance objek RadioButtonField yang menentukan nomor halaman sebagai argumen:
+Buat objek RadioButtonField dengan menentukan nomor halaman sebagai argumen:
 
 ```csharp
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
@@ -67,26 +67,26 @@ dataDir = dataDir + "RadioButton_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Contoh kode sumber untuk Radio Button menggunakan Aspose.PDF untuk .NET 
+### Contoh kode sumber untuk Tombol Radio menggunakan Aspose.PDF untuk .NET 
 ```csharp
 try
 {
 	// Jalur ke direktori dokumen.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Buat instance objek Dokumen
+	// Membuat instance objek Dokumen
 	Document pdfDocument = new Document();
 	// Tambahkan halaman ke file PDF
 	pdfDocument.Pages.Add();
 	// Buat objek RadioButtonField dengan nomor halaman sebagai argumen
 	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Tambahkan opsi tombol radio pertama dan tentukan juga asalnya menggunakan objek Rectangle
+	// Tambahkan opsi tombol radio pertama dan tentukan juga asalnya menggunakan objek Persegi Panjang
 	radio.AddOption("Test", new Rectangle(0, 0, 20, 20));
 	// Tambahkan opsi tombol radio kedua
 	radio.AddOption("Test1", new Rectangle(20, 20, 40, 40));
-	// Tambahkan tombol radio untuk membentuk objek objek Dokumen
+	// Tambahkan tombol radio ke objek formulir objek Dokumen
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "RadioButton_out.pdf";
-	// Simpan file PDFnya
+	// Simpan file PDF
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nRadio button field added successfully.\nFile saved at " + dataDir);
 }
@@ -98,27 +98,27 @@ catch (Exception ex)
 
 ## Kesimpulan
 
-Dalam tutorial ini, kita mempelajari cara menambahkan tombol radio di dokumen PDF menggunakan Aspose.PDF untuk .NET. Dengan mengikuti langkah-langkah ini, Anda dapat dengan mudah membuat tombol radio dan menempatkannya pada halaman tertentu di dokumen PDF Anda.
+Dalam tutorial ini, kita mempelajari cara menambahkan tombol radio dalam dokumen PDF menggunakan Aspose.PDF for .NET. Dengan mengikuti langkah-langkah ini, Anda dapat dengan mudah membuat tombol radio dan meletakkannya di halaman tertentu dalam dokumen PDF Anda.
 
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
 #### T: Dapatkah saya menyesuaikan tampilan tombol radio, seperti ukuran dan warnanya?
 
- J: Ya, Anda dapat menyesuaikan tampilan tombol radio menggunakan`Rectangle` koordinat objek untuk menentukan ukuran dan posisinya. Aspose.PDF untuk .NET memungkinkan Anda menyesuaikan tampilan tombol radio sesuai kebutuhan Anda.
+ A: Ya, Anda dapat menyesuaikan tampilan tombol radio menggunakan`Rectangle` koordinat objek untuk menentukan ukuran dan posisinya. Aspose.PDF untuk .NET memungkinkan Anda menyesuaikan tampilan tombol radio sesuai kebutuhan.
 
-#### T: Bisakah saya menambahkan beberapa tombol radio dengan grup berbeda di halaman yang sama?
+#### T: Dapatkah saya menambahkan beberapa tombol radio dengan grup berbeda di halaman yang sama?
 
-J: Ya, Anda dapat menambahkan beberapa tombol radio dengan grup berbeda di halaman yang sama. Setiap grup tombol radio dapat memiliki nama unik, dan hanya satu opsi dalam setiap grup yang dapat dipilih dalam satu waktu.
+A: Ya, Anda dapat menambahkan beberapa tombol radio dengan grup yang berbeda di halaman yang sama. Setiap grup tombol radio dapat memiliki nama yang unik, dan hanya satu opsi dalam setiap grup yang dapat dipilih pada satu waktu.
 
 #### T: Bagaimana cara menambahkan label atau deskripsi teks ke opsi tombol radio?
 
- J: Untuk menambahkan label atau deskripsi teks ke opsi tombol radio, Anda dapat menggunakan`TextStamp`kelas dari Aspose.PDF untuk .NET untuk melapisi teks pada dokumen PDF pada koordinat tertentu.
+ A: Untuk menambahkan label atau deskripsi teks ke opsi tombol radio, Anda dapat menggunakan`TextStamp`kelas dari Aspose.PDF untuk .NET untuk melapisi teks pada dokumen PDF pada koordinat tertentu.
 
 #### T: Apakah Aspose.PDF untuk .NET kompatibel dengan semua versi .NET Framework?
 
-J: Ya, Aspose.PDF untuk .NET kompatibel dengan semua versi .NET Framework, termasuk .NET Core dan .NET Standard.
+A: Ya, Aspose.PDF untuk .NET kompatibel dengan semua versi .NET Framework, termasuk .NET Core dan .NET Standard.
 
-#### T: Bisakah saya mengontrol pemilihan opsi tombol radio di dokumen PDF secara terprogram?
+#### T: Dapatkah saya mengontrol pemilihan opsi tombol radio dalam dokumen PDF secara terprogram?
 
- J: Ya, Anda dapat mengontrol pemilihan opsi tombol radio secara terprogram menggunakan`IsSelected` properti dari`RadioButtonOption` kelas. Properti ini memungkinkan Anda menyetel opsi tertentu sesuai pilihan.
+ A: Ya, Anda dapat mengontrol pemilihan opsi tombol radio secara terprogram menggunakan`IsSelected` milik`RadioButtonOption` class. Properti ini memungkinkan Anda untuk menetapkan opsi tertentu sebagai yang dipilih.

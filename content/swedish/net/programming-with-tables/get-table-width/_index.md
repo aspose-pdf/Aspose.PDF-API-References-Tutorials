@@ -84,7 +84,7 @@ den här handledningen lärde vi oss hur man får bredden på en tabell i ett PD
 
 #### F: Kan jag få tabellens individuella kolumnbredder med Aspose.PDF för .NET?
 
-S: Ja, du kan hämta tabellens individuella kolumnbredder med hjälp av`ColumnWidths` fast egendom. Den returnerar en sträng som representerar bredden på varje kolumn separerad med mellanslag. Du kan sedan analysera denna sträng för att få bredden på varje kolumn.
+S: Ja, du kan hämta tabellens individuella kolumnbredder med hjälp av`ColumnWidths` egendom. Den returnerar en sträng som representerar bredden på varje kolumn separerad med mellanslag. Du kan sedan analysera denna sträng för att få bredden på varje kolumn.
 
 #### F: Är det möjligt att få höjden på bordet med Aspose.PDF för .NET?
 

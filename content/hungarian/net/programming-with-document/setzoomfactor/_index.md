@@ -38,11 +38,11 @@ GoToAction action = new GoToAction(new XYZExplicitDestination(1, 0, 0, .5));
 doc.OpenAction = action;
 ```
 
- Ez a kód 50%-ra állítja a nagyítási tényezőt új létrehozásával`GoToAction` tárgy és átadás a`XYZExplicitDestination` 50%-os nagyítási tényezővel. A`OpenAction` tulajdona a`Document` az objektum ekkor erre van beállítva`GoToAction` tárgy.
+ Ez a kód 50%-ra állítja a nagyítási tényezőt új létrehozásával`GoToAction` tárgy és átadás a`XYZExplicitDestination` 50%-os nagyítási tényezővel. A`OpenAction` tulajdona a`Document` az objektum ekkor erre van beállítva`GoToAction` objektum.
 
 ## 4. lépés: Mentse el a PDF dokumentumot
 
- Végül a módosított PDF dokumentumot új fájlba menthetjük. A következő kódban a PDF dokumentumot egy új "Zoomed_pdf_out.pdf" nevű fájlba mentjük a`dataDir` Könyvtár.
+ Végül a módosított PDF dokumentumot új fájlba menthetjük. A következő kódban a PDF dokumentumot egy új "Zoomed_pdf_out.pdf" nevű fájlba mentjük a`dataDir` könyvtárat.
 
 ```csharp
 dataDir = dataDir + "Zoomed_pdf_out.pdf";
@@ -73,11 +73,11 @@ Az Aspose.PDF for .NET egyszerű és hatékony módot kínál a PDF-dokumentumok
 
 #### K: Mi a nagyítási tényező egy PDF-dokumentumban, és hogyan befolyásolja a megtekintést?
 
-V: A PDF-dokumentum nagyítási tényezője határozza meg a nagyítás mértékét a dokumentum megtekintésekor. Meghatározza a dokumentum megjelenítési méretarányát, amely befolyásolja, hogy a tartalom milyen nagyban vagy kicsiben jelenik meg a képernyőn. Az 1,0-s zoomtényező 100%-os nagyítást (tényleges méretet) jelent, míg az 1,0-nál nagyobb faktor nagyít, az 1,0-nál kisebb pedig kicsinyít.
+V: A PDF-dokumentum nagyítási tényezője határozza meg a nagyítás mértékét a dokumentum megtekintésekor. Meghatározza a dokumentum megjelenítési méretarányát, amely befolyásolja, hogy a tartalom milyen nagyban vagy kicsiben jelenik meg a képernyőn. Az 1,0-s nagyítási tényező 100%-os nagyítást (tényleges méretet) jelent, míg az 1,0-nál nagyobb faktor nagyít, az 1,0-nál kisebb pedig kicsinyít.
 
 #### K: Beállíthatok egy adott nagyítási tényezőt ugyanazon PDF dokumentum különböző oldalaihoz?
 
- V: Igen, az Aspose.PDF for .NET segítségével különböző nagyítási tényezőket állíthat be ugyanazon PDF-dokumentum különböző oldalaihoz. A példakénti forráskód bemutatja, hogyan kell beállítani az első oldal nagyítási tényezőjét a`GoToAction` tárgy. Szükség szerint módosíthatja a kódot, hogy más oldalakhoz különböző nagyítási tényezőket állítson be.
+ V: Igen, az Aspose.PDF for .NET segítségével különböző nagyítási tényezőket állíthat be ugyanazon PDF-dokumentum különböző oldalaihoz. A példakénti forráskód bemutatja, hogyan kell beállítani az első oldal nagyítási tényezőjét a`GoToAction` objektum. Szükség szerint módosíthatja a kódot, hogy más oldalakhoz különböző nagyítási tényezőket állítson be.
 
 #### K: Hogyan befolyásolja a nagyítási tényező módosítása a PDF-dokumentum nyomtatását és mentését?
 

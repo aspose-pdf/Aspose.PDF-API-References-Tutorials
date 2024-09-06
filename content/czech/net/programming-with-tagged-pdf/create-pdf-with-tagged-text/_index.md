@@ -125,7 +125,7 @@ Odpověď: Ano, pomocí podobných technik můžete přidat další tagované te
 
 #### Otázka: Jak používání tagovaného textu zlepšuje přístupnost v dokumentech PDF?
 
-Odpověď: Označený text dodává dokumentu sémantický význam, takže je přístupnější pro uživatele s postižením nebo pro ty, kteří používají pomocné technologie. Čtečky obrazovky a další pomocná zařízení mohou interpretovat a prezentovat označený text pro lepší uživatelský dojem.
+Odpověď: Označený text dodává dokumentu sémantický význam, takže je přístupnější pro uživatele se zdravotním postižením nebo pro ty, kteří používají pomocné technologie. Čtečky obrazovky a další pomocná zařízení mohou interpretovat a prezentovat označený text pro lepší uživatelský dojem.
 
 ####  Otázka: Jak to`SetLanguage` method enhance the tagged text in a PDF document?
 

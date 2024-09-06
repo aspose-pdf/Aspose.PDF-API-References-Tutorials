@@ -1,17 +1,17 @@
 ---
-title: Haal waarde uit veld in PDF-document
-linktitle: Haal waarde uit veld in PDF-document
+title: Waarde ophalen uit veld in PDF-document
+linktitle: Waarde ophalen uit veld in PDF-document
 second_title: Aspose.PDF voor .NET API-referentie
-description: Krijg eenvoudig de waarde van een formulierveld in een PDF-document met Aspose.PDF voor .NET.
+description: Haal eenvoudig de waarde van een formulierveld op in een PDF-document met Aspose.PDF voor .NET.
 type: docs
 weight: 140
 url: /nl/net/programming-with-forms/get-value-from-field/
 ---
-In deze zelfstudie laten we u zien hoe u de waarde van een formulierveld kunt verkrijgen met behulp van Aspose.PDF voor .NET. We leggen de C#-broncode stap voor stap uit om u door dit proces te begeleiden.
+In deze tutorial laten we je zien hoe je de waarde van een formulierveld kunt ophalen met Aspose.PDF voor .NET. We leggen de C#-broncode stap voor stap uit om je door dit proces te leiden.
 
 ## Stap 1: Voorbereiding
 
-Zorg ervoor dat u de benodigde bibliotheken heeft geïmporteerd en stel het pad in naar uw documentenmap:
+Zorg ervoor dat u de benodigde bibliotheken hebt geïmporteerd en het pad naar uw documentenmap hebt ingesteld:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -33,7 +33,7 @@ Haal het gewenste formulierveld op (in dit voorbeeld gebruiken we het veld "text
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 ```
 
-## Stap 4: Haal de veldwaarde op
+## Stap 4: Veldwaarde ophalen
 
  Haal de veldwaarde op met behulp van de`Value` eigendom:
 
@@ -42,13 +42,13 @@ Console.WriteLine("PartialName: {0}", textBoxField.PartialName);
 Console.WriteLine("Value: {0}", textBoxField.Value);
 ```
 
-### Voorbeeldbroncode voor Get Value From Field met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Get Value From Field met behulp van Aspose.PDF voor .NET 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Document openen
 Document pdfDocument = new Document(dataDir + "GetValueFromField.pdf");
-// Neem een veld
+// Krijg een veld
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 // Veldwaarde ophalen
 Console.WriteLine("PartialName : {0} ", textBoxField.PartialName);
@@ -57,26 +57,26 @@ Console.WriteLine("Value : {0} ", textBoxField.Value);
 
 ## Conclusie
 
-In deze zelfstudie hebben we geleerd hoe u de waarde van een formulierveld kunt verkrijgen met Aspose.PDF voor .NET. Door deze stappen te volgen, kunt u eenvoudig de waarde van een specifiek formulierveld in uw PDF-documenten extraheren met behulp van Aspose.PDF.
+In deze tutorial hebben we geleerd hoe je de waarde van een formulierveld kunt ophalen met Aspose.PDF voor .NET. Door deze stappen te volgen, kun je eenvoudig de waarde van een specifiek formulierveld in je PDF-documenten ophalen met Aspose.PDF.
 
 ### Veelgestelde vragen
 
-#### Vraag: Kan ik de waarde van een formulierveld achterhalen zonder vooraf de naam ervan te kennen?
+#### V: Kan ik de waarde van een formulierveld opvragen zonder dat ik de naam ervan vooraf weet?
 
- A: Nee, u moet de naam of een gedeeltelijke naam van het formulierveld weten om de waarde ervan te achterhalen met Aspose.PDF voor .NET. De`pdfDocument.Form["fieldname"]` De syntaxis vereist de exacte naam of een gedeeltelijke naam van het formulierveld om toegang te krijgen tot de eigenschappen ervan, inclusief de waarde.
+ A: Nee, u moet de naam of een deel van de naam van het formulierveld weten om de waarde ervan te verkrijgen met Aspose.PDF voor .NET.`pdfDocument.Form["fieldname"]` De syntaxis vereist de exacte naam of een gedeeltelijke naam van het formulierveld om toegang te krijgen tot de eigenschappen ervan, inclusief de waarde.
 
-#### Vraag: Wat moet ik doen als het formulierveld niet bestaat in het PDF-document?
+#### V: Wat als het formulierveld niet in het PDF-document staat?
 
- A: Als het formulierveld niet bestaat in het PDF-document, wordt het`pdfDocument.Form["fieldname"]` syntaxis zal terugkeren`null` . Het is essentieel om dergelijke gevallen te behandelen door te controleren op`null` voordat u toegang krijgt tot de eigenschappen van het formulierveld om uitzonderingen te voorkomen.
+ A: Als het formulierveld niet in het PDF-document voorkomt,`pdfDocument.Form["fieldname"]` syntaxis zal terugkeren`null` Het is essentieel om dergelijke gevallen te behandelen door te controleren op`null` voordat u de eigenschappen van het formulierveld benadert, om uitzonderingen te voorkomen.
 
-#### Vraag: Hoe kan ik omgaan met verschillende soorten formuliervelden (bijvoorbeeld selectievakjes, keuzerondjes) om hun waarden op te halen?
+#### V: Hoe kan ik verschillende typen formuliervelden (bijv. selectievakjes, keuzerondjes) verwerken om de waarden op te halen?
 
- A: Om met verschillende soorten formuliervelden om te gaan, kunt u de juiste veldklassen gebruiken die beschikbaar zijn in Aspose.PDF voor .NET. Gebruik bijvoorbeeld`CheckBoxField` werken met selectievakjes en`RadioButtonField`werken met keuzerondjes. Zodra u over het juiste veldobject beschikt, heeft u toegang tot de eigenschappen ervan, inclusief de waarde.
+ A: Om verschillende typen formuliervelden te verwerken, kunt u de juiste veldklassen gebruiken die beschikbaar zijn in Aspose.PDF voor .NET. Gebruik bijvoorbeeld`CheckBoxField` om met selectievakjes te werken en`RadioButtonField`om met keuzerondjes te werken. Zodra u het juiste veldobject hebt, kunt u de eigenschappen ervan openen, inclusief de waarde.
 
-#### Vraag: Kan ik de waarden van meerdere formuliervelden tegelijk opvragen?
+#### V: Kan ik de waarden van meerdere formuliervelden tegelijk opvragen?
 
-A: Ja, u kunt de waarden van meerdere formuliervelden tegelijk verkrijgen door de verzameling formuliervelden te doorlopen met behulp van een lus of LINQ-query's. Op deze manier kunt u programmatisch toegang krijgen tot de waarde van elk formulierveld in het PDF-document.
+A: Ja, u kunt de waarden van meerdere formuliervelden tegelijk ophalen door de formulierveldenverzameling te doorlopen met behulp van een lus of LINQ-query's. Op deze manier kunt u programmatisch toegang krijgen tot de waarde van elk formulierveld in het PDF-document.
 
-#### Vraag: Is het mogelijk om de waarde van een formulierveld te wijzigen en de wijzigingen weer op te slaan in het PDF-document?
+#### V: Is het mogelijk om de waarde van een formulierveld te wijzigen en de wijzigingen op te slaan in het PDF-document?
 
- A: Ja, u kunt de waarde van een formulierveld wijzigen met Aspose.PDF voor .NET en de wijzigingen opslaan in het PDF-document. Na het updaten van de`Value` eigenschap van het formulierveld, kunt u de`pdfDocument.Save()` methode om de wijzigingen in het originele PDF-document op te slaan.
+ A: Ja, u kunt de waarde van een formulierveld wijzigen met Aspose.PDF voor .NET en de wijzigingen opslaan in het PDF-document. Nadat u de`Value` eigenschap van het formulierveld, kunt u de`pdfDocument.Save()` Methode om de wijzigingen in het originele PDF-document op te slaan.

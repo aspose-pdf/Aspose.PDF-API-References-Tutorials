@@ -45,7 +45,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## Krok 6: Vytvořte TextFragment
- Vytvořit`TextFragment` objekt a zadejte požadovaný text. Nastavte polohu textového fragmentu pomocí`Position` vlastnictví. V poskytnutém kódu je text nastaven na "hlavní text" a umístěn na stránce (100, 600).
+ Vytvořte a`TextFragment` objekt a zadejte požadovaný text. Nastavte polohu textového fragmentu pomocí`Position` vlastnictví. V poskytnutém kódu je text nastaven na "hlavní text" a umístěn na stránce (100, 600).
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");

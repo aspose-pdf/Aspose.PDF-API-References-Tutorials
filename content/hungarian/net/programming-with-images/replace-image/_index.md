@@ -95,7 +95,7 @@ V: A megadott kódban az új kép egy JPEG fájlból (`aspose-logo.jpg`). Az Asp
 
 ####  K: Hogyan működik a`pdfDocument.Save` method update the PDF file after image replacement?
 
- V: A`pdfDocument.Save` módszerrel mentheti el a frissített PDF dokumentumot a képcsere után. Felülírja az eredeti PDF fájlt a módosított tartalommal, hatékonyan lecserélve a képet. Ügyeljen arra, hogy a frissített PDF-fájlhoz adja meg a kívánt kimeneti elérési utat és fájlnevet.
+ V: A`pdfDocument.Save` módszerrel mentheti el a frissített PDF-dokumentumot a képcsere után. Felülírja az eredeti PDF fájlt a módosított tartalommal, hatékonyan lecserélve a képet. Ügyeljen arra, hogy a frissített PDF-fájlhoz adja meg a kívánt kimeneti elérési utat és fájlnevet.
 
 #### K: Lehetséges több kép cseréje egyetlen PDF dokumentumon belül?
 

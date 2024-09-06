@@ -1,6 +1,6 @@
 ---
-title: Onderteken met smartcard met behulp van PDF-bestandshandtekening
-linktitle: Onderteken met smartcard met behulp van PDF-bestandshandtekening
+title: Ondertekenen met smartcard met behulp van PDF-bestandshandtekening
+linktitle: Ondertekenen met smartcard met behulp van PDF-bestandshandtekening
 second_title: Aspose.PDF voor .NET API-referentie
 description: Onderteken uw PDF-bestanden veilig met een smartcard met Aspose.PDF voor .NET.
 type: docs
@@ -11,7 +11,7 @@ Digitaal ondertekenen met een smartcard is een veilige manier om PDF-bestanden t
 
 ## Stap 1: Importeer de vereiste bibliotheken
 
-Voordat u begint, moet u de benodigde bibliotheken voor uw C#-project importeren. Hier zijn de noodzakelijke importrichtlijnen:
+Voordat u begint, moet u de benodigde bibliotheken voor uw C#-project importeren. Dit zijn de benodigde importrichtlijnen:
 
 ```csharp
 using Aspose.Pdf;
@@ -22,7 +22,7 @@ using System.Security.Cryptography.X509Certificates;
 
 ## Stap 2: Stel het pad naar de documentenmap in
 
- In deze stap moet u het pad opgeven naar de map met het PDF-bestand dat u wilt ondertekenen. Vervangen`"YOUR DOCUMENTS DIRECTORY"`in de volgende code met het daadwerkelijke pad naar uw documentenmap:
+ In deze stap moet u het pad opgeven naar de map met het PDF-bestand dat u wilt ondertekenen. Vervangen`"YOUR DOCUMENTS DIRECTORY"` in de volgende code met het daadwerkelijke pad naar uw documentenmap:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -30,7 +30,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Stap 3: Laad het PDF-document
 
-Nu zullen we het te ondertekenen PDF-document laden met behulp van de volgende code:
+Nu laden we het PDF-document dat ondertekend moet worden met behulp van de volgende code:
 
 ```csharp
 Document doc = new Document(dataDir + "blank.pdf");
@@ -38,7 +38,7 @@ Document doc = new Document(dataDir + "blank.pdf");
 
 ## Stap 4: Voer de handtekening uit met de smartcard
 
- In deze stap voeren we de handtekening uit met de smartcard met behulp van de`PdfFileSignature` klasse uit de`Facades`bibliotheek. We selecteren het smartcardcertificaat uit het Windows-certificaatarchief en specificeren de benodigde ondertekeningsinformatie. Hier is de bijbehorende code:
+ In deze stap zullen we de handtekening met de smartcard uitvoeren met behulp van de`PdfFileSignature` klas van de`Facades`bibliotheek. We selecteren het smartcardcertificaat uit de Windows-certificaatopslag en specificeren de benodigde ondertekeningsinformatie. Hier is de bijbehorende code:
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature())
@@ -59,7 +59,7 @@ using (PdfFileSignature pdfSign = new PdfFileSignature())
 
 ## Stap 5: Handtekening verifiëren
 
- Ten slotte verifiëren we de handtekening van het ondertekende PDF-bestand met behulp van de`PdfFileSignature` klas. We krijgen de handtekeningnamen en controleren ze één voor één. Als de verificatie van een handtekening mislukt, wordt er een uitzondering gegenereerd. Hier is de bijbehorende code:
+ Ten slotte verifiëren we de handtekening van het ondertekende PDF-bestand met behulp van de`PdfFileSignature` klasse. We krijgen de handtekeningnamen en controleren ze één voor één. Als een handtekening de verificatie niet doorstaat, wordt er een uitzondering gegenereerd. Hier is de bijbehorende code:
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature2.pdf")))
@@ -75,7 +75,7 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 }
 ```
 
-### Voorbeeldbroncode voor ondertekenen met smartcard met behulp van PDF-bestandshandtekening met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Sign With Smart Card Using Pdf File Signature met Aspose.PDF voor .NET 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -83,10 +83,10 @@ Document doc = new Document(dataDir + "blank.pdf");
 using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature())
 {
 	pdfSign.BindPdf(doc);
-	// Onderteken met certificaatselectie in het Windows-certificaatarchief
+	// Ondertekenen met certificaatselectie in het Windows-certificaatarchief
 	System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
 	store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-	// Handmatig het certificaat gekozen in de winkel
+	// Handmatig het certificaat in de winkel gekozen
 	System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
 	Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0]);
 	pdfSign.SignatureAppearance = dataDir + "demo.png";
@@ -108,48 +108,48 @@ using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature(new Docum
 
 ## Conclusie
 
-Gefeliciteerd! U beschikt nu over een stapsgewijze handleiding voor het ondertekenen van een PDF-bestand met een smartcard met behulp van Aspose.PDF voor .NET. U kunt deze code gebruiken om veilige digitale handtekeningen aan uw PDF-documenten toe te voegen.
+Gefeliciteerd! U hebt nu een stapsgewijze handleiding voor het ondertekenen van een PDF-bestand met een smartcard met Aspose.PDF voor .NET. U kunt deze code gebruiken om veilige digitale handtekeningen toe te voegen aan uw PDF-documenten.
 
-Zorg ervoor dat u de officiële Aspose.PDF-documentatie bekijkt voor meer informatie over geavanceerde functies voor digitale handtekeningen en certificaatbeheer.
+Raadpleeg de officiële Aspose.PDF-documentatie voor meer informatie over geavanceerde functies voor digitale handtekeningen en certificaatbeheer.
 
 ### Veelgestelde vragen
 
-#### Vraag: Waarom zou ik overwegen om PDF-bestanden te ondertekenen met een smartcard?
+#### V: Waarom zou ik PDF-bestanden ondertekenen met een smartcard?
 
-A: Het ondertekenen van PDF-bestanden met een smartcard verbetert de veiligheid door de authenticiteit en integriteit van het document te garanderen. Op smartcards gebaseerde handtekeningen zorgen voor een hoger niveau van vertrouwen en compliance.
+A: PDF-bestanden ondertekenen met een smartcard verbetert de beveiliging door de authenticiteit en integriteit van het document te garanderen. Smartcard-gebaseerde handtekeningen bieden een hoger niveau van vertrouwen en naleving.
 
-#### Vraag: Hoe werkt digitaal ondertekenen op basis van smartcards?
+#### V: Hoe werkt digitaal ondertekenen met een smartcard?
 
-A: Bij digitaal ondertekenen op basis van smartcards wordt gebruik gemaakt van een cryptografische sleutel die op een smartcard is opgeslagen om een unieke digitale handtekening te creëren. Deze handtekening wordt aan het PDF-bestand toegevoegd, zodat ontvangers de oorsprong en integriteit van het document kunnen verifiëren.
+A: Smartcard-gebaseerde digitale ondertekening omvat het gebruik van een cryptografische sleutel die is opgeslagen op een smartcard om een unieke digitale handtekening te maken. Deze handtekening wordt toegevoegd aan het PDF-bestand, zodat ontvangers de oorsprong en integriteit van het document kunnen verifiëren.
 
-#### Vraag: Wat is de rol van Aspose.PDF voor .NET bij het ondertekenen op basis van smartcards?
+#### V: Wat is de rol van Aspose.PDF voor .NET bij smartcard-gebaseerde ondertekening?
 
-A: Aspose.PDF voor .NET biedt een uitgebreide set tools en bibliotheken om op smartcards gebaseerde digitale ondertekening van PDF-bestanden te vergemakkelijken. Het vereenvoudigt het proces en zorgt voor een veilige ondertekening van documenten.
+A: Aspose.PDF voor .NET biedt een uitgebreide set tools en bibliotheken om smartcard-gebaseerde digitale ondertekening van PDF-bestanden te vergemakkelijken. Het vereenvoudigt het proces en zorgt voor veilige documentondertekening.
 
-#### Vraag: Kan ik een specifiek smartcardcertificaat kiezen om te ondertekenen?
+#### V: Kan ik een specifiek smartcardcertificaat kiezen voor ondertekening?
 
-A: Ja, u kunt een specifiek smartcardcertificaat uit het Windows-certificaatarchief selecteren om te ondertekenen. Met Aspose.PDF voor .NET kunt u certificaatselectie naadloos in uw toepassing integreren.
+A: Ja, u kunt een specifiek smartcardcertificaat selecteren uit de Windows-certificaatopslag voor ondertekening. Met Aspose.PDF voor .NET kunt u certificaatselectie naadloos integreren in uw toepassing.
 
-#### Vraag: Hoe verwerkt de meegeleverde broncode het ondertekenen op basis van smartcards?
+#### V: Hoe verwerkt de meegeleverde broncode smartcard-gebaseerde ondertekening?
 
-A: De broncode laat zien hoe u een PDF-document kunt inbinden, een smartcardcertificaat kunt selecteren, ondertekeningsinformatie kunt opgeven en een digitale handtekening kunt maken. Het laat ook zien hoe u de geldigheid van de handtekening kunt verifiëren.
+A: De broncode laat zien hoe u een PDF-document bindt, een smartcardcertificaat selecteert, ondertekeningsinformatie opgeeft en een digitale handtekening maakt. Het laat ook zien hoe u de geldigheid van de handtekening verifieert.
 
-#### Vraag: Kan ik meerdere handtekeningen toepassen met behulp van smartcards in één PDF-bestand?
+#### V: Kan ik meerdere handtekeningen met behulp van smartcards in één PDF-bestand toepassen?
 
-A: Absoluut, u kunt meerdere op smartcards gebaseerde handtekeningen op één PDF-bestand toepassen. Elke handtekening is uniek en draagt bij aan de algemene veiligheid van het document.
+A: Absoluut, u kunt meerdere smartcard-gebaseerde handtekeningen toepassen op één PDF-bestand. Elke handtekening is uniek en draagt bij aan de algehele beveiliging van het document.
 
-#### Vraag: Wat moet ik doen als de verificatie van een handtekening tijdens de verificatiestap mislukt?
+#### V: Wat als een handtekening de verificatie tijdens de verificatiestap niet doorstaat?
 
-A: Als de verificatie van een handtekening mislukt, wordt er een uitzondering gegenereerd, wat aangeeft dat de handtekening niet geldig is. Dit zorgt ervoor dat alleen geldige en vertrouwde handtekeningen worden geaccepteerd.
+A: Als een handtekening de verificatie niet doorstaat, wordt er een uitzondering gegenereerd die aangeeft dat de handtekening niet geldig is. Dit zorgt ervoor dat alleen geldige en vertrouwde handtekeningen worden geaccepteerd.
 
-#### Vraag: Is op smartcards gebaseerde ondertekening compatibel met alle soorten PDF-documenten?
+#### V: Is ondertekenen met smartcards compatibel met alle soorten PDF-documenten?
 
-A: Ja, op smartcards gebaseerde ondertekening is compatibel met alle soorten PDF-documenten. U kunt digitale handtekeningen toepassen op verschillende soorten PDF-bestanden, waaronder formulieren, rapporten en meer.
+A: Ja, smartcard-based signing is compatibel met alle typen PDF-documenten. U kunt digitale handtekeningen toepassen op verschillende typen PDF-bestanden, waaronder formulieren, rapporten en meer.
 
-#### Vraag: Hoe kan ik meer te weten komen over geavanceerd beheer van digitale handtekeningen en certificaten?
+#### V: Hoe kan ik meer leren over geavanceerd beheer van digitale handtekeningen en certificaten?
 
-A: Bekijk de officiële Aspose.PDF-documentatie voor gedetailleerd inzicht in geavanceerde functies voor digitale handtekeningen, certificaatbeheer en best practices voor het garanderen van documentbeveiliging.
+A: Bekijk de officiële Aspose.PDF-documentatie voor gedetailleerde inzichten in geavanceerde functies voor digitale handtekeningen, certificaatbeheer en best practices voor het waarborgen van de beveiliging van documenten.
 
-#### Vraag: Waar kan ik verdere hulp of ondersteuning vinden voor het implementeren van op smartcards gebaseerde ondertekening?
+#### V: Waar kan ik verdere hulp of ondersteuning vinden voor het implementeren van smartcard-gebaseerde ondertekening?
 
-A: Neem voor aanvullende begeleiding en ondersteuning contact op met de Aspose.PDF-communityforums of raadpleeg de documentatie voor uitgebreide informatie over ondertekenen op basis van smartcards.
+A: Voor aanvullende begeleiding en ondersteuning kunt u terecht op de Aspose.PDF communityforums of de documentatie raadplegen voor uitgebreide informatie over ondertekenen met smartcards.

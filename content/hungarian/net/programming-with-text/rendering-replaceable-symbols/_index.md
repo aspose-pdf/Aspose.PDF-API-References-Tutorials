@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 1. lépés: Állítsa be a dokumentumkönyvtárat
 
- Először is be kell állítania annak a könyvtárnak az elérési útját, ahová a létrehozott PDF-fájlt menteni szeretné. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir`változót a kívánt könyvtár elérési útjával.
+ Először is be kell állítania annak a könyvtárnak az elérési útját, ahová a létrehozott PDF-fájlt menteni szeretné. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változót a kívánt könyvtár elérési útjával.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Aspose.Pdf.Page applicationFirstPage = (Aspose.Pdf.Page)pdfApplicationDoc.Pages.
 
 ## 3. lépés: Szövegtöredék hozzáadása újsor-jelölőkkel
 
- Létrehozunk a`TextFragment`objektumot, és állítsa be a szövegébe újsorjelzőket (`Environment.NewLine`) többsoros szöveg megjelenítéséhez.
+ Létrehozunk a`TextFragment` objektumot, és állítsa be a szövegébe újsorjelzőket (`Environment.NewLine`) többsoros szöveg megjelenítéséhez.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment textFragment = new Aspose.Pdf.Text.TextFragment("Applicant Name: " + Environment.NewLine + " Joe Smoe");
@@ -127,7 +127,7 @@ V: A cserélhető szimbólumok megjelenítése akkor hasznos, ha változó vagy 
 
 V: A dokumentumkönyvtár beállításához:
 
-1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó annak a könyvtárnak az elérési útjával, ahová a generált PDF fájlt menteni szeretné.
+1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó annak a könyvtárnak az elérési útjával, ahová a generált PDF fájlt menteni szeretné.
 
 #### K: Hogyan jeleníthetek meg cserélhető szimbólumokat egy PDF-dokumentumban az Aspose.PDF könyvtár használatával?
 
@@ -135,15 +135,15 @@ V: Az oktatóanyag lépésről lépésre végigvezeti a folyamaton:
 
 1.  Hozzon létre egy új PDF dokumentumot a`Document` osztály.
 2.  Adjon hozzá egy oldalt a dokumentumhoz a gombbal`Page` osztály.
-3.  Hozzon létre egy`TextFragment` objektum újsor jelölőkkel (`Environment.NewLine`) többsoros tartalom megjelenítésére.
+3.  Hozzon létre a`TextFragment` objektum újsor jelölőkkel (`Environment.NewLine`) többsoros tartalom megjelenítésére.
 4. Testreszabhatja a szövegrészlet tulajdonságait, például a betűméretet, a betűtípust, a háttérszínt és az előtér színét.
-5.  Hozzon létre egy`TextParagraph` objektumot, fűzze hozzá a szövegrészletet, és állítsa be a bekezdés pozícióját az oldalon.
-6.  Hozzon létre egy`TextBuilder` objektumot az oldallal, és fűzze hozzá a szöveges bekezdést.
+5.  Hozzon létre a`TextParagraph` objektumot, fűzze hozzá a szövegrészletet, és állítsa be a bekezdés pozícióját az oldalon.
+6.  Hozzon létre a`TextBuilder` objektumot az oldallal, és fűzze hozzá a szöveges bekezdést.
 7. Mentse el a PDF dokumentumot.
 
 #### K: Mi a célja az újsorjelzők használatának (`Environment.NewLine`) in the text fragment?
 
- V: Az újsor-jelölők többsoros tartalom létrehozására szolgálnak egyetlen szövegrészleten belül. Használva`Environment.NewLine`, akkor jelezheti, hogy a szövegben hol forduljon elő sortörés.
+ V: Az újsor-jelölők többsoros tartalom létrehozására szolgálnak egyetlen szövegrészleten belül. Használatával`Environment.NewLine`akkor jelezheti, hogy a szövegben hol forduljon elő sortörés.
 
 #### K: Testreszabhatom a cserélhető szimbólumok megjelenését?
 

@@ -13,7 +13,7 @@ Ebben a lépésenkénti útmutatóban megvizsgáljuk, hogyan lehet kivonni a be�
 
 ## A feladat megértése
 
-Mielőtt belemerülnénk a kódba, tisztázzuk, mit próbálunk elérni. Olyan Java-alkalmazást szeretnénk fejleszteni, amely képes megnyitni egy PDF-fájlt, és kibontani az összes beágyazott kép nevét. Ezeket a neveket aztán különféle célokra, például további feldolgozásra vagy dokumentációra lehet használni.
+Mielőtt belemerülnénk a kódba, tisztázzuk, mit akarunk elérni. Olyan Java-alkalmazást szeretnénk fejleszteni, amely képes megnyitni egy PDF-fájlt, és kibontani az összes beágyazott kép nevét. Ezeket a neveket aztán különféle célokra, például további feldolgozásra vagy dokumentációra lehet használni.
 
 ## A környezet beállítása
 

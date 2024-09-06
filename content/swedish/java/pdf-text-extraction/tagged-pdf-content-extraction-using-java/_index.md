@@ -41,7 +41,7 @@ public class TaggedPDFExtractor {
 }
 ```
 
- Byta ut`"path_to_tagged_pdf.pdf"` med den faktiska sökvägen till din taggade PDF-fil.
+ Ersätta`"path_to_tagged_pdf.pdf"` med den faktiska sökvägen till din taggade PDF-fil.
 
 ## Steg 3: Extrahera taggat innehåll
 

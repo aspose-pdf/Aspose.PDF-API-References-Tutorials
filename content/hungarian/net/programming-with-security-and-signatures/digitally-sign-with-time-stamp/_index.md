@@ -104,7 +104,7 @@ V: A PFX (Personal Exchange Format) fájl privát kulcsot és tanúsítványt ta
 V: A TimestampSettings határozza meg az időbélyegzőszerver beállításait, amellyel az elektronikus időbélyegzőt az aláíráshoz adják. Tartalmazza az időbélyeg-kiszolgáló URL-címét és az opcionális felhasználói hitelesítő adatokat.
 
 #### K: Használhatok a példában szereplőtől eltérő időbélyeg-kiszolgálót?
- V: Igen, bármilyen kompatibilis időbélyeg-kiszolgálót használhat. Cserélje ki az URL-t, és ha szükséges, adja meg a megfelelő felhasználói hitelesítő adatokat`TimestampSettings` tárgy.
+ V: Igen, bármilyen kompatibilis időbélyeg-kiszolgálót használhat. Cserélje ki az URL-t, és ha szükséges, adja meg a megfelelő felhasználói hitelesítő adatokat`TimestampSettings` objektum.
 
 #### K: Mi a célja az aláírási téglalap megadásának?
 

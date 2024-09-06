@@ -1,38 +1,38 @@
 ---
-title: Uzyskaj znak wodny z pliku PDF
-linktitle: Uzyskaj znak wodny z pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak wyodrębnić znaki wodne z pliku PDF za pomocą Aspose.PDF dla .NET.
+title: Pobierz znak wodny z pliku PDF
+linktitle: Pobierz znak wodny z pliku PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak wyodrębnić znaki wodne z pliku PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 100
 url: /pl/net/programming-with-stamps-and-watermarks/get-watermark/
 ---
-W tym samouczku przeprowadzimy Cię krok po kroku, jak uzyskać znak wodny z pliku PDF za pomocą Aspose.PDF dla .NET. Pokażemy Ci, jak używać udostępnionego kodu źródłowego języka C# do iteracji po artefaktach określonej strony i uzyskiwania typu, tekstu i lokalizacji znaku wodnego.
+W tym samouczku pokażemy Ci krok po kroku, jak uzyskać znak wodny z pliku PDF za pomocą Aspose.PDF dla .NET. Pokażemy Ci, jak użyć dostarczonego kodu źródłowego C#, aby przejść przez artefakty określonej strony i uzyskać typ znaku wodnego, tekst i lokalizację.
 
 ## Krok 1: Konfigurowanie środowiska
 
-Zanim zaczniesz, upewnij się, że masz następujące elementy:
+Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
 
 - Zainstalowane środowisko programistyczne .NET.
-- Biblioteka Aspose.PDF dla platformy .NET pobrana i przywołana w Twoim projekcie.
+- Biblioteka Aspose.PDF dla platformy .NET pobrana i wykorzystana w projekcie.
 
 ## Krok 2: Ładowanie dokumentu PDF
 
-Pierwszym krokiem jest załadowanie istniejącego dokumentu PDF do projektu. Oto jak:
+Pierwszym krokiem jest załadowanie istniejącego dokumentu PDF do projektu. Oto jak to zrobić:
 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-//Otwórz dokument PDF
+// Otwórz dokument PDF
 Document pdfDocument = new Document(dataDir + "watermark.pdf");
 ```
 
-Pamiętaj, aby zastąpić „KATALOG TWOICH DOKUMENTÓW” rzeczywistą ścieżką do katalogu, w którym znajduje się dokument PDF.
+Pamiętaj, aby zastąpić frazę „KATALOG DOKUMENTÓW” rzeczywistą ścieżką do katalogu, w którym znajduje się Twój dokument PDF.
 
 ## Krok 3: Uzyskanie znaku wodnego
 
-Po załadowaniu dokumentu PDF możesz przeglądać określone artefakty strony, aby uzyskać informacje o znaku wodnym. Oto jak:
+Teraz, gdy załadowałeś dokument PDF, możesz przejść przez konkretne artefakty strony, aby uzyskać informacje o znaku wodnym. Oto jak to zrobić:
 
 ```csharp
 // Przeglądaj artefakty i uzyskaj podtyp, tekst i lokalizację znaku wodnego
@@ -44,7 +44,7 @@ foreach(Artifact artifact in pdfDocument.Pages[1].Artifacts)
 
 Powyższy kod przechodzi przez wszystkie artefakty na pierwszej stronie dokumentu PDF i wyświetla podtyp, tekst i prostokąt (lokalizację) każdego napotkanego znaku wodnego.
 
-### Przykładowy kod źródłowy aplikacji Uzyskaj znak wodny przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla Get Watermark przy użyciu Aspose.PDF dla .NET 
 ```csharp
 
 // Ścieżka do katalogu dokumentów.
@@ -53,7 +53,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Otwórz dokument
 Document pdfDocument = new Document( dataDir +  "watermark.pdf");
 
-// Iteruj i uzyskaj typ wanny, tekst i lokalizację artefaktu
+// Przejrzyj i uzyskaj typ wanny, tekst i lokalizację artefaktu
 foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
 	Console.WriteLine(artifact.Subtype + " " + artifact.Text + " " + artifact.Rectangle);
@@ -63,46 +63,46 @@ foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 
 ## Wniosek
 
-Gratulacje! Nauczyłeś się, jak uzyskać informacje o znaku wodnym z dokumentu PDF przy użyciu Aspose.PDF dla .NET. Teraz możesz wykorzystać tę wiedzę do analizowania i przetwarzania znaków wodnych w dokumentach PDF.
+Gratulacje! Nauczyłeś się, jak uzyskać informacje o znaku wodnym z dokumentu PDF za pomocą Aspose.PDF dla .NET. Teraz możesz wykorzystać tę wiedzę do analizy i przetwarzania znaków wodnych w dokumentach PDF.
 
-### Często zadawane pytania dotyczące pobierania znaku wodnego z pliku PDF
+### FAQ dotyczące uzyskania znaku wodnego z pliku PDF
 
-#### P: Co to jest znak wodny w dokumencie PDF i dlaczego muszę wyodrębniać zawarte w nim informacje?
+#### P: Czym jest znak wodny w dokumencie PDF i dlaczego muszę wyodrębnić jego informacje?
 
-Odpowiedź: Znak wodny w dokumencie PDF to rozpoznawalny obraz lub tekst nałożony na treść dokumentu, często w celu wskazania jego statusu, własności lub poufnego charakteru. Wyodrębnianie informacji o znaku wodnym może być przydatne do analizowania autentyczności dokumentu, identyfikowania źródła dokumentu lub przetwarzania dokumentów w oparciu o obecność znaku wodnego.
+A: Znak wodny w dokumencie PDF to rozpoznawalny obraz lub tekst, który jest nałożony na treść dokumentu, często w celu wskazania jego statusu, własności lub poufności. Wyodrębnianie informacji o znaku wodnym może być przydatne do analizowania autentyczności dokumentu, identyfikowania źródła dokumentu lub przetwarzania dokumentów na podstawie obecności znaku wodnego.
 
-#### P: W jaki sposób dostarczony kod źródłowy C# pomaga w wyodrębnianiu informacji o znaku wodnym z pliku PDF?
+#### P: W jaki sposób udostępniony kod źródłowy C# pomaga w wyodrębnieniu informacji o znaku wodnym z pliku PDF?
 
- O: Dostarczony kod demonstruje, jak załadować istniejący dokument PDF, przeglądać artefakty określonej strony i wyodrębniać informacje o znakach wodnych. Robi to poprzez dostęp do pliku`Subtype`, `Text` , I`Rectangle` właściwości każdego artefaktu.
+ A: Dostarczony kod pokazuje, jak załadować istniejący dokument PDF, przejść przez artefakty określonej strony i wyodrębnić informacje o znakach wodnych. Robi to poprzez dostęp do`Subtype`, `Text` , I`Rectangle` właściwości każdego artefaktu.
 
-####  P: Co oznacza`Subtype` property of an artifact represent?
+####  P: Co to jest`Subtype` property of an artifact represent?
 
- O:`Subtype` właściwość artefaktu reprezentuje typ artefaktu. W przypadku znaków wodnych oznacza to, że artefakt jest znakiem wodnym.
+ A: Ten`Subtype` Właściwość artefaktu reprezentuje typ artefaktu. W przypadku znaków wodnych wskazuje, że artefakt jest znakiem wodnym.
 
 #### P: W jaki sposób kod określa położenie (prostokąt) znaku wodnego na stronie?
 
- Odp.: Kod używa`Rectangle` właściwość artefaktu w celu określenia lokalizacji znaku wodnego. The`Rectangle` Właściwość reprezentuje prostokąt ograniczający artefakt na stronie.
+ A: Kod wykorzystuje`Rectangle` właściwość artefaktu w celu ustalenia lokalizacji znaku wodnego.`Rectangle` Właściwość reprezentuje prostokąt ograniczający artefakt na stronie.
 
-#### P: Czy mogę zmodyfikować kod, aby wyodrębnić dodatkowe informacje o znaku wodnym, takie jak jego wygląd lub kolor?
+#### P: Czy mogę zmodyfikować kod, aby wyodrębnić dodatkowe informacje o znaku wodnym, np. jego wygląd lub kolor?
 
-O: Tak, możesz zmodyfikować kod, aby uzyskać dostęp do innych właściwości artefaktu, takich jak jego wygląd lub kolor, jeśli takie informacje są dostępne i istotne dla Twojego przypadku użycia.
+O: Tak, możesz zmodyfikować kod, aby uzyskać dostęp do innych właściwości artefaktu, takich jak jego wygląd czy kolor, jeśli takie informacje są dostępne i mają znaczenie w kontekście danego przypadku użycia.
 
 #### P: Czy za pomocą tego kodu mogę wyodrębnić informacje o znaku wodnym z wielu stron dokumentu PDF?
 
-O: Tak, możesz zmodyfikować kod, aby przeglądać artefakty na wielu stronach, zmieniając indeks strony w pętli, aby uzyskać dostęp do artefaktów z różnych stron.
+O: Tak, możesz zmodyfikować kod, aby przechodzić przez artefakty na wielu stronach, zmieniając indeks strony w pętli, co umożliwi dostęp do artefaktów z różnych stron.
 
-#### P: Co się stanie, jeśli na określonej stronie nie będzie żadnych znaków wodnych?
+#### P: Co się stanie, jeśli na określonej stronie nie będzie znaków wodnych?
 
-Odp.: Jeśli na określonej stronie nie ma znaków wodnych, pętla nie zostanie wykonana i nie zostaną wyświetlone żadne informacje o znaku wodnym.
+A: Jeśli na określonej stronie nie ma żadnych znaków wodnych, pętla nie zostanie wykonana i nie zostaną wyświetlone żadne informacje o znaku wodnym.
 
-#### P: Jak mogę wykorzystać wyodrębnione informacje o znaku wodnym do dalszego przetwarzania?
+#### P: W jaki sposób mogę wykorzystać wyodrębnione informacje o znaku wodnym do dalszego przetwarzania?
 
-Odp.: Wyodrębnione informacje o znaku wodnym można wykorzystać do różnych celów, takich jak rejestrowanie, analiza, raportowanie lub automatyzacja określonych działań w oparciu o obecność lub właściwości znaków wodnych.
+A: Wyodrębnione informacje o znaku wodnym można wykorzystać w różnych celach, takich jak rejestrowanie, analiza, raportowanie lub automatyzacja określonych działań na podstawie obecności lub właściwości znaku wodnego.
 
-#### P: Czy mogę zmodyfikować ten kod, aby wyodrębnić informacje o innych typach artefaktów z dokumentu PDF?
+#### P: Czy mogę zmodyfikować ten kod, aby wyodrębnić informacje o innych typach artefaktów w dokumencie PDF?
 
 O: Tak, możesz zmodyfikować kod, aby wyodrębnić informacje o innych typach artefaktów, uzyskując dostęp do ich właściwości przy użyciu podobnego podejścia.
 
 #### P: Jak mogę uzyskać dostęp do znaków wodnych, które nie są artefaktami, ale stanowią część zawartości pliku PDF?
 
-Odpowiedź: Znaki wodne, które nie są artefaktami, mogą stanowić część samej zawartości pliku PDF, np. obrazy lub tekst. Aby wyodrębnić informacje o tego typu znakach wodnych, może być konieczne przeanalizowanie zawartości pliku PDF i zidentyfikowanie konkretnych elementów reprezentujących znaki wodne.
+A: Znaki wodne, które nie są artefaktami, mogą być częścią samej zawartości PDF, takiej jak obrazy lub tekst. Aby wyodrębnić informacje o tych typach znaków wodnych, może być konieczne przeanalizowanie zawartości PDF i zidentyfikowanie konkretnych elementów, które reprezentują znaki wodne.

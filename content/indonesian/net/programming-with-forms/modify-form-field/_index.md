@@ -1,17 +1,17 @@
 ---
 title: Ubah Bidang Formulir Dalam Dokumen PDF
 linktitle: Ubah Bidang Formulir Dalam Dokumen PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Edit kolom formulir dengan mudah di dokumen PDF dengan Aspose.PDF untuk .NET.
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Edit kolom formulir dalam dokumen PDF dengan mudah dengan Aspose.PDF untuk .NET.
 type: docs
 weight: 190
 url: /id/net/programming-with-forms/modify-form-field/
 ---
-Dalam tutorial ini, kami akan menunjukkan cara mengedit kolom formulir di dokumen PDF menggunakan Aspose.PDF untuk .NET. Kami akan menjelaskan kode sumber C# langkah demi langkah untuk memandu Anda melalui proses ini.
+Dalam tutorial ini, kami akan menunjukkan cara mengedit kolom formulir dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Kami akan menjelaskan kode sumber C# langkah demi langkah untuk memandu Anda melalui proses ini.
 
 ## Langkah 1: Persiapan
 
-Pastikan Anda telah mengimpor perpustakaan yang diperlukan dan mengatur jalur ke direktori dokumen Anda:
+Pastikan Anda telah mengimpor pustaka yang diperlukan dan mengatur jalur ke direktori dokumen Anda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -43,7 +43,7 @@ textBoxField.Value = "New Value";
 
 ## Langkah 5: Edit Properti Bidang
 
-Ubah properti bidang formulir tambahan sesuai kebutuhan. Misalnya, Anda dapat menjadikannya hanya-baca:
+Ubah properti bidang formulir tambahan sesuai kebutuhan. Misalnya, Anda dapat membuatnya hanya-baca:
 
 ```csharp
 textBoxField.ReadOnly = true;
@@ -77,26 +77,26 @@ Console.WriteLine("\nForm field modified successfully.\nFile saved at " + dataDi
 
 ## Kesimpulan
 
-Dalam tutorial ini, kita mempelajari cara mengedit kolom formulir di dokumen PDF menggunakan Aspose.PDF untuk .NET. Dengan mengikuti langkah-langkah ini, Anda dapat dengan mudah menavigasi ke bidang tertentu, mengubah nilainya, dan menyesuaikan propertinya sesuai kebutuhan.
+Dalam tutorial ini, kita mempelajari cara mengedit kolom formulir dalam dokumen PDF menggunakan Aspose.PDF for .NET. Dengan mengikuti langkah-langkah ini, Anda dapat dengan mudah menavigasi ke kolom tertentu, mengubah nilainya, dan menyesuaikan propertinya sesuai kebutuhan.
 
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
 #### T: Dapatkah saya mengedit beberapa bidang formulir dalam satu dokumen PDF menggunakan Aspose.PDF untuk .NET?
 
-J: Ya, Anda dapat mengedit beberapa bidang formulir dalam satu dokumen PDF menggunakan Aspose.PDF untuk .NET. Cukup ulangi proses untuk setiap bidang formulir yang ingin Anda modifikasi.
+A: Ya, Anda dapat mengedit beberapa kolom formulir dalam satu dokumen PDF menggunakan Aspose.PDF for .NET. Cukup ulangi proses untuk setiap kolom formulir yang ingin Anda ubah.
 
 #### T: Apakah Aspose.PDF untuk .NET kompatibel dengan semua versi .NET Framework?
 
-J: Ya, Aspose.PDF untuk .NET kompatibel dengan semua versi .NET Framework, termasuk .NET Core dan .NET Standard.
+A: Ya, Aspose.PDF untuk .NET kompatibel dengan semua versi .NET Framework, termasuk .NET Core dan .NET Standard.
 
 #### T: Dapatkah saya mengubah jenis bidang formulir lainnya, seperti kotak centang atau tombol radio, menggunakan Aspose.PDF untuk .NET?
 
-J: Ya, Aspose.PDF untuk .NET mendukung modifikasi berbagai jenis bidang formulir, termasuk kotak centang, tombol radio, dan banyak lagi.
+A: Ya, Aspose.PDF untuk .NET mendukung modifikasi berbagai jenis bidang formulir, termasuk kotak centang, tombol radio, dan banyak lagi.
 
 #### T: Bagaimana cara menambahkan kolom formulir baru ke dokumen PDF menggunakan Aspose.PDF untuk .NET?
 
- J: Untuk menambahkan kolom formulir baru ke dokumen PDF, Anda dapat menggunakan`Form` properti dari`Document` kelas untuk mengakses`Field` koleksi dan kemudian menambahkan bidang formulir baru secara terprogram.
+ A: Untuk menambahkan bidang formulir baru ke dokumen PDF, Anda dapat menggunakan`Form` milik`Document` kelas untuk mengakses`Field` koleksi dan kemudian menambahkan bidang formulir baru secara terprogram.
 
 #### T: Apakah Aspose.PDF untuk .NET mendukung bahasa pemrograman lain selain C#?
 

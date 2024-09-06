@@ -57,9 +57,9 @@ Nu kommer det huvudsakliga konverteringssteget:
 doc.save("output.pdf");
 ```
 
-Det är allt! Du har framgångsrikt konverterat en EPUB-fil till PDF med Aspose.PDF för Java.
+Det är det! Du har framgångsrikt konverterat en EPUB-fil till PDF med Aspose.PDF för Java.
 
-## Ytterligare egenskaper
+## Ytterligare funktioner
 
 Aspose.PDF för Java erbjuder ett brett utbud av funktioner utöver EPUB till PDF-konvertering, som att lägga till anteckningar, arbeta med formulär och mer. Utforska dokumentationen för avancerade funktioner.
 

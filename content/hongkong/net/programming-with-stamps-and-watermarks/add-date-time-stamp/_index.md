@@ -30,7 +30,7 @@ url: /zh-hant/net/programming-with-stamps-and-watermarks/add-date-time-stamp/
 
 ## 第 3 步：載入 PDF 文檔
 
-新增日期和時間戳的第一步是將現有 PDF 文件載入到您的專案中。就是這樣：
+新增日期和時間戳的第一步是將現有 PDF 文件載入到您的專案中。方法如下：
 
 ```csharp
 //文檔目錄的路徑。
@@ -60,7 +60,7 @@ TextStamp textStamp = new TextStamp(annotationText);
 
 ## 步驟 5：配置圖章屬性
 
-在將圖章新增至 PDF 文件之前，您可以設定圖章的各種屬性，例如邊距、水平和垂直對齊方式等。操作方法如下：
+在將圖章新增至 PDF 文件之前，您可以設定圖章的各種屬性，例如邊距、水平和垂直對齊方式等。
 
 ```csharp
 //設定緩衝區屬性
@@ -74,7 +74,7 @@ textStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
 ## 第 6 步：將圖章新增至 PDF
 
-現在日期和時間戳記已準備就緒，您可以將其新增至 PDF 文件的特定頁面。就是這樣：
+現在日期和時間戳記已準備就緒，您可以將其新增至 PDF 文件的特定頁面。方法如下：
 
 ```csharp
 //將圖章加入到頁面的圖章集中
@@ -85,7 +85,7 @@ pdfDocument.Pages[1].AddStamp(textStamp);
 
 ## 步驟7：儲存輸出文檔
 
-新增日期和時間戳記後，您可以儲存修改後的 PDF 文件。就是這樣：
+新增日期和時間戳記後，您可以儲存修改後的 PDF 文件。方法如下：
 
 ```csharp
 //儲存輸出文檔

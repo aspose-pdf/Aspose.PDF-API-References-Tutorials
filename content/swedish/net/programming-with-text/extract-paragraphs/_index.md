@@ -32,7 +32,7 @@ using System.Text;
  I koden, lokalisera raden som säger`string dataDir = "YOUR DOCUMENT DIRECTORY";` och byt ut`"YOUR DOCUMENT DIRECTORY"` med sökvägen till katalogen där dina dokument är lagrade.
 
 ## Steg 4: Öppna PDF-dokumentet
- Öppna ett befintligt PDF-dokument med hjälp av`Document`konstruktorn och skickar sökvägen till indata-PDF-filen.
+ Öppna ett befintligt PDF-dokument med hjälp av`Document` konstruktorn och skickar sökvägen till indata-PDF-filen.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
@@ -81,7 +81,7 @@ foreach(PageMarkup markup in absorber.PageMarkups)
 ```csharp
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Öppna en befintlig PDF-fil
+// Öppna en befintlig PDF-fil
 Document doc = new Document(dataDir + "input.pdf");
 // Instantiera ParagraphAbsorber
 ParagraphAbsorber absorber = new ParagraphAbsorber();

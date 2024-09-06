@@ -35,7 +35,7 @@ TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 
 ## Steg 4: Hämta fältvärde
 
- Få fältvärdet med hjälp av`Value` fast egendom:
+ Få fältvärdet med hjälp av`Value` egendom:
 
 ```csharp
 Console.WriteLine("PartialName: {0}", textBoxField.PartialName);

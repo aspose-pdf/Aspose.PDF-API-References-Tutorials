@@ -38,7 +38,7 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
 ## 5. lépés: Adjon hozzá egy oldalt a dokumentumhoz
- Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`Gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
+ Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
@@ -77,7 +77,7 @@ page.Paragraphs.Add(text);
 ```
 
 ## 9. lépés: Mentse el a PDF dokumentumot
- Mentse el a PDF dokumentumot a`Save` módszere a`Document` tárgy. Adja meg a kimeneti fájl elérési útját.
+ Mentse el a PDF dokumentumot a`Save` módszere a`Document` objektum. Adja meg a kimeneti fájl elérési útját.
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
@@ -140,7 +140,7 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 
 #### K: Hogyan adhatok hozzá oldalt a dokumentumhoz?
 
- V: Az 5. lépésben új oldalt ad hozzá a dokumentumhoz a`Add` módszere a`Pages` Gyűjtemény:
+ V: Az 5. lépésben új oldalt ad hozzá a dokumentumhoz a`Add` módszere a`Pages` gyűjtemény:
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();

@@ -2,137 +2,127 @@
 title: 添加 PDF 注释
 linktitle: 添加注释
 second_title: Aspose.PDF for .NET API 参考
-description: 了解如何使用此 C# 源代码通过 Aspose.PDF for .NET 添加文本 PDF 注释。使用特定的细节和图标自定义您的注释。
+description: 按照本分步指南使用 Aspose.PDF for .NET 轻松向您的 PDF 添加自定义注释。使用特定细节和图标自定义您的注释。
 type: docs
 weight: 10
 url: /zh/net/annotations/addannotation/
 ---
-向 PDF 文档添加注释是一项强大的功能，可以增强协作和审阅流程。 Aspose.PDF for .NET 可以轻松地使用 C# 以编程方式向 PDF 文档添加注释。在本指南中，我们将逐步解释如何使用 Aspose.PDF for .NET 向 PDF 文档添加注释。
+## 介绍
 
-## 步骤 1：创建一个新项目并安装 Aspose.PDF for .NET
+注释是丰富 PDF 文档的好方法，使其具有交互性和信息性。无论您是为合作者留下注释还是为读者添加额外信息，注释都是必不可少的。在本教程中，我们将深入探讨使用 Aspose.PDF for .NET 添加 PDF 注释的过程。我们将分解每个步骤，以便在本指南结束时，您将成为在 PDF 文件中嵌入注释的专家。让我们开始吧！
 
-在开始编写添加注释的代码之前，我们需要创建一个新项目并安装 Aspose.PDF for .NET。要安装 Aspose.PDF for .NET，请按照下列步骤操作：
+## 先决条件
 
-1. 打开 Visual Studio 并创建一个新的 C# 项目。
-2. 在解决方案资源管理器中右键单击该项目，然后选择“管理 NuGet 包”。
-3. 搜索“Aspose.PDF”并选择“安装”。
+在深入研究代码之前，让我们确保您拥有所需的一切：
 
-安装完成后，我们就可以开始编写代码了。
+-  Aspose.PDF for .NET：确保已安装 Aspose.PDF 库。您可以从[Aspose.PDF for .NET 下载页面](https://releases.aspose.com/pdf/net/).
+- 开发环境：Visual Studio 或您选择的任何其他 C# IDE。
+- C# 基础知识：本指南假设您熟悉 C# 编程。
+- PDF 文档：您将添加注释的示例 PDF 文件。
 
-## 第 2 步：打开 PDF 文档
+如果你还没有 Aspose.PDF 库，你可以从上面的链接获取它并开始[免费试用](https://releases.aspose.com/)或者买一个[执照](https://purchase.aspose.com/buy). 
 
-添加注释的第一步是打开 PDF 文档。我们可以使用下面的代码来打开该文档：
+## 导入包
+
+在开始编码之前，请确保已导入必要的命名空间：
 
 ```csharp
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+```
+
+这些命名空间提供对 PDF 操作和注释所需的类和方法的访问。
+
+## 步骤 1：加载 PDF 文档
+
+首先，您需要加载要添加注释的 PDF 文档。
+
+```csharp
+//文档目录的路径。
 string dataDir = "YOUR DATA DIRECTORY";
-Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
-```
-
-在此代码中，我们指定要打开的 PDF 文档的路径。确保将“您的数据目录”替换为数据目录的实际路径。
-
-## 第 3 步：创建注释
-
-要添加注释，我们需要创建一个新的实例`TextAnnotation`班级。我们可以使用以下代码来创建新的文本注释：
-
-```csharp
-TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
-textAnnotation.Title = "Sample Annotation Title";
-textAnnotation.Subject = "Sample Subject";
-textAnnotation.State = AnnotationState.Accepted;
-textAnnotation.Contents = "Sample contents for the annotation";
-textAnnotation.Open = true;
-textAnnotation.Icon = TextIcon.Key;
-```
-
-在此代码中，我们在 PDF 文档的第二页上创建一个新的文本注释。我们还设置注释的标题、主题、状态、内容、打开和图标属性。
-
-## 第 4 步：自定义注释
-
-我们可以使用以下命令自定义注释的外观`Border`班级。我们可以使用下面的代码来自定义注释的边框：
-
-```csharp
-Border border = new Border(textAnnotation);
-border.Width = 5;
-border.Dash = new Dash(1, 1);
-textAnnotation.Border = border;
-textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
-```
-
-在此代码中，我们创建一个新的`Border`对象并设置其宽度和虚线属性。然后我们设置`Border`新注释的属性`Border`目的。最后，我们设置`Rect`注释的属性来指定其位置和大小。
-
-## 第 5 步：将注释添加到 PDF 文档
-
-创建并自定义注释后，我们需要将其添加到 PDF 文档中。我们可以使用以下代码为PDF文档添加注释：
-
-```csharp
-pdfDocument.Pages[1].Annotations.Add(textAnnotation);
-```
-
-在此代码中，我们将注释添加到 PDF 文档第二页的注释集合中。
-
-## 第 6 步：保存输出文件
-
-最后，我们需要保存添加了注释的 PDF 文档。我们可以使用以下代码来保存输出文件：
-
-```csharp
-dataDir = dataDir + "AddAnnotation_out.pdf";
-pdfDocument.Save(dataDir);
-```
-### 使用 Aspose.PDF for .NET 添加注释的示例源代码
-
-
-```csharp   
- //文档目录的路径。
-string dataDir = "YOUR DATA DIRECTORY";
-
 //打开文档
 Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
+```
 
-//创建注释
+事情是这样的：你指定 PDF 文件的存储目录，然后使用`Document`Aspose.PDF 提供的类。此步骤至关重要，因为如果不加载文档，您就无法对其进行任何更改。
+
+## 步骤 2：创建注释
+
+### 定义注释属性
+现在，让我们创建注释本身。我们将使用`TextAnnotation`，非常适合在您的 PDF 中添加评论或注释。
+
+```csharp
+//创建注记
 TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
 textAnnotation.Title = "Sample Annotation Title";
 textAnnotation.Subject = "Sample Subject";
-textAnnotation.State = AnnotationState.Accepted;
 textAnnotation.Contents = "Sample contents for the annotation";
 textAnnotation.Open = true;
 textAnnotation.Icon = TextIcon.Key;
+```
 
+在此代码片段中：
+- 位置和大小：`Rectangle`类别定义注释在页面上出现的位置及其尺寸。
+- 标题、主题和内容：这些属性允许您指定注释的内容和内容。
+- 图标：`TextIcon.Key`为注释设置图标，使其更具视觉吸引力。
+
+## 步骤 3：自定义注释的外观
+
+接下来，让我们通过添加边框和调整其外观来使该注释脱颖而出。
+
+```csharp
 Border border = new Border(textAnnotation);
 border.Width = 5;
 border.Dash = new Dash(1, 1);
 textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
-
-//在页面的注释集合中添加注释
-pdfDocument.Pages[1].Annotations.Add(textAnnotation);
-dataDir = dataDir + "AddAnnotation_out.pdf";
-//保存输出文件
-pdfDocument.Save(dataDir);
 ```
-此代码演示如何使用 Aspose.PDF for .NET 将具有特定标题、主题、状态、内容和图标的文本注释添加到 PDF 页面。您可以根据您的要求修改此代码，以便向 PDF 文档添加注释。只需记住将 YOUR DATA DIRECTORY 替换为 PDF 文件所在的实际目录路径以及要保存输出文件的位置。
+
+以下是具体情况：
+- 边界：我们创造一个`Border`对象并将其宽度设置为 5，为我们的注释提供突出的轮廓。
+- 虚线图案：`Dash`属性可让您创建虚线边框，为注释添加一些样式。
+
+## 步骤 4：将注释添加到 PDF 页面
+
+创建和自定义注释后，就可以将其添加到您的 PDF 页面了。
+
+```csharp
+//将注释添加到页面的注释集合中
+pdfDocument.Pages[1].Annotations.Add(textAnnotation);
+```
+
+此代码将注释添加到 PDF 的第一页。`Annotations`集合包含特定页面的所有注释，此步骤可确保您的新注释是该集合的一部分。
+
+## 步骤 5：保存更新的 PDF 文档
+
+最后，让我们保存文档，以便永久添加您的注释。
+
+```csharp
+//保存输出文件
+dataDir = dataDir + "AddAnnotation_out.pdf";
+pdfDocument.Save(dataDir);
+Console.WriteLine("\nAnnotation added successfully.\nFile saved at " + dataDir);
+```
+
+通过使用新名称保存文档（`AddAnnotation_out.pdf`)，您保留原始文件并生成一个添加了注释的新文件。控制台消息确认一切成功，您现在可以在指定的目录中找到带注释的 PDF。
 
 ## 结论
 
-使用 Aspose.PDF for .NET 向 PDF 文档添加注释为增强文档协作和审阅流程提供了宝贵的工具。通过遵循本文提供的分步指南，开发人员可以将注释功能无缝集成到他们的 C# 应用程序中。
+向 PDF 添加注释不仅是一项强大的功能；使用 Aspose.PDF for .NET 也非常简单。无论您是标记文档以供审阅还是添加注释以供将来参考，本指南都涵盖了您需要了解的所有内容。通过遵循这些步骤，您可以创建自定义注释来丰富您的 PDF，使其更加实用和具有交互性。
 
-### 常见问题解答
+## 常见问题解答
 
-#### 问：使用 Aspose.PDF for .NET 可以添加哪些类型的注释？
+### 我可以使用 Aspose.PDF for .NET 添加哪些类型的注释？
+您可以添加各种类型的注释，包括文本、链接、突出显示和图章注释等。
 
-答：Aspose.PDF for .NET 支持各种类型的注释，包括文本注释、图章、链接、形状等。开发人员可以自定义这些注释的外观和属性以满足他们的特定需求。
+### 我可以自定义注释的外观吗？
+当然可以！您可以自定义注释的大小、颜色、边框，甚至图标。
 
-#### 问：我可以为多页 PDF 文档中的特定页面添加注释吗？
+### 是否可以在单个页面添加多个注释？
+是的，您可以在 PDF 的任何页面上添加任意数量的注释。
 
-答：是的，Aspose.PDF for .NET 允许您指定要添加注释的页面。您可以根据需要选择特定页面或为多个页面添加注释。
+### 添加注释后可以删除吗？
+是的，可以使用`Annotations.Delete`Aspose.PDF 提供的方法。
 
-#### 问：如何自定义注释的外观？
-
-答：可以使用边框宽度、颜色、破折号样式、文本样式等属性来自定义注释。 Aspose.PDF for .NET 提供了一组丰富的选项来定制注释的外观。
-
-#### 问：是否可以使用 Aspose.PDF for .NET 添加超链接作为注释？
-
-答：是的，您可以使用 Aspose.PDF for .NET 将超链接作为注释添加到 PDF 文档中。超链接注释可用于链接到外部 URL 或同一文档中的特定位置。
-
-#### 问：可以在不改变原始内容的情况下向现有 PDF 文档添加注释吗？
-
-答：是的，Aspose.PDF for .NET 添加注释作为附加元素，而不改变 PDF 文档的原始内容。原始 PDF 内容保持不变。
+### 我需要许可证才能使用 Aspose.PDF for .NET 吗？
+是的，要解锁所有功能并避免任何限制，你需要[执照](https://purchase.aspose.com/buy)。您还可以获得[临时执照](https://purchase.aspose.com/temporary-license/)进行评估。

@@ -79,7 +79,7 @@ Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 
 ### 常見問題解答
 
-#### Q：什麼是 PDF 表單中的工具提示？為什麼要使用它？
+#### Q：什麼是 PDF 表單中的工具提示？
 
 答：PDF 表單中的工具提示是一個小彈出框，當使用者將滑鼠停留在特定欄位上時會出現該彈出框。它提供了與該領域相關的附加資訊或說明。工具提示有助於指導使用者、提供解釋或以 PDF 形式提供上下文特定的幫助。
 

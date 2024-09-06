@@ -25,7 +25,7 @@ Než začnete psát kód, musíte nastavit vývojové prostředí vytvořením n
 Chcete-li použít Aspose.PDF pro .NET, musíte do svého projektu přidat příslušné odkazy. Chcete-li importovat potřebné reference, postupujte podle následujících kroků:
 
 1. Ve svém projektu klikněte pravým tlačítkem na "Reference" a vyberte "Přidat referenci".
-2. okně "Add Reference" vyhledejte a vyberte soubory DLL Aspose.PDF for .NET.
+2. V okně "Add Reference" vyhledejte a vyberte soubory DLL Aspose.PDF for .NET.
 3. Kliknutím na "OK" importujte reference do svého projektu.
 
 ## Krok 3: Načtení souboru PDF
@@ -84,7 +84,7 @@ foreach(Aspose.Pdf.Page page in document.Pages)
 }
 ```
 
-V tomto kódu získáme každý cíl hypertextového odkazu z anotací odkazu a uložíme cíl do proměnné. Tuto destinaci pak můžete libovolně používat ve své aplikaci.
+V tomto kódu získáme každý cíl hypertextového odkazu z anotací odkazu a uložíme cíl do proměnné. Tuto destinaci pak můžete ve své aplikaci použít libovolně.
 
 ### Ukázkový zdrojový kód pro Get Hyperlink Destinations pomocí Aspose.PDF for .NET 
 ```csharp

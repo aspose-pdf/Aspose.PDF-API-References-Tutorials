@@ -11,7 +11,7 @@ Den här guiden tar dig steg för steg hur du konverterar en bildström till PDF
 
 ## Steg 1: Definiera dokumentkatalogen
 
- Innan du börjar, se till att du ställer in rätt katalog för dokumenten. Byta ut`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där din bild finns.
+Innan du börjar, se till att du ställer in rätt katalog för dokumenten. Ersätta`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där din bild finns.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -27,7 +27,7 @@ Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 
 ## Steg 3: Lägg till en sida i PDF-dokumentet
 
- Lägg till en sida i PDF-dokumentet med hjälp av`Add` metod för`Pages` föremål för`pdf1`.
+Lägg till en sida i PDF-dokumentet med hjälp av`Add` metod för`Pages` föremål för`pdf1`.
 
 ```csharp
 Aspose.Pdf.Page sec = pdf1.Pages.Add();
@@ -69,7 +69,7 @@ imageht. ImageStream = ms;
 
 ## Steg 8: Lägg till bildobjektet i Paragraphs-samlingen
 
- Lägg till`imageht` invända mot`Paragraphs` samling av`sec` sektion.
+ Lägg till`imageht` invända mot`Paragraphs` samling av`sec` avsnitt.
 
 ```csharp
 sec.Paragraphs.Add(imageht);
@@ -95,7 +95,7 @@ ms. Close();
 ```csharp
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Instantiera Document-instansen genom att anropa dess tomma konstruktor
+// Instantiera Document-instansen genom att anropa dess tomma konstruktor
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 // Lägg till en sida i pdf-dokumentet
 Aspose.Pdf.Page sec = pdf1.Pages.Add();
@@ -150,7 +150,7 @@ S: Att specificera dokumentkatalogen säkerställer att bildströmmen och den re
 
 #### F: Hur är bilden inbäddad i PDF-dokumentet under konverteringsprocessen?
 
- A: An`Image` objekt skapas med hjälp av`Aspose.Pdf.Image` klass, och bildströmmen tilldelas till`ImageStream` fast egendom. De`Image` objekt läggs sedan till i`Paragraphs` samling av PDF-dokumentet.
+ A: An`Image` objekt skapas med hjälp av`Aspose.Pdf.Image` klass, och bildströmmen tilldelas till`ImageStream` egendom. De`Image` objekt läggs sedan till i`Paragraphs` samling av PDF-dokumentet.
 
 #### F: Kan jag anpassa bildens position, storlek eller andra attribut i den resulterande PDF-filen?
 
@@ -158,4 +158,4 @@ S: Att specificera dokumentkatalogen säkerställer att bildströmmen och den re
 
 #### F: Vad är det sista steget i konverteringsprocessen för bildström till PDF?
 
- S: PDF-dokumentet sparas med hjälp av`Save` metod för`Document` objekt och`MemoryStream` objekt stängs med hjälp av`Close` metod för att frigöra resurser.
+ S: PDF-dokumentet sparas med hjälp av`Save` metod för`Document` objekt och`MemoryStream` objekt stängs med hjälp av`Close`metod för att frigöra resurser.

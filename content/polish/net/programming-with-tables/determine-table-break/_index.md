@@ -1,19 +1,19 @@
 ---
 title: Określ podział tabeli w pliku PDF
 linktitle: Określ podział tabeli w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak określić podziały tabeli w pliku PDF przy użyciu Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak określić podziały tabeli w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 60
 url: /pl/net/programming-with-tables/determine-table-break/
 ---
-W tym samouczku nauczymy się, jak określić podziały tabeli w pliku PDF za pomocą Aspose.PDF dla .NET. Krok po kroku wyjaśnimy kod źródłowy w języku C#. Pod koniec tego samouczka będziesz wiedział, jak ustalić, czy tabela przekracza marginesy strony. Zaczynajmy!
+W tym samouczku nauczymy się, jak określić podziały tabeli w pliku PDF za pomocą Aspose.PDF dla .NET. Wyjaśnimy kod źródłowy w C# krok po kroku. Na końcu tego samouczka będziesz wiedzieć, jak określić, czy tabela przekracza marginesy strony. Zaczynajmy!
 
 ## Krok 1: Konfigurowanie środowiska
-Najpierw upewnij się, że skonfigurowałeś środowisko programistyczne C# za pomocą Aspose.PDF dla .NET. Dodaj odwołanie do biblioteki i zaimportuj niezbędne przestrzenie nazw.
+Najpierw upewnij się, że skonfigurowałeś środowisko programistyczne C# z Aspose.PDF dla .NET. Dodaj odwołanie do biblioteki i zaimportuj niezbędne przestrzenie nazw.
 
 ## Krok 2: Tworzenie dokumentu PDF
- Na tym etapie tworzymy nowy`Document` obiekt reprezentujący dokument PDF.
+ W tym kroku tworzymy nowy`Document` obiekt reprezentujący dokument PDF.
 
 ```csharp
 pdf-Document = new Document();
@@ -21,8 +21,8 @@ pdf-Document = new Document();
 
 Ten dokument będzie używany do dodawania sekcji i tabel.
 
-## Krok 3: Dodanie sekcji i tabeli
-Teraz dodamy sekcję do naszego dokumentu PDF i utworzymy tabelę wewnątrz tej sekcji.
+## Krok 3: Dodawanie sekcji i tabeli
+Teraz dodamy sekcję do naszego dokumentu PDF i utworzymy w niej tabelę.
 
 ```csharp
 Page page = pdf.Pages.Add();
@@ -31,10 +31,10 @@ table1. Margin. Top = 300;
 page.Paragraphs.Add(table1);
 ```
 
-Dla tabeli określamy również górną marżę 300 punktów. Możesz dostosować tę wartość do swoich potrzeb.
+Określamy również górny margines 300 punktów dla tabeli. Możesz dostosować tę wartość według swoich potrzeb.
 
-## Krok 4: Konfiguracja stołu
-Na tym etapie konfigurujemy właściwości tabeli, takie jak szerokość kolumn i krawędzie.
+## Krok 4: Przygotowanie stołu
+W tym kroku konfigurujemy właściwości tabeli, takie jak szerokości kolumn i obramowania.
 
 ```csharp
 table1. ColumnWidths = "100 100 100";
@@ -42,7 +42,7 @@ table1.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1F);
 table1.Border = new BorderInfo(BorderSide.All, 1F);
 ```
 
-Tutaj definiujemy szerokość kolumn tabeli i krawędzie komórek. Możesz dostosować te wartości zgodnie ze swoimi preferencjami.
+Tutaj definiujemy szerokość kolumn tabeli i obramowania komórek. Możesz dostosować te wartości według swoich preferencji.
 
 ## Krok 5: Dodaj wiersze i komórki do tabeli
 Teraz utworzymy wiersze i komórki w tabeli za pomocą pętli.
@@ -57,10 +57,10 @@ for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 }
 ```
 
-Tutaj tworzymy 17 wierszy w tabeli i dodajemy po trzy komórki do każdego wiersza. Klamrę możesz dopasować do swoich potrzeb.
+Tutaj tworzymy 17 wierszy w tabeli i dodajemy trzy komórki do każdego wiersza. Możesz dostosować klamrę zgodnie ze swoimi potrzebami.
 
-## Krok 6: Określanie podziałów tabeli
-Teraz ustalimy, czy tabela przekracza marginesy strony, porównując wysokość strony z całkowitą wysokością obiektów w tabeli.
+## Krok 6: Określanie podziałów stołu
+Teraz sprawdzimy, czy tabela wykracza poza marginesy strony, porównując wysokość strony z całkowitą wysokością obiektów w tabeli.
 
 ```csharp
 float PageHeight = (float)pdf.PageInfo.Height;
@@ -70,7 +70,7 @@ if ((PageHeight - TotalObjectsHeight) <= 10)
      Console.WriteLine("The height of the page - Height of objects < 10, the table will be truncated");
 ```
 
-Obliczamy wysokość strony oraz całkowitą wysokość obiektów uwzględniając marginesy. Jeśli różnica wynosi 10 lub mniej, tabela przekracza marginesy strony.
+Obliczamy wysokość strony i całkowitą wysokość obiektów, biorąc pod uwagę marginesy. Jeśli różnica wynosi 10 lub mniej, tabela przekracza marginesy strony.
 
 ## Krok 7: Zapisywanie dokumentu PDF
 Na koniec zapisujemy dokument PDF z wynikami.
@@ -82,39 +82,39 @@ pdf.Save(dataDir);
 Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
 ```
 
-Pamiętaj o określeniu prawidłowego katalogu dokumentów. Wynikowy plik PDF zostanie zapisany z określonymi podziałami tabeli.
+Upewnij się, że określiłeś prawidłowy katalog dokumentu. Wynikowy plik PDF zostanie zapisany z określonymi podziałami tabeli.
 
-### Przykładowy kod źródłowy dla określenia podziału tabeli przy użyciu Aspose.PDF dla .NET
+### Przykładowy kod źródłowy dla polecenia Determine Table Break przy użyciu Aspose.PDF dla platformy .NET
 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Utwórz instancję klasy obiektowej PDF
+// Utwórz instancję klasy obiektu PDF
 Document pdf = new Document();
-// Dodaj sekcję do kolekcji sekcji dokumentów PDF
+// Dodaj sekcję do kolekcji sekcji dokumentu PDF
 Aspose.Pdf.Page page = pdf.Pages.Add();
-// Utwórz instancję obiektu tabeli
+// Utwórz obiekt tabeli
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
 table1.Margin.Top = 300;
-// Dodaj tabelę w zbiorze akapitów żądanej sekcji
+// Dodaj tabelę w kolekcji akapitów żądanej sekcji
 page.Paragraphs.Add(table1);
-// Ustawia szerokość kolumn tabeli
+// Ustaw szerokości kolumn tabeli
 table1.ColumnWidths = "100 100 100";
 // Ustaw domyślną ramkę komórki za pomocą obiektu BorderInfo
 table1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-// Ustaw obramowanie tabeli, używając innego dostosowanego obiektu BorderInfo
+// Ustaw obramowanie tabeli za pomocą innego dostosowanego obiektu BorderInfo
 table1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-// Utwórz obiekt MarginInfo i ustaw jego lewy, dolny, prawy i górny margines
+// Utwórz obiekt MarginInfo i ustaw jego marginesy: lewy, dolny, prawy i górny
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 5f;
 margin.Left = 5f;
 margin.Right = 5f;
 margin.Bottom = 5f;
-// Ustaw domyślne uzupełnienie komórek na obiekt MarginInfo
+// Ustaw domyślne wypełnienie komórki na obiekt MarginInfo
 table1.DefaultCellPadding = margin;
-// Jeśli zwiększysz licznik do 17, stół się zepsuje
-// Ponieważ nie można już tego umieścić na tej stronie
+// Jeśli zwiększysz licznik do 17, stół się rozpadnie
+// Ponieważ nie można już tego więcej pomieścić na tej stronie
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
 	// Utwórz wiersze w tabeli, a następnie komórki w wierszach
@@ -126,20 +126,20 @@ for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 // Uzyskaj informacje o wysokości strony
 float PageHeight = (float)pdf.PageInfo.Height;
 // Uzyskaj informacje o całkowitej wysokości górnego i dolnego marginesu strony,
-// Margines górny stołu i wysokość stołu.
+// Margines blatu i wysokość tabeli.
 float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
 
-// Wyświetl wysokość strony, wysokość stołu, górny margines stołu i górę strony
-// I informacja o dolnym marginesie
+// Wyświetl wysokość strony, wysokość tabeli, górny margines tabeli i górę strony
+// I informacje o dolnym marginesie
 Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
 
-// Sprawdź, czy odliczamy sumę Margines górny strony + Margines dolny strony
-// + Margines górny stołu i wysokość stołu od wysokości strony i jej mniejszej
-// Niż 10 (średni wiersz może być większy niż 10)
+// Sprawdź, czy odejmujemy sumę marginesu górnego strony + marginesu dolnego strony
+// + Margines górny tabeli i wysokość tabeli z wysokości strony i jej mniejszej wartości
+// Niż 10 (średnia liczba wierszy może być większa niż 10)
 if ((PageHeight - TotalObjectsHeight) <= 10)
 	// Jeśli wartość jest mniejsza niż 10, wyświetl komunikat.
 	//Co pokazuje, że nie można umieścić kolejnego wiersza i jeśli dodamy nowy
-	// Rząd, stół się zepsuje. Zależy to od wartości wysokości wiersza.
+	// Wiersz, tabela zostanie przerwana. Zależy to od wartości wysokości wiersza.
 	Console.WriteLine("Page Height - Objects Height < 10, so table will break");
 
 
@@ -151,26 +151,26 @@ Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dat
 ```
 
 ## Wniosek
-W tym samouczku nauczyliśmy się określać podziały tabeli w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Możesz skorzystać z tego przewodnika krok po kroku, aby sprawdzić, czy tabela przekracza marginesy strony we własnych projektach C#.
+W tym samouczku nauczyliśmy się, jak określić podziały tabeli w dokumencie PDF za pomocą Aspose.PDF dla .NET. Możesz użyć tego przewodnika krok po kroku, aby sprawdzić, czy tabela przekracza marginesy strony w Twoich własnych projektach C#.
 
-### Często zadawane pytania dotyczące określania podziału tabeli w pliku PDF
+### FAQ dotyczące określania podziału tabeli w pliku PDF
 
 #### P: Jaki jest cel określania podziałów tabeli w dokumencie PDF?
 
-Odp.: Celem określenia podziałów tabeli w dokumencie PDF jest sprawdzenie, czy tabela przekracza marginesy strony. Dzięki temu zawartość tabeli będzie poprawnie wyświetlana na dostępnej przestrzeni strony. Wykrywając podziały tabeli, możesz zaradzić przepełnieniu treści i odpowiednio dostosować układ tabeli.
+A: Celem określania podziałów tabeli w dokumencie PDF jest sprawdzenie, czy tabela przekracza marginesy strony. Zapewnia to, że zawartość tabeli jest prawidłowo wyświetlana w dostępnej przestrzeni strony. Wykrywając podziały tabeli, możesz poradzić sobie z przepełnieniem zawartości i odpowiednio dostosować układ tabeli.
 
 #### P: Jak mogę dostosować górny margines tabeli?
 
- Odp.: W dostarczonym kodzie źródłowym C# możesz dostosować górny margines tabeli, modyfikując wartość parametru`table1.Margin.Top`nieruchomość. W razie potrzeby zwiększ lub zmniejsz wartość, aby ustawić żądany górny margines tabeli.
+ A: W podanym kodzie źródłowym C# możesz dostosować górny margines tabeli, modyfikując wartość`table1.Margin.Top`Właściwość. Zwiększ lub zmniejsz wartość w razie potrzeby, aby ustawić pożądany górny margines dla tabeli.
 
-#### P: Czy mogę dostosować wygląd tabeli, na przykład kolory komórek i rozmiar czcionki?
+#### P: Czy mogę dostosować wygląd tabeli, np. kolory komórek i rozmiar czcionki?
 
-Odp.: Tak, możesz dostosować wygląd tabeli i jej komórek, korzystając z różnych właściwości i metod dostarczonych przez Aspose.PDF dla .NET. Możesz na przykład zmienić kolory tła komórki, rozmiar czcionki, rodzinę czcionek, wyrównanie tekstu i inne. Więcej informacji na temat dostosowywania wyglądu tabeli można znaleźć w oficjalnej dokumentacji.
+A: Tak, możesz dostosować wygląd tabeli i jej komórek, korzystając z różnych właściwości i metod udostępnianych przez Aspose.PDF dla .NET. Na przykład możesz zmienić kolory tła komórek, rozmiar czcionki, rodzinę czcionek, wyrównanie tekstu i wiele więcej. Zapoznaj się z oficjalną dokumentacją, aby uzyskać więcej informacji na temat dostosowywania wyglądu tabeli.
 
 #### P: Co się stanie, jeśli tabela przekroczy marginesy strony?
 
-Odp.: Jeśli tabela przekracza marginesy strony, może to spowodować obcięcie lub nałożenie treści, co sprawi, że dokument PDF będzie mniej czytelny i zorganizowany. Wykrywając podziały tabel i radząc sobie z przepełnieniami, możesz mieć pewność, że treść będzie prawidłowo wyświetlana w dostępnym obszarze strony.
+A: Jeśli tabela przekracza marginesy strony, może to spowodować obcięcie lub nakładanie się treści, co sprawi, że dokument PDF będzie mniej czytelny i uporządkowany. Wykrywając podziały tabeli i obsługując przepełnienie, możesz zapewnić, że treść pozostanie prawidłowo wyświetlana w dostępnym obszarze strony.
 
-#### P: Czy mogę określić podziały tabeli dla wielu tabel w tym samym dokumencie PDF?
+#### P: Czy mogę określić podziały tabel dla wielu tabel w tym samym dokumencie PDF?
 
-Odp.: Tak, możesz określić podziały tabeli dla wielu tabel w tym samym dokumencie PDF. Po prostu powtórz kroki dla każdej tabeli, którą chcesz przeanalizować, i w razie potrzeby dostosuj układ tabeli, aby zapobiec przepełnieniu treści.
+A: Tak, możesz określić podziały tabeli dla wielu tabel w tym samym dokumencie PDF. Po prostu powtórz kroki dla każdej tabeli, którą chcesz przeanalizować i dostosuj układ tabeli w razie potrzeby, aby zapobiec przepełnieniu zawartości.

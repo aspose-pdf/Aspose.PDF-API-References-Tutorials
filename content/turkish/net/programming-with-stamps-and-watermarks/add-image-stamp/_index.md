@@ -1,52 +1,52 @@
 ---
-title: PDF Dosyasına Resim Damgası Ekleme
-linktitle: PDF Dosyasına Resim Damgası Ekleme
-second_title: .NET API Referansı için Aspose.PDF
+title: PDF Dosyasına Resim Damgası Ekle
+linktitle: PDF Dosyasına Resim Damgası Ekle
+second_title: Aspose.PDF for .NET API Referansı
 description: Aspose.PDF for .NET ile PDF dosyasına nasıl kolayca resim damgası ekleyeceğinizi öğrenin.
 type: docs
 weight: 20
 url: /tr/net/programming-with-stamps-and-watermarks/add-image-stamp/
 ---
-Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasına nasıl görüntü arabelleği ekleyeceğinizi adım adım anlatacağız. PDF dosyasındaki belirli bir sayfaya özel bir görüntü arabelleği eklemek için sağlanan C# kaynak kodunu nasıl kullanacağınızı size göstereceğiz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak PDF dosyasına bir resim arabelleği eklemeyi adım adım göstereceğiz. Sağlanan C# kaynak kodunu kullanarak PDF dosyasındaki belirli bir sayfaya özel bir resim arabelleği eklemeyi göstereceğiz.
 
-## 1. Adım: Ortamı ayarlama
+## Adım 1: Ortamı kurma
 
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
 - Kurulu bir .NET geliştirme ortamı.
-- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
+- .NET için Aspose.PDF kütüphanesi indirildi ve projenizde referans olarak kullanıldı.
 
 ## Adım 2: PDF belgesini yükleme
 
-İlk adım mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
+İlk adım, mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "AddImageStamp.pdf");
 ```
 
-"BELGELERİNİZ DİZİNİ"ni, PDF belgenizin bulunduğu dizine giden gerçek yolla değiştirdiğinizden emin olun.
+"BELGELERİNİZ DİZİNİ" ifadesini PDF belgenizin bulunduğu dizinin gerçek yoluyla değiştirdiğinizden emin olun.
 
 ## Adım 3: Çerçeve arabelleğini oluşturma
 
-Artık PDF belgesini yüklediğinize göre eklenecek resim damgasını oluşturabilirsiniz. Bunu nasıl yapacağınız aşağıda açıklanmıştır:
+Artık PDF belgenizi yüklediğinize göre, eklemek için resim damgasını oluşturabilirsiniz. İşte nasıl yapacağınız:
 
 ```csharp
-// Çerçeve arabelleğini oluşturun
+// Çerçeve tamponunu oluştur
 ImageStamp imageStamp = new ImageStamp(dataDir + "aspose-logo.jpg");
 ```
 
-Yukarıdaki kod "aspose-logo.jpg" dosyasını kullanarak yeni bir görüntü arabelleği oluşturur. Görüntü dosyası yolunun doğru olduğundan emin olun.
+Yukarıdaki kod "aspose-logo.jpg" dosyasını kullanarak yeni bir görüntü arabelleği oluşturur. Görüntü dosya yolunun doğru olduğundan emin olun.
 
-## Adım 4: Görüntü Arabelleği Özelliklerini Yapılandırma
+## Adım 4: Görüntü Arabellek Özelliklerini Yapılandırma
 
-Görüntü damgasını PDF belgesine eklemeden önce damganın opaklık, boyut, konum vb. çeşitli özelliklerini yapılandırabilirsiniz. Bunu şu şekilde yapabilirsiniz:
+PDF belgesine resim damgasını eklemeden önce damganın opaklık, boyut, konum vb. gibi çeşitli özelliklerini yapılandırabilirsiniz. İşte nasıl:
 
 ```csharp
-// Görüntü arabelleği özelliklerini yapılandırma
+// Görüntü arabellek özelliklerini yapılandırın
 imageStamp. Background = true;
 imageStamp. XIndent = 100;
 imageStamp. YIndent = 100;
@@ -58,32 +58,32 @@ imageStamp. Opacity = 0.5;
 
 Bu özellikleri ihtiyaçlarınıza göre ayarlayabilirsiniz.
 
-## 5. Adım: Görüntü damgasını PDF'ye ekleme
+## Adım 5: PDF'ye resim damgasını ekleme
 
-Artık görüntü damgası hazır olduğuna göre onu PDF belgesinin belirli bir sayfasına ekleyebilirsiniz. İşte nasıl:
+Artık resim damgası hazır olduğuna göre, onu PDF belgesinin belirli bir sayfasına ekleyebilirsiniz. İşte nasıl:
 
 ```csharp
-// Çerçeve arabelleğini belirli bir sayfaya ekleyin
+// Çerçeve tamponunu belirli sayfaya ekleyin
 pdfDocument.Pages[1].AddStamp(imageStamp);
 ```
 
-Yukarıdaki kod, görüntü arabelleğini PDF belgesinin ilk sayfasına ekler. Gerekirse başka bir sayfa belirtebilirsiniz.
+Yukarıdaki kod, PDF belgesinin ilk sayfasına resim arabelleğini ekler. Gerekirse başka bir sayfa belirtebilirsiniz.
 
 ## Adım 6: Çıktı belgesini kaydedin
 
-Görüntü arabelleğini ekledikten sonra değiştirilen PDF belgesini kaydedebilirsiniz. İşte nasıl:
+Resim arabelleğini ekledikten sonra, değiştirilmiş PDF belgesini kaydedebilirsiniz. İşte nasıl:
 
 ```csharp
-// Çıktı belgesini kaydet
+// Çıktı belgesini kaydedin
 pdfDocument.Save(dataDir);
 ```
 
-Yukarıdaki kod, düzenlenen PDF belgesini belirtilen dizine kaydeder.
+Yukarıdaki kod düzenlenen PDF belgesini belirtilen dizine kaydeder.
 
-### Aspose.PDF for .NET kullanarak Resim Damgası Ekleme için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Resim Damgası Ekleme için örnek kaynak kodu 
 ```csharp
 
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Belgeyi aç
@@ -110,42 +110,42 @@ Console.WriteLine("\nImage stamp added successfully.\nFile saved at " + dataDir)
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET'i kullanarak görüntü arabelleğinin nasıl ekleneceğini öğrendiniz. Artık PDF belgelerine özel görüntü damgaları eklemek için bu bilgiyi kendi projelerinize uygulayabilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak bir resim arabelleği eklemeyi öğrendiniz. Şimdi bu bilgiyi kendi projelerinize uygulayarak PDF belgelerine özel resim damgaları ekleyebilirsiniz.
 
-### PDF dosyasına resim damgası eklemek için SSS
+### PDF dosyasına resim damgası eklemeyle ilgili SSS
 
 #### S: Aspose.PDF for .NET kullanarak bir PDF belgesine görüntü arabelleği eklemenin amacı nedir?
 
-C: Bir PDF belgesine görüntü arabelleği eklemek, belgeye özel görüntüler eklemenizi, görsel çekiciliğini artırmanızı ve belirli bilgileri veya markayı aktarmanızı sağlar. Bu özellik, PDF'ye logo, filigran veya diğer grafik öğeleri eklemek için kullanışlıdır.
+A: Bir PDF belgesine görüntü arabelleği eklemek, belgeye özel görüntüler eklemenize, görsel çekiciliğini artırmanıza ve belirli bilgileri veya markalamayı iletmenize olanak tanır. Bu özellik, PDF'ye logolar, filigranlar veya diğer grafik öğeleri eklemek için kullanışlıdır.
 
-#### S: Aynı PDF belgesinin farklı sayfalarına birden fazla görüntü arabelleği ekleyebilir miyim?
+#### S: Aynı PDF belgesinin farklı sayfalarına birden fazla resim arabelleği ekleyebilir miyim?
 
-C: Evet, aynı PDF belgesinin farklı sayfalarına birden fazla görüntü arabelleği ekleyebilirsiniz. Sağlanan C# kaynak kodu, görüntü damgasını eklemek için hedef sayfayı belirtmenize olanak tanıyarak belge içindeki farklı sayfalar için çok yönlü olmasını sağlar.
+C: Evet, aynı PDF belgesinin farklı sayfalarına birden fazla resim arabelleği ekleyebilirsiniz. Sağlanan C# kaynak kodu, resim damgasını eklemek için hedef sayfayı belirtmenize olanak tanır ve bu da belgedeki farklı sayfalar için çok yönlü hale getirir.
 
 #### S: PDF belgesindeki görüntü arabelleğinin konumunu ve boyutunu nasıl ayarlayabilirim?
 
- C: Görüntü arabelleğinin özelliklerini değiştirerek, görüntü arabelleğinin konumunu ve boyutunu özelleştirebilirsiniz.`ImageStamp` nesne. Öğreticide sağlanan kod, aşağıdaki gibi özelliklerin nasıl ayarlanacağını gösterir:`XIndent`, `YIndent`, `Height` , Ve`Width` görüntü damgasının konumunu ve boyutlarını kontrol etmek için.
+ A: Görüntü arabelleğinin konumunu ve boyutunu, özelliklerini değiştirerek özelleştirebilirsiniz.`ImageStamp` nesne. Eğitimde sağlanan kod, aşağıdaki gibi özelliklerin nasıl ayarlanacağını gösterir:`XIndent`, `YIndent`, `Height` , Ve`Width` resim damgasının konumunu ve boyutlarını kontrol etmek için.
 
-#### S: Görüntü arabelleğini PDF belgesine eklerken döndürmek mümkün mü?
+#### S: PDF belgesine eklerken resim tamponunu döndürmek mümkün müdür?
 
- C: Evet, PDF belgesine eklemeden önce görüntü arabelleğini ayarlayarak döndürebilirsiniz.`Rotate` mülkiyeti`ImageStamp` nesne. Öğreticideki kod, aşağıdaki gibi değerleri kullanarak görüntü damgasının nasıl döndürüleceğini gösterir:`Rotation.on270`ancak dönüş açısını gerektiği gibi ayarlayabilirsiniz.
+ A: Evet, PDF belgesine eklemeden önce görüntü arabelleğini döndürebilirsiniz.`Rotate` mülkiyeti`ImageStamp` nesne. Eğitimdeki kod, resim damgasının şu değerleri kullanarak nasıl döndürüleceğini gösterir:`Rotation.on270`, ancak dönüş açısını ihtiyacınıza göre ayarlayabilirsiniz.
 
-#### S: Görüntü arabelleğini PDF belgesine eklerken opaklığını kontrol edebilir miyim?
+#### S: PDF belgesine resim eklerken resim tamponunun opaklığını kontrol edebilir miyim?
 
- C: Kesinlikle, görüntü arabelleğinin opaklığını ayarlayarak kontrol edebilirsiniz.`Opacity` mülkiyeti`ImageStamp` nesne. Sağlanan C# kaynak kodu, opaklık düzeyinin nasıl ayarlanacağını göstererek istediğiniz şeffaflık efektini elde etmenize olanak tanır.
+ A: Kesinlikle, görüntü arabelleğinin opaklığını ayarlayarak kontrol edebilirsiniz.`Opacity` mülkiyeti`ImageStamp` nesne. Sağlanan C# kaynak kodu, opaklık seviyesinin nasıl ayarlanacağını gösterir ve böylece istediğiniz şeffaflık efektini elde edebilirsiniz.
 
-#### S: PDF belgelerine görüntü arabellekleri eklemek için bu yöntemi kendi projelerime nasıl entegre edebilirim?
+#### S: Bu yöntemi kendi projelerime nasıl entegre ederek PDF belgelerine resim tamponları ekleyebilirim?
 
-C: Bu yöntemi entegre etmek için verilen adımları izleyin ve kodu projenizin yapısına uyacak şekilde uyarlayın. PDF belgelerine görüntü arabellekleri ekleyerek görsel sunumlarını geliştirebilir ve belirli marka veya bilgileri iletebilirsiniz.
+A: Bu yöntemi entegre etmek için, verilen adımları izleyin ve kodu projenizin yapısına uyacak şekilde uyarlayın. PDF belgelerine resim tamponları ekleyerek görsel sunumlarını geliştirebilir ve belirli markalama veya bilgileri iletebilirsiniz.
 
-#### S: PDF belgelerine görüntü arabellekleri eklerken dikkat edilmesi gereken noktalar veya sınırlamalar var mı?
+#### S: PDF belgelerine resim tamponları eklerken herhangi bir husus veya sınırlama var mıdır?
 
-C: Görüntü arabelleklerini eklemek basit olsa da, PDF belgesinin genel düzenini ve içeriğini göz önünde bulundurun. Eklenen görüntü arabelleklerinin kritik bilgileri engellemediğinden veya belgenin okunabilirliğini olumsuz etkilemediğinden emin olun.
+A: Görüntü tamponları eklemek basit olsa da, PDF belgesinin genel düzenini ve içeriğini göz önünde bulundurun. Eklenen görüntü tamponlarının kritik bilgileri engellemediğinden veya belgenin okunabilirliğini olumsuz etkilemediğinden emin olun.
 
-#### S: Bu yöntemi logo dışında filigran veya özel grafikler gibi resimler eklemek için kullanabilir miyim?
+#### S: Bu yöntemi logo dışında filigran veya özel grafikler gibi görseller eklemek için kullanabilir miyim?
 
-C: Evet, filigranlar, özel grafikler veya diğer görsel öğeler de dahil olmak üzere çeşitli türde görseller eklemek için bu yöntemi kullanabilirsiniz. Öğreticinin kodu, istenen görüntüleri PDF belgelerinize eklemek için özelleştirilebilir.
+C: Evet, filigranlar, özel grafikler veya diğer görsel öğeler dahil olmak üzere çeşitli türde görseller eklemek için bu yöntemi kullanabilirsiniz. Eğitimin kodu, PDF belgelerinize istediğiniz görselleri eklemek için özelleştirilebilir.
 
-#### S: Birden fazla PDF belgesine görüntü arabellekleri ekleme işlemini otomatikleştirmek mümkün müdür?
+#### S: Birden fazla PDF belgesine resim tamponu ekleme sürecini otomatikleştirmek mümkün müdür?
 
-C: Evet, bir belge listesi boyunca yinelenen ve her birine aynı görüntü damgalama işlemini uygulayan bir komut dosyası veya program oluşturarak birden çok PDF belgesine görüntü arabellekleri ekleme işlemini otomatikleştirebilirsiniz.
+C: Evet, birden fazla PDF belgesine resim tamponları ekleme sürecini, bir belge listesi üzerinde yineleme yapan ve her birine aynı resim damgalama işlemini uygulayan bir betik veya program oluşturarak otomatikleştirebilirsiniz.

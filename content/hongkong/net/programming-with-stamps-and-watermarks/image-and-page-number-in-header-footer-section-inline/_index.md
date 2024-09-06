@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-stamps-and-watermarks/image-and-page-number-i
 
 ## 第 2 步：建立 PDF 文件和頁面
 
-第一步是在 PDF 文件中建立一個新的 Document 物件和一個頁面。就是這樣：
+第一步是在 PDF 文件中建立一個新的 Document 物件和一個頁面。方法如下：
 
 ```csharp
 //文檔目錄的路徑。
@@ -35,7 +35,7 @@ Aspose.Pdf.Page page = pdf1.Pages.Add();
 
 ## 步驟 3：新增帶有圖像和內嵌文字的標題
 
-現在頁面已創建，我們可以使用內聯段落添加帶有圖像和文字的標題部分。就是這樣：
+現在頁面已創建，我們可以使用內聯段落添加帶有圖像和文字的標題部分。方法如下：
 
 ```csharp
 //建立標題部分
@@ -79,7 +79,7 @@ header.Paragraphs.Add(txt2);
 
 ## 第四步：儲存修改後的PDF文檔
 
-在新增帶有圖像和內嵌文字的標題後，我們可以儲存修改後的 PDF 文件。就是這樣：
+在新增帶有圖像和內嵌文字的標題後，我們可以儲存修改後的 PDF 文件。方法如下：
 
 ```csharp
 //儲存修改後的PDF文檔
@@ -143,7 +143,7 @@ pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.p
 
 ### 常見問題解答
 
-#### Q：使用內嵌段落將圖像和文字新增至 PDF 文件的頁首有什麼好處？
+#### Q：使用內嵌段落將圖像和文字新增至 PDF 文件的頁首有什麼優勢？
 
 答：使用內嵌段落可以讓您將圖像和文字無縫整合在同一段落中，從而精確控制它們的位置和格式。此方法對於創建具有視覺元素的自訂標題特別有用。
 
@@ -177,7 +177,7 @@ pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.p
 
 #### Q：如果需要，我可以從標題中刪除或清除內聯元素嗎？
 
- A：是的，可以透過修改內容來移除或清除內嵌元素`HeaderFooter`物件並刪除對應的內聯段落。
+ A：是的，您可以透過修改內容來刪除或清除內嵌元素`HeaderFooter`物件並刪除對應的內聯段落。
 
 #### Q：如何將內嵌段落套用至 PDF 文件的特定頁面？
 

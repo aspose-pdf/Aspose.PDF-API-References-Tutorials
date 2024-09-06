@@ -1,178 +1,133 @@
 ---
-title: Heredar acercar archivo PDF
-linktitle: Heredar acercar archivo PDF
-second_title: Aspose.PDF para referencia de API .NET
-description: Herede fácilmente el zoom de marcadores en un archivo PDF con Aspose.PDF para .NET.
+title: Heredar zoom en archivo PDF
+linktitle: Heredar zoom en archivo PDF
+second_title: Referencia de API de Aspose.PDF para .NET
+description: Aprenda a heredar el zoom en archivos PDF con Aspose.PDF para .NET con esta guía paso a paso. Mejore su experiencia de visualización de archivos PDF.
 type: docs
 weight: 90
 url: /es/net/programming-with-bookmarks/inherit-zoom/
 ---
-La herencia de zoom en un archivo PDF le permite especificar un nivel de zoom predeterminado para los marcadores. Con Aspose.PDF para .NET, puede heredar fácilmente el zoom siguiendo el siguiente código fuente:
+## Introducción
 
-## Paso 1: importar las bibliotecas necesarias
+¿Alguna vez ha abierto un archivo PDF y se ha dado cuenta de que el nivel de zoom no es el correcto? Puede resultar frustrante, especialmente cuando intenta centrarse en un contenido específico. Por suerte, con Aspose.PDF para .NET, puede establecer fácilmente un nivel de zoom predeterminado para sus documentos PDF. Esta guía le guiará por el proceso paso a paso, garantizando que sus lectores tengan la mejor experiencia posible al ver sus archivos PDF. Así que, ¡coja su sombrero de codificador y comencemos!
 
-Antes de comenzar, debe importar las bibliotecas necesarias para su proyecto C#. Aquí está la directiva de importación necesaria:
+## Prerrequisitos
+
+Antes de comenzar, hay algunas cosas que debes tener en cuenta:
+
+1. Visual Studio: Asegúrate de tener Visual Studio instalado en tu equipo. Es el mejor entorno para el desarrollo de .NET.
+2.  Aspose.PDF para .NET: Deberá descargar e instalar la biblioteca Aspose.PDF. Puede encontrarla[aquí](https://releases.aspose.com/pdf/net/).
+3. Conocimientos básicos de C#: la familiaridad con la programación en C# le ayudará a comprender mejor los fragmentos de código.
+
+## Importar paquetes
+
+Para comenzar, debes importar los paquetes necesarios a tu proyecto. Puedes hacerlo de la siguiente manera:
+
+### Crear un nuevo proyecto
+
+Abra Visual Studio y cree un nuevo proyecto de C#. Puede elegir una aplicación de consola para simplificar el proceso.
+
+### Añadir referencia de Aspose.PDF
+
+1. Haga clic derecho en su proyecto en el Explorador de soluciones.
+2. Seleccione "Administrar paquetes NuGet".
+3. Busque "Aspose.PDF" e instale la última versión.
+
+### Importar el espacio de nombres
+
+En la parte superior de su archivo C#, importe el espacio de nombres Aspose.PDF:
 
 ```csharp
+using System;
+using System.IO;
+using Aspose.Pdf.Annotations;
 using Aspose.Pdf;
-using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Paso 2: establezca la ruta a la carpeta de documentos
+¡Ahora que ya tienes todo configurado, pasemos a la codificación real!
 
- En este paso, debe especificar la ruta a la carpeta que contiene el archivo PDF del que desea heredar el zoom. Reemplazar`"YOUR DOCUMENT DIRECTORY"`en el siguiente código con la ruta real a su carpeta de documentos:
+## Paso 1: Definir el directorio del documento
+
+Lo primero es lo primero: debes especificar la ruta del directorio de tus documentos. Aquí es donde se ubicará el archivo PDF de entrada y donde se guardará el archivo de salida.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Paso 3: abre el documento PDF
+## Paso 2: Abra el documento PDF
 
-Ahora vamos a abrir el documento PDF sobre el que queremos heredar el zoom usando el siguiente código:
+ A continuación, deberá abrir el documento PDF que desea modificar. Esto se hace mediante el botón`Document` clase de la biblioteca Aspose.PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Paso 4: obtenga la colección de marcadores
+## Paso 3: Acceda a la colección de esquemas/marcadores
 
- En este paso, obtendremos la colección de marcadores o puntos de referencia del documento utilizando el`Outlines` propiedad de la`doc` objeto. Aquí está el código correspondiente:
+Ahora, vayamos al meollo del asunto: los contornos o marcadores del PDF. Se trata de los elementos de navegación que permiten a los usuarios saltar a secciones específicas del documento.
 
 ```csharp
 OutlineItemCollection item = new OutlineItemCollection(doc.Outlines);
 ```
 
-## Paso 5: Establecer el nivel de zoom
+## Paso 4: Establezca el nivel de zoom
 
- Ahora estableceremos el nivel de zoom creando un`XYZExplicitDestination` objeto con las coordenadas x, y y z especificadas. Aquí usamos las coordenadas (100, 100, 0) con un zoom de 2. Aquí está el código correspondiente:
+ ¡Aquí es donde ocurre la magia! Puedes configurar el nivel de zoom usando el`XYZExplicitDestination` Clase. En este ejemplo, estableceremos el nivel de zoom en 0, lo que significa que el documento heredará el nivel de zoom del visor.
 
 ```csharp
 XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
 ```
 
-## Paso 6: agregue nivel de zoom a marcadores
+## Paso 5: Agregar la acción a la colección de contornos
 
- En este paso agregamos el`XYZExplicitDestination` objeto como acción a los marcadores del`item` recopilación. Aquí está el código correspondiente:
-
-```csharp
-item. Action = new GoToAction(dest);
-```
-
-## Paso 7: agregue los marcadores actualizados al documento
-
- Finalmente, agregamos los marcadores actualizados a la colección de marcadores del documento usando el`Add` método de la`doc.Outlines` objeto. Aquí está el código correspondiente:
+Ahora que ya tienes establecido tu destino, es momento de agregar esta acción a la colección de contornos del PDF.
 
 ```csharp
-doc. Outlines. Add(item);
-```
-
-## Paso 8: guarde el archivo actualizado
-
- Ahora guardemos el archivo PDF actualizado usando el`Save` método de la`doc` objeto. Aquí está el código correspondiente:
-
-```csharp
-dataDir = dataDir + "InheritZoom_out.pdf";
-doc.Save(dataDir);
-```
-
-### Código fuente de muestra para Inherit Zoom usando Aspose.PDF para .NET 
-```csharp
-// La ruta al directorio de documentos.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Abrir documento
-Document doc = new Document(dataDir + "input.pdf");
-// Obtenga una colección de esquemas/marcadores de archivos PDF
-OutlineItemCollection item = new OutlineItemCollection(doc.Outlines);
-// Establecer el nivel de zoom en 0
-XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
-// Agregue XYZExplicitDestination como acción a la colección de esquemas de PDF
 item.Action = new GoToAction(dest);
-// Agregar elemento a la colección de esquemas del archivo PDF
+```
+
+## Paso 6: Agrega el elemento a la colección Outlines
+
+A continuación, deberá agregar el elemento a la colección de contornos del archivo PDF. Este paso garantiza que se guarden los cambios.
+
+```csharp
 doc.Outlines.Add(item);
+```
+
+## Paso 7: Guardar el PDF de salida
+
+Por último, debes guardar el documento PDF modificado. Especifica la ruta en la que deseas guardar el nuevo archivo.
+
+```csharp
 dataDir = dataDir + "InheritZoom_out.pdf";
-// Guardar salida
 doc.Save(dataDir);
+```
+
+## Paso 8: Confirmar la actualización
+
+Para finalizar, imprimamos un mensaje de confirmación en la consola para informarnos que todo salió bien.
+
+```csharp
 Console.WriteLine("\nBookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusión
 
-¡Enhorabuena! Ahora tiene una guía paso a paso para heredar Zoom con Aspose.PDF para .NET. Puede utilizar este código para especificar un nivel de zoom predeterminado para los marcadores en sus documentos PDF.
+¡Y ya está! Has heredado con éxito el nivel de zoom en tus archivos PDF usando Aspose.PDF para .NET. Esta sencilla pero potente función puede mejorar enormemente la experiencia del usuario, haciendo que tus documentos sean más accesibles y fáciles de navegar. Así que, la próxima vez que crees un PDF, ¡recuerda configurar ese nivel de zoom!
 
-Asegúrese de consultar la documentación oficial de Aspose.PDF para obtener más información sobre las funciones avanzadas de manipulación de marcadores.
+## Preguntas frecuentes
 
-### Preguntas frecuentes sobre heredar zoom en un archivo PDF
+### ¿Qué es Aspose.PDF para .NET?
+Aspose.PDF para .NET es una potente biblioteca que permite a los desarrolladores crear, manipular y convertir documentos PDF mediante programación.
 
-#### P: ¿Qué es la herencia de zoom en un archivo PDF?
+### ¿Puedo utilizar Aspose.PDF gratis?
+ Sí, Aspose ofrece una versión de prueba gratuita que puedes usar para probar la biblioteca. Puedes descargarla[aquí](https://releases.aspose.com/).
 
-R: La herencia de zoom se refiere a la capacidad de especificar un nivel de zoom predeterminado para los marcadores en un documento PDF. Esto permite una navegación consistente y fácil de usar cuando los usuarios interactúan con los marcadores.
+### ¿Dónde puedo encontrar la documentación?
+ Puede encontrar la documentación de Aspose.PDF para .NET[aquí](https://reference.aspose.com/pdf/net/).
 
-#### P: ¿Por qué querría heredar los niveles de zoom de los marcadores?
+### ¿Cómo compro una licencia?
+ Puedes comprar una licencia para Aspose.PDF para .NET[aquí](https://purchase.aspose.com/buy).
 
-R: Heredar niveles de zoom garantiza que los usuarios tengan una experiencia de visualización consistente al navegar a través de marcadores en un documento PDF. Puede resultar especialmente útil cuando desea proporcionar una vista específica para diferentes secciones de un documento.
-
-#### P: ¿Cómo importo las bibliotecas necesarias para mi proyecto C#?
-
-R: Para importar las bibliotecas necesarias para su proyecto C#, incluya las siguientes directivas de importación:
-
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.InteractiveFeatures;
-```
-
-Estas directivas le permiten acceder a las clases y métodos necesarios para trabajar con documentos y marcadores PDF.
-
-#### P: ¿Cómo especifico la ruta a la carpeta de documentos?
-
- R: En el código fuente proporcionado, reemplace`"YOUR DOCUMENT DIRECTORY"` con la ruta real a la carpeta que contiene el archivo PDF para el cual desea heredar los niveles de zoom.
-
-#### P: ¿Cómo abro un documento PDF para heredar los niveles de zoom?
-
-R: Para abrir un documento PDF y heredar niveles de zoom, utilice el siguiente código:
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
- Reemplazar`"input.pdf"` con el nombre del archivo real.
-
-#### P: ¿Cómo configuro el nivel de zoom para los marcadores?
-
- R: Para establecer el nivel de zoom, cree un`XYZExplicitDestination` objeto con las coordenadas y el factor de zoom deseados. He aquí un ejemplo:
-
-```csharp
-XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
-```
-
-Esto establece el nivel de zoom en 2 en las coordenadas (100, 100).
-
-#### P: ¿Cómo agrego el nivel de zoom a los marcadores?
-
- R: Añade el`XYZExplicitDestination` objeto como una acción para la colección de marcadores:
-
-```csharp
-item.Action = new GoToAction(dest);
-```
-
- Dónde`item` es un`OutlineItemCollection` que representa un marcador.
-
-#### P: ¿Cómo guardo el archivo PDF actualizado?
-
- R: Guarde el archivo PDF actualizado usando el`Save` método de la`doc` objeto:
-
-```csharp
-dataDir = dataDir + "InheritZoom_out.pdf";
-doc.Save(dataDir);
-```
-
-#### P: ¿Puedo personalizar los niveles de zoom para diferentes marcadores?
-
- R: Sí, puedes personalizar los niveles de zoom para diferentes marcadores creando múltiples`XYZExplicitDestination` objetos con diferentes coordenadas y factores de zoom.
-
-#### P: ¿Existe un límite en la cantidad de marcadores a los que puedo aplicar la herencia de zoom?
-
-R: Por lo general, no existe un límite estricto para la cantidad de marcadores a los que puede aplicar la herencia de zoom. Sin embargo, los documentos muy grandes con una cantidad excesiva de marcadores pueden requerir una gestión eficiente de la memoria.
-
-#### P: ¿Cómo puedo confirmar que se ha aplicado la herencia de zoom?
-
-R: Abra el archivo PDF generado para verificar que los marcadores hayan heredado los niveles de zoom especificados.
+### ¿Qué pasa si necesito ayuda?
+ Si necesita ayuda, puede visitar el foro de soporte de Aspose[aquí](https://forum.aspose.com/c/pdf/10).

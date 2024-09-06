@@ -93,7 +93,7 @@ Ebben a példában két űrlapmezőt hoztunk létre a cikk mennyiségéhez és �
 
 ## Következtetés
 
-JavaScript DOM használatával történő hozzáadása a PDF-dokumentumokhoz az Aspose.PDF for Java segítségével végtelen lehetőségeket nyit meg interaktív és dinamikus PDF-fájlok létrehozásában. Legyen szó űrlapokról, számításokról vagy egyéni interaktivitásról, PDF-fájljait a következő szintre emelheti.
+JavaScript hozzáadása DOM használatával a PDF dokumentumokhoz az Aspose.PDF for Java segítségével végtelen lehetőségeket nyit meg interaktív és dinamikus PDF-ek létrehozásában. Legyen szó űrlapokról, számításokról vagy egyéni interaktivitásról, PDF-fájljait a következő szintre emelheti.
 
 Most, hogy már alapvetően tisztában van azzal, hogyan lehet JavaScriptet hozzáadni a PDF-ekhez, kezdje el felfedezni a fejlettebb funkciókat, és készítsen olyan PDF-eket, amelyek megfelelnek az Ön igényeinek.
 

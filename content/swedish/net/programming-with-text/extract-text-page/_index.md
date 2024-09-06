@@ -31,7 +31,7 @@ using System.IO;
  I koden, lokalisera raden som säger`string dataDir = "YOUR DOCUMENT DIRECTORY";` och byt ut`"YOUR DOCUMENT DIRECTORY"` med sökvägen till katalogen där dina dokument är lagrade.
 
 ## Steg 4: Öppna PDF-dokumentet
- Öppna ett befintligt PDF-dokument med hjälp av`Document`konstruktorn och skickar sökvägen till indata-PDF-filen.
+ Öppna ett befintligt PDF-dokument med hjälp av`Document` konstruktorn och skickar sökvägen till indata-PDF-filen.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
@@ -75,7 +75,7 @@ pdfDocument.Pages[1].Accept(textAbsorber);
 // Hämta den extraherade texten
 string extractedText = textAbsorber.Text;
 dataDir = dataDir + "extracted-text_out.txt";
-// Skapa en skribent och öppna filen
+// Skapa en författare och öppna filen
 TextWriter tw = new StreamWriter(dataDir);
 // Skriv en textrad till filen
 tw.WriteLine(extractedText);

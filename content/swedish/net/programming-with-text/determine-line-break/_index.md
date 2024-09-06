@@ -118,7 +118,7 @@ S: I steg 6 skapar du en loop för att lägga till flera textfragment på sidan,
 
 #### F: Hur sparar jag PDF-dokumentet och extraherar radbrytningsinformation?
 
- S: I steg 7 sparar du PDF-dokumentet med hjälp av`Save` metod för`Document` objekt. Sedan extraherar du radbrytningsinformationen med hjälp av`GetNotifications` metod för den önskade sidan och spara den i en textfil.
+ S: I steg 7 sparar du PDF-dokumentet med hjälp av`Save` metod för`Document` objekt. Sedan extraherar du radbrytningsinformationen med hjälp av`GetNotifications`metod för den önskade sidan och spara den i en textfil.
 
 #### F: Vad är syftet med den extraherade radbrytningsinformationen?
 

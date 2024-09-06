@@ -49,7 +49,7 @@ Získejte pole umístěná v zadané obdélníkové oblasti:
 Aspose.Pdf.Forms.Field[] fields = form.GetFieldsInRect(rectangle);
 ```
 
-## Krok 6: Zobrazte názvy a hodnoty polí
+## Krok 6: Zobrazte názvy polí a hodnoty
 
 Iterujte výsledná pole a zobrazte jejich názvy a hodnoty:
 
@@ -92,7 +92,7 @@ tomto tutoriálu jsme se naučili, jak získat pole konkrétní oblasti v dokume
 
 #### Otázka: Jak mohu upravit velikost nebo polohu obdélníku, abych získal pole z jiné oblasti?
 
- A: Chcete-li získat pole z jiné oblasti, můžete upravit`Aspose.Pdf.Rectangle` parametry objektu použité k definování ohraničujícího obdélníku. The`Rectangle` konstruktor přebírá čtyři parametry:`x`, `y`, `width` , a`height`které představují souřadnice levého horního rohu a rozměry obdélníku. Úpravou těchto parametrů se změní oblast, ze které se pole extrahují.
+ A: Chcete-li získat pole z jiné oblasti, můžete upravit`Aspose.Pdf.Rectangle` parametry objektu použité k definování ohraničujícího obdélníku. The`Rectangle` konstruktor přebírá čtyři parametry:`x`, `y`, `width` a`height`které představují souřadnice levého horního rohu a rozměry obdélníku. Úpravou těchto parametrů se změní oblast, ze které se pole extrahují.
 
 #### Otázka: Co když v zadané obdélníkové oblasti nejsou žádná pole?
 

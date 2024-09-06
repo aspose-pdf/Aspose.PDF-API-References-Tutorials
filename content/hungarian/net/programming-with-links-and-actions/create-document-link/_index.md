@@ -7,7 +7,7 @@ type: docs
 weight: 30
 url: /hu/net/programming-with-links-and-actions/create-document-link/
 ---
-A PDF-fájlban egy másik dokumentumra való hivatkozás lehetővé teszi kattintható hivatkozások létrehozását, amelyek átirányítják a felhasználókat más PDF-dokumentumokhoz. Az Aspose.PDF for .NET segítségével könnyen létrehozhat ilyen hivatkozásokat a következő forráskód követésével:
+PDF-fájlban egy másik dokumentumra való hivatkozás lehetővé teszi kattintható hivatkozások létrehozását, amelyek átirányítják a felhasználókat más PDF-dokumentumokhoz. Az Aspose.PDF for .NET segítségével könnyen létrehozhat ilyen hivatkozásokat a következő forráskód követésével:
 
 ## 1. lépés: Importálja a szükséges könyvtárakat
 
@@ -21,7 +21,7 @@ using Aspose.Pdf.InteractiveFeatures;
 
 ## 2. lépés: Állítsa be a dokumentumok mappa elérési útját
 
-Ebben a lépésben meg kell adnia annak a PDF-fájlnak az elérési útját, amelyhez egy másik dokumentumra mutató hivatkozást szeretne hozzáadni. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` következő kódban a dokumentummappa tényleges elérési útjával:
+ Ebben a lépésben meg kell adnia annak a PDF-fájlnak az elérési útját, amelyhez egy másik dokumentumra mutató hivatkozást szeretne hozzáadni. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a következő kódban a dokumentummappa tényleges elérési útjával:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -49,7 +49,7 @@ page.Annotations.Add(link);
 
 ## 5. lépés: Mentse el a frissített fájlt
 
- Most mentsük el a frissített PDF fájlt a`Save` módszere a`document` tárgy. Itt van a megfelelő kód:
+Most mentsük el a frissített PDF fájlt a`Save` módszere a`document` objektum. Itt van a megfelelő kód:
 
 ```csharp
 dataDir = dataDir + "CreateDocumentLink_out.pdf";
@@ -108,7 +108,7 @@ V: A mellékelt oktatóanyag és mintakód követésével magabiztosan hozhat l�
 
 #### K: Létrehozhatok több dokumentumhivatkozást egyetlen PDF-fájlon belül?
 
- V: Természetesen! Több dokumentumhivatkozást is létrehozhat egyetlen PDF dokumentumon belül a segítségével`LinkAnnotation`annotáció. Ez lehetővé teszi, hogy a felhasználók hozzáférést biztosítsanak a különböző szakaszokból származó különféle kapcsolódó dokumentumokhoz.
+ V: Természetesen! Több dokumentumhivatkozást is létrehozhat egyetlen PDF dokumentumon belül a segítségével`LinkAnnotation` annotáció. Ez lehetővé teszi, hogy a felhasználók hozzáférést biztosítsanak a különböző szakaszokból származó különféle kapcsolódó dokumentumokhoz.
 
 #### K: Vannak-e korlátozások a külső dokumentumokra való hivatkozáskor?
 

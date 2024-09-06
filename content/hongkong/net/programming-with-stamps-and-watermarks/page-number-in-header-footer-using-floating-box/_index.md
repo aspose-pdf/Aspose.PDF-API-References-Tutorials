@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-stamps-and-watermarks/page-number-in-header-f
 
 ## 步驟 2：建立 PDF 文件並新增頁面
 
-第一步是建立 PDF 文件的實例並向其中新增頁面。就是這樣：
+第一步是建立 PDF 文件的實例並向其中新增頁面。方法如下：
 
 ```csharp
 //文檔目錄的路徑。
@@ -35,7 +35,7 @@ Aspose.Pdf.Page page = pdf.Pages.Add();
 
 ## 第三步：建立FloatingBox並新增頁碼
 
-現在頁面已新增到 PDF 文件中，我們可以建立一個 FloatingBox，設定其位置，並向其添加頁碼。就是這樣：
+現在頁面已新增到 PDF 文件中，我們可以建立一個 FloatingBox，設定其位置，並向其添加頁碼。方法如下：
 
 ```csharp
 //建立一個寬度為 140、高度為 80 的 FloatingBox
@@ -54,11 +54,11 @@ box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
 page.Paragraphs.Add(box1);
 ```
 
-上面的程式碼建立了一個寬度為 140、高度為 80 的 FloatingBox。接下來，我們透過指定 left 和 top 值來設定其位置。最後，我們使用包含語法「($p/ $P )」的 TextFragment 將頁碼新增至 FloatingBox，該語法將會取代為目前頁碼和總頁數。
+上面的程式碼建立了一個寬度為 140、高度為 80 的 FloatingBox。最後，我們使用包含語法「($p/ $P )」的 TextFragment 將頁碼新增至 FloatingBox，該語法將會取代為目前頁碼和總頁數。
 
 ## 第四步：儲存修改後的PDF文檔
 
-使用 FloatingBox 將頁碼新增至頁首或頁尾後，我們就可以儲存修改後的 PDF 文件。就是這樣：
+使用 FloatingBox 將頁碼新增至頁首或頁尾後，我們就可以儲存修改後的 PDF 文件。方法如下：
 
 ```csharp
 //儲存修改後的PDF文檔
@@ -138,4 +138,4 @@ pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
 
 #### Q：我可以使用 FloatingBox 方法將內容新增至 PDF 文件的其他部分，例如正文或頁邊距嗎？
 
-答：雖然 FloatingBox 通常用於頁首和頁腳，但您也可以使用它們將內容新增至 PDF 文件的其他部分，例如正文或頁邊距，方法是將它們相應地定位在頁面內。
+答：雖然 FloatingBox 通常用於頁首和頁腳，但您也可以使用它們將內容新增至 PDF 文件的其他部分，例如正文或頁邊距，方法是將它們相應地放置在頁面內。

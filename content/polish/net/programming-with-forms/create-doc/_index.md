@@ -1,17 +1,17 @@
 ---
 title: Utwórz dokument
 linktitle: Utwórz dokument
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Z łatwością utwórz dokument za pomocą przycisków opcji, używając Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwe tworzenie dokumentów z przyciskami radiowymi przy użyciu Aspose.PDF dla platformy .NET.
 type: docs
 weight: 40
 url: /pl/net/programming-with-forms/create-doc/
 ---
-W tym samouczku pokażemy, jak utworzyć dokument z przyciskami opcji przy użyciu Aspose.PDF dla .NET. Krok po kroku wyjaśnimy kod źródłowy C#, aby poprowadzić Cię przez ten proces.
+W tym samouczku pokażemy Ci, jak utworzyć dokument z przyciskami radiowymi za pomocą Aspose.PDF dla .NET. Wyjaśnimy kod źródłowy C# krok po kroku, aby przeprowadzić Cię przez ten proces.
 
 ##Krok 1: Przygotowanie
 
-Najpierw upewnij się, że zaimportowałeś niezbędne biblioteki i ustaw ścieżkę do katalogu dokumentów:
+Najpierw upewnij się, że zaimportowałeś niezbędne biblioteki i ustawiłeś ścieżkę do katalogu dokumentów:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 2: Utwórz nowy dokument
 
-Utwórz nowy obiekt Dokument, w którym będzie przechowywany dokument PDF:
+Utwórz nowy obiekt Dokument, aby przechowywać dokument PDF:
 
 ```csharp
 Document doc = new Document();
@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## Krok 4: Dodaj pole przycisku radiowego
 
-Utwórz pole przycisku radiowego i ustaw jego położenie oraz rozmiar:
+Utwórz pole przycisku radiowego i ustaw jego pozycję i rozmiar:
 
 ```csharp
 RadioButtonField field = new RadioButtonField(page);
@@ -45,7 +45,7 @@ field. PartialName = "NewField";
 
 ## Krok 5: Dodaj opcje przycisków radiowych
 
-Dodaj żądane opcje do pola przycisku radiowego. W razie potrzeby możesz ustawić współrzędne i rozmiar każdej opcji:
+Dodaj żądane opcje do pola przycisku radiowego. Możesz ustawić współrzędne i rozmiar każdej opcji według potrzeb:
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField();
@@ -76,7 +76,7 @@ field. Add(opt3);
 
 ## Krok 6: Dodaj pole przycisku radiowego do formularza
 
-Dodaj pole przycisku radiowego do kolekcji Pola formularza dokumentu:
+Dodaj pole przycisku radiowego do kolekcji pól formularza dokumentu:
 
 ```csharp
 doc.Form.Add(field);
@@ -91,7 +91,7 @@ dataDir = dataDir + "CreateDoc_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Przykładowy kod źródłowy narzędzia Utwórz dokument przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla Create Doc przy użyciu Aspose.PDF dla .NET 
 ```csharp
 try
 {
@@ -104,7 +104,7 @@ try
 	RadioButtonField field = new RadioButtonField(page);
 	field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 	field.PartialName = "NewField";
-	// Dodaj opcje przycisków radiowych. należy pamiętać, że te opcje znajdują się
+	// Dodaj opcje przycisków radiowych. Należy pamiętać, że te opcje znajdują się
 	// Ani poziomo, ani pionowo.
 	// Możesz spróbować ustawić dla nich dowolne współrzędne (a nawet rozmiar).
 	RadioButtonOptionField opt1 = new RadioButtonOptionField();
@@ -142,26 +142,26 @@ catch (Exception ex)
 
 ## Wniosek
 
-tym samouczku nauczyliśmy się tworzyć dokument z przyciskami opcji przy użyciu Aspose.PDF dla .NET. Wykonując poniższe kroki, możesz łatwo dodawać przyciski opcji do dokumentów PDF za pomocą Aspose.PDF.
+tym samouczku nauczyliśmy się, jak utworzyć dokument z przyciskami radiowymi przy użyciu Aspose.PDF dla .NET. Wykonując te kroki, możesz łatwo dodać przyciski radiowe do swoich dokumentów PDF przy użyciu Aspose.PDF.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Czy mogę dostosować wygląd przycisków opcji w dokumencie za pomocą Aspose.PDF dla .NET?
+#### P: Czy mogę dostosować wygląd przycisków radiowych w dokumencie, korzystając z Aspose.PDF dla platformy .NET?
 
-O: Tak, możesz dostosować wygląd przycisków opcji w dokumencie za pomocą Aspose.PDF dla .NET. Możesz ustawić właściwości, takie jak rozmiar, kolor, styl obramowania i inne, aby dostosować wygląd przycisków opcji.
+A: Tak, możesz dostosować wygląd przycisków radiowych w dokumencie za pomocą Aspose.PDF dla .NET. Możesz ustawić właściwości, takie jak rozmiar, kolor, styl obramowania i inne, aby dostosować wygląd przycisków radiowych.
 
-#### P: Jak mogę dodać grupy przycisków opcji z wzajemnie wykluczającymi się opcjami?
+#### P: W jaki sposób mogę dodać grupy przycisków radiowych z opcjami wzajemnie się wykluczającymi?
 
-O: Aby utworzyć wzajemnie wykluczające się opcje, możesz dodać wiele pól przycisków radiowych o tej samej nazwie. Dzięki temu po wybraniu jednej opcji inne opcje o tej samej nazwie zostaną automatycznie odznaczone.
+A: Aby utworzyć opcje wzajemnie wykluczające się, możesz dodać wiele pól przycisków radiowych o tej samej nazwie. Dzięki temu po wybraniu jednej opcji pozostałe opcje o tej samej nazwie zostaną automatycznie odznaczone.
 
-#### P: Czy można ustawić domyślnie wybraną opcję dla przycisków opcji?
+#### P: Czy można ustawić domyślną wybraną opcję dla przycisków radiowych?
 
-O: Tak, możesz ustawić domyślną wybraną opcję dla przycisków opcji, używając Aspose.PDF dla .NET. Możesz skorzystać z`Selected` własność`RadioButtonOptionField` obiekt, aby oznaczyć opcję jako wybraną domyślnie.
+A: Tak, możesz ustawić domyślną wybraną opcję dla przycisków radiowych za pomocą Aspose.PDF dla .NET. Możesz użyć`Selected` własność`RadioButtonOptionField` obiekt, aby oznaczyć opcję jako domyślnie wybraną.
 
-#### P: Czy mogę dodać procedury obsługi zdarzeń do przycisków opcji?
+#### P: Czy mogę dodać obsługę zdarzeń do przycisków radiowych?
 
- O: Tak, możesz dodać procedury obsługi zdarzeń do przycisków opcji, używając Aspose.PDF dla .NET. Możesz powiązać akcje JavaScript, takie jak`OnValueChanged`, do przycisków opcji umożliwiających wykonanie określonych działań, gdy użytkownik wybierze opcję.
+ A: Tak, możesz dodać obsługę zdarzeń do przycisków radiowych za pomocą Aspose.PDF dla .NET. Możesz skojarzyć akcje JavaScript, takie jak`OnValueChanged`, do przycisków radiowych, aby wykonać określone akcje, gdy użytkownik wybierze opcję.
 
-#### P: Jak mogę odzyskać wybraną opcję z grupy przycisków opcji po dokonaniu wyboru przez użytkownika?
+#### P: W jaki sposób mogę pobrać wybraną opcję z grupy przycisków radiowych po dokonaniu wyboru przez użytkownika?
 
- Odp.: Możesz pobrać wybraną opcję z grupy przycisków opcji, używając Aspose.PDF dla .NET. Po dokonaniu wyboru przez użytkownika można uzyskać dostęp do`Selected` własność`RadioButtonOptionField` obiekt, aby sprawdzić, która opcja została wybrana.
+ A: Możesz pobrać wybraną opcję z grupy przycisków radiowych za pomocą Aspose.PDF dla .NET. Po dokonaniu wyboru przez użytkownika możesz uzyskać dostęp do`Selected` własność`RadioButtonOptionField` obiekt, aby sprawdzić, która opcja jest wybrana.

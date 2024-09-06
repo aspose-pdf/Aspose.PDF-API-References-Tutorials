@@ -13,7 +13,7 @@ Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utveckl
 
 ### Steg 1: Installation av dokumentkatalog
 
-I den medföljande källkoden måste du ange katalogen där du vill spara den genererade PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
+den medföljande källkoden måste du ange katalogen där du vill spara den genererade PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -184,7 +184,7 @@ S: I den medföljande källkoden, ändra variabeln "dataDir" för att ange katal
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
- Byta ut`"YOUR DOCUMENTS DIRECTORY"` med den faktiska katalogsökvägen.
+ Ersätta`"YOUR DOCUMENTS DIRECTORY"` med den faktiska katalogsökvägen.
 
 #### F: Hur skapar jag ett PDF-dokument med specificerade mått och marginaler?
 
@@ -225,4 +225,4 @@ S: Öppna den genererade PDF-filen för att verifiera att den angivna numrerings
 
 #### F: Kan jag använda olika numreringsstilar på olika delar av dokumentet?
 
-S: Ja, du kan använda olika numreringsstilar på olika delar av dokumentet genom att skapa flera`Heading` objekt med olika stilar och sekvenser.
+ S: Ja, du kan använda olika numreringsstilar på olika delar av dokumentet genom att skapa flera`Heading` objekt med olika stilar och sekvenser.

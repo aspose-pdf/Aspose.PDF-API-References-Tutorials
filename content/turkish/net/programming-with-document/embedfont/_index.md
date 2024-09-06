@@ -1,41 +1,73 @@
 ---
-title: Yazı Tipini PDF Dosyasına Göm
-linktitle: Yazı Tipini PDF Dosyasına Göm
-second_title: .NET API Referansı için Aspose.PDF
-description: Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak yazı tiplerini bir PDF dosyasına nasıl yerleştireceğinizi öğrenin. Belgelerinizin her cihazda doğru şekilde görüntülendiğinden emin olun.
+title: PDF Dosyasına Font Göm
+linktitle: PDF Dosyasına Font Göm
+second_title: Aspose.PDF for .NET API Referansı
+description: Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak bir PDF dosyasına fontları nasıl gömeceğinizi öğrenin. Belgelerinizin herhangi bir cihazda doğru şekilde görüntülendiğinden emin olun.
 type: docs
 weight: 120
 url: /tr/net/programming-with-document/embedfont/
 ---
-Bu eğitimde, Aspose.PDF for .NET kullanarak yazı tiplerinin bir PDF dosyasına nasıl gömüleceğini tartışacağız. Aspose.PDF for .NET, geliştiricilerin PDF belgelerini programlı olarak oluşturmasına, düzenlemesine ve değiştirmesine olanak tanıyan güçlü bir kitaplıktır. Bu kitaplık, PDF belgeleriyle çalışmak için metin, resim, tablo ekleme ve çok daha fazlasını içeren çok çeşitli özellikler sunar. Yazı tiplerini bir PDF dosyasına gömmek, gerekli yazı tiplerinin bu aygıtlarda yüklü olup olmadığına bakılmaksızın, PDF dosyasının farklı aygıtlarda doğru şekilde görüntülendiğinden emin olmak isteyen geliştiriciler için ortak bir gereksinimdir.
+## giriiş
 
-## 1. Adım: Yeni bir C# Konsol Uygulaması oluşturun
-Başlamak için Visual Studio'da yeni bir C# Konsol Uygulaması oluşturun. İstediğiniz ismi verebilirsiniz. Proje oluşturulduktan sonra Aspose.PDF for .NET kütüphanesine bir referans eklemeniz gerekir.
+PDF oluşturmaya gelince, en önemli yönlerden biri belgenizde kullanılan yazı tiplerinin gömülü olduğundan emin olmaktır. Bu yalnızca belgenin görünümünü farklı aygıtlarda korumakla kalmaz, aynı zamanda yazı tipi değiştirme sorunlarını da önler. Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF dosyasına yazı tiplerini gömme sürecini adım adım anlatacağız. 
 
-## Adım 2: Aspose.PDF Ad Alanını İçe Aktarın
-Aspose.PDF ad alanını içe aktarmak için C# dosyanızın en üstüne aşağıdaki kod satırını ekleyin:
+## Ön koşullar
+
+Koda dalmadan önce, yerine getirmeniz gereken birkaç ön koşul var:
+
+1.  .NET için Aspose.PDF: Aspose.PDF kütüphanesinin yüklü olduğundan emin olun. Bunu şuradan indirebilirsiniz:[web sitesi](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: .NET kodlarınızı yazıp çalıştırabileceğiniz bir geliştirme ortamı.
+3. Temel C# Bilgisi: C# programlamaya aşina olmak, kod parçacıklarını daha iyi anlamanıza yardımcı olacaktır.
+
+## Paketleri İçe Aktar
+
+Başlamak için, C# projenize gerekli paketleri içe aktarmanız gerekir. Bunu nasıl yapabileceğiniz aşağıda açıklanmıştır:
+
+1. Visual Studio projenizi açın.
+2. Çözüm Gezgini'nde projenize sağ tıklayın ve "NuGet Paketlerini Yönet" seçeneğini seçin.
+3.  Arama`Aspose.PDF` ve en son sürümü yükleyin.
 
 ```csharp
+using System.IO;
+using System;
 using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Text;
 ```
 
-## 3. Adım: Mevcut bir PDF Dosyasını Yükleyin
-Yazı tiplerini mevcut bir PDF dosyasına gömmek için bu dosyayı Document sınıfını kullanarak yüklemeniz gerekir. Aşağıdaki kod mevcut bir PDF dosyasının nasıl yükleneceğini gösterir:
+Artık her şeyi ayarladığımıza göre, yazı tiplerini bir PDF dosyasına adım adım yerleştirme sürecini inceleyelim.
+
+## Adım 1: Belge Dizininizi Ayarlayın
+
+İlk önce, belgeler dizininize giden yolu tanımlamanız gerekir. Giriş PDF dosyanızın bulunacağı ve çıktı dosyasının kaydedileceği yer burasıdır.
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+ Değiştirdiğinizden emin olun`"YOUR DOCUMENT DIRECTORY"`PDF dosyalarınızın saklandığı gerçek yol ile.
+
+## Adım 2: Mevcut PDF Dosyasını Yükleyin
+
+ Sonra, değiştirmek istediğiniz mevcut PDF dosyasını yüklemek isteyeceksiniz. Bu, şu şekilde yapılır:`Document` Sınıf Aspose.PDF tarafından sağlanmıştır.
+
+```csharp
 // Mevcut bir PDF dosyasını yükleyin
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Adım 4: Tüm Sayfaları yineleyin
-PDF dosyasını yükledikten sonra belgedeki tüm sayfaları yinelemeniz gerekir. Her sayfada herhangi bir yazı tipinin kullanılıp kullanılmadığını kontrol etmeniz ve eğer öyleyse bu yazı tiplerini yerleştirmeniz gerekir. Aşağıdaki kod, PDF dosyasındaki tüm sayfaların nasıl yineleneceğini ve yazı tiplerinin nasıl gömüleceğini gösterir:
+ Burada, adlı bir PDF dosyası yüklüyoruz`input.pdf`Bu dosyanın belirttiğiniz dizinde bulunduğundan emin olun.
+
+## Adım 3: Tüm Sayfaları Tekrarlayın
+
+Artık belgemiz yüklendiğine göre, PDF'deki tüm sayfaları yinelememiz gerekiyor. Bu, gömülmesi gereken yazı tipleri için her sayfayı kontrol etmemizi sağlar.
 
 ```csharp
+// Tüm sayfaları dolaşın
 foreach (Page page in doc.Pages)
 {
+    // Sayfanın kaynakları olup olmadığını kontrol edin
     if (page.Resources.Fonts != null)
     {
         foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
@@ -45,102 +77,72 @@ foreach (Page page in doc.Pages)
                 pageFont.IsEmbedded = true;
         }
     }
+}
+```
 
-    // Form nesnelerini kontrol edin
-    foreach (XForm form in page.Resources.Forms)
+ Bu kodda, sayfada herhangi bir font olup olmadığını kontrol ediyoruz. Varsa, her fontu dolaşıp zaten gömülü olup olmadığını kontrol ediyoruz. Değilse,`IsEmbedded` mülk`true`.
+
+## Adım 4: Form Nesnelerini Kontrol Edin
+
+PDF'ler, normal sayfa yazı tiplerine ek olarak, yazı tiplerini kullanan form nesneleri de içerebilir. Bu yazı tiplerinin de gömüldüğünden emin olmamız gerekir.
+
+```csharp
+// Form nesnelerini kontrol edin
+foreach (XForm form in page.Resources.Forms)
+{
+    if (form.Resources.Fonts != null)
     {
-        if (form.Resources.Fonts != null)
+        foreach (Aspose.Pdf.Text.Font formFont in form.Resources.Fonts)
         {
-            foreach (Aspose.Pdf.Text.Font formFont in form.Resources.Fonts)
-            {
-                // Yazı tipinin gömülü olup olmadığını kontrol edin
-                if (!formFont.IsEmbedded)
-                    formFont.IsEmbedded = true;
-            }
+            // Yazı tipinin gömülü olup olmadığını kontrol edin
+            if (!formFont.IsEmbedded)
+                formFont.IsEmbedded = true;
         }
     }
 }
 ```
 
-## Adım 5: PDF Belgesini Kaydedin
-Tüm yazı tiplerini PDF dosyasına gömdükten sonra belgeyi kaydetmeniz gerekir. Aşağıdaki kod PDF dosyasının nasıl kaydedileceğini gösterir:
+Bu kod parçacığı sayfadaki herhangi bir form nesnesini kontrol eder ve aynı yerleştirme kontrolünü yazı tipleri için gerçekleştirir.
+
+## Adım 5: Değiştirilen PDF Belgesini Kaydedin
+
+Yazı tiplerini yerleştirdikten sonra, değiştirilmiş PDF belgesini kaydetme zamanı geldi. Çıktı için yeni bir dosya adı belirtebilirsiniz.
 
 ```csharp
 dataDir = dataDir + "EmbedFont_out.pdf";
 // PDF Belgesini Kaydet
 doc.Save(dataDir);
-
-Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " + dataDir);
 ```
 
-### Aspose.PDF for .NET kullanan Embed Font için örnek kaynak kodu
+ Bu durumda, değiştirilen PDF'yi şu şekilde kaydediyoruz:`EmbedFont_out.pdf` aynı dizinde.
 
-Aspose.PDF for .NET kullanarak bir yazı tipini gömmek için tam kaynak kodunu burada bulabilirsiniz.
+## Adım 6: İşlemi Onaylayın
 
+Son olarak, işlemin başarılı olduğunu onaylamak her zaman iyi bir uygulamadır. Bunu konsola bir mesaj yazdırarak yapabilirsiniz.
 
 ```csharp
-// Belgeler dizininin yolu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Mevcut bir PDF dosyasını yükleyin
-Document doc = new Document(dataDir + "input.pdf");
-
-// Tüm sayfaları yineleyin
-foreach (Page page in doc.Pages)
-{
-	if (page.Resources.Fonts != null)
-	{
-		foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
-		{
-			// Yazı tipinin zaten gömülü olup olmadığını kontrol edin
-			if (!pageFont.IsEmbedded)
-				pageFont.IsEmbedded = true;
-		}
-	}
-
-	// Form nesnelerini kontrol edin
-	foreach (XForm form in page.Resources.Forms)
-	{
-		if (form.Resources.Fonts != null)
-		{
-			foreach (Aspose.Pdf.Text.Font formFont in form.Resources.Fonts)
-			{
-				// Yazı tipinin gömülü olup olmadığını kontrol edin
-				if (!formFont.IsEmbedded)
-					formFont.IsEmbedded = true;
-			}
-		}
-	}
-}
-dataDir = dataDir + "EmbedFont_out.pdf";
-// PDF Belgesini Kaydet
-doc.Save(dataDir);
-
 Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " + dataDir);
 ```
 
+Bu mesaj, yazı tiplerinin gömüldüğünü ve dosyanın başarıyla kaydedildiğini bildirecektir.
 
-## Sonuç PDF dosyasına yazı tipi yerleştirme
-Bu makalede, Aspose.PDF for .NET kullanarak yazı tiplerinin bir PDF dosyasına nasıl gömüleceğini tartıştık. Aspose.PDF for .NET, yazı tipi ekleme ve gömme de dahil olmak üzere PDF belgeleriyle çalışmak için basit ve kullanımı kolay bir API sağlar. Yazı tiplerini bir PDF dosyasına gömmek, gerekli yazı tiplerinin bu aygıtlarda yüklü olup olmadığına bakılmaksızın, belgenin farklı aygıtlarda doğru şekilde görüntülenmesini sağlamak için önemli bir adımdır
+## Çözüm
 
-### SSS'ler
+PDF dosyalarına font yerleştirmek, Aspose.PDF for .NET ile basit bir işlemdir. Bu eğitimde özetlenen adımları izleyerek, PDF belgelerinizin farklı platformlarda amaçlanan görünümünü korumasını sağlayabilirsiniz. İster raporlar, ister formlar veya başka bir tür belge oluşturuyor olun, font yerleştirmek PDF oluşturma sürecinde önemli bir adımdır.
 
-#### S: Fontları bir PDF dosyasına gömmek neden önemlidir?
+## SSS
 
-C: Yazı tiplerini bir PDF dosyasına gömmek, belgenin farklı aygıtlarda ve sistemlerde doğru şekilde görünmesini sağlamak için çok önemlidir. Yazı tipleri gömüldüğünde PDF dosyasının bir parçası haline gelirler ve görüntüleme cihazında yüklü olan harici yazı tiplerine olan bağımlılığı ortadan kaldırırlar.
+### PDF'lere font gömme nedir?
+Yazı tipi yerleştirme, PDF'de kullanılan yazı tiplerinin dosyanın içinde yer almasını sağlayarak, farklı cihazlarda yazı tipi değiştirmeyle ilgili sorunların önüne geçer.
 
-#### S: Kullanılan tüm yazı tiplerini bir PDF dosyasına gömebilir miyim?
+### Neden .NET için Aspose.PDF kullanmalıyım?
+Aspose.PDF for .NET, yazı tipi yerleştirme, belge oluşturma ve düzenleme gibi PDF düzenleme işlemlerini basitleştiren güçlü bir kütüphanedir.
 
-C: Evet, kullanılan tüm yazı tiplerini bir PDF dosyasına gömebilirsiniz. Aspose.PDF for .NET, bir PDF dosyasında kullanılan tüm yazı tiplerini yinelemek ve bunları çeşitli cihazlarda doğru işleme sağlamak üzere gömmek için basit bir yaklaşım sunar.
+### Mevcut PDF dosyalarına yazı tipleri ekleyebilir miyim?
+Evet, bu eğitimde gösterildiği gibi Aspose.PDF kütüphanesini kullanarak mevcut PDF dosyalarına yazı tipleri gömebilirsiniz.
 
-#### S: Aspose.PDF for .NET farklı yazı tipi formatlarıyla uyumlu mudur?
+### Aspose.PDF için ücretsiz deneme sürümü mevcut mu?
+ Evet, Aspose.PDF'in ücretsiz deneme sürümünü şu adresten indirebilirsiniz:[web sitesi](https://releases.aspose.com/).
 
-C: Evet, Aspose.PDF for .NET, TrueType, OpenType, Type 1 ve CFF yazı tipleri dahil olmak üzere çeşitli yazı tipi formatlarını destekler. Formatlarına bakılmaksızın yazı tiplerini PDF dosyasına gömebilir.
-
-#### S: Yazı tiplerini gömmek PDF belgesinin dosya boyutunu artırır mı?
-
-C: Evet, yazı tipi verileri PDF dosyasının kendisinde yer aldığından, bir PDF belgesine yazı tipleri eklemek dosya boyutunu artırabilir. Ancak bu, görüntüleme aygıtındaki yazı tipinin kullanılabilirliğine bakılmaksızın belgenin görünümünün tutarlı kalmasını sağlar.
-
-#### S: Yazı tipi yerleştirme işlemini özelleştirebilir miyim?
-
-C: Evet, Aspose.PDF for .NET yazı tipi yerleştirme işlemini özelleştirmenize olanak tanır. Dosya boyutunu optimize etmek için hangi yazı tiplerinin gömüleceğini seçebilir, belirli yazı tiplerini hariç tutabilir veya bir yazı tipinin yalnızca belirli alt kümelerini gömebilirsiniz.
+### Aspose.PDF için desteği nerede bulabilirim?
+ Destek bulabilir ve soru sorabilirsiniz.[Aspose forumu](https://forum.aspose.com/c/pdf/10).

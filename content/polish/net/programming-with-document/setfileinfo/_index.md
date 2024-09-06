@@ -1,18 +1,18 @@
 ---
 title: Ustaw informacje o pliku w pliku PDF
 linktitle: Ustaw informacje o pliku w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak używać Aspose.PDF dla .NET do ustawiania informacji o pliku w pliku PDF, korzystając z tego przewodnika krok po kroku.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak używać Aspose.PDF dla platformy .NET do ustawiania informacji o pliku w pliku PDF, korzystając z tego przewodnika krok po kroku.
 type: docs
 weight: 310
 url: /pl/net/programming-with-document/setfileinfo/
 ---
-Jeśli pracujesz nad projektem, który wymaga zarządzania plikami PDF przy użyciu Aspose.PDF dla .NET, jedną z funkcji, z których możesz skorzystać, jest możliwość ustawienia informacji o pliku dla dokumentu PDF. Informacje o pliku obejmują różne szczegóły, takie jak autor, data utworzenia, słowa kluczowe, data modyfikacji, temat i tytuł. Ten przewodnik przeprowadzi Cię przez proces ustawiania informacji o pliku dla dokumentu PDF przy użyciu kodu źródłowego C# z Aspose.PDF dla .NET.
+Jeśli pracujesz nad projektem, który wymaga zarządzania plikami PDF przy użyciu Aspose.PDF dla .NET, jedną z funkcji, z których możesz chcieć skorzystać, jest możliwość ustawienia informacji o pliku dla dokumentu PDF. Informacje o pliku obejmują różne szczegóły, takie jak autor, data utworzenia, słowa kluczowe, data modyfikacji, temat i tytuł. Ten przewodnik przeprowadzi Cię przez proces ustawiania informacji o pliku dla dokumentu PDF przy użyciu kodu źródłowego C# z Aspose.PDF dla .NET.
 
-## Przewodnik krok po kroku dotyczący ustawiania informacji o pliku przy użyciu Aspose.PDF dla .NET
+## Instrukcja krok po kroku dotycząca ustawiania informacji o pliku za pomocą Aspose.PDF dla .NET
 
 1. Utwórz nowy projekt C# w środowisku IDE programu Visual Studio.
-2. Dodaj w swoim projekcie odwołanie do biblioteki Aspose.PDF for .NET.
+2. Dodaj odwołanie do biblioteki Aspose.PDF dla .NET w swoim projekcie.
 3. Utwórz nowy obiekt dokumentu PDF, podając ścieżkę do pliku PDF, w którym chcesz zmodyfikować informacje o pliku.
 
 ## Krok 1: Ustaw ścieżkę do katalogu dokumentów.
@@ -58,7 +58,7 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + dataDir);
 ```
 
-Pomyślnie ustawiłeś informacje o pliku dla dokumentu PDF przy użyciu Aspose.PDF dla .NET.
+Pomyślnie ustawiono informacje o pliku dla dokumentu PDF przy użyciu Aspose.PDF dla .NET.
 
 ### Przykładowy kod źródłowy dla Ustaw informacje o pliku przy użyciu Aspose.PDF dla .NET
 
@@ -89,18 +89,18 @@ Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + da
 
 ## Wniosek
 
-Podsumowując, Aspose.PDF dla .NET zapewnia prosty i skuteczny sposób ustawiania informacji o plikach dla dokumentów PDF. Wykonując powyższe kroki, możesz łatwo ustawić żądane wartości informacji o plikach dla dokumentów PDF przy użyciu kodu źródłowego C#.
+Podsumowując, Aspose.PDF dla .NET zapewnia prosty i skuteczny sposób ustawiania informacji o pliku dla dokumentów PDF. Postępując zgodnie z powyższymi krokami, możesz łatwo ustawić żądane wartości informacji o pliku dla swoich dokumentów PDF, używając kodu źródłowego C#.
 
-### Często zadawane pytania dotyczące ustawiania informacji o pliku w pliku PDF
+### Często zadawane pytania dotyczące informacji o pliku zestawu w pliku PDF
 
 #### P: Czy mogę ustawić dodatkowe właściwości informacji o pliku, które nie zostały wymienione w przykładzie?
 
- O: Tak, możesz ustawić dodatkowe właściwości informacji o pliku za pomocą opcji`DocumentInfo` obiekt w Aspose.PDF dla .NET. The`DocumentInfo`class udostępnia różne właściwości, które pozwalają ustawić dodatkowe informacje, takie jak producent, wersja i właściwości niestandardowe.
+ O: Tak, możesz ustawić dodatkowe właściwości informacji o pliku za pomocą`DocumentInfo` obiekt w Aspose.PDF dla .NET.`DocumentInfo`Klasa udostępnia różne właściwości pozwalające na ustawienie dodatkowych informacji, takich jak producent, wersja i właściwości niestandardowe.
 
 #### P: Czy można odzyskać informacje o pliku z istniejącego dokumentu PDF?
 
- Odp.: Tak, możesz pobrać informacje o pliku z istniejącego dokumentu PDF za pomocą Aspose.PDF dla .NET. Aby to zrobić, możesz użyć`DocumentInfo` obiekt, aby uzyskać dostęp do właściwości informacji o pliku i odczytać informacje zapisane w dokumencie PDF.
+ A: Tak, możesz pobrać informacje o pliku z istniejącego dokumentu PDF za pomocą Aspose.PDF dla .NET. Aby to zrobić, możesz użyć`DocumentInfo` obiekt umożliwiający dostęp do właściwości informacji o pliku i odczytanie informacji zapisanych w dokumencie PDF.
 
-#### P: Czy ustawienie informacji o pliku modyfikuje oryginalny dokument PDF?
+#### P: Czy zmiana informacji o pliku powoduje modyfikację oryginalnego dokumentu PDF?
 
-O: Nie, ustawienie informacji o pliku za pomocą Aspose.PDF dla .NET nie modyfikuje oryginalnego dokumentu PDF. Zamiast tego tworzy nowy dokument PDF ze zaktualizowanymi informacjami o pliku. Oryginalny dokument PDF pozostaje niezmieniony.
+A: Nie, ustawienie informacji o pliku za pomocą Aspose.PDF dla .NET nie modyfikuje oryginalnego dokumentu PDF. Zamiast tego tworzy nowy dokument PDF z zaktualizowanymi informacjami o pliku. Oryginalny dokument PDF pozostaje niezmieniony.

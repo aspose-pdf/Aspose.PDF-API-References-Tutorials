@@ -2,7 +2,7 @@
 title: Felosztás oldalakra
 linktitle: Felosztás oldalakra
 second_title: Aspose.PDF for .NET API Reference
-description: Útmutató lépésről lépésre a PDF-dokumentumok külön oldalakra való felosztásához az Aspose.PDF for .NET használatával.
+description: Útmutató lépésről lépésre a PDF-dokumentum különálló oldalakra való felosztásához az Aspose.PDF for .NET használatával.
 type: docs
 weight: 140
 url: /hu/net/programming-with-pdf-pages/split-to-pages/

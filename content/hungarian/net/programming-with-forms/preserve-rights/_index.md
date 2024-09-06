@@ -102,7 +102,7 @@ V: Igen, az Aspose.PDF for .NET lehetővé teszi az űrlapok jogainak megőrzés
 
 #### K: Mi történik, ha az űrlapmezőket a megfelelő hozzáférési jogok nélkül próbálom meg módosítani?
 
-V: Ha megfelelő hozzáférési jogok nélkül próbálja meg módosítani az űrlapmezőket, a módosítások nem kerülnek mentésre a PDF dokumentumban, és kivételt vagy hibaüzenetet kaphat.
+V: Ha megfelelő hozzáférési jogok nélkül próbálja meg módosítani az űrlapmezőket, a változtatások nem kerülnek mentésre a PDF dokumentumban, és kivételt vagy hibaüzenetet kaphat.
 
 #### K: Az Aspose.PDF for .NET kompatibilis a .NET Framework összes verziójával?
 

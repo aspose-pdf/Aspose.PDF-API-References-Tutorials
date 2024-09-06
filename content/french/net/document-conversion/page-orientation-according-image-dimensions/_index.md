@@ -1,143 +1,143 @@
 ---
-title: Orientation de la page selon les dimensions de l'image
-linktitle: Orientation de la page selon les dimensions de l'image
-second_title: Aspose.PDF pour la référence de l'API .NET
-description: Guide étape par étape pour définir l'orientation de la page en fonction des dimensions de l'image avec Aspose.PDF pour .NET.
+title: Orientation de la page en fonction des dimensions de l'image
+linktitle: Orientation de la page en fonction des dimensions de l'image
+second_title: Référence de l'API Aspose.PDF pour .NET
+description: Découvrez comment créer des PDF avec Aspose.PDF pour .NET, en définissant l'orientation de la page en fonction des dimensions de l'image dans ce guide étape par étape.
 type: docs
 weight: 80
 url: /fr/net/document-conversion/page-orientation-according-image-dimensions/
 ---
-Dans ce didacticiel, nous vous guiderons tout au long du processus de définition de l'orientation de la page en fonction des dimensions d'une image à l'aide d'Aspose.PDF pour .NET. Nous parcourrons une liste d’images JPG dans un répertoire donné et ajusterons automatiquement l’orientation de la page en fonction de la largeur de chaque image. Suivez les étapes ci-dessous pour y parvenir.
+## Introduction
 
-## Conditions préalables
-Avant de commencer, assurez-vous de remplir les conditions préalables suivantes :
+Bienvenue dans le monde d'Aspose.PDF pour .NET ! Si vous cherchez à créer, manipuler ou convertir des documents PDF par programmation, vous êtes au bon endroit. Aspose.PDF est une bibliothèque puissante qui permet aux développeurs de travailler avec des fichiers PDF de manière transparente. Dans ce guide, nous vous guiderons tout au long du processus de définition des orientations de page en fonction des dimensions de l'image. Que vous soyez un développeur chevronné ou que vous débutiez, ce didacticiel vous fournira les connaissances dont vous avez besoin pour démarrer avec Aspose.PDF.
 
-- Connaissance de base du langage de programmation C#.
-- Bibliothèque Aspose.PDF pour .NET installée sur votre système.
-- Un environnement de développement tel que Visual Studio.
+## Prérequis
 
-## Étape 1 : Parcourir les images JPG
-A cette étape, nous allons parcourir toutes les images JPG dans un répertoire donné. Suivez le code ci-dessous :
+Avant de plonger dans le code, assurons-nous que vous disposez de tout ce dont vous avez besoin pour suivre :
 
-```csharp
-// Chemin d'accès au répertoire des documents.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+1. Visual Studio : assurez-vous que Visual Studio est installé sur votre ordinateur. Il s'agit du meilleur IDE pour le développement .NET.
+2. .NET Framework : ce guide suppose que vous utilisez .NET Framework. Assurez-vous que la version appropriée est installée.
+3.  Aspose.PDF pour .NET : Vous pouvez télécharger la bibliothèque à partir du[Site Web d'Aspose](https://releases.aspose.com/pdf/net/) . Si vous souhaitez l'essayer en premier, vous pouvez obtenir un[essai gratuit](https://releases.aspose.com/).
+4. Connaissances de base de C# : une familiarité avec la programmation C# vous aidera à mieux comprendre les exemples.
 
-// Créer un nouveau document PDF
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+## Paquets d'importation
 
-// Récupérer les noms de tous les fichiers JPG dans un répertoire particulier
-string[] fileEntries = Directory.GetFiles(dataDir, "*.JPG");
-```
+Pour commencer, vous devez importer les packages nécessaires. Voici comment procéder :
 
- Assurez-vous de remplacer`"YOUR DOCUMENTS DIRECTORY"` avec le répertoire réel où se trouvent vos images JPG.
+1. Ouvrez votre projet Visual Studio.
+2. Cliquez avec le bouton droit sur votre projet dans l'Explorateur de solutions et sélectionnez « Gérer les packages NuGet ».
+3.  Rechercher`Aspose.PDF` et installez-le.
 
-## Étape 2 : Création de la page et de l'image
-Après avoir parcouru les fichiers JPG, nous créerons une page et une image pour chaque fichier. Utilisez le code suivant :
+Maintenant que nous avons tout configuré, décomposons l’exemple étape par étape.
 
-```csharp
-int counter;
-for (counter = 0; counter < fileEntries.Length - 1; counter++)
-{
-// Créer un objet Page
-Aspose.Pdf.Page page = doc.Pages.Add();
+## Étape 1 : Configurez votre répertoire de documents
 
-// Créer un objet Image
-Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
-image1.File = fileEntries[counter];
-```
-
-## Étape 3 : Vérification des dimensions de l'image
-Vérifions maintenant les dimensions de chaque image pour déterminer l'orientation de la page. Utilisez le code suivant :
+Tout d'abord, vous devez spécifier le chemin d'accès au répertoire de vos documents où sont stockées vos images. C'est là qu'Aspose recherchera les fichiers JPG.
 
 ```csharp
-// Créez un objet BitMap pour obtenir des informations à partir du fichier image
-Bitmap myimage = new Bitmap(fileEntries[counter]);
-
-// Vérifiez si la largeur de l'image est supérieure à la largeur de la page ou non
-if (myimage.Width > page.PageInfo.Width)
-//
-
-  If the width of the image is greater than the width of the page, set the page orientation to landscape
-page.PageInfo.IsLandscape = true;
-else
-// Si la largeur de l'image est inférieure à la largeur de la page, définissez l'orientation de la page sur portrait.
-page.PageInfo.IsLandscape = false;
-```
-
-## Étape 4 : Ajout de l'image au document PDF
-Après avoir vérifié les dimensions de l'image, nous ajouterons l'image à la collection de paragraphes du document PDF. Utilisez le code suivant :
-
-```csharp
-// Ajouter l'image à la collection de paragraphes du document PDF
-page.Paragraphs.Add(image1);
-```
-
-## Étape 5 : Sauvegarde du fichier PDF
-Une fois que nous avons ajouté toutes les images au document PDF, nous pouvons maintenant enregistrer le fichier PDF résultant. Voici la dernière étape :
-
-```csharp
-// Enregistrez le fichier PDF
-doc.Save(dataDir + "SetPageOrientation_out.pdf");
-```
-
- Remplacer`"YOUR DOCUMENTS DIRECTORY"` avec le répertoire souhaité dans lequel vous souhaitez enregistrer le fichier PDF de sortie.
-
-### Exemple de code source pour l'orientation de la page en fonction des dimensions de l'image à l'aide d'Aspose.PDF pour .NET
-
-```csharp
-
-// Le chemin d'accès au répertoire des documents.
+// Le chemin vers le répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+ Remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel où se trouvent vos images. Ceci est crucial car si Aspose ne parvient pas à trouver vos images, il ne pourra pas créer le PDF.
+
+## Étape 2 : Créer un nouveau document PDF
+
+Ensuite, vous allez créer un nouvel objet de document PDF. C'est là que toutes vos images seront ajoutées.
+
+```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+```
 
-// Récupérer les noms de tous les fichiers JPG dans un répertoire particulier
+ Cette ligne initialise une nouvelle instance du`Document` classe, qui représente votre fichier PDF.
+
+## Étape 3 : Récupérer les fichiers image
+
+ Maintenant, récupérons tous les fichiers JPG du répertoire spécifié. Cela se fait à l'aide de l'`Directory.GetFiles` méthode.
+
+```csharp
 string[] fileEntries = Directory.GetFiles(dataDir, "*.JPG");
+```
 
+Cette ligne vous donnera un tableau de noms de fichiers correspondant au format JPG. Assurez-vous que votre répertoire contient des images JPG pour que cela fonctionne !
+
+## Étape 4 : Parcourir chaque image
+
+Vous devrez parcourir chaque fichier image et l'ajouter au document PDF. Voici comment procéder :
+
+```csharp
 int counter;
 for (counter = 0; counter < fileEntries.Length - 1; counter++)
 {
-	// Créer un objet de page
-	Aspose.Pdf.Page page = doc.Pages.Add();
+    // Créer un objet de page
+    Aspose.Pdf.Page page = doc.Pages.Add();
+```
 
-	// Créer un objet image
-	Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
-	image1.File = fileEntries[counter];
+ Dans cette boucle, vous créez une nouvelle page pour chaque image.`doc.Pages.Add()` La méthode ajoute une nouvelle page à votre document PDF.
 
-	// Créez un objet BitMap afin d'obtenir les informations du fichier image
-	Bitmap myimage = new Bitmap(fileEntries[counter]);
-	// Vérifiez si la largeur du fichier image est supérieure à la largeur de la page ou non
-	if (myimage.Width > page.PageInfo.Width)
-		// Si la largeur de l'image est supérieure à la largeur de la page, définissez l'orientation de la page sur Paysage.
-		page.PageInfo.IsLandscape = true;
-	else
-		// Si la largeur de l'image est inférieure à la largeur de la page, définissez l'orientation de la page sur Portrait.
-		page.PageInfo.IsLandscape = false;
-	// Ajouter l'image à la collection de paragraphes du document PDF
-	page.Paragraphs.Add(image1);
+## Étape 5 : Créer un objet image
+
+ Pour chaque image, vous devez créer un`Image` objet qui contiendra les données de l'image.
+
+```csharp
+    Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
+    image1.File = fileEntries[counter];
+```
+
+ Ici, vous attribuez le fichier image actuel à la`Image` objet. Ceci est essentiel pour ajouter l'image au PDF.
+
+## Étape 6 : Vérifier les dimensions de l’image
+
+Avant d'ajouter l'image au PDF, vous devez vérifier ses dimensions pour déterminer l'orientation de la page.
+
+```csharp
+    Bitmap myimage = new Bitmap(fileEntries[counter]);
+    if (myimage.Width > page.PageInfo.Width)
+        page.PageInfo.IsLandscape = true;
+    else
+        page.PageInfo.IsLandscape = false;
+```
+
+Cet extrait de code vérifie si la largeur de l'image est supérieure à la largeur de la page. Si c'est le cas, l'orientation de la page est définie sur paysage ; sinon, elle reste en mode portrait.
+
+## Étape 7 : ajouter l’image au PDF
+
+Maintenant que vous avez défini l'orientation, il est temps d'ajouter l'image au document PDF.
+
+```csharp
+    page.Paragraphs.Add(image1);
 }
-// Enregistrez le fichier PDF
+```
+
+Cette ligne ajoute l'image à la collection de paragraphes de la page en cours. C'est comme placer une image dans un cadre !
+
+## Étape 8 : Enregistrez le document PDF
+
+Enfin, vous devez enregistrer le document PDF dans le répertoire spécifié.
+
+```csharp
 doc.Save(dataDir + "SetPageOrientation_out.pdf");
 ```
+
+ Cette ligne enregistre le document sous le nom`SetPageOrientation_out.pdf`Assurez-vous de vérifier votre répertoire de documents pour le PDF nouvellement créé !
 
 ## Conclusion
-Dans ce didacticiel, nous avons couvert le processus étape par étape de définition de l'orientation de la page en fonction des dimensions d'une image à l'aide d'Aspose.PDF pour .NET. En suivant les instructions décrites ci-dessus, vous devriez maintenant pouvoir créer un document PDF avec la bonne orientation de page pour chaque image. Cette fonctionnalité est utile lorsque vous avez des images de différentes tailles et que vous souhaitez les intégrer dans un document PDF.
 
-### FAQ
+Et voilà ! Vous avez réussi à créer un document PDF à l'aide d'Aspose.PDF pour .NET, en définissant l'orientation de la page en fonction des dimensions des images. Cette puissante bibliothèque ouvre un monde de possibilités pour travailler avec des fichiers PDF dans vos applications. Que vous génériez des rapports, des factures ou tout autre type de document, Aspose.PDF est là pour vous.
 
-#### Q : Puis-je utiliser d'autres formats d'image au lieu de JPG pour définir l'orientation de la page en fonction des dimensions de l'image ?
+## FAQ
 
-R : Oui, vous pouvez utiliser d'autres formats d'image tels que PNG, BMP ou GIF en plus de JPG pour définir l'orientation de la page en fonction des dimensions de l'image. Le code fourni parcourt tous les fichiers image portant l'extension ".JPG", mais vous pouvez le modifier pour inclure également d'autres formats d'image.
+### Qu'est-ce qu'Aspose.PDF pour .NET ?
+Aspose.PDF pour .NET est une bibliothèque qui permet aux développeurs de créer, manipuler et convertir des documents PDF par programmation.
 
-#### Q : Que se passe-t-il si les dimensions d'une image sont exactement égales à la largeur de la page ?
+### Comment installer Aspose.PDF ?
+ Vous pouvez installer Aspose.PDF via le gestionnaire de packages NuGet dans Visual Studio ou le télécharger à partir du[Site Web d'Aspose](https://releases.aspose.com/pdf/net/).
 
-R : Si la largeur d'une image est exactement égale à la largeur de la page, l'orientation de la page sera définie sur Portrait. Dans le code fourni, l'orientation de la page est définie sur paysage uniquement si la largeur de l'image est supérieure à la largeur de la page.
+### Puis-je utiliser Aspose.PDF gratuitement ?
+ Oui, Aspose propose un[essai gratuit](https://releases.aspose.com/) pour que vous puissiez tester la bibliothèque avant de l'acheter.
 
-#### Q : Puis-je personnaliser la logique d'orientation de la page en fonction d'exigences spécifiques ?
+### Où puis-je trouver de l'aide pour Aspose.PDF ?
+Vous pouvez trouver du soutien sur le[Forum Aspose](https://forum.aspose.com/c/pdf/10).
 
-R : Oui, vous pouvez personnaliser la logique d'orientation de la page en fonction d'exigences spécifiques. Par exemple, vous pouvez définir une valeur seuil pour déterminer quand l'orientation de la page doit être définie sur paysage ou portrait. De plus, vous pouvez prendre en compte des facteurs tels que la hauteur de l'image ou le rapport hauteur/largeur pour déterminer l'orientation de la page.
-
-#### Q : Puis-je ajouter d'autres contenus, tels que du texte ou des tableaux, au document PDF avec les images ?
-
-R : Oui, vous pouvez ajouter d'autres contenus, tels que du texte ou des tableaux, au document PDF avec les images. Aspose.PDF pour .NET fournit un riche ensemble de fonctionnalités pour manipuler des documents PDF, notamment l'ajout de texte, d'images, de tableaux et d'autres éléments aux pages.
+### Quels types de fichiers puis-je convertir en PDF avec Aspose ?
+Aspose.PDF prend en charge une large gamme de formats de fichiers, notamment les images, les documents Word, les feuilles de calcul Excel, etc.

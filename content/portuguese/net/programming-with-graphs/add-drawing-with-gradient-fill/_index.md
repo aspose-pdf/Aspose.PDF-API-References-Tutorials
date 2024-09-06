@@ -1,25 +1,25 @@
 ---
-title: Adicionar desenho com preenchimento gradiente
-linktitle: Adicionar desenho com preenchimento gradiente
-second_title: Referência da API Aspose.PDF para .NET
-description: Aprenda como adicionar um desenho com preenchimento gradiente com Aspose.PDF para .NET. Tutorial passo a passo para criar documentos PDF atraentes.
+title: Adicionar desenho com preenchimento de gradiente
+linktitle: Adicionar desenho com preenchimento de gradiente
+second_title: Referência da API do Aspose.PDF para .NET
+description: Aprenda como adicionar um desenho com preenchimento de gradiente com Aspose.PDF para .NET. Tutorial passo a passo para criar documentos PDF atraentes.
 type: docs
 weight: 20
 url: /pt/net/programming-with-graphs/add-drawing-with-gradient-fill/
 ---
-Neste tutorial, orientaremos você passo a passo no seguinte código-fonte C# para adicionar um desenho com preenchimento gradiente à programação com gráficos usando Aspose.PDF para .NET.
+Neste tutorial, mostraremos passo a passo o seguinte código-fonte em C# para adicionar um desenho com preenchimento de gradiente à programação com gráficos usando o Aspose.PDF para .NET.
 
-Certifique-se de ter instalado a biblioteca Aspose.PDF e configurado seu ambiente de desenvolvimento antes de começar. Também possui conhecimentos básicos de programação C#.
+Certifique-se de ter instalado a biblioteca Aspose.PDF e configurado seu ambiente de desenvolvimento antes de começar. Também tenha conhecimento básico de programação C#.
 
-## Etapa 1: configuração do diretório de documentos
+## Etapa 1: Configuração do diretório de documentos
 
-No código-fonte fornecido, você precisa especificar o diretório onde deseja salvar o arquivo PDF resultante. Altere a variável “dataDir” para o diretório desejado.
+No código-fonte fornecido, você precisa especificar o diretório onde deseja salvar o arquivo PDF resultante. Altere a variável "dataDir" para o diretório desejado.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Etapa 2: instanciar um objeto de documento e adicionar uma página
+## Etapa 2: Instanciando um objeto de documento e adicionando uma página
 
 Criamos uma instância da classe Document e adicionamos uma página a este documento.
 
@@ -37,7 +37,7 @@ Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300, 300);
 page.Paragraphs.Add(graph);
 ```
 
-## Etapa 4: criar objeto retângulo e adicionar ao gráfico
+## Etapa 4: Crie um objeto retângulo e adicione ao gráfico
 
 Criamos um objeto Rectangle com dimensões especificadas e o adicionamos à coleção de formas do gráfico.
 
@@ -46,9 +46,9 @@ Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(0, 0, 300, 
 graph.Shapes.Add(rect);
 ```
 
-## Etapa 5: configurar o preenchimento gradiente
+## Etapa 5: Configurando o preenchimento de gradiente
 
-Configuramos o preenchimento gradiente para o retângulo usando a classe GradientAxialShading.
+Configuramos o preenchimento de gradiente para o retângulo usando a classe GradientAxialShading.
 
 ```csharp
 rect.GraphInfo.FillColor = new Aspose.Pdf.Color
@@ -61,17 +61,17 @@ End = new Point(300, 300)
 };
 ```
 
-Isso cria um preenchimento gradiente de vermelho para azul, do ponto (0, 0) ao ponto (300, 300).
+Isso cria um preenchimento gradiente do vermelho ao azul, do ponto (0, 0) ao ponto (300, 300).
 
-## Passo 6: Salvando o arquivo PDF
+## Etapa 6: Salvando o arquivo PDF
 
-Finalmente, salvamos o arquivo PDF resultante com o nome "AddDrawingWithGradientFill_out.pdf" no diretório especificado.
+Por fim, salvamos o arquivo PDF resultante com o nome "AddDrawingWithGradientFill_out.pdf" no diretório especificado.
 
 ```csharp
 doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ```
 
-### Exemplo de código-fonte para Adicionar desenho com preenchimento gradiente usando Aspose.PDF para .NET 
+### Código-fonte de exemplo para Adicionar desenho com preenchimento de gradiente usando Aspose.PDF para .NET 
 
 ```csharp
 
@@ -96,17 +96,17 @@ doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ```
 ## Conclusão
 
-Neste tutorial, explicamos passo a passo como adicionar um desenho com preenchimento gradiente à programação com gráficos usando Aspose.PDF for .NET. Agora você pode usar esse conhecimento para criar documentos PDF atraentes com designs personalizados e preenchimentos gradientes.
+Neste tutorial, explicamos passo a passo como adicionar um desenho com preenchimento de gradiente à programação com gráficos usando Aspose.PDF para .NET. Agora você pode usar esse conhecimento para criar documentos PDF atraentes com designs personalizados e preenchimentos de gradiente.
 
 ### Perguntas frequentes
 
-#### P: Qual é o objetivo deste tutorial?
+#### P: Qual é o propósito deste tutorial?
 
-R: Este tutorial tem como objetivo guiá-lo através do processo de adição de um desenho com preenchimento gradiente à programação com gráficos usando Aspose.PDF for .NET.
+R: Este tutorial tem como objetivo orientar você no processo de adição de um desenho com preenchimento de gradiente à programação com gráficos usando o Aspose.PDF para .NET.
 
-#### P: Quais pré-requisitos são necessários antes de começar?
+#### P: Quais são os pré-requisitos necessários antes de começar?
 
-R: Antes de começar, certifique-se de ter instalado a biblioteca Aspose.PDF e configurado seu ambiente de desenvolvimento. Além disso, é recomendável ter um conhecimento básico de programação C#.
+R: Antes de começar, certifique-se de ter instalado a biblioteca Aspose.PDF e configurado seu ambiente de desenvolvimento. Além disso, é recomendado ter um entendimento básico de programação em C#.
 
 #### P: Como especifico o diretório para salvar o arquivo PDF?
 
@@ -114,24 +114,24 @@ R: No código-fonte fornecido, você pode alterar o valor da variável "dataDir"
 
 #### P: Qual é o propósito do objeto Graph?
 
-R: O objeto Graph serve como contêiner para os elementos do desenho. Ele é criado com dimensões especificadas e adicionado à coleção de parágrafos da página.
+A: O objeto Graph serve como um contêiner para os elementos de desenho. Ele é criado com dimensões especificadas e adicionado à coleção de parágrafos da página.
 
-#### P: Como posso configurar o preenchimento gradiente para uma forma?
+#### P: Como posso configurar o preenchimento de gradiente para uma forma?
 
-R: Para configurar o preenchimento gradiente, você pode definir a propriedade FillColor do GraphInfo de uma forma usando a classe GradientAxialShading. Isso permite definir os pontos inicial e final do gradiente e as cores de transição entre eles.
+R: Para configurar o preenchimento de gradiente, você pode definir a propriedade FillColor do GraphInfo de uma forma usando a classe GradientAxialShading. Isso permite que você defina os pontos inicial e final do gradiente e as cores para transição entre eles.
 
 #### P: Posso personalizar as cores e a direção do preenchimento gradiente?
 
-R: Sim, você pode personalizar as cores e a direção do preenchimento gradiente ajustando os objetos Color e especificando os pontos inicial e final do GradientAxialShading.
+R: Sim, você pode personalizar as cores e a direção do preenchimento de gradiente ajustando os objetos Color e especificando os pontos inicial e final do GradientAxialShading.
 
 #### P: Qual é a etapa final do tutorial?
 
 R: A etapa final envolve salvar o arquivo PDF resultante com o nome "AddDrawingWithGradientFill_out.pdf" no diretório especificado.
 
-#### P: Existe um exemplo de código-fonte disponível?
+#### P: Existe um código-fonte de exemplo disponível?
 
-R: Sim, o tutorial fornece um exemplo de código-fonte que você pode usar como referência para implementar as etapas descritas.
+R: Sim, o tutorial fornece um código-fonte de exemplo que você pode usar como referência para implementar as etapas descritas.
 
-#### P: Posso aplicar preenchimento gradiente a outras formas além de retângulos?
+#### P: Posso aplicar preenchimento de gradiente a outras formas além de retângulos?
 
-R: Sim, você também pode aplicar preenchimento gradiente a outras formas. O processo envolve a configuração da propriedade FillColor do GraphInfo da forma usando a classe GradientAxialShading.
+R: Sim, você pode aplicar preenchimento de gradiente a outras formas também. O processo envolve configurar a propriedade FillColor do GraphInfo da forma usando a classe GradientAxialShading.

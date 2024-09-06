@@ -7,7 +7,7 @@ type: docs
 weight: 230
 url: /zh-hant/net/programming-with-tagged-pdf/text-structure-elements/
 ---
-在這個詳細的教學中，我們將引導您逐步完成所提供的 C# 原始程式碼，以使用 Aspose.PDF for .NET 在標記的 PDF 檔案中建立文字結構元素。請按照以下說明了解如何將文字結構元素新增至 PDF 檔案。
+在本詳細教學中，我們將引導您逐步完成所提供的 C# 原始程式碼，以使用 Aspose.PDF for .NET 在標記的 PDF 檔案中建立文字結構元素。請按照以下說明了解如何將文字結構元素新增至 PDF 檔案。
 
 ## 第一步：建構環境
 

@@ -35,7 +35,7 @@ Győződjön meg arról, hogy az érvényesítendő PDF-fájl helyesen van megad
 Ebben a lépésben az Aspose.PDF for .NET fájlt fogjuk használni a megadott PDF-dokumentum érvényesítéséhez és az érvényesítési jelentés létrehozásához.
 
 ```csharp
-//Nyissa meg a PDF dokumentumot
+// Nyissa meg a PDF dokumentumot
 using (var document = new Aspose.Pdf.Document(inputFileName))
 {
 // Érvényesítse a PDF dokumentumot

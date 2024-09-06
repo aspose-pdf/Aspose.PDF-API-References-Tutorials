@@ -1,26 +1,26 @@
 ---
 title: Nút radio có tùy chọn
 linktitle: Nút radio có tùy chọn
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Dễ dàng thêm nút radio với các tùy chọn vào tài liệu PDF bằng Aspose.PDF cho .NET.
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Dễ dàng thêm nút radio có tùy chọn vào tài liệu PDF bằng Aspose.PDF cho .NET.
 type: docs
 weight: 230
 url: /vi/net/programming-with-forms/radio-button-with-options/
 ---
 
-Trong hướng dẫn này, chúng tôi sẽ chỉ cho bạn cách thêm nút radio có các tùy chọn vào tài liệu PDF bằng Aspose.PDF cho .NET. Chúng tôi sẽ giải thích từng bước về mã nguồn C# để hướng dẫn bạn thực hiện quy trình này.
+Trong hướng dẫn này, chúng tôi sẽ chỉ cho bạn cách thêm nút radio có tùy chọn vào tài liệu PDF bằng Aspose.PDF cho .NET. Chúng tôi sẽ giải thích mã nguồn C# từng bước để hướng dẫn bạn thực hiện quy trình này.
 
 ## Bước 1: Chuẩn bị
 
-Đảm bảo bạn đã nhập các thư viện cần thiết và đặt đường dẫn đến thư mục tài liệu của mình:
+Hãy đảm bảo bạn đã nhập các thư viện cần thiết và đặt đường dẫn đến thư mục tài liệu của bạn:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Bước 2: Khởi tạo đối tượng tài liệu
+## Bước 2: Khởi tạo một đối tượng tài liệu
 
-Khởi tạo đối tượng Document để tạo một tài liệu PDF mới:
+Khởi tạo đối tượng Tài liệu để tạo tài liệu PDF mới:
 
 ```csharp
 Document doc = new Document();
@@ -28,7 +28,7 @@ Document doc = new Document();
 
 ## Bước 3: Thêm trang và bảng
 
-Thêm một trang vào tài liệu và tạo bảng để chứa các tùy chọn nút radio:
+Thêm một trang vào tài liệu và tạo một bảng để chứa các tùy chọn nút radio:
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -39,7 +39,7 @@ page.Paragraphs.Add(table);
 
 ## Bước 4: Khởi tạo đối tượng RadioButtonField
 
-Khởi tạo một đối tượng RadioButtonField để biểu diễn nút radio:
+Khởi tạo đối tượng RadioButtonField để biểu diễn nút radio:
 
 ```csharp
 RadioButtonField rf = new RadioButtonField(page);
@@ -71,7 +71,7 @@ rf.Add(opt3);
 
 ## Bước 6: Tùy chỉnh tùy chọn nút radio
 
-Tùy chỉnh các tùy chọn nút radio bằng cách đặt các thuộc tính như đường viền, màu văn bản và văn bản chú thích:
+Tùy chỉnh các tùy chọn nút radio bằng cách thiết lập các thuộc tính như đường viền, màu văn bản và văn bản chú thích:
 
 ```csharp
 opt1.Border = new Border(opt1);
@@ -108,7 +108,7 @@ dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Mã nguồn mẫu cho Nút radio có tùy chọn sử dụng Aspose.PDF for .NET 
+### Mã nguồn mẫu cho Nút radio có Tùy chọn sử dụng Aspose.PDF cho .NET 
 ```csharp
 try
 {
@@ -175,4 +175,4 @@ catch (Exception ex)
 
 ## Phần kết luận
 
-Xin chúc mừng! Bạn đã thêm thành công nút radio có các tùy chọn vào tài liệu PDF bằng Aspose.PDF cho .NET. Bây giờ bạn có thể sử dụng phương pháp này để tạo các biểu mẫu tương tác trong tài liệu PDF của mình.
+Xin chúc mừng! Bạn đã thêm thành công nút radio có tùy chọn vào tài liệu PDF bằng Aspose.PDF cho .NET. Bây giờ bạn có thể sử dụng phương pháp này để tạo biểu mẫu tương tác trong tài liệu PDF của mình.

@@ -30,7 +30,7 @@ A .NET-hez készült Aspose.PDF könyvtár szükséges a PDF dokumentumokkal val
 
 ## 3. lépés: A PDF dokumentum betöltése
 
-A dátum- és időbélyeg hozzáadásának első lépése a meglévő PDF-dokumentum betöltése a projektbe. Itt van, hogyan:
+A dátum- és időbélyeg hozzáadásának első lépése a meglévő PDF-dokumentum betöltése a projektbe. Íme, hogyan:
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
@@ -74,7 +74,7 @@ Ezeket a tulajdonságokat igényei szerint módosíthatja.
 
 ## 6. lépés: Bélyegző hozzáadása a PDF-hez
 
-Most, hogy a dátum- és időbélyeg készen áll, hozzáadhatja a PDF-dokumentum egy adott oldalához. Itt van, hogyan:
+Most, hogy a dátum- és időbélyeg készen áll, hozzáadhatja a PDF-dokumentum egy adott oldalához. Íme, hogyan:
 
 ```csharp
 // Adja hozzá a bélyeget az oldal bélyeggyűjteményéhez
@@ -85,7 +85,7 @@ fenti kód hozzáadja a pecsétet a PDF-dokumentum első oldalához. Szükség e
 
 ## 7. lépés: Mentse el a kimeneti dokumentumot
 
-A dátum- és időbélyegző hozzáadása után mentheti a módosított PDF-dokumentumot. Itt van, hogyan:
+A dátum- és időbélyegző hozzáadása után mentheti a módosított PDF-dokumentumot. Íme, hogyan:
 
 ```csharp
 // Mentse el a kimeneti dokumentumot
@@ -152,7 +152,7 @@ V: Dátum- és időbélyegző hozzáadása a PDF-dokumentumhoz növeli annak inf
 
 #### K: Lehetséges-e dátum- és időbélyegző hozzáadása egy adott helyhez egy PDF-oldalon?
 
- V: Természetesen módosíthatja a dátum- és időbélyegző elhelyezését a PDF-oldalon a fájl tulajdonságainak módosításával.`TextStamp` tárgy. Az oktatóanyagban található kód bemutatja, hogyan állíthat be olyan tulajdonságokat, mint a margó, az igazítás és a függőleges pozicionálás.
+ V: Természetesen módosíthatja a dátum- és időbélyegző elhelyezését a PDF-oldalon, ha módosítja a`TextStamp` objektum. Az oktatóanyagban található kód bemutatja, hogyan állíthat be olyan tulajdonságokat, mint a margó, az igazítás és a függőleges pozicionálás.
 
 #### K: Hozzáadhatok több dátum- és időbélyeget ugyanazon PDF-dokumentum különböző oldalaihoz?
 

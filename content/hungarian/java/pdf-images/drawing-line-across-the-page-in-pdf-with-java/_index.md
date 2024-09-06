@@ -10,7 +10,7 @@ url: /hu/java/pdf-images/drawing-line-across-the-page-in-pdf-with-java/
 
 ## Bevezetés a vonalon átívelő vonalak rajzolásába PDF-ben Java segítségével
 
-Az Aspose.PDF for Java egy hatékony API, amely lehetővé teszi a fejlesztők számára, hogy PDF-dokumentumokkal dolgozzanak Java-alkalmazásaikban. Ebben a lépésenkénti útmutatóban megvizsgáljuk, hogyan húzhatunk egy vonalat az oldalon egy PDF-dokumentumban az Aspose.PDF for Java használatával. Akár dekoratív vonalakat, akár külön szakaszokat szeretne hozzáadni, akár tartalmat szeretne kiemelni, ez az oktatóanyag megmutatja, hogyan teheti ezt meg könnyedén.
+Az Aspose.PDF for Java egy hatékony API, amely lehetővé teszi a fejlesztők számára, hogy PDF-dokumentumokkal dolgozzanak Java-alkalmazásaikban. Ebben a lépésenkénti útmutatóban megvizsgáljuk, hogyan húzhatunk egy vonalat az oldalon egy PDF-dokumentumban az Aspose.PDF for Java segítségével. Akár dekoratív vonalakat, akár külön szakaszokat szeretne hozzáadni, akár tartalmat szeretne kiemelni, ez az oktatóanyag megmutatja, hogyan teheti ezt meg könnyedén.
 
 ## Az Aspose.PDF for Java első lépései
 
@@ -91,7 +91,7 @@ Miután hozzáadta a sort és testreszabta, a PDF-dokumentumot fájlba mentheti.
 doc.save("output.pdf");
 ```
 
-Gratulálunk! Sikeresen húzott egy vonalat a PDF-dokumentum oldalán az Aspose.PDF for Java használatával.
+Gratulálok! Sikeresen húzott egy vonalat a PDF-dokumentum oldalán az Aspose.PDF for Java használatával.
 
 ## Következtetés
 
@@ -101,7 +101,7 @@ Ebben az oktatóanyagban bemutatjuk a vonal rajzolásának alapjait egy PDF-doku
 
 ### Hogyan adhatok függőleges vonalat a PDF dokumentumomhoz?
 
-Függőleges vonal hozzáadásához egyszerűen állítsa be a koordinátákat a létrehozásakor`Line` tárgy. Például egy (200, 100) és (200, 400) ponttal végződő függőleges vonal hozzáadásához módosítsa a koordinátákat az alábbiak szerint:
+Függőleges vonal hozzáadásához egyszerűen állítsa be a koordinátákat a létrehozásakor`Line` objektum. Például egy (200, 100) és (200, 400) ponttal végződő függőleges vonal hozzáadásához módosítsa a koordinátákat az alábbiak szerint:
 
 ```java
 Line verticalLine = new Line(new float[] { 200, 100, 200, 400 });
@@ -124,7 +124,7 @@ Igen, az Aspose.PDF for Java kompatibilis a Java 8 és újabb verzióival. Győz
 
 ### Hogyan tudok szöveget hozzáadni a rajzolt vonal fölé?
 
- Ha szöveget szeretne hozzáadni a sor fölé, használja a`TextFragment` osztályt az Aspose.PDF biztosítja. Hozzon létre egy`TextFragment` objektumot, és adja hozzá az oldalhoz.
+ Ha szöveget szeretne hozzáadni a sor fölé, használja a`TextFragment` osztály által biztosított Aspose.PDF. Hozzon létre a`TextFragment` objektumot, és adja hozzá az oldalhoz.
 
 ### Hol találok további példákat és dokumentációt az Aspose.PDF for Java fájlhoz?
 

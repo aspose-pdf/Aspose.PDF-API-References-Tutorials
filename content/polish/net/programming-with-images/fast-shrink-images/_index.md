@@ -1,17 +1,17 @@
 ---
 title: Szybkie zmniejszanie obrazów
 linktitle: Szybkie zmniejszanie obrazów
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Szybko zmniejsz rozmiar obrazów w pliku PDF za pomocą Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Szybko zmniejsz rozmiar obrazów w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 130
 url: /pl/net/programming-with-images/fast-shrink-images/
 ---
-Ten przewodnik poprowadzi Cię krok po kroku, jak szybko zmniejszyć rozmiar obrazów w pliku PDF za pomocą Aspose.PDF dla .NET. Upewnij się, że masz już skonfigurowane środowisko i wykonaj poniższe czynności:
+Ten przewodnik krok po kroku pokaże Ci, jak szybko zmniejszyć rozmiar obrazów w pliku PDF za pomocą Aspose.PDF dla .NET. Upewnij się, że skonfigurowałeś już swoje środowisko i wykonaj poniższe kroki:
 
 ## Krok 1: Zainicjuj czas
 
-Zanim zaczniemy, zainicjujemy czas pomiaru wydajności kompresji. Dodaj następujący kod, aby zarejestrować czas rozpoczęcia:
+Zanim zaczniemy, zainicjujemy czas, aby zmierzyć wydajność kompresji. Dodaj następujący kod, aby zapisać czas rozpoczęcia:
 
 ```csharp
 var time = DateTime.Now.Ticks;
@@ -19,7 +19,7 @@ var time = DateTime.Now.Ticks;
 
 ## Krok 2: Zdefiniuj katalog dokumentów
 
- Upewnij się, że ustawiłeś prawidłowy katalog dokumentów. Zastępować`"YOUR DOCUMENT DIRECTORY"` w kodzie ścieżką do katalogu, w którym znajduje się Twój dokument PDF.
+ Upewnij się, że ustawiłeś poprawny katalog dokumentów. Zastąp`"YOUR DOCUMENT DIRECTORY"` w kodzie podając ścieżkę do katalogu, w którym znajduje się Twój dokument PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 3: Otwórz dokument PDF
 
- tym kroku otworzymy dokument PDF za pomocą`Document` klasa Aspose.PDF. Użyj`Document` konstruktor i podaj ścieżkę do dokumentu PDF.
+ W tym kroku otworzymy dokument PDF za pomocą`Document` klasa Aspose.PDF. Użyj`Document` konstruktora i przekazuje ścieżkę do dokumentu PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
 
 ## Krok 4: Zainicjuj opcje optymalizacji
 
- tym kroku zainicjujemy opcje optymalizacji kompresji obrazu. Utwórz instancję`OptimizationOptions` i ustaw odpowiednie opcje. W tym przykładzie włączamy kompresję obrazu, ustawiamy jakość obrazu na 75 i używamy wersji z szybką kompresją.
+ W tym kroku zainicjujemy opcje optymalizacji dla kompresji obrazu. Utwórz instancję`OptimizationOptions` i ustaw odpowiednie opcje. W tym przykładzie włączamy kompresję obrazu, ustawiamy jakość obrazu na 75 i używamy szybkiej wersji kompresji.
 
 ```csharp
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
@@ -46,7 +46,7 @@ optimizeOptions.ImageCompressionOptions.Version = Pdf.Optimization.ImageCompress
 
 ## Krok 5: Zoptymalizuj dokument PDF
 
- Na tym etapie zoptymalizujemy dokument PDF, korzystając z zdefiniowanych wcześniej opcji optymalizacji. Zadzwoń do`OptimizeResources` metoda`pdfDocument` obiekt i przekazać opcje optymalizacji.
+ tym kroku zoptymalizujemy dokument PDF, korzystając z opcji optymalizacji zdefiniowanych wcześniej. Wywołaj`OptimizeResources` metoda`pdfDocument` obiekt i przekazać opcje optymalizacji.
 
 ```csharp
 pdfDocument.OptimizeResources(optimizeOptions);
@@ -54,16 +54,16 @@ pdfDocument.OptimizeResources(optimizeOptions);
 
 ## Krok 6: Zapisz zaktualizowany dokument PDF
 
- Zapisz zaktualizowany dokument PDF za pomocą pliku`Save` metoda`pdfDocument` obiekt. Określ ścieżkę wyjściową pliku PDF.
+ Zapisz zaktualizowany dokument PDF za pomocą`Save` metoda`pdfDocument` obiekt. Określ ścieżkę wyjściową dla pliku PDF.
 
 ```csharp
 dataDir = dataDir + "FastShrinkImages_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Przykładowy kod źródłowy obrazów szybkokurczliwych przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Fast Shrink Images przy użyciu Aspose.PDF dla platformy .NET 
 ```csharp
-// Zainicjuj czas
+// Czas inicjalizacji
 var time = DateTime.Now.Ticks;
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -77,7 +77,7 @@ optimizeOptions.ImageCompressionOptions.CompressImages = true;
 optimizeOptions.ImageCompressionOptions.ImageQuality = 75;
 // Ustaw wersję kompresji Imagae na szybką
 optimizeOptions.ImageCompressionOptions.Version = Pdf.Optimization.ImageCompressionVersion.Fast;
-// Zoptymalizuj dokument PDF za pomocą Opcji optymalizacji
+// Zoptymalizuj dokument PDF za pomocą OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
 dataDir = dataDir + "FastShrinkImages_out.pdf";
 // Zapisz zaktualizowany dokument
@@ -88,46 +88,46 @@ Console.WriteLine("\nImage fast shrinked successfully.\nFile saved at " + dataDi
 
 ## Wniosek
 
-Gratulacje! Szybko zmniejszyłeś rozmiar obrazów w pliku PDF za pomocą Aspose.PDF dla .NET. Zoptymalizowany plik PDF zostanie zapisany w określonym katalogu. Możesz teraz używać tego pliku PDF ze zmniejszonymi obrazami, aby zwiększyć efektywność przechowywania lub udostępniania.
+Gratulacje! Szybko zmniejszyłeś rozmiar obrazów w pliku PDF za pomocą Aspose.PDF dla .NET. Zoptymalizowany plik PDF jest zapisywany w określonym katalogu. Teraz możesz używać tego pliku PDF ze zmniejszonymi obrazami w celu bardziej wydajnego przechowywania lub udostępniania.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Dlaczego miałbym chcieć szybko zmniejszyć rozmiar obrazów w pliku PDF przy użyciu Aspose.PDF dla .NET?
+#### P: Dlaczego miałbym chcieć szybko zmniejszyć rozmiar obrazów w pliku PDF, korzystając z Aspose.PDF dla platformy .NET?
 
-Odp.: Szybkie zmniejszenie rozmiaru obrazów w pliku PDF może pomóc zoptymalizować plik pod kątem przechowywania, udostępniania lub transmisji, co skutkuje lepszą wydajnością i mniejszym zużyciem zasobów.
+A: Szybkie zmniejszenie rozmiaru obrazów w pliku PDF może pomóc zoptymalizować plik pod kątem przechowywania, udostępniania lub przesyłania, co skutkuje lepszą wydajnością i mniejszym zużyciem zasobów.
 
-#### P: Jakie zalety oferuje kompresja obrazu w dokumencie PDF?
+#### P: Jakie korzyści daje kompresja obrazu w dokumencie PDF?
 
-Odp.: Kompresja obrazu w dokumencie PDF pomaga zminimalizować rozmiar pliku przy jednoczesnym zachowaniu akceptowalnej jakości obrazu, co prowadzi do szybszego ładowania, mniejszych wymagań dotyczących pamięci i zwiększonej wydajności przesyłania danych.
+A: Kompresja obrazu w dokumencie PDF pomaga zminimalizować rozmiar pliku przy jednoczesnym zachowaniu akceptowalnej jakości obrazu, co skutkuje szybszym czasem ładowania, mniejszymi wymaganiami dotyczącymi przestrzeni dyskowej i zwiększoną wydajnością transferu danych.
 
 #### P: W jaki sposób Aspose.PDF dla .NET ułatwia szybkie zmniejszanie rozmiaru obrazu w pliku PDF?
 
-Odp.: Aspose.PDF dla .NET zapewnia usprawniony proces otwierania dokumentu PDF, stosowania opcji kompresji obrazu i zapisywania zoptymalizowanego pliku PDF ze zmniejszonymi rozmiarami obrazu.
+A: Aspose.PDF dla platformy .NET usprawnia proces otwierania dokumentu PDF, stosowania opcji kompresji obrazu i zapisywania zoptymalizowanego pliku PDF ze zmniejszonymi rozmiarami obrazu.
 
 ####  P: Jakie jest znaczenie`OptimizationOptions` class in fast image size reduction?
 
- O:`OptimizationOptions`class umożliwia zdefiniowanie różnych ustawień optymalizacji, w tym opcji kompresji obrazu, w celu skutecznego zmniejszenia rozmiaru obrazów w dokumencie PDF.
+ A: Ten`OptimizationOptions` Klasa ta umożliwia zdefiniowanie różnych ustawień optymalizacji, w tym opcji kompresji obrazu, aby efektywnie zmniejszyć rozmiar obrazów w dokumencie PDF.
 
-#### P: Czy mogę dostosować ustawienia kompresji obrazu, aby kontrolować równowagę pomiędzy rozmiarem pliku a jakością obrazu?
+#### P: Czy mogę dostosować ustawienia kompresji obrazu, aby zachować równowagę między rozmiarem pliku a jakością obrazu?
 
-O: Tak, możesz dostosować ustawienia kompresji obrazu, dostosowując parametry, takie jak jakość obrazu i wersję kompresji, aby osiągnąć pożądaną równowagę pomiędzy rozmiarem pliku a wyglądem obrazu.
+O: Tak, możesz dostosować ustawienia kompresji obrazu, modyfikując parametry takie jak jakość obrazu i wersja kompresji, aby uzyskać pożądaną równowagę między rozmiarem pliku a wyglądem obrazu.
 
-####  P: W jaki sposób`pdfDocument.OptimizeResources` method work to reduce image sizes?
+####  P: Jak to działa?`pdfDocument.OptimizeResources` method work to reduce image sizes?
 
- O:`OptimizeResources` Metoda analizuje dokument PDF i stosuje określone opcje optymalizacji, w tym ustawienia kompresji obrazu, w celu zmniejszenia rozmiaru obrazów i innych zasobów.
+ A: Ten`OptimizeResources` Metoda analizuje dokument PDF i stosuje określone opcje optymalizacji, w tym ustawienia kompresji obrazu, w celu zmniejszenia rozmiaru obrazów i innych zasobów.
 
-#### P: Czy można zastosować szybką redukcję rozmiaru obrazu do określonego zakresu stron w dokumencie PDF?
+#### P: Czy można zastosować szybką redukcję rozmiaru obrazu dla określonego zakresu stron w dokumencie PDF?
 
- O:`OptimizeResources` metoda stosuje opcje optymalizacji do całego dokumentu PDF. Jeśli chcesz zastosować optymalizację do określonych stron, przed optymalizacją musisz wyodrębnić te strony do nowego dokumentu.
+ A: Ten`OptimizeResources` Metoda stosuje opcje optymalizacji do całego dokumentu PDF. Jeśli chcesz zastosować optymalizację do określonych stron, musisz wyodrębnić te strony do nowego dokumentu przed optymalizacją.
 
-#### P: W jakich scenariuszach szybkie zmniejszenie rozmiaru obrazu może być korzystne?
+#### P: W jakich sytuacjach szybkie zmniejszenie rozmiaru obrazu może być korzystne?
 
-Odp.: Szybka redukcja rozmiaru obrazu może być korzystna podczas przygotowywania plików PDF do dystrybucji online, załączników do wiadomości e-mail, archiwizacji lub podczas pracy z dużymi dokumentami zawierającymi wiele obrazów.
+A: Szybkie zmniejszanie rozmiaru obrazu może okazać się korzystne przy przygotowywaniu plików PDF do dystrybucji online, dołączania ich do wiadomości e-mail, archiwizowania lub pracy z dużymi dokumentami zawierającymi wiele obrazów.
 
-#### P: Czy zmniejszenie rozmiarów obrazów wpływa na jakość wizualną obrazów w dokumencie PDF?
+#### P: Czy zmniejszenie rozmiaru obrazów ma wpływ na jakość wizualną obrazów w dokumencie PDF?
 
-Odp.: Zmniejszanie rozmiarów obrazu poprzez kompresję może w pewnym stopniu wpłynąć na jakość obrazu. Ważne jest, aby znaleźć równowagę pomiędzy zmniejszeniem rozmiaru a akceptowalną jakością obrazu.
+A: Zmniejszanie rozmiarów obrazów poprzez kompresję może mieć pewien wpływ na jakość obrazu. Ważne jest znalezienie równowagi między zmniejszeniem rozmiaru a akceptowalną jakością obrazu.
 
-#### P: Jak mogę zmierzyć wydajność procesu szybkiego zmniejszania rozmiaru obrazu?
+#### P: Jak mogę zmierzyć wydajność szybkiego procesu zmniejszania rozmiaru obrazu?
 
- Odp.: Możesz zmierzyć wydajność, rejestrując czas rozpoczęcia za pomocą narzędzia`DateTime.Now.Ticks` metody przed procesem optymalizacji i obliczenia czasu, jaki upłynął po procesie.
+ A: Wydajność można zmierzyć, rejestrując czas rozpoczęcia za pomocą`DateTime.Now.Ticks` metodę przed procesem optymalizacji i obliczanie czasu, który upłynął po procesie.

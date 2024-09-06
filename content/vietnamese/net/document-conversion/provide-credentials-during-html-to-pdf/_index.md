@@ -1,139 +1,137 @@
 ---
-title: Cung cấp thông tin xác thực trong quá trình HTML sang PDF
-linktitle: Cung cấp thông tin xác thực trong quá trình HTML sang PDF
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Hướng dẫn từng bước để chuyển đổi HTML sang PDF bằng cách cung cấp thông tin xác thực với Aspose.PDF cho .NET.
+title: Cung cấp thông tin xác thực trong quá trình chuyển đổi HTML sang PDF
+linktitle: Cung cấp thông tin xác thực trong quá trình chuyển đổi HTML sang PDF
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách chuyển đổi HTML sang PDF bằng Aspose.PDF cho .NET với hướng dẫn từng bước này. Hoàn hảo cho các nhà phát triển muốn hợp lý hóa việc tạo tài liệu.
 type: docs
 weight: 240
 url: /vi/net/document-conversion/provide-credentials-during-html-to-pdf/
 ---
-Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn quy trình chuyển đổi tệp HTML sang PDF đồng thời cung cấp thông tin xác thực khi truy cập URL bảo mật bằng Aspose.PDF cho .NET. Bằng cách làm theo các bước bên dưới, bạn sẽ có thể chuyển đổi nội dung HTML sang PDF bằng thông tin xác thực phù hợp.
+## Giới thiệu
+
+Trong thế giới phát triển phần mềm, chuyển đổi HTML sang PDF là một yêu cầu phổ biến. Cho dù bạn đang tạo báo cáo, hóa đơn hay bất kỳ tài liệu nào khác, việc có một thư viện đáng tin cậy để xử lý nhiệm vụ này có thể giúp bạn tiết kiệm rất nhiều thời gian và công sức. Hãy sử dụng Aspose.PDF cho .NET, một thư viện mạnh mẽ cho phép các nhà phát triển tạo, thao tác và chuyển đổi tài liệu PDF một cách dễ dàng. Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn quy trình sử dụng Aspose.PDF để chuyển đổi HTML sang PDF trong khi cung cấp thông tin xác thực để truy cập an toàn. Vì vậy, hãy đội mũ lập trình của bạn và bắt đầu thôi!
 
 ## Điều kiện tiên quyết
-Trước khi bắt đầu, hãy đảm bảo bạn đáp ứng các điều kiện tiên quyết sau:
 
-- Kiến thức cơ bản về ngôn ngữ lập trình C#.
-- Thư viện Aspose.PDF cho .NET được cài đặt trên hệ thống của bạn.
-- Một môi trường phát triển như Visual Studio.
+Trước khi bắt đầu, bạn cần chuẩn bị một số thứ sau:
 
-## Bước 1: Tìm nạp nội dung HTML an toàn
-Trong bước này, chúng tôi sẽ tìm nạp nội dung HTML an toàn từ một URL bằng thông tin xác thực thích hợp. Sử dụng mã sau đây:
+1. Visual Studio: Đảm bảo bạn đã cài đặt Visual Studio trên máy của mình. Đây sẽ là môi trường phát triển của chúng tôi.
+2.  Aspose.PDF cho .NET: Bạn có thể tải xuống thư viện từ[trang web](https://releases.aspose.com/pdf/net/) . Nếu bạn muốn dùng thử trước, bạn cũng có thể nhận được[dùng thử miễn phí](https://releases.aspose.com/).
+3. Kiến thức cơ bản về C#: Sự quen thuộc với lập trình C# sẽ giúp bạn hiểu các ví dụ tốt hơn.
+4. Truy cập Internet: Vì chúng ta sẽ lấy nội dung HTML từ URL, hãy đảm bảo bạn có kết nối Internet đang hoạt động.
+
+## Nhập gói
+
+Để bắt đầu với Aspose.PDF, bạn cần nhập các gói cần thiết vào dự án của mình. Sau đây là cách bạn có thể thực hiện:
+
+1. Mở dự án Visual Studio của bạn.
+2. Nhấp chuột phải vào dự án của bạn trong Solution Explorer và chọn "Quản lý gói NuGet".
+3. Tìm kiếm "Aspose.PDF" và cài đặt phiên bản mới nhất.
 
 ```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using System;
+using System.Net;
+```
+Bây giờ chúng ta đã thiết lập mọi thứ, hãy chia nhỏ quá trình chuyển đổi HTML sang PDF bằng thông tin xác thực thành các bước dễ quản lý.
 
-// Tạo một yêu cầu cho URL.
-WebRequest request = WebRequest.Create("http://My.signchart.com/Report/PrintBook.asp?ProjectGuid=6FB9DBB0-");
-// Nếu cần cho máy chủ, hãy đặt thông tin xác thực.
-request.Credentials = CredentialCache.DefaultCredentials;
-// Nhận được phản hồi.
-HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+## Bước 1: Thiết lập thư mục tài liệu của bạn
 
-// Nhận luồng chứa nội dung được máy chủ trả về.
-Stream dataStream = response. GetResponseStream();
-// Mở luồng bằng StreamReader để dễ dàng truy cập.
-StreamReader reader = new StreamReader(dataStream);
-// Đọc nội dung.
-string responseFromServer = reader.ReadToEnd();
-reader. Close();
-dataStream.Close();
-response. Close();
+Trước khi chúng ta có thể chuyển đổi HTML sang PDF, chúng ta cần chỉ định nơi lưu tệp PDF đầu ra của mình. Điều này được thực hiện bằng cách xác định đường dẫn đến thư mục tài liệu.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Hãy chắc chắn để thay thế`"YOUR DOCUMENTS DIRECTORY"` với thư mục thực tế nơi bạn muốn lưu tệp PDF kết quả.
+ Thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế mà bạn muốn lưu tệp PDF của mình. Đây có thể là một thư mục trên màn hình nền hoặc bất kỳ vị trí nào khác trên hệ thống của bạn.
 
-## Bước 2: Chuyển đổi HTML sang PDF bằng cách cung cấp thông tin xác thực
-Bây giờ chúng tôi sẽ tải nội dung HTML được truy xuất và chuyển đổi nó sang định dạng PDF đồng thời cung cấp thông tin xác thực phù hợp. Sử dụng mã sau đây:
+## Bước 2: Tạo yêu cầu web
+
+ Tiếp theo, chúng ta cần tạo một yêu cầu để lấy nội dung HTML từ một URL cụ thể. Đây là nơi chúng ta sẽ sử dụng`WebRequest` lớp học.
+
+```csharp
+WebRequest request = WebRequest.Create("http://My.signchart.com/Report/PrintBook.asp?ProjectGuid=6FB9DBB0-");
+```
+
+Ở đây, chúng ta tạo một yêu cầu tới URL có chứa HTML mà chúng ta muốn chuyển đổi. Hãy đảm bảo thay thế URL bằng URL mà bạn định sử dụng.
+
+## Bước 3: Thiết lập thông tin xác thực (nếu cần)
+
+Nếu máy chủ yêu cầu thông tin xác thực để truy cập nội dung, chúng ta cần thiết lập chúng. Điều này được thực hiện bằng cách sử dụng`CredentialCache.DefaultCredentials`.
+
+```csharp
+request.Credentials = CredentialCache.DefaultCredentials;
+```
+
+ Dòng này đảm bảo rằng yêu cầu sử dụng thông tin xác thực mặc định của người dùng hiện tại. Nếu bạn cần cung cấp thông tin xác thực cụ thể, bạn có thể tạo một thông tin xác thực mới`NetworkCredential` sự vật.
+
+## Bước 4: Nhận phản hồi
+
+Bây giờ chúng ta đã thiết lập yêu cầu, đã đến lúc nhận phản hồi từ máy chủ.
+
+```csharp
+HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+```
+
+Dòng này gửi yêu cầu và chờ máy chủ phản hồi. Nếu mọi thứ diễn ra tốt đẹp, chúng ta sẽ nhận được nội dung HTML cần thiết.
+
+## Bước 5: Đọc Luồng phản hồi
+
+ Khi chúng ta có phản hồi, chúng ta cần đọc nội dung được trả về bởi máy chủ. Điều này được thực hiện bằng cách sử dụng`StreamReader`.
+
+```csharp
+Stream dataStream = response.GetResponseStream();
+StreamReader reader = new StreamReader(dataStream);
+string responseFromServer = reader.ReadToEnd();
+reader.Close();
+dataStream.Close();
+response.Close();
+```
+
+ Ở đây, chúng ta đang đọc toàn bộ nội dung của luồng phản hồi vào một biến chuỗi được gọi là`responseFromServer`. Đừng quên đóng trình đọc và luồng để giải phóng tài nguyên.
+
+## Bước 6: Chuyển đổi HTML sang PDF
+
+Bây giờ đến phần thú vị! Chúng ta sẽ chuyển đổi nội dung HTML thành tài liệu PDF bằng Aspose.PDF.
 
 ```csharp
 MemoryStream stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(responseFromServer));
-
 HtmlLoadOptions options = new HtmlLoadOptions("http://My.signchart.com/");
 options.ExternalResourcesCredentials = CredentialCache.DefaultCredentials;
 
-// Tải tệp HTML
 Document pdfDocument = new Document(stream, options);
 ```
 
-## Bước 3: Lưu tệp PDF kết quả
-Cuối cùng, chúng tôi sẽ lưu tệp PDF kết quả. Sử dụng mã sau đây:
+Trong bước này, chúng tôi đang tạo ra một`MemoryStream` từ nội dung HTML và thiết lập`HtmlLoadOptions`. Điều này cho phép chúng ta chỉ định URL cơ sở cho bất kỳ tài nguyên bên ngoài nào (như hình ảnh hoặc bảng định kiểu) mà HTML có thể tham chiếu.
+
+## Bước 7: Lưu tài liệu PDF
+
+Cuối cùng, chúng ta cần lưu tài liệu PDF đã tạo vào thư mục đã chỉ định.
 
 ```csharp
-// Lưu tệp PDF kết quả
 pdfDocument.Save(dataDir + "ProvideCredentialsDuringHTMLToPDF_out.pdf");
 ```
 
- Đoạn mã trên lưu tệp PDF kết quả với tên tệp`"ProvideCredentialsDuringHTMLToPDF_out.pdf"`.
-
-### Mã nguồn mẫu cho Cung cấp thông tin xác thực trong HTML sang PDF bằng Aspose.PDF cho .NET
-
-```csharp
-try
-{
-	
-	// Đường dẫn đến thư mục tài liệu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-	// Tạo một yêu cầu cho URL.
-	WebRequest request = WebRequest.Create("http:// My.signchart.com/Report/PrintBook.asp?ProjectGuid=6FB9DBB0-");
-	// Nếu máy chủ yêu cầu, hãy đặt thông tin xác thực.
-	request.Credentials = CredentialCache.DefaultCredentials;
-	// Nhận được phản hồi.
-	HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
-	// Nhận luồng chứa nội dung được máy chủ trả về.
-	Stream dataStream = response.GetResponseStream();
-	// Mở luồng bằng StreamReader để dễ dàng truy cập.
-	StreamReader reader = new StreamReader(dataStream);
-	// Đọc nội dung.
-	string responseFromServer = reader.ReadToEnd();
-	reader.Close();
-	dataStream.Close();
-	response.Close();
-
-	MemoryStream stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(responseFromServer));
-
-	HtmlLoadOptions options = new HtmlLoadOptions("http:// My.signchart.com/");
-	options.ExternalResourcesCredentials = CredentialCache.DefaultCredentials;
-
-	// Tải tệp HTML
-	Document pdfDocument = new Document(stream, options);
-	// Lưu tập tin kết quả
-	pdfDocument.Save("ProvideCredentialsDuringHTMLToPDF_out.pdf");
-	
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+ Dòng này lưu tệp PDF với tên`ProvideCredentialsDuringHTMLToPDF_out.pdf` trong thư mục chúng tôi đã chỉ định trước đó.
 
 ## Phần kết luận
-Trong hướng dẫn này, chúng tôi đã trình bày quy trình từng bước chuyển đổi tệp HTML sang PDF đồng thời cung cấp thông tin xác thực khi truy cập URL bảo mật bằng Aspose.PDF cho .NET. Bằng cách làm theo các hướng dẫn được nêu ở trên, bạn sẽ có thể chuyển đổi thành công nội dung HTML sang PDF trong khi cung cấp thông tin xác thực chính xác.
 
-### Câu hỏi thường gặp
+Và bạn đã có nó! Bạn đã chuyển đổi HTML thành PDF thành công bằng Aspose.PDF cho .NET trong khi cung cấp thông tin xác thực để truy cập an toàn. Thư viện mạnh mẽ này giúp bạn dễ dàng xử lý các tài liệu PDF và chỉ với một vài dòng mã, bạn có thể tạo PDF trông chuyên nghiệp từ nội dung HTML. 
 
-#### Câu hỏi: Aspose.PDF dành cho .NET là gì?
+## Câu hỏi thường gặp
 
-Đáp: Aspose.PDF for .NET là một thư viện mạnh mẽ hỗ trợ các nhà phát triển làm việc với các tài liệu PDF trong các ứng dụng C#. Nó cung cấp một loạt các chức năng, bao gồm chuyển đổi HTML sang PDF.
+### Aspose.PDF dành cho .NET là gì?
+Aspose.PDF for .NET là thư viện cho phép các nhà phát triển tạo, chỉnh sửa và chuyển đổi tài liệu PDF trong các ứng dụng .NET.
 
-#### Hỏi: Làm cách nào tôi có thể tìm nạp nội dung HTML an toàn từ một URL?
+### Làm thế nào để cài đặt Aspose.PDF?
+ Bạn có thể cài đặt Aspose.PDF thông qua NuGet Package Manager trong Visual Studio hoặc tải xuống từ[trang web](https://releases.aspose.com/pdf/net/).
 
- Đáp: Để tìm nạp nội dung HTML an toàn từ một URL, bạn có thể sử dụng`WebRequest` lớp trong C#. Đảm bảo đặt thông tin xác thực phù hợp bằng cách sử dụng`Credentials` tài sản.
+### Tôi có thể sử dụng Aspose.PDF miễn phí không?
+Có, Aspose cung cấp phiên bản dùng thử miễn phí mà bạn có thể sử dụng để đánh giá thư viện trước khi mua.
 
-#### Hỏi: Điều kiện tiên quyết cho hướng dẫn này là gì?
+### Tôi có thể tạo những loại tài liệu nào bằng Aspose.PDF?
+Bạn có thể tạo nhiều loại tài liệu, bao gồm báo cáo, hóa đơn và biểu mẫu bằng Aspose.PDF.
 
-Đáp: Trước khi tiếp tục phần hướng dẫn, hãy đảm bảo rằng bạn có các điều kiện tiên quyết sau:
-
-- Kiến thức cơ bản về ngôn ngữ lập trình C#.
-- Thư viện Aspose.PDF cho .NET được cài đặt trên hệ thống của bạn.
-- Một môi trường phát triển như Visual Studio.
-
-#### Câu hỏi: Aspose.PDF cho .NET xử lý các tài nguyên bên ngoài như thế nào trong khi chuyển đổi HTML sang PDF?
-
- Đáp: Aspose.PDF for .NET cung cấp`HtmlLoadOptions`lớp để xử lý các tài nguyên bên ngoài trong quá trình chuyển đổi HTML sang PDF. Bạn có thể đặt thông tin xác thực tài nguyên bên ngoài bằng cách sử dụng`ExternalResourcesCredentials` tài sản.
-
-#### Hỏi: Tôi có thể tùy chỉnh tên tệp cho tệp PDF thu được không?
-
- Đáp: Có, bạn có thể tùy chỉnh tên tệp cho tệp PDF thu được bằng cách sửa đổi mã lưu tài liệu PDF. Chỉ cần thay đổi tên tệp mong muốn trong`pdfDocument.Save()` phương pháp.
+### Tôi có thể tìm thấy hỗ trợ cho Aspose.PDF ở đâu?
+ Bạn có thể tìm thấy sự hỗ trợ và đặt câu hỏi trên[Diễn đàn hỗ trợ Aspose](https://forum.aspose.com/c/pdf/10).

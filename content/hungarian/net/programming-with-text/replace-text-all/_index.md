@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 1. lépés: Állítsa be a dokumentumkönyvtárat
 
- Állítsa be annak a könyvtárnak az elérési útját, ahol a bemeneti PDF-fájl található. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó a PDF-fájl elérési útjával.
+ Állítsa be annak a könyvtárnak az elérési útját, ahol a bemeneti PDF-fájl található. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó a PDF-fájl elérési útjával.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
 
 ## 3. lépés: Szöveg keresése és cseréje
 
- Hozzon létre egy`TextFragmentAbsorber` objektumot, hogy megtalálja a bemeneti keresési kifejezés összes előfordulását. A szövegrészletek kivonásához fogadja el a PDF-dokumentum összes oldalának elnyelőjét.
+ Hozzon létre a`TextFragmentAbsorber` objektumot, hogy megtalálja a bemeneti keresési kifejezés összes előfordulását. A szövegrészletek kivonásához fogadja el a PDF-dokumentum összes oldalának elnyelőjét.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -102,7 +102,7 @@ Ebből az oktatóanyagból megtanulta, hogyan cserélheti le a PDF-dokumentumban
 
 #### K: Mi a célja a „Szöveg cseréje PDF-fájlban” oktatóanyagnak?
 
-V: A „Szöveg cseréje a PDF-fájlban” oktatóanyag célja, hogy végigvezeti Önt a .NET-hez készült Aspose.PDF-könyvtár használatán, amellyel lecserélheti egy adott szöveg összes példányát egy PDF-dokumentumban. Lépésről lépésre útmutatót ad a C#-kód mintájával együtt.
+V: A "Szöveg cseréje a PDF-fájlban" oktatóanyag célja, hogy végigvezeti Önt a .NET-hez készült Aspose.PDF-könyvtár használatán, amellyel lecserélheti egy adott szöveg összes példányát egy PDF-dokumentumban. Lépésről lépésre útmutatót ad a C#-kód mintájával együtt.
 
 #### K: Miért szeretném az összes szövegpéldányt lecserélni egy PDF-dokumentumban?
 
@@ -112,14 +112,14 @@ V: Egy adott szöveg minden példányának cseréje egy PDF-dokumentumban szüks
 
 V: A dokumentumkönyvtár beállításához:
 
-1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a bemeneti PDF-fájl található.
+1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a bemeneti PDF-fájl található.
 
 #### K: Hogyan cserélhetem ki az összes szövegpéldányt egy PDF-dokumentumban?
 
 V: Az oktatóanyag végigvezeti Önt a következő lépéseken:
 
 1.  Töltse be a PDF dokumentumot a`Document` osztály.
-2.  Hozzon létre egy`TextFragmentAbsorber` objektumot, hogy megtalálja a bemeneti keresési kifejezés összes előfordulását. A szövegrészletek kivonásához fogadja el a PDF-dokumentum összes oldalának elnyelőjét.
+2.  Hozzon létre a`TextFragmentAbsorber` objektumot, hogy megtalálja a bemeneti keresési kifejezés összes előfordulását. A szövegrészletek kivonásához fogadja el a PDF-dokumentum összes oldalának elnyelőjét.
 3. Keresse át a kibontott szövegrészleteket, és cserélje ki a szöveget. Szükség szerint frissítse az egyéb tulajdonságokat, például a betűtípust, a betűméretet, az előtérszínt és a háttérszínt.
 4. Mentse el a módosított PDF dokumentumot.
 

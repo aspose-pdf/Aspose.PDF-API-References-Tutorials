@@ -60,7 +60,7 @@ A HTML-tartalmat szükség szerint helyettesítheti sajátjával. Ez a megközel
 
 ## 5. lépés: A meglévő tartalom felülírása
 
- Ha felül szeretné írni az oldalon lévő meglévő tartalmat a HTML-részlettel, használja a`setHtmlContent` módszer:
+ Ha felül szeretné írni az oldalon meglévő tartalmat a HTML-részlettel, használja a`setHtmlContent` módszer:
 
 ```java
 // A meglévő tartalom felülírása HTML-részlettel

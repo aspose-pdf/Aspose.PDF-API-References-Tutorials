@@ -1,150 +1,152 @@
 ---
-title: PDF 파일에 하위 북마크 추가
-linktitle: PDF 파일에 하위 북마크 추가
-second_title: .NET API 참조용 Aspose.PDF
-description: .NET용 Aspose.PDF를 사용하면 더욱 체계적으로 탐색할 수 있도록 PDF 파일에 하위 북마크를 쉽게 추가할 수 있습니다.
+title: PDF 파일에 자식 북마크 추가
+linktitle: PDF 파일에 자식 북마크 추가
+second_title: .NET API 참조를 위한 Aspose.PDF
+description: 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 파일에 자식 북마크를 추가하는 방법을 알아보세요. PDF 탐색을 강화하세요.
 type: docs
 weight: 20
 url: /ko/net/programming-with-bookmarks/add-child-bookmark/
 ---
-PDF 파일에 하위 북마크를 추가하면 보다 체계화된 구성과 탐색이 가능해집니다. .NET용 Aspose.PDF를 사용하면 다음 소스 코드에 따라 하위 북마크를 쉽게 추가할 수 있습니다.
+## 소개
 
-## 1단계: 필수 라이브러리 가져오기
+디지털 시대에 효율적으로 문서를 관리하는 것은 매우 중요합니다. 특히 PDF의 경우 더욱 그렇습니다. 긴 PDF를 끝없이 스크롤하면서 특정 섹션을 찾으려고 했던 적이 있나요? 짜증나죠? 그럴 때 북마크가 유용합니다! 북마크는 목차처럼 작동하여 독자가 문서를 쉽게 탐색할 수 있도록 합니다. 이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 파일에 자식 북마크를 추가하는 방법을 살펴보겠습니다. 이 가이드를 마치면 PDF 문서를 향상시켜 더 사용자 친화적이고 체계적으로 만들 수 있을 것입니다.
 
-시작하기 전에 C# 프로젝트에 필요한 라이브러리를 가져와야 합니다. 필요한 import 지시문은 다음과 같습니다.
+## 필수 조건
+
+북마크 추가의 세부적인 내용을 살펴보기 전에 몇 가지 준비해야 할 사항이 있습니다.
+
+1.  .NET용 Aspose.PDF: Aspose.PDF 라이브러리가 설치되어 있는지 확인하세요. 다음에서 다운로드할 수 있습니다.[대지](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: 코드를 작성하고 테스트할 수 있는 개발 환경입니다.
+3. C#에 대한 기본 지식: C# 프로그래밍에 익숙하면 코드 조각을 더 잘 이해하는 데 도움이 됩니다.
+
+## 패키지 가져오기
+
+시작하려면 C# 프로젝트에서 필요한 패키지를 가져와야 합니다. 방법은 다음과 같습니다.
+
+### 새 프로젝트 만들기
+
+Visual Studio를 열고 새 C# 프로젝트를 만듭니다. 단순성을 위해 콘솔 애플리케이션을 선택합니다.
+
+### Aspose.PDF 참조 추가
+
+1. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 버튼으로 클릭합니다.
+2. "NuGet 패키지 관리"를 선택하세요.
+3. "Aspose.PDF"를 검색하여 최신 버전을 설치하세요.
+
+### 필요한 네임스페이스 가져오기
+
+ 당신의 맨 위에`Program.cs` 파일에서 필요한 네임스페이스를 가져옵니다.
 
 ```csharp
+using System;
+using System.IO;
+using Aspose.Pdf.Annotations;
 using Aspose.Pdf;
-using Aspose.Pdf.InteractiveFeatures;
 ```
+이제 모든 것이 설정되었으니, 자식 북마크를 추가하는 과정을 단계별로 나누어 보겠습니다.
 
-## 2단계: 문서 폴더 경로 설정
+## 1단계: 문서 디렉토리 설정
 
- 이 단계에서는 하위 책갈피를 추가하려는 PDF 파일이 포함된 폴더의 경로를 지정해야 합니다. 바꾸다`"YOUR DOCUMENT DIRECTORY"`다음 코드에 문서 폴더의 실제 경로를 입력하세요.
+PDF를 조작하기 전에 문서가 저장된 위치를 지정해야 합니다. 이는 코드가 PDF 파일을 찾는 데 중요합니다.
 
 ```csharp
+// 문서 디렉토리의 경로입니다.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 3단계: PDF 문서 열기
+ 바꾸다`"YOUR DOCUMENT DIRECTORY"` PDF 파일이 있는 실제 경로와 함께. 이것은 보물을 찾을 수 있는 지도를 코드에 제공하는 것과 같습니다!
 
-이제 다음 코드를 사용하여 하위 북마크를 추가하려는 PDF 문서를 엽니다.
+## 2단계: PDF 문서 열기
 
-```csharp
-Document pdfDocument = new Document(dataDir + "AddChildBookmark.pdf");
-```
-
-## 4단계: 상위 북마크 개체 만들기
-
- 이 단계에서는 다음을 사용하여 상위 북마크 개체를 만듭니다.`OutlineItemCollection` 클래스를 선택하고 제목, 기울임꼴 속성, 굵은 속성과 같은 속성을 설정합니다. 해당 코드는 다음과 같습니다.
+이제 디렉토리를 설정했으니, 작업하려는 PDF 문서를 열 차례입니다.
 
 ```csharp
-OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
-pdfOutline.Title = "Parent bookmark";
-pdfOutline. Italic = true;
-pdfOutline. Bold = true;
-```
-
-## 5단계: 하위 북마크 개체 생성
-
-이 단계에서는 다음을 사용하여 하위 북마크 개체를 다시 생성합니다.`OutlineItemCollection` 클래스를 선택하고 해당 속성을 설정합니다. 해당 코드는 다음과 같습니다.
-
-```csharp
-OutlineItemCollection pdfChildOutline = new OutlineItemCollection(pdfDocument.Outlines);
-pdfChildOutline.Title = "Sub Bookmark";
-pdfChildOutline. Italic = true;
-pdfChildOutline. Bold = true;
-```
-
-## 6단계: 상위 북마크에 하위 북마크 추가
-
- 마지막으로 생성된 하위 북마크를 다음을 사용하여 상위 북마크의 하위 북마크 컬렉션에 추가합니다.`Add` 상위 개체의 메서드입니다. 해당 코드는 다음과 같습니다.
-
-```csharp
-pdfOutline.Add(pdfChildOutline);
-```
-
-## 7단계: 문서의 북마크 컬렉션에 상위 북마크 추가
-
- 마지막으로 다음을 사용하여 문서의 북마크 컬렉션에 상위 북마크를 추가합니다.`Add` 의 방법`Outlines` 재산. 해당 코드는 다음과 같습니다.
-
-```csharp
-pdfDocument.Outlines.Add(pdfOutline);
-```
-
-### .NET용 Aspose.PDF를 사용하여 하위 책갈피 추가에 대한 샘플 소스 코드 
-```csharp
-// 문서 디렉터리의 경로입니다.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
 // 문서 열기
 Document pdfDocument = new Document(dataDir + "AddChildBookmark.pdf");
-// 상위 북마크 개체 만들기
+```
+
+ 여기서 우리는 새로운 것을 만들고 있습니다`Document` PDF 파일을 로드하는 객체입니다. 책을 열어서 읽기 시작하는 것으로 생각하세요.
+
+## 3단계: 부모 북마크 만들기
+
+다음으로 부모 북마크를 만들겠습니다. 이 북마크는 자식 북마크를 추가할 주요 제목 역할을 합니다.
+
+```csharp
+// 부모 북마크 개체 생성
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfOutline.Title = "Parent Outline";
 pdfOutline.Italic = true;
-pdfOutline.Bold = true;      
-// 하위 북마크 개체 만들기
+pdfOutline.Bold = true;
+```
+
+ 이 스니펫에서는 새로운 것을 만들고 있습니다.`OutlineItemCollection` 부모 북마크를 위해. 우리는 눈에 띄게 하기 위해 제목과 스타일(기울임꼴과 굵은 글씨)을 설정했습니다. 마치 챕터에 눈길을 끄는 제목을 주는 것과 같습니다!
+
+## 4단계: 자식 북마크 만들기
+
+이제 방금 만든 부모 책갈피 아래에 자식 책갈피를 추가해 보겠습니다.
+
+```csharp
+// 자식 북마크 객체 생성
 OutlineItemCollection pdfChildOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfChildOutline.Title = "Child Outline";
 pdfChildOutline.Italic = true;
 pdfChildOutline.Bold = true;
-// 상위 북마크 컬렉션에 하위 북마크 추가
+```
+
+부모 북마크와 비슷하게, 우리는 자체 제목과 스타일이 있는 자식 북마크를 만듭니다. 이 자식 북마크는 부모 아래에 중첩되어 계층 구조를 만듭니다.
+
+## 5단계: 부모 책갈피에 자식 책갈피 추가
+
+두 개의 북마크를 만들었으면 이제 두 북마크를 연결할 차례입니다.
+
+```csharp
+// 부모 북마크 컬렉션에 자식 북마크 추가
 pdfOutline.Add(pdfChildOutline);
-// 문서의 개요 컬렉션에 상위 책갈피를 추가합니다.
+```
+
+이 코드 줄은 자식 북마크를 부모 북마크의 컬렉션에 추가합니다. 마치 장 제목 아래에 부제목을 넣는 것과 같습니다!
+
+## 6단계: 문서에 부모 북마크 추가
+
+이제 부모 책갈피와 자식 책갈피를 설정했으므로 부모 책갈피를 문서의 개요 컬렉션에 추가해야 합니다.
+
+```csharp
+// 문서의 개요 컬렉션에 부모 책갈피를 추가합니다.
 pdfDocument.Outlines.Add(pdfOutline);
+```
+
+이 단계는 부모 북마크와 그 자식 북마크가 이제 PDF 문서의 일부가 되었음을 보장합니다. 모든 장이 포함된 책을 공식적으로 출판하는 것과 같습니다!
+
+## 7단계: 문서 저장
+
+마지막으로 PDF 문서에서 변경한 내용을 저장해 보겠습니다.
+
+```csharp
 dataDir = dataDir + "AddChildBookmark_out.pdf";
 // 출력 저장
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nChild bookmark added successfully.\nFile saved at " + dataDir);
 ```
 
+여기서 출력 파일 이름을 지정하고 문서를 저장합니다. 프로세스가 완료되면 확인 메시지가 표시됩니다. 마치 걸작을 쓴 후 책을 닫는 것과 같습니다!
+
 ## 결론
 
-축하합니다! 이제 .NET용 Aspose.PDF를 사용하여 하위 책갈피를 추가하는 단계별 가이드가 있습니다. 이 코드를 사용하여 PDF 문서의 북마크를 구성하고 구조화할 수 있습니다.
+축하합니다! Aspose.PDF for .NET을 사용하여 PDF 파일에 자식 북마크를 성공적으로 추가했습니다. 이 간단하면서도 강력한 기능은 문서의 사용성을 크게 향상시켜 독자가 문서를 탐색하기 쉽게 만들어줍니다. 보고서, 전자책 또는 기타 PDF 문서를 만들 때 북마크는 게임 체인저입니다.
 
-고급 북마크 조작 기능에 대한 자세한 내용은 공식 Aspose.PDF 문서를 확인하세요.
+## 자주 묻는 질문
 
-### PDF 파일에 하위 북마크 추가에 대한 FAQ
+### .NET용 Aspose.PDF란 무엇인가요?
+.NET용 Aspose.PDF는 개발자가 PDF 문서를 프로그래밍 방식으로 만들고, 조작하고, 변환할 수 있는 강력한 라이브러리입니다.
 
-#### Q: PDF 파일의 하위 북마크란 무엇입니까?
+### 여러 개의 자식 책갈피를 추가할 수 있나요?
+네, 자식 책갈피를 만들고 추가하는 단계를 반복하여 하나의 부모 책갈피 아래에 여러 개의 자식 책갈피를 만들 수 있습니다.
 
-A: 하위 북마크라고도 하는 하위 북마크는 상위 북마크 아래 계층적으로 구조화된 PDF 문서 내의 탐색 요소입니다. 이는 문서에 대한 보다 체계적이고 상세한 목차를 생성하는 방법을 제공합니다.
+### Aspose.PDF는 무료로 사용할 수 있나요?
+ Aspose.PDF는 무료 체험판을 제공하지만 모든 기능을 사용하려면 라이선스를 구매해야 합니다.[구매 페이지](https://purchase.aspose.com/buy) 자세한 내용은.
 
-#### Q: C# 프로젝트에 필요한 라이브러리를 어떻게 가져오나요?
+### 더 많은 문서는 어디에서 찾을 수 있나요?
+ .NET용 Aspose.PDF에서 포괄적인 문서를 찾을 수 있습니다.[여기](https://reference.aspose.com/pdf/net/).
 
-A: C# 프로젝트에 필요한 라이브러리를 가져오려면 다음 가져오기 지시문을 사용할 수 있습니다.
-
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.InteractiveFeatures;
-```
-
-이러한 라이브러리는 PDF 문서 작업 및 대화형 기능에 필요한 클래스와 기능을 제공합니다.
-
-#### Q: 문서 폴더의 경로를 어떻게 지정합니까?
-
- A: 제공된 소스 코드에서`"YOUR DOCUMENT DIRECTORY"` 작업하려는 PDF 파일이 포함된 폴더의 실제 경로를 사용하세요. 이렇게 하면 코드가 대상 PDF 파일을 올바르게 찾을 수 있습니다.
-
-#### Q: 여러 수준의 하위 북마크를 만들 수 있나요?
-
-A: 예, 튜토리얼에 설명된 프로세스를 확장하여 여러 수준의 하위 북마크를 생성할 수 있습니다. 하위 책갈피가 포함된 상위 책갈피를 만들고 추가로 중첩하면 복잡한 PDF 문서에 대한 책갈피의 계층 구조를 만들 수 있습니다.
-
-####  Q: 이 프로그램의 목적은 무엇입니까?`OutlineItemCollection` class?
-
- 답:`OutlineItemCollection` .NET용 Aspose.PDF의 클래스는 기본적으로 PDF 문서의 북마크인 개요를 생성하고 관리하는 데 사용됩니다. 이 클래스를 사용하면 제목, 글꼴 스타일, 책갈피 작업과 같은 속성을 설정할 수 있습니다.
-
-#### Q: 상위 북마크에 하위 북마크를 어떻게 추가하나요?
-
- A: 상위 북마크에 하위 북마크를 추가하려면 새 북마크를 생성하세요.`OutlineItemCollection` 하위 책갈피에 대한 개체를 지정하고 해당 속성을 설정합니다. 그런 다음`Add` 상위 북마크의 방법`OutlineItemCollection` 상위 컬렉션에 하위 북마크를 추가합니다.
-
-#### 질문: 하위 북마크의 모양을 사용자 정의할 수 있나요?
-
-A: 예, 상위 북마크와 유사하게 제목, 글꼴 스타일 및 기타 속성과 같은 속성을 설정하여 하위 북마크의 모양을 사용자 정의할 수 있습니다. 이를 통해 시각적으로 독특하고 유익한 북마크를 만들 수 있습니다.
-
-#### Q: .NET용 Aspose.PDF는 다른 프로그래밍 언어와 호환됩니까?
-
-A: .NET용 Aspose.PDF는 C# 및 .NET 환경을 위해 특별히 설계되었습니다. 그러나 Aspose는 Java 및 Android와 같은 다른 프로그래밍 언어에 대해 각각 해당 플랫폼에 맞게 조정된 유사한 라이브러리를 제공합니다.
-
-#### Q: 하위 북마크는 PDF 탐색을 어떻게 개선합니까?
-
-A: 하위 책갈피는 보다 구조화되고 정리된 목차를 제공하여 PDF 탐색을 개선합니다. 사용자는 계층적 북마크 구조를 통해 문서의 특정 섹션에 빠르게 액세스할 수 있습니다.
+### 문제가 발생하면 어떻게 하나요?
+문제가 발생하면 다음에서 도움을 받을 수 있습니다.[Aspose 지원 포럼](https://forum.aspose.com/c/pdf/10).

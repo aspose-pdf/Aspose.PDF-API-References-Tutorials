@@ -8,7 +8,7 @@ weight: 12
 url: /cs/java/pdf-image-manipulation/convert-an-image-to-pdf-using-java/
 ---
 
-## Úvod
+## Zavedení
 
 V dnešní digitální době je potřeba převádět různé formáty souborů neustále. Jedním z běžných požadavků je převod obrázku na dokument PDF pomocí Javy. Ať už je to pro účely archivace, sdílení nebo tisku, schopnost provádět tento převod programově může být neocenitelná. V tomto podrobném průvodci prozkoumáme, jak tohoto úkolu dosáhnout pomocí knihovny Aspose.PDF for Java. Takže, pojďme se rovnou ponořit!
 
@@ -18,7 +18,7 @@ Než začneme, ujistěte se, že máte splněny následující předpoklady:
 
 - Vývojové prostředí Java: V systému byste měli mít nainstalovanou Java JDK.
 
--  Aspose.PDF for Java: Stáhněte si a zahrňte knihovnu Aspose.PDF for Java do svého projektu. Odkaz ke stažení najdete[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF for Java: Stáhněte si a zahrňte knihovnu Aspose.PDF for Java do svého projektu. Odkaz ke stažení najdete[zde](https://releases.aspose.com/pdf/java/).
 
 - Obrázek k převodu: Připravte si soubor obrázku, který chcete převést do PDF. Ujistěte se, že je přístupný v rámci vašeho projektu Java.
 
@@ -68,7 +68,7 @@ pdfDocument.save("output.pdf");
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste převedli obrázek na dokument PDF pomocí Java a knihovny Aspose.PDF for Java. To může být neuvěřitelně užitečné v různých scénářích, jako je generování zpráv, vytváření portfolií PDF nebo jednoduše archivace obrazových dat ve srozumitelnějším formátu. Neváhejte a prozkoumejte další funkce knihovny Aspose.PDF, abyste vylepšili své možnosti generování PDF.
+Gratuluji! Úspěšně jste převedli obrázek na dokument PDF pomocí Java a knihovny Aspose.PDF for Java. To může být neuvěřitelně užitečné v různých scénářích, jako je generování zpráv, vytváření portfolií PDF nebo jednoduše archivace obrazových dat ve srozumitelnějším formátu. Neváhejte a prozkoumejte další funkce knihovny Aspose.PDF, abyste vylepšili své možnosti generování PDF.
 
 ## FAQ
 
@@ -78,7 +78,7 @@ Chcete-li přidat více obrázků do jednoho dokumentu PDF, můžete pro každý
 
 ### Mohu upravit vzhled stránky PDF, například nastavit její rozměry nebo okraje?
 
-Ano, vzhled stránky PDF můžete upravit úpravou jejích rozměrů, okrajů a dalších atributů pomocí Aspose.PDF for Java. Viz dokumentace[tady](https://reference.aspose.com/pdf/java/) pro podrobné informace o přizpůsobení stránky.
+Ano, vzhled stránky PDF můžete upravit úpravou jejích rozměrů, okrajů a dalších atributů pomocí Aspose.PDF for Java. Viz dokumentace[zde](https://reference.aspose.com/pdf/java/) pro podrobné informace o přizpůsobení stránky.
 
 ### Je Aspose.PDF for Java bezplatná knihovna?
 

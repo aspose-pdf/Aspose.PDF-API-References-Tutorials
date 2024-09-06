@@ -42,7 +42,7 @@ Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
 
 ## 4. lépés: Keresés reguláris kifejezéssel
 
- Hozzon létre egy`TextFragmentAbsorber` objektumot, és állítsa be a reguláris kifejezés mintáját, hogy megtalálja a mintának megfelelő összes kifejezést:
+ Hozzon létre a`TextFragmentAbsorber` objektumot, és állítsa be a reguláris kifejezés mintáját, hogy megtalálja a mintának megfelelő összes kifejezést:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Mint 1999-2000
@@ -52,7 +52,7 @@ TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d
 
 ## 5. lépés: Állítsa be a szöveges keresési beállításokat
 
- Hozzon létre egy`TextSearchOptions` objektumot, és állítsa be a`TextSearchOptions` tulajdona a`TextFragmentAbsorber` objektum a reguláris kifejezés használatának engedélyezéséhez:
+ Hozzon létre a`TextSearchOptions` objektumot, és állítsa be a`TextSearchOptions` tulajdona a`TextFragmentAbsorber` objektum a reguláris kifejezés használatának engedélyezéséhez:
 
 ```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
@@ -69,7 +69,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## 7. lépés: Töltse le a kivont szövegrészleteket
 
-Szerezze be a kivont szövegrészleteket a`TextFragments` tulajdona a`TextFragmentAbsorber` tárgy:
+Szerezze be a kivont szövegrészleteket a`TextFragments` tulajdona a`TextFragmentAbsorber` objektum:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -130,13 +130,13 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan kereshet és kérhet le olyan szöveget, amely megfelel a reguláris kifejezéseknek egy PDF-dokumentumban az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentum betöltésétől a kivont szövegrészletek eléréséig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy speciális szöveges kereséseket végezhessen PDF-fájlokban.
+Gratulálok! Sikeresen megtanulta, hogyan kereshet és kérhet le olyan szöveget, amely megfelel a reguláris kifejezéseknek egy PDF-dokumentumban az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentum betöltésétől a kivont szövegrészletek eléréséig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy speciális szöveges kereséseket végezhessen PDF-fájlokban.
 
 ### GYIK
 
 #### K: Mi a célja a „Reguláris kifejezés keresése PDF-fájlban” című oktatóanyagnak?
 
-V: A „Reguláris kifejezés keresése PDF-fájlban” című oktatóanyag célja, hogy bemutassa, hogyan használható az Aspose.PDF könyvtár .NET-hez a PDF-fájlban megadott reguláris kifejezés-mintának megfelelő szöveg keresésére és kibontására. Az oktatóanyag átfogó útmutatást és minta C# kódot kínál a folyamat bemutatásához.
+V: A „Reguláris kifejezés keresése PDF-fájlban” című oktatóanyag célja, hogy bemutassa, hogyan használható az Aspose.PDF könyvtár .NET-hez a PDF-fájlban meghatározott reguláris kifejezés-mintának megfelelő szöveg keresésére és kibontására. Az oktatóanyag átfogó útmutatást és minta C# kódot kínál a folyamat bemutatásához.
 
 #### K: Hogyan segít ez az oktatóanyag a szöveg reguláris kifejezésekkel történő keresésében egy PDF-dokumentumban?
 
@@ -164,7 +164,7 @@ V: Kezdésként hozzon létre egy új C# projektet a kívánt integrált fejlesz
 
 #### K: Lekérhetek olyan szövegrészleteket, amelyek megfelelnek a reguláris kifejezés mintájának?
 
- V: Abszolút. Miután alkalmazta a reguláris kifejezésre vonatkozó keresést a PDF-dokumentumban, a kivonatolt szövegrészleteket a következővel kérheti le`TextFragments` tulajdona a`TextFragmentAbsorber` tárgy. Ezek a szövegtöredékek a megadott reguláris kifejezésmintának megfelelő szövegszegmenseket tartalmazzák.
+ V: Abszolút. Miután alkalmazta a reguláris kifejezésre vonatkozó keresést a PDF-dokumentumban, a kivonatolt szövegrészleteket a következővel kérheti le`TextFragments` tulajdona a`TextFragmentAbsorber` objektum. Ezek a szövegtöredékek a megadott reguláris kifejezésmintának megfelelő szövegszegmenseket tartalmazzák.
 
 #### K: Mihez férhetek hozzá a visszakeresett szövegrészletekből?
 

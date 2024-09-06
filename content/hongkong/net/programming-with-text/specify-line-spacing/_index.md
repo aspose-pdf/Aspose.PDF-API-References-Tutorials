@@ -50,7 +50,7 @@ Document doc = new Document();
 
 ## 第 5 步：建立 TextFormattingOptions
 
-創建一個`TextFormattingOptions`物件並將行距模式設定為`FullSize`:
+創建一個`TextFormattingOptions`物件並將行距模式設定為`FullSize`：
 
 ```csharp
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
@@ -79,9 +79,9 @@ using (FileStream fontStream = File.OpenRead(fontFile))
 
 代替`"HPSimplified.TTF"`與實際的字體檔案名稱。
 
-## 步驟8：指定文字位置和行距
+## 步驟8：指定文字位置和行間距
 
-設定文字片段的位置並指定`TextFormattingOptions`到`TextState.FormattingOptions`財產：
+設定文字片段的位置並分配`TextFormattingOptions`到`TextState.FormattingOptions`財產：
 
 ```csharp
 textFragment.Position = new Position(100, 600);

@@ -1,34 +1,34 @@
 ---
-title: Oznaczone Wyodrębnianie treści PDF przy użyciu języka Java
-linktitle: Oznaczone Wyodrębnianie treści PDF przy użyciu języka Java
-second_title: Aspose.PDF Interfejs API przetwarzania plików Java w formacie Java
-description: Odblokuj moc wyodrębniania oznakowanych treści PDF w Javie za pomocą Aspose.PDF dla Java. Ten przewodnik krok po kroku zawiera przykłady kodu źródłowego umożliwiające bezproblemowy dostęp do uporządkowanej zawartości PDF.
+title: Ekstrakcja zawartości PDF z tagami przy użyciu Java
+linktitle: Ekstrakcja zawartości PDF z tagami przy użyciu Java
+second_title: Aspose.PDF Java PDF Processing API
+description: Odblokuj moc ekstrakcji oznaczonych treści PDF w Javie dzięki Aspose.PDF dla Javy. Ten przewodnik krok po kroku zawiera przykłady kodu źródłowego dla bezproblemowego dostępu do ustrukturyzowanej treści PDF.
 type: docs
 weight: 12
 url: /pl/java/pdf-text-extraction/tagged-pdf-content-extraction-using-java/
 ---
 
-Oznaczone pliki PDF są skonstruowane w sposób zapewniający ich dostępność dla osób niepełnosprawnych, a także pomagający w automatycznym wyodrębnianiu treści. W tym przewodniku krok po kroku odkryjemy, jak wyodrębnić zawartość ze oznakowanych plików PDF przy użyciu języka Java i biblioteki Aspose.PDF dla języka Java. Podamy przykłady kodu źródłowego, aby proces był przejrzysty i przystępny.
+Oznaczone pliki PDF są ustrukturyzowane w sposób, który sprawia, że są dostępne dla osób niepełnosprawnych, a także pomaga w automatycznej ekstrakcji treści. W tym przewodniku krok po kroku zbadamy, jak wyodrębnić treść z oznaczonych plików PDF przy użyciu języka Java i biblioteki Aspose.PDF for Java. Podamy przykłady kodu źródłowego, aby uczynić ten proces przejrzystym i dostępnym.
 
 ## Wstęp
 
-Oznaczone pliki PDF zawierają informacje strukturalne, które pomagają czytnikom ekranu i innym technologiom pomocniczym zrozumieć treść dokumentu. Wyodrębnianie treści z oznakowanych plików PDF ma kluczowe znaczenie dla różnych zastosowań, takich jak analiza danych, zmiana przeznaczenia treści i zgodność z dostępnością.
+Oznaczone pliki PDF zawierają informacje strukturalne, które pomagają czytnikom ekranu i innym technologiom wspomagającym zrozumieć zawartość dokumentu. Wyodrębnianie zawartości z oznaczonych plików PDF jest kluczowe dla różnych aplikacji, takich jak analiza danych, ponowne wykorzystywanie zawartości i zgodność z dostępnością.
 
-## Warunki wstępne
+## Wymagania wstępne
 
-Zanim zaczniemy, upewnij się, że masz następujące elementy:
+Zanim zaczniemy, upewnij się, że masz następujące rzeczy:
 
-1. Środowisko programistyczne Java: Upewnij się, że masz zainstalowaną Javę w swoim systemie.
+1. Środowisko programistyczne Java: Upewnij się, że w systemie jest zainstalowana Java.
 
-2.  Aspose.PDF dla biblioteki Java: Możesz pobrać bibliotekę z[Tutaj](https://releases.aspose.com/pdf/java/). Dołącz go do swojego projektu Java.
+2.  Aspose.PDF dla biblioteki Java: Bibliotekę można pobrać ze strony[Tutaj](https://releases.aspose.com/pdf/java/). Dodaj go do swojego projektu Java.
 
 ## Krok 1: Utwórz projekt Java
 
-Rozpocznij od utworzenia nowego projektu Java w preferowanym zintegrowanym środowisku programistycznym (IDE). Dodaj bibliotekę Aspose.PDF for Java do zależności swojego projektu.
+Zacznij od utworzenia nowego projektu Java w preferowanym zintegrowanym środowisku programistycznym (IDE). Dodaj bibliotekę Aspose.PDF for Java do zależności swojego projektu.
 
 ## Krok 2: Zainicjuj Aspose.PDF
 
-W projekcie Java zainicjuj Aspose.PDF, dodając następujący kod do klasy głównej:
+W swoim projekcie Java zainicjuj Aspose.PDF, dodając następujący kod do swojej klasy głównej:
 
 ```java
 import com.aspose.pdf.Document;
@@ -41,11 +41,11 @@ public class TaggedPDFExtractor {
 }
 ```
 
- Zastępować`"path_to_tagged_pdf.pdf"` z rzeczywistą ścieżką do oznaczonego pliku PDF.
+ Zastępować`"path_to_tagged_pdf.pdf"` z rzeczywistą ścieżką do Twojego oznaczonego pliku PDF.
 
 ## Krok 3: Wyodrębnij oznaczoną treść
 
-Teraz wyodrębnijmy oznaczoną treść z pliku PDF. Dodaj następujący kod do swojej klasy głównej:
+Teraz wyodrębnijmy oznaczoną zawartość z pliku PDF. Dodaj następujący kod do swojej klasy głównej:
 
 ```java
 import com.aspose.pdf.TextAbsorber;
@@ -59,11 +59,11 @@ public class TaggedPDFExtractor {
         // Utwórz obiekt TextAbsorber
         TextAbsorber textAbsorber = new TextAbsorber();
 
-        // Ustaw opcje wyodrębniania tekstu
+        // Ustaw opcje ekstrakcji tekstu
         TextExtractionOptions options = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
         textAbsorber.setTextExtractionOptions(options);
 
-        // Zaakceptuj pochłaniacz dla wszystkich stron
+        // Zaakceptuj absorber dla wszystkich stron
         for (int page = 1; page <= pdfDocument.getPages().size(); page++) {
             pdfDocument.getPages().get_Item(page).accept(textAbsorber);
         }
@@ -75,30 +75,30 @@ public class TaggedPDFExtractor {
 }
 ```
 
-Ten kod inicjuje plik Aspose.PDF, konfiguruje TextAbsorber w celu wyodrębnienia oznaczonego tekstu, a następnie przechodzi przez wszystkie strony w celu wyodrębnienia i wydrukowania zawartości.
+Ten kod inicjuje Aspose.PDF, konfiguruje TextAbsorber w celu wyodrębnienia oznaczonego tekstu, a następnie przechodzi przez wszystkie strony w celu wyodrębnienia i wydrukowania zawartości.
 
-## Krok 4: Skompiluj i uruchom
+## Krok 4: Kompilacja i uruchomienie
 
-Skompiluj projekt Java i uruchom go. Wyodrębniona oznaczona zawartość z pliku PDF zostanie wyświetlona w konsoli.
+Skompiluj swój projekt Java i uruchom go. Wyodrębniona oznaczona zawartość z pliku PDF zostanie wyświetlona w konsoli.
 
 ## Wniosek
 
-Wyodrębnianie treści z oznakowanych plików PDF przy użyciu języka Java i Aspose.PDF dla języka Java jest niezbędne w przypadku różnych zastosowań, w tym w zakresie zgodności z dostępnością i analizy danych. Postępując zgodnie z tym szczegółowym przewodnikiem i korzystając z dostarczonego kodu źródłowego, możesz z łatwością włączyć wyodrębnianie oznaczonej zawartości PDF do swoich aplikacji Java.
+Ekstrakcja zawartości z oznaczonych plików PDF przy użyciu Java i Aspose.PDF dla Java jest niezbędna dla różnych aplikacji, w tym zgodności z dostępnością i analizy danych. Postępując zgodnie z tym przewodnikiem krok po kroku i wykorzystując dostarczony kod źródłowy, możesz łatwo włączyć ekstrakcję zawartości oznaczonych plików PDF do swoich aplikacji Java.
 
 
 ## Często zadawane pytania
 
-### Co to jest oznakowany plik PDF?
-   Oznaczony plik PDF to dokument PDF zawierający informacje strukturalne w celu zwiększenia dostępności i ekstrakcji treści.
+### Czym jest plik PDF z tagami?
+   Oznaczony plik PDF to dokument PDF zawierający informacje strukturalne ułatwiające dostęp i wyodrębnianie treści.
 
-### Dlaczego wyodrębnianie oznaczonej zawartości PDF jest ważne?
-   Wyodrębnianie oznaczonej treści PDF ma kluczowe znaczenie dla dostępności i umożliwia automatyczne przetwarzanie treści.
+### Dlaczego wyodrębnianie oznaczonych treści plików PDF jest ważne?
+   Wyodrębnianie oznaczonych treści PDF ma kluczowe znaczenie dla dostępności i umożliwia automatyczne przetwarzanie treści.
 
-### Czy Aspose.PDF for Java może być używany do innych zadań związanych z plikami PDF?
-   Tak, Aspose.PDF dla Java oferuje szeroką gamę funkcji do manipulacji, tworzenia i konwersji plików PDF.
+### Czy Aspose.PDF for Java można używać do innych zadań związanych z plikami PDF?
+   Tak, Aspose.PDF for Java oferuje szeroką gamę funkcji do edycji, tworzenia i konwersji plików PDF.
 
-### Czy korzystanie z Aspose.PDF dla Java jest bezpłatne?
-   Aspose.PDF dla Java jest biblioteką komercyjną, ale zapewnia bezpłatną wersję próbną do celów ewaluacyjnych.
+### Czy Aspose.PDF dla Java jest darmowy?
+   Aspose.PDF for Java jest biblioteką komercyjną, ale dostępna jest bezpłatna wersja próbna w celach ewaluacyjnych.
 
 ### Gdzie mogę znaleźć więcej informacji na temat Aspose.PDF dla Java?
-    Zapoznaj się z dokumentacją API pod adresem[https://reference.aspose.com/pdf/java/](https://reference.aspose.com/pdf/java/) szczegółowe informacje i przykłady.
+    Zapoznaj się z dokumentacją API pod adresem[https://reference.aspose.com/pdf/java/](https://reference.aspose.com/pdf/java/) aby uzyskać szczegółowe informacje i przykłady.

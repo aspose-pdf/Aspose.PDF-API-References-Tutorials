@@ -39,13 +39,13 @@ public class PDFtoMobiXMLConverter {
         // Töltse be a PDF dokumentumot
         Document pdfDocument = new Document("input.pdf");
 
-        // Mentse el a PDF-fájlt MobiXML-ként
+        // Mentse a PDF-fájlt MobiXML-ként
         pdfDocument.save("output.mobi.xml", SaveFormat.MobiXml);
     }
 }
 ```
 
- A fenti kódban először a PDF dokumentumot töltjük be az Aspose.PDF használatával. Ezután elmentjük MobiXML formátumban a`SaveFormat.MobiXml` választási lehetőség.
+ A fenti kódban először a PDF dokumentumot töltjük be az Aspose.PDF használatával. Ezután elmentjük MobiXML formátumban a`SaveFormat.MobiXml` opció.
 
 ## Következtetés
 

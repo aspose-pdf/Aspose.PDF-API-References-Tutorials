@@ -31,7 +31,7 @@ Låt oss börja med att skapa ett nytt Java-projekt i din valda IDE. Följ dessa
 
 ## Steg 2: Lägg till Aspose.PDF för Java till ditt projekt
 
-Därefter måste du lägga till Aspose.PDF för Java-biblioteket till ditt projekt. Här är hur:
+Därefter måste du lägga till Aspose.PDF för Java-biblioteket till ditt projekt. Så här gör du:
 
 1. Ladda ner Aspose.PDF för Java-biblioteket från webbplatsen.
 2. Lägg till JAR-filen i ditt projekts klassväg.

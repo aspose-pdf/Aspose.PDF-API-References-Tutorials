@@ -2,124 +2,171 @@
 title: Woorden doorhalen
 linktitle: Woorden doorhalen
 second_title: Aspose.PDF voor .NET API-referentie
-description: Dit artikel biedt een stapsgewijze handleiding voor het gebruik van Aspose.PDF voor de Strike Out Words-functie van .NET, inclusief stapsgewijze handleiding en uitleg
+description: Leer hoe u woorden in een PDF kunt doorhalen met Aspose.PDF voor .NET met deze uitgebreide stapsgewijze handleiding. Verbeter uw vaardigheden in het bewerken van documenten.
 type: docs
 weight: 150
 url: /nl/net/annotations/strikeoutwords/
 ---
-Aspose.PDF voor .NET is een bibliotheek voor het manipuleren en verwerken van PDF-documenten die verschillende functies biedt voor het maken, wijzigen en converteren van PDF-bestanden. Een van de handige functies van Aspose.PDF is de mogelijkheid om woorden of zinsdelen in een PDF-document door te halen met behulp van de C#-broncode. In dit artikel geven we een stapsgewijze handleiding voor het doorhalen van woorden met Aspose.PDF voor .NET.
+## Invoering
 
-## Stap 1: Het PDF-document laden
-De eerste stap is het laden van het PDF-document dat u wilt wijzigen. In deze zelfstudie laden we een PDF-document met de naam "input.pdf" uit de map "UW DOCUMENTENMAP". 
+Heb je ooit gemerkt dat je specifieke tekst in een PDF moest benadrukken door deze door te strepen? Of je nu documenten bekijkt, tekst markeert of gewoon bepaalde secties wilt markeren, het doorstrepen van woorden kan een waardevol hulpmiddel zijn. In deze tutorial onderzoeken we hoe je dat kunt doen met Aspose.PDF voor .NET. Deze uitgebreide gids leidt je door elke stap en zorgt ervoor dat je alle informatie hebt die je nodig hebt om deze functie effectief te implementeren in je .NET-toepassingen. 
+
+## Vereisten
+
+Voordat we met de code aan de slag gaan, zijn er een paar vereisten waaraan je moet voldoen om deze tutorial te kunnen volgen:
+
+1.  Aspose.PDF voor .NET-bibliotheek: Zorg ervoor dat u de Aspose.PDF voor .NET-bibliotheek hebt geïnstalleerd. U kunt[download het hier](https://releases.aspose.com/pdf/net/).
+
+2. .NET Framework: Zorg ervoor dat u .NET Framework op uw machine hebt geïnstalleerd. Deze tutorial is ontworpen voor .NET-applicaties.
+
+3. Ontwikkelomgeving: U hebt een IDE zoals Visual Studio nodig om uw code te schrijven en uit te voeren.
+
+4. PDF-document: Zorg dat u een voorbeeld-PDF-bestand bij de hand hebt waarmee u wilt werken. Dit is het document waarin we de tekst doorhalen.
+
+5. Basiskennis van C#: Kennis van C#-programmering is noodzakelijk om de stappen in deze tutorial te begrijpen en te implementeren.
+
+## Pakketten importeren
+
+Voordat we kunnen beginnen met coderen, moeten we de benodigde namespaces importeren in ons .NET-project. Dit geeft ons toegang tot de klassen en methoden die nodig zijn om PDF-bestanden te manipuleren met Aspose.PDF.
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document document = new Document(dataDir + "input.pdf");
+using System;
+using System.IO;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
 ```
 
-## Stap 2: Zoeken naar tekstfragmenten
-Als u specifieke woorden of zinsdelen in het PDF-document wilt doorhalen, moet u er eerst naar zoeken. Aspose.PDF biedt een TextFragmentAbsorber-klasse die kan worden gebruikt om naar een specifiek tekstfragment in het PDF-document te zoeken.
+Deze naamruimten zijn essentieel voor het werken met PDF-documenten, het verwerken van tekst en het toevoegen van aantekeningen, zoals doorhalingen.
+
+In deze sectie zullen we het proces van het doorstrepen van woorden in een PDF-document opsplitsen in eenvoudige, beheersbare stappen. Elke stap wordt vergezeld door een gedetailleerde uitleg om ervoor te zorgen dat u begrijpt hoe alles werkt.
+
+## Stap 1: Laad het PDF-document
+
+De eerste stap is het laden van het PDF-document dat u wilt bewerken. Dit document is het document waarin u specifieke woorden of zinnen doorstreept.
 
 ```csharp
-Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
-```
-
-In de bovenstaande code zoeken we naar het tekstfragment "Estoque" in het PDF-document. U kunt dit aanpassen om te zoeken naar een ander woord of zinsnede die u wilt doorhalen.
-
-## Stap 3: Doorstrepen van de tekstfragmenten
-Nadat je de tekstfragmenten hebt gevonden, is de volgende stap het doorhalen ervan. Aspose.PDF biedt een klasse StrikeOutAnnotation die kan worden gebruikt om een doorgehaalde annotatie voor het tekstfragment te maken. 
-
-```csharp
-Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle((float)textFragment.Position.XIndent, (float)textFragment.Position.YIndent, (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width, (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
-
-StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-strikeOut.Opacity = .80f;
-strikeOut.Border = new Border(strikeOut);
-strikeOut.Color = Aspose.Pdf.Color.Red;
-textFragment.Page.Annotations.Add(strikeOut);
-```
-
-In de bovenstaande code maken we een doorgehaalde annotatie voor elk tekstfragment dat we hebben gevonden. We stellen ook de dekking, rand en kleur van de doorgehaalde annotatie in.
-
-## Stap 4: Het gewijzigde PDF-document opslaan
-Nadat u de tekstfragmenten hebt doorgehaald, slaat u het gewijzigde document op.
-
-```csharp
-dataDir = dataDir + "StrikeOutWords_out.pdf";
-document.Save(dataDir);
-```
-
-### Voorbeeldbroncode voor Strike Out Words met Aspose.PDF voor .NET
-
-
-```csharp
-
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Document openen
+// Open het PDF-document
 Document document = new Document(dataDir + "input.pdf");
+```
 
-// Maak een TextFragment Absorber-instantie om een bepaald tekstfragment te doorzoeken
+- `dataDir` : Deze variabele bevat het pad naar uw documentdirectory. Vervangen`"YOUR DOCUMENT DIRECTORY"` met het werkelijke pad waar uw PDF-bestand zich bevindt.
+- `Document` : De`Document` klasse vertegenwoordigt een PDF-document. Door het bestandspad door te geven aan de constructor, openen we het PDF-bestand voor verwerking.
+
+## Stap 2: Maak een TextFragment Absorber om specifieke tekst te vinden
+
+ Vervolgens maken we een instantie van`TextFragmentAbsorber` om te zoeken naar een specifiek tekstfragment in het PDF-document. Hiermee kunnen we de tekst vinden die we willen doorhalen.
+
+```csharp
+// Maak een TextFragment Absorber-instantie om naar een specifiek tekstfragment te zoeken
 Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
-// Blader door pagina's van een PDF-document
+```
+
+- `TextFragmentAbsorber`Deze klasse wordt gebruikt om specifieke tekstfragmenten in het PDF-document te vinden en ermee te werken. In dit voorbeeld zoeken we naar het woord "Estoque". Vervang "Estoque" door het woord of de zin die u in uw document wilt vinden.
+
+## Stap 3: Loop door de pagina's van het PDF-document
+
+ Nu we onze`TextFragmentAbsorber`moeten we door elke pagina van het PDF-document itereren om de opgegeven tekst te vinden.
+
+```csharp
+// Door de pagina's van het PDF-document bladeren
 for (int i = 1; i <= document.Pages.Count; i++)
 {
-	// Ontvang de eerste pagina van het PDF-document
-	Page page = document.Pages[1];
-	page.Accept(textFragmentAbsorber);
+    // De huidige pagina van het PDF-document ophalen
+    Page page = document.Pages[i];
+    page.Accept(textFragmentAbsorber);
 }
+```
 
-// Maak een verzameling geabsorbeerde tekst
+- `for (int i = 1; i <= document.Pages.Count; i++)`: Deze lus doorloopt elke pagina van het PDF-document.
+- `document.Pages[i]`: Haalt de huidige pagina op die wordt verwerkt.
+- `page.Accept(textFragmentAbsorber)` : Deze methode past de`TextFragmentAbsorber` naar de huidige pagina, op zoek naar de opgegeven tekst.
+
+## Stap 4: Verzamel en verwerk de tekstfragmenten
+
+Nadat we de pagina's hebben doorgenomen, verzamelen we de gevonden tekstfragmenten en bereiden we deze voor op verdere verwerking.
+
+```csharp
+// Maak een verzameling van opgenomen tekstfragmenten
 Aspose.Pdf.Text.TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+```
 
-//Herhaal de bovenstaande verzameling
+- `TextFragmentCollection`Deze collectie slaat alle tekstfragmenten op die in het document zijn gevonden. We gebruiken deze collectie in de volgende stap om de tekst door te strepen.
+
+## Stap 5: Loop door de tekstfragmenten en streep ze door
+
+In deze stap doorlopen we elk tekstfragment in onze verzameling en passen we er een doorhalingsaantekening op toe.
+
+```csharp
+// Itereren over de verzameling tekstfragmenten
 for (int j = 1; j <= textFragmentCollection.Count; j++)
 {
 	Aspose.Pdf.Text.TextFragment textFragment = textFragmentCollection[j];
 
-	// Rechthoekige afmetingen van het TextFragment-object ophalen
-	Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
-				(float)textFragment.Position.XIndent,
-				(float)textFragment.Position.YIndent,
-				(float)textFragment.Position.XIndent +
-				(float)textFragment.Rectangle.Width,
-				(float)textFragment.Position.YIndent +
-				(float)textFragment.Rectangle.Height);
+    // De rechthoekige afmetingen van het TextFragment-object ophalen
+    Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
+        (float)textFragment.Position.XIndent,
+        (float)textFragment.Position.YIndent,
+        (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width,
+        (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
 
-	// Instantie van de StrikeOut Annotation-instantie
-	StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-	// Stel de dekking voor annotatie in
-	strikeOut.Opacity = .80f;
-	// Stel de rand voor de annotatie-instantie in
-	strikeOut.Border = new Border(strikeOut);
-	// Stel de kleur van de annotatie in
-	strikeOut.Color = Aspose.Pdf.Color.Red;
-	// Voeg annotatie toe aan de annotatieverzameling van TextFragment
-	textFragment.Page.Annotations.Add(strikeOut);
+    // Instantieer StrikeOut Annotation-instantie
+    StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
+
+    // Eigenschappen van de doorhalingsannotatie instellen
+    strikeOut.Opacity = .80f;
+    strikeOut.Border = new Border(strikeOut);
+    strikeOut.Color = Aspose.Pdf.Color.Red;
+
+    // Voeg de annotatie toe aan de annotatieverzameling van de pagina van het tekstfragment
+    textFragment.Page.Annotations.Add(strikeOut);
 }
+```
+
+- `TextFragment textFragment = textFragmentCollection[j]`: Deze regel haalt het huidige tekstfragment op.
+- `Aspose.Pdf.Rectangle`:We berekenen de rechthoekige afmetingen van het tekstfragment om te bepalen waar de doorhaling moet plaatsvinden.
+- `StrikeOutAnnotation`: Deze klasse vertegenwoordigt de strikeout-annotatie. We instantiëren deze met de berekende rechthoek en de huidige pagina.
+- `strikeOut.Opacity`: Met deze eigenschap wordt de dekking van de doorhaling ingesteld, waardoor deze 80% zichtbaar wordt.
+- `strikeOut.Color`We zetten de kleur van de strikeout op rood. U kunt dit veranderen naar elke gewenste kleur.
+- `textFragment.Page.Annotations.Add(strikeOut)`: Hiermee wordt de doorgehaalde annotatie aan de pagina toegevoegd.
+
+## Stap 6: Sla het gewijzigde PDF-document op
+
+De laatste stap is het opslaan van het gewijzigde PDF-document met de doorhalingen.
+
+```csharp
+// Sla het bijgewerkte PDF-document op
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
 
+- `dataDir + "StrikeOutWords_out.pdf"`: Hiermee wordt een nieuwe bestandsnaam voor het gewijzigde document gemaakt. Het originele bestand blijft ongewijzigd.
+- `document.Save(dataDir)`: Slaat het PDF-document met de doorhalingen op de opgegeven locatie op.
+
 ## Conclusie
 
-In deze zelfstudie hebben we geleerd hoe u Aspose.PDF voor .NET kunt gebruiken om specifieke woorden in een PDF-document door te halen. Door de stapsgewijze handleiding te volgen en de meegeleverde C#-broncode te gebruiken, kunt u eenvoudig een PDF-document laden, naar specifieke tekstfragmenten zoeken en doorgehaalde annotaties maken om die woorden visueel te markeren en door te halen. Aspose.PDF voor .NET biedt een eenvoudige en effectieve manier om PDF-documenten programmatisch te manipuleren, waardoor het een waardevol hulpmiddel is voor ontwikkelaars die met PDF-bestanden in .NET-toepassingen werken.
+Gefeliciteerd! U hebt met succes specifieke woorden in een PDF-document doorgehaald met Aspose.PDF voor .NET. Door deze stapsgewijze handleiding te volgen, kunt u nu PDF-documenten aanpassen door tekst te markeren of door te halen, waardoor ze dynamischer worden en beter aansluiten op uw behoeften. Of u nu juridische documenten annoteert, rapporten voorbereidt of gewoon tekst markeert voor revisie, deze tutorial heeft u de vaardigheden gegeven om dit efficiënt te doen.
 
-### Veelgestelde vragen
+## Veelgestelde vragen
 
-#### Vraag: Wat is Aspose.PDF voor .NET?
+### Kan ik de kleur van de doorhaling veranderen?
 
-A: Aspose.PDF voor .NET is een krachtige bibliotheek waarmee ontwikkelaars PDF-documenten programmatisch kunnen maken, bewerken en manipuleren in .NET-toepassingen. Het biedt een breed scala aan functies om met PDF-bestanden te werken, waaronder tekstextractie, het verwerken van annotaties, het invullen van formulieren en nog veel meer.
+ Ja, u kunt de kleur wijzigen door de`strikeOut.Color`eigenschap. U kunt het bijvoorbeeld instellen op`Aspose.Pdf.Color.Blue` voor een blauwe strikeout.
 
-#### Vraag: Kan ik Aspose.PDF voor .NET gebruiken om specifieke woorden in een PDF-document door te halen?
+### Is het mogelijk om meerdere woorden tegelijk door te strepen?
 
-A: Ja, Aspose.PDF voor .NET biedt functionaliteit om naar specifieke tekstfragmenten in een PDF-document te zoeken en vervolgens doorgehaalde annotaties te maken om die woorden visueel te markeren en door te halen.
+ Absoluut! De`TextFragmentAbsorber` kan worden gebruikt om te zoeken naar een woord of zin in het document. U kunt de doorhaling op meerdere instanties toepassen door te itereren door de`TextFragmentCollection`.
 
-#### Vraag: Hoe geef ik de tekst op die ik wil doorhalen in het PDF-document?
+### Wat als ik alleen tekst op specifieke pagina's wil doorhalen?
 
- A: Om de tekst op te geven die u wilt doorhalen, kunt u de`TextFragmentAbsorber` klasse geleverd door Aspose.PDF voor .NET. Hiermee kunt u op basis van de door u gewenste criteria naar een specifiek tekstfragment in het PDF-document zoeken.
+ U kunt de lus die door de pagina's itereert, aanpassen zodat deze alleen de pagina's bevat die u wilt aanpassen. Bijvoorbeeld:`for (int i = 1; i <= 3; i++)` zou de doorhaling alleen op de eerste drie pagina's toepassen.
 
-#### Vraag: Kan ik het uiterlijk van de doorgehaalde annotatie aanpassen?
+### Hoe kan ik de dikte van de doorhaallijn aanpassen?
 
-A: Ja, u kunt verschillende eigenschappen van de doorgehaalde annotatie aanpassen, zoals de dekking, randstijl en kleur. Hierdoor kunt u het uiterlijk van de doorgehaalde annotatie aanpassen aan uw specifieke vereisten.
+ U kunt de dikte van de doorhaallijn aanpassen door de`Border` eigendom van de`StrikeOutAnnotation`Hiermee kunt u het uiterlijk van de strikeout aanpassen.
+
+### Is er een manier om de doorhaling ongedaan te maken nadat ik het document heb opgeslagen?
+
+Zodra het document is opgeslagen, is de doorhaling permanent. Als u de originele tekst zonder doorhaling wilt behouden, overweeg dan om een back-up van het originele document op te slaan voordat u wijzigingen toepast.

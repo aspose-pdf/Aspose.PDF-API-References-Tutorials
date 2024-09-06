@@ -24,14 +24,14 @@ Mielőtt belemerülnénk a kódba és a lépésenkénti utasításokba, győződ
 
 ## 1. lépés: Hozzon létre egy Java projektet
 
-Kezdjük egy új Java projekt létrehozásával a választott IDE-ben. Kovesd ezeket a lepeseket:
+Kezdjük egy új Java projekt létrehozásával a választott IDE-ben. Kövesse az alábbi lépéseket:
 
 1. Nyissa meg az IDE-jét.
 2. Hozzon létre egy új Java projektet, és adjon neki értelmes nevet.
 
 ## 2. lépés: Adja hozzá az Aspose.PDF for Java fájlt projektjéhez
 
-Ezután hozzá kell adnia az Aspose.PDF for Java könyvtárat a projekthez. Itt van, hogyan:
+Ezután hozzá kell adnia az Aspose.PDF for Java könyvtárat a projekthez. Íme, hogyan:
 
 1. Töltse le az Aspose.PDF for Java könyvtárat a webhelyről.
 2. Adja hozzá a JAR-fájlt a projekt osztályútvonalához.

@@ -28,7 +28,7 @@ Mielőtt elkezdené, be kell állítania az Aspose.PDF for Java fájlt a Java pr
 
 2. Adja hozzá a JAR-t a projekthez: A letöltött JAR-fájlt vegye fel a Java-projekt osztályútvonalába.
 
-3. Az Aspose.PDF for Java inicializálása: A Java kódban inicializálja az Aspose.PDF for Java fájlt, hogy elkezdhesse a PDF-dokumentumokkal való munkát.
+3. Az Aspose.PDF for Java inicializálása: A Java-kódban inicializálja az Aspose.PDF for Java fájlt, hogy elkezdhesse a PDF-dokumentumok kezelését.
 
 ```java
 import com.aspose.pdf.Document;
@@ -63,7 +63,7 @@ OutlineCollection outlines = pdfDocument.getOutlines();
 
 ## Könyvjelzők törlése
 
-Most nézzük meg a könyvjelzők PDF-fájlból való törlésének folyamatát. Kovesd ezeket a lepeseket:
+Most nézzük meg a könyvjelzők PDF-fájlból való törlésének folyamatát. Kövesse az alábbi lépéseket:
 
 1. Ismételje meg a könyvjelzőket hurok segítségével.
 2. A feltételek alapján azonosítsa a törölni kívánt könyvjelzőket.

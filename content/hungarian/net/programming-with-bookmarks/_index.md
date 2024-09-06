@@ -13,14 +13,14 @@ Ezenkívül ezek az oktatóanyagok bemutatják, hogyan szabhatja testre a könyv
 ## Oktatóanyagok
 | Cím | Leírás |
 | --- | --- | 
-| [Könyvjelző hozzáadása PDF-fájlhoz](./add-bookmark/) | Könnyen hozzáadhat könyvjelzőket PDF-fájlhoz a jobb navigáció érdekében az Aspose.PDF for .NET segítségével. |  
-| [Gyermek könyvjelző hozzáadása PDF-fájlhoz](./add-child-bookmark/) | Könnyen hozzáadhat gyermekkönyvjelzőt PDF-fájlhoz a rendezettebb böngészés érdekében az Aspose.PDF for .NET segítségével. |  
-| [Törölje az összes könyvjelzőt a PDF-fájlban](./delete-all-bookmarks/) | Könnyen törölhet minden könyvjelzőt PDF-fájlból az Aspose.PDF for .NET segítségével. |  
-| [Egy adott könyvjelző törlése PDF fájlból](./delete-particular-bookmark/) | Könnyen törölhet egy adott könyvjelzőt PDF-fájlból az Aspose.PDF for .NET segítségével. |  
-| [Bontsa ki a Könyvjelzőket PDF-fájlban](./expand-bookmarks/) | Könnyen bővítheti a könyvjelzőket PDF-fájlban a jobb navigáció érdekében az Aspose.PDF for .NET segítségével. |  
-| [Töltse le a könyvjelző oldalszámát PDF-fájlban](./get-bookmark-page-number/) | Könnyen megszerezheti a könyvjelző oldalszámát PDF-fájlban az Aspose.PDF for .NET segítségével. |  
-| [Könyvjelzők beszerzése PDF-fájlban](./get-bookmarks/) | Könnyen szerezhet könyvjelzőket PDF-fájlban az Aspose.PDF for .NET segítségével. |  
-| [Szerezzen gyermekkönyvjelzőket PDF-fájlban](./get-child-bookmarks/) | Könnyen szerezhet be gyermekkönyvjelzőket PDF-fájlban az Aspose.PDF for .NET segítségével. |  
-| [Örökölni a nagyítást a PDF-fájlban](./inherit-zoom/) | Könnyen örökölheti a könyvjelzők nagyítását PDF-fájlban az Aspose.PDF for .NET segítségével. |  
-| [Frissítse a könyvjelzőket PDF-fájlban](./update-bookmarks/) | Könnyen frissítheti a könyvjelzőket PDF-fájlban az Aspose.PDF for .NET segítségével. |  
-| [Frissítse a gyermekkönyvjelzőket PDF-fájlban](./update-child-bookmarks/) | Könnyen frissítheti a gyermekkönyvjelzőket PDF-fájlban az Aspose.PDF for .NET segítségével. |  
+| [Könyvjelző hozzáadása PDF-fájlhoz](./add-bookmark/) | Ebben a lépésenkénti oktatóanyagban megtudhatja, hogyan adhat könyvjelzőket PDF-fájlokhoz az Aspose.PDF for .NET használatával. Javítsa a PDF navigációt. |  
+| [Gyermek könyvjelző hozzáadása PDF-fájlhoz](./add-child-bookmark/) | Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan adhat hozzá gyermekkönyvjelzőket PDF-fájlokhoz az Aspose.PDF for .NET használatával. Javítsa a PDF navigációt. |  
+| [Törölje az összes könyvjelzőt a PDF-fájlban](./delete-all-bookmarks/) | Ebből a lépésenkénti útmutatóból megtudhatja, hogyan törölheti az összes könyvjelzőt egy PDF-fájlból az Aspose.PDF for .NET használatával. Egyszerűsítse PDF kezelését. |  
+| [Egy adott könyvjelző törlése PDF fájlból](./delete-particular-bookmark/) | Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan törölhet egy adott könyvjelzőt egy PDF-fájlból az Aspose.PDF for .NET használatával. |  
+| [Bontsa ki a Könyvjelzőket PDF-fájlban](./expand-bookmarks/) | Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan bővítheti ki a könyvjelzőket PDF-fájlokban az Aspose.PDF for .NET használatával. Tökéletes azoknak a fejlesztőknek, akik javítani szeretnék a PDF navigációt. |  
+| [Töltse le a könyvjelző oldalszámát PDF-fájlban](./get-bookmark-page-number/) | Ebből az átfogó oktatóanyagból megtudhatja, hogyan bonthatja ki a könyvjelzők oldalszámait PDF-fájlokból az Aspose.PDF for .NET segítségével. |  
+| [Könyvjelzők beszerzése PDF-fájlban](./get-bookmarks/) | Ebben a lépésenkénti oktatóanyagban megtudhatja, hogyan bonthat ki könyvjelzőket PDF-fájlokból az Aspose.PDF for .NET segítségével. Javítsa a PDF navigációt. |  
+| [Szerezzen gyermekkönyvjelzőket PDF-fájlban](./get-child-bookmarks/) | Ebből a lépésenkénti útmutatóból megtudhatja, hogyan szerezhet be gyermekkönyvjelzőket PDF-fájlba az Aspose.PDF for .NET használatával. Javítsa a PDF navigációt. |  
+| [Örökölni a nagyítást a PDF-fájlban](./inherit-zoom/) | Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan örökölhet nagyítást PDF-fájlokban az Aspose.PDF for .NET használatával. Növelje PDF-megtekintési élményét. |  
+| [Frissítse a könyvjelzőket PDF-fájlban](./update-bookmarks/) | Ebből az útmutatóból megtudhatja, hogyan frissítheti a könyvjelzőket PDF-fájlokban az Aspose.PDF for .NET használatával. Tökéletes azoknak a fejlesztőknek, akik hatékonyan szeretnék módosítani a PDF-könyvjelzőket. |  
+| [Frissítse a gyermekkönyvjelzőket PDF-fájlban](./update-child-bookmarks/) | Ebből a lépésenkénti útmutatóból megtudhatja, hogyan frissítheti a gyermekkönyvjelzőket PDF-fájlokban az Aspose.PDF for .NET használatával. Javítsa a PDF navigációt. |  

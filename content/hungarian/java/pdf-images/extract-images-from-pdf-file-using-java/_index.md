@@ -45,7 +45,7 @@ Most, hogy a PDF-ünk betöltődött, folytathatjuk a képek kinyerését belől
 import com.aspose.pdf.Page;
 import com.aspose.pdf.XImage;
 
-// Iteráljon oldalakon, és bontsa ki a képeket
+// Iteráljon oldalakon és bontsa ki a képeket
 for (Page page : pdfDocument.getPages()) {
     XImageCollection images = page.getResources().getImages();
     for (XImage image : images) {

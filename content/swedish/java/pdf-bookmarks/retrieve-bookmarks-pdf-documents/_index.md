@@ -23,7 +23,7 @@ Att förstå vikten av att hämta bokmärken är avgörande. Det gör att du kan
 - Skapa anpassade navigeringsmenyer.
 - Generera interaktiva PDF-index.
 - Extrahera värdefull data från strukturerade PDF-filer.
-- Automatisera processer för innehållsextraktion.
+- Automatisera processer för utvinning av innehåll.
 - Förbättra dokumenttillgängligheten.
 
 ## Komma igång med Aspose.PDF för Java

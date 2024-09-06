@@ -1,127 +1,154 @@
 ---
-title: Définir la propriété de légende dans un fichier PDF
-linktitle: Définir la propriété de légende dans un fichier PDF
-second_title: Aspose.PDF pour la référence de l'API .NET
-description: Découvrez comment définir la propriété de légende dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Personnalisez les annotations avec des lignes de légende, la couleur du texte et des styles de fin.
+title: Définir la propriété de légende dans le fichier PDF
+linktitle: Définir la propriété de légende dans le fichier PDF
+second_title: Référence de l'API Aspose.PDF pour .NET
+description: Découvrez comment définir la propriété de légende dans un fichier PDF à l'aide d'Aspose.PDF pour .NET dans ce didacticiel détaillé, étape par étape.
 type: docs
 weight: 130
 url: /fr/net/annotations/setcalloutproperty/
 ---
- Aspose.PDF pour .NET est une bibliothèque puissante permettant de créer, manipuler et convertir des documents PDF en C#. L'une des fonctionnalités fournies par cette bibliothèque est la possibilité de définir des propriétés de légende pour les annotations de texte libre dans les documents PDF. Cela peut être fait en utilisant le`FreeTextAnnotation` classe, qui vous permet de créer des annotations avec des légendes.
+## Introduction
 
-Dans ce didacticiel, nous vous guiderons tout au long du processus de définition des propriétés de légende pour une annotation de texte libre à l'aide d'Aspose.PDF pour .NET en C#. Suivez les étapes ci-dessous pour commencer.
+La création de documents PDF professionnels et visuellement attrayants nécessite souvent l'ajout d'annotations qui attirent l'attention sur un contenu spécifique. L'une de ces annotations est la légende, qui ressemble à ces bulles de dialogue que vous voyez dans les bandes dessinées. Elles aident à clarifier ou à mettre en valeur le texte dans votre PDF. Aspose.PDF pour .NET facilite énormément l'ajout de telles annotations à vos documents. Dans ce didacticiel, nous vous expliquerons comment définir la propriété de légende dans un fichier PDF à l'aide de cette puissante bibliothèque. Que vous soyez un développeur chevronné ou que vous débutiez, à la fin de ce guide, vous comprendrez clairement comment utiliser les légendes dans les fichiers PDF.
 
-## Installer Aspose.PDF pour .NET
+## Prérequis
 
- Si vous ne l'avez pas déjà fait, vous devrez[télécharger](https://releases.aspose.com/pdf/net/) et installez Aspose.PDF pour .NET à partir des versions Aspose ou via le gestionnaire de packages NuGet.
+Avant de plonger dans le code, couvrons les éléments essentiels dont vous avez besoin pour commencer.
 
-## Étape 1 : Créer un nouveau document PDF
+1.  Aspose.PDF pour .NET : Assurez-vous que la bibliothèque Aspose.PDF pour .NET est installée. Vous pouvez la télécharger à partir de[ici](https://releases.aspose.com/pdf/net/).
+2. IDE : un environnement de développement tel que Visual Studio.
+3. .NET Framework : assurez-vous que .NET est installé sur votre ordinateur.
+4. Licence temporaire : si vous souhaitez tester toutes les fonctionnalités d'Aspose.PDF sans limitations, obtenez une[permis temporaire](https://purchase.aspose.com/temporary-license/).
 
- Créez un nouveau document PDF à l'aide du`Document`classe fournie par Aspose.PDF pour .NET.
+## Paquets d'importation
+
+Avant de commencer à écrire le code, vous devez importer les packages nécessaires qui vous permettront de travailler avec des fichiers PDF et des annotations.
 
 ```csharp
-// Le chemin d'accès au répertoire des documents.
+using Aspose.Pdf.Annotations;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+```
+
+Ces importations vous fourniront toutes les classes et méthodes nécessaires pour manipuler des documents PDF et créer des annotations comme la légende.
+
+## Étape 1 : Initialiser le document PDF
+
+La première étape de notre parcours consiste à initialiser un nouveau document PDF dans lequel nous ajouterons notre annotation de légende. Considérez cela comme la configuration d'une toile vierge sur laquelle vous pouvez commencer à ajouter des éléments.
+
+```csharp
+// Le chemin vers le répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Initialiser un nouveau document PDF
 Document doc = new Document();
 ```
+ Ici, nous créons un nouveau`Document` objet qui servira de fichier PDF.`dataDir` la variable est définie sur le répertoire dans lequel vous souhaitez enregistrer votre fichier PDF une fois que nous avons terminé.
 
-## Étape 2 : Ajouter une nouvelle page au document
+## Étape 2 : Ajouter une nouvelle page au document
 
- Ajoutez une nouvelle page au document à l'aide du`Pages` collecte des`Document` classe.
+Un document PDF peut contenir plusieurs pages. Dans cette étape, nous allons ajouter une nouvelle page à notre document. Cette page sera l'endroit où notre annotation de légende sera placée.
 
 ```csharp
+//Ajouter une nouvelle page au document
 Page page = doc.Pages.Add();
 ```
+ Le`Pages.Add()`méthode est utilisée pour ajouter une nouvelle page à la`doc` objet. La nouvelle page est stockée dans le`page` variable, que nous utiliserons plus tard lors de l'ajout de l'annotation.
 
-## Étape 3 : Définir l'apparence par défaut
+## Étape 3 : définir l’apparence par défaut
 
- Définissez l'apparence par défaut de l'annotation de texte libre en créant un nouveau`DefaultAppearance` objet et définir ses propriétés telles que`TextColor` et`FontSize`.
+Les annotations, comme la légende, ont une apparence visuelle que vous pouvez personnaliser. Dans cette étape, nous allons définir l'apparence du texte dans la légende.
 
 ```csharp
+// Définir l'apparence par défaut de l'annotation
 DefaultAppearance da = new DefaultAppearance();
 da.TextColor = System.Drawing.Color.Red;
 da.FontSize = 10;
 ```
+ Nous créons un`DefaultAppearance` Objet qui définit la couleur du texte et la taille de la police. Ici, le texte sera rouge et la taille de la police est fixée à 10. Cette apparence sera appliquée à l'annotation de légende.
 
-## Étape 4 : Créez une annotation de texte libre avec légende
+## Étape 4 : Créer l'annotation de texte libre
 
- Créez une nouvelle annotation de texte libre avec légende à l'aide de l'outil`FreeTextAnnotation` classe. Met le`Intent` propriété à`FreeTextIntent.FreeTextCallout` pour spécifier qu'il s'agit d'une annotation de légende. Met le`EndingStyle` propriété à`LineEnding.OpenArrow` pour spécifier le style de la flèche à la fin de la légende. Met le`Callout` propriété à un tableau de`Point` objets qui représentent les points de la page où la ligne de légende doit être tracée.
+Il est maintenant temps de créer l'annotation proprement dite. L'annotation en texte libre nous permet d'ajouter une légende avec un texte et un style spécifiques.
 
 ```csharp
+// Créer une annotation de texte libre avec une légende
 FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
 fta.Intent = FreeTextIntent.FreeTextCallout;
 fta.EndingStyle = LineEnding.OpenArrow;
+```
+ Nous créons un`FreeTextAnnotation` objet avec des coordonnées spécifiques, définissant sa position sur la page.`Intent` est réglé sur`FreeTextCallout` , indiquant qu'il s'agit d'une annotation de légende.`EndingStyle` est réglé sur`OpenArrow`ce qui signifie que la ligne de légende se terminera par une flèche ouverte.
+
+## Étape 5 : Définir les points de la ligne de légende
+
+Une annotation de légende comporte une ligne qui pointe vers la zone d'intérêt. Ici, nous allons définir les points qui composent cette ligne.
+
+```csharp
+// Définir les points pour la ligne de rappel
 fta.Callout = new Point[]
 {
-    new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
+    new Point(428.25, 651.75), 
+    new Point(462.75, 681.375), 
+    new Point(474, 681.375)
 };
 ```
+ Le`Callout` la propriété est un tableau de`Point` objets, chacun représentant une coordonnée sur la page. Ces points définissent le chemin de la ligne de légende, lui donnant l'apparence classique d'une bulle de dialogue.
 
-## Étape 5 : Ajouter l'annotation de texte libre à la page
+## Étape 6 : ajouter l'annotation à la page
 
- Ajoutez l'annotation de texte libre à la page en utilisant le`Annotations` collecte des`Page` classe.
+Après avoir créé et configuré notre annotation, l’étape suivante consiste à l’ajouter à la page.
 
 ```csharp
+// Ajouter l'annotation à la page
 page.Annotations.Add(fta);
 ```
+ Le`Annotations.Add()` La méthode est utilisée pour placer l'annotation sur la page que nous avons créée précédemment. Cette étape « dessine » effectivement la légende sur la page PDF.
 
-## Étape 6 : ajouter du texte à l'annotation
+## Étape 7 : définir le contenu du texte enrichi
 
- Ajoutez du texte à l'annotation en définissant le`RichText`propriété en une chaîne de XML formaté. Dans ce didacticiel, nous définissons la couleur du texte sur rouge et la taille de la police sur 9.
+Les annotations de légende peuvent inclure du texte enrichi, ce qui permet d'insérer du contenu formaté dans la bulle. Ajoutons un exemple de texte.
 
 ```csharp
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"couleur:#FF
+// Définir le texte enrichi pour l'annotation
+fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"><span style=\"font-size:9.0pt;font-family:Helvetica\">Ceci est un échantillon</span></p></body>";
 ```
+ Le`RichText` La propriété est définie avec le contenu HTML. Cela permet un formatage détaillé dans la légende, comme la spécification de la taille de la police, de la couleur et du style.
 
-## Étape 7 : enregistrez le document
+## Étape 8 : Enregistrez le document PDF
 
-Enregistrez maintenant le document en utilisant le code suivant :
-
-```csharp
-doc.Save(dataDir + "SetCalloutProperty.pdf")
-```
-
-### Exemple de code source pour définir la propriété de légende à l'aide d'Aspose.PDF pour .NET
+Enfin, après avoir tout configuré, nous devons enregistrer le document. Cette étape finalise la création du PDF avec l'annotation de légende.
 
 ```csharp
-// Le chemin d'accès au répertoire des documents.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-Document doc = new Document();
-Page page = doc.Pages.Add();
-DefaultAppearance da = new DefaultAppearance();
-da.TextColor = System.Drawing.Color.Red;
-da.FontSize = 10;
-FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
-fta.Intent = FreeTextIntent.FreeTextCallout;
-fta.EndingStyle = LineEnding.OpenArrow;
-fta.Callout = new Point[]
-{
-	new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
-};
-page.Annotations.Add(fta);
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"> <span style=\"font-size:9.0pt;font-family:Helvetica\">Ceci est un exemple</span></p></body>";
+// Enregistrer le document
 doc.Save(dataDir + "SetCalloutProperty.pdf");
 ```
+ Le`Save()` La méthode enregistre le document dans le répertoire spécifié avec le nom de fichier « SetCalloutProperty.pdf ». Cette étape conclut notre processus de création de PDF.
 
 ## Conclusion
 
-Dans ce didacticiel, nous avons expliqué comment définir les propriétés de légende pour une annotation de texte libre dans un document PDF à l'aide d'Aspose.PDF pour .NET. Les annotations de légende sont utiles pour fournir des informations supplémentaires ou des explications liées à des zones spécifiques d'un document. Aspose.PDF pour .NET offre un large éventail de fonctionnalités et de capacités pour travailler avec des fichiers PDF, notamment la création et la personnalisation d'annotations, telles que des légendes. En suivant le guide étape par étape et en utilisant le code source C# fourni, les développeurs peuvent facilement implémenter des annotations de légende dans leurs documents PDF, améliorant ainsi la convivialité et la clarté de leurs documents. Aspose.PDF for .NET est une bibliothèque polyvalente et fiable pour les opérations PDF dans les applications .NET, offrant des outils puissants pour gérer efficacement diverses tâches liées aux PDF.
+Et voilà ! Vous venez de créer un document PDF avec une annotation de légende à l'aide d'Aspose.PDF pour .NET. Cette annotation peut être incroyablement utile pour mettre en évidence ou expliquer des parties spécifiques de votre document. Aspose.PDF propose une API puissante qui rend la manipulation de PDF simple et flexible. Que vous ajoutiez des annotations, convertissiez des documents ou gériez des tâches PDF complexes, Aspose.PDF est là pour vous.
 
-### FAQ pour définir la propriété de légende dans un fichier PDF
+## FAQ
 
-#### Q : Qu'est-ce qu'une annotation de légende dans un document PDF ?
+### Puis-je personnaliser davantage l’apparence de la légende ?
 
-R : Une annotation de légende dans un document PDF est un type d'annotation qui vous permet de créer une zone de texte avec une ligne de repère pointant vers une zone spécifique du document. Il est couramment utilisé pour fournir des informations supplémentaires ou des commentaires liés à une section ou un élément particulier du document.
+Absolument ! Vous pouvez personnaliser divers aspects tels que la couleur de la ligne, l'épaisseur, la famille de polices et le style du texte.
 
-#### Q : Puis-je personnaliser l'apparence de l'annotation de légende à l'aide d'Aspose.PDF pour .NET ?
+### Est-il possible d'ajouter plusieurs légendes sur une seule page ?
 
-R : Oui, vous pouvez personnaliser diverses propriétés de l'annotation de légende, telles que la couleur, la taille de la police, l'alignement du texte, le style de ligne, le style de flèche, etc.
+Oui, vous pouvez ajouter autant de légendes que nécessaire en répétant les étapes pour chaque annotation.
 
-#### Q : Comment ajouter du texte à l'annotation de légende ?
+### Comment puis-je modifier la position de la légende ?
 
- R : Pour ajouter du texte à l'annotation de légende, vous pouvez définir le`RichText` propriété du`FreeTextAnnotation` objet. Le`RichText` La propriété prend une chaîne XML formatée qui représente le texte à afficher dans l'annotation de légende.
+ Modifiez simplement les coordonnées dans le`Rectangle` et`Callout` propriétés pour repositionner l'annotation.
 
-#### Q : Puis-je ajouter plusieurs annotations de légende à un document PDF à l'aide d'Aspose.PDF pour .NET ?
+### Puis-je ajouter d’autres types d’annotations à l’aide d’Aspose.PDF ?
 
- R : Oui, vous pouvez créer plusieurs annotations de légende dans un document PDF en créant plusieurs instances du`FreeTextAnnotation`objet et en les ajoutant à différentes pages ou emplacements du document.
+Oui, Aspose.PDF prend en charge différents types d'annotations, notamment les surlignements, les tampons et les pièces jointes.
+
+### Le contenu de texte enrichi est-il limité au HTML ?
+
+ Le`RichText` La propriété prend en charge un sous-ensemble de HTML, vous permettant d'inclure du texte stylisé et un formatage de base.

@@ -81,7 +81,7 @@ S: För att få sidantalet för en PDF-fil kan du följa dessa steg:
 
 1.  Instantiera en`Document` objekt med hjälp av`Document` klass av Aspose.PDF.
 2.  Lägg till en sida i dokumentet med hjälp av`Add()` metod för dokumentet`Pages` samling.
-3.  Skapa sidinnehåll genom att lägga till`TextFragment` objekt mot`Page` föremål`Paragraphs` samling.
+3.  Skapa sidinnehåll genom att lägga till`TextFragment` objekt mot`Page` föremålets`Paragraphs` samling.
 4.  Bearbeta dokumentets stycken genom att ringa till`ProcessParagraphs()` metod för att beräkna antalet sidor korrekt.
 5.  Få tillgång till`Count` egendom av`Pages` samling för att se antalet sidor i dokumentet.
 

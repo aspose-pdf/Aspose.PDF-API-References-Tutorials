@@ -1,107 +1,135 @@
 ---
 title: Đặt tên phông chữ mặc định
 linktitle: Đặt tên phông chữ mặc định
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Hướng dẫn từng bước để đặt tên phông chữ mặc định trong tệp PDF bằng Aspose.PDF cho .NET.
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách đặt tên phông chữ mặc định khi kết xuất PDF thành hình ảnh bằng Aspose.PDF cho .NET. Hướng dẫn này bao gồm các điều kiện tiên quyết, hướng dẫn từng bước và Câu hỏi thường gặp.
 type: docs
 weight: 270
 url: /vi/net/document-conversion/set-default-font-name/
 ---
-Trong hướng dẫn này, chúng tôi sẽ chỉ cho bạn cách đặt tên phông chữ mặc định trong tệp PDF bằng Aspose.PDF cho .NET. Đôi khi, khi trích xuất hình ảnh từ tệp PDF, bạn có thể gặp phải vấn đề thiếu phông chữ. Bằng cách chỉ định tên phông chữ mặc định, bạn có thể đảm bảo rằng văn bản được trích xuất sẽ được hiển thị chính xác. Thực hiện theo các bước bên dưới để đặt tên phông chữ mặc định trong tệp PDF.
+## Giới thiệu
+
+Bạn đã bao giờ thử kết xuất một tài liệu PDF thành hình ảnh nhưng thấy phông chữ trông không ổn chưa? Có thể văn bản bị méo hoặc có thể phông chữ gốc không được hỗ trợ. Đây chính là lúc thiết lập phông chữ mặc định có thể cứu vãn tình hình! Sử dụng Aspose.PDF cho .NET, bạn có thể dễ dàng thiết lập phông chữ mặc định cho bản kết xuất PDF của mình, đảm bảo tài liệu của bạn trông sắc nét và chuyên nghiệp. Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn cách thiết lập tên phông chữ mặc định khi kết xuất PDF thành hình ảnh. Đến cuối hướng dẫn này, bạn sẽ có đủ kỹ năng để giải quyết mọi thách thức kết xuất PDF mà bạn gặp phải. Sẵn sàng chưa? Hãy cùng bắt đầu thôi!
 
 ## Điều kiện tiên quyết
-Trước khi bắt đầu, hãy đảm bảo bạn đáp ứng các điều kiện tiên quyết sau:
 
-- Kiến thức cơ bản về ngôn ngữ lập trình C#.
-- Thư viện Aspose.PDF cho .NET được cài đặt trên hệ thống của bạn.
-- Một môi trường phát triển như Visual Studio.
+Trước khi tìm hiểu về mã, bạn cần chuẩn bị một số thứ sau:
 
-## Bước 1: Tải tài liệu PDF
- Bước đầu tiên là tải tài liệu PDF vào một`Document` sự vật. Sử dụng mã sau đây:
+- Aspose.PDF cho .NET: Thư viện mạnh mẽ này là thứ chúng ta sẽ sử dụng để thao tác tài liệu PDF của mình. Bạn có thể tải xuống từ[Trang web Aspose](https://releases.aspose.com/pdf/net/).
+- Visual Studio: Đảm bảo bạn đã cài đặt Visual Studio trên máy của mình. Đây sẽ là môi trường phát triển của chúng tôi.
+- .NET Framework: Đảm bảo bạn đã cài đặt .NET Framework. Aspose.PDF cho .NET hỗ trợ nhiều phiên bản khác nhau, vì vậy hãy kiểm tra tài liệu để phù hợp với nhu cầu của bạn.
+- Tài liệu PDF: Bạn sẽ cần một tài liệu PDF mẫu để làm việc. Nếu bạn không có, hãy tạo một tệp PDF đơn giản hoặc tải xuống mẫu trực tuyến.
 
-```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+Khi bạn đã thiết lập mọi thứ, chúng ta đã sẵn sàng để bắt đầu viết mã!
 
-using (Document pdfDocument = new Document(dataDir + "input.pdf"))
-{
-     // Mã để thêm
-}
-```
+## Nhập gói
 
- Hãy chắc chắn để thay thế`"YOUR DOCUMENTS DIRECTORY"` với thư mục thực tế nơi chứa tệp PDF của bạn.
-
-## Bước 2: Đặt tên phông chữ mặc định
- Tiếp theo, chúng ta sẽ đặt tên phông chữ mặc định bằng cách sử dụng`DefaultFontName` tùy chọn của`RenderingOptions` sự vật. Sử dụng mã sau đây:
+Trước khi đi sâu vào mã, điều cần thiết là phải nhập các gói cần thiết. Điều này đảm bảo rằng chúng ta có quyền truy cập vào tất cả các lớp và phương thức cần thiết cho dự án của mình.
 
 ```csharp
-using (Document pdfDocument = new Document(dataDir + "input.pdf"))
-{
-     using (FileStream imageStream = new FileStream(dataDir + "SetDefaultFontName.png", FileMode.Create))
-     {
-         Resolution resolution = new Resolution(300);
-         PngDevice pngDevice = new PngDevice(resolution);
-         RenderingOptions ro = new RenderingOptions();
-         ro.DefaultFontName = "Arial";
-         pngDevice.RenderingOptions = ro;
-        
-         // Mã để thêm
-     }
-}
+using Aspose.Pdf.Devices;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
 ```
 
- Hãy chắc chắn để thay thế`"Arial"` với tên phông chữ mong muốn.
+Những lệnh nhập này rất quan trọng vì chúng đưa vào các không gian tên cần thiết để xử lý thao tác PDF, kết xuất hình ảnh và hoạt động truyền tệp.
 
-## Bước 3: Trích xuất hình ảnh
-Tiếp theo, chúng tôi sẽ trích xuất hình ảnh từ trang được chỉ định của tài liệu PDF. Sử dụng mã sau đây:
+## Bước 1: Thiết lập dự án và đường dẫn tài liệu của bạn
 
-```csharp
-pngDevice.Process(pdfDocument.Pages[1], imageStream);
-```
-
- Đảm bảo ghi rõ số trang chính xác trong`pdfDocument.Pages[1]`.
-
-### Mã nguồn ví dụ cho Đặt tên phông chữ mặc định bằng Aspose.PDF cho .NET
+Trước tiên, hãy thiết lập đường dẫn thư mục nơi tài liệu PDF của bạn được lưu trữ. Đây sẽ là điểm bắt đầu để bạn thao tác với tệp PDF.
 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-using (Document pdfDocument = new Document(dataDir + "input.pdf"))
-{
-	using (FileStream imageStream = new FileStream(dataDir + "SetDefaultFontName.png", FileMode.Create))
-	{
-		Resolution resolution = new Resolution(300);
-		PngDevice pngDevice = new PngDevice(resolution);
-		RenderingOptions ro = new RenderingOptions();
-		ro.DefaultFontName = "Arial";
-		pngDevice.RenderingOptions = ro;
-		pngDevice.Process(pdfDocument.Pages[1], imageStream);
-	}
-}
 ```
+ Đây,`dataDir` là thư mục nơi tài liệu PDF của bạn nằm. Hãy đảm bảo thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến tài liệu của bạn. Điều này rất cần thiết vì mã cần biết nơi để lấy tệp PDF.
+
+## Bước 2: Tải Tài liệu PDF
+
+Bây giờ chúng ta đã có đường dẫn tài liệu, bước tiếp theo là tải tài liệu PDF vào bộ nhớ để chúng ta có thể bắt đầu làm việc trên đó.
+
+```csharp
+using (Document pdfDocument = new Document(dataDir + "input.pdf"))
+```
+ Chúng tôi sử dụng`Document` lớp từ thư viện Aspose.PDF để tải tệp PDF của chúng tôi. Lớp này cung cấp nhiều phương pháp và thuộc tính khác nhau để làm việc với tài liệu PDF.`"input.pdf"` nên được thay thế bằng tên tệp thực tế của PDF của bạn. Tệp này sẽ được sử dụng làm đầu vào để kết xuất.
+
+## Bước 3: Tạo luồng hình ảnh cho đầu ra
+
+Sau khi tài liệu được tải, chúng ta cần thiết lập luồng để lưu hình ảnh đã kết xuất. Đây là nơi hình ảnh đầu ra sẽ được lưu trữ.
+
+```csharp
+using (FileStream imageStream = new FileStream(dataDir + "SetDefaultFontName.png", FileMode.Create))
+```
+ Các`FileStream`lớp được sử dụng để tạo một tệp mới nơi hình ảnh được kết xuất sẽ được lưu. Trong ví dụ này, chúng tôi đang lưu hình ảnh dưới dạng`"SetDefaultFontName.png"` . Các`FileMode.Create` đảm bảo rằng một tập tin mới được tạo hoặc một tập tin hiện có được ghi đè.
+
+## Bước 4: Thiết lập độ phân giải cho hình ảnh
+
+Trước khi kết xuất PDF thành hình ảnh, điều quan trọng là phải thiết lập độ phân giải. Điều này quyết định chất lượng và độ rõ nét của hình ảnh đầu ra.
+
+```csharp
+Resolution resolution = new Resolution(300);
+```
+ Các`Resolution` lớp thiết lập độ phân giải của hình ảnh đầu ra. Ở đây, chúng tôi đã chọn độ phân giải 300 DPI (chấm trên inch), đây là độ phân giải tiêu chuẩn cho hình ảnh chất lượng cao. Điều này đảm bảo rằng văn bản và đồ họa trong PDF của bạn được hiển thị rõ ràng mà không mất chi tiết.
+
+## Bước 5: Cấu hình thiết bị PNG
+
+Tiếp theo, chúng ta cần cấu hình thiết bị sẽ xử lý việc hiển thị PDF thành hình ảnh PNG.
+
+```csharp
+PngDevice pngDevice = new PngDevice(resolution);
+```
+ Các`PngDevice` lớp chịu trách nhiệm chuyển đổi tài liệu PDF thành hình ảnh PNG. Bằng cách chuyển`resolution` phản đối nó, chúng tôi đảm bảo rằng hình ảnh được tạo ra với DPI đã chỉ định.
+
+## Bước 6: Đặt Tên Phông Chữ Mặc Định
+
+Đây là phần quan trọng – thiết lập tên phông chữ mặc định. Đây sẽ là phông chữ dự phòng trong trường hợp phông chữ gốc trong PDF không khả dụng.
+
+```csharp
+RenderingOptions ro = new RenderingOptions();
+ro.DefaultFontName = "Arial";
+pngDevice.RenderingOptions = ro;
+```
+ Chúng tôi tạo ra một trường hợp của`RenderingOptions` và thiết lập nó`DefaultFontName` tài sản để`"Arial"`. Điều này có nghĩa là nếu không tìm thấy phông chữ gốc trong PDF, Arial sẽ được sử dụng thay thế. Bước này rất quan trọng để duy trì khả năng đọc và giao diện của văn bản trong hình ảnh được hiển thị.
+
+## Bước 7: Kết xuất trang PDF thành hình ảnh
+
+Cuối cùng, khi mọi thứ đã được thiết lập xong, chúng ta có thể hiển thị trang đầu tiên của tài liệu PDF thành hình ảnh và lưu nó bằng luồng tệp đã tạo trước đó.
+
+```csharp
+pngDevice.Process(pdfDocument.Pages[1], imageStream);
+```
+ Các`Process` phương pháp của`PngDevice` lớp được sử dụng để hiển thị trang PDF được chỉ định (trong trường hợp này là trang đầu tiên) thành hình ảnh. Sau đó, đầu ra được lưu vào`imageStream`. Bước này chuyển đổi trang PDF thành hình ảnh PNG với độ phân giải và phông chữ mặc định đã chỉ định.
+
+## Bước 8: Đóng luồng tệp và tài liệu PDF
+
+Sau khi kết xuất hình ảnh, điều quan trọng là phải đóng luồng tệp và tài liệu PDF để giải phóng tài nguyên.
+
+```csharp
+imageStream.Close();
+pdfDocument.Dispose();
+```
+Đóng cửa`imageStream` đảm bảo rằng tập tin được lưu đúng cách và không có dữ liệu nào bị mất. Xử lý`pdfDocument` giải phóng bộ nhớ và tài nguyên, ngăn ngừa mọi rò rỉ bộ nhớ tiềm ẩn.
 
 ## Phần kết luận
-Trong hướng dẫn này, chúng ta đã tìm hiểu cách đặt tên phông chữ mặc định trong tệp PDF bằng Aspose.PDF cho .NET. Bằng cách chỉ định tên phông chữ mặc định, bạn có thể đảm bảo rằng văn bản được trích xuất sẽ được hiển thị chính xác. Sử dụng phương pháp này để giải quyết vấn đề thiếu phông chữ khi trích xuất hình ảnh từ tệp PDF.
 
-### Câu hỏi thường gặp
+Và bạn đã có nó! Chỉ với một vài dòng mã, bạn đã học cách đặt tên phông chữ mặc định khi kết xuất PDF thành hình ảnh bằng Aspose.PDF cho .NET. Kỹ năng này cực kỳ hữu ích, đặc biệt là khi xử lý các tệp PDF có thể chứa phông chữ không được hỗ trợ. Bằng cách đặt phông chữ mặc định, bạn đảm bảo rằng hình ảnh được kết xuất của mình duy trì khả năng đọc và giao diện chuyên nghiệp.
 
-#### Câu hỏi: Aspose.PDF dành cho .NET là gì?
+## Câu hỏi thường gặp
 
-Đáp: Aspose.PDF for .NET là một thư viện mạnh mẽ cho phép các nhà phát triển làm việc với các tài liệu PDF trong các ứng dụng C#. Nó cung cấp nhiều chức năng khác nhau, bao gồm đặt tên phông chữ mặc định trong tệp PDF.
+### Điều gì xảy ra nếu phông chữ mặc định được chỉ định không được cài đặt trên hệ thống?
+ Nếu phông chữ mặc định được chỉ định trong`RenderingOptions` không được cài đặt trên hệ thống, Aspose.PDF sẽ sử dụng phông chữ dự phòng do hệ thống xác định.
 
-#### Hỏi: Tại sao tôi cần đặt tên phông chữ mặc định trong tệp PDF?
+### Tôi có thể sử dụng phông chữ khác ngoài Arial làm phông chữ mặc định không?
+Hoàn toàn được! Bạn có thể đặt bất kỳ phông chữ nào được cài đặt trên hệ thống của bạn làm phông chữ mặc định.
 
-Đáp: Đặt tên phông chữ mặc định rất hữu ích khi trích xuất văn bản từ tài liệu PDF. Nếu tệp PDF chứa văn bản có phông chữ không có sẵn trên máy trích xuất, việc chỉ định tên phông chữ mặc định sẽ đảm bảo hiển thị văn bản chính xác.
+### Có thể chuyển nhiều trang PDF thành hình ảnh cùng một lúc không?
+Có, bạn có thể lặp qua các trang PDF và hiển thị từng trang riêng lẻ bằng cùng một quy trình.
 
-#### Câu hỏi: Làm cách nào tôi có thể tải tài liệu PDF và đặt tên phông chữ mặc định bằng Aspose.PDF cho .NET?
+### Việc thiết lập độ phân giải cao có ảnh hưởng đến hiệu suất kết xuất PDF không?
+Đúng, độ phân giải cao hơn sẽ tạo ra tệp hình ảnh lớn hơn và có thể làm tăng thời gian hiển thị, nhưng chúng cũng sẽ tạo ra hình ảnh rõ nét hơn.
 
- Đáp: Để tải tài liệu PDF và đặt tên phông chữ mặc định, bạn có thể sử dụng`Document`lớp để tải tệp PDF và`RenderingOptions.DefaultFontName` thuộc tính để chỉ định tên phông chữ mặc định mong muốn.
-
-#### Hỏi: Tôi có thể chọn bất kỳ phông chữ nào làm tên phông chữ mặc định không?
-
-Trả lời: Có, bạn có thể chọn bất kỳ phông chữ nào có sẵn trên máy trích xuất làm tên phông chữ mặc định. Sử dụng phông chữ gần giống với phông chữ bị thiếu trong tệp PDF gốc để đảm bảo hiển thị văn bản chính xác.
-
-#### Hỏi: Việc đặt tên phông chữ mặc định có phải là thay đổi vĩnh viễn đối với tệp PDF không?
-
-Trả lời: Không, việc đặt tên phông chữ mặc định bằng Aspose.PDF cho .NET là thay đổi tạm thời được thực hiện trong quá trình trích xuất văn bản. Nó không sửa đổi tệp PDF gốc.
+### Tôi có thể chuyển đổi PDF sang các định dạng hình ảnh khác ngoài PNG không?
+Có, Aspose.PDF hỗ trợ hiển thị nhiều định dạng hình ảnh khác nhau như JPEG, BMP và TIFF.

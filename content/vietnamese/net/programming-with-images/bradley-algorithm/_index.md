@@ -1,17 +1,17 @@
 ---
 title: Thuật toán Bradley
 linktitle: Thuật toán Bradley
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
 description: Chuyển đổi tài liệu PDF bằng thuật toán Bradley với Aspose.PDF cho .NET.
 type: docs
 weight: 30
 url: /vi/net/programming-with-images/bradley-algorithm/
 ---
-Hướng dẫn từng bước này giải thích cách sử dụng Thuật toán Bradley với Aspose.PDF cho .NET. Đảm bảo bạn đã thiết lập môi trường của mình và làm theo các bước dưới đây:
+Hướng dẫn từng bước này giải thích cách sử dụng Bradley Algorithm với Aspose.PDF cho .NET. Đảm bảo bạn đã thiết lập môi trường của mình và làm theo các bước dưới đây:
 
 ## Bước 1: Xác định thư mục tài liệu
 
- Trước khi bắt đầu, hãy đảm bảo bạn đặt đúng thư mục cho tài liệu. Thay thế`"YOUR DOCUMENT DIRECTORY"` trong mã có đường dẫn đến thư mục chứa tài liệu PDF của bạn.
+Trước khi bắt đầu, hãy đảm bảo bạn thiết lập đúng thư mục cho các tài liệu. Thay thế`"YOUR DOCUMENT DIRECTORY"` trong mã có đường dẫn đến thư mục chứa tài liệu PDF của bạn.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,13 +19,13 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Bước 2: Mở tài liệu
 
-Trong bước này, chúng tôi sẽ mở tài liệu PDF bằng cách sử dụng`Document` lớp Aspose.PDF. Sử dụng`Document` constructor và chuyển đường dẫn đến tài liệu PDF.
+ Trong bước này, chúng ta sẽ mở tài liệu PDF bằng cách sử dụng`Document` lớp Aspose.PDF. Sử dụng`Document` hàm tạo và truyền đường dẫn đến tài liệu PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
 ```
 
-## Bước 3: Xác định tệp đầu ra
+## Bước 3: Xác định các tập tin đầu ra
 
  Xác định tên tệp đầu ra cho hình ảnh kết quả và hình ảnh nhị phân. Thay thế`"resultant_out.tif"` Và`"37116-bin_out.tif"` với tên mong muốn cho các tập tin đầu ra.
 
@@ -34,9 +34,9 @@ string outputImageFile = dataDir + "resultant_out.tif";
 string outputBinImageFile = dataDir + "37116-bin_out.tif";
 ```
 
-## Bước 4: Tạo đối tượng Độ phân giải
+## Bước 4: Tạo đối tượng Resolution
 
- Tạo một`Resolution`đối tượng để đặt độ phân giải của hình ảnh TIFF. Trong ví dụ này, chúng tôi đang sử dụng độ phân giải 300 dpi.
+ Tạo một`Resolution` đối tượng để thiết lập độ phân giải của hình ảnh TIFF. Trong ví dụ này, chúng tôi sử dụng độ phân giải 300 dpi.
 
 ```csharp
 Resolution resolution = new Resolution(300);
@@ -44,7 +44,7 @@ Resolution resolution = new Resolution(300);
 
 ## Bước 5: Tạo đối tượng TiffSettings
 
- Tạo một`TiffSettings`đối tượng để chỉ định cài đặt cho tệp TIFF đầu ra. Trong ví dụ này, chúng tôi đang sử dụng tính năng nén LZW và độ sâu màu 1 bit trên mỗi pixel (định dạng 1 bpp).
+ Tạo một`TiffSettings` đối tượng để chỉ định cài đặt cho tệp TIFF đầu ra. Trong ví dụ này, chúng tôi sử dụng nén LZW và độ sâu màu là 1 bit cho mỗi pixel (định dạng 1 bpp).
 
 ```csharp
 TiffSettings tiffSettings = new TiffSettings();
@@ -62,15 +62,15 @@ TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
 
 ## Bước 7: Chuyển đổi trang cụ thể và lưu hình ảnh
 
- Sử dụng`Process` phương pháp của thiết bị TIFF để chuyển đổi một trang cụ thể của tài liệu PDF và lưu hình ảnh vào tệp TIFF. Chỉ định đường dẫn đầu ra tập tin.
+ Sử dụng`Process` phương pháp của thiết bị TIFF để chuyển đổi một trang cụ thể của tài liệu PDF và lưu hình ảnh vào tệp TIFF. Chỉ định đường dẫn đầu ra của tệp.
 
 ```csharp
 tiffDevice.Process(pdfDocument, outputImageFile);
 ```
 
-## Bước 8: Binarize hình ảnh bằng thuật toán Bradley
+## Bước 8: Nhị phân hóa hình ảnh bằng thuật toán Bradley
 
- Sử dụng`BinarizeBradley` phương pháp của thiết bị TIFF để nhị phân hóa hình ảnh bằng thuật toán Bradley. Phương thức này lấy luồng đầu vào của ảnh gốc và luồng đầu ra cho ảnh nhị phân. Chỉ định ngưỡng nhị phân (0,1 trong ví dụ này).
+ Sử dụng`BinarizeBradley`phương pháp của thiết bị TIFF để nhị phân hóa hình ảnh bằng thuật toán Bradley. Phương pháp này lấy luồng đầu vào của hình ảnh gốc và luồng đầu ra cho hình ảnh nhị phân. Chỉ định ngưỡng nhị phân hóa (0,1 trong ví dụ này).
 
 ```csharp
 using (FileStream
@@ -84,7 +84,7 @@ tiffDevice. Binarize Bradley(inStream, outStream, 0.1);
 }
 ```
 
-### Mã nguồn mẫu cho Thuật toán Bradley sử dụng Aspose.PDF for .NET 
+### Mã nguồn mẫu cho thuật toán Bradley sử dụng Aspose.PDF cho .NET 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -92,7 +92,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir+ "PageToTIFF.pdf");
 string outputImageFile = dataDir + "resultant_out.tif";
 string outputBinImageFile = dataDir + "37116-bin_out.tif";
-// Tạo đối tượng Độ phân giải
+// Tạo đối tượng Resolution
 Resolution resolution = new Resolution(300);
 // Tạo đối tượng TiffSettings
 TiffSettings tiffSettings = new TiffSettings();
@@ -100,7 +100,7 @@ tiffSettings.Compression = CompressionType.LZW;
 tiffSettings.Depth = Aspose.Pdf.Devices.ColorDepth.Format1bpp;
 // Tạo thiết bị TIFF
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-//Chuyển đổi một trang cụ thể và lưu hình ảnh vào luồng
+// Chuyển đổi một trang cụ thể và lưu hình ảnh vào luồng
 tiffDevice.Process(pdfDocument, outputImageFile);
 using (FileStream inStream = new FileStream(outputImageFile, FileMode.Open))
 {
@@ -114,41 +114,41 @@ System.Console.WriteLine("Conversion using bradley algorithm performed successfu
 
 ## Phần kết luận
 
-Xin chúc mừng! Bạn đã hoàn tất chuyển đổi thành công bằng thuật toán Bradley với Aspose.PDF for .NET. Bây giờ bạn có thể sử dụng hình ảnh thu được trong các dự án hoặc ứng dụng của mình.
+Xin chúc mừng! Bạn đã hoàn tất chuyển đổi thành công bằng thuật toán Bradley với Aspose.PDF cho .NET. Bây giờ bạn có thể sử dụng hình ảnh kết quả trong các dự án hoặc ứng dụng của mình.
 
 ### Câu hỏi thường gặp
 
-#### Câu hỏi: Thuật toán Bradley là gì và nó liên quan như thế nào đến Aspose.PDF cho .NET?
+#### H: Thuật toán Bradley là gì và nó liên quan như thế nào đến Aspose.PDF cho .NET?
 
-Đáp: Thuật toán Bradley là một kỹ thuật xử lý hình ảnh được sử dụng để nâng cao chất lượng và độ rõ nét của hình ảnh. Aspose.PDF for .NET cung cấp một cách thuận tiện để áp dụng Thuật toán Bradley cho tài liệu PDF, mang lại hình ảnh được cải thiện.
+A: Thuật toán Bradley là một kỹ thuật xử lý hình ảnh được sử dụng để nâng cao chất lượng và độ rõ nét của hình ảnh. Aspose.PDF cho .NET cung cấp một cách thuận tiện để áp dụng Thuật toán Bradley vào tài liệu PDF, giúp cải thiện hình ảnh.
 
-#### Câu hỏi: Làm cách nào để thiết lập môi trường sử dụng Thuật toán Bradley với Aspose.PDF cho .NET?
+#### H: Làm thế nào để thiết lập môi trường sử dụng Thuật toán Bradley với Aspose.PDF cho .NET?
 
-Trả lời: Trước khi bắt đầu, hãy đảm bảo rằng bạn đã cài đặt Aspose.PDF cho .NET đúng cách và môi trường phát triển của bạn đã được định cấu hình.
+A: Trước khi bắt đầu, hãy đảm bảo rằng bạn đã cài đặt Aspose.PDF cho .NET đúng cách và cấu hình môi trường phát triển.
 
-#### Câu hỏi: Tầm quan trọng của việc xác định thư mục tài liệu trong quy trình Thuật toán Bradley là gì?
+#### H: Việc xác định thư mục tài liệu trong quy trình Thuật toán Bradley có ý nghĩa gì?
 
-Trả lời: Việc chỉ định đúng thư mục tài liệu là rất quan trọng để đảm bảo rằng tài liệu PDF nằm ở đúng đường dẫn để xử lý.
+A: Việc chỉ định đúng thư mục tài liệu rất quan trọng để đảm bảo tài liệu PDF nằm đúng đường dẫn để xử lý.
 
-#### Câu hỏi: Làm cách nào để mở tài liệu PDF bằng Aspose.PDF cho .NET trong Thuật toán Bradley?
+#### H: Làm thế nào để mở tài liệu PDF bằng Aspose.PDF cho .NET trong Thuật toán Bradley?
 
- Đáp: Hãy sử dụng`Document` class để mở tài liệu PDF, tài liệu này đóng vai trò là đầu vào cho quy trình Thuật toán Bradley.
+ A: Sử dụng`Document` lớp để mở tài liệu PDF, đóng vai trò là đầu vào cho quy trình Thuật toán Bradley.
 
-#### Câu hỏi: Mục đích của việc xác định tên tệp đầu ra cho hình ảnh và hình ảnh nhị phân trong quy trình Thuật toán Bradley là gì?
+#### H: Mục đích của việc xác định tên tệp đầu ra cho hình ảnh và hình ảnh nhị phân trong quy trình Thuật toán Bradley là gì?
 
-Trả lời: Việc xác định tên tệp đầu ra cho phép bạn chỉ định nơi lưu hình ảnh kết quả và hình ảnh nhị phân sau khi áp dụng Thuật toán Bradley.
+A: Việc xác định tên tệp đầu ra cho phép bạn chỉ định nơi lưu hình ảnh kết quả và hình ảnh nhị phân sau khi áp dụng Thuật toán Bradley.
 
-#### Câu hỏi: Cài đặt độ phân giải ảnh hưởng như thế nào đến chất lượng hình ảnh TIFF trong quy trình Thuật toán Bradley?
+#### H: Cài đặt độ phân giải ảnh hưởng như thế nào đến chất lượng hình ảnh TIFF trong quy trình Thuật toán Bradley?
 
-Đáp: Cài đặt độ phân giải xác định mức độ chi tiết và độ rõ nét trong hình ảnh TIFF thu được sau khi áp dụng Thuật toán Bradley.
+A: Cài đặt độ phân giải quyết định mức độ chi tiết và độ rõ nét trong hình ảnh TIFF thu được sau khi áp dụng Thuật toán Bradley.
 
-#### Câu hỏi: Tôi có thể tùy chỉnh những cài đặt nào cho hình ảnh TIFF đầu ra trong quy trình Thuật toán Bradley?
-Đáp: Bạn có thể tùy chỉnh các cài đặt như kiểu nén và độ sâu màu để đạt được kết quả mong muốn cho hình ảnh TIFF.
+#### H: Tôi có thể tùy chỉnh những thiết lập nào cho hình ảnh TIFF đầu ra trong quy trình Thuật toán Bradley?
+A: Bạn có thể tùy chỉnh các thiết lập như loại nén và độ sâu màu để đạt được kết quả mong muốn cho hình ảnh TIFF.
 
-#### Câu hỏi: Thiết bị TIFF đóng góp như thế nào vào quy trình Thuật toán Bradley?
+#### H: Thiết bị TIFF đóng góp như thế nào vào quá trình Thuật toán Bradley?
 
-Đáp: Thiết bị TIFF hoạt động như một công cụ xử lý hình ảnh và áp dụng Thuật toán Bradley, giúp nâng cao chất lượng hình ảnh.
+A: Thiết bị TIFF hoạt động như một công cụ xử lý hình ảnh và áp dụng Thuật toán Bradley, giúp nâng cao chất lượng hình ảnh.
 
-#### Câu hỏi: Làm cách nào để chuyển đổi một trang cụ thể của tài liệu PDF thành hình ảnh TIFF trong quy trình Thuật toán Bradley?
+#### H: Làm thế nào để chuyển đổi một trang cụ thể của tài liệu PDF sang hình ảnh TIFF trong quy trình Thuật toán Bradley?
 
- Đáp: Hãy sử dụng`Process` phương pháp của thiết bị TIFF để chuyển đổi một trang cụ thể của tài liệu PDF thành hình ảnh TIFF, sau đó có thể được xử lý thêm bằng Thuật toán Bradley.
+ A: Sử dụng`Process` phương pháp của thiết bị TIFF để chuyển đổi một trang cụ thể của tài liệu PDF thành hình ảnh TIFF, sau đó có thể được xử lý thêm bằng Thuật toán Bradley.

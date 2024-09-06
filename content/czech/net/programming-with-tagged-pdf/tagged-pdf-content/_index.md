@@ -55,7 +55,7 @@ Nastavili jsme název a jazyk tagovaného dokumentu PDF.
 Nyní, když jsme pracovali s tagovaným obsahem dokumentu PDF, uložme jej jako tagovaný dokument PDF.
 
 ```csharp
-// Uložte tagovaný dokument PDF
+// Uložte označený dokument PDF
 document.Save(dataDir + "ContentPDFTag.pdf");
 ```
 

@@ -24,14 +24,14 @@ url: /zh-hant/java/pdf-form-fields/extract-text-from-stamp-annotation-in-pdf-usi
 
 ## 第 1 步：建立 Java 項目
 
-首先，我們在您選擇的 IDE 中建立一個新的 Java 專案。按著這些次序：
+首先，我們在您選擇的 IDE 中建立一個新的 Java 專案。請依照下列步驟操作：
 
 1. 打開你的 IDE。
 2. 建立一個新的 Java 專案並為其指定一個有意義的名稱。
 
 ## 步驟 2：將 Aspose.PDF for Java 新增到您的專案中
 
-接下來，您需要將 Aspose.PDF for Java 庫新增到您的專案中。就是這樣：
+接下來，您需要將 Aspose.PDF for Java 庫新增到您的專案中。方法如下：
 
 1. 從網站下載 Aspose.PDF for Java 函式庫。
 2. 將 JAR 檔案新增至專案的類別路徑。

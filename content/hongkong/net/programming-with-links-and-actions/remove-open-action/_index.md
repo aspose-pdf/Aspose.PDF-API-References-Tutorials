@@ -89,7 +89,7 @@ Console.WriteLine("\nOpen action removed successfully.\nFile saved at " + dataDi
 
 #### Q：我可以自訂開啟動作來執行其他操作嗎？
 
-答：是的，Aspose.PDF for .NET 可讓您透過將開啟操作設定為各種類型的操作來自訂開啟操作，例如導航至特定頁面或執行 JavaScript。
+答：是的，Aspose.PDF for .NET 允許您透過將開啟操作設定為各種類型的操作來自訂開啟操作，例如導航至特定頁面或執行 JavaScript。
 
 #### Q：我可以從受密碼保護的 PDF 中刪除開啟的操作嗎？
 答：是的，只要您提供適當的憑證來存取和修改文檔，您就可以從受密碼保護的 PDF 中刪除開啟操作。

@@ -54,7 +54,7 @@ using (FileStream imageStream = new FileStream(dataDir + "image" + pageCount + "
 //將頁面轉換為圖像的程式碼
 }
 ```
-4. 在 - 的裡面`using`塊，創建一個`Resolution`對象設定影像解析度。
+4. 裡面的`using`塊，創建一個`Resolution`對象設定影像解析度。
 ```csharp
 Resolution resolution = new Resolution(300);
 ```

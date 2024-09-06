@@ -1,17 +1,17 @@
 ---
-title: PDF Dosyasında Uygulama Bağlantısı Oluşturun
-linktitle: PDF Dosyasında Uygulama Bağlantısı Oluşturun
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile PDF dosyasında kolayca uygulama bağlantıları oluşturun.
+title: PDF Dosyasında Uygulama Bağlantısı Oluştur
+linktitle: PDF Dosyasında Uygulama Bağlantısı Oluştur
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET ile PDF dosyasında uygulama bağlantılarını kolayca oluşturun.
 type: docs
 weight: 20
 url: /tr/net/programming-with-links-and-actions/create-application-link/
 ---
-PDF dosyasında bir uygulama bağlantısı oluşturmak, yürütülebilir dosyalar veya URL'ler gibi harici uygulamalara bağlantılar oluşturmanıza olanak tanır. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu takip ederek kolayca uygulama bağlantıları oluşturabilirsiniz:
+PDF dosyasında bir uygulama bağlantısı oluşturmak, yürütülebilir dosyalar veya URL'ler gibi harici uygulamalara bağlantılar oluşturmanıza olanak tanır. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu izleyerek kolayca uygulama bağlantıları oluşturabilirsiniz:
 
-## 1. Adım: Gerekli kitaplıkları içe aktarın
+## Adım 1: Gerekli kitaplıkları içe aktarın
 
-Başlamadan önce C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. Gerekli ithalat direktifi aşağıdadır:
+Başlamadan önce, C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. İşte gerekli içe aktarma yönergesi:
 
 ```csharp
 using Aspose.Pdf;
@@ -19,15 +19,15 @@ using Aspose.Pdf.Annotations;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## 2. Adım: Belgeler klasörünün yolunu ayarlayın
+## Adım 2: Belgeler klasörüne giden yolu ayarlayın
 
- Bu adımda, uygulama bağlantısı eklemek istediğiniz PDF dosyasını içeren klasörün yolunu belirtmeniz gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"`belgeler klasörünüzün gerçek yolunu içeren aşağıdaki kodda:
+Bu adımda, uygulama bağlantısı eklemek istediğiniz PDF dosyasını içeren klasörün yolunu belirtmeniz gerekir. Değiştir`"YOUR DOCUMENT DIRECTORY"` Aşağıdaki kodda belgeler klasörünüzün gerçek yolunu bulabilirsiniz:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 3. Adım: PDF belgesini açın
+## Adım 3: PDF belgesini açın
 
 Şimdi uygulama bağlantısı eklemek istediğimiz PDF belgesini aşağıdaki kodu kullanarak açacağız:
 
@@ -35,9 +35,9 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document(dataDir + "CreateApplicationLink.pdf");
 ```
 
-## 4. Adım: Uygulama Bağlantısını Oluşturun
+## Adım 4: Uygulama Bağlantısını Oluşturun
 
- Bu adımda, uygulama bağlantısını kullanarak oluşturacağız.`LinkAnnotation`dipnot. Bağlantının koordinatlarını ve alanının yanı sıra uygulama başlatma eylemini de belirleyeceğiz. İşte ilgili kod:
+ Bu adımda, uygulama bağlantısını kullanarak oluşturacağız.`LinkAnnotation` açıklama. Bağlantının koordinatlarını ve alanını ve ayrıca uygulama başlatma eylemini belirteceğiz. İşte karşılık gelen kod:
 
 ```csharp
 Page page = document.Pages[1];
@@ -47,18 +47,18 @@ link. Action = new LaunchAction(document, dataDir + "CreateApplicationLink.pdf")
 page.Annotations.Add(link);
 ```
 
-## 5. Adım: Güncellenen dosyayı kaydedin
+## Adım 5: Güncellenen dosyayı kaydedin
 
- Şimdi güncellenen PDF dosyasını kullanarak kaydedelim.`Save` yöntemi`document` nesne. İşte ilgili kod:
+Şimdi güncellenen PDF dosyasını kullanarak kaydedelim`Save` yöntemi`document` nesne. İşte karşılık gelen kod:
 
 ```csharp
 dataDir = dataDir + "CreateApplicationLink_out.pdf";
 document. Save(dataDir);
 ```
 
-### Aspose.PDF for .NET kullanarak Uygulama Bağlantısı Oluşturma için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Uygulama Bağlantısı Oluşturma için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document document = new Document( dataDir + "CreateApplicationLink.pdf");
@@ -76,43 +76,43 @@ Console.WriteLine("\nApplication link created successfully.\nFile saved at " + d
 
 ## Çözüm
 
-Tebrikler! Artık Aspose.PDF for .NET ile uygulama bağlantıları oluşturmaya yönelik adım adım bir kılavuza sahipsiniz. PDF belgelerinizdeki harici uygulamalara bağlantılar eklemek için bu kodu kullanabilirsiniz.
+Tebrikler! Artık Aspose.PDF for .NET ile uygulama bağlantıları oluşturmak için adım adım bir kılavuzunuz var. Bu kodu kullanarak PDF belgelerinize harici uygulamalara bağlantılar ekleyebilirsiniz.
 
-Etkileşimli bağlantıların gelişmiş özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
+Etkileşimli bağlantıların gelişmiş özellikleri hakkında daha fazla bilgi edinmek için resmi Aspose.PDF belgelerini incelediğinizden emin olun.
 
-### PDF dosyasında uygulama bağlantısı oluşturmak için SSS
+### PDF dosyasında uygulama bağlantısı oluşturma hakkında SSS
 
 #### S: PDF dosyalarındaki uygulama bağlantıları nelerdir?
 
-C: PDF dosyalarındaki uygulama bağlantıları, tıklatıldığında yürütülebilir dosyalar veya URL'ler gibi harici uygulamaları açan bağlantılar oluşturmanıza olanak tanır. Bu özellik etkileşimi artırır ve kullanıcıları dış kaynaklara bağlamak için uygun bir yol sağlar.
+A: PDF dosyalarındaki uygulama bağlantıları, tıklandığında yürütülebilir dosyalar veya URL'ler gibi harici uygulamaları açan bağlantılar oluşturmanıza olanak tanır. Bu özellik etkileşimi artırır ve kullanıcıları harici kaynaklara bağlamanın kullanışlı bir yolunu sunar.
 
-#### S: Aspose.PDF for .NET, uygulama bağlantılarının oluşturulmasını nasıl kolaylaştırır?
+#### S: Aspose.PDF for .NET uygulama bağlantılarının oluşturulmasını nasıl kolaylaştırır?
 
-C: Aspose.PDF for .NET, kapsamlı bir araç ve API seti sağlayarak uygulama bağlantıları oluşturma sürecini basitleştirir. Bu kılavuzda sağlanan adım adım eğitim, PDF belgelerinize uygulama bağlantılarının nasıl ekleneceğini gösterir.
+A: Aspose.PDF for .NET, kapsamlı bir araç ve API seti sağlayarak uygulama bağlantıları oluşturma sürecini basitleştirir. Bu kılavuzda sağlanan adım adım eğitim, PDF belgelerinize uygulama bağlantılarının nasıl ekleneceğini gösterir.
 
 #### S: Uygulama bağlantılarının görünümünü özelleştirebilir miyim?
 
-C: Kesinlikle! Aspose.PDF for .NET ile uygulama bağlantılarının görünümü üzerinde kontrol sahibi olursunuz. Görsel olarak çekici bir kullanıcı deneyimi sağlamak için renk, stil ve fareyle üzerine gelme efektleri gibi nitelikleri belirleyebilirsiniz.
+A: Kesinlikle! Aspose.PDF for .NET ile uygulama bağlantılarının görünümü üzerinde kontrole sahipsiniz. Görsel olarak çekici bir kullanıcı deneyimi sağlamak için renk, stil ve gezinme efektleri gibi öznitelikleri belirtebilirsiniz.
 
-#### S: Bağlanabileceğim harici uygulama türleriyle ilgili herhangi bir kısıtlama var mı?
+#### S: Bağlantı kurabileceğim harici uygulama türleri konusunda herhangi bir kısıtlama var mı?
 
-C: Aspose.PDF for .NET, yürütülebilir dosyalar, URL'ler ve belgeler de dahil olmak üzere çeşitli harici uygulamalara bağlanmanıza olanak tanır. Ancak yürütülebilir dosyalara bağlanırken kullanıcı güvenliğini ve uyumluluğunu dikkate almak önemlidir.
+A: .NET için Aspose.PDF, yürütülebilir dosyalar, URL'ler ve belgeler dahil olmak üzere çeşitli harici uygulamalara bağlanmanıza olanak tanır. Ancak, yürütülebilir dosyalara bağlanırken kullanıcı güvenliğini ve uyumluluğunu dikkate almak önemlidir.
 
-#### S: Uygulama bağlantılarımın düzgün çalıştığını nasıl doğrulayabilirim?
+#### S: Uygulama bağlantılarımın doğru çalıştığını nasıl doğrulayabilirim?
 
-C: Öğreticideki talimatları izleyerek ve sağlanan örnek kodu kullanarak, güvenle işlevsel uygulama bağlantıları oluşturabilirsiniz. Daha sonra oluşturulan PDF belgesini açıp uygulama bağlantılarına tıklayarak bağlantıları test edebilirsiniz.
+A: Eğitimin talimatlarını takip ederek ve sağlanan örnek kodu kullanarak, işlevsel uygulama bağlantılarını güvenle oluşturabilirsiniz. Daha sonra oluşturulan PDF belgesini açıp uygulama bağlantılarına tıklayarak bağlantıları test edebilirsiniz.
 
-#### S: Tek bir PDF belgesinde birden fazla uygulama bağlantısı oluşturabilir miyim?
+#### S: Tek bir PDF belgesi içerisinde birden fazla uygulama bağlantısı oluşturabilir miyim?
 
- C: Evet, tek bir PDF belgesinde birden fazla uygulama bağlantısı oluşturabilirsiniz.`LinkAnnotation` dipnot. Bu, kullanıcılara belgenin çeşitli bölümlerinden farklı harici uygulamalara erişim sağlamanıza olanak tanır.
+ A: Evet, tek bir PDF belgesi içerisinde birden fazla uygulama bağlantısı oluşturabilirsiniz.`LinkAnnotation` Açıklama. Bu, kullanıcılara belgenin çeşitli bölümlerinden farklı harici uygulamalara erişim sağlamanıza olanak tanır.
 
-#### S: Uygulama bağlantılarını kullanırken herhangi bir güvenlik hususu var mı?
-C: Yürütülebilir dosyalara bağlanırken bağlantılı uygulamaların güvenli ve güvenilir olduğundan emin olmak önemlidir. Ayrıca, kullanıcı izinlerini göz önünde bulundurun ve kullanıcıları harici uygulamaların potansiyel olarak başlatılması konusunda bilgilendirin.
+#### S: Uygulama bağlantılarını kullanırken herhangi bir güvenlik hususuna dikkat ediliyor mu?
+A: Yürütülebilir dosyalara bağlanırken, bağlantılı uygulamaların güvenli ve güvenilir olduğundan emin olmak önemlidir. Ek olarak, kullanıcı izinlerini göz önünde bulundurun ve kullanıcıları harici uygulamaların olası lansmanı hakkında bilgilendirin.
 
 #### S: Uygulama bağlantılarını URL'lere veya web sayfalarına nasıl eklerim?
 
-C: Bu eğitim harici uygulamalara bağlantılar oluşturmaya odaklanırken Aspose.PDF for .NET aynı zamanda URL'lere veya web sayfalarına köprüler oluşturmayı da destekler. PDF belgelerinizde web bağlantıları oluşturmak için sağlanan kodu uyarlayabilirsiniz.
+A: Bu eğitim harici uygulamalara bağlantılar oluşturmaya odaklanırken, Aspose.PDF for .NET ayrıca URL'lere veya web sayfalarına köprüler oluşturmayı da destekler. Sağlanan kodu PDF belgeleriniz içinde web bağlantıları oluşturmak için uyarlayabilirsiniz.
 
 #### S: Bağlantılı harici uygulamalardan bilgi çıkarmak için Aspose.PDF for .NET'i kullanabilir miyim?
 
-C: Evet, Aspose.PDF for .NET, bağlantılı harici uygulamalardan bilgi çıkarma ve değiştirme yetenekleri sağlar. Bağlantılı içerikle ilgili çeşitli görevleri gerçekleştirmek için kitaplığın kapsamlı özelliklerini keşfedebilirsiniz.
+A: Evet, Aspose.PDF for .NET, bağlantılı harici uygulamalardan bilgi çıkarma ve düzenleme yetenekleri sağlar. Bağlantılı içerikle ilgili çeşitli görevleri gerçekleştirmek için kütüphanenin kapsamlı özelliklerini keşfedebilirsiniz.

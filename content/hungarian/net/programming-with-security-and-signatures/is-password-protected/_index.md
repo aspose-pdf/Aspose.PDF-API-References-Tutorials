@@ -19,7 +19,7 @@ using Aspose.Pdf;
 
 ## 2. lépés: Állítsa be a dokumentumok mappa elérési útját
 
- Ebben a lépésben meg kell adnia az ellenőrizni kívánt PDF-fájlt tartalmazó mappa elérési útját. Cserélje ki`"YOUR DOCUMENTS DIRECTORY"` következő kódban a dokumentummappa tényleges elérési útjával:
+ Ebben a lépésben meg kell adnia az ellenőrizni kívánt PDF-fájlt tartalmazó mappa elérési útját. Cserélje ki`"YOUR DOCUMENTS DIRECTORY"` a következő kódban a dokumentummappa tényleges elérési útjával:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -35,7 +35,7 @@ PdfFileInfo fileInfo = new PdfFileInfo(dataDir + @"IsPasswordProtected.pdf");
 
 ## 4. lépés: Ellenőrizze, hogy a PDF védett-e
 
- Ebben a lépésben meghatározzuk, hogy a PDF-dokumentum jelszóval védett-e a`IsEncrypted` módszere a`PdfFileInfo` tárgy. Itt van a megfelelő kód:
+ Ebben a lépésben meghatározzuk, hogy a PDF-dokumentum jelszóval védett-e a`IsEncrypted` módszere a`PdfFileInfo` objektum. Itt van a megfelelő kód:
 
 ```csharp
 bool encrypted = fileInfo.IsEncrypted;

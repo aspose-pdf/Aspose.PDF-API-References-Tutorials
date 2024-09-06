@@ -185,7 +185,7 @@ S: Så här roterar du text med hjälp av stycken:
 
 #### F: Kan jag styra rotationsvinkeln för enskilda textfragment?
 
- A: Ja, du kan styra rotationsvinkeln för individen`TextFragment` objekt genom att ställa in`TextState.Rotation` fast egendom. Positiva värden indikerar rotation medurs, medan negativa värden indikerar rotation moturs.
+ A: Ja, du kan styra rotationsvinkeln för individen`TextFragment` objekt genom att ställa in`TextState.Rotation` egendom. Positiva värden indikerar rotation medurs, medan negativa värden indikerar rotation moturs.
 
 #### F: Kan jag använda olika rotationsvinklar på olika textfragment inom samma stycke?
 

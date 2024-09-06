@@ -1,13 +1,13 @@
 ---
 title: Properti Elemen Struktur Dalam File PDF
 linktitle: Properti Elemen Struktur Dalam File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
+second_title: Referensi API Aspose.PDF untuk .NET
 description: Panduan langkah demi langkah untuk bekerja dengan properti elemen struktural dalam file PDF dengan Aspose.PDF untuk .NET. Buat elemen struktural yang kaya informasi.
 type: docs
 weight: 150
 url: /id/net/programming-with-tagged-pdf/structure-elements-properties/
 ---
-Dalam panduan ini, kami akan menunjukkan kepada Anda cara bekerja dengan properti elemen struktural dalam file PDF menggunakan perpustakaan Aspose.PDF untuk .NET. Aspose.PDF adalah perpustakaan canggih yang memungkinkan Anda membuat, memanipulasi, dan mengonversi file PDF secara terprogram.
+Dalam panduan ini, kami akan menunjukkan kepada Anda cara bekerja dengan properti elemen struktural dalam file PDF menggunakan pustaka Aspose.PDF untuk .NET. Aspose.PDF adalah pustaka canggih yang memungkinkan Anda membuat, memanipulasi, dan mengonversi file PDF secara terprogram.
 
 Mari selami kodenya dan pelajari cara bekerja dengan properti elemen struktur dalam dokumen PDF menggunakan Aspose.PDF untuk .NET.
 
@@ -35,13 +35,13 @@ Tagged.ITaggedContent taggedContent = document.TaggedContent;
 
 ## Langkah 3: Tetapkan judul dan bahasa
 
- Sekarang kita dapat mengatur judul dan bahasa dokumen menggunakan`SetTitle` Dan`SetLanguage` metode dari`ITaggedContent` obyek.
+ Sekarang kita dapat mengatur judul dokumen dan bahasa menggunakan`SetTitle` Dan`SetLanguage` metode dari`ITaggedContent` obyek.
 
 ```csharp
 // Tentukan judul dokumen
 taggedContent.SetTitle("Tagged PDF document");
 
-// Atur bahasa dokumen
+// Mengatur bahasa dokumen
 taggedContent.SetLanguage("fr-FR");
 ```
 
@@ -87,7 +87,7 @@ Document document = new Document();
 // Dapatkan Konten untuk bekerja dengan TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Tetapkan Judul dan Bahasa untuk Documnet
+// Mengatur Judul dan Bahasa untuk Dokumen
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
@@ -111,46 +111,46 @@ document.Save(dataDir + "StructureElementsProperties.pdf");
 
 ## Kesimpulan
 
-Selamat! Anda sekarang mengetahui cara bekerja dengan properti elemen struktural dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda dapat menjelajahi lebih jauh fitur Aspose.PDF untuk membuat dokumen PDF yang dipersonalisasi dengan elemen struktur yang kaya informasi.
+Selamat! Kini Anda tahu cara bekerja dengan properti elemen struktural dalam dokumen PDF menggunakan Aspose.PDF for .NET. Anda dapat menjelajahi lebih jauh fitur-fitur Aspose.PDF untuk membuat dokumen PDF yang dipersonalisasi dengan elemen-elemen struktur yang kaya informasi.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### T: Apa yang dimaksud dengan properti elemen struktural dalam dokumen PDF, dan mengapa itu penting?
+#### T: Apa saja properti elemen struktural dalam dokumen PDF, dan mengapa properti tersebut penting?
 
-J: Properti elemen struktural menentukan karakteristik elemen dalam dokumen PDF yang diberi tag, sehingga meningkatkan aksesibilitas dan pengorganisasian. Properti seperti judul, bahasa, teks alternatif, teks perluasan, dan teks sebenarnya memberikan konteks dan informasi pendukung bagi pengguna.
+A: Properti elemen struktural menentukan karakteristik elemen dalam dokumen PDF yang diberi tag, sehingga meningkatkan aksesibilitas dan pengaturan. Properti seperti judul, bahasa, teks alternatif, teks perluasan, dan teks aktual menyediakan konteks dan informasi bantuan bagi pengguna.
 
 #### T: Bagaimana Aspose.PDF untuk .NET membantu bekerja dengan properti elemen struktural dalam dokumen PDF?
 
-J: Aspose.PDF untuk .NET menyediakan API untuk membuat dan memanipulasi elemen struktur dengan berbagai properti. Anda dapat mengatur properti seperti judul, bahasa, teks alternatif, teks perluasan, dan teks sebenarnya untuk meningkatkan struktur semantik dan aksesibilitas dokumen.
+A: Aspose.PDF untuk .NET menyediakan API untuk membuat dan memanipulasi elemen struktural dengan berbagai properti. Anda dapat mengatur properti seperti judul, bahasa, teks alternatif, teks perluasan, dan teks aktual untuk meningkatkan struktur semantik dan aksesibilitas dokumen.
 
 ####  T: Apa peran dari`SetTitle` and `SetLanguage` methods in working with structural element properties?
 
- J: Itu`SetTitle` Dan`SetLanguage` metode dari`ITaggedContent`objek memungkinkan Anda mengatur judul dan bahasa dokumen, yang memengaruhi properti elemen struktural. Menetapkan judul dan bahasa memastikan konsistensi dan metadata yang bermakna untuk dokumen.
+ Sebuah:`SetTitle` Dan`SetLanguage` metode dari`ITaggedContent`objek memungkinkan Anda untuk mengatur judul dan bahasa dokumen, yang memengaruhi properti elemen struktural. Pengaturan judul dan bahasa memastikan konsistensi dan metadata yang bermakna untuk dokumen.
 
-#### T: Bagaimana cara membuat dan memanipulasi elemen struktural dalam dokumen PDF menggunakan Aspose.PDF untuk .NET?
+#### T: Bagaimana cara membuat dan memanipulasi elemen struktural dalam dokumen PDF menggunakan Aspose.PDF for .NET?
 
- J: Anda dapat membuat dan memanipulasi elemen struktural menggunakan Aspose.PDF untuk .NET dengan mengakses konten dokumen yang diberi tag. Buat elemen struktural, seperti`SectElement` Dan`HeaderElement`, dan mengatur properti seperti teks, judul, bahasa, teks alternatif, teks perluasan, dan teks sebenarnya.
+ A: Anda dapat membuat dan memanipulasi elemen struktural menggunakan Aspose.PDF untuk .NET dengan mengakses konten dokumen yang diberi tag. Buat elemen struktural, seperti`SectElement` Dan`HeaderElement`, dan mengatur properti seperti teks, judul, bahasa, teks alternatif, teks perluasan, dan teks sebenarnya.
 
-#### T: Dapatkah saya menentukan properti berbeda untuk elemen struktur berbeda dalam dokumen PDF?
+#### T: Dapatkah saya menentukan properti yang berbeda untuk elemen struktural yang berbeda dalam dokumen PDF?
 
-J: Ya, Anda dapat menentukan properti berbeda untuk elemen struktur berbeda dalam dokumen PDF. Misalnya, Anda dapat mengatur judul, bahasa, dan properti aksesibilitas unik untuk setiap elemen struktural guna memberikan konteks komprehensif untuk teknologi bantu.
+J: Ya, Anda dapat menentukan properti yang berbeda untuk elemen struktural yang berbeda dalam dokumen PDF. Misalnya, Anda dapat mengatur judul, bahasa, dan properti aksesibilitas yang unik untuk setiap elemen struktural guna menyediakan konteks yang komprehensif untuk teknologi bantuan.
 
-#### Q: Apa yang dimaksud dengan teks alternatif, teks perluasan, dan teks sebenarnya dalam unsur struktur?
+#### T: Apa tujuan teks alternatif, teks perluasan, dan teks aktual dalam elemen struktural?
 
-J: Teks alternatif memberikan alternatif deskriptif untuk gambar atau elemen non-teks, sehingga membantu aksesibilitas. Teks ekspansi menawarkan informasi tambahan ketika konten diperluas. Teks sebenarnya menentukan teks yang setara dengan elemen visual, sehingga meningkatkan ekstraksi teks dan kemampuan pencarian.
+A: Teks alternatif menyediakan alternatif deskriptif untuk gambar atau elemen nonteks, yang membantu aksesibilitas. Teks perluasan menawarkan informasi tambahan saat konten diperluas. Teks aktual menentukan padanan teks dari elemen visual, yang meningkatkan kemampuan ekstraksi dan pencarian teks.
 
-#### T: Bagaimana cara memastikan bahwa properti elemen struktur yang saya atur tercermin dengan benar dalam dokumen PDF akhir?
+#### T: Bagaimana saya dapat memastikan bahwa properti elemen struktural yang saya atur tercermin dengan benar dalam dokumen PDF final?
 
-J: Anda dapat memverifikasi properti elemen struktural dengan memeriksa properti dan metadata dokumen PDF. Selain itu, Anda dapat menggunakan penampil PDF, alat aksesibilitas, atau ekstraksi teks untuk mengonfirmasi bahwa properti kumpulan terwakili secara akurat.
+J: Anda dapat memverifikasi properti elemen struktural dengan memeriksa properti dan metadata dokumen PDF. Selain itu, Anda dapat menggunakan penampil PDF, alat aksesibilitas, atau ekstraksi teks untuk memastikan bahwa properti yang ditetapkan terwakili secara akurat.
 
 #### T: Apakah ada praktik terbaik yang harus diikuti saat bekerja dengan properti elemen struktural dalam dokumen PDF?
 
-J: Saat menangani properti elemen struktur, pertimbangkan kebutuhan beragam pengguna. Berikan judul yang bermakna, bahasa yang akurat, dan teks alternatif deskriptif untuk memastikan aksesibilitas dan pengalaman pengguna yang lebih baik.
+J: Saat bekerja dengan properti elemen struktural, pertimbangkan kebutuhan beragam pengguna. Berikan judul yang bermakna, bahasa yang akurat, dan teks alternatif yang deskriptif untuk memastikan aksesibilitas dan pengalaman pengguna yang lebih baik.
 
-#### T: Dapatkah saya mengubah atau memperbarui properti elemen struktur yang ada dalam dokumen PDF menggunakan Aspose.PDF untuk .NET?
+#### T: Dapatkah saya mengubah atau memperbarui properti elemen struktural yang ada dalam dokumen PDF menggunakan Aspose.PDF untuk .NET?
 
-J: Ya, Anda dapat mengubah atau memperbarui properti elemen struktur yang ada menggunakan Aspose.PDF untuk .NET. Muat dokumen, akses konten yang diberi tag, navigasikan ke elemen struktur yang diinginkan, dan gunakan metode yang tersedia untuk memperbarui propertinya.
+A: Ya, Anda dapat mengubah atau memperbarui properti elemen struktural yang ada menggunakan Aspose.PDF untuk .NET. Muat dokumen, akses konten yang diberi tag, navigasikan ke elemen struktural yang diinginkan, dan gunakan metode yang tersedia untuk memperbarui propertinya.
 
 #### T: Bagaimana cara menggunakan properti elemen struktural untuk membuat dokumen PDF yang kaya informasi?
 
-J: Dengan memanfaatkan properti elemen struktural, Anda dapat membuat dokumen PDF kaya informasi yang menawarkan peningkatan aksesibilitas dan konteks. Gunakan properti seperti judul, bahasa, dan teks alternatif untuk memberikan detail komprehensif tentang struktur dan konten dokumen.
+A: Dengan memanfaatkan properti elemen struktural, Anda dapat membuat dokumen PDF yang kaya informasi yang menawarkan aksesibilitas dan konteks yang lebih baik. Gunakan properti seperti judul, bahasa, dan teks alternatif untuk memberikan detail yang lengkap tentang struktur dan konten dokumen.

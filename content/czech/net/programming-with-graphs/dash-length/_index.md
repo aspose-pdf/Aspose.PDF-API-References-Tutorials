@@ -7,13 +7,13 @@ type: docs
 weight: 70
 url: /cs/net/programming-with-graphs/dash-length/
 ---
-V tomto tutoriálu vás krok za krokem provedeme následujícím zdrojovým kódem C#, jak nastavit délku pomlček pomocí Aspose.PDF pro .NET.
+tomto tutoriálu vás krok za krokem provedeme následujícím zdrojovým kódem C#, jak nastavit délku pomlček pomocí Aspose.PDF pro .NET.
 
 Než začnete, ujistěte se, že jste nainstalovali knihovnu Aspose.PDF a nastavili své vývojové prostředí. Také mít základní znalosti programování v C#.
 
 ## Krok 1: Nastavení adresáře dokumentů
 
-poskytnutém zdrojovém kódu musíte určit adresář, kam chcete uložit výsledný soubor PDF. Změňte proměnnou "dataDir" na požadovaný adresář.
+V poskytnutém zdrojovém kódu musíte určit adresář, kam chcete uložit výsledný soubor PDF. Změňte proměnnou "dataDir" na požadovaný adresář.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -97,7 +97,7 @@ Console.WriteLine("\nLength dashed successfully in black and white.\nFile saved 
 
 ## Závěr
 
-V tomto tutoriálu jsme vysvětlili, jak nastavit délku pomlček pomocí Aspose.PDF pro .NET. Nyní můžete tyto znalosti využít k vytváření čar s vlastními čárkovanými vzory v souborech PDF.
+tomto tutoriálu jsme vysvětlili, jak nastavit délku pomlček pomocí Aspose.PDF pro .NET. Nyní můžete tyto znalosti využít k vytváření čar s vlastními čárkovanými vzory v souborech PDF.
 
 ## Nejčastější dotazy
 
@@ -119,7 +119,7 @@ Odpověď: Upravte proměnnou "dataDir" v poskytnutém zdrojovém kódu tak, aby
 
 #### Otázka: Mohu přizpůsobit barvu čáry?
 
- Odpověď: Ano, můžete upravit barvu čáry nastavením`Color` vlastnictvím`GraphInfo` objekt spojený s linií.
+ Odpověď: Ano, můžete upravit barvu čáry nastavením`Color` majetek z`GraphInfo` objekt spojený s linií.
 
 #### Otázka: Jak uložím dokument PDF po nastavení délky pomlčky?
 

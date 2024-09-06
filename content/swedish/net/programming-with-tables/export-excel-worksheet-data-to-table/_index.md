@@ -7,7 +7,7 @@ type: docs
 weight: 70
 url: /sv/net/programming-with-tables/export-excel-worksheet-data-to-table/
 ---
-I den här handledningen kommer vi att lära oss hur du exporterar data från ett Excel-kalkylblad och skapar en tabell i ett PDF-dokument med Aspose.PDF för .NET-biblioteket. Vi kommer att gå igenom källkoden steg för steg och förklara varje avsnitt i detalj. I slutet av denna handledning kommer du att kunna generera PDF-filer med tabeller som innehåller data från Excel-kalkylblad. Låt oss börja!
+I den här handledningen kommer vi att lära oss hur du exporterar data från ett Excel-kalkylblad och skapar en tabell i ett PDF-dokument med Aspose.PDF för .NET-biblioteket. Vi kommer att gå igenom källkoden steg för steg och förklara varje avsnitt i detalj. I slutet av denna handledning kommer du att kunna generera PDF-filer med tabeller som innehåller data från Excel-kalkylblad. Låt oss komma igång!
 
 ## Krav
 Innan vi börjar, se till att du har följande:

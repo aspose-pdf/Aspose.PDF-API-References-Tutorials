@@ -143,7 +143,7 @@ S: Att använda textfragment och stycken tillsammans ger större flexibilitet vi
 
 #### F: Kan jag använda olika rotationsvinklar på olika textfragment inom samma stycke?
 
- A: Ja, du kan använda olika rotationsvinklar på olika`TextFragment` föremål inom samma stycke. Varje textfragment kan ha sin egen rotationsvinkel specificerad med hjälp av`TextState.Rotation` fast egendom.
+ A: Ja, du kan använda olika rotationsvinklar på olika`TextFragment` föremål inom samma stycke. Varje textfragment kan ha sin egen rotationsvinkel specificerad med hjälp av`TextState.Rotation` egendom.
 
 #### F: Är det möjligt att uppnå komplexa textrotationseffekter med den här metoden?
 
@@ -161,4 +161,4 @@ S: Stegen inkluderar:
 
 #### F: Kan jag använda rotation på hela stycken?
 
- S: Ja, du kan använda rotation på hela stycken genom att ställa in`TextState.Rotation` egendom av själva paragrafen. Detta kommer att rotera alla textfragment i det stycket.
+ S: Ja, du kan använda rotation på hela stycken genom att ställa in`TextState.Rotation` styckets egendom. Detta kommer att rotera alla textfragment i det stycket.

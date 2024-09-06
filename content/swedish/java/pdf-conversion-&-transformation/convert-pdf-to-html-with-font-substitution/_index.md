@@ -36,7 +36,7 @@ Innan vi börjar, se till att du har följande förutsättningar på plats:
 2. Skapa ett nytt Java-projekt.
 3. Lägg till Aspose.PDF för Java-biblioteket till ditt projekts beroenden.
 
-## Importera Aspose.PDF för Java
+## Importerar Aspose.PDF för Java
 
 ```java
 import com.aspose.pdf.Document;

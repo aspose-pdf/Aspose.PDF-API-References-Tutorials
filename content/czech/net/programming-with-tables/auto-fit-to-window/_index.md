@@ -1,6 +1,6 @@
 ---
-title: Automatické přizpůsobení oknu
-linktitle: Automatické přizpůsobení oknu
+title: Automaticky Přizpůsobit Oknu
+linktitle: Automaticky Přizpůsobit Oknu
 second_title: Aspose.PDF pro .NET API Reference
 description: Podrobný průvodce používáním Aspose.PDF pro .NET a dosažením automatického přizpůsobení oknu při generování PDF.
 type: docs
@@ -143,7 +143,7 @@ doc.Save(dataDir);
 
 ## Závěr
 
-tomto tutoriálu jsme se naučili používat Aspose.PDF pro .NET ke generování souboru PDF s funkcí Auto Fit To Window. Tato funkce je mimořádně užitečná, když chcete, aby se váš dokument PDF automaticky přizpůsobil velikosti zobrazovacího okna. Aspose.PDF for .NET nabízí mnoho dalších výkonných funkcí pro generování a manipulaci se soubory PDF. Doporučuji vám tuto knihovnu dále prozkoumat, abyste objevili všechny její možnosti.
+tomto tutoriálu jsme se naučili používat Aspose.PDF pro .NET ke generování souboru PDF pomocí funkce Auto Fit To Window. Tato funkce je mimořádně užitečná, když chcete, aby se váš dokument PDF automaticky přizpůsobil velikosti zobrazovacího okna. Aspose.PDF for .NET nabízí mnoho dalších výkonných funkcí pro generování a manipulaci se soubory PDF. Doporučuji vám tuto knihovnu dále prozkoumat, abyste objevili všechny její možnosti.
 
 ### FAQ
 

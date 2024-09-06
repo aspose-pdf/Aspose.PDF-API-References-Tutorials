@@ -1,53 +1,53 @@
 ---
-title: Erstellen Sie einen Strukturelementbaum in PDF mit Java
-linktitle: Erstellen Sie einen Strukturelementbaum in PDF mit Java
+title: Erstellen eines Strukturelementbaums in PDF mit Java
+linktitle: Erstellen eines Strukturelementbaums in PDF mit Java
 second_title: Aspose.PDF Java PDF-Verarbeitungs-API
-description: Erfahren Sie, wie Sie mit Aspose.PDF ein barrierefreies PDF mit einem Strukturelementbaum in Java erstellen und so die Inklusivität für alle Benutzer gewährleisten.
+description: Erfahren Sie, wie Sie mit Aspose.PDF eine barrierefreie PDF-Datei mit einem Strukturelementbaum in Java erstellen und so die Inklusivität für alle Benutzer gewährleisten.
 type: docs
 weight: 11
 url: /de/java/pdf-tags-and-structure/create-structure-element-tree-in-pdf-using-java/
 ---
-In diesem Tutorial führen wir Sie durch den Prozess der Erstellung eines Strukturelementbaums in einem PDF-Dokument mit Aspose.PDF für Java. Strukturelementbäume sind wichtig, um PDF-Dokumente zugänglich und gut strukturiert zu machen, insbesondere für sehbehinderte Benutzer, die auf Bildschirmleseprogramme angewiesen sind. Wir stellen Ihnen Schritt-für-Schritt-Anleitungen und Java-Quellcode zur Verfügung, um dies zu erreichen.
+In diesem Tutorial führen wir Sie durch den Prozess der Erstellung eines Strukturelementbaums in einem PDF-Dokument mit Aspose.PDF für Java. Strukturelementbäume sind wichtig, um PDF-Dokumente zugänglich und gut strukturiert zu machen, insbesondere für sehbehinderte Benutzer, die auf Bildschirmleseprogramme angewiesen sind. Wir stellen Ihnen dazu Schritt-für-Schritt-Anleitungen und Java-Quellcode zur Verfügung.
 
 ## Einführung
 
-PDF-Dokumente enthalten häufig komplexe Inhalte, die strukturiert organisiert und präsentiert werden müssen. Dies ist von entscheidender Bedeutung für die Barrierefreiheit und dafür, dass alle Benutzer, auch solche mit Sehbehinderungen, den Inhalt des Dokuments verstehen können. In diesem Tutorial erfahren Sie, wie Sie mit Aspose.PDF für Java einen Strukturelementbaum in einem PDF-Dokument erstellen.
+PDF-Dokumente enthalten oft komplexe Inhalte, die strukturiert organisiert und präsentiert werden müssen. Dies ist entscheidend für die Zugänglichkeit und stellt sicher, dass alle Benutzer, auch sehbehinderte, den Inhalt des Dokuments verstehen können. In diesem Tutorial erfahren Sie, wie Sie mit Aspose.PDF für Java einen Strukturelementbaum in einem PDF-Dokument erstellen.
 
 ## Was ist ein Strukturelementbaum?
 
-Ein Strukturelementbaum, oft auch als „Tagged PDF“ bezeichnet, ist eine hierarchische Struktur innerhalb eines PDF-Dokuments, die die logische Struktur seines Inhalts darstellt. Diese Struktur ermöglicht es Screenreadern und anderen unterstützenden Technologien, den Inhalt des Dokuments effektiv zu interpretieren und den Benutzern zu vermitteln.
+Ein Strukturelementbaum, oft auch als „Tagged PDF“ bezeichnet, ist eine hierarchische Struktur innerhalb eines PDF-Dokuments, die die logische Struktur seines Inhalts darstellt. Diese Struktur ermöglicht es Bildschirmleseprogrammen und anderen unterstützenden Technologien, den Inhalt des Dokuments effektiv zu interpretieren und an Benutzer zu übermitteln.
 
 ## Schritt 1: Einrichten Ihrer Entwicklungsumgebung
 
- Bevor wir uns mit dem Code befassen, stellen Sie sicher, dass Sie die Bibliothek Aspose.PDF für Java installiert haben. Sie können es herunterladen unter[Hier](https://releases.aspose.com/pdf/java/).
+ Bevor wir uns in den Code vertiefen, stellen Sie sicher, dass Sie die Aspose.PDF für Java-Bibliothek installiert haben. Sie können sie hier herunterladen:[Hier](https://releases.aspose.com/pdf/java/).
 
-Erstellen Sie als Nächstes ein Java-Projekt und fügen Sie die Aspose.PDF for Java-Bibliothek zum Klassenpfad Ihres Projekts hinzu.
+Erstellen Sie als Nächstes ein Java-Projekt und fügen Sie die Bibliothek Aspose.PDF für Java zum Klassenpfad Ihres Projekts hinzu.
 
 ## Schritt 2: Erstellen eines PDF-Dokuments
 
 Beginnen wir mit der Erstellung eines neuen PDF-Dokuments:
 
 ```java
-// Initialisieren Sie ein Document-Objekt
+// Initialisieren eines Dokumentobjekts
 com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document();
 ```
 
 ## Schritt 3: Inhalte zum PDF hinzufügen
 
-Jetzt können Sie Inhalte zum PDF-Dokument hinzufügen. Beispiel: Text hinzufügen:
+Jetzt können Sie dem PDF-Dokument Inhalt hinzufügen. Zum Beispiel Text hinzufügen:
 
 ```java
-// Erstellen Sie eine Seite im PDF-Dokument
+// Erstellen einer Seite im PDF-Dokument
 com.aspose.pdf.Page page = pdfDocument.getPages().add();
-// Fügen Sie der Seite Text hinzu
+// Text zur Seite hinzufügen
 page.getParagraphs().add(new com.aspose.pdf.TextFragment("Hello, World!"));
 ```
 
-Je nach Ihren Anforderungen können Sie verschiedene Arten von Inhalten hinzufügen, z. B. Bilder, Tabellen und mehr.
+Sie können je nach Bedarf verschiedene Arten von Inhalten hinzufügen, beispielsweise Bilder, Tabellen und mehr.
 
 ## Schritt 4: Strukturelemente hinzufügen
 
- Um das Dokument zugänglich zu machen, müssen wir die Strukturelemente definieren. Du kannst den ... benutzen`com.aspose.pdf.Tagged.TagArtifact` Klasse zum Hinzufügen von Strukturelementen zu Ihrem Inhalt:
+ Um das Dokument barrierefrei zu gestalten, müssen wir die Strukturelemente definieren. Sie können das`com.aspose.pdf.Tagged.TagArtifact` Klasse, um Ihrem Inhalt Strukturelemente hinzuzufügen:
 
 ```java
 // Erstellen Sie ein TagArtifact-Objekt für den Text
@@ -59,41 +59,41 @@ tagArtifact.setParagraph(page.getParagraphs().get_Item(1));
 tagArtifact.setTag(page.getParagraphs().get_Item(1));
 ```
 
- Dieses Code-Snippet verknüpft die`P` Strukturtyp mit dem Text.
+ Dieser Codeausschnitt verknüpft die`P` Strukturtyp mit dem Text.
 
 ## Schritt 5: Speichern des PDF-Dokuments
 
 Speichern Sie abschließend das PDF-Dokument:
 
 ```java
-// Speichern Sie das PDF-Dokument
+// Speichern des PDF-Dokuments
 pdfDocument.save("output.pdf");
 ```
 
 ## Abschluss
 
-In diesem Tutorial haben wir gezeigt, wie Sie mit Aspose.PDF für Java einen Strukturelementbaum in einem PDF-Dokument erstellen. Dieser strukturierte Ansatz gewährleistet die Zugänglichkeit und verbessert das Benutzererlebnis für alle Leser, auch für Menschen mit Behinderungen.
+In diesem Tutorial haben wir gezeigt, wie man mit Aspose.PDF für Java einen Strukturelementbaum in einem PDF-Dokument erstellt. Dieser strukturierte Ansatz gewährleistet Zugänglichkeit und verbessert das Benutzererlebnis für alle Leser, auch für Menschen mit Behinderungen.
 
-Indem Sie diese Schritte befolgen und Strukturelemente in Ihre PDF-Dokumente integrieren, können Sie Ihre Inhalte zugänglicher machen und den Barrierefreiheitsstandards entsprechen. Dies ist ein wichtiger Schritt, um sicherzustellen, dass Ihre Dokumente umfassend und benutzerfreundlich sind.
+Indem Sie diese Schritte befolgen und Strukturelemente in Ihre PDF-Dokumente integrieren, können Sie Ihre Inhalte zugänglicher machen und sie den Zugänglichkeitsstandards anpassen. Dies ist ein wichtiger Schritt, um sicherzustellen, dass Ihre Dokumente inklusiv und benutzerfreundlich sind.
 
-## FAQs
+## Häufig gestellte Fragen
 
-### Welchen Zweck hat ein Strukturelementbaum in einem PDF-Dokument?
+### Was ist der Zweck eines Strukturelementbaums in einem PDF-Dokument?
 
-Ein Strukturelementbaum stellt die logische Struktur des Inhalts innerhalb eines PDF-Dokuments dar und ermöglicht die Zugänglichkeit und effektive Kommunikation des Inhalts für Benutzer, insbesondere für Benutzer mit Sehbehinderungen.
+Ein Strukturelementbaum stellt die logische Struktur des Inhalts in einem PDF-Dokument dar und ermöglicht die Zugänglichkeit und effektive Kommunikation des Inhalts für Benutzer, insbesondere für Benutzer mit Sehbehinderungen.
 
-### Wie kann ich Bilder zu einem getaggten PDF-Dokument hinzufügen?
+### Wie kann ich einem getaggten PDF-Dokument Bilder hinzufügen?
 
- Du kannst den ... benutzen`com.aspose.pdf.Image` Klasse zum Hinzufügen von Bildern zu einem getaggten PDF-Dokument. Stellen Sie sicher, dass Sie den Bildern zur Barrierefreiheit geeignete Strukturelemente zuordnen.
+ Sie können die`com.aspose.pdf.Image` Klasse zum Hinzufügen von Bildern zu einem getaggten PDF-Dokument. Stellen Sie sicher, dass Sie den Bildern für die Barrierefreiheit die entsprechenden Strukturelemente zuordnen.
 
 ### Sind getaggte PDF-Dokumente eine Voraussetzung für die Einhaltung der Barrierefreiheit?
 
-Ja, mit Tags versehene PDF-Dokumente sind für die Einhaltung der Barrierefreiheit von entscheidender Bedeutung, da sie eine strukturierte Darstellung von Inhalten bieten, die von unterstützenden Technologien interpretiert werden können.
+Ja, getaggte PDF-Dokumente sind für die Einhaltung der Barrierefreiheit von entscheidender Bedeutung, da sie eine strukturierte Darstellung von Inhalten bieten, die von unterstützenden Technologien interpretiert werden können.
 
 ### Kann ich den Tagging-Prozess für vorhandene PDF-Dokumente automatisieren?
 
 Ja, Aspose.PDF für Java bietet Funktionen zum programmgesteuerten Markieren vorhandener PDF-Dokumente, um sie zugänglich zu machen.
 
-### Was sind einige Best Practices für die Erstellung barrierefreier PDF-Dokumente?
+### Was sind die Best Practices zum Erstellen barrierefreier PDF-Dokumente?
 
-Zu den Best Practices gehören das Hinzufügen von alternativem Text zu Bildern, die Verwendung der richtigen Überschriftenstruktur, die Bereitstellung beschreibender Links und die Sicherstellung einer logischen Lesereihenfolge für Inhalte.
+Zu den bewährten Vorgehensweisen gehören das Hinzufügen von Alternativtext zu Bildern, die Verwendung einer geeigneten Überschriftenstruktur, das Bereitstellen beschreibender Links und das Sicherstellen einer logischen Lesereihenfolge für den Inhalt.

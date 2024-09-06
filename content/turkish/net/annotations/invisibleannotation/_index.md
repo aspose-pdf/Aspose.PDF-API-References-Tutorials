@@ -1,111 +1,118 @@
 ---
 title: PDF Dosyasında Görünmez Açıklama
 linktitle: PDF Dosyasında Görünmez Açıklama
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile C# kaynak kodunu kullanarak PDF dosyasında açıklamaların nasıl görünmez hale getirileceğini öğrenin. Adım adım rehber.
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak bir PDF dosyasına görünmez bir açıklama eklemeyi öğrenin. Bu güçlü özelliği ustalıkla kullanmak için adım adım kılavuzumuzu izleyin.
 type: docs
 weight: 100
 url: /tr/net/annotations/invisibleannotation/
 ---
-PDF dosyasındaki ek açıklamalar, gerçek içeriği değiştirmeden bir belgeye ekstra bilgi veya notlar eklemenizi sağlayan güçlü bir özelliktir. Metni vurgulamak, belgenin belirli alanlarına dikkat çekmek veya yorum veya geri bildirim eklemek için kullanılabilirler.
+## giriiş
 
-PDF belgelerinde kullanabileceğiniz birçok farklı türde ek açıklama vardır:
+PDF dosyalarınıza görünmez ama etkili notlar eklemek istediniz mi? İster yazdırma amaçlı notlar eklemek isteyin, ister belgelerinizde gizli bir mesaj bırakmak isteyin, görünmez notlar inanılmaz derecede faydalı olabilir. Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF dosyasında görünmez bir not oluşturma sürecinde size rehberlik edeceğiz. Bu güçlü .NET kitaplığı, PDF belgelerini kolaylıkla düzenlemenizi sağlar ve bu kılavuzun sonunda, PDF dosyalarınıza görünmez notlar ekleme sanatında bir profesyonel gibi ustalaşmış olacaksınız!
 
-- Metin Açıklamaları
-- Bağlantı Açıklamaları
-- Damga Açıklamaları
-- Ses Açıklamaları
-- Dosya Eki Ek Açıklamaları
-- ve daha fazlası
+## Ön koşullar
 
-## Adım 1: Aspose.PDF for .NET Kullanarak PDF Belgesinde Görünmez Açıklama Oluşturma
+Adımlara geçmeden önce ihtiyacınız olan her şeye sahip olduğunuzdan emin olalım:
 
- Aspose.PDF for .NET kullanarak bir PDF belgesinde görünmez bir açıklama oluşturmak için öncelikle bir`FreeTextAnnotation` nesneyi seçin ve ek açıklamanın konumunu ve boyutunu belirtin.
+- .NET için Aspose.PDF: Aspose.PDF kütüphanesinin yüklü olduğundan emin olun. Buradan indirebilirsiniz[Burada](https://releases.aspose.com/pdf/net/).
+- .NET Geliştirme Ortamı: Visual Studio veya tercih ettiğiniz herhangi bir .NET geliştirme ortamının yüklü olması gerekir.
+- Temel C# Bilgisi: C# sözdizimi ve programlamanın anlaşılması esastır.
+-  Geçerli Bir Lisans veya Ücretsiz Deneme: Lisansınız yoksa, geçici bir lisans alabilirsiniz.[Burada](https://purchase.aspose.com/temporary-license/) veya ücretsiz deneme sürümünü kullanın.
+
+## Paketleri İçe Aktar
+
+Başlamak için gerekli ad alanlarını içe aktarmanız gerekir. Bu ad alanları, .NET için Aspose.PDF'de PDF belgeleriyle çalışmak için gereken sınıflara ve yöntemlere erişmenizi sağlayacaktır.
 
 ```csharp
-// Belgeler dizininin yolu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
+using System;
+```
 
+Artık ön koşulları tamamladığımıza göre, PDF belgesine görünmez bir açıklama ekleme sürecini yönetilebilir adımlara bölelim.
+
+## Adım 1: Belge Dizinini Ayarlayın
+
+Öncelikle, giriş PDF dosyanızın bulunduğu belge dizininize giden yolu belirtmeniz gerekir. Bu yol, PDF belgesini programa yüklemek için kullanılacaktır.
+
+```csharp
+// Belgeler dizinine giden yol.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+ 
+ The`dataDir`değişkeni PDF dosyalarınızın saklandığı dizine giden yolu tutar. Değiştirdiğinizden emin olun`"YOUR DOCUMENT DIRECTORY"` makinenizdeki gerçek yol ile.
+
+## Adım 2: PDF Belgesini Yükleyin
+
+Sonra, PDF belgesini programımıza yükleyeceğiz. Bu belge, görünmez açıklamayı ekleyeceğimiz belgedir.
+
+```csharp
 // Belgeyi aç
 Document doc = new Document(dataDir + "input.pdf");
-
-FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(50, 600, 250, 650), new DefaultAppearance("Helvetica", 16, System.Drawing.Color.Red));
 ```
+ 
+ Burada şunu kullanıyoruz:`Document` adlı PDF dosyasını açmak için Aspose.PDF kitaplığından sınıf`input.pdf`Bu dosyanın önceki adımda belirttiğiniz dizinde bulunduğundan emin olun.
 
- Yukarıdaki kodda bir tane oluşturuyoruz.`FreeTextAnnotation`nesneyi seçin ve PDF belgesinin 2. sayfasındaki açıklamanın konumunu belirtin. Ek açıklamada görüntülenecek metnin yazı tipini, boyutunu ve rengini de belirtiyoruz.
+## Adım 3: Görünmez Açıklamayı Oluşturun
 
-## Adım 2: Görünmez Açıklamaya Özellikler Ekleme
-
-Daha sonra ek açıklamaya kenarlık rengi, arka plan rengi veya opaklık gibi bazı özellikler ekleyebiliriz.
+ Şimdi heyecan verici kısma geliyoruz: görünmez açıklamayı oluşturmak.`FreeTextAnnotation` PDF belgesinin ilk sayfasına serbest metin açıklaması eklemek için kullanılan sınıf.
 
 ```csharp
-annotation.Characteristics.Border = System.Drawing.Color.Red;
-```
-
-Yukarıdaki kodda ek açıklamanın kenar rengini kırmızı olarak ayarladık.
-
-## 3. Adım: Ek Açıklama Bayraklarını Ayarlama
-
-Açıklamayı oluşturup özelliklerini ayarladıktan sonra açıklama bayraklarını belirleyebiliriz. Bu öğreticide, ek açıklamanın yazdırılabilir olmasını ancak görüntülenememesini istiyoruz.
-
-```csharp
-annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
-doc.Pages[1].Annotations.Add(annotation);
-```
-
-## Adım 4: Değiştirilen PDF Belgesini Kaydetme
-
-Son olarak, değiştirilen PDF belgesini yeni görünmez ek açıklamayla kaydedebiliriz.
-
-```csharp
-dataDir = dataDir + "InvisibleAnnotation_out.pdf";
-doc.Save(dataDir);
-```
-
-## Aspose.PDF for .NET kullanarak Görünmez Açıklamaların Nasıl Yapılacağına İlişkin Örnek Kaynak Kodu
-
-```csharp
-// Belgeler dizininin yolu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Belgeyi aç
-Document doc = new Document(dataDir + "input.pdf");
-
 FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(50, 600, 250, 650), new DefaultAppearance("Helvetica", 16, System.Drawing.Color.Red));
 annotation.Contents = "ABCDEFG";
 annotation.Characteristics.Border = System.Drawing.Color.Red;
 annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
 doc.Pages[1].Annotations.Add(annotation);
-
-dataDir = dataDir + "InvisibleAnnotation_out.pdf";
-// Çıkış dosyasını kaydet
-doc.Save(dataDir);
-// ExEnd:Görünmez Ek Açıklama
-Console.WriteLine("\nAnnotation nvisible successfully.\nFile saved at " + dataDir);
 ```
+
+-  Yeni bir şey yaratıyoruz`FreeTextAnnotation` ve sayfayı belirtin (`doc.Pages[1]` ) eklenmesi gereken yer.`Rectangle` sınıf, açıklamanın sayfada yerleştirileceği alanı tanımlar.
+-  The`DefaultAppearance` sınıf, açıklama için yazı tipini, yazı tipi boyutunu ve rengini ayarlamak için kullanılır. Bu örnekte, "Helvetica" yazı tipini, 16 boyutunu ve kırmızı rengi seçtik.
+-  The`Contents`mülk, açıklamanın metnini tutar, burada ayarlanmıştır`"ABCDEFG"`.
+-  The`Characteristics.Border` özellik, açıklamanın kenarlık rengini tanımlar, yine kırmızı olarak ayarlanır.
+-  The`Flags` mülk şunları içerir`AnnotationFlags.Print` belge yazdırıldığında açıklamanın görünür olmasını sağlamak ve`AnnotationFlags.NoView` normal görüntüleme sırasında görünmez hale getirmek için.
+-  Son olarak, PDF belgesinin ilk sayfasına açıklamayı şu şekilde ekliyoruz:`Annotations.Add` Yöntem.
+
+## Adım 4: Güncellenen PDF Belgesini Kaydedin
+
+Açıklama başarıyla eklendikten sonraki adım güncellenen PDF belgesini kaydetmektir.
+
+```csharp
+dataDir = dataDir + "InvisibleAnnotation_out.pdf";
+// Çıktı dosyasını kaydet
+doc.Save(dataDir);
+```
+
+ Biz değiştiriyoruz`dataDir` çıktı dosya adını belirtmek için değişken,`"InvisibleAnnotation_out.pdf"` .`Save` yöntem daha sonra güncellenen PDF belgesini görünmez açıklama ile belirtilen dizine kaydeder.
+
+## Adım 5: İşlemin Tamamlandığını Onaylayın
+
+Son olarak, sürecin başarıyla tamamlandığının onayını sağlamak her zaman iyi bir uygulamadır. Bu amaçla basit bir konsol çıktısı ekleyeceğiz.
+
+```csharp
+Console.WriteLine("\nAnnotation invisible successfully.\nFile saved at " + dataDir);
+```
+
+Bu satır konsola bir onay mesajı çıktısı verir, görünmez açıklamanın başarıyla eklendiğini bildirir ve kaydedilen dosyanın konumunu gösterir.
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesinde görünmez bir açıklamanın nasıl oluşturulacağını öğrendik. Görünmez ek açıklamalar, bir belgeye okuyucuya gösterilmeden ek bilgi veya notlar eklemek istediğinizde kullanışlı bir özelliktir. Geliştiriciler, adım adım kılavuzu izleyerek ve sağlanan C# kaynak kodunu kullanarak, PDF belgelerinde görünmez ek açıklamaları kolayca oluşturabilir ve özelleştirebilir. Aspose.PDF for .NET, açıklamalarla çalışmak için kapsamlı bir araç seti sağlayarak PDF dosyalarınızın etkileşimini ve kullanılabilirliğini geliştirmenize olanak tanır.
+Ve işte oldu! Aspose.PDF for .NET kullanarak bir PDF dosyasına görünmez bir açıklama eklemeyi başardınız. Bu eğitim, ortamınızı kurmaktan son belgeyi kaydetmeye kadar her adımda size yol gösterdi. Gizli mesajlar veya yazdırma amaçlı açıklamalar ekliyor olun, görünmez açıklamalar Aspose.PDF for .NET kullanarak kolayca uygulayabileceğiniz güçlü bir özelliktir. İyi kodlamalar!
 
-### SSS'ler
+## SSS
 
-#### S: PDF belgesindeki görünmez ek açıklama nedir?
+### Açıklamayı tekrar görünür hale getirebilir miyim?  
+ Evet, kaldırarak`AnnotationFlags.NoView` bayrağını kullanarak, açıklamayı normal görüntüleme sırasında görünür hale getirebilirsiniz.
 
-C: PDF belgesindeki görünmez ek açıklama, sayfada görünmeyen ancak ek bilgi veya notlar içeren ek açıklamadır. Okuyucuya göstermeden yorum veya geri bildirim eklemenizi sağlar.
+### Aspose.PDF kullanarak başka hangi tür açıklamaları ekleyebilirim?  
+Aspose.PDF, metin, bağlantı, vurgulama ve damga açıklamaları da dahil olmak üzere çeşitli açıklamaları destekler.
 
-#### S: Görünmez bir ek açıklamaya ne tür özellikler eklenebilir?
+### Eklenen açıklamayı daha sonra değiştirmek mümkün müdür?  
+Evet, bir açıklamanın özelliklerini, açıklama belgeye eklendikten sonra bile değiştirebilirsiniz.
 
-C: Görünmez bir açıklamaya, görüntülenecek metnin kenarlık rengi, arka plan rengi, opaklık, yazı tipi türü, boyutu ve rengi gibi çeşitli özellikler eklenebilir.
+### Aynı belgeye birden fazla açıklama nasıl ekleyebilirim?  
+Eklemek istediğiniz her açıklama için açıklama oluşturma sürecini tekrarlayın. Her açıklama aynı veya farklı sayfalara eklenebilir.
 
-#### S: Görünmez bir açıklama için farklı açıklama bayrakları ayarlayabilir miyim?
-
-C: Evet, gereksinimlerinize bağlı olarak görünmez bir açıklama için farklı açıklama bayrakları ayarlayabilirsiniz. Örneğin, ek açıklamayı yazdırılabilir ancak görüntülenemez hale getirebilirsiniz.
-
-#### S: PDF belgesinin belirli bir sayfasına nasıl görünmez bir açıklama ekleyebilirim?
-
- C: PDF belgesinin belirli bir sayfasına görünmez bir açıklama eklemek için bir`FreeTextAnnotation` nesneyi seçin ve o sayfadaki ek açıklamanın konumunu ve boyutunu belirtin.
-
-#### S: Bir PDF dosyasındaki mevcut görünmez ek açıklamanın özelliklerini değiştirebilir miyim?
-
-C: Evet, Aspose.PDF for .NET'i kullanarak bir PDF dosyasındaki mevcut görünmez açıklamanın özelliklerini değiştirebilirsiniz. Ek açıklamanın yazı tipi türünü, boyutunu, rengini, kenarlık rengini, arka plan rengini, opaklığını ve diğer özelliklerini değiştirebilirsiniz.
+### PDF belgemin birden fazla sayfası varsa ne olur?  
+ Açıklamayı oluştururken sayfa numarasını değiştirerek belirtebilirsiniz.`doc.Pages[1]` istenilen sayfa indeksine.

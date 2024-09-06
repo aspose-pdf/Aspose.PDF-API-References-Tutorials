@@ -1,28 +1,28 @@
 ---
-title: Zoek en ontvang alles
-linktitle: Zoek en ontvang alles
+title: Zoeken en tekst ophalen Alles
+linktitle: Zoeken en tekst ophalen Alles
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u tekst kunt zoeken en ophalen op alle pagina's van een PDF-document met Aspose.PDF voor .NET.
+description: Leer hoe u tekst op alle pagina's van een PDF-document kunt zoeken en ophalen met Aspose.PDF voor .NET.
 type: docs
 weight: 420
 url: /nl/net/programming-with-text/search-and-get-text-all/
 ---
-In deze zelfstudie wordt uitgelegd hoe u Aspose.PDF voor .NET kunt gebruiken om tekst op alle pagina's van een PDF-document te zoeken en op te halen. De meegeleverde C#-broncode demonstreert het proces stap voor stap.
+Deze tutorial legt uit hoe u Aspose.PDF voor .NET kunt gebruiken om te zoeken en tekst te verkrijgen van alle pagina's van een PDF-document. De meegeleverde C#-broncode demonstreert het proces stap voor stap.
 
 ## Vereisten
 
-Voordat u doorgaat met de zelfstudie, moet u ervoor zorgen dat u over het volgende beschikt:
+Voordat u verdergaat met de tutorial, moet u ervoor zorgen dat u het volgende hebt:
 
 - Basiskennis van de programmeertaal C#.
-- Aspose.PDF voor .NET-bibliotheek geïnstalleerd. U kunt het verkrijgen via de Aspose-website of NuGet gebruiken om het in uw project te installeren.
+- Aspose.PDF voor .NET-bibliotheek geïnstalleerd. U kunt het verkrijgen van de Aspose-website of NuGet gebruiken om het in uw project te installeren.
 
-## Stap 1: Zet het project op
+## Stap 1: Het project opzetten
 
-Begin met het maken van een nieuw C#-project in de geïntegreerde ontwikkelomgeving (IDE) van uw voorkeur en voeg een verwijzing toe naar de Aspose.PDF voor .NET-bibliotheek.
+Begin met het maken van een nieuw C#-project in uw favoriete geïntegreerde ontwikkelomgeving (IDE) en voeg een verwijzing toe naar de Aspose.PDF voor .NET-bibliotheek.
 
 ## Stap 2: Importeer de benodigde naamruimten
 
-Voeg het volgende toe met behulp van richtlijnen aan het begin van uw C#-bestand om de vereiste naamruimten te importeren:
+Voeg de volgende using-richtlijnen toe aan het begin van uw C#-bestand om de vereiste naamruimten te importeren:
 
 ```csharp
 using Aspose.Pdf;
@@ -31,24 +31,24 @@ using Aspose.Pdf.Text;
 
 ## Stap 3: Laad het PDF-document
 
- Stel het pad in naar uw PDF-documentmap en laad het document met behulp van de`Document` klas:
+ Stel het pad naar uw PDF-documentmap in en laad het document met behulp van de`Document` klas:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 ```
 
- Zorg ervoor dat u vervangt`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad naar uw documentmap.
+ Zorg ervoor dat u vervangt`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad naar uw documentenmap.
 
 ## Stap 4: Tekst zoeken en extraheren
 
- Maak een`TextFragmentAbsorber` object om alle exemplaren van de ingevoerde zoekterm te vinden:
+ Maak een`TextFragmentAbsorber` object om alle instanties van de ingevoerde zoekterm te vinden:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 ```
 
- Vervangen`"text"` met de daadwerkelijke tekst waarnaar u wilt zoeken.
+ Vervangen`"text"` met de tekst waarnaar u daadwerkelijk wilt zoeken.
 
 ## Stap 5: Zoek op alle pagina's
 
@@ -58,7 +58,7 @@ Accepteer de absorber voor alle pagina's van het document:
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
 
-## Stap 6: haal geëxtraheerde tekstfragmenten op
+## Stap 6: geëxtraheerde tekstfragmenten verkrijgen
 
 Haal de geëxtraheerde tekstfragmenten op met behulp van de`TextFragments` eigendom van de`TextFragmentAbsorber` voorwerp:
 
@@ -68,7 +68,7 @@ TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragmen
 
 ## Stap 7: Loop door de tekstfragmenten
 
-Loop door de opgehaalde tekstfragmenten en open hun eigenschappen:
+Loop door de getd-tekstfragmenten en krijg toegang tot hun eigenschappen:
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentCollection)
@@ -86,17 +86,17 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-U kunt de code binnen de lus wijzigen om verdere acties op elk tekstfragment uit te voeren.
+U kunt de code binnen de lus aanpassen om verdere acties uit te voeren op elk tekstfragment.
 
-### Voorbeeldbroncode voor Search And Get Text All met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Zoeken en tekst ophalen met behulp van Aspose.PDF voor .NET 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Document openen
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-// Maak een TextAbsorber-object om alle exemplaren van de invoerzoekterm te vinden
+// Maak een TextAbsorber-object om alle instanties van de invoerzoekzin te vinden
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-// Accepteer het absorber voor alle pagina's
+// Accepteer de absorber voor alle pagina's
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 // Haal de geëxtraheerde tekstfragmenten op
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -118,42 +118,42 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 ## Conclusie
 
-Gefeliciteerd! U hebt met succes geleerd hoe u tekst kunt zoeken en ophalen op alle pagina's van een PDF-document met behulp van Aspose.PDF voor .NET. Deze tutorial bood een stapsgewijze handleiding, van het laden van het document tot het openen van de geëxtraheerde tekstfragmenten. U kunt deze code nu in uw eigen C#-projecten opnemen om tekstinhoud in PDF-bestanden te analyseren en te verwerken.
+Gefeliciteerd! U hebt succesvol geleerd hoe u tekst van alle pagina's van een PDF-document kunt zoeken en ophalen met Aspose.PDF voor .NET. Deze tutorial bood een stapsgewijze handleiding, van het laden van het document tot het openen van de geëxtraheerde tekstfragmenten. U kunt deze code nu opnemen in uw eigen C#-projecten om tekstinhoud in PDF-bestanden te analyseren en verwerken.
 
 ### Veelgestelde vragen
 
-#### Vraag: Wat is het doel van de tutorial 'Alles zoeken en ophalen'?
+#### V: Wat is het doel van de tutorial "Zoeken en alle tekst ophalen"?
 
-A: De tutorial "Search And Get Text All" laat zien hoe u de Aspose.PDF-bibliotheek voor .NET kunt gebruiken om tekst te zoeken en te extraheren van alle pagina's van een PDF-document. De zelfstudie biedt stapsgewijze instructies samen met voorbeeldcode van C# om tekst te zoeken en op te halen.
+A: De tutorial "Search And Get Text All" laat zien hoe u de Aspose.PDF-bibliotheek voor .NET kunt gebruiken om tekst te zoeken en te extraheren uit alle pagina's van een PDF-document. De tutorial biedt stapsgewijze instructies samen met voorbeeldcode van C# om tekst te zoeken en op te halen.
 
-#### Vraag: Hoe helpt deze tutorial bij het extraheren van tekst uit PDF-documenten?
+#### V: Hoe helpt deze tutorial bij het extraheren van tekst uit PDF-documenten?
 
-A: Deze tutorial begeleidt u bij het extraheren van tekst uit alle pagina's van een PDF-document. Het maakt gebruik van de Aspose.PDF-bibliotheek om specifieke tekstzinnen te lokaliseren en bijbehorende informatie op te halen, zoals positie, lettertype-eigenschappen en kleuren.
+A: Deze tutorial begeleidt u door het proces van het extraheren van tekst van alle pagina's van een PDF-document. Het gebruikt de Aspose.PDF-bibliotheek om specifieke tekstzinnen te vinden en bijbehorende informatie op te halen, zoals positie, lettertype-eigenschappen en kleuren.
 
-#### Vraag: Wat zijn de vereisten voor het volgen van deze tutorial?
+#### V: Wat zijn de vereisten om deze tutorial te kunnen volgen?
 
-A: Voordat u met deze tutorial begint, moet u een basiskennis hebben van de programmeertaal C#. Bovendien moet de Aspose.PDF voor .NET-bibliotheek zijn geïnstalleerd. U kunt het verkrijgen via de Aspose-website of NuGet gebruiken om het in uw project te integreren.
+A: Voordat u met deze tutorial begint, moet u een basiskennis hebben van de programmeertaal C#. Daarnaast moet u de Aspose.PDF voor .NET-bibliotheek geïnstalleerd hebben. U kunt deze verkrijgen via de Aspose-website of NuGet gebruiken om deze in uw project te integreren.
 
-#### Vraag: Hoe stel ik mijn project in om deze tutorial te volgen?
+#### V: Hoe stel ik mijn project in om deze tutorial te volgen?
 
-A: Om aan de slag te gaan, maakt u een nieuw C#-project in de geïntegreerde ontwikkelomgeving (IDE) van uw voorkeur en voegt u een verwijzing toe naar de Aspose.PDF voor .NET-bibliotheek. Hierdoor krijgt u toegang tot de functionaliteit van de bibliotheek in uw project.
+A: Om te beginnen, maak een nieuw C#-project in uw favoriete geïntegreerde ontwikkelomgeving (IDE) en voeg een referentie toe aan de Aspose.PDF voor .NET-bibliotheek. Hiermee krijgt u toegang tot de functionaliteit van de bibliotheek in uw project.
 
-#### Vraag: Hoe zoek ik naar specifieke tekst in een PDF-document?
+#### V: Hoe zoek ik naar specifieke tekst in een PDF-document?
 
-Antwoord: U kunt de`TextFragmentAbsorber`class om exemplaren van een specifieke zoekterm in het PDF-document te vinden. Door een instantie van deze klasse te maken en de doeltekst op te geven, kunt u alle exemplaren van die tekst vastleggen.
+ A: U kunt de`TextFragmentAbsorber`klasse om instanties van een specifieke zoekterm in het PDF-document te vinden. Door een instantie van deze klasse te maken en de doeltekst op te geven, kunt u alle instanties van die tekst vastleggen.
 
-#### Vraag: Kan ik op alle pagina's van het PDF-document naar tekst zoeken?
+#### V: Kan ik op alle pagina's van het PDF-document naar tekst zoeken?
 
- A: Ja, de tutorial laat zien hoe u op alle pagina's van het PDF-document naar tekst kunt zoeken. De`pdfDocument.Pages.Accept(textFragmentAbsorber)` Er wordt gebruik gemaakt van de methode om de absorber voor alle pagina's te accepteren, zodat u op elke pagina naar de gewenste tekst kunt zoeken.
+ A: Ja, de tutorial laat zien hoe je op alle pagina's van het PDF-document naar tekst kunt zoeken.`pdfDocument.Pages.Accept(textFragmentAbsorber)` Met deze methode wordt de absorber voor alle pagina's geaccepteerd, zodat u op elke pagina naar de gewenste tekst kunt zoeken.
 
-#### Vraag: Hoe krijg ik toegang tot de geëxtraheerde tekstfragmenten?
+#### V: Hoe krijg ik toegang tot de geëxtraheerde tekstfragmenten?
 
- A: Nadat u naar de tekst heeft gezocht, kunt u de geëxtraheerde tekstfragmenten openen met behulp van de`TextFragments` eigendom van de`TextFragmentAbsorber` voorwerp. Deze accommodatie biedt toegang tot een verzameling van`TextFragment` objecten die de geëxtraheerde tekst en gerelateerde informatie bevatten.
+ A: Nadat u naar de tekst hebt gezocht, kunt u de geëxtraheerde tekstfragmenten openen met behulp van de`TextFragments` eigendom van de`TextFragmentAbsorber` object. Deze eigenschap biedt toegang tot een verzameling van`TextFragment` objecten die de geëxtraheerde tekst en gerelateerde informatie bevatten.
 
-#### Vraag: Welke informatie kan ik uit de geëxtraheerde tekstfragmenten halen?
+#### V: Welke informatie kan ik uit de geëxtraheerde tekstfragmenten halen?
 
-A: U kunt verschillende details uit de geëxtraheerde tekstfragmenten ophalen, zoals de daadwerkelijke tekstinhoud, positie (X- en Y-coördinaten), lettertype-informatie (naam, grootte, kleur, enz.) en meer. De voorbeeldcode van de tutorial laat zien hoe u deze gegevens kunt openen en afdrukken.
+A: U kunt verschillende details uit de geëxtraheerde tekstfragmenten ophalen, zoals de werkelijke tekstinhoud, positie (X- en Y-coördinaten), lettertype-informatie (naam, grootte, kleur, enz.) en meer. De voorbeeldcode van de tutorial laat zien hoe u deze details kunt openen en afdrukken.
 
-#### Vraag: Kan ik verdere acties uitvoeren op de geëxtraheerde tekstfragmenten?
+#### V: Kan ik verdere acties uitvoeren op de geëxtraheerde tekstfragmenten?
 
-EEN: Absoluut. Zodra u de geëxtraheerde tekstfragmenten heeft, kunt u de code binnen de lus wijzigen om aangepaste acties op elk fragment uit te voeren. Dit kan het opslaan van de geëxtraheerde tekst omvatten, het analyseren van tekstpatronen of het toepassen van opmaakwijzigingen.
+A: Absoluut. Zodra u de geëxtraheerde tekstfragmenten hebt, kunt u de code binnen de lus aanpassen om aangepaste acties op elk fragment uit te voeren. Dit kan het opslaan van de geëxtraheerde tekst, het analyseren van tekstpatronen of het toepassen van opmaakwijzigingen omvatten.

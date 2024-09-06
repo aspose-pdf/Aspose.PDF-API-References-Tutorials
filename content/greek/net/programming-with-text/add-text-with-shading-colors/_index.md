@@ -51,7 +51,7 @@ TextFragment textFragment = absorb.TextFragments[1];
 ```
 
 ## Βήμα 6: Ορίστε το χρώμα σκίασης για το κείμενο
- Δημιούργησε ένα νέο`Color` αντικείμενο με ένα μοτίβο χρωματικό χώρο και καθορίστε τα χρώματα σκίασης διαβάθμισης. Αντιστοιχίστε αυτό το χρώμα στο`ForegroundColor` ιδιοκτησία του`TextState` απο`TextFragment` αντικείμενο.
+ Δημιουργήστε ένα νέο`Color` αντικείμενο με ένα μοτίβο χρωματικό χώρο και καθορίστε τα χρώματα σκίασης διαβάθμισης. Αντιστοιχίστε αυτό το χρώμα στο`ForegroundColor` ιδιοκτησία του`TextState` του`TextFragment` αντικείμενο.
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
@@ -83,7 +83,7 @@ using (Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
 	pdfDocument.Pages.Accept(absorber);
 	TextFragment textFragment = absorber.TextFragments[1];
-	// Δημιουργήστε νέο χρώμα με το χρωματικό χώρο μοτίβων
+	// Δημιουργήστε νέο χρώμα με χρωματικό χώρο μοτίβων
 	textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 	{
 		PatternColorSpace = new Aspose.Pdf.Drawing.GradientAxialShading(Color.Red, Color.Blue)
@@ -93,7 +93,7 @@ using (Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 }
 ```
 
-## συμπέρασμα
+## Σύναψη
 Προσθέσατε με επιτυχία κείμενο με χρώματα σκίασης στο έγγραφο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Το αρχείο PDF που προκύπτει μπορεί τώρα να βρεθεί στην καθορισμένη διαδρομή αρχείου εξόδου.
 
 ### Συχνές ερωτήσεις
@@ -139,7 +139,7 @@ TextFragment textFragment = absorber.TextFragments[1];
 
 #### Ε: Πώς μπορώ να ορίσω χρώματα σκίασης για το κείμενο;
 
- Α: Στο Βήμα 6, θα δημιουργήσετε ένα νέο`Color` αντικείμενο με ένα μοτίβο χρωματικό χώρο και καθορίστε τα χρώματα σκίασης διαβάθμισης. Αντιστοιχίστε αυτό το χρώμα στο`ForegroundColor` ιδιοκτησία του`TextState` απο`TextFragment` αντικείμενο:
+ Α: Στο Βήμα 6, θα δημιουργήσετε ένα νέο`Color` αντικείμενο με ένα μοτίβο χρωματικό χώρο και καθορίστε τα χρώματα σκίασης διαβάθμισης. Αντιστοιχίστε αυτό το χρώμα στο`ForegroundColor` ιδιοκτησία του`TextState` του`TextFragment` αντικείμενο:
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()

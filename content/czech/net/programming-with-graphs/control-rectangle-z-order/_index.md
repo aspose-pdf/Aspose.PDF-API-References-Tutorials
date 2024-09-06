@@ -7,13 +7,13 @@ type: docs
 weight: 40
 url: /cs/net/programming-with-graphs/control-rectangle-z-order/
 ---
-V tomto tutoriálu vás krok za krokem provedeme následujícím zdrojovým kódem C#, abyste mohli ovládat pořadí Z obdélníků pomocí Aspose.PDF pro .NET.
+tomto tutoriálu vás krok za krokem provedeme následujícím zdrojovým kódem C#, abyste mohli ovládat pořadí Z obdélníků pomocí Aspose.PDF pro .NET.
 
 Než začnete, ujistěte se, že jste nainstalovali knihovnu Aspose.PDF a nastavili své vývojové prostředí. Také mít základní znalosti programování v C#.
 
 ## Krok 1: Nastavení adresáře dokumentů
 
-poskytnutém zdrojovém kódu musíte určit adresář, kam chcete uložit výsledný soubor PDF. Změňte proměnnou "dataDir" na požadovaný adresář.
+V poskytnutém zdrojovém kódu musíte určit adresář, kam chcete uložit výsledný soubor PDF. Změňte proměnnou "dataDir" na požadovaný adresář.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -78,11 +78,11 @@ page1.SetPageSize(375, 300);
 page1.PageInfo.Margin.Left = 0;
 // Nastavit horní okraj objektu stránky na 0
 page1.PageInfo.Margin.Top = 0;
-// Vytvořte nový obdélník s Color as Red, Z-Order jako 0 a určitými rozměry
+//Vytvořte nový obdélník s Color as Red, Z-Order jako 0 a určitými rozměry
 AddRectangle(page1, 50, 40, 60, 40, Aspose.Pdf.Color.Red, 2);
 // Vytvořte nový obdélník s Color as Blue, Z-Order jako 0 a určitými rozměry
 AddRectangle(page1, 20, 20, 30, 30, Aspose.Pdf.Color.Blue, 1);
-//Vytvořte nový obdélník s Color as Green, Z-Order jako 0 a určitými rozměry
+// Vytvořte nový obdélník s Color as Green, Z-Order jako 0 a určitými rozměry
 AddRectangle(page1, 40, 40, 60, 30, Aspose.Pdf.Color.Green, 0);
 dataDir = dataDir + "ControlRectangleZOrder_out.pdf";
 // Uložte výsledný soubor PDF
@@ -114,7 +114,7 @@ Odpověď: Nastavení velikosti stránky a okrajů pomáhá konfigurovat rozvrž
 
 #### Otázka: Jak přidám obdélníky se zadaným pořadím Z?
 
- Odpověď: Obdélníky můžete vytvořit a přidat na stránku pomocí`AddRectangle` určující polohu, rozměry, barvu a pořadí Z pro každý obdélník.
+Odpověď: Obdélníky můžete vytvořit a přidat na stránku pomocí`AddRectangle` určující polohu, rozměry, barvu a pořadí Z pro každý obdélník.
 
 #### Otázka: Co je Z-pořadí a proč je důležité?
 

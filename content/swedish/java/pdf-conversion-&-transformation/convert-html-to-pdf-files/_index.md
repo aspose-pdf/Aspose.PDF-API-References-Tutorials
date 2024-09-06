@@ -63,7 +63,7 @@ Slutligen sparar du PDF-dokumentet på önskad plats:
 pdfDocument.save("output.pdf");
 ```
 
-Det är allt! Du har framgångsrikt konverterat HTML till PDF med Aspose.PDF för Java.
+Det är det! Du har framgångsrikt konverterat HTML till PDF med Aspose.PDF för Java.
 
 ## Anpassa konverteringen
 

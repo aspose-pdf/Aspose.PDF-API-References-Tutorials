@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 2: Skapa PDF-dokumentet och lägga till en sida
 
-Det första steget är att skapa en instans av PDF-dokumentet och lägga till en sida till det. Här är hur:
+Det första steget är att skapa en instans av PDF-dokumentet och lägga till en sida till det. Så här gör du:
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -35,7 +35,7 @@ Var noga med att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till
 
 ## Steg 3: Skapa FloatingBox och lägg till sidnumret
 
-Nu när sidan har lagts till i PDF-dokumentet kan vi skapa en FloatingBox, ställa in dess position och lägga till sidnumret till den. Här är hur:
+Nu när sidan har lagts till i PDF-dokumentet kan vi skapa en FloatingBox, ställa in dess position och lägga till sidnumret till den. Så här gör du:
 
 ```csharp
 // Skapa en FloatingBox med en bredd på 140 och en höjd på 80
@@ -58,7 +58,7 @@ Koden ovan skapar en FloatingBox med en bredd på 140 och en höjd på 80. Däre
 
 ## Steg 4: Spara det ändrade PDF-dokumentet
 
-När sidnumret har lagts till i sidhuvudet eller sidfoten med FloatingBox kan vi spara det modifierade PDF-dokumentet. Här är hur:
+När sidnumret har lagts till i sidhuvudet eller sidfoten med FloatingBox kan vi spara det modifierade PDF-dokumentet. Så här gör du:
 
 ```csharp
 // Spara det ändrade PDF-dokumentet
@@ -79,7 +79,7 @@ Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
 // Lägg till en sida i pdf-dokumentet
 Aspose.Pdf.Page page = pdf.Pages.Add();
 
-//Initierar en ny instans av FloatingBox-klassen
+// Initierar en ny instans av FloatingBox-klassen
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
 
 // Flytande värde som anger styckets vänstra position
@@ -122,7 +122,7 @@ S: Ja, du kan anpassa utseendet på sidnumret genom att ändra egenskaperna för
 S: Absolut, du kan lägga till olika dynamiska element som datum, tid, dokumentmetadata eller anpassad text genom att ändra TextFragment-innehållet i FloatingBox. Du kan använda makron som "($p/ $P )" för sidnummer eller "($date)" för det aktuella datumet.
 
 #### F: Hur anger jag positionen för FloatingBox i sidhuvudet eller sidfoten?
- S: Den medföljande koden ställer in positionen för FloatingBox med hjälp av`Left` och`Top` egenskaper. Du kan justera dessa värden för att placera FloatingBox efter önskemål inom sidhuvudet eller sidfoten.
+ S: Den medföljande koden ställer in positionen för FloatingBox med hjälp av`Left` och`Top` fastigheter. Du kan justera dessa värden för att placera FloatingBox efter önskemål inom sidhuvudet eller sidfoten.
 
 #### F: Kan jag använda ett annat teckensnitt eller stil för sidnumret i sidhuvudet eller sidfoten?
 

@@ -1,49 +1,80 @@
 ---
-title: PDF Dosyasına TOC Ekle
-linktitle: PDF Dosyasına TOC Ekle
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak PDF dosyasına içindekiler tablosunu nasıl ekleyeceğinizi öğrenin. Örnek kaynak koduyla adım adım kılavuz. Belge navigasyonunu artırın!
+title: PDF Dosyasına İçindekiler Ekle
+linktitle: PDF Dosyasına İçindekiler Ekle
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak bir PDF'ye İçindekiler Tablosu eklemeyi öğrenin. Bu adım adım kılavuz süreci basitleştirir ve belgeleriniz içinde kolay gezinmeyi sağlar.
 type: docs
 weight: 40
 url: /tr/net/programming-with-document/addtoc/
 ---
-Bu eğitimde, Aspose.PDF for .NET'in PDF dosyasına TOC (İçindekiler Tablosu) Ekle özelliğinin PDF belgelerine içindekiler tablosu eklemek için nasıl kullanılacağını inceleyeceğiz. Adım adım bir kılavuz sunacağız ve bunu başarmak için gereken C# kaynak kodunu açıklayacağız. Bu eğitimin sonunda Aspose.PDF for .NET'i kullanarak içindekiler tablosu içeren bir PDF belgesi oluşturabileceksiniz.
+## giriiş
 
+Uzun bir PDF'te sonsuza kadar kaydırıp, iyi düzenlenmiş bir İçindekiler Tablosu olmasını istediğiniz oldu mu? İşte, bugün şanslı gününüz! Bu eğitimde, .NET için Aspose.PDF kullanarak PDF dosyanıza bir İçindekiler Tablosu eklemeyi öğreneceksiniz. Karmaşık bir rapor, bir e-Kitap veya bir iş teklifi üzerinde çalışıyor olun, İçindekiler Tablosu belgenizi profesyonel, gezilebilir bir şahesere dönüştürebilir.
 
-## 1. Adım: Mevcut PDF dosyasını yükleyin
+## Ön koşullar
 
- Başlamak için mevcut bir PDF dosyasını yüklememiz gerekiyor. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF dosyanızın gerçek yolunu içeren aşağıdaki kodda:
+Koda geçmeden önce ihtiyacınız olan her şeye sahip olduğunuzdan emin olalım:
+
+1. .NET için Aspose.PDF: Aspose.PDF kütüphanesini indirip kurduğunuzdan emin olun. Buradan indirebilirsiniz[Burada](https://releases.aspose.com/pdf/net/).
+   
+2. Geliştirme Ortamı: Makinenizde Visual Studio gibi bir .NET geliştirme ortamının kurulu olduğundan emin olun.
+
+3.  Lisans: Lisansınız yoksa ücretsiz deneme alabilir veya geçici lisans talebinde bulunabilirsiniz[Burada](https://purchase.aspose.com/temporary-license/).
+
+## Paketleri İçe Aktar
+
+Başlamak için, kod dosyanızın başına gerekli ad alanlarını içe aktardığınızdan emin olun. İşte nasıl:
+
+```csharp
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+```
+
+Bu ad alanları, PDF'ye özgü işlevlere erişmenizi ve belgenizdeki metin öğelerini düzenlemenizi sağlar.
+
+Bu görevi küçük parçalara bölelim. Her adım, PDF belgenize bir TOC oluşturma ve ekleme sürecinde size rehberlik edecektir.
+
+## Adım 1: PDF Belgesini Yükleyin
+
+Yapmamız gereken ilk şey, İçindekiler bölümünü eklemek istediğimiz mevcut PDF dosyasını yüklemek.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "AddTOC.pdf");
 ```
 
-## 2. Adım: İçindekiler tablosu için yeni bir sayfa oluşturun
+ Bu adımda, belge dizinine giden yolu belirtiyoruz ve PDF'yi şu şekilde yüklüyoruz:`Document` nesne. Değiştirdiğinizden emin olun`"YOUR DOCUMENT DIRECTORY"` dosyanızın gerçek yolu ile.
 
-İçindekiler tablosunu tutmak için yeni bir sayfa oluşturacağız. Aşağıdaki kod, dizin 1'e yeni bir sayfa ekler:
+## Adım 2: İçindekiler için Yeni Bir Sayfa Ekleyin
+
+Sonra, PDF belgesinin başına yeni bir sayfa ekliyoruz. Bu sayfa İçindekiler Tablosunu barındıracaktır.
 
 ```csharp
 Page tocPage = doc.Pages.Insert(1);
 ```
 
-## 3. Adım: İçindekiler bilgilerini tanımlayın
+İçindekiler sayfasını başa ekleyerek, okuyucuların PDF'de ilk gördükleri şeyin bu sayfa olmasını sağlıyoruz.
 
-Daha sonra içindekiler bilgisini tanımlamamız gerekiyor. İçindekiler tablosunun başlığını ve diğer özelliklerini ayarlayacağız. Aşağıdaki kodu ekleyin:
+## Adım 3: İçindekiler Bilgi Nesnesi Oluşturun
+
+Şimdi, TOC bilgisini temsil edecek bir nesne oluşturalım. Ayrıca, TOC'yi öne çıkarmak için bir başlık da ekleyeceğiz.
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
-
 tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 ```
 
-## 4. Adım: İçindekiler öğelerini oluşturun
+Burada, İçindekiler tablosunun başlığını "İçindekiler" olarak ayarladık, yazı tipini büyüttük ve vurgu için kalınlaştırdık.
 
-Şimdi içindekiler tablosunun elemanlarını oluşturacağız. Bu derste farklı sayfalara karşılık gelen dört TOC öğesi oluşturacağız. Aşağıdaki kodu gereksinimlerinize göre değiştirin:
+## Adım 4: İçindekiler Öğelerini Tanımlayın
+
+Bu adımda, TOC'de görüntülenecek öğeleri (veya başlıkları) tanımlarız. Bu öğeler, okuyucuların belgenin belirli bölümlerine gitmesine yardımcı olur.
 
 ```csharp
 string[] titles = new string[4];
@@ -51,7 +82,15 @@ titles[0] = "First page";
 titles[1] = "Second page";
 titles[2] = "Third page";
 titles[3] = "Fourth page";
+```
 
+PDF'deki farklı sayfalara karşılık gelen İçindekiler öğelerimiz olarak hizmet edecek bir dizi dize oluşturduk.
+
+## Adım 5: İçindekiler Başlıklarını Oluşturun
+
+Şimdi en önemli kısma geliyoruz: İçindekiler tablosuna başlıklar eklemek ve bunları ilgili sayfalara bağlamak.
+
+```csharp
 for (int i = 0; i < 2; i++)
 {
     Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
@@ -61,100 +100,56 @@ for (int i = 0; i < 2; i++)
 
     heading2.DestinationPage = doc.Pages[i + 2];
     heading2.Top = doc.Pages[i + 2].Rect.Height;
-
     segment2.Text = titles[i];
+
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
-## 5. Adım: Güncellenen belgeyi kaydedin
+İşte olanlar:
+- Başlık: Bir tane yaratıyoruz`Heading` nesne ve ekle`TextSegment` ona.
+- Hedef Sayfa: Her başlığın bağlantı vereceği sayfayı ayarlıyoruz.
+- En Üst Konum: Başlığın sayfada hangi konuma işaret edeceğini belirtiyoruz.
+- Metin: Her başlık, daha önce oluşturduğumuz diziden kendi başlığını alır.
 
- Son olarak, değiştirilen belgeyi içindekiler tablosuyla birlikte kaydetmemiz gerekiyor. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` istenen çıktı dosyası yolu ile aşağıdaki kodda:
+Bu döngü, İçindekiler tablosundaki ilk iki öğe için başlıklar oluşturur ve bunları ilgili sayfalara bağlar.
+
+## Adım 6: PDF'yi İçindekiler tablosuyla birlikte kaydedin
+
+Son olarak, tüm İçindekiler öğelerini ekledikten sonra, güncellenmiş PDF'yi kaydetme zamanı geldi.
 
 ```csharp
 dataDir = dataDir + "TOC_out.pdf";
 doc.Save(dataDir);
-Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
-### Aspose.PDF for .NET kullanarak PDF belgelerine TOC eklemek için örnek kaynak kodu
+Dosya artık PDF'e eklenen TOC ile kaydedildi. Tebrikler—İçindekiler Tablosunu başarıyla eklediniz!
+
+## Adım 7: Onay Mesajı
+
+Kullanıcıya işlemin tamamlandığını bildirmek için konsolda basit bir mesaj göstereceğiz.
 
 ```csharp
-
-// Belgeler dizininin yolu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Mevcut bir PDF dosyasını yükleyin
-Document doc = new Document(dataDir + "AddTOC.pdf");
-
-// PDF dosyasının ilk sayfasına erişin
-Page tocPage = doc.Pages.Insert(1);
-
-// İçindekiler bilgisini temsil edecek nesne oluşturun
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-
-// İçindekiler başlığını ayarlayın
-tocInfo.Title = title;
-tocPage.TocInfo = tocInfo;
-
-//TOC öğeleri olarak kullanılacak dize nesneleri oluşturun
-string[] titles = new string[4];
-titles[0] = "First page";
-titles[1] = "Second page";
-titles[2] = "Third page";
-titles[3] = "Fourth page";
-for (int i = 0; i < 2; i++)
-{
-	// Başlık nesnesi oluştur
-	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-	TextSegment segment2 = new TextSegment();
-	heading2.TocPage = tocPage;
-	heading2.Segments.Add(segment2);
-
-	// Başlık nesnesi için hedef sayfayı belirtin
-	heading2.DestinationPage = doc.Pages[i + 2];
-
-	// Hedef sayfası
-	heading2.Top = doc.Pages[i + 2].Rect.Height;
-
-	// Hedef koordinatı
-	segment2.Text = titles[i];
-
-	// İçindekiler içeren sayfaya başlık ekleyin
-	tocPage.Paragraphs.Add(heading2);
-}
-dataDir = dataDir + "TOC_out.pdf";
-// Güncellenen belgeyi kaydet
-doc.Save(dataDir);
-
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for .NET kullanarak PDF belgelerine içindekiler tablosunun (TOC) nasıl ekleneceğini araştırdık. Adım adım kılavuzu takip ederek ve sağlanan C# kaynak kodunu kullanarak, kolayca içindekiler tablosu içeren bir PDF belgesi oluşturabilirsiniz. İçindekiler belgesinin kullanılabilirliğini geliştirerek kullanıcıların belirli bölümlere veya sayfalara daha verimli bir şekilde gitmesine olanak tanır. Aspose.PDF for .NET, .NET uygulamalarında PDF dosyalarıyla çalışmak için sağlam ve kullanıcı dostu bir çözüm sunarak kolaylıkla dinamik ve etkileşimli PDF belgeleri oluşturmanıza olanak tanır.
+Ve işte karşınızda! .NET için Aspose.PDF ile bir PDF'e İçindekiler Tablosu eklemek yalnızca kolay değil, aynı zamanda özelleştirilebilir. Basit gezinme bağlantıları veya karmaşık yapılar oluşturmanız gerekip gerekmediğine bakılmaksızın, bu araç sizin için her şeyi yapar. Bu yüzden, bir dahaki sefere uzun bir PDF üzerinde çalıştığınızda, profesyonel bir dokunuş için İçindekiler Tablosu eklemeyi unutmayın!
 
-### PDF dosyasına TOC eklemek için SSS
+## SSS
 
-#### S: Aspose.PDF for .NET nedir?
+### Aspose.PDF'deki İçindekiler bölümünün görünümünü özelleştirebilir miyim?  
+Evet, yazı tipi, boyutu ve hizalama dahil olmak üzere İçindekiler tablosunun görünümünü tamamen özelleştirebilirsiniz.
 
-C: Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarındaki PDF dosyalarıyla etkili bir şekilde çalışmasına olanak tanıyan güçlü bir kitaplıktır. PDF belgelerini programlı olarak oluşturmak, değiştirmek ve yönetmek için çok çeşitli özellikler sunar.
+### İçindekiler tablosuna alt başlıklar nasıl eklenir?  
+ Alt başlıkları ayarlayarak ekleyebilirsiniz.`Heading` seviye (örneğin,`Heading(2)`) hiyerarşik bir İçindekiler tablosu oluşturmak için.
 
-#### S: Bir PDF belgesine içindekiler tablosu (TOC) eklemenin amacı nedir?
+### Belge değiştiğinde İçindekiler tablosunun otomatik olarak güncellenmesi mümkün müdür?  
+Hayır, İçindekiler tablosu otomatik olarak güncellenmeyecek. Belge yapısı değişirse yeniden oluşturmanız gerekecek.
 
-C: İçindekiler tablosu (TOC), kullanıcılara PDF belgesindeki belirli bölümlere veya sayfalara hızlı bir şekilde atlamalarını sağlayan bir gezinme yardımı sağlar. Belgenin kullanılabilirliğini ve kullanıcı deneyimini geliştirir.
+### İçindekiler girişlerini harici belgelere bağlayabilir miyim?  
+Evet, İçindekiler girişlerini harici PDF'lere veya URL'lere bağlamak için köprü metinleri kullanabilirsiniz.
 
-#### S: Aspose.PDF for .NET kullanarak bir PDF belgesine içindekiler tablosunu nasıl eklerim?
-
-C: Aspose.PDF for .NET kullanarak bir PDF belgesine içindekiler tablosu eklemek için, TOC'yi tutacak yeni bir sayfa oluşturmanız, içindekiler tablosu bilgilerini tanımlamanız ve ardından belirli sayfalara veya bunlara karşılık gelen TOC öğeleri oluşturmanız gerekir. belgedeki bölümler.
-
-#### S: İçindekiler tablosunun görünümünü özelleştirebilir miyim?
-
-C: Evet, içindekiler tablosu öğelerinin yazı tipi boyutu, yazı tipi stili ve hizalama gibi çeşitli özelliklerini ayarlayarak içindekiler tablosunun görünümünü özelleştirebilirsiniz. Aspose.PDF for .NET, TOC'yi istediğiniz görünüm ve hisle eşleşecek şekilde tasarlama konusunda esneklik sağlar.
-
-#### S: Aspose.PDF for .NET, PDF belgelerine gelişmiş özellikler eklemek için uygun mudur?
-
-C: Kesinlikle, Aspose.PDF for .NET, PDF belgelerine etkileşimli öğeler, form alanları, dijital imzalar ve daha fazlasını içeren gelişmiş işlevler eklemenizi sağlayan, zengin özelliklere sahip bir kitaplıktır.
+### Aspose.PDF çok seviyeli İçindekiler tablosunu destekliyor mu?  
+Evet, Aspose.PDF alt bölümlere sahip karmaşık belgeler için çok seviyeli İçindekiler tablosunu destekler.

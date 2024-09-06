@@ -7,13 +7,13 @@ type: docs
 weight: 60
 url: /zh-hant/net/programming-with-tables/determine-table-break/
 ---
-在本教學中，我們將學習如何使用 Aspose.PDF for .NET 確定 PDF 檔案中的換表符。我們將一步步解釋C#的原始碼。在本教學結束時，您將了解如何確定表格是否超出頁邊距。開始吧！
+在本教學中，我們將學習如何使用 Aspose.PDF for .NET 確定 PDF 檔案中的換表符。我們將一步步解釋C#的原始碼。在本教學結束時，您將了解如何確定表格是否超出頁邊距。讓我們開始吧！
 
 ## 第一步：建構環境
 首先，請確保您已使用 Aspose.PDF for .NET 設定 C# 開發環境。新增對庫的引用並導入必要的命名空間。
 
 ## 第 2 步：建立 PDF 文檔
-在這一步驟中，我們創建一個新的`Document`代表 PDF 文檔的對象。
+在這一步驟中，我們創建一個新的`Document`物件來表示 PDF 文件。
 
 ```csharp
 pdf-Document = new Document();

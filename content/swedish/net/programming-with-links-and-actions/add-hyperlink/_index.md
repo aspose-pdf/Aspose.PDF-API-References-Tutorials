@@ -21,7 +21,7 @@ using Aspose.Pdf.Text;
 
 ## Steg 2: Ange sökväg till dokumentmappen
 
- det här steget måste du ange sökvägen till mappen som innehåller PDF-filen som du vill lägga till en hyperlänk till. Byta ut`"YOUR DOCUMENT DIRECTORY"` följande kod med den faktiska sökvägen till din dokumentmapp:
+ I det här steget måste du ange sökvägen till mappen som innehåller PDF-filen som du vill lägga till en hyperlänk till. Ersätta`"YOUR DOCUMENT DIRECTORY"` i följande kod med den faktiska sökvägen till din dokumentmapp:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -62,7 +62,7 @@ document.Pages[1].Annotations.Add(textAnnotation);
 
 ## Steg 6: Spara den uppdaterade filen
 
- Låt oss nu spara den uppdaterade PDF-filen med hjälp av`Save` metod för`document` objekt. Här är motsvarande kod:
+Låt oss nu spara den uppdaterade PDF-filen med hjälp av`Save` metod för`document` objekt. Här är motsvarande kod:
 
 ```csharp
 dataDir = dataDir + "AddHyperlink_out.pdf";
@@ -87,7 +87,7 @@ border.Width = 0;
 link.Border = border;
 // Ange länktypen som fjärr-URI
 link.Action = new GoToURIAction("www.aspose.com");
-//Lägg till länkkommentarer till anteckningssamlingen på första sidan i PDF-filen
+// Lägg till länkkommentarer till anteckningssamlingen på första sidan i PDF-filen
 page.Annotations.Add(link);
 // Skapa fritextkommentarer
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(document.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), new DefaultAppearance(Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman"), 10, System.Drawing.Color.Blue));

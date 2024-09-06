@@ -1,17 +1,17 @@
 ---
-title: Rechte bewahren
-linktitle: Rechte bewahren
+title: Rechte wahren
+linktitle: Rechte wahren
 second_title: Aspose.PDF für .NET API-Referenz
-description: Behalten Sie Formularrechte in Ihren PDF-Dokumenten mit Aspose.PDF für .NET.
+description: Bewahren Sie mit Aspose.PDF für .NET die Formularrechte in Ihren PDF-Dokumenten.
 type: docs
 weight: 210
 url: /de/net/programming-with-forms/preserve-rights/
 ---
-In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET Formularrechte in einem PDF-Dokument bewahren. Wir erklären Ihnen Schritt für Schritt den C#-Quellcode, um Sie durch diesen Prozess zu führen.
+In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET Formularrechte in einem PDF-Dokument beibehalten. Wir erklären Ihnen den C#-Quellcode Schritt für Schritt, um Sie durch diesen Prozess zu führen.
 
 ## Schritt 1: Vorbereitung
 
-Stellen Sie sicher, dass Sie die erforderlichen Bibliotheken importiert und den Pfad zu Ihrem Dokumentenverzeichnis festgelegt haben:
+Stellen Sie sicher, dass Sie die erforderlichen Bibliotheken importiert haben, und legen Sie den Pfad zu Ihrem Dokumentverzeichnis fest:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Schritt 2: Öffnen Sie das Dokument
 
- Öffnen Sie das PDF-Quelldokument mit a`FileStream` mit Lese- und Schreibberechtigung:
+ Öffnen Sie das PDF-Quelldokument mit einem`FileStream` mit Lese- und Schreibberechtigung:
 
 ```csharp
 FileStream fs = new FileStream(dataDir + "input.pdf", FileMode.Open, FileAccess.ReadWrite);
@@ -49,25 +49,25 @@ Speichern Sie das geänderte PDF-Dokument:
 pdfDocument.Save();
 ```
 
-##  Schritt 5: Schließen Sie das`FileStream`
+##  Schritt 5: Schließen Sie die`FileStream`
 
- Vergessen Sie nicht, das zu schließen`FileStream` Objekt, wenn Sie fertig sind:
+ Vergessen Sie nicht, die`FileStream` Objekt, wenn Sie fertig sind:
 
 ```csharp
 fs. Close();
 ```
 
-### Beispielquellcode für Preserve Rights mit Aspose.PDF für .NET 
+### Beispielquellcode für „Preserve Rights“ mit Aspose.PDF für .NET 
 ```csharp
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Lesen Sie das Quell-PDF-Formular mit FileAccess oder Read and Write.
-// Wir benötigen die ReadWrite-Berechtigung, da nach der Änderung
-// Wir müssen die aktualisierten Inhalte im selben Dokument/in derselben Datei speichern.
+// Lesen Sie das Quell-PDF-Formular mit den Dateizugriffsrechten „Lesen“ und „Schreiben“.
+// Wir benötigen die Lese-/Schreibberechtigung, da nach der Änderung
+// Wir müssen den aktualisierten Inhalt im selben Dokument/derselben Datei speichern.
 FileStream fs = new FileStream(dataDir + "input.pdf", FileMode.Open, FileAccess.ReadWrite);
-// Dokumentinstanz instanziieren
+// Dokumentinstanz instantiieren
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(fs);
-// Holen Sie sich Werte aus allen Feldern
+// Werte aus allen Feldern abrufen
 foreach (Field formField in pdfDocument.Form)
 {
 	// Wenn der vollständige Name des Felds A1 enthält, führen Sie den Vorgang aus
@@ -79,7 +79,7 @@ foreach (Field formField in pdfDocument.Form)
 		textBoxField.Value = "Testing";
 	}
 }
-// Speichern Sie das aktualisierte Dokument in Save FileStream
+// Speichern Sie das aktualisierte Dokument im FileStream
 pdfDocument.Save();
 // Schließen Sie das File Stream-Objekt
 fs.Close();
@@ -87,20 +87,20 @@ fs.Close();
 
 ## Abschluss
 
-In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET die Rechte eines Formulars in einem PDF-Dokument beibehält. Wenn Sie diese Schritte befolgen, können Sie problemlos auf Formularfelder zugreifen und spezifische Änderungen vornehmen, während Sie gleichzeitig Zugriffs- und Schreibberechtigungen behalten.
+In diesem Tutorial haben wir gelernt, wie Sie mit Aspose.PDF für .NET die Rechte eines Formulars in einem PDF-Dokument bewahren. Indem Sie diese Schritte befolgen, können Sie problemlos auf Formularfelder zugreifen und bestimmte Änderungen vornehmen, während Zugriffs- und Schreibberechtigungen erhalten bleiben.
 
 
-### FAQs
+### Häufig gestellte Fragen
 
-#### F: Kann ich die Rechte bestimmter Formularfelder beibehalten, ohne dass sich dies auf andere im PDF-Dokument auswirkt?
+#### F: Kann ich die Rechte bestimmter Formularfelder beibehalten, ohne andere im PDF-Dokument zu beeinträchtigen?
 
- A: Ja, indem Sie das verwenden`FullName` Eigenschaft der Formularfelder können Sie bestimmte Formularfelder gezielt beibehalten, während andere davon unberührt bleiben.
+ A: Ja, mit dem`FullName` der Formularfelder können Sie bestimmte Formularfelder zur Beibehaltung auswählen und andere unverändert lassen.
 
-#### F: Kann ich die Rechte eines Formulars in einem passwortgeschützten PDF-Dokument beibehalten?
+#### F: Kann ich die Rechte eines Formulars in einem passwortgeschützten PDF-Dokument bewahren?
 
-A: Ja, mit Aspose.PDF für .NET können Sie die Rechte eines Formulars auch in passwortgeschützten PDF-Dokumenten bewahren, solange Sie das richtige Passwort angeben, um auf die Datei zuzugreifen und sie zu ändern.
+A: Ja, mit Aspose.PDF für .NET können Sie die Rechte eines Formulars auch in passwortgeschützten PDF-Dokumenten wahren, solange Sie für den Zugriff auf die Datei und deren Änderung das richtige Passwort angeben.
 
-#### F: Was passiert, wenn ich versuche, Formularfelder ohne die entsprechenden Zugriffsrechte zu ändern?
+#### F: Was passiert, wenn ich versuche, Formularfelder zu ändern, ohne über die entsprechenden Zugriffsrechte zu verfügen?
 
 A: Wenn Sie versuchen, Formularfelder ohne die entsprechenden Zugriffsrechte zu ändern, werden die Änderungen nicht im PDF-Dokument gespeichert und Sie erhalten möglicherweise eine Ausnahme oder eine Fehlermeldung.
 
@@ -110,4 +110,4 @@ A: Ja, Aspose.PDF für .NET ist mit allen Versionen von .NET Framework kompatibe
 
 #### F: Kann ich Formularrechte in einem PDF-Dokument programmgesteuert in anderen Programmiersprachen als C# beibehalten?
 
-A: Ja, Aspose.PDF für .NET unterstützt neben C# auch verschiedene Programmiersprachen wie VB.NET und ASP.NET.
+A: Ja, Aspose.PDF für .NET unterstützt neben C# verschiedene Programmiersprachen wie VB.NET und ASP.NET.

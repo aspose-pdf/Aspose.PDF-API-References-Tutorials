@@ -1,7 +1,7 @@
 ---
-title: Symboles remplaçables dans l'en-tête du pied de page
-linktitle: Symboles remplaçables dans l'en-tête du pied de page
-second_title: Aspose.PDF pour la référence de l'API .NET
+title: Symboles remplaçables dans l'en-tête et le pied de page
+linktitle: Symboles remplaçables dans l'en-tête et le pied de page
+second_title: Référence de l'API Aspose.PDF pour .NET
 description: Découvrez comment utiliser des symboles remplaçables dans l'en-tête et le pied de page d'un document PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 320
@@ -9,16 +9,16 @@ url: /fr/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
 Dans ce didacticiel, nous expliquerons comment utiliser des symboles remplaçables dans l'en-tête et le pied de page d'un document PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Nous passerons en revue le processus étape par étape de création d'un PDF, de définition des marges, d'ajout d'en-tête et de pied de page avec des symboles remplaçables et d'enregistrement du PDF à l'aide du code source C# fourni.
 
-## Conditions préalables
+## Prérequis
 
-Avant de commencer, assurez-vous d'avoir les éléments suivants :
+Avant de commencer, assurez-vous de disposer des éléments suivants :
 
 - La bibliothèque Aspose.PDF pour .NET installée.
 - Une compréhension de base de la programmation C#.
 
-## Étape 1 : configurer le répertoire de documents
+## Étape 1 : Configurer le répertoire de documents
 
- Tout d'abord, vous devez définir le chemin d'accès au répertoire dans lequel vous souhaitez enregistrer le fichier PDF généré. Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le`dataDir`variable avec le chemin d'accès au répertoire souhaité.
+ Tout d'abord, vous devez définir le chemin d'accès au répertoire dans lequel vous souhaitez enregistrer le fichier PDF généré. Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le`dataDir` variable avec le chemin vers votre répertoire souhaité.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -26,16 +26,16 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Étape 2 : Créer un document et une page PDF
 
- Ensuite, nous créons un nouveau document PDF et y ajoutons une page à l'aide du`Document` classe et`Page` classe de la bibliothèque Aspose.PDF.
+ Ensuite, nous créons un nouveau document PDF et y ajoutons une page à l'aide de la`Document` classe et`Page` classe de la bibliothèque Aspose.PDF.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Étape 3 : Définir les marges
+## Étape 3 : Définir les marges
 
- Nous définissons les marges de la page en utilisant le`MarginInfo`classe. Ajustez les valeurs de marge en fonction de vos besoins.
+Nous définissons les marges de la page en utilisant le`MarginInfo` classe. Ajustez les valeurs de marge en fonction de vos besoins.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -48,7 +48,7 @@ page.PageInfo.Margin = marginInfo;
 
 ## Étape 4 : ajouter un en-tête avec des symboles remplaçables
 
- Nous créons un`HeaderFooter` objet pour la page et ajoutez un`TextFragment` avec des symboles remplaçables.
+ Nous créons un`HeaderFooter` objet pour la page et ajouter un`TextFragment` avec des symboles remplaçables.
 
 ```csharp
 HeaderFooter hfFirst = new HeaderFooter();
@@ -57,7 +57,7 @@ hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
 
 TextFragment t1 = new TextFragment("report title");
-// Définir les propriétés du texte si vous le souhaitez
+// Définissez les propriétés du texte si vous le souhaitez
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
 t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
@@ -67,12 +67,12 @@ t1.TextState.LineSpacing = 5f;
 
 hfFirst.Paragraphs.Add(t1);
 
-// Ajoutez plus de TextFragments ou personnalisez-les selon vos besoins
+// Ajoutez plus de fragments de texte ou personnalisez-les selon vos besoins
 ```
 
 ## Étape 5 : ajouter un pied de page avec des symboles remplaçables
 
- De même, nous créons un`HeaderFooter` objet pour le pied de page et ajoutez`TextFragment` objets avec des symboles remplaçables.
+ De la même manière, nous créons un`HeaderFooter` objet pour le pied de page et ajouter`TextFragment` objets avec des symboles remplaçables.
 
 ```csharp
 HeaderFooter hfFoot = new HeaderFooter();
@@ -84,12 +84,12 @@ TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
 
-// Ajoutez plus de TextFragments ou personnalisez-les selon vos besoins
+// Ajoutez plus de fragments de texte ou personnalisez-les selon vos besoins
 
 hfFoot.Paragraphs.Add(tab2);
 ```
 
-## Étape 6 : Enregistrez le document PDF
+## Étape 6 : Enregistrer le document PDF
 
 Enfin, nous enregistrons le document PDF dans le fichier de sortie spécifié.
 
@@ -99,9 +99,9 @@ doc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols replaced successfully in the header and footer.\nFile saved at " + dataDir);
 ```
 
-### Exemple de code source pour les symboles remplaçables dans le pied de page d'en-tête à l'aide d'Aspose.PDF pour .NET 
+### Exemple de code source pour les symboles remplaçables dans l'en-tête et le pied de page à l'aide d'Aspose.PDF pour .NET 
 ```csharp
-// Le chemin d'accès au répertoire des documents.
+// Le chemin vers le répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 Page page = doc.Pages.Add();
@@ -110,13 +110,13 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Attribuez l'instance marginInfo à la propriété Margin de sec1.PageInfo
+// Affecter l'instance marginInfo à la propriété Margin de sec1.PageInfo
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
 hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
-// Instanciez un paragraphe de texte qui stockera le contenu à afficher comme en-tête
+// Instancier un paragraphe de texte qui stockera le contenu à afficher comme en-tête
 TextFragment t1 = new TextFragment("report title");
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
@@ -134,7 +134,7 @@ t2.TextState.FontSize = 12;
 hfFirst.Paragraphs.Add(t2);
 // Créer un objet HeaderFooter pour la section
 HeaderFooter hfFoot = new HeaderFooter();
-// Définissez l'objet HeaderFooter sur un pied de page pair et impair.
+// Définissez l'objet HeaderFooter sur un pied de page pair et impair
 page.Footer = hfFoot;
 hfFoot.Margin.Left = 50;
 hfFoot.Margin.Right = 50;
@@ -142,38 +142,38 @@ hfFoot.Margin.Right = 50;
 TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
-// Instancier un objet table
+// Instancier un objet de table
 Table tab2 = new Table();
-// Ajouter le tableau dans la collection de paragraphes de la section souhaitée
+// Ajoutez le tableau dans la collection de paragraphes de la section souhaitée
 hfFoot.Paragraphs.Add(tab2);
 // Définir avec les largeurs de colonnes du tableau
 tab2.ColumnWidths = "165 172 165";
-// Créez des lignes dans le tableau puis des cellules dans les lignes
+// Créez des lignes dans le tableau, puis des cellules dans les lignes
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
 row3.Cells.Add();
-// Définissez l'alignement vertical du texte comme étant aligné au centre
+// Définir l'alignement vertical du texte comme étant centré
 row3.Cells[0].Alignment = Aspose.Pdf.HorizontalAlignment.Left;
 row3.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-//Sec1.Paragraphs.Add(New Text("Aspose.Total pour Java est une compilation de tous les composants Java proposés par Aspose. Il est compilé quotidiennement pour garantir qu'il contient les versions les plus récentes de chacun de nos composants Java. #$NL " + "L'utilisation d'Aspose.Total pour Java permet aux développeurs de créer une large gamme d'applications. #$NL #$NL #$NP" + "Aspose.Total pour Java est une compilation de tous les composants Java proposé par Aspose. Il est compilé quotidiennement pour garantir qu'il contient les versions les plus récentes de chacun de nos composants Java. #$NL " + "L'utilisation d'Aspose.Total pour les développeurs Java peut créer une large gamme d'applications. #$NL #$NL #$NP" + "Aspose.Total pour Java est une compilation de tous les composants Java proposés par Aspose. Il est compilé quotidiennement pour garantir qu'il contient le plus versions à jour de chacun de nos composants Java. #$NL " + "L'utilisation d'Aspose.Total pour Java permet aux développeurs de créer une large gamme d'applications. #$NL #$NL"))
+//Sec1.Paragraphs.Add(New Text("Aspose.Total pour Java est une compilation de tous les composants Java proposés par Aspose. Il est compilé quotidiennement pour garantir qu'il contient les versions les plus à jour de chacun de nos composants Java. #$NL " + "En utilisant Aspose.Total pour Java, les développeurs peuvent créer une large gamme d'applications. #$NL #$NL #$NP" + "Aspose.Total pour Java est une compilation de tous les composants Java proposés par Aspose. Il est compilé quotidiennement pour garantir qu'il contient les versions les plus à jour de chacun de nos composants Java. #$NL " + "En utilisant Aspose.Total pour Java, les développeurs peuvent créer une large gamme d'applications. #$NL #$NL #$NP" + "Aspose.Total pour Java est une compilation de tous les composants Java proposés par Aspose. Il est compilé quotidiennement pour garantir qu'il contient les versions les plus à jour de chacun de nos composants Java. #$NL " + "En utilisant Aspose.Total pour Java, les développeurs peuvent créer une large gamme d'applications. #$NL #$NL"))
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
 table.DefaultCellPadding = new MarginInfo();
 table.DefaultCellPadding.Top = 10;
 table.DefaultCellPadding.Bottom = 10;
-// Ajouter le tableau dans la collection de paragraphes de la section souhaitée
+// Ajoutez le tableau dans la collection de paragraphes de la section souhaitée
 page.Paragraphs.Add(table);
 // Définir la bordure de cellule par défaut à l'aide de l'objet BorderInfo
 table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
-// Définir la bordure du tableau à l'aide d'un autre objet BorderInfo personnalisé
+// Définir la bordure du tableau à l’aide d’un autre objet BorderInfo personnalisé
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// Créez des lignes dans le tableau puis des cellules dans les lignes
+// Créez des lignes dans le tableau, puis des cellules dans les lignes
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -207,48 +207,48 @@ Dans ce didacticiel, vous avez appris à utiliser des symboles remplaçables dan
 
 ### FAQ
 
-#### Q : Quel est l'objectif du didacticiel « Symboles remplaçables dans l'en-tête et le pied de page » ?
+#### Q : Quel est le but du didacticiel « Symboles remplaçables dans l'en-tête et le pied de page » ?
 
-R : Le didacticiel « Symboles remplaçables dans le pied de page d'en-tête » vise à vous guider tout au long du processus d'utilisation de la bibliothèque Aspose.PDF pour .NET afin d'ajouter des symboles remplaçables à l'en-tête et au pied de page d'un document PDF. Les symboles remplaçables vous permettent de remplacer dynamiquement des espaces réservés spécifiques par des valeurs réelles lors de la génération du PDF.
+R : Le didacticiel « Symboles remplaçables dans l'en-tête et le pied de page » vise à vous guider dans le processus d'utilisation de la bibliothèque Aspose.PDF pour .NET pour ajouter des symboles remplaçables à l'en-tête et au pied de page d'un document PDF. Les symboles remplaçables vous permettent de remplacer dynamiquement des espaces réservés spécifiques par des valeurs réelles lors de la génération du PDF.
 
-#### Q : Que sont les symboles remplaçables dans le contexte d’un en-tête et d’un pied de page PDF ?
+#### Q : Quels sont les symboles remplaçables dans le contexte d’un en-tête et d’un pied de page PDF ?
 
 R : Les symboles remplaçables sont des espaces réservés que vous pouvez insérer dans l'en-tête et le pied de page d'un document PDF. Ces symboles agissent comme des espaces réservés dynamiques pour les valeurs qui peuvent être renseignées au moment de l'exécution, telles que les numéros de page, les dates et les informations personnalisées.
 
 #### Q : Pourquoi voudrais-je utiliser des symboles remplaçables dans un en-tête et un pied de page PDF ?
 
-R : Les symboles remplaçables dans l'en-tête et le pied de page sont utiles lorsque vous souhaitez inclure des informations dynamiques dans vos documents PDF, telles que des numéros de page, des dates ou d'autres données variables susceptibles de changer lors de la génération du document.
+R : Les symboles remplaçables dans l’en-tête et le pied de page sont utiles lorsque vous souhaitez inclure des informations dynamiques dans vos documents PDF, telles que des numéros de page, des dates ou d’autres données variables susceptibles de changer lors de la génération du document.
 
 #### Q : Comment puis-je définir les marges de la page PDF ?
 
- R : Vous pouvez définir les marges de la page PDF à l'aide du`MarginInfo` classe et l'attribuer à la`Margin` propriété du`PageInfo` de la page. Ajustez les valeurs de marge selon vos besoins.
+ R : Vous pouvez définir les marges de la page PDF à l'aide de l'`MarginInfo` classe et l'assigner à la`Margin` propriété de la`PageInfo` de la page. Ajustez les valeurs de marge selon vos besoins.
 
-#### Q : Comment ajouter des symboles remplaçables à l'en-tête et au pied de page ?
+#### Q : Comment ajouter des symboles remplaçables à l’en-tête et au pied de page ?
 
- R : Vous pouvez ajouter des symboles remplaçables en créant un`HeaderFooter` objet pour l’en-tête et le pied de page de la page. Ensuite, vous pouvez ajouter`TextFragment`objets avec le texte souhaité, y compris les symboles remplaçables, au`Paragraphs` collecte des`HeaderFooter` objet.
+ R : Vous pouvez ajouter des symboles remplaçables en créant un`HeaderFooter` objet pour l'en-tête et le pied de page de la page. Ensuite, vous pouvez ajouter`TextFragment`objets avec le texte souhaité, y compris les symboles remplaçables, à la`Paragraphs` collection de la`HeaderFooter` objet.
 
-#### Q : Puis-je personnaliser l’apparence des symboles remplaçables ?
+#### Q : Puis-je personnaliser l’apparence des symboles remplaçables ?
 
- R : Oui, vous pouvez personnaliser l'apparence des symboles remplaçables en modifiant les propriétés du`TextFragment` objets qui contiennent les symboles. Vous pouvez définir des propriétés telles que la police, la taille de la police, la couleur, l'alignement et l'espacement des lignes.
+ R : Oui, vous pouvez personnaliser l'apparence des symboles remplaçables en modifiant les propriétés du`TextFragment` objets contenant les symboles. Vous pouvez définir des propriétés telles que la police, la taille de police, la couleur, l'alignement et l'espacement des lignes.
 
 #### Q : Quels types de symboles remplaçables puis-je utiliser ?
 
-R : Vous pouvez utiliser une variété de symboles remplaçables, tels que :
+R : Vous pouvez utiliser une variété de symboles remplaçables, tels que :
 
-- `$p`: Numéro de la page actuelle.
-- `$P`: Nombre total de pages.
-- `$d`: Date actuelle.
-- `$t`: Heure actuelle.
+- `$p`: Numéro de page actuel.
+- `$P`:Nombre total de pages.
+- `$d`:Date du jour.
+- `$t`:Heure actuelle.
 - Espaces réservés personnalisés que vous définissez.
 
-#### Q : Puis-je inclure d'autres textes et mises en forme autour des symboles remplaçables ?
+#### Q : Puis-je inclure d’autres textes et formats autour des symboles remplaçables ?
 
- R : Oui, vous pouvez inclure d'autres textes et formats autour des symboles remplaçables dans le`TextFragment` objets. Cela vous permet de créer des en-têtes et des pieds de page plus complexes intégrant du contenu dynamique et statique.
+ R : Oui, vous pouvez inclure d'autres textes et formats autour des symboles remplaçables dans le`TextFragment` objets. Cela vous permet de créer des en-têtes et des pieds de page plus complexes qui intègrent du contenu dynamique et statique.
 
 #### Q : Comment puis-je enregistrer le document PDF généré ?
 
- R : Pour enregistrer le document PDF généré, vous pouvez utiliser le`Save` méthode du`Document`classe. Fournissez le chemin et le nom du fichier de sortie souhaité comme argument.
+ R : Pour enregistrer le document PDF généré, vous pouvez utiliser le`Save` méthode de la`Document`classe. Fournissez le chemin et le nom du fichier de sortie souhaité comme argument.
 
-#### Q : Une licence Aspose valide est-elle requise pour ce didacticiel ?
+#### Q : Une licence Aspose valide est-elle requise pour ce tutoriel ?
 
-R : Oui, une licence Aspose valide est requise pour exécuter correctement le code dans ce didacticiel. Vous pouvez obtenir une licence complète ou une licence temporaire de 30 jours sur le site Web Aspose.
+R : Oui, une licence Aspose valide est requise pour exécuter le code avec succès dans ce didacticiel. Vous pouvez obtenir une licence complète ou une licence temporaire de 30 jours sur le site Web d'Aspose.

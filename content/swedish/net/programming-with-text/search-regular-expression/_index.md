@@ -48,7 +48,7 @@ Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Som 1999-2000
 ```
 
- Byta ut`"\\d{4}-\\d{4}"` med ditt önskade reguljära uttrycksmönster.
+ Ersätta`"\\d{4}-\\d{4}"` med ditt önskade reguljära uttrycksmönster.
 
 ## Steg 5: Ställ in alternativ för textsökning
 

@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 1. lépés: Állítsa be a dokumentumkönyvtárat
 
- Először is be kell állítania annak a könyvtárnak az elérési útját, ahol a PDF-fájlok találhatók. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó a PDF-fájlok elérési útjával.
+ Először is be kell állítania annak a könyvtárnak az elérési útját, ahol a PDF-fájlok találhatók. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó a PDF-fájlok elérési útjával.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -92,7 +92,7 @@ V: Különféle forgatókönyvek léteznek, amikor hasznos lehet az összes szö
 
 V: A dokumentumkönyvtár beállításához:
 
-1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a PDF-fájlok találhatók.
+1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a PDF-fájlok találhatók.
 
 #### K: Hogyan távolíthatok el szöveget a PDF-dokumentum minden oldaláról?
 
@@ -104,7 +104,7 @@ V: Igen, módosíthatja a ciklust, hogy szelektíven eltávolítsa a szöveget b
 
 #### K: Hogyan menthetem el a módosított PDF dokumentumot?
 
- V: Miután eltávolította a szöveget az egyes oldalakról, mentheti a módosított PDF-dokumentumot a`Save` módszere a`Document`osztály. Adja meg a kívánt kimeneti fájl elérési utat, és adja meg a kívánt mentési formátumot argumentumaként a`Save` módszer.
+ V: Miután eltávolította a szöveget az egyes oldalakról, mentheti a módosított PDF dokumentumot a`Save` módszere a`Document`osztály. Adja meg a kívánt kimeneti fájl elérési utat, és adja meg a kívánt mentési formátumot argumentumaként a`Save` módszer.
 
 #### K: Mi az oktatóanyag várható eredménye?
 

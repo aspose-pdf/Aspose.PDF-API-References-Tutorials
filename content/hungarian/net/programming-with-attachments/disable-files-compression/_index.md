@@ -1,123 +1,124 @@
 ---
-title: Fájlok tömörítésének letiltása PDF fájlban
-linktitle: Fájlok tömörítésének letiltása PDF fájlban
+title: Fájltömörítés letiltása PDF fájlban
+linktitle: Fájltömörítés letiltása PDF fájlban
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan tilthatja le a PDF-fájlok tömörítését az Aspose.PDF for .NET segítségével. Lépésről lépésre szóló útmutató az egyszerű kezeléshez.
+description: Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan tilthatja le a PDF-fájlok tömörítését az Aspose.PDF for .NET használatával. Javítsa PDF-kezelési készségeit.
 type: docs
 weight: 30
 url: /hu/net/programming-with-attachments/disable-files-compression/
 ---
-Ebben az oktatóanyagban lépésről lépésre végigvezetjük a következő C#-forráskódon, amellyel letilthatja a PDF-fájlok tömörítését az Aspose.PDF for .NET használatával.
+## Bevezetés
 
-Mielőtt elkezdené, győződjön meg arról, hogy telepítette az Aspose.PDF könyvtárat, és beállította a fejlesztői környezetet. C# programozási alapismeretekkel is rendelkezel.
+A digitális korban a PDF-fájlok hatékony kezelése döntő fontosságú mind személyes, mind szakmai felhasználás szempontjából. Függetlenül attól, hogy Ön fejlesztő, aki az alkalmazását kívánja továbbfejleszteni, vagy üzleti szakember, aki dokumentumokat kezel, a PDF-fájlok kezelésének megértése időt és erőfeszítést takaríthat meg. Az egyik általános követelmény a fájltömörítés letiltása a PDF dokumentumokban. Ez különösen akkor lehet hasznos, ha biztosítani szeretné, hogy a beágyazott fájlok az eredeti formátumukban maradjanak változtatás nélkül. Ebben az oktatóanyagban megvizsgáljuk, hogyan lehet letiltani a fájltömörítést PDF-fájlokban az Aspose.PDF for .NET használatával. 
 
-### 1. lépés: Dokumentumkönyvtár beállítása
+## Előfeltételek
 
-A megadott forráskódban meg kell adnia azt a könyvtárat, ahol a PDF-fájl található, és amelyben le kívánja tiltani a tömörítést. Módosítsa a "dataDir" változót a kívánt könyvtárra.
+Mielőtt belemerülne a kódba, meg kell felelnie néhány előfeltételnek:
+
+1.  Aspose.PDF for .NET: Győződjön meg arról, hogy telepítve van az Aspose.PDF könyvtár. Letöltheti a[weboldal](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: Egy fejlesztői környezet, ahol megírhatja és végrehajthatja .NET kódját.
+3. Alapvető C# ismerete: A C# programozás ismerete segít jobban megérteni a kódrészleteket.
+
+## Csomagok importálása
+
+A kezdéshez importálnia kell a szükséges csomagokat a C# projektbe. A következőképpen teheti meg:
+
+### Hozzon létre egy új projektet
+
+Nyissa meg a Visual Studio-t, és hozzon létre egy új C#-projektet. Az egyszerűség kedvéért választhat egy konzolalkalmazást.
+
+### Adja hozzá az Aspose.PDF hivatkozást
+
+1. Kattintson a jobb gombbal a projektre a Solution Explorerben.
+2. Válassza a "NuGet-csomagok kezelése" lehetőséget.
+3. Keresse meg az "Aspose.PDF" kifejezést, és telepítse a legújabb verziót.
+
+### Importálja a névteret
+
+A C# fájl tetején importálja az Aspose.PDF névteret:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-### 2. lépés: Nyissa meg a meglévő PDF-dokumentumot
+Most, hogy mindent beállítottunk, bontsuk fel kezelhető lépésekre a PDF-fájlok tömörítésének letiltásának folyamatát.
 
-Megnyitjuk a meglévő PDF dokumentumot a megadott útvonalon.
+## 1. lépés: Határozza meg a dokumentumkönyvtárat
 
-```csharp
-Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-```
-
-### 3. lépés: Állítsa be az új fájlt a mellékletként való hozzáadáshoz
-
-Beállítjuk az új fájlt, amelyet mellékletként szeretnénk hozzáadni. Ebben a példában hozzáadunk egy szövegfájlt "teszt_out.txt" névvel és "Példa szövegfájl" leírással.
+Először is meg kell adnia annak a könyvtárnak az elérési útját, ahol a PDF-fájl található. Ez kulcsfontosságú, mivel megmondja a programnak, hogy hol találja meg a kezelni kívánt fájlt.
 
 ```csharp
-FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-```
-
-### 4. lépés: Tiltsa le a fájltömörítést
-
-A fájltömörítést úgy tiltjuk le, hogy a FileSpecification objektum Encoding tulajdonságát FileEncoding.None értékre állítjuk.
-
-```csharp
-fileSpecification.Encoding = FileEncoding.None;
-```
-
-### 5. lépés: A melléklet hozzáadása a dokumentum mellékleteinek gyűjteményéhez
-
-A mellékletet hozzáadjuk a dokumentum mellékletgyűjteményéhez.
-
-```csharp
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-```
-
-### 6. lépés: Mentse el az új kimeneti fájlt
-
-Végül a kapott új PDF-fájlt „DisableFilesCompression_out.pdf” néven mentjük a megadott könyvtárba.
-
-```csharp
-pdfDocument.Save(dataDir + "DisableFilesCompression_out.pdf");
-```
-
-
-### Minta forráskód a fájlok tömörítésének letiltásához az Aspose.PDF for .NET használatával 
-
-```csharp
-
-// A dokumentumok könyvtárának elérési útja.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Állítson be új fájlt a mellékletként hozzáadandó
-FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-// Adja meg az Encoding-tulajdonságot FileEncoding.None értékre állítva
-fileSpecification.Encoding = FileEncoding.None;
-//Melléklet hozzáadása a dokumentum mellékletgyűjteményéhez
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-dataDir = dataDir + "DisableFilesCompression_out.pdf";
-// Mentse el az új kimenetet
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
+```
 
+## 2. lépés: Töltse be a PDF-dokumentumot
+
+ Ezután betölti a módosítani kívánt PDF-dokumentumot. Ez a`Document` osztályt az Aspose.PDF biztosítja.
+
+```csharp
+Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
+```
+
+## 3. lépés: Állítsa be a mellékletként hozzáadandó fájlt
+
+Most létre kell hoznia egy új fájlspecifikációt a PDF-hez hozzáadni kívánt melléklethez. Ez magában foglalja a fájl nevének és típusának megadását.
+
+```csharp
+FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
+```
+
+## 4. lépés: Adja meg a kódolási tulajdonságot
+
+ Annak érdekében, hogy a fájl tömörítés nélkül kerüljön hozzáadásra, be kell állítania a fájlspecifikáció kódolási tulajdonságát`FileEncoding.None`. Ez a lépés kulcsfontosságú, mivel közvetlenül befolyásolja a fájl PDF-be ágyazását.
+
+```csharp
+fileSpecification.Encoding = FileEncoding.None;
+```
+
+## 5. lépés: Melléklet hozzáadása a dokumentumhoz
+
+Miután a fájlspecifikáció készen áll, a mellékletet hozzáadhatja a dokumentum mellékletgyűjteményéhez. Ez a lépés integrálja a fájlt a PDF-be.
+
+```csharp
+pdfDocument.EmbeddedFiles.Add(fileSpecification);
+```
+
+## 6. lépés: Mentse el az új kimenetet
+
+Végül el kell mentenie a módosított PDF dokumentumot. Adja meg a kimeneti útvonalat, ahová az új fájlt menteni szeretné.
+
+```csharp
+dataDir = dataDir + "DisableFilesCompression_out.pdf";
+pdfDocument.Save(dataDir);
+```
+
+## 7. lépés: Erősítse meg a műveletet
+
+Annak érdekében, hogy minden zökkenőmentesen menjen, nyomtathat egy megerősítő üzenetet a konzolra.
+
+```csharp
+Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
 ```
 
 ## Következtetés
 
-Ebben az oktatóanyagban elmagyaráztuk, hogyan lehet letiltani a fájltömörítést PDF-ben az Aspose.PDF for .NET használatával. Ezt a tudást most felhasználhatja a csatolt fájlok sértetlenségének megőrzésére tömörítés nélkül.
+A fájltömörítés letiltása PDF dokumentumokban egyszerű folyamat lehet a megfelelő eszközökkel. Az oktatóanyagban ismertetett lépések követésével könnyedén kezelheti PDF-fájljait, és gondoskodhat arról, hogy a beágyazott mellékletek megőrizzék eredeti formátumukat. Az Aspose.PDF for .NET hatékony és rugalmas módot biztosít a PDF-dokumentumok kezelésére, így kiváló választás a fejlesztők és a vállalkozások számára.
 
-## GYIK a fájlok tömörítésének letiltásához PDF fájlban
+## GYIK
 
-#### K: Miért szeretném letiltani a fájltömörítést egy PDF-dokumentumban?
+### Mi az Aspose.PDF for .NET?
+Az Aspose.PDF for .NET egy olyan könyvtár, amely lehetővé teszi a fejlesztők számára PDF-dokumentumok programozott létrehozását, kezelését és konvertálását.
 
-V: A fájltömörítés letiltása biztosítja, hogy a PDF-dokumentumban lévő csatolt fájlok tömörítetlenek maradjanak, megőrizve eredeti minőségüket és tartalmukat.
+### Miért szeretném letiltani a fájltömörítést a PDF-ben?
+fájltömörítés letiltása biztosítja, hogy a beágyazott fájlok az eredeti formátumukban maradjanak, ami fontos lehet az adatok integritása szempontjából.
 
-#### K: Milyen előnyökkel jár a fájltömörítés letiltása a PDF-mellékleteknél?
+### Használhatom ingyenesen az Aspose.PDF-et?
+ Igen, az Aspose ingyenes próbaverziót kínál, amellyel értékelheti a könyvtárat. Letöltheti[itt](https://releases.aspose.com/).
 
-V: A tömörítés letiltása megakadályozza a tömörítési folyamat során előforduló adat- vagy minőségvesztést, biztosítva, hogy a csatolt fájlok a jelenlegi állapotukban jelenjenek meg.
+### Hol találok további dokumentációt az Aspose.PDF-en?
+ Részletes dokumentációt találhat a[Aspose honlapja](https://reference.aspose.com/pdf/net/).
 
-#### K: Ezzel az oktatóanyaggal szelektíven letilthatom az egyes mellékletek tömörítését?
-
-V: Igen, ez az oktatóanyag végigvezeti Önt a fájltömörítés letiltásán a PDF-dokumentum egyes mellékleteinél, így finom vezérlést biztosít.
-
-#### K: Milyen típusú mellékleteknél tilthatom le a tömörítést?
-
-V: Bármilyen típusú mellékletnél, például képeknél, dokumentumoknál, táblázatoknál és egyebeknél letilthatja a tömörítést, így biztosítva azok integritását.
-
-#### K: A tömörítés letiltása hatással van a PDF-dokumentum teljes fájlméretére?
-
-V: A mellékletek tömörítésének letiltása a PDF-dokumentum teljes fájlméretének kismértékű növekedéséhez vezethet, mivel a tömörítetlen fájlok több helyet foglalnak el.
-
-#### K: Hogyan segíti elő az Aspose.PDF for .NET a fájltömörítés letiltásának folyamatát?
-
-V: Az Aspose.PDF for .NET egy könnyen használható API-t biztosít, amely lehetővé teszi a mellékletek fájltömörítésének letiltását, amint az a mellékelt forráskódban is látható.
-
-#### K: Ha szükséges, később újra engedélyezhetem a mellékletek tömörítését?
-
-V: Igen, szükség esetén módosíthatja a melléklet beállításait, hogy ismét engedélyezze a tömörítést.
-
-#### K: Mi történik, ha megnyitom a PDF-fájlt olyan eszközön vagy szoftveren, amely támogatja a tömörítést?
-
-V: Ha olyan eszközön vagy szoftveren nyitja meg a PDF-fájlt, amely támogatja a tömörítést, előfordulhat, hogy a melléklet tömörítetlenül jelenik meg, ami hatással lehet a fájl méretére és a megjelenítési teljesítményre.
-
-#### K: Vannak olyan konkrét forgatókönyvek, amikor javasolt a tömörítés letiltása?
-
-V: A tömörítés letiltása javasolt azoknál a mellékleteknél, ahol az eredeti minőség és adatintegritás megőrzése elsődleges szempont, például nagy felbontású képek vagy bizalmas dokumentumok.
+### Hogyan kaphatok támogatást az Aspose.PDF fájlhoz?
+ Támogatást kaphat, ha ellátogat a[Aspose fórum](https://forum.aspose.com/c/pdf/10).

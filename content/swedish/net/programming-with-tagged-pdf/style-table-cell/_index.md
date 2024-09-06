@@ -88,7 +88,7 @@ Vi skapade en rubrikrad för vår tabell och lade till rubrikceller med formater
 
 ## Steg 6: Lägga till raderna i tabellens brödtext
 
-Låt oss nu lägga till tabellraderna i vår tabell.
+Låt oss nu lägga till raderna i tabellkroppen till vår tabell.
 ```csharp
 for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 {

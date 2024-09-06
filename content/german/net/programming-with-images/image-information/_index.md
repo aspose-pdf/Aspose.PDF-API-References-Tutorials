@@ -1,25 +1,25 @@
 ---
-title: Bildinformationen in PDF-Datei
-linktitle: Bildinformationen in PDF-Datei
+title: Bildinformationen in der PDF-Datei
+linktitle: Bildinformationen in der PDF-Datei
 second_title: Aspose.PDF für .NET API-Referenz
 description: Extrahieren Sie Bildinformationen in einer PDF-Datei mit Aspose.PDF für .NET.
 type: docs
 weight: 160
 url: /de/net/programming-with-images/image-information/
 ---
-In dieser Anleitung erfahren Sie Schritt für Schritt, wie Sie mit Aspose.PDF für .NET Informationen zu Bildern in eine PDF-Datei extrahieren. Stellen Sie sicher, dass Sie Ihre Umgebung bereits eingerichtet haben, und führen Sie die folgenden Schritte aus:
+Diese Anleitung führt Sie Schritt für Schritt durch das Extrahieren von Informationen über Bilder in PDF-Dateien mit Aspose.PDF für .NET. Stellen Sie sicher, dass Sie Ihre Umgebung bereits eingerichtet haben, und befolgen Sie die folgenden Schritte:
 
-## Schritt 1: Definieren Sie das Dokumentenverzeichnis
+## Schritt 1: Dokumentverzeichnis festlegen
 
- Stellen Sie sicher, dass Sie das richtige Dokumentverzeichnis festlegen. Ersetzen`"YOUR DOCUMENT DIRECTORY"` Geben Sie im Code den Pfad zu dem Verzeichnis ein, in dem sich Ihr PDF-Dokument befindet.
+ Stellen Sie sicher, dass Sie das richtige Dokumentverzeichnis angeben. Ersetzen Sie`"YOUR DOCUMENT DIRECTORY"` im Code durch den Pfad zum Verzeichnis, in dem sich Ihr PDF-Dokument befindet.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Schritt 2: Laden Sie die Quell-PDF-Datei
+## Schritt 2: Laden Sie die PDF-Quelldatei
 
- In diesem Schritt laden wir die Quell-PDF-Datei mit`Document` Klasse von Aspose.PDF. Benutzen Sie die`Document` Konstruktor und übergeben Sie den Pfad zum PDF-Dokument.
+ In diesem Schritt laden wir die Quell-PDF-Datei mit dem`Document` Klasse von Aspose.PDF. Verwenden Sie die`Document` Konstruktor und übergeben Sie den Pfad zum PDF-Dokument.
 
 ```csharp
 Document doc = new Document(dataDir + "ImageInformation.pdf");
@@ -42,9 +42,9 @@ System.Collections.Stack graphicsState = new System.Collections.Stack();
 System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
 ```
 
-## Schritt 5: Durchlaufen Sie die Operatoren auf der ersten Seite des Dokuments
+## Schritt 5: Durchlaufen der Operatoren auf der ersten Seite des Dokuments
 
-In diesem Schritt gehen wir die Operatoren auf der ersten Seite des Dokuments durch, um bildbezogene Vorgänge zu identifizieren.
+In diesem Schritt gehen wir die Operatoren auf der ersten Seite des Dokuments durch, um bildbezogene Operationen zu identifizieren.
 
 ```csharp
 foreach(Operator op in doc.Pages[1].Contents)
@@ -53,7 +53,7 @@ foreach(Operator op in doc.Pages[1].Contents)
 
 ## Schritt 6: Operatoren verwalten und Bildinformationen extrahieren
 
-In diesem Schritt verwalten wir die verschiedenen Arten von Operatoren und extrahieren die Informationen zu den Bildern.
+In diesem Schritt verwalten wir die verschiedenen Operatortypen und extrahieren die Informationen zu den Bildern.
 
 ```csharp
 Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
@@ -61,7 +61,7 @@ Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GResto
 Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
 Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
 
-//Behandeln Sie GSave- und GRestore-Vorgänge für Transformationen
+//Behandeln von GSave- und GRestore-Vorgängen für Transformationen
 if (opSaveState != null)
 {
      graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
@@ -70,10 +70,10 @@ else if (opRestoreState != null)
 {
      graphicsState. Pop();
 }
-// Behandeln Sie den ConcatenateMatrix-Vorgang für Transformationen
+// Behandeln der ConcatenateMatrix-Operation für Transformationen
 else if (opCtm != null)
 {
-     // Wenden Sie die Transformationsmatrix an
+     // Anwenden der Transformationsmatrix
      System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
         (float)opCtm.Matrix.A,
         (float)opCtm.Matrix.B,
@@ -86,17 +86,17 @@ else if (opCtm != null)
      ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
      keep on going;
 }
-// Behandeln Sie den Do-Vorgang für Bilder
+// Behandeln des Do-Vorgangs für Bilder
 else if (opDo != null)
 {
      if (imageNames.Contains(opDo.Name))
      {
          // Rufen Sie das Bild ab
          XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-         // Rufen Sie die Abmessungen des Bildes ab
+         // Abrufen der Abmessungen des Bildes
          double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
          double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-         // Berechnen Sie die Auflösung anhand der oben genannten Informationen
+         // Berechnen Sie die Auflösung anhand der obigen Informationen
          double resHorizontal = originalWidth * defaultResolution / scaledWidth;
          double resVertical = originalHeight * defaultResolution / scaledHeight;
          // Bildinformationen anzeigen
@@ -108,37 +108,37 @@ else if (opDo != null)
 }
 ```
 
-### Beispielquellcode für Bildinformationen mit Aspose.PDF für .NET 
+### Beispiel-Quellcode für Bildinformationen mit Aspose.PDF für .NET 
 ```csharp
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Laden Sie die Quell-PDF-Datei
+// Laden Sie die PDF-Quelldatei
 Document doc = new Document(dataDir+ "ImageInformation.pdf");
-// Definieren Sie die Standardauflösung für das Bild
+// Definieren Sie die Standardauflösung für Bilder
 int defaultResolution = 72;
 System.Collections.Stack graphicsState = new System.Collections.Stack();
-// Definieren Sie ein Array-Listenobjekt, das Bildnamen enthält
+// Definieren Sie ein Array-Listenobjekt, das Bildnamen enthalten wird
 System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
-// Fügen Sie ein Objekt zum Stapeln ein
+// Einfügen eines zu stapelnden Objekts
 graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
-// Holen Sie sich alle Operatoren auf der ersten Seite des Dokuments
+// Holen Sie sich alle Operatoren auf die erste Seite des Dokuments
 foreach (Operator op in doc.Pages[1].Contents)
 {
-	// Verwenden Sie die GSave/GRestore-Operatoren, um die Transformationen auf den zuvor festgelegten Wert zurückzusetzen
+	// Verwenden Sie GSave/GRestore-Operatoren, um die Transformationen auf den zuvor festgelegten Wert zurückzusetzen.
 	Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
 	Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-	// Instanziieren Sie das ConcatenateMatrix-Objekt, während es die aktuelle Transformationsmatrix definiert.
+	// Instanziieren Sie das ConcatenateMatrix-Objekt, da es die aktuelle Transformationsmatrix definiert.
 	Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-	// Erstellen Sie einen Do-Operator, der Objekte aus Ressourcen zieht. Es zeichnet Formobjekte und Bildobjekte
+	// Erstellen Sie einen Do-Operator, der Objekte aus Ressourcen zieht. Er zieht Formularobjekte und Bildobjekte
 	Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
 	if (opSaveState != null)
 	{
-		//Vorherigen Status speichern und aktuellen Status an die Spitze des Stapels verschieben
+		//Vorherigen Status speichern und aktuellen Status an den Anfang des Stapels verschieben
 		graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 	}
 	else if (opRestoreState != null)
 	{
-		// Den aktuellen Zustand verwerfen und den vorherigen wiederherstellen
+		// Aktuellen Zustand verwerfen und vorherigen wiederherstellen
 		graphicsState.Pop();
 	}
 	else if (opCtm != null)
@@ -160,7 +160,7 @@ foreach (Operator op in doc.Pages[1].Contents)
 		if (imageNames.Contains(opDo.Name))
 		{
 			System.Drawing.Drawing2D.Matrix lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-			// Erstellen Sie ein XImage-Objekt, um Bilder der ersten PDF-Seite zu speichern
+			// Erstellen Sie ein XImage-Objekt, um die Bilder der ersten PDF-Seite aufzunehmen
 			XImage image = doc.Pages[1].Resources.Images[opDo.Name];
 			// Bildabmessungen abrufen
 			double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
@@ -168,10 +168,10 @@ foreach (Operator op in doc.Pages[1].Contents)
 			// Informationen zur Höhe und Breite des Bildes abrufen
 			double originalWidth = image.Width;
 			double originalHeight = image.Height;
-			// Berechnen Sie die Auflösung basierend auf den oben genannten Informationen
+			// Berechnen Sie die Auflösung basierend auf den obigen Informationen
 			double resHorizontal = originalWidth * defaultResolution / scaledWidth;
 			double resVertical = originalHeight * defaultResolution / scaledHeight;
-			// Zeigt Informationen zur Größe und Auflösung jedes Bildes an
+			// Informationen zu Abmessungen und Auflösung jedes Bilds anzeigen
 			Console.Out.WriteLine(
 					string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
 								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
@@ -183,46 +183,46 @@ foreach (Operator op in doc.Pages[1].Contents)
 
 ## Abschluss
 
-Herzlichen Glückwunsch! Sie haben jetzt gelernt, wie Sie mit Aspose.PDF für .NET Bildinformationen in einer PDF-Datei extrahieren. Sie können diese Informationen für verschiedene Bildverarbeitungsaufgaben in Ihren Anwendungen nutzen.
+Herzlichen Glückwunsch! Sie haben jetzt gelernt, wie Sie mit Aspose.PDF für .NET Bildinformationen in einer PDF-Datei extrahieren. Sie können diese Informationen für verschiedene Bildverarbeitungsaufgaben in Ihren Anwendungen verwenden.
 
 ### FAQs zu Bildinformationen in PDF-Dateien
 
 #### F: Was ist der Zweck des Extrahierens von Bildinformationen aus einem PDF-Dokument mit Aspose.PDF für .NET?
 
-A: Das Extrahieren von Bildinformationen aus einem PDF-Dokument bietet Einblicke in die Abmessungen, die Auflösung und andere Attribute von Bildern im Dokument. Diese Informationen können für Bildverarbeitungs-, Analyse- oder Optimierungsaufgaben verwendet werden.
+A: Das Extrahieren von Bildinformationen aus einem PDF-Dokument bietet Einblicke in die Abmessungen, Auflösung und andere Attribute von Bildern im Dokument. Diese Informationen können für Bildverarbeitungs-, Analyse- oder Optimierungsaufgaben verwendet werden.
 
 #### F: Wie hilft Aspose.PDF für .NET beim Extrahieren von Bildinformationen aus einem PDF-Dokument?
 
-A: Aspose.PDF für .NET bietet Tools zum Zugriff und zur Analyse des Inhalts eines PDF-Dokuments, einschließlich seiner Bilder. Der bereitgestellte Code zeigt, wie Bildinformationen mithilfe verschiedener Operatoren extrahiert und angezeigt werden.
+A: Aspose.PDF für .NET bietet Tools zum Zugreifen auf und Analysieren des Inhalts eines PDF-Dokuments, einschließlich seiner Bilder. Der bereitgestellte Code zeigt, wie Bildinformationen mithilfe verschiedener Operatoren extrahiert und angezeigt werden.
 
-#### F: Welche Bildinformationen können mit dieser Methode extrahiert werden?
+#### F: Welche Art von Bildinformationen können mit dieser Methode extrahiert werden?
 
-A: Mit dieser Methode können Sie Informationen wie skalierte Abmessungen, Auflösung und Bildnamen für Bilder in einem PDF-Dokument extrahieren und anzeigen.
+A: Mit dieser Methode können Sie Informationen wie skalierte Abmessungen, Auflösung und Bildnamen für Bilder innerhalb eines PDF-Dokuments extrahieren und anzeigen.
 
 #### F: Wie identifiziert und verarbeitet der Code bildbezogene Operatoren in einem PDF-Dokument?
 
-A: Der Code durchläuft die Operatoren auf einer bestimmten Seite des PDF-Dokuments. Es identifiziert und verarbeitet Operatoren im Zusammenhang mit Bildoperationen, Transformationen und Rendering.
+A: Der Code durchläuft die Operatoren auf einer angegebenen Seite des PDF-Dokuments. Er identifiziert und verarbeitet Operatoren, die mit Bildoperationen, Transformationen und Rendering in Zusammenhang stehen.
 
 #### F: Welche Bedeutung hat die Standardauflösung und wie wird sie im Code verwendet?
 
-A: Die Standardauflösung wird als Referenzpunkt zur Berechnung der tatsächlichen Auflösung von Bildern verwendet. Der Code berechnet die Auflösung jedes Bildes basierend auf seinen Abmessungen und der Standardauflösungseinstellung.
+A: Die Standardauflösung wird als Referenzpunkt verwendet, um die tatsächliche Auflösung von Bildern zu berechnen. Der Code berechnet die Auflösung jedes Bildes basierend auf seinen Abmessungen und der Standardauflösungseinstellung.
 
 #### F: Wie können die extrahierten Bildinformationen in realen Szenarien genutzt werden?
 
-A: Die extrahierten Bildinformationen können für Aufgaben wie die Beurteilung der Bildqualität, die Bildoptimierung, die Erstellung von Miniaturansichten von Bildern und die Erleichterung bildbezogener Entscheidungsprozesse verwendet werden.
+A: Die extrahierten Bildinformationen können für Aufgaben wie die Beurteilung der Bildqualität, die Bildoptimierung, das Generieren von Miniaturansichten und die Erleichterung bildbezogener Entscheidungsprozesse verwendet werden.
 
 #### F: Kann ich den Code ändern, um zusätzliche bildbezogene Attribute zu extrahieren?
 
-A: Ja, Sie können den Code anpassen, um zusätzliche Bildattribute wie Farbraum, Pixeltiefe oder Bildtyp zu extrahieren.
+A: Ja, Sie können den Code anpassen, um zusätzliche Attribute von Bildern zu extrahieren, wie etwa Farbraum, Pixeltiefe oder Bildtyp.
 
 #### F: Ist der Prozess der Bildinformationsextraktion ressourcenintensiv oder zeitaufwändig?
 
-A: Der Bildinformationsextraktionsprozess ist effizient und leistungsoptimiert, sodass die Auswirkungen auf den Ressourcenverbrauch und die Verarbeitungszeit minimal sind.
+A: Der Prozess der Bildinformationsextraktion ist effizient und auf Leistung optimiert, wodurch die Auswirkungen auf Ressourcennutzung und Verarbeitungszeit minimal bleiben.
 
-#### F: Wie können Entwickler von der Identifizierung und Extraktion von Bildinformationen aus PDF-Dokumenten profitieren?
+#### F: Welche Vorteile bietet das Identifizieren und Extrahieren von Bildinformationen aus PDF-Dokumenten für Entwickler?
 
 A: Entwickler können Einblicke in die Eigenschaften von Bildern in PDF-Dokumenten gewinnen und so fundierte Entscheidungen hinsichtlich der Bildbearbeitung, -verarbeitung und -optimierung treffen.
 
-#### F: Kann diese Methode für die Stapelverarbeitung von PDF-Dokumenten mit Bildern verwendet werden?
+#### F: Kann diese Methode zur Stapelverarbeitung von PDF-Dokumenten mit Bildern verwendet werden?
 
 A: Ja, diese Methode kann für die Stapelverarbeitung erweitert werden, indem mehrere Seiten oder Dokumente durchlaufen, Bildinformationen extrahiert und bildbezogene Aufgaben ausgeführt werden.

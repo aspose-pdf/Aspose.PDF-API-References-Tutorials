@@ -2,16 +2,16 @@
 title: Formulierveld in PDF-document wijzigen
 linktitle: Formulierveld in PDF-document wijzigen
 second_title: Aspose.PDF voor .NET API-referentie
-description: Bewerk eenvoudig formuliervelden in PDF-documenten met Aspose.PDF voor .NET.
+description: Bewerk eenvoudig formuliervelden in een PDF-document met Aspose.PDF voor .NET.
 type: docs
 weight: 190
 url: /nl/net/programming-with-forms/modify-form-field/
 ---
-In deze zelfstudie laten we u zien hoe u een formulierveld in een PDF-document bewerkt met Aspose.PDF voor .NET. We leggen de C#-broncode stap voor stap uit om u door dit proces te begeleiden.
+In deze tutorial laten we u zien hoe u een formulierveld in een PDF-document bewerkt met Aspose.PDF voor .NET. We leggen de C#-broncode stap voor stap uit om u door dit proces te leiden.
 
 ## Stap 1: Voorbereiding
 
-Zorg ervoor dat u de benodigde bibliotheken heeft geïmporteerd en stel het pad in naar uw documentenmap:
+Zorg ervoor dat u de benodigde bibliotheken hebt geïmporteerd en het pad naar uw documentenmap hebt ingesteld:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -25,9 +25,9 @@ Laad het bestaande PDF-document:
 Document pdfDocument = new Document(dataDir + "ModifyFormField.pdf");
 ```
 
-## Stap 3: Haal het formulierveld op
+## Stap 3: Het formulierveld ophalen
 
-Haal het formulierveld op dat u wilt bewerken:
+Selecteer het formulierveld dat u wilt bewerken:
 
 ```csharp
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
@@ -35,7 +35,7 @@ TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 
 ## Stap 4: Wijzig de veldwaarde
 
-Wijzig de formulierveldwaarde:
+Wijzig de waarde van het formulierveld:
 
 ```csharp
 textBoxField.Value = "New Value";
@@ -43,7 +43,7 @@ textBoxField.Value = "New Value";
 
 ## Stap 5: Veldeigenschappen bewerken
 
-Wijzig indien nodig aanvullende formulierveldeigenschappen. U kunt het bijvoorbeeld alleen-lezen maken:
+Wijzig indien nodig aanvullende eigenschappen van het formulierveld. U kunt het bijvoorbeeld alleen-lezen maken:
 
 ```csharp
 textBoxField.ReadOnly = true;
@@ -64,40 +64,40 @@ pdfDocument.Save(dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Document openen
 Document pdfDocument = new Document(dataDir + "ModifyFormField.pdf");
-// Neem een veld
+// Krijg een veld
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 // Veldwaarde wijzigen
 textBoxField.Value = "New Value";
 textBoxField.ReadOnly = true;
 dataDir = dataDir + "ModifyFormField_out.pdf";
-// Bewaar het bijgewerkte document
+// Bijgewerkt document opslaan
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nForm field modified successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusie
 
-In deze zelfstudie hebben we geleerd hoe u een formulierveld in een PDF-document kunt bewerken met Aspose.PDF voor .NET. Door deze stappen te volgen, kunt u eenvoudig naar een specifiek veld navigeren, de waarde ervan wijzigen en de eigenschappen ervan indien nodig aanpassen.
+In deze tutorial hebben we geleerd hoe u een formulierveld in een PDF-document bewerkt met Aspose.PDF voor .NET. Door deze stappen te volgen, kunt u eenvoudig naar een specifiek veld navigeren, de waarde ervan wijzigen en de eigenschappen ervan aanpassen indien nodig.
 
 
 ### Veelgestelde vragen
 
-#### Vraag: Kan ik meerdere formuliervelden binnen één PDF-document bewerken met Aspose.PDF voor .NET?
+#### V: Kan ik meerdere formuliervelden in één PDF-document bewerken met Aspose.PDF voor .NET?
 
-A: Ja, u kunt meerdere formuliervelden binnen één PDF-document bewerken met Aspose.PDF voor .NET. Herhaal eenvoudigweg het proces voor elk formulierveld dat u wilt wijzigen.
+A: Ja, u kunt meerdere formuliervelden binnen één PDF-document bewerken met Aspose.PDF voor .NET. Herhaal het proces eenvoudigweg voor elk formulierveld dat u wilt wijzigen.
 
-#### Vraag: Is Aspose.PDF voor .NET compatibel met alle versies van .NET Framework?
+#### V: Is Aspose.PDF voor .NET compatibel met alle versies van .NET Framework?
 
 A: Ja, Aspose.PDF voor .NET is compatibel met alle versies van .NET Framework, inclusief .NET Core en .NET Standard.
 
-#### Vraag: Kan ik andere typen formuliervelden, zoals selectievakjes of keuzerondjes, wijzigen met Aspose.PDF voor .NET?
+#### V: Kan ik andere typen formuliervelden, zoals selectievakjes of keuzerondjes, wijzigen met Aspose.PDF voor .NET?
 
-A: Ja, Aspose.PDF voor .NET ondersteunt het wijzigen van verschillende soorten formuliervelden, waaronder selectievakjes, keuzerondjes en meer.
+A: Ja, Aspose.PDF voor .NET ondersteunt het wijzigen van verschillende typen formuliervelden, waaronder selectievakjes, keuzerondjes en meer.
 
-#### Vraag: Hoe kan ik nieuwe formuliervelden toevoegen aan een PDF-document met Aspose.PDF voor .NET?
+#### V: Hoe kan ik nieuwe formuliervelden toevoegen aan een PDF-document met Aspose.PDF voor .NET?
 
- A: Om nieuwe formuliervelden aan een PDF-document toe te voegen, kunt u de`Form` eigendom van de`Document` klasse om toegang te krijgen tot de`Field` collectie en voeg vervolgens programmatisch nieuwe formuliervelden toe.
+ A: Om nieuwe formuliervelden aan een PDF-document toe te voegen, kunt u de`Form` eigendom van de`Document` klasse om toegang te krijgen tot de`Field` verzameling en voeg vervolgens programmatisch nieuwe formuliervelden toe.
 
-#### Vraag: Ondersteunt Aspose.PDF voor .NET andere programmeertalen dan C#?
+#### V: Ondersteunt Aspose.PDF voor .NET andere programmeertalen dan C#?
 
-A: Ja, Aspose.PDF voor .NET ondersteunt naast C# ook verschillende programmeertalen, zoals VB.NET en ASP.NET.
+A: Ja, Aspose.PDF voor .NET ondersteunt verschillende programmeertalen, zoals VB.NET en ASP.NET, naast C#.

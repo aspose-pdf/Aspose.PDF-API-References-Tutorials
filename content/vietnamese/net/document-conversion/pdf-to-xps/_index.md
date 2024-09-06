@@ -1,86 +1,108 @@
 ---
 title: PDF sang XPS
 linktitle: PDF sang XPS
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Hướng dẫn từng bước chuyển đổi PDF sang XPS bằng Aspose.PDF cho .NET.
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách chuyển đổi PDF sang XPS bằng Aspose.PDF cho .NET với hướng dẫn từng bước này. Hoàn hảo cho các nhà phát triển và những người đam mê xử lý tài liệu.
 type: docs
 weight: 220
 url: /vi/net/document-conversion/pdf-to-xps/
 ---
-Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn quy trình chuyển đổi tệp PDF sang định dạng XPS (Đặc tả giấy XML) bằng Aspose.PDF cho .NET. Định dạng XPS là định dạng tệp dựa trên XML được sử dụng để thể hiện các tài liệu dưới dạng điện tử. Bằng cách làm theo các bước bên dưới, bạn sẽ có thể chuyển đổi tệp PDF sang định dạng XPS.
+## Giới thiệu
+
+Trong thế giới kỹ thuật số ngày nay, nhu cầu chuyển đổi tài liệu từ định dạng này sang định dạng khác phổ biến hơn bao giờ hết. Cho dù bạn là nhà phát triển muốn tích hợp xử lý tài liệu vào ứng dụng của mình hay là chuyên gia kinh doanh cần chia sẻ tệp ở định dạng được chấp nhận rộng rãi, thì việc hiểu cách chuyển đổi tệp PDF sang XPS (XML Paper Specification) có thể cực kỳ hữu ích. Trong hướng dẫn này, chúng ta sẽ đi sâu vào quá trình chuyển đổi PDF sang XPS bằng thư viện Aspose.PDF mạnh mẽ dành cho .NET.
 
 ## Điều kiện tiên quyết
-Trước khi bắt đầu, hãy đảm bảo bạn đáp ứng các điều kiện tiên quyết sau:
 
-- Kiến thức cơ bản về ngôn ngữ lập trình C#.
-- Thư viện Aspose.PDF cho .NET được cài đặt trên hệ thống của bạn.
-- Một môi trường phát triển như Visual Studio.
+Trước khi bắt đầu, bạn cần phải có một số điều kiện tiên quyết sau:
 
-## Bước 1: Tải tài liệu PDF
-Trong bước này, chúng tôi sẽ tải tệp PDF nguồn bằng Aspose.PDF cho .NET. Thực hiện theo mã dưới đây:
+1. Visual Studio: Đảm bảo bạn đã cài đặt Visual Studio trên máy của mình. Đây là nơi bạn sẽ viết và thực thi mã .NET của mình.
+2. .NET Framework: Điều cần thiết là phải quen thuộc với .NET framework vì chúng ta sẽ sử dụng C# cho các ví dụ.
+3.  Thư viện Aspose.PDF: Bạn cần cài đặt thư viện Aspose.PDF. Bạn có thể tải xuống từ[Trang phát hành Aspose PDF cho .NET](https://releases.aspose.com/pdf/net/).
+4. Kiến thức cơ bản về C#: Hiểu biết cơ bản về lập trình C# sẽ giúp bạn theo dõi các ví dụ.
 
-```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+## Nhập gói
 
-// Tải tài liệu PDF
-Document pdfDocument = new Document(dataDir + "input.pdf");
-```
+Để bắt đầu với Aspose.PDF, bạn cần nhập các gói cần thiết vào dự án của mình. Sau đây là cách bạn có thể thực hiện:
 
- Hãy chắc chắn để thay thế`"YOUR DOCUMENTS DIRECTORY"` với thư mục thực tế nơi chứa tệp PDF của bạn.
-
-## Bước 2: Khởi tạo các tùy chọn lưu XPS
-Sau khi tải tệp PDF, chúng tôi sẽ khởi tạo các tùy chọn lưu XPS. Sử dụng mã sau đây:
+1. Mở Visual Studio: Khởi chạy Visual Studio và tạo một dự án mới.
+2. Thêm tham chiếu: Nhấp chuột phải vào dự án của bạn trong Solution Explorer, chọn "Quản lý gói NuGet" và tìm kiếm "Aspose.PDF". Cài đặt gói vào dự án của bạn.
+3. Sử dụng Chỉ thị: Ở đầu tệp C# của bạn, hãy bao gồm chỉ thị using sau:
 
 ```csharp
-// Khởi tạo các tùy chọn lưu XPS
-Aspose.Pdf.XpsSaveOptions saveOptions = new Aspose.Pdf.XpsSaveOptions();
+using System;
+using System.IO;
+using Aspose.Pdf;
 ```
 
-## Bước 3: Lưu tệp XPS kết quả
-Bây giờ chúng tôi sẽ lưu tệp PDF đã chuyển đổi ở định dạng XPS. Sử dụng mã sau đây:
+Bây giờ chúng ta đã thiết lập mọi thứ, hãy chia nhỏ quá trình chuyển đổi thành các bước dễ quản lý hơn.
 
-```csharp
-// Lưu tài liệu XPS
-pdfDocument.Save("PDFToXPS_out.xps", saveOptions);
-```
+## Bước 1: Thiết lập thư mục tài liệu của bạn
 
- Đoạn mã trên lưu tệp PDF đã chuyển đổi ở định dạng XPS với tên tệp`"PDFToXPS_out.xps"`.
+Trước khi bạn có thể chuyển đổi PDF sang XPS, bạn cần chỉ định thư mục chứa tệp PDF của mình. Điều này rất quan trọng vì chương trình cần biết nơi tìm tệp đầu vào.
 
-
-### Mã nguồn ví dụ cho PDF sang XPS bằng Aspose.PDF for .NET
+Trong bước này, bạn sẽ định nghĩa một biến chuỗi chứa đường dẫn đến thư mục tài liệu của bạn. Đường dẫn này sẽ trỏ đến vị trí tệp PDF của bạn.
 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+ Thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế trên máy của bạn nơi tệp PDF được lưu trữ.
+
+## Bước 2: Tải Tài liệu PDF
+
+Bây giờ bạn đã thiết lập xong thư mục tài liệu, bước tiếp theo là tải tài liệu PDF mà bạn muốn chuyển đổi.
+
+ Bạn sẽ tạo một phiên bản của`Document` lớp từ thư viện Aspose.PDF và truyền đường dẫn của tệp PDF của bạn đến hàm tạo của nó. Điều này sẽ tải tài liệu PDF vào bộ nhớ.
+
+```csharp
 // Tải tài liệu PDF
 Document pdfDocument = new Document(dataDir + "input.pdf");
+```
 
-// Khởi tạo các tùy chọn Lưu XPS
+ Hãy chắc chắn thay thế`"input.pdf"` bằng tên tệp PDF thực tế của bạn.
+
+## Bước 3: Khởi tạo tùy chọn lưu XPS
+
+ Trước khi lưu tài liệu ở định dạng XPS, bạn cần tạo một phiên bản của`XpsSaveOptions` Lớp này cho phép bạn chỉ định nhiều tùy chọn khác nhau để lưu tài liệu.
+
+ Bằng cách khởi tạo`XpsSaveOptions`bạn có thể tùy chỉnh cách chuyển đổi PDF sang XPS. Đối với chuyển đổi cơ bản này, bạn có thể sử dụng các thiết lập mặc định.
+
+```csharp
+// Khởi tạo tùy chọn Lưu XPS
 Aspose.Pdf.XpsSaveOptions saveOptions = new Aspose.Pdf.XpsSaveOptions();
+```
 
+## Bước 4: Lưu tài liệu dưới dạng XPS
+
+Cuối cùng, đã đến lúc lưu tài liệu PDF đã tải thành tệp XPS. Đây chính là nơi phép thuật xảy ra!
+
+ Bạn sẽ gọi`Save` phương pháp trên`pdfDocument` đối tượng, truyền vào tên tệp đầu ra mong muốn và`saveOptions` bạn đã tạo trước đó.
+
+```csharp
 // Lưu tài liệu XPS
 pdfDocument.Save("PDFToXPS_out.xps", saveOptions);
 ```
 
+ Dòng mã này sẽ tạo một tệp XPS có tên`PDFToXPS_out.xps` trong thư mục dự án của bạn.
+
 ## Phần kết luận
-Trong hướng dẫn này, chúng tôi đã trình bày quy trình từng bước chuyển đổi tệp PDF sang định dạng XPS bằng Aspose.PDF cho .NET. Bằng cách làm theo các hướng dẫn được nêu ở trên, giờ đây bạn có thể chuyển đổi tệp PDF sang định dạng XPS. Tính năng này hữu ích khi bạn muốn xem hoặc in tài liệu PDF ở định dạng XPS.
 
-### Câu hỏi thường gặp
+Xin chúc mừng! Bạn đã chuyển đổi thành công một tài liệu PDF sang định dạng XPS bằng Aspose.PDF cho .NET. Thư viện đơn giản nhưng mạnh mẽ này cho phép bạn xử lý nhiều tác vụ xử lý tài liệu khác nhau một cách dễ dàng. Cho dù bạn đang chuyển đổi tệp để có khả năng tương thích tốt hơn hay chỉ lưu trữ tài liệu ở định dạng khác, Aspose.PDF đều có thể giúp bạn.
 
-#### Câu hỏi: Định dạng XPS có phù hợp với khả năng tương thích đa nền tảng không?
+## Câu hỏi thường gặp
 
-Trả lời: Định dạng XPS, là định dạng tệp dựa trên XML, độc lập với nền tảng và có thể xem được trên nhiều hệ điều hành và thiết bị khác nhau. Các tệp XPS được hỗ trợ trên nền tảng Windows theo mặc định và một số ứng dụng và trình xem của bên thứ ba có thể có sẵn cho các nền tảng khác.
+### Định dạng XPS là gì?
+XPS (XML Paper Specification) là định dạng tài liệu do Microsoft phát triển nhằm bảo toàn bố cục và hình thức của tài liệu.
 
-#### Câu hỏi: Aspose.PDF cho .NET có thể xử lý các tệp PDF phức tạp có nhiều trang và hình ảnh trong quá trình chuyển đổi XPS không?
+### Tôi có thể chuyển đổi nhiều tệp PDF sang XPS cùng lúc không?
+Có, bạn có thể lặp qua nhiều tệp PDF trong một thư mục và chuyển đổi từng tệp sang XPS bằng phương pháp tương tự.
 
-Trả lời: Có, Aspose.PDF cho .NET có thể xử lý các tệp PDF phức tạp với nhiều trang và hình ảnh trong quá trình chuyển đổi XPS. Nó giữ lại chính xác bố cục, hình ảnh và nội dung văn bản của PDF trong khi chuyển đổi sang định dạng XPS.
+### Aspose.PDF có miễn phí sử dụng không?
+ Aspose.PDF cung cấp bản dùng thử miễn phí, nhưng để có đầy đủ chức năng, bạn sẽ cần mua giấy phép. Bạn có thể tìm thêm thông tin chi tiết trên[mua trang](https://purchase.aspose.com/buy).
 
-#### Hỏi: Có thể chỉ định các cài đặt hoặc tùy chọn bổ sung trong quá trình chuyển đổi XPS không?
+### Tôi phải làm sao nếu gặp vấn đề trong quá trình chuyển đổi?
+ Bạn có thể tìm kiếm sự trợ giúp từ cộng đồng Aspose trên[diễn đàn hỗ trợ](https://forum.aspose.com/c/pdf/10).
 
- Trả lời: Có, Aspose.PDF cho .NET cung cấp nhiều tùy chọn và cài đặt khác nhau có thể được tùy chỉnh trong quá trình chuyển đổi XPS. Bạn có thể kiểm soát việc nén hình ảnh, nhúng phông chữ và các cài đặt khác bằng cách sử dụng`XpsSaveOptions` lớp học.
-
-#### Câu hỏi: Có thể chuyển đổi các tệp PDF được bảo vệ bằng mật khẩu sang định dạng XPS bằng Aspose.PDF cho .NET không?
-
- Trả lời: Có, Aspose.PDF for .NET hỗ trợ chuyển đổi các tệp PDF được bảo vệ bằng mật khẩu sang định dạng XPS. Khi tải tệp PDF được bảo vệ bằng mật khẩu, bạn có thể cung cấp mật khẩu bằng cách sử dụng`Document` hàm tạo của lớp hoặc bằng cách thiết lập`Password` thuộc tính trước khi tải tệp PDF.
+### Tôi có thể nhận được giấy phép tạm thời cho Aspose.PDF không?
+ Có, bạn có thể yêu cầu cấp giấy phép tạm thời cho mục đích đánh giá từ[trang giấy phép tạm thời](https://purchase.aspose.com/temporary-license/).

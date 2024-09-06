@@ -1,39 +1,39 @@
 ---
-title: フォームフィールドの移動
-linktitle: フォームフィールドの移動
+title: フォームフィールドを移動
+linktitle: フォームフィールドを移動
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用すると、PDF ドキュメント内でフォーム フィールドを簡単に移動できます。
+description: Aspose.PDF for .NET を使用すると、PDF ドキュメント内のフォーム フィールドを簡単に移動できます。
 type: docs
 weight: 200
 url: /ja/net/programming-with-forms/move-form-field/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメント内のフォーム フィールドを移動する方法を説明します。このプロセスをガイドするために、C# ソース コードをステップごとに説明します。
+このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメント内のフォーム フィールドを移動する方法を説明します。このプロセスをガイドするために、C# ソース コードを段階的に説明します。
 
-## ステップ 1: 準備
+## ステップ1: 準備
 
-必要なライブラリをインポートし、ドキュメント ディレクトリへのパスを設定していることを確認してください。
+必要なライブラリがインポートされ、ドキュメント ディレクトリへのパスが設定されていることを確認してください。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## ステップ 2: ドキュメントをロードする
+## ステップ2: ドキュメントを読み込む
 
-既存の PDF ドキュメントをロードします。
+既存の PDF ドキュメントを読み込みます:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "MoveFormField.pdf");
 ```
 
-## ステップ 3: フォームフィールドを取得する
+## ステップ3: フォームフィールドを取得する
 
-移動したいフォームフィールドを取得します。
+移動するフォーム フィールドを取得します。
 
 ```csharp
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 ```
 
-## ステップ 4: フィールドの場所を変更する
+## ステップ4: フィールドの場所を変更する
 
 新しい長方形領域を定義して、フォーム フィールドの位置を変更します。
 
@@ -41,7 +41,7 @@ TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 textBoxField.Rect = new Aspose.Pdf.Rectangle(300, 400, 600, 500);
 ```
 
-## ステップ 5: 編集したドキュメントを保存する
+## ステップ5: 編集した文書を保存する
 
 変更した PDF ドキュメントを保存します。
 
@@ -50,18 +50,18 @@ dataDir = dataDir + "MoveFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Aspose.PDF for .NET を使用したフォーム フィールドの移動のサンプル ソース コード 
+### Aspose.PDF for .NET を使用してフォーム フィールドを移動するためのサンプル ソース コード 
 ```csharp
-//ドキュメントディレクトリへのパス。
+//ドキュメント ディレクトリへのパス。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//開いた文書
+//ドキュメントを開く
 Document pdfDocument = new Document(dataDir + "MoveFormField.pdf");
 //フィールドを取得する
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 //フィールドの場所を変更する
 textBoxField.Rect = new Aspose.Pdf.Rectangle(300, 400, 600, 500);
 dataDir = dataDir + "MoveFormField_out.pdf";
-//変更したドキュメントを保存する
+//変更した文書を保存する
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nForm field moved successfully to a new location.\nFile saved at " + dataDir);
 ```
@@ -75,15 +75,15 @@ Console.WriteLine("\nForm field moved successfully to a new location.\nFile save
 
 #### Q: Aspose.PDF for .NET を使用して、単一の PDF ドキュメント内で複数のフォーム フィールドを移動できますか?
 
-A: はい、Aspose.PDF for .NET を使用して、単一の PDF ドキュメント内で複数のフォーム フィールドを移動できます。再配置したいフォームフィールドごとにこのプロセスを繰り返すだけです。
+A: はい、Aspose.PDF for .NET を使用して、単一の PDF ドキュメント内で複数のフォーム フィールドを移動できます。移動するフォーム フィールドごとにこのプロセスを繰り返すだけです。
 
-#### Q: フォームフィールドを移動すると、関連するデータや機能に影響しますか?
+#### Q: フォーム フィールドを移動すると、関連するデータや機能に影響しますか?
 
-A: いいえ、フォームフィールドを移動しても、それに関連付けられているデータや機能には影響しません。フォーム フィールドは、新しい場所に移動した後も、そのすべてのプロパティと値を保持します。
+A: いいえ、フォーム フィールドを移動しても、関連するデータや機能には影響しません。フォーム フィールドは、新しい場所に移動された後も、そのすべてのプロパティと値を保持します。
 
-#### Q: フォームフィールドの新しい位置の正確な座標を特定するにはどうすればよいですか?
+#### Q: フォーム フィールドの新しい場所の正確な座標をどのように特定できますか?
 
- A: 新しい場所を指定するには、`Aspose.Pdf.Rectangle`クラスで、長方形領域の左上隅の X 座標と Y 座標、および右下隅の X 座標と Y 座標を定義します。
+ A: 新しい場所を指定するには、`Aspose.Pdf.Rectangle`クラスでは、長方形領域の左上隅の X 座標と Y 座標、および右下隅の X 座標と Y 座標を定義します。
 
 #### Q: Aspose.PDF for .NET は Windows 環境と Linux 環境の両方と互換性がありますか?
 

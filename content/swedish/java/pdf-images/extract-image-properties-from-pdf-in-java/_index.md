@@ -10,9 +10,9 @@ url: /sv/java/pdf-images/extract-image-properties-from-pdf-in-java/
 
 Aspose.PDF för Java är ett kraftfullt bibliotek som låter dig arbeta med PDF-dokument i Java-applikationer. I denna steg-för-steg-guide kommer vi att utforska hur man extraherar bildegenskaper från ett PDF-dokument med Aspose.PDF för Java. Vi kommer att ge dig källkodsexempel för att göra processen lätt att förstå.
 
-## 1. Introduktion
+## 1. Inledning
 
-PDF-dokument innehåller ofta bilder, och det kan vara användbart att extrahera information om dessa bilder programmatiskt. Aspose.PDF för Java ger ett bekvämt sätt att extrahera bildegenskaper som mått, upplösning och format. Låt oss börja!
+PDF-dokument innehåller ofta bilder, och det kan vara användbart att extrahera information om dessa bilder programmatiskt. Aspose.PDF för Java ger ett bekvämt sätt att extrahera bildegenskaper som mått, upplösning och format. Låt oss komma igång!
 
 ## 2. Ställa in Aspose.PDF för Java
 
@@ -27,7 +27,7 @@ För att arbeta med ett PDF-dokument måste du först ladda det med Aspose.PDF f
 Document pdfDocument = new Document("example.pdf");
 ```
 
- Byta ut`"example.pdf"` med sökvägen till din PDF-fil.
+ Ersätta`"example.pdf"` med sökvägen till din PDF-fil.
 
 ## 4. Extrahera bildegenskaper
 

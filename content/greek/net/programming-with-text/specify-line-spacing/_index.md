@@ -50,7 +50,7 @@ Document doc = new Document();
 
 ## Βήμα 5: Δημιουργία TextFormattingOptions
 
- Δημιουργώ ένα`TextFormattingOptions` αντικείμενο και ορίστε τη λειτουργία διαχωρισμού γραμμών σε`FullSize`:
+ Δημιουργία α`TextFormattingOptions` αντικείμενο και ορίστε τη λειτουργία διαχωρισμού γραμμών σε`FullSize`:
 
 ```csharp
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
@@ -59,7 +59,7 @@ formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 
 ## Βήμα 6: Δημιουργήστε ένα TextFragment
 
- Δημιουργώ ένα`TextFragment` αντικείμενο και καθορίστε το περιεχόμενο του κειμένου:
+ Δημιουργία α`TextFragment` αντικείμενο και καθορίστε το περιεχόμενο του κειμένου:
 
 ```csharp
 TextFragment textFragment = new TextFragment("Hello world");
@@ -127,9 +127,9 @@ if (fontFile != "")
 	// Φορτώστε τη γραμματοσειρά TrueType στο αντικείμενο ροής
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
-		//Ορίστε το όνομα της γραμματοσειράς για τη συμβολοσειρά κειμένου
+		// Ορίστε το όνομα της γραμματοσειράς για τη συμβολοσειρά κειμένου
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		// Καθορίστε τη θέση για το τμήμα κειμένου
+		//Καθορίστε τη θέση για το τμήμα κειμένου
 		textFragment.Position = new Position(100, 600);
 		//Ορίστε τις Επιλογές TextFormatting του τρέχοντος τμήματος σε προκαθορισμένες (που δείχνει σε LineSpacingMode.FullSize)
 		textFragment.TextState.FormattingOptions = formattingOptions;
@@ -144,7 +144,7 @@ if (fontFile != "")
 }
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Συγχαρητήρια! Μάθατε με επιτυχία πώς να προσδιορίζετε το διάστιχο σε ένα έγγραφο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Αυτό το σεμινάριο παρείχε έναν οδηγό βήμα προς βήμα, από τη ρύθμιση του έργου έως την αποθήκευση του τροποποιημένου εγγράφου. Τώρα μπορείτε να ενσωματώσετε αυτόν τον κώδικα στα δικά σας έργα C# για να προσαρμόσετε το διάστιχο του κειμένου σε αρχεία PDF.
 

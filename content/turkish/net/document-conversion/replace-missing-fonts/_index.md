@@ -1,113 +1,111 @@
 ---
-title: Eksik Yazı Tiplerini Değiştirin
-linktitle: Eksik Yazı Tiplerini Değiştirin
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak bir PDF dosyasındaki eksik yazı tiplerini değiştirmek için adım adım kılavuz.
+title: Eksik Yazı Tiplerini Değiştir
+linktitle: Eksik Yazı Tiplerini Değiştir
+second_title: Aspose.PDF for .NET API Referansı
+description: Bu adım adım kılavuzla Aspose.PDF for .NET'i kullanarak PDF belgelerindeki eksik yazı tiplerini nasıl değiştireceğinizi öğrenin.
 type: docs
 weight: 260
 url: /tr/net/document-conversion/replace-missing-fonts/
 ---
-Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasındaki eksik yazı tiplerini değiştirme sürecinde size yol göstereceğiz. Belirli bir yazı tipinin eksik olduğu bir makinede bir PDF dosyasını açtığınızda yazı tipi görüntüleme sorunları ortaya çıkabilir. Bu gibi durumlarda eksik yazı tipini makinede bulunan başka bir yazı tipiyle değiştirmek mümkündür. Aşağıdaki adımları takip ederek PDF dosyasındaki eksik fontları değiştirebileceksiniz.
+## giriiş
 
-## Önkoşullar
-Başlamadan önce aşağıdaki önkoşulları karşıladığınızdan emin olun:
+Hiç bir PDF belgesini açıp bazı yazı tiplerinin eksik olduğunu gördünüz mü? Sinir bozucu olabilir, değil mi? Eksik yazı tipleri, oluşturucunun amaçladığından tamamen farklı görünen bir belgeye yol açabilir. Neyse ki, .NET için Aspose.PDF ile eksik yazı tiplerini kolayca değiştirebilir ve PDF belgelerinizin amaçlanan görünümünü korumasını sağlayabilirsiniz. Bu eğitimde, sizi adım adım bu süreçte yönlendirerek basit ve anlaşılır hale getireceğiz.
 
-- C# programlama dili hakkında temel bilgiler.
-- Sisteminizde yüklü olan .NET için Aspose.PDF kütüphanesi.
-- Visual Studio gibi bir geliştirme ortamı.
+## Ön koşullar
 
-## 1. Adım: Eksik yazı tipini bulma
-İlk adım, PDF dosyasında eksik yazı tipini bulmaktır. Aşağıdaki kodu kullanın:
+Başlamadan önce, yerinde olması gereken birkaç şey var:
+
+1.  .NET için Aspose.PDF: Aspose.PDF kütüphanesinin yüklü olduğundan emin olun. Buradan indirebilirsiniz[Burada](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: Kodunuzu yazıp test edebileceğiniz bir geliştirme ortamı.
+3. Temel C# Bilgisi: C# programlamaya aşina olmak, kod parçacıklarını daha iyi anlamanıza yardımcı olacaktır.
+
+## Paketleri İçe Aktar
+
+Başlamak için, C# projenize gerekli paketleri içe aktarmanız gerekir. Bunu nasıl yapabileceğiniz aşağıda açıklanmıştır:
 
 ```csharp
-// Belgeler dizininin yolu.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-Aspose.Pdf.Text.Font originalFont = null;
-try
-{
-     // Orijinal yazı tipini bulun
-     originalFont = FontRepository.FindFont("AgencyFB");
-}
-catch(Exception)
-{
-     // Hedef makinede yazı tipi eksik
-     // Basit yazı tipi değişimi ekleme
-     FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
-}
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
- Değiştirdiğinizden emin olun`"YOUR DOCUMENTS DIRECTORY"` PDF dosyanızın bulunduğu gerçek dizinle.
+## Adım 1: Belge Dizininizi Ayarlayın
 
-## 2. Adım: Eksik yazı tipini değiştirin
-Daha sonra eksik yazı tipini mevcut başka bir yazı tipiyle değiştireceğiz. Aşağıdaki kodu kullanın:
-
-```csharp
-var fileNew = new FileInfo(dataDir + "newfile_out.pdf");
-var pdf = new Document(dataDir + "input.pdf");
-
-// PDF dosyasını hata giderme özelliğiyle PDF/A formatına dönüştürün
-pdf.Convert(dataDir + "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
-
-// Ortaya çıkan PDF dosyasını kaydedin
-pdf.Save(fileNew.FullName);
-```
-
- Değiştirdiğinizden emin olun`"input.pdf"` orijinal PDF dosyanızın gerçek yolunu ve`"newfile_out.pdf"` ortaya çıkan PDF dosyası için istenen adla.
-
-## 3. Adım: Ortaya çıkan PDF dosyasını kaydetme
-Son olarak, ortaya çıkan PDF dosyasını değiştirilen yazı tipiyle kaydedeceğiz. Aşağıdaki kodu kullanın:
+Öncelikle, belgeler dizininize giden yolu belirtmeniz gerekir. Giriş PDF dosyanızın bulunduğu ve çıktı dosyasının kaydedileceği yer burasıdır.
 
 ```csharp
-// Ortaya çıkan PDF dosyasını kaydedin
-pdf.Save(fileNew.FullName);
-```
-
-Ortaya çıkan PDF dosyası için doğru hedef yolunu ayarladığınızdan emin olmanızı sağlar.
-
-### Aspose.PDF for .NET kullanarak Eksik Fontları Değiştirmek için örnek kaynak kodu
-
-```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+## Adım 2: Orijinal Yazı Tipini Başlatın
+
+Sonra, eksik olabilecek orijinal yazı tipini bulmaya çalışacaksınız. Bu durumda, "AgencyFB"yi arıyoruz.
+
+```csharp
 Aspose.Pdf.Text.Font originalFont = null;
 try
 {
-	originalFont = FontRepository.FindFont("AgencyFB");
+    originalFont = FontRepository.FindFont("AgencyFB");
 }
 catch (Exception)
 {
-	// Hedef makinede yazı tipi eksik
-	FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
+    //Hedef bilgisayarda yazı tipi eksik
+    FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
 }
+```
+
+Burada, yazı tipini bulmaya çalışıyoruz. Bulunamazsa, istisnayı yakalayıp daha yaygın bir yazı tipi olan "Arial" ile değiştiriyoruz. Bu, orijinal yazı tipi mevcut olmasa bile belgenizin hala iyi görünmesini sağlar.
+
+## Adım 3: PDF Belgesini Yükleyin
+
+Şimdi, işlemek istediğiniz PDF belgesini yükleyelim. Giriş dosya yolunu belirtmeniz gerekecek.
+
+```csharp
 var fileNew = new FileInfo(dataDir + "newfile_out.pdf");
 var pdf = new Document(dataDir + "input.pdf");
-pdf.Convert( dataDir +  "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
+```
+
+ Bu adımda yeni bir tane oluşturuyoruz`FileInfo` çıktı dosyası için nesne ve giriş PDF belgesini yeni bir dosyaya yükleyin`Document` nesne.
+
+## Adım 4: PDF Belgesini Dönüştürün
+
+Belgeyi kaydetmeden önce, onu belirli bir PDF biçimine dönüştürmek iyi bir fikirdir. Bu durumda, onu elektronik belgelerin uzun süreli arşivlenmesi için bir standart olan PDF/A-1B biçimine dönüştüreceğiz.
+
+```csharp
+pdf.Convert(dataDir + "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
+```
+
+Bu satır PDF'yi dönüştürür ve hataları belirtilen bir XML dosyasına kaydeder. Dönüştürme sırasında herhangi bir sorun varsa, bunlar "log.xml" dosyasına kaydedilir.
+
+## Adım 5: Güncellenen PDF Belgesini Kaydedin
+
+Son olarak güncellenen PDF belgesini değiştirilen yazı tipleriyle kaydetmenin zamanı geldi.
+
+```csharp
 pdf.Save(fileNew.FullName);
 ```
 
+Bu satır, değiştirilen PDF'yi belirtilen çıktı dosyası yoluna kaydeder. Ve böylece, PDF belgenizdeki eksik yazı tiplerini başarıyla değiştirmiş oldunuz!
+
 ## Çözüm
-Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasındaki eksik fontları değiştirme işlemini adım adım anlattık. Yukarıda özetlenen talimatları izleyerek PDF dosyanızdaki eksik yazı tiplerini başarıyla değiştirebileceksiniz.
 
-### SSS'ler
+PDF belgelerindeki eksik fontları değiştirmek göz korkutucu bir görev olmak zorunda değil. Aspose.PDF for .NET ile font değişimlerini kolayca yönetebilir ve belgelerinizin olması gerektiği gibi görünmesini sağlayabilirsiniz. Bu eğitimde özetlenen adımları izleyerek, belirli fontlar kullanılamadığında bile PDF dosyalarınızın bütünlüğünü koruyabilirsiniz. Böylece, bir dahaki sefere eksik font sorunuyla karşılaştığınızda, tam olarak ne yapmanız gerektiğini bileceksiniz!
 
-#### S: Aspose.PDF for .NET nedir?
+## SSS
 
-C: Aspose.PDF for .NET, geliştiricilerin C# uygulamalarında PDF belgeleriyle çalışmasına olanak tanıyan güçlü bir kitaplıktır. PDF dosyalarındaki eksik yazı tiplerini değiştirme yeteneği de dahil olmak üzere çeşitli işlevler sunar.
+### Aspose.PDF for .NET nedir?
+Aspose.PDF for .NET, geliştiricilerin PDF belgelerini programlı bir şekilde oluşturmalarına, düzenlemelerine ve dönüştürmelerine olanak tanıyan güçlü bir kütüphanedir.
 
-#### S: Bir PDF dosyasında neden eksik yazı tipleriyle karşılaşayım?
+### Aspose.PDF'yi ücretsiz kullanabilir miyim?
+ Evet, Aspose kütüphaneyi değerlendirmek için kullanabileceğiniz ücretsiz bir deneme sürümü sunuyor. İndirebilirsiniz[Burada](https://releases.aspose.com/).
 
-C: Dosya gerekli yazı tiplerinin yüklü olmadığı bir makinede açıldığında PDF dosyasında eksik yazı tipleri oluşabilir. Bu, belgenin görsel görünümünü etkileyen yazı tipi değişikliğine yol açabilir.
+### İhtiyacım olan yazı tipi mevcut değilse ne yapmalıyım?
+Eksik fontu Aspose.PDF'deki font değiştirme özelliğini kullanarak daha yaygın bir fontla değiştirebilirsiniz.
 
-#### S: Aspose.PDF for .NET kullanarak bir PDF dosyasındaki eksik yazı tiplerini nasıl bulabilir ve değiştirebilirim?
+### PDF'leri diğer formatlara dönüştürmek mümkün müdür?
+Kesinlikle! Aspose.PDF, PDF/A, DOCX ve daha fazlası dahil olmak üzere çeşitli formatlara dönüştürmeyi destekler.
 
- C: Eksik yazı tiplerini bulmak ve değiştirmek için`FontRepository.FindFont` Gerekli yazı tipinin varlığını kontrol etme yöntemi. Yazı tipi eksikse, kullanarak bir yazı tipi değişimi ekleyebilirsiniz.`FontRepository.Substitutions` mülk.
-
-#### S: Yazı tipi değiştirme işlemini özelleştirebilir miyim?
-
-C: Evet, değişiklik için farklı bir yazı tipi belirterek yazı tipi değiştirme işlemini özelleştirebilirsiniz. Verilen kodda eksik olan "AgencyFB" fontunun yerine Arial kullandık ancak siz tercihlerinize göre farklı bir font seçebilirsiniz.
-
-#### S: Değiştirme sonrasında yazı tipi oluşturmanın doğruluğunu nasıl sağlayabilirim?
-
-C: Aspose.PDF for .NET, güçlü yazı tipi işleme yetenekleri sağlayarak, değiştirildikten sonra doğru yazı tipi oluşturmayı sağlar. Yazı tipi değişimini doğrulamak için ortaya çıkan PDF dosyasını önizleyebilirsiniz.
+### Aspose.PDF için desteği nerede bulabilirim?
+ Aspose forumunda destek bulabilir ve soru sorabilirsiniz[Burada](https://forum.aspose.com/c/pdf/10).

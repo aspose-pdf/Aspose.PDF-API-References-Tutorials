@@ -7,7 +7,7 @@ type: docs
 weight: 170
 url: /cs/net/programming-with-document/getdocumentwindow/
 ---
- Aspose.PDF for .NET je výkonná knihovna pro manipulaci s PDF, která umožňuje vývojářům vytvářet, upravovat a převádět soubory PDF v jejich aplikacích .NET. Jednou z funkcí, které tato knihovna nabízí, je možnost získat informace o vlastnostech okna dokumentu. Tento tutoriál vás provede kroky použití`GetDocumentWindow` funkce Aspose.PDF for .NET k načtení informací o vlastnostech okna dokumentu PDF.
+Aspose.PDF for .NET je výkonná knihovna pro manipulaci s PDF, která umožňuje vývojářům vytvářet, upravovat a převádět soubory PDF v jejich aplikacích .NET. Jednou z funkcí, které tato knihovna nabízí, je možnost získat informace o vlastnostech okna dokumentu. Tento tutoriál vás provede kroky použití`GetDocumentWindow` funkce Aspose.PDF for .NET k načtení informací o vlastnostech okna dokumentu PDF.
 
 ## Krok 1: Nainstalujte Aspose.PDF pro .NET
 
@@ -17,7 +17,7 @@ Po stažení knihovny rozbalte obsah souboru ZIP do složky v počítači. Poté
 
 ## Krok 2: Načtěte dokument PDF
 
-Jakmile nainstalujete Aspose.PDF pro .NET a přidáte odkaz na knihovnu DLL ve svém projektu .NET, můžete začít používat`GetDocumentWindow` funkce pro načtení informací o vlastnostech okna dokumentu PDF.
+ Jakmile nainstalujete Aspose.PDF pro .NET a přidáte odkaz na knihovnu DLL ve svém projektu .NET, můžete začít používat`GetDocumentWindow`funkce pro načtení informací o vlastnostech okna dokumentu PDF.
 
 Prvním krokem při použití této funkce je načtení dokumentu PDF, o kterém chcete získat informace. Chcete-li to provést, můžete použít následující kód:
 
@@ -25,7 +25,7 @@ Prvním krokem při použití této funkce je načtení dokumentu PDF, o kterém
 // Cesta k dokumentu PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Otevřete dokument PDF
+// Otevřete dokument PDF
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 
@@ -81,20 +81,20 @@ Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
 // Zda se má skrýt panel nabídek aplikace prohlížeče - Výchozí: false
 Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
 
-//Zda skrýt panel nástrojů aplikace prohlížeče - Výchozí: false
+// Zda skrýt panel nástrojů aplikace prohlížeče - Výchozí: false
 Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
 
 // Zda se mají skrýt prvky uživatelského rozhraní, jako jsou posuvníky
 // A ponechání zobrazený pouze obsah stránky - Výchozí: false
 Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
 
-// Režim stránky dokumentu. Jak zobrazit dokument při ukončení režimu celé obrazovky.
+//Režim stránky dokumentu. Jak zobrazit dokument při ukončení režimu celé obrazovky.
 Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
 
 // Vzhled stránky, tj. jedna stránka, jeden sloupec
 Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
 
-// Jak by se měl dokument zobrazit při otevření
+// Jak se má dokument zobrazit při otevření
 // Tj. zobrazit miniatury, celou obrazovku, zobrazit panel příloh
 Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```

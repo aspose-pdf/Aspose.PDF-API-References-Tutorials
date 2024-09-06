@@ -24,7 +24,7 @@ Mielőtt belemerülnénk a kódba, győződjön meg arról, hogy a következő e
 
 ## A kódex írása
 
-Most pedig menjünk bele a kódba. Kezdjük a szükséges csomagok importálásával és egy alap Java osztály beállításával.
+Most pedig térjünk be a kódba. Kezdjük a szükséges csomagok importálásával és egy alap Java osztály beállításával.
 
 ```java
 import com.aspose.pdf.*;

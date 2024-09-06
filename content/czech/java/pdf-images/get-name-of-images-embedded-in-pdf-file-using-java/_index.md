@@ -7,7 +7,7 @@ type: docs
 weight: 14
 url: /cs/java/pdf-images/get-name-of-images-embedded-in-pdf-file-using-java/
 ---
-## Úvod
+## Zavedení
 
 V tomto podrobném průvodci prozkoumáme, jak extrahovat názvy vložených obrázků v souboru PDF pomocí Java a knihovny Aspose.PDF for Java. Vložené obrázky mohou obsahovat cenné informace a možnost programového přístupu k jejich názvům může být docela užitečná.
 

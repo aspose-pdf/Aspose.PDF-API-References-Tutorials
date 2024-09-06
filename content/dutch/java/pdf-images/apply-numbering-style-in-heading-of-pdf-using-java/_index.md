@@ -1,8 +1,8 @@
 ---
-title: Pas nummeringsstijl toe in de kop van PDF met behulp van Java
-linktitle: Pas nummeringsstijl toe in de kop van PDF met behulp van Java
+title: Nummeringsstijl toepassen in koptekst van PDF met behulp van Java
+linktitle: Nummeringsstijl toepassen in koptekst van PDF met behulp van Java
 second_title: Aspose.PDF Java PDF-verwerkings-API
-description: Leer hoe u nummeringsstijlen kunt toepassen op PDF-koppen met Aspose.PDF voor Java. Onze stapsgewijze handleiding biedt broncodevoorbeelden voor een professioneel tintje aan uw documenten.
+description: Leer hoe u nummeringsstijlen toepast op PDF-koppen met Aspose.PDF voor Java. Onze stapsgewijze handleiding biedt broncodevoorbeelden voor een professionele touch aan uw documenten.
 type: docs
 weight: 14
 url: /nl/java/pdf-images/apply-numbering-style-in-heading-of-pdf-using-java/
@@ -12,29 +12,29 @@ url: /nl/java/pdf-images/apply-numbering-style-in-heading-of-pdf-using-java/
 
 Aspose.PDF voor Java is een robuuste bibliotheek waarmee ontwikkelaars programmatisch met PDF-documenten kunnen werken. Het biedt een breed scala aan functies voor PDF-manipulatie, waaronder tekstopmaak, paginamanipulatie en natuurlijk het toepassen van nummeringsstijlen op koppen.
 
-## Het opzetten van de ontwikkelomgeving
+## De ontwikkelomgeving opzetten
 
-Voordat we in de code duiken, moet u ervoor zorgen dat u over de benodigde tools beschikt in uw ontwikkelomgeving:
+Voordat we in de code duiken, moet u ervoor zorgen dat u de benodigde tools in uw ontwikkelomgeving hebt ingesteld:
 
-- Java-ontwikkelkit (JDK)
-- Geïntegreerde ontwikkelomgeving (IDE) naar keuze (Eclipse, IntelliJ IDEA, enz.)
+- Java-ontwikkelingskit (JDK)
+- Geïntegreerde ontwikkelomgeving (IDE) van uw keuze (Eclipse, IntelliJ IDEA, enz.)
 - Aspose.PDF voor Java-bibliotheek
 
 ## Een PDF-document maken
 
-Laten we beginnen met het maken van een nieuw PDF-document met Aspose.PDF voor Java. Hier is een voorbeeldcode om u op weg te helpen:
+Laten we beginnen met het maken van een nieuw PDF-document met Aspose.PDF voor Java. Hier is wat voorbeeldcode om u op weg te helpen:
 
 ```java
-// Maak een nieuw PDF-document
+// Een nieuw PDF-document maken
 com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document();
 ```
 
 ## Koppen toevoegen aan de PDF
 
-Nu voegen we enkele koppen toe aan ons PDF-document. Deze kopjes zullen dienen als secties in ons document. Hier is een voorbeeld van het toevoegen van een kop:
+Nu voegen we wat koppen toe aan ons PDF-document. Deze koppen dienen als de secties in ons document. Hier is een voorbeeld van het toevoegen van een kop:
 
 ```java
-// Maak een kop
+// Een kop maken
 com.aspose.pdf.Heading heading = new com.aspose.pdf.Heading(pdfDocument.getPages().get_Item(1));
 heading.setMargin(new com.aspose.pdf.MarginInfo(0, 0, 0, 10));
 heading.getTextState().setFont(new com.aspose.pdf.FontRepository().findFont("Arial"));
@@ -51,21 +51,21 @@ pdfDocument.getPages().get_Item(1).getParagraphs().add(heading);
 
 ## Nummeringsstijl toepassen
 
-Nu komt het spannende gedeelte: het toepassen van nummeringsstijlen op onze koppen. Aspose.PDF voor Java biedt een eenvoudige manier om dit te bereiken. Hier is een voorbeeld van het toepassen van nummering:
+Nu komt het spannende gedeelte: nummeringsstijlen toepassen op onze koppen. Aspose.PDF voor Java biedt een eenvoudige manier om dit te bereiken. Hier is een voorbeeld van het toepassen van nummering:
 
 ```java
-// Maak een nummeringsstijl
+// Een nummeringsstijl maken
 com.aspose.pdf.NumberingStyle numberingStyle = new com.aspose.pdf.NumberingStyle();
 numberingStyle.setFormat("(1)");
 numberingStyle.setFirstIndex(1);
 
-// Pas de nummeringsstijl toe op de kop
+// De nummeringsstijl op de kop toepassen
 heading.setNumberingStyle(numberingStyle);
 ```
 
 ## Nummeringsformaten aanpassen
 
-U kunt het nummeringsformaat aanpassen aan uw behoeften. Met Aspose.PDF voor Java kunt u verschillende aspecten van de nummering beheren, inclusief voorvoegsel, achtervoegsel en opmaak. Hier is een voorbeeld van het aanpassen van de nummering:
+U kunt de nummeringsopmaak aanpassen aan uw behoeften. Met Aspose.PDF voor Java kunt u verschillende aspecten van nummering beheren, waaronder prefix, suffix en opmaak. Hier is een voorbeeld van het aanpassen van nummering:
 
 ```java
 // Pas de nummeringsstijl aan
@@ -74,21 +74,21 @@ numberingStyle.setSuffix(":");
 numberingStyle.setStartNumber(5);
 ```
 
-## De PDF opslaan en bekijken
+## PDF opslaan en bekijken
 
-Nadat u koppen met nummeringsstijlen heeft toegevoegd, is het tijd om het PDF-document op te slaan en het resultaat te bekijken:
+Nadat u koppen met nummeringsstijlen hebt toegevoegd, kunt u het PDF-document opslaan en het resultaat bekijken:
 
 ```java
 // Sla het PDF-document op
 pdfDocument.save("NumberedDocument.pdf");
 
-// Open het PDF-document om het te bekijken
+// Open het PDF-document om te bekijken
 java.awt.Desktop.getDesktop().open(new java.io.File("NumberedDocument.pdf"));
 ```
 
 ## Conclusie
 
-In deze stapsgewijze handleiding hebben we onderzocht hoe u nummeringsstijlen kunt toepassen op koppen in PDF-documenten met behulp van Aspose.PDF voor Java. Met deze krachtige bibliotheek kunt u eenvoudig professioneel ogende documenten maken met aangepaste nummeringsformaten.
+In deze stapsgewijze handleiding hebben we onderzocht hoe u nummeringsstijlen kunt toepassen op koppen in PDF-documenten met Aspose.PDF voor Java. Deze krachtige bibliotheek maakt het eenvoudig om professioneel ogende documenten te maken met aangepaste nummeringsformaten.
 
 ## Veelgestelde vragen
 
@@ -96,22 +96,22 @@ In deze stapsgewijze handleiding hebben we onderzocht hoe u nummeringsstijlen ku
 
 Volg deze stappen om Aspose.PDF voor Java te installeren:
 
-1.  Bezoek de Aspose.PDF voor Java-documentatie op[hier](https://reference.aspose.com/pdf/java/).
+1.  Bezoek Aspose.PDF voor Java-documentatie op[hier](https://reference.aspose.com/pdf/java/).
 2.  Download de nieuwste versie van de bibliotheek van[hier](https://releases.aspose.com/pdf/java/).
 3. Integreer de bibliotheek in uw Java-project volgens de installatie-instructies in de documentatie.
 
 ### Kan ik Aspose.PDF voor Java gratis gebruiken?
 
-Aspose.PDF voor Java biedt een gratis proefversie die u kunt gebruiken om de functies ervan te evalueren. Voor volledige toegang en commercieel gebruik moet u echter een licentie aanschaffen.
+Aspose.PDF voor Java biedt een gratis proefversie die u kunt gebruiken om de functies te evalueren. Voor volledige toegang en commercieel gebruik moet u echter een licentie aanschaffen.
 
 ### Is het mogelijk om verschillende nummeringsstijlen toe te passen op verschillende secties van een document?
 
- Ja, u kunt met Aspose.PDF voor Java verschillende nummeringsstijlen toepassen op verschillende secties van een PDF-document. Maak eenvoudig afzonderlijk aan`Heading` objecten en pas de nummeringsstijlen voor elke sectie aan.
+ Ja, u kunt verschillende nummeringsstijlen toepassen op verschillende secties van een PDF-document met Aspose.PDF voor Java. Maak eenvoudig afzonderlijke`Heading` objecten en pas de nummeringsstijlen voor elke sectie aan.
 
-### Kan ik de PDF met genummerde koppen exporteren naar andere formaten zoals DOCX of HTML?
+### Kan ik het PDF-bestand met genummerde koppen exporteren naar andere formaten, zoals DOCX of HTML?
 
-Ja, Aspose.PDF voor Java biedt de mogelijkheid om PDF-documenten met genummerde koppen naar verschillende formaten te exporteren, waaronder DOCX, HTML en meer. U kunt de documentatie raadplegen voor gedetailleerde voorbeelden van hoe u deze conversies kunt uitvoeren.
+Ja, Aspose.PDF voor Java biedt de mogelijkheid om PDF-documenten met genummerde koppen te exporteren naar verschillende formaten, waaronder DOCX, HTML en meer. U kunt de documentatie bekijken voor gedetailleerde voorbeelden over hoe u deze conversies uitvoert.
 
 ### Waar kan ik meer voorbeelden en documentatie vinden voor Aspose.PDF voor Java?
 
- Uitgebreide documentatie, codevoorbeelden en API-referentie voor Aspose.PDF voor Java vindt u op de documentatiewebsite op[hier](https://reference.aspose.com/pdf/java/).
+ U kunt uitgebreide documentatie, codevoorbeelden en API-referenties voor Aspose.PDF voor Java vinden op de documentatiewebsite op[hier](https://reference.aspose.com/pdf/java/).

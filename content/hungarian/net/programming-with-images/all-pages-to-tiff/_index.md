@@ -11,7 +11,7 @@ Ez az útmutató lépésről lépésre bemutatja, hogyan alakíthatja át a PDF-
 
 ## 1. lépés: Határozza meg a dokumentumkönyvtárat
 
- Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a PDF-dokumentum található.
+Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a PDF-dokumentum található.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 2. lépés: Nyissa meg a dokumentumot
 
-Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
+ Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
@@ -27,7 +27,7 @@ Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
 
 ## 3. lépés: Hozza létre a Felbontás objektumot
 
- Hozzon létre egy`Resolution`objektumot a TIFF kép felbontásának beállításához. Ebben a példában 300 dpi felbontást használunk.
+ Hozzon létre a`Resolution` objektumot a TIFF kép felbontásának beállításához. Ebben a példában 300 dpi felbontást használunk.
 
 ```csharp
 Resolution resolution = new Resolution(300);
@@ -35,7 +35,7 @@ Resolution resolution = new Resolution(300);
 
 ## 4. lépés: Hozza létre a TiffSettings objektumot
 
- Hozzon létre egy`TiffSettings` objektumot a kimeneti TIFF-fájl beállításainak megadásához. Ebben a példában kikapcsoljuk a tömörítést, alapértelmezett színmélységet használunk, és az alakzatot fekvő módba állítjuk.
+ Hozzon létre a`TiffSettings` objektumot a kimeneti TIFF-fájl beállításainak megadásához. Ebben a példában kikapcsoljuk a tömörítést, alapértelmezett színmélységet használunk, és az alakzatot fekvő módba állítjuk.
 
 ```csharp
 TiffSettings tiffSettings = new TiffSettings();
@@ -78,7 +78,7 @@ tiffSettings.Shape = ShapeType.Landscape;
 tiffSettings.SkipBlankPages = false;
 // Hozzon létre TIFF-eszközt
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-//Konvertálja az adott oldalt, és mentse a képet adatfolyamba
+// Konvertálja az adott oldalt, és mentse a képet adatfolyamba
 tiffDevice.Process(pdfDocument, dataDir + "AllPagesToTIFF_out.tif");
 System.Console.WriteLine("PDF all pages converted to one tiff file successfully!");
 ```
@@ -99,7 +99,7 @@ V: Az Aspose.PDF for .NET megbízható és funkciókban gazdag API-t kínál, am
 
 #### K: Hogyan határozhatom meg a dokumentumkönyvtárat az átalakítási folyamat megkezdése előtt?
 
- V: Győződjön meg arról, hogy a megfelelő könyvtár elérési utat adta meg a PDF-dokumentumokhoz a sikeres átalakítás érdekében. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a megfelelő elérési úttal a megadott kódrészletben.
+V: Győződjön meg arról, hogy a megfelelő könyvtár elérési utat adta meg a PDF-dokumentumokhoz a sikeres átalakítás érdekében. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a megfelelő elérési úttal a megadott kódrészletben.
 
 ####  K: Mi a jelentősége a PDF dokumentum megnyitásának a`Document` class?
 
@@ -107,7 +107,7 @@ V: Az Aspose.PDF for .NET megbízható és funkciókban gazdag API-t kínál, am
 
 ####  K: Hogyan működik a`Resolution` object impact the quality of the TIFF image?
 
- V: A`Resolution`objektum beállítja az eredményül kapott TIFF fájl képminőségét. A nagyobb felbontás, például a 300 dpi (dots per inch), tisztább és részletesebb képet eredményez.
+ V: A`Resolution` objektum beállítja az eredményül kapott TIFF fájl képminőségét. A nagyobb felbontás, például a 300 dpi (dots per inch), tisztább és részletesebb képet eredményez.
 
 #### K: Testreszabhatom a kimeneti TIFF fájl beállításait?
 

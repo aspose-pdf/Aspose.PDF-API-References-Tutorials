@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 1: Konfigurera dokumentkatalogen
 
- Ställ in sökvägen till katalogen där du har den inmatade PDF-filen. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till din PDF-fil.
+ Ställ in sökvägen till katalogen där du har den inmatade PDF-filen. Ersätta`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till din PDF-fil.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -88,7 +88,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 {
 	// Uppdatera text och andra egenskaper
 	textFragment.Text = "New Phrase";
-	// Ställ in en instans av ett objekt.
+	// Ställ in på en instans av ett objekt.
 	textFragment.TextState.Font = FontRepository.FindFont("Verdana");
 	textFragment.TextState.FontSize = 22;
 	textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Blue);
@@ -117,7 +117,7 @@ S: Genom att använda reguljära uttryck kan du söka efter och ersätta textmö
 
 S: Så här ställer du in dokumentkatalogen:
 
-1.  Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där din indata-PDF-fil finns.
+1.  Ersätta`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där din indata-PDF-fil finns.
 
 #### F: Hur ersätter jag text baserat på ett reguljärt uttryck i ett PDF-dokument?
 

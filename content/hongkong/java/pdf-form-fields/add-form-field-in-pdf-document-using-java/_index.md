@@ -16,7 +16,7 @@ url: /zh-hant/java/pdf-form-fields/add-form-field-in-pdf-document-using-java/
 
 ## 設定環境
 
-在我們深入研究程式碼之前，您需要設定開發環境。按著這些次序：
+在我們深入研究程式碼之前，您需要設定開發環境。請依照下列步驟操作：
 
 1. 下載 Aspose.PDF for Java：造訪 Aspose 網站並下載最新版本的 Aspose.PDF for Java。你可以找到它[這裡](https://releases.aspose.com/pdf/java/).
 

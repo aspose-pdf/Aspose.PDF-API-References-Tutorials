@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 2: Laddar PDF-dokumentet
 
-Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Här är hur:
+Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Så här gör du:
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -57,7 +57,7 @@ Du kan anpassa dessa egenskaper efter dina behov.
 
 ## Steg 5: Lägga till sidstämpeln i PDF:en
 
-Nu när sidstämpeln är klar kan du lägga till den på en specifik sida i PDF-dokumentet. Här är hur:
+Nu när sidstämpeln är klar kan du lägga till den på en specifik sida i PDF-dokumentet. Så här gör du:
 
 ```csharp
 // Lägg till sidbuffert på specifik sida
@@ -68,7 +68,7 @@ Ovanstående kod lägger till sidstämpeln på första sidan i PDF-dokumentet. D
 
 ## Steg 6: Spara utdatadokumentet
 
-När du har lagt till sidstämpeln kan du spara det ändrade PDF-dokumentet. Här är hur:
+När du har lagt till sidstämpeln kan du spara det ändrade PDF-dokumentet. Så här gör du:
 
 ```csharp
 // Spara utdatadokumentet

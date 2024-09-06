@@ -1,6 +1,6 @@
 ---
-title: Obrázek a číslo stránky v záhlaví Zápatí sekce Inline
-linktitle: Obrázek a číslo stránky v záhlaví Zápatí sekce Inline
+title: Obrázek a číslo stránky v záhlaví Zápatí v řádku
+linktitle: Obrázek a číslo stránky v záhlaví Zápatí v řádku
 second_title: Aspose.PDF pro .NET API Reference
 description: Naučte se, jak přidat obrázek a číslo stránky do záhlaví a zápatí pomocí vložených odstavců pomocí Aspose.PDF pro .NET.
 type: docs
@@ -119,7 +119,7 @@ Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 // Nastavte cestu k souboru obrázku
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Nastavte šířku obrázku Information
+//Nastavte šířku obrázku Information
 image1.FixWidth = 50;
 image1.FixHeight = 20;
 
@@ -153,7 +153,7 @@ Odpověď: Poskytnutý kód ukazuje, jak vytvořit dokument PDF, přidat stránk
 
 #### Otázka: Jak určím barvu vloženého textu v záhlaví?
 
- Odpověď: Barva vloženého textu se určuje pomocí`ForegroundColor` vlastnictvím`TextState` z`TextFragment` objekt.
+ Odpověď: Barva vloženého textu se určuje pomocí`ForegroundColor` majetek z`TextState` z`TextFragment` objekt.
 
 #### Otázka: Mohu upravit rozměry vloženého obrázku v záhlaví?
 
@@ -177,7 +177,7 @@ Odpověď: Ano, můžete kombinovat vložené odstavce s jinými metodami přizp
 
 #### Otázka: Mohu v případě potřeby odstranit nebo vymazat vložené prvky ze záhlaví?
 
- Odpověď: Ano, můžete odstranit nebo vymazat vložené prvky úpravou obsahu souboru`HeaderFooter` objekt a odstranění příslušných vložených odstavců.
+ Odpověď: Ano, můžete odstranit nebo vymazat vložené prvky úpravou obsahu souboru`HeaderFooter`objekt a odstranění příslušných vložených odstavců.
 
 #### Otázka: Jak mohu použít vložené odstavce na konkrétní stránky dokumentu PDF?
 

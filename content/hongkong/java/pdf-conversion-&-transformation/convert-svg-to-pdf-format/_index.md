@@ -33,7 +33,7 @@ Aspose.PDF for Java 是一個基於 Java 的 PDF 文件建立和操作庫。它�
 
 ## 設定您的開發環境
 
-要開始使用 Aspose.PDF for Java，您需要設定開發環境。按著這些次序：
+要開始使用 Aspose.PDF for Java，您需要設定開發環境。請依照下列步驟操作：
 
 1. 下載 Aspose.PDF for Java：從提供的連結下載 Aspose.PDF for Java 程式庫並將其新增至專案的依賴項。
 

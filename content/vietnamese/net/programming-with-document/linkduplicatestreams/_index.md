@@ -1,15 +1,15 @@
 ---
 title: Liên kết các luồng trùng lặp
 linktitle: Liên kết các luồng trùng lặp
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Tìm hiểu cách sử dụng tính năng Aspose.PDF for .NET Link Duplicate Streams để tối ưu hóa tài liệu PDF của bạn với hướng dẫn từng bước này.
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách sử dụng tính năng Aspose.PDF cho .NET Link Duplicate Streams để tối ưu hóa tài liệu PDF của bạn với hướng dẫn từng bước này.
 type: docs
 weight: 230
 url: /vi/net/programming-with-document/linkduplicatestreams/
 ---
-Aspose.PDF for .NET là một thư viện toàn diện và mạnh mẽ, cung cấp nhiều tính năng để làm việc với các tệp PDF. Một trong những tính năng chính của nó là khả năng tối ưu hóa các tệp PDF. Trong bài viết này, chúng tôi sẽ giải thích cách sử dụng tính năng Liên kết luồng trùng lặp của Aspose.PDF cho .NET để tối ưu hóa các tệp PDF. Chúng tôi sẽ cung cấp hướng dẫn từng bước và bao gồm ví dụ về mã nguồn đầy đủ để giúp các nhà phát triển dễ dàng làm theo.
+Aspose.PDF for .NET là một thư viện toàn diện và mạnh mẽ cung cấp nhiều tính năng để làm việc với các tệp PDF. Một trong những tính năng chính của nó là khả năng tối ưu hóa các tệp PDF. Trong bài viết này, chúng tôi sẽ giải thích cách sử dụng tính năng Link Duplicate Streams của Aspose.PDF for .NET để tối ưu hóa các tệp PDF. Chúng tôi sẽ cung cấp hướng dẫn từng bước và bao gồm một ví dụ mã nguồn đầy đủ để các nhà phát triển dễ dàng làm theo.
 
-## Bước 1: Mở tài liệu PDF
+## Bước 1: Mở Tài liệu PDF
 
 Để mở tài liệu PDF bằng Aspose.PDF cho .NET, hãy làm theo các bước sau:
 
@@ -20,14 +20,14 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-Trong đoạn mã trên, hãy thay thế "THƯ MỤC TÀI LIỆU CỦA BẠN" bằng đường dẫn đến thư mục dự án của bạn.
+Trong đoạn mã trên, hãy thay thế "YOUR DOCUMENT DIRECTORY" bằng đường dẫn đến thư mục dự án của bạn.
 
-## Bước 2: Đặt tùy chọn LinkDuplicateStreams
+## Bước 2: Thiết lập tùy chọn LinkDuplicateStreams
 
-Để đặt tùy chọn LinkDuplicateStreams, hãy làm theo các bước sau:
+Để thiết lập tùy chọn LinkDuplicateStreams, hãy làm theo các bước sau:
 
 ```csharp
-// Đặt tùy chọn LinkDupcateStreams
+// Đặt tùy chọn LinkDuplcateStreams
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
     LinkDuplcateStreams = true
@@ -41,11 +41,11 @@ Trong đoạn mã trên, chúng tôi đã tạo một phiên bản mới của O
 Để tối ưu hóa tài liệu PDF, hãy làm theo các bước sau:
 
 ```csharp
-// Tối ưu hóa tài liệu PDF bằng OptimizeOptions
+// Tối ưu hóa tài liệu PDF bằng OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-Trong đoạn mã trên, chúng tôi đã sử dụng phương thức OptimizeResources của đối tượng pdfDocument để tối ưu hóa tài liệu PDF bằng cách sử dụng Tùy chọn tối ưu hóa mà chúng tôi đã tạo trước đó.
+Trong đoạn mã trên, chúng tôi đã sử dụng phương thức OptimizeResources của đối tượng pdfDocument để tối ưu hóa tài liệu PDF bằng cách sử dụng OptimizationOptions mà chúng tôi đã tạo trước đó.
 
 ## Bước 4: Lưu tài liệu đã cập nhật
 
@@ -57,21 +57,21 @@ dataDir = dataDir + "OptimizeDocument_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-Trong đoạn mã trên, chúng tôi đã sử dụng phương thức Lưu của đối tượng pdfDocument để lưu tài liệu đã cập nhật vào một tệp mới có tên "OptimizeDocument_out.pdf" trong thư mục dự án.
+Trong đoạn mã trên, chúng tôi đã sử dụng phương thức Save của đối tượng pdfDocument để lưu tài liệu đã cập nhật vào tệp mới có tên "OptimizeDocument_out.pdf" trong thư mục dự án.
 
-### Mã nguồn ví dụ cho các luồng trùng lặp liên kết bằng Aspose.PDF cho .NET
+### Mã nguồn ví dụ để liên kết các luồng trùng lặp bằng Aspose.PDF cho .NET
 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Mở tài liệu
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Đặt tùy chọn LinkDupcateStreams
+// Đặt tùy chọn LinkDuplcateStreams
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
 	LinkDuplcateStreams = true
 };
-// Tối ưu hóa tài liệu PDF bằng OptimizeOptions
+// Tối ưu hóa tài liệu PDF bằng OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
 dataDir = dataDir + "OptimizeDocument_out.pdf";
 // Lưu tài liệu đã cập nhật
@@ -80,18 +80,18 @@ pdfDocument.Save(dataDir);
 
 ## Phần kết luận
 
-Tính năng Luồng trùng lặp liên kết của Aspose.PDF cho .NET cung cấp một cách hiệu quả để tối ưu hóa các tệp PDF bằng cách giảm kích thước của chúng. Bằng cách xác định và liên kết các luồng trùng lặp, thư viện giúp tạo tài liệu PDF hiệu quả hơn mà không làm ảnh hưởng đến tính toàn vẹn của dữ liệu hoặc chất lượng hình ảnh. Các nhà phát triển có thể dễ dàng triển khai tính năng này bằng cách sử dụng các bước được cung cấp và ví dụ về mã nguồn, nâng cao hiệu suất và hiệu quả lưu trữ các tệp PDF của họ.
+Tính năng Link Duplicate Streams của Aspose.PDF for .NET cung cấp một cách hiệu quả để tối ưu hóa các tệp PDF bằng cách giảm kích thước của chúng. Bằng cách xác định và liên kết các luồng trùng lặp, thư viện giúp tạo ra các tài liệu PDF hiệu quả hơn mà không làm mất tính toàn vẹn của dữ liệu hoặc chất lượng hình ảnh. Các nhà phát triển có thể dễ dàng triển khai tính năng này bằng các bước được cung cấp và ví dụ về mã nguồn, nâng cao hiệu suất và hiệu quả lưu trữ của các tệp PDF của họ.
 
 ### Câu hỏi thường gặp
 
-#### Câu hỏi: Mục đích của tính năng Luồng liên kết trùng lặp trong Aspose.PDF dành cho .NET là gì?
+#### H: Mục đích của tính năng Liên kết các luồng trùng lặp trong Aspose.PDF dành cho .NET là gì?
 
-Trả lời: Tính năng Liên kết các luồng trùng lặp trong Aspose.PDF cho .NET được sử dụng để tối ưu hóa các tệp PDF bằng cách xác định và liên kết các luồng trùng lặp trong tài liệu. Trong tệp PDF, có thể có các luồng trùng lặp (chẳng hạn như hình ảnh hoặc phông chữ) tiêu tốn dung lượng không cần thiết. Bằng cách liên kết các luồng trùng lặp này, kích thước tệp có thể giảm xuống, dẫn đến tài liệu PDF nhỏ hơn và hiệu quả hơn.
+A: Tính năng Link Duplicate Streams trong Aspose.PDF cho .NET được sử dụng để tối ưu hóa các tệp PDF bằng cách xác định và liên kết các luồng trùng lặp trong tài liệu. Trong tệp PDF, có thể có các luồng trùng lặp (như hình ảnh hoặc phông chữ) chiếm không gian không cần thiết. Bằng cách liên kết các luồng trùng lặp này, kích thước tệp có thể được giảm xuống, tạo ra một tài liệu PDF hiệu quả hơn và nhỏ hơn.
 
-#### Câu hỏi: Tính năng Luồng liên kết trùng lặp hoạt động như thế nào?
+#### H: Tính năng Liên kết luồng trùng lặp hoạt động như thế nào?
 
-Trả lời: Tính năng Luồng trùng lặp liên kết hoạt động bằng cách phân tích luồng nội dung của tài liệu PDF và xác định các luồng trùng lặp có cùng nội dung. Thay vì lưu trữ các luồng trùng lặp này một cách riêng biệt, tính năng này sẽ tạo liên kết giữa chúng, chia sẻ cùng một nội dung một cách hiệu quả. Kỹ thuật tối ưu hóa này làm giảm kích thước tổng thể của tài liệu PDF mà không ảnh hưởng đến hình thức hoặc chức năng trực quan của nó.
+A: Tính năng Link Duplicate Streams hoạt động bằng cách phân tích các luồng nội dung của tài liệu PDF và xác định các luồng trùng lặp có cùng nội dung. Thay vì lưu trữ các luồng trùng lặp này riêng biệt, tính năng này tạo ra một liên kết giữa chúng, chia sẻ cùng một nội dung một cách hiệu quả. Kỹ thuật tối ưu hóa này làm giảm kích thước tổng thể của tài liệu PDF mà không ảnh hưởng đến giao diện trực quan hoặc chức năng của nó.
 
-#### Câu hỏi: Tính năng Luồng liên kết trùng lặp có thể gây mất dữ liệu hoặc chất lượng trong tài liệu PDF không?
+#### H: Tính năng Liên kết luồng trùng lặp có thể gây mất dữ liệu hoặc chất lượng trong tài liệu PDF không?
 
-Trả lời: Không, tính năng Luồng liên kết trùng lặp không gây ra bất kỳ tổn thất nào về dữ liệu hoặc chất lượng trong tài liệu PDF. Nó chỉ tối ưu hóa kích thước tệp bằng cách liên kết các luồng trùng lặp mà không làm thay đổi nội dung hoặc hình thức trực quan của tài liệu. Tính năng này được thiết kế để đảm bảo rằng tài liệu PDF vẫn còn nguyên vẹn và duy trì chất lượng ban đầu.
+A: Không, tính năng Link Duplicate Streams không gây mất dữ liệu hoặc chất lượng trong tài liệu PDF. Tính năng này chỉ tối ưu hóa kích thước tệp bằng cách liên kết các luồng trùng lặp, mà không làm thay đổi nội dung hoặc giao diện trực quan của tài liệu. Tính năng này được thiết kế để đảm bảo tài liệu PDF vẫn nguyên vẹn và duy trì chất lượng ban đầu.

@@ -1,52 +1,52 @@
 ---
-title: Tabulazioni personalizzate nel file PDF
-linktitle: Tabulazioni personalizzate nel file PDF
-second_title: Aspose.PDF per riferimento all'API .NET
-description: Scopri come creare tabulazioni personalizzate nel file PDF utilizzando Aspose.PDF per .NET.
+title: Tabulazione personalizzata nel file PDF
+linktitle: Tabulazione personalizzata nel file PDF
+second_title: Riferimento API Aspose.PDF per .NET
+description: Scopri come creare tabulazioni personalizzate nei file PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 120
 url: /it/net/programming-with-text/custom-tab-stops/
 ---
 
-Questo tutorial ti guiderà attraverso il processo di creazione di tabulazioni personalizzate nel file PDF utilizzando Aspose.PDF per .NET. Il codice sorgente C# fornito illustra i passaggi necessari.
+Questo tutorial ti guiderà attraverso il processo di creazione di tabulazioni personalizzate in un file PDF utilizzando Aspose.PDF per .NET. Il codice sorgente C# fornito illustra i passaggi necessari.
 
 ## Requisiti
 Prima di iniziare, assicurati di avere quanto segue:
 
-- Visual Studio o qualsiasi altro compilatore C# installato sul tuo computer.
-- Aspose.PDF per la libreria .NET. Puoi scaricarlo dal sito Web ufficiale di Aspose o utilizzare un gestore di pacchetti come NuGet per installarlo.
+- Visual Studio o qualsiasi altro compilatore C# installato sul computer.
+- Aspose.PDF per la libreria .NET. Puoi scaricarlo dal sito web ufficiale di Aspose o usare un gestore di pacchetti come NuGet per installarlo.
 
 ## Passaggio 1: impostare il progetto
 1. Crea un nuovo progetto C# nel tuo ambiente di sviluppo preferito.
 2. Aggiungere un riferimento alla libreria Aspose.PDF per .NET.
 
-## Passaggio 2: importa gli spazi dei nomi richiesti
-Nel file di codice in cui desideri creare tabulazioni personalizzate, aggiungi le seguenti direttive using nella parte superiore del file:
+## Passaggio 2: importare gli spazi dei nomi richiesti
+Nel file di codice in cui vuoi creare tabulazioni personalizzate, aggiungi le seguenti direttive using all'inizio del file:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Passaggio 3: imposta la directory dei documenti
+## Passaggio 3: impostare la directory del documento
  Nel codice, individua la riga che dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso della directory in cui sono archiviati i tuoi documenti.
 
-## Passaggio 4: crea una nuova istanza del documento
- Istanziarne uno nuovo`Document` oggetto aggiungendo la seguente riga di codice:
+## Passaggio 4: creare una nuova istanza del documento
+ Crea un'istanza di un nuovo`Document` oggetto aggiungendo la seguente riga di codice:
 
 ```csharp
 Document _pdfdocument = new Document();
 ```
 
-## Passaggio 5: aggiungi una pagina al documento
- Aggiungi una nuova pagina al documento utilizzando il file`Add` metodo del`Pages`collezione. Nel codice fornito, la nuova pagina viene assegnata alla variabile`page`.
+## Passaggio 5: aggiungere una pagina al documento
+ Aggiungere una nuova pagina al documento utilizzando`Add` metodo del`Pages`raccolta. Nel codice fornito, la nuova pagina è assegnata alla variabile`page`.
 
 ```csharp
 Page page = _pdfdocument.Pages.Add();
 ```
 
-## Passaggio 6: crea tabulazioni personalizzate
- Creare un`TabStops` oggetto e aggiungervi tabulazioni personalizzate. Imposta il tipo di allineamento e il tipo di direttrice per ciascuna tabulazione.
+## Passaggio 6: creare tabulazioni personalizzate
+ Crea un`TabStops` oggetto e aggiungi tabulazioni personalizzate. Imposta il tipo di allineamento e il tipo di leader per ogni tabulazione.
 
 ```csharp
 TabStops ts = new TabStops();
@@ -63,8 +63,8 @@ ts3.AlignmentType = TabAlignmentType.Left;
 ts3.LeaderType = TabLeaderType.Dot;
 ```
 
-## Passaggio 7: crea frammenti di testo con tabulazioni
- Creare`TextFragment` oggetti e passare loro le tabulazioni personalizzate. Utilizza i caratteri speciali`#$TAB` per indicare le tabulazioni all'interno del testo.
+## Passaggio 7: creare frammenti di testo con tabulazioni
+ Creare`TextFragment` oggetti e passa loro le tabulazioni personalizzate. Utilizza i caratteri speciali`#$TAB` per indicare le tabulazioni all'interno del testo.
 
 ```csharp
 TextFragment header = new TextFragment("This is an example of forming a table with TAB stops", ts);
@@ -82,17 +82,17 @@ page.Paragraphs.Add(text1);
 page.Paragraphs.Add(text2);
 ```
 
-## Passaggio 8: salva il documento PDF
- Salvare il documento PDF utilizzando il file`Save` metodo del`Document` oggetto.
+## Passaggio 8: Salvare il documento PDF
+ Salvare il documento PDF utilizzando`Save` metodo del`Document` oggetto.
 
 ```csharp
 _pdfdocument.Save(dataDir);
 Console.WriteLine("\nCustom tab stops setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Codice sorgente di esempio per tabulazioni personalizzate utilizzando Aspose.PDF per .NET 
+### Esempio di codice sorgente per tabulazioni personalizzate utilizzando Aspose.PDF per .NET 
 ```csharp
-// Il percorso della directory dei documenti.
+// Percorso verso la directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document _pdfdocument = new Document();
 Page page = _pdfdocument.Pages.Add();
@@ -128,43 +128,43 @@ Hai creato con successo un documento PDF con tabulazioni personalizzate utilizza
 
 ### Domande frequenti
 
-#### D: Qual è il focus di questo tutorial?
+#### D: Qual è l'obiettivo di questo tutorial?
 
-R: Questo tutorial è incentrato sulla guida dell'utente attraverso il processo di creazione di tabulazioni personalizzate in un file PDF utilizzando la libreria Aspose.PDF per .NET. Il codice sorgente C# fornito illustra i passaggi necessari per raggiungere questo obiettivo.
+R: Questo tutorial è incentrato sulla guida attraverso il processo di creazione di tabulazioni personalizzate in un file PDF utilizzando la libreria Aspose.PDF per .NET. Il codice sorgente C# fornito illustra i passaggi necessari per ottenere questo risultato.
 
-#### D: Quali spazi dei nomi devo importare per questo tutorial?
+#### D: Quali namespace dovrei importare per questo tutorial?
 
-R: Nel file di codice in cui desideri creare tabulazioni personalizzate, importa i seguenti spazi dei nomi all'inizio del file:
+A: Nel file di codice in cui vuoi creare tabulazioni personalizzate, importa i seguenti namespace all'inizio del file:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-#### D: Come posso specificare la directory dei documenti?
+#### D: Come faccio a specificare la directory dei documenti?
 
- A: Nel codice, trova la riga`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory dei documenti.
+ A: Nel codice, trova la riga`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory del documento.
 
-#### D: Come posso creare una nuova istanza del documento?
+#### D: Come posso creare una nuova istanza di Documento?
 
- R: Nel passaggio 4 creerai un'istanza di new`Document` oggetto utilizzando il codice fornito.
+ A: Nel passaggio 4, creerai un nuovo`Document` oggetto utilizzando il codice fornito.
 
-#### D: Come faccio ad aggiungere una pagina al documento?
+#### D: Come posso aggiungere una pagina al documento?
 
- R: Nel passaggio 5, aggiungerai una nuova pagina al documento utilizzando il file`Add` metodo del`Pages` collezione.
+ A: Nel passaggio 5, aggiungerai una nuova pagina al documento utilizzando`Add` metodo del`Pages` collezione.
 
 #### D: Come posso creare tabulazioni personalizzate?
 
- R: Nel passaggio 6 creerai un file`TabStops` oggetto e aggiungervi tabulazioni personalizzate. Imposterai inoltre l'allineamento e i tipi di direttrice per ciascuna tabulazione.
+ A: Nel passaggio 6, creerai un`TabStops` oggetto e aggiungi tabulazioni personalizzate. Imposterai anche l'allineamento e i tipi di leader per ogni tabulazione.
 
 #### D: Come posso creare frammenti di testo con tabulazioni?
 
- A: Nel passaggio 7 creerai`TextFragment` oggetti e passare loro le tabulazioni personalizzate. Utilizzerai i caratteri speciali`#$TAB` per indicare le tabulazioni all'interno del testo.
+ A: Nel passaggio 7, creerai`TextFragment` oggetti e passa loro le tabulazioni personalizzate. Utilizzerai i caratteri speciali`#$TAB` per indicare le tabulazioni all'interno del testo.
 
 #### D: Come posso salvare il documento PDF?
 
- R: Nel passaggio 8, salverai il documento PDF utilizzando il file`Save` metodo del`Document` oggetto.
+ A: Nel passaggio 8, salverai il documento PDF utilizzando`Save` metodo del`Document` oggetto.
 
-#### D: Qual è il punto principale di questo tutorial?
+#### D: Qual è la cosa più importante da imparare da questo tutorial?
 
-R: Seguendo questo tutorial, hai imparato come creare un documento PDF con tabulazioni personalizzate utilizzando Aspose.PDF per .NET. Ciò può essere utile per organizzare e allineare il testo in modo strutturato.
+R: Seguendo questo tutorial, hai imparato a creare un documento PDF con tabulazioni personalizzate usando Aspose.PDF per .NET. Questo può essere utile per organizzare e allineare il testo in modo strutturato.

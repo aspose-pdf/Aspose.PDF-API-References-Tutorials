@@ -1,8 +1,8 @@
 ---
-title: Stylizuj strukturę tekstu w formacie PDF przy użyciu języka Java
-linktitle: Stylizuj strukturę tekstu w formacie PDF przy użyciu języka Java
-second_title: Aspose.PDF Interfejs API przetwarzania plików Java w formacie Java
-description: Dowiedz się, jak stylizować struktury tekstowe w plikach PDF przy użyciu języka Java, korzystając z naszego przewodnika krok po kroku. Dostosuj czcionki, kolory, hiperłącza i inne elementy, aby uzyskać profesjonalnie wyglądające dokumenty.
+title: Styl struktury tekstu w PDF przy użyciu Java
+linktitle: Styl struktury tekstu w PDF przy użyciu Java
+second_title: Aspose.PDF Java PDF Processing API
+description: Dowiedz się, jak stylizować struktury tekstowe w plikach PDF za pomocą Javy, korzystając z naszego przewodnika krok po kroku. Dostosuj czcionki, kolory, hiperłącza i inne elementy, aby uzyskać profesjonalnie wyglądające dokumenty.
 type: docs
 weight: 11
 url: /pl/java/pdf-styles-and-formatting/style-text-structure-in-pdf-using-java/
@@ -10,28 +10,28 @@ url: /pl/java/pdf-styles-and-formatting/style-text-structure-in-pdf-using-java/
 
 ## Wstęp
 
-Pliki PDF stały się standardowym formatem udostępniania dokumentów, raportów i różnego rodzaju treści. Podczas pracy z plikami PDF w Javie ważne jest nie tylko wypełnienie ich danymi, ale także nadanie tekstowi odpowiedniego stylu.
+Pliki PDF stały się standardowym formatem udostępniania dokumentów, raportów i różnych typów treści. Podczas pracy z plikami PDF w Javie ważne jest nie tylko wypełnianie ich danymi, ale także stylizowanie tekstu w celu uzyskania dopracowanego wyglądu.
 
-## Warunki wstępne
+## Wymagania wstępne
 
 Zanim zaczniemy, upewnij się, że spełnione są następujące wymagania wstępne:
 
-- Zainstalowany zestaw Java Development Kit (JDK).
+- Zainstalowano Java Development Kit (JDK).
 - Pobrano i skonfigurowano bibliotekę Aspose.PDF dla Java.
 
 ## Konfigurowanie środowiska
 
-Aby rozpocząć stylizowanie tekstu w plikach PDF przy użyciu języka Java, musisz skonfigurować środowisko programistyczne. Wykonaj następujące kroki:
+Aby rozpocząć stylizowanie tekstu w plikach PDF za pomocą Javy, musisz skonfigurować środowisko programistyczne. Wykonaj następujące kroki:
 
-1.  Pobierz bibliotekę Aspose.PDF dla Java z[Tutaj](https://releases.aspose.com/pdf/java/).
+1.  Pobierz bibliotekę Aspose.PDF dla języka Java ze strony[Tutaj](https://releases.aspose.com/pdf/java/).
 
-2. Dołącz bibliotekę do swojego projektu Java.
+2. Dodaj bibliotekę do swojego projektu Java.
 
-3. Zaimportuj niezbędne klasy z Aspose.PDF do swojego kodu.
+3. Zaimportuj niezbędne klasy z pliku Aspose.PDF do swojego kodu.
 
 ## Dodawanie tekstu do pliku PDF
 
-Zacznijmy teraz od dodania tekstu do dokumentu PDF. Oto prosty przykład:
+Teraz zacznijmy od dodania tekstu do dokumentu PDF. Oto prosty przykład:
 
 ```java
 // Utwórz nowy dokument PDF
@@ -50,11 +50,11 @@ pdfDocument.getPages().get_Item(1).getParagraphs().add(textFragment);
 pdfDocument.save("output.pdf");
 ```
 
-Ten kod tworzy dokument PDF, dodaje stronę i wstawia tekst „Witaj, PDF!” na stronę.
+Ten kod tworzy dokument PDF, dodaje stronę i wstawia na nią tekst „Witaj, PDF!”.
 
 ## Stylizacja czcionki
 
-Możesz dostosować czcionkę swojego tekstu. Oto jak zmienić rodzinę i rozmiar czcionek:
+Możesz dostosować czcionkę swojego tekstu. Oto jak zmienić rodzinę i rozmiar czcionki:
 
 ```java
 textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
@@ -63,7 +63,7 @@ textFragment.getTextState().setFontSize(12);
 
 ## Rozmiar i kolor tekstu
 
-Dostosowywanie rozmiaru i koloru tekstu jest proste:
+Zmiana rozmiaru i koloru tekstu jest prosta:
 
 ```java
 textFragment.getTextState().setFontSize(16);
@@ -80,7 +80,7 @@ textFragment.getTextState().setHorizontalAlignment(HorizontalAlignment.Center);
 
 ## Dodawanie nagłówków i stopek
 
-Popraw strukturę dokumentu za pomocą nagłówków i stopek:
+Ulepsz strukturę dokumentu dzięki nagłówkom i stopkom:
 
 ```java
 Page page = pdfDocument.getPages().get_Item(1);
@@ -100,7 +100,7 @@ header.getParagraphs().add(footerText);
 
 ## Dodawanie list wypunktowanych
 
-Twórz uporządkowane listy w swoim pliku PDF:
+Utwórz uporządkowane listy w pliku PDF:
 
 ```java
 ListSection listSection = new ListSection();
@@ -119,7 +119,7 @@ listSection.getListItems().add(listItem);
 
 ## Tworzenie hiperłączy
 
-Dodaj hiperłącza do pliku PDF w celu uzyskania treści interaktywnych:
+Dodaj hiperłącza do swojego pliku PDF, aby uzyskać interaktywną treść:
 
 ```java
 TextFragment linkText = new TextFragment("Visit our website");
@@ -127,7 +127,7 @@ linkText.getTextState().setFont(FontRepository.findFont("Arial"));
 linkText.getTextState().setFontSize(12);
 
 Hyperlink link = new Hyperlink(linkText);
-link.setAction(new GoToURIAction("https://www.przyklad.com"));
+link.setAction(new GoToURIAction("https://www.example.com"));
 
 page.getParagraphs().add(link);
 ```
@@ -144,7 +144,7 @@ textFragment.getTextState().setUnderline(true);
 
 ## Układ strony i marginesy
 
-Kontroluj układ swoich stron PDF:
+Kontroluj układ stron pliku PDF:
 
 ```java
 page.setPageSize(PageSize.getA4());
@@ -154,7 +154,7 @@ page.getPageInfo().getMargin().setRight(50);
 
 ## Obsługa podziałów stron
 
-Zadbaj o odpowiednie podziały stron dla swojej treści:
+Zadbaj o właściwe podziały stron dla swojej treści:
 
 ```java
 textFragment.getTextState().setIsAutoTruncated(true);
@@ -163,7 +163,7 @@ textFragment.getTextState().setIsWordWrapped(true);
 
 ## Dodawanie znaków wodnych
 
-Chroń swoje treści za pomocą znaków wodnych:
+Chroń swoją treść za pomocą znaków wodnych:
 
 ```java
 TextFragment watermark = new TextFragment("Confidential");
@@ -176,30 +176,30 @@ page.getParagraphs().add(watermark);
 
 ## Wniosek
 
-W tym przewodniku omówiliśmy, jak stylizować struktury tekstowe w plikach PDF przy użyciu języka Java i Aspose.PDF. Możesz teraz tworzyć atrakcyjne wizualnie i dobrze zorganizowane dokumenty PDF, które spełniają Twoje specyficzne wymagania. Eksperymentuj z dostarczonymi technikami i rozwijaj swoje umiejętności generowania plików PDF.
+W tym przewodniku sprawdziliśmy, jak stylizować struktury tekstowe w plikach PDF za pomocą Javy z pomocą Aspose.PDF. Teraz możesz tworzyć wizualnie atrakcyjne i dobrze ustrukturyzowane dokumenty PDF, które spełniają Twoje specyficzne wymagania. Eksperymentuj z podanymi technikami i doskonal swoje umiejętności generowania plików PDF.
 
-## Często zadawane pytania
+## Najczęściej zadawane pytania
 
 ### Jak zmienić czcionkę tekstu w pliku PDF?
 
- Aby zmienić czcionkę tekstu w pliku PDF, użyj opcji`setTextState()` metodę i określ żądaną czcionkę za pomocą`setFont()`. Na przykład:
+ Aby zmienić czcionkę tekstu w pliku PDF, użyj`setTextState()` metodę i określ żądaną czcionkę za pomocą`setFont()`. Na przykład:
 
 ```java
 textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
 ```
 
-### Czy mogę dodać hiperłącza do mojego pliku PDF przy użyciu Aspose.PDF dla Java?
+### Czy mogę dodawać hiperłącza do pliku PDF korzystając z Aspose.PDF dla Java?
 
- Tak, możesz dodać hiperłącza do swojego pliku PDF za pomocą Aspose.PDF dla Java. Użyj`Hyperlink` class do tworzenia linków i określania działań, takich jak otwieranie adresu URL.
+ Tak, możesz dodać hiperłącza do swojego pliku PDF, używając Aspose.PDF dla Java. Użyj`Hyperlink` Klasa służąca do tworzenia łączy i określania działań, np. otwierania adresu URL.
 
-### Jaki jest zalecany sposób obsługi podziałów stron w pliku PDF?
+### Jaki jest zalecany sposób radzenia sobie z podziałem stron w pliku PDF?
 
- Aby obsłużyć podziały stron w pliku PDF, ustaw opcję`IsAutoTruncated` I`IsWordWrapped` właściwości do`true` w`TextState`. Dzięki temu tekst zostanie odpowiednio obcięty i zawinięty, tak aby zmieścił się w granicach strony.
+ Aby obsługiwać podziały stron w pliku PDF, ustaw`IsAutoTruncated` I`IsWordWrapped` właściwości do`true` w`TextState`. Dzięki temu tekst zostanie odpowiednio przycięty i zawinięty, aby zmieścił się w granicach strony.
 
-### Jak mogę chronić moje dokumenty PDF za pomocą znaków wodnych?
+### Jak mogę zabezpieczyć moje dokumenty PDF znakami wodnymi?
 
-Możesz chronić swoje dokumenty PDF za pomocą znaków wodnych, dodając fragment tekstu znaku wodnego do pliku PDF. Dostosuj wygląd znaku wodnego, np. rozmiar i kolor czcionki, aby uzyskać pożądany efekt.
+Możesz chronić swoje dokumenty PDF znakami wodnymi, dodając fragment tekstu znaku wodnego do pliku PDF. Dostosuj wygląd znaku wodnego, taki jak rozmiar czcionki i kolor, aby uzyskać pożądany efekt.
 
-### Gdzie mogę znaleźć więcej informacji i dokumentacji dla Aspose.PDF dla Java?
+### Gdzie mogę znaleźć więcej informacji i dokumentację dotyczącą Aspose.PDF dla Java?
 
- Obszerną dokumentację Aspose.PDF dla Java można znaleźć pod adresem[Tutaj](https://reference.aspose.com/pdf/java/).
+ Pełną dokumentację Aspose.PDF dla języka Java można znaleźć pod adresem[Tutaj](https://reference.aspose.com/pdf/java/).

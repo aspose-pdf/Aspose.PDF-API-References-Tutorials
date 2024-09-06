@@ -1,37 +1,37 @@
 ---
 title: Ottieni la destinazione del collegamento ipertestuale PDF utilizzando Java
 linktitle: Ottieni la destinazione del collegamento ipertestuale PDF utilizzando Java
-second_title: Aspose.PDF API di elaborazione PDF Java
-description: Scopri come recuperare destinazioni di collegamenti ipertestuali PDF utilizzando Java con Aspose.PDF per Java. Impara passo dopo passo con esempi di codice in questo tutorial completo.
+second_title: API di elaborazione PDF Java Aspose.PDF
+description: Scopri come recuperare le destinazioni dei collegamenti ipertestuali PDF usando Java con Aspose.PDF per Java. Impara passo dopo passo con esempi di codice in questo tutorial completo.
 type: docs
 weight: 10
 url: /it/java/pdf-page-manipulation/get-pdf-hyperlink-destination-using-java/
 ---
 
-## introduzione
+## Introduzione
 
-In questo tutorial, esploreremo come ottenere destinazioni di collegamenti ipertestuali PDF utilizzando Java con l'aiuto di Aspose.PDF per Java. I collegamenti ipertestuali sono elementi essenziali nei documenti PDF e consentono agli utenti di navigare verso destinazioni specifiche all'interno del PDF o di risorse esterne. Esamineremo il processo passo dopo passo, fornendo esempi di codice e spiegazioni.
+In questo tutorial, esploreremo come ottenere destinazioni di hyperlink PDF usando Java con l'aiuto di Aspose.PDF per Java. Gli hyperlink sono elementi essenziali nei documenti PDF, che consentono agli utenti di navigare verso destinazioni specifiche all'interno del PDF o risorse esterne. Esamineremo il processo passo dopo passo, fornendo esempi di codice e spiegazioni.
 
-## Comprendere i collegamenti ipertestuali PDF
+## Informazioni sui collegamenti ipertestuali PDF
 
-I collegamenti ipertestuali PDF sono elementi interattivi che consentono agli utenti di fare clic e spostarsi in diverse posizioni all'interno del documento PDF o di siti Web esterni. Sono costituiti da due componenti principali: l'annotazione del collegamento e la destinazione. La destinazione specifica dove il collegamento ipertestuale porterà l'utente.
+Gli hyperlink PDF sono elementi interattivi che consentono agli utenti di cliccare e navigare verso diverse posizioni all'interno del documento PDF o di siti Web esterni. Sono costituiti da due componenti principali: l'annotazione del link e la destinazione. La destinazione specifica dove l'hyperlink porterà l'utente.
 
 ## Prerequisiti
 
-Prima di iniziare, assicurati di disporre dei seguenti prerequisiti:
+Prima di iniziare, assicurati di avere i seguenti prerequisiti:
 - Ambiente di sviluppo Java
-- Aspose.PDF per la libreria Java
-- Conoscenza base della programmazione Java
+- Libreria Aspose.PDF per Java
+- Conoscenza di base della programmazione Java
 
-## Configurazione di Aspose.PDF per Java
+## Impostazione di Aspose.PDF per Java
 
-Per iniziare, devi configurare Aspose.PDF per Java nel tuo progetto. Segui questi passi:
+Per iniziare, devi configurare Aspose.PDF per Java nel tuo progetto. Segui questi passaggi:
 1.  Scarica Aspose.PDF per Java da[Qui](https://releases.aspose.com/pdf/java/).
 2. Aggiungi la libreria Aspose.PDF al tuo progetto Java.
 
 ## Caricamento di un documento PDF
 
-Innanzitutto, caricheremo un documento PDF utilizzando Aspose.PDF per Java. Ecco il codice per farlo:
+Per prima cosa, caricheremo un documento PDF usando Aspose.PDF per Java. Ecco il codice per farlo:
 
 ```java
 // Carica il documento PDF
@@ -40,10 +40,10 @@ Document pdfDocument = new Document("sample.pdf");
 
 ## Recupero di collegamenti ipertestuali
 
-Successivamente, dobbiamo recuperare i collegamenti ipertestuali presenti nel documento PDF. Aspose.PDF fornisce un modo conveniente per farlo:
+Successivamente, dobbiamo recuperare gli hyperlink presenti nel documento PDF. Aspose.PDF fornisce un modo comodo per farlo:
 
 ```java
-// Ottieni la raccolta di collegamenti dalla prima pagina
+// Ottieni la raccolta di link dalla prima pagina
 Page page = pdfDocument.getPages().get_Item(1);
 LinkAnnotationCollection linkAnnotations = page.getAnnotations().getLinkAnnotations();
 ```
@@ -53,7 +53,7 @@ LinkAnnotationCollection linkAnnotations = page.getAnnotations().getLinkAnnotati
 Ora che abbiamo le annotazioni dei collegamenti, possiamo estrarre le destinazioni dei collegamenti ipertestuali:
 
 ```java
-// Estrai e stampa le destinazioni dei collegamenti ipertestuali
+// Estrarre e stampare le destinazioni dei collegamenti ipertestuali
 for (LinkAnnotation link : linkAnnotations) {
     String destination = link.getAction().getDestination();
     System.out.println("Hyperlink Destination: " + destination);
@@ -62,21 +62,21 @@ for (LinkAnnotation link : linkAnnotations) {
 
 ## Conclusione
 
-In questo tutorial, abbiamo imparato come ottenere destinazioni di collegamenti ipertestuali PDF utilizzando Java e Aspose.PDF per Java. Abbiamo trattato le basi dei collegamenti ipertestuali PDF, configurato l'ambiente necessario, caricato un documento PDF, recuperato i collegamenti ipertestuali ed estratto le loro destinazioni. Questa conoscenza può essere preziosa per varie attività di manipolazione dei PDF nelle applicazioni Java.
+In questo tutorial, abbiamo imparato come ottenere destinazioni di hyperlink PDF usando Java e Aspose.PDF per Java. Abbiamo trattato le basi degli hyperlink PDF, impostato l'ambiente necessario, caricato un documento PDF, recuperato hyperlink ed estratto le loro destinazioni. Questa conoscenza può essere preziosa per varie attività di manipolazione PDF nelle applicazioni Java.
 
 ## Domande frequenti
 
-### Come installo Aspose.PDF per Java?
+### Come faccio a installare Aspose.PDF per Java?
 
  Per installare Aspose.PDF per Java, scaricare la libreria da[Qui](https://releases.aspose.com/pdf/java/) e aggiungilo alle dipendenze del tuo progetto Java.
 
 ### Posso utilizzare Aspose.PDF per Java gratuitamente?
 
-Aspose.PDF per Java è una libreria commerciale, ma puoi esplorare le sue funzionalità utilizzando una versione di prova gratuita.
+Aspose.PDF per Java è una libreria commerciale, ma è possibile esplorarne le funzionalità utilizzando una versione di prova gratuita.
 
 ### Quali tipi di collegamenti ipertestuali posso recuperare utilizzando Aspose.PDF per Java?
 
-Aspose.PDF per Java consente di recuperare collegamenti ipertestuali interni ed esterni presenti in un documento PDF.
+Aspose.PDF per Java consente di recuperare sia i collegamenti ipertestuali interni che esterni presenti in un documento PDF.
 
 ### Come posso modificare o rimuovere i collegamenti ipertestuali in un PDF utilizzando Aspose.PDF per Java?
 
@@ -84,4 +84,4 @@ Aspose.PDF per Java consente di recuperare collegamenti ipertestuali interni ed 
 
 ### Dove posso trovare ulteriore documentazione su Aspose.PDF per Java?
 
- È possibile trovare la documentazione dettagliata per Aspose.PDF per Java all'indirizzo[Qui](https://reference.aspose.com/pdf/java/).
+ Puoi trovare la documentazione dettagliata per Aspose.PDF per Java su[Qui](https://reference.aspose.com/pdf/java/).

@@ -246,7 +246,7 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ### 常見問題解答
 
-#### Q：什麼是 PDF 文件中的陣列元素？為什麼我需要使用 Aspose.PDF for .NET 建立一個陣列元素？
+#### Q：什麼是 PDF 文件中的陣列元素？
 
 答：PDF 文件中的陣列元素表示結構化資料集合，通常用於建立表格或網格。在產生需要結構化資料呈現（例如表格資訊或網格）的動態 PDF 時，您可能需要使用 Aspose.PDF for .NET 建立陣列元素。
 

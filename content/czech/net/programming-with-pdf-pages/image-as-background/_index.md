@@ -45,7 +45,7 @@ background.BackgroundImage = File.OpenRead(dataDir + "aspose-total-for-net.jpg")
 ```
 
 ## Krok 5: Přidejte na stránku pozadí
-Potom můžete přidat objekt BackgroundArtifact do kolekce artefaktů stránky pomocí`Artifacts` vlastnictvím`Page` třída.
+Potom můžete přidat objekt BackgroundArtifact do kolekce artefaktů stránky pomocí`Artifacts` majetek z`Page` třída.
 
 ```csharp
 page. Artifacts. Add(background);
@@ -94,7 +94,7 @@ Odpověď: Chcete-li nastavit obrázek jako pozadí stránky v dokumentu PDF pom
 2.  Vytvořte nový objekt dokumentu pomocí`Document` třída.
 3.  Přidejte novou stránku do objektu dokumentu pomocí`Add()` metoda`Pages` třída.
 4.  Vytvořte nový objekt BackgroundArtifact pro nastavení obrázku pozadí. Soubor obrázku můžete určit pomocí`File.OpenRead()` metoda.
-5.  Přidejte objekt BackgroundArtifact do kolekce artefaktů stránky pomocí`Artifacts` vlastnictvím`Page` třída.
+5.  Přidejte objekt BackgroundArtifact do kolekce artefaktů stránky pomocí`Artifacts` majetek z`Page` třída.
 6.  Uložte dokument PDF do souboru pomocí`Save()` metoda`Document` třídy a zadejte správnou cestu a název souboru pro výstup.
 
 #### Otázka: Mohu přidat více obrázků na pozadí na různé stránky dokumentu PDF?

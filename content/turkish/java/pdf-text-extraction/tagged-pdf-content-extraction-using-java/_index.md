@@ -1,51 +1,51 @@
 ---
-title: Java kullanarak PDF İçeriği Çıkarma ile etiketlendi
-linktitle: Java kullanarak PDF İçeriği Çıkarma ile etiketlendi
+title: Java kullanarak Etiketli PDF İçerik Çıkarımı
+linktitle: Java kullanarak Etiketli PDF İçerik Çıkarımı
 second_title: Aspose.PDF Java PDF İşleme API'si
-description: Aspose.PDF for Java ile Java'da etiketli PDF içeriği çıkarmanın gücünün kilidini açın. Bu adım adım kılavuz, yapılandırılmış PDF içeriğine sorunsuz erişim için kaynak kodu örnekleri sağlar.
+description: Java'da Aspose.PDF for Java ile etiketli PDF içerik çıkarmanın gücünü açığa çıkarın. Bu adım adım kılavuz, yapılandırılmış PDF içeriğine sorunsuz erişim için kaynak kodu örnekleri sağlar.
 type: docs
 weight: 12
 url: /tr/java/pdf-text-extraction/tagged-pdf-content-extraction-using-java/
 ---
 
-Etiketli PDF'ler, engelli bireylerin erişebileceği ve aynı zamanda otomatik içerik çıkarmaya yardımcı olacak şekilde yapılandırılmıştır. Bu adım adım kılavuzda, Java ve Aspose.PDF for Java kütüphanesini kullanarak etiketli PDF'lerden içeriğin nasıl çıkarılacağını inceleyeceğiz. Süreci net ve erişilebilir kılmak için kaynak kodu örnekleri sunacağız.
+Etiketli PDF'ler, engelli bireyler için erişilebilir hale getirecek ve ayrıca otomatik içerik çıkarmada yardımcı olacak şekilde yapılandırılmıştır. Bu adım adım kılavuzda, Java ve Aspose.PDF for Java kitaplığını kullanarak etiketli PDF'lerden içerik çıkarmayı inceleyeceğiz. Süreci açık ve erişilebilir hale getirmek için kaynak kodu örnekleri sağlayacağız.
 
 ## giriiş
 
-Etiketli PDF'ler, ekran okuyucuların ve diğer yardımcı teknolojilerin belgenin içeriğini anlamasına yardımcı olan yapısal bilgiler içerir. Etiketli PDF'lerden içerik çıkarmak, veri analizi, içeriğin yeniden kullanılması ve erişilebilirlik uyumluluğu gibi çeşitli uygulamalar için çok önemlidir.
+Etiketli PDF'ler, ekran okuyucuların ve diğer yardımcı teknolojilerin belgenin içeriğini anlamasına yardımcı olan yapısal bilgiler içerir. Etiketli PDF'lerden içerik çıkarmak, veri analizi, içerik yeniden kullanımı ve erişilebilirlik uyumluluğu gibi çeşitli uygulamalar için çok önemlidir.
 
-## Önkoşullar
+## Ön koşullar
 
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-1. Java Geliştirme Ortamı: Sisteminizde Java'nın kurulu olduğundan emin olun.
+1. Java Geliştirme Ortamı: Sisteminizde Java'nın yüklü olduğundan emin olun.
 
-2.  Aspose.PDF for Java Library: Kütüphaneyi şu adresten indirebilirsiniz:[Burada](https://releases.aspose.com/pdf/java/). Java projenize ekleyin.
+2.  Java Kütüphanesi için Aspose.PDF: Kütüphaneyi şu adresten indirebilirsiniz:[Burada](https://releases.aspose.com/pdf/java/)Bunu Java projenize ekleyin.
 
-## Adım 1: Java Projesi Oluşturun
+## Adım 1: Bir Java Projesi Oluşturun
 
-Tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir Java projesi oluşturarak başlayın. Aspose.PDF for Java kütüphanesini projenizin bağımlılıklarına ekleyin.
+Tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir Java projesi oluşturarak başlayın. Projenizin bağımlılıklarına Aspose.PDF for Java kütüphanesini ekleyin.
 
 ## Adım 2: Aspose.PDF'yi başlatın
 
-Java projenizde, aşağıdaki kodu ana sınıfınıza ekleyerek Aspose.PDF'yi başlatın:
+Java projenizde, ana sınıfınıza aşağıdaki kodu ekleyerek Aspose.PDF'yi başlatın:
 
 ```java
 import com.aspose.pdf.Document;
 
 public class TaggedPDFExtractor {
     public static void main(String[] args) {
-        // Aspose.PDF'yi başlat
+        // Aspose.PDF'yi Başlat
         Document pdfDocument = new Document("path_to_tagged_pdf.pdf");
     }
 }
 ```
 
- Yer değiştirmek`"path_to_tagged_pdf.pdf"` etiketli PDF dosyanızın gerçek yolunu belirtin.
+ Yer değiştirmek`"path_to_tagged_pdf.pdf"` Etiketli PDF dosyanızın gerçek yolunu içerir.
 
-## 3. Adım: Etiketli İçeriği Çıkarın
+## Adım 3: Etiketli İçeriği Çıkarın
 
-Şimdi etiketli içeriği PDF'den çıkaralım. Aşağıdaki kodu ana sınıfınıza ekleyin:
+Şimdi, etiketli içeriği PDF'den çıkaralım. Aşağıdaki kodu ana sınıfınıza ekleyin:
 
 ```java
 import com.aspose.pdf.TextAbsorber;
@@ -53,17 +53,17 @@ import com.aspose.pdf.TextExtractionOptions;
 
 public class TaggedPDFExtractor {
     public static void main(String[] args) {
-        // Aspose.PDF'yi başlat
+        // Aspose.PDF'yi Başlat
         Document pdfDocument = new Document("path_to_tagged_pdf.pdf");
 
         // TextAbsorber nesnesi oluştur
         TextAbsorber textAbsorber = new TextAbsorber();
 
-        // Metin çıkarma seçeneklerini ayarlama
+        // Metin çıkarma seçeneklerini ayarlayın
         TextExtractionOptions options = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
         textAbsorber.setTextExtractionOptions(options);
 
-        // Tüm sayfalar için emiciyi kabul edin
+        // Tüm sayfalar için emiciyi kabul et
         for (int page = 1; page <= pdfDocument.getPages().size(); page++) {
             pdfDocument.getPages().get_Item(page).accept(textAbsorber);
         }
@@ -75,7 +75,7 @@ public class TaggedPDFExtractor {
 }
 ```
 
-Bu kod Aspose.PDF'yi başlatır, etiketli metni çıkarmak için bir TextAbsorber kurar ve ardından içeriği çıkarmak ve yazdırmak için tüm sayfalar arasında döngü yapar.
+Bu kod Aspose.PDF'yi başlatır, etiketli metni çıkarmak için bir TextAbsorber kurar ve ardından içeriği çıkarmak ve yazdırmak için tüm sayfalarda döngü oluşturur.
 
 ## Adım 4: Derleyin ve Çalıştırın
 
@@ -83,22 +83,22 @@ Java projenizi derleyin ve çalıştırın. PDF'den çıkarılan etiketli içeri
 
 ## Çözüm
 
-Java ve Aspose.PDF for Java kullanarak etiketli PDF'lerden içerik çıkarmak, erişilebilirlik uyumluluğu ve veri analizi de dahil olmak üzere çeşitli uygulamalar için çok önemlidir. Bu adım adım kılavuzu takip ederek ve sağlanan kaynak kodunu kullanarak, etiketli PDF içeriği çıkarmayı Java uygulamalarınıza kolayca dahil edebilirsiniz.
+Java ve Aspose.PDF for Java kullanarak etiketli PDF'lerden içerik çıkarmak, erişilebilirlik uyumluluğu ve veri analizi dahil olmak üzere çeşitli uygulamalar için önemlidir. Bu adım adım kılavuzu izleyerek ve sağlanan kaynak kodunu kullanarak, etiketli PDF içerik çıkarmayı Java uygulamalarınıza kolayca dahil edebilirsiniz.
 
 
 ## SSS
 
 ### Etiketli PDF nedir?
-   Etiketli PDF, erişilebilirliği ve içerik çıkarmayı geliştirmeye yönelik yapısal bilgiler içeren bir PDF belgesidir.
+   Etiketli PDF, erişilebilirliği ve içerik çıkarımını geliştirmek için yapısal bilgiler içeren bir PDF belgesidir.
 
 ### Etiketli PDF içeriğini çıkarmak neden önemlidir?
-   Etiketli PDF içeriğinin çıkarılması erişilebilirlik açısından çok önemlidir ve otomatik içerik işlemeyi mümkün kılar.
+   Etiketli PDF içeriğinin çıkarılması erişilebilirlik açısından önemlidir ve otomatik içerik işlemeyi mümkün kılar.
 
-### Aspose.PDF for Java, PDF ile ilgili diğer görevler için kullanılabilir mi?
-   Evet, Aspose.PDF for Java, PDF işleme, oluşturma ve dönüştürme için çok çeşitli özellikler sunar.
+### Aspose.PDF for Java diğer PDF ile ilgili görevler için kullanılabilir mi?
+   Evet, Java için Aspose.PDF, PDF düzenleme, oluşturma ve dönüştürme için geniş bir özellik yelpazesi sunar.
 
-### Aspose.PDF for Java'nın kullanımı ücretsiz midir?
-   Aspose.PDF for Java ticari bir kütüphanedir ancak değerlendirme amacıyla ücretsiz deneme sürümü sunar.
+### Aspose.PDF for Java'yı kullanmak ücretsiz mi?
+   Aspose.PDF for Java ticari bir kütüphanedir, ancak değerlendirme amaçlı ücretsiz deneme sürümü sağlar.
 
-### Aspose.PDF for Java hakkında daha fazla bilgiyi nerede bulabilirim?
-    adresindeki API belgelerine bakın.[https://reference.aspose.com/pdf/java/](https://reference.aspose.com/pdf/java/) detaylı bilgi ve örnekler için.
+### Java için Aspose.PDF hakkında daha fazla bilgiyi nerede bulabilirim?
+    API belgelerine şu adresten bakın:[https://reference.aspose.com/pdf/java/](https://reference.aspose.com/pdf/java/) Detaylı bilgi ve örnekler için.

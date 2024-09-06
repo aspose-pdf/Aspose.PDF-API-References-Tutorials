@@ -18,13 +18,13 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 2. lépés: A PDF dokumentum betöltése
 
-Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Itt van, hogyan:
+Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Íme, hogyan:
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-//Nyissa meg a PDF dokumentumot
+// Nyissa meg a PDF dokumentumot
 Document pdfDocument = new Document(dataDir + "watermark.pdf");
 ```
 
@@ -32,7 +32,7 @@ Feltétlenül cserélje ki a „DOKUMENTUMKÖNYVTÁR” elemet a PDF-dokumentum 
 
 ## 3. lépés: A vízjel beszerzése
 
-Most, hogy betöltötte a PDF-dokumentumot, ismételheti az adott oldalműtermékeket, hogy megkapja a vízjel információit. Itt van, hogyan:
+Most, hogy betöltötte a PDF-dokumentumot, ismételheti az adott oldalműtermékeket, hogy megkapja a vízjel információit. Íme, hogyan:
 
 ```csharp
 // Böngésszen a műtermékek között, és szerezze be a vízjel altípusát, szövegét és helyét
@@ -65,7 +65,7 @@ foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 
 Gratulálok ! Megtanulta, hogyan szerezhet be vízjeladatokat egy PDF-dokumentumból az Aspose.PDF for .NET használatával. Mostantól ezt a tudást felhasználhatja a vízjelek elemzésére és feldolgozására a PDF-dokumentumokban.
 
-### GYIK a vízjel letöltéséhez PDF fájlból
+### GYIK a vízjel letöltéséhez PDF-fájlból
 
 #### K: Mi a vízjel egy PDF-dokumentumban, és miért kell kivonnom az információit?
 
@@ -73,7 +73,7 @@ V: A PDF-dokumentumban lévő vízjel egy felismerhető kép vagy szöveg, amely
 
 #### K: Hogyan segít a mellékelt C# forráskód a vízjel információk PDF-fájlból való kinyerésében?
 
- V: A mellékelt kód bemutatja, hogyan tölthet be egy meglévő PDF-dokumentumot, hogyan lehet egy adott oldal műtermékein keresztül iterálni, és hogyan nyerhet ki információkat a vízjelekről. Ezt a`Subtype`, `Text` , és`Rectangle` az egyes műtermékek tulajdonságait.
+ V: A mellékelt kód bemutatja, hogyan tölthet be egy meglévő PDF-dokumentumot, hogyan lehet egy adott oldal műtermékein keresztül iterálni, és hogyan nyerhet ki információkat a vízjelekről. Ezt úgy teszi meg, hogy hozzáfér a`Subtype`, `Text` , és`Rectangle` az egyes műtermékek tulajdonságait.
 
 ####  K: Mit jelent a`Subtype` property of an artifact represent?
 

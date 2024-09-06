@@ -1,54 +1,74 @@
 ---
-title: PDF注釈を追加
-linktitle: 注釈の追加
+title: PDF注釈を追加する
+linktitle: 注釈を追加
 second_title: Aspose.PDF for .NET API リファレンス
-description: この C# ソース コードを使用して、Aspose.PDF for .NET でテキスト PDF 注釈を追加する方法を学びます。特定の詳細とアイコンを使用して注釈をカスタマイズします。
+description: このステップバイステップ ガイドに従って、Aspose.PDF for .NET を使用して PDF にカスタム注釈を簡単に追加できます。特定の詳細とアイコンを使用して注釈をカスタマイズします。
 type: docs
 weight: 10
 url: /ja/net/annotations/addannotation/
 ---
-PDF ドキュメントへの注釈の追加は、コラボレーションとレビュー プロセスを強化できる強力な機能です。 Aspose.PDF for .NET を使用すると、C# を使用してプログラムで PDF ドキュメントに注釈を簡単に追加できます。このガイドでは、Aspose.PDF for .NET を使用して PDF ドキュメントに注釈を追加する方法を段階的に説明します。
+## 導入
 
-## ステップ 1: 新しいプロジェクトを作成し、Aspose.PDF for .NET をインストールする
+注釈は PDF ドキュメントを充実させ、インタラクティブで有益なものにする優れた方法です。共同作業者のためにメモを残す場合でも、読者に追加情報を追加する場合でも、注釈は不可欠です。このチュートリアルでは、Aspose.PDF for .NET を使用して PDF 注釈を追加するプロセスを詳しく説明します。各手順を詳しく説明するので、このガイドを読み終える頃には、PDF ファイルに注釈を埋め込むプロになれているはずです。さあ、始めましょう!
 
-注釈を追加するコードを書き始める前に、新しいプロジェクトを作成し、Aspose.PDF for .NET をインストールする必要があります。 Aspose.PDF for .NET をインストールするには、次の手順に従います。
+## 前提条件
 
-1. Visual Studio を開き、新しい C# プロジェクトを作成します。
-2. ソリューション エクスプローラーでプロジェクトを右クリックし、[NuGet パッケージの管理] を選択します。
-3. 「Aspose.PDF」を検索し、「インストール」を選択します。
+コードに進む前に、必要なものがすべて揃っていることを確認しましょう。
 
-インストールが完了したら、コードの記述を開始できます。
+-  Aspose.PDF for .NET: Aspose.PDFライブラリがインストールされていることを確認してください。[Aspose.PDF for .NET ダウンロード ページ](https://releases.aspose.com/pdf/net/).
+- 開発環境: Visual Studio または任意の他の C# IDE。
+- C# の基本知識: このガイドでは、読者が C# プログラミングに精通していることを前提としています。
+- PDF ドキュメント: 注釈を追加するサンプル PDF ファイル。
 
-## ステップ 2: PDF ドキュメントを開く
+ Aspose.PDFライブラリをまだお持ちでない場合は、上記のリンクからダウンロードして、[無料トライアル](https://releases.aspose.com/)または購入する[ライセンス](https://purchase.aspose.com/buy). 
 
-注釈を追加する最初のステップは、PDF ドキュメントを開くことです。次のコードを使用してドキュメントを開くことができます。
+## パッケージのインポート
+
+コーディングを始める前に、必要な名前空間がインポートされていることを確認してください。
 
 ```csharp
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+```
+
+これらの名前空間は、PDF の操作と注釈に必要なクラスとメソッドへのアクセスを提供します。
+
+## ステップ1: PDF文書を読み込む
+
+まず最初に、注釈を追加する予定の PDF ドキュメントを読み込む必要があります。
+
+```csharp
+//ドキュメント ディレクトリへのパス。
 string dataDir = "YOUR DATA DIRECTORY";
+//ドキュメントを開く
 Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
 ```
 
-このコードでは、開きたい PDF ドキュメントへのパスを指定します。 「YOUR DATA DIRECTORY」をデータ ディレクトリへの実際のパスに置き換えてください。
+何が起こっているかというと、PDFファイルが保存されているディレクトリを指定して、`Document` Aspose.PDF によって提供されるクラス。ドキュメントを読み込まないと変更できないため、この手順は重要です。
 
-## ステップ 3: 注釈を作成する
+## ステップ2: 注釈を作成する
 
-注釈を追加するには、`TextAnnotation`クラス。次のコードを使用して、新しいテキスト注釈を作成できます。
+### 注釈プロパティの定義
+さて、注釈自体を作成しましょう。`TextAnnotation`PDF にコメントやメモを追加するのに最適です。
 
 ```csharp
+//注釈を作成する
 TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
 textAnnotation.Title = "Sample Annotation Title";
 textAnnotation.Subject = "Sample Subject";
-textAnnotation.State = AnnotationState.Accepted;
 textAnnotation.Contents = "Sample contents for the annotation";
 textAnnotation.Open = true;
 textAnnotation.Icon = TextIcon.Key;
 ```
 
-このコードでは、PDF ドキュメントの 2 ページ目に新しいテキスト注釈を作成します。注釈のタイトル、件名、状態、内容、開く、およびアイコンのプロパティも設定します。
+このスニペットでは:
+- 場所とサイズ:`Rectangle`クラスは、注釈がページ上のどこに表示されるか、およびその寸法を定義します。
+- タイトル、件名、内容: これらのプロパティを使用すると、注釈の内容と注釈に含まれる内容を指定できます。
+- アイコン:`TextIcon.Key`注釈にアイコンを設定し、視覚的に魅力的にします。
 
-## ステップ 4: 注釈をカスタマイズする
+## ステップ3: 注釈の外観をカスタマイズする
 
-注釈の外観をカスタマイズするには、`Border`クラス。次のコードを使用して、注釈の境界線をカスタマイズできます。
+次に、境界線を追加して外観を微調整し、この注釈を目立たせましょう。
 
 ```csharp
 Border border = new Border(textAnnotation);
@@ -58,81 +78,51 @@ textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
 ```
 
-このコードでは、新しい`Border`オブジェクトを選択し、その幅とダッシュのプロパティを設定します。次に、`Border`新しい注釈のプロパティ`Border`物体。最後に、`Rect`注釈のプロパティを使用して、その位置とサイズを指定します。
+何が起こっているのか、以下に詳しく説明します。
+- 国境：私たちは`Border`オブジェクトを作成し、幅を 5 に設定して、注釈に目立つアウトラインを付けます。
+- ダッシュパターン：`Dash`プロパティを使用すると、破線の境界線を作成して、注釈に少しスタイルを追加できます。
 
-## ステップ 5: PDF ドキュメントに注釈を追加する
+## ステップ4: PDFページに注釈を追加する
 
-注釈を作成してカスタマイズしたら、それを PDF ドキュメントに追加する必要があります。次のコードを使用して、PDF ドキュメントに注釈を追加できます。
+注釈を作成してカスタマイズしたら、それを PDF ページに追加します。
 
 ```csharp
+//ページの注釈コレクションに注釈を追加する
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
 ```
 
-このコードでは、PDF ドキュメントの 2 ページ目の注釈コレクションに注釈を追加します。
+このコードはPDFの最初のページに注釈を追加します。`Annotations`コレクションには特定のページのすべての注釈が保持されており、この手順により、新しい注釈がそのコレクションの一部になることが保証されます。
 
-## ステップ 6: 出力ファイルを保存する
+## ステップ5: 更新されたPDFドキュメントを保存する
 
-最後に、注釈を追加して PDF ドキュメントを保存する必要があります。次のコードを使用して出力ファイルを保存できます。
+最後に、注釈が永続的に追加されるようにドキュメントを保存しましょう。
 
 ```csharp
-dataDir = dataDir + "AddAnnotation_out.pdf";
-pdfDocument.Save(dataDir);
-```
-### Aspose.PDF for .NET を使用して注釈を追加するためのソース コードの例
-
-
-```csharp   
- //ドキュメントディレクトリへのパス。
-string dataDir = "YOUR DATA DIRECTORY";
-
-//開いた文書
-Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
-
-//注釈の作成
-TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
-textAnnotation.Title = "Sample Annotation Title";
-textAnnotation.Subject = "Sample Subject";
-textAnnotation.State = AnnotationState.Accepted;
-textAnnotation.Contents = "Sample contents for the annotation";
-textAnnotation.Open = true;
-textAnnotation.Icon = TextIcon.Key;
-
-Border border = new Border(textAnnotation);
-border.Width = 5;
-border.Dash = new Dash(1, 1);
-textAnnotation.Border = border;
-textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
-
-//ページの注釈コレクションに注釈を追加します
-pdfDocument.Pages[1].Annotations.Add(textAnnotation);
-dataDir = dataDir + "AddAnnotation_out.pdf";
 //出力ファイルを保存する
+dataDir = dataDir + "AddAnnotation_out.pdf";
 pdfDocument.Save(dataDir);
+Console.WriteLine("\nAnnotation added successfully.\nFile saved at " + dataDir);
 ```
-このコードは、Aspose.PDF for .NET を使用して、特定のタイトル、件名、状態、内容、アイコンを含むテキスト注釈を PDF ページに追加する方法を示します。 PDF ドキュメントに注釈を追加するための要件に応じて、このコードを変更できます。 YOUR DATA DIRECTORY を、PDF ファイルが配置され、出力ファイルを保存する実際のディレクトリ パスに置き換えることを忘れないでください。
+
+文書を新しい名前で保存すると（`AddAnnotation_out.pdf`) を実行すると、元のファイルは保持され、注釈が追加された新しいファイルが生成されます。コンソール メッセージですべてが成功したことが確認され、指定したディレクトリに注釈付きの PDF が見つかります。
 
 ## 結論
 
-Aspose.PDF for .NET を使用して PDF ドキュメントに注釈を追加すると、ドキュメントのコラボレーションとレビュー プロセスを強化するための貴重なツールが提供されます。この記事に記載されているステップバイステップ ガイドに従うことで、開発者は注釈機能を C# アプリケーションにシームレスに統合できます。
+PDF に注釈を追加することは、強力な機能であるだけでなく、Aspose.PDF for .NET を使用すると非常に簡単です。レビュー用にドキュメントにマークを付ける場合でも、将来の参照用にメモを追加する場合でも、このガイドでは必要な情報をすべて網羅しています。これらの手順に従うことで、PDF を充実させ、より便利でインタラクティブなカスタム注釈を作成できます。
 
-### よくある質問
+## よくある質問
 
-#### Q: Aspose.PDF for .NET を使用して追加できる注釈の種類は何ですか?
+### Aspose.PDF for .NET を使用して追加できる注釈の種類は何ですか?
+テキスト、リンク、ハイライト、スタンプ注釈など、さまざまな種類の注釈を追加できます。
 
-A: Aspose.PDF for .NET は、テキスト注釈、スタンプ、リンク、図形などを含む、さまざまなタイプの注釈をサポートしています。開発者は、特定のニーズに合わせてこれらの注釈の外観とプロパティをカスタマイズできます。
+### 注釈の外観をカスタマイズできますか?
+もちろんです! 注釈のサイズ、色、境界線、さらにはアイコンまでカスタマイズできます。
 
-#### Q: 複数ページの PDF ドキュメント内の特定のページに注釈を追加できますか?
+### 1 ページに複数の注釈を追加することは可能ですか?
+はい、PDF 内の任意のページに必要な数の注釈を追加できます。
 
-A: はい、Aspose.PDF for .NET を使用すると、注釈を追加するページを指定できます。必要に応じて、特定のページを選択したり、複数のページに注釈を追加したりできます。
+### 注釈を追加した後に削除できますか?
+はい、注釈は`Annotations.Delete`Aspose.PDF によって提供されるメソッド。
 
-#### Q: 注釈の外観をカスタマイズするにはどうすればよいですか?
-
-A: 注釈は、境界線の幅、色、ダッシュ スタイル、テキスト スタイルなどのプロパティを使用してカスタマイズできます。 Aspose.PDF for .NET は、注釈の外観を調整するための豊富なオプション セットを提供します。
-
-#### Q: Aspose.PDF for .NET を使用してハイパーリンクを注釈として追加することはできますか?
-
-A: はい、Aspose.PDF for .NET を使用して PDF ドキュメントにハイパーリンクを注釈として追加できます。ハイパーリンク注釈を使用して、外部 URL または同じドキュメント内の特定の場所にリンクできます。
-
-#### Q: 元のコンテンツを変更せずに、既存の PDF ドキュメントに注釈を追加できますか?
-
-A: はい、Aspose.PDF for .NET は、PDF ドキュメントの元のコンテンツを変更することなく、追加要素として注釈を追加します。元の PDF コンテンツはそのまま残ります。
+### Aspose.PDF for .NET を使用するにはライセンスが必要ですか?
+はい、すべての機能のロックを解除し、制限を回避するには、[ライセンス](https://purchase.aspose.com/buy) . また、[一時ライセンス](https://purchase.aspose.com/temporary-license/)評価のため。

@@ -1,37 +1,37 @@
 ---
-title: Java kullanarak PDF Başlığına Numaralandırma Stili Uygulayın
-linktitle: Java kullanarak PDF Başlığına Numaralandırma Stili Uygulayın
+title: Java kullanarak PDF Başlığına Numaralandırma Stili Uygula
+linktitle: Java kullanarak PDF Başlığına Numaralandırma Stili Uygula
 second_title: Aspose.PDF Java PDF İşleme API'si
-description: Aspose.PDF for Java kullanarak numaralandırma stillerini PDF başlıklarına nasıl uygulayacağınızı öğrenin. Adım adım kılavuzumuz, belgelerinize profesyonel bir dokunuş için kaynak kodu örnekleri sağlar.
+description: Java için Aspose.PDF kullanarak PDF başlıklarına numaralandırma stilleri uygulamayı öğrenin. Adım adım kılavuzumuz, belgelerinize profesyonel bir dokunuş katmak için kaynak kod örnekleri sağlar.
 type: docs
 weight: 14
 url: /tr/java/pdf-images/apply-numbering-style-in-heading-of-pdf-using-java/
 ---
 
-## Aspose.PDF for Java'ya giriş
+## Java için Aspose.PDF'ye Giriş
 
-Aspose.PDF for Java, geliştiricilerin PDF belgeleriyle programlı olarak çalışmasına olanak tanıyan güçlü bir kütüphanedir. Metin biçimlendirme, sayfa düzenleme ve elbette başlıklara numaralandırma stilleri uygulama dahil olmak üzere PDF işleme için çok çeşitli özellikler sunar.
+Java için Aspose.PDF, geliştiricilerin PDF belgeleriyle programatik olarak çalışmasına olanak tanıyan sağlam bir kütüphanedir. Metin biçimlendirme, sayfa düzenleme ve tabii ki başlıklara numaralandırma stilleri uygulama dahil olmak üzere PDF düzenleme için çok çeşitli özellikler sunar.
 
-## Geliştirme Ortamını Kurma
+## Geliştirme Ortamının Kurulumu
 
 Koda dalmadan önce, geliştirme ortamınızda gerekli araçların kurulu olduğundan emin olun:
 
 - Java Geliştirme Kiti (JDK)
-- Seçtiğiniz Entegre Geliştirme Ortamı (IDE) (Eclipse, IntelliJ IDEA, vb.)
+- Tercih ettiğiniz Entegre Geliştirme Ortamı (IDE) (Eclipse, IntelliJ IDEA, vb.)
 - Java kütüphanesi için Aspose.PDF
 
 ## PDF Belgesi Oluşturma
 
-Aspose.PDF for Java'yı kullanarak yeni bir PDF belgesi oluşturarak başlayalım. Başlamanıza yardımcı olacak bazı örnek kodları burada bulabilirsiniz:
+Aspose.PDF for Java kullanarak yeni bir PDF belgesi oluşturarak başlayalım. Başlamanız için işte bazı örnek kodlar:
 
 ```java
-// Yeni bir PDF belgesi oluştur
+// Yeni bir PDF belgesi oluşturun
 com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document();
 ```
 
 ## PDF'ye Başlık Ekleme
 
-Şimdi PDF belgemize bazı başlıklar ekleyeceğiz. Bu başlıklar belgemizde bölüm görevi görecektir. Aşağıda başlık eklemeye ilişkin bir örnek verilmiştir:
+Şimdi PDF belgemize bazı başlıklar ekleyeceğiz. Bu başlıklar belgemizin bölümleri olarak hizmet edecek. İşte bir başlık eklemenin bir örneği:
 
 ```java
 // Bir başlık oluşturun
@@ -51,24 +51,24 @@ pdfDocument.getPages().get_Item(1).getParagraphs().add(heading);
 
 ## Numaralandırma Stilini Uygulama
 
-Şimdi heyecan verici kısım geliyor: başlıklarımıza numaralandırma stilleri uygulamak. Aspose.PDF for Java bunu başarmanın basit bir yolunu sunar. Numaralandırmanın uygulanmasına bir örnek:
+Şimdi heyecan verici kısma geliyoruz: Başlıklarımıza numaralandırma stilleri uygulamak. Java için Aspose.PDF bunu başarmanın basit bir yolunu sunar. İşte numaralandırmanın uygulanmasına dair bir örnek:
 
 ```java
-// Numaralandırma stili oluşturma
+// Bir numaralandırma stili oluşturun
 com.aspose.pdf.NumberingStyle numberingStyle = new com.aspose.pdf.NumberingStyle();
 numberingStyle.setFormat("(1)");
 numberingStyle.setFirstIndex(1);
 
-// Numaralandırma stilini başlığa uygulama
+// Numaralandırma stilini başlığa uygulayın
 heading.setNumberingStyle(numberingStyle);
 ```
 
-## Numaralandırma Formatlarını Özelleştirme
+## Numaralandırma Biçimlerini Özelleştirme
 
-Numaralandırma biçimini ihtiyaçlarınıza göre özelleştirebilirsiniz. Aspose.PDF for Java, önek, sonek ve format dahil olmak üzere numaralandırmanın çeşitli yönlerini kontrol etmenizi sağlar. Numaralandırmayı özelleştirmeye bir örnek:
+Numaralandırma biçimini ihtiyaçlarınıza uyacak şekilde özelleştirebilirsiniz. Java için Aspose.PDF, önek, sonek ve biçim dahil olmak üzere numaralandırmanın çeşitli yönlerini kontrol etmenizi sağlar. İşte numaralandırmayı özelleştirmenin bir örneği:
 
 ```java
-// Numaralandırma stilini özelleştirme
+// Numaralandırma stilini özelleştirin
 numberingStyle.setPrefix("Section ");
 numberingStyle.setSuffix(":");
 numberingStyle.setStartNumber(5);
@@ -76,7 +76,7 @@ numberingStyle.setStartNumber(5);
 
 ## PDF'yi Kaydetme ve Görüntüleme
 
-Numaralandırma stillerine sahip başlıkları ekledikten sonra sıra PDF belgesini kaydedip sonucu görüntülemeye gelir:
+Numaralandırma stilleriyle başlıkları ekledikten sonra, PDF belgesini kaydetme ve sonucu görüntüleme zamanı geldi:
 
 ```java
 // PDF belgesini kaydedin
@@ -88,30 +88,30 @@ java.awt.Desktop.getDesktop().open(new java.io.File("NumberedDocument.pdf"));
 
 ## Çözüm
 
-Bu adım adım kılavuzda Aspose.PDF for Java kullanarak PDF belgelerindeki başlıklara numaralandırma stillerinin nasıl uygulanacağını araştırdık. Bu güçlü kitaplık, özelleştirilmiş numaralandırma formatlarıyla profesyonel görünümlü belgeler oluşturmayı kolaylaştırır.
+Bu adım adım kılavuzda, Aspose.PDF for Java kullanarak PDF belgelerindeki başlıklara numaralandırma stillerinin nasıl uygulanacağını inceledik. Bu güçlü kitaplık, özelleştirilmiş numaralandırma biçimleriyle profesyonel görünümlü belgeler oluşturmayı kolaylaştırır.
 
-## SSS'ler
+## SSS
 
-### Aspose.PDF for Java'yı nasıl yüklerim?
+### Java için Aspose.PDF'yi nasıl yüklerim?
 
-Aspose.PDF for Java'yı yüklemek için şu adımları izleyin:
+Java için Aspose.PDF'yi yüklemek için şu adımları izleyin:
 
-1.  Aspose.PDF for Java belgelerini şu adreste ziyaret edin:[Burada](https://reference.aspose.com/pdf/java/).
-2.  Kütüphanenin en son sürümünü şuradan indirin:[Burada](https://releases.aspose.com/pdf/java/).
-3. Kitaplığı, belgelerde sağlanan kurulum talimatlarına göre Java projenize entegre edin.
+1.  Java belgeleri için Aspose.PDF'i şu adresten ziyaret edin:[Burada](https://reference.aspose.com/pdf/java/).
+2.  Kütüphanenin en son sürümünü şu adresten indirin:[Burada](https://releases.aspose.com/pdf/java/).
+3. Dokümantasyonda verilen kurulum talimatlarına göre kütüphaneyi Java projenize entegre edin.
 
 ### Aspose.PDF for Java'yı ücretsiz kullanabilir miyim?
 
-Aspose.PDF for Java, özelliklerini değerlendirmek için kullanabileceğiniz ücretsiz bir deneme sürümü sunar. Ancak tam erişim ve ticari kullanım için bir lisans satın almanız gerekecektir.
+Aspose.PDF for Java, özelliklerini değerlendirmek için kullanabileceğiniz ücretsiz bir deneme sürümü sunar. Ancak, tam erişim ve ticari kullanım için bir lisans satın almanız gerekecektir.
 
 ### Bir belgenin farklı bölümlerine farklı numaralandırma stilleri uygulamak mümkün müdür?
 
- Evet, Aspose.PDF for Java'yı kullanarak bir PDF belgesinin farklı bölümlerine farklı numaralandırma stilleri uygulayabilirsiniz. Basitçe ayrı oluşturun`Heading` nesneleri seçin ve her bölüm için numaralandırma stillerini özelleştirin.
+ Evet, Java için Aspose.PDF kullanarak bir PDF belgesinin farklı bölümlerine farklı numaralandırma stilleri uygulayabilirsiniz. Basitçe ayrı bir`Heading` nesneleri seçin ve her bölüm için numaralandırma stillerini özelleştirin.
 
-### Numaralandırılmış başlıklara sahip PDF'yi DOCX veya HTML gibi diğer formatlara aktarabilir miyim?
+### Numaralandırılmış başlıklara sahip PDF'i DOCX veya HTML gibi diğer formatlara aktarabilir miyim?
 
-Evet, Aspose.PDF for Java, numaralı başlıklara sahip PDF belgelerini DOCX, HTML ve daha fazlasını içeren çeşitli formatlara dışa aktarma olanağı sağlar. Bu dönüşümlerin nasıl gerçekleştirileceğine ilişkin ayrıntılı örnekler için belgeleri inceleyebilirsiniz.
+Evet, Java için Aspose.PDF, numaralandırılmış başlıklara sahip PDF belgelerini DOCX, HTML ve daha fazlası dahil olmak üzere çeşitli biçimlere aktarma olanağı sağlar. Bu dönüşümlerin nasıl gerçekleştirileceğine ilişkin ayrıntılı örnekler için belgeleri inceleyebilirsiniz.
 
-### Aspose.PDF for Java için daha fazla örnek ve belgeyi nerede bulabilirim?
+### Java için Aspose.PDF için daha fazla örnek ve dokümanı nerede bulabilirim?
 
- Aspose.PDF for Java için kapsamlı belgeleri, kod örneklerini ve API referansını aşağıdaki belgelendirme web sitesinde bulabilirsiniz:[Burada](https://reference.aspose.com/pdf/java/).
+ Java için Aspose.PDF için kapsamlı belgeleri, kod örneklerini ve API referanslarını şu belge web sitesinde bulabilirsiniz:[Burada](https://reference.aspose.com/pdf/java/).

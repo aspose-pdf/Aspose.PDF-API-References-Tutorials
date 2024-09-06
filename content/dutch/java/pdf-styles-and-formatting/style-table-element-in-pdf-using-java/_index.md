@@ -1,8 +1,8 @@
 ---
-title: Stijltabelelement in PDF met Java
-linktitle: Stijltabelelement in PDF met Java
+title: Stijltabel-element in PDF met behulp van Java
+linktitle: Stijltabel-element in PDF met behulp van Java
 second_title: Aspose.PDF Java PDF-verwerkings-API
-description: Leer hoe u tabellen in PDF-documenten kunt opmaken met behulp van Java met Aspose.PDF. Maak visueel aantrekkelijke tabellen en pas hun uiterlijk aan voor professionele PDF's.
+description: Leer hoe u tabellen in PDF-documenten kunt stylen met behulp van Java met Aspose.PDF. Maak visueel aantrekkelijke tabellen en pas hun uiterlijk aan voor professionele PDF's.
 type: docs
 weight: 14
 url: /nl/java/pdf-styles-and-formatting/style-table-element-in-pdf-using-java/
@@ -10,21 +10,21 @@ url: /nl/java/pdf-styles-and-formatting/style-table-element-in-pdf-using-java/
 
 ## Invoering
 
-Tabellen vormen een fundamenteel onderdeel van veel PDF-documenten en de vormgeving ervan kan de visuele presentatie van uw gegevens aanzienlijk verbeteren. In dit artikel begeleiden we u bij het opmaken van tabelelementen in PDF's met behulp van Java en Aspose.PDF.
+Tabellen zijn een fundamenteel onderdeel van veel PDF-documenten en het stylen ervan kan de visuele presentatie van uw gegevens aanzienlijk verbeteren. In dit artikel leiden we u door het proces van het stylen van tabelelementen in PDF's met behulp van Java en Aspose.PDF.
 
 ## Vereisten
 
-Voordat we beginnen, zorg ervoor dat u over het volgende beschikt:
+Voordat we beginnen, zorg ervoor dat u het volgende heeft:
 
 - Java-ontwikkelomgeving
 - Aspose.PDF voor Java-bibliotheek
-- Basiskennis van Java-programmeren
+- Basiskennis van Java-programmering
 
 ## Aspose.PDF instellen voor Java
 
- Om aan de slag te gaan, downloadt u de Aspose.PDF voor Java-bibliotheek van de website:[Download Aspose.PDF voor Java](https://releases.aspose.com/pdf/java/)
+ Om te beginnen downloadt u de Aspose.PDF voor Java-bibliotheek van de website:[Download Aspose.PDF voor Java](https://releases.aspose.com/pdf/java/)
 
-Na het downloaden neemt u de bibliotheek op in uw Java-project.
+Nadat u de bibliotheek hebt gedownload, kunt u deze toevoegen aan uw Java-project.
 
 ## Een PDF-document maken
 
@@ -37,7 +37,7 @@ Document pdfDocument = new Document();
 
 ## Een tabel toevoegen
 
-Laten we nu een tabel aan ons PDF-document toevoegen. We kunnen het aantal rijen en kolommen voor de tabel opgeven.
+Laten we nu een tabel toevoegen aan ons PDF-document. We kunnen het aantal rijen en kolommen voor de tabel specificeren.
 
 ```java
 // Java-code om een tabel toe te voegen
@@ -46,20 +46,20 @@ table.setColumnWidths("100");
 pdfDocument.getPages().get_Item(1).getParagraphs().add(table);
 ```
 
-## Het stylen van de tafel
+## De tafel stylen
 
-Om de tabel op te maken, kunt u verschillende aspecten aanpassen, zoals de achtergrondkleur van de cel, het tekstlettertype en meer.
+Om de tabel op te maken, kunt u verschillende aspecten aanpassen, zoals de achtergrondkleur van de cel, het lettertype en meer.
 
 ```java
-//Java-code om de tabel op te maken
+//Java-code om de tabel te stylen
 table.setDefaultCellBorder(new BorderInfo(BorderSide.All, 1F));
 table.setDefaultCellPadding(new MarginInfo(5, 5, 5, 5));
 table.setDefaultCellTextState(new TextState());
 ```
 
-## Gegevens aan de tabel toevoegen
+## Gegevens toevoegen aan de tabel
 
-Laten we wat gegevens aan de tabel toevoegen. U kunt de cellen vullen met de gewenste inhoud.
+Laten we wat data aan de tabel toevoegen. U kunt de cellen vullen met de gewenste content.
 
 ```java
 // Java-code om gegevens aan de tabel toe te voegen
@@ -73,7 +73,7 @@ row.getCells().add("Country");
 
 ## Tabelranden aanpassen
 
-U kunt de tafelranden verder aanpassen om de gewenste look te bereiken.
+U kunt de tafelranden verder aanpassen om het gewenste uiterlijk te bereiken.
 
 ```java
 // Java-code om tabelranden aan te passen
@@ -82,10 +82,10 @@ table.setBorder(new BorderInfo(BorderSide.All, 2F));
 
 ## Celinhoud opmaken
 
-Het opmaken van celinhoud, zoals tekstuitlijning en lettertypestijl, kan eenvoudig worden gedaan.
+U kunt de opmaak van de celinhoud, zoals de uitlijning van de tekst en het lettertype, eenvoudig aanpassen.
 
 ```java
-// Java-code om celinhoud op te maken
+// Java-code om celinhoud te formatteren
 TextState textState = new TextState();
 textState.setFont(FontRepository.findFont("Arial"));
 textState.setFontSize(12);
@@ -116,7 +116,7 @@ pdfDocument.save("styled_table_example.pdf");
 
 ## Conclusie
 
-In deze zelfstudie hebben we onderzocht hoe u tabelelementen in PDF-documenten kunt opmaken met behulp van Java met Aspose.PDF. U hebt geleerd tabellen te maken, het uiterlijk ervan aan te passen, gegevens toe te voegen en de celinhoud op te maken. Met deze kennis kunt u professioneel ogende PDF's maken met opgemaakte tabellen voor verschillende toepassingen.
+In deze tutorial hebben we onderzocht hoe u tabelelementen in PDF-documenten kunt stylen met Java met Aspose.PDF. U hebt geleerd hoe u tabellen kunt maken, hun uiterlijk kunt aanpassen, gegevens kunt toevoegen en celinhoud kunt formatteren. Met deze kennis kunt u professioneel ogende PDF's maken met gestylede tabellen voor verschillende toepassingen.
 
 ## Veelgestelde vragen
 
@@ -126,13 +126,13 @@ In deze zelfstudie hebben we onderzocht hoe u tabelelementen in PDF-documenten k
 
 ### Kan ik cellen in een tabel samenvoegen?
 
- Ja, u kunt cellen in een tabel samenvoegen met behulp van de`Cell` klasse`setColSpan(int)` En`setRowSpan(int)` methoden.
+ Ja, u kunt cellen in een tabel samenvoegen met behulp van de`Cell` klas`setColSpan(int)` En`setRowSpan(int)` methoden.
 
 ### Hoe voeg ik een rand toe aan een specifieke cel?
 
- Om een rand aan een specifieke cel toe te voegen, kunt u de`Cell` klasse`setBorder` methode en specificeer de randeigenschappen.
+ Om een rand aan een specifieke cel toe te voegen, kunt u de`Cell` klas`setBorder` methode en specificeer de randeigenschappen.
 
-### Is Aspose.PDF voor Java compatibel met verschillende Java-IDE's?
+### Is Aspose.PDF voor Java compatibel met verschillende Java IDE's?
 
 Ja, Aspose.PDF voor Java is compatibel met verschillende Java Integrated Development Environments (IDE's), waaronder Eclipse, IntelliJ IDEA en NetBeans.
 

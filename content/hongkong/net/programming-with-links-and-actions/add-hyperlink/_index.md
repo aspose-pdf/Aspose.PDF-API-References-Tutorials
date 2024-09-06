@@ -127,7 +127,7 @@ Console.WriteLine("\nHyperlink added successfully.\nFile saved at " + dataDir);
 
 #### Q：Aspose.PDF for .NET 還提供哪些其他功能？
 
-答：Aspose.PDF for .NET 是一個強大的函式庫，提供了廣泛的功能，包括 PDF 產生、操作、轉換和擷取。它支援處理文字、圖像、註釋等，使其成為執行 PDF 相關任務的多功能工具。
+答：Aspose.PDF for .NET 是一個強大的函式庫，提供了廣泛的功能，包括 PDF 產生、操作、轉換和提取。它支援處理文字、圖像、註釋等，使其成為執行 PDF 相關任務的多功能工具。
 
 #### Q：可以將超連結新增到文件中的特定部分嗎？
 

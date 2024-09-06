@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 2. lépés: A PDF dokumentum betöltése
 
-Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Itt van, hogyan:
+Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Íme, hogyan:
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
@@ -32,7 +32,7 @@ Feltétlenül cserélje ki a „DOKUMENTUMKÖNYVTÁR” elemet a PDF-dokumentum 
 
 ## 3. lépés: Szöveg kibontása a bélyegző megjegyzéséből
 
-Most, hogy betöltötte a PDF dokumentumot, kivonhatja a szöveget az adott bélyegző megjegyzéséből. Itt van, hogyan:
+Most, hogy betöltötte a PDF dokumentumot, kivonhatja a szöveget az adott bélyegző megjegyzéséből. Íme, hogyan:
 
 ```csharp
 // Puffer annotáció lekérése
@@ -45,7 +45,7 @@ TextAbsorber ta = new TextAbsorber();
 XForm ap = annot. Appearance["N"];
 ta.Visit(ap);
 
-// A kivont szöveg megjelenítése
+// Jelenítse meg a kivont szöveget
 Console.WriteLine(ta.Text);
 ```
 
@@ -72,7 +72,7 @@ Gratulálok ! Megtanulta, hogyan lehet szöveget kivonni egy PDF-dokumentum bél
 
 #### K: Mi az a bélyegző megjegyzés egy PDF-dokumentumban, és miért kell szöveget kivonnom belőle?
 
-V: A PDF-dokumentumban található bélyegző megjegyzés olyan grafikus elem, amely további információk, például vízjel vagy gumibélyegző biztosítására használható. Szöveg kinyerése egy bélyegző megjegyzésből akkor hasznos, ha szövegalapú tartalmat szeretne lekérni ezekből a megjegyzésekből, amelyek tartalmazhatnak megjegyzéseket, címkéket vagy egyéb szöveges információkat.
+V: A PDF-dokumentumban található bélyegző megjegyzés olyan grafikus elem, amely további információk, például vízjel vagy gumibélyegző biztosítására használható. Szöveg kinyerése egy bélyegjegyzetből akkor hasznos, ha szövegalapú tartalmat szeretne lekérni ezekből a megjegyzésekből, amelyek tartalmazhatnak megjegyzéseket, címkéket vagy egyéb szöveges információkat.
 
 #### K: Hogyan bontja ki a megadott C#-forráskód a szöveget a bélyegző megjegyzéséből?
 

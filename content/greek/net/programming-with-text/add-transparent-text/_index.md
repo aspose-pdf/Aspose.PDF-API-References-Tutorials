@@ -45,7 +45,7 @@ Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
 ## Βήμα 6: Δημιουργήστε ένα αντικείμενο Graph
- Δημιούργησε ένα νέο`Graph` αντικείμενο με συγκεκριμένο πλάτος και ύψος.
+ Δημιουργήστε ένα νέο`Graph` αντικείμενο με συγκεκριμένο πλάτος και ύψος.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
@@ -61,7 +61,7 @@ canvas.Shapes.Add(rect);
 ```
 
 ## Βήμα 8: Προσθέστε το αντικείμενο Graph στη σελίδα
- Πρόσθεσε το`Graph` αντικείμενο στη συλλογή παραγράφων της σελίδας.
+ Προσθέστε το`Graph` αντικείμενο στη συλλογή παραγράφων της σελίδας.
 
 ```csharp
 page.Paragraphs.Add(canvas);
@@ -75,7 +75,7 @@ canvas. IsChangePosition = false;
 ```
 
 ## Βήμα 10: Δημιουργήστε ένα TextFragment με διαφάνεια
- Δημιουργώ ένα`TextFragment` αντικείμενο και ορίστε το περιεχόμενό του στο επιθυμητό κείμενο. Ρυθμίστε το`ForegroundColor` ιδιοκτησία του`TextState` σε ένα χρώμα με διαφάνεια χρησιμοποιώντας το`Color.FromArgb` μέθοδος.
+ Δημιουργία α`TextFragment` αντικείμενο και ορίστε το περιεχόμενό του στο επιθυμητό κείμενο. Ρυθμίστε το`ForegroundColor` ιδιοκτησία του`TextState` σε ένα χρώμα με διαφάνεια χρησιμοποιώντας το`Color.FromArgb` μέθοδος.
 
 ```csharp
 TextFragment text = new TextFragment("transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text ");
@@ -127,7 +127,7 @@ Console.WriteLine("\nTransparent text added successfully.\nFile saved at " + dat
 ```
 
 
-## συμπέρασμα
+## Σύναψη
 Προσθέσατε με επιτυχία διαφανές κείμενο στο έγγραφο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Το αρχείο PDF που προκύπτει μπορεί τώρα να βρεθεί στην καθορισμένη διαδρομή αρχείου εξόδου.
 
 ### Συχνές ερωτήσεις

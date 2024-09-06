@@ -106,7 +106,7 @@ taggedContent.SetLanguage("en-US");
 ParagraphElement p = taggedContent.CreateParagraphElement();
 taggedContent.RootElement.AppendChild(p);
 
-//正在開發中
+//開發中
 p.StructureTextState.FontSize = 18F;
 p.StructureTextState.ForegroundColor = Color.Red;
 p.StructureTextState.FontStyle = FontStyles.Italic;

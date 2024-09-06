@@ -72,7 +72,7 @@ page.getAnnotations().add(hyperlink);
 pdfDocument.save("hyperlink_example.pdf");
 ```
 
-Det är allt! Du har framgångsrikt lagt till en hyperlänk till en PDF-fil med Aspose.PDF för Java.
+Det är det! Du har framgångsrikt lagt till en hyperlänk till en PDF-fil med Aspose.PDF för Java.
 
 ## Slutsats
 

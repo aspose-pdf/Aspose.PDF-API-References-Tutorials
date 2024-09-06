@@ -51,7 +51,7 @@ TextFragment textFragment = absorb.TextFragments[1];
 ```
 
 ## Krok 6: Nastavte barvu stínování textu
- Vytvoř nový`Color` objekt s barevným prostorem vzorku a určete přechodové barvy stínování. Přiřaďte tuto barvu k`ForegroundColor` vlastnictvím`TextState` z`TextFragment` objekt.
+ Vytvořte nový`Color` objekt s barevným prostorem vzorku a určete přechodové barvy stínování. Přiřaďte tuto barvu k`ForegroundColor` majetek z`TextState` z`TextFragment` objekt.
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
@@ -139,7 +139,7 @@ TextFragment textFragment = absorber.TextFragments[1];
 
 #### Otázka: Jak mohu nastavit barvy stínování pro text?
 
- Odpověď: V kroku 6 vytvoříte nový`Color` objekt s barevným prostorem vzorku a určete přechodové barvy stínování. Přiřaďte tuto barvu k`ForegroundColor` vlastnictvím`TextState` z`TextFragment` objekt:
+ Odpověď: V kroku 6 vytvoříte nový`Color` objekt s barevným prostorem vzorku a určete přechodové barvy stínování. Přiřaďte tuto barvu k`ForegroundColor` majetek z`TextState` z`TextFragment` objekt:
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()

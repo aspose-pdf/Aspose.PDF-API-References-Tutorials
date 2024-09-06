@@ -1,8 +1,8 @@
 ---
-title: Truy xuất thông tin đính kèm
-linktitle: Truy xuất thông tin đính kèm
-second_title: Aspose.PDF API xử lý PDF Java
-description: Tìm hiểu cách truy xuất tệp đính kèm PDF trong Java bằng Aspose.PDF. Hướng dẫn từng bước với các ví dụ về mã để quản lý tệp đính kèm tài liệu PDF.
+title: Lấy thông tin đính kèm
+linktitle: Lấy thông tin đính kèm
+second_title: API xử lý PDF Java Aspose.PDF
+description: Tìm hiểu cách lấy tệp đính kèm PDF trong Java bằng Aspose.PDF. Hướng dẫn từng bước với các ví dụ mã để quản lý tệp đính kèm tài liệu PDF.
 type: docs
 weight: 12
 url: /vi/java/pdf-attachments/retrieve-attachment-information/
@@ -10,31 +10,31 @@ url: /vi/java/pdf-attachments/retrieve-attachment-information/
 
 ## Giới thiệu
 
-Trong hướng dẫn này, bạn sẽ tìm hiểu cách sử dụng Aspose.PDF cho Java để truy xuất thông tin đính kèm từ tài liệu PDF. Tệp đính kèm có thể là tệp hoặc tài liệu được nhúng trong tệp PDF và bạn có thể cần truy cập thông tin chi tiết của chúng theo chương trình.
+Trong hướng dẫn này, bạn sẽ học cách sử dụng Aspose.PDF cho Java để lấy thông tin đính kèm từ tài liệu PDF. Tệp đính kèm có thể là tệp hoặc tài liệu được nhúng trong PDF và bạn có thể cần truy cập thông tin chi tiết của chúng theo chương trình.
 
 ## Điều kiện tiên quyết
 
-Trước khi bắt đầu, hãy đảm bảo bạn có các điều kiện tiên quyết sau:
+Trước khi bắt đầu, hãy đảm bảo bạn có đủ các điều kiện tiên quyết sau:
 
-1. Môi trường phát triển Java (JDK) đã được cài đặt.
-2.  Aspose.PDF cho thư viện Java. Bạn có thể tải nó xuống từ[đây](https://releases.aspose.com/pdf/java/).
+1. Đã cài đặt Môi trường phát triển Java (JDK).
+2.  Aspose.PDF cho thư viện Java. Bạn có thể tải xuống từ[đây](https://releases.aspose.com/pdf/java/).
 
 ## Bước 1: Tạo một dự án Java
 
 Tạo một dự án Java mới trong Môi trường phát triển tích hợp (IDE) yêu thích của bạn và đưa thư viện Aspose.PDF cho Java vào dự án của bạn.
 
-## Bước 2: Tải tài liệu PDF
+## Bước 2: Tải Tài liệu PDF
 
-Trước tiên, bạn cần tải tài liệu PDF có chứa tệp đính kèm. Sử dụng đoạn mã sau để tải tệp PDF:
+Đầu tiên, bạn cần tải tài liệu PDF có chứa tệp đính kèm. Sử dụng mã sau để tải tệp PDF:
 
 ```java
 // Tải tài liệu PDF
 Document pdfDocument = new Document("path/to/your/pdf/document.pdf");
 ```
 
-## Bước 3: Truy xuất thông tin đính kèm
+## Bước 3: Lấy thông tin đính kèm
 
-Bây giờ, bạn có thể truy xuất thông tin đính kèm từ tài liệu PDF đã tải. Đây là cách bạn có thể lấy danh sách các tệp đính kèm và hiển thị thông tin chi tiết của chúng:
+Bây giờ, bạn có thể lấy thông tin tệp đính kèm từ tài liệu PDF đã tải. Sau đây là cách bạn có thể lấy danh sách tệp đính kèm và hiển thị thông tin chi tiết của chúng:
 
 ```java
 // Nhận bộ sưu tập các tệp đính kèm
@@ -57,27 +57,27 @@ if (attachments.size() > 0) {
 }
 ```
 
-## Bước 4: Lưu hoặc xử lý tệp đính kèm
+## Bước 4: Lưu hoặc Xử lý Tệp đính kèm
 
-Bạn có thể xử lý thêm hoặc lưu các tệp đính kèm nếu cần. Ví dụ: bạn có thể trích xuất và lưu chúng vào thư mục cục bộ hoặc thực hiện các hành động bổ sung dựa trên yêu cầu của ứng dụng.
+Bạn có thể xử lý hoặc lưu các tệp đính kèm khi cần. Ví dụ, bạn có thể trích xuất và lưu chúng vào thư mục cục bộ hoặc thực hiện các hành động bổ sung dựa trên yêu cầu của ứng dụng.
 
 ## Phần kết luận
 
-Trong hướng dẫn này, bạn đã học cách truy xuất thông tin đính kèm từ tài liệu PDF bằng Aspose.PDF cho Java. Bây giờ bạn có thể kết hợp chức năng này vào các ứng dụng Java của mình để hoạt động với các tệp đính kèm PDF một cách hiệu quả.
+Trong hướng dẫn này, bạn đã học cách lấy thông tin tệp đính kèm từ tài liệu PDF bằng Aspose.PDF cho Java. Bây giờ bạn có thể kết hợp chức năng này vào các ứng dụng Java của mình để làm việc với tệp đính kèm PDF hiệu quả.
 
 ## Câu hỏi thường gặp
 
-### Làm cách nào tôi có thể trích xuất tệp đính kèm từ PDF?
+### Làm thế nào để trích xuất tệp đính kèm từ tệp PDF?
 
- Để trích xuất các tệp đính kèm, bạn có thể sử dụng`attachment.getData()` phương pháp để lấy nội dung của tệp đính kèm và sau đó lưu nó vào một tệp cục bộ.
+ Để trích xuất các tệp đính kèm, bạn có thể sử dụng`attachment.getData()` phương pháp lấy nội dung tệp đính kèm và sau đó lưu vào tệp cục bộ.
 
 ### Tôi có thể sửa đổi tệp đính kèm trong tài liệu PDF không?
 Có, bạn có thể thêm, xóa hoặc cập nhật tệp đính kèm trong tài liệu PDF bằng Aspose.PDF cho Java. Tham khảo tài liệu để biết thêm chi tiết.
 
-### Các định dạng tệp đính kèm được hỗ trợ là gì?
+### Những định dạng tệp đính kèm nào được hỗ trợ?
 
-Aspose.PDF for Java hỗ trợ nhiều định dạng tệp đính kèm, bao gồm PDF, hình ảnh, tài liệu, v.v. Thuộc tính Loại MIME có thể giúp xác định định dạng.
+Aspose.PDF for Java hỗ trợ nhiều định dạng tệp đính kèm, bao gồm PDF, hình ảnh, tài liệu, v.v. Thuộc tính MIME Type có thể giúp xác định định dạng.
 
-### Làm cách nào tôi có thể thêm tệp đính kèm mới vào tệp PDF?
+### Làm thế nào để thêm tệp đính kèm mới vào PDF?
 
- Bạn có thể thêm phần đính kèm vào tài liệu PDF bằng cách sử dụng`AttachmentCollection.add()`phương pháp. Chỉ cần cung cấp tên, mô tả và nội dung của tệp đính kèm và tệp đó sẽ được thêm vào tài liệu.
+ Bạn có thể thêm tệp đính kèm vào tài liệu PDF bằng cách sử dụng`AttachmentCollection.add()`phương pháp. Chỉ cần cung cấp tên, mô tả và nội dung của tệp đính kèm và nó sẽ được thêm vào tài liệu.

@@ -12,19 +12,19 @@ Zdroj obsahuje návody na programování knihovny Aspose.PDF for .NET s funkcí 
 | Titul | Popis |
 | --- | --- | 
 | [Přidat Java Script do souboru PDF](./addjavascripttopage/) | Naučte se, jak přidat JavaScript do souboru PDF pomocí Aspose.PDF pro .NET. Podrobný průvodce s výukovým programem kódu pro skriptování na úrovni dokumentu a stránky. |  
-| [Přidat vrstvy do souboru PDF](./addlayers/) | Naučte se přidávat vrstvy do souboru PDF pomocí Aspose.PDF pro .NET. Podrobný průvodce s výukovým programem kódu pro vytváření a ukládání vrstvených PDF. |  
+| [Přidat vrstvy do souboru PDF](./addlayers/) | Objevte, jak přidat vrstvy do PDF pomocí Aspose.PDF pro .NET. Tento podrobný průvodce zlepší vaše dovednosti při manipulaci s PDF. |  
 | [Přidat Odebrat Javascript do dokumentu PDF](./addremovejavascripttodoc/) | Naučte se, jak přidat a odebrat JavaScript do dokumentu PDF pomocí Aspose.PDF for .NET. Podrobný průvodce s výukovým programem kódu pro skriptování na úrovni dokumentu. |  
-| [Přidat TOC do souboru PDF](./addtoc/) | Naučte se, jak přidat obsah do souboru PDF pomocí Aspose.PDF pro .NET. Podrobný průvodce s ukázkovým zdrojovým kódem. Vylepšete navigaci v dokumentech! |  
+| [Přidat TOC do souboru PDF](./addtoc/) | Naučte se, jak přidat obsah do PDF pomocí Aspose.PDF for .NET. Tento průvodce krok za krokem zjednodušuje proces a zajišťuje snadnou navigaci ve vašich dokumentech. |  
 | [Povolit opětovné použití obsahu stránky](./allowresusepagecontent/) | Naučte se optimalizovat soubory PDF povolením funkce „Povolit opětovné použití obsahu stránky“ pomocí Aspose.PDF for .NET. Snižte velikost souboru a zvyšte výkon. |  
-| [Převést z RGB na stupně šedi](./convertfromrgbtograyscale/) | Naučte se převádět soubory PDF z RGB do stupňů šedi pomocí Aspose.PDF for .NET. Vylepšete kvalitu tisku a zmenšete velikost souboru. |  
+| [Převést z RGB na stupně šedi](./convertfromrgbtograyscale/) | Naučte se, jak převést PDF z RGB na stupně šedi pomocí Aspose.PDF for .NET. Podrobný průvodce pro zjednodušení převodu barev PDF a úsporu místa v souboru. |  
 | [První přístup k vytvoření vícevrstvého souboru PDF](./createmultilayerpdffirstapproach/) | Naučte se, jak vytvořit vícevrstvý soubor PDF pomocí prvního přístupu s Aspose.PDF pro .NET. Přidejte text, obrázky a další pro vylepšení vašich PDF. |  
-| [Vytvořte vícevrstvý PDF druhý přístup](./createmultilayerpdfsecondapproach/) | Naučte se vytvářet vícevrstvé PDF pomocí Aspose.PDF pro .NET. Podrobný průvodce se zdrojovým kódem pro vytváření dynamických souborů PDF s textem a obrázky. |  
-| [Vytvořte PDF A1 pomocí Aspose Pdf](./createpdfa1withasposepdf/) | Naučte se, jak vytvořit dokument PDF A1 pomocí Aspose.PDF pro .NET. Podrobný průvodce se zdrojovým kódem C#. Efektivně optimalizujte soubory PDF. |  
-| [Přizpůsobte si čísla stránek při přidávání obsahu](./customizepagenumbeswhileaddingtoc/) | Naučte se, jak přizpůsobit čísla stránek při přidávání obsahu (TOC) pomocí Aspose.PDF for .NET pomocí tohoto podrobného průvodce a příkladu kódu. |  
-| [Určete postup k souboru PDF](./determineprogress/) | Naučte se, jak určit průběh procesu převodu souborů PDF pomocí Aspose.PDF for .NET pomocí tohoto podrobného průvodce a příkladu kódu. |  
+| [Vytvořte vícevrstvý PDF druhý přístup](./createmultilayerpdfsecondapproach/) | Naučte se vytvářet vícevrstvé PDF pomocí Aspose.PDF pro .NET. Postupujte podle našeho podrobného průvodce a přidejte text, obrázky a vrstvy do souboru PDF bez námahy. |  
+| [Vytvořte PDF A1 pomocí Aspose Pdf](./createpdfa1withasposepdf/) | V tomto podrobném návodu se dozvíte, jak vytvářet soubory PDF/A-1 pomocí Aspose.PDF for .NET. Podrobný průvodce s příklady kódu a vysvětleními. |  
+| [Přizpůsobte si čísla stránek při přidávání obsahu](./customizepagenumbeswhileaddingtoc/) | Naučte se, jak přizpůsobit čísla stránek při přidávání obsahu do dokumentů PDF pomocí Aspose.PDF for .NET v tomto komplexním kurzu. |  
+| [Určete postup k souboru PDF](./determineprogress/) | V této komplexní příručce se dozvíte, jak určit průběh převodů PDF pomocí Aspose.PDF for .NET. |  
 | [Vložit písmo do souboru PDF](./embedfont/) | Naučte se vkládat písma do souboru PDF pomocí Aspose.PDF for .NET pomocí tohoto podrobného průvodce. Ujistěte se, že se vaše dokumenty zobrazují správně na jakémkoli zařízení. |  
 | [Vložit písma do souboru PDF s podmnožinou strategie](./embedfontsusingsubsetstrategy/) | Naučte se vkládat písma do souboru PDF pomocí Subset Strategy pomocí Aspose.PDF for .NET. Optimalizujte velikost PDF vložením pouze nezbytných znaků. |  
-| [Vložit písmo při vytváření dokumentu PDF](./embedfontwhiledoccreation/) | Naučte se, jak vložit písmo při vytváření dokumentu PDF pomocí Aspose.PDF pro .NET. Zajistěte správné zobrazení na různých zařízeních. |  
+| [Vložit písmo při vytváření dokumentu PDF](./embedfontwhiledoccreation/) | Naučte se vkládat písma do dokumentů PDF pomocí Aspose.PDF for .NET pomocí tohoto podrobného průvodce. Vylepšete vzhled svého PDF. |  
 | [Sloučit anotace v souboru PDF](./flattenannotation/) | Naučte se, jak sloučit anotace v souboru PDF pomocí Aspose.PDF pro .NET. Zachovejte anotace a zabraňte náhodným změnám. |  
 | [Získejte všechna písma v souboru PDF](./getallfonts/) | Naučte se, jak používat Aspose.PDF pro .NET, abyste získali všechna písma použitá v souboru PDF programově, pomocí tohoto podrobného průvodce a příkladu kódu. |  
 | [Okno Získat dokument](./getdocumentwindow/) | Naučte se používat funkci GetDocumentWindow Aspose.PDF for .NET k načtení informací o vlastnostech okna dokumentu PDF. |  
@@ -48,5 +48,5 @@ Zdroj obsahuje návody na programování knihovny Aspose.PDF for .NET s funkcí 
 | [Zmenšit dokumenty PDF](./shrinkdocuments/) | Naučte se, jak používat Aspose.PDF pro .NET ke zmenšení dokumentů PDF pomocí tohoto podrobného průvodce.  |  
 | [Zrušte vložení písem a optimalizujte soubory PDF](./unembedfonts/) | Naučte se používat Aspose.PDF pro .NET k získání Unembed Fonts a optimalizaci souborů PDF. Průvodce krok za krokem. |  
 | [Ověření standardu PDF AB](./validatepdfabstandard/) | Naučte se, jak používat Aspose.PDF pro .NET k ověřování dokumentů PDF proti PDFABStandard pomocí našeho podrobného průvodce a příkladu kódu. |  
-| [Ověření souborů PDF Standard](./validatepdfastandard/) | Naučte se, jak používat Aspose.PDF for .NET k ověření souborů PDF pro PDFAStandard pomocí tohoto podrobného průvodce. |  
-| [Ověřte standard PDF UA](./validatepdfuastandard/) | Naučte se používat Aspose.PDF for .NET k ověření standardu PDFUA pomocí kódu C#. Průvodce krok za krokem. |  
+| [Ověření souborů PDF Standard](./validatepdfastandard/) | Naučte se, jak používat Aspose.PDF for .NET k ověřování souborů PDF pro PDFAStandard pomocí tohoto podrobného průvodce. |  
+| [Ověřte standard PDF UA](./validatepdfuastandard/) | Naučte se používat Aspose.PDF pro .NET k ověření standardu PDFUA pomocí kódu C#. Průvodce krok za krokem. |  

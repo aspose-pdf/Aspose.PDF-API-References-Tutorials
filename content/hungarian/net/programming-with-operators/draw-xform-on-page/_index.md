@@ -13,7 +13,7 @@ Ebben az oktatóanyagban lépésről lépésre bemutatjuk, hogyan rajzolhat XFor
 
 Mielőtt elkezdené, győződjön meg arról, hogy a következő előfeltételeket teljesítette:
 
-1. A Visual Studio .NET keretrendszerrel telepítve.
+1. Visual Studio .NET keretrendszerrel telepítve.
 2. Az Aspose.PDF könyvtár a .NET-hez.
 
 ## 1. lépés: A projekt beállítása
@@ -56,7 +56,7 @@ OperatorCollection pageContents = doc.Pages[1].Contents;
 // A kód a ContatenateMatrix operátort használja az XForm pozicionálására
 // A kód a Do operátor segítségével rajzolja meg az XForm-ot az oldalon
 // A GSave/GRestore operátorok csomagolják a meglévő tartalmat
-// ez azért történik, hogy a meglévő tartalom végén megkapjuk a kezdeti grafikus állapotot
+//ez azért történik, hogy a meglévő tartalom végén megkapjuk a kezdeti grafikus állapotot
 // ellenkező esetben nem kívánt átalakítások maradhatnak a meglévő operátorok láncának végén
 pageContents. Insert(1, new GSave());
 pageContents. Add(new GRestore());
@@ -79,7 +79,7 @@ form.Contents.Add(new Do(ximage.Name));
 form.Contents.Add(new GRestore());
 
 pageContents. Add(new GSave());
-//Pozícionálja az XForm-ot x=100 és y=500 koordinátákra
+// Pozícionálja az XForm-ot x=100 és y=500 koordinátákra
 pageContents. Add(new ConcatenateMatrix(1, 0, 0, 1, 100, 500));
 // Rajzolja meg az XForm-ot a Do operátorral
 pageContents.Add(new Do(form.Name));
@@ -115,7 +115,7 @@ using (Document doc = new Document(inFile))
 	// A minta bemutatja
 	// GSave/GRestore operátorok használata
 	// ContatenateMatrix operátor használata xForm pozícióban
-	// Használja az operátort az xForm megrajzolásához az oldalon
+	//Használja az operátort az xForm megrajzolásához az oldalon
 	// Csomagolja be a meglévő tartalmat a GSave/GRestore operátorpárral
 	// ez a kezdeti grafikus állapot elérése a és a meglévő tartalomnál
 	// ellenkező esetben a meglévő operátori lánc végén maradhatnak nemkívánatos átalakulások
@@ -132,7 +132,7 @@ using (Document doc = new Document(inFile))
 	form.Contents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(200, 0, 0, 200, 0, 0));
 	// Kép betöltése adatfolyamba
 	Stream imageStream = new FileStream(imageFile, FileMode.Open);
-	//Kép hozzáadása az XForm Resources képgyűjteményéhez
+	// Kép hozzáadása az XForm Resources képgyűjteményéhez
 	form.Resources.Images.Add(imageStream);
 	XImage ximage = form.Resources.Images[form.Resources.Images.Count];
 	// Do operátor használata: ez az operátor képet rajzol
@@ -162,7 +162,7 @@ using (Document doc = new Document(inFile))
 
 Ebben az oktatóanyagban megtanulta, hogyan rajzolhat XForm űrlapot PDF-oldalra az Aspose.PDF for .NET használatával. A leírt lépéseket követve hozzáadhat és elhelyezhet egy XForm űrlapot egy meglévő oldalon, így nagyobb rugalmasságot biztosít PDF-dokumentumai számára.
 
-### GYIK az XForm sorsoláshoz az oldalon
+### GYIK az XForm sorsoláshoz a oldalon
 
 #### K: Mi az az XForm az Aspose.PDF-ben?
 
@@ -180,15 +180,15 @@ using Aspose.Pdf.Operators;
 
 #### K: Mi a GSave és GRestore operátorok célja?
 
- V: A`GSave` és`GRestore`Az Aspose.PDF fájl operátorai a grafikus állapot mentésére és visszaállítására szolgálnak. Segítenek abban, hogy a tartalom egy szakaszára alkalmazott átalakítások és beállítások ne legyenek hatással a következő szakaszokra.
+ V: A`GSave` és`GRestore` Az Aspose.PDF fájl operátorai a grafikus állapot mentésére és visszaállítására szolgálnak. Segítenek abban, hogy a tartalom egy szakaszára alkalmazott átalakítások és beállítások ne legyenek hatással a következő szakaszokra.
 
 #### K: Hogyan definiálhatok egy XFormot az Aspose.PDF használatával?
 
  V: XForm létrehozásához használja a`XForm.CreateNewForm` módszert, és add hozzá a`Resources.Forms` egy adott oldal gyűjteménye. Ezután tartalmat adhat hozzá az XFormhoz`Contents` ingatlan.
 
-#### K: Hogyan rajzolhatok képet egy XForm-on belül?
+#### K: Hogyan rajzolhatok képet egy XFormban?
 
- V: Töltse be a képet egy adatfolyamba, és adja hozzá a`Resources.Images` az XForm gyűjtemény. Használja a`Do` operátor az XForm-on belül`Contents` megrajzolni a képet.
+V: Töltse be a képet egy adatfolyamba, és adja hozzá a`Resources.Images` az XForm gyűjtemény. Használja a`Do` operátor az XForm-on belül`Contents` megrajzolni a képet.
 
 #### K: Hogyan helyezhetek el egy XFormot egy PDF-oldalon?
 
@@ -196,7 +196,7 @@ using Aspose.Pdf.Operators;
 
 #### K: Rajzolhatok több XFormot ugyanarra az oldalra?
 
- V: Igen, több XForm-ot is rajzolhat ugyanarra az oldalra a`ConcatenateMatrix`paramétereket, hogy az egyes XFormokat különböző koordinátákra helyezze.
+ V: Igen, több XForm-ot is rajzolhat ugyanarra az oldalra a`ConcatenateMatrix` paramétereket, hogy az egyes XFormokat különböző koordinátákra helyezze.
 
 #### K: Módosíthatom egy XForm tartalmát a létrehozása után?
 
@@ -216,4 +216,4 @@ V: Bár a létrehozható XFormok számának nincs szigorú korlátozása, ne fel
 
 #### K: Forgathatok egy XFormot vagy alkalmazhatok más átalakításokat?
 
- V: Igen, használhatja a`ConcatenateMatrix`operátort, hogy transzformációkat, például elforgatást, skálázást és fordítást alkalmazzon egy XForm-re.
+ V: Igen, használhatja a`ConcatenateMatrix` operátort, hogy transzformációkat, például elforgatást, skálázást és fordítást alkalmazzon egy XForm-re.

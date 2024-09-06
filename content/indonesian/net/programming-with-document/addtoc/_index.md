@@ -1,49 +1,80 @@
 ---
 title: Tambahkan Daftar Isi ke File PDF
 linktitle: Tambahkan Daftar Isi ke File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara menambahkan daftar isi ke file PDF menggunakan Aspose.PDF untuk .NET. Panduan langkah demi langkah dengan contoh kode sumber. Tingkatkan navigasi dokumen!
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara menambahkan Daftar Isi ke PDF menggunakan Aspose.PDF untuk .NET. Panduan langkah demi langkah ini menyederhanakan proses dan memastikan navigasi yang mudah dalam dokumen Anda.
 type: docs
 weight: 40
 url: /id/net/programming-with-document/addtoc/
 ---
-Dalam tutorial ini, kita akan mempelajari cara menggunakan fitur Tambahkan TOC (Daftar Isi) ke file PDF Aspose.PDF untuk .NET untuk menambahkan daftar isi ke dokumen PDF. Kami akan memberikan panduan langkah demi langkah dan menjelaskan kode sumber C# yang diperlukan untuk mencapai hal ini. Di akhir tutorial ini, Anda akan dapat membuat dokumen PDF dengan daftar isi menggunakan Aspose.PDF untuk .NET.
+## Perkenalan
 
+Pernahkah Anda menggulir PDF yang panjang tanpa henti, berharap PDF tersebut memiliki Daftar Isi yang terorganisasi dengan baik? Nah, hari ini adalah hari keberuntungan Anda! Dalam tutorial ini, Anda akan mempelajari cara menambahkan TOC ke berkas PDF Anda menggunakan Aspose.PDF untuk .NET. Baik Anda sedang mengerjakan laporan yang rumit, eBook, atau proposal bisnis, TOC dapat mengubah dokumen Anda menjadi mahakarya yang profesional dan mudah dipahami.
 
-## Langkah 1: Muat file PDF yang ada
+## Prasyarat
 
- Untuk memulai, kita perlu memuat file PDF yang ada. Mengganti`"YOUR DOCUMENT DIRECTORY"` dalam kode berikut dengan jalur sebenarnya ke file PDF Anda:
+Sebelum kita masuk ke kode, mari pastikan Anda sudah memiliki semua yang dibutuhkan:
+
+1. Aspose.PDF untuk .NET: Pastikan Anda telah mengunduh dan menginstal pustaka Aspose.PDF. Anda dapat mengunduhnya dari[Di Sini](https://releases.aspose.com/pdf/net/).
+   
+2. Lingkungan Pengembangan: Pastikan Anda memiliki lingkungan pengembangan .NET seperti Visual Studio yang disiapkan di komputer Anda.
+
+3.  Lisensi: Jika Anda tidak memiliki lisensi, Anda bisa mendapatkan uji coba gratis atau meminta lisensi sementara[Di Sini](https://purchase.aspose.com/temporary-license/).
+
+## Paket Impor
+
+Untuk memulai, pastikan untuk mengimpor namespace yang diperlukan di awal berkas kode Anda. Berikut caranya:
+
+```csharp
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+```
+
+Ruang nama ini memungkinkan Anda mengakses fungsionalitas khusus PDF dan memanipulasi elemen teks dalam dokumen Anda.
+
+Mari kita bagi tugas ini menjadi beberapa langkah kecil. Setiap langkah akan memandu Anda melalui proses pembuatan dan penyisipan Daftar Isi ke dalam dokumen PDF Anda.
+
+## Langkah 1: Muat Dokumen PDF
+
+Hal pertama yang perlu kita lakukan adalah memuat berkas PDF yang ada di mana kita ingin menambahkan TOC.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "AddTOC.pdf");
 ```
 
-## Langkah 2: Buat halaman baru untuk daftar isi
+ Pada langkah ini, kami menentukan jalur ke direktori dokumen dan memuat PDF menggunakan`Document` objek. Pastikan untuk mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya ke berkas Anda.
 
-Kami akan membuat halaman baru untuk menampung daftar isi. Kode berikut menyisipkan halaman baru di indeks 1:
+## Langkah 2: Masukkan Halaman Baru untuk Daftar Isi
+
+Selanjutnya, kita sisipkan halaman baru di awal dokumen PDF. Halaman ini akan memuat Daftar Isi.
 
 ```csharp
 Page tocPage = doc.Pages.Insert(1);
 ```
 
-## Langkah 3: Tentukan informasi daftar isi
+Dengan menyisipkan halaman TOC di awal, kami memastikan bahwa halaman tersebut muncul sebagai hal pertama yang dilihat pembaca dalam PDF.
 
-Selanjutnya, kita perlu mendefinisikan informasi daftar isi. Kita akan mengatur judul dan properti lain dari daftar isi. Tambahkan kode berikut:
+## Langkah 3: Buat Objek Informasi TOC
+
+Sekarang, mari kita buat objek yang akan mewakili informasi TOC. Kita juga akan menambahkan judul pada TOC agar terlihat menonjol.
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
-
 tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 ```
 
-## Langkah 4: Buat elemen TOC
+Di sini, kami menetapkan judul TOC sebagai "Daftar Isi", memperbesar ukuran font, dan membuatnya tebal untuk penekanan.
 
-Sekarang kita akan membuat elemen daftar isi. Dalam tutorial ini, kita akan membuat empat elemen TOC yang sesuai dengan halaman berbeda. Ubah kode berikut sesuai kebutuhan Anda:
+## Langkah 4: Tentukan Elemen Daftar Isi
+
+Pada langkah ini, kami menentukan elemen (atau judul) yang akan ditampilkan di TOC. Elemen-elemen ini akan membantu pembaca menavigasi ke bagian-bagian tertentu dari dokumen.
 
 ```csharp
 string[] titles = new string[4];
@@ -51,7 +82,15 @@ titles[0] = "First page";
 titles[1] = "Second page";
 titles[2] = "Third page";
 titles[3] = "Fourth page";
+```
 
+Kami telah membuat serangkaian string yang akan berfungsi sebagai item Daftar Isi, yang sesuai dengan berbagai halaman dalam PDF.
+
+## Langkah 5: Buat Judul Daftar Isi
+
+Kini tibalah pada bagian krusialnya—menambahkan judul pada Daftar Isi dan menautkannya ke halaman masing-masing.
+
+```csharp
 for (int i = 0; i < 2; i++)
 {
     Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
@@ -61,100 +100,56 @@ for (int i = 0; i < 2; i++)
 
     heading2.DestinationPage = doc.Pages[i + 2];
     heading2.Top = doc.Pages[i + 2].Rect.Height;
-
     segment2.Text = titles[i];
+
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
-## Langkah 5: Simpan dokumen yang diperbarui
+Inilah yang terjadi:
+- Judul: Kami membuat`Heading` objek dan tambahkan`TextSegment` untuk itu.
+- Halaman Tujuan: Kami menetapkan halaman yang akan ditautkan ke setiap judul.
+- Posisi Teratas: Kami menentukan posisi pada halaman di mana judul akan ditunjuk.
+- Teks: Setiap judul mendapatkan judulnya masing-masing dari array yang kita buat sebelumnya.
 
- Terakhir, kita perlu menyimpan dokumen yang dimodifikasi beserta daftar isinya. Mengganti`"YOUR DOCUMENT DIRECTORY"` pada kode di bawah ini dengan jalur file keluaran yang diinginkan:
+Lingkaran ini membuat judul untuk dua elemen pertama dalam Daftar Isi dan menautkannya ke halaman terkait.
+
+## Langkah 6: Simpan PDF dengan TOC
+
+Terakhir, setelah kita menambahkan semua elemen TOC, saatnya menyimpan PDF yang telah diperbarui.
 
 ```csharp
 dataDir = dataDir + "TOC_out.pdf";
 doc.Save(dataDir);
-Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
-### Contoh kode sumber untuk Menambahkan TOC ke dokumen PDF menggunakan Aspose.PDF untuk .NET
+File sekarang tersimpan dengan Daftar Isi yang ditambahkan ke PDF. Selamat—Anda telah berhasil menambahkan Daftar Isi!
+
+## Langkah 7: Pesan Konfirmasi
+
+Untuk memberi tahu pengguna bahwa prosesnya telah selesai, kami akan menampilkan pesan sederhana di konsol.
 
 ```csharp
-
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Muat file PDF yang ada
-Document doc = new Document(dataDir + "AddTOC.pdf");
-
-// Dapatkan akses ke halaman pertama file PDF
-Page tocPage = doc.Pages.Insert(1);
-
-// Buat objek untuk mewakili informasi TOC
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-
-// Tetapkan judul TOC
-tocInfo.Title = title;
-tocPage.TocInfo = tocInfo;
-
-//Buat objek string yang akan digunakan sebagai elemen TOC
-string[] titles = new string[4];
-titles[0] = "First page";
-titles[1] = "Second page";
-titles[2] = "Third page";
-titles[3] = "Fourth page";
-for (int i = 0; i < 2; i++)
-{
-	// Buat objek Heading
-	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-	TextSegment segment2 = new TextSegment();
-	heading2.TocPage = tocPage;
-	heading2.Segments.Add(segment2);
-
-	// Tentukan halaman tujuan untuk objek heading
-	heading2.DestinationPage = doc.Pages[i + 2];
-
-	// Halaman tujuan
-	heading2.Top = doc.Pages[i + 2].Rect.Height;
-
-	// Koordinat tujuan
-	segment2.Text = titles[i];
-
-	// Tambahkan judul ke halaman yang berisi TOC
-	tocPage.Paragraphs.Add(heading2);
-}
-dataDir = dataDir + "TOC_out.pdf";
-// Simpan dokumen yang diperbarui
-doc.Save(dataDir);
-
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
 ## Kesimpulan
 
-Dalam tutorial ini, kita mempelajari cara menambahkan daftar isi (TOC) ke dokumen PDF menggunakan Aspose.PDF untuk .NET. Dengan mengikuti panduan langkah demi langkah dan memanfaatkan kode sumber C# yang disediakan, Anda dapat dengan mudah membuat dokumen PDF dengan daftar isi. TOC meningkatkan kegunaan dokumen, memungkinkan pengguna menavigasi ke bagian atau halaman tertentu dengan lebih efisien. Aspose.PDF untuk .NET memberikan solusi yang kuat dan mudah digunakan untuk bekerja dengan file PDF di aplikasi .NET, memungkinkan Anda membuat dokumen PDF yang dinamis dan interaktif dengan mudah.
+Nah, itu dia! Dengan Aspose.PDF untuk .NET, menambahkan Daftar Isi ke PDF tidak hanya mudah, tetapi juga dapat disesuaikan. Baik Anda perlu membuat tautan navigasi sederhana atau struktur yang rumit, alat ini dapat membantu Anda. Jadi, lain kali Anda mengerjakan PDF yang panjang, jangan lupa untuk menambahkan Daftar Isi untuk sentuhan profesional!
 
-### FAQ untuk menambahkan TOC ke file PDF
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa itu Aspose.PDF untuk .NET?
+### Bisakah saya menyesuaikan tampilan TOC di Aspose.PDF?  
+Ya, Anda dapat sepenuhnya menyesuaikan tampilan TOC, termasuk gaya font, ukuran, dan perataan.
 
-J: Aspose.PDF untuk .NET adalah perpustakaan canggih yang memungkinkan pengembang bekerja dengan file PDF di aplikasi .NET secara efektif. Ini menyediakan berbagai fitur untuk membuat, memanipulasi, dan mengelola dokumen PDF secara terprogram.
+### Bagaimana cara menambahkan subjudul ke Daftar Isi?  
+ Anda dapat menambahkan subjudul dengan menyesuaikan`Heading` tingkat (misalnya,`Heading(2)`) untuk membuat TOC hierarkis.
 
-#### Q: Apa tujuan menambahkan daftar isi (TOC) ke dokumen PDF?
+### Apakah mungkin untuk memperbarui TOC secara otomatis jika dokumen berubah?  
+Tidak, TOC tidak akan diperbarui secara otomatis. Anda perlu membuatnya ulang jika struktur dokumen berubah.
 
-J: Daftar isi (TOC) memberikan bantuan navigasi bagi pengguna, memungkinkan mereka melompat dengan cepat ke bagian atau halaman tertentu dalam dokumen PDF. Ini meningkatkan kegunaan dokumen dan pengalaman pengguna.
+### Bisakah saya menautkan entri TOC ke dokumen eksternal?  
+Ya, Anda dapat menggunakan hyperlink untuk menautkan entri TOC ke PDF atau URL eksternal.
 
-#### T: Bagaimana cara menambahkan daftar isi ke dokumen PDF menggunakan Aspose.PDF untuk .NET?
-
-J: Untuk menambahkan daftar isi ke dokumen PDF menggunakan Aspose.PDF untuk .NET, Anda perlu membuat halaman baru untuk menampung TOC, menentukan informasi daftar isi, lalu membuat elemen TOC yang sesuai dengan halaman atau bagian dalam dokumen.
-
-#### Q: Bisakah saya menyesuaikan tampilan daftar isi?
-
-A: Ya, Anda dapat menyesuaikan tampilan daftar isi dengan mengatur berbagai properti elemen TOC, seperti ukuran font, gaya font, dan perataan. Aspose.PDF untuk .NET memberikan fleksibilitas dalam mendesain TOC agar sesuai dengan tampilan dan nuansa yang Anda inginkan.
-
-#### T: Apakah Aspose.PDF untuk .NET cocok untuk menambahkan fitur lanjutan ke dokumen PDF?
-
-J: Tentu saja, Aspose.PDF untuk .NET adalah perpustakaan kaya fitur yang memungkinkan Anda menambahkan fungsionalitas tingkat lanjut ke dokumen PDF, termasuk elemen interaktif, bidang formulir, tanda tangan digital, dan banyak lagi.
+### Apakah Aspose.PDF mendukung TOC multi-level?  
+Ya, Aspose.PDF mendukung TOC multi-level untuk dokumen kompleks dengan sub-bagian.

@@ -18,12 +18,12 @@ Az Aspose.PDF for Java egyik kiemelkedő tulajdonsága a PDF-dokumentumok zökke
 
 ## PDF tartalom átalakítása
 
-Az egyszerű átalakításon túl az Aspose.PDF for Java lehetővé teszi a tartalom átalakítását PDF dokumentumokon belül. Precízen kezelheti a szöveget, képeket és megjegyzéseket. Vízjeleket szeretne hozzáadni, több PDF-fájlt egyesíteni, vagy egy nagy dokumentumot kisebbre kell osztani? Ez a könyvtár eszközöket biztosít ezeknek a feladatoknak a hatékony végrehajtásához. Végigvezetjük Önt ezeken az átalakításokon, kódrészleteket és útmutatást adva, hogy PDF-dokumentumait dinamikusabbá és az Ön egyedi igényeihez szabottabbá tegyük.
+Az egyszerű átalakításon túl az Aspose.PDF for Java lehetővé teszi a tartalom átalakítását PDF dokumentumokon belül. Precízen kezelheti a szöveget, képeket és megjegyzéseket. Vízjeleket szeretne hozzáadni, több PDF-fájlt egyesíteni, vagy egy nagy dokumentumot kisebbre kell osztani? Ez a könyvtár eszközöket biztosít ezeknek a feladatoknak a hatékony végrehajtásához. Végigvezetjük Önt ezeken az átalakításokon, kódrészleteket és útmutatást adva PDF-dokumentumai dinamikusabbá tételéhez és az Ön egyedi igényeihez szabottabbá tételéhez.
 
 ## PDF konvertálási és átalakítási oktatóanyagok
 ### [Az EPUB konvertálása PDF formátumba](./convert-epub-to-pdf-format/)
 Ismerje meg, hogyan konvertálhat könnyedén EPUB-t PDF-be az Aspose.PDF for Java segítségével. Lépésről lépésre bemutatott útmutatónk leegyszerűsíti az EPUB-ból PDF-be konvertálást.
-### [Konvertálja a HTML-t PDF-fájlokká](./convert-html-to-pdf-files/)
+### [HTML konvertálása PDF fájlokká](./convert-html-to-pdf-files/)
 Ismerje meg, hogyan konvertálhat könnyedén HTML-t PDF-fájlokká az Aspose.PDF for Java segítségével. Lépésről lépésre útmutató kódpéldákkal a hatékony dokumentumgenerálás érdekében.
 ### [A PCL átalakítása PDF fájlokká](./transform-pcl-to-pdfs/)
 Ismerje meg, hogyan konvertálhat egyszerűen PCL fájlokat PDF-be az Aspose.PDF for Java segítségével. Kövesse ezt a lépésenkénti útmutatót kódpéldákkal a hatékony dokumentumátalakítás érdekében.

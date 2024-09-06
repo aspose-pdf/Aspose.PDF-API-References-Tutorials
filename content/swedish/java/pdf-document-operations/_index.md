@@ -24,7 +24,7 @@ Effektivitet är nyckeln i PDF-dokumentoperationer, och vi visar dig hur du opti
 
 Följ med oss och utforska världen av PDF-dokumentoperationer med Aspose.PDF för Java och lyft dina färdigheter i PDF-manipulation till nya höjder.
 
-## Handledning för dokumenthantering i PDF
+## Handledning för PDF-dokument
 ### [Lägg till bildstämpel som bakgrund i flytande PDF-låda med Java](./add-image-stamp-as-background-in-floating-box-of-pdf-using-java/)
 Lär dig hur du lägger till bildstämplar som bakgrund i PDF-filer med Java och Aspose.PDF för Java. Steg-för-steg guide med kodexempel för anpassat varumärke och information.
 ### [Lägga till olika rubriker i en PDF-fil med Java](./adding-different-headers-in-one-pdf-file-using-java/)

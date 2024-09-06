@@ -11,8 +11,8 @@ Handledningarna "Licensiering av Aspose.PDF för .NET" förklarar i detalj hur m
 ## Handledningar
 | Titel | Beskrivning |
 | --- | --- | 
-| [Konfigurera uppmätta licensnycklar i PDF-fil](./configure-metered-license/) | Steg-för-steg guide för att ställa in en uppmätt licensnycklar i PDF-fil med Aspose.PDF för .NET och dra nytta av avancerade funktioner. |  
-| [Ladda licens från fil](./load-license-from-file/) | Steg för steg guide för att ladda licens från fil med Aspose.PDF för .NET. Lås upp ytterligare funktioner och använd Aspose.PDF optimalt. |  
-| [Ladda licens från Stream Object](./load-license-from-stream-object/) | Steg-för-steg-guide för att ladda en licens från ett Stream-objekt med Aspose.PDF för .NET. Lås upp ytterligare funktioner. |  
-| [Säker licens i PDF-fil](./secure-license/) | Steg-för-steg-guide för att säkra en licens i PDF-fil med Aspose.PDF för .NET. Skydda din PDF-applikation från obehörig åtkomst. |  
-| [Ställ in licens med inbäddad resurs](./set-license-using-embedded-resource/) | Steg-för-steg-guide för att ställa in en licens med hjälp av en inbäddad resurs med Aspose.PDF för .NET. Lås upp alla funktioner. |  
+| [Konfigurera uppmätta licensnycklar i PDF-fil](./configure-metered-license/) | Lär dig hur du konfigurerar uppmätta licensnycklar i dina PDF-filer med Aspose.PDF för .NET med denna omfattande, steg-för-steg-guide. |  
+| [Ladda licens från fil](./load-license-from-file/) | Lär dig hur du laddar en licens från en fil i Aspose.PDF för .NET med den här omfattande guiden. Säkerställ full funktionalitet genom att ställa in din licens korrekt. |  
+| [Ladda licens från Stream Object](./load-license-from-stream-object/) | Lär dig hur du laddar en licens från ett strömobjekt i Aspose.PDF för .NET med den här omfattande, steg-för-steg-guiden. |  
+| [Säker licens i PDF-fil](./secure-license/) | Lär dig hur du säkrar din Aspose.PDF-licens i en PDF-fil med denna steg-för-steg-guide. Lås upp avancerade funktioner och säkerställ efterlevnad utan ansträngning. |  
+| [Ställ in licens med inbäddad resurs](./set-license-using-embedded-resource/) | Lås upp kraften i Aspose.PDF för .NET med denna omfattande guide. Lär dig att ställa in licenser, manipulera PDF-filer och mer. |  

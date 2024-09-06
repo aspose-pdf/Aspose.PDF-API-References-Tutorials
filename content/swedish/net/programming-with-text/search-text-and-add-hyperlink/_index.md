@@ -39,7 +39,7 @@ using Aspose.Pdf.Text;
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Byta ut`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
+ Ersätta`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
 
 ## Steg 4: Skapa en TextFragmentAbsorber
 
@@ -49,7 +49,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
 ```
 
- Byta ut`"\\d{4}-\\d{4}"` med ditt önskade reguljära uttrycksmönster.
+ Ersätta`"\\d{4}-\\d{4}"` med ditt önskade reguljära uttrycksmönster.
 
 ## Steg 5: Aktivera sökning i reguljära uttryck
 
@@ -68,7 +68,7 @@ PdfContentEditor editor = new PdfContentEditor();
 editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
 ```
 
- Byta ut`"SearchRegularExpressionPage.pdf"` med det faktiska namnet på din PDF-fil.
+ Ersätta`"SearchRegularExpressionPage.pdf"` med det faktiska namnet på din PDF-fil.
 
 ## Steg 7: Acceptera absorbenten för sidan
 
@@ -78,7 +78,7 @@ Acceptera absorbenten för önskad sida i dokumentet:
 editor.Document.Pages[1].Accept(absorber);
 ```
 
- Byta ut`1` med önskat sidnummer.
+ Ersätta`1` med önskat sidnummer.
 
 ## Steg 8: Lägg till hyperlänkar till den hittade texten
 
@@ -97,7 +97,7 @@ foreach (TextFragment textFragment in absorber.TextFragments)
 }
 ```
 
- Byta ut`"http://www.aspose.com"` med önskad hyperlänk-URL.
+ Ersätta`"http://www.aspose.com"` med önskad hyperlänks-URL.
 
 ## Steg 9: Spara och stäng det ändrade dokumentet
 

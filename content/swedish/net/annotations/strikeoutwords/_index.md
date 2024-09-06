@@ -2,124 +2,171 @@
 title: Stryk ut ord
 linktitle: Stryk ut ord
 second_title: Aspose.PDF för .NET API-referens
-description: Den här artikeln ger en steg-för-steg-guide för hur du använder Aspose.PDF för .NETs Strike Out Words-funktion, inklusive steg-för-steg-guide och förklaringar
+description: Lär dig hur du stryker ut ord i en PDF med Aspose.PDF för .NET med den här omfattande steg-för-steg-guiden. Förbättra dina färdigheter i dokumentredigering.
 type: docs
 weight: 150
 url: /sv/net/annotations/strikeoutwords/
 ---
-Aspose.PDF för .NET är ett bibliotek för manipulering och bearbetning av PDF-dokument som tillhandahåller olika funktioner för att skapa, ändra och konvertera PDF-filer. En av de användbara funktionerna som Aspose.PDF tillhandahåller är möjligheten att stryka ut ord eller fraser i ett PDF-dokument med hjälp av C#-källkoden. I den här artikeln kommer vi att ge en steg-för-steg-guide om hur man stryker ut ord med Aspose.PDF för .NET.
+## Introduktion
 
-## Steg 1: Laddar PDF-dokumentet
-Det första steget är att ladda PDF-dokumentet som du vill ändra. I den här handledningen kommer vi att ladda ett PDF-dokument med namnet "input.pdf" från mappen "DIN DOKUMENTKABEL". 
+Har du någonsin märkt att du behöver betona specifik text i en PDF genom att stryka över den? Oavsett om du granskar dokument, markerar text eller helt enkelt behöver markera vissa avsnitt, kan strykning av ord vara ett värdefullt verktyg. I den här handledningen kommer vi att utforska hur man gör just det med Aspose.PDF för .NET. Den här omfattande guiden leder dig genom varje steg och säkerställer att du har all information som behövs för att effektivt implementera den här funktionen i dina .NET-applikationer. 
+
+## Förutsättningar
+
+Innan vi hoppar in i koden finns det några förutsättningar som du måste uppfylla för att följa med den här handledningen:
+
+1.  Aspose.PDF for .NET Library: Se till att du har Aspose.PDF för .NET-biblioteket installerat. Du kan[ladda ner den här](https://releases.aspose.com/pdf/net/).
+
+2. .NET Framework: Se till att du har .NET Framework installerat på din dator. Denna handledning är utformad för .NET-applikationer.
+
+3. Utvecklingsmiljö: Du behöver en IDE som Visual Studio för att skriva och köra din kod.
+
+4. PDF-dokument: Ha ett exempel på en PDF-fil redo som du vill arbeta med. Detta kommer att vara dokumentet där vi stryker texten.
+
+5. Grundläggande C#-kunskaper: Bekantskap med C#-programmering är nödvändig för att förstå och implementera stegen i denna handledning.
+
+## Importera paket
+
+Innan vi kan börja koda måste vi importera de nödvändiga namnrymden i vårt .NET-projekt. Detta ger oss tillgång till de klasser och metoder som krävs för att manipulera PDF-filer med Aspose.PDF.
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document document = new Document(dataDir + "input.pdf");
+using System;
+using System.IO;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
 ```
 
-## Steg 2: Söka efter textfragment
-För att stryka specifika ord eller fraser i PDF-dokumentet måste du först söka efter dem. Aspose.PDF tillhandahåller en TextFragmentAbsorber-klass som kan användas för att söka efter ett specifikt textfragment i PDF-dokumentet.
+Dessa namnrymder är viktiga för att arbeta med PDF-dokument, hantera text och lägga till anteckningar som strykningar.
+
+det här avsnittet kommer vi att dela upp processen att stryka ut ord i ett PDF-dokument i enkla, hanterbara steg. Varje steg kommer att åtföljas av en detaljerad förklaring för att säkerställa att du förstår hur allt fungerar.
+
+## Steg 1: Ladda PDF-dokumentet
+
+Det första steget är att ladda PDF-dokumentet som du vill redigera. Detta dokument kommer att vara det där du kommer att stryka ut specifika ord eller fraser.
 
 ```csharp
-Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
-```
-
-koden ovan söker vi efter textfragmentet "Estoque" i PDF-dokumentet. Du kan ändra detta för att söka efter andra ord eller fraser som du vill stryka.
-
-## Steg 3: Stryk ut textfragmenten
-Efter att ha hittat textfragmenten är nästa steg att stryka ut dem. Aspose.PDF tillhandahåller en StrikeOutAnnotation-klass som kan användas för att skapa en överstruken kommentar för textfragmentet. 
-
-```csharp
-Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle((float)textFragment.Position.XIndent, (float)textFragment.Position.YIndent, (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width, (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
-
-StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-strikeOut.Opacity = .80f;
-strikeOut.Border = new Border(strikeOut);
-strikeOut.Color = Aspose.Pdf.Color.Red;
-textFragment.Page.Annotations.Add(strikeOut);
-```
-
-I koden ovan skapar vi en överstruken kommentar för varje textfragment som vi hittade. Vi ställer också in opacitet, ram och färg för den genomstrukna annoteringen.
-
-## Steg 4: Spara det ändrade PDF-dokumentet
-Efter att ha strykit ut textfragmenten sparar du det ändrade dokumentet.
-
-```csharp
-dataDir = dataDir + "StrikeOutWords_out.pdf";
-document.Save(dataDir);
-```
-
-### Exempel på källkod för Strike Out Words med Aspose.PDF för .NET
-
-
-```csharp
-
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Öppna dokumentet
+// Öppna PDF-dokumentet
 Document document = new Document(dataDir + "input.pdf");
+```
 
-// Skapa TextFragment Absorber-instans för att söka i ett visst textfragment
+- `dataDir` : Denna variabel innehåller sökvägen till din dokumentkatalog. Ersätta`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen där din PDF-fil finns.
+- `Document` : Den`Document` klass representerar ett PDF-dokument. Genom att skicka filsökvägen till dess konstruktor öppnar vi PDF-filen för bearbetning.
+
+## Steg 2: Skapa en TextFragment Absorber för att hitta specifik text
+
+ Därefter skapar vi en instans av`TextFragmentAbsorber` för att söka efter ett specifikt textfragment i PDF-dokumentet. Detta gör att vi kan hitta den text vi vill stryka ut.
+
+```csharp
+// Skapa TextFragment Absorber-instans för att söka efter ett specifikt textfragment
 Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
-// Iterera genom sidor i PDF-dokument
+```
+
+- `TextFragmentAbsorber`Den här klassen används för att hitta och arbeta med specifika textfragment i PDF-dokumentet. I det här exemplet söker vi efter ordet "Estoque". Ersätt "Estoque" med ordet eller frasen du vill hitta i ditt dokument.
+
+## Steg 3: Iterera genom sidorna i PDF-dokumentet
+
+ Nu när vi har vår`TextFragmentAbsorber`, måste vi iterera genom varje sida i PDF-dokumentet för att hitta den angivna texten.
+
+```csharp
+// Iterera genom sidorna i PDF-dokumentet
 for (int i = 1; i <= document.Pages.Count; i++)
 {
-	// Hämta första sidan av PDF-dokument
-	Page page = document.Pages[1];
-	page.Accept(textFragmentAbsorber);
+    // Hämta den aktuella sidan i PDF-dokumentet
+    Page page = document.Pages[i];
+    page.Accept(textFragmentAbsorber);
 }
+```
 
-// Skapa en samling av absorberad text
+- `for (int i = 1; i <= document.Pages.Count; i++)`: Denna loop itererar genom varje sida i PDF-dokumentet.
+- `document.Pages[i]`: Hämtar den aktuella sidan som bearbetas.
+- `page.Accept(textFragmentAbsorber)` : Denna metod tillämpar`TextFragmentAbsorber` till den aktuella sidan och söker efter den angivna texten.
+
+## Steg 4: Samla in och bearbeta textfragmenten
+
+Efter att ha gått igenom sidorna samlar vi in de textfragment som hittats och förbereder dem för vidare bearbetning.
+
+```csharp
+// Skapa en samling av absorberade textfragment
 Aspose.Pdf.Text.TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+```
 
-//Iterera på ovanstående samling
+- `TextFragmentCollection`Den här samlingen lagrar alla textfragment som hittades i dokumentet. Vi använder den här samlingen i nästa steg för att stryka över texten.
+
+## Steg 5: Iterera genom textfragmenten och stryk ut dem
+
+I det här steget går vi igenom varje textfragment i vår samling och lägger till en överstruken kommentar på det.
+
+```csharp
+// Iterera över samlingen av textfragment
 for (int j = 1; j <= textFragmentCollection.Count; j++)
 {
 	Aspose.Pdf.Text.TextFragment textFragment = textFragmentCollection[j];
 
-	// Få rektangulära dimensioner på TextFragment-objekt
-	Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
-				(float)textFragment.Position.XIndent,
-				(float)textFragment.Position.YIndent,
-				(float)textFragment.Position.XIndent +
-				(float)textFragment.Rectangle.Width,
-				(float)textFragment.Position.YIndent +
-				(float)textFragment.Rectangle.Height);
+    // Få de rektangulära dimensionerna för TextFragment-objektet
+    Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
+        (float)textFragment.Position.XIndent,
+        (float)textFragment.Position.YIndent,
+        (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width,
+        (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
 
-	// Instantiera StrikeOut Annotation-instans
-	StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-	// Ställ in opacitet för anteckning
-	strikeOut.Opacity = .80f;
-	// Ställ in gränsen för anteckningsinstansen
-	strikeOut.Border = new Border(strikeOut);
-	// Ställ in färgen på anteckningen
-	strikeOut.Color = Aspose.Pdf.Color.Red;
-	// Lägg till anteckning till anteckningssamling av TextFragment
-	textFragment.Page.Annotations.Add(strikeOut);
+    // Instantiera StrikeOut Annotation-instans
+    StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
+
+    // Ställ in egenskaper för överstruken kommentar
+    strikeOut.Opacity = .80f;
+    strikeOut.Border = new Border(strikeOut);
+    strikeOut.Color = Aspose.Pdf.Color.Red;
+
+    // Lägg till anteckningen i anteckningssamlingen på textfragmentets sida
+    textFragment.Page.Annotations.Add(strikeOut);
 }
+```
+
+- `TextFragment textFragment = textFragmentCollection[j]`: Den här raden hämtar det aktuella textfragmentet.
+- `Aspose.Pdf.Rectangle`: Vi beräknar de rektangulära dimensionerna för textfragmentet för att avgöra var strykningen ska tillämpas.
+- `StrikeOutAnnotation`: Den här klassen representerar den genomstrukna kommentaren. Vi instansierar det med den beräknade rektangeln och den aktuella sidan.
+- `strikeOut.Opacity`: Den här egenskapen ställer in opaciteten för genomstruken, vilket gör den 80 % synlig.
+- `strikeOut.Color`Vi ställer in färgen på strykningen till röd. Du kan ändra detta till vilken färg du föredrar.
+- `textFragment.Page.Annotations.Add(strikeOut)`: Detta lägger till en överstruken kommentar på sidan.
+
+## Steg 6: Spara det modifierade PDF-dokumentet
+
+Det sista steget är att spara det ändrade PDF-dokumentet med strykningarna tillämpade.
+
+```csharp
+// Spara det uppdaterade PDF-dokumentet
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
 
+- `dataDir + "StrikeOutWords_out.pdf"`: Detta skapar ett nytt filnamn för det ändrade dokumentet. Originalfilen förblir oförändrad.
+- `document.Save(dataDir)`: Sparar PDF-dokumentet med strykningarna till den angivna platsen.
+
 ## Slutsats
 
-I den här handledningen lärde vi oss hur man använder Aspose.PDF för .NET för att stryka ut specifika ord i ett PDF-dokument. Genom att följa den steg-för-steg-guide och använda den medföljande C#-källkoden kan du enkelt ladda ett PDF-dokument, söka efter specifika textfragment och skapa genomstrukna kommentarer för att visuellt markera och stryka ut dessa ord. Aspose.PDF för .NET ger ett enkelt och effektivt sätt att manipulera PDF-dokument programmatiskt, vilket gör det till ett värdefullt verktyg för utvecklare som arbetar med PDF-filer i .NET-applikationer.
+Grattis! Du har lyckats stryka ut specifika ord i ett PDF-dokument med Aspose.PDF för .NET. Genom att följa denna steg-för-steg-guide kan du nu anpassa PDF-dokument genom att markera eller stryka ut text, vilket gör dem mer dynamiska och skräddarsydda efter dina behov. Oavsett om du kommenterar juridiska dokument, förbereder rapporter eller bara markerar text för granskning, har den här handledningen utrustat dig med färdigheter för att göra det effektivt.
 
-### FAQ's
+## FAQ's
 
-#### F: Vad är Aspose.PDF för .NET?
+### Kan jag ändra färgen på strykningen?
 
-S: Aspose.PDF för .NET är ett kraftfullt bibliotek som låter utvecklare skapa, redigera och manipulera PDF-dokument programmatiskt i .NET-applikationer. Den tillhandahåller ett brett utbud av funktioner för att arbeta med PDF-filer, inklusive textextraktion, anteckningshantering, formulärfyllning och mycket mer.
+ Ja, du kan ändra färgen genom att ändra`strikeOut.Color`egendom. Du kan till exempel ställa in den på`Aspose.Pdf.Color.Blue` för en blå överstrykning.
 
-#### F: Kan jag använda Aspose.PDF för .NET för att stryka ut specifika ord i ett PDF-dokument?
+### Är det möjligt att stryka ut flera ord samtidigt?
 
-S: Ja, Aspose.PDF för .NET tillhandahåller funktionalitet för att söka efter specifika textfragment i ett PDF-dokument och sedan skapa överstrukna kommentarer för att visuellt markera och stryka ut dessa ord.
+ Absolut! De`TextFragmentAbsorber` kan användas för att söka efter valfritt ord eller fras i dokumentet. Du kan tillämpa överstruken på flera instanser genom att iterera genom`TextFragmentCollection`.
 
-#### F: Hur anger jag texten jag vill stryka i PDF-dokumentet?
+### Vad händer om jag bara vill stryka text på specifika sidor?
 
- S: För att ange texten du vill stryka kan du använda`TextFragmentAbsorber` klass tillhandahållen av Aspose.PDF för .NET. Det låter dig söka efter ett specifikt textfragment i PDF-dokumentet baserat på dina önskade kriterier.
+ Du kan ändra slingan som itererar genom sidorna så att den bara inkluderar de sidor du vill ändra. Till exempel,`for (int i = 1; i <= 3; i++)` skulle tillämpa strykningen endast på de tre första sidorna.
 
-#### F: Kan jag anpassa utseendet på den genomstrukna kommentaren?
+### Hur kan jag justera tjockleken på strecklinjen?
 
-S: Ja, du kan anpassa olika egenskaper för den genomstrukna annoteringen, såsom opacitet, kantstil och färg. Detta gör att du kan skräddarsy utseendet på den genomstrukna kommentaren efter dina specifika krav.
+ Du kan justera tjockleken på strecklinjen genom att ändra`Border` egendom av`StrikeOutAnnotation`. Detta möjliggör anpassning av överstruket utseende.
+
+### Finns det något sätt att ångra strykningen efter att ha sparat dokumentet?
+
+När dokumentet har sparats är överstruken permanent. Om du behöver behålla originaltexten utan överstrykning, överväg att spara en säkerhetskopia av originaldokumentet innan du gör några ändringar.

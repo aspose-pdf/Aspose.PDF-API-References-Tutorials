@@ -56,7 +56,7 @@ StructureElement element = pdfDocument.getTaggedContent().getElementByPage(1).ge
 
 ## 訪問子元素
 
-一旦到達結構元素，您就可以存取其子元素。子元素可以是文字、圖像、表格或 PDF 中存在的任何其他內容。以下是檢索子元素的方法：
+到達結構元素後，您可以存取其子元素。子元素可以是文字、圖像、表格或 PDF 中存在的任何其他內容。以下是檢索子元素的方法：
 
 ```java
 //訪問子元素

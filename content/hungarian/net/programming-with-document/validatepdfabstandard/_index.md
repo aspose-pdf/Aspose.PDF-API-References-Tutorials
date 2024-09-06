@@ -7,7 +7,7 @@ type: docs
 weight: 380
 url: /hu/net/programming-with-document/validatepdfabstandard/
 ---
-Ha PDF-dokumentumokkal dolgozik .NET-ben, előfordulhat, hogy ellenőriznie kell a PDF-et egy szabvány, például a PDF/A alapján. Az Aspose.PDF for .NET egy könnyen használható módszert biztosít a PDF-dokumentumok PDF/A-1a szabvány szerinti érvényesítésére. Ebben a cikkben lépésről lépésre ismertetjük a PDF/A-1a szabvány Aspose.PDF for .NET-hez való Aspose.PDF használatával és érvényesítésével kapcsolatos alábbi C#-forráskódot.
+Ha PDF-dokumentumokkal dolgozik .NET-ben, előfordulhat, hogy ellenőriznie kell a PDF-et egy szabvány, például a PDF/A alapján. Az Aspose.PDF for .NET egy könnyen használható módszert kínál a PDF-dokumentumok PDF/A-1a szabvány szerinti érvényesítésére. Ebben a cikkben lépésről lépésre ismertetjük a PDF/A-1a szabvány Aspose.PDF for .NET-hez való Aspose.PDF használatával és érvényesítésével kapcsolatos alábbi C#-forráskódot.
 
 ## 1. lépés: Állítsa be a dokumentumkönyvtár elérési útját
 

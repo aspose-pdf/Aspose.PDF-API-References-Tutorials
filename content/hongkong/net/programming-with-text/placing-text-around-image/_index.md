@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-text/placing-text-around-image/
 
 ## 第 1 步：設定文檔目錄
 
-首先，您需要設定要儲存生成的 PDF 檔案的目錄路徑。代替`"YOUR DOCUMENT DIRECTORY"`在裡面`dataDir`變數包含您所需目錄的路徑。
+首先，您需要設定要儲存生成的 PDF 檔案的目錄路徑。代替`"YOUR DOCUMENT DIRECTORY"`在`dataDir`變數包含您所需目錄的路徑。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -178,7 +178,7 @@ doc.Save(dataDir + "PlacingTextAroundImage_out.pdf");
 
 A：設定文檔目錄：
 
-1. 代替`"YOUR DOCUMENT DIRECTORY"`在裡面`dataDir`變數包含要儲存產生的 PDF 檔案的目錄路徑。
+1. 代替`"YOUR DOCUMENT DIRECTORY"`在`dataDir`變數包含要儲存產生的 PDF 檔案的目錄路徑。
 
 #### Q：如何建立表格並向其中添加圖像？
 

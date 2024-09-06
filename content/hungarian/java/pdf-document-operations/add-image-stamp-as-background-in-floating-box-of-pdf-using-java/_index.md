@@ -28,7 +28,7 @@ Az Aspose.PDF for Java egy hatékony API, amely lehetővé teszi a fejlesztők s
 
 A PDF-ekben található képbélyegzők olyan grafikus elemek, amelyek hozzáadhatók a dokumentumhoz információk vagy márkajelzés közvetítése érdekében. Ebben az oktatóanyagban a képbélyegzők háttérként történő hozzáadására fogunk összpontosítani a lebegő dobozokban, ami különösen hasznos lehet sablonok, fejléces papírok vagy űrlapok létrehozásához.
 
-## A fejlesztési környezet előkészítése
+## Fejlesztési környezetének előkészítése
 
  Mielőtt belemerülnénk a kódba, be kell állítania a fejlesztői környezetet. Győződjön meg arról, hogy az Aspose.PDF for Java könyvtár telepítve van és be van állítva a Java projektben. A könyvtárat innen töltheti le[itt](https://releases.aspose.com/pdf/java/).
 

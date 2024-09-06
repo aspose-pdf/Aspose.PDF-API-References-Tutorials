@@ -1,143 +1,143 @@
 ---
-title: Orientasi Halaman Menurut Dimensi Gambar
-linktitle: Orientasi Halaman Menurut Dimensi Gambar
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Panduan langkah demi langkah untuk mengatur orientasi halaman berdasarkan dimensi gambar dengan Aspose.PDF untuk .NET.
+title: Orientasi Halaman Berdasarkan Dimensi Gambar
+linktitle: Orientasi Halaman Berdasarkan Dimensi Gambar
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara membuat PDF dengan Aspose.PDF untuk .NET, mengatur orientasi halaman berdasarkan dimensi gambar dalam panduan langkah demi langkah ini.
 type: docs
 weight: 80
 url: /id/net/document-conversion/page-orientation-according-image-dimensions/
 ---
-Dalam tutorial ini, kami akan memandu Anda melalui proses pengaturan orientasi halaman berdasarkan dimensi gambar menggunakan Aspose.PDF untuk .NET. Kami akan menelusuri daftar gambar JPG di direktori tertentu dan secara otomatis menyesuaikan orientasi halaman berdasarkan lebar setiap gambar. Ikuti langkah-langkah di bawah ini untuk mencapainya.
+## Perkenalan
+
+Selamat datang di dunia Aspose.PDF untuk .NET! Jika Anda ingin membuat, memanipulasi, atau mengonversi dokumen PDF secara terprogram, Anda telah tiba di tempat yang tepat. Aspose.PDF adalah pustaka canggih yang memungkinkan pengembang untuk bekerja dengan file PDF dengan lancar. Dalam panduan ini, kami akan memandu Anda melalui proses pengaturan orientasi halaman berdasarkan dimensi gambar. Baik Anda pengembang berpengalaman atau baru memulai, tutorial ini akan memberi Anda pengetahuan yang Anda butuhkan untuk memulai dengan Aspose.PDF.
 
 ## Prasyarat
-Sebelum memulai, pastikan Anda memenuhi prasyarat berikut:
 
-- Pengetahuan dasar tentang bahasa pemrograman C#.
-- Pustaka Aspose.PDF untuk .NET diinstal di sistem Anda.
-- Lingkungan pengembangan seperti Visual Studio.
+Sebelum kita masuk ke kodenya, mari pastikan Anda memiliki semua yang perlu diikuti:
 
-## Langkah 1: Telusuri gambar JPG
-Pada langkah ini, kita akan menelusuri semua gambar JPG di direktori tertentu. Ikuti kode di bawah ini:
+1. Visual Studio: Pastikan Anda telah menginstal Visual Studio di komputer Anda. Ini adalah IDE terbaik untuk pengembangan .NET.
+2. .NET Framework: Panduan ini mengasumsikan Anda menggunakan .NET Framework. Pastikan Anda telah menginstal versi yang sesuai.
+3.  Aspose.PDF untuk .NET: Anda dapat mengunduh pustaka dari[Situs web Aspose](https://releases.aspose.com/pdf/net/) Jika Anda ingin mencobanya terlebih dahulu, Anda bisa mendapatkannya[uji coba gratis](https://releases.aspose.com/).
+4. Pengetahuan Dasar C#: Keakraban dengan pemrograman C# akan membantu Anda memahami contoh-contohnya dengan lebih baik.
 
-```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+## Paket Impor
 
-// Buat dokumen PDF baru
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+Untuk memulai, Anda perlu mengimpor paket-paket yang diperlukan. Berikut ini cara melakukannya:
 
-// Ambil nama semua file JPG di direktori tertentu
-string[] fileEntries = Directory.GetFiles(dataDir, "*.JPG");
-```
+1. Buka proyek Visual Studio Anda.
+2. Klik kanan pada proyek Anda di Solution Explorer dan pilih "Kelola Paket NuGet."
+3.  Pencarian untuk`Aspose.PDF` dan menginstalnya.
 
- Pastikan untuk mengganti`"YOUR DOCUMENTS DIRECTORY"` dengan direktori sebenarnya tempat gambar JPG Anda berada.
+Sekarang setelah semuanya disiapkan, mari kita uraikan contohnya langkah demi langkah.
 
-## Langkah 2: Pembuatan halaman dan gambar
-Setelah menelusuri file JPG, kami akan membuat halaman dan gambar untuk setiap file. Gunakan kode berikut:
+## Langkah 1: Siapkan Direktori Dokumen Anda
+
+Pertama-tama, Anda perlu menentukan jalur ke direktori dokumen tempat gambar Anda disimpan. Di sinilah Aspose akan mencari file JPG.
 
 ```csharp
-int counter;
-for (counter = 0; counter < fileEntries.Length - 1; counter++)
-{
-// Buat objek Halaman
-Aspose.Pdf.Page page = doc.Pages.Add();
-
-// Buat objek Gambar
-Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
-image1.File = fileEntries[counter];
-```
-
-## Langkah 3: Memeriksa dimensi gambar
-Sekarang mari kita periksa dimensi setiap gambar untuk menentukan orientasi halaman. Gunakan kode berikut:
-
-```csharp
-// Buat objek BitMap untuk mendapatkan informasi dari file gambar
-Bitmap myimage = new Bitmap(fileEntries[counter]);
-
-// Periksa apakah lebar gambar lebih besar dari lebar halaman atau tidak
-if (myimage.Width > page.PageInfo.Width)
-//
-
-  If the width of the image is greater than the width of the page, set the page orientation to landscape
-page.PageInfo.IsLandscape = true;
-else
-// Jika lebar gambar kurang dari lebar halaman, atur orientasi halaman ke potret
-page.PageInfo.IsLandscape = false;
-```
-
-## Langkah 4: Menambahkan gambar ke dokumen PDF
-Setelah memeriksa dimensi gambar, kami akan menambahkan gambar tersebut ke koleksi paragraf dokumen PDF. Gunakan kode berikut:
-
-```csharp
-// Tambahkan gambar ke kumpulan paragraf dokumen PDF
-page.Paragraphs.Add(image1);
-```
-
-## Langkah 5: Menyimpan file PDF
-Setelah kami menambahkan semua gambar ke dokumen PDF, sekarang kami dapat menyimpan file PDF yang dihasilkan. Inilah langkah terakhir:
-
-```csharp
-// Simpan file PDFnya
-doc.Save(dataDir + "SetPageOrientation_out.pdf");
-```
-
- Mengganti`"YOUR DOCUMENTS DIRECTORY"` dengan direktori yang diinginkan tempat Anda ingin menyimpan file PDF keluaran.
-
-### Contoh kode sumber untuk Orientasi Halaman Menurut Dimensi Gambar menggunakan Aspose.PDF untuk .NET
-
-```csharp
-
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+ Mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya tempat gambar Anda berada. Hal ini penting karena jika Aspose tidak dapat menemukan gambar Anda, maka Aspose tidak akan dapat membuat PDF.
+
+## Langkah 2: Buat Dokumen PDF Baru
+
+Selanjutnya, Anda akan membuat objek dokumen PDF baru. Di sinilah semua gambar Anda akan ditambahkan.
+
+```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+```
 
-// Ambil nama semua file JPG di Direktori tertentu
+ Baris ini menginisialisasi instance baru dari`Document` kelas, yang mewakili berkas PDF Anda.
+
+## Langkah 3: Ambil File Gambar
+
+ Sekarang, mari kita ambil semua file JPG dari direktori yang ditentukan. Ini dilakukan dengan menggunakan`Directory.GetFiles` metode.
+
+```csharp
 string[] fileEntries = Directory.GetFiles(dataDir, "*.JPG");
+```
 
+Baris ini akan memberi Anda serangkaian nama file yang sesuai dengan format JPG. Pastikan direktori Anda berisi beberapa gambar JPG agar ini berfungsi!
+
+## Langkah 4: Ulangi Setiap Gambar
+
+Anda perlu mengulang setiap berkas gambar dan menambahkannya ke dokumen PDF. Berikut cara melakukannya:
+
+```csharp
 int counter;
 for (counter = 0; counter < fileEntries.Length - 1; counter++)
 {
-	// Buat objek halaman
-	Aspose.Pdf.Page page = doc.Pages.Add();
+    // Membuat objek halaman
+    Aspose.Pdf.Page page = doc.Pages.Add();
+```
 
-	// Membuat objek gambar
-	Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
-	image1.File = fileEntries[counter];
+ Dalam loop ini, Anda membuat halaman baru untuk setiap gambar.`doc.Pages.Add()` metode menambahkan halaman baru ke dokumen PDF Anda.
 
-	// Buat objek BitMap untuk mendapatkan informasi file gambar
-	Bitmap myimage = new Bitmap(fileEntries[counter]);
-	// Periksa apakah lebar file gambar lebih besar dari lebar Halaman atau tidak
-	if (myimage.Width > page.PageInfo.Width)
-		// Jika lebar Gambar lebih besar dari lebar halaman, atur orientasi halaman ke Lanskap
-		page.PageInfo.IsLandscape = true;
-	else
-		// Jika lebar Gambar kurang dari lebar halaman, atur orientasi halaman ke Potret
-		page.PageInfo.IsLandscape = false;
-	// Tambahkan gambar ke kumpulan paragraf dokumen PDF
-	page.Paragraphs.Add(image1);
+## Langkah 5: Buat Objek Gambar
+
+ Untuk setiap gambar, Anda perlu membuat`Image` objek yang akan menampung data gambar.
+
+```csharp
+    Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
+    image1.File = fileEntries[counter];
+```
+
+ Di sini, Anda menetapkan file gambar saat ini ke`Image` objek. Hal ini penting untuk menambahkan gambar ke PDF.
+
+## Langkah 6: Periksa Dimensi Gambar
+
+Sebelum menambahkan gambar ke PDF, Anda perlu memeriksa dimensinya untuk menentukan orientasi halaman.
+
+```csharp
+    Bitmap myimage = new Bitmap(fileEntries[counter]);
+    if (myimage.Width > page.PageInfo.Width)
+        page.PageInfo.IsLandscape = true;
+    else
+        page.PageInfo.IsLandscape = false;
+```
+
+Potongan kode ini memeriksa apakah lebar gambar lebih besar dari lebar halaman. Jika ya, orientasi halaman akan diatur ke lanskap; jika tidak, halaman akan tetap dalam mode potret.
+
+## Langkah 7: Tambahkan Gambar ke PDF
+
+Sekarang setelah Anda mengatur orientasi, waktunya menambahkan gambar ke dokumen PDF.
+
+```csharp
+    page.Paragraphs.Add(image1);
 }
-// Simpan file Pdfnya
+```
+
+Baris ini menambahkan gambar ke kumpulan paragraf di halaman saat ini. Mirip seperti menaruh gambar di dalam bingkai!
+
+## Langkah 8: Simpan Dokumen PDF
+
+Terakhir, Anda perlu menyimpan dokumen PDF ke direktori yang Anda tentukan.
+
+```csharp
 doc.Save(dataDir + "SetPageOrientation_out.pdf");
 ```
 
+ Baris ini menyimpan dokumen dengan nama`SetPageOrientation_out.pdf`Pastikan untuk memeriksa direktori dokumen Anda untuk PDF yang baru dibuat!
+
 ## Kesimpulan
-Dalam tutorial ini, kami telah membahas proses langkah demi langkah dalam mengatur orientasi halaman berdasarkan dimensi gambar menggunakan Aspose.PDF untuk .NET. Dengan mengikuti petunjuk yang diuraikan di atas, Anda sekarang dapat membuat dokumen PDF dengan orientasi halaman yang benar untuk setiap gambar. Fitur ini berguna ketika Anda memiliki gambar dengan ukuran berbeda dan ingin menyematkannya ke dalam dokumen PDF.
 
-### FAQ
+Nah, itu dia! Anda telah berhasil membuat dokumen PDF menggunakan Aspose.PDF untuk .NET, mengatur orientasi halaman berdasarkan dimensi gambar. Pustaka canggih ini membuka banyak kemungkinan untuk bekerja dengan file PDF di aplikasi Anda. Baik Anda membuat laporan, faktur, atau jenis dokumen lainnya, Aspose.PDF siap membantu Anda.
 
-#### T: Dapatkah saya menggunakan format gambar lain selain JPG untuk mengatur orientasi halaman berdasarkan dimensi gambar?
+## Pertanyaan yang Sering Diajukan
 
-A: Ya, Anda dapat menggunakan format gambar lain seperti PNG, BMP, atau GIF selain JPG untuk mengatur orientasi halaman berdasarkan dimensi gambar. Kode yang diberikan menelusuri semua file gambar dengan ekstensi ".JPG", namun Anda dapat memodifikasinya untuk menyertakan format gambar lain juga.
+### Apa itu Aspose.PDF untuk .NET?
+Aspose.PDF untuk .NET adalah pustaka yang memungkinkan pengembang untuk membuat, memanipulasi, dan mengonversi dokumen PDF secara terprogram.
 
-#### T: Apa yang terjadi jika dimensi gambar sama persis dengan lebar halaman?
+### Bagaimana cara menginstal Aspose.PDF?
+ Anda dapat menginstal Aspose.PDF melalui NuGet Package Manager di Visual Studio atau mengunduhnya dari[Situs web Aspose](https://releases.aspose.com/pdf/net/).
 
-J: Jika lebar gambar sama persis dengan lebar halaman, orientasi halaman akan diatur ke potret. Pada kode yang diberikan, orientasi halaman diatur ke lanskap hanya jika lebar gambar lebih besar dari lebar halaman.
+### Dapatkah saya menggunakan Aspose.PDF secara gratis?
+ Ya, Aspose menawarkan[uji coba gratis](https://releases.aspose.com/) bagi Anda untuk menguji perpustakaan sebelum membeli.
 
-#### T: Dapatkah saya menyesuaikan logika orientasi halaman berdasarkan persyaratan tertentu?
+### Di mana saya dapat menemukan dukungan untuk Aspose.PDF?
+Anda dapat menemukan dukungan di[Forum Aspose](https://forum.aspose.com/c/pdf/10).
 
-J: Ya, Anda dapat menyesuaikan logika orientasi halaman berdasarkan kebutuhan spesifik. Misalnya, Anda dapat menetapkan nilai ambang batas untuk menentukan kapan orientasi halaman harus diatur ke lanskap atau potret. Selain itu, Anda dapat mempertimbangkan faktor-faktor seperti tinggi gambar atau rasio aspek untuk menentukan orientasi halaman.
-
-#### T: Dapatkah saya menambahkan konten lain, seperti teks atau tabel, ke dokumen PDF beserta gambarnya?
-
-J: Ya, Anda dapat menambahkan konten lain, seperti teks atau tabel, ke dokumen PDF beserta gambarnya. Aspose.PDF untuk .NET menyediakan serangkaian fitur untuk memanipulasi dokumen PDF, termasuk menambahkan teks, gambar, tabel, dan elemen lain ke halaman.
+### Jenis berkas apa yang dapat saya ubah ke PDF menggunakan Aspose?
+Aspose.PDF mendukung berbagai format file, termasuk gambar, dokumen Word, lembar kerja Excel, dan banyak lagi.

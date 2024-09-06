@@ -22,7 +22,7 @@ Nejprve musíte vytvořit instanci objektu Document pomocí třídy Document sou
 Document doc = new Document();
 ```
 
-## Krok 2: Přidejte stránku do dokumentu
+## Krok 2: Přidejte do dokumentu stránku
  Poté můžete do dokumentu přidat stránku pomocí`Add()` metoda shromažďování stránek dokumentu.
 
 ```csharp
@@ -83,7 +83,7 @@ Odpověď: Chcete-li získat počet stránek souboru PDF, postupujte takto:
 2.  Přidejte stránku do dokumentu pomocí`Add()` způsob dokumentu`Pages` sbírka.
 3.  Vytvořte obsah stránky přidáním`TextFragment` objekty k`Page` objektu`Paragraphs` sbírka.
 4.  Zpracujte odstavce dokumentu voláním`ProcessParagraphs()` metoda pro přesný výpočet počtu stránek.
-5.  Přístup k`Count` vlastnictvím`Pages` kolekce pro zobrazení počtu stránek v dokumentu.
+5.  Přístup k`Count` majetek z`Pages` kolekce pro zobrazení počtu stránek v dokumentu.
 
 #### Otázka: Co když přidám další obsah do dokumentu PDF po zpracování odstavců? Bude se počet stránek aktualizovat automaticky?
 

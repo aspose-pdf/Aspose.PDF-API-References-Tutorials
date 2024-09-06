@@ -75,7 +75,7 @@ Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili, jak přidat nápovědu k poli pomocí Aspose.PDF pro .NET. Podle podrobného průvodce v tomto výukovém programu můžete vylepšit své formuláře PDF pomocí tipů, které uživatelům poskytují další informace nebo pokyny. Nezapomeňte prozkoumat dokumentaci a příklady poskytované Aspose.PDF pro .NET, abyste objevili pokročilejší vlastnosti a funkce, které knihovna nabízí.
+Gratuluji! Úspěšně jste se naučili, jak přidat nápovědu k poli pomocí Aspose.PDF pro .NET. Podle podrobného průvodce v tomto výukovém programu můžete vylepšit své formuláře PDF pomocí tipů, které uživatelům poskytují další informace nebo pokyny. Nezapomeňte prozkoumat dokumentaci a příklady poskytované Aspose.PDF pro .NET, abyste objevili pokročilejší vlastnosti a funkce, které knihovna nabízí.
 
 ### FAQ
 

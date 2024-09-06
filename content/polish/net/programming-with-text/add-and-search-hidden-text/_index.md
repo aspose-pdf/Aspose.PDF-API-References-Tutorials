@@ -1,25 +1,25 @@
 ---
-title: Dodaj i wyszukuj ukryty tekst w pliku PDF
-linktitle: Dodaj i wyszukuj ukryty tekst w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Przewodnik krok po kroku dotyczący dodawania i wyszukiwania ukrytego tekstu w pliku PDF przy użyciu Aspose.PDF dla .NET.
+title: Dodaj i wyszukaj ukryty tekst w pliku PDF
+linktitle: Dodaj i wyszukaj ukryty tekst w pliku PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Instrukcja krok po kroku, jak dodawać i wyszukiwać ukryty tekst w plikach PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 20
 url: /pl/net/programming-with-text/add-and-search-hidden-text/
 ---
-W tym samouczku przeprowadzimy Cię przez proces dodawania i wyszukiwania ukrytego tekstu w pliku PDF przy użyciu Aspose.PDF dla .NET. Wykonaj poniższe kroki, aby łatwo wykonać tę operację.
+W tym samouczku pokażemy Ci, jak dodawać i wyszukiwać ukryty tekst w pliku PDF za pomocą Aspose.PDF dla .NET. Wykonaj poniższe kroki, aby łatwo wykonać tę operację.
 
-## 1. Warunki wstępne
+## 1. Wymagania wstępne
 
-Zanim zaczniesz, upewnij się, że masz następujące elementy:
+Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
 
-- Zainstalowany i skonfigurowany program Visual Studio lub dowolne inne środowisko programistyczne.
+- Zainstalowany i skonfigurowany program Visual Studio lub inne środowisko programistyczne.
 - Podstawowa znajomość języka programowania C#.
-- Zainstalowana biblioteka Aspose.PDF dla .NET. Można go pobrać z oficjalnej strony Aspose.
+- Biblioteka Aspose.PDF dla .NET zainstalowana. Możesz ją pobrać z oficjalnej strony Aspose.
 
 ## 2. Tworzenie dokumentu PDF z ukrytym tekstem
 
-Na początek użyj poniższego kodu i utwórz nowy dokument PDF zawierający ukryty tekst:
+Aby rozpocząć, użyj poniższego kodu, aby utworzyć nowy dokument PDF zawierający ukryty tekst:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -28,7 +28,7 @@ Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Page page = doc.Pages.Add();
 TextFragment frag1 = new TextFragment("This is common text.");
 TextFragment frag2 = new TextFragment("This is invisible text.");
-// Ustaw właściwość tekstu - niewidoczna
+// Ustaw właściwość tekstu - niewidoczny
 frag2.TextState.Invisible = true;
 page.Paragraphs.Add(frag1);
 page.Paragraphs.Add(frag2);
@@ -36,7 +36,7 @@ doc.Save(dataDir + "39400_out.pdf");
 doc.Dispose();
 ```
 
-Pamiętaj o podaniu żądanej ścieżki i nazwy pliku dokumentu PDF.
+Pamiętaj o podaniu żądanej ścieżki i nazwy pliku dla dokumentu PDF.
 
 ## 3. Wyszukaj tekst w dokumencie
 
@@ -57,7 +57,7 @@ doc.Dispose();
 
 Spowoduje to przeszukanie ukrytego tekstu na drugiej stronie dokumentu PDF i wyświetlenie odpowiednich informacji.
 
-### Przykładowy kod źródłowy dodawania i wyszukiwania ukrytego tekstu przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Dodaj i wyszukaj ukryty tekst przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -66,7 +66,7 @@ Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Page page = doc.Pages.Add();
 TextFragment frag1 = new TextFragment("This is common text.");
 TextFragment frag2 = new TextFragment("This is invisible text.");
-//Ustaw właściwość tekstu - niewidoczna
+//Ustaw właściwość tekstu - niewidoczny
 frag2.TextState.Invisible = true;
 page.Paragraphs.Add(frag1);
 page.Paragraphs.Add(frag2);
@@ -87,22 +87,22 @@ doc.Dispose();
 
 ## Wniosek
 
-Gratulacje! Pomyślnie dodałeś i znalazłeś ukryty tekst w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Możesz teraz zastosować tę metodę do własnych projektów, aby manipulować i wyszukiwać ukryty tekst w plikach PDF.
+Gratulacje! Udało Ci się dodać i znaleźć ukryty tekst w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Teraz możesz zastosować tę metodę w swoich projektach, aby manipulować i wyszukiwać ukryty tekst w plikach PDF.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Co to jest Aspose.PDF dla .NET?
+#### P: Czym jest Aspose.PDF dla platformy .NET?
 
-O: Aspose.PDF dla .NET to solidna biblioteka, która umożliwia programistom tworzenie, manipulowanie i przekształcanie dokumentów PDF w aplikacjach .NET.
+A: Aspose.PDF dla platformy .NET to rozbudowana biblioteka umożliwiająca programistom tworzenie, modyfikowanie i przekształcanie dokumentów PDF w aplikacjach .NET.
 
-#### P: Czy ukryty tekst może być używany do celów znaku wodnego?
+#### P: Czy ukryty tekst może być wykorzystany do utworzenia znaku wodnego?
 
-Odp.: Absolutnie! Ukryty tekst może służyć jako skuteczny sposób znakowania wodnego dokumentów PDF, dodając dodatkową warstwę bezpieczeństwa.
+A: Oczywiście! Ukryty tekst może służyć jako skuteczny sposób znakowania wodnego dokumentów PDF, dodając dodatkową warstwę bezpieczeństwa.
 
-#### P: Czy można odkryć ukryty tekst w dokumencie PDF?
+#### P: Czy można ujawnić ukryty tekst w dokumencie PDF?
 
-Odp.: Tak, proces wyszukiwania i ujawniania ukrytego tekstu w dokumencie PDF można przeprowadzić za pomocą technik opisanych w tym samouczku.
+O: Tak, proces wyszukiwania i ujawniania ukrytego tekstu w dokumencie PDF można przeprowadzić stosując techniki opisane w tym samouczku.
 
-#### P: Jakie inne funkcje oferuje Aspose.PDF dla .NET?
+#### P: Jakie inne funkcjonalności oferuje Aspose.PDF dla .NET?
 
-Odp.: Oprócz manipulacji ukrytym tekstem, Aspose.PDF dla .NET zapewnia szeroką gamę funkcji, w tym generowanie plików PDF, konwersję, szyfrowanie i wiele innych.
+A: Oprócz możliwości manipulowania ukrytym tekstem Aspose.PDF dla platformy .NET oferuje szeroką gamę funkcji, w tym generowanie plików PDF, konwersję, szyfrowanie i wiele innych.

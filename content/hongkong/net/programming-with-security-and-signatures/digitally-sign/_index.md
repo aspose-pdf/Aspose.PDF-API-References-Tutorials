@@ -73,7 +73,7 @@ using(Document document = new Document(outFile))
                  {
                      if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms)
                      {
-                         //做一點事
+                         //做點什麼
                      }
                  }
              }
@@ -121,7 +121,7 @@ try
 					{
 						if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) //取得存取權限
 						{
-							//做一點事
+							//做點什麼
 						}
 					}
 				}
@@ -147,7 +147,7 @@ catch (Exception ex)
 
 #### Q：開始之前需要什麼先決條件？
 
-答：在開始之前，請確保您對 C# 程式語言有基本的了解，並已安裝 Visual Studio，並安裝了適用於 .NET 的 Aspose.PDF 程式庫。
+答：在開始之前，請確保您對 C# 程式語言有基本的了解，並已安裝 Visual Studio，並已安裝適用於 .NET 的 Aspose.PDF 程式庫。
 
 #### Q：如何建構開發環境？
 

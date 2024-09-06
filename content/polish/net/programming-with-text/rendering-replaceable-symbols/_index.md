@@ -1,41 +1,41 @@
 ---
-title: Renderowanie symboli wymiennych w pliku PDF
-linktitle: Renderowanie symboli wymiennych w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak renderować wymienne symbole w pliku PDF przy użyciu Aspose.PDF dla .NET.
+title: Renderowanie wymiennych symboli w pliku PDF
+linktitle: Renderowanie wymiennych symboli w pliku PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak renderować wymienne symbole w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 310
 url: /pl/net/programming-with-text/rendering-replaceable-symbols/
 ---
-W tym samouczku wyjaśnimy, jak renderować wymienne symbole w pliku PDF przy użyciu biblioteki Aspose.PDF dla .NET. Przejdziemy krok po kroku przez proces tworzenia pliku PDF, dodawania fragmentu tekstu ze znacznikami nowej linii, ustawiania właściwości tekstu, pozycjonowania tekstu i zapisywania pliku PDF przy użyciu dostarczonego kodu źródłowego C#.
+W tym samouczku wyjaśnimy, jak renderować wymienne symbole w pliku PDF za pomocą biblioteki Aspose.PDF dla .NET. Przejdziemy przez proces krok po kroku tworzenia pliku PDF, dodawania fragmentu tekstu ze znacznikami nowej linii, ustawiania właściwości tekstu, pozycjonowania tekstu i zapisywania pliku PDF za pomocą dostarczonego kodu źródłowego C#.
 
-## Warunki wstępne
+## Wymagania wstępne
 
-Zanim zaczniesz, upewnij się, że masz następujące elementy:
+Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
 
-- Zainstalowana biblioteka Aspose.PDF dla .NET.
+- Zainstalowano bibliotekę Aspose.PDF dla .NET.
 - Podstawowa znajomość programowania w języku C#.
 
 ## Krok 1: Skonfiguruj katalog dokumentów
 
- Najpierw musisz ustawić ścieżkę do katalogu, w którym chcesz zapisać wygenerowany plik PDF. Zastępować`"YOUR DOCUMENT DIRECTORY"` w`dataDir`zmienną ze ścieżką do żądanego katalogu.
+ Najpierw musisz ustawić ścieżkę do katalogu, w którym chcesz zapisać wygenerowany plik PDF. Zastąp`"YOUR DOCUMENT DIRECTORY"` w`dataDir` zmienną zawierającą ścieżkę do żądanego katalogu.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Krok 2: Utwórz dokument i stronę PDF
+## Krok 2: Utwórz dokument PDF i stronę
 
- Następnie tworzymy nowy dokument PDF i dodajemy do niego stronę za pomocą`Document` klasa i`Page` class z biblioteki Aspose.PDF.
+ Następnie tworzymy nowy dokument PDF i dodajemy do niego stronę za pomocą`Document` klasa i`Page` klasa z biblioteki Aspose.PDF.
 
 ```csharp
 Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page applicationFirstPage = (Aspose.Pdf.Page)pdfApplicationDoc.Pages.Add();
 ```
 
-## Krok 3: Dodaj fragment tekstu za pomocą znaczników nowej linii
+## Krok 3: Dodaj fragment tekstu ze znacznikami nowej linii
 
- Tworzymy`TextFragment`obiekt i ustaw jego tekst tak, aby zawierał znaczniki nowej linii (`Environment.NewLine`) do reprezentowania wielu wierszy tekstu.
+ Tworzymy`TextFragment` obiekt i ustaw jego tekst tak, aby zawierał znaczniki nowej linii (`Environment.NewLine`) do reprezentowania wielu wierszy tekstu.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment textFragment = new Aspose.Pdf.Text.TextFragment("Applicant Name: " + Environment.NewLine + " Joe Smoe");
@@ -43,7 +43,7 @@ Aspose.Pdf.Text.TextFragment textFragment = new Aspose.Pdf.Text.TextFragment("Ap
 
 ## Krok 4: Ustaw właściwości fragmentu tekstu
 
-W razie potrzeby możemy ustawić różne właściwości fragmentu tekstu, takie jak rozmiar czcionki, czcionka, kolor tła i kolor pierwszego planu.
+Jeśli zachodzi taka potrzeba, możemy ustawić różne właściwości fragmentu tekstu, takie jak rozmiar czcionki, rodzaj czcionki, kolor tła i kolor pierwszego planu.
 
 ```csharp
 textFragment.TextState.FontSize = 12;
@@ -52,9 +52,9 @@ textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
 ```
 
-## Krok 5: Utwórz akapit tekstowy i pozycję
+## Krok 5: Utwórz akapit tekstowy i jego położenie
 
- Tworzymy`TextParagraph` obiektu, dołącz fragment tekstu do akapitu i ustaw położenie akapitu na stronie.
+ Tworzymy`TextParagraph` obiekt, dołącz fragment tekstu do akapitu i ustaw pozycję akapitu na stronie.
 
 ```csharp
 TextParagraph par = new TextParagraph();
@@ -64,7 +64,7 @@ par.Position = new Aspose.Pdf.Text.Position(100, 600);
 
 ## Krok 6: Dodaj akapit tekstowy do strony
 
- Tworzymy`TextBuilder` obiekt ze stroną i dołącz akapit tekstowy do konstruktora tekstu.
+ Tworzymy`TextBuilder` obiekt ze stroną i dołącz akapit tekstu do konstruktora tekstu.
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(applicationFirstPage);
@@ -73,7 +73,7 @@ textBuilder.AppendParagraph(par);
 
 ## Krok 7: Zapisz dokument PDF
 
-Na koniec zapisujemy dokument PDF w określonym pliku wyjściowym.
+Na koniec zapisujemy dokument PDF do wskazanego pliku wyjściowego.
 
 ```csharp
 dataDir = dataDir + "RenderingReplaceableSymbols_out.pdf";
@@ -87,7 +87,7 @@ Console.WriteLine("\nReplaceable symbols rendered successfully during PDF creati
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page applicationFirstPage = (Aspose.Pdf.Page)pdfApplicationDoc.Pages.Add();
-// Zainicjuj nowy TextFragment tekstem zawierającym wymagane znaczniki nowej linii
+// Zainicjuj nowy TextFragment z tekstem zawierającym wymagane znaczniki nowej linii
 Aspose.Pdf.Text.TextFragment textFragment = new Aspose.Pdf.Text.TextFragment("Applicant Name: " + Environment.NewLine + " Joe Smoe");
 // W razie potrzeby ustaw właściwości fragmentu tekstu
 textFragment.TextState.FontSize = 12;
@@ -96,7 +96,7 @@ textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
 // Utwórz obiekt TextParagraph
 TextParagraph par = new TextParagraph();
-// Dodaj nowy TextFragment do akapitu
+// Dodaj nowy fragment tekstu do akapitu
 par.AppendLine(textFragment);
 // Ustaw pozycję akapitu
 par.Position = new Aspose.Pdf.Text.Position(100, 600);
@@ -111,52 +111,52 @@ Console.WriteLine("\nReplaceable symbols render successfully duing pdf creation.
 
 ## Wniosek
 
-tym samouczku nauczyłeś się renderować wymienne symbole w dokumencie PDF przy użyciu biblioteki Aspose.PDF dla .NET. Postępując zgodnie ze szczegółowym przewodnikiem i wykonując dostarczony kod C#, możesz utworzyć plik PDF, dodać tekst ze znacznikami nowej linii, ustawić właściwości tekstu, umieścić tekst na stronie i zapisać plik PDF.
+tym samouczku nauczyłeś się, jak renderować wymienne symbole w dokumencie PDF przy użyciu biblioteki Aspose.PDF dla .NET. Postępując zgodnie z przewodnikiem krok po kroku i wykonując dostarczony kod C#, możesz utworzyć plik PDF, dodać tekst ze znacznikami nowej linii, ustawić właściwości tekstu, umieścić tekst na stronie i zapisać plik PDF.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Jaki jest cel samouczka „Renderowanie symboli wymiennych w pliku PDF”?
+#### P: Jaki jest cel samouczka „Renderowanie wymiennych symboli w pliku PDF”?
 
-Odp.: Samouczek „Renderowanie symboli wymiennych w pliku PDF” pokazuje, jak używać biblioteki Aspose.PDF dla .NET do tworzenia dokumentu PDF zawierającego wymienne symbole. Symbole te są reprezentowane jako fragmenty tekstu ze znacznikami nowej linii w celu utworzenia treści wielowierszowej.
+A: Samouczek „Rendering Replaceable Symbols In PDF File” pokazuje, jak używać biblioteki Aspose.PDF dla .NET do tworzenia dokumentu PDF zawierającego symbole zamienne. Symbole te są reprezentowane jako fragmenty tekstu ze znacznikami nowej linii, aby tworzyć zawartość wielowierszową.
 
-#### P: Dlaczego miałbym chcieć renderować symbole wymienne w dokumencie PDF?
+#### P: Dlaczego miałbym chcieć renderować wymienne symbole w dokumencie PDF?
 
-Odp.: Renderowanie symboli wymiennych jest przydatne, gdy trzeba dynamicznie generować zawartość PDF zawierającą informacje zmienne lub specyficzne dla użytkownika. Symbole te pełnią funkcję elementów zastępczych, które w czasie wykonywania można zastąpić rzeczywistymi danymi, takimi jak wartości pól formularza lub spersonalizowane szczegóły.
+A: Renderowanie wymiennych symboli jest przydatne, gdy trzeba dynamicznie generować zawartość PDF, która zawiera zmienne lub specyficzne dla użytkownika informacje. Te symbole działają jako symbole zastępcze, które można zastąpić rzeczywistymi danymi w czasie wykonywania, takimi jak wartości pól formularza lub spersonalizowane szczegóły.
 
 #### P: Jak skonfigurować katalog dokumentów?
 
-O: Aby skonfigurować katalog dokumentów:
+A: Aby skonfigurować katalog dokumentów:
 
-1.  Zastępować`"YOUR DOCUMENT DIRECTORY"` w`dataDir` zmienną ze ścieżką do katalogu, w którym chcesz zapisać wygenerowany plik PDF.
+1.  Zastępować`"YOUR DOCUMENT DIRECTORY"` w`dataDir` zmienna zawierająca ścieżkę do katalogu, w którym chcesz zapisać wygenerowany plik PDF.
 
-#### P: Jak renderować wymienne symbole w dokumencie PDF przy użyciu biblioteki Aspose.PDF?
+#### P: Jak renderować wymienne symbole w dokumencie PDF za pomocą biblioteki Aspose.PDF?
 
-O: Samouczek przeprowadzi Cię krok po kroku przez cały proces:
+A: Samouczek przeprowadzi Cię przez cały proces krok po kroku:
 
 1.  Utwórz nowy dokument PDF za pomocą`Document` klasa.
 2.  Dodaj stronę do dokumentu za pomocą`Page` klasa.
-3.  Stwórz`TextFragment` obiekt ze znacznikami nowej linii (`Environment.NewLine`) do reprezentowania treści wielowierszowej.
-4. Dostosuj właściwości fragmentu tekstu, takie jak rozmiar czcionki, czcionka, kolor tła i kolor pierwszego planu.
-5.  Stwórz`TextParagraph` obiektu, dołącz do niego fragment tekstu i ustaw położenie akapitu na stronie.
-6.  Stwórz`TextBuilder` obiekt ze stroną i dołącz do niego akapit tekstowy.
+3.  Utwórz`TextFragment` obiekt ze znacznikami nowej linii (`Environment.NewLine`) do reprezentowania treści wielowierszowej.
+4. Dostosuj właściwości fragmentu tekstu, takie jak rozmiar czcionki, rodzaj czcionki, kolor tła i kolor pierwszego planu.
+5.  Utwórz`TextParagraph` obiekt, dołącz do niego fragment tekstu i ustaw pozycję akapitu na stronie.
+6.  Utwórz`TextBuilder` obiekt ze stroną i dołącz do niego akapit tekstowy.
 7. Zapisz dokument PDF.
 
 #### P: Jaki jest cel używania znaczników nowej linii (`Environment.NewLine`) in the text fragment?
 
- Odp.: Znaczniki nowej linii służą do tworzenia treści wielowierszowej w pojedynczym fragmencie tekstu. Używając`Environment.NewLine`, możesz wskazać, gdzie w tekście powinny znajdować się podziały wierszy.
+ A: Znaczniki nowej linii służą do tworzenia treści wielowierszowej w pojedynczym fragmencie tekstu. Za pomocą`Environment.NewLine`możesz wskazać miejsca, w których w tekście mają nastąpić podziały wierszy.
 
 #### P: Czy mogę dostosować wygląd wymiennych symboli?
 
-Odp.: Tak, możesz dostosować różne właściwości fragmentu tekstu, takie jak rozmiar czcionki, czcionka, kolor tła i kolor pierwszego planu. Te właściwości określają wygląd wymiennych symboli w dokumencie PDF.
+A: Tak, możesz dostosować różne właściwości fragmentu tekstu, takie jak rozmiar czcionki, czcionka, kolor tła i kolor pierwszego planu. Właściwości te określają wygląd wizualny symboli wymiennych w dokumencie PDF.
 
 #### P: Jak określić położenie tekstu na stronie?
 
- Odp.: Możesz ustawić położenie tekstu, tworząc plik`TextParagraph` obiekt i używając`Position` właściwość określająca współrzędne X i Y na stronie, na której powinien zostać umieszczony akapit.
+ A: Możesz ustawić pozycję tekstu, tworząc`TextParagraph` obiekt i korzystanie z niego`Position` Właściwość określająca współrzędne X i Y na stronie, na których ma zostać umieszczony akapit.
 
-#### P: Jaki jest oczekiwany wynik wykonania dostarczonego kodu?
+#### P: Jakiego wyniku można oczekiwać po wykonaniu dostarczonego kodu?
 
-Odp.: Postępując zgodnie z samouczkiem i uruchamiając dostarczony kod C#, utworzysz dokument PDF zawierający wymienne symbole. Wymienne symbole będą reprezentowane jako fragmenty tekstu ze znacznikami nowej linii i dostosowanymi właściwościami.
+A: Postępując zgodnie z samouczkiem i uruchamiając dostarczony kod C#, utworzysz dokument PDF zawierający wymienne symbole. Wymienne symbole będą reprezentowane jako fragmenty tekstu ze znacznikami nowej linii i dostosowanymi właściwościami.
 
-#### P: Czy mogę zastosować to podejście do dynamicznego generowania spersonalizowanych dokumentów PDF?
+#### P: Czy mogę użyć tego podejścia do dynamicznego generowania spersonalizowanych dokumentów PDF?
 
-Odpowiedź: Tak, to podejście jest odpowiednie do dynamicznego generowania dokumentów PDF ze spersonalizowanymi informacjami. Zastępując wymienne symbole rzeczywistymi danymi, możesz tworzyć spersonalizowaną treść PDF dla każdego użytkownika lub scenariusza.
+A: Tak, to podejście nadaje się do dynamicznego generowania dokumentów PDF ze spersonalizowanymi informacjami. Zastępując wymienne symbole rzeczywistymi danymi, możesz tworzyć spersonalizowaną zawartość PDF dla każdego użytkownika lub scenariusza.

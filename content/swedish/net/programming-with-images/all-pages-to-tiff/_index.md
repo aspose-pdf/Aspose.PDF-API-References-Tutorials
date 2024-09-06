@@ -11,7 +11,7 @@ Den här guiden tar dig steg för steg hur du konverterar alla sidor i ett PDF-d
 
 ## Steg 1: Definiera dokumentkatalogen
 
- Innan du börjar, se till att du ställer in rätt katalog för dokumenten. Byta ut`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där ditt PDF-dokument finns.
+Innan du börjar, se till att du ställer in rätt katalog för dokumenten. Ersätta`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där ditt PDF-dokument finns.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Steg 2: Öppna dokumentet
 
- det här steget kommer vi att öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF. Använd`Document` konstruktor och skicka sökvägen till PDF-dokumentet.
+ I det här steget kommer vi att öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF. Använd`Document` konstruktor och skicka sökvägen till PDF-dokumentet.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
@@ -27,7 +27,7 @@ Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
 
 ## Steg 3: Skapa Resolution-objektet
 
- Skapa en`Resolution`objekt för att ställa in upplösningen för TIFF-bilden. I det här exemplet använder vi en upplösning på 300 dpi.
+ Skapa en`Resolution` objekt för att ställa in upplösningen för TIFF-bilden. I det här exemplet använder vi en upplösning på 300 dpi.
 
 ```csharp
 Resolution resolution = new Resolution(300);
@@ -78,7 +78,7 @@ tiffSettings.Shape = ShapeType.Landscape;
 tiffSettings.SkipBlankPages = false;
 // Skapa TIFF-enhet
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-//Konvertera en viss sida och spara bilden för att streama
+// Konvertera en viss sida och spara bilden för att streama
 tiffDevice.Process(pdfDocument, dataDir + "AllPagesToTIFF_out.tif");
 System.Console.WriteLine("PDF all pages converted to one tiff file successfully!");
 ```
@@ -99,7 +99,7 @@ S: Aspose.PDF för .NET erbjuder ett pålitligt och funktionsrikt API som fören
 
 #### F: Hur definierar jag dokumentkatalogen innan jag startar konverteringsprocessen?
 
- S: Se till att du anger rätt katalogsökväg för dina PDF-dokument för att säkerställa framgångsrik konvertering. Byta ut`"YOUR DOCUMENT DIRECTORY"` med lämplig sökväg i det medföljande kodavsnittet.
+S: Se till att du anger rätt katalogsökväg för dina PDF-dokument för att säkerställa framgångsrik konvertering. Ersätta`"YOUR DOCUMENT DIRECTORY"` med lämplig sökväg i det medföljande kodavsnittet.
 
 ####  F: Vad är betydelsen av att öppna PDF-dokumentet med hjälp av`Document` class?
 
@@ -107,7 +107,7 @@ S: Aspose.PDF för .NET erbjuder ett pålitligt och funktionsrikt API som fören
 
 ####  F: Hur fungerar`Resolution` object impact the quality of the TIFF image?
 
- A: Den`Resolution`objekt ställer in bildkvaliteten för den resulterande TIFF-filen. En högre upplösning, till exempel 300 dpi (punkter per tum), ger en tydligare och mer detaljerad bild.
+ A: Den`Resolution` objekt ställer in bildkvaliteten för den resulterande TIFF-filen. En högre upplösning, till exempel 300 dpi (punkter per tum), ger en tydligare och mer detaljerad bild.
 
 #### F: Kan jag anpassa inställningarna för utdata-TIFF-filen?
 

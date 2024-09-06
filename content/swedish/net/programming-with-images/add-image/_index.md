@@ -11,7 +11,7 @@ Den här guiden tar dig steg för steg hur du lägger till en bild i PDF-fil med
 
 ## Steg 1: Definiera dokumentkatalogen
 
- Innan du börjar, se till att du ställer in rätt katalog för dokumenten. Byta ut`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där ditt PDF-dokument finns.
+Innan du börjar, se till att du ställer in rätt katalog för dokumenten. Ersätta`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där ditt PDF-dokument finns.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Steg 2: Öppna dokumentet
 
- det här steget kommer vi att öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF. Använd`Document` konstruktor och skicka sökvägen till PDF-dokumentet.
+ I det här steget kommer vi att öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF. Använd`Document` konstruktor och skicka sökvägen till PDF-dokumentet.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddImage.pdf");
@@ -70,7 +70,7 @@ page.Contents.Add(new Aspose.Pdf.Operators.GSave());
 
 ## Steg 8: Skapa rektangel- och matrisobjekt
 
- Vi kommer nu att skapa en`Rectangle` föremål och ett`Matrix`objekt. Rektangeln representerar bildens position och storlek, medan matrisen definierar hur bilden ska placeras.
+ Vi kommer nu att skapa en`Rectangle` föremål och ett`Matrix` objekt. Rektangeln representerar bildens position och storlek, medan matrisen definierar hur bilden ska placeras.
 
 ```csharp
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(lower
@@ -89,7 +89,7 @@ page.Contents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(matrix));
 
 ## Steg 10: Rita bilden
 
- I det här steget kommer vi att rita bilden på sidan med hjälp av`Do` operatör. De`Do` operatorn tar bildnamnet från resurserna och ritar det till sidan.
+ I det här steget kommer vi att rita bilden på sidan med hjälp av`Do` operatör. De`Do`operatorn tar bildnamnet från resurserna och ritar det till sidan.
 
 ```csharp
 XImage ximage = page.Resources.Images[page.Resources.Images.Count];
@@ -124,7 +124,7 @@ int lowerLeftX = 100;
 int lowerLeftY = 100;
 int upperRightX = 200;
 int upperRightY = 200;
-//Skaffa sidan där bilden behöver läggas till
+// Skaffa sidan där bilden behöver läggas till
 Page page = pdfDocument.Pages[1];
 // Ladda bilden i stream
 FileStream imageStream = new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open);
@@ -150,7 +150,7 @@ Console.WriteLine("\nImage added successfully.\nFile saved at " + dataDir);
 
 ## Slutsats
 
-I den här handledningen lärde vi oss hur man lägger till en bild i ett PDF-dokument med Aspose.PDF för .NET. Vi har täckt varje steg i detalj, från att öppna dokumentet till att spara den uppdaterade versionen. Genom att följa den här guiden bör du nu kunna bädda in bilder i dina PDF-filer programmatiskt med C# och Aspose.PDF.
+den här handledningen lärde vi oss hur man lägger till en bild i ett PDF-dokument med Aspose.PDF för .NET. Vi har täckt varje steg i detalj, från att öppna dokumentet till att spara den uppdaterade versionen. Genom att följa den här guiden bör du nu kunna bädda in bilder i dina PDF-filer programmatiskt med C# och Aspose.PDF.
 
 ### Vanliga frågor för att lägga till bild i PDF-fil
 
@@ -172,7 +172,7 @@ S: Det medföljande kodexemplet förutsätter att du laddar en JPG-bild (`aspose
 
 #### F: Hur säkerställer jag att den tillagda bilden passar inom de angivna koordinaterna?
 
- S: Se till att justera koordinaterna och storleken på`Rectangle` objekt (`rectangle`för att matcha bildens mått och önskad placering på sidan.
+ S: Se till att justera koordinaterna och storleken på`Rectangle` objekt (`rectangle`) för att matcha bildens mått och önskad placering på sidan.
 
 #### F: Kan jag lägga till flera bilder på en enda PDF-sida?
 
@@ -188,7 +188,7 @@ S: Om bildfilen inte hittas på den angivna sökvägen kommer koden att skapa et
 
 #### F: Kan jag anpassa bildens placering och utseende ytterligare?
 
- S: Ja, du kan anpassa bildens utseende genom att ändra`Matrix`objekt och justering av andra operatorer i koden. Se Aspose.PDF-dokumentationen för avancerad anpassning.
+ S: Ja, du kan anpassa bildens utseende genom att ändra`Matrix` objekt och justering av andra operatorer i koden. Se Aspose.PDF-dokumentationen för avancerad anpassning.
 
 #### F: Hur kan jag testa om bilden har lagts till i PDF-filen?
 

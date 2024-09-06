@@ -22,7 +22,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Krok 2: Otevření dokumentu PDF
 
- tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF.
+ V tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "TextField.pdf");
@@ -81,11 +81,11 @@ Nezapomeňte zadat úplnou cestu a název souboru pro upravený PDF.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Otevřete dokument
 Document pdfDocument = new Document(dataDir + "TextField.pdf");
-// Vytvořte pole
+//Vytvořte pole
 TextBoxField textBoxField = new TextBoxField(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(100, 200, 300, 300));
 textBoxField.PartialName = "textbox1";
 textBoxField.Value = "Text Box";
-//TextBoxField.Border = new Border(
+// TextBoxField.Border = new Border(
 Border border = new Border(textBoxField);
 border.Width = 5;
 border.Dash = new Dash(1, 1);

@@ -1,6 +1,6 @@
 ---
-title: Rejtett szöveg hozzáadása és keresése PDF fájlban
-linktitle: Rejtett szöveg hozzáadása és keresése PDF fájlban
+title: Rejtett szöveg hozzáadása és keresése PDF-fájlban
+linktitle: Rejtett szöveg hozzáadása és keresése PDF-fájlban
 second_title: Aspose.PDF for .NET API Reference
 description: Útmutató lépésről lépésre rejtett szöveg hozzáadásához és kereséséhez PDF-fájlban az Aspose.PDF for .NET használatával.
 type: docs

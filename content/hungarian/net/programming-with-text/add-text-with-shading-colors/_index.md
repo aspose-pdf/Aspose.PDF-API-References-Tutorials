@@ -51,7 +51,7 @@ TextFragment textFragment = absorb.TextFragments[1];
 ```
 
 ## 6. lépés: Állítsa be a szöveg árnyékolási színét
- Újat csinálni`Color` objektumot egy minta színterével, és adja meg a színátmenet árnyékoló színeit. Rendelje hozzá ezt a színt a`ForegroundColor` tulajdona a`TextState` a`TextFragment` tárgy.
+ Hozzon létre egy újat`Color` objektumot egy minta színterével, és adja meg a színátmenet árnyékoló színeit. Rendelje hozzá ezt a színt a`ForegroundColor` tulajdona a`TextState` a`TextFragment` objektum.
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
@@ -61,14 +61,14 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 ```
 
 ## 7. lépés: További szövegformázás alkalmazása (opcionális)
- A szövegrész tulajdonságainak módosításával további formázást is alkalmazhat a szövegrészleten, például aláhúzást`TextState` tárgy.
+ A szövegrész tulajdonságainak módosításával további formázást is alkalmazhat a szövegrészleten, például aláhúzást`TextState` objektum.
 
 ```csharp
 textFragment.TextState.Underline = true;
 ```
 
 ## 8. lépés: Mentse el a módosított PDF dokumentumot
- Mentse el a módosított PDF dokumentumot a`Save` módszere a`Document` tárgy.
+ Mentse el a módosított PDF dokumentumot a`Save` módszere a`Document` objektum.
 
 ```csharp
 pdfDocument.Save(dataDir + "text_out.pdf");
@@ -100,7 +100,7 @@ Az Aspose.PDF for .NET segítségével sikeresen hozzáadott árnyékoló színe
 
 #### K: Mi a fő hangsúly ebben az oktatóanyagban?
 
-V: Ez az oktatóanyag végigvezeti Önt az Aspose.PDF for .NET könyvtár használatával árnyékoló színekkel történő szöveg hozzáadásának folyamatán. A mellékelt C# forráskód bemutatja az ehhez szükséges lépéseket.
+V: Ez az oktatóanyag végigvezeti Önt az Aspose.PDF for .NET könyvtár használatával árnyékoló színekkel ellátott szöveg hozzáadásának folyamatán. A mellékelt C# forráskód bemutatja az ehhez szükséges lépéseket.
 
 #### K: Milyen névtereket kell importálnom ehhez az oktatóanyaghoz?
 
@@ -139,7 +139,7 @@ TextFragment textFragment = absorber.TextFragments[1];
 
 #### K: Hogyan állíthatom be a szöveg árnyékoló színeit?
 
- V: A 6. lépésben újat hoz létre`Color` objektumot egy minta színterével, és adja meg a színátmenet árnyékoló színeit. Rendelje hozzá ezt a színt a`ForegroundColor` tulajdona a`TextState` a`TextFragment` tárgy:
+ V: A 6. lépésben újat hoz létre`Color` objektumot egy minta színterével, és adja meg a színátmenet árnyékoló színeit. Rendelje hozzá ezt a színt a`ForegroundColor` tulajdona a`TextState` a`TextFragment` objektum:
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
@@ -150,7 +150,7 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 
 #### K: Alkalmazhatok-e további szövegformázást a módosított szövegre?
 
- V: Igen, a 7. lépésben további szövegformázást, például aláhúzást is alkalmazhat a`TextState` tárgy:
+ V: Igen, a 7. lépésben további szövegformázást, például aláhúzást is alkalmazhat a`TextState` objektum:
 
 ```csharp
 textFragment.TextState.Underline = true;
@@ -158,7 +158,7 @@ textFragment.TextState.Underline = true;
 
 #### K: Hogyan menthetem el a módosított PDF dokumentumot?
 
- V: A 8. lépésben a módosított PDF-dokumentumot a`Save` módszere a`Document` tárgy:
+ V: A 8. lépésben a módosított PDF-dokumentumot a`Save` módszere a`Document` objektum:
 
 ```csharp
 pdfDocument.Save(dataDir + "text_out.pdf");

@@ -1,13 +1,13 @@
 ---
-title: Tabel vervangen in PDF-document
-linktitle: Tabel vervangen in PDF-document
+title: Vervang tabel in PDF-document
+linktitle: Vervang tabel in PDF-document
 second_title: Aspose.PDF voor .NET API-referentie
 description: Leer hoe u een tabel in een PDF-document vervangt met Aspose.PDF voor .NET.
 type: docs
 weight: 180
 url: /nl/net/programming-with-tables/replace-table/
 ---
-In deze zelfstudie begeleiden we u stap voor stap bij het vervangen van een tabel in een PDF-document met Aspose.PDF voor .NET. We leggen de meegeleverde C#-broncode uit en laten u zien hoe u deze kunt implementeren.
+In deze tutorial begeleiden we u stap voor stap bij het vervangen van een tabel in een PDF-document met Aspose.PDF voor .NET. We leggen de meegeleverde C#-broncode uit en laten zien hoe u deze implementeert.
 
 ## Stap 1: Het bestaande PDF-document laden
 Eerst moet u het bestaande PDF-document laden met behulp van de volgende code:
@@ -28,19 +28,19 @@ Vervolgens maken we een TableAbsorber-object om de tabellen in het PDF-document 
 TableAbsorber absorber = new TableAbsorber();
 ```
 
-## Stap 3: Bezoek de eerste pagina met het absorber
-We gaan nu naar de eerste pagina van het PDF-document met behulp van de absorber:
+## Stap 3: Bezoek de eerste pagina met de absorber
+We gaan nu de eerste pagina van het PDF-document bekijken met behulp van de absorber:
 
 ```csharp
 // Bezoek de eerste pagina met de absorber
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
-## Stap 4: De eerste tabel op de pagina ophalen
+## Stap 4: De eerste tabel op de pagina krijgen
 Om de tabel te kunnen vervangen, verkrijgen we de eerste tabel van de pagina:
 
 ```csharp
-// Haal de eerste tabel op de pagina op
+// Haal de eerste tabel op de pagina
 AbsorbedTable table = absorb.TableList[0];
 ```
 
@@ -58,11 +58,11 @@ row. Cells. Add("Col 2");
 row. Cells. Add("Col 3");
 ```
 
-## Stap 6: De bestaande tafel vervangen door de nieuwe tafel
-We zullen nu de bestaande tabel vervangen door de nieuwe tabel op de eerste pagina van het document:
+## Stap 6: De bestaande tabel vervangen door de nieuwe tabel
+We vervangen nu de bestaande tabel door de nieuwe tabel op de eerste pagina van het document:
 
 ```csharp
-// Vervang de tafel door de nieuwe tafel
+// Vervang de tabel door de nieuwe tabel
 absorb.Replace(pdfDocument.Pages[1], table, newTable);
 ```
 
@@ -73,7 +73,7 @@ Ten slotte slaan we het gewijzigde PDF-document op:
 pdfDocument.Save(dataDir + "TableReplaced_out.pdf");
 ```
 
-### Voorbeeldbroncode voor het vervangen van een tabel met Aspose.PDF voor .NET
+### Voorbeeldbroncode voor Vervang tabel met behulp van Aspose.PDF voor .NET
 
 ```csharp
 // Het pad naar de documentenmap.
@@ -88,7 +88,7 @@ TableAbsorber absorber = new TableAbsorber();
 // Bezoek de eerste pagina met absorber
 absorber.Visit(pdfDocument.Pages[1]);
 
-// Ontvang de eerste tabel op de pagina
+// Krijg de eerste tabel op de pagina
 AbsorbedTable table = absorber.TableList[0];
 
 // Nieuwe tabel maken
@@ -101,34 +101,34 @@ row.Cells.Add("Col 1");
 row.Cells.Add("Col 2");
 row.Cells.Add("Col 3");
 
-// Vervang de tafel door een nieuwe
+// Vervang de tabel door een nieuwe
 absorber.Replace(pdfDocument.Pages[1], table, newTable);
 
-// Bewaar document
+// Document opslaan
 pdfDocument.Save(dataDir + "TableReplaced_out.pdf");
 ```
 
 ## Conclusie
-Gefeliciteerd! U hebt nu geleerd hoe u een tabel in een PDF-document kunt vervangen met Aspose.PDF voor .NET. In deze stapsgewijze handleiding werd uitgelegd hoe u het document laadt, de bestaande tabel zoekt, een nieuwe tabel maakt en deze vervangt. Nu kunt u deze kennis toepassen op uw eigen projecten.
+Gefeliciteerd! U hebt nu geleerd hoe u een tabel in een PDF-document vervangt met Aspose.PDF voor .NET. Deze stapsgewijze handleiding liet u zien hoe u het document laadt, de bestaande tabel vindt, een nieuwe tabel maakt en deze vervangt. Nu kunt u deze kennis toepassen op uw eigen projecten.
 
-### Veelgestelde vragen over het vervangen van de tabel in een PDF-document
+### FAQ's voor het vervangen van een tabel in een PDF-document
 
-#### Vraag: Kan ik op deze manier meerdere tabellen in hetzelfde PDF-document vervangen?
+#### V: Kan ik met deze aanpak meerdere tabellen in hetzelfde PDF-document vervangen?
 
- A: Ja, u kunt meerdere tabellen in hetzelfde PDF-document vervangen door hetzelfde proces te volgen voor elke tabel die u wilt vervangen. Na het verkrijgen van de`AbsorbedTable` object voor elke tabel met behulp van de`TableAbsorber` , kunt u overeenkomstige nieuwe tabellen maken en vervolgens de`absorber.Replace()` methode om elke bestaande tabel te vervangen door de betreffende nieuwe tabel.
+ A: Ja, u kunt meerdere tabellen in hetzelfde PDF-document vervangen door hetzelfde proces te volgen voor elke tabel die u wilt vervangen. Nadat u de`AbsorbedTable` object voor elke tabel met behulp van de`TableAbsorber` , kunt u overeenkomstige nieuwe tabellen maken en vervolgens de`absorber.Replace()` Methode om elke bestaande tabel te vervangen door de bijbehorende nieuwe tabel.
 
-#### Vraag: Wat gebeurt er als de nieuwe tabel een ander aantal kolommen heeft dan de oorspronkelijke tabel?
+#### V: Wat gebeurt er als de nieuwe tabel een ander aantal kolommen heeft dan de oorspronkelijke tabel?
 
-A: Als de nieuwe tabel een ander aantal kolommen heeft dan de oorspronkelijke tabel, kan dit leiden tot onverwacht gedrag of lay-outproblemen in het gewijzigde PDF-document. Het is essentieel om ervoor te zorgen dat de structuur van de nieuwe tabel (aantal kolommen en hun breedte) overeenkomt met de structuur van de oorspronkelijke tabel, zodat deze naadloos kan worden vervangen.
+A: Als de nieuwe tabel een ander aantal kolommen heeft dan de originele tabel, kan dit leiden tot onverwacht gedrag of lay-outproblemen in het aangepaste PDF-document. Het is essentieel om ervoor te zorgen dat de structuur van de nieuwe tabel (aantal kolommen en hun breedtes) overeenkomt met de structuur van de originele tabel voor naadloze vervanging.
 
-#### Vraag: Kan ik een tabel op een specifieke pagina, anders dan de eerste pagina, vervangen?
+#### V: Kan ik een tabel op een specifieke pagina vervangen, niet op de eerste pagina?
 
- A: Ja, u kunt een tabel op een specifieke pagina, anders dan de eerste pagina, vervangen door de pagina-index in het`pdfDocument.Pages[]` methodeaanroep bij het verkrijgen van de`AbsorbedTable` voorwerp. Als u bijvoorbeeld een tabel op de tweede pagina wilt vervangen, gebruikt u`pdfDocument.Pages[2]`.
+ A: Ja, u kunt een tabel op een specifieke pagina vervangen, behalve op de eerste pagina, door de pagina-index in de tabel te wijzigen.`pdfDocument.Pages[]` methodeaanroep bij het verkrijgen van de`AbsorbedTable` object. Om bijvoorbeeld een tabel op de tweede pagina te vervangen, zou u`pdfDocument.Pages[2]`.
 
-#### Vraag: Kan ik het uiterlijk van de nieuwe tabel aanpassen, bijvoorbeeld door achtergrondkleur of randen toe te voegen?
+#### V: Kan ik het uiterlijk van de nieuwe tabel aanpassen, bijvoorbeeld door een achtergrondkleur of randen toe te voegen?
 
- A: Ja, u kunt het uiterlijk van de nieuwe tabel aanpassen door verschillende eigenschappen van de tabel in te stellen`Table` en zijn cellen. U kunt bijvoorbeeld de`BackgroundColor` eigenschap van cellen om achtergrondkleur toe te voegen. U kunt ook de`DefaultCellBorder` eigenschap van de nieuwe tabel of individuele cellen om randen toe te voegen.
+ A: Ja, u kunt het uiterlijk van de nieuwe tabel aanpassen door verschillende eigenschappen van de tabel in te stellen.`Table` en de cellen ervan. U kunt bijvoorbeeld de`BackgroundColor` eigenschap van cellen om achtergrondkleur toe te voegen. U kunt ook de`DefaultCellBorder` eigenschap van de nieuwe tabel of afzonderlijke cellen om randen toe te voegen.
 
-#### Vraag: Heeft het vervangen van een tabel invloed op de inhoudsindeling van de rest van het PDF-document?
+#### V: Heeft het vervangen van een tabel invloed op de lay-out van de rest van het PDF-document?
 
-A: Het vervangen van een tabel kan van invloed zijn op de lay-out van de inhoud als de grootte of structuur van de nieuwe tabel aanzienlijk verschilt van de oorspronkelijke tabel. De rest van de inhoud op de pagina wordt opnieuw geplaatst om plaats te bieden aan de nieuwe tabel. Het is essentieel om de nieuwe tafel zorgvuldig te ontwerpen, zodat deze naadloos binnen de bestaande indeling past, om eventuele indelingsproblemen te voorkomen.
+A: Het vervangen van een tabel kan de lay-out van de inhoud beïnvloeden als de grootte of structuur van de nieuwe tabel aanzienlijk verschilt van de oorspronkelijke tabel. De rest van de inhoud op de pagina zal opnieuw worden ingedeeld om de nieuwe tabel te accommoderen. Het is essentieel om de nieuwe tabel zorgvuldig te ontwerpen zodat deze naadloos past binnen de bestaande lay-out om lay-outproblemen te voorkomen.

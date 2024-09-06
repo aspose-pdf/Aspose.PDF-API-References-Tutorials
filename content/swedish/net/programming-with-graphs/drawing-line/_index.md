@@ -13,7 +13,7 @@ Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utveckl
 
 ## Steg 1: Installation av dokumentkatalog
 
-den medföljande källkoden måste du ange katalogen där du vill spara den resulterande PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
+I den medföljande källkoden måste du ange katalogen där du vill spara den resulterande PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -38,7 +38,7 @@ pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom =
 
 ## Steg 4: Skapa ett grafobjekt och den första raden
 
-Vi skapar ett Graph-objekt med dimensioner lika med sidans och ritar den första linjen som går från det nedre vänstra hörnet till det övre högra hörnet på sidan.
+Vi skapar ett Graph-objekt med dimensioner som är lika med sidans och ritar den första linjen som går från det nedre vänstra hörnet till det övre högra hörnet på sidan.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width, (float)pg.PageInfo.Height);
@@ -104,7 +104,7 @@ Console.WriteLine("\nLine drawn successfully across the page.\nFile saved at " +
 
 ## Slutsats
 
-I den här handledningen förklarade vi hur man ritar en linje med Aspose.PDF för .NET. Du kan nu använda denna kunskap för att skapa geometriska former med anpassade linjer i dina PDF-filer.
+den här handledningen förklarade vi hur man ritar en linje med Aspose.PDF för .NET. Du kan nu använda denna kunskap för att skapa geometriska former med anpassade linjer i dina PDF-filer.
 
 ### FAQ's
 
@@ -130,7 +130,7 @@ S: Ja, du kan anpassa utseendet på linjerna genom att ändra egenskaperna för 
 
 #### F: Hur sparar jag PDF-dokumentet efter att ha ritat linjerna?
 
-S: Efter att ha lagt till Graph-objektet med linjeobjekt på sidan kan du spara det resulterande PDF-dokumentet med hjälp av`pDoc.Save(dataDir + "DrawingLine_out.pdf");` rad i den medföljande källkoden.
+ S: Efter att ha lagt till Graph-objektet med linjeobjekt på sidan kan du spara det resulterande PDF-dokumentet med hjälp av`pDoc.Save(dataDir + "DrawingLine_out.pdf");` rad i den medföljande källkoden.
 
 #### F: Kan jag rita linjer med olika vinklar och orienteringar?
 

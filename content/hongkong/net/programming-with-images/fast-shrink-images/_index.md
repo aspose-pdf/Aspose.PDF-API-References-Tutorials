@@ -98,7 +98,7 @@ Console.WriteLine("\nImage fast shrinked successfully.\nFile saved at " + dataDi
 
 #### Q：影像壓縮在 PDF 文件中具有哪些優勢？
 
-答：PDF 文件中的影像壓縮有助於最小化文件大小，同時保持可接受的影像質量，從而加快載入時間、降低儲存要求並提高資料傳輸效率。
+答：PDF 文件中的影像壓縮有助於最大限度地減少文件大小，同時保持可接受的影像質量，從而縮短載入時間、降低儲存要求並提高資料傳輸效率。
 
 #### Q：Aspose.PDF for .NET 如何促進 PDF 檔案中影像尺寸的快速減少？
 

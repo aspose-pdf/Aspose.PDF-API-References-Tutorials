@@ -150,7 +150,7 @@ Odpověď: Ano, můžete upravit zarovnání textu pro různé části dokumentu
 
 #### Otázka: Mohu pomocí tohoto přístupu zarovnat text pod různými úhly nebo orientací?
 
- Odpověď: I když se tento tutoriál zaměřuje na zarovnání na střed, můžete jej upravit`RotationAngle` vlastnictvím`TextStamp` objekt k zarovnání textu v různých úhlech nebo orientacích, čímž se dosáhne efektů, jako je diagonální nebo vertikální zarovnání.
+ Odpověď: I když se tento tutoriál zaměřuje na zarovnání na střed, můžete jej upravit`RotationAngle` majetek z`TextStamp` objekt k zarovnání textu v různých úhlech nebo orientacích, čímž se dosáhne efektů, jako je diagonální nebo vertikální zarovnání.
 
 #### Otázka: Co když chci jinak zarovnat text na různých stránkách dokumentu PDF?
 

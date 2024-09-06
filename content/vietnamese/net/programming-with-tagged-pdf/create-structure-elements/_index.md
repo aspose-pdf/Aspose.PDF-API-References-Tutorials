@@ -1,13 +1,13 @@
 ---
-title: Tạo các phần tử cấu trúc
-linktitle: Tạo các phần tử cấu trúc
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Trong hướng dẫn này, bạn sẽ tìm hiểu cách sử dụng Aspose.PDF cho .NET để tạo các thành phần cấu trúc trong tài liệu PDF được gắn thẻ.
+title: Tạo các thành phần cấu trúc
+linktitle: Tạo các thành phần cấu trúc
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Trong hướng dẫn này, bạn sẽ học cách sử dụng Aspose.PDF cho .NET để tạo các thành phần cấu trúc trong tài liệu PDF được gắn thẻ.
 type: docs
 weight: 60
 url: /vi/net/programming-with-tagged-pdf/create-structure-elements/
 ---
-Mã nguồn C# sau đây sử dụng Aspose.PDF for .NET để tạo các phần tử cấu trúc. Thực hiện theo các bước dưới đây để hiểu cách hoạt động của mã.
+Mã nguồn C# sau đây sử dụng Aspose.PDF cho .NET để tạo các thành phần cấu trúc. Thực hiện theo các bước dưới đây để hiểu cách mã hoạt động.
 
 ## Bước 1: Nhập các thư viện cần thiết
 
@@ -15,13 +15,13 @@ Mã nguồn C# sau đây sử dụng Aspose.PDF for .NET để tạo các phần
 using Aspose.Pdf;
 ```
 
-## Bước 2: Xác định thư mục chứa tài liệu của bạn
+## Bước 2: Xác định thư mục tài liệu của bạn
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-Hãy chắc chắn chỉ định đường dẫn chính xác đến thư mục tài liệu của bạn.
+Hãy chắc chắn rằng bạn chỉ định đúng đường dẫn đến thư mục tài liệu của mình.
 
 ## Bước 3: Tạo tài liệu PDF
 
@@ -31,22 +31,22 @@ Document document = new Document();
 
 Chúng tôi tạo một đối tượng Tài liệu mới đại diện cho tài liệu PDF.
 
-## Bước 4: Làm cho nội dung hoạt động với TaggedPdf
+## Bước 4: Sử dụng nội dung để làm việc với TaggedPdf
 
 ```csharp
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-Chúng tôi truy xuất nội dung được gắn thẻ của tài liệu PDF. Điều này sẽ cho phép chúng ta thao tác các yếu tố cấu trúc.
+Chúng tôi lấy lại nội dung được gắn thẻ của tài liệu PDF. Điều này sẽ cho phép chúng tôi thao tác các thành phần cấu trúc.
 
-## Bước 5: Đặt tiêu đề và ngôn ngữ tài liệu
+## Bước 5: Đặt tiêu đề và ngôn ngữ cho tài liệu
 
 ```csharp
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-Chúng tôi đặt tiêu đề và ngôn ngữ của tài liệu PDF được gắn thẻ. Điều này cải thiện khả năng tiếp cận của tài liệu.
+Chúng tôi đặt tiêu đề và ngôn ngữ của tài liệu PDF được gắn thẻ. Điều này cải thiện khả năng truy cập của tài liệu.
 
 ## Bước 6: Tạo các phần tử nhóm
 
@@ -64,7 +64,7 @@ NonStructElement nonStructElement = taggedContent.CreateNonStructElement();
 PrivateElement privateElement = taggedContent.CreatePrivateElement();
 ```
 
-Chúng tôi tạo các thành phần cấu trúc khác nhau để nhóm nội dung trong tài liệu PDF.
+Chúng tôi tạo ra các thành phần cấu trúc khác nhau để nhóm nội dung trong tài liệu PDF.
 
 ## Bước 7: Tạo các thành phần cấu trúc đoạn văn
 
@@ -74,9 +74,9 @@ HeaderElement headerElement = taggedContent.CreateHeaderElement();
 HeaderElement h1Element = taggedContent.CreateHeaderElement(1);
 ```
 
-Chúng tôi tạo các phần tử cấu trúc cấp khối cho các đoạn văn và tiêu đề. Ví dụ trên cho thấy việc tạo tiêu đề cấp 1.
+Chúng tôi tạo các thành phần cấu trúc cấp khối cho các đoạn văn và tiêu đề. Ví dụ trên cho thấy việc tạo tiêu đề cấp 1.
 
-## Bước 8: Tạo các phần tử cấu trúc cấp độ nội tuyến
+## Bước 8: Tạo các thành phần cấu trúc cấp độ nội tuyến
 
 ```csharp
 SpanElement spanElement = taggedContent.CreateSpanElement();
@@ -84,18 +84,18 @@ QuoteElement quoteElement = taggedContent.CreateQuoteElement();
 NoteElement noteElement = taggedContent.CreateNoteElement();
 ```
 
-Chúng tôi tạo các phần tử cấu trúc cấp độ nội tuyến cho các phần văn bản xuất hiện bên trong đoạn văn hoặc tiêu đề.
+Chúng tôi tạo các thành phần cấu trúc cấp độ nội tuyến cho các phần văn bản xuất hiện bên trong đoạn văn hoặc tiêu đề.
 
-## Bước 9: Tạo các yếu tố cấu trúc tác phẩm nghệ thuật
+## Bước 9: Tạo các thành phần cấu trúc tác phẩm nghệ thuật
 
 ```csharp
 FigureElement figureElement = taggedContent.CreateFigureElement();
 FormulaElement formulaElement = taggedContent.CreateFormulaElement();
 ```
 
-Chúng tôi tạo ra các yếu tố cấu trúc cho các hình minh họa và công thức toán học có trong tài liệu.
+Chúng tôi tạo ra các thành phần cấu trúc cho các hình ảnh minh họa và công thức toán học có trong tài liệu.
 
-## Bước 10: Lưu tài liệu PDF được gắn thẻ
+## Bước 10: Lưu tài liệu PDF đã gắn thẻ
 
 ```csharp
 document.Save(dataDir + "StructureElements.pdf");
@@ -103,20 +103,20 @@ document.Save(dataDir + "StructureElements.pdf");
 
 Chúng tôi lưu tài liệu PDF được gắn thẻ với các thành phần cấu trúc đã tạo.
 
-### Mã nguồn mẫu để Tạo các thành phần cấu trúc bằng Aspose.PDF cho .NET 
+### Mã nguồn mẫu cho Create Structure Elements sử dụng Aspose.PDF cho .NET 
 
 ```csharp
 
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Tạo tài liệu PDF
+// Tạo Tài Liệu PDF
 Document document = new Document();
-// Nhận nội dung để làm việc với TaggedPdf
+// Nhận nội dung cho công việc với TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
-// Đặt tiêu đề và ngôn ngữ cho Documnet
+// Đặt Tiêu đề và Ngôn ngữ cho Documnet
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
-// Tạo các phần tử nhóm
+// Tạo nhóm các phần tử
 PartElement partElement = taggedContent.CreatePartElement();
 ArtElement artElement = taggedContent.CreateArtElement();
 SectElement sectElement = taggedContent.CreateSectElement();
@@ -128,15 +128,15 @@ TOCIElement tociElement = taggedContent.CreateTOCIElement();
 IndexElement indexElement = taggedContent.CreateIndexElement();
 NonStructElement nonStructElement = taggedContent.CreateNonStructElement();
 PrivateElement privateElement = taggedContent.CreatePrivateElement();
-// Tạo các phần tử cấu trúc cấp khối văn bản
+// Tạo các thành phần cấu trúc cấp khối văn bản
 ParagraphElement paragraphElement = taggedContent.CreateParagraphElement();
 HeaderElement headerElement = taggedContent.CreateHeaderElement();
 HeaderElement h1Element = taggedContent.CreateHeaderElement(1);
-// Tạo các phần tử cấu trúc cấp độ nội tuyến của văn bản
+// Tạo các thành phần cấu trúc cấp độ nội tuyến văn bản
 SpanElement spanElement = taggedContent.CreateSpanElement();
 QuoteElement quoteElement = taggedContent.CreateQuoteElement();
 NoteElement noteElement = taggedContent.CreateNoteElement();
-// Tạo các phần tử cấu trúc minh họa
+// Tạo các thành phần cấu trúc minh họa
 FigureElement figureElement = taggedContent.CreateFigureElement();
 FormulaElement formulaElement = taggedContent.CreateFormulaElement();
 // Các phương pháp đang được phát triển
@@ -150,53 +150,53 @@ AnnotElement annotElement = taggedContent.CreateAnnotElement();
 RubyElement rubyElement = taggedContent.CreateRubyElement();
 WarichuElement warichuElement = taggedContent.CreateWarichuElement();
 FormElement formElement = taggedContent.CreateFormElement();
-// Lưu tài liệu PDF được gắn thẻ
+// Lưu tài liệu PDF có gắn thẻ
 document.Save(dataDir + "StructureElements.pdf");
 
 ```
 
 ## Phần kết luận
 
-Trong hướng dẫn này, chúng ta đã học cách sử dụng Aspose.PDF cho .NET để tạo các thành phần cấu trúc trong tài liệu PDF được gắn thẻ. Các thành phần cấu trúc giúp cải thiện khả năng truy cập tài liệu và sắp xếp nội dung theo cách có ý nghĩa. Giờ đây, bạn có thể sử dụng kiến thức này để tạo các tài liệu PDF có cấu trúc, dễ điều hướng.
+Trong hướng dẫn này, chúng ta đã học cách sử dụng Aspose.PDF cho .NET để tạo các thành phần cấu trúc trong tài liệu PDF được gắn thẻ. Các thành phần cấu trúc giúp cải thiện khả năng truy cập tài liệu và sắp xếp nội dung theo cách có ý nghĩa. Bây giờ bạn có thể sử dụng kiến thức này để tạo các tài liệu PDF có cấu trúc, dễ điều hướng.
 
 ### Câu hỏi thường gặp
 
-#### Câu hỏi: Mục đích của việc tạo các thành phần cấu trúc trong tài liệu PDF bằng Aspose.PDF cho .NET là gì?
+#### H: Mục đích của việc tạo các thành phần cấu trúc trong tài liệu PDF bằng Aspose.PDF cho .NET là gì?
 
-Trả lời: Tạo các thành phần cấu trúc trong tài liệu PDF bằng Aspose.PDF cho .NET giúp nâng cao khả năng truy cập và tổ chức nội dung của tài liệu. Các phần tử cấu trúc cung cấp cấu trúc phân cấp giúp cải thiện khả năng điều hướng, ngữ nghĩa và khả năng tương thích với các công nghệ hỗ trợ.
+A: Tạo các thành phần cấu trúc trong tài liệu PDF bằng Aspose.PDF cho .NET giúp tăng cường khả năng truy cập và tổ chức nội dung của tài liệu. Các thành phần cấu trúc cung cấp cấu trúc phân cấp giúp cải thiện điều hướng, ngữ nghĩa và khả năng tương thích với các công nghệ hỗ trợ.
 
-#### Câu hỏi: Mã C# được cung cấp tạo ra các thành phần cấu trúc trong tài liệu PDF như thế nào?
+#### H: Mã C# được cung cấp tạo ra các thành phần cấu trúc trong tài liệu PDF như thế nào?
 
-Đáp: Ví dụ về mã trình bày cách tạo nhiều loại phần tử cấu trúc khác nhau, bao gồm các phần tử nhóm (chẳng hạn như các phần, phần và div), các phần tử cấp khối (như đoạn văn và tiêu đề), các phần tử cấp độ nội tuyến (span, quote, note ) và các yếu tố tác phẩm nghệ thuật (chẳng hạn như số liệu và công thức). Những yếu tố cấu trúc này giúp tổ chức nội dung.
+A: Ví dụ mã trình bày cách tạo nhiều loại phần tử cấu trúc khác nhau, bao gồm các phần tử nhóm (như phần, mục và div), các phần tử cấp khối (như đoạn văn và tiêu đề), các phần tử cấp nội tuyến (khoảng, trích dẫn, ghi chú) và các phần tử tác phẩm nghệ thuật (như hình và công thức). Các phần tử cấu trúc này giúp sắp xếp nội dung.
 
-####  Hỏi: Tại sao việc đặt tiêu đề và ngôn ngữ của tài liệu bằng cách sử dụng`SetTitle` and `SetLanguage` methods?
+####  Q: Tại sao việc thiết lập tiêu đề và ngôn ngữ của tài liệu bằng cách sử dụng`SetTitle` and `SetLanguage` methods?
 
- Đáp: Đặt tiêu đề và ngôn ngữ của tài liệu bằng cách sử dụng`SetTitle` Và`SetLanguage`phương pháp cải thiện khả năng tiếp cận tài liệu và ngữ nghĩa. Tiêu đề cung cấp mô tả ngắn gọn về mục đích của tài liệu, trong khi thuộc tính ngôn ngữ nâng cao khả năng hiển thị và khả năng truy cập theo ngôn ngữ cụ thể.
+ A: Thiết lập tiêu đề và ngôn ngữ của tài liệu bằng cách sử dụng`SetTitle` Và`SetLanguage`phương pháp cải thiện khả năng truy cập và ngữ nghĩa của tài liệu. Tiêu đề cung cấp mô tả ngắn gọn về mục đích của tài liệu, trong khi thuộc tính ngôn ngữ tăng cường khả năng hiển thị và khả năng truy cập theo ngôn ngữ cụ thể.
 
-####  Hỏi: Làm cách nào để nhóm các phần tử, chẳng hạn như`PartElement` and `SectElement`, contribute to the structure of the PDF document?
+####  Q: Làm thế nào để nhóm các yếu tố, chẳng hạn như`PartElement` and `SectElement`, contribute to the structure of the PDF document?
 
-Đáp: Việc nhóm các phần tử tạo ra cấu trúc phân cấp trong tài liệu PDF, cho phép bạn sắp xếp và nhóm các nội dung liên quan một cách hợp lý. Điều này tăng cường điều hướng và cung cấp cấu trúc rõ ràng cho người dùng.
+A: Việc nhóm các thành phần tạo ra một cấu trúc phân cấp trong tài liệu PDF, cho phép bạn sắp xếp và nhóm các nội dung liên quan một cách hợp lý. Điều này giúp tăng cường khả năng điều hướng và cung cấp một cấu trúc rõ ràng cho người dùng.
 
-#### Câu hỏi: Các phần tử cấu trúc cấp khối và cấp nội tuyến là gì và chúng khác nhau như thế nào?
+#### H: Các phần tử cấu trúc cấp khối và cấp nội tuyến là gì và chúng khác nhau như thế nào?
 
-Đáp: Các phần tử cấu trúc cấp khối đại diện cho các khối nội dung lớn hơn, chẳng hạn như các đoạn văn và tiêu đề, trong khi các phần tử cấp độ nội tuyến đại diện cho các phần văn bản trong một đoạn văn hoặc tiêu đề, chẳng hạn như các nhịp, dấu ngoặc kép và ghi chú. Chúng giúp xác định thứ bậc và mối quan hệ của nội dung.
+A: Các thành phần cấu trúc cấp khối biểu thị các khối nội dung lớn hơn, chẳng hạn như đoạn văn và tiêu đề, trong khi các thành phần cấp nội tuyến biểu thị các phần văn bản trong một đoạn văn hoặc tiêu đề, chẳng hạn như khoảng, trích dẫn và ghi chú. Chúng giúp xác định thứ bậc và mối quan hệ của nội dung.
 
-####  Hỏi: Làm thế nào để các yếu tố cấu trúc tác phẩm nghệ thuật, như`FigureElement` and `FormulaElement`, contribute to the document?
+####  H: Các yếu tố cấu trúc tác phẩm nghệ thuật như thế nào, chẳng hạn như`FigureElement` and `FormulaElement`, contribute to the document?
 
-Đáp: Các phần tử cấu trúc tác phẩm nghệ thuật cho phép bạn thêm hình minh họa, số liệu và công thức toán học vào tài liệu. Chúng cung cấp một cách có cấu trúc để bao gồm nội dung trực quan và toán học.
+A: Các thành phần cấu trúc tác phẩm nghệ thuật cho phép bạn thêm hình minh họa, hình ảnh và công thức toán học vào tài liệu. Chúng cung cấp một cách có cấu trúc để đưa nội dung trực quan và toán học vào.
 
-#### Câu hỏi: Tôi có thể sử dụng các kỹ thuật tương tự để tạo các loại thành phần cấu trúc khác như danh sách, bảng hoặc chú thích không?
+#### H: Tôi có thể sử dụng các kỹ thuật tương tự để tạo các loại thành phần cấu trúc khác như danh sách, bảng hoặc chú thích không?
 
-Đáp: Có, bạn có thể sử dụng các kỹ thuật tương tự để tạo các loại thành phần cấu trúc khác như danh sách, bảng, chú thích, tham chiếu, v.v. Aspose.PDF cung cấp nhiều phương pháp tạo phần tử cấu trúc.
+A: Có, bạn có thể sử dụng các kỹ thuật tương tự để tạo các loại thành phần cấu trúc khác như danh sách, bảng, chú thích, tham chiếu, v.v. Aspose.PDF cung cấp nhiều phương pháp tạo thành phần cấu trúc.
 
-####  Hỏi: Làm cách nào để lưu tài liệu PDF được gắn thẻ bằng cách sử dụng`Save` method ensure the preservation of structure elements?
+####  Q: Làm thế nào để lưu tài liệu PDF được gắn thẻ bằng cách sử dụng`Save` method ensure the preservation of structure elements?
 
- Đáp: Cái`Save` phương pháp lưu tài liệu PDF cùng với các thành phần cấu trúc đã tạo, đảm bảo rằng cấu trúc phân cấp và ngữ nghĩa của tài liệu được giữ nguyên để truy cập và điều hướng.
+ A: Cái`Save` Phương pháp này lưu tài liệu PDF cùng với các thành phần cấu trúc đã tạo, đảm bảo cấu trúc phân cấp và ngữ nghĩa của tài liệu được bảo toàn để dễ truy cập và điều hướng.
 
-#### Câu hỏi: Các thành phần cấu trúc mang lại lợi ích gì cho tài liệu PDF về khả năng truy cập và khả năng tương thích với các công nghệ hỗ trợ?
+#### H: Các thành phần cấu trúc mang lại lợi ích gì cho tài liệu PDF về mặt khả năng truy cập và khả năng tương thích với các công nghệ hỗ trợ?
 
-Đáp: Các phần tử cấu trúc nâng cao khả năng truy cập bằng cách cung cấp cấu trúc và ngữ nghĩa có ý nghĩa cho tài liệu. Điều này cho phép các công nghệ hỗ trợ như trình đọc màn hình diễn giải và truyền tải nội dung tài liệu hiệu quả hơn tới người dùng khuyết tật.
+A: Các thành phần cấu trúc tăng cường khả năng truy cập bằng cách cung cấp cấu trúc và ngữ nghĩa có ý nghĩa cho tài liệu. Điều này cho phép các công nghệ hỗ trợ như trình đọc màn hình diễn giải và truyền tải nội dung tài liệu hiệu quả hơn cho người dùng khuyết tật.
 
-#### Câu hỏi: Làm cách nào tôi có thể tùy chỉnh và kết hợp thêm các loại thành phần cấu trúc khác nhau trong tài liệu PDF của mình?
+#### H: Tôi có thể tùy chỉnh và kết hợp nhiều loại thành phần cấu trúc khác nhau trong tài liệu PDF của mình như thế nào?
 
-Trả lời: Bạn có thể kết hợp và tùy chỉnh các thành phần cấu trúc bằng cách sử dụng các phương pháp tạo thích hợp do Aspose.PDF cung cấp. Thử nghiệm với các thành phần khác nhau và thuộc tính của chúng để tạo tài liệu PDF có cấu trúc và tổ chức tốt.
+A: Bạn có thể kết hợp và tùy chỉnh các thành phần cấu trúc bằng cách sử dụng các phương pháp tạo phù hợp do Aspose.PDF cung cấp. Thử nghiệm với các thành phần khác nhau và các thuộc tính của chúng để tạo ra một tài liệu PDF có cấu trúc và tổ chức tốt.

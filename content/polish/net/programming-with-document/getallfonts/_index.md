@@ -1,20 +1,20 @@
 ---
 title: Pobierz wszystkie czcionki w pliku PDF
 linktitle: Pobierz wszystkie czcionki w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak używać Aspose.PDF dla .NET, aby programowo uzyskać wszystkie czcionki używane w pliku PDF, korzystając z tego przewodnika krok po kroku i przykładowego kodu.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak używać Aspose.PDF dla .NET, aby programowo pobrać wszystkie czcionki użyte w pliku PDF, korzystając z tego przewodnika krok po kroku i przykładowego kodu.
 type: docs
 weight: 160
 url: /pl/net/programming-with-document/getallfonts/
 ---
-Aspose.PDF dla .NET to potężna biblioteka, która umożliwia programistom programową pracę z plikami PDF. Jedną z funkcji, które zapewnia, jest możliwość pobrania wszystkich czcionek używanych w pliku PDF. Może to być przydatne, jeśli chcesz programowo analizować czcionki w pliku PDF lub manipulować nimi.
+Aspose.PDF dla .NET to potężna biblioteka, która umożliwia programistom programową pracę z plikiem PDF. Jedną z funkcji, które oferuje, jest możliwość pobrania wszystkich czcionek użytych w pliku PDF. Może to być przydatne, jeśli trzeba programowo analizować lub manipulować czcionkami w pliku PDF.
 
-tym samouczku omówimy, jak używać Aspose.PDF dla .NET, aby uzyskać wszystkie czcionki używane w dokumencie PDF. Udostępnimy przewodnik krok po kroku, jak to zrobić, wraz z przykładowym kodem źródłowym.
+W tym samouczku omówimy, jak używać Aspose.PDF dla .NET, aby uzyskać wszystkie czcionki używane w dokumencie PDF. Przedstawimy przewodnik krok po kroku, jak to zrobić, wraz z przykładowym kodem źródłowym.
 
 ## Krok 1: Utwórz nową aplikację konsolową C#
-Aby rozpocząć, utwórz nową aplikację konsolową C# w programie Visual Studio. Możesz nazwać to jak chcesz. Po utworzeniu projektu należy dodać odwołanie do biblioteki Aspose.PDF dla .NET.
+Aby rozpocząć, utwórz nową aplikację konsoli C# w Visual Studio. Możesz nadać jej dowolną nazwę. Po utworzeniu projektu musisz dodać odwołanie do biblioteki Aspose.PDF dla .NET.
 
-## Krok 2: Zaimportuj przestrzeń nazw Aspose.PDF
+## Krok 2: Importuj przestrzeń nazw Aspose.PDF
 Dodaj następujący wiersz kodu na górze pliku C#, aby zaimportować przestrzeń nazw Aspose.PDF:
 
 ```csharp
@@ -45,7 +45,7 @@ foreach (Aspose.Pdf.Text.Font font in fonts)
 }
 ```
 
-### Przykładowy kod źródłowy dla opcji Pobierz wszystkie czcionki przy użyciu Aspose.PDF dla .NET
+### Przykładowy kod źródłowy dla funkcji Pobierz wszystkie czcionki przy użyciu Aspose.PDF dla .NET
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -58,22 +58,22 @@ foreach (Aspose.Pdf.Text.Font font in fonts)
 ```
 
 ## Wniosek
-W tym samouczku omówiliśmy, jak uzyskać wszystkie czcionki używane w dokumencie PDF za pomocą Aspose.PDF dla .NET. Pobranie wszystkich czcionek używanych w dokumencie PDF może być przydatne, jeśli chcesz programowo analizować czcionki w dokumencie PDF lub manipulować nimi. Aspose.PDF dla .NET zapewnia prosty i łatwy w użyciu interfejs API do pracy z dokumentami PDF, w tym pobierania wszystkich czcionek używanych w dokumencie PDF.
+tym samouczku omówiliśmy, jak uzyskać wszystkie czcionki używane w dokumencie PDF za pomocą Aspose.PDF dla .NET. Uzyskanie wszystkich czcionek używanych w dokumencie PDF może być przydatne, jeśli trzeba programowo analizować lub manipulować czcionkami w dokumencie PDF. Aspose.PDF dla .NET zapewnia proste i łatwe w użyciu API do pracy z dokumentami PDF, w tym uzyskiwanie wszystkich czcionek używanych w dokumencie PDF.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
 #### P: Dlaczego muszę pobrać wszystkie czcionki użyte w dokumencie PDF?
 
-O: Pobranie wszystkich czcionek używanych w dokumencie PDF może być przydatne, jeśli trzeba programowo analizować czcionki lub manipulować nimi do różnych celów, takich jak wymiana czcionek lub dostosowywanie czcionek.
+A: Możliwość pobrania wszystkich czcionek użytych w dokumencie PDF może być przydatna, jeśli zachodzi potrzeba programowej analizy lub manipulowania czcionkami w różnych celach, na przykład w celu zamiany lub dostosowania czcionek.
 
-#### P: Jak mogę uzyskać wszystkie czcionki użyte w dokumencie PDF przy użyciu Aspose.PDF dla .NET?
+#### P: W jaki sposób mogę pobrać wszystkie czcionki użyte w dokumencie PDF, korzystając z Aspose.PDF dla platformy .NET?
 
- Odp.: Możesz uzyskać wszystkie czcionki używane w dokumencie PDF za pomocą Aspose.PDF dla .NET, wywołując metodę`GetAllFonts` metoda`FontUtilities` klasa. Ta metoda zwraca tablicę`Aspose.Pdf.Text.Font` obiekty reprezentujące czcionki użyte w dokumencie PDF.
+ A: Możesz uzyskać wszystkie czcionki użyte w dokumencie PDF, korzystając z Aspose.PDF dla .NET, wywołując`GetAllFonts` metoda`FontUtilities` Klasa. Ta metoda zwraca tablicę`Aspose.Pdf.Text.Font` obiekty, które reprezentują czcionki używane w dokumencie PDF.
 
 #### P: Czy mogę filtrować czcionki na podstawie określonych kryteriów?
 
-O: Tak, możesz filtrować czcionki w oparciu o określone kryteria, używając Aspose.PDF dla .NET. Po pobraniu wszystkich czcionek można je programowo przeanalizować i w razie potrzeby zastosować logikę filtrowania.
+A: Tak, możesz filtrować czcionki na podstawie określonych kryteriów, używając Aspose.PDF dla .NET. Po uzyskaniu wszystkich czcionek możesz programowo analizować czcionki i stosować logikę filtrowania w razie potrzeby.
 
 #### P: Czy Aspose.PDF dla .NET jest kompatybilny z różnymi formatami czcionek?
 
-Odp.: Tak, Aspose.PDF dla .NET jest kompatybilny z różnymi formatami czcionek, w tym czcionkami TrueType, OpenType i Type 1. Może pracować z różnymi formatami czcionek i obsługiwać je podczas manipulacji dokumentami PDF.
+A: Tak, Aspose.PDF dla .NET jest kompatybilny z różnymi formatami czcionek, w tym TrueType, OpenType i Type 1. Może współpracować z różnymi formatami czcionek i obsługiwać je podczas manipulacji dokumentem PDF.

@@ -74,7 +74,7 @@ pdfDocument.save("output.pdf");
 
 ### 變更文字顏色
 
-您可以使用 Aspose.PDF 來變更內嵌文字的顏色。就是這樣：
+您可以使用 Aspose.PDF 來變更內嵌文字的顏色。方法如下：
 
 ```java
 textFragment.getTextState().setForegroundColor(Color.getRed());
@@ -144,7 +144,7 @@ link.setAction(new GoToURIAction(new URI("https://www.example.com")));
 
 您可以透過指定適當的 URI 連結到外部資源，例如網站、文件或電子郵件地址。
 
-## 建構 PDF 內容
+## 建立 PDF 內容
 
 現在，讓我們探討如何使用內嵌結構元素有效地建構 PDF 內容。
 

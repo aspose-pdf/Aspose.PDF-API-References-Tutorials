@@ -1,13 +1,13 @@
 ---
-title: Elemen Struktur Sebaris
-linktitle: Elemen Struktur Sebaris
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Panduan langkah demi langkah untuk menggunakan elemen struktur online dengan Aspose.PDF untuk .NET. Atur PDF Anda dengan judul dan paragraf.
+title: Elemen Struktur Inline
+linktitle: Elemen Struktur Inline
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Panduan langkah demi langkah untuk menggunakan elemen struktural daring dengan Aspose.PDF untuk .NET. Atur PDF Anda dengan judul dan paragraf.
 type: docs
 weight: 110
 url: /id/net/programming-with-tagged-pdf/inline-structure-elements/
 ---
-Dalam panduan langkah demi langkah ini, kami akan menunjukkan cara menggunakan elemen struktur sebaris dengan Aspose.PDF untuk .NET. Aspose.PDF adalah perpustakaan canggih yang memungkinkan Anda memanipulasi dokumen PDF secara terprogram. Elemen struktur sebaris memungkinkan Anda membuat struktur hierarki dalam dokumen PDF Anda menggunakan judul dari berbagai tingkat dan paragraf.
+Dalam panduan langkah demi langkah ini, kami akan menunjukkan cara menggunakan elemen struktur sebaris dengan Aspose.PDF untuk .NET. Aspose.PDF adalah pustaka canggih yang memungkinkan Anda memanipulasi dokumen PDF secara terprogram. Elemen struktur sebaris memungkinkan Anda membuat struktur hierarkis dalam dokumen PDF menggunakan tajuk dengan tingkat dan paragraf yang berbeda.
 
 Mari selami kodenya dan pelajari cara menggunakan elemen struktur sebaris dengan Aspose.PDF untuk .NET.
 
@@ -15,12 +15,12 @@ Mari selami kodenya dan pelajari cara menggunakan elemen struktur sebaris dengan
 
 Sebelum memulai, pastikan Anda memiliki hal berikut:
 
-1. Pustaka Aspose.PDF untuk .NET diinstal.
+1. Pustaka Aspose.PDF untuk .NET terpasang.
 2. Pengetahuan dasar tentang bahasa pemrograman C#.
 
 ## Langkah 1: Menyiapkan lingkungan
 
-Untuk memulai, buka lingkungan pengembangan C# Anda dan buat proyek baru. Pastikan Anda telah menambahkan referensi ke perpustakaan Aspose.PDF untuk .NET di proyek Anda.
+Untuk memulai, buka lingkungan pengembangan C# Anda dan buat proyek baru. Pastikan Anda telah menambahkan referensi ke pustaka Aspose.PDF untuk .NET dalam proyek Anda.
 
 ```csharp
 // Jalur ke direktori dokumen.
@@ -38,16 +38,16 @@ Document document = new Document();
 
 ## Langkah 3: Bekerja dengan konten yang diberi tag
 
-Kemudian kita mendapatkan konten dokumen yang diberi tag untuk dikerjakan.
+Lalu, kita dapatkan konten dokumen yang diberi tag untuk dikerjakan.
 
 ```csharp
-// Dapatkan konten dokumen yang diberi tag
+// Dapatkan konten yang ditandai dari dokumen
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
 ## Langkah 4: Tetapkan judul dan bahasa dokumen
 
-Sekarang kita dapat mengatur judul dan bahasa dokumen.
+Sekarang kita dapat mengatur judul dokumen dan bahasa.
 
 ```csharp
 // Tentukan judul dan bahasa dokumen
@@ -57,13 +57,13 @@ taggedContent.SetLanguage("fr-FR");
 
 ## Langkah 5: Tambahkan elemen struktural secara online
 
-Sekarang kita akan menambahkan elemen struktur sebaris seperti judul dari berbagai level dan paragraf ke dokumen kita.
+Sekarang kita akan menambahkan elemen struktur sebaris seperti judul berbagai tingkat dan paragraf ke dokumen kita.
 
 ```csharp
-// Dapatkan elemen struktur root
+// Dapatkan elemen struktur akar
 StructureElement rootElement = taggedContent.RootElement;
 
-// Tambahkan header dari level yang berbeda
+// Tambahkan header dari berbagai level
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
 HeaderElement h3 = taggedContent.CreateHeaderElement(3);
@@ -120,7 +120,7 @@ SpanElement spanH62 = taggedContent.CreateSpanElement();
 spanH62.SetText("Heading level 6");
 h6.AppendChild(spanH62);
 
-// Tambahkan satu paragraf
+// Tambahkan paragraf
 ParagraphElement p = taggedContent.CreateParagraphElement();
 p.SetText("P.");
 rootElement.AppendChild(p);
@@ -158,7 +158,7 @@ span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla pur
 p.AppendChild(span10);
 ```
 
-Di sini kita membuat elemen struktur sebaris, seperti judul pada tingkat yang berbeda dan paragraf, dan menambahkan konten ke dalamnya.
+Di sini kita membuat elemen struktur sebaris, seperti judul berbagai tingkatan dan paragraf, lalu menambahkan konten ke dalamnya.
 
 ## Langkah 6: Simpan dokumen PDF yang diberi tag
 
@@ -182,11 +182,11 @@ Document document = new Document();
 // Dapatkan Konten untuk bekerja dengan TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Tetapkan Judul dan Bahasa untuk Documnet
+// Mengatur Judul dan Bahasa untuk Dokumen
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Dapatkan Elemen Struktur Akar
+// Dapatkan Elemen Struktur Root
 StructureElement rootElement = taggedContent.RootElement;
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
@@ -277,46 +277,46 @@ document.Save(dataDir + "InlineStructureElements.pdf");
 
 ## Kesimpulan
 
-Selamat! Anda telah mempelajari cara menggunakan elemen struktur sebaris dengan Aspose.PDF untuk .NET. Anda sekarang dapat membuat struktur hierarki dalam dokumen PDF Anda dengan menggunakan judul pada tingkat dan paragraf yang berbeda. Jelajahi lebih banyak fitur Aspose.PDF untuk menemukan potensi penuhnya.
+Selamat! Anda telah mempelajari cara menggunakan elemen struktur sebaris dengan Aspose.PDF untuk .NET. Kini Anda dapat membuat struktur hierarkis dalam dokumen PDF Anda dengan menggunakan judul dari berbagai tingkatan dan paragraf. Jelajahi lebih banyak fitur Aspose.PDF untuk menemukan potensi penuhnya.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### T: Apa yang dimaksud dengan elemen struktur sebaris dalam dokumen PDF, dan bagaimana kontribusinya dalam menciptakan struktur hierarki?
+#### T: Apa saja elemen struktur sebaris dalam dokumen PDF, dan bagaimana elemen-elemen tersebut berkontribusi dalam menciptakan struktur hierarkis?
 
-J: Elemen struktur sebaris dalam dokumen PDF, seperti judul pada tingkat dan paragraf yang berbeda, digunakan untuk membuat struktur hierarki yang mengatur dan menyajikan konten secara terstruktur. Elemen-elemen ini memungkinkan Anda membuat hierarki dan aliran informasi yang jelas dalam dokumen.
+A: Elemen struktur sebaris dalam dokumen PDF, seperti judul dengan berbagai tingkatan dan paragraf, digunakan untuk membuat struktur hierarki yang mengatur dan menyajikan konten secara terstruktur. Elemen-elemen ini memungkinkan Anda membuat hierarki dan alur informasi yang jelas dalam dokumen.
 
 #### T: Bagaimana elemen struktur sebaris dapat meningkatkan keterbacaan dan pengorganisasian dokumen PDF?
 
-J: Elemen struktur sebaris, khususnya judul dan paragraf, membantu meningkatkan keterbacaan dan pengorganisasian dokumen PDF dengan menyediakan struktur logis. Judul menunjukkan tingkat kepentingan yang berbeda dan membantu pembaca menavigasi konten, sementara paragraf mengelompokkan informasi terkait.
+A: Elemen struktur sebaris, khususnya judul dan paragraf, membantu meningkatkan keterbacaan dan pengaturan dokumen PDF dengan menyediakan struktur yang logis. Judul menunjukkan berbagai tingkat kepentingan dan membantu pembaca menelusuri konten, sementara paragraf mengelompokkan informasi terkait menjadi satu.
 
 #### T: Bagaimana Aspose.PDF untuk .NET memfasilitasi penggunaan elemen struktur sebaris?
 
-J: Aspose.PDF untuk .NET menawarkan kelas dan metode untuk membuat dan memanipulasi elemen struktur sebaris, seperti judul dan paragraf. Elemen-elemen ini dapat disesuaikan, diatur secara hierarki, dan diperkaya dengan konten untuk meningkatkan presentasi visual dan aksesibilitas dokumen.
+A: Aspose.PDF untuk .NET menawarkan kelas dan metode untuk membuat dan memanipulasi elemen struktur sebaris, seperti judul dan paragraf. Elemen-elemen ini dapat disesuaikan, disusun secara hierarkis, dan diperkaya dengan konten untuk meningkatkan tampilan visual dan aksesibilitas dokumen.
 
 ####  T: Apa tujuan dari`taggedContent` object in relation to inline structure elements?
 
- J: Itu`taggedContent` objek, diperoleh dari`TaggedContent` milik a`Document`, memungkinkan Anda bekerja dengan elemen terstruktur, termasuk elemen struktur sebaris. Ini memungkinkan Anda membuat, menyesuaikan, dan mengatur judul dan paragraf dalam dokumen.
+ Sebuah:`taggedContent` objek, diperoleh dari`TaggedContent` milik suatu`Document`, memungkinkan Anda bekerja dengan elemen terstruktur, termasuk elemen struktur sebaris. Memungkinkan Anda membuat, menyesuaikan, dan mengatur judul dan paragraf dalam dokumen.
 
-#### T: Bagaimana elemen struktur sebaris membantu menciptakan hierarki dokumen yang jelas?
+#### T: Bagaimana elemen struktur sebaris membantu dalam menciptakan hierarki dokumen yang jelas?
 
-J: Elemen struktur sebaris, seperti judul dari berbagai tingkat, berkontribusi dalam membangun hierarki yang jelas dan terdefinisi dengan baik dalam dokumen. Pembaca dapat dengan cepat mengidentifikasi topik utama, subtopik, dan konten terkait, sehingga dokumen lebih mudah dinavigasi dan dipahami.
+A: Elemen struktur sebaris, seperti judul dengan berbagai tingkatan, berkontribusi dalam membangun hierarki yang jelas dan terdefinisi dengan baik dalam dokumen. Pembaca dapat dengan cepat mengidentifikasi topik utama, subtopik, dan konten terkait, sehingga dokumen lebih mudah dinavigasi dan dipahami.
 
-#### T: Dapatkah saya mengkustomisasi tampilan dan pemformatan elemen struktur sebaris menggunakan Aspose.PDF untuk .NET?
+#### T: Dapatkah saya menyesuaikan tampilan dan pemformatan elemen struktur sebaris menggunakan Aspose.PDF untuk .NET?
 
-J: Ya, Anda dapat menyesuaikan tampilan dan format elemen struktur sebaris. Anda dapat mengatur properti seperti gaya font, ukuran, warna, perataan, indentasi, dan spasi untuk mencapai presentasi visual yang diinginkan untuk judul dan paragraf.
+A: Ya, Anda dapat menyesuaikan tampilan dan format elemen struktur sebaris. Anda dapat mengatur properti seperti gaya font, ukuran, warna, perataan, indentasi, dan spasi untuk mendapatkan tampilan visual yang diinginkan untuk judul dan paragraf.
 
-#### T: Bagaimana cara membuat dan menambahkan judul dengan tingkat berbeda ke dokumen PDF menggunakan elemen struktur sebaris di Aspose.PDF untuk .NET?
+#### T: Bagaimana cara membuat dan menambahkan judul berbagai tingkatan ke dokumen PDF menggunakan elemen struktur sebaris di Aspose.PDF untuk .NET?
 
- J: Anda dapat membuat judul dengan level berbeda menggunakan`CreateHeaderElement` metode dan kemudian menambahkannya ke elemen struktur akar. Selanjutnya, Anda dapat menambahkan konten ke setiap elemen judul menggunakan`CreateSpanElement` metode untuk membuat bentang teks.
+ A: Anda dapat membuat judul dengan level berbeda menggunakan`CreateHeaderElement` metode dan kemudian menambahkannya ke elemen struktur akar. Selanjutnya, Anda dapat menambahkan konten ke setiap elemen judul menggunakan`CreateSpanElement` metode untuk membuat rentang teks.
 
-#### T: Dapatkah saya menggunakan elemen struktur sebaris untuk membuat daftar, poin-poin, atau jenis organisasi konten lainnya dalam dokumen PDF?
+#### T: Dapatkah saya menggunakan elemen struktur sebaris untuk membuat daftar, poin-poin penting, atau jenis organisasi konten lainnya dalam dokumen PDF?
 
-J: Meskipun elemen struktur sebaris sendiri terutama digunakan untuk judul dan paragraf, Anda dapat menggunakannya dalam kombinasi dengan fitur lain yang ditawarkan oleh Aspose.PDF untuk .NET untuk membuat daftar, poin-poin, tabel, dan jenis organisasi konten lainnya secara komprehensif struktur dokumen.
+J: Sementara elemen struktur sebaris sendiri terutama digunakan untuk judul dan paragraf, Anda dapat menggunakannya dalam kombinasi dengan fitur lain yang ditawarkan oleh Aspose.PDF untuk .NET untuk membuat daftar, poin-poin penting, tabel, dan jenis organisasi konten lainnya untuk struktur dokumen yang komprehensif.
 
-#### T: Bagaimana elemen struktur inline berkontribusi terhadap aksesibilitas dokumen?
+#### T: Bagaimana elemen struktur sebaris berkontribusi terhadap aksesibilitas dokumen?
 
-J: Elemen struktur sebaris memainkan peran penting dalam meningkatkan aksesibilitas dokumen. Judul dan paragraf yang terstruktur dengan baik memberikan hierarki dokumen yang jelas yang membantu pembaca layar dan teknologi bantu lainnya dalam menafsirkan dan menyampaikan konten secara akurat kepada pengguna penyandang disabilitas.
+A: Elemen struktur sebaris memainkan peran penting dalam meningkatkan aksesibilitas dokumen. Judul dan paragraf yang terstruktur dengan baik memberikan hierarki dokumen yang jelas yang membantu pembaca layar dan teknologi bantuan lainnya dalam menafsirkan dan menyampaikan konten secara akurat kepada pengguna penyandang disabilitas.
 
-#### T: Bisakah saya mengeksplorasi penggunaan elemen struktur inline lebih lanjut, seperti membuat elemen interaktif atau menyematkan multimedia?
+#### T: Dapatkah saya mengeksplorasi penggunaan elemen struktur sebaris yang lebih canggih, seperti membuat elemen interaktif atau menyematkan multimedia?
 
-J: Tentu saja! Meskipun tutorial ini berfokus pada pembuatan judul dan paragraf, Aspose.PDF untuk .NET menawarkan fitur-fitur canggih untuk membuat elemen interaktif, menyematkan multimedia, menambahkan hyperlink, dan banyak lagi. Periksa dokumentasi dan contoh perpustakaan untuk mempelajari kemampuan tingkat lanjut ini.
+A: Tentu saja! Meskipun tutorial ini berfokus pada pembuatan judul dan paragraf, Aspose.PDF untuk .NET menawarkan fitur-fitur canggih untuk membuat elemen interaktif, menyematkan multimedia, menambahkan hyperlink, dan banyak lagi. Periksa dokumentasi dan contoh pustaka untuk mempelajari lebih dalam kemampuan-kemampuan canggih ini.

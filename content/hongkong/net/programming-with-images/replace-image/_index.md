@@ -83,7 +83,7 @@ Console.WriteLine("\nImage replaced successfully.\nFile saved at " + dataDir);
 
 #### Q：如何指定 PDF 文件中要替換的影像？
 
-答：在提供的程式碼中，行`pdfDocument.Pages[1].Resources.Images.Replace(1, new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open));`取代位於 PDF 文件第 1 頁的影像。號碼`1`表示要替換的圖像的索引。如果需要，請調整此數字以定位不同的影像。
+答：在提供的程式碼中，行`pdfDocument.Pages[1].Resources.Images.Replace(1, new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open));`取代位於 PDF 文件第 1 頁的影像。數量`1`表示要替換的圖像的索引。如果需要，請調整此數字以定位不同的影像。
 
 #### Q：我可以替換 PDF 文件任意頁面上的圖像嗎？
 

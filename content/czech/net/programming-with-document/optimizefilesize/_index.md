@@ -39,8 +39,8 @@ optimizationOptions.ImageCompressionOptions.ImageQuality = 10;
 V tomto příkladu nastavujeme následující možnosti:
 - `LinkDuplcateStreams`: Tato možnost umožňuje odstranění duplicitních proudů v dokumentu PDF, což může pomoci zmenšit velikost souboru.
 - `RemoveUnusedObjects`: Tato možnost umožňuje odstranění všech nepoužívaných objektů v dokumentu PDF, což může také pomoci zmenšit velikost souboru.
-- `RemoveUnusedStreams`Tato možnost umožňuje odstranění všech nepoužitých proudů v dokumentu PDF, což může dále zmenšit velikost souboru.
-- `CompressImages`: Tato možnost umožňuje kompresi obrázků v dokumentu PDF, což může výrazně snížit velikost souboru.
+- `RemoveUnusedStreams`: Tato možnost umožňuje odstranění všech nepoužitých proudů v dokumentu PDF, což může dále zmenšit velikost souboru.
+- `CompressImages`Tato možnost umožňuje kompresi obrázků v dokumentu PDF, což může výrazně snížit velikost souboru.
 - `ImageQuality`: Tato možnost nastavuje kvalitu komprimovaných obrázků. Nižší nastavení kvality povede k menší velikosti souboru, ale také může mít za následek nižší kvalitu obrazu.
 
 ## Krok 4: Optimalizujte dokument PDF

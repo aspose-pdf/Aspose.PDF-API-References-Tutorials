@@ -27,7 +27,7 @@ Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
 
 ## 步驟 3：定義輸出文件
 
-定義結果影像和二進位影像的輸出檔名。代替`"resultant_out.tif"`和`"37116-bin_out.tif"`以及輸出檔案所需的名稱。
+定義結果影像和二進位影像的輸出檔名。代替`"resultant_out.tif"`和`"37116-bin_out.tif"`以及輸出文件所需的名稱。
 
 ```csharp
 string outputImageFile = dataDir + "resultant_out.tif";
@@ -118,11 +118,11 @@ System.Console.WriteLine("Conversion using bradley algorithm performed successfu
 
 ### 常見問題解答
 
-#### Q：什麼是 Bradley 演算法？它與 Aspose.PDF for .NET 有何關係？
+#### Q：什麼是 Bradley 演算法？
 
 答：布拉德利演算法是一種影像處理技術，用於增強影像品質和清晰度。 Aspose.PDF for .NET 提供了一種將 Bradley 演算法應用於 PDF 文件的便捷方法，從而改善影像品質。
 
-#### Q：如何設定環境以將 Bradley 演算法與 Aspose.PDF for .NET 一起使用？
+#### Q：如何設定環境以將 Bradley 演算法與 Aspose.PDF for .NET 結合使用？
 
 答：開始之前，請確保您已正確安裝 Aspose.PDF for .NET 並配置您的開發環境。
 

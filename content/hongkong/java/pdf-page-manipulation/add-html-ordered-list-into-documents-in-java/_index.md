@@ -75,7 +75,7 @@ pdfDocument.save("output.pdf");
 
 ### 我可以自訂 HTML 排序清單的樣式嗎？
 
-是的，您可以透過變更字體大小、顏色、對齊方式等來自訂 HTML 有序清單的樣式。
+是的，您可以透過變更字體大小、顏色、對齊方式等來自訂 HTML 排序清單的樣式。
 
 ### Aspose.PDF for Java 可以免費使用嗎？
 

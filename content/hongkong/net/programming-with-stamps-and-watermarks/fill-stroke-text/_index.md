@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-stamps-and-watermarks/fill-stroke-text/
 
 ## 第 2 步：建立 TextState 對象
 
-第一步是建立一個 TextState 物件來傳遞進階屬性。就是這樣：
+第一步是建立一個 TextState 物件來傳遞進階屬性。方法如下：
 
 ```csharp
 //建立 TextState 物件以傳遞進階屬性
@@ -35,7 +35,7 @@ ts.RenderingMode = TextRenderingMode.StrokeText;
 
 ## 第 3 步：載入 PDF 文檔
 
-現在 TextState 物件已準備就緒，我們可以在要套用文字填滿和輪廓的位置載入 PDF 文件。就是這樣：
+現在 TextState 物件已準備就緒，我們可以在要套用文字填滿和輪廓的位置載入 PDF 文件。方法如下：
 
 ```csharp
 //載入 PDF 文件作為輸入
@@ -46,7 +46,7 @@ Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Documen
 
 ## 步驟 4：為文字新增填滿和描邊
 
-現在 PDF 文件已加載，我們可以向文字添加填充和輪廓。就是這樣：
+現在 PDF 文件已加載，我們可以向文字添加填充和輪廓。方法如下：
 
 ```csharp
 //使用定義的文字和屬性建立圖章（Stamp）
@@ -71,7 +71,7 @@ fileStamp.AddStamp(stamp);
 
 ## 步驟5：儲存輸出文檔
 
-新增文字圖章後，我們就可以儲存修改後的PDF文件。就是這樣：
+新增文字圖章後，我們就可以儲存修改後的PDF文件。方法如下：
 
 ```csharp
 //儲存修改後的文檔
@@ -124,7 +124,7 @@ fileStamp.Close();
 
 ### PDF 檔案中填入描邊文字的常見問題解答
 
-#### Q：在 PDF 文件中填充和概述文字意味著什麼？何時需要這樣做？
+#### Q：在 PDF 文件中填入和概述文字意味著什麼？
 
 答：在 PDF 文件中填入和輪廓文字涉及將顏色套用至文字字元的內部（填滿）和文字周圍的邊框（輪廓）。這可用於增強文字的視覺外觀、強調或突出顯示 PDF 中的特定內容。
 

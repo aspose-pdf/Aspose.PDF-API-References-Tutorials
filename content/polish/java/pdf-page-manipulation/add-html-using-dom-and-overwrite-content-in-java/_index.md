@@ -1,8 +1,8 @@
 ---
 title: Dodaj HTML za pomocą DOM i nadpisz zawartość w Javie
 linktitle: Dodaj HTML za pomocą DOM i nadpisz zawartość w Javie
-second_title: Aspose.PDF Interfejs API przetwarzania plików Java w formacie Java
-description: Dowiedz się, jak manipulować treścią HTML w Javie przy użyciu DOM (Document Object Model) i nadpisywać istniejącą treść. Postępuj zgodnie z tym przewodnikiem krok po kroku z przykładami kodu źródłowego przy użyciu Aspose.PDF dla Java.
+second_title: Aspose.PDF Java PDF Processing API
+description: Dowiedz się, jak manipulować treścią HTML w Javie, używając DOM (Document Object Model) i nadpisywać istniejącą treść. Postępuj zgodnie z tym przewodnikiem krok po kroku z przykładami kodu źródłowego przy użyciu Aspose.PDF dla Javy.
 type: docs
 weight: 13
 url: /pl/java/pdf-page-manipulation/add-html-using-dom-and-overwrite-content-in-java/
@@ -10,19 +10,19 @@ url: /pl/java/pdf-page-manipulation/add-html-using-dom-and-overwrite-content-in-
 
 ## Wstęp
 
-tym obszernym samouczku szczegółowo omówimy, jak dodać treść HTML przy użyciu obiektowego modelu dokumentu (DOM) w Javie i zastąpić istniejącą treść. Aby dokładnie zademonstrować ten proces, użyjemy Aspose.PDF dla Java. DOM pozwala nam pracować ze strukturą dokumentu HTML, ułatwiając manipulowanie i programową aktualizację jego zawartości.
+tym kompleksowym samouczku szczegółowo omówimy, jak dodawać zawartość HTML za pomocą Document Object Model (DOM) w Javie i nadpisywać istniejącą zawartość. Użyjemy Aspose.PDF dla Javy, aby dokładnie zademonstrować ten proces. DOM pozwala nam pracować ze strukturą dokumentu HTML, ułatwiając programowe manipulowanie i aktualizowanie jego zawartości.
 
-## Warunki wstępne
+## Wymagania wstępne
 
-Zanim zagłębimy się w kod, upewnij się, że spełnione są następujące wymagania wstępne:
+Zanim zagłębisz się w kod, upewnij się, że spełnione są następujące wymagania wstępne:
 
 1. Środowisko programistyczne Java: Upewnij się, że w systemie jest zainstalowana Java.
 
-2.  Aspose.PDF dla Java: Pobierz i dołącz bibliotekę Aspose.PDF do swojego projektu Java. Możesz znaleźć link do pobrania[Tutaj](https://releases.aspose.com/pdf/java/).
+2.  Aspose.PDF dla Java: Pobierz i dołącz bibliotekę Aspose.PDF do swojego projektu Java. Link do pobrania znajdziesz[Tutaj](https://releases.aspose.com/pdf/java/).
 
 ## Krok 1: Utwórz nowy dokument PDF
 
-Zacznijmy od utworzenia nowego dokumentu PDF przy użyciu Aspose.PDF. Będzie to służyć jako nasz dokument bazowy do dodawania i nadpisywania treści. Poniższy kod inicjuje dokument PDF:
+Zacznijmy od utworzenia nowego dokumentu PDF za pomocą Aspose.PDF. Będzie on służył jako nasz dokument bazowy do dodawania i nadpisywania treści. Poniższy kod inicjuje dokument PDF:
 
 ```java
 // Zainicjuj dokument PDF
@@ -31,7 +31,7 @@ com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document();
 
 ## Krok 2: Załaduj istniejący plik PDF
 
-Jeśli masz istniejący plik PDF, który chcesz zmodyfikować, możesz go załadować, używając następującego kodu:
+Jeśli posiadasz istniejący plik PDF, który chcesz zmodyfikować, możesz go załadować za pomocą następującego kodu:
 
 ```java
 // Załaduj istniejący dokument PDF
@@ -47,23 +47,23 @@ Następnie utwórz nową stronę lub wybierz istniejącą stronę, z którą chc
 com.aspose.pdf.Page page = pdfDocument.getPages().add();
 ```
 
-## Krok 4: Dodaj treść HTML
+## Krok 4: Dodaj zawartość HTML
 
- Aby dodać zawartość HTML do strony, możesz użyć metody`HtmlFragment` klasa. Oto przykład:
+ Aby dodać zawartość HTML do strony, możesz użyć`HtmlFragment` klasa. Oto przykład:
 
 ```java
 // Utwórz fragment HTML
 com.aspose.pdf.HtmlFragment htmlFragment = new com.aspose.pdf.HtmlFragment("<h1>Hello, World!</h1>");
 ```
 
-W razie potrzeby możesz zastąpić treść HTML własną. Takie podejście pozwala na włączenie bogatej treści, w tym tekstu, obrazów, a nawet elementów interaktywnych.
+Możesz zastąpić zawartość HTML własną, jeśli to konieczne. Takie podejście pozwala na uwzględnienie bogatej zawartości, w tym tekstu, obrazów, a nawet elementów interaktywnych.
 
-## Krok 5: Zastąp istniejącą zawartość
+## Krok 5: Nadpisz istniejącą zawartość
 
- Jeśli chcesz nadpisać istniejącą treść strony fragmentem HTML, użyj metody`setHtmlContent` metoda:
+ Jeśli chcesz nadpisać istniejącą treść na stronie fragmentem HTML, użyj`setHtmlContent` metoda:
 
 ```java
-// Zastąp istniejącą treść fragmentem HTML
+// Nadpisz istniejącą zawartość fragmentem HTML
 page.getParagraphs().clear();
 page.getParagraphs().add(htmlFragment);
 ```
@@ -79,21 +79,21 @@ pdfDocument.save("output.pdf");
 
 ## Wniosek
 
-W tym samouczku nauczyliśmy się, jak dodawać zawartość HTML do dokumentu PDF przy użyciu modelu DOM i nadpisywać istniejącą zawartość w Javie. Użyliśmy Aspose.PDF dla Java, aby ułatwić ten proces, ułatwiając programową manipulację plikami PDF. Możesz zastosować tę wiedzę do dynamicznego generowania plików PDF ze zaktualizowaną zawartością stosownie do potrzeb aplikacji Java.
+W tym samouczku nauczyliśmy się, jak dodawać zawartość HTML do dokumentu PDF za pomocą DOM i nadpisywać istniejącą zawartość w Javie. Użyliśmy Aspose.PDF dla Javy, aby ułatwić ten proces, ułatwiając programowe manipulowanie plikami PDF. Możesz zastosować tę wiedzę, aby dynamicznie generować pliki PDF z zaktualizowaną zawartością, jeśli jest to potrzebne w aplikacjach Java.
 
-##FAQ (często zadawane pytania)
+##FAQ (najczęściej zadawane pytania)
 
-### 1. Co to jest obiektowy model dokumentu (DOM)?
-   Document Object Model (DOM) to interfejs programistyczny dla dokumentów internetowych. Reprezentuje strukturę dokumentu HTML lub XML i umożliwia interakcję z zawartością oraz manipulowanie nią. Zrozumienie DOM ma kluczowe znaczenie dla skutecznej manipulacji treścią HTML.
+### 1. Czym jest Document Object Model (DOM)?
+   Document Object Model (DOM) to interfejs programowania dla dokumentów internetowych. Reprezentuje strukturę dokumentu HTML lub XML i zapewnia sposób interakcji z treścią i manipulowania nią. Zrozumienie DOM jest kluczowe dla skutecznej manipulacji treścią HTML.
 
 ### 2. Czy mogę dodać style CSS do zawartości HTML w pliku PDF?
-   Tak, możesz dołączyć style CSS do treści HTML, aby nadać swojemu plikowi PDF pożądany styl. Pozwala to na precyzyjną kontrolę nad wyglądem treści.
+   Tak, możesz uwzględnić style CSS w treści HTML, aby stylizować swój plik PDF według uznania. Pozwala to na precyzyjną kontrolę wyglądu treści.
 
-### 3. Czy Aspose.PDF dla Java jest bezpłatną biblioteką?
-   Aspose.PDF dla Java to potężna biblioteka komercyjna, ale oferuje bezpłatną wersję próbną do testowania i oceny. W zależności od wymagań Twojego projektu możesz wybrać odpowiednią opcję licencjonowania.
+### 3. Czy Aspose.PDF dla Java jest darmową biblioteką?
+   Aspose.PDF for Java to potężna komercyjna biblioteka, ale oferuje bezpłatną wersję próbną do testowania i oceny. W zależności od wymagań projektu możesz wybrać odpowiednią opcję licencjonowania.
 
-### 4. Jak mogę dodać obrazy do dokumentu PDF przy użyciu Aspose.PDF dla Java?
-    Możesz ulepszyć swoje dokumenty PDF, dodając obrazy. Użyj`com.aspose.pdf.Image`class do tworzenia i wstawiania obrazów na stronach PDF. Dzięki temu można płynnie łączyć elementy wizualne.
+### 4. W jaki sposób mogę dodać obrazy do dokumentu PDF za pomocą Aspose.PDF dla Java?
+    Możesz ulepszyć swoje dokumenty PDF, dodając obrazy. Użyj`com.aspose.pdf.Image`klasa do tworzenia i wstawiania obrazów do stron PDF. Umożliwia to bezproblemowe włączanie elementów wizualnych.
 
 ### 5. Czy istnieją inne biblioteki Java do pracy z plikami PDF?
-   Chociaż Aspose.PDF dla Java to solidny wybór, możesz eksplorować alternatywne biblioteki, takie jak iText i PDFBox, do pracy z plikami PDF w Javie. Każda biblioteka ma swoje unikalne funkcje i możliwości, więc wybierz tę, która najlepiej odpowiada potrzebom Twojego projektu.
+   Podczas gdy Aspose.PDF dla Javy jest solidnym wyborem, możesz zbadać alternatywne biblioteki, takie jak iText i PDFBox, do pracy z plikami PDF w Javie. Każda biblioteka ma swoje unikalne funkcje i możliwości, więc wybierz tę, która najlepiej odpowiada potrzebom Twojego projektu.

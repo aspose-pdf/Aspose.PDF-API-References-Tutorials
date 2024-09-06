@@ -127,7 +127,7 @@ S: Aspose.PDF för .NET gör inga permanenta ändringar i det ursprungliga PDF-d
 
 #### F: Hur kan jag kontrollera den ursprungliga och reducerade filstorleken efter optimering?
 
-S: Du kan använda`FileInfo` klass av`System.IO` för att få den ursprungliga och reducerade filstorleken. Här är ett exempel på ett kodavsnitt för att uppnå detta:
+ S: Du kan använda`FileInfo` klass av`System.IO` för att få den ursprungliga och reducerade filstorleken. Här är ett exempel på ett kodavsnitt för att uppnå detta:
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");

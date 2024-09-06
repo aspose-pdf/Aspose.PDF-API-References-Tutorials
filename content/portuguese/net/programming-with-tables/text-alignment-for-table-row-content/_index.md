@@ -1,15 +1,15 @@
 ---
 title: Alinhamento de texto para conteúdo de linha de tabela
 linktitle: Alinhamento de texto para conteúdo de linha de tabela
-second_title: Referência da API Aspose.PDF para .NET
-description: Aprenda como alinhar o conteúdo da linha em uma tabela PDF usando Aspose.PDF for .NET.
+second_title: Referência da API do Aspose.PDF para .NET
+description: Aprenda a alinhar o conteúdo da linha em uma tabela PDF usando o Aspose.PDF para .NET.
 type: docs
 weight: 210
 url: /pt/net/programming-with-tables/text-alignment-for-table-row-content/
 ---
-Neste tutorial, iremos guiá-lo passo a passo para alinhar o conteúdo de uma linha em uma tabela de um documento PDF usando Aspose.PDF for .NET. Explicaremos o código-fonte C# fornecido e mostraremos como implementá-lo.
+Neste tutorial, nós o guiaremos passo a passo para alinhar o conteúdo de uma linha em uma tabela de um documento PDF usando Aspose.PDF para .NET. Explicaremos o código-fonte C# fornecido e mostraremos como implementá-lo.
 
-## Passo 1: Criando o documento PDF
+## Etapa 1: Criando o documento PDF
 Primeiro, criaremos o documento PDF:
 
 ```csharp
@@ -17,28 +17,28 @@ var dataDir = "YOUR DOCUMENTS DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Etapa 2: inicialização da tabela
-A seguir, inicializaremos a tabela:
+## Etapa 2: Inicialização da tabela
+Em seguida, inicializaremos a tabela:
 
 ```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 ```
 
-## Passo 3: Definir a cor da borda da tabela
+## Etapa 3: Definindo a cor da borda da tabela
 Vamos configurar a cor da borda da tabela:
 
 ```csharp
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-## Passo 4: Configurando a borda da célula da tabela
+## Etapa 4: Configurando a borda da célula da tabela
 Vamos configurar a borda da célula da tabela:
 
 ```csharp
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-## Etapa 5: loop para adicionar 10 linhas à tabela
+## Etapa 5: Loop para adicionar 10 linhas à tabela
 Agora usaremos um loop para adicionar 10 linhas à tabela:
 
 ```csharp
@@ -53,14 +53,14 @@ for (int row_count = 0; row_count < 10; row_count++)
 }
 ```
 
-## Passo 6: Configurando o alinhamento da linha vertical
+## Etapa 6: Configurando o alinhamento da linha vertical
 Vamos configurar o alinhamento vertical das linhas da tabela:
 
 ```csharp
 row.VerticalAlignment = VerticalAlignment.Center;
 ```
 
-## Etapa 7: adicionar conteúdo às células da linha
+## Etapa 7: Adicionar conteúdo às células da linha
 Vamos adicionar conteúdo às células da linha:
 
 ```csharp
@@ -77,7 +77,7 @@ Page tocPage = doc.Pages.Add();
 tocPage.Paragraphs.Add(table);
 ```
 
-## Passo 9: Salvando o documento PDF
+## Etapa 9: Salvando o documento PDF
 Por fim, salvaremos o documento PDF:
 
 ```csharp
@@ -95,7 +95,7 @@ Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 // Defina a cor da borda da tabela como LightGray
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// definir a borda das células da tabela
+// definir a borda para as células da tabela
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 // crie um loop para adicionar 10 linhas
 for (int row_count = 0; row_count < 10; row_count++)
@@ -116,26 +116,26 @@ doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
 ## Conclusão
-Parabéns! Agora você aprendeu como alinhar o conteúdo de uma linha em uma tabela em um documento PDF usando Aspose.PDF for .NET. Este guia passo a passo mostrou como criar um documento, inicializar uma tabela, configurar borda e alinhamento, adicionar conteúdo e salvar o documento PDF. Agora você pode aplicar esse conhecimento em seus próprios projetos.
+Parabéns! Agora você aprendeu como alinhar o conteúdo de uma linha em uma tabela em um documento PDF usando o Aspose.PDF para .NET. Este guia passo a passo mostrou como criar um documento, inicializar uma tabela, configurar borda e alinhamento, adicionar conteúdo e salvar o documento PDF. Agora você pode aplicar esse conhecimento aos seus próprios projetos.
 
 ### Perguntas frequentes
 
 #### P: Como posso alinhar o conteúdo das células da tabela horizontalmente?
 
- R: Você pode alinhar o conteúdo das células da tabela horizontalmente definindo o`HorizontalAlign` propriedade da célula`TextState` objeto. Por exemplo, para centralizar o texto, use`cell.TextState.HorizontalAlignment = HorizontalAlignment.Center` . Você também pode configurá-lo para`HorizontalAlignment.Left` ou`HorizontalAlignment.Right` para alinhamento à esquerda e à direita, respectivamente.
+ R: Você pode alinhar o conteúdo das células da tabela horizontalmente, definindo o`HorizontalAlign` propriedade da célula`TextState` objeto. Por exemplo, para centralizar o texto, use`cell.TextState.HorizontalAlignment = HorizontalAlignment.Center` . Você também pode configurá-lo para`HorizontalAlignment.Left` ou`HorizontalAlignment.Right` para alinhamento à esquerda e à direita, respectivamente.
 
-#### P: Posso aplicar diferentes estilos e cores de borda a células individuais da tabela?
+#### P: Posso aplicar diferentes estilos e cores de borda a células individuais dentro da tabela?
 
- R: Sim, você pode aplicar diferentes estilos e cores de borda a células individuais da tabela. Para personalizar a borda de uma célula específica, defina o`cell.Border` propriedade para um novo`BorderInfo`objeto com as configurações desejadas, como lados da borda, largura e cor.
+ R: Sim, você pode aplicar diferentes estilos e cores de borda a células individuais dentro da tabela. Para personalizar a borda de uma célula específica, defina o`cell.Border` propriedade para um novo`BorderInfo`objeto com as configurações desejadas, como bordas laterais, largura e cor.
 
-#### P: Como posso ajustar o alinhamento vertical do conteúdo da tabela nas células?
+#### P: Como posso ajustar o alinhamento vertical do conteúdo da tabela dentro das células?
 
- R: Você pode ajustar o alinhamento vertical do conteúdo da tabela dentro das células definindo o`VerticalAlignment` propriedade da linha para`VerticalAlignment.Center`, `VerticalAlignment.Top` , ou`VerticalAlignment.Bottom`. Esta propriedade controla o alinhamento vertical de todas as células dessa linha.
+ R: Você pode ajustar o alinhamento vertical do conteúdo da tabela dentro das células definindo o`VerticalAlignment` propriedade da linha para`VerticalAlignment.Center`, `VerticalAlignment.Top` , ou`VerticalAlignment.Bottom`. Esta propriedade controla o alinhamento vertical de todas as células naquela linha.
 
-#### P: É possível adicionar mais colunas ou linhas à tabela de forma dinâmica?
+#### P: É possível adicionar mais colunas ou linhas à tabela dinamicamente?
 
  R: Sim, você pode adicionar mais colunas e linhas à tabela dinamicamente usando o`table.Rows.Add()` método para adicionar novas linhas e o`row.Cells.Add()` método para adicionar novas células às linhas. Você pode fazer isso dentro de loops ou com base em seus requisitos específicos.
 
-#### P: Como posso definir uma cor de fundo para células específicas ou para toda a tabela?
+#### P: Como posso definir uma cor de fundo para células específicas ou para a tabela inteira?
 
  R: Para definir uma cor de fundo para células específicas ou para toda a tabela, use o`BackgroundColor` propriedade do`Cell` ou`Table` objeto. Por exemplo, para definir a cor de fundo de uma célula, use`cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.

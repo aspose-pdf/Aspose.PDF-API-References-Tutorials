@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 1: Konfigurera dokumentkatalogen
 
- Först måste du ställa in sökvägen till katalogen där dina PDF-filer finns. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till dina PDF-filer.
+ Först måste du ställa in sökvägen till katalogen där dina PDF-filer finns. Ersätta`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till dina PDF-filer.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -34,7 +34,7 @@ Document doc = new Document(dataDir + "ExtractTextPage.pdf");
 
 ## Steg 3: Sök och ersätt textfragment
 
- Vi skapar en`TextFragmentAbsorber` objekt med ett reguljärt uttryck för att söka efter specifika textfragment. Sedan itererar vi genom textfragmenten, anpassar deras teckensnitt, storlek, färg och ersätter texten.
+ Vi skapar en`TextFragmentAbsorber` objekt med ett reguljärt uttryck för att söka efter specifika textfragment. Sedan går vi igenom textfragmenten, anpassar deras teckensnitt, storlek, färg och ersätter texten.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("[TextFragmentAbsorber,companyname,Textbox,50]");
@@ -110,7 +110,7 @@ S: Att ordna om innehållet i ett PDF-dokument kan vara användbart för olika �
 
 S: Så här ställer du in dokumentkatalogen:
 
-1.  Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där dina PDF-filer finns.
+1.  Ersätta`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där dina PDF-filer finns.
 
 #### F: Hur utför jag textersättning i ett PDF-dokument?
 

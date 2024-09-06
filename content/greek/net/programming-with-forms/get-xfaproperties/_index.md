@@ -80,7 +80,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nXFA fields properties retrieved successfully.\nFile saved at " + dataDir);
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Σε αυτό το σεμινάριο, μάθαμε πώς να λαμβάνουμε ιδιότητες XFA πεδίων φόρμας σε ένα έγγραφο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Ακολουθώντας αυτά τα βήματα, μπορείτε εύκολα να εξαγάγετε πληροφορίες πεδίου XFA, όπως θέσεις, από έγγραφα PDF χρησιμοποιώντας το Aspose.PDF.
 

@@ -10,7 +10,7 @@ url: /cs/java/pdf-validation-and-verification/validate-pdf-in-java/
 
 V oblasti zpracování dokumentů má přednost zajištění integrity a platnosti souborů PDF. Vývojáři Javy se často ocitají v odpovědnosti za ověřování souborů PDF, aby bylo zaručeno, že neobsahují chyby, poškození nebo jakékoli jiné problémy, které by mohly bránit jejich použitelnosti. Naštěstí s Aspose.PDF pro Javu se tento proces stává přímočarým a efektivním. Tento komplexní průvodce vás provede procesem ověřování souborů PDF v Javě pomocí Aspose.PDF pro Javu, včetně příkladů zdrojového kódu.
 
-## Úvod
+## Zavedení
 
 Než se ponoříme do kódu, věnujte chvíli tomu, abychom pochopili, proč je ověření PDF nezbytné. Soubory PDF se mohou příležitostně poškodit během jejich vytváření, přenosu nebo ukládání. Neplatné soubory PDF mohou vést k různým problémům, od problémů s vykreslováním až po ztrátu dat. Ověřováním souborů PDF můžete identifikovat a napravit jakékoli problémy dříve, než přerostou ve významné problémy.
 
@@ -20,7 +20,7 @@ Abyste se mohli vydat na tuto cestu, budete potřebovat následující:
 
 1. Vývojové prostředí Java: Ujistěte se, že máte v systému nainstalovanou Javu.
 
-2.  Aspose.PDF for Java Library: Knihovnu si můžete pořídit z[tady](https://releases.aspose.com/pdf/java/). Nezapomeňte jej integrovat do svého projektu.
+2.  Aspose.PDF for Java Library: Knihovnu si můžete pořídit z[zde](https://releases.aspose.com/pdf/java/). Nezapomeňte jej integrovat do svého projektu.
 
 ## Krok 1: Vytvořte projekt Java
 

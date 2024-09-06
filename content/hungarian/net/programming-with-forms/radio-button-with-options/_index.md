@@ -47,7 +47,7 @@ rf. PartialName = "radio";
 doc.Form.Add(rf, 1);
 ```
 
-## 5. lépés: Adja meg a választógomb opcióit
+## 5. lépés: Adja hozzá a választógomb opcióit
 
 Adja hozzá a rádiógomb-beállításokat a RadioButtonField objektumhoz:
 

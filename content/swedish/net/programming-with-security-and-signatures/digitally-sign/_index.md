@@ -73,7 +73,7 @@ using(Document document = new Document(outFile))
                  {
                      if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms)
                      {
-                         // Göra någonting
+                         // Gör något
                      }
                  }
              }
@@ -104,7 +104,7 @@ try
 			signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
 			// Skapa någon av de tre signaturtyperna
 			signature.Certify(1, "Signature Reason", "Contact", "Location", true, rect, docMdpSignature);
-			// Spara utdata-PDF-fil
+			// Spara utdata PDF-fil
 			signature.Save(outFile);
 		}
 	}
@@ -121,7 +121,7 @@ try
 					{
 						if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) // Få åtkomstbehörighet
 						{
-							// Göra någonting
+							// Gör något
 						}
 					}
 				}
@@ -179,4 +179,4 @@ S: Digitala signaturer är säkra genom design och använder kryptografiska tekn
 
 #### F: Kan jag lägga till flera digitala signaturer i en PDF?
 
- S: Ja, du kan lägga till flera digitala signaturer till en PDF-fil med hjälp av`PdfFileSignature` föremål`Sign` eller`Certify` metoder. Varje signatur kommer att ha sitt eget utseende och konfiguration.
+ S: Ja, du kan lägga till flera digitala signaturer till en PDF-fil med hjälp av`PdfFileSignature` föremålets`Sign` eller`Certify` metoder. Varje signatur kommer att ha sitt eget utseende och konfiguration.

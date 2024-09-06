@@ -56,7 +56,7 @@ OperatorCollection pageContents = doc.Pages[1].Contents;
 // Kód používá k umístění XForm operátor ContatenateMatrix
 // Kód používá operátor Do k nakreslení XFormu na stránku
 // Operátoři GSave/GRestore obalují stávající obsah
-// to se provádí za účelem získání počátečního grafického stavu na konci existujícího obsahu
+//to se provádí za účelem získání počátečního grafického stavu na konci existujícího obsahu
 // jinak mohou na konci řetězce stávajících operátorů zůstat nechtěné transformace
 pageContents. Insert(1, new GSave());
 pageContents. Add(new GRestore());
@@ -79,7 +79,7 @@ form.Contents.Add(new Do(ximage.Name));
 form.Contents.Add(new GRestore());
 
 pageContents. Add(new GSave());
-//Umístěte XForm na souřadnice x=100 a y=500
+// Umístěte XForm na souřadnice x=100 a y=500
 pageContents. Add(new ConcatenateMatrix(1, 0, 0, 1, 100, 500));
 // Nakreslete XForm pomocí operátoru Do
 pageContents.Add(new Do(form.Name));
@@ -115,7 +115,7 @@ using (Document doc = new Document(inFile))
 	// Ukázka ukazuje
 	// Využití operátorů GSave/GRestore
 	// Použití operátoru ContatenateMatrix k umístění xForm
-	// Pomocí operátora nakreslete xForm na stránku
+	//Pomocí operátora nakreslete xForm na stránku
 	// Zabalte existující obsah pomocí dvojice operátorů GSave/GRestore
 	// toto je získat počáteční grafický stav na a existujícího obsahu
 	// jinak by na konci řetězce stávajících operátorů mohly zůstat některé nežádoucí transformace
@@ -132,7 +132,7 @@ using (Document doc = new Document(inFile))
 	form.Contents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(200, 0, 0, 200, 0, 0));
 	// Načíst obrázek do streamu
 	Stream imageStream = new FileStream(imageFile, FileMode.Open);
-	//Přidejte obrázek do kolekce Images v XForm Resources
+	// Přidejte obrázek do kolekce Images v XForm Resources
 	form.Resources.Images.Add(imageStream);
 	XImage ximage = form.Resources.Images[form.Resources.Images.Count];
 	// Použití operátoru Do: tento operátor kreslí obrázek
@@ -180,7 +180,7 @@ using Aspose.Pdf.Operators;
 
 #### Otázka: Jaký je účel operátorů GSave a GRestore?
 
- A:`GSave` a`GRestore`operátory v Aspose.PDF se používají k uložení a obnovení stavu grafiky. Pomáhají zajistit, aby transformace a nastavení aplikované na jednu část obsahu neovlivnily následující části.
+ A:`GSave` a`GRestore` operátory v Aspose.PDF se používají k uložení a obnovení stavu grafiky. Pomáhají zajistit, aby transformace a nastavení aplikované na jednu část obsahu neovlivnily následující části.
 
 #### Otázka: Jak mohu definovat XForm pomocí Aspose.PDF?
 
@@ -188,7 +188,7 @@ using Aspose.Pdf.Operators;
 
 #### Otázka: Jak mohu nakreslit obrázek v XFormu?
 
- Odpověď: Načtěte obrázek do streamu a přidejte jej do`Resources.Images` kolekce XFormu. Použijte`Do` operátor v rámci XFormu`Contents` nakreslit obrázek.
+Odpověď: Načtěte obrázek do streamu a přidejte jej do`Resources.Images` kolekce XFormu. Použijte`Do` operátor v rámci XFormu`Contents` nakreslit obrázek.
 
 #### Otázka: Jak umístím XFormulář na stránku PDF?
 
@@ -196,7 +196,7 @@ using Aspose.Pdf.Operators;
 
 #### Otázka: Mohu nakreslit více XFormů na stejnou stránku?
 
- Odpověď: Ano, můžete nakreslit více XFormů na stejnou stránku úpravou`ConcatenateMatrix`parametry pro umístění každého XFormu na jiné souřadnice.
+ Odpověď: Ano, můžete nakreslit více XFormů na stejnou stránku úpravou`ConcatenateMatrix` parametry pro umístění každého XFormu na jiné souřadnice.
 
 #### Otázka: Mohu upravit obsah XFormu po jeho vytvoření?
 
@@ -216,4 +216,4 @@ Odpověď: I když neexistuje žádný přísný limit na počet XForms, které 
 
 #### Otázka: Mohu otočit XForm nebo použít jiné transformace?
 
- Odpověď: Ano, můžete použít`ConcatenateMatrix`operátor pro použití transformací, jako je rotace, změna měřítka a posunutí na XForm.
+ Odpověď: Ano, můžete použít`ConcatenateMatrix` operátor pro použití transformací, jako je rotace, změna měřítka a posunutí na XForm.

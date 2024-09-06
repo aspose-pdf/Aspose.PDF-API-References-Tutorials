@@ -162,4 +162,4 @@ Odpověď: Vyplňování a obrysování textu v dokumentu PDF zahrnuje použití
 
 #### Otázka: Jak mohu ovládat polohu a velikost obrysového a vyplněného textu na stránce?
 
-A: Můžete použít`SetOrigin` metoda`Stamp` objekt pro nastavení souřadnic X a Y polohy razítka na stránce. Kromě toho můžete upravit velikost písma v`FormattedText` konstruktor pro ovládání velikosti textu.
+ A: Můžete použít`SetOrigin` metoda`Stamp` objekt pro nastavení souřadnic X a Y polohy razítka na stránce. Kromě toho můžete upravit velikost písma v`FormattedText` konstruktor pro ovládání velikosti textu.

@@ -1,17 +1,17 @@
 ---
-title: Usuń akcję Otwórz
-linktitle: Usuń akcję Otwórz
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak usunąć akcję otwierania z pliku PDF za pomocą Aspose.PDF dla .NET.
+title: Usuń otwartą akcję
+linktitle: Usuń otwartą akcję
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak usunąć akcję otwierania z pliku PDF przy użyciu Aspose.PDF dla platformy .NET.
 type: docs
 weight: 80
 url: /pl/net/programming-with-links-and-actions/remove-open-action/
 ---
-Dowiedz się, jak usunąć akcję otwierania z pliku PDF za pomocą Aspose.PDF dla .NET, korzystając z tego przewodnika krok po kroku.
+Dowiedz się, jak usunąć akcję otwierania pliku PDF za pomocą Aspose.PDF dla platformy .NET, korzystając z tego przewodnika krok po kroku.
 
 ## Krok 1: Konfigurowanie środowiska
 
-Upewnij się, że skonfigurowałeś środowisko programistyczne z projektem C# i odpowiednimi odniesieniami do Aspose.PDF.
+Upewnij się, że skonfigurowałeś środowisko programistyczne z projektem C# i odpowiednimi odniesieniami Aspose.PDF.
 
 ## Krok 2: Ładowanie pliku PDF
 
@@ -26,7 +26,7 @@ Document document = new Document(dataDir + "RemoveOpenAction.pdf");
 
 ## Krok 3: Usuwanie otwartej akcji
 
- Usuń akcję otwierania z dokumentu, ustawiając opcję`OpenAction` właściwość na null:
+ Usuń otwartą akcję z dokumentu, ustawiając`OpenAction` właściwość na null:
 
 ```csharp
 document. OpenAction = null;
@@ -43,19 +43,19 @@ document. Save(dataDir);
 
 ## Krok 5: Wyświetlanie wyniku
 
-Wyświetl komunikat wskazujący, że akcja otwierania została pomyślnie usunięta i określ lokalizację zapisanego pliku:
+Wyświetl komunikat informujący o pomyślnym usunięciu otwartej akcji i określ lokalizację zapisanego pliku:
 
 ```csharp
 Console.WriteLine("\nOpen action deleted successfully.\nFile saved to location: " + dataDir);
 ```
 
-### Przykładowy kod źródłowy dla Usuń otwartą akcję przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla akcji Remove Open Action przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Otwórz dokument
 Document document = new Document(dataDir + "RemoveOpenAction.pdf");
-// Usuń akcję otwierania dokumentu
+// Usuń akcję otwarcia dokumentu
 document.OpenAction = null;
 dataDir = dataDir + "RemoveOpenAction_out.pdf";
 // Zapisz zaktualizowany dokument
@@ -67,41 +67,41 @@ Console.WriteLine("\nOpen action removed successfully.\nFile saved at " + dataDi
 
 Gratulacje! Teraz wiesz, jak usunąć akcję otwierania z pliku PDF za pomocą Aspose.PDF dla .NET. Wykorzystaj tę wiedzę, aby dostosować właściwości i zachowanie plików PDF w swoich projektach.
 
-Teraz, gdy ukończyłeś ten przewodnik, możesz zastosować te koncepcje do własnych projektów i dokładniej poznać funkcje oferowane przez Aspose.PDF dla .NET.
+Po zapoznaniu się z tym przewodnikiem możesz zastosować poznane koncepcje we własnych projektach i lepiej poznać funkcje oferowane przez Aspose.PDF dla platformy .NET.
 
-### Często zadawane pytania 
+### Najczęściej zadawane pytania 
 
-#### P: Co to jest „akcja otwierania” w pliku PDF?
+#### P: Co oznacza „otwarta akcja” w pliku PDF?
 
-O: „Akcja otwierania” w pliku PDF to instrukcja określająca, co powinno się stać po otwarciu pliku PDF. Może obejmować działania takie jak przejście do określonej strony lub lokalizacji w dokumencie, uruchomienie aplikacji zewnętrznej lub wyświetlenie określonego widoku.
+A: „Otwórz akcję” w pliku PDF to instrukcja określająca, co powinno się wydarzyć po otwarciu pliku PDF. Może obejmować takie akcje, jak przejście do określonej strony lub lokalizacji w dokumencie, uruchomienie zewnętrznej aplikacji lub wyświetlenie określonego widoku.
 
-#### P: Dlaczego miałbym chcieć usunąć akcję otwierania z pliku PDF?
+#### P: Dlaczego miałbym chcieć usunąć otwartą akcję z pliku PDF?
 
-O: Usunięcie akcji otwierania może zwiększyć bezpieczeństwo, wygodę użytkownika i kontrolę nad sposobem prezentacji pliku PDF po otwarciu. Na przykład możesz chcieć uniemożliwić automatyczną nawigację lub wyłączyć pewne działania po otwarciu dokumentu.
+A: Usunięcie akcji otwierania może zwiększyć bezpieczeństwo, doświadczenie użytkownika i kontrolę nad sposobem prezentacji pliku PDF po jego otwarciu. Na przykład możesz chcieć zapobiec automatycznej nawigacji lub wyłączyć określone akcje po otwarciu dokumentu.
 
-#### P: W jaki sposób Aspose.PDF dla .NET pomaga w usuwaniu otwartej akcji?
+#### P: W jaki sposób Aspose.PDF dla .NET pomaga w usunięciu akcji otwierania?
 
-Odp.: Aspose.PDF dla .NET udostępnia interfejsy API do manipulowania różnymi aspektami plików PDF. W tym samouczku pokazano, jak usunąć akcję Open przy użyciu kodu C#.
+A: Aspose.PDF dla .NET udostępnia API do manipulowania różnymi aspektami plików PDF. Ten samouczek pokazuje, jak usunąć akcję otwierania za pomocą kodu C#.
 
-#### P: Czy istnieje jakieś potencjalne ryzyko lub względy związane z usuwaniem otwartej akcji?
+#### P: Czy istnieją jakieś potencjalne ryzyka lub kwestie do rozważenia przy demontażu otwartego mechanizmu?
 
-O: Usunięcie akcji otwierania może zmienić domyślne zachowanie pliku PDF, dlatego upewnij się, że jest ono zgodne z zamierzonymi potrzebami użytkownika. Dokładnie przetestuj zmodyfikowany plik PDF, aby upewnić się, że usunięcie nie ma wpływu na inne funkcjonalności.
+A: Usunięcie otwartej akcji może zmienić domyślne zachowanie pliku PDF, więc upewnij się, że jest ono zgodne z zamierzonym doświadczeniem użytkownika. Dokładnie przetestuj zmodyfikowany plik PDF, aby potwierdzić, że usunięcie nie wpłynie na inne funkcjonalności.
 
 #### P: Czy mogę dostosować otwartą akcję, aby wykonywać inne akcje?
 
-O: Tak, Aspose.PDF dla .NET umożliwia dostosowanie otwartej akcji poprzez ustawienie różnych typów akcji, takich jak nawigacja do określonej strony lub wykonanie JavaScript.
+O: Tak, Aspose.PDF dla platformy .NET umożliwia dostosowanie akcji otwierania poprzez ustawienie jej na różne typy akcji, takie jak przejście do określonej strony lub wykonanie kodu JavaScript.
 
 #### P: Czy mogę usunąć otwarte akcje z plików PDF chronionych hasłem?
-O: Tak, możesz usunąć otwarte akcje z plików PDF chronionych hasłem, pod warunkiem, że podasz odpowiednie dane uwierzytelniające umożliwiające dostęp do dokumentu i jego modyfikację.
+O: Tak, możesz usuwać otwarte akcje z plików PDF chronionych hasłem, pod warunkiem że podasz odpowiednie dane uwierzytelniające umożliwiające dostęp do dokumentu i jego modyfikację.
 
-#### P: Czy usunięcie otwartej akcji jest odwracalne?
+#### P: Czy usunięcie otwartego mechanizmu jest odwracalne?
 
-Odpowiedź: Nie, po usunięciu akcji otwarcia i zapisaniu pliku PDF oryginalnej akcji otwarcia nie można przywrócić ze zmodyfikowanego pliku PDF.
+O: Nie. Po usunięciu otwartej akcji i zapisaniu pliku PDF nie można przywrócić oryginalnej otwartej akcji ze zmodyfikowanego pliku PDF.
 
 #### P: Jak mogę sprawdzić, czy otwarta akcja została pomyślnie usunięta?
 
-Odpowiedź: Po usunięciu akcji otwierania za pomocą dostarczonego kodu otwórz zmodyfikowany plik PDF i potwierdź, że po otwarciu nie następuje żadna konkretna akcja.
+A: Po usunięciu otwartej akcji za pomocą dostarczonego kodu, otwórz zmodyfikowany plik PDF i sprawdź, czy po otwarciu nie następuje żadna konkretna akcja.
 
 #### P: Czy mogę usunąć otwarte akcje z wielu plików PDF jednocześnie?
 
-O: Tak, możesz użyć tego samego podejścia do usunięcia otwartych akcji z wielu plików PDF w scenariuszu przetwarzania wsadowego.
+O: Tak, można zastosować to samo podejście do usuwania otwartych akcji z wielu plików PDF w scenariuszu przetwarzania wsadowego.

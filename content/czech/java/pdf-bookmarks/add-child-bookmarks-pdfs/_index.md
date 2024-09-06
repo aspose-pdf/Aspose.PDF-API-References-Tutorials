@@ -17,7 +17,7 @@ V tomto článku prozkoumáme, jak přidat podřízené záložky do dokumentů 
 Než se pustíme do implementace, ujistěte se, že máte splněny následující předpoklady:
 
 - Vývojové prostředí Java nainstalované ve vašem systému.
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Nastavení prostředí
 
@@ -73,7 +73,7 @@ childBookmark = new OutlineItemCollection(outline);
 childBookmark.setTitle("Child Bookmark 1.2");
 parentBookmark.add(childBookmark);
 
-//Přidejte podřízené záložky do nadřazené záložky 2
+//Přidat podřízené záložky do nadřazené záložky 2
 childBookmark = new OutlineItemCollection(outline);
 childBookmark.setTitle("Child Bookmark 2.1");
 parentBookmark.add(childBookmark);
@@ -148,7 +148,7 @@ childBookmark = new OutlineItemCollection(outline);
 childBookmark.setTitle("Child Bookmark 1.2");
 parentBookmark.add(childBookmark);
 
-//Přidejte podřízené záložky do nadřazené záložky 2
+//Přidat podřízené záložky do nadřazené záložky 2
 childBookmark = new OutlineItemCollection(outline);
 childBookmark.setTitle("Child Bookmark 2.1");
 parentBookmark.add(childBookmark);
@@ -174,7 +174,7 @@ Přidávání podřízených záložek do PDF pomocí Aspose.PDF for Java je vý
 
 ### Jak si mohu stáhnout Aspose.PDF pro Javu?
 
- Aspose.PDF pro Java si můžete stáhnout z webových stránek[tady](https://releases.aspose.com/pdf/java/).
+ Aspose.PDF pro Java si můžete stáhnout z webových stránek[zde](https://releases.aspose.com/pdf/java/).
 
 ### Jsou podřízené záložky podporovány ve všech prohlížečích PDF?
 

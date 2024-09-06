@@ -1,119 +1,129 @@
 ---
 title: Dodaj skrypt Java do pliku PDF
-linktitle: Dodaj plik PDF ze skryptem Java
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak dodać JavaScript do pliku PDF przy użyciu Aspose.PDF dla .NET. Przewodnik krok po kroku z samouczkami dotyczącymi kodu umożliwiającymi tworzenie skryptów na poziomie dokumentu i strony.
+linktitle: Dodaj plik PDF Java Script
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak dodać JavaScript do pliku PDF za pomocą Aspose.PDF dla .NET. Przewodnik krok po kroku z samouczkami kodu dla skryptów na poziomie dokumentu i strony.
 type: docs
 weight: 10
 url: /pl/net/programming-with-document/addjavascripttopage/
 ---
-Aby dodać JavaScript do pliku PDF, użyjemy Aspose.PDF dla .NET. Ta biblioteka zapewnia prosty i wydajny sposób pracy z plikami PDF w aplikacjach .NET. Poniższe kroki poprowadzą Cię przez proces dodawania JavaScript do pliku PDF przy użyciu Aspose.PDF dla .NET.
+## Wstęp
 
-## Krok 1: Załaduj plik PDF
+Czy kiedykolwiek zastanawiałeś się, jak ulepszyć swoje pliki PDF za pomocą interaktywnych elementów, takich jak wyskakujące alerty lub funkcje automatycznego drukowania? Cóż, dobra wiadomość — możesz! Używając Aspose.PDF dla .NET, możesz bezproblemowo dodawać JavaScript do swoich dokumentów PDF. Niezależnie od tego, czy automatyzujesz zadania, czy tworzysz dynamiczne doświadczenia użytkownika, osadzanie JavaScript w plikach PDF zapewnia Twoim plikom dodatkowy poziom funkcjonalności.
 
- Pierwszym krokiem jest załadowanie pliku PDF, do którego chcesz dodać JavaScript. Można to zrobić za pomocą`Document` klasa dostarczona przez Aspose.PDF dla .NET. The`Document` klasa udostępnia metody ładowania, zapisywania i manipulowania plikami PDF.
+## Wymagania wstępne
+
+Zanim przejdziemy do kodowania, jest kilka rzeczy, które musisz skonfigurować:
+
+-  Aspose.PDF dla .NET: Pobierz bibliotekę ze strony[Wydania Aspose](https://releases.aspose.com/pdf/net/) lub zdobądź[bezpłatny okres próbny](https://releases.aspose.com/).
+- Środowisko programistyczne: dowolne środowisko IDE zgodne z platformą .NET, np. Visual Studio.
+- Podstawowa wiedza o języku C#: W tym przewodniku zakładamy, że znasz podstawową składnię języka C#.
+-  Licencja tymczasowa (opcjonalna): Możesz uzyskać[licencja tymczasowa](https://purchase.aspose.com/temporary-license/) jeśli chcesz uniknąć ograniczeń w swoim rozwoju.
+
+## Importuj pakiety
+
+Zanim zaczniesz pisać kod, musisz zaimportować niezbędne przestrzenie nazw z biblioteki Aspose.PDF. Te przestrzenie nazw pozwolą Ci łatwo manipulować plikami PDF i dodawać akcje JavaScript.
+
+```csharp
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Text;
+```
+
+Teraz, gdy zaimportowałeś odpowiednie przestrzenie nazw, możesz rozpocząć kodowanie.
+
+## Krok 1: Załaduj istniejący plik PDF
+
+Najpierw najważniejsze — musisz załadować dokument PDF, do którego chcesz dodać JavaScript. Ten krok przygotowuje grunt pod wszystkie dalsze modyfikacje. Wyobraź sobie, że masz plik PDF, który chcesz ulepszyć o dynamiczną funkcjonalność, np. automatyczne drukowanie dokumentu po otwarciu.
+
+Oto jak możesz załadować plik PDF:
 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Załaduj istniejące pliki PDF
+// Załaduj istniejący plik PDF
 Document doc = new Document(dataDir + "input.pdf");
 ```
+
+ W tym fragmencie kodu używamy`Document` klasa do załadowania istniejącego pliku PDF z określonego katalogu. Upewnij się, że zastąpiłeś`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do pliku PDF.
 
 ## Krok 2: Dodaj JavaScript na poziomie dokumentu
 
-Aby dodać JavaScript na poziomie dokumentu, użyjemy metody`JavascriptAction` klasa dostarczona przez Aspose.PDF dla .NET. Ta klasa umożliwia określenie instrukcji JavaScript, którą chcesz dodać do pliku PDF.
+Teraz dodajmy trochę JavaScript, który zostanie uruchomiony po otwarciu dokumentu. W tym przykładzie napiszemy skrypt, który otworzy okno dialogowe drukowania, gdy tylko użytkownik otworzy plik PDF.
+
+JavaScript na poziomie dokumentu jest idealny do działań, które chcesz zastosować do całego pliku PDF. Pomyśl o tym jak o ustawieniu globalnej reguły dla swojego dokumentu.
+
+Oto kod:
 
 ```csharp
-// Dodawanie JavaScriptu na poziomie dokumentu
-// Utwórz instancję JavaScriptAction z żądaną instrukcją JavaScript
+// Dodawanie JavaScript na poziomie dokumentu
+// Utwórz instancję JavascriptAction z żądanym poleceniem JavaScript
 JavascriptAction javaScript = new JavascriptAction("this.print({bUI:true,bSilent:false,bShrinkToFit:true});");
 
-// Przypisz obiekt JavascriptAction do żądanej akcji dokumentu
+// Przypisz obiekt JavascriptAction do OpenAction dokumentu
 doc.OpenAction = javaScript;
 ```
 
-W tym samouczku dodamy instrukcję JavaScript, która po otwarciu dokumentu wydrukuje plik PDF z określonymi opcjami.
+ W tym kroku tworzymy`JavascriptAction` obiekt, który definiuje funkcję JavaScript otwierającą okno dialogowe drukowania po otwarciu dokumentu.`doc.OpenAction` Następnie do właściwości przypisywana jest ta akcja JavaScript.
 
 ## Krok 3: Dodaj JavaScript na poziomie strony
 
- Aby dodać JavaScript na poziomie strony, użyjemy metody`JavascriptAction` klasa i`Actions` właściwość udostępniona przez Aspose.PDF dla .NET. Ta właściwość pozwala określić instrukcje JavaScript, które zostaną wykonane po otwarciu lub zamknięciu strony.
+Nie każda akcja musi dotyczyć całego dokumentu. Czasami chcesz, aby określone akcje miały miejsce, gdy pewne strony są otwierane lub zamykane. Tutaj skonfigurujemy akcje JavaScript na czas, gdy konkretna strona (powiedzmy strona 2) jest otwierana i zamykana.
+
+JavaScript na poziomie strony jest przydatny do ukierunkowanych interakcji. Może to być cokolwiek, od wyświetlania wiadomości, gdy użytkownik przechodzi na stronę, po niestandardowe działania, takie jak automatyczne wypełnianie pól formularza.
+
+Oto jak to zrobić:
 
 ```csharp
-// Dodanie JavaScriptu na poziomie strony
-doc.Pages[2].Actions.OnOpen = new JavascriptAction("app.alert('page 1 opened')");
-doc.Pages[2].Actions.OnClose = new JavascriptAction("app.alert('page 1 closed')");
+// Dodawanie JavaScript na poziomie strony
+doc.Pages[2].Actions.OnOpen = new JavascriptAction("app.alert('Page 2 opened')");
+doc.Pages[2].Actions.OnClose = new JavascriptAction("app.alert('Page 2 closed')");
 ```
 
-W tym samouczku dodajemy instrukcje JavaScript, które będą wyświetlać komunikat ostrzegawczy po otwarciu lub zamknięciu strony.
+W tym fragmencie kodu dodajemy dwie akcje JavaScript:
+1. Akcja OnOpen: Wyświetla alert „Strona 2 otwarta”, gdy użytkownik otworzy stronę 2.
+2. Akcja OnClose: wyświetla alert „Strona 2 zamknięta”, gdy użytkownik opuści stronę 2.
 
-## Krok 4: Zapisz plik PDF
+Dodaje to warstwę interaktywności do pliku PDF. Wyobraź sobie, że prowadzisz użytkownika przez serię kroków na różnych stronach, z alertami, które pojawiają się, gdy wchodzi na stronę lub ją opuszcza.
 
-Po dodaniu kodu JavaScript do pliku PDF należy zapisać zmodyfikowany plik. Można to zrobić za pomocą`Save` metoda podana przez`Document` klasa.
+## Krok 4: Zapisz dokument PDF
+
+Dodałeś JavaScript zarówno do dokumentu, jak i do konkretnych stron. Ostatnim krokiem jest zapisanie zmodyfikowanego pliku PDF w wybranej lokalizacji. Ta część jest prosta, ale kluczowa — nie zapomnij zapisać swojej pracy!
+
+Oto kod:
 
 ```csharp
+// Określ ścieżkę do pliku wyjściowego
 dataDir = dataDir + "JavaScript-Added_out.pdf";
-// Zapisz dokument PDF
+
+// Zapisz zaktualizowany dokument PDF
 doc.Save(dataDir);
 
-Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);
+Console.WriteLine("\nJavaScript added successfully to the PDF.\nFile saved at " + dataDir);
 ```
 
-Ten kod zapisze zmodyfikowany plik PDF w określonym katalogu.
-
-### Przykładowy kod źródłowy dla opcji Dodaj skrypt Java do strony przy użyciu Aspose.PDF dla .NET
-
-```csharp
-            
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Załaduj istniejące pliki PDF
-Document doc = new Document(dataDir + "input.pdf");
-
-// Dodawanie JavaScriptu na poziomie dokumentu
-// Utwórz instancję JavaScriptAction z żądaną instrukcją JavaScript
-JavascriptAction javaScript = new JavascriptAction("this.print({bUI:true,bSilent:false,bShrinkToFit:true});");
-
-// Przypisz obiekt JavascriptAction do żądanej akcji dokumentu
-doc.OpenAction = javaScript;
-
-// Dodanie JavaScriptu na poziomie strony
-doc.Pages[2].Actions.OnOpen = new JavascriptAction("app.alert('page 1 opened')");
-doc.Pages[2].Actions.OnClose = new JavascriptAction("app.alert('page 1 closed')");
-
-dataDir = dataDir + "JavaScript-Added_out.pdf";
-// Zapisz dokument PDF
-doc.Save(dataDir);
-
-Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);     
-```
+ W tym fragmencie kodu zapisujemy zaktualizowany dokument z dodanym JavaScriptem do nowego pliku o nazwie`"JavaScript-Added_out.pdf"`Dzięki temu masz pewność, że nie nadpiszesz oryginalnego pliku i otrzymasz kopię zapasową, z którą możesz pracować.
 
 ## Wniosek
 
-W tym artykule wyjaśniliśmy, jak dodać JavaScript do pliku PDF zarówno na poziomie dokumentu, jak i na poziomie strony, używając Aspose.PDF dla .NET. Do każdego przykładu dołączyliśmy instrukcje krok po kroku i pełny kod źródłowy. Dzięki tej wiedzy możesz dodać JavaScript do swoich plików PDF i dostosować ich zachowanie do swoich potrzeb.
+Dodawanie JavaScript do plików PDF za pomocą Aspose.PDF dla .NET to potężny sposób tworzenia interaktywnych, dynamicznych plików PDF. Niezależnie od tego, czy automatyzujesz zadania, takie jak drukowanie, czy tworzysz niestandardowe alerty, możliwość osadzania JavaScript w pliku PDF sprawia, że dokumenty są bardziej angażujące i funkcjonalne.
 
+## Najczęściej zadawane pytania
 
-### Często zadawane pytania dotyczące dodawania skryptu Java do pliku PDF
+### Czy mogę dodać wiele akcji JavaScript do różnych stron w pliku PDF?
+Tak, możesz przypisać różne akcje JavaScript poszczególnym stronom lub całemu dokumentowi.
 
-#### P: Co to jest Aspose.PDF dla .NET?
+### Czy można usunąć JavaScript z pliku PDF po jego dodaniu?
+Tak, możesz usunąć lub zmodyfikować istniejące akcje JavaScript, czyszcząc`Actions` Właściwości dokumentu lub strony.
 
-O: Aspose.PDF dla .NET to potężna biblioteka, która umożliwia programistom pracę z plikami PDF w aplikacjach .NET. Zapewnia szeroką gamę funkcji do tworzenia, modyfikowania i manipulowania dokumentami PDF.
+### Jakich funkcji JavaScript mogę używać w pliku PDF?
+Można używać dowolnego języka JavaScript obsługiwanego przez moduł JavaScript programu Adobe Acrobat, takiego jak drukowanie, alerty i manipulacje formularzami.
 
-#### P: Czy mogę dodać JavaScript do dokumentu PDF przy użyciu Aspose.PDF dla .NET?
+### Czy JavaScript działa we wszystkich przeglądarkach PDF?
+Większość akcji JavaScript będzie działać w przeglądarkach PDF obsługujących interaktywne pliki PDF, takich jak Adobe Acrobat. Jednak niektóre podstawowe czytniki PDF mogą nie obsługiwać JavaScript.
 
-Odp.: Tak, Aspose.PDF dla .NET umożliwia dodanie JavaScript zarówno na poziomie dokumentu, jak i na poziomie strony pliku PDF, umożliwiając tworzenie dynamicznych i interaktywnych dokumentów PDF.
-
-#### P: Jak załadować istniejący plik PDF przy użyciu Aspose.PDF dla .NET?
-
- Odp.: Możesz załadować istniejący plik PDF za pomocą`Document` class i jej metody, jak pokazano w przewodniku krok po kroku.
-
-#### P: Jakie typy akcji JavaScript mogę dodać do dokumentu PDF?
-
-Odp.: Dzięki Aspose.PDF dla .NET możesz dodać szeroką gamę akcji JavaScript, takich jak drukowanie, komunikaty ostrzegawcze, manipulowanie polami formularzy i inne.
-
-#### P: Czy Aspose.PDF dla .NET nadaje się do projektów komercyjnych?
-
-O: Tak, Aspose.PDF dla .NET to niezawodna i solidna biblioteka, która jest powszechnie używana w projektach komercyjnych do zadań związanych z manipulacją i generowaniem plików PDF.
-
+### Czy mogę uruchamiać akcje JavaScript na podstawie danych wprowadzonych przez użytkownika w pliku PDF?
+Tak, możesz powiązać JavaScript z polami formularza, aby uruchamiać akcje na podstawie danych wprowadzonych przez użytkownika.

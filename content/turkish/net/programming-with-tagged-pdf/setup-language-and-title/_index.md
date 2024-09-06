@@ -1,41 +1,41 @@
 ---
 title: Kurulum Dili ve Başlığı
 linktitle: Kurulum Dili ve Başlığı
-second_title: .NET API Referansı için Aspose.PDF
+second_title: Aspose.PDF for .NET API Referansı
 description: Aspose.PDF for .NET ile bir PDF belgesinin dilini ve başlığını yapılandırmak için adım adım kılavuz. Kişiselleştirilmiş çok dilli belgeler oluşturun.
 type: docs
 weight: 140
 url: /tr/net/programming-with-tagged-pdf/setup-language-and-title/
 ---
-Bu kılavuzda, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesinin dilini ve başlığını nasıl yapılandıracağınızı anlatacağız. Aspose.PDF, PDF dosyalarını programlı olarak oluşturmanıza, değiştirmenize ve dönüştürmenize olanak tanıyan güçlü bir kitaplıktır.
+Bu kılavuzda, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesinin dilini ve başlığını nasıl yapılandıracağınızı anlatacağız. Aspose.PDF, PDF dosyalarını programlı bir şekilde oluşturmanıza, düzenlemenize ve dönüştürmenize olanak tanıyan güçlü bir kütüphanedir.
 
-Kodun ayrıntılarına inelim ve Aspose.PDF for .NET kullanarak bir PDF belgesinin dilini ve başlığını nasıl yapılandıracağımızı öğrenelim.
+Aspose.PDF for .NET kullanarak bir PDF belgesinin dilinin ve başlığının nasıl yapılandırılacağını öğrenmek için kodlara bir göz atalım.
 
-## Önkoşullar
+## Ön koşullar
 
-Başlamadan önce Aspose.PDF for .NET'i yüklediğinizden ve geliştirme ortamınızı kurduğunuzdan emin olun.
+Başlamadan önce Aspose.PDF for .NET'i yüklediğinizden ve geliştirme ortamınızı ayarladığınızdan emin olun.
 
-## 1. Adım: Belgeyi oluşturma
+## Adım 1: Belgenin oluşturulması
 
- İlk adım, kullanarak yeni bir PDF belgesi oluşturmaktır.`Document` sınıf.
+ İlk adım, yeni bir PDF belgesi oluşturmaktır`Document` sınıf.
 
 ```csharp
 // PDF belgesini oluşturun
 Document document = new Document();
 ```
 
-## 2. Adım: Etiketli içeriğe erişin
+## Adım 2: Etiketli içeriğe erişin
 
- Daha sonra belgenin etiketli içeriğine şu komutu kullanarak erişiriz:`ITaggedContent` nesne.
+ Daha sonra, belgenin etiketli içeriğine şu şekilde erişiyoruz:`ITaggedContent` nesne.
 
 ```csharp
-// Etiketli içeriğe erişme
+// Etiketli içeriğe erişin
 Tagged.ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## 3. Adım: Başlığı ve dili ayarlayın
+## Adım 3: Başlığı ve dili ayarlayın
 
- Artık belge başlığını ve dilini aşağıdaki komutu kullanarak ayarlayabiliriz:`SetTitle` Ve`SetLanguage` yöntemleri`ITaggedContent` nesne.
+ Artık belge başlığını ve dilini şu şekilde ayarlayabiliriz:`SetTitle` Ve`SetLanguage` yöntemleri`ITaggedContent` nesne.
 
 ```csharp
 // Belgenin başlığını tanımlayın
@@ -45,18 +45,18 @@ taggedContent.SetTitle("Example of tagged document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## 4. Adım: Çok dilli içerik ekleyin
+## Adım 4: Çok dilli içerik ekleyin
 
-Daha sonra, her dil için paragraf öğelerini kullanarak belgeye çok dilli içerik ekliyoruz.
+Daha sonra her dil için paragraf öğelerini kullanarak belgeye çok dilli içerik ekliyoruz.
 
 ```csharp
-// İngilizce paragraf ekleme
+// İngilizce bir paragraf ekleyin
 LogicalStructure.ParagraphElement pEN = taggedContent.CreateParagraphElement();
 pEN.SetText("Hello, World!");
 pEN.Language = "en-US";
 taggedContent.RootElement.AppendChild(pEN);
 
-// Almanca paragraf ekleme
+// Almanca bir paragraf ekle
 LogicalStructure.ParagraphElement pDE = taggedContent.CreateParagraphElement();
 pDE.SetText("Hello Welt!");
 pDE.Language = "de-DE";
@@ -68,34 +68,34 @@ pFR.SetText("Hello world!");
 pFR.Language = "fr-FR";
 taggedContent.RootElement.AppendChild(pFR);
 
-// İspanyolca paragraf ekleme
+// İspanyolca bir paragraf ekleyin
 LogicalStructure.ParagraphElement pSP = taggedContent.CreateParagraphElement();
 pSP.SetText("¡Hola Mundo!");
 pSP.Language = "es-ES";
 taggedContent.RootElement.AppendChild(pSP);
 ```
 
-## 5. Adım: Etiketli PDF belgesini kaydedin
+## Adım 5: Etiketli PDF belgesini kaydedin
 
-Son olarak etiketlenen PDF belgesini kaydediyoruz.
+Son olarak etiketli PDF dokümanını kaydediyoruz.
 
 ```csharp
 // Etiketli PDF belgesini kaydedin
 document.Save(dataDir + "SetupLanguageAndTitle.pdf");
 ```
 
-### Aspose.PDF for .NET kullanılarak Kurulum Dili ve Başlığı için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanılarak Kurulum Dili ve Başlığı için örnek kaynak kodu 
 ```csharp
 
 Document document = new Document();
 
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Etiketli İçeriği Alın
+// Etiketlenen İçeriği Alın
 Tagged.ITaggedContent taggedContent = document.TaggedContent;
 
-// Başlığı ve Dili Ayarla
+// Başlık ve Dil Ayarla
 taggedContent.SetTitle("Example Tagged Document");
 taggedContent.SetLanguage("en-US");
 
@@ -128,53 +128,53 @@ pSP.SetText("¡Hola Mundo!");
 pSP.Language = "es-ES";
 taggedContent.RootElement.AppendChild(pSP);
 
-// Etiketli Pdf Belgesini Kaydet
+// Etiketli PDF Belgesini Kaydet
 document.Save(dataDir + "SetupLanguageAndTitle.pdf");
 
 ```
 
 ## Çözüm
 
-Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesinin dilini ve başlığını nasıl yapılandıracağınızı biliyorsunuz. Kişiselleştirilmiş ve çok dilli PDF belgeleri oluşturmak için Aspose.PDF'in özelliklerini daha fazla keşfedebilirsiniz.
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesinin dilini ve başlığını nasıl yapılandıracağınızı biliyorsunuz. Kişiselleştirilmiş ve çok dilli PDF belgeleri oluşturmak için Aspose.PDF'nin özelliklerini daha fazla keşfedebilirsiniz.
 
-### SSS'ler
+### SSS
 
-#### S: Bir PDF belgesinin dilini ve başlığını yapılandırmanın önemi nedir?
+#### S: PDF belgesinin dilinin ve başlığının yapılandırılmasının önemi nedir?
 
-C: PDF belgesinin dilini ve başlığını yapılandırmak erişilebilirlik ve meta veriler açısından önemlidir. Doğru dilin ayarlanması, uygun dil etiketlemeyi ve metin çıkarmayı sağlarken, uygun bir başlık sağlamak belgenin tanımlanmasını ve düzenlenmesini geliştirir.
+A: Bir PDF belgesinin dilini ve başlığını yapılandırmak erişilebilirlik ve meta veriler için önemlidir. Doğru dili ayarlamak uygun dil etiketleme ve metin çıkarmayı sağlarken, uygun bir başlık sağlamak belge tanımlamasını ve organizasyonunu geliştirir.
 
 #### S: Aspose.PDF for .NET belge dili ve başlığının yapılandırılmasını nasıl kolaylaştırır?
 
- C: Aspose.PDF for .NET, belgenin başlığını ve dilini kolayca ayarlamak için API'ler sağlar.`SetTitle` Ve`SetLanguage` yöntemleri`ITaggedContent` nesne. Bu, doğru dil temsilini ve anlamlı belge başlıklarını sağlamanıza olanak tanır.
+ A: Aspose.PDF for .NET, belgenin başlığını ve dilini kolayca ayarlamak için API'ler sağlar`SetTitle` Ve`SetLanguage` yöntemleri`ITaggedContent` nesne. Bu, doğru dil gösterimini ve anlamlı belge başlıklarını garantilemenizi sağlar.
 
-#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinin belirli bölümleri için farklı diller ayarlayabilir miyim?
+#### S: Aspose.PDF for .NET'i kullanarak bir PDF belgesinin belirli bölümleri için farklı diller ayarlayabilir miyim?
 
- C: Evet, Aspose.PDF for .NET'i kullanarak bir PDF belgesinin belirli bölümleri için farklı diller ayarlayabilirsiniz. uygulayarak`Language` özelliğinden paragraf öğelerine geçiş yaparak, içeriğin her bir bölümü için dili belirleyerek belgelerin çok dilli olmasını sağlayabilirsiniz.
+ A: Evet, Aspose.PDF for .NET kullanarak bir PDF belgesinin belirli bölümleri için farklı diller ayarlayabilirsiniz.`Language` Paragraf öğelerine özellik ekleyerek, içeriğin her bir parçası için dili belirleyebilir, çok dilli belgelere olanak sağlayabilirsiniz.
 
-#### S: Çok dilli içerik neden önemlidir ve bunu Aspose.PDF for .NET kullanarak bir PDF belgesine nasıl ekleyebilirim?
+#### S: Çok dilli içerik neden önemlidir ve Aspose.PDF for .NET kullanarak bunu bir PDF belgesine nasıl ekleyebilirim?
 
-C: Çok dilli içerik, PDF belgelerinin erişilebilirliğini ve küresel erişimini artırır. Aspose.PDF for .NET, her dil için paragraf öğeleri oluşturarak, metin ve dil özelliklerini buna göre ayarlayarak çok dilli içerik eklemenizi sağlar.
+A: Çok dilli içerik, PDF belgelerinin erişilebilirliğini ve küresel erişimini artırır. Aspose.PDF for .NET, her dil için paragraf öğeleri oluşturarak, metin ve dil özelliklerini buna göre ayarlayarak çok dilli içerik eklemenize olanak tanır.
 
-####  S: Nasıl`SetTitle` method contribute to improving document accessibility and organization?
+####  S: Nasıl?`SetTitle` method contribute to improving document accessibility and organization?
 
- C:`SetTitle` yöntemi, belge tanımlama, arama sonuçları ve düzenleme için kullanılan PDF belgesinin başlığını belirler. Açık ve anlamlı bir başlık sağlamak belgenin erişilebilirliğini artırır ve kullanıcı deneyimini geliştirir.
+ A:`SetTitle` method, belge tanımlama, arama sonuçları ve organizasyon için kullanılan bir PDF belgesinin başlığını ayarlar. Net ve anlamlı bir başlık sağlamak, belge erişilebilirliğini artırır ve kullanıcı deneyimini iyileştirir.
 
 ####  S: Rolü nedir?`SetLanguage` method in PDF document configuration?
 
- C:`SetLanguage` yöntemi, PDF belgesi için varsayılan dili ayarlayarak doğru dil etiketlemeyi ve metin çıkarmayı sağlar. Belge genelinde dil tutarlılığının ve erişilebilirliğin korunmasına yardımcı olur.
+ A:`SetLanguage` method, PDF belgesi için varsayılan dili ayarlayarak doğru dil etiketleme ve metin çıkarmayı garanti eder. Belge genelinde dil tutarlılığını ve erişilebilirliği korumaya yardımcı olur.
 
-#### S: Belge başlığını ve dilini kullanıcı tercihlerine göre dinamik olarak ayarlamak için Aspose.PDF for .NET'i kullanabilir miyim?
+#### S: Kullanıcı tercihlerine göre belge başlığını ve dilini dinamik olarak ayarlamak için Aspose.PDF for .NET'i kullanabilir miyim?
 
-C: Evet, Aspose.PDF for .NET'i kullanarak belge başlığını ve dilini kullanıcı tercihlerine göre dinamik olarak ayarlayabilirsiniz. Kullanıcı girişi veya sistem verilerini entegre ederek belge başlığını ve dilini buna göre özelleştirebilirsiniz.
+A: Evet, Aspose.PDF for .NET kullanarak kullanıcı tercihlerine göre belge başlığını ve dilini dinamik olarak ayarlayabilirsiniz. Kullanıcı girdisini veya sistem verilerini entegre ederek belge başlığını ve dilini buna göre özelleştirebilirsiniz.
 
-#### S: Dil ve başlık yapılandırmasının PDF belgesine doğru şekilde uygulandığını nasıl doğrulayabilirim?
+#### S: PDF belgesine dil ve başlık yapılandırmasının doğru şekilde uygulandığını nasıl doğrulayabilirim?
 
-C: PDF belgesinin özelliklerini ve meta verilerini inceleyerek dil ve başlık yapılandırmasını doğrulayabilirsiniz. Dil etiketlemenin ve belge başlığının doğru olduğundan emin olmak için PDF görüntüleyicileri veya metin çıkarma araçlarını da kullanabilirsiniz.
+A: PDF belgesinin özelliklerini ve meta verilerini inceleyerek dil ve başlık yapılandırmasını doğrulayabilirsiniz. Ayrıca dil etiketleme ve belge başlığının doğru olduğundan emin olmak için PDF görüntüleyicileri veya metin çıkarma araçlarını da kullanabilirsiniz.
 
-#### S: Bir PDF belgesinin dilini ve başlığını yapılandırırken izlenecek en iyi uygulamalar var mı?
+#### S: Bir PDF belgesinin dilini ve başlığını yapılandırırken uyulması gereken en iyi uygulamalar var mı?
 
-C: Dili ve başlığı yapılandırırken hedef kitleyi, belge içeriğini ve erişilebilirlik gereksinimlerini göz önünde bulundurun. Belgenin kullanılabilirliğini ve erişilebilirliğini geliştirmek için açıklayıcı başlıklar ve doğru dil ayarları seçin.
+A: Dil ve başlığı yapılandırırken hedef kitleyi, belge içeriğini ve erişilebilirlik gereksinimlerini göz önünde bulundurun. Belgenin kullanılabilirliğini ve erişilebilirliğini artırmak için açıklayıcı başlıklar ve doğru dil ayarları seçin.
 
-#### S: Mevcut bir PDF belgesinin dilini ve başlığını Aspose.PDF for .NET kullanarak değiştirebilir miyim?
+#### S: Aspose.PDF for .NET kullanarak mevcut bir PDF belgesinin dilini ve başlığını değiştirebilir miyim?
 
- C: Evet, Aspose.PDF for .NET'i kullanarak mevcut bir PDF belgesinin dilini ve başlığını değiştirebilirsiniz. Belgeyi yükleyerek, etiketli içeriğine erişerek ve`SetTitle` Ve`SetLanguage`yöntemleri kullanarak bu öznitelikleri gerektiği gibi güncelleyebilirsiniz.
+ A: Evet, Aspose.PDF for .NET kullanarak mevcut bir PDF belgesinin dilini ve başlığını değiştirebilirsiniz. Belgeyi yükleyerek, etiketli içeriğine erişerek ve`SetTitle` Ve`SetLanguage`yöntemlerini kullanarak, bu öznitelikleri gerektiği gibi güncelleyebilirsiniz.

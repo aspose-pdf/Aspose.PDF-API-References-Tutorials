@@ -61,7 +61,7 @@ pdfDocument.convert();
 pdfDocument.save(dataDir + "output.pdf");
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Η μετατροπή φορμών Dynamic XFA σε Standard AcroForms σε PDF γίνεται εύκολα με το Aspose.PDF για Java. Αυτή η ισχυρή βιβλιοθήκη απλοποιεί τη διαδικασία και εξασφαλίζει συμβατότητα με διάφορα προγράμματα προβολής PDF και εφαρμογές. Είτε ασχολείστε με πολύπλοκες διαδραστικές φόρμες είτε απλοποιείτε τη ροή εργασίας των εγγράφων σας, το Aspose.PDF για Java σας καλύπτει.
 
@@ -85,4 +85,4 @@ pdfDocument.save(dataDir + "output.pdf");
 
 ### Πού μπορώ να κατεβάσω το Aspose.PDF για Java;
 
- Μπορείτε να κάνετε λήψη της βιβλιοθήκης Aspose.PDF για Java από[αυτός ο σύνδεσμος](https://releases.aspose.com/pdf/java/).
+ Μπορείτε να κάνετε λήψη της βιβλιοθήκης Aspose.PDF για Java από[αυτόν τον σύνδεσμο](https://releases.aspose.com/pdf/java/).

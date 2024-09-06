@@ -1,8 +1,8 @@
 ---
-title: Obtenga el destino del hipervínculo PDF usando Java
-linktitle: Obtenga el destino del hipervínculo PDF usando Java
-second_title: Aspose.PDF API de procesamiento de PDF Java
-description: Descubra cómo recuperar destinos de hipervínculos PDF utilizando Java con Aspose.PDF para Java. Aprenda paso a paso con ejemplos de código en este completo tutorial.
+title: Obtener el destino del hipervínculo PDF mediante Java
+linktitle: Obtener el destino del hipervínculo PDF mediante Java
+second_title: API de procesamiento de PDF de Java Aspose.PDF
+description: Descubra cómo recuperar destinos de hipervínculos PDF mediante Java con Aspose.PDF para Java. Aprenda paso a paso con ejemplos de código en este tutorial completo.
 type: docs
 weight: 10
 url: /es/java/pdf-page-manipulation/get-pdf-hyperlink-destination-using-java/
@@ -10,47 +10,47 @@ url: /es/java/pdf-page-manipulation/get-pdf-hyperlink-destination-using-java/
 
 ## Introducción
 
-En este tutorial, exploraremos cómo obtener destinos de hipervínculos PDF usando Java con la ayuda de Aspose.PDF para Java. Los hipervínculos son elementos esenciales en los documentos PDF y permiten a los usuarios navegar a destinos específicos dentro del PDF o recursos externos. Recorreremos el proceso paso a paso, proporcionando ejemplos de código y explicaciones.
+En este tutorial, exploraremos cómo obtener destinos de hipervínculos PDF mediante Java con la ayuda de Aspose.PDF para Java. Los hipervínculos son elementos esenciales en los documentos PDF, que permiten a los usuarios navegar a destinos específicos dentro del PDF o recursos externos. Repasaremos el proceso paso a paso, brindando ejemplos de código y explicaciones.
 
 ## Comprensión de los hipervínculos PDF
 
-Los hipervínculos de PDF son elementos interactivos que permiten a los usuarios hacer clic y navegar a diferentes ubicaciones dentro del documento PDF o sitios web externos. Constan de dos componentes principales: la anotación del enlace y el destino. El destino especifica dónde llevará el hipervínculo al usuario.
+Los hipervínculos PDF son elementos interactivos que permiten a los usuarios hacer clic y navegar a diferentes ubicaciones dentro del documento PDF o sitios web externos. Constan de dos componentes principales: la anotación del vínculo y el destino. El destino especifica a dónde llevará el hipervínculo al usuario.
 
-## Requisitos previos
+## Prerrequisitos
 
-Antes de comenzar, asegúrese de cumplir con los siguientes requisitos previos:
-- entorno de desarrollo java
-- Aspose.PDF para la biblioteca Java
-- Conocimientos básicos de programación Java.
+Antes de comenzar, asegúrese de tener los siguientes requisitos previos:
+- Entorno de desarrollo Java
+- Biblioteca Aspose.PDF para Java
+- Conocimientos básicos de programación Java
 
-## Configurando Aspose.PDF para Java
+## Configuración de Aspose.PDF para Java
 
-Para comenzar, necesita configurar Aspose.PDF para Java en su proyecto. Sigue estos pasos:
+Para comenzar, debe configurar Aspose.PDF para Java en su proyecto. Siga estos pasos:
 1.  Descargue Aspose.PDF para Java desde[aquí](https://releases.aspose.com/pdf/java/).
 2. Agregue la biblioteca Aspose.PDF a su proyecto Java.
 
-## Cargando un documento PDF
+## Cargar un documento PDF
 
-Primero, cargaremos un documento PDF usando Aspose.PDF para Java. Aquí está el código para hacer eso:
+Primero, cargaremos un documento PDF con Aspose.PDF para Java. Este es el código para hacerlo:
 
 ```java
 // Cargar el documento PDF
 Document pdfDocument = new Document("sample.pdf");
 ```
 
-## Recuperar hipervínculos
+## Recuperación de hipervínculos
 
-A continuación, debemos recuperar los hipervínculos presentes en el documento PDF. Aspose.PDF proporciona una manera conveniente de hacer esto:
+A continuación, necesitamos recuperar los hipervínculos presentes en el documento PDF. Aspose.PDF ofrece una forma práctica de hacerlo:
 
 ```java
-// Obtenga la colección de enlaces de la primera página.
+// Obtenga la colección de enlaces de la primera página
 Page page = pdfDocument.getPages().get_Item(1);
 LinkAnnotationCollection linkAnnotations = page.getAnnotations().getLinkAnnotations();
 ```
 
 ## Extracción de destinos de hipervínculos
 
-Ahora que tenemos las anotaciones de los enlaces, podemos extraer los destinos de los hipervínculos:
+Ahora que tenemos las anotaciones de enlace, podemos extraer los destinos del hipervínculo:
 
 ```java
 // Extraer e imprimir destinos de hipervínculos
@@ -62,7 +62,7 @@ for (LinkAnnotation link : linkAnnotations) {
 
 ## Conclusión
 
-En este tutorial, hemos aprendido cómo obtener destinos de hipervínculos PDF usando Java y Aspose.PDF para Java. Cubrimos los conceptos básicos de los hipervínculos PDF, configuramos el entorno necesario, cargamos un documento PDF, recuperamos hipervínculos y extrajimos sus destinos. Este conocimiento puede resultar valioso para diversas tareas de manipulación de PDF en aplicaciones Java.
+En este tutorial, hemos aprendido a obtener hipervínculos de destino en PDF mediante Java y Aspose.PDF para Java. Hemos cubierto los conceptos básicos de los hipervínculos en PDF, hemos configurado el entorno necesario, hemos cargado un documento PDF, hemos recuperado hipervínculos y hemos extraído sus destinos. Este conocimiento puede resultar valioso para diversas tareas de manipulación de PDF en aplicaciones Java.
 
 ## Preguntas frecuentes
 
@@ -80,8 +80,8 @@ Aspose.PDF para Java le permite recuperar hipervínculos internos y externos pre
 
 ### ¿Cómo puedo modificar o eliminar hipervínculos en un PDF usando Aspose.PDF para Java?
 
-Puede modificar o eliminar hipervínculos accediendo a las anotaciones de vínculos y sus acciones asociadas en el documento PDF.
+Puede modificar o eliminar hipervínculos accediendo a las anotaciones de enlaces y sus acciones asociadas en el documento PDF.
 
 ### ¿Dónde puedo encontrar más documentación sobre Aspose.PDF para Java?
 
- Puede encontrar documentación detallada para Aspose.PDF para Java en[aquí](https://reference.aspose.com/pdf/java/).
+ Puede encontrar documentación detallada de Aspose.PDF para Java en[aquí](https://reference.aspose.com/pdf/java/).

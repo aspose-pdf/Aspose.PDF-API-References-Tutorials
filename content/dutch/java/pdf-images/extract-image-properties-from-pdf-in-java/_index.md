@@ -2,17 +2,17 @@
 title: Afbeeldingseigenschappen uit PDF extraheren in Java
 linktitle: Afbeeldingseigenschappen uit PDF extraheren in Java
 second_title: Aspose.PDF Java PDF-verwerkings-API
-description: Leer hoe u afbeeldingseigenschappen uit PDF's in Java kunt extraheren met Aspose.PDF voor Java. Stap-voor-stap handleiding met broncode. Verbeter vandaag nog uw PDF-verwerkingsvaardigheden!
+description: Leer hoe u afbeeldingseigenschappen uit PDF's in Java kunt extraheren met Aspose.PDF voor Java. Stapsgewijze handleiding met broncode. Verbeter uw PDF-verwerkingsvaardigheden vandaag nog!
 type: docs
 weight: 23
 url: /nl/java/pdf-images/extract-image-properties-from-pdf-in-java/
 ---
 
-Aspose.PDF voor Java is een krachtige bibliotheek waarmee u met PDF-documenten in Java-toepassingen kunt werken. In deze stapsgewijze handleiding onderzoeken we hoe u afbeeldingseigenschappen uit een PDF-document kunt extraheren met Aspose.PDF voor Java. We zullen u voorzien van broncodevoorbeelden om het proces eenvoudig te begrijpen.
+Aspose.PDF voor Java is een krachtige bibliotheek waarmee u met PDF-documenten in Java-applicaties kunt werken. In deze stapsgewijze handleiding gaan we onderzoeken hoe u afbeeldingseigenschappen uit een PDF-document kunt extraheren met Aspose.PDF voor Java. We geven u broncodevoorbeelden om het proces eenvoudig te begrijpen.
 
 ## 1. Inleiding
 
-PDF-documenten bevatten vaak afbeeldingen en het kan handig zijn om programmatisch informatie over deze afbeeldingen te extraheren. Aspose.PDF voor Java biedt een handige manier om afbeeldingseigenschappen zoals afmetingen, resolutie en formaat te extraheren. Laten we beginnen!
+PDF-documenten bevatten vaak afbeeldingen en het kan handig zijn om informatie over deze afbeeldingen programmatisch te extraheren. Aspose.PDF voor Java biedt een handige manier om afbeeldingseigenschappen zoals afmetingen, resolutie en formaat te extraheren. Laten we beginnen!
 
 ## 2. Aspose.PDF instellen voor Java
 
@@ -20,7 +20,7 @@ PDF-documenten bevatten vaak afbeeldingen en het kan handig zijn om programmatis
 
 ## 3. Een PDF-document laden
 
-Om met een PDF-document te kunnen werken, moet u het eerst laden met Aspose.PDF voor Java. Hier ziet u hoe u het kunt doen:
+Om met een PDF-document te werken, moet u het eerst laden met Aspose.PDF voor Java. Dit is hoe u dat kunt doen:
 
 ```java
 // Laad het PDF-document
@@ -31,10 +31,10 @@ Document pdfDocument = new Document("example.pdf");
 
 ## 4. Afbeeldingseigenschappen extraheren
 
- Nu we het PDF-document hebben geladen, gaan we de afbeeldingseigenschappen extraheren. Aspose.PDF voor Java biedt de`Page.getResources()` methode om toegang te krijgen tot de bronnen van een pagina, inclusief afbeeldingen.
+ Nu we het PDF-document hebben geladen, gaan we de afbeeldingseigenschappen extraheren. Aspose.PDF voor Java biedt de`Page.getResources()` Methode om toegang te krijgen tot de bronnen van een pagina, inclusief afbeeldingen.
 
 ```java
-// Open de eerste pagina van het document
+// Toegang tot de eerste pagina van het document
 Page page = pdfDocument.getPages().get_Item(1);
 
 // Toegang tot de bronnen van de pagina
@@ -46,22 +46,22 @@ Iterable<XImage> images = resources.getImages();
 
 ## 5. Toegang tot beeldinformatie
 
-Als de afbeeldingen zijn geëxtraheerd, hebt u toegang tot verschillende eigenschappen van elke afbeelding, zoals afmetingen, resolutie en indeling. Hier is een voorbeeld van hoe u dit moet doen:
+Met de geëxtraheerde afbeeldingen hebt u toegang tot verschillende eigenschappen van elke afbeelding, zoals afmetingen, resolutie en formaat. Hier is een voorbeeld van hoe u dit kunt doen:
 
 ```java
 // Herhaal de afbeeldingen
 for (XImage image : images) {
-    // Haal de breedte en hoogte van de afbeelding op
+    // De breedte en hoogte van de afbeelding ophalen
     int width = image.getWidth();
     int height = image.getHeight();
 
-    // Haal de afbeeldingsresolutie op
+    // Krijg de beeldresolutie
     int resolution = image.getResolution();
 
-    // Haal het afbeeldingsformaat op (bijvoorbeeld JPEG, PNG)
+    // Haal het afbeeldingformaat op (bijv. JPEG, PNG)
     String format = image.getFileFormat().toString();
 
-    // Druk de afbeeldingseigenschappen af
+    // De afbeeldingseigenschappen afdrukken
     System.out.println("Image Width: " + width);
     System.out.println("Image Height: " + height);
     System.out.println("Image Resolution: " + resolution + " DPI");
@@ -75,7 +75,7 @@ Als u afbeeldingseigenschappen moet wijzigen, zoals het formaat wijzigen of comp
 
 ## 7. De bijgewerkte PDF opslaan
 
-Nadat u de afbeeldingseigenschappen indien nodig hebt geëxtraheerd en gewijzigd, kunt u het bijgewerkte PDF-document opslaan met de volgende code:
+Nadat u de afbeeldingseigenschappen hebt geëxtraheerd en indien nodig hebt aangepast, kunt u het bijgewerkte PDF-document opslaan met behulp van de volgende code:
 
 ```java
 // Sla het bijgewerkte PDF-document op
@@ -84,7 +84,7 @@ pdfDocument.save("updated.pdf");
 
 ## 8. Conclusie
 
-In deze handleiding hebben we geleerd hoe u afbeeldingseigenschappen uit een PDF-document kunt extraheren met Aspose.PDF voor Java. We behandelden het opzetten van de bibliotheek, het laden van een PDF-document, het extraheren van afbeeldingseigenschappen, het openen van afbeeldingsinformatie en het opslaan van de bijgewerkte PDF. Aspose.PDF voor Java vereenvoudigt het werken met PDF-documenten en biedt uitgebreide functionaliteit voor verschillende taken.
+In deze handleiding hebben we geleerd hoe u afbeeldingseigenschappen uit een PDF-document kunt extraheren met Aspose.PDF voor Java. We hebben het instellen van de bibliotheek, het laden van een PDF-document, het extraheren van afbeeldingseigenschappen, het openen van afbeeldingsinformatie en het opslaan van de bijgewerkte PDF behandeld. Aspose.PDF voor Java vereenvoudigt het werken met PDF-documenten en biedt uitgebreide functionaliteit voor verschillende taken.
 
 ## Veelgestelde vragen
 
@@ -92,9 +92,9 @@ In deze handleiding hebben we geleerd hoe u afbeeldingseigenschappen uit een PDF
 
  U kunt Aspose.PDF voor Java downloaden van de website[hier](https://releases.aspose.com/pdf/java/) en volg de installatie-instructies in de documentatie.
 
-### Kan ik afbeeldingseigenschappen uit specifieke pagina's in een PDF extraheren?
+### Kan ik afbeeldingseigenschappen van specifieke pagina's in een PDF extraheren?
 
-Ja, u kunt afbeeldingseigenschappen van specifieke pagina's extraheren door de gewenste pagina te openen met behulp van`pdfDocument.getPages().get_Item(pageNumber)` en volg vervolgens dezelfde stappen als vermeld in de handleiding.
+Ja, u kunt afbeeldingseigenschappen van specifieke pagina's extraheren door de gewenste pagina te openen met`pdfDocument.getPages().get_Item(pageNumber)` en volg dan dezelfde stappen die in de handleiding staan.
 
 ### Kan ik afbeeldingseigenschappen wijzigen met Aspose.PDF voor Java?
 
@@ -102,4 +102,4 @@ Ja, u kunt afbeeldingseigenschappen wijzigen, zoals het formaat wijzigen, compri
 
 ### Waar kan ik meer documentatie en voorbeelden vinden voor Aspose.PDF voor Java?
 
- U kunt toegang krijgen tot uitgebreide documentatie en voorbeelden op de Aspose.PDF voor Java API-documentatiewebsite:[https://reference.aspose.com/pdf/java/](https://reference.aspose.com/pdf/java/).
+ Uitgebreide documentatie en voorbeelden vindt u op de website Aspose.PDF voor Java API-documentatie:[https://reference.aspose.com/pdf/java/](https://reference.aspose.com/pdf/java/).

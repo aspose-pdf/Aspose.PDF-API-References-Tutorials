@@ -17,7 +17,7 @@ Po stažení knihovny rozbalte obsah souboru ZIP do složky v počítači. Poté
 
 ## Krok 2: Načtěte dokument PDF
 
-Jakmile nainstalujete Aspose.PDF pro .NET a přidáte odkaz na knihovnu DLL ve svém projektu .NET, můžete začít používat`GetFileInfo` funkce pro načtení informací o metadatech dokumentu PDF.
+ Jakmile nainstalujete Aspose.PDF pro .NET a přidáte odkaz na knihovnu DLL ve svém projektu .NET, můžete začít používat`GetFileInfo` funkce pro načtení informací o metadatech dokumentu PDF.
 
 Prvním krokem při použití této funkce je načtení dokumentu PDF, o kterém chcete získat informace. Chcete-li to provést, můžete použít následující kód:
 
@@ -25,7 +25,7 @@ Prvním krokem při použití této funkce je načtení dokumentu PDF, o kterém
 // Cesta k dokumentu PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Otevřete dokument PDF
+// Otevřete dokument PDF
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 ```
 
@@ -58,7 +58,7 @@ Ve výše uvedeném kódu každý řádek načte jinou vlastnost metadat dokumen
 // Cesta k dokumentu PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Otevřete dokument PDF
+// Otevřete dokument PDF
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 
 // Získejte informace o dokumentu

@@ -121,7 +121,7 @@ V: Igen, az Aspose.PDF for .NET segítségével kezelheti a többoldalas PDF dok
 
 #### K: Eltávolítható a táblázat egy PDF dokumentumból?
 
- V: Igen, eltávolíthat egy táblázatot a PDF-dokumentumból az Aspose.PDF for .NET használatával. Ennek eléréséhez eltávolíthatja a konkrét`Table` tárgy a`Page.Paragraphs` Gyűjtemény. Az eltávolítandó táblát a következő tulajdonságokkal azonosíthatja:`Table.NumberOfColumns`, `Table.NumberOfRows`és más egyedi azonosítók.
+ V: Igen, eltávolíthat egy táblázatot a PDF-dokumentumból az Aspose.PDF for .NET használatával. Ennek eléréséhez eltávolíthatja a konkrét`Table` tárgy a`Page.Paragraphs` gyűjtemény. Az eltávolítandó táblát a következő tulajdonságokkal azonosíthatja:`Table.NumberOfColumns`, `Table.NumberOfRows`és más egyedi azonosítók.
 
 #### K: Módosíthatom a táblázat szövegének formázását (betűtípus, szín, igazítás)?
 

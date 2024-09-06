@@ -56,7 +56,7 @@ text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 ```
 
 ## Βήμα 7: Προσθέστε το TextFragment στη σελίδα
- Πρόσθεσε το`TextFragment` αντικείμενο στη συλλογή παραγράφων της σελίδας.
+ Προσθέστε το`TextFragment` αντικείμενο στη συλλογή παραγράφων της σελίδας.
 
 ```csharp
 page.Paragraphs.Add(text);
@@ -108,7 +108,7 @@ page.Paragraphs.Add(text);
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-## συμπέρασμα
+## Σύναψη
 Προσθέσατε με επιτυχία τις επόμενες γραμμές εσοχή στο κείμενο χρησιμοποιώντας το Aspose.PDF για .NET. Το αρχείο PDF που προκύπτει μπορεί τώρα να βρεθεί στην καθορισμένη διαδρομή αρχείου εξόδου.
 
 ### Συχνές ερωτήσεις

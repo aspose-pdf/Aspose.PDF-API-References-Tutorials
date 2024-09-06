@@ -1,59 +1,59 @@
 ---
-title: Çok Sütunlu Pdf Oluştur
-linktitle: Çok Sütunlu Pdf Oluştur
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET'i kullanarak çok sütunlu bir PDF'nin nasıl oluşturulacağını öğrenin.
+title: Çok Sütunlu PDF Oluştur
+linktitle: Çok Sütunlu PDF Oluştur
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak çok sütunlu PDF'nin nasıl oluşturulacağını öğrenin.
 type: docs
 weight: 110
 url: /tr/net/programming-with-text/create-multi-column-pdf/
 ---
-Bu eğitim, Aspose.PDF for .NET kullanarak çok sütunlu bir PDF oluşturma sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları gösterir.
+Bu eğitim, .NET için Aspose.PDF kullanarak çok sütunlu bir PDF oluşturma sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları göstermektedir.
 
 ## Gereksinimler
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Makinenizde kurulu Visual Studio veya başka herhangi bir C# derleyicisi.
-- Aspose.PDF for .NET kitaplığı. Resmi Aspose web sitesinden indirebilir veya yüklemek için NuGet gibi bir paket yöneticisi kullanabilirsiniz.
+- Bilgisayarınızda Visual Studio veya herhangi bir C# derleyicisi yüklü olmalıdır.
+- Aspose.PDF for .NET kütüphanesi. Resmi Aspose web sitesinden indirebilir veya NuGet gibi bir paket yöneticisi kullanarak kurabilirsiniz.
 
-## 1. Adım: Projeyi ayarlayın
+## Adım 1: Projeyi kurun
 1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
-2. Aspose.PDF for .NET kitaplığına bir referans ekleyin.
+2. .NET için Aspose.PDF kitaplığına bir referans ekleyin.
 
-## 2. Adım: Gerekli ad alanlarını içe aktarın
-Çok sütunlu bir PDF oluşturmak istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki kullanarak yönergeleri ekleyin:
+## Adım 2: Gerekli ad alanlarını içe aktarın
+Çok sütunlu PDF oluşturmak istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki using yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Drawing;
 ```
 
-## 3. Adım: Belge dizinini ayarlayın
- Kodda yazan satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belgelerinizin saklandığı dizinin yolu ile birlikte.
+## Adım 3: Belge dizinini ayarlayın
+ Kodda şu satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` Belgelerinizin saklandığı dizinin yolunu içeren.
 
-## 4. Adım: Yeni bir Belge örneği oluşturun
- Yeni bir örnek oluştur`Document` Aşağıdaki kod satırını ekleyerek nesne:
+## Adım 4: Yeni bir Belge örneği oluşturun
+ Yeni bir örnek oluştur`Document` Aşağıdaki kod satırını ekleyerek nesneyi oluşturun:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## 5. Adım: Sayfa kenar boşluklarını ayarlayın
- PDF dosyası için sol ve sağ kenar boşluğu bilgilerini aşağıdaki düğmeyi kullanarak belirtin:`PageInfo.Margin` mülkiyeti`Document`.
+## Adım 5: Sayfa kenar boşluklarını ayarlayın
+ PDF dosyası için sol ve sağ kenar boşluğu bilgilerini belirtin`PageInfo.Margin` mülkiyeti`Document`.
 
 ```csharp
 doc.PageInfo.Margin.Left = 40;
 doc.PageInfo.Margin.Right = 40;
 ```
 
-## 6. Adım: Belgeye bir sayfa ekleyin
- kullanarak belgeye yeni bir sayfa ekleyin.`Add` yöntemi`Pages`Toplamak. Verilen kodda yeni sayfa değişkene atanır.`page`.
+## Adım 6: Belgeye bir sayfa ekleyin
+ Belgeye yeni bir sayfa eklemek için şunu kullanın:`Add` yöntemi`Pages`koleksiyon. Sağlanan kodda, yeni sayfa değişkene atanır`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
 ## Adım 7: Bir Grafik nesnesi oluşturun ve bir çizgi ekleyin
- Yeni bir tane oluştur`Graph` belirli boyutlara sahip nesneyi seçin ve ona bir çizgi ekleyin. Daha sonra şunu ekleyin:`Graph` itiraz`Paragraphs` sayfanın toplanması.
+ Yeni bir tane oluştur`Graph` belirli boyutlara sahip bir nesne seçin ve ona bir çizgi ekleyin. Ardından,`Graph` itiraz etmek`Paragraphs` Sayfanın koleksiyonu.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
@@ -63,8 +63,8 @@ graph1.Shapes.Add(l1);
 page.Paragraphs.Add(graph1);
 ```
 
-## 8. Adım: HTML biçimlendirmesiyle başlık metnini ekleyin
- Oluşturduğunuz bir`HtmlFragment` nesnesini seçin ve içeriğini istediğiniz HTML metnine ayarlayın. Daha sonra parçayı şuraya ekleyin:`Paragraphs` sayfanın toplanması.
+## Adım 8: HTML biçimlendirmesiyle başlık metni ekleyin
+ Bir tane oluştur`HtmlFragment` nesneyi ekleyin ve içeriğini istediğiniz HTML metnine ayarlayın. Ardından, parçayı`Paragraphs` Sayfanın koleksiyonu.
 
 ```csharp
 string s = "<font face=\"Times New Roman\" size=4>" +
@@ -74,8 +74,8 @@ HtmlFragment heading_text = new HtmlFragment(s);
 page.Paragraphs.Add(heading_text);
 ```
 
-## Adım 9: Birden çok sütuna sahip bir FloatingBox oluşturun
- Oluşturmak`FloatingBox` nesneyi seçin ve sütun sayısını ve sütun aralığını ayarlayın. Daha sonra metin parçalarını ve bir satırı ekleyin.`Paragraphs` koleksiyonu`FloatingBox`.
+## Adım 9: Birden fazla sütuna sahip bir FloatingBox oluşturun
+ Bir tane oluştur`FloatingBox` nesneyi seçin ve sütun sayısını ve sütun aralığını ayarlayın. Ardından, metin parçaları ve bir satır ekleyin`Paragraphs` koleksiyonu`FloatingBox`.
 
 ```csharp
 Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
@@ -101,30 +101,30 @@ page.Paragraphs.Add(box);
 ```
 
 ## Adım 10: PDF belgesini kaydedin
- PDF belgesini kullanarak kaydedin.`Save` yöntemi`Document` nesne.
+ PDF belgesini kullanarak kaydedin`Save` yöntemi`Document` nesne.
 
 ```csharp
 doc.Save(dataDir);
 ```
 
-### Aspose.PDF for .NET kullanarak Çok Sütunlu PDF Oluşturma için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Çok Sütunlu PDF Oluşturma için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
-// PDF dosyası için sol kenar boşluğu bilgisini belirtin
+//PDF dosyası için sol kenar boşluğu bilgisini belirtin
 doc.PageInfo.Margin.Left = 40;
-//PDF dosyası için Sağ kenar boşluğu bilgisini belirtin
+// PDF dosyası için Sağ kenar boşluğu bilgisini belirtin
 doc.PageInfo.Margin.Right = 40;
 Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
-// Satırı bölüm nesnesinin paragraf koleksiyonuna ekleyin
+// Satırı bölüm nesnesinin paraphraphs koleksiyonuna ekle
 page.Paragraphs.Add(graph1);
 // Çizginin koordinatlarını belirtin
 float[] posArr = new float[] { 1, 2, 500, 2 };
 Aspose.Pdf.Drawing.Line l1 = new Aspose.Pdf.Drawing.Line(posArr);
 graph1.Shapes.Add(l1);
-// Html etiketleri içeren metinlerle dize değişkenleri oluşturun
+// HTML etiketleri içeren metinle dize değişkenleri oluşturun
 string s = "<font face=\"Times New Roman\" size=4>" +
 "<strong> How to Steer Clear of money scams</<strong> "
 + "</font>";
@@ -143,13 +143,13 @@ text1.TextState.LineSpacing = 2;
 box.Paragraphs.Add(text1);
 text1.TextState.FontSize = 10;
 text1.TextState.FontStyle = FontStyles.Italic;
-// Çizgi çizmek için bir grafik nesnesi oluşturun
+// Bir çizgi çizmek için bir grafik nesnesi oluşturun
 Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
 // Çizginin koordinatlarını belirtin
 float[] posArr2 = new float[] { 1, 10, 100, 10 };
 Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
 graph2.Shapes.Add(l2);
-// Satırı bölüm nesnesinin paragraf koleksiyonuna ekleyin
+// Satırı bölüm nesnesinin paragraf koleksiyonuna ekle
 box.Paragraphs.Add(graph2);
 TextFragment text2 = new TextFragment(@"Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam. Pellentesque sit amet elit. Vestibulum interdum pellentesque augue. Cras mollis arcu sit amet purus. Donec augue. Nam mollis tortor a elit. Nulla viverra nisl vel mauris. Vivamus sapien. nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et,nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.");
 box.Paragraphs.Add(text2);
@@ -161,17 +161,17 @@ Console.WriteLine("\nMulti column pdf file created successfully.\nFile saved at 
 ```
 
 ## Çözüm
-Aspose.PDF for .NET'i kullanarak başarıyla çok sütunlu bir PDF oluşturdunuz. Ortaya çıkan PDF dosyası artık belirtilen çıktı dosyası yolunda bulunabilir.
+Aspose.PDF for .NET kullanarak çok sütunlu bir PDF'yi başarıyla oluşturdunuz. Elde edilen PDF dosyası artık belirtilen çıktı dosyası yolunda bulunabilir.
 
-### SSS'ler
+### SSS
 
 #### S: Bu eğitimin odak noktası nedir?
 
-Bu eğitim, Aspose.PDF for .NET kitaplığını kullanarak çok sütunlu bir PDF oluşturma sürecinde size rehberlik etmeye odaklanmıştır. Sağlanan C# kaynak kodu, bunu başarmak için gerekli adımları gösterir.
+Bu eğitim, Aspose.PDF for .NET kütüphanesini kullanarak çok sütunlu bir PDF oluşturma sürecinde size rehberlik etmeye odaklanmıştır. Sağlanan C# kaynak kodu, bunu başarmak için gerekli adımları göstermektedir.
 
 #### S: Bu eğitim için hangi ad alanlarını içe aktarmalıyım?
 
-C: Çok sütunlu bir PDF oluşturmak istediğiniz kod dosyasında, dosyanın başında aşağıdaki ad alanlarını içe aktarın:
+A: Çok sütunlu PDF oluşturmak istediğiniz kod dosyasında, dosyanın başına aşağıdaki ad alanlarını içe aktarın:
 
 ```csharp
 using Aspose.Pdf;
@@ -180,36 +180,36 @@ using Aspose.Pdf.Drawing;
 
 #### S: Belge dizinini nasıl belirlerim?
 
- A: Kodda satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
+ A: Kodda şu satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininize giden gerçek yol ile.
 
-#### S: Yeni bir Belge örneğini nasıl oluşturabilirim?
+#### S: Yeni bir Belge örneği nasıl oluştururum?
 
- C: 4. Adımda yeni bir örnek oluşturacaksınız.`Document` sağlanan kodu kullanarak nesne.
+ A: 4. Adımda yeni bir örnek oluşturacaksınız`Document` Sağlanan kodu kullanarak nesne.
 
 #### S: Sayfa kenar boşluklarını nasıl ayarlarım?
 
- C: 5. Adımda şunları kullanacaksınız:`PageInfo.Margin` mülkiyeti`Document` PDF dosyası için sol ve sağ kenar boşluğu bilgilerini belirtmek için.
+ A: 5. Adımda şunu kullanacaksınız:`PageInfo.Margin` mülkiyeti`Document` PDF dosyası için sol ve sağ kenar boşluğu bilgilerini belirtmek için.
 
 #### S: Belgeye nasıl sayfa eklerim?
 
- C: 6. Adımda belgeye yeni bir sayfa ekleyeceksiniz.`Add` yöntemi`Pages` Toplamak.
+ A: 6. Adımda, belgeye yeni bir sayfa ekleyeceksiniz`Add` yöntemi`Pages` koleksiyon.
 
-#### S: Graph nesnesini nasıl oluşturup çizgi eklerim?
+#### S: Bir Grafik nesnesi nasıl oluştururum ve bir çizgi nasıl eklerim?
 
- C: 7. Adımda yeni bir`Graph` nesneye bir satır ekleyin ve ardından`Graph` itiraz`Paragraphs` sayfanın toplanması.
+ A: 7. Adımda yeni bir tane oluşturacaksınız`Graph` nesneye bir satır ekleyin ve ardından`Graph` itiraz etmek`Paragraphs` Sayfanın koleksiyonu.
 
 #### S: HTML biçimlendirmesiyle başlık metnini nasıl eklerim?
 
- C: 8. Adımda bir`HtmlFragment` nesnesini seçin ve içeriğini istediğiniz HTML metnine ayarlayın, ardından parçayı`Paragraphs` sayfanın toplanması.
+ A: 8. Adımda bir`HtmlFragment` nesneyi seçin ve içeriğini istediğiniz HTML metnine ayarlayın, ardından parçayı`Paragraphs` Sayfanın koleksiyonu.
 
-#### S: Birden fazla sütuna sahip bir FloatingBox'ı nasıl oluşturabilirim?
+#### S: Birden fazla sütuna sahip bir FloatingBox nasıl oluştururum?
 
- C: 9. Adımda bir`FloatingBox` birden çok sütun ve sütun aralığına sahip nesneyi seçin, ardından metin parçaları ve bir satır ekleyin.`Paragraphs` koleksiyonu`FloatingBox`.
+ A: 9. Adımda bir tane oluşturacaksınız`FloatingBox` birden fazla sütun ve sütun aralığına sahip nesneyi oluşturun, ardından metin parçaları ve bir satır ekleyin`Paragraphs` koleksiyonu`FloatingBox`.
 
-#### S: PDF belgesini nasıl kaydederim?
+#### S: PDF belgesini nasıl kaydedebilirim?
 
- C: 10. Adımda, PDF belgesini aşağıdaki komutu kullanarak kaydedeceksiniz:`Save` yöntemi`Document` nesne.
+ A: 10. Adımda, PDF belgesini kullanarak kaydedeceksiniz`Save` yöntemi`Document` nesne.
 
-#### S: Bu eğitimden çıkan ana sonuç nedir?
+#### S: Bu eğitimden çıkarılacak en önemli ders nedir?
 
-C: Bu eğitimi takip ederek Aspose.PDF for .NET kullanarak çok sütunlu bir PDF belgesinin nasıl oluşturulacağını öğrendiniz. Bu, içeriği yapılandırılmış ve organize bir düzende görüntülemek için yararlı olabilir.
+A: Bu öğreticiyi takip ederek, .NET için Aspose.PDF kullanarak çok sütunlu bir PDF belgesinin nasıl oluşturulacağını öğrendiniz. Bu, içeriği yapılandırılmış ve organize bir düzende görüntülemek için yararlı olabilir.

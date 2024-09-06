@@ -1,15 +1,15 @@
 ---
-title: PDF Dosyasında Sayı Stilini Uygula
-linktitle: PDF Dosyasında Sayı Stilini Uygula
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak PDF dosyasındaki başlıklara numaralandırma stilini nasıl uygulayacağınızı öğrenin. Adım adım rehber.
+title: PDF Dosyasına Sayı Stili Uygula
+linktitle: PDF Dosyasına Sayı Stili Uygula
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki başlıklara numaralandırma stilinin nasıl uygulanacağını öğrenin. Adım adım kılavuz.
 type: docs
 weight: 10
 url: /tr/net/programming-with-headings/apply-number-style/
 ---
-Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasında numaralandırma stilini uygulamak için aşağıdaki C# kaynak kodunu adım adım anlatacağız.
+Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasına numaralandırma stilini uygulamak için aşağıdaki C# kaynak kodunu adım adım inceleyeceğiz.
 
-Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ayrıca temel C# programlama bilgisine sahip olmak.
+Başlamadan önce Aspose.PDF kütüphanesini yüklediğinizden ve geliştirme ortamınızı ayarladığınızdan emin olun. Ayrıca C# programlamanın temel bilgisine sahip olun.
 
 ### Adım 1: Belge Dizini Kurulumu
 
@@ -21,7 +21,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ### Adım 2: PDF Belgesini Oluşturma
 
-Belirtilen boyutlara ve kenar boşluklarına sahip yeni bir PDF belgesi oluşturuyoruz.
+Belirtilen boyutlar ve kenar boşluklarıyla yeni bir PDF belgesi oluşturuyoruz.
 
 ```csharp
 Document pdfDoc = new Document();
@@ -34,9 +34,9 @@ pdfDoc.PageInfo.Margin.Top = 72;
 pdfDoc.PageInfo.Margin.Bottom = 72;
 ```
 
-### Adım 3: Sayfa ve Kayan Kap Oluşturma
+### Adım 3: Bir Sayfa ve Yüzen Kapsayıcı Oluşturma
 
-Belgeye bir sayfa ekliyoruz ve içeriği düzenlemek için kayan bir kapsayıcı oluşturuyoruz.
+Belgeye bir sayfa ekliyoruz ve içeriği düzenlemek için yüzen bir kapsayıcı oluşturuyoruz.
 
 ```csharp
 Aspose.Pdf.Page pdfPage = pdfDoc.Pages.Add();
@@ -52,9 +52,9 @@ floatBox.Margin = pdfPage.PageInfo.Margin;
 pdfPage.Paragraphs.Add(floatBox);
 ```
 
-### 4. Adım: Numaralandırmayla başlıklar ekleyin
+### Adım 4: Numaralandırma ile başlıklar ekleyin
 
-Belirtilen numaralandırmalarla başlıklar oluşturup bunları yüzen konteynere ekliyoruz.
+Belirtilen numaralandırmalarla başlıklar oluşturuyoruz ve bunları yüzen konteynere ekliyoruz.
 
 ```csharp
 Aspose.Pdf.Heading heading = new Aspose.Pdf.Heading(1);
@@ -86,7 +86,7 @@ floatBox.Paragraphs.Add(heading3);
 
 ### Adım 5: PDF Belgesini Kaydetme
 
-Oluşturulan PDF belgesini belirtilen dizine kaydediyoruz.
+Oluşturulan PDF dokümanını belirtilen dizine kaydediyoruz.
 
 ```csharp
 dataDir = dataDir + "ApplyNumberStyle_out.pdf";
@@ -94,10 +94,10 @@ pdfDoc.Save(dataDir);
 Console.WriteLine("\nNumbering style successfully applied to headers.\nFile saved as: " + dataDir);
 ```
 
-### Aspose.PDF for .NET kullanarak Sayı Stili Uygulamak için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Sayı Stili Uygula için örnek kaynak kodu 
 ```csharp
 
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDoc = new Document();
 pdfDoc.PageInfo.Width = 612.0;
@@ -149,36 +149,36 @@ Console.WriteLine("\nNumber style applied successfully in headings.\nFile saved 
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesindeki başlıklara numaralandırma stilinin nasıl uygulanacağını açıkladık. Artık bu bilgiyi başlıklar için özel numaralandırmalara sahip PDF belgeleri oluşturmak için kullanabilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesindeki başlıklara numaralandırma stilinin nasıl uygulanacağını açıkladık. Artık bu bilgiyi kullanarak başlıklar için özel numaralandırmalara sahip PDF belgeleri oluşturabilirsiniz.
 
-### PDF dosyasında sayı stilini uygulamak için SSS
+### PDF dosyasında numara stilini uygulama hakkında SSS
 
-#### S: PDF belgesindeki numaralandırma stili nedir?
+#### S: PDF belgesinde numaralandırma stili nedir?
 
-C: Numaralandırma stili, bir PDF belgesinde başlıkların veya bölümlerin numaralandırıldığı formatı ifade eder. Hiyerarşik bir yapı sağlamak için rakamlar, harfler veya diğer karakterleri içerebilir.
+A: Numaralandırma stili, bir PDF belgesinde başlıkların veya bölümlerin numaralandırıldığı biçimi ifade eder. Hiyerarşik bir yapı sağlamak için sayılar, harfler veya diğer karakterleri içerebilir.
 
-#### S: Bir PDF belgesindeki başlıklara neden numaralandırma stili uygulamam gerekiyor?
+#### S: PDF belgesindeki başlıklara neden numaralandırma stili uygulamam gerekir?
 
-C: Başlıklara numaralandırma stili uygulamak, PDF belgenizin okunabilirliğini ve düzenini artırır. Okuyucuların içeriğin hiyerarşik yapısını kolayca gezinmesine ve anlamasına yardımcı olur.
+A: Başlıklara numaralandırma stili uygulamak PDF belgenizin okunabilirliğini ve organizasyonunu artırır. Okuyucuların içeriğin hiyerarşik yapısını kolayca gezinmesine ve anlamasına yardımcı olur.
 
 #### S: Aspose.PDF for .NET nedir?
 
-C: Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarında PDF dosyalarıyla programlı olarak çalışmasına olanak tanıyan bir kitaplıktır. PDF belgelerini oluşturmak, düzenlemek, dönüştürmek ve değiştirmek için çok çeşitli özellikler sunar.
+A: Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarında PDF dosyalarıyla programatik olarak çalışmasına olanak tanıyan bir kütüphanedir. PDF belgeleri oluşturmak, düzenlemek, dönüştürmek ve düzenlemek için çok çeşitli özellikler sunar.
 
-#### S: C# projem için gerekli kitaplıkları nasıl içeri aktarabilirim?
+#### S: C# projem için gerekli kütüphaneleri nasıl içe aktarabilirim?
 
-C: C# projeniz için gerekli kitaplıkları içe aktarmak için aşağıdaki içe aktarma yönergelerini ekleyin:
+A: C# projeniz için gerekli kütüphaneleri içe aktarmak için aşağıdaki içe aktarma yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-Bu yönergeler, PDF belgeleriyle çalışmak ve numaralandırma stillerini uygulamak için gereken sınıflara ve yöntemlere erişmenizi sağlar.
+Bu yönergeler, PDF belgeleriyle çalışmak ve numaralandırma stilleri uygulamak için gereken sınıflara ve yöntemlere erişmenizi sağlar.
 
 #### S: Oluşturulan PDF dosyasının kaydedileceği dizini nasıl belirlerim?
 
-C: Sağlanan kaynak kodunda, oluşturulan PDF dosyasını kaydetmek istediğiniz dizini belirtmek için "dataDir" değişkenini değiştirin.
+A: Sağlanan kaynak kodunda, oluşturulan PDF dosyasını kaydetmek istediğiniz dizini belirtmek için "dataDir" değişkenini değiştirin.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -186,9 +186,9 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
  Yer değiştirmek`"YOUR DOCUMENTS DIRECTORY"` gerçek dizin yolu ile.
 
-#### S: Belirtilen boyutlara ve kenar boşluklarına sahip bir PDF belgesini nasıl oluşturabilirim?
+#### S: Belirtilen boyutlar ve kenar boşluklarıyla bir PDF belgesi nasıl oluşturabilirim?
 
-C: Belirtilen boyutlara ve kenar boşluklarına sahip bir PDF belgesi oluşturmak için aşağıdaki kodu kullanın:
+A: Belirtilen boyutlara ve kenar boşluklarına sahip bir PDF belgesi oluşturmak için aşağıdaki kodu kullanın:
 
 ```csharp
 Document pdfDoc = new Document();
@@ -201,13 +201,13 @@ pdfDoc.PageInfo.Margin.Top = 72;
 pdfDoc.PageInfo.Margin.Bottom = 72;
 ```
 
-#### S: Numaralandırma stilindeki başlıkları PDF belgesine nasıl eklerim?
+#### S: PDF belgesine numaralandırma stiliyle başlıklar nasıl eklerim?
 
-C: PDF belgesine numaralandırma stiline sahip başlıklar eklemek için sağlanan kod örneklerini kullanarak başlıklar oluşturun ve numaralandırma stillerini özelleştirin. Metin, numaralandırma stili, başlangıç numarası ve otomatik sıra gibi özellikleri gerektiği gibi ayarlayın.
+A: PDF belgesine numaralandırma stiline sahip başlıklar eklemek için, başlıklar oluşturmak ve numaralandırma stillerini özelleştirmek için sağlanan kod örneklerini kullanın. Metin, numaralandırma stili, başlangıç numarası ve otomatik sıra gibi özellikleri gerektiği gibi ayarlayın.
 
-#### S: Oluşturulan PDF belgesini nasıl kaydederim?
+#### S: Oluşturulan PDF belgesini nasıl kaydedebilirim?
 
- C: Oluşturulan PDF belgesini kaydetmek için`Save` yöntemi`pdfDoc` nesne:
+ A: Oluşturulan PDF belgesini kaydetmek için şunu kullanın:`Save` yöntemi`pdfDoc` nesne:
 
 ```csharp
 dataDir = dataDir + "ApplyNumberStyle_out.pdf";
@@ -215,14 +215,14 @@ pdfDoc.Save(dataDir);
 Console.WriteLine("\nNumbering style applied to headers.\nFile saved as: " + dataDir);
 ```
 
-#### S: Numaralandırma stilinin uygulandığını nasıl doğrulayabilirim?
+#### S: Numaralandırma stilinin uygulandığını nasıl teyit edebilirim?
 
-C: Belirtilen numaralandırma stilinin başlıklara uygulandığını doğrulamak için oluşturulan PDF dosyasını açın.
+A: Başlıklara belirtilen numaralandırma stilinin uygulandığını doğrulamak için oluşturulan PDF dosyasını açın.
 
-#### S: Numaralandırma stilini daha da özelleştirebilir miyim?
+#### S: Numaralandırma stilini daha fazla özelleştirebilir miyim?
 
- C: Evet, numaralandırma stilinin özelliklerini ayarlayarak numaralandırma stilini daha da özelleştirebilirsiniz.`Heading` numaralandırma stili türü, başlangıç numarası ve otomatik sıra gibi nesneler.
+ A: Evet, numaralandırma stilini, numaralandırma özelliklerini ayarlayarak daha da özelleştirebilirsiniz.`Heading` numaralandırma stili türü, başlangıç numarası ve otomatik sıra gibi nesneler.
 
 #### S: Belgenin farklı bölümlerine farklı numaralandırma stilleri uygulayabilir miyim?
 
-C: Evet, birden çok bölüm oluşturarak belgenin farklı bölümlerine farklı numaralandırma stilleri uygulayabilirsiniz.`Heading` farklı stil ve dizilere sahip nesneler.
+ A: Evet, birden fazla numaralandırma stili oluşturarak belgenin farklı bölümlerine farklı numaralandırma stilleri uygulayabilirsiniz.`Heading` farklı stil ve dizilişlere sahip nesneler.

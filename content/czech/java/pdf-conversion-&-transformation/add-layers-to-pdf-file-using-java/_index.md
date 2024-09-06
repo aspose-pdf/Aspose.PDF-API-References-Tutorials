@@ -14,13 +14,13 @@ Než se pustíme do implementace, ujistěte se, že máte splněny následujíc�
 
 - Java Development Kit (JDK) nainstalovaný ve vašem systému.
 - Integrované vývojové prostředí (IDE) dle vašeho výběru (např. Eclipse, IntelliJ IDEA).
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Krok 1: Nastavte vývojové prostředí Java
 Pokud jste tak ještě neučinili, nainstalujte Java Development Kit (JDK) a nastavte preferované integrované vývojové prostředí (IDE). Ujistěte se, že vaše vývojové prostředí je připraveno na programování v jazyce Java.
 
 ## Krok 2: Přidejte Aspose.PDF for Java do svého projektu
-Jakmile nastavíte vývojové prostředí, musíte do projektu přidat knihovnu Aspose.PDF for Java. Následuj tyto kroky:
+Jakmile nastavíte vývojové prostředí, musíte do projektu přidat knihovnu Aspose.PDF for Java. Postupujte takto:
 
 1. Stáhněte si knihovnu Aspose.PDF for Java z webu.
 2. Ve svém IDE vytvořte nový projekt Java nebo otevřete existující.
@@ -89,7 +89,7 @@ pdfDocument.save("document_with_layers.pdf");
 ```
 
 ## Závěr
-Gratulujeme! Úspěšně jste přidali vrstvy do souboru PDF pomocí Java s Aspose.PDF for Java. Vrstvy poskytují účinný způsob, jak řídit viditelnost obsahu ve vašich dokumentech PDF, díky čemuž jsou interaktivnější a dynamičtější.
+Gratuluji! Úspěšně jste přidali vrstvy do souboru PDF pomocí Java s Aspose.PDF for Java. Vrstvy poskytují účinný způsob, jak řídit viditelnost obsahu ve vašich dokumentech PDF, díky čemuž jsou interaktivnější a dynamičtější.
 
 ## Nejčastější dotazy
 

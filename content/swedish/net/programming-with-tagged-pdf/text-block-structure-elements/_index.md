@@ -1,6 +1,6 @@
 ---
-title: Textblockstrukturelement
-linktitle: Textblockstrukturelement
+title: Textblocksstrukturelement
+linktitle: Textblocksstrukturelement
 second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du använder Aspose.PDF för .NET för att lägga till textblockstrukturelement, såsom rubriker och taggade stycken, till ett befintligt PDF-dokument.
 type: docs
@@ -157,7 +157,7 @@ I den här handledningen lärde vi oss hur man använder Aspose.PDF för .NET f�
 
 #### F: Vad är huvudfokus för den här handledningen om att skapa textblockstrukturelement i ett taggat PDF-dokument med Aspose.PDF för .NET?
 
-S: Denna handledning är inriktad på att guida dig genom processen att lägga till textblocksstrukturelement, inklusive flernivårubriker och taggade stycken, till ett taggat PDF-dokument med Aspose.PDF för .NET. Handledningen innehåller steg-för-steg-instruktioner och exempel på C#-källkod som hjälper dig att förbättra strukturen och tillgängligheten för dina PDF-dokument.
+S: Den här handledningen är inriktad på att guida dig genom processen att lägga till textblocksstrukturelement, inklusive flernivårubriker och taggade stycken, till ett taggat PDF-dokument med Aspose.PDF för .NET. Handledningen innehåller steg-för-steg-instruktioner och exempel på C#-källkod som hjälper dig att förbättra strukturen och tillgängligheten för dina PDF-dokument.
 
 #### F: Vilka är förutsättningarna för att följa denna handledning om textblocksstrukturelement med Aspose.PDF för .NET?
 
@@ -181,7 +181,7 @@ S: Handledningen innehåller C#-källkodsexempel som illustrerar hur man ställe
 
 #### F: Hur lägger jag till taggade stycken i ett PDF-dokument med Aspose.PDF för .NET?
 
-S: Handledningen innehåller exempel på C#-källkod som visar hur man skapar ett stycke med hjälp av`CreateParagraphElement()` metoden och lägg till taggad text till den med hjälp av`SetText()` metod. Stycket läggs sedan till i rotstrukturelementet i det taggade PDF-dokumentet.
+S: Handledningen innehåller exempel på C#-källkod som visar hur man skapar ett stycke med hjälp av`CreateParagraphElement()` och lägg till taggad text till den med hjälp av`SetText()` metod. Stycket läggs sedan till i rotstrukturelementet i det taggade PDF-dokumentet.
 
 #### F: Kan jag anpassa utseendet och formateringen av textblockstrukturelementen som jag lägger till i PDF-dokumentet?
 
@@ -189,7 +189,7 @@ S: Ja, du kan anpassa utseendet och formateringen av textblocksstrukturelementen
 
 #### F: Hur hjälper källkoden i handledningen att lägga till textblocksstrukturelement i ett PDF-dokument?
 
-S: Den medföljande exempelkällkoden fungerar som en praktisk referens för att implementera skapandet av textblocksstrukturelement i ett PDF-dokument med Aspose.PDF för .NET. Du kan använda den här koden som utgångspunkt och modifiera den efter dina behov.
+S: Den medföljande källkoden fungerar som en praktisk referens för att implementera skapandet av textblocksstrukturelement i ett PDF-dokument med Aspose.PDF för .NET. Du kan använda den här koden som utgångspunkt och modifiera den efter dina behov.
 
 #### F: Hur kan jag ytterligare förbättra och anpassa mina PDF-dokument utöver textblockstrukturelement med Aspose.PDF för .NET?
 

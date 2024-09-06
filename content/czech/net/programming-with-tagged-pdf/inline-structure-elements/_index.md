@@ -165,7 +165,7 @@ Zde vytváříme prvky inline struktury, jako jsou nadpisy různých úrovní a 
 Nakonec tagovaný dokument PDF uložíme.
 
 ```csharp
-// Uložte tagovaný dokument PDF
+// Uložte označený dokument PDF
 document.Save(dataDir + "InlineStructureElements.pdf");
 ```
 
@@ -311,7 +311,7 @@ Odpověď: Ano, vzhled a formátování prvků inline struktury můžete přizp�
 
 #### Otázka: Mohu použít prvky vložené struktury k vytvoření seznamů, odrážek nebo jiných typů organizace obsahu v dokumentu PDF?
 
-Odpověď: I když se samotné prvky vložené struktury primárně používají pro nadpisy a odstavce, můžete je použít v kombinaci s dalšími funkcemi nabízenými Aspose.PDF pro .NET k vytváření seznamů, odrážek, tabulek a dalších typů organizace obsahu pro komplexní struktura dokumentu.
+Odpověď: Zatímco samotné prvky vložené struktury se primárně používají pro nadpisy a odstavce, můžete je použít v kombinaci s dalšími funkcemi nabízenými Aspose.PDF pro .NET k vytváření seznamů, odrážek, tabulek a dalších typů organizace obsahu pro komplexní struktura dokumentu.
 
 #### Otázka: Jak přispívají prvky inline struktury k usnadnění přístupu k dokumentu?
 

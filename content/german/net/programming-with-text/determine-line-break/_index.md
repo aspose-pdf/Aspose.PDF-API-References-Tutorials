@@ -1,44 +1,44 @@
 ---
-title: Bestimmen Sie den Zeilenumbruch in der PDF-Datei
-linktitle: Bestimmen Sie den Zeilenumbruch in der PDF-Datei
+title: Zeilenumbruch in PDF-Datei bestimmen
+linktitle: Zeilenumbruch in PDF-Datei bestimmen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Zeilenumbrüche in einer PDF-Datei bestimmen.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Zeilenumbrüche in PDF-Dateien bestimmen.
 type: docs
 weight: 130
 url: /de/net/programming-with-text/determine-line-break/
 ---
-Dieses Tutorial führt Sie durch den Prozess der Bestimmung von Zeilenumbrüchen in einer PDF-Datei mit Aspose.PDF für .NET. Der bereitgestellte C#-Quellcode demonstriert die notwendigen Schritte.
+Dieses Tutorial führt Sie durch den Prozess der Bestimmung von Zeilenumbrüchen in PDF-Dateien mit Aspose.PDF für .NET. Der bereitgestellte C#-Quellcode demonstriert die erforderlichen Schritte.
 
 ## Anforderungen
 Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- Visual Studio oder ein anderer auf Ihrem Computer installierter C#-Compiler.
+- Visual Studio oder ein anderer C#-Compiler muss auf Ihrem Computer installiert sein.
 - Aspose.PDF für .NET-Bibliothek. Sie können es von der offiziellen Aspose-Website herunterladen oder einen Paketmanager wie NuGet verwenden, um es zu installieren.
 
-## Schritt 1: Richten Sie das Projekt ein
+## Schritt 1: Einrichten des Projekts
 1. Erstellen Sie ein neues C#-Projekt in Ihrer bevorzugten Entwicklungsumgebung.
-2. Fügen Sie einen Verweis auf die Aspose.PDF für .NET-Bibliothek hinzu.
+2. Fügen Sie einen Verweis auf die Aspose.PDF-Bibliothek für .NET hinzu.
 
 ## Schritt 2: Erforderliche Namespaces importieren
-Fügen Sie in der Codedatei, in der Sie Zeilenumbrüche festlegen möchten, die folgenden using-Anweisungen am Anfang der Datei hinzu:
+Fügen Sie in der Codedatei, in der Sie Zeilenumbrüche bestimmen möchten, am Anfang der Datei die folgenden Using-Direktiven hinzu:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-## Schritt 3: Legen Sie das Dokumentverzeichnis fest
- Suchen Sie im Code die Zeile mit der Aufschrift`string dataDir = "YOUR DOCUMENT DIRECTORY";` und ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem Pfad zu dem Verzeichnis, in dem Ihre Dokumente gespeichert sind.
+## Schritt 3: Dokumentverzeichnis festlegen
+ Suchen Sie im Code nach der Zeile, die besagt:`string dataDir = "YOUR DOCUMENT DIRECTORY";` und ersetzen`"YOUR DOCUMENT DIRECTORY"` durch den Pfad zum Verzeichnis, in dem Ihre Dokumente gespeichert sind.
 
 ## Schritt 4: Erstellen Sie eine neue Dokumentinstanz
- Instanziieren Sie eine neue`Document` Objekt durch Hinzufügen der folgenden Codezeile:
+ Instanziieren Sie ein neues`Document` -Objekt, indem Sie die folgende Codezeile hinzufügen:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Schritt 5: Fügen Sie dem Dokument eine Seite hinzu
- Fügen Sie mit dem eine neue Seite zum Dokument hinzu`Add` Methode der`Pages`Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
+## Schritt 5: Dem Dokument eine Seite hinzufügen
+ Fügen Sie dem Dokument eine neue Seite hinzu, indem Sie das`Add` Methode der`Pages`Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -57,7 +57,7 @@ for (int i = 0; i < 4; i++)
 ```
 
 ## Schritt 7: Speichern Sie das PDF-Dokument und extrahieren Sie die Zeilenumbruchinformationen
- Speichern Sie das PDF-Dokument mit`Save` Methode der`Document` Objekt. Extrahieren Sie dann die Zeilenumbruchinformationen mithilfe von`GetNotifications` Methode der gewünschten Seite.
+ Speichern Sie das PDF-Dokument mit dem`Save` Methode der`Document` Objekt. Extrahieren Sie dann die Zeilenumbruchinformationen mithilfe des`GetNotifications` Methode der gewünschten Seite.
 
 ```csharp
 doc.Save(dataDir + "DetermineLineBreak_out.pdf");
@@ -65,9 +65,9 @@ string notifications = doc.Pages[1].GetNotifications();
 File.WriteAllText(dataDir + "notifications_out.txt", notifications);
 ```
 
-### Beispielquellcode für „Zeilenumbruch bestimmen“ mit Aspose.PDF für .NET 
+### Beispielquellcode zum Bestimmen des Zeilenumbruchs mit Aspose.PDF für .NET 
 ```csharp
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 Page page = doc.Pages.Add();
@@ -85,24 +85,24 @@ File.WriteAllText(dataDir + "notifications_out.txt", notifications);
 ## Abschluss
 Sie haben mit Aspose.PDF für .NET erfolgreich Zeilenumbrüche in einem PDF-Dokument ermittelt. Die Zeilenumbruchinformationen wurden extrahiert und in einer Textdatei gespeichert.
 
-### FAQs
+### Häufig gestellte Fragen
 
-#### F: Was ist der Schwerpunkt dieses Tutorials?
+#### F: Worauf liegt der Schwerpunkt dieses Tutorials?
 
-A: Der Schwerpunkt dieses Tutorials liegt darauf, Sie durch den Prozess der Bestimmung von Zeilenumbrüchen in einer PDF-Datei mithilfe der Aspose.PDF für .NET-Bibliothek zu führen. Der bereitgestellte C#-Quellcode demonstriert die notwendigen Schritte, um dies zu erreichen.
+A: Dieses Tutorial führt Sie durch den Prozess der Bestimmung von Zeilenumbrüchen in einer PDF-Datei mithilfe der Aspose.PDF für .NET-Bibliothek. Der bereitgestellte C#-Quellcode demonstriert die erforderlichen Schritte, um dies zu erreichen.
 
-#### F: Welche Namespaces sollte ich für dieses Tutorial importieren?
+#### F: Welche Namespaces soll ich für dieses Tutorial importieren?
 
-A: Importieren Sie in der Codedatei, in der Sie Zeilenumbrüche festlegen möchten, die folgenden Namespaces am Anfang der Datei:
+A: Importieren Sie in der Codedatei, in der Sie Zeilenumbrüche bestimmen möchten, die folgenden Namespaces am Anfang der Datei:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-#### F: Wie lege ich das Dokumentenverzeichnis fest?
+#### F: Wie gebe ich das Dokumentverzeichnis an?
 
- A: Suchen Sie im Code die Zeile`string dataDir = "YOUR DOCUMENT DIRECTORY";` und ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
+ A: Suchen Sie im Code die Zeile`string dataDir = "YOUR DOCUMENT DIRECTORY";` und ersetzen`"YOUR DOCUMENT DIRECTORY"` durch den tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
 
 #### F: Wie erstelle ich eine neue Dokumentinstanz?
 
@@ -110,7 +110,7 @@ using System.IO;
 
 #### F: Wie füge ich dem Dokument eine Seite hinzu?
 
- A: In Schritt 5 fügen Sie dem Dokument eine neue Seite hinzu`Add` Methode der`Pages` Sammlung.
+ A: In Schritt 5 fügen Sie dem Dokument eine neue Seite hinzu, indem Sie`Add` Methode der`Pages` Sammlung.
 
 #### F: Wie füge ich Textfragmente mit Zeilenumbrüchen hinzu?
 
@@ -118,12 +118,12 @@ A: In Schritt 6 erstellen Sie eine Schleife, um der Seite mehrere Textfragmente 
 
 #### F: Wie speichere ich das PDF-Dokument und extrahiere Zeilenumbruchinformationen?
 
- A: In Schritt 7 speichern Sie das PDF-Dokument mit`Save` Methode der`Document` Objekt. Anschließend extrahieren Sie die Zeilenumbruchinformationen mithilfe von`GetNotifications` Methode der gewünschten Seite und speichern Sie sie in einer Textdatei.
+ A: In Schritt 7 speichern Sie das PDF-Dokument mit dem`Save` Methode der`Document` Objekt. Anschließend extrahieren Sie die Zeilenumbruchinformationen mithilfe des`GetNotifications`Methode der gewünschten Seite und speichern Sie sie in einer Textdatei.
 
-#### F: Welchen Zweck haben die extrahierten Zeilenumbruchinformationen?
+#### F: Was ist der Zweck der extrahierten Zeilenumbruchinformationen?
 
-A: Die extrahierten Zeilenumbruchinformationen liefern Details zu den im PDF-Dokument vorhandenen Zeilenumbrüchen und Benachrichtigungen. Dies kann nützlich sein, um zu analysieren und zu verstehen, wie Text und Absätze im Dokument strukturiert sind.
+A: Die extrahierten Zeilenumbruchinformationen liefern Details zu den im PDF-Dokument vorhandenen Zeilenumbrüchen und Benachrichtigungen. Dies kann hilfreich sein, um zu analysieren und zu verstehen, wie Text und Absätze im Dokument strukturiert sind.
 
 #### F: Was ist die wichtigste Erkenntnis aus diesem Tutorial?
 
-A: Durch die Befolgung dieses Tutorials haben Sie gelernt, wie Sie mit Aspose.PDF für .NET Zeilenumbrüche in einem PDF-Dokument bestimmen. Sie können dieses Wissen nutzen, um Zeilenumbruchinformationen aus PDF-Dateien programmgesteuert zu extrahieren und zu analysieren.
+A: In diesem Tutorial haben Sie gelernt, wie Sie mit Aspose.PDF für .NET Zeilenumbrüche in einem PDF-Dokument bestimmen. Sie können dieses Wissen nutzen, um Zeilenumbruchinformationen programmgesteuert aus PDF-Dateien zu extrahieren und zu analysieren.

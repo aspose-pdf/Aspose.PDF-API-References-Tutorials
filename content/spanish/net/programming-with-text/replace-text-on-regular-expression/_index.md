@@ -1,40 +1,40 @@
 ---
-title: Reemplazar texto en expresión regular en un archivo PDF
+title: Reemplazar texto en una expresión regular en un archivo PDF
 linktitle: Reemplazar la expresión regular de Texton en un archivo PDF
-second_title: Aspose.PDF para referencia de API .NET
-description: Aprenda a reemplazar texto basado en una expresión regular en un archivo PDF usando Aspose.PDF para .NET.
+second_title: Referencia de API de Aspose.PDF para .NET
+description: Aprenda a reemplazar texto según una expresión regular en un archivo PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 360
 url: /es/net/programming-with-text/replace-text-on-regular-expression/
 ---
-En este tutorial, explicaremos cómo reemplazar texto basado en una expresión regular en un archivo PDF usando la biblioteca Aspose.PDF para .NET. Proporcionaremos una guía paso a paso junto con el código fuente C# necesario.
+En este tutorial, explicaremos cómo reemplazar texto en función de una expresión regular en un archivo PDF utilizando la biblioteca Aspose.PDF para .NET. Proporcionaremos una guía paso a paso junto con el código fuente de C# necesario.
 
-## Requisitos previos
+## Prerrequisitos
 
 Antes de comenzar, asegúrese de tener lo siguiente:
 
-- Aspose.PDF para la biblioteca .NET instalada.
-- Conocimientos básicos de programación en C#.
+- Biblioteca Aspose.PDF para .NET instalada.
+- Comprensión básica de programación en C#.
 
-## Paso 1: configurar el directorio de documentos
+## Paso 1: Configurar el directorio de documentos
 
- Establezca la ruta al directorio donde tiene el archivo PDF de entrada. Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir` variable con la ruta a su archivo PDF.
+ Establezca la ruta al directorio donde se encuentra el archivo PDF de entrada. Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir` variable con la ruta a su archivo PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Paso 2: cargue el documento PDF
+## Paso 2: Cargue el documento PDF
 
- Cargue el documento PDF usando el`Document` clase de la biblioteca Aspose.PDF.
+ Cargue el documento PDF utilizando el`Document` clase de la biblioteca Aspose.PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionPage.pdf");
 ```
 
-## Paso 3: buscar y reemplazar texto usando expresiones regulares
+## Paso 3: Buscar y reemplazar texto usando expresiones regulares
 
- Crear un`TextFragmentAbsorber` objeto y especifique el patrón de expresión regular para encontrar todas las frases que coincidan con el patrón. Configure la opción de búsqueda de texto para habilitar el uso de expresiones regulares.
+ Crear un`TextFragmentAbsorber` objeto y especifique el patrón de expresión regular para encontrar todas las frases que coincidan con el patrón. Establezca la opción de búsqueda de texto para habilitar el uso de expresiones regulares.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Como 1999-2000
@@ -43,9 +43,9 @@ textFragmentAbsorber.TextSearchOptions = textSearchOptions;
 pdfDocument.Pages[1].Accept(textFragmentAbsorber);
 ```
 
-## Paso 4: reemplazar texto
+## Paso 4: Reemplazar texto
 
-Recorra los fragmentos de texto extraídos y reemplace el texto según sea necesario. Actualice el texto y otras propiedades como fuente, tamaño de fuente, color de primer plano y color de fondo.
+Recorra los fragmentos de texto extraídos y reemplace el texto según sea necesario. Actualice el texto y otras propiedades, como la fuente, el tamaño de fuente, el color de primer plano y el color de fondo.
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
@@ -58,7 +58,7 @@ foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
 }
 ```
 
-## Paso 5: guarde el PDF modificado
+## Paso 5: Guardar el PDF modificado
 
 Guarde el documento PDF modificado en el archivo de salida especificado.
 
@@ -68,7 +68,7 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nText replaced successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
 
-### Código fuente de muestra para reemplazar la expresión regular de Texton usando Aspose.PDF para .NET 
+### Código fuente de muestra para reemplazar expresiones regulares de Texton con Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -79,16 +79,16 @@ TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d
 // Establecer la opción de búsqueda de texto para especificar el uso de expresiones regulares
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textFragmentAbsorber.TextSearchOptions = textSearchOptions;
-// Aceptar el absorbente para una sola página.
+// Acepta el absorbedor para una sola página.
 pdfDocument.Pages[1].Accept(textFragmentAbsorber);
-// Obtenga los fragmentos de texto extraídos
+// Obtener los fragmentos de texto extraídos
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Recorre los fragmentos
+// Recorrer los fragmentos
 foreach (TextFragment textFragment in textFragmentCollection)
 {
 	// Actualizar texto y otras propiedades
 	textFragment.Text = "New Phrase";
-	// Establecido en una instancia de un objeto.
+	// Establecer en una instancia de un objeto.
 	textFragment.TextState.Font = FontRepository.FindFont("Verdana");
 	textFragment.TextState.FontSize = 22;
 	textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Blue);
@@ -101,53 +101,53 @@ Console.WriteLine("\nText replaced successfully based on a regular expression.\n
 
 ## Conclusión
 
-En este tutorial, ha aprendido cómo reemplazar texto basándose en una expresión regular en un documento PDF utilizando la biblioteca Aspose.PDF para .NET. Si sigue la guía paso a paso y ejecuta el código C# proporcionado, puede cargar un documento PDF, buscar texto usando una expresión regular, reemplazarlo y guardar el PDF modificado.
+En este tutorial, aprendió a reemplazar texto según una expresión regular en un documento PDF utilizando la biblioteca Aspose.PDF para .NET. Si sigue la guía paso a paso y ejecuta el código C# proporcionado, podrá cargar un documento PDF, buscar texto mediante una expresión regular, reemplazarlo y guardar el PDF modificado.
 
 ### Preguntas frecuentes
 
 #### P: ¿Cuál es el propósito del tutorial "Reemplazar texto en expresión regular en un archivo PDF"?
 
-R: El tutorial "Reemplazar texto en expresión regular en un archivo PDF" tiene como objetivo guiarlo a través del proceso de uso de la biblioteca Aspose.PDF para .NET para buscar y reemplazar texto en un documento PDF basado en una expresión regular. Proporciona una guía paso a paso junto con un código C# de muestra.
+R: El tutorial "Reemplazar texto con una expresión regular en un archivo PDF" tiene como objetivo guiarlo a través del proceso de uso de la biblioteca Aspose.PDF para .NET para buscar y reemplazar texto en un documento PDF según una expresión regular. Proporciona una guía paso a paso junto con un código C# de muestra.
 
 #### P: ¿Por qué querría utilizar una expresión regular para reemplazar texto en un documento PDF?
 
-R: El uso de expresiones regulares le permite buscar y reemplazar patrones de texto que siguen un formato específico, lo que lo convierte en una forma poderosa de manipular el contenido. Este enfoque es particularmente útil cuando necesita reemplazar texto que coincida con un determinado patrón o estructura en todo el documento PDF.
+R: El uso de expresiones regulares le permite buscar y reemplazar patrones de texto que siguen un formato específico, lo que lo convierte en una forma eficaz de manipular el contenido. Este enfoque es particularmente útil cuando necesita reemplazar texto que coincide con un patrón o una estructura determinados en el documento PDF.
 
 #### P: ¿Cómo configuro el directorio de documentos?
 
-R: Para configurar el directorio de documentos:
+A: Para configurar el directorio de documentos:
 
-1.  Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir` variable con la ruta al directorio donde se encuentra su archivo PDF de entrada.
+1.  Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir` variable con la ruta al directorio donde se encuentra el archivo PDF de entrada.
 
-#### P: ¿Cómo reemplazo texto basado en una expresión regular en un documento PDF?
+#### P: ¿Cómo puedo reemplazar texto según una expresión regular en un documento PDF?
 
-R: El tutorial lo guía a través de los siguientes pasos:
+R: El tutorial lo guiará a través de los siguientes pasos:
 
-1.  Cargue el documento PDF usando el`Document` clase.
-2.  Crear un`TextFragmentAbsorber` objeto y especifique el patrón de expresión regular para encontrar frases que coincidan con el patrón. Configure la opción de búsqueda de texto para habilitar el uso de expresiones regulares.
-3. Recorra los fragmentos de texto extraídos y reemplace el texto. Actualice otras propiedades como fuente, tamaño de fuente, color de primer plano y color de fondo según sea necesario.
+1.  Cargue el documento PDF utilizando el`Document` clase.
+2.  Crear un`TextFragmentAbsorber` objeto y especifique el patrón de expresión regular para buscar frases que coincidan con el patrón. Establezca la opción de búsqueda de texto para habilitar el uso de expresiones regulares.
+3. Recorra los fragmentos de texto extraídos y reemplace el texto. Actualice otras propiedades, como la fuente, el tamaño de fuente, el color de primer plano y el color de fondo, según sea necesario.
 4. Guarde el documento PDF modificado.
 
-#### P: ¿Puedo reemplazar texto usando expresiones regulares complejas?
+#### P: ¿Puedo reemplazar texto utilizando expresiones regulares complejas?
 
 R: Sí, puede utilizar expresiones regulares complejas para hacer coincidir y reemplazar texto en el documento PDF. Las expresiones regulares proporcionan una forma flexible de identificar patrones o estructuras específicas en el texto.
 
 ####  P: ¿Cuál es el propósito de la`TextSearchOptions` class in the tutorial?
 
- R: El`TextSearchOptions`La clase le permite especificar opciones de búsqueda de texto, como habilitar el uso de expresiones regulares al buscar fragmentos de texto. En el tutorial, se utiliza para habilitar el modo de expresión regular para el`TextFragmentAbsorber`.
+ A: El`TextSearchOptions`La clase permite especificar opciones de búsqueda de texto, como habilitar el uso de expresiones regulares al buscar fragmentos de texto. En el tutorial, se utiliza para habilitar el modo de expresión regular para la`TextFragmentAbsorber`.
 
-#### P: ¿Es opcional el reemplazo de fuentes cuando se usan expresiones regulares para reemplazar texto?
+#### P: ¿El reemplazo de fuente es opcional cuando se utilizan expresiones regulares para reemplazar texto?
 
-R: Sí, el reemplazo de fuentes es opcional cuando se usan expresiones regulares para reemplazar texto. Si no especifica una nueva fuente, el texto conservará la fuente del fragmento de texto original.
+R: Sí, el reemplazo de fuente es opcional cuando se utilizan expresiones regulares para reemplazar texto. Si no especifica una nueva fuente, el texto conservará la fuente del fragmento de texto original.
 
 #### P: ¿Cómo puedo reemplazar texto en varias páginas usando una expresión regular?
 
-R: Puede modificar el bucle a través de los fragmentos de texto para incluir todas las páginas del documento PDF, similar al ejemplo del tutorial. De esta manera, puede reemplazar texto en varias páginas según el patrón de expresión regular.
+R: Puedes modificar el bucle a través de los fragmentos de texto para incluir todas las páginas del documento PDF, de forma similar al ejemplo del tutorial. De esta manera, puedes reemplazar texto en varias páginas según el patrón de expresión regular.
 
-#### P: ¿Cuál es el resultado esperado al ejecutar el código proporcionado?
+#### P: ¿Cuál es el resultado esperado de la ejecución del código proporcionado?
 
 R: Si sigue el tutorial y ejecuta el código C# proporcionado, reemplazará el texto en el documento PDF que coincida con el patrón de expresión regular especificado. El texto reemplazado tendrá las propiedades que especificó, como fuente, tamaño de fuente, color de primer plano y color de fondo.
 
-#### P: ¿Puedo utilizar este método para reemplazar texto con formato complejo?
+#### P: ¿Puedo utilizar este enfoque para reemplazar texto con formato complejo?
 
-R: Sí, puedes personalizar el formato del texto reemplazado actualizando propiedades como fuente, tamaño de fuente, color de primer plano y color de fondo. Esto le permite mantener o modificar el formato según sea necesario.
+R: Sí, puedes personalizar el formato del texto reemplazado actualizando propiedades como fuente, tamaño de fuente, color de primer plano y color de fondo. Esto te permite mantener o modificar el formato según sea necesario.

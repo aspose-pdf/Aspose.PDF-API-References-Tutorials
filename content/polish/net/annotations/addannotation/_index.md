@@ -1,138 +1,128 @@
 ---
-title: Dodaj adnotację PDF
+title: Dodaj adnotację do pliku PDF
 linktitle: Dodaj adnotację
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak dodawać tekstowe adnotacje PDF za pomocą Aspose.PDF dla .NET, używając tego kodu źródłowego C#. Dostosuj swoje adnotacje, dodając określone szczegóły i ikony.
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwo dodawaj niestandardowe adnotacje do swoich plików PDF za pomocą Aspose.PDF dla .NET dzięki temu przewodnikowi krok po kroku. Dostosuj swoje adnotacje za pomocą konkretnych szczegółów i ikon.
 type: docs
 weight: 10
 url: /pl/net/annotations/addannotation/
 ---
-Dodawanie adnotacji do dokumentów PDF to zaawansowana funkcja, która może usprawnić procesy współpracy i recenzji. Aspose.PDF dla .NET ułatwia programowe dodawanie adnotacji do dokumentów PDF przy użyciu języka C#. W tym przewodniku wyjaśnimy krok po kroku, jak używać Aspose.PDF dla .NET do dodawania adnotacji do dokumentu PDF.
+## Wstęp
 
-## Krok 1: Utwórz nowy projekt i zainstaluj Aspose.PDF dla .NET
+Adnotacje to świetny sposób na wzbogacenie dokumentów PDF, czyniąc je interaktywnymi i informacyjnymi. Niezależnie od tego, czy zostawiasz notatki dla współpracownika, czy dodajesz dodatkowe informacje dla czytelników, adnotacje mogą być niezbędne. W tym samouczku zagłębiamy się w proces dodawania adnotacji PDF przy użyciu Aspose.PDF dla .NET. Podzielimy każdy krok, tak aby pod koniec tego przewodnika stać się profesjonalistą w osadzaniu adnotacji w plikach PDF. Zaczynajmy!
 
-Zanim zaczniemy pisać kod do dodawania adnotacji, musimy stworzyć nowy projekt i zainstalować Aspose.PDF dla .NET. Aby zainstalować Aspose.PDF dla .NET, wykonaj następujące kroki:
+## Wymagania wstępne
 
-1. Otwórz program Visual Studio i utwórz nowy projekt C#.
-2. Kliknij projekt prawym przyciskiem myszy w Eksploratorze rozwiązań i wybierz opcję „Zarządzaj pakietami NuGet”.
-3. Wyszukaj „Aspose.PDF” i wybierz „Zainstaluj”.
+Zanim zagłębimy się w kod, upewnijmy się, że masz wszystko, czego potrzebujesz:
 
-Po zakończeniu instalacji możemy przystąpić do pisania kodu.
+-  Aspose.PDF dla .NET: Upewnij się, że masz zainstalowaną bibliotekę Aspose.PDF. Możesz ją pobrać ze strony[Strona pobierania Aspose.PDF dla .NET](https://releases.aspose.com/pdf/net/).
+- Środowisko programistyczne: Visual Studio lub inne dowolne środowisko programistyczne C#.
+- Podstawowa wiedza o języku C#: W tym przewodniku założono, że znasz już programowanie w języku C#.
+- Dokument PDF: przykładowy plik PDF, do którego będziesz dodawać adnotacje.
 
-## Krok 2: Otwórz dokument PDF
+ Jeśli nie posiadasz jeszcze biblioteki Aspose.PDF, możesz ją pobrać z powyższego łącza i rozpocząć[bezpłatny okres próbny](https://releases.aspose.com/) lub kup[licencja](https://purchase.aspose.com/buy). 
 
-Pierwszym krokiem dodawania adnotacji jest otwarcie dokumentu PDF. Do otwarcia dokumentu możemy użyć następującego kodu:
+## Importuj pakiety
+
+Zanim zaczniesz kodować, upewnij się, że zaimportowałeś niezbędne przestrzenie nazw:
 
 ```csharp
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+```
+
+Te przestrzenie nazw zapewniają dostęp do klas i metod potrzebnych do manipulowania plikami PDF i ich adnotacji.
+
+## Krok 1: Załaduj swój dokument PDF
+
+Najpierw musisz załadować dokument PDF, do którego chcesz dodać adnotację.
+
+```csharp
+// Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DATA DIRECTORY";
-Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
-```
-
-W tym kodzie określamy ścieżkę do dokumentu PDF, który chcemy otworzyć. Pamiętaj, aby zastąpić „TWÓJ KATALOG DANYCH” rzeczywistą ścieżką do katalogu danych.
-
-## Krok 3: Utwórz adnotację
-
- Aby dodać adnotację, musimy utworzyć nową instancję pliku`TextAnnotation` klasa. Możemy użyć następującego kodu, aby utworzyć nową adnotację tekstową:
-
-```csharp
-TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
-textAnnotation.Title = "Sample Annotation Title";
-textAnnotation.Subject = "Sample Subject";
-textAnnotation.State = AnnotationState.Accepted;
-textAnnotation.Contents = "Sample contents for the annotation";
-textAnnotation.Open = true;
-textAnnotation.Icon = TextIcon.Key;
-```
-
-W tym kodzie tworzymy nową adnotację tekstową na drugiej stronie dokumentu PDF. Ustawiamy także tytuł, temat, stan, zawartość, otwarcie i właściwości ikony adnotacji.
-
-## Krok 4: Dostosuj adnotację
-
- Możemy dostosować wygląd adnotacji za pomocą`Border` klasa. Możemy użyć następującego kodu, aby dostosować obramowanie adnotacji:
-
-```csharp
-Border border = new Border(textAnnotation);
-border.Width = 5;
-border.Dash = new Dash(1, 1);
-textAnnotation.Border = border;
-textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
-```
-
- W tym kodzie tworzymy nowy`Border`obiekt i ustaw jego właściwości szerokości i kreski. Następnie ustawiamy`Border` właściwość adnotacji do nowego`Border` obiekt. Na koniec ustawiamy`Rect` właściwość adnotacji, aby określić jej położenie i rozmiar.
-
-## Krok 5: Dodaj adnotację do dokumentu PDF
-
-Po utworzeniu i dostosowaniu adnotacji musimy dodać ją do dokumentu PDF. Aby dodać adnotację do dokumentu PDF, możemy użyć następującego kodu:
-
-```csharp
-pdfDocument.Pages[1].Annotations.Add(textAnnotation);
-```
-
-W tym kodzie dodajemy adnotację do kolekcji adnotacji na drugiej stronie dokumentu PDF.
-
-## Krok 6: Zapisz plik wyjściowy
-
-Na koniec musimy zapisać dokument PDF z dodaną adnotacją. Możemy użyć następującego kodu, aby zapisać plik wyjściowy:
-
-```csharp
-dataDir = dataDir + "AddAnnotation_out.pdf";
-pdfDocument.Save(dataDir);
-```
-### Przykładowy kod źródłowy dodawania adnotacji przy użyciu Aspose.PDF dla .NET
-
-
-```csharp   
- // Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DATA DIRECTORY";
-
 // Otwórz dokument
 Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
+```
 
+ Oto, co się dzieje: określasz katalog, w którym przechowywany jest plik PDF, a następnie ładujesz go za pomocą`Document` Klasa dostarczona przez Aspose.PDF. Ten krok jest kluczowy, ponieważ bez załadowania dokumentu nie można wprowadzać w nim żadnych zmian.
+
+## Krok 2: Utwórz adnotację
+
+### Definiowanie właściwości adnotacji
+ Teraz utwórzmy samą adnotację. Użyjemy`TextAnnotation`, co jest idealnym rozwiązaniem do dodawania komentarzy i notatek do pliku PDF.
+
+```csharp
 // Utwórz adnotację
 TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
 textAnnotation.Title = "Sample Annotation Title";
 textAnnotation.Subject = "Sample Subject";
-textAnnotation.State = AnnotationState.Accepted;
 textAnnotation.Contents = "Sample contents for the annotation";
 textAnnotation.Open = true;
 textAnnotation.Icon = TextIcon.Key;
+```
 
+W tym fragmencie:
+-  Lokalizacja i rozmiar:`Rectangle` Klasa definiuje, gdzie na stronie pojawi się Twoja adnotacja i jej wymiary.
+- Tytuł, Temat i Zawartość: Te właściwości umożliwiają określenie, czego dotyczy adnotacja i co będzie zawierać.
+-  Ikona:`TextIcon.Key` ustawia ikonę dla adnotacji, dzięki czemu staje się ona bardziej atrakcyjna wizualnie.
+
+## Krok 3: Dostosuj wygląd adnotacji
+
+Następnie wyróżnijmy tę adnotację, dodając obramowanie i dostosowując jej wygląd.
+
+```csharp
 Border border = new Border(textAnnotation);
 border.Width = 5;
 border.Dash = new Dash(1, 1);
 textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
-
-// Dodaj adnotację w kolekcji adnotacji na stronie
-pdfDocument.Pages[1].Annotations.Add(textAnnotation);
-dataDir = dataDir + "AddAnnotation_out.pdf";
-// Zapisz plik wyjściowy
-pdfDocument.Save(dataDir);
 ```
-Ten kod pokazuje, jak dodać adnotację tekstową z określonym tytułem, tematem, stanem, zawartością i ikoną do strony PDF przy użyciu Aspose.PDF dla .NET. Możesz zmodyfikować ten kod zgodnie ze swoimi wymaganiami dotyczącymi dodawania adnotacji do dokumentów PDF. Pamiętaj tylko o zastąpieniu KATALOGU DANYCH rzeczywistą ścieżką katalogu, w którym znajduje się plik PDF i gdzie chcesz zapisać plik wyjściowy.
+
+Oto podsumowanie tego, co się dzieje:
+-  Granica: Tworzymy`Border` obiekt i ustaw jego szerokość na 5, nadając naszej adnotacji widoczny zarys.
+-  Wzór kreskowy:`Dash` Właściwość ta umożliwia utworzenie przerywanej ramki, co dodaje odrobinę stylu do adnotacji.
+
+## Krok 4: Dodaj adnotację do strony PDF
+
+Po utworzeniu i dostosowaniu adnotacji czas dodać ją do strony PDF.
+
+```csharp
+// Dodaj adnotację do kolekcji adnotacji strony
+pdfDocument.Pages[1].Annotations.Add(textAnnotation);
+```
+
+ Ten kod dodaje adnotację do pierwszej strony pliku PDF.`Annotations` kolekcja zawiera wszystkie adnotacje dla konkretnej strony, a ten krok zapewnia, że Twoja nowa adnotacja będzie częścią tej kolekcji.
+
+## Krok 5: Zapisz zaktualizowany dokument PDF
+
+Na koniec zapiszmy dokument, aby dodać do niego trwałą adnotację.
+
+```csharp
+// Zapisz plik wyjściowy
+dataDir = dataDir + "AddAnnotation_out.pdf";
+pdfDocument.Save(dataDir);
+Console.WriteLine("\nAnnotation added successfully.\nFile saved at " + dataDir);
+```
+
+Zapisując dokument pod nową nazwą (`AddAnnotation_out.pdf`), zachowujesz oryginalny plik i generujesz nowy z dodaną adnotacją. Komunikat konsoli potwierdza, że wszystko przebiegło pomyślnie i teraz możesz znaleźć swój adnotowany plik PDF w określonym katalogu.
 
 ## Wniosek
 
-Dodawanie adnotacji do dokumentów PDF za pomocą Aspose.PDF dla .NET oferuje cenne narzędzie usprawniające współpracę nad dokumentami i procesy recenzowania. Postępując zgodnie ze szczegółowym przewodnikiem zawartym w tym artykule, programiści mogą bezproblemowo integrować funkcje adnotacji z aplikacjami C#.
+Dodawanie adnotacji do plików PDF to nie tylko potężna funkcja; jest to również niezwykle proste dzięki Aspose.PDF dla .NET. Niezależnie od tego, czy zaznaczasz dokument do przeglądu, czy dodajesz notatki do wykorzystania w przyszłości, ten przewodnik obejmuje wszystko, co musisz wiedzieć. Wykonując te kroki, możesz tworzyć niestandardowe adnotacje, które wzbogacą Twoje pliki PDF, czyniąc je bardziej użytecznymi i interaktywnymi.
 
-### Często zadawane pytania
+## Najczęściej zadawane pytania
 
-#### P: Jakie typy adnotacji można dodać za pomocą Aspose.PDF dla .NET?
+### Jakie typy adnotacji mogę dodać za pomocą Aspose.PDF dla platformy .NET?
+Możesz dodawać różne rodzaje adnotacji, w tym adnotacje tekstowe, linkowe, wyróżnienia i stemple itp.
 
-Odp.: Aspose.PDF dla .NET obsługuje różne typy adnotacji, w tym adnotacje tekstowe, znaczki, łącza, kształty i inne. Programiści mogą dostosować wygląd i właściwości tych adnotacji do swoich konkretnych potrzeb.
+### Czy mogę dostosować wygląd adnotacji?
+Oczywiście! Możesz dostosować rozmiar, kolor, obramowanie, a nawet ikonę swoich adnotacji.
 
-#### P: Czy mogę dodać adnotacje do określonych stron wielostronicowego dokumentu PDF?
+### Czy można dodać wiele adnotacji do jednej strony?
+Tak, możesz dodać dowolną liczbę adnotacji do dowolnej strony swojego pliku PDF.
 
-O: Tak, Aspose.PDF dla .NET pozwala określić stronę, na której chcesz dodać adnotację. W razie potrzeby możesz wybrać konkretną stronę lub dodać adnotacje do wielu stron.
+### Czy mogę usunąć adnotacje po ich dodaniu?
+ Tak, adnotacje można usunąć za pomocą`Annotations.Delete` metoda dostarczona przez Aspose.PDF.
 
-#### P: Jak dostosować wygląd adnotacji?
-
-Odp.: Adnotacje można dostosowywać za pomocą takich właściwości, jak szerokość obramowania, kolor, styl kreski, styl tekstu i inne. Aspose.PDF dla .NET zapewnia bogaty zestaw opcji umożliwiających dostosowanie wyglądu adnotacji.
-
-#### P: Czy można dodawać hiperłącza jako adnotacje przy użyciu Aspose.PDF dla .NET?
-
-Odp.: Tak, możesz dodawać hiperłącza jako adnotacje do dokumentów PDF przy użyciu Aspose.PDF dla .NET. Adnotacji hiperłączy można używać do tworzenia łączy do zewnętrznych adresów URL lub określonych lokalizacji w tym samym dokumencie.
-
-#### P: Czy można dodawać adnotacje do istniejących dokumentów PDF bez zmiany oryginalnej zawartości?
-
-O: Tak, Aspose.PDF dla .NET dodaje adnotacje jako dodatkowe elementy bez zmiany oryginalnej zawartości dokumentu PDF. Oryginalna zawartość pliku PDF pozostaje nienaruszona.
+### Czy potrzebuję licencji, aby używać Aspose.PDF na platformie .NET?
+ Tak, aby odblokować wszystkie funkcje i uniknąć wszelkich ograniczeń, będziesz potrzebować[licencja](https://purchase.aspose.com/buy) . Możesz również otrzymać[licencja tymczasowa](https://purchase.aspose.com/temporary-license/) do oceny.

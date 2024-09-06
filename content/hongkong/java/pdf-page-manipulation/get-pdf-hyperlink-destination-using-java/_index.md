@@ -14,7 +14,7 @@ url: /zh-hant/java/pdf-page-manipulation/get-pdf-hyperlink-destination-using-jav
 
 ## 了解 PDF 超鏈接
 
-PDF 超連結是互動式元素，可讓使用者點擊並導航至 PDF 文件或外部網站內的不同位置。它們由兩個主要組件組成：連結註釋和目的地。目的地指定超連結將帶使用者到哪裡。
+PDF 超連結是互動式元素，可讓使用者點擊並導航至 PDF 文件或外部網站中的不同位置。它們由兩個主要組件組成：連結註釋和目的地。目的地指定超連結將帶使用者到哪裡。
 
 ## 先決條件
 
@@ -25,7 +25,7 @@ PDF 超連結是互動式元素，可讓使用者點擊並導航至 PDF 文件�
 
 ## 為 Java 設定 Aspose.PDF
 
-首先，您需要在專案中設定 Aspose.PDF for Java。按著這些次序：
+首先，您需要在專案中設定 Aspose.PDF for Java。請依照下列步驟操作：
 1. 下載 Aspose.PDF for Java 從[這裡](https://releases.aspose.com/pdf/java/).
 2. 將 Aspose.PDF 庫新增到您的 Java 專案中。
 

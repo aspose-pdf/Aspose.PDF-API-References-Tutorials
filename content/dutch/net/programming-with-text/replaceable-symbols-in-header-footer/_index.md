@@ -1,24 +1,24 @@
 ---
-title: Vervangbare symbolen in de koptekst en voettekst
-linktitle: Vervangbare symbolen in de koptekst en voettekst
+title: Vervangbare symbolen in koptekst en voettekst
+linktitle: Vervangbare symbolen in koptekst en voettekst
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u vervangbare symbolen gebruikt in de kop- en voettekst van een PDF-document met Aspose.PDF voor .NET.
+description: Leer hoe u vervangbare symbolen in de kop- en voettekst van een PDF-document gebruikt met Aspose.PDF voor .NET.
 type: docs
 weight: 320
 url: /nl/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-In deze zelfstudie leggen we uit hoe u vervangbare symbolen kunt gebruiken in de kop- en voettekst van een PDF-document met behulp van de Aspose.PDF-bibliotheek voor .NET. We doorlopen het stapsgewijze proces van het maken van een PDF, het instellen van marges, het toevoegen van kop- en voettekst met vervangbare symbolen en het opslaan van de PDF met behulp van de meegeleverde C#-broncode.
+In deze tutorial leggen we uit hoe u vervangbare symbolen in de kop- en voettekst van een PDF-document kunt gebruiken met behulp van de Aspose.PDF-bibliotheek voor .NET. We doorlopen het stapsgewijze proces van het maken van een PDF, het instellen van marges, het toevoegen van kop- en voetteksten met vervangbare symbolen en het opslaan van de PDF met behulp van de meegeleverde C#-broncode.
 
 ## Vereisten
 
-Zorg ervoor dat u over het volgende beschikt voordat u begint:
+Voordat u begint, moet u ervoor zorgen dat u over het volgende beschikt:
 
-- De Aspose.PDF voor .NET-bibliotheek geïnstalleerd.
-- Basiskennis van programmeren in C#.
+- De Aspose.PDF voor .NET-bibliotheek is geïnstalleerd.
+- Basiskennis van C#-programmering.
 
-## Stap 1: Stel de documentmap in
+## Stap 1: De documentenmap instellen
 
- Eerst moet u het pad instellen naar de map waarin u het gegenereerde PDF-bestand wilt opslaan. Vervangen`"YOUR DOCUMENT DIRECTORY"` in de`dataDir`variabele met het pad naar de gewenste map.
+ Eerst moet u het pad instellen naar de map waar u het gegenereerde PDF-bestand wilt opslaan. Vervangen`"YOUR DOCUMENT DIRECTORY"` in de`dataDir` variabele met het pad naar de gewenste map.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -26,16 +26,16 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Stap 2: Maak een PDF-document en -pagina
 
- Vervolgens maken we een nieuw PDF-document en voegen er een pagina aan toe met behulp van de`Document` klasse en`Page` klasse uit de Aspose.PDF-bibliotheek.
+ Vervolgens maken we een nieuw PDF-document en voegen er een pagina aan toe met behulp van de`Document` klasse en`Page` klas uit de Aspose.PDF bibliotheek.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Stap 3: Stel marges in
+## Stap 3: Marges instellen
 
- We stellen de marges voor de pagina in met behulp van de`MarginInfo`klas. Pas de margewaarden aan volgens uw vereisten.
+We stellen de marges voor de pagina in met behulp van de`MarginInfo` klasse. Pas de margewaarden aan volgens uw vereisten.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -46,9 +46,9 @@ marginInfo.Right = 50;
 page.PageInfo.Margin = marginInfo;
 ```
 
-## Stap 4: Koptekst toevoegen met vervangbare symbolen
+## Stap 4: Voeg een koptekst toe met vervangbare symbolen
 
- Wij creëren een`HeaderFooter` object voor de pagina en voeg een toe`TextFragment` met vervangbare symbolen erop.
+ Wij creëren een`HeaderFooter` object voor de pagina en voeg een`TextFragment` met vervangbare symbolen.
 
 ```csharp
 HeaderFooter hfFirst = new HeaderFooter();
@@ -57,7 +57,7 @@ hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
 
 TextFragment t1 = new TextFragment("report title");
-// Stel desgewenst teksteigenschappen in
+// Stel indien gewenst teksteigenschappen in
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
 t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
@@ -67,12 +67,12 @@ t1.TextState.LineSpacing = 5f;
 
 hfFirst.Paragraphs.Add(t1);
 
-// Voeg meer tekstfragmenten toe of pas deze indien nodig aan
+// Voeg meer TextFragments toe of pas ze naar wens aan
 ```
 
-## Stap 5: Voettekst toevoegen met vervangbare symbolen
+## Stap 5: Voeg een voettekst toe met vervangbare symbolen
 
- Op dezelfde manier creëren we een`HeaderFooter` object voor de paginavoettekst en voeg toe`TextFragment` objecten met vervangbare symbolen erop.
+ Op dezelfde manier creëren we een`HeaderFooter` object voor de paginavoettekst en toevoegen`TextFragment` objecten met vervangbare symbolen.
 
 ```csharp
 HeaderFooter hfFoot = new HeaderFooter();
@@ -84,7 +84,7 @@ TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
 
-// Voeg meer tekstfragmenten toe of pas deze indien nodig aan
+// Voeg meer TextFragments toe of pas ze naar wens aan
 
 hfFoot.Paragraphs.Add(tab2);
 ```
@@ -99,7 +99,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols replaced successfully in the header and footer.\nFile saved at " + dataDir);
 ```
 
-### Voorbeeldbroncode voor vervangbare symbolen in koptekstvoettekst met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Vervangbare symbolen in koptekst/voettekst met behulp van Aspose.PDF voor .NET 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -110,13 +110,13 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Wijs de marginInfo-instantie toe aan de Margin-eigenschap van sec1.PageInfo
+// Wijs het marginInfo-exemplaar toe aan de Margin-eigenschap van sec1.PageInfo
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
 hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
-// Maak een tekstparagraaf waarin de inhoud wordt opgeslagen en als koptekst wordt weergegeven
+// Instantieer een tekstparagraaf die de inhoud opslaat om als kop weer te geven
 TextFragment t1 = new TextFragment("report title");
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
@@ -144,9 +144,9 @@ TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
 // Een tabelobject instantiëren
 Table tab2 = new Table();
-// Voeg de tabel toe aan de alineaverzameling van de gewenste sectie
+// Voeg de tabel toe in de alineaverzameling van de gewenste sectie
 hfFoot.Paragraphs.Add(tab2);
-// Ingesteld met kolombreedtes van de tabel
+// Instellen met kolombreedtes van de tabel
 tab2.ColumnWidths = "165 172 165";
 // Maak rijen in de tabel en vervolgens cellen in de rijen
 Row row3 = tab2.Rows.Add();
@@ -160,17 +160,17 @@ row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-//Sec1.Paragraphs.Add(New Text("Aspose.Total voor Java is een compilatie van elke Java-component die door Aspose wordt aangeboden. Het wordt op #$NL" + "dagelijks gecompileerd om ervoor te zorgen dat het de meest actuele versies van elke component bevat van onze Java-componenten. #$NL " + "Met Aspose.Total voor Java kunnen ontwikkelaars een breed scala aan applicaties creëren. #$NL #$NL #$NP" + "Aspose.Total voor Java is een compilatie van elke Java-component aangeboden door Aspose. Het wordt op #$NL" + "dagelijks samengesteld om ervoor te zorgen dat het de meest up-to-date versies van elk van onze Java-componenten bevat. #$NL " + "Het gebruik van Aspose.Total voor Java-ontwikkelaars kan een brede scala aan toepassingen. #$NL #$NL #$NP" + "Aspose.Total voor Java is een compilatie van alle Java-componenten die door Aspose worden aangeboden. Het wordt #$NL" + "dagelijks samengesteld om ervoor te zorgen dat het de meeste up-to-date versies van elk van onze Java-componenten. #$NL " + "Het gebruik van Aspose.Total voor Java-ontwikkelaars kan een breed scala aan applicaties creëren. #$NL #$NL"))
+//Sec1.Paragraphs.Add(New Text("Aspose.Total voor Java is een compilatie van alle Java-componenten die Aspose aanbiedt. Het wordt dagelijks gecompileerd om ervoor te zorgen dat het de meest recente versies van elk van onze Java-componenten bevat. #$NL " + "Met Aspose.Total voor Java kunnen ontwikkelaars een breed scala aan toepassingen maken. #$NL #$NL #$NP" + "Aspose.Total voor Java is een compilatie van alle Java-componenten die Aspose aanbiedt. Het wordt dagelijks gecompileerd om ervoor te zorgen dat het de meest recente versies van elk van onze Java-componenten bevat. #$NL " + "Met Aspose.Total voor Java kunnen ontwikkelaars een breed scala aan toepassingen maken. #$NL #$NL #$NP" + "Aspose.Total voor Java is een compilatie van alle Java-componenten die Aspose aanbiedt. Het wordt dagelijks gecompileerd om ervoor te zorgen dat het de meest recente versies van elk van onze Java-componenten bevat. #$NL " + "Met Aspose.Total kunnen Java-ontwikkelaars een breed scala aan toepassingen maken. #$NL #$NL"))
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
 table.DefaultCellPadding = new MarginInfo();
 table.DefaultCellPadding.Top = 10;
 table.DefaultCellPadding.Bottom = 10;
-// Voeg de tabel toe aan de alineaverzameling van de gewenste sectie
+// Voeg de tabel toe in de alineaverzameling van de gewenste sectie
 page.Paragraphs.Add(table);
-// Stel de standaardcelrand in met het BorderInfo-object
+// Standaard celrand instellen met behulp van het BorderInfo-object
 table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
-// Stel de tabelrand in met een ander aangepast BorderInfo-object
+// Stel de tabelrand in met behulp van een ander aangepast BorderInfo-object
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
 // Maak rijen in de tabel en vervolgens cellen in de rijen
@@ -203,35 +203,35 @@ Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile s
 
 ## Conclusie
 
-In deze zelfstudie hebt u geleerd hoe u vervangbare symbolen kunt gebruiken in de kop- en voettekst van een PDF-document met behulp van de Aspose.PDF-bibliotheek voor .NET. Door de stapsgewijze handleiding te volgen en de meegeleverde C#-code uit te voeren, kunt u een PDF maken, marges instellen, kop- en voettekst met vervangbare symbolen toevoegen en de PDF opslaan.
+In deze tutorial hebt u geleerd hoe u vervangbare symbolen in de kop- en voettekst van een PDF-document kunt gebruiken met behulp van de Aspose.PDF-bibliotheek voor .NET. Door de stapsgewijze handleiding te volgen en de meegeleverde C#-code uit te voeren, kunt u een PDF maken, marges instellen, kop- en voettekst met vervangbare symbolen toevoegen en de PDF opslaan.
 
 ### Veelgestelde vragen
 
-#### Vraag: Wat is het doel van de tutorial "Vervangbare symbolen in koptekstvoettekst"?
+#### V: Wat is het doel van de tutorial 'Vervangbare symbolen in kop- en voettekst'?
 
-A: De tutorial "Vervangbare symbolen in koptekstvoettekst" is bedoeld om u te begeleiden bij het gebruik van de Aspose.PDF-bibliotheek voor .NET om vervangbare symbolen toe te voegen aan de kop- en voettekst van een PDF-document. Met vervangbare symbolen kunt u specifieke tijdelijke aanduidingen dynamisch vervangen door werkelijke waarden bij het genereren van de PDF.
+A: De tutorial "Replaceable Symbols In Header Footer" is bedoeld om u te begeleiden bij het proces van het gebruiken van de Aspose.PDF-bibliotheek voor .NET om vervangbare symbolen toe te voegen aan de header en footer van een PDF-document. Met vervangbare symbolen kunt u specifieke tijdelijke aanduidingen dynamisch vervangen door werkelijke waarden bij het genereren van de PDF.
 
-#### Vraag: Wat zijn vervangbare symbolen in de context van een PDF-kop- en voettekst?
+#### V: Wat zijn vervangbare symbolen in de context van een PDF-koptekst en -voettekst?
 
 A: Vervangbare symbolen zijn tijdelijke aanduidingen die u in de kop- en voettekst van een PDF-document kunt invoegen. Deze symbolen fungeren als dynamische tijdelijke aanduidingen voor waarden die tijdens runtime kunnen worden ingevuld, zoals paginanummers, datums en aangepaste informatie.
 
-#### Vraag: Waarom zou ik vervangbare symbolen willen gebruiken in de kop- en voettekst van een PDF?
+#### V: Waarom zou ik vervangbare symbolen willen gebruiken in de kop- en voettekst van een PDF?
 
 A: Vervangbare symbolen in de kop- en voettekst zijn handig als u dynamische informatie in uw PDF-documenten wilt opnemen, zoals paginanummers, datums of andere variabele gegevens die kunnen veranderen wanneer het document wordt gegenereerd.
 
-#### Vraag: Hoe kan ik de marges voor de PDF-pagina instellen?
+#### V: Hoe kan ik de marges voor de PDF-pagina instellen?
 
- A: U kunt de marges voor de PDF-pagina instellen met behulp van de`MarginInfo` klasse en wijs deze toe aan de`Margin` eigendom van de`PageInfo` van de pagina. Pas de margewaarden indien nodig aan.
+ A: U kunt de marges voor de PDF-pagina instellen met behulp van de`MarginInfo` klasse en deze toewijzen aan de`Margin` eigendom van de`PageInfo` van de pagina. Pas de margewaarden indien nodig aan.
 
-#### Vraag: Hoe voeg ik vervangbare symbolen toe aan de kop- en voettekst?
+#### V: Hoe voeg ik vervangbare symbolen toe aan de kop- en voettekst?
 
- A: U kunt vervangbare symbolen toevoegen door een`HeaderFooter` object voor de kop- en voettekst van de pagina. Vervolgens kunt u toevoegen`TextFragment`objecten met de gewenste tekst, inclusief vervangbare symbolen, naar de`Paragraphs` verzameling van de`HeaderFooter` voorwerp.
+ A: U kunt vervangbare symbolen toevoegen door een`HeaderFooter` object voor de header en footer van de pagina. Vervolgens kunt u toevoegen`TextFragment`objecten met de gewenste tekst, inclusief vervangbare symbolen, naar de`Paragraphs` verzameling van de`HeaderFooter` voorwerp.
 
-#### Vraag: Kan ik het uiterlijk van de vervangbare symbolen aanpassen?
+#### V: Kan ik het uiterlijk van de vervangbare symbolen aanpassen?
 
- A: Ja, u kunt het uiterlijk van de vervangbare symbolen aanpassen door de eigenschappen van de`TextFragment` objecten die de symbolen bevatten. U kunt eigenschappen instellen zoals lettertype, lettergrootte, kleur, uitlijning en regelafstand.
+ A: Ja, u kunt het uiterlijk van de vervangbare symbolen aanpassen door de eigenschappen van de symbolen te wijzigen.`TextFragment` objecten die de symbolen bevatten. U kunt eigenschappen instellen zoals lettertype, lettergrootte, kleur, uitlijning en regelafstand.
 
-#### Vraag: Welk soort vervangbare symbolen kan ik gebruiken?
+#### V: Welke vervangbare symbolen kan ik gebruiken?
 
 A: U kunt verschillende vervangbare symbolen gebruiken, zoals:
 
@@ -241,14 +241,14 @@ A: U kunt verschillende vervangbare symbolen gebruiken, zoals:
 - `$t`: Huidige tijd.
 - Aangepaste tijdelijke aanduidingen die u definieert.
 
-#### Vraag: Kan ik andere tekst en opmaak rond de vervangbare symbolen opnemen?
+#### V: Kan ik andere tekst en opmaak toevoegen aan de vervangbare symbolen?
 
- A: Ja, u kunt andere tekst en opmaak rondom de vervangbare symbolen in het`TextFragment` voorwerpen. Hierdoor kunt u complexere kop- en voetteksten maken die dynamische en statische inhoud bevatten.
+ A: Ja, u kunt andere tekst en opmaak toevoegen rond de vervangbare symbolen in de`TextFragment` objecten. Hiermee kunt u complexere headers en footers maken die dynamische en statische content bevatten.
 
-#### Vraag: Hoe kan ik het gegenereerde PDF-document opslaan?
+#### V: Hoe kan ik het gegenereerde PDF-document opslaan?
 
- A: Om het gegenereerde PDF-document op te slaan, kunt u de`Save` werkwijze van de`Document`klas. Geef het gewenste pad en de naam van het uitvoerbestand op als argument.
+ A: Om het gegenereerde PDF-document op te slaan, kunt u de`Save` methode van de`Document`klasse. Geef het gewenste pad en de naam van het uitvoerbestand op als argument.
 
-#### Vraag: Is een geldige Aspose-licentie vereist voor deze zelfstudie?
+#### V: Is een geldige Aspose-licentie vereist voor deze tutorial?
 
 A: Ja, een geldige Aspose-licentie is vereist om de code in deze tutorial succesvol uit te voeren. U kunt een volledige licentie of een tijdelijke licentie van 30 dagen verkrijgen via de Aspose-website.

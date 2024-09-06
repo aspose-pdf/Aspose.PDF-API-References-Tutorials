@@ -1,23 +1,23 @@
 ---
-title: Bölgeden Alanları PDF Dosyasında Al
-linktitle: Bölgeden Alanları PDF Dosyasında Al
-second_title: .NET API Referansı için Aspose.PDF
+title: PDF Dosyasında Bölgeden Alanları Al
+linktitle: PDF Dosyasında Bölgeden Alanları Al
+second_title: Aspose.PDF for .NET API Referansı
 description: Aspose.PDF for .NET ile PDF dosyasındaki belirli bir bölgedeki alanları kolayca alın.
 type: docs
 weight: 130
 url: /tr/net/programming-with-forms/get-fields-from-region/
 ---
-Bu derste size Aspose.PDF for .NET kullanarak PDF dosyasındaki belirli bir bölgenin alanlarını nasıl alacağınızı göstereceğiz. Bu süreçte size yol göstermek için C# kaynak kodunu adım adım açıklayacağız.
+Bu eğitimde, .NET için Aspose.PDF kullanarak PDF dosyasındaki belirli bir bölgenin alanlarını nasıl alacağınızı göstereceğiz. Bu süreçte size rehberlik etmek için C# kaynak kodunu adım adım açıklayacağız.
 
 ## Adım 1: Hazırlık
 
-Gerekli kitaplıkları içe aktardığınızdan ve belgeler dizininizin yolunu ayarladığınızdan emin olun:
+Gerekli kütüphaneleri içe aktardığınızdan ve belgelerinizin dizinine giden yolu ayarladığınızdan emin olun:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## 2. Adım: PDF dosyasını açın
+## Adım 2: PDF dosyasını açın
 
 PDF dosyasını açın:
 
@@ -25,7 +25,7 @@ PDF dosyasını açın:
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "GetFieldsFromRegion.pdf");
 ```
 
-## 3. Adım: Bölgeyi sınırlamak için bir dikdörtgen nesnesi oluşturun
+## Adım 3: Bölgeyi sınırlamak için bir dikdörtgen nesnesi oluşturun
 
 Alanları almak istediğiniz bölgeyi sınırlamak için bir dikdörtgen nesnesi oluşturun:
 
@@ -33,7 +33,7 @@ Alanları almak istediğiniz bölgeyi sınırlamak için bir dikdörtgen nesnesi
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(35, 30, 500, 500);
 ```
 
-## 4. Adım: PDF formunu edinin
+## Adım 4: PDF formunu edinin
 
 Belgenin PDF formunu alın:
 
@@ -43,15 +43,15 @@ Aspose.Pdf.Forms.Form form = doc.Form;
 
 ## Adım 5: Dikdörtgen bölgedeki alanları alın
 
-Belirtilen dikdörtgen bölgede bulunan alanları alın:
+Belirtilen dikdörtgensel bölgede bulunan alanları al:
 
 ```csharp
 Aspose.Pdf.Forms.Field[] fields = form.GetFieldsInRect(rectangle);
 ```
 
-## 6. Adım: Alan adlarını ve değerlerini görüntüleyin
+## Adım 6: Alan adlarını ve değerlerini görüntüleyin
 
-Ortaya çıkan alanları yineleyin ve adlarını ve değerlerini görüntüleyin:
+Ortaya çıkan alanlar arasında gezinin ve bunların adlarını ve değerlerini görüntüleyin:
 
 ```csharp
 foreach (Field field in fields)
@@ -60,48 +60,48 @@ Console.Out.WriteLine("Field name: " + field.FullName + "-" + "Field value: " + 
 }
 ```
 
-### Aspose.PDF for .NET kullanarak Bölgeden Alan Al için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Bölgeden Alanları Almak için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Pdf dosyasını aç
+// PDF dosyasını aç
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "GetFieldsFromRegion.pdf");
 // Bu alandaki alanları almak için dikdörtgen nesnesi oluşturun
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(35, 30, 500, 500);
-// PDF formunu edinin
+// PDF formunu alın
 Aspose.Pdf.Forms.Form form = doc.Form;
 // Dikdörtgen alandaki alanları alın
 Aspose.Pdf.Forms.Field[] fields = form.GetFieldsInRect(rectangle);
 // Alan adlarını ve değerlerini görüntüle
 foreach (Field field in fields)
 {
-	// Tüm yerleşimler için resim yerleşimi özelliklerini görüntüle
+	// Tüm yerleşimler için görüntü yerleşim özelliklerini görüntüle
 	Console.Out.WriteLine("Field Name: " + field.FullName + "-" + "Field Value: " + field.Value);
 }
 ```
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesinde belirli bir bölgenin alanlarını nasıl elde edeceğimizi öğrendik. Bu adımları takip ederek Aspose.PDF'yi kullanarak PDF belgenizin belirli bir dikdörtgen alanında bulunan alanları kolayca çıkarabilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesindeki belirli bir bölgenin alanlarını nasıl alacağımızı öğrendik. Bu adımları izleyerek, Aspose.PDF kullanarak PDF belgenizin belirli bir dikdörtgen alanında bulunan alanları kolayca çıkarabilirsiniz.
 
-### SSS'ler
+### SSS
 
-#### S: Bir PDF belgesinde dikdörtgen olmayan bir bölgeden alanlar almak için bu yöntemi kullanabilir miyim?
+#### S: Bu yöntemi bir PDF belgesindeki dikdörtgen olmayan bir bölgeden alanları almak için kullanabilir miyim?
 
- C: Hayır, sağlanan yöntem`GetFieldsInRect` PDF belgesinde dikdörtgen bir bölge içinde bulunan alanları almak için özel olarak tasarlanmıştır. Dikdörtgen olmayan bir bölgeden alan çıkarmanız gerekiyorsa, alan koordinatları veya adları gibi diğer ölçütlere göre alanları tanımlamak ve çıkarmak için özel mantık uygulamanız gerekir.
+ A: Hayır, sağlanan yöntem`GetFieldsInRect` PDF belgesinde dikdörtgen bir bölge içinde bulunan alanları almak için özel olarak tasarlanmıştır. Dikdörtgen olmayan bir bölgeden alanları çıkarmanız gerekiyorsa, alanları alan koordinatları veya adları gibi diğer ölçütlere göre tanımlamak ve çıkarmak için özel mantık uygulamanız gerekir.
 
-#### S: Farklı bir bölgeden alanlar almak için dikdörtgenin boyutunu veya konumunu nasıl değiştirebilirim?
+#### S: Farklı bir bölgedeki alanları almak için dikdörtgenin boyutunu veya konumunu nasıl değiştirebilirim?
 
- C: Farklı bir bölgeden alanlar almak için`Aspose.Pdf.Rectangle` sınırlayıcı dikdörtgeni tanımlamak için kullanılan nesnenin parametreleri.`Rectangle` yapıcı dört parametre alır:`x`, `y`, `width` , Ve`height`sol üst köşe koordinatlarını ve dikdörtgenin boyutlarını temsil eder. Bu parametrelerin ayarlanması, alanların çıkarıldığı bölgeyi değiştirecektir.
+ A: Farklı bir bölgeden alanlar almak için,`Aspose.Pdf.Rectangle` sınırlayıcı dikdörtgeni tanımlamak için kullanılan nesnenin parametreleri.`Rectangle` constructor dört parametre alır:`x`, `y`, `width` , Ve`height`dikdörtgenin sol üst köşe koordinatlarını ve boyutlarını temsil eder. Bu parametreleri ayarlamak, alanların çıkarıldığı bölgeyi değiştirecektir.
 
-#### S: Belirtilen dikdörtgen bölge içerisinde hiçbir alan yoksa ne olur?
+#### S: Belirtilen dikdörtgensel bölgede hiçbir alan yoksa ne olur?
 
- C: Belirtilen dikdörtgen bölge içerisinde hiçbir alan yoksa,`GetFieldsInRect` yöntemi boş bir dizi döndürecektir. Bölgede herhangi bir alan olup olmadığını belirlemek için dizinin uzunluğunu kontrol edebilirsiniz.
+ A: Belirtilen dikdörtgen bölge içerisinde herhangi bir alan yoksa,`GetFieldsInRect` yöntemi boş bir dizi döndürecektir. Bölge içerisinde herhangi bir alan olup olmadığını belirlemek için dizinin uzunluğunu kontrol edebilirsiniz.
 
-#### S: Bir PDF belgesinde çakışan bölgelerden alanlar alabilir miyim?
+#### S: PDF belgesinde çakışan bölgelerden alan alabilir miyim?
 
- C: Evet, birden çok alan oluşturarak bir PDF belgesinde çakışan bölgelerden alanlar alabilirsiniz.`Aspose.Pdf.Rectangle` nesneleri çağırmak ve`GetFieldsInRect` Her biri için yöntem. Çakışan bölgeler bağımsız olarak ele alınacak ve her bölge için ayrı alan dizileri alacaksınız.
+ A: Evet, birden fazla alan oluşturarak PDF belgesindeki örtüşen bölgelerden alanlar alabilirsiniz.`Aspose.Pdf.Rectangle` nesneler ve çağrı`GetFieldsInRect` her biri için bir yöntem. Çakışan bölgeler bağımsız olarak ele alınacak ve her bölge için ayrı alan dizileri alacaksınız.
 
-#### S: PDF belgesindeki belirli bir sayfadan veya birden fazla sayfadan alan almak mümkün mü?
+#### S: PDF belgesinde belirli bir sayfadan veya birden fazla sayfadan alan almak mümkün müdür?
 
-C: Evet, alanları bir PDF belgesindeki belirli bir sayfadan veya birden çok sayfadan alabilirsiniz. Bunu başarmak için PDF belgesini yükleyebilir, istediğiniz sayfalara`doc.Pages` toplayın ve ardından uygulayın`GetFieldsInRect` yöntemi her sayfanın belirli bölgesine göre ayarlayın.
+A: Evet, PDF belgesinde belirli bir sayfadan veya birden fazla sayfadan alanlar alabilirsiniz. Bunu başarmak için PDF belgesini yükleyebilir, istediğiniz sayfalara erişebilirsiniz`doc.Pages` toplama ve ardından uygulama`GetFieldsInRect` Her sayfanın belirli bölgesine özel bir yöntem.

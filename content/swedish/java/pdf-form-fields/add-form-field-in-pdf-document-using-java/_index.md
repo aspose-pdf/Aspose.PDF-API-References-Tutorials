@@ -141,7 +141,7 @@ checkboxField.setChecked(true); // Markera kryssrutan som standard
 
 Att lägga till formulärfält är bara halva historien; du vill också
 
- för att möjliggöra formulärinlämning och validering.
+ för att möjliggöra inlämning och validering av formulär.
 
 ### Inlämning av formulär
 

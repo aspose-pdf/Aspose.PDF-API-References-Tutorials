@@ -11,7 +11,7 @@ Ez az útmutató lépésről lépésre bemutatja, hogyan alakíthatja át a PDF-
 
 ## 1. lépés: Határozza meg a dokumentumkönyvtárat
 
- Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a PDF-dokumentum található.
+Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a PDF-dokumentum található.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 2. lépés: Nyissa meg a dokumentumot
 
-Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
+ Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ConvertAllPagesToPNG.pdf");
@@ -62,11 +62,11 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 	{
 		// PNG-eszköz létrehozása megadott attribútumokkal
 		// Szélesség, magasság, felbontás, minőség
-		// Minőség [0-100], 100 a maximum
+		//Minőség [0-100], 100 a maximum
 		// Hozzon létre Resolution objektumot
 		Resolution resolution = new Resolution(300);
 		PngDevice pngDevice = new PngDevice(resolution);
-		//Konvertálja az adott oldalt, és mentse a képet adatfolyamba
+		// Konvertálja az adott oldalt, és mentse a képet adatfolyamba
 		pngDevice.Process(pdfDocument.Pages[pageCount], imageStream);
 		// Folyamat bezárása
 		imageStream.Close();

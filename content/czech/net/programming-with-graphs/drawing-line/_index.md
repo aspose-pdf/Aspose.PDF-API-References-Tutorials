@@ -13,7 +13,7 @@ Než začnete, ujistěte se, že jste nainstalovali knihovnu Aspose.PDF a nastav
 
 ## Krok 1: Nastavení adresáře dokumentů
 
-poskytnutém zdrojovém kódu musíte určit adresář, kam chcete uložit výsledný soubor PDF. Změňte proměnnou "dataDir" na požadovaný adresář.
+V poskytnutém zdrojovém kódu musíte určit adresář, kam chcete uložit výsledný soubor PDF. Změňte proměnnou "dataDir" na požadovaný adresář.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -104,7 +104,7 @@ Console.WriteLine("\nLine drawn successfully across the page.\nFile saved at " +
 
 ## Závěr
 
-V tomto tutoriálu jsme vysvětlili, jak nakreslit čáru pomocí Aspose.PDF pro .NET. Nyní můžete tyto znalosti využít k vytváření geometrických tvarů s vlastními čarami v souborech PDF.
+tomto tutoriálu jsme vysvětlili, jak nakreslit čáru pomocí Aspose.PDF pro .NET. Nyní můžete tyto znalosti využít k vytváření geometrických tvarů s vlastními čarami v souborech PDF.
 
 ### FAQ
 
@@ -130,7 +130,7 @@ Odpověď: Ano, vzhled čar můžete upravit úpravou vlastností objektů Line.
 
 #### Otázka: Jak uložím dokument PDF po nakreslení čar?
 
-Odpověď: Po přidání objektu Graph s objekty Line na stránku můžete výsledný dokument PDF uložit pomocí`pDoc.Save(dataDir + "DrawingLine_out.pdf");` řádek v poskytnutém zdrojovém kódu.
+ Odpověď: Po přidání objektu Graph s objekty Line na stránku můžete výsledný dokument PDF uložit pomocí`pDoc.Save(dataDir + "DrawingLine_out.pdf");` řádek v poskytnutém zdrojovém kódu.
 
 #### Otázka: Mohu kreslit čáry s různými úhly a orientací?
 

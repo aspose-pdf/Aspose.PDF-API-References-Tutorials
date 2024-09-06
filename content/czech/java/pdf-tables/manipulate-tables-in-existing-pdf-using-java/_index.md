@@ -18,7 +18,7 @@ Aspose.PDF for Java je robustní knihovna, která umožňuje vývojářům Java 
 
 ## Nastavení vývojového prostředí
 
- Než se ponoříme do kódu, ujistěte se, že je naše vývojové prostředí správně nastaveno. V systému budete muset mít nainstalovanou Javu a z webových stránek si můžete stáhnout knihovnu Aspose.PDF for Java[tady](https://releases.aspose.com/pdf/java/)Jakmile si stáhnete a přidáte knihovnu do svého projektu, můžete začít.
+ Než se ponoříme do kódu, ujistěte se, že je naše vývojové prostředí správně nastaveno. V systému budete muset mít nainstalovanou Javu a z webových stránek si můžete stáhnout knihovnu Aspose.PDF for Java[zde](https://releases.aspose.com/pdf/java/)Jakmile si stáhnete a přidáte knihovnu do svého projektu, můžete začít.
 
 ## Načítání existujícího PDF
 
@@ -115,7 +115,7 @@ Manipulace s tabulkami ve stávajících dokumentech PDF pomocí Java a Aspose.P
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
- Chcete-li nainstalovat Aspose.PDF pro Java, můžete si stáhnout knihovnu z webu[tady](https://releases.aspose.com/pdf/java/). Postupujte podle pokynů k instalaci uvedených na webu a integrujte jej do svého projektu Java.
+ Chcete-li nainstalovat Aspose.PDF pro Java, můžete si stáhnout knihovnu z webu[zde](https://releases.aspose.com/pdf/java/). Postupujte podle pokynů k instalaci uvedených na webu a integrujte jej do svého projektu Java.
 
 ### Mohu extrahovat data z tabulek v PDF pomocí Aspose.PDF for Java?
 

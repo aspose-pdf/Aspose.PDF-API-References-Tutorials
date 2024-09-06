@@ -110,7 +110,7 @@ Ebben az oktatóanyagban megtanultuk, hogyan lehet oldaltörést beszúrni egy P
 
 #### K: Hogyan változtathatom meg az oldaltörés után létrehozott új oldalak oldalméretét?
 
- V: Az oldaltörés után létrehozott új oldalak oldalméretének megváltoztatásához beállíthatja a`PageSize` tulajdona a`Page` tárgy. Például a következő kóddal beállíthatja az oldalméretet A4-re:
+ V: Az oldaltörés után létrehozott új oldalak oldalméretének megváltoztatásához beállíthatja a`PageSize` tulajdona a`Page` objektum. Például a következő kóddal beállíthatja az oldalméretet A4-re:
 
 ```csharp
 // Állítsa az oldalméretet A4-re
@@ -152,4 +152,4 @@ doc.Pages[1].Footer = new HeaderFooter()
 
 #### K: Hogyan állíthatom be az oldaltörés viselkedését a tartalom magassága alapján?
 
-V: Használhatja a`IsBroken` A táblázat tulajdonsága az oldalak közötti automatikus sortörés engedélyezéséhez vagy letiltásához. Amikor be van állítva`true`, lehetővé teszi, hogy a sorok a tartalom magassága alapján törjenek oldalakra.
+ V: Használhatja a`IsBroken` A táblázat tulajdonsága az oldalak közötti automatikus sortörés engedélyezéséhez vagy letiltásához. Amikor be van állítva`true`, lehetővé teszi, hogy a sorok a tartalom magassága alapján törjenek oldalakra.

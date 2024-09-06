@@ -86,7 +86,7 @@ System.Console.WriteLine("\nPage orientation changed successfully.\nFile saved a
 ```
 
 ## Következtetés
-Ebben az oktatóanyagban megtanultuk, hogyan lehet megváltoztatni egy PDF-dokumentum oldaltájolását az Aspose.PDF for .NET használatával. A fent vázolt lépések követésével könnyedén megvalósíthatja ezt a funkciót saját projektjeiben. Nyugodtan fedezze fel az Aspose.PDF dokumentációt, hogy további hasznos funkciókat fedezzen fel a PDF-fájlokkal való munkavégzéshez.
+Ebben az oktatóanyagban megtanultuk, hogyan lehet megváltoztatni egy PDF-dokumentum oldaltájolását az Aspose.PDF for .NET használatával. A fent vázolt lépések követésével könnyedén megvalósíthatja ezt a funkciót saját projektjeiben. Nyugodtan fedezze fel az Aspose.PDF dokumentációját, hogy további hasznos funkciókat fedezzen fel a PDF-fájlokkal való munkavégzéshez.
 
 ### GYIK
 
@@ -96,7 +96,7 @@ V: Az oldal tájolásának megváltoztatása egy PDF dokumentumban lehetővé te
 
 #### K: Módosíthatom bizonyos oldalak tájolását a PDF-dokumentumban?
 
- V: Igen, módosíthatja a PDF dokumentum egyes oldalainak tájolását. A megadott C# forráskódban a`foreach` A ciklus a dokumentum egyes oldalain való végighaladásra és a tájolás megváltoztatására szolgál. Ha csak bizonyos oldalak tájolását szeretné megváltoztatni, módosíthatja a hurkot, hogy az adott oldalakat oldalszámuk vagy egyéb kritériumok alapján célozza meg.
+ V: Igen, módosíthatja a PDF dokumentum egyes oldalainak tájolását. A megadott C# forráskódban a`foreach` A ciklus a dokumentum egyes oldalain való áthaladáshoz és a tájolás megváltoztatásához használható. Ha csak bizonyos oldalak tájolását szeretné megváltoztatni, módosíthatja a hurkot, hogy az adott oldalakat oldalszámuk vagy egyéb kritériumok alapján célozza meg.
 
 #### K: Az oldal tájolásának megváltoztatása befolyásolja a tartalom elrendezését az oldalon?
 

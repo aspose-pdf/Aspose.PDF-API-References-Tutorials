@@ -46,7 +46,7 @@ Document doc = new Document();
 HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li >Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");
 ```
 
-## Krok 6: Přidejte stránku do dokumentu
+## Krok 6: Přidejte do dokumentu stránku
  Přidejte do dokumentu novou stránku pomocí`Add` metoda`Pages`sbírka. V poskytnutém kódu je nová stránka přiřazena k proměnné`page`.
 
 ```csharp
@@ -54,7 +54,7 @@ Page page = doc.Pages.Add();
 ```
 
 ## Krok 7: Přidejte na stránku HtmlFragment
- Přidat`HtmlFragment` objekt na stránku pomocí`Add` metoda`Paragraphs` sbírka.
+ Přidejte`HtmlFragment` objekt na stránku pomocí`Add` metoda`Paragraphs` sbírka.
 
 ```csharp
 page.Paragraphs.Add(t);

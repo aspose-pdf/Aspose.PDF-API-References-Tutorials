@@ -53,7 +53,7 @@ dataDir = dataDir + "OptimizeDocument_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-Det är allt! Du har framgångsrikt tagit bort oanvända objekt från ditt PDF-dokument med Aspose.PDF för .NET.
+Det är det! Du har framgångsrikt tagit bort oanvända objekt från ditt PDF-dokument med Aspose.PDF för .NET.
 
 ### Exempel på källkod för Ta bort oanvända objekt med Aspose.PDF för .NET:
 
@@ -90,4 +90,4 @@ S: Att ta bort oanvända objekt från ett PDF-dokument minskar dess filstorlek, 
 
 #### F: Kan utvecklare kontrollera vilka oanvända objekt som ska tas bort med Aspose.PDF för .NET?
 
- S: Ja, utvecklare kan kontrollera borttagningen av oanvända objekt genom att ställa in`RemoveUnusedObjects` alternativ i`OptimizationOptions`. Detta låter dem bestämma om de ska ta bort alla oanvända objekt eller behålla vissa objekt baserat på deras specifika krav.
+ S: Ja, utvecklare kan kontrollera borttagningen av oanvända objekt genom att ställa in`RemoveUnusedObjects` alternativet i`OptimizationOptions`. Detta låter dem bestämma om de ska ta bort alla oanvända objekt eller behålla vissa objekt baserat på deras specifika krav.

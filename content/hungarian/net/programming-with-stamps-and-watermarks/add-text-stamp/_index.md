@@ -2,7 +2,7 @@
 title: Szövegbélyegző hozzáadása PDF-fájlhoz
 linktitle: Szövegbélyegző hozzáadása PDF-fájlhoz
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan adhat hozzá egyszerűen szövegbélyeget PDF-fájlhoz az Aspose.PDF for .NET segítségével.
+description: Tanulja meg, hogyan adhat hozzá egyszerűen szövegbélyeget PDF-fájlhoz az Aspose.PDF for .NET segítségével.
 type: docs
 weight: 50
 url: /hu/net/programming-with-stamps-and-watermarks/add-text-stamp/
@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 2. lépés: A PDF dokumentum betöltése
 
-Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Itt van, hogyan:
+Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Íme, hogyan:
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
@@ -43,7 +43,7 @@ A fenti kód egy új szöveges puffert hoz létre, amely a megadott szöveget ta
 
 ## 4. lépés: A szövegbélyegző tulajdonságainak konfigurálása
 
-Mielőtt hozzáadná a szövegbélyeget a PDF-dokumentumhoz, beállíthatja a bélyegző különféle tulajdonságait, például a hátteret, a pozíciót, az elforgatást, a betűtípust, a méretet stb. Így teheti meg:
+Mielőtt hozzáadná a szövegbélyeget a PDF-dokumentumhoz, konfigurálhatja a bélyegző különféle tulajdonságait, például hátteret, pozíciót, elforgatást, betűtípust, méretet stb. Így teheti:
 
 ```csharp
 // Konfigurálja a szöveges puffer tulajdonságait
@@ -61,7 +61,7 @@ Ezeket a tulajdonságokat igényei szerint módosíthatja.
 
 ## 5. lépés: Adjon hozzá szövegbélyeget a PDF-hez
 
-Most, hogy a szövegbélyegző készen áll, hozzáadhatja a PDF-dokumentum egy adott oldalához. Itt van, hogyan:
+Most, hogy a szövegbélyegző készen áll, hozzáadhatja a PDF-dokumentum egy adott oldalához. Íme, hogyan:
 
 ```csharp
 //Szöveges puffer hozzáadása egy adott oldalhoz
@@ -72,7 +72,7 @@ A fenti kód hozzáadja a szövegbélyeget a PDF-dokumentum első oldalához. Sz
 
 ## 6. lépés: Mentse el a kimeneti dokumentumot
 
-A szövegbélyegző hozzáadása után elmentheti a szerkesztett PDF dokumentumot. Itt van, hogyan:
+A szövegbélyegző hozzáadása után elmentheti a szerkesztett PDF dokumentumot. Íme, hogyan:
 
 ```csharp
 // Mentse el a kimeneti dokumentumot
@@ -140,7 +140,7 @@ V: Természetesen több szövegbélyeget is hozzáadhat ugyanazon PDF-dokumentum
 
 #### K: Hogyan határozhatom meg a szövegbélyegző helyét a PDF-dokumentumban?
 
- V: Testreszabhatja a szövegbélyegző pozícióját a`XIndent` és`YIndent` tulajdonságai a`TextStamp` tárgy. Ezek a tulajdonságok határozzák meg a bélyegző bal felső sarkának koordinátáit az oldal eredetéhez képest.
+ V: Testreszabhatja a szövegbélyegző pozícióját a`XIndent` és`YIndent` tulajdonságai a`TextStamp` objektum. Ezek a tulajdonságok határozzák meg a bélyegző bal felső sarkának koordinátáit az oldal eredetéhez képest.
 
 #### K: Alkalmazhatom ezt a módszert meglévő PDF-dokumentumokra szövegbélyegzők hozzáadásához?
 
@@ -152,7 +152,7 @@ V: Igen, ezt a módszert alkalmazhatja meglévő PDF-dokumentumokhoz szövegbél
 
 #### K: Hogyan biztosíthatom, hogy a szövegbélyegző ne takarja el a PDF-dokumentum mögöttes tartalmát?
 
- V: Szöveges bélyegző hozzáadásakor ügyeljen annak elhelyezésére, hogy ne akadályozza a kritikus információkat, és ne befolyásolja negatívan a dokumentum olvashatóságát. Beállíthatja a`XIndent` és`YIndent` tulajdonságokkal a szövegbélyegző megfelelő elhelyezéséhez.
+V: Szöveges bélyegző hozzáadásakor ügyeljen annak elhelyezésére, hogy ne akadályozza a kritikus információkat, és ne befolyásolja negatívan a dokumentum olvashatóságát. Beállíthatja a`XIndent` és`YIndent` tulajdonságokkal a szövegbélyegző megfelelő elhelyezéséhez.
 
 #### K: Használhatom ezt a módszert szövegen kívüli bélyegzők, például képek vagy logók hozzáadására?
 

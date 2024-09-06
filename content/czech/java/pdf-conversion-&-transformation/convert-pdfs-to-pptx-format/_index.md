@@ -30,7 +30,7 @@ Nyní se pojďme ponořit do kroků pro převod PDF na PPTX pomocí Aspose.PDF p
 
 ## Začínáme s Aspose.PDF pro Javu
 
- Chcete-li začít, musíte mít ve svém projektu nainstalovaný Aspose.PDF for Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+ Chcete-li začít, musíte mít ve svém projektu nainstalovaný Aspose.PDF for Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Načítání dokumentu PDF
 
@@ -98,4 +98,4 @@ Aspose.PDF for Java podporuje různé verze Java. Podrobnosti o kompatibilitě n
 
 ### Kde najdu další příklady a dokumentaci k Aspose.PDF pro Javu?
 
- Rozsáhlou dokumentaci a příklady kódu můžete najít na webu Aspose na adrese[tady](https://reference.aspose.com/pdf/java/).
+ Rozsáhlou dokumentaci a příklady kódu můžete najít na webu Aspose na adrese[zde](https://reference.aspose.com/pdf/java/).

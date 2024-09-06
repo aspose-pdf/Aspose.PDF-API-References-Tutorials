@@ -1,17 +1,17 @@
 ---
-title: Identificeer afbeeldingen in PDF-bestand
-linktitle: Identificeer afbeeldingen in PDF-bestand
+title: Afbeeldingen in PDF-bestand identificeren
+linktitle: Afbeeldingen in PDF-bestand identificeren
 second_title: Aspose.PDF voor .NET API-referentie
 description: Identificeer eenvoudig afbeeldingen in een PDF-bestand en bepaal hun kleurtype met Aspose.PDF voor .NET.
 type: docs
 weight: 150
 url: /nl/net/programming-with-images/identify-images/
 ---
-In deze handleiding wordt stap voor stap uitgelegd hoe u afbeeldingen in een PDF-bestand kunt identificeren met Aspose.PDF voor .NET. Zorg ervoor dat u uw omgeving al heeft ingesteld en volg de onderstaande stappen:
+Deze gids laat u stap voor stap zien hoe u afbeeldingen in een PDF-bestand kunt identificeren met Aspose.PDF voor .NET. Zorg ervoor dat u uw omgeving al hebt ingesteld en volg de onderstaande stappen:
 
-## Stap 1: Definieer de documentmap
+## Stap 1: Definieer de documentdirectory
 
- Zorg ervoor dat u de juiste documentmap instelt. Vervangen`"YOUR DOCUMENT DIRECTORY"` in de code met het pad naar de map waar uw PDF-document zich bevindt.
+ Zorg ervoor dat u de juiste documentdirectory instelt. Vervangen`"YOUR DOCUMENT DIRECTORY"` in de code met het pad naar de map waar uw PDF-document zich bevindt.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,16 +19,16 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Stap 2: Initialiseer de tellers
 
-In deze stap initialiseren we de tellers voor grijswaardenafbeeldingen en RGB-afbeeldingen.
+In deze stap initialiseren we de tellers voor grijstinten- en RGB-afbeeldingen.
 
 ```csharp
-int grayscaled = 0; // Teller voor grijswaardenafbeeldingen
+int grayscaled = 0; // Teller voor grijstintenafbeeldingen
 int rdg = 0; // Teller voor RGB-afbeeldingen
 ```
 
 ## Stap 3: Open het PDF-document
 
-In deze stap openen we het PDF-document met behulp van de`Document` klasse van Aspose.PDF. Gebruik de`Document` constructor en geef het pad door naar het PDF-document.
+ In deze stap openen we het PDF-document met behulp van de`Document` klasse van Aspose.PDF. Gebruik de`Document` constructor en geef het pad naar het PDF-document door.
 
 ```csharp
 using (Document document = new Document(dataDir + "ExtractImages.pdf"))
@@ -37,7 +37,7 @@ using (Document document = new Document(dataDir + "ExtractImages.pdf"))
 
 ## Stap 4: Blader door documentpagina's
 
-In deze stap doorlopen we alle pagina's van het PDF-document en identificeren we de afbeeldingen op elke pagina.
+In deze stap gaan we alle pagina's van het PDF-document doornemen en de afbeeldingen op elke pagina identificeren.
 
 ```csharp
 foreach(Page page in document.Pages)
@@ -46,7 +46,7 @@ foreach(Page page in document.Pages)
 
 ## Stap 5: Afbeeldingsplaatsingen ophalen
 
- In deze stap zullen we gebruiken`ImagePlacementAbsorber` om afbeeldingsplaatsingen op elke pagina op te halen.
+ In deze stap gebruiken we`ImagePlacementAbsorber` om de plaatsing van afbeeldingen op elke pagina op te halen.
 
 ```csharp
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
@@ -55,7 +55,7 @@ page. Accept(abs);
 
 ## Stap 6: Tel de afbeeldingen en identificeer hun kleurtype
 
-In deze stap tellen we het aantal afbeeldingen op elke pagina en identificeren we hun kleurtype (grijstinten of RGB).
+In deze stap tellen we het aantal afbeeldingen op elke pagina en identificeren we hun kleurtype (grijswaarden of RGB).
 
 ```csharp
 Console.WriteLine("Total Images = {0} on page number {1}", abs.ImagePlacements.Count, page.Number);
@@ -78,11 +78,11 @@ foreach(ImagePlacement ia in abs.ImagePlacements)
 }
 ```
 
-### Voorbeeldbroncode voor het identificeren van afbeeldingen met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Identificeer afbeeldingen met Aspose.PDF voor .NET 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Teller voor grijswaardenafbeeldingen
+// Teller voor grijstintenafbeeldingen
 int grayscaled = 0;
 // Teller voor RGB-afbeeldingen
 int rgd = 0;
@@ -93,9 +93,9 @@ using (Document document = new Document(dataDir + "ExtractImages.pdf"))
 		Console.WriteLine("--------------------------------");
 		ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
 		page.Accept(abs);
-		// Haal het aantal afbeeldingen op voor een specifieke pagina
+		// Krijg het aantal afbeeldingen op een specifieke pagina
 		Console.WriteLine("Total Images = {0} over page number {1}", abs.ImagePlacements.Count, page.Number);
-		// Document.Pages[29].Accept(abs);
+		// Document.Pagina's[29].Accept(abs);
 		int image_counter = 1;
 		foreach (ImagePlacement ia in abs.ImagePlacements)
 		{
@@ -119,42 +119,42 @@ using (Document document = new Document(dataDir + "ExtractImages.pdf"))
 
 ## Conclusie
 
-Gefeliciteerd! U hebt met succes afbeeldingen in een PDF geïdentificeerd met Aspose.PDF voor .NET. De afbeeldingen werden geteld en hun kleurtype (grijswaarden of RGB) werd geïdentificeerd. U kunt deze informatie nu gebruiken voor uw specifieke behoeften.
+Gefeliciteerd! U hebt succesvol afbeeldingen in een PDF geïdentificeerd met Aspose.PDF voor .NET. De afbeeldingen zijn geteld en hun kleurtype (grijswaarden of RGB) is geïdentificeerd. U kunt deze informatie nu gebruiken voor uw specifieke behoeften.
 
-### Veelgestelde vragen over het identificeren van afbeeldingen in PDF-bestanden
+### FAQ's voor het identificeren van afbeeldingen in een PDF-bestand
 
-#### Vraag: Wat is het doel van het identificeren van afbeeldingen in een PDF-document?
+#### V: Wat is het doel van het identificeren van afbeeldingen in een PDF-document?
 
-A: Door afbeeldingen in een PDF-document te identificeren, kunnen gebruikers de afbeeldingen analyseren en categoriseren op basis van hun kleurtype (grijstinten of RGB). Deze informatie kan nuttig zijn voor verschillende doeleinden, zoals beeldverwerking, data-analyse of kwaliteitscontrole.
+A: Het identificeren van afbeeldingen in een PDF-document helpt gebruikers bij het analyseren en categoriseren van de afbeeldingen op basis van hun kleurtype (grijswaarden of RGB). Deze informatie kan nuttig zijn voor verschillende doeleinden, zoals beeldverwerking, gegevensanalyse of kwaliteitscontrole.
 
-#### Vraag: Hoe helpt Aspose.PDF voor .NET bij het identificeren van afbeeldingen in een PDF-document?
+#### V: Hoe helpt Aspose.PDF voor .NET bij het identificeren van afbeeldingen in een PDF-document?
 
  A: Aspose.PDF voor .NET biedt een eenvoudig proces om een PDF-document te openen, door de pagina's te bladeren en afbeeldingen te identificeren met behulp van de`ImagePlacementAbsorber` klas.
 
-#### Vraag: Wat is de betekenis van het onderscheid tussen grijswaarden- en RGB-afbeeldingen?
+#### V: Waarom is het belangrijk om onderscheid te maken tussen grijswaarden- en RGB-afbeeldingen?
 
-A: Door onderscheid te maken tussen grijswaarden- en RGB-afbeeldingen kunt u de kleurcompositie van afbeeldingen in het PDF-document beter begrijpen. Grijswaardenafbeeldingen bevatten alleen grijstinten, terwijl RGB-afbeeldingen uit rode, groene en blauwe kleurkanalen bestaan.
+A: Het onderscheid maken tussen grijswaarden- en RGB-afbeeldingen helpt bij het begrijpen van de kleurcompositie van afbeeldingen in het PDF-document. Grijswaardenafbeeldingen bevatten alleen grijstinten, terwijl RGB-afbeeldingen bestaan uit rode, groene en blauwe kleurkanalen.
 
-#### Vraag: Hoe worden grijswaarden- en RGB-afbeeldingen geteld en geïdentificeerd met Aspose.PDF voor .NET?
+#### V: Hoe worden grijswaarden- en RGB-afbeeldingen geteld en geïdentificeerd met Aspose.PDF voor .NET?
 
- EEN: De`ImagePlacementAbsorber` klasse wordt gebruikt om afbeeldingsplaatsingen op elke pagina op te halen. De`GetColorType()` De methode wordt vervolgens op elke afbeeldingsplaatsing toegepast om te bepalen of het om grijstinten of RGB gaat.
+ A: De`ImagePlacementAbsorber` klasse wordt gebruikt om afbeeldingsplaatsingen op elke pagina op te halen. De`GetColorType()` Vervolgens wordt de methode op elke afbeeldingsplaatsing toegepast om te bepalen of het om grijstinten of RGB gaat.
 
-#### Vraag: Kan ik de code wijzigen om aanvullende acties uit te voeren op basis van het kleurtype van de afbeelding?
+#### V: Kan ik de code aanpassen om extra acties uit te voeren op basis van het kleurtype van de afbeelding?
 
-A: Ja, u kunt de code aanpassen om specifieke acties uit te voeren op basis van het kleurtype van de afbeelding. U kunt bijvoorbeeld grijswaardenafbeeldingen extraheren voor verdere verwerking of verschillende optimalisatietechnieken toepassen op basis van het kleurtype.
+A: Ja, u kunt de code aanpassen om specifieke acties uit te voeren op basis van het kleurtype van de afbeelding. U kunt bijvoorbeeld grijstintenafbeeldingen extraheren voor verdere verwerking of verschillende optimalisatietechnieken toepassen op basis van het kleurtype.
 
-####  Vraag: Hoe werkt de`ImagePlacementAbsorber` class contribute to identifying images?
+####  V: Hoe werkt de`ImagePlacementAbsorber` class contribute to identifying images?
 
- EEN: De`ImagePlacementAbsorber` class scant een pagina op afbeeldingsplaatsingen, zodat u informatie over afbeeldingen kunt ophalen, inclusief hun kleurtype.
+ A: De`ImagePlacementAbsorber` klasse scant een pagina op de plaatsing van afbeeldingen, zodat u informatie over afbeeldingen kunt ophalen, inclusief hun kleurtype.
 
-#### Vraag: Is het geïdentificeerde aantal afbeeldingen cumulatief over alle pagina's van het PDF-document?
+#### V: Is het geïdentificeerde aantal afbeeldingen cumulatief over alle pagina's van het PDF-document?
 
-A: Ja, het aantal afbeeldingen is cumulatief over alle pagina's. De code loopt door elke pagina van het PDF-document en telt de afbeeldingen op elke pagina.
+A: Ja, het aantal afbeeldingen is cumulatief over alle pagina's. De code itereert door elke pagina van het PDF-document en telt de afbeeldingen op elke pagina.
 
-#### Vraag: Kan ik deze afbeeldingsidentificatie gebruiken voor het automatiseren van afbeeldingsgerelateerde taken in PDF-documenten?
+#### V: Kan ik deze beeldidentificatie gebruiken voor het automatiseren van beeldgerelateerde taken in PDF-documenten?
 
-A: Ja, het identificeren van afbeeldingen in PDF-documenten kan nuttig zijn voor het automatiseren van taken zoals het extraheren, converteren of manipuleren van afbeeldingen op basis van het kleurtype.
+A: Ja, het identificeren van afbeeldingen in PDF-documenten kan nuttig zijn voor het automatiseren van taken zoals het extraheren, converteren of manipuleren van afbeeldingen op basis van kleurtype.
 
-#### Vraag: Welke voordelen heeft dit beeldidentificatieproces voor de verwerking van PDF-documenten?
+#### V: Welke voordelen biedt dit beeldidentificatieproces bij de verwerking van PDF-documenten?
 
-A: Beeldidentificatie biedt waardevolle inzichten in de kleurcompositie van afbeeldingen, waardoor PDF-documenten met afbeeldingen beter kunnen worden begrepen en verwerkt.
+A: Met beeldidentificatie krijgt u waardevolle inzichten in de kleursamenstelling van afbeeldingen, waardoor u PDF-documenten met afbeeldingen beter kunt begrijpen en verwerken.

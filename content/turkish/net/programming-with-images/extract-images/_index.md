@@ -1,41 +1,41 @@
 ---
-title: PDF Dosyasından Görüntüleri Çıkarın
-linktitle: PDF Dosyasından Görüntüleri Çıkarın
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile PDF dosyasındaki görüntüleri kolayca çıkarın.
+title: PDF Dosyasından Görüntüleri Çıkar
+linktitle: PDF Dosyasından Görüntüleri Çıkar
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET ile PDF dosyasından kolayca resim çıkarın.
 type: docs
 weight: 120
 url: /tr/net/programming-with-images/extract-images/
 ---
-Bu kılavuz, Aspose.PDF for .NET kullanarak PDF dosyasından görüntüleri nasıl çıkaracağınızı adım adım anlatacaktır. Ortamınızı zaten kurduğunuzdan emin olun ve aşağıdaki adımları izleyin:
+Bu kılavuz, Aspose.PDF for .NET kullanarak PDF dosyasından görüntüleri adım adım nasıl çıkaracağınızı gösterecektir. Ortamınızı önceden ayarladığınızdan ve aşağıdaki adımları izlediğinizden emin olun:
 
-## 1. Adım: Belge dizinini tanımlayın
+## Adım 1: Belge dizinini tanımlayın
 
- Başlamadan önce belgeler için doğru dizini ayarladığınızdan emin olun. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF belgenizin bulunduğu dizinin yolunu içeren kodda.
+Başlamadan önce, belgeler için doğru dizini ayarladığınızdan emin olun. Değiştir`"YOUR DOCUMENT DIRECTORY"` PDF belgenizin bulunduğu dizinin yolunu içeren kodda.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 2. Adım: PDF belgesini açın
+## Adım 2: PDF belgesini açın
 
-Bu adımda PDF belgesini aşağıdaki komutu kullanarak açacağız:`Document` Aspose.PDF sınıfı. Kullan`Document` yapıcıya gidin ve yolu PDF belgesine iletin.
+ Bu adımda PDF belgesini şu şekilde açacağız:`Document` Aspose.PDF sınıfı. Kullanın`Document` oluşturucuyu kullanın ve PDF belgesinin yolunu geçirin.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractImages.pdf");
 ```
 
-## 3. Adım: Belirli bir görüntüyü çıkarın
+## Adım 3: Belirli bir görüntüyü çıkarın
 
- Bu adımda belirli bir sayfadan belirli bir görseli çıkaracağız. Kullan`Images` sayfanın toplanması`s `İstenilen görüntüye erişmek için Resources` nesnesi. Aşağıdaki örnekte indeksi 1 olan görseli ilk sayfadan çıkarıyoruz.
+Bu adımda, belirli bir sayfadan belirli bir resmi çıkaracağız. Şunu kullanın:`Images` sayfa koleksiyonu`s `İstenilen görüntüye erişmek için Resources` nesnesini kullanabilirsiniz. Aşağıdaki örnekte, ilk sayfadan indeksi 1 olan görüntüyü çıkarıyoruz.
 
 ```csharp
 XImage xImage = pdfDocument.Pages[1].Resources.Images[1];
 ```
 
-## 4. Adım: Çıkarılan görüntüyü kaydedin
+## Adım 4: Çıkarılan görüntüyü kaydedin
 
- Çıkarılan görüntüyü kullanarak bir dosyaya kaydedin.`Save` yöntemi`xImage` nesne. Çıkış yolunu ve görüntü formatını belirtin (bu örnekte JPEG formatını kullanıyoruz).
+ Çıkarılan görüntüyü bir dosyaya kaydedin`Save` yöntemi`xImage` nesne. Çıktı yolunu ve görüntü formatını belirtin (bu örnekte JPEG formatını kullanıyoruz).
 
 ```csharp
 FileStream outputImage = new FileStream(dataDir + "output.jpg", FileMode.Create);
@@ -43,71 +43,71 @@ xImage.Save(outputImage, ImageFormat.Jpeg);
 outputImage.Close();
 ```
 
-## 5. Adım: Güncellenen PDF dosyasını kaydedin
+## Adım 5: Güncellenen PDF dosyasını kaydedin
 
- Güncellenen PDF dosyasını kullanarak kaydedin.`Save` yöntemi`pdfDocument` nesne. PDF dosyasının çıktı yolunu belirtin.
+ Güncellenen PDF dosyasını kullanarak kaydedin`Save` yöntemi`pdfDocument` nesne. PDF dosyası için çıktı yolunu belirtin.
 
 ```csharp
 dataDir = dataDir + "ExtractImages_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Aspose.PDF for .NET kullanarak Görüntü Çıkarma için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Görüntüleri Çıkarmak için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir+ "ExtractImages.pdf");
-// Belirli bir görüntüyü çıkarın
+// Belirli bir görüntüyü ayıkla
 XImage xImage = pdfDocument.Pages[1].Resources.Images[1];
 FileStream outputImage = new FileStream(dataDir + "output.jpg", FileMode.Create);
-// Çıkış resmini kaydet
+// Çıktı görüntüsünü kaydet
 xImage.Save(outputImage, ImageFormat.Jpeg);
 outputImage.Close();
 dataDir = dataDir + "ExtractImages_out.pdf";
-// Güncellenmiş PDF dosyasını kaydet
+// Güncellenen PDF dosyasını kaydet
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImages extracted successfully.\nFile saved at " + dataDir); 
 ```
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET'i kullanarak PDF'den görüntüleri başarıyla çıkardınız. Çıkarılan görüntü belirtilen dizine kaydedilir ve güncellenen PDF dosyası da kaydedilir. Artık bu dosyaları özel ihtiyaçlarınız için kullanabilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF'den görüntüleri başarıyla çıkardınız. Çıkarılan görüntü belirtilen dizine kaydedilir ve güncellenen PDF dosyası da kaydedilir. Artık bu dosyaları özel ihtiyaçlarınız için kullanabilirsiniz.
 
-### PDF dosyasından resim ayıklamak için SSS'ler
+### PDF dosyasından resim çıkarmak için SSS
 
-#### S: Aspose.PDF for .NET'i kullanarak neden bir PDF dosyasından görüntü çıkarmak isteyeyim?
+#### S: Aspose.PDF for .NET kullanarak neden bir PDF dosyasından resim çıkarmak isteyeyim?
 
-C: Bir PDF dosyasından görsellerin çıkarılması, arşivleme, görselleri diğer belgelerde yeniden kullanma, içeriği analiz etme veya görsel işleme görevlerini gerçekleştirme gibi çeşitli amaçlar için yararlı olabilir.
+A: PDF dosyasından görüntü çıkarmak, arşivleme, görüntüleri başka belgelerde yeniden kullanma, içerik analiz etme veya görüntü işleme görevleri gerçekleştirme gibi çeşitli amaçlar için yararlı olabilir.
 
-#### S: Aspose.PDF for .NET, bir PDF belgesinden görüntülerin çıkarılmasını nasıl kolaylaştırır?
+#### S: Aspose.PDF for .NET, PDF belgesinden resim çıkarmayı nasıl kolaylaştırır?
 
-C: Aspose.PDF for .NET, bir PDF belgesini açmak, belirli görüntülere erişmek ve bunları çeşitli formatlar kullanarak görüntü dosyalarına kaydetmek için adım adım bir süreç sağlar.
+A: Aspose.PDF for .NET, bir PDF belgesini açmak, belirli resimlere erişmek ve bunları çeşitli formatlarda resim dosyalarına kaydetmek için adım adım bir süreç sağlar.
 
-####  S: Hangi rol`Document` class in Aspose.PDF for .NET play in image extraction?
+####  S: Rolü nedir?`Document` class in Aspose.PDF for .NET play in image extraction?
 
- C:`Document` sınıfı PDF belgelerini yüklemek ve değiştirmek için kullanılır. Bu bağlamda görsellerin çıkarılacağı PDF belgesinin açılmasına yardımcı olur.
+ A:`Document` sınıfı, PDF belgelerini yüklemek ve düzenlemek için kullanılır. Bu bağlamda, görüntülerin çıkarılacağı PDF belgesinin açılmasına yardımcı olur.
 
-#### S: Bir PDF sayfasından çıkarmak istediğim belirli görseli nasıl belirlerim?
+#### S: Bir PDF sayfasından çıkarmak istediğim belirli görüntüyü nasıl belirlerim?
 
-C: Kullanabilirsiniz`Images` sayfanın toplanması`Resources` İstenilen görüntüye indeksiyle erişmek için nesne. Örneğin,`pdfDocument.Pages[1].Resources.Images[1]` ilk sayfadaki ilk resme erişir.
+ A: Kullanabilirsiniz`Images` sayfanın koleksiyonu`Resources` İstenilen görüntüye dizinine göre erişmek için nesne. Örneğin,`pdfDocument.Pages[1].Resources.Images[1]` ilk sayfadaki ilk görsele erişir.
 
 #### S: PDF belgesindeki herhangi bir sayfadan resim çıkarabilir miyim?
 
-C: Evet, istediğiniz sayfa indeksini ve çıkarılacak görüntünün indeksini belirterek PDF belgesindeki herhangi bir sayfadan resim çıkarabilirsiniz.
+C: Evet, istediğiniz sayfa dizinini ve çıkarılacak resmin dizinini belirterek PDF belgesindeki herhangi bir sayfadan resim çıkarabilirsiniz.
 
 #### S: Çıkarılan görüntüleri hangi görüntü formatlarında kaydedebilirim?
 
- C: Çıkarılan görüntüleri, uygulamanın desteklediği çeşitli formatlarda kaydedebilirsiniz.`ImageFormat` JPEG, PNG, BMP ve daha fazlası gibi numaralandırma.
+ A: Çıkarılan görüntüleri, desteklenen çeşitli biçimlerde kaydedebilirsiniz.`ImageFormat` JPEG, PNG, BMP ve daha fazlası gibi enum.
 
 #### S: Çıkarılan görüntüleri dosyalara kaydettikten sonra nasıl kullanabilirim?
 
-C: Çıkarılan görüntüler diğer görüntü dosyaları gibi kullanılabilir. Bunları görüntüleyebilir, düzenleyebilir, paylaşabilir veya başka belgelere veya projelere dahil edebilirsiniz.
+A: Çıkarılan resimler diğer resim dosyaları gibi kullanılabilir. Bunları görüntüleyebilir, düzenleyebilir, paylaşabilir veya diğer belgelere veya projelere dahil edebilirsiniz.
 
 #### S: PDF'den resim çıkarmak orijinal PDF belgesinin düzenini veya içeriğini etkiler mi?
 
-C: Hayır, PDF'den resim çıkarmak orijinal PDF belgesinin düzenini veya içeriğini etkilemez. Yalnızca çıkarılan görüntüler etkilenir.
+A: Hayır, PDF'den görüntü çıkarmak orijinal PDF belgesinin düzenini veya içeriğini etkilemez. Yalnızca çıkarılan görüntüler etkilenir.
 
-#### S: Tek bir işlemle farklı sayfalardan birden fazla görsel çıkarabilir miyim?
+#### S: Tek bir işlemde farklı sayfalardan birden fazla görsel çıkarabilir miyim?
 
-C: Evet, farklı sayfa indekslerini yineleyerek birden çok sayfadan görsel çıkarmak için aynı işlemi kullanabilirsiniz.
+C: Evet, farklı sayfa dizinleri arasında dolaşarak birden fazla sayfadan resim çıkarmak için aynı işlemi kullanabilirsiniz.

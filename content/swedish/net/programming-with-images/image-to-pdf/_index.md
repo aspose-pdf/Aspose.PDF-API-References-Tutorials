@@ -32,7 +32,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 ```
 
- Byta ut`"YOUR DOCUMENT DIRECTORY"`med den faktiska sökvägen där du vill spara PDF-filen.
+ Ersätta`"YOUR DOCUMENT DIRECTORY"`med den faktiska sökvägen där du vill spara PDF-filen.
 
 ## Steg 4: Lägga till en sida i dokumentet
 
@@ -76,7 +76,7 @@ Dessa inställningar säkerställer att bilden passar sidan utan några ytterlig
 
 ## Steg 7: Skapa ett bildobjekt
 
-Låt oss nu skapa en`Aspose.Pdf.Image` objekt för att hålla bilddata. Lägg till följande kod till ditt projekt:
+ Låt oss nu skapa en`Aspose.Pdf.Image` objekt för att hålla bilddata. Lägg till följande kod till ditt projekt:
 
 ```csharp
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
@@ -104,7 +104,7 @@ dataDir = dataDir + "ImageToPDF_out.pdf";
 doc.Save(dataDir);
 ```
 
- Byta ut`"YOUR DOCUMENT DIRECTORY"` med önskad utdatakatalog och filnamn.
+ Ersätta`"YOUR DOCUMENT DIRECTORY"` med önskad utdatakatalog och filnamn.
 
 ## Steg 10: Stänga minnesströmmen
 
@@ -177,7 +177,7 @@ S: Genom att konvertera en bild till PDF kan du bädda in bilder i ett PDF-dokum
 
 #### F: Hur laddas en bild in i PDF-dokumentet med Aspose.PDF för .NET?
 
- S: Bilden laddas in i PDF-dokumentet genom att skapa en`Aspose.Pdf.Image` objekt och tilldela bilddata till dess`ImageStream` fast egendom. Detta objekt läggs sedan till i`Paragraphs` samling av PDF-sidan.
+ S: Bilden laddas in i PDF-dokumentet genom att skapa en`Aspose.Pdf.Image` objekt och tilldela bilddata till dess`ImageStream` egendom. Detta objekt läggs sedan till i`Paragraphs` samling av PDF-sidan.
 
 #### F: Vilka steg är involverade i att justera sidlayouten innan bilden läggs till på PDF-sidan?
 

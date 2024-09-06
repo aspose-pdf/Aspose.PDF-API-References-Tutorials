@@ -83,7 +83,7 @@ for (int i = outlines.size(); i > 0; i--) {
 }
 ```
 
-## Exempelkod
+## Provkod
 
 Nedan är ett exempel på Java-kodavsnitt som visar hur man tar bort bokmärken från en PDF-fil med Aspose.PDF för Java:
 

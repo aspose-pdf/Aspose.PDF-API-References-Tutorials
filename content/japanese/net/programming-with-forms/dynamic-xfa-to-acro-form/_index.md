@@ -1,39 +1,39 @@
 ---
-title: 動的 XFA から Acro Form へ
-linktitle: 動的 XFA から Acro Form へ
+title: ダイナミック XFA から Acro フォームへ
+linktitle: ダイナミック XFA から Acro フォームへ
 second_title: Aspose.PDF for .NET API リファレンス
 description: Aspose.PDF for .NET を使用すると、動的な XFA To フォームを標準の AcroForm フォームに簡単に変換できます。
 type: docs
 weight: 70
 url: /ja/net/programming-with-forms/dynamic-xfa-to-acro-form/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して XFA To 動的フォームを AcroForm に変換する方法を説明します。このプロセスをガイドするために、C# ソース コードをステップごとに説明します。
+このチュートリアルでは、Aspose.PDF for .NET を使用して、XFA To ダイナミック フォームを AcroForm に変換する方法を説明します。このプロセスをガイドするために、C# ソース コードを段階的に説明します。
 
-## ステップ 1: 準備
+## ステップ1: 準備
 
-まず、必要なライブラリをインポートし、ドキュメント ディレクトリへのパスを設定していることを確認します。
+まず、必要なライブラリがインポートされ、ドキュメント ディレクトリへのパスが設定されていることを確認します。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## ステップ 2: 動的 XFA フォームをロードする
+## ステップ2: 動的XFAフォームを読み込む
 
-動的 XFA フォームをロードします。
+動的 XFA フォームを読み込みます。
 
 ```csharp
 Document document = new Document(dataDir + "DynamicXFAToAcroForm.pdf");
 ```
 
-## ステップ 3: フォーム タイプを標準 AcroForm として設定する
+## ステップ3: フォームタイプを標準AcroFormに設定する
 
-フォーム タイプを標準 AcroForm として設定します。
+フォーム タイプを標準の AcroForm に設定します。
 
 ```csharp
 document.Form.Type = FormType.Standard;
 ```
 
-## ステップ 4: 結果の PDF を保存する
+## ステップ4: 結果のPDFを保存する
 
 結果の PDF を保存します。
 
@@ -44,40 +44,40 @@ document. Save(dataDir);
 
 ### Aspose.PDF for .NET を使用した Dynamic XFA To Acro Form のサンプル ソース コード 
 ```csharp
-//ドキュメントディレクトリへのパス。
+//ドキュメント ディレクトリへのパス。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//動的 XFA フォームをロードする
+//動的 XFA フォームを読み込む
 Document document = new Document(dataDir + "DynamicXFAToAcroForm.pdf");
-//フォームフィールドのタイプを標準の AcroForm として設定します
+//フォームフィールドタイプを標準のAcroFormに設定する
 document.Form.Type = FormType.Standard;
 dataDir = dataDir + "Standard_AcroForm_out.pdf";
-//結果の PDF を保存する
+//結果のPDFを保存する
 document.Save(dataDir);
 Console.WriteLine("\nDynamic XFA form converted to standard AcroForm successfully.\nFile saved at " + dataDir);
 ```
 
 ## 結論
 
-このチュートリアルでは、Aspose.PDF for .NET を使用して XFA To 動的フォームを標準 AcroForm フォームに変換する方法を学びました。これらの手順に従うことで、動的 XFATo フォームを AcroForms に簡単に変換して、より一般的に使用することができます。
+このチュートリアルでは、Aspose.PDF for .NET を使用して、XFA To 動的フォームを標準の AcroForm フォームに変換する方法を学習しました。これらの手順に従うことで、動的な XFATo フォームを AcroForms に簡単に変換し、より一般的に使用できるようになります。
 
 ### よくある質問
 
-#### Q: 動的 XFA フォームと標準 AcroForm の違いは何ですか?
+#### Q: 動的 XFA フォームと標準の AcroForm の違いは何ですか?
 
-A: 動的 XFA (XML Forms Architecture) フォームは、XML ベースのデータを使用してレイアウトと動作を定義する PDF フォームの一種です。 XFA フォームは、対話型のデータ集約型フォームでよく使用されます。一方、標準 AcroForm は、PDF 形式自体を使用してその構造と外観を定義する、より伝統的なタイプの PDF フォームです。 AcroForms は PDF ビューアで広くサポートされており、さまざまなアプリケーションとの互換性が高くなります。
+A: 動的 XFA (XML フォーム アーキテクチャ) フォームは、XML ベースのデータを使用してレイアウトと動作を定義する PDF フォームの一種です。XFA フォームは、インタラクティブなフォームやデータ集約型のフォームでよく使用されます。一方、標準の AcroForm は、PDF 形式自体を使用して構造と外観を定義する、より従来的なタイプの PDF フォームです。AcroForm は PDF ビューアで広くサポートされており、さまざまなアプリケーションとの互換性が高くなります。
 
-#### Q: 動的 XFA フォームを標準 AcroForm に変換する必要があるのはなぜですか?
+#### Q: 動的 XFA フォームを標準の AcroForm に変換するのはなぜですか?
 
-A: 動的 XFA フォームを標準 AcroForm に変換することは、XFA フォームが完全にはサポートされていないシナリオや、さまざまな PDF ビューアやアプリケーションとの互換性を高めたい場合に役立ちます。標準 AcroForms は通常、さまざまなプラットフォームやデバイスにわたってより広くサポートされています。
+A: 動的 XFA フォームを標準 AcroForm に変換すると、XFA フォームが完全にサポートされていない場合や、さまざまな PDF ビューアやアプリケーションとの互換性を高めたい場合に役立ちます。標準 AcroForm は、通常、さまざまなプラットフォームやデバイスでより広くサポートされています。
 
-#### Q: 動的 XFA フォームを標準 AcroForm に変換した後、フォーム フィールドを変更できますか?
+#### Q: 動的 XFA フォームを標準の AcroForm に変換した後、フォーム フィールドを変更できますか?
 
-A: はい、動的 XFA フォームを標準 AcroForm に変換した後、必要に応じて Aspose.PDF for .NET を使用してフォーム フィールドを変更できます。新しいフィールドの追加、そのプロパティの変更、フィールド値の設定、その他のフォーム関連の操作を実行できます。
+A: はい、動的 XFA フォームを標準の AcroForm に変換した後、Aspose.PDF for .NET を使用して必要に応じてフォーム フィールドを変更できます。新しいフィールドを追加したり、そのプロパティを変更したり、フィールド値を設定したり、その他のフォーム関連の操作を実行したりできます。
 
-#### Q: 動的 XFA フォームを標準 AcroForms に変換する際に制限や考慮事項はありますか?
+#### Q: 動的 XFA フォームを標準の AcroForms に変換する場合、制限や考慮事項はありますか?
 
-A: はい、動的 XFA フォームを標準 AcroForms に変換する際には、考慮すべき制限がいくつかあります。 XFA フォームには、動的なテーブル、繰り返しセクション、フォーム計算などの機能を含む、複雑で動的なレイアウトが含まれる場合がありますが、これらは変換プロセスで完全には保持されない可能性があります。さらに、XFA フォームに固有の一部の特定のフォーム フィールド プロパティは、AcroForms では適用できない場合があります。
+A: はい、動的 XFA フォームを標準の AcroForms に変換する際には、考慮すべき制限がいくつかあります。XFA フォームには、動的テーブル、繰り返しセクション、フォーム計算などの機能を含む複雑で動的なレイアウトが含まれる場合があり、これらは変換プロセスで完全に保持されない可能性があります。また、XFA フォームに固有の特定のフォーム フィールド プロパティは、AcroForms では適用できない場合があります。
 
-#### Q: Aspose.PDF for .NET を使用して、標準の AcroForm を動的 XFA フォームに変換できますか?
+#### Q: Aspose.PDF for .NET を使用して標準の AcroForm を動的 XFA フォームに変換できますか?
 
-A: Aspose.PDF for .NET は現在、動的 XFA フォームから標準 AcroForms への変換をサポートしていますが、標準 AcroForms から動的 XFA フォームへの逆の変換操作はサポートしていません。標準の AcroForms を動的 XFA フォームに変換するには、より複雑な変換が必要となるため、すべてのシナリオで完全にサポートされるわけではありません。
+A: Aspose.PDF for .NET は現在、動的 XFA フォームを標準 AcroForms に変換する機能をサポートしていますが、標準 AcroForms を動的 XFA フォームに変換する逆の操作はサポートしていません。標準 AcroForms を動的 XFA フォームに変換するには、より複雑な変換が必要であり、すべてのシナリオで完全にサポートされるとは限りません。

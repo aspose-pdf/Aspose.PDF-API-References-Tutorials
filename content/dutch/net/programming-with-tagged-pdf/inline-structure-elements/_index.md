@@ -1,33 +1,33 @@
 ---
-title: Inline structuurelementen
-linktitle: Inline structuurelementen
+title: Inline-structuurelementen
+linktitle: Inline-structuurelementen
 second_title: Aspose.PDF voor .NET API-referentie
-description: Stapsgewijze handleiding voor het gebruik van online structurele elementen met Aspose.PDF voor .NET. Organiseer uw PDF's met kopjes en alinea's.
+description: Stapsgewijze handleiding voor het gebruik van online structurele elementen met Aspose.PDF voor .NET. Organiseer uw PDF's met koppen en paragrafen.
 type: docs
 weight: 110
 url: /nl/net/programming-with-tagged-pdf/inline-structure-elements/
 ---
-In deze stapsgewijze handleiding laten we u zien hoe u inline structuurelementen gebruikt met Aspose.PDF voor .NET. Aspose.PDF is een krachtige bibliotheek waarmee u PDF-documenten programmatisch kunt manipuleren. Met inline structuurelementen kunt u een hiërarchische structuur in uw PDF-document creëren met behulp van koppen van verschillende niveaus en alinea's.
+In deze stapsgewijze handleiding laten we u zien hoe u inline-structuurelementen gebruikt met Aspose.PDF voor .NET. Aspose.PDF is een krachtige bibliotheek waarmee u PDF-documenten programmatisch kunt manipuleren. Met inline-structuurelementen kunt u een hiërarchische structuur in uw PDF-document maken met behulp van koppen van verschillende niveaus en paragrafen.
 
-Laten we in de code duiken en leren hoe u inline structuurelementen kunt gebruiken met Aspose.PDF voor .NET.
+Laten we de code eens bekijken en leren hoe u inline-structuurelementen kunt gebruiken met Aspose.PDF voor .NET.
 
 ## Vereisten
 
-Zorg ervoor dat u over het volgende beschikt voordat u begint:
+Voordat u begint, moet u ervoor zorgen dat u het volgende bij de hand hebt:
 
 1. Aspose.PDF-bibliotheek voor .NET geïnstalleerd.
-2. Een basiskennis van de programmeertaal C#.
+2. Basiskennis van de programmeertaal C#.
 
 ## Stap 1: De omgeving instellen
 
-Om aan de slag te gaan, opent u uw C#-ontwikkelomgeving en maakt u een nieuw project. Zorg ervoor dat u een verwijzing naar de Aspose.PDF-bibliotheek voor .NET in uw project hebt toegevoegd.
+Om te beginnen opent u uw C#-ontwikkelomgeving en maakt u een nieuw project. Zorg ervoor dat u een verwijzing naar de Aspose.PDF-bibliotheek voor .NET in uw project hebt toegevoegd.
 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Stap 2: Het document aanmaken
+## Stap 2: Het document maken
 
  De eerste stap is het maken van een nieuw PDF-document met behulp van de`Document` klas.
 
@@ -38,16 +38,16 @@ Document document = new Document();
 
 ## Stap 3: Werk met getagde inhoud
 
-Vervolgens krijgen we de getagde inhoud van het document om mee te werken.
+Vervolgens gaan we aan de slag met de getagde inhoud van het document.
 
 ```csharp
-// Haal de getagde inhoud van het document op
+// De getagde inhoud van het document ophalen
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Stap 4: Stel de documenttitel en taal in
+## Stap 4: Documenttitel en taal instellen
 
-We kunnen nu de documenttitel en taal instellen.
+We kunnen nu de documenttitel en de taal instellen.
 
 ```csharp
 // Definieer de documenttitel en taal
@@ -55,15 +55,15 @@ taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Stap 5: Structuurelementen online toevoegen
+## Stap 5: Structurele elementen online toevoegen
 
-Nu gaan we inline structuurelementen zoals kopjes van verschillende niveaus en alinea's aan ons document toevoegen.
+Nu gaan we inline-structuurelementen, zoals koppen van verschillende niveaus en paragrafen, aan ons document toevoegen.
 
 ```csharp
-// Haal het hoofdstructuurelement op
+// Krijg het wortelstructuurelement
 StructureElement rootElement = taggedContent.RootElement;
 
-// Voeg kopteksten van verschillende niveaus toe
+// Voeg headers van verschillende niveaus toe
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
 HeaderElement h3 = taggedContent.CreateHeaderElement(3);
@@ -77,7 +77,7 @@ rootElement.AppendChild(h4);
 rootElement.AppendChild(h5);
 rootElement.AppendChild(h6);
 
-// Voeg inhoud toe aan elke kop
+// Voeg inhoud toe aan elke header
 SpanElement spanH11 = taggedContent.CreateSpanElement();
 spanH11.SetText("H1.");
 h1.AppendChild(spanH11);
@@ -158,7 +158,7 @@ span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla pur
 p.AppendChild(span10);
 ```
 
-Hier creëren we inline structuurelementen, zoals kopjes van verschillende niveaus en een alinea, en voegen daar inhoud aan toe.
+Hier maken we inline-structuurelementen, zoals koppen van verschillende niveaus en een alinea, en voegen daar inhoud aan toe.
 
 ## Stap 6: Sla het getagde PDF-document op
 
@@ -169,24 +169,24 @@ Ten slotte slaan we het getagde PDF-document op.
 document.Save(dataDir + "InlineStructureElements.pdf");
 ```
 
-### Voorbeeldbroncode voor inline structuurelementen met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Inline Structure Elements met behulp van Aspose.PDF voor .NET 
 
 ```csharp
 
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Maak een pdf-document
+// PDF-document maken
 Document document = new Document();
 
-// Ontvang inhoud voor werk met TaggedPdf
+// Krijg inhoud voor werk met TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Stel de titel en taal in voor Documentnet
+// Titel en taal voor document instellen
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Verkrijg het wortelstructuurelement
+// Krijg Root Structuur Element
 StructureElement rootElement = taggedContent.RootElement;
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
@@ -270,53 +270,53 @@ SpanElement span10 = taggedContent.CreateSpanElement();
 span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
 p.AppendChild(span10);
 
-// Bewaar het getagde pdf-document
+// Gelabeld PDF-document opslaan
 document.Save(dataDir + "InlineStructureElements.pdf");
 
 ```
 
 ## Conclusie
 
-Gefeliciteerd! Je hebt geleerd hoe je inline structuurelementen kunt gebruiken met Aspose.PDF voor .NET. U kunt nu een hiërarchische structuur in uw PDF-document creëren door koppen van verschillende niveaus en alinea's te gebruiken. Ontdek meer functies van Aspose.PDF en ontdek het volledige potentieel ervan.
+Gefeliciteerd! U hebt geleerd hoe u inline-structuurelementen kunt gebruiken met Aspose.PDF voor .NET. U kunt nu een hiërarchische structuur in uw PDF-document maken door koppen van verschillende niveaus en paragrafen te gebruiken. Ontdek meer functies van Aspose.PDF om het volledige potentieel ervan te ontdekken.
 
 ### Veelgestelde vragen
 
-#### Vraag: Wat zijn inline structuurelementen in een PDF-document en hoe dragen ze bij aan het creëren van een hiërarchische structuur?
+#### V: Wat zijn inline-structuurelementen in een PDF-document en hoe dragen ze bij aan het creëren van een hiërarchische structuur?
 
-A: Inline structuurelementen in een PDF-document, zoals koppen van verschillende niveaus en alinea's, worden gebruikt om een hiërarchische structuur te creëren die de inhoud op een gestructureerde manier organiseert en presenteert. Met deze elementen kunt u een duidelijke hiërarchie en informatiestroom binnen het document tot stand brengen.
+A: Inline-structuurelementen in een PDF-document, zoals koppen van verschillende niveaus en paragrafen, worden gebruikt om een hiërarchische structuur te creëren die inhoud op een gestructureerde manier organiseert en presenteert. Met deze elementen kunt u een duidelijke hiërarchie en informatiestroom binnen het document tot stand brengen.
 
-#### Vraag: Hoe kunnen inline structuurelementen de leesbaarheid en organisatie van een PDF-document verbeteren?
+#### V: Hoe kunnen inline-structuurelementen de leesbaarheid en organisatie van een PDF-document verbeteren?
 
-A: Inline-structuurelementen, met name kopteksten en alinea's, helpen de leesbaarheid en organisatie van een PDF-document te verbeteren door een logische structuur te bieden. Koppen geven verschillende niveaus van belangrijkheid aan en helpen lezers bij het navigeren door de inhoud, terwijl alinea's gerelateerde informatie groeperen.
+A: Inline-structuurelementen, met name koppen en paragrafen, helpen de leesbaarheid en organisatie van een PDF-document te verbeteren door een logische structuur te bieden. Koppen geven verschillende niveaus van belangrijkheid aan en helpen lezers door de inhoud te navigeren, terwijl paragrafen gerelateerde informatie groeperen.
 
-#### Vraag: Hoe vergemakkelijkt Aspose.PDF voor .NET het gebruik van inline structuurelementen?
+#### V: Hoe faciliteert Aspose.PDF voor .NET het gebruik van inline-structuurelementen?
 
-A: Aspose.PDF voor .NET biedt klassen en methoden voor het maken en manipuleren van inline structuurelementen, zoals koppen en alinea's. Deze elementen kunnen worden aangepast, hiërarchisch georganiseerd en verrijkt met inhoud om de visuele presentatie en toegankelijkheid van het document te verbeteren.
+A: Aspose.PDF voor .NET biedt klassen en methoden om inline structuurelementen, zoals koppen en paragrafen, te maken en te manipuleren. Deze elementen kunnen worden aangepast, hiërarchisch worden georganiseerd en worden verrijkt met inhoud om de visuele presentatie en toegankelijkheid van het document te verbeteren.
 
-####  Vraag: Wat is het doel van de`taggedContent` object in relation to inline structure elements?
+####  V: Wat is het doel van de`taggedContent` object in relation to inline structure elements?
 
- EEN: De`taggedContent` voorwerp, verkregen van de`TaggedContent` eigendom van een`Document`, kunt u met gestructureerde elementen werken, inclusief inline structuurelementen. Hiermee kunt u koppen en alinea's in het document maken, aanpassen en ordenen.
+ A: De`taggedContent` object, verkregen uit de`TaggedContent` eigendom van een`Document`, kunt u werken met gestructureerde elementen, inclusief inline structuurelementen. Hiermee kunt u koppen en alinea's in het document maken, aanpassen en ordenen.
 
-#### Vraag: Hoe helpen inline structuurelementen bij het creëren van een duidelijke documenthiërarchie?
+#### V: Hoe dragen inline-structuurelementen bij aan het creëren van een duidelijke documenthiërarchie?
 
-A: Inline structuurelementen, zoals kopjes van verschillende niveaus, dragen bij aan het creëren van een duidelijke en goed gedefinieerde hiërarchie in het document. Lezers kunnen snel de hoofdonderwerpen, subonderwerpen en gerelateerde inhoud identificeren, waardoor het document gemakkelijker te navigeren en te begrijpen is.
+A: Inline-structuurelementen, zoals koppen van verschillende niveaus, dragen bij aan het vaststellen van een duidelijke en goed gedefinieerde hiërarchie in het document. Lezers kunnen snel de hoofdonderwerpen, subonderwerpen en gerelateerde inhoud identificeren, waardoor het document gemakkelijker te navigeren en te begrijpen is.
 
-#### Vraag: Kan ik het uiterlijk en de opmaak van inline structuurelementen aanpassen met Aspose.PDF voor .NET?
+#### V: Kan ik het uiterlijk en de opmaak van inline-structuurelementen aanpassen met Aspose.PDF voor .NET?
 
-A: Ja, u kunt het uiterlijk en de opmaak van inline structuurelementen aanpassen. U kunt eigenschappen instellen zoals lettertypestijlen, -groottes, kleuren, uitlijning, inspringing en spatiëring om de gewenste visuele presentatie van koppen en alinea's te verkrijgen.
+A: Ja, u kunt het uiterlijk en de opmaak van inline-structuurelementen aanpassen. U kunt eigenschappen instellen zoals lettertypes, groottes, kleuren, uitlijning, inspringing en spatie om de gewenste visuele presentatie voor koppen en paragrafen te bereiken.
 
-#### Vraag: Hoe kan ik koppen van verschillende niveaus maken en toevoegen aan een PDF-document met behulp van inline structuurelementen in Aspose.PDF voor .NET?
+#### V: Hoe kan ik koppen van verschillende niveaus maken en toevoegen aan een PDF-document met behulp van inline-structuurelementen in Aspose.PDF voor .NET?
 
- A: U kunt kopjes van verschillende niveaus maken met behulp van de`CreateHeaderElement` methode en voeg ze vervolgens toe aan het hoofdstructuurelement. Vervolgens kunt u aan elk kopelement inhoud toevoegen met behulp van de`CreateSpanElement` methode om tekstreeksen te maken.
+ A: U kunt koppen van verschillende niveaus maken met behulp van de`CreateHeaderElement` methode en voeg ze vervolgens toe aan het rootstructuurelement. Vervolgens kunt u inhoud toevoegen aan elk kopelement met behulp van de`CreateSpanElement` Methode om tekststroken te creëren.
 
-#### Vraag: Kan ik inline structuurelementen gebruiken om lijsten, opsommingstekens of andere typen inhoudsorganisatie in een PDF-document te maken?
+#### V: Kan ik inline-structuurelementen gebruiken om lijsten, opsommingstekens of andere typen inhoudsorganisatie in een PDF-document te maken?
 
-A: Hoewel inline-structuurelementen zelf voornamelijk worden gebruikt voor koppen en alinea's, kunt u ze gebruiken in combinatie met andere functies die worden aangeboden door Aspose.PDF voor .NET om lijsten, opsommingstekens, tabellen en andere soorten inhoudorganisatie te maken voor een uitgebreide documentstructuur.
+A: Hoewel inline-structuurelementen zelf voornamelijk worden gebruikt voor koppen en alinea's, kunt u ze in combinatie met andere functies van Aspose.PDF voor .NET gebruiken om lijsten, opsommingstekens, tabellen en andere typen inhoudsorganisatie te maken voor een uitgebreide documentstructuur.
 
-#### Vraag: Hoe dragen inline structuurelementen bij aan de toegankelijkheid van documenten?
+#### V: Hoe dragen inline-structuurelementen bij aan de toegankelijkheid van documenten?
 
-A: Inline-structuurelementen spelen een cruciale rol bij het verbeteren van de toegankelijkheid van documenten. Goed gestructureerde koppen en paragrafen zorgen voor een duidelijke documenthiërarchie die schermlezers en andere ondersteunende technologieën helpt bij het nauwkeurig interpreteren en overbrengen van de inhoud naar gebruikers met een beperking.
+A: Inline-structuurelementen spelen een cruciale rol bij het verbeteren van de toegankelijkheid van documenten. Goed gestructureerde koppen en paragrafen bieden een duidelijke documenthiërarchie die schermlezers en andere ondersteunende technologieën helpt bij het nauwkeurig interpreteren en overbrengen van de inhoud aan gebruikers met een beperking.
 
-#### Vraag: Kan ik geavanceerdere toepassingen van inline structuurelementen verkennen, zoals het maken van interactieve elementen of het insluiten van multimedia?
+#### V: Kan ik geavanceerdere toepassingen van inline-structuurelementen verkennen, zoals het maken van interactieve elementen of het insluiten van multimedia?
 
-EEN: Absoluut! Hoewel deze tutorial zich richt op het maken van kopjes en alinea's, biedt Aspose.PDF voor .NET geavanceerde functies om interactieve elementen te maken, multimedia in te sluiten, hyperlinks toe te voegen en meer. Bekijk de documentatie en voorbeelden van de bibliotheek om u te verdiepen in deze geavanceerde mogelijkheden.
+A: Absoluut! Hoewel deze tutorial zich richt op het maken van koppen en paragrafen, biedt Aspose.PDF voor .NET geavanceerde functies om interactieve elementen te maken, multimedia in te sluiten, hyperlinks toe te voegen en meer. Bekijk de documentatie en voorbeelden van de bibliotheek om dieper in te gaan op deze geavanceerde mogelijkheden.

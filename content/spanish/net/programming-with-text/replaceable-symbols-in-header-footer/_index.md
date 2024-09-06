@@ -1,30 +1,30 @@
 ---
-title: Símbolos reemplazables en el pie de página del encabezado
-linktitle: Símbolos reemplazables en el pie de página del encabezado
-second_title: Aspose.PDF para referencia de API .NET
+title: Símbolos reemplazables en el encabezado y pie de página
+linktitle: Símbolos reemplazables en el encabezado y pie de página
+second_title: Referencia de API de Aspose.PDF para .NET
 description: Aprenda a utilizar símbolos reemplazables en el encabezado y pie de página de un documento PDF utilizando Aspose.PDF para .NET.
 type: docs
 weight: 320
 url: /es/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-En este tutorial, explicaremos cómo usar símbolos reemplazables en el encabezado y pie de página de un documento PDF usando la biblioteca Aspose.PDF para .NET. Revisaremos el proceso paso a paso para crear un PDF, configurar los márgenes, agregar encabezado y pie de página con símbolos reemplazables y guardar el PDF usando el código fuente C# proporcionado.
+En este tutorial, explicaremos cómo usar símbolos reemplazables en el encabezado y pie de página de un documento PDF mediante la biblioteca Aspose.PDF para .NET. Repasaremos el proceso paso a paso de creación de un PDF, configuración de márgenes, adición de encabezado y pie de página con símbolos reemplazables y guardado del PDF utilizando el código fuente C# proporcionado.
 
-## Requisitos previos
+## Prerrequisitos
 
 Antes de comenzar, asegúrese de tener lo siguiente:
 
 - La biblioteca Aspose.PDF para .NET instalada.
-- Un conocimiento básico de la programación en C#.
+- Un conocimiento básico de programación en C#.
 
-## Paso 1: configurar el directorio de documentos
+## Paso 1: Configurar el directorio de documentos
 
- Primero, debe establecer la ruta al directorio donde desea guardar el archivo PDF generado. Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir`variable con la ruta al directorio deseado.
+ Primero, debes establecer la ruta al directorio donde deseas guardar el archivo PDF generado. Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir` variable con la ruta al directorio deseado.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Paso 2: crear un documento y una página PDF
+## Paso 2: Crear un documento y una página PDF
 
  A continuación, creamos un nuevo documento PDF y le agregamos una página usando el`Document` clase y`Page` clase de la biblioteca Aspose.PDF.
 
@@ -33,9 +33,9 @@ Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Paso 3: establecer márgenes
+## Paso 3: Establecer márgenes
 
- Establecemos los márgenes de la página usando el`MarginInfo`clase. Ajuste los valores de los márgenes según sus requisitos.
+Establecemos los márgenes de la página utilizando el`MarginInfo` Clase. Ajuste los valores de margen según sus requisitos.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -46,9 +46,9 @@ marginInfo.Right = 50;
 page.PageInfo.Margin = marginInfo;
 ```
 
-## Paso 4: agregue un encabezado con símbolos reemplazables
+## Paso 4: Agregar encabezado con símbolos reemplazables
 
- Creamos un`HeaderFooter` objeto para la página y agregue un`TextFragment` con símbolos reemplazables.
+ Creamos una`HeaderFooter` objeto para la página y agregar un`TextFragment` con símbolos reemplazables.
 
 ```csharp
 HeaderFooter hfFirst = new HeaderFooter();
@@ -70,9 +70,9 @@ hfFirst.Paragraphs.Add(t1);
 // Agregue más fragmentos de texto o personalícelos según sea necesario
 ```
 
-## Paso 5: agregue un pie de página con símbolos reemplazables
+## Paso 5: Agregar pie de página con símbolos reemplazables
 
- De la misma manera creamos un`HeaderFooter` objeto para el pie de página y agregar`TextFragment` objetos con símbolos reemplazables.
+ De manera similar, creamos una`HeaderFooter` objeto para el pie de página y agregar`TextFragment` objetos con símbolos reemplazables.
 
 ```csharp
 HeaderFooter hfFoot = new HeaderFooter();
@@ -89,7 +89,7 @@ TextFragment t5 = new TextFragment("Page $p of $P");
 hfFoot.Paragraphs.Add(tab2);
 ```
 
-## Paso 6: guarde el documento PDF
+## Paso 6: Guarde el documento PDF
 
 Finalmente, guardamos el documento PDF en el archivo de salida especificado.
 
@@ -99,7 +99,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols replaced successfully in the header and footer.\nFile saved at " + dataDir);
 ```
 
-### Código fuente de muestra para símbolos reemplazables en el pie de página del encabezado usando Aspose.PDF para .NET 
+### Código fuente de muestra para símbolos reemplazables en encabezado y pie de página utilizando Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -110,13 +110,13 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Asigne la instancia de marginInfo a la propiedad Margin de sec1.PageInfo
+// Asignar la instancia marginInfo a la propiedad Margin de sec1.PageInfo
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
 hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
-// Cree una instancia de un párrafo de texto que almacenará el contenido para mostrarlo como encabezado
+// Cree una instancia de un párrafo de texto que almacenará el contenido que se mostrará como encabezado
 TextFragment t1 = new TextFragment("report title");
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
@@ -132,45 +132,45 @@ t2.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 t2.TextState.LineSpacing = 5f;
 t2.TextState.FontSize = 12;
 hfFirst.Paragraphs.Add(t2);
-// Crea un objeto HeaderFooter para la sección.
+// Crea un objeto HeaderFooter para la sección
 HeaderFooter hfFoot = new HeaderFooter();
 // Establezca el objeto HeaderFooter en pie de página par e impar
 page.Footer = hfFoot;
 hfFoot.Margin.Left = 50;
 hfFoot.Margin.Right = 50;
-// Agregue un párrafo de texto que contenga el número de página actual del número total de páginas
+// Agregar un párrafo de texto que contenga el número de página actual o el número total de páginas
 TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
 // Crear una instancia de un objeto de tabla
 Table tab2 = new Table();
-// Agregue la tabla en la colección de párrafos de la sección deseada.
+// Añade la tabla en la colección de párrafos de la sección deseada
 hfFoot.Paragraphs.Add(tab2);
-// Establecer con anchos de columna de la tabla.
+// Conjunto con anchos de columnas de la tabla
 tab2.ColumnWidths = "165 172 165";
 // Crea filas en la tabla y luego celdas en las filas.
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
 row3.Cells.Add();
-// Establecer la alineación vertical del texto como alineado al centro
+// Establezca la alineación vertical del texto como centrada
 row3.Cells[0].Alignment = Aspose.Pdf.HorizontalAlignment.Left;
 row3.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-//Sec1.Paragraphs.Add(New Text("Aspose.Total para Java es una compilación de todos los componentes de Java ofrecidos por Aspose. Se compila #$NL" + "diariamente para garantizar que contenga las versiones más actualizadas de cada uno de nuestros componentes Java. #$NL " + "Usando Aspose.Total para Java los desarrolladores pueden crear una amplia gama de aplicaciones. #$NL #$NL #$NP" + "Aspose.Total para Java es una compilación de cada componente Java ofrecido por Aspose. Se compila #$NL" + "diariamente para garantizar que contenga las versiones más actualizadas de cada uno de nuestros componentes Java. #$NL " + "Utilizando Aspose.Total para desarrolladores de Java puede crear una amplia gama de aplicaciones. #$NL #$NL #$NP" + "Aspose.Total para Java es una compilación de todos los componentes Java ofrecidos por Aspose. Se compila #$NL" + "diariamente para garantizar que contenga la mayor cantidad de aplicaciones. versiones actualizadas de cada uno de nuestros componentes Java. #$NL " + "Usando Aspose.Total para desarrolladores de Java pueden crear una amplia gama de aplicaciones. #$NL #$NL"))
+//Sec1.Paragraphs.Add(New Text("Aspose.Total para Java es una compilación de cada componente Java ofrecido por Aspose. Se compila a diario para garantizar que contenga las versiones más actualizadas de cada uno de nuestros componentes Java. #$NL " + "Usando Aspose.Total para Java, los desarrolladores pueden crear una amplia gama de aplicaciones. #$NL #$NL #$NP" + "Aspose.Total para Java es una compilación de cada componente Java ofrecido por Aspose. Se compila a diario para garantizar que contenga las versiones más actualizadas de cada uno de nuestros componentes Java. #$NL " + "Usando Aspose.Total para Java, los desarrolladores pueden crear una amplia gama de aplicaciones. #$NL #$NL #$NP" + "Aspose.Total para Java es una compilación de cada componente Java ofrecido por Aspose. Se compila a diario para garantizar que contenga las versiones más actualizadas de cada uno de nuestros componentes Java. componentes. #$NL " + "Al usar Aspose.Total, los desarrolladores de Java pueden crear una amplia gama de aplicaciones. #$NL #$NL"))
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
 table.DefaultCellPadding = new MarginInfo();
 table.DefaultCellPadding.Top = 10;
 table.DefaultCellPadding.Bottom = 10;
-// Agregue la tabla en la colección de párrafos de la sección deseada.
+// Añade la tabla en la colección de párrafos de la sección deseada
 page.Paragraphs.Add(table);
-// Establecer el borde de celda predeterminado usando el objeto BorderInfo
+// Establecer el borde de celda predeterminado utilizando el objeto BorderInfo
 table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
-// Establecer el borde de la tabla usando otro objeto BorderInfo personalizado
+// Establecer el borde de la tabla utilizando otro objeto BorderInfo personalizado
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
 // Crea filas en la tabla y luego celdas en las filas.
@@ -203,42 +203,42 @@ Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile s
 
 ## Conclusión
 
-En este tutorial, ha aprendido a utilizar símbolos reemplazables en el encabezado y pie de página de un documento PDF utilizando la biblioteca Aspose.PDF para .NET. Si sigue la guía paso a paso y ejecuta el código C# proporcionado, puede crear un PDF, establecer márgenes, agregar encabezado y pie de página con símbolos reemplazables y guardar el PDF.
+En este tutorial, aprendió a usar símbolos reemplazables en el encabezado y pie de página de un documento PDF mediante la biblioteca Aspose.PDF para .NET. Si sigue la guía paso a paso y ejecuta el código C# proporcionado, podrá crear un PDF, establecer márgenes, agregar encabezado y pie de página con símbolos reemplazables y guardar el PDF.
 
 ### Preguntas frecuentes
 
-#### P: ¿Cuál es el propósito del tutorial "Símbolos reemplazables en el encabezado y pie de página"?
+#### P: ¿Cuál es el propósito del tutorial “Símbolos reemplazables en encabezado y pie de página”?
 
-R: El tutorial "Símbolos reemplazables en el encabezado y pie de página" tiene como objetivo guiarlo a través del proceso de uso de la biblioteca Aspose.PDF para .NET para agregar símbolos reemplazables al encabezado y pie de página de un documento PDF. Los símbolos reemplazables le permiten reemplazar dinámicamente marcadores de posición específicos con valores reales al generar el PDF.
+A: El tutorial "Símbolos reemplazables en encabezado y pie de página" tiene como objetivo guiarlo a través del proceso de uso de la biblioteca Aspose.PDF para .NET para agregar símbolos reemplazables al encabezado y pie de página de un documento PDF. Los símbolos reemplazables le permiten reemplazar de manera dinámica marcadores de posición específicos con valores reales al generar el PDF.
 
-#### P: ¿Qué son los símbolos reemplazables en el contexto de un encabezado y pie de página de un PDF?
+#### P: ¿Qué son los símbolos reemplazables en el contexto de un encabezado y pie de página PDF?
 
-R: Los símbolos reemplazables son marcadores de posición que puede insertar en el encabezado y pie de página de un documento PDF. Estos símbolos actúan como marcadores de posición dinámicos para valores que se pueden completar en tiempo de ejecución, como números de página, fechas e información personalizada.
+R: Los símbolos reemplazables son marcadores de posición que se pueden insertar en el encabezado y pie de página de un documento PDF. Estos símbolos actúan como marcadores de posición dinámicos para valores que se pueden completar en tiempo de ejecución, como números de página, fechas e información personalizada.
 
-#### P: ¿Por qué querría utilizar símbolos reemplazables en el encabezado y pie de página de un PDF?
+#### P: ¿Por qué querría utilizar símbolos reemplazables en un encabezado y pie de página de PDF?
 
 R: Los símbolos reemplazables en el encabezado y pie de página son útiles cuando desea incluir información dinámica en sus documentos PDF, como números de página, fechas u otros datos variables que pueden cambiar cuando se genera el documento.
 
 #### P: ¿Cómo puedo configurar los márgenes de la página PDF?
 
- R: Puede configurar los márgenes de la página PDF usando el`MarginInfo` clase y asignarla al`Margin` propiedad de la`PageInfo` de la página. Ajuste los valores de los márgenes según sea necesario.
+ A: Puede configurar los márgenes de la página PDF utilizando el`MarginInfo` clase y asignarla a la`Margin` propiedad de la`PageInfo` de la página. Ajuste los valores de los márgenes según sea necesario.
 
-#### P: ¿Cómo agrego símbolos reemplazables al encabezado y al pie de página?
+#### P: ¿Cómo puedo agregar símbolos reemplazables al encabezado y pie de página?
 
- R: Puedes agregar símbolos reemplazables creando un`HeaderFooter` objeto para el encabezado y pie de página de la página. Luego, puedes agregar`TextFragment`objetos con el texto deseado, incluidos símbolos reemplazables, al`Paragraphs` colección de la`HeaderFooter` objeto.
+ A: Puede agregar símbolos reemplazables creando un`HeaderFooter` objeto para el encabezado y pie de página de la página. Luego, puedes agregar`TextFragment`objetos con el texto deseado, incluidos símbolos reemplazables, a la`Paragraphs` colección de la`HeaderFooter` objeto.
 
 #### P: ¿Puedo personalizar la apariencia de los símbolos reemplazables?
 
- R: Sí, puede personalizar la apariencia de los símbolos reemplazables modificando las propiedades del`TextFragment` objetos que contienen los símbolos. Puede establecer propiedades como fuente, tamaño de fuente, color, alineación y espacio entre líneas.
+ R: Sí, puede personalizar la apariencia de los símbolos reemplazables modificando las propiedades de los mismos.`TextFragment` objetos que contienen los símbolos. Puede configurar propiedades como fuente, tamaño de fuente, color, alineación y espaciado entre líneas.
 
 #### P: ¿Qué tipo de símbolos reemplazables puedo usar?
 
-R: Puedes utilizar una variedad de símbolos reemplazables, como:
+R: Puede utilizar una variedad de símbolos reemplazables, como:
 
 - `$p`: Número de página actual.
 - `$P`: Número total de páginas.
-- `$d`: Fecha actual.
-- `$t`: Tiempo actual.
+- `$d`:Fecha actual.
+- `$t`:Hora actual.
 - Marcadores de posición personalizados que usted define.
 
 #### P: ¿Puedo incluir otro texto y formato alrededor de los símbolos reemplazables?
@@ -247,8 +247,8 @@ R: Puedes utilizar una variedad de símbolos reemplazables, como:
 
 #### P: ¿Cómo puedo guardar el documento PDF generado?
 
- R: Para guardar el documento PDF generado, puede utilizar el`Save` método de la`Document`clase. Proporcione la ruta y el nombre del archivo de salida deseado como argumento.
+ A: Para guardar el documento PDF generado, puede utilizar el`Save` método de la`Document`Clase. Proporcione la ruta y el nombre del archivo de salida deseado como argumento.
 
 #### P: ¿Se requiere una licencia Aspose válida para este tutorial?
 
-R: Sí, se requiere una licencia Aspose válida para ejecutar el código correctamente en este tutorial. Puede obtener una licencia completa o una licencia temporal de 30 días en el sitio web de Aspose.
+R: Sí, se necesita una licencia Aspose válida para ejecutar el código correctamente en este tutorial. Puede obtener una licencia completa o una licencia temporal de 30 días en el sitio web de Aspose.

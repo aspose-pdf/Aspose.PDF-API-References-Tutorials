@@ -1,23 +1,23 @@
 ---
 title: Yatay ve Dikey Radyo Düğmeleri
 linktitle: Yatay ve Dikey Radyo Düğmeleri
-second_title: .NET API Referansı için Aspose.PDF
+second_title: Aspose.PDF for .NET API Referansı
 description: Aspose.PDF for .NET ile PDF belgelerinizde kolayca yatay ve dikey radyo düğmeleri oluşturun.
 type: docs
 weight: 180
 url: /tr/net/programming-with-forms/horizontally-and-vertically-radio-buttons/
 ---
-Bu eğitimde size Aspose.PDF for .NET kullanarak bir PDF belgesinde yatay ve dikey olarak düzenlenmiş radyo düğmelerinin nasıl oluşturulacağını göstereceğiz. Bu süreçte size yol göstermek için C# kaynak kodunu adım adım açıklayacağız.
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesinde yatay ve dikey olarak düzenlenmiş radyo düğmelerinin nasıl oluşturulacağını göstereceğiz. Bu süreçte size rehberlik etmek için C# kaynak kodunu adım adım açıklayacağız.
 
 ## Adım 1: Hazırlık
 
-Gerekli kitaplıkları içe aktardığınızdan ve belgeler dizininizin yolunu ayarladığınızdan emin olun:
+Gerekli kütüphaneleri içe aktardığınızdan ve belgelerinizin dizinine giden yolu ayarladığınızdan emin olun:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## 2. Adım: Belgeyi yükleyin
+## Adım 2: Belgeyi yükleyin
 
 Mevcut PDF belgesini yükleyin:
 
@@ -26,7 +26,7 @@ FormEditor formEditor = new FormEditor();
 formEditor.BindPdf(dataDir + "input.pdf");
 ```
 
-## 3. Adım: Radyo düğmesi seçeneklerini özelleştirin
+## Adım 3: Radyo düğmesi seçeneklerini özelleştirin
 
 Aşağıdaki özellikleri ayarlayarak radyo düğmesi seçeneklerini özelleştirin:
 
@@ -47,7 +47,7 @@ formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
 ```
 
-## 5. Adım: Dikey radyo düğmeleri ekleyin
+## Adım 5: Dikey radyo düğmeleri ekleyin
 
 Alanın seçeneklerini ve konumunu belirterek dikey olarak düzenlenmiş radyo düğmeleri ekleyin:
 
@@ -66,26 +66,26 @@ dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
 ```
 
-### Aspose.PDF for .NET kullanan Yatay ve Dikey Radyo Düğmeleri için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Yatay ve Dikey Radyo Düğmeleri için örnek kaynak kodu 
 ```csharp
 try
 {
-	// Belgeler dizininin yolu.
+	// Belgeler dizinine giden yol.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Daha önce kaydedilen belgeyi yükleyin
+	// Daha önce kaydedilmiş belgeyi yükleyin
 	FormEditor formEditor = new FormEditor();
 	formEditor.BindPdf(dataDir + "input.pdf");
 	// RadioGap, iki radyo düğmesi seçeneği arasındaki mesafedir.
 	formEditor.RadioGap = 4;
 	// Yatay radyo düğmesi ekle
 	formEditor.RadioHoriz = true;
-	// RadioButtonItemSize eğer radyo düğmesi öğesinin boyutuysa.
+	// RadioButtonItemSize, radyo düğmesi öğesinin boyutunu belirtir.
 	formEditor.RadioButtonItemSize = 20;
 	formEditor.Facade.BorderWidth = 1;
 	formEditor.Facade.BorderColor = System.Drawing.Color.Black;
 	formEditor.Items = new string[] { "First", "Second", "Third" };
 	formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
-	// Dikey olarak yerleştirilmiş başka bir radyo düğmesi ekleyin
+	// Dikey olarak konumlandırılmış başka bir radyo düğmesi ekleyin
 	formEditor.RadioHoriz = false;
 	formEditor.Items = new string[] { "First", "Second", "Third" };
 	formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
@@ -102,26 +102,26 @@ catch (Exception ex)
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesinde yatay ve dikey olarak düzenlenmiş radyo düğmelerinin nasıl oluşturulacağını öğrendik. Bu adımları izleyerek radyo düğmelerinin düzenini kolayca özelleştirebilir ve Aspose.PDF'yi kullanarak bunları PDF belgelerinize ekleyebilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesinde yatay ve dikey olarak düzenlenmiş radyo düğmelerinin nasıl oluşturulacağını öğrendik. Bu adımları izleyerek, radyo düğmelerinin düzenini kolayca özelleştirebilir ve bunları Aspose.PDF kullanarak PDF belgelerinize ekleyebilirsiniz.
 
-### SSS'ler
+### SSS
 
-#### S: Bir PDF belgesinde yatay ve dikey olarak düzenlenmiş radyo düğmeleri nelerdir?
+#### S: PDF belgesinde yatay ve dikey olarak düzenlenmiş radyo düğmeleri nelerdir?
 
-C: Bir PDF belgesindeki yatay ve dikey olarak düzenlenmiş radyo düğmeleri, radyo düğmesi seçeneklerinin düzen yönünü belirtir. Yatay düzen, radyo düğmesi seçeneklerini yan yana yerleştirerek kullanıcıların soldan sağa seçim yapmasına olanak tanır. Dikey düzen ise radyo düğmesi seçeneklerini üst üste istifleyerek kullanıcıların yukarıdan aşağıya seçim yapmasına olanak tanır.
+A: Bir PDF belgesinde yatay ve dikey olarak düzenlenmiş radyo düğmeleri, radyo düğmesi seçeneklerinin düzen yönelimini ifade eder. Yatay düzen, radyo düğmesi seçeneklerini yan yana yerleştirir ve kullanıcıların soldan sağa doğru seçim yapmasını sağlar. Öte yandan dikey düzen, radyo düğmesi seçeneklerini üst üste istifler ve kullanıcıların yukarıdan aşağıya doğru seçim yapmasını sağlar.
 
-#### S: Aspose.PDF for .NET'teki radyo düğmesi seçeneklerinin görünümünü nasıl özelleştiririm?
+#### S: Aspose.PDF for .NET'te radyo düğmesi seçeneklerinin görünümünü nasıl özelleştirebilirim?
 
-C: Çeşitli özellikleri ayarlayarak Aspose.PDF for .NET'teki radyo düğmesi seçeneklerinin görünümünü özelleştirebilirsiniz. API, iki radyo düğmesi seçeneği arasındaki mesafeyi ayarlama seçenekleri sunar (`RadioGap`), düzen yönü (`RadioHoriz`), radyo düğmesi öğelerinin boyutu (`RadioButtonItemSize`), kenarlık genişliği ve radyo düğmelerinin rengi ve daha fazlası.
+A: Aspose.PDF for .NET'te radyo düğmesi seçeneklerinin görünümünü çeşitli özellikleri ayarlayarak özelleştirebilirsiniz. API, iki radyo düğmesi seçeneği arasındaki mesafeyi ayarlamak için seçenekler sunar (`RadioGap`), düzen yönü (`RadioHoriz`), radyo düğmesi öğelerinin boyutu (`RadioButtonItemSize`), radyo düğmelerinin kenarlık genişliği ve rengi ve daha fazlası.
 
 #### S: Aynı PDF belgesine hem yatay hem de dikey radyo düğmeleri ekleyebilir miyim?
 
-C: Evet, Aspose.PDF for .NET'i kullanarak aynı PDF belgesine hem yatay hem de dikey radyo düğmeleri ekleyebilirsiniz. Öğreticide sağlanan örnek kaynak kodu, aynı PDF belgesine ilk olarak yatay olarak düzenlenmiş radyo düğmelerinin nasıl ekleneceğini ve ardından dikey olarak düzenlenmiş başka bir radyo düğmesi kümesinin nasıl ekleneceğini gösterir.
+A: Evet, Aspose.PDF for .NET kullanarak aynı PDF belgesine hem yatay hem de dikey radyo düğmeleri ekleyebilirsiniz. Eğitimde sağlanan örnek kaynak kodu, önce yatay olarak düzenlenmiş radyo düğmelerinin nasıl ekleneceğini ve ardından aynı PDF belgesine dikey olarak düzenlenmiş başka bir radyo düğmesi setinin nasıl ekleneceğini gösterir.
 
-#### S: Her radyo düğmesi grubu için farklı radyo düğmesi seçeneklerini ayarlayabilir miyim?
+#### S: Her bir radyo düğmesi grubu için farklı radyo düğmesi seçenekleri belirleyebilir miyim?
 
- C: Evet, her radyo düğmesi grubu için farklı radyo düğmesi seçeneklerini ayarlayabilirsiniz. Her grubun kendine özgü bir özelliği olmalı`RadioButtonField` nesne ve`RadioButtonOptionField` her gruptaki nesneler, seçenekleri için aynı sayfayı ve benzersiz adları paylaşmalıdır. Bu, her gruptaki radyo düğmelerinin doğru çalışmasını ve seçimlerin birbirini dışlamasını sağlar.
+ A: Evet, her bir radyo düğmesi grubu için farklı radyo düğmesi seçenekleri ayarlayabilirsiniz. Her grubun kendine özgü bir`RadioButtonField` nesne ve`RadioButtonOptionField` her gruptaki nesneler aynı sayfayı ve seçenekleri için benzersiz adları paylaşmalıdır. Bu, her gruptaki radyo düğmelerinin doğru şekilde çalışmasını ve seçimlerin karşılıklı olarak özel olmasını sağlar.
 
-#### S: Radyo düğmelerinin düzeni ve görünüm ayarları tüm PDF görüntüleyicilerde ve uygulamalarda destekleniyor mu?
+#### S: Radyo düğmelerinin düzen ve görünüm ayarları tüm PDF görüntüleyicilerinde ve uygulamalarında destekleniyor mu?
 
-C: Evet, radyo düğmelerinin düzeni ve görünüm ayarları tüm standart uyumlu PDF görüntüleyicilerde ve uygulamalarda desteklenir. PDF spesifikasyonu, radyo düğmelerini ve bunların çeşitli niteliklerini tanımlayarak bunların evrensel olarak PDF formatında tanınmasını sağlar. Ancak çeşitli platformlarda tutarlı görüntüleme sağlamak için radyo düğmelerinin görünümünü ve davranışını farklı PDF görüntüleyicilerde test etmek önemlidir.
+A: Evet, radyo düğmelerinin düzeni ve görünüm ayarları tüm standart uyumlu PDF görüntüleyicilerinde ve uygulamalarında desteklenir. PDF belirtimi radyo düğmelerini ve çeşitli niteliklerini tanımlar ve bunları PDF formatında evrensel olarak tanınır hale getirir. Ancak, çeşitli platformlarda tutarlı bir işleme sağlamak için radyo düğmelerinin görünümünü ve davranışını farklı PDF görüntüleyicilerinde test etmek önemlidir.

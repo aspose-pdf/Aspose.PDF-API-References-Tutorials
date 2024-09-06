@@ -1,28 +1,28 @@
 ---
-title: Masuk File PDF Secara Digital
-linktitle: Masuk File PDF Secara Digital
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara masuk secara digital ke file PDF dengan Aspose.PDF untuk .NET.
+title: Masuk Secara Digital ke File PDF
+linktitle: Masuk Secara Digital ke File PDF
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara menandatangani secara digital pada berkas PDF dengan Aspose.PDF untuk .NET.
 type: docs
 weight: 40
 url: /id/net/programming-with-security-and-signatures/digitally-sign/
 ---
-Dalam tutorial ini, kami akan memandu Anda melalui proses penandatanganan file PDF secara digital menggunakan Aspose.PDF untuk .NET. Tanda tangan digital menjamin keaslian dan integritas dokumen, dengan menambahkan sidik jari elektronik yang unik.
+Dalam tutorial ini, kami akan memandu Anda melalui proses penandatanganan digital pada berkas PDF menggunakan Aspose.PDF untuk .NET. Tanda tangan digital menjamin keaslian dan integritas dokumen, dengan menambahkan sidik jari elektronik yang unik.
 
 ## Langkah 1: Prasyarat
 
 Sebelum memulai, pastikan Anda memiliki prasyarat berikut:
 
 - Pengetahuan dasar tentang bahasa pemrograman C#
-- Menginstal Visual Studio di mesin Anda
-- Pustaka Aspose.PDF untuk .NET diinstal
+- Menginstal Visual Studio di komputer Anda
+- Pustaka Aspose.PDF untuk .NET terinstal
 
 ## Langkah 2: Pengaturan lingkungan
 
 Untuk memulai, ikuti langkah-langkah berikut untuk menyiapkan lingkungan pengembangan Anda:
 
 1. Buka Visual Studio dan buat proyek C# baru.
-2. Impor namespace yang diperlukan ke dalam file kode Anda:
+2. Impor namespace yang diperlukan ke dalam berkas kode Anda:
 
 ```csharp
 using Aspose.Pdf;
@@ -32,7 +32,7 @@ using System.Collections.Generic;
 
 ## Langkah 3: Tanda tangan digital
 
-Langkah pertama adalah menandatangani file PDF secara digital. Kode yang diberikan menunjukkan cara membuat tanda tangan digital dengan Aspose.PDF untuk .NET.
+Langkah pertama adalah menandatangani berkas PDF secara digital. Kode yang diberikan menunjukkan cara membuat tanda tangan digital dengan Aspose.PDF untuk .NET.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -53,11 +53,11 @@ using (Document document = new Document(inFile))
 }
 ```
 
-Kode ini memuat file PDF, membuat tanda tangan digital dengan tampilan tertentu, lalu menyimpan file PDF dengan tanda tangan tambahan.
+Kode ini memuat berkas PDF, membuat tanda tangan digital dengan tampilan tertentu, lalu menyimpan berkas PDF dengan tanda tangan tambahan.
 
 ## Langkah 4: Verifikasi Tanda Tangan
 
-Setelah menambahkan tanda tangan digital, Anda dapat memeriksa apakah file PDF berisi tanda tangan yang valid.
+Setelah menambahkan tanda tangan digital, Anda dapat memeriksa apakah berkas PDF berisi tanda tangan yang valid.
 
 ```csharp
 using(Document document = new Document(outFile))
@@ -82,7 +82,7 @@ using(Document document = new Document(outFile))
 }
 ```
 
-Kode ini memverifikasi tanda tangan pertama dari file PDF dan melakukan tindakan tambahan jika tanda tangan tersebut bersertifikat dan memiliki izin khusus.
+Kode ini memverifikasi tanda tangan pertama berkas PDF dan melakukan tindakan tambahan jika tanda tangan tersebut disertifikasi dan memiliki izin khusus.
 
 ### Contoh kode sumber untuk Tanda Tangan Digital menggunakan Aspose.PDF untuk .NET 
 ```csharp
@@ -100,7 +100,7 @@ try
 			PKCS7 pkcs = new PKCS7(pbxFile, "WebSales"); // Gunakan objek PKCS7/PKCS7Detached
 			DocMDPSignature docMdpSignature = new DocMDPSignature(pkcs, DocMDPAccessPermissions.FillingInForms);
 			System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-			// Atur tampilan tanda tangan
+			// Mengatur tampilan tanda tangan
 			signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
 			// Buat salah satu dari tiga jenis tanda tangan
 			signature.Certify(1, "Signature Reason", "Contact", "Location", true, rect, docMdpSignature);
@@ -115,9 +115,9 @@ try
 			IList<string> sigNames = signature.GetSignNames();
 			if (sigNames.Count > 0) // Ada tanda tangan?
 			{
-				if (signature.VerifySigned(sigNames[0] as string)) // Verifikasi yang pertama
+				if (signature.VerifySigned(sigNames[0] as string)) // Verifikasi dulu
 				{
-					if (signature.IsCertified) // Bersertifikat?
+					if (signature.IsCertified) // Tersertifikasi?
 					{
 						if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) // Dapatkan izin akses
 						{
@@ -137,46 +137,46 @@ catch (Exception ex)
 
 ## Kesimpulan
 
-Selamat! Anda telah berhasil melakukan tanda tangan digital pada file PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini mencakup proses langkah demi langkah, mulai dari menambahkan tanda tangan digital hingga memverifikasi validitasnya. Anda sekarang dapat menggunakan fitur ini untuk mengamankan file PDF Anda dengan tanda tangan digital.
+Selamat! Anda telah berhasil melakukan tanda tangan digital pada berkas PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini membahas proses langkah demi langkah, mulai dari menambahkan tanda tangan digital hingga memverifikasi keabsahannya. Kini Anda dapat menggunakan fitur ini untuk mengamankan berkas PDF Anda dengan tanda tangan digital.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
 #### T: Apa tujuan dari tutorial ini?
 
-J: Tutorial ini memandu Anda melalui proses penandatanganan file PDF secara digital menggunakan Aspose.PDF untuk .NET. Tanda tangan digital menambahkan sidik jari elektronik untuk memastikan keaslian dan integritas dokumen.
+J: Tutorial ini memandu Anda melalui proses penandatanganan digital berkas PDF menggunakan Aspose.PDF for .NET. Tanda tangan digital menambahkan sidik jari elektronik untuk memastikan keaslian dan integritas dokumen.
 
-#### Q: Prasyarat apa saja yang diperlukan sebelum memulai?
+#### T: Prasyarat apa yang diperlukan sebelum memulai?
 
-J: Sebelum memulai, pastikan Anda memiliki pemahaman dasar tentang bahasa pemrograman C#, telah menginstal Visual Studio, dan telah menginstal pustaka Aspose.PDF untuk .NET.
+A: Sebelum memulai, pastikan Anda memiliki pemahaman dasar tentang bahasa pemrograman C#, telah menginstal Visual Studio, dan telah menginstal pustaka Aspose.PDF untuk .NET.
 
 #### T: Bagaimana cara menyiapkan lingkungan pengembangan?
 
-J: Ikuti langkah-langkah yang disediakan untuk menyiapkan lingkungan pengembangan Anda, termasuk membuat proyek C# baru di Visual Studio, dan mengimpor namespace yang diperlukan.
+A: Ikuti langkah-langkah yang disediakan untuk menyiapkan lingkungan pengembangan Anda, termasuk membuat proyek C# baru di Visual Studio, dan mengimpor namespace yang diperlukan.
 
-#### T: Bagaimana cara menambahkan tanda tangan digital ke file PDF?
+#### T: Bagaimana cara menambahkan tanda tangan digital ke berkas PDF?
 
- J: Kode contoh yang diberikan menunjukkan cara memuat file PDF, membuat tanda tangan digital, menentukan tampilan, dan menyimpan file PDF yang ditandatangani. Tanda tangan digital ditambahkan menggunakan`Certify` metode`PdfFileSignature` obyek.
+ A: Contoh kode yang diberikan menunjukkan cara memuat file PDF, membuat tanda tangan digital, menentukan tampilan, dan menyimpan file PDF yang telah ditandatangani. Tanda tangan digital ditambahkan menggunakan`Certify` metode dari`PdfFileSignature` obyek.
 
 #### T: Bagaimana cara memverifikasi keabsahan tanda tangan digital?
 
-A: Setelah menambahkan tanda tangan digital, Anda dapat menggunakan kode contoh untuk memverifikasi validitas tanda tangan. Ia memeriksa apakah tanda tangan disertifikasi dan memiliki izin akses khusus.
+A: Setelah menambahkan tanda tangan digital, Anda dapat menggunakan kode contoh untuk memverifikasi keabsahan tanda tangan. Kode ini memeriksa apakah tanda tangan tersebut tersertifikasi dan memiliki izin akses tertentu.
 
 ####  T: Apa yang dimaksud dengan`PKCS7` object represent?
 
- J: Itu`PKCS7` objek digunakan untuk menyediakan fungsionalitas kriptografi untuk tanda tangan digital. Ini digunakan untuk membuat tanda tangan digital dalam kode contoh yang disediakan.
+ Sebuah:`PKCS7` Objek digunakan untuk menyediakan fungsionalitas kriptografi untuk tanda tangan digital. Objek ini digunakan untuk membuat tanda tangan digital dalam kode contoh yang disediakan.
 
 #### T: Dapatkah saya menyesuaikan tampilan tanda tangan digital?
 
- J: Ya, Anda dapat menyesuaikan tampilan tanda tangan digital dengan menentukan jalur ke gambar di`SignatureAppearance` properti dari`PdfFileSignature` obyek.
+ A: Ya, Anda dapat menyesuaikan tampilan tanda tangan digital dengan menentukan jalur ke gambar di`SignatureAppearance` milik`PdfFileSignature` obyek.
 
-#### Q: Apa jadinya jika tanda tangan tidak sah?
+#### T: Apa yang terjadi jika tanda tangan tidak valid?
 
-J: Jika tanda tangan tidak valid, proses verifikasi akan gagal, dan tindakan terkait dalam blok kode verifikasi tidak akan dijalankan.
+A: Jika tanda tangan tidak valid, proses verifikasi akan gagal, dan tindakan terkait dalam blok kode verifikasi tidak akan dijalankan.
 
-#### T: Bagaimana cara memastikan keamanan tanda tangan digital saya?
+#### T: Bagaimana saya dapat memastikan keamanan tanda tangan digital saya?
 
-J: Tanda tangan digital aman berdasarkan desain dan menggunakan teknik kriptografi untuk memastikan keaslian dan integritas. Pastikan Anda menyimpan kunci pribadi Anda dengan aman dan mengikuti praktik terbaik dalam menangani tanda tangan digital.
+J: Tanda tangan digital dirancang aman dan menggunakan teknik kriptografi untuk memastikan keaslian dan integritas. Pastikan Anda menjaga kunci pribadi Anda tetap aman dan ikuti praktik terbaik untuk menangani tanda tangan digital.
 
-#### T: Bisakah saya menambahkan beberapa tanda tangan digital ke PDF?
+#### T: Dapatkah saya menambahkan beberapa tanda tangan digital ke PDF?
 
- J: Ya, Anda dapat menambahkan beberapa tanda tangan digital ke file PDF menggunakan`PdfFileSignature` objek`Sign` atau`Certify` metode. Setiap tanda tangan akan memiliki tampilan dan konfigurasinya sendiri.
+ A: Ya, Anda dapat menambahkan beberapa tanda tangan digital ke file PDF menggunakan`PdfFileSignature` objek`Sign` atau`Certify` metode. Setiap tanda tangan akan memiliki tampilan dan konfigurasinya sendiri.

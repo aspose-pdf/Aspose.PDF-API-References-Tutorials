@@ -1,129 +1,165 @@
 ---
 title: Eliminar hipervínculos después de convertir desde HTML
 linktitle: Eliminar hipervínculos después de convertir desde HTML
-second_title: Aspose.PDF para referencia de API .NET
-description: Guía paso a paso para eliminar hipervínculos después de convertir HTML a PDF usando Aspose.PDF para .NET.
+second_title: Referencia de API de Aspose.PDF para .NET
+description: Aprenda a eliminar hipervínculos de documentos HTML después de convertirlos a PDF usando Aspose.PDF para .NET en esta guía paso a paso.
 type: docs
 weight: 250
 url: /es/net/document-conversion/remove-hyperlinks-after-converting-from-html/
 ---
-En este tutorial, lo guiaremos a través del proceso de eliminar hipervínculos de un archivo PDF generado a partir de un archivo HTML usando Aspose.PDF para .NET. Los hipervínculos son enlaces en los que se puede hacer clic y que pueden redirigir a otras páginas o sitios web. Si sigue los pasos a continuación, podrá eliminar hipervínculos del archivo PDF resultante.
+## Introducción
 
-## Requisitos previos
-Antes de comenzar, asegúrese de cumplir con los siguientes requisitos previos:
+En la era digital, convertir documentos HTML a PDF es una tarea habitual. Sin embargo, a veces es posible que desee eliminar hipervínculos del PDF convertido por diversos motivos, como mejorar la legibilidad o evitar la navegación no deseada. En este tutorial, exploraremos cómo lograr esto utilizando Aspose.PDF para .NET. 
 
-- Conocimientos básicos del lenguaje de programación C#.
-- Biblioteca Aspose.PDF para .NET instalada en su sistema.
-- Un entorno de desarrollo como Visual Studio.
+## Prerrequisitos
 
-## Paso 1: cargar el archivo HTML y eliminar hipervínculos
-En este paso, cargaremos el archivo HTML y eliminaremos los hipervínculos del documento PDF resultante. Utilice el siguiente código:
+Antes de sumergirse en el código, asegúrese de tener los siguientes requisitos previos:
 
-```csharp
-// Ruta al directorio de documentos.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+1. Visual Studio: Asegúrate de tener Visual Studio instalado en tu equipo. Este será tu entorno de desarrollo.
+2.  Aspose.PDF para .NET: Necesita tener la biblioteca Aspose.PDF. Puede descargarla desde[aquí](https://releases.aspose.com/pdf/net/).
+3. Conocimientos básicos de C#: La familiaridad con la programación en C# le ayudará a comprender mejor el código.
 
-// Cargue el archivo HTML usando las opciones de carga HTML
-Document doc = new Document(dataDir + "SampleHtmlFile.html", new HtmlLoadOptions());
+## Importar paquetes
 
-// Explorar las anotaciones de la primera página del documento.
-foreach(Annotation a in doc.Pages[1].Annotations)
-{
-     // Compruebe si la anotación es un enlace.
-     if (a.AnnotationType == AnnotationType.Link)
-     {
-         LinkAnnotation the = (LinkAnnotation)a;
-        
-         // Comprueba si la acción es del tipo GoToURIAction
-         if (the.Action is GoToURIAction)
-         {
-             GoToURIAction gta = (GoToURIAction)the.Action;
-             gta.URI = "";
-            
-             // Utilice un absorbente de fragmentos de texto para encontrar fragmentos de texto coincidentes
-             TextFragmentAbsorber tfa = new TextFragmentAbsorber();
-             tfa.TextSearchOptions = new TextSearchOptions(a.Rect);
-             doc.Pages[a.PageIndex].Accept(tfa);
-            
-             // Recorra fragmentos de texto coincidentes y elimine atributos de hipervínculos
-             foreach(TextFragment tf in tfa.TextFragments)
-             {
-                 tf.TextState.Underline = false;
-                 tf.TextState.ForegroundColor = Color.Black;
-             }
-         }
-        
-         // Eliminar la anotación de la página.
-         doc.Pages[a.PageIndex].Annotations.Delete(a);
-     }
-}
-```
+Para comenzar, debe importar los paquetes necesarios en su proyecto de C#. A continuación, le indicamos cómo hacerlo:
 
- Asegúrate de reemplazar`"YOUR DOCUMENTS DIRECTORY"` con el directorio real donde se encuentra su archivo HTML.
-
-## Paso 2: guardar el archivo PDF resultante
-Finalmente, guardaremos el archivo PDF resultante sin los hipervínculos. Utilice el siguiente código:
+1. Abra su proyecto de Visual Studio.
+2. Haga clic derecho en su proyecto en el Explorador de soluciones y seleccione "Administrar paquetes NuGet".
+3.  Buscar`Aspose.PDF` e instalarlo.
 
 ```csharp
-// Guarde el archivo PDF resultante
-doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Text;
+using System.IO;
 ```
 
- El código anterior guarda el archivo PDF resultante con el nombre de archivo`"RemoveHyperlinksFromText_out.pdf"`.
+Ahora que tiene todo configurado, analicemos el proceso de eliminación de hipervínculos de un archivo HTML después de convertirlo a PDF.
 
-### Código fuente de ejemplo para eliminar hipervínculos después de convertir desde HTML usando Aspose.PDF para .NET
+## Paso 1: Configurar el directorio de documentos
+
+Lo primero es lo primero: debes especificar la ruta del directorio de tus documentos. Aquí es donde se encuentra tu archivo HTML y donde se guardará el PDF resultante.
 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+ Reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta real donde se almacena su archivo HTML.
+
+## Paso 2: Cargar el documento HTML
+
+ A continuación, cargará el documento HTML utilizando el`Document` Clase de Aspose.PDF. Esta clase le permite trabajar con documentos PDF fácilmente.
+
+```csharp
 Document doc = new Document(dataDir + "SampleHtmlFile.html", new HtmlLoadOptions());
+```
+
+ Aquí, estamos cargando el archivo HTML llamado`SampleHtmlFile.html`Asegúrese de que este archivo exista en el directorio especificado.
+
+## Paso 3: Guardar el documento en Memory Stream
+
+Antes de comenzar a procesar las anotaciones, debemos guardar el documento en un flujo de memoria. Este paso es crucial, ya que prepara el documento para su posterior manipulación.
+
+```csharp
 doc.Save(new MemoryStream());
+```
+
+Esta línea guarda el documento en la memoria, lo que nos permite trabajar con él sin escribirlo todavía en el disco.
+
+## Paso 4: Iterar a través de las anotaciones
+
+Ahora, repasaremos las anotaciones del documento. Las anotaciones son elementos como enlaces, comentarios y resaltados. Nos interesan especialmente las anotaciones de enlaces.
+
+```csharp
 foreach (Annotation a in doc.Pages[1].Annotations)
 {
-	if (a.AnnotationType == AnnotationType.Link)
-	{
-		LinkAnnotation la = (LinkAnnotation)a;
-		if (la.Action is GoToURIAction)
-		{
-			GoToURIAction gta = (GoToURIAction)la.Action;
-			gta.URI = "";
-			TextFragmentAbsorber tfa = new TextFragmentAbsorber();
-			tfa.TextSearchOptions = new TextSearchOptions(a.Rect);
-			doc.Pages[a.PageIndex].Accept(tfa);
-			foreach (TextFragment tf in tfa.TextFragments)
-			{
-				tf.TextState.Underline = false;
-				tf.TextState.ForegroundColor = Color.Black;
-			}
-		}
-		doc.Pages[a.PageIndex].Annotations.Delete(a);
-	}
+    if (a.AnnotationType == AnnotationType.Link)
+    {
+        // Procesar la anotación del enlace
+    }
 }
+```
+
+En este bucle, verificamos si el tipo de anotación es un enlace. Si lo es, procedemos a los siguientes pasos.
+
+## Paso 5: Eliminar la acción de hipervínculo
+
+Para cada anotación de enlace, debemos verificar si tiene una acción de hipervínculo. Si la tiene, eliminaremos el hipervínculo estableciendo su URI en una cadena vacía.
+
+```csharp
+LinkAnnotation la = (LinkAnnotation)a;
+if (la.Action is GoToURIAction)
+{
+    GoToURIAction gta = (GoToURIAction)la.Action;
+    gta.URI = "";
+```
+
+Este fragmento de código garantiza que la acción del hipervínculo se elimine de manera efectiva.
+
+## Paso 6: Absorber fragmentos de texto
+
+A continuación, absorberemos los fragmentos de texto asociados a la anotación del enlace. Esto nos permite manipular la apariencia del texto.
+
+```csharp
+TextFragmentAbsorber tfa = new TextFragmentAbsorber();
+tfa.TextSearchOptions = new TextSearchOptions(a.Rect);
+doc.Pages[a.PageIndex].Accept(tfa);
+```
+
+ Aquí creamos un`TextFragmentAbsorber` y configure sus opciones de búsqueda en el rectángulo de la anotación. Esto nos ayuda a encontrar el texto vinculado.
+
+## Paso 7: Modificar la apariencia del texto
+
+Una vez que tengamos los fragmentos de texto, podemos modificar su apariencia. En este caso, eliminaremos el subrayado y cambiaremos el color del texto a negro.
+
+```csharp
+foreach (TextFragment tf in tfa.TextFragments)
+{
+    tf.TextState.Underline = false;
+    tf.TextState.ForegroundColor = Color.Black;
+}
+```
+
+Este paso mejora la legibilidad del texto al eliminar el estilo de hipervínculo.
+
+## Paso 8: Eliminar la anotación
+
+Después de modificar el texto, podemos eliminar de forma segura la anotación del enlace del documento.
+
+```csharp
+doc.Pages[a.PageIndex].Annotations.Delete(a);
+}
+```
+
+Esta línea elimina el hipervínculo del PDF, garantizando que ya no exista en el resultado final.
+
+## Paso 9: Guardar el documento modificado
+
+Por último, debemos guardar el documento modificado en un nuevo archivo PDF. Este es el último paso de nuestro proceso.
+
+```csharp
 doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 ```
 
+ Esta línea guarda el documento con los hipervínculos eliminados, creando un nuevo archivo PDF llamado`RemoveHyperlinksFromText_out.pdf`.
+
 ## Conclusión
-En este tutorial, cubrimos el proceso paso a paso de eliminar hipervínculos de un archivo PDF generado a partir de un archivo HTML usando Aspose.PDF para .NET. Si sigue las instrucciones descritas anteriormente, podrá eliminar con éxito los hipervínculos del archivo PDF resultante.
 
-### Preguntas frecuentes
+¡Y ya está! Has eliminado con éxito los hipervínculos de un documento HTML después de convertirlo a PDF con Aspose.PDF para .NET. Este proceso no solo mejora la legibilidad de tu PDF, sino que también te da control sobre el contenido que presentas. 
 
-#### P: ¿Qué es Aspose.PDF para .NET?
+## Preguntas frecuentes
 
-R: Aspose.PDF para .NET es una potente biblioteca que permite a los desarrolladores trabajar con documentos PDF en aplicaciones C#. Ofrece una amplia gama de funcionalidades, incluida la capacidad de convertir archivos HTML a PDF y manipular contenido PDF.
+### ¿Puedo eliminar hipervínculos de cualquier documento PDF?
+Sí, puede eliminar hipervínculos de cualquier documento PDF utilizando Aspose.PDF para .NET.
 
-#### P: ¿Por qué querría eliminar hipervínculos de un archivo PDF?
+### ¿Aspose.PDF es de uso gratuito?
+ Aspose.PDF ofrece una versión de prueba gratuita, pero para obtener todas las funciones, debe comprar una licencia.[página de compra](https://purchase.aspose.com/buy).
 
-R: Existen varias razones para eliminar hipervínculos de un archivo PDF. Por ejemplo, es posible que desee eliminar enlaces externos para fines de impresión o archivado o asegurarse de que el contenido del PDF no sea navegable a través de hipervínculos.
+### ¿Qué pasa si encuentro problemas al utilizar Aspose.PDF?
+ Puedes buscar ayuda en el[foro de soporte](https://forum.aspose.com/c/pdf/10).
 
-#### P: ¿Cómo puedo cargar un archivo HTML y eliminar hipervínculos usando Aspose.PDF para .NET?
+### ¿Puedo convertir otros formatos de archivos a PDF usando Aspose?
+Sí, Aspose admite varios formatos de archivos para la conversión a PDF.
 
- R: Para cargar un archivo HTML y eliminar hipervínculos, puede utilizar Aspose.PDF para .NET.`HtmlLoadOptions` clase. Recorra las anotaciones de las páginas PDF para encontrar anotaciones de enlaces y modificar sus atributos.
-
-#### P: ¿Puedo personalizar el nombre del archivo de salida del PDF resultante?
-
-R: Sí, puede personalizar el nombre del archivo de salida del archivo PDF resultante modificando el código que guarda el documento PDF. Simplemente cambie el nombre de archivo deseado en el`doc.Save()` método.
-
-#### P: ¿Es posible eliminar hipervínculos de forma selectiva según ciertos criterios?
-
-R: Sí, puede eliminar hipervínculos de forma selectiva según criterios específicos. Por ejemplo, puede optar por eliminar sólo enlaces externos o enlaces que apunten a URL específicas.
+### ¿Dónde puedo descargar Aspose.PDF para .NET?
+ Puedes descargarlo desde[enlace de descarga](https://releases.aspose.com/pdf/net/).

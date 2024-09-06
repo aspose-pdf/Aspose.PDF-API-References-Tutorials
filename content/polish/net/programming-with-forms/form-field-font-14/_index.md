@@ -1,17 +1,17 @@
 ---
 title: Czcionka pola formularza 14
 linktitle: Czcionka pola formularza 14
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Z łatwością skonfiguruj czcionkę pól formularzy w dokumentach PDF za pomocą Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwa konfiguracja czcionki pól formularzy w dokumentach PDF za pomocą Aspose.PDF dla .NET.
 type: docs
 weight: 110
 url: /pl/net/programming-with-forms/form-field-font-14/
 ---
-W tym samouczku pokażemy, jak skonfigurować czcionkę pola formularza za pomocą Aspose.PDF dla .NET. Krok po kroku wyjaśnimy kod źródłowy C#, aby poprowadzić Cię przez ten proces.
+W tym samouczku pokażemy, jak skonfigurować czcionkę pola formularza za pomocą Aspose.PDF dla .NET. Wyjaśnimy kod źródłowy C# krok po kroku, aby przeprowadzić Cię przez ten proces.
 
 ## Krok 1: Przygotowanie
 
-Najpierw upewnij się, że zaimportowałeś niezbędne biblioteki i ustaw ścieżkę do katalogu dokumentów:
+Najpierw upewnij się, że zaimportowałeś niezbędne biblioteki i ustawiłeś ścieżkę do katalogu dokumentów:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -25,9 +25,9 @@ Otwórz istniejący dokument PDF:
 Document pdfDocument = new Document(dataDir + "FormFieldFont14.pdf");
 ```
 
-## Krok 3: Uzyskaj określone pole formularza
+## Krok 3: Pobierz konkretne pole formularza
 
-Uzyskaj żądane pole formularza (w tym przykładzie używamy pola „textbox1”):
+Pobierz żądane pole formularza (w tym przykładzie używamy pola „textbox1”):
 
 ```csharp
 Aspose.Pdf.Forms.Field field = pdfDocument.Form["textbox1"] as Aspose.Pdf.Forms.Field;
@@ -41,9 +41,9 @@ Utwórz obiekt czcionki dla nowej czcionki, której chcesz użyć (na przykład 
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("ComicSansMS");
 ```
 
-## Krok 5: Skonfiguruj informacje o czcionce w polu formularza
+## Krok 5: Skonfiguruj informacje o czcionce dla pola formularza
 
-Skonfiguruj informacje o czcionce w polu formularza, korzystając z utworzonej wcześniej czcionki:
+Skonfiguruj informacje o czcionce dla pola formularza, używając czcionki utworzonej wcześniej:
 
 ```csharp
 field.DefaultAppearance = new Aspose.Pdf.Forms.DefaultAppearance(font, 14, System.Drawing.Color.Black);
@@ -59,7 +59,7 @@ pdfDocument.Save(dataDir);
 ```
 
 
-### Przykładowy kod źródłowy czcionki pola formularza 14 przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla czcionki pola formularza 14 przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -69,8 +69,8 @@ Document pdfDocument = new Document(dataDir + "FormFieldFont14.pdf");
 Aspose.Pdf.Forms.Field field = pdfDocument.Form["textbox1"] as Aspose.Pdf.Forms.Field;
 // Utwórz obiekt czcionki
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("ComicSansMS");
-// Ustaw informacje o czcionce w polu formularza
-// Field.DefaultAppearance = nowy Aspose.Pdf.Forms.in.DefaultAppearance(czcionka, 10, System.Drawing.Color.Black);
+// Ustaw informacje o czcionce dla pola formularza
+// Field.DefaultAppearance = new Aspose.Pdf.Forms.in.DefaultAppearance(czcionka, 10, System.Drawing.Color.Black);
 dataDir = dataDir + "FormFieldFont14_out.pdf";
 // Zapisz zaktualizowany dokument
 pdfDocument.Save(dataDir);
@@ -79,26 +79,26 @@ Console.WriteLine("\nForm field font setup successfully.\nFile saved at " + data
 
 ## Wniosek
 
-W tym samouczku nauczyliśmy się konfigurować czcionkę pola formularza za pomocą Aspose.PDF dla .NET. Wykonując poniższe kroki, możesz łatwo określić czcionkę i rozmiar czcionki dla pól formularzy w dokumentach PDF za pomocą Aspose.PDF.
+W tym samouczku nauczyliśmy się, jak skonfigurować czcionkę pola formularza za pomocą Aspose.PDF dla .NET. Wykonując te kroki, możesz łatwo określić czcionkę i rozmiar czcionki dla pól formularza w dokumentach PDF za pomocą Aspose.PDF.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Czy mogę używać dowolnej czcionki w polach formularzy w Aspose.PDF dla .NET?
+#### P: Czy mogę używać dowolnej czcionki dla pól formularzy w pliku Aspose.PDF dla platformy .NET?
 
-O: Tak, możesz używać dowolnej czcionki TrueType lub OpenType w polach formularzy w Aspose.PDF dla .NET. O ile czcionka jest dostępna i zainstalowana w systemie lub dostępna poprzez FontRepository, można jej używać do dostosowywania wyglądu tekstu w polach formularza.
+A: Tak, możesz użyć dowolnej czcionki TrueType lub OpenType dla pól formularza w Aspose.PDF dla .NET. O ile czcionka jest dostępna i zainstalowana w systemie lub dostępna za pośrednictwem FontRepository, możesz jej użyć do dostosowania wyglądu tekstu pola formularza.
 
-#### P: Jak znaleźć dostępne czcionki w Aspose.PDF dla .NET?
+#### P: Gdzie znajdę dostępne czcionki dla platformy .NET w pliku Aspose.PDF?
 
- Odp.: Aby znaleźć dostępne czcionki w Aspose.PDF dla .NET, możesz użyć`FontRepository.GetAvailableFonts()`metoda. Ta metoda zwraca tablicę dostępnych czcionek, których można używać w polach formularzy lub innych operacjach związanych z tekstem w dokumencie PDF.
+ A: Aby znaleźć dostępne czcionki w pliku Aspose.PDF dla platformy .NET, możesz użyć`FontRepository.GetAvailableFonts()`Metoda. Ta metoda zwraca tablicę dostępnych czcionek, których możesz użyć w polach formularza lub innych operacjach tekstowych w dokumencie PDF.
 
 #### P: Czy mogę zmienić rozmiar czcionki w polach formularza na dowolną wartość?
 
-O: Tak, możesz zmienić rozmiar czcionki w polach formularza na dowolną dodatnią wartość liczbową, używając Aspose.PDF dla .NET. Należy jednak zadbać o to, aby rozmiar czcionki był odpowiedni dla konkretnego pola formularza i nie powodował obcięcia tekstu lub nałożenia się na inne elementy dokumentu.
+A: Tak, możesz zmienić rozmiar czcionki dla pól formularza na dowolną dodatnią wartość liczbową za pomocą Aspose.PDF dla .NET. Należy jednak upewnić się, że rozmiar czcionki jest odpowiedni dla konkretnego pola formularza i nie powoduje obcięcia tekstu ani nakładania się na inne elementy w dokumencie.
 
-#### P: Czy mogę zmienić kolor czcionki w polach formularza?
+#### P: Czy mogę zmienić kolor czcionki pól formularza?
 
-Odp.: Tak, możesz zmienić kolor czcionki w polach formularzy za pomocą Aspose.PDF dla .NET. W dostarczonym kodzie źródłowym C# kolor czcionki jest ustawiony na czarny (`System.Drawing.Color.Black`), ale możesz dostosować go do dowolnej innej prawidłowej wartości koloru.
+A: Tak, możesz zmienić kolor czcionki dla pól formularza za pomocą Aspose.PDF dla .NET. W podanym kodzie źródłowym C# kolor czcionki jest ustawiony na czarny (`System.Drawing.Color.Black`), ale możesz dostosować go do dowolnej innej prawidłowej wartości koloru.
 
 #### P: Jak mogę wyrównać tekst w polu formularza?
 
- O: Aby wyrównać tekst w polu formularza, możesz użyć metody`Multiline`właściwość pola formularza i ustaw ją na true. Ta właściwość umożliwia włączenie tekstu wielowierszowego w polu formularza, co pozwala kontrolować wyrównanie tekstu za pomocą podziałów wierszy i znaków powrotu karetki.
+ A: Aby wyrównać tekst w polu formularza, możesz użyć`Multiline`właściwość pola formularza i ustaw ją na true. Ta właściwość umożliwia tekst wielowierszowy w polu formularza, umożliwiając sterowanie wyrównaniem tekstu za pomocą podziałów wierszy i powrotów karetki.

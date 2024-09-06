@@ -51,7 +51,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 ## 5. lépés: Hozza létre a szöveges bekezdést
 
- Hozzon létre egy`TextParagraph` objektumot, és állítsa be a pozícióját az oldalon:
+ Hozzon létre a`TextParagraph` objektumot, és állítsa be a pozícióját az oldalon:
 
 ```csharp
 TextParagraph paragraph = new TextParagraph();
@@ -94,7 +94,7 @@ paragraph.AppendLine(textFragment3);
 
 ## 8. lépés: Hozzon létre egy TextBuilder programot, és fűzze hozzá a bekezdést
 
- Hozzon létre egy`TextBuilder` objektum segítségével`pdfPage` és csatolja a szöveges bekezdést a PDF-oldalhoz:
+ Hozzon létre a`TextBuilder` objektum segítségével`pdfPage` és csatolja a szöveges bekezdést a PDF-oldalhoz:
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(pdfPage);
@@ -154,7 +154,7 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated2_out.pdf");
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan forgathat szöveget bekezdések használatával egy PDF-dokumentumban az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentum létrehozásától a módosított verzió mentéséig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy módosítsa a PDF-fájlok szövegforgatását.
+Gratulálok! Sikeresen megtanulta, hogyan forgathat szöveget bekezdések használatával egy PDF-dokumentumban az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentum létrehozásától a módosított verzió mentéséig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy módosítsa a PDF-fájlok szövegforgatását.
 
 ### GYIK
 
@@ -172,16 +172,16 @@ V: A PDF-dokumentumban lévő szöveg elforgatása különféle célokra hasznos
 
 #### K: Hogyan hozhatok létre új PDF-dokumentumot?
 
- V: Új PDF-dokumentum létrehozásához inicializálja a`Document`objektumot az Aspose.PDF könyvtárból. Ezzel az objektummal oldalakat és tartalmat adhat hozzá a PDF-hez.
+ V: Új PDF-dokumentum létrehozásához inicializálja a`Document`objektum az Aspose.PDF könyvtárból. Ezzel az objektummal oldalakat és tartalmat adhat hozzá a PDF-hez.
 
 #### K: Hogyan forgathatom el a szöveget bekezdések használatával?
 
 V: Szöveg forgatásához bekezdésekkel:
 
-1.  Hozzon létre egy`TextParagraph` tárgy.
+1.  Hozzon létre a`TextParagraph` objektum.
 2.  Teremt`TextFragment` objektumok a kívánt szöveggel és elforgatási szögekkel.
 3. A szövegrészletek hozzáfűzése a szövegbekezdéshez.
-4.  Hozzon létre egy`TextBuilder` objektumot, és hozzáfűzi a szöveges bekezdést egy adott PDF-oldalhoz.
+4.  Hozzon létre a`TextBuilder` objektumot, és hozzáfűzi a szöveges bekezdést egy adott PDF-oldalhoz.
 
 #### K: Szabályozhatom az egyes szövegrészletek elforgatási szögét?
 

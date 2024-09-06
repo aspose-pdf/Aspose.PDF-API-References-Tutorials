@@ -67,7 +67,7 @@ Console.WriteLine("\nPDF file decrypted successfully.\nFile saved at " + dataDir
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 // Άνοιγμα εγγράφου
 Document document = new Document(dataDir+ "Decrypt.pdf", "password");
-//Αποκρυπτογράφηση PDF
+// Αποκρυπτογράφηση PDF
 document.Decrypt();
 dataDir = dataDir + "Decrypt_out.pdf";
 // Αποθηκεύστε το ενημερωμένο PDF
@@ -75,7 +75,7 @@ document.Save(dataDir);
 Console.WriteLine("\nPDF file decrypted successfully.\nFile saved at " + dataDir);
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Συγχαρητήρια ! Έχετε αποκρυπτογραφήσει με επιτυχία ένα αρχείο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Αυτό το σεμινάριο κάλυψε τη διαδικασία βήμα προς βήμα από το άνοιγμα του εγγράφου έως την αποθήκευση της ενημερωμένης έκδοσης. Τώρα μπορείτε να χρησιμοποιήσετε αυτήν τη δυνατότητα για να αφαιρέσετε κωδικούς πρόσβασης από τα αρχεία PDF σας.
 

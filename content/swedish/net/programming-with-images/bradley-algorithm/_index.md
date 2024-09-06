@@ -11,7 +11,7 @@ Denna steg-för-steg-guide förklarar hur du använder Bradley-algoritmen med As
 
 ## Steg 1: Definiera dokumentkatalogen
 
- Innan du börjar, se till att du ställer in rätt katalog för dokumenten. Byta ut`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där ditt PDF-dokument finns.
+Innan du börjar, se till att du ställer in rätt katalog för dokumenten. Ersätta`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där ditt PDF-dokument finns.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Steg 2: Öppna dokumentet
 
- det här steget kommer vi att öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF. Använd`Document` konstruktor och skicka sökvägen till PDF-dokumentet.
+ I det här steget kommer vi att öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF. Använd`Document` konstruktor och skicka sökvägen till PDF-dokumentet.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
@@ -27,7 +27,7 @@ Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
 
 ## Steg 3: Definiera utdatafiler
 
- Definiera utdatafilnamnen för den resulterande bilden och den binära bilden. Byta ut`"resultant_out.tif"` och`"37116-bin_out.tif"` med önskade namn för utdatafilerna.
+ Definiera utdatafilnamnen för den resulterande bilden och den binära bilden. Ersätta`"resultant_out.tif"` och`"37116-bin_out.tif"` med önskade namn för utdatafilerna.
 
 ```csharp
 string outputImageFile = dataDir + "resultant_out.tif";
@@ -36,7 +36,7 @@ string outputBinImageFile = dataDir + "37116-bin_out.tif";
 
 ## Steg 4: Skapa Resolution-objektet
 
- Skapa en`Resolution`objekt för att ställa in upplösningen för TIFF-bilden. I det här exemplet använder vi en upplösning på 300 dpi.
+ Skapa en`Resolution` objekt för att ställa in upplösningen för TIFF-bilden. I det här exemplet använder vi en upplösning på 300 dpi.
 
 ```csharp
 Resolution resolution = new Resolution(300);
@@ -44,7 +44,7 @@ Resolution resolution = new Resolution(300);
 
 ## Steg 5: Skapa TiffSettings-objektet
 
- Skapa en`TiffSettings`objekt för att ange inställningar för utdata-TIFF-filen. I det här exemplet använder vi LZW-komprimering och ett färgdjup på 1 bit per pixel (1 bpp-format).
+ Skapa en`TiffSettings` objekt för att ange inställningar för utdata-TIFF-filen. I det här exemplet använder vi LZW-komprimering och ett färgdjup på 1 bit per pixel (1 bpp-format).
 
 ```csharp
 TiffSettings tiffSettings = new TiffSettings();
@@ -70,7 +70,7 @@ tiffDevice.Process(pdfDocument, outputImageFile);
 
 ## Steg 8: Binarisera bilden med Bradley-algoritmen
 
- Använd`BinarizeBradley` metod för TIFF-enheten för att binarisera bilden med Bradley-algoritmen. Denna metod tar en ingångsström av originalbilden och en utström för den binära bilden. Ange binariseringströskeln (0,1 i det här exemplet).
+ Använd`BinarizeBradley`metod för TIFF-enheten för att binarisera bilden med Bradley-algoritmen. Denna metod tar en ingångsström av originalbilden och en utström för den binära bilden. Ange binariseringströskeln (0,1 i det här exemplet).
 
 ```csharp
 using (FileStream
@@ -100,7 +100,7 @@ tiffSettings.Compression = CompressionType.LZW;
 tiffSettings.Depth = Aspose.Pdf.Devices.ColorDepth.Format1bpp;
 // Skapa TIFF-enhet
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-//Konvertera en viss sida och spara bilden för att streama
+// Konvertera en viss sida och spara bilden för att streama
 tiffDevice.Process(pdfDocument, outputImageFile);
 using (FileStream inStream = new FileStream(outputImageFile, FileMode.Open))
 {

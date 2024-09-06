@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 2: Laddar PDF-dokumentet
 
-Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Här är hur:
+Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Så här gör du:
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -61,7 +61,7 @@ Du kan anpassa dessa egenskaper efter dina behov.
 
 ## Steg 5: Lägg till textstämpel till PDF
 
-Nu när textstämpeln är klar kan du lägga till den på en specifik sida i PDF-dokumentet. Här är hur:
+Nu när textstämpeln är klar kan du lägga till den på en specifik sida i PDF-dokumentet. Så här gör du:
 
 ```csharp
 //Lägg till textbuffert på specifik sida
@@ -72,7 +72,7 @@ Koden ovan lägger till textstämpeln på första sidan i PDF-dokumentet. Du kan
 
 ## Steg 6: Spara utdatadokumentet
 
-När du har lagt till textstämpeln kan du spara det redigerade PDF-dokumentet. Här är hur:
+När du har lagt till textstämpeln kan du spara det redigerade PDF-dokumentet. Så här gör du:
 
 ```csharp
 // Spara utdatadokumentet
@@ -152,7 +152,7 @@ S: Ja, du kan använda den här metoden på befintliga PDF-dokument för att lä
 
 #### F: Hur kan jag säkerställa att textstämpeln inte skymmer det underliggande innehållet i PDF-dokumentet?
 
- S: När du lägger till en textstämpel, var uppmärksam på dess placering för att säkerställa att den inte hindrar viktig information eller negativt påverkar dokumentets läsbarhet. Du kan justera`XIndent` och`YIndent` egenskaper för att placera textstämpeln på rätt sätt.
+S: När du lägger till en textstämpel, var uppmärksam på dess placering för att säkerställa att den inte hindrar viktig information eller negativt påverkar dokumentets läsbarhet. Du kan justera`XIndent` och`YIndent` egenskaper för att placera textstämpeln på rätt sätt.
 
 #### F: Kan jag använda den här metoden för att lägga till andra stämplar än text, som bilder eller logotyper?
 

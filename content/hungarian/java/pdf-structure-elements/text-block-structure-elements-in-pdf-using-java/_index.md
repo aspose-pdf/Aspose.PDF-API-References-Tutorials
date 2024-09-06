@@ -63,7 +63,7 @@ szövegblokkon különféle műveleteket hajthat végre, például adatok kinyer
 
 ## Következtetés
 
-A PDF-dokumentumokkal foglalkozó fejlesztők számára kulcsfontosságú, hogy a Java segítségével megértsék a PDF szövegblokk szerkezeti elemeit. A megfelelő eszközökkel és könyvtárakkal, mint például az Aspose.PDF for Java, hatékonyan kezelheti és manipulálhatja a szövegblokkokat, így a PDF-hez kapcsolódó feladatai könnyebben kezelhetők.
+A PDF-dokumentumokkal foglalkozó fejlesztők számára kulcsfontosságú, hogy a Java segítségével megértsék a PDF szövegblokk szerkezeti elemeit. A megfelelő eszközökkel és könyvtárakkal, mint például az Aspose.PDF for Java, hatékonyan kezelheti és kezelheti a szövegblokkokat, így a PDF-hez kapcsolódó feladatai könnyebben kezelhetők.
 
 ## GYIK
 

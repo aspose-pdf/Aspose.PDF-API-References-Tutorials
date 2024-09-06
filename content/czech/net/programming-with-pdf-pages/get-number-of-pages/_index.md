@@ -56,7 +56,7 @@ tomto tutoriálu jsme se naučili, jak získat počet stránek souboru PDF pomoc
 
 #### Otázka: Jak mohu získat počet stránek v souboru PDF pomocí Aspose.PDF pro .NET?
 
- A: Chcete-li získat počet stránek v souboru PDF, můžete použít`Count` vlastnictvím`Pages` sbírka`Document` objekt v Aspose.PDF pro .NET. Tato vlastnost vrací celkový počet stránek v dokumentu PDF.
+ A: Chcete-li získat počet stránek v souboru PDF, můžete použít`Count` majetek z`Pages` sbírka`Document` objekt v Aspose.PDF pro .NET. Tato vlastnost vrací celkový počet stránek v dokumentu PDF.
 
 #### Otázka: Mohu použít Aspose.PDF pro .NET k získání počtu stránek v zašifrovaném nebo heslem chráněném souboru PDF?
 

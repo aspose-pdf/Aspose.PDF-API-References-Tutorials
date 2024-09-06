@@ -11,7 +11,7 @@ Tato příručka vás krok za krokem provede přidáním obrázku do souboru PDF
 
 ## Krok 1: Definujte adresář dokumentů
 
- Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři, kde se nachází váš dokument PDF.
+Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři, kde se nachází váš dokument PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 2: Otevřete dokument
 
- tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
+ V tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddImage.pdf");
@@ -70,7 +70,7 @@ page.Contents.Add(new Aspose.Pdf.Operators.GSave());
 
 ## Krok 8: Vytvořte objekty obdélníku a matice
 
- Nyní vytvoříme a`Rectangle` objekt a a`Matrix`objekt. Obdélník představuje polohu a velikost obrázku, zatímco matice definuje, jak má být obrázek umístěn.
+ Nyní vytvoříme a`Rectangle` objekt a a`Matrix` objekt. Obdélník představuje polohu a velikost obrázku, zatímco matice definuje, jak má být obrázek umístěn.
 
 ```csharp
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(lower
@@ -89,7 +89,7 @@ page.Contents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(matrix));
 
 ## Krok 10: Nakreslete obrázek
 
- V tomto kroku nakreslíme obrázek na stránku pomocí`Do` operátor. The`Do` operátor vezme název obrázku ze zdrojů a nakreslí ho na stránku.
+ V tomto kroku nakreslíme obrázek na stránku pomocí`Do` operátor. The`Do`operátor vezme název obrázku ze zdrojů a nakreslí ho na stránku.
 
 ```csharp
 XImage ximage = page.Resources.Images[page.Resources.Images.Count];
@@ -124,11 +124,11 @@ int lowerLeftX = 100;
 int lowerLeftY = 100;
 int upperRightX = 200;
 int upperRightY = 200;
-//Získejte stránku, kam je třeba přidat obrázek
+// Získejte stránku, kam je třeba přidat obrázek
 Page page = pdfDocument.Pages[1];
 // Načíst obrázek do streamu
 FileStream imageStream = new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open);
-// Přidejte obrázek do kolekce Obrázky zdrojů stránky
+// Přidejte obrázek do sbírky Obrázky zdrojů stránky
 page.Resources.Images.Add(imageStream);
 // Použití operátoru GSave: tento operátor uloží aktuální stav grafiky
 page.Contents.Add(new Aspose.Pdf.Operators.GSave());
@@ -150,7 +150,7 @@ Console.WriteLine("\nImage added successfully.\nFile saved at " + dataDir);
 
 ## Závěr
 
-V tomto tutoriálu jsme se naučili, jak přidat obrázek do dokumentu PDF pomocí Aspose.PDF pro .NET. Podrobně jsme probrali každý krok, od otevření dokumentu až po uložení aktualizované verze. Podle tohoto průvodce byste nyní měli být schopni vkládat obrázky do souborů PDF programově pomocí C# a Aspose.PDF.
+tomto tutoriálu jsme se naučili, jak přidat obrázek do dokumentu PDF pomocí Aspose.PDF pro .NET. Podrobně jsme probrali každý krok, od otevření dokumentu až po uložení aktualizované verze. Podle tohoto průvodce byste nyní měli být schopni vkládat obrázky do souborů PDF programově pomocí C# a Aspose.PDF.
 
 ### Časté dotazy pro přidání obrázku do souboru PDF
 
@@ -164,7 +164,7 @@ Odpověď: Ano, můžete určit stránku, kam chcete obrázek přidat. V poskytn
 
 #### Otázka: Jak upravím polohu a velikost přidaného obrázku?
 
- A: Můžete upravit`lowerLeftX`, `lowerLeftY`, `upperRightX` , a`upperRightY` proměnné v kódu pro nastavení souřadnic obrázku a ovládání jeho velikosti a umístění na stránce.
+ A: Můžete upravit`lowerLeftX`, `lowerLeftY`, `upperRightX` a`upperRightY` proměnné v kódu pro nastavení souřadnic obrázku a ovládání jeho velikosti a umístění na stránce.
 
 #### Otázka: Jaké typy obrazových formátů mohu přidat pomocí této metody?
 
@@ -188,7 +188,7 @@ Odpověď: Pokud soubor s obrázkem není na zadané cestě nalezen, kód při p
 
 #### Otázka: Mohu dále upravit umístění a vzhled obrázku?
 
- Odpověď: Ano, vzhled obrázku můžete upravit úpravou`Matrix`objekt a nastavení dalších operátorů v rámci kódu. Pokročilé přizpůsobení naleznete v dokumentaci Aspose.PDF.
+ Odpověď: Ano, vzhled obrázku můžete upravit úpravou`Matrix` objekt a nastavení dalších operátorů v rámci kódu. Pokročilé přizpůsobení naleznete v dokumentaci Aspose.PDF.
 
 #### Otázka: Jak mohu otestovat, zda byl obrázek úspěšně přidán do PDF?
 

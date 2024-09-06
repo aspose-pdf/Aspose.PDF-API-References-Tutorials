@@ -26,7 +26,7 @@ Document document = new Document();
 
 ## 2. lépés: Hozzáférés a címkézett tartalomhoz
 
- Ezután elérjük a dokumentum címkézett tartalmát a segítségével`ITaggedContent` tárgy.
+ Ezután elérjük a dokumentum címkézett tartalmát a segítségével`ITaggedContent` objektum.
 
 ```csharp
 // Hozzáférés a címkézett tartalomhoz
@@ -35,7 +35,7 @@ Tagged.ITaggedContent taggedContent = document.TaggedContent;
 
 ## 3. lépés: Állítsa be a címet és a nyelvet
 
- Most beállíthatjuk a dokumentum címét és nyelvét a segítségével`SetTitle` és`SetLanguage` módszerei a`ITaggedContent` tárgy.
+ Most beállíthatjuk a dokumentum címét és nyelvét a segítségével`SetTitle` és`SetLanguage` módszerei a`ITaggedContent` objektum.
 
 ```csharp
 // Határozza meg a dokumentum címét
@@ -50,7 +50,7 @@ taggedContent.SetLanguage("fr-FR");
 Ezután többnyelvű tartalmat adunk a dokumentumhoz az egyes nyelvekhez tartozó bekezdéselemek használatával.
 
 ```csharp
-// Adjon hozzá egy angol nyelvű bekezdést
+// Adjon hozzá egy bekezdést angolul
 LogicalStructure.ParagraphElement pEN = taggedContent.CreateParagraphElement();
 pEN.SetText("Hello, World!");
 pEN.Language = "en-US";
@@ -145,7 +145,7 @@ V: A PDF-dokumentum nyelvének és címének konfigurálása fontos a hozzáfér
 
 #### K: Hogyan segíti elő az Aspose.PDF for .NET a dokumentum nyelvének és címének konfigurálását?
 
- V: Az Aspose.PDF for .NET API-kat biztosít a dokumentum címének és nyelvének egyszerű beállításához a`SetTitle` és`SetLanguage` módszerei a`ITaggedContent` tárgy. Ez lehetővé teszi a pontos nyelvi megjelenítést és az értelmes dokumentumcímeket.
+ V: Az Aspose.PDF for .NET API-kat biztosít a dokumentum címének és nyelvének egyszerű beállításához a`SetTitle` és`SetLanguage` módszerei a`ITaggedContent` objektum. Ez lehetővé teszi a pontos nyelvi megjelenítést és az értelmes dokumentumcímeket.
 
 #### K: Beállíthatok különböző nyelveket a PDF-dokumentum egyes részeihez az Aspose.PDF for .NET használatával?
 

@@ -21,11 +21,11 @@ Mielőtt belemerülnénk a kódba, győződjön meg arról, hogy mindent beáll�
 
 ## Útmutató lépésről lépésre
 
-### 1. Bemutatkozás
+### 1. Bevezetés
 
 PDF-dokumentumok sokoldalúak, de néha további kontextust vagy megjegyzéseket kell biztosítania olvasói számára. A PDF-hez megjegyzések hozzáadása segíthet ennek elérésében. Ebben az oktatóanyagban bemutatjuk, hogyan hozhat létre megjegyzés szerkezeti elemet PDF-ben Java és Aspose.PDF for Java használatával.
 
-### 2. A Projekt beállítása
+### 2. A projekt beállítása
 
 A kódolás megkezdése előtt győződjön meg arról, hogy a rendszeren be van állítva Java fejlesztői környezet. Bármilyen Java IDE-t használhat.
 

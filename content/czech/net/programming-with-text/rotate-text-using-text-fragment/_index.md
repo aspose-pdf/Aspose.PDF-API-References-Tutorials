@@ -76,7 +76,7 @@ Upravte text, pozice a další vlastnosti podle potřeby.
 
 ## Krok 6: Vytvořte TextBuilder a připojte textové fragmenty
 
- Vytvořit`TextBuilder` objekt pomocí`pdfPage` a připojte textové fragmenty na stránku PDF:
+ Vytvořte a`TextBuilder` objekt pomocí`pdfPage` a připojte textové fragmenty na stránku PDF:
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(pdfPage);
@@ -98,7 +98,7 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated1_out.pdf");
 ### Ukázka zdrojového kódu pro otáčení textu pomocí fragmentu textu pomocí Aspose.PDF pro .NET 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Inicializujte objekt dokumentu
+// Inicializovat objekt dokumentu
 Document pdfDocument = new Document();
 // Získejte konkrétní stránku
 Page pdfPage = (Page)pdfDocument.Pages.Add();
@@ -134,7 +134,7 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated1_out.pdf");
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili otáčet text pomocí textových fragmentů v dokumentu PDF pomocí Aspose.PDF pro .NET. Tento výukový program poskytuje podrobného průvodce od vytvoření dokumentu po uložení upravené verze. Nyní můžete tento kód začlenit do svých vlastních projektů C# a manipulovat s rotací textu v souborech PDF.
+Gratuluji! Úspěšně jste se naučili otáčet text pomocí textových fragmentů v dokumentu PDF pomocí Aspose.PDF pro .NET. Tento výukový program poskytuje podrobného průvodce od vytvoření dokumentu po uložení upravené verze. Nyní můžete tento kód začlenit do svých vlastních projektů C# a manipulovat s rotací textu v souborech PDF.
 
 ### FAQ
 
@@ -170,7 +170,7 @@ A: Chcete-li otočit fragmenty textu pomocí fragmentů textu:
 2. Nastavte text a vlastnosti textových fragmentů.
 3. Určete polohy fragmentů textu na stránce.
 4.  Nastavte úhel otáčení pomocí`TextState.Rotation` vlastnost fragmentů textu.
-5.  Vytvořit`TextBuilder`objekt a připojit textové fragmenty na stránku PDF.
+5.  Vytvořte a`TextBuilder`objekt a připojit textové fragmenty na stránku PDF.
 
 #### Otázka: Mohu použít různé úhly otočení na různé fragmenty textu?
 

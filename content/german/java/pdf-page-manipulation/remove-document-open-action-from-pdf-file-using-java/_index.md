@@ -1,26 +1,26 @@
 ---
-title: Entfernen Sie die Aktion „Dokument öffnen“ aus der PDF-Datei mit Java
-linktitle: Entfernen Sie die Aktion „Dokument öffnen“ aus der PDF-Datei mit Java
+title: Entfernen Sie die Dokumentöffnen-Aktion aus der PDF-Datei mithilfe von Java
+linktitle: Entfernen Sie die Dokumentöffnen-Aktion aus der PDF-Datei mithilfe von Java
 second_title: Aspose.PDF Java PDF-Verarbeitungs-API
-description: Erfahren Sie, wie Sie mit Java und Aspose.PDF für Java die Aktion „Dokument öffnen“ aus PDF-Dateien entfernen. Verbessern Sie die Sicherheit und Anpassung.
+description: Erfahren Sie, wie Sie mit Java und Aspose.PDF für Java die Aktion „Dokument öffnen“ aus PDF-Dateien entfernen. Verbessern Sie Sicherheit und Anpassung.
 type: docs
 weight: 11
 url: /de/java/pdf-page-manipulation/remove-document-open-action-from-pdf-file-using-java/
 ---
 
-## Einführung in das Entfernen der Dokumentöffnungsaktion aus einer PDF-Datei mit Java
+## Einführung zum Entfernen der Dokumentöffnungsaktion aus einer PDF-Datei mit Java
 
-PDF-Dateien enthalten häufig Aktionen zum Öffnen von Dokumenten, die beim Öffnen der PDF-Datei bestimmte Aktionen ausführen können. In einigen Fällen müssen Sie diese Aktion jedoch möglicherweise aus Sicherheits- oder Anpassungsgründen entfernen. In dieser Schritt-für-Schritt-Anleitung erfahren Sie, wie Sie mit Java und Aspose.PDF für Java die Aktion „Dokument öffnen“ aus einer PDF-Datei entfernen.
+PDF-Dateien enthalten häufig Dokumentöffnungsaktionen, die beim Öffnen der PDF-Datei bestimmte Aktionen ausführen können. In einigen Fällen müssen Sie diese Aktion jedoch möglicherweise aus Sicherheits- oder Anpassungsgründen entfernen. In dieser Schritt-für-Schritt-Anleitung erfahren Sie, wie Sie die Dokumentöffnungsaktion mit Java und Aspose.PDF für Java aus einer PDF-Datei entfernen.
 
 ## Voraussetzungen
 
-Bevor wir uns mit dem Code befassen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
+Bevor wir uns in den Code vertiefen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
--  Aspose.PDF für Java-Bibliothek: Laden Sie die Aspose.PDF für Java-Bibliothek von herunter und installieren Sie sie[Hier](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF für Java-Bibliothek: Laden Sie die Aspose.PDF für Java-Bibliothek herunter und installieren Sie sie von[Hier](https://releases.aspose.com/pdf/java/).
 
 - Java-Entwicklungsumgebung: Stellen Sie sicher, dass auf Ihrem System eine Java-Entwicklungsumgebung eingerichtet ist.
 
-## Schritt für Schritt Anleitung
+## Schritt-für-Schritt-Anleitung
 
 ### 1. Laden eines PDF-Dokuments mit Aspose.PDF für Java
 
@@ -31,21 +31,21 @@ Beginnen wir zunächst mit dem Laden des PDF-Dokuments, das wir ändern möchten
 Document pdfDocument = new Document("input.pdf");
 ```
 
-### 2. Identifizieren und Zugreifen auf die Aktion zum Öffnen von Dokumenten
+### 2. Identifizieren und Zugreifen auf die Aktion „Dokument öffnen“
 
-Um die Aktion „Dokument öffnen“ zu entfernen, müssen wir sie im PDF-Dokument identifizieren und darauf zugreifen. So können Sie es machen:
+Um die Aktion „Dokument öffnen“ zu entfernen, müssen wir sie im PDF-Dokument identifizieren und darauf zugreifen. So geht’s:
 
 ```java
-// Greifen Sie auf die Aktion „Dokument öffnen“ zu
+// Zugriff auf die Aktion „Dokument öffnen“
 PdfAction openAction = pdfDocument.getOpenAction();
 ```
 
-### 3. Entfernen der Aktion „Dokument öffnen“.
+### 3. Aktion „Dokument öffnen“ entfernen
 
-Fahren wir nun damit fort, die Aktion „Dokument öffnen“ zu entfernen:
+Lassen Sie uns nun mit dem Entfernen der Aktion „Dokument öffnen“ fortfahren:
 
 ```java
-// Entfernen Sie die Aktion „Dokument öffnen“.
+// Entfernen der Aktion „Dokument öffnen“
 pdfDocument.setOpenAction(null);
 ```
 
@@ -54,25 +54,25 @@ pdfDocument.setOpenAction(null);
 Speichern Sie abschließend das geänderte PDF-Dokument mit der entfernten Aktion „Dokument öffnen“:
 
 ```java
-// Speichern Sie das geänderte PDF
+// Speichern Sie die geänderte PDF
 pdfDocument.save("output.pdf");
 ```
 
-## Beispiele für Quellcodes
+## Quellcodebeispiele
 
-Der Einfachheit halber finden Sie hier die Codeausschnitte für jeden Schritt mit Erläuterungen:
+Zu Ihrer Information finden Sie hier die Codeausschnitte für jeden Schritt mit Erklärungen:
 
 Schritt 1: Laden eines PDF-Dokuments
 ```java
 Document pdfDocument = new Document("input.pdf");
 ```
 
-Schritt 2: Identifizieren und Zugreifen auf die Aktion „Dokument öffnen“.
+Schritt 2: Identifizieren und Zugreifen auf die Aktion „Dokument öffnen“
 ```java
 PdfAction openAction = pdfDocument.getOpenAction();
 ```
 
-Schritt 3: Entfernen der Aktion zum Öffnen des Dokuments
+Schritt 3: Aktion „Dokument öffnen“ entfernen
 ```java
 pdfDocument.setOpenAction(null);
 ```
@@ -84,26 +84,26 @@ pdfDocument.save("output.pdf");
 
 ## Abschluss
 
-In dieser Anleitung haben wir erfahren, wie man mit Java und Aspose.PDF für Java die Aktion „Dokument öffnen“ aus einer PDF-Datei entfernt. Dieser Prozess kann die Sicherheit und Anpassung Ihrer PDF-Dokumente verbessern. Denken Sie daran, die Aspose.PDF für Java-Dokumentation für weitere erweiterte Funktionen und Optionen zu durchsuchen.
+In dieser Anleitung haben wir gelernt, wie man mit Java und Aspose.PDF für Java die Aktion „Dokument öffnen“ aus einer PDF-Datei entfernt. Dieser Vorgang kann die Sicherheit und Anpassung Ihrer PDF-Dokumente verbessern. Denken Sie daran, die Dokumentation zu Aspose.PDF für Java zu lesen, um erweiterte Funktionen und Optionen zu erhalten.
 
-## FAQs
+## Häufig gestellte Fragen
 
 ### Wie funktioniert die Aktion „Dokument öffnen“ in PDF-Dateien?
 
-„Aktion zum Öffnen von Dokumenten in PDF-Dateien“ ist eine Funktion, mit der Sie Aktionen angeben können, die beim Öffnen des PDF-Dokuments ausgeführt werden sollen. Zu diesen Aktionen können das Navigieren zu einer bestimmten Seite, das Ausführen von JavaScript-Code oder das Öffnen eines Weblinks gehören.
+Mit der Funktion „Dokument öffnen“ in PDF-Dateien können Sie Aktionen festlegen, die beim Öffnen des PDF-Dokuments ausgeführt werden sollen. Diese Aktionen können das Navigieren zu einer bestimmten Seite, das Ausführen von JavaScript-Code oder das Öffnen eines Weblinks umfassen.
 
-### Warum sollte ich die Aktion „Dokument öffnen“ entfernen?
+### Warum sollte ich die Aktion „Dokument öffnen“ entfernen wollen?
 
-Aus Sicherheitsgründen möchten Sie möglicherweise die Aktion „Dokument öffnen“ entfernen, insbesondere wenn Sie eine PDF-Datei mit potenziell schädlichen Aktionen erhalten. Dies kann auch beim Anpassen des Verhaltens eines PDF-Dokuments nützlich sein.
+Sie möchten die Funktion „Dokument öffnen“ möglicherweise aus Sicherheitsgründen entfernen, insbesondere wenn Sie ein PDF mit potenziell schädlichen Aktionen erhalten. Dies kann auch beim Anpassen des Verhaltens eines PDF-Dokuments nützlich sein.
 
 ### Kann ich die Aktion „Dokument öffnen“ ändern, anstatt sie zu entfernen?
 
-Ja, Sie können die vorhandene Aktion „Dokument öffnen“ ändern, um ihr Verhalten an Ihre Anforderungen anzupassen. Aspose.PDF für Java bietet Methoden zum Bearbeiten von Aktionen.
+Ja, Sie können die vorhandene Aktion „Dokument öffnen“ ändern, um ihr Verhalten Ihren Anforderungen entsprechend anzupassen. Aspose.PDF für Java bietet Methoden zum Bearbeiten von Aktionen.
 
-### Ist Aspose.PDF für Java die einzige Bibliothek, die die Aktion zum Öffnen von Dokumenten entfernt?
+### Ist Aspose.PDF für Java die einzige Bibliothek, die die Aktion „Document Open Action“ entfernt?
 
-Nein, es stehen andere Bibliotheken und Tools für die Arbeit mit PDFs in Java zur Verfügung. Allerdings ist Aspose.PDF für Java aufgrund seiner robusten Funktionen und Benutzerfreundlichkeit eine beliebte Wahl.
+Nein, es gibt andere Bibliotheken und Tools für die Arbeit mit PDFs in Java. Aspose.PDF für Java ist jedoch aufgrund seiner robusten Funktionen und Benutzerfreundlichkeit eine beliebte Wahl.
 
 ### Wo finde ich weitere Informationen zu Aspose.PDF für Java?
 
- Eine umfassende Dokumentation und Beispiele für Aspose.PDF für Java finden Sie unter[Hier](https://reference.aspose.com/pdf/java/).
+ Ausführliche Dokumentation und Beispiele für Aspose.PDF für Java finden Sie unter[Hier](https://reference.aspose.com/pdf/java/).

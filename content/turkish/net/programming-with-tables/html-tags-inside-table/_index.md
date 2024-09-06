@@ -1,19 +1,19 @@
 ---
-title: PDF Dosyasındaki Tablonun İçindeki HTML Etiketleri
-linktitle: PDF Dosyasındaki Tablonun İçindeki HTML Etiketleri
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile PDF dosyasındaki bir tablonun içindeki HTML etiketlerini nasıl kullanacağınızı öğrenin.
+title: PDF Dosyasındaki Tablo İçindeki HTML Etiketleri
+linktitle: PDF Dosyasındaki Tablo İçindeki HTML Etiketleri
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET ile PDF dosyasındaki bir tablonun içinde HTML etiketlerinin nasıl kullanılacağını öğrenin.
 type: docs
 weight: 100
 url: /tr/net/programming-with-tables/html-tags-inside-table/
 ---
-Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesindeki tablonun içindeki HTML etiketlerinin nasıl kullanılacağını öğreneceğiz. C#'ta kaynak kodunu adım adım anlatacağız. Bu eğitimin sonunda, HTML içeriğini bir PDF belgesindeki tabloya nasıl ekleyeceğinizi öğreneceksiniz. Hadi başlayalım!
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesindeki tablonun içinde HTML etiketlerinin nasıl kullanılacağını öğreneceğiz. Kaynak kodunu adım adım C# dilinde açıklayacağız. Bu eğitimin sonunda, bir PDF belgesindeki tabloya HTML içeriğinin nasıl ekleneceğini öğreneceksiniz. Başlayalım!
 
-## 1. Adım: Ortamı ayarlama
-Aspose.PDF for .NET ile C# geliştirme ortamınızı yapılandırdığınızdan emin olun. Referansı kitaplığa ekleyin ve gerekli ad alanlarını içe aktarın.
+## Adım 1: Ortamı kurma
+C# geliştirme ortamınızı .NET için Aspose.PDF ile yapılandırdığınızdan emin olun. Referansı kütüphaneye ekleyin ve gerekli ad alanlarını içe aktarın.
 
-## 2. Adım: Tablo verilerini oluşturma
-String türünde bir "data" sütunu içeren bir DataTable oluşturuyoruz. Daha sonra HTML içeriğini kullanarak bu DataTable'a satırlar ekliyoruz.
+## Adım 2: Tablo verileri oluşturma
+String türünde bir "data" sütunu içeren bir DataTable oluşturuyoruz. Daha sonra bu DataTable'a HTML içeriği kullanarak satırlar ekliyoruz.
 
 ```csharp
 DataTable dt = new DataTable("Employee");
@@ -30,8 +30,8 @@ dr[0] = "<li>UPHS/Presbyterian - Dept. of Emergency Medicine: 51 N. 39th Street 
 dt.Rows.Add(dr);
 ```
 
-## Adım 3: Belgeyi ve Tabloyu Oluşturma
-Yeni bir PDF belgesi oluşturup bu belgeye bir sayfa ekliyoruz. Daha sonra Table sınıfının bir örneğini başlatıyoruz ve tablo özelliklerini ayarlıyoruz.
+## Adım 3: Belge ve Tablo Oluşturma
+Yeni bir PDF belgesi oluşturuyoruz ve bu belgeye bir sayfa ekliyoruz. Sonra, Table sınıfının bir örneğini başlatıyoruz ve tablo özelliklerini ayarlıyoruz.
 
 ```csharp
 Document doc = new Document();
@@ -48,8 +48,8 @@ margin. Bottom = 1.0F;
 tableProvider. DefaultCellPadding = margin;
 ```
 
-## 4. Adım: Verileri tabloya aktarma
-DataTable'daki verileri "ImportDataTable" yöntemini kullanarak tabloya aktarıyoruz. DataTable'ın hangi satır ve sütun aralığının içe aktarılması gerektiğini belirtmek için yöntem parametrelerini belirtiriz.
+## Adım 4: Verileri tabloya aktarma
+"ImportDataTable" metodunu kullanarak DataTable'dan verileri tabloya aktarıyoruz. DataTable'ın hangi satır ve sütun aralığının içe aktarılacağını belirtmek için metot parametrelerini belirtiyoruz.
 
 ```csharp
 tableProvider.ImportDataTable(dt, false, 0, 0, 3, 1, true);
@@ -62,17 +62,17 @@ Tabloyu belge sayfasına ekliyoruz.
 doc.Pages[1].Paragraphs.Add(tableProvider);
 ```
 
-## Aşama 6: Belgeyi kaydetme
-PDF belgesini HTML içeriğini içeren tabloyla birlikte kaydediyoruz.
+## Aşama 6: Belgenin kaydedilmesi
+HTML içeriğinin bulunduğu tabloyu PDF belgesi olarak kaydediyoruz.
 
 ```csharp
 doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 ```
 
-### Aspose.PDF for .NET kullanan HTML Etiketleri İçinde Tablo için örnek kaynak kodu
+### .NET için Aspose.PDF kullanarak Tablo İçindeki HTML Etiketleri için örnek kaynak kodu
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 DataTable dt = new DataTable("Employee");
@@ -94,9 +94,9 @@ doc.Pages.Add();
 Aspose.Pdf.Table tableProvider = new Aspose.Pdf.Table();
 //Tablonun sütun genişliklerini ayarlayın
 tableProvider.ColumnWidths = "400 50 ";
-// Tablo kenarlığı rengini AçıkGri olarak ayarlayın
+// Tablo kenarlık rengini AçıkGri olarak ayarlayın
 tableProvider.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.5F, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// Tablo hücreleri için kenarlığı ayarlama
+// Tablo hücreleri için kenarlığı ayarlayın
 tableProvider.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.5F, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 2.5F;
@@ -111,26 +111,26 @@ doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 ```
 
 ## Çözüm
-Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesindeki tablonun içindeki HTML etiketlerinin nasıl kullanılacağını öğrendik. C# kullanarak bir PDF belgesindeki tablo hücrelerine HTML içeriği eklemek için bu adım adım kılavuzu kullanabilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesindeki tablonun içinde HTML etiketlerinin nasıl kullanılacağını öğrendik. Bu adım adım kılavuzu kullanarak C# kullanarak bir PDF belgesindeki tablo hücrelerine HTML içeriği ekleyebilirsiniz.
 
-### PDF dosyasındaki tablonun içindeki HTML etiketleri hakkında SSS
+### PDF dosyasındaki tablonun içindeki HTML etiketleri için SSS
 
-#### S: Tablo hücrelerinin içinde diğer HTML etiketlerini ve niteliklerini kullanabilir miyim?
+#### S: Tablo hücrelerinin içinde başka HTML etiketleri ve nitelikleri kullanabilir miyim?
 
- C: Evet, tablo hücrelerinin içinde aşağıdakiler gibi çeşitli HTML etiketleri ve nitelikleri kullanabilirsiniz:`<b>`, `<i>`, `<a>`ve daha fazlası. Aspose.PDF for .NET, tablo hücrelerinin içindeki içeriği formatlamak için kullanabileceğiniz çok çeşitli HTML öğelerini ve stillerini destekler.
+ A: Evet, tablo hücrelerinin içinde çeşitli HTML etiketleri ve öznitelikleri kullanabilirsiniz, örneğin:`<b>`, `<i>`, `<a>`ve daha fazlası. Aspose.PDF for .NET, tablo hücrelerindeki içeriği biçimlendirmek için kullanabileceğiniz çok çeşitli HTML öğelerini ve stillerini destekler.
 
-#### S: CSS stillerini tablo hücrelerinin içindeki HTML içeriğine uygulayabilir miyim?
+#### S: Tablo hücrelerinin içindeki HTML içeriğine CSS stilleri uygulayabilir miyim?
 
-C: Evet, CSS stillerini tablo hücrelerinin içindeki HTML içeriğine uygulayabilirsiniz. Aspose.PDF for .NET, HTML öğelerine uygulanabilecek temel CSS stilleri için destek sağlar.
+C: Evet, tablo hücrelerinin içindeki HTML içeriğine CSS stilleri uygulayabilirsiniz. Aspose.PDF for .NET, HTML öğelerine uygulanabilen temel CSS stilleri için destek sağlar.
 
-#### S: Tablo hücrelerinin içine HTML içeriğinin yanı sıra resimler de eklemek mümkün müdür?
+#### S: Tablo hücrelerinin içine HTML içeriğiyle birlikte resim eklemek mümkün müdür?
 
- C: Evet, tablo hücrelerinin içine HTML içeriğinin yanı sıra resimler de ekleyebilirsiniz. HTML'yi kullanabilirsiniz`<img>` Yerel dosyalar veya URL'ler gibi çeşitli kaynaklardan gelen görselleri içerecek etiketler.
+ A: Evet, tablo hücrelerinin içine HTML içeriğiyle birlikte resimler ekleyebilirsiniz. HTML kullanabilirsiniz`<img>` Yerel dosyalar veya URL'ler gibi çeşitli kaynaklardan gelen görselleri eklemek için etiketler.
 
 #### S: Tablo için farklı sütun genişliklerini nasıl belirleyebilirim?
 
- C: Tablo için farklı sütun genişliklerini aşağıdaki komutu kullanarak belirleyebilirsiniz:`ColumnWidths` tablonun özelliği. Özellik, boşlukla ayrılmış değerler içeren bir dize alır; burada her değer, bir sütunun genişliğini nokta cinsinden temsil eder.
+ A: Tablo için farklı sütun genişliklerini, şunu kullanarak belirleyebilirsiniz:`ColumnWidths` tablonun özelliği. Özellik, her değerin bir sütunun genişliğini noktalar halinde temsil ettiği boşluklarla ayrılmış değerler içeren bir dize alır.
 
-#### S: İç içe geçmiş tabloları HTML içeriğine sahip bir hücrenin içinde kullanabilir miyim?
+#### S: HTML içeriği olan bir hücrenin içinde iç içe geçmiş tablolar kullanabilir miyim?
 
-C: Evet, HTML içeriğine sahip bir hücrenin içindeki iç içe tabloları kullanabilirsiniz. İç içe geçme efekti elde etmek için ayrı tablo örnekleri oluşturabilir ve bunları bir hücrenin içindeki HTML içeriğinin parçası olarak ekleyebilirsiniz.
+A: Evet, HTML içerikli bir hücrenin içinde iç içe geçmiş tablolar kullanabilirsiniz. Ayrı tablo örnekleri oluşturabilir ve iç içe geçme etkisini elde etmek için bunları bir hücrenin içindeki HTML içeriğinin parçası olarak ekleyebilirsiniz.

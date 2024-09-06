@@ -1,123 +1,124 @@
 ---
 title: PDF Dosyasında Dosya Sıkıştırmayı Devre Dışı Bırak
 linktitle: PDF Dosyasında Dosya Sıkıştırmayı Devre Dışı Bırak
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile PDF dosyasında dosya sıkıştırmasını nasıl devre dışı bırakacağınızı öğrenin. Kolay kullanım için adım adım kılavuz.
+second_title: Aspose.PDF for .NET API Referansı
+description: Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak PDF dosyalarındaki dosya sıkıştırmasını nasıl devre dışı bırakacağınızı öğrenin. PDF yönetimi becerilerinizi geliştirin.
 type: docs
 weight: 30
 url: /tr/net/programming-with-attachments/disable-files-compression/
 ---
-Bu eğitimde, Aspose.PDF for .NET kullanarak PDF'de dosya sıkıştırmayı devre dışı bırakmak için aşağıdaki C# kaynak kodunu adım adım anlatacağız.
+## giriiş
 
-Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ayrıca temel C# programlama bilgisine sahip olmak.
+Dijital çağda, PDF dosyalarını etkili bir şekilde yönetmek hem kişisel hem de profesyonel kullanım için çok önemlidir. İster uygulamanızı geliştirmek isteyen bir geliştirici olun, ister belgeleri yöneten bir iş profesyoneli olun, PDF dosyalarını nasıl düzenleyeceğinizi bilmek size zaman ve emek kazandırabilir. Yaygın bir gereklilik, PDF belgelerindeki dosya sıkıştırmasını devre dışı bırakmaktır. Bu, özellikle gömülü dosyaların herhangi bir değişiklik yapılmadan orijinal biçimlerinde kalmasını sağlamak istediğinizde yararlı olabilir. Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF dosyasındaki dosya sıkıştırmasının nasıl devre dışı bırakılacağını inceleyeceğiz. 
 
-### Adım 1: Belge Dizini Kurulumu
+## Ön koşullar
 
-Sağlanan kaynak kodunda, dosya sıkıştırmasını devre dışı bırakmak istediğiniz PDF dosyasının bulunduğu dizini belirtmeniz gerekir. "dataDir" değişkenini istediğiniz dizine değiştirin.
+Koda dalmadan önce, yerine getirmeniz gereken birkaç ön koşul vardır:
+
+1.  .NET için Aspose.PDF: Aspose.PDF kütüphanesinin yüklü olduğundan emin olun. Bunu şuradan indirebilirsiniz:[web sitesi](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: .NET kodlarınızı yazıp çalıştırabileceğiniz bir geliştirme ortamı.
+3. Temel C# Bilgisi: C# programlamaya aşina olmak, kod parçacıklarını daha iyi anlamanıza yardımcı olacaktır.
+
+## Paketleri İçe Aktar
+
+Başlamak için, C# projenize gerekli paketleri içe aktarmanız gerekir. Bunu nasıl yapabileceğiniz aşağıda açıklanmıştır:
+
+### Yeni Bir Proje Oluştur
+
+Visual Studio'yu açın ve yeni bir C# projesi oluşturun. Basitlik için bir Konsol Uygulaması seçebilirsiniz.
+
+### Aspose.PDF Referansını Ekle
+
+1. Çözüm Gezgini’nde projenizin üzerine sağ tıklayın.
+2. "NuGet Paketlerini Yönet" seçeneğini seçin.
+3. "Aspose.PDF" dosyasını arayın ve en son sürümü yükleyin.
+
+### Ad Alanını İçe Aktar
+
+C# dosyanızın en üstüne Aspose.PDF ad alanını içe aktarın:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-### 2. Adım: Mevcut PDF belgesini açın
+Artık her şeyi ayarladığımıza göre, bir PDF dosyasında dosya sıkıştırmayı devre dışı bırakma sürecini yönetilebilir adımlara bölelim.
 
-Mevcut PDF belgesini belirtilen yolu kullanarak açıyoruz.
+## Adım 1: Belge Dizinini Tanımlayın
 
-```csharp
-Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-```
-
-### 3. Adım: Yeni dosyayı ek olarak eklenecek şekilde ayarlama
-
-Ek olarak eklemek istediğimiz yeni dosyayı yapılandırıyoruz. Bu örnekte "test_out.txt" adında ve "Örnek metin dosyası" açıklamasına sahip bir metin dosyası ekliyoruz.
+Öncelikle, PDF dosyanızın bulunduğu dizine giden yolu belirtmeniz gerekir. Bu, programa düzenlemek istediğiniz dosyayı nerede bulacağını söylediği için önemlidir.
 
 ```csharp
-FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-```
-
-### Adım 4: Dosya Sıkıştırmayı Devre Dışı Bırakın
-
-FileSpecification nesnesinin Encoding özelliğini FileEncoding.None olarak ayarlayarak dosya sıkıştırmayı devre dışı bırakıyoruz.
-
-```csharp
-fileSpecification.Encoding = FileEncoding.None;
-```
-
-### 5. Adım: Eki belgenin ekler koleksiyonuna ekleme
-
-Eki, belgenin ekler koleksiyonuna ekliyoruz.
-
-```csharp
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-```
-
-### Adım 6: Yeni çıktı dosyasını kaydedin
-
-Son olarak ortaya çıkan yeni PDF dosyasını "DisableFilesCompression_out.pdf" ismiyle belirtilen dizine kaydediyoruz.
-
-```csharp
-pdfDocument.Save(dataDir + "DisableFilesCompression_out.pdf");
-```
-
-
-### Aspose.PDF for .NET kullanarak Dosya Sıkıştırmayı Devre Dışı Bırakma için örnek kaynak kodu 
-
-```csharp
-
-// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Ek olarak eklenecek yeni dosyayı ayarlayın
-FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-// Kodlama proparty'sini FileEncoding.None olarak ayarlayarak belirtin
-fileSpecification.Encoding = FileEncoding.None;
-//Belgenin ek koleksiyonuna ek ekleyin
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-dataDir = dataDir + "DisableFilesCompression_out.pdf";
-// Yeni çıktıyı kaydet
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
+```
 
+## Adım 2: PDF Belgesini Yükleyin
+
+ Sonra, değiştirmek istediğiniz PDF belgesini yükleyeceksiniz. Bu, şu şekilde yapılır:`Document` Sınıf Aspose.PDF tarafından sağlanmıştır.
+
+```csharp
+Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
+```
+
+## Adım 3: Ek Olarak Eklenecek Dosyayı Ayarlayın
+
+Şimdi, PDF'e eklemek istediğiniz ek için yeni bir dosya belirtimi oluşturmanız gerekiyor. Bu, dosyanın adını ve türünü belirtmeyi içerir.
+
+```csharp
+FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
+```
+
+## Adım 4: Kodlama Özelliğini Belirleyin
+
+ Dosyanın sıkıştırılmadan eklendiğinden emin olmak için dosya özelliğinin kodlama özelliğini şu şekilde ayarlamanız gerekir:`FileEncoding.None`Bu adım, dosyanın PDF'e nasıl yerleştirileceğini doğrudan etkilediği için önemlidir.
+
+```csharp
+fileSpecification.Encoding = FileEncoding.None;
+```
+
+## Adım 5: Belgeye Ek Ekle
+
+Dosya belirtimi hazır olduğunda, artık eki belgenin ek koleksiyonuna ekleyebilirsiniz. Bu adım dosyayı PDF'ye entegre eder.
+
+```csharp
+pdfDocument.EmbeddedFiles.Add(fileSpecification);
+```
+
+## Adım 6: Yeni Çıktıyı Kaydedin
+
+Son olarak, değiştirilmiş PDF belgesini kaydetmeniz gerekir. Yeni dosyayı kaydetmek istediğiniz çıktı yolunu belirtin.
+
+```csharp
+dataDir = dataDir + "DisableFilesCompression_out.pdf";
+pdfDocument.Save(dataDir);
+```
+
+## Adım 7: İşlemi Onaylayın
+
+Her şeyin yolunda gittiğinden emin olmak için konsola bir onay mesajı yazdırabilirsiniz.
+
+```csharp
+Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
 ```
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF'de dosya sıkıştırmanın nasıl devre dışı bırakılacağını açıkladık. Artık bu bilgiyi, sıkıştırılmadan ekli dosyaların bütünlüğünü korumak için kullanabilirsiniz.
+PDF belgelerinde dosya sıkıştırmayı devre dışı bırakmak doğru araçlarla basit bir işlem olabilir. Bu eğitimde özetlenen adımları izleyerek PDF dosyalarınızı kolayca yönetebilir ve gömülü eklerin orijinal biçimlerini korumasını sağlayabilirsiniz. Aspose.PDF for .NET, PDF belgelerini düzenlemek için güçlü ve esnek bir yol sunar ve bu da onu geliştiriciler ve işletmeler için mükemmel bir seçim haline getirir.
 
-## PDF dosyasında dosya sıkıştırmayı devre dışı bırakmak için SSS
+## SSS
 
-#### S: Bir PDF belgesinde dosya sıkıştırmasını neden devre dışı bırakmak isteyeyim?
+### Aspose.PDF for .NET nedir?
+Aspose.PDF for .NET, geliştiricilerin PDF belgelerini programlı bir şekilde oluşturmalarına, düzenlemelerine ve dönüştürmelerine olanak tanıyan bir kütüphanedir.
 
-C: Dosya sıkıştırmasını devre dışı bırakmak, PDF belgesindeki ekli dosyaların sıkıştırılmamış kalmasını ve orijinal kalitelerini ve içeriklerini korumalarını sağlar.
+### PDF'deki dosya sıkıştırmayı neden devre dışı bırakmak isteyeyim?
+Dosya sıkıştırmayı devre dışı bırakmak, gömülü dosyaların orijinal biçimlerinde kalmasını sağlar; bu da veri bütünlüğü açısından önemli olabilir.
 
-#### S: Dosya sıkıştırmasını devre dışı bırakmanın PDF eklerine nasıl faydası olur?
+### Aspose.PDF'yi ücretsiz kullanabilir miyim?
+ Evet, Aspose kütüphaneyi değerlendirmek için kullanabileceğiniz ücretsiz bir deneme sürümü sunuyor. İndirebilirsiniz[Burada](https://releases.aspose.com/).
 
-C: Sıkıştırmayı devre dışı bırakmak, sıkıştırma işlemi sırasında oluşabilecek veri veya kalite kaybını önleyerek ekli dosyaların olduğu gibi sunulmasını sağlar.
+### Aspose.PDF hakkında daha fazla dokümanı nerede bulabilirim?
+ Kapsamlı belgeleri şurada bulabilirsiniz:[Aspose web sitesi](https://reference.aspose.com/pdf/net/).
 
-#### S: Bu öğreticiyi kullanarak belirli ekler için sıkıştırmayı seçerek devre dışı bırakabilir miyim?
-
-C: Evet, bu eğitim, bir PDF belgesindeki tek tek ekler için dosya sıkıştırmasını devre dışı bırakma konusunda size rehberlik ederek ayrıntılı kontrol sağlar.
-
-#### S: Hangi tür eklerde sıkıştırmayı devre dışı bırakabilirim?
-
-C: Görüntüler, belgeler, e-tablolar ve daha fazlası gibi her türlü ek için sıkıştırmayı devre dışı bırakarak bunların bütünlüğünün korunmasını sağlayabilirsiniz.
-
-#### S: Sıkıştırmayı devre dışı bırakmak PDF belgesinin genel dosya boyutunu etkiler mi?
-
-C: Ekler için sıkıştırmanın devre dışı bırakılması, sıkıştırılmamış dosyalar daha fazla yer kaplayacağından PDF belgesinin genel dosya boyutunda hafif bir artışa neden olabilir.
-
-#### S: Aspose.PDF for .NET, dosya sıkıştırmasını devre dışı bırakma sürecini nasıl kolaylaştırır?
-
-C: Aspose.PDF for .NET, sağlanan kaynak kodunda gösterildiği gibi, ekler için dosya sıkıştırmayı devre dışı bırakmanıza olanak tanıyan, kullanımı kolay bir API sağlar.
-
-#### S: Daha sonra gerekirse ekler için sıkıştırmayı yeniden etkinleştirebilir miyim?
-
-C: Evet, gerekirse sıkıştırmayı tekrar etkinleştirmek için ekin ayarlarını değiştirebilirsiniz.
-
-#### S: PDF'yi sıkıştırmayı destekleyen bir aygıtta veya yazılımda açarsam ne olur?
-
-C: PDF'yi sıkıştırmayı destekleyen bir aygıtta veya yazılımda açarsanız, ek sıkıştırılmamış olarak görüntülenebilir ve bu durum dosya boyutunu ve oluşturma performansını etkileyebilir.
-
-#### S: Sıkıştırmanın devre dışı bırakılmasının önerildiği belirli senaryolar var mı?
-
-C: Yüksek çözünürlüklü görüntüler veya hassas belgeler gibi orijinal kalitenin ve veri bütünlüğünün korunmasının öncelikli olduğu ekler için sıkıştırmanın devre dışı bırakılması önerilir.
+### Aspose.PDF için nasıl destek alabilirim?
+ Destek almak için şu adresi ziyaret edebilirsiniz:[Aspose forumu](https://forum.aspose.com/c/pdf/10).

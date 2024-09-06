@@ -115,7 +115,7 @@ Odpověď: Ano, Aspose.PDF pro .NET vám umožňuje nastavit cílové odkazy pro
 
 #### Otázka: Mohu nastavit cílové odkazy pro navigaci na konkrétní stránky v jiném souboru PDF?
 
-Odpověď: Ano, pomocí Aspose.PDF for .NET můžete nastavit cílové odkazy pro navigaci na konkrétní stránky v jiném souboru PDF.
+Odpověď: Ano, můžete nastavit cílové odkazy pro navigaci na konkrétní stránky v jiném souboru PDF pomocí Aspose.PDF for .NET.
 
 #### Otázka: Existují nějaká omezení pro nastavení cílových odkazů?
 

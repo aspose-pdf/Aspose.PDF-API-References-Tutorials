@@ -41,7 +41,7 @@ För att arbeta med ett PDF-dokument måste du först ladda det i din Java-appli
 Document pdfDocument = new Document("example.pdf");
 ```
 
- Byta ut`"example.pdf"` med sökvägen till din PDF-fil.
+ Ersätta`"example.pdf"` med sökvägen till din PDF-fil.
 
 ## Navigera till ett strukturelement
 

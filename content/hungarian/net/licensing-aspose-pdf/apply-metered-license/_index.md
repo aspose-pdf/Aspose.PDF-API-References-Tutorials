@@ -2,127 +2,110 @@
 title: Konfigurálja a mért licenckulcsokat PDF-fájlban
 linktitle: Konfigurálja a mért licenckulcsokat PDF-fájlban
 second_title: Aspose.PDF for .NET API Reference
-description: Útmutató lépésről lépésre a mérőszámos licenckulcsok PDF-fájlban történő beállításához az Aspose.PDF for .NET-hez és a fejlett funkciók előnyeinek kihasználásához.
+description: Ebből az átfogó, lépésenkénti útmutatóból megtudhatja, hogyan konfigurálhatja a mérőszámú licenckulcsokat PDF-fájljaiban az Aspose.PDF for .NET használatával.
 type: docs
 weight: 10
 url: /hu/net/licensing-aspose-pdf/configure-metered-license/
 ---
-Ebben az oktatóanyagban lépésről lépésre végigvezetjük, hogyan állíthat be mérőszámos licenckulcsokat PDF-fájlban az Aspose.PDF for .NET segítségével. A mért licenc lehetővé teszi az Aspose.PDF fejlett funkcióinak használatát a tényleges fogyasztás alapján.
+## Bevezetés
 
-### 1. lépés: A licenckulcsok konfigurálása
+Készen áll arra, hogy belemerüljön a PDF-kezelés világába az Aspose.PDF for .NET használatával? Függetlenül attól, hogy nagyméretű dokumentum-munkafolyamatokat kezel, vagy csak néhány PDF-fájlt kell kezelnie, a mérsékelt licenc konfigurálása az első lépés az Aspose.PDF teljes potenciáljának kiaknázása felé. Ebben az átfogó útmutatóban végigvezetjük a mérőszámos licenckulcsok PDF-fájljaiban történő beállításának folyamatán. És ne aggódjon – egyszerűvé, lebilincselővé és gyakorlati ismeretekkel gazdagítjuk a dolgokat, hogy az utazás a lehető legzökkenőmentesebb legyen.
 
-A megadott forráskódban meg kell adnia a mért licenc nyilvános és privát kulcsát. Helyettesíteni a "*****" értékeket a saját kulcsaival. Ezeket a kulcsokat akkor kapja meg, amikor mérős licencet vásárol az Aspose-tól.
+## Előfeltételek
+
+Mielőtt elkezdenénk, győződjünk meg arról, hogy rendelkezik-e mindennel, amire szüksége van:
+
+1.  Aspose.PDF for .NET: Győződjön meg arról, hogy letöltötte és telepítette az Aspose.PDF for .NET legújabb verzióját. Beszerezheti a[letöltési oldal](https://releases.aspose.com/pdf/net/).
+2.  Érvényes mért licenckulcsok: Szüksége lesz mért nyilvános és privát kulcsaira. Ha még nem rendelkezik velük, akkor ideiglenes engedélyt szerezhet be[itt](https://purchase.aspose.com/temporary-license/).
+3. Fejlesztői környezet: A Visual Studio vagy bármely más kompatibilis .NET fejlesztői környezetet be kell állítani, és készen kell állnia a használatra.
+4. Minta PDF-dokumentum: Legyen kéznél egy PDF-fájl, amellyel tesztelheti a konfigurációs folyamatot.
+
+## Csomagok importálása
+
+Az Aspose.PDF használatához a szükséges névtereket bele kell foglalnia a projektbe. Ez biztosítja, hogy hozzáférjen a mért licenc konfigurálásához szükséges összes osztályhoz és metódushoz.
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Bontsuk le a folyamatot könnyen követhető lépésekre. Minden egyes lépés végigvezeti Önt a konfiguráció egy meghatározott részén, biztosítva, hogy ne maradjon le semmiről.
+
+## 1. lépés: A fejlesztői környezet beállítása
+
+Mielőtt belemerülne a kódba, győződjön meg arról, hogy a fejlesztői környezet be van állítva.
+
+- A Visual Studio megnyitása: Indítsa el a Visual Studio programot, és hozzon létre egy új C#-projektet. Ha már van egy projektje, amelyben konfigurálni szeretné a mért licencet, nyissa meg inkább azt.
+- Referencia hozzáadása az Aspose.PDF fájlhoz: Kattintson jobb gombbal a projektre a Solution Explorerben, lépjen a „NuGet-csomagok kezelése” menüpontra, és keresse meg az „Aspose.PDF for .NET” kifejezést. Telepítse a csomagot, hogy belefoglalja a projektbe.
+
+## 2. lépés: Inicializálja a mért osztályt
+
+ Most, hogy a környezet készen áll, ideje inicializálni a`Metered` osztályt az Aspose.PDF biztosítja.
+
+-  Példány létrehozása: Kezdje a példány létrehozásával`Metered` osztály. Ez az osztály segít a mért licenckulcsok beállításában.
 
 ```csharp
 Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
-metered.SetMeteredKey("PUBLIC_KEY", "PRIVATE_KEY");
 ```
 
-### 2. lépés: A dokumentum betöltése
+-  Miért számít ez: A`Metered` osztály elengedhetetlen, mert lehetővé teszi a mért engedélyezési modell használatát, amely költséghatékonyabb lehet, ha nagy mennyiségű dokumentumfeldolgozással foglalkozik.
 
- Töltse be a PDF dokumentumot a lemezről a`Document` osztályú Aspose.PDF.
+## 3. lépés: Állítsa be a mért licenckulcsokat
+
+ A`Metered` osztály inicializálva, itt az ideje beállítani a mért nyilvános és privát kulcsokat.
+
+-  Hozzáférés a`SetMeteredKey` Módszer: A`SetMeteredKey` metódust használjuk a nyilvános és privát kulcsok alkalmazására az Aspose.PDF könyvtárban.
 
 ```csharp
-Document doc = new Document(dataDir + "input.pdf");
+metered.SetMeteredKey("YOUR_PUBLIC_KEY", "YOUR_PRIVATE_KEY");
 ```
 
-### 3. lépés: A dokumentum oldalszámának lekérése
+-  Fontos megjegyzés: Cserélje ki`"YOUR_PUBLIC_KEY"` és`"YOUR_PRIVATE_KEY"` tényleges mért licenckulcsokkal. Ezek a kulcsok kulcsfontosságúak az Aspose.PDF teljes képességeinek aktiválásához.
 
- Használja a`Count` tulajdona a`Pages` gyűjtemény, hogy megkapja a dokumentum teljes oldalát.
+## 4. lépés: Töltse be a PDF-dokumentumot
 
-```csharp
-Console.WriteLine(doc.Pages.Count);
-```
+Ezután töltse be a PDF dokumentumot, amellyel dolgozni szeretne.
 
-### Forráskód minta a Configure Metered License Aspose.PDF for .NET használatával programhoz 
+- Adja meg a dokumentum elérési útját: Határozza meg a PDF-fájl elérési útját. Ez az a dokumentum, amelyen alkalmazni fogja a mért licenckonfigurációt.
 
 ```csharp
-
-// A dokumentumok könyvtárának elérési útja.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// állítsa be a mért nyilvános és privát kulcsokat
-Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
-//Hozzáférés a setMeteredKey tulajdonsághoz, és paraméterként adjon át nyilvános és privát kulcsokat
-metered.SetMeteredKey("*****", "*****");
-// Töltse be a dokumentumot a lemezről.
 Document doc = new Document(dataDir + "input.pdf");
-//Szerezze meg a dokumentum oldalszámát
-Console.WriteLine(doc.Pages.Count);
-
 ```
+
+-  A dokumentum betöltése: A`Document` osztály az Aspose.PDF-ben lehetővé teszi a PDF-fájlok könnyű betöltését és kezelését.
+
+## 5. lépés: Ellenőrizze a konfigurációt
+
+Végül ellenőrizzük, hogy a mért licenc megfelelően van-e konfigurálva.
+
+- Ellenőrizze az oldalszámot: Egy egyszerű módja annak, hogy ellenőrizze, hogy minden jól működik-e, ha hozzáfér a betöltött dokumentum oldalszámához. Ha a mért licenc megfelelően van beállítva, ennek a műveletnek licencproblémák nélkül kell lezajlania.
+
+```csharp
+Console.WriteLine(doc.Pages.Count);
+```
+
+- Miért számít ez a lépés: Az oldalszám ellenőrzésével megerősíti, hogy a dokumentum hozzáférhető, és a licenc a várt módon működik.
 
 ## Következtetés
 
-Ebben az oktatóanyagban elmagyaráztuk, hogyan állíthat be mérőszámos licencet az Aspose.PDF segítségével .NET-hez. Méretes licenc használatával kihasználhatja az Aspose.PDF fejlett funkcióit a tényleges használat alapján. Győződjön meg arról, hogy érvényes licenckulcsokat ad meg az Aspose.PDF minden funkciójával együtt történő használatához.
+Gratulálok! Sikeresen konfigurálta a mért licenckulcsokat a PDF-fájlokhoz az Aspose.PDF for .NET használatával. Ez a beállítás nemcsak az Aspose.PDF könyvtárban rejlő teljes potenciált szabadít fel, hanem azt is biztosítja, hogy Ön készen álljon a nagyszabású PDF-feldolgozási feladatok egyszerű kezelésére.
 
-### GYIK a mért licenckulcsok PDF-fájlban történő konfigurálásához
+## GYIK
 
-#### K: Mi az a mérsékelt licenc az Aspose.PDF-ben?
+### Mi az a mért licenc az Aspose.PDF-ben?  
+A mért licenc lehetővé teszi, hogy az API-ért a használat alapján fizessen, nem pedig egyszeri díj ellenében. Ideális nagy mennyiségű dokumentum feldolgozásához.
 
-V: Az Aspose.PDF számlás licence egy olyan licencmodell, amely lehetővé teszi, hogy fix licencdíj helyett a szolgáltatások tényleges felhasználása alapján fizessen. Lehetővé teszi az Aspose.PDF fejlett funkcióinak használatát, miközben csak azért fizet, amit használ.
+### Hogyan szerezhetek számlás licenckulcsokat?  
+ Méretes licenckulcsokat szerezhet be, ha vásárol egy licencet a következőtől[itt](https://purchase.aspose.com/buy) vagy ideiglenes engedély igénylésével.
 
-#### K: Miért érdemes fizetős licencet használnom az Aspose.PDF fájlhoz?
+### Használhatom az Aspose.PDF-et licenc nélkül?  
+Igen, de az ingyenes verziónak vannak korlátai. Az összes funkcióhoz való korlátlan hozzáféréshez érvényes licencet kell alkalmaznia.
 
-V: A mért licenc használata költségmegtakarítást és rugalmasságot kínál. Csak a használt funkciókért kell fizetnie, így alkalmas különböző igényű projektekhez. Kiküszöböli az előzetes licencdíjak szükségességét, és lehetővé teszi a fejlett PDF-funkciók elérését.
+### Mi történik, ha nem állítom be megfelelően a mért licencet?  
+Ha a mért licenc nincs megfelelően beállítva, előfordulhat, hogy az alkalmazás nem fér hozzá az összes szolgáltatáshoz, vagy a licenceléssel kapcsolatos kivételeket dob fel.
 
-#### K: Hogyan szerezhetek számlás licenckulcsokat?
-
-V: Ha mérős licencet vásárol az Aspose-tól, kap egy pár nyilvános és privát kulcsot. Ezeket a kulcsokat a rendszer az Aspose.PDF alkalmazás hitelesítésére és mérőszámos licencelésének engedélyezésére fogja használni.
-
-#### K: Hogyan konfigurálhatom a fizetős licenckulcsokat az Aspose.PDF fájlban .NET-hez?
-
- V: A mért licenckulcsok konfigurálásához használja a`SetMeteredKey` módszere a`Aspose.Pdf.Metered` osztály. Cserélje ki`"PUBLIC_KEY"` és`"PRIVATE_KEY"` a valódi kulcsaiddal.
-
-```csharp
-Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
-metered.SetMeteredKey("PUBLIC_KEY", "PRIVATE_KEY");
-```
-
-#### K: Hogyan tölthetek be PDF-dokumentumot az Aspose.PDF for .NET használatával?
-
- V: PDF dokumentum lemezről történő betöltéséhez használja a`Document` osztályú Aspose.PDF fájlt, és adja meg a fájl elérési útját.
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
-#### K: Hogyan kaphatom meg a PDF-dokumentum teljes oldalszámát?
-
- V: Egy PDF-dokumentum teljes oldalszámának megtekintéséhez használja a`Count` tulajdona a`Pages` Gyűjtemény.
-
-```csharp
-int pageCount = doc.Pages.Count;
-Console.WriteLine("Total pages: " + pageCount);
-```
-
-#### K: Használhatom a mért licencet más Aspose termékekhez?
-
-V: Igen, az Aspose különböző termékeihez elérhető a mérőszámos licenc, amely lehetővé teszi, hogy a szolgáltatások széles skálájáért a használat alapján fizessen.
-
-#### K: Minden típusú projekthez alkalmas a mért licenc?
-
-V: A mért licencelés változó funkcióhasználatú projektekhez alkalmas. Előfordulhat, hogy nem költséghatékony olyan projektek esetén, amelyek következetesen, magas funkciókat használnak.
-
-#### K: Hol találhatok további információt az Aspose.PDF mért licencelésről?
-
- V: Ha további információra van szüksége a mérőszámos engedélyezésről, az árakról és az előnyökről, keresse fel a[Aspose.PDF mért licenc](https://purchase.aspose.com/pricing/pdf/net) oldalon.
-
-#### K: Hogyan biztosíthatom a mért licenckulcsok biztonságát?
-
-V: A mért licenckulcsokat hitelesítésre használják, és érzékeny információk. Ügyeljen arra, hogy ezeket bizalmasan kezelje, és ne ossza meg nyilvánosan.
-
-#### K: Válthatok a hagyományos és a mért engedélyezés között?
-
-V: Igen, a projekt követelményei alapján válthat az Aspose.PDF hagyományos és mért licencelése között.
-
-#### K: Használhatok próbaverziót a mérőszámos licenc vásárlása előtt?
-
- V: Igen, kipróbálhatod a[ingyenes próbaverzió](https://products.aspose.com/pdf/net) Az Aspose.PDF-ből, hogy értékelje szolgáltatásait és funkcionalitását, mielőtt megvásárolná a fizetős licencet.
-
-#### K: Milyen gyakran kell konfigurálnom a mért licenckulcsokat?
-
-V: A mért licenckulcsokat csak egyszer kell konfigurálnia, amikor az alkalmazás elindul. Hozzáférést biztosít a speciális funkciókhoz az alkalmazás teljes futási ideje alatt.
-
-#### K: Alkalmazhatok mérőszámos licencelést egy meglévő alkalmazásra?
-
-V: Igen, integrálhatja a mért licencelést egy meglévő Aspose.PDF alkalmazásba, hogy kihasználja annak előnyeit.
+### Válthatok a különböző licenctípusok között az Aspose.PDF fájlban?  
+Igen, az Aspose.PDF lehetővé teszi a különböző licenctípusok (például normál és fizetős) közötti váltást a megfelelő licenckulcsok konfigurálásával az alkalmazásban.

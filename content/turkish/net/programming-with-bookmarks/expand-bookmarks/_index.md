@@ -1,158 +1,125 @@
 ---
-title: PDF Dosyasındaki Yer İmlerini Genişlet
-linktitle: PDF Dosyasındaki Yer İmlerini Genişlet
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile gelişmiş gezinme için PDF dosyasındaki yer işaretlerini kolayca genişletin.
+title: PDF Dosyasında Yer İşaretlerini Genişlet
+linktitle: PDF Dosyasında Yer İşaretlerini Genişlet
+second_title: Aspose.PDF for .NET API Referansı
+description: Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak PDF dosyalarındaki yer imlerini nasıl genişleteceğinizi öğrenin. PDF gezinmesini geliştirmek isteyen geliştiriciler için mükemmeldir.
 type: docs
 weight: 50
 url: /tr/net/programming-with-bookmarks/expand-bookmarks/
 ---
-PDF dosyasındaki yer işaretlerini genişletmek, varsayılan olarak tüm açık yer işaretlerini görüntüler. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu izleyerek yer işaretlerini kolayca genişletebilirsiniz:
+## giriiş
 
-## 1. Adım: Gerekli kitaplıkları içe aktarın
+Hiç bir PDF dosyasını açıp yer imlerinin hepsinin daraltılmış olduğunu gördünüz mü? Özellikle uzun bir belgede gezinmeye çalıştığınızda can sıkıcı olabilir. Neyse ki, .NET için Aspose.PDF ile PDF dosyalarınızdaki yer imlerini programatik olarak kolayca genişletebilirsiniz. Bu kılavuz, kodun her bir bölümünü ve nasıl çalıştığını anlamanızı sağlayarak sizi adım adım süreçte yönlendirecektir. O halde, en sevdiğiniz içeceği alın ve PDF düzenleme dünyasına dalalım!
 
-Başlamadan önce C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. Gerekli ithalat direktifi aşağıdadır:
+## Ön koşullar
+
+Başlamadan önce, yerinde olması gereken birkaç şey var:
+
+1. Visual Studio: Makinenizde Visual Studio'nun yüklü olduğundan emin olun. .NET geliştirme için en iyi ortamdır.
+2.  .NET için Aspose.PDF: Aspose.PDF kütüphanesini indirip yüklemeniz gerekecek. Bunu bulabilirsiniz[Burada](https://releases.aspose.com/pdf/net/).
+3. Temel C# Bilgisi: C# programlamaya aşina olmak, kod parçacıklarını daha iyi anlamanıza yardımcı olacaktır.
+
+## Paketleri İçe Aktar
+
+Başlamak için, C# projenize gerekli paketleri içe aktarmanız gerekir. Bunu nasıl yapabileceğiniz aşağıda açıklanmıştır:
+
+### Yeni Bir Proje Oluştur
+
+Visual Studio'yu açın ve yeni bir C# projesi oluşturun. Basitlik için bir Konsol Uygulaması seçebilirsiniz.
+
+### Aspose.PDF Referansını Ekle
+
+1. Çözüm Gezgini’nde projenizin üzerine sağ tıklayın.
+2. "NuGet Paketlerini Yönet" seçeneğini seçin.
+3. "Aspose.PDF" dosyasını arayın ve en son sürümü yükleyin.
+
+### Ad Alanını İçe Aktar
+
+C# dosyanızın en üstüne Aspose.PDF ad alanını içe aktarın:
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 ```
 
-## 2. Adım: Belgeler klasörünün yolunu ayarlayın
+Artık her şeyi ayarladığımıza göre, gerçek koda geçelim!
 
- Bu adımda, yer işaretlerini genişletmek istediğiniz PDF dosyasının bulunduğu klasörün yolunu belirtmeniz gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"`belgeler klasörünüzün gerçek yolunu içeren aşağıdaki kodda:
+## Adım 1: Belge Dizininizi Ayarlayın
+
+Öncelikle, belgeler dizininize giden yolu belirtmeniz gerekir. Giriş PDF dosyanızın bulunduğu ve çıktı dosyasının kaydedileceği yer burasıdır.
 
 ```csharp
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 3. Adım: PDF belgesini açın
+## Adım 2: PDF Belgesini açın
 
-Şimdi yer işaretlerini genişletmek istediğimiz PDF belgesini aşağıdaki kodu kullanarak açacağız:
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
-## Adım 4: Sayfa Görüntüleme Modunu Ayarlayın
-
-Bu adımda, sayfa görüntüleme modunu varsayılan olarak yer imlerini gösterecek şekilde ayarlayacağız. biz kullanıyoruz`PageMode` mülkiyeti`doc` İstenilen sayfa modunu ayarlamak için nesne. İşte ilgili kod:
+ Sonra, genişletmek istediğiniz yer imlerini içeren PDF belgesini açacaksınız. Bu,`Document` Aspose.PDF kütüphanesinden sınıf.
 
 ```csharp
-doc.PageMode = PageMode.UseOutlines;
-```
-
-## 5. Adım: Yer imlerine göz atın ve onları genişletin
-
- Şimdi belgenin yer imleri koleksiyonundaki her bir yer imi öğesi arasında geçiş yapacağız ve her öğenin açık durumunu şu şekilde ayarlayacağız:`true` bunları varsayılan olarak genişletmek için. İşte ilgili kod:
-
-```csharp
-foreach(OutlineItemCollection item in doc.Outlines)
-{
-     item. Open = true;
-}
-```
-
-## 6. Adım: Güncellenen dosyayı kaydedin
-
- Son olarak, güncellenen PDF dosyasını kullanarak kaydediyoruz.`Save` yöntemi`doc` nesne. İşte ilgili kod:
-
-```csharp
-dataDir = dataDir + "ExpandBookmarks_out.pdf";
-doc.Save(dataDir);
-```
-
-### Aspose.PDF for .NET kullanarak Yer İmlerini Genişletme için örnek kaynak kodu 
-```csharp
-// Belgeler dizininin yolu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
-Document doc = new Document(dataDir + "input.pdf");
-// Sayfa görüntüleme modunu ayarlayın; örneğin küçük resimleri göster, tam ekran göster, ek panelini göster
+Document doc = new Document(dataDir + "input-bookmark.pdf");
+```
+
+## Adım 3: Sayfa Görüntüleme Modunu Ayarlayın
+
+Şimdi, belgenin sayfa görüntüleme modunu ayarlamanız gerekiyor. Bu, PDF açıldığında nasıl görüntüleneceğini belirler. Bu durumda, ana hatları (yer imlerini) kullanmak istiyoruz.
+
+```csharp
+//Sayfa görüntüleme modunu ayarlayın, yani küçük resimleri göster, tam ekran göster, ek panelini göster
 doc.PageMode = PageMode.UseOutlines;
-// PDF dosyasının ana hatlar koleksiyonundaki her bir Ouline öğesi arasında geçiş yapın
+```
+
+## Adım 4: Anahat Öğeleri Arasında Gezinin
+
+İşte eğlenceli kısım geliyor! PDF'in anahat koleksiyonundaki her anahat öğesini dolaşacak ve açık durumlarını true olarak ayarlayacaksınız. Bu, yer imlerini genişletecektir.
+
+```csharp
+// PDF dosyasının ana hat koleksiyonundaki her Ana Hat öğesini dolaşın
 foreach (OutlineItemCollection item in doc.Outlines)
 {
-	// Anahat öğesi için açık durumu ayarla
-	item.Open = true;
+    // Anahat öğesi için açık durumu ayarla
+    item.Open = true;
 }
+```
+
+## Adım 5: Çıktı Belgesini Kaydedin
+
+Yer imlerini genişlettikten sonra, değiştirilen belgeyi kaydetme zamanı geldi. Çıktı PDF'i için yeni bir dosya adı belirteceksiniz.
+
+```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 // Çıktıyı kaydet
 doc.Save(dataDir);
+```
+
+## Adım 6: Onay Mesajı
+
+Son olarak, yer imlerinin başarıyla genişletildiğini size bildirmek için konsola bir onay mesajı yazdırabilirsiniz.
+
+```csharp
 Console.WriteLine("\nBookmarks expanded successfully.\nFile saved at " + dataDir);
 ```
 
 ## Çözüm
 
-Tebrikler! Artık Aspose.PDF for .NET ile yer imleri geliştirmeye yönelik adım adım bir kılavuza sahipsiniz. PDF belgelerinizdeki tüm varsayılan yer işaretlerini göstermek için bu kodu kullanabilirsiniz.
+Ve işte karşınızda! Aspose.PDF for .NET kullanarak bir PDF dosyasındaki yer imlerini başarıyla genişlettiniz. Bu basit ama güçlü kütüphane, PDF belgelerini kolaylıkla düzenlemenizi sağlayarak hayatınızı çok daha kolay hale getirir. İster kişisel bir proje ister profesyonel bir uygulama üzerinde çalışıyor olun, Aspose.PDF cephaneliğinizde bulundurmanız gereken harika bir araçtır.
 
-Gelişmiş yer imi düzenleme özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
+## SSS
 
-### PDF dosyasındaki yer işaretlerini genişletmeye ilişkin SSS
+### Aspose.PDF for .NET nedir?
+Aspose.PDF for .NET, geliştiricilerin PDF belgelerini programlı bir şekilde oluşturmalarına, düzenlemelerine ve dönüştürmelerine olanak tanıyan güçlü bir kütüphanedir.
 
-#### S: PDF dosyasındaki yer işaretleri nedir?
+### Aspose.PDF'yi ücretsiz kullanabilir miyim?
+ Evet, Aspose kütüphanenin özelliklerini keşfetmeniz için kullanabileceğiniz ücretsiz bir deneme sürümü sunuyor. İndirebilirsiniz[Burada](https://releases.aspose.com/).
 
-C: Bir PDF dosyasındaki yer imleri, kullanıcıların belge içindeki belirli bölümlere veya sayfalara hızlı bir şekilde atlamasına olanak tanıyan gezinme yardımcılarıdır. Bir belgenin farklı bölümlerine erişmenin kolay bir yolunu sağlarlar.
+### Daha fazla dokümanı nerede bulabilirim?
+ .NET için Aspose.PDF'de kapsamlı belgeler bulabilirsiniz[Burada](https://reference.aspose.com/pdf/net/).
 
-#### S: Bir PDF dosyasındaki yer işaretlerini neden genişletmek isteyeyim?
+### Aspose.PDF için destek mevcut mu?
+ Kesinlikle! Aspose topluluğundan destek alabilirsiniz[Burada](https://forum.aspose.com/c/pdf/10).
 
-C: Yer işaretlerini genişletmek, tüm yer işaretlerini varsayılan olarak genişletilmiş durumda görüntüleyerek kullanıcı deneyimini iyileştirebilir. Bu, kullanıcılara belgenin yapısına ilişkin net bir genel bakış sunar ve farklı bölümlere kolayca gitmelerine olanak tanır.
-
-#### S: C# projem için gerekli kitaplıkları nasıl içeri aktarabilirim?
-
-C: C# projeniz için gerekli kitaplığı içe aktarmak için aşağıdaki içe aktarma yönergesini kullanın:
-
-```csharp
-using Aspose.Pdf;
-```
-
-Bu yönerge Aspose.PDF for .NET tarafından sağlanan sınıfları ve yöntemleri kullanmanızı sağlar.
-
-#### S: Belgeler klasörünün yolunu nasıl belirlerim?
-
- C: Sağlanan kaynak kodunda değiştirin`"YOUR DOCUMENT DIRECTORY"` çalışmak istediğiniz PDF dosyasını içeren klasörün gerçek yolunu belirtin. Bu, kodun hedef PDF dosyasını bulabilmesini sağlar.
-
-#### S: Yer işaretlerini genişletmek için bir PDF belgesini nasıl açarım?
-
-C: Yer imlerini genişletmek amacıyla bir PDF belgesi açmak için aşağıdaki kodu kullanın:
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
- Yer değiştirmek`"input.pdf"` gerçek dosya adı ile.
-
-#### S: Sayfa görüntüleme modunu varsayılan olarak yer imlerini gösterecek şekilde nasıl ayarlarım?
-
-C: Sayfa görüntüleme modunu varsayılan olarak yer imlerini gösterecek şekilde ayarlamak için`PageMode` mülkiyeti`doc` nesne:
-
-```csharp
-doc.PageMode = PageMode.UseOutlines;
-```
-
-#### S: PDF belgesindeki tüm yer işaretlerini nasıl genişletirim?
-
- C: Tüm yer imlerini genişletmek için, belgenin ana hatlar koleksiyonundaki her bir yer imi öğesi arasında dolaşın ve`Open` mülkiyet`true`:
-
-```csharp
-foreach (OutlineItemCollection item in doc.Outlines)
-{
-    item.Open = true;
-}
-```
-
-#### S: Bir yer iminde iç içe geçmiş alt yer imleri varsa ne olur?
-
-C: Bir yer iminde yuvalanmış alt yer imleri varsa, ana yer imini genişletmek aynı zamanda alt yer imlerini de genişleterek belgenin yapısına ilişkin kapsamlı bir görünüm sağlar.
-
-#### S: Yer imlerini genişlettikten sonra güncellenen PDF dosyasını nasıl kaydedebilirim?
-
-C: Yer imlerini genişlettikten sonra güncellenen PDF dosyasını kaydetmek için aşağıdaki kodu kullanın:
-
-```csharp
-dataDir = dataDir + "ExpandBookmarks_out.pdf";
-doc.Save(dataDir);
-```
-
-#### S: Genişletilmiş yer imlerinin görünümünü özelleştirebilir miyim?
-
-C: Bu eğitim varsayılan olarak yer imlerini genişletmeye odaklansa da, Aspose.PDF'in diğer özelliklerini ve özelliklerini kullanarak yer imlerinin görünümünü özelleştirebilirsiniz.
+### Aspose.PDF için lisans nasıl satın alabilirim?
+ Aspose.PDF için bir lisans satın alabilirsiniz[Burada](https://purchase.aspose.com/buy).

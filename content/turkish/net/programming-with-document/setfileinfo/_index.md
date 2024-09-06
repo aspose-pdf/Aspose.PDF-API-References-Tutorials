@@ -1,27 +1,27 @@
 ---
 title: PDF Dosyasında Dosya Bilgilerini Ayarla
 linktitle: PDF Dosyasında Dosya Bilgilerini Ayarla
-second_title: .NET API Referansı için Aspose.PDF
-description: Bu adım adım kılavuzla PDF dosyasındaki dosya bilgilerini ayarlamak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin.
+second_title: Aspose.PDF for .NET API Referansı
+description: Bu adım adım kılavuzla Aspose.PDF for .NET'i kullanarak PDF dosyasındaki dosya bilgilerini nasıl ayarlayacağınızı öğrenin.
 type: docs
 weight: 310
 url: /tr/net/programming-with-document/setfileinfo/
 ---
-Aspose.PDF for .NET kullanarak PDF dosyalarını yönetmeyi gerektiren bir proje üzerinde çalışıyorsanız, kullanmak isteyebileceğiniz özelliklerden biri, bir PDF belgesi için dosya bilgilerini ayarlama yeteneğidir. Dosya bilgileri yazar, oluşturulma tarihi, anahtar kelimeler, değiştirilme tarihi, konu ve başlık gibi çeşitli ayrıntıları içerir. Bu kılavuz, Aspose.PDF for .NET ile C# kaynak kodunu kullanarak bir PDF belgesi için dosya bilgilerini ayarlama sürecinde size yol gösterecektir.
+Aspose.PDF for .NET kullanarak PDF dosyalarını yönetmeyi gerektiren bir proje üzerinde çalışıyorsanız, kullanmak isteyebileceğiniz özelliklerden biri PDF belgesi için dosya bilgilerini ayarlama yeteneğidir. Dosya bilgileri yazar, oluşturma tarihi, anahtar sözcükler, değişiklik tarihi, konu ve başlık gibi çeşitli ayrıntıları içerir. Bu kılavuz, Aspose.PDF for .NET ile C# kaynak kodunu kullanarak PDF belgesi için dosya bilgilerini ayarlama sürecinde size yol gösterecektir.
 
-## Aspose.PDF for .NET kullanarak dosya bilgilerini ayarlamak için adım adım kılavuz
+## Aspose.PDF for .NET kullanarak dosya bilgilerini ayarlamaya yönelik adım adım kılavuz
 
 1. Visual Studio IDE'nizde yeni bir C# projesi oluşturun.
-2. Projenize Aspose.PDF for .NET kitaplığına bir referans ekleyin.
+2. Projenize Aspose.PDF for .NET kütüphanesine bir referans ekleyin.
 3. Dosya bilgilerini değiştirmek istediğiniz PDF dosyasının yolunu sağlayarak yeni bir PDF belge nesnesi oluşturun.
 
-## Adım 1: Belgeler dizininin yolunu ayarlayın.
+## Adım 1: Belgeler dizinine giden yolu ayarlayın.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 2. Adım: PDF belgesini açın
+## Adım 2: PDF belgesini açın
 
 ```csharp
 // Belgeyi aç
@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "SetFileInfo.pdf");
 DocumentInfo docInfo = new DocumentInfo(pdfDocument);
 ```
 
-## Adım 4: DocumentInfo nesnesinin özelliklerini kullanarak istenen dosya bilgisi değerlerini ayarlayın.
+## Adım 4: DocumentInfo nesnesinin özelliklerini kullanarak istenilen dosya bilgisi değerlerini ayarlayın.
 
 ```csharp
 docInfo.Author = "Aspose";
@@ -58,13 +58,13 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + dataDir);
 ```
 
-Aspose.PDF for .NET'i kullanarak bir PDF belgesinin dosya bilgilerini başarıyla ayarladınız.
+Aspose.PDF for .NET kullanarak bir PDF belgesi için dosya bilgilerini başarıyla ayarladınız.
 
-### Aspose.PDF for .NET kullanarak Dosya Bilgilerini Ayarlama için örnek kaynak kodu
+### .NET için Aspose.PDF kullanarak Set File Info için örnek kaynak kodu
 
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Belgeyi aç
@@ -89,18 +89,18 @@ Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + da
 
 ## Çözüm
 
-Sonuç olarak Aspose.PDF for .NET, PDF belgeleri için dosya bilgilerini ayarlamanın basit ve etkili bir yolunu sunar. Yukarıda belirtilen adımları takip ederek C# kaynak kodunu kullanarak PDF belgeleriniz için istediğiniz dosya bilgisi değerlerini kolayca ayarlayabilirsiniz.
+Sonuç olarak, Aspose.PDF for .NET, PDF belgeleri için dosya bilgilerini ayarlamanın basit ve etkili bir yolunu sağlar. Yukarıda belirtilen adımları izleyerek, C# kaynak kodunu kullanarak PDF belgeleriniz için istediğiniz dosya bilgisi değerlerini kolayca ayarlayabilirsiniz.
 
-### PDF dosyasındaki dosya bilgilerini ayarlamak için SSS
+### PDF dosyasındaki set dosyası bilgilerine ilişkin SSS
 
 #### S: Örnekte belirtilmeyen ek dosya bilgisi özelliklerini ayarlayabilir miyim?
 
- C: Evet, ek dosya bilgisi özelliklerini aşağıdaki komutu kullanarak ayarlayabilirsiniz:`DocumentInfo` Aspose.PDF for .NET'teki nesne.`DocumentInfo`sınıf, üretici, sürüm ve özel özellikler gibi ek bilgileri ayarlamanıza olanak tanıyan çeşitli özellikler sağlar.
+ A: Evet, ek dosya bilgisi özelliklerini kullanarak ayarlayabilirsiniz.`DocumentInfo` .NET için Aspose.PDF'deki nesne.`DocumentInfo`sınıf, üretici, sürüm ve özel özellikler gibi ek bilgileri ayarlamanıza olanak tanıyan çeşitli özellikler sağlar.
 
-#### S: Dosya bilgilerini mevcut bir PDF belgesinden almak mümkün mü?
+#### S: Mevcut bir PDF belgesinden dosya bilgilerini almak mümkün müdür?
 
- C: Evet, Aspose.PDF for .NET'i kullanarak dosya bilgilerini mevcut bir PDF belgesinden alabilirsiniz. Bunu yapmak için şunları kullanabilirsiniz:`DocumentInfo` Dosya bilgisi özelliklerine erişmek ve PDF belgesinde saklanan bilgileri okumak için nesneyi kullanın.
+ A: Evet, Aspose.PDF for .NET kullanarak mevcut bir PDF belgesinden dosya bilgilerini alabilirsiniz. Bunu yapmak için,`DocumentInfo` PDF belgesinde saklanan bilgileri okumak ve dosya bilgi özelliklerine erişmek için kullanılan nesne.
 
-#### S: Dosya bilgilerinin ayarlanması orijinal PDF belgesini değiştirir mi?
+#### S: Dosya bilgilerini ayarlamak orijinal PDF belgesini değiştirir mi?
 
-C: Hayır, dosya bilgilerini Aspose.PDF for .NET kullanarak ayarlamak orijinal PDF belgesini değiştirmez. Bunun yerine güncellenmiş dosya bilgileriyle yeni bir PDF belgesi oluşturur. Orijinal PDF belgesi değişmeden kalır.
+A: Hayır, Aspose.PDF for .NET kullanarak dosya bilgilerini ayarlamak orijinal PDF belgesini değiştirmez. Bunun yerine, güncellenmiş dosya bilgileriyle yeni bir PDF belgesi oluşturur. Orijinal PDF belgesi değişmeden kalır.

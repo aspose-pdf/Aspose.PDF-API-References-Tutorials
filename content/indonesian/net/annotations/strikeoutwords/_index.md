@@ -1,125 +1,172 @@
 ---
 title: Coret Kata-kata
 linktitle: Coret Kata-kata
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Artikel ini memberikan panduan langkah demi langkah untuk menggunakan Aspose.PDF untuk fitur Strike Out Words .NET, termasuk panduan langkah demi langkah dan penjelasannya
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara mencoret kata-kata dalam PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah yang komprehensif ini. Tingkatkan keterampilan mengedit dokumen Anda.
 type: docs
 weight: 150
 url: /id/net/annotations/strikeoutwords/
 ---
-Aspose.PDF untuk .NET adalah perpustakaan manipulasi dan pemrosesan dokumen PDF yang menyediakan berbagai fitur untuk membuat, memodifikasi, dan mengonversi file PDF. Salah satu fitur berguna yang disediakan Aspose.PDF adalah kemampuan untuk mencoret kata atau frasa dalam dokumen PDF menggunakan kode sumber C#. Pada artikel ini, kami akan memberikan panduan langkah demi langkah tentang cara mencoret kata menggunakan Aspose.PDF untuk .NET.
+## Perkenalan
 
-## Langkah 1: Memuat dokumen PDF
-Langkah pertama adalah memuat dokumen PDF yang ingin Anda modifikasi. Dalam tutorial ini, kita akan memuat dokumen PDF bernama "input.pdf" dari folder "DIREKTORI DOKUMEN ANDA". 
+Pernahkah Anda merasa perlu memberi penekanan pada teks tertentu dalam PDF dengan mencoretnya? Baik saat Anda meninjau dokumen, menandai teks, atau sekadar ingin menyorot bagian tertentu, mencoret kata dapat menjadi alat yang berguna. Dalam tutorial ini, kita akan membahas cara melakukannya menggunakan Aspose.PDF untuk .NET. Panduan lengkap ini akan memandu Anda melalui setiap langkah, memastikan Anda memiliki semua informasi yang diperlukan untuk menerapkan fitur ini secara efektif dalam aplikasi .NET Anda. 
+
+## Prasyarat
+
+Sebelum kita masuk ke kode, ada beberapa prasyarat yang harus Anda penuhi untuk mengikuti tutorial ini:
+
+1.  Pustaka Aspose.PDF untuk .NET: Pastikan Anda telah menginstal pustaka Aspose.PDF untuk .NET. Anda dapat[unduh disini](https://releases.aspose.com/pdf/net/).
+
+2. .NET Framework: Pastikan Anda telah menginstal .NET Framework di komputer Anda. Tutorial ini dirancang untuk aplikasi .NET.
+
+3. Lingkungan Pengembangan: Anda memerlukan IDE seperti Visual Studio untuk menulis dan menjalankan kode Anda.
+
+4. Dokumen PDF: Siapkan contoh file PDF yang ingin Anda gunakan. Ini akan menjadi dokumen tempat kita akan mencoret teks.
+
+5. Pengetahuan Dasar C#: Keakraban dengan pemrograman C# diperlukan untuk memahami dan menerapkan langkah-langkah dalam tutorial ini.
+
+## Paket Impor
+
+Sebelum kita dapat memulai pengkodean, kita perlu mengimpor namespace yang diperlukan dalam proyek .NET kita. Ini akan memberi kita akses ke kelas dan metode yang diperlukan untuk memanipulasi file PDF menggunakan Aspose.PDF.
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document document = new Document(dataDir + "input.pdf");
+using System;
+using System.IO;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
 ```
 
-## Langkah 2: Mencari fragmen teks
-Untuk mencoret kata atau frasa tertentu dalam dokumen PDF, Anda harus mencarinya terlebih dahulu. Aspose.PDF menyediakan kelas TextFragmentAbsorber yang dapat digunakan untuk mencari fragmen teks tertentu dalam dokumen PDF.
+Ruang nama ini penting untuk bekerja dengan dokumen PDF, menangani teks, dan menambahkan anotasi seperti coretan.
+
+Di bagian ini, kami akan menguraikan proses mencoret kata-kata dalam dokumen PDF menjadi beberapa langkah sederhana dan mudah dilakukan. Setiap langkah akan disertai dengan penjelasan terperinci untuk memastikan Anda memahami cara kerja semuanya.
+
+## Langkah 1: Muat Dokumen PDF
+
+Langkah pertama adalah memuat dokumen PDF yang ingin Anda edit. Dokumen ini akan menjadi tempat Anda mencoret kata atau frasa tertentu.
 
 ```csharp
-Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
-```
-
-Pada kode di atas, kami mencari fragmen teks "Estoque" di dokumen PDF. Anda dapat memodifikasinya untuk mencari kata atau frasa lain yang ingin Anda coret.
-
-## Langkah 3: Mencoret bagian teks
-Setelah menemukan potongan teks, langkah selanjutnya adalah mencoretnya. Aspose.PDF menyediakan kelas StrikeOutAnnotation yang dapat digunakan untuk membuat anotasi coretan untuk fragmen teks. 
-
-```csharp
-Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle((float)textFragment.Position.XIndent, (float)textFragment.Position.YIndent, (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width, (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
-
-StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-strikeOut.Opacity = .80f;
-strikeOut.Border = new Border(strikeOut);
-strikeOut.Color = Aspose.Pdf.Color.Red;
-textFragment.Page.Annotations.Add(strikeOut);
-```
-
-Dalam kode di atas, kami membuat anotasi coretan untuk setiap fragmen teks yang kami temukan. Kami juga mengatur opasitas, batas, dan warna anotasi yang dicoret.
-
-## Langkah 4: Menyimpan dokumen PDF yang dimodifikasi
-Setelah mencoret bagian teks, simpan dokumen yang dimodifikasi.
-
-```csharp
-dataDir = dataDir + "StrikeOutWords_out.pdf";
-document.Save(dataDir);
-```
-
-### Contoh kode sumber untuk Coret Kata menggunakan Aspose.PDF untuk .NET
-
-
-```csharp
-
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Buka dokumen
+// Buka dokumen PDF
 Document document = new Document(dataDir + "input.pdf");
+```
 
+- `dataDir` : Variabel ini menyimpan jalur ke direktori dokumen Anda. Ganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya tempat berkas PDF Anda berada.
+- `Document` : : Itu`Document` class mewakili dokumen PDF. Dengan meneruskan jalur file ke konstruktornya, kita membuka file PDF untuk diproses.
+
+## Langkah 2: Buat Penyerap TextFragment untuk Menemukan Teks Tertentu
+
+ Selanjutnya, kita akan membuat sebuah instance dari`TextFragmentAbsorber` untuk mencari fragmen teks tertentu dalam dokumen PDF. Ini memungkinkan kita menemukan teks yang ingin kita coret.
+
+```csharp
 // Buat instance TextFragment Absorber untuk mencari fragmen teks tertentu
 Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
-// Iterasi melalui halaman dokumen PDF
+```
+
+- `TextFragmentAbsorber`Kelas ini digunakan untuk menemukan dan mengolah fragmen teks tertentu dalam dokumen PDF. Dalam contoh ini, kita mencari kata "Estoque". Ganti "Estoque" dengan kata atau frasa yang ingin Anda temukan dalam dokumen Anda.
+
+## Langkah 3: Ulangi Halaman Dokumen PDF
+
+ Sekarang setelah kita memiliki`TextFragmentAbsorber`, kita perlu mengulangi setiap halaman dokumen PDF untuk menemukan teks yang ditentukan.
+
+```csharp
+// Ulangi melalui halaman dokumen PDF
 for (int i = 1; i <= document.Pages.Count; i++)
 {
-	// Dapatkan halaman pertama dokumen PDF
-	Page page = document.Pages[1];
-	page.Accept(textFragmentAbsorber);
+    // Dapatkan halaman terkini dari dokumen PDF
+    Page page = document.Pages[i];
+    page.Accept(textFragmentAbsorber);
 }
+```
 
-// Buat kumpulan teks yang diserap
+- `for (int i = 1; i <= document.Pages.Count; i++)`: Perulangan ini mengulangi setiap halaman dokumen PDF.
+- `document.Pages[i]`: Mengambil halaman saat ini yang sedang diproses.
+- `page.Accept(textFragmentAbsorber)` :Metode ini menerapkan`TextFragmentAbsorber` ke halaman saat ini, mencari teks yang ditentukan.
+
+## Langkah 4: Kumpulkan dan Proses Fragmen Teks
+
+Setelah memeriksa halaman-halaman, kami akan mengumpulkan fragmen teks yang ditemukan dan mempersiapkannya untuk diproses lebih lanjut.
+
+```csharp
+// Membuat koleksi fragmen teks yang diserap
 Aspose.Pdf.Text.TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+```
 
-//Ulangi koleksi di atas
+- `TextFragmentCollection`Koleksi ini menyimpan semua fragmen teks yang ditemukan dalam dokumen. Kita akan menggunakan koleksi ini pada langkah berikutnya untuk mencoret teks.
+
+## Langkah 5: Ulangi Fragmen Teks dan Coretlah
+
+Pada langkah ini, kita akan mengulang setiap fragmen teks dalam koleksi kita dan menerapkan anotasi coretan padanya.
+
+```csharp
+// Ulangi koleksi fragmen teks
 for (int j = 1; j <= textFragmentCollection.Count; j++)
 {
 	Aspose.Pdf.Text.TextFragment textFragment = textFragmentCollection[j];
 
-	// Dapatkan dimensi persegi panjang dari objek TextFragment
-	Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
-				(float)textFragment.Position.XIndent,
-				(float)textFragment.Position.YIndent,
-				(float)textFragment.Position.XIndent +
-				(float)textFragment.Rectangle.Width,
-				(float)textFragment.Position.YIndent +
-				(float)textFragment.Rectangle.Height);
+    // Dapatkan dimensi persegi panjang dari objek TextFragment
+    Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
+        (float)textFragment.Position.XIndent,
+        (float)textFragment.Position.YIndent,
+        (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width,
+        (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
 
-	// Buat instance Anotasi StrikeOut
-	StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-	// Atur opacity untuk anotasi
-	strikeOut.Opacity = .80f;
-	// Tetapkan batas untuk contoh anotasi
-	strikeOut.Border = new Border(strikeOut);
-	// Atur warna anotasi
-	strikeOut.Color = Aspose.Pdf.Color.Red;
-	// Tambahkan anotasi ke koleksi anotasi TextFragment
-	textFragment.Page.Annotations.Add(strikeOut);
+    // Membuat contoh Anotasi StrikeOut
+    StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
+
+    // Mengatur properti anotasi coretan
+    strikeOut.Opacity = .80f;
+    strikeOut.Border = new Border(strikeOut);
+    strikeOut.Color = Aspose.Pdf.Color.Red;
+
+    // Tambahkan anotasi ke koleksi anotasi halaman fragmen teks
+    textFragment.Page.Annotations.Add(strikeOut);
 }
+```
+
+- `TextFragment textFragment = textFragmentCollection[j]`: Baris ini mengambil fragmen teks saat ini.
+- `Aspose.Pdf.Rectangle`:Kami menghitung dimensi persegi panjang dari fragmen teks untuk menentukan di mana akan menerapkan coretan.
+- `StrikeOutAnnotation`: Kelas ini mewakili anotasi coretan. Kami membuat contohnya dengan persegi panjang terhitung dan halaman saat ini.
+- `strikeOut.Opacity`: Properti ini mengatur opasitas garis coretan, menjadikannya 80% terlihat.
+- `strikeOut.Color`Kami mengatur warna coretan menjadi merah. Anda dapat mengubahnya ke warna apa pun yang Anda inginkan.
+- `textFragment.Page.Annotations.Add(strikeOut)`: Ini menambahkan anotasi coretan ke halaman.
+
+## Langkah 6: Simpan Dokumen PDF yang Dimodifikasi
+
+Langkah terakhir adalah menyimpan dokumen PDF yang dimodifikasi dengan tanda coretan yang diterapkan.
+
+```csharp
+// Simpan dokumen PDF yang diperbarui
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
 
+- `dataDir + "StrikeOutWords_out.pdf"`: Ini akan membuat nama berkas baru untuk dokumen yang dimodifikasi. Berkas asli tetap tidak berubah.
+- `document.Save(dataDir)`: Menyimpan dokumen PDF dengan coretan di lokasi yang ditentukan.
+
 ## Kesimpulan
 
-Dalam tutorial ini, kita mempelajari cara menggunakan Aspose.PDF untuk .NET untuk mencoret kata-kata tertentu dalam dokumen PDF. Dengan mengikuti panduan langkah demi langkah dan menggunakan kode sumber C# yang disediakan, Anda dapat dengan mudah memuat dokumen PDF, mencari fragmen teks tertentu, dan membuat anotasi coretan untuk menandai dan mencoret kata-kata tersebut secara visual. Aspose.PDF untuk .NET menyediakan cara sederhana dan efektif untuk memanipulasi dokumen PDF secara terprogram, menjadikannya alat yang berharga bagi pengembang yang bekerja dengan file PDF di aplikasi .NET.
+Selamat! Anda telah berhasil mencoret kata-kata tertentu dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Dengan mengikuti panduan langkah demi langkah ini, kini Anda dapat menyesuaikan dokumen PDF dengan menyorot atau mencoret teks, sehingga dokumen tersebut lebih dinamis dan disesuaikan dengan kebutuhan Anda. Baik Anda membuat anotasi pada dokumen hukum, menyiapkan laporan, atau sekadar menandai teks untuk ditinjau, tutorial ini telah membekali Anda dengan keterampilan untuk melakukannya secara efisien.
 
-### FAQ
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa itu Aspose.PDF untuk .NET?
+### Bisakah saya mengubah warna coretan?
 
-J: Aspose.PDF untuk .NET adalah perpustakaan canggih yang memungkinkan pengembang membuat, mengedit, dan memanipulasi dokumen PDF secara terprogram dalam aplikasi .NET. Ini menyediakan berbagai fitur untuk bekerja dengan file PDF, termasuk ekstraksi teks, penanganan anotasi, pengisian formulir, dan banyak lagi.
+ Ya, Anda dapat mengubah warna dengan memodifikasi`strikeOut.Color`properti. Misalnya, Anda dapat mengaturnya ke`Aspose.Pdf.Color.Blue` untuk coretan biru.
 
-#### T: Dapatkah saya menggunakan Aspose.PDF untuk .NET untuk mencoret kata-kata tertentu dalam dokumen PDF?
+### Apakah mungkin untuk mencoret beberapa kata sekaligus?
 
-J: Ya, Aspose.PDF untuk .NET menyediakan fungsionalitas untuk mencari fragmen teks tertentu dalam dokumen PDF dan kemudian membuat anotasi coretan untuk menandai dan mencoret kata-kata tersebut secara visual.
+ Tentu saja!`TextFragmentAbsorber` dapat digunakan untuk mencari kata atau frasa apa pun dalam dokumen. Anda dapat menerapkan coretan ke beberapa contoh dengan mengulangi`TextFragmentCollection`.
 
-#### T: Bagaimana cara menentukan teks yang ingin saya coret di dokumen PDF?
+### Bagaimana jika saya ingin mencoret teks pada halaman tertentu saja?
 
- A: Untuk menentukan teks yang ingin dicoret, Anda dapat menggunakan`TextFragmentAbsorber` kelas yang disediakan oleh Aspose.PDF untuk .NET. Ini memungkinkan Anda mencari bagian teks tertentu dalam dokumen PDF berdasarkan kriteria yang Anda inginkan.
+ Anda dapat mengubah loop yang berulang melalui halaman untuk hanya menyertakan halaman yang ingin Anda ubah. Misalnya,`for (int i = 1; i <= 3; i++)` akan menerapkan coretan hanya pada tiga halaman pertama.
 
-#### T: Dapatkah saya menyesuaikan tampilan anotasi yang dicoret?
+### Bagaimana cara menyesuaikan ketebalan garis coretan?
 
-J: Ya, Anda dapat menyesuaikan berbagai properti anotasi yang dicoret, seperti opasitas, gaya batas, dan warna. Hal ini memungkinkan Anda menyesuaikan tampilan anotasi yang dicoret dengan kebutuhan spesifik Anda.
+ Anda dapat menyesuaikan ketebalan garis coretan dengan memodifikasi`Border` milik`StrikeOutAnnotation`Ini memungkinkan penyesuaian tampilan coretan.
+
+### Apakah ada cara untuk membatalkan coretan setelah menyimpan dokumen?
+
+Setelah dokumen disimpan, coretan tersebut bersifat permanen. Jika Anda perlu mempertahankan teks asli tanpa coretan, pertimbangkan untuk menyimpan salinan cadangan dokumen asli sebelum menerapkan modifikasi apa pun.

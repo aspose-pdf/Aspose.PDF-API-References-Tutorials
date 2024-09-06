@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-stamps-and-watermarks/add-image-stamp/
 
 ## 第 2 步：載入 PDF 文檔
 
-第一步是將現有的 PDF 文件載入到您的專案中。就是這樣：
+第一步是將現有的 PDF 文件載入到您的專案中。方法如下：
 
 ```csharp
 //文檔目錄的路徑。
@@ -43,7 +43,7 @@ ImageStamp imageStamp = new ImageStamp(dataDir + "aspose-logo.jpg");
 
 ## 步驟 4：配置影像緩衝區屬性
 
-在將影像圖章新增至 PDF 文件之前，您可以設定圖章的各種屬性，例如不透明度、大小、位置等。操作方法如下：
+在將影像圖章新增至 PDF 文件之前，您可以設定圖章的各種屬性，例如不透明度、大小、位置等。
 
 ```csharp
 //配置影像緩衝區屬性
@@ -60,7 +60,7 @@ imageStamp. Opacity = 0.5;
 
 ## 第 5 步：將圖像圖章新增至 PDF
 
-現在圖像圖章已準備就緒，您可以將其新增至 PDF 文件的特定頁面。就是這樣：
+現在圖像圖章已準備就緒，您可以將其新增至 PDF 文件的特定頁面。方法如下：
 
 ```csharp
 //將幀緩衝區新增至特定頁面
@@ -71,7 +71,7 @@ pdfDocument.Pages[1].AddStamp(imageStamp);
 
 ## 步驟 6：儲存輸出文檔
 
-新增影像緩衝區後，您可以儲存修改後的 PDF 文件。就是這樣：
+新增影像緩衝區後，您可以儲存修改後的 PDF 文件。方法如下：
 
 ```csharp
 //儲存輸出文檔
@@ -112,7 +112,7 @@ Console.WriteLine("\nImage stamp added successfully.\nFile saved at " + dataDir)
 
 恭喜！您已經學習如何使用 Aspose.PDF for .NET 新增影像緩衝區。現在，您可以將這些知識應用到您自己的專案中，以將自訂圖像圖章新增至 PDF 文件中。
 
-### 在 PDF 文件中添加圖像印記的常見問題解答
+### 在 PDF 文件中添加圖像印章的常見問題解答
 
 #### Q：使用 Aspose.PDF for .NET 將影像緩衝區新增至 PDF 文件的目的是什麼？
 

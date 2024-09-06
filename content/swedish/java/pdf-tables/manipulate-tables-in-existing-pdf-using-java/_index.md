@@ -29,7 +29,7 @@ För att manipulera tabeller i en befintlig PDF måste vi först ladda PDF-filen
 Document pdfDocument = new Document("existing_document.pdf");
 ```
 
- Byta ut`"existing_document.pdf"` med sökvägen till din PDF-fil. Nu har vi vårt PDF-dokument redo för manipulation.
+ Ersätta`"existing_document.pdf"` med sökvägen till din PDF-fil. Nu har vi vårt PDF-dokument redo för manipulation.
 
 ## Få åtkomst till och manipulera tabeller
 
@@ -47,7 +47,7 @@ absorber.visit(pdfPage);
 TableCollection tables = absorber.getTableList();
 ```
 
- Nu den`tables` samlingen innehåller alla tabeller som finns på första sidan i PDF:en.
+ Nu, den`tables` samlingen innehåller alla tabeller som finns på första sidan i PDF:en.
 
 ### Ändra tabelldata
 
@@ -64,7 +64,7 @@ Cell cell = table.getRows().get_Item(0).getCells().get_Item(0); // Ersätt med r
 cell.getParagraphs().get_Item(0).setText("New Data");
 ```
 
-### Lägga till nya tabeller till en PDF
+### Lägga till nya tabeller i en PDF
 
 Om du behöver lägga till nya tabeller till PDF:en kan du skapa dem programmatiskt och lägga till dem på en sida:
 
@@ -105,7 +105,7 @@ När du har gjort alla nödvändiga ändringar i PDF-dokumentet vill du spara de
 pdfDocument.save("modified_document.pdf");
 ```
 
- Byta ut`"modified_document.pdf"` med önskad sökväg för utdatafilen.
+ Ersätta`"modified_document.pdf"` med önskad sökväg för utdatafilen.
 
 ## Slutsats
 

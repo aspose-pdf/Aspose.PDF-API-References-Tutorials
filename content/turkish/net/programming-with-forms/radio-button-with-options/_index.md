@@ -1,24 +1,24 @@
 ---
-title: Seçeneklerle Radyo Düğmesi
-linktitle: Seçeneklerle Radyo Düğmesi
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET'i kullanarak PDF belgesine kolayca seçenekler içeren bir radyo düğmesi ekleyin.
+title: Seçenekli Radyo Düğmesi
+linktitle: Seçenekli Radyo Düğmesi
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak PDF belgesine seçenekler içeren bir radyo düğmesini kolayca ekleyin.
 type: docs
 weight: 230
 url: /tr/net/programming-with-forms/radio-button-with-options/
 ---
 
-Bu eğitimde size Aspose.PDF for .NET kullanarak bir PDF belgesine seçenekler içeren bir radyo düğmesinin nasıl ekleneceğini göstereceğiz. Bu süreçte size yol göstermek için C# kaynak kodunu adım adım açıklayacağız.
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesine seçeneklerle bir radyo düğmesinin nasıl ekleneceğini göstereceğiz. Bu süreçte size rehberlik etmek için C# kaynak kodunu adım adım açıklayacağız.
 
 ## Adım 1: Hazırlık
 
-Gerekli kitaplıkları içe aktardığınızdan ve belgeler dizininizin yolunu ayarladığınızdan emin olun:
+Gerekli kütüphaneleri içe aktardığınızdan ve belgelerinizin dizinine giden yolu ayarladığınızdan emin olun:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Adım 2: Bir Belge Nesnesini Örneklendirin
+## Adım 2: Bir Belge Nesnesi Oluşturun
 
 Yeni bir PDF belgesi oluşturmak için bir Belge nesnesi örneği oluşturun:
 
@@ -26,7 +26,7 @@ Yeni bir PDF belgesi oluşturmak için bir Belge nesnesi örneği oluşturun:
 Document doc = new Document();
 ```
 
-## 3. Adım: Sayfa ve tablo ekleyin
+## Adım 3: Sayfa ve tablo ekleyin
 
 Belgeye bir sayfa ekleyin ve radyo düğmesi seçeneklerini tutacak bir tablo oluşturun:
 
@@ -37,7 +37,7 @@ table. ColumnWidths = "120 120 120";
 page.Paragraphs.Add(table);
 ```
 
-## Adım 4: RadioButtonField Nesnesini Örneklendirin
+## Adım 4: Bir RadioButtonField Nesnesi Oluşturun
 
 Radyo düğmesini temsil edecek bir RadioButtonField nesnesi oluşturun:
 
@@ -47,9 +47,9 @@ rf. PartialName = "radio";
 doc.Form.Add(rf, 1);
 ```
 
-## 5. Adım: Radyo düğmesi seçeneklerini ekleyin
+## Adım 5: Radyo düğmesi seçeneklerini ekleyin
 
-Radyo düğmesi seçeneklerini RadioButtonField nesnesine ekleyin:
+RadioButtonField nesnesine radyo düğmesi seçeneklerini ekleyin:
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField();
@@ -69,7 +69,7 @@ rf.Add(opt2);
 rf.Add(opt3);
 ```
 
-## 6. Adım: Radyo düğmesi seçeneklerini özelleştirin
+## Adım 6: Radyo düğmesi seçeneklerini özelleştirin
 
 Kenarlık, metin rengi ve başlık metni gibi nitelikleri ayarlayarak radyo düğmesi seçeneklerini özelleştirin:
 
@@ -81,13 +81,13 @@ opt1.Characteristics.Border = System.Drawing.Color.Black;
 opt1.DefaultAppearance.TextColor = System.Drawing.Color.Red;
 opt1.Caption = new TextFragment("Item1");
 
-// opt2 ve opt3 için aynı adımları tekrarlayın
+// Aynı adımları opt2 ve opt3 için tekrarlayın
 
 ```
 
-## 7. Adım: Radyo düğmesi seçeneklerini tabloya ekleyin
+## Adım 7: Tabloya radyo düğmesi seçeneklerini ekleyin
 
-Radyo düğmesi seçeneklerini görüntülemek için tabloya ekleyin:
+Tabloya radyo düğmesi seçeneklerini ekleyerek bunları görüntüleyin:
 
 ```csharp
 Cell c1 = table.Rows.Add().Cells.Add();
@@ -108,11 +108,11 @@ dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Aspose.PDF for .NET kullanan Seçenekli Radyo Düğmesi için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Seçenekli Radyo Düğmesi için örnek kaynak kodu 
 ```csharp
 try
 {
-	// Belgeler dizininin yolu.
+	// Belgeler dizinine giden yol.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	Document doc = new Document();
 	Page page = doc.Pages.Add();
@@ -175,4 +175,4 @@ catch (Exception ex)
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF belgesine başarıyla seçenekler içeren bir radyo düğmesi eklediniz. Artık PDF belgelerinizde etkileşimli formlar oluşturmak için bu yöntemi kullanabilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesine seçenekler içeren bir radyo düğmesi eklemeyi başardınız. Artık bu yöntemi kullanarak PDF belgelerinizde etkileşimli formlar oluşturabilirsiniz.

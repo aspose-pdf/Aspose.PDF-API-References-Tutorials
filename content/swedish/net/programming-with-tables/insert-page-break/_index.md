@@ -152,4 +152,4 @@ doc.Pages[1].Footer = new HeaderFooter()
 
 #### F: Hur kan jag justera sidbrytningsbeteendet baserat på innehållets höjd?
 
-S: Du kan använda`IsBroken` egenskapen för tabellen för att aktivera eller inaktivera automatisk radbrytning över sidor. När inställd på`true`, gör det att rader kan delas över sidor baserat på innehållets höjd.
+ S: Du kan använda`IsBroken` egenskapen för tabellen för att aktivera eller inaktivera automatisk radbrytning över sidor. När inställd på`true`, gör det att rader kan delas över sidor baserat på innehållets höjd.

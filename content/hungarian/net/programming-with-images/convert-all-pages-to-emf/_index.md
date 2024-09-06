@@ -11,7 +11,7 @@ Ez az útmutató lépésről lépésre bemutatja, hogyan alakíthatja át a PDF-
 
 ## 1. lépés: Határozza meg a dokumentumkönyvtárat
 
- Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a PDF-dokumentum található.
+Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a PDF-dokumentum található.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,13 +19,13 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 2. lépés: Nyissa meg a dokumentumot
 
-Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
+ Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ConvertAllPagesToEMF.pdf");
 ```
 
-## 3. lépés: Konvertálja az egyes oldalakat EMF-re
+## 3. lépés: Alakítsa át az egyes oldalakat EMF-re
 
  Ebben a lépésben végigmegyünk a PDF-dokumentum minden oldalán, és átalakítjuk azokat egyedi EMF-fájlokká. Használjuk a`for` ciklus az összes oldalon való iterációhoz.
 
@@ -35,7 +35,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
      // Hozzon létre egy adatfolyamot az EMF-kép mentéséhez
      using (FileStream imageStream = new FileStream(dataDir + "image" + pageCount + "_out" + ".emf", FileMode.Create))
      {
-         // Hozzon létre egy Resolution objektumot
+         //Hozzon létre egy Resolution objektumot
          Resolution resolution = new Resolution(300);
         
          // Hozzon létre egy EMF-eszközt a megadott attribútumokkal
@@ -66,7 +66,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 		// PNG-eszköz létrehozása megadott attribútumokkal
 		// Szélesség, Magasság, Felbontás
 		EmfDevice emfDevice = new EmfDevice(500, 700, resolution);
-		//Konvertálja az adott oldalt, és mentse a képet adatfolyamba
+		// Konvertálja az adott oldalt, és mentse a képet adatfolyamba
 		emfDevice.Process(pdfDocument.Pages[pageCount], imageStream);
 		// Folyamat bezárása
 		imageStream.Close();

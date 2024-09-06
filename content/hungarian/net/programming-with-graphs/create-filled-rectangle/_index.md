@@ -13,7 +13,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy telepítette az Aspose.PDF k�
 
 ## 1. lépés: Dokumentumkönyvtár beállítása
 
-megadott forráskódban meg kell adnia azt a könyvtárat, ahová menteni szeretné az eredményül kapott PDF fájlt. Módosítsa a "dataDir" változót a kívánt könyvtárra.
+A megadott forráskódban meg kell adnia azt a könyvtárat, ahová menteni szeretné az eredményül kapott PDF fájlt. Módosítsa a "dataDir" változót a kívánt könyvtárra.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -48,7 +48,7 @@ graph.Shapes.Add(rect);
 
 ## 5. lépés: A kitöltés színének beállítása
 
-téglalap kitöltési színét a GraphInfo objektum FillColor tulajdonságával tudjuk megadni.
+A téglalap kitöltési színét a GraphInfo objektum FillColor tulajdonságával tudjuk megadni.
 
 ```csharp
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.Red;

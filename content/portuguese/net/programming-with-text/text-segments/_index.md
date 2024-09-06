@@ -1,28 +1,28 @@
 ---
 title: Segmentos de texto em arquivo PDF
 linktitle: Segmentos de texto em arquivo PDF
-second_title: Referência da API Aspose.PDF para .NET
-description: Aprenda como pesquisar segmentos de texto específicos em um arquivo PDF usando expressões regulares no Aspose.PDF for .NET.
+second_title: Referência da API do Aspose.PDF para .NET
+description: Aprenda a pesquisar segmentos de texto específicos em arquivos PDF usando expressões regulares no Aspose.PDF para .NET.
 type: docs
 weight: 540
 url: /pt/net/programming-with-text/text-segments/
 ---
-Este tutorial explica como pesquisar segmentos de texto específicos em um arquivo PDF usando Aspose.PDF for .NET. O código-fonte C# fornecido demonstra diferentes cenários usando expressões regulares.
+Este tutorial explica como pesquisar segmentos de texto específicos em arquivo PDF usando Aspose.PDF para .NET. O código-fonte C# fornecido demonstra diferentes cenários usando expressões regulares.
 
 ## Pré-requisitos
 
 Antes de prosseguir com o tutorial, certifique-se de ter o seguinte:
 
 - Conhecimento básico da linguagem de programação C#.
-- Biblioteca Aspose.PDF para .NET instalada. Você pode obtê-lo no site Aspose ou usar o NuGet para instalá-lo em seu projeto.
+- Biblioteca Aspose.PDF para .NET instalada. Você pode obtê-la no site da Aspose ou usar o NuGet para instalá-la no seu projeto.
 
-## Etapa 1: configurar o projeto
+## Etapa 1: Configurar o projeto
 
-Comece criando um novo projeto C# em seu ambiente de desenvolvimento integrado (IDE) preferido e adicione uma referência à biblioteca Aspose.PDF para .NET.
+Comece criando um novo projeto C# no seu ambiente de desenvolvimento integrado (IDE) preferido e adicione uma referência à biblioteca Aspose.PDF para .NET.
 
-## Etapa 2: importe os namespaces necessários
+## Etapa 2: Importar os namespaces necessários
 
-Adicione as seguintes diretivas using no início do arquivo C# para importar os namespaces necessários:
+Adicione as seguintes diretivas using no início do seu arquivo C# para importar os namespaces necessários:
 
 ```csharp
 using Aspose.Pdf;
@@ -31,23 +31,23 @@ using Aspose.Pdf.Text;
 
 ## Etapa 3: use TextFragmentAbsorber para pesquisa de texto
 
- Criar uma`TextFragmentAbsorber` objeto para pesquisar segmentos de texto específicos usando expressões regulares:
+ Criar um`TextFragmentAbsorber` objeto para procurar segmentos de texto específicos usando expressões regulares:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber;
 ```
 
-## Etapa 4: realizar pesquisas de texto com expressões regulares
+## Etapa 4: Realizar pesquisas de texto com expressões regulares
 
 Execute pesquisas de texto com base em diferentes cenários usando expressões regulares. Aqui estão alguns exemplos:
 
-- Para pesquisar uma correspondência exata de palavra: 
+- Para procurar uma correspondência exata de palavras: 
 
 ```csharp
 textFragmentAbsorber = new TextFragmentAbsorber(@"\bWord\b", new TextSearchOptions(true));
 ```
 
-- Para pesquisar uma string em maiúsculas ou minúsculas: 
+- Para procurar uma string em maiúsculas ou minúsculas: 
 
 ```csharp
 textFragmentAbsorber = new TextFragmentAbsorber("(?i)Line", new TextSearchOptions(true));
@@ -59,13 +59,13 @@ textFragmentAbsorber = new TextFragmentAbsorber("(?i)Line", new TextSearchOption
 textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
 
-- Para localizar texto após uma string específica até uma quebra de linha: 
+- Para encontrar texto após uma sequência específica até uma quebra de linha: 
 
 ```csharp
 textFragmentAbsorber = new TextFragmentAbsorber(@"(?i)the ((.)*)");
 ```
 
-- Para localizar texto após uma correspondência de regex: 
+- Para encontrar texto após uma correspondência de regex: 
 
 ```csharp
 textFragmentAbsorber = new TextFragmentAbsorber(@"(?<=word).*");
@@ -79,66 +79,66 @@ textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+
 
 Substitua as expressões regulares pelos padrões de pesquisa desejados.
 
-## Passo 5: Realize a pesquisa e processe os resultados
+## Etapa 5: Execute a pesquisa e processe os resultados
 
- Realize a pesquisa usando o criado`TextFragmentAbsorber` objetar e processar os resultados com base em seus requisitos.
+ Realize a busca utilizando o criado`TextFragmentAbsorber` objetar e processar os resultados com base em suas necessidades.
 
 ### Exemplo de código-fonte para segmentos de texto usando Aspose.PDF para .NET 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber;
 // Para pesquisar a correspondência exata de uma palavra, você pode considerar o uso de expressões regulares.
 textFragmentAbsorber = new TextFragmentAbsorber(@"\bWord\b", new TextSearchOptions(true));
-// Para pesquisar uma string em maiúsculas ou minúsculas, você pode considerar o uso de expressões regulares.
+// Para pesquisar uma string em letras maiúsculas ou minúsculas, você pode considerar o uso de expressões regulares.
 textFragmentAbsorber = new TextFragmentAbsorber("(?i)Line", new TextSearchOptions(true));
 //Para pesquisar todas as strings (analisar todas as strings) dentro do documento PDF, tente usar a seguinte expressão regular.
 textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
-// Encontre a correspondência da string de pesquisa e obtenha qualquer coisa após a string até a quebra de linha.
+// Encontre a correspondência da sequência de pesquisa e obtenha qualquer coisa depois da sequência até a quebra de linha.
 textFragmentAbsorber = new TextFragmentAbsorber(@"(?i)the ((.)*)");
-// Use a seguinte expressão regular para encontrar o texto seguinte à correspondência de regex.
+// Use a seguinte expressão regular para encontrar o texto após a correspondência de regex.
 textFragmentAbsorber = new TextFragmentAbsorber(@"(?<=word).*");
-// Para pesquisar hiperlinks/URLs dentro de documentos PDF, tente usar a seguinte expressão regular.
+// Para pesquisar hiperlinks/URLs dentro de um documento PDF, tente usar a seguinte expressão regular.
 textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?");
 ```
 
 
 ## Conclusão
 
-Parabéns! Você aprendeu com sucesso como pesquisar segmentos de texto específicos em um documento PDF usando Aspose.PDF for .NET. Este tutorial forneceu exemplos de diferentes cenários de pesquisa usando expressões regulares. Agora você pode incorporar esse código em seus próprios projetos C# para pesquisar e processar segmentos de texto em arquivos PDF.
+Parabéns! Você aprendeu com sucesso como pesquisar segmentos de texto específicos dentro de um documento PDF usando Aspose.PDF para .NET. Este tutorial forneceu exemplos de diferentes cenários de pesquisa usando expressões regulares. Agora você pode incorporar este código em seus próprios projetos C# para pesquisar e processar segmentos de texto em arquivos PDF.
 
 ### Perguntas frequentes
 
 #### P: Qual é o objetivo do tutorial "Segmentos de texto em arquivo PDF"?
 
-R: O tutorial "Segmentos de texto em arquivo PDF" tem como objetivo orientar os usuários sobre como pesquisar segmentos de texto específicos em um arquivo PDF usando Aspose.PDF para .NET. O tutorial fornece instruções passo a passo e exemplos de código C# para realizar pesquisas de texto com base em diferentes cenários usando expressões regulares.
+R: O tutorial "Segmentos de texto em arquivo PDF" tem como objetivo orientar os usuários sobre como pesquisar segmentos de texto específicos em um arquivo PDF usando o Aspose.PDF para .NET. O tutorial fornece instruções passo a passo e exemplos de código C# para executar pesquisas de texto com base em diferentes cenários usando expressões regulares.
 
-#### P: Como este tutorial ajuda na busca por segmentos de texto em um documento PDF?
+#### P: Como este tutorial ajuda na busca de segmentos de texto em um documento PDF?
 
 R: Este tutorial ajuda os usuários a entender como utilizar a biblioteca Aspose.PDF for .NET para pesquisar segmentos de texto específicos em um documento PDF. Ao fornecer vários exemplos de código e expressões regulares, os usuários podem personalizar suas consultas de pesquisa de texto para encontrar o conteúdo desejado em arquivos PDF.
 
-#### P: Quais pré-requisitos são necessários para seguir este tutorial?
+#### P: Quais são os pré-requisitos necessários para seguir este tutorial?
 
-R: Antes de iniciar o tutorial, você deve ter um conhecimento básico da linguagem de programação C#. Além disso, você precisa ter a biblioteca Aspose.PDF for .NET instalada. Você pode obtê-lo no site Aspose ou instalá-lo em seu projeto usando NuGet.
+R: Antes de começar o tutorial, você deve ter um entendimento básico da linguagem de programação C#. Além disso, você precisa ter a biblioteca Aspose.PDF for .NET instalada. Você pode obtê-la no site da Aspose ou instalá-la em seu projeto usando o NuGet.
 
 #### P: Como configuro meu projeto para seguir este tutorial?
 
-R: Para começar, crie um novo projeto C# em seu ambiente de desenvolvimento integrado (IDE) preferido e adicione uma referência à biblioteca Aspose.PDF para .NET. Isso permitirá que você aproveite a funcionalidade da biblioteca para trabalhar com documentos PDF e fragmentos de texto.
+R: Para começar, crie um novo projeto C# no seu ambiente de desenvolvimento integrado (IDE) preferido e adicione uma referência à biblioteca Aspose.PDF for .NET. Isso permitirá que você aproveite a funcionalidade da biblioteca para trabalhar com documentos PDF e fragmentos de texto.
 
 #### P: Como posso pesquisar segmentos de texto específicos em um arquivo PDF?
 
- R: Para pesquisar segmentos de texto específicos, você precisa criar um`TextFragmentAbsorber` objeto. O tutorial fornece vários exemplos de código usando expressões regulares para demonstrar diferentes cenários de pesquisa. Ao modificar as expressões regulares, você pode definir os padrões de pesquisa desejados.
+ R: Para pesquisar segmentos de texto específicos, você precisa criar um`TextFragmentAbsorber` objeto. O tutorial fornece vários exemplos de código usando expressões regulares para demonstrar diferentes cenários de pesquisa. Ao modificar as expressões regulares, você pode definir seus padrões de pesquisa desejados.
 
 #### P: Que tipos de cenários de pesquisa são abordados no tutorial?
 
-R: O tutorial cobre uma variedade de cenários de pesquisa usando expressões regulares, como correspondências exatas de palavras, pesquisas que não diferenciam maiúsculas de minúsculas, pesquisa de todas as strings em um documento, localização de texto após strings específicas e pesquisa de hiperlinks/URLs. Os exemplos de código fornecidos podem ser personalizados para atender aos seus requisitos específicos de pesquisa.
+R: O tutorial abrange uma variedade de cenários de pesquisa usando expressões regulares, como correspondências exatas de palavras, pesquisas que não diferenciam maiúsculas de minúsculas, pesquisa de todas as strings dentro de um documento, localização de texto após strings específicas e pesquisa de hiperlinks/URLs. Os exemplos de código fornecidos podem ser personalizados para atender aos seus requisitos de pesquisa específicos.
 
-#### P: Como posso processar os resultados da pesquisa após realizar a pesquisa de texto?
+#### P: Como processo os resultados da pesquisa depois de realizar a pesquisa de texto?
 
- R: Depois de criar um`TextFragmentAbsorber`objeto e realizando a pesquisa, você pode processar os resultados da pesquisa com base em suas necessidades. O tutorial se concentra em demonstrar o processo de pesquisa em si, enquanto a forma como você processa e utiliza os resultados da pesquisa depende das necessidades do seu projeto.
+ A: Depois de criar um`TextFragmentAbsorber`objeto e realizando a pesquisa, você pode processar os resultados da pesquisa com base em seus requisitos. O tutorial foca em demonstrar o processo de pesquisa em si, enquanto como você processa e utiliza os resultados da pesquisa depende das necessidades do seu projeto.
 
 #### P: Posso usar os exemplos de código fornecidos em meus próprios projetos?
 
-R: Sim, você pode usar os exemplos de código fornecidos como referência em seus próprios projetos C#. Os exemplos demonstram como configurar a pesquisa, definir expressões regulares e realizar pesquisas de texto. Você pode adaptar e integrar esse código em seus aplicativos para pesquisar segmentos de texto específicos em arquivos PDF.
+R: Sim, você pode usar os exemplos de código fornecidos como referência em seus próprios projetos C#. Os exemplos demonstram como configurar a pesquisa, definir expressões regulares e executar pesquisas de texto. Você pode adaptar e integrar esse código em seus aplicativos para pesquisar segmentos de texto específicos em arquivos PDF.
 
 #### P: Onde posso encontrar o tutorial completo junto com o código de exemplo?
 
- R: Você pode acessar o tutorial completo e visualizar o exemplo de código C# fornecido visitando o seguinte link:[https://bit.ly/TextSegmentsTutorial](https://bit.ly/TextSegmentsTutorial)
+ R: Você pode acessar o tutorial completo e visualizar o código C# de exemplo fornecido visitando o seguinte link:[https://bit.ly/TextSegmentsTutorial](https://bit.ly/TextSegmentsTutorial)

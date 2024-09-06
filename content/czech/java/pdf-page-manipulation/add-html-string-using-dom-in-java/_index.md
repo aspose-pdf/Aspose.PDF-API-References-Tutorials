@@ -8,13 +8,13 @@ weight: 12
 url: /cs/java/pdf-page-manipulation/add-html-string-using-dom-in-java/
 ---
 
-# Úvod
+# Zavedení
 tomto tutoriálu prozkoumáme, jak přidat řetězce HTML do dokumentů PDF pomocí knihovny Aspose.PDF for Java. Aspose.PDF je výkonný nástroj pro práci se soubory PDF v aplikacích Java. Přidání obsahu HTML do PDF může být užitečné ve scénářích, kdy chcete do dokumentu PDF zahrnout dynamický nebo formátovaný text. Procesem vás provedeme s příklady kódu, takže začneme.
 
 ## Předpoklady
 Než začneme, ujistěte se, že máte splněny následující předpoklady:
 - Nastavení vývojového prostředí Java.
--  Nainstalovaná knihovna Aspose.PDF pro Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Nainstalovaná knihovna Aspose.PDF pro Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Krok 1: Vytvořte nový dokument PDF
 Chcete-li začít, musíte vytvořit nový dokument PDF pomocí Aspose.PDF. Zde je návod, jak to udělat v Javě:
@@ -58,12 +58,12 @@ Nakonec můžete dokument PDF uložit do souboru:
 pdfDocument.save("output.pdf");
 ```
 
-A je to! Úspěšně jste přidali řetězec HTML do dokumentu PDF pomocí Aspose.PDF for Java.
+To je vše! Úspěšně jste přidali řetězec HTML do dokumentu PDF pomocí Aspose.PDF for Java.
 
 # Závěr
 V tomto tutoriálu jsme se naučili, jak přidat řetězce HTML do dokumentů PDF pomocí knihovny Aspose.PDF for Java. To může být účinný způsob, jak do souborů PDF zahrnout dynamický a formátovaný obsah. Vzhled a rozvržení obsahu HTML můžete dále přizpůsobit svým specifickým požadavkům.
 
- Pokud máte nějaké dotazy nebo potřebujete další pomoc, neváhejte se obrátit na[Aspose.PDF pro dokumentaci Java API](https://reference.aspose.com/pdf/java/) Více podrobností.
+ Pokud máte nějaké dotazy nebo potřebujete další pomoc, neváhejte se obrátit na[Aspose.PDF pro dokumentaci Java API](https://reference.aspose.com/pdf/java/) pro více podrobností.
 
 ## Nejčastější dotazy
 

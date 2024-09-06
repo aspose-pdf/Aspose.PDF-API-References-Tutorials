@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-stamps-and-watermarks/adding-different-header
 
 ## 第 2 步：載入 PDF 文檔
 
-第一步是將現有的 PDF 文件載入到您的專案中。就是這樣：
+第一步是將現有的 PDF 文件載入到您的專案中。方法如下：
 
 ```csharp
 //文檔目錄的路徑。
@@ -32,7 +32,7 @@ Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "AddingDifferentHead
 
 ## 第 3 步：建立標頭緩衝區
 
-現在您已經上傳了 PDF 文檔，您可以建立要新增的頁首圖章。就是這樣：
+現在您已經上傳了 PDF 文檔，您可以建立要新增的頁首圖章。方法如下：
 
 ```csharp
 //建立三個標頭緩衝區
@@ -45,7 +45,7 @@ Aspose.Pdf.TextStamp stamp3 = new Aspose.Pdf.TextStamp("Header 3");
 
 ## 步驟 4：配置標頭緩衝區屬性
 
-在將頁首圖章新增至 PDF 文件之前，您可以為每個圖章配置不同的屬性，例如對齊方式、大小、顏色等。操作方法如下：
+在將頁首圖章新增至 PDF 文件之前，您可以為每個圖章配置不同的屬性，例如對齊方式、大小、顏色等。
 
 ```csharp
 //配置第一個標頭緩衝區
@@ -72,7 +72,7 @@ stamp3.TextState.Font = FontRepository.FindFont("Verdana");
 
 ## 第 5 步：為 PDF 新增頁眉圖章
 
-現在頁首標記已準備就緒，您可以將它們新增至 PDF 文件的每個特定頁面。就是這樣：
+現在頁首標記已準備就緒，您可以將它們新增至 PDF 文件的每個特定頁面。方法如下：
 
 ```csharp
 //將標頭緩衝區新增至特定頁面
@@ -85,7 +85,7 @@ doc.Pages[3].AddStamp(stamp3);
 
 ## 步驟 6：儲存輸出文檔
 
-新增頁首印記後，您可以儲存編輯後的 PDF 文件。就是這樣：
+新增頁首印記後，您可以儲存編輯後的 PDF 文件。方法如下：
 
 ```csharp
 //儲存更新後的文檔
@@ -170,7 +170,7 @@ Console.WriteLine("\nDifferent headers added successfully.\nFile saved at " + da
 
 #### Q：使用 Aspose.PDF for .NET 在 PDF 檔案中新增不同標題的目的是什麼？
 
-答：使用 Aspose.PDF for .NET 將不同的標題新增至 PDF 檔案中，您可以自訂每個頁面頂部顯示的內容。此功能對於新增標題、章節名稱、頁碼和其他在 PDF 文件的不同頁面上有所不同的資訊特別有用。
+答：使用 Aspose.PDF for .NET 將不同的標題新增至 PDF 檔案中，您可以自訂每個頁面頂部顯示的內容。此功能對於新增標題、章節名稱、頁碼以及 PDF 文件不同頁面上不同的其他資訊特別有用。
 
 #### Q：我可以自訂每個標題的外觀，例如對齊方式、字體、大小、顏色和旋轉嗎？
 

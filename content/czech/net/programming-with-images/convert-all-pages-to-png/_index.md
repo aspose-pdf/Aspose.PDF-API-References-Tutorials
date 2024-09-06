@@ -11,7 +11,7 @@ Tato příručka vás krok za krokem provede převodem všech stránek dokumentu
 
 ## Krok 1: Definujte adresář dokumentů
 
- Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři, kde se nachází váš dokument PDF.
+Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři, kde se nachází váš dokument PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 2: Otevřete dokument
 
- tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
+ V tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ConvertAllPagesToPNG.pdf");
@@ -62,11 +62,11 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 	{
 		// Vytvořte zařízení PNG se zadanými atributy
 		// Šířka, výška, rozlišení, kvalita
-		// Kvalita [0-100], 100 je maximum
+		//Kvalita [0-100], 100 je maximum
 		// Vytvořit objekt rozlišení
 		Resolution resolution = new Resolution(300);
 		PngDevice pngDevice = new PngDevice(resolution);
-		//Převeďte konkrétní stránku a uložte obrázek do streamu
+		// Převeďte konkrétní stránku a uložte obrázek do streamu
 		pngDevice.Process(pdfDocument.Pages[pageCount], imageStream);
 		// Zavřít stream
 		imageStream.Close();

@@ -42,7 +42,7 @@ Document pdfDocument = new Document(dataDir + "SearchAndGetTextPage.pdf");
 
 ## 4. lépés: Szöveg keresése és kibontása egy oldalról
 
- Hozzon létre egy`TextFragmentAbsorber`objektumot, hogy megtalálja a bemeneti keresési kifejezés összes előfordulását egy adott oldalon:
+ Hozzon létre a`TextFragmentAbsorber`objektumot, hogy megtalálja a bemeneti keresési kifejezés összes előfordulását egy adott oldalon:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Figure");
@@ -60,7 +60,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## 6. lépés: szerezze be a kivont szövegrészleteket
 
-Szerezze be a kivont szövegrészleteket a`TextFragments` tulajdona a`TextFragmentAbsorber` tárgy:
+Szerezze be a kivont szövegrészleteket a`TextFragments` tulajdona a`TextFragmentAbsorber` objektum:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -124,7 +124,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan lehet szöveget keresni és lekérni egy PDF-dokumentum adott oldaláról az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentum betöltésétől a kivont szövegrészek eléréséig. Most beépítheti
+Gratulálok! Sikeresen megtanulta, hogyan lehet szöveget keresni és lekérni egy PDF-dokumentum adott oldaláról az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentum betöltésétől a kivont szövegrészek eléréséig. Most beépítheti
 
 ### GYIK
 
@@ -150,7 +150,7 @@ V: Igen, ez az oktatóanyag bemutatja, hogyan kereshet szöveget egy PDF-dokumen
 
 #### K: Hogyan érhetem el az adott oldalról kivont szövegszegmenseket?
 
- V: Miután megkereste a szöveget a kijelölt oldalon, a kivonatolt szövegszegmenseket a segítségével érheti el`TextSegments` tulajdona a`TextFragment` tárgy. Ez az ingatlan hozzáférést biztosít a gyűjteményhez`TextSegment` objektumok, amelyek a kivont szöveget és a kapcsolódó információkat tartalmazzák.
+ V: Miután megkereste a szöveget a kijelölt oldalon, a kivonatolt szövegszegmenseket a segítségével érheti el`TextSegments` tulajdona a`TextFragment` objektum. Ez az ingatlan hozzáférést biztosít a gyűjteményhez`TextSegment` objektumok, amelyek a kivont szöveget és a kapcsolódó információkat tartalmazzák.
 
 #### K: Milyen információkat kérhetek le a kivont szövegrészekből?
 

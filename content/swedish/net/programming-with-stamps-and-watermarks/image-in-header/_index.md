@@ -7,7 +7,7 @@ type: docs
 weight: 140
 url: /sv/net/programming-with-stamps-and-watermarks/image-in-header/
 ---
-I den här handledningen guidar vi dig steg för steg om hur du lägger till en bild i rubriken i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att använda den medföljande C#-källkoden för att öppna ett befintligt PDF-dokument, skapa en bildbuffert, ställa in dess egenskaper och lägga till den på alla sidor i PDF-dokumentet.
+den här handledningen guidar vi dig steg för steg om hur du lägger till en bild i rubriken i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att använda den medföljande C#-källkoden för att öppna ett befintligt PDF-dokument, skapa en bildbuffert, ställa in dess egenskaper och lägga till den på alla sidor i PDF-dokumentet.
 
 ## Steg 1: Sätta upp miljön
 
@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 2: Laddar det befintliga PDF-dokumentet
 
-Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Här är hur:
+Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Så här gör du:
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -32,7 +32,7 @@ Var noga med att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till
 
 ## Steg 3: Skapa och lägga till bilden i rubriken
 
-Nu när PDF-dokumentet är laddat kan vi skapa en bildbuffert och lägga till den på alla sidor i dokumentet som en rubrik. Här är hur:
+Nu när PDF-dokumentet är laddat kan vi skapa en bildbuffert och lägga till den på alla sidor i dokumentet som en rubrik. Så här gör du:
 
 ```csharp
 // Skapa rambufferten
@@ -43,7 +43,7 @@ imageStamp.TopMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Lägg till bildbuffert på alla sidor
+//Lägg till bildbuffert på alla sidor
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
@@ -54,7 +54,7 @@ Ovanstående kod skapar en bildbuffert från filen "aspose-logo.jpg" och ställe
 
 ## Steg 4: Spara det ändrade PDF-dokumentet
 
-När bilden har lagts till i rubriken kan vi spara det ändrade PDF-dokumentet. Här är hur:
+När bilden har lagts till i rubriken kan vi spara det ändrade PDF-dokumentet. Så här gör du:
 
 ```csharp
 // Spara det ändrade PDF-dokumentet
@@ -98,7 +98,7 @@ Console.WriteLine("\nImage in header added successfully.\nFile saved at " + data
 
 Grattis! Du har lärt dig hur du lägger till en bild i rubriken i ett PDF-dokument med Aspose.PDF för .NET. Du kan nu anpassa rubrikerna på dina PDF-dokument genom att lägga till bilder.
 
-### Vanliga frågor för bild i header
+### Vanliga frågor om bild i header
 
 #### F: Vad är syftet med att lägga till en bild i rubriken i ett PDF-dokument?
 
@@ -118,7 +118,7 @@ S: Genom att lägga till en bild i rubriken i ett PDF-dokument kan du inkludera 
 
 #### F: Hur säkerställer koden att bilden läggs till på alla sidor i PDF-dokumentets rubrik?
 
-S: Den medföljande koden använder en`foreach` loop för att iterera genom alla sidor i PDF-dokumentet och lägger till samma`ImageStamp`till varje sidas rubriksektion.
+ S: Den medföljande koden använder en`foreach` loop för att iterera genom alla sidor i PDF-dokumentet och lägger till samma`ImageStamp` till varje sidas rubriksektion.
 
 #### F: Kan jag lägga till andra element, som text eller former, till rubriksektionen med ett liknande tillvägagångssätt?
 
@@ -134,7 +134,7 @@ S: Den medföljande koden använder en`foreach` loop för att iterera genom alla
 
 #### F: Är det möjligt att ta bort eller ersätta bilden i rubriken efter att den har lagts till?
 
- S: Ja, du kan ta bort eller ersätta bilden i rubriken genom att ändra innehållet i`ImageStamp` objekt eller ta bort stämpeln från specifika sidor.
+S: Ja, du kan ta bort eller ersätta bilden i rubriken genom att ändra innehållet i`ImageStamp` objekt eller ta bort stämpeln från specifika sidor.
 
 #### F: Hur hanterar koden scenarier där bildens mått överstiger det tillgängliga utrymmet i rubriken?
 

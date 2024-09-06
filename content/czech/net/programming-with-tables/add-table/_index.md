@@ -9,7 +9,7 @@ url: /cs/net/programming-with-tables/add-table/
 ---
 Aspose.PDF for .NET je výkonná knihovna, která umožňuje vývojářům vytvářet, manipulovat a transformovat dokumenty PDF programově. V tomto tutoriálu vás provedeme procesem přidání tabulky do souboru PDF pomocí Aspose.PDF pro .NET. Vysvětlíme každý krok poskytnutého fragmentu kódu a poskytneme komplexního průvodce, který vám pomůže porozumět a implementovat funkce ve vašich vlastních projektech.
 
-## Úvod
+## Zavedení
 
 Dokumenty PDF se široce používají pro sdílení a uchovávání informací v přenosném formátu. Přidání tabulek do dokumentů PDF může zlepšit jejich vizuální vzhled a učinit prezentaci dat organizovanější a strukturovanější. Aspose.PDF for .NET poskytuje pohodlný způsob, jak přidat tabulky ke stávajícím dokumentům PDF nebo vytvořit úplně nové.
 

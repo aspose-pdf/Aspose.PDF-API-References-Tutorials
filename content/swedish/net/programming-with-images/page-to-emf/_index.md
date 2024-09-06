@@ -89,7 +89,7 @@ using (FileStream imageStream = new FileStream(dataDir + "image_out.emf", FileMo
 	// Skapa EMF-enhet med specificerade attribut
 	// Bredd, höjd, upplösning
 	EmfDevice emfDevice = new EmfDevice(500, 700, resolution);
-	//Konvertera en viss sida och spara bilden för att streama
+	// Konvertera en viss sida och spara bilden för att streama
 	emfDevice.Process(pdfDocument.Pages[1], imageStream);
 	// Stäng strömmen
 	imageStream.Close();

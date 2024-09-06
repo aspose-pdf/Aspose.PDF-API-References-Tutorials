@@ -7,7 +7,7 @@ type: docs
 weight: 50
 url: /hu/net/programming-with-links-and-actions/extract-links/
 ---
-A hivatkozások PDF-fájlba történő kibontása lehetővé teszi a dokumentumban található összes hiperszöveges hivatkozás helyreállítását. Az Aspose.PDF for .NET segítségével könnyedén kibonthatja ezeket a hivatkozásokat a következő forráskód követésével:
+hivatkozások PDF-fájlba történő kibontása lehetővé teszi a dokumentumban található összes hiperszöveges hivatkozás helyreállítását. Az Aspose.PDF for .NET segítségével könnyedén kibonthatja ezeket a hivatkozásokat a következő forráskód követésével:
 
 ## 1. lépés: Importálja a szükséges könyvtárakat
 
@@ -20,7 +20,7 @@ using Aspose.Pdf.Annotations;
 
 ## 2. lépés: Állítsa be a dokumentumok mappa elérési útját
 
- Ebben a lépésben meg kell adnia annak a PDF-fájlnak az elérési útját, amelyből a hivatkozásokat ki szeretné bontani. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` következő kódban a dokumentummappa tényleges elérési útjával:
+ Ebben a lépésben meg kell adnia annak a PDF-fájlnak az elérési útját, amelyből a hivatkozásokat ki szeretné bontani. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a következő kódban a dokumentummappa tényleges elérési útjával:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -28,7 +28,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 3. lépés: Nyissa meg a PDF dokumentumot
 
-Megnyitjuk a PDF dokumentumot a`Document` osztály. Itt van a megfelelő kód:
+ A PDF dokumentumot a`Document` osztály. Itt van a megfelelő kód:
 
 ```csharp
 Document document = new Document(dataDir + "ExtractLinks.pdf");
@@ -48,7 +48,7 @@ Annotation annotation = (Annotation)list[0];
 
 ## 5. lépés: Mentse el a frissített dokumentumot
 
- Most mentsük el a frissített PDF fájlt a`Save` módszere a`document` tárgy. Itt van a megfelelő kód:
+Most mentsük el a frissített PDF fájlt a`Save` módszere a`document` objektum. Itt van a megfelelő kód:
 
 ```csharp
 dataDir = dataDir + "ExtractLinks_out.pdf";
@@ -95,11 +95,11 @@ V: Az Aspose.PDF for .NET hatékony API-kat biztosít a hivatkozások egyszerű 
 
 #### K: Kibonthatok bizonyos típusú hivatkozásokat, például hiperhivatkozásokat vagy belső dokumentumhivatkozásokat?
 
- V: Igen, a hivatkozás segítségével szelektíven kinyerhet bizonyos típusú hivatkozásokat`AnnotationSelector` osztály. Ez lehetővé teszi a kívánt hivatkozások szűrését és lekérését az Ön igényei alapján.
+ V: Igen, a hivatkozás segítségével szelektíven kinyerhet bizonyos típusú hivatkozásokat`AnnotationSelector`osztály. Ez lehetővé teszi a kívánt hivatkozások szűrését és lekérését az Ön igényei alapján.
 
 #### K: Lehetséges hivatkozásokat kivonni egy PDF-dokumentum meghatározott oldalairól?
 
- V: Abszolút! Hivatkozásokat bonthat ki egy PDF-dokumentum adott oldalairól, ha megadja a céloldalt a segítségével`Document.Pages` Gyűjtemény. Ez lehetővé teszi, hogy bizonyos szakaszokra összpontosítson.
+ V: Abszolút! Hivatkozásokat bonthat ki egy PDF-dokumentum adott oldalairól, ha megadja a céloldalt a segítségével`Document.Pages` gyűjtemény. Ez lehetővé teszi, hogy bizonyos szakaszokra összpontosítson.
 
 #### K: Milyen formátumban adják vissza a kivont hivatkozásokat?
 

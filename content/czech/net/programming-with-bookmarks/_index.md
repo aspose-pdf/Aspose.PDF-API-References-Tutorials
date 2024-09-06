@@ -13,14 +13,14 @@ Tyto výukové programy vám navíc ukážou, jak upravit vlastnosti záložek, 
 ## Tutoriály
 | Titul | Popis |
 | --- | --- | 
-| [Přidat záložku do souboru PDF](./add-bookmark/) | Snadno přidejte záložku do souboru PDF pro lepší navigaci s Aspose.PDF pro .NET. |  
-| [Přidat dětskou záložku do souboru PDF](./add-child-bookmark/) | Snadno přidejte podřízenou záložku do souboru PDF pro lépe organizované procházení s Aspose.PDF pro .NET. |  
-| [Smazat všechny záložky v souboru PDF](./delete-all-bookmarks/) | Snadno odstraňte všechny záložky v souboru PDF pomocí Aspose.PDF pro .NET. |  
-| [Odstranit konkrétní záložku v souboru PDF](./delete-particular-bookmark/) | Pomocí Aspose.PDF for .NET můžete snadno odstranit konkrétní záložku v souboru PDF. |  
-| [Rozbalte záložky v souboru PDF](./expand-bookmarks/) | Snadno rozbalte záložky v souboru PDF pro lepší navigaci s Aspose.PDF pro .NET. |  
-| [Získejte číslo stránky záložky v souboru PDF](./get-bookmark-page-number/) | Snadno získejte číslo stránky záložky v souboru PDF pomocí Aspose.PDF pro .NET. |  
-| [Získejte záložky v souboru PDF](./get-bookmarks/) | Snadno získáte záložku v souboru PDF pomocí Aspose.PDF pro .NET. |  
-| [Získejte dětské záložky v souboru PDF](./get-child-bookmarks/) | Snadno získejte dětské záložky v souboru PDF s Aspose.PDF pro .NET. |  
-| [Zdědit soubor PDF přiblížení](./inherit-zoom/) | Snadno zděďte přiblížení záložek v souboru PDF pomocí Aspose.PDF pro .NET. |  
-| [Aktualizace záložek v souboru PDF](./update-bookmarks/) | Snadno aktualizujte záložky v souboru PDF pomocí Aspose.PDF pro .NET. |  
-| [Aktualizujte dětské záložky v souboru PDF](./update-child-bookmarks/) | Snadno aktualizujte dětské záložky v souboru PDF pomocí Aspose.PDF pro .NET. |  
+| [Přidat záložku do souboru PDF](./add-bookmark/) | V tomto podrobném návodu se dozvíte, jak přidat záložky do souborů PDF pomocí Aspose.PDF for .NET. Vylepšete svou navigaci ve formátu PDF. |  
+| [Přidat dětskou záložku do souboru PDF](./add-child-bookmark/) | Naučte se přidávat podřízené záložky do souborů PDF pomocí Aspose.PDF for .NET pomocí tohoto podrobného průvodce. Vylepšete svou navigaci ve formátu PDF. |  
+| [Smazat všechny záložky v souboru PDF](./delete-all-bookmarks/) | Pomocí tohoto podrobného průvodce se dozvíte, jak odstranit všechny záložky v souboru PDF pomocí Aspose.PDF for .NET. Zjednodušte si správu PDF. |  
+| [Odstranit konkrétní záložku v souboru PDF](./delete-particular-bookmark/) | Naučte se, jak odstranit konkrétní záložku v souboru PDF pomocí Aspose.PDF for .NET, pomocí tohoto podrobného průvodce. |  
+| [Rozbalte záložky v souboru PDF](./expand-bookmarks/) | Naučte se, jak rozšířit záložky v souborech PDF pomocí Aspose.PDF for .NET, pomocí tohoto podrobného průvodce. Ideální pro vývojáře, kteří chtějí vylepšit navigaci PDF. |  
+| [Získejte číslo stránky záložky v souboru PDF](./get-bookmark-page-number/) | V tomto komplexním kurzu se dozvíte, jak extrahovat čísla stránek záložek ze souborů PDF pomocí Aspose.PDF for .NET. |  
+| [Získejte záložky v souboru PDF](./get-bookmarks/) | V tomto podrobném návodu se dozvíte, jak extrahovat záložky ze souborů PDF pomocí Aspose.PDF for .NET. Vylepšete svou navigaci ve formátu PDF. |  
+| [Získejte dětské záložky v souboru PDF](./get-child-bookmarks/) | Naučte se, jak získat dětské záložky v souboru PDF pomocí Aspose.PDF for .NET, pomocí tohoto podrobného průvodce. Vylepšete svou navigaci ve formátu PDF. |  
+| [Zdědit soubor PDF přiblížení](./inherit-zoom/) | V tomto podrobném průvodci se dozvíte, jak zdědit přiblížení souborů PDF pomocí Aspose.PDF for .NET. Vylepšete si zážitek ze prohlížení PDF. |  
+| [Aktualizace záložek v souboru PDF](./update-bookmarks/) | této příručce se dozvíte, jak aktualizovat záložky v souboru PDF pomocí Aspose.PDF for .NET. Ideální pro vývojáře, kteří chtějí efektivně upravovat záložky PDF. |  
+| [Aktualizujte dětské záložky v souboru PDF](./update-child-bookmarks/) | Naučte se, jak aktualizovat podřízené záložky v souborech PDF pomocí Aspose.PDF for .NET pomocí tohoto podrobného průvodce. Vylepšete svou navigaci ve formátu PDF. |  

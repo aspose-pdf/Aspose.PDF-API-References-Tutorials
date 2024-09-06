@@ -117,7 +117,7 @@ Odpověď: Ano, pomocí Aspose.PDF pro .NET můžete manipulovat s tabulkami ve 
 
 #### Otázka: Jak mohu přidat nové řádky nebo sloupce do existující tabulky?
 
- A: Chcete-li přidat nové řádky nebo sloupce do existující tabulky, můžete použít rozhraní API poskytovaná Aspose.PDF pro .NET. Můžete přistupovat k`RowList` a`CellList` vlastnosti`TableAbsorber.TableList` přidat nové řádky a buňky programově. Podrobné informace a příklady kódu naleznete v dokumentaci Aspose.PDF pro .NET.
+ A: Chcete-li přidat nové řádky nebo sloupce do existující tabulky, můžete použít rozhraní API poskytovaná Aspose.PDF pro .NET. Můžete přistupovat k`RowList` a`CellList` vlastnosti`TableAbsorber.TableList` pro programové přidání nových řádků a buněk. Podrobné informace a příklady kódu naleznete v dokumentaci Aspose.PDF pro .NET.
 
 #### Otázka: Je možné odstranit tabulku z dokumentu PDF?
 
@@ -125,7 +125,7 @@ Odpověď: Ano, pomocí Aspose.PDF pro .NET můžete manipulovat s tabulkami ve 
 
 #### Otázka: Mohu změnit formátování (font, barvu, zarovnání) textu tabulky?
 
- Odpověď: Ano, můžete změnit formátování textu tabulky pomocí Aspose.PDF pro .NET. Můžete přistupovat k`TextState` vlastnictvím`TextFragment` objekt pro úpravu písma, velikosti písma, barvy a zarovnání textu.
+ Odpověď: Ano, můžete změnit formátování textu tabulky pomocí Aspose.PDF pro .NET. Můžete přistupovat k`TextState` majetek z`TextFragment` objekt pro úpravu písma, velikosti písma, barvy a zarovnání textu.
 
 #### Otázka: Podporuje Aspose.PDF for .NET práci s tabulkami ve formulářích PDF (AcroForms)?
 

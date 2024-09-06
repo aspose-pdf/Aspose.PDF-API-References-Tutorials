@@ -8,9 +8,9 @@ weight: 14
 url: /cs/java/pdf-bookmarks/view-expanded-bookmarks-pdfs/
 ---
 
-## Úvod
+## Zavedení
 
-digitálním věku jsou dokumenty PDF základem sdílení a uchovávání informací. Jednou ze základních funkcí souborů PDF jsou záložky, které poskytují pohodlný způsob procházení dlouhých dokumentů. Někdy však výchozí zobrazení záložek nemusí stačit k efektivnímu pochopení struktury dokumentu. Tento článek se zabývá tím, jak zobrazit rozšířené záložky v souborech PDF pomocí Aspose.PDF for Java.
+digitálním věku jsou dokumenty PDF základem sdílení a uchovávání informací. Jednou ze základních funkcí souborů PDF jsou záložky, které poskytují pohodlný způsob procházení dlouhých dokumentů. Někdy však výchozí zobrazení záložek nemusí stačit k efektivnímu pochopení struktury dokumentu. Tento článek zkoumá, jak zobrazit rozšířené záložky v souborech PDF pomocí Aspose.PDF for Java.
 
 ## Pochopení záložek v PDF
 
@@ -18,7 +18,7 @@ Než se ponoříme do rozšířených záložek, pojďme pochopit, co jsou zálo
 
 ## Potřeba rozšířených záložek
 
-Zatímco standardní záložky poskytují cenný navigační nástroj, mohou selhat při práci se složitými dokumenty. Rozšířené záložky nabízejí podrobnější pohled, zobrazující podnadpisy a podnadpisy ve struktuře dokumentu. Tato funkce je zvláště užitečná, když pracujete s rozsáhlými příručkami, zprávami nebo e-knihami. Aspose.PDF pro Java nám umožňuje odemknout toto rozšířené zobrazení a zlepšit tak zážitek uživatele ze čtení.
+Zatímco standardní záložky poskytují cenný navigační nástroj, mohou selhat při práci se složitými dokumenty. Rozšířené záložky nabízejí podrobnější pohled, zobrazující podnadpisy a podnadpisy ve struktuře dokumentu. Tato funkce je obzvláště užitečná, když pracujete s rozsáhlými manuály, zprávami nebo e-knihami. Aspose.PDF pro Java nám umožňuje odemknout toto rozšířené zobrazení a zlepšit tak zážitek uživatele ze čtení.
 
 ## Použití Aspose.PDF pro Javu
 
@@ -27,7 +27,7 @@ Aspose.PDF for Java je výkonné API, které umožňuje vývojářům pracovat s
 ## Průvodce krok za krokem
 
 ### Krok 1: Instalace
- Než začneme, ujistěte se, že máte ve svém vývojovém prostředí nainstalovaný Aspose.PDF for Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+ Než začneme, ujistěte se, že máte ve svém vývojovém prostředí nainstalovaný Aspose.PDF for Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ### Krok 2: Import knihovny
 Do svého projektu Java importujte knihovnu Aspose.PDF. Zde je jednoduchý příklad, jak na to:

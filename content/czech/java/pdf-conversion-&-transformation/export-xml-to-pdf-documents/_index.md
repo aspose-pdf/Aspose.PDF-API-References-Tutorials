@@ -17,7 +17,7 @@ dnešní digitální době je efektivní manipulace s dokumenty zásadní. Mnoho
 Než se ponoříme do kódu, ujistěte se, že máte splněny následující předpoklady:
 
 - Java Development Kit (JDK): Ujistěte se, že máte v systému nainstalovaný JDK.
--  Aspose.PDF for Java: Stáhněte si a nainstalujte Aspose.PDF for Java z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF for Java: Stáhněte si a nainstalujte Aspose.PDF for Java z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Nastavení vašeho projektu
 
@@ -25,7 +25,7 @@ Začněme nastavením nového projektu Java. Můžete použít své oblíbené i
 
 ## Přidání Aspose.PDF do vašeho projektu
 
-Chcete-li začít používat Aspose.PDF pro Java, musíte do svého projektu přidat knihovnu Aspose.PDF. Knihovnu si můžete stáhnout z webu a přidat ji jako závislost ve svém projektu.
+Chcete-li začít používat Aspose.PDF pro Java, musíte do svého projektu přidat knihovnu Aspose.PDF. Knihovnu si můžete stáhnout z webových stránek a přidat ji jako závislost ve svém projektu.
 
 ```java
 // Přidejte Aspose.PDF jako závislost
@@ -52,7 +52,7 @@ doc.save("output.pdf");
 
 ## Přizpůsobení konverze
 
- Převod PDF si můžete přizpůsobit tak, aby vyhovoval vašim specifickým požadavkům. Můžete například nastavit velikost stránky, okraje, písma a mnoho dalšího. Aspose.PDF for Java poskytuje rozsáhlou dokumentaci, která vám pomůže přizpůsobit proces převodu vašim potřebám. Dokumentaci najdete[tady](https://reference.aspose.com/pdf/java/).
+ Převod PDF si můžete přizpůsobit tak, aby vyhovoval vašim specifickým požadavkům. Můžete například nastavit velikost stránky, okraje, písma a mnoho dalšího. Aspose.PDF for Java poskytuje rozsáhlou dokumentaci, která vám pomůže přizpůsobit proces převodu vašim potřebám. Dokumentaci najdete[zde](https://reference.aspose.com/pdf/java/).
 
 ## Závěr
 
@@ -62,7 +62,7 @@ tomto článku jsme prozkoumali, jak exportovat data XML do dokumentů PDF pomoc
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
- Chcete-li nainstalovat Aspose.PDF pro Java, navštivte webovou stránku[tady](https://releases.aspose.com/pdf/java/) a stáhněte si knihovnu. Postupujte podle pokynů k instalaci uvedených v dokumentaci.
+ Chcete-li nainstalovat Aspose.PDF pro Java, navštivte webovou stránku[zde](https://releases.aspose.com/pdf/java/) a stáhněte si knihovnu. Postupujte podle pokynů k instalaci uvedených v dokumentaci.
 
 ### Mohu přizpůsobit vzhled dokumentu PDF?
 
@@ -78,4 +78,4 @@ Ano, Aspose.PDF for Java nabízí šifrovací a bezpečnostní funkce pro ochran
 
 ### Mohu převést soubory XML se složitou strukturou do PDF?
 
-Rozhodně! Aspose.PDF pro Javu umí pracovat se soubory XML se složitými strukturami. Můžete mapovat prvky XML na prvky PDF a vytvářet vysoce přizpůsobená rozvržení PDF.
+Jistě! Aspose.PDF pro Javu umí pracovat se soubory XML se složitými strukturami. Můžete mapovat prvky XML na prvky PDF a vytvářet vysoce přizpůsobená rozvržení PDF.

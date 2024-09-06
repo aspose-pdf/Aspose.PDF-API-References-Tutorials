@@ -1,13 +1,13 @@
 ---
-title: Állítsa be a fájl adatait a PDF-fájlban
-linktitle: Állítsa be a fájl adatait a PDF-fájlban
+title: Állítsa be a fájladatokat a PDF-fájlban
+linktitle: Állítsa be a fájladatokat a PDF-fájlban
 second_title: Aspose.PDF for .NET API Reference
 description: Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan használhatja az Aspose.PDF for .NET-et a fájladatok PDF-fájlban történő beállításához.
 type: docs
 weight: 310
 url: /hu/net/programming-with-document/setfileinfo/
 ---
-Ha olyan projekten dolgozik, amelyhez a PDF-fájlok Aspose.PDF for .NET használatával történő kezelését igényli, akkor az egyik hasznos funkció a PDF-dokumentum fájlinformációinak megadása. A fájlinformációk különféle részleteket tartalmaznak, például a szerzőt, a létrehozás dátumát, a kulcsszavakat, a módosítás dátumát, a tárgyat és a címet. Ez az útmutató végigvezeti Önt egy PDF-dokumentum fájlinformációinak beállításán C# forráskóddal az Aspose.PDF for .NET-hez.
+Ha olyan projekten dolgozik, amelyhez PDF-fájlok kezelését igényli az Aspose.PDF for .NET használatával, akkor az egyik hasznos funkció a PDF-dokumentum fájlinformációinak megadása. A fájlinformációk különféle részleteket tartalmaznak, például a szerzőt, a létrehozás dátumát, a kulcsszavakat, a módosítás dátumát, a tárgyat és a címet. Ez az útmutató végigvezeti Önt egy PDF-dokumentum fájlinformációinak beállításán C# forráskóddal az Aspose.PDF for .NET-hez.
 
 ## Lépésről lépésre a fájladatok beállításához az Aspose.PDF for .NET használatával
 

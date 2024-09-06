@@ -7,7 +7,7 @@ type: docs
 weight: 40
 url: /hu/net/programming-with-links-and-actions/create-local-hyperlink/
 ---
-helyi hiperhivatkozások PDF-fájlban történő létrehozásával olyan kattintható hivatkozásokat hozhat létre, amelyek ugyanabban a PDF-dokumentumban más oldalakra irányítják a felhasználókat. Az Aspose.PDF for .NET segítségével könnyen létrehozhat ilyen hivatkozásokat a következő forráskód követésével:
+A helyi hiperhivatkozások PDF-fájlban történő létrehozásával olyan kattintható hivatkozásokat hozhat létre, amelyek ugyanabban a PDF-dokumentumban más oldalakra irányítják a felhasználókat. Az Aspose.PDF for .NET segítségével könnyen létrehozhat ilyen hivatkozásokat a következő forráskód követésével:
 
 ## 1. lépés: Importálja a szükséges könyvtárakat
 
@@ -21,7 +21,7 @@ using Aspose.Pdf.InteractiveFeatures;
 
 ## 2. lépés: Állítsa be a dokumentumok mappa elérési útját
 
- Ebben a lépésben meg kell adnia annak a mappának az elérési útját, ahová a létrejövő PDF-fájlt menteni szeretné. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` következő kódban a dokumentummappa tényleges elérési útjával:
+ Ebben a lépésben meg kell adnia annak a mappának az elérési útját, ahová a létrejövő PDF-fájlt menteni szeretné. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a következő kódban a dokumentummappa tényleges elérési útjával:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -58,7 +58,7 @@ page.Paragraphs.Add(text);
 
 ## 5. lépés: Mentse el a frissített dokumentumot
 
- Most mentsük el a frissített PDF fájlt a`Save` módszere a`doc` tárgy. Itt van a megfelelő kód:
+Most mentsük el a frissített PDF fájlt a`Save` módszere a`doc` objektum. Itt van a megfelelő kód:
 
 ```csharp
 dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
@@ -81,7 +81,7 @@ Aspose.Pdf.LocalHyperlink link = new Aspose.Pdf.LocalHyperlink();
 link.TargetPageNumber = 7;
 // Állítsa be a TextFragment hiperhivatkozást
 text.Hyperlink = link;
-//Szöveg hozzáadása az oldal bekezdésgyűjteményéhez
+// Szöveg hozzáadása az oldal bekezdésgyűjteményéhez
 page.Paragraphs.Add(text);
 // Hozzon létre új TextFragment példányt
 text = new TextFragment("link page number test to page 1");
@@ -113,7 +113,7 @@ Feltétlenül tekintse meg a hivatalos Aspose.PDF dokumentációt a speciális h
 
 V: A PDF-fájlokban található helyi hiperhivatkozások olyan kattintható hivatkozások, amelyek a felhasználókat ugyanazon a dokumentumon belül különböző oldalakra navigálják. Ezek a hivatkozások javítják a navigációt, és lehetővé teszik az olvasók számára, hogy gyorsan elérjék a releváns részeket.
 
-#### K: Milyen előnyökkel járnak a helyi hiperhivatkozások a PDF-dokumentumomban?
+#### K: Milyen előnyökkel járhatnak a helyi hiperhivatkozások a PDF-dokumentumomban?
 
 V: A helyi hiperhivatkozások hatékony módot biztosítanak a kapcsolódó tartalom összekapcsolására ugyanazon a PDF dokumentumon belül. Javítják a felhasználói élményt azáltal, hogy lehetővé teszik az olvasók számára, hogy gyorsan ugorjanak meghatározott részekre anélkül, hogy végiggörgetnék a teljes dokumentumot.
 
@@ -130,7 +130,7 @@ V: Abszolút! Egyetlen PDF-oldalon belül több helyi hiperhivatkozást is létr
 
 #### K: Hivatkozhatok az oldal meghatározott részeire helyi hiperhivatkozások segítségével?
 
-V: Míg a helyi hiperhivatkozások általában teljes oldalakra navigálnak, a célzott hivatkozások elérése érdekében horgonyokat vagy könyvjelzőket hozhat létre a PDF-dokumentumban. Az Aspose.PDF for .NET különféle hiperhivatkozási lehetőségeket támogat.
+V: Míg a helyi hiperhivatkozások általában teljes oldalakra navigálnak, a PDF-dokumentumban horgonyokat vagy könyvjelzőket hozhat létre a célzott hivatkozások elérése érdekében. Az Aspose.PDF for .NET különféle hiperhivatkozási lehetőségeket támogat.
 
 #### K: Hogyan ellenőrizhetem, hogy a helyi hiperhivatkozásaim megfelelően működnek?
 
@@ -138,7 +138,7 @@ V: Az oktatóanyag és a mintakód követésével magabiztosan hozhat létre mű
 
 #### K: Vannak-e korlátozások a helyi hiperhivatkozások használatakor?
 
-V: A helyi hiperhivatkozások hatékony módja a dokumentumok navigációjának javításának, de fontos biztosítani, hogy a dokumentum szerkezete egyértelmű és intuitív maradjon. A megfelelően felcímkézett hiperhivatkozások és horgonyok hozzájárulnak a pozitív felhasználói élményhez.
+V: A helyi hiperhivatkozások hatékony módja a dokumentumok navigációjának javításának, de fontos annak biztosítása, hogy a dokumentum szerkezete egyértelmű és intuitív maradjon. A megfelelően felcímkézett hiperhivatkozások és horgonyok hozzájárulnak a pozitív felhasználói élményhez.
 
 #### K: Létrehozhatok helyi hiperhivatkozásokat táblázatokon vagy képeken belül?
 

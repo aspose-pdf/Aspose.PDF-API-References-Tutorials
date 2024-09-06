@@ -1,113 +1,111 @@
 ---
 title: Thay thế phông chữ bị thiếu
 linktitle: Thay thế phông chữ bị thiếu
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Hướng dẫn từng bước để thay thế phông chữ bị thiếu trong tệp PDF bằng Aspose.PDF cho .NET.
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách thay thế phông chữ bị thiếu trong tài liệu PDF bằng Aspose.PDF cho .NET với hướng dẫn từng bước này.
 type: docs
 weight: 260
 url: /vi/net/document-conversion/replace-missing-fonts/
 ---
-Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn quy trình thay thế phông chữ bị thiếu trong tệp PDF bằng Aspose.PDF cho .NET. Khi bạn mở tệp PDF trên máy bị thiếu phông chữ cụ thể, có thể có vấn đề về hiển thị phông chữ. Trong những trường hợp như vậy, có thể thay thế font chữ bị thiếu bằng một font chữ khác có sẵn trên máy. Bằng cách làm theo các bước bên dưới, bạn sẽ có thể thay thế các phông chữ bị thiếu trong tệp PDF.
+## Giới thiệu
+
+Bạn đã bao giờ mở một tài liệu PDF và phát hiện ra rằng một số phông chữ bị thiếu chưa? Điều đó có thể gây bực bội, phải không? Việc thiếu phông chữ có thể khiến tài liệu trông hoàn toàn khác so với ý định của người tạo. May mắn thay, với Aspose.PDF cho .NET, bạn có thể dễ dàng thay thế các phông chữ bị thiếu và đảm bảo tài liệu PDF của bạn duy trì được giao diện mong muốn. Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn từng bước trong quy trình, giúp bạn thực hiện một cách đơn giản và dễ hiểu.
 
 ## Điều kiện tiên quyết
-Trước khi bắt đầu, hãy đảm bảo bạn đáp ứng các điều kiện tiên quyết sau:
 
-- Kiến thức cơ bản về ngôn ngữ lập trình C#.
-- Thư viện Aspose.PDF cho .NET được cài đặt trên hệ thống của bạn.
-- Một môi trường phát triển như Visual Studio.
+Trước khi bắt đầu, bạn cần chuẩn bị một số thứ sau:
 
-## Bước 1: Tìm phông chữ bị thiếu
-Bước đầu tiên là tìm phông chữ bị thiếu trong tệp PDF. Sử dụng mã sau đây:
+1.  Aspose.PDF cho .NET: Đảm bảo bạn đã cài đặt thư viện Aspose.PDF. Bạn có thể tải xuống từ[đây](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: Môi trường phát triển nơi bạn có thể viết và kiểm tra mã của mình.
+3. Kiến thức cơ bản về C#: Sự quen thuộc với lập trình C# sẽ giúp bạn hiểu các đoạn mã tốt hơn.
 
-```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+## Nhập gói
 
-Aspose.Pdf.Text.Font originalFont = null;
-try
-{
-     // Tìm phông chữ gốc
-     originalFont = FontRepository.FindFont("AgencyFB");
-}
-catch(Exception)
-{
-     // Phông chữ bị thiếu trên máy đích
-     // Thêm thay thế phông chữ đơn giản
-     FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
-}
-```
-
- Hãy chắc chắn để thay thế`"YOUR DOCUMENTS DIRECTORY"` với thư mục thực tế nơi chứa tệp PDF của bạn.
-
-## Bước 2: Thay thế phông chữ bị thiếu
-Tiếp theo, chúng ta sẽ thay thế font chữ bị thiếu bằng một font chữ khác có sẵn. Sử dụng mã sau đây:
+Để bắt đầu, bạn sẽ cần nhập các gói cần thiết vào dự án C# của mình. Sau đây là cách bạn có thể thực hiện:
 
 ```csharp
-var fileNew = new FileInfo(dataDir + "newfile_out.pdf");
-var pdf = new Document(dataDir + "input.pdf");
-
-// Chuyển đổi tệp PDF sang định dạng PDF/A và loại bỏ lỗi
-pdf.Convert(dataDir + "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
-
-// Lưu tệp PDF kết quả
-pdf.Save(fileNew.FullName);
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
- Hãy chắc chắn để thay thế`"input.pdf"` với đường dẫn thực tế tới tệp PDF gốc của bạn và`"newfile_out.pdf"` với tên mong muốn cho tệp PDF kết quả.
+## Bước 1: Thiết lập thư mục tài liệu của bạn
 
-## Bước 3: Lưu tệp PDF kết quả
-Cuối cùng, chúng tôi sẽ lưu tệp PDF kết quả với phông chữ được thay thế. Sử dụng mã sau đây:
-
-```csharp
-// Lưu tệp PDF kết quả
-pdf.Save(fileNew.FullName);
-```
-
-Đảm bảo rằng bạn đã đặt đường dẫn đích chính xác cho tệp PDF kết quả.
-
-### Mã nguồn ví dụ cho Thay thế phông chữ bị thiếu bằng Aspose.PDF cho .NET
+Đầu tiên, bạn cần chỉ định đường dẫn đến thư mục tài liệu của mình. Đây là nơi tệp PDF đầu vào của bạn nằm và nơi tệp đầu ra sẽ được lưu.
 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+## Bước 2: Khởi tạo phông chữ gốc
+
+Tiếp theo, bạn sẽ muốn thử tìm phông chữ gốc có thể bị thiếu. Trong trường hợp này, chúng tôi đang tìm "AgencyFB".
+
+```csharp
 Aspose.Pdf.Text.Font originalFont = null;
 try
 {
-	originalFont = FontRepository.FindFont("AgencyFB");
+    originalFont = FontRepository.FindFont("AgencyFB");
 }
 catch (Exception)
 {
-	// Máy đích bị thiếu phông chữ
-	FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
+    //Phông chữ bị thiếu trên máy đích
+    FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
 }
+```
+
+Ở đây, chúng tôi cố gắng tìm phông chữ. Nếu không tìm thấy, chúng tôi sẽ bắt lỗi và thay thế bằng phông chữ phổ biến hơn, "Arial". Điều này đảm bảo rằng tài liệu của bạn vẫn trông đẹp ngay cả khi phông chữ gốc không khả dụng.
+
+## Bước 3: Tải tài liệu PDF
+
+Bây giờ, hãy tải tài liệu PDF mà bạn muốn xử lý. Bạn sẽ cần chỉ định đường dẫn tệp đầu vào.
+
+```csharp
 var fileNew = new FileInfo(dataDir + "newfile_out.pdf");
 var pdf = new Document(dataDir + "input.pdf");
-pdf.Convert( dataDir +  "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
+```
+
+ Trong bước này, chúng ta tạo một cái mới`FileInfo` đối tượng cho tệp đầu ra và tải tài liệu PDF đầu vào vào một tệp mới`Document` sự vật.
+
+## Bước 4: Chuyển đổi tài liệu PDF
+
+Trước khi lưu tài liệu, bạn nên chuyển đổi tài liệu sang định dạng PDF cụ thể. Trong trường hợp này, chúng tôi sẽ chuyển đổi sang định dạng PDF/A-1B, đây là tiêu chuẩn để lưu trữ tài liệu điện tử lâu dài.
+
+```csharp
+pdf.Convert(dataDir + "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
+```
+
+Dòng này chuyển đổi PDF và ghi lại bất kỳ lỗi nào vào tệp XML được chỉ định. Nếu có bất kỳ vấn đề nào trong quá trình chuyển đổi, chúng sẽ được ghi lại trong "log.xml".
+
+## Bước 5: Lưu tài liệu PDF đã cập nhật
+
+Cuối cùng, đã đến lúc lưu tài liệu PDF đã cập nhật với phông chữ đã thay thế.
+
+```csharp
 pdf.Save(fileNew.FullName);
 ```
 
+Dòng này lưu tệp PDF đã sửa đổi vào đường dẫn tệp đầu ra đã chỉ định. Và như vậy là bạn đã thay thế thành công các phông chữ bị thiếu trong tài liệu PDF của mình!
+
 ## Phần kết luận
-Trong hướng dẫn này, chúng tôi đã trình bày quy trình từng bước thay thế phông chữ bị thiếu trong tệp PDF bằng Aspose.PDF cho .NET. Bằng cách làm theo các hướng dẫn được nêu ở trên, bạn sẽ có thể thay thế thành công các phông chữ bị thiếu trong tệp PDF của mình.
 
-### Câu hỏi thường gặp
+Việc thay thế phông chữ bị thiếu trong tài liệu PDF không phải là một nhiệm vụ khó khăn. Với Aspose.PDF cho .NET, bạn có thể dễ dàng quản lý việc thay thế phông chữ và đảm bảo tài liệu của bạn trông như mong đợi. Bằng cách làm theo các bước được nêu trong hướng dẫn này, bạn có thể duy trì tính toàn vẹn của tệp PDF, ngay cả khi một số phông chữ không khả dụng. Vì vậy, lần sau khi bạn gặp sự cố thiếu phông chữ, bạn sẽ biết chính xác phải làm gì!
 
-#### Câu hỏi: Aspose.PDF dành cho .NET là gì?
+## Câu hỏi thường gặp
 
-Đáp: Aspose.PDF for .NET là một thư viện mạnh mẽ cho phép các nhà phát triển làm việc với các tài liệu PDF trong các ứng dụng C#. Nó cung cấp nhiều chức năng khác nhau, bao gồm khả năng thay thế phông chữ bị thiếu trong tệp PDF.
+### Aspose.PDF dành cho .NET là gì?
+Aspose.PDF for .NET là một thư viện mạnh mẽ cho phép các nhà phát triển tạo, chỉnh sửa và chuyển đổi tài liệu PDF theo chương trình.
 
-#### Hỏi: Tại sao tôi lại gặp phải tình trạng thiếu phông chữ trong tệp PDF?
+### Tôi có thể sử dụng Aspose.PDF miễn phí không?
+ Có, Aspose cung cấp phiên bản dùng thử miễn phí mà bạn có thể sử dụng để đánh giá thư viện. Bạn có thể tải xuống[đây](https://releases.aspose.com/).
 
-Trả lời: Việc thiếu phông chữ trong tệp PDF có thể xảy ra khi tệp được mở trên máy chưa cài đặt các phông chữ cần thiết. Điều này có thể dẫn đến việc thay thế phông chữ, ảnh hưởng đến hình thức trực quan của tài liệu.
+### Tôi phải làm gì nếu phông chữ tôi cần không có sẵn?
+Bạn có thể thay thế phông chữ bị thiếu bằng phông chữ phổ biến hơn bằng tính năng thay thế phông chữ trong Aspose.PDF.
 
-#### Câu hỏi: Làm cách nào tôi có thể tìm và thay thế các phông chữ bị thiếu trong tệp PDF bằng Aspose.PDF cho .NET?
+### Có thể chuyển đổi PDF sang các định dạng khác không?
+Chắc chắn rồi! Aspose.PDF hỗ trợ chuyển đổi sang nhiều định dạng khác nhau, bao gồm PDF/A, DOCX, v.v.
 
- Đáp: Để tìm và thay thế các phông chữ bị thiếu, bạn có thể sử dụng`FontRepository.FindFont` phương pháp để kiểm tra sự hiện diện của phông chữ được yêu cầu. Nếu phông chữ bị thiếu, bạn có thể thêm phông chữ thay thế bằng cách sử dụng`FontRepository.Substitutions` tài sản.
-
-#### Hỏi: Tôi có thể tùy chỉnh quá trình thay thế phông chữ không?
-
-Trả lời: Có, bạn có thể tùy chỉnh quy trình thay thế phông chữ bằng cách chỉ định một phông chữ khác để thay thế. Trong mã được cung cấp, chúng tôi đã sử dụng Arial để thay thế cho phông chữ "AgencyFB" bị thiếu nhưng bạn có thể chọn phông chữ khác tùy theo sở thích của mình.
-
-#### Câu hỏi: Làm cách nào để đảm bảo tính chính xác của việc hiển thị phông chữ sau khi thay thế?
-
-Trả lời: Aspose.PDF for .NET cung cấp khả năng xử lý phông chữ mạnh mẽ, đảm bảo hiển thị phông chữ chính xác sau khi thay thế. Bạn có thể xem trước tệp PDF kết quả để xác minh việc thay thế phông chữ.
+### Tôi có thể tìm thấy hỗ trợ cho Aspose.PDF ở đâu?
+ Bạn có thể tìm thấy sự hỗ trợ và đặt câu hỏi trong diễn đàn Aspose[đây](https://forum.aspose.com/c/pdf/10).

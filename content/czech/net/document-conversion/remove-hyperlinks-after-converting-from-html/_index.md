@@ -2,128 +2,164 @@
 title: Odebrat hypertextové odkazy po převodu z HTML
 linktitle: Odebrat hypertextové odkazy po převodu z HTML
 second_title: Aspose.PDF pro .NET API Reference
-description: Průvodce krok za krokem k odstranění hypertextových odkazů po převodu HTML do PDF pomocí Aspose.PDF pro .NET.
+description: V tomto podrobném průvodci se dozvíte, jak odstranit hypertextové odkazy z dokumentů HTML po převodu do PDF pomocí Aspose.PDF for .NET.
 type: docs
 weight: 250
 url: /cs/net/document-conversion/remove-hyperlinks-after-converting-from-html/
 ---
-V tomto tutoriálu vás provedeme procesem odstranění hypertextových odkazů ze souboru PDF vygenerovaného ze souboru HTML pomocí Aspose.PDF for .NET. Hypertextové odkazy jsou klikací odkazy, které mohou přesměrovat na jiné stránky nebo webové stránky. Pomocí následujících kroků budete moci odstranit hypertextové odkazy z výsledného souboru PDF.
+## Zavedení
+
+V digitálním věku je převod HTML dokumentů do PDF běžným úkolem. Někdy však můžete chtít odstranit hypertextové odkazy z převedeného PDF z různých důvodů, jako je zlepšení čitelnosti nebo zabránění nechtěné navigaci. V tomto tutoriálu prozkoumáme, jak toho dosáhnout pomocí Aspose.PDF pro .NET. 
 
 ## Předpoklady
-Než začnete, ujistěte se, že splňujete následující předpoklady:
 
-- Základní znalost programovacího jazyka C#.
-- Knihovna Aspose.PDF pro .NET nainstalovaná ve vašem systému.
-- Vývojové prostředí, jako je Visual Studio.
+Než se ponoříte do kódu, ujistěte se, že máte následující předpoklady:
 
-## Krok 1: Načtení souboru HTML a odstranění hypertextových odkazů
-tomto kroku načteme soubor HTML a odstraníme hypertextové odkazy z výsledného dokumentu PDF. Použijte následující kód:
+1. Visual Studio: Ujistěte se, že máte na svém počítači nainstalované Visual Studio. Toto bude vaše vývojové prostředí.
+2.  Aspose.PDF pro .NET: Musíte mít knihovnu Aspose.PDF. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/net/).
+3. Základní znalost C#: Znalost programování v C# vám pomůže lépe porozumět kódu.
 
-```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+## Importujte balíčky
 
-// Načtěte soubor HTML pomocí možností načítání HTML
-Document doc = new Document(dataDir + "SampleHtmlFile.html", new HtmlLoadOptions());
+Chcete-li začít, musíte do svého projektu C# importovat potřebné balíčky. Můžete to udělat takto:
 
-// Procházejte anotace na první stránce dokumentu
-foreach(Annotation a in doc.Pages[1].Annotations)
-{
-     // Zkontrolujte, zda je anotace odkazem
-     if (a.AnnotationType == AnnotationType.Link)
-     {
-         LinkAnnotation the = (LinkAnnotation)a;
-        
-         // Zkontrolujte, zda je akce typu GoTOURIAction
-         if (the.Action is GoToURIAction)
-         {
-             GoToURIAction gta = (GoToURIAction)the.Action;
-             gta.URI = "";
-            
-             // Použijte absorbér textových fragmentů k nalezení odpovídajících textových fragmentů
-             TextFragmentAbsorber tfa = new TextFragmentAbsorber();
-             tfa.TextSearchOptions = new TextSearchOptions(a.Rect);
-             doc.Pages[a.PageIndex].Accept(tfa);
-            
-             // Procházejte odpovídající fragmenty textu a odstraňte atributy z hypertextových odkazů
-             foreach(TextFragment tf in tfa.TextFragments)
-             {
-                 tf.TextState.Underline = false;
-                 tf.TextState.ForegroundColor = Color.Black;
-             }
-         }
-        
-         // Odeberte anotaci ze stránky
-         doc.Pages[a.PageIndex].Annotations.Delete(a);
-     }
-}
-```
-
- Nezapomeňte vyměnit`"YOUR DOCUMENTS DIRECTORY"` se skutečným adresářem, kde se nachází váš soubor HTML.
-
-## Krok 2: Uložení výsledného souboru PDF
-Nakonec výsledný soubor PDF uložíme bez hypertextových odkazů. Použijte následující kód:
+1. Otevřete projekt sady Visual Studio.
+2. Klikněte pravým tlačítkem na svůj projekt v Průzkumníku řešení a vyberte „Spravovat balíčky NuGet“.
+3.  Hledat`Aspose.PDF` a nainstalujte jej.
 
 ```csharp
-// Uložte výsledný soubor PDF
-doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Text;
+using System.IO;
 ```
 
- Výše uvedený kód uloží výsledný soubor PDF s názvem souboru`"RemoveHyperlinksFromText_out.pdf"`.
+Nyní, když máte vše nastaveno, pojďme si rozebrat proces odstraňování hypertextových odkazů ze souboru HTML po jeho převedení do PDF.
 
-### Příklad zdrojového kódu pro Remove Hyperlinks After Converting From Html pomocí Aspose.PDF for .NET
+## Krok 1: Nastavte adresář dokumentů
+
+Nejprve musíte zadat cestu k adresáři dokumentů. Zde se nachází váš soubor HTML a kde se uloží výstupní PDF.
 
 ```csharp
 // Cesta k adresáři dokumentů.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+ Nahradit`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou, kde je uložen váš soubor HTML.
+
+## Krok 2: Načtěte dokument HTML
+
+ Dále načtete HTML dokument pomocí`Document` třídy z Aspose.PDF. Tato třída vám umožní snadno pracovat s dokumenty PDF.
+
+```csharp
 Document doc = new Document(dataDir + "SampleHtmlFile.html", new HtmlLoadOptions());
+```
+
+ Zde načítáme soubor HTML s názvem`SampleHtmlFile.html`. Ujistěte se, že tento soubor existuje ve vašem zadaném adresáři.
+
+## Krok 3: Uložte dokument do Memory Stream
+
+Než začneme zpracovávat anotace, musíme dokument uložit do paměťového streamu. Tento krok je zásadní, protože připravuje dokument pro další manipulaci.
+
+```csharp
 doc.Save(new MemoryStream());
+```
+
+Tento řádek ukládá dokument do paměti a umožňuje nám s ním pracovat, aniž bychom ho zatím zapisovali na disk.
+
+## Krok 4: Iterujte prostřednictvím anotací
+
+Nyní si projdeme anotace v dokumentu. Anotace jsou prvky, jako jsou odkazy, komentáře a zvýraznění. Konkrétně nás zajímají anotace odkazů.
+
+```csharp
 foreach (Annotation a in doc.Pages[1].Annotations)
 {
-	if (a.AnnotationType == AnnotationType.Link)
-	{
-		LinkAnnotation la = (LinkAnnotation)a;
-		if (la.Action is GoToURIAction)
-		{
-			GoToURIAction gta = (GoToURIAction)la.Action;
-			gta.URI = "";
-			TextFragmentAbsorber tfa = new TextFragmentAbsorber();
-			tfa.TextSearchOptions = new TextSearchOptions(a.Rect);
-			doc.Pages[a.PageIndex].Accept(tfa);
-			foreach (TextFragment tf in tfa.TextFragments)
-			{
-				tf.TextState.Underline = false;
-				tf.TextState.ForegroundColor = Color.Black;
-			}
-		}
-		doc.Pages[a.PageIndex].Annotations.Delete(a);
-	}
+    if (a.AnnotationType == AnnotationType.Link)
+    {
+        // Zpracujte anotaci odkazu
+    }
 }
+```
+
+V této smyčce zkontrolujeme, zda typ anotace je odkaz. Pokud ano, přistoupíme k dalším krokům.
+
+## Krok 5: Odeberte akci hypertextového odkazu
+
+U každé anotace odkazu musíme zkontrolovat, zda má akci hypertextového odkazu. Pokud ano, odstraníme hypertextový odkaz nastavením jeho URI na prázdný řetězec.
+
+```csharp
+LinkAnnotation la = (LinkAnnotation)a;
+if (la.Action is GoToURIAction)
+{
+    GoToURIAction gta = (GoToURIAction)la.Action;
+    gta.URI = "";
+```
+
+Tento fragment kódu zajišťuje účinné odstranění akce hypertextového odkazu.
+
+## Krok 6: Absorbujte textové fragmenty
+
+Dále budeme absorbovat fragmenty textu spojené s anotací odkazu. To nám umožňuje manipulovat se vzhledem textu.
+
+```csharp
+TextFragmentAbsorber tfa = new TextFragmentAbsorber();
+tfa.TextSearchOptions = new TextSearchOptions(a.Rect);
+doc.Pages[a.PageIndex].Accept(tfa);
+```
+
+ Zde vytvoříme a`TextFragmentAbsorber` a nastavte jeho možnosti vyhledávání na obdélník poznámky. To nám pomáhá najít text, který byl propojen.
+
+## Krok 7: Upravte vzhled textu
+
+Jakmile máme textové fragmenty, můžeme upravit jejich vzhled. V tomto případě odstraníme podtržení a změníme barvu textu na černou.
+
+```csharp
+foreach (TextFragment tf in tfa.TextFragments)
+{
+    tf.TextState.Underline = false;
+    tf.TextState.ForegroundColor = Color.Black;
+}
+```
+
+Tento krok zlepšuje čitelnost textu odstraněním stylu hypertextového odkazu.
+
+## Krok 8: Odstraňte anotaci
+
+Po úpravě textu můžeme anotaci odkazu z dokumentu bezpečně smazat.
+
+```csharp
+doc.Pages[a.PageIndex].Annotations.Delete(a);
+}
+```
+
+Tento řádek odstraní hypertextový odkaz z PDF a zajistí, že v konečném výstupu již neexistuje.
+
+## Krok 9: Uložte upravený dokument
+
+Nakonec musíme upravený dokument uložit do nového souboru PDF. Toto je poslední krok v našem procesu.
+
+```csharp
 doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 ```
 
+ Tento řádek uloží dokument s odstraněnými hypertextovými odkazy a vytvoří nový soubor PDF s názvem`RemoveHyperlinksFromText_out.pdf`.
+
 ## Závěr
-V tomto tutoriálu jsme se zabývali podrobným procesem odstraňování hypertextových odkazů ze souboru PDF generovaného ze souboru HTML pomocí Aspose.PDF for .NET. Podle výše popsaných pokynů budete moci úspěšně odstranit hypertextové odkazy z výsledného souboru PDF.
 
-### FAQ
+A tady to máte! Úspěšně jste odstranili hypertextové odkazy z dokumentu HTML po jeho převedení do PDF pomocí Aspose.PDF for .NET. Tento proces nejen zlepšuje čitelnost vašeho PDF, ale také vám dává kontrolu nad obsahem, který prezentujete. 
 
-#### Otázka: Co je Aspose.PDF pro .NET?
+## FAQ
 
-A: Aspose.PDF for .NET je výkonná knihovna, která umožňuje vývojářům pracovat s dokumenty PDF v aplikacích C#. Nabízí širokou škálu funkcí, včetně schopnosti převádět HTML soubory do PDF a manipulovat s obsahem PDF.
+### Mohu odstranit hypertextové odkazy z jakéhokoli dokumentu PDF?
+Ano, hypertextové odkazy můžete odstranit z jakéhokoli dokumentu PDF pomocí Aspose.PDF for .NET.
 
-#### Otázka: Proč bych měl chtít odstranit hypertextové odkazy ze souboru PDF?
+### Je Aspose.PDF zdarma k použití?
+ Aspose.PDF nabízí bezplatnou zkušební verzi, ale pro plné funkce si musíte zakoupit licenci. Zkontrolujte[koupit stránku](https://purchase.aspose.com/buy).
 
-Odpověď: Existují různé důvody pro odstranění hypertextových odkazů ze souboru PDF. Můžete například chtít odstranit externí odkazy pro účely tisku nebo archivace nebo zajistit, aby obsah PDF nebylo možné procházet pomocí hypertextových odkazů.
+### Co když narazím na problémy při používání Aspose.PDF?
+ Pomoc můžete hledat na[fórum podpory](https://forum.aspose.com/c/pdf/10).
 
-#### Otázka: Jak mohu načíst soubor HTML a odstranit hypertextové odkazy pomocí Aspose.PDF pro .NET?
+### Mohu pomocí Aspose převést jiné formáty souborů do PDF?
+Ano, Aspose podporuje různé formáty souborů pro převod do PDF.
 
- A: Chcete-li načíst soubor HTML a odstranit hypertextové odkazy, můžete použít Aspose.PDF pro .NET`HtmlLoadOptions` třída. Procházejte anotacemi stránek PDF, abyste našli anotace odkazů a upravili jejich atributy.
-
-#### Otázka: Mohu upravit výstupní název souboru pro výsledné PDF?
-
-Odpověď: Ano, můžete upravit výstupní název souboru pro výsledný soubor PDF úpravou kódu, který uloží dokument PDF. Jednoduše změňte požadovaný název souboru v`doc.Save()` metoda.
-
-#### Otázka: Je možné selektivně odstranit hypertextové odkazy na základě určitých kritérií?
-
-Odpověď: Ano, můžete selektivně odstranit hypertextové odkazy na základě specifických kritérií. Můžete se například rozhodnout odstranit pouze externí odkazy nebo odkazy směřující na konkrétní adresy URL.
+### Kde si mohu stáhnout Aspose.PDF pro .NET?
+ Můžete si jej stáhnout z[odkaz ke stažení](https://releases.aspose.com/pdf/net/).

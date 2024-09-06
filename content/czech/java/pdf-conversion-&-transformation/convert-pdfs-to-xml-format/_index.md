@@ -29,7 +29,7 @@ Nyní, když máte stručný přehled Aspose.PDF pro Java, pojďme se ponořit d
 
 Než budete moci začít převádět PDF do XML, musíte ve svém projektu nastavit Aspose.PDF pro Javu. Chcete-li začít, postupujte takto:
 
-1.  Stáhnout Aspose.PDF pro Java: Navštivte web Aspose a stáhněte si Java verzi Aspose.PDF. Odkaz ke stažení najdete[tady](https://releases.aspose.com/pdf/java/).
+1.  Stáhnout Aspose.PDF pro Java: Navštivte web Aspose a stáhněte si Java verzi Aspose.PDF. Odkaz ke stažení najdete[zde](https://releases.aspose.com/pdf/java/).
 
 2. Instalace: Po stažení postupujte podle pokynů k instalaci uvedených na webu Aspose a nastavte knihovnu ve svém projektu Java.
 
@@ -74,7 +74,7 @@ Aspose.PDF for Java nabízí různé možnosti přizpůsobení výstupu XML tak,
 
 Někdy mohou být dokumenty PDF složité se složitými rozvrženími a prvky. Aspose.PDF pro Javu je vybaven pro zvládnutí takové složitosti. Pokud se během převodu setkáte s problémy, vyhledejte řešení a osvědčené postupy v dokumentaci nebo na fórech komunity.
 
-## Osvědčené postupy
+## Nejlepší postupy
 
 Chcete-li zajistit efektivní převod PDF do XML, zvažte následující osvědčené postupy:
 
@@ -90,8 +90,8 @@ Převod PDF do formátu XML pomocí Aspose.PDF for Java otevírá svět možnost
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
-Instalace Aspose.PDF pro Java je přímočará. Následuj tyto kroky:
-1.  Stáhněte si knihovnu z[tady](https://releases.aspose.com/pdf/java/).
+Instalace Aspose.PDF pro Java je přímočará. Postupujte takto:
+1.  Stáhněte si knihovnu z[zde](https://releases.aspose.com/pdf/java/).
 2. Nainstalujte jej do svého projektu Java podle poskytnutých pokynů.
 
 ### Mohu převést soubory PDF chráněné heslem na XML?
@@ -108,4 +108,4 @@ Převod PDF do XML nabízí výhody, jako je extrakce strukturovaných dat, snad
 
 ### Kde najdu další zdroje na Aspose.PDF pro Javu?
 
- Navštivte Aspose.PDF pro dokumentaci Java[tady](https://reference.aspose.com/pdf/java/) pro komplexní zdroje, výukové programy a reference API.
+ Navštivte Aspose.PDF pro dokumentaci Java[zde](https://reference.aspose.com/pdf/java/) pro komplexní zdroje, výukové programy a reference API.

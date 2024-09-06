@@ -8,7 +8,7 @@ weight: 18
 url: /cs/java/pdf-conversion-transformation/create-pdfa-compliant-files/
 ---
 
-## Úvod
+## Zavedení
 
 Vytváření dokumentů PDF, které dodržují standard PDF/A, zajišťuje, že vaše soubory budou přístupné a spolehlivé v průběhu času. Aspose.PDF for Java tento úkol zjednodušuje díky robustní sadě funkcí a snadno použitelnému rozhraní API.
 
@@ -18,7 +18,7 @@ Soulad s PDF/A zaručuje, že dokument se v budoucnu vykreslí přesně stejným
 
 ## Nastavení vývojového prostředí
 
- Než začneme, ujistěte se, že máte v systému nainstalovanou Javu. Můžete si jej stáhnout z[tady](https://www.java.com/download/). Také se ujistěte, že máte integrované vývojové prostředí (IDE), jako je IntelliJ IDEA nebo Eclipse.
+ Než začneme, ujistěte se, že máte v systému nainstalovanou Javu. Můžete si jej stáhnout z[zde](https://www.java.com/download/). Také se ujistěte, že máte integrované vývojové prostředí (IDE), jako je IntelliJ IDEA nebo Eclipse.
 
 ## Vytvoření nového projektu Java
 
@@ -26,7 +26,7 @@ Začněte vytvořením nového projektu Java ve vámi preferovaném IDE. Pojmenu
 
 ## Přidání Aspose.PDF pro Java do vašeho projektu
 
- Chcete-li použít Aspose.PDF pro Java, musíte do svého projektu přidat knihovnu Aspose.PDF. Můžete si jej stáhnout z[Aspose.PDF pro Javu](https://releases.aspose.com/pdf/java/)Po stažení přidejte soubor JAR do cesty třídy vašeho projektu.
+ Chcete-li používat Aspose.PDF pro Java, musíte do svého projektu přidat knihovnu Aspose.PDF. Můžete si jej stáhnout z[Aspose.PDF pro Javu](https://releases.aspose.com/pdf/java/)Po stažení přidejte soubor JAR do cesty třídy vašeho projektu.
 
 ## Inicializace dokumentu PDF
 

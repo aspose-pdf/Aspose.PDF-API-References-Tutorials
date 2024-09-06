@@ -1,39 +1,39 @@
 ---
-title: PDFドキュメントのフォームフィールドを変更する
-linktitle: PDFドキュメントのフォームフィールドを変更する
+title: PDF ドキュメントのフォーム フィールドを変更する
+linktitle: PDF ドキュメントのフォーム フィールドを変更する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用すると、PDF ドキュメントのフォーム フィールドを簡単に編集できます。
+description: Aspose.PDF for .NET を使用すると、PDF ドキュメント内のフォーム フィールドを簡単に編集できます。
 type: docs
 weight: 190
 url: /ja/net/programming-with-forms/modify-form-field/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメント内のフォーム フィールドを編集する方法を説明します。このプロセスをガイドするために、C# ソース コードをステップごとに説明します。
+このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメントのフォーム フィールドを編集する方法を説明します。このプロセスをガイドするために、C# ソース コードを段階的に説明します。
 
-## ステップ 1: 準備
+## ステップ1: 準備
 
-必要なライブラリをインポートし、ドキュメント ディレクトリへのパスを設定していることを確認してください。
+必要なライブラリがインポートされ、ドキュメント ディレクトリへのパスが設定されていることを確認してください。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## ステップ 2: ドキュメントをロードする
+## ステップ2: ドキュメントを読み込む
 
-既存の PDF ドキュメントをロードします。
+既存の PDF ドキュメントを読み込みます:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ModifyFormField.pdf");
 ```
 
-## ステップ 3: フォームフィールドを取得する
+## ステップ3: フォームフィールドを取得する
 
-編集するフォームフィールドを取得します。
+編集したいフォーム フィールドを取得します。
 
 ```csharp
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 ```
 
-## ステップ 4: フィールド値を変更する
+## ステップ4: フィールド値を変更する
 
 フォームフィールドの値を変更します。
 
@@ -41,15 +41,15 @@ TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 textBoxField.Value = "New Value";
 ```
 
-## ステップ 5: フィールドのプロパティを編集する
+## ステップ5: フィールドプロパティを編集する
 
-必要に応じて、追加のフォーム フィールドのプロパティを変更します。たとえば、次のように読み取り専用にできます。
+必要に応じて追加のフォーム フィールド プロパティを変更します。たとえば、読み取り専用にすることができます。
 
 ```csharp
 textBoxField.ReadOnly = true;
 ```
 
-## ステップ 6: 編集したドキュメントを保存する
+## ステップ6: 編集した文書を保存する
 
 変更した PDF ドキュメントを保存します。
 
@@ -58,11 +58,11 @@ dataDir = dataDir + "ModifyFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Aspose.PDF for .NET を使用したフォーム フィールドの変更のサンプル ソース コード 
+### Aspose.PDF for .NET を使用してフォーム フィールドを変更するためのサンプル ソース コード 
 ```csharp
-//ドキュメントディレクトリへのパス。
+//ドキュメント ディレクトリへのパス。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//開いた文書
+//ドキュメントを開く
 Document pdfDocument = new Document(dataDir + "ModifyFormField.pdf");
 //フィールドを取得する
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
@@ -77,27 +77,27 @@ Console.WriteLine("\nForm field modified successfully.\nFile saved at " + dataDi
 
 ## 結論
 
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメント内のフォーム フィールドを編集する方法を学びました。これらの手順に従うことで、特定のフィールドに簡単に移動し、その値を変更し、必要に応じてそのプロパティを調整することができます。
+このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメント内のフォーム フィールドを編集する方法を学習しました。これらの手順に従うことで、特定のフィールドに簡単に移動してその値を変更し、必要に応じてそのプロパティを調整できます。
 
 
 ### よくある質問
 
 #### Q: Aspose.PDF for .NET を使用して、単一の PDF ドキュメント内の複数のフォーム フィールドを編集できますか?
 
-A: はい、Aspose.PDF for .NET を使用すると、単一の PDF ドキュメント内の複数のフォーム フィールドを編集できます。変更したいフォームフィールドごとにこのプロセスを繰り返すだけです。
+A: はい、Aspose.PDF for .NET を使用すると、単一の PDF ドキュメント内の複数のフォーム フィールドを編集できます。変更するフォーム フィールドごとにこのプロセスを繰り返すだけです。
 
-#### Q: Aspose.PDF for .NET は、.NET Framework のすべてのバージョンと互換性がありますか?
+#### Q: Aspose.PDF for .NET は、すべてのバージョンの .NET Framework と互換性がありますか?
 
-A: はい、Aspose.PDF for .NET は、.NET Core や .NET Standard を含む .NET Framework のすべてのバージョンと互換性があります。
+A: はい、Aspose.PDF for .NET は、.NET Core および .NET Standard を含むすべてのバージョンの .NET Framework と互換性があります。
 
-#### Q: Aspose.PDF for .NET を使用して、チェックボックスやラジオ ボタンなどの他のタイプのフォーム フィールドを変更できますか?
+#### Q: Aspose.PDF for .NET を使用して、チェックボックスやラジオ ボタンなどの他の種類のフォーム フィールドを変更できますか?
 
-A: はい、Aspose.PDF for .NET は、チェックボックス、ラジオ ボタンなどを含む、さまざまなタイプのフォーム フィールドの変更をサポートしています。
+A: はい、Aspose.PDF for .NET は、チェックボックス、ラジオ ボタンなど、さまざまな種類のフォーム フィールドの変更をサポートしています。
 
 #### Q: Aspose.PDF for .NET を使用して PDF ドキュメントに新しいフォーム フィールドを追加するにはどうすればよいですか?
 
- A: PDF ドキュメントに新しいフォーム フィールドを追加するには、`Form`の財産`Document`にアクセスするためのクラス`Field`コレクションを作成し、プログラムで新しいフォーム フィールドを追加します。
+ A: PDF文書に新しいフォームフィールドを追加するには、`Form`の財産`Document`アクセスするためのクラス`Field`コレクションを作成し、プログラムで新しいフォーム フィールドを追加します。
 
-#### Q: Aspose.PDF for .NET は C# 以外のプログラミング言語をサポートしていますか?
+#### Q: Aspose.PDF for .NET は C# 以外のプログラミング言語もサポートしていますか?
 
-A: はい、Aspose.PDF for .NET は、C# に加えて、VB.NET や ASP.NET などのさまざまなプログラミング言語をサポートしています。
+A: はい、Aspose.PDF for .NET は C# に加えて、VB.NET や ASP.NET などのさまざまなプログラミング言語をサポートしています。

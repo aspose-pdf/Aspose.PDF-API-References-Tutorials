@@ -1,6 +1,6 @@
 ---
-title: Kivonat a kép tulajdonságait a PDF-ből Java nyelven
-linktitle: Kivonat a kép tulajdonságait a PDF-ből Java nyelven
+title: Kivonja a kép tulajdonságait a PDF-ből Java nyelven
+linktitle: Kivonja a kép tulajdonságait a PDF-ből Java nyelven
 second_title: Aspose.PDF Java PDF feldolgozó API
 description: Ismerje meg, hogyan bonthat ki képtulajdonságokat PDF-fájlokból Java nyelven az Aspose.PDF for Java segítségével. Lépésről lépésre útmutató forráskóddal. Fejlessze PDF-feldolgozási készségeit még ma!
 type: docs
@@ -10,9 +10,9 @@ url: /hu/java/pdf-images/extract-image-properties-from-pdf-in-java/
 
 Az Aspose.PDF for Java egy hatékony könyvtár, amely lehetővé teszi a PDF-dokumentumok használatát Java alkalmazásokban. Ebben a lépésenkénti útmutatóban megvizsgáljuk, hogyan lehet képtulajdonságokat kinyerni egy PDF-dokumentumból az Aspose.PDF for Java segítségével. Forráskód-példákat adunk, hogy a folyamat könnyen érthető legyen.
 
-## 1. Bemutatkozás
+## 1. Bevezetés
 
-A PDF-dokumentumok gyakran tartalmaznak képeket, és hasznos lehet ezekről a képekről információkat programozottan kinyerni. Az Aspose.PDF for Java kényelmes módot biztosít a képtulajdonságok, például a méretek, a felbontás és a formátum kinyerésére. Kezdjük el!
+A PDF-dokumentumok gyakran tartalmaznak képeket, és hasznos lehet ezekről a képekről információkat programozottan kinyerni. Az Aspose.PDF for Java kényelmes módot biztosít a képtulajdonságok, például a méretek, a felbontás és a formátum kinyerésére. Kezdjük is!
 
 ## 2. Az Aspose.PDF beállítása Java számára
 
@@ -29,7 +29,7 @@ Document pdfDocument = new Document("example.pdf");
 
  Cserélje ki`"example.pdf"` a PDF-fájl elérési útjával.
 
-## 4. Képtulajdonságok kibontása
+## 4. A kép tulajdonságainak kibontása
 
  Most, hogy betöltöttük a PDF dokumentumot, bontsa ki a kép tulajdonságait. Az Aspose.PDF for Java biztosítja a`Page.getResources()` módszer az oldal erőforrásaihoz, beleértve a képeket is.
 
@@ -75,7 +75,7 @@ Ha módosítania kell a kép tulajdonságait, például át kell méreteznie vag
 
 ## 7. A frissített PDF mentése
 
-Miután kicsomagolta és szükség szerint módosította a kép tulajdonságait, mentheti a frissített PDF-dokumentumot a következő kóddal:
+Miután kicsomagolta és szükség szerint módosította a kép tulajdonságait, a frissített PDF-dokumentumot a következő kóddal mentheti:
 
 ```java
 // Mentse el a frissített PDF dokumentumot

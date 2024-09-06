@@ -24,7 +24,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 // Sökväg till PDF-indatafil
 string inputFileName = dataDir + "StructureElements.pdf";
 
-// Sökväg till utdatafilen för valideringsrapporten
+// Sökväg till valideringsrapportens utdatafil
 string outputLogName = dataDir + "ua-20.xml";
 ```
 
@@ -35,7 +35,7 @@ Se till att din PDF-fil som ska valideras är korrekt specificerad i källkoden.
 I det här steget kommer vi att använda Aspose.PDF för .NET för att validera det angivna PDF-dokumentet och generera en valideringsrapport.
 
 ```csharp
-//Öppna PDF-dokumentet
+// Öppna PDF-dokumentet
 using (var document = new Aspose.Pdf.Document(inputFileName))
 {
 // Validera PDF-dokumentet

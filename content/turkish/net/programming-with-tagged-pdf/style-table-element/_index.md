@@ -1,24 +1,24 @@
 ---
-title: Stil Tablosu Öğesi
-linktitle: Stil Tablosu Öğesi
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile tablo öğesini nasıl formatlayacağınızı öğrenin. Stilleri ve özellikleri özelleştirmek için adım adım kılavuz.
+title: Stil Tablo Elemanı
+linktitle: Stil Tablo Elemanı
+second_title: Aspose.PDF for .NET API Referansı
+description: .NET için Aspose.PDF ile tablo öğelerinin nasıl biçimlendirileceğini öğrenin. Stilleri ve özellikleri özelleştirmek için adım adım kılavuz.
 type: docs
 weight: 170
 url: /tr/net/programming-with-tagged-pdf/style-table-element/
 ---
-Bu ayrıntılı eğitimde, dizi öğesini Aspose.PDF for .NET kullanarak formatlamak için sağlanan C# kaynak kodunu adım adım anlatacağız. Dizi öğesinin stillerini ve özelliklerini nasıl özelleştireceğinizi anlamak için aşağıdaki talimatları izleyin.
+Bu ayrıntılı eğitimde, Aspose.PDF for .NET kullanarak dizi öğesini biçimlendirmek için sağlanan C# kaynak kodunu adım adım inceleyeceğiz. Dizi öğesinin stillerini ve özelliklerini nasıl özelleştireceğinizi anlamak için aşağıdaki talimatları izleyin.
 
-## 1. Adım: Ortamı ayarlama
+## Adım 1: Ortamı kurma
 
-Başlamadan önce geliştirme ortamınızı Aspose.PDF for .NET'i kullanacak şekilde yapılandırdığınızdan emin olun. Buna Aspose.PDF kütüphanesinin kurulması ve projenizin buna referans verecek şekilde yapılandırılması da dahildir.
+Başlamadan önce, geliştirme ortamınızı .NET için Aspose.PDF kullanacak şekilde yapılandırdığınızdan emin olun. Bu, Aspose.PDF kitaplığını yüklemeyi ve projenizi buna başvuracak şekilde yapılandırmayı içerir.
 
-## 2. Adım: Belge oluşturma
+## Adım 2: Bir belge oluşturma
 
-Bu adımda yeni bir belge nesnesi Aspose.PDF oluşturacağız.
+Bu adımda Aspose.PDF adında yeni bir belge nesnesi oluşturacağız.
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 // Belge oluşturma
@@ -28,37 +28,37 @@ taggedContent.SetTitle("Example of table formatting");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-Yeni bir belge oluşturduk ve belge başlığını ve dilini belirledik.
+Yeni bir belge oluşturduk ve belge başlığını ve dilini ayarladık.
 
-## Adım 3: Kök yapı öğesinin elde edilmesi
+## Adım 3: Kök yapı elemanının elde edilmesi
 
-Bu adımda belgemiz için kök yapı elemanını alacağız.
+Bu adımda belgemiz için kök yapı elemanını elde edeceğiz.
 
 ```csharp
-//Kök yapı öğesini edinin
+//Kök yapı elemanını elde edin
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-Dizi elemanı için kap görevi görecek kök yapı elemanını elde ettik.
+Dizi elemanı için bir konteyner görevi görecek olan kök yapı elemanını elde ettik.
 
-## Adım 4: Dizi yapısı öğesinin oluşturulması
+## Adım 4: Dizi yapı öğesini oluşturma
 
-Şimdi belgemiz için yeni bir tablo yapısı öğesi oluşturalım.
+Şimdi belgemiz için yeni bir tablo yapı elemanı oluşturalım.
 
 ```csharp
-// Dizi yapısı öğesini oluşturun
+// Dizi yapı öğesini oluşturun
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 ```
 
-Yeni bir dizi yapısı elemanı oluşturduk ve onu kök yapı elemanına ekledik.
+Yeni bir dizi yapı elemanı oluşturduk ve bunu kök yapı elemanına ekledik.
 
-## Adım 5: Dizi Öğesi Stillerini ve Özelliklerini Özelleştirme
+## Adım 5: Dizi Elemanı Stillerini ve Özelliklerini Özelleştirme
 
-Bu adımda dizi öğesinin stillerini ve özelliklerini özelleştireceğiz.
+Bu adımda dizi elemanının stillerini ve özelliklerini özelleştireceğiz.
 
 ```csharp
-// Dizi öğesinin stillerini ve özelliklerini özelleştirme
+// Dizi öğesinin stillerini ve özelliklerini özelleştirin
 tableElement.BackgroundColor = Color.Beige;
 tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
 tableElement. Alignment = HorizontalAlignment. Center;
@@ -77,7 +77,7 @@ tableElement. Top = 40F;
 tableElement.RepeatingColumnsCount = 2;
 tableElement.RepeatingRowsCount = 3;
 
-// Tekrarlanan çizgilerin stilini özelleştirin
+// Tekrarlanan satırların stilini özelleştirin
 TextState rowStyle = new TextState();
 rowStyle.BackgroundColor = Color.LightCoral;
 tableElement.RepeatingRowsStyle = rowStyle;
@@ -85,11 +85,11 @@ tableElement.RepeatingRowsStyle = rowStyle;
 
 Tablo öğesini özelleştirmek için arka plan rengi, kenarlıklar, hizalama, varsayılan hücre stili, kenar boşlukları, sütun genişliği vb. gibi çeşitli özellikler kullandık.
 
-## 6. Adım: Tablo üstbilgilerini, gövdesini ve altbilgisini ekleyin
+## Adım 6: Tablo başlıklarını, gövdeyi ve alt bilgiyi ekleyin
 
 Şimdi tablo elemanına tablo başlıklarını, gövdesini ve altbilgisini ekleyelim.
 ```csharp
-// Tablo başlıkları ekleyin
+// Tablo başlıkları ekle
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
@@ -123,7 +123,7 @@ for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
      }
 }
 
-// Tablonun temel çizgisini ekleyin
+// Tablonun taban çizgisini ekleyin
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Footline";
 
@@ -134,22 +134,22 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-İlgili öğeleri kullanarak üstbilgileri, gövde satırlarını ve altbilgi satırını tabloya ekledik.
+Tabloya başlık, gövde satırları ve alt bilgi satırını ilgili elemanları kullanarak ekledik.
 
-## 7. Adım: Etiketli PDF belgesini kaydetme
+## Adım 7: Etiketli PDF belgesini kaydetme
 
-Artık belgemizi stillendirilmiş tablo öğesiyle oluşturduğumuza göre, onu etiketli bir PDF belgesi olarak kaydedeceğiz.
+Artık biçimlendirilmiş tablo öğesiyle belgemizi oluşturduğumuza göre, bunu etiketli PDF belgesi olarak kaydedeceğiz.
 
 ```csharp
 // Etiketli PDF belgesini kaydedin
 document.Save(dataDir + "StyleTableElement.pdf");
 ```
 
-Etiketli PDF belgesini belirtilen dizine kaydettik.
+Etiketli PDF dokümanını belirtilen dizine kaydettik.
 
-## 8. Adım: PDF/UA uyumluluk doğrulaması
+## Adım 8: PDF/UA uyumluluğunun doğrulanması
 
-Daha sonra belgemizin PDF/UA uygunluğunu doğrulayacağız.
+Daha sonra dokümanımızın PDF/UA uygunluğunu doğrulayacağız.
 
 ```csharp
 // PDF/UA uyumluluk kontrolü
@@ -158,25 +158,25 @@ bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", Pd
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-Etiketli PDF belgesini yükledik ve bir XML raporu oluşturarak PDF/UA uyumluluğunu doğruladık.
+Etiketli PDF dokümanını yükledik ve bir XML raporu oluşturarak PDF/UA uyumluluğunu doğruladık.
 
-### Aspose.PDF for .NET kullanan Stil Tablosu Öğesi için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanılarak Stil Tablosu Öğesi için örnek kaynak kodu 
 
 ```csharp
 
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Doküman oluştur
+// Belge oluştur
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table style");
 taggedContent.SetLanguage("en-US");
 
-// Kök yapı öğesini alın
+// Kök yapı elemanını al
 StructureElement rootElement = taggedContent.RootElement;
 
-// Tablo yapısı öğesi oluştur
+// Tablo yapı öğesini oluştur
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 tableElement.BackgroundColor = Color.Beige;
@@ -231,10 +231,10 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 	tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
 
-// Etiketli Pdf Belgesini Kaydet
+// Etiketli PDF Belgesini Kaydet
 document.Save(dataDir + "StyleTableElement.pdf");
 
-// PDF/UA uyumluluğunu kontrol etme
+// PDF/UA uyumluluğunun kontrol edilmesi
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
@@ -243,50 +243,50 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ## Çözüm
 
-Bu eğitimde dizi öğesini Aspose.PDF for .NET ile nasıl formatlayacağımızı öğrendik. Tablo öğesinin stillerini ve özelliklerini özelleştirdik, üstbilgiler, gövde satırları ve altbilgi ekledik, etiketli PDF belgesini kaydettik ve PDF/UA uyumluluğunu doğruladık.
+Bu eğitimde, Aspose.PDF for .NET ile dizi öğesinin nasıl biçimlendirileceğini öğrendik. Tablo öğesinin stillerini ve özelliklerini özelleştirdik, başlıklar, gövde satırları ve bir alt bilgi ekledik, etiketli PDF belgesini kaydettik ve PDF/UA uyumluluğunu doğruladık.
 
-### SSS'ler
+### SSS
 
-#### S: Dizi öğesini Aspose.PDF for .NET kullanarak biçimlendirmeye yönelik bu eğitimin amacı nedir?
+#### S: Aspose.PDF for .NET kullanarak dizi öğelerini biçimlendirme hakkındaki bu eğitimin amacı nedir?
 
-C: Bu eğitimin amacı, Aspose.PDF for .NET kullanarak bir PDF belgesindeki dizi öğesini formatlama sürecinde size rehberlik etmektir. Dizi öğesinin stillerini ve özelliklerini özelleştirmenize yardımcı olmak için adım adım talimatlar ve C# kaynak kodu örnekleri sağlar.
+A: Bu eğitimin amacı, .NET için Aspose.PDF kullanarak bir PDF belgesindeki dizi öğesini biçimlendirme sürecinde size rehberlik etmektir. Dizi öğesinin stillerini ve özelliklerini özelleştirmenize yardımcı olmak için adım adım talimatlar ve C# kaynak kodu örnekleri sağlar.
 
-#### S: Bu eğitimi takip etmenin önkoşulları nelerdir?
+#### S: Bu eğitimi takip etmek için ön koşullar nelerdir?
 
-C: Başlamadan önce, geliştirme ortamınızı Aspose.PDF for .NET'i kullanacak şekilde ayarladığınızdan emin olun. Bu, Aspose.PDF kütüphanesinin kurulmasını ve projenizin buna referans verecek şekilde yapılandırılmasını içerir.
+A: Başlamadan önce, geliştirme ortamınızı Aspose.PDF for .NET kullanacak şekilde ayarladığınızdan emin olun. Bu, Aspose.PDF kitaplığını yüklemeyi ve projenizi buna başvuracak şekilde yapılandırmayı içerir.
 
-#### S: Aspose.PDF for .NET'i kullanarak yeni bir PDF belgesini nasıl oluşturabilir ve başlığını ve dilini nasıl ayarlayabilirim?
+#### S: Aspose.PDF for .NET kullanarak yeni bir PDF belgesi nasıl oluşturabilirim ve başlığını ve dilini nasıl ayarlayabilirim?
 
- C: Yeni bir PDF belgesi oluşturmak için bir`Document` Aspose.PDF kütüphanesinden nesne. Eğitimde sağlanan C# kaynak kodu, bir belgenin nasıl oluşturulacağını ve başlık ve dil özelliklerinin nasıl ayarlanacağını gösterir.
+ A: Yeni bir PDF belgesi oluşturmak için bir`Document` Aspose.PDF kütüphanesinden nesne. Eğitimin sağladığı C# kaynak kodu, bir belgenin nasıl oluşturulacağını ve başlığının ve dil özelliklerinin nasıl ayarlanacağını gösterir.
 
-#### S: Bir PDF belgesindeki kök yapı öğesinin önemi nedir?
+#### S: Bir PDF belgesinde kök yapı öğesinin önemi nedir?
 
-C: Kök yapı öğesi, diğer yapı öğeleri için bir kap görevi görerek PDF belgesinin içeriğinin düzenlenmesine ve kategorize edilmesine yardımcı olur. Belgenin mantıksal yapısının oluşturulmasında çok önemli bir rol oynar.
+A: Kök yapı öğesi, diğer yapı öğeleri için bir kapsayıcı görevi görerek PDF belgesinin içeriğini düzenlemeye ve kategorilere ayırmaya yardımcı olur. Belgenin mantıksal yapısını oluşturmada önemli bir rol oynar.
 
-#### S: Aspose.PDF for .NET'i kullanarak bir dizi yapısı öğesini nasıl oluşturup özelleştirebilirim?
+#### S: Aspose.PDF for .NET kullanarak bir dizi yapı öğesini nasıl oluşturabilir ve özelleştirebilirim?
 
- C: Aşağıdakileri kullanarak bir dizi yapısı öğesi oluşturabilirsiniz:`CreateTableElement()` yöntem. Eğitimin kaynak kodu, tablo öğesinin arka plan rengi, kenarlıklar, hizalama, sütun genişliği ve daha fazlası gibi çeşitli özelliklerinin özelleştirilmesine ilişkin örnekler sağlar.
+ A: Bir dizi yapı elemanını kullanarak oluşturabilirsiniz`CreateTableElement()` yöntem. Eğitimin kaynak kodu, arka plan rengi, kenarlıklar, hizalama, sütun genişliği ve daha fazlası gibi tablo öğesinin çeşitli özelliklerini özelleştirmeye yönelik örnekler sağlar.
 
 #### S: Dizi öğesi içindeki tablo hücrelerinin stillerini ve özelliklerini özelleştirebilir miyim?
 
-C: Evet, eğitimde üstbilgiler, gövde satırları ve altbilgi dahil olmak üzere tüm tablo öğesinin stillerinin ve özelliklerinin nasıl özelleştirileceği anlatılmaktadır. Ancak, ayrı ayrı tablo hücrelerinin özelleştirilmesine özel olarak değinmez.
+C: Evet, eğitim, başlıklar, gövde satırları ve altbilgi dahil olmak üzere tüm tablo öğesinin stillerinin ve özelliklerinin nasıl özelleştirileceğini kapsar. Ancak, tek tek tablo hücrelerinin özelleştirilmesini özel olarak ele almaz.
 
-#### S: Tablo öğesine nasıl üst bilgi, gövde satırları ve alt bilgi ekleyebilirim?
+#### S: Tablo öğesine üstbilgi, gövde satırları ve altbilgi nasıl ekleyebilirim?
 
-C: Bu eğitimde Aspose.PDF for .NET tarafından sağlanan uygun yöntemleri kullanarak başlıkların, gövde satırlarının ve alt bilginin nasıl oluşturulacağı ve tablo öğesine nasıl ekleneceği açıklanmaktadır.
+A: Bu eğitimde, Aspose.PDF for .NET tarafından sağlanan uygun yöntemler kullanılarak tablo öğesine üstbilgilerin, gövde satırlarının ve altbilginin nasıl oluşturulacağı ve ekleneceği açıklanmaktadır.
 
 #### S: PDF/UA uyumluluğu nedir ve etiketli PDF belgem için bunu nasıl doğrulayabilirim?
 
- C: PDF/UA uyumluluğu, PDF belgesinin erişilebilirlik standartlarına uygun olmasını sağlayarak onu engelli kullanıcılar için daha erişilebilir hale getirir. Eğitimde PDF/UA uyumluluğunun nasıl doğrulanacağı gösterilmektedir.`Validate()` yöntemini kullanın ve bir XML uyumluluk raporu oluşturun.
+ A: PDF/UA uyumluluğu, PDF belgesinin erişilebilirlik standartlarına uygun olmasını sağlayarak engelli kullanıcılar için daha erişilebilir hale getirir. Eğitim, PDF/UA uyumluluğunun nasıl doğrulanacağını gösterir`Validate()` yöntemini kullanın ve bir XML uyumluluk raporu oluşturun.
 
 #### S: Bu kavramları kendi .NET uygulamalarıma nasıl dahil edebilirim?
 
-C: Sağlanan C# kaynak kodu örneklerini, dizi öğesi biçimlendirmesini kendi .NET uygulamalarınızda uygulamaya yönelik bir kılavuz olarak kullanabilirsiniz. Kodu gereksinimlerinize uyacak şekilde değiştirin ve uyarlayın ve projelerinize entegre edin.
+A: Sağlanan C# kaynak kodu örneklerini kendi .NET uygulamalarınızda dizi öğesi biçimlendirmesini uygulamak için bir kılavuz olarak kullanabilirsiniz. Kodu gereksinimlerinize uyacak şekilde değiştirin ve uyarlayın ve projelerinize entegre edin.
 
 #### S: PDF belgelerindeki dizi öğelerini biçimlendirmek için önerilen en iyi uygulamalar var mı?
 
-C: Dizi öğelerini (tabloları) biçimlendirirken içeriğin okunabilirliğini ve erişilebilirliğini göz önünde bulundurun. Açık ve okunaklı yazı tipleri, uygun renkler kullanın ve tutarlı bir düzen sağlayın. Erişilebilirlik standartlarının karşılandığından emin olmak için PDF/UA uyumluluğunu doğrulayın.
+A: Dizi öğelerini (tabloları) biçimlendirirken, içeriğin okunabilirliğini ve erişilebilirliğini göz önünde bulundurun. Net ve okunaklı yazı tipleri, uygun renkler kullanın ve tutarlı bir düzen koruyun. Erişilebilirlik standartlarının karşılandığından emin olmak için PDF/UA uyumluluğunu doğrulayın.
 
 #### S: PDF belge özelleştirmesi için Aspose.PDF for .NET'in başka hangi özelliklerini keşfedebilirim?
 
-C: Aspose.PDF for .NET, PDF belgesi özelleştirmesi için metin işleme, görüntü ekleme, form alanı yönetimi, dijital imzalar, açıklamalar ve daha fazlasını içeren bir dizi özellik sunar. Ek işlevleri keşfetmek için resmi belgelere ve kaynaklara bakın.
+A: Aspose.PDF for .NET, metin düzenleme, resim ekleme, form alanı yönetimi, dijital imzalar, açıklamalar ve daha fazlası dahil olmak üzere PDF belge özelleştirmesi için bir dizi özellik sunar. Ek işlevleri keşfetmek için resmi belgelere ve kaynaklara başvurun.

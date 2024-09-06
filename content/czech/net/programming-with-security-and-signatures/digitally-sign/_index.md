@@ -2,7 +2,7 @@
 title: Digitálně se přihlásit do souboru PDF
 linktitle: Digitálně se přihlásit do souboru PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se, jak digitálně přihlásit soubor PDF pomocí Aspose.PDF pro .NET.
+description: Naučte se digitálně přihlásit soubor PDF pomocí Aspose.PDF pro .NET.
 type: docs
 weight: 40
 url: /cs/net/programming-with-security-and-signatures/digitally-sign/
@@ -73,7 +73,7 @@ using(Document document = new Document(outFile))
                  {
                      if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms)
                      {
-                         // Dělej něco
+                         // Udělej něco
                      }
                  }
              }
@@ -102,7 +102,7 @@ try
 			System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
 			// Nastavení vzhledu podpisu
 			signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
-			// Vytvořte libovolný ze tří typů podpisu
+			// Vytvořte libovolný ze tří typů podpisů
 			signature.Certify(1, "Signature Reason", "Contact", "Location", true, rect, docMdpSignature);
 			// Uložit výstupní soubor PDF
 			signature.Save(outFile);
@@ -121,7 +121,7 @@ try
 					{
 						if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) // Získejte oprávnění k přístupu
 						{
-							// Dělej něco
+							// Udělej něco
 						}
 					}
 				}
@@ -143,7 +143,7 @@ gratuluji! Úspěšně jste provedli digitální podpis na souboru PDF pomocí A
 
 #### Otázka: Jaký je účel tohoto tutoriálu?
 
-Odpověď: Tento tutoriál vás provede procesem digitálního podepisování souboru PDF pomocí Aspose.PDF for .NET. Digitální podpisy přidávají elektronický otisk prstu pro zajištění pravosti a integrity dokumentu.
+Odpověď: Tento tutoriál vás provede procesem digitálního podepisování souboru PDF pomocí Aspose.PDF pro .NET. Digitální podpisy přidávají elektronický otisk prstu pro zajištění pravosti a integrity dokumentu.
 
 #### Otázka: Jaké předpoklady jsou vyžadovány před zahájením?
 
@@ -167,7 +167,7 @@ Odpověď: Po přidání digitálního podpisu můžete použít ukázkový kód
 
 #### Otázka: Mohu upravit vzhled digitálního podpisu?
 
- Odpověď: Ano, vzhled digitálního podpisu můžete přizpůsobit zadáním cesty k obrázku v`SignatureAppearance` vlastnictvím`PdfFileSignature` objekt.
+ Odpověď: Ano, vzhled digitálního podpisu můžete přizpůsobit zadáním cesty k obrázku v`SignatureAppearance` majetek z`PdfFileSignature` objekt.
 
 #### Otázka: Co se stane, když podpis není platný?
 

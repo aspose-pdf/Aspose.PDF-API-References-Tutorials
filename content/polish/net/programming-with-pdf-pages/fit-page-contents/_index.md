@@ -1,36 +1,36 @@
 ---
 title: Dopasuj zawartość strony do pliku PDF
 linktitle: Dopasuj zawartość strony do pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
+second_title: Aspose.PDF dla .NET API Reference
 description: Szczegółowy przewodnik krok po kroku dotyczący dostosowywania zawartości strony w pliku PDF przy użyciu Aspose.PDF dla .NET. Łatwa implementacja i satysfakcjonujące zakończenie.
 type: docs
 weight: 50
 url: /pl/net/programming-with-pdf-pages/fit-page-contents/
 ---
-tym samouczku przeprowadzimy Cię krok po kroku przez proces dostosowywania zawartości strony w pliku PDF przy użyciu Aspose.PDF dla .NET. Wyjaśnimy dołączony kod źródłowy C# i udostępnimy kompleksowy przewodnik, który pomoże Ci zrozumieć i wdrożyć tę funkcję we własnych projektach. Pod koniec tego samouczka będziesz wiedział, jak dostosować zawartość stron PDF za pomocą Aspose.PDF dla .NET.
+tym samouczku przeprowadzimy Cię przez proces krok po kroku, aby dostosować zawartość strony w pliku PDF za pomocą Aspose.PDF dla .NET. Wyjaśnimy dołączony kod źródłowy C# i dostarczymy Ci kompleksowy przewodnik, który pomoże Ci zrozumieć i zaimplementować tę funkcję we własnych projektach. Na końcu tego samouczka będziesz wiedzieć, jak dostosować zawartość stron PDF za pomocą Aspose.PDF dla .NET.
 
-## Warunki wstępne
-Zanim zaczniesz, upewnij się, że masz następujące elementy:
+## Wymagania wstępne
+Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
 
 - Podstawowa znajomość języka programowania C#
-- Aspose.PDF dla .NET zainstalowany w Twoim środowisku programistycznym
+- Aspose.PDF dla .NET zainstalowany w środowisku programistycznym
 
 ## Krok 1: Zdefiniuj katalog dokumentów
-Najpierw musisz ustawić ścieżkę do katalogu dokumentów. Jest to lokalizacja, w której znajduje się wejściowy plik PDF. Zastąp „TWOJ KATALOG DOKUMENTÓW” odpowiednią ścieżką.
+Najpierw musisz ustawić ścieżkę do katalogu dokumentów. Jest to lokalizacja, w której znajduje się plik PDF wejściowy. Zastąp „TWOJE DOKUMENTY KATALOGU” odpowiednią ścieżką.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
 ## Krok 2: Załaduj dokument PDF
- Następnie możesz załadować dokument PDF za pomocą`Document` klasa Aspose.PDF. Pamiętaj, aby podać poprawną ścieżkę do wejściowego pliku PDF.
+ Następnie możesz załadować dokument PDF za pomocą`Document` Klasa Aspose.PDF. Upewnij się, że podałeś poprawną ścieżkę do pliku wejściowego PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
 ## Krok 3: Dostosuj zawartość strony
-Teraz możesz przeglądać wszystkie strony dokumentu i dostosowywać zawartość każdej strony zgodnie z rozmiarem pudełka z multimediami. W podanym przykładzie dostosowujemy szerokość strony tak, aby była renderowana w trybie poziomym (landscape) zachowując tę samą wysokość. Nowa szerokość jest obliczana na podstawie proporcji pudełka multimedialnego.
+Teraz możesz przejrzeć wszystkie strony dokumentu i dostosować zawartość każdej strony do rozmiaru pola multimediów. W podanym przykładzie dostosowujemy szerokość strony, aby renderować ją w trybie poziomym (landscape), zachowując tę samą wysokość. Nowa szerokość jest obliczana na podstawie współczynnika proporcji pola multimediów.
 
 ```csharp
 foreach(Page page in doc.Pages)
@@ -41,7 +41,7 @@ foreach(Page page in doc.Pages)
 }
 ```
 
-### Przykładowy kod źródłowy dla zawartości strony Fit przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Fit Page Contents przy użyciu Aspose.PDF dla platformy .NET 
 
 ```csharp
 
@@ -53,34 +53,34 @@ foreach (Page page in doc.Pages)
 	Rectangle r = page.MediaBox;
 	// Nowa wysokość taka sama
 	double newHeight = r.Height;
-	// Nowa szerokość jest proporcjonalnie zwiększana, aby uzyskać orientację poziomą
-	// (zakładamy, że poprzednia orientacja to pionowa)
+	// Nowa szerokość jest proporcjonalnie rozszerzona, aby ułatwić orientację poziomą
+	// (zakładamy, że poprzednia orientacja jest pionowa)
 	double newWidth = r.Height * r.Height / r.Width;
 }          
 
 ```
 
 ## Wniosek
-W tym samouczku nauczyliśmy się, jak dostosowywać zawartość strony PDF za pomocą Aspose.PDF dla .NET. Wykonując kroki opisane powyżej, możesz łatwo wdrożyć tę funkcjonalność we własnych projektach. Zachęcamy do dalszego zapoznania się z dokumentacją Aspose.PDF, aby odkryć inne przydatne funkcje do pracy z plikami PDF.
+W tym samouczku nauczyliśmy się, jak dostosować zawartość strony PDF za pomocą Aspose.PDF dla .NET. Postępując zgodnie z powyższymi krokami, możesz łatwo zaimplementować tę funkcjonalność we własnych projektach. Możesz swobodnie przeglądać dokumentację Aspose.PDF, aby odkryć inne przydatne funkcje do pracy z plikami PDF.
 
-### Często zadawane pytania dotyczące dopasowania zawartości strony w pliku PDF
+### Często zadawane pytania dotyczące dopasowania zawartości strony do pliku PDF
 
-#### P: Co oznacza „media box” w kontekście stron PDF?
+#### P: Co oznacza „pole multimediów” w kontekście stron PDF?
 
-O: W kontekście stron PDF „obszar multimediów” reprezentuje ramkę ograniczającą, która definiuje fizyczne wymiary zawartości strony. Określa szerokość, wysokość i położenie zawartości strony w dokumencie PDF.
+A: W kontekście stron PDF „pole multimediów” oznacza pole ograniczające, które definiuje fizyczne wymiary zawartości strony. Definiuje szerokość, wysokość i lokalizację zawartości strony w dokumencie PDF.
 
 #### P: W jaki sposób dostarczony kod źródłowy C# dostosowuje zawartość strony?
 
-Odp.: Dostarczony kod źródłowy C# dostosowuje zawartość strony, zmieniając szerokość każdej strony, tak aby była wyświetlana w trybie poziomym przy zachowaniu tej samej wysokości. Nowa szerokość jest obliczana na podstawie proporcji pudełka multimedialnego, co zapewnia zachowanie oryginalnych proporcji treści.
+A: Dostarczony kod źródłowy C# dostosowuje zawartość strony, zmieniając rozmiar szerokości każdej strony, aby wyświetlała się w trybie poziomym, zachowując tę samą wysokość. Nowa szerokość jest obliczana na podstawie współczynnika proporcji pola multimedialnego, zapewniając, że zawartość zachowuje swoje oryginalne proporcje.
 
 #### P: Czy mogę dostosować zawartość strony do określonego rozmiaru lub proporcji?
 
-Odp.: Tak, możesz dostosować zawartość strony, aby pasowała do określonego rozmiaru lub proporcji, modyfikując obliczenia w dostarczonym kodzie źródłowym C#. Na przykład, jeśli chcesz zmieścić zawartość strony w ustalonym rozmiarze (np. 8,5 x 11 cali), możesz odpowiednio obliczyć nową szerokość i wysokość.
+A: Tak, możesz dostosować zawartość strony do określonego rozmiaru lub współczynnika proporcji, modyfikując obliczenia w dostarczonym kodzie źródłowym C#. Na przykład, jeśli chcesz dopasować zawartość strony do stałego rozmiaru (np. 8,5 x 11 cali), możesz odpowiednio obliczyć nową szerokość i wysokość.
 
-#### P: Co stanie się z treścią strony po dostosowaniu rozmiaru strony?
+#### P: Co stanie się z treścią strony po zmianie jej rozmiaru?
 
-Odp.: Po dostosowaniu rozmiaru strony przy użyciu dostarczonego kodu źródłowego C# rozmiar zawartości strony zostanie proporcjonalnie zmieniony. Jeśli proporcje oryginalnej zawartości znacznie różnią się od nowych, treść może sprawiać wrażenie rozciągniętej lub skompresowanej.
+A: Po dostosowaniu rozmiaru strony za pomocą dostarczonego kodu źródłowego C#, zawartość strony zostanie proporcjonalnie zmieniona. Jeśli oryginalny współczynnik proporcji zawartości znacznie różni się od nowego współczynnika proporcji, zawartość może wydawać się rozciągnięta lub ściśnięta.
 
-#### P: Czy mogę dostosować zawartość określonych stron zamiast wszystkich stron w dokumencie PDF?
+#### P: Czy mogę dostosować zawartość tylko wybranych stron, a nie wszystkich stron w dokumencie PDF?
 
-Odp.: Tak, możesz dostosować zawartość określonych stron zamiast wszystkich stron w dokumencie PDF. W dostarczonym kodzie źródłowym C# pętla „foreach” wykonuje iterację po wszystkich stronach dokumentu. Aby dostosować zawartość określonych stron, możesz użyć instrukcji warunkowych w pętli, aby kierować tylko na żądane strony.
+A: Tak, możesz dostosować zawartość konkretnych stron zamiast wszystkich stron w dokumencie PDF. W podanym kodzie źródłowym C# pętla „foreach” iteruje przez wszystkie strony w dokumencie. Aby dostosować zawartość konkretnych stron, możesz użyć instrukcji warunkowych w pętli, aby wybrać tylko żądane strony.

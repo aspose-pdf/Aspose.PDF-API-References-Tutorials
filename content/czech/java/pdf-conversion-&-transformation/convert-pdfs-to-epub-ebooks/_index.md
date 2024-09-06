@@ -24,7 +24,7 @@ Nyní přistoupíme k implementaci.
 
 ## Nastavení vývojového prostředí
 
- Chcete-li začít, ujistěte se, že máte ve svém systému nastavené vývojové prostředí Java. Budete také potřebovat Aspose.PDF for Java, který můžete získat[tady](https://releases.aspose.com/pdf/java/).
+ Chcete-li začít, ujistěte se, že máte ve svém systému nastavené vývojové prostředí Java. Budete také potřebovat Aspose.PDF for Java, který můžete získat[zde](https://releases.aspose.com/pdf/java/).
 
 ## Přidání Aspose.PDF pro Java do vašeho projektu
 

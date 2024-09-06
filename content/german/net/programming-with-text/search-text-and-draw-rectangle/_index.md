@@ -1,28 +1,28 @@
 ---
-title: Text durchsuchen und Rechteck zeichnen
-linktitle: Text durchsuchen und Rechteck zeichnen
+title: Text suchen und Rechteck zeichnen
+linktitle: Text suchen und Rechteck zeichnen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie in einer PDF-Datei nach Text suchen, Rechtecke um den gefundenen Text zeichnen und das geänderte Dokument mit Aspose.PDF für .NET speichern.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET nach Text in einer PDF-Datei suchen, Rechtecke um den gefundenen Text zeichnen und das geänderte Dokument speichern.
 type: docs
 weight: 460
 url: /de/net/programming-with-text/search-text-and-draw-rectangle/
 ---
-In diesem Tutorial wird erläutert, wie Sie mit Aspose.PDF für .NET nach einem bestimmten Text in einem PDF-Dokument suchen, ein Rechteck um den gefundenen Text zeichnen und das geänderte Dokument speichern. Der bereitgestellte C#-Quellcode demonstriert den Prozess Schritt für Schritt.
+Dieses Tutorial erklärt, wie Sie mit Aspose.PDF für .NET nach bestimmtem Text in einem PDF-Dokument suchen, ein Rechteck um den gefundenen Text zeichnen und das geänderte Dokument speichern. Der bereitgestellte C#-Quellcode demonstriert den Vorgang Schritt für Schritt.
 
 ## Voraussetzungen
 
-Bevor Sie mit dem Tutorial fortfahren, stellen Sie sicher, dass Sie über Folgendes verfügen:
+Bevor Sie mit dem Lernprogramm fortfahren, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
 - Grundkenntnisse der Programmiersprache C#.
-- Aspose.PDF für .NET-Bibliothek installiert. Sie können es von der Aspose-Website herunterladen oder NuGet verwenden, um es in Ihrem Projekt zu installieren.
+- Aspose.PDF für .NET-Bibliothek installiert. Sie können es von der Aspose-Website beziehen oder NuGet verwenden, um es in Ihrem Projekt zu installieren.
 
-## Schritt 1: Richten Sie das Projekt ein
+## Schritt 1: Einrichten des Projekts
 
-Erstellen Sie zunächst ein neues C#-Projekt in Ihrer bevorzugten integrierten Entwicklungsumgebung (IDE) und fügen Sie einen Verweis auf die Aspose.PDF für .NET-Bibliothek hinzu.
+Beginnen Sie mit der Erstellung eines neuen C#-Projekts in Ihrer bevorzugten integrierten Entwicklungsumgebung (IDE) und fügen Sie einen Verweis auf die Aspose.PDF-Bibliothek für .NET hinzu.
 
-## Schritt 2: Importieren Sie die erforderlichen Namespaces
+## Schritt 2: Erforderliche Namespaces importieren
 
-Fügen Sie am Anfang Ihrer C#-Datei die folgenden using-Anweisungen hinzu, um die erforderlichen Namespaces zu importieren:
+Fügen Sie am Anfang Ihrer C#-Datei die folgenden Using-Direktiven hinzu, um die erforderlichen Namespaces zu importieren:
 
 ```csharp
 using Aspose.Pdf;
@@ -31,46 +31,46 @@ using Aspose.Pdf.Content;
 using Aspose.Pdf.Facades;
 ```
 
-## Schritt 3: Legen Sie den Pfad zum Dokumentverzeichnis fest
+## Schritt 3: Pfad zum Dokumentverzeichnis festlegen
 
- Legen Sie den Pfad zu Ihrem Dokumentverzeichnis mit fest`dataDir` Variable:
+ Legen Sie den Pfad zu Ihrem Dokumentverzeichnis fest mit dem`dataDir` Variable:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
+ Ersetzen`"YOUR DOCUMENT DIRECTORY"` durch den tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
 
 ## Schritt 4: Laden Sie das PDF-Dokument
 
- Laden Sie das PDF-Dokument mit`Document` Klasse:
+ Laden Sie das PDF-Dokument mit dem`Document` Klasse:
 
 ```csharp
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 ```
 
- Ersetzen`"SearchAndGetTextFromAll.pdf"` mit dem tatsächlichen Namen Ihrer PDF-Datei.
+ Ersetzen`"SearchAndGetTextFromAll.pdf"` durch den tatsächlichen Namen Ihrer PDF-Datei.
 
 ## Schritt 5: Erstellen Sie einen TextFragmentAbsorber
 
- Ein ... kreieren`TextFragmentAbsorber` Objekt, um alle Instanzen des eingegebenen Suchbegriffs zu finden:
+ Erstellen Sie ein`TextFragmentAbsorber` Objekt, um alle Instanzen der eingegebenen Suchphrase zu finden:
 
 ```csharp
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
 
- Ersetzen`@"[\S]+"` mit Ihrem gewünschten Muster für reguläre Ausdrücke.
+ Ersetzen`@"[\S]+"` mit Ihrem gewünschten regulären Ausdrucksmuster.
 
-## Schritt 6: Aktivieren Sie die Suche nach regulären Ausdrücken
+## Schritt 6: Suche mit regulären Ausdrücken aktivieren
 
- Aktivieren Sie die Suche nach regulären Ausdrücken, indem Sie Folgendes festlegen`TextSearchOptions` Eigenschaft des Absorbers:
+ Aktivieren Sie die Suche mit regulären Ausdrücken, indem Sie`TextSearchOptions` Eigenschaft des Absorbers:
 
 ```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;
 ```
 
-## Schritt 7: Suchen Sie auf allen Seiten
+## Schritt 7: Auf allen Seiten suchen
 
 Akzeptieren Sie den Absorber für alle Seiten des Dokuments:
 
@@ -80,7 +80,7 @@ document.Pages.Accept(textAbsorber);
 
 ## Schritt 8: Zeichnen Sie ein Rechteck um den gefundenen Text
 
- Ein ... kreieren`PdfContentEditor` Objekt und durchlaufen Sie die abgerufenen Textfragmente, wobei Sie ein Rechteck um jedes Textsegment zeichnen:
+ Erstellen Sie ein`PdfContentEditor` Objekt und durchläuft die abgerufenen Textfragmente, wobei um jedes Textsegment ein Rechteck gezeichnet wird:
 
 ```csharp
 var editor = new PdfContentEditor(document);
@@ -102,11 +102,11 @@ dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
 document.Save(dataDir);
 ```
 
- Unbedingt austauschen`"SearchTextAndDrawRectangle_out.pdf"` mit dem gewünschten Ausgabedateinamen.
+ Ersetzen Sie unbedingt`"SearchTextAndDrawRectangle_out.pdf"` durch den gewünschten Ausgabedateinamen.
 
 ### Beispielquellcode für „Text suchen und Rechteck zeichnen“ mit Aspose.PDF für .NET 
 ```csharp
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Dokument öffnen
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
@@ -130,46 +130,46 @@ Console.WriteLine("\nRectangle drawn successfully on searched text.\nFile saved 
 
 ## Abschluss
 
-Glückwunsch! Sie haben erfolgreich gelernt, wie Sie mit Aspose.PDF für .NET nach einem bestimmten Text in einem PDF-Dokument suchen, ein Rechteck um den gefundenen Text zeichnen und das geänderte Dokument speichern. Dieses Tutorial bietet eine Schritt-für-Schritt-Anleitung vom Einrichten des Projekts bis zur Durchführung der erforderlichen Aktionen. Sie können diesen Code jetzt in Ihre eigenen C#-Projekte integrieren, um Text zu bearbeiten und Rechtecke in PDF-Dateien zu zeichnen.
+Herzlichen Glückwunsch! Sie haben erfolgreich gelernt, wie Sie in einem PDF-Dokument nach bestimmtem Text suchen, ein Rechteck um den gefundenen Text zeichnen und das geänderte Dokument mit Aspose.PDF für .NET speichern. Dieses Tutorial bietet eine Schritt-für-Schritt-Anleitung, vom Einrichten des Projekts bis zum Ausführen der erforderlichen Aktionen. Sie können diesen Code jetzt in Ihre eigenen C#-Projekte integrieren, um Text zu bearbeiten und Rechtecke in PDF-Dateien zu zeichnen.
 
-### FAQs
+### Häufig gestellte Fragen
 
 #### F: Was ist der Zweck des Tutorials „Text suchen und Rechteck zeichnen“?
 
-A: Das Tutorial „Text suchen und Rechteck zeichnen“ zielt darauf ab, Benutzer durch den Prozess der Verwendung der Aspose.PDF-Bibliothek für .NET zu führen, um in einem PDF-Dokument nach bestimmtem Text zu suchen, Rechtecke um die gefundenen Textsegmente zu zeichnen und die geänderten Texte zu speichern dokumentieren. Das Tutorial enthält detaillierte Anweisungen und C#-Codebeispiele, um jeden Schritt des Prozesses zu veranschaulichen.
+A: Das Tutorial „Text suchen und Rechteck zeichnen“ führt Benutzer durch den Prozess der Verwendung der Aspose.PDF-Bibliothek für .NET, um in einem PDF-Dokument nach bestimmtem Text zu suchen, Rechtecke um die gefundenen Textsegmente zu zeichnen und das geänderte Dokument zu speichern. Das Tutorial enthält detaillierte Anweisungen und C#-Codebeispiele, um jeden Schritt des Prozesses zu veranschaulichen.
 
 #### F: Wie hilft dieses Tutorial beim Zeichnen von Rechtecken um bestimmten Text in einem PDF-Dokument?
 
-A: Dieses Tutorial bietet eine umfassende Anleitung zum Suchen und Zeichnen von Rechtecken um bestimmte Textsegmente in einem PDF-Dokument. Es zeigt den Prozess des Einrichtens eines Projekts, des Ladens eines PDF-Dokuments, der Aktivierung der Suche nach regulären Ausdrücken, des Zeichnens von Rechtecken um gefundene Textsegmente und des Speicherns der geänderten PDF-Datei.
+A: Dieses Tutorial bietet eine umfassende Anleitung zum Suchen und Zeichnen von Rechtecken um bestimmte Textsegmente in einem PDF-Dokument. Es zeigt den Vorgang des Einrichtens eines Projekts, des Ladens eines PDF-Dokuments, des Aktivierens der Suche mit regulären Ausdrücken, des Zeichnens von Rechtecken um gefundene Textsegmente und des Speicherns des geänderten PDF.
 
 #### F: Welche Voraussetzungen sind erforderlich, um diesem Tutorial folgen zu können?
 
-A: Bevor Sie mit dem Tutorial beginnen, sollten Sie über grundlegende Kenntnisse der Programmiersprache C# verfügen. Darüber hinaus muss die Bibliothek Aspose.PDF für .NET installiert sein. Sie können es von der Aspose-Website herunterladen oder mit NuGet in Ihrem Projekt installieren.
+A: Bevor Sie mit dem Tutorial beginnen, sollten Sie über Grundkenntnisse der Programmiersprache C# verfügen. Darüber hinaus müssen Sie die Bibliothek Aspose.PDF für .NET installiert haben. Sie können sie von der Aspose-Website herunterladen oder mit NuGet in Ihrem Projekt installieren.
 
 #### F: Wie richte ich mein Projekt ein, um diesem Tutorial zu folgen?
 
-A: Beginnen Sie mit der Erstellung eines neuen C#-Projekts in Ihrer bevorzugten integrierten Entwicklungsumgebung (IDE). Fügen Sie dann Ihrem Projekt einen Verweis auf die Aspose.PDF für .NET-Bibliothek hinzu. Dadurch können Sie die Funktionalität der Bibliothek zum Bearbeiten von PDF-Dokumenten nutzen.
+A: Beginnen Sie mit der Erstellung eines neuen C#-Projekts in Ihrer bevorzugten integrierten Entwicklungsumgebung (IDE). Fügen Sie dann Ihrem Projekt einen Verweis auf die Aspose.PDF-Bibliothek für .NET hinzu. Dadurch können Sie die Funktionen der Bibliothek zum Bearbeiten von PDF-Dokumenten nutzen.
 
-#### F: Kann ich mit diesem Tutorial Rechtecke um einen bestimmten Text zeichnen?
+#### F: Kann ich mit diesem Tutorial Rechtecke um bestimmten Text zeichnen?
 
-A: Ja, das Tutorial konzentriert sich auf das Zeichnen von Rechtecken um bestimmte Textsegmente in einem PDF-Dokument. Es zeigt, wie Sie den gewünschten Text mithilfe regulärer Ausdrücke finden, Rechtecke um die identifizierten Textsegmente erstellen und die geänderte PDF-Datei speichern.
+A: Ja, das Tutorial konzentriert sich auf das Zeichnen von Rechtecken um bestimmte Textsegmente in einem PDF-Dokument. Es zeigt, wie Sie den gewünschten Text mithilfe regulärer Ausdrücke finden, Rechtecke um die identifizierten Textsegmente erstellen und das geänderte PDF speichern.
 
-#### F: Wie kann ich den Text angeben, nach dem ich suchen möchte, und wie kann ich Rechtecke darum zeichnen?
+#### F: Wie kann ich den Text angeben, nach dem ich suchen möchte, und Rechtecke darum zeichnen?
 
- A: Um den Text anzugeben, nach dem Sie suchen möchten, und um Rechtecke zu zeichnen, erstellen Sie ein`TextFragmentAbsorber` Objekt und legen Sie sein Muster mit fest`Text` Parameter. Ersetzen Sie das Standardmuster`@"[\S]+"` im Code des Tutorials mit Ihrem gewünschten regulären Ausdrucksmuster.
+ A: Um den zu suchenden Text anzugeben und Rechtecke darum zu zeichnen, erstellen Sie ein`TextFragmentAbsorber` Objekt und legen Sie sein Muster mit dem`Text` Parameter. Ersetzen Sie das Standardmuster`@"[\S]+"` im Code des Tutorials mit Ihrem gewünschten regulären Ausdrucksmuster.
 
-#### F: Wie aktiviere ich die Suche nach regulären Ausdrücken für Text?
+#### F: Wie aktiviere ich die Suche nach Text mit regulären Ausdrücken?
 
- A: Die Suche nach regulären Ausdrücken wird durch Erstellen eines aktiviert`TextSearchOptions` Objekt und setzt seinen Wert auf`true` . Ordnen Sie dieses Objekt dem zu`TextSearchOptions` Eigentum der`TextFragmentAbsorber` Beispiel. Dadurch wird sichergestellt, dass bei der Textsuche das reguläre Ausdrucksmuster verwendet wird.
+ A: Die Suche mit regulären Ausdrücken wird aktiviert durch die Erstellung eines`TextSearchOptions` Objekt und setzt seinen Wert auf`true` Ordnen Sie dieses Objekt dem`TextSearchOptions` Eigentum der`TextFragmentAbsorber` Instanz. Dadurch wird sichergestellt, dass bei der Textsuche das reguläre Ausdrucksmuster verwendet wird.
 
 #### F: Wie zeichne ich Rechtecke um den gefundenen Text?
 
- A: Nach der Identifizierung der Textsegmente mithilfe von`TextFragmentAbsorber` , bietet das Tutorial eine Schleife zum Durchlaufen dieser Segmente. Das Tutorial zeigt für jedes Textsegment, wie Sie mithilfe von ein Rechteck um dieses erstellen`DrawBox` -Methode und legen Sie das Erscheinungsbild des Rechtecks fest.
+ A: Nach der Identifizierung der Textsegmente mit Hilfe der`TextFragmentAbsorber` bietet das Tutorial eine Schleife, um diese Segmente zu durchlaufen. Für jedes Textsegment zeigt das Tutorial, wie Sie mithilfe der`DrawBox` Methode und geben Sie das Aussehen des Rechtecks an.
 
-#### F: Welche Schritte sind erforderlich, um das geänderte PDF mit gezeichneten Rechtecken zu speichern?
+#### F: Welche Schritte sind zum Speichern der geänderten PDF-Datei mit gezeichneten Rechtecken erforderlich?
 
-A: Nachdem Sie Rechtecke um die gewünschten Textsegmente gezeichnet haben, verwenden Sie die`Document` Klasse`Save` Methode zum Speichern des geänderten Dokuments. Der Beispielcode des Tutorials zeigt, wie Sie die bearbeitete PDF-Datei speichern und eine Erfolgsmeldung anzeigen.
+A: Zeichnen Sie Rechtecke um die gewünschten Textsegmente und verwenden Sie die`Document` Klasse`Save` Methode zum Speichern des geänderten Dokuments. Der Beispielcode des Tutorials zeigt, wie das bearbeitete PDF gespeichert und eine Erfolgsmeldung angezeigt wird.
 
-#### F: Kann ich das Erscheinungsbild der gezeichneten Rechtecke anpassen?
+#### F: Kann ich das Aussehen der gezeichneten Rechtecke anpassen?
 
- A: Ja, Sie können das Aussehen der gezeichneten Rechtecke anpassen. Im Beispielcode des Tutorials ist die`DrawBox` Die Methode wird zum Erstellen von Rechtecken verwendet. Sie können Eigenschaften wie Farbe, Stil und Dicke ändern, um das Erscheinungsbild der gezeichneten Rechtecke anzupassen.
+ A: Ja, Sie können das Aussehen der gezeichneten Rechtecke anpassen. Im Beispielcode des Tutorials wird das`DrawBox` Die Methode wird zum Erstellen von Rechtecken verwendet. Sie können Eigenschaften wie Farbe, Stil und Dicke ändern, um das Erscheinungsbild der gezeichneten Rechtecke anzupassen.

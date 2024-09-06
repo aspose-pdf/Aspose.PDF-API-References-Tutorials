@@ -32,7 +32,7 @@ using System.IO;
  Στον κώδικα, εντοπίστε τη γραμμή που λέει`string dataDir = "YOUR DOCUMENT DIRECTORY";` και αντικαταστήστε`"YOUR DOCUMENT DIRECTORY"` με τη διαδρομή προς τον κατάλογο όπου είναι αποθηκευμένα τα έγγραφά σας.
 
 ## Βήμα 4: Ανοίξτε το έγγραφο PDF
- Ανοίξτε ένα υπάρχον έγγραφο PDF χρησιμοποιώντας το`Document`κατασκευαστή και περνώντας τη διαδρομή προς το αρχείο εισόδου PDF.
+ Ανοίξτε ένα υπάρχον έγγραφο PDF χρησιμοποιώντας το`Document` κατασκευαστή και περνώντας τη διαδρομή προς το αρχείο εισόδου PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
@@ -99,7 +99,7 @@ System.IO.File.WriteAllText(dataDir, extractedText);
 Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
 ```
 
-## συμπέρασμα
+## Σύναψη
 Έχετε εξαγάγει με επιτυχία το κείμενο στηλών από ένα έγγραφο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Το εξαγόμενο κείμενο έχει αποθηκευτεί στο καθορισμένο αρχείο εξόδου.
 
 ### Συχνές ερωτήσεις

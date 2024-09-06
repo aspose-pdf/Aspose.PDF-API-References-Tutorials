@@ -22,9 +22,9 @@ Než začneme, ujistěte se, že máte splněny následující předpoklady:
 
 ## Nastavení Aspose.PDF pro Javu
 
-Chcete-li začít, musíte si z webové stránky stáhnout Aspose.PDF for Java. Následuj tyto kroky:
+Chcete-li začít, musíte si z webové stránky stáhnout Aspose.PDF for Java. Postupujte takto:
 
-1.  Přístup k dokumentaci Aspose.PDF for Java na adrese[tady](https://reference.aspose.com/pdf/java/).
+1.  Přístup k dokumentaci Aspose.PDF for Java na adrese[zde](https://reference.aspose.com/pdf/java/).
 
 2. Stáhněte si knihovnu a postupujte podle pokynů k instalaci.
 
@@ -104,4 +104,4 @@ Aspose.PDF for Java je komerční knihovna a možná budete muset zakoupit licen
 
 ### Kde najdu další příklady pomocí Aspose.PDF pro Javu?
 
- Další příklady a podrobnou dokumentaci o tom, jak používat Aspose.PDF pro Javu, najdete na webu Aspose na adrese[tady](https://reference.aspose.com/pdf/java/).
+ Další příklady a podrobnou dokumentaci o tom, jak používat Aspose.PDF pro Javu, najdete na webu Aspose na adrese[zde](https://reference.aspose.com/pdf/java/).

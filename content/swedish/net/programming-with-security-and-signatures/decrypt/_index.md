@@ -7,7 +7,7 @@ type: docs
 weight: 20
 url: /sv/net/programming-with-security-and-signatures/decrypt/
 ---
-I den här handledningen kommer vi att guida dig genom processen att dekryptera PDF-filen med Aspose.PDF för .NET. Detta bibliotek låter dig öppna en befintlig PDF-fil, dekryptera den och spara den uppdaterade versionen. Den här funktionen är användbar när du behöver ta bort lösenordet från en PDF-fil för enklare åtkomst.
+den här handledningen kommer vi att guida dig genom processen att dekryptera PDF-filen med Aspose.PDF för .NET. Detta bibliotek låter dig öppna en befintlig PDF-fil, dekryptera den och spara den uppdaterade versionen. Den här funktionen är användbar när du behöver ta bort lösenordet från en PDF-fil för enklare åtkomst.
 
 ## Steg 1: Förutsättningar
 
@@ -67,7 +67,7 @@ Den uppdaterade PDF-filen kommer att sparas på den angivna platsen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 // Öppna dokumentet
 Document document = new Document(dataDir+ "Decrypt.pdf", "password");
-//Dekryptera PDF
+// Dekryptera PDF
 document.Decrypt();
 dataDir = dataDir + "Decrypt_out.pdf";
 // Spara uppdaterad PDF

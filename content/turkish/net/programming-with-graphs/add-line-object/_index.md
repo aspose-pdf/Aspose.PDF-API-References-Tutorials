@@ -1,15 +1,15 @@
 ---
-title: PDF Dosyasına Çizgi Nesnesi Ekle
-linktitle: PDF Dosyasına Çizgi Nesnesi Ekle
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak bir PDF dosyasına nasıl özel çizgi nesnesi ekleyeceğinizi öğrenin.
+title: PDF Dosyasına Satır Nesnesi Ekle
+linktitle: PDF Dosyasına Satır Nesnesi Ekle
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak bir PDF dosyasına özel satır nesnesinin nasıl ekleneceğini öğrenin.
 type: docs
 weight: 30
 url: /tr/net/programming-with-graphs/add-line-object/
 ---
-Bu eğitimde, Aspose.PDF for .NET kullanarak bir çizgi nesnesi eklemek için aşağıdaki C# kaynak kodunu adım adım anlatacağız.
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir satır nesnesi eklemek için aşağıdaki C# kaynak kodunu adım adım inceleyeceğiz.
 
-Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ayrıca temel C# programlama bilgisine sahip olmak.
+Başlamadan önce Aspose.PDF kütüphanesini yüklediğinizden ve geliştirme ortamınızı ayarladığınızdan emin olun. Ayrıca C# programlamanın temel bilgisine sahip olun.
 
 ## Adım 1: Belge Dizini Kurulumu
 
@@ -19,18 +19,18 @@ Sağlanan kaynak kodunda, ortaya çıkan PDF dosyasını kaydetmek istediğiniz 
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Adım 2: Belge Örneği Oluşturma ve Sayfa Ekleme
+## Adım 2: Bir Belge Örneği Oluşturma ve Bir Sayfa Ekleme
 
-Document sınıfının bir örneğini oluşturup bu belgeye bir sayfa ekliyoruz.
+Document sınıfının bir örneğini oluşturuyoruz ve bu belgeye bir sayfa ekliyoruz.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Adım 3: Grafik Nesnesi Oluşturma ve bunu sayfaya ekleme
+## Adım 3: Bir Grafik Nesnesi Oluşturma ve Sayfaya Ekleme
 
-Belirtilen boyutlara sahip bir Graph nesnesi oluşturup onu sayfanın paragraf koleksiyonuna ekliyoruz.
+Belirtilen boyutlarda bir Graph nesnesi oluşturup sayfanın paragraf koleksiyonuna ekliyoruz.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
@@ -39,7 +39,7 @@ page.Paragraphs.Add(graph);
 
 ## Adım 4: Çizgi Nesnesi Oluşturun ve Grafiğe Ekleyin
 
-Belirtilen koordinatlarla bir Line nesnesi oluşturup onu grafiğin şekil koleksiyonuna ekliyoruz.
+Belirtilen koordinatlarla bir Çizgi nesnesi oluşturuyoruz ve bunu grafiğin şekil koleksiyonuna ekliyoruz.
 
 ```csharp
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
@@ -48,7 +48,7 @@ graph.Shapes.Add(line);
 
 ## Adım 5: Hat Kurulumu
 
-Çizgi tipi ve çizgi fazı gibi çizgiye ilişkin özellikleri belirleyebiliriz.
+Çizgi için tire türü ve tire aşaması gibi özellikler belirleyebiliriz.
 
 ```csharp
 line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
@@ -63,26 +63,26 @@ Son olarak ortaya çıkan PDF dosyasını "AddLineObject_out.pdf" ismiyle belirt
 doc.Save(dataDir + "AddLineObject_out.pdf");
 ```
 
-### Aspose.PDF for .NET kullanarak Satır Nesnesi Ekleme için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Satır Nesnesi Ekleme için örnek kaynak kodu 
 
 ```csharp
 
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belge örneği oluştur
 Document doc = new Document();
-// PDF dosyasının sayfa koleksiyonuna sayfa ekle
+// PDF dosyasının sayfa sayfa koleksiyonunu ekle
 Page page = doc.Pages.Add();
 // Grafik örneği oluştur
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
-// Sayfa örneğinin paragraf koleksiyonuna grafik nesnesi ekleme
+// Sayfa örneğinin paragraf koleksiyonuna grafik nesnesi ekle
 page.Paragraphs.Add(graph);
 // Dikdörtgen örneği oluştur
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
 // Grafik nesnesi için dolgu rengini belirtin
 line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
 line.GraphInfo.DashPhase = 1;
-// Grafik nesnesinin şekiller koleksiyonuna dikdörtgen nesnesi ekleme
+// Grafik nesnesinin şekiller koleksiyonuna dikdörtgen nesnesi ekle
 graph.Shapes.Add(line);
 dataDir = dataDir + "AddLineObject_out.pdf";
 // PDF dosyasını kaydet
@@ -93,42 +93,42 @@ Console.WriteLine("\nLine object added successfully to pdf.\nFile saved at " + d
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for .NET kullanarak bir çizgi nesnesinin nasıl ekleneceğini adım adım açıkladık. Artık bu bilgiyi uygulamalarınızda özel çizgiler içeren PDF belgeleri oluşturmak için kullanabilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir çizgi nesnesinin nasıl ekleneceğini adım adım açıkladık. Artık bu bilgiyi uygulamalarınızda özel çizgilerle PDF belgeleri oluşturmak için kullanabilirsiniz.
 
-### PDF dosyasına çizgi nesnesi eklemek için SSS
+### PDF dosyasına satır nesnesi eklemeyle ilgili SSS
 
 #### S: Bu eğitimin amacı nedir?
 
 C: Bu eğitimin amacı, PDF belgelerinizi geliştirmek için Aspose.PDF for .NET kullanarak bir çizgi nesnesi ekleme sürecinde size rehberlik etmektir.
 
-#### S: Başlamadan önce hangi önkoşullar gereklidir?
+#### S: Başlamadan önce hangi ön koşullar gereklidir?
 
-C: Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ek olarak, C# programlama konusunda temel bir anlayışa sahip olmanız tavsiye edilir.
+A: Başlamadan önce Aspose.PDF kütüphanesini yüklediğinizden ve geliştirme ortamınızı ayarladığınızdan emin olun. Ayrıca, C# programlama konusunda temel bir anlayışa sahip olmanız önerilir.
 
-#### S: PDF dosyasının kaydedileceği dizini nasıl belirlerim?
+#### S: PDF dosyasını kaydedeceğim dizini nasıl belirlerim?
 
-C: Sağlanan kaynak kodunda, elde edilen PDF dosyasını kaydetmek istediğiniz dizini belirtmek için "dataDir" değişkenini değiştirebilirsiniz.
+A: Sağlanan kaynak kodunda, sonuçta elde edilen PDF dosyasını kaydetmek istediğiniz dizini belirtmek için "dataDir" değişkenini değiştirebilirsiniz.
 
 #### S: Graph nesnesinin amacı nedir?
 
-C: Graph nesnesi çizim elemanları için bir kap görevi görür. Belirtilen boyutlarla oluşturularak sayfanın paragraf koleksiyonuna eklenir.
+A: Graph nesnesi çizim öğeleri için bir kapsayıcı görevi görür. Belirtilen boyutlarla oluşturulur ve sayfanın paragraf koleksiyonuna eklenir.
 
-#### S: PDF belgesine nasıl çizgi nesnesi ekleyebilirim?
+#### S: PDF belgesine çizgi nesnesi nasıl ekleyebilirim?
 
-C: Bir çizgi nesnesi eklemek için, belirtilen koordinatlara sahip Line sınıfının bir örneğini oluşturun ve bunu grafiğin şekil koleksiyonuna ekleyin.
+A: Bir çizgi nesnesi eklemek için, belirtilen koordinatlara sahip Çizgi sınıfının bir örneğini oluşturun ve bunu grafiğin şekil koleksiyonuna ekleyin.
 
 #### S: Çizginin görünümünü özelleştirebilir miyim?
 
 C: Evet, Çizgi nesnesinin GraphInfo özelliğini kullanarak çizgi türü ve çizgi aşaması gibi özellikleri ayarlayarak çizginin görünümünü özelleştirebilirsiniz.
 
-#### S: Çizgi dizisini ve çizgi aşamasını belirtmenin amacı nedir?
+#### S: Dash dizisinin ve dash aşamasının belirtilmesinin amacı nedir?
 
-C: Çizgi dizisi ve çizgi aşaması özellikleri, belirli desenlere sahip kesikli veya noktalı çizgiler oluşturmanıza olanak tanır.
+A: Çizgi dizisi ve çizgi aşaması özellikleri, belirli desenlere sahip kesikli veya noktalı çizgiler oluşturmanıza olanak tanır.
 
-#### S: Çizgi nesnesini ekledikten sonra PDF dosyasını nasıl kaydedebilirim?
+#### S: Satır nesnesini ekledikten sonra PDF dosyasını nasıl kaydedebilirim?
 
- C: Çizgi nesnesini ekledikten sonra ortaya çıkan PDF dosyasını`doc.Save(dataDir + "AddLineObject_out.pdf");` Sağlanan kaynak kodundaki satır.
+ A: Satır nesnesini ekledikten sonra, ortaya çıkan PDF dosyasını kullanarak kaydedebilirsiniz.`doc.Save(dataDir + "AddLineObject_out.pdf");` Sağlanan kaynak kodundaki satır.
 
-#### S: Örnek bir kaynak kodu mevcut mu?
+#### S: Örnek kaynak kodu mevcut mu?
 
-C: Evet, eğitimde açıklanan adımları uygulamak için başvurabileceğiniz örnek bir kaynak kodu bulunmaktadır.
+C: Evet, eğitimde anlatılan adımları uygulamak için başvurabileceğiniz örnek bir kaynak kodu bulunmaktadır.

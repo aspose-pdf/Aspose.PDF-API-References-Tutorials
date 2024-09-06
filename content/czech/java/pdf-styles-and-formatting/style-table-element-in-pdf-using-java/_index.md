@@ -8,7 +8,7 @@ weight: 14
 url: /cs/java/pdf-styles-and-formatting/style-table-element-in-pdf-using-java/
 ---
 
-## Úvod
+## Zavedení
 
 Tabulky jsou základní součástí mnoha dokumentů PDF a jejich úprava může výrazně zlepšit vizuální prezentaci vašich dat. V tomto článku vás provedeme procesem stylování prvků tabulky v PDF pomocí Java a Aspose.PDF.
 
@@ -130,7 +130,7 @@ tomto tutoriálu jsme prozkoumali, jak stylovat prvky tabulky v dokumentech PDF 
 
 ### Jak přidám ohraničení do konkrétní buňky?
 
- Chcete-li přidat ohraničení do určité buňky, můžete použít`Cell` třídy`setBorder` metodu a určete vlastnosti ohraničení.
+ Chcete-li přidat ohraničení do konkrétní buňky, můžete použít`Cell` třídy`setBorder` metodu a určete vlastnosti ohraničení.
 
 ### Je Aspose.PDF for Java kompatibilní s různými Java IDE?
 

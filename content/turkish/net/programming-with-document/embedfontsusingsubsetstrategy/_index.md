@@ -1,93 +1,117 @@
 ---
-title: Alt Küme Stratejisi ile Fontları PDF Dosyasına Gömme
-linktitle: Alt Küme Stratejisiyle Yazı Tiplerini Gömme
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak Alt Küme Stratejisi ile yazı tiplerini bir PDF dosyasına nasıl yerleştireceğinizi öğrenin. Yalnızca gerekli karakterleri yerleştirerek PDF boyutunuzu optimize edin.
+title: Alt Küme Stratejisiyle PDF Dosyasına Fontları Gömün
+linktitle: Alt Küme Stratejisi ile Yazı Tiplerini Göm
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak Subset Strategy ile bir PDF dosyasına fontları nasıl gömeceğinizi öğrenin. Yalnızca gerekli karakterleri gömerek PDF boyutunuzu optimize edin.
 type: docs
 weight: 130
 url: /tr/net/programming-with-document/embedfontsusingsubsetstrategy/
 ---
-Bu eğitimde, Aspose.PDF for .NET kullanarak yazı tiplerini bir PDF dosyasına alt küme stratejisiyle nasıl yerleştireceğimizi tartışacağız. Aspose.PDF for .NET, geliştiricilerin PDF belgelerini programlı olarak oluşturmasına, düzenlemesine ve değiştirmesine olanak tanıyan güçlü bir kitaplıktır. Yazı tiplerini bir PDF dosyasına gömmek, gerekli yazı tiplerinin bu aygıtlarda yüklü olup olmadığına bakılmaksızın, belgenin farklı aygıtlarda doğru şekilde görüntülenmesini sağlamak için önemli bir adımdır.
+## giriiş
 
-## 1. Adım: Yeni bir C# Konsol Uygulaması oluşturun
-Başlamak için Visual Studio'da yeni bir C# Konsol Uygulaması oluşturun. İstediğiniz ismi verebilirsiniz. Proje oluşturulduktan sonra Aspose.PDF for .NET kütüphanesine bir referans eklemeniz gerekir.
+Dijital çağda, PDF'ler belgeleri paylaşmak için olmazsa olmaz bir hale geldi. İster bir rapor, ister bir sunum veya bir e-kitap gönderiyor olun, yazı tiplerinizin doğru şekilde görüntülendiğinden emin olmak çok önemlidir. Hiç bir PDF'i açıp metnin amaçlanandan farklı göründüğünü gördünüz mü? Bu genellikle belgede kullanılan yazı tipleri düzgün şekilde yerleştirilmediğinde olur. İşte tam bu noktada .NET için Aspose.PDF devreye giriyor! Bu eğitimde, alt küme stratejisini kullanarak bir PDF dosyasına yazı tiplerini nasıl yerleştireceğinizi keşfedeceğiz ve belgelerinizin nerede görüntülenirse görüntülensin, tam olarak istediğiniz gibi görünmesini sağlayacağız.
 
-## Adım 2: Aspose.PDF Ad Alanını İçe Aktarın
-Aspose.PDF ad alanını içe aktarmak için C# dosyanızın en üstüne aşağıdaki kod satırını ekleyin:
+## Ön koşullar
+
+Yazı tiplerini yerleştirmenin inceliklerine dalmadan önce, yerinde olması gereken birkaç şey var:
+
+1.  .NET için Aspose.PDF: Aspose.PDF kütüphanesinin yüklü olduğundan emin olun. Buradan indirebilirsiniz[Burada](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: .NET kodlarınızı yazıp test edebileceğiniz bir geliştirme ortamı.
+3. Temel C# Bilgisi: C# programlamaya aşina olmak, kod parçacıklarını daha iyi anlamanıza yardımcı olacaktır.
+
+## Paketleri İçe Aktar
+
+Başlamak için, C# projenize gerekli paketleri içe aktarmanız gerekir. Bunu nasıl yapabileceğiniz aşağıda açıklanmıştır:
+
+### Yeni Bir Proje Oluştur
+
+Visual Studio'yu açın ve yeni bir C# projesi oluşturun. Basitlik için bir Konsol Uygulaması seçebilirsiniz.
+
+### Aspose.PDF Referansını Ekle
+
+1. Çözüm Gezgini’nde projenizin üzerine sağ tıklayın.
+2. "NuGet Paketlerini Yönet" seçeneğini seçin.
+3. "Aspose.PDF" dosyasını arayın ve en son sürümü yükleyin.
 
 ```csharp
-using Aspose.Pdf;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## 3. Adım: Mevcut bir PDF Dosyasını Yükleyin
-Yazı tiplerini mevcut bir PDF dosyasına gömmek için bu dosyayı Document sınıfını kullanarak yüklemeniz gerekir. Aşağıdaki kod mevcut bir PDF dosyasının nasıl yükleneceğini gösterir:
+Artık her şeyi ayarladığımıza göre, yazı tiplerini bir PDF dosyasına adım adım yerleştirme sürecini inceleyelim.
+
+## Adım 1: Belge Dizininizi Ayarlayın
+
+İlk önce, belgelerimizin nerede saklandığını tanımlamamız gerekiyor. Bu çok önemli çünkü bu dizinden okuyup yazacağız.
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
-// Mevcut bir PDF dosyasını yükleyin
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF dosyalarınızın bulunduğu gerçek yol ile. Bu, şuna benzer bir şey olabilir`@"C:\Documents\"`.
+
+## Adım 2: PDF Belgesini Yükleyin
+
+Sonra, değiştirmek istediğimiz PDF belgesini yükleyeceğiz. Aspose.PDF'in parladığı yer burasıdır, PDF dosyalarını kolayca düzenlememize olanak tanır.
+
+```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Adım 4: Yazı Tiplerini Alt Küme Stratejisiyle Gömme
-Aspose.PDF for .NET yazı tipi gömme için iki strateji sunar: SubsetAllFonts ve SubsetEmbeddedFontsOnly.
+ Bir tane olduğundan emin olun`input.pdf` belirtilen dizindeki dosya. Bu dosya değiştireceğimiz dosya olacak.
 
-SubsetAllFonts stratejisi belgedeki tüm yazı tiplerini bir alt küme olarak gömecektir. Alt küme, yazı tipinin yalnızca belgede kullanılan karakterleri içeren kısmıdır. Bu strateji, PDF belgesinin dosya boyutunu küçültmek için kullanışlıdır.
+## Adım 3: Tüm Yazı Tiplerini Alt Kümele
 
-SubsetEmbeddedFontsOnly stratejisi yalnızca belgeye zaten katıştırılmış olan yazı tiplerinin alt kümesini katıştırır. Bir yazı tipi gömülü değilse bu stratejiden etkilenmeyecektir.
-
-Aşağıdaki kod, alt küme stratejisiyle yazı tiplerinin bir PDF dosyasına nasıl gömüleceğini gösterir:
+Şimdi, meselenin özüne gelelim: yazı tiplerini yerleştirme. Tüm yazı tiplerini alt kümeler halinde yerleştirerek başlayacağız. Bu, yalnızca belgede kullanılan karakterlerin yerleştirileceği anlamına gelir ve bu da dosya boyutunu önemli ölçüde azaltabilir.
 
 ```csharp
-// SubsetAllFonts durumunda tüm yazı tipleri belgeye alt küme olarak gömülecektir.
+// SubsetAllFonts durumunda tüm fontlar alt küme olarak belgeye gömülecektir.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
+```
 
-// Tamamen gömülü yazı tipleri için yazı tipi alt kümesi eklenecektir ancak belgeye gömülü olmayan yazı tipleri etkilenmeyecektir.
+ Kullanarak`SubsetAllFonts`, belgede kullanılan her yazı tipinin gömülmesini sağlıyoruz, ancak yalnızca gerçekten kullanılan karakterler dahil edilecektir.
+
+## Adım 4: Yalnızca Gömülü Yazı Tiplerini Alt Kümele
+
+Bazı durumlarda, yalnızca belgeye zaten gömülü olan yazı tiplerini gömmek isteyebilirsiniz. Bu, yeni yazı tipleri eklemeden orijinal görünümü korumak istiyorsanız yararlıdır.
+
+```csharp
+//Tam gömülü fontlar için font alt kümesi gömülecektir ancak belgeye gömülmeyen fontlar etkilenmeyecektir.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
 ```
 
-## Adım 5: PDF Belgesini Kaydedin
-Alt küme stratejisiyle tüm yazı tiplerini PDF dosyasına gömdükten sonra belgeyi kaydetmeniz gerekir. Aşağıdaki kod PDF dosyasının nasıl kaydedileceğini gösterir:
+Bu kod satırı, yalnızca gömülü olan yazı tiplerinin alt kümeye alınacağını ve gömülü olmayan yazı tiplerinin dokunulmadan bırakılacağını garanti eder.
+
+## Adım 5: Değiştirilen Belgeyi Kaydedin
+
+Son olarak, değişikliklerimizi kaydetmemiz gerekiyor. Değiştirilen belgeyi diske geri yazdığımız yer burasıdır.
 
 ```csharp
 doc.Save(dataDir + "Output_out.pdf");
 ```
 
-### Aspose.PDF for .NET kullanarak yazı tiplerini alt küme stratejisiyle gömmek için örnek kaynak kodu. 
-
-```csharp
-// Belgeler dizininin yolu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document(dataDir + "input.pdf");
-// SubsetAllFonts durumunda tüm yazı tipleri belgeye alt küme olarak gömülecektir.
-doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-// Tamamen gömülü yazı tipleri için yazı tipi alt kümesi eklenecektir ancak belgeye gömülü olmayan yazı tipleri etkilenmeyecektir.
-doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
-doc.Save(dataDir + "Output_out.pdf");
-```
+ Bu, adında yeni bir PDF dosyası oluşturacaktır.`Output_out.pdf` Belirtilen dizinde, gömülü yazı tipleriyle birlikte.
 
 ## Çözüm
-Bu makalede, Aspose.PDF for .NET kullanarak yazı tiplerinin bir PDF dosyasına alt küme stratejisiyle nasıl yerleştirileceğini tartıştık. Aspose.PDF for .NET, farklı stratejilerle yazı tipi ekleme ve gömme de dahil olmak üzere, PDF belgeleriyle çalışmak için basit ve kullanımı kolay bir API sağlar. Yazı tiplerini bir PDF dosyasına gömmek, belgenin farklı cihazlarda doğru şekilde görüntülenmesini sağlamak için önemli bir adımdır ve alt küme stratejisi, PDF belgesinin dosya boyutunu küçültmek için yararlı bir özelliktir.
 
-### Alt küme stratejisiyle PDF dosyasına yazı tiplerinin yerleştirilmesiyle ilgili SSS
+İşte oldu! Aspose.PDF for .NET kullanarak bir PDF dosyasına fontları başarıyla yerleştirdiniz. Bu adımları izleyerek, belgelerinizin nerede görüntülendiklerine bakılmaksızın amaçlanan görünümlerini koruduğundan emin olabilirsiniz. Raporlar, sunumlar veya başka herhangi bir tür belge paylaşıyor olun, fontları yerleştirmek profesyonelliği ve netliği korumak için önemli bir adımdır.
 
-#### S: PDF dosyasına yazı tipi yerleştirmeye yönelik alt küme stratejisi nedir?
+## SSS
 
-C: PDF dosyasına yazı tipi yerleştirmeye yönelik alt küme stratejisi, belgede kullanılan karakterleri içeren yazı tipinin yalnızca bir kısmının gömüleceği anlamına gelir. Bu, gereksiz yazı tipi verilerini ortadan kaldırarak PDF belgesinin dosya boyutunun azaltılmasına yardımcı olur.
+### Font alt kümelemesi nedir?
+Yazı tipi alt kümesi oluşturma, tüm yazı tipini eklemek yerine yalnızca belgede kullanılan karakterleri ekleme işlemidir; bu da dosya boyutunu azaltmaya yardımcı olur.
 
-#### S: SubsetAllFonts ve SubsetEmbeddedFontsOnly stratejileri arasındaki fark nedir?
+### PDF'ime neden yazı tipleri eklemeliyim?
+Yazı tiplerini yerleştirmek, belgenizin tüm cihazlarda aynı görünmesini sağlayarak yazı tipi değiştirme sorunlarını önler.
 
- C:`SubsetAllFonts`strateji belgedeki tüm yazı tiplerini bir alt küme olarak gömecek,`SubsetEmbeddedFontsOnly` stratejisi yalnızca belgeye zaten gömülü olan yazı tiplerinin alt kümesini gömecektir. İkinci strateji, halihazırda gömülü olmayan yazı tiplerini etkilemeyecektir.
+### Aspose.PDF'yi ücretsiz kullanabilir miyim?
+ Evet, Aspose satın almadan önce kütüphaneyi test etmek için kullanabileceğiniz ücretsiz bir deneme sunuyor. Bunu bulabilirsiniz[Burada](https://releases.aspose.com/).
 
-#### S: Alt küme stratejisiyle yazı tipi yerleştirme neden önemlidir?
+### Daha fazla dokümanı nerede bulabilirim?
+ Aspose.PDF for .NET için tam belgelere erişebilirsiniz[Burada](https://reference.aspose.com/pdf/net/).
 
-C: Alt küme stratejisiyle yazı tipi gömme, PDF dosyasının metni doğru şekilde görüntülemek için gerekli yazı tipi verilerini içerdiğinden emin olmak ve aynı zamanda yalnızca belgede kullanılan karakterleri dahil ederek dosya boyutunu daha küçük tutmak açısından önemlidir.
-
-#### S: Aspose.PDF for .NET'i farklı stratejilerle yazı tiplerini gömmek için kullanabilir miyim?
-
- C: Evet, Aspose.PDF for .NET yazı tipi yerleştirme için çeşitli stratejiler sunar;`SubsetAllFonts` Ve`SubsetEmbeddedFontsOnly`. İhtiyaçlarınıza göre uygun stratejiyi seçebilirsiniz.
-
-#### S: Aspose.PDF for .NET, PDF belgeleriyle çalışmak için güvenilir bir kütüphane midir?
-
-C: Evet, Aspose.PDF for .NET, PDF belgeleriyle çalışmak için güvenilir ve güçlü bir kütüphanedir. .NET uygulamalarında PDF dosyalarını oluşturmak, düzenlemek ve değiştirmek için kapsamlı özellikler sağlar.
+### Ya sorunlarla karşılaşırsam?
+ Herhangi bir sorunla karşılaşırsanız Aspose destek forumunda yardım isteyebilirsiniz[Burada](https://forum.aspose.com/c/pdf/10).

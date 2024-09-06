@@ -1,6 +1,6 @@
 ---
-title: Text och bild som stycke i pdf-fil
-linktitle: Text och bild som stycke i pdf-fil
+title: Text Och Bild Som Stycke I PDF-fil
+linktitle: Text Och Bild Som Stycke I PDF-fil
 second_title: Aspose.PDF för .NET API-referens
 description: Lär dig hur du lägger till text och en bild som inline-stycken i PDF-fil med Aspose.PDF för .NET.
 type: docs
@@ -38,11 +38,11 @@ using Aspose.Pdf.Drawing;
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Byta ut`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
+ Ersätta`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
 
-## Steg 4: Skapa ett nytt dokument och en sida
+## Steg 4: Skapa ett nytt dokument och sida
 
- Skapa en ny`Document` objekt och lägg till en sida i dess sidsamling:
+ Skapa en ny`Document` objekt och lägg till en sida till dess sidsamling:
 
 ```csharp
 Document doc = new Document();
@@ -71,7 +71,7 @@ image.FixWidth = 100; // Valfritt: Ställ in bildbredd
 page.Paragraphs.Add(image);
 ```
 
- Byta ut`"aspose-logo.jpg"` med det faktiska bildfilens namn och justera den valfria bildens höjd och bredd efter önskemål.
+ Ersätta`"aspose-logo.jpg"` med det faktiska bildfilens namn och justera den valfria bildens höjd och bredd efter önskemål.
 
 ## Steg 7: Lägg till ytterligare ett TextFragment som ett inline-stycke
 

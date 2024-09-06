@@ -108,7 +108,7 @@ S: StructTreeRoot-objektet representerar roten till dokumentets logiska struktur
 
 #### F: Hur kan rotstrukturelement vara användbara vid manipulering av PDF-dokument?
 
-S: Rotstrukturelement erbjuder ett sätt att programmässigt komma åt och ändra den underliggande strukturen i ett PDF-dokument. Detta kan vara värdefullt för uppgifter som att lägga till, ordna om eller ändra dokumentets innehåll samtidigt som dess logiska struktur bevaras.
+S: Rotstrukturelement erbjuder ett sätt att programmatiskt komma åt och ändra den underliggande strukturen för ett PDF-dokument. Detta kan vara värdefullt för uppgifter som att lägga till, ordna om eller ändra dokumentets innehåll samtidigt som dess logiska struktur bevaras.
 
 #### F: Kan jag använda rotstrukturelement för att komma åt metadata eller egenskaper för ett PDF-dokument?
 

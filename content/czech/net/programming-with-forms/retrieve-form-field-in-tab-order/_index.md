@@ -37,11 +37,11 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "Test2.pdf");
 ```
 
- Tady,`"Test2.pdf"`je název dokumentu PDF, který chcete načíst. Ujistěte se, že se dokument nachází v zadaném adresáři dokumentů.
+ Zde,`"Test2.pdf"`je název dokumentu PDF, který chcete načíst. Ujistěte se, že se dokument nachází v zadaném adresáři dokumentů.
 
 ## Krok 3: Načtení polí formuláře v pořadí karet
 
- Abychom mohli načíst pole formuláře v pořadí tabulátorů, musíme mít přístup k`FieldsInTabOrder` vlastnictvím`Page` třída. Tato vlastnost vrací seznam polí formuláře seřazených podle pořadí karet.
+ Abychom mohli načíst pole formuláře v pořadí tabulátorů, musíme mít přístup k`FieldsInTabOrder` majetek z`Page` třída. Tato vlastnost vrací seznam polí formuláře seřazených podle pořadí karet.
 
 ```csharp
 Page page = doc.Pages[1];
@@ -65,7 +65,7 @@ Ve výše uvedeném úryvku kódu načteme pole formuláře z druhé stránky (`
 (doc.Form[2] as Field).TabOrder = 3;
 ```
 
-Ve výše uvedeném fragmentu kódu přiřadíme nové hodnoty pořadí karet třem polím formuláře (`doc.Form[3]`, `doc.Form[1]` , a`doc.Form[2]`). Upravte indexy polí a hodnoty pořadí tabulek podle vašich specifických požadavků.
+Ve výše uvedeném fragmentu kódu přiřadíme nové hodnoty pořadí karet třem polím formuláře (`doc.Form[3]`, `doc.Form[1]` a`doc.Form[2]`). Upravte indexy polí a hodnoty pořadí tabulek podle vašich specifických požadavků.
 
 ## Krok 5: Uložení upraveného dokumentu
 
@@ -75,7 +75,7 @@ Ve výše uvedeném fragmentu kódu přiřadíme nové hodnoty pořadí karet t�
 doc.Save(dataDir + "39522_out.pdf");
 ```
 
- Tady,`"39522_out.pdf"` je název výstupního souboru, kam bude uložen upravený dokument. Zadejte požadovaný název a umístění výstupního souboru.
+ Zde,`"39522_out.pdf"` je název výstupního souboru, kam bude uložen upravený dokument. Zadejte požadovaný název a umístění výstupního souboru.
 
 ### Ukázkový zdrojový kód pro Retrieve Form Field In Tab Order pomocí Aspose.PDF for .NET 
 ```csharp

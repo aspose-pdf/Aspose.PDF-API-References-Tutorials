@@ -11,7 +11,7 @@ Tato příručka vás krok za krokem provede vytvořením miniatury v souboru PD
 
 ## Krok 1: Definujte adresář dokumentů
 
- Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři obsahujícímu vaše soubory PDF.
+Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři obsahujícímu vaše soubory PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 2: Získejte názvy všech souborů PDF v adresáři
 
- V tomto kroku získáme názvy všech souborů PDF přítomných v zadaném adresáři pomocí C#`Directory` třída. Soubory budou uloženy v poli řetězců.
+ V tomto kroku získáme názvy všech souborů PDF přítomných v zadaném adresáři pomocí C#`Directory`třída. Soubory budou uloženy v poli řetězců.
 
 ```csharp
 string[] fileEntries = Directory.GetFiles(dataDir, "*.pdf");
@@ -32,7 +32,7 @@ string[] fileEntries = Directory.GetFiles(dataDir, "*.pdf");
 ```csharp
 for (int counter = 0; counter < fileEntries.Length; counter++)
 {
-     //Otevřete dokument PDF
+     // Otevřete dokument PDF
      Document pdfDocument = new Document(fileEntries[counter]);
     
      // Projděte všechny stránky dokumentu
@@ -41,7 +41,7 @@ for (int counter = 0; counter < fileEntries.Length; counter++)
          // Vytvořte stream pro uložení miniatury
          using (FileStream imageStream = new FileStream(dataDir + "\\Thumbnails" + counter.ToString() + "_" + pageCount + ".jpg", FileMode.Create))
          {
-             // Vytvořte objekt rozlišení
+             //Vytvořte objekt rozlišení
              Resolution resolution = new Resolution(300);
             
              // Vytvořte zařízení JPEG se zadanými atributy
@@ -61,7 +61,7 @@ for (int counter = 0; counter < fileEntries.Length; counter++)
 ```csharp
 // Cesta k adresáři dokumentů.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Načíst názvy všech souborů PDF v určitém adresáři
+// Načíst názvy všech souborů PDF v určitém adresáři
 string[] fileEntries = Directory.GetFiles(dataDir, "*.pdf");
 // Iterujte všechny položky souborů v poli
 for (int counter = 0; counter < fileEntries.Length; counter++)
@@ -90,7 +90,7 @@ System.Console.WriteLine("PDF pages are converted to thumbnails successfully!");
 
 gratuluji! Úspěšně jste vytvořili miniatury obrázků ze souborů PDF pomocí Aspose.PDF pro .NET. Miniatury obrázků se ukládají do určeného adresáře. Nyní můžete tyto miniatury použít k zobrazení vizuálního náhledu souborů PDF.
 
-### Často kladené otázky pro vytváření miniatur obrázků v souboru PDF
+### Časté dotazy pro vytváření náhledů obrázků v souboru PDF
 
 #### Otázka: Jaký je účel vytváření miniatur obrázků ze souborů PDF pomocí Aspose.PDF pro .NET?
 
@@ -98,7 +98,7 @@ Odpověď: Vytváření miniatur obrázků ze souborů PDF umožňuje generovat 
 
 #### Otázka: Jak Aspose.PDF for .NET usnadňuje vytváření miniatur obrázků ze souborů PDF?
 
-Odpověď: Aspose.PDF for .NET poskytuje postupný proces otevírání dokumentů PDF, procházení jejich stránek, vytváření miniatur a jejich ukládání do určeného adresáře pomocí`JpegDevice` třída.
+ Odpověď: Aspose.PDF for .NET poskytuje postupný proces otevírání dokumentů PDF, procházení jejich stránek, vytváření miniatur a jejich ukládání do určeného adresáře pomocí`JpegDevice` třída.
 
 #### Otázka: Proč je důležité definovat adresář dokumentu před zahájením vytváření miniatur?
 
@@ -114,11 +114,11 @@ Odpověď: Určení adresáře dokumentu zajistí správné umístění souborů
 
 #### Otázka: Jak je každá stránka dokumentu PDF převedena na samostatnou miniaturu?
 
- A: Vnořený`for`smyčka se používá k iteraci každým souborem PDF a jeho stránkami. Pro každou stránku je vytvořeno zařízení JPEG se zadanými atributy a`Process` metoda se používá k převedení stránky na miniaturu a její uložení do streamu.
+ A: Vnořený`for` smyčka se používá k iteraci každým souborem PDF a jeho stránkami. Pro každou stránku je vytvořeno zařízení JPEG se zadanými atributy a`Process` metoda se používá k převedení stránky na miniaturu a její uložení do streamu.
 
 #### Otázka: Mohu během procesu vytváření upravit rozlišení nebo kvalitu výsledných miniatur?
 
- Odpověď: Ano, můžete upravit atributy, jako je rozlišení, šířka, výška a kvalita, konfigurací`JpegDevice` objekt před převodem každé stránky.
+Odpověď: Ano, můžete upravit atributy, jako je rozlišení, šířka, výška a kvalita, konfigurací`JpegDevice` objekt před převodem každé stránky.
 
 #### Otázka: Jak mohu využít vygenerované miniatury ve svých projektech nebo aplikacích po procesu vytváření?
 

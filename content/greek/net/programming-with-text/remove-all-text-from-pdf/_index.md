@@ -63,7 +63,7 @@ absorber.RemoveAllText(pdfDocument);
 pdfDocument.Save(dataDir + "RemoveAllText_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-## συμπέρασμα
+## Σύναψη
 
  Σε αυτό το σεμινάριο, μάθατε πώς να αφαιρείτε όλο το κείμενο από ένα έγγραφο PDF χρησιμοποιώντας τη βιβλιοθήκη Aspose.PDF για .NET. Ακολουθώντας τον οδηγό βήμα προς βήμα και εκτελώντας τον παρεχόμενο κώδικα C#, μπορείτε να ανοίξετε ένα PDF, να αφαιρέσετε όλο το κείμενο χρησιμοποιώντας ένα`TextFragmentAbsorber`και αποθηκεύστε το τροποποιημένο PDF.
 
@@ -98,7 +98,7 @@ pdfDocument.Save(dataDir + "RemoveAllText_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 
 ####  Ε: Πώς κάνει το`TextFragmentAbsorber` work to remove text?
 
- Α: Το`TextFragmentAbsorber`είναι μια κλάση που παρέχεται από τη βιβλιοθήκη Aspose.PDF που μπορεί να απορροφήσει θραύσματα κειμένου από ένα έγγραφο PDF. Χρησιμοποιώντας το`RemoveAllText` μέθοδος του`TextFragmentAbsorber` κλάση, μπορείτε να αφαιρέσετε όλα τα θραύσματα κειμένου που απορροφήθηκαν από το έγγραφο.
+ Α: Το`TextFragmentAbsorber`είναι μια κλάση που παρέχεται από τη βιβλιοθήκη Aspose.PDF που μπορεί να απορροφήσει θραύσματα κειμένου από ένα έγγραφο PDF. Με τη χρήση του`RemoveAllText` μέθοδος του`TextFragmentAbsorber` κλάση, μπορείτε να αφαιρέσετε όλα τα θραύσματα κειμένου που απορροφήθηκαν από το έγγραφο.
 
 #### Ε: Ποιο είναι το αναμενόμενο αποτέλεσμα από την εκτέλεση του παρεχόμενου κώδικα;
 

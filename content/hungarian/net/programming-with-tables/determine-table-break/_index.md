@@ -31,7 +31,7 @@ table1. Margin. Top = 300;
 page.Paragraphs.Add(table1);
 ```
 
-táblázathoz 300 pontos felső margót is megadunk. Ezt az értéket igényei szerint állíthatja be.
+A táblázathoz 300 pontos felső margót is megadunk. Ezt az értéket igényei szerint állíthatja be.
 
 ## 4. lépés: A táblázat beállítása
 Ebben a lépésben konfiguráljuk a táblázat tulajdonságait, például az oszlopszélességeket és a szegélyeket.
@@ -90,7 +90,7 @@ Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dat
 // A dokumentumok könyvtárának elérési útja.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Példányosítson egy objektum PDF osztályt
+// Objektum PDF osztály példányosítása
 Document pdf = new Document();
 // A szakasz hozzáadása a PDF dokumentum szakaszok gyűjteményéhez
 Aspose.Pdf.Page page = pdf.Pages.Add();

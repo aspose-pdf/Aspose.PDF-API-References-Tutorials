@@ -30,7 +30,7 @@ Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
 ```
 
 ## Krok 3: Přístup ke kolekci stránek
- Nyní můžete přistupovat ke kolekci stránek dokumentu pomocí`Pages` vlastnictvím`pdfDocument` objekt.
+ Nyní můžete přistupovat ke kolekci stránek dokumentu pomocí`Pages` majetek z`pdfDocument` objekt.
 
 ```csharp
 PageCollection pageCollection = pdfDocument.Pages;
@@ -96,7 +96,7 @@ A: Chcete-li získat vlastnosti PDF pomocí Aspose.PDF pro .NET, můžete postup
 
 1. Nastavte adresář dokumentu zadáním cesty k souboru PDF, jehož vlastnosti chcete načíst.
 2.  Otevřete dokument PDF pomocí`Document` třídy Aspose.PDF poskytující správnou cestu k souboru PDF.
-3.  Přístup ke kolekci stránek dokumentu pomocí`Pages` vlastnictvím`pdfDocument` objekt.
+3.  Přístup ke kolekci stránek dokumentu pomocí`Pages` majetek z`pdfDocument` objekt.
 4. Přejít na konkrétní stránku pomocí indexu stránky v kolekci (indexování začíná od 1).
 5.  Získejte různé vlastnosti stránky PDF, jako je ArtBox, BleedBox, CropBox, MediaBox, TrimBox, Rect, Číslo stránky a Rotace, pomocí odpovídajících vlastností`pdfPage` objekt.
 
@@ -115,7 +115,7 @@ Odpověď: Pomocí Aspose.PDF pro .NET můžete načíst různé vlastnosti str�
 
 #### Otázka: Jak získám přístup ke konkrétní stránce v dokumentu PDF, abych získal její vlastnosti?
 
- Odpověď: Pro přístup ke konkrétní stránce v dokumentu PDF a načtení jejích vlastností můžete použít`Pages` vlastnictvím`pdfDocument` objekt pro přístup ke kolekci stránek dokumentu. Poté můžete pomocí indexu stránky v kolekci přejít na požadovanou stránku. Například pro přístup na druhou stránku můžete použít`pdfDocument.Pages[1]` (indexování začíná od 1).
+ Odpověď: Pro přístup ke konkrétní stránce v dokumentu PDF a načtení jejích vlastností můžete použít`Pages` majetek z`pdfDocument` objekt pro přístup ke kolekci stránek dokumentu. Poté můžete pomocí indexu stránky v kolekci přejít na požadovanou stránku. Například pro přístup na druhou stránku můžete použít`pdfDocument.Pages[1]` (indexování začíná od 1).
 
 #### Otázka: Mohu provádět operace s načtenými vlastnostmi, jako je úprava nebo změna velikosti rámečků stránky?
 

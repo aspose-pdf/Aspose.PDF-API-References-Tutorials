@@ -1,20 +1,20 @@
 ---
-title: Cari Teks Dengan Dot Net Regex
-linktitle: Cari Teks Dengan Dot Net Regex
-second_title: Aspose.PDF untuk Referensi .NET API
+title: Pencarian Teks Dengan Dot Net Regex
+linktitle: Pencarian Teks Dengan Dot Net Regex
+second_title: Referensi API Aspose.PDF untuk .NET
 description: Pelajari cara mencari teks menggunakan ekspresi reguler .NET dalam dokumen PDF menggunakan Aspose.PDF untuk .NET.
 type: docs
 weight: 480
 url: /id/net/programming-with-text/search-text-with-dot-net-regex/
 ---
-Tutorial ini menjelaskan cara menggunakan Aspose.PDF untuk .NET untuk mencari teks menggunakan ekspresi reguler .NET dalam dokumen PDF. Kode sumber C# yang disediakan menunjukkan proses langkah demi langkah.
+Tutorial ini menjelaskan cara menggunakan Aspose.PDF untuk .NET guna mencari teks menggunakan ekspresi reguler .NET dalam dokumen PDF. Kode sumber C# yang disediakan menunjukkan proses tersebut langkah demi langkah.
 
 ## Prasyarat
 
 Sebelum melanjutkan tutorial, pastikan Anda memiliki hal berikut:
 
-- Pengetahuan dasar bahasa pemrograman C#.
-- Aspose.PDF untuk perpustakaan .NET diinstal. Anda dapat memperolehnya dari situs Aspose atau menggunakan NuGet untuk menginstalnya di proyek Anda.
+- Pengetahuan dasar tentang bahasa pemrograman C#.
+- Pustaka Aspose.PDF untuk .NET telah terinstal. Anda dapat memperolehnya dari situs web Aspose atau menggunakan NuGet untuk menginstalnya di proyek Anda.
 
 ## Langkah 1: Siapkan proyek
 
@@ -22,7 +22,7 @@ Mulailah dengan membuat proyek C# baru di lingkungan pengembangan terintegrasi (
 
 ## Langkah 2: Impor namespace yang diperlukan
 
-Tambahkan arahan penggunaan berikut di awal file C# Anda untuk mengimpor namespace yang diperlukan:
+Tambahkan perintah berikut di awal file C# Anda untuk mengimpor namespace yang diperlukan:
 
 ```csharp
 using Aspose.Pdf;
@@ -31,7 +31,7 @@ using Aspose.Pdf.Text;
 
 ## Langkah 3: Tetapkan jalur ke direktori dokumen
 
- Tetapkan jalur ke direktori dokumen Anda menggunakan`dataDir` variabel:
+ Atur jalur ke direktori dokumen Anda menggunakan`dataDir` variabel:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -41,7 +41,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Langkah 4: Buat objek .NET Regex
 
- Membuat`.NET Regex` objek untuk menentukan pola pencarian:
+ Membuat sebuah`.NET Regex` objek untuk menentukan pola pencarian:
 
 ```csharp
 System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"[\S]+");
@@ -57,7 +57,7 @@ System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.
 Aspose.Pdf.Document document = new Aspose.Pdf.Document(dataDir + "SearchTextRegex.pdf");
 ```
 
- Mengganti`"SearchTextRegex.pdf"` dengan nama sebenarnya file PDF Anda.
+ Mengganti`"SearchTextRegex.pdf"` dengan nama sebenarnya berkas PDF Anda.
 
 ## Langkah 6: Dapatkan halaman tertentu
 
@@ -71,7 +71,7 @@ Page page = document.Pages[1];
 
 ## Langkah 7: Buat TextFragmentAbsorber
 
- Membuat`TextFragmentAbsorber` objek untuk menemukan semua contoh ekspresi reguler masukan:
+ Membuat sebuah`TextFragmentAbsorber` objek untuk menemukan semua contoh ekspresi reguler input:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(regex);
@@ -88,13 +88,13 @@ page.Accept(textFragmentAbsorber);
 
 ## Langkah 9: Ambil fragmen teks yang diekstraksi
 
-Dapatkan fragmen teks yang diekstraksi menggunakan`TextFragments` properti dari`TextFragmentAbsorber` obyek:
+Dapatkan fragmen teks yang diekstraksi menggunakan`TextFragments` milik`TextFragmentAbsorber` obyek:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 ```
 
-## Langkah 10: Ulangi fragmen teks
+## Langkah 10: Ulangi melalui fragmen teks
 
 Ulangi fragmen teks yang diambil dan lakukan tindakan yang diinginkan:
 
@@ -107,7 +107,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 Ubah kode dalam loop untuk melakukan tindakan lebih lanjut pada setiap fragmen teks jika diperlukan.
 
-### Contoh kode sumber untuk Teks Pencarian Dengan Dot Net Regex menggunakan Aspose.PDF untuk .NET 
+### Contoh kode sumber untuk Pencarian Teks Dengan Dot Net Regex menggunakan Aspose.PDF untuk .NET 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Buat objek Regex untuk menemukan semua kata
@@ -116,14 +116,14 @@ System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.
 Aspose.Pdf.Document document = new Aspose.Pdf.Document(dataDir + "SearchTextRegex.pdf");
 // Dapatkan halaman tertentu
 Page page = document.Pages[1];
-// Buat objek TextAbsorber untuk menemukan semua instance regex input
+// Buat objek TextAbsorber untuk menemukan semua contoh regex input
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(regex);
 textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
 // Terima penyerap untuk halaman tersebut
 page.Accept(textFragmentAbsorber);
 // Dapatkan fragmen teks yang diekstraksi
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Ulangi fragmennya
+// Ulangi melalui fragmen
 foreach (TextFragment textFragment in textFragmentCollection)
 {
 	Console.WriteLine(textFragment.Text);
@@ -132,42 +132,42 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 ## Kesimpulan
 
-Selamat! Anda telah berhasil mempelajari cara mencari teks menggunakan ekspresi reguler .NET dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini memberikan panduan langkah demi langkah, mulai dari menyiapkan proyek hingga mengakses fragmen teks yang diekstraksi. Anda sekarang dapat memasukkan kode ini ke dalam proyek C# Anda sendiri untuk melakukan pencarian teks lanjutan dalam file PDF.
+Selamat! Anda telah berhasil mempelajari cara mencari teks menggunakan ekspresi reguler .NET dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini menyediakan panduan langkah demi langkah, mulai dari menyiapkan proyek hingga mengakses fragmen teks yang diekstrak. Anda sekarang dapat memasukkan kode ini ke dalam proyek C# Anda sendiri untuk melakukan pencarian teks tingkat lanjut dalam file PDF.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### Q: Apa tujuan dari tutorial "Mencari Teks Dengan Dot Net Regex"?
+#### T: Apa tujuan dari tutorial "Pencarian Teks Dengan Dot Net Regex"?
 
-J: Tutorial "Mencari Teks Dengan Dot Net Regex" bertujuan untuk memandu pengguna dalam menggunakan pustaka Aspose.PDF untuk .NET guna mencari teks dalam dokumen PDF menggunakan ekspresi reguler .NET. Tutorial ini memberikan petunjuk langkah demi langkah dan contoh kode C# untuk mendemonstrasikan prosesnya.
+J: Tutorial "Cari Teks dengan Dot Net Regex" bertujuan untuk memandu pengguna dalam menggunakan pustaka Aspose.PDF untuk .NET guna mencari teks dalam dokumen PDF menggunakan ekspresi reguler .NET. Tutorial ini menyediakan petunjuk langkah demi langkah dan contoh kode C# untuk menunjukkan prosesnya.
 
-#### T: Bagaimana tutorial ini membantu dalam mencari teks menggunakan ekspresi reguler .NET dalam PDF?
+#### T: Bagaimana tutorial ini membantu dalam pencarian teks menggunakan ekspresi reguler .NET dalam PDF?
 
-J: Tutorial ini membantu pengguna memahami cara memanfaatkan kemampuan Aspose.PDF untuk .NET untuk mencari teks menggunakan ekspresi reguler .NET dalam dokumen PDF. Dengan mengikuti langkah-langkah dan contoh kode yang disediakan, pengguna dapat secara efektif mencari pola teks yang cocok dengan ekspresi reguler yang mereka tentukan.
+J: Tutorial ini membantu pengguna memahami cara memanfaatkan kemampuan Aspose.PDF for .NET untuk mencari teks menggunakan ekspresi reguler .NET dalam dokumen PDF. Dengan mengikuti langkah-langkah dan contoh kode yang diberikan, pengguna dapat secara efektif mencari pola teks yang sesuai dengan ekspresi reguler yang ditentukan.
 
-#### Q: Prasyarat apa saja yang diperlukan untuk mengikuti tutorial ini?
+#### T: Prasyarat apa yang diperlukan untuk mengikuti tutorial ini?
 
-A: Sebelum memulai tutorial, Anda harus memiliki pemahaman dasar tentang bahasa pemrograman C#. Selain itu, Anda perlu menginstal perpustakaan Aspose.PDF untuk .NET. Anda dapat memperolehnya dari situs Aspose atau menginstalnya di proyek Anda menggunakan NuGet.
+J: Sebelum memulai tutorial ini, Anda harus memiliki pemahaman dasar tentang bahasa pemrograman C#. Selain itu, Anda perlu menginstal pustaka Aspose.PDF for .NET. Anda dapat memperolehnya dari situs web Aspose atau menginstalnya di proyek Anda menggunakan NuGet.
 
 #### T: Bagaimana cara menyiapkan proyek saya untuk mengikuti tutorial ini?
 
-J: Untuk memulai, buat proyek C# baru di lingkungan pengembangan terintegrasi (IDE) pilihan Anda dan tambahkan referensi ke pustaka Aspose.PDF untuk .NET. Ini akan memungkinkan Anda memanfaatkan fitur perpustakaan untuk mencari dan bekerja dengan dokumen PDF.
+J: Untuk memulai, buat proyek C# baru di lingkungan pengembangan terpadu (IDE) pilihan Anda dan tambahkan referensi ke pustaka Aspose.PDF untuk .NET. Ini akan memungkinkan Anda memanfaatkan fitur pustaka untuk mencari dan bekerja dengan dokumen PDF.
 
 #### T: Dapatkah saya menggunakan tutorial ini untuk mencari jenis teks tertentu menggunakan ekspresi reguler .NET?
 
- J: Ya, tutorial ini memberikan instruksi tentang cara mencari teks menggunakan ekspresi reguler .NET dalam dokumen PDF. Anda dapat menyesuaikannya`.NET Regex` objek untuk menentukan pola pencarian spesifik yang ingin Anda gunakan.
+ A: Ya, tutorial ini menyediakan petunjuk tentang cara mencari teks menggunakan ekspresi reguler .NET dalam dokumen PDF. Anda dapat menyesuaikannya`.NET Regex` objek untuk menentukan pola pencarian spesifik yang ingin Anda gunakan.
 
-#### T: Bagaimana cara menentukan pola ekspresi reguler .NET yang akan dicari dalam tutorial ini?
+#### T: Bagaimana cara menentukan pola ekspresi reguler .NET untuk dicari dalam tutorial ini?
 
- A: Untuk menentukan pola ekspresi reguler .NET yang ingin Anda cari, buat a`.NET Regex` objek dan atur polanya menggunakan sintaks ekspresi reguler yang sesuai. Ganti defaultnya`@"[\S]+"` dalam kode tutorial dengan ekspresi reguler yang Anda inginkan.
+ A: Untuk menentukan pola ekspresi reguler .NET yang ingin Anda cari, buat`.NET Regex` objek dan atur polanya menggunakan sintaks ekspresi reguler yang sesuai. Ganti default`@"[\S]+"` dalam kode tutorial dengan ekspresi reguler yang Anda inginkan.
 
-#### T: Bagaimana cara mengambil properti dari fragmen teks yang diekstraksi?
+#### T: Bagaimana cara mengambil properti dari fragmen teks yang diekstrak?
 
- A: Setelah menerima`TextFragmentAbsorber` untuk halaman PDF tertentu, Anda dapat mengambil fragmen teks yang diekstraksi menggunakan`TextFragments` properti dari objek penyerap. Ini memberikan akses ke kumpulan fragmen teks yang cocok dengan ekspresi reguler .NET yang ditentukan.
+ A: Setelah menerima`TextFragmentAbsorber` untuk halaman tertentu dari PDF, Anda dapat mengambil fragmen teks yang diekstraksi menggunakan`TextFragments` properti objek penyerap. Ini menyediakan akses ke kumpulan fragmen teks yang cocok dengan ekspresi reguler .NET yang ditentukan.
 
 #### T: Dapatkah saya menyesuaikan kode untuk melakukan tindakan tambahan pada setiap fragmen teks yang diekstraksi?
 
-J: Tentu saja. Kode contoh tutorial menyertakan loop untuk mengulangi fragmen teks yang diambil. Anda dapat menyesuaikan kode dalam loop ini untuk melakukan tindakan tambahan pada setiap fragmen teks yang diekstraksi berdasarkan kebutuhan proyek Anda.
+A: Tentu saja. Contoh kode tutorial mencakup suatu loop untuk mengulang fragmen teks yang diambil. Anda dapat menyesuaikan kode dalam loop ini untuk melakukan tindakan tambahan pada setiap fragmen teks yang diambil berdasarkan persyaratan proyek Anda.
 
-#### T: Bagaimana cara menyimpan dokumen PDF yang dimodifikasi setelah mengekstraksi fragmen teks?
+#### T: Bagaimana cara menyimpan dokumen PDF yang dimodifikasi setelah mengekstrak fragmen teks?
 
-J: Tutorial ini terutama berfokus pada pencarian teks menggunakan ekspresi reguler .NET dan mengambil fragmen teks. Jika Anda berniat melakukan modifikasi pada PDF, Anda dapat merujuk ke dokumentasi Aspose.PDF lainnya untuk mempelajari cara memanipulasi dan menyimpan dokumen berdasarkan kebutuhan spesifik Anda.
+J: Tutorial ini terutama berfokus pada pencarian teks menggunakan ekspresi reguler .NET dan pengambilan fragmen teks. Jika Anda ingin melakukan modifikasi pada PDF, Anda dapat merujuk ke dokumentasi Aspose.PDF lainnya untuk mempelajari cara memanipulasi dan menyimpan dokumen berdasarkan kebutuhan spesifik Anda.

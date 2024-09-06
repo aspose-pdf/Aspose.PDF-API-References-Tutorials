@@ -92,11 +92,11 @@ A: Chcete-li přiblížit obsah stránky souboru PDF pomocí Aspose.PDF pro .NET
 
 1. Nastavte adresář dokumentu zadáním cesty, kde se nachází váš zdrojový soubor PDF a kam chcete uložit upravený soubor PDF. Nahraďte "VAŠE ADRESÁŘ DOKUMENTŮ" příslušnou cestou.
 2.  Načtěte zdrojový soubor PDF pomocí`Document` třída Aspose.PDF. Ujistěte se, že jste zadali správnou cestu k souboru PDF.
-3.  Obnovte obdélníkovou oblast první stránky PDF pomocí`Rect` vlastnictvím`Page` objekt.
+3.  Obnovte obdélníkovou oblast první stránky PDF pomocí`Rect` majetek z`Page` objekt.
 4.  Vytvořte instanci`PdfPageEditor` třídy pro provedení operace přiblížení.
 5.  Propojte zdrojové PDF s`PdfPageEditor` instance pomocí`BindPdf()` metoda.
 6. Definujte koeficient přiblížení podle šířky a výšky načteného obdélníku.
-7.  Aktualizujte velikost stránky pomocí rozměrů obdélníku a`PageSize` vlastnictvím`PdfPageEditor` instance.
+7.  Aktualizujte velikost stránky pomocí rozměrů obdélníku a`PageSize` majetek z`PdfPageEditor` instance.
 8.  Uložte upravený soubor PDF pomocí`Save()` metoda`Document`třída. Ujistěte se, že jste zadali správnou cestu a název souboru.
 
 #### Otázka: Mohu použít efekt přiblížení na více stránek v souboru PDF současně?

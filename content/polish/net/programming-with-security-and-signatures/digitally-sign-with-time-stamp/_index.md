@@ -1,25 +1,25 @@
 ---
-title: Podpisz cyfrowo znacznikiem czasu w pliku PDF
-linktitle: Podpisz cyfrowo znacznikiem czasu w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak wykonać podpis cyfrowy ze znacznikiem czasu w pliku PDF przy użyciu Aspose.PDF dla .NET.
+title: Podpisz cyfrowo z znacznikiem czasu w pliku PDF
+linktitle: Podpisz cyfrowo z znacznikiem czasu w pliku PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak dodać podpis cyfrowy ze znacznikiem czasu do pliku PDF przy użyciu Aspose.PDF dla platformy .NET.
 type: docs
 weight: 50
 url: /pl/net/programming-with-security-and-signatures/digitally-sign-with-time-stamp/
 ---
-W tym samouczku przeprowadzimy Cię przez proces cyfrowego podpisywania pliku PDF ze znacznikiem czasu przy użyciu Aspose.PDF dla .NET. Podpis cyfrowy ze znacznikiem czasu gwarantuje autentyczność i integralność dokumentu, poprzez dodanie elektronicznego odcisku palca ze znacznikiem czasu.
+W tym samouczku przeprowadzimy Cię przez proces cyfrowego podpisywania pliku PDF ze znacznikiem czasu przy użyciu Aspose.PDF dla .NET. Cyfrowy podpis ze znacznikiem czasu gwarantuje autentyczność i integralność dokumentu, poprzez dodanie elektronicznego odcisku palca ze znacznikiem czasu.
 
-## Krok 1: Warunki wstępne
+## Krok 1: Wymagania wstępne
 
-Zanim zaczniesz, upewnij się, że masz następujące wymagania wstępne:
+Zanim zaczniesz, upewnij się, że spełniasz następujące wymagania wstępne:
 
 - Podstawowa znajomość języka programowania C#
 - Instalowanie programu Visual Studio na komputerze
-- Zainstalowana biblioteka Aspose.PDF dla .NET
+- Zainstalowano bibliotekę Aspose.PDF dla .NET
 
 ## Krok 2: Konfiguracja środowiska
 
-Aby rozpocząć, wykonaj następujące kroki, aby skonfigurować środowisko programistyczne:
+Aby rozpocząć, wykonaj poniższe kroki, aby skonfigurować środowisko programistyczne:
 
 1. Otwórz program Visual Studio i utwórz nowy projekt C#.
 2. Zaimportuj wymagane przestrzenie nazw do pliku kodu:
@@ -31,7 +31,7 @@ using Aspose.Pdf.Forms;
 
 ## Krok 3: Podpis cyfrowy ze znacznikiem czasu
 
-Pierwszym krokiem jest złożenie podpisu cyfrowego wraz ze znacznikiem czasu na pliku PDF. Dostarczony kod pokazuje, jak uzyskać ten podpis za pomocą Aspose.PDF dla .NET.
+Pierwszym krokiem jest wykonanie podpisu cyfrowego ze znacznikiem czasu na pliku PDF. Dostarczony kod pokazuje, jak uzyskać ten podpis za pomocą Aspose.PDF dla .NET.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -50,9 +50,9 @@ using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
 }
 ```
 
-Ten kod ładuje plik PDF, tworzy podpis cyfrowy ze znacznikiem czasu przy użyciu pliku PFX (klucz prywatny) i określonych parametrów znacznika czasu. Podpis jest następnie dodawany do pliku PDF i zapisywany z przyrostkiem „_na zewnątrz".
+Ten kod ładuje plik PDF, tworzy podpis cyfrowy ze znacznikiem czasu przy użyciu pliku PFX (klucz prywatny) i określonych parametrów znacznika czasu. Następnie podpis jest dodawany do pliku PDF i zapisywany z sufiksem „_na zewnątrz".
 
-### Przykładowy kod źródłowy funkcji Podpisz cyfrowo ze znacznikiem czasu przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Digitally Sign With Time Stamp przy użyciu Aspose.PDF dla platformy .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -62,12 +62,12 @@ using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
 	using (PdfFileSignature signature = new PdfFileSignature(document))
 	{
 		PKCS7 pkcs = new PKCS7(pfxFile, "pfx_password");
-		TimestampSettings timestampSettings = new TimestampSettings("https:\\your_timestamp_settings", "user:password"); // Użytkownik/hasło można pominąć
+		TimestampSettings timestampSettings = new TimestampSettings("https:\\your_timestamp_settings", "user:password"); // Użytkownik/Hasło można pominąć
 		pkcs.TimestampSettings = timestampSettings;
 		System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-		// Utwórz dowolny z trzech typów podpisów
+		// Utwórz dowolny z trzech typów podpisu
 		signature.Sign(1, "Signature Reason", "Contact", "Location", true, rect, pkcs);
-		// Zapisz wyjściowy plik PDF
+		// Zapisz plik wyjściowy PDF
 		signature.Save(dataDir + "DigitallySignWithTimeStamp_out.pdf");
 	}
 }
@@ -75,53 +75,53 @@ using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
 
 ## Wniosek
 
-Gratulacje! Pomyślnie wykonałeś podpis cyfrowy ze znacznikiem czasu na pliku PDF przy użyciu Aspose.PDF dla .NET. W tym samouczku omówiono krok po kroku proces od utworzenia podpisu do zapisania zaktualizowanego pliku PDF. Możesz teraz używać tej funkcji, aby dodawać podpisy cyfrowe ze znacznikiem czasu do plików PDF.
+Gratulacje! Udało Ci się pomyślnie wykonać podpis cyfrowy ze znacznikiem czasu w pliku PDF przy użyciu Aspose.PDF dla .NET. Ten samouczek obejmuje proces krok po kroku od utworzenia podpisu do zapisania zaktualizowanego pliku PDF. Teraz możesz użyć tej funkcji, aby dodać podpisy cyfrowe ze znacznikiem czasu do swoich plików PDF.
 
-### Często zadawane pytania dotyczące podpisu cyfrowego ze znacznikiem czasu w pliku PDF
+### Często zadawane pytania dotyczące cyfrowego podpisywania plików PDF znacznikiem czasu
 
-#### P: Jaki jest cel cyfrowego podpisywania za pomocą znacznika czasu?
+#### P: Jaki jest cel składania podpisu cyfrowego za pomocą znacznika czasu?
 
-Odp.: Podpisywanie cyfrowe za pomocą znacznika czasu dodaje elektroniczny odcisk palca ze znacznikiem czasu do pliku PDF, zapewniając autentyczność i integralność dokumentu w określonym momencie.
+A: Podpisanie cyfrowe ze znacznikiem czasu dodaje do pliku PDF elektroniczny odcisk palca ze znacznikiem czasu, gwarantując autentyczność i integralność dokumentu w określonym momencie.
 
-#### P: Jakie wymagania wstępne są potrzebne, aby rozpocząć ten samouczek?
+#### P: Jakie warunki wstępne są konieczne, aby rozpocząć korzystanie z tego samouczka?
 
-O: Zanim zaczniesz, upewnij się, że znasz podstawowy język programowania C#, masz zainstalowany program Visual Studio i bibliotekę Aspose.PDF dla .NET.
+O: Zanim zaczniesz, upewnij się, że posiadasz podstawową wiedzę na temat języka programowania C#, masz zainstalowany program Visual Studio i bibliotekę Aspose.PDF dla platformy .NET.
 
 #### P: Jak mogę skonfigurować środowisko programistyczne?
 
-Odp.: Wykonaj podane kroki, aby skonfigurować środowisko programistyczne, w tym utworzyć nowy projekt C# w programie Visual Studio i zaimportować niezbędne przestrzenie nazw.
+A: Wykonaj podane kroki, aby skonfigurować środowisko programistyczne, m.in. utwórz nowy projekt C# w programie Visual Studio i zaimportuj niezbędne przestrzenie nazw.
 
 #### P: Jak dodać podpis cyfrowy ze znacznikiem czasu do pliku PDF?
 
-Odp.: Dostarczony przykładowy kod demonstruje, jak załadować plik PDF, utworzyć podpis cyfrowy ze znacznikiem czasu przy użyciu pliku PFX (klucz prywatny) i określonych ustawień znacznika czasu, dodać podpis do pliku PDF i zapisać zaktualizowany plik.
+A: Dostarczony przykładowy kod pokazuje, jak załadować plik PDF, utworzyć podpis cyfrowy ze znacznikiem czasu za pomocą pliku PFX (klucz prywatny) i określonych ustawień znacznika czasu, dodać podpis do pliku PDF i zapisać zaktualizowany plik.
 
-#### P: Co to jest plik PFX i dlaczego został użyty w przykładzie?
+#### P: Czym jest plik PFX i dlaczego został użyty w przykładzie?
 
-Odp.: Plik PFX (Personal Exchange Format) zawiera klucz prywatny i certyfikat. Służy tutaj do zapewnienia funkcjonalności kryptograficznej podpisów cyfrowych. Upewnij się, że zastąpiłeś symbol zastępczy plikiem PFX i hasłem.
+A: Plik PFX (Personal Exchange Format) zawiera klucz prywatny i certyfikat. Jest on tutaj używany do zapewnienia kryptograficznej funkcjonalności dla podpisów cyfrowych. Upewnij się, że zastępujesz symbol zastępczy swoim plikiem PFX i hasłem.
 
 #### P: Czym są ustawienia znacznika czasu?
 
-Odp.: Ustawienia znacznika czasu definiują ustawienia serwera znacznika czasu używanego do dodawania elektronicznego znacznika czasu do podpisu. Zawiera adres URL serwera sygnatury czasowej i opcjonalne poświadczenia użytkownika.
+A: TimestampSettings definiuje ustawienia serwera znaczników czasu używanego do dodawania elektronicznego znacznika czasu do podpisu. Obejmuje adres URL serwera znaczników czasu i opcjonalne dane uwierzytelniające użytkownika.
 
-#### P: Czy mogę użyć serwera znaczników czasu innego niż ten w przykładzie?
- Odp.: Tak, możesz użyć dowolnego kompatybilnego serwera znaczników czasu. Zamień adres URL i, jeśli to konieczne, podaj odpowiednie poświadczenia użytkownika w pliku`TimestampSettings` obiekt.
+#### P: Czy mogę użyć innego serwera znaczników czasu niż ten w przykładzie?
+ A: Tak, możesz użyć dowolnego zgodnego serwera znaczników czasu. Zastąp adres URL i, jeśli to konieczne, podaj odpowiednie dane uwierzytelniające użytkownika w`TimestampSettings` obiekt.
 
 #### P: Jaki jest cel określenia prostokąta podpisu?
 
-Odpowiedź: Prostokąt podpisu określa położenie i wymiary wyglądu podpisu cyfrowego na stronie PDF. Dostosuj te wartości, aby ustawić żądane położenie podpisu.
+A: Prostokąt podpisu definiuje pozycję i wymiary wyglądu podpisu cyfrowego na stronie PDF. Dostosuj te wartości, aby umieścić podpis zgodnie z oczekiwaniami.
 
-#### P: Co się stanie, jeśli serwer znaczników czasu będzie niedostępny podczas podpisywania?
+#### P: Co się stanie, jeśli podczas podpisywania serwer znaczników czasu będzie niedostępny?
 
-Odp.: Jeśli serwer znaczników czasu będzie niedostępny podczas podpisywania, proces może się nie powieść lub potrwać dłużej. Upewnij się, że Twój serwer znaczników czasu jest niezawodny i dostępny.
+A: Jeśli serwer znaczników czasu jest niedostępny podczas podpisywania, proces może się nie powieść lub potrwać dłużej. Upewnij się, że serwer znaczników czasu jest niezawodny i dostępny.
 
 #### P: Jak mogę sprawdzić obecność znacznika czasu w podpisanym pliku PDF?
 
- Odp.: Możesz sprawdzić podpisany plik PDF, korzystając z dostarczonego przykładowego kodu. The`TimestampSettings` Hasło użyte podczas podpisywania powinno być dostępne w szczegółach podpisu.
+ A: Możesz sprawdzić podpisany plik PDF, korzystając z przykładowego kodu.`TimestampSettings` którego użyłeś podczas podpisywania, powinien być dostępny w szczegółach podpisu.
 
 #### P: Czy podpisy cyfrowe ze znacznikami czasu są prawnie wiążące?
 
-Odp.: Podpisy cyfrowe ze znacznikami czasu mają wartość prawną w wielu jurysdykcjach i często są uważane za bardziej niezawodne niż zwykłe podpisy cyfrowe. Aby poznać szczegółowe przepisy, skonsultuj się z ekspertami prawnymi w swojej jurysdykcji.
+A: Podpisy cyfrowe ze znacznikami czasu mają wartość prawną w wielu jurysdykcjach i są często uważane za bardziej niezawodne niż proste podpisy cyfrowe. Skonsultuj się z ekspertami prawnymi w swojej jurysdykcji, aby uzyskać szczegółowe przepisy.
 
-#### P: Czy mogę dodać wiele podpisów cyfrowych ze znacznikami czasu do pliku PDF?
+#### P: Czy mogę dodać do pliku PDF wiele podpisów cyfrowych ze znacznikami czasu?
 
-Odp.: Tak, możesz dodać wiele podpisów cyfrowych ze znacznikami czasu do pliku PDF, wielokrotnie wywołując proces tworzenia podpisu. Każdy podpis będzie miał swój własny znacznik czasu.
+A: Tak, możesz dodać wiele podpisów cyfrowych ze znacznikami czasu do pliku PDF, wywołując proces tworzenia podpisu wiele razy. Każdy podpis będzie miał swój własny znacznik czasu.

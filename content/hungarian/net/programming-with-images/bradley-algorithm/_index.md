@@ -11,7 +11,7 @@ Ez a lépésenkénti útmutató elmagyarázza, hogyan kell használni a Bradley 
 
 ## 1. lépés: Határozza meg a dokumentumkönyvtárat
 
- Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a PDF-dokumentum található.
+Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a PDF-dokumentum található.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 2. lépés: Nyissa meg a dokumentumot
 
-Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
+ Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
@@ -34,9 +34,9 @@ string outputImageFile = dataDir + "resultant_out.tif";
 string outputBinImageFile = dataDir + "37116-bin_out.tif";
 ```
 
-## 4. lépés: Hozza létre a Resolution objektumot
+## 4. lépés: Hozza létre a Felbontás objektumot
 
- Hozzon létre egy`Resolution`objektumot a TIFF kép felbontásának beállításához. Ebben a példában 300 dpi felbontást használunk.
+ Hozzon létre a`Resolution` objektumot a TIFF kép felbontásának beállításához. Ebben a példában 300 dpi felbontást használunk.
 
 ```csharp
 Resolution resolution = new Resolution(300);
@@ -44,7 +44,7 @@ Resolution resolution = new Resolution(300);
 
 ## 5. lépés: Hozza létre a TiffSettings objektumot
 
- Hozzon létre egy`TiffSettings`objektumot a kimeneti TIFF-fájl beállításainak megadásához. Ebben a példában LZW tömörítést és 1 bit/pixel színmélységet használunk (1 bpp formátum).
+ Hozzon létre a`TiffSettings` objektumot a kimeneti TIFF-fájl beállításainak megadásához. Ebben a példában LZW tömörítést és 1 bit/pixel színmélységet használunk (1 bpp formátum).
 
 ```csharp
 TiffSettings tiffSettings = new TiffSettings();
@@ -70,7 +70,7 @@ tiffDevice.Process(pdfDocument, outputImageFile);
 
 ## 8. lépés: Binarizálja a képet a Bradley-algoritmus segítségével
 
- Használja a`BinarizeBradley` a TIFF eszköz módszere a kép binarizálására a Bradley algoritmus segítségével. Ez a módszer az eredeti kép bemeneti adatfolyamát és a bináris kép kimeneti adatfolyamát veszi fel. Adja meg a binarizálási küszöböt (ebben a példában 0,1).
+ Használja a`BinarizeBradley` TIFF eszköz módszere a kép binarizálására a Bradley algoritmus segítségével. Ez a módszer az eredeti kép bemeneti adatfolyamát és a bináris kép kimeneti adatfolyamát veszi fel. Adja meg a binarizálási küszöböt (ebben a példában 0,1).
 
 ```csharp
 using (FileStream
@@ -100,7 +100,7 @@ tiffSettings.Compression = CompressionType.LZW;
 tiffSettings.Depth = Aspose.Pdf.Devices.ColorDepth.Format1bpp;
 // Hozzon létre TIFF-eszközt
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-//Konvertálja az adott oldalt, és mentse a képet adatfolyamba
+// Konvertálja az adott oldalt, és mentse a képet adatfolyamba
 tiffDevice.Process(pdfDocument, outputImageFile);
 using (FileStream inStream = new FileStream(outputImageFile, FileMode.Open))
 {
@@ -145,7 +145,7 @@ V: A felbontás beállítása határozza meg a Bradley-algoritmus alkalmazása u
 #### K: Milyen beállításokat szabhatok testre a kimeneti TIFF-képhez a Bradley Algorithm folyamatban?
 V: Testreszabhatja a beállításokat, például a tömörítés típusát és a színmélységet, hogy elérje a TIFF-kép kívánt kimenetét.
 
-#### K: Hogyan járul hozzá a TIFF-eszköz a Bradley Algorithm folyamathoz?
+#### K: Hogyan járul hozzá a TIFF-eszköz a Bradley algoritmus folyamatához?
 
 V: A TIFF-eszköz a képek feldolgozásának és a Bradley-algoritmus alkalmazásának eszközeként működik, ami jobb képminőséget eredményez.
 

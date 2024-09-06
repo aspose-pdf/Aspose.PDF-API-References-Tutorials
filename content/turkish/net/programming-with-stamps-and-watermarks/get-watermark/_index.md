@@ -1,59 +1,59 @@
 ---
 title: PDF Dosyasından Filigran Al
 linktitle: PDF Dosyasından Filigran Al
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile PDF dosyasından filigranları nasıl çıkaracağınızı öğrenin.
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET ile PDF dosyasından filigranların nasıl çıkarılacağını öğrenin.
 type: docs
 weight: 100
 url: /tr/net/programming-with-stamps-and-watermarks/get-watermark/
 ---
-Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasından nasıl filigran alacağınızı adım adım anlatacağız. Belirli bir sayfanın yapıları arasında yineleme yapmak ve filigran türünü, metnini ve konumunu elde etmek için sağlanan C# kaynak kodunu nasıl kullanacağınızı size göstereceğiz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak PDF dosyasından filigran alma konusunda adım adım yol göstereceğiz. Sağlanan C# kaynak kodunu kullanarak belirli bir sayfanın yapıtları arasında nasıl gezineceğinizi ve filigran türünü, metnini ve konumunu nasıl alacağınızı göstereceğiz.
 
-## 1. Adım: Ortamı ayarlama
+## Adım 1: Ortamı kurma
 
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
 - Kurulu bir .NET geliştirme ortamı.
-- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
+- .NET için Aspose.PDF kütüphanesi indirildi ve projenizde referans olarak kullanıldı.
 
 ## Adım 2: PDF belgesini yükleme
 
-İlk adım mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
+İlk adım, mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-//PDF belgesini açın
+// PDF belgesini açın
 Document pdfDocument = new Document(dataDir + "watermark.pdf");
 ```
 
-"BELGELERİNİZ DİZİNİ"ni, PDF belgenizin bulunduğu dizine giden gerçek yolla değiştirdiğinizden emin olun.
+"BELGELERİNİZ DİZİNİ" ifadesini PDF belgenizin bulunduğu dizinin gerçek yoluyla değiştirdiğinizden emin olun.
 
-## 3. Adım: Filigranı alma
+## Adım 3: Filigranı alma
 
-Artık PDF belgesini yüklediğinize göre, filigran bilgilerini almak için belirli sayfa yapılarını yineleyebilirsiniz. İşte nasıl:
+Artık PDF belgesini yüklediğinize göre, filigran bilgilerini almak için belirli sayfa yapıtları arasında yineleme yapabilirsiniz. İşte nasıl:
 
 ```csharp
-// Yapılara göz atın ve filigran alt türünü, metnini ve konumunu öğrenin
+// Eserlere göz atın ve filigran alt türünü, metni ve konumu alın
 foreach(Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
      Console.WriteLine(artifact.Subtype + " " + artifact.Text + " " + artifact.Rectangle);
 }
 ```
 
-Yukarıdaki kod, PDF belgesinin ilk sayfasındaki tüm yapılar arasında geçiş yapar ve karşılaşılan her filigranın alt türünü, metnini ve dikdörtgenini (konumunu) görüntüler.
+Yukarıdaki kod, PDF belgesinin ilk sayfasındaki tüm eserleri dolaşır ve karşılaşılan her filigranın alt türünü, metnini ve dikdörtgenini (konumunu) görüntüler.
 
-### Aspose.PDF for .NET kullanarak Filigran Al için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Filigran Almak için örnek kaynak kodu 
 ```csharp
 
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Belgeyi aç
 Document pdfDocument = new Document( dataDir +  "watermark.pdf");
 
-// Tekrarlayarak küvet tipini, metni ve eserin konumunu elde edin
+// Yineleme yapın ve yapıtın küvet türünü, metnini ve konumunu alın
 foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
 	Console.WriteLine(artifact.Subtype + " " + artifact.Text + " " + artifact.Rectangle);
@@ -63,46 +63,46 @@ foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesinden filigran bilgilerinin nasıl alınacağını öğrendiniz. Artık bu bilgiyi PDF belgelerinizdeki filigranları analiz etmek ve işlemek için kullanabilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesinden filigran bilgisinin nasıl alınacağını öğrendiniz. Şimdi bu bilgiyi PDF belgelerinizdeki filigranları analiz etmek ve işlemek için kullanabilirsiniz.
 
-### PDF dosyasından filigran almak için SSS
+### PDF dosyasından filigran alma hakkında SSS
 
-#### S: PDF belgesindeki filigran nedir ve neden bilgilerini çıkarmam gerekiyor?
+#### S: PDF belgesinde filigran nedir ve bilgilerini neden çıkarmam gerekir?
 
-C: PDF belgesindeki filigran, genellikle belgenin durumunu, sahipliğini veya gizli niteliğini belirtmek için belgenin içeriğine eklenen tanınabilir bir görüntü veya metindir. Filigran bilgilerinin çıkarılması, belgenin orijinalliğini analiz etmek, belge kaynağını belirlemek veya belgeleri filigran varlığına göre işlemek için yararlı olabilir.
+A: PDF belgesindeki filigran, genellikle durumunu, sahipliğini veya gizli niteliğini belirtmek için belgenin içeriğine eklenen tanınabilir bir görüntü veya metindir. Filigran bilgilerini çıkarmak, belgenin gerçekliğini analiz etmek, belge kaynağını belirlemek veya belgeleri filigran varlığına göre işlemek için yararlı olabilir.
 
-#### S: Sağlanan C# kaynak kodu, filigran bilgilerinin bir PDF dosyasından çıkarılmasına nasıl yardımcı olur?
+#### S: Sağlanan C# kaynak kodu bir PDF dosyasından filigran bilgilerinin çıkarılmasına nasıl yardımcı olur?
 
- C: Sağlanan kod, mevcut bir PDF belgesinin nasıl yükleneceğini, belirli bir sayfadaki yapıların nasıl yineleneceğini ve filigranlarla ilgili bilgilerin nasıl çıkarılacağını gösterir. Bunu şuraya erişerek yapar:`Subtype`, `Text` , Ve`Rectangle` Her eserin özellikleri.
+ A: Sağlanan kod, mevcut bir PDF belgesinin nasıl yükleneceğini, belirli bir sayfanın yapıtları arasında nasıl gezinileceğini ve filigranlar hakkında bilginin nasıl çıkarılacağını gösterir. Bunu, şuraya erişerek yapar:`Subtype`, `Text` , Ve`Rectangle` Her bir eserin özellikleri.
 
-####  S: Ne işe yarar?`Subtype` property of an artifact represent?
+####  S: Ne anlama geliyor?`Subtype` property of an artifact represent?
 
- C:`Subtype` Bir eserin özelliği, eserin türünü temsil eder. Filigranlar için bu, yapının bir filigran olduğunu belirtir.
+ A:`Subtype` Bir eserin özelliği, eserin türünü temsil eder. Filigranlar için, eserin bir filigran olduğunu gösterir.
 
 #### S: Kod, filigranın sayfadaki konumunu (dikdörtgen) nasıl belirler?
 
- C: Kod şunları kullanır:`Rectangle` Filigranın konumunu belirlemek için eserin özelliği.`Rectangle` özelliği, sayfadaki yapının sınırlayıcı dikdörtgenini temsil eder.
+ A: Kod şunu kullanır:`Rectangle` filigranın yerini belirlemek için eserin özelliği.`Rectangle` özellik, sayfadaki yapıtın sınırlayıcı dikdörtgenini temsil eder.
 
-#### S: Filigranın görünümü veya rengi gibi ek bilgileri almak için kodu değiştirebilir miyim?
+#### S: Filigranın görünümü veya rengi gibi ek bilgileri çıkarmak için kodu değiştirebilir miyim?
 
-C: Evet, eğer bu tür bilgiler mevcutsa ve kullanım durumunuzla alakalıysa, yapının görünümü veya rengi gibi diğer özelliklerine erişmek için kodu değiştirebilirsiniz.
+C: Evet, eğer bu tür bilgiler mevcutsa ve kullanım durumunuzla alakalıysa, eserin görünümü veya rengi gibi diğer özelliklerine erişmek için kodu değiştirebilirsiniz.
 
-#### S: Bu kodu kullanarak bir PDF belgesinin birden fazla sayfasından filigran bilgilerini çıkarabilir miyim?
+#### S: Bu kodu kullanarak PDF belgesinin birden fazla sayfasından filigran bilgilerini çıkarabilir miyim?
 
-C: Evet, farklı sayfalardaki yapılara erişmek için döngüdeki sayfa dizinini değiştirerek birden fazla sayfadaki yapılar arasında yineleme yapacak şekilde kodu değiştirebilirsiniz.
+C: Evet, döngüdeki sayfa dizinini değiştirerek farklı sayfalardaki eserler arasında yineleme yapmak için kodu düzenleyebilirsiniz.
 
 #### S: Belirtilen sayfada filigran yoksa ne olur?
 
-C: Belirtilen sayfada filigran yoksa döngü yürütülmeyecek ve hiçbir filigran bilgisi görüntülenmeyecektir.
+A: Belirtilen sayfada filigran yoksa döngü yürütülmeyecek ve filigran bilgisi görüntülenmeyecektir.
 
-#### S: Çıkarılan filigran bilgilerini daha ileri işlemler için nasıl kullanabilirim?
+#### S: Çıkarılan filigran bilgilerini daha sonraki işlemlerde nasıl kullanabilirim?
 
-C: Çıkarılan filigran bilgileri, günlüğe kaydetme, analiz etme, raporlama veya filigranların varlığına veya özelliklerine bağlı olarak belirli eylemlerin otomasyonu gibi çeşitli amaçlarla kullanılabilir.
+A: Çıkarılan filigran bilgileri, filigranların varlığına veya özelliklerine dayalı olarak günlük kaydı tutma, analiz etme, raporlama veya belirli eylemlerin otomasyonu gibi çeşitli amaçlarla kullanılabilir.
 
-#### S: Bir PDF belgesindeki diğer yapı türleri hakkında bilgi çıkarmak için bu kodu değiştirebilir miyim?
+#### S: Bu kodu, bir PDF belgesindeki diğer türdeki eserler hakkında bilgi çıkarmak için değiştirebilir miyim?
 
-C: Evet, benzer bir yaklaşım kullanarak diğer yapı türleri hakkında bunların özelliklerine erişerek bilgi çıkarmak için kodu değiştirebilirsiniz.
+C: Evet, benzer bir yaklaşım kullanarak diğer türdeki eserlerin özelliklerine erişerek bunlar hakkında bilgi çıkarmak için kodu değiştirebilirsiniz.
 
-#### S: Yapay olmayan ancak PDF içeriğinin parçası olan filigranlara nasıl erişebilirim?
+#### S: Eser olmayan ancak PDF içeriğinin bir parçası olan filigranlara nasıl erişebilirim?
 
-C: Yapay olmayan filigranlar, resimler veya metinler gibi PDF içeriğinin kendisinin bir parçası olabilir. Bu tür filigranlar hakkında bilgi çıkarmak için PDF içeriğini analiz etmeniz ve filigranları temsil eden belirli öğeleri tanımlamanız gerekebilir.
+A: Eser olmayan filigranlar, PDF içeriğinin bir parçası olabilir, örneğin resimler veya metinler. Bu tür filigranlar hakkında bilgi çıkarmak için PDF içeriğini analiz etmeniz ve filigranları temsil eden belirli öğeleri tanımlamanız gerekebilir.

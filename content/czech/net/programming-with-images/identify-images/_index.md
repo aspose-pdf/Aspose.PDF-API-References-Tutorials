@@ -28,7 +28,7 @@ int rdg = 0; // Počítadlo pro obrázky RGB
 
 ## Krok 3: Otevřete dokument PDF
 
- tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
+ V tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
 
 ```csharp
 using (Document document = new Document(dataDir + "ExtractImages.pdf"))
@@ -153,7 +153,7 @@ Odpověď: Ano, počet obrázků je kumulativní na všech stránkách. Kód ite
 
 #### Otázka: Mohu tuto identifikaci obrázku použít pro automatizaci úloh souvisejících s obrázky v dokumentech PDF?
 
-Odpověď: Ano, identifikace obrázků v dokumentech PDF může být užitečná pro automatizaci úloh, jako je extrakce, převod nebo manipulace s obrázky na základě typu barvy.
+Odpověď: Ano, identifikace obrázků v dokumentech PDF může být užitečná pro automatizaci úloh, jako je extrakce obrázků, převod nebo manipulace na základě typu barvy.
 
 #### Otázka: Jak tento proces identifikace obrazu prospívá zpracování dokumentů PDF?
 

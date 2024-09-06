@@ -7,13 +7,13 @@ type: docs
 weight: 30
 url: /sv/net/programming-with-graphs/add-line-object/
 ---
-I den här handledningen går vi igenom följande C#-källkod steg för steg för att lägga till ett linjeobjekt med Aspose.PDF för .NET.
+den här handledningen går vi igenom följande C#-källkod steg för steg för att lägga till ett linjeobjekt med Aspose.PDF för .NET.
 
 Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
 
 ## Steg 1: Installation av dokumentkatalog
 
-den medföljande källkoden måste du ange katalogen där du vill spara den resulterande PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
+I den medföljande källkoden måste du ange katalogen där du vill spara den resulterande PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -93,7 +93,7 @@ Console.WriteLine("\nLine object added successfully to pdf.\nFile saved at " + d
 
 ## Slutsats
 
-I den här handledningen har vi förklarat steg för steg hur man lägger till ett linjeobjekt med Aspose.PDF för .NET. Du kan nu använda denna kunskap för att skapa PDF-dokument med anpassade linjer i dina applikationer.
+den här handledningen har vi förklarat steg för steg hur man lägger till ett linjeobjekt med Aspose.PDF för .NET. Du kan nu använda denna kunskap för att skapa PDF-dokument med anpassade linjer i dina applikationer.
 
 ### Vanliga frågor för att lägga till linjeobjekt i PDF-fil
 
@@ -107,7 +107,7 @@ S: Innan du börjar, se till att du har installerat Aspose.PDF-biblioteket och s
 
 #### F: Hur anger jag katalogen för att spara PDF-filen?
 
-S: I den medföljande källkoden kan du ändra variabeln "dataDir" för att indikera katalogen där du vill spara den resulterande PDF-filen.
+S: I den medföljande källkoden kan du ändra variabeln "dataDir" för att ange katalogen där du vill spara den resulterande PDF-filen.
 
 #### F: Vad är syftet med Graph-objektet?
 
@@ -115,7 +115,7 @@ S: Graph-objektet fungerar som en behållare för att rita element. Den skapas m
 
 #### F: Hur kan jag lägga till ett linjeobjekt i PDF-dokumentet?
 
-S: För att lägga till ett linjeobjekt, skapa en instans av klassen Line med angivna koordinater och lägg till den i grafens formsamling.
+S: För att lägga till ett linjeobjekt, skapa en instans av klassen Line med specificerade koordinater och lägg till den i grafens formsamling.
 
 #### F: Kan jag anpassa linjens utseende?
 

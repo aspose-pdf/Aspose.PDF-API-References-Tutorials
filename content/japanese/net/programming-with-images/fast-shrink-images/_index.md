@@ -1,41 +1,41 @@
 ---
-title: 画像の高速縮小
-linktitle: 画像の高速縮小
+title: 高速画像縮小
+linktitle: 高速画像縮小
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用すると、PDF ファイル内の画像のサイズをすばやく縮小できます。
+description: Aspose.PDF for .NET を使用して、PDF ファイル内の画像のサイズをすばやく縮小します。
 type: docs
 weight: 130
 url: /ja/net/programming-with-images/fast-shrink-images/
 ---
-このガイドでは、Aspose.PDF for .NET を使用して PDF ファイル内の画像のサイズをすばやく縮小する方法を段階的に説明します。環境がすでにセットアップされていることを確認し、以下の手順に従ってください。
+このガイドでは、Aspose.PDF for .NET を使用して PDF ファイル内の画像のサイズをすばやく縮小する方法について、手順ごとに説明します。環境がすでに設定されていることを確認し、以下の手順に従ってください。
 
-## ステップ 1: 時間を初期化する
+## ステップ1: 時間を初期化する
 
-始める前に、圧縮パフォーマンスを測定する時間を初期化します。次のコードを追加して開始時間を記録します。
+始める前に、圧縮パフォーマンスを測定するための時間を初期化します。開始時間を記録するために次のコードを追加します。
 
 ```csharp
 var time = DateTime.Now.Ticks;
 ```
 
-## ステップ 2: ドキュメント ディレクトリを定義する
+## ステップ2: ドキュメントディレクトリを定義する
 
-必ず正しいドキュメント ディレクトリを設定してください。交換する`"YOUR DOCUMENT DIRECTORY"`コード内で、PDF ドキュメントが配置されているディレクトリへのパスを指定します。
+正しいドキュメントディレクトリを設定してください。`"YOUR DOCUMENT DIRECTORY"`コード内に、PDF ドキュメントが保存されているディレクトリへのパスを含めます。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## ステップ 3: PDF ドキュメントを開く
+## ステップ3: PDF文書を開く
 
-このステップでは、`Document` Aspose.PDF のクラス。使用`Document`コンストラクターを開き、PDF ドキュメントへのパスを渡します。
+このステップでは、`Document` Aspose.PDFのクラス。`Document`コンストラクターを呼び出して、PDF ドキュメントへのパスを渡します。
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
 ```
 
-## ステップ 4: 最適化オプションを初期化する
+## ステップ4: 最適化オプションを初期化する
 
-このステップでは、画像圧縮の最適化オプションを初期化します。のインスタンスを作成します`OptimizationOptions`そして適切なオプションを設定します。この例では、画像圧縮を有効にし、画質を 75 に設定し、高速圧縮バージョンを使用します。
+このステップでは、画像圧縮の最適化オプションを初期化します。`OptimizationOptions`適切なオプションを設定します。この例では、画像圧縮を有効にし、画像品質を 75 に設定し、高速圧縮バージョンを使用します。
 
 ```csharp
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
@@ -44,40 +44,40 @@ optimizeOptions.ImageCompressionOptions.ImageQuality = 75;
 optimizeOptions.ImageCompressionOptions.Version = Pdf.Optimization.ImageCompressionVersion.Fast;
 ```
 
-## ステップ 5: PDF ドキュメントを最適化する
+## ステップ5: PDFドキュメントを最適化する
 
-このステップでは、前に定義した最適化オプションを使用して PDF ドキュメントを最適化します。電話してください`OptimizeResources`の方法`pdfDocument`オブジェクトを指定し、最適化オプションを渡します。
+このステップでは、先に定義した最適化オプションを使用してPDF文書を最適化します。`OptimizeResources`方法の`pdfDocument`オブジェクトを作成し、最適化オプションを渡します。
 
 ```csharp
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-## ステップ 6: 更新された PDF ドキュメントを保存する
+## ステップ6: 更新されたPDFドキュメントを保存する
 
-更新された PDF ドキュメントを保存するには、`Save`の方法`pdfDocument`物体。 PDFファイルの出力パスを指定します。
+更新されたPDF文書を`Save`方法の`pdfDocument`オブジェクト。PDF ファイルの出力パスを指定します。
 
 ```csharp
 dataDir = dataDir + "FastShrinkImages_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Aspose.PDF for .NET を使用した高速縮小画像のサンプル ソース コード 
+### Aspose.PDF for .NET を使用した高速画像縮小のサンプル ソース コード 
 ```csharp
 //初期化時間
 var time = DateTime.Now.Ticks;
-//ドキュメントディレクトリへのパス。
+//ドキュメント ディレクトリへのパス。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//開いた文書
+//ドキュメントを開く
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
-//最適化オプションの初期化
+//最適化オプションを初期化する
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
-//CompressImages オプションを設定する
+//CompressImagesオプションを設定する
 optimizeOptions.ImageCompressionOptions.CompressImages = true;
 //画質オプションを設定する
 optimizeOptions.ImageCompressionOptions.ImageQuality = 75;
-//今ヶ江圧縮バージョンを高速に設定する
+//画像圧縮バージョンを高速に設定する
 optimizeOptions.ImageCompressionOptions.Version = Pdf.Optimization.ImageCompressionVersion.Fast;
-//OptimizationOptions を使用して PDF ドキュメントを最適化する
+// OptimizationOptionsを使用してPDFドキュメントを最適化する
 pdfDocument.OptimizeResources(optimizeOptions);
 dataDir = dataDir + "FastShrinkImages_out.pdf";
 //更新されたドキュメントを保存する
@@ -88,46 +88,46 @@ Console.WriteLine("\nImage fast shrinked successfully.\nFile saved at " + dataDi
 
 ## 結論
 
-おめでとうございます！ Aspose.PDF for .NET を使用して、PDF 内の画像のサイズをすばやく縮小しました。最適化された PDF ファイルが指定したディレクトリに保存されます。より効率的なストレージや共有のニーズに合わせて、画像を縮小したこの PDF ファイルを使用できるようになりました。
+おめでとうございます! Aspose.PDF for .NET を使用して PDF 内の画像のサイズをすばやく縮小しました。最適化された PDF ファイルは、指定したディレクトリに保存されます。これで、画像が縮小されたこの PDF ファイルを使用して、より効率的な保存や共有のニーズに対応できます。
 
 ### よくある質問
 
-#### Q: Aspose.PDF for .NET を使用して PDF ファイル内の画像のサイズをすぐに縮小したいのはなぜですか?
+#### Q: Aspose.PDF for .NET を使用して PDF ファイル内の画像のサイズをすばやく縮小する必要があるのはなぜですか?
 
-A: PDF ファイル内の画像のサイズを迅速に縮小すると、保存、共有、または送信のためにファイルが最適化され、パフォーマンスが向上し、リソース消費が削減されます。
+A: PDF ファイル内の画像のサイズをすばやく縮小すると、ファイルの保存、共有、転送を最適化できるため、パフォーマンスが向上し、リソースの消費が削減されます。
 
-#### Q: PDF ドキュメントで画像圧縮を行うとどのような利点がありますか?
+#### Q: PDF 文書で画像圧縮を行うとどのような利点がありますか?
 
-A: PDF ドキュメントの画像圧縮により、許容可能な画質を維持しながらファイル サイズを最小限に抑えることができ、読み込み時間の短縮、ストレージ要件の削減、およびデータ転送効率の向上につながります。
+A: PDF ドキュメントで画像を圧縮すると、許容できる画質を維持しながらファイル サイズを最小限に抑えることができるため、読み込み時間が短縮され、必要なストレージ容量が削減され、データ転送の効率が向上します。
 
-#### Q: Aspose.PDF for .NET はどのようにして PDF ファイル内の画像サイズの高速削減を促進しますか?
+#### Q: Aspose.PDF for .NET はどのようにして PDF ファイル内の画像サイズを高速に縮小するのですか?
 
-A: Aspose.PDF for .NET は、PDF ドキュメントを開き、画像圧縮オプションを適用し、画像サイズを縮小して最適化された PDF ファイルを保存するための合理化されたプロセスを提供します。
+A: Aspose.PDF for .NET は、PDF ドキュメントを開き、画像圧縮オプションを適用し、画像サイズを縮小して最適化された PDF ファイルを保存するための効率的なプロセスを提供します。
 
-####  Q: の重要性は何ですか?`OptimizationOptions` class in fast image size reduction?
+####  Q: の意義は何ですか？`OptimizationOptions` class in fast image size reduction?
 
  A:`OptimizationOptions`クラスを使用すると、画像圧縮オプションを含むさまざまな最適化設定を定義して、PDF ドキュメント内の画像のサイズを効果的に削減できます。
 
-#### Q: 画像圧縮設定をカスタマイズして、ファイル サイズと画質のバランスを制御できますか?
+#### Q: 画像圧縮設定をカスタマイズして、ファイル サイズと画像品質のバランスを制御することはできますか?
 
-A: はい、画質や圧縮バージョンなどのパラメータを調整して画像圧縮設定をカスタマイズし、ファイル サイズと画像の外観の間で望ましいバランスを実現できます。
+A: はい、画像品質や圧縮バージョンなどのパラメータを調整して画像圧縮設定をカスタマイズし、ファイル サイズと画像の外観のバランスを希望どおりにすることができます。
 
-####  Q: どうやって`pdfDocument.OptimizeResources` method work to reduce image sizes?
+####  Q:`pdfDocument.OptimizeResources` method work to reduce image sizes?
 
- A:`OptimizeResources`このメソッドは PDF ドキュメントを分析し、画像圧縮設定を含む指定された最適化オプションを適用して、画像やその他のリソースのサイズを削減します。
+ A:`OptimizeResources`このメソッドは PDF ドキュメントを分析し、画像圧縮設定を含む指定された最適化オプションを適用して、画像やその他のリソースのサイズを縮小します。
 
-#### Q: PDF ドキュメント内の特定のページ範囲に高速画像サイズ縮小を適用することはできますか?
+#### Q: PDF ドキュメント内の特定の範囲のページに高速画像サイズ縮小を適用することは可能ですか?
 
- A:`OptimizeResources`このメソッドは、PDF ドキュメント全体に最適化オプションを適用します。特定のページに最適化を適用する場合は、最適化の前にそれらのページを新しいドキュメントに抽出する必要があります。
+ A:`OptimizeResources`この方法では、最適化オプションが PDF ドキュメント全体に適用されます。特定のページに最適化を適用する場合は、最適化の前にそれらのページを新しいドキュメントに抽出する必要があります。
 
-#### Q: 画像サイズの高速削減が有益となるシナリオにはどのようなものがありますか?
+#### Q: 画像サイズを高速に縮小すると効果的なシナリオにはどのようなものがありますか?
 
-A: オンライン配布、電子メールへの添付、アーカイブ用に PDF ファイルを準備する場合、または多数の画像を含む大きなドキュメントを扱う場合には、画像サイズの高速削減が有益です。
+A: 画像サイズの高速縮小は、オンライン配布、電子メールの添付、アーカイブ用に PDF ファイルを準備する場合や、多数の画像を含む大きなドキュメントを扱う場合に役立ちます。
 
-#### Q: 画像サイズを小さくすると、PDF ドキュメント内の画像の視覚的な品質に影響しますか?
+#### Q: 画像サイズを縮小すると、PDF ドキュメント内の画像の視覚的な品質に影響しますか?
 
-A: 圧縮によって画像サイズを小さくすると、画質にある程度影響する可能性があります。サイズの縮小と許容可能な画質の間のバランスを見つけることが重要です。
+A: 圧縮によって画像サイズを小さくすると、ある程度画像の品質に影響が出る可能性があります。サイズの縮小と許容できる画像品質のバランスを見つけることが重要です。
 
-#### Q: 高速画像サイズ縮小プロセスのパフォーマンスを測定するにはどうすればよいですか?
+#### Q: 高速画像サイズ縮小プロセスのパフォーマンスを測定するにはどうすればよいでしょうか?
 
- A: パフォーマンスを測定するには、`DateTime.Now.Ticks`最適化処理前のメソッドと処理後の経過時間を計算します。
+ A: 開始時間を記録することでパフォーマンスを測定できます。`DateTime.Now.Ticks`最適化プロセスの前にメソッドを実行し、プロセス後の経過時間を計算します。

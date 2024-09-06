@@ -136,7 +136,7 @@ S: För att integrera den här metoden, följ de skisserade stegen och modifiera
 
 #### F: Finns det några överväganden eller begränsningar när du arbetar med XImage-samlingen i Aspose.PDF för .NET?
 
-S: Även om XImage-samlingen är ett kraftfullt sätt att hantera och manipulera bilder, är det viktigt att ta hänsyn till faktorer som minnesanvändning och komplexiteten i de operationer som utförs på bilderna. Noggrann hantering av insamlingen och effektiv användning av resurser rekommenderas.
+S: Även om XImage-samlingen ger ett kraftfullt sätt att hantera och manipulera bilder, är det viktigt att ta hänsyn till faktorer som minnesanvändning och komplexiteten i de operationer som utförs på bilderna. Noggrann hantering av insamlingen och effektiv användning av resurser rekommenderas.
 
 #### F: Kan jag återanvända bilder som lagrats i XImage-samlingen i flera PDF-dokument?
 

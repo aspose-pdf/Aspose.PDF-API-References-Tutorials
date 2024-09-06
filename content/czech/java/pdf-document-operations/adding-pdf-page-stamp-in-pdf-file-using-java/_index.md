@@ -22,7 +22,7 @@ Než se ponoříme do kódu, ujistěte se, že máte splněny následující př
 
 - Java Development Kit (JDK) nainstalován
 - Integrované vývojové prostředí (IDE) jako Eclipse nebo IntelliJ IDEA
--  Aspose.PDF pro knihovnu Java (Můžete si ji stáhnout[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java (Můžete si ji stáhnout[zde](https://releases.aspose.com/pdf/java/).
 
 ## Nastavení prostředí
 
@@ -119,4 +119,4 @@ Aspose.PDF for Java je komerční knihovna, ale můžete ji vyhodnotit pomocí b
 
 ### Kde najdu další dokumentaci a příklady?
 
- Úplnou dokumentaci a příklady můžete najít na stránce dokumentace Aspose.PDF for Java:[tady](https://reference.aspose.com/pdf/java/)
+ Úplnou dokumentaci a příklady můžete najít na stránce dokumentace Aspose.PDF for Java:[zde](https://reference.aspose.com/pdf/java/)

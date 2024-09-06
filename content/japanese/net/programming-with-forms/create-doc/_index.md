@@ -1,31 +1,31 @@
 ---
-title: ドキュメントの作成
-linktitle: ドキュメントの作成
+title: ドキュメントを作成
+linktitle: ドキュメントを作成
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用すると、ラジオ ボタン付きのドキュメントを簡単に作成できます。
+description: Aspose.PDF for .NET を使用して、ラジオ ボタン付きのドキュメントを簡単に作成します。
 type: docs
 weight: 40
 url: /ja/net/programming-with-forms/create-doc/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用してラジオ ボタンのあるドキュメントを作成する方法を説明します。このプロセスをガイドするために、C# ソース コードをステップごとに説明します。
+このチュートリアルでは、Aspose.PDF for .NET を使用してラジオ ボタン付きのドキュメントを作成する方法を説明します。このプロセスをガイドするために、C# ソース コードを段階的に説明します。
 
-##ステップ 1: 準備
+##ステップ1: 準備
 
-まず、必要なライブラリをインポートし、ドキュメント ディレクトリへのパスを設定していることを確認します。
+まず、必要なライブラリがインポートされ、ドキュメント ディレクトリへのパスが設定されていることを確認します。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## ステップ 2: 新しいドキュメントを作成する
+## ステップ2: 新しいドキュメントを作成する
 
-PDF ドキュメントを保持する新しい Document オブジェクトを作成します。
+PDF ドキュメントを保持するための新しい Document オブジェクトを作成します。
 
 ```csharp
 Document doc = new Document();
 ```
 
-## ステップ 3: ページを追加する
+## ステップ3: ページを追加する
 
 ドキュメントに新しいページを追加します。
 
@@ -33,7 +33,7 @@ Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## ステップ 4: ラジオボタンフィールドを追加する
+## ステップ4: ラジオボタンフィールドを追加する
 
 ラジオ ボタン フィールドを作成し、その位置とサイズを設定します。
 
@@ -43,9 +43,9 @@ field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 field. PartialName = "NewField";
 ```
 
-## ステップ 5: ラジオ ボタン オプションを追加する
+## ステップ5: ラジオボタンオプションを追加する
 
-ラジオボタンフィールドに必要なオプションを追加します。必要に応じて、各オプションの座標とサイズを設定できます。
+ラジオ ボタン フィールドに希望のオプションを追加します。必要に応じて、各オプションの座標とサイズを設定できます。
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField();
@@ -74,15 +74,15 @@ field. Add(opt2);
 field. Add(opt3);
 ```
 
-## ステップ 6: ラジオボタンフィールドをフォームに追加する
+## ステップ6: ラジオボタンフィールドをフォームに追加する
 
-ラジオ ボタン フィールドを Document Form Fields コレクションに追加します。
+ラジオ ボタン フィールドをドキュメント フォーム フィールド コレクションに追加します。
 
 ```csharp
 doc.Form.Add(field);
 ```
 
-## ステップ 7: ドキュメントを保存する
+## ステップ7: ドキュメントを保存する
 
 PDF ドキュメントを保存します。
 
@@ -95,7 +95,7 @@ doc.Save(dataDir);
 ```csharp
 try
 {
-	//ドキュメントディレクトリへのパス。
+	//ドキュメント ディレクトリへのパス。
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	//新しいドキュメントを作成する
 	Document doc = new Document();
@@ -104,9 +104,9 @@ try
 	RadioButtonField field = new RadioButtonField(page);
 	field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 	field.PartialName = "NewField";
-	//ラジオボタンのオプションを追加します。これらのオプションは次の場所にあることに注意してください。
-	//水平でも垂直でもない。
-	//任意の座標 (およびサイズ) を設定してみることができます。
+	//ラジオボタンオプションを追加します。これらのオプションは
+	//水平にも垂直にもなりません。
+	//任意の座標（およびサイズ）を設定することもできます。
 	RadioButtonOptionField opt1 = new RadioButtonOptionField();
 	opt1.Rect = new Aspose.Pdf.Rectangle(40, 650, 60, 670);
 	opt1.OptionName = "Item1";
@@ -130,7 +130,7 @@ try
 	field.Add(opt3);
 	doc.Form.Add(field);
 	dataDir = dataDir + "CreateDoc_out.pdf";
-	// PDF ドキュメントを保存する
+	// PDF文書を保存する
 	doc.Save(dataDir);
 	Console.WriteLine("\nNew doc with 3 items radio button created successfully.\nFile saved at " + dataDir);
 }
@@ -142,7 +142,7 @@ catch (Exception ex)
 
 ## 結論
 
-このチュートリアルでは、Aspose.PDF for .NET を使用してラジオ ボタンのあるドキュメントを作成する方法を学びました。次の手順に従うと、Aspose.PDF を使用して PDF ドキュメントにラジオ ボタンを簡単に追加できます。
+このチュートリアルでは、Aspose.PDF for .NET を使用してラジオ ボタン付きのドキュメントを作成する方法を学習しました。これらの手順に従うと、Aspose.PDF を使用して PDF ドキュメントにラジオ ボタンを簡単に追加できます。
 
 ### よくある質問
 
@@ -152,16 +152,16 @@ A: はい、Aspose.PDF for .NET を使用してドキュメント内のラジオ
 
 #### Q: 相互に排他的なオプションを持つラジオ ボタン グループを追加するにはどうすればよいですか?
 
-A: 相互に排他的なオプションを作成するには、同じ名前の複数のラジオ ボタン フィールドを追加できます。これにより、1 つのオプションが選択されると、同じ名前の他のオプションが自動的に選択解除されます。
+A: 相互に排他的なオプションを作成するには、同じ名前のラジオ ボタン フィールドを複数追加します。これにより、1 つのオプションが選択されると、同じ名前の他のオプションが自動的に選択解除されます。
 
-#### Q: ラジオ ボタンにデフォルトで選択されているオプションを設定することはできますか?
+#### Q: ラジオ ボタンのデフォルトの選択オプションを設定することは可能ですか?
 
-A: はい、Aspose.PDF for .NET を使用して、ラジオ ボタンにデフォルトで選択されたオプションを設定できます。使用できます`Selected`の財産`RadioButtonOptionField`オブジェクトを使用して、オプションをデフォルトで選択済みとしてマークします。
+A: はい、Aspose.PDF for .NETを使用してラジオボタンのデフォルトの選択オプションを設定できます。`Selected`の財産`RadioButtonOptionField`オプションをデフォルトで選択されているものとしてマークするオブジェクト。
 
 #### Q: ラジオ ボタンにイベント ハンドラーを追加できますか?
 
- A: はい、Aspose.PDF for .NET を使用してイベント ハンドラーをラジオ ボタンに追加できます。次のような JavaScript アクションを関連付けることができます。`OnValueChanged`、ユーザーがオプションを選択したときに特定のアクションを実行するラジオ ボタンに追加します。
+ A: はい、Aspose.PDF for .NETを使用してラジオボタンにイベントハンドラーを追加できます。次のようなJavaScriptアクションを関連付けることができます。`OnValueChanged`ラジオ ボタンに、ユーザーがオプションを選択したときに特定のアクションを実行する機能を追加します。
 
-#### Q: ユーザーが選択した後、ラジオ ボタン グループから選択したオプションを取得するにはどうすればよいですか?
+#### Q: ユーザーが選択した後、ラジオ ボタン グループから選択されたオプションを取得するにはどうすればよいですか?
 
- A: Aspose.PDF for .NET を使用して、ラジオ ボタン グループから選択したオプションを取得できます。ユーザーが選択を行った後、`Selected`の財産`RadioButtonOptionField`オブジェクトを使用して、どのオプションが選択されているかを確認します。
+ A: Aspose.PDF for .NETを使用して、ラジオボタングループから選択されたオプションを取得できます。ユーザーが選択した後、`Selected`の財産`RadioButtonOptionField`どのオプションが選択されているかを確認するオブジェクト。

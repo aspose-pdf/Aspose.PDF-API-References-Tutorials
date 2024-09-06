@@ -1,123 +1,124 @@
 ---
 title: Nonaktifkan Kompresi File Dalam File PDF
 linktitle: Nonaktifkan Kompresi File Dalam File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara menonaktifkan kompresi file dalam file PDF dengan Aspose.PDF untuk .NET. Panduan langkah demi langkah untuk penanganan mudah.
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara menonaktifkan kompresi file dalam file PDF menggunakan Aspose.PDF for .NET dengan panduan langkah demi langkah ini. Tingkatkan keterampilan manajemen PDF Anda.
 type: docs
 weight: 30
 url: /id/net/programming-with-attachments/disable-files-compression/
 ---
-Dalam tutorial ini, kami akan memandu Anda melalui kode sumber C# berikut langkah demi langkah untuk menonaktifkan kompresi file dalam PDF menggunakan Aspose.PDF untuk .NET.
+## Perkenalan
 
-Pastikan Anda telah menginstal perpustakaan Aspose.PDF dan mengatur lingkungan pengembangan Anda sebelum memulai. Juga memiliki pengetahuan dasar tentang pemrograman C#.
+Di era digital, mengelola berkas PDF secara efisien sangat penting untuk penggunaan pribadi dan profesional. Baik Anda seorang pengembang yang ingin meningkatkan aplikasi atau seorang profesional bisnis yang mengelola dokumen, memahami cara memanipulasi berkas PDF dapat menghemat waktu dan tenaga Anda. Salah satu persyaratan umum adalah menonaktifkan kompresi berkas dalam dokumen PDF. Ini dapat sangat berguna ketika Anda ingin memastikan bahwa berkas yang disematkan tetap dalam format aslinya tanpa perubahan apa pun. Dalam tutorial ini, kita akan membahas cara menonaktifkan kompresi berkas dalam berkas PDF menggunakan Aspose.PDF untuk .NET. 
 
-### Langkah 1: Pengaturan Direktori Dokumen
+## Prasyarat
 
-Dalam kode sumber yang disediakan, Anda perlu menentukan direktori tempat file PDF berada yang ingin Anda nonaktifkan kompresi filenya. Ubah variabel "dataDir" ke direktori yang diinginkan.
+Sebelum menyelami kodenya, ada beberapa prasyarat yang perlu Anda penuhi:
+
+1.  Aspose.PDF untuk .NET: Pastikan Anda telah menginstal pustaka Aspose.PDF. Anda dapat mengunduhnya dari[situs web](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: Lingkungan pengembangan tempat Anda dapat menulis dan mengeksekusi kode .NET Anda.
+3. Pengetahuan Dasar C#: Keakraban dengan pemrograman C# akan membantu Anda memahami potongan kode dengan lebih baik.
+
+## Paket Impor
+
+Untuk memulai, Anda perlu mengimpor paket yang diperlukan ke dalam proyek C# Anda. Berikut cara melakukannya:
+
+### Buat Proyek Baru
+
+Buka Visual Studio dan buat proyek C# baru. Anda dapat memilih Aplikasi Konsol untuk mempermudah.
+
+### Tambahkan Referensi Aspose.PDF
+
+1. Klik kanan pada proyek Anda di Solution Explorer.
+2. Pilih "Kelola Paket NuGet."
+3. Cari "Aspose.PDF" dan instal versi terbaru.
+
+### Impor Namespace
+
+Di bagian atas file C# Anda, impor namespace Aspose.PDF:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-### Langkah 2: Buka dokumen PDF yang ada
+Sekarang setelah semuanya disiapkan, mari kita uraikan proses menonaktifkan kompresi file dalam berkas PDF ke dalam langkah-langkah yang lebih mudah dikelola.
 
-Kami membuka dokumen PDF yang ada menggunakan jalur yang ditentukan.
+## Langkah 1: Tentukan Direktori Dokumen
 
-```csharp
-Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-```
-
-### Langkah 3: Menyiapkan file baru untuk ditambahkan sebagai lampiran
-
-Kami mengkonfigurasi file baru yang ingin kami tambahkan sebagai lampiran. Dalam contoh ini, kami menambahkan file teks dengan nama "test_out.txt" dan deskripsi "Contoh file teks".
+Pertama, Anda perlu menentukan jalur ke direktori tempat file PDF Anda berada. Hal ini penting karena memberi tahu program di mana menemukan file yang ingin Anda manipulasi.
 
 ```csharp
-FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-```
-
-### Langkah 4: Nonaktifkan Kompresi File
-
-Kami menonaktifkan kompresi file dengan mengatur properti Encoding dari objek FileSpecification ke FileEncoding.None.
-
-```csharp
-fileSpecification.Encoding = FileEncoding.None;
-```
-
-### Langkah 5: Menambahkan lampiran ke koleksi lampiran dokumen
-
-Kami menambahkan lampiran ke koleksi lampiran dokumen.
-
-```csharp
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-```
-
-### Langkah 6: Simpan file keluaran baru
-
-Terakhir, kami menyimpan file PDF baru yang dihasilkan dengan nama "DisableFilesCompression_out.pdf" di direktori yang ditentukan.
-
-```csharp
-pdfDocument.Save(dataDir + "DisableFilesCompression_out.pdf");
-```
-
-
-### Contoh kode sumber untuk Nonaktifkan Kompresi File menggunakan Aspose.PDF untuk .NET 
-
-```csharp
-
-// Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Siapkan file baru untuk ditambahkan sebagai lampiran
-FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-// Tentukan pengaturan Encoding proparty ke FileEncoding.None
-fileSpecification.Encoding = FileEncoding.None;
-//Tambahkan lampiran ke koleksi lampiran dokumen
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-dataDir = dataDir + "DisableFilesCompression_out.pdf";
-// Simpan keluaran baru
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
+```
 
+## Langkah 2: Muat Dokumen PDF
+
+ Selanjutnya, Anda akan memuat dokumen PDF yang ingin Anda ubah. Ini dilakukan dengan menggunakan`Document` kelas disediakan oleh Aspose.PDF.
+
+```csharp
+Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
+```
+
+## Langkah 3: Siapkan File yang Akan Ditambahkan sebagai Lampiran
+
+Sekarang, Anda perlu membuat spesifikasi berkas baru untuk lampiran yang ingin Anda tambahkan ke PDF. Ini melibatkan penentuan nama dan jenis berkas.
+
+```csharp
+FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
+```
+
+## Langkah 4: Tentukan Properti Pengkodean
+
+ Untuk memastikan bahwa file ditambahkan tanpa kompresi, Anda perlu mengatur properti pengkodean spesifikasi file ke`FileEncoding.None`Langkah ini sangat penting karena secara langsung memengaruhi cara file disematkan dalam PDF.
+
+```csharp
+fileSpecification.Encoding = FileEncoding.None;
+```
+
+## Langkah 5: Tambahkan Lampiran ke Dokumen
+
+Setelah spesifikasi berkas siap, Anda kini dapat menambahkan lampiran ke koleksi lampiran dokumen. Langkah ini mengintegrasikan berkas ke dalam PDF.
+
+```csharp
+pdfDocument.EmbeddedFiles.Add(fileSpecification);
+```
+
+## Langkah 6: Simpan Output Baru
+
+Terakhir, Anda perlu menyimpan dokumen PDF yang telah dimodifikasi. Tentukan jalur keluaran tempat Anda ingin menyimpan file baru.
+
+```csharp
+dataDir = dataDir + "DisableFilesCompression_out.pdf";
+pdfDocument.Save(dataDir);
+```
+
+## Langkah 7: Konfirmasikan Operasi
+
+Untuk memastikan semuanya berjalan lancar, Anda dapat mencetak pesan konfirmasi ke konsol.
+
+```csharp
+Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
 ```
 
 ## Kesimpulan
 
-Dalam tutorial ini, kami menjelaskan cara menonaktifkan kompresi file dalam PDF menggunakan Aspose.PDF untuk .NET. Anda sekarang dapat menggunakan pengetahuan ini untuk menjaga integritas file lampiran tanpa kompresi.
+Menonaktifkan kompresi file dalam dokumen PDF dapat menjadi proses yang mudah dengan alat yang tepat. Dengan mengikuti langkah-langkah yang diuraikan dalam tutorial ini, Anda dapat mengelola file PDF dengan mudah dan memastikan bahwa lampiran yang disematkan mempertahankan format aslinya. Aspose.PDF untuk .NET menyediakan cara yang canggih dan fleksibel untuk memanipulasi dokumen PDF, menjadikannya pilihan yang sangat baik bagi pengembang dan bisnis.
 
-## FAQ untuk menonaktifkan kompresi file dalam file PDF
+## Tanya Jawab Umum
 
-#### T: Mengapa saya ingin menonaktifkan kompresi file dalam dokumen PDF?
+### Apa itu Aspose.PDF untuk .NET?
+Aspose.PDF untuk .NET adalah pustaka yang memungkinkan pengembang untuk membuat, memanipulasi, dan mengonversi dokumen PDF secara terprogram.
 
-J: Menonaktifkan kompresi file memastikan bahwa file lampiran dalam dokumen PDF tetap tidak terkompresi, sehingga menjaga kualitas dan konten aslinya.
+### Mengapa saya ingin menonaktifkan kompresi file dalam PDF?
+Menonaktifkan kompresi file memastikan bahwa file yang tertanam tetap dalam format aslinya, yang penting untuk integritas data.
 
-#### T: Apa manfaat menonaktifkan kompresi file terhadap lampiran PDF?
+### Dapatkah saya menggunakan Aspose.PDF secara gratis?
+ Ya, Aspose menawarkan versi uji coba gratis yang dapat Anda gunakan untuk mengevaluasi pustaka. Anda dapat mengunduhnya[Di Sini](https://releases.aspose.com/).
 
-J: Menonaktifkan kompresi mencegah hilangnya data atau kualitas apa pun yang dapat terjadi selama proses kompresi, memastikan bahwa file lampiran disajikan apa adanya.
+### Di mana saya dapat menemukan dokumentasi lebih lanjut tentang Aspose.PDF?
+ Anda dapat menemukan dokumentasi lengkap di[Situs web Aspose](https://reference.aspose.com/pdf/net/).
 
-#### T: Bisakah saya menonaktifkan kompresi secara selektif untuk lampiran tertentu menggunakan tutorial ini?
-
-J: Ya, tutorial ini memandu Anda dalam menonaktifkan kompresi file untuk lampiran individual dalam dokumen PDF, memberikan kontrol yang lebih baik.
-
-#### T: Jenis lampiran apa yang dapat saya nonaktifkan kompresinya?
-
-J: Anda dapat menonaktifkan kompresi untuk semua jenis lampiran, seperti gambar, dokumen, spreadsheet, dan lainnya, untuk memastikan integritasnya tetap terjaga.
-
-#### T: Apakah menonaktifkan kompresi memengaruhi ukuran file dokumen PDF secara keseluruhan?
-
-J: Menonaktifkan kompresi untuk lampiran mungkin menyebabkan sedikit peningkatan pada keseluruhan ukuran file dokumen PDF, karena file yang tidak terkompresi memerlukan lebih banyak ruang.
-
-#### T: Bagaimana Aspose.PDF untuk .NET memfasilitasi proses menonaktifkan kompresi file?
-
-J: Aspose.PDF untuk .NET menyediakan API yang mudah digunakan yang memungkinkan Anda menonaktifkan kompresi file untuk lampiran, seperti yang ditunjukkan dalam kode sumber yang disediakan.
-
-#### T: Dapatkah saya mengaktifkan kembali kompresi untuk lampiran nanti jika diperlukan?
-
-J: Ya, Anda dapat mengubah pengaturan lampiran untuk mengaktifkan kompresi lagi jika perlu.
-
-#### Q: Apa yang terjadi jika saya membuka PDF di perangkat atau software yang mendukung kompresi?
-
-J: Jika Anda membuka PDF di perangkat atau perangkat lunak yang mendukung kompresi, lampiran mungkin ditampilkan dalam keadaan tidak terkompresi, sehingga berpotensi memengaruhi ukuran file dan kinerja rendering.
-
-#### T: Apakah ada skenario tertentu yang direkomendasikan untuk menonaktifkan kompresi?
-
-J: Menonaktifkan kompresi disarankan untuk lampiran yang mengutamakan menjaga kualitas asli dan integritas data, seperti gambar resolusi tinggi atau dokumen sensitif.
+### Bagaimana cara mendapatkan dukungan untuk Aspose.PDF?
+ Anda bisa mendapatkan dukungan dengan mengunjungi[Forum Aspose](https://forum.aspose.com/c/pdf/10).

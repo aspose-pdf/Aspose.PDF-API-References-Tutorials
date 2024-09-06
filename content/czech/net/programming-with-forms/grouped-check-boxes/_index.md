@@ -154,4 +154,4 @@ A: Chcete-li přidat seskupená zaškrtávací políčka na konkrétní stránku
 
 #### Otázka: Jsou seskupená zaškrtávací políčka podporována ve všech prohlížečích a aplikacích PDF?
 
-Odpověď: Ano, seskupená zaškrtávací políčka jsou podporována ve všech standardních prohlížečích a aplikacích PDF. Specifikace PDF definuje přepínače a jejich chování při seskupování, díky čemuž jsou ve formátu PDF všeobecně uznávané. Je však nezbytné otestovat funkčnost v různých prohlížečích PDF, abyste zajistili konzistentní chování na různých platformách.
+Odpověď: Ano, seskupená zaškrtávací políčka jsou podporována ve všech prohlížečích a aplikacích PDF vyhovujících standardu. Specifikace PDF definuje přepínače a jejich chování při seskupování, díky čemuž jsou ve formátu PDF všeobecně uznávané. Je však nezbytné otestovat funkčnost v různých prohlížečích PDF, abyste zajistili konzistentní chování na různých platformách.

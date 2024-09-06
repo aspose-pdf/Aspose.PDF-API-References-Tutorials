@@ -53,7 +53,7 @@ textFragment.Position = new Position(100, 600);
 ```
 
 ## 第 7 步：設定文字屬性
-自訂文字屬性，如字體大小、字體類型、背景顏色、前景色等。在提供的程式碼中，為文字片段設定字體大小、字體、背景顏色、前景色和描邊顏色等屬性。
+自訂文字屬性，如字體大小、字體類型、背景顏色、前景色等。
 
 ```csharp
 textFragment.TextState.FontSize = 12;

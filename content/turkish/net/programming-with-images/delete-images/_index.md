@@ -1,96 +1,96 @@
 ---
-title: PDF Dosyasından Görüntüleri Sil
-linktitle: PDF Dosyasından Görüntüleri Sil
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile PDF dosyasındaki görüntüleri kolayca silin.
+title: PDF Dosyasından Resimleri Sil
+linktitle: PDF Dosyasından Resimleri Sil
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET ile PDF dosyasından resimleri kolayca silin.
 type: docs
 weight: 110
 url: /tr/net/programming-with-images/delete-images/
 ---
-Bu kılavuz, Aspose.PDF for .NET kullanarak PDF dosyasındaki görüntülerin nasıl silineceğini adım adım anlatacaktır. Ortamınızı zaten kurduğunuzdan emin olun ve aşağıdaki adımları izleyin:
+Bu kılavuz, Aspose.PDF for .NET kullanarak PDF dosyasından görselleri adım adım nasıl sileceğinizi gösterecektir. Ortamınızı önceden ayarladığınızdan ve aşağıdaki adımları izlediğinizden emin olun:
 
-## 1. Adım: Belge dizinini tanımlayın
+## Adım 1: Belge dizinini tanımlayın
 
- Başlamadan önce belgeler için doğru dizini ayarladığınızdan emin olun. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF belgenizin bulunduğu dizinin yolunu içeren kodda.
+Başlamadan önce, belgeler için doğru dizini ayarladığınızdan emin olun. Değiştir`"YOUR DOCUMENT DIRECTORY"` PDF belgenizin bulunduğu dizinin yolunu içeren kodda.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 2. Adım: PDF belgesini açın
+## Adım 2: PDF belgesini açın
 
-Bu adımda PDF belgesini aşağıdaki komutu kullanarak açacağız:`Document` Aspose.PDF sınıfı. Kullan`Document` yapıcıya gidin ve yolu PDF belgesine iletin.
+ Bu adımda PDF belgesini şu şekilde açacağız:`Document` Aspose.PDF sınıfı. Kullanın`Document` oluşturucuyu kullanın ve PDF belgesinin yolunu geçirin.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteImages.pdf");
 
 ```
 
-## 3. Adım: Belirli bir resmi silin
+## Adım 3: Belirli bir resmi silin
 
- Bu adımda belirli bir sayfadan belirli bir görseli sileceğiz. Kullan`Delete` sayfa kaynağının yöntemi`Images` Görüntüyü silmek için nesneyi seçin. Aşağıdaki örnekte indeksi 1 olan görseli ilk sayfadan siliyoruz.
+Bu adımda, belirli bir sayfadan belirli bir resmi sileceğiz. Şunu kullanın:`Delete` sayfa kaynağının yöntemi`Images` Resmi silmek için nesne. Aşağıdaki örnekte, ilk sayfadan indeksi 1 olan resmi siliyoruz.
 
 ```csharp
 pdfDocument.Pages[1].Resources.Images.Delete(1);
 ```
 
-## 4. Adım: Güncellenen PDF dosyasını kaydedin
+## Adım 4: Güncellenen PDF dosyasını kaydedin
 
- Güncellenen PDF dosyasını kullanarak kaydedin.`Save` yöntemi`pdfDocument` nesne. PDF dosyasının çıktı yolunu belirtin.
+ Güncellenen PDF dosyasını kullanarak kaydedin`Save` yöntemi`pdfDocument` nesne. PDF dosyası için çıktı yolunu belirtin.
 
 ```csharp
 dataDir = dataDir + "DeleteImages_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Aspose.PDF for .NET kullanarak Görüntüleri Silmek için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Görüntüleri Silme için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir+ "DeleteImages.pdf");
 // Belirli bir resmi sil
 pdfDocument.Pages[1].Resources.Images.Delete(1);
 dataDir = dataDir + "DeleteImages_out.pdf";
-// Güncellenmiş PDF dosyasını kaydet
+// Güncellenen PDF dosyasını kaydet
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImages deleted successfully.\nFile saved at " + dataDir); 
 ```
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET'i kullanarak PDF dosyasındaki görselleri başarıyla sildiniz. Güncellenen PDF dosyası belirtilen dizine kaydedilir. Artık bu PDF dosyasını silinen resimler olmadan kullanabilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF dosyasından resimleri başarıyla sildiniz. Güncellenen PDF dosyası belirtilen dizine kaydedildi. Artık bu PDF dosyasını silinen resimler olmadan kullanabilirsiniz.
 
-### PDF dosyasından görsel silmek için SSS
+### PDF dosyasından resim silme hakkında SSS
 
-#### S: Aspose.PDF for .NET kullanarak bir PDF dosyasındaki görüntüleri silmenin amacı nedir?
+#### S: Aspose.PDF for .NET kullanarak bir PDF dosyasından resim silmenin amacı nedir?
 
-C: Bir PDF dosyasındaki görüntüleri silmek, düzenleme, redaksiyon veya başka amaçlarla belirli görsel içeriği belgeden kaldırmanıza yardımcı olabilir.
+A: Bir PDF dosyasından görselleri silmek, düzenleme, sansürleme veya diğer amaçlar için belgeden belirli görsel içerikleri kaldırmanıza yardımcı olabilir.
 
-#### S: Aspose.PDF for .NET, bir PDF belgesinden görüntülerin silinmesine nasıl yardımcı olur?
+#### S: Aspose.PDF for .NET bir PDF belgesinden resimleri silmeye nasıl yardımcı olur?
 
-C: Aspose.PDF for .NET, bir PDF belgesini açmak, belirli görüntüleri tanımlayıp silmek ve değiştirilen PDF belgesini kaydetmek için adım adım bir süreç sağlar.
+A: Aspose.PDF for .NET, bir PDF belgesini açmak, belgedeki belirli resimleri tanımlayıp silmek ve değiştirilmiş PDF belgesini kaydetmek için adım adım bir işlem sağlar.
 
-#### S: Resimlerin silinmesine başlamadan önce belge dizinini tanımlamak neden önemlidir?
+#### S: Resimleri silmeye başlamadan önce belge dizinini tanımlamak neden önemlidir?
 
-C: Belge dizininin tanımlanması, PDF belgesinin doğru şekilde konumlandırılmasını ve değiştirilen PDF dosyasının istenen çıktı yoluna kaydedilmesini sağlar.
+A: Belge dizininin tanımlanması, PDF belgesinin doğru bir şekilde konumlandırılmasını ve değiştirilen PDF dosyasının istenen çıktı yoluna kaydedilmesini sağlar.
 
-####  S: Nasıl`Document` class in Aspose.PDF for .NET help in deleting images from a PDF file?
+####  S: Nasıl?`Document` class in Aspose.PDF for .NET help in deleting images from a PDF file?
 
- C:`Document`class, PDF belgelerini açmanıza ve değiştirmenize olanak tanır. Bu durumda görsellerin silineceği PDF dosyasını yüklemek için kullanılır.
+ A:`Document` sınıfı PDF belgelerini açmanıza ve düzenlemenize olanak tanır. Bu durumda, resimlerin silineceği PDF dosyasını yüklemek için kullanılır.
 
-#### S: PDF belgesinden silinecek belirli bir görüntüyü nasıl seçerim?
+#### S: PDF belgesinden silmek istediğim belirli bir resmi nasıl seçerim?
 
-C: Kullanabilirsiniz`Delete` yöntemi`Images` içindeki nesne`Resources` Belirli bir görüntüyü dizinine göre silmek için belirli bir sayfanın.
+ A: Kullanabilirsiniz`Delete` yöntemi`Images` içindeki nesne`Resources` Belirli bir sayfanın indeksine göre belirli bir resmi silmek için kullanılır.
 
-#### S: PDF belgesindeki herhangi bir sayfadaki görüntüleri silebilir miyim?
+#### S: PDF belgesindeki herhangi bir sayfadaki görselleri silebilir miyim?
 
-C: Evet, istediğiniz sayfa dizinini ve silinecek görüntünün dizinini belirterek PDF belgesindeki herhangi bir sayfadaki görüntüleri silebilirsiniz.
+C: Evet, istediğiniz sayfa dizinini ve silinecek resmin dizinini belirterek PDF belgesindeki herhangi bir sayfadaki resimleri silebilirsiniz.
 
-#### S: Tek bir işlemle farklı sayfalardan birden fazla görüntüyü silmek mümkün müdür?
+#### S: Tek bir işlemle farklı sayfalardan birden fazla görseli silmek mümkün müdür?
 
- C: Evet, kullanabilirsiniz`Delete` Aynı işlemde farklı sayfalardaki görüntüleri silmek için birden fazla sayfadaki yöntem.
+ A: Evet, kullanabilirsiniz`Delete` Aynı işlemle farklı sayfalardaki resimleri birden fazla sayfadan silme yöntemi.
 
-#### S: Resimler silindikten sonra PDF belgesinin düzenine ve formatına ne olur?
+#### S: Resimler silindikten sonra PDF belgesinin düzeni ve biçimlendirmesine ne olur?
 
-C: Resimlerin silinmesi, özellikle silinen resimler içerik düzeninin parçasıysa, PDF belgesinin düzenini ve biçimlendirmesini etkileyebilir.
+A: Resimlerin silinmesi, özellikle silinen resimler içerik düzeninin bir parçasıysa, PDF belgesinin düzenini ve biçimlendirmesini etkileyebilir.

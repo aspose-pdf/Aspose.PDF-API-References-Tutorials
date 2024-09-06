@@ -7,7 +7,7 @@ type: docs
 weight: 130
 url: /zh-hant/net/programming-with-stamps-and-watermarks/image-in-footer/
 ---
-在本教學中，我們將逐步指導您如何使用 Aspose.PDF for .NET 在 PDF 文件的頁尾部分中新增影像。我們將使用提供的 C# 原始程式碼開啟現有的 PDF 文檔，建立影像緩衝區，設定其屬性，並將其新增至 PDF 文件的所有頁面。
+在本教學中，我們將逐步指導您如何使用 Aspose.PDF for .NET 在 PDF 文件的頁尾部分中新增圖像。我們將使用提供的 C# 原始程式碼開啟現有的 PDF 文檔，建立影像緩衝區，設定其屬性，並將其新增至 PDF 文件的所有頁面。
 
 ## 第一步：建構環境
 
@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-stamps-and-watermarks/image-in-footer/
 
 ## 步驟 2： 載入現有 PDF 文檔
 
-第一步是將現有的 PDF 文件載入到您的專案中。就是這樣：
+第一步是將現有的 PDF 文件載入到您的專案中。方法如下：
 
 ```csharp
 //文檔目錄的路徑。
@@ -32,7 +32,7 @@ Document pdfDocument = new Document(dataDir + "ImageInFooter.pdf");
 
 ## 步驟 3：在頁尾部分建立並新增影像
 
-現在 PDF 文件已加載，我們可以建立圖像圖章並將其新增至文件的所有頁面。就是這樣：
+現在 PDF 文件已加載，我們可以建立圖像圖章並將其新增至文件的所有頁面。方法如下：
 
 ```csharp
 //建立幀緩衝區
@@ -54,7 +54,7 @@ foreach(Page page in pdfDocument.Pages)
 
 ## 第四步：儲存修改後的PDF文檔
 
-將圖像新增至頁尾部分後，我們可以儲存修改後的 PDF 文件。就是這樣：
+將圖像新增至頁尾部分後，我們可以儲存修改後的 PDF 文件。方法如下：
 
 ```csharp
 //儲存修改後的PDF文檔

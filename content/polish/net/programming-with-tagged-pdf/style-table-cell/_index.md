@@ -1,17 +1,17 @@
 ---
-title: Komórka tabeli stylu
-linktitle: Komórka tabeli stylu
-second_title: Aspose.PDF z dokumentacją API .NET
+title: Styl komórki tabeli
+linktitle: Styl komórki tabeli
+second_title: Aspose.PDF dla .NET API Reference
 description: Dowiedz się, jak stylizować komórki tabeli za pomocą Aspose.PDF dla .NET. Przewodnik krok po kroku dotyczący tworzenia i dostosowywania tabel.
 type: docs
 weight: 160
 url: /pl/net/programming-with-tagged-pdf/style-table-cell/
 ---
-Witamy w tym szczegółowym samouczku na temat formatowania komórek tabeli przy użyciu Aspose.PDF dla .NET. W tym przewodniku szczegółowo wyjaśnimy każdy krok dostarczonego kodu źródłowego C#, aby pomóc Ci zrozumieć, jak stylizować komórki tabeli. Zanim zaczniesz, upewnij się, że zainstalowałeś Aspose.PDF dla .NET i skonfiguruj środowisko programistyczne.
+Witamy w tym szczegółowym samouczku dotyczącym formatowania komórek tabeli za pomocą Aspose.PDF dla .NET. W tym przewodniku szczegółowo wyjaśnimy każdy krok dostarczonego kodu źródłowego C#, aby pomóc Ci zrozumieć, jak stylizować komórki tabeli. Upewnij się, że zainstalowałeś Aspose.PDF dla .NET i skonfigurowałeś środowisko programistyczne, zanim zaczniesz.
 
 ## Krok 1: Konfigurowanie środowiska
 
-Zanim zaczniesz, upewnij się, że skonfigurowałeś środowisko programistyczne do korzystania z Aspose.PDF dla .NET. Obejmuje to instalację biblioteki Aspose.PDF i skonfigurowanie projektu tak, aby się do niej odwoływał.
+Zanim zaczniesz, upewnij się, że skonfigurowałeś środowisko programistyczne do używania Aspose.PDF dla .NET. Obejmuje to zainstalowanie biblioteki Aspose.PDF i skonfigurowanie projektu, aby się do niej odwoływał.
 
 ## Krok 2: Tworzenie dokumentu
 
@@ -28,25 +28,25 @@ taggedContent.SetTitle("Example of table cell formatting");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-Stworzyliśmy nowy dokument oraz ustawiliśmy tytuł i język dokumentu.
+Utworzyliśmy nowy dokument i ustawiliśmy jego tytuł oraz język.
 
 ## Krok 3: Uzyskanie elementu struktury korzenia
 
 W tym kroku otrzymamy element struktury głównej naszego dokumentu.
 
 ```csharp
-//Zdobądź element struktury korzenia
+//Uzyskaj element struktury korzenia
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-Otrzymaliśmy element struktury głównej, który będzie służył jako kontener dla elementów tablicy.
+Otrzymaliśmy element struktury głównej, który będzie służył jako pojemnik na elementy tablicy.
 
-## Krok 4: Tworzenie elementu struktury tablicowej
+## Krok 4: Tworzenie elementu struktury tablicy
 
-Stwórzmy teraz nowy element struktury tabeli dla naszego dokumentu.
+Teraz utwórzmy nowy element struktury tabeli dla naszego dokumentu.
 
 ```csharp
-// Utwórz element struktury tablicowej
+// Utwórz element struktury tablicy
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
@@ -54,7 +54,7 @@ TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
 ```
 
-Stworzyliśmy nowy element struktury tablicowej i dodaliśmy go do elementu struktury głównej. Stworzyliśmy także elementy nagłówka, treści i stopki tabeli.
+Stworzyliśmy nowy element struktury tablicy i dodaliśmy go do elementu struktury głównej. Stworzyliśmy również elementy nagłówka, treści i stopki tabeli.
 
 ## Krok 5: Dodawanie nagłówków tabeli
 
@@ -84,7 +84,7 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-Stworzyliśmy wiersz nagłówka dla naszej tabeli i dodaliśmy komórki nagłówka z właściwościami formatowania, takimi jak kolor tła, obramowania, marginesy i wyrównanie.
+Stworzyliśmy wiersz nagłówka dla naszej tabeli i dodaliśmy komórki nagłówka z właściwościami formatowania, takimi jak kolor tła, obramowanie, marginesy i wyrównanie.
 
 ## Krok 6: Dodawanie wierszy treści tabeli
 
@@ -137,11 +137,11 @@ for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 }
 ```
 
-Dodaliśmy wiersze do treści tabeli, używając pętli do iteracji po każdej komórce tabeli. Dla każdej komórki ustawiamy właściwości formatowania, takie jak kolor tła, obramowania, marginesy, wyrównanie tekstu itp.
+Dodaliśmy wiersze do treści tabeli, używając pętli do iterowania po każdej komórce tabeli. Ustawiamy właściwości formatowania dla każdej komórki, takie jak kolor tła, obramowania, marginesy, wyrównanie tekstu itp.
 
-## Krok 7: Dodanie stopki
+## Krok 7: Dodawanie stopki
 
-Na koniec dodamy do naszej tabeli stopkę tabeli.
+Na koniec dodamy stopkę do naszej tabeli.
 
 ```csharp
 TableTRElement footTrElement = tableTFootElement.CreateTR();
@@ -154,7 +154,7 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-Stworzyliśmy stopkę dla naszej tabeli i dodaliśmy komórki stopki z tekstem.
+Stworzyliśmy stopkę dla naszej tabeli i dodaliśmy komórki stopki zawierające tekst.
 
 
 
@@ -167,22 +167,22 @@ Teraz, gdy utworzyliśmy dokument ze stylizowaną tabelą, zapiszemy go jako ozn
 document.Save(dataDir + "StyleTableCell.pdf");
 ```
 
-Zapisaliśmy oznaczony dokument PDF w określonym katalogu.
+Zapisaliśmy oznaczony dokument PDF w podanym katalogu.
 
-## Krok 9: Sprawdzanie zgodności z PDF/UA
+## Krok 9: Walidacja zgodności z PDF/UA
 
-Następnie sprawdzimy zgodność naszego dokumentu z PDF/UA.
+Następnie zweryfikujemy zgodność naszego dokumentu z formatem PDF/UA.
 
 ```csharp
-// Kontrola zgodności z PDF/UA
+// Sprawdzenie zgodności PDF/UA
 document = new Document(dataDir + "StyleTableCell.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableCell.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-Przesłaliśmy oznaczony tagiem dokument PDF i sprawdziliśmy jego zgodność z PDF/UA, generując raport XML.
+Przesłaliśmy oznaczony dokument PDF i sprawdziliśmy jego zgodność ze standardem PDF/UA, generując raport XML.
 
-### Przykładowy kod źródłowy komórki tabeli stylów przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla komórki tabeli stylów przy użyciu Aspose.PDF dla .NET 
 ```csharp
 
 // Ścieżka do katalogu dokumentów.
@@ -194,7 +194,7 @@ ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table cell style");
 taggedContent.SetLanguage("en-US");
 
-// Uzyskaj element struktury głównej
+// Pobierz element struktury korzenia
 StructureElement rootElement = taggedContent.RootElement;
 
 // Utwórz element struktury tabeli
@@ -270,7 +270,7 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 // Zapisz oznaczony dokument PDF
 document.Save(dataDir + "StyleTableCell.pdf");
 
-// Sprawdzanie zgodności z PDF/UA
+// Sprawdzanie zgodności PDF/UA
 document = new Document(dataDir + "StyleTableCell.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableCell.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
@@ -279,46 +279,46 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ## Wniosek
 
-tym samouczku nauczyliśmy się stylizować komórki tabeli za pomocą Aspose.PDF dla .NET. Widzieliśmy, jak utworzyć dokument, dodać tabelę z nagłówkami, wierszami treści i stopką oraz dostosować style komórek. Na koniec zapisaliśmy oznaczony tagiem dokument PDF i sprawdziliśmy jego zgodność z PDF/UA. Możesz teraz używać Aspose.PDF dla .NET do tworzenia i stylizowania tabel w aplikacjach .NET.
+tym samouczku nauczyliśmy się, jak stylizować komórki tabeli za pomocą Aspose.PDF dla .NET. Zobaczyliśmy, jak utworzyć dokument, dodać tabelę z nagłówkami, wierszami treści i stopką oraz dostosować style komórek. Na koniec zapisaliśmy oznaczony dokument PDF i sprawdziliśmy jego zgodność z PDF/UA. Teraz możesz używać Aspose.PDF dla .NET do tworzenia i stylizowania tabel w aplikacjach .NET.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Jaki jest cel tego samouczka dotyczącego formatowania komórek tabeli przy użyciu Aspose.PDF dla .NET?
+#### P: Jaki jest cel tego samouczka dotyczącego formatowania komórek tabeli za pomocą Aspose.PDF dla platformy .NET?
 
-Odp.: Ten samouczek ma na celu zapewnienie kompleksowego przewodnika na temat stylizowania komórek tabeli w dokumencie PDF przy użyciu biblioteki Aspose.PDF dla .NET. Zawiera instrukcje krok po kroku i przykłady kodu źródłowego C#, które pomogą Ci zrozumieć i wdrożyć formatowanie komórek tabeli.
+A: Ten samouczek ma na celu dostarczenie kompleksowego przewodnika na temat tego, jak stylizować komórki tabeli w dokumencie PDF przy użyciu biblioteki Aspose.PDF dla .NET. Obejmuje instrukcje krok po kroku i przykłady kodu źródłowego C#, aby pomóc Ci zrozumieć i zaimplementować formatowanie komórek tabeli.
 
-#### P: Jakie są wymagania wstępne dotyczące korzystania z tego samouczka?
+#### P: Jakie wymagania muszę spełnić, aby móc skorzystać z tego samouczka?
 
-O: Zanim zaczniesz, upewnij się, że zainstalowałeś Aspose.PDF dla .NET i skonfigurowałeś środowisko programistyczne. Obejmuje to skonfigurowanie projektu tak, aby odwoływał się do biblioteki Aspose.PDF.
+A: Zanim zaczniesz, upewnij się, że zainstalowałeś Aspose.PDF dla .NET i skonfigurowałeś środowisko programistyczne. Obejmuje to skonfigurowanie projektu tak, aby odwoływał się do biblioteki Aspose.PDF.
 
-#### P: Jak utworzyć nowy dokument PDF przy użyciu Aspose.PDF dla .NET?
+#### P: Jak utworzyć nowy dokument PDF za pomocą Aspose.PDF dla platformy .NET?
 
-O: Aby utworzyć nowy dokument PDF, musisz utworzyć instancję pliku`Document` obiekt z biblioteki Aspose.PDF. Dostarczony kod źródłowy języka C# demonstruje, jak utworzyć dokument oraz ustawić jego tytuł i język.
+A: Aby utworzyć nowy dokument PDF, należy utworzyć instancję`Document` obiekt z biblioteki Aspose.PDF. Dostarczony kod źródłowy C# pokazuje, jak utworzyć dokument i ustawić jego tytuł i język.
 
-#### P: Jakie jest znaczenie elementu struktury głównej w dokumencie PDF?
+#### P: Jakie znaczenie ma element struktury głównej w dokumencie PDF?
 
-Odp.: Główny element struktury służy jako pojemnik na inne elementy struktury, pomagając organizować i kategoryzować zawartość dokumentu PDF. Odgrywa kluczową rolę w ustaleniu logicznej struktury dokumentu.
+A: Element struktury głównej służy jako pojemnik dla innych elementów struktury, pomagając organizować i kategoryzować zawartość dokumentu PDF. Odgrywa kluczową rolę w ustalaniu logicznej struktury dokumentu.
 
-#### P: Jak mogę utworzyć element struktury tabeli i dostosować jego wygląd za pomocą Aspose.PDF dla .NET?
+#### P: W jaki sposób mogę utworzyć element struktury tabeli i dostosować jego wygląd, korzystając z Aspose.PDF dla platformy .NET?
 
- Odp.: Możesz utworzyć element struktury tabeli za pomocą`CreateTableElement()` metoda. Dostarczony kod źródłowy pokazuje, jak dostosować wygląd tabeli, w tym jej nagłówek, treść i stopkę, poprzez ustawienie właściwości, takich jak kolor tła, obramowania, marginesy i wyrównanie.
+ A: Możesz utworzyć element struktury tabeli za pomocą`CreateTableElement()` metoda. Dostarczony kod źródłowy pokazuje, jak dostosować wygląd tabeli, w tym jej nagłówek, treść i stopkę, ustawiając właściwości, takie jak kolor tła, obramowania, marginesy i wyrównanie.
 
-#### P: Czy mogę dodać wiele wierszy i kolumn do treści tabeli i dostosować ich formatowanie?
+#### P: Czy mogę dodać wiele wierszy i kolumn do treści tabeli oraz dostosować ich formatowanie?
 
-O: Tak, w samouczku pokazano, jak dodać wiele wierszy i kolumn do treści tabeli za pomocą pętli. Zawiera także przykłady dostosowywania formatowania komórek, np. koloru tła, obramowań, wyrównania tekstu, stylu czcionki i innych.
+A: Tak, samouczek pokazuje, jak dodać wiele wierszy i kolumn do treści tabeli za pomocą pętli. Zawiera również przykłady dostosowywania formatowania komórek, takie jak kolor tła, obramowania, wyrównanie tekstu, styl czcionki i inne.
 
-#### P: Jaki jest cel sprawdzania zgodności z PDF/UA i jak mogę przeprowadzić tę weryfikację?
+#### P: Jaki jest cel weryfikacji zgodności PDF/UA i w jaki sposób mogę przeprowadzić taką weryfikację?
 
- O: Sprawdzenie zgodności z PDF/UA gwarantuje, że dokument PDF jest zgodny ze standardami dostępności, dzięki czemu jest bardziej dostępny dla użytkowników niepełnosprawnych. Samouczek pokazuje, jak sprawdzić zgodność z PDF/UA za pomocą pliku`Validate()` metodę i wygenerować raport XML.
+ A: Walidacja zgodności PDF/UA zapewnia, że dokument PDF jest zgodny ze standardami dostępności, dzięki czemu jest bardziej dostępny dla użytkowników niepełnosprawnych. Samouczek pokazuje, jak zweryfikować zgodność PDF/UA za pomocą`Validate()` i wygeneruj raport XML.
 
-#### P: Jak mogę zastosować te koncepcje do moich własnych aplikacji .NET?
+#### P: W jaki sposób mogę zastosować te koncepcje we własnych aplikacjach .NET?
 
-Odp.: Możesz użyć podanych przykładów kodu źródłowego C# jako przewodnika po implementowaniu formatowania komórek tabeli we własnych aplikacjach .NET. Dostosuj kod zgodnie z potrzebami i zintegruj go ze swoimi projektami.
+A: Możesz użyć podanych przykładów kodu źródłowego C# jako przewodnika do implementacji formatowania komórek tabeli w swoich własnych aplikacjach .NET. Dostosuj kod w razie potrzeby, aby spełnić swoje wymagania i zintegruj go ze swoimi projektami.
 
-#### P: Czy są jakieś zalecane najlepsze praktyki dotyczące stylizacji komórek tabeli w dokumentach PDF?
+#### P: Czy istnieją jakieś zalecane najlepsze praktyki dotyczące stylizowania komórek tabeli w dokumentach PDF?
 
-O: Stylizując komórki tabeli, weź pod uwagę potrzeby odbiorców, w tym wymagania dotyczące dostępności. Aby zwiększyć czytelność, użyj kontrastujących kolorów, odpowiednich czcionek i wyraźnego wyrównania komórek. Dodatkowo sprawdź zgodność z PDF/UA, aby upewnić się, że spełnione są standardy dostępności.
+A: Stylizując komórki tabeli, weź pod uwagę potrzeby odbiorców, w tym wymagania dotyczące dostępności. Użyj kontrastujących kolorów, odpowiednich czcionek i wyraźnego wyrównania komórek, aby zwiększyć czytelność. Ponadto sprawdź zgodność z PDF/UA, aby zapewnić spełnienie standardów dostępności.
 
-#### P: Jakie inne funkcje Aspose.PDF dla .NET mogę wykorzystać do manipulacji dokumentami PDF?
+#### P: Jakie inne funkcje Aspose.PDF dla .NET mogę wykorzystać do manipulowania dokumentami PDF?
 
-Odp.: Aspose.PDF dla .NET oferuje szeroką gamę funkcji do manipulacji dokumentami PDF, w tym wyodrębnianie tekstu, wstawianie obrazów, zarządzanie polami formularzy, podpisy cyfrowe i inne. Zapoznaj się z oficjalną dokumentacją i zasobami, aby poznać dodatkowe funkcje.
+A: Aspose.PDF dla .NET oferuje szeroki zakres funkcji do manipulacji dokumentami PDF, w tym ekstrakcję tekstu, wstawianie obrazów, zarządzanie polami formularzy, podpisy cyfrowe i wiele innych. Zapoznaj się z oficjalną dokumentacją i zasobami, aby dowiedzieć się więcej o dodatkowych funkcjonalnościach.

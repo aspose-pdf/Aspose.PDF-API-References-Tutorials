@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-stamps-and-watermarks/table-in-header-footer-
 
 ## 第 2 步：建立 PDF 文件和頁面
 
-第一步是建立一個實例`Document`類別並為文檔添加頁面。就是這樣：
+第一步是建立一個實例`Document`類別並為文檔添加頁面。方法如下：
 
 ```csharp
 //文檔目錄的路徑。
@@ -35,7 +35,7 @@ Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 
 ## 步驟 3：配置標頭部分
 
-現在我們將透過建立一個實例來配置 PDF 文件的標題部分`HeaderFooter`班級。就是這樣：
+現在我們將透過建立一個實例來配置 PDF 文件的標題部分`HeaderFooter`班級。方法如下：
 
 ```csharp
 //為 PDF 檔案建立標題部分
@@ -50,7 +50,7 @@ header. Margin. Top = 20;
 
 ## 第四步：建立表
 
-現在我們將使用以下命令建立一個表`Table`類別並將其新增至標題部分的段落集合中。就是這樣：
+現在我們將使用以下命令建立一個表`Table`類別並將其新增至標題部分的段落集合中。方法如下：
 
 ```csharp
 //實例化一個Table對象
@@ -67,7 +67,7 @@ tab1.ColumnWidths = "60,300";
 
 ## 步驟 5：在表格中新增行和儲存格
 
-現在我們將使用以下命令將行和單元格新增至表格中`Row`類和`Cell`班級。就是這樣：
+現在我們將使用以下命令將行和單元格新增至表格中`Row`類和`Cell`班級。方法如下：
 
 ```csharp
 //在表格中建立一行並新增儲存格
@@ -96,7 +96,7 @@ row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 
 ## 第6步：儲存PDF文檔
 
-將表格新增至標題部分後，我們就可以儲存 PDF 文件。就是這樣：
+將表格新增至標題部分後，我們就可以儲存 PDF 文件。方法如下：
 
 ```csharp
 //儲存 PDF 文件
@@ -184,7 +184,7 @@ pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 
 #### Q：在 PDF 文件的頁首或頁尾部分新增表格的目的是什麼？
 
-答：在 PDF 文件的頁首或頁尾部分新增表格可讓您顯示結構化且有組織的訊息，例如標題、副標題、標誌或您希望在文件的每一頁上一致顯示的任何其他內容。
+答：在 PDF 文件的頁首或頁尾部分新增表格可讓您顯示結構化且有組織的訊息，例如標題、副標題、標誌或您希望在文件每一頁上一致顯示的任何其他內容。
 
 #### Q：提供的C#原始碼如何實作在PDF文件的頁首或頁尾部分新增表格？
 
@@ -196,7 +196,7 @@ pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 
 #### Q：如何將表格新增至 PDF 文件的頁首部分？
 
-答：程式碼將表格新增到頁首部分的段落集合中，這樣可以確保表格顯示在每個頁面的頁首中。
+A：程式碼將表格新增到頁首部分的段落集合中，這樣可以確保表格顯示在每個頁面的頁首中。
 
 #### Q：我可以根據需要在表格中新增更多行和儲存格嗎？
 
@@ -212,7 +212,7 @@ pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 
 答：您可以對頁首和頁尾部分採用類似的方法。只需創建一個`HeaderFooter`頁腳的實例，配置它，並將表格新增到其段落集合中。
 
-#### Q：我可以在表格單元格內使用圖像嗎？如何實現？
+#### Q：我可以在表格單元格內使用圖像嗎？
 
 答：是的，您可以在表格單元格中新增圖像。該程式碼範例演示了透過創建一個`Image`對象，設定其文件路徑和尺寸，然後將其添加到單元格的段落中。
 

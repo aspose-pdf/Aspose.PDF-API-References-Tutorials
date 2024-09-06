@@ -1,17 +1,17 @@
 ---
 title: Oznaczona zawartość PDF
 linktitle: Oznaczona zawartość PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak pracować z oznakowaną zawartością w dokumencie PDF za pomocą Aspose.PDF dla .NET. Przewodnik krok po kroku dotyczący używania tagów.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak pracować z oznaczoną zawartością w dokumencie PDF za pomocą Aspose.PDF dla .NET. Przewodnik krok po kroku dotyczący korzystania z tagów.
 type: docs
 weight: 200
 url: /pl/net/programming-with-tagged-pdf/tagged-pdf-content/
 ---
-W tym szczegółowym samouczku przeprowadzimy Cię krok po kroku przez dostarczony kod źródłowy C# do pracy ze oznaczoną zawartością dokumentu PDF przy użyciu Aspose.PDF dla .NET. Postępuj zgodnie z poniższymi instrukcjami, aby zrozumieć, jak używać tagu w przypadku treści PDF.
+W tym szczegółowym samouczku przeprowadzimy Cię krok po kroku przez dostarczony kod źródłowy C#, aby pracować z oznaczoną zawartością dokumentu PDF przy użyciu Aspose.PDF dla .NET. Postępuj zgodnie z poniższymi instrukcjami, aby zrozumieć, jak używać znacznika dla zawartości PDF.
 
 ## Krok 1: Konfigurowanie środowiska
 
-Zanim zaczniesz, upewnij się, że skonfigurowałeś środowisko programistyczne do korzystania z Aspose.PDF dla .NET. Obejmuje to instalację biblioteki Aspose.PDF i skonfigurowanie projektu tak, aby się do niej odwoływał.
+Zanim zaczniesz, upewnij się, że skonfigurowałeś środowisko programistyczne do używania Aspose.PDF dla .NET. Obejmuje to zainstalowanie biblioteki Aspose.PDF i skonfigurowanie projektu, aby się do niej odwoływał.
 
 ## Krok 2: Tworzenie dokumentu PDF
 
@@ -25,41 +25,41 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document document = new Document();
 ```
 
-Stworzyliśmy nowy dokument PDF za pomocą Aspose.PDF.
+Utworzyliśmy nowy dokument PDF z Aspose.PDF.
 
-## Krok 3: Spraw, aby zawartość działała z oznakowanym plikiem PDF
+## Krok 3: Przygotuj treść do pracy z oznaczonym plikiem PDF
 
-Na tym etapie zawartość dokumentu PDF będzie współpracować z oznaczonym plikiem PDF.
+W tym kroku sprawimy, że zawartość dokumentu PDF będzie współdziałać z oznaczonym plikiem PDF.
 
 ```csharp
-// Spraw, aby zawartość działała z oznakowanym plikiem PDF
+// Pobierz zawartość do pracy z oznaczonym plikiem PDF
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-Udało nam się dopasować zawartość dokumentu PDF do oznaczonego pliku PDF.
+Udało nam się połączyć zawartość dokumentu PDF z oznaczonym plikiem PDF.
 
-## Krok 4: Pracuj z treścią oznaczoną jako PDF
+## Krok 4: Praca z zawartością oznaczoną w pliku PDF
 
-Teraz będziemy pracować z oznakowaną zawartością pliku PDF, używając odpowiednich tagów.
+Teraz zajmiemy się oznaczoną zawartością pliku PDF, używając odpowiednich tagów.
 
 ```csharp
-// Pracuj z oznakowaną zawartością pliku PDF
+// Pracuj z oznaczoną zawartością pliku PDF
 taggedContent.SetTitle("Simple tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-Ustawiliśmy tytuł i język otagowanego dokumentu PDF.
+Ustawiliśmy tytuł i język oznaczonego dokumentu PDF.
 
 ## Krok 5: Zapisywanie oznaczonego dokumentu PDF
 
-Teraz, gdy już pracowaliśmy z oznakowaną zawartością dokumentu PDF, zapiszmy ją jako oznakowany dokument PDF.
+Teraz, gdy pracowaliśmy nad oznaczoną zawartością dokumentu PDF, zapiszmy go jako oznaczoną treść dokumentu PDF.
 
 ```csharp
 // Zapisz oznaczony dokument PDF
 document.Save(dataDir + "ContentPDFTag.pdf");
 ```
 
-Zapisaliśmy oznaczony dokument PDF w określonym katalogu.
+Zapisaliśmy oznaczony dokument PDF w podanym katalogu.
 
 ### Przykładowy kod źródłowy dla Tagged PDFContent przy użyciu Aspose.PDF dla .NET 
 
@@ -71,11 +71,11 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Utwórz dokument PDF
 Document document = new Document();
 
-// Uzyskaj zawartość do pracy dzięki TaggedPdf
+// Pobierz zawartość do pracy z TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Pracuj z oznakowaną zawartością PDF
-// Ustaw tytuł i język dla dokumentu Documnet
+// Praca z oznaczoną zawartością PDF
+// Ustaw tytuł i język dla dokumentu
 taggedContent.SetTitle("Simple Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
@@ -85,42 +85,42 @@ document.Save(dataDir + "TaggedPDFContent.pdf");
 ```
 ## Wniosek
 
-W tym samouczku nauczyliśmy się, jak pracować z zaznaczoną zawartością w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Możesz teraz używać Aspose.PDF do tworzenia dokumentów PDF z odpowiednio oznakowaną treścią.
+W tym samouczku nauczyliśmy się, jak pracować z oznaczoną zawartością w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Teraz możesz używać Aspose.PDF do tworzenia dokumentów PDF z odpowiednio oznaczoną zawartością.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Na czym skupia się ten samouczek dotyczący pracy z oznakowaną zawartością PDF przy użyciu Aspose.PDF dla .NET?
+#### P: Na czym głównie skupia się ten samouczek dotyczący pracy z tagowaną zawartością PDF przy użyciu Aspose.PDF dla platformy .NET?
 
-Odp.: Ten samouczek skupia się przede wszystkim na przeprowadzeniu Cię przez proces pracy z zaznaczoną zawartością w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Samouczek zawiera instrukcje krok po kroku i przykłady kodu źródłowego języka C#, które pomogą Ci zrozumieć, jak używać tagów do definiowania zawartości dokumentu PDF i manipulowania nią.
+A: Ten samouczek jest przede wszystkim ukierunkowany na przeprowadzenie Cię przez proces pracy z oznaczoną zawartością w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Samouczek zawiera instrukcje krok po kroku i przykłady kodu źródłowego C#, które pomogą Ci zrozumieć, jak używać tagów do definiowania i manipulowania zawartością dokumentu PDF.
 
-#### P: Jakie są wymagania wstępne, aby skorzystać z tego samouczka na temat manipulacji treścią oznakowanych plików PDF za pomocą Aspose.PDF dla .NET?
+#### P: Jakie wymagania należy spełnić, aby móc skorzystać z tego samouczka dotyczącego manipulowania treścią oznaczonych plików PDF za pomocą Aspose.PDF dla platformy .NET?
 
-O: Zanim zaczniesz, upewnij się, że skonfigurowałeś środowisko programistyczne do korzystania z Aspose.PDF dla .NET. Obejmuje to zainstalowanie biblioteki Aspose.PDF i skonfigurowanie projektu tak, aby się do niej odwoływał.
+A: Zanim zaczniesz, upewnij się, że skonfigurowałeś środowisko programistyczne do używania Aspose.PDF dla .NET. Wiąże się to z zainstalowaniem biblioteki Aspose.PDF i skonfigurowaniem projektu tak, aby się do niej odwoływał.
 
-#### P: Jak mogę utworzyć nowy dokument PDF i pracować z jego oznaczoną zawartością przy użyciu Aspose.PDF dla .NET?
+#### P: W jaki sposób mogę utworzyć nowy dokument PDF i pracować z jego oznaczoną zawartością, korzystając z Aspose.PDF dla platformy .NET?
 
-Odp.: W samouczku znajdują się przykłady kodu źródłowego języka C#, które pokazują, jak utworzyć nowy dokument PDF i uzyskać dostęp do jego oznaczonej zawartości w celu dalszej manipulacji.
+A: W tym samouczku znajdują się przykłady kodu źródłowego w języku C#, które pokazują, jak utworzyć nowy dokument PDF i uzyskać dostęp do jego oznaczonej zawartości w celu dalszej obróbki.
 
-#### P: Jakie jest znaczenie pracy z oznakowaną zawartością w dokumencie PDF?
+#### P: Jakie znaczenie ma praca z oznaczoną treścią w dokumencie PDF?
 
-Odp.: Praca z oznakowaną treścią w dokumencie PDF wymaga użycia znaczników strukturalnych w celu zdefiniowania semantycznego znaczenia elementów dokumentu. Jest to szczególnie ważne dla dostępności i ekstrakcji treści, ponieważ umożliwia czytnikom ekranu i innym technologiom prawidłową interpretację treści dokumentu.
+A: Praca z oznaczoną zawartością w dokumencie PDF obejmuje używanie strukturalnych znaczników w celu zdefiniowania semantycznego znaczenia elementów dokumentu. Jest to szczególnie ważne dla dostępności i ekstrakcji treści, ponieważ umożliwia czytnikom ekranu i innym technologiom prawidłową interpretację zawartości dokumentu.
 
-#### P: Jak mogę ustawić tytuł i język oznaczonego dokumentu PDF przy użyciu Aspose.PDF dla .NET?
+#### P: W jaki sposób mogę ustawić tytuł i język dla tagowanego dokumentu PDF za pomocą Aspose.PDF dla platformy .NET?
 
-Odp.: Samouczek zawiera przykłady kodu źródłowego C#, które ilustrują, jak ustawić tytuł i język dla oznaczonego dokumentu PDF przy użyciu Aspose.PDF dla .NET.
+A: W tym samouczku zawarto przykłady kodu źródłowego w języku C#, które ilustrują, jak ustawić tytuł i język dla oznaczonego dokumentu PDF za pomocą Aspose.PDF dla platformy .NET.
 
 #### P: Jak wygląda proces zapisywania oznaczonego dokumentu PDF po pracy z jego oznaczoną zawartością?
 
- Odp.: Po dokonaniu modyfikacji oznaczonej zawartości dokumentu PDF możesz skorzystać z dostarczonych przykładów kodu źródłowego C#, aby zapisać zmodyfikowany dokument za pomocą`Save()` metoda.
+ A: Po wprowadzeniu modyfikacji w oznaczonej zawartości dokumentu PDF możesz użyć podanych przykładów kodu źródłowego C#, aby zapisać zmodyfikowany dokument za pomocą`Save()` metoda.
 
-#### P: W jaki sposób przykładowy kod źródłowy podany w samouczku pomaga w pracy z oznakowaną zawartością PDF?
+#### P: W jaki sposób przykładowy kod źródłowy udostępniony w samouczku pomaga w pracy z tagowaną treścią PDF?
 
-O: Przykładowy kod źródłowy służy jako praktyczne odniesienie do implementowania manipulacji oznakowaną treścią przy użyciu Aspose.PDF dla .NET. Możesz użyć tego kodu jako punktu wyjścia i zmodyfikować go zgodnie ze swoimi specyficznymi wymaganiami.
+A: Przykładowy kod źródłowy służy jako praktyczne odniesienie do implementacji manipulacji treścią tagowaną przy użyciu Aspose.PDF dla .NET. Możesz użyć tego kodu jako punktu wyjścia i zmodyfikować go zgodnie ze swoimi konkretnymi wymaganiami.
 
-#### P: Czy mogę zastosować podobne techniki do innych typów elementów w dokumencie PDF, a nie tylko do ustawień tekstu i języka?
+#### P: Czy mogę zastosować podobne techniki do innych typów elementów w dokumencie PDF, nie tylko do tekstu i ustawień językowych?
 
-O: Tak, techniki zademonstrowane w tym samouczku można dostosować do pracy z różnymi typami elementów w dokumencie PDF. Możesz używać podobnych zasad do manipulowania tekstem, obrazami, tabelami i nie tylko, używając tagów do definiowania ich ról i atrybutów.
+A: Tak, techniki zaprezentowane w tym samouczku można dostosować do pracy z różnymi typami elementów w dokumencie PDF. Możesz użyć podobnych zasad do manipulowania tekstem, obrazami, tabelami i innymi elementami, jednocześnie wykorzystując tagi do definiowania ich ról i atrybutów.
 
-#### P: Jak mogę użyć Aspose.PDF dla .NET, aby jeszcze bardziej ulepszyć i dostosować dokumenty PDF poza otagowaną treścią?
+#### P: W jaki sposób mogę użyć Aspose.PDF dla platformy .NET do dalszego ulepszania i dostosowywania dokumentów PDF poza oznaczaniem treści?
 
-Odp.: Aspose.PDF dla .NET oferuje szeroką gamę funkcji do manipulacji dokumentami PDF, w tym dodawanie tekstu, obrazów, tabel, hiperłączy, adnotacji, pól formularzy, znaków wodnych, podpisów cyfrowych i innych. Możesz zapoznać się z oficjalną dokumentacją i zasobami, aby uzyskać pełne zrozumienie możliwości biblioteki.
+A: Aspose.PDF dla .NET oferuje szeroki zakres funkcji do manipulacji dokumentami PDF, w tym dodawanie tekstu, obrazów, tabel, hiperłączy, adnotacji, pól formularzy, znaków wodnych, podpisów cyfrowych i innych. Możesz przejrzeć oficjalną dokumentację i zasoby, aby uzyskać kompleksowe zrozumienie możliwości biblioteki.

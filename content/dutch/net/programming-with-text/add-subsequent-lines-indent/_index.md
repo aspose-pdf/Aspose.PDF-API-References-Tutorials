@@ -1,51 +1,51 @@
 ---
-title: Volgende regels toevoegen Inspringen in PDF-bestand
-linktitle: Volgende regels toevoegen Inspringen in PDF-bestand
+title: Volgende regels inspringen in PDF-bestand
+linktitle: Volgende regels inspringen in PDF-bestand
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u opeenvolgende regels kunt laten inspringen in tekst in een PDF-bestand met Aspose.PDF voor .NET.
+description: Leer hoe u inspringing aan opeenvolgende regels in een PDF-bestand kunt toevoegen met Aspose.PDF voor .NET.
 type: docs
 weight: 60
 url: /nl/net/programming-with-text/add-subsequent-lines-indent/
 ---
-Deze tutorial leidt u door het proces van het toevoegen van inspringende regels aan tekst in een PDF-bestand met behulp van Aspose.PDF voor .NET. De meegeleverde C#-broncode demonstreert de noodzakelijke stappen.
+Deze tutorial begeleidt u door het proces van het toevoegen van opeenvolgende regels inspringing aan tekst in een PDF-bestand met behulp van Aspose.PDF voor .NET. De meegeleverde C#-broncode demonstreert de benodigde stappen.
 
 ## Vereisten
-Zorg ervoor dat u over het volgende beschikt voordat u begint:
+Voordat u begint, moet u ervoor zorgen dat u over het volgende beschikt:
 
 - Visual Studio of een andere C#-compiler die op uw computer is geïnstalleerd.
-- Aspose.PDF voor .NET-bibliotheek. Je kunt het downloaden van de officiële Aspose-website of een pakketbeheerder zoals NuGet gebruiken om het te installeren.
+- Aspose.PDF voor .NET-bibliotheek. U kunt het downloaden van de officiële Aspose-website of een pakketbeheerder zoals NuGet gebruiken om het te installeren.
 
-## Stap 1: Zet het project op
-1. Maak een nieuw C#-project in de ontwikkelomgeving van uw voorkeur.
+## Stap 1: Het project opzetten
+1. Maak een nieuw C#-project in uw favoriete ontwikkelomgeving.
 2. Voeg een verwijzing toe naar de Aspose.PDF voor .NET-bibliotheek.
 
 ## Stap 2: Importeer de vereiste naamruimten
-In het codebestand waar u de volgende regels wilt laten inspringen, voegt u de volgende gebruiksinstructie bovenaan het bestand toe:
+In het codebestand waar u opeenvolgende regels wilt laten inspringen, voegt u de volgende instructie toe boven aan het bestand:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Stap 3: Stel de documentmap in
+## Stap 3: Stel de documentdirectory in
  Zoek in de code de regel met de tekst`string dataDir = "YOUR DOCUMENT DIRECTORY";` en vervangen`"YOUR DOCUMENT DIRECTORY"` met het pad naar de map waar uw documenten zijn opgeslagen.
 
-## Stap 4: Maak een nieuw Document-object
- Instantieer een nieuwe`Document` object door de volgende regel code toe te voegen:
+## Stap 4: Een nieuw Document-object maken
+ Een nieuwe instantiëren`Document` object door de volgende regel code toe te voegen:
 
 ```csharp
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
 ## Stap 5: Voeg een pagina toe aan het document
- Voeg een nieuwe pagina aan het document toe met behulp van de`Add` werkwijze van de`Pages`verzameling. In de opgegeven code wordt de nieuwe pagina aan de variabele toegewezen`page`.
+ Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages`verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
-## Stap 6: Maak een tekstfragment waarvan de volgende regels inspringen
- Instantieer een`TextFragment` object en geef de gewenste tekst op. In de opgegeven code wordt de tekst aan de variabele toegewezen`text` . Initialiseer vervolgens`TextFormattingOptions` voor de`TextFragment`en specificeer de`SubsequentLinesIndent` waarde.
+## Stap 6: Maak een TextFragment met inspringing van opeenvolgende regels
+ Instantieer een`TextFragment` object en geef de gewenste tekst. In de meegeleverde code wordt de tekst toegewezen aan de variabele`text` . Initialiseer vervolgens`TextFormattingOptions` voor de`TextFragment`en specificeer de`SubsequentLinesIndent` waarde.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -56,14 +56,14 @@ text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 ```
 
 ## Stap 7: Voeg het TextFragment toe aan de pagina
- Voeg de`TextFragment` bezwaar maken tegen het verzamelen van alinea's op de pagina.
+ Voeg de`TextFragment` bezwaar maken tegen de verzameling alinea's van de pagina.
 
 ```csharp
 page.Paragraphs.Add(text);
 ```
 
-## Stap 8: Herhaal stap 6 en 7 voor extra regels
-Als u volgende regels met dezelfde inspringing wilt toevoegen, herhaalt u stap 6 en 7 voor elke regel. Werk de tekstinhoud indien nodig bij.
+## Stap 8: Herhaal stap 6 en 7 voor extra lijnen
+Om volgende regels met dezelfde inspringing toe te voegen, herhaalt u stap 6 en 7 voor elke regel. Werk de tekstinhoud indien nodig bij.
 
 ```csharp
 text = new Aspose.Pdf.Text.TextFragment("Line2");
@@ -77,13 +77,13 @@ page.Paragraphs.Add(text);
 ```
 
 ## Stap 9: Sla het PDF-document op
- Sla het PDF-document op met behulp van de`Save` werkwijze van de`Document` voorwerp. Geef het pad voor het uitvoerbestand op.
+ Sla het PDF-document op met behulp van de`Save` methode van de`Document` object. Geef het pad naar het uitvoerbestand op.
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-### Voorbeeldbroncode voor Inspringen van volgende regels toevoegen met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor het toevoegen van inspringingen voor volgende regels met behulp van Aspose.PDF voor .NET 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -109,46 +109,46 @@ document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
 ## Conclusie
-U hebt met succes volgende regels laten inspringen aan tekst met behulp van Aspose.PDF voor .NET. Het resulterende PDF-bestand is nu te vinden op het opgegeven uitvoerbestandspad.
+U hebt met succes volgende regels inspringing aan tekst toegevoegd met behulp van Aspose.PDF voor .NET. Het resulterende PDF-bestand kan nu worden gevonden op het opgegeven pad naar het uitvoerbestand.
 
 ### Veelgestelde vragen
 
-#### Vraag: Wat is de focus van deze tutorial?
+#### V: Waarop richt deze tutorial zich?
 
-A: Deze tutorial biedt een uitgebreide handleiding voor het toevoegen van inspringende regels aan tekst in een PDF-bestand met behulp van de Aspose.PDF voor .NET-bibliotheek. Het bevat C#-broncodevoorbeelden om de stappen te illustreren die nodig zijn om dit te bereiken.
+A: Deze tutorial biedt een uitgebreide handleiding over hoe u opeenvolgende regels inspringing aan tekst in een PDF-bestand kunt toevoegen met behulp van de Aspose.PDF voor .NET-bibliotheek. Het bevat C#-broncodevoorbeelden om de stappen te illustreren die nodig zijn om dit te bereiken.
 
-#### Vraag: Welke naamruimten moet ik importeren voor deze tutorial?
+#### V: Welke naamruimten moet ik importeren voor deze tutorial?
 
-A: In het codebestand waarin u de volgende regels wilt laten inspringen, importeert u de volgende naamruimten aan het begin van het bestand:
+A: Importeer de volgende naamruimten aan het begin van het bestand in het codebestand waar u de inspringing voor opeenvolgende regels wilt toevoegen:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-#### Vraag: Hoe geef ik de documentmap op?
+#### V: Hoe geef ik de documentenmap op?
 
- A: Zoek de regel in de code`string dataDir = "YOUR DOCUMENT DIRECTORY";` en vervangen`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad naar uw documentmap.
+ A: Zoek in de code de regel`string dataDir = "YOUR DOCUMENT DIRECTORY";` en vervangen`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad naar uw documentenmap.
 
-#### Vraag: Hoe maak ik een Document-object?
+#### V: Hoe maak ik een Document-object?
 
- A: In stap 4 maakt u een nieuw bestand`Document` object met behulp van de volgende coderegel:
+ A: In stap 4 maakt u een nieuwe`Document` object met behulp van de volgende regel code:
 
 ```csharp
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
-#### Vraag: Hoe voeg ik een pagina toe aan het document?
+#### V: Hoe voeg ik een pagina toe aan het document?
 
- A: In stap 5 voegt u een nieuwe pagina aan het document toe met behulp van de`Add` werkwijze van de`Pages` verzameling:
+ A: In stap 5 voegt u een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages` verzameling:
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
-#### Vraag: Hoe kan ik volgende regels laten inspringen in tekst?
+#### V: Hoe kan ik inspringing toevoegen aan de volgende regels tekst?
 
- A: In stap 6 maakt u een`TextFragment` object en wijs er de gewenste tekst aan toe. Vervolgens initialiseert u`TextFormattingOptions` voor de`TextFragment`en specificeer de`SubsequentLinesIndent` waarde:
+ A: In stap 6 maak je een`TextFragment` object en wijs de gewenste tekst eraan toe. Vervolgens initialiseert u`TextFormattingOptions` voor de`TextFragment`en specificeer de`SubsequentLinesIndent` waarde:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -158,26 +158,26 @@ text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 };
 ```
 
-#### Vraag: Hoe voeg ik het TextFragment toe aan het PDF-document?
+#### V: Hoe voeg ik een TextFragment toe aan het PDF-document?
 
- A: In stap 7 voegt u de`TextFragment` voorwerp (`text`) naar de alineaverzameling van de pagina:
+ A: In stap 7 voegt u de`TextFragment` voorwerp (`text`) naar de paragrafenverzameling van de pagina:
 
 ```csharp
 page.Paragraphs.Add(text);
 ```
 
-#### Vraag: Kan ik het proces herhalen voor extra regels?
+#### V: Kan ik het proces herhalen voor extra regels?
 
- A: Ja, in stap 8 kunt u het proces herhalen voor extra regels met dezelfde inspringing door een nieuwe te maken`TextFragment` objecten en voeg deze toe aan de alineacollectie van de pagina.
+ A: Ja, in stap 8 kunt u het proces herhalen voor extra regels met dezelfde inspringing door nieuwe regels te maken.`TextFragment` objecten en deze toevoegen aan de alineaverzameling van de pagina.
 
-#### Vraag: Hoe bewaar ik het resulterende PDF-document?
+#### V: Hoe kan ik het resulterende PDF-document opslaan?
 
- A: Nadat u de tekst hebt toegevoegd met de volgende regels, gebruikt u de`Save` werkwijze van de`Document` object om het PDF-document op te slaan:
+ A: Nadat u de tekst met de inspringing van de volgende regels hebt toegevoegd, gebruikt u de`Save` methode van de`Document` object om het PDF-document op te slaan:
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-#### Vraag: Wat is de belangrijkste conclusie uit deze tutorial?
+#### V: Wat is de belangrijkste les die je uit deze tutorial hebt geleerd?
 
-A: Door deze tutorial te volgen, heeft u met succes geleerd hoe u de leesbaarheid van tekst in een PDF-document kunt verbeteren door opeenvolgende regels in te laten springen met Aspose.PDF voor .NET. Deze techniek kan nuttig zijn voor verschillende soorten documenten en rapporten.
+A: Door deze tutorial te volgen, hebt u succesvol geleerd hoe u de leesbaarheid van tekst in een PDF-document kunt verbeteren door opeenvolgende regels in te springen met behulp van Aspose.PDF voor .NET. Deze techniek kan nuttig zijn voor verschillende typen documenten en rapporten.

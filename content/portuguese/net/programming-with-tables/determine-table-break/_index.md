@@ -1,18 +1,18 @@
 ---
 title: Determinar quebra de tabela em arquivo PDF
 linktitle: Determinar quebra de tabela em arquivo PDF
-second_title: Referência da API Aspose.PDF para .NET
-description: Aprenda como determinar quebras de tabela em arquivo PDF usando Aspose.PDF for .NET.
+second_title: Referência da API do Aspose.PDF para .NET
+description: Aprenda como determinar quebras de tabela em arquivos PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 60
 url: /pt/net/programming-with-tables/determine-table-break/
 ---
-Neste tutorial, aprenderemos como determinar quebras de tabela em arquivo PDF usando Aspose.PDF for .NET. Explicaremos o código-fonte em C# passo a passo. Ao final deste tutorial, você saberá como determinar se uma tabela ultrapassa as margens da página. Vamos começar!
+Neste tutorial, aprenderemos como determinar quebras de tabela em arquivo PDF usando Aspose.PDF para .NET. Explicaremos o código-fonte em C# passo a passo. No final deste tutorial, você saberá como determinar se uma tabela excede as margens da página. Vamos começar!
 
-## Passo 1: Configurando o ambiente
-Primeiro, certifique-se de configurar seu ambiente de desenvolvimento C# com Aspose.PDF for .NET. Adicione a referência à biblioteca e importe os namespaces necessários.
+## Etapa 1: Configurando o ambiente
+Primeiro, certifique-se de ter configurado seu ambiente de desenvolvimento C# com Aspose.PDF para .NET. Adicione a referência à biblioteca e importe os namespaces necessários.
 
-## Passo 2: Criando o documento PDF
+## Etapa 2: Criando o documento PDF
  Nesta etapa, criamos um novo`Document` objeto para representar o documento PDF.
 
 ```csharp
@@ -21,8 +21,8 @@ pdf-Document = new Document();
 
 Este documento será usado para adicionar seções e tabelas.
 
-## Etapa 3: adicionar uma seção e uma tabela
-Agora vamos adicionar uma seção ao nosso documento PDF e criar uma tabela dentro desta seção.
+## Etapa 3: Adicionar uma seção e uma tabela
+Agora vamos adicionar uma seção ao nosso documento PDF e criar uma tabela dentro dessa seção.
 
 ```csharp
 Page page = pdf.Pages.Add();
@@ -33,7 +33,7 @@ page.Paragraphs.Add(table1);
 
 Também especificamos uma margem superior de 300 pontos para a tabela. Você pode ajustar esse valor de acordo com suas necessidades.
 
-## Etapa 4: configuração da tabela
+## Etapa 4: Configuração da tabela
 Nesta etapa, configuramos as propriedades da tabela, como larguras e bordas das colunas.
 
 ```csharp
@@ -42,7 +42,7 @@ table1.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1F);
 table1.Border = new BorderInfo(BorderSide.All, 1F);
 ```
 
-Aqui definimos a largura das colunas da tabela e das bordas das células. Você pode ajustar esses valores de acordo com suas preferências.
+Aqui definimos a largura das colunas da tabela e as bordas das células. Você pode ajustar esses valores de acordo com suas preferências.
 
 ## Etapa 5: adicionar linhas e células à tabela
 Agora criaremos linhas e células na tabela usando um loop.
@@ -70,9 +70,9 @@ if ((PageHeight - TotalObjectsHeight) <= 10)
      Console.WriteLine("The height of the page - Height of objects < 10, the table will be truncated");
 ```
 
-Calculamos a altura da página e a altura total dos objetos levando em consideração as margens. Se a diferença for 10 ou menos, a tabela excede as margens da página.
+Calculamos a altura da página e a altura total dos objetos levando em conta as margens. Se a diferença for 10 ou menos, a tabela excede as margens da página.
 
-## Passo 7: Salvando o documento PDF
+## Etapa 7: Salvando o documento PDF
 Por fim, salvamos o documento PDF com os resultados.
 
 ```csharp
@@ -82,7 +82,7 @@ pdf.Save(dataDir);
 Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
 ```
 
-Certifique-se de especificar o diretório de documentos correto. O arquivo PDF resultante será salvo com as quebras de tabela determinadas.
+Certifique-se de especificar o diretório correto do documento. O arquivo PDF resultante será salvo com as quebras de tabela determinadas.
 
 ### Exemplo de código-fonte para Determinar quebra de tabela usando Aspose.PDF para .NET
 
@@ -92,18 +92,18 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Instanciar uma classe PDF de objeto
 Document pdf = new Document();
-// Adicione a seção à coleção de seções de documentos PDF
+// Adicionar a seção à coleção de seções do documento PDF
 Aspose.Pdf.Page page = pdf.Pages.Add();
 // Instanciar um objeto de tabela
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
 table1.Margin.Top = 300;
 // Adicione a tabela na coleção de parágrafos da seção desejada
 page.Paragraphs.Add(table1);
-// Definir com larguras de coluna da tabela
+// Conjunto com larguras de coluna da tabela
 table1.ColumnWidths = "100 100 100";
-// Definir borda de célula padrão usando o objeto BorderInfo
+// Definir borda de célula padrão usando objeto BorderInfo
 table1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-// Defina a borda da tabela usando outro objeto BorderInfo personalizado
+// Definir borda da tabela usando outro objeto BorderInfo personalizado
 table1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
 // Crie o objeto MarginInfo e defina suas margens esquerda, inferior, direita e superior
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
@@ -111,10 +111,10 @@ margin.Top = 5f;
 margin.Left = 5f;
 margin.Right = 5f;
 margin.Bottom = 5f;
-// Defina o preenchimento padrão da célula para o objeto MarginInfo
+// Defina o preenchimento de célula padrão para o objeto MarginInfo
 table1.DefaultCellPadding = margin;
-// Se você aumentar o contador para 17, a mesa irá quebrar
-// Porque não pode mais ser acomodado nesta página
+// Se você aumentar o contador para 17, a mesa quebrará
+// Porque não pode ser acomodado mais nesta página
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
 	// Crie linhas na tabela e depois células nas linhas
@@ -126,7 +126,7 @@ for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 // Obtenha as informações de altura da página
 float PageHeight = (float)pdf.PageInfo.Height;
 // Obtenha as informações de altura total da margem superior e inferior da página,
-// Margem superior da mesa e altura da mesa.
+// Margem do tampo da mesa e altura da mesa.
 float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
 
 // Exibir altura da página, altura da tabela, margem superior da tabela e topo da página
@@ -135,29 +135,29 @@ Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\
 
 // Verifique se deduzimos a soma da margem superior da página + margem inferior da página
 // + Margem superior da tabela e altura da tabela a partir da altura da página e seu menor
-// Mais que 10 (uma linha média pode ser maior que 10)
+// Mais de 10 (uma linha média pode ser maior que 10)
 if ((PageHeight - TotalObjectsHeight) <= 10)
 	// Se o valor for menor que 10, exiba a mensagem.
-	// que mostra que outra linha não pode ser colocada e se adicionarmos novas
-	// Linha, a mesa vai quebrar. Depende do valor da altura da linha.
+	// que mostra que outra linha não pode ser colocada e se adicionarmos uma nova
+	// Linha, a tabela irá quebrar. Depende do valor da altura da linha.
 	Console.WriteLine("Page Height - Objects Height < 10, so table will break");
 
 
 dataDir = dataDir + "DetermineTableBreak_out.pdf";
-// Salve o documento PDF
+// Salvar o documento pdf
 pdf.Save(dataDir);
 
 Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusão
-Neste tutorial, aprendemos como determinar quebras de tabela em um documento PDF usando Aspose.PDF for .NET. Você pode usar este guia passo a passo para verificar se uma tabela excede as margens da página em seus próprios projetos C#.
+Neste tutorial, aprendemos como determinar quebras de tabela em um documento PDF usando Aspose.PDF para .NET. Você pode usar este guia passo a passo para verificar se uma tabela excede as margens da página em seus próprios projetos C#.
 
 ### Perguntas frequentes para determinar quebra de tabela em arquivo PDF
 
 #### P: Qual é o propósito de determinar quebras de tabela em um documento PDF?
 
-R: O objetivo de determinar quebras de tabela em um documento PDF é verificar se a tabela ultrapassa as margens da página. Isso garante que o conteúdo da tabela seja exibido corretamente no espaço de página disponível. Ao detectar quebras de tabela, você pode lidar com o excesso de conteúdo e ajustar o layout da tabela de acordo.
+R: O propósito de determinar quebras de tabela em um documento PDF é verificar se a tabela excede as margens da página. Isso garante que o conteúdo da tabela seja exibido corretamente dentro do espaço de página disponível. Ao detectar quebras de tabela, você pode lidar com o estouro de conteúdo e ajustar o layout da tabela adequadamente.
 
 #### P: Como posso ajustar a margem superior da tabela?
 
@@ -165,12 +165,12 @@ R: O objetivo de determinar quebras de tabela em um documento PDF é verificar s
 
 #### P: Posso personalizar a aparência da tabela, como cores das células e tamanho da fonte?
 
-R: Sim, você pode personalizar a aparência da tabela e de suas células usando várias propriedades e métodos fornecidos pelo Aspose.PDF for .NET. Por exemplo, você pode alterar as cores de fundo das células, o tamanho da fonte, a família da fonte, o alinhamento do texto e muito mais. Consulte a documentação oficial para obter mais informações sobre como personalizar a aparência da tabela.
+R: Sim, você pode personalizar a aparência da tabela e suas células usando várias propriedades e métodos fornecidos pelo Aspose.PDF para .NET. Por exemplo, você pode alterar as cores de fundo da célula, tamanho da fonte, família da fonte, alinhamento do texto e muito mais. Consulte a documentação oficial para obter mais informações sobre como personalizar a aparência da tabela.
 
 #### P: O que acontece se a tabela exceder as margens da página?
 
-R: Se a tabela exceder as margens da página, isso poderá resultar em truncamento ou sobreposição de conteúdo, tornando o documento PDF menos legível e organizado. Ao detectar quebras de tabela e lidar com o estouro, você pode garantir que o conteúdo permaneça exibido corretamente na área de página disponível.
+R: Se a tabela exceder as margens da página, isso pode resultar em truncamento ou sobreposição de conteúdo, tornando o documento PDF menos legível e organizado. Ao detectar quebras de tabela e lidar com o estouro, você pode garantir que o conteúdo permaneça exibido corretamente dentro da área de página disponível.
 
-#### P: Posso determinar quebras de tabela para diversas tabelas no mesmo documento PDF?
+#### P: Posso determinar quebras de tabela para várias tabelas no mesmo documento PDF?
 
-R: Sim, você pode determinar quebras de tabela para múltiplas tabelas no mesmo documento PDF. Basta repetir as etapas para cada tabela que deseja analisar e ajustar o layout da tabela conforme necessário para evitar excesso de conteúdo.
+R: Sim, você pode determinar quebras de tabela para várias tabelas no mesmo documento PDF. Basta repetir as etapas para cada tabela que você deseja analisar e ajustar o layout da tabela conforme necessário para evitar estouro de conteúdo.

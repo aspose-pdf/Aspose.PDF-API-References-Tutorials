@@ -1,109 +1,109 @@
 ---
 title: DOM ve PDF Üzerine Yazma Kullanarak HTML Ekleme
 linktitle: DOM Kullanarak HTML Ekleme ve Üzerine Yazma
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET'te DOM ve PDF üzerine yazma kullanarak HTML içeriğini nasıl ekleyeceğinizi öğrenin.
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET'te DOM ve PDF üzerine yazma kullanarak HTML içeriğinin nasıl ekleneceğini öğrenin.
 type: docs
 weight: 50
 url: /tr/net/programming-with-text/add-html-using-dom-and-overwrite/
 ---
-Bu eğitim, Aspose.PDF for .NET'te DOM (Belge Nesne Modeli) kullanarak HTML içeriği ekleme sürecinde size rehberlik edecektir. Ayrıca HTML içeriğinin stillerinin üzerine nasıl yazılacağını da öğreneceksiniz. Sağlanan C# kaynak kodu gerekli adımları gösterir.
+Bu eğitim, Aspose.PDF for .NET'te DOM (Document Object Model) kullanarak HTML içeriği ekleme sürecinde size rehberlik edecektir. Ayrıca, HTML içeriği için stilleri nasıl geçersiz kılacağınızı öğreneceksiniz. Sağlanan C# kaynak kodu gerekli adımları göstermektedir.
 
 ## Gereksinimler
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Makinenizde kurulu Visual Studio veya başka herhangi bir C# derleyicisi.
-- Aspose.PDF for .NET kitaplığı. Resmi Aspose web sitesinden indirebilir veya yüklemek için NuGet gibi bir paket yöneticisi kullanabilirsiniz.
+- Bilgisayarınızda Visual Studio veya herhangi bir C# derleyicisi yüklü olmalıdır.
+- Aspose.PDF for .NET kütüphanesi. Resmi Aspose web sitesinden indirebilir veya NuGet gibi bir paket yöneticisi kullanarak kurabilirsiniz.
 
-## 1. Adım: Projeyi ayarlayın
+## Adım 1: Projeyi kurun
 1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
-2. Aspose.PDF for .NET kitaplığına bir referans ekleyin.
+2. .NET için Aspose.PDF kitaplığına bir referans ekleyin.
 
-## 2. Adım: Gerekli ad alanlarını içe aktarın
-HTML içeriğini eklemek istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki kullanma yönergelerini ekleyin:
+## Adım 2: Gerekli ad alanlarını içe aktarın
+HTML içeriğini eklemek istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki using yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## 3. Adım: Belge dizinini ve çıktı dosyası yolunu ayarlayın
- Kodda yazan satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belgelerinizin saklandığı dizinin yolu ile birlikte.
+## Adım 3: Belge dizinini ve çıktı dosyası yolunu ayarlayın
+ Kodda şu satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` Belgelerinizin saklandığı dizinin yolunu içeren.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 4. Adım: Yeni bir Belge nesnesi oluşturun
- Yeni bir örnek oluştur`Document` Aşağıdaki kod satırını ekleyerek nesne:
+## Adım 4: Yeni bir Belge nesnesi oluşturun
+ Yeni bir örnek oluştur`Document` Aşağıdaki kod satırını ekleyerek nesneyi oluşturun:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## 5. Adım: Belgeye bir sayfa ekleyin
- kullanarak belgeye yeni bir sayfa ekleyin.`Add` yöntemi`Pages`Toplamak. Verilen kodda yeni sayfa değişkene atanır.`page`.
+## Adım 5: Belgeye bir sayfa ekleyin
+ Belgeye yeni bir sayfa eklemek için şunu kullanın:`Add` yöntemi`Pages`koleksiyon. Sağlanan kodda, yeni sayfa değişkene atanır`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## 6. Adım: HTML içeriğiyle bir HtmlFragment oluşturun
- Bir örneği oluşturun`HtmlFragment` nesneyi oluşturun ve istenen HTML içeriğini sağlayın. Sağlanan kodda HTML içeriği değişkene atanır`title`. HTML içeriğini gerektiği gibi değiştirebilirsiniz.
+## Adım 6: HTML içeriğiyle bir HtmlFragment oluşturun
+ Bir örnek oluştur`HtmlFragment` nesne ve istenen HTML içeriğini sağlayın. Sağlanan kodda, HTML içeriği değişkene atanır`title`HTML içeriğini ihtiyacınıza göre değiştirebilirsiniz.
 
 ```csharp
 HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Table contains text</i></b></p>");
 ```
 
-## 7. Adım: HTML içeriğinin stillerinin üzerine yazın
- HTML içeriğinin stillerinin üzerine yazmak için`TextState` özellikleri`HtmlFragment` nesne. Verilen kodda yazı tipi ailesi "Arial" olarak değiştirilmiş ve yazı tipi boyutu 20 olarak ayarlanmıştır.
+## Adım 7: HTML içeriği için stilleri üzerine yaz
+ HTML içeriğinin stillerini geçersiz kılmak için şunu değiştirebilirsiniz:`TextState` özellikleri`HtmlFragment` nesne. Sağlanan kodda, yazı tipi ailesi "Arial" olarak değiştirildi ve yazı tipi boyutu 20 olarak ayarlandı.
 
 ```csharp
 title. TextState = new TextState("Arial");
 title.TextState.FontSize = 20;
 ```
 
-## Adım 8: Kenar boşluğu bilgilerini ayarlayın
-Gerekirse HTML parçasının alt ve üst kenar boşluklarını ayarlayın. Verilen kodda alt kenar boşluğu 10, üst kenar boşluğu 400 olarak ayarlanmıştır.
+## Adım 8: Marj bilgilerini ayarlayın
+Gerekirse HTML parçasının alt ve üst kenar boşluklarını ayarlayın. Sağlanan kodda, alt kenar boşluğu 10 olarak ve üst kenar boşluğu 400 olarak ayarlanmıştır.
 
 ```csharp
 title. Margin. Bottom = 10;
 title. Margin. Top = 400;
 ```
 
-## 9. Adım: HtmlFragment'i sayfaya ekleyin
- Ekle`HtmlFragment` sayfanın paragraf koleksiyonuna itiraz edin.
+## Adım 9: HtmlFragment'ı sayfaya ekleyin
+ Ekle`HtmlFragment` sayfanın paragraf koleksiyonuna nesne.
 
 ```csharp
 page.Paragraphs.Add(title);
 ```
 
 ## Adım 10: PDF belgesini kaydedin
- PDF belgesini kullanarak kaydedin.`Save` yöntemi`Document` nesne. 3. Adımda ayarladığınız çıktı dosyası yolunu belirtin.
+ PDF belgesini kullanarak kaydedin`Save` yöntemi`Document` nesne. Adım 3'te ayarladığınız çıktı dosyası yolunu belirtin.
 
 ```csharp
 dataDir = dataDir + "AddHTMLUsingDOMAndOverwrite_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Aspose.PDF for .NET Kullanarak HTML Ekleme ve Üzerine Yazma için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak DOMA ve Üzerine Yazma kullanarak HTML Ekleme için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Belge nesnesini somutlaştır
+// Belge nesnesini örnekle
 Document doc = new Document();
-// PDF dosyasının sayfalar koleksiyonuna bir sayfa ekleyin
+// PDF dosyasının sayfa sayfa koleksiyonuna bir sayfa ekle
 Page page = doc.Pages.Add();
-// HTML içerikleriyle HtmlFragment örneğini oluşturma
+// HtmlFragment'ı HTML içerikleriyle örneklendirin
 HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Table contains text</i></b></p>");
-//'Verdana'daki yazı tipi ailesi 'Arial' olarak sıfırlanacak
+//'Verdana' font ailesi 'Arial' olarak sıfırlanacak
 title.TextState = new TextState("Arial");
 title.TextState.FontSize = 20;
 // Alt kenar boşluğu bilgilerini ayarla
 title.Margin.Bottom = 10;
-// Üst kenar boşluğu bilgilerini ayarla
+// Üst kenar boşluğu bilgilerini ayarlayın
 title.Margin.Top = 400;
-// Sayfanın paragraf koleksiyonuna HTML Parçası ekleyin
+// Sayfanın paragraf koleksiyonuna HTML Parçası Ekle
 page.Paragraphs.Add(title);
 // PDF dosyasını kaydet
 dataDir = dataDir + "AddHTMLUsingDOMAndOverwrite_out.pdf";
@@ -112,30 +112,30 @@ doc.Save(dataDir);
 ```
 
 ## Çözüm
-Aspose.PDF for .NET'te DOM kullanarak HTML içeriğini başarıyla eklediniz ve HTML içeriğinin stillerinin üzerine yazdınız. Ortaya çıkan PDF dosyası artık belirtilen çıktı dosyası yolunda bulunabilir.
+Aspose.PDF for .NET'te DOM kullanarak HTML içeriğini başarıyla eklediniz ve HTML içeriği için stilleri üzerine yazdınız. Ortaya çıkan PDF dosyası artık belirtilen çıktı dosyası yolunda bulunabilir.
 
-### SSS'ler
+### SSS
 
 #### S: Bu eğitimin odak noktası nedir?
 
-C: Bu eğitim, Aspose.PDF for .NET'teki Belge Nesne Modeli'ni (DOM) kullanarak bir PDF belgesine HTML içeriği ekleme sürecinde size yol göstermek için tasarlanmıştır. Ek olarak, HTML içeriğinin stillerinin üzerine nasıl yazılacağını da öğreneceksiniz, böylece görünümünü özelleştirebileceksiniz. Öğretici, gerekli adımları göstermek için C# kaynak kodu parçacıkları sağlar.
+A: Bu eğitim, .NET için Aspose.PDF'de Belge Nesne Modeli'ni (DOM) kullanarak bir PDF belgesine HTML içeriği ekleme sürecinde size yol göstermek için tasarlanmıştır. Ayrıca, HTML içeriği için stilleri nasıl geçersiz kılacağınızı öğreneceksiniz, böylece görünümünü özelleştirebilirsiniz. Eğitim, gerekli adımları göstermek için C# kaynak kodu parçacıkları sağlar.
 
 #### S: Bu eğitim için hangi ad alanlarını içe aktarmam gerekiyor?
 
-C: HTML içeriği eklemeyi planladığınız kod dosyasında, dosyanın başına aşağıdaki ad alanlarını içe aktarın:
+A: HTML içeriği eklemeyi planladığınız kod dosyasında, dosyanın başına aşağıdaki ad alanlarını içe aktarın:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-#### S: Belge dizinini ve çıktı dosyası yolunu nasıl belirlerim?
+#### S: Belge dizinini ve çıktı dosyası yolunu nasıl belirtirim?
 
- A: Kodda satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
+ A: Kodda şu satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininize giden gerçek yol ile.
 
-#### S: Bir Belge nesnesini nasıl oluşturabilirim?
+#### S: Belge nesnesi nasıl oluştururum?
 
- C: 4. Adımda yeni bir örnek oluşturacaksınız.`Document` aşağıdaki kod satırını kullanarak nesne:
+ A: 4. Adımda yeni bir örnek oluşturacaksınız`Document` Aşağıdaki kod satırını kullanarak nesneyi oluşturun:
 
 ```csharp
 Document doc = new Document();
@@ -143,30 +143,30 @@ Document doc = new Document();
 
 #### S: Belgeye nasıl sayfa eklerim?
 
- C: 5. Adımda belgeye yeni bir sayfa ekleyeceksiniz.`Add` yöntemi`Pages` Toplamak:
+ A: 5. Adımda, belgeye yeni bir sayfa ekleyeceksiniz`Add` yöntemi`Pages` koleksiyon:
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-#### S: DOM'u kullanarak HTML içeriğini nasıl ayarlayabilirim?
+#### S: DOM kullanarak HTML içeriğini nasıl ayarlayabilirim?
 
- C: 6. Adımda bir`HtmlFragment` nesnesini seçin ve ona istediğiniz HTML içeriğini atayın. HTML içeriği değişkene atanır`title`:
+ A: 6. Adımda bir`HtmlFragment` nesneyi seçin ve istediğiniz HTML içeriğini ona atayın. HTML içeriği değişkene atanır`title`:
 
 ```csharp
 HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Table contains text</i></b></p>");
 ```
 
-#### S: HTML içeriğinin stillerinin üzerine nasıl yazabilirim?
+#### S: HTML içeriğinin stillerini nasıl geçersiz kılabilirim?
 
- C: 7. Adımda, HTML içeriğini değiştirerek stillerin üzerine yazacaksınız.`TextState` özellikleri`HtmlFragment` nesne. Örneğin yazı tipi ailesini "Arial" olarak değiştirebilir ve yazı tipi boyutunu 20 olarak ayarlayabilirsiniz:
+ A: 7. Adımda, HTML içeriğinin stillerini değiştirerek üzerine yazacaksınız.`TextState` özellikleri`HtmlFragment` nesne. Örneğin, yazı tipi ailesini "Arial" olarak değiştirebilir ve yazı tipi boyutunu 20 olarak ayarlayabilirsiniz:
 
 ```csharp
 title.TextState = new TextState("Arial");
 title.TextState.FontSize = 20;
 ```
 
-#### S: HTML içeriğinin kenar boşluğunu ayarlayabilir miyim?
+#### S: HTML içeriğinin kenar boşluklarını ayarlayabilir miyim?
 
 C: Evet, 8. Adımda HTML parçasının alt ve üst kenar boşluklarını gerektiği gibi ayarlayabilirsiniz:
 
@@ -175,23 +175,23 @@ title.Margin.Bottom = 10;
 title.Margin.Top = 400;
 ```
 
-#### S: HtmlFragment'i PDF belgesine nasıl eklerim?
+#### S: HtmlFragment'ı PDF belgesine nasıl eklerim?
 
- C: 9. Adımda şunu ekleyeceksiniz:`HtmlFragment` nesne (`title`) sayfanın paragraf koleksiyonuna:
+ A: 9. Adımda şunları ekleyeceksiniz:`HtmlFragment` nesne (`title`) sayfanın paragraf koleksiyonuna:
 
 ```csharp
 page.Paragraphs.Add(title);
 ```
 
-#### S: Ortaya çıkan PDF belgesini nasıl kaydederim?
+#### S: Ortaya çıkan PDF belgesini nasıl kaydedebilirim?
 
- C: HTML içeriğini ekledikten ve stillerini özelleştirdikten sonra`Save` yöntemi`Document` PDF belgesini kaydetmek için nesne:
+ A: HTML içeriğini ekledikten ve stillerini özelleştirdikten sonra,`Save` yöntemi`Document` PDF belgesini kaydetmek için nesne:
 
 ```csharp
 dataDir = dataDir + "AddHTMLUsingDOMAndOverwrite_out.pdf";
 doc.Save(dataDir);
 ```
 
-#### S: Bu eğitimden çıkarılacak önemli sonuç nedir?
+#### S: Bu eğitimden çıkarılacak en önemli ders nedir?
 
-C: Bu eğitimi takip ederek Aspose.PDF for .NET'te Belge Nesne Modeli (DOM) kullanarak HTML içeriğini nasıl dahil edeceğinizi başarıyla öğrendiniz. Ek olarak, ortaya çıkan PDF belgesindeki HTML içeriğinin görünümünü uyarlamak için stillerin üzerine yazma yeteneğini de kazandınız.
+A: Bu öğreticiyi takip ederek, .NET için Aspose.PDF'de Belge Nesne Modeli'ni (DOM) kullanarak HTML içeriğini nasıl dahil edeceğinizi başarıyla öğrendiniz. Ayrıca, ortaya çıkan PDF belgesindeki HTML içeriğinin görünümünü özelleştirmek için stilleri geçersiz kılma yeteneği kazandınız.

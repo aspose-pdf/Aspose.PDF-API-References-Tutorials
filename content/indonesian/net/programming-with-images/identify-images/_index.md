@@ -1,17 +1,17 @@
 ---
 title: Identifikasi Gambar Dalam File PDF
 linktitle: Identifikasi Gambar Dalam File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Identifikasi gambar dalam file PDF dengan mudah dan tentukan jenis warnanya dengan Aspose.PDF untuk .NET.
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Mengidentifikasi gambar dalam berkas PDF dengan mudah dan menentukan jenis warnanya dengan Aspose.PDF untuk .NET.
 type: docs
 weight: 150
 url: /id/net/programming-with-images/identify-images/
 ---
-Panduan ini akan membawa Anda langkah demi langkah cara mengidentifikasi gambar dalam file PDF menggunakan Aspose.PDF untuk .NET. Pastikan Anda telah menyiapkan lingkungan Anda dan ikuti langkah-langkah di bawah ini:
+Panduan ini akan memandu Anda langkah demi langkah cara mengidentifikasi gambar dalam file PDF menggunakan Aspose.PDF untuk .NET. Pastikan Anda telah menyiapkan lingkungan Anda dan ikuti langkah-langkah di bawah ini:
 
 ## Langkah 1: Tentukan direktori dokumen
 
- Pastikan untuk mengatur direktori dokumen yang benar. Mengganti`"YOUR DOCUMENT DIRECTORY"` dalam kode dengan jalur ke direktori tempat dokumen PDF Anda berada.
+ Pastikan untuk mengatur direktori dokumen yang benar. Ganti`"YOUR DOCUMENT DIRECTORY"` dalam kode dengan jalur ke direktori tempat dokumen PDF Anda berada.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Langkah 2: Inisialisasi penghitung
 
-Pada langkah ini, kita akan menginisialisasi counter untuk gambar skala abu-abu dan gambar RGB.
+Pada langkah ini, kita akan menginisialisasi penghitung untuk gambar skala abu-abu dan gambar RGB.
 
 ```csharp
 int grayscaled = 0; // Penghitung untuk gambar skala abu-abu
@@ -28,7 +28,7 @@ int rdg = 0; // Penghitung untuk gambar RGB
 
 ## Langkah 3: Buka dokumen PDF
 
-Pada langkah ini, kita akan membuka dokumen PDF menggunakan`Document` kelas Aspose.PDF. Menggunakan`Document` konstruktor dan meneruskan jalur ke dokumen PDF.
+ Pada langkah ini, kita akan membuka dokumen PDF menggunakan`Document` kelas Aspose.PDF. Gunakan`Document` konstruktor dan meneruskan jalur ke dokumen PDF.
 
 ```csharp
 using (Document document = new Document(dataDir + "ExtractImages.pdf"))
@@ -46,7 +46,7 @@ foreach(Page page in document.Pages)
 
 ## Langkah 5: Ambil penempatan gambar
 
- Pada langkah ini, kita akan menggunakan`ImagePlacementAbsorber` untuk mengambil penempatan gambar di setiap halaman.
+ Pada langkah ini, kita akan menggunakan`ImagePlacementAbsorber` untuk mengambil penempatan gambar pada setiap halaman.
 
 ```csharp
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
@@ -55,7 +55,7 @@ page. Accept(abs);
 
 ## Langkah 6: Hitung gambar dan identifikasi jenis warnanya
 
-Pada langkah ini, kita akan menghitung jumlah gambar pada setiap halaman dan mengidentifikasi jenis warnanya (skala abu-abu atau RGB).
+Pada langkah ini, kami akan menghitung jumlah gambar pada setiap halaman dan mengidentifikasi jenis warnanya (skala abu-abu atau RGB).
 
 ```csharp
 Console.WriteLine("Total Images = {0} on page number {1}", abs.ImagePlacements.Count, page.Number);
@@ -78,7 +78,7 @@ foreach(ImagePlacement ia in abs.ImagePlacements)
 }
 ```
 
-### Contoh kode sumber untuk Identifikasi Gambar menggunakan Aspose.PDF untuk .NET 
+### Contoh kode sumber untuk Mengidentifikasi Gambar menggunakan Aspose.PDF untuk .NET 
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -123,38 +123,38 @@ Selamat! Anda telah berhasil mengidentifikasi gambar dalam PDF menggunakan Aspos
 
 ### FAQ untuk mengidentifikasi gambar dalam file PDF
 
-#### Q: Apa tujuan mengidentifikasi gambar dalam dokumen PDF?
+#### T: Apa tujuan mengidentifikasi gambar dalam dokumen PDF?
 
-J: Mengidentifikasi gambar dalam dokumen PDF membantu pengguna menganalisis dan mengkategorikan gambar berdasarkan jenis warnanya (skala abu-abu atau RGB). Informasi ini dapat berguna untuk berbagai tujuan, seperti pemrosesan gambar, analisis data, atau pengendalian kualitas.
+A: Mengidentifikasi gambar dalam dokumen PDF membantu pengguna menganalisis dan mengkategorikan gambar berdasarkan jenis warnanya (skala abu-abu atau RGB). Informasi ini dapat berguna untuk berbagai keperluan, seperti pemrosesan gambar, analisis data, atau kontrol kualitas.
 
 #### T: Bagaimana Aspose.PDF untuk .NET membantu mengidentifikasi gambar dalam dokumen PDF?
 
- J: Aspose.PDF untuk .NET menyediakan proses mudah untuk membuka dokumen PDF, mengulangi halaman-halamannya, dan mengidentifikasi gambar menggunakan`ImagePlacementAbsorber` kelas.
+ A: Aspose.PDF untuk .NET menyediakan proses mudah untuk membuka dokumen PDF, menelusuri halaman-halamannya, dan mengidentifikasi gambar menggunakan`ImagePlacementAbsorber` kelas.
 
-#### T: Apa pentingnya membedakan gambar skala abu-abu dan RGB?
+#### T: Apa pentingnya membedakan antara gambar skala abu-abu dan RGB?
 
-J: Membedakan antara gambar skala abu-abu dan RGB membantu dalam memahami komposisi warna gambar dalam dokumen PDF. Gambar skala abu-abu hanya berisi gradasi abu-abu, sedangkan gambar RGB terdiri dari saluran warna merah, hijau, dan biru.
+A: Membedakan antara gambar skala abu-abu dan RGB membantu dalam memahami komposisi warna gambar dalam dokumen PDF. Gambar skala abu-abu hanya berisi nuansa abu-abu, sedangkan gambar RGB terdiri dari saluran warna merah, hijau, dan biru.
 
-#### T: Bagaimana cara menghitung dan mengidentifikasi gambar skala abu-abu dan RGB menggunakan Aspose.PDF untuk .NET?
+#### T: Bagaimana gambar skala abu-abu dan RGB dihitung dan diidentifikasi menggunakan Aspose.PDF untuk .NET?
 
- J: Itu`ImagePlacementAbsorber` kelas digunakan untuk mengambil penempatan gambar pada setiap halaman. Itu`GetColorType()` Metode ini kemudian diterapkan pada setiap penempatan gambar untuk menentukan apakah itu skala abu-abu atau RGB.
+ Sebuah:`ImagePlacementAbsorber` kelas digunakan untuk mengambil penempatan gambar pada setiap halaman.`GetColorType()` Metode ini kemudian diterapkan pada setiap penempatan gambar untuk menentukan apakah gambar tersebut skala abu-abu atau RGB.
 
 #### T: Dapatkah saya mengubah kode untuk melakukan tindakan tambahan berdasarkan jenis warna gambar?
 
-J: Ya, Anda dapat menyesuaikan kode untuk melakukan tindakan tertentu berdasarkan jenis warna gambar. Misalnya, Anda dapat mengekstrak gambar skala abu-abu untuk diproses lebih lanjut atau menerapkan teknik pengoptimalan berbeda berdasarkan jenis warna.
+A: Ya, Anda dapat menyesuaikan kode untuk melakukan tindakan tertentu berdasarkan jenis warna gambar. Misalnya, Anda dapat mengekstrak gambar skala abu-abu untuk diproses lebih lanjut atau menerapkan berbagai teknik pengoptimalan berdasarkan jenis warna.
 
 ####  T: Bagaimana caranya`ImagePlacementAbsorber` class contribute to identifying images?
 
- J: Itu`ImagePlacementAbsorber` kelas memindai halaman untuk penempatan gambar, memungkinkan Anda mengambil informasi tentang gambar, termasuk jenis warnanya.
+ Sebuah:`ImagePlacementAbsorber` kelas memindai halaman untuk penempatan gambar, memungkinkan Anda mengambil informasi tentang gambar, termasuk jenis warnanya.
 
-#### T: Apakah jumlah gambar yang teridentifikasi bersifat kumulatif di seluruh halaman dokumen PDF?
+#### T: Apakah jumlah gambar yang diidentifikasi bersifat kumulatif di semua halaman dokumen PDF?
 
-J: Ya, jumlah gambar bersifat kumulatif di semua halaman. Kode tersebut mengulangi setiap halaman dokumen PDF dan menghitung gambar di setiap halaman.
+A: Ya, jumlah gambar bersifat kumulatif di semua halaman. Kode tersebut akan berulang di setiap halaman dokumen PDF dan menghitung gambar di setiap halaman.
 
 #### T: Dapatkah saya menggunakan identifikasi gambar ini untuk mengotomatiskan tugas terkait gambar dalam dokumen PDF?
 
-J: Ya, mengidentifikasi gambar dalam dokumen PDF dapat berguna untuk mengotomatisasi tugas seperti ekstraksi gambar, konversi, atau manipulasi berdasarkan jenis warna.
+A: Ya, mengidentifikasi gambar dalam dokumen PDF dapat berguna untuk mengotomatisasi tugas-tugas seperti ekstraksi gambar, konversi, atau manipulasi berdasarkan jenis warna.
 
-#### T: Apa manfaat proses identifikasi gambar ini terhadap pemrosesan dokumen PDF?
+#### T: Bagaimana proses identifikasi gambar ini menguntungkan pemrosesan dokumen PDF?
 
-J: Identifikasi gambar memberikan wawasan berharga mengenai komposisi warna gambar, memungkinkan pemahaman dan pemrosesan dokumen PDF yang berisi gambar dengan lebih baik.
+A: Identifikasi gambar memberikan wawasan berharga mengenai komposisi warna gambar, memungkinkan pemahaman dan pemrosesan dokumen PDF yang berisi gambar dengan lebih baik.

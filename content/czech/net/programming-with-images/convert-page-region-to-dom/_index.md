@@ -11,7 +11,7 @@ Tato příručka vás krok za krokem provede převodem konkrétní oblasti strá
 
 ## Krok 1: Definujte adresář dokumentů
 
- Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři, kde se nachází váš dokument PDF.
+Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři, kde se nachází váš dokument PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 2: Otevřete dokument
 
- tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
+ V tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
 
 ```csharp
 Document document = new Document(dataDir + "AddImage.pdf");
@@ -35,7 +35,7 @@ Aspose.Pdf.Rectangle pageRect = new Aspose.Pdf.Rectangle(20, 671, 693, 1125);
 
 ## Krok 4: Definujte oblast oříznutí stránky
 
- Použijte`CropBox` vlastnictvím`Page` objekt pro nastavení ořezového pole stránky na požadovaný obdélník oblasti.
+ Použijte`CropBox` majetek z`Page` objekt pro nastavení ořezového pole stránky na požadovaný obdélník oblasti.
 
 ```csharp
 document.Pages[1].CropBox = pageRect;
@@ -52,7 +52,7 @@ document.Save(ms);
 
 ## Krok 6: Otevřete oříznutý dokument PDF a převeďte jej na obrázek
 
- Otevřete oříznutý dokument PDF pomocí`Document` třídy a převést ji na obrázek. Použijeme rozlišení 300 dpi.
+ Otevřete oříznutý dokument PDF pomocí`Document`třídy a převést ji na obrázek. Použijeme rozlišení 300 dpi.
 
 ```csharp
 document = newDocument(ms);
@@ -62,7 +62,7 @@ PngDevice pngDevice = new PngDevice(resolution);
 
 ## Krok 7: Převeďte konkrétní stránku na obrázek
 
- Převeďte konkrétní stránku na obrázek pomocí`Process` metoda`pngDevice`objekt. Zadejte cestu výstupu obrazu.
+ Převeďte konkrétní stránku na obrázek pomocí`Process` metoda`pngDevice` objekt. Zadejte cestu výstupu obrazu.
 
 ```csharp
 dataDir = dataDir + "ConvertPageRegionToDOM_out.png";
@@ -89,7 +89,7 @@ Resolution resolution = new Resolution(300);
 // Vytvořte zařízení PNG se zadanými atributy
 PngDevice pngDevice = new PngDevice(resolution);
 dataDir = dataDir + "ConvertPageRegionToDOM_out.png";
-//Převeďte konkrétní stránku a uložte obrázek do streamu
+// Převeďte konkrétní stránku a uložte obrázek do streamu
 pngDevice.Process(document.Pages[1], dataDir);
 ms.Close();
 Console.WriteLine("\nPage region converted to DOM successfully.\nFile saved at " + dataDir); 
@@ -119,11 +119,11 @@ Odpověď: Určení adresáře dokumentu zajistí, že dokument PDF a výsledný
 
 ####  Otázka: Jaký je účel`Rectangle` class in the page region conversion process?
 
- A:`Rectangle` class definuje souřadnice konkrétní oblasti na stránce PDF, kterou chcete převést na DOM. Pomáhá přesně specifikovat oblast plodiny.
+ A:`Rectangle`class definuje souřadnice konkrétní oblasti na stránce PDF, kterou chcete převést na DOM. Pomáhá přesně specifikovat oblast plodiny.
 
 #### Otázka: Jak je oblast oříznutí stránky nastavena na požadovanou oblast v procesu převodu?
 
- A:`CropBox` vlastnictvím`Page` objekt se používá k nastavení oblasti oříznutí stránky na definovaný obdélník představující konkrétní oblast.
+ A:`CropBox` majetek z`Page` objekt se používá k nastavení oblasti oříznutí stránky na definovaný obdélník představující konkrétní oblast.
 
 #### Otázka: Jak se oříznutý dokument PDF uloží do proudu během procesu převodu?
 

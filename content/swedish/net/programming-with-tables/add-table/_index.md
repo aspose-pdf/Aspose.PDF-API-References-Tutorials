@@ -82,7 +82,7 @@ Console.WriteLine("\nText added successfully to an existing pdf file.\nFile save
 
 Slutligen lägger vi till tabellobjektet på första sidan i PDF-dokumentet med hjälp av Paragraphs-samlingen på motsvarande sida.
 
-### Exempel på källkod för tilläggstabell med Aspose.PDF för .NET
+### Exempel på källkod för add-tabell med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.

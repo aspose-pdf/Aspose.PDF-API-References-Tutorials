@@ -1,7 +1,7 @@
 ---
 title: Mengekstrak Gambar
 linktitle: Mengekstrak Gambar
-second_title: Aspose.PDF untuk Referensi .NET API
+second_title: Referensi API Aspose.PDF untuk .NET
 description: Ekstrak gambar dengan mudah dari dokumen PDF dengan Aspose.PDF untuk .NET.
 type: docs
 weight: 70
@@ -9,9 +9,9 @@ url: /id/net/programming-with-security-and-signatures/extracting-image/
 ---
 Mengekstrak gambar dari dokumen PDF dapat berguna dalam banyak kasus. Dengan Aspose.PDF untuk .NET, Anda dapat mengekstrak gambar dengan mudah menggunakan kode sumber berikut:
 
-## Langkah 1: Impor perpustakaan yang diperlukan
+## Langkah 1: Impor pustaka yang diperlukan
 
-Sebelum memulai, Anda perlu mengimpor perpustakaan yang diperlukan untuk proyek C# Anda. Berikut adalah arahan impor yang diperlukan:
+Sebelum memulai, Anda perlu mengimpor pustaka yang diperlukan untuk proyek C# Anda. Berikut ini adalah perintah impor yang diperlukan:
 
 ```csharp
 using Aspose.Pdf;
@@ -21,7 +21,7 @@ using System.Drawing.Imaging;
 
 ## Langkah 2: Tetapkan jalur ke folder dokumen
 
- Pada langkah ini, Anda perlu menentukan jalur ke folder yang berisi file PDF tempat Anda ingin mengekstrak gambarnya. Mengganti`"YOUR DOCUMENTS DIRECTORY"`dalam kode berikut dengan jalur sebenarnya ke folder dokumen Anda:
+ Pada langkah ini, Anda perlu menentukan jalur ke folder yang berisi file PDF tempat Anda ingin mengekstrak gambar. Ganti`"YOUR DOCUMENTS DIRECTORY"` dalam kode berikut dengan jalur sebenarnya ke folder dokumen Anda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -56,9 +56,9 @@ image.Save(outFile, ImageFormat.Jpeg);
 }
 ```
 
-Dalam contoh ini, kita mengulang setiap bidang formulir di dokumen PDF. Jika bidang tanda tangan ditemukan, kami mengekstrak gambar terkait dan menyimpannya ke file JPEG.
+Dalam contoh ini, kami melakukan pengulangan pada setiap kolom formulir dalam dokumen PDF. Jika kolom tanda tangan ditemukan, kami mengekstrak gambar terkait dan menyimpannya ke dalam file JPEG.
 
-### Contoh kode sumber untuk Mengekstraksi Gambar menggunakan Aspose.PDF untuk .NET 
+### Contoh kode sumber untuk Mengekstrak Gambar menggunakan Aspose.PDF untuk .NET 
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -93,19 +93,19 @@ Selamat! Sekarang Anda memiliki panduan langkah demi langkah untuk mengekstrak g
 Pastikan untuk memeriksa dokumentasi resmi Aspose.PDF untuk informasi lebih lanjut tentang ekstraksi gambar tingkat lanjut dan fitur manipulasi dokumen PDF.
 
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
 #### T: Apakah Aspose.PDF untuk .NET cocok untuk pemula?
 
-J: Meskipun pemahaman tentang pemrograman C# sangat membantu, tutorial kami dirancang agar ramah bagi pemula, memandu Anda melalui setiap langkah.
+A: Meskipun sedikit pemahaman mengenai pemrograman C# akan sangat membantu, tutorial kami dirancang agar mudah dipahami bagi pemula dan memandu Anda di setiap langkah.
 
-#### T: Bisakah saya mengekstrak banyak gambar sekaligus?
+#### T: Dapatkah saya mengekstrak beberapa gambar sekaligus?
 
-J: Tentu saja! Dengan menerapkan loop dan mengadaptasi kode yang disediakan, Anda dapat mengekstrak banyak gambar dari satu dokumen PDF.
+A: Tentu saja! Dengan menerapkan loop dan mengadaptasi kode yang diberikan, Anda dapat mengekstrak beberapa gambar dari satu dokumen PDF.
 
-#### T: Apakah Aspose.PDF untuk .NET merupakan satu-satunya solusi untuk ekstraksi gambar?
+#### T: Apakah Aspose.PDF untuk .NET satu-satunya solusi untuk ekstraksi gambar?
 
-J: Meskipun ada alat lain yang tersedia, Aspose.PDF untuk .NET terkenal dengan efisiensi dan fiturnya yang lengkap.
+J: Meskipun ada alat lain yang tersedia, Aspose.PDF untuk .NET terkenal karena efisiensinya dan fiturnya yang lengkap.
 
 #### T: Dapatkah saya menggunakan gambar yang diekstrak untuk tujuan komersial?
 
@@ -113,4 +113,4 @@ A: Ya, setelah diekstraksi, gambar tersebut menjadi milik Anda untuk digunakan s
 
 #### T: Di mana saya dapat menemukan lebih banyak sumber daya tentang manipulasi PDF dengan Aspose.PDF?
 
-J: Kunjungi dokumentasi resmi kami untuk mendapatkan banyak sumber daya dan wawasan tentang manipulasi PDF tingkat lanjut dengan Aspose.PDF untuk .NET.
+A: Kunjungi dokumentasi resmi kami untuk mendapatkan banyak sumber daya dan wawasan tentang manipulasi PDF tingkat lanjut dengan Aspose.PDF untuk .NET.

@@ -17,7 +17,7 @@ V dnešní digitální době se práce se soubory PDF stala nedílnou součást�
 Než se ponoříme do kódu, ujistěte se, že máte vše, co potřebujete:
 
 - Vývojové prostředí Java: Ujistěte se, že máte v systému nainstalovanou Javu.
--  Aspose.PDF pro Javu: Knihovnu si můžete stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro Javu: Knihovnu si můžete stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Nastavení vašeho projektu
 
@@ -85,4 +85,4 @@ Ano, Aspose.PDF je k dispozici pro více programovacích jazyků, díky čemuž 
 
 ### Jak mohu získat další pomoc s Aspose.PDF pro Java?
 
- Dokumentaci Aspose.PDF pro Java můžete navštívit na adrese[tady](https://reference.aspose.com/pdf/java/) pro podrobné informace a příklady.
+ Dokumentaci Aspose.PDF pro Java můžete navštívit na adrese[zde](https://reference.aspose.com/pdf/java/) pro podrobné informace a příklady.

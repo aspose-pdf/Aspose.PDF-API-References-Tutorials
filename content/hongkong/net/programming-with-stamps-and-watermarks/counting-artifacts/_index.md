@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-stamps-and-watermarks/counting-artifacts/
 
 ## 第 2 步：載入 PDF 文檔
 
-第一步是將現有的 PDF 文件載入到您的專案中。就是這樣：
+第一步是將現有的 PDF 文件載入到您的專案中。方法如下：
 
 ```csharp
 //文檔目錄的路徑。
@@ -32,7 +32,7 @@ Document pdfDocument = new Document(dataDir + "watermark.pdf");
 
 ## 第 3 步：計算工件數量
 
-現在您已經載入了 PDF 文檔，您可以計算文檔特定頁面上的「浮水印」類型工件。就是這樣：
+現在您已經載入了 PDF 文檔，您可以計算文檔特定頁面上的「浮水印」類型工件。方法如下：
 
 ```csharp
 //初始化計數器
@@ -77,7 +77,7 @@ Console.WriteLine("Page contains " + count + " watermarks");
 
 ### PDF 檔案中工件計數的常見問題解答
 
-#### Q：PDF 文件中的工件是什麼？為什麼需要對它們進行計數？
+#### Q：PDF 文件中的工件是什麼？
 
 答：PDF 文件中的工件是不直接影響文件內容或外觀但出於特定目的（例如可訪問性或元資料）而包含的元素。計算工件數量可以幫助您識別和分析 PDF 中的特定元素，例如浮水印、註釋或隱藏內容。
 

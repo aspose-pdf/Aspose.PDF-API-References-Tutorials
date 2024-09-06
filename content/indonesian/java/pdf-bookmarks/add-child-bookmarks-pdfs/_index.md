@@ -1,30 +1,30 @@
 ---
 title: Tambahkan Bookmark Anak ke PDF
 linktitle: Tambahkan Bookmark Anak ke PDF
-second_title: Aspose.PDF API Pemrosesan PDF Java
-description: Pelajari cara menyempurnakan dokumen PDF dengan bookmark anak menggunakan Aspose.PDF untuk Java. Panduan langkah demi langkah dengan contoh kode untuk meningkatkan navigasi dan pengorganisasian.
+second_title: API Pemrosesan PDF Java Aspose.PDF
+description: Pelajari cara menyempurnakan dokumen PDF dengan penanda anak menggunakan Aspose.PDF untuk Java. Panduan langkah demi langkah dengan contoh kode untuk navigasi dan pengaturan yang lebih baik.
 type: docs
 weight: 11
 url: /id/java/pdf-bookmarks/add-child-bookmarks-pdfs/
 ---
 
-## Pengantar Menambahkan Bookmark Anak ke PDF
+## Pengantar untuk Menambahkan Bookmark Anak ke PDF
 
-Pada artikel ini, kita akan mempelajari cara menambahkan bookmark anak ke dokumen PDF menggunakan Aspose.PDF untuk Java. Bookmark anak adalah cara mudah untuk mengatur dan menavigasi konten dokumen PDF, sehingga memudahkan pengguna menemukan bagian atau topik tertentu dalam dokumen.
+Dalam artikel ini, kita akan membahas cara menambahkan penanda anak ke dokumen PDF menggunakan Aspose.PDF untuk Java. Penanda anak merupakan cara yang mudah untuk mengatur dan menavigasi konten dokumen PDF, sehingga memudahkan pengguna menemukan bagian atau topik tertentu dalam dokumen.
 
 ## Prasyarat
 
-Sebelum kita mendalami penerapannya, pastikan Anda memiliki prasyarat berikut:
+Sebelum kita mulai menerapkannya, pastikan Anda telah memenuhi prasyarat berikut:
 
-- Lingkungan pengembangan Java diinstal pada sistem Anda.
--  Aspose.PDF untuk perpustakaan Java. Anda dapat mengunduhnya dari[Di Sini](https://releases.aspose.com/pdf/java/).
+- Lingkungan pengembangan Java terinstal pada sistem Anda.
+-  Aspose.PDF untuk pustaka Java. Anda dapat mengunduhnya dari[Di Sini](https://releases.aspose.com/pdf/java/).
 
 ## Menyiapkan Lingkungan
 
-1. Unduh perpustakaan Aspose.PDF untuk Java dari tautan yang disediakan.
+1. Unduh pustaka Aspose.PDF untuk Java dari tautan yang disediakan.
 2. Tambahkan perpustakaan ke proyek Java Anda.
 
-Sekarang, mari kita mulai dengan membuat dokumen PDF baru dan menambahkan bookmark anak ke dalamnya langkah demi langkah.
+Sekarang, mari kita mulai dengan membuat dokumen PDF baru dan menambahkan penanda anak ke dalamnya selangkah demi selangkah.
 
 ## Membuat Dokumen PDF Baru
 
@@ -43,10 +43,10 @@ Dalam contoh ini, kami telah membuat dokumen PDF baru dan menambahkan dua halama
 
 ## Menambahkan Bookmark Induk
 
-Bookmark induk berfungsi sebagai bagian atau kategori utama dalam dokumen PDF Anda. Mari buat beberapa bookmark induk:
+Penanda induk berfungsi sebagai bagian atau kategori utama dalam dokumen PDF Anda. Mari buat beberapa penanda induk:
 
 ```java
-// Buat bookmark orang tua
+// Buat penanda induk
 OutlineItemCollection outline = pdfDocument.getOutlines();
 OutlineItemCollection parentBookmark = new OutlineItemCollection(outline);
 parentBookmark.setTitle("Parent Bookmark 1");
@@ -57,14 +57,14 @@ parentBookmark.setTitle("Parent Bookmark 2");
 outline.add(parentBookmark);
 ```
 
-Kami telah menambahkan dua bookmark induk, "Bookmark Induk 1" dan "Bookmark Induk 2".
+Kami telah menambahkan dua penanda induk, "Penanda Induk 1" dan "Penanda Induk 2."
 
 ## Menambahkan Bookmark Anak
 
-Sekarang saatnya menambahkan bookmark anak ke bookmark induk yang kita buat sebelumnya. Bookmark anak mewakili topik atau subbagian tertentu dalam setiap bookmark induk. Inilah cara Anda melakukannya:
+Sekarang, saatnya menambahkan bookmark anak ke bookmark induk yang telah kita buat sebelumnya. Bookmark anak mewakili topik atau sub-bagian tertentu dalam setiap bookmark induk. Berikut cara melakukannya:
 
 ```java
-// Tambahkan bookmark anak ke Bookmark Induk 1
+// Tambahkan penanda anak ke Penanda Induk 1
 OutlineItemCollection childBookmark = new OutlineItemCollection(outline);
 childBookmark.setTitle("Child Bookmark 1.1");
 parentBookmark.add(childBookmark);
@@ -73,53 +73,53 @@ childBookmark = new OutlineItemCollection(outline);
 childBookmark.setTitle("Child Bookmark 1.2");
 parentBookmark.add(childBookmark);
 
-//Tambahkan bookmark anak ke Bookmark Induk 2
+//Tambahkan penanda anak ke Penanda Induk 2
 childBookmark = new OutlineItemCollection(outline);
 childBookmark.setTitle("Child Bookmark 2.1");
 parentBookmark.add(childBookmark);
 ```
 
-Kami telah menambahkan bookmark anak ke "Bookmark Induk 1" dan "Bookmark Induk 2".
+Kami telah menambahkan penanda anak ke "Penanda Induk 1" dan "Penanda Induk 2".
 
 ## Menyesuaikan Tampilan Bookmark
 
 Anda dapat menyesuaikan tampilan bookmark dengan mengubah teks dan gayanya. Selain itu, Anda dapat menambahkan ikon ke bookmark untuk representasi visual yang lebih baik. Berikut ini contoh cara melakukannya:
 
 ```java
-// Sesuaikan tampilan penanda
+// Sesuaikan tampilan penanda buku
 parentBookmark.setItalic(true);
 childBookmark.setForegroundColor(Color.getGreen());
 childBookmark.setIcon(OutlineItemCollection.getItalicIcon());
 ```
 
-Dalam contoh ini, kami telah membuat penanda induk menjadi miring, mengubah warna teks penanda anak menjadi hijau, dan menambahkan ikon miring ke penanda anak.
+Dalam contoh ini, kami membuat penanda induk miring, mengubah warna teks penanda anak menjadi hijau, dan menambahkan ikon miring ke penanda anak.
 
-## Menangani Acara
+## Penanganan Peristiwa
 
-Bookmark juga dapat memiliki tindakan yang terkait dengannya. Misalnya, Anda dapat menambahkan tindakan yang terpicu saat pengguna mengklik bookmark. Inilah cara Anda menangani peristiwa klik bookmark:
+Bookmark juga dapat memiliki tindakan yang terkait dengannya. Misalnya, Anda dapat menambahkan tindakan yang dipicu saat pengguna mengklik bookmark. Berikut cara menangani peristiwa klik bookmark:
 
 ```java
-// Tambahkan tindakan ke bookmark
+// Tambahkan tindakan ke penanda
 GoToAction action = new GoToAction(pdfDocument.getPages().get_Item(1));
 childBookmark.setAction(action);
 ```
 
-Dalam kode ini, kami telah menambahkan tindakan "GoTo" ke bookmark anak yang akan membawa pengguna ke halaman kedua PDF ketika diklik.
+Dalam kode ini, kami telah menambahkan tindakan "GoTo" ke penanda anak yang akan membawa pengguna ke halaman kedua PDF saat diklik.
 
 ## Menyimpan PDF
 
-Setelah Anda menambahkan semua bookmark yang diperlukan dan menyesuaikan tampilan serta tindakannya, Anda dapat menyimpan dokumen PDF yang dimodifikasi:
+Setelah Anda menambahkan semua penanda yang diperlukan dan menyesuaikan tampilan dan tindakannya, Anda dapat menyimpan dokumen PDF yang dimodifikasi:
 
 ```java
 // Simpan dokumen PDF
 pdfDocument.save("output.pdf");
 ```
 
-Dokumen PDF Anda dengan penanda anak sekarang sudah siap.
+Dokumen PDF Anda dengan penanda buku anak sekarang sudah siap.
 
 ## Kode Sumber Lengkap
 
-Berikut source code lengkap untuk menambahkan child bookmark pada dokumen PDF menggunakan Aspose.PDF for Java:
+Berikut kode sumber lengkap untuk menambahkan penanda anak ke dokumen PDF menggunakan Aspose.PDF untuk Java:
 
 ```java
 // Inisialisasi dokumen PDF
@@ -129,7 +129,7 @@ Document pdfDocument = new Document();
 pdfDocument.getPages().add();
 pdfDocument.getPages().add();
 
-// Buat bookmark orang tua
+// Buat penanda induk
 OutlineItemCollection outline = pdfDocument.getOutlines();
 OutlineItemCollection parentBookmark = new OutlineItemCollection(outline);
 parentBookmark.setTitle("Parent Bookmark 1");
@@ -139,7 +139,7 @@ parentBookmark = new OutlineItemCollection(outline);
 parentBookmark.setTitle("Parent Bookmark 2");
 outline.add(parentBookmark);
 
-// Tambahkan bookmark anak ke Bookmark Induk 1
+// Tambahkan penanda anak ke Penanda Induk 1
 OutlineItemCollection childBookmark = new OutlineItemCollection(outline);
 childBookmark.setTitle("Child Bookmark 1.1");
 parentBookmark.add(childBookmark);
@@ -148,17 +148,17 @@ childBookmark = new OutlineItemCollection(outline);
 childBookmark.setTitle("Child Bookmark 1.2");
 parentBookmark.add(childBookmark);
 
-//Tambahkan bookmark anak ke Bookmark Induk 2
+//Tambahkan penanda anak ke Penanda Induk 2
 childBookmark = new OutlineItemCollection(outline);
 childBookmark.setTitle("Child Bookmark 2.1");
 parentBookmark.add(childBookmark);
 
-// Sesuaikan tampilan penanda
+// Sesuaikan tampilan penanda buku
 parentBookmark.setItalic(true);
 childBookmark.setForegroundColor(Color.getGreen());
 childBookmark.setIcon(OutlineItemCollection.getItalicIcon());
 
-// Tambahkan tindakan ke bookmark
+// Tambahkan tindakan ke penanda
 GoToAction action = new GoToAction(pdfDocument.getPages().get_Item(1));
 childBookmark.setAction(action);
 
@@ -168,25 +168,25 @@ pdfDocument.save("output.pdf");
 
 ## Kesimpulan
 
-Menambahkan bookmark anak ke PDF menggunakan Aspose.PDF untuk Java adalah fitur canggih yang meningkatkan navigasi dan pengorganisasian dokumen Anda. Dengan mengikuti langkah-langkah yang dijelaskan dalam artikel ini, Anda dapat membuat PDF terstruktur dengan baik dengan bookmark induk dan anak, menyesuaikan tampilannya, dan bahkan menambahkan tindakan untuk meningkatkan pengalaman pengguna.
+Menambahkan bookmark anak ke PDF menggunakan Aspose.PDF untuk Java merupakan fitur hebat yang meningkatkan navigasi dan pengaturan dokumen Anda. Dengan mengikuti langkah-langkah yang diuraikan dalam artikel ini, Anda dapat membuat PDF terstruktur dengan baik dengan bookmark induk dan anak, menyesuaikan tampilannya, dan bahkan menambahkan tindakan untuk meningkatkan pengalaman pengguna.
 
-## FAQ
+## Pertanyaan yang Sering Diajukan
 
 ### Bagaimana cara mengunduh Aspose.PDF untuk Java?
 
  Anda dapat mengunduh Aspose.PDF untuk Java dari situs web[Di Sini](https://releases.aspose.com/pdf/java/).
 
-### Apakah bookmark anak didukung di semua penampil PDF?
+### Apakah penanda anak didukung di semua penampil PDF?
 
 Ya, penanda anak didukung di sebagian besar penampil PDF modern dan memberikan pengalaman pengguna yang lebih baik untuk menavigasi dokumen PDF.
 
 ### Bisakah saya menyesuaikan tampilan bookmark lebih lanjut?
 
-Ya, Anda dapat menyesuaikan tampilan penanda dengan menyesuaikan gaya teks, warna, dan ikon agar sesuai dengan desain dokumen Anda.
+Ya, Anda dapat menyesuaikan tampilan bookmark dengan menyesuaikan gaya teks, warna, dan ikon agar sesuai dengan desain dokumen Anda.
 
-### Tindakan apa lagi yang dapat saya tambahkan ke bookmark?
+### Tindakan apa lagi yang dapat saya tambahkan ke penanda?
 
-Selain tindakan "GoTo", Anda dapat menambahkan tindakan seperti tindakan "URI" untuk membuka tautan web atau tindakan "JavaScript" untuk menjalankan skrip khusus saat bookmark diklik.
+Selain tindakan "GoTo", Anda dapat menambahkan tindakan seperti tindakan "URI" untuk membuka tautan web atau tindakan "JavaScript" untuk mengeksekusi skrip khusus saat bookmark diklik.
 
 ### Apakah Aspose.PDF untuk Java cocok untuk proyek komersial?
 

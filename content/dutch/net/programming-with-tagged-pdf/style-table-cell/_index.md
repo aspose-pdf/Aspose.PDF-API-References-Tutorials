@@ -1,19 +1,19 @@
 ---
-title: Stijltabelcel
-linktitle: Stijltabelcel
+title: Stijl tabelcel
+linktitle: Stijl tabelcel
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u tabelcellen kunt opmaken met Aspose.PDF voor .NET. Stapsgewijze handleiding voor het maken en aanpassen van tabellen.
+description: Leer hoe u tabelcellen kunt stylen met Aspose.PDF voor .NET. Stapsgewijze handleiding voor het maken en aanpassen van tabellen.
 type: docs
 weight: 160
 url: /nl/net/programming-with-tagged-pdf/style-table-cell/
 ---
-Welkom bij deze gedetailleerde tutorial over het opmaken van tabelcellen met Aspose.PDF voor .NET. In deze handleiding leggen we elke stap van de meegeleverde C#-broncode gedetailleerd uit, zodat u begrijpt hoe u tabelcellen kunt opmaken. Zorg ervoor dat u Aspose.PDF voor .NET hebt geïnstalleerd en uw ontwikkelomgeving hebt ingesteld voordat u begint.
+Welkom bij deze gedetailleerde tutorial over het formatteren van tabelcellen met Aspose.PDF voor .NET. In deze gids leggen we gedetailleerd elke stap uit van de meegeleverde C#-broncode om u te helpen begrijpen hoe u tabelcellen kunt stylen. Zorg ervoor dat u Aspose.PDF voor .NET hebt geïnstalleerd en uw ontwikkelomgeving hebt ingesteld voordat u begint.
 
 ## Stap 1: De omgeving instellen
 
-Voordat u begint, moet u ervoor zorgen dat u uw ontwikkelomgeving hebt geconfigureerd voor het gebruik van Aspose.PDF voor .NET. Dit omvat het installeren van de Aspose.PDF-bibliotheek en het configureren van uw project om ernaar te verwijzen.
+Voordat u begint, moet u ervoor zorgen dat u uw ontwikkelomgeving hebt geconfigureerd om Aspose.PDF voor .NET te gebruiken. Dit omvat het installeren van de Aspose.PDF-bibliotheek en het configureren van uw project om ernaar te verwijzen.
 
-## Stap 2: Een document aanmaken
+## Stap 2: Een document maken
 
 In deze stap maken we een nieuw documentobject Aspose.PDF.
 
@@ -30,23 +30,23 @@ taggedContent.SetLanguage("fr-FR");
 
 We hebben een nieuw document gemaakt en de documenttitel en taal ingesteld.
 
-## Stap 3: Het wortelstructuurelement verkrijgen
+## Stap 3: Het verkrijgen van het wortelstructuurelement
 
-In deze stap krijgen we het hoofdstructuurelement voor ons document.
+In deze stap verkrijgen we het rootstructuurelement voor ons document.
 
 ```csharp
-//Verkrijg het hoofdstructuurelement
+//Verkrijg het wortelstructuurelement
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We hebben het rootstructuurelement dat zal dienen als container voor de array-elementen.
+We hebben het rootstructuurelement dat als container voor de array-elementen zal dienen.
 
 ## Stap 4: Het array-structuurelement maken
 
 Laten we nu een nieuw tabelstructuurelement voor ons document maken.
 
 ```csharp
-// Maak het arraystructuurelement
+// Maak het array-structuurelement
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
@@ -54,11 +54,11 @@ TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
 ```
 
-We hebben een nieuw arraystructuurelement gemaakt en dit aan het hoofdstructuurelement toegevoegd. We hebben ook de tabelkoptekst-, hoofdtekst- en voettekstelementen gemaakt.
+We hebben een nieuw array-structuurelement gemaakt en toegevoegd aan het root-structuurelement. We hebben ook de tabelheader-, body- en footer-elementen gemaakt.
 
 ## Stap 5: Tabelkoppen toevoegen
 
-In deze stap voegen we de tabelkoppen aan onze tabel toe.
+In deze stap voegen we de tabelkoppen toe aan onze tabel.
 
 ```csharp
 // Aantal rijen en kolommen in de tabel
@@ -84,11 +84,11 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-We hebben een koptekstrij voor onze tabel gemaakt en koptekstcellen toegevoegd met opmaakeigenschappen zoals achtergrondkleur, randen, marges en uitlijning.
+We hebben een koptekstrij voor onze tabel gemaakt en koptekstcellen toegevoegd met opmaakkenmerken zoals achtergrondkleur, randen, marges en uitlijning.
 
-## Stap 6: De rijen van de tabeltekst toevoegen
+## Stap 6: De tabelbodyrijen toevoegen
 
-Laten we nu de rijen van de tabeltekst aan onze tabel toevoegen.
+Laten we nu de tabelbodyrijen aan onze tabel toevoegen.
 ```csharp
 for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 {
@@ -137,7 +137,7 @@ for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 }
 ```
 
-We hebben rijen aan de hoofdtekst van de tabel toegevoegd met behulp van lussen om elke tabelcel te doorlopen. We stellen opmaakeigenschappen voor elke cel in, zoals achtergrondkleur, randen, marges, tekstuitlijning, enz.
+We hebben rijen aan de body van de tabel toegevoegd met behulp van lussen om over elke tabelcel te itereren. We hebben opmaakeigenschappen voor elke cel ingesteld, zoals achtergrondkleur, randen, marges, tekstuitlijning, etc.
 
 ## Stap 7: De voettekst toevoegen
 
@@ -160,29 +160,29 @@ We hebben een voettekst voor onze tabel gemaakt en voettekstcellen met tekst toe
 
 ## Stap 8: Het getagde PDF-document opslaan
 
-Nu we ons document met de opgemaakte tabel hebben gemaakt, slaan we het op als een getagd PDF-document.
+Nu we ons document met de opgemaakte tabel hebben gemaakt, slaan we het op als een PDF-document met tags.
 
 ```csharp
 // Sla het getagde PDF-document op
 document.Save(dataDir + "StyleTableCell.pdf");
 ```
 
-We hebben het getagde PDF-document in de opgegeven map opgeslagen.
+We hebben het getagde PDF-document opgeslagen in de opgegeven directory.
 
-## Stap 9: Validatie van PDF/UA-naleving
+## Stap 9: PDF/UA-nalevingsvalidatie
 
 Vervolgens valideren we de PDF/UA-conformiteit van ons document.
 
 ```csharp
-// Conformiteitscontrole van PDF/UA
+// PDF/UA-nalevingscontrole
 document = new Document(dataDir + "StyleTableCell.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableCell.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-We hebben het getagde PDF-document geüpload en de PDF/UA-compatibiliteit ervan gevalideerd door een XML-rapport te genereren.
+We hebben het getagde PDF-document geüpload en de PDF/UA-conformiteit ervan gevalideerd door een XML-rapport te genereren.
 
-### Voorbeeldbroncode voor Style Table Cell met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Style Table Cell met behulp van Aspose.PDF voor .NET 
 ```csharp
 
 // Het pad naar de documentenmap.
@@ -194,10 +194,10 @@ ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table cell style");
 taggedContent.SetLanguage("en-US");
 
-// Haal het hoofdstructuurelement op
+// Krijg wortelstructuur element
 StructureElement rootElement = taggedContent.RootElement;
 
-// Tabelstructuurelement maken
+// Maak een tabelstructuurelement
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
@@ -267,10 +267,10 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 	tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
 
-// Bewaar het getagde pdf-document
+// Gelabeld PDF-document opslaan
 document.Save(dataDir + "StyleTableCell.pdf");
 
-// Conformiteit met PDF/UA controleren
+// Controleren van PDF/UA-compatibiliteit
 document = new Document(dataDir + "StyleTableCell.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableCell.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
@@ -279,46 +279,46 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ## Conclusie
 
-In deze zelfstudie hebben we geleerd hoe u tabelcellen kunt opmaken met Aspose.PDF voor .NET. We hebben gezien hoe u een document kunt maken, een tabel met kopteksten, hoofdrijen en een voettekst kunt toevoegen en de celstijlen kunt aanpassen. Ten slotte hebben we het getagde PDF-document opgeslagen en de PDF/UA-compatibiliteit ervan gevalideerd. U kunt nu Aspose.PDF voor .NET gebruiken om tabellen in uw .NET-toepassingen te maken en op te maken.
+In deze tutorial hebben we geleerd hoe u tabelcellen kunt stylen met Aspose.PDF voor .NET. We hebben gezien hoe u een document kunt maken, een tabel met headers, body-rijen en een footer kunt toevoegen en celstijlen kunt aanpassen. Tot slot hebben we het getagde PDF-document opgeslagen en de PDF/UA-compliance gevalideerd. U kunt nu Aspose.PDF voor .NET gebruiken om tabellen te maken en te stylen in uw .NET-toepassingen.
 
 ### Veelgestelde vragen
 
-#### Vraag: Wat is het doel van deze tutorial over het opmaken van tabelcellen met Aspose.PDF voor .NET?
+#### V: Wat is het doel van deze tutorial over het opmaken van tabelcellen met Aspose.PDF voor .NET?
 
-A: Deze tutorial is bedoeld om een uitgebreide handleiding te bieden over hoe u tabelcellen in een PDF-document kunt opmaken met behulp van de Aspose.PDF-bibliotheek voor .NET. Het bevat stapsgewijze instructies en C#-broncodevoorbeelden om u te helpen de opmaak van tabelcellen te begrijpen en te implementeren.
+A: Deze tutorial is bedoeld om een uitgebreide gids te bieden over hoe u tabelcellen in een PDF-document kunt stylen met behulp van de Aspose.PDF-bibliotheek voor .NET. Het bevat stapsgewijze instructies en C#-broncodevoorbeelden om u te helpen tabelcelopmaak te begrijpen en te implementeren.
 
-#### Vraag: Wat zijn de vereisten voor het volgen van deze tutorial?
+#### V: Wat zijn de vereisten om deze tutorial te kunnen volgen?
 
 A: Voordat u begint, moet u ervoor zorgen dat u Aspose.PDF voor .NET hebt geïnstalleerd en uw ontwikkelomgeving hebt ingesteld. Dit omvat het configureren van uw project om te verwijzen naar de Aspose.PDF-bibliotheek.
 
-#### Vraag: Hoe maak ik een nieuw PDF-document met Aspose.PDF voor .NET?
+#### V: Hoe maak ik een nieuw PDF-document met Aspose.PDF voor .NET?
 
-A: Om een nieuw PDF-document te maken, moet u een`Document` object uit de Aspose.PDF-bibliotheek. De meegeleverde C#-broncode laat zien hoe u een document maakt en de titel en taal ervan instelt.
+A: Om een nieuw PDF-document te maken, moet u een`Document` object uit de Aspose.PDF-bibliotheek. De meegeleverde C#-broncode laat zien hoe u een document maakt en de titel en taal instelt.
 
-#### Vraag: Wat is de betekenis van het hoofdstructuurelement in een PDF-document?
+#### V: Wat is de betekenis van het rootstructuurelement in een PDF-document?
 
-A: Het hoofdstructuurelement dient als container voor andere structuurelementen, waardoor de inhoud van het PDF-document wordt georganiseerd en gecategoriseerd. Het speelt een cruciale rol bij het vaststellen van de logische structuur van het document.
+A: Het root-structuurelement dient als een container voor andere structuurelementen, en helpt bij het organiseren en categoriseren van de inhoud van het PDF-document. Het speelt een cruciale rol bij het vaststellen van de logische structuur van het document.
 
-#### Vraag: Hoe kan ik een tabelstructuurelement maken en het uiterlijk ervan aanpassen met Aspose.PDF voor .NET?
+#### V: Hoe kan ik een tabelstructuurelement maken en het uiterlijk ervan aanpassen met Aspose.PDF voor .NET?
 
  A: U kunt een tabelstructuurelement maken met behulp van de`CreateTableElement()` methode. De meegeleverde broncode laat zien hoe u het uiterlijk van de tabel kunt aanpassen, inclusief de koptekst, hoofdtekst en voettekst, door eigenschappen in te stellen zoals achtergrondkleur, randen, marges en uitlijning.
 
-#### Vraag: Kan ik meerdere rijen en kolommen aan de tabeltekst toevoegen en de opmaak ervan aanpassen?
+#### V: Kan ik meerdere rijen en kolommen aan de tabel toevoegen en de opmaak ervan aanpassen?
 
-A: Ja, de tutorial laat zien hoe u meerdere rijen en kolommen aan de tabel kunt toevoegen met behulp van lussen. Het biedt ook voorbeelden van het aanpassen van celopmaak, zoals achtergrondkleur, randen, tekstuitlijning, lettertypestijl en meer.
+A: Ja, de tutorial laat zien hoe u meerdere rijen en kolommen aan de tabelbody kunt toevoegen met behulp van loops. Het geeft ook voorbeelden van het aanpassen van celopmaak, zoals achtergrondkleur, randen, tekstuitlijning, lettertypestijl en meer.
 
-#### Vraag: Wat is het doel van het valideren van PDF/UA-compliance en hoe kan ik deze validatie uitvoeren?
+#### V: Wat is het doel van het valideren van PDF/UA-naleving en hoe kan ik deze validatie uitvoeren?
 
- A: Het valideren van PDF/UA-compliance zorgt ervoor dat het PDF-document voldoet aan de toegankelijkheidsnormen, waardoor het toegankelijker wordt voor gebruikers met een beperking. De tutorial laat zien hoe u de PDF/UA-conformiteit kunt valideren met behulp van de`Validate()` methode en genereer een XML-rapport.
+ A: Validatie van PDF/UA-conformiteit zorgt ervoor dat het PDF-document voldoet aan de toegankelijkheidsnormen, waardoor het toegankelijker wordt voor gebruikers met een beperking. De tutorial laat zien hoe u PDF/UA-conformiteit kunt valideren met behulp van de`Validate()` methode en genereer een XML-rapport.
 
-#### Vraag: Hoe kan ik deze concepten toepassen op mijn eigen .NET-applicaties?
+#### V: Hoe kan ik deze concepten toepassen op mijn eigen .NET-toepassingen?
 
-A: U kunt de meegeleverde C#-broncodevoorbeelden gebruiken als richtlijn voor het implementeren van tabelcelopmaak in uw eigen .NET-toepassingen. Pas de code indien nodig aan uw vereisten aan en integreer deze in uw projecten.
+A: U kunt de meegeleverde C# broncodevoorbeelden gebruiken als leidraad voor het implementeren van tabelcelopmaak in uw eigen .NET-toepassingen. Pas de code naar wens aan om aan uw vereisten te voldoen en integreer deze in uw projecten.
 
-#### Vraag: Zijn er aanbevolen best practices voor het opmaken van tabelcellen in PDF-documenten?
+#### V: Zijn er aanbevolen best practices voor het opmaken van tabelcellen in PDF-documenten?
 
-A: Houd bij het opmaken van tabelcellen rekening met de behoeften van uw publiek, inclusief toegankelijkheidsvereisten. Gebruik contrasterende kleuren, geschikte lettertypen en duidelijke celuitlijning om de leesbaarheid te verbeteren. Valideer bovendien de PDF/UA-compliance om ervoor te zorgen dat aan de toegankelijkheidsnormen wordt voldaan.
+A: Houd bij het stylen van tabelcellen rekening met de behoeften van uw publiek, inclusief toegankelijkheidsvereisten. Gebruik contrasterende kleuren, geschikte lettertypen en duidelijke celuitlijning om de leesbaarheid te verbeteren. Valideer daarnaast PDF/UA-naleving om ervoor te zorgen dat aan de toegankelijkheidsnormen wordt voldaan.
 
-#### Vraag: Welke andere functies van Aspose.PDF voor .NET kan ik verkennen voor manipulatie van PDF-documenten?
+#### V: Welke andere functies van Aspose.PDF voor .NET kan ik gebruiken voor het bewerken van PDF-documenten?
 
-A: Aspose.PDF voor .NET biedt een breed scala aan functies voor het manipuleren van PDF-documenten, waaronder tekstextractie, het invoegen van afbeeldingen, beheer van formuliervelden, digitale handtekeningen en meer. Verken de officiële documentatie en bronnen voor meer informatie over aanvullende functionaliteiten.
+A: Aspose.PDF voor .NET biedt een breed scala aan functies voor PDF-documentmanipulatie, waaronder tekstextractie, afbeeldingsinvoeging, formulierveldbeheer, digitale handtekeningen en meer. Bekijk de officiële documentatie en bronnen om meer te weten te komen over aanvullende functionaliteiten.

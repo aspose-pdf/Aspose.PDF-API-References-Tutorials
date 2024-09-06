@@ -113,7 +113,7 @@ S: Kodexemplet visar hur man skapar ett PDF-dokument, definierar olika taggade t
 
 #### F: Hur kan jag anpassa de taggade textelementen, som rubriker och stycken?
 
- S: Du kan anpassa de taggade textelementen genom att använda lämpliga metoder, som t.ex`CreateHeaderElement` och`CreateParagraphElement` och ställa in egenskaper som`ActualText` för att ge meningsfull text och semantik.
+ S: Du kan anpassa de taggade textelementen genom att använda lämpliga metoder, som t.ex`CreateHeaderElement` och`CreateParagraphElement` , och ställa in egenskaper som`ActualText` för att ge meningsfull text och semantik.
 
 #### F: Kan jag lägga till andra taggade textelement, som listor eller länkar, med liknande tekniker?
 

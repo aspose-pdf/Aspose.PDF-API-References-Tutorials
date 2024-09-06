@@ -1,13 +1,13 @@
 ---
-title: Teks di Header File PDF
-linktitle: Teks di Header File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara menambahkan teks di header file PDF dengan Aspose.PDF untuk .NET.
+title: Teks Di Header File PDF
+linktitle: Teks Di Header File PDF
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara menambahkan teks di header berkas PDF dengan Aspose.PDF untuk .NET.
 type: docs
 weight: 190
 url: /id/net/programming-with-stamps-and-watermarks/text-in-header/
 ---
-Dalam tutorial ini, kita akan mempelajari cara menambahkan teks di header file PDF menggunakan Aspose.PDF untuk .NET. Ikuti langkah-langkah di bawah ini:
+Dalam tutorial ini, kita akan mempelajari cara menambahkan teks di header file PDF menggunakan Aspose.PDF untuk .NET. Ikuti langkah-langkah berikut:
 
 ## Langkah 1: Persiapan proyek
 
@@ -15,7 +15,7 @@ Pastikan Anda telah menginstal Aspose.PDF untuk .NET dan membuat proyek C#.
 
 ## Langkah 2: Mengimpor namespace
 
-Tambahkan namespace berikut ke file sumber C# Anda:
+Tambahkan namespace berikut ke berkas sumber C# Anda:
 
 ```csharp
 using Aspose.Pdf;
@@ -77,7 +77,7 @@ Document pdfDocument = new Document(dataDir+ "TextinHeader.pdf");
 // Buat tajuk
 TextStamp textStamp = new TextStamp("Header Text");
 
-// Mengatur properti stempel
+// Mengatur properti prangko
 textStamp.TopMargin = 10;
 textStamp.HorizontalAlignment = HorizontalAlignment.Center;
 textStamp.VerticalAlignment = VerticalAlignment.Top;
@@ -96,38 +96,38 @@ Console.WriteLine("\nText in header added successfully.\nFile saved at " + dataD
 
 ## Kesimpulan
 
-Selamat! Anda telah mempelajari cara menambahkan teks di header dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda sekarang dapat menyesuaikan header Anda dengan menambahkan teks tambahan ke dokumen PDF Anda.
+Selamat! Anda telah mempelajari cara menambahkan teks di header dokumen PDF menggunakan Aspose.PDF untuk .NET. Kini Anda dapat menyesuaikan header dengan menambahkan teks tambahan ke dokumen PDF Anda.
 
 ### FAQ untuk teks di header file PDF
 
-#### Q: Apa tujuan menambahkan teks pada header dokumen PDF?
+#### T: Apa tujuan menambahkan teks di header dokumen PDF?
 
-J: Menambahkan teks di header dokumen PDF memungkinkan Anda memasukkan informasi penting, seperti judul, nama dokumen, tanggal, atau teks lain yang ingin Anda tampilkan secara konsisten di bagian atas setiap halaman.
+A: Menambahkan teks di header dokumen PDF memungkinkan Anda menyertakan informasi penting, seperti judul, nama dokumen, tanggal, atau teks lainnya yang ingin Anda munculkan secara konsisten di bagian atas setiap halaman.
 
-#### T: Bagaimana kode sumber C# yang disediakan dapat menambahkan teks di header dokumen PDF?
+#### T: Bagaimana kode sumber C# yang disediakan mencapai penambahan teks di header dokumen PDF?
 
-J: Kode ini menunjukkan proses membuka dokumen PDF yang ada, membuat stempel teks dengan teks header yang diinginkan, menyesuaikan properti teks, menambahkan stempel teks ke semua halaman, dan terakhir menyimpan dokumen PDF yang diperbarui dengan teks header yang ditambahkan.
+A: Kode ini menunjukkan proses membuka dokumen PDF yang sudah ada, membuat stempel teks dengan teks tajuk yang diinginkan, menyesuaikan properti teks, menambahkan stempel teks ke semua halaman, dan akhirnya menyimpan dokumen PDF yang diperbarui dengan teks tajuk yang ditambahkan.
 
-#### T: Dapatkah saya mengubah tampilan teks header, seperti font, ukuran, warna, dan perataannya?
+#### T: Dapatkah saya mengubah tampilan teks header, seperti jenis huruf, ukuran, warna, dan perataannya?
 
- J: Ya, Anda dapat menyesuaikan tampilan teks header dengan memodifikasi properti`TextStamp`obyek. Contoh kode mencakup pengaturan properti seperti margin atas, perataan horizontal, dan perataan vertikal. Anda juga dapat menyesuaikan font, ukuran, warna, dan properti terkait teks lainnya.
+A: Ya, Anda dapat menyesuaikan tampilan teks header dengan mengubah properti`TextStamp` objek. Contoh kode tersebut mencakup pengaturan properti seperti margin atas, perataan horizontal, dan perataan vertikal. Anda juga dapat menyesuaikan font, ukuran, warna, dan properti terkait teks lainnya.
 
-#### T: Apakah mungkin untuk menambahkan teks berbeda ke header setiap halaman?
+#### T: Apakah mungkin untuk menambahkan teks yang berbeda pada setiap tajuk halaman?
 
- J: Ya, Anda dapat menambahkan teks berbeda ke header setiap halaman dengan membuatnya terpisah`TextStamp` objek dengan konten teks atau properti berbeda dan kemudian menambahkannya ke halaman tertentu sesuai kebutuhan.
+ A: Ya, Anda dapat menambahkan teks yang berbeda ke setiap header halaman dengan membuat header terpisah.`TextStamp` objek dengan konten teks atau properti yang berbeda, lalu menambahkannya ke halaman tertentu sesuai kebutuhan.
 
 #### T: Bagaimana cara memastikan teks header muncul secara konsisten di setiap halaman dokumen PDF?
 
-J: Dengan menggunakan loop yang mengulangi seluruh halaman dokumen PDF dan menambahkan stempel teks yang sama ke setiap halaman, Anda memastikan bahwa teks header muncul secara konsisten di setiap halaman.
+A: Dengan menggunakan loop yang berulang melalui semua halaman dokumen PDF dan menambahkan stempel teks yang sama ke setiap halaman, Anda memastikan bahwa teks header muncul secara konsisten di setiap halaman.
 
 #### T: Dapatkah saya menambahkan beberapa baris teks atau memformat teks header dengan jeda baris?
 
- J: Ya, Anda dapat menambahkan beberapa baris teks ke header dengan menyertakan jeda baris dalam string teks. Misalnya, Anda dapat menggunakan urutan escape`\n` untuk menunjukkan jeda baris dalam teks.
+ A: Ya, Anda dapat menambahkan beberapa baris teks ke header dengan menyertakan jeda baris dalam string teks. Misalnya, Anda dapat menggunakan escape sequence`\n` untuk menunjukkan jeda baris pada teks.
 
-#### T: Apa yang terjadi jika saya ingin menambahkan konten berbeda ke header dan footer dokumen PDF yang sama?
+#### T: Apa yang terjadi jika saya ingin menambahkan konten yang berbeda ke header dan footer dokumen PDF yang sama?
 
-J: Untuk menambahkan konten berbeda ke bagian header dan footer, Anda dapat mengikuti langkah serupa untuk kedua bagian. Kode ini menunjukkan penambahan teks ke header; Anda dapat menggunakan pendekatan serupa untuk menambahkan teks ke footer.
+J: Untuk menambahkan konten yang berbeda ke bagian header dan footer, Anda akan mengikuti langkah-langkah yang sama untuk kedua bagian tersebut. Kode tersebut menunjukkan cara menambahkan teks ke header; Anda dapat menggunakan pendekatan yang sama untuk menambahkan teks ke footer.
 
-#### T: Apakah mungkin menambahkan gambar atau elemen lain di samping teks header menggunakan pendekatan ini?
+#### T: Apakah mungkin untuk menambahkan gambar atau elemen lain di samping teks header menggunakan pendekatan ini?
 
-J: Meskipun kode yang diberikan secara khusus menunjukkan penambahan teks ke header, Anda dapat memperluas pendekatan untuk menambahkan elemen lain seperti gambar, garis, bentuk, atau konten lainnya ke bagian header menggunakan pustaka Aspose.PDF.
+A: Sementara kode yang diberikan secara khusus menunjukkan penambahan teks ke header, Anda dapat memperluas pendekatan untuk menambahkan elemen lain seperti gambar, garis, bentuk, atau konten lainnya ke bagian header menggunakan pustaka Aspose.PDF.

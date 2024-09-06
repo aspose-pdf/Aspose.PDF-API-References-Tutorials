@@ -21,7 +21,7 @@ using Aspose.Pdf.InteractiveFeatures;
 
 ## Steg 2: Ange sökväg till dokumentmappen
 
- det här steget måste du ange sökvägen till mappen som innehåller PDF-filen som du vill lägga till en länk till ett annat dokument till. Byta ut`"YOUR DOCUMENT DIRECTORY"` följande kod med den faktiska sökvägen till din dokumentmapp:
+ I det här steget måste du ange sökvägen till mappen som innehåller PDF-filen som du vill lägga till en länk till ett annat dokument till. Ersätta`"YOUR DOCUMENT DIRECTORY"` i följande kod med den faktiska sökvägen till din dokumentmapp:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -49,7 +49,7 @@ page.Annotations.Add(link);
 
 ## Steg 5: Spara den uppdaterade filen
 
- Låt oss nu spara den uppdaterade PDF-filen med hjälp av`Save` metod för`document` objekt. Här är motsvarande kod:
+Låt oss nu spara den uppdaterade PDF-filen med hjälp av`Save` metod för`document` objekt. Här är motsvarande kod:
 
 ```csharp
 dataDir = dataDir + "CreateDocumentLink_out.pdf";
@@ -108,7 +108,7 @@ S: Genom att följa den medföljande handledningen och exempelkoden kan du med s
 
 #### F: Kan jag skapa flera dokumentlänkar inom en enda PDF-fil?
 
- A: Visst! Du kan skapa flera dokumentlänkar i ett enda PDF-dokument med hjälp av`LinkAnnotation`anteckning. Detta gör att du kan ge användare åtkomst till olika relaterade dokument från olika sektioner.
+ A: Visst! Du kan skapa flera dokumentlänkar i ett enda PDF-dokument med hjälp av`LinkAnnotation` anteckning. Detta gör att du kan ge användare åtkomst till olika relaterade dokument från olika sektioner.
 
 #### F: Finns det några begränsningar när du länkar till externa dokument?
 

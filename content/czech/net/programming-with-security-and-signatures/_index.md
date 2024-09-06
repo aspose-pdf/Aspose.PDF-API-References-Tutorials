@@ -16,7 +16,7 @@ Výukový program vám poskytne podrobný přehled metod a technik k zajištěn�
 | [Změna hesla v souboru PDF](./change-password/) | Naučte se, jak změnit heslo v souboru PDF pomocí Aspose.PDF pro .NET. |  
 | [Dešifrovat soubor PDF](./decrypt/) | Naučte se dešifrovat soubor PDF pomocí Aspose.PDF pro .NET. |  
 | [Určete správné heslo v souboru PDF](./determine-correct-password/) | Naučte se, jak určit správné heslo v souboru PDF pomocí Aspose.PDF pro .NET. |  
-| [Digitálně se přihlásit do souboru PDF](./digitally-sign/) | Naučte se, jak digitálně přihlásit soubor PDF pomocí Aspose.PDF pro .NET. |  
+| [Digitálně se přihlásit do souboru PDF](./digitally-sign/) | Naučte se digitálně přihlásit soubor PDF pomocí Aspose.PDF pro .NET. |  
 | [Digitálně podepsat s časovým razítkem v souboru PDF](./digitally-sign-with-time-stamp/) | Naučte se provádět digitální podpis s časovým razítkem v souboru PDF pomocí Aspose.PDF pro .NET. |  
 | [Šifrovat soubor PDF](./encrypt/) | Bezpečně zašifrujte své soubory PDF pomocí Aspose.PDF pro .NET. |  
 | [Extrahování obrázku](./extracting-image/) | Snadno extrahujte obrázky z dokumentů PDF pomocí Aspose.PDF pro .NET. |  

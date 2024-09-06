@@ -7,13 +7,13 @@ type: docs
 weight: 40
 url: /sv/net/programming-with-graphs/control-rectangle-z-order/
 ---
-I den här handledningen går vi igenom följande C#-källkod steg för steg för att kontrollera Z-ordningen av rektanglar med Aspose.PDF för .NET.
+den här handledningen går vi igenom följande C#-källkod steg för steg för att kontrollera Z-ordningen av rektanglar med Aspose.PDF för .NET.
 
 Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
 
 ## Steg 1: Installation av dokumentkatalog
 
-den medföljande källkoden måste du ange katalogen där du vill spara den resulterande PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
+I den medföljande källkoden måste du ange katalogen där du vill spara den resulterande PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -78,11 +78,11 @@ page1.SetPageSize(375, 300);
 page1.PageInfo.Margin.Left = 0;
 // Ställ in den övre marginalen på sidobjektet som 0
 page1.PageInfo.Margin.Top = 0;
-// Skapa en ny rektangel med färg som röd, Z-ordning som 0 och vissa dimensioner
+//Skapa en ny rektangel med färg som röd, Z-ordning som 0 och vissa dimensioner
 AddRectangle(page1, 50, 40, 60, 40, Aspose.Pdf.Color.Red, 2);
 // Skapa en ny rektangel med Color as Blue, Z-Order som 0 och vissa dimensioner
 AddRectangle(page1, 20, 20, 30, 30, Aspose.Pdf.Color.Blue, 1);
-//Skapa en ny rektangel med Färg som grön, Z-ordning som 0 och vissa dimensioner
+// Skapa en ny rektangel med Färg som grön, Z-ordning som 0 och vissa dimensioner
 AddRectangle(page1, 40, 40, 60, 30, Aspose.Pdf.Color.Green, 0);
 dataDir = dataDir + "ControlRectangleZOrder_out.pdf";
 // Spara den resulterande PDF-filen
@@ -106,7 +106,7 @@ S: Innan du börjar, se till att du har installerat Aspose.PDF-biblioteket och s
 
 #### F: Hur anger jag katalogen för att spara PDF-filen?
 
-S: I den medföljande källkoden kan du ändra variabeln "dataDir" för att indikera katalogen där du vill spara den resulterande PDF-filen.
+S: I den medföljande källkoden kan du ändra variabeln "dataDir" för att ange katalogen där du vill spara den resulterande PDF-filen.
 
 #### F: Vad är syftet med att ställa in sidstorlek och marginaler?
 
@@ -114,7 +114,7 @@ S: Att ställa in sidstorlek och marginaler hjälper till att konfigurera layout
 
 #### F: Hur lägger jag till rektanglar med angiven Z-ordning?
 
- S: Du kan skapa och lägga till rektanglar på sidan med hjälp av`AddRectangle` metod, som anger position, dimensioner, färg och Z-ordning för varje rektangel.
+S: Du kan skapa och lägga till rektanglar på sidan med hjälp av`AddRectangle` metod, som anger position, dimensioner, färg och Z-ordning för varje rektangel.
 
 #### F: Vad är Z-order, och varför är det viktigt?
 

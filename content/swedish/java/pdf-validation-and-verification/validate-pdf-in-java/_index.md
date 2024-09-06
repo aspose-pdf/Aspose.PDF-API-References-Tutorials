@@ -41,7 +41,7 @@ public class PDFValidator {
 }
 ```
 
- Byta ut`"path_to_your_pdf.pdf"` med den faktiska sökvägen till PDF-filen du vill validera.
+ Ersätta`"path_to_your_pdf.pdf"` med den faktiska sökvägen till PDF-filen du vill validera.
 
 ## Steg 3: Validera PDF:en
 
@@ -74,7 +74,7 @@ Kompilera ditt Java-projekt och kör det. Om PDF-filen visar sig vara giltig kom
 
 ## Slutsats
 
-Valideringen av PDF-filer i Java med Aspose.PDF för Java är en avgörande åtgärd för att säkerställa tillförlitligheten och integriteten hos dina dokument. Genom att följa den här omfattande guiden och använda den medföljande källkoden kan du sömlöst integrera PDF-validering i dina Java-applikationer.
+Valideringen av PDF-filer i Java med Aspose.PDF för Java är en avgörande åtgärd för att säkerställa tillförlitligheten och integriteten hos dina dokument. Genom att följa den här omfattande guiden och använda den medföljande källkoden kan du sömlöst införliva PDF-validering i dina Java-applikationer.
 
 
 ## Vanliga frågor

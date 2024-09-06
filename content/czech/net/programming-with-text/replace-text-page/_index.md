@@ -42,7 +42,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Krok 4: Najděte a nahraďte text
 
- Vytvořit`TextFragmentAbsorber` objekt k nalezení všech výskytů vstupní vyhledávací fráze:
+ Vytvořte a`TextFragmentAbsorber` objekt k nalezení všech výskytů vstupní vyhledávací fráze:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -62,7 +62,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## Krok 6: Načtěte extrahované fragmenty textu
 
-Získejte extrahované fragmenty textu pomocí`TextFragments` vlastnictvím`TextFragmentAbsorber` objekt:
+Získejte extrahované fragmenty textu pomocí`TextFragments` majetek z`TextFragmentAbsorber` objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -83,7 +83,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
- Ve výše uvedeném fragmentu kódu nahraďte`"New Phrase"` s náhradním textem, který chcete použít. Můžete také přizpůsobit další vlastnosti, jako je písmo, velikost písma, barva popředí a barva pozadí.
+ Ve výše uvedeném úryvku kódu nahraďte`"New Phrase"` s náhradním textem, který chcete použít. Můžete také přizpůsobit další vlastnosti, jako je písmo, velikost písma, barva popředí a barva pozadí.
 
 ## Krok 8: Uložte upravený PDF
 
@@ -122,7 +122,7 @@ pdfDocument.Save(dataDir + "ReplaceTextPage_out.pdf");
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili, jak nahradit text na konkrétní stránce dokumentu PDF pomocí Aspose.PDF pro .NET. Tento tutoriál poskytuje podrobného průvodce od načtení dokumentu až po uložení upravené verze. Nyní můžete tento kód začlenit do svých vlastních projektů C# a automatizovat nahrazování textu v souborech PDF.
+Gratuluji! Úspěšně jste se naučili, jak nahradit text na konkrétní stránce dokumentu PDF pomocí Aspose.PDF pro .NET. Tento tutoriál poskytuje podrobného průvodce od načtení dokumentu až po uložení upravené verze. Nyní můžete tento kód začlenit do svých vlastních projektů C# a automatizovat nahrazování textu v souborech PDF.
 
 ### FAQ
 
@@ -169,8 +169,8 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### Otázka: Jak mohu přizpůsobit nahrazující text pro každý textový fragment?
 
-A: V rámci smyčky, která iteruje přes`TextFragmentCollection` , můžete upravit nahrazující text pro každý z nich`TextFragment` individuálně přiřazením jiného řetězce k`Text` vlastnictví.
+ A: V rámci smyčky, která iteruje přes`TextFragmentCollection` , můžete upravit nahrazující text pro každý z nich`TextFragment` individuálně přiřazením jiného řetězce k`Text` vlastnictví.
 
 #### Otázka: Je možné nahradit text na základě vyhledávání bez rozlišení velkých a malých písmen?
 
- Odpověď: Ano, můžete provádět vyhledávání bez ohledu na velikost písmen úpravou vzoru regulárního výrazu. Můžete například použít`"text"` namísto`"text"` v`TextFragmentAbsorber` konstruktér.
+ Odpověď: Ano, můžete provádět vyhledávání bez ohledu na velikost písmen úpravou vzoru regulárního výrazu. Můžete například použít`"text"` místo`"text"` v`TextFragmentAbsorber` konstruktér.

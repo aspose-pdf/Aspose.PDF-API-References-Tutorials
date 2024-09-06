@@ -104,7 +104,7 @@ Zde vytváříme prvky odstavce a prvky span pro náš obsah a přiřazujeme jim
 Nakonec tagovaný dokument PDF uložíme.
 
 ```csharp
-// Uložte tagovaný dokument PDF
+// Uložte označený dokument PDF
 document.Save(dataDir + "CustomTag.pdf");
 ```
 

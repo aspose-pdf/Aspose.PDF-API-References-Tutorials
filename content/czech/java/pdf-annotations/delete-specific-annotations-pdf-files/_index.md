@@ -17,7 +17,7 @@ Soubory PDF často obsahují různé typy anotací, jako jsou textové komentá�
 Než se ponoříme do kódu, ujistěte se, že máte splněny následující předpoklady:
 
 - Java Development Kit (JDK) nainstalovaný ve vašem systému.
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 - Integrované vývojové prostředí (IDE), jako je Eclipse nebo IntelliJ IDEA.
 
 ## Nastavení vašeho projektu
@@ -88,4 +88,4 @@ Ano, Aspose.PDF for Java vyžaduje platnou licenci pro komerční použití. Lic
 
 ### Kde najdu další dokumentaci a zdroje pro Aspose.PDF pro Javu?
 
- Máte přístup ke komplexní dokumentaci a zdrojům pro Aspose.PDF pro Java na[tady](https://reference.aspose.com/pdf/java/).
+ Máte přístup ke komplexní dokumentaci a zdrojům pro Aspose.PDF pro Java na[zde](https://reference.aspose.com/pdf/java/).

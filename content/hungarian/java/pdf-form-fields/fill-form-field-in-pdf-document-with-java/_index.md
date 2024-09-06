@@ -85,7 +85,7 @@ Ebben a kódrészletben megnyitjuk a meglévő PDF dokumentumot, a nevével elé
 
 ## A módosított PDF mentése
 
-Most, hogy kitöltöttük az űrlapmezőt, a módosított PDF új fájlként menthető, vagy felülírható a meglévő, igény szerint.
+Most, hogy kitöltöttük az űrlapmezőt, a módosított PDF-fájlt új fájlként mentheti, vagy felülírhatja a meglévőt, az Ön igényei szerint.
 
 ```java
 // A módosított PDF mentése (opcionális)

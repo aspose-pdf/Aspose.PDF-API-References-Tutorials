@@ -10,7 +10,7 @@ url: /cs/java/pdf-text-extraction/tagged-pdf-content-extraction-using-java/
 
 Tagované PDF jsou strukturovány tak, aby byly přístupné pro osoby se zdravotním postižením a také napomáhaly automatické extrakci obsahu. V tomto podrobném průvodci prozkoumáme, jak extrahovat obsah z tagovaných PDF pomocí Java a knihovny Aspose.PDF for Java. Poskytneme příklady zdrojového kódu, aby byl proces jasný a přístupný.
 
-## Úvod
+## Zavedení
 
 Tagované PDF obsahují strukturní informace, které pomáhají čtečkám obrazovky a dalším pomocným technologiím porozumět obsahu dokumentu. Extrahování obsahu z tagovaných souborů PDF je zásadní pro různé aplikace, jako je analýza dat, změna účelu obsahu a dodržování předpisů pro usnadnění přístupu.
 
@@ -20,7 +20,7 @@ Než začneme, ujistěte se, že máte následující:
 
 1. Vývojové prostředí Java: Ujistěte se, že máte v systému nainstalovanou Javu.
 
-2.  Aspose.PDF for Java Library: Knihovnu si můžete stáhnout z[tady](https://releases.aspose.com/pdf/java/). Zahrňte jej do svého projektu Java.
+2.  Aspose.PDF for Java Library: Knihovnu si můžete stáhnout z[zde](https://releases.aspose.com/pdf/java/). Zahrňte jej do svého projektu Java.
 
 ## Krok 1: Vytvořte projekt Java
 

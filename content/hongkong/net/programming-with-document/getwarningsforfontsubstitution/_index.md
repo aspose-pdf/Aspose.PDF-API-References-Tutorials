@@ -19,7 +19,7 @@ Aspose.PDF for .NET 是一個流行的 PDF 操作庫，使開發人員能夠在�
 
 安裝 Aspose.PDF for .NET 並在 .NET 專案中新增對 DLL 的參考後，您就可以開始使用`GetWarningsForFontSubstitution`開啟 PDF 文件時偵測字型替換警告的功能。
 
-使用此功能的第一步是載入要偵測其字體替換警告的 PDF 文件。為此，您可以使用以下程式碼：
+使用此功能的第一步是載入要偵測其字型替換警告的 PDF 文件。為此，您可以使用以下程式碼：
 
 ```csharp
 // PDF文件的路徑

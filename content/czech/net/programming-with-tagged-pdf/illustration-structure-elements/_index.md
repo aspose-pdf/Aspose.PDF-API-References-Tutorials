@@ -60,7 +60,7 @@ taggedContent.SetLanguage("fr-FR");
 Nyní do našeho dokumentu přidáme ilustrativní prvky, jako jsou obrázky a obrázky.
 
 ```csharp
-// Ve vývoji
+// Zaostalost
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
 figure1.AlternativeText = "Figure One";
@@ -76,7 +76,7 @@ Zde vytvoříme prvek struktury ilustrace, přiřadíme mu alternativní text, n
 Nakonec tagovaný dokument PDF uložíme.
 
 ```csharp
-// Uložte tagovaný dokument PDF
+// Uložte označený dokument PDF
 document.Save(dataDir + "IllustrationStructureElements.pdf");
 ```
 

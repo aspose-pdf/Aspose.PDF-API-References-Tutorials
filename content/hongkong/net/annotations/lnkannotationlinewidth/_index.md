@@ -2,142 +2,149 @@
 title: lnk 註解線寬
 linktitle: lnk 註解線寬
 second_title: Aspose.PDF for .NET API 參考
-description: 本文提供了使用 Aspose.PDF for .NET 設定 lnk 註解線寬的逐步指南。
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 中設定墨跡註解線寬。這個詳細的教學將引導您完成每個步驟，確保高品質的輸出。
 type: docs
 weight: 110
 url: /zh-hant/net/annotations/lnkannotationlinewidth/
 ---
-Aspose.PDF 是一個功能強大且廣泛使用的工具，可在 .NET 應用程式中處理 PDF 檔案。它提供了用於建立、編輯和操作 PDF 文件的各種功能，包括向頁面添加註釋的功能。在本教學中，我們將說明如何使用 Aspose.PDF for .NET 設定連結註解的線寬。
+## 介紹
 
-滿足這些先決條件後，請在 Visual Studio 中建立新的控制台應用程式專案。然後，透過右鍵單擊解決方案資源管理器中的項目，選擇“管理 NuGet 套件”並在 NuGet 套件管理器中搜尋“Aspose.PDF”，新增對 Aspose.PDF for .NET 庫的參考。
+處理 PDF 文件時，新增註解是突出顯示資訊或向文件添加互動元素的有效方法。其中一種註釋是墨跡註釋，它允許您在 PDF 上繪製自由線條。但是，如果您需要自訂這些線條的外觀，特別是線條寬度，該怎麼辦？在本教學中，我們將引導您完成使用 Aspose.PDF for .NET 設定墨跡註解線寬的過程。
 
-若要為 PDF 文件新增 lnk 註釋，請依照下列步驟操作：
+## 先決條件
 
-## 第 1 步：建立一個新的`Document` object.
+在深入研究程式碼之前，讓我們確保您已完成所有設定以順利遵循本教學：
+
+1.  Aspose.PDF for .NET：請確定您已安裝 Aspose.PDF for .NET 程式庫。您可以從[下載頁面](https://releases.aspose.com/pdf/net/)或透過 Visual Studio 中的 NuGet 套件管理器安裝它。
+2. 開發環境：本教學課程假設您正在 .NET 開發環境（例如 Visual Studio）中工作。
+3. C# 基礎知識：對 C# 的基本了解將幫助您遵循編碼步驟。
+4. PDF 文件：使用現有的 PDF 文件或為本教學課程建立一個新文件。
+
+## 導入必要的命名空間
+
+在開始編碼之前，請確保在專案中匯入必要的命名空間：
+
 ```csharp
+using System.IO;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
+using Aspose.Pdf.Facades;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+```
+
+這些命名空間提供了操作 PDF 文件、使用註解和處理圖形元素所需的類別和方法。
+
+現在我們已經具備了先決條件，讓我們將設定墨跡註釋線寬度的流程分解為清晰、可管理的步驟。
+
+## 步驟1：初始化PDF文檔
+
+首先，我們需要建立或開啟一個 PDF 文件。在本教程中，我們將從頭開始建立一個新的 PDF 文件。
+
+```csharp
+//初始化 PDF 文件
+string dataDir = "YOUR DOCUMENT DIRECTORY"; //指定您的文件目錄
 Document doc = new Document();
+doc.Pages.Add(); //新增空白頁
 ```
-## 步驟 2：為文件新增頁面。
+
+在這裡，我們正在初始化一個新的`Document`對象，它代表我們的 PDF 文件。然後，我們向該文件新增一個空白頁以供使用。
+
+## 步驟 2： 建立墨跡註釋
+
+接下來，我們將創建墨跡註釋本身。這涉及定義構成墨跡筆劃的點。
+
 ```csharp
-doc.Pages.Add();
-```
-## 第 3 步：建立一個列表`Point` arrays that represent the ink gesture for the annotation.
-```csharp
+//建立墨跡註釋
 IList<Point[]> inkList = new List<Point[]>();
-```
-## 第 4 步：建立一個新的`LineInfo` object that defines the properties of the ink gesture.
-```csharp
 LineInfo lineInfo = new LineInfo();
 lineInfo.VerticeCoordinate = new float[] { 55, 55, 70, 70, 70, 90, 150, 60 };
 lineInfo.Visibility = true;
-lineInfo.LineColor = System.Drawing.Color.Red;
+lineInfo.LineColor = Color.Red;
 lineInfo.LineWidth = 2;
 ```
-## 第 5 步：建立一個新的`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
+
+在這一步驟中，我們定義`LineInfo`對象，它保存墨跡筆畫的座標、可見性、顏色和初始線寬。這`VerticeCoordinate`陣列包含筆畫中每個點的 X 和 Y 座標。
+
+## 第 3 步：將座標轉換為點
+
+現在，我們需要將這些座標轉換為墨跡註釋可以使用的點。
+
 ```csharp
+//將座標轉換為點
 int length = lineInfo.VerticeCoordinate.Length / 2;
 Aspose.Pdf.Point[] gesture = new Aspose.Pdf.Point[length];
 for (int i = 0; i < length; i++)
 {
     gesture[i] = new Aspose.Pdf.Point(lineInfo.VerticeCoordinate[2 * i], lineInfo.VerticeCoordinate[2 * i + 1]);
 }
-```
-## 步驟 6：將手勢加入墨跡手勢清單。
-```csharp
-inkList.Add(gesture);
-```
-## 第 7 步：建立一個新的`InkAnnotation` object that represents the link annotation.
-```csharp
-InkAnnotation a1 = new InkAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), inkList);
-```
-## 步驟8：設定註釋的主題和標題。
-```csharp
-a1.Subject = "Test";
-a1.Title = "Title";
-```
-## 步驟9：設定註解的顏色。
-```csharp
-a1.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
-```
-## 第10步：建立一個新的`Border` object that defines the properties of the annotation's border.
-```csharp
-Border border = new Border(a1);
-border.Width = 3;
-border.Effect = BorderEffect.Cloudy;
-border.Dash = new Dash(1, 1);
-border.Style = BorderStyle.Solid;
-```
-## 第11步：將註解新增至頁面。
-```csharp
-doc.Pages[1].Annotations.Add(a1);
-```
-## 第 12 步：將文件儲存到文件中。
-```csharp
-//儲存輸出檔案
-doc.Save(dataDir);
-
-
-```
-### 此範例顯示了 Aspose.PDF for .NET 的 lnk 註解線寬
-
-```csharp
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-Document doc = new Document();
-doc.Pages.Add();
-IList<Point[]> inkList = new List<Point[]>();
-LineInfo lineInfo = new LineInfo();
-lineInfo.VerticeCoordinate = new float[] { 55, 55, 70, 70, 70, 90, 150, 60 };
-lineInfo.Visibility = true;
-lineInfo.LineColor = System.Drawing.Color.Red;
-lineInfo.LineWidth = 2;
-int length = lineInfo.VerticeCoordinate.Length / 2;
-Aspose.Pdf.Point[] gesture = new Aspose.Pdf.Point[length];
-for (int i = 0; i < length; i++)
-{
-gesture[i] = new Aspose.Pdf.Point(lineInfo.VerticeCoordinate[2 * i], lineInfo.VerticeCoordinate[2 * i + 1]);
-}
 
 inkList.Add(gesture);
+```
+
+此循環處理座標數組，將每對座標轉換為`Point`對象，然後將其添加到我們的`inkList`.
+
+## 步驟 4：將墨跡註解新增至 PDF 頁面
+
+準備好點後，我們現在可以建立墨跡註釋並將其新增到 PDF 頁面。
+
+```csharp
+//將墨跡註釋新增至 PDF 頁面
 InkAnnotation a1 = new InkAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), inkList);
 a1.Subject = "Test";
 a1.Title = "Title";
-a1.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
+a1.Color = Aspose.Pdf.Color.FromRgb(Color.Green);
+```
+
+在這一步中，我們初始化一個`InkAnnotation`對象，指定頁面、邊界矩形和點列表。我們也設定註釋的主題、標題和顏色。
+
+## 第 5 步：自訂註解邊框
+
+為了進一步自訂註解的外觀，我們將修改其邊框屬性。
+
+```csharp
+//自訂註解的邊框
 Border border = new Border(a1);
 border.Width = 3;
 border.Effect = BorderEffect.Cloudy;
 border.Dash = new Dash(1, 1);
 border.Style = BorderStyle.Solid;
 doc.Pages[1].Annotations.Add(a1);
+```
 
+在這裡，我們創建一個`Border`我們的註釋對象，設定其寬度、效果、虛線圖案和樣式。此步驟可確保註釋在 PDF 頁面上視覺上突出。
+
+## 步驟 6：儲存 PDF 文檔
+
+最後，進行所有必要的變更後，就可以儲存文件了。
+
+```csharp
+//儲存 PDF 文件
 dataDir = dataDir + "lnkAnnotationLineWidth_out.pdf";
-//儲存輸出檔案
 doc.Save(dataDir);
+Console.WriteLine("\nInk annotation line width setup successfully.\nFile saved at " + dataDir);
 ```
+
+此程式碼將修改後的帶有墨跡註解的 PDF 文件保存在指定目錄中。這`Console.WriteLine`語句確認程式碼成功執行。
 
 ## 結論
 
-在本教學中，我們學習如何使用 Aspose.PDF for .NET 設定 PDF 文件中連結註解的線寬。 Aspose.PDF for .NET 提供了廣泛的工具和功能來處理 PDF 文檔，包括建立和自訂連結註解的能力。透過遵循逐步指南並使用提供的 C# 原始程式碼，開發人員可以輕鬆地向 PDF 文件添加互動式鏈接，從而增強應用程式的使用者體驗和互動性。 Aspose.PDF for .NET 是一個多功能函式庫，可讓 .NET 開發人員有效率且有效地處理 PDF 檔案。
+恭喜！您已使用 Aspose.PDF for .NET 在 PDF 文件中成功建立並自訂了墨跡註解。本教學涵蓋了從初始化文件到保存最終文件的整個過程。有了這些知識，您可以進一步探索 Aspose.PDF for .NET 的巨大功能，並將類似的技術應用於其他類型的註解或 PDF 操作。
 
-### 常見問題解答
+## 常見問題解答
 
-#### Q：什麼是PDF文件中的連結註解？
+### 我可以對墨跡註釋的不同部分使用不同的顏色嗎？  
+是的，您可以建立多個`InkAnnotation`不同顏色的對象，並將它們新增至 PDF 的相同或不同頁面。
 
-答：PDF 文件中的連結註解是一種互動式元素，可讓您建立超連結或操作，將使用者引導至同一文件中的另一個位置、外部網站或不同的 PDF 文件。
+### 如何動態改變線寬？  
+您可以調整`LineWidth`的財產`LineInfo`將座標轉換為點之前的物件。
 
-#### Q：如何使用 Aspose.PDF for .NET 設定連結註解的線寬？
+### 是否可以將墨跡註釋設定為透明？  
+是的，您可以修改`Opacity`的財產`InkAnnotation`物件使其透明。
 
-答：要使用 Aspose.PDF for .NET 設定連結註解的線寬，您可以建立一個`InkAnnotation`物件並指定線寬屬性。
+### 我可以在同一頁上新增多個墨跡註解嗎？  
+絕對地！您可以透過重複此程序為單一頁面新增任意數量的墨跡註解。
 
-#### Q：可以為 Aspose.PDF for .NET 中的連結註解自訂哪些屬性？
-
-答：您可以在 Aspose.PDF for .NET 中自訂連結註解的各種屬性，例如其位置、大小、顏色、邊框屬性（寬度、樣式、虛線圖案和效果）、主題、標題和可見性。
-
-#### Q：我可以建立包含多個墨跡手勢的連結註解嗎？
-
-答：是的，您可以透過新增多個來建立包含多個墨跡手勢的連結註釋`Point`數組到`InkAnnotation`目的。
-
-#### Q：如何為PDF文件的特定頁面新增連結註解？
-
- A：要為PDF文件的特定頁面新增連結註釋，需要在建立PDF文件時指定頁碼`InkAnnotation`目的。例如，`new InkAnnotation(doc.Pages[1], ...)`將連結註解新增到第一頁。
+### 如何從 PDF 中刪除墨跡註釋？  
+您可以使用以下命令刪除註釋`doc.Pages[1].Annotations.Delete(a1)`方法，其中`a1`是你的註解對象。

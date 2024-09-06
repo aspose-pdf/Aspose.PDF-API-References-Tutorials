@@ -1,49 +1,80 @@
 ---
-title: Adicionar sumário ao arquivo PDF
-linktitle: Adicionar sumário ao arquivo PDF
-second_title: Referência da API Aspose.PDF para .NET
-description: Aprenda como adicionar um índice a um arquivo PDF usando Aspose.PDF for .NET. Guia passo a passo com exemplo de código-fonte. Aumente a navegação de documentos!
+title: Adicionar TOC ao arquivo PDF
+linktitle: Adicionar TOC ao arquivo PDF
+second_title: Referência da API do Aspose.PDF para .NET
+description: Aprenda como adicionar um Índice a um PDF usando o Aspose.PDF para .NET. Este guia passo a passo simplifica o processo e garante uma navegação fácil dentro dos seus documentos.
 type: docs
 weight: 40
 url: /pt/net/programming-with-document/addtoc/
 ---
-Neste tutorial, exploraremos como usar o recurso Adicionar TOC (Índice) ao arquivo PDF do Aspose.PDF for .NET para adicionar um índice a documentos PDF. Forneceremos um guia passo a passo e explicaremos o código-fonte C# necessário para conseguir isso. Ao final deste tutorial, você será capaz de gerar um documento PDF com um índice usando Aspose.PDF for .NET.
+## Introdução
 
+Você já rolou infinitamente por um PDF longo, desejando que ele tivesse um Índice bem organizado? Bem, hoje é seu dia de sorte! Neste tutorial, você aprenderá como adicionar um TOC ao seu arquivo PDF usando o Aspose.PDF para .NET. Não importa se você está trabalhando em um relatório complexo, um eBook ou uma proposta de negócios, um TOC pode transformar seu documento em uma obra-prima profissional e navegável.
 
-## Passo 1: Carregue o arquivo PDF existente
+## Pré-requisitos
 
- Para começar, precisamos carregar um arquivo PDF existente. Substituir`"YOUR DOCUMENT DIRECTORY"` no código a seguir com o caminho real para o seu arquivo PDF:
+Antes de começarmos o código, vamos garantir que você tenha tudo o que precisa:
+
+1. Aspose.PDF para .NET: Certifique-se de ter baixado e instalado a biblioteca Aspose.PDF. Você pode baixá-la de[aqui](https://releases.aspose.com/pdf/net/).
+   
+2. Ambiente de desenvolvimento: certifique-se de ter um ambiente de desenvolvimento .NET, como o Visual Studio, configurado em sua máquina.
+
+3.  Licença: Se você não tiver uma licença, você pode obter uma avaliação gratuita ou solicitar uma licença temporária[aqui](https://purchase.aspose.com/temporary-license/).
+
+## Pacotes de importação
+
+Para começar, certifique-se de importar os namespaces necessários no início do seu arquivo de código. Veja como:
+
+```csharp
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+```
+
+Esses namespaces permitem que você acesse funcionalidades específicas do PDF e manipule elementos de texto dentro do seu documento.
+
+Vamos dividir essa tarefa em etapas pequenas. Cada etapa guiará você pelo processo de criação e inserção de um TOC no seu documento PDF.
+
+## Etapa 1: Carregue o documento PDF
+
+A primeira coisa que precisamos fazer é carregar o arquivo PDF existente onde queremos adicionar o TOC.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "AddTOC.pdf");
 ```
 
-## Etapa 2: crie uma nova página para o índice
+ Nesta etapa, especificamos o caminho para o diretório do documento e carregamos o PDF usando o`Document` objeto. Certifique-se de substituir`"YOUR DOCUMENT DIRECTORY"` com o caminho real para seu arquivo.
 
-Criaremos uma nova página para conter o índice. O código a seguir insere uma nova página no índice 1:
+## Etapa 2: Insira uma nova página para TOC
+
+Em seguida, inserimos uma nova página no início do documento PDF. Esta página hospedará o Índice.
 
 ```csharp
 Page tocPage = doc.Pages.Insert(1);
 ```
 
-## Etapa 3: definir as informações do índice
+Ao inserir a página do índice no início, garantimos que ela apareça como a primeira coisa que os leitores veem no PDF.
 
-Em seguida, precisamos definir as informações do índice. Definiremos o título e outras propriedades do índice analítico. Adicione o seguinte código:
+## Etapa 3: Crie um objeto de informação do TOC
+
+Agora, vamos criar um objeto que representará as informações do TOC. Também adicionaremos um título ao TOC para destacá-lo.
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
-
 tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 ```
 
-## Etapa 4: criar elementos do sumário
+Aqui, definimos o título do índice como "Índice", aumentamos o tamanho da fonte e o deixamos em negrito para dar ênfase.
 
-Agora, criaremos os elementos do índice analítico. Neste tutorial, criaremos quatro elementos TOC correspondentes a páginas diferentes. Modifique o seguinte código de acordo com seus requisitos:
+## Etapa 4: Defina os elementos do TOC
+
+Nesta etapa, definimos os elementos (ou títulos) que serão exibidos no TOC. Esses elementos ajudarão os leitores a navegar para seções específicas do documento.
 
 ```csharp
 string[] titles = new string[4];
@@ -51,7 +82,15 @@ titles[0] = "First page";
 titles[1] = "Second page";
 titles[2] = "Third page";
 titles[3] = "Fourth page";
+```
 
+Criamos uma matriz de strings que servirão como itens do nosso TOC, correspondendo a diferentes páginas no PDF.
+
+## Etapa 5: Criar títulos de TOC
+
+Agora vem a parte crucial: adicionar títulos ao índice e vinculá-los às suas respectivas páginas.
+
+```csharp
 for (int i = 0; i < 2; i++)
 {
     Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
@@ -61,100 +100,56 @@ for (int i = 0; i < 2; i++)
 
     heading2.DestinationPage = doc.Pages[i + 2];
     heading2.Top = doc.Pages[i + 2].Rect.Height;
-
     segment2.Text = titles[i];
+
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
-## Etapa 5: salve o documento atualizado
+Veja o que está acontecendo:
+- Título: Criamos um`Heading` objeto e adicione um`TextSegment` para isso.
+- Página de destino: definimos a página para a qual cada título será vinculado.
+- Posição superior: especificamos a posição na página para onde o título apontará.
+- Texto: Cada título recebe seu respectivo título da matriz que criamos anteriormente.
 
- Finalmente, precisamos salvar o documento modificado com o índice analítico. Substituir`"YOUR DOCUMENT DIRECTORY"` no código abaixo com o caminho do arquivo de saída desejado:
+Este loop cria títulos para os dois primeiros elementos do índice e os vincula às páginas correspondentes.
+
+## Etapa 6: Salve o PDF com o TOC
+
+Por fim, depois de adicionar todos os elementos do TOC, é hora de salvar o PDF atualizado.
 
 ```csharp
 dataDir = dataDir + "TOC_out.pdf";
 doc.Save(dataDir);
-Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
-### Exemplo de código-fonte para adicionar sumário a documentos PDF usando Aspose.PDF para .NET
+O arquivo agora está salvo com o TOC adicionado ao PDF. Parabéns — você adicionou com sucesso um Índice!
+
+## Etapa 7: Mensagem de confirmação
+
+Para informar ao usuário que o processo foi concluído, exibiremos uma mensagem simples no console.
 
 ```csharp
-
-// O caminho para o diretório de documentos.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Carregar arquivos PDF existentes
-Document doc = new Document(dataDir + "AddTOC.pdf");
-
-// Obtenha acesso à primeira página do arquivo PDF
-Page tocPage = doc.Pages.Insert(1);
-
-// Crie um objeto para representar informações do TOC
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-
-// Defina o título do TOC
-tocInfo.Title = title;
-tocPage.TocInfo = tocInfo;
-
-//Crie objetos string que serão usados como elementos TOC
-string[] titles = new string[4];
-titles[0] = "First page";
-titles[1] = "Second page";
-titles[2] = "Third page";
-titles[3] = "Fourth page";
-for (int i = 0; i < 2; i++)
-{
-	// Criar objeto de título
-	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-	TextSegment segment2 = new TextSegment();
-	heading2.TocPage = tocPage;
-	heading2.Segments.Add(segment2);
-
-	// Especifique a página de destino para o objeto de título
-	heading2.DestinationPage = doc.Pages[i + 2];
-
-	// Página de destino
-	heading2.Top = doc.Pages[i + 2].Rect.Height;
-
-	// Coordenada de destino
-	segment2.Text = titles[i];
-
-	// Adicionar título à página que contém o sumário
-	tocPage.Paragraphs.Add(heading2);
-}
-dataDir = dataDir + "TOC_out.pdf";
-// Salve o documento atualizado
-doc.Save(dataDir);
-
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
 ## Conclusão
 
-Neste tutorial, exploramos como adicionar um índice analítico (TOC) a documentos PDF usando Aspose.PDF for .NET. Seguindo o guia passo a passo e utilizando o código-fonte C# fornecido, você pode gerar facilmente um documento PDF com um índice analítico. O sumário melhora a usabilidade do documento, permitindo que os usuários naveguem para seções ou páginas específicas com mais eficiência. Aspose.PDF for .NET fornece uma solução robusta e fácil de usar para trabalhar com arquivos PDF em aplicativos .NET, permitindo criar documentos PDF dinâmicos e interativos com facilidade.
+aí está! Com o Aspose.PDF para .NET, adicionar um Índice a um PDF não é apenas fácil, mas também personalizável. Se você precisa criar links de navegação simples ou estruturas complexas, esta ferramenta tem tudo o que você precisa. Então, da próxima vez que estiver trabalhando em um PDF longo, não se esqueça de adicionar um TOC para aquele toque profissional!
 
-### Perguntas frequentes sobre como adicionar sumário ao arquivo PDF
+## Perguntas frequentes
 
-#### P: O que é Aspose.PDF para .NET?
+### Posso personalizar a aparência do TOC no Aspose.PDF?  
+Sim, você pode personalizar totalmente a aparência do índice, incluindo estilo, tamanho e alinhamento da fonte.
 
-R: Aspose.PDF for .NET é uma biblioteca poderosa que permite aos desenvolvedores trabalhar com arquivos PDF em aplicativos .NET de maneira eficaz. Ele fornece uma ampla gama de recursos para criar, manipular e gerenciar documentos PDF de forma programática.
+### Como adiciono subtítulos ao índice?  
+ Você pode adicionar subtítulos ajustando o`Heading` nível (por exemplo,`Heading(2)`) para criar um TOC hierárquico.
 
-#### P: Qual é o propósito de adicionar um sumário (TOC) a um documento PDF?
+### É possível atualizar o TOC automaticamente se o documento for alterado?  
+Não, o TOC não será atualizado automaticamente. Você precisará recriá-lo se a estrutura do documento mudar.
 
-R: O sumário (TOC) fornece um auxílio à navegação para os usuários, permitindo que eles pulem rapidamente para seções ou páginas específicas do documento PDF. Melhora a usabilidade do documento e a experiência do usuário.
+### Posso vincular entradas do TOC a documentos externos?  
+Sim, você pode usar hiperlinks para vincular entradas do índice a PDFs ou URLs externos.
 
-#### P: Como adiciono um índice a um documento PDF usando Aspose.PDF for .NET?
-
-R: Para adicionar um índice a um documento PDF usando Aspose.PDF for .NET, você precisa criar uma nova página para conter o índice, definir as informações do índice e, em seguida, criar elementos do índice que correspondam a páginas específicas ou seções do documento.
-
-#### P: Posso personalizar a aparência do índice?
-
-R: Sim, você pode personalizar a aparência do índice definindo várias propriedades dos elementos do sumário, como tamanho da fonte, estilo da fonte e alinhamento. Aspose.PDF for .NET oferece flexibilidade no design do TOC para combinar com a aparência desejada.
-
-#### P: O Aspose.PDF for .NET é adequado para adicionar recursos avançados a documentos PDF?
-
-R: Com certeza, Aspose.PDF for .NET é uma biblioteca rica em recursos que permite adicionar funcionalidades avançadas a documentos PDF, incluindo elementos interativos, campos de formulário, assinaturas digitais e muito mais.
+### O Aspose.PDF suporta TOCs multinível?  
+Sim, o Aspose.PDF suporta TOCs multinível para documentos complexos com subseções.

@@ -1,59 +1,59 @@
 ---
-title: Erstellen Sie ein mehrspaltiges PDF
-linktitle: Erstellen Sie ein mehrspaltiges PDF
+title: Mehrspaltiges PDF erstellen
+linktitle: Mehrspaltiges PDF erstellen
 second_title: Aspose.PDF für .NET API-Referenz
 description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET ein mehrspaltiges PDF erstellen.
 type: docs
 weight: 110
 url: /de/net/programming-with-text/create-multi-column-pdf/
 ---
-Dieses Tutorial führt Sie durch den Prozess der Erstellung einer mehrspaltigen PDF-Datei mit Aspose.PDF für .NET. Der bereitgestellte C#-Quellcode demonstriert die notwendigen Schritte.
+Dieses Tutorial führt Sie durch den Prozess der Erstellung einer mehrspaltigen PDF-Datei mit Aspose.PDF für .NET. Der bereitgestellte C#-Quellcode demonstriert die erforderlichen Schritte.
 
 ## Anforderungen
 Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- Visual Studio oder ein anderer auf Ihrem Computer installierter C#-Compiler.
+- Visual Studio oder ein anderer C#-Compiler muss auf Ihrem Computer installiert sein.
 - Aspose.PDF für .NET-Bibliothek. Sie können es von der offiziellen Aspose-Website herunterladen oder einen Paketmanager wie NuGet verwenden, um es zu installieren.
 
-## Schritt 1: Richten Sie das Projekt ein
+## Schritt 1: Einrichten des Projekts
 1. Erstellen Sie ein neues C#-Projekt in Ihrer bevorzugten Entwicklungsumgebung.
-2. Fügen Sie einen Verweis auf die Aspose.PDF für .NET-Bibliothek hinzu.
+2. Fügen Sie einen Verweis auf die Aspose.PDF-Bibliothek für .NET hinzu.
 
 ## Schritt 2: Erforderliche Namespaces importieren
-Fügen Sie in der Codedatei, in der Sie eine mehrspaltige PDF-Datei erstellen möchten, die folgenden using-Anweisungen am Anfang der Datei hinzu:
+Fügen Sie in der Codedatei, in der Sie ein mehrspaltiges PDF erstellen möchten, oben in der Datei die folgenden Using-Direktiven hinzu:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Drawing;
 ```
 
-## Schritt 3: Legen Sie das Dokumentverzeichnis fest
- Suchen Sie im Code die Zeile mit der Aufschrift`string dataDir = "YOUR DOCUMENT DIRECTORY";` und ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem Pfad zu dem Verzeichnis, in dem Ihre Dokumente gespeichert sind.
+## Schritt 3: Dokumentverzeichnis festlegen
+ Suchen Sie im Code nach der Zeile, die besagt:`string dataDir = "YOUR DOCUMENT DIRECTORY";` und ersetzen`"YOUR DOCUMENT DIRECTORY"` durch den Pfad zum Verzeichnis, in dem Ihre Dokumente gespeichert sind.
 
 ## Schritt 4: Erstellen Sie eine neue Dokumentinstanz
- Instanziieren Sie eine neue`Document` Objekt durch Hinzufügen der folgenden Codezeile:
+ Instanziieren Sie ein neues`Document` -Objekt, indem Sie die folgende Codezeile hinzufügen:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Schritt 5: Legen Sie die Seitenränder fest
- Geben Sie die Informationen zum linken und rechten Rand für die PDF-Datei mithilfe von an`PageInfo.Margin` Eigentum der`Document`.
+## Schritt 5: Seitenränder festlegen
+ Geben Sie die linken und rechten Randinformationen für die PDF-Datei an.`PageInfo.Margin` Eigentum der`Document`.
 
 ```csharp
 doc.PageInfo.Margin.Left = 40;
 doc.PageInfo.Margin.Right = 40;
 ```
 
-## Schritt 6: Fügen Sie dem Dokument eine Seite hinzu
- Fügen Sie mit dem eine neue Seite zum Dokument hinzu`Add` Methode der`Pages`Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
+## Schritt 6: Dem Dokument eine Seite hinzufügen
+ Fügen Sie dem Dokument eine neue Seite hinzu, indem Sie das`Add` Methode der`Pages`Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
 ## Schritt 7: Erstellen Sie ein Graph-Objekt und fügen Sie eine Linie hinzu
- Erstelle eine neue`Graph` Objekt mit bestimmten Abmessungen und fügen Sie eine Linie hinzu. Fügen Sie dann die hinzu`Graph` Einspruch gegen die`Paragraphs` Sammlung der Seite.
+ Erstellen Sie ein neues`Graph` Objekt mit bestimmten Abmessungen und fügen Sie ihm eine Linie hinzu. Fügen Sie dann die`Graph` Einspruch gegen die`Paragraphs` Sammlung der Seite.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
@@ -64,7 +64,7 @@ page.Paragraphs.Add(graph1);
 ```
 
 ## Schritt 8: Überschriftentext mit HTML-Formatierung hinzufügen
- Erstelle ein`HtmlFragment` Objekt und setzen Sie dessen Inhalt auf den gewünschten HTML-Text. Fügen Sie dann das Fragment hinzu`Paragraphs` Sammlung der Seite.
+ Erstellen Sie ein`HtmlFragment` Objekt und setzen Sie dessen Inhalt auf den gewünschten HTML-Text. Fügen Sie dann das Fragment zum`Paragraphs` Sammlung der Seite.
 
 ```csharp
 string s = "<font face=\"Times New Roman\" size=4>" +
@@ -75,7 +75,7 @@ page.Paragraphs.Add(heading_text);
 ```
 
 ## Schritt 9: Erstellen Sie eine FloatingBox mit mehreren Spalten
- Ein ... kreieren`FloatingBox` Objekt und legen Sie die Anzahl der Spalten und den Spaltenabstand fest. Fügen Sie dann Textfragmente und eine Zeile hinzu`Paragraphs` Sammlung der`FloatingBox`.
+ Erstellen Sie ein`FloatingBox` Objekt und legen Sie die Anzahl der Spalten und den Spaltenabstand fest. Fügen Sie dann Textfragmente und eine Zeile zum`Paragraphs` Sammlung der`FloatingBox`.
 
 ```csharp
 Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
@@ -101,30 +101,30 @@ page.Paragraphs.Add(box);
 ```
 
 ## Schritt 10: Speichern Sie das PDF-Dokument
- Speichern Sie das PDF-Dokument mit`Save` Methode der`Document` Objekt.
+ Speichern Sie das PDF-Dokument mit dem`Save` Methode der`Document` Objekt.
 
 ```csharp
 doc.Save(dataDir);
 ```
 
-### Beispielquellcode für die Erstellung mehrspaltiger PDFs mit Aspose.PDF für .NET 
+### Beispiel-Quellcode zum Erstellen eines mehrspaltigen PDF mit Aspose.PDF für .NET 
 ```csharp
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
-// Geben Sie die Informationen zum linken Rand für die PDF-Datei an
+//Geben Sie die Informationen zum linken Rand für die PDF-Datei an
 doc.PageInfo.Margin.Left = 40;
-//Geben Sie die Informationen zum rechten Rand für die PDF-Datei an
+// Geben Sie die Informationen zum rechten Rand für die PDF-Datei an
 doc.PageInfo.Margin.Right = 40;
 Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
-// Fügen Sie die Zeile zur paraphraphs-Sammlung des Abschnittsobjekts hinzu
+// Fügen Sie die Zeile zur Paraphrasensammlung des Abschnittsobjekts hinzu
 page.Paragraphs.Add(graph1);
 // Geben Sie die Koordinaten für die Linie an
 float[] posArr = new float[] { 1, 2, 500, 2 };
 Aspose.Pdf.Drawing.Line l1 = new Aspose.Pdf.Drawing.Line(posArr);
 graph1.Shapes.Add(l1);
-// Erstellen Sie String-Variablen mit Text, der HTML-Tags enthält
+// Erstellen Sie Zeichenfolgenvariablen mit Text, der HTML-Tags enthält
 string s = "<font face=\"Times New Roman\" size=4>" +
 "<strong> How to Steer Clear of money scams</<strong> "
 + "</font>";
@@ -132,7 +132,7 @@ string s = "<font face=\"Times New Roman\" size=4>" +
 HtmlFragment heading_text = new HtmlFragment(s);
 page.Paragraphs.Add(heading_text);
 Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
-// Fügen Sie dem Abschnitt vier Spalten hinzu
+// Fügen Sie im Abschnitt vier Spalten hinzu
 box.ColumnInfo.ColumnCount = 2;
 // Legen Sie den Abstand zwischen den Spalten fest
 box.ColumnInfo.ColumnSpacing = "5";
@@ -143,7 +143,7 @@ text1.TextState.LineSpacing = 2;
 box.Paragraphs.Add(text1);
 text1.TextState.FontSize = 10;
 text1.TextState.FontStyle = FontStyles.Italic;
-// Erstellen Sie ein Diagrammobjekt, um eine Linie zu zeichnen
+// Erstellen Sie ein Diagrammobjekt zum Zeichnen einer Linie
 Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
 // Geben Sie die Koordinaten für die Linie an
 float[] posArr2 = new float[] { 1, 10, 100, 10 };
@@ -161,26 +161,26 @@ Console.WriteLine("\nMulti column pdf file created successfully.\nFile saved at 
 ```
 
 ## Abschluss
-Sie haben mit Aspose.PDF für .NET erfolgreich ein mehrspaltiges PDF erstellt. Die resultierende PDF-Datei befindet sich nun im angegebenen Ausgabedateipfad.
+Sie haben erfolgreich ein mehrspaltiges PDF mit Aspose.PDF für .NET erstellt. Die resultierende PDF-Datei befindet sich jetzt im angegebenen Ausgabedateipfad.
 
-### FAQs
+### Häufig gestellte Fragen
 
-#### F: Was ist der Schwerpunkt dieses Tutorials?
+#### F: Worauf liegt der Schwerpunkt dieses Tutorials?
 
-Der Schwerpunkt dieses Tutorials liegt darauf, Sie durch den Prozess der Erstellung einer mehrspaltigen PDF-Datei mit der Aspose.PDF für .NET-Bibliothek zu führen. Der bereitgestellte C#-Quellcode demonstriert die notwendigen Schritte, um dies zu erreichen.
+Dieses Tutorial führt Sie durch den Prozess der Erstellung einer mehrspaltigen PDF-Datei mithilfe der Aspose.PDF-Bibliothek für .NET. Der bereitgestellte C#-Quellcode demonstriert die dafür erforderlichen Schritte.
 
-#### F: Welche Namespaces sollte ich für dieses Tutorial importieren?
+#### F: Welche Namespaces soll ich für dieses Tutorial importieren?
 
-A: Importieren Sie in der Codedatei, in der Sie eine mehrspaltige PDF-Datei erstellen möchten, die folgenden Namespaces am Anfang der Datei:
+A: Importieren Sie in der Codedatei, in der Sie ein mehrspaltiges PDF erstellen möchten, die folgenden Namespaces am Anfang der Datei:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Drawing;
 ```
 
-#### F: Wie lege ich das Dokumentenverzeichnis fest?
+#### F: Wie gebe ich das Dokumentverzeichnis an?
 
- A: Suchen Sie im Code die Zeile`string dataDir = "YOUR DOCUMENT DIRECTORY";` und ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
+ A: Suchen Sie im Code die Zeile`string dataDir = "YOUR DOCUMENT DIRECTORY";` und ersetzen`"YOUR DOCUMENT DIRECTORY"` durch den tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
 
 #### F: Wie erstelle ich eine neue Dokumentinstanz?
 
@@ -188,28 +188,28 @@ using Aspose.Pdf.Drawing;
 
 #### F: Wie stelle ich die Seitenränder ein?
 
- A: In Schritt 5 verwenden Sie die`PageInfo.Margin` Eigentum der`Document` , um die Informationen zum linken und rechten Rand für die PDF-Datei anzugeben.
+ A: In Schritt 5 verwenden Sie die`PageInfo.Margin` Eigentum der`Document` um die linken und rechten Randinformationen für die PDF-Datei anzugeben.
 
 #### F: Wie füge ich dem Dokument eine Seite hinzu?
 
- A: In Schritt 6 fügen Sie dem Dokument eine neue Seite hinzu`Add` Methode der`Pages` Sammlung.
+ A: In Schritt 6 fügen Sie dem Dokument eine neue Seite hinzu, indem Sie`Add` Methode der`Pages` Sammlung.
 
 #### F: Wie erstelle ich ein Graph-Objekt und füge eine Linie hinzu?
 
- A: In Schritt 7 erstellen Sie ein neues`Graph` Objekt, fügen Sie eine Linie hinzu und fügen Sie dann das hinzu`Graph` Einspruch gegen die`Paragraphs` Sammlung der Seite.
+ A: In Schritt 7 erstellen Sie eine neue`Graph` Objekt, fügen Sie eine Linie hinzu und fügen Sie dann die`Graph` Einspruch gegen die`Paragraphs` Sammlung der Seite.
 
 #### F: Wie füge ich Überschriftentext mit HTML-Formatierung hinzu?
 
- A: In Schritt 8 erstellen Sie eine`HtmlFragment` Objekt und setzen Sie seinen Inhalt auf den gewünschten HTML-Text und fügen Sie dann das Fragment zum hinzu`Paragraphs` Sammlung der Seite.
+ A: In Schritt 8 erstellen Sie ein`HtmlFragment` Objekt und setzen Sie seinen Inhalt auf den gewünschten HTML-Text, dann fügen Sie das Fragment zum`Paragraphs` Sammlung der Seite.
 
 #### F: Wie erstelle ich eine FloatingBox mit mehreren Spalten?
 
- A: In Schritt 9 erstellen Sie eine`FloatingBox` Objekt mit mehreren Spalten und Spaltenabstand, fügen Sie dann Textfragmente und eine Zeile hinzu`Paragraphs` Sammlung der`FloatingBox`.
+ A: In Schritt 9 erstellen Sie eine`FloatingBox` Objekt mit mehreren Spalten und Spaltenabstand, dann fügen Sie Textfragmente und eine Zeile zum`Paragraphs` Sammlung der`FloatingBox`.
 
 #### F: Wie speichere ich das PDF-Dokument?
 
- A: In Schritt 10 speichern Sie das PDF-Dokument mit`Save` Methode der`Document` Objekt.
+ A: In Schritt 10 speichern Sie das PDF-Dokument mit dem`Save` Methode der`Document` Objekt.
 
 #### F: Was ist die wichtigste Erkenntnis aus diesem Tutorial?
 
-A: Durch Befolgen dieses Tutorials haben Sie gelernt, wie Sie mit Aspose.PDF für .NET ein mehrspaltiges PDF-Dokument erstellen. Dies kann nützlich sein, um Inhalte in einem strukturierten und organisierten Layout anzuzeigen.
+A: In diesem Tutorial haben Sie gelernt, wie Sie mit Aspose.PDF für .NET ein mehrspaltiges PDF-Dokument erstellen. Dies kann nützlich sein, um Inhalte in einem strukturierten und organisierten Layout anzuzeigen.

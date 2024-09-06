@@ -35,7 +35,7 @@ Než začneme, musíte nastavit vývojové prostředí a nainstalovat Aspose.PDF
 
 Chcete-li nainstalovat Aspose.PDF for Java, postupujte takto:
 
-1.  Stáhnout Aspose.PDF pro Java: Navštivte web Aspose[tady](https://releases.aspose.com/pdf/java/) a stáhněte si nejnovější verzi Aspose.PDF pro Javu.
+1.  Stáhnout Aspose.PDF pro Java: Navštivte web Aspose[zde](https://releases.aspose.com/pdf/java/) a stáhněte si nejnovější verzi Aspose.PDF pro Javu.
 
 2. Přidat do projektu: Přidejte knihovnu Aspose.PDF do svého projektu Java zahrnutím souboru JAR do cesty sestavení vašeho projektu.
 
@@ -82,7 +82,7 @@ textFragment.getTextState().setForegroundColor(Color.getRed());
 
 ### Úprava velikosti a stylu písma
 
-Chcete-li změnit velikost a styl písma:
+Chcete-li upravit velikost a styl písma:
 
 ```java
 textFragment.getTextState().setFontSize(18);
@@ -99,7 +99,7 @@ textFragment.getTextState().setItalic(true);
 textFragment.getTextState().setUnderline(TextStateDecoration.Line);
 ```
 
-## Přidávání obrázků do PDF
+## Přidání obrázků do PDF
 
 Kromě textu můžete do dokumentu PDF přidat také obrázky.
 
@@ -132,7 +132,7 @@ Hypertextové odkazy jsou nezbytné pro vytváření interaktivních PDF. Podív
 
 ### Přidání hypertextových odkazů do vloženého textu
 
-Chcete-li k textu přidat hypertextový odkaz:
+Přidání hypertextového odkazu do textu:
 
 ```java
 // Vytvořte anotaci odkazu
@@ -189,7 +189,7 @@ Přístupné soubory PDF nabízejí několik výhod:
 
 ## Závěr
 
-V tomto článku jsme prozkoumali koncept prvků Inline Structure Elements v dokumentech PDF pomocí Java a Aspose.PDF for Java. Popsali jsme důležitost těchto prvků, jak vytvořit PDF, přidat text a obrázky, formátovat obsah, přidat hypertextové odkazy, strukturovat obsah pomocí Inline Structure Elements a zajistit dostupnost PDF.
+V tomto článku jsme prozkoumali koncept prvků Inline Structure Elements v dokumentech PDF pomocí Java a Aspose.PDF for Java. Probrali jsme důležitost těchto prvků, jak vytvořit PDF, přidat text a obrázky, formátovat obsah, přidat hypertextové odkazy, strukturovat obsah pomocí Inline Structure Elements a zajistit dostupnost PDF.
 
 ## FAQ
 
@@ -199,7 +199,7 @@ Vložené prvky struktury jsou prvky v dokumentu PDF, které definují strukturu
 
 ### Jak mohu nainstalovat Aspose.PDF pro Javu?
 
- Chcete-li nainstalovat Aspose.PDF pro Java, navštivte web Aspose[tady](https://releases.aspose.com/pdf/java/) a stáhněte si nejnovější verzi. Poté přidejte soubor JAR do cesty sestavení vašeho projektu Java.
+ Chcete-li nainstalovat Aspose.PDF pro Java, navštivte web Aspose[zde](https://releases.aspose.com/pdf/java/) a stáhněte si nejnovější verzi. Poté přidejte soubor JAR do cesty sestavení vašeho projektu Java.
 
 ### Mohu změnit barvu vloženého textu v PDF?
 

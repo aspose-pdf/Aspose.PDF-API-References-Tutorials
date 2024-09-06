@@ -81,7 +81,7 @@ Vytvoření odkazu na jiný dokument PDF pomocí Java a Aspose.PDF pro Java je p
 
 ### Jak si mohu stáhnout Aspose.PDF pro Javu?
 
- Aspose.PDF pro Java si můžete stáhnout z webové stránky na adrese[tady](https://releases.aspose.com/pdf/java/).
+ Aspose.PDF pro Java si můžete stáhnout z webové stránky na adrese[zde](https://releases.aspose.com/pdf/java/).
 
 ### Mohu použít Aspose.PDF pro Javu v komerčních projektech?
 

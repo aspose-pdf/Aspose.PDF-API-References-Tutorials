@@ -11,7 +11,7 @@ Tato příručka vás krok za krokem provede převodem proudu obrázků do soubo
 
 ## Krok 1: Definujte adresář dokumentů
 
- Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři, kde se nachází váš obrázek.
+Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři, kde se nachází váš obrázek.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -27,7 +27,7 @@ Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 
 ## Krok 3: Přidejte stránku do dokumentu PDF
 
- Přidejte stránku do dokumentu PDF pomocí`Add` metoda`Pages` předmět`pdf1`.
+Přidejte stránku do dokumentu PDF pomocí`Add` metoda`Pages` předmět`pdf1`.
 
 ```csharp
 Aspose.Pdf.Page sec = pdf1.Pages.Add();
@@ -35,7 +35,7 @@ Aspose.Pdf.Page sec = pdf1.Pages.Add();
 
 ## Krok 4: Přečtěte si tok obrázků
 
- V tomto kroku vytvoříme a`FileStream` objekt pro čtení souboru obrázku ze streamu.
+ V tomto kroku vytvoříme a`FileStream` objekt pro čtení obrazového souboru ze streamu.
 
 ```csharp
 FileStream fs = File.OpenRead(dataDir + "aspose.jpg");
@@ -52,7 +52,7 @@ fs.Read(data, 0, data.Length);
 
 ## Krok 6: Vytvořte objekt MemoryStream z bajtového pole
 
- Vytvořit`MemoryStream` objekt z bajtového pole obsahujícího obrázek.
+ Vytvořte a`MemoryStream` objekt z bajtového pole obsahujícího obrázek.
 
 ```csharp
 MemoryStream ms = new MemoryStream(data);
@@ -69,7 +69,7 @@ imageht. ImageStream = ms;
 
 ## Krok 8: Přidejte objekt Image do kolekce Odstavce
 
- Přidat`imageht` namítat proti`Paragraphs` sbírka`sec` sekce.
+ Přidejte`imageht` namítat proti`Paragraphs` sbírka`sec` sekce.
 
 ```csharp
 sec.Paragraphs.Add(imageht);
@@ -85,7 +85,7 @@ pdf1.Save(dataDir + "ConvertMemoryStreamImageToPdf_out.pdf");
 
 ## Krok 10: Zavřete objekt MemoryStream
 
- Zavři`ms` objekt pomocí`Close` způsob uvolnění zdrojů.
+ Zavřete`ms` objekt pomocí`Close` způsob uvolnění zdrojů.
 
 ```csharp
 ms. Close();
@@ -95,7 +95,7 @@ ms. Close();
 ```csharp
 // Cesta k adresáři dokumentů.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Vytvořte instanci instance dokumentu voláním jejího prázdného konstruktoru
+// Vytvořte instanci instance dokumentu voláním jejího prázdného konstruktoru
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 // Přidejte stránku do dokumentu pdf
 Aspose.Pdf.Page sec = pdf1.Pages.Add();
@@ -150,7 +150,7 @@ Odpověď: Určení adresáře dokumentu zajišťuje, že obrazový proud a výs
 
 #### Otázka: Jak je obrázek vložený do dokumentu PDF během procesu převodu?
 
- A: An`Image` objekt je vytvořen pomocí`Aspose.Pdf.Image` třída a proud obrazu je přiřazen k`ImageStream` vlastnictví. The`Image` objekt je pak přidán do`Paragraphs` sbírka PDF dokumentu.
+ A: An`Image` objekt je vytvořen pomocí`Aspose.Pdf.Image` třída a proud obrazu je přiřazen k`ImageStream` vlastnictví. The`Image` objekt je poté přidán do`Paragraphs` sbírka PDF dokumentu.
 
 #### Otázka: Mohu upravit polohu, velikost nebo jiné atributy obrázku ve výsledném souboru PDF?
 
@@ -158,4 +158,4 @@ Odpověď: Určení adresáře dokumentu zajišťuje, že obrazový proud a výs
 
 #### Otázka: Jaký je poslední krok v procesu převodu obrazového streamu do PDF?
 
- Odpověď: Dokument PDF se uloží pomocí`Save` metoda`Document` objekt a`MemoryStream` objekt se uzavírá pomocí`Close` způsob uvolňování zdrojů.
+ Odpověď: Dokument PDF se uloží pomocí`Save` metoda`Document` objekt a`MemoryStream` objekt se uzavírá pomocí`Close`způsob uvolňování zdrojů.

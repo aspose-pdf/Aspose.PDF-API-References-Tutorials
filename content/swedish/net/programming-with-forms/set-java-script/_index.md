@@ -29,7 +29,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Steg 2: Ladda in PDF-filen
 
- det här steget laddar vi in PDF-filen med hjälp av`Document` klass av Aspose.PDF.
+ I det här steget laddar vi in PDF-filen med hjälp av`Document` klass av Aspose.PDF.
 
 ```csharp
 // Ladda inmatad PDF-fil
@@ -124,7 +124,7 @@ den här guiden lärde vi oss hur man använder Aspose.PDF-biblioteket för .NET
 
 #### F: Stöder Aspose.PDF för .NET andra JavaScript-händelser än de som nämns i denna handledning?
 
- S: Ja, Aspose.PDF för .NET stöder ett brett utbud av JavaScript-händelser, inklusive`OnMouseEnter`, `OnMouseExit`, `OnMouseDown` , och`OnMouseUp`, bland andra. Du kan använda dessa händelser för att utlösa JavaScript-åtgärder baserat på användarinteraktioner.
+ S: Ja, Aspose.PDF för .NET stöder ett brett utbud av JavaScript-händelser, inklusive`OnMouseEnter`, `OnMouseExit`, `OnMouseDown` , och`OnMouseUp`bland annat. Du kan använda dessa händelser för att utlösa JavaScript-åtgärder baserat på användarinteraktioner.
 
 #### F: Kan jag använda Aspose.PDF för .NET för att extrahera JavaScript-kod från befintliga PDF-dokument?
 

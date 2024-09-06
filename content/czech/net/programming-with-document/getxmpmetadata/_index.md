@@ -17,7 +17,7 @@ Po stažení knihovny rozbalte obsah souboru ZIP do složky v počítači. Poté
 
 ## Krok 2: Načtěte dokument PDF
 
-Jakmile nainstalujete Aspose.PDF pro .NET a přidáte odkaz na knihovnu DLL ve svém projektu .NET, můžete začít používat`GetXmpMetadata` funkce pro extrahování metadat XMP z dokumentu PDF.
+ Jakmile nainstalujete Aspose.PDF pro .NET a přidáte odkaz na knihovnu DLL ve svém projektu .NET, můžete začít používat`GetXmpMetadata` funkce pro extrahování metadat XMP z dokumentu PDF.
 
 Prvním krokem při použití této funkce je načtení dokumentu PDF, ze kterého chcete extrahovat metadata XMP. Chcete-li to provést, můžete použít následující kód:
 
@@ -25,7 +25,7 @@ Prvním krokem při použití této funkce je načtení dokumentu PDF, ze které
 // Cesta k dokumentu PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Otevřete dokument PDF
+// Otevřete dokument PDF
 Document pdfDocument = new Document(dataDir + "GetXMPMetadata.pdf");
 ```
 
@@ -41,7 +41,7 @@ Console.WriteLine(pdfDocument.Metadata["xmp:Nickname"]);
 Console.WriteLine(pdfDocument.Metadata["xmp:CustomProperty"]);
 ```
 
- Ve výše uvedeném kódu`xmp:CreateDate`, `xmp:Nickname` , a`xmp:CustomProperty` jsou příklady vlastností metadat XMP, které můžete extrahovat z dokumentu PDF. Tyto názvy vlastností můžete nahradit názvy jakýchkoli jiných vlastností metadat XMP, které chcete extrahovat.
+ Ve výše uvedeném kódu`xmp:CreateDate`, `xmp:Nickname` a`xmp:CustomProperty` jsou příklady vlastností metadat XMP, které můžete extrahovat z dokumentu PDF. Tyto názvy vlastností můžete nahradit názvy jakýchkoli jiných vlastností metadat XMP, které chcete extrahovat.
 
 ### Příklad zdrojového kódu pro získání metadat XMP pomocí Aspose.PDF pro .NET
 
@@ -51,7 +51,7 @@ Console.WriteLine(pdfDocument.Metadata["xmp:CustomProperty"]);
 // Cesta k dokumentu PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Otevřete dokument PDF
+// Otevřete dokument PDF
 Document pdfDocument = new Document(dataDir + "GetXMPMetadata.pdf");
 
 // Extrahujte metadata XMP
@@ -74,7 +74,7 @@ Odpověď: Metadata XMP v dokumentu PDF odkazují na informace XMP (Extensible M
 
 #### Otázka: Jaký typ informací lze extrahovat pomocí funkce GetXmpMetadata?
 
- Odpověď: Funkce GetXmpMetadata umožňuje vývojářům extrahovat různé vlastnosti metadat XMP z dokumentu PDF. Některé příklady vlastností metadat XMP, které lze extrahovat, jsou`xmp:CreateDate`, `xmp:Nickname` , a`xmp:CustomProperty`. Vývojáři mohou k těmto vlastnostem přistupovat a podle potřeby je používat ve svých aplikacích.
+ Odpověď: Funkce GetXmpMetadata umožňuje vývojářům extrahovat různé vlastnosti metadat XMP z dokumentu PDF. Některé příklady vlastností metadat XMP, které lze extrahovat, jsou`xmp:CreateDate`, `xmp:Nickname` a`xmp:CustomProperty`. Vývojáři mohou k těmto vlastnostem přistupovat a podle potřeby je používat ve svých aplikacích.
 
 #### Otázka: Mohu extrahovat vlastní vlastnosti metadat XMP pomocí Aspose.PDF pro .NET?
 

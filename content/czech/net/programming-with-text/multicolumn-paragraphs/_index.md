@@ -71,7 +71,7 @@ paragraph = section.Paragraphs[section.Paragraphs.Count - 1];
 Console.WriteLine("Section at {0} last paragraph text:\r\n", section.Rectangle.ToString());
 Console.WriteLine(paragraph.Text);
 
-//Přístup k prvnímu odstavci v sekci po povolení odstavců s více sloupci
+// Přístup k prvnímu odstavci v sekci po povolení odstavců s více sloupci
 section = markup. Sections[1];
 paragraph = section.Paragraphs[0];
 Console.WriteLine("\r\nSection at {0} first paragraph text:\r\n", section.Rectangle.ToString());
@@ -137,7 +137,7 @@ A: Chcete-li nastavit adresář dokumentů:
 
 #### Otázka: Jak povolím vícesloupcové odstavce?
 
- A: Chcete-li povolit vícesloupcové odstavce, můžete nastavit`IsMulticolumnParagraphsAllowed` vlastnictvím`PageMarkup` namítat proti`true`.
+ A: Chcete-li povolit vícesloupcové odstavce, můžete nastavit`IsMulticolumnParagraphsAllowed` majetek z`PageMarkup` namítat proti`true`.
 
 #### Otázka: Jaký je očekávaný výstup tohoto tutoriálu?
 

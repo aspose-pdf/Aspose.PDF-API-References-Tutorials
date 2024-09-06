@@ -97,4 +97,4 @@ Ja, Aspose.PDF för Java är en kommersiell produkt. Du kan behöva skaffa en li
 
 ### Var kan jag hitta mer Aspose.PDF för Java tutorials och resurser?
 
- För omfattande handledning och dokumentation, besök Aspose.PDF för Java-dokumentation på[här](https://reference.aspose.com/pdf/java/).
+ För omfattande handledningar och dokumentation, besök Aspose.PDF för Java-dokumentation på[här](https://reference.aspose.com/pdf/java/).

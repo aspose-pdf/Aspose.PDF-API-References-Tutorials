@@ -17,7 +17,7 @@ När du har laddat ner biblioteket, extrahera innehållet i ZIP-filen till en ma
 
 ## Steg 2: Ladda PDF-dokumentet
 
-När du har installerat Aspose.PDF för .NET och lagt till en referens till DLL-filen i ditt .NET-projekt kan du börja använda`GetWarningsForFontSubstitution` funktion för att upptäcka varningar för teckensnittsersättning när du öppnar ett PDF-dokument.
+ När du har installerat Aspose.PDF för .NET och lagt till en referens till DLL-filen i ditt .NET-projekt kan du börja använda`GetWarningsForFontSubstitution` funktion för att upptäcka varningar för teckensnittsersättning när du öppnar ett PDF-dokument.
 
 Det första steget i att använda den här funktionen är att ladda PDF-dokumentet som du vill upptäcka varningar för teckensnittsersättning. För att göra detta kan du använda följande kod:
 
@@ -25,7 +25,7 @@ Det första steget i att använda den här funktionen är att ladda PDF-dokument
 // Sökvägen till PDF-dokumentet
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Öppna PDF-dokumentet
+// Öppna PDF-dokumentet
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -33,7 +33,7 @@ Document doc = new Document(dataDir + "input.pdf");
 
 ## Steg 3: Upptäck varningar för teckensnittsersättning
 
-För att upptäcka varningar för teckensnittsbyte när du öppnar ett PDF-dokument kan du använda följande kod:
+För att upptäcka varningar för teckensnittsersättning när du öppnar ett PDF-dokument kan du använda följande kod:
 
 ```csharp
 doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
@@ -60,7 +60,7 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 // Sökvägen till PDF-dokumentet
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Öppna PDF-dokumentet
+// Öppna PDF-dokumentet
 Document doc = new Document(dataDir + "input.pdf");
 
 // Upptäck varningar för teckensnittsersättning

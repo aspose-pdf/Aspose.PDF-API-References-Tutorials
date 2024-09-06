@@ -186,8 +186,8 @@ Igen, személyre szabhatja a könyvjelzők megjelenését a szövegstílusok, sz
 
 ### Milyen egyéb műveleteket adhatok hozzá a könyvjelzőkhöz?
 
-Az „Ugrás” műveletek mellett hozzáadhat olyan műveleteket is, mint például „URI” műveletek internetes hivatkozások megnyitásához, vagy „JavaScript” műveletek egyéni szkriptek végrehajtásához, amikor egy könyvjelzőre kattintanak.
+A „GoTo” műveletek mellett hozzáadhat olyan műveleteket is, mint például „URI” műveletek webes hivatkozások megnyitásához, vagy „JavaScript” műveletek egyéni szkriptek végrehajtásához, amikor egy könyvjelzőre kattintanak.
 
 ### Alkalmas az Aspose.PDF for Java kereskedelmi projektekhez?
 
-Igen, az Aspose.PDF for Java alkalmas személyes és kereskedelmi projektekre is, és a PDF-kezeléshez és -generáláshoz a funkciók széles skáláját kínálja.
+Igen, az Aspose.PDF for Java alkalmas személyes és kereskedelmi projektekre is, és a PDF-kezeléshez és -generáláshoz funkciók széles skáláját kínálja.

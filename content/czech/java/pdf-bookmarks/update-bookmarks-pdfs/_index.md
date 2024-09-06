@@ -8,9 +8,9 @@ weight: 16
 url: /cs/java/pdf-bookmarks/update-bookmarks-pdfs/
 ---
 
-## Úvod
+## Zavedení
 
-V tomto tutoriálu prozkoumáme, jak aktualizovat záložky v PDF pomocí Aspose.PDF for Java, výkonné Java knihovny pro práci s PDF dokumenty. Záložky jsou nezbytné pro zlepšení navigace a použitelnosti souborů PDF a Aspose.PDF pro Java poskytuje pohodlný způsob, jak je programově upravovat.
+V tomto tutoriálu prozkoumáme, jak aktualizovat záložky v PDF pomocí Aspose.PDF for Java, výkonné Java knihovny pro práci s dokumenty PDF. Záložky jsou nezbytné pro zlepšení navigace a použitelnosti souborů PDF a Aspose.PDF pro Java poskytuje pohodlný způsob, jak je programově upravovat.
 
 ## Porozumění Aspose.PDF pro Javu
 
@@ -45,7 +45,7 @@ Nyní vytvořte nový projekt Java ve vašem IDE:
 
 Chcete-li pracovat s Aspose.PDF pro Java, musíte do projektu přidat knihovnu:
 
-1.  Stáhněte si knihovnu Aspose.PDF for Java z[tady](https://releases.aspose.com/pdf/java/).
+1.  Stáhněte si knihovnu Aspose.PDF for Java z[zde](https://releases.aspose.com/pdf/java/).
 2. Přidejte soubor JAR do cesty třídy vašeho projektu.
 
 ## Aktualizace záložek v PDF
@@ -107,4 +107,4 @@ Přestože je Aspose.PDF for Java všestranná knihovna, je nezbytné prostudova
 
 ### Kde najdu další zdroje a dokumentaci k Aspose.PDF pro Javu?
 
- Komplexní dokumentaci, výukové programy a další zdroje pro Aspose.PDF pro Java můžete najít na webu Aspose:[tady](https://reference.aspose.com/pdf/java/).
+ Komplexní dokumentaci, výukové programy a další zdroje pro Aspose.PDF pro Java můžete najít na webu Aspose:[zde](https://reference.aspose.com/pdf/java/).

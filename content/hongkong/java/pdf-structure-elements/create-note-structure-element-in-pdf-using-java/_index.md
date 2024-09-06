@@ -80,7 +80,7 @@ pdfDocument.save("output.pdf");
 
 ## 結論
 
-在本教學中，我們學習如何使用 Java 和 Aspose.PDF for Java 程式庫在 PDF 中建立註解結構元素。現在您可以透過互動式註釋和評論來增強您的 PDF 文檔，為您的讀者提供更豐富的體驗。
+在本教學中，我們學習如何使用 Java 和 Aspose.PDF for Java 程式庫在 PDF 中建立註解結構元素。現在您可以透過互動式註釋和評論來增強 PDF 文檔，為讀者提供更豐富的體驗。
 
 ## 常見問題解答
 

@@ -7,7 +7,7 @@ type: docs
 weight: 170
 url: /zh-hant/net/programming-with-document/getdocumentwindow/
 ---
- Aspose.PDF for .NET 是一個功能強大的 PDF 操作庫，可讓開發人員在其 .NET 應用程式中建立、編輯和轉換 PDF 檔案。該庫提供的功能之一是能夠檢索有關文件視窗屬性的資訊。本教學將引導您完成使用`GetDocumentWindow`Aspose.PDF for .NET 的功能可擷取 PDF 文件視窗屬性的資訊。
+Aspose.PDF for .NET 是一個功能強大的 PDF 操作庫，可讓開發人員在其 .NET 應用程式中建立、編輯和轉換 PDF 檔案。該庫提供的功能之一是能夠檢索有關文件視窗屬性的資訊。本教學將引導您完成使用`GetDocumentWindow`Aspose.PDF for .NET 的功能可擷取 PDF 文件視窗屬性的資訊。
 
 ## 第 1 步：安裝 Aspose.PDF for .NET
 

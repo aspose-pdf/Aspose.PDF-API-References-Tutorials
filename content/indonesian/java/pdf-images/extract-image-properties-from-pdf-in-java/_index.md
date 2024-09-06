@@ -1,37 +1,37 @@
 ---
 title: Ekstrak Properti Gambar dari PDF di Java
 linktitle: Ekstrak Properti Gambar dari PDF di Java
-second_title: Aspose.PDF API Pemrosesan PDF Java
+second_title: API Pemrosesan PDF Java Aspose.PDF
 description: Pelajari cara mengekstrak properti gambar dari PDF di Java menggunakan Aspose.PDF untuk Java. Panduan langkah demi langkah dengan kode sumber. Tingkatkan keterampilan pemrosesan PDF Anda hari ini!
 type: docs
 weight: 23
 url: /id/java/pdf-images/extract-image-properties-from-pdf-in-java/
 ---
 
-Aspose.PDF untuk Java adalah perpustakaan canggih yang memungkinkan Anda bekerja dengan dokumen PDF dalam aplikasi Java. Dalam panduan langkah demi langkah ini, kita akan mempelajari cara mengekstrak properti gambar dari dokumen PDF menggunakan Aspose.PDF untuk Java. Kami akan memberi Anda contoh kode sumber agar prosesnya mudah dipahami.
+Aspose.PDF untuk Java adalah pustaka canggih yang memungkinkan Anda bekerja dengan dokumen PDF dalam aplikasi Java. Dalam panduan langkah demi langkah ini, kami akan membahas cara mengekstrak properti gambar dari dokumen PDF menggunakan Aspose.PDF untuk Java. Kami akan memberikan contoh kode sumber agar prosesnya mudah dipahami.
 
-## 1. Perkenalan
+## 1. Pendahuluan
 
-Dokumen PDF sering kali berisi gambar, dan mungkin berguna untuk mengekstrak informasi tentang gambar tersebut secara terprogram. Aspose.PDF untuk Java menyediakan cara mudah untuk mengekstrak properti gambar seperti dimensi, resolusi, dan format. Mari kita mulai!
+Dokumen PDF sering kali berisi gambar, dan mengekstrak informasi tentang gambar tersebut secara terprogram dapat berguna. Aspose.PDF untuk Java menyediakan cara mudah untuk mengekstrak properti gambar seperti dimensi, resolusi, dan format. Mari kita mulai!
 
 ## 2. Menyiapkan Aspose.PDF untuk Java
 
- Sebelum kita mulai, Anda perlu menyiapkan Aspose.PDF untuk Java di proyek Anda. Anda dapat mengunduh perpustakaan dari situs web[Di Sini](https://releases.aspose.com/pdf/java/) dan ikuti petunjuk instalasi.
+ Sebelum kita mulai, Anda perlu menyiapkan Aspose.PDF untuk Java di proyek Anda. Anda dapat mengunduh pustaka dari situs web[Di Sini](https://releases.aspose.com/pdf/java/) dan ikuti petunjuk instalasi.
 
 ## 3. Memuat Dokumen PDF
 
-Untuk bekerja dengan dokumen PDF, Anda harus memuatnya terlebih dahulu menggunakan Aspose.PDF untuk Java. Inilah cara Anda melakukannya:
+Untuk bekerja dengan dokumen PDF, pertama-tama Anda perlu memuatnya menggunakan Aspose.PDF untuk Java. Berikut cara melakukannya:
 
 ```java
 // Muat dokumen PDF
 Document pdfDocument = new Document("example.pdf");
 ```
 
- Mengganti`"example.pdf"` dengan jalur ke file PDF Anda.
+ Mengganti`"example.pdf"` dengan jalur ke berkas PDF Anda.
 
 ## 4. Mengekstrak Properti Gambar
 
- Sekarang kita telah memuat dokumen PDF, mari ekstrak properti gambar. Aspose.PDF untuk Java menyediakan`Page.getResources()` metode untuk mengakses sumber daya halaman, termasuk gambar.
+ Sekarang setelah kita memuat dokumen PDF, mari kita ekstrak properti gambar. Aspose.PDF untuk Java menyediakan`Page.getResources()` metode untuk mengakses sumber daya suatu halaman, termasuk gambar.
 
 ```java
 // Akses halaman pertama dokumen
@@ -46,10 +46,10 @@ Iterable<XImage> images = resources.getImages();
 
 ## 5. Mengakses Informasi Gambar
 
-Dengan gambar yang diekstraksi, Anda dapat mengakses berbagai properti setiap gambar, seperti dimensi, resolusi, dan format. Berikut ini contoh cara melakukannya:
+Dengan gambar yang diekstrak, Anda dapat mengakses berbagai properti setiap gambar, seperti dimensi, resolusi, dan format. Berikut ini contoh cara melakukannya:
 
 ```java
-// Iterasi melalui gambar
+// Ulangi melalui gambar
 for (XImage image : images) {
     // Dapatkan lebar dan tinggi gambar
     int width = image.getWidth();
@@ -84,9 +84,9 @@ pdfDocument.save("updated.pdf");
 
 ## 8. Kesimpulan
 
-Dalam panduan ini, kita telah mempelajari cara mengekstrak properti gambar dari dokumen PDF menggunakan Aspose.PDF untuk Java. Kami membahas pengaturan perpustakaan, memuat dokumen PDF, mengekstrak properti gambar, mengakses informasi gambar, dan menyimpan PDF yang diperbarui. Aspose.PDF untuk Java menyederhanakan pekerjaan dengan dokumen PDF dan menyediakan fungsionalitas luas untuk berbagai tugas.
+Dalam panduan ini, kita telah mempelajari cara mengekstrak properti gambar dari dokumen PDF menggunakan Aspose.PDF untuk Java. Kita membahas cara menyiapkan pustaka, memuat dokumen PDF, mengekstrak properti gambar, mengakses informasi gambar, dan menyimpan PDF yang diperbarui. Aspose.PDF untuk Java menyederhanakan pekerjaan dengan dokumen PDF dan menyediakan fungsionalitas yang luas untuk berbagai tugas.
 
-## FAQ
+## Tanya Jawab Umum
 
 ### Bagaimana cara menginstal Aspose.PDF untuk Java?
 
@@ -94,7 +94,7 @@ Dalam panduan ini, kita telah mempelajari cara mengekstrak properti gambar dari 
 
 ### Bisakah saya mengekstrak properti gambar dari halaman tertentu dalam PDF?
 
-Ya, Anda dapat mengekstrak properti gambar dari halaman tertentu dengan mengakses halaman yang diinginkan menggunakan`pdfDocument.getPages().get_Item(pageNumber)` dan kemudian mengikuti langkah yang sama yang disebutkan dalam panduan ini.
+Ya, Anda dapat mengekstrak properti gambar dari halaman tertentu dengan mengakses halaman yang diinginkan menggunakan`pdfDocument.getPages().get_Item(pageNumber)` dan kemudian ikuti langkah-langkah yang sama yang disebutkan dalam panduan.
 
 ### Bisakah saya mengubah properti gambar menggunakan Aspose.PDF untuk Java?
 
@@ -102,4 +102,4 @@ Ya, Anda dapat mengubah properti gambar seperti mengubah ukuran, mengompresi, at
 
 ### Di mana saya dapat menemukan lebih banyak dokumentasi dan contoh untuk Aspose.PDF untuk Java?
 
- Anda dapat mengakses dokumentasi dan contoh komprehensif di situs web dokumentasi Aspose.PDF untuk Java API:[https://reference.aspose.com/pdf/java/](https://reference.aspose.com/pdf/java/).
+ Anda dapat mengakses dokumentasi dan contoh lengkap di situs web dokumentasi API Aspose.PDF untuk Java:[https://reference.aspose.com/pdf/java/](https://reference.aspose.com/pdf/java/).

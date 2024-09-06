@@ -139,7 +139,7 @@ Console.WriteLine("\nCell and table border width setup successfully.\nFile saved
 ```
 
 ## Závěr
-Gratulujeme! Úspěšně jste se naučili, jak nastavit okraje nebo odsazení v tabulce pomocí Aspose.PDF pro .NET. Tyto znalosti vám pomohou zlepšit možnosti formátování dokumentů a učinit vaše tabulky vizuálně přitažlivými.
+Gratuluji! Úspěšně jste se naučili, jak nastavit okraje nebo odsazení v tabulce pomocí Aspose.PDF pro .NET. Tyto znalosti vám pomohou zlepšit možnosti formátování dokumentů a učinit vaše tabulky vizuálně přitažlivými.
 
 ### FAQ
 

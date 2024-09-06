@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 2: Laddar PDF-dokumentet
 
-Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Här är hur:
+Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Så här gör du:
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -32,7 +32,7 @@ Var noga med att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till
 
 ## Steg 3: Räkna artefakter
 
-Nu när du har laddat PDF-dokumentet kan du räkna artefakter av typen "vattenstämpel" på en specifik sida i dokumentet. Här är hur:
+Nu när du har laddat PDF-dokumentet kan du räkna artefakter av typen "vattenstämpel" på en specifik sida i dokumentet. Så här gör du:
 
 ```csharp
 // Initiera räknaren

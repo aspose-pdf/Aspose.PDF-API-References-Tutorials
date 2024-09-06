@@ -13,7 +13,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy telepítette az Aspose.PDF k�
 
 ## 1. lépés: Dokumentumkönyvtár beállítása
 
-megadott forráskódban meg kell adnia azt a könyvtárat, ahová menteni szeretné az eredményül kapott PDF fájlt. Módosítsa a "dataDir" változót a kívánt könyvtárra.
+A megadott forráskódban meg kell adnia azt a könyvtárat, ahová menteni szeretné az eredményül kapott PDF fájlt. Módosítsa a "dataDir" változót a kívánt könyvtárra.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -50,7 +50,7 @@ line.GraphInfo.DashPhase = 1;
 
 ## 5. lépés: A vonal hozzáadása a grafikon objektumhoz
 
-vonalat hozzáadjuk a Graph objektum alakgyűjteményéhez.
+A vonalat hozzáadjuk a Graph objektum alakgyűjteményéhez.
 
 ```csharp
 canvas.Shapes.Add(line);
@@ -97,7 +97,7 @@ Console.WriteLine("\nLength dashed successfully in black and white.\nFile saved 
 
 ## Következtetés
 
-Ebben az oktatóanyagban elmagyaráztuk, hogyan állíthatja be a kötőjelek hosszát az Aspose.PDF for .NET használatával. Mostantól ezt a tudást felhasználhatja arra, hogy egyedi kötőjelmintákkal rendelkező vonalakat hozzon létre PDF-fájljaiban.
+Ebben az oktatóanyagban elmagyaráztuk, hogyan állíthatja be a gondolatjelek hosszát az Aspose.PDF for .NET használatával. Mostantól ezt a tudást felhasználhatja arra, hogy egyedi kötőjelmintákkal rendelkező vonalakat hozzon létre PDF-fájljaiban.
 
 ## GYIK
 
@@ -115,7 +115,7 @@ V: Módosítsa a "dataDir" változót a megadott forráskódban, hogy jelezze az
 
 #### K: Hogyan hozhatok létre vonalat egyéni kötőjelmintákkal?
 
- V: Az oktatóanyag bemutatja a Line objektum létrehozását, valamint színének, kötőjel tömbjének és kötőjel fázisának konfigurálását a`GraphInfo` tárgy. Módosítsa ezeket a beállításokat a kívánt vonalminta eléréséhez.
+ V: Az oktatóanyag bemutatja a Line objektum létrehozását, valamint színének, kötőjel tömbjének és kötőjel fázisának konfigurálását a`GraphInfo` objektum. Módosítsa ezeket a beállításokat a kívánt vonalminta eléréséhez.
 
 #### K: Testreszabhatom a vonal színét?
 

@@ -18,7 +18,7 @@ Než začneme, ujistěte se, že máte následující předpoklady:
 
 - Java Development Kit (JDK) nainstalován.
 - Integrované vývojové prostředí (IDE) jako IntelliJ IDEA nebo Eclipse.
--  Aspose.PDF pro knihovnu Java, kterou si můžete stáhnout[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java, kterou si můžete stáhnout[zde](https://releases.aspose.com/pdf/java/).
 
 ## Nastavení prostředí
 
@@ -119,7 +119,7 @@ V tomto tutoriálu jsme se naučili, jak přidat tabulku do existujícího dokum
 
 ### Jak mohu nainstalovat Aspose.PDF pro Javu?
 
- Aspose.PDF pro Javu si můžete stáhnout z[tady](https://releases.aspose.com/pdf/java/). Postupujte podle pokynů k instalaci uvedených na jejich webových stránkách.
+ Aspose.PDF pro Javu si můžete stáhnout z[zde](https://releases.aspose.com/pdf/java/). Postupujte podle pokynů k instalaci uvedených na jejich webových stránkách.
 
 ### Mohu přidat obrázky do buněk tabulky?
 

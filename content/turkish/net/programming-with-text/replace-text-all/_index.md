@@ -1,24 +1,24 @@
 ---
-title: PDF Dosyasındaki Metnin Tamamını Değiştir
-linktitle: PDF Dosyasındaki Metnin Tamamını Değiştir
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET'i kullanarak PDF dosyasındaki tüm metni nasıl değiştireceğinizi öğrenin.
+title: PDF Dosyasındaki Tüm Metni Değiştir
+linktitle: PDF Dosyasındaki Tüm Metni Değiştir
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki tüm metinlerin nasıl değiştirileceğini öğrenin.
 type: docs
 weight: 350
 url: /tr/net/programming-with-text/replace-text-all/
 ---
-Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak PDF dosyasındaki tüm metni nasıl değiştireceğinizi açıklayacağız. Gerekli C# kaynak koduyla birlikte adım adım bir kılavuz sağlayacağız.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak PDF dosyasındaki tüm metinlerin nasıl değiştirileceğini açıklayacağız. Gerekli C# kaynak koduyla birlikte adım adım bir kılavuz sağlayacağız.
 
-## Önkoşullar
+## Ön koşullar
 
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
 - Aspose.PDF for .NET kütüphanesi kuruldu.
-- C# programlamanın temel anlayışı.
+- C# programlamanın temel bilgisi.
 
-## 1. Adım: Belge Dizinini Ayarlayın
+## Adım 1: Belge Dizinini Ayarlayın
 
- Giriş PDF dosyasının bulunduğu dizinin yolunu ayarlayın. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyanızın yolunu içeren değişken.
+ Giriş PDF dosyanızın bulunduğu dizine giden yolu ayarlayın. Değiştir`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyanızın yolunu içeren değişken.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -32,18 +32,18 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
 ```
 
-## 3. Adım: Metni Arayın ve Değiştirin
+## Adım 3: Metni Ara ve Değiştir
 
- Oluşturmak`TextFragmentAbsorber` Giriş arama ifadesinin tüm örneklerini bulmak için nesne. Metin parçalarını çıkarmak için PDF belgesinin tüm sayfaları için emiciyi kabul edin.
+ Bir tane oluştur`TextFragmentAbsorber` Giriş arama ifadesinin tüm örneklerini bulmak için nesne. Metin parçalarını çıkarmak için PDF belgesinin tüm sayfaları için emiciyi kabul edin.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
 
-## 4. Adım: Metni Değiştir
+## Adım 4: Metni Değiştirin
 
-Çıkarılan metin parçaları arasında dolaşın ve metni gerektiği gibi değiştirin. Metni ve yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi diğer özellikleri güncelleyin.
+Çıkarılan metin parçaları arasında döngü yapın ve metni gerektiği gibi değiştirin. Metni ve yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi diğer özellikleri güncelleyin.
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
@@ -56,7 +56,7 @@ foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
 }
 ```
 
-## 5. Adım: Değiştirilen PDF'yi kaydedin
+## Adım 5: Değiştirilen PDF'yi kaydedin
 
 Değiştirilen PDF belgesini belirtilen çıktı dosyasına kaydedin.
 
@@ -66,22 +66,22 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nText replaced successfully.\nFile saved at " + dataDir);
 ```
 
-### Aspose.PDF for .NET kullanarak Tüm Metni Değiştir için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Metni Tümünü Değiştir için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
 // Giriş arama ifadesinin tüm örneklerini bulmak için TextAbsorber nesnesi oluşturun
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-// Tüm sayfalar için emiciyi kabul edin
+// Tüm sayfalar için emiciyi kabul et
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 // Çıkarılan metin parçalarını alın
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Parçalar arasında döngü yapın
+// Parçalar arasında döngü
 foreach (TextFragment textFragment in textFragmentCollection)
 {
-	// Metni ve diğer özellikleri güncelleme
+	// Metni ve diğer özellikleri güncelle
 	textFragment.Text = "TEXT";
 	textFragment.TextState.Font = FontRepository.FindFont("Verdana");
 	textFragment.TextState.FontSize = 22;
@@ -96,49 +96,49 @@ Console.WriteLine("\nText replaced  successfully.\nFile saved at " + dataDir);
 
 ## Çözüm
 
-Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesindeki tüm metni nasıl değiştireceğinizi öğrendiniz. Adım adım kılavuzu izleyerek ve verilen C# kodunu çalıştırarak bir PDF belgesi yükleyebilir, istediğiniz metni arayabilir, değiştirebilir ve değiştirilen PDF'yi kaydedebilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesindeki tüm metni nasıl değiştireceğinizi öğrendiniz. Adım adım kılavuzu takip ederek ve sağlanan C# kodunu çalıştırarak bir PDF belgesi yükleyebilir, istediğiniz metni arayabilir, değiştirebilir ve değiştirilmiş PDF'yi kaydedebilirsiniz.
 
-### SSS'ler
+### SSS
 
 #### S: "PDF Dosyasındaki Tüm Metni Değiştir" öğreticisinin amacı nedir?
 
-C: "PDF Dosyasındaki Tüm Metni Değiştir" eğitimi, bir PDF belgesindeki belirli bir metnin tüm örneklerini değiştirmek için .NET için Aspose.PDF kütüphanesini kullanma sürecinde size rehberlik etmeyi amaçlamaktadır. Örnek C# koduyla birlikte adım adım bir kılavuz sağlar.
+A: "PDF Dosyasındaki Tüm Metni Değiştir" öğreticisinin amacı, bir PDF belgesindeki belirli bir metnin tüm örneklerini değiştirmek için .NET için Aspose.PDF kütüphanesini kullanma sürecinde size rehberlik etmektir. Örnek C# koduyla birlikte adım adım bir kılavuz sağlar.
 
-#### S: Bir PDF belgesindeki metnin tüm örneklerini neden değiştirmek isteyeyim?
+#### S: Neden bir PDF belgesindeki tüm metin örneklerini değiştirmek isteyeyim?
 
-C: Belge genelindeki içeriği güncellemeniz veya standartlaştırmanız gerektiğinde, PDF belgesindeki belirli bir metnin tüm örneklerini değiştirmek gerekli olabilir. Bu süreç özellikle belge içeriğinde ve biçimlendirmesinde tutarlılığın sağlanması açısından yararlı olabilir.
+A: PDF belgesinde belirli bir metnin tüm örneklerini değiştirmek, belgenin tamamındaki içeriği güncellemeniz veya standartlaştırmanız gerektiğinde gerekli olabilir. Bu işlem, belge içeriğinde ve biçimlendirmede tutarlılığı sağlamak için özellikle yararlı olabilir.
 
 #### S: Belge dizinini nasıl ayarlarım?
 
-C: Belge dizinini ayarlamak için:
+A: Belge dizinini ayarlamak için:
 
-1.  Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` giriş PDF dosyanızın bulunduğu dizinin yolunu içeren değişken.
+1.  Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` Girdi PDF dosyanızın bulunduğu dizinin yolunu içeren değişken.
 
-#### S: Bir PDF belgesindeki metnin tüm örneklerini nasıl değiştiririm?
+#### S: Bir PDF belgesindeki metnin tüm örneklerini nasıl değiştirebilirim?
 
-C: Eğitim aşağıdaki adımlarda size yol gösterir:
+A: Eğitim sizi aşağıdaki adımlarda yönlendirecektir:
 
 1.  PDF belgesini kullanarak yükleyin`Document` sınıf.
-2.  Oluşturmak`TextFragmentAbsorber` Giriş arama ifadesinin tüm örneklerini bulmak için nesne. Metin parçalarını çıkarmak için PDF belgesinin tüm sayfaları için emiciyi kabul edin.
-3. Çıkarılan metin parçaları arasında dolaşın ve metni değiştirin. Yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi diğer özellikleri gerektiği gibi güncelleyin.
+2.  Bir tane oluştur`TextFragmentAbsorber` Giriş arama ifadesinin tüm örneklerini bulmak için nesne. Metin parçalarını çıkarmak için PDF belgesinin tüm sayfaları için emiciyi kabul edin.
+3. Çıkarılan metin parçaları arasında dolaşın ve metni değiştirin. Gerektiğinde yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi diğer özellikleri güncelleyin.
 4. Değiştirilen PDF belgesini kaydedin.
 
-#### S: Büyük/küçük harfe duyarlı aramaya dayalı olarak metni değiştirebilir miyim?
+#### S: Büyük/küçük harfe duyarlı aramalarda metni değiştirebilir miyim?
 
- C: Evet, değiştirebilirsiniz`TextFragmentAbsorber` Büyük/küçük harfe duyarlı bir arama gerçekleştirmek için metni arayın. Aramak istediğiniz metni tam olarak belirtmeniz yeterlidir; emici onu buna göre eşleştirecektir.
+ A: Evet, değiştirebilirsiniz`TextFragmentAbsorber` Büyük/küçük harfe duyarlı arama yapmak için arama metnini kullanın. Sadece aramak istediğiniz tam metni girin, emici buna göre eşleştirecektir.
 
-#### S: Metni değiştirirken yazı tipini değiştirmek isteğe bağlı mıdır?
+#### S: Metin değiştirilirken yazı tipi değiştirme isteğe bağlı mıdır?
 
-C: Evet, yazı tipi değişimi isteğe bağlıdır. Yeni bir yazı tipi belirtmezseniz metin, orijinal metin parçasının yazı tipini koruyacaktır.
+A: Evet, yazı tipi değiştirme isteğe bağlıdır. Yeni bir yazı tipi belirtmezseniz, metin orijinal metin parçasının yazı tipini koruyacaktır.
 
 #### S: PDF belgesinin belirli bölümlerindeki metni nasıl değiştirebilirim?
 
-C: Metin parçalarının konumuna bağlı olarak koşullu ifadeler içerecek şekilde metin parçaları arasındaki döngüyü uyarlayabilirsiniz. Bu şekilde, PDF'nin yalnızca belirli bölümlerindeki metni değiştirmeyi seçebilirsiniz.
+A: Metin parçalarının konumuna göre koşullu ifadeleri dahil etmek için döngüyü metin parçalarına uyarlayabilirsiniz. Bu şekilde, yalnızca PDF'nin belirli bölümlerindeki metni değiştirmeyi seçebilirsiniz.
 
-#### S: Sağlanan kodu çalıştırmanın beklenen sonucu nedir?
+#### S: Verilen kodun yürütülmesinin beklenen sonucu nedir?
 
-C: Öğreticiyi takip ederek ve sağlanan C# kodunu çalıştırarak, PDF belgesindeki belirtilen metnin tüm örneklerini değiştireceksiniz. Değiştirilen metin, yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi belirttiğiniz özelliklere sahip olacaktır.
+A: Öğreticiyi takip ederek ve sağlanan C# kodunu çalıştırarak, PDF belgesindeki belirtilen metnin tüm örneklerini değiştireceksiniz. Değiştirilen metin, yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi belirttiğiniz özelliklere sahip olacaktır.
 
-#### S: Bu yaklaşımı resimler veya ek açıklamalar gibi metin olmayan öğeleri değiştirmek için kullanabilir miyim?
+#### S: Bu yaklaşımı, resimler veya açıklamalar gibi metin dışı öğeleri değiştirmek için kullanabilir miyim?
 
-C: Hayır, bu eğitim özellikle bir PDF belgesindeki metni değiştirmeye odaklanmaktadır. Metin olmayan öğeleri değiştirmeniz gerekiyorsa farklı prosedürleri izlemeniz veya diğer Aspose.PDF özelliklerini kullanmanız gerekir.
+C: Hayır, bu eğitim özellikle bir PDF belgesindeki metni değiştirmeye odaklanıyor. Metin olmayan öğeleri değiştirmeniz gerekirse, farklı prosedürleri izlemeniz veya diğer Aspose.PDF özelliklerini kullanmanız gerekir.

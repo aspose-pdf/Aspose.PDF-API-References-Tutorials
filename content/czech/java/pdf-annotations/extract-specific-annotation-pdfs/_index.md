@@ -8,7 +8,7 @@ weight: 14
 url: /cs/java/pdf-annotations/extract-specific-annotation-pdfs/
 ---
 
-## Úvod
+## Zavedení
 
 Poznámky v PDF mohou být pokladnicí informací. Umožňují uživatelům přidávat komentáře, zvýrazňovat důležité sekce a dokonce připojovat vlastní poznámky. Někdy však může být nutné extrahovat konkrétní anotace pro účely vytváření sestav nebo analýzy. Aspose.PDF pro Java usnadňuje tento úkol díky své komplexní sadě funkcí.
 
@@ -17,7 +17,7 @@ Poznámky v PDF mohou být pokladnicí informací. Umožňují uživatelům při
 Než se ponoříme do kódu, ujistěte se, že máte splněny následující předpoklady:
 
 - Java Development Kit (JDK) nainstalovaný ve vašem systému.
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Nastavení projektu
 
@@ -85,7 +85,7 @@ for (Annotation annotation : page.getAnnotations()) {
 
 ## Práce s různými typy poznámek
 
-Aspose.PDF pro Java podporuje různé typy anotací, jako jsou textové anotace, zvýrazněné anotace, vlastní razítka a další. Extrakční kód můžete upravit tak, aby vyhovoval vašim konkrétním potřebám.
+Aspose.PDF for Java podporuje různé typy anotací, jako jsou textové anotace, zvýrazněné anotace, vlastní razítka a další. Extrakční kód můžete upravit tak, aby vyhovoval vašim konkrétním potřebám.
 
 ## Závěr
 
@@ -95,7 +95,7 @@ tomto článku jsme se naučili, jak extrahovat konkrétní anotace z PDF pomoc�
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
- Aspose.PDF pro Javu si můžete stáhnout z[tady](https://releases.aspose.com/pdf/java/). Postupujte podle pokynů k instalaci uvedených na webu a nastavte jej ve svém projektu Java.
+ Aspose.PDF pro Javu si můžete stáhnout z[zde](https://releases.aspose.com/pdf/java/). Postupujte podle pokynů k instalaci uvedených na webu a nastavte jej ve svém projektu Java.
 
 ### Mohu extrahovat anotace z konkrétní stránky v dokumentu PDF?
 

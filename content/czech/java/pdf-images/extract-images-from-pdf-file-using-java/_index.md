@@ -10,7 +10,7 @@ url: /cs/java/pdf-images/extract-images-from-pdf-file-using-java/
 
 tomto podrobném průvodci prozkoumáme, jak extrahovat obrázky ze souboru PDF pomocí Java a knihovny Aspose.PDF for Java. Extrakce obrázků z PDF může být cenným úkolem v různých aplikacích, od analýzy obsahu až po manipulaci s obrázky. Na konci tohoto tutoriálu budete schopni efektivně extrahovat obrázky z PDF pomocí Java.
 
-## Úvod
+## Zavedení
 
 Soubory PDF (Portable Document Format) jsou široce používány pro výměnu dokumentů. Tyto soubory PDF často obsahují cenné obrázky, které je třeba extrahovat pro různé účely, jako je archivace, analýza nebo zahrnutí do jiných dokumentů. Aspose.PDF for Java je výkonná Java knihovna, která nám umožňuje pracovat s dokumenty PDF, včetně extrahování obrázků.
 
@@ -23,7 +23,7 @@ Aspose.PDF for Java je Java API poskytované společností Aspose, které umož�
 Než začneme, musíte nastavit vývojové prostředí. Ujistěte se, že máte následující předpoklady:
 
 - Java Development Kit (JDK) nainstalován
--  Aspose.PDF pro knihovnu Java (můžete si ji stáhnout z[tady](https://releases.aspose.com/pdf/java/))
+-  Aspose.PDF pro knihovnu Java (můžete si ji stáhnout z[zde](https://releases.aspose.com/pdf/java/))
 - Integrované vývojové prostředí (IDE) jako IntelliJ IDEA nebo Eclipse
 
 ## Načítání souboru PDF
@@ -67,7 +67,7 @@ tomto podrobném průvodci jsme se naučili, jak extrahovat obrázky ze souboru 
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
- Knihovnu Aspose.PDF for Java si můžete stáhnout z[tady](https://releases.aspose.com/pdf/java/). Postupujte podle pokynů k instalaci uvedených na webu a nastavte jej ve vašem prostředí Java.
+ Knihovnu Aspose.PDF for Java si můžete stáhnout z[zde](https://releases.aspose.com/pdf/java/). Postupujte podle pokynů k instalaci uvedených na webu a nastavte jej ve vašem prostředí Java.
 
 ### Mohu extrahovat obrázky z konkrétní stránky v PDF?
 

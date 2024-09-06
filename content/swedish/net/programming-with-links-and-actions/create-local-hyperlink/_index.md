@@ -21,7 +21,7 @@ using Aspose.Pdf.InteractiveFeatures;
 
 ## Steg 2: Ange sökväg till dokumentmappen
 
- I det här steget måste du ange sökvägen till mappen där du vill spara den resulterande PDF-filen. Byta ut`"YOUR DOCUMENT DIRECTORY"` följande kod med den faktiska sökvägen till din dokumentmapp:
+ I det här steget måste du ange sökvägen till mappen där du vill spara den resulterande PDF-filen. Ersätta`"YOUR DOCUMENT DIRECTORY"` i följande kod med den faktiska sökvägen till din dokumentmapp:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -37,7 +37,7 @@ Document doc = new Document();
 
 ## Steg 4: Lägg till sida och text med hyperlänkar
 
-I det här steget kommer vi att lägga till en sida i vårt PDF-dokument och lägga till lite text som innehåller lokala hyperlänkar. Vi kommer att definiera målsidorna för varje länk. Här är motsvarande kod:
+det här steget kommer vi att lägga till en sida i vårt PDF-dokument och lägga till lite text som innehåller lokala hyperlänkar. Vi kommer att definiera målsidorna för varje länk. Här är motsvarande kod:
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -58,7 +58,7 @@ page.Paragraphs.Add(text);
 
 ## Steg 5: Spara det uppdaterade dokumentet
 
- Låt oss nu spara den uppdaterade PDF-filen med hjälp av`Save` metod för`doc` objekt. Här är motsvarande kod:
+Låt oss nu spara den uppdaterade PDF-filen med hjälp av`Save` metod för`doc` objekt. Här är motsvarande kod:
 
 ```csharp
 dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
@@ -81,7 +81,7 @@ Aspose.Pdf.LocalHyperlink link = new Aspose.Pdf.LocalHyperlink();
 link.TargetPageNumber = 7;
 // Ställ in TextFragment-hyperlänk
 text.Hyperlink = link;
-//Lägg till text i styckesamlingen på sidan
+// Lägg till text i styckesamlingen på sidan
 page.Paragraphs.Add(text);
 // Skapa ny TextFragment-instans
 text = new TextFragment("link page number test to page 1");

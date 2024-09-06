@@ -1,19 +1,19 @@
 ---
-title: إنشاء مستطيل مع لون ألفا
-linktitle: إنشاء مستطيل مع لون ألفا
-second_title: Aspose.PDF لمرجع .NET API
+title: إنشاء مستطيل باستخدام اللون ألفا
+linktitle: إنشاء مستطيل باستخدام اللون ألفا
+second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
 description: تعرف على كيفية إنشاء مستطيل بلون شفاف باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة لتخصيص الشفافية.
 type: docs
 weight: 60
 url: /ar/net/programming-with-graphs/create-rectangle-with-alpha-color/
 ---
-في هذا البرنامج التعليمي، سنرشدك عبر التعليمات البرمجية المصدر لـ C# التالية خطوة بخطوة لإنشاء مستطيل بلون ألفا باستخدام Aspose.PDF لـ .NET.
+في هذا البرنامج التعليمي، سوف نرشدك خلال التعليمات البرمجية المصدرية C# خطوة بخطوة لإنشاء مستطيل بلون ألفا باستخدام Aspose.PDF لـ .NET.
 
-تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك قبل البدء. لديك أيضًا معرفة أساسية ببرمجة C#.
+تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك قبل البدء. كما يجب أن يكون لديك معرفة أساسية ببرمجة C#.
 
 ## الخطوة 1: إعداد دليل المستندات
 
-في كود المصدر المقدم، تحتاج إلى تحديد الدليل الذي تريد حفظ ملف PDF الناتج فيه. قم بتغيير المتغير "dataDir" إلى الدليل المطلوب.
+في الكود المصدر المقدم، تحتاج إلى تحديد الدليل الذي تريد حفظ ملف PDF الناتج فيه. قم بتغيير المتغير "dataDir" إلى الدليل المطلوب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -21,7 +21,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## الخطوة 2: إنشاء كائن مستند وإضافة صفحة
 
-نقوم بإنشاء مثيل لفئة المستند وإضافة صفحة إلى هذا المستند.
+نقوم بإنشاء مثيل لفئة المستند ونضيف صفحة إلى هذا المستند.
 
 ```csharp
 Document doc = new Document();
@@ -39,7 +39,7 @@ Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 2
 
 ## الخطوة 4: إعداد لون ألفا للمستطيل
 
-يمكننا تحديد لون ألفا للمستطيل باستخدام طريقة FromArgb لفئة System.Drawing.Color.
+يمكننا تحديد لون ألفا للمستطيل باستخدام طريقة FromArgb من فئة System.Drawing.Color.
 
 ```csharp
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
@@ -47,7 +47,7 @@ rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArg
 
 ## الخطوة 5: إضافة المستطيل إلى كائن الرسم البياني
 
-نضيف المستطيل إلى مجموعة أشكال كائن الرسم البياني.
+نضيف المستطيل إلى مجموعة الأشكال الخاصة بكائن الرسم البياني.
 
 ```csharp
 canvas.Shapes.Add(rect);
@@ -55,7 +55,7 @@ canvas.Shapes.Add(rect);
 
 ## الخطوة 6: إنشاء مستطيل ثانٍ بلون ألفا مختلف
 
-نقوم بإنشاء مستطيل ثانٍ بأبعاد محددة ولون ألفا آخر.
+نقوم بإنشاء مستطيل ثاني بأبعاد محددة ولون ألفا آخر.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect1 = new Aspose.Pdf.Drawing.Rectangle(200, 150, 200, 100);
@@ -65,7 +65,7 @@ canvas.Shapes.Add(rect1);
 
 ## الخطوة 7: إضافة كائن الرسم البياني إلى الصفحة
 
-نضيف كائن الرسم البياني إلى مجموعة الفقرة الخاصة بكائن الصفحة.
+نضيف كائن الرسم البياني إلى مجموعة الفقرات الخاصة بكائن الصفحة.
 
 ```csharp
 page.Paragraphs.Add(canvas);
@@ -73,35 +73,35 @@ page.Paragraphs.Add(canvas);
 
 ## الخطوة 8: حفظ ملف PDF الناتج
 
-أخيرًا، نقوم بحفظ ملف PDF الناتج بالاسم "CreateRectangleWithAlphaColor_out.pdf" في الدليل المحدد.
+وأخيرًا، نحفظ ملف PDF الناتج باسم "CreateRectangleWithAlphaColor_out.pdf" في الدليل المحدد.
 
 ```csharp
 doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");
 ```
 
-### نموذج التعليمات البرمجية المصدر لإنشاء مستطيل باستخدام Alpha Color باستخدام Aspose.PDF لـ .NET 
+### عينة من كود المصدر لإنشاء مستطيل بلون ألفا باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// إنشاء مثيل للمستند
+// إنشاء مثيل مستند
 Document doc = new Document();
-// إضافة صفحة إلى مجموعة الصفحات من ملف PDF
+// إضافة صفحة إلى مجموعة صفحات ملف PDF
 Aspose.Pdf.Page page = doc.Pages.Add();
-// إنشاء مثيل الرسم البياني
+// إنشاء مثيل للرسم البياني
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 // إنشاء كائن مستطيل بأبعاد محددة
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 100);
-//قم بتعيين لون تعبئة الرسم البياني من بنية System.Drawing.Color من قيمة ARGB 32 بت
+// تعيين لون تعبئة الرسم البياني من بنية System.Drawing.Color من قيمة ARGB 32 بت
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
-// إضافة كائن مستطيل إلى مجموعة الأشكال لمثيل الرسم البياني
+// إضافة كائن مستطيل إلى مجموعة الأشكال الخاصة بمثيل الرسم البياني
 canvas.Shapes.Add(rect);
-// إنشاء كائن المستطيل الثاني
+// إنشاء كائن مستطيل ثانٍ
 Aspose.Pdf.Drawing.Rectangle rect1 = new Aspose.Pdf.Drawing.Rectangle(200, 150, 200, 100);
 rect1.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(16118015)));
 canvas.Shapes.Add(rect1);
-// إضافة مثيل الرسم البياني إلى مجموعة الفقرة من كائن الصفحة
+// إضافة مثيل الرسم البياني إلى مجموعة فقرات كائن الصفحة
 page.Paragraphs.Add(canvas);
 dataDir = dataDir + "CreateRectangleWithAlphaColor_out.pdf";
 // حفظ ملف PDF
@@ -122,24 +122,24 @@ Console.WriteLine("\nRectangle object created successfully with alpha color.\nFi
 
 #### س: ما هي المتطلبات الأساسية المطلوبة قبل البدء؟
 
-ج: قبل أن تبدأ، تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك. بالإضافة إلى ذلك، يوصى بالحصول على فهم أساسي لبرمجة C#.
+ج: قبل أن تبدأ، تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك. بالإضافة إلى ذلك، يُنصح بالحصول على فهم أساسي لبرمجة C#.
 
 #### س: كيف أحدد الدليل لحفظ ملف PDF؟
 
-ج: في الكود المصدري المقدم، يمكنك تعديل متغير "dataDir" للإشارة إلى الدليل الذي تريد حفظ ملف PDF الناتج فيه.
+ج: في الكود المصدر المقدم، يمكنك تعديل المتغير "dataDir" للإشارة إلى الدليل الذي تريد حفظ ملف PDF الناتج فيه.
 
 #### س: ما هو الغرض من كائن الرسم البياني والمستطيل؟
 
-ج: يعمل كائن Graph كحاوية لعناصر الرسم، بينما يمثل المستطيل الشكل الهندسي الذي ستضيفه إلى ملف PDF.
+أ: يعمل كائن الرسم البياني كحاوية لعناصر الرسم، بينما يمثل المستطيل الشكل الهندسي الذي ستضيفه إلى ملف PDF.
 
 #### س: كيف يمكنني إعداد لون ألفا للمستطيل؟
 
-ج: يمكنك تحديد لون ألفا للمستطيل باستخدام`FillColor` ملكية`GraphInfo` الكائن و`Color.FromRgb` الطريقة بقيمة ARGB.
+ أ: يمكنك تحديد لون ألفا للمستطيل باستخدام`FillColor` ممتلكات`GraphInfo` الشيء و`Color.FromRgb` الطريقة مع قيمة ARGB.
 
 #### س: هل يمكنني إنشاء مستطيلات متعددة بألوان ألفا مختلفة؟
 
-ج: نعم، يمكنك إنشاء مستطيلات متعددة بألوان ألفا مختلفة عن طريق اتباع خطوات مماثلة كما هو موضح في البرنامج التعليمي.
+ج: نعم، يمكنك إنشاء مستطيلات متعددة بألوان ألفا مختلفة باتباع الخطوات المماثلة الموضحة في البرنامج التعليمي.
 
 #### س: كيف يمكنني حفظ ملف PDF الناتج بعد إنشاء مستطيلات بألوان ألفا؟
 
- ج: بعد إنشاء المستطيلات بألوان ألفا، يمكنك حفظ ملف PDF الناتج باستخدام الملف`doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");` سطر في كود المصدر المقدم.
+ أ: بعد إنشاء المستطيلات بألوان ألفا، يمكنك حفظ ملف PDF الناتج باستخدام`doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");` السطر الموجود في الكود المصدر المقدم.

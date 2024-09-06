@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 1: Konfigurera dokumentkatalogen
 
- Först måste du ställa in sökvägen till katalogen där din indata-PDF-fil finns. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till din PDF-fil.
+ Först måste du ställa in sökvägen till katalogen där din indata-PDF-fil finns. Ersätta`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till din PDF-fil.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -71,7 +71,7 @@ paragraph = section.Paragraphs[section.Paragraphs.Count - 1];
 Console.WriteLine("Section at {0} last paragraph text:\r\n", section.Rectangle.ToString());
 Console.WriteLine(paragraph.Text);
 
-//Åtkomst till första stycket i ett avsnitt efter att ha aktiverat stycken med flera kolumner
+// Åtkomst till första stycket i ett avsnitt efter att ha aktiverat stycken med flera kolumner
 section = markup. Sections[1];
 paragraph = section.Paragraphs[0];
 Console.WriteLine("\r\nSection at {0} first paragraph text:\r\n", section.Rectangle.ToString());
@@ -125,7 +125,7 @@ S: Genom att arbeta med stycken med flera kolumner kan du skapa mer sofistikerad
 
 S: Så här ställer du in dokumentkatalogen:
 
-1.  Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där din indata-PDF-fil finns.
+1.  Ersätta`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där din indata-PDF-fil finns.
 
 #### F: Hur laddar jag PDF-dokumentet och får åtkomst till stycken med flera kolumner?
 

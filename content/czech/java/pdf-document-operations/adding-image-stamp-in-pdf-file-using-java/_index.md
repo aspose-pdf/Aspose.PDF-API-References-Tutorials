@@ -84,8 +84,8 @@ Aspose.PDF for Java je komerční knihovna a možná budete muset zakoupit licen
 
 ### Existují nějaká omezení pro formáty obrázků podporované pro razítkování?
 
-Aspose.PDF for Java podporuje různé formáty obrázků jako PNG, JPEG, GIF a BMP pro ražení. Ujistěte se, že je váš obrázek v jednom z těchto formátů.
+Aspose.PDF for Java podporuje různé obrazové formáty jako PNG, JPEG, GIF a BMP pro ražení. Ujistěte se, že je váš obrázek v jednom z těchto formátů.
 
 ### Kde najdu další příklady a dokumentaci k Aspose.PDF pro Javu?
 
-Úplnou dokumentaci a příklady naleznete na webu Aspose.PDF for Java na adrese[tady](https://reference.aspose.com/pdf/java/.)
+Úplnou dokumentaci a příklady naleznete na webu Aspose.PDF for Java na adrese[zde](https://reference.aspose.com/pdf/java/.)

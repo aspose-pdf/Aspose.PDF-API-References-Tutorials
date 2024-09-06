@@ -70,7 +70,7 @@ Odpověď: Optimalizační proces Aspose.PDF je navržen tak, aby minimalizoval 
 
 #### Otázka: Existují nějaké konkrétní typy dokumentů PDF, které z optimalizace nejvíce těží?
 
-Odpověď: U dokumentů PDF s velkými obrázky, vloženými fonty nebo nadbytečnými daty je pravděpodobnější, že budou mít prospěch z optimalizace. Textově zatížené dokumenty s minimální grafikou mohou zaznamenat malé zmenšení velikosti.
+Odpověď: U dokumentů PDF s velkými obrázky, vloženými fonty nebo nadbytečnými daty je pravděpodobnější, že budou mít prospěch z optimalizace. U dokumentů s velkým množstvím textu s minimem grafiky může dojít k malému zmenšení velikosti.
 
 #### Otázka: Mohu vrátit změny provedené během optimalizace?
 

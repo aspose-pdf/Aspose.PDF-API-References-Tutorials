@@ -1,24 +1,24 @@
 ---
-title: Susun Ulang Isi Menggunakan Penggantian Teks
-linktitle: Susun Ulang Isi Menggunakan Penggantian Teks
-second_title: Aspose.PDF untuk Referensi .NET API
+title: Atur Ulang Konten Menggunakan Penggantian Teks
+linktitle: Atur Ulang Konten Menggunakan Penggantian Teks
+second_title: Referensi API Aspose.PDF untuk .NET
 description: Pelajari cara mengatur ulang konten dalam dokumen PDF menggunakan penggantian teks dengan Aspose.PDF untuk .NET.
 type: docs
 weight: 270
 url: /id/net/programming-with-text/rearrange-contents-using-text-replacement/
 ---
-Dalam tutorial ini, kami akan menjelaskan cara mengatur ulang konten dalam dokumen PDF dengan menggunakan penggantian teks dengan perpustakaan Aspose.PDF untuk .NET. Kami akan melalui proses langkah demi langkah memuat PDF, mencari fragmen teks tertentu, mengganti teks, dan menyimpan PDF yang dimodifikasi menggunakan kode sumber C# yang disediakan.
+Dalam tutorial ini, kami akan menjelaskan cara mengatur ulang konten dalam dokumen PDF menggunakan penggantian teks dengan pustaka Aspose.PDF untuk .NET. Kami akan membahas proses langkah demi langkah untuk memuat PDF, mencari fragmen teks tertentu, mengganti teks, dan menyimpan PDF yang dimodifikasi menggunakan kode sumber C# yang disediakan.
 
 ## Persyaratan
 
 Sebelum memulai, pastikan Anda memiliki hal berikut:
 
-- Pustaka Aspose.PDF untuk .NET diinstal.
+- Pustaka Aspose.PDF untuk .NET terinstal.
 - Pemahaman dasar tentang pemrograman C#.
 
 ## Langkah 1: Siapkan Direktori Dokumen
 
- Pertama, Anda perlu mengatur jalur ke direktori tempat file PDF Anda berada. Mengganti`"YOUR DOCUMENT DIRECTORY"` dalam`dataDir` variabel dengan jalur ke file PDF Anda.
+ Pertama, Anda perlu mengatur jalur ke direktori tempat file PDF Anda berada. Ganti`"YOUR DOCUMENT DIRECTORY"` di dalam`dataDir` variabel dengan jalur ke berkas PDF Anda.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -26,7 +26,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Langkah 2: Muat PDF Sumber
 
- Selanjutnya, kami memuat dokumen PDF sumber menggunakan`Document` kelas dari perpustakaan Aspose.PDF.
+ Selanjutnya kita muat dokumen PDF sumber menggunakan`Document` kelas dari pustaka Aspose.PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "ExtractTextPage.pdf");
@@ -34,7 +34,7 @@ Document doc = new Document(dataDir + "ExtractTextPage.pdf");
 
 ## Langkah 3: Cari dan Ganti Fragmen Teks
 
- Kami membuat`TextFragmentAbsorber` objek dengan ekspresi reguler untuk mencari fragmen teks tertentu. Kemudian, kami mengulangi fragmen teks, menyesuaikan font, ukuran, warna, dan mengganti teks.
+ Kami menciptakan sebuah`TextFragmentAbsorber` objek dengan ekspresi reguler untuk mencari fragmen teks tertentu. Kemudian, kami mengulangi fragmen teks tersebut, menyesuaikan font, ukuran, warna, dan mengganti teks.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("[TextFragmentAbsorber,companyname,Textbox,50]");
@@ -51,7 +51,7 @@ foreach(TextFragment textFragment in textFragmentAbsorber.TextFragments)
 
 ## Langkah 4: Simpan PDF yang Dimodifikasi
 
-Terakhir, kami menyimpan dokumen PDF yang dimodifikasi ke file keluaran yang ditentukan.
+Terakhir, kami menyimpan dokumen PDF yang dimodifikasi ke berkas keluaran yang ditentukan.
 
 ```csharp
 dataDir = dataDir + "RearrangeContentsUsingTextReplacement_out.pdf";
@@ -59,7 +59,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nContents rearranged successfully using text replacement.\nFile saved at " + dataDir);
 ```
 
-### Contoh kode sumber untuk Menyusun Ulang Konten Menggunakan Penggantian Teks menggunakan Aspose.PDF untuk .NET 
+### Contoh kode sumber untuk Mengatur Ulang Konten Menggunakan Penggantian Teks menggunakan Aspose.PDF untuk .NET 
 ```csharp
 try
 {
@@ -73,16 +73,16 @@ try
 	// Ganti setiap TextFragment
 	foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
 	{
-		// Atur font fragmen teks yang diganti
+		// Mengatur font dari fragmen teks yang akan diganti
 		textFragment.TextState.Font = FontRepository.FindFont("Arial");
-		// Atur ukuran font
+		// Mengatur ukuran font
 		textFragment.TextState.FontSize = 12;
 		textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Navy;
 		// Ganti teks dengan string yang lebih besar dari placeholder
 		textFragment.Text = "This is a Larger String for the Testing of this issue";
 	}
 	dataDir = dataDir + "RearrangeContentsUsingTextReplacement_out.pdf";
-	// Simpan PDF yang dihasilkan
+	// Simpan hasil PDF
 	doc.Save(dataDir);
 	Console.WriteLine("\nContents rearranged successfully using text replacement.\nFile saved at " + dataDir);
 }
@@ -94,44 +94,44 @@ catch (Exception ex)
 
 ## Kesimpulan
 
-Dalam tutorial ini, Anda telah mempelajari cara mengatur ulang konten dalam dokumen PDF dengan menggunakan penggantian teks dengan pustaka Aspose.PDF untuk .NET. Dengan mengikuti panduan langkah demi langkah dan menjalankan kode C# yang disediakan, Anda dapat mencari fragmen teks tertentu, menyesuaikan tampilannya, dan mengganti teks dalam dokumen PDF.
+Dalam tutorial ini, Anda telah mempelajari cara mengatur ulang konten dalam dokumen PDF menggunakan penggantian teks dengan pustaka Aspose.PDF untuk .NET. Dengan mengikuti panduan langkah demi langkah dan menjalankan kode C# yang disediakan, Anda dapat mencari fragmen teks tertentu, menyesuaikan tampilannya, dan mengganti teks dalam dokumen PDF.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### Q: Apa tujuan dari tutorial "Menyusun Ulang Konten Menggunakan Penggantian Teks"?
+#### T: Apa tujuan dari tutorial "Menata Ulang Konten Menggunakan Penggantian Teks"?
 
-J: Tutorial "Menyusun Ulang Konten Menggunakan Penggantian Teks" menunjukkan cara menggunakan pustaka Aspose.PDF untuk .NET untuk mengatur ulang konten dalam dokumen PDF dengan melakukan penggantian teks. Tutorial ini memberikan panduan langkah demi langkah dan kode sumber C# untuk membantu Anda memuat PDF, mencari fragmen teks tertentu, mengganti teks, dan menyimpan PDF yang dimodifikasi.
+J: Tutorial "Menata Ulang Konten Menggunakan Penggantian Teks" menunjukkan cara menggunakan pustaka Aspose.PDF untuk .NET guna menata ulang konten dalam dokumen PDF dengan melakukan penggantian teks. Tutorial ini menyediakan panduan langkah demi langkah dan kode sumber C# untuk membantu Anda memuat PDF, mencari fragmen teks tertentu, mengganti teks, dan menyimpan PDF yang dimodifikasi.
 
 #### T: Mengapa saya ingin mengatur ulang konten dalam dokumen PDF?
 
-A: Menata ulang konten dalam dokumen PDF dapat berguna untuk berbagai tujuan, seperti memperbarui teks, memformat ulang tata letak, atau melakukan koreksi. Teknik ini memungkinkan Anda memodifikasi konten PDF secara dinamis sambil mempertahankan struktur dan tampilannya.
+A: Menata ulang konten dalam dokumen PDF dapat berguna untuk berbagai keperluan, seperti memperbarui teks, memformat ulang tata letak, atau melakukan koreksi. Teknik ini memungkinkan Anda untuk mengubah konten PDF secara dinamis sambil mempertahankan struktur dan tampilannya.
 
 #### T: Bagaimana cara mengatur direktori dokumen?
 
 A: Untuk mengatur direktori dokumen:
 
-1.  Mengganti`"YOUR DOCUMENT DIRECTORY"` dalam`dataDir` variabel dengan jalur ke direktori tempat file PDF Anda berada.
+1.  Mengganti`"YOUR DOCUMENT DIRECTORY"` di dalam`dataDir` variabel dengan jalur ke direktori tempat file PDF Anda berada.
 
-#### T: Bagaimana cara melakukan penggantian teks pada dokumen PDF?
+#### T: Bagaimana cara melakukan penggantian teks dalam dokumen PDF?
 
- J: Tutorial ini memandu Anda melalui proses pencarian fragmen teks tertentu dalam PDF menggunakan`TextFragmentAbsorber`kelas. Ini menunjukkan cara menyesuaikan tampilan fragmen teks dan mengganti kontennya.
+ A: Tutorial ini memandu Anda melalui proses pencarian fragmen teks tertentu dalam PDF menggunakan`TextFragmentAbsorber`kelas. Ini menunjukkan cara menyesuaikan tampilan fragmen teks dan mengganti kontennya.
 
 #### T: Dapatkah saya menyesuaikan font, ukuran, dan warna teks yang diganti?
 
- A: Ya, Anda dapat menyesuaikan font, ukuran, dan warna teks yang diganti dengan memodifikasinya`TextState` properti dari`TextFragment` obyek. Tutorial ini memberikan contoh cara mengatur font, ukuran font, dan warna latar depan teks.
+ A: Ya, Anda dapat menyesuaikan font, ukuran, dan warna teks yang diganti dengan memodifikasi`TextState` properti dari`TextFragment` objek. Tutorial ini memberikan contoh cara mengatur font, ukuran font, dan warna latar depan teks.
 
 #### T: Bagaimana cara menyimpan dokumen PDF yang dimodifikasi?
 
- A: Setelah melakukan penggantian teks dan menyesuaikan fragmen teks, Anda dapat menyimpan dokumen PDF yang dimodifikasi menggunakan`Save` metode`Document` kelas. Berikan jalur file keluaran yang diinginkan sebagai argumen ke`Save` metode.
+ A: Setelah melakukan penggantian teks dan menyesuaikan fragmen teks, Anda dapat menyimpan dokumen PDF yang dimodifikasi menggunakan`Save` metode dari`Document` kelas. Berikan jalur file keluaran yang diinginkan sebagai argumen ke`Save` metode.
 
-#### Q: Apa hasil yang diharapkan dari tutorial ini?
+#### T: Apa hasil yang diharapkan dari tutorial ini?
 
-J: Dengan mengikuti tutorial dan menjalankan kode C# yang disediakan, Anda akan menghasilkan dokumen PDF yang dimodifikasi di mana fragmen teks tertentu telah diganti dan disesuaikan sesuai spesifikasi Anda.
+A: Dengan mengikuti tutorial dan mengeksekusi kode C# yang disediakan, Anda akan menghasilkan dokumen PDF yang dimodifikasi di mana fragmen teks tertentu telah diganti dan disesuaikan menurut spesifikasi Anda.
 
-#### T: Dapatkah saya menggunakan ekspresi reguler yang berbeda untuk penelusuran teks?
+#### T: Dapatkah saya menggunakan ekspresi reguler yang berbeda untuk pencarian teks?
 
- J: Ya, Anda dapat menggunakan ekspresi reguler yang berbeda untuk mencari fragmen teks tertentu dalam dokumen PDF. Contoh yang diberikan dalam tutorial menunjukkan cara membuat a`TextFragmentAbsorber`objek dengan ekspresi reguler tertentu untuk mencari dan mengganti teks.
+ A: Ya, Anda dapat menggunakan ekspresi reguler yang berbeda untuk mencari fragmen teks tertentu dalam dokumen PDF. Contoh yang diberikan dalam tutorial menunjukkan cara membuat`TextFragmentAbsorber`objek dengan ekspresi reguler tertentu untuk mencari dan mengganti teks.
 
 #### T: Apakah Lisensi Aspose yang valid diperlukan untuk tutorial ini?
 
-A: Ya, Lisensi Aspose yang valid diperlukan agar tutorial ini dapat berfungsi dengan benar. Anda dapat membeli lisensi penuh atau mendapatkan lisensi sementara selama 30 hari dari situs web Aspose.
+A: Ya, Lisensi Aspose yang valid diperlukan agar tutorial ini dapat berfungsi dengan benar. Anda dapat membeli lisensi penuh atau memperoleh lisensi sementara selama 30 hari dari situs web Aspose.

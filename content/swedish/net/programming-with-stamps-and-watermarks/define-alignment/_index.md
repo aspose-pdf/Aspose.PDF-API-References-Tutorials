@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 2: Laddar PDF-dokumentet
 
-Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Här är hur:
+Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Så här gör du:
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -32,7 +32,7 @@ Var noga med att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till
 
 ## Steg 3: Definiera inriktningen
 
-Nu när du har laddat PDF-dokumentet kan du ställa in justeringen av textstämpeln. Här är hur:
+Nu när du har laddat PDF-dokumentet kan du ställa in justeringen av textstämpeln. Så här gör du:
 
 ```csharp
 // Instantiera ett FormattedText-objekt med exempelsträngen
@@ -67,7 +67,7 @@ Koden ovan skapar en centrerad textbuffert med klassen FormattedText för att sp
 
 ## Steg 4: Spara utdatadokumentet
 
-När du har ställt in textstämpeljusteringen kan du spara det ändrade PDF-dokumentet. Här är hur:
+När du har ställt in textstämpeljusteringen kan du spara det ändrade PDF-dokumentet. Så här gör du:
 
 ```csharp
 // Spara det uppdaterade dokumentet
@@ -146,7 +146,7 @@ S: Ja, du kan justera textjusteringen för olika delar av PDF-dokumentet genom a
 
 #### F: Är det möjligt att justera marginalerna runt textstämpeln för bättre layout?
 
- S: Ja, du kan justera den övre marginalen på`TextStamp` objekt med hjälp av`TopMargin`fast egendom. Detta låter dig styra avståndet mellan textstämpeln och andra element på sidan.
+ S: Ja, du kan justera den övre marginalen på`TextStamp` objekt med hjälp av`TopMargin`egendom. Detta låter dig styra avståndet mellan textstämpeln och andra element på sidan.
 
 #### F: Kan jag justera text i olika vinklar eller orienteringar med detta tillvägagångssätt?
 

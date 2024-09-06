@@ -2,114 +2,151 @@
 title: 创建 PDF 文档时嵌入字体
 linktitle: 创建 PDF 文档时嵌入字体
 second_title: Aspose.PDF for .NET API 参考
-description: 了解如何使用 Aspose.PDF for .NET 创建 PDF 文档时嵌入字体。确保在不同设备上正确显示。
+description: 通过本分步指南学习如何使用 Aspose.PDF for .NET 在 PDF 文档中嵌入字体。增强 PDF 的外观。
 type: docs
 weight: 140
 url: /zh/net/programming-with-document/embedfontwhiledoccreation/
 ---
-在本教程中，我们将讨论如何在使用 Aspose.PDF for .NET 创建 PDF 文档时嵌入字体。 Aspose.PDF for .NET 是一个功能强大的库，允许开发人员以编程方式创建、编辑和操作 PDF 文档。该库提供了广泛的处理 PDF 文档的功能，包括添加文本、图像、表格等。对于希望确保 PDF 文档在不同设备上正确显示的开发人员来说，在创建 PDF 文档时嵌入字体是一个常见要求，无论这些设备上是否安装了所需的字体。
+## 介绍
 
-## 步骤 1：创建一个新的 C# 控制台应用程序
-首先，在 Visual Studio 中创建一个新的 C# 控制台应用程序。您可以将其命名为任何您喜欢的名称。创建项目后，您需要添加对 Aspose.PDF for .NET 库的引用。
+在当今的数字世界中，创建看起来专业且精美的 PDF 文档至关重要。实现这种精美外观的关键方面之一是确保正确嵌入 PDF 中使用的字体。这不仅可以在不同设备上保留文档的外观，还可以提高可读性。在本教程中，我们将深入研究如何在使用 Aspose.PDF for .NET 创建 PDF 文档时嵌入字体。 
 
-## 第2步：导入Aspose.PDF命名空间
-在 C# 文件顶部添加以下代码行以导入 Aspose.PDF 命名空间：
+## 先决条件
+
+在我们开始编写代码之前，让我们先确保你已经准备好开始工作所需的一切：
+
+1.  Aspose.PDF for .NET：您需要安装 Aspose.PDF 库。您可以从[网站](https://releases.aspose.com/pdf/net/).
+2. Visual Studio：您可以编写和测试代码的开发环境。
+3. C# 基础知识：熟悉 C# 编程将帮助您更好地理解代码片段。
+
+## 导入包
+
+要在项目中使用 Aspose.PDF，您需要导入必要的命名空间。具体操作如下：
 
 ```csharp
 using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-## 第 3 步：实例化 Pdf 对象
-通过调用空构造函数来实例化 Pdf 对象：
+这些命名空间将使您能够访问创建和操作 PDF 文档所需的类和方法。
 
-```csharp
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-```
+现在我们已经理清了先决条件，让我们将字体嵌入 PDF 文档的过程分解为易于管理的步骤。
 
-## 步骤 4：在 Pdf 对象中创建一个部分
-在 Pdf 对象中创建一个部分：
+## 步骤 1：设置文档目录
 
-```csharp
-Aspose.Pdf.Page page = doc.Pages.Add();
-```
-
-## 第 5 步：将文本添加到该部分
-将文本添加到该部分：
-
-```csharp
-Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
-Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
-```
-
-## 第6步：设置字体并嵌入
-设置字体并嵌入：
-
-```csharp
-Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
-ts.Font = FontRepository.FindFont("Arial");
-ts.Font.IsEmbedded = true;
-segment.TextState = ts;
-fragment.Segments.Add(segment);
-page.Paragraphs.Add(fragment);
-```
-
-## 第7步：保存PDF文档
-在创建 PDF 文档时嵌入字体后，您需要保存文档：
-
-```csharp
-dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-//保存 PDF 文档
-doc.Save(dataDir);
-```
-
-### 使用 Aspose.PDF for .NET 创建文档时嵌入字体的示例源代码
+首先，您需要定义 PDF 文档的保存路径。这很重要，因为它会告诉您的应用程序将输出文件存储在何处。
 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+代替`"YOUR DOCUMENT DIRECTORY"`使用系统中您想要保存 PDF 的实际路径。
+
+## 第 2 步：实例化 PDF 文档
+
+接下来，您将创建一个实例`Document`类。此类代表您的 PDF 文档。
+
+```csharp
 //通过调用其空构造函数来实例化 Pdf 对象
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+```
 
+通过调用空的构造函数，您可以创建一个新的、空白的、可供存放内容的 PDF 文档。
+
+## 步骤 3：在 PDF 文档中创建页面
+
+现在，让我们向您的 PDF 文档添加一页。每个 PDF 至少需要一页，因此此步骤至关重要。
+
+```csharp
 //在 Pdf 对象中创建一个部分
 Aspose.Pdf.Page page = doc.Pages.Add();
+```
 
+这行代码向您的文档添加了一个新页面，允许您开始添加内容。
+
+## 步骤 4：创建文本片段
+
+要向 PDF 添加文本，您需要创建`TextFragment`。此对象将保存您想要显示的文本。
+
+```csharp
 Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
+```
 
-Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
+在这里，我们正在初始化一个新的`TextFragment`。您可以将其视为文本的容器。
+
+## 步骤 5：添加文本段
+
+现在，让我们创建一个包含您想要显示的实际文本的文本段。您可以在此处自定义文本。
+
+```csharp
+Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment("This is a sample text using Custom font.");
+```
+
+您可以随意将文本更改为您想要的任何内容。这是您的内容！
+
+## 步骤 6：定义文本状态和嵌入字体
+
+为了确保您的字体嵌入到 PDF 中，您需要在`TextState`目的。
+
+```csharp
 Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
 ts.Font = FontRepository.FindFont("Arial");
 ts.Font.IsEmbedded = true;
 segment.TextState = ts;
-fragment.Segments.Add(segment);
-page.Paragraphs.Add(fragment);
+```
 
+在此代码中，我们指定要使用 Arial 字体，并且应将其嵌入到 PDF 中。这是确保您的文档在所有设备上看起来都一样的关键步骤。
+
+## 步骤 7：将 Segment 添加到 Fragment
+
+现在您已经准备好文本段，是时候将其添加到文本片段了。
+
+```csharp
+fragment.Segments.Add(segment);
+```
+
+此行将段添加到片段，使其成为页面上显示的文本的一部分。
+
+## 步骤 8：将片段添加到页面
+
+接下来，您需要将文本片段添加到之前创建的页面。
+
+```csharp
+page.Paragraphs.Add(fragment);
+```
+
+此步骤可确保您的文本出现在 PDF 文档的页面上。
+
+## 步骤 9：保存 PDF 文档
+
+最后，是时候保存您的 PDF 文档了。您将指定要保存它的路径。
+
+```csharp
 dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
 //保存 PDF 文档
 doc.Save(dataDir);
 ```
 
+此代码将输出文件名连接到您的文档目录路径并保存 PDF。 
+
 ## 结论
-在本教程中，我们讨论了如何在使用 Aspose.PDF for .NET 创建 PDF 文档时嵌入字体。 Aspose.PDF for .NET 提供了一个简单易用的 API 来处理 PDF 文档，包括添加和嵌入字体。创建 PDF 文档时嵌入字体是确保文档在不同设备上正确显示的重要步骤，无论这些设备上是否安装了所需的字体。
 
-### 创建 PDF 文档时嵌入字体的常见问题解答
+就这样！您已成功使用 Aspose.PDF for .NET 创建了带有嵌入字体的 PDF 文档。此过程不仅增强了文档的视觉吸引力，还确保它们在不同平台上保持其格式。 
 
-#### 问：为什么创建 PDF 文档时嵌入字体很重要？
+## 常见问题解答
 
-答：创建 PDF 文档时嵌入字体对于确保文档在不同设备上正确显示非常重要，即使这些设备上没有安装所需的字体。这有助于保持文档的预期外观并防止字体替换问题。
+### 什么是 Aspose.PDF for .NET？
+Aspose.PDF for .NET 是一个功能强大的库，允许开发人员以编程方式创建、操作和转换 PDF 文档。
 
-#### 问：使用 Aspose.PDF for .NET 创建 PDF 文档时如何嵌入字体？
+### 为什么我应该在 PDF 中嵌入字体？
+嵌入字体可确保您的文档在所有设备上显示相同，并保持其预期的设计和可读性。
 
-答：您可以在使用 Aspose.PDF for .NET 创建 PDF 文档时嵌入字体，方法是指定字体并设置`IsEmbedded`财产给`true`。这可确保字体数据嵌入到 PDF 文件中。
+### 我可以在 Aspose.PDF 中使用自定义字体吗？
+是的，您可以使用自定义字体，只要它们在您的系统上可用并且在您的代码中正确引用。
 
-#### 问：我可以在将自定义字体嵌入 PDF 文档时指定该字体吗？
+### Aspose.PDF 有免费试用版吗？
+是的，你可以从[Aspose 网站](https://releases.aspose.com/).
 
-答：是的，您可以在使用 Aspose.PDF for .NET 将自定义字体嵌入到 PDF 文档中时指定自定义字体。这允许您使用适合您的设计要求的特定字体。
-
-#### 问：Aspose.PDF for .NET 是否兼容各种字体格式？
-
-答：是的，Aspose.PDF for .NET 与各种字体格式兼容，包括 TrueType、OpenType 和 Type 1 字体。它可以在 PDF 文档中嵌入字体，无论其格式如何。
-
-#### 问：我可以自定义字体嵌入过程吗？
-
-答：是的，您可以使用 Aspose.PDF for .NET 自定义字体嵌入过程。您可以指定字体并设置属性，例如`IsEmbedded`控制字体在 PDF 文档中的嵌入方式。
+### 在哪里可以找到对 Aspose.PDF 的支持？
+您可以在以下位置寻求支持并提出问题[Aspose 论坛](https://forum.aspose.com/c/pdf/10).

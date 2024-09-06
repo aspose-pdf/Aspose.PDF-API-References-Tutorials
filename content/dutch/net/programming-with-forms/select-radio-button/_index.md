@@ -1,15 +1,15 @@
 ---
-title: Selecteer keuzerondje in PDF-document
-linktitle: Selecteer keuzerondje in PDF-document
+title: Keuzerondje selecteren in PDF-document
+linktitle: Keuzerondje selecteren in PDF-document
 second_title: Aspose.PDF voor .NET API-referentie
 description: Leer hoe u een keuzerondje in een PDF-document selecteert met Aspose.PDF voor .NET.
 type: docs
 weight: 250
 url: /nl/net/programming-with-forms/select-radio-button/
 ---
-Hier vindt u een gedetailleerde tutorial over hoe u een keuzerondje selecteert met Aspose.PDF voor .NET. Volg deze stappen:
+Hier is een gedetailleerde tutorial over hoe u een radioknop selecteert met Aspose.PDF voor .NET. Volg deze stappen:
 
-##  Stap 1: Begin met het definiëren van de map van uw documenten door het pad op te geven in het`dataDir` variable.
+##  Stap 1: Begin met het definiëren van de map van uw documenten door het pad in de`dataDir` variable.
 
 ```csharp
 // Het pad naar de documentenmap.
@@ -52,7 +52,7 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nRadio button successfully selected in group.\nFile saved to location: " + dataDir);
 ```
 
-### Voorbeeldbroncode voor Select Radio Button met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Select Radio Button met behulp van Aspose.PDF voor .NET 
 ```csharp
 try
 {
@@ -60,9 +60,9 @@ try
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	// Document openen
 	Document pdfDocument = new Document(dataDir + "RadioButton.pdf");
-	// Neem een veld
+	// Krijg een veld
 	RadioButtonField radioField = pdfDocument.Form["radio"] as RadioButtonField;
-	// Geef de index op van het keuzerondje uit de groep
+	// Geef de index van de keuzerondje uit de groep op
 	radioField.Selected = 2;
 	dataDir = dataDir + "SelectRadioButton_out.pdf";
 	// Sla het PDF-bestand op
@@ -77,27 +77,27 @@ catch (Exception ex)
 
 ## Conclusie
 
-In deze zelfstudie hebben we geleerd hoe u een keuzerondje kunt selecteren met Aspose.PDF voor .NET. Door de hierboven beschreven stappen te volgen, kunt u keuzerondjes in uw PDF-documenten manipuleren en wijzigen met Aspose.PDF voor .NET.
+In deze tutorial hebben we geleerd hoe u een keuzerondje selecteert met Aspose.PDF voor .NET. Door de hierboven beschreven stappen te volgen, kunt u keuzerondjes in uw PDF-documenten bewerken en wijzigen met Aspose.PDF voor .NET.
 
 
 ### Veelgestelde vragen
 
-#### Vraag: Kan ik meerdere keuzerondjes in een groep selecteren met Aspose.PDF voor .NET?
+#### V: Kan ik meerdere keuzerondjes in een groep selecteren met Aspose.PDF voor .NET?
 
-A: Nee, keuzerondjes in een groep zijn zo ontworpen dat ze elkaar uitsluiten. U kunt binnen een groep slechts één keuzerondje tegelijk selecteren. Als u er één selecteert, wordt automatisch elk eerder geselecteerd keuzerondje in dezelfde groep gedeselecteerd.
+A: Nee, radioknoppen in een groep zijn ontworpen om wederzijds exclusief te zijn. U kunt slechts één radioknop tegelijk selecteren binnen een groep, en als u er één selecteert, wordt automatisch de selectie van eerder geselecteerde radioknoppen in dezelfde groep ongedaan gemaakt.
 
-#### Vraag: Hoe haal ik het geselecteerde keuzerondje op in een groep met behulp van Aspose.PDF voor .NET?
+#### V: Hoe haal ik de geselecteerde keuzerondje in een groep op met Aspose.PDF voor .NET?
 
- A: Om het geselecteerde keuzerondje in een groep op te halen, kunt u de`Selected` eigendom van de`RadioButtonField` klas. Het retourneert de index van het geselecteerde keuzerondje binnen de groep.
+ A: Om de geselecteerde keuzerondje in een groep op te halen, kunt u de`Selected` eigendom van de`RadioButtonField` klasse. Het retourneert de index van de geselecteerde radioknop binnen de groep.
 
-#### Vraag: Kan ik de weergave van het geselecteerde keuzerondje in het PDF-document aanpassen?
+#### V: Kan ik het uiterlijk van de geselecteerde keuzerondje in het PDF-document aanpassen?
 
-A: Ja, u kunt het uiterlijk van het geselecteerde keuzerondje aanpassen met Aspose.PDF voor .NET. U kunt de kleur, grootte, randstijl en andere visuele kenmerken aanpassen aan uw gewenste uiterlijk.
+A: Ja, u kunt het uiterlijk van de geselecteerde radioknop aanpassen met Aspose.PDF voor .NET. U kunt de kleur, grootte, randstijl en andere visuele kenmerken aanpassen aan uw gewenste uiterlijk.
 
-#### Vraag: Is het mogelijk om programmatisch nieuwe keuzerondjesgroepen te maken met Aspose.PDF voor .NET?
+#### V: Is het mogelijk om programmatisch nieuwe groepen keuzerondjes te maken met Aspose.PDF voor .NET?
 
-A: Ja, u kunt programmatisch nieuwe keuzerondjesgroepen maken met Aspose.PDF voor .NET. U kunt nieuwe keuzerondjes aan het documentformulier toevoegen en voor elk keuzerondje dezelfde groepsnaam opgeven om een nieuwe groep te maken.
+A: Ja, u kunt programmatisch nieuwe groepen radioknoppen maken met Aspose.PDF voor .NET. U kunt nieuwe radioknoppen toevoegen aan het formulier van het document en dezelfde groepsnaam opgeven voor elke radioknop om een nieuwe groep te maken.
 
-#### Vraag: Ondersteunt Aspose.PDF voor .NET het werken met interactieve PDF-formulieren?
+#### V: Ondersteunt Aspose.PDF voor .NET het werken met interactieve PDF-formulieren?
 
-A: Ja, Aspose.PDF voor .NET ondersteunt volledig het werken met interactieve PDF-formulieren, inclusief keuzerondjes, tekstvelden, selectievakjes en andere formulierelementen. Met behulp van de bibliotheek kunt u eenvoudig interactieve PDF-formulieren lezen, wijzigen en maken.
+A: Ja, Aspose.PDF voor .NET ondersteunt volledig het werken met interactieve PDF-formulieren, inclusief keuzerondjes, tekstvelden, selectievakjes en andere formulierelementen. U kunt eenvoudig interactieve PDF-formulieren lezen, wijzigen en maken met behulp van de bibliotheek.

@@ -2,7 +2,7 @@
 title: Stílus Table Row PDF-ben Java használatával
 linktitle: Stílus Table Row PDF-ben Java használatával
 second_title: Aspose.PDF Java PDF feldolgozó API
-description: Ismerje meg, hogyan alakíthat stílust a PDF-tábla soraiban Java nyelven az Aspose.PDF for Java használatával. Ebben az átfogó útmutatóban testreszabhatja a színeket, hozzáadhat szegélyeket és sok mást.
+description: Ismerje meg, hogyan alakíthat stílust a PDF-tábla soraiban Java nyelven az Aspose.PDF for Java használatával. Ebben az átfogó útmutatóban testreszabhatja a színeket, hozzáadhat szegélyeket és még sok mást.
 type: docs
 weight: 10
 url: /hu/java/pdf-styles-and-formatting/style-table-row-in-pdf-using-java/
@@ -18,7 +18,7 @@ Az Aspose.PDF for Java használatának megkezdéséhez be kell állítania a fej
 
 1.  Az Aspose.PDF letöltése Java-hoz: Látogassa meg[itt](https://releases.aspose.com/pdf/java/) a könyvtár letöltéséhez.
 
-2. Az Aspose.PDF Jar hozzáadása a projekthez: A letöltött JAR fájlt vegye fel a Java projektbe.
+2. Az Aspose.PDF Jar hozzáadása a projekthez: A letöltött JAR-fájlt a Java-projektbe foglalja bele.
 
 3. Az Aspose.PDF inicializálása: A PDF dokumentumokkal való munka megkezdéséhez inicializálja a kódjában található Aspose.PDF könyvtárat.
 
@@ -123,6 +123,6 @@ Igen, stílusozhatja a PDF-táblázat egyes sorait az Aspose.PDF for Java segít
 
 Míg az Aspose.PDF for Java kiterjedt testreszabási lehetőségeket kínál a táblázatsorokhoz, elengedhetetlen, hogy ellenőrizze a dokumentációt az Ön használati esetére vonatkozó konkrét korlátozások vagy szempontok tekintetében.
 
-### Hol találok további forrásokat az Aspose.PDF for Java számára?
+### Hol találok további forrásokat az Aspose.PDF for Java fájlhoz?
 
  Átfogó dokumentációért és további forrásokért látogasson el ide[itt](https://reference.aspose.com/pdf/java/).

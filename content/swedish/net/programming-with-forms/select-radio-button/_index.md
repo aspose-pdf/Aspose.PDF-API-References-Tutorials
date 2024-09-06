@@ -100,4 +100,4 @@ S: Ja, du kan skapa nya alternativknappsgrupper programmatiskt med Aspose.PDF f�
 
 #### F: Stöder Aspose.PDF för .NET arbete med interaktiva PDF-formulär?
 
-S: Ja, Aspose.PDF för .NET stöder fullt ut arbete med interaktiva PDF-formulär, inklusive radioknappar, textfält, kryssrutor och andra formulärelement. Du kan enkelt läsa, ändra och skapa interaktiva PDF-formulär med hjälp av biblioteket.
+S: Ja, Aspose.PDF för .NET stöder fullt arbete med interaktiva PDF-formulär, inklusive radioknappar, textfält, kryssrutor och andra formulärelement. Du kan enkelt läsa, ändra och skapa interaktiva PDF-formulär med hjälp av biblioteket.

@@ -7,22 +7,22 @@ type: docs
 weight: 10
 url: /nl/net/programming-with-tagged-pdf/access-children-elements/
 ---
-In deze zelfstudie geven we u een stapsgewijze handleiding voor het verkrijgen van toegang tot onderliggende elementen van een PDF-document met behulp van Aspose.PDF voor .NET. Aspose.PDF is een krachtige bibliotheek waarmee u programmatisch PDF-documenten kunt maken, manipuleren en converteren. Met behulp van de gemarkeerde inhoudsstructuurfuncties van Aspose.PDF kunt u de eigenschappen van gestructureerde elementen in een PDF-document openen en wijzigen.
+In deze tutorial geven we u een stapsgewijze handleiding voor het openen van onderliggende elementen van een PDF-document met Aspose.PDF voor .NET. Aspose.PDF is een krachtige bibliotheek waarmee u PDF-documenten programmatisch kunt maken, bewerken en converteren. Met behulp van de gemarkeerde inhoudsstructuurfuncties van Aspose.PDF kunt u de eigenschappen van gestructureerde elementen in een PDF-document openen en wijzigen.
 
 ## Vereisten
 
-Voordat u begint, moet u ervoor zorgen dat u aan de volgende vereisten voldoet:
+Voordat u begint, moet u ervoor zorgen dat aan de volgende voorwaarden is voldaan:
 
-1. Visual Studio geïnstalleerd met .NET-framework.
+1. Visual Studio geïnstalleerd met .NET Framework.
 2. De Aspose.PDF-bibliotheek voor .NET.
 
-## Stap 1: Projectconfiguratie
+## Stap 1: Projectinstelling
 
-Om aan de slag te gaan, maakt u een nieuw project in Visual Studio en voegt u een verwijzing toe naar de Aspose.PDF voor .NET-bibliotheek. U kunt de bibliotheek downloaden van de officiële website van Aspose en deze op uw computer installeren.
+Om te beginnen, maak een nieuw project in Visual Studio en voeg een referentie toe aan de Aspose.PDF voor .NET-bibliotheek. U kunt de bibliotheek downloaden van de officiële Aspose-website en deze op uw machine installeren.
 
 ## Stap 2: Importeer de benodigde naamruimten
 
-Importeer in uw C#-codebestand de naamruimten die nodig zijn voor toegang tot de klassen en methoden van Aspose.PDF:
+Importeer in uw C#-codebestand de naamruimten die nodig zijn om toegang te krijgen tot de klassen en methoden die door Aspose.PDF worden aangeboden:
 
 ```csharp
 using System;
@@ -30,7 +30,7 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Stap 3: Het PDF-document laden en onderliggende elementen openen
+## Stap 3: Het PDF-document laden en toegang krijgen tot onderliggende elementen
 
 Gebruik de volgende code om het PDF-document te laden en toegang te krijgen tot de onderliggende elementen:
 
@@ -55,11 +55,11 @@ string alternativeText = structureElement.AlternativeText;
 }
 ```
 
-Met deze code hebt u toegang tot de onderliggende elementen van de hoofdmap van de PDF-documentstructuur en kunt u de eigenschappen van elk element opvragen.
+Met deze code krijgt u toegang tot de onderliggende elementen van de root van de PDF-documentstructuur en krijgt u de eigenschappen van elk element.
 
-## Stap 4: Toegang krijgen tot onderliggende elementelementen en eigenschappen wijzigen
+## Stap 4: Toegang krijgen tot root-element-kinderen en eigenschappen wijzigen
 
-Gebruik de volgende code om toegang te krijgen tot de onderliggende elementen van het hoofdelement en de eigenschappen te wijzigen:
+Gebruik de volgende code om toegang te krijgen tot de onderliggende elementen van het root-element en de eigenschappen te wijzigen:
 
 ```csharp
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
@@ -69,7 +69,7 @@ foreach(Element element in elementList)
 if (element is StructureElement)
 {
 StructureElement structureElement = element as StructureElement;
-// Wijzig de eigenschappen van het element
+// De eigenschappen van het element wijzigen
 structureElement.Title = "title";
 structureElement.Language = "fr-FR";
 structureElement.ActualText = "actual text";
@@ -79,18 +79,18 @@ structureElement.AlternativeText = "alt";
 }
 ```
 
-Met deze code kunt u toegang krijgen tot de onderliggende elementen van het eerste element van het hoofdelement en de eigenschappen van elk element wijzigen.
+Met deze code krijgt u toegang tot de onderliggende elementen van het eerste element van het rootelement en kunt u de eigenschappen van elk element wijzigen.
 
 
-### Voorbeeldbroncode voor Access Children Elements met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Access Children Elements met behulp van Aspose.PDF voor .NET 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open een pdf-document
+// PDF-document openen
 Document document = new Document(dataDir + "StructureElementsTree.pdf");
-// Ontvang inhoud voor werk met TaggedPdf
+// Krijg inhoud voor werk met TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
-// Toegang tot rootelement(en)
+// Toegang tot root-element(en)
 ElementList elementList = taggedContent.StructTreeRootElement.ChildElements;
 foreach (Element element in elementList)
 {
@@ -105,7 +105,7 @@ foreach (Element element in elementList)
 		string alternativeText = structureElement.AlternativeText;
 	}
 }
-// Toegang tot onderliggende elementen van het eerste element in het hoofdelement
+// Toegang tot kinderelementen van het eerste element in het rootelement
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
 foreach (Element element in elementList)
 {
@@ -120,43 +120,43 @@ foreach (Element element in elementList)
 		structureElement.AlternativeText = "alt";
 	}
 }
-// Bewaar het getagde pdf-document
+// Gelabeld PDF-document opslaan
 document.Save(dataDir + "AccessChildrenElements.pdf");
 ```
 
 ## Conclusie
 
-In deze zelfstudie hebt u geleerd hoe u toegang krijgt tot onderliggende elementen van een PDF-document en hoe u elementeigenschappen kunt wijzigen met Aspose.PDF voor .NET. Hierdoor kunt u de gestructureerde elementen in een PDF-document aanpassen en manipuleren volgens uw behoeften.
+In deze tutorial hebt u geleerd hoe u toegang krijgt tot onderliggende elementen van een PDF-document en hoe u elementeigenschappen wijzigt met Aspose.PDF voor .NET. Hiermee kunt u de gestructureerde elementen in een PDF-document aanpassen en manipuleren volgens uw behoeften.
 
 ### Veelgestelde vragen
 
-#### Vraag: Wat is het doel van toegang tot onderliggende elementen in een PDF-document met Aspose.PDF voor .NET?
+#### V: Wat is het doel van het openen van onderliggende elementen in een PDF-document met Aspose.PDF voor .NET?
 
-A: Door toegang te krijgen tot onderliggende elementen in een PDF-document met Aspose.PDF voor .NET kunt u de gestructureerde elementen in het document programmatisch manipuleren en aanpassen. Dit kan het wijzigen van eigenschappen omvatten, zoals titels, talen, daadwerkelijke tekst, uitbreidingstekst en alternatieve tekst, om de toegankelijkheid en presentatie van het document te verbeteren.
+A: Toegang tot onderliggende elementen in een PDF-document met Aspose.PDF voor .NET stelt u in staat om de gestructureerde elementen in het document programmatisch te manipuleren en aan te passen. Dit kan het wijzigen van eigenschappen omvatten, zoals titels, talen, feitelijke tekst, uitbreidingstekst en alternatieve tekst, om de toegankelijkheid en presentatie van het document te verbeteren.
 
-#### Vraag: Wat is de rol van de Aspose.PDF-bibliotheek in dit proces?
+#### V: Wat is de rol van de Aspose.PDF-bibliotheek in dit proces?
 
-A: Aspose.PDF voor .NET is een krachtige bibliotheek die verschillende functies biedt voor het programmatisch maken, manipuleren en converteren van PDF-documenten. In deze zelfstudie wordt de bibliotheek gebruikt om een PDF-document te laden, toegang te krijgen tot getagde inhoud en gestructureerde elementen, en hun eigenschappen te wijzigen.
+A: Aspose.PDF voor .NET is een krachtige bibliotheek die verschillende functies biedt voor het maken, manipuleren en converteren van PDF-documenten via een programma. In deze tutorial wordt de bibliotheek gebruikt om een PDF-document te laden, toegang te krijgen tot getagde content en gestructureerde elementen en hun eigenschappen te wijzigen.
 
-#### Vraag: Wat zijn de vereisten voor het werken met onderliggende elementen in een PDF-document met Aspose.PDF voor .NET?
+#### V: Wat zijn de vereisten voor het werken met onderliggende elementen in een PDF-document met Aspose.PDF voor .NET?
 
-A: Voordat u begint, moet u ervoor zorgen dat Visual Studio is geïnstalleerd met het .NET-framework en dat er in uw project naar de Aspose.PDF-bibliotheek voor .NET wordt verwezen.
+A: Voordat u begint, moet u ervoor zorgen dat Visual Studio met het .NET Framework is geïnstalleerd en dat de Aspose.PDF-bibliotheek voor .NET in uw project wordt vermeld.
 
-#### Vraag: Hoe maakt de meegeleverde C#-code het mogelijk om onderliggende elementen in een PDF-document te openen en te wijzigen?
+#### V: Hoe kan ik met de meegeleverde C#-code toegang krijgen tot onderliggende elementen in een PDF-document en deze wijzigen?
 
-A: De code laat zien hoe u een PDF-document laadt, toegang krijgt tot de getagde inhoud en door de onderliggende elementen van de root en specifieke elementen loopt. Het laat zien hoe u eigenschappen van gestructureerde elementen kunt ophalen en hoe u deze eigenschappen kunt wijzigen om het document aan te passen.
+A: De code laat zien hoe je een PDF-document laadt, toegang krijgt tot de getagde content en door de child-elementen van de root en specifieke elementen reist. Het laat zien hoe je eigenschappen van gestructureerde elementen ophaalt en hoe je die eigenschappen wijzigt om het document aan te passen.
 
-#### Vraag: Kan ik andere eigenschappen van de onderliggende elementen openen en wijzigen dan degene die in de code worden weergegeven?
+#### V: Kan ik ook andere eigenschappen van de onderliggende elementen openen en wijzigen dan die welke in de code worden weergegeven?
 
-A: Ja, u kunt diverse andere eigenschappen van de onderliggende elementen openen en wijzigen met behulp van soortgelijke technieken. De eigenschappen die in de code worden gedemonstreerd (titel, taal, daadwerkelijke tekst, enz.) zijn slechts voorbeelden, en u kunt de Aspose.PDF-documentatie verkennen om meer eigenschappen en methoden te ontdekken die beschikbaar zijn voor manipulatie.
+A: Ja, u kunt verschillende andere eigenschappen van de child elements benaderen en wijzigen met behulp van vergelijkbare technieken. De eigenschappen die in de code worden getoond (titel, taal, feitelijke tekst, etc.) zijn slechts voorbeelden en u kunt de Aspose.PDF-documentatie verkennen om meer eigenschappen en methoden te ontdekken die beschikbaar zijn voor manipulatie.
 
-#### Vraag: Hoe identificeer ik tot welke onderliggende elementen ik toegang wil krijgen binnen het PDF-document?
-A: De code geeft een voorbeeld van toegang tot de onderliggende elementen van het hoofdelement en een specifiek element daarin. U kunt de elementen identificeren waartoe u toegang wilt hebben, op basis van hun hiërarchie en structuur binnen de getagde inhoud van het PDF-document.
+#### V: Hoe kan ik bepalen welke onderliggende elementen ik binnen het PDF-document wil openen?
+A: De code geeft een voorbeeld van toegang tot de child-elementen van het root-element en een specifiek element daarbinnen. U kunt de elementen identificeren die u wilt benaderen op basis van hun hiërarchie en structuur binnen de getagde inhoud van het PDF-document.
 
-#### Vraag: Is het mogelijk om met deze aanpak nieuwe onderliggende elementen toe te voegen of bestaande te verwijderen?
+#### V: Is het mogelijk om met deze aanpak nieuwe onderliggende elementen toe te voegen of bestaande elementen te verwijderen?
 
-A: Hoewel de meegeleverde code zich richt op het openen en wijzigen van bestaande onderliggende elementen, kunt u de aanpak uitbreiden door nieuwe onderliggende elementen toe te voegen of bestaande te verwijderen door de juiste methoden te gebruiken die worden aangeboden door de Aspose.PDF-bibliotheek.
+A: Hoewel de meegeleverde code zich richt op het openen en wijzigen van bestaande onderliggende elementen, kunt u de aanpak uitbreiden en nieuwe onderliggende elementen toevoegen of bestaande elementen verwijderen met behulp van de juiste methoden die worden aangeboden door de Aspose.PDF-bibliotheek.
 
-#### Vraag: Kan ik deze aanpak gebruiken om met geneste onderliggende elementen in het PDF-document te werken?
+#### V: Kan ik deze aanpak gebruiken om met geneste onderliggende elementen binnen het PDF-document te werken?
 
-A: Ja, u kunt vergelijkbare technieken toepassen om geneste onderliggende elementen binnen de structuur van het PDF-document te openen en te wijzigen. Door de hiërarchie van elementen te doorlopen, kunt u elementen op verschillende niveaus openen en manipuleren.
+A: Ja, u kunt vergelijkbare technieken toepassen om geneste kindelementen binnen de structuur van het PDF-document te benaderen en te wijzigen. Door de hiërarchie van elementen te doorlopen, kunt u elementen op verschillende niveaus benaderen en manipuleren.

@@ -17,7 +17,7 @@ digitálním věku jsou dokumenty PDF běžným způsobem sdílení informací a
 Než se ponoříme do kódu, ujistěte se, že máte splněny následující předpoklady:
 
 - Java Development Kit (JDK) nainstalovaný ve vašem systému.
--  Aspose.PDF pro knihovnu Java stažen a nastaven. Odkaz ke stažení najdete[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java stažen a nastaven. Odkaz ke stažení najdete[zde](https://releases.aspose.com/pdf/java/).
 - Základní znalost programování v Javě.
 
 Nyní, když máme seřazené předpoklady, přistoupíme k přidávání obrazových razítek do PDF při zachování kontroly nad kvalitou obrazu.
@@ -42,7 +42,7 @@ Dále načtěte dokument PDF, do kterého chcete přidat razítko obrázku:
 Document pdfDocument = new Document("path_to_your_pdf.pdf");
 ```
 
-## Krok 3: Vytvořte razítko obrázku
+## Krok 3: Vytvořte obrazové razítko
 
 Nyní vytvoříme obrazové razítko, které chceme přidat do PDF. Ujistěte se, že máte obrázek připravený pro tento krok. Zde je návod, jak vytvořit obrázkové razítko:
 
@@ -93,4 +93,4 @@ Tento proces razítkování obrazu můžete integrovat do své aplikace Java pod
 
 ### Kde najdu další dokumentaci k Aspose.PDF pro Javu?
 
- Můžete se podívat na Aspose.PDF pro dokumentaci Java[tady](https://reference.aspose.com/pdf/java/) pro podrobné informace o jeho funkcích a použití.
+ Můžete se podívat na Aspose.PDF pro dokumentaci Java[zde](https://reference.aspose.com/pdf/java/) pro podrobné informace o jeho funkcích a použití.

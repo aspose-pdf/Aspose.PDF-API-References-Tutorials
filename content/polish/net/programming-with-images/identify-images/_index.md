@@ -1,17 +1,17 @@
 ---
-title: Identyfikuj obrazy w pliku PDF
-linktitle: Identyfikuj obrazy w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Z łatwością identyfikuj obrazy w pliku PDF i określaj ich typ koloru za pomocą Aspose.PDF dla .NET.
+title: Zidentyfikuj obrazy w pliku PDF
+linktitle: Zidentyfikuj obrazy w pliku PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwe identyfikowanie obrazów w plikach PDF i określanie ich typu koloru za pomocą Aspose.PDF dla .NET.
 type: docs
 weight: 150
 url: /pl/net/programming-with-images/identify-images/
 ---
-Ten przewodnik poprowadzi Cię krok po kroku, jak identyfikować obrazy w pliku PDF przy użyciu Aspose.PDF dla .NET. Upewnij się, że masz już skonfigurowane środowisko i wykonaj poniższe czynności:
+Ten przewodnik krok po kroku pokaże Ci, jak identyfikować obrazy w pliku PDF za pomocą Aspose.PDF dla .NET. Upewnij się, że skonfigurowałeś już swoje środowisko i wykonaj poniższe kroki:
 
 ## Krok 1: Zdefiniuj katalog dokumentów
 
- Upewnij się, że ustawiłeś prawidłowy katalog dokumentów. Zastępować`"YOUR DOCUMENT DIRECTORY"` w kodzie ścieżką do katalogu, w którym znajduje się Twój dokument PDF.
+ Upewnij się, że ustawiłeś poprawny katalog dokumentów. Zastąp`"YOUR DOCUMENT DIRECTORY"` w kodzie podając ścieżkę do katalogu, w którym znajduje się Twój dokument PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 2: Zainicjuj liczniki
 
-W tym kroku zainicjujemy liczniki obrazów w skali szarości i obrazów RGB.
+W tym kroku zainicjujemy liczniki dla obrazów w skali szarości i obrazów RGB.
 
 ```csharp
 int grayscaled = 0; // Licznik obrazów w skali szarości
@@ -28,23 +28,23 @@ int rdg = 0; // Licznik obrazów RGB
 
 ## Krok 3: Otwórz dokument PDF
 
- tym kroku otworzymy dokument PDF za pomocą`Document` klasa Aspose.PDF. Użyj`Document` konstruktor i podaj ścieżkę do dokumentu PDF.
+ W tym kroku otworzymy dokument PDF za pomocą`Document` klasa Aspose.PDF. Użyj`Document` konstruktora i przekazuje ścieżkę do dokumentu PDF.
 
 ```csharp
 using (Document document = new Document(dataDir + "ExtractImages.pdf"))
 {
 ```
 
-## Krok 4: Przeglądaj strony dokumentów
+## Krok 4: Przeglądaj strony dokumentu
 
-Na tym etapie przejrzymy wszystkie strony dokumentu PDF i zidentyfikujemy obrazy na każdej stronie.
+W tym kroku przejrzymy wszystkie strony dokumentu PDF i zidentyfikujemy obrazy na każdej stronie.
 
 ```csharp
 foreach(Page page in document.Pages)
 {
 ```
 
-## Krok 5: Pobierz miejsca docelowe obrazów
+## Krok 5: Pobierz umiejscowienie obrazu
 
  W tym kroku użyjemy`ImagePlacementAbsorber` aby pobrać rozmieszczenie obrazów na każdej stronie.
 
@@ -53,9 +53,9 @@ ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
 page. Accept(abs);
 ```
 
-## Krok 6: Policz obrazy i określ ich rodzaj koloru
+## Krok 6: Policz obrazy i określ ich typ koloru
 
-Na tym etapie policzymy liczbę obrazów na każdej stronie i określimy ich rodzaj koloru (skala szarości lub RGB).
+W tym kroku policzymy liczbę obrazów na każdej stronie i określimy ich typ koloru (skala szarości lub RGB).
 
 ```csharp
 Console.WriteLine("Total Images = {0} on page number {1}", abs.ImagePlacements.Count, page.Number);
@@ -78,7 +78,7 @@ foreach(ImagePlacement ia in abs.ImagePlacements)
 }
 ```
 
-### Przykładowy kod źródłowy dla identyfikacji obrazów przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla Identyfikuj obrazy za pomocą Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -93,7 +93,7 @@ using (Document document = new Document(dataDir + "ExtractImages.pdf"))
 		Console.WriteLine("--------------------------------");
 		ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
 		page.Accept(abs);
-		// Uzyskaj liczbę obrazów na określonej stronie
+		// Pobierz liczbę obrazów na określonej stronie
 		Console.WriteLine("Total Images = {0} over page number {1}", abs.ImagePlacements.Count, page.Number);
 		// Dokument.Strony[29].Akceptuj(abs);
 		int image_counter = 1;
@@ -119,42 +119,42 @@ using (Document document = new Document(dataDir + "ExtractImages.pdf"))
 
 ## Wniosek
 
-Gratulacje! Pomyślnie zidentyfikowałeś obrazy w pliku PDF przy użyciu Aspose.PDF dla .NET. Obrazy zliczono i zidentyfikowano ich rodzaj koloru (skala szarości lub RGB). Możesz teraz wykorzystać te informacje do swoich konkretnych potrzeb.
+Gratulacje! Udało Ci się zidentyfikować obrazy w pliku PDF przy użyciu Aspose.PDF dla .NET. Obrazy zostały policzone, a ich typ koloru (skala szarości lub RGB) został zidentyfikowany. Teraz możesz wykorzystać te informacje do swoich konkretnych potrzeb.
 
 ### Często zadawane pytania dotyczące identyfikacji obrazów w pliku PDF
 
 #### P: Jaki jest cel identyfikacji obrazów w dokumencie PDF?
 
-Odp.: Identyfikacja obrazów w dokumencie PDF pomaga użytkownikom analizować i kategoryzować obrazy na podstawie ich typu koloru (skala szarości lub RGB). Informacje te mogą być przydatne do różnych celów, takich jak przetwarzanie obrazu, analiza danych lub kontrola jakości.
+A: Identyfikowanie obrazów w dokumencie PDF pomaga użytkownikom analizować i kategoryzować obrazy na podstawie ich typu koloru (skala szarości lub RGB). Informacje te mogą być przydatne do różnych celów, takich jak przetwarzanie obrazu, analiza danych lub kontrola jakości.
 
 #### P: W jaki sposób Aspose.PDF dla .NET pomaga w identyfikacji obrazów w dokumencie PDF?
 
- Odp.: Aspose.PDF dla .NET zapewnia prosty proces otwierania dokumentu PDF, przeglądania jego stron i identyfikowania obrazów za pomocą`ImagePlacementAbsorber` klasa.
+ A: Aspose.PDF dla platformy .NET zapewnia prosty proces otwierania dokumentu PDF, przeglądania jego stron i identyfikowania obrazów za pomocą`ImagePlacementAbsorber` klasa.
 
-#### P: Jakie jest znaczenie rozróżnienia między obrazami w skali szarości i RGB?
+#### P: Jakie jest znaczenie rozróżnienia obrazów w skali szarości i obrazów RGB?
 
-Odp.: Rozróżnienie obrazów w skali szarości i RGB pomaga zrozumieć kompozycję kolorystyczną obrazów w dokumencie PDF. Obrazy w skali szarości zawierają tylko odcienie szarości, podczas gdy obrazy RGB składają się z kanałów kolorów czerwonego, zielonego i niebieskiego.
+A: Rozróżnienie obrazów w skali szarości i RGB pomaga zrozumieć kompozycję kolorów obrazów w dokumencie PDF. Obrazy w skali szarości zawierają tylko odcienie szarości, podczas gdy obrazy RGB składają się z kanałów kolorów czerwonego, zielonego i niebieskiego.
 
-#### P: W jaki sposób obrazy w skali szarości i RGB są liczone i identyfikowane przy użyciu Aspose.PDF dla .NET?
+#### P: W jaki sposób obrazy w skali szarości i RGB są zliczane i identyfikowane za pomocą programu Aspose.PDF dla platformy .NET?
 
- O:`ImagePlacementAbsorber` klasa służy do pobierania rozmieszczenia obrazów na każdej stronie. The`GetColorType()` Metoda ta jest następnie stosowana do każdego rozmieszczenia obrazu w celu określenia, czy jest to skala szarości, czy RGB.
+ A: Ten`ImagePlacementAbsorber` Klasa jest używana do pobierania umiejscowienia obrazów na każdej stronie.`GetColorType()` Następnie do każdego umiejscowienia obrazu stosowana jest metoda, aby określić, czy jest to skala szarości czy RGB.
 
-#### P: Czy mogę zmodyfikować kod, aby wykonać dodatkowe działania w zależności od typu koloru obrazu?
+#### P: Czy mogę zmodyfikować kod, aby wykonywał dodatkowe akcje w oparciu o typ koloru obrazu?
 
-Odp.: Tak, możesz dostosować kod, aby wykonywał określone działania w zależności od typu koloru obrazu. Można na przykład wyodrębnić obrazy w skali szarości do dalszego przetwarzania lub zastosować różne techniki optymalizacji w zależności od rodzaju koloru.
+A: Tak, możesz dostosować kod, aby wykonywał określone akcje na podstawie typu koloru obrazu. Na przykład możesz wyodrębnić obrazy w skali szarości do dalszego przetwarzania lub zastosować różne techniki optymalizacji na podstawie typu koloru.
 
-####  P: W jaki sposób`ImagePlacementAbsorber` class contribute to identifying images?
+####  P: Jak to działa?`ImagePlacementAbsorber` class contribute to identifying images?
 
- O:`ImagePlacementAbsorber` klasa skanuje stronę w poszukiwaniu rozmieszczenia obrazów, umożliwiając pobranie informacji o obrazach, w tym o ich typie koloru.
+ A: Ten`ImagePlacementAbsorber` Klasa skanuje stronę w poszukiwaniu rozmieszczenia obrazów, umożliwiając pobieranie informacji o obrazach, łącznie z typem ich koloru.
 
-#### P: Czy liczba zidentyfikowanych obrazów kumuluje się na wszystkich stronach dokumentu PDF?
+#### P: Czy zidentyfikowana liczba obrazów jest łączna na wszystkich stronach dokumentu PDF?
 
-Odpowiedź: Tak, liczba obrazów kumuluje się na wszystkich stronach. Kod iteruje po każdej stronie dokumentu PDF i zlicza obrazy na każdej stronie.
+A: Tak, liczba obrazów jest kumulatywna na wszystkich stronach. Kod przechodzi przez każdą stronę dokumentu PDF i liczy obrazy na każdej stronie.
 
-#### P: Czy mogę używać tej identyfikacji obrazu do automatyzacji zadań związanych z obrazami w dokumentach PDF?
+#### P: Czy mogę używać tej identyfikacji obrazów do automatyzacji zadań związanych z obrazami w dokumentach PDF?
 
-O: Tak, identyfikacja obrazów w dokumentach PDF może być przydatna do automatyzacji zadań, takich jak wyodrębnianie obrazów, konwersja lub manipulacja na podstawie typu koloru.
+O: Tak, funkcja identyfikacji obrazów w dokumentach PDF może być przydatna do automatyzacji zadań, takich jak wyodrębnianie, konwersja lub manipulacja obrazami na podstawie typu koloru.
 
-#### P: W jaki sposób proces identyfikacji obrazu wpływa na przetwarzanie dokumentów PDF?
+#### P: Jaki wpływ ma proces identyfikacji obrazu na przetwarzanie dokumentów PDF?
 
-Odp.: Identyfikacja obrazu zapewnia cenny wgląd w kompozycję kolorystyczną obrazów, umożliwiając lepsze zrozumienie i przetwarzanie dokumentów PDF zawierających obrazy.
+A: Identyfikacja obrazu dostarcza cennych informacji na temat kompozycji kolorów obrazów, umożliwiając lepsze zrozumienie i przetwarzanie dokumentów PDF zawierających obrazy.

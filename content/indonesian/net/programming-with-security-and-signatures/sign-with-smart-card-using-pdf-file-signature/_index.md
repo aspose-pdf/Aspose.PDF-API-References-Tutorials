@@ -1,17 +1,17 @@
 ---
-title: Masuk Dengan Kartu Cerdas Menggunakan Tanda Tangan File PDF
-linktitle: Masuk Dengan Kartu Cerdas Menggunakan Tanda Tangan File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Tanda tangani file PDF Anda dengan aman menggunakan kartu pintar menggunakan Aspose.PDF untuk .NET.
+title: Tanda Tangan Dengan Kartu Pintar Menggunakan Tanda Tangan File PDF
+linktitle: Tanda Tangan Dengan Kartu Pintar Menggunakan Tanda Tangan File PDF
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Tanda tangani berkas PDF Anda dengan aman dengan kartu pintar menggunakan Aspose.PDF untuk .NET.
 type: docs
 weight: 110
 url: /id/net/programming-with-security-and-signatures/sign-with-smart-card-using-pdf-file-signature/
 ---
-Penandatanganan digital dengan kartu pintar adalah cara aman untuk menandatangani file PDF. Dengan Aspose.PDF untuk .NET, Anda dapat dengan mudah menandatangani file PDF menggunakan kartu pintar dengan mengikuti kode sumber berikut:
+Penandatanganan digital dengan kartu pintar merupakan cara yang aman untuk menandatangani berkas PDF. Dengan Aspose.PDF untuk .NET, Anda dapat dengan mudah menandatangani berkas PDF menggunakan kartu pintar dengan mengikuti kode sumber berikut:
 
-## Langkah 1: Impor perpustakaan yang diperlukan
+## Langkah 1: Impor pustaka yang diperlukan
 
-Sebelum memulai, Anda perlu mengimpor perpustakaan yang diperlukan untuk proyek C# Anda. Berikut adalah arahan impor yang diperlukan:
+Sebelum memulai, Anda perlu mengimpor pustaka yang diperlukan untuk proyek C# Anda. Berikut ini adalah perintah impor yang diperlukan:
 
 ```csharp
 using Aspose.Pdf;
@@ -22,7 +22,7 @@ using System.Security.Cryptography.X509Certificates;
 
 ## Langkah 2: Tetapkan jalur ke folder dokumen
 
- Pada langkah ini, Anda perlu menentukan jalur ke folder yang berisi file PDF yang ingin Anda tandatangani. Mengganti`"YOUR DOCUMENTS DIRECTORY"`dalam kode berikut dengan jalur sebenarnya ke folder dokumen Anda:
+ Pada langkah ini, Anda perlu menentukan jalur ke folder yang berisi file PDF yang ingin Anda tandatangani. Ganti`"YOUR DOCUMENTS DIRECTORY"` dalam kode berikut dengan jalur sebenarnya ke folder dokumen Anda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -38,7 +38,7 @@ Document doc = new Document(dataDir + "blank.pdf");
 
 ## Langkah 4: Lakukan tanda tangan dengan kartu pintar
 
- Pada langkah ini, kita akan melakukan tanda tangan dengan kartu pintar menggunakan`PdfFileSignature` kelas dari`Facades`perpustakaan. Kami memilih sertifikat kartu pintar dari penyimpanan sertifikat Windows dan menentukan informasi penandatanganan yang diperlukan. Ini kode yang sesuai:
+ Pada langkah ini kita akan melakukan penandatanganan dengan kartu pintar menggunakan`PdfFileSignature` kelas dari`Facades`pustaka. Kami memilih sertifikat kartu pintar dari penyimpanan sertifikat Windows dan menentukan informasi penandatanganan yang diperlukan. Berikut ini adalah kode yang sesuai:
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature())
@@ -59,7 +59,7 @@ using (PdfFileSignature pdfSign = new PdfFileSignature())
 
 ## Langkah 5: Verifikasi Tanda Tangan
 
- Terakhir, kami memverifikasi tanda tangan file PDF yang ditandatangani menggunakan`PdfFileSignature` kelas. Kami mendapatkan nama tanda tangan dan memeriksanya satu per satu. Jika tanda tangan gagal verifikasi, pengecualian akan diberikan. Ini kode yang sesuai:
+ Terakhir, kami memverifikasi tanda tangan file PDF yang ditandatangani menggunakan`PdfFileSignature` class. Kami mendapatkan nama tanda tangan dan memeriksanya satu per satu. Jika tanda tangan gagal diverifikasi, pengecualian akan dilemparkan. Berikut kode yang sesuai:
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature2.pdf")))
@@ -75,7 +75,7 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 }
 ```
 
-### Contoh kode sumber untuk Masuk Dengan Kartu Cerdas Menggunakan Tanda Tangan File Pdf menggunakan Aspose.PDF untuk .NET 
+### Contoh kode sumber untuk Tanda Tangan dengan Kartu Pintar Menggunakan Tanda Tangan Berkas Pdf menggunakan Aspose.PDF untuk .NET 
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -83,10 +83,10 @@ Document doc = new Document(dataDir + "blank.pdf");
 using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature())
 {
 	pdfSign.BindPdf(doc);
-	// Masuk dengan pilihan sertifikat di penyimpanan sertifikat windows
+	// Masuk dengan pemilihan sertifikat di penyimpanan sertifikat Windows
 	System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
 	store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-	// Pilih sertifikat di toko secara manual
+	// Memilih sertifikat secara manual di toko
 	System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
 	Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0]);
 	pdfSign.SignatureAppearance = dataDir + "demo.png";
@@ -108,48 +108,48 @@ using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature(new Docum
 
 ## Kesimpulan
 
-Selamat! Anda sekarang memiliki panduan langkah demi langkah untuk menandatangani file PDF dengan kartu pintar menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan kode ini untuk menambahkan tanda tangan digital yang aman ke dokumen PDF Anda.
+Selamat! Kini Anda memiliki panduan langkah demi langkah untuk menandatangani berkas PDF dengan kartu pintar menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan kode ini untuk menambahkan tanda tangan digital yang aman ke dokumen PDF Anda.
 
 Pastikan untuk memeriksa dokumentasi resmi Aspose.PDF untuk informasi lebih lanjut tentang fitur tanda tangan digital dan manajemen sertifikat tingkat lanjut.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### T: Mengapa saya harus mempertimbangkan untuk menandatangani file PDF dengan kartu pintar?
+#### T: Mengapa saya harus mempertimbangkan menandatangani berkas PDF dengan kartu pintar?
 
-J: Menandatangani file PDF dengan kartu pintar meningkatkan keamanan dengan memastikan keaslian dan integritas dokumen. Tanda tangan berbasis kartu pintar memberikan tingkat kepercayaan dan kepatuhan yang lebih tinggi.
+J: Menandatangani berkas PDF dengan kartu pintar meningkatkan keamanan dengan memastikan keaslian dan integritas dokumen. Tanda tangan berbasis kartu pintar memberikan tingkat kepercayaan dan kepatuhan yang lebih tinggi.
 
 #### T: Bagaimana cara kerja penandatanganan digital berbasis kartu pintar?
 
-J: Penandatanganan digital berbasis kartu pintar melibatkan penggunaan kunci kriptografi yang disimpan di kartu pintar untuk membuat tanda tangan digital unik. Tanda tangan ini dilampirkan pada file PDF, memungkinkan penerima memverifikasi asal dan integritas dokumen.
+J: Penandatanganan digital berbasis kartu pintar melibatkan penggunaan kunci kriptografi yang disimpan pada kartu pintar untuk membuat tanda tangan digital yang unik. Tanda tangan ini dilampirkan ke berkas PDF, yang memungkinkan penerima untuk memverifikasi asal dan integritas dokumen.
 
 #### T: Apa peran Aspose.PDF untuk .NET dalam penandatanganan berbasis kartu pintar?
 
-J: Aspose.PDF untuk .NET menyediakan seperangkat alat dan perpustakaan lengkap untuk memfasilitasi penandatanganan digital file PDF berbasis kartu pintar. Ini menyederhanakan proses dan memastikan penandatanganan dokumen aman.
+J: Aspose.PDF untuk .NET menyediakan seperangkat alat dan pustaka yang lengkap untuk memfasilitasi penandatanganan digital file PDF berbasis kartu pintar. Ini menyederhanakan proses dan memastikan penandatanganan dokumen yang aman.
 
-#### T: Dapatkah saya memilih sertifikat kartu pintar tertentu untuk ditandatangani?
+#### T: Dapatkah saya memilih sertifikat kartu pintar tertentu untuk penandatanganan?
 
-J: Ya, Anda dapat memilih sertifikat kartu pintar tertentu dari penyimpanan sertifikat Windows untuk ditandatangani. Aspose.PDF untuk .NET memungkinkan Anda mengintegrasikan pemilihan sertifikat ke dalam aplikasi Anda dengan lancar.
+A: Ya, Anda dapat memilih sertifikat kartu pintar tertentu dari penyimpanan sertifikat Windows untuk ditandatangani. Aspose.PDF untuk .NET memungkinkan Anda mengintegrasikan pemilihan sertifikat ke dalam aplikasi Anda dengan lancar.
 
 #### T: Bagaimana kode sumber yang disediakan menangani penandatanganan berbasis kartu pintar?
 
-J: Kode sumber menunjukkan cara mengikat dokumen PDF, memilih sertifikat kartu pintar, menentukan informasi penandatanganan, dan membuat tanda tangan digital. Ini juga menunjukkan cara memverifikasi validitas tanda tangan.
+A: Kode sumber menunjukkan cara mengikat dokumen PDF, memilih sertifikat kartu pintar, menentukan informasi penandatanganan, dan membuat tanda tangan digital. Kode sumber juga menunjukkan cara memverifikasi keabsahan tanda tangan.
 
-#### T: Bisakah saya menerapkan banyak tanda tangan menggunakan kartu pintar dalam satu file PDF?
+#### T: Dapatkah saya menerapkan beberapa tanda tangan menggunakan kartu pintar dalam satu berkas PDF?
 
-J: Tentu saja, Anda dapat menerapkan beberapa tanda tangan berbasis kartu pintar ke satu file PDF. Setiap tanda tangan bersifat unik dan berkontribusi terhadap keamanan dokumen secara keseluruhan.
+J: Tentu saja, Anda dapat menerapkan beberapa tanda tangan berbasis kartu pintar ke satu berkas PDF. Setiap tanda tangan bersifat unik dan berkontribusi pada keamanan dokumen secara keseluruhan.
 
-#### T: Bagaimana jika tanda tangan gagal diverifikasi pada tahap verifikasi?
+#### T: Bagaimana jika tanda tangan gagal diverifikasi selama langkah verifikasi?
 
-J: Jika tanda tangan gagal verifikasi, pengecualian akan diberikan, yang menunjukkan bahwa tanda tangan tersebut tidak valid. Hal ini memastikan bahwa hanya tanda tangan sah dan terpercaya yang diterima.
+A: Jika tanda tangan gagal diverifikasi, pengecualian akan muncul, yang menunjukkan bahwa tanda tangan tersebut tidak valid. Ini memastikan bahwa hanya tanda tangan yang valid dan tepercaya yang diterima.
 
 #### T: Apakah penandatanganan berbasis kartu pintar kompatibel dengan semua jenis dokumen PDF?
 
 J: Ya, penandatanganan berbasis kartu pintar kompatibel dengan semua jenis dokumen PDF. Anda dapat menerapkan tanda tangan digital ke berbagai jenis file PDF, termasuk formulir, laporan, dan lainnya.
 
-#### T: Bagaimana cara mempelajari lebih lanjut tentang tanda tangan digital tingkat lanjut dan manajemen sertifikat?
+#### T: Bagaimana saya dapat mempelajari lebih lanjut tentang tanda tangan digital dan manajemen sertifikat tingkat lanjut?
 
-J: Jelajahi dokumentasi resmi Aspose.PDF untuk wawasan mendetail tentang fitur tanda tangan digital tingkat lanjut, manajemen sertifikat, dan praktik terbaik untuk memastikan keamanan dokumen.
+A: Jelajahi dokumentasi resmi Aspose.PDF untuk wawasan terperinci tentang fitur tanda tangan digital tingkat lanjut, manajemen sertifikat, dan praktik terbaik untuk memastikan keamanan dokumen.
 
-#### T: Di mana saya bisa mendapatkan bantuan atau dukungan lebih lanjut untuk menerapkan penandatanganan berbasis kartu pintar?
+#### T: Di mana saya dapat menemukan bantuan atau dukungan lebih lanjut untuk menerapkan penandatanganan berbasis kartu pintar?
 
-J: Untuk panduan dan dukungan tambahan, hubungi forum komunitas Aspose.PDF atau lihat dokumentasi untuk informasi komprehensif tentang penandatanganan berbasis kartu pintar.
+A: Untuk panduan dan dukungan tambahan, hubungi forum komunitas Aspose.PDF atau lihat dokumentasi untuk informasi lengkap tentang penandatanganan berbasis kartu pintar.

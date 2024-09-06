@@ -8,7 +8,7 @@ weight: 13
 url: /cs/java/pdf-styles-and-formatting/style-table-cell-in-pdf-using-java/
 ---
 
-## Úvod
+## Zavedení
 
 oblasti vývoje softwaru je generování a manipulace s dokumenty PDF běžným úkolem. Aspose.PDF for Java, výkonné Java API, poskytuje vývojářům nástroje, které potřebují k snadnému vytváření a úpravám PDF. V tomto podrobném průvodci prozkoumáme, jak stylovat buňky tabulky v dokumentu PDF pomocí Aspose.PDF for Java.
 
@@ -18,11 +18,11 @@ Než se ponoříme do kódu, ujistěte se, že máme vše, co potřebujeme:
 
 - Vývojové prostředí Java: Ujistěte se, že máte v systému nainstalovanou Javu.
 
--  Aspose.PDF pro knihovnu Java: Stáhněte si knihovnu z[tady](https://releases.aspose.com/pdf/java/) pokud jste to ještě neudělali.
+-  Aspose.PDF pro knihovnu Java: Stáhněte si knihovnu z[zde](https://releases.aspose.com/pdf/java/) pokud jste to ještě neudělali.
 
 ## Vytvoření jednoduché tabulky PDF
 
-Pro začátek si vytvořte jednoduchou tabulku PDF. K vygenerování základní struktury tabulky použijeme Aspose.PDF pro Javu.
+Pro začátek si vytvořte jednoduchou PDF tabulku. K vygenerování základní struktury tabulky použijeme Aspose.PDF pro Javu.
 
 ```java
 // Java kód pro vytvoření PDF dokumentu s tabulkou
@@ -81,7 +81,7 @@ V tomto článku jsme prozkoumali, jak upravit styl buněk tabulky v PDF pomocí
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
-Instalace Aspose.PDF pro Java je přímočará. Knihovnu si můžete stáhnout z webu Aspose na adrese[tady](https://releases.aspose.com/pdf/java/).
+Instalace Aspose.PDF pro Java je přímočará. Knihovnu si můžete stáhnout z webu Aspose na adrese[zde](https://releases.aspose.com/pdf/java/).
 
 ### Mohu pomocí Aspose.PDF for Java upravovat další aspekty PDF?
 
@@ -97,4 +97,4 @@ Ano, Aspose.PDF for Java je komerční produkt. Možná budete muset získat lic
 
 ### Kde najdu další návody a zdroje Aspose.PDF pro Java?
 
- Kompletní výukové programy a dokumentaci naleznete v dokumentaci Aspose.PDF pro Java na adrese[tady](https://reference.aspose.com/pdf/java/).
+ Kompletní výukové programy a dokumentaci naleznete v dokumentaci Aspose.PDF pro Java na adrese[zde](https://reference.aspose.com/pdf/java/).

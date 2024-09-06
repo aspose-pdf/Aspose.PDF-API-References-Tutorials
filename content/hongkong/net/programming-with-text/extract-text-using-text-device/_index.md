@@ -60,8 +60,8 @@ builder. Append(extractedText);
 }
 ```
 
-## 第 6 步：儲存提取的文本
-指定輸出文件路徑並使用以下命令將提取的文字儲存到文字文件`File.WriteAllText`方法。
+## 第 6 步：保存提取的文本
+指定輸出檔案路徑並將提取的文字儲存到文字檔案中，使用`File.WriteAllText`方法。
 
 ```csharp
 dataDir = dataDir + "input_Text_Extracted_out.txt";
@@ -134,7 +134,7 @@ using System.Text;
 
 #### Q：如何使用文字裝置提取文字？
 
-答：第 5 步涉及創建`StringBuilder`物件來保存提取的文字。然後，您將遍歷文件的每一頁並使用`TextDevice`隨著`TextExtractionOptions`從每個頁面中提取文字。
+答：第 5 步涉及創建`StringBuilder`物件來保存提取的文字。然後，您將遍歷文件的每一頁並使用`TextDevice`連同`TextExtractionOptions`從每個頁面中提取文字。
 
 #### 問：如何將提取的文字儲存到文件中？
 

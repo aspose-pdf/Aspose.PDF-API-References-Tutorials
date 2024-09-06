@@ -1,46 +1,46 @@
 ---
 title: PDF Dosyasındaki Sayfa Sayısını Al
 linktitle: PDF Dosyasındaki Sayfa Sayısını Al
-second_title: .NET API Referansı için Aspose.PDF
+second_title: Aspose.PDF for .NET API Referansı
 description: Aspose.PDF for .NET kullanarak PDF dosyasındaki sayfa sayısını almak için adım adım kılavuz. Uygulaması basit, projeleriniz için ideal.
 type: docs
 weight: 70
 url: /tr/net/programming-with-pdf-pages/get-number-of-pages/
 ---
-Bu eğitimde, Aspose.PDF for .NET'i kullanarak PDF dosyasındaki sayfa sayısını almak için size adım adım yol göstereceğiz. Birlikte verilen C# kaynak kodunu açıklayacağız ve bu özelliği anlamanıza ve kendi projelerinizde uygulamanıza yardımcı olacak kapsamlı bir kılavuz sunacağız. Bu eğitimin sonunda Aspose.PDF for .NET kullanarak bir PDF dosyasının sayfa sayısını nasıl alacağınızı öğreneceksiniz.
+Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasındaki sayfa sayısını almak için adım adım süreci adım adım anlatacağız. Birlikte verilen C# kaynak kodunu açıklayacağız ve bu özelliği kendi projelerinizde anlamanıza ve uygulamanıza yardımcı olacak kapsamlı bir kılavuz sağlayacağız. Bu eğitimin sonunda, Aspose.PDF for .NET kullanarak bir PDF dosyasının sayfa sayısını nasıl alacağınızı öğreneceksiniz.
 
-## Önkoşullar
+## Ön koşullar
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- C# programlama dili hakkında temel bilgi
-- Aspose.PDF for .NET, geliştirme ortamınızda yüklü
+- C# programlama dilinin temel bilgisi
+- Geliştirme ortamınıza .NET için Aspose.PDF yüklendi
 
-## 1. Adım: Belge dizinini tanımlayın
-Öncelikle belgeler dizininizin yolunu ayarlamanız gerekir. Bu, sayfa sayısını almak istediğiniz PDF dosyanızın konumudur. "BELGELERİNİZ DİZİNİ"ni uygun yolla değiştirin.
+## Adım 1: Belge dizinini tanımlayın
+Öncelikle, belgeler dizininize giden yolu ayarlamanız gerekir. Bu, sayfa sayısını almak istediğiniz PDF dosyanızın konumudur. "YOUR DOCUMENTS DIRECTORY" ifadesini uygun yolla değiştirin.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## 2. Adım: PDF belgesini açın
- Daha sonra PDF dosyasını kullanarak açabilirsiniz.`Document` Aspose.PDF sınıfı. PDF dosyasının doğru yolunu belirttiğinizden emin olun.
+## Adım 2: PDF belgesini açın
+ Daha sonra PDF dosyasını şu şekilde açabilirsiniz:`Document` Aspose.PDF sınıfı. PDF dosyasına doğru yolu belirttiğinizden emin olun.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetNumberofPages.pdf");
 ```
 
-## 3. Adım: Sayfa sayısını alın
- Artık belgedeki sayfa sayısını aşağıdakileri kullanarak alabilirsiniz:`Count` belgenin özelliği`s `Sayfaların koleksiyonu. Bu size PDF dosyasındaki toplam sayfa sayısını verecektir.
+## Adım 3: Sayfa sayısını alın
+ Artık belgedeki sayfa sayısını şu şekilde alabilirsiniz:`Count` belgenin mülkiyeti`s `Sayfalar koleksiyonu. Bu size PDF dosyasındaki toplam sayfa sayısını verecektir.
 
 ```csharp
 System.Console.WriteLine("Number of pages: {0}", pdfDocument.Pages.Count);
 ```
 
-### Aspose.PDF for .NET kullanarak Get Numberof Pages için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Sayfa Sayısını Almak için örnek kaynak kodu 
 
 ```csharp
 
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "GetNumberofPages.pdf");
@@ -50,26 +50,26 @@ System.Console.WriteLine("Page Count : {0}", pdfDocument.Pages.Count);
 ```
 
 ## Çözüm
-Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF dosyasının sayfa sayısını nasıl elde edeceğimizi öğrendik. Yukarıda özetlenen adımları takip ederek bu işlevselliği kendi projelerinizde kolaylıkla uygulayabilirsiniz. PDF dosyalarıyla çalışmaya yönelik diğer kullanışlı özellikleri keşfetmek için Aspose.PDF belgelerini daha ayrıntılı olarak incelemekten çekinmeyin.
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF dosyasının sayfa sayısını nasıl alacağınızı öğrendik. Yukarıda özetlenen adımları izleyerek, bu işlevselliği kendi projelerinizde kolayca uygulayabilirsiniz. PDF dosyalarıyla çalışmak için diğer yararlı özellikleri keşfetmek üzere Aspose.PDF belgelerini daha fazla incelemekten çekinmeyin.
 
-### PDF dosyasındaki sayfa sayısını öğrenmek için SSS
+### PDF dosyasındaki sayfa sayısını almak için SSS
 
-#### S: Aspose.PDF for .NET'i kullanarak bir PDF dosyasındaki sayfa sayısını nasıl edinebilirim?
+#### S: Aspose.PDF for .NET kullanarak bir PDF dosyasındaki sayfa sayısını nasıl alabilirim?
 
- C: Bir PDF dosyasındaki sayfa sayısını almak için`Count` mülkiyeti`Pages` koleksiyonu`Document` Aspose.PDF for .NET'teki nesne. Bu özellik, PDF belgesindeki toplam sayfa sayısını döndürür.
+ A: Bir PDF dosyasındaki sayfa sayısını almak için şunu kullanabilirsiniz:`Count` mülkiyeti`Pages` koleksiyonu`Document` .NET için Aspose.PDF'deki nesne. Bu özellik PDF belgesindeki toplam sayfa sayısını döndürür.
 
-#### S: Aspose.PDF for .NET'i şifrelenmiş veya parola korumalı bir PDF dosyasındaki sayfa sayısını almak için kullanabilir miyim?
+#### S: Şifrelenmiş veya parola korumalı bir PDF dosyasındaki sayfa sayısını almak için Aspose.PDF for .NET'i kullanabilir miyim?
 
- C: Evet, şifrelenmiş veya parola korumalı bir PDF dosyasındaki sayfa sayısını öğrenmek için Aspose.PDF for .NET'i kullanabilirsiniz. Belgeye erişmek için gerekli izinlere sahip olduğunuz sürece, onu kullanarak açabilirsiniz.`Document` sınıf ve sayfa sayısını alın.
+ A: Evet, şifrelenmiş veya parola korumalı bir PDF dosyasındaki sayfa sayısını almak için Aspose.PDF for .NET'i kullanabilirsiniz. Belgeye erişmek için gerekli izinlere sahip olduğunuz sürece,`Document` sınıf ve sayfa sayısını alın.
 
-#### S: Belgenin tamamını açmadan bir PDF dosyasındaki sayfa sayısını almak mümkün müdür?
+#### S: Tüm PDF dosyasını açmadan sayfa sayısını öğrenmek mümkün müdür?
 
- C: Hayır, bir PDF dosyasındaki sayfa sayısını öğrenmek için belgeyi`Document` sınıf. Aspose.PDF for .NET, PDF dosyalarıyla çalışmak için etkili ve optimize edilmiş yöntemler sağlar, ancak sayfa sayısına erişmek genellikle belgenin tamamının yüklenmesini gerektirir.
+ A: Hayır, bir PDF dosyasındaki sayfa sayısını almak için belgeyi şu şekilde açmanız gerekir:`Document` sınıf. Aspose.PDF for .NET, PDF dosyalarıyla çalışmak için verimli ve optimize edilmiş yöntemler sağlar, ancak sayfa sayısına erişmek genellikle tüm belgenin yüklenmesini gerektirir.
 
-#### S: Aspose.PDF for .NET'i kullanarak var olmayan bir PDF dosyasındaki sayfa sayısını almaya çalışırsam ne olur?
+#### S: Aspose.PDF for .NET kullanarak varolmayan bir PDF dosyasındaki sayfa sayısını almaya çalışırsam ne olur?
 
- C: Var olmayan veya geçersiz bir PDF dosyasını,`Document` sınıf, dosyanın mevcut olmadığını veya geçerli bir PDF belgesi olmadığını belirten bir istisna atar.
+ A: Varolmayan veya geçersiz bir PDF dosyasını açmaya çalışırsanız`Document` sınıfı, dosyanın mevcut olmadığını veya geçerli bir PDF belgesi olmadığını belirten bir istisna fırlatacaktır.
 
-#### S: Sayıyı konsola yazdırmadan bir PDF dosyasındaki sayfa sayısını alabilir miyim?
+#### S: Konsola sayfa sayısını yazdırmadan PDF dosyasındaki sayfa sayısını alabilir miyim?
 
- C: Evet, kullanabilirsiniz`pdfDocument.Pages.Count` Sayfa sayısını almak ve bunu .NET uygulamanızda daha fazla kullanmak veya işlemek üzere bir değişkende saklamak için kullanılan özellik.
+ A: Evet, kullanabilirsiniz`pdfDocument.Pages.Count` .NET uygulamanız içerisinde daha sonraki kullanım veya işlemler için sayfa sayısını alıp bir değişkende saklama özelliği.

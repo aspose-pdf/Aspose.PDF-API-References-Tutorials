@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
 
 ## Krok 3: Vyhledejte a nahraďte text
 
- Vytvořit`TextFragmentAbsorber` objekt k nalezení všech výskytů vstupní vyhledávací fráze. Chcete-li extrahovat fragmenty textu, přijměte absorbér pro všechny stránky dokumentu PDF.
+ Vytvořte a`TextFragmentAbsorber` objekt k nalezení všech výskytů vstupní vyhledávací fráze. Chcete-li extrahovat fragmenty textu, přijměte absorbér pro všechny stránky dokumentu PDF.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -119,7 +119,7 @@ A: Chcete-li nastavit adresář dokumentů:
 Odpověď: Výukový program vás provede následujícími kroky:
 
 1.  Načtěte dokument PDF pomocí`Document` třída.
-2.  Vytvořit`TextFragmentAbsorber` objekt k nalezení všech výskytů vstupní vyhledávací fráze. Chcete-li extrahovat fragmenty textu, přijměte absorbér pro všechny stránky dokumentu PDF.
+2.  Vytvořte a`TextFragmentAbsorber` objekt k nalezení všech výskytů vstupní vyhledávací fráze. Chcete-li extrahovat fragmenty textu, přijměte absorbér pro všechny stránky dokumentu PDF.
 3. Procházejte extrahované části textu a nahraďte text. Podle potřeby aktualizujte další vlastnosti, jako je písmo, velikost písma, barva popředí a barva pozadí.
 4. Uložte upravený dokument PDF.
 

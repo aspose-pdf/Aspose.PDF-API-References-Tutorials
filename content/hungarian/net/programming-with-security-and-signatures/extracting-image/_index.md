@@ -21,7 +21,7 @@ using System.Drawing.Imaging;
 
 ## 2. lépés: Állítsa be a dokumentumok mappa elérési útját
 
- Ebben a lépésben meg kell adnia annak a PDF-fájlnak az elérési útját, amelyből a képet ki szeretné bontani. Cserélje ki`"YOUR DOCUMENTS DIRECTORY"` következő kódban a dokumentummappa tényleges elérési útjával:
+ Ebben a lépésben meg kell adnia annak a PDF-fájlnak az elérési útját, amelyből a képet ki szeretné bontani. Cserélje ki`"YOUR DOCUMENTS DIRECTORY"` a következő kódban a dokumentummappa tényleges elérési útjával:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";

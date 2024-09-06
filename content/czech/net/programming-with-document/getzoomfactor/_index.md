@@ -26,25 +26,25 @@ Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
 
 ## Krok 2: Vytvořte objekt GoToAction
 
- Dalším krokem je vytvoření a`GoToAction` objekt. A`GoToAction`objekt představuje akci, která směřuje do určitého cíle v dokumentu PDF. V našem případě chceme získat faktor přiblížení souboru PDF, takže použijeme`OpenAction` vlastnictvím`Document` objekt získat`GoToAction` objekt.
+ Dalším krokem je vytvoření a`GoToAction` objekt. A`GoToAction`objekt představuje akci, která směřuje do určitého cíle v dokumentu PDF. V našem případě chceme získat faktor přiblížení souboru PDF, takže použijeme`OpenAction` majetek z`Document` objekt získat`GoToAction` objekt.
 
 ```csharp
 // Vytvořte objekt GoToAction
 GoToAction action = doc.OpenAction as GoToAction;
 ```
 
- Ve výše uvedeném kódu jsme vytvořili a`GoToAction` objekt odlitím`OpenAction` vlastnictvím`Document` namítat proti`GoToAction`.
+ Ve výše uvedeném kódu jsme vytvořili a`GoToAction` objekt odlitím`OpenAction` majetek z`Document` namítat proti`GoToAction`.
 
 ## Krok 3: Získejte faktor zvětšení souboru PDF
 
- Třetím krokem je získání faktoru přiblížení souboru PDF. Faktor zvětšení souboru PDF můžeme získat přístupem k`Destination` vlastnictvím`GoToAction` objekt a poté jej odlit`XYZExplicitDestination` . The`XYZExplicitDestination` class představuje cíl v dokumentu PDF, který určuje souřadnice a faktor přiblížení, na který se má přejít.
+ Třetím krokem je získání faktoru přiblížení souboru PDF. Faktor zvětšení souboru PDF můžeme získat přístupem k`Destination` majetek z`GoToAction` objekt a poté jej odlit`XYZExplicitDestination` . The`XYZExplicitDestination` class představuje cíl v dokumentu PDF, který určuje souřadnice a faktor přiblížení, na který se má přejít.
 
 ```csharp
 // Získejte faktor zvětšení souboru PDF
 System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Hodnota přiblížení dokumentu;
 ```
 
- Ve výše uvedeném kódu jsme přistoupili k`Destination` vlastnictvím`GoToAction` objekt a poté jej vrhnout`XYZExplicitDestination` . Poté jsme přistoupili k`Zoom` vlastnictvím`XYZExplicitDestination` objekt, abyste získali faktor přiblížení souboru PDF.
+ Ve výše uvedeném kódu jsme přistoupili k`Destination` majetek z`GoToAction` objekt a poté jej vrhnout`XYZExplicitDestination` . Poté jsme přistoupili k`Zoom` majetek z`XYZExplicitDestination` objekt, abyste získali faktor přiblížení souboru PDF.
 
 ## Krok 4: Výstup faktoru zoomu
 

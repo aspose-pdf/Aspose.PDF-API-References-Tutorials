@@ -167,7 +167,7 @@ Odpověď: Vytváření prvků struktury v dokumentu PDF pomocí Aspose.PDF for 
 
 #### Otázka: Jak poskytnutý kód C# vytváří prvky struktury v dokumentu PDF?
 
-Odpověď: Příklad kódu ukazuje, jak vytvořit různé typy prvků struktury, včetně prvků seskupování (jako jsou části, sekce a div), prvků na úrovni bloku (jako jsou odstavce a nadpisy), prvků na úrovni řádků (rozpětí, citace, poznámka ) a prvky kresby (jako jsou obrázky a vzorce). Tyto prvky struktury pomáhají organizovat obsah.
+Odpověď: Příklad kódu ukazuje, jak vytvořit různé typy prvků struktury, včetně prvků seskupení (jako jsou části, sekce a div), prvků na úrovni bloku (jako jsou odstavce a nadpisy), prvků na úrovni řádků (rozpětí, citace, poznámka ) a prvky kresby (jako jsou obrázky a vzorce). Tyto prvky struktury pomáhají organizovat obsah.
 
 ####  Otázka: Proč je důležité nastavit název a jazyk dokumentu pomocí`SetTitle` and `SetLanguage` methods?
 

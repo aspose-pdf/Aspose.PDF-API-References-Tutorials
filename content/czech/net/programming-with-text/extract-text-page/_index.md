@@ -31,14 +31,14 @@ using System.IO;
  V kódu vyhledejte řádek, který říká`string dataDir = "YOUR DOCUMENT DIRECTORY";` a nahradit`"YOUR DOCUMENT DIRECTORY"` s cestou k adresáři, kde jsou uloženy vaše dokumenty.
 
 ## Krok 4: Otevřete dokument PDF
- Otevřete existující dokument PDF pomocí`Document`konstruktoru a předání cesty ke vstupnímu souboru PDF.
+ Otevřete existující dokument PDF pomocí`Document` konstruktoru a předání cesty ke vstupnímu souboru PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
 ```
 
 ## Krok 5: Extrahujte text z konkrétní stránky
- Vytvořit`TextAbsorber` objekt pro extrahování textu z dokumentu. Přijměte absorbér pro požadovanou stránku tím, že k ní přistoupíte přes`Pages` sbírka`pdfDocument`.
+ Vytvořte a`TextAbsorber` objekt pro extrahování textu z dokumentu. Přijměte absorbér pro požadovanou stránku tím, že k ní přistoupíte přes`Pages` sbírka`pdfDocument`.
 
 ```csharp
 TextAbsorber textAbsorber = new TextAbsorber();
@@ -53,7 +53,7 @@ string extractedText = textAbsorber.Text;
 ```
 
 ## Krok 7: Uložte extrahovaný text
- Vytvořit`TextWriter` a otevřete soubor, kam chcete extrahovaný text uložit. Zapište extrahovaný text do souboru a zavřete stream.
+ Vytvořte a`TextWriter` a otevřete soubor, kam chcete extrahovaný text uložit. Zapište extrahovaný text do souboru a zavřete stream.
 
 ```csharp
 dataDir = dataDir + "extracted-text_out.txt";

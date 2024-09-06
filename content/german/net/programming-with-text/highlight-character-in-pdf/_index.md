@@ -1,24 +1,24 @@
 ---
-title: Markieren Sie Zeichen in der PDF-Datei
-linktitle: Markieren Sie Zeichen in der PDF-Datei
+title: Zeichen in PDF-Datei hervorheben
+linktitle: Zeichen in PDF-Datei hervorheben
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Zeichen in einer PDF-Datei hervorheben.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Zeichen in PDF-Dateien hervorheben.
 type: docs
 weight: 240
 url: /de/net/programming-with-text/highlight-character-in-pdf/
 ---
-In diesem Tutorial erklären wir, wie Sie Zeichen in einer PDF-Datei mithilfe der Aspose.PDF-Bibliothek für .NET hervorheben. Wir werden den Prozess der Hervorhebung von Zeichen in einer PDF-Datei mithilfe des bereitgestellten C#-Quellcodes Schritt für Schritt durchgehen.
+In diesem Tutorial erklären wir, wie man mit der Aspose.PDF-Bibliothek für .NET Zeichen in einer PDF-Datei hervorhebt. Wir gehen den Prozess zum Hervorheben von Zeichen in einer PDF-Datei mithilfe des bereitgestellten C#-Quellcodes Schritt für Schritt durch.
 
 ## Anforderungen
 
 Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- Die Aspose.PDF für .NET-Bibliothek installiert.
-- Ein grundlegendes Verständnis der C#-Programmierung.
+- Die Aspose.PDF-Bibliothek für .NET ist installiert.
+- Grundlegende Kenntnisse der C#-Programmierung.
 
-## Schritt 1: Richten Sie das Dokumentenverzeichnis ein
+## Schritt 1: Einrichten des Dokumentverzeichnisses
 
- Zuerst müssen Sie den Pfad zu dem Verzeichnis festlegen, in dem sich Ihre Eingabe-PDF-Datei befindet. Ersetzen`"YOUR DOCUMENT DIRECTORY"` im`dataDir` Variable mit dem Pfad zu Ihrer PDF-Datei.
+ Zuerst müssen Sie den Pfad zum Verzeichnis festlegen, in dem sich Ihre PDF-Eingabedatei befindet. Ersetzen Sie`"YOUR DOCUMENT DIRECTORY"` im`dataDir` Variable mit dem Pfad zu Ihrer PDF-Datei.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -26,7 +26,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Schritt 2: Laden Sie das PDF-Dokument
 
- Als nächstes laden wir das Eingabe-PDF-Dokument mit`Aspose.Pdf.Document` Klasse.
+ Als nächstes laden wir das Eingabe-PDF-Dokument mit dem`Aspose.Pdf.Document` Klasse.
 
 ```csharp
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
@@ -34,7 +34,7 @@ Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf")
 
 ## Schritt 3: PDF in Bild konvertieren
 
- Um Zeichen hervorzuheben, konvertieren wir das PDF-Dokument mit in ein Bild`PdfConverter` Klasse. Wir legen die Auflösung für die Konvertierung fest und rufen das Bild als ab`Bitmap` Objekt.
+ Um Zeichen hervorzuheben, konvertieren wir das PDF-Dokument in ein Bild mit dem`PdfConverter` Klasse. Wir legen die Auflösung für die Konvertierung fest und holen das Bild als`Bitmap` Objekt.
 
 ```csharp
 int resolution = 150;
@@ -46,34 +46,34 @@ using (MemoryStream ms = new MemoryStream())
      Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
 ```
 
-## Schritt 4: Markieren Sie Zeichen
+## Schritt 4: Zeichen hervorheben
 
- Wir durchlaufen jede Seite des PDF-Dokuments und verwenden a`TextFragmentAbsorber` Objekt, um alle Wörter auf der Seite zu finden. Anschließend durchlaufen wir die Textfragmente, Segmente und Zeichen, um sie mithilfe von Rechtecken hervorzuheben.
+ Wir durchlaufen jede Seite des PDF-Dokuments und verwenden eine`TextFragmentAbsorber` Objekt, um alle Wörter auf der Seite zu finden. Anschließend iterieren wir über die Textfragmente, Segmente und Zeichen, um sie mithilfe von Rechtecken hervorzuheben.
 
 ```csharp
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 {
-     //Maßstab festlegen und transformieren
+     // Maßstab festlegen und transformieren
      float scale = resolution / 72f;
      gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
 
-     // Blättern Sie durch die Seiten
+     // Seiten durchlaufen
      for (int i = 0; i < pdfDocument.Pages.Count; i++)
      {
          Page page = pdfDocument.Pages[1];
 
-         // Finden Sie alle Wörter auf der Seite
+         //Alle Wörter auf der Seite finden
          TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
          textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
          page. Accept(textFragmentAbsorber);
          TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 
-         // Durchlaufen Sie Textfragmente
+         // Durchlaufen von Textfragmenten
          foreach(TextFragment textFragment in textFragmentCollection)
          {
              if (i == 0)
              {
-                 // Markieren Sie Zeichen
+                 // Zeichen hervorheben
                  gr.DrawRectangle(
                      Think.Yellow,
                      (float)textFragment.Position.XIndent,
@@ -81,10 +81,10 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                      (float)textFragment.Rectangle.Width,
                      (float)textFragment.Rectangle.Height);
 
-                 // Durchlaufen Sie die Segmente
+                 // Durch Segmente schleifen
                  foreach(TextSegment segment in textFragment.Segments)
                  {
-                     // Markieren Sie das Segment
+                     // Highlight-Segment
                      gr.DrawRectangle(
                          Think Green,
                          (float)segment.Rectangle.LLX,
@@ -92,10 +92,10 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                          (float)segment.Rectangle.Width,
                          (float)segment.Rectangle.Height);
 
-                     // Durchlaufen Sie die Zeichen
+                     // Durchlaufen von Zeichen
                      foreach(CharInfo characterInfo in segment.Characters)
                      {
-                         // Markieren Sie den Charakter
+                         // Highlightcharakter
                          gr.DrawRectangle(
                              Think.Black,
                              (float)characterInfo.Rectangle.LLx,
@@ -123,7 +123,7 @@ bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
 ```csharp
 try
 {
-	// Der Pfad zum Dokumentenverzeichnis.
+	// Der Pfad zum Dokumentverzeichnis.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	int resolution = 150;
 	Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
@@ -146,7 +146,7 @@ try
 				page.Accept(textFragmentAbsorber);
 				// Holen Sie sich die extrahierten Textfragmente
 				TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-				// Durchlaufe die Fragmente
+				// Durchlaufen der Fragmente
 				foreach (TextFragment textFragment in textFragmentCollection)
 				{
 					if (i == 0)
@@ -197,40 +197,40 @@ catch (Exception ex)
 
 ## Abschluss
 
-In diesem Tutorial haben Sie gelernt, wie Sie mithilfe der Aspose.PDF-Bibliothek für .NET Zeichen in einem PDF-Dokument hervorheben. Indem Sie der Schritt-für-Schritt-Anleitung folgen und den bereitgestellten C#-Code ausführen, können Sie Zeichen in einer PDF-Datei hervorheben und die Ausgabe als Bild speichern.
+In diesem Tutorial haben Sie gelernt, wie Sie mit der Aspose.PDF-Bibliothek für .NET Zeichen in einem PDF-Dokument hervorheben. Indem Sie der Schritt-für-Schritt-Anleitung folgen und den bereitgestellten C#-Code ausführen, können Sie Zeichen in einem PDF hervorheben und die Ausgabe als Bild speichern.
 
-### FAQs
+### Häufig gestellte Fragen
 
 #### F: Was ist der Zweck des Tutorials „Zeichen in PDF-Datei hervorheben“?
 
-A: Das Tutorial „Zeichen in PDF-Datei hervorheben“ erklärt, wie Sie die Aspose.PDF-Bibliothek für .NET verwenden, um Zeichen in einem PDF-Dokument hervorzuheben. Das Tutorial bietet eine Schritt-für-Schritt-Anleitung und C#-Quellcode, um dies zu erreichen.
+A: Das Tutorial „Zeichen in PDF-Datei hervorheben“ erklärt, wie Sie mit der Aspose.PDF-Bibliothek für .NET Zeichen in einem PDF-Dokument hervorheben. Das Tutorial bietet eine Schritt-für-Schritt-Anleitung und C#-Quellcode, um dies zu erreichen.
 
-#### F: Warum sollte ich Zeichen in einem PDF-Dokument hervorheben?
+#### F: Warum sollte ich Zeichen in einem PDF-Dokument hervorheben wollen?
 
-A: Das Hervorheben von Zeichen in einem PDF-Dokument kann für verschiedene Zwecke nützlich sein, beispielsweise um bestimmte Inhalte hervorzuheben oder bestimmte Texte besser sichtbar und unterscheidbar zu machen.
+A: Das Hervorheben von Zeichen in einem PDF-Dokument kann für verschiedene Zwecke nützlich sein, beispielsweise um bestimmte Inhalte hervorzuheben oder bestimmten Text besser sichtbar und unterscheidbar zu machen.
 
-#### F: Wie richte ich das Dokumentenverzeichnis ein?
+#### F: Wie richte ich das Dokumentverzeichnis ein?
 
-A: So richten Sie das Dokumentenverzeichnis ein:
+A: So richten Sie das Dokumentverzeichnis ein:
 
-1.  Ersetzen`"YOUR DOCUMENT DIRECTORY"` im`dataDir` Variable mit dem Pfad zu dem Verzeichnis, in dem sich Ihre Eingabe-PDF-Datei befindet.
+1.  Ersetzen`"YOUR DOCUMENT DIRECTORY"` im`dataDir` Variable mit dem Pfad zum Verzeichnis, in dem sich Ihre Eingabe-PDF-Datei befindet.
 
 #### F: Wie lade ich das PDF-Dokument und konvertiere es in ein Bild?
 
- A: Im Tutorial ist das`Aspose.Pdf.Document` Die Klasse wird zum Laden des Eingabe-PDF-Dokuments verwendet. Dann ist die`PdfConverter` Die Klasse wird verwendet, um das PDF-Dokument in ein Bild zu konvertieren. Die Auflösung des Bildes wird eingestellt und das Bild wird als abgerufen`Bitmap` Objekt.
+ A: Im Tutorial`Aspose.Pdf.Document` wird verwendet, um das PDF-Eingabedokument zu laden. Anschließend wird die`PdfConverter` Klasse wird verwendet, um das PDF-Dokument in ein Bild umzuwandeln. Die Auflösung des Bildes wird festgelegt und das Bild wird als`Bitmap` Objekt.
 
 #### F: Wie hebe ich Zeichen im PDF-Dokumentbild hervor?
 
-A: Das Tutorial führt Sie durch den Prozess des Durchgehens jeder Seite des PDF-Dokuments und der Suche nach Wörtern mithilfe von a`TextFragmentAbsorber`und Durchlaufen von Textfragmenten, Segmenten und Zeichen, um sie mithilfe von Rechtecken hervorzuheben.
+A: Das Tutorial führt Sie durch den Prozess des Durchlaufens jeder Seite des PDF-Dokuments und der Suche nach Wörtern mithilfe eines`TextFragmentAbsorber`, und durchläuft Textfragmente, -segmente und -zeichen, um sie mithilfe von Rechtecken hervorzuheben.
 
 #### F: Kann ich das Erscheinungsbild der hervorgehobenen Zeichen und Segmente anpassen?
 
-A: Ja, Sie können das Erscheinungsbild der hervorgehobenen Zeichen und Segmente anpassen, indem Sie die Farben und Stile ändern, die bei den Zeichenvorgängen verwendet werden.
+A: Ja, Sie können das Erscheinungsbild der hervorgehobenen Zeichen und Segmente anpassen, indem Sie die bei den Zeichenvorgängen verwendeten Farben und Stile ändern.
 
 #### F: Wie speichere ich das geänderte Bild mit den hervorgehobenen Zeichen?
 
- A: Das Tutorial zeigt, wie Sie das geänderte Bild mit den hervorgehobenen Zeichen mithilfe von in der angegebenen Ausgabedatei speichern`Save` Methode der`Bitmap` Klasse.
+ A: Das Tutorial zeigt, wie Sie das geänderte Bild mit den hervorgehobenen Zeichen in der angegebenen Ausgabedatei speichern können. Dazu verwenden Sie den`Save` Methode der`Bitmap` Klasse.
 
 #### F: Ist für dieses Tutorial eine gültige Aspose-Lizenz erforderlich?
 
-A: Ja, eine gültige Aspose-Lizenz ist erforderlich, damit dieses Tutorial ordnungsgemäß funktioniert. Sie können eine Volllizenz erwerben oder eine 30-tägige temporäre Lizenz auf der Aspose-Website erwerben.
+A: Ja, damit dieses Tutorial richtig funktioniert, ist eine gültige Aspose-Lizenz erforderlich. Sie können eine Volllizenz oder eine 30-tägige temporäre Lizenz von der Aspose-Website erwerben.

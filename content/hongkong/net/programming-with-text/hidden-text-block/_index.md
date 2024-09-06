@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-text/hidden-text-block/
 
 ## 第 1 步：設定文檔目錄
 
-首先，您需要設定要儲存生成的 PDF 檔案的目錄路徑。代替`"YOUR DOCUMENT DIRECTORY"`在裡面`dataDir`變數包含您所需目錄的路徑。
+首先，您需要設定要儲存生成的 PDF 檔案的目錄路徑。代替`"YOUR DOCUMENT DIRECTORY"`在`dataDir`變數包含您所需目錄的路徑。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -139,7 +139,7 @@ document.Form.Add(floatingField);
 //在文字片段位置建立不可見按鈕
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
 //為指定欄位（註解）和不可見標誌建立新的隱藏操作。
-//（如果您在上面指定了浮動字段，您也可以透過名稱引用浮動字段。）
+// （如果您在上面指定了浮動字段，您也可以透過名稱引用浮動字段。）
 //在不可見的按鈕欄位中新增滑鼠進入/退出的操作
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
@@ -161,13 +161,13 @@ document.Save(outputFile);
 
 #### Q：為什麼我要在 PDF 檔案中建立隱藏文字區塊？
 
-答：建立隱藏文字區塊對於互動式 PDF 文件非常有用，在互動式 PDF 文件中，您想要提供僅當使用者將滑鼠遊標懸停在指定區域上時才可見的附加資訊或上下文。
+答：建立隱藏文字區塊對於互動式 PDF 文件非常有用，您可以在其中提供僅當使用者將滑鼠遊標懸停在指定區域上時才可見的附加資訊或上下文。
 
 #### Q：如何設定文檔目錄？
 
 A：設定文檔目錄：
 
-1. 代替`"YOUR DOCUMENT DIRECTORY"`在裡面`dataDir`變數包含要儲存產生的 PDF 檔案的目錄路徑。
+1. 代替`"YOUR DOCUMENT DIRECTORY"`在`dataDir`變數包含要儲存產生的 PDF 檔案的目錄路徑。
 
 #### Q：如何建立範例文件並在其中新增文字片段？
 

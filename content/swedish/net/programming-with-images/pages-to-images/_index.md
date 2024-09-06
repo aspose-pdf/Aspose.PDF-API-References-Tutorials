@@ -20,7 +20,7 @@ Innan du börjar, se till att du har följande saker:
 2. Lägg till en referens till Aspose.PDF-biblioteket i ditt projekt.
 
 ## Steg 2: Importera de nödvändiga namnrymden
-I början av din C#-fil, importera de namnområden som krävs för att komma åt klasserna och metoderna i Aspose.PDF. Här är ett exempel :
+början av din C#-fil, importera de namnområden som krävs för att komma åt klasserna och metoderna i Aspose.PDF. Här är ett exempel:
 ```csharp
 using System;
 using Aspose.Pdf;
@@ -88,12 +88,12 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 	{
 		// Skapa JPEG-enhet med specificerade attribut
 		// Bredd, höjd, upplösning, kvalitet
-		// Kvalitet [0-100], 100 är max
+		//Kvalitet [0-100], 100 är max
 		// Skapa upplösningsobjekt
 		Resolution resolution = new Resolution(300);
-		//JpegDevice jpegDevice = new JpegDevice(500, 700, upplösning, 100);
+		// JpegDevice jpegDevice = new JpegDevice(500, 700, upplösning, 100);
 		JpegDevice jpegDevice = new JpegDevice(resolution, 100);
-		//Konvertera en viss sida och spara bilden för att streama
+		// Konvertera en viss sida och spara bilden för att streama
 		jpegDevice.Process(pdfDocument.Pages[pageCount], imageStream);
 		// Stäng strömmen
 		imageStream.Close();

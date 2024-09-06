@@ -1,36 +1,36 @@
 ---
-title: Crea PDF con immagine contrassegnata in Java
-linktitle: Crea PDF con immagine contrassegnata in Java
-second_title: Aspose.PDF API di elaborazione PDF Java
-description: Scopri come creare PDF di immagini con tag accessibili in Java utilizzando Aspose.PDF per Java. Segui la nostra guida passo passo per generare PDF senza problemi.
+title: Crea PDF con immagine taggata in Java
+linktitle: Crea PDF con immagine taggata in Java
+second_title: API di elaborazione PDF Java Aspose.PDF
+description: Scopri come creare PDF di immagini taggate accessibili in Java usando Aspose.PDF per Java. Segui la nostra guida passo dopo passo per una generazione di PDF senza problemi.
 type: docs
 weight: 13
 url: /it/java/pdf-structure-elements/create-pdf-with-tagged-image-in-java/
 ---
 
-## Introduzione alla creazione di PDF con immagini contrassegnate in Java utilizzando Aspose.PDF per Java
+## Introduzione alla creazione di PDF con immagini taggate in Java utilizzando Aspose.PDF per Java
 
-Nell'era digitale, la creazione di PDF con immagini taggate è un requisito comune per varie applicazioni. Le immagini contrassegnate sono essenziali per l'accessibilità, garantendo che gli utenti ipovedenti possano accedere e comprendere il contenuto. In questa guida passo passo, esploreremo come creare PDF con immagini taggate in Java utilizzando Aspose.PDF per Java. Questa potente libreria fornisce un ampio supporto per lavorare con i PDF, inclusa la possibilità di aggiungere facilmente immagini taggate.
+Nell'era digitale, creare PDF con immagini taggate è un requisito comune per varie applicazioni. Le immagini taggate sono essenziali per l'accessibilità, assicurando che gli utenti ipovedenti possano accedere e comprendere il contenuto. In questa guida passo passo, esploreremo come creare PDF con immagini taggate in Java utilizzando Aspose.PDF per Java. Questa potente libreria fornisce un ampio supporto per lavorare con i PDF, inclusa la possibilità di aggiungere immagini taggate senza sforzo.
 
 ## Prerequisiti
 
 Prima di immergerci nel codice, assicurati di avere i seguenti prerequisiti:
 
--  Java Development Kit (JDK): è necessario che Java sia installato sul sistema. Puoi scaricarlo da[Il sito web di Oracle](https://www.oracle.com/java/technologies/javase-downloads.html).
+-  Java Development Kit (JDK): hai bisogno di Java installato sul tuo sistema. Puoi scaricarlo da[Sito web di Oracle](https://www.oracle.com/java/technologies/javase-downloads.html).
 
--  Aspose.PDF per Java: dovresti avere la libreria Aspose.PDF per Java. Puoi scaricarlo da[Sito web Aspose](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF per Java: dovresti avere la libreria Aspose.PDF per Java. Puoi scaricarla da[Sito web di Aspose](https://releases.aspose.com/pdf/java/).
 
-## Impostazione del tuo progetto
+## Impostazione del progetto
 
-Iniziamo configurando il nostro progetto Java per la creazione di PDF con tag. Segui questi passi:
+Iniziamo impostando il nostro progetto Java per creare PDF taggati. Segui questi passaggi:
 
 1. Crea un progetto Java: apri il tuo ambiente di sviluppo Java preferito (come Eclipse o IntelliJ IDEA) e crea un nuovo progetto Java.
 
 2. Aggiungi libreria Aspose.PDF: aggiungi la libreria Aspose.PDF per Java al tuo progetto. Di solito puoi farlo aggiungendo il file JAR al classpath del tuo progetto.
 
-## Creazione di un PDF di immagini con tag
+## Creazione di un PDF con immagine taggata
 
-Ora che abbiamo impostato il nostro progetto, creiamo passo dopo passo un PDF di immagini con tag.
+Ora che abbiamo impostato il nostro progetto, creiamo passo dopo passo un PDF con immagini taggate.
 
 ### Passaggio 1: inizializzare Aspose.PDF
 
@@ -41,14 +41,14 @@ import com.aspose.pdf.Document;
 Document pdfDocument = new Document();
 ```
 
-### Passaggio 2: aggiungi una pagina
+### Passaggio 2: aggiungere una pagina
 
 ```java
-// Aggiungi una pagina al documento
+// Aggiungere una pagina al documento
 pdfDocument.getPages().add();
 ```
 
-### Passaggio 3: aggiungi un'immagine
+### Passaggio 3: aggiungere un'immagine
 
 ```java
 // Aggiungi un'immagine alla pagina
@@ -66,32 +66,32 @@ pdfDocument.save("tagged_image.pdf");
 
 ## Conclusione
 
-La creazione di PDF di immagini con tag in Java utilizzando Aspose.PDF per Java è un processo semplice. Questa libreria semplifica il compito di aggiungere immagini ai documenti PDF e garantisce che siano adeguatamente contrassegnati per l'accessibilità.
+Creare PDF di immagini taggate in Java usando Aspose.PDF per Java è un processo semplice. Questa libreria semplifica il compito di aggiungere immagini ai documenti PDF e assicura che siano correttamente taggate per l'accessibilità.
 
 ## Domande frequenti
 
-### Come installo Aspose.PDF per Java?
+### Come faccio a installare Aspose.PDF per Java?
 
-Per installare Aspose.PDF per Java, attenersi alla seguente procedura:
+Per installare Aspose.PDF per Java, seguire questi passaggi:
 
-1.  Scarica la libreria da[Sito web Aspose](https://releases.aspose.com/pdf/java/).
+1.  Scarica la libreria dal[Sito web di Aspose](https://releases.aspose.com/pdf/java/).
 
 2. Aggiungi il file JAR scaricato al classpath del tuo progetto Java.
 
-3. Sei pronto per utilizzare Aspose.PDF per Java nel tuo progetto.
+3. Ora sei pronto per utilizzare Aspose.PDF per Java nel tuo progetto.
 
 ### Posso utilizzare Aspose.PDF per Java gratuitamente?
 
-Aspose.PDF per Java è una libreria commerciale e viene fornita con una versione di prova. Tuttavia, per un utilizzo completo, dovrai acquistare una licenza da Aspose.
+Aspose.PDF per Java è una libreria commerciale, e viene fornita con una versione di prova. Tuttavia, per un utilizzo completo, dovrai acquistare una licenza da Aspose.
 
 ### È possibile aggiungere testo alternativo alle immagini taggate nel PDF?
 
-Sì, puoi aggiungere testo alternativo (testo alternativo) alle immagini taggate nel PDF utilizzando Aspose.PDF per Java. Ciò è essenziale ai fini dell'accessibilità.
+Sì, puoi aggiungere testo alternativo (alt text) alle immagini taggate nel PDF usando Aspose.PDF per Java. Questo è essenziale per scopi di accessibilità.
 
 ### Esistono altre librerie per lavorare con i PDF in Java?
 
-Sì, esistono molte altre librerie per lavorare con i PDF in Java, come Apache PDFBox e iText. Tuttavia, Aspose.PDF per Java è noto per le sue funzionalità robuste e la facilità d'uso.
+Sì, ci sono diverse altre librerie per lavorare con i PDF in Java, come Apache PDFBox e iText. Tuttavia, Aspose.PDF per Java è noto per le sue funzionalità robuste e la facilità d'uso.
 
 ### Dove posso trovare ulteriore documentazione per Aspose.PDF per Java?
 
- È possibile trovare la documentazione completa per Aspose.PDF per Java su[Sito web della documentazione di Aspose](https://reference.aspose.com/pdf/java/).
+ È possibile trovare una documentazione completa per Aspose.PDF per Java su[Sito web della documentazione di Aspose](https://reference.aspose.com/pdf/java/).

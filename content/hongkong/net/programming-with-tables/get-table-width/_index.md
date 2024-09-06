@@ -7,7 +7,7 @@ type: docs
 weight: 90
 url: /zh-hant/net/programming-with-tables/get-table-width/
 ---
-在本教學中，我們將學習如何使用 Aspose.PDF for .NET 來取得 PDF 檔案中表格的寬度。我們將一步步解釋C#的原始碼。在本教學結束時，您將了解如何取得 PDF 文件中表格的寬度。開始吧！
+在本教學中，我們將學習如何使用 Aspose.PDF for .NET 來取得 PDF 檔案中表格的寬度。我們將一步步解釋C#的原始碼。在本教學結束時，您將了解如何取得 PDF 文件中表格的寬度。讓我們開始吧！
 
 ## 第一步：建構環境
 首先，請確保您已使用 Aspose.PDF for .NET 設定 C# 開發環境。新增對庫的引用並導入必要的命名空間。

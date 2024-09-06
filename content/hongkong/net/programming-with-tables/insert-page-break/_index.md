@@ -7,7 +7,7 @@ type: docs
 weight: 110
 url: /zh-hant/net/programming-with-tables/insert-page-break/
 ---
-在本教學中，我們將學習如何使用 Aspose.PDF for .NET 在 PDF 檔案中插入分頁符號。我們將一步步解釋C#的原始碼。在本教學結束時，您將了解如何在 PDF 文件表格中的一定行數之後新增分頁符號。開始吧！
+在本教學中，我們將學習如何使用 Aspose.PDF for .NET 在 PDF 檔案中插入分頁符號。我們將一步步解釋C#的原始碼。在本教學結束時，您將了解如何在 PDF 文件表格中的一定行數之後新增分頁符號。讓我們開始吧！
 
 ## 第一步：建構環境
 請確定您已使用 Aspose.PDF for .NET 配置 C# 開發環境。新增對庫的引用並導入必要的命名空間。

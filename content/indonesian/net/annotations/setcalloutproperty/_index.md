@@ -1,127 +1,154 @@
 ---
-title: Setel Properti Callout Dalam File PDF
-linktitle: Setel Properti Callout Dalam File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara mengatur Properti Callout di File PDF menggunakan Aspose.PDF untuk .NET. Sesuaikan anotasi dengan baris info, warna teks, dan gaya akhir.
+title: Tetapkan Properti Callout Dalam File PDF
+linktitle: Tetapkan Properti Callout Dalam File PDF
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara mengatur properti callout dalam file PDF menggunakan Aspose.PDF untuk .NET dalam tutorial langkah demi langkah terperinci ini.
 type: docs
 weight: 130
 url: /id/net/annotations/setcalloutproperty/
 ---
- Aspose.PDF untuk .NET adalah perpustakaan yang kuat untuk membuat, memanipulasi, dan mengonversi dokumen PDF di C#. Salah satu fitur yang disediakan oleh perpustakaan ini adalah kemampuan untuk mengatur properti info untuk anotasi teks gratis dalam dokumen PDF. Ini dapat dilakukan dengan menggunakan`FreeTextAnnotation` kelas, yang memungkinkan Anda membuat anotasi dengan info.
+## Perkenalan
 
-Dalam tutorial ini, kami akan memandu Anda melalui proses pengaturan properti info untuk anotasi teks gratis menggunakan Aspose.PDF untuk .NET di C#. Ikuti langkah-langkah di bawah ini untuk memulai.
+Membuat dokumen PDF yang profesional dan menarik secara visual sering kali memerlukan penambahan anotasi yang menarik perhatian ke konten tertentu. Salah satu anotasi tersebut adalah callout, yang seperti gelembung ucapan yang Anda lihat dalam komik. Anotasi tersebut membantu memperjelas atau menekankan teks dalam PDF Anda. Aspose.PDF untuk .NET memudahkan Anda untuk menambahkan anotasi tersebut ke dokumen Anda, dan dalam tutorial ini, kami akan memandu Anda tentang cara menyetel properti callout dalam file PDF menggunakan pustaka yang canggih ini. Baik Anda seorang pengembang berpengalaman atau baru memulai, di akhir panduan ini, Anda akan memiliki pemahaman yang jelas tentang cara bekerja dengan callout dalam file PDF.
 
-## Instal Aspose.PDF untuk .NET
+## Prasyarat
 
- Jika Anda belum melakukannya, Anda perlu melakukannya[unduh](https://releases.aspose.com/pdf/net/) dan instal Aspose.PDF untuk .NET dari Aspose Releases atau melalui manajer paket NuGet.
+Sebelum kita masuk ke kode, mari kita bahas hal-hal penting yang Anda perlukan untuk memulai.
 
-## Langkah 1: Buat dokumen PDF baru
+1.  Aspose.PDF untuk .NET: Pastikan Anda telah menginstal pustaka Aspose.PDF untuk .NET. Anda dapat mengunduhnya dari[Di Sini](https://releases.aspose.com/pdf/net/).
+2. IDE: Lingkungan pengembangan seperti Visual Studio.
+3. .NET Framework: Pastikan Anda telah menginstal .NET di komputer Anda.
+4. Lisensi Sementara: Jika Anda ingin mencoba fitur lengkap Aspose.PDF tanpa batasan, dapatkan lisensi sementara.[lisensi sementara](https://purchase.aspose.com/temporary-license/).
 
- Buat dokumen PDF baru menggunakan`Document`kelas yang disediakan oleh Aspose.PDF untuk .NET.
+## Paket Impor
 
-```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document();
-```
-
-## Langkah 2: Tambahkan halaman baru ke dokumen
-
- Tambahkan halaman baru ke dokumen menggunakan`Pages` koleksi`Document` kelas.
+Sebelum Anda mulai menulis kode, Anda perlu mengimpor paket yang diperlukan yang memungkinkan Anda bekerja dengan file PDF dan anotasi.
 
 ```csharp
-Page page = doc.Pages.Add();
+using Aspose.Pdf.Annotations;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
 ```
 
-## Langkah 3: Tetapkan tampilan default
+Impor ini akan memberi Anda semua kelas dan metode yang diperlukan untuk memanipulasi dokumen PDF dan membuat anotasi seperti keterangan.
 
- Atur tampilan default untuk anotasi teks bebas dengan membuat yang baru`DefaultAppearance` objek dan mengatur propertinya seperti`TextColor` Dan`FontSize`.
+## Langkah 1: Inisialisasi Dokumen PDF
 
-```csharp
-DefaultAppearance da = new DefaultAppearance();
-da.TextColor = System.Drawing.Color.Red;
-da.FontSize = 10;
-```
-
-## Langkah 4: Buat anotasi teks gratis dengan info
-
- Buat anotasi teks gratis baru dengan info menggunakan`FreeTextAnnotation` kelas. Mengatur`Intent` properti ke`FreeTextIntent.FreeTextCallout` untuk menentukan bahwa ini adalah anotasi info. Mengatur`EndingStyle` properti ke`LineEnding.OpenArrow` untuk menentukan gaya panah di akhir info. Mengatur`Callout` properti ke array`Point` objek yang mewakili titik-titik pada halaman di mana garis info harus digambar.
-
-```csharp
-FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
-fta.Intent = FreeTextIntent.FreeTextCallout;
-fta.EndingStyle = LineEnding.OpenArrow;
-fta.Callout = new Point[]
-{
-    new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
-};
-```
-
-## Langkah 5: Tambahkan anotasi teks bebas ke halaman
-
- Tambahkan anotasi teks bebas ke halaman dengan menggunakan`Annotations` koleksi`Page` kelas.
-
-```csharp
-page.Annotations.Add(fta);
-```
-
-## Langkah 6: Tambahkan teks ke anotasi
-
- Tambahkan teks ke anotasi dengan mengatur`RichText`properti ke string XML yang diformat. Dalam tutorial ini, kita mengatur warna teks menjadi merah dan ukuran font menjadi 9.
-
-```csharp
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"warna:#FF
-```
-
-## Langkah 7: simpan dokumen
-
-Sekarang simpan dokumen dengan menggunakan kode berikut:
-
-```csharp
-doc.Save(dataDir + "SetCalloutProperty.pdf")
-```
-
-### Contoh kode sumber untuk Mengatur Properti Callout menggunakan Aspose.PDF untuk .NET
+Langkah pertama dalam perjalanan kita adalah menginisialisasi dokumen PDF baru tempat kita akan menambahkan anotasi keterangan. Anggap saja ini seperti menyiapkan kanvas kosong tempat Anda dapat mulai menambahkan elemen.
 
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
+// Inisialisasi dokumen PDF baru
 Document doc = new Document();
+```
+ Di sini, kita membuat yang baru`Document` objek yang akan berfungsi sebagai file PDF kita.`dataDir` variabel diatur ke direktori tempat Anda ingin menyimpan berkas PDF setelah selesai.
+
+## Langkah 2: Tambahkan Halaman Baru ke Dokumen
+
+Dokumen PDF dapat memiliki beberapa halaman, dan pada langkah ini, kita akan menambahkan halaman baru ke dokumen kita. Halaman ini akan menjadi tempat anotasi keterangan kita.
+
+```csharp
+//Tambahkan halaman baru ke dokumen
 Page page = doc.Pages.Add();
+```
+ Itu`Pages.Add()`metode ini digunakan untuk menambahkan halaman baru ke`doc` objek. Halaman baru disimpan di`page` variabel, yang akan kita gunakan nanti saat menambahkan anotasi.
+
+## Langkah 3: Tentukan Tampilan Default
+
+Anotasi, seperti keterangan, memiliki tampilan visual yang dapat Anda sesuaikan. Pada langkah ini, kita akan menentukan bagaimana teks dalam keterangan akan terlihat.
+
+```csharp
+// Tentukan tampilan default untuk anotasi
 DefaultAppearance da = new DefaultAppearance();
 da.TextColor = System.Drawing.Color.Red;
 da.FontSize = 10;
+```
+ Kami menciptakan sebuah`DefaultAppearance` objek yang menentukan warna teks dan ukuran fon. Di sini, teks akan berwarna merah, dan ukuran fon ditetapkan ke 10. Tampilan ini akan diterapkan pada anotasi keterangan.
+
+## Langkah 4: Buat Anotasi Teks Bebas
+
+Sekarang saatnya membuat anotasi yang sebenarnya. Anotasi teks bebas memungkinkan kita menambahkan keterangan dengan teks dan gaya tertentu.
+
+```csharp
+// Buat FreeTextAnnotation dengan callout
 FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
 fta.Intent = FreeTextIntent.FreeTextCallout;
 fta.EndingStyle = LineEnding.OpenArrow;
+```
+ Kami menciptakan sebuah`FreeTextAnnotation` objek dengan koordinat tertentu, yang menentukan posisinya di halaman.`Intent` diatur untuk`FreeTextCallout` , yang menunjukkan bahwa ini adalah anotasi panggilan.`EndingStyle` diatur untuk`OpenArrow`yang berarti baris keterangan akan diakhiri dengan panah terbuka.
+
+## Langkah 5: Tentukan Titik Garis Panggilan
+
+Anotasi keterangan memiliki garis yang menunjuk ke area yang diinginkan. Di sini, kita akan menentukan titik-titik yang membentuk garis ini.
+
+```csharp
+// Tentukan titik untuk garis panggilan
 fta.Callout = new Point[]
 {
-	new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
+    new Point(428.25, 651.75), 
+    new Point(462.75, 681.375), 
+    new Point(474, 681.375)
 };
+```
+ Itu`Callout` properti adalah sebuah array`Point` objek, yang masing-masing mewakili koordinat pada halaman. Titik-titik ini menentukan jalur baris keterangan, sehingga memberikan tampilan gelembung ucapan klasik.
+
+## Langkah 6: Tambahkan Anotasi ke Halaman
+
+Setelah membuat dan mengonfigurasi anotasi, langkah berikutnya adalah menambahkannya ke halaman.
+
+```csharp
+// Tambahkan anotasi ke halaman
 page.Annotations.Add(fta);
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"> <span style=\"font-size:9.0pt;font-family:Helvetica\">Ini adalah contoh</span></p></body>";
+```
+ Itu`Annotations.Add()` Metode ini digunakan untuk menempatkan anotasi pada halaman yang kita buat sebelumnya. Langkah ini secara efektif "menggambar" keterangan pada halaman PDF.
+
+## Langkah 7: Mengatur Konten Teks Kaya
+
+Anotasi keterangan dapat menyertakan teks kaya, yang memungkinkan konten yang diformat dalam gelembung. Mari tambahkan beberapa contoh teks.
+
+```csharp
+// Tetapkan teks kaya untuk anotasi
+fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"><span style=\"font-size:9.0pt;font-family:Helvetica\">Ini adalah contoh</span></p></body>";
+```
+ Itu`RichText` properti diatur dengan konten HTML. Hal ini memungkinkan pemformatan terperinci dalam keterangan, seperti menentukan ukuran font, warna, dan gaya.
+
+## Langkah 8: Simpan Dokumen PDF
+
+Terakhir, setelah menyiapkan semuanya, kita perlu menyimpan dokumen. Langkah ini menyelesaikan pembuatan PDF dengan anotasi callout.
+
+```csharp
+// Simpan dokumen
 doc.Save(dataDir + "SetCalloutProperty.pdf");
 ```
+ Itu`Save()` metode menyimpan dokumen ke direktori yang ditentukan dengan nama file "SetCalloutProperty.pdf". Langkah ini mengakhiri proses pembuatan PDF kita.
 
 ## Kesimpulan
 
-Dalam tutorial ini, kita mempelajari cara mengatur properti info untuk anotasi teks bebas dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Anotasi info berguna untuk memberikan informasi atau penjelasan tambahan terkait area tertentu dalam suatu dokumen. Aspose.PDF untuk .NET menyediakan berbagai fitur dan kemampuan untuk bekerja dengan file PDF, termasuk membuat dan menyesuaikan anotasi, seperti info. Dengan mengikuti panduan langkah demi langkah dan menggunakan kode sumber C# yang disediakan, pengembang dapat dengan mudah menerapkan anotasi info dalam dokumen PDF mereka, sehingga meningkatkan kegunaan dan kejelasan dokumen mereka. Aspose.PDF untuk .NET adalah perpustakaan serbaguna dan andal untuk pengoperasian PDF di aplikasi .NET, menawarkan alat canggih untuk menangani berbagai tugas terkait PDF secara efisien.
+Nah, itu dia! Anda baru saja membuat dokumen PDF dengan anotasi callout menggunakan Aspose.PDF untuk .NET. Anotasi ini dapat sangat berguna untuk menyorot atau menjelaskan bagian tertentu dari dokumen Anda. Aspose.PDF menawarkan API canggih yang membuat manipulasi PDF menjadi mudah dan fleksibel. Baik Anda menambahkan anotasi, mengonversi dokumen, atau menangani tugas PDF yang rumit, Aspose.PDF siap membantu Anda.
 
-### FAQ untuk menyetel properti info dalam file PDF
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa yang dimaksud dengan anotasi info dalam dokumen PDF?
+### Bisakah saya menyesuaikan tampilan keterangan lebih lanjut?
 
-J: Anotasi info dalam dokumen PDF adalah jenis anotasi yang memungkinkan Anda membuat kotak teks dengan garis pemandu yang menunjuk ke area tertentu dalam dokumen. Biasanya digunakan untuk memberikan informasi atau komentar tambahan terkait bagian atau elemen tertentu dalam dokumen.
+Tentu saja! Anda dapat menyesuaikan berbagai aspek seperti warna garis, ketebalan, serta jenis dan gaya font teks.
 
-#### T: Dapatkah saya menyesuaikan tampilan anotasi info menggunakan Aspose.PDF untuk .NET?
+### Bisakah saya menambahkan beberapa keterangan pada satu halaman?
 
-J: Ya, Anda dapat menyesuaikan berbagai properti anotasi info, seperti warna, ukuran font, perataan teks, gaya garis, gaya panah, dan banyak lagi.
+Ya, Anda dapat menambahkan keterangan sebanyak-banyaknya sesuai kebutuhan dengan mengulangi langkah-langkah untuk setiap anotasi.
 
-#### T: Bagaimana cara menambahkan teks ke anotasi info?
+### Bagaimana cara mengubah posisi keterangan?
 
- J: Untuk menambahkan teks ke anotasi info, Anda dapat mengatur`RichText` properti dari`FreeTextAnnotation` obyek. Itu`RichText` Properti mengambil string XML berformat yang mewakili teks yang akan ditampilkan dalam anotasi info.
+ Cukup ubah koordinat di`Rectangle` Dan`Callout` properti untuk memposisikan ulang anotasi.
 
-#### T: Bisakah saya menambahkan beberapa anotasi info ke dokumen PDF menggunakan Aspose.PDF untuk .NET?
+### Bisakah saya menambahkan jenis anotasi lain menggunakan Aspose.PDF?
 
- J: Ya, Anda dapat membuat beberapa anotasi info dalam dokumen PDF dengan membuat beberapa contoh`FreeTextAnnotation`objek dan menambahkannya ke halaman atau lokasi berbeda dalam dokumen.
+Ya, Aspose.PDF mendukung berbagai jenis anotasi, termasuk sorotan, stempel, dan lampiran file.
+
+### Apakah konten teks kaya terbatas pada HTML?
+
+ Itu`RichText` Properti mendukung sebagian kecil HTML, yang memungkinkan Anda menyertakan teks bergaya dan format dasar.

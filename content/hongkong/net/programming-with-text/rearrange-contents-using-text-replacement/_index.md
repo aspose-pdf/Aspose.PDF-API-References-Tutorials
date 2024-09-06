@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-text/rearrange-contents-using-text-replacemen
 
 ## 第 1 步：設定文檔目錄
 
-首先，您需要設定 PDF 檔案所在目錄的路徑。代替`"YOUR DOCUMENT DIRECTORY"`在裡面`dataDir`變數包含 PDF 檔案的路徑。
+首先，您需要設定 PDF 檔案所在目錄的路徑。代替`"YOUR DOCUMENT DIRECTORY"`在`dataDir`變數包含 PDF 檔案的路徑。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -110,7 +110,7 @@ catch (Exception ex)
 
 A：設定文檔目錄：
 
-1. 代替`"YOUR DOCUMENT DIRECTORY"`在裡面`dataDir`變數包含 PDF 檔案所在目錄的路徑。
+1. 代替`"YOUR DOCUMENT DIRECTORY"`在`dataDir`變數包含 PDF 檔案所在目錄的路徑。
 
 #### Q：如何在PDF文件中進行文字替換？
 

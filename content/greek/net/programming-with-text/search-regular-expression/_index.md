@@ -42,7 +42,7 @@ Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
 
 ## Βήμα 4: Αναζήτηση με κανονική έκφραση
 
- Δημιουργώ ένα`TextFragmentAbsorber` αντικείμενο και ορίστε το πρότυπο τυπικής έκφρασης για να βρείτε όλες τις φράσεις που ταιριάζουν με το μοτίβο:
+ Δημιουργία α`TextFragmentAbsorber` αντικείμενο και ορίστε το πρότυπο τυπικής έκφρασης για να βρείτε όλες τις φράσεις που ταιριάζουν με το μοτίβο:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Όπως το 1999-2000
@@ -52,7 +52,7 @@ TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d
 
 ## Βήμα 5: Ορίστε τις επιλογές αναζήτησης κειμένου
 
- Δημιουργώ ένα`TextSearchOptions` αντικείμενο και ρυθμίστε το στο`TextSearchOptions` ιδιοκτησία του`TextFragmentAbsorber` αντικείμενο για να ενεργοποιήσετε τη χρήση κανονικών εκφράσεων:
+ Δημιουργία α`TextSearchOptions` αντικείμενο και ρυθμίστε το στο`TextSearchOptions` ιδιοκτησία του`TextFragmentAbsorber` αντικείμενο για να ενεργοποιήσετε τη χρήση κανονικών εκφράσεων:
 
 ```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
@@ -128,7 +128,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Συγχαρητήρια! Έχετε μάθει με επιτυχία πώς να αναζητάτε και να ανακτάτε κείμενο που ταιριάζει με μια κανονική έκφραση σε ένα έγγραφο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Αυτό το σεμινάριο παρείχε έναν οδηγό βήμα προς βήμα, από τη φόρτωση του εγγράφου έως την πρόσβαση στα εξαγόμενα τμήματα κειμένου. Τώρα μπορείτε να ενσωματώσετε αυτόν τον κώδικα στα δικά σας έργα C# για να πραγματοποιήσετε σύνθετες αναζητήσεις κειμένου σε αρχεία PDF.
 

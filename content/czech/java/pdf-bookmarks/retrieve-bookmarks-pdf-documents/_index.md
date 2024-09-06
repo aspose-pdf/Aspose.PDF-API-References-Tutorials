@@ -8,7 +8,7 @@ weight: 15
 url: /cs/java/pdf-bookmarks/retrieve-bookmarks-pdf-documents/
 ---
 
-## Úvod
+## Zavedení
 
 V tomto článku prozkoumáme, jak načíst záložky z dokumentů PDF pomocí Aspose.PDF for Java. Záložky jsou základní funkcí souborů PDF, které zlepšují navigaci a dostupnost. Provedeme vás procesem, krok za krokem, s příklady zdrojového kódu, které zajistí, že budete moci efektivně pracovat se záložkami PDF ve vašich aplikacích Java.
 
@@ -96,7 +96,7 @@ Načítání záložek z dokumentů PDF pomocí Aspose.PDF for Java je výkonná
 
 ### Jak přidám Aspose.PDF for Java do svého projektu?
 
- Aspose.PDF pro Javu můžete do svého projektu přidat jeho stažením z[tady](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci.
+ Aspose.PDF pro Javu můžete do svého projektu přidat jeho stažením z[zde](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci.
 
 ### Mohu upravit vzhled načtených záložek?
 
@@ -112,4 +112,4 @@ Ano, Aspose.PDF for Java může pro určité případy použití vyžadovat plat
 
 ### Kde získám přístup k další dokumentaci a podpoře?
 
- Komplexní dokumentaci a podporu pro Aspose.PDF pro Javu naleznete na adrese[tady](https://reference.aspose.com/pdf/java/).
+ Komplexní dokumentaci a podporu pro Aspose.PDF pro Javu naleznete na adrese[zde](https://reference.aspose.com/pdf/java/).

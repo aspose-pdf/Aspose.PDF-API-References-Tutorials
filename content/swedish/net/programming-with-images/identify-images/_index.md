@@ -11,7 +11,7 @@ Den här guiden tar dig steg för steg hur du identifierar bilder i PDF-fil med 
 
 ## Steg 1: Definiera dokumentkatalogen
 
- Se till att ställa in rätt dokumentkatalog. Byta ut`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där ditt PDF-dokument finns.
+ Se till att ställa in rätt dokumentkatalog. Ersätta`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där ditt PDF-dokument finns.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -28,7 +28,7 @@ int rdg = 0; // Räknare för RGB-bilder
 
 ## Steg 3: Öppna PDF-dokumentet
 
- det här steget kommer vi att öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF. Använd`Document` konstruktor och skicka sökvägen till PDF-dokumentet.
+ I det här steget kommer vi att öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF. Använd`Document` konstruktor och skicka sökvägen till PDF-dokumentet.
 
 ```csharp
 using (Document document = new Document(dataDir + "ExtractImages.pdf"))

@@ -93,7 +93,7 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated3_out.pdf");
 ### Ukázka zdrojového kódu pro otáčení textu pomocí fragmentu textu a odstavce pomocí Aspose.PDF pro .NET 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Inicializujte objekt dokumentu
+// Inicializovat objekt dokumentu
 Document pdfDocument = new Document();
 // Získejte konkrétní stránku
 Page pdfPage = (Page)pdfDocument.Pages.Add();
@@ -125,7 +125,7 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated3_out.pdf");
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili otáčet text pomocí textových fragmentů a odstavců v dokumentu PDF pomocí Aspose.PDF for .NET. Tento výukový program poskytuje podrobného průvodce od vytvoření dokumentu po uložení upravené verze. Nyní můžete tento kód začlenit do svých vlastních projektů C# a manipulovat s rotací textu v souborech PDF.
+Gratuluji! Úspěšně jste se naučili otáčet text pomocí textových fragmentů a odstavců v dokumentu PDF pomocí Aspose.PDF for .NET. Tento výukový program poskytuje podrobného průvodce od vytvoření dokumentu po uložení upravené verze. Nyní můžete tento kód začlenit do svých vlastních projektů C# a manipulovat s rotací textu v souborech PDF.
 
 ### FAQ
 
@@ -147,9 +147,9 @@ Odpověď: Společné používání fragmentů textu a odstavců umožňuje vět
 
 #### Otázka: Je možné pomocí této metody dosáhnout složitých efektů rotace textu?
 
-Odpověď: Ano, kombinací textových fragmentů s různými úhly natočení a jejich uspořádáním v odstavcích můžete dosáhnout komplexních a přizpůsobených efektů rotace textu, čímž zvýšíte vizuální přitažlivost vašich dokumentů PDF.
+Odpověď: Ano, kombinací textových fragmentů s různými úhly otočení a jejich uspořádáním v odstavcích můžete dosáhnout komplexních a přizpůsobených efektů otočení textu, čímž zvýšíte vizuální přitažlivost vašich dokumentů PDF.
 
-#### Otázka: Jaké kroky se týkají otáčení textu pomocí fragmentů textu a odstavců?
+#### Otázka: Jaké kroky se týkají otáčení textu pomocí textových fragmentů a odstavců?
 
 Odpověď: Tyto kroky zahrnují:
 

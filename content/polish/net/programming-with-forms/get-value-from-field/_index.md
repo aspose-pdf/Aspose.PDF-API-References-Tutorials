@@ -1,17 +1,17 @@
 ---
-title: Uzyskaj wartość z pola w dokumencie PDF
-linktitle: Uzyskaj wartość z pola w dokumencie PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Z łatwością uzyskaj wartość pola formularza w dokumencie PDF za pomocą Aspose.PDF dla .NET.
+title: Pobierz wartość z pola w dokumencie PDF
+linktitle: Pobierz wartość z pola w dokumencie PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwe pobieranie wartości pól formularza w dokumencie PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 140
 url: /pl/net/programming-with-forms/get-value-from-field/
 ---
-W tym samouczku pokażemy, jak uzyskać wartość pola formularza za pomocą Aspose.PDF dla .NET. Krok po kroku wyjaśnimy kod źródłowy C#, aby poprowadzić Cię przez ten proces.
+W tym samouczku pokażemy Ci, jak uzyskać wartość pola formularza za pomocą Aspose.PDF dla .NET. Wyjaśnimy kod źródłowy C# krok po kroku, aby przeprowadzić Cię przez ten proces.
 
 ## Krok 1: Przygotowanie
 
-Upewnij się, że zaimportowałeś niezbędne biblioteki i ustaw ścieżkę do katalogu dokumentów:
+Upewnij się, że zaimportowałeś niezbędne biblioteki i ustawiłeś ścieżkę do katalogu dokumentów:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -25,24 +25,24 @@ Otwórz dokument PDF:
 Document pdfDocument = new Document(dataDir + "GetValueFromField.pdf");
 ```
 
-## Krok 3: Zdobądź pole
+## Krok 3: Pobierz pole
 
-Uzyskaj żądane pole formularza (w tym przykładzie używamy pola „textbox1”):
+Pobierz żądane pole formularza (w tym przykładzie używamy pola „textbox1”):
 
 ```csharp
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 ```
 
-## Krok 4: Uzyskaj wartość pola
+## Krok 4: Pobierz wartość pola
 
- Uzyskaj wartość pola za pomocą`Value` nieruchomość:
+ Pobierz wartość pola za pomocą`Value` nieruchomość:
 
 ```csharp
 Console.WriteLine("PartialName: {0}", textBoxField.PartialName);
 Console.WriteLine("Value: {0}", textBoxField.Value);
 ```
 
-### Przykładowy kod źródłowy dla opcji Pobierz wartość z pola przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Pobierz wartość z pola przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -57,26 +57,26 @@ Console.WriteLine("Value : {0} ", textBoxField.Value);
 
 ## Wniosek
 
-W tym samouczku nauczyliśmy się, jak uzyskać wartość pola formularza za pomocą Aspose.PDF dla .NET. Wykonując poniższe kroki, możesz łatwo wyodrębnić wartość określonego pola formularza w dokumentach PDF za pomocą Aspose.PDF.
+W tym samouczku nauczyliśmy się, jak uzyskać wartość pola formularza za pomocą Aspose.PDF dla .NET. Wykonując te kroki, możesz łatwo wyodrębnić wartość określonego pola formularza w dokumentach PDF za pomocą Aspose.PDF.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
 #### P: Czy mogę uzyskać wartość pola formularza, nie znając wcześniej jego nazwy?
 
- Odp.: Nie, musisz znać nazwę lub częściową nazwę pola formularza, aby uzyskać jego wartość za pomocą Aspose.PDF dla .NET. The`pdfDocument.Form["fieldname"]` składnia wymaga dokładnej lub częściowej nazwy pola formularza, aby uzyskać dostęp do jego właściwości, w tym wartości.
+ A: Nie, musisz znać nazwę lub częściową nazwę pola formularza, aby uzyskać jego wartość za pomocą Aspose.PDF dla .NET.`pdfDocument.Form["fieldname"]` składnia wymaga podania dokładnej nazwy lub częściowej nazwy pola formularza, aby uzyskać dostęp do jego właściwości, łącznie z wartością.
 
-#### P: Co się stanie, jeśli pole formularza nie istnieje w dokumencie PDF?
+#### P: Co zrobić, jeśli pole formularza nie istnieje w dokumencie PDF?
 
- Odp.: Jeśli pole formularza nie istnieje w dokumencie PDF, plik`pdfDocument.Form["fieldname"]` składnia powróci`null` . Bardzo ważne jest, aby radzić sobie z takimi przypadkami poprzez sprawdzanie`null` przed uzyskaniem dostępu do właściwości pola formularza, aby uniknąć wyjątków.
+ A: Jeśli pole formularza nie istnieje w dokumencie PDF,`pdfDocument.Form["fieldname"]` składnia zwróci`null` . Istotne jest, aby w takich przypadkach sprawdzać,`null` przed uzyskaniem dostępu do właściwości pola formularza, aby uniknąć wyjątków.
 
-#### P: Jak mogę obsługiwać różne typy pól formularzy (np. pola wyboru, przyciski opcji), aby uzyskać ich wartości?
+#### P: W jaki sposób mogę obsługiwać różne typy pól formularza (np. pola wyboru, przyciski radiowe), aby uzyskać ich wartości?
 
- O: Aby obsłużyć różne typy pól formularzy, możesz użyć odpowiednich klas pól dostępnych w Aspose.PDF dla .NET. Na przykład użyj`CheckBoxField` do pracy z polami wyboru i`RadioButtonField`do pracy z przyciskami radiowymi. Po uzyskaniu prawidłowego obiektu pola można uzyskać dostęp do jego właściwości, w tym wartości.
+ A: Aby obsługiwać różne typy pól formularza, możesz użyć odpowiednich klas pól dostępnych w Aspose.PDF dla .NET. Na przykład użyj`CheckBoxField` do pracy z polami wyboru i`RadioButtonField`do pracy z przyciskami radiowymi. Po uzyskaniu właściwego obiektu pola możesz uzyskać dostęp do jego właściwości, w tym wartości.
 
-#### P: Czy mogę uzyskać wartości z wielu pól formularza jednocześnie?
+#### P: Czy mogę pobrać wartości z wielu pól formularza jednocześnie?
 
-O: Tak, możesz uzyskać wartości z wielu pól formularza jednocześnie, iterując po kolekcji pól formularza za pomocą pętli lub zapytań LINQ. W ten sposób można programowo uzyskać dostęp do wartości każdego pola formularza w dokumencie PDF.
+A: Tak, możesz uzyskać wartości wielu pól formularza jednocześnie, iterując po kolekcji pól formularza za pomocą pętli lub zapytań LINQ. W ten sposób możesz uzyskać dostęp do wartości każdego pola formularza w dokumencie PDF programowo.
 
-#### P: Czy można zmodyfikować wartość pola formularza i zapisać zmiany z powrotem w dokumencie PDF?
+#### P: Czy można zmodyfikować wartość pola formularza i zapisać zmiany w dokumencie PDF?
 
- Odp.: Tak, możesz zmodyfikować wartość pola formularza za pomocą Aspose.PDF dla .NET i zapisać zmiany z powrotem w dokumencie PDF. Po aktualizacji`Value` właściwości pola formularza, możesz użyć opcji`pdfDocument.Save()` metoda zapisania zmian w oryginalnym dokumencie PDF.
+ A: Tak, możesz modyfikować wartość pola formularza za pomocą Aspose.PDF dla .NET i zapisywać zmiany z powrotem do dokumentu PDF. Po zaktualizowaniu`Value` właściwości pola formularza, możesz użyć`pdfDocument.Save()` metoda zapisywania zmian w oryginalnym dokumencie PDF.

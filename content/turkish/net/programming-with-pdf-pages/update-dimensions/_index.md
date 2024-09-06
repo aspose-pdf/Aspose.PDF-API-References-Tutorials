@@ -1,56 +1,56 @@
 ---
 title: PDF Sayfa Boyutlarını Güncelle
 linktitle: PDF Sayfa Boyutlarını Güncelle
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak PDF sayfa boyutlarını güncellemek için adım adım kılavuz. İhtiyaçlarınıza göre boyutları kontrol edin.
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak PDF sayfa boyutlarını güncellemek için adım adım kılavuz. Boyutları ihtiyaçlarınıza göre kontrol edin.
 type: docs
 weight: 150
 url: /tr/net/programming-with-pdf-pages/update-dimensions/
 ---
-Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesindeki sayfa boyutlarını güncellemek için size adım adım yol göstereceğiz. Birlikte verilen C# kaynak kodunu açıklayacağız ve bu özelliği anlamanıza ve kendi projelerinizde uygulamanıza yardımcı olacak kapsamlı bir kılavuz sunacağız. Bu eğitimin sonunda Aspose.PDF for .NET kullanarak bir PDF belgesinde sayfa boyutlarını nasıl değiştireceğinizi öğreneceksiniz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesindeki sayfa boyutlarını güncellemek için adım adım süreci adım adım anlatacağız. Birlikte verilen C# kaynak kodunu açıklayacağız ve bu özelliği kendi projelerinizde anlamanıza ve uygulamanıza yardımcı olacak kapsamlı bir kılavuz sunacağız. Bu eğitimin sonunda, .NET için Aspose.PDF kullanarak bir PDF belgesindeki sayfa boyutlarını nasıl değiştireceğinizi öğreneceksiniz.
 
-## Önkoşullar
+## Ön koşullar
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- C# programlama dili hakkında temel bilgi
-- Aspose.PDF for .NET, geliştirme ortamınızda yüklü
+- C# programlama dilinin temel bilgisi
+- Geliştirme ortamınıza .NET için Aspose.PDF yüklendi
 
-## 1. Adım: Belge dizinini tanımlayın
-Öncelikle belgeler dizininizin yolunu ayarlamanız gerekir. Bu, düzenlenmiş PDF belgenizi kaydetmek istediğiniz konumdur. "BELGELERİNİZ DİZİNİ"ni uygun yolla değiştirin.
+## Adım 1: Belge dizinini tanımlayın
+Öncelikle, belgeler dizininize giden yolu ayarlamanız gerekir. Bu, düzenlediğiniz PDF belgenizi kaydetmek istediğiniz konumdur. "YOUR DOCUMENTS DIRECTORY" ifadesini uygun yolla değiştirin.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## 2. Adım: PDF belgesini açın
- Daha sonra mevcut PDF belgesini aşağıdaki komutu kullanarak açabilirsiniz:`Document` Aspose.PDF sınıfı. Doğru belge yolunu belirttiğinizden emin olun.
+## Adım 2: PDF belgesini açın
+ Daha sonra mevcut PDF belgesini kullanarak açabilirsiniz.`Document` Aspose.PDF sınıfı. Doğru belge yolunu belirttiğinizden emin olun.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
 ```
 
-## 3. Adım: Sayfa Koleksiyonunu Alın
- Artık PDF belgesinin sayfa koleksiyonuna şu düğmeyi kullanarak erişebilirsiniz:`Pages` mülkiyeti`Document` sınıf.
+## Adım 3: Sayfa Koleksiyonunu Alın
+ Artık PDF belgesinin sayfa koleksiyonuna şu şekilde erişebilirsiniz:`Pages` mülkiyeti`Document` sınıf.
 
 ```csharp
 PageCollection pageCollection = pdfDocument.Pages;
 ```
 
-## 4. Adım: Belirli bir sayfayı edinin
-Daha sonra koleksiyondaki sayfanın dizinini kullanarak belgenin belirli bir sayfasını seçebilirsiniz. Bu örnekte ikinci sayfayı kullanıyoruz (indeks 1).
+## Adım 4: Belirli bir sayfayı alın
+Daha sonra koleksiyondaki sayfanın dizinini kullanarak belgenin belirli bir sayfasını seçebilirsiniz. Bu örnekte, ikinci sayfayı (dizin 1) kullanıyoruz.
 
 ```csharp
 Page pdfPage = pageCollection[1];
 ```
 
-## 5. Adım: Yeni sayfa boyutlarını tanımlayın
- Artık yeni sayfa boyutunu aşağıdaki düğmeyi kullanarak ayarlayabilirsiniz:`SetPageSize()` yöntemi`Page`nesne. Bu örnekte sayfa boyutlarını A4 (11,7 x 8,3 inç) olarak ayarlıyoruz ve noktalara (1 inç = 72 punto) dönüştürülüyor.
+## Adım 5: Yeni sayfa boyutlarını tanımlayın
+ Artık yeni sayfa boyutunu şu şekilde ayarlayabilirsiniz:`SetPageSize()` yöntemi`Page`nesne. Bu örnekte, sayfa boyutlarını A4'e (11,7 x 8,3 inç) ayarlıyoruz, bunu noktalara dönüştürüyoruz (1 inç = 72 nokta).
 
 ```csharp
 pdfPage.SetPageSize(597.6, 842.4);
 ```
 
-## 6. Adım: Güncellenen belgeyi kaydedin
+## Adım 6: Güncellenen belgeyi kaydedin
  Son olarak, güncellenen PDF belgesini kullanarak bir dosyaya kaydedebilirsiniz.`Save()` yöntemi`Document`sınıf. Doğru yolu ve dosya adını belirttiğinizden emin olun.
 
 ```csharp
@@ -58,20 +58,20 @@ dataDir = dataDir + "UpdateDimensions_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Aspose.PDF for .NET kullanarak Boyutları Güncelle için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Güncelleme Boyutları için örnek kaynak kodu 
 
 ```csharp
 
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
-// Sayfa koleksiyonunu alın
+// Sayfa koleksiyonunu al
 PageCollection pageCollection = pdfDocument.Pages;
-// Belirli bir sayfayı al
+// Belirli sayfayı al
 Page pdfPage = pageCollection[1];
-// Sayfa boyutunu A4 (11,7 x 8,3 inç) ve Aspose.Pdf'de 1 inç = 72 punto olarak ayarlayın
-// Yani noktalardaki A4 boyutları (842,4, 597,6) olacaktır.
+// Sayfa boyutunu A4 (11,7 x 8,3 inç) olarak ayarlayın ve Aspose.Pdf'de 1 inç = 72 puan
+// Yani A4 boyutları nokta cinsinden (842.4, 597.6) olacaktır.
 pdfPage.SetPageSize(597.6, 842.4);
 dataDir = dataDir + "UpdateDimensions_out.pdf";
 // Güncellenen belgeyi kaydet
@@ -81,33 +81,33 @@ System.Console.WriteLine("\nPage dimensions updated successfully.\nFile saved at
 ```
 
 ## Çözüm
-Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesindeki sayfanın boyutlarını nasıl güncelleyeceğimizi öğrendik. Bu adım adım kılavuzu izleyerek PDF belgesindeki bir sayfanın boyutlarını gerektiği gibi kolayca değiştirebilirsiniz. Aspose.PDF, PDF dosyalarıyla çalışmak ve sayfa boyutlarını değiştirmek de dahil olmak üzere çeşitli manipülasyonlar gerçekleştirmek için güçlü ve esnek bir API sunar. Bu bilgiyle, PDF sayfalarınızın boyutlarını özel ihtiyaçlarınızı karşılayacak şekilde kontrol edebilir ve özelleştirebilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesindeki bir sayfanın boyutlarını nasıl güncelleyeceğinizi öğrendik. Bu adım adım kılavuzu izleyerek, bir PDF belgesindeki bir sayfanın boyutlarını gerektiği gibi kolayca değiştirebilirsiniz. Aspose.PDF, PDF dosyalarıyla çalışmak ve sayfa boyutlarını değiştirmek de dahil olmak üzere çeşitli manipülasyonlar yapmak için güçlü ve esnek bir API sunar. Bu bilgiyle, PDF sayfalarınızın boyutlarını belirli ihtiyaçlarınızı karşılayacak şekilde kontrol edebilir ve özelleştirebilirsiniz.
 
-### Güncelleme PDF sayfa boyutlarına ilişkin SSS
+### PDF sayfa boyutlarını güncellemeye ilişkin SSS
 
-#### S: Aspose.PDF for .NET'i kullanarak bir PDF belgesindeki belirli bir sayfanın boyutlarını nasıl güncelleyebilirim?
+#### S: Aspose.PDF for .NET kullanarak PDF belgesindeki belirli bir sayfanın boyutlarını nasıl güncelleyebilirim?
 
-C: Aspose.PDF for .NET kullanarak bir PDF belgesindeki belirli bir sayfanın boyutlarını güncellemek için şu adımları takip edebilirsiniz:
+A: Aspose.PDF for .NET kullanarak PDF belgesindeki belirli bir sayfanın boyutlarını güncellemek için şu adımları izleyebilirsiniz:
 
-1. Orijinal PDF dosyanızın bulunduğu yolu ve güncellenen PDF dosyasını kaydetmek istediğiniz yeri belirterek belge dizinini ayarlayın. "BELGELERİNİZ DİZİNİ"ni uygun yolla değiştirin.
-2.  Güncellemek için mevcut PDF belgesini kullanarak`Document` Aspose.PDF sınıfı. Orijinal PDF belgesinin doğru yolunu belirttiğinizden emin olun.
-3.  kullanarak PDF belgesinin sayfa koleksiyonuna erişin.`Pages` mülkiyeti`Document` sınıf.
-4. Sayfanın dizinini kullanarak sayfa koleksiyonundan güncellemek istediğiniz sayfayı seçin. Sağlanan C# kaynak kodunda ikinci sayfayı kullanıyoruz (dizin 1).
-5.  kullanarak yeni sayfa boyutunu tanımlayın.`SetPageSize()` yöntemi`Page` nesne. Örnekte sayfa boyutlarını A4 boyutuna (11,7 x 8,3 inç) ayarladık ve noktalara (1 inç = 72 punto) dönüştürdük.
-6.  Güncellenen PDF belgesini kullanarak bir dosyaya kaydedin.`Save()` yöntemi`Document`sınıf. Doğru yolu ve dosya adını belirttiğinizden emin olun.
+1. Orijinal PDF dosyanızın bulunduğu yolu ve güncellenmiş PDF dosyasını kaydetmek istediğiniz yeri belirterek belge dizinini ayarlayın. "YOUR DOCUMENTS DIRECTORY" ifadesini uygun yol ile değiştirin.
+2.  Mevcut PDF belgesini güncellemek için açın`Document` Aspose.PDF sınıfı. Orijinal PDF belgesine doğru yolu belirttiğinizden emin olun.
+3.  PDF belgesinin sayfa koleksiyonuna erişmek için şunu kullanın:`Pages` mülkiyeti`Document` sınıf.
+4. Sayfa koleksiyonundan güncellemek istediğiniz belirli sayfayı, sayfanın dizinini kullanarak seçin. Sağlanan C# kaynak kodunda, ikinci sayfayı (dizin 1) kullanıyoruz.
+5.  Yeni sayfa boyutunu kullanarak tanımlayın`SetPageSize()` yöntemi`Page` nesne. Örnekte, sayfa boyutlarını A4 boyutuna (11,7 x 8,3 inç) ayarladık, noktalara (1 inç = 72 nokta) dönüştürdük.
+6.  Güncellenen PDF belgesini kullanarak bir dosyaya kaydedin`Save()` yöntemi`Document`sınıf. Doğru yolu ve dosya adını belirttiğinizden emin olun.
 
-#### S: PDF belgesindeki birden fazla sayfanın boyutlarını aynı anda güncelleyebilir miyim?
+#### S: PDF belgesinde birden fazla sayfanın boyutlarını aynı anda güncelleyebilir miyim?
 
-C: Evet, PDF belgesindeki birden fazla sayfanın boyutlarını aynı anda güncellemek için sağlanan kaynak kodunu değiştirebilirsiniz. Belirli bir sayfayı seçmek yerine (4. adımda gösterildiği gibi), sayfa koleksiyonundaki tüm sayfalar arasında geçiş yapabilir ve her sayfa için istediğiniz sayfa boyutunu ayarlayabilirsiniz.
+A: Evet, PDF belgesindeki birden fazla sayfanın boyutlarını aynı anda güncellemek için sağlanan kaynak kodunu değiştirebilirsiniz. Belirli bir sayfayı seçmek yerine (4. adımda gösterildiği gibi), sayfa koleksiyonundaki tüm sayfalar arasında dolaşabilir ve her sayfa için istenen sayfa boyutunu ayarlayabilirsiniz.
 
-#### S: Aspose.PDF for .NET'i kullanırken sayfa boyutlarını inçten noktaya nasıl dönüştürebilirim?
+#### S: Aspose.PDF for .NET kullanırken sayfa boyutlarını inçten noktaya nasıl dönüştürebilirim?
 
- C: Aspose.PDF for .NET'te sayfa boyutları için kullanılan ölçü birimi noktadır; burada 1 inç, 72 noktaya eşittir. İnçleri noktalara dönüştürmek için aşağıdaki formülü kullanabilirsiniz:`points = inches * 72`. Örneğin, 11,7 x 8,3 inçlik bir sayfa boyutu ayarlamak için, karşılık gelen boyutları nokta cinsinden (11,7 * 72) ve (8,3 * 72) olarak hesaplayabilirsiniz.
+ A: .NET için Aspose.PDF'de sayfa boyutları için kullanılan ölçüm birimi noktadır ve 1 inç 72 noktaya eşittir. İnçleri noktalara dönüştürmek için şu formülü kullanabilirsiniz:`points = inches * 72`Örneğin, 11,7 x 8,3 inçlik bir sayfa boyutu belirlemek için, karşılık gelen boyutları nokta cinsinden (11,7 * 72) ve (8,3 * 72) olarak hesaplayabilirsiniz.
 
-#### S: Bir sayfanın boyutlarının güncellenmesi PDF belgesinin içerik düzenini etkiler mi?
+#### S: Bir sayfanın boyutlarını güncellemek PDF belgesinin içerik düzenini etkiler mi?
 
-C: Evet, bir sayfanın boyutlarının güncellenmesi söz konusu sayfadaki PDF belgesinin içerik düzenini etkileyecektir. Sayfa boyutlarını değiştirdiğinizde sayfadaki içerik yeni boyutlara uyacak şekilde ayarlanacaktır.
+A: Evet, bir sayfanın boyutlarını güncellemek, o belirli sayfadaki PDF belgesinin içerik düzenini etkileyecektir. Sayfa boyutlarını değiştirdiğinizde, sayfadaki içerik yeni boyutlara uyacak şekilde ayarlanacaktır.
 
-#### S: Güncellemeden sonra değişiklikleri geri almak ve orijinal sayfa boyutlarını geri yüklemek mümkün müdür?
+#### S: Değişiklikleri geri almak ve sayfa boyutlarını güncelledikten sonra orijinal sayfa boyutlarına geri döndürmek mümkün müdür?
 
-C: Evet, değişiklikleri geri almak ve orijinal sayfa boyutlarını geri yüklemek istiyorsanız, değişiklik yapmadan önce orijinal PDF belgesinin bir kopyasını saklayabilir veya değişiklikleri kaydetmeden orijinal PDF belgesini yeniden açabilirsiniz. Bu şekilde orijinal boyutlar korunacaktır.
+A: Evet, değişiklikleri geri almak ve orijinal sayfa boyutlarını geri yüklemek istiyorsanız, değişiklik yapmadan önce orijinal PDF belgesinin bir kopyasını saklayabilir veya değişiklikleri kaydetmeden orijinal PDF belgesini yeniden açabilirsiniz. Bu şekilde, orijinal boyutlar korunacaktır.

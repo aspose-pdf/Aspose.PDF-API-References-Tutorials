@@ -30,7 +30,7 @@ Document pdfDocument1 = new Document(dataDir + "InsertEmptyPageAtEnd.pdf");
 ```
 
 ## 3. lépés: Helyezzen be egy üres oldalt
- Most már beszúrhat egy üres oldalt a PDF-dokumentum végére a`Add()` módszere a`Pages` tulajdona a`pdfDocument1` tárgy.
+ Most már beszúrhat egy üres oldalt a PDF-dokumentum végére a`Add()` módszere a`Pages` tulajdona a`pdfDocument1` objektum.
 
 ```csharp
 pdfDocument1.Pages.Add();
@@ -72,12 +72,12 @@ V: Ha üres oldalt szeretne beszúrni egy PDF-dokumentum végére az Aspose.PDF 
 
 1. Állítsa be a dokumentumkönyvtárat az eredeti PDF-fájl elérési útjának és a módosított PDF-fájl mentési helyének megadásával. Cserélje ki a "DOKUMENTUMKÖNYVTÁR" elemet a megfelelő elérési útra.
 2.  Nyissa meg a PDF dokumentumot a`Document` osztályú Aspose.PDF. Ügyeljen arra, hogy megadja az eredeti PDF-dokumentum megfelelő elérési útját.
-3.  Szúrjon be egy üres oldalt a PDF-dokumentum végére a gombbal`Add()` módszere a`Pages` tulajdona a`pdfDocument1` tárgy.
+3.  Szúrjon be egy üres oldalt a PDF-dokumentum végére a gombbal`Add()` módszere a`Pages` tulajdona a`pdfDocument1` objektum.
 4.  Mentse el a módosított PDF-dokumentumot fájlba a`Save()` módszere a`Document` osztály. Ügyeljen arra, hogy a megfelelő elérési utat és fájlnevet adja meg a kimeneti fájlhoz.
 
 #### K: Beszúrhatok egy üres oldalt a PDF-dokumentum egy adott helyére?
 
- V: Igen, a PDF-dokumentum bármely meghatározott helyére beszúrhat egy üres oldalt a segítségével`Insert()` módszere a`Pages` gyűjteménye a`pdfDocument1` tárgy. Adja meg a beszúrandó oldal indexét. Például egy üres oldal beszúrásához a 2. indexhez használhatja`pdfDocument1.Pages.Insert(2);`.
+ V: Igen, a PDF-dokumentum bármely meghatározott helyére beszúrhat egy üres oldalt a segítségével`Insert()` módszere a`Pages` gyűjteménye a`pdfDocument1` objektum. Adja meg a beszúrandó oldal indexét. Például egy üres oldal beszúrásához a 2. indexhez használhatja`pdfDocument1.Pages.Insert(2);`.
 
 #### K: Egy üres oldal beszúrása felülírja a PDF-fájl meglévő tartalmát?
 
@@ -89,4 +89,4 @@ V: Igen, több üres oldalt is beszúrhat a PDF-dokumentum végére, ha megismé
 
 #### K: Lehetséges-e eltávolítani egy oldalt a PDF-dokumentum végéről az üres oldal hozzáadása helyett?
 
- V: Igen, eltávolíthat egy oldalt a PDF-dokumentum végéről a`RemoveAt()` módszere a`Pages`Gyűjtemény. Például az utolsó oldal eltávolításához használhatja`pdfDocument1.Pages.RemoveAt(pdfDocument1.Pages.Count);`.
+ V: Igen, eltávolíthat egy oldalt a PDF-dokumentum végéről a`RemoveAt()` módszere a`Pages`gyűjtemény. Például az utolsó oldal eltávolításához használhatja`pdfDocument1.Pages.RemoveAt(pdfDocument1.Pages.Count);`.

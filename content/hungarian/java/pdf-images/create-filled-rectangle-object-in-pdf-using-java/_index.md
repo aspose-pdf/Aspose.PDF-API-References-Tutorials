@@ -22,7 +22,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy a következő előfeltételek
 
 ## Az Aspose.PDF beállítása Java számára
 
-A kezdéshez le kell töltenie az Aspose.PDF for Java fájlt a webhelyről. Kovesd ezeket a lepeseket:
+A kezdéshez le kell töltenie az Aspose.PDF for Java fájlt a webhelyről. Kövesse az alábbi lépéseket:
 
 1.  Nyissa meg az Aspose.PDF for Java dokumentációt a címen[itt](https://reference.aspose.com/pdf/java/).
 
@@ -94,7 +94,7 @@ Az Aspose.PDF for Java egy Java könyvtár, amely lehetővé teszi a fejlesztők
 
 Az Aspose.PDF for Java telepítéséhez töltse le a könyvtárat az Aspose webhelyéről, és kövesse a dokumentációban található telepítési utasításokat.
 
-### Megváltoztathatom a kitöltött téglalap színét?
+### Meg tudom változtatni a kitöltött téglalap színét?
 
  Igen, testreszabhatja a kitöltött téglalap színét a háttérszín beállításával a`setBackgroundColor`módszert, ahogy az az oktatóanyagban is látható.
 

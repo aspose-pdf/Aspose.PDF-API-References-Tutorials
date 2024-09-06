@@ -1,43 +1,43 @@
 ---
-title: Zweryfikuj standard PDF UA
-linktitle: Zweryfikuj standard PDF UA
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak używać Aspose.PDF dla .NET do sprawdzania poprawności standardu PDF/UA przy użyciu kodu C#. Przewodnik krok po kroku.
+title: Sprawdź PDF UA Standard
+linktitle: Sprawdź PDF UA Standard
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak używać Aspose.PDF dla .NET do walidacji standardu PDF/UA przy użyciu kodu C#. Przewodnik krok po kroku.
 type: docs
 weight: 400
 url: /pl/net/programming-with-document/validatepdfuastandard/
 ---
-Aspose.PDF dla .NET to potężna biblioteka zapewniająca różne funkcje do pracy z dokumentami PDF. Jedną z jego funkcji jest możliwość sprawdzania poprawności dokumentów PDF pod kątem zgodności ze standardem PDF/UA. W tym artykule przedstawimy wskazówki krok po kroku dotyczące korzystania z Aspose.PDF dla .NET w celu uzyskania i sprawdzenia zgodności ze standardem PDF/UA przy użyciu kodu C#.
+Aspose.PDF dla .NET to potężna biblioteka, która oferuje różne funkcje do pracy z dokumentami PDF. Jedną z jej funkcji jest możliwość walidacji dokumentów PDF pod kątem zgodności ze standardem PDF/UA. W tym artykule przedstawimy wskazówki krok po kroku, jak używać Aspose.PDF dla .NET, aby uzyskać i zweryfikować zgodność ze standardem PDF/UA przy użyciu kodu C#.
 
-## Krok 1: Zdefiniowanie ścieżki katalogu dokumentu
+## Krok 1: Definiowanie ścieżki katalogu dokumentów
 
-Następnie musimy zdefiniować ścieżkę do katalogu, w którym znajduje się nasz dokument PDF. Można to zrobić dodając następujący fragment kodu:
+Następnie musimy zdefiniować ścieżkę do katalogu, w którym znajduje się nasz dokument PDF. Możesz to zrobić, dodając następujący fragment kodu:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Zastąp „TWOJ KATALOG DOKUMENTÓW” rzeczywistą ścieżką do katalogu dokumentów PDF.
+Zastąp „KATALOG DOKUMENTÓW” rzeczywistą ścieżką do katalogu dokumentów PDF.
 
 ## Krok 2: Otwieranie dokumentu PDF
 
-Po zdefiniowaniu ścieżki katalogu dokumentu możemy otworzyć nasz dokument PDF za pomocą następującego kodu:
+Po zdefiniowaniu ścieżki katalogu dokumentu możemy otworzyć nasz dokument PDF korzystając z następującego kodu:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
 ```
 
- Ten kod tworzy nowy`Document` obiekt z naszego pliku PDF znajdującego się we wskazanym katalogu.
+ Ten kod tworzy nowy`Document` obiekt z naszego pliku PDF znajdującego się w określonym katalogu.
 
-## Krok 3: Sprawdzanie poprawności pliku PDF pod kątem formatu PDF/UA
+## Krok 3: Walidacja pliku PDF pod kątem PDF/UA
 
-Teraz, gdy otworzyliśmy dokument PDF, możemy użyć Aspose.PDF dla .NET, aby sprawdzić zgodność dokumentu pod kątem zgodności z PDF/UA. Poniższy fragment kodu wykona zadanie:
+Teraz, gdy otworzyliśmy dokument PDF, możemy użyć Aspose.PDF dla .NET, aby sprawdzić zgodność dokumentu z PDF/UA. Poniższy fragment kodu wykona zadanie:
 
 ```csharp
 bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1);
 ```
 
- Ten kod sprawdza dokument PDF pod kątem zgodności ze standardem PDF/UA i generuje raport weryfikacyjny w określonym pliku XML. Wynik walidacji jest przechowywany w pliku`isValidPdfUa` zmienna, która jest typu danych boolowskich.
+ Ten kod weryfikuje dokument PDF pod kątem zgodności ze standardem PDF/UA i generuje raport walidacyjny w określonym pliku XML. Wynik walidacji jest przechowywany w`isValidPdfUa` zmienna, która jest typem danych boolowskich.
 
 ### Przykładowy kod źródłowy dla Get Validate PDFUAstandard przy użyciu Aspose.PDF dla .NET
 
@@ -48,38 +48,38 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Otwórz dokument
 Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
 
-// Sprawdź poprawność pliku PDF dla formatu PDF/UA
+// Sprawdź poprawność pliku PDF/UA
 bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1); 
 ```
 
 ## Wniosek
 
-Zapewnienie dostępności dokumentów PDF wszystkim użytkownikom, w tym osobom niepełnosprawnym, ma kluczowe znaczenie dla tworzenia włączających i przyjaznych dla użytkownika treści. Aspose.PDF dla .NET upraszcza proces sprawdzania poprawności dokumentów PDF pod kątem standardu PDF/UA, pomagając programistom tworzyć bardziej dostępne pliki PDF.
+Zapewnienie dostępności dokumentów PDF dla wszystkich użytkowników, w tym osób niepełnosprawnych, ma kluczowe znaczenie dla tworzenia treści inkluzywnych i przyjaznych dla użytkownika. Aspose.PDF dla .NET upraszcza proces walidacji dokumentów PDF pod kątem standardu PDF/UA, pomagając deweloperom tworzyć bardziej dostępne pliki PDF.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Co to jest standard PDF/UA i dlaczego ważne jest sprawdzanie zgodności dokumentów PDF z nim?
+#### P: Czym jest standard PDF/UA i dlaczego ważne jest, aby weryfikować pod kątem jego zgodności dokumenty PDF?
 
-Odp.: Standard PDF/UA, znany również jako „uniwersalna dostępność”, zapewnia dostępność dokumentów PDF osobom niepełnosprawnym, na przykład niedowidzącym. Sprawdzanie zgodności dokumentów PDF pod kątem zgodności ze standardem PDF/UA pomaga w tworzeniu dokumentów, które są włączające i dostępne dla szerszego grona odbiorców.
+A: Standard PDF/UA, znany również jako „Uniwersalna dostępność”, zapewnia, że dokumenty PDF są dostępne dla osób niepełnosprawnych, takich jak osoby z wadami wzroku. Walidacja dokumentów PDF pod kątem zgodności ze standardem PDF/UA pomaga w tworzeniu dokumentów, które są inkluzywne i dostępne dla szerszej publiczności.
 
-#### P: Jak zdefiniować ścieżkę katalogu dokumentów w kodzie C#?
+#### P: Jak zdefiniować ścieżkę katalogu dokumentu w kodzie C#?
 
-O: Aby zdefiniować ścieżkę do katalogu, w którym znajduje się dokument PDF, użyj następującego fragmentu kodu:
+A: Aby określić ścieżkę do katalogu, w którym znajduje się dokument PDF, użyj następującego fragmentu kodu:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Zastąp „KATALOG TWOJEGO DOKUMENTU” rzeczywistą ścieżką do katalogu zawierającego dokument PDF.
+Zastąp „KATALOG DOKUMENTÓW” rzeczywistą ścieżką do katalogu zawierającego dokument PDF.
 
-#### P: Czy mogę sprawdzić dokumenty PDF pod kątem innych standardów PDF, używając Aspose.PDF dla .NET?
+#### P: Czy mogę sprawdzać poprawność dokumentów PDF pod kątem zgodności z innymi standardami PDF za pomocą Aspose.PDF dla platformy .NET?
 
- Odp.: Tak, Aspose.PDF dla .NET zapewnia obsługę sprawdzania poprawności dokumentów PDF pod kątem różnych standardów PDF, w tym standardów PDF/A i PDF/X. Możesz określić żądany standard, korzystając z opcji`Validate` metoda.
+ A: Tak, Aspose.PDF dla .NET zapewnia obsługę walidacji dokumentów PDF względem różnych standardów PDF, w tym standardów PDF/A i PDF/X. Możesz określić żądany standard podczas korzystania z`Validate` metoda.
 
-#### P: Jak mogę sprawdzić, czy dokument PDF przeszedł weryfikację PDF/UA?
+#### P: Jak mogę sprawdzić, czy dokument PDF przeszedł walidację PDF/UA?
 
- Odp.: Po zadzwonieniu do`Validate` metoda, zmienna logiczna`isValidPdfUa` zapisze wynik walidacji. Jeżeli wartość`isValidPdfUa` Jest`true`, dokument PDF jest zgodny ze standardem PDF/UA; w przeciwnym razie tak nie jest.
+ A: Po zadzwonieniu`Validate` metoda, zmienna boolowska`isValidPdfUa` zapisze wynik walidacji. Jeśli wartość`isValidPdfUa` Jest`true`Dokument PDF jest zgodny ze standardem PDF/UA, w przeciwnym razie nie.
 
-#### P: Czy istnieją jakieś szczególne wymagania dotyczące dostępności w celu zapewnienia zgodności z formatem PDF/UA?
+#### P: Czy istnieją jakieś szczególne wymagania dotyczące dostępności w zakresie zgodności ze standardem PDF/UA?
 
-O: Tak, zgodność z formatem PDF/UA wymaga, aby dokumenty spełniały określone kryteria dostępności, takie jak zapewnianie tekstu alternatywnego dla obrazów, logiczna kolejność czytania, właściwa struktura dokumentu i odpowiedniki tekstowe dla treści nietekstowych.
+O: Tak, zgodność ze standardem PDF/UA wymaga, aby dokumenty spełniały określone kryteria dostępności, takie jak zapewnienie tekstu alternatywnego dla obrazów, logicznej kolejności czytania, właściwej struktury dokumentu i odpowiedników tekstowych dla treści nietekstowych.

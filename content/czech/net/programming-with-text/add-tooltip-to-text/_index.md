@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
  V kódu vyhledejte řádek, který říká`string dataDir = "YOUR DOCUMENT DIRECTORY";` a nahradit`"YOUR DOCUMENT DIRECTORY"` s cestou k adresáři, kde jsou uloženy vaše dokumenty.
 
 ## Krok 4: Vytvořte vzorový dokument s textem
- Vytvoř nový`Document` objekt a přidat stránky s textovými fragmenty. V poskytnutém kódu jsou do dokumentu přidány dva textové fragmenty s příslušným textem nápovědy.
+ Vytvořte nový`Document` objekt a přidat stránky s textovými fragmenty. V poskytnutém kódu jsou do dokumentu přidány dva textové fragmenty s příslušným textem nápovědy.
 
 ```csharp
 Document doc = new Document();
@@ -52,7 +52,7 @@ TextFragmentCollection textFragments = absorb.TextFragments;
 ```
 
 ## Krok 6: Přidejte k fragmentům textu nápovědu
- Procházejte extrahované části textu a na jejich pozicích vytvořte neviditelná tlačítka. Přiřaďte požadovaný text popisku k`AlternateName` vlastnictvím`ButtonField`. Přidejte pole tlačítka do formuláře dokumentu.
+ Procházejte extrahované části textu a na jejich pozicích vytvořte neviditelná tlačítka. Přiřaďte požadovaný text popisku k`AlternateName` majetek z`ButtonField`. Přidejte pole tlačítka do formuláře dokumentu.
 
 ```csharp
 foreach(TextFragment fragment in textFragments)
@@ -159,7 +159,7 @@ using Aspose.Pdf.Text;
 
  A: V kódu najděte řádek`string dataDir = "YOUR DOCUMENT DIRECTORY";` a nahradit`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou k vašemu adresáři dokumentů.
 
-#### Otázka: Jak mohu vytvořit ukázkový dokument s textem?
+#### Otázka: Jak mohu vytvořit vzorový dokument s textem?
 
  Odpověď: V kroku 4 vytvoříte nový`Document` objekt a přidat stránky s textovými fragmenty. Poskytnutý kód přidá dva textové fragmenty s příslušným textem popisku.
 
@@ -169,7 +169,7 @@ using Aspose.Pdf.Text;
 
 #### Otázka: Jak přidám popisky k fragmentům textu?
 
- Odpověď: V kroku 6 budete procházet extrahované části textu a na jejich pozicích vytvoříte neviditelná tlačítka. Text popisku je přiřazen k`AlternateName` vlastnictvím`ButtonField`který je přidán do formuláře dokumentu.
+ Odpověď: V kroku 6 budete procházet extrahované části textu a na jejich pozicích vytvoříte neviditelná tlačítka. Text popisku je přiřazen k`AlternateName` majetek z`ButtonField`který je přidán do formuláře dokumentu.
 
 #### Otázka: Jak zopakuji proces pro další fragmenty textu s dlouhými popisky?
 
@@ -181,4 +181,4 @@ Odpověď: U fragmentů textu s dlouhými popisky opakujte kroky 5 a 6. Podle to
 
 #### Otázka: Jaký je hlavní poznatek z tohoto tutoriálu?
 
-Odpověď: Podle tohoto kurzu jste se naučili, jak vylepšit dokument PDF přidáním popisků k textu pomocí Aspose.PDF for .NET. To může čtenářům poskytnout cenné dodatečné informace při interakci s obsahem PDF.
+Odpověď: Podle tohoto kurzu jste se naučili, jak vylepšit dokument PDF přidáním popisků k textu pomocí Aspose.PDF for .NET. To může poskytnout cenné další informace pro čtenáře při interakci s obsahem PDF.

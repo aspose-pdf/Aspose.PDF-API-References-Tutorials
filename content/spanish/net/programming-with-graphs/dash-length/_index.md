@@ -1,7 +1,7 @@
 ---
 title: Longitud del guión
 linktitle: Longitud del guión
-second_title: Aspose.PDF para referencia de API .NET
+second_title: Referencia de API de Aspose.PDF para .NET
 description: Aprenda a configurar la longitud de los guiones con Aspose.PDF para .NET. Guía paso a paso para personalizar patrones de guiones.
 type: docs
 weight: 70
@@ -9,37 +9,37 @@ url: /es/net/programming-with-graphs/dash-length/
 ---
 En este tutorial, lo guiaremos a través del siguiente código fuente de C# paso a paso para establecer la longitud de los guiones usando Aspose.PDF para .NET.
 
-Asegúrese de haber instalado la biblioteca Aspose.PDF y configurar su entorno de desarrollo antes de comenzar. También tener conocimientos básicos de programación en C#.
+Asegúrese de haber instalado la biblioteca Aspose.PDF y de haber configurado su entorno de desarrollo antes de comenzar. Además, debe tener conocimientos básicos de programación en C#.
 
 ## Paso 1: Configuración del directorio de documentos
 
-En el código fuente proporcionado, debe especificar el directorio donde desea guardar el archivo PDF resultante. Cambie la variable "dataDir" al directorio deseado.
+En el código fuente proporcionado, debe especificar el directorio en el que desea guardar el archivo PDF resultante. Cambie la variable "dataDir" al directorio deseado.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Paso 2: crear una instancia de un objeto de documento y agregar una página
+## Paso 2: Crear una instancia de un objeto de documento y agregar una página
 
-Creamos una instancia de la clase Documento y agregamos una página a este documento.
+Creamos una instancia de la clase Document y agregamos una página a este documento.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Paso 3: crear un objeto gráfico y agregarlo a la página
+## Paso 3: Crear un objeto gráfico y agregarlo a la página
 
-Creamos un objeto Graph con dimensiones específicas y lo agregamos a la colección de párrafos de la página.
+Creamos un objeto Gráfico con dimensiones especificadas y lo agregamos a la colección de párrafos de la página.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 page.Paragraphs.Add(canvas);
 ```
 
-## Paso 4: crear un objeto de línea y configurarlo
+## Paso 4: Creación de un objeto de línea y configuración
 
-Creamos un objeto Línea con las coordenadas especificadas y configuramos el color y longitud de los guiones.
+Creamos un objeto Línea con las coordenadas especificadas y configuramos el color y la longitud de los guiones.
 
 ```csharp
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
@@ -48,15 +48,15 @@ line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
 line.GraphInfo.DashPhase = 1;
 ```
 
-## Paso 5: agregar la línea al objeto gráfico
+## Paso 5: Agregar la línea al objeto gráfico
 
-Agregamos la línea a la colección de formas del objeto Graph.
+Agregamos la línea a la colección de formas del objeto Gráfico.
 
 ```csharp
 canvas.Shapes.Add(line);
 ```
 
-## Paso 6: guardar el archivo PDF resultante
+## Paso 6: Guardar el archivo PDF resultante
 
 Finalmente, guardamos el archivo PDF resultante con el nombre "DashLength_out.pdf" en el directorio especificado.
 
@@ -64,7 +64,7 @@ Finalmente, guardamos el archivo PDF resultante con el nombre "DashLength_out.pd
 doc.Save(dataDir + "DashLength_out.pdf");
 ```
 
-### Código fuente de muestra para Dash Longitud usando Aspose.PDF para .NET 
+### Código fuente de muestra para la longitud del guión utilizando Aspose.PDF para .NET 
 
 ```csharp
 
@@ -74,17 +74,17 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 // Agregar página a la colección de páginas del objeto Documento
 Page page = doc.Pages.Add();
-// Crear objeto de dibujo con ciertas dimensiones
+// Crear un objeto de dibujo con determinadas dimensiones
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
-// Agregar objeto de dibujo a la colección de párrafos de la instancia de página
+// Agregar objeto de dibujo a la colección de párrafos de una instancia de página
 page.Paragraphs.Add(canvas);
 // Crear objeto de línea
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
 // Establecer color para el objeto Línea
 line.GraphInfo.Color = Aspose.Pdf.Color.Red;
-// Especificar matriz de guiones para objeto de línea
+// Especificar matriz de guiones para el objeto de línea
 line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
-// Establecer la fase de guión para la instancia de Línea
+// Establezca la fase del guión para la instancia de línea
 line.GraphInfo.DashPhase = 1;
 // Agregar línea a la colección de formas del objeto de dibujo
 canvas.Shapes.Add(line);
@@ -97,30 +97,30 @@ Console.WriteLine("\nLength dashed successfully in black and white.\nFile saved 
 
 ## Conclusión
 
-En este tutorial, explicamos cómo configurar la longitud de los guiones usando Aspose.PDF para .NET. Ahora puede utilizar este conocimiento para crear líneas con patrones de guiones personalizados en sus archivos PDF.
+En este tutorial, explicamos cómo configurar la longitud de los guiones con Aspose.PDF para .NET. Ahora puede utilizar este conocimiento para crear líneas con patrones de guiones personalizados en sus archivos PDF.
 
 ## Preguntas frecuentes
 
 #### P: ¿Cuál es el propósito de este tutorial?
 
-R: El propósito de este tutorial es guiarlo a través del proceso de configurar la longitud de los guiones para las líneas usando Aspose.PDF para .NET. Aprenderá a crear líneas con patrones de guiones personalizados en sus archivos PDF.
+R: El objetivo de este tutorial es guiarlo a través del proceso de configuración de la longitud de los guiones para las líneas utilizando Aspose.PDF para .NET. Aprenderá a crear líneas con patrones de guiones personalizados en sus archivos PDF.
 
 #### P: ¿Qué requisitos previos se requieren antes de comenzar?
 
-R: Antes de comenzar, asegúrese de haber instalado la biblioteca Aspose.PDF y configurado su entorno de desarrollo. También se recomienda un conocimiento básico de la programación en C#.
+R: Antes de comenzar, asegúrese de haber instalado la biblioteca Aspose.PDF y de haber configurado su entorno de desarrollo. También se recomienda tener conocimientos básicos de programación en C#.
 
 #### P: ¿Cómo especifico el directorio para guardar el archivo PDF?
 
-R: Modifique la variable "dataDir" en el código fuente proporcionado para indicar el directorio donde desea guardar el archivo PDF resultante.
+A: Modifique la variable "dataDir" en el código fuente proporcionado para indicar el directorio donde desea guardar el archivo PDF resultante.
 
-#### P: ¿Cómo creo una línea con patrones de guiones personalizados?
+#### P: ¿Cómo puedo crear una línea con patrones de guiones personalizados?
 
- R: El tutorial demuestra la creación de un objeto Línea y la configuración de su color, matriz de guiones y fase de guión usando el`GraphInfo` objeto. Modifique estas configuraciones para lograr el patrón de guión deseado.
+ A: El tutorial demuestra cómo crear un objeto de Línea y configurar su color, matriz de trazos y fase de trazos usando el`GraphInfo` objeto. Modifique estos ajustes para lograr el patrón de trazos deseado.
 
 #### P: ¿Puedo personalizar el color de la línea?
 
- R: Sí, puedes personalizar el color de la línea configurando el`Color` propiedad de la`GraphInfo` objeto asociado con la Línea.
+ R: Sí, puedes personalizar el color de la línea configurando el`Color` propiedad de la`GraphInfo` objeto asociado a la Línea.
 
 #### P: ¿Cómo guardo el documento PDF después de configurar la longitud del guión?
 
- R: Después de configurar el objeto Línea con el patrón de guiones deseado, puede guardar el documento PDF resultante usando el`doc.Save(dataDir + "DashLength_out.pdf");` línea en el código fuente proporcionado.
+ A: Después de configurar el objeto Línea con el patrón de trazos deseado, puede guardar el documento PDF resultante utilizando el`doc.Save(dataDir + "DashLength_out.pdf");` línea en el código fuente proporcionado.

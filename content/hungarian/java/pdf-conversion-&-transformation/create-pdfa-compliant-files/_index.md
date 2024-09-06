@@ -41,7 +41,7 @@ Document pdfDocument = new Document();
 
 ## Tartalom hozzáadása a PDF-hez
 
-Különféle elemeket adhat hozzá a PDF-hez, például szöveget, képeket és táblázatokat. Íme egy példa a szöveg dokumentumhoz való hozzáadására:
+Különféle elemeket adhat hozzá a PDF-hez, beleértve a szöveget, képeket és táblázatokat. Íme egy példa a szöveg dokumentumhoz való hozzáadására:
 
 ```java
 import com.aspose.pdf.Page;
@@ -141,7 +141,7 @@ page.getAnnotations().add(link);
 
 ### Hogyan bonthatok ki szöveget egy PDF-dokumentumból az Aspose.PDF for Java segítségével?
 
- A PDF dokumentumból szöveget bonthat ki a`TextAbsorber` osztályt az Aspose.PDF biztosítja Java számára. Íme egy alapvető példa:
+ A PDF-dokumentumból szöveget bonthat ki a`TextAbsorber` osztályt az Aspose.PDF biztosítja Java számára. Íme egy alapvető példa:
 
 ```java
 import com.aspose.pdf.TextAbsorber;

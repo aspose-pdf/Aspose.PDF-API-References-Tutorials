@@ -169,8 +169,8 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### Q：如何為每個文字片段自訂替換文字？
 
-A：在循環中迭代`TextFragmentCollection`，您可以為每個自訂替換文本`TextFragment`分別透過分配不同的字串給`Text`財產。
+ A：在循環中迭代`TextFragmentCollection`，您可以為每個自訂替換文本`TextFragment`分別透過分配不同的字串給`Text`財產。
 
 #### Q：是否可以根據不區分大小寫的搜尋來取代文字？
 
-答：是的，您可以透過修改正規表示式模式來執行不區分大小寫的搜尋。例如，您可以使用`"text"`代替`"text"`在裡面`TextFragmentAbsorber`構造函數。
+答：是的，您可以透過修改正規表示式模式來執行不區分大小寫的搜尋。例如，您可以使用`"text"`而不是`"text"`在`TextFragmentAbsorber`構造函數。

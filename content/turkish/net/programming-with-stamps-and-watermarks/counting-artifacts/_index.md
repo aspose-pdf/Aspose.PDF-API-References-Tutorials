@@ -1,61 +1,61 @@
 ---
-title: PDF Dosyasındaki Yapıları Sayma
-linktitle: PDF Dosyasındaki Yapıları Sayma
-second_title: .NET API Referansı için Aspose.PDF
+title: PDF Dosyasında Eserlerin Sayımı
+linktitle: PDF Dosyasında Eserlerin Sayımı
+second_title: Aspose.PDF for .NET API Referansı
 description: Aspose.PDF for .NET ile PDF dosyasındaki filigranları nasıl kolayca sayacağınızı öğrenin.
 type: docs
 weight: 60
 url: /tr/net/programming-with-stamps-and-watermarks/counting-artifacts/
 ---
-Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasındaki yapıtların nasıl sayılacağı konusunda size adım adım yol göstereceğiz. PDF dosyasının belirli bir sayfasındaki "filigran" yapılarının sayısını saymak için sağlanan C# kaynak kodunu nasıl kullanacağınızı size göstereceğiz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak PDF dosyasındaki eserleri nasıl sayacağınızı adım adım göstereceğiz. PDF dosyasının belirli bir sayfasındaki "filigran" eserlerinin sayısını saymak için sağlanan C# kaynak kodunu nasıl kullanacağınızı göstereceğiz.
 
-## 1. Adım: Ortamı ayarlama
+## Adım 1: Ortamı kurma
 
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
 - Kurulu bir .NET geliştirme ortamı.
-- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
+- .NET için Aspose.PDF kütüphanesi indirildi ve projenizde referans olarak kullanıldı.
 
 ## Adım 2: PDF belgesini yükleme
 
-İlk adım mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
+İlk adım, mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "watermark.pdf");
 ```
 
-"BELGELERİNİZ DİZİNİ"ni, PDF belgenizin bulunduğu dizine giden gerçek yolla değiştirdiğinizden emin olun.
+"BELGELERİNİZ DİZİNİ" ifadesini PDF belgenizin bulunduğu dizinin gerçek yoluyla değiştirdiğinizden emin olun.
 
-## 3. Adım: Yapıları sayın
+## Adım 3: Eserleri sayın
 
-Artık PDF belgesini yüklediğinize göre, belgenin belirli bir sayfasındaki "filigran" türü yapıtları sayabilirsiniz. İşte nasıl:
+Artık PDF belgesini yüklediğinize göre, belgenin belirli bir sayfasındaki "filigran" türü eserleri sayabilirsiniz. İşte nasıl:
 
 ```csharp
 // Sayacı başlat
 int count = 0;
 
-// Tüm ilk sayfa yapıtları arasında geçiş yapın
+// Tüm ilk sayfa eserlerini dolaş
 foreach(Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
-     //Yapıt alt türü "filigran" ise sayacı artırın
+     //Eser alt türü "filigran" ise, sayacı artırın
      if (artifact.Subtype == Artifact.ArtifactSubtype.Watermark)
          count++;
 }
 
-// "Filigran" tipi yapıtların sayısını görüntüleme
+// "Filigran" türü eserlerin sayısını göster
 Console.WriteLine("The page contains " + count + " watermarks");
 ```
 
-Yukarıdaki kod, PDF belgesinin ilk sayfasındaki tüm yapılar arasında geçiş yapar ve karşılaşılan her "filigran" tipi yapı için sayacı artırır.
+Yukarıdaki kod, PDF belgesinin ilk sayfasındaki tüm eserleri dolaşır ve karşılaşılan her "filigran" türü eser için sayacı artırır.
 
-### Aspose.PDF for .NET kullanarak Yapıları Saymak için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Eserleri Sayma için örnek kaynak kodu 
 ```csharp
 
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Belgeyi aç
@@ -64,7 +64,7 @@ Document pdfDocument = new Document( dataDir +  "watermark.pdf");
 int count = 0;
 foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
-	// Yapı türü filigran ise sayacı oluşturun
+	// Eğer eser türü filigran ise, sayacı artırın
 	if (artifact.Subtype == Artifact.ArtifactSubtype.Watermark) count++;
 }
 Console.WriteLine("Page contains " + count + " watermarks");
@@ -73,42 +73,42 @@ Console.WriteLine("Page contains " + count + " watermarks");
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF belgesindeki "filigran" yapıtlarını nasıl sayacağınızı öğrendiniz. Artık bu bilgiyi, PDF belgelerinizdeki yapılar üzerinde belirli analizler ve işlemler gerçekleştirmek için kullanabilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesindeki "filigran" eserlerini nasıl sayacağınızı öğrendiniz. Artık bu bilgiyi kullanarak PDF belgelerinizdeki eserler üzerinde belirli analizler ve işlemler gerçekleştirebilirsiniz.
 
-### PDF dosyasındaki yapıları saymaya ilişkin SSS'ler
+### PDF dosyasındaki eserleri saymaya ilişkin SSS
 
-#### S: Bir PDF belgesindeki yapılar nelerdir ve bunları neden saymam gerekiyor?
+#### S: PDF belgesindeki eserler nelerdir ve bunları neden saymam gerekir?
 
-C: PDF belgesindeki yapılar, belgenin içeriğini veya görünümünü doğrudan etkilemeyen ancak erişilebilirlik veya meta veriler gibi belirli amaçlarla dahil edilen öğelerdir. Yapıları saymak, PDF'deki filigranlar, ek açıklamalar veya gizli içerik gibi belirli öğeleri tanımlamanıza ve analiz etmenize yardımcı olabilir.
+A: PDF belgesindeki eserler, belgenin içeriğini veya görünümünü doğrudan etkilemeyen ancak erişilebilirlik veya meta veri gibi belirli amaçlar için eklenen öğelerdir. Eserleri saymak, filigranlar, açıklamalar veya gizli içerik gibi bir PDF içindeki belirli öğeleri tanımlamanıza ve analiz etmenize yardımcı olabilir.
 
-#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinde sayılacak yapıtların türünü nasıl belirlerim?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinde sayılacak yapıt türlerini nasıl belirlerim?
 
- C: Sağlanan C# kaynak kodu, bir PDF belgesinin belirli bir sayfasındaki "filigran" yapıtlarının nasıl sayılacağını gösterir. Farklı türlerdeki yapıtları saymak için kodu değiştirerek değiştirebilirsiniz.`ArtifactSubtype` "Ek Açıklama", "Damga" veya "Bağlantı" gibi istenen alt türle karşılaştırma.
+ A: Sağlanan C# kaynak kodu, bir PDF belgesinin belirli bir sayfasındaki "filigran" yapıtlarının nasıl sayılacağını gösterir. Kodu, farklı türlerdeki yapıtları sayacak şekilde değiştirerek değiştirebilirsiniz.`ArtifactSubtype` "Açıklama", "Damga" veya "Bağlantı" gibi istenen alt türe kıyaslama.
 
-#### S: Bir PDF belgesinin birden çok sayfasındaki yapıları sayabilir miyim?
+#### S: Bir PDF belgesinin birden fazla sayfasındaki eserleri sayabilir miyim?
 
- C: Evet, kodu, bir PDF belgesinin birden fazla sayfasındaki yapılar arasında döngü oluşturacak şekilde genişletebilirsiniz.`pdfDocument.Pages` her sayfada eserlerin toplanması ve sayılması.
+ A: Evet, kodu, PDF belgesinin birden fazla sayfasındaki eserler arasında yineleme yaparak genişletebilirsiniz.`pdfDocument.Pages` her sayfadaki eserlerin toplanması ve sayılması.
 
-#### S: Sayılan eser bilgisini daha sonraki işlemler için nasıl kullanabilirim?
+#### S: Sayılan eser bilgilerini daha ileri işlemler için nasıl kullanabilirim?
 
-C: İstenilen yapıları saydıktan sonra bilgileri, rapor oluşturmak, hedeflenen değişiklikleri gerçekleştirmek veya PDF belgesindeki belirli öğelerin varlığını doğrulamak gibi çeşitli amaçlar için kullanabilirsiniz.
+A: İstediğiniz eserleri saydıktan sonra, raporlar oluşturmak, hedeflenen değişiklikleri gerçekleştirmek veya PDF belgesindeki belirli öğelerin varlığını doğrulamak gibi çeşitli amaçlar için bilgileri kullanabilirsiniz.
 
-#### S: Sayım sürecini, yapıtların ek niteliklerini veya koşullarını dikkate alacak şekilde özelleştirebilir miyim?
+#### S: Eserlerin ek niteliklerini veya koşullarını dikkate alacak şekilde sayım sürecini özelleştirebilir miyim?
 
-C: Kesinlikle, döngüye daha fazla koşullu kontrol ekleyerek sayma sürecini ek nitelikleri veya koşulları dikkate alacak şekilde özelleştirebilirsiniz. Örneğin, yapıt alt türü ve renginin birleşimine dayalı olarak yapıtları sayabilirsiniz.
+A: Kesinlikle, döngüye daha fazla koşullu kontrol ekleyerek ek nitelikleri veya koşulları dikkate almak için sayma sürecini özelleştirebilirsiniz. Örneğin, eserleri eser alt türü ve renk kombinasyonuna göre sayabilirsiniz.
 
-#### S: PDF belgem yalnızca filigranlar değil birden fazla türde yapı içeriyorsa ne olur?
+#### S: PDF belgem yalnızca filigran değil, birden fazla türde eser içeriyorsa ne olur?
 
- C: Öğretici filigran yapıtlarını saymaya odaklanırken, kodu, farklı türdeki yapıtları sayacak şekilde uyarlayabilirsiniz.`ArtifactSubtype` saymak istediğiniz istenen alt türle karşılaştırma.
+ A: Eğitim filigran eserlerini saymaya odaklansa da, farklı türdeki eserleri saymak için kodu ayarlayarak uyarlayabilirsiniz.`ArtifactSubtype` Saymak istediğiniz istenilen alt tipe göre karşılaştırma.
 
-#### S: Bu bilgiyi, büyük miktarda PDF belgesi için yapıt sayımı otomatikleştirmek amacıyla nasıl uygulayabilirim?
+#### S: Bu bilgiyi, büyük bir PDF belgesi grubu için eser sayımını otomatikleştirmek amacıyla nasıl uygulayabilirim?
 
-C: PDF belgelerinin bir listesini yineleyen ve her belge için yapı sayma işlemini gerçekleştiren, raporlar üreten veya analiz için sayıları saklayan bir komut dosyası veya program oluşturabilirsiniz.
+A: PDF belgeleri listesinde gezinip her belge için eser sayma işlemini gerçekleştiren, raporlar üreten veya sayımları analiz için depolayan bir betik veya program oluşturabilirsiniz.
 
-#### S: Belirli bir renk veya boyuttaki eserler gibi belirli niteliklere sahip eserleri saymak mümkün müdür?
+#### S: Belirli bir renk veya boyuttaki eserler gibi, belirli niteliklere sahip eserleri saymak mümkün müdür?
 
-C: Evet, belirli niteliklere sahip yapıtları saymak için kodu geliştirebilirsiniz. Döngü içinde, yapıların rengi, boyutu veya konumu gibi nitelikleri dikkate almak için ek koşullu kontroller ekleyebilirsiniz.
+A: Evet, kodu belirli niteliklere sahip eserleri sayacak şekilde geliştirebilirsiniz. Döngü içinde, eserlerin rengi, boyutu veya konumu gibi nitelikleri dikkate almak için ek koşullu kontroller ekleyebilirsiniz.
 
-#### S: Bu yaklaşımı ek açıklamalar veya metin nesneleri gibi diğer türdeki öğeleri saymak için kullanabilir miyim?
+#### S: Bu yaklaşımı, açıklamalar veya metin nesneleri gibi diğer öğe türlerini saymak için kullanabilir miyim?
 
-C: Evet, sağlanan kaynak kodunu, döngü ve koşul kontrollerini uygun şekilde değiştirerek, ek açıklamalar veya metin nesneleri gibi diğer öğe türlerini sayacak şekilde uyarlayabilirsiniz.
+C: Evet, döngüyü ve koşullu kontrolleri buna göre değiştirerek, açıklamalar veya metin nesneleri gibi diğer türdeki öğeleri saymak için sağlanan kaynak kodunu uyarlayabilirsiniz.

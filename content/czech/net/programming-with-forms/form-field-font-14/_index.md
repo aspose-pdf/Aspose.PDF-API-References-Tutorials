@@ -101,4 +101,4 @@ Odpověď: Ano, můžete změnit barvu písma pro pole formuláře pomocí Aspos
 
 #### Otázka: Jak mohu zarovnat text v poli formuláře?
 
- Odpověď: Chcete-li zarovnat text v poli formuláře, můžete použít`Multiline`vlastnost pole formuláře a nastavte ji na true. Tato vlastnost umožňuje víceřádkový text v poli formuláře, což vám umožňuje řídit zarovnání textu pomocí zalomení řádků a návratů vozíku.
+ A: Chcete-li zarovnat text v poli formuláře, můžete použít`Multiline`vlastnost pole formuláře a nastavte ji na hodnotu true. Tato vlastnost umožňuje víceřádkový text v poli formuláře, což vám umožňuje řídit zarovnání textu pomocí zalomení řádků a návratů vozíku.

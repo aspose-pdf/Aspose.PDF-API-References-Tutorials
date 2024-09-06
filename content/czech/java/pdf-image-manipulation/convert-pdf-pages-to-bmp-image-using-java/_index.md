@@ -18,7 +18,7 @@ Než se pustíme do implementace, ujistěte se, že máte splněny následujíc�
 
 - Java Development Kit (JDK) nainstalovaný ve vašem systému.
 - Vývojové prostředí nastavené pro programování v Javě.
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Nastavení vašeho projektu
 
@@ -85,7 +85,7 @@ V tomto článku jsme prozkoumali, jak převést stránky PDF na obrázky BMP po
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
- Chcete-li nainstalovat Aspose.PDF pro Java, stáhněte si knihovnu z[tady](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci uvedených v dokumentaci.
+ Chcete-li nainstalovat Aspose.PDF pro Java, stáhněte si knihovnu z[zde](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci uvedených v dokumentaci.
 
 ### Mohu převést více stránek PDF na obrázky BMP najednou?
 

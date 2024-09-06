@@ -1,19 +1,19 @@
 ---
 title: Wstaw podział strony w pliku PDF
 linktitle: Wstaw podział strony w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak wstawić podział strony w pliku PDF przy użyciu Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak wstawić podział strony w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 110
 url: /pl/net/programming-with-tables/insert-page-break/
 ---
-W tym samouczku dowiemy się, jak wstawić podział strony w pliku PDF przy użyciu Aspose.PDF dla .NET. Krok po kroku wyjaśnimy kod źródłowy w języku C#. Pod koniec tego samouczka dowiesz się, jak dodać podział strony po określonej liczbie wierszy w tabeli dokumentu PDF. Zaczynajmy!
+W tym samouczku nauczymy się, jak wstawić podział strony w pliku PDF za pomocą Aspose.PDF dla .NET. Wyjaśnimy kod źródłowy w C# krok po kroku. Na końcu tego samouczka dowiesz się, jak dodać podział strony po określonej liczbie wierszy w tabeli dokumentu PDF. Zaczynajmy!
 
 ## Krok 1: Konfigurowanie środowiska
 Upewnij się, że skonfigurowałeś środowisko programistyczne C# za pomocą Aspose.PDF dla .NET. Dodaj odwołanie do biblioteki i zaimportuj niezbędne przestrzenie nazw.
 
 ## Krok 2: Tworzenie dokumentu i tabeli
-Tworzymy nową instancję Document i dodajemy stronę do tego dokumentu. Następnie tworzymy instancję Table, która będzie reprezentować naszą tabelę w dokumencie PDF. Definiujemy również style obramowania stołu.
+Tworzymy nową instancję Document i dodajemy stronę do tego dokumentu. Następnie tworzymy instancję Table, aby reprezentować naszą tabelę w dokumencie PDF. Definiujemy również style obramowania dla tabeli.
 
 ```csharp
 Document doc = new Document();
@@ -26,7 +26,7 @@ tab. ColumnWidths = "100 100";
 ```
 
 ## Krok 3: Dodaj wiersze do tabeli
-Używamy pętli, aby dodać 200 wierszy do tablicy. Dla każdego wiersza tworzymy instancję Row i dodajemy dwie komórki z zawartością tekstową.
+Używamy pętli, aby dodać 200 wierszy do tablicy. Dla każdego wiersza tworzymy wystąpienie Row i dodajemy dwie komórki z zawartością tekstową.
 
 ```csharp
 for (int counter = 0; counter <= 200; counter++)
@@ -42,14 +42,14 @@ for (int counter = 0; counter <= 200; counter++)
      cell2.Paragraphs.Add(new TextFragment("Cell " + counter + ", 1"));
      row. Cells. Add(cell2);
     
-     // Po dodaniu 10 linii wstawiamy nowy podział strony
+     // Po dodaniu 10 wierszy wstawiamy nowy podział strony
      if (counter % 10 == 0 && counter != 0)
          row. IsInNewPage = true;
 }
 ```
 
-## Krok 4: Dodanie tabeli do dokumentu
-Dodajemy tabelę do kolekcji akapitów na stronie dokumentu.
+## Krok 4: Dodawanie tabeli do dokumentu
+Dodajemy tabelę do zbioru akapitów na stronie dokumentu.
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(tab);
@@ -62,23 +62,23 @@ Zapisujemy dokument PDF z wstawionym podziałem strony.
 doc.Save(dataDir + "InsertPageBreak_out.pdf");
 ```
 
-### Przykładowy kod źródłowy dla wstawiania podziału strony przy użyciu Aspose.PDF dla .NET
+### Przykładowy kod źródłowy dla funkcji Wstaw podział strony przy użyciu Aspose.PDF dla .NET
 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Utwórz instancję dokumentu
+// Utwórz wystąpienie dokumentu
 Document doc = new Document();
-// Dodaj stronę do kolekcji stron pliku PDF
+// Dodaj stronę do zbioru stron pliku PDF
 doc.Pages.Add();
 // Utwórz instancję tabeli
 Aspose.Pdf.Table tab = new Aspose.Pdf.Table();
-// Ustaw styl obramowania stołu
+// Ustaw styl obramowania dla tabeli
 tab.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Red);
-// Ustaw domyślny styl obramowania tabeli z kolorem obramowania na Czerwony
+// Ustaw domyślny styl obramowania dla tabeli z kolorem obramowania jako czerwony
 tab.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Red);
-// Określ szerokość kolumn tabeli
+// Określ szerokość kolumny tabeli
 tab.ColumnWidths = "100 100";
 // Utwórz pętlę, aby dodać 200 wierszy do tabeli
 for (int counter = 0; counter <= 200; counter++)
@@ -93,7 +93,7 @@ for (int counter = 0; counter <= 200; counter++)
 	// Po dodaniu 10 wierszy wyrenderuj nowy wiersz na nowej stronie
 	if (counter % 10 == 0 && counter != 0) row.IsInNewPage = true;
 }
-// Dodaj tabelę do kolekcji akapitów pliku PDF
+// Dodaj tabelę do zbioru akapitów pliku PDF
 doc.Pages[1].Paragraphs.Add(tab);
 
 dataDir = dataDir + "InsertPageBreak_out.pdf";
@@ -104,31 +104,31 @@ Console.WriteLine("\nPage break inserted successfully.\nFile saved at " + dataDi
 ```
 
 ## Wniosek
-W tym samouczku nauczyliśmy się, jak wstawić podział strony w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Możesz skorzystać z tego przewodnika krok po kroku, aby dodać podział strony po określonej liczbie wierszy w tabeli w dokumencie PDF przy użyciu języka C#.
+W tym samouczku nauczyliśmy się, jak wstawić podział strony w dokumencie PDF za pomocą Aspose.PDF dla .NET. Możesz użyć tego przewodnika krok po kroku, aby dodać podział strony po określonej liczbie wierszy w tabeli w dokumencie PDF za pomocą C#.
 
 ### Często zadawane pytania dotyczące wstawiania podziału strony w pliku PDF
 
-#### P: Jak mogę zmienić rozmiar strony dla nowych stron utworzonych po podziale strony?
+#### P: Jak mogę zmienić rozmiar strony dla nowych stron tworzonych po podziale strony?
 
- O: Aby zmienić rozmiar strony dla nowych stron utworzonych po podziale strony, możesz ustawić opcję`PageSize` własność`Page` obiekt. Na przykład możesz użyć poniższego kodu, aby ustawić rozmiar strony na A4:
+ A: Aby zmienić rozmiar strony dla nowych stron tworzonych po podziale strony, możesz ustawić`PageSize` własność`Page` obiekt. Na przykład możesz użyć następującego kodu, aby ustawić rozmiar strony na A4:
 
 ```csharp
 // Ustaw rozmiar strony na A4
 doc.Pages[1].SetPageSize(PageSize.A4);
 ```
 
-#### P: Czy mogę kontrolować marginesy nowej strony po podziale strony?
+#### P: Czy mogę kontrolować marginesy nowych stron po ich podziale?
 
- O: Tak, możesz kontrolować marginesy nowej strony po podziale strony. Użyj`Margin` własność`Page` obiekt, aby ustawić marginesy strony. Na przykład, aby ustawić wszystkie marginesy na 10 punktów, możesz użyć następującego kodu:
+ A: Tak, możesz kontrolować marginesy strony dla nowych stron po podziale strony. Użyj`Margin` własność`Page` obiekt do ustawienia marginesów strony. Na przykład, aby ustawić wszystkie marginesy na 10 punktów, możesz użyć następującego kodu:
 
 ```csharp
 // Ustaw wszystkie marginesy na 10 punktów
 doc.Pages[1].Margin = new MarginInfo(10, 10, 10, 10);
 ```
 
-#### P: Czy można dodać nagłówki i stopki do nowych stron po podziale strony?
+#### P: Czy można dodawać nagłówki i stopki do nowych stron po podziale strony?
 
- Odp.: Tak, możesz dodawać nagłówki i stopki do nowych stron po podziale strony. Użyj`Page.Header` I`Page.Footer` właściwości, aby dodać treść do sekcji nagłówka i stopki strony. Na przykład:
+ A: Tak, możesz dodać nagłówki i stopki do nowych stron po podziale strony. Użyj`Page.Header` I`Page.Footer` właściwości, aby dodać zawartość do sekcji nagłówka i stopki strony. Na przykład:
 
 ```csharp
 // Dodaj nagłówek do nowych stron
@@ -146,10 +146,10 @@ doc.Pages[1].Footer = new HeaderFooter()
 };
 ```
 
-#### P: Czy mogę wstawić podziały stron w określonych miejscach, poza określoną liczbą wierszy?
+#### P: Czy mogę wstawiać podziały stron w określonych miejscach, a nie po określonej liczbie wierszy?
 
- Odp.: Tak, możesz wstawiać podziały stron w określonych miejscach, poza określoną liczbą wierszy. Możesz ustawić`IsInNewPage` właściwość wiersza do`true` aby zmusić tabelę do rozpoczęcia nowej strony po tym wierszu.
+ A: Tak, możesz wstawiać podziały stron w określonych miejscach, a nie po określonej liczbie wierszy. Możesz ustawić`IsInNewPage` właściwość wiersza do`true` aby wymusić rozpoczęcie tabeli od nowej strony po tym wierszu.
 
-#### P: Jak mogę dostosować zachowanie podziału strony w zależności od wysokości treści?
+#### P: W jaki sposób mogę dostosować zachowanie podziału strony zależnie od wysokości treści?
 
-Odp.: Możesz użyć`IsBroken` właściwość tabeli, aby włączyć lub wyłączyć automatyczne dzielenie wierszy na stronach. Po ustawieniu na`true`umożliwia dzielenie wierszy na stronach na podstawie wysokości zawartości.
+ A: Możesz użyć`IsBroken` właściwość tabeli, aby włączyć lub wyłączyć automatyczne dzielenie wierszy na stronach. Gdy ustawione na`true`, umożliwia podział wierszy na strony na podstawie wysokości zawartości.

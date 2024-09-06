@@ -1,8 +1,8 @@
 ---
-title: Kontrolowanie kolejności Z prostokąta w formacie PDF za pomocą języka Java
-linktitle: Kontrolowanie kolejności Z prostokąta w formacie PDF za pomocą języka Java
-second_title: Aspose.PDF Interfejs API przetwarzania plików Java w formacie Java
-description: Dowiedz się, jak kontrolować kolejność Z prostokątów w plikach PDF za pomocą języka Java przy użyciu Aspose.PDF dla języka Java. Przewodnik krok po kroku dotyczący precyzyjnej manipulacji plikami PDF.
+title: Sterowanie kolejnością Z prostokąta w PDF za pomocą Java
+linktitle: Sterowanie kolejnością Z prostokąta w PDF za pomocą Java
+second_title: Aspose.PDF Java PDF Processing API
+description: Dowiedz się, jak kontrolować kolejność prostokątów w plikach PDF za pomocą języka Java, używając Aspose.PDF dla języka Java. Przewodnik krok po kroku do precyzyjnej manipulacji plikami PDF.
 type: docs
 weight: 11
 url: /pl/java/pdf-images/controlling-z-order-of-rectangle-in-pdf-with-java/
@@ -10,38 +10,38 @@ url: /pl/java/pdf-images/controlling-z-order-of-rectangle-in-pdf-with-java/
 
 ## Wstęp
 
-W świecie manipulacji plikami PDF zarządzanie kolejnością Z elementów ma kluczowe znaczenie, jeśli chcesz kontrolować widoczność i położenie obiektów w dokumencie PDF. W tym artykule zagłębimy się w sztukę kontrolowania kolejności Z prostokątów w pliku PDF przy użyciu Aspose.PDF dla języka Java, potężnego interfejsu API języka Java do pracy z plikami PDF.
+W świecie manipulacji plikami PDF zarządzanie kolejnością elementów w osi Z jest kluczowe, gdy chcesz kontrolować widoczność i pozycjonowanie obiektów w dokumencie PDF. Ten artykuł zagłębi się w sztukę kontrolowania kolejności prostokątów w osi Z w pliku PDF przy użyciu Aspose.PDF for Java, potężnego interfejsu API Java do pracy z plikami PDF.
 
 ## Zrozumienie kolejności Z w plikach PDF
 
-Zanim zagłębimy się w szczegóły techniczne, przyjrzyjmy się koncepcji kolejności Z w plikach PDF. Kolejność Z odnosi się do głębokości lub warstw obiektów graficznych na stronie PDF. Obiekty o wyższej wartości rzędu Z są wyświetlane przed obiektami o niższych wartościach. Koncepcja ta jest podobna do warstw w oprogramowaniu do edycji obrazów.
+Zanim zagłębimy się w szczegóły techniczne, zapoznajmy się z koncepcją kolejności Z w plikach PDF. Kolejność Z odnosi się do głębokości lub warstwowania obiektów graficznych na stronie PDF. Obiekty o wyższej wartości kolejności Z są wyświetlane przed obiektami o niższych wartościach. Ta koncepcja jest podobna do warstw w oprogramowaniu do edycji obrazów.
 
-## Kontrolowanie kolejności Z w plikach PDF
+## Sterowanie kolejnością Z w plikach PDF
 
-Kontrolowanie kolejności Z elementów w pliku PDF jest niezbędne w różnych przypadkach użycia. Możesz na przykład umieścić znak wodny za główną treścią, upewnić się, że określone adnotacje są zawsze widoczne lub ułożyć elementy graficzne w określonej kolejności, aby zapewnić lepszą prezentację.
+Kontrolowanie kolejności elementów w pliku PDF jest niezbędne w różnych przypadkach użycia. Na przykład możesz chcieć umieścić znak wodny za główną treścią, upewnić się, że pewne adnotacje są zawsze widoczne lub ułożyć elementy graficzne w określonej kolejności, aby uzyskać lepszą prezentację.
 
 ## Ustawianie kolejności Z przy użyciu Aspose.PDF dla Java
 
-Aby uzyskać precyzyjną kontrolę nad kolejnością Z prostokątów w pliku PDF przy użyciu Aspose.PDF dla Java, wykonaj następujące kroki:
+Aby uzyskać precyzyjną kontrolę nad kolejnością prostokątów w pliku PDF przy użyciu Aspose.PDF dla Java, wykonaj następujące kroki:
 
-## Warunki wstępne
+## Wymagania wstępne
 
-Zanim zaczniesz, upewnij się, że masz następujące elementy:
+Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
 
-- Skonfigurowano środowisko programistyczne Java.
--  Zainstalowana biblioteka Aspose.PDF dla Java. Można go pobrać z[Tutaj](https://releases.aspose.com/pdf/java/).
+- Konfiguracja środowiska programistycznego Java.
+-  Aspose.PDF dla biblioteki Java zainstalowanej. Możesz ją pobrać z[Tutaj](https://releases.aspose.com/pdf/java/).
 
 ## Przewodnik krok po kroku
 
-Zagłębmy się w praktyczne kroki kontrolowania kolejności Z prostokątów w pliku PDF przy użyciu Aspose.PDF dla Java:
+Przyjrzyjmy się praktycznym krokom kontrolowania kolejności prostokątów w pliku PDF przy użyciu Aspose.PDF dla języka Java:
 
 ### Krok 1: Utwórz nowy projekt Java
 
-Rozpocznij od utworzenia nowego projektu Java w swoim ulubionym środowisku IDE.
+Zacznij od utworzenia nowego projektu Java w swoim ulubionym środowisku IDE.
 
-### Krok 2: Dodaj Aspose.PDF do biblioteki Java
+### Krok 2: Dodaj Aspose.PDF dla biblioteki Java
 
-Dodaj bibliotekę Aspose.PDF for Java do zależności swojego projektu. Możesz to zrobić, dołączając pobrany wcześniej plik JAR.
+Dodaj bibliotekę Aspose.PDF for Java do zależności swojego projektu. Możesz to zrobić, dołączając plik JAR, który pobrałeś wcześniej.
 
 ### Krok 3: Zainicjuj dokument PDF
 
@@ -53,7 +53,7 @@ com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document();
 ### Krok 4: Utwórz prostokąty
 
 ```java
-// Twórz prostokąty o różnych wartościach kolejności Z
+// Utwórz prostokąty z różnymi wartościami kolejności Z
 com.aspose.pdf.Page page = pdfDocument.getPages().get_Item(1);
 com.aspose.pdf.Rectangle rect1 = new com.aspose.pdf.Rectangle(100, 100, 200, 200);
 com.aspose.pdf.Rectangle rect2 = new com.aspose.pdf.Rectangle(150, 150, 250, 250);
@@ -76,30 +76,30 @@ pdfDocument.save("output.pdf");
 
 ### Krok 6: Uruchom kod
 
-Wykonaj kod Java, a wygeneruje plik PDF z prostokątami ułożonymi w kolejności Z.
+Uruchom kod Java, a wygeneruje on plik PDF z prostokątami ułożonymi według kolejności na osi Z.
 
 ## Wniosek
 
-W tym artykule zbadaliśmy znaczenie kontrolowania kolejności Z prostokątów w dokumentach PDF i udostępniliśmy przewodnik krok po kroku dotyczący korzystania z Aspose.PDF dla Java. Teraz możesz bezpiecznie zarządzać widocznością i położeniem elementów graficznych w plikach PDF.
+W tym artykule zbadaliśmy znaczenie kontrolowania kolejności prostokątów w osi Z w dokumentach PDF i przedstawiliśmy przewodnik krok po kroku dotyczący korzystania z Aspose.PDF dla języka Java. Teraz możesz pewnie zarządzać widocznością i pozycjonowaniem elementów graficznych w swoich plikach PDF.
 
-## Często zadawane pytania
+## Najczęściej zadawane pytania
 
 ### Jak zainstalować Aspose.PDF dla Java?
 
-Aby zainstalować Aspose.PDF dla Java, możesz pobrać bibliotekę z[Tutaj](https://releases.aspose.com/pdf/java/) i dołącz plik JAR do zależności projektu Java.
+Aby zainstalować Aspose.PDF dla Java, możesz pobrać bibliotekę ze strony[Tutaj](https://releases.aspose.com/pdf/java/) i dołącz plik JAR do zależności swojego projektu Java.
 
-### Czy mogę kontrolować kolejność Z innych elementów PDF oprócz prostokątów?
+### Czy mogę kontrolować kolejność wyświetlania innych elementów PDF oprócz prostokątów?
 
-Tak, możesz kontrolować kolejność Z różnych elementów PDF, w tym tekstu, obrazów i adnotacji, używając Aspose.PDF dla Java.
+Tak, możesz kontrolować kolejność wyświetlania różnych elementów PDF, w tym tekstu, obrazów i adnotacji, korzystając z Aspose.PDF dla Java.
 
-### Czy Aspose.PDF dla Java obsługuje inne zadania manipulacji plikami PDF?
+### Czy Aspose.PDF for Java obsługuje inne zadania związane z edycją plików PDF?
 
-Absolutnie! Aspose.PDF dla Java zapewnia szeroką gamę funkcji do manipulacji plikami PDF, takich jak wyodrębnianie tekstu, konwersja dokumentów i podpisy cyfrowe.
+Oczywiście! Aspose.PDF dla Javy oferuje szeroki zakres funkcji do manipulacji PDF, takich jak ekstrakcja tekstu, konwersja dokumentów i podpisy cyfrowe.
 
-### Czy Aspose.PDF dla Java nadaje się zarówno do prostych, jak i złożonych projektów PDF?
+### Czy Aspose.PDF for Java nadaje się zarówno do prostych, jak i złożonych projektów PDF?
 
-Tak, Aspose.PDF dla Java jest wszechstronny i może być używany zarówno do podstawowych zadań PDF, jak i złożonych projektów PDF o zaawansowanych wymaganiach.
+Tak, Aspose.PDF for Java jest wszechstronny i można go używać zarówno do podstawowych zadań PDF, jak i złożonych projektów PDF o zaawansowanych wymaganiach.
 
 ### Gdzie mogę znaleźć więcej przykładów i dokumentacji dla Aspose.PDF dla Java?
 
- Możesz zapoznać się ze szczegółową dokumentacją i większą liczbą przykładów kodu na stronie[Aspose.PDF dla dokumentacji Java](https://reference.aspose.com/pdf/java/) strona.
+ Możesz zapoznać się ze szczegółową dokumentacją i dodatkowymi przykładami kodu na stronie[Aspose.PDF dla dokumentacji Java](https://reference.aspose.com/pdf/java/) strona.

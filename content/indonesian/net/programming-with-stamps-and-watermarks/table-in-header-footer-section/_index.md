@@ -1,30 +1,30 @@
 ---
-title: Tabel Pada Bagian Header Footer
-linktitle: Tabel Pada Bagian Header Footer
-second_title: Aspose.PDF untuk Referensi .NET API
+title: Tabel Di Bagian Header Footer
+linktitle: Tabel Di Bagian Header Footer
+second_title: Referensi API Aspose.PDF untuk .NET
 description: Pelajari cara menambahkan tabel di bagian header/footer dokumen PDF dengan Aspose.PDF untuk .NET.
 type: docs
 weight: 170
 url: /id/net/programming-with-stamps-and-watermarks/table-in-header-footer-section/
 ---
-Dalam tutorial ini, kami akan memandu Anda langkah demi langkah tentang cara menambahkan tabel di bagian header atau footer dokumen PDF menggunakan Aspose.PDF untuk .NET. Kode sumber C# yang disediakan menunjukkan kepada Anda cara membuat dokumen PDF kosong, menambahkan halaman, mengonfigurasi bagian header, membuat tabel, menambahkan baris dan sel ke tabel, dan terakhir menyimpan dokumen PDF.
+Dalam tutorial ini, kami akan memandu Anda langkah demi langkah tentang cara menambahkan tabel di bagian header atau footer dokumen PDF menggunakan Aspose.PDF untuk .NET. Kode sumber C# yang disediakan menunjukkan kepada Anda cara membuat dokumen PDF kosong, menambahkan halaman, mengonfigurasi bagian header, membuat tabel, menambahkan baris dan sel ke tabel, dan akhirnya menyimpan dokumen PDF.
 
 ## Langkah 1: Menyiapkan lingkungan
 
 Sebelum memulai, pastikan Anda memiliki hal berikut:
 
 - Lingkungan pengembangan .NET yang terinstal.
-- Pustaka Aspose.PDF untuk .NET diunduh dan direferensikan dalam proyek Anda.
+- Pustaka Aspose.PDF untuk .NET diunduh dan dirujuk dalam proyek Anda.
 
 ## Langkah 2: Membuat Dokumen dan Halaman PDF
 
- Langkah pertama adalah membuat instance dari`Document` kelas dan menambahkan halaman ke dokumen. Begini caranya:
+ Langkah pertama adalah membuat instance dari`Document` kelas dan menambahkan halaman ke dokumen. Berikut caranya:
 
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Buat instance objek Dokumen
+// Membuat instance objek Dokumen
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
 
 // Buat halaman dalam dokumen PDF
@@ -35,28 +35,28 @@ Pastikan untuk mengganti "DIREKTORI DOKUMEN ANDA" dengan jalur sebenarnya ke dir
 
 ## Langkah 3: Mengonfigurasi bagian header
 
- Sekarang kita akan mengkonfigurasi bagian header dokumen PDF dengan membuat sebuah instance dari`HeaderFooter` kelas. Begini caranya:
+ Sekarang kita akan mengkonfigurasi bagian header dokumen PDF dengan membuat instance dari`HeaderFooter` kelas. Begini caranya:
 
 ```csharp
 // Buat bagian header untuk file PDF
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Tentukan bagian header untuk halaman tersebut
+// Tentukan bagian header untuk halaman
 page. Header = header;
 
-// Atur margin atas bagian header
+// Mengatur margin atas bagian header
 header. Margin. Top = 20;
 ```
 
 ## Langkah 4: Membuat tabel
 
- Sekarang kita akan membuat tabel menggunakan`Table` kelas dan menambahkannya ke koleksi paragraf bagian judul. Begini caranya:
+ Sekarang kita akan membuat tabel menggunakan`Table` kelas dan menambahkannya ke koleksi paragraf bagian judul. Berikut caranya:
 
 ```csharp
-// Buat instance objek Tabel
+// Membuat instance objek Tabel
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Tambahkan tabel ke kumpulan paragraf di bagian header
+// Tambahkan tabel ke koleksi paragraf di bagian header
 header.Paragraphs.Add(tab1);
 
 // Tentukan lebar kolom tabel
@@ -96,16 +96,16 @@ row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 
 ## Langkah 6: Menyimpan Dokumen PDF
 
-Setelah tabel ditambahkan ke bagian header, kita dapat menyimpan dokumen PDF. Begini caranya:
+Setelah tabel ditambahkan ke bagian header, kita dapat menyimpan dokumen PDF. Berikut caranya:
 
 ```csharp
-// Simpan file PDFnya
+// Simpan file PDF
 pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 ```
 
 Pastikan untuk mengganti "DIREKTORI DOKUMEN ANDA" dengan jalur sebenarnya ke direktori tempat Anda ingin menyimpan dokumen PDF.
 
-### Contoh kode sumber untuk Tabel Di Bagian Header Footer menggunakan Aspose.PDF untuk .NET 
+### Contoh kode sumber untuk Tabel di Bagian Header dan Footer menggunakan Aspose.PDF untuk .NET 
 ```csharp
 
 // Jalur ke direktori dokumen.
@@ -117,25 +117,25 @@ Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
 // Buat halaman dalam dokumen pdf
 Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 
-// Buat Bagian Header dari file PDF
+//Buat Bagian Header dari file PDF
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-//Atur Header Ganjil untuk file PDF
+// Mengatur Header Ganjil untuk file PDF
 page.Header = header;
 
-// Tetapkan margin atas untuk bagian header
+// Mengatur margin atas untuk bagian header
 header.Margin.Top = 20;
 
-// Buat instance objek tabel
+// Membuat instance objek tabel
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Tambahkan tabel dalam kumpulan paragraf dari bagian yang diinginkan
+// Tambahkan tabel dalam kumpulan paragraf bagian yang diinginkan
 header.Paragraphs.Add(tab1);
 
-// Tetapkan batas sel default menggunakan objek BorderInfo
+// Mengatur batas sel default menggunakan objek BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 
-// Atur dengan lebar kolom tabel
+// Diatur dengan lebar kolom tabel
 tab1.ColumnWidths = "60 300";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose-logo.jpg";
@@ -153,10 +153,10 @@ tab1.Rows[0].Cells[0].DefaultCellTextState.Font = FontRepository.FindFont("Helve
 // Buat baris dalam tabel dan kemudian sel dalam baris
 Aspose.Pdf.Row row2 = tab1.Rows.Add();
 
-// Atur warna latar belakang untuk Baris2
+// Mengatur warna latar belakang untuk Baris2
 row2.BackgroundColor = Color.White;
 
-// Tambahkan sel yang menyimpan gambar
+// Tambahkan sel yang berisi gambar
 Aspose.Pdf.Cell cell2 = row2.Cells.Add();
 
 // Atur lebar gambar menjadi 60
@@ -167,55 +167,55 @@ cell2.Paragraphs.Add(img);
 row2.Cells.Add("Logo is looking fine !");
 row2.Cells[1].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
 
-// Atur perataan vertikal teks menjadi rata tengah
+// Mengatur perataan vertikal teks menjadi rata tengah
 row2.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
 row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 
-// Simpan file Pdfnya
+// Simpan file Pdf
 pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 
 ```
 
 ## Kesimpulan
 
-Selamat! Anda telah mempelajari cara menambahkan tabel di bagian header atau footer dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda sekarang dapat menyesuaikan header dan footer dengan menambahkan tabel untuk menampilkan informasi tambahan dalam dokumen PDF Anda.
+Selamat! Anda telah mempelajari cara menambahkan tabel di bagian header atau footer dokumen PDF menggunakan Aspose.PDF untuk .NET. Kini Anda dapat menyesuaikan header dan footer dengan menambahkan tabel untuk menampilkan informasi tambahan di dokumen PDF Anda.
 
-### FAQ untuk tabel di bagian header footer
+### FAQ untuk tabel di bagian header dan footer
 
-#### Q: Apa tujuan menambahkan tabel di bagian header atau footer dokumen PDF?
+#### T: Apa tujuan menambahkan tabel di bagian header atau footer dokumen PDF?
 
 A: Menambahkan tabel di bagian header atau footer dokumen PDF memungkinkan Anda menampilkan informasi terstruktur dan terorganisir seperti judul, subjudul, logo, atau konten lainnya yang ingin Anda tampilkan secara konsisten di setiap halaman dokumen.
 
-#### T: Bagaimana kode sumber C# yang disediakan dapat menambahkan tabel di bagian header atau footer dokumen PDF?
+#### T: Bagaimana kode sumber C# yang disediakan mencapai penambahan tabel di bagian header atau footer dokumen PDF?
 
-J: Kode ini menunjukkan proses pembuatan dokumen PDF kosong, menambahkan halaman, mengonfigurasi bagian header, membuat tabel dengan baris dan sel, dan terakhir menyimpan dokumen PDF. Hasilnya adalah tabel yang ditampilkan di bagian header dokumen PDF.
+A: Kode tersebut menunjukkan proses pembuatan dokumen PDF kosong, penambahan halaman, konfigurasi bagian header, pembuatan tabel dengan baris dan sel, dan terakhir penyimpanan dokumen PDF. Hasilnya adalah tabel yang ditampilkan di bagian header dokumen PDF.
 
-#### T: Bisakah saya mengkustomisasi tampilan sel tabel, seperti batas, warna latar belakang, dan gaya teks?
+#### T: Dapatkah saya menyesuaikan tampilan sel tabel, seperti batas, warna latar belakang, dan gaya teks?
 
-J: Ya, Anda dapat menyesuaikan tampilan sel tabel dengan mengatur properti seperti batas sel, warna latar belakang, gaya teks, font, ukuran font, dan lainnya.
+A: Ya, Anda dapat menyesuaikan tampilan sel tabel dengan mengatur properti seperti batas sel, warna latar belakang, gaya teks, font, ukuran font, dan banyak lagi.
 
-#### T: Bagaimana cara menambahkan tabel ke bagian header dokumen PDF?
+#### T: Bagaimana tabel ditambahkan ke bagian header dokumen PDF?
 
-J: Kode menambahkan tabel ke kumpulan paragraf di bagian header, yang memastikan bahwa tabel ditampilkan di header setiap halaman.
+A: Kode menambahkan tabel ke koleksi paragraf di bagian header, yang memastikan bahwa tabel ditampilkan di header setiap halaman.
 
 #### T: Dapatkah saya menambahkan lebih banyak baris dan sel ke tabel sesuai kebutuhan?
 
- J: Tentu saja, Anda dapat menambahkan lebih banyak baris dan sel ke tabel dengan menggunakan`Rows.Add()` Dan`Cells.Add()` metode. Ini memungkinkan Anda menyusun konten tabel sesuai keinginan.
+ A: Tentu saja, Anda dapat menambahkan lebih banyak baris dan sel ke tabel dengan menggunakan`Rows.Add()` Dan`Cells.Add()` metode. Ini memungkinkan Anda untuk menyusun konten tabel sesuai keinginan.
 
-#### Q: Apakah lebar kolom tabel bisa diatur?
- A: Ya, Anda dapat mengatur lebar kolom tabel menggunakan`ColumnWidths` Properti. Ini memungkinkan Anda mengontrol tata letak tabel.
+#### T: Apakah mungkin untuk menyesuaikan lebar kolom tabel?
+ A: Ya, Anda dapat menyesuaikan lebar kolom tabel menggunakan`ColumnWidths` properti. Ini memungkinkan Anda untuk mengontrol tata letak tabel.
 
 #### T: Bagaimana cara merentangkan sel di beberapa kolom atau baris dalam tabel?
- J: Untuk merentangkan sel di beberapa kolom, Anda bisa menggunakan`ColSpan` properti sel yang sesuai. Demikian pula, Anda dapat menggunakan`RowSpan` properti untuk menjangkau sel di beberapa baris.
+ A: Untuk membentangkan sel di beberapa kolom, Anda dapat menggunakan`ColSpan`properti sel yang sesuai. Demikian pula, Anda dapat menggunakan`RowSpan` properti untuk membentangkan sel di beberapa baris.
 
 #### T: Apa yang terjadi jika saya ingin menambahkan tabel ke bagian header dan footer dokumen PDF?
 
-J: Anda dapat mengikuti pendekatan serupa untuk bagian header dan footer. Cukup buat a`HeaderFooter` contoh untuk footer, konfigurasikan, dan tambahkan tabel ke koleksi paragrafnya.
+ A: Anda dapat mengikuti pendekatan serupa untuk bagian header dan footer. Cukup buat`HeaderFooter` misalnya untuk footer, konfigurasikan, dan tambahkan tabel ke koleksi paragrafnya.
 
 #### T: Dapatkah saya menggunakan gambar dalam sel tabel, dan bagaimana cara melakukannya?
 
- A: Ya, Anda bisa menambahkan gambar di dalam sel tabel. Contoh kode menunjukkan penambahan gambar ke sel dengan membuat`Image` objek, mengatur jalur dan dimensi filenya, lalu menambahkannya ke paragraf sel.
+ A: Ya, Anda dapat menambahkan gambar di dalam sel tabel. Contoh kode menunjukkan penambahan gambar ke dalam sel dengan membuat`Image` objek, mengatur jalur file dan dimensinya, lalu menambahkannya ke paragraf sel.
 
-#### T: Bagaimana cara memastikan tabel muncul secara konsisten di seluruh halaman dokumen PDF?
+#### T: Bagaimana cara memastikan tabel muncul secara konsisten di semua halaman dalam dokumen PDF?
 
- A: Saat Anda menambahkan tabel ke bagian header atau footer menggunakan`HeaderFooter` Misalnya, Aspose.PDF memastikan bahwa tabel muncul secara konsisten di setiap halaman, memberikan tata letak yang seragam.
+ A: Saat Anda menambahkan tabel ke bagian header atau footer menggunakan`HeaderFooter` Misalnya, Aspose.PDF memastikan bahwa tabel muncul secara konsisten di setiap halaman, menyediakan tata letak yang seragam.

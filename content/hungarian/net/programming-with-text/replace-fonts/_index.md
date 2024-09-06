@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 1. lépés: Állítsa be a dokumentumkönyvtárat
 
- Először is be kell állítania annak a könyvtárnak az elérési útját, ahol a bemeneti PDF-fájl található. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó a PDF-fájl elérési útjával.
+ Először is be kell állítania annak a könyvtárnak az elérési útját, ahol a bemeneti PDF-fájl található. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó a PDF-fájl elérési útjával.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -32,7 +32,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 ```
 
-## 3. lépés: Betűtípusok keresése és cseréje
+## 3. lépés: Keressen és cseréljen betűtípusokat
 
  Létrehozunk a`TextFragmentAbsorber`objektumot, és állítsa be a szerkesztési lehetőséget a nem használt betűtípusok eltávolításához. Ezután elfogadjuk az elnyelőt a PDF-dokumentum összes oldalára a szövegrészletek kereséséhez.
 
@@ -43,7 +43,7 @@ pdfDocument.Pages.Accept(absorber);
 
 ## 4. lépés: Cserélje ki a betűtípusokat
 
-Végighaladunk az elnyelő által azonosított összes szövegrészleten. Ha egy szövegrészlet betűtípusneve egyezik a cserélni kívánt betűtípussal, akkor lecseréljük az új betűtípusra.
+Végighaladunk az elnyelő által azonosított összes szövegrészleten. Ha egy szövegrészlet betűtípusneve egyezik a lecserélni kívánt betűtípussal, akkor lecseréljük az új betűtípusra.
 
 ```csharp
 foreach (TextFragment textFragment in absorber.TextFragments)
@@ -73,7 +73,7 @@ try
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	// Forrás PDF fájl betöltése
 	Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-	// Keressen szövegrészleteket, és állítsa be a szerkesztési lehetőséget a nem használt betűtípusok eltávolításához
+	// Keressen a szövegrészletekben, és állítsa be a szerkesztési lehetőséget a nem használt betűtípusok eltávolításához
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
 	// Fogadja el az összes oldal elnyelőjét
 	pdfDocument.Pages.Accept(absorber);
@@ -115,14 +115,14 @@ V: A betűtípusok cseréje a PDF-dokumentumban akkor válhat szükségessé, ha
 
 V: A dokumentumkönyvtár beállításához:
 
-1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a bemeneti PDF-fájl található.
+1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a bemeneti PDF-fájl található.
 
 #### K: Hogyan cserélhetek le bizonyos betűtípusokat egy PDF-dokumentumban?
 
 V: Az oktatóanyag lépésről lépésre végigvezeti a folyamaton:
 
 1.  Töltse be a PDF dokumentumot a`Document` osztály.
-2.  Hozzon létre egy`TextFragmentAbsorber` objektumot, és állítsa be a szerkesztési lehetőséget a nem használt betűtípusok eltávolításához. A szövegrészletek kereséséhez fogadja el az összes oldal elnyelőjét.
+2.  Hozzon létre a`TextFragmentAbsorber` objektumot, és állítsa be a szerkesztési lehetőséget a nem használt betűtípusok eltávolításához. A szövegrészletek kereséséhez fogadja el az összes oldal elnyelőjét.
 3. Lapozzon át az azonosított szövegrészleteken. Ha egy szövegrészlet betűtípusneve megegyezik a lecserélni kívánt betűtípussal, cserélje ki az új betűtípusra.
 
 ####  K: Mi a felhasználás célja`TextFragmentAbsorber` with font replacement options?

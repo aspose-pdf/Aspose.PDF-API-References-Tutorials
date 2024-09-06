@@ -144,7 +144,7 @@ gratuluji! Nyní jste se naučili, jak nastavit ohraničení v tabulce dokumentu
 
 #### Otázka: Mohu odstranit ohraničení z určitých stran tabulky (např. levé a pravé ohraničení)?
 
- Odpověď: Ano, můžete odstranit ohraničení z určitých stran tabulky úpravou`border.Left`, `border.Right`, `border.Top` , a`border.Bottom`vlastnosti ve zdrojovém kódu C#. Nastavení těchto vlastností na`null` odstraní okraj z odpovídajících stran tabulky.
+ Odpověď: Ano, můžete odstranit ohraničení z určitých stran tabulky úpravou`border.Left`, `border.Right`, `border.Top` a`border.Bottom`vlastnosti ve zdrojovém kódu C#. Nastavení těchto vlastností na`null` odstraní okraj z odpovídajících stran tabulky.
 
 #### Otázka: Jak mohu upravit tloušťku okraje stolu?
 

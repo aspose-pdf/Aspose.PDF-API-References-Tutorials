@@ -20,7 +20,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 2. Adjon hozzá hivatkozást az Aspose.PDF for .NET könyvtárhoz.
 
 ## 2. lépés: Importálja a szükséges névtereket
-Abban a kódfájlban, amelyben meg szeretné határozni a sortörést, adja hozzá a következőket a fájl tetején található direktívák használatával:
+Abban a kódfájlban, amelyben meg szeretné határozni a sortöréseket, adja hozzá a következőket a fájl tetején található direktívák használatával:
 
 ```csharp
 using Aspose.Pdf;
@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## 5. lépés: Adjon hozzá egy oldalt a dokumentumhoz
- Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`Gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
+ Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -57,7 +57,7 @@ for (int i = 0; i < 4; i++)
 ```
 
 ## 7. lépés: Mentse el a PDF-dokumentumot, és bontsa ki a sortörési információkat
- Mentse el a PDF dokumentumot a`Save` módszere a`Document` tárgy. Ezután bontsa ki a sortörés információit a`GetNotifications` a kívánt oldal módszerét.
+ Mentse el a PDF dokumentumot a`Save` módszere a`Document` objektum. Ezután bontsa ki a sortörés információit a`GetNotifications` a kívánt oldal módszerét.
 
 ```csharp
 doc.Save(dataDir + "DetermineLineBreak_out.pdf");
@@ -91,7 +91,7 @@ Sikeresen meghatározta a sortöréseket egy PDF-dokumentumban az Aspose.PDF for
 
 V: Ez az oktatóanyag arra összpontosít, hogy végigvezeti Önt a sortörések meghatározásán egy PDF-fájlban az Aspose.PDF for .NET könyvtár használatával. A mellékelt C# forráskód bemutatja az ehhez szükséges lépéseket.
 
-#### K: Mely névtereket kell importálnom ehhez az oktatóanyaghoz?
+#### K: Milyen névtereket importáljak ehhez az oktatóanyaghoz?
 
 V: Abban a kódfájlban, amelyben sortörést szeretne meghatározni, importálja a következő névtereket a fájl elejére:
 
@@ -110,7 +110,7 @@ using System.IO;
 
 #### K: Hogyan adhatok hozzá oldalt a dokumentumhoz?
 
- V: Az 5. lépésben új oldalt ad hozzá a dokumentumhoz a`Add` módszere a`Pages` Gyűjtemény.
+ V: Az 5. lépésben új oldalt ad hozzá a dokumentumhoz a`Add` módszere a`Pages` gyűjtemény.
 
 #### K: Hogyan adhatok hozzá szövegrészleteket sortöréssel?
 
@@ -118,7 +118,7 @@ V: A 6. lépésben létrehoz egy hurkot, amellyel több szövegrészletet ad hoz
 
 #### K: Hogyan menthetem el a PDF-dokumentumot és bonthatom ki a sortörési információkat?
 
- V: A 7. lépésben a PDF-dokumentumot a`Save` módszere a`Document` tárgy. Ezután a sortörés információit a`GetNotifications` módszerét, és mentse el egy szöveges fájlba.
+ V: A 7. lépésben a PDF-dokumentumot a`Save` módszere a`Document` objektum. Ezután a sortörés információit a`GetNotifications`módszerét, és mentse el egy szöveges fájlba.
 
 #### K: Mi a kinyert sortörési információ célja?
 

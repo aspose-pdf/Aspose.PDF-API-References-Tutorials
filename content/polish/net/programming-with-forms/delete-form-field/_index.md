@@ -1,17 +1,17 @@
 ---
 title: Usuń pole formularza w dokumencie PDF
 linktitle: Usuń pole formularza w dokumencie PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Z łatwością usuń niechciane pola formularzy z dokumentu PDF za pomocą Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwe usuwanie niechcianych pól formularzy w dokumentach PDF za pomocą Aspose.PDF dla .NET.
 type: docs
 weight: 50
 url: /pl/net/programming-with-forms/delete-form-field/
 ---
-tym samouczku pokażemy, jak usunąć pole formularza za pomocą Aspose.PDF dla .NET. Krok po kroku wyjaśnimy kod źródłowy C#, aby poprowadzić Cię przez ten proces.
+tym samouczku pokażemy Ci, jak usunąć pole formularza za pomocą Aspose.PDF dla .NET. Wyjaśnimy kod źródłowy C# krok po kroku, aby przeprowadzić Cię przez ten proces.
 
 ## Krok 1: Przygotowanie
 
-Najpierw upewnij się, że zaimportowałeś niezbędne biblioteki i ustaw ścieżkę do katalogu dokumentów:
+Najpierw upewnij się, że zaimportowałeś niezbędne biblioteki i ustawiłeś ścieżkę do katalogu dokumentów:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -27,7 +27,7 @@ Document pdfDocument = new Document(dataDir + "DeleteFormField.pdf");
 
 ## Krok 3: Usuń określone pole
 
-Usuń określone pole formularza, używając jego nazwy:
+Usuń konkretne pole formularza używając jego nazwy:
 
 ```csharp
 pdfDocument.Form.Delete("textbox1");
@@ -42,7 +42,7 @@ dataDir = dataDir + "DeleteFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Przykładowy kod źródłowy dla Usuń pole formularza przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Usuń pole formularza przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -58,17 +58,17 @@ Console.WriteLine("\nParticular field deleted successfully.\nFile saved at " + d
 
 ## Wniosek
 
-W tym samouczku nauczyliśmy się, jak usunąć pole formularza za pomocą Aspose.PDF dla .NET. Wykonując poniższe kroki, możesz łatwo usunąć niechciane pola formularzy z dokumentów PDF za pomocą Aspose.PDF.
+W tym samouczku nauczyliśmy się, jak usunąć pole formularza za pomocą Aspose.PDF dla .NET. Wykonując te kroki, możesz łatwo usunąć niechciane pola formularza z dokumentów PDF za pomocą Aspose.PDF.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Czy mogę usunąć wiele pól formularza jednocześnie, używając Aspose.PDF dla .NET?
+#### P: Czy mogę usunąć wiele pól formularza jednocześnie, korzystając z Aspose.PDF dla .NET?
 
- Odp.: Tak, możesz usunąć wiele pól formularza jednocześnie, używając Aspose.PDF dla .NET. Po prostu zadzwoń`Delete` metodę dla każdego pola formularza, które chcesz usunąć.
+ A: Tak, możesz usunąć wiele pól formularza jednocześnie, używając Aspose.PDF dla .NET. Wystarczy wywołać`Delete` dla każdego pola formularza, które chcesz usunąć.
 
-#### P: Jak mogę sprawdzić, czy pole formularza istnieje przed próbą jego usunięcia?
+#### P: Jak mogę sprawdzić, czy pole formularza istnieje, zanim spróbuję je usunąć?
 
- Odp.: Możesz sprawdzić, czy pole formularza istnieje przed próbą jego usunięcia, korzystając z opcji`Contains` metoda`Form` nieruchomość. Na przykład:
+ A: Możesz sprawdzić, czy pole formularza istnieje, zanim spróbujesz je usunąć, używając`Contains` metoda`Form` nieruchomość. Na przykład:
 
 ```csharp
 if (pdfDocument.Form.Contains("textbox1"))
@@ -77,14 +77,14 @@ if (pdfDocument.Form.Contains("textbox1"))
 }
 ```
 
-#### P: Co się stanie, jeśli spróbuję usunąć pole formularza, które nie istnieje w dokumencie PDF?
+#### P: Co się stanie, jeśli spróbuję usunąć pole formularza, którego nie ma w dokumencie PDF?
 
- Odp.: Jeśli spróbujesz usunąć pole formularza, które nie istnieje w dokumencie PDF, plik`Delete` metoda nie zgłosi błędu ani wyjątku. Po prostu nic to nie da, ponieważ nie ma pola do usunięcia.
+ A: Jeśli spróbujesz usunąć pole formularza, które nie istnieje w dokumencie PDF,`Delete` Metoda nie zgłosi błędu ani wyjątku. Po prostu nic nie zrobi, ponieważ nie ma pola do usunięcia.
 
-#### P: Czy mogę usuwać pola formularzy różnych typów, takie jak pola tekstowe, pola wyboru i przyciski opcji?
+#### P: Czy mogę usuwać pola formularzy różnych typów, takie jak pola tekstowe, pola wyboru i przyciski radiowe?
 
- O: Tak, możesz usuwać pola formularzy różnych typów, takie jak pola tekstowe, pola wyboru i przyciski opcji, używając tego samego`Delete` metoda w Aspose.PDF dla .NET. Po prostu przekaż nazwę pola, które chcesz usunąć, jako parametr do metody.
+ O: Tak, możesz usuwać pola formularzy różnych typów, takie jak pola tekstowe, pola wyboru i przyciski radiowe, korzystając z tych samych`Delete` metoda w Aspose.PDF dla .NET. Po prostu przekaż nazwę pola, które chcesz usunąć, jako parametr do metody.
 
 #### P: Czy można cofnąć usunięcie pola formularza w dokumencie PDF?
 
-O: Nie, gdy pole formularza zostanie usunięte przy użyciu Aspose.PDF dla .NET, nie można tego cofnąć programowo. Zaleca się utworzenie kopii zapasowej dokumentu PDF przed wprowadzeniem w nim jakichkolwiek zmian, aby w razie potrzeby móc powrócić do oryginalnego dokumentu.
+A: Nie, po usunięciu pola formularza za pomocą Aspose.PDF dla .NET nie można tego cofnąć programowo. Zaleca się utworzenie kopii zapasowej dokumentu PDF przed wprowadzeniem jakichkolwiek zmian, aby w razie potrzeby można było powrócić do oryginalnego dokumentu.

@@ -74,7 +74,7 @@ A beágyazott szerkezeti elemek nemcsak a dokumentum szerkezetében segítenek, 
 
 ### Szöveg színének megváltoztatása
 
-Az Aspose.PDF segítségével módosíthatja a szövegközi szöveg színét. Itt van, hogyan:
+Az Aspose.PDF segítségével módosíthatja a szövegközi szöveg színét. Íme, hogyan:
 
 ```java
 textFragment.getTextState().setForegroundColor(Color.getRed());
@@ -205,7 +205,7 @@ A beágyazott szerkezeti elemek a PDF dokumentumon belüli elemek, amelyek megha
 
 Igen, módosíthatja a beágyazott szöveg színét a PDF-ben az Aspose.PDF for Java segítségével. Használja a`setTextState().setForegroundColor(Color)` módszer a szín megadására.
 
-### Milyen előnyökkel jár az akadálymentes PDF-ek létrehozása?
+### Milyen előnyökkel jár a hozzáférhető PDF-ek létrehozása?
 
 Az akadálymentesített PDF-fájlok a fogyatékkal élő felhasználók számára előnyösek azáltal, hogy olyan funkciókat biztosítanak, mint a képernyőolvasó kompatibilitás, a navigációs lehetőségek és a kisegítő lehetőségek szabványainak (pl. PDF/UA) való megfelelés.
 

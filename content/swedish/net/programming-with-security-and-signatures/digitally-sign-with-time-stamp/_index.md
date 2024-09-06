@@ -67,7 +67,7 @@ using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
 		System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
 		// Skapa någon av de tre signaturtyperna
 		signature.Sign(1, "Signature Reason", "Contact", "Location", true, rect, pkcs);
-		// Spara utdata-PDF-fil
+		// Spara utdata PDF-fil
 		signature.Save(dataDir + "DigitallySignWithTimeStamp_out.pdf");
 	}
 }

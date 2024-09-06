@@ -2,108 +2,113 @@
 title: 提取 PDF 文件中突出显示的文本
 linktitle: 提取 PDF 文件中突出显示的文本
 second_title: Aspose.PDF for .NET API 参考
-description: 通过此分步指南，了解如何使用 Aspose.PDF for .NET 提取 PDF 文件中突出显示的文本。
+description: 通过本教程学习如何使用 Aspose.PDF for .NET 从 PDF 文件高效提取突出显示的文本。非常适合数据分析和内容审查。
 type: docs
 weight: 60
 url: /zh/net/annotations/extracthighlightedtext/
 ---
-要提取 PDF 文件中突出显示的文本，您可以使用 Aspose.PDF for .NET API。此 API 提供了一种简单的方法来检索文档中突出显示的所有文本。
+## 介绍
 
-## 第 1 步：加载 PDF 文档
+处理 PDF 文件时，提取突出显示的文本可能是一项至关重要的任务，无论是用于数据分析、内容审查还是简单地整理笔记。如果您使用的是 Aspose.PDF for .NET，则此过程简单而高效。在本教程中，我们将引导您了解如何使用 Aspose.PDF for .NET 从 PDF 文档中提取突出显示的文本。我们将涵盖从先决条件到分步指导的所有内容，确保您最终全面了解。
 
-提取 PDF 文件中突出显示的文本的第一步是使用 Aspose.PDF for .NET API 加载文档。您可以通过创建一个新实例来完成此操作`Document`类并将 PDF 文档的路径作为参数传递。 
+## 先决条件
+
+在深入研究代码之前，您需要做好以下几件事：
+
+-  Aspose.PDF for .NET 库：确保您已安装 Aspose.PDF 库。如果没有，您可以从[发布页面](https://releases.aspose.com/pdf/net/).
+- 开发环境：您应该设置一个可用的开发环境，例如 Visual Studio。
+- C# 基础知识：熟悉 C# 编程语言和面向对象编程至关重要。
+- 有效的 Aspose 许可证：虽然你可以从免费试用开始，但可以考虑获取[临时执照](https://purchase.aspose.com/temporary-license/)或从以下网站购买[这里](https://purchase.aspose.com/buy)不受限制地使用。
+
+## 导入包
+
+首先，您需要在 C# 项目中导入必要的命名空间。这对于访问 Aspose.PDF for .NET 提供的类和方法至关重要。
+
+```csharp
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+现在，让我们分解使用 Aspose.PDF for .NET 从 PDF 文件中提取突出显示文本的过程。每个步骤都详细说明，以帮助您了解底层概念和实现。
+
+## 步骤 1：设置项目目录
+
+首先，你需要设置 PDF 文件所在的项目目录。这就是奇迹发生的地方。
 
 ```csharp
 //文档目录的路径。
-string dataDir ="YOUR DOCUMENT DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+代替`"YOUR DOCUMENT DIRECTORY"`替换为 PDF 文件所在目录的实际路径。应用程序将从此目录获取 PDF 进行处理。
+
+## 第 2 步：加载 PDF 文档
+
+接下来，您需要加载要从中提取突出显示文本的 PDF 文档。这是使用`Document`Aspose.PDF 提供的类。
+
+```csharp
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 ```
 
-## 第 2 步：循环遍历所有注释
+这`Document`类使用 PDF 文件的路径进行实例化。这里，`"ExtractHighlightedText.pdf"`是包含突出显示文本的 PDF 文件的名称。请确保此文件存在于指定目录中。
 
-下一步是循环遍历 PDF 文档中的所有注释。您可以使用`foreach`循环，像这样：
+## 步骤 3：访问注释集合
+
+PDF 文档加载完成后，下一步是访问文档第一页上的注释。注释用于在 PDF 中添加其他信息，如突出显示、注释等。
 
 ```csharp
 foreach (Annotation annotation in doc.Pages[1].Annotations)
 {
-	//代码放在这里
-}
 ```
 
-## 步骤 3：过滤文本标记注释
+这`Annotations`的财产`Page`对象提供对 PDF 特定页面上所有注释的访问。在这里，我们循环遍历第一页上的每个注释。
 
-在 - 的里面`foreach`循环中，您需要过滤掉所有不是文本标记注释的注释。您可以通过检查注释是否是`TextMarkupAnnotation`班级。
+## 步骤 4：筛选突出显示的文本注释
+
+现在我们可以访问所有注释，我们需要仅过滤掉突出显示的文本注释。这可以通过检查每个注释的类型来实现。
 
 ```csharp
 if (annotation is TextMarkupAnnotation)
 {
-	//代码放在这里
-}
+    TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
 ```
 
-## 步骤 4：检索突出显示的文本片段
+这`TextMarkupAnnotation`类用于表示文本标记注释，包括突出显示。`is`关键字检查注释是否属于类型`TextMarkupAnnotation`如果是，则将注释转换为`TextMarkupAnnotation`.
 
-过滤掉所有文本标记注释后，您可以检索每个注释的突出显示的文本片段。您可以通过调用来做到这一点`GetMarkedTextFragments()`方法上的`TextMarkupAnnotation`目的。
+## 步骤 5：提取突出显示的文本
+
+识别出突出显示的注释后，下一步是提取与突出显示相关的文本。
 
 ```csharp
-TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
 TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
-```
-
-## 第 5 步：显示突出显示的文本
-
-最后，您可以向用户显示突出显示的文本。您可以通过循环遍历每个来完成此操作`TextFragment`对象在`TextFragmentCollection`并调用`Text`财产。
-
-```csharp
 foreach (TextFragment tf in collection)
 {
-	Console.WriteLine(tf.Text);
+    Console.WriteLine(tf.Text);
 }
 ```
 
-### 使用 Aspose.PDF for .NET 提取突出显示文本的示例源代码
-
-```csharp
-//文档目录的路径。
-string dataDir ="YOUR DOCUMENT DIRECTORY";
-Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
-
-foreach (Annotation annotation in doc.Pages[1].Annotations)
-{
-	if (annotation is TextMarkupAnnotation)
-	{
-		TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
-		TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
-		foreach (TextFragment tf in collection)
-		{
-			Console.WriteLine(tf.Text);
-		}
-	}
-}
-```
+这`GetMarkedTextFragments()`方法返回`TextFragment`对象，每个对象代表突出显示的文本的一部分。我们循环遍历这个集合，并将每个片段的文本打印到控制台。
 
 ## 结论
 
-在本教程中，我们探讨了如何使用 Aspose.PDF for .NET 从 PDF 文档中提取突出显示的文本。通过遵循分步指南并使用提供的 C# 源代码，开发人员可以轻松提取和管理 PDF 文档中突出显示的文本。
+使用 Aspose.PDF for .NET 从 PDF 中提取突出显示的文本是一项强大的功能，可以简化您的工作流程，尤其是在处理大型文档时。按照本教程中概述的步骤，您可以轻松地在自己的项目中实现此功能。无论您是整理笔记、准备报告还是进行数据分析，此方法都为提取和利用突出显示的文本提供了无缝的解决方案。
 
-### 提取 PDF 文件中突出显示文本的常见问题解答
+## 常见问题解答
 
-#### 问：什么是 PDF 文档中的文本标记注释？
+### 我可以使用此方法提取其他类型的注释吗？  
+是的，你可以通过修改`if`条件来检查不同的注释类型，例如`TextAnnotation`, `StampAnnotation`， ETC。
 
-答：文本标记注释是突出显示或标记 PDF 文档中特定文本的注释。文本标记注释的示例包括突出显示、下划线和删除线。
+### 是否可以从 PDF 的所有页面中提取突出显示的文本？  
+当然可以！您可以循环遍历 PDF 文档的每一页，并应用相同的提取逻辑来收集每一页的突出显示文本。
 
-#### 问：我可以使用 Aspose.PDF for .NET 从其他类型的注释中提取文本吗？
+### 我需要许可证才能使用 Aspose.PDF for .NET 吗？  
+虽然你可以从免费试用开始，但建议获取[临时执照](https://purchase.aspose.com/temporary-license/)或购买完整许可证以无限制访问所有功能。
 
-答：是的，Aspose.PDF for .NET 提供了多种方法从不同类型的注释中提取文本，包括文本标记注释、自由文本注释等。
+### 我可以将提取的文本保存到文件中而不是将其打印到控制台吗？  
+是的，您可以轻松修改代码，将提取的文本保存为文本文件或任何其他所需格式。
 
-#### 问：Aspose.PDF for .NET 支持从受密码保护的 PDF 文件中提取文本吗？
-
-答：是的，Aspose.PDF for .NET 支持从受密码保护的 PDF 文件中提取文本。使用以下方式加载 PDF 文档时需要提供正确的密码`Document`班级。
-
-#### 问：我可以根据其他条件（例如颜色或作者）过滤突出显示的文本吗？
-
-答：是的，您可以根据其他条件（例如颜色、作者或创建日期）过滤突出显示的文本。 Aspose.PDF for .NET 提供了根据属性访问和过滤注释的方法。
-
-#### 问：是否可以将提取的突出显示文本保存到单独的文件中？
-
-答：是的，您可以将提取的突出显示文本保存到单独的文件中或将其存储在数据结构中以供进一步处理或分析。
+### Aspose.PDF 除了 .NET 之外还支持其他平台吗？  
+是的，Aspose.PDF 还支持 Java 和其他平台，在不同的环境中提供类似的功能。

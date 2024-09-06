@@ -30,7 +30,7 @@ using System.IO;
 
 ## Steg 2: Ställa in dokumentsökvägen
 
-Därefter måste du ställa in sökvägen till PDF-dokumentet som du vill extrahera signaturinformationen från. Byta ut`"YOUR DOCUMENTS DIRECTORY"` i följande kodavsnitt med den faktiska sökvägen till ditt dokument:
+Därefter måste du ställa in sökvägen till PDF-dokumentet som du vill extrahera signaturinformationen från. Ersätta`"YOUR DOCUMENTS DIRECTORY"` i följande kodavsnitt med den faktiska sökvägen till ditt dokument:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -101,7 +101,7 @@ using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew
 }
 ```
 
-Det är allt! Du har framgångsrikt extraherat signaturinformation med Aspose.PDF för .NET. Integrera den här koden i dina egna applikationer eller modifiera den efter dina behov.
+Det är det! Du har framgångsrikt extraherat signaturinformation med Aspose.PDF för .NET. Integrera den här koden i dina egna applikationer eller modifiera den efter dina behov.
 
 ### Exempel på källkod för att extrahera signaturinformation med Aspose.PDF för .NET 
 ```csharp

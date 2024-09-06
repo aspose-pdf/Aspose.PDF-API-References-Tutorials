@@ -37,7 +37,7 @@ pdfDocument.Pages.Delete(2);
 ```
 
 ## Steg 4: Spara den uppdaterade PDF-filen
- Slutligen kan du spara det uppdaterade PDF-dokumentet till en utdatafil med hjälp av dokumentets`Save()` metod. Var noga med att ange rätt sökväg och filnamn.
+Slutligen kan du spara det uppdaterade PDF-dokumentet till en utdatafil med hjälp av dokumentets`Save()` metod. Var noga med att ange rätt sökväg och filnamn.
 
 ```csharp
 dataDir = dataDir + "DeleteParticularPage_out.pdf";

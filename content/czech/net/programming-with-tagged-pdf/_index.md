@@ -30,7 +30,7 @@ Návody Aspose.PDF for .NET "Programování s tagovanými PDF" vás provedou pou
 | [Buňka tabulky stylu](./style-table-cell/) | Naučte se stylovat buňky tabulky pomocí Aspose.PDF pro .NET: podrobný průvodce vytvářením a přizpůsobením tabulek. |  
 | [Prvek tabulky stylu](./style-table-element/) | Naučte se formátovat prvek tabulky pomocí Aspose.PDF pro .NET. Podrobný průvodce přizpůsobením stylů a vlastností. |  
 | [Řádek tabulky stylu](./style-table-row/) | Naučte se, jak přizpůsobit řádky tabulky pomocí Aspose.PDF for .NET krok za krokem průvodce stylováním a formátováním řádků. |  
-| [Styl Textové Struktury V Souboru PDF](./style-text-structure/) | Naučte se formátovat strukturu textu v souboru PDF pomocí Aspose.PDF pro .NET. Podrobný průvodce stylem textu. |  
+| [Styl Textová Struktura V Souboru PDF](./style-text-structure/) | Naučte se formátovat strukturu textu v souboru PDF pomocí Aspose.PDF pro .NET. Podrobný průvodce stylem textu. |  
 | [Označený obsah PDF](./tagged-pdf-content/) | Naučte se pracovat s tagovaným obsahem v dokumentu PDF pomocí Aspose.PDF pro .NET. Podrobný průvodce používáním značek. |  
 | [Označit obrázek ve stávajícím PDF](./tag-image-in-existing-pdf/) | Naučte se, jak označit obrázek v existujícím PDF pomocí Aspose.PDF pro .NET. Podrobný průvodce přidáváním značek k obrázkům. |  
 | [Prvky struktury bloku textu](./text-block-structure-elements/) | Naučte se používat Aspose.PDF for .NET k přidání prvků struktury textových bloků, jako jsou nadpisy a tagované odstavce, do existujícího dokumentu PDF. |  

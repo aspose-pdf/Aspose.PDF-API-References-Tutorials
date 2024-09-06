@@ -2,127 +2,110 @@
 title: Konfigurieren Sie gemessene Lizenzschlüssel in einer PDF-Datei
 linktitle: Konfigurieren Sie gemessene Lizenzschlüssel in einer PDF-Datei
 second_title: Aspose.PDF für .NET API-Referenz
-description: Schritt-für-Schritt-Anleitung zum Einrichten eines gemessenen Lizenzschlüssels in einer PDF-Datei mit Aspose.PDF für .NET und zum Profitieren von erweiterten Funktionen.
+description: Erfahren Sie in dieser umfassenden Schritt-für-Schritt-Anleitung, wie Sie mit Aspose.PDF für .NET dosierte Lizenzschlüssel in Ihren PDF-Dateien konfigurieren.
 type: docs
 weight: 10
 url: /de/net/licensing-aspose-pdf/configure-metered-license/
 ---
-In diesem Tutorial führen wir Sie Schritt für Schritt durch die Einrichtung eines gemessenen Lizenzschlüssels in einer PDF-Datei mit Aspose.PDF für .NET. Mit der gemessenen Lizenz können Sie die erweiterten Funktionen von Aspose.PDF basierend auf Ihrem tatsächlichen Verbrauch nutzen.
+## Einführung
 
-### Schritt 1: Lizenzschlüssel konfigurieren
+Sind Sie bereit, in die Welt der PDF-Bearbeitung mit Aspose.PDF für .NET einzutauchen? Egal, ob Sie große Dokument-Workflows verwalten oder nur ein paar PDFs verarbeiten müssen, die Konfiguration einer dosierten Lizenz ist Ihr erster Schritt, um das volle Potenzial von Aspose.PDF auszuschöpfen. In dieser umfassenden Anleitung führen wir Sie durch den Prozess der Einrichtung dosierter Lizenzschlüssel in Ihren PDF-Dateien. Und keine Sorge – wir halten die Dinge einfach, ansprechend und voller praktischer Erkenntnisse, um Ihnen den Weg so reibungslos wie möglich zu gestalten.
 
-Im bereitgestellten Quellcode müssen Sie den öffentlichen und privaten Schlüssel der gemessenen Lizenz angeben. Ersetze das "*****"-Werte mit Ihren eigenen Schlüsseln. Diese Schlüssel werden Ihnen beim Kauf einer Messlizenz von Aspose zur Verfügung gestellt.
+## Voraussetzungen
+
+Bevor wir beginnen, stellen wir sicher, dass Sie alles haben, was Sie brauchen:
+
+1.  Aspose.PDF für .NET: Stellen Sie sicher, dass Sie die neueste Version von Aspose.PDF für .NET heruntergeladen und installiert haben. Sie erhalten sie von der[Download-Seite](https://releases.aspose.com/pdf/net/).
+2.  Gültige, gebührenpflichtige Lizenzschlüssel: Sie benötigen Ihre gebührenpflichtigen öffentlichen und privaten Schlüssel. Wenn Sie diese noch nicht haben, können Sie eine temporäre Lizenz erhalten von[Hier](https://purchase.aspose.com/temporary-license/).
+3. Entwicklungsumgebung: Visual Studio oder eine andere kompatible .NET-Entwicklungsumgebung sollte eingerichtet und einsatzbereit sein.
+4. Beispiel-PDF-Dokument: Halten Sie eine PDF-Datei bereit, mit der Sie den Konfigurationsprozess testen können.
+
+## Pakete importieren
+
+Um mit Aspose.PDF zu arbeiten, müssen Sie die erforderlichen Namespaces in Ihr Projekt einbinden. Dadurch wird sichergestellt, dass Sie Zugriff auf alle Klassen und Methoden haben, die zum Konfigurieren der gemessenen Lizenz erforderlich sind.
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Lassen Sie uns den Vorgang in leicht verständliche Schritte unterteilen. Jeder Schritt führt Sie durch einen bestimmten Teil der Konfiguration und stellt sicher, dass Sie nichts übersehen.
+
+## Schritt 1: Einrichten der Entwicklungsumgebung
+
+Bevor Sie in den Code eintauchen, stellen Sie sicher, dass Ihre Entwicklungsumgebung vollständig eingerichtet ist.
+
+- Öffnen Sie Visual Studio: Starten Sie Visual Studio und erstellen Sie ein neues C#-Projekt. Wenn Sie bereits ein Projekt haben, in dem Sie die gemessene Lizenz konfigurieren möchten, öffnen Sie stattdessen dieses.
+- Verweis auf Aspose.PDF hinzufügen: Klicken Sie im Solution Explorer mit der rechten Maustaste auf Ihr Projekt, gehen Sie zu „NuGet-Pakete verwalten“ und suchen Sie nach „Aspose.PDF für .NET“. Installieren Sie das Paket, um es in Ihr Projekt aufzunehmen.
+
+## Schritt 2: Initialisieren der Metered-Klasse
+
+ Jetzt, da Ihre Umgebung bereit ist, ist es Zeit, die`Metered` Klasse bereitgestellt von Aspose.PDF.
+
+-  Erstellen einer Instanz: Beginnen Sie mit dem Erstellen einer Instanz des`Metered` Klasse. Diese Klasse hilft Ihnen beim Einrichten Ihrer gebührenpflichtigen Lizenzschlüssel.
 
 ```csharp
 Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
-metered.SetMeteredKey("PUBLIC_KEY", "PRIVATE_KEY");
 ```
 
-### Schritt 2: Laden des Dokuments
+-  Warum das wichtig ist: Die`Metered` Klasse ist wichtig, da Sie damit das gebührenpflichtige Lizenzmodell nutzen können, das bei der Verarbeitung großer Dokumentmengen kostengünstiger sein kann.
 
- Laden Sie das PDF-Dokument mit von der Festplatte`Document` Klasse von Aspose.PDF.
+## Schritt 3: Festlegen Ihrer gebührenpflichtigen Lizenzschlüssel
+
+ Mit dem`Metered` Klasse initialisiert, es ist Zeit, Ihre gemessenen öffentlichen und privaten Schlüssel festzulegen.
+
+-  Zugriff auf die`SetMeteredKey` Methode: Die`SetMeteredKey` Die Methode wird verwendet, um Ihre öffentlichen und privaten Schlüssel auf die Aspose.PDF-Bibliothek anzuwenden.
 
 ```csharp
-Document doc = new Document(dataDir + "input.pdf");
+metered.SetMeteredKey("YOUR_PUBLIC_KEY", "YOUR_PRIVATE_KEY");
 ```
 
-### Schritt 3: Ermitteln Sie die Seitenzahl des Dokuments
+-  Wichtiger Hinweis: Ersetzen`"YOUR_PUBLIC_KEY"` Und`"YOUR_PRIVATE_KEY"`mit Ihren tatsächlich gemessenen Lizenzschlüsseln. Diese Schlüssel sind für die Aktivierung der vollständigen Funktionen von Aspose.PDF von entscheidender Bedeutung.
 
- Benutzen Sie die`Count` Eigentum der`Pages` Sammlung, um die Gesamtzahl der Seiten im Dokument zu erhalten.
+## Schritt 4: Laden Sie Ihr PDF-Dokument
 
-```csharp
-Console.WriteLine(doc.Pages.Count);
-```
+Als Nächstes laden Sie das PDF-Dokument, mit dem Sie arbeiten möchten.
 
-### Beispielquellcode für die Konfiguration einer gemessenen Lizenz mit Aspose.PDF für .NET 
+- Geben Sie den Dokumentpfad an: Definieren Sie den Pfad zu Ihrer PDF-Datei. Dies ist das Dokument, auf das Sie die getaktete Lizenzkonfiguration anwenden.
 
 ```csharp
-
-// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Legen Sie gemessene öffentliche und private Schlüssel fest
-Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
-//Greifen Sie auf die Eigenschaft setMeteredKey zu und übergeben Sie öffentliche und private Schlüssel als Parameter
-metered.SetMeteredKey("*****", "*****");
-// Laden Sie das Dokument von der Festplatte.
 Document doc = new Document(dataDir + "input.pdf");
-//Ermitteln Sie die Seitenzahl des Dokuments
-Console.WriteLine(doc.Pages.Count);
-
 ```
+
+-  Laden des Dokuments: Die`Document` Mit der Klasse in Aspose.PDF können Sie Ihre PDF-Dateien mühelos laden und bearbeiten.
+
+## Schritt 5: Überprüfen der Konfiguration
+
+Lassen Sie uns abschließend überprüfen, ob die gemessene Lizenz richtig konfiguriert wurde.
+
+- Überprüfen Sie die Seitenanzahl: Eine einfache Möglichkeit, zu überprüfen, ob alles ordnungsgemäß funktioniert, besteht darin, auf die Seitenanzahl des geladenen Dokuments zuzugreifen. Wenn die gemessene Lizenz richtig eingerichtet ist, sollte dieser Vorgang ohne Lizenzierungsprobleme ablaufen.
+
+```csharp
+Console.WriteLine(doc.Pages.Count);
+```
+
+- Warum dieser Schritt wichtig ist: Indem Sie die Seitenzahl überprüfen, bestätigen Sie, dass das Dokument zugänglich ist und die Lizenz wie erwartet funktioniert.
 
 ## Abschluss
 
-In diesem Tutorial haben wir erklärt, wie man mit Aspose.PDF für .NET eine getaktete Lizenz einrichtet. Durch die Verwendung einer gebührenpflichtigen Lizenz können Sie basierend auf Ihrer tatsächlichen Nutzung von den erweiterten Funktionen von Aspose.PDF profitieren. Stellen Sie sicher, dass Sie gültige Lizenzschlüssel bereitstellen, um Aspose.PDF mit all seinen Funktionen nutzen zu können.
+Herzlichen Glückwunsch! Sie haben erfolgreich gemessene Lizenzschlüssel für Ihre PDF-Dateien mit Aspose.PDF für .NET konfiguriert. Dieses Setup setzt nicht nur das volle Potenzial der Aspose.PDF-Bibliothek frei, sondern stellt auch sicher, dass Sie große PDF-Verarbeitungsaufgaben problemlos bewältigen können.
 
-### FAQs zum Konfigurieren gemessener Lizenzschlüssel in einer PDF-Datei
+## Häufig gestellte Fragen
 
-#### F: Was ist eine gemessene Lizenz in Aspose.PDF?
+### Was ist eine gemessene Lizenz in Aspose.PDF?  
+Mit einer nutzungsabhängigen Lizenz zahlen Sie für die API nicht einmalig, sondern nur nutzungsabhängig. Sie ist ideal für die Verarbeitung großer Dokumentenmengen.
 
-A: Bei einer gebührenpflichtigen Lizenz in Aspose.PDF handelt es sich um ein Lizenzmodell, bei dem Sie statt einer festen Lizenzgebühr auf der Grundlage Ihrer tatsächlichen Nutzung von Funktionen bezahlen können. Damit können Sie die erweiterten Funktionen von Aspose.PDF nutzen und nur für das bezahlen, was Sie auch nutzen.
+### Wie erhalte ich gebührenpflichtige Lizenzschlüssel?  
+ Sie erhalten gebührenpflichtige Lizenzschlüssel durch den Kauf einer Lizenz von[Hier](https://purchase.aspose.com/buy) oder durch Beantragung einer vorläufigen Lizenz.
 
-#### F: Warum sollte ich eine getaktete Lizenz für Aspose.PDF verwenden?
+### Kann ich Aspose.PDF ohne Lizenz verwenden?  
+Ja, aber die kostenlose Version hat Einschränkungen. Für uneingeschränkten Zugriff auf alle Funktionen müssen Sie eine gültige Lizenz beantragen.
 
-A: Die Verwendung einer gebührenpflichtigen Lizenz bietet Kosteneinsparungen und Flexibilität. Sie zahlen nur für die von Ihnen genutzten Funktionen, sodass es für Projekte mit unterschiedlichen Anforderungen geeignet ist. Dadurch entfallen vorab Lizenzgebühren und Sie können auf erweiterte PDF-Funktionen zugreifen.
+### Was passiert, wenn ich die gemessene Lizenz nicht richtig einstelle?  
+Wenn die gemessene Lizenz nicht richtig eingestellt ist, hat Ihre Anwendung möglicherweise nicht auf alle Funktionen Zugriff oder es treten Lizenzierungsausnahmen auf.
 
-#### F: Wie erhalte ich kostenpflichtige Lizenzschlüssel?
-
-A: Wenn Sie eine gebührenpflichtige Lizenz von Aspose erwerben, erhalten Sie ein Paar öffentlicher und privater Schlüssel. Diese Schlüssel werden zur Authentifizierung und Aktivierung der getakteten Lizenzierung Ihrer Aspose.PDF-Anwendung verwendet.
-
-#### F: Wie konfiguriere ich gemessene Lizenzschlüssel in Aspose.PDF für .NET?
-
- A: Um gemessene Lizenzschlüssel zu konfigurieren, verwenden Sie die`SetMeteredKey` Methode der`Aspose.Pdf.Metered` Klasse. Ersetzen`"PUBLIC_KEY"` Und`"PRIVATE_KEY"` mit Ihren tatsächlichen Schlüsseln.
-
-```csharp
-Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
-metered.SetMeteredKey("PUBLIC_KEY", "PRIVATE_KEY");
-```
-
-#### F: Wie lade ich ein PDF-Dokument mit Aspose.PDF für .NET?
-
- A: Um ein PDF-Dokument von der Festplatte zu laden, verwenden Sie die`Document` Klasse von Aspose.PDF und geben Sie den Dateipfad an.
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
-#### F: Wie erhalte ich die Gesamtseitenzahl eines PDF-Dokuments?
-
- A: Um die Gesamtseitenzahl eines PDF-Dokuments zu ermitteln, verwenden Sie die`Count` Eigentum der`Pages` Sammlung.
-
-```csharp
-int pageCount = doc.Pages.Count;
-Console.WriteLine("Total pages: " + pageCount);
-```
-
-#### F: Kann ich die getaktete Lizenzierung für andere Aspose-Produkte verwenden?
-
-A: Ja, für verschiedene Aspose-Produkte ist eine stundenweise Lizenzierung verfügbar, sodass Sie für eine Vielzahl von Funktionen basierend auf Ihrer Nutzung bezahlen können.
-
-#### F: Ist eine gebührenpflichtige Lizenz für alle Arten von Projekten geeignet?
-
-A: Die getaktete Lizenzierung eignet sich für Projekte mit unterschiedlicher Funktionsnutzung. Für Projekte mit konsistenter Nutzung zahlreicher Funktionen ist dies möglicherweise nicht kosteneffektiv.
-
-#### F: Wo finde ich weitere Informationen zur gebührenpflichtigen Lizenzierung von Aspose.PDF?
-
- A: Weitere Informationen zu gebührenpflichtiger Lizenzierung, Preisen und Vorteilen finden Sie unter[Aspose.PDF-Metered-Lizenzierung](https://purchase.aspose.com/pricing/pdf/net) Seite.
-
-#### F: Wie stelle ich die Sicherheit meiner gemessenen Lizenzschlüssel sicher?
-
-A: Bezahlte Lizenzschlüssel werden zur Authentifizierung verwendet und stellen vertrauliche Informationen dar. Stellen Sie sicher, dass sie vertraulich behandelt und nicht öffentlich geteilt werden.
-
-#### F: Kann ich zwischen herkömmlicher und gebührenpflichtiger Lizenzierung wechseln?
-
-A: Ja, Sie können für Aspose.PDF je nach den Anforderungen Ihres Projekts zwischen der herkömmlichen Lizenzierung und der getakteten Lizenzierung wechseln.
-
-#### F: Kann ich eine Testversion verwenden, bevor ich eine gebührenpflichtige Lizenz kaufe?
-
- A: Ja, Sie können es versuchen[kostenlose Testversion](https://products.aspose.com/pdf/net) von Aspose.PDF, um dessen Merkmale und Funktionalitäten zu bewerten, bevor Sie eine gebührenpflichtige Lizenz erwerben.
-
-#### F: Wie oft sollte ich gemessene Lizenzschlüssel konfigurieren?
-
-A: Sie müssen gemessene Lizenzschlüssel nur einmal konfigurieren, wenn Ihre Anwendung gestartet wird. Es bietet Zugriff auf die erweiterten Funktionen während der gesamten Laufzeit der Anwendung.
-
-#### F: Kann ich eine getaktete Lizenzierung auf eine bestehende Anwendung anwenden?
-
-A: Ja, Sie können die getaktete Lizenzierung in eine bestehende Aspose.PDF-Anwendung integrieren, um von deren Vorteilen zu profitieren.
+### Kann ich in Aspose.PDF zwischen verschiedenen Lizenztypen wechseln?  
+Ja, Aspose.PDF ermöglicht Ihnen, zwischen verschiedenen Lizenztypen (z. B. regulär und gemessen) zu wechseln, indem Sie die entsprechenden Lizenzschlüssel in Ihrer Anwendung konfigurieren.

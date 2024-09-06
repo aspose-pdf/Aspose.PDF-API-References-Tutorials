@@ -2,18 +2,18 @@
 title: Tekening met verloopvulling toevoegen
 linktitle: Tekening met verloopvulling toevoegen
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u een tekening met verloopvulling toevoegt met Aspose.PDF voor .NET. Stapsgewijze zelfstudie om aantrekkelijke PDF-documenten te maken.
+description: Leer hoe u een tekening met verloopvulling toevoegt met Aspose.PDF voor .NET. Stapsgewijze tutorial om aantrekkelijke PDF-documenten te maken.
 type: docs
 weight: 20
 url: /nl/net/programming-with-graphs/add-drawing-with-gradient-fill/
 ---
-In deze zelfstudie leiden we u stap voor stap door de volgende C#-broncode om een tekening met verloopvulling toe te voegen aan programmeren met afbeeldingen met Aspose.PDF voor .NET.
+In deze tutorial leiden we je stap voor stap door de volgende C#-broncode om een tekening met verloopvulling toe te voegen aan programmeren met afbeeldingen met behulp van Aspose.PDF voor .NET.
 
-Zorg ervoor dat u de Aspose.PDF-bibliotheek hebt geïnstalleerd en uw ontwikkelomgeving hebt ingesteld voordat u begint. Daarnaast heb je basiskennis van programmeren in C#.
+Zorg ervoor dat u de Aspose.PDF-bibliotheek hebt geïnstalleerd en uw ontwikkelomgeving hebt ingesteld voordat u begint. Heb ook basiskennis van C#-programmering.
 
-## Stap 1: Documentmap instellen
+## Stap 1: Documentdirectory instellen
 
-In de meegeleverde broncode moet u de map opgeven waarin u het resulterende PDF-bestand wilt opslaan. Wijzig de variabele "dataDir" in de gewenste map.
+In de meegeleverde broncode moet u de directory opgeven waar u het resulterende PDF-bestand wilt opslaan. Wijzig de variabele "dataDir" naar de gewenste directory.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -21,14 +21,14 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Stap 2: Een documentobject instantiëren en een pagina toevoegen
 
-We maken een exemplaar van de klasse Document en voegen een pagina toe aan dit document.
+We maken een instantie van de klasse Document en voegen een pagina toe aan dit document.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Stap 3: Een grafiekobject maken en aan de pagina toevoegen
+## Stap 3: Een grafiekobject maken en toevoegen aan de pagina
 
 We maken een Graph-object met opgegeven afmetingen en voegen dit toe aan de alineaverzameling van de pagina.
 
@@ -37,16 +37,16 @@ Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300, 300);
 page.Paragraphs.Add(graph);
 ```
 
-## Stap 4: Maak een rechthoekig object en voeg het toe aan het diagram
+## Stap 4: Rechthoekig object maken en toevoegen aan grafiek
 
-We maken een rechthoekobject met opgegeven afmetingen en voegen dit toe aan de vormcollectie van het diagram.
+We maken een rechthoekobject met opgegeven afmetingen en voegen het toe aan de vormverzameling van het diagram.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(0, 0, 300, 300);
 graph.Shapes.Add(rect);
 ```
 
-## Stap 5: Verloopopvulling configureren
+## Stap 5: Verloopvulling configureren
 
 We configureren de verloopvulling voor de rechthoek met behulp van de klasse GradientAxialShading.
 
@@ -61,17 +61,17 @@ End = new Point(300, 300)
 };
 ```
 
-Hierdoor ontstaat een verloopvulling van rood naar blauw, van punt (0, 0) tot punt (300, 300).
+Hierdoor ontstaat een verloop van rood naar blauw, van punt (0, 0) naar punt (300, 300).
 
 ## Stap 6: Het PDF-bestand opslaan
 
-Ten slotte slaan we het resulterende PDF-bestand op met de naam "AddDrawingWithGradientFill_out.pdf" in de opgegeven map.
+Ten slotte slaan we het resulterende PDF-bestand op onder de naam "AddDrawingWithGradientFill_out.pdf" in de opgegeven map.
 
 ```csharp
 doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ```
 
-### Voorbeeldbroncode voor het toevoegen van een tekening met verloopvulling met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Tekening met verloopvulling toevoegen met behulp van Aspose.PDF voor .NET 
 
 ```csharp
 
@@ -96,42 +96,42 @@ doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ```
 ## Conclusie
 
-In deze tutorial hebben we stap voor stap uitgelegd hoe je een tekening met verloopvulling kunt toevoegen aan programmeren met afbeeldingen met Aspose.PDF voor .NET. Nu kunt u deze kennis gebruiken om aantrekkelijke PDF-documenten te maken met aangepaste ontwerpen en verloopvullingen.
+In deze tutorial hebben we stap voor stap uitgelegd hoe je een tekening met een gradient fill toevoegt aan programmeren met graphics met Aspose.PDF voor .NET. Nu kun je deze kennis gebruiken om aantrekkelijke PDF-documenten te maken met aangepaste ontwerpen en gradient fills.
 
 ### Veelgestelde vragen
 
-#### Vraag: Wat is het doel van deze tutorial?
+#### V: Wat is het doel van deze tutorial?
 
-A: Deze tutorial is bedoeld om u door het proces te leiden van het toevoegen van een tekening met verloopvulling aan het programmeren met afbeeldingen met Aspose.PDF voor .NET.
+A: Deze tutorial is bedoeld om u te begeleiden bij het toevoegen van een tekening met verloopvulling aan programmeren met afbeeldingen met behulp van Aspose.PDF voor .NET.
 
-#### Vraag: Welke vereisten zijn vereist voordat u begint?
+#### V: Aan welke voorwaarden moet ik voldoen voordat ik kan beginnen?
 
-A: Zorg ervoor dat u, voordat u begint, de Aspose.PDF-bibliotheek hebt geïnstalleerd en uw ontwikkelomgeving hebt ingesteld. Bovendien wordt een basiskennis van C#-programmeren aanbevolen.
+A: Voordat u begint, moet u ervoor zorgen dat u de Aspose.PDF-bibliotheek hebt geïnstalleerd en uw ontwikkelomgeving hebt ingesteld. Daarnaast wordt een basiskennis van C#-programmering aanbevolen.
 
-#### Vraag: Hoe geef ik de map op waarin het PDF-bestand moet worden opgeslagen?
+#### V: Hoe geef ik de map op waar het PDF-bestand moet worden opgeslagen?
 
 A: In de meegeleverde broncode kunt u de waarde van de variabele "dataDir" wijzigen om de map aan te geven waar u het resulterende PDF-bestand wilt opslaan.
 
-#### Vraag: Wat is het doel van het Graph-object?
+#### V: Wat is het doel van het Graph-object?
 
-A: Het Graph-object dient als container voor de tekenelementen. Het wordt gemaakt met gespecificeerde afmetingen en toegevoegd aan de alineaverzameling van de pagina.
+A: Het Graph-object dient als een container voor de tekenelementen. Het wordt gemaakt met opgegeven afmetingen en toegevoegd aan de alineaverzameling van de pagina.
 
-#### Vraag: Hoe kan ik de verloopvulling voor een vorm configureren?
+#### V: Hoe kan ik een verloopvulling voor een vorm configureren?
 
-A: Om de verloopvulling te configureren, kunt u de eigenschap FillColor van de GraphInfo van een vorm instellen met behulp van de klasse GradientAxialShading. Hiermee kunt u de begin- en eindpunten van het verloop en de kleuren waartussen de overgang plaatsvindt definiëren.
+A: Om gradient fill te configureren, kunt u de FillColor-eigenschap van de GraphInfo van een vorm instellen met behulp van de GradientAxialShading-klasse. Hiermee kunt u de begin- en eindpunten van de gradient definiëren en de kleuren waartussen de overgang moet plaatsvinden.
 
-#### Vraag: Kan ik de kleuren en richting van de verloopvulling aanpassen?
+#### V: Kan ik de kleuren en de richting van de verloopvulling aanpassen?
 
-A: Ja, u kunt de kleuren en richting van de verloopvulling aanpassen door de Color-objecten aan te passen en de begin- en eindpunten van de GradientAxialShading op te geven.
+A: Ja, u kunt de kleuren en de richting van de verloopvulling aanpassen door de kleurobjecten aan te passen en de begin- en eindpunten van de GradientAxialShading op te geven.
 
-#### Vraag: Wat is de laatste stap van de tutorial?
+#### V: Wat is de laatste stap van de tutorial?
 
-A: De laatste stap bestaat uit het opslaan van het resulterende PDF-bestand met de naam "AddDrawingWithGradientFill_out.pdf" in de opgegeven map.
+A: De laatste stap is het opslaan van het resulterende PDF-bestand met de naam "AddDrawingWithGradientFill_out.pdf" in de opgegeven map.
 
-#### Vraag: Is er een voorbeeldbroncode beschikbaar?
+#### V: Is er een voorbeeldbroncode beschikbaar?
 
-A: Ja, de tutorial biedt een voorbeeldbroncode die u als referentie kunt gebruiken om de beschreven stappen te implementeren.
+A: Ja, de tutorial bevat een voorbeeldbroncode die u kunt gebruiken als referentie bij het implementeren van de beschreven stappen.
 
-#### Vraag: Kan ik naast rechthoeken ook verloopvulling op andere vormen toepassen?
+#### V: Kan ik verloopvulling toepassen op andere vormen dan rechthoeken?
 
-A: Ja, u kunt ook een verloopvulling op andere vormen toepassen. Het proces omvat het configureren van de eigenschap FillColor van de GraphInfo van de vorm met behulp van de klasse GradientAxialShading.
+A: Ja, u kunt ook gradient fill op andere vormen toepassen. Het proces omvat het configureren van de FillColor-eigenschap van de GraphInfo van de vorm met behulp van de GradientAxialShading-klasse.

@@ -167,7 +167,7 @@ A: Než začnete, ujistěte se, že jste nastavili své vývojové prostředí p
 
 #### Otázka: Jak mohu otevřít existující dokument PDF a získat přístup k jeho označenému obsahu pomocí Aspose.PDF for .NET?
 
-Odpověď: Výukový program poskytuje příklady zdrojového kódu C#, které demonstrují, jak otevřít existující dokument PDF pomocí Aspose.PDF for .NET a přistupovat k jeho označenému obsahu pro další manipulaci.
+Odpověď: Výukový program poskytuje příklady zdrojového kódu C#, které demonstrují, jak otevřít existující dokument PDF pomocí Aspose.PDF pro .NET a přistupovat k jeho označenému obsahu pro další manipulaci.
 
 #### Otázka: Jaký je účel přiřazení alternativního textu a ohraničovacích rámečků k obrázkům v dokumentu PDF?
 
@@ -179,7 +179,7 @@ Odpověď: Výukový program obsahuje příklady zdrojového kódu C#, které il
 
 #### Otázka: Co zahrnuje proces přesouvání prvků v dokumentu PDF?
 
-Odpověď: Přesouvání prvků v dokumentu PDF zahrnuje změnu rodičovského prvku určitého prvku. V tomto kurzu se naučíte, jak přesunout prvek Span do zadaného prvku odstavce v tabulce.
+Odpověď: Přesouvání prvků v dokumentu PDF zahrnuje změnu nadřazeného prvku určitého prvku. V tomto kurzu se naučíte, jak přesunout prvek Span do zadaného prvku odstavce v tabulce.
 
 #### Otázka: Jak uložím upravený dokument PDF po přidání tagů a úpravách obrázků?
 

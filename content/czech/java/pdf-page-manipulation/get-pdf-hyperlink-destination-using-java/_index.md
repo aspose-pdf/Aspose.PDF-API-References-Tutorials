@@ -8,7 +8,7 @@ weight: 10
 url: /cs/java/pdf-page-manipulation/get-pdf-hyperlink-destination-using-java/
 ---
 
-## Úvod
+## Zavedení
 
 tomto tutoriálu prozkoumáme, jak získat umístění hypertextových odkazů PDF pomocí Javy s pomocí Aspose.PDF pro Javu. Hypertextové odkazy jsou základními prvky v dokumentech PDF, které uživatelům umožňují navigaci do konkrétních cílů v rámci PDF nebo externích zdrojů. Projdeme si procesem krok za krokem a poskytneme příklady kódu a vysvětlení.
 
@@ -25,8 +25,8 @@ Než začneme, ujistěte se, že máte splněny následující předpoklady:
 
 ## Nastavení Aspose.PDF pro Javu
 
-Chcete-li začít, musíte ve svém projektu nastavit Aspose.PDF pro Javu. Následuj tyto kroky:
-1.  Stáhněte si Aspose.PDF pro Javu z[tady](https://releases.aspose.com/pdf/java/).
+Chcete-li začít, musíte ve svém projektu nastavit Aspose.PDF pro Javu. Postupujte takto:
+1.  Stáhněte si Aspose.PDF pro Java z[zde](https://releases.aspose.com/pdf/java/).
 2. Přidejte knihovnu Aspose.PDF do svého projektu Java.
 
 ## Načítání dokumentu PDF
@@ -53,7 +53,7 @@ LinkAnnotationCollection linkAnnotations = page.getAnnotations().getLinkAnnotati
 Nyní, když máme anotace odkazů, můžeme extrahovat cíle hypertextových odkazů:
 
 ```java
-// Extrahujte a tiskněte cíle hypertextových odkazů
+// Extrahujte a vytiskněte cíle hypertextových odkazů
 for (LinkAnnotation link : linkAnnotations) {
     String destination = link.getAction().getDestination();
     System.out.println("Hyperlink Destination: " + destination);
@@ -68,7 +68,7 @@ V tomto tutoriálu jsme se naučili, jak získat umístění hypertextových odk
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
- Chcete-li nainstalovat Aspose.PDF pro Java, stáhněte si knihovnu z[tady](https://releases.aspose.com/pdf/java/) a přidejte jej do závislostí projektu Java.
+ Chcete-li nainstalovat Aspose.PDF pro Java, stáhněte si knihovnu z[zde](https://releases.aspose.com/pdf/java/) a přidejte jej do závislostí projektu Java.
 
 ### Mohu používat Aspose.PDF pro Javu zdarma?
 
@@ -78,10 +78,10 @@ Aspose.PDF for Java je komerční knihovna, ale její funkce můžete prozkoumat
 
 Aspose.PDF for Java vám umožňuje získat interní i externí hypertextové odkazy přítomné v dokumentu PDF.
 
-### Jak mohu upravit nebo odstranit hypertextové odkazy v PDF pomocí Aspose.PDF for Java?
+### Jak mohu upravit nebo odstranit hypertextové odkazy v PDF pomocí Aspose.PDF pro Java?
 
 Hypervazby můžete upravit nebo odstranit pomocí přístupu k anotacím odkazů a jejich přidruženým akcím v dokumentu PDF.
 
 ### Kde najdu další dokumentaci k Aspose.PDF pro Javu?
 
- Podrobnou dokumentaci k Aspose.PDF pro Javu naleznete na adrese[tady](https://reference.aspose.com/pdf/java/).
+ Podrobnou dokumentaci k Aspose.PDF pro Javu naleznete na adrese[zde](https://reference.aspose.com/pdf/java/).

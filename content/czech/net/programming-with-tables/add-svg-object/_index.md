@@ -175,7 +175,7 @@ V tomto tutoriálu jsme se naučili, jak přidat objekt SVG do souboru PDF pomoc
 
 #### Otázka: Mohu k obrázku SVG přidat hypertextové odkazy?
 
- Odpověď: Ano, k obrázku SVG můžete přidat hypertextové odkazy pomocí`Hyperlink` vlastnictvím`Aspose.Pdf.Image` instance. Nastavte URL hypertextového odkazu nebo akci, aby bylo možné na obrázek kliknout.
+ Odpověď: Ano, k obrázku SVG můžete přidat hypertextové odkazy pomocí`Hyperlink` majetek z`Aspose.Pdf.Image` instance. Nastavte URL hypertextového odkazu nebo akci, aby bylo možné na obrázek kliknout.
 
 #### Otázka: Je Aspose.PDF for .NET kompatibilní s .NET Core 3.1 nebo novějšími verzemi?
 

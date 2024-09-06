@@ -27,7 +27,7 @@ Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 
 ## 第三步：優化文檔
 
-要優化 Web 的 PDF 文檔，只需調用`Optimize`方法。
+若要針對 Web 最佳化 PDF 文檔，只需調用`Optimize`方法。
 
 ```csharp
 pdfDocument.Optimize();

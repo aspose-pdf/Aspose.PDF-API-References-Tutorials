@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## 4. lépés: Adjon hozzá egy választógomb mezőt
 
-Hozzon létre egy választógomb mezőt, és állítsa be a helyzetét és méretét:
+Hozzon létre egy választógomb mezőt, és állítsa be a helyét és méretét:
 
 ```csharp
 RadioButtonField field = new RadioButtonField(page);
@@ -43,7 +43,7 @@ field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 field. PartialName = "NewField";
 ```
 
-## 5. lépés: Adja meg a választógomb opcióit
+## 5. lépés: Adja hozzá a választógomb opcióit
 
 Adja hozzá a kívánt beállításokat a választógomb mezőhöz. Igény szerint beállíthatja az egyes opciók koordinátáit és méretét:
 

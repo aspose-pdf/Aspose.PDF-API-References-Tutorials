@@ -1,25 +1,25 @@
 ---
 title: Odszyfruj plik PDF
 linktitle: Odszyfruj plik PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak odszyfrować plik PDF za pomocą Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak odszyfrować plik PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 20
 url: /pl/net/programming-with-security-and-signatures/decrypt/
 ---
-W tym samouczku przeprowadzimy Cię przez proces odszyfrowywania pliku PDF przy użyciu Aspose.PDF dla .NET. Ta biblioteka umożliwia otwarcie istniejącego pliku PDF, odszyfrowanie go i zapisanie zaktualizowanej wersji. Ta funkcja jest przydatna, gdy chcesz usunąć hasło z pliku PDF w celu łatwiejszego dostępu.
+tym samouczku przeprowadzimy Cię przez proces odszyfrowywania pliku PDF za pomocą Aspose.PDF dla .NET. Ta biblioteka umożliwia otwarcie istniejącego pliku PDF, odszyfrowanie go i zapisanie zaktualizowanej wersji. Ta funkcja jest przydatna, gdy musisz usunąć hasło z pliku PDF, aby uzyskać łatwiejszy dostęp.
 
-## Krok 1: Warunki wstępne
+## Krok 1: Wymagania wstępne
 
-Zanim zaczniesz, upewnij się, że masz następujące wymagania wstępne:
+Zanim zaczniesz, upewnij się, że spełniasz następujące wymagania wstępne:
 
 - Podstawowa znajomość języka programowania C#
 - Instalowanie programu Visual Studio na komputerze
-- Zainstalowana biblioteka Aspose.PDF dla .NET
+- Zainstalowano bibliotekę Aspose.PDF dla .NET
 
 ## Krok 2: Konfiguracja środowiska
 
-Aby rozpocząć, wykonaj następujące kroki, aby skonfigurować środowisko programistyczne:
+Aby rozpocząć, wykonaj poniższe kroki, aby skonfigurować środowisko programistyczne:
 
 1. Otwórz program Visual Studio i utwórz nowy projekt C#.
 2. Zainstaluj bibliotekę Aspose.PDF dla platformy .NET przy użyciu menedżera pakietów NuGet.
@@ -40,9 +40,9 @@ Document document = new Document(dataDir + "Decrypt.pdf", "password");
 
 Pamiętaj, aby zastąpić symbole zastępcze rzeczywistymi lokalizacjami i hasłami, których chcesz użyć.
 
-## Krok 4: Odszyfrowanie plików PDF
+## Krok 4: Odszyfrowanie pliku PDF
 
- Po otwarciu dokumentu PDF możesz go odszyfrować za pomocą`Decrypt` metoda. Ta metoda nie wymaga żadnych parametrów.
+ Po otwarciu dokumentu PDF możesz go odszyfrować za pomocą`Decrypt` metoda. Dla tej metody nie są wymagane żadne parametry.
 
 ```csharp
 document. Decrypt();
@@ -50,7 +50,7 @@ document. Decrypt();
 
 ## Krok 5: Zapisz zaktualizowany plik PDF
 
- Po odszyfrowaniu pliku PDF musisz zapisać zaktualizowaną wersję dokumentu. Określ ścieżkę pliku wyjściowego i użyj metody`Save` sposób na zapisanie dokumentu.
+ Po odszyfrowaniu pliku PDF należy zapisać zaktualizowaną wersję dokumentu. Określ ścieżkę do pliku wyjściowego i użyj`Save` metoda zapisywania dokumentu.
 
 ```csharp
 dataDir = dataDir + "Decrypt_out.pdf";
@@ -60,14 +60,14 @@ Console.WriteLine("\nPDF file decrypted successfully.\nFile saved at " + dataDir
 
 Zaktualizowany plik PDF zostanie zapisany w określonej lokalizacji.
 
-### Przykładowy kod źródłowy dla Deszyfruj przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla Decrypt using Aspose.PDF dla .NET 
 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 // Otwórz dokument
 Document document = new Document(dataDir+ "Decrypt.pdf", "password");
-//Odszyfruj plik PDF
+// Odszyfruj PDF
 document.Decrypt();
 dataDir = dataDir + "Decrypt_out.pdf";
 // Zapisz zaktualizowany plik PDF
@@ -77,38 +77,38 @@ Console.WriteLine("\nPDF file decrypted successfully.\nFile saved at " + dataDir
 
 ## Wniosek
 
-Gratulacje! Pomyślnie odszyfrowałeś plik PDF przy użyciu Aspose.PDF dla .NET. W tym samouczku omówiono krok po kroku proces od otwarcia dokumentu do zapisania zaktualizowanej wersji. Możesz teraz używać tej funkcji do usuwania haseł z plików PDF.
+Gratulacje! Udało Ci się odszyfrować plik PDF za pomocą Aspose.PDF dla .NET. Ten samouczek obejmuje proces krok po kroku od otwarcia dokumentu do zapisania zaktualizowanej wersji. Teraz możesz użyć tej funkcji, aby usunąć hasła z plików PDF.
 
-### Często zadawane pytania dotyczące odszyfrowywania pliku PDF
+### FAQ dotyczące odszyfrowywania plików PDF
 
-#### P: Jaki jest cel tego samouczka?
+#### P: Jaki jest cel tego poradnika?
 
-Odp.: Ten samouczek ma na celu poprowadzić Cię przez proces deszyfrowania pliku PDF przy użyciu Aspose.PDF dla .NET. Biblioteka umożliwia usunięcie hasła z istniejącego dokumentu PDF i zapisanie zaktualizowanej wersji, zapewniając łatwiejszy dostęp do pliku.
+A: Ten samouczek ma na celu przeprowadzenie Cię przez proces odszyfrowywania pliku PDF za pomocą Aspose.PDF dla .NET. Biblioteka umożliwia usunięcie hasła z istniejącego dokumentu PDF i zapisanie zaktualizowanej wersji, zapewniając łatwiejszy dostęp do pliku.
 
-#### P: Jakie wymagania wstępne są wymagane przed rozpoczęciem?
+#### P: Jakie warunki wstępne należy spełnić przed rozpoczęciem?
 
-O: Zanim zaczniesz, upewnij się, że masz podstawową wiedzę na temat języka programowania C#, masz zainstalowany program Visual Studio na swoim komputerze i masz zainstalowaną bibliotekę Aspose.PDF dla .NET.
+O: Zanim zaczniesz, upewnij się, że posiadasz podstawową wiedzę na temat języka programowania C#, że na Twoim komputerze jest zainstalowany program Visual Studio i że jest zainstalowana biblioteka Aspose.PDF dla platformy .NET.
 
 #### P: Jak skonfigurować środowisko programistyczne?
 
-Odp.: Wykonaj podane kroki, aby skonfigurować środowisko programistyczne, w tym utworzyć nowy projekt C# w programie Visual Studio, zainstalować bibliotekę Aspose.PDF dla platformy .NET przy użyciu Menedżera pakietów NuGet i zaimportować wymagane przestrzenie nazw.
+A: Wykonaj podane kroki, aby skonfigurować środowisko programistyczne, co obejmuje utworzenie nowego projektu C# w programie Visual Studio, zainstalowanie biblioteki Aspose.PDF dla platformy .NET przy użyciu Menedżera pakietów NuGet i zaimportowanie wymaganych przestrzeni nazw.
 
 #### P: Jak otworzyć istniejący dokument PDF?
 
- O: Skorzystaj z`Document` class, aby otworzyć dokument PDF, który chcesz odszyfrować. Zastąp „Decrypt.pdf” rzeczywistą nazwą pliku i podaj hasło do odszyfrowania.
+ A: Użyj`Document` klasa, aby otworzyć dokument PDF, który chcesz odszyfrować. Zastąp „Decrypt.pdf” rzeczywistą nazwą pliku i podaj hasło do odszyfrowania.
 
 #### P: Jak mogę odszyfrować dokument PDF?
 
- Odp.: Po otwarciu dokumentu PDF użyj pliku`Decrypt` metoda na`Document` obiekt. Ta metoda nie wymaga żadnych parametrów.
+ A: Po otwarciu dokumentu PDF użyj`Decrypt` metoda na`Document` obiekt. Dla tej metody nie są wymagane żadne parametry.
 
 #### P: Czy mogę określić różne hasła do odszyfrowania?
 
- O: Nie,`Decrypt` metoda nie wymaga żadnych parametrów. Zakłada, że hasło podane podczas otwierania dokumentu jest hasłem deszyfrującym.
+ A: Nie,`Decrypt` Metoda nie wymaga żadnych parametrów. Zakłada, że hasło podane podczas otwierania dokumentu jest hasłem deszyfrującym.
 
 #### P: Jak zapisać odszyfrowany dokument PDF?
 
- Odp.: Po odszyfrowaniu pliku PDF użyj pliku`Save` metoda na`Document` obiekt, aby zapisać zaktualizowany dokument PDF. Określ ścieżkę pliku wyjściowego, w którym zostanie zapisany odszyfrowany plik PDF.
+ A: Po odszyfrowaniu pliku PDF użyj`Save` metoda na`Document` obiekt, aby zapisać zaktualizowany dokument PDF. Określ ścieżkę pliku wyjściowego, w którym zostanie zapisany odszyfrowany plik PDF.
 
-#### P: Jak mogę zapewnić bezpieczeństwo moich odszyfrowanych plików PDF?
+#### P: W jaki sposób mogę zagwarantować bezpieczeństwo moich odszyfrowanych plików PDF?
 
-Odpowiedź: Po odszyfrowaniu pliku PDF dostęp do niego nie wymaga już hasła. Zachowaj ostrożność podczas udostępniania odszyfrowanych plików PDF, ponieważ mogą one nie mieć już tego samego poziomu bezpieczeństwa, co pliki chronione hasłem.
+A: Po odszyfrowaniu pliku PDF nie jest już wymagane hasło do dostępu. Zachowaj ostrożność podczas udostępniania odszyfrowanych plików PDF, ponieważ mogą one nie mieć już takiego samego poziomu bezpieczeństwa jak pliki chronione hasłem.

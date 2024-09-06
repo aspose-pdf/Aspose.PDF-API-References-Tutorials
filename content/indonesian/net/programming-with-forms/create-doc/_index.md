@@ -1,8 +1,8 @@
 ---
 title: Buat Dokumen
 linktitle: Buat Dokumen
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Buat dokumen dengan mudah menggunakan tombol radio menggunakan Aspose.PDF untuk .NET.
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Buat dokumen dengan tombol radio dengan mudah menggunakan Aspose.PDF untuk .NET.
 type: docs
 weight: 40
 url: /id/net/programming-with-forms/create-doc/
@@ -11,7 +11,7 @@ Dalam tutorial ini, kami akan menunjukkan cara membuat dokumen dengan tombol rad
 
 ##Langkah 1: Persiapan
 
-Pertama, pastikan Anda telah mengimpor perpustakaan yang diperlukan dan mengatur jalur ke direktori dokumen:
+Pertama, pastikan Anda telah mengimpor pustaka yang diperlukan dan mengatur jalur ke direktori dokumen:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Langkah 2: Buat dokumen baru
 
-Buat objek Dokumen baru untuk menyimpan dokumen PDF:
+Buat objek Dokumen baru untuk menampung dokumen PDF:
 
 ```csharp
 Document doc = new Document();
@@ -45,7 +45,7 @@ field. PartialName = "NewField";
 
 ## Langkah 5: Tambahkan opsi tombol radio
 
-Tambahkan opsi yang diinginkan ke bidang tombol radio. Anda dapat mengatur koordinat dan ukuran setiap opsi sesuai kebutuhan:
+Tambahkan opsi yang diinginkan ke kolom tombol radio. Anda dapat mengatur koordinat dan ukuran setiap opsi sesuai kebutuhan:
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField();
@@ -104,9 +104,9 @@ try
 	RadioButtonField field = new RadioButtonField(page);
 	field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 	field.PartialName = "NewField";
-	// Tambahkan opsi tombol radio. harap dicatat bahwa opsi ini terletak
-	// Baik secara horizontal maupun vertikal.
-	// Anda dapat mencoba mengatur koordinat (dan bahkan ukurannya) apa pun untuknya.
+	// Tambahkan opsi tombol radio. Harap perhatikan bahwa opsi ini terletak
+	// Tidak horizontal maupun vertikal.
+	// Anda dapat mencoba mengatur koordinat apa pun (dan bahkan ukuran) untuknya.
 	RadioButtonOptionField opt1 = new RadioButtonOptionField();
 	opt1.Rect = new Aspose.Pdf.Rectangle(40, 650, 60, 670);
 	opt1.OptionName = "Item1";
@@ -144,24 +144,24 @@ catch (Exception ex)
 
 Dalam tutorial ini, kita mempelajari cara membuat dokumen dengan tombol radio menggunakan Aspose.PDF untuk .NET. Dengan mengikuti langkah-langkah ini, Anda dapat dengan mudah menambahkan tombol radio ke dokumen PDF Anda menggunakan Aspose.PDF.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### T: Bisakah saya mengkustomisasi tampilan tombol radio di dokumen menggunakan Aspose.PDF untuk .NET?
+#### T: Dapatkah saya menyesuaikan tampilan tombol radio dalam dokumen menggunakan Aspose.PDF untuk .NET?
 
-J: Ya, Anda dapat menyesuaikan tampilan tombol radio di dokumen menggunakan Aspose.PDF untuk .NET. Anda dapat mengatur properti seperti ukuran, warna, gaya tepi, dan lainnya untuk menyesuaikan tampilan tombol radio.
+A: Ya, Anda dapat menyesuaikan tampilan tombol radio dalam dokumen menggunakan Aspose.PDF for .NET. Anda dapat mengatur properti seperti ukuran, warna, gaya border, dan lainnya untuk menyesuaikan tampilan tombol radio.
 
 #### T: Bagaimana cara menambahkan grup tombol radio dengan opsi yang saling eksklusif?
 
-J: Untuk membuat opsi yang saling eksklusif, Anda dapat menambahkan beberapa kolom tombol radio dengan nama yang sama. Ini akan memastikan bahwa ketika satu opsi dipilih, opsi lain dengan nama yang sama akan otomatis dibatalkan pilihannya.
+J: Untuk membuat opsi yang saling eksklusif, Anda dapat menambahkan beberapa kolom tombol radio dengan nama yang sama. Ini akan memastikan bahwa saat satu opsi dipilih, opsi lain dengan nama yang sama akan otomatis tidak dipilih.
 
-#### T: Apakah mungkin untuk menyetel opsi pilihan default untuk tombol radio?
+#### T: Apakah mungkin untuk menetapkan opsi pilihan default untuk tombol radio?
 
-J: Ya, Anda dapat mengatur opsi pilihan default untuk tombol radio menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan`Selected` properti dari`RadioButtonOptionField` objek untuk menandai opsi sebagai dipilih secara default.
+A: Ya, Anda dapat mengatur opsi pilihan default untuk tombol radio menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan`Selected` milik`RadioButtonOptionField` objek untuk menandai opsi sebagai dipilih secara default.
 
-#### T: Bisakah saya menambahkan event handler ke tombol radio?
+#### T: Dapatkah saya menambahkan pengendali peristiwa ke tombol radio?
 
- J: Ya, Anda dapat menambahkan event handler ke tombol radio menggunakan Aspose.PDF untuk .NET. Anda dapat mengaitkan tindakan JavaScript, seperti`OnValueChanged`, ke tombol radio untuk melakukan tindakan tertentu saat pengguna memilih opsi.
+ A: Ya, Anda dapat menambahkan event handler ke tombol radio menggunakan Aspose.PDF untuk .NET. Anda dapat mengaitkan tindakan JavaScript, seperti`OnValueChanged`, ke tombol radio untuk melakukan tindakan tertentu saat pengguna memilih opsi.
 
 #### T: Bagaimana cara mengambil opsi yang dipilih dari grup tombol radio setelah pengguna membuat pilihan?
 
- J: Anda dapat mengambil opsi yang dipilih dari grup tombol radio menggunakan Aspose.PDF untuk .NET. Setelah pengguna membuat pilihan, Anda dapat mengakses`Selected` properti dari`RadioButtonOptionField` objek untuk memeriksa opsi mana yang dipilih.
+ A: Anda dapat mengambil opsi yang dipilih dari grup tombol radio menggunakan Aspose.PDF untuk .NET. Setelah pengguna membuat pilihan, Anda dapat mengakses`Selected` milik`RadioButtonOptionField` objek untuk memeriksa opsi mana yang dipilih.

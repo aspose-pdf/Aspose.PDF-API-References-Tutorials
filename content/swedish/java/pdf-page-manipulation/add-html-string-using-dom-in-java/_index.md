@@ -58,12 +58,12 @@ Slutligen kan du spara PDF-dokumentet till en fil:
 pdfDocument.save("output.pdf");
 ```
 
-Det är allt! Du har framgångsrikt lagt till en HTML-sträng till ett PDF-dokument med Aspose.PDF för Java.
+Det är det! Du har framgångsrikt lagt till en HTML-sträng till ett PDF-dokument med Aspose.PDF för Java.
 
 # Slutsats
 I den här handledningen har vi lärt oss hur man lägger till HTML-strängar till PDF-dokument med Aspose.PDF för Java-biblioteket. Detta kan vara ett kraftfullt sätt att inkludera dynamiskt och formaterat innehåll i dina PDF-filer. Du kan ytterligare anpassa utseendet och layouten på HTML-innehållet för att möta dina specifika krav.
 
- Om du har några frågor eller behöver ytterligare hjälp, hänvisa gärna till[Aspose.PDF för Java API-dokumentation](https://reference.aspose.com/pdf/java/) för mer detaljer.
+ Om du har några frågor eller behöver ytterligare hjälp, hänvisa gärna till[Aspose.PDF för Java API-dokumentation](https://reference.aspose.com/pdf/java/) för mer information.
 
 ## Vanliga frågor
 

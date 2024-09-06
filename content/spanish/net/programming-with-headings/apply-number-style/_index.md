@@ -1,25 +1,25 @@
 ---
-title: Aplicar estilo numérico en un archivo PDF
-linktitle: Aplicar estilo numérico en un archivo PDF
-second_title: Aspose.PDF para referencia de API .NET
-description: Aprenda a aplicar un estilo de numeración a los títulos de un archivo PDF usando Aspose.PDF para .NET. Guía paso por paso.
+title: Aplicar estilo de número en archivo PDF
+linktitle: Aplicar estilo de número en archivo PDF
+second_title: Referencia de API de Aspose.PDF para .NET
+description: Aprenda a aplicar un estilo de numeración a los encabezados de un archivo PDF con Aspose.PDF para .NET. Guía paso a paso.
 type: docs
 weight: 10
 url: /es/net/programming-with-headings/apply-number-style/
 ---
-En este tutorial, lo guiaremos paso a paso a través del siguiente código fuente de C# para aplicar el estilo de numeración en un archivo PDF usando Aspose.PDF para .NET.
+En este tutorial, lo guiaremos a través del siguiente código fuente de C# paso a paso para aplicar el estilo de numeración en un archivo PDF usando Aspose.PDF para .NET.
 
-Asegúrese de haber instalado la biblioteca Aspose.PDF y configurar su entorno de desarrollo antes de comenzar. También tener conocimientos básicos de programación en C#.
+Asegúrese de haber instalado la biblioteca Aspose.PDF y de haber configurado su entorno de desarrollo antes de comenzar. Además, debe tener conocimientos básicos de programación en C#.
 
 ### Paso 1: Configuración del directorio de documentos
 
-En el código fuente proporcionado, debe especificar el directorio donde desea guardar el archivo PDF generado. Cambie la variable "dataDir" al directorio deseado.
+En el código fuente proporcionado, debe especificar el directorio en el que desea guardar el archivo PDF generado. Cambie la variable "dataDir" al directorio deseado.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Paso 2: crear el documento PDF
+### Paso 2: Creación del documento PDF
 
 Creamos un nuevo documento PDF con dimensiones y márgenes especificados.
 
@@ -34,7 +34,7 @@ pdfDoc.PageInfo.Margin.Top = 72;
 pdfDoc.PageInfo.Margin.Bottom = 72;
 ```
 
-### Paso 3: crear una página y un contenedor flotante
+### Paso 3: Creación de una página y un contenedor flotante
 
 Agregamos una página al documento y creamos un contenedor flotante para organizar el contenido.
 
@@ -52,7 +52,7 @@ floatBox.Margin = pdfPage.PageInfo.Margin;
 pdfPage.Paragraphs.Add(floatBox);
 ```
 
-### Paso 4: agregue títulos con numeración
+### Paso 4: Agregar encabezados con numeración
 
 Creamos encabezados con numeraciones específicas y los agregamos al contenedor flotante.
 
@@ -84,7 +84,7 @@ heading3.IsAutoSequence = true;
 floatBox.Paragraphs.Add(heading3);
 ```
 
-### Paso 5: guardar el documento PDF
+### Paso 5: Guardar el documento PDF
 
 Guardamos el documento PDF generado en el directorio especificado.
 
@@ -94,7 +94,7 @@ pdfDoc.Save(dataDir);
 Console.WriteLine("\nNumbering style successfully applied to headers.\nFile saved as: " + dataDir);
 ```
 
-### Código fuente de muestra para Aplicar estilo numérico usando Aspose.PDF para .NET 
+### Código fuente de muestra para aplicar estilo de número con Aspose.PDF para .NET 
 ```csharp
 
 // La ruta al directorio de documentos.
@@ -149,21 +149,21 @@ Console.WriteLine("\nNumber style applied successfully in headings.\nFile saved 
 
 ## Conclusión
 
-En este tutorial, explicamos cómo aplicar un estilo de numeración a los títulos de un documento PDF usando Aspose.PDF para .NET. Ahora puede utilizar este conocimiento para crear documentos PDF con numeraciones personalizadas para los títulos.
+En este tutorial, explicamos cómo aplicar un estilo de numeración a los encabezados de un documento PDF mediante Aspose.PDF para .NET. Ahora puede utilizar este conocimiento para crear documentos PDF con numeraciones personalizadas para los encabezados.
 
-### Preguntas frecuentes para aplicar estilo de número en un archivo PDF
+### Preguntas frecuentes sobre cómo aplicar estilos de números en archivos PDF
 
 #### P: ¿Qué es el estilo de numeración en un documento PDF?
 
-R: El estilo de numeración se refiere al formato en el que se numeran los títulos o secciones en un documento PDF. Puede incluir números, letras u otros caracteres para proporcionar una estructura jerárquica.
+R: El estilo de numeración se refiere al formato en el que se numeran los encabezados o las secciones en un documento PDF. Puede incluir números, letras u otros caracteres para proporcionar una estructura jerárquica.
 
-#### P: ¿Por qué necesitaría aplicar un estilo de numeración a los títulos de un documento PDF?
+#### P: ¿Por qué necesitaría aplicar un estilo de numeración a los encabezados de un documento PDF?
 
-R: Aplicar un estilo de numeración a los títulos mejora la legibilidad y la organización de su documento PDF. Ayuda a los lectores a navegar y comprender fácilmente la estructura jerárquica del contenido.
+R: La aplicación de un estilo de numeración a los encabezados mejora la legibilidad y la organización del documento PDF. Ayuda a los lectores a navegar fácilmente y a comprender la estructura jerárquica del contenido.
 
 #### P: ¿Qué es Aspose.PDF para .NET?
 
-R: Aspose.PDF para .NET es una biblioteca que permite a los desarrolladores trabajar con archivos PDF mediante programación en aplicaciones .NET. Proporciona una amplia gama de funciones para crear, editar, convertir y manipular documentos PDF.
+A: Aspose.PDF para .NET es una biblioteca que permite a los desarrolladores trabajar con archivos PDF de forma programada en aplicaciones .NET. Ofrece una amplia gama de funciones para crear, editar, convertir y manipular documentos PDF.
 
 #### P: ¿Cómo importo las bibliotecas necesarias para mi proyecto C#?
 
@@ -184,9 +184,9 @@ R: En el código fuente proporcionado, modifique la variable "dataDir" para espe
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
- Reemplazar`"YOUR DOCUMENTS DIRECTORY"` con la ruta del directorio real.
+ Reemplazar`"YOUR DOCUMENTS DIRECTORY"` con la ruta del directorio actual.
 
-#### P: ¿Cómo creo un documento PDF con dimensiones y márgenes específicos?
+#### P: ¿Cómo puedo crear un documento PDF con dimensiones y márgenes específicos?
 
 R: Para crear un documento PDF con dimensiones y márgenes específicos, utilice el siguiente código:
 
@@ -201,13 +201,13 @@ pdfDoc.PageInfo.Margin.Top = 72;
 pdfDoc.PageInfo.Margin.Bottom = 72;
 ```
 
-#### P: ¿Cómo agrego títulos con estilo de numeración al documento PDF?
+#### P: ¿Cómo puedo agregar encabezados con estilo de numeración al documento PDF?
 
-R: Para agregar títulos con estilo de numeración al documento PDF, utilice los ejemplos de código proporcionados para crear títulos y personalizar sus estilos de numeración. Ajuste propiedades como texto, estilo de numeración, número de inicio y secuencia automática según sea necesario.
+A: Para agregar encabezados con estilo de numeración al documento PDF, use los ejemplos de código provistos para crear encabezados y personalizar sus estilos de numeración. Ajuste propiedades como texto, estilo de numeración, número inicial y secuencia automática según sea necesario.
 
 #### P: ¿Cómo guardo el documento PDF generado?
 
- R: Para guardar el documento PDF generado, utilice el`Save` método de la`pdfDoc` objeto:
+ A: Para guardar el documento PDF generado, utilice el`Save` método de la`pdfDoc` objeto:
 
 ```csharp
 dataDir = dataDir + "ApplyNumberStyle_out.pdf";
@@ -217,12 +217,12 @@ Console.WriteLine("\nNumbering style applied to headers.\nFile saved as: " + dat
 
 #### P: ¿Cómo puedo confirmar que se ha aplicado el estilo de numeración?
 
-R: Abra el archivo PDF generado para verificar que se haya aplicado el estilo de numeración especificado a los títulos.
+A: Abra el archivo PDF generado para verificar que el estilo de numeración especificado se haya aplicado a los encabezados.
 
 #### P: ¿Puedo personalizar aún más el estilo de numeración?
 
- R: Sí, puedes personalizar aún más el estilo de numeración ajustando las propiedades del`Heading` objetos, como el tipo de estilo de numeración, el número inicial y la secuencia automática.
+ R: Sí, puede personalizar aún más el estilo de numeración ajustando las propiedades de la`Heading` objetos, como tipo de estilo de numeración, número de inicio y secuencia automática.
 
 #### P: ¿Puedo aplicar diferentes estilos de numeración a diferentes secciones del documento?
 
-R: Sí, puedes aplicar diferentes estilos de numeración a diferentes secciones del documento creando múltiples`Heading` objetos con diferentes estilos y secuencias.
+ R: Sí, puede aplicar diferentes estilos de numeración a diferentes secciones del documento creando múltiples`Heading` objetos con diferentes estilos y secuencias.

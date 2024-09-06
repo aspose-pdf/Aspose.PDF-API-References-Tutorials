@@ -1,24 +1,24 @@
 ---
-title: Afbeelding in koptekst
-linktitle: Afbeelding in koptekst
+title: Afbeelding in header
+linktitle: Afbeelding in header
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u een afbeelding toevoegt aan het koptekstgedeelte van een PDF-document met Aspose.PDF voor .NET.
+description: Leer hoe u een afbeelding toevoegt aan de headersectie van een PDF-document met Aspose.PDF voor .NET.
 type: docs
 weight: 140
 url: /nl/net/programming-with-stamps-and-watermarks/image-in-header/
 ---
-In deze tutorial laten we u stap voor stap zien hoe u een afbeelding kunt toevoegen aan het kopgedeelte van een PDF-document met behulp van Aspose.PDF voor .NET. We zullen de meegeleverde C#-broncode gebruiken om een bestaand PDF-document te openen, een afbeeldingsbuffer te maken, de eigenschappen ervan in te stellen en deze toe te voegen aan alle pagina's van het PDF-document.
+In deze tutorial laten we u stap voor stap zien hoe u een afbeelding toevoegt aan de headersectie van een PDF-document met Aspose.PDF voor .NET. We gebruiken de meegeleverde C#-broncode om een bestaand PDF-document te openen, een afbeeldingbuffer te maken, de eigenschappen ervan in te stellen en deze toe te voegen aan alle pagina's van het PDF-document.
 
 ## Stap 1: De omgeving instellen
 
-Zorg ervoor dat u over het volgende beschikt voordat u begint:
+Voordat u begint, moet u ervoor zorgen dat u het volgende bij de hand hebt:
 
 - Een geïnstalleerde .NET-ontwikkelomgeving.
-- De Aspose.PDF-bibliotheek voor .NET gedownload en waarnaar wordt verwezen in uw project.
+- De Aspose.PDF-bibliotheek voor .NET is gedownload en wordt in uw project gebruikt.
 
 ## Stap 2: Het bestaande PDF-document laden
 
-De eerste stap is het laden van het bestaande PDF-document in uw project. Hier is hoe:
+De eerste stap is om het bestaande PDF-document in uw project te laden. Dit doet u als volgt:
 
 ```csharp
 // Het pad naar de documentenmap.
@@ -28,33 +28,33 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "ImageinHeader.pdf");
 ```
 
-Zorg ervoor dat u "UW DOCUMENTENMAP" vervangt door het daadwerkelijke pad naar de map waar uw PDF-document zich bevindt.
+Zorg ervoor dat u "UW DOCUMENTENMAP" vervangt door het daadwerkelijke pad naar de map waarin uw PDF-document zich bevindt.
 
-## Stap 3: De afbeelding maken en toevoegen in het koptekstgedeelte
+## Stap 3: De afbeelding maken en toevoegen aan de headersectie
 
-Nu het PDF-document is geladen, kunnen we een afbeeldingsbuffer maken en deze als koptekstsectie aan alle pagina's van het document toevoegen. Hier is hoe:
+Nu het PDF-document is geladen, kunnen we een afbeeldingbuffer maken en deze als koptekstsectie aan alle pagina's van het document toevoegen. Dit doet u als volgt:
 
 ```csharp
 // Maak de framebuffer
 ImageStamp imageStamp = new ImageStamp(dataDir + "aspose-logo.jpg");
 
-// Stel de eigenschappen van de afbeeldingsbuffer in
+// Stel de eigenschappen van de afbeeldingbuffer in
 imageStamp.TopMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Voeg afbeeldingsbuffer toe aan alle pagina's
+//Voeg een afbeeldingbuffer toe aan alle pagina's
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
 }
 ```
 
-De bovenstaande code maakt een afbeeldingsbuffer van het bestand "aspose-logo.jpg" en stelt de eigenschappen ervan in, zoals bovenmarge, horizontale en verticale uitlijning. Vervolgens wordt de afbeeldingsstempel als koptekstgedeelte aan alle pagina's van het PDF-document toegevoegd.
+De bovenstaande code maakt een afbeeldingbuffer van het bestand "aspose-logo.jpg" en stelt de eigenschappen ervan in, zoals bovenmarge, horizontale en verticale uitlijning. Vervolgens wordt de afbeeldingstempel toegevoegd aan alle pagina's van het PDF-document als een headersectie.
 
 ## Stap 4: Het gewijzigde PDF-document opslaan
 
-Zodra de afbeelding in het kopgedeelte is toegevoegd, kunnen we het gewijzigde PDF-document opslaan. Hier is hoe:
+Zodra de afbeelding is toegevoegd in de headersectie, kunnen we het aangepaste PDF-document opslaan. Dit is hoe:
 
 ```csharp
 // Sla het gewijzigde PDF-document op
@@ -63,7 +63,7 @@ pdfDocument.Save(dataDir + "ImageinHeader_out.pdf");
 
 De bovenstaande code slaat het bewerkte PDF-document op in de opgegeven map.
 
-### Voorbeeldbroncode voor Imagein Header met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Imagein Header met behulp van Aspose.PDF voor .NET 
 
 ```csharp
 
@@ -76,19 +76,19 @@ Document pdfDocument = new Document(dataDir+ "ImageinHeader.pdf");
 // Koptekst maken
 ImageStamp imageStamp = new ImageStamp(dataDir+ "aspose-logo.jpg");
 
-// Stel eigenschappen van de stempel in
+// Eigenschappen van de stempel instellen
 imageStamp.TopMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Voeg koptekst toe op alle pagina's
+// Koptekst toevoegen op alle pagina's
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(imageStamp);
 }
 dataDir = dataDir + "ImageinHeader_out.pdf";
 
-// Bewaar het bijgewerkte document
+// Bijgewerkt document opslaan
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImage in header added successfully.\nFile saved at " + dataDir);                        
 
@@ -96,46 +96,46 @@ Console.WriteLine("\nImage in header added successfully.\nFile saved at " + data
 
 ## Conclusie
 
-Gefeliciteerd! U hebt geleerd hoe u een afbeelding kunt toevoegen aan het koptekstgedeelte van een PDF-document met behulp van Aspose.PDF voor .NET. U kunt nu de kopteksten van uw PDF-documenten aanpassen door afbeeldingen toe te voegen.
+Gefeliciteerd! U hebt geleerd hoe u een afbeelding toevoegt aan de headersectie van een PDF-document met Aspose.PDF voor .NET. U kunt nu de headers van uw PDF-documenten aanpassen door afbeeldingen toe te voegen.
 
-### Veelgestelde vragen over afbeelding in header
+### FAQ's voor afbeelding in header
 
-#### Vraag: Wat is het doel van het toevoegen van een afbeelding in het kopgedeelte van een PDF-document?
+#### V: Wat is het doel van het toevoegen van een afbeelding in de headersectie van een PDF-document?
 
-A: Door een afbeelding toe te voegen aan het kopgedeelte van een PDF-document kunt u visuele elementen, zoals een logo of branding, bovenaan elke pagina opnemen. Dit kan het algehele uiterlijk van de PDF-inhoud verbeteren.
+A: Door een afbeelding toe te voegen aan de headersectie van een PDF-document, kunt u visuele elementen, zoals een logo of branding, bovenaan elke pagina opnemen. Dit kan de algehele look en feel van de PDF-inhoud verbeteren.
 
-#### Vraag: Hoe kan de meegeleverde C#-broncode een afbeelding toevoegen aan het kopgedeelte van een PDF-document?
+#### V: Hoe wordt met de meegeleverde C#-broncode een afbeelding toegevoegd aan de headersectie van een PDF-document?
 
- A: De meegeleverde code laat zien hoe u een bestaand PDF-document laadt, een`ImageStamp` object uit een afbeeldingsbestand, stel eigenschappen zoals bovenmarge en uitlijning in en voeg vervolgens de afbeeldingsstempel toe aan de koptekst van alle pagina's.
+ A: De meegeleverde code laat zien hoe u een bestaand PDF-document kunt laden, een`ImageStamp` object uit een afbeeldingsbestand, stel eigenschappen in zoals bovenmarge en uitlijning en voeg vervolgens de afbeeldingsstempel toe aan de koptekst van alle pagina's.
 
-#### Vraag: Kan ik de positie en uitlijning van de afbeelding binnen het koptekstgedeelte aanpassen?
+#### V: Kan ik de positie en uitlijning van de afbeelding in de headersectie aanpassen?
 
- A: Ja, u kunt de positie en uitlijning van de afbeelding binnen het koptekstgedeelte aanpassen door de eigenschappen van het`ImageStamp` voorwerp. Het codefragment stelt eigenschappen in zoals`TopMargin`, `HorizontalAlignment` , En`VerticalAlignment`.
+ A: Ja, u kunt de positie en uitlijning van de afbeelding in de headersectie aanpassen door de eigenschappen van de`ImageStamp` object. Het codefragment stelt eigenschappen in zoals`TopMargin`, `HorizontalAlignment` , En`VerticalAlignment`.
 
-#### Vraag: Is het mogelijk om verschillende afbeeldingen toe te voegen aan het kopgedeelte op verschillende pagina's van het PDF-document?
+#### V: Is het mogelijk om verschillende afbeeldingen toe te voegen aan de headersectie op verschillende pagina's van het PDF-document?
 
- A: Ja, u kunt verschillende afbeeldingen toevoegen aan de koptekstsectie op verschillende pagina's door afzonderlijke afbeeldingen te maken`ImageStamp` objecten met verschillende afbeeldingsbestanden en eigenschappen, en deze vervolgens aan specifieke pagina's toe te voegen.
+ A: Ja, u kunt verschillende afbeeldingen toevoegen aan de headersectie op verschillende pagina's door afzonderlijke afbeeldingen te maken.`ImageStamp` objecten met verschillende afbeeldingsbestanden en eigenschappen en deze vervolgens aan specifieke pagina's toevoegen.
 
-#### Vraag: Hoe zorgt de code ervoor dat de afbeelding wordt toegevoegd aan alle pagina's van de koptekstsectie van het PDF-document?
+#### V: Hoe zorgt de code ervoor dat de afbeelding aan alle pagina's van de headersectie van het PDF-document wordt toegevoegd?
 
-A: De verstrekte code gebruikt a`foreach` lus om alle pagina's van het PDF-document te doorlopen en dezelfde toe te voegen`ImageStamp`naar het kopgedeelte van elke pagina.
+ A: De verstrekte code gebruikt een`foreach` loop om door alle pagina's van het PDF-document te itereren en hetzelfde toe te voegen`ImageStamp` naar de headersectie van elke pagina.
 
-#### Vraag: Kan ik op een vergelijkbare manier andere elementen, zoals tekst of vormen, aan de koptekst toevoegen?
+#### V: Kan ik op een vergelijkbare manier andere elementen, zoals tekst of vormen, aan de headersectie toevoegen?
 
- A: Ja, u kunt andere elementen, zoals tekst of vormen, op een vergelijkbare manier aan het koptekstgedeelte toevoegen door de juiste stempelobjecten te maken (bijv.`TextStamp`) en hun eigenschappen dienovereenkomstig instellen.
+ A: Ja, u kunt andere elementen zoals tekst of vormen toevoegen aan de headersectie met een vergelijkbare aanpak door de juiste stempelobjecten te maken (bijv.`TextStamp`) en hun eigenschappen dienovereenkomstig instellen.
 
-#### Vraag: Hoe geef ik het pad op naar het afbeeldingsbestand dat ik aan de header wil toevoegen?
+#### V: Hoe geef ik het pad op naar het afbeeldingsbestand dat ik aan de header wil toevoegen?
 
- A: Het pad naar het afbeeldingsbestand wordt opgegeven bij het maken van het`ImageStamp` object, zoals weergegeven in de code. Zorg ervoor dat u het juiste pad naar het afbeeldingsbestand opgeeft.
+ A: Het pad naar het afbeeldingsbestand wordt opgegeven bij het maken van de`ImageStamp` object, zoals weergegeven in de code. Zorg ervoor dat u het juiste pad naar het afbeeldingsbestand opgeeft.
 
-#### Vraag: Kan ik de grootte van de afbeelding aanpassen in het koptekstgedeelte?
+#### V: Kan ik de grootte van de afbeelding aanpassen in de header?
 
- A: Ja, u kunt de grootte van de afbeelding in het koptekstgedeelte aanpassen door de afmetingen van de afbeelding aan te passen`ImageStamp` met behulp van eigenschappen zoals`Width` En`Height`.
+ A: Ja, u kunt de grootte van de afbeelding in de headersectie aanpassen door de afmetingen van de afbeelding aan te passen.`ImageStamp` met behulp van eigenschappen zoals`Width` En`Height`.
 
-#### Vraag: Is het mogelijk om de afbeelding in het koptekstgedeelte te verwijderen of te vervangen nadat deze is toegevoegd?
+#### V: Is het mogelijk om de afbeelding in de headersectie te verwijderen of te vervangen nadat deze is toegevoegd?
 
- A: Ja, u kunt de afbeelding in het koptekstgedeelte verwijderen of vervangen door de inhoud van het`ImageStamp` object of het verwijderen van de stempel van specifieke pagina's.
+A: Ja, u kunt de afbeelding in de headersectie verwijderen of vervangen door de inhoud van de`ImageStamp` object of het verwijderen van de stempel van specifieke pagina's.
 
-#### Vraag: Hoe verwerkt de code scenario's waarbij de afmetingen van de afbeelding de beschikbare ruimte in de koptekst overschrijden?
+#### V: Hoe gaat de code om met scenario's waarbij de afmetingen van de afbeelding de beschikbare ruimte in de header overschrijden?
 
- A: De code stelt eigenschappen in zoals`TopMargin`, `HorizontalAlignment` , En`VerticalAlignment` om de positionering en uitlijning van het beeld te regelen. Zorg ervoor dat deze eigenschappen worden aangepast om overlappingen of lay-outproblemen te voorkomen.
+ A: De code stelt eigenschappen in zoals`TopMargin`, `HorizontalAlignment` , En`VerticalAlignment` om de positionering en uitlijning van de afbeelding te regelen. Zorg ervoor dat deze eigenschappen worden aangepast om overlapping of lay-outproblemen te voorkomen.

@@ -2,63 +2,63 @@
 title: Afbeelding en paginanummer in koptekst-voettekstsectie
 linktitle: Afbeelding en paginanummer in koptekst-voettekstsectie
 second_title: Aspose.PDF voor .NET API-referentie
-description: Ontdek hoe u met Aspose een afbeelding en een paginanummer kunt toevoegen aan de kop- en voettekst van een PDF-document.
+description: Ontdek hoe u met Aspose een afbeelding en een paginanummer toevoegt aan de kop- en voettekst van een PDF-document.
 type: docs
 weight: 110
 url: /nl/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section/
 ---
-In deze zelfstudie laten we u stap voor stap zien hoe u een afbeelding en paginanummer kunt toevoegen aan de kop- en voettekst van een PDF-document met behulp van Aspose.PDF voor .NET. We laten u zien hoe u de meegeleverde C#-broncode kunt gebruiken om een pagina te maken, de kop- en voettekst in te stellen, een afbeelding toe te voegen aan de koptekst en tekst met paginanummer om de voettekst van een PDF te documenteren.
+In deze tutorial laten we je stap voor stap zien hoe je een afbeelding en paginanummer toevoegt aan de header- en footersectie van een PDF-document met Aspose.PDF voor .NET. We laten je zien hoe je de meegeleverde C#-broncode gebruikt om een pagina te maken, header en footer in te stellen, een afbeelding toe te voegen aan de header en tekst met paginanummer aan de PDF-documentfooter.
 
 ## Stap 1: De omgeving instellen
 
-Zorg ervoor dat u over het volgende beschikt voordat u begint:
+Voordat u begint, moet u ervoor zorgen dat u het volgende bij de hand hebt:
 
 - Een geïnstalleerde .NET-ontwikkelomgeving.
-- De Aspose.PDF-bibliotheek voor .NET gedownload en waarnaar wordt verwezen in uw project.
+- De Aspose.PDF-bibliotheek voor .NET is gedownload en wordt in uw project gebruikt.
 
 ## Stap 2: Het PDF-document en de pagina maken
 
-De eerste stap is het maken van een nieuw documentobject en een pagina in het PDF-document. Hier is hoe:
+De eerste stap is het maken van een nieuw Document-object en een pagina in het PDF-document. Dit doet u als volgt:
 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Maak een nieuw Document-object
+// Een nieuw Document-object maken
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Maak een pagina in het document
+// Een pagina in het document maken
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-Met de bovenstaande code wordt een nieuw documentobject en een lege pagina in het PDF-document gemaakt.
+De bovenstaande code maakt een nieuw Document-object en een lege pagina in het PDF-document.
 
-## Stap 3: De header toevoegen met een afbeelding
+## Stap 3: De header met een afbeelding toevoegen
 
-Nu de pagina is gemaakt, kunnen we een koptekstgedeelte met een afbeelding toevoegen. Hier is hoe:
+Nu de pagina is gemaakt, kunnen we een headersectie met een afbeelding toevoegen. Dit is hoe:
 
 ```csharp
-// Maak een kopsectie
+// Een headersectie maken
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Stel de paginakop in
+// De paginakoptekst instellen
 page. Header = header;
 
-// Maak een afbeeldingsobject
+// Een afbeeldingsobject maken
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
 // Afbeeldingspad instellen
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Voeg de afbeelding toe aan de paginakop van het PDF-document
+// Voeg de afbeelding toe aan de paginakoptekst van het PDF-document
 header.Paragraphs.Add(image1);
 ```
 
-De bovenstaande code maakt een koptekstsectie, stelt de paginakoptekst in met deze sectie en voegt een afbeelding toe aan de koptekst.
+Met de bovenstaande code wordt een headersectie gemaakt, wordt de paginaheader met deze sectie ingesteld en wordt er een afbeelding aan de header toegevoegd.
 
-## Stap 4: Voettekst met paginanummer toevoegen
+## Stap 4: De voettekst met het paginanummer toevoegen
 
-Nu de koptekst is toegevoegd, kunnen we een voettekstgedeelte met een paginanummer toevoegen. Hier is hoe:
+Nu de header is toegevoegd, kunnen we een footersectie met een paginanummer toevoegen. Dit is hoe:
 
 ```csharp
 // Maak een voettekstsectie
@@ -67,20 +67,20 @@ Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
 // Definieer de voettekst van het PDF-document
 page. Footer = footer;
 
-// Maak een TextFragment-object
+// Een TextFragment-object maken
 Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P)");
 
 // Voeg de tekst met het paginanummer toe aan de voettekst van het PDF-document
 footer.Paragraphs.Add(txt);
 ```
 
-De bovenstaande code maakt een voettekstsectie, stelt de voettekst van de pagina in met deze sectie en voegt een tekstfragment toe met de tekst "Pagina: ($p of $P )"
+De bovenstaande code maakt een voettekstsectie, stelt de voettekst van de pagina in met deze sectie en voegt een TextFragment toe met de tekst "Pagina: ($p van $P )"
 
-  waarin het paginanummer wordt weergegeven.
+  die het paginanummer weergeeft.
 
 ## Stap 5: Het gewijzigde PDF-document opslaan
 
-Zodra de kop- en voettekst zijn toegevoegd, kunnen we het gewijzigde PDF-document opslaan. Hier is hoe:
+Zodra de header en footer zijn toegevoegd, kunnen we het aangepaste PDF-document opslaan. Dit is hoe:
 
 ```csharp
 // Sla het gewijzigde PDF-document op
@@ -89,14 +89,14 @@ doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 
 De bovenstaande code slaat het bewerkte PDF-document op in de opgegeven map.
 
-### Voorbeeldbroncode voor afbeelding en paginanummer in de koptekst-voettekstsectie met behulp van Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Afbeelding en Paginanummer in Koptekst Voettekstsectie met behulp van Aspose.PDF voor .NET 
 ```csharp
 
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Maak een pagina in het documentobject
+// Een pagina maken in het documentobject
 Aspose.Pdf.Page page = doc.Pages.Add();
 
 // Maak een koptekstsectie van het document
@@ -105,13 +105,13 @@ Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 // Stel de koptekst voor het PDF-bestand in
 page.Header = header;
 
-// Maak een afbeeldingsobject op de pagina
+// Een afbeeldingsobject op de pagina maken
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
 // Stel het pad van het afbeeldingsbestand in
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Voeg een afbeelding toe aan de koppagina van het pdf-bestand
+// Afbeelding toevoegen aan de headerpagina van het PDF-bestand
 header.Paragraphs.Add(image1);
 
 //Maak een voettekstsectie van het document
@@ -120,59 +120,59 @@ Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
 // Stel de voettekst van het PDF-bestand in
 page.Footer = footer;
 
-// Maak een tekstobject
+// Een tekstobject maken
 Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P ) ");
 
-// Voeg tekst toe aan het koptekstgedeelte van het pdf-bestand
+// Voeg tekst toe aan de koptekstsectie van het PDF-bestand
 footer.Paragraphs.Add(txt);
 
-// Sla het pdf-bestand op
+// Sla het PDF-bestand op
 doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 
 ```
 
 ## Conclusie
 
-Gefeliciteerd! U hebt geleerd hoe u een afbeelding en paginanummer kunt toevoegen aan de kop- en voettekst van een PDF-document met behulp van Aspose.PDF voor .NET. Nu kunt u deze methode gebruiken om de kop- en voettekst in uw PDF-documenten aan te passen.
+Gefeliciteerd! U hebt geleerd hoe u een afbeelding en paginanummer toevoegt aan de kop- en voettekstsectie van een PDF-document met Aspose.PDF voor .NET. U kunt deze methode nu gebruiken om de kop- en voettekst in uw PDF-documenten aan te passen.
 
 ### Veelgestelde vragen
 
-#### Vraag: Wat is het doel van het toevoegen van een afbeelding en paginanummer in de kop- en voettekst van een PDF-document?
+#### V: Wat is het doel van het toevoegen van een afbeelding en een paginanummer in de kop- en voettekst van een PDF-document?
 
-A: Het toevoegen van een afbeelding en paginanummer in de kop- en voettekst van een PDF-document kan de visuele aantrekkingskracht, branding en navigatie-elementen verbeteren. Een afbeelding kan een logo, watermerk of een ander grafisch element vertegenwoordigen, terwijl een paginanummer gebruikers helpt hun voortgang bij te houden en specifieke pagina's te lokaliseren.
+A: Het toevoegen van een afbeelding en paginanummer in de kop- en voettekstsectie van een PDF-document kan de visuele aantrekkingskracht, branding en navigatie-elementen ervan verbeteren. Een afbeelding kan een logo, watermerk of een grafisch element vertegenwoordigen, terwijl een paginanummer gebruikers helpt hun voortgang bij te houden en specifieke pagina's te vinden.
 
-#### Vraag: Hoe helpt de meegeleverde C#-broncode bij het toevoegen van een afbeelding en paginanummer aan de kop- en voettekst van een PDF-document?
+#### V: Hoe helpt de meegeleverde C#-broncode bij het toevoegen van een afbeelding en een paginanummer aan de kop- en voettekst van een PDF-document?
 
-A: De meegeleverde code laat zien hoe u een PDF-document kunt maken, een pagina kunt toevoegen en vervolgens de kop- en voettekstsecties kunt aanpassen. Het laat zien hoe u een afbeelding aan de koptekst en een tekstfragment met paginanummering aan de voettekst kunt toevoegen.
+A: De meegeleverde code laat zien hoe u een PDF-document maakt, een pagina toevoegt en vervolgens de header- en footersecties aanpast. Het laat zien hoe u een afbeelding aan de header toevoegt en een tekstfragment met paginanummering aan de footer.
 
-#### Vraag: Kan ik elk afbeeldingsformaat voor de koptekst gebruiken en hoe geef ik het pad op?
+#### V: Kan ik elk afbeeldingsformaat gebruiken voor de header en hoe geef ik het pad op?
 
- A: Ja, u kunt verschillende afbeeldingsformaten gebruiken (zoals JPEG, PNG, GIF, enz.) voor de headerafbeelding. Het pad van de afbeelding wordt opgegeven met behulp van de`File` eigendom van de`Aspose.Pdf.Image` voorwerp.
+ A: Ja, u kunt verschillende afbeeldingsformaten (zoals JPEG, PNG, GIF, etc.) gebruiken voor de headerafbeelding. Het pad van de afbeelding wordt opgegeven met behulp van de`File` eigendom van de`Aspose.Pdf.Image` voorwerp.
 
-#### Vraag: Hoe pas ik het uiterlijk en de positionering van de afbeelding in het koptekstgedeelte aan?
+#### V: Hoe pas ik het uiterlijk en de positie van de afbeelding in de headersectie aan?
 
- A: U kunt het uiterlijk en de positionering van de afbeelding aanpassen door de eigenschappen van de afbeelding aan te passen`Aspose.Pdf.Image` object voordat u het aan de koptekstsectie toevoegt. U kunt bijvoorbeeld de afmetingen, uitlijning, rotatie, dekking, enz. van de afbeelding instellen.
+ A: U kunt het uiterlijk en de positionering van de afbeelding aanpassen door de eigenschappen van de afbeelding aan te passen.`Aspose.Pdf.Image` object voordat u het toevoegt aan de headersectie. U kunt bijvoorbeeld de afmetingen, uitlijning, rotatie, dekking, etc. van de afbeelding instellen.
 
-####  Vraag: Wat is het doel van de`TextFragment` object used for the footer?
+####  V: Wat is het doel van de`TextFragment` object used for the footer?
 
- EEN: De`TextFragment` object wordt gebruikt om tekst te maken en op te maken die in de voettekst wordt weergegeven. In de meegeleverde code wordt deze gebruikt om het paginanummer en het totale aantal pagina's weer te geven.
+ A: De`TextFragment` object wordt gebruikt om tekst te maken en op te maken die in de voettekstsectie wordt weergegeven. In de meegeleverde code wordt het gebruikt om het paginanummer en het totale aantal pagina's weer te geven.
 
-#### Vraag: Kan ik de voettekst wijzigen om aanvullende informatie of opmaak toe te voegen?
+#### V: Kan ik de voettekst aanpassen om extra informatie of opmaak toe te voegen?
 
- A: Ja, u kunt de voettekst wijzigen door de inhoud van het`TextFragment` voorwerp. U kunt extra tekst toevoegen, lettertypen, kleuren en opmaak wijzigen volgens uw vereisten.
+ A: Ja, u kunt de voettekst wijzigen door de inhoud van de`TextFragment` object. U kunt extra tekst toevoegen, lettertypen, kleuren en opmaak wijzigen volgens uw vereisten.
 
-#### Vraag: Kan ik verschillende kop- en voettekstinhoud toepassen op verschillende pagina's van het PDF-document?
+#### V: Kan ik verschillende kop- en voettekstinhoud toepassen op verschillende pagina's van het PDF-document?
 
- A: Ja, u kunt verschillende kop- en voettekstinhoud op verschillende pagina's toepassen door afzonderlijke pagina's te maken`HeaderFooter` objecten en wijs deze toe aan specifieke pagina's met behulp van de`Header` En`Footer` eigenschappen van de`Aspose.Pdf.Page` voorwerp.
+ A: Ja, u kunt verschillende kop- en voettekstinhoud op verschillende pagina's toepassen door afzonderlijke`HeaderFooter` objecten en deze toewijzen aan specifieke pagina's met behulp van de`Header` En`Footer` eigenschappen van de`Aspose.Pdf.Page` voorwerp.
 
-#### Vraag: Hoe kan ik de kop- en voettekst verder aanpassen, zoals het wijzigen van de lettertypestijl of het toevoegen van extra elementen?
+#### V: Hoe kan ik de kop- en voettekst verder aanpassen, bijvoorbeeld door het lettertype te wijzigen of extra elementen toe te voegen?
 
-A: U kunt de kop- en voettekst aanpassen met behulp van verschillende klassen en eigenschappen van Aspose.PDF voor .NET. U kunt bijvoorbeeld verschillende tekstopmaakopties gebruiken, meer alinea's, afbeeldingen of zelfs tabellen toevoegen aan de kop- en voettekstsecties.
+A: U kunt de header en footer aanpassen met behulp van verschillende klassen en eigenschappen die worden geleverd door Aspose.PDF voor .NET. U kunt bijvoorbeeld verschillende tekstopmaakopties gebruiken, meer alinea's, afbeeldingen of zelfs tabellen toevoegen aan de header- en footersecties.
 
-#### Vraag: Kan ik de kop- en voettekstsecties indien nodig verwijderen of wissen?
+#### V: Kan ik de kop- en voettekstsecties indien nodig verwijderen of wissen?
 
-A: Ja, u kunt de kop- en voettekstsecties verwijderen of wissen door de`Header` En`Footer` eigenschappen van de`Aspose.Pdf.Page` bezwaar tegen`null`.
+A: Ja, u kunt de kop- en voettekstsecties verwijderen of wissen door de`Header` En`Footer` eigenschappen van de`Aspose.Pdf.Page` bezwaar maken tegen`null`.
 
-#### Vraag: Hoe kan ik ervoor zorgen dat de toegevoegde afbeelding en het paginanummer consistent blijven op verschillende apparaten en kijkers?
+#### V: Hoe kan ik ervoor zorgen dat de toegevoegde afbeelding en het paginanummer consistent blijven op verschillende apparaten en kijkers?
 
-A: Aspose.PDF voor .NET biedt functionaliteit voor het maken van gestandaardiseerde en consistente PDF-documenten, zodat de toegevoegde afbeelding en het paginanummer consistent op verschillende apparaten en PDF-viewers verschijnen.
+A: Aspose.PDF voor .NET biedt functionaliteit voor het maken van gestandaardiseerde en consistente PDF-documenten. Zo weet u zeker dat de toegevoegde afbeelding en het paginanummer consistent worden weergegeven op verschillende apparaten en PDF-viewers.

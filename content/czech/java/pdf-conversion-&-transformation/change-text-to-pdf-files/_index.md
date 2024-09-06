@@ -22,11 +22,11 @@ Než se ponoříme do kódu, ujistěte se, že máte splněny následující př
 
 - Java Development Kit (JDK) nainstalován
 - Integrované vývojové prostředí (IDE) dle vašeho výběru
--  Aspose.PDF pro knihovnu Java (můžete si ji stáhnout z[tady](https://releases.aspose.com/pdf/java/)
+-  Aspose.PDF pro knihovnu Java (můžete si ji stáhnout z[zde](https://releases.aspose.com/pdf/java/)
 
 ## Nastavení projektu
 
-Chcete-li začít, nastavte nový projekt Java ve vašem IDE. Následuj tyto kroky:
+Chcete-li začít, nastavte nový projekt Java ve vašem IDE. Postupujte takto:
 
 1. Otevřete své IDE.
 2. Vytvořte nový projekt Java.
@@ -36,7 +36,7 @@ Chcete-li začít, nastavte nový projekt Java ve vašem IDE. Následuj tyto kro
 
 Nyní, když je váš projekt připraven, je čas přidat k němu Aspose.PDF for Java. Můžete to udělat takto:
 
-1.  Stáhněte si knihovnu Aspose.PDF for Java z[tady](https://releases.aspose.com/pdf/java/).
+1.  Stáhněte si knihovnu Aspose.PDF for Java z[zde](https://releases.aspose.com/pdf/java/).
 2. Přidejte stažený soubor JAR do cesty třídy vašeho projektu.
 
 ## Vytvoření jednoduché Java aplikace
@@ -87,7 +87,7 @@ V tomto článku jsme prozkoumali, jak používat Aspose.PDF pro Java k převodu
 
 ### Jak si stáhnu Aspose.PDF pro Javu?
 
- Aspose.PDF pro Java si můžete stáhnout z webové stránky na adrese[tady](https://releases.aspose.com/pdf/java/).
+ Aspose.PDF pro Java si můžete stáhnout z webové stránky na adrese[zde](https://releases.aspose.com/pdf/java/).
 
 ### Mohu přizpůsobit vzhled dokumentu PDF?
 

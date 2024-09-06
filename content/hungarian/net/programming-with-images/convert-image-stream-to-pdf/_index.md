@@ -1,6 +1,6 @@
 ---
-title: A képfolyam konvertálása PDF-fájlba
-linktitle: A képfolyam konvertálása PDF-fájlba
+title: Az Image Stream konvertálása PDF-fájlba
+linktitle: Az Image Stream konvertálása PDF-fájlba
 second_title: Aspose.PDF for .NET API Reference
 description: Könnyen konvertálhat képfolyamot PDF-fájllá az Aspose.PDF for .NET segítségével.
 type: docs
@@ -11,7 +11,7 @@ Ez az útmutató lépésről lépésre bemutatja, hogyan alakíthat át egy kép
 
 ## 1. lépés: Határozza meg a dokumentumkönyvtárat
 
- Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a kép található.
+Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a kép található.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -27,7 +27,7 @@ Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 
 ## 3. lépés: Adjon hozzá egy oldalt a PDF-dokumentumhoz
 
- Adjon hozzá egy oldalt a PDF-dokumentumhoz a`Add` módszere a`Pages` tárgya`pdf1`.
+Adjon hozzá egy oldalt a PDF-dokumentumhoz a`Add` módszere a`Pages` tárgya`pdf1`.
 
 ```csharp
 Aspose.Pdf.Page sec = pdf1.Pages.Add();
@@ -43,7 +43,7 @@ FileStream fs = File.OpenRead(dataDir + "aspose.jpg");
 
 ## 5. lépés: Olvassa be a képet egy bájttömbbe
 
- Olvassa be a képet az adatfolyamból, és tárolja egy bájttömbben a segítségével`Read` módszere a`fs` tárgy.
+ Olvassa be a képet az adatfolyamból, és tárolja egy bájttömbben a segítségével`Read` módszere a`fs` objektum.
 
 ```csharp
 byte[] data = new byte[fs.Length];
@@ -52,7 +52,7 @@ fs.Read(data, 0, data.Length);
 
 ## 6. lépés: Hozzon létre egy MemoryStream objektumot a bájttömbből
 
- Hozzon létre egy`MemoryStream` objektum a képet tartalmazó bájttömbből.
+ Hozzon létre a`MemoryStream` objektum a képet tartalmazó bájttömbből.
 
 ```csharp
 MemoryStream ms = new MemoryStream(data);
@@ -60,7 +60,7 @@ MemoryStream ms = new MemoryStream(data);
 
 ## 7. lépés: Hozzon létre egy képobjektumot
 
- Ebben a lépésben létrehozunk egy`Image` objektum segítségével`Aspose.Pdf.Image` osztály. Adja meg a kép adatfolyamát a gombbal`ImageStream` ingatlan és adja át a`ms` korábban létrehozott objektum.
+ Ebben a lépésben létrehozunk egy`Image` objektum segítségével`Aspose.Pdf.Image` osztály. Adja meg a kép folyamát a gombbal`ImageStream` ingatlan és adja át a`ms` korábban létrehozott objektum.
 
 ```csharp
 Aspose.Pdf.Image imageht = new Aspose.Pdf.Image();
@@ -77,7 +77,7 @@ sec.Paragraphs.Add(imageht);
 
 ## 9. lépés: Mentse el a PDF dokumentumot
 
- Mentse el a PDF dokumentumot a`Save` módszere a`pdf1` tárgy. Adja meg a PDF-fájl kimeneti útvonalát.
+ Mentse el a PDF dokumentumot a`Save` módszere a`pdf1` objektum. Adja meg a PDF-fájl kimeneti útvonalát.
 
 ```csharp
 pdf1.Save(dataDir + "ConvertMemoryStreamImageToPdf_out.pdf");
@@ -85,7 +85,7 @@ pdf1.Save(dataDir + "ConvertMemoryStreamImageToPdf_out.pdf");
 
 ## 10. lépés: Zárja be a MemoryStream objektumot
 
- Csukja be a`ms` objektum segítségével`Close` módszer az erőforrások felszabadítására.
+ Zárja be a`ms` objektum segítségével`Close` az erőforrások felszabadításának módja.
 
 ```csharp
 ms. Close();
@@ -95,7 +95,7 @@ ms. Close();
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Példányosítsa a dokumentumpéldányt az üres konstruktor meghívásával
+// Példányosítsa a dokumentumpéldányt az üres konstruktor meghívásával
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 // Adjon hozzá egy oldalt a pdf dokumentumhoz
 Aspose.Pdf.Page sec = pdf1.Pages.Add();
@@ -146,7 +146,7 @@ V: A dokumentumkönyvtár megadása biztosítja, hogy a képfolyam és az eredm�
 
 #### K: Hogyan történik a képfolyam beolvasása és feldolgozása a képfolyamban PDF-vé alakítási folyamatban?
 
- V: A képfolyam beolvasása a`FileStream` objektum, és annak tartalma egy bájttömbben tárolódik. A bájttömböt ezután a létrehozására használják`MemoryStream` objektum, amelyet ezt követően egy`Image` tárgy.
+ V: A képfolyam beolvasása a`FileStream` objektum, és annak tartalma egy bájttömbben tárolódik. A bájttömböt ezután a létrehozására használják`MemoryStream` objektum, amelyet ezt követően egy`Image` objektum.
 
 #### K: Hogyan ágyazódik be a kép a PDF dokumentumba az átalakítási folyamat során?
 
@@ -154,8 +154,8 @@ V: A dokumentumkönyvtár megadása biztosítja, hogy a képfolyam és az eredm�
 
 #### K: Testreszabhatom a kép helyzetét, méretét vagy egyéb attribútumait a kapott PDF-fájlban?
 
- V: Igen, módosíthatja a kép helyzetét, méretét és egyéb attribútumait a tulajdonságok beállításával`Image` objektum, mielőtt hozzáadná a`Paragraphs` Gyűjtemény.
+ V: Igen, módosíthatja a kép helyzetét, méretét és egyéb attribútumait a tulajdonságok beállításával`Image` objektum, mielőtt hozzáadná a`Paragraphs` gyűjtemény.
 
 #### K: Mi az utolsó lépés a képfolyam PDF-vé konvertálásában?
 
- V: A PDF-dokumentum mentése a`Save` módszere a`Document` objektum, és a`MemoryStream` Az objektumot a`Close` források felszabadításának módja.
+ V: A PDF-dokumentum mentése a`Save` módszere a`Document` objektum, és a`MemoryStream` Az objektumot a`Close`források felszabadításának módja.

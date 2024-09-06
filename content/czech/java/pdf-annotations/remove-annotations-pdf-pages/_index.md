@@ -16,7 +16,7 @@ Aspose.PDF for Java je robustní knihovna, která umožňuje vývojářům praco
 
 Než začneme, ujistěte se, že máte splněny následující předpoklady:
 
--  Aspose.PDF for Java: Ujistěte se, že máte v projektu Java nainstalovanou a nakonfigurovanou knihovnu Aspose.PDF for Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF for Java: Ujistěte se, že máte v projektu Java nainstalovanou a nakonfigurovanou knihovnu Aspose.PDF for Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Načítání dokumentu PDF
 
@@ -70,7 +70,7 @@ V této příručce jsme prozkoumali, jak odstranit anotace ze stránek PDF pomo
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
- Aspose.PDF pro Javu si můžete stáhnout z[tady](https://releases.aspose.com/pdf/java/) a postupujte podle dodaných pokynů k instalaci.
+ Aspose.PDF pro Javu si můžete stáhnout z[zde](https://releases.aspose.com/pdf/java/) a postupujte podle dodaných pokynů k instalaci.
 
 ### Mohu odstranit konkrétní typy anotací, například pouze textové komentáře?
 
@@ -86,4 +86,4 @@ Ano, Aspose.PDF for Java podporuje práci se zašifrovanými PDF a poskytuje mo�
 
 ### Kde najdu další příklady a dokumentaci k Aspose.PDF pro Javu?
 
- Podrobnou dokumentaci a příklady si můžete prohlédnout na stránce dokumentace Aspose.PDF for Java:[tady](https://reference.aspose.com/pdf/java/).
+ Podrobnou dokumentaci a příklady si můžete prohlédnout na stránce dokumentace Aspose.PDF for Java:[zde](https://reference.aspose.com/pdf/java/).

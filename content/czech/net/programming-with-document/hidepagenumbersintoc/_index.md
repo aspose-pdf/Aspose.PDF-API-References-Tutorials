@@ -159,8 +159,8 @@ Odpověď: Metadata XMP (Extensible Metadata Platform) v dokumentu PDF jsou stan
 
 #### Otázka: Mohu upravit metadata XMP dokumentu PDF pomocí Aspose.PDF pro .NET?
 
- Odpověď: Ano, metadata XMP dokumentu PDF můžete upravit programově pomocí Aspose.PDF for .NET. Můžete přistupovat k`Info` vlastnictvím`Document` objekt, který vám umožňuje přístup k vlastnostem metadat XMP. Poté můžete aktualizovat hodnoty těchto vlastností a upravit metadata XMP dokumentu PDF.
+ Odpověď: Ano, metadata XMP dokumentu PDF můžete upravit programově pomocí Aspose.PDF for .NET. Můžete přistupovat k`Info` majetek z`Document` objekt, který vám umožňuje přístup k vlastnostem metadat XMP. Poté můžete aktualizovat hodnoty těchto vlastností a upravit metadata XMP dokumentu PDF.
 
 #### Otázka: Mohu extrahovat vlastní vlastnosti metadat XMP z dokumentu PDF pomocí Aspose.PDF pro .NET?
 
- Odpověď: Ano, můžete extrahovat vlastní vlastnosti metadat XMP z dokumentu PDF pomocí Aspose.PDF pro .NET. Můžete použít`Metadata` vlastnictvím`Document`objekt, který poskytuje přístup ke všem vlastnostem metadat XMP dokumentu PDF. Poté můžete extrahovat uživatelské vlastnosti a použít jejich hodnoty podle potřeby.
+ Odpověď: Ano, můžete extrahovat vlastní vlastnosti metadat XMP z dokumentu PDF pomocí Aspose.PDF pro .NET. Můžete použít`Metadata` majetek z`Document`objekt, který poskytuje přístup ke všem vlastnostem metadat XMP dokumentu PDF. Poté můžete extrahovat uživatelské vlastnosti a použít jejich hodnoty podle potřeby.

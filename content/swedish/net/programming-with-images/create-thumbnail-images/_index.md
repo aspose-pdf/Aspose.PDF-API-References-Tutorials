@@ -11,7 +11,7 @@ Den här guiden tar dig steg för steg hur du skapar en miniatyrbild i PDF-fil m
 
 ## Steg 1: Definiera dokumentkatalogen
 
- Innan du börjar, se till att du ställer in rätt katalog för dokumenten. Byta ut`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen som innehåller dina PDF-filer.
+Innan du börjar, se till att du ställer in rätt katalog för dokumenten. Ersätta`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen som innehåller dina PDF-filer.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Steg 2: Hämta namnen på alla PDF-filer i en katalog
 
- I det här steget kommer vi att hämta namnen på alla PDF-filer som finns i den angivna katalogen med hjälp av C#`Directory` klass. Filer kommer att lagras i en rad strängar.
+ I det här steget kommer vi att hämta namnen på alla PDF-filer som finns i den angivna katalogen med hjälp av C#`Directory`klass. Filer kommer att lagras i en rad strängar.
 
 ```csharp
 string[] fileEntries = Directory.GetFiles(dataDir, "*.pdf");
@@ -32,7 +32,7 @@ string[] fileEntries = Directory.GetFiles(dataDir, "*.pdf");
 ```csharp
 for (int counter = 0; counter < fileEntries.Length; counter++)
 {
-     //Öppna PDF-dokumentet
+     // Öppna PDF-dokumentet
      Document pdfDocument = new Document(fileEntries[counter]);
     
      // Gå igenom alla sidor i dokumentet
@@ -41,7 +41,7 @@ for (int counter = 0; counter < fileEntries.Length; counter++)
          // Skapa en stream för att spara miniatyrbilden
          using (FileStream imageStream = new FileStream(dataDir + "\\Thumbnails" + counter.ToString() + "_" + pageCount + ".jpg", FileMode.Create))
          {
-             // Skapa ett Resolution-objekt
+             //Skapa ett Resolution-objekt
              Resolution resolution = new Resolution(300);
             
              // Skapa en JPEG-enhet med de angivna attributen
@@ -61,7 +61,7 @@ for (int counter = 0; counter < fileEntries.Length; counter++)
 ```csharp
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Hämta namn på alla PDF-filer i en viss katalog
+// Hämta namn på alla PDF-filer i en viss katalog
 string[] fileEntries = Directory.GetFiles(dataDir, "*.pdf");
 // Iterera igenom alla filposter i arrayen
 for (int counter = 0; counter < fileEntries.Length; counter++)
@@ -98,7 +98,7 @@ S: Genom att skapa miniatyrbilder från PDF-filer kan du generera små visuella 
 
 #### F: Hur underlättar Aspose.PDF för .NET skapandet av miniatyrbilder från PDF-filer?
 
-S: Aspose.PDF för .NET tillhandahåller en steg-för-steg-process för att öppna PDF-dokument, iterera genom deras sidor, skapa miniatyrbilder och spara dem i en specificerad katalog med hjälp av`JpegDevice` klass.
+ S: Aspose.PDF för .NET tillhandahåller en steg-för-steg-process för att öppna PDF-dokument, iterera genom deras sidor, skapa miniatyrbilder och spara dem i en specificerad katalog med hjälp av`JpegDevice` klass.
 
 #### F: Varför är det viktigt att definiera dokumentkatalogen innan du börjar skapa miniatyrbilder?
 
@@ -114,11 +114,11 @@ S: Genom att specificera dokumentkatalogen säkerställs att PDF-filerna är kor
 
 #### F: Hur konverteras varje sida i PDF-dokumentet till en individuell miniatyrbild?
 
- A: En kapslad`for`loop används för att iterera genom varje PDF-fil och dess sidor. För varje sida skapas en JPEG-enhet med specificerade attribut, och`Process` metod används för att konvertera sidan till en miniatyrbild och spara den i strömmen.
+ A: En kapslad`for` loop används för att iterera genom varje PDF-fil och dess sidor. För varje sida skapas en JPEG-enhet med specificerade attribut, och`Process` metod används för att konvertera sidan till en miniatyrbild och spara den i strömmen.
 
 #### F: Kan jag justera upplösningen eller kvaliteten på de resulterande miniatyrbilderna under skapandeprocessen?
 
- S: Ja, du kan ändra attribut som upplösning, bredd, höjd och kvalitet genom att konfigurera`JpegDevice` objekt innan varje sida konverteras.
+S: Ja, du kan ändra attribut som upplösning, bredd, höjd och kvalitet genom att konfigurera`JpegDevice` objekt innan varje sida konverteras.
 
 #### F: Hur kan jag använda de genererade miniatyrbilderna i mina projekt eller applikationer efter skapandeprocessen?
 

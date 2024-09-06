@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 3. lépés: Nyissa meg a PDF dokumentumot
 
-Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
+ Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
 
 ## 4. lépés: Inicializálja az optimalizálási beállításokat
 
-Ebben a lépésben inicializáljuk a képtömörítés optimalizálási beállításait. Hozzon létre egy példányt a`OptimizationOptions` és állítsa be a megfelelő opciókat. Ebben a példában engedélyezzük a képtömörítést, a képminőséget 75-re állítjuk, és a gyors tömörítési verziót használjuk.
+ Ebben a lépésben inicializáljuk a képtömörítés optimalizálási beállításait. Hozzon létre egy példányt a`OptimizationOptions` és állítsa be a megfelelő opciókat. Ebben a példában engedélyezzük a képtömörítést, a képminőséget 75-re állítjuk, és a gyors tömörítési verziót használjuk.
 
 ```csharp
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
@@ -46,7 +46,7 @@ optimizeOptions.ImageCompressionOptions.Version = Pdf.Optimization.ImageCompress
 
 ## 5. lépés: Optimalizálja a PDF-dokumentumot
 
- Ebben a lépésben optimalizáljuk a PDF dokumentumot a korábban meghatározott optimalizálási beállításokkal. Hívja a`OptimizeResources` módszere a`pdfDocument` objektumot, és adja át az optimalizálási beállításokat.
+Ebben a lépésben optimalizáljuk a PDF dokumentumot a korábban meghatározott optimalizálási beállításokkal. Hívja a`OptimizeResources` módszere a`pdfDocument` objektumot, és adja át az optimalizálási beállításokat.
 
 ```csharp
 pdfDocument.OptimizeResources(optimizeOptions);
@@ -54,7 +54,7 @@ pdfDocument.OptimizeResources(optimizeOptions);
 
 ## 6. lépés: Mentse el a frissített PDF-dokumentumot
 
- Mentse el a frissített PDF dokumentumot a`Save` módszere a`pdfDocument` tárgy. Adja meg a PDF-fájl kimeneti útvonalát.
+ Mentse el a frissített PDF dokumentumot a`Save` módszere a`pdfDocument` objektum. Adja meg a PDF-fájl kimeneti útvonalát.
 
 ```csharp
 dataDir = dataDir + "FastShrinkImages_out.pdf";
@@ -75,7 +75,7 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
 optimizeOptions.ImageCompressionOptions.CompressImages = true;
 // Állítsa be az ImageQuality beállítást
 optimizeOptions.ImageCompressionOptions.ImageQuality = 75;
-// Állítsa az Imagae Compression Version gyorsra
+// Állítsa az Imagae Compression Version-t gyorsra
 optimizeOptions.ImageCompressionOptions.Version = Pdf.Optimization.ImageCompressionVersion.Fast;
 // Optimalizálja a PDF-dokumentumot az OptimizationOptions segítségével
 pdfDocument.OptimizeResources(optimizeOptions);
@@ -106,7 +106,7 @@ V: Az Aspose.PDF for .NET egyszerűsített folyamatot biztosít a PDF-dokumentum
 
 ####  K: Mi a jelentősége a`OptimizationOptions` class in fast image size reduction?
 
- V: A`OptimizationOptions`osztály lehetővé teszi különféle optimalizálási beállítások megadását, beleértve a képtömörítési beállításokat is, a PDF-dokumentumban lévő képek méretének hatékony csökkentése érdekében.
+ V: A`OptimizationOptions` osztály lehetővé teszi különféle optimalizálási beállítások megadását, beleértve a képtömörítési beállításokat is, a PDF-dokumentumban lévő képek méretének hatékony csökkentése érdekében.
 
 #### K: Testreszabhatom a képtömörítési beállításokat a fájlméret és a képminőség közötti egyensúly szabályozására?
 

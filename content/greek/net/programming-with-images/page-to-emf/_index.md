@@ -86,10 +86,10 @@ using (FileStream imageStream = new FileStream(dataDir + "image_out.emf", FileMo
 {
 	// Δημιουργία αντικειμένου ανάλυσης
 	Resolution resolution = new Resolution(300);
-	// Δημιουργήστε συσκευή EMF με καθορισμένα χαρακτηριστικά
+	// Δημιουργία συσκευής EMF με καθορισμένα χαρακτηριστικά
 	// Πλάτος, Ύψος, Ανάλυση
 	EmfDevice emfDevice = new EmfDevice(500, 700, resolution);
-	//Μετατρέψτε μια συγκεκριμένη σελίδα και αποθηκεύστε την εικόνα σε ροή
+	// Μετατρέψτε μια συγκεκριμένη σελίδα και αποθηκεύστε την εικόνα σε ροή
 	emfDevice.Process(pdfDocument.Pages[1], imageStream);
 	// Κλείσιμο ροής
 	imageStream.Close();
@@ -97,7 +97,7 @@ using (FileStream imageStream = new FileStream(dataDir + "image_out.emf", FileMo
 System.Console.WriteLine("PDF page is converted to EMF successfully!");
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Συγχαρητήρια! Έχετε μάθει με επιτυχία πώς να μετατρέπετε μια σελίδα PDF σε μορφή EMF χρησιμοποιώντας το Aspose.PDF για .NET. Αυτός ο οδηγός βήμα προς βήμα κάλυψε τη διαδικασία από τη ρύθμιση του περιβάλλοντος έως τον πραγματικό κώδικα μετατροπής. Τώρα μπορείτε να εφαρμόσετε αυτόν τον κώδικα στα δικά σας έργα για να αυτοματοποιήσετε τη μετατροπή σελίδων PDF σε εικόνες EMF.
 

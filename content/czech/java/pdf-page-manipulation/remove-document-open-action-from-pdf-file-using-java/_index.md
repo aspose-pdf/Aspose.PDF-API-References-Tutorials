@@ -16,7 +16,7 @@ Soubory PDF často obsahují akce otevření dokumentu, které mohou při otevř
 
 Než se ponoříme do kódu, ujistěte se, že máte splněny následující předpoklady:
 
--  Aspose.PDF for Java Library: Stáhněte si a nainstalujte knihovnu Aspose.PDF for Java z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF for Java Library: Stáhněte si a nainstalujte knihovnu Aspose.PDF for Java z[zde](https://releases.aspose.com/pdf/java/).
 
 - Vývojové prostředí Java: Ujistěte se, že máte ve svém systému nastavené vývojové prostředí Java.
 
@@ -106,4 +106,4 @@ Ne, pro práci s PDF v Javě jsou k dispozici další knihovny a nástroje. Aspo
 
 ### Kde najdu více informací o Aspose.PDF for Java?
 
- Komplexní dokumentaci a příklady pro Aspose.PDF pro Javu najdete na[tady](https://reference.aspose.com/pdf/java/).
+ Komplexní dokumentaci a příklady pro Aspose.PDF pro Javu najdete na[zde](https://reference.aspose.com/pdf/java/).

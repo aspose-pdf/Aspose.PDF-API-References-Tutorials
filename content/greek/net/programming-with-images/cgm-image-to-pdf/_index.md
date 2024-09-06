@@ -11,7 +11,7 @@ url: /el/net/programming-with-images/cgm-image-to-pdf/
 
 ## Βήμα 1: Ορίστε τον κατάλογο εγγράφων
 
- Πριν ξεκινήσετε, βεβαιωθείτε ότι έχετε ορίσει τον σωστό κατάλογο για τα έγγραφα. Αντικαθιστώ`"YOUR DOCUMENT DIRECTORY"` στον κώδικα με τη διαδρομή προς τον κατάλογο όπου βρίσκεται το αρχείο CGM.
+Πριν ξεκινήσετε, βεβαιωθείτε ότι έχετε ορίσει τον σωστό κατάλογο για τα έγγραφα. Αντικαθιστώ`"YOUR DOCUMENT DIRECTORY"` στον κώδικα με τη διαδρομή προς τον κατάλογο όπου βρίσκεται το αρχείο CGM.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -28,7 +28,7 @@ dataDir = dataDir + "CGMImageToPDF_out.pdf";
 
 ## Βήμα 3: Μετατροπή εικόνας CGM σε PDF
 
- Χρησιμοποιήστε το`Produce` μέθοδος για`PdfProducer` για να μετατρέψετε το αρχείο CGM σε μορφή PDF χρησιμοποιώντας`ImportFormat.Cgm`. Καθορίστε το αρχείο εισόδου CGM και το αρχείο εξόδου PDF.
+ Χρησιμοποιήστε το`Produce` μέθοδος του`PdfProducer` για να μετατρέψετε το αρχείο CGM σε μορφή PDF χρησιμοποιώντας`ImportFormat.Cgm`. Καθορίστε το αρχείο εισόδου CGM και το αρχείο εξόδου PDF.
 
 ```csharp
 PdfProducer.Produce(inputFile, ImportFormat.Cgm, dataDir);
@@ -45,7 +45,7 @@ PdfProducer.Produce(inputFile, ImportFormat.Cgm, dataDir);
 Console.WriteLine("\nCGM file converted to pdf successfully.\nFile saved at " + dataDir); 
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Συγχαρητήρια ! Μετατρέψατε επιτυχώς ένα αρχείο CGM σε PDF χρησιμοποιώντας το Aspose.PDF για .NET. Τώρα μπορείτε να χρησιμοποιήσετε το αρχείο PDF που δημιουργήθηκε στα έργα ή τις εφαρμογές σας.
 
@@ -69,7 +69,7 @@ Console.WriteLine("\nCGM file converted to pdf successfully.\nFile saved at " + 
 
 ####  Ε: Πώς κάνει το`Produce` method of `PdfProducer` contribute to the CGM to PDF conversion process?
 
- Α: Το`Produce` μέθοδος για`PdfProducer` εκτελεί τη μετατροπή του αρχείου CGM σε μορφή PDF χρησιμοποιώντας το καθορισμένο αρχείο CGM εισόδου και το επιλεγμένο αρχείο PDF εξόδου.
+ Α: Το`Produce` μέθοδος του`PdfProducer`εκτελεί τη μετατροπή του αρχείου CGM σε μορφή PDF χρησιμοποιώντας το καθορισμένο αρχείο CGM εισόδου και το επιλεγμένο αρχείο PDF εξόδου.
 
 #### Ε: Μπορώ να προσαρμόσω τις ιδιότητες και τις ρυθμίσεις του αρχείου PDF εξόδου κατά τη μετατροπή;
 

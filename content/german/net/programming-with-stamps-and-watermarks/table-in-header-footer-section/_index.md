@@ -1,13 +1,13 @@
 ---
-title: Tabelle im Kopf- und Fußzeilenbereich
-linktitle: Tabelle im Kopf- und Fußzeilenbereich
+title: Tabelle im Kopf-/Fußzeilenbereich
+linktitle: Tabelle im Kopf-/Fußzeilenbereich
 second_title: Aspose.PDF für .NET API-Referenz
 description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET eine Tabelle in den Kopf-/Fußzeilenbereich eines PDF-Dokuments einfügen.
 type: docs
 weight: 170
 url: /de/net/programming-with-stamps-and-watermarks/table-in-header-footer-section/
 ---
-In diesem Tutorial führen wir Sie Schritt für Schritt durch das Hinzufügen einer Tabelle im Kopf- oder Fußzeilenbereich eines PDF-Dokuments mit Aspose.PDF für .NET. Der bereitgestellte C#-Quellcode zeigt Ihnen, wie Sie ein leeres PDF-Dokument erstellen, eine Seite hinzufügen, den Kopfzeilenabschnitt konfigurieren, eine Tabelle erstellen, Zeilen und Zellen zur Tabelle hinzufügen und schließlich das PDF-Dokument speichern.
+In diesem Tutorial zeigen wir Ihnen Schritt für Schritt, wie Sie mit Aspose.PDF für .NET eine Tabelle in den Kopf- oder Fußzeilenbereich eines PDF-Dokuments einfügen. Der bereitgestellte C#-Quellcode zeigt Ihnen, wie Sie ein leeres PDF-Dokument erstellen, eine Seite hinzufügen, den Kopfzeilenbereich konfigurieren, eine Tabelle erstellen, der Tabelle Zeilen und Zellen hinzufügen und schließlich das PDF-Dokument speichern.
 
 ## Schritt 1: Einrichten der Umgebung
 
@@ -18,56 +18,56 @@ Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
 ## Schritt 2: Erstellen des PDF-Dokuments und der Seite
 
- Der erste Schritt besteht darin, eine Instanz davon zu erstellen`Document` Klasse und fügen Sie dem Dokument eine Seite hinzu. Hier ist wie:
+ Der erste Schritt besteht in der Erstellung einer Instanz des`Document` Klasse und fügen Sie dem Dokument eine Seite hinzu. So geht's:
 
 ```csharp
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Instanziieren Sie ein Document-Objekt
+// Instanziieren eines Dokumentobjekts
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
 
-// Erstellen Sie eine Seite im PDF-Dokument
+// Erstellen einer Seite im PDF-Dokument
 Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 ```
 
-Ersetzen Sie unbedingt „VERZEICHNIS IHRER DOKUMENTE“ durch den tatsächlichen Pfad zu dem Verzeichnis, in dem Sie das PDF-Dokument speichern möchten.
+Ersetzen Sie „IHR DOKUMENTVERZEICHNIS“ unbedingt durch den tatsächlichen Pfad zu dem Verzeichnis, in dem Sie das PDF-Dokument speichern möchten.
 
-## Schritt 3: Konfigurieren des Header-Bereichs
+## Schritt 3: Konfigurieren des Header-Abschnitts
 
- Jetzt konfigurieren wir den Kopfbereich des PDF-Dokuments, indem wir eine Instanz davon erstellen`HeaderFooter` Klasse. Hier ist wie:
+ Nun konfigurieren wir den Header-Abschnitt des PDF-Dokuments, indem wir eine Instanz des`HeaderFooter` Klasse. So geht's:
 
 ```csharp
-// Erstellen Sie einen Kopfbereich für die PDF-Datei
+// Erstellen Sie einen Kopfzeilenabschnitt für die PDF-Datei
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
 // Definieren Sie den Kopfbereich für die Seite
 page. Header = header;
 
-// Legen Sie den oberen Rand des Kopfzeilenabschnitts fest
+// Oberen Rand des Header-Abschnitts festlegen
 header. Margin. Top = 20;
 ```
 
 ## Schritt 4: Erstellen der Tabelle
 
- Jetzt erstellen wir eine Tabelle mit`Table` Klasse und fügen Sie sie der Absatzsammlung des Überschriftenabschnitts hinzu. Hier ist wie:
+ Nun erstellen wir eine Tabelle mit dem`Table` Klasse und fügen Sie sie der Absatzsammlung des Überschriftenabschnitts hinzu. So geht's:
 
 ```csharp
-// Instanziieren Sie ein Table-Objekt
+// Instanziieren eines Tabellenobjekts
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Fügen Sie die Tabelle zur Absatzsammlung des Kopfzeilenabschnitts hinzu
+// Fügen Sie die Tabelle zur Absatzsammlung des Kopfbereichs hinzu
 header.Paragraphs.Add(tab1);
 
 // Definieren Sie die Breite der Spalten der Tabelle
 tab1.ColumnWidths = "60,300";
 ```
 
-Der obige Code erstellt eine Tabelle mit zwei Spalten mit der angegebenen Breite.
+Der obige Code erstellt eine Tabelle mit zwei Spalten der angegebenen Breite.
 
-## Schritt 5: Fügen Sie der Tabelle Zeilen und Zellen hinzu
+## Schritt 5: Zeilen und Zellen zur Tabelle hinzufügen
 
- Jetzt fügen wir der Tabelle mithilfe von Zeilen und Zellen hinzu`Row` Klasse und die`Cell` Klasse. Hier ist wie:
+ Nun fügen wir der Tabelle Zeilen und Zellen hinzu, indem wir`Row` Klasse und die`Cell` Klasse. So geht's:
 
 ```csharp
 // Erstellen Sie eine Zeile in der Tabelle und fügen Sie Zellen hinzu
@@ -75,7 +75,7 @@ Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Table in header section");
 row1.BackgroundColor = Color.Gray;
 
-// Führen Sie die erste Zelle der ersten Zeile zusammen
+// Die erste Zelle der ersten Zeile zusammenführen
 tab1.Rows[0].Cells[0].ColSpan = 2;
 tab1.Rows[0].Cells[0].DefaultCellTextState.ForegroundColor = Color.Cyan;
 tab1.Rows[0].Cells[0].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
@@ -96,46 +96,46 @@ row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 
 ## Schritt 6: Speichern des PDF-Dokuments
 
-Sobald die Tabelle zum Kopfbereich hinzugefügt wurde, können wir das PDF-Dokument speichern. Hier ist wie:
+Nachdem die Tabelle zum Kopfbereich hinzugefügt wurde, können wir das PDF-Dokument speichern. So geht's:
 
 ```csharp
 // Speichern Sie die PDF-Datei
 pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 ```
 
-Ersetzen Sie unbedingt „VERZEICHNIS IHRER DOKUMENTE“ durch den tatsächlichen Pfad zu dem Verzeichnis, in dem Sie das PDF-Dokument speichern möchten.
+Ersetzen Sie „IHR DOKUMENTVERZEICHNIS“ unbedingt durch den tatsächlichen Pfad zu dem Verzeichnis, in dem Sie das PDF-Dokument speichern möchten.
 
-### Beispielquellcode für den Abschnitt „Tabelle im Kopf- und Fußbereich“ mit Aspose.PDF für .NET 
+### Beispielquellcode für eine Tabelle im Kopf-/Fußzeilenbereich mit Aspose.PDF für .NET 
 ```csharp
 
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instanziieren Sie eine Dokumentinstanz, indem Sie einen leeren Konstruktor aufrufen
+// Instanziieren Sie die Document-Instanz, indem Sie einen leeren Konstruktor aufrufen
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
 
 // Erstellen Sie eine Seite im PDF-Dokument
 Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 
-// Erstellen Sie einen Kopfzeilenabschnitt der PDF-Datei
+//Erstellen Sie einen Kopfbereich der PDF-Datei
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-//Legen Sie den ungeraden Header für die PDF-Datei fest
+// Legen Sie den Odd Header für die PDF-Datei fest
 page.Header = header;
 
-// Legen Sie den oberen Rand für den Kopfbereich fest
+// Oberen Rand für den Kopfbereich festlegen
 header.Margin.Top = 20;
 
-// Instanziieren Sie ein Tabellenobjekt
+// Instanziieren eines Tabellenobjekts
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Fügen Sie die Tabelle in der Absatzsammlung des gewünschten Abschnitts hinzu
+// Fügen Sie die Tabelle in die Absatzsammlung des gewünschten Abschnitts ein
 header.Paragraphs.Add(tab1);
 
-// Legen Sie den Standardzellenrahmen mithilfe des BorderInfo-Objekts fest
+// Festlegen des Standardzellenrahmens mithilfe des BorderInfo-Objekts
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 
-// Mit den Spaltenbreiten der Tabelle festlegen
+// Mit Spaltenbreiten der Tabelle festlegen
 tab1.ColumnWidths = "60 300";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose-logo.jpg";
@@ -145,7 +145,7 @@ Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Table in Header Section");
 row1.BackgroundColor = Color.Gray;
 
-// Legen Sie den Zeilenspannenwert für die erste Zeile auf 2 fest
+// Setzen Sie den Zeilenspannwert für die erste Zeile auf 2
 tab1.Rows[0].Cells[0].ColSpan = 2;
 tab1.Rows[0].Cells[0].DefaultCellTextState.ForegroundColor = Color.Cyan;
 tab1.Rows[0].Cells[0].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
@@ -153,7 +153,7 @@ tab1.Rows[0].Cells[0].DefaultCellTextState.Font = FontRepository.FindFont("Helve
 // Erstellen Sie Zeilen in der Tabelle und dann Zellen in den Zeilen
 Aspose.Pdf.Row row2 = tab1.Rows.Add();
 
-// Legen Sie die Hintergrundfarbe für Zeile2 fest
+// Legen Sie die Hintergrundfarbe für Zeile 2 fest.
 row2.BackgroundColor = Color.White;
 
 // Fügen Sie die Zelle hinzu, die das Bild enthält
@@ -180,42 +180,42 @@ pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 
 Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET eine Tabelle in den Kopf- oder Fußzeilenbereich eines PDF-Dokuments einfügen. Sie können jetzt Ihre Kopf- und Fußzeilen anpassen, indem Sie Tabellen hinzufügen, um zusätzliche Informationen in Ihren PDF-Dokumenten anzuzeigen.
 
-### FAQs zur Tabelle im Kopf- und Fußbereich
+### FAQs zur Tabelle im Kopf-/Fußzeilenbereich
 
 #### F: Welchen Zweck hat das Hinzufügen einer Tabelle im Kopf- oder Fußzeilenbereich eines PDF-Dokuments?
 
-A: Durch das Hinzufügen einer Tabelle im Kopf- oder Fußzeilenbereich eines PDF-Dokuments können Sie strukturierte und organisierte Informationen wie Titel, Untertitel, Logos oder andere Inhalte anzeigen, die konsistent auf jeder Seite des Dokuments angezeigt werden sollen.
+A: Durch das Hinzufügen einer Tabelle im Kopf- oder Fußzeilenbereich eines PDF-Dokuments können Sie strukturierte und organisierte Informationen wie Titel, Untertitel, Logos oder andere Inhalte anzeigen, die auf jeder Seite des Dokuments einheitlich erscheinen sollen.
 
-#### F: Wie erreicht der bereitgestellte C#-Quellcode das Hinzufügen einer Tabelle im Kopf- oder Fußzeilenbereich eines PDF-Dokuments?
+#### F: Wie ermöglicht der bereitgestellte C#-Quellcode das Hinzufügen einer Tabelle im Kopf- oder Fußzeilenbereich eines PDF-Dokuments?
 
-A: Der Code demonstriert den Prozess des Erstellens eines leeren PDF-Dokuments, des Hinzufügens einer Seite, des Konfigurierens des Kopfbereichs, des Erstellens einer Tabelle mit Zeilen und Zellen und schließlich des Speicherns des PDF-Dokuments. Das Ergebnis ist eine Tabelle, die im Kopfbereich des PDF-Dokuments angezeigt wird.
+A: Der Code demonstriert den Vorgang des Erstellens eines leeren PDF-Dokuments, des Hinzufügens einer Seite, des Konfigurierens des Kopfbereichs, des Erstellens einer Tabelle mit Zeilen und Zellen und des abschließenden Speicherns des PDF-Dokuments. Das Ergebnis ist eine Tabelle, die im Kopfbereich des PDF-Dokuments angezeigt wird.
 
-#### F: Kann ich das Erscheinungsbild der Tabellenzellen anpassen, z. B. Ränder, Hintergrundfarbe und Textstil?
+#### F: Kann ich das Erscheinungsbild der Tabellenzellen, beispielsweise Ränder, Hintergrundfarbe und Textstil, anpassen?
 
-A: Ja, Sie können das Erscheinungsbild der Tabellenzellen anpassen, indem Sie Eigenschaften wie Zellränder, Hintergrundfarbe, Textstil, Schriftart, Schriftgröße und mehr festlegen.
+A: Ja, Sie können das Erscheinungsbild der Tabellenzellen anpassen, indem Sie Eigenschaften wie Zellenränder, Hintergrundfarbe, Textstil, Schriftart, Schriftgröße und mehr festlegen.
 
 #### F: Wie wird die Tabelle zum Kopfbereich des PDF-Dokuments hinzugefügt?
 
-A: Der Code fügt die Tabelle zur Absatzsammlung des Kopfzeilenabschnitts hinzu, wodurch sichergestellt wird, dass die Tabelle in der Kopfzeile jeder Seite angezeigt wird.
+A: Der Code fügt die Tabelle der Absatzsammlung des Kopfbereichs hinzu, wodurch sichergestellt wird, dass die Tabelle im Kopf jeder Seite angezeigt wird.
 
 #### F: Kann ich der Tabelle nach Bedarf weitere Zeilen und Zellen hinzufügen?
 
- A: Auf jeden Fall können Sie der Tabelle weitere Zeilen und Zellen hinzufügen, indem Sie die verwenden`Rows.Add()` Und`Cells.Add()` Methoden. Dadurch können Sie den Tabelleninhalt nach Wunsch strukturieren.
+ A: Natürlich. Sie können der Tabelle weitere Zeilen und Zellen hinzufügen, indem Sie die`Rows.Add()` Und`Cells.Add()` Methoden. Damit können Sie den Tabelleninhalt beliebig strukturieren.
 
 #### F: Ist es möglich, die Breite der Tabellenspalten anzupassen?
- A: Ja, Sie können die Breite der Tabellenspalten mit anpassen`ColumnWidths` Eigentum. Dadurch können Sie das Layout der Tabelle steuern.
+ A: Ja, Sie können die Breite der Tabellenspalten anpassen mit dem`ColumnWidths` -Eigenschaft. Dadurch können Sie das Layout der Tabelle steuern.
 
 #### F: Wie kann ich Zellen über mehrere Spalten oder Zeilen innerhalb der Tabelle verteilen?
- A: Um Zellen über mehrere Spalten zu verteilen, können Sie die verwenden`ColSpan` Eigenschaft der entsprechenden Zelle. Ebenso können Sie die verwenden`RowSpan` Eigenschaft, um Zellen über mehrere Zeilen zu erstrecken.
+ A: Um Zellen über mehrere Spalten zu verteilen, können Sie die`ColSpan`Eigenschaft der entsprechenden Zelle. Ebenso können Sie die`RowSpan` -Eigenschaft, um Zellen über mehrere Zeilen zu verteilen.
 
-#### F: Was passiert, wenn ich sowohl im Kopf- als auch im Fußzeilenbereich des PDF-Dokuments eine Tabelle hinzufügen möchte?
+#### F: Was passiert, wenn ich sowohl zum Kopf- als auch zum Fußzeilenabschnitt des PDF-Dokuments eine Tabelle hinzufügen möchte?
 
-A: Sie können für die Kopf- und Fußzeilen einen ähnlichen Ansatz verfolgen. Erstellen Sie einfach eine`HeaderFooter` Instanz für die Fußzeile, konfigurieren Sie sie und fügen Sie die Tabelle zu ihrer Absatzsammlung hinzu.
+ A: Sie können für Kopf- und Fußzeilenabschnitte einen ähnlichen Ansatz verfolgen. Erstellen Sie einfach eine`HeaderFooter` Instanz für die Fußzeile, konfigurieren Sie sie und fügen Sie die Tabelle ihrer Absatzsammlung hinzu.
 
 #### F: Kann ich Bilder in den Tabellenzellen verwenden und wie wird das erreicht?
 
- A: Ja, Sie können Bilder in Tabellenzellen hinzufügen. Das Codebeispiel veranschaulicht das Hinzufügen eines Bilds zu einer Zelle durch Erstellen eines`Image` Objekt hinzufügen, seinen Dateipfad und seine Abmessungen festlegen und es dann den Absätzen einer Zelle hinzufügen.
+ A: Ja, Sie können Bilder in Tabellenzellen einfügen. Das Codebeispiel zeigt das Hinzufügen eines Bilds zu einer Zelle durch Erstellen eines`Image` Objekt, legen Sie seinen Dateipfad und seine Abmessungen fest und fügen Sie es dann den Absätzen einer Zelle hinzu.
 
 #### F: Wie stelle ich sicher, dass die Tabelle auf allen Seiten des PDF-Dokuments einheitlich angezeigt wird?
 
- A: Wenn Sie die Tabelle mit dem zum Kopf- oder Fußzeilenabschnitt hinzufügen`HeaderFooter` Aspose.PDF stellt beispielsweise sicher, dass die Tabelle auf jeder Seite konsistent erscheint und ein einheitliches Layout bietet.
+ A: Wenn Sie die Tabelle mit dem Symbol`HeaderFooter` Beispielsweise sorgt Aspose.PDF dafür, dass die Tabelle auf jeder Seite einheitlich angezeigt wird und sorgt so für ein einheitliches Layout.

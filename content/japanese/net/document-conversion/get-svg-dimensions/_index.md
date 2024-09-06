@@ -1,90 +1,115 @@
 ---
-title: SVG 寸法の取得
-linktitle: SVG 寸法の取得
+title: SVG ディメンションを取得
+linktitle: SVG ディメンションを取得
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して SVG 寸法を取得するためのステップバイステップ ガイド。
+description: このステップバイステップ ガイドでは、Aspose.PDF for .NET を使用して SVG ファイルを PDF に変換する方法を説明します。PDF を操作したい開発者に最適です。
 type: docs
 weight: 40
 url: /ja/net/document-conversion/get-svg-dimensions/
 ---
 ## 導入
-このチュートリアルでは、Aspose.PDF for .NET を使用して SVG ファイルの寸法を取得するプロセスを説明します。 SVG (Scalable Vector Graphics) は、ベクター グラフィックを表現するために使用される XML ベースの画像形式です。以下の手順を使用すると、SVG ファイルの寸法を取得し、PDF として保存できます。
+
+Aspose.PDF for .NET の世界へようこそ! PDF ファイルをプログラムで操作したい場合、ここは最適な場所です。Aspose.PDF は、開発者が PDF ドキュメントを簡単に作成、編集、変換できるようにする強力なライブラリです。熟練した開発者でも、初心者でも、このガイドでは、SVG の寸法を取得して PDF 形式に変換する方法を中心に、Aspose.PDF for .NET の使用の基本について説明します。
 
 ## 前提条件
-始める前に、次の前提条件を満たしていることを確認してください。
 
-- C# プログラミング言語の基本的な知識。
-- .NET 用の Aspose.PDF ライブラリがシステムにインストールされています。
-- Visual Studio などの開発環境。
+コードに進む前に、準備しておくべきことがいくつかあります。
 
-## ステップ 1: SVG ファイルをロードする
-このステップでは、Aspose.PDF for .NET を使用して SVG ファイルを読み込みます。以下のコードに従ってください。
+1. Visual Studio: お使いのマシンに Visual Studio がインストールされていることを確認してください。このチュートリアルでは Visual Studio を使用します。
+2.  .NET Framework: .NET Frameworkがインストールされていることを確認してください。Aspose.PDFはさまざまなバージョンをサポートしているので、[ドキュメント](https://reference.aspose.com/pdf/net/)互換性のためです。
+3.  Aspose.PDFライブラリ: Aspose.PDF for .NETの最新バージョンは、[ダウンロードリンク](https://releases.aspose.com/pdf/net/)まずは試してみたいという方は、[無料トライアル](https://releases.aspose.com/).
+4. 基本的な C# の知識: C# プログラミングに精通していると、例をよりよく理解するのに役立ちます。
+
+## パッケージのインポート
+
+始めるには、必要なパッケージをインポートする必要があります。手順は次のとおりです。
+
+1. Visual Studio プロジェクトを開きます。
+2. ソリューション エクスプローラーでプロジェクトを右クリックし、[NuGet パッケージの管理] を選択します。
+3. 「Aspose.PDF」を検索してパッケージをインストールします。
+
+パッケージをインストールしたら、コーディングを開始できます。
+
+## ステップ1: プロジェクトを設定する
+
+### 新しいプロジェクトを作成する
+
+まず最初に、Visual Studio で新しい C# プロジェクトを作成しましょう。
+
+- Visual Studio を開き、「新しいプロジェクトの作成」を選択します。
+- 「コンソール アプリ (.NET Framework)」を選択し、「次へ」をクリックします。
+- プロジェクトに名前を付け（例：AsposePDFExample）、［作成］をクリックします。
+
+### Usingディレクティブを追加する
+
+プロジェクトの設定が完了したら、必要なusingディレクティブを`Program.cs`ファイル：
 
 ```csharp
-//ドキュメントディレクトリへのパス。
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-var loadopt = new SvgLoadOptions();
-loadopt.AdjustPageSize = true;
-var svgDoc = new Document(dataDir + "GetSVGDimensions.svg", loadopt);
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-必ず交換してください`"YOUR DOCUMENTS DIRECTORY"` SVG ファイルが置かれている実際のディレクトリに置き換えます。
+これにより、Aspose.PDF ライブラリによって提供されるクラスとメソッドにアクセスできるようになります。
 
-## ステップ2: ページサイズの調整
-SVG ファイルをロードしたので、SVG コンテンツに合わせてページ サイズを調整できます。次のコードを使用します。
+## ステップ2: SVGドキュメントを読み込む
 
-```csharp
-svgDoc.Pages[1].PageInfo.Margin.Top = 0;
-svgDoc.Pages[1].PageInfo.Margin.Left = 0;
-svgDoc.Pages[1].PageInfo.Margin.Bottom = 0;
-svgDoc.Pages[1].PageInfo.Margin.Right = 0;
-```
+### ドキュメントディレクトリを定義する
 
-上記のコードはページ余白をゼロに設定し、SVG コンテンツに基づいてページ サイズを調整できるようにします。
-
-## ステップ 3: 結果の PDF を保存する
-ページ サイズを調整したら、結果の PDF ドキュメントを保存できるようになります。最後のステップは次のとおりです。
+SVGドキュメントを読み込む前に、ドキュメントディレクトリへのパスを指定する必要があります。`"YOUR DOCUMENT DIRECTORY"` SVG ファイルが配置されている実際のパスを入力します。
 
 ```csharp
-svgDoc.Save(dataDir + "GetSVGDimensions_out.pdf");
-```
-
-交換する`"YOUR DOCUMENTS DIRECTORY"`出力 PDF ファイルを保存したいディレクトリに置き換えます。
-  
-### Aspose.PDF for .NET を使用した SVG ディメンションの取得のソース コード例
-
-```csharp
-//ドキュメントディレクトリへのパス。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+### SVGドキュメントを読み込む
+
+さて、SVGドキュメントをロードしてみましょう。`SvgLoadOptions`クラス。このクラスを使用すると、SVG コンテンツに基づいてページ サイズを調整できます。
+
+```csharp
 var loadopt = new SvgLoadOptions();
 loadopt.AdjustPageSize = true;
 var svgDoc = new Document(dataDir + "GetSVGDimensions.svg", loadopt);
+```
+
+## ステップ3: ページの余白を調整する
+
+SVG コンテンツが PDF に完全に収まるようにするには、ページ余白をゼロに設定する必要があります。この手順は、SVG 寸法の整合性を維持するために非常に重要です。
+
+```csharp
 svgDoc.Pages[1].PageInfo.Margin.Top = 0;
 svgDoc.Pages[1].PageInfo.Margin.Left = 0;
 svgDoc.Pages[1].PageInfo.Margin.Bottom = 0;
 svgDoc.Pages[1].PageInfo.Margin.Right = 0;
+```
+
+## ステップ4: ドキュメントをPDFとして保存する
+
+最後に、SVG ドキュメントを PDF として保存します。出力ファイル名とパスは次のように指定できます。
+
+```csharp
 svgDoc.Save(dataDir + "GetSVGDimensions_out.pdf");
 ```
+
+これで完了です。Aspose.PDF for .NET を使用して SVG ファイルを PDF に正常に変換できました。
 
 ## 結論
-このチュートリアルでは、Aspose.PDF for .NET を使用して SVG ファイルのサイズを取得する段階的なプロセスについて説明しました。上記の手順に従うことで、SVG ファイルの寸法を取得し、PDF 形式で保存できるようになります。この機能は、ベクター グラフィックの寸法を測定する必要がある場合に役立ちます。
 
-### よくある質問
+おめでとうございます! Aspose.PDF for .NET を使用したシンプルでありながら強力なタスクを完了しました。このガイドに従って、SVG ドキュメントを読み込み、余白を調整し、PDF として保存する方法を学びました。Aspose.PDF の可能性は無限であり、これは氷山の一角にすぎません。複雑な PDF を作成する場合でも、既存の PDF を操作する場合でも、形式を変換する場合でも、Aspose.PDF が対応します。では、何を待っていますか? さらに詳しく見てみましょう。[ドキュメント](https://reference.aspose.com/pdf/net/)このライブラリが提供するすべての機能を探索してください。
 
-#### Q: SVG とは何ですか?
+## よくある質問
 
-A: SVG (Scalable Vector Graphics) は、ベクター グラフィックを表現するために使用される XML ベースの画像形式です。ラスター イメージとは異なり、SVG ファイルは解像度に依存せず、品質を損なうことなく拡大縮小できます。 SVG は Web 上でグラフィックを表示するために広く使用されており、簡単に編集および操作できます。
+### Aspose.PDF for .NET とは何ですか?
+Aspose.PDF for .NET は、開発者がプログラムによって PDF ドキュメントを作成、編集、変換できるようにするライブラリです。
 
-#### Q: SVG から PDF への変換に .NET 用の Aspose.PDF を使用するのはなぜですか?
+### Aspose.PDF をインストールするにはどうすればよいですか?
+ Aspose.PDFはVisual StudioのNuGetパッケージマネージャーからインストールするか、[サイト](https://releases.aspose.com/pdf/net/).
 
-A: Aspose.PDF for .NET は、SVG ファイルを処理して PDF 形式に変換するための信頼性が高く効率的な方法を提供します。 PDF で正確に表現できるようにページ サイズ、余白、その他のプロパティを調整するなど、変換プロセスをカスタマイズするためのさまざまなオプションと設定が提供されます。
+### Aspose.PDF を無料で使用できますか?
+はい、Asposeは[無料トライアル](https://releases.aspose.com/)購入前にライブラリをテストできます。
 
-#### Q: 複雑なグラフィックやテキストを含む SVG ファイルを変換できますか?
+### Aspose.PDF のサポートはどこで受けられますか?
+サポートを受けるには[Aspose フォーラム](https://forum.aspose.com/c/pdf/10).
 
-A: はい、Aspose.PDF for .NET は、複雑なグラフィックス、テキスト、ベクター要素を含む SVG ファイルを処理できます。変換プロセス中に SVG コンテンツの詳細と品質を正確に保持し、高品質の PDF ドキュメントを生成します。
-
-#### Q: Aspose.PDF for .NET を使用して SVG ファイルからテキストを抽出することはできますか?
-
-A: はい、Aspose.PDF for .NET を使用すると、SVG ファイルからテキストを抽出できます。ライブラリのテキスト抽出機能を使用して、SVG からテキスト要素を抽出し、その後の処理のために個別に保存できます。
+### Aspose.PDF の一時ライセンスを取得するにはどうすればよいですか?
+リクエストすることができます[一時ライセンス](https://purchase.aspose.com/temporary-license/)Aspose の Web サイトから。

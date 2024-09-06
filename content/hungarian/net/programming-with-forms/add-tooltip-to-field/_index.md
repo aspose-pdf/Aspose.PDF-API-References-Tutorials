@@ -75,7 +75,7 @@ Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan adjon elemleírást egy mezőhöz az Aspose.PDF for .NET segítségével. Az oktatóanyag lépésenkénti útmutatóját követve eszköztippekkel bővítheti PDF-űrlapjait, amelyek további információkat vagy útmutatást nyújtanak a felhasználóknak. Ne felejtse el tanulmányozni az Aspose.PDF for .NET által biztosított dokumentációt és példákat, hogy felfedezze a könyvtár által kínált fejlettebb szolgáltatásokat és funkciókat.
+Gratulálok! Sikeresen megtanulta, hogyan adjon elemleírást egy mezőhöz az Aspose.PDF for .NET segítségével. Az oktatóanyag lépésenkénti útmutatóját követve eszköztippekkel bővítheti PDF-űrlapjait, amelyek további információkat vagy útmutatást nyújtanak a felhasználóknak. Ne felejtse el tanulmányozni az Aspose.PDF for .NET által biztosított dokumentációt és példákat, hogy felfedezze a könyvtár által kínált fejlettebb szolgáltatásokat és funkciókat.
 
 ### GYIK
 

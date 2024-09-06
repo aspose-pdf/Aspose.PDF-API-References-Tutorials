@@ -54,7 +54,7 @@ Document pdfDocument = new Document("path/to/your/pdf/file.pdf");
 Most cseréljük le a PDF-ben lévő képet egy újra. Meg kell adnia az oldalszámot és a koordinátákat, ahol a képet le kell cserélni. Szüksége van a beszúrni kívánt új kép elérési útjára is.
 
 ```java
-// Adja meg az oldalszámot (0-alapú index)
+// Adja meg az oldalszámot (0 alapú index)
 int pageNumber = 0;
 
 // Adja meg a koordinátákat, ahol a képet le kell cserélni
@@ -83,7 +83,7 @@ pdfDocument.save("path/to/your/output/modified.pdf");
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan cserélhet le egy képet egy meglévő PDF-fájlban a Java és az Aspose.PDF for Java könyvtár használatával. Ez hihetetlenül hasznos lehet, ha programozottan frissíteni vagy módosítani kell a PDF-dokumentumokat.
+Gratulálok! Sikeresen megtanulta, hogyan cserélhet le egy képet egy meglévő PDF-fájlban a Java és az Aspose.PDF for Java könyvtár használatával. Ez hihetetlenül hasznos lehet, ha programozottan frissíteni vagy módosítani kell a PDF-dokumentumokat.
 
 ## GYIK
 

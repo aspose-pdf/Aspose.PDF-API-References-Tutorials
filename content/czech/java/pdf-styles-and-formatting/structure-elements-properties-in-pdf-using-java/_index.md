@@ -18,7 +18,7 @@ Než se ponoříme do kódu, ujistěte se, že máte v systému nainstalovanou J
 
 ## Přidání Aspose.PDF do vašeho projektu
 
- Pro začátek přidejte do našeho projektu knihovnu Aspose.PDF. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/) a postupujte podle dodaných pokynů k instalaci.
+ Pro začátek přidejte do našeho projektu knihovnu Aspose.PDF. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/) a postupujte podle dodaných pokynů k instalaci.
 
 ## Vytvoření dokumentu PDF
 

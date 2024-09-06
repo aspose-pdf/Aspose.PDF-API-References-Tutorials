@@ -7,7 +7,7 @@ type: docs
 weight: 20
 url: /cs/net/programming-with-operators/pdf-operators/
 ---
-V tomto tutoriálu vám poskytneme podrobný návod, jak používat operátory PDF pomocí Aspose.PDF pro .NET. Operátoři PDF vám umožňují manipulovat a přidávat obsah do dokumentů PDF přesným a kontrolovaným způsobem. Pomocí operátorů poskytovaných Aspose.PDF můžete přidat obrázek na stránku PDF a přesně určit jeho polohu.
+tomto tutoriálu vám poskytneme podrobný návod, jak používat operátory PDF pomocí Aspose.PDF pro .NET. Operátoři PDF vám umožňují manipulovat a přidávat obsah do dokumentů PDF přesným a kontrolovaným způsobem. Pomocí operátorů poskytovaných Aspose.PDF můžete přidat obrázek na stránku PDF a přesně určit jeho polohu.
 
 ## Předpoklady
 
@@ -70,7 +70,7 @@ page.Contents.Add(new Do(ximage.Name));
 page. Contents. Add(new GRestore());
 ```
 
- Nezapomeňte zadat skutečné cesty souborů PDF a obrázků na vašem počítači. Můžete také upravit`lowerLeftX`, `lowerLeftY`, `upperRightX` a`upperRightY`souřadnice pro umístění obrázku podle potřeby.
+ Nezapomeňte zadat skutečné cesty souborů PDF a obrázků na vašem počítači. Můžete také upravit`lowerLeftX`, `lowerLeftY`, `upperRightX` a`upperRightY` souřadnice pro umístění obrázku podle potřeby.
 
 ### Ukázka zdrojového kódu pro operátory PDF pomocí Aspose.PDF pro .NET 
 ```csharp
@@ -83,11 +83,11 @@ int lowerLeftX = 100;
 int lowerLeftY = 100;
 int upperRightX = 200;
 int upperRightY = 200;
-//Získejte stránku, kam je třeba přidat obrázek
+// Získejte stránku, kam je třeba přidat obrázek
 Page page = pdfDocument.Pages[1];
 // Načíst obrázek do streamu
 FileStream imageStream = new FileStream(dataDir + "PDFOperators.jpg", FileMode.Open);
-// Přidejte obrázek do kolekce Obrázky zdrojů stránky
+// Přidejte obrázek do sbírky Obrázky zdrojů stránky
 page.Resources.Images.Add(imageStream);
 // Použití operátoru GSave: tento operátor uloží aktuální stav grafiky
 page.Contents.Add(new Aspose.Pdf.Operators.GSave());
@@ -108,7 +108,7 @@ pdfDocument.Save(dataDir);
 
 ## Závěr
 
-V tomto tutoriálu jste se naučili používat operátory PDF pomocí Aspose.PDF pro .NET. Podle popsaných kroků budete moci přidat obrázek na stránku PDF a přesně určit jeho polohu. Operátoři PDF poskytují podrobnou kontrolu nad manipulací s dokumenty PDF a umožňují vám přizpůsobit obsah.
+tomto tutoriálu jste se naučili používat operátory PDF pomocí Aspose.PDF pro .NET. Podle popsaných kroků budete moci přidat obrázek na stránku PDF a přesně určit jeho polohu. Operátoři PDF poskytují podrobnou kontrolu nad manipulací s dokumenty PDF a umožňují vám přizpůsobit obsah.
 
 ### Časté dotazy pro operátory PDF
 
@@ -132,7 +132,7 @@ using Aspose.Pdf.Operators;
 
 #### Otázka: Jak poskytují operátoři PDF přesné umístění obsahu?
 
- Odpověď: Operátoři PDF mají rádi`ConcatenateMatrix` umožňují definovat transformační matice pro přesné umístění a transformaci obsahu v dokumentu PDF.
+Odpověď: Operátoři PDF mají rádi`ConcatenateMatrix` umožňují definovat transformační matice pro přesné umístění a transformaci obsahu v dokumentu PDF.
 
 #### Otázka: Mohu přidat obrázek na stránku PDF pomocí operátorů PDF?
 
@@ -140,15 +140,15 @@ Odpověď: Ano, pomocí operátorů PDF můžete přidat obrázek na stránku PD
 
 #### Otázka: Jak mohu pomocí operátorů PDF přidat obrázek na stránku PDF?
 
- Odpověď: Chcete-li načíst obrázek ze souboru a použít operátory PDF, můžete postupovat podle kroků uvedených v tutoriálu`GSave`, `ConcatenateMatrix` , a`Do` pro přidání obrázku do určitého umístění na stránce PDF.
+ Odpověď: Chcete-li načíst obrázek ze souboru a použít operátory PDF, můžete postupovat podle kroků uvedených v tutoriálu`GSave`, `ConcatenateMatrix` a`Do` pro přidání obrázku do určitého umístění na stránce PDF.
 
 #### Otázka: Jaký je účel operátorů GSave a GRestore?
 
- A:`GSave` a`GRestore`operátory v Aspose.PDF se používají k uložení a obnovení stavu grafiky. Pomáhají zajistit, aby transformace a nastavení aplikované na jednu část obsahu neovlivnily následující části.
+ A:`GSave` a`GRestore` operátory v Aspose.PDF se používají k uložení a obnovení stavu grafiky. Pomáhají zajistit, aby transformace a nastavení aplikované na jednu část obsahu neovlivnily následující části.
 
 #### Otázka: Jak mohu upravit polohu přidaného obrázku na stránce PDF?
 
- A: Můžete upravit`lowerLeftX`, `lowerLeftY`, `upperRightX` , a`upperRightY` souřadnice v ukázkovém kódu pro řízení polohy a velikosti přidaného obrázku.
+ A: Můžete upravit`lowerLeftX`, `lowerLeftY`, `upperRightX` a`upperRightY` souřadnice v ukázkovém kódu pro řízení polohy a velikosti přidaného obrázku.
 
 #### Otázka: Mohu použít operátory PDF také k manipulaci s textovým obsahem?
 
@@ -156,7 +156,7 @@ Odpověď: Ano, operátory PDF lze použít k manipulaci s textovým obsahem, co
 
 #### Otázka: Je možné použít efekty průhlednosti nebo prolnutí pomocí operátorů PDF?
 
- Odpověď: Ano, provozovatelé PDF mají rádi`SetAlpha`, `SetBlendMode`a další lze použít k aplikaci efektů průhlednosti a prolnutí na obsah.
+Odpověď: Ano, provozovatelé PDF mají rádi`SetAlpha`, `SetBlendMode`a další lze použít k aplikaci efektů průhlednosti a prolnutí na obsah.
 
 #### Otázka: Mohu použít operátory PDF k vytvoření interaktivních prvků v dokumentu PDF?
 

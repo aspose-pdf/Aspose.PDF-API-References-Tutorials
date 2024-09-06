@@ -1,8 +1,8 @@
 ---
-title: Definieren Sie die Ausrichtung in der PDF-Datei
-linktitle: Definieren Sie die Ausrichtung in der PDF-Datei
+title: Ausrichtung in PDF-Datei definieren
+linktitle: Ausrichtung in PDF-Datei definieren
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET ganz einfach die Textausrichtung in einer PDF-Datei festlegen.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET einfach die Textausrichtung in PDF-Dateien festlegen.
 type: docs
 weight: 70
 url: /de/net/programming-with-stamps-and-watermarks/define-alignment/
@@ -18,21 +18,21 @@ Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
 ## Schritt 2: Laden des PDF-Dokuments
 
-Der erste Schritt besteht darin, das vorhandene PDF-Dokument in Ihr Projekt zu laden. Hier ist wie:
+Der erste Schritt besteht darin, das vorhandene PDF-Dokument in Ihr Projekt zu laden. So geht's:
 
 ```csharp
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Instanziieren Sie ein Document-Objekt mit der Eingabedatei
+// Instanziieren Sie ein Dokumentobjekt mit der Eingabedatei
 Document doc = new Document(dataDir + "DefineAlignment.pdf");
 ```
 
-Ersetzen Sie „IHR DOKUMENTENVERZEICHNIS“ unbedingt durch den tatsächlichen Pfad zu dem Verzeichnis, in dem sich Ihr PDF-Dokument befindet.
+Ersetzen Sie „IHR DOKUMENTVERZEICHNIS“ unbedingt durch den tatsächlichen Pfad zum Verzeichnis, in dem sich Ihr PDF-Dokument befindet.
 
-## Schritt 3: Definieren der Ausrichtung
+## Schritt 3: Ausrichtung festlegen
 
-Nachdem Sie nun das PDF-Dokument geladen haben, können Sie die Ausrichtung des Textstempels festlegen. Hier ist wie:
+Nachdem Sie nun das PDF-Dokument geladen haben, können Sie die Ausrichtung des Textstempels festlegen. So geht's:
 
 ```csharp
 // Instanziieren Sie ein FormattedText-Objekt mit der Beispielzeichenfolge
@@ -47,48 +47,48 @@ text.AddNewLineText("Subject");
 // Erstellen Sie ein TextStamp-Objekt mit FormattedText
 TextStamp stamp = new TextStamp(text);
 
-// Geben Sie die horizontale Ausrichtung des Textpuffers als zentriert an
+// Legen Sie die horizontale Ausrichtung des Textpuffers als zentriert fest
 stamp.HorizontalAlignment = HorizontalAlignment.Center;
 
 // Geben Sie die vertikale Ausrichtung des Textpuffers als zentriert an
 stamp.VerticalAlignment = VerticalAlignment.Center;
 
-// Geben Sie die horizontale Ausrichtung des Texts im TextStamp als zentriert an
+// Legen Sie die horizontale Ausrichtung des Textes im Textstempel als zentriert fest
 stamp.TextAlignment = HorizontalAlignment.Center;
 
-// Legen Sie den oberen Rand für das Pufferobjekt fest
+// Oberen Rand für Pufferobjekt festlegen
 stamp. TopMargin = 20;
 
 // Fügen Sie das Stempelobjekt zur ersten Seite des Dokuments hinzu
 doc.Pages[1].AddStamp(stamp);
 ```
 
-Der obige Code erstellt einen zentrierten Textpuffer mithilfe der FormattedText-Klasse, um den Inhalt anzugeben und die horizontale und vertikale Ausrichtung des Textpuffers festzulegen.
+Der obige Code erstellt einen zentrierten Textpuffer, indem er die Klasse „FormattedText“ verwendet, um den Inhalt anzugeben, und legt die horizontale und vertikale Ausrichtung des Textpuffers fest.
 
-## Schritt 4: Speichern Sie das Ausgabedokument
+## Schritt 4: Speichern des Ausgabedokuments
 
-Sobald Sie die Ausrichtung des Textstempels festgelegt haben, können Sie das geänderte PDF-Dokument speichern. Hier ist wie:
+Nachdem Sie die Ausrichtung des Textstempels festgelegt haben, können Sie das geänderte PDF-Dokument speichern. So geht's:
 
 ```csharp
-// Speichern Sie das aktualisierte Dokument
+// Speichern des aktualisierten Dokuments
 doc.Save(dataDir);
 ```
 
 Der obige Code speichert das bearbeitete PDF-Dokument im angegebenen Verzeichnis.
 
-### Beispielquellcode für „Ausrichtung definieren“ mit Aspose.PDF für .NET 
+### Beispielquellcode zum Definieren der Ausrichtung mit Aspose.PDF für .NET 
 ```csharp
 
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Instanziieren Sie das Dokumentobjekt mit der Eingabedatei
 Document doc = new Document(dataDir+ "DefineAlignment.pdf");
 
-// Instanziieren Sie das FormattedText-Objekt mit der Beispielzeichenfolge
+// Instanziieren Sie das FormattedText-Objekt mit einer Beispielzeichenfolge
 FormattedText text = new FormattedText("This");
 
-// Fügen Sie FormattedText eine neue Textzeile hinzu
+// Neue Textzeile zu FormattedText hinzufügen
 text.AddNewLineText("is sample");
 text.AddNewLineText("Center Aligned");
 text.AddNewLineText("TextStamp");
@@ -97,16 +97,16 @@ text.AddNewLineText("Object");
 // Erstellen Sie ein TextStamp-Objekt mit FormattedText
 TextStamp stamp = new TextStamp(text);
 
-// Geben Sie die horizontale Ausrichtung des Textstempels als „Mittig ausgerichtet“ an
+// Geben Sie die horizontale Ausrichtung des Textstempels als zentriert an.
 stamp.HorizontalAlignment = HorizontalAlignment.Center;
 
-// Geben Sie die vertikale Ausrichtung des Textstempels als „Mittig ausgerichtet“ an
+// Geben Sie die vertikale Ausrichtung des Textstempels als zentriert an.
 stamp.VerticalAlignment = VerticalAlignment.Center;
 
-// Geben Sie die horizontale Textausrichtung von TextStamp als „Mittig ausgerichtet“ an
+// Geben Sie die horizontale Textausrichtung von TextStamp als zentriert an.
 stamp.TextAlignment = HorizontalAlignment.Center;
 
-// Legen Sie den oberen Rand für das Stempelobjekt fest
+// Oberen Rand für Stempelobjekt festlegen
 stamp.TopMargin = 20;
 
 // Fügen Sie das Stempelobjekt über der ersten Seite des Dokuments hinzu
@@ -127,35 +127,35 @@ Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET die
 
 #### F: Was ist die Textausrichtung in einem PDF-Dokument und warum ist sie wichtig?
 
-A: Unter Textausrichtung in einem PDF-Dokument versteht man die Positionierung von Text innerhalb eines bestimmten Bereichs, beispielsweise eines Absatzes oder eines Textstempels. Die richtige Textausrichtung verbessert die Lesbarkeit und visuelle Attraktivität eines Dokuments und erleichtert es den Lesern, dem Inhalt zu folgen.
+A: Die Textausrichtung in einem PDF-Dokument bezieht sich auf die Positionierung von Text innerhalb eines bestimmten Bereichs, beispielsweise eines Absatzes oder eines Textstempels. Eine korrekte Textausrichtung verbessert die Lesbarkeit und die visuelle Attraktivität eines Dokuments und erleichtert es den Lesern, dem Inhalt zu folgen.
 
-#### F: Wie kann ich mit Aspose.PDF für .NET Text in einem PDF-Dokument zentriert ausrichten?
+#### F: Wie kann ich mit Aspose.PDF für .NET Text in einem PDF-Dokument zentrieren?
 
- A: Der bereitgestellte C#-Quellcode zeigt, wie man mithilfe der Aspose.PDF-Bibliothek einen zentrierten Textstempel erstellt. Durch die Angabe der`HorizontalAlignment` Und`VerticalAlignment` Eigenschaften der`TextStamp` Objekt können Sie eine zentrierte Ausrichtung sowohl horizontal als auch vertikal erreichen.
+ A: Der bereitgestellte C#-Quellcode zeigt, wie man mit der Aspose.PDF-Bibliothek einen zentrierten Textstempel erstellt. Durch Angabe der`HorizontalAlignment` Und`VerticalAlignment` Eigenschaften der`TextStamp` Objekt können Sie eine zentrierte Ausrichtung sowohl horizontal als auch vertikal erreichen.
 
 #### F: Kann ich Text für verschiedene Teile des PDF-Dokuments unterschiedlich ausrichten?
 
-A: Ja, Sie können die Textausrichtung für verschiedene Teile des PDF-Dokuments anpassen, indem Sie mehrere erstellen`TextStamp` Objekte und legen ihre Ausrichtungseigenschaften entsprechend fest. Dadurch können Sie unterschiedliche Ausrichtungen innerhalb desselben Dokuments erreichen.
+A: Ja, Sie können die Textausrichtung für verschiedene Teile des PDF-Dokuments anpassen, indem Sie mehrere`TextStamp` Objekte und legen Sie deren Ausrichtungseigenschaften entsprechend fest. So können Sie innerhalb desselben Dokuments unterschiedliche Ausrichtungen erzielen.
 
-####  F: Was ist der Zweck der Verwendung?`FormattedText` class in the code?
- A: Die`FormattedText` Mit der Klasse können Sie einen strukturierten Textinhalt mit mehreren Zeilen und Formatierungsoptionen erstellen. Es wird verwendet, um den Inhalt des Textstempels mit mehreren Textzeilen und neuen Zeilenumbrüchen zu definieren.
+####  F: Was ist der Zweck der Verwendung von`FormattedText` class in the code?
+ A: Die`FormattedText` Mit der Klasse können Sie strukturierten Textinhalt mit mehreren Zeilen und Formatierungsoptionen erstellen. Sie wird verwendet, um den Inhalt des Textstempels mit mehreren Textzeilen und neuen Zeilenumbrüchen zu definieren.
 
 #### F: Wie ändere ich die Ausrichtung eines vorhandenen Textstempels in einem PDF-Dokument?
 
- A: Um die Ausrichtung eines vorhandenen Textstempels zu ändern, müssen Sie auf den entsprechenden Text zugreifen`TextStamp` Objekt und aktualisieren Sie seine Ausrichtungseigenschaften (`HorizontalAlignment`, `VerticalAlignment`, `TextAlignment`), wie im bereitgestellten Quellcode gezeigt.
+ A: Um die Ausrichtung eines vorhandenen Textstempels zu ändern, müssen Sie auf die spezifische`TextStamp` Objekt und aktualisieren Sie dessen Ausrichtungseigenschaften (`HorizontalAlignment`, `VerticalAlignment`, `TextAlignment`), wie im bereitgestellten Quellcode gezeigt.
 
 #### F: Ist es möglich, die Ränder um den Textstempel für ein besseres Layout anzupassen?
 
- A: Ja, Sie können den oberen Rand anpassen`TextStamp` Objekt mit dem`TopMargin`Eigentum. Dadurch können Sie den Abstand zwischen dem Textstempel und anderen Elementen auf der Seite steuern.
+ A: Ja, Sie können den oberen Rand des`TextStamp` Objekt mit dem`TopMargin`-Eigenschaft. Damit können Sie den Abstand zwischen dem Textstempel und anderen Elementen auf der Seite steuern.
 
 #### F: Kann ich mit diesem Ansatz Text in verschiedenen Winkeln oder Ausrichtungen ausrichten?
 
- A: Während sich dieses Tutorial auf die Mittenausrichtung konzentriert, können Sie die anpassen`RotationAngle` Eigentum der`TextStamp` Objekt, um den Text in verschiedenen Winkeln oder Ausrichtungen auszurichten und so Effekte wie diagonale oder vertikale Ausrichtung zu erzielen.
+ A: Während sich dieses Tutorial auf die Ausrichtung in der Mitte konzentriert, können Sie die`RotationAngle` Eigentum der`TextStamp` Objekt, um den Text in verschiedenen Winkeln oder Ausrichtungen auszurichten und so Effekte wie eine diagonale oder vertikale Ausrichtung zu erzielen.
 
-#### F: Was passiert, wenn ich Text auf verschiedenen Seiten des PDF-Dokuments unterschiedlich ausrichten möchte?
+#### F: Was ist, wenn ich Text auf verschiedenen Seiten des PDF-Dokuments unterschiedlich ausrichten möchte?
 
- A: Sie können den Quellcode ändern, um andere zu erstellen und anzuwenden`TextStamp` Objekte mit bestimmten Ausrichtungen auf verschiedenen Seiten des PDF-Dokuments. Indem Sie den Vorgang für jede Seite wiederholen, können Sie im gesamten Dokument unterschiedliche Textausrichtungen erzielen.
+ A: Sie können den Quellcode ändern, um verschiedene`TextStamp` Objekte mit bestimmten Ausrichtungen auf verschiedene Seiten des PDF-Dokuments. Indem Sie den Vorgang für jede Seite wiederholen, können Sie im gesamten Dokument unterschiedliche Textausrichtungen erzielen.
 
 #### F: Wie kann ich dieses Wissen anwenden, um andere Arten von Stempeln oder Anmerkungen mit bestimmten Ausrichtungen zu erstellen?
 
-A: Sie können dieses Wissen erweitern, um andere Arten von Stempeln oder Anmerkungen (z. B. Bildstempel oder benutzerdefinierte Zeichnungen) zu erstellen, indem Sie ähnliche Ausrichtungsprinzipien und die entsprechenden Klassen aus der Aspose.PDF-Bibliothek verwenden.
+A: Sie können dieses Wissen erweitern, um andere Arten von Stempeln oder Anmerkungen (wie Bildstempel oder benutzerdefinierte Zeichnungen) zu erstellen, indem Sie ähnliche Ausrichtungsprinzipien und die entsprechenden Klassen aus der Aspose.PDF-Bibliothek verwenden.

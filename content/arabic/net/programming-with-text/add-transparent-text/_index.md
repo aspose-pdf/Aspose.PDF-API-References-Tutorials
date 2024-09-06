@@ -1,58 +1,58 @@
 ---
 title: إضافة نص شفاف في ملف PDF
 linktitle: إضافة نص شفاف في ملف PDF
-second_title: Aspose.PDF لمرجع .NET API
+second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
 description: تعرف على كيفية إضافة نص شفاف في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 100
 url: /ar/net/programming-with-text/add-transparent-text/
 ---
-سيرشدك هذا البرنامج التعليمي خلال عملية إضافة نص شفاف إلى مستند PDF باستخدام Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم الخطوات اللازمة.
+سيرشدك هذا البرنامج التعليمي خلال عملية إضافة نص شفاف إلى مستند PDF باستخدام Aspose.PDF لـ .NET. يوضح كود المصدر C# المقدم الخطوات اللازمة.
 
 ## متطلبات
 قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- Visual Studio أو أي مترجم C# آخر مثبت على جهازك.
-- Aspose.PDF لمكتبة .NET. يمكنك تنزيله من موقع Aspose الرسمي أو استخدام مدير الحزم مثل NuGet لتثبيته.
+- Visual Studio أو أي مُجمِّع C# آخر مُثبت على جهازك.
+- مكتبة Aspose.PDF لـ .NET. يمكنك تنزيلها من موقع Aspose الرسمي أو استخدام مدير حزم مثل NuGet لتثبيتها.
 
 ## الخطوة 1: إعداد المشروع
 1. قم بإنشاء مشروع C# جديد في بيئة التطوير المفضلة لديك.
-2. قم بإضافة مرجع إلى Aspose.PDF لمكتبة .NET.
+2. أضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET.
 
-## الخطوة 2: استيراد مساحات الأسماء المطلوبة
-في ملف التعليمات البرمجية الذي تريد إضافة نص شفاف إليه، أضف ما يلي باستخدام التوجيهات الموجودة في أعلى الملف:
+## الخطوة 2: استيراد المساحات المطلوبة
+في ملف الكود الذي تريد إضافة نص شفاف إليه، أضف ما يلي باستخدام التوجيهات في الجزء العلوي من الملف:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Drawing;
 ```
 
-## الخطوة 3: قم بتعيين دليل المستند
- في الكود، حدد السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدال`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل حيث يتم تخزين المستندات الخاصة بك.
+## الخطوة 3: تعيين دليل المستند
+ في الكود، حدد السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدالها`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل الذي يتم تخزين مستنداتك فيه.
 
 ## الخطوة 4: إنشاء مثيل مستند جديد
- إنشاء مثيل جديد`Document` كائن عن طريق إضافة السطر التالي من التعليمات البرمجية:
+ إنشاء مثيل جديد`Document` الكائن عن طريق إضافة سطر التعليمات البرمجية التالي:
 
 ```csharp
 Document doc = new Document();
 ```
 
 ## الخطوة 5: إضافة صفحة إلى المستند
- أضف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages`مجموعة. في الكود المقدم، يتم تعيين الصفحة الجديدة للمتغير`page`.
+ أضف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages`المجموعة. في الكود المقدم، يتم تعيين الصفحة الجديدة للمتغير`page`.
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## الخطوة 6: إنشاء كائن الرسم البياني
- إنشاء جديد`Graph` كائن له عرض وارتفاع محدد.
+## الخطوة 6: إنشاء كائن رسم بياني
+ إنشاء جديد`Graph` كائن ذو عرض وارتفاع محددين.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 ```
 
-## الخطوة 7: إنشاء مستطيل بشفافية
- أنشئ مستطيلاً بأبعاد محددة واضبط لون تعبئته على لون شفاف باستخدام الملف`Color.FromRgb` طريقة.
+## الخطوة 7: إنشاء مستطيل بالشفافية
+ قم بإنشاء مستطيل بأبعاد محددة واضبط لون تعبئته على لون شفاف باستخدام`Color.FromRgb` طريقة.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 400, 400);
@@ -60,22 +60,22 @@ rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArg
 canvas.Shapes.Add(rect);
 ```
 
-## الخطوة 8: أضف كائن الرسم البياني إلى الصفحة
- أضف ال`Graph` الاعتراض على مجموعة الفقرات من الصفحة.
+## الخطوة 8: إضافة كائن الرسم البياني إلى الصفحة
+ أضف`Graph` الاعتراض على مجموعة الفقرات في الصفحة.
 
 ```csharp
 page.Paragraphs.Add(canvas);
 ```
 
 ## الخطوة 9: تعيين موضع كائن الرسم البياني
- تعيين`IsChangePosition` ملكية`Graph` يعترض على`false` لمنعه من تغيير الموقف.
+ ضبط`IsChangePosition` ممتلكات`Graph` الاعتراض على`false` لمنعه من تغيير موقعه.
 
 ```csharp
 canvas. IsChangePosition = false;
 ```
 
-## الخطوة 10: إنشاء TextFragment بشفافية
- إنشاء`TextFragment` الكائن وتعيين محتواه على النص المطلوب. تعيين`ForegroundColor` ملكية`TextState` إلى لون ذو شفافية باستخدام`Color.FromArgb` طريقة.
+## الخطوة 10: إنشاء جزء نصي شفاف
+ إنشاء`TextFragment` الكائن وضبط محتواه على النص المطلوب. اضبط`ForegroundColor` ممتلكات`TextState` إلى لون شفاف باستخدام`Color.FromArgb` طريقة.
 
 ```csharp
 TextFragment text = new TextFragment("transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text ");
@@ -93,33 +93,33 @@ doc.Save(dataDir);
 Console.WriteLine("\nTransparent text added successfully.\nFile saved at " + dataDir);
 ```
 
-### نموذج التعليمات البرمجية المصدر لإضافة نص شفاف باستخدام Aspose.PDF لـ .NET 
+### عينة من كود المصدر لإضافة نص شفاف باستخدام Aspose.PDF لـ .NET 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // إنشاء مثيل المستند
 Document doc = new Document();
-// إنشاء صفحة لمجموعة صفحات من ملف PDF
+// إنشاء مجموعة من الصفحات لملف PDF
 Aspose.Pdf.Page page = doc.Pages.Add();
 // إنشاء كائن الرسم البياني
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 // إنشاء مثيل مستطيل بأبعاد معينة
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 400, 400);
-// إنشاء كائن اللون من قناة لون ألفا
+// إنشاء كائن ملون من قناة ألوان ألفا
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
-// إضافة مستطيل إلى مجموعة الأشكال لكائن الرسم البياني
+// إضافة مستطيل إلى مجموعة الأشكال الخاصة بكائن الرسم البياني
 canvas.Shapes.Add(rect);
-//إضافة كائن الرسم البياني إلى مجموعة الفقرات من كائن الصفحة
+//إضافة كائن الرسم البياني إلى مجموعة فقرات كائن الصفحة
 page.Paragraphs.Add(canvas);
-// قم بتعيين القيمة لعدم تغيير موضع كائن الرسم البياني
+// تعيين القيمة لعدم تغيير الموضع لكائن الرسم البياني
 canvas.IsChangePosition = false;
-// قم بإنشاء مثيل TextFragment بقيمة العينة
+// إنشاء مثيل TextFragment بقيمة العينة
 TextFragment text = new TextFragment("transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text ");
-// إنشاء كائن اللون من قناة ألفا
+// إنشاء كائن ملون من قناة ألفا
 Aspose.Pdf.Color color = Aspose.Pdf.Color.FromArgb(30, 0, 255, 0);
-// قم بتعيين معلومات اللون لمثيل النص
+// تعيين معلومات اللون لنسخة النص
 text.TextState.ForegroundColor = color;
-// إضافة نص إلى مجموعة الفقرات من مثيل الصفحة
+// إضافة نص إلى مجموعة فقرات من مثيلات الصفحة
 page.Paragraphs.Add(text);
 dataDir = dataDir + "AddTransparentText_out.pdf";
 doc.Save(dataDir);
@@ -128,59 +128,59 @@ Console.WriteLine("\nTransparent text added successfully.\nFile saved at " + dat
 
 
 ## خاتمة
-لقد نجحت في إضافة نص شفاف إلى مستند PDF الخاص بك باستخدام Aspose.PDF لـ .NET. يمكن الآن العثور على ملف PDF الناتج في مسار ملف الإخراج المحدد.
+لقد نجحت في إضافة نص شفاف إلى مستند PDF الخاص بك باستخدام Aspose.PDF لـ .NET. يمكنك الآن العثور على ملف PDF الناتج في مسار ملف الإخراج المحدد.
 
 ### الأسئلة الشائعة
 
-#### س: ما هو محور هذا البرنامج التعليمي؟
+#### س: ما هو التركيز في هذا البرنامج التعليمي؟
 
-ج: يركز هذا البرنامج التعليمي على إضافة نص شفاف إلى مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم الخطوات اللازمة لتحقيق هذا التأثير.
+ج: يركز هذا البرنامج التعليمي على إضافة نص شفاف إلى مستند PDF باستخدام مكتبة Aspose.PDF for .NET. يوضح كود المصدر C# المقدم الخطوات اللازمة لتحقيق هذا التأثير.
 
-#### س: ما هي مساحات الأسماء التي يجب استيرادها لهذا البرنامج التعليمي؟
+#### س: ما هي المساحات الأسماء التي تحتاج إلى استيرادها لهذا البرنامج التعليمي؟
 
-ج: في ملف التعليمات البرمجية الذي تريد إضافة نص شفاف إليه، قم باستيراد مساحات الأسماء التالية في بداية الملف:
+أ: في ملف الكود الذي تريد إضافة نص شفاف إليه، قم باستيراد المساحات التالية في بداية الملف:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Drawing;
 ```
 
-#### س: كيف أحدد دليل المستندات؟
+#### س: كيف أحدد دليل المستند؟
 
- ج: في الكود، ابحث عن السطر`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدال`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك.
+ أ: في الكود، ابحث عن السطر`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدالها`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي إلى دليل المستند الخاص بك.
 
-#### س: كيف يمكنني إنشاء مثيل مستند جديد؟
+#### س: كيف أقوم بإنشاء مثيل مستند جديد؟
 
- ج: في الخطوة 4، ستقوم بإنشاء نسخة جديدة`Document` الكائن باستخدام الكود المقدم.
+ أ: في الخطوة 4، ستقوم بإنشاء مثيل جديد`Document` الكائن باستخدام الكود المقدم.
 
-#### س: كيف يمكنني إضافة صفحة إلى المستند؟
+#### س: كيف أضيف صفحة إلى المستند؟
 
- ج: في الخطوة 5، ستضيف صفحة جديدة إلى المستند باستخدام الملف`Add` طريقة`Pages` مجموعة.
+ أ: في الخطوة 5، ستضيف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages` مجموعة.
 
 #### س: كيف أقوم بإنشاء كائن رسم بياني؟
 
- ج: في الخطوة 6، ستقوم بإنشاء ملف جديد`Graph` كائن له عرض وارتفاع محدد.
+ أ: في الخطوة 6، ستقوم بإنشاء ملف جديد`Graph` كائن ذو عرض وارتفاع محددين.
 
-#### س: كيف أقوم بإنشاء مستطيل ذو شفافية؟
+#### س: كيف أقوم بإنشاء مستطيل مع الشفافية؟
 
-ج: في الخطوة 7، ستقوم بإنشاء مستطيل بأبعاد محددة وتعيين لون تعبئته إلى لون شفاف باستخدام`Color.FromRgb` طريقة.
+أ: في الخطوة 7، ستقوم بإنشاء مستطيل بأبعاد محددة وتعيين لون تعبئته إلى لون شفاف باستخدام`Color.FromRgb` طريقة.
 
-#### س: كيف يمكنني إضافة كائن الرسم البياني إلى الصفحة؟
+#### س: كيف أضيف كائن الرسم البياني إلى الصفحة؟
 
- ج: في الخطوة 8، ستضيف`Graph` الاعتراض على مجموعة الفقرات من الصفحة.
+ أ: في الخطوة 8، ستضيف`Graph` الاعتراض على مجموعة الفقرات في الصفحة.
 
 #### س: كيف أقوم بتعيين موضع كائن الرسم البياني؟
 
- ج: في الخطوة 9، ستقوم بتعيين`IsChangePosition` ملكية`Graph` يعترض على`false` لمنعه من تغيير الموقف.
+ أ: في الخطوة 9، ستقوم بتعيين`IsChangePosition` ممتلكات`Graph` الاعتراض على`false` لمنعه من تغيير موقعه.
 
-#### س: كيف يمكنني إنشاء TextFragment بشفافية؟
+#### س: كيف أقوم بإنشاء TextFragment مع الشفافية؟
 
- ج: في الخطوة 10، ستقوم بإنشاء ملف`TextFragment` الكائن وتعيين محتواه و`ForegroundColor` خاصية لتحقيق نص شفاف.
+ أ: في الخطوة 10، ستقوم بإنشاء`TextFragment` الكائن وتعيين محتواه و`ForegroundColor` خاصية لتحقيق نص شفاف.
 
-#### س: كيف أحفظ وثيقة PDF؟
+#### س: كيف أحفظ مستند PDF؟
 
- ج: في الخطوة 11، ستحفظ مستند PDF باستخدام ملف`Save` طريقة`Document` هدف.
+ أ: في الخطوة 11، ستحفظ مستند PDF باستخدام`Save` طريقة`Document` هدف.
 
-#### س: ما هي الوجبات الرئيسية من هذا البرنامج التعليمي؟
+#### س: ما هو الدرس الرئيسي المستفاد من هذا البرنامج التعليمي؟
 
-ج: باتباع هذا البرنامج التعليمي، تعلمت كيفية إضافة نص شفاف إلى مستند PDF باستخدام Aspose.PDF لـ .NET. يمكن أن يكون هذا مفيدًا لإنشاء مستندات PDF جذابة ومبتكرة.
+ج: باتباع هذا البرنامج التعليمي، ستتعلم كيفية إضافة نص شفاف إلى مستند PDF باستخدام Aspose.PDF for .NET. يمكن أن يكون هذا مفيدًا لإنشاء مستندات PDF جذابة بصريًا وإبداعية.

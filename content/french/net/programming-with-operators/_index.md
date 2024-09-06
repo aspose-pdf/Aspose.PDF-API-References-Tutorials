@@ -1,13 +1,13 @@
 ---
-title: Programmation avec des opérateurs
-linktitle: Programmation avec des opérateurs
+title: Programmation avec opérateurs
+linktitle: Programmation avec opérateurs
 type: docs
 weight: 23
 url: /fr/net/programming-with-operators/
-description: Les didacticiels Aspose.PDF pour .NET Programmation avec opérateurs vous enseignent les techniques essentielles pour travailler avec des opérateurs dans la programmation PDF.
+description: Les didacticiels Aspose.PDF pour la programmation .NET avec opérateurs vous enseignent les techniques essentielles pour travailler avec des opérateurs dans la programmation PDF.
 ---
 
-Les didacticiels « Programmation avec des opérateurs » d'Aspose.PDF pour .NET vous guident à travers les concepts et techniques essentiels pour travailler avec des opérateurs dans la programmation PDF. Vous apprendrez à manipuler le contenu, la mise en page et les propriétés des documents PDF à l'aide d'opérateurs. Ces didacticiels vous aideront à maîtriser les opérations courantes et à créer des documents PDF personnalisés avec Aspose.PDF pour .NET. Suivez ces didacticiels pour enrichir vos compétences en programmation PDF et créer des documents d'aspect professionnel.
+Les didacticiels « Programmation avec opérateurs » d'Aspose.PDF pour .NET vous guident à travers les concepts et techniques essentiels pour travailler avec des opérateurs dans la programmation PDF. Vous apprendrez à manipuler le contenu, la mise en page et les propriétés des documents PDF à l'aide d'opérateurs. Ces didacticiels vous aideront à maîtriser les opérations courantes et à créer des documents PDF personnalisés avec Aspose.PDF pour .NET. Suivez ces didacticiels pour enrichir vos compétences en programmation PDF et créer des documents d'aspect professionnel.
 
 ## Tutoriels
 | Titre | Description |

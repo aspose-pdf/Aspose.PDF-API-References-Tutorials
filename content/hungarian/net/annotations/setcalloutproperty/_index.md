@@ -2,126 +2,153 @@
 title: Állítsa be a kiemelés tulajdonságát a PDF-fájlban
 linktitle: Állítsa be a kiemelés tulajdonságát a PDF-fájlban
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan állíthatja be a Kiemelés tulajdonságait PDF-fájlban az Aspose.PDF for .NET használatával. Testreszabhatja a kommentárokat kiemelő sorokkal, szövegszínnel és befejezési stílusokkal.
+description: Ebből a részletes, lépésenkénti oktatóanyagból megtudhatja, hogyan állíthatja be a kiemelési tulajdonságot PDF-fájlban az Aspose.PDF for .NET használatával.
 type: docs
 weight: 130
 url: /hu/net/annotations/setcalloutproperty/
 ---
- Az Aspose.PDF for .NET egy hatékony könyvtár PDF-dokumentumok létrehozásához, kezeléséhez és konvertálásához C# nyelven. Ennek a könyvtárnak az egyik szolgáltatása a PDF-dokumentumok szabad szöveges megjegyzéseinek kiemelési tulajdonságainak megadása. Ezt a`FreeTextAnnotation` osztály, amely lehetővé teszi feliratok létrehozását kiemelésekkel.
+## Bevezetés
 
-Ebben az oktatóanyagban végigvezetjük Önt egy szabad szöveges annotáció kiemelési tulajdonságainak beállításán az Aspose.PDF for .NET segítségével C# nyelven. A kezdéshez kövesse az alábbi lépéseket.
+professzionális és tetszetős PDF-dokumentumok létrehozásához gyakran olyan megjegyzések hozzáadása szükséges, amelyek konkrét tartalomra hívják fel a figyelmet. Az egyik ilyen megjegyzés a felirat, amely olyan, mint a képregényekben látható szövegbuborékok. Segítenek tisztázni vagy kiemelni a szöveget a PDF-ben. Az Aspose.PDF for .NET hihetetlenül egyszerűvé teszi az ilyen megjegyzések hozzáadását a dokumentumokhoz, és ebben az oktatóanyagban végigvezetjük, hogyan állíthatja be a kiemelés tulajdonságát egy PDF-fájlban ezzel a hatékony könyvtárral. Akár tapasztalt fejlesztő, akár csak most kezdő, ennek az útmutatónak a végére világosan megérti, hogyan kell dolgozni a PDF-fájlokban található feliratokkal.
 
-## Telepítse az Aspose.PDF fájlt .NET-hez
+## Előfeltételek
 
- Ha még nem tette meg, akkor meg kell tennie[Letöltés](https://releases.aspose.com/pdf/net/) és telepítse az Aspose.PDF for .NET fájlt az Aspose Releasesből vagy a NuGet csomagkezelőn keresztül.
+Mielőtt belemerülnénk a kódba, tekintsük át az induláshoz szükséges alapvető tudnivalókat.
 
-## 1. lépés: Hozzon létre egy új PDF-dokumentumot
+1.  Aspose.PDF for .NET: Győződjön meg arról, hogy telepítve van az Aspose.PDF for .NET könyvtár. Letöltheti innen[itt](https://releases.aspose.com/pdf/net/).
+2. IDE: Fejlesztői környezet, például a Visual Studio.
+3. .NET-keretrendszer: Győződjön meg arról, hogy a .NET telepítve van a gépen.
+4. Ideiglenes licenc: Ha korlátozások nélkül szeretné kipróbálni az Aspose.PDF teljes funkcióját, szerezzen be egy[ideiglenes engedély](https://purchase.aspose.com/temporary-license/).
 
- Hozzon létre egy új PDF dokumentumot a`Document`osztályt az Aspose.PDF biztosítja a .NET számára.
+## Csomagok importálása
+
+Mielőtt elkezdené írni a kódot, importálnia kell a szükséges csomagokat, amelyek lehetővé teszik a PDF-fájlok és megjegyzések kezelését.
+
+```csharp
+using Aspose.Pdf.Annotations;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+```
+
+Ezek az importálások minden szükséges osztályt és módszert biztosítanak a PDF-dokumentumok kezeléséhez és a megjegyzésekhez hasonló megjegyzések létrehozásához.
+
+## 1. lépés: Inicializálja a PDF-dokumentumot
+
+Utunk első lépése egy új PDF-dokumentum inicializálása, amelyhez hozzáadjuk a feliratozásunkat. Tekintsd ezt úgy, mint egy üres vászon létrehozását, ahol elkezdheted az elemek hozzáadását.
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Új PDF dokumentum inicializálása
 Document doc = new Document();
 ```
+ Itt egy újat hozunk létre`Document` objektum, amely PDF fájlként fog szolgálni. A`dataDir` változó arra a könyvtárra van állítva, ahová menteni szeretné a PDF-fájlt, miután végeztünk.
 
 ## 2. lépés: Új oldal hozzáadása a dokumentumhoz
 
- Új oldal hozzáadása a dokumentumhoz a gombbal`Pages` gyűjteménye a`Document` osztály.
+Egy PDF-dokumentum több oldalas is lehet, és ebben a lépésben egy új oldalt adunk hozzá a dokumentumunkhoz. Ezen az oldalon helyezzük el a kiemelő megjegyzésünket.
 
 ```csharp
+//Új oldal hozzáadása a dokumentumhoz
 Page page = doc.Pages.Add();
 ```
+ A`Pages.Add()`módszerrel új oldalt adunk hozzá a`doc` objektum. Az új oldal a`page` változót, amelyet később a megjegyzés hozzáadásakor használunk.
 
-## 3. lépés: Állítsa be az alapértelmezett megjelenést
+## 3. lépés: Határozza meg az alapértelmezett megjelenést
 
- Állítsa be a szabad szöveges kommentár alapértelmezett megjelenését egy új létrehozásával`DefaultAppearance` objektum és tulajdonságainak beállítása, mint pl`TextColor` és`FontSize`.
+A kommentároknak, akárcsak a kiemelésnek, vizuális megjelenésük van, amelyet személyre szabhat. Ebben a lépésben meghatározzuk, hogyan nézzen ki a feliraton belüli szöveg.
 
 ```csharp
+// Határozza meg a megjegyzés alapértelmezett megjelenését
 DefaultAppearance da = new DefaultAppearance();
 da.TextColor = System.Drawing.Color.Red;
 da.FontSize = 10;
 ```
+ Létrehozunk a`DefaultAppearance` objektum, amely meghatározza a szöveg színét és betűméretét. Itt a szöveg piros lesz, a betűméret pedig 10-re van állítva. Ez a megjelenés lesz alkalmazva a kiemelés megjegyzésénél.
 
-## 4. lépés: Hozzon létre ingyenes szöveges megjegyzést kiemeléssel
+## 4. lépés: Készítse el a szabad szöveges megjegyzést
 
- Hozzon létre egy új szabad szöveges kommentárt kiemeléssel a segítségével`FreeTextAnnotation` osztály. Állítsa be a`Intent` tulajdonát`FreeTextIntent.FreeTextCallout` annak megadásához, hogy ez egy kiemelő megjegyzés. Állítsa be a`EndingStyle` tulajdonát`LineEnding.OpenArrow` a kiemelés végén lévő nyíl stílusának megadásához. Állítsa be a`Callout` ingatlan egy tömbjéhez`Point` objektumok, amelyek az oldal azon pontjait képviselik, ahol a kiemelő vonalat meg kell húzni.
+Most itt az ideje létrehozni a tényleges megjegyzést. A szabad szöveges annotáció lehetővé teszi, hogy konkrét szöveget és stílust tartalmazó kiemelést adjunk hozzá.
 
 ```csharp
+// Hozzon létre egy FreeTextAnnotation feliratot
 FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
 fta.Intent = FreeTextIntent.FreeTextCallout;
 fta.EndingStyle = LineEnding.OpenArrow;
+```
+ Létrehozunk a`FreeTextAnnotation` objektumot adott koordinátákkal, meghatározva a pozícióját az oldalon. A`Intent` be van állítva`FreeTextCallout` , jelezve, hogy ez egy feliratozás. A`EndingStyle` be van állítva`OpenArrow`vagyis a kiemelő sor egy nyitott nyíllal fog végződni.
+
+## 5. lépés: Határozza meg a kiemelés vonalpontjait
+
+A kiemelő megjegyzésnek van egy vonala, amely az érdeklődési területre mutat. Itt meghatározzuk azokat a pontokat, amelyek ezt a vonalat alkotják.
+
+```csharp
+// Határozza meg a kiemelő sor pontjait
 fta.Callout = new Point[]
 {
-    new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
+    new Point(428.25, 651.75), 
+    new Point(462.75, 681.375), 
+    new Point(474, 681.375)
 };
 ```
+ A`Callout` tulajdonság egy tömb`Point` objektumok, amelyek mindegyike egy-egy koordinátát képvisel az oldalon. Ezek a pontok határozzák meg a kiemelő vonal útvonalát, és a klasszikus beszédbuborék megjelenését kölcsönzik neki.
 
-## 5. lépés: Adja hozzá a szabad szöveges megjegyzést az oldalhoz
+## 6. lépés: Adja hozzá a megjegyzést az oldalhoz
 
- Adja hozzá a szabad szöveges kommentárt az oldalhoz a segítségével`Annotations` gyűjteménye a`Page` osztály.
+A kommentárunk létrehozása és konfigurálása után a következő lépés az, hogy hozzáadjuk az oldalhoz.
 
 ```csharp
+// Adja hozzá a megjegyzést az oldalhoz
 page.Annotations.Add(fta);
 ```
+ A`Annotations.Add()` módszerrel helyezzük el a megjegyzést a korábban létrehozott oldalon. Ez a lépés hatékonyan „megrajzolja” a feliratot a PDF-oldalon.
 
-## 6. lépés: Adjon hozzá szöveget a megjegyzéshez
+## 7. lépés: Állítsa be a Rich Text tartalmat
 
- Adjon hozzá szöveget a megjegyzéshez a`RichText`tulajdonság egy formázott XML karakterláncra. Ebben az oktatóanyagban a szöveg színét pirosra, a betűméretet pedig 9-re állítjuk.
-
-```csharp
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF
-```
-
-## 7. lépés: mentse a dokumentumot
-
-Most mentse a dokumentumot a következő kóddal:
+A kiemelő megjegyzések tartalmazhatnak formázott szöveget, lehetővé téve a formázott tartalmat a buborékon belül. Adjunk hozzá néhány minta szöveget.
 
 ```csharp
-doc.Save(dataDir + "SetCalloutProperty.pdf")
-```
-
-### Példa forráskódra a Set Callout Property fájlhoz az Aspose.PDF for .NET használatával
-
-```csharp
-// A dokumentumok könyvtárának elérési útja.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-Document doc = new Document();
-Page page = doc.Pages.Add();
-DefaultAppearance da = new DefaultAppearance();
-da.TextColor = System.Drawing.Color.Red;
-da.FontSize = 10;
-FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
-fta.Intent = FreeTextIntent.FreeTextCallout;
-fta.EndingStyle = LineEnding.OpenArrow;
-fta.Callout = new Point[]
-{
-	new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
-};
-page.Annotations.Add(fta);
+// Állítsa be a formázott szöveget a kommentárhoz
 fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"> <span style=\"font-size:9.0pt;font-family:Helvetica\">Ez egy minta</span></p></body>";
+```
+ A`RichText` tulajdonság HTML tartalommal van beállítva. Ez lehetővé teszi a feliraton belüli részletes formázást, például a betűméret, a szín és a stílus megadását.
+
+## 8. lépés: Mentse el a PDF-dokumentumot
+
+Végül, miután mindent beállítottunk, el kell mentenünk a dokumentumot. Ez a lépés véglegesíti a PDF-fájl létrehozását a feliratozással.
+
+```csharp
+// Mentse el a dokumentumot
 doc.Save(dataDir + "SetCalloutProperty.pdf");
 ```
+ A`Save()` metódus elmenti a dokumentumot a megadott könyvtárba "SetCalloutProperty.pdf" fájlnévvel. Ezzel a lépéssel lezárjuk a PDF létrehozási folyamatot.
 
 ## Következtetés
 
-Ebben az oktatóanyagban megvizsgáltuk, hogyan állíthatunk be kiemelési tulajdonságokat egy szabad szöveges megjegyzéshez PDF-dokumentumban az Aspose.PDF for .NET használatával. A kiemelő megjegyzések hasznosak a dokumentum bizonyos területeivel kapcsolatos további információk vagy magyarázatok biztosítására. Az Aspose.PDF for .NET a szolgáltatások és képességek széles skáláját kínálja a PDF-fájlokkal való munkavégzéshez, beleértve a megjegyzések, például feliratok létrehozását és testreszabását. A lépésenkénti útmutató követésével és a mellékelt C# forráskód használatával a fejlesztők könnyedén implementálhatnak kiemelő megjegyzéseket PDF-dokumentumaikba, javítva dokumentumaik használhatóságát és átláthatóságát. Az Aspose.PDF for .NET egy sokoldalú és megbízható könyvtár a .NET-alkalmazások PDF-műveleteihez, amely hatékony eszközöket kínál különféle PDF-ekkel kapcsolatos feladatok hatékony kezelésére.
+És megvan! Létrehozott egy PDF-dokumentumot kiemelő megjegyzéssel az Aspose.PDF for .NET használatával. Ez a megjegyzés rendkívül hasznos lehet a dokumentum egyes részeinek kiemeléséhez vagy magyarázatához. Az Aspose.PDF egy hatékony API-t kínál, amely egyszerűvé és rugalmassá teszi a PDF-kezelést. Akár megjegyzéseket ad hozzá, akár dokumentumokat konvertál, akár összetett PDF-feladatokat kezel, az Aspose.PDF mindent megtesz.
 
-### GYIK a kiemelési tulajdonság beállításához PDF-fájlban
+## GYIK
 
-#### K: Mi az a feliratozás a PDF-dokumentumban?
+### Testreszabhatom a kiemelés megjelenését?
 
-V: A PDF-dokumentumban található kiemelő megjegyzés egy olyan megjegyzéstípus, amely lehetővé teszi egy szövegdoboz létrehozását, amelyben egy vezérvonal mutat a dokumentum egy adott területére. Általában a dokumentum egy adott szakaszához vagy eleméhez kapcsolódó további információk vagy megjegyzések biztosítására használják.
+Teljesen! Testreszabhatja a különböző szempontokat, például a vonal színét, vastagságát, valamint a szöveg betűtípus-családját és stílusát.
 
-#### K: Testreszabhatom a kiemelő megjegyzés megjelenését az Aspose.PDF for .NET használatával?
+### Lehetséges több kiemelést hozzáadni egyetlen oldalon?
 
-V: Igen, testreszabhatja a kiemelő megjegyzés különféle tulajdonságait, például a színt, a betűméretet, a szövegigazítást, a vonalstílust, a nyílstílust stb.
+Igen, tetszőleges számú kiemelést adhat hozzá az egyes megjegyzések lépéseinek megismétlésével.
 
-#### K: Hogyan adhatok hozzá szöveget a kiemelő megjegyzéshez?
+### Hogyan változtathatom meg a felirat pozícióját?
 
- V: Ha szöveget szeretne hozzáadni a kiemelő megjegyzéshez, beállíthatja a`RichText` tulajdona a`FreeTextAnnotation` tárgy. A`RichText` A tulajdonság egy formázott XML-karakterláncot vesz fel, amely a kiemelés megjegyzésében megjelenítendő szöveget képviseli.
+ Egyszerűen módosítsa a koordinátákat a`Rectangle` és`Callout` tulajdonságokkal a megjegyzés áthelyezéséhez.
 
-#### K: Hozzáadhatok több kiemelő megjegyzést egy PDF-dokumentumhoz az Aspose.PDF for .NET használatával?
+### Hozzáadhatok más típusú megjegyzéseket az Aspose.PDF használatával?
 
- V: Igen, több kiemelő megjegyzést is létrehozhat egy PDF-dokumentumban, ha több példányt hoz létre a`FreeTextAnnotation`objektumot, és hozzáadhatja azokat a dokumentum különböző oldalaihoz vagy helyeihez.
+Igen, az Aspose.PDF különféle megjegyzéstípusokat támogat, beleértve a kiemeléseket, bélyegzőket és fájlmellékleteket.
+
+### A rich text tartalom HTML-re korlátozódik?
+
+ A`RichText` tulajdonság támogatja a HTML egy részhalmazát, amely lehetővé teszi stílusos szöveg és alapvető formázások hozzáadását.

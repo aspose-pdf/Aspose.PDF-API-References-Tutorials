@@ -50,7 +50,7 @@ Document doc = new Document();
 
 ## Krok 5: Vytvořte možnosti TextFormattingOptions
 
- Vytvořit`TextFormattingOptions` objekt a nastavte režim řádkování na`FullSize`:
+ Vytvořte a`TextFormattingOptions` objekt a nastavte režim řádkování na`FullSize`:
 
 ```csharp
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
@@ -59,7 +59,7 @@ formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 
 ## Krok 6: Vytvořte TextFragment
 
- Vytvořit`TextFragment` objekt a určete obsah textu:
+ Vytvořte a`TextFragment` objekt a určete obsah textu:
 
 ```csharp
 TextFragment textFragment = new TextFragment("Hello world");
@@ -127,9 +127,9 @@ if (fontFile != "")
 	// Načtěte písmo TrueType do objektu streamu
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
-		//Nastavte název písma pro textový řetězec
+		// Nastavte název písma pro textový řetězec
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		// Určete pozici pro textový fragment
+		//Určete pozici pro textový fragment
 		textFragment.Position = new Position(100, 600);
 		//Nastavit TextFormattingOptions aktuálního fragmentu na předdefinovaný (který ukazuje na LineSpacingMode.FullSize)
 		textFragment.TextState.FormattingOptions = formattingOptions;
@@ -146,7 +146,7 @@ if (fontFile != "")
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili, jak určit řádkování v dokumentu PDF pomocí Aspose.PDF pro .NET. Tento výukový program poskytuje podrobného průvodce, od nastavení projektu až po uložení upraveného dokumentu. Nyní můžete tento kód začlenit do svých vlastních projektů C# a přizpůsobit tak řádkování textu v souborech PDF.
+Gratuluji! Úspěšně jste se naučili, jak určit řádkování v dokumentu PDF pomocí Aspose.PDF pro .NET. Tento výukový program poskytuje podrobného průvodce, od nastavení projektu až po uložení upraveného dokumentu. Nyní můžete tento kód začlenit do svých vlastních projektů C# a přizpůsobit tak řádkování textu v souborech PDF.
 
 ### FAQ
 

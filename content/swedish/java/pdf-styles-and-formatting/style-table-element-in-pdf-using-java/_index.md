@@ -130,7 +130,7 @@ den här handledningen har vi undersökt hur man utformar tabellelement i PDF-do
 
 ### Hur lägger jag till en ram till en specifik cell?
 
- För att lägga till en ram till en specifik cell kan du använda`Cell` klass`setBorder` metod och specificera gränsegenskaperna.
+ För att lägga till en ram till en specifik cell kan du använda`Cell` klass`setBorder` metod och ange gränsegenskaperna.
 
 ### Är Aspose.PDF för Java kompatibel med olika Java IDE?
 

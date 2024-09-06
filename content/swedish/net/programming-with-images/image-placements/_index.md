@@ -27,7 +27,7 @@ Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "PlacementImage.pdf"
  Se till att byta ut`"YOUR DOCUMENTS DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog som innehåller PDF-filen.
 
 ## Steg 3: Extrahera placeringsinformation från bilder
- Nu när vi har laddat in PDF-dokumentet kan vi extrahera placeringsinformationen från bilderna. Vi kommer använda`ImagePlacementAbsorber`för att absorbera bildplatser från dokumentets första sida.
+ Nu när vi har laddat PDF-dokumentet kan vi extrahera placeringsinformationen från bilderna. Vi kommer att använda`ImagePlacementAbsorber`för att absorbera bildplatser från dokumentets första sida.
 
 ```csharp
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();

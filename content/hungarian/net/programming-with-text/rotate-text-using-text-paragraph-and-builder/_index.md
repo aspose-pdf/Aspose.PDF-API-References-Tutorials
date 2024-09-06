@@ -51,7 +51,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 ## 5. lépés: Hozzon létre és forgassa el a szöveges bekezdéseket
 
- Hozzon létre egy`for` hurok több szöveges bekezdés létrehozásához különböző elforgatással:
+ Hozzon létre a`for` hurok több szöveges bekezdés létrehozásához különböző elforgatással:
 
 ```csharp
 for (int i = 0; i < 4; i++)
@@ -102,7 +102,7 @@ paragraph.AppendLine(textFragment3);
 
 ## 8. lépés: Hozzon létre egy TextBuilder programot, és fűzze hozzá a bekezdést
 
- Hozzon létre egy`TextBuilder` objektum segítségével`pdfPage` és csatolja a szöveges bekezdést a PDF-oldalhoz:
+ Hozzon létre a`TextBuilder` objektum segítségével`pdfPage` és csatolja a szöveges bekezdést a PDF-oldalhoz:
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(pdfPage);
@@ -169,17 +169,17 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated4_out.pdf");
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan forgathat el szöveget szöveges bekezdések és szerkesztők segítségével egy PDF-dokumentumban az Aspose.PDF for .NET használatával. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentum létrehozásától a módosított verzió mentéséig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy módosítsa a PDF-fájlok szövegforgatását.
+Gratulálok! Sikeresen megtanulta, hogyan forgathat el szöveget szöveges bekezdések és szerkesztők segítségével egy PDF-dokumentumban az Aspose.PDF for .NET használatával. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentum létrehozásától a módosított verzió mentéséig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy módosítsa a PDF-fájlok szövegforgatását.
 
 ### GYIK
 
 #### K: Mi a célja a "Szöveg forgatása szövegbekezdés és -építő használatával" oktatóanyag célja?
 
-V: A "Szöveg forgatása szövegbekezdés és -készítő használatával" című oktatóanyag átfogó útmutatót nyújt a .NET-hez készült Aspose.PDF-könyvtár használatához a szöveg elforgatásához szöveges bekezdések és szerkesztők segítségével egy PDF-dokumentumban. Az oktatóanyag lépésről lépésre bemutatja az utasításokat, és minta C#-kódot tartalmaz a szövegelforgatáshoz bekezdésekkel és egyéni formázással.
+V: A "Szöveg forgatása szövegbekezdés és -készítő használatával" című oktatóanyag átfogó útmutatót nyújt a .NET-hez készült Aspose.PDF könyvtár használatához a szöveg elforgatásához szöveges bekezdések és szerkesztők használatával egy PDF-dokumentumban. Az oktatóanyag lépésről lépésre bemutatja az utasításokat, és minta C#-kódot tartalmaz a szövegelforgatáshoz bekezdésekkel és egyéni formázással.
 
 #### K: Miben különbözik ez az oktatóanyag a korábbi szövegforgató oktatóanyagoktól?
 
-V: A korábbi oktatóanyagoktól eltérően ez az oktatóanyag a szövegbekezdések, építőelemek és elforgatási szögek használatát kombinálja a fejlettebb szövegforgatási hatás elérése érdekében. Bemutatja, hogyan hozhat létre több szövegbekezdést változó elforgatási szöggel, és hogyan alkalmazhat egyéni formázást az egyes szövegrészletekre.
+V: A korábbi oktatóanyagoktól eltérően ez az oktatóanyag a szövegbekezdések, építőelemek és elforgatási szögek használatát kombinálja a fejlettebb szövegforgatási hatás elérése érdekében. Bemutatja, hogyan hozhat létre több szöveges bekezdést változó elforgatási szöggel, és hogyan alkalmazhat egyéni formázást az egyes szövegrészletekre.
 
 #### K: Mi a jelentősége a szöveges bekezdések és szövegszerkesztők használatának a szövegforgatáshoz?
 
@@ -187,15 +187,15 @@ V: A szövegbekezdések és -szerkesztők használata lehetővé teszi a szöveg
 
 #### K: Alkalmazhatok különböző elforgatási szögeket az egyes szöveges bekezdésekhez?
 
- V: Igen, az egyes szöveges bekezdésekhez különböző elforgatási szögeket alkalmazhat a`Rotation` tulajdona a`TextParagraph` tárgy. Ez lehetővé teszi változatos és dinamikus szövegforgatási effektusok létrehozását a PDF-dokumentumban.
+ V: Igen, az egyes szöveges bekezdésekhez különböző elforgatási szögeket alkalmazhat a`Rotation` tulajdona a`TextParagraph` objektum. Ez lehetővé teszi változatos és dinamikus szövegforgatási effektusok létrehozását a PDF-dokumentumban.
 
 #### K: Hogyan szabhatom testre a szövegrészletek formázását a szöveg bekezdéseiben?
 
- V: Testreszabhatja a szövegtöredékek formázását a különböző tulajdonságok beállításával`TextState` mindegyiken belül`TextFragment` tárgy. Az olyan tulajdonságok, mint a betűméret, a betűtípus, az előtér és a háttér színei, valamint az aláhúzás módosíthatók a kívánt vizuális hatás elérése érdekében.
+ V: Testreszabhatja a szövegtöredékek formázását a különböző tulajdonságok beállításával`TextState` mindegyiken belül`TextFragment` objektum. Az olyan tulajdonságok, mint a betűméret, a betűtípus, az előtér és a háttér színei, valamint az aláhúzás módosíthatók a kívánt vizuális hatás elérése érdekében.
 
 #### K: Létrehozhatok bonyolultabb szövegforgatási effektusokat ezzel a módszerrel?
 
-V: Abszolút. Több, különböző elforgatási szöggel és formázási lehetőséggel rendelkező szövegbekezdés iteratív létrehozásával összetett és tetszetős szövegelforgatási effektusokat érhet el, amelyek javíthatják PDF-dokumentumai olvashatóságát és esztétikáját.
+V: Abszolút. Több szövegbekezdés iteratív létrehozásával, különböző elforgatási szögekkel és formázási lehetőségekkel, összetett és tetszetős szövegelforgatási effektusokat érhet el, amelyek javíthatják a PDF-dokumentumok olvashatóságát és esztétikáját.
 
 #### K: Lehetséges kombinálni a szövegforgatást más szövegmanipulációs technikákkal?
 

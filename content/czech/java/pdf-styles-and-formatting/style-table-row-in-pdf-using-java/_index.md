@@ -16,7 +16,7 @@ Aspose.PDF for Java je výkonná knihovna, která vám umožňuje vytvářet, ma
 
 Chcete-li začít používat Aspose.PDF pro Javu, musíte nastavit své vývojové prostředí. Zde jsou základní kroky:
 
-1.  Stáhněte si Aspose.PDF pro Java: Navštivte[tady](https://releases.aspose.com/pdf/java/) ke stažení knihovny.
+1.  Stáhněte si Aspose.PDF pro Java: Navštivte[zde](https://releases.aspose.com/pdf/java/) ke stažení knihovny.
 
 2. Přidat Aspose.PDF Jar do svého projektu: Zahrňte stažený soubor JAR do svého projektu Java.
 
@@ -113,7 +113,7 @@ Aspose.PDF for Java je knihovna Java, která umožňuje vývojářům vytvářet
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
- Chcete-li nainstalovat Aspose.PDF pro Java, stáhněte si knihovnu z[tady](https://releases.aspose.com/pdf/java/) a zahrňte soubor JAR do svého projektu Java.
+ Chcete-li nainstalovat Aspose.PDF pro Java, stáhněte si knihovnu z[zde](https://releases.aspose.com/pdf/java/) a zahrňte soubor JAR do svého projektu Java.
 
 ### Mohu stylovat jednotlivé řádky v tabulce PDF?
 
@@ -125,4 +125,4 @@ Přestože Aspose.PDF for Java nabízí rozsáhlé možnosti přizpůsobení pro
 
 ### Kde najdu další zdroje pro Aspose.PDF pro Javu?
 
- Pro komplexní dokumentaci a další zdroje navštivte[tady](https://reference.aspose.com/pdf/java/).
+ Pro komplexní dokumentaci a další zdroje navštivte[zde](https://reference.aspose.com/pdf/java/).

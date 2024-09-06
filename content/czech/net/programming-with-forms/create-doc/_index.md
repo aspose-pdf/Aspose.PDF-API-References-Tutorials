@@ -156,7 +156,7 @@ Odpověď: Chcete-li vytvořit vzájemně se vylučující možnosti, můžete p
 
 #### Otázka: Je možné nastavit výchozí vybranou možnost pro přepínače?
 
-Odpověď: Ano, můžete nastavit výchozí vybranou možnost pro přepínače pomocí Aspose.PDF pro .NET. Můžete použít`Selected` vlastnictvím`RadioButtonOptionField` objekt pro označení možnosti jako výchozího vybraného.
+Odpověď: Ano, můžete nastavit výchozí vybranou možnost pro přepínače pomocí Aspose.PDF pro .NET. Můžete použít`Selected` majetek z`RadioButtonOptionField` objekt pro označení možnosti jako výchozího vybraného.
 
 #### Otázka: Mohu k přepínačům přidat obslužné rutiny událostí?
 
@@ -164,4 +164,4 @@ Odpověď: Ano, můžete nastavit výchozí vybranou možnost pro přepínače p
 
 #### Otázka: Jak mohu získat vybranou možnost ze skupiny přepínačů poté, co uživatel provede výběr?
 
- Odpověď: Vybranou možnost můžete načíst ze skupiny přepínačů pomocí Aspose.PDF pro .NET. Poté, co uživatel provede výběr, můžete získat přístup k`Selected` vlastnictvím`RadioButtonOptionField` objekt pro kontrolu, která možnost je vybrána.
+ Odpověď: Vybranou možnost můžete načíst ze skupiny přepínačů pomocí Aspose.PDF pro .NET. Poté, co uživatel provede výběr, můžete získat přístup k`Selected` majetek z`RadioButtonOptionField` objekt pro kontrolu, která možnost je vybrána.

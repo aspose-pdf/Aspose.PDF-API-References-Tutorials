@@ -1,115 +1,152 @@
 ---
-title: PDF ドキュメントの作成中にフォントを埋め込む
-linktitle: PDF ドキュメントの作成中にフォントを埋め込む
+title: PDFドキュメント作成時にフォントを埋め込む
+linktitle: PDFドキュメント作成時にフォントを埋め込む
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して PDF ドキュメントを作成するときにフォントを埋め込む方法を学びます。さまざまなデバイスで正しく表示されることを確認します。
+description: このステップバイステップ ガイドでは、Aspose.PDF for .NET を使用して PDF ドキュメントにフォントを埋め込む方法を学習します。PDF の外観を強化します。
 type: docs
 weight: 140
 url: /ja/net/programming-with-document/embedfontwhiledoccreation/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメントを作成するときにフォントを埋め込む方法について説明します。 Aspose.PDF for .NET は、開発者がプログラムで PDF ドキュメントを作成、編集、操作できるようにする強力なライブラリです。このライブラリは、テキスト、画像、表などの追加を含む、PDF ドキュメントを操作するための幅広い機能を提供します。 PDF ドキュメントの作成時にフォントを埋め込むことは、必要なフォントがデバイスにインストールされているかどうかに関係なく、PDF ドキュメントがさまざまなデバイスで正しく表示されることを保証したい開発者にとっての一般的な要件です。
+## 導入
 
-## ステップ 1: 新しい C# コンソール アプリケーションを作成する
-まず、Visual Studio で新しい C# コンソール アプリケーションを作成します。好きな名前を付けることができます。プロジェクトが作成されたら、Aspose.PDF for .NET ライブラリへの参照を追加する必要があります。
+プロフェッショナルで洗練された PDF ドキュメントを作成することは、今日のデジタル世界では不可欠です。洗練された外観を実現するための重要な側面の 1 つは、PDF で使用されるフォントが正しく埋め込まれていることを確認することです。これにより、さまざまなデバイス間でドキュメントの外観が維持されるだけでなく、読みやすさも向上します。このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメントを作成するときにフォントを埋め込む方法について詳しく説明します。 
 
-## ステップ 2: Aspose.PDF 名前空間をインポートする
-C# ファイルの先頭に次のコード行を追加して、Aspose.PDF 名前空間をインポートします。
+## 前提条件
+
+コードに進む前に、開始するために必要なものがすべて揃っていることを確認しましょう。
+
+1.  Aspose.PDF for .NET: Aspose.PDFライブラリがインストールされている必要があります。[Webサイト](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: コードを記述してテストできる開発環境。
+3. C# の基礎知識: C# プログラミングに精通していると、コード スニペットをよりよく理解できるようになります。
+
+## パッケージのインポート
+
+プロジェクトで Aspose.PDF を使用するには、必要な名前空間をインポートする必要があります。手順は次のとおりです。
 
 ```csharp
 using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-## ステップ 3: PDF オブジェクトをインスタンス化する
-空のコンストラクターを呼び出して Pdf オブジェクトをインスタンス化します。
+これらの名前空間により、PDF ドキュメントの作成と操作に必要なクラスとメソッドにアクセスできるようになります。
+
+前提条件を整理したので、PDF ドキュメントにフォントを埋め込むプロセスを管理しやすい手順に分解してみましょう。
+
+## ステップ1: ドキュメントディレクトリを設定する
+
+まず最初に、PDF ドキュメントを保存するパスを定義する必要があります。これは、出力ファイルを保存する場所をアプリケーションに指示するため、非常に重要です。
 
 ```csharp
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-```
-
-## ステップ 4: PDF オブジェクトにセクションを作成する
-PDF オブジェクトにセクションを作成します。
-
-```csharp
-Aspose.Pdf.Page page = doc.Pages.Add();
-```
-
-## ステップ 5: セクションにテキストを追加する
-セクションにテキストを追加します。
-
-```csharp
-Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
-Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
-```
-
-## ステップ 6: フォントを設定して埋め込む
-フォントを設定して埋め込みます。
-
-```csharp
-Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
-ts.Font = FontRepository.FindFont("Arial");
-ts.Font.IsEmbedded = true;
-segment.TextState = ts;
-fragment.Segments.Add(segment);
-page.Paragraphs.Add(fragment);
-```
-
-## ステップ 7: PDF ドキュメントを保存する
-PDF ドキュメントの作成中にフォントを埋め込んだら、ドキュメントを保存する必要があります。
-
-```csharp
-dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-//PDFドキュメントを保存
-doc.Save(dataDir);
-```
-
-### Aspose.PDF for .NET を使用したドキュメント作成時の埋め込みフォントのソース コード例
-
-```csharp
-//ドキュメントディレクトリへのパス。
+//ドキュメント ディレクトリへのパス。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
-//空のコンストラクターを呼び出して Pdf オブジェクトをインスタンス化します。
+交換する`"YOUR DOCUMENT DIRECTORY"`PDF を保存するシステム上の実際のパスを入力します。
+
+## ステップ2: PDFドキュメントをインスタンス化する
+
+次に、`Document`クラス。このクラスは PDF ドキュメントを表します。
+
+```csharp
+//空のコンストラクタを呼び出してPDFオブジェクトをインスタンス化する
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+```
 
-// PDF オブジェクトにセクションを作成する
+空のコンストラクターを呼び出すと、コンテンツの準備が整った新しい空の PDF ドキュメントが作成されます。
+
+## ステップ3: PDFドキュメントにページを作成する
+
+それでは、PDF ドキュメントにページを追加しましょう。すべての PDF には少なくとも 1 ページが必要なので、この手順は不可欠です。
+
+```csharp
+// Pdfオブジェクトにセクションを作成する
 Aspose.Pdf.Page page = doc.Pages.Add();
+```
 
+このコード行により、ドキュメントに新しいページが追加され、コンテンツの追加を開始できるようになります。
+
+## ステップ4: テキストフラグメントを作成する
+
+PDFにテキストを追加するには、`TextFragment`このオブジェクトには、表示するテキストが保持されます。
+
+```csharp
 Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
+```
 
-Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
+ここでは、新しい`TextFragment`テキストを入れるコンテナと考えることができます。
+
+## ステップ5: テキストセグメントを追加する
+
+次に、実際に表示したいテキストを含むテキスト セグメントを作成しましょう。ここでテキストをカスタマイズできます。
+
+```csharp
+Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment("This is a sample text using Custom font.");
+```
+
+テキストは自由に変更してください。これはあなたのコンテンツです。
+
+## ステップ6: テキストの状態を定義し、フォントを埋め込む
+
+フォントがPDFに埋め込まれていることを確認するには、`TextState`物体。
+
+```csharp
 Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
 ts.Font = FontRepository.FindFont("Arial");
 ts.Font.IsEmbedded = true;
 segment.TextState = ts;
-fragment.Segments.Add(segment);
-page.Paragraphs.Add(fragment);
+```
 
+このコードでは、Arial フォントを使用し、それを PDF に埋め込むことを指定しています。これは、ドキュメントがすべてのデバイスで同じように表示されるようにするための重要なステップです。
+
+## ステップ7: フラグメントにセグメントを追加する
+
+テキスト セグメントの準備ができたので、それをテキスト フラグメントに追加します。
+
+```csharp
+fragment.Segments.Add(segment);
+```
+
+この行は、セグメントをフラグメントに追加し、ページに表示されるテキストの一部にします。
+
+## ステップ8: フラグメントをページに追加する
+
+次に、先ほど作成したページにテキスト フラグメントを追加する必要があります。
+
+```csharp
+page.Paragraphs.Add(fragment);
+```
+
+この手順により、テキストが PDF ドキュメントのページに表示されるようになります。
+
+## ステップ9: PDFドキュメントを保存する
+
+最後に、PDF ドキュメントを保存します。保存先のパスを指定します。
+
+```csharp
 dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-//PDFドキュメントを保存
+// PDF文書を保存
 doc.Save(dataDir);
 ```
+
+このコードは、出力ファイル名をドキュメント ディレクトリ パスに連結し、PDF を保存します。 
 
 ## 結論
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメントを作成するときにフォントを埋め込む方法について説明しました。 Aspose.PDF for .NET は、フォントの追加や埋め込みなど、PDF ドキュメントを操作するためのシンプルで使いやすい API を提供します。 PDF ドキュメントの作成時にフォントを埋め込むことは、必要なフォントがデバイスにインストールされているかどうかに関係なく、さまざまなデバイスでドキュメントが正しく表示されるようにするための重要な手順です。
 
-### PDF ドキュメント作成時のフォントの埋め込みに関する FAQ
+これで完了です。Aspose.PDF for .NET を使用して、埋め込みフォントを含む PDF ドキュメントが正常に作成されました。このプロセスにより、ドキュメントの見た目が向上するだけでなく、異なるプラットフォーム間で書式が維持されることも保証されます。 
 
-#### Q: PDF ドキュメントの作成時にフォントを埋め込むことが重要なのはなぜですか?
+## よくある質問
 
-A: PDF ドキュメントの作成時にフォントを埋め込むことは、必要なフォントがデバイスにインストールされていない場合でも、ドキュメントがさまざまなデバイスで正しく表示されるようにするために重要です。これにより、ドキュメントの意図した外観が維持され、フォントの置換の問題を防ぐことができます。
+### Aspose.PDF for .NET とは何ですか?
+Aspose.PDF for .NET は、開発者がプログラムによって PDF ドキュメントを作成、操作、変換できるようにする強力なライブラリです。
 
-#### Q: Aspose.PDF for .NET を使用して PDF ドキュメントを作成するときにフォントを埋め込むにはどうすればよいですか?
+### PDF にフォントを埋め込む必要があるのはなぜですか?
+フォントを埋め込むと、ドキュメントがすべてのデバイスで同じように表示され、意図したデザインと読みやすさが維持されます。
 
-A: Aspose.PDF for .NET を使用して PDF ドキュメントを作成するときに、フォントを指定し、`IsEmbedded`財産を`true`。これにより、フォント データが PDF ファイルに確実に埋め込まれます。
+### Aspose.PDF でカスタム フォントを使用できますか?
+はい、カスタム フォントがシステム上で使用可能であり、コード内で適切に参照されている限り、カスタム フォントを使用できます。
 
-#### Q: PDF ドキュメントにカスタム フォントを埋め込むときに、カスタム フォントを指定できますか?
+### Aspose.PDF の無料試用版はありますか?
+はい、無料試用版をこちらからダウンロードできます。[Aspose ウェブサイト](https://releases.aspose.com/).
 
-A: はい、Aspose.PDF for .NET を使用して PDF ドキュメントに埋め込むときにカスタム フォントを指定できます。これにより、デザイン要件に合った特定のフォントを使用できるようになります。
-
-#### Q: Aspose.PDF for .NET はさまざまなフォント形式と互換性がありますか?
-
-A: はい、Aspose.PDF for .NET は、TrueType、OpenType、Type 1 フォントなどのさまざまなフォント形式と互換性があります。形式に関係なく、PDF ドキュメントにフォントを埋め込むことができます。
-
-#### Q: フォントの埋め込みプロセスをカスタマイズできますか?
-
- A: はい、Aspose.PDF for .NET を使用してフォント埋め込みプロセスをカスタマイズできます。フォントを指定したり、次のようなプロパティを設定したりできます。`IsEmbedded` PDF ドキュメントにフォントを埋め込む方法を制御します。
+### Aspose.PDF のサポートはどこで受けられますか?
+サポートを見つけたり質問したりできます[Aspose フォーラム](https://forum.aspose.com/c/pdf/10).

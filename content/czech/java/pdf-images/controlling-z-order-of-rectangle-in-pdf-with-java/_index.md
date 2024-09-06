@@ -8,7 +8,7 @@ weight: 11
 url: /cs/java/pdf-images/controlling-z-order-of-rectangle-in-pdf-with-java/
 ---
 
-## Úvod
+## Zavedení
 
 Ve světě manipulace s PDF je správa Z-pořadí prvků zásadní, když chcete ovládat viditelnost a umístění objektů v dokumentu PDF. Tento článek se ponoří do umění ovládání Z-pořadí obdélníků v PDF pomocí Aspose.PDF for Java, výkonného Java API pro práci se soubory PDF.
 
@@ -29,7 +29,7 @@ Chcete-li dosáhnout přesné kontroly nad pořadím Z obdélníků v PDF pomoc�
 Než začnete, ujistěte se, že máte následující:
 
 - Nastavení vývojového prostředí Java.
--  Nainstalovaná knihovna Aspose.PDF pro Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Nainstalovaná knihovna Aspose.PDF pro Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Průvodce krok za krokem
 
@@ -86,7 +86,7 @@ V tomto článku jsme prozkoumali důležitost ovládání Z-pořadí obdélník
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
-Chcete-li nainstalovat Aspose.PDF pro Java, můžete si stáhnout knihovnu z[tady](https://releases.aspose.com/pdf/java/) a zahrňte soubor JAR do závislostí vašeho projektu Java.
+Chcete-li nainstalovat Aspose.PDF pro Java, můžete si stáhnout knihovnu z[zde](https://releases.aspose.com/pdf/java/) a zahrňte soubor JAR do závislostí vašeho projektu Java.
 
 ### Mohu ovládat Z-pořadí jiných prvků PDF kromě obdélníků?
 

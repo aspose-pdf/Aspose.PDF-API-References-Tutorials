@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-stamps-and-watermarks/define-alignment/
 
 ## 第 2 步：載入 PDF 文檔
 
-第一步是將現有的 PDF 文件載入到您的專案中。就是這樣：
+第一步是將現有的 PDF 文件載入到您的專案中。方法如下：
 
 ```csharp
 //文檔目錄的路徑。
@@ -32,7 +32,7 @@ Document doc = new Document(dataDir + "DefineAlignment.pdf");
 
 ## 步驟 3：定義對齊方式
 
-現在您已經加載了 PDF 文檔，您可以設定文字圖章的對齊方式。就是這樣：
+現在您已經加載了 PDF 文檔，您可以設定文字圖章的對齊方式。方法如下：
 
 ```csharp
 //使用範例字串實例化 FormattedText 對象
@@ -67,7 +67,7 @@ doc.Pages[1].AddStamp(stamp);
 
 ## 步驟 4：儲存輸出文檔
 
-設定文字圖章對齊方式後，您可以儲存修改後的 PDF 文件。就是這樣：
+設定文字圖章對齊方式後，您可以儲存修改後的 PDF 文件。方法如下：
 
 ```csharp
 //儲存更新後的文檔
@@ -125,7 +125,7 @@ Console.WriteLine("\nAlignment defined successfully for text stamp.\nFile saved 
 
 ### PDF 檔案中定義對齊方式的常見問題解答
 
-#### Q：什麼是 PDF 文件中的文字對齊方式？為什麼它很重要？
+#### Q：什麼是 PDF 文件中的文字對齊方式？
 
 答：PDF 文件中的文字對齊是指文字在特定區域（例如段落或文字圖章）內的定位。正確的文字對齊可以增強文件的可讀性和視覺吸引力，使讀者更容易理解內容。
 

@@ -1,49 +1,49 @@
 ---
 title: Görüntü Akışını PDF Dosyasına Dönüştür
 linktitle: Görüntü Akışını PDF Dosyasına Dönüştür
-second_title: .NET API Referansı için Aspose.PDF
+second_title: Aspose.PDF for .NET API Referansı
 description: Aspose.PDF for .NET ile bir görüntü akışını kolayca PDF dosyasına dönüştürün.
 type: docs
 weight: 70
 url: /tr/net/programming-with-images/convert-image-stream-to-pdf/
 ---
-Bu kılavuz, Aspose.PDF for .NET kullanarak bir görüntü akışını PDF dosyasına nasıl dönüştürebileceğinizi adım adım anlatacaktır. Ortamınızı zaten kurduğunuzdan emin olun ve aşağıdaki adımları izleyin:
+Bu kılavuz, Aspose.PDF for .NET kullanarak bir görüntü akışını PDF dosyasına nasıl dönüştüreceğinizi adım adım gösterecektir. Ortamınızı önceden ayarladığınızdan ve aşağıdaki adımları izlediğinizden emin olun:
 
-## 1. Adım: Belge dizinini tanımlayın
+## Adım 1: Belge dizinini tanımlayın
 
- Başlamadan önce belgeler için doğru dizini ayarladığınızdan emin olun. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` görüntünüzün bulunduğu dizinin yolunu içeren kodda.
+Başlamadan önce, belgeler için doğru dizini ayarladığınızdan emin olun. Değiştir`"YOUR DOCUMENT DIRECTORY"` Resminizin bulunduğu dizinin yolunu içeren kodda.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Adım 2: Bir Belge nesnesinin örneğini oluşturun
+## Adım 2: Bir Belge nesnesi örneği oluşturun
 
- Bu adımda, bir örnek oluşturacağız`Document` boş yapıcısını kullanan nesne`Aspose.Pdf.Document` sınıf.
+ Bu adımda bir örnek oluşturacağız`Document` boş oluşturucuyu kullanan nesne`Aspose.Pdf.Document` sınıf.
 
 ```csharp
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 ```
 
-## 3. Adım: PDF belgesine bir sayfa ekleyin
+## Adım 3: PDF belgesine bir sayfa ekleyin
 
- kullanarak PDF belgesine bir sayfa ekleyin.`Add` yöntemi`Pages` Nesnesi`pdf1`.
+PDF belgesine bir sayfa eklemek için şunu kullanın:`Add` yöntemi`Pages` nesnesi`pdf1`.
 
 ```csharp
 Aspose.Pdf.Page sec = pdf1.Pages.Add();
 ```
 
-## 4. Adım: Görüntü akışını okuyun
+## Adım 4: Görüntü akışını okuyun
 
- Bu adımda bir oluşturacağız`FileStream` görüntü dosyasını akıştan okumak için nesne.
+ Bu adımda bir tane oluşturacağız`FileStream` Akıştan görüntü dosyasını okumak için nesne.
 
 ```csharp
 FileStream fs = File.OpenRead(dataDir + "aspose.jpg");
 ```
 
-## Adım 5: Resmi bir bayt dizisine okuyun
+## Adım 5: Görüntüyü bir bayt dizisine okuyun
 
- Akıştaki görüntüyü okuyun ve bunu kullanarak bir bayt dizisinde saklayın.`Read` yöntemi`fs` nesne.
+ Görüntüyü akıştan okuyun ve bunu bir bayt dizisine kullanarak depolayın`Read` yöntemi`fs` nesne.
 
 ```csharp
 byte[] data = new byte[fs.Length];
@@ -52,7 +52,7 @@ fs.Read(data, 0, data.Length);
 
 ## Adım 6: Bayt dizisinden bir MemoryStream nesnesi oluşturun
 
- Oluşturmak`MemoryStream` görüntüyü içeren bayt dizisinden nesne.
+ Bir tane oluştur`MemoryStream` Resmi içeren bayt dizisinden nesne.
 
 ```csharp
 MemoryStream ms = new MemoryStream(data);
@@ -60,24 +60,24 @@ MemoryStream ms = new MemoryStream(data);
 
 ## Adım 7: Bir Görüntü Nesnesi Oluşturun
 
- Bu adımda bir oluşturacağız`Image` kullanarak nesne`Aspose.Pdf.Image` sınıf. kullanarak görüntünün akışını belirtin.`ImageStream` mülkiyet ve geçiş`ms` daha önce oluşturduğumuz nesne.
+ Bu adımda bir tane oluşturacağız`Image` nesneyi kullanarak`Aspose.Pdf.Image` sınıf. Görüntünün akışını kullanarak belirtin`ImageStream` mülkiyet ve geçmek`ms` daha önce oluşturduğumuz nesne.
 
 ```csharp
 Aspose.Pdf.Image imageht = new Aspose.Pdf.Image();
 imageht. ImageStream = ms;
 ```
 
-## Adım 8: Image nesnesini Paragraphs koleksiyonuna ekleyin
+## Adım 8: Resim nesnesini Paragraflar koleksiyonuna ekleyin
 
- Ekle`imageht` itiraz`Paragraphs` koleksiyonu`sec` bölüm.
+ Ekle`imageht` itiraz etmek`Paragraphs` koleksiyonu`sec` bölüm.
 
 ```csharp
 sec.Paragraphs.Add(imageht);
 ```
 
-## 9. Adım: PDF belgesini kaydedin
+## Adım 9: PDF belgesini kaydedin
 
- PDF belgesini kullanarak kaydedin.`Save` yöntemi`pdf1` nesne. PDF dosyasının çıktı yolunu belirtin.
+ PDF belgesini kullanarak kaydedin`Save` yöntemi`pdf1` nesne. PDF dosyasının çıktı yolunu belirtin.
 
 ```csharp
 pdf1.Save(dataDir + "ConvertMemoryStreamImageToPdf_out.pdf");
@@ -85,77 +85,77 @@ pdf1.Save(dataDir + "ConvertMemoryStreamImageToPdf_out.pdf");
 
 ## Adım 10: MemoryStream nesnesini kapatın
 
- Kapat`ms` kullanarak nesne`Close` Kaynakları serbest bırakma yöntemi.
+ Kapat`ms` nesneyi kullanarak`Close` Kaynakları serbest bırakma yöntemi.
 
 ```csharp
 ms. Close();
 ```
 
-### Aspose.PDF for .NET kullanarak Görüntü Akışını PDF'ye Dönüştürme için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Görüntü Akışını PDF'ye Dönüştürmek için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Boş yapıcısını çağırarak Belge örneğini oluşturun
+// Boş oluşturucusunu çağırarak Belge örneğini örneklendirin
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 // PDF belgesine bir Sayfa ekleyin
 Aspose.Pdf.Page sec = pdf1.Pages.Add();
-// İmag dosyasını okumak için bir FileStream nesnesi oluşturun
+// Imag dosyasını okumak için bir FileStream nesnesi oluşturun
 FileStream fs = File.OpenRead(dataDir + "aspose.jpg");
-// Görüntüyü Bayt dizisine oku
+// Resmi Bayt dizisine oku
 byte[] data = new byte[fs.Length];
 fs.Read(data, 0, data.Length);
-// Görüntü Bayt dizisinden bir MemoryStream nesnesi oluşturun
+// Resim Bayt dizisinden bir MemoryStream nesnesi oluşturun
 MemoryStream ms = new MemoryStream(data);
-// Bir görüntü nesnesi oluşturun
+// Bir resim nesnesi oluşturun
 Aspose.Pdf.Image imageht = new Aspose.Pdf.Image();
 // Görüntü kaynağını MemoryStream olarak belirtin
 imageht.ImageStream = ms;
-// Bölümün Paragraf koleksiyonuna resim nesnesi ekleyin
+// Bölümün Paragraflar koleksiyonuna resim nesnesi ekleyin
 sec.Paragraphs.Add(imageht);
 // PDF'yi kaydet
 pdf1.Save(dataDir + "ConvertMemoryStreamImageToPdf_out.pdf");
-// MemoryStream Nesnesini kapatın
+// MemoryStream Nesnesini Kapatın
 ms.Close();
 ```
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET'i kullanarak bir görüntü akışını başarıyla PDF dosyasına dönüştürdünüz. Oluşturulan PDF dosyası belirtilen dizine kaydedilir. Artık bu PDF dosyasını projelerinizde veya uygulamalarınızda kullanabilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak bir görüntü akışını başarıyla PDF dosyasına dönüştürdünüz. Oluşturulan PDF dosyası belirtilen dizine kaydedilir. Artık bu PDF dosyasını projelerinizde veya uygulamalarınızda kullanabilirsiniz.
 
-### SSS'ler
+### SSS
 
 #### S: Aspose.PDF for .NET kullanarak bir görüntü akışını PDF dosyasına dönüştürmenin amacı nedir?
 
-C: Bir görüntü akışını PDF dosyasına dönüştürmek, görüntüleri PDF belgelerine dahil etmek, görüntü tabanlı PDF'ler oluşturmak veya görüntüleri metin içeriğine gömmek için yararlı olabilir.
+A: Bir görüntü akışını PDF dosyasına dönüştürmek, görüntüleri PDF belgelerine dahil etmek, görüntü tabanlı PDF'ler oluşturmak veya görüntüleri metin içeriğine yerleştirmek için yararlı olabilir.
 
-#### S: Aspose.PDF for .NET, bir görüntü akışının PDF dosyasına dönüştürülmesine nasıl yardımcı olur?
+#### S: Aspose.PDF for .NET bir görüntü akışının PDF dosyasına dönüştürülmesine nasıl yardımcı olur?
 
-C: Aspose.PDF for .NET, bir PDF belgesi oluşturmak, bir görüntü akışını okumak ve görüntüyü PDF dosyasına gömmek için kullanışlı ve adım adım bir süreç sağlar.
+A: Aspose.PDF for .NET, PDF belgesi oluşturmak, bir görüntü akışını okumak ve görüntüyü PDF dosyasına yerleştirmek için kullanışlı ve adım adım bir süreç sağlar.
 
-#### S: Görüntü akışından PDF'ye dönüştürme sürecinde belge dizinini tanımlamak neden önemlidir?
+#### S: Görüntü akışını PDF'ye dönüştürme sürecinde belge dizinini tanımlamak neden önemlidir?
 
-C: Belge dizininin belirtilmesi, görüntü akışının ve elde edilen PDF dosyasının istenen çıktı yolunda doğru şekilde konumlandırılmasını sağlar.
+A: Belge dizinini belirtmek, görüntü akışının ve ortaya çıkan PDF dosyasının istenen çıktı yolunda doğru bir şekilde konumlandırılmasını sağlar.
 
-#### S: Görüntü akışından PDF'ye dönüştürme sürecinde Aspose.PDF for .NET'i kullanarak nasıl PDF belgesi oluşturabilirim?
+#### S: Aspose.PDF for .NET kullanarak görüntü akışını PDF'ye dönüştürme sürecinde nasıl PDF belgesi oluşturabilirim?
 
- A: Bir örneği oluşturun`Document` kullanarak nesne`Aspose.Pdf.Document` PDF belgesini oluşturmak için sınıfın boş yapıcısını kullanın.
+ A: Bir örnek oluşturun`Document` nesneyi kullanarak`Aspose.Pdf.Document` PDF belgesini oluşturmak için sınıfın boş kurucusu.
 
 ####  S: Rolü nedir?`Pages` object in the image stream to PDF conversion process?
 
- C:`Pages` nesne, PDF belgesine sayfalar eklemenize ve içeriğini yönetmenize olanak tanır.
+ A:`Pages` nesnesi PDF belgesine sayfa eklemenizi ve içeriğini yönetmenizi sağlar.
 
-#### S: Görüntü akışı, görüntü akışından PDF'ye dönüştürme sürecinde nasıl okunur ve işlenir?
+#### S: Görüntü akışını PDF'e dönüştürme sürecinde görüntü akışı nasıl okunur ve işlenir?
 
- C: Görüntü akışı bir kullanılarak okunur`FileStream` nesne ve içeriği bir bayt dizisinde saklanır. Bayt dizisi daha sonra bir oluşturmak için kullanılır.`MemoryStream` Daha sonra bir nesne oluşturmak için kullanılan nesne`Image` nesne.
+ A: Görüntü akışı bir`FileStream` nesne ve içerikleri bir bayt dizisinde saklanır. Bayt dizisi daha sonra bir bayt dizisi oluşturmak için kullanılır`MemoryStream` nesne, daha sonra bir nesne oluşturmak için kullanılır`Image` nesne.
 
 #### S: Dönüştürme işlemi sırasında görüntü PDF belgesine nasıl gömülür?
 
- C: Bir`Image` nesne kullanılarak oluşturulur.`Aspose.Pdf.Image` sınıfa atanır ve görüntü akışı`ImageStream` mülk.`Image` daha sonra nesne eklenir`Paragraphs` PDF belgesinin toplanması.
+ A: Bir`Image` nesne kullanılarak oluşturulur`Aspose.Pdf.Image` sınıf ve görüntü akışı şuraya atanır:`ImageStream` mülkiyet.`Image` nesne daha sonra eklenir`Paragraphs` PDF belgesinin koleksiyonu.
 
-#### S: Ortaya çıkan PDF dosyasında görüntünün konumunu, boyutunu veya diğer özelliklerini özelleştirebilir miyim?
+#### S: Ortaya çıkan PDF dosyasında görüntünün konumunu, boyutunu veya diğer niteliklerini özelleştirebilir miyim?
 
- C: Evet, görüntünün özelliklerini ayarlayarak görüntünün konumunu, boyutunu ve diğer niteliklerini değiştirebilirsiniz.`Image` nesneyi eklemeden önce`Paragraphs` Toplamak.
+ A: Evet, görüntünün konumunu, boyutunu ve diğer niteliklerini, görüntünün özelliklerini ayarlayarak değiştirebilirsiniz.`Image` nesneyi eklemeden önce`Paragraphs` koleksiyon.
 
-#### S: Görüntü akışından PDF'ye dönüştürme sürecinin son adımı nedir?
+#### S: Görüntü akışını PDF'ye dönüştürme işleminin son adımı nedir?
 
- C: PDF belgesi,`Save` yöntemi`Document` nesne ve`MemoryStream` nesne kullanılarak kapatılır`Close` Kaynakları serbest bırakma yöntemi.
+ A: PDF belgesi,`Save` yöntemi`Document` nesne ve`MemoryStream` nesne kullanılarak kapatılır`Close`kaynakları serbest bırakma yöntemi.

@@ -90,7 +90,7 @@ Aspose.PDF for Java 提供了各種選項來自訂 XML 輸出以滿足您的特�
 
 ### 如何安裝 Aspose.PDF for Java？
 
-安裝 Aspose.PDF for Java 非常簡單。按著這些次序：
+安裝 Aspose.PDF for Java 非常簡單。請依照下列步驟操作：
 1. 從以下位置下載庫[這裡](https://releases.aspose.com/pdf/java/).
 2. 根據提供的說明將其安裝到您的 Java 專案中。
 
@@ -104,7 +104,7 @@ Aspose.PDF for Java 提供了各種選項來自訂 XML 輸出以滿足您的特�
 
 ### 將 PDF 轉換為 XML 有哪些優點？
 
-將 PDF 轉換為 XML 具有多種優勢，例如結構化資料擷取、輕鬆的內容操作以及與各種資料處理工具的兼容性。
+將 PDF 轉換為 XML 具有多種優點，例如結構化資料擷取、輕鬆的內容操作以及與各種資料處理工具的兼容性。
 
 ### 在哪裡可以找到更多有關 Aspose.PDF for Java 的資源？
 

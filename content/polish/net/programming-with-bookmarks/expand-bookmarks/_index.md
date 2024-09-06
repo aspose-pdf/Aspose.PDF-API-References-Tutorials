@@ -1,158 +1,125 @@
 ---
-title: Rozwiń zakładki w pliku PDF
-linktitle: Rozwiń zakładki w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Z łatwością rozwijaj zakładki w pliku PDF, aby poprawić nawigację dzięki Aspose.PDF dla .NET.
+title: Rozszerz zakładki w pliku PDF
+linktitle: Rozszerz zakładki w pliku PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak rozszerzać zakładki w plikach PDF za pomocą Aspose.PDF dla .NET dzięki temu przewodnikowi krok po kroku. Idealne dla programistów, którzy chcą ulepszyć nawigację w PDF.
 type: docs
 weight: 50
 url: /pl/net/programming-with-bookmarks/expand-bookmarks/
 ---
-Rozwinięcie zakładek w pliku PDF domyślnie spowoduje wyświetlenie wszystkich otwartych zakładek. Dzięki Aspose.PDF dla .NET możesz łatwo rozszerzać zakładki, postępując zgodnie z następującym kodem źródłowym:
+## Wstęp
 
-## Krok 1: Zaimportuj wymagane biblioteki
+Czy kiedykolwiek otworzyłeś plik PDF tylko po to, aby odkryć, że wszystkie zakładki są zwinięte? Może to być frustrujące, szczególnie gdy próbujesz poruszać się po długim dokumencie. Na szczęście dzięki Aspose.PDF dla .NET możesz łatwo programowo rozszerzać zakładki w plikach PDF. Ten przewodnik przeprowadzi Cię przez proces krok po kroku, zapewniając, że rozumiesz każdą część kodu i jak on działa. Więc weź swój ulubiony napój i zanurzmy się w świecie manipulacji PDF!
 
-Zanim zaczniesz, musisz zaimportować niezbędne biblioteki dla swojego projektu C#. Oto niezbędna dyrektywa importowa:
+## Wymagania wstępne
+
+Zanim zaczniemy, jest kilka rzeczy, które musisz mieć na miejscu:
+
+1. Visual Studio: Upewnij się, że masz zainstalowany Visual Studio na swoim komputerze. To najlepsze środowisko do rozwoju .NET.
+2.  Aspose.PDF dla .NET: Musisz pobrać i zainstalować bibliotekę Aspose.PDF. Możesz ją znaleźć[Tutaj](https://releases.aspose.com/pdf/net/).
+3. Podstawowa wiedza o języku C#: Znajomość programowania w języku C# pomoże Ci lepiej zrozumieć fragmenty kodu.
+
+## Importuj pakiety
+
+Na początek musisz zaimportować niezbędne pakiety do swojego projektu C#. Oto jak możesz to zrobić:
+
+### Utwórz nowy projekt
+
+Otwórz Visual Studio i utwórz nowy projekt C#. Możesz wybrać aplikację konsolową dla uproszczenia.
+
+### Dodaj odniesienie Aspose.PDF
+
+1. Kliknij prawym przyciskiem myszy swój projekt w Eksploratorze rozwiązań.
+2. Wybierz „Zarządzaj pakietami NuGet”.
+3. Wyszukaj „Aspose.PDF” i zainstaluj najnowszą wersję.
+
+### Importuj przestrzeń nazw
+
+Na górze pliku C# zaimportuj przestrzeń nazw Aspose.PDF:
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 ```
 
-## Krok 2: Ustaw ścieżkę do folderu dokumentów
+Teraz, gdy wszystko już skonfigurowałeś, możemy zająć się właściwym kodem!
 
- W tym kroku musisz określić ścieżkę do folderu zawierającego plik PDF, którego zakładki chcesz rozwinąć. Zastępować`"YOUR DOCUMENT DIRECTORY"` następującym kodzie z rzeczywistą ścieżką do folderu dokumentów:
+## Krok 1: Skonfiguruj katalog dokumentów
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+Najpierw musisz określić ścieżkę do katalogu dokumentów. To tutaj znajduje się plik PDF wejściowy i plik wyjściowy zostanie zapisany.
 
-## Krok 3: Otwórz dokument PDF
-
-Teraz otworzymy dokument PDF, którego zakładki chcemy rozwinąć, używając następującego kodu:
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
-## Krok 4: Ustaw tryb wyświetlania strony
-
- tym kroku ustawimy tryb wyświetlania strony tak, aby domyślnie wyświetlał zakładki. Używamy`PageMode` własność`doc` obiekt, aby ustawić żądany tryb strony. Oto odpowiedni kod:
-
-```csharp
-doc.PageMode = PageMode.UseOutlines;
-```
-
-## Krok 5: Przeglądaj zakładki i rozwijaj je
-
- Teraz przejdziemy przez każdy element zakładek w kolekcji zakładek dokumentu i ustawimy stan otwarcia każdego elementu na`true` aby je domyślnie rozwinąć. Oto odpowiedni kod:
-
-```csharp
-foreach(OutlineItemCollection item in doc.Outlines)
-{
-     item. Open = true;
-}
-```
-
-## Krok 6: Zapisz zaktualizowany plik
-
- Na koniec zapisujemy zaktualizowany plik PDF za pomocą rozszerzenia`Save` metoda`doc` obiekt. Oto odpowiedni kod:
-
-```csharp
-dataDir = dataDir + "ExpandBookmarks_out.pdf";
-doc.Save(dataDir);
-```
-
-### Przykładowy kod źródłowy dla opcji Rozwiń zakładki przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+## Krok 2: Otwórz dokument PDF
+
+ Następnie otworzysz dokument PDF zawierający zakładki, które chcesz rozszerzyć. Można to zrobić za pomocą`Document` klasa z biblioteki Aspose.PDF.
+
+```csharp
 // Otwórz dokument
-Document doc = new Document(dataDir + "input.pdf");
-// Ustaw tryb widoku strony, tj. pokaż miniatury, pełny ekran, pokaż panel załączników
+Document doc = new Document(dataDir + "input-bookmark.pdf");
+```
+
+## Krok 3: Ustaw tryb widoku strony
+
+Teraz musisz ustawić tryb widoku strony dokumentu. Określa on sposób wyświetlania pliku PDF po jego otwarciu. W tym przypadku chcemy użyć konturów (zakładek).
+
+```csharp
+//Ustaw tryb widoku strony, np. pokaż miniatury, pełny ekran, pokaż panel załączników
 doc.PageMode = PageMode.UseOutlines;
-// Przeglądaj każdy element Ouline w kolekcji konturów pliku PDF
+```
+
+## Krok 4: Przejrzyj elementy konspektu
+
+Oto zabawna część! Przejdziesz przez każdy element konspektu w kolekcji konspektów PDF i ustawisz ich otwarty status na true. To rozszerzy zakładki.
+
+```csharp
+// Przejrzyj każdy element konspektu w kolekcji konspektów pliku PDF
 foreach (OutlineItemCollection item in doc.Outlines)
 {
-	// Ustaw status otwarty dla elementu konspektu
-	item.Open = true;
+    // Ustaw otwarty status dla elementu konspektu
+    item.Open = true;
 }
+```
+
+## Krok 5: Zapisz dokument wyjściowy
+
+Po rozwinięciu zakładek nadszedł czas na zapisanie zmodyfikowanego dokumentu. Określisz nową nazwę pliku dla wyjściowego pliku PDF.
+
+```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 // Zapisz dane wyjściowe
 doc.Save(dataDir);
+```
+
+## Krok 6: Wiadomość potwierdzająca
+
+Na koniec możesz wydrukować na konsoli komunikat potwierdzający, że zakładki zostały pomyślnie rozszerzone.
+
+```csharp
 Console.WriteLine("\nBookmarks expanded successfully.\nFile saved at " + dataDir);
 ```
 
 ## Wniosek
 
-Gratulacje! Masz teraz przewodnik krok po kroku dotyczący tworzenia zakładek w Aspose.PDF dla .NET. Możesz użyć tego kodu, aby wyświetlić wszystkie domyślne zakładki w dokumentach PDF.
+masz to! Udało Ci się rozszerzyć zakładki w pliku PDF za pomocą Aspose.PDF dla .NET. Ta prosta, ale potężna biblioteka pozwala Ci z łatwością manipulować dokumentami PDF, znacznie ułatwiając Ci życie. Niezależnie od tego, czy pracujesz nad osobistym projektem, czy profesjonalną aplikacją, Aspose.PDF to fantastyczne narzędzie, które warto mieć w swoim arsenale.
 
-Koniecznie zapoznaj się z oficjalną dokumentacją Aspose.PDF, aby uzyskać więcej informacji na temat zaawansowanych funkcji manipulacji zakładkami.
+## Najczęściej zadawane pytania
 
-### Często zadawane pytania dotyczące rozwijania zakładek w pliku PDF
+### Czym jest Aspose.PDF dla .NET?
+Aspose.PDF dla platformy .NET to zaawansowana biblioteka umożliwiająca programistom programowe tworzenie, edytowanie i konwertowanie dokumentów PDF.
 
-#### P: Czym są zakładki w pliku PDF?
+### Czy mogę używać Aspose.PDF bezpłatnie?
+ Tak, Aspose oferuje bezpłatną wersję próbną, której możesz użyć do eksploracji funkcji biblioteki. Możesz ją pobrać[Tutaj](https://releases.aspose.com/).
 
-Odp.: Zakładki w pliku PDF to pomoce w nawigacji, które umożliwiają użytkownikom szybkie przechodzenie do określonych sekcji lub stron dokumentu. Zapewniają wygodny sposób dostępu do różnych części dokumentu.
+### Gdzie mogę znaleźć więcej dokumentacji?
+ Pełną dokumentację Aspose.PDF dla .NET można znaleźć[Tutaj](https://reference.aspose.com/pdf/net/).
 
-#### P: Dlaczego miałbym chcieć rozwijać zakładki w pliku PDF?
+### Czy jest dostępne wsparcie dla Aspose.PDF?
+ Oczywiście! Możesz uzyskać wsparcie od społeczności Aspose[Tutaj](https://forum.aspose.com/c/pdf/10).
 
-Odp.: Rozwijanie zakładek może poprawić wygodę użytkownika, domyślnie wyświetlając wszystkie zakładki w stanie rozwiniętym. Daje to użytkownikom jasny przegląd struktury dokumentu i pozwala im łatwo poruszać się po różnych sekcjach.
-
-#### P: Jak zaimportować niezbędne biblioteki do mojego projektu C#?
-
-Odp.: Aby zaimportować wymaganą bibliotekę do projektu C#, użyj następującej dyrektywy importu:
-
-```csharp
-using Aspose.Pdf;
-```
-
-Ta dyrektywa pozwala na wykorzystanie klas i metod dostarczonych przez Aspose.PDF dla .NET.
-
-#### P: Jak określić ścieżkę do folderu dokumentów?
-
- Odp.: W dostarczonym kodzie źródłowym zamień`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do folderu zawierającego plik PDF, z którym chcesz pracować. Dzięki temu kod będzie mógł zlokalizować docelowy plik PDF.
-
-#### P: Jak otworzyć dokument PDF, aby rozwinąć jego zakładki?
-
-Odp.: Aby otworzyć dokument PDF w celu rozwijania zakładek, użyj następującego kodu:
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
- Zastępować`"input.pdf"` z rzeczywistą nazwą pliku.
-
-#### P: Jak ustawić tryb wyświetlania strony, aby domyślnie wyświetlał zakładki?
-
-O: Aby ustawić domyślny tryb wyświetlania strony na pokazywanie zakładek, użyj opcji`PageMode` własność`doc` obiekt:
-
-```csharp
-doc.PageMode = PageMode.UseOutlines;
-```
-
-#### P: Jak rozwinąć wszystkie zakładki w dokumencie PDF?
-
- O: Aby rozwinąć wszystkie zakładki, przejrzyj kolejno poszczególne elementy zakładek w kolekcji konspektów dokumentu i ustaw opcję`Open` własność do`true`:
-
-```csharp
-foreach (OutlineItemCollection item in doc.Outlines)
-{
-    item.Open = true;
-}
-```
-
-#### P: Co się stanie, jeśli zakładka zawiera zagnieżdżone zakładki podrzędne?
-
-Odp.: Jeśli zakładka zawiera zagnieżdżone zakładki podrzędne, rozwinięcie zakładki nadrzędnej spowoduje również rozwinięcie jej zakładek podrzędnych, zapewniając kompleksowy wgląd w strukturę dokumentu.
-
-#### P: Jak zapisać zaktualizowany plik PDF po rozwinięciu zakładek?
-
-O: Aby zapisać zaktualizowany plik PDF po rozwinięciu zakładek, użyj następującego kodu:
-
-```csharp
-dataDir = dataDir + "ExpandBookmarks_out.pdf";
-doc.Save(dataDir);
-```
-
-#### P: Czy mogę dostosować wygląd rozwiniętych zakładek?
-
-Odp.: Chociaż ten samouczek koncentruje się domyślnie na rozwijaniu zakładek, możesz dostosować wygląd zakładek, korzystając z innych funkcji i właściwości Aspose.PDF.
+### Jak kupić licencję na Aspose.PDF?
+ Możesz kupić licencję na Aspose.PDF[Tutaj](https://purchase.aspose.com/buy).

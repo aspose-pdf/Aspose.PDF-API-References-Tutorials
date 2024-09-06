@@ -2,57 +2,57 @@
 title: PDF Belgelerine Dosya Ekleme
 linktitle: PDF Belgelerine Dosya Ekleme
 second_title: Aspose.PDF Java PDF İşleme API'si
-description: Aspose.PDF for Java kullanarak PDF belgelerine nasıl dosya ekleyeceğinizi öğrenin. Adım adım kılavuzumuz PDF işlemlerini çocuk oyuncağı haline getiriyor.
+description: Java için Aspose.PDF kullanarak PDF belgelerine dosya eklemeyi öğrenin. Adım adım kılavuzumuz PDF düzenlemeyi çocuk oyuncağı haline getirir.
 type: docs
 weight: 10
 url: /tr/java/pdf-attachments/attach-files-pdf-documents/
 ---
 
-## Aspose.PDF for Java'ya giriş
+## Java için Aspose.PDF'ye Giriş
 
-Aspose.PDF for Java, geliştiricilerin Java uygulamalarında PDF belgeleriyle çalışmasına olanak tanıyan, zengin özelliklere sahip bir kitaplıktır. PDF oluşturma, işleme ve çıkarma dahil çok çeşitli yetenekler sunar.
+Java için Aspose.PDF, geliştiricilerin Java uygulamalarında PDF belgeleriyle çalışmasını sağlayan özellik açısından zengin bir kütüphanedir. PDF oluşturma, düzenleme ve çıkarma gibi çok çeşitli yetenekler sunar.
 
-## Önkoşullar
+## Ön koşullar
 
-Başlamadan önce aşağıdaki önkoşulların mevcut olduğundan emin olun:
+Başlamadan önce aşağıdaki ön koşulların mevcut olduğundan emin olun:
 
-- Java Geliştirme Ortamı: Sisteminizde Java'nın ve uygun bir IDE'nin kurulu olduğundan emin olun.
--  Aspose.PDF for Java: Aspose.PDF for Java kütüphanesini şu adresten indirip yükleyin:[Burada](https://releases.aspose.com/pdf/java/).
+- Java Geliştirme Ortamı: Sisteminizde Java ve uygun bir IDE'nin yüklü olduğundan emin olun.
+-  Java için Aspose.PDF: Java için Aspose.PDF kitaplığını şu adresten indirin ve yükleyin:[Burada](https://releases.aspose.com/pdf/java/).
 
-## Java projenizi ayarlama
+## Java projenizi kurma
 
-Başlamak için tercih ettiğiniz Entegre Geliştirme Ortamında (IDE) yeni bir Java projesi oluşturun.
+Başlamak için, tercih ettiğiniz Entegre Geliştirme Ortamında (IDE) yeni bir Java projesi oluşturun.
 
 ## Aspose.PDF'yi projenize ekleme
 
-1. Aspose.PDF for Java kütüphanesini web sitesinden indirin.
+1. Java kütüphanesi için Aspose.PDF'i web sitesinden indirin.
 2. İndirdiğiniz JAR dosyasını projenizin sınıf yoluna ekleyin.
-3. Aspose.PDF belgelerinde belirtildiği gibi gerekli bağımlılıkları da eklemeniz gerekebilir.
+3. Ayrıca Aspose.PDF belgelerinde belirtildiği gibi gerekli bağımlılıkları da eklemeniz gerekebilir.
 
 ## PDF belgesi oluşturma
 
-Aspose.PDF kütüphanesinden gerekli sınıfları Java kodunuzda içe aktarın. Aşağıdaki kod parçacığını kullanarak yeni bir PDF belgesi oluşturun:
+Java kodunuzda, Aspose.PDF kütüphanesinden gerekli sınıfları içe aktarın. Aşağıdaki kod parçacığını kullanarak yeni bir PDF belgesi oluşturun:
 
 ```java
 //Gerekli sınıfları içe aktar
 import com.aspose.pdf.*;
 
-// Yeni bir PDF belgesi oluştur
+// Yeni bir PDF belgesi oluşturun
 Document pdfDocument = new Document();
 ```
 
-## Dosyaları PDF'ye ekleme
+## PDF'ye dosya ekleme
 
-Şimdi dosyaları PDF belgesine ekleyelim. Resimler, belgeler ve hatta diğer PDF'ler gibi çeşitli dosya türlerini ekleyebilirsiniz. Aşağıda bir dosyanın nasıl ekleneceğine ilişkin bir örnek verilmiştir:
+Şimdi PDF belgesine dosya ekleyelim. Görüntüler, belgeler veya hatta diğer PDF'ler gibi çeşitli dosya türlerini ekleyebilirsiniz. İşte bir dosyanın nasıl ekleneceğine dair bir örnek:
 
 ```java
 // Eklenecek dosyayı belirtin
 String filePath = "path/to/your/file.pdf";
 
-// Ek oluştur
+// Bir ek oluştur
 FileAttachment fileAttachment = new FileAttachment(pdfDocument.getPages().get_Item(1), filePath);
 
-// Ekin görünümünü ayarlayın
+// Eklentinin görünümünü ayarlayın
 fileAttachment.setIcon(FileIcon.Paperclip);
 fileAttachment.setColor(Color.getBlue());
 
@@ -62,35 +62,35 @@ pdfDocument.getPages().get_Item(1).getAnnotations().add(fileAttachment);
 
 ## Değiştirilen PDF'yi kaydetme
 
-Dosyaları ekledikten sonra değiştirilen PDF belgesini istediğiniz konuma kaydedin:
+Dosyaları ekledikten sonra, değiştirilen PDF belgesini istediğiniz yere kaydedin:
 
 ```java
-// PDF'yi eklerle birlikte kaydedin
+// PDF'yi ekleriyle birlikte kaydedin
 pdfDocument.save("output.pdf");
 ```
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for Java kullanarak bir PDF belgesine nasıl dosya ekleneceğini araştırdık. Geliştirme ortamını kurmayı, Aspose.PDF'yi projenize eklemeyi, PDF belgesi oluşturmayı, dosyaları eklemeyi ve değiştirilen PDF'yi kaydetmeyi anlattık.
+Bu eğitimde, Java için Aspose.PDF kullanarak bir PDF belgesine dosyaların nasıl ekleneceğini inceledik. Geliştirme ortamını kurmayı, projenize Aspose.PDF eklemeyi, bir PDF belgesi oluşturmayı, dosyaları eklemeyi ve değiştirilmiş PDF'yi kaydetmeyi ele aldık.
 
-## SSS'ler
+## SSS
 
 ### Aspose.PDF for Java ile oluşturulmuş bir PDF'den ekleri nasıl çıkarabilirim?
 
-Bir PDF'den ekleri çıkarmak için Aspose.PDF for Java'nın API'sini kullanabilirsiniz. PDF belgesindeki ek açıklamaları yineleyebilir ve dosya eklerini tanımlayabilirsiniz. Daha sonra bu ekleri çıkarıp istediğiniz konuma kaydedebilirsiniz.
+Bir PDF'den ekleri çıkarmak için Aspose.PDF for Java'nın API'sini kullanabilirsiniz. PDF belgesindeki açıklamalar arasında gezinebilir ve dosya eklerini tanımlayabilirsiniz. Daha sonra, bu ekleri çıkarıp istediğiniz konuma kaydedebilirsiniz.
 
 ### Tek bir PDF sayfasına birden fazla dosya ekleyebilir miyim?
 
- Evet, Aspose.PDF for Java'yı kullanarak tek bir PDF sayfasına birden fazla dosya ekleyebilirsiniz. Basitçe birden fazla oluşturun`FileAttachment` nesneleri seçin ve bunları sayfanın ek açıklamalarına ekleyin.
+ Evet, Aspose.PDF for Java kullanarak tek bir PDF sayfasına birden fazla dosya ekleyebilirsiniz. Basitçe birden fazla dosya oluşturun`FileAttachment` nesneleri seçin ve bunları sayfanın açıklamalarına ekleyin.
 
-### PDF'ye ekleyebileceğim dosyalar için herhangi bir boyut sınırlaması var mı?
+### PDF'e ekleyebileceğim dosyaların herhangi bir boyut sınırlaması var mı?
 
-PDF'ye ekleyebileceğiniz dosyaların boyutu, PDF görüntüleyicinin yetenekleri ve sisteminizin kaynakları dahil olmak üzere çeşitli faktörlere bağlıdır. Ancak PDF'nin sorunsuz görüntülenmesini ve işlenmesini sağlamak için dosya boyutlarını makul tutmak iyi bir uygulamadır.
+Bir PDF'e ekleyebileceğiniz dosyaların boyutu, PDF görüntüleyicisinin yetenekleri ve sisteminizin kaynakları gibi çeşitli faktörlere bağlıdır. Ancak, PDF'in sorunsuz görüntülenmesini ve işlenmesini sağlamak için dosya boyutlarını makul tutmak iyi bir uygulamadır.
 
-### Aspose.PDF for Java farklı Java sürümleriyle uyumlu mu?
+### Aspose.PDF for Java farklı Java sürümleriyle uyumlu mudur?
 
-Evet, Aspose.PDF for Java, çeşitli Java sürümleriyle uyumludur. Belirli sürüm uyumluluğu ayrıntıları için belgeleri kontrol ettiğinizden emin olun.
+Evet, Java için Aspose.PDF çeşitli Java sürümleriyle uyumludur. Belirli sürüm uyumluluğu ayrıntıları için belgeleri kontrol ettiğinizden emin olun.
 
-### Aspose.PDF for Java için daha fazla kaynağı ve belgeyi nerede bulabilirim?
+### Java için Aspose.PDF hakkında daha fazla kaynak ve belgeyi nerede bulabilirim?
 
-Aspose.PDF for Java ile ilgili kapsamlı belgeleri ve ek kaynakları şu adreste bulabilirsiniz:[Burada](https://reference.aspose.com/pdf/java/).
+Java için Aspose.PDF için kapsamlı belgeleri ve ek kaynakları şu adreste bulabilirsiniz:[Burada](https://reference.aspose.com/pdf/java/).

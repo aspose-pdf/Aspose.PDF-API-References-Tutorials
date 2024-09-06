@@ -2,7 +2,7 @@
 title: Mezők lekérése a régióból PDF-fájlban
 linktitle: Mezők lekérése a régióból PDF-fájlban
 second_title: Aspose.PDF for .NET API Reference
-description: Könnyen beszerezhet mezőket egy adott régióból PDF-fájlban az Aspose.PDF for .NET segítségével.
+description: Könnyen beszerezheti a mezőket egy adott régióból PDF-fájlban az Aspose.PDF for .NET segítségével.
 type: docs
 weight: 130
 url: /hu/net/programming-with-forms/get-fields-from-region/
@@ -33,7 +33,7 @@ Hozzon létre egy téglalap alakú objektumot, amely lehatárolja azt a régiót
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(35, 30, 500, 500);
 ```
 
-## 4. lépés: Szerezze be a PDF űrlapot
+## 4. lépés: Szerezze meg a PDF űrlapot
 
 Szerezze meg a dokumentum PDF formátumát:
 

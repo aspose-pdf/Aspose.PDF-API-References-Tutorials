@@ -53,7 +53,7 @@ using (MemoryStream ms = new MemoryStream())
 ```csharp
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 {
-     //Ρύθμιση κλίμακας και μεταμόρφωση
+     // Ρύθμιση κλίμακας και μεταμόρφωση
      float scale = resolution / 72f;
      gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
 
@@ -62,7 +62,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
      {
          Page page = pdfDocument.Pages[1];
 
-         // Βρείτε όλες τις λέξεις στη σελίδα
+         //Βρείτε όλες τις λέξεις στη σελίδα
          TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
          textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
          page. Accept(textFragmentAbsorber);
@@ -195,7 +195,7 @@ catch (Exception ex)
 }
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Σε αυτό το σεμινάριο, έχετε μάθει πώς να επισημαίνετε χαρακτήρες σε ένα έγγραφο PDF χρησιμοποιώντας τη βιβλιοθήκη Aspose.PDF για .NET. Ακολουθώντας τον οδηγό βήμα προς βήμα και εκτελώντας τον παρεχόμενο κώδικα C#, μπορείτε να επισημάνετε χαρακτήρες σε ένα PDF και να αποθηκεύσετε την έξοδο ως εικόνα.
 
@@ -217,7 +217,7 @@ catch (Exception ex)
 
 #### Ε: Πώς μπορώ να φορτώσω το έγγραφο PDF και να το μετατρέψω σε εικόνα;
 
- Α: Στο φροντιστήριο, το`Aspose.Pdf.Document` Η κλάση χρησιμοποιείται για τη φόρτωση του εισαγόμενου εγγράφου PDF. Μετά το`PdfConverter` Η κλάση χρησιμοποιείται για τη μετατροπή του εγγράφου PDF σε εικόνα. Η ανάλυση της εικόνας ορίζεται και η εικόνα ανακτάται ως α`Bitmap` αντικείμενο.
+ Α: Στο φροντιστήριο, το`Aspose.Pdf.Document` Η κλάση χρησιμοποιείται για τη φόρτωση του εισαγόμενου εγγράφου PDF. Στη συνέχεια, το`PdfConverter` Η κλάση χρησιμοποιείται για τη μετατροπή του εγγράφου PDF σε εικόνα. Η ανάλυση της εικόνας ορίζεται και η εικόνα ανακτάται ως α`Bitmap` αντικείμενο.
 
 #### Ε: Πώς μπορώ να επισημάνω χαρακτήρες στην εικόνα του εγγράφου PDF;
 

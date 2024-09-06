@@ -14,7 +14,7 @@ Ve světě moderních technologií se práce s PDF dokumenty stala rutinním úk
 
 ## Začínáme
 
- Než se ponoříme do podrobností, ujistěte se, že máte nainstalovaný Aspose.PDF for Java. Můžete si jej stáhnout z webu[tady](https://releases.aspose.com/pdf/java/).
+ Než se ponoříme do podrobností, ujistěte se, že máte nainstalovaný Aspose.PDF for Java. Můžete si jej stáhnout z webu[zde](https://releases.aspose.com/pdf/java/).
 
 ## Nastavení vašeho projektu Java
 
@@ -129,4 +129,4 @@ Absolutně! Aspose.PDF for Java je výkonný nástroj pro generování faktur, z
 
 ### Kde najdu další dokumentaci a zdroje pro Aspose.PDF pro Javu?
 
- Komplexní dokumentaci a zdroje pro Aspose.PDF pro Java můžete najít na webu:[tady](https://reference.aspose.com/pdf/java/).
+ Komplexní dokumentaci a zdroje pro Aspose.PDF pro Java můžete najít na webu:[zde](https://reference.aspose.com/pdf/java/).

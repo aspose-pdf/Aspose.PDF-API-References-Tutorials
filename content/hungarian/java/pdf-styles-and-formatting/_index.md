@@ -26,14 +26,14 @@ Sorozatunk utolsó részében elmélyülünk a fejlett PDF-stílustechnikákban,
 ### [Beépített szerkezeti elemek PDF-ben Java használatával](./inline-structure-elements-in-pdf-using-java/)
 Ismerje meg, hogyan implementálhat beágyazott szerkezeti elemeket PDF dokumentumokban Java használatával az Aspose.PDF for Java segítségével. Hozzáférhető és jól strukturált PDF-fájlokat hozhat létre.
 ### [Gyökérstruktúra PDF-ben Java használatával](./root-structure-in-pdf-using-java/)
-Ismerje meg a gyökérstruktúra kezelését az Aspose.PDF használatával. PDF-fájlok létrehozása, módosítása és javítása.
-### [Struktúraelemek tulajdonságai a PDF-ben Java használatával](./structure-elements-properties-in-pdf-using-java/)
+Tanulja meg a gyökérstruktúra kezelését az Aspose.PDF használatával. PDF-fájlok létrehozása, módosítása és javítása.
+### [Struktúraelemek tulajdonságai PDF-ben Java használatával](./structure-elements-properties-in-pdf-using-java/)
 Fedezze fel a PDF szerkezeti elemek erejét a Java nyelven az Aspose.PDF segítségével. Ismerje meg a PDF-fájlok létrehozását, módosítását és optimalizálását a kisegítő lehetőségek érdekében.
 ### [Stílus táblázatcella PDF-ben Java használatával](./style-table-cell-in-pdf-using-java/)
 Ismerje meg, hogyan formázhat táblázatcellákat PDF-dokumentumokban az Aspose.PDF for Java segítségével. Bővítse Java-alkalmazásait ezzel a PDF-testreszabási útmutatóval, lépésről lépésre.
 ### [Stílustábla-elem PDF-ben Java használatával](./style-table-element-in-pdf-using-java/)
 Tanulja meg a PDF-dokumentumok táblázatainak stílusozását Java használatával az Aspose.PDF segítségével. Hozzon létre tetszetős táblázatokat, és szabja testre megjelenésüket a professzionális PDF-fájlokhoz.
 ### [Stílus Table Row PDF-ben Java használatával](./style-table-row-in-pdf-using-java/)
-Ismerje meg, hogyan alakíthat stílust a PDF-tábla soraiban Java nyelven az Aspose.PDF for Java használatával. Ebben az átfogó útmutatóban testreszabhatja a színeket, hozzáadhat szegélyeket és sok mást.
+Ismerje meg, hogyan alakíthat stílust a PDF-tábla soraiban Java nyelven az Aspose.PDF for Java használatával. Ebben az átfogó útmutatóban testreszabhatja a színeket, hozzáadhat szegélyeket és még sok mást.
 ### [Stílusos szövegstruktúra PDF-ben Java használatával](./style-text-structure-in-pdf-using-java/)
 Lépésről lépésre szóló útmutatónk segítségével megtudhatja, hogyan alakíthat stílust PDF-fájlokban a Java használatával. Testreszabhatja a betűtípusokat, színeket, hiperhivatkozásokat és még sok mást a professzionális megjelenésű dokumentumokhoz.

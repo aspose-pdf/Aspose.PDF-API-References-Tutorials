@@ -44,7 +44,7 @@ pageNumberStamp.Background = false;
 // Μορφή του buffer αρίθμησης σελίδων
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
 
-// Κάτω περιθώριο του buffer αρίθμησης σελίδων
+// Κάτω περιθώριο της προσωρινής μνήμης αρίθμησης σελίδων
 pageNumberStamp.BottomMargin = 10;
 
 // Οριζόντια στοίχιση του buffer αρίθμησης σελίδων
@@ -121,7 +121,7 @@ Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + da
 
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Συγχαρητήρια ! Έχετε μάθει πώς να προσθέτετε σφραγίδες αριθμού σελίδας σε ένα έγγραφο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Τώρα μπορείτε να εξατομικεύσετε τα έγγραφα PDF προσθέτοντας σαφείς και ενημερωτικούς αριθμούς σελίδων.
 

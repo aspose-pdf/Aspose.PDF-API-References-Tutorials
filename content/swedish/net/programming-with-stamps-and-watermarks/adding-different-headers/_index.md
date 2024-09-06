@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 2: Laddar PDF-dokumentet
 
-Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Här är hur:
+Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Så här gör du:
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -32,7 +32,7 @@ Var noga med att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till
 
 ## Steg 3: Skapa rubrikbuffertar
 
-Nu när du har laddat upp PDF-dokumentet kan du skapa rubrikstämplarna att lägga till. Här är hur:
+Nu när du har laddat upp PDF-dokumentet kan du skapa rubrikstämplarna att lägga till. Så här gör du:
 
 ```csharp
 // Skapa tre rubrikbuffertar
@@ -43,7 +43,7 @@ Aspose.Pdf.TextStamp stamp3 = new Aspose.Pdf.TextStamp("Header 3");
 
 Ovanstående kod skapar tre nya rubrikbuffertar som innehåller den angivna texten.
 
-## Steg 4: Konfigurera rubrikbuffertegenskaper
+## Steg 4: Konfigurera header buffertegenskaper
 
 Innan du lägger till rubrikstämplarna i PDF-dokumentet kan du konfigurera olika egenskaper för varje stämpel, som justering, storlek, färg etc. Så här gör du:
 
@@ -72,7 +72,7 @@ Du kan justera dessa egenskaper efter behov för varje rubrikbuffert.
 
 ## Steg 5: Lägg till rubrikstämplar till PDF
 
-Nu när rubrikstämplarna är klara kan du lägga till dem på varje specifik sida i PDF-dokumentet. Här är hur:
+Nu när rubrikstämplarna är klara kan du lägga till dem på varje specifik sida i PDF-dokumentet. Så här gör du:
 
 ```csharp
 // Lägg till rubrikbuffertar på specifika sidor
@@ -85,7 +85,7 @@ Koden ovan lägger till varje rubrikstämpel på motsvarande sida i PDF-dokument
 
 ## Steg 6: Spara utdatadokumentet
 
-När du har lagt till rubrikstämplarna kan du spara det redigerade PDF-dokumentet. Här är hur:
+När du har lagt till rubrikstämplarna kan du spara det redigerade PDF-dokumentet. Så här gör du:
 
 ```csharp
 // Spara det uppdaterade dokumentet
@@ -112,7 +112,7 @@ Aspose.Pdf.TextStamp stamp3 = new Aspose.Pdf.TextStamp("Header 3");
 stamp1.VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
 stamp1.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 
-// Ange teckensnittsstilen som fetstil
+// Ange typsnittsstilen som fetstil
 stamp1.TextState.FontStyle = FontStyles.Bold;
 
 // Ställ in textens förgrundsfärginformation som röd

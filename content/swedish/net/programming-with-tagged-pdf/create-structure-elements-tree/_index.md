@@ -24,7 +24,7 @@ Document document = new Document();
 ```
 
 ## Steg 3: Få innehåll att fungera med TaggedPdf
- Aspose.PDF-biblioteket tillåter att arbeta med strukturerade PDF-dokument med konceptet Tagged PDF. För detta måste vi få en referens till det taggade innehållsobjektet med hjälp av dokumentets`TaggedContent`fast egendom. Här är koden för detta steg:
+ Aspose.PDF-biblioteket tillåter att arbeta med strukturerade PDF-dokument med konceptet Tagged PDF. För detta måste vi få en referens till det taggade innehållsobjektet med hjälp av dokumentets`TaggedContent`egendom. Här är koden för detta steg:
 
 ```csharp
 // Få innehåll att fungera med TaggedPdf

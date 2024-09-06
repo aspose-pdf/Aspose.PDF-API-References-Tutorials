@@ -82,7 +82,7 @@ Odpověď: Anotace v dokumentu PDF jsou další prvky nebo poznámky, které lze
 
 #### Otázka: Proč bych měl chtít sloučit anotace v dokumentu PDF?
 
-Odpověď: Sloučení anotací v dokumentu PDF je užitečné, když chcete zajistit, aby se anotace staly součástí obsahu dokumentu a nebylo možné je upravovat nebo odstraňovat. Pomáhá při zachování anotací jako součásti dokumentu.
+Odpověď: Sloučení anotací v dokumentu PDF je užitečné, když chcete zajistit, aby se anotace staly součástí obsahu dokumentu a nebylo možné je upravovat ani odstraňovat. Pomáhá při zachování anotací jako součásti dokumentu.
 
 #### Otázka: Mohu selektivně sloučit anotace v dokumentu PDF?
 

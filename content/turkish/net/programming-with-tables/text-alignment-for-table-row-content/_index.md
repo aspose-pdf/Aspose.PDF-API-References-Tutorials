@@ -1,16 +1,16 @@
 ---
 title: Tablo Satır İçeriği İçin Metin Hizalaması
 linktitle: Tablo Satır İçeriği İçin Metin Hizalaması
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET'i kullanarak bir PDF tablosundaki satır içeriğini nasıl hizalayacağınızı öğrenin.
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak bir PDF tablosundaki satır içeriğinin nasıl hizalanacağını öğrenin.
 type: docs
 weight: 210
 url: /tr/net/programming-with-tables/text-alignment-for-table-row-content/
 ---
-Bu eğitimde, Aspose.PDF for .NET'i kullanarak bir PDF belgesi tablosundaki bir satırın içeriğini hizalamak için size adım adım rehberlik edeceğiz. Sağlanan C# kaynak kodunu açıklayacağız ve size nasıl uygulayacağınızı göstereceğiz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesinin tablosundaki bir satırın içeriğini adım adım hizalamanıza rehberlik edeceğiz. Sağlanan C# kaynak kodunu açıklayacağız ve nasıl uygulayacağınızı göstereceğiz.
 
-## 1. Adım: PDF belgesini oluşturma
-İlk önce PDF belgesini oluşturacağız:
+## Adım 1: PDF belgesinin oluşturulması
+Öncelikle PDF dokümanını oluşturacağız:
 
 ```csharp
 var dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -24,21 +24,21 @@ Daha sonra tabloyu başlatacağız:
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 ```
 
-## 3. Adım: Tablo kenarlığı rengini ayarlama
-Tablo kenarlığı rengini yapılandıracağız:
+## Adım 3: Tablo kenarlık rengini ayarlama
+Tablo kenarlık rengini yapılandıracağız:
 
 ```csharp
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-## 4. Adım: Tablo hücresi kenarlığını yapılandırma
-Tablo hücresi kenarlığını yapılandıracağız:
+## Adım 4: Tablo hücresi kenarlığını yapılandırma
+Tablo hücresi sınırını yapılandıracağız:
 
 ```csharp
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-## Adım 5: Tabloya 10 satır eklemek için döngü yapın
+## Adım 5: Tabloya 10 satır eklemek için döngü
 Şimdi tabloya 10 satır eklemek için bir döngü kullanacağız:
 
 ```csharp
@@ -60,7 +60,7 @@ Tablonun satırlarının dikey hizalamasını yapılandıracağız:
 row.VerticalAlignment = VerticalAlignment.Center;
 ```
 
-## 7. Adım: Satır hücrelerine içerik ekleme
+## Adım 7: Satır hücrelerine içerik ekleme
 Satır hücrelerine içerik ekleyeceğiz:
 
 ```csharp
@@ -78,13 +78,13 @@ tocPage.Paragraphs.Add(table);
 ```
 
 ## Adım 9: PDF belgesini kaydetme
-Son olarak PDF belgesini kaydedeceğiz:
+Son olarak PDF dokümanını kaydedeceğiz:
 
 ```csharp
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-### Aspose.PDF for .NET kullanarak Tablo Satır İçeriği İçin Metin Hizalama için örnek kaynak kodu
+### .NET için Aspose.PDF kullanılarak Tablo Satır İçeriği için Metin Hizalaması için örnek kaynak kodu
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -93,9 +93,9 @@ var dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 // Tablonun yeni bir örneğini başlatır
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Tablo kenarlığı rengini AçıkGri olarak ayarlayın
+// Tablo kenarlık rengini AçıkGri olarak ayarlayın
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// tablo hücreleri için kenarlığı ayarlama
+// tablo hücreleri için kenarlığı ayarla
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 // 10 satır eklemek için bir döngü oluşturun
 for (int row_count = 0; row_count < 10; row_count++)
@@ -109,33 +109,33 @@ for (int row_count = 0; row_count < 10; row_count++)
 	row.Cells.Add("Column (" + row_count + ", 3)");
 }
 Page tocPage = doc.Pages.Add();
-// Giriş belgesinin ilk sayfasına tablo nesnesi ekleyin
+// Giriş belgesinin ilk sayfasına tablo nesnesi ekle
 tocPage.Paragraphs.Add(table);
 // Tablo nesnesini içeren güncellenmiş belgeyi kaydet
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
 ## Çözüm
-Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesindeki bir tablodaki satırın içeriğini nasıl hizalayacağınızı öğrendiniz. Bu adım adım kılavuz size nasıl belge oluşturacağınızı, tabloyu nasıl başlatacağınızı, kenarlığı ve hizalamayı nasıl yapılandıracağınızı, içerik ekleyeceğinizi ve PDF belgesini nasıl kaydedeceğinizi gösterdi. Artık bu bilgiyi kendi projelerinize uygulayabilirsiniz.
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesinde bir tablodaki satırın içeriklerini nasıl hizalayacağınızı öğrendiniz. Bu adım adım kılavuz size bir belge oluşturmayı, bir tabloyu başlatmayı, kenarlığı ve hizalamayı yapılandırmayı, içerik eklemeyi ve PDF belgesini kaydetmeyi gösterdi. Artık bu bilgiyi kendi projelerinize uygulayabilirsiniz.
 
-### SSS'ler
+### SSS
 
-#### S: Tablo hücrelerinin içeriğini yatay olarak nasıl hizalayabilirim?
+#### S: Tablo hücrelerinin içeriklerini yatay olarak nasıl hizalayabilirim?
 
- C: Tablo hücrelerinin içeriğini yatay olarak hizalayabilirsiniz.`HorizontalAlign` hücrenin özelliği`TextState` nesne. Örneğin, metni ortaya hizalamak için şunu kullanın:`cell.TextState.HorizontalAlignment = HorizontalAlignment.Center` . Ayrıca şu şekilde de ayarlayabilirsiniz:`HorizontalAlignment.Left` veya`HorizontalAlignment.Right` sırasıyla sol ve sağ hizalama için.
+ A: Tablo hücrelerinin içeriklerini yatay olarak hizalamak için,`HorizontalAlign` hücrenin özelliği`TextState` nesne. Örneğin, metni ortaya hizalamak için şunu kullanın:`cell.TextState.HorizontalAlignment = HorizontalAlignment.Center` Ayrıca bunu şu şekilde de ayarlayabilirsiniz:`HorizontalAlignment.Left` veya`HorizontalAlignment.Right` sırasıyla sol ve sağ hizalama için.
 
-#### S: Tablodaki tek tek hücrelere farklı kenarlık stilleri ve renkleri uygulayabilir miyim?
+#### S: Tablodaki her bir hücreye farklı kenarlık stilleri ve renkleri uygulayabilir miyim?
 
- C: Evet, tablodaki tek tek hücrelere farklı kenarlık stilleri ve renkleri uygulayabilirsiniz. Belirli bir hücrenin kenarlığını özelleştirmek için`cell.Border` yeni bir mülke`BorderInfo`Nesneyi kenarlık kenarları, genişlik ve renk gibi istenen ayarlarla seçin.
+ A: Evet, tablodaki her bir hücreye farklı kenarlık stilleri ve renkleri uygulayabilirsiniz. Belirli bir hücre için kenarlığı özelleştirmek için,`cell.Border` yeni bir mülke`BorderInfo`Nesneyi, kenarlık kenarları, genişliği ve rengi gibi istediğiniz ayarlarla oluşturun.
 
-#### S: Hücrelerdeki tablo içeriğinin dikey hizalamasını nasıl ayarlayabilirim?
+#### S: Hücreler içindeki tablo içeriğinin dikey hizalamasını nasıl ayarlayabilirim?
 
- C: Hücrelerdeki tablo içeriğinin dikey hizalamasını ayarlayarak ayarlayabilirsiniz.`VerticalAlignment` satırının özelliği`VerticalAlignment.Center`, `VerticalAlignment.Top` , veya`VerticalAlignment.Bottom`. Bu özellik, o satırdaki tüm hücrelerin dikey hizalamasını kontrol eder.
+ A: Hücreler içindeki tablo içeriğinin dikey hizalamasını,`VerticalAlignment` satırın özelliği`VerticalAlignment.Center`, `VerticalAlignment.Top` , veya`VerticalAlignment.Bottom`Bu özellik, o satırdaki tüm hücrelerin dikey hizalamasını kontrol eder.
 
 #### S: Tabloya dinamik olarak daha fazla sütun veya satır eklemek mümkün müdür?
 
- C: Evet, tabloya dinamik olarak daha fazla sütun ve satır ekleyebilirsiniz.`table.Rows.Add()` yeni satırlar ekleme yöntemi ve`row.Cells.Add()` satırlara yeni hücreler ekleme yöntemi. Bunu döngüler içinde veya özel gereksinimlerinize göre yapabilirsiniz.
+ A: Evet, tabloya dinamik olarak daha fazla sütun ve satır ekleyebilirsiniz.`table.Rows.Add()` yeni satırlar ekleme yöntemi ve`row.Cells.Add()` satırlara yeni hücreler ekleme yöntemi. Bunu döngüler içinde veya özel gereksinimlerinize göre yapabilirsiniz.
 
-#### S: Belirli hücreler veya tablonun tamamı için arka plan rengini nasıl ayarlayabilirim?
+#### S: Belirli hücreler veya tüm tablo için arka plan rengini nasıl ayarlayabilirim?
 
- C: Belirli hücrelere veya tablonun tamamına arka plan rengi ayarlamak için`BackgroundColor` mülkiyeti`Cell` veya`Table` nesne. Örneğin, bir hücrenin arka plan rengini ayarlamak için şunu kullanın:`cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.
+ A: Belirli hücreler veya tüm tablo için bir arka plan rengi ayarlamak için şunu kullanın:`BackgroundColor` mülkiyeti`Cell` veya`Table` nesne. Örneğin, bir hücrenin arka plan rengini ayarlamak için şunu kullanın:`cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.

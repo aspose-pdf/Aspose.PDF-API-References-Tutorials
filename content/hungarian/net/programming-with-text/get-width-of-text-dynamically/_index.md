@@ -23,7 +23,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Cserélje ki`"YOUR DOCUMENT DIRECTORY"`annak a könyvtárnak az elérési útjával, ahol a dokumentumok találhatók. Ez az összes generált PDF-fájl tárolására szolgál.
+ Cserélje ki`"YOUR DOCUMENT DIRECTORY"` annak a könyvtárnak az elérési útjával, ahol a dokumentumok találhatók. Ez az összes generált PDF-fájl tárolására szolgál.
 
 ## 2. lépés: Keresse meg a betűtípust
 
@@ -31,7 +31,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("Arial");
 ```
 
- A fenti kód megkeresi az Arial betűtípust a`FindFont` módszer a`FontRepository` osztály. Ha másik betűtípust szeretne használni, cserélje ki`"Arial"` a kívánt betűtípus nevével.
+ fenti kód megkeresi az Arial betűtípust a`FindFont` módszer a`FontRepository` osztály. Ha másik betűtípust szeretne használni, cserélje ki`"Arial"` a kívánt betűtípus nevével.
 
 ## 3. lépés: Állítsa be a szöveg állapotát
 
@@ -93,7 +93,7 @@ Megtanulta az Aspose.PDF for .NET használatát a szöveg szélességének dinam
 
 #### K: Mi a célja a "Szöveg szélességének dinamikus elérése" oktatóanyagnak?
 
-V: A "Szöveg szélességének dinamikus elérése" oktatóanyag elmagyarázza, hogyan használhatja az Aspose.PDF for .NET fájlt a szöveg szélességének dinamikus mérésére C# nyelven. Ez különösen akkor hasznos, ha meg kell határoznia egy szöveges karakterlánc méretét, mielőtt PDF-dokumentumban jeleníti meg.
+V: A "Szöveg szélességének dinamikus lekérése" című oktatóanyag elmagyarázza, hogyan használható az Aspose.PDF for .NET a szöveg szélességének dinamikus mérésére C# nyelven. Ez különösen akkor hasznos, ha meg kell határoznia egy szöveges karakterlánc méretét, mielőtt PDF-dokumentumban jeleníti meg.
 
 #### K: Miért kell dinamikusan mérnem a szöveg szélességét?
 
@@ -101,7 +101,7 @@ V: A szöveg szélességének dinamikus mérése lehetővé teszi, hogy pontosan
 
 #### K: Hogyan találhatom meg a szövegméréshez használandó betűtípust?
 
-V: Az oktatóanyagban a`FontRepository.FindFont` módszert a kívánt betűtípus megkereséséhez. A példa az Arial betűtípust használja, de lecserélheti`"Arial"` bármely más használni kívánt betűtípus nevével.
+ V: Az oktatóanyagban a`FontRepository.FindFont` módszert a kívánt betűtípus megkereséséhez. A példa az Arial betűtípust használja, de lecserélheti`"Arial"` bármely más használni kívánt betűtípus nevével.
 
 ####  K: Mi a célja a`TextState` class?
 

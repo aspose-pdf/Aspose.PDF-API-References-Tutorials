@@ -29,7 +29,7 @@ För att komma igång, följ dessa steg för att konfigurera din utvecklingsmilj
 using Aspose.Pdf;
 ```
 
-## Steg 3: Ladda PDF-dokumentet
+## Steg 3: Laddar PDF-dokumentet
 
 Det första steget är att ladda PDF-dokumentet som du vill ändra lösenordet för. I det här exemplet antar vi att du har en PDF-fil med namnet "ChangePassword.pdf" i den angivna katalogen.
 
@@ -40,7 +40,7 @@ Document document = new Document(dataDir + "ChangePassword.pdf", "owner");
 
 ## Steg 4: Ändra lösenordet
 
- När du har laddat PDF-dokumentet kan du ändra lösenordet med hjälp av`ChangePasswords` metod. Metoden kräver tre parametrar: det nuvarande ägarlösenordet, det nya användarlösenordet och det nya ägarlösenordet.
+ När du har laddat PDF-dokumentet kan du ändra lösenordet med hjälp av`ChangePasswords`metod. Metoden kräver tre parametrar: det nuvarande ägarlösenordet, det nya användarlösenordet och det nya ägarlösenordet.
 
 ```csharp
 document.ChangePasswords("owner", "newuser", "newowner");
@@ -66,7 +66,7 @@ Den uppdaterade PDF-filen kommer att sparas på den angivna platsen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 // Öppna dokumentet
 Document document = new Document(dataDir+ "ChangePassword.pdf", "owner");
-// ändra lösenord
+// Byt lösenord
 document.ChangePasswords("owner", "newuser", "newowner");
 dataDir = dataDir + "ChangePassword_out.pdf";
 // Spara uppdaterad PDF
@@ -102,7 +102,7 @@ S: Följ de medföljande stegen för att ställa in din utvecklingsmiljö, inklu
 
 #### F: Kan jag ange olika lösenord för användare och ägare?
 
- A: Ja, det`ChangePasswords`metoden låter dig ställa in olika lösenord för användaren och ägaren. Byt ut platshållarna "nyanvändare" och "nyägare" med önskade lösenord.
+ A: Ja, det`ChangePasswords` metoden låter dig ställa in olika lösenord för användaren och ägaren. Byt ut platshållarna "nyanvändare" och "nyägare" med önskade lösenord.
 
 #### F: Hur sparar jag det uppdaterade PDF-dokumentet?
 

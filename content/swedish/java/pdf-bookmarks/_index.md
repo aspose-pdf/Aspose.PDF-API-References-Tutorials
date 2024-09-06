@@ -21,7 +21,7 @@ Vi kommer att tillhandahålla steg-för-steg-instruktioner, komplett med källko
 ### [Skapa bokmärken i PDF-dokument](./create-bookmarks-pdf-documents/)
 Lär dig hur du skapar PDF-bokmärken med Aspose.PDF för Java. Förbättra dokumentnavigering och användarupplevelse. Steg-för-steg guide med källkod.
 ### [Lägg till underordnade bokmärken till PDF-filer](./add-child-bookmarks-pdfs/)
-Lär dig hur du förbättrar PDF-dokument med underordnade bokmärken med Aspose.PDF för Java. Steg-för-steg-guide med kodexempel för förbättrad navigering och organisation.
+Lär dig hur du förbättrar PDF-dokument med underordnade bokmärken med Aspose.PDF för Java. Steg-för-steg guide med kodexempel för förbättrad navigering och organisation.
 ### [Ställ in Bokmärke till Början av PDF-sida](./set-bookmark-start-pdf-page/)
 Lär dig hur du ställer in bokmärken till början av PDF-sidor med Aspose.PDF för Java. Vår steg-för-steg-guide gör PDF-navigering till en lek.
 ### [Ta bort bokmärken från PDF-filer](./delete-bookmarks-pdf-files/)

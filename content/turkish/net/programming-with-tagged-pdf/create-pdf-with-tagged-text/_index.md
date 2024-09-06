@@ -1,28 +1,28 @@
 ---
-title: Etiketli Metinle PDF Oluşturun
-linktitle: Etiketli Metinle PDF Oluşturun
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak etiketli metin içeren bir PDF oluşturmak için adım adım kılavuz.
+title: Etiketli Metinle PDF Oluştur
+linktitle: Etiketli Metinle PDF Oluştur
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak etiketli metin içeren bir PDF oluşturmaya yönelik adım adım kılavuz.
 type: docs
 weight: 50
 url: /tr/net/programming-with-tagged-pdf/create-pdf-with-tagged-text/
 ---
-Bu eğitimde size Aspose.PDF for .NET kullanarak etiketli metin içeren bir PDF belgesinin nasıl oluşturulacağı konusunda adım adım bir kılavuz sunacağız. Aspose.PDF, PDF belgelerini programlı olarak oluşturmanıza, değiştirmenize ve dönüştürmenize olanak tanıyan güçlü bir kütüphanedir. Aspose.PDF'in etiketli içerik yapısı özelliklerini kullanarak PDF belgenize etiketli metin ekleyebilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak etiketli metin içeren bir PDF belgesinin nasıl oluşturulacağına dair adım adım bir kılavuz sunacağız. Aspose.PDF, PDF belgelerini programatik olarak oluşturmanıza, düzenlemenize ve dönüştürmenize olanak tanıyan güçlü bir kütüphanedir. Aspose.PDF'nin etiketli içerik yapısı özelliklerini kullanarak, PDF belgenize etiketli metin ekleyebilirsiniz.
 
-## Önkoşullar
+## Ön koşullar
 
-Başlamadan önce aşağıdaki önkoşulların mevcut olduğundan emin olun:
+Başlamadan önce aşağıdaki ön koşulların mevcut olduğundan emin olun:
 
-1. .NET framework ile yüklenen Visual Studio.
+1. .NET framework ile Visual Studio kuruldu.
 2. .NET için Aspose.PDF kütüphanesi.
 
 ## Adım 1: Proje Kurulumu
 
-Başlamak için Visual Studio'da yeni bir proje oluşturun ve Aspose.PDF for .NET kitaplığına bir referans ekleyin. Kütüphaneyi Aspose resmi web sitesinden indirebilir ve makinenize kurabilirsiniz.
+Başlamak için, Visual Studio'da yeni bir proje oluşturun ve Aspose.PDF for .NET kütüphanesine bir referans ekleyin. Kütüphaneyi Aspose resmi web sitesinden indirebilir ve makinenize kurabilirsiniz.
 
-## 2. Adım: Gerekli ad alanlarını içe aktarın
+## Adım 2: Gerekli ad alanlarını içe aktarın
 
-Aspose.PDF tarafından sağlanan sınıflara ve yöntemlere erişmek için gereken ad alanlarını C# kod dosyanıza aktarın:
+C# kod dosyanıza, Aspose.PDF tarafından sağlanan sınıflara ve yöntemlere erişmek için gereken ad alanlarını içe aktarın:
 
 ```csharp
 using System;
@@ -30,7 +30,7 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## 3. Adım: Etiketli metin içeren PDF belgesi oluşturma
+## Adım 3: Etiketli metinle PDF belgesinin oluşturulması
 
 Etiketli metin içeren bir PDF belgesi oluşturmak için aşağıdaki kodu kullanın:
 
@@ -53,21 +53,21 @@ paragraphElement1.ActualText = "test1";
 document.Save(dataDir + "PDFwithTagText.pdf");
 ```
 
-Bu kod boş bir PDF belgesi oluşturur ve Aspose.PDF tarafından sağlanan yöntemleri kullanarak etiketli metin ekler. Uygun yöntemleri kullanarak başlıklar ve paragraflar gibi diğer etiketli metin öğelerini ekleyebilirsiniz.
+Bu kod boş bir PDF belgesi oluşturur ve Aspose.PDF tarafından sağlanan yöntemleri kullanarak etiketli metin ekler. Başlıklar ve paragraflar gibi diğer etiketli metin öğelerini uygun yöntemleri kullanarak ekleyebilirsiniz.
 
-### Aspose.PDF for .NET kullanarak Etiketli Metin ile PDF Oluşturmak için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Etiketli Metinli PDF Oluşturma için örnek kaynak kodu 
 ```csharp
 
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Pdf Belgesi Oluştur
+// PDF Belgesi Oluştur
 Document document = new Document();
-// TaggedPdf ile çalışmaya yönelik İçerik edinin
+// TaggedPdf ile çalışmak için İçerik Alın
 ITaggedContent taggedContent = document.TaggedContent;
-// Documnet için Başlığı ve Dili Ayarlayın
+// Belge için Başlık ve Dil Ayarla
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
-// Metin Bloğu Düzeyinde Yapı Öğeleri Oluşturma
+// Metin Bloğu Düzeyinde Yapı Elemanları Oluşturun
 HeaderElement headerElement = taggedContent.CreateHeaderElement();
 headerElement.ActualText = "Heading 1";
 ParagraphElement paragraphElement1 = taggedContent.CreateParagraphElement();
@@ -91,46 +91,46 @@ document.Save( dataDir + "PDFwithTaggedText.pdf");
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for .NET kullanarak etiketli metin içeren bir PDF belgesinin nasıl oluşturulacağını öğrendiniz. Aspose.PDF'in belirgin içerik yapısı özellikleri, metninizi daha iyi erişilebilirlik ve anlambilim için yapılandırmanıza ve düzenlemenize olanak tanır.
+Bu eğitimde, Aspose.PDF for .NET kullanarak etiketli metin içeren bir PDF belgesinin nasıl oluşturulacağını öğrendiniz. Aspose.PDF'nin işaretli içerik yapısı özellikleri, metninizi daha iyi erişilebilirlik ve anlambilim için yapılandırmanıza ve düzenlemenize olanak tanır.
 
-### SSS'ler
+### SSS
 
 #### S: Aspose.PDF for .NET kullanarak etiketli metin içeren bir PDF belgesi oluşturmanın amacı nedir?
 
-C: Aspose.PDF for .NET'i kullanarak etiketli metin içeren bir PDF belgesi oluşturmak, metin içeriğinizi PDF belgesi içinde yapılandırmanıza ve düzenlemenize olanak tanır. Etiketli metin anlamsal anlam katar ve özellikle yardımcı teknolojileri kullanan kullanıcılar için erişilebilirliği artırır.
+A: Aspose.PDF for .NET kullanarak etiketli metin içeren bir PDF belgesi oluşturmak, PDF belgesindeki metin içeriğinizi yapılandırmanıza ve düzenlemenize olanak tanır. Etiketli metin, özellikle yardımcı teknolojileri kullananlar için anlamsal anlam ekler ve erişilebilirliği artırır.
 
-#### S: Aspose.PDF, etiketli metin içeren bir PDF belgesi oluşturmaya nasıl yardımcı olur?
+#### S: Aspose.PDF etiketli metin içeren bir PDF belgesi oluşturmaya nasıl yardımcı olur?
 
-C: Aspose.PDF for .NET, PDF belgelerini programlı olarak oluşturmak, değiştirmek ve dönüştürmek için işlevler sağlayan güçlü bir kitaplıktır. Bu öğreticide, kitaplığın etiketli içerik yapısı özellikleri, PDF belgesine yapılandırılmış ve anlamsal olarak anlamlı metin eklemek için kullanılır.
+A: Aspose.PDF for .NET, PDF belgelerini programatik olarak oluşturma, düzenleme ve dönüştürme işlevleri sağlayan güçlü bir kütüphanedir. Bu eğitimde, kütüphanenin etiketli içerik yapısı özellikleri PDF belgesine yapılandırılmış ve anlamsal olarak anlamlı metin eklemek için kullanılır.
 
-#### S: Aspose.PDF for .NET kullanarak etiketli metin içeren bir PDF belgesi oluşturmanın önkoşulları nelerdir?
+#### S: Aspose.PDF for .NET kullanarak etiketli metin içeren bir PDF belgesi oluşturmanın ön koşulları nelerdir?
 
-C: Başlamadan önce, Visual Studio'nun .NET framework ile kurulu olduğundan ve projenizde .NET için Aspose.PDF kütüphanesinin referans alındığından emin olun.
+C: Başlamadan önce, Visual Studio'nun .NET Framework ile birlikte yüklü olduğundan ve projenizde .NET için Aspose.PDF kütüphanesine başvurulduğundan emin olun.
 
-#### S: Sağlanan C# kodu, etiketli metin içeren bir PDF belgesini nasıl oluşturur?
+#### S: Sağlanan C# kodu etiketli metin içeren bir PDF belgesini nasıl oluşturur?
 
-C: Kod örneği, bir PDF belgesinin nasıl oluşturulacağını, çeşitli etiketli metin öğelerinin (başlıklar ve paragraflar gibi) nasıl tanımlanacağını ve bunların belgenin içeriğine nasıl ekleneceğini gösterir. Bu, Aspose.PDF tarafından sağlanan etiketli içerik yapısı özellikleri kullanılarak elde edilir.
+A: Kod örneği, bir PDF belgesinin nasıl oluşturulacağını, çeşitli etiketli metin öğelerinin (başlıklar ve paragraflar gibi) nasıl tanımlanacağını ve bunların belgenin içeriğine nasıl ekleneceğini gösterir. Bu, Aspose.PDF tarafından sağlanan etiketli içerik yapısı özellikleri kullanılarak gerçekleştirilir.
 
 #### S: Başlıklar ve paragraflar gibi etiketli metin öğelerini nasıl özelleştirebilirim?
 
- C: Etiketli metin öğelerini aşağıdaki gibi uygun yöntemleri kullanarak özelleştirebilirsiniz:`CreateHeaderElement` Ve`CreateParagraphElement` ve gibi özelliklerin ayarlanması`ActualText` anlamlı metin ve anlam bilgisi sağlamak.
+ A: Uygun yöntemleri kullanarak etiketli metin öğelerini özelleştirebilirsiniz, örneğin:`CreateHeaderElement` Ve`CreateParagraphElement` ve şu gibi özellikleri ayarlama`ActualText` anlamlı metin ve anlam sağlamak.
 
 #### S: Benzer teknikleri kullanarak listeler veya bağlantılar gibi diğer etiketli metin öğelerini ekleyebilir miyim?
 
-C: Evet, benzer teknikleri kullanarak listeler, bağlantılar veya diğer özel yapılar gibi diğer etiketli metin öğelerini ekleyebilirsiniz. Aspose.PDF, farklı türde etiketli içerik oluşturmak için çeşitli yöntemler sunarak belge anlambilimini geliştirmenize olanak tanır.
+A: Evet, benzer teknikleri kullanarak listeler, bağlantılar veya diğer özel yapılar gibi diğer etiketli metin öğelerini ekleyebilirsiniz. Aspose.PDF, farklı türde etiketli içerik oluşturmak için çeşitli yöntemler sunarak belge semantiğini geliştirmenize olanak tanır.
 
-####  S: Nasıl`SetTitle` method contribute to the PDF document's tagged text?
+####  S: Nasıl?`SetTitle` method contribute to the PDF document's tagged text?
 
- C:`SetTitle` yöntemi, belgenin amacı veya konusu hakkında kısa bir açıklama sağlayarak PDF belgesinin etiketli içeriğinin başlığını belirler. Bu bilgi, kullanıcıların etiketlenen metnin içeriğini anlamasına yardımcı olur.
+ A:`SetTitle` method, PDF belgesinin etiketli içeriğinin başlığını ayarlar ve belgenin amacı veya konusu hakkında kısa bir açıklama sağlar. Bu bilgi, kullanıcıların etiketli metnin bağlamını anlamalarına yardımcı olur.
 
 #### S: Etiketli metin kullanmak PDF belgelerinde erişilebilirliği nasıl artırır?
 
-C: Etiketli metin, belgeye anlamsal anlam katarak belgeyi engelli kullanıcılar veya yardımcı teknolojiler kullananlar için daha erişilebilir hale getirir. Ekran okuyucular ve diğer yardımcı cihazlar, gelişmiş kullanıcı deneyimi için etiketli metni yorumlayabilir ve sunabilir.
+A: Etiketli metin, belgeye anlamsal anlam katarak engelli kullanıcılar veya yardımcı teknolojiler kullananlar için daha erişilebilir hale getirir. Ekran okuyucular ve diğer yardımcı cihazlar, iyileştirilmiş kullanıcı deneyimi için etiketli metni yorumlayabilir ve sunabilir.
 
-####  S: Nasıl`SetLanguage` method enhance the tagged text in a PDF document?
+####  S: Nasıl?`SetLanguage` method enhance the tagged text in a PDF document?
 
- C:`SetLanguage`yöntemi, PDF belgesinin etiketli içeriğinin dil özelliğini ayarlar. Bu, etiketli metnin yazıldığı dilin belirtilmesine yardımcı olarak erişilebilirliği artırır ve dile özgü uygun işlemeyi mümkün kılar.
+ A:`SetLanguage`yöntem, PDF belgesinin etiketli içeriğinin dil niteliğini ayarlar. Bu, etiketli metnin yazıldığı dili belirtmeye yardımcı olur, erişilebilirliği iyileştirir ve uygun dil-özel işlemeyi etkinleştirir.
 
-#### S: Benzer teknikler kullanılarak etiketli metnin yanına resim veya multimedya gibi başka öğeler eklemek mümkün müdür?
+#### S: Benzer teknikler kullanılarak etiketli metinlerin yanına resim veya multimedya gibi başka öğeler eklemek mümkün müdür?
 
-C: Evet, benzer teknikleri kullanarak etiketli metnin yanına resimler, multimedya veya ek açıklamalar gibi başka öğeler de ekleyebilirsiniz. Aspose.PDF, belgedeki farklı içerik türlerini birleştirmek için geniş bir özellik yelpazesi sunar.
+A: Evet, benzer teknikleri kullanarak etiketli metnin yanına resim, multimedya veya açıklamalar gibi diğer öğeleri ekleyebilirsiniz. Aspose.PDF, belgedeki farklı içerik türlerini birleştirmek için çok çeşitli özellikler sunar.

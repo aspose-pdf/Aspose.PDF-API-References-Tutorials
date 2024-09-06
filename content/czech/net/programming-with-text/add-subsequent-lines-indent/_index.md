@@ -56,7 +56,7 @@ text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 ```
 
 ## Krok 7: Přidejte TextFragment na stránku
- Přidat`TextFragment` objekt proti kolekci odstavců na stránce.
+ Přidejte`TextFragment` objekt proti kolekci odstavců na stránce.
 
 ```csharp
 page.Paragraphs.Add(text);

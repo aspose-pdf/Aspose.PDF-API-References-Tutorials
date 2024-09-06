@@ -85,7 +85,7 @@ pdf1.Save(dataDir + "ConvertMemoryStreamImageToPdf_out.pdf");
 
 ## 步驟10：關閉MemoryStream對象
 
-關上`ms`物件使用`Close`方法來釋放資源。
+關閉`ms`物件使用`Close`方法來釋放資源。
 
 ```csharp
 ms. Close();
@@ -126,7 +126,7 @@ ms.Close();
 
 #### Q：使用 Aspose.PDF for .NET 將影像流轉換為 PDF 檔案的目的是什麼？
 
-答：將圖像流轉換為 PDF 檔案對於將圖像合併到 PDF 文件、建立基於圖像的 PDF 或在文字內容中嵌入圖像非常有用。
+答：將圖像流轉換為 PDF 文件對於將圖像合併到 PDF 文件、創建基於圖像的 PDF 或在文字內容中嵌入圖像非常有用。
 
 #### Q：Aspose.PDF for .NET 如何協助將影像流轉換為 PDF 檔案？
 

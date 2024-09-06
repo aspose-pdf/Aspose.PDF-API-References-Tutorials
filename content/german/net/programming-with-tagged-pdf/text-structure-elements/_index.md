@@ -1,13 +1,13 @@
 ---
-title: Textstrukturelemente in einer PDF-Datei
-linktitle: Textstrukturelemente in einer PDF-Datei
+title: Textstrukturelemente in der PDF-Datei
+linktitle: Textstrukturelemente in der PDF-Datei
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Textstrukturelemente in eine PDF-Datei hinzufügen. Verbessern Sie die Struktur und Zugänglichkeit Ihrer PDFs.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Textstrukturelemente in PDF-Dateien einfügen. Verbessern Sie die Struktur und Zugänglichkeit Ihrer PDFs.
 type: docs
 weight: 230
 url: /de/net/programming-with-tagged-pdf/text-structure-elements/
 ---
-In diesem ausführlichen Tutorial führen wir Sie Schritt für Schritt durch den bereitgestellten C#-Quellcode, um mit Aspose.PDF für .NET Textstrukturelemente in einer getaggten PDF-Datei zu erstellen. Befolgen Sie die nachstehenden Anweisungen, um zu verstehen, wie Sie Textstrukturelemente zu Ihrer PDF-Datei hinzufügen.
+In diesem ausführlichen Tutorial führen wir Sie Schritt für Schritt durch den bereitgestellten C#-Quellcode, um mit Aspose.PDF für .NET Textstrukturelemente in einer getaggten PDF-Datei zu erstellen. Befolgen Sie die nachstehenden Anweisungen, um zu verstehen, wie Sie Ihrer PDF-Datei Textstrukturelemente hinzufügen.
 
 ## Schritt 1: Einrichten der Umgebung
 
@@ -18,7 +18,7 @@ Bevor Sie beginnen, stellen Sie sicher, dass Sie Ihre Entwicklungsumgebung für 
 In diesem Schritt erstellen wir mit Aspose.PDF ein neues PDF-Dokumentobjekt.
 
 ```csharp
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 // Erstellen Sie das PDF-Dokument
@@ -27,38 +27,38 @@ Document document = new Document();
 
 Wir haben mit Aspose.PDF ein neues PDF-Dokument erstellt.
 
-## Schritt 3: Markieren Sie den Inhalt und legen Sie Titel und Sprache fest
+## Schritt 3: Markierten Inhalt abrufen und Titel und Sprache festlegen
 
-Lassen Sie uns nun den getaggten Inhalt des PDF-Dokuments abrufen und den Titel und die Sprache des Dokuments festlegen.
+Holen wir uns nun den getaggten Inhalt des PDF-Dokuments und legen den Dokumenttitel und die Sprache fest.
 
 ```csharp
-// Holen Sie sich getaggte Inhalte
+// Getaggte Inhalte
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Definieren Sie den Titel und die Sprache des Dokuments
+// Definieren Sie den Dokumenttitel und die Sprache
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
 Wir haben den Titel und die Sprache des getaggten PDF-Dokuments festgelegt.
 
-## Schritt 4: Erhalten des Wurzelstrukturelements
+## Schritt 4: Abrufen des Stammstrukturelements
 
-Lassen Sie uns nun das Stammstrukturelement des PDF-Dokuments ermitteln.
+Holen wir uns nun das Stammstrukturelement des PDF-Dokuments.
 
 ```csharp
-//Rufen Sie das Wurzelstrukturelement ab
+//Erhalten Sie das Stammstrukturelement
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-Wir haben das Wurzelstrukturelement des PDF-Dokuments erhalten.
+Wir haben das Stammstrukturelement des PDF-Dokuments erhalten.
 
 ## Schritt 5: Hinzufügen des Absatzstrukturelements
 
 Fügen wir nun unserem PDF-Dokument ein Absatzstrukturelement hinzu.
 
 ```csharp
-// Erstellen Sie das Absatzstrukturelement
+// Erstellen des Absatzstrukturelements
 ParagraphElement p = taggedContent.CreateParagraphElement();
 
 // Definition des Textes des Absatzstrukturelements
@@ -75,27 +75,27 @@ Wir haben unserem PDF-Dokument ein Absatzstrukturelement mit Text hinzugefügt.
 Nachdem wir nun mit der Bearbeitung des PDF-Dokuments fertig sind, speichern wir es in einer Datei.
 
 ```csharp
-// Speichern Sie das getaggte PDF-Dokument
+// Speichern des getaggten PDF-Dokuments
 document.Save(dataDir + "ElementDeStructureDeTexte.pdf");
 ```
 
-Wir haben das mit dem Textstrukturelement markierte PDF-Dokument im angegebenen Verzeichnis gespeichert.
+Wir haben das mit dem Strukturelement Text getaggte PDF-Dokument im angegebenen Verzeichnis gespeichert.
 
 
-### Beispielquellcode für Textstrukturelemente mit Aspose.PDF für .NET 
+### Beispiel-Quellcode für Textstrukturelemente mit Aspose.PDF für .NET 
 
 ```csharp
 
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Erstellen Sie ein PDF-Dokument
+// PDF-Dokument erstellen
 Document document = new Document();
 
 // Holen Sie sich Inhalte für die Arbeit mit TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Legen Sie Titel und Sprache für Documentt fest
+// Titel und Sprache für Dokument festlegen
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
@@ -103,47 +103,47 @@ taggedContent.SetLanguage("en-US");
 StructureElement rootElement = taggedContent.RootElement;
 ParagraphElement p = taggedContent.CreateParagraphElement();
 
-// Legen Sie „Text“ auf „Textstrukturelement“ fest
+// Text als Textstrukturelement festlegen
 p.SetText("Paragraph.");
 rootElement.AppendChild(p);
 
-// Markiertes PDF-Dokument speichern
+// Getaggtes PDF-Dokument speichern
 document.Save(dataDir + "TextStructureElement.pdf");
 ```
 
 ## Abschluss
 
-In diesem Tutorial haben wir gelernt, wie man Aspose.PDF für .NET verwendet, um Textstrukturelemente zu einem PDF-Dokument hinzuzufügen. Mit diesen Funktionen können Sie nun die Struktur und Zugänglichkeit Ihrer PDF-Dokumente verbessern.
+In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET Textstrukturelemente zu einem PDF-Dokument hinzufügt. Sie können diese Funktionen jetzt verwenden, um die Struktur und Zugänglichkeit Ihrer PDF-Dokumente zu verbessern.
 
-### FAQs
+### Häufig gestellte Fragen
 
 #### F: Was ist das Hauptziel dieses Tutorials zum Erstellen von Textstrukturelementen in einer getaggten PDF-Datei mit Aspose.PDF für .NET?
 
-A: Das Hauptaugenmerk dieses Tutorials liegt darauf, Sie durch den Prozess des Hinzufügens von Textstrukturelementen zu einem getaggten PDF-Dokument mit Aspose.PDF für .NET zu führen. Das Tutorial bietet Schritt-für-Schritt-Anleitungen und C#-Quellcode-Beispiele, die Ihnen dabei helfen, die Struktur und Zugänglichkeit Ihrer PDF-Dateien zu verbessern.
+A: Der Hauptfokus dieses Tutorials liegt darauf, Sie durch den Prozess des Hinzufügens von Textstrukturelementen zu einem getaggten PDF-Dokument mithilfe von Aspose.PDF für .NET zu führen. Das Tutorial enthält Schritt-für-Schritt-Anleitungen und C#-Quellcodebeispiele, die Ihnen dabei helfen, die Struktur und Zugänglichkeit Ihrer PDF-Dateien zu verbessern.
 
-#### F: Welche Voraussetzungen sind erforderlich, um diesem Tutorial zu Textstrukturelementen in einer mit Tags versehenen PDF-Datei zu folgen?
+#### F: Welche Voraussetzungen sind notwendig, um diesem Tutorial zu Textstrukturelementen in einer getaggten PDF-Datei folgen zu können?
 
-A: Bevor Sie beginnen, stellen Sie sicher, dass Sie Ihre Entwicklungsumgebung für die Verwendung von Aspose.PDF für .NET eingerichtet haben. Dazu müssen Sie die Aspose.PDF-Bibliothek installieren und Ihr Projekt so konfigurieren, dass es darauf verweist.
+A: Stellen Sie vor dem Start sicher, dass Sie Ihre Entwicklungsumgebung für die Verwendung von Aspose.PDF für .NET eingerichtet haben. Dazu müssen Sie die Aspose.PDF-Bibliothek installieren und Ihr Projekt so konfigurieren, dass es darauf verweist.
 
 #### F: Wie kann ich mit Aspose.PDF für .NET ein neues PDF-Dokument erstellen und Textstrukturelemente hinzufügen?
 
-A: Das Tutorial enthält C#-Quellcodebeispiele, die zeigen, wie man mit Aspose.PDF für .NET ein neues PDF-Dokument erstellt und ein Absatztextstrukturelement hinzufügt.
+A: Das Tutorial enthält C#-Quellcodebeispiele, die zeigen, wie Sie mit Aspose.PDF für .NET ein neues PDF-Dokument erstellen und ein Absatztextstrukturelement hinzufügen.
 
 #### F: Welche Bedeutung hat das Hinzufügen von Textstrukturelementen zu einem getaggten PDF-Dokument?
 
-A: Durch das Hinzufügen von Textstrukturelementen wird die semantische Struktur eines PDF-Dokuments verbessert. Dies verbessert die Zugänglichkeit für Screenreader und andere unterstützende Technologien und erleichtert Benutzern die Navigation und das Verständnis des Inhalts.
+A: Durch das Hinzufügen von Textstrukturelementen wird die semantische Struktur eines PDF-Dokuments verbessert. Dies verbessert die Zugänglichkeit für Bildschirmleseprogramme und andere unterstützende Technologien und erleichtert Benutzern die Navigation und das Verstehen des Inhalts.
 
-#### F: Wie stelle ich den Titel und die Sprache eines getaggten PDF-Dokuments mit Aspose.PDF für .NET ein?
+#### F: Wie lege ich mit Aspose.PDF für .NET den Titel und die Sprache eines getaggten PDF-Dokuments fest?
 
-A: Das Tutorial stellt C#-Quellcodebeispiele bereit, die veranschaulichen, wie man den Titel und die Sprache eines getaggten PDF-Dokuments mit Aspose.PDF für .NET festlegt.
+A: Das Tutorial bietet C#-Quellcodebeispiele, die veranschaulichen, wie Titel und Sprache eines getaggten PDF-Dokuments mit Aspose.PDF für .NET festgelegt werden.
 
 #### F: Wie kann ich mit Aspose.PDF für .NET ein Absatztextstrukturelement in einem PDF-Dokument erstellen?
 
- A: Das Tutorial enthält C#-Quellcodebeispiele, die zeigen, wie man mit dem ein Absatztextstrukturelement erstellt`CreateParagraphElement()`Methode und fügen Sie Text hinzu, indem Sie die verwenden`SetText()` Methode. Der Absatz wird dann an das Stammstrukturelement des getaggten PDF-Dokuments angehängt.
+ A: Das Tutorial enthält C#-Quellcodebeispiele, die zeigen, wie Sie ein Absatztextstrukturelement mithilfe des`CreateParagraphElement()`-Methode und fügen Sie Text hinzu mit der`SetText()` -Methode. Der Absatz wird dann an das Stammstrukturelement des getaggten PDF-Dokuments angehängt.
 
-#### F: Kann ich das Erscheinungsbild und die Formatierung der Textstrukturelemente anpassen, die ich dem PDF-Dokument hinzufüge?
+#### F: Kann ich das Aussehen und die Formatierung der Textstrukturelemente anpassen, die ich dem PDF-Dokument hinzufüge?
 
-A: Textstrukturelemente konzentrieren sich hauptsächlich auf semantische Struktur und Zugänglichkeit. Während Sie Textinhalte festlegen und möglicherweise grundlegende Formatierungen anwenden können, wird eine umfassende Anpassung des Erscheinungsbilds in der Regel durch andere PDF-Funktionen wie Stil, Schriftarten und Anmerkungen erreicht.
+A: Bei Textstrukturelementen stehen die semantische Struktur und Zugänglichkeit im Vordergrund. Während Sie Textinhalte festlegen und ggf. grundlegende Formatierungen anwenden können, wird eine umfassende Anpassung des Erscheinungsbilds normalerweise über andere PDF-Funktionen wie Stil, Schriftarten und Anmerkungen erreicht.
 
 #### F: Wie hilft der bereitgestellte Beispielquellcode beim Hinzufügen von Textstrukturelementen zu einem PDF-Dokument?
 

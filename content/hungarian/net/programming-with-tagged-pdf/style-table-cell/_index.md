@@ -7,7 +7,7 @@ type: docs
 weight: 160
 url: /hu/net/programming-with-tagged-pdf/style-table-cell/
 ---
-Üdvözöljük ebben a részletes oktatóanyagban a táblázatcellák Aspose.PDF for .NET használatával történő formázásával kapcsolatban. Ebben az útmutatóban részletesen elmagyarázzuk a mellékelt C#-forráskód minden egyes lépését, hogy segítsen megérteni, hogyan lehet a táblázatcellák stílusát meghatározni. Mielőtt elkezdené, győződjön meg arról, hogy telepítette az Aspose.PDF for .NET fájlt, és állítsa be a fejlesztői környezetet.
+Üdvözöljük ebben a részletes oktatóanyagban a táblázatcellák Aspose.PDF for .NET használatával történő formázásával kapcsolatban. Ebben az útmutatóban részletesen elmagyarázzuk a mellékelt C#-forráskód minden egyes lépését, hogy segítsen megérteni, hogyan kell stílusozni a táblázatcellákat. Mielőtt elkezdené, győződjön meg arról, hogy telepítette az Aspose.PDF for .NET fájlt, és állítsa be a fejlesztői környezetet.
 
 ## 1. lépés: A környezet beállítása
 
@@ -46,7 +46,7 @@ Megkaptuk a gyökérstruktúra elemet, amely a tömbelemek tárolójaként fog s
 Most hozzunk létre egy új táblázatszerkezet elemet a dokumentumunkhoz.
 
 ```csharp
-// Hozd létre a tömbstruktúra elemet
+// Hozza létre a tömbszerkezet elemet
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
@@ -285,7 +285,7 @@ Ebben az oktatóanyagban megtanultuk, hogyan lehet stílust készíteni a tábl�
 
 #### K: Mi a célja ennek az oktatóanyagnak a táblázatcellák formázásához az Aspose.PDF for .NET használatával?
 
-V: Ennek az oktatóanyagnak az a célja, hogy átfogó útmutatót nyújtson a PDF-dokumentumok táblázatcelláinak stílusozásához az Aspose.PDF könyvtár használatával a .NET-hez. Részletes utasításokat és C# forráskód példákat tartalmaz, amelyek segítenek megérteni és megvalósítani a táblázatcellák formázását.
+V: Ennek az oktatóanyagnak az a célja, hogy átfogó útmutatót nyújtson a PDF-dokumentumok táblázatcelláinak stílusához az Aspose.PDF-könyvtár használatával a .NET-hez. Részletes utasításokat és C# forráskód példákat tartalmaz, amelyek segítenek megérteni és megvalósítani a táblázatcellák formázását.
 
 #### K: Melyek az oktatóanyag követésének előfeltételei?
 

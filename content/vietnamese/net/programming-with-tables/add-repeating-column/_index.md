@@ -1,29 +1,29 @@
 ---
 title: Thêm cột lặp lại trong tài liệu PDF
 linktitle: Thêm cột lặp lại trong tài liệu PDF
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Tìm hiểu cách thêm cột lặp lại trong tài liệu PDF bằng Aspose.PDF cho .NET.
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách thêm cột lặp lại vào tài liệu PDF bằng Aspose.PDF cho .NET.
 type: docs
 weight: 20
 url: /vi/net/programming-with-tables/add-repeating-column/
 ---
-Trong hướng dẫn này, chúng ta sẽ tìm hiểu cách thêm cột lặp lại trong tài liệu PDF bằng Aspose.PDF cho .NET. Chúng tôi sẽ giải thích từng bước về mã nguồn trong C#. Khi kết thúc hướng dẫn này, bạn sẽ biết cách tạo bảng có cột lặp lại trong tài liệu PDF. Hãy bắt đầu!
+Trong hướng dẫn này, chúng ta sẽ tìm hiểu cách thêm một cột lặp lại trong tài liệu PDF bằng Aspose.PDF cho .NET. Chúng tôi sẽ giải thích mã nguồn bằng C# từng bước. Vào cuối hướng dẫn này, bạn sẽ biết cách tạo một bảng có cột lặp lại trong tài liệu PDF. Hãy bắt đầu nào!
 
 ## Bước 1: Thiết lập môi trường
-Trước tiên, hãy đảm bảo bạn đã thiết lập môi trường phát triển C# của mình với Aspose.PDF cho .NET. Thêm tham chiếu vào thư viện và nhập các không gian tên cần thiết.
+Trước tiên, hãy đảm bảo bạn đã thiết lập môi trường phát triển C# của mình với Aspose.PDF cho .NET. Thêm tham chiếu đến thư viện và nhập các không gian tên cần thiết.
 
 ## Bước 2: Tạo tài liệu PDF
-Trong bước này, chúng tôi tạo một tài liệu PDF mới.
+Ở bước này, chúng ta sẽ tạo một tài liệu PDF mới.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-Chúng tôi đã tạo một tài liệu PDF trống nơi chúng tôi có thể thêm nội dung.
+Chúng tôi đã tạo một tài liệu PDF trống để có thể thêm nội dung.
 
 ## Bước 3: Tạo bảng
-Ở bước này chúng ta tạo một bảng chính (`outerTable`) và một bảng lồng nhau (`mytable`) sẽ được lặp lại trong cột.
+Trong bước này chúng ta tạo một bảng chính (`outerTable`) và một bảng lồng nhau (`mytable`) sẽ được lặp lại trong cột.
 
 ```csharp
 Table outerTable = new Table();
@@ -49,7 +49,7 @@ mytable.RepeatingColumnsCount = 5;
 page.Paragraphs.Add(mytable);
 ```
 
-Đầu tiên chúng ta thêm bảng chính (`outerTable`) vào tài liệu PDF. Tiếp theo, chúng ta thêm bảng lồng nhau (`mytable` ) dưới dạng một đoạn văn trong một ô trong bảng chính. Chúng tôi cũng chỉ định số lượng cột lặp lại cho`mytable` (trong ví dụ này là 5 cột).
+Đầu tiên chúng ta thêm bảng chính (`outerTable`) vào tài liệu PDF. Tiếp theo, chúng ta thêm bảng lồng nhau (`mytable` ) như một đoạn văn trong một ô trong bảng chính. Chúng tôi cũng chỉ định số lượng cột lặp lại cho`mytable` (trong ví dụ này là 5 cột).
 
 ## Bước 5: Thêm tiêu đề và dòng
 Bây giờ chúng ta thêm tiêu đề và hàng vào bảng.
@@ -73,17 +73,17 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 }
 ```
 
-Trước tiên chúng ta thêm các tiêu đề vào hàng đầu tiên của bảng (`headerRow`). Sau đó, chúng tôi thêm các hàng dữ liệu từ một vòng lặp. Trong ví dụ này, chúng tôi thêm 6 hàng dữ liệu.
+Đầu tiên chúng ta thêm tiêu đề vào hàng đầu tiên của bảng (`headerRow`). Sau đó, chúng ta thêm các hàng dữ liệu từ một vòng lặp. Trong ví dụ này, chúng ta thêm 6 hàng dữ liệu.
 
 ## Bước 6: Lưu tài liệu PDF
-Cuối cùng, chúng tôi lưu tài liệu PDF vào tệp được chỉ định.
+Cuối cùng, chúng ta lưu tài liệu PDF vào tập tin đã chỉ định.
 
 ```csharp
 string outFile = dataDir + "AddRepeatingColumn_out.pdf";
 doc.Save(outFile);
 ```
 
-Đảm bảo chỉ định chính xác thư mục và tên tệp để lưu tệp PDF đầu ra.
+Hãy đảm bảo chỉ định đúng thư mục và tên tệp để lưu tệp PDF đầu ra.
 
 ### Mã nguồn ví dụ để thêm cột lặp lại bằng Aspose.PDF cho .NET
 
@@ -96,18 +96,18 @@ string outFile = dataDir + "AddRepeatingColumn_out.pdf";
 Document doc = new Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 
-// Khởi tạo một bảng bên ngoài chiếm toàn bộ trang
+// Tạo một bảng bên ngoài chiếm toàn bộ trang
 Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-//Khởi tạo một đối tượng bảng sẽ được lồng bên trong externalTable và sẽ nằm trong cùng một trang
+//Khởi tạo một đối tượng bảng sẽ được lồng bên trong outerTable sẽ ngắt bên trong cùng một trang
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
 
-// Thêm bảng bên ngoài vào các đoạn trang
-// Thêm mytable vào bên ngoàiTable
+// Thêm outerTable vào các đoạn văn trang
+// Thêm mytable vào outerTable
 page.Paragraphs.Add(outerTable);
 var bodyRow = outerTable.Rows.Add();
 var bodyCell = bodyRow.Cells.Add();
@@ -156,26 +156,26 @@ doc.Save(outFile);
 ```
 
 ## Phần kết luận
-Trong hướng dẫn này, chúng ta đã tìm hiểu cách thêm cột lặp lại trong tài liệu PDF bằng Aspose.PDF cho .NET. Bạn có thể sử dụng hướng dẫn từng bước này để tạo bảng có các cột lặp lại trong dự án C# của riêng bạn.
+Trong hướng dẫn này, chúng ta đã học cách thêm một cột lặp lại trong tài liệu PDF bằng Aspose.PDF cho .NET. Bạn có thể sử dụng hướng dẫn từng bước này để tạo các bảng có các cột lặp lại trong các dự án C# của riêng bạn.
 
-### Câu hỏi thường gặp về thêm cột lặp lại trong tài liệu PDF
+### Câu hỏi thường gặp về việc thêm cột lặp lại vào tài liệu PDF
 
-#### Câu hỏi: Tôi có thể tùy chỉnh số lượng cột lặp lại trong bảng lồng nhau không?
+#### H: Tôi có thể tùy chỉnh số lượng cột lặp lại trong bảng lồng nhau không?
 
- Đáp: Có, bạn có thể tùy chỉnh số lượng cột lặp lại trong bảng lồng nhau. Trong ví dụ được cung cấp, chúng tôi đặt`mytable.RepeatingColumnsCount = 5;`, nghĩa là sẽ có 5 cột lặp lại. Bạn có thể thay đổi giá trị này thành bất kỳ số nào bạn muốn.
+ A: Có, bạn có thể tùy chỉnh số lượng cột lặp lại trong bảng lồng nhau. Trong ví dụ được cung cấp, chúng tôi thiết lập`mytable.RepeatingColumnsCount = 5;`, nghĩa là sẽ có 5 cột được lặp lại. Bạn có thể thay đổi giá trị này thành bất kỳ số nào bạn muốn.
 
-#### Câu hỏi: Có thể thêm nhiều hàng vào bảng lồng nhau một cách linh hoạt không?
+#### H: Có thể thêm nhiều hàng vào bảng lồng nhau một cách động không?
 
-Đáp: Có, bạn có thể tự động thêm nhiều hàng vào bảng lồng nhau theo cách tương tự như trong hướng dẫn. Bạn có thể sử dụng vòng lặp hoặc bất kỳ logic nào khác để thêm hàng dựa trên dữ liệu của mình.
+A: Có, bạn có thể thêm động nhiều hàng hơn vào bảng lồng nhau theo cùng cách như trong hướng dẫn. Bạn có thể sử dụng vòng lặp hoặc bất kỳ logic nào khác để thêm hàng dựa trên dữ liệu của bạn.
 
-#### Câu hỏi: Tôi có thể áp dụng kiểu và định dạng cho bảng và các ô của bảng không?
+#### H: Tôi có thể áp dụng kiểu và định dạng cho bảng và các ô trong bảng không?
 
-Trả lời: Có, bạn có thể áp dụng kiểu và định dạng cho bảng cũng như các ô của bảng bằng Aspose.PDF cho .NET. Thư viện cung cấp nhiều thuộc tính và phương thức khác nhau để tùy chỉnh hình thức của bảng và nội dung của nó.
+A: Có, bạn có thể áp dụng kiểu và định dạng cho bảng và các ô của bảng bằng Aspose.PDF cho .NET. Thư viện cung cấp nhiều thuộc tính và phương pháp khác nhau để tùy chỉnh giao diện của bảng và nội dung của bảng.
 
-#### Câu hỏi: Aspose.PDF cho .NET có tương thích với .NET Core không?
+#### H: Aspose.PDF cho .NET có tương thích với .NET Core không?
 
-Trả lời: Có, Aspose.PDF cho .NET tương thích với .NET Core. Bạn có thể sử dụng nó trong cả ứng dụng .NET Framework và .NET Core.
+A: Có, Aspose.PDF cho .NET tương thích với .NET Core. Bạn có thể sử dụng nó trong cả ứng dụng .NET Framework và .NET Core.
 
-#### Câu hỏi: Tôi có thể sử dụng phương pháp này để thêm các cột lặp lại trong tài liệu PDF hiện có không?
+#### H: Tôi có thể sử dụng cách này để thêm các cột lặp lại vào tài liệu PDF hiện có không?
 
-Đáp: Có, bạn có thể sử dụng phương pháp này để thêm các cột lặp lại trong tài liệu PDF hiện có. Chỉ cần tải tài liệu hiện có bằng Aspose.PDF cho .NET và làm theo các bước tương tự để tạo và thêm cột lặp lại.
+A: Có, bạn có thể sử dụng cách tiếp cận này để thêm các cột lặp lại vào tài liệu PDF hiện có. Chỉ cần tải tài liệu hiện có bằng Aspose.PDF cho .NET và làm theo các bước tương tự để tạo và thêm cột lặp lại.

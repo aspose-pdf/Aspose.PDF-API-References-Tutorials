@@ -68,7 +68,7 @@ Odpověď: Ano, kromě nastavení duplexního režimu vám Aspose.PDF for .NET u
 
 #### Otázka: Jak mohu nastavit kvalitu tisku při tisku dokumentu PDF?
 
- A: Chcete-li nastavit kvalitu tisku, můžete použít`PrintQuality` vlastnictvím`Document` třídy v Aspose.PDF pro .NET. Můžete si vybrat z různých možností kvality tisku, jako je vysoká, střední nebo nízká, podle vašich požadavků.
+ A: Chcete-li nastavit kvalitu tisku, můžete použít`PrintQuality` majetek z`Document` třídy v Aspose.PDF pro .NET. Můžete si vybrat z různých možností kvality tisku, jako je vysoká, střední nebo nízká, podle vašich požadavků.
 
 #### Otázka: Je možné určit vlastní nastavení tisku pro různé stránky v dokumentu PDF?
 

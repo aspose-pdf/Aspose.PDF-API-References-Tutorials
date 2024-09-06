@@ -177,6 +177,6 @@ Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile sav
 
 答：是的，您可以使用以下命令向 SVG 圖像添加超連結：`Hyperlink`的財產`Aspose.Pdf.Image`實例。設定超連結 URL 或操作以使圖像可點擊。
 
-#### Q：Aspose.PDF for .NET 是否與 .NET Core 3.1 或更高版本相容？
+#### Q：Aspose.PDF for .NET 與 .NET Core 3.1 或更高版本相容嗎？
 
 答：是的，Aspose.PDF for .NET 與 .NET Core 3.1 及更高版本相容。您可以在 .NET Framework 和 .NET Core 應用程式中使用它。

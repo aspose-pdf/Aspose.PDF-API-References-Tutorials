@@ -1,15 +1,15 @@
 ---
-title: Wybierz przycisk opcji w dokumencie PDF
-linktitle: Wybierz przycisk opcji w dokumencie PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak wybrać przycisk opcji w dokumencie PDF przy użyciu Aspose.PDF dla .NET.
+title: Wybierz przycisk radiowy w dokumencie PDF
+linktitle: Wybierz przycisk radiowy w dokumencie PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak zaznaczyć przycisk opcji w dokumencie PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 250
 url: /pl/net/programming-with-forms/select-radio-button/
 ---
-Oto szczegółowy samouczek dotyczący wybierania przycisku opcji za pomocą Aspose.PDF dla .NET. Wykonaj następujące kroki:
+Oto szczegółowy samouczek, jak wybrać przycisk radiowy za pomocą Aspose.PDF dla .NET. Wykonaj następujące kroki:
 
-##  Krok 1: Zacznij od zdefiniowania katalogu swoich dokumentów, podając ścieżkę w pliku`dataDir` variable.
+##  Krok 1: Zacznij od zdefiniowania katalogu dokumentów, podając ścieżkę w`dataDir` variable.
 
 ```csharp
 // Ścieżka do katalogu dokumentów.
@@ -22,13 +22,13 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "RadioButton.pdf");
 ```
 
-## Krok 3: Pobierz pole przycisku opcji z formularza dokumentu.
+## Krok 3: Pobierz pole przycisku radiowego z formularza dokumentu.
 
 ```csharp
 RadioButtonField radioField = pdfDocument.Form["radio"] as RadioButtonField;
 ```
 
-## Krok 4: Określ indeks przycisku opcji, aby wybrać z grupy.
+## Krok 4: Określ indeks przycisku radiowego, który chcesz wybrać z grupy.
 
 ```csharp
 radioField. Selected = 2;
@@ -52,7 +52,7 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nRadio button successfully selected in group.\nFile saved to location: " + dataDir);
 ```
 
-### Przykładowy kod źródłowy przycisku opcji Wybierz przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla przycisku radiowego Select Radio Button przy użyciu Aspose.PDF dla .NET 
 ```csharp
 try
 {
@@ -77,27 +77,27 @@ catch (Exception ex)
 
 ## Wniosek
 
-W tym samouczku dowiedzieliśmy się, jak wybrać przycisk opcji za pomocą Aspose.PDF dla .NET. Wykonując kroki opisane powyżej, możesz manipulować i modyfikować przyciski opcji w dokumentach PDF za pomocą Aspose.PDF dla .NET.
+W tym samouczku nauczyliśmy się, jak wybrać przycisk opcji za pomocą Aspose.PDF dla .NET. Postępując zgodnie z powyższymi krokami, możesz manipulować i modyfikować przyciski opcji w dokumentach PDF za pomocą Aspose.PDF dla .NET.
 
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Czy mogę wybrać wiele przycisków opcji w grupie przy użyciu Aspose.PDF dla .NET?
+#### P: Czy mogę zaznaczyć wiele przycisków opcji w grupie, korzystając z Aspose.PDF dla .NET?
 
-O: Nie, przyciski opcji w grupie zaprojektowano tak, aby wzajemnie się wykluczały. W grupie można jednocześnie zaznaczyć tylko jeden przycisk opcji, a wybranie jednego spowoduje automatyczne odznaczenie dowolnego wcześniej wybranego przycisku opcji w tej samej grupie.
+A: Nie, przyciski radiowe w grupie są zaprojektowane tak, aby wzajemnie się wykluczać. Możesz wybrać tylko jeden przycisk radiowy na raz w grupie, a wybranie jednego spowoduje automatyczne odznaczenie dowolnego wcześniej wybranego przycisku radiowego w tej samej grupie.
 
-#### P: Jak odzyskać wybrany przycisk opcji w grupie przy użyciu Aspose.PDF dla .NET?
+#### P: W jaki sposób mogę pobrać wybrany przycisk radiowy z grupy, korzystając z Aspose.PDF dla platformy .NET?
 
- O: Aby odzyskać wybrany przycisk opcji w grupie, możesz użyć opcji`Selected` własność`RadioButtonField` klasa. Zwróci indeks wybranego przycisku radiowego w grupie.
+ A: Aby pobrać wybrany przycisk radiowy z grupy, możesz użyć`Selected` własność`RadioButtonField` class. Zwróci indeks wybranego przycisku radiowego w grupie.
 
-#### P: Czy mogę dostosować wygląd wybranego przycisku opcji w dokumencie PDF?
+#### P: Czy mogę dostosować wygląd wybranego przycisku radiowego w dokumencie PDF?
 
-O: Tak, możesz dostosować wygląd wybranego przycisku opcji za pomocą Aspose.PDF dla .NET. Możesz modyfikować jego kolor, rozmiar, styl obramowania i inne atrybuty wizualne, aby dopasować je do pożądanego wyglądu.
+A: Tak, możesz dostosować wygląd wybranego przycisku radiowego za pomocą Aspose.PDF dla .NET. Możesz modyfikować jego kolor, rozmiar, styl obramowania i inne atrybuty wizualne, aby dopasować go do pożądanego wyglądu.
 
-#### P: Czy możliwe jest programowe tworzenie nowych grup przycisków opcji przy użyciu Aspose.PDF dla .NET?
+#### P: Czy można programowo tworzyć nowe grupy przycisków radiowych, korzystając z Aspose.PDF dla platformy .NET?
 
-O: Tak, możesz programowo tworzyć nowe grupy przycisków opcji, używając Aspose.PDF dla .NET. Możesz dodać nowe przyciski opcji do formularza dokumentu i określić tę samą nazwę grupy dla każdego przycisku opcji, aby utworzyć nową grupę.
+A: Tak, możesz programowo tworzyć nowe grupy przycisków radiowych, używając Aspose.PDF dla .NET. Możesz dodawać nowe przyciski radiowe do formularza dokumentu i określać tę samą nazwę grupy dla każdego przycisku radiowego, aby utworzyć nową grupę.
 
-#### P: Czy Aspose.PDF dla .NET obsługuje pracę z interaktywnymi formularzami PDF?
+#### P: Czy Aspose.PDF dla platformy .NET obsługuje pracę z interaktywnymi formularzami PDF?
 
-Odp.: Tak, Aspose.PDF dla .NET w pełni obsługuje pracę z interaktywnymi formularzami PDF, w tym przyciskami opcji, polami tekstowymi, polami wyboru i innymi elementami formularzy. Korzystając z biblioteki, możesz z łatwością czytać, modyfikować i tworzyć interaktywne formularze PDF.
+A: Tak, Aspose.PDF dla .NET w pełni obsługuje pracę z interaktywnymi formularzami PDF, w tym przyciskami radiowymi, polami tekstowymi, polami wyboru i innymi elementami formularza. Możesz łatwo czytać, modyfikować i tworzyć interaktywne formularze PDF za pomocą biblioteki.

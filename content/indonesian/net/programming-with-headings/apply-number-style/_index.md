@@ -1,19 +1,19 @@
 ---
 title: Terapkan Gaya Angka Dalam File PDF
 linktitle: Terapkan Gaya Angka Dalam File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara menerapkan gaya penomoran pada judul dalam file PDF menggunakan Aspose.PDF untuk .NET. Panduan langkah demi langkah.
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara menerapkan gaya penomoran pada judul dalam berkas PDF menggunakan Aspose.PDF untuk .NET. Panduan langkah demi langkah.
 type: docs
 weight: 10
 url: /id/net/programming-with-headings/apply-number-style/
 ---
-Dalam tutorial ini, kami akan memandu Anda melalui kode sumber C# berikut langkah demi langkah untuk menerapkan gaya penomoran dalam file PDF menggunakan Aspose.PDF untuk .NET.
+Dalam tutorial ini, kami akan memandu Anda melalui kode sumber C# berikut langkah demi langkah untuk menerapkan gaya penomoran dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
 
-Pastikan Anda telah menginstal perpustakaan Aspose.PDF dan mengatur lingkungan pengembangan Anda sebelum memulai. Juga memiliki pengetahuan dasar tentang pemrograman C#.
+Pastikan Anda telah menginstal pustaka Aspose.PDF dan menyiapkan lingkungan pengembangan sebelum memulai. Anda juga harus memiliki pengetahuan dasar tentang pemrograman C#.
 
 ### Langkah 1: Pengaturan Direktori Dokumen
 
-Dalam kode sumber yang disediakan, Anda perlu menentukan direktori tempat Anda ingin menyimpan file PDF yang dihasilkan. Ubah variabel "dataDir" ke direktori yang diinginkan.
+Dalam kode sumber yang diberikan, Anda perlu menentukan direktori tempat Anda ingin menyimpan file PDF yang dihasilkan. Ubah variabel "dataDir" ke direktori yang diinginkan.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -21,7 +21,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ### Langkah 2: Membuat Dokumen PDF
 
-Kami membuat dokumen PDF baru dengan dimensi dan margin tertentu.
+Kami membuat dokumen PDF baru dengan dimensi dan margin yang ditentukan.
 
 ```csharp
 Document pdfDoc = new Document();
@@ -34,7 +34,7 @@ pdfDoc.PageInfo.Margin.Top = 72;
 pdfDoc.PageInfo.Margin.Bottom = 72;
 ```
 
-### Langkah 3: Membuat Halaman dan Kontainer Terapung
+### Langkah 3: Membuat Halaman dan Wadah Mengambang
 
 Kami menambahkan halaman ke dokumen dan membuat wadah mengambang untuk mengatur konten.
 
@@ -54,7 +54,7 @@ pdfPage.Paragraphs.Add(floatBox);
 
 ### Langkah 4: Tambahkan judul dengan penomoran
 
-Kami membuat header dengan penomoran tertentu dan menambahkannya ke wadah terapung.
+Kami membuat header dengan penomoran tertentu dan menambahkannya ke wadah mengambang.
 
 ```csharp
 Aspose.Pdf.Heading heading = new Aspose.Pdf.Heading(1);
@@ -94,7 +94,7 @@ pdfDoc.Save(dataDir);
 Console.WriteLine("\nNumbering style successfully applied to headers.\nFile saved as: " + dataDir);
 ```
 
-### Contoh kode sumber untuk Menerapkan Gaya Angka menggunakan Aspose.PDF untuk .NET 
+### Contoh kode sumber untuk Terapkan Gaya Angka menggunakan Aspose.PDF untuk .NET 
 ```csharp
 
 // Jalur ke direktori dokumen.
@@ -149,25 +149,25 @@ Console.WriteLine("\nNumber style applied successfully in headings.\nFile saved 
 
 ## Kesimpulan
 
-Dalam tutorial ini, kami menjelaskan cara menerapkan gaya penomoran pada judul dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda sekarang dapat menggunakan pengetahuan ini untuk membuat dokumen PDF dengan penomoran khusus untuk judulnya.
+Dalam tutorial ini, kami menjelaskan cara menerapkan gaya penomoran pada judul dalam dokumen PDF menggunakan Aspose.PDF for .NET. Kini Anda dapat menggunakan pengetahuan ini untuk membuat dokumen PDF dengan penomoran khusus untuk judul.
 
-### FAQ untuk menerapkan gaya nomor dalam file PDF
+### FAQ untuk menerapkan gaya angka dalam file PDF
 
 #### T: Apa yang dimaksud dengan gaya penomoran dalam dokumen PDF?
 
-J: Gaya penomoran mengacu pada format penomoran judul atau bagian dalam dokumen PDF. Ini dapat menyertakan angka, huruf, atau karakter lain untuk memberikan struktur hierarki.
+J: Gaya penomoran mengacu pada format penomoran judul atau bagian dalam dokumen PDF. Gaya ini dapat mencakup angka, huruf, atau karakter lain untuk menyediakan struktur hierarki.
 
-#### T: Mengapa saya perlu menerapkan gaya penomoran pada judul di dokumen PDF?
+#### T: Mengapa saya perlu menerapkan gaya penomoran pada judul dalam dokumen PDF?
 
-J: Menerapkan gaya penomoran pada judul meningkatkan keterbacaan dan pengorganisasian dokumen PDF Anda. Ini membantu pembaca dengan mudah menavigasi dan memahami struktur hierarki konten.
+A: Menerapkan gaya penomoran pada judul meningkatkan keterbacaan dan pengaturan dokumen PDF Anda. Ini membantu pembaca menavigasi dan memahami struktur hierarki konten dengan mudah.
 
 #### T: Apa itu Aspose.PDF untuk .NET?
 
-J: Aspose.PDF untuk .NET adalah perpustakaan yang memungkinkan pengembang bekerja dengan file PDF secara terprogram dalam aplikasi .NET. Ini menyediakan berbagai fitur untuk membuat, mengedit, mengonversi, dan memanipulasi dokumen PDF.
+J: Aspose.PDF untuk .NET adalah pustaka yang memungkinkan pengembang untuk bekerja dengan berkas PDF secara terprogram dalam aplikasi .NET. Pustaka ini menyediakan berbagai fitur untuk membuat, mengedit, mengonversi, dan memanipulasi dokumen PDF.
 
-#### T: Bagaimana cara mengimpor perpustakaan yang diperlukan untuk proyek C# saya?
+#### T: Bagaimana cara mengimpor pustaka yang dibutuhkan untuk proyek C# saya?
 
-J: Untuk mengimpor perpustakaan yang diperlukan untuk proyek C# Anda, sertakan arahan impor berikut:
+A: Untuk mengimpor pustaka yang diperlukan untuk proyek C# Anda, sertakan perintah impor berikut:
 
 ```csharp
 using Aspose.Pdf;
@@ -176,9 +176,9 @@ using Aspose.Pdf.InteractiveFeatures;
 
 Arahan ini memungkinkan Anda mengakses kelas dan metode yang diperlukan untuk bekerja dengan dokumen PDF dan menerapkan gaya penomoran.
 
-#### T: Bagaimana cara menentukan direktori untuk menyimpan file PDF yang dihasilkan?
+#### T: Bagaimana cara menentukan direktori untuk menyimpan berkas PDF yang dihasilkan?
 
-J: Dalam kode sumber yang disediakan, ubah variabel "dataDir" untuk menentukan direktori tempat Anda ingin menyimpan file PDF yang dihasilkan.
+A: Pada kode sumber yang disediakan, ubah variabel "dataDir" untuk menentukan direktori tempat Anda ingin menyimpan file PDF yang dihasilkan.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -186,7 +186,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
  Mengganti`"YOUR DOCUMENTS DIRECTORY"` dengan jalur direktori sebenarnya.
 
-#### Q: Bagaimana cara membuat dokumen PDF dengan dimensi dan margin tertentu?
+#### T: Bagaimana cara membuat dokumen PDF dengan dimensi dan margin yang ditentukan?
 
 A: Untuk membuat dokumen PDF dengan dimensi dan margin tertentu, gunakan kode berikut:
 
@@ -203,11 +203,11 @@ pdfDoc.PageInfo.Margin.Bottom = 72;
 
 #### T: Bagaimana cara menambahkan judul dengan gaya penomoran ke dokumen PDF?
 
-J: Untuk menambahkan judul dengan gaya penomoran ke dokumen PDF, gunakan contoh kode yang disediakan untuk membuat judul dan menyesuaikan gaya penomorannya. Sesuaikan properti seperti teks, gaya penomoran, nomor awal, dan urutan otomatis sesuai kebutuhan.
+A: Untuk menambahkan judul dengan gaya penomoran ke dokumen PDF, gunakan contoh kode yang disediakan untuk membuat judul dan menyesuaikan gaya penomorannya. Sesuaikan properti seperti teks, gaya penomoran, nomor awal, dan urutan otomatis sesuai kebutuhan.
 
 #### T: Bagaimana cara menyimpan dokumen PDF yang dihasilkan?
 
- A: Untuk menyimpan dokumen PDF yang dihasilkan, gunakan`Save` metode`pdfDoc` obyek:
+ A: Untuk menyimpan dokumen PDF yang dihasilkan, gunakan`Save` metode dari`pdfDoc` obyek:
 
 ```csharp
 dataDir = dataDir + "ApplyNumberStyle_out.pdf";
@@ -215,14 +215,14 @@ pdfDoc.Save(dataDir);
 Console.WriteLine("\nNumbering style applied to headers.\nFile saved as: " + dataDir);
 ```
 
-#### T: Bagaimana cara mengonfirmasi bahwa gaya penomoran telah diterapkan?
+#### T: Bagaimana saya dapat mengonfirmasi bahwa gaya penomoran telah diterapkan?
 
-J: Buka file PDF yang dihasilkan untuk memverifikasi bahwa gaya penomoran yang ditentukan telah diterapkan pada judul.
+A: Buka file PDF yang dihasilkan untuk memverifikasi bahwa gaya penomoran yang ditentukan telah diterapkan pada judul.
 
 #### T: Dapatkah saya menyesuaikan gaya penomoran lebih lanjut?
 
- J: Ya, Anda dapat menyesuaikan gaya penomoran lebih lanjut dengan menyesuaikan propertinya`Heading` objek, seperti tipe gaya penomoran, nomor awal, dan urutan otomatis.
+ A: Ya, Anda dapat menyesuaikan gaya penomoran lebih lanjut dengan menyesuaikan properti`Heading` objek, seperti jenis gaya penomoran, nomor awal, dan urutan otomatis.
 
-#### T: Dapatkah saya menerapkan gaya penomoran yang berbeda pada bagian dokumen yang berbeda?
+#### T: Dapatkah saya menerapkan gaya penomoran yang berbeda pada bagian-bagian dokumen yang berbeda?
 
-J: Ya, Anda dapat menerapkan gaya penomoran yang berbeda ke bagian dokumen yang berbeda dengan membuat beberapa`Heading` objek dengan gaya dan urutan yang berbeda.
+ A: Ya, Anda dapat menerapkan gaya penomoran yang berbeda ke bagian dokumen yang berbeda dengan membuat beberapa`Heading` objek dengan gaya dan urutan yang berbeda.

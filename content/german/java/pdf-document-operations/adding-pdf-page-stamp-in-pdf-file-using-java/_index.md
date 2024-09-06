@@ -2,27 +2,27 @@
 title: Hinzufügen eines PDF-Seitenstempels zur PDF-Datei mit Java
 linktitle: Hinzufügen eines PDF-Seitenstempels zur PDF-Datei mit Java
 second_title: Aspose.PDF Java PDF-Verarbeitungs-API
-description: Erfahren Sie, wie Sie mit Aspose.PDF PDF-Seitenstempel in Java hinzufügen. Diese Schritt-für-Schritt-Anleitung zeigt Ihnen, wie Sie mühelos Stempel für Ihre PDF-Dokumente anpassen.
+description: Erfahren Sie, wie Sie mit Aspose.PDF in Java PDF-Seitenstempel hinzufügen. Diese Schritt-für-Schritt-Anleitung zeigt Ihnen, wie Sie Stempel für Ihre PDF-Dokumente mühelos anpassen.
 type: docs
 weight: 13
 url: /de/java/pdf-document-operations/adding-pdf-page-stamp-in-pdf-file-using-java/
 ---
 
-## Einführung in das Hinzufügen eines PDF-Seitenstempels in der PDF-Datei mit Java
+## Einführung in das Hinzufügen eines PDF-Seitenstempels zur PDF-Datei mit Java
 
-PDFs sind ein weit verbreitetes Format für die gemeinsame Nutzung und Archivierung von Dokumenten. Oft besteht die Notwendigkeit, bestehende PDF-Dokumente mit zusätzlichen Informationen oder Branding zu versehen. In diesem Tutorial erfahren Sie, wie Sie mit Hilfe von Aspose.PDF für Java einen PDF-Seitenstempel mit Java hinzufügen.
+PDFs sind ein weit verbreitetes Format für die gemeinsame Nutzung und Archivierung von Dokumenten. Oft besteht die Notwendigkeit, vorhandenen PDF-Dokumenten zusätzliche Informationen oder ein Branding hinzuzufügen. In diesem Tutorial erfahren Sie, wie Sie mithilfe von Aspose.PDF für Java mit Java einen PDF-Seitenstempel hinzufügen.
 
-## PDF-Seitenstempel verstehen
+## Informationen zu PDF-Seitenstempeln
 
-Ein PDF-Seitenstempel ist ein Bild oder Text, der als Overlay zu einer PDF-Seite hinzugefügt wird. Dies kann nützlich sein, um Wasserzeichen, Logos, Seitenzahlen oder andere Informationen hinzuzufügen, die auf jeder Seite eines PDF-Dokuments erscheinen sollen.
+Ein PDF-Seitenstempel ist ein Bild oder Text, der einer PDF-Seite als Überlagerung hinzugefügt wird. Dies kann nützlich sein, um Wasserzeichen, Logos, Seitenzahlen oder andere Informationen hinzuzufügen, die auf jeder Seite eines PDF-Dokuments erscheinen sollen.
 
 ## Voraussetzungen
 
-Bevor wir uns mit dem Code befassen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
+Bevor wir uns in den Code vertiefen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
 - Java Development Kit (JDK) installiert
 - Integrierte Entwicklungsumgebung (IDE) wie Eclipse oder IntelliJ IDEA
--  Aspose.PDF für Java-Bibliothek (Sie können sie herunterladen[Hier](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF für Java-Bibliothek (Sie können es herunterladen[Hier](https://releases.aspose.com/pdf/java/).
 
 ## Einrichten der Umgebung
 
@@ -30,11 +30,11 @@ Beginnen wir mit der Einrichtung unserer Entwicklungsumgebung. Stellen Sie siche
 
 ## Abhängigkeiten hinzufügen
 
-Erstellen Sie ein neues Java-Projekt in Ihrer IDE und fügen Sie die Aspose.PDF for Java-Bibliothek zu den Abhängigkeiten Ihres Projekts hinzu. Sie können dies tun, indem Sie die JAR-Datei zum Build-Pfad Ihres Projekts hinzufügen.
+Erstellen Sie in Ihrer IDE ein neues Java-Projekt und fügen Sie die Aspose.PDF-Bibliothek für Java zu den Abhängigkeiten Ihres Projekts hinzu. Sie können dies tun, indem Sie die JAR-Datei zum Build-Pfad Ihres Projekts hinzufügen.
 
 ## Erstellen eines Java-Projekts
 
-Erstellen Sie ein neues Java-Projekt in Ihrer IDE und benennen Sie es nach Ihren Wünschen.
+Erstellen Sie in Ihrer IDE ein neues Java-Projekt und geben Sie ihm den gewünschten Namen.
 
 ## Aspose.PDF-Bibliothek importieren
 
@@ -46,7 +46,7 @@ import com.aspose.pdf.*;
 
 ## Definieren des PDF-Dokuments
 
-Um mit einem PDF-Dokument arbeiten zu können, müssen Sie es zunächst definieren. Lassen Sie uns ein PDF-Dokumentobjekt erstellen:
+Um mit einem PDF-Dokument arbeiten zu können, müssen Sie es zuerst definieren. Lassen Sie uns ein PDF-Dokumentobjekt erstellen:
 
 ```java
 Document pdfDocument = new Document("input.pdf");
@@ -62,7 +62,7 @@ TextStamp textStamp = new TextStamp("Sample Stamp Text");
 
 ## Konfigurieren des Seitenstempels
 
-Sie können verschiedene Eigenschaften des Seitenstempels konfigurieren, wie Schriftart, Farbe und Position. Hier ist ein Beispiel für die Konfiguration des Textstempels:
+Sie können verschiedene Eigenschaften des Seitenstempels konfigurieren, wie beispielsweise Schriftart, Farbe und Position. Hier ist ein Beispiel für die Konfiguration des Textstempels:
 
 ```java
 textStamp.getTextState().setFont(FontRepository.findFont("Arial"));
@@ -85,7 +85,7 @@ for (int pageNumber = 1; pageNumber <= pdfDocument.getPages().size(); pageNumber
 
 ## Speichern der geänderten PDF-Datei
 
-Sobald der Seitenstempel auf alle Seiten angewendet wurde, speichern Sie das geänderte PDF:
+Sobald der Seitenstempel auf allen Seiten angewendet wurde, speichern Sie das geänderte PDF:
 
 ```java
 pdfDocument.save("output.pdf");
@@ -93,25 +93,25 @@ pdfDocument.save("output.pdf");
 
 ## Ausführen der Java-Anwendung
 
-Jetzt können Sie Ihre Java-Anwendung ausführen. Der Seitenstempel wird dem angegebenen PDF-Dokument hinzugefügt.
+Jetzt können Sie Ihre Java-Anwendung ausführen. Sie fügt dem angegebenen PDF-Dokument den Seitenstempel hinzu.
 
 ## Abschluss
 
-In diesem Tutorial haben wir gelernt, wie man mit Java und der Aspose.PDF for Java-Bibliothek einen PDF-Seitenstempel zu einer PDF-Datei hinzufügt. Wir haben die grundlegenden Schritte untersucht, von der Einrichtung der Umgebung bis zur Konfiguration und Anwendung des Stempels. Sie können Ihre PDF-Dokumente jetzt ganz einfach durch das Hinzufügen von Wasserzeichen, Logos oder anderen Informationen verbessern. Viel Spaß beim Codieren!
+In diesem Tutorial haben wir gelernt, wie man mit Java und der Aspose.PDF-Bibliothek für Java einen PDF-Seitenstempel zu einer PDF-Datei hinzufügt. Wir haben die grundlegenden Schritte untersucht, vom Einrichten der Umgebung bis zum Konfigurieren und Anwenden des Stempels. Sie können Ihre PDF-Dokumente jetzt ganz einfach verbessern, indem Sie Wasserzeichen, Logos oder andere Informationen hinzufügen. Viel Spaß beim Programmieren!
 
-## FAQs
+## Häufig gestellte Fragen
 
-### Wie kann ich einen Bildstempel anstelle von Text hinzufügen?
+### Wie kann ich anstelle von Text einen Bildstempel hinzufügen?
 
- Sie können eine erstellen`ImageStamp` anstelle einer`TextStamp` und konfigurieren Sie es mit Ihrer Bilddatei.
+ Sie können ein`ImageStamp` anstelle eines`TextStamp` und konfigurieren Sie es mit Ihrer Bilddatei.
 
 ### Kann ich die Position des Seitenstempels anpassen?
 
-Ja, Sie können die vertikale und horizontale Ausrichtung anpassen, um den Stempel Ihren Anforderungen entsprechend zu positionieren.
+Ja, Sie können die vertikale und horizontale Ausrichtung anpassen, um den Stempel nach Ihren Anforderungen zu positionieren.
 
-### Unterstützt Aspose.PDF für Java andere PDF-Änderungen?
+### Unterstützt Aspose.PDF für Java andere PDF-Modifikationen?
 
-Ja, Aspose.PDF für Java bietet zahlreiche Funktionen zur PDF-Bearbeitung, einschließlich Text- und Bildextraktion, Zusammenführung und mehr.
+Ja, Aspose.PDF für Java bietet eine breite Palette an Funktionen zur PDF-Bearbeitung, darunter Text- und Bildextraktion, Zusammenführung und mehr.
 
 ### Ist die Nutzung von Aspose.PDF für Java kostenlos?
 
@@ -119,4 +119,4 @@ Aspose.PDF für Java ist eine kommerzielle Bibliothek, Sie können sie jedoch mi
 
 ### Wo finde ich weitere Dokumentation und Beispiele?
 
- Eine umfassende Dokumentation und Beispiele finden Sie auf der Aspose.PDF für Java-Dokumentationsseite:[Hier](https://reference.aspose.com/pdf/java/)
+ Ausführliche Dokumentationen und Beispiele finden Sie auf der Dokumentationsseite von Aspose.PDF für Java:[Hier](https://reference.aspose.com/pdf/java/)

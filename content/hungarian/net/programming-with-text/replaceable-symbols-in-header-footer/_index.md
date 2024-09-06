@@ -7,7 +7,7 @@ type: docs
 weight: 320
 url: /hu/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-Ebben az oktatóanyagban elmagyarázzuk, hogyan lehet cserélhető szimbólumokat használni a PDF-dokumentumok fejlécében és láblécében az Aspose.PDF könyvtár segítségével a .NET-hez. Lépésről lépésre végigvezetjük a PDF létrehozásának, a margók beállításának, a fejléc és lábléc cserélhető szimbólumokkal történő hozzáadásának, valamint a PDF mentésének a mellékelt C# forráskóddal.
+Ebben az oktatóanyagban elmagyarázzuk, hogyan lehet cserélhető szimbólumokat használni a PDF-dokumentumok fejlécében és láblécében az Aspose.PDF könyvtár használatával a .NET-hez. Lépésről lépésre végigvezetjük a PDF létrehozásának, a margók beállításának, a fejléc és lábléc cserélhető szimbólumokkal történő hozzáadásának, valamint a PDF mentésének a mellékelt C# forráskóddal.
 
 ## Előfeltételek
 
@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 1. lépés: Állítsa be a dokumentumkönyvtárat
 
- Először is be kell állítania annak a könyvtárnak az elérési útját, ahová a létrehozott PDF-fájlt menteni szeretné. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir`változót a kívánt könyvtár elérési útjával.
+ Először is be kell állítania annak a könyvtárnak az elérési útját, ahová a létrehozott PDF-fájlt menteni szeretné. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változót a kívánt könyvtár elérési útjával.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## 3. lépés: Állítsa be a margókat
 
- Az oldal margóit a segítségével állítjuk be`MarginInfo`osztály. Állítsa be a margóértékeket igényei szerint.
+Az oldal margóit a segítségével állítjuk be`MarginInfo` osztály. Állítsa be a margóértékeket igényei szerint.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -160,7 +160,7 @@ row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-//Sec1.Paragraphs.Add(New Text("Az Aspose.Total for Java az Aspose által kínált összes Java komponens összeállítása. A#$NL" + "napi rendszerességgel fordítják le, hogy biztosítsa az egyes összetevők legfrissebb verzióit #$NL " + "Az Aspose.Total for Java használatával a fejlesztők sokféle alkalmazást hozhatnak létre. #$NL #$NL #$NP" + "Az Aspose.Total for Java minden Java összetevő összeállítása Az Aspose által kínált. #$NL" + "napi rendszerességgel állítják össze, hogy minden Java összetevőnk legfrissebb verzióit tartalmazza. #$NL " + "Az Aspose.Total for Java fejlesztők #$NL #$NL #$NP" + "Az Aspose.Total for Java az Aspose által kínált összes Java komponens összeállítása. #$NL" + "napi rendszerességgel fordítják, hogy a legtöbbet tartalmazza minden Java-komponensünk legfrissebb verziója. #$NL " + "Az Aspose használata.Total for Java fejlesztők sokféle alkalmazást hozhatnak létre. #$NL #$NL"))
+//Sec1.Paragraphs.Add(New Text("Az Aspose.Total for Java az Aspose által kínált összes Java komponens összeállítása. A#$NL" + "napi rendszerességgel fordítják, hogy biztosítsa az egyes legfrissebb verziókat Java komponenseink közül #$NL " + "Az Aspose.Total for Java fejlesztők számos alkalmazást hozhatnak létre #$NL #$NP" + "Az Aspose.Total for Java minden Java komponens összeállítása. Az Aspose által kínált #$NL" + "napi alapon, hogy biztosítsa az egyes Java komponenseink legfrissebb verzióit " + " #$NL #$NL #$NP" + "Az Aspose.Total for Java az Aspose által kínált összes Java komponens összeállítása" + "napi alapon, hogy a legtöbbet tartalmazza Az Aspose.Total for Java fejlesztők számos alkalmazást hozhatnak létre. #$NL " + ".
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
 table.DefaultCellPadding = new MarginInfo();
@@ -225,7 +225,7 @@ V: A fejlécben és a láblécben található cserélhető szimbólumok akkor ha
 
 #### K: Hogyan adhatok cserélhető szimbólumokat a fejléchez és a lábléchez?
 
- V: Cserélhető szimbólumokat adhat hozzá az a`HeaderFooter` objektum az oldal fejlécéhez és láblécéhez. Ezután hozzáadhatja`TextFragment`objektumok a kívánt szöveggel, beleértve a cserélhető szimbólumokat, a`Paragraphs` gyűjteménye a`HeaderFooter` tárgy.
+ V: Cserélhető szimbólumokat adhat hozzá az a`HeaderFooter` objektum az oldal fejlécéhez és láblécéhez. Ezután hozzáadhatja`TextFragment`objektumok a kívánt szöveggel, beleértve a cserélhető szimbólumokat, a`Paragraphs` gyűjteménye a`HeaderFooter` objektum.
 
 #### K: Testreszabhatom a cserélhető szimbólumok megjelenését?
 
@@ -237,8 +237,8 @@ V: Számos cserélhető szimbólumot használhat, például:
 
 - `$p`: Aktuális oldalszám.
 - `$P`: Teljes oldalszám.
-- `$d`: Mostani dátum.
-- `$t`: Aktuális idő.
+- `$d`: Aktuális dátum.
+- `$t`: Jelenlegi idő.
 - Ön által meghatározott egyéni helyőrzők.
 
 #### K: Beilleszthetek más szöveget és formázást a cserélhető szimbólumok köré?

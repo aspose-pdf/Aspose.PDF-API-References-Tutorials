@@ -2,112 +2,110 @@
 title: 替換遺失的字體
 linktitle: 替換遺失的字體
 second_title: Aspose.PDF for .NET API 參考
-description: 使用 Aspose.PDF for .NET 取代 PDF 檔案中缺少字體的逐步指南。
+description: 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 取代 PDF 文件中缺少的字型。
 type: docs
 weight: 260
 url: /zh-hant/net/document-conversion/replace-missing-fonts/
 ---
-在本教學中，我們將引導您完成使用 Aspose.PDF for .NET 取代 PDF 檔案中缺少字體的過程。當您在缺少特定字體的電腦上開啟 PDF 檔案時，可能會出現字體顯示問題。在這種情況下，可以用機器上可用的另一種字體替換丟失的字體。透過執行以下步驟，您將能夠替換 PDF 檔案中遺失的字體。
+## 介紹
+
+您是否曾經開啟 PDF 文件卻發現缺少某些字體？這可能會令人沮喪，對吧？缺少字體可能會導致文件看起來與創建者的意圖完全不同。幸運的是，使用 Aspose.PDF for .NET，您可以輕鬆替換丟失的字體並確保您的 PDF 文件保持其預期的外觀。在本教程中，我們將逐步引導您完成該過程，使其簡單明了。
 
 ## 先決條件
-在開始之前，請確保滿足以下先決條件：
 
-- C# 程式語言的基礎知識。
-- 您的系統上安裝了適用於 .NET 的 Aspose.PDF 庫。
-- 開發環境，例如 Visual Studio。
+在我們開始之前，您需要準備好一些東西：
 
-## 第 1 步：找到遺失的字體
-第一步是找到 PDF 文件中遺失的字體。使用以下程式碼：
+1.  Aspose.PDF for .NET：請確定您已安裝 Aspose.PDF 庫。您可以從以下位置下載：[這裡](https://releases.aspose.com/pdf/net/).
+2. Visual Studio：一個可以編寫和測試程式碼的開發環境。
+3. C# 基礎知識：熟悉 C# 程式設計將有助於您更好地理解程式碼片段。
 
-```csharp
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+## 導入包
 
-Aspose.Pdf.Text.Font originalFont = null;
-try
-{
-     //找到原始的字體
-     originalFont = FontRepository.FindFont("AgencyFB");
-}
-catch(Exception)
-{
-     //目標計算機上缺少字體
-     //添加簡單的字體替換
-     FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
-}
-```
-
-一定要更換`"YOUR DOCUMENTS DIRECTORY"`與您的 PDF 檔案所在的實際目錄。
-
-## 第 2 步：替換缺少的字體
-接下來，我們將用另一種可用字體替換缺少的字體。使用以下程式碼：
+首先，您需要在 C# 專案中匯入必要的套件。您可以這樣做：
 
 ```csharp
-var fileNew = new FileInfo(dataDir + "newfile_out.pdf");
-var pdf = new Document(dataDir + "input.pdf");
-
-//將 PDF 文件轉換為 PDF/A 格式並消除錯誤
-pdf.Convert(dataDir + "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
-
-//儲存生成的 PDF 文件
-pdf.Save(fileNew.FullName);
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-一定要更換`"input.pdf"`原始 PDF 檔案的實際路徑以及`"newfile_out.pdf"`以及產生的 PDF 檔案所需的名稱。
+## 第 1 步：設定您的文件目錄
 
-## 步驟 3：儲存產生的 PDF 文件
-最後，我們將使用替換的字體保存生成的 PDF 文件。使用以下程式碼：
-
-```csharp
-//儲存生成的 PDF 文件
-pdf.Save(fileNew.FullName);
-```
-
-確保您已為生成的 PDF 檔案設定正確的目標路徑。
-
-### 使用 Aspose.PDF for .NET 取代缺少字體的範例原始碼
+首先，您需要指定文檔目錄的路徑。這是輸入 PDF 檔案所在的位置以及輸出檔案的儲存位置。
 
 ```csharp
 //文檔目錄的路徑。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+## 步驟2：初始化原始字體
+
+接下來，您需要嘗試尋找可能遺失的原始字體。在本例中，我們正在尋找「AgencyFB」。
+
+```csharp
 Aspose.Pdf.Text.Font originalFont = null;
 try
 {
-	originalFont = FontRepository.FindFont("AgencyFB");
+    originalFont = FontRepository.FindFont("AgencyFB");
 }
 catch (Exception)
 {
-	//目標計算機上缺少字體
-	FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
+    //目標計算機上缺少字體
+    FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
 }
+```
+
+在這裡，我們嘗試找到字體。如果沒有找到，我們會捕獲異常並用更常見的字體“Arial”替換它。這可以確保即使原始字體不可用，您的文件仍然看起來不錯。
+
+## 第 3 步：載入 PDF 文檔
+
+現在，讓我們載入您要處理的 PDF 文件。您需要指定輸入檔案路徑。
+
+```csharp
 var fileNew = new FileInfo(dataDir + "newfile_out.pdf");
 var pdf = new Document(dataDir + "input.pdf");
-pdf.Convert( dataDir +  "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
+```
+
+在這一步驟中，我們創建一個新的`FileInfo`輸出文件的物件並將輸入 PDF 文件載入到新的`Document`目的。
+
+## 步驟 4：轉換 PDF 文檔
+
+在儲存文件之前，最好將其轉換為特定的 PDF 格式。在本例中，我們將其轉換為 PDF/A-1B 格式，這是電子文件長期存檔的標準。
+
+```csharp
+pdf.Convert(dataDir + "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
+```
+
+此行轉換 PDF 並將所有錯誤記錄到指定的 XML 檔案中。如果轉換過程中出現任何問題，它們將記錄在「log.xml」中。
+
+## 步驟5：儲存更新後的PDF文檔
+
+最後，是時候用替換的字體儲存更新的 PDF 文件了。
+
+```csharp
 pdf.Save(fileNew.FullName);
 ```
 
+該行將修改後的 PDF 儲存到指定的輸出檔案路徑。就這樣，您已經成功替換了 PDF 文件中遺失的字體！
+
 ## 結論
-在本教學中，我們介紹了使用 Aspose.PDF for .NET 取代 PDF 檔案中缺少字體的逐步過程。按照上述說明操作，您將能夠成功替換 PDF 檔案中遺失的字體。
 
-### 常見問題解答
+替換 PDF 文件中遺失的字體不一定是一項艱鉅的任務。使用 Aspose.PDF for .NET，您可以輕鬆管理字體替換並確保您的文件看起來如其應有。透過遵循本教學中概述的步驟，即使某些字體不可用，您也可以保持 PDF 文件的完整性。因此，下次遇到字體遺失問題時，您就會知道該怎麼做！
 
-#### Q：什麼是 Aspose.PDF for .NET？
+## 常見問題解答
 
-答：Aspose.PDF for .NET 是一個功能強大的程式庫，可讓開發人員在 C# 應用程式中處理 PDF 文件。它提供各種功能，包括替換 PDF 文件中遺失的字體的能力。
+### 什麼是 Aspose.PDF for .NET？
+Aspose.PDF for .NET 是一個功能強大的程式庫，可讓開發人員以程式設計方式建立、操作和轉換 PDF 文件。
 
-#### Q：為什麼我會遇到 PDF 檔案中缺少字體的情況？
+### 我可以免費使用 Aspose.PDF 嗎？
+是的，Aspose 提供免費試用版，您可以使用它來評估該程式庫。你可以下載它[這裡](https://releases.aspose.com/).
 
-答：當在未安裝必要字體的電腦上開啟 PDF 檔案時，可能會出現 PDF 檔案遺失字體的情況。這可能會導致字體替換，影響文件的視覺外觀。
+### 如果沒有我需要的字體怎麼辦？
+您可以使用 Aspose.PDF 中的字體替換功能將缺少的字體替換為更常見的字體。
 
-#### Q：如何使用 Aspose.PDF for .NET 尋找並取代 PDF 檔案中缺少的字型？
+### 是否可以將 PDF 轉換為其他格式？
+絕對地！ Aspose.PDF支援轉換為各種格式，包括PDF/A、DOCX等。
 
-答：要尋找並取代遺失的字體，您可以使用`FontRepository.FindFont`檢查所需字體是否存在的方法。如果字體遺失，您可以使用以下命令新增字體替換`FontRepository.Substitutions`財產。
-
-#### Q：我可以自訂字體替換流程嗎？
-
-答：是的，您可以透過指定不同的字體進行替換來自訂字體替換過程。在提供的程式碼中，我們使用 Arial 作為缺少的「AgencyFB」字體的替代品，但您可以根據自己的喜好選擇不同的字體。
-
-#### Q：替換後如何確保字體渲染的準確性？
-
-答：Aspose.PDF for .NET 提供強大的字體處理功能，確保替換後準確的字體渲染。您可以預覽生成的 PDF 檔案以驗證字體替換。
+### 在哪裡可以找到對 Aspose.PDF 的支援？
+您可以在 Aspose 論壇中尋求支援並提出問題[這裡](https://forum.aspose.com/c/pdf/10).

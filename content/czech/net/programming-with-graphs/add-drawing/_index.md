@@ -25,7 +25,7 @@ Ve zdrojovém kódu je potřeba určit adresář, kam chcete výsledný PDF soub
 
 Kromě toho kód inicializuje proměnné pro komponenty alfa, červené, zelené a modré barvy.
 
-## Krok 4: Vytvoření barevného objektu s Alpha RGB
+## Krok 4: Vytvoření barevného objektu pomocí Alpha RGB
 
 Následující řádek kódu vytvoří objekt Color pomocí zadaných hodnot alfa, červené, zelené a modré:
 

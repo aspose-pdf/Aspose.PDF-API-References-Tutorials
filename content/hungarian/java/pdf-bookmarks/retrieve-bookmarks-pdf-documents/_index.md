@@ -90,7 +90,7 @@ Fedezze fel a valós helyzeteket, ahol a könyvjelzők PDF-ből való lekérése
 
 ## Következtetés
 
-A könyvjelzők lekérése PDF-dokumentumokból az Aspose.PDF for Java használatával egy olyan hatékony funkció, amely javíthatja a PDF-hez kapcsolódó projektjeit. A cikkben ismertetett lépések követésével és igényeinek megfelelő testreszabásával új lehetőségeket nyithat meg a dokumentumkezelésben és a felhasználói élmény javításában.
+A könyvjelzők lekérése PDF-dokumentumokból az Aspose.PDF for Java használatával egy olyan hatékony funkció, amely javíthatja a PDF-hez kapcsolódó projektjeit. Az ebben a cikkben ismertetett lépések követésével és igényeinek megfelelő testreszabásával új lehetőségeket nyithat meg a dokumentumkezelésben és a felhasználói élmény javításában.
 
 ## GYIK
 

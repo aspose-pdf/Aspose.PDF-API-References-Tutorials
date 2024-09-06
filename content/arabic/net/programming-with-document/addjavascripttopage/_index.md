@@ -1,119 +1,129 @@
 ---
-title: إضافة جافا سكريبت إلى ملف PDF
-linktitle: إضافة ملف جافا سكريبت PDF
-second_title: Aspose.PDF لمرجع .NET API
-description: تعرف على كيفية إضافة JavaScript إلى ملف PDF باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة مع دروس التعليمات البرمجية للبرمجة النصية على مستوى المستند والصفحة.
+title: إضافة Java Script إلى ملف PDF
+linktitle: إضافة ملف PDF Java Script
+second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
+description: تعرف على كيفية إضافة JavaScript إلى ملف PDF باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة مع دروس تعليمية حول البرمجة النصية على مستوى المستند والصفحة.
 type: docs
 weight: 10
 url: /ar/net/programming-with-document/addjavascripttopage/
 ---
-لإضافة JavaScript إلى ملف PDF، سوف نستخدم Aspose.PDF لـ .NET. توفر هذه المكتبة طريقة بسيطة وفعالة للعمل مع ملفات PDF في تطبيقات .NET. سترشدك الخطوات التالية خلال عملية إضافة JavaScript إلى ملف PDF باستخدام Aspose.PDF لـ .NET.
+## مقدمة
 
-## الخطوة 1: قم بتحميل ملف PDF
+هل تساءلت يومًا عن كيفية تحسين ملفات PDF الخاصة بك باستخدام عناصر تفاعلية مثل التنبيهات المنبثقة أو وظائف الطباعة التلقائية؟ حسنًا، الأخبار السارة هي أنه يمكنك القيام بذلك! باستخدام Aspose.PDF for .NET، يمكنك إضافة JavaScript إلى مستندات PDF الخاصة بك بسلاسة. سواء كنت تقوم بأتمتة المهام أو إنشاء تجارب مستخدم ديناميكية، فإن تضمين JavaScript في ملفات PDF يمنح ملفاتك ذلك المستوى الإضافي من الوظائف.
 
- الخطوة الأولى هي تحميل ملف PDF الذي تريد إضافة JavaScript إليه. يمكنك القيام بذلك باستخدام`Document` فئة مقدمة من Aspose.PDF لـ .NET. ال`Document` يوفر الفصل طرقًا لتحميل ملفات PDF وحفظها ومعالجتها.
+## المتطلبات الأساسية
+
+قبل أن ننتقل إلى جزء الترميز، هناك بعض الأشياء التي ستحتاج إلى إعدادها:
+
+-  Aspose.PDF لـ .NET: قم بتنزيل المكتبة من[إصدارات Aspose](https://releases.aspose.com/pdf/net/) أو الحصول على[نسخة تجريبية مجانية](https://releases.aspose.com/).
+- بيئة التطوير: أي بيئة تطوير متكاملة متوافقة مع .NET مثل Visual Studio.
+- المعرفة الأساسية بلغة C#: يفترض هذا الدليل أنك على دراية بقواعد لغة C# الأساسية.
+-  رخصة مؤقتة (اختياري): يمكنك الحصول على[رخصة مؤقتة](https://purchase.aspose.com/temporary-license/) إذا كنت تريد تجنب القيود أثناء التطوير.
+
+## استيراد الحزم
+
+قبل أن تبدأ في كتابة التعليمات البرمجية، ستحتاج إلى استيراد المساحات المطلوبة من مكتبة Aspose.PDF. ستتيح لك هذه المساحات التعامل مع ملفات PDF وإضافة إجراءات JavaScript بسهولة.
+
+```csharp
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Text;
+```
+
+الآن بعد أن قمت باستيراد مساحات الأسماء الصحيحة، فأنت الآن جاهز لبدء الترميز.
+
+## الخطوة 1: تحميل ملف PDF موجود
+
+أولاً وقبل كل شيء، عليك تحميل مستند PDF الذي تريد إضافة JavaScript إليه. تمهد هذه الخطوة الطريق أمام جميع التعديلات الإضافية. تخيل أن لديك ملف PDF تريد تحسينه بوظائف ديناميكية، مثل طباعة المستند تلقائيًا عند فتحه.
+
+إليك كيفية تحميل ملف PDF هذا:
 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// قم بتحميل ملفات PDF الموجودة
+// تحميل ملف PDF موجود
 Document doc = new Document(dataDir + "input.pdf");
 ```
+
+ في مقتطف التعليمات البرمجية هذا، نستخدم`Document` الفئة لتحميل ملف PDF موجود من الدليل المحدد. تأكد من استبدال`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي لملف PDF الخاص بك.
 
 ## الخطوة 2: إضافة JavaScript على مستوى المستند
 
-لإضافة JavaScript على مستوى المستند، سوف نستخدم`JavascriptAction` فئة مقدمة من Aspose.PDF لـ .NET. تتيح لك هذه الفئة تحديد عبارة JavaScript التي تريد إضافتها إلى ملف PDF.
+الآن، دعنا نضيف بعض أكواد JavaScript التي سيتم تشغيلها عند فتح المستند. في هذا المثال، سنكتب نصًا برمجيًا يفتح مربع حوار الطباعة بمجرد أن يفتح المستخدم ملف PDF.
+
+يُعد JavaScript على مستوى المستند مثاليًا للإجراءات التي تريد تطبيقها على ملف PDF بالكامل. فكر في الأمر كما لو كنت تقوم بإعداد قاعدة عالمية لمستندك.
+
+وهنا الكود:
 
 ```csharp
-// إضافة جافا سكريبت على مستوى الوثيقة
-// إنشاء مثيل لـ JavascriptAction باستخدام عبارة JavaScript المطلوبة
+// إضافة JavaScript على مستوى المستند
+// إنشاء JavascriptAction باستخدام بيان JavaScript المطلوب
 JavascriptAction javaScript = new JavascriptAction("this.print({bUI:true,bSilent:false,bShrinkToFit:true});");
 
-// قم بتعيين كائن JavascriptAction للإجراء المطلوب للمستند
+// تعيين كائن JavascriptAction إلى OpenAction الخاص بالمستند
 doc.OpenAction = javaScript;
 ```
 
-في هذا البرنامج التعليمي، نقوم بإضافة عبارة JavaScript التي ستقوم بطباعة ملف PDF بالخيارات المحددة عند فتح المستند.
+ في هذه الخطوة، نقوم بإنشاء`JavascriptAction` كائن يحدد وظيفة JavaScript لفتح مربع حوار الطباعة عند فتح المستند.`doc.OpenAction` يتم بعد ذلك تعيين هذا الإجراء JavaScript للخاصية.
 
-## الخطوة 3: إضافة جافا سكريبت على مستوى الصفحة
+## الخطوة 3: إضافة JavaScript على مستوى الصفحة
 
- لإضافة JavaScript على مستوى الصفحة، سنستخدم الأمر`JavascriptAction` الطبقة و`Actions` الخاصية المقدمة من Aspose.PDF لـ .NET. تتيح لك هذه الخاصية تحديد عبارات JavaScript التي سيتم تنفيذها عند فتح الصفحة أو إغلاقها.
+لا يلزم أن تؤثر كل الإجراءات على المستند بأكمله. في بعض الأحيان، قد ترغب في حدوث إجراءات معينة عند فتح أو إغلاق صفحات معينة. هنا، سنقوم بإعداد إجراءات JavaScript عند فتح وإغلاق صفحة معينة (لنفترض الصفحة 2).
+
+يُعد JavaScript على مستوى الصفحة مفيدًا للتفاعلات المستهدفة. ويمكن أن يكون أي شيء بدءًا من عرض رسالة عند انتقال المستخدم إلى صفحة، إلى إجراءات مخصصة مثل ملء حقول النموذج تلقائيًا.
+
+إليك كيفية القيام بذلك:
 
 ```csharp
-// إضافة جافا سكريبت على مستوى الصفحة
-doc.Pages[2].Actions.OnOpen = new JavascriptAction("app.alert('page 1 opened')");
-doc.Pages[2].Actions.OnClose = new JavascriptAction("app.alert('page 1 closed')");
+// إضافة JavaScript على مستوى الصفحة
+doc.Pages[2].Actions.OnOpen = new JavascriptAction("app.alert('Page 2 opened')");
+doc.Pages[2].Actions.OnClose = new JavascriptAction("app.alert('Page 2 closed')");
 ```
 
-في هذا البرنامج التعليمي، نقوم بإضافة عبارات JavaScript التي ستعرض رسالة تنبيه عند فتح الصفحة أو إغلاقها.
+في مقتطف التعليمات البرمجية هذا، نضيف إجراءين JavaScript:
+1. إجراء OnOpen: يعرض تنبيهًا ينص على "تم فتح الصفحة 2" عندما يفتح المستخدم الصفحة 2.
+2. إجراء OnClose: يعرض تنبيهًا ينص على "تم إغلاق الصفحة 2" عندما ينتقل المستخدم بعيدًا عن الصفحة 2.
 
-## الخطوة 4: احفظ ملف PDF
+يضيف هذا طبقة من التفاعل إلى ملف PDF الخاص بك. تخيل توجيه المستخدم عبر سلسلة من الخطوات على صفحات مختلفة، مع ظهور تنبيهات عند دخوله أو خروجه من الصفحة.
 
-بعد إضافة JavaScript إلى ملف PDF، ستحتاج إلى حفظ الملف المعدل. يمكنك القيام بذلك باستخدام`Save` الطريقة المقدمة من`Document` فصل.
+## الخطوة 4: احفظ مستند PDF
+
+لقد أضفت الآن JavaScript إلى كل من المستند والصفحات المحددة. الخطوة الأخيرة هي حفظ ملف PDF المعدل في الموقع المطلوب. هذا الجزء بسيط ولكنه بالغ الأهمية - لا تنس حفظ عملك!
+
+وهنا الكود:
 
 ```csharp
+// حدد مسار ملف الإخراج
 dataDir = dataDir + "JavaScript-Added_out.pdf";
-// حفظ وثيقة PDF
+
+// احفظ مستند PDF المحدث
 doc.Save(dataDir);
 
-Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);
+Console.WriteLine("\nJavaScript added successfully to the PDF.\nFile saved at " + dataDir);
 ```
 
-سيحفظ هذا الرمز ملف PDF المعدل في الدليل المحدد.
-
-### مثال على التعليمات البرمجية المصدر لإضافة Java Script إلى الصفحة باستخدام Aspose.PDF لـ .NET
-
-```csharp
-            
-// المسار إلى دليل المستندات.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// قم بتحميل ملفات PDF الموجودة
-Document doc = new Document(dataDir + "input.pdf");
-
-// إضافة جافا سكريبت على مستوى الوثيقة
-// إنشاء مثيل لـ JavascriptAction باستخدام عبارة JavaScript المرغوبة
-JavascriptAction javaScript = new JavascriptAction("this.print({bUI:true,bSilent:false,bShrinkToFit:true});");
-
-// قم بتعيين كائن JavascriptAction للإجراء المطلوب للمستند
-doc.OpenAction = javaScript;
-
-// إضافة جافا سكريبت على مستوى الصفحة
-doc.Pages[2].Actions.OnOpen = new JavascriptAction("app.alert('page 1 opened')");
-doc.Pages[2].Actions.OnClose = new JavascriptAction("app.alert('page 1 closed')");
-
-dataDir = dataDir + "JavaScript-Added_out.pdf";
-// حفظ وثيقة PDF
-doc.Save(dataDir);
-
-Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);     
-```
+ في هذا المقطع، نقوم بحفظ المستند المحدث باستخدام JavaScript المضاف إلى ملف جديد يسمى`"JavaScript-Added_out.pdf"`يضمن هذا عدم استبدال ملفك الأصلي، ويمنحك نسخة احتياطية للعمل عليها.
 
 ## خاتمة
 
-في هذه المقالة، شرحنا كيفية إضافة JavaScript إلى ملف PDF على مستوى المستند ومستوى الصفحة باستخدام Aspose.PDF لـ .NET. لقد قدمنا تعليمات خطوة بخطوة وقمنا بتضمين كود المصدر الكامل لكل مثال. باستخدام هذه المعرفة، يمكنك إضافة JavaScript إلى ملفات PDF الخاصة بك وتخصيص سلوكها وفقًا لاحتياجاتك.
+إن إضافة JavaScript إلى ملفات PDF باستخدام Aspose.PDF for .NET هي طريقة فعّالة لإنشاء ملفات PDF تفاعلية وديناميكية. سواء كنت تقوم بأتمتة مهام مثل الطباعة أو إنشاء تنبيهات مخصصة، فإن القدرة على تضمين JavaScript في ملف PDF الخاص بك تجعل مستنداتك أكثر جاذبية ووظيفية.
 
+## الأسئلة الشائعة
 
-### الأسئلة الشائعة لإضافة جافا سكريبت إلى ملف PDF
+### هل يمكنني إضافة إجراءات JavaScript متعددة إلى صفحات مختلفة في ملف PDF؟
+نعم، يمكنك تعيين إجراءات JavaScript مختلفة لصفحات فردية أو للمستند بأكمله.
 
-#### س: ما هو Aspose.PDF لـ .NET؟
+### هل من الممكن إزالة JavaScript من ملف PDF بعد إضافته؟
+نعم، يمكنك إزالة أو تعديل إجراءات JavaScript الموجودة عن طريق مسح`Actions` خصائص المستند أو الصفحة.
 
-ج: Aspose.PDF for .NET هي مكتبة قوية تمكن المطورين من العمل مع ملفات PDF في تطبيقات .NET. يوفر مجموعة واسعة من الميزات لإنشاء مستندات PDF وتعديلها ومعالجتها.
+### ما هي أنواع وظائف JavaScript التي يمكنني استخدامها في ملف PDF؟
+بإمكانك استخدام أي JavaScript يدعمه محرك JavaScript الخاص بـ Adobe Acrobat، مثل الطباعة والتنبيهات ومعالجة النماذج.
 
-#### س: هل يمكنني إضافة JavaScript إلى مستند PDF باستخدام Aspose.PDF لـ .NET؟
+### هل يعمل JavaScript في جميع برامج عرض PDF؟
+ستعمل معظم إجراءات JavaScript في برامج عرض PDF التي تدعم ملفات PDF التفاعلية، مثل Adobe Acrobat. ومع ذلك، قد لا تدعم بعض برامج قراءة PDF الأساسية JavaScript.
 
-ج: نعم، يسمح لك Aspose.PDF for .NET بإضافة JavaScript إلى كل من مستوى المستند ومستوى الصفحة لملف PDF، مما يتيح لك إنشاء مستندات PDF ديناميكية وتفاعلية.
-
-#### س: كيف يمكنني تحميل ملف PDF موجود باستخدام Aspose.PDF لـ .NET؟
-
- ج: يمكنك تحميل ملف PDF موجود باستخدام الملف`Document` الطبقة وأساليبها، كما هو موضح في الدليل خطوة بخطوة.
-
-#### س: ما أنواع إجراءات JavaScript التي يمكنني إضافتها إلى مستند PDF؟
-
-ج: باستخدام Aspose.PDF for .NET، يمكنك إضافة مجموعة واسعة من إجراءات JavaScript، مثل الطباعة ورسائل التنبيه ومعالجة حقل النموذج والمزيد.
-
-#### س: هل Aspose.PDF for .NET مناسب للمشاريع التجارية؟
-
-ج: نعم، Aspose.PDF for .NET هي مكتبة موثوقة وقوية تُستخدم بشكل شائع في المشاريع التجارية لمعالجة ملفات PDF ومهام الإنشاء.
-
+### هل يمكنني تشغيل إجراءات JavaScript استنادًا إلى إدخال المستخدم في ملف PDF؟
+نعم، يمكنك ربط JavaScript بحقول النموذج لتشغيل الإجراءات استنادًا إلى إدخال المستخدم.

@@ -20,7 +20,7 @@ Mielőtt belemerülnénk a kódolásba, győződjön meg arról, hogy beállíto
 - Aspose.PDF a Java könyvtárhoz
 - Java programozási alapismeretek
 
-## Elkezdeni
+## Kezdő lépések
 
 Kezdjük Java projektünk beállításával és az Aspose.PDF könyvtár hozzáadásával. Ha még nem tette meg, letöltheti az Aspose.PDF for Java könyvtárat innen[itt](https://releases.aspose.com/pdf/java/).
 

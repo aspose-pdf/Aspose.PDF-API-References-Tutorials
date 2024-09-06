@@ -36,7 +36,7 @@ Document pdfDocument = new Document(dataDir + "PageToPNG.pdf");
 ```csharp
 using (FileStream imageStream = new FileStream(dataDir + "aspose-logo.png", FileMode.Create))
 {
-// Δημιουργήστε ένα αντικείμενο Ανάλυση
+//Δημιουργήστε ένα αντικείμενο Ανάλυση
 Resolution resolution = new Resolution(300);
 // Δημιουργήστε μια συσκευή PNG με τα καθορισμένα χαρακτηριστικά (Πλάτος, Ύψος, Ανάλυση)
 PngDevice pngDevice = new PngDevice(resolution);
@@ -61,14 +61,14 @@ using (FileStream imageStream = new FileStream(dataDir + "aspose-logo.png", File
 	Resolution resolution = new Resolution(300);
 	// Δημιουργία συσκευής PNG με καθορισμένα χαρακτηριστικά (πλάτος, ύψος, ανάλυση)
 	PngDevice pngDevice = new PngDevice(resolution);
-	//Μετατρέψτε μια συγκεκριμένη σελίδα και αποθηκεύστε την εικόνα σε ροή
+	// Μετατρέψτε μια συγκεκριμένη σελίδα και αποθηκεύστε την εικόνα σε ροή
 	pngDevice.Process(pdfDocument.Pages[1], imageStream);
 	// Κλείσιμο ροής
 	imageStream.Close();
 }
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Συγχαρητήρια ! Μετατρέψατε με επιτυχία μια σελίδα σε μορφή PNG χρησιμοποιώντας το Aspose.PDF για .NET. Τώρα μπορείτε να εφαρμόσετε αυτήν τη μέθοδο στα δικά σας έργα για να εξαγάγετε συγκεκριμένες σελίδες από αρχεία PDF και να τις αποθηκεύσετε ως εικόνες PNG.
 

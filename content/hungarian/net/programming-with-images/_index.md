@@ -18,7 +18,7 @@ Az Aspose.PDF for .NET "Programozás képekkel" oktatóanyaga végigvezeti a PDF
 | [CGM kép PDF-be](./cgm-image-to-pdf/) | Könnyen konvertálhat CGM-képet PDF-be az Aspose.PDF for .NET segítségével. |  
 | [Konvertálja az összes oldalt EMF-re](./convert-all-pages-to-emf/) | Könnyen konvertálhatja a PDF-dokumentum összes oldalát EMF-fájlokká az Aspose.PDF for .NET segítségével. |  
 | [Minden oldal konvertálása PNG formátumba](./convert-all-pages-to-png/) | Könnyen konvertálhatja a PDF-dokumentum összes oldalát PNG-fájlokká az Aspose.PDF for .NET segítségével. |  
-| [A képfolyam konvertálása PDF-fájlba](./convert-image-stream-to-pdf/) | Könnyen konvertálhat képfolyamot PDF-fájllá az Aspose.PDF for .NET segítségével. |  
+| [Az Image Stream konvertálása PDF-fájlba](./convert-image-stream-to-pdf/) | Könnyen konvertálhat képfolyamot PDF-fájllá az Aspose.PDF for .NET segítségével. |  
 | [Oldalrégió konvertálása DOM-má](./convert-page-region-to-dom/) | Könnyen konvertálhat egy PDF-oldal adott régióját dokumentumobjektum-modellvé (DOM) az Aspose.PDF for .NET segítségével. |  
 | [Konvertálás BMP-re](./convert-to-bmp/) | Könnyen konvertálhat PDF-et egyedi BMP-képekké az Aspose.PDF for .NET segítségével. |  
 | [Bélyegképek létrehozása PDF fájlban](./create-thumbnail-images/) | Könnyen létrehozhat indexképet PDF-fájlban az Aspose.PDF for .NET segítségével. |  

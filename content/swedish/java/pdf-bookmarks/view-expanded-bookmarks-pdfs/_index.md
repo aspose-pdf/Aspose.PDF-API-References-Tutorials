@@ -36,7 +36,7 @@ Importera Aspose.PDF-biblioteket i ditt Java-projekt. Här är ett enkelt exempe
 import com.aspose.pdf.*;
 ```
 
-### Steg 3: Ladda PDF-dokumentet
+### Steg 3: Laddar PDF-dokumentet
 Ladda sedan in PDF-dokumentet du vill arbeta med:
 
 ```java
@@ -65,7 +65,7 @@ I den här artikeln undersökte vi vikten av utökade bokmärken i PDF-dokument 
 
 ### Hur kan jag ladda ner Aspose.PDF för Java?
 
- Du kan ladda ner Aspose.PDF för Java från[den här länken](https://releases.aspose.com/pdf/java/).
+ Du kan ladda ner Aspose.PDF för Java från[denna länk](https://releases.aspose.com/pdf/java/).
 
 ### Kan jag använda Aspose.PDF för Java i kommersiella projekt?
 

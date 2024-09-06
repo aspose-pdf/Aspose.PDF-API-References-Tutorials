@@ -1,25 +1,25 @@
 ---
 title: Zmień hasło w pliku PDF
 linktitle: Zmień hasło w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak zmienić hasło w pliku PDF za pomocą Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak zmienić hasło w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 10
 url: /pl/net/programming-with-security-and-signatures/change-password/
 ---
-tym samouczku przeprowadzimy Cię przez proces zmiany hasła w pliku PDF przy użyciu Aspose.PDF dla .NET. Biblioteka umożliwia otwarcie istniejącego pliku PDF, modyfikację jego hasła i zapisanie zaktualizowanej wersji. Ta funkcja przydaje się, gdy chcesz zabezpieczyć swoje dokumenty PDF poprzez zmianę hasła.
+tym samouczku przeprowadzimy Cię przez proces zmiany hasła w pliku PDF przy użyciu Aspose.PDF dla .NET. Biblioteka umożliwia otwarcie istniejącego pliku PDF, modyfikację jego hasła i zapisanie zaktualizowanej wersji. Ta funkcja przydaje się, gdy musisz zabezpieczyć dokumenty PDF, zmieniając hasło.
 
 ## Krok 1: Wymagania
 
-Zanim zaczniemy, upewnij się, że masz następujące wymagania wstępne:
+Zanim zaczniemy, upewnij się, że spełniasz następujące wymagania wstępne:
 
 - Podstawowa znajomość języka programowania C#
-- Program Visual Studio zainstalowany na Twoim komputerze
-- Zainstalowana biblioteka Aspose.PDF dla .NET
+- Visual Studio zainstalowane na Twoim komputerze
+- Zainstalowano bibliotekę Aspose.PDF dla .NET
 
 ## Krok 2: Konfigurowanie środowiska
 
-Aby rozpocząć, wykonaj następujące kroki, aby skonfigurować środowisko programistyczne:
+Aby rozpocząć, wykonaj poniższe kroki, aby skonfigurować środowisko programistyczne:
 
 1. Otwórz program Visual Studio i utwórz nowy projekt C#.
 2. Zainstaluj bibliotekę Aspose.PDF dla .NET przy użyciu Menedżera pakietów NuGet.
@@ -40,7 +40,7 @@ Document document = new Document(dataDir + "ChangePassword.pdf", "owner");
 
 ## Krok 4: Zmiana hasła
 
- Po załadowaniu dokumentu PDF możesz zmienić jego hasło za pomocą`ChangePasswords` metoda. Metoda wymaga trzech parametrów: bieżącego hasła właściciela, nowego hasła użytkownika i nowego hasła właściciela.
+ Po załadowaniu dokumentu PDF możesz zmienić jego hasło, korzystając z`ChangePasswords`Metoda. Metoda wymaga trzech parametrów: bieżącego hasła właściciela, nowego hasła użytkownika i nowego hasła właściciela.
 
 ```csharp
 document.ChangePasswords("owner", "newuser", "newowner");
@@ -50,7 +50,7 @@ Pamiętaj, aby zastąpić symbole zastępcze rzeczywistymi hasłami, które chce
 
 ## Krok 5: Zapisywanie zaktualizowanego pliku PDF
 
- Po zmianie hasła należy zapisać zaktualizowany dokument PDF. Określ ścieżkę pliku wyjściowego i użyj metody`Save` sposób na zapisanie dokumentu.
+ Po zmianie hasła musisz zapisać zaktualizowany dokument PDF. Określ ścieżkę do pliku wyjściowego i użyj`Save` metoda zapisywania dokumentu.
 
 ```csharp
 dataDir = dataDir + "ChangePassword_out.pdf";
@@ -58,9 +58,9 @@ document. Save(dataDir);
 Console.WriteLine("\nPDF file password changed successfully.\nFile saved at " + dataDir);
 ```
 
-Zaktualizowany plik PDF zostanie zapisany w określonej lokalizacji.
+Zaktualizowany plik PDF zostanie zapisany we wskazanej lokalizacji.
 
-### Przykładowy kod źródłowy zmiany hasła przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Zmiana hasła przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -76,38 +76,38 @@ Console.WriteLine("\nPDF file password changed successfully.\nFile saved at " + 
 
 ## Wniosek
 
-Gratulacje! Pomyślnie zmieniłeś hasło dokumentu PDF przy użyciu Aspose.PDF dla .NET. W tym samouczku omówiono proces krok po kroku, od załadowania dokumentu do zapisania zaktualizowanej wersji. Możesz teraz użyć tej funkcji, aby zabezpieczyć swoje pliki PDF nowymi hasłami.
+Gratulacje! Udało Ci się zmienić hasło dokumentu PDF za pomocą Aspose.PDF dla .NET. Ten samouczek obejmuje proces krok po kroku, od załadowania dokumentu do zapisania zaktualizowanej wersji. Teraz możesz użyć tej funkcji, aby zabezpieczyć pliki PDF nowymi hasłami.
 
-### Często zadawane pytania dotyczące zmiany hasła w pliku PDF
+### FAQ dotyczące zmiany hasła w pliku PDF
 
-#### P: Jaki jest cel tego samouczka?
+#### P: Jaki jest cel tego poradnika?
 
-Odp.: Ten samouczek ma na celu poprowadzić Cię przez proces zmiany hasła w pliku PDF przy użyciu Aspose.PDF dla .NET. Biblioteka umożliwia modyfikację hasła istniejącego dokumentu PDF, zwiększając bezpieczeństwo dokumentu.
+A: Ten samouczek ma na celu przeprowadzenie Cię przez proces zmiany hasła w pliku PDF przy użyciu Aspose.PDF dla .NET. Biblioteka umożliwia modyfikację hasła istniejącego dokumentu PDF, zwiększając bezpieczeństwo dokumentu.
 
-#### P: Jakie wymagania wstępne są wymagane przed rozpoczęciem?
+#### P: Jakie warunki wstępne należy spełnić przed rozpoczęciem?
 
-Odp.: Zanim zaczniesz, upewnij się, że znasz podstawowy język programowania C# i że na komputerze jest zainstalowany program Visual Studio. Dodatkowo musisz mieć zainstalowaną bibliotekę Aspose.PDF dla .NET.
+A: Zanim zaczniesz, upewnij się, że masz podstawową wiedzę na temat języka programowania C# i że masz zainstalowany program Visual Studio na swoim komputerze. Ponadto musisz mieć zainstalowaną bibliotekę Aspose.PDF dla .NET.
 
 #### P: Jak skonfigurować środowisko programistyczne?
 
-Odp.: Wykonaj podane kroki, aby skonfigurować środowisko programistyczne, w tym utworzyć nowy projekt C# w programie Visual Studio, zainstalować bibliotekę Aspose.PDF dla .NET przy użyciu Menedżera pakietów NuGet i zaimportować wymagane przestrzenie nazw.
+A: Wykonaj podane kroki, aby skonfigurować środowisko programistyczne, co obejmuje utworzenie nowego projektu C# w programie Visual Studio, zainstalowanie biblioteki Aspose.PDF dla platformy .NET przy użyciu Menedżera pakietów NuGet i zaimportowanie wymaganych przestrzeni nazw.
 
-#### P: Jak załadować istniejący dokument PDF?
+#### P: Jak wczytać istniejący dokument PDF?
 
- O: Skorzystaj z`Document` class, aby załadować dokument PDF, dla którego chcesz zmienić hasło. Zastąp „ChangePassword.pdf” rzeczywistą nazwą pliku i podaj aktualne hasło właściciela.
+ A: Użyj`Document` class, aby załadować dokument PDF, dla którego chcesz zmienić hasło. Zastąp "ChangePassword.pdf" rzeczywistą nazwą pliku i podaj bieżące hasło właściciela.
 
 #### P: Jak mogę zmienić hasło dokumentu PDF?
 
- O: Skorzystaj z`ChangePasswords` metoda na`Document` obiektu, podając jako parametry aktualne hasło właściciela, nowe hasło użytkownika i nowe hasło właściciela.
+ A: Użyj`ChangePasswords` metoda na`Document` obiekt, podając bieżące hasło właściciela, nowe hasło użytkownika i nowe hasło właściciela jako parametry.
 
 #### P: Czy mogę określić różne hasła dla użytkowników i właścicieli?
 
- Odp.: Tak`ChangePasswords`Metoda umożliwia ustawienie różnych haseł dla użytkownika i właściciela. Zastąp symbole zastępcze „nowy użytkownik” i „nowy właściciel” żądanymi hasłami.
+ A: Tak,`ChangePasswords` Metoda pozwala ustawić różne hasła dla użytkownika i właściciela. Zastąp symbole zastępcze „newuser” i „newowner” żądanymi hasłami.
 
 #### P: Jak zapisać zaktualizowany dokument PDF?
 
- Odp.: Po zmianie hasła użyj opcji`Save` metoda na`Document` obiekt, aby zapisać zaktualizowany dokument PDF. Określ ścieżkę pliku wyjściowego, w którym zostanie zapisany zaktualizowany plik PDF.
+ A: Po zmianie hasła użyj`Save` metoda na`Document` obiekt do zapisania zaktualizowanego dokumentu PDF. Określ ścieżkę pliku wyjściowego, w którym zostanie zapisany zaktualizowany plik PDF.
 
-#### P: Jak mogę zapewnić bezpieczeństwo moich plików PDF?
+#### P: Jak mogę zagwarantować bezpieczeństwo moich plików PDF?
 
-O: Zmieniając hasło do swoich dokumentów PDF, możesz zwiększyć ich bezpieczeństwo. Upewnij się, że hasła są bezpieczne i udostępniaj je tylko autoryzowanym użytkownikom.
+A: Zmieniając hasło dokumentów PDF, możesz zwiększyć ich bezpieczeństwo. Upewnij się, że hasła są bezpieczne i udostępniaj je tylko upoważnionym użytkownikom.

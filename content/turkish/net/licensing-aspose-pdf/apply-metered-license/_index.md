@@ -1,128 +1,111 @@
 ---
-title: Ölçülü Lisans Anahtarlarını PDF Dosyasında Yapılandırma
-linktitle: Ölçülü Lisans Anahtarlarını PDF Dosyasında Yapılandırma
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile PDF dosyasında ölçülü lisans anahtarları ayarlamak ve gelişmiş özelliklerden yararlanmak için adım adım kılavuz.
+title: PDF Dosyasında Ölçülü Lisans Anahtarlarını Yapılandırın
+linktitle: PDF Dosyasında Ölçülü Lisans Anahtarlarını Yapılandırın
+second_title: Aspose.PDF for .NET API Referansı
+description: Bu kapsamlı, adım adım kılavuzla Aspose.PDF for .NET'i kullanarak PDF dosyalarınızda ölçülü lisans anahtarlarını nasıl yapılandıracağınızı öğrenin.
 type: docs
 weight: 10
 url: /tr/net/licensing-aspose-pdf/configure-metered-license/
 ---
-Bu eğitimde, Aspose.PDF for .NET ile PDF dosyasında ölçülü lisans anahtarlarının nasıl ayarlanacağını adım adım anlatacağız. Ölçülü lisans, Aspose.PDF'in gelişmiş özelliklerini gerçek tüketiminize göre kullanmanıza olanak tanır.
+## giriiş
 
-### 1. Adım: Lisans Anahtarlarını Yapılandırma
+Aspose.PDF for .NET kullanarak PDF düzenleme dünyasına dalmaya hazır mısınız? İster büyük belge iş akışlarını yönetiyor olun, ister sadece birkaç PDF'yi işlemeniz gereksin, ölçülü bir lisans yapılandırmak Aspose.PDF'nin tüm potansiyelini açığa çıkarma yolunda atacağınız ilk adımdır. Bu kapsamlı kılavuzda, PDF dosyalarınızda ölçülü lisans anahtarları ayarlama sürecinde size yol göstereceğiz. Ve endişelenmeyin—her şeyi basit, ilgi çekici ve yolculuğunuzu olabildiğince sorunsuz hale getirmek için pratik bilgilerle dolu tutacağız.
 
-Sağlanan kaynak kodunda, ölçülü lisansın genel ve özel anahtarlarını belirtmeniz gerekir. "'yi değiştirin*****" değerlerine kendi anahtarlarınızla sahip olacaksınız. Aspose'tan ölçülü lisans satın aldığınızda bu anahtarlar size sağlanacaktır.
+## Ön koşullar
+
+Başlamadan önce ihtiyacınız olan her şeye sahip olduğunuzdan emin olalım:
+
+1.  Aspose.PDF for .NET: Aspose.PDF for .NET'in en son sürümünü indirip yüklediğinizden emin olun. Bunu şu adresten alabilirsiniz:[indirme sayfası](https://releases.aspose.com/pdf/net/).
+2.  Geçerli Ölçülü Lisans Anahtarları: Ölçülü genel ve özel anahtarlarınıza ihtiyacınız olacak. Henüz bunlara sahip değilseniz, şu adresten geçici bir lisans alabilirsiniz:[Burada](https://purchase.aspose.com/temporary-license/).
+3. Geliştirme Ortamı: Visual Studio veya herhangi bir uyumlu .NET geliştirme ortamı kurulmuş ve kullanıma hazır olmalıdır.
+4. Örnek PDF Belgesi: Yapılandırma sürecini test etmek için kullanabileceğiniz bir PDF dosyası bulundurun.
+
+## Paketleri İçe Aktar
+
+Aspose.PDF ile çalışmak için projenize gerekli ad alanlarını eklemeniz gerekir. Bu, ölçülü lisansı yapılandırmak için gereken tüm sınıflara ve yöntemlere erişiminizin olmasını sağlar.
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Süreci takip etmesi kolay adımlara bölelim. Her adım sizi yapılandırmanın belirli bir bölümünde yönlendirecek ve hiçbir şeyi kaçırmamanızı sağlayacaktır.
+
+## Adım 1: Geliştirme Ortamını Kurma
+
+Koda dalmadan önce, geliştirme ortamınızın tamamen ayarlandığından emin olun.
+
+- Visual Studio'yu açın: Visual Studio'yu başlatın ve yeni bir C# projesi oluşturun. Ölçülü lisansı yapılandırmak istediğiniz bir projeniz varsa, bunun yerine onu açın.
+- Aspose.PDF'ye Referans Ekleme: Çözüm Gezgini'nde projenize sağ tıklayın, "NuGet Paketlerini Yönet"e gidin ve "Aspose.PDF for .NET"i arayın. Paketi yükleyerek projenize ekleyin.
+
+## Adım 2: Ölçülü Sınıfı Başlatın
+
+ Artık ortamınız hazır olduğuna göre, başlatma zamanı geldi`Metered` Sınıf Aspose.PDF tarafından sağlanmıştır.
+
+-  Bir Örnek Oluşturun: Bir örnek oluşturarak başlayın`Metered` sınıf. Bu sınıf, ölçülü lisans anahtarlarınızı ayarlamanıza yardımcı olacaktır.
 
 ```csharp
 Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
-metered.SetMeteredKey("PUBLIC_KEY", "PRIVATE_KEY");
 ```
 
-### Adım 2: Belgeyi yükleme
+-  Bunun Önemi:`Metered` Sınıf, yüksek hacimli belge işlemeyle uğraşıyorsanız daha uygun maliyetli olabilen ölçülü lisanslama modelini kullanmanıza olanak tanıdığı için önemlidir.
 
- PDF belgesini diskten şunu kullanarak yükleyin:`Document` Aspose.PDF sınıfı.
+## Adım 3: Ölçülü Lisans Anahtarlarınızı Ayarlayın
+
+ İle`Metered` sınıfınız başlatıldı, ölçülü genel ve özel anahtarlarınızı ayarlamanın zamanı geldi.
+
+-  Erişim`SetMeteredKey` Yöntem:`SetMeteredKey` yöntemi, genel ve özel anahtarlarınızı Aspose.PDF kütüphanesine uygulamak için kullanılır.
 
 ```csharp
-Document doc = new Document(dataDir + "input.pdf");
+metered.SetMeteredKey("YOUR_PUBLIC_KEY", "YOUR_PRIVATE_KEY");
 ```
 
-### 3. Adım: Belge Sayfa Sayısını Alın
+-  Önemli Not: Değiştir`"YOUR_PUBLIC_KEY"` Ve`"YOUR_PRIVATE_KEY"`gerçek ölçülü lisans anahtarlarınızla. Bu anahtarlar Aspose.PDF'nin tüm yeteneklerini etkinleştirmek için çok önemlidir.
 
- Kullan`Count` mülkiyeti`Pages` Belgedeki toplam sayfa sayısını almak için koleksiyon.
+## Adım 4: PDF Belgenizi Yükleyin
 
-```csharp
-Console.WriteLine(doc.Pages.Count);
-```
+Daha sonra çalışmak istediğiniz PDF belgesini yükleyeceksiniz.
 
-### Aspose.PDF for .NET kullanarak Ölçülü Lisansı Yapılandırma için örnek kaynak kodu 
+- Belge Yolunu Belirleyin: PDF dosyanızın yolunu tanımlayın. Bu, ölçülü lisans yapılandırmasını uygulayacağınız belgedir.
 
 ```csharp
-
-// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// ölçülü genel ve özel anahtarları ayarlama
-Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
-//setMeteredKey özelliğine erişin ve genel ve özel anahtarları parametre olarak iletin
-metered.SetMeteredKey("*****", "*****");
-// Belgeyi diskten yükleyin.
 Document doc = new Document(dataDir + "input.pdf");
-//Belgenin sayfa sayısını alın
-Console.WriteLine(doc.Pages.Count);
-
 ```
+
+-  Belgeyi Yükleme:`Document` Aspose.PDF'deki sınıf, PDF dosyalarınızı zahmetsizce yüklemenizi ve düzenlemenizi sağlar.
+
+## Adım 5: Yapılandırmayı Doğrulayın
+
+Son olarak, ölçümlü lisansın doğru şekilde yapılandırıldığını doğrulayalım.
+
+- Sayfa Sayısını Kontrol Et: Her şeyin düzgün çalışıp çalışmadığını kontrol etmenin basit bir yolu, yüklenen belgenin sayfa sayısına erişmektir. Ölçülü lisans doğru şekilde ayarlanmışsa, bu işlem herhangi bir lisanslama sorunu olmadan devam etmelidir.
+
+```csharp
+Console.WriteLine(doc.Pages.Count);
+```
+
+- Bu Adım Neden Önemlidir: Sayfa sayısını kontrol ederek, belgenin erişilebilir olduğunu ve lisansın beklendiği gibi çalıştığını onaylarsınız.
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for .NET ile ölçülü lisansın nasıl kurulacağını açıkladık. Ölçülü lisans kullanarak, gerçek kullanımınıza bağlı olarak Aspose.PDF'in gelişmiş özelliklerinden yararlanabilirsiniz. Aspose.PDF'i tüm özellikleriyle kullanmak için geçerli lisans anahtarlarını sağladığınızdan emin olun.
+Tebrikler! Aspose.PDF for .NET kullanarak PDF dosyalarınız için ölçülü lisans anahtarlarını başarıyla yapılandırdınız. Bu kurulum yalnızca Aspose.PDF kitaplığının tüm potansiyelini ortaya çıkarmakla kalmaz, aynı zamanda büyük ölçekli PDF işleme görevlerini kolaylıkla halletmeye hazır olmanızı da sağlar.
 
-### PDF dosyasında ölçülü lisans anahtarlarını yapılandırmaya ilişkin SSS'ler
+## SSS
 
-#### S: Aspose.PDF'de ölçülü lisans nedir?
+### Aspose.PDF'de ölçülü lisans nedir?  
+Ölçülü lisans, API için tek seferlik bir ücret yerine kullanımınıza göre ödeme yapmanıza olanak tanır. Yüksek hacimli belge işleme için idealdir.
 
-C: Aspose.PDF'deki ölçülü lisans, sabit bir lisans ücreti yerine özelliklerin gerçek tüketimine göre ödeme yapmanızı sağlayan bir lisanslama modelidir. Yalnızca kullandığınız kadar ödeyerek Aspose.PDF'in gelişmiş özelliklerini kullanmanızı sağlar.
+### Ölçülü lisans anahtarlarını nasıl edinebilirim?  
+ Lisans satın alarak ölçülü lisans anahtarları edinebilirsiniz.[Burada](https://purchase.aspose.com/buy) veya geçici lisans başvurusunda bulunarak.
 
-#### S: Aspose.PDF için neden ölçülü lisans kullanmalıyım?
+### Lisans olmadan Aspose.PDF'yi kullanabilir miyim?  
+Evet, ancak ücretsiz sürümün sınırlamaları vardır. Tüm özelliklere sınırsız erişim için geçerli bir lisans uygulamanız gerekir.
 
-C: Ölçülü lisans kullanmak maliyet tasarrufu ve esneklik sunar. Yalnızca kullandığınız özellikler için ödeme yaparsınız, bu da onu değişen taleplere sahip projelere uygun hale getirir. Ön lisans ücreti ihtiyacını ortadan kaldırır ve gelişmiş PDF özelliklerine erişmenizi sağlar.
+### Ölçülü lisansı doğru ayarlamazsam ne olur?  
+Ölçülü lisans doğru şekilde ayarlanmazsa, uygulamanız tüm özelliklere erişemeyebilir veya lisanslamayla ilgili istisnalar oluşturabilir.
 
-#### S: Ölçülü lisans anahtarlarını nasıl edinebilirim?
-
-C: Aspose'tan ölçülü lisans satın aldığınızda, bir çift genel ve özel anahtar alacaksınız. Bu anahtarlar Aspose.PDF uygulamanızın kimlik doğrulamasını yapmak ve ölçülü lisanslamayı etkinleştirmek için kullanılacaktır.
-
-#### S: Aspose.PDF for .NET'te ölçülü lisans anahtarlarını nasıl yapılandırabilirim?
-
- C: Ölçülü lisans anahtarlarını yapılandırmak için`SetMeteredKey` yöntemi`Aspose.Pdf.Metered` sınıf. Yer değiştirmek`"PUBLIC_KEY"` Ve`"PRIVATE_KEY"` gerçek anahtarlarınızla.
-
-```csharp
-Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
-metered.SetMeteredKey("PUBLIC_KEY", "PRIVATE_KEY");
-```
-
-#### S: Aspose.PDF for .NET kullanarak bir PDF belgesini nasıl yüklerim?
-
- C: Diskten bir PDF belgesi yüklemek için`Document` Aspose.PDF sınıfını seçin ve dosya yolunu belirtin.
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
-#### S: Bir PDF belgesinin toplam sayfa sayısını nasıl edinebilirim?
-
- C: Bir PDF belgesinin toplam sayfa sayısını öğrenmek için`Count` mülkiyeti`Pages` Toplamak.
-
-```csharp
-int pageCount = doc.Pages.Count;
-Console.WriteLine("Total pages: " + pageCount);
-```
-
-#### S: Ölçülü lisanslamayı diğer Aspose ürünleri için kullanabilir miyim?
-
-C: Evet, çeşitli Aspose ürünleri için ölçülü lisanslama mevcuttur ve çok çeşitli özellikler için kullanımınıza göre ödeme yapmanıza olanak tanır.
-
-#### S: Ölçülü lisans her tür projeye uygun mudur?
-
-C: Ölçülü lisanslama, değişen özellik kullanımına sahip projeler için uygundur. Tutarlı, yüksek özellik kullanımına sahip projeler için uygun maliyetli olmayabilir.
-
-#### S: Aspose.PDF ölçülü lisanslama hakkında daha fazla bilgiyi nerede bulabilirim?
-
- C: Ölçülü lisanslama, fiyatlandırma ve avantajlar hakkında daha fazla bilgi için şu adresi ziyaret edin:[Aspose.PDF Ölçülü Lisanslama](https://purchase.aspose.com/pricing/pdf/net) sayfa.
-
-#### S: Tarifeli lisans anahtarlarımın güvenliğini nasıl sağlayabilirim?
-
-C: Ölçülü lisans anahtarları kimlik doğrulama için kullanılır ve hassas bilgilerdir. Bunların gizli tutulduğundan ve kamuya açık şekilde paylaşılmadığından emin olun.
-
-#### S: Geleneksel ve ölçülü lisanslama arasında geçiş yapabilir miyim?
-
-C: Evet, projenizin gereksinimlerine göre Aspose.PDF için geleneksel lisanslama ve ölçülü lisanslama arasında geçiş yapabilirsiniz.
-
-#### S: Ölçülü lisans satın almadan önce deneme sürümünü kullanabilir miyim?
-
- C: Evet, deneyebilirsiniz[ücretsiz deneme sürümü](https://products.aspose.com/pdf/net) Ölçülü bir lisans satın almadan önce Aspose.PDF'in özelliklerini ve işlevselliğini değerlendirin.
-
-#### S: Ölçülü lisans anahtarlarını ne sıklıkla yapılandırmalıyım?
-
-C: Ölçülü lisans anahtarlarını uygulamanız başladığında yalnızca bir kez yapılandırmanız gerekir. Uygulamanın çalışma süresi boyunca gelişmiş özelliklere erişim sağlar.
-
-#### S: Ölçülü lisanslamayı mevcut bir uygulamaya uygulayabilir miyim?
-
-C: Evet, avantajlarından yararlanmak için ölçülü lisanslamayı mevcut Aspose.PDF uygulamasına entegre edebilirsiniz.
+### Aspose.PDF'de farklı lisans türleri arasında geçiş yapabilir miyim?  
+Evet, Aspose.PDF, uygulamanızda uygun lisans anahtarlarını yapılandırarak farklı lisans türleri (normal ve ölçümlü gibi) arasında geçiş yapmanıza olanak tanır.

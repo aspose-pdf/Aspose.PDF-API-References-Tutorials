@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 2. lépés: Nyissa meg a PDF dokumentumot
 
-Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
+ Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
 
 ```csharp
 Document doc = new Document(dataDir + "AddImage.pdf");
@@ -27,7 +27,7 @@ Document doc = new Document(dataDir + "AddImage.pdf");
 
 ## 3. lépés: Inicializálja az optimalizálási beállításokat
 
-Ebben a lépésben inicializáljuk a képtömörítés optimalizálási beállításait. Hozzon létre egy példányt a`OptimizationOptions` és állítsa be a megfelelő opciókat. Ebben a példában Flate Decode tömörítést használunk a képek optimalizálására.
+ Ebben a lépésben inicializáljuk a képtömörítés optimalizálási beállításait. Hozzon létre egy példányt a`OptimizationOptions` és állítsa be a megfelelő opciókat. Ebben a példában Flate Decode tömörítést használunk a képek optimalizálására.
 
 ```csharp
 var optimizationOptions = new Aspose.Pdf.Optimization.OptimizationOptions();
@@ -36,7 +36,7 @@ optimizationOptions.ImageCompressionOptions.Encoding = ImageEncoding.Flate;
 
 ## 4. lépés: Optimalizálja a PDF-dokumentumot
 
- Ebben a lépésben optimalizáljuk a PDF dokumentumot a korábban meghatározott optimalizálási beállításokkal. Hívja a`OptimizeResources` módszere a`doc` objektumot, és adja át az optimalizálási beállításokat.
+Ebben a lépésben optimalizáljuk a PDF dokumentumot a korábban meghatározott optimalizálási beállításokkal. Hívja a`OptimizeResources` módszere a`doc` objektumot, és adja át az optimalizálási beállításokat.
 
 ```csharp
 doc.OptimizeResources(optimizationOptions);
@@ -44,7 +44,7 @@ doc.OptimizeResources(optimizationOptions);
 
 ## 5. lépés: Mentse el a frissített PDF-dokumentumot
 
- Mentse el a frissített PDF dokumentumot a`Save` módszere a`doc` tárgy. Adja meg a PDF-fájl kimeneti útvonalát.
+ Mentse el a frissített PDF dokumentumot a`Save` módszere a`doc` objektum. Adja meg a PDF-fájl kimeneti útvonalát.
 
 ```csharp
 doc.Save(dataDir + "FlateDecodeCompression.pdf");
@@ -74,11 +74,11 @@ Gratulálok ! Sikeresen tömörítette a képeket PDF-fájlba az Aspose.PDF for 
 
 #### K: Mi az a Flate Decode tömörítés, és miért használják a PDF dokumentumokban?
 
-V: A Flate Decode tömörítés egy adattömörítési módszer, amelyet általában a PDF-dokumentumban lévő adatok méretének csökkentésére használnak. Különösen hatékony a képek tömörítésére, a teljes fájlméret csökkentésére, valamint a tárolás és az átvitel hatékonyságának javítására.
+V: A Flate Decode tömörítés egy adattömörítési módszer, amelyet általában a PDF-dokumentumban lévő adatok méretének csökkentésére használnak. Különösen hatékony a képek tömörítésére, a teljes fájlméret csökkentésére, valamint a tárolás és átvitel hatékonyságának javítására.
 
 #### K: Hogyan segíti elő az Aspose.PDF for .NET a Flate Decode tömörítést egy PDF-dokumentumban?
 
-V: Az Aspose.PDF for .NET leegyszerűsített folyamatot biztosít a PDF-dokumentumok megnyitásához, a Flate Decode tömörítés alkalmazásához a képekhez, és az optimalizált PDF-fájl tömörített képekkel történő mentéséhez.
+V: Az Aspose.PDF for .NET leegyszerűsített folyamatot biztosít a PDF-dokumentumok megnyitásához, a Flate Decode tömörítés alkalmazásához a képeken, és az optimalizált PDF-fájl tömörített képekkel történő mentéséhez.
 
 #### K: Milyen előnyökkel jár a Flate Decode tömörítés használata a PDF-dokumentumok képoptimalizálásához?
 

@@ -18,7 +18,7 @@ Než začnete, ujistěte se, že máte následující:
 
 ## Krok 1: Nastavte adresář dokumentů
 
- Nejprve je potřeba nastavit cestu k adresáři, kam chcete vygenerovaný PDF soubor uložit. Nahradit`"YOUR DOCUMENT DIRECTORY"` v`dataDir`proměnnou s cestou k požadovanému adresáři.
+ Nejprve je potřeba nastavit cestu k adresáři, kam chcete vygenerovaný PDF soubor uložit. Nahradit`"YOUR DOCUMENT DIRECTORY"` v`dataDir` proměnnou s cestou k požadovanému adresáři.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Aspose.Pdf.Page applicationFirstPage = (Aspose.Pdf.Page)pdfApplicationDoc.Pages.
 
 ## Krok 3: Přidejte textový fragment se značkami nového řádku
 
- Vytváříme a`TextFragment`objekt a nastavte jeho text tak, aby zahrnoval značky nového řádku (`Environment.NewLine`) reprezentovat více řádků textu.
+ Vytváříme a`TextFragment` objekt a nastavte jeho text tak, aby zahrnoval značky nového řádku (`Environment.NewLine`) reprezentovat více řádků textu.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment textFragment = new Aspose.Pdf.Text.TextFragment("Applicant Name: " + Environment.NewLine + " Joe Smoe");
@@ -135,15 +135,15 @@ Odpověď: Výukový program vás provede procesem krok za krokem:
 
 1.  Vytvořte nový dokument PDF pomocí`Document` třída.
 2.  Přidejte stránku do dokumentu pomocí`Page` třída.
-3.  Vytvořit`TextFragment` objekt se značkami nového řádku (`Environment.NewLine`) k reprezentaci víceřádkového obsahu.
+3.  Vytvořte a`TextFragment` objekt se značkami nového řádku (`Environment.NewLine`) k reprezentaci víceřádkového obsahu.
 4. Přizpůsobte vlastnosti fragmentu textu, jako je velikost písma, písmo, barva pozadí a barva popředí.
-5.  Vytvořit`TextParagraph` objekt, připojte k němu fragment textu a nastavte pozici odstavce na stránce.
-6.  Vytvořit`TextBuilder` objekt se stránkou a připojit k ní odstavec textu.
+5.  Vytvořte a`TextParagraph` objekt, připojte k němu fragment textu a nastavte pozici odstavce na stránce.
+6.  Vytvořte a`TextBuilder` objekt se stránkou a připojit k ní odstavec textu.
 7. Uložte dokument PDF.
 
 #### Otázka: Jaký je účel použití značek nového řádku (`Environment.NewLine`) in the text fragment?
 
- Odpověď: Značky nového řádku se používají k vytvoření víceřádkového obsahu v rámci jednoho textového fragmentu. Používáním`Environment.NewLine`, můžete určit, kde se má v textu vyskytovat zalomení řádků.
+ Odpověď: Značky nového řádku se používají k vytvoření víceřádkového obsahu v rámci jednoho textového fragmentu. Použitím`Environment.NewLine`můžete určit, kde se má v textu vyskytovat zalomení řádků.
 
 #### Otázka: Mohu upravit vzhled vyměnitelných symbolů?
 

@@ -1,17 +1,17 @@
 ---
 title: Dapatkan Teks Hyperlink Dalam File PDF
 linktitle: Dapatkan Teks Hyperlink Dalam File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara mengekstrak teks hyperlink dalam file PDF menggunakan Aspose.PDF untuk .NET.
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara mengekstrak teks hyperlink dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
 type: docs
 weight: 70
 url: /id/net/programming-with-links-and-actions/get-hyperlink-text/
 ---
-Pelajari cara mengekstrak teks dari hyperlink dalam file PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah ini.
+Pelajari cara mengekstrak teks dari hyperlink dalam berkas PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah ini.
 
 ## Langkah 1: Menyiapkan lingkungan
 
-Pastikan Anda telah menyiapkan lingkungan pengembangan dengan proyek C# dan referensi Aspose.PDF yang sesuai.
+Pastikan Anda telah menyiapkan lingkungan pengembangan Anda dengan proyek C# dan referensi Aspose.PDF yang sesuai.
 
 ## Langkah 2: Memuat file PDF
 
@@ -24,9 +24,9 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## Langkah 3: Menavigasi halaman dokumen
+## Langkah 3: Menavigasi melalui halaman dokumen
 
- Iterasi setiap halaman dokumen menggunakan a`foreach` lingkaran:
+ Ulangi setiap halaman dokumen menggunakan`foreach` lingkaran:
 
 ```csharp
 foreach(Page page in document.Pages)
@@ -38,7 +38,7 @@ foreach(Page page in document.Pages)
 
 ## Langkah 4: Penanganan Kesalahan
 
-Tambahkan penanganan kesalahan untuk menangkap pengecualian apa pun dan menampilkan pesan kesalahan yang sesuai:
+Tambahkan penanganan kesalahan untuk menangkap pengecualian apa pun dan menampilkan pesan kesalahan terkait:
 
 ```csharp
 catch (Exception ex)
@@ -70,40 +70,40 @@ catch (Exception ex)
 
 ## Kesimpulan
 
-Selamat! Anda sekarang tahu cara mengekstrak teks hyperlink dari file PDF menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan pengetahuan ini untuk menangani hyperlink di proyek Anda dan mengotomatiskan tugas yang terkait dengan file PDF.
+Selamat! Kini Anda tahu cara mengekstrak teks hyperlink dari file PDF menggunakan Aspose.PDF for .NET. Anda dapat menggunakan pengetahuan ini untuk menangani hyperlink dalam proyek Anda dan mengotomatiskan tugas yang terkait dengan file PDF.
 
-Sekarang setelah Anda menyelesaikan panduan ini, Anda dapat menerapkan konsep ini ke proyek Anda sendiri dan menjelajahi lebih jauh fitur yang ditawarkan oleh Aspose.PDF untuk .NET.
+Sekarang setelah Anda menyelesaikan panduan ini, Anda dapat menerapkan konsep-konsep ini ke proyek Anda sendiri dan mengeksplorasi lebih lanjut fitur-fitur yang ditawarkan oleh Aspose.PDF untuk .NET.
 
 ### FAQ untuk mendapatkan teks hyperlink dalam file PDF
 
-#### T: Apa yang dimaksud dengan teks hyperlink dalam file PDF?
+#### T: Apa itu teks hyperlink dalam berkas PDF?
 
-J: Teks hyperlink dalam file PDF mengacu pada teks yang terlihat yang diklik pengguna untuk menavigasi ke lokasi atau sumber daya tertentu, seperti URL, halaman lain dalam dokumen yang sama, atau dokumen eksternal.
+A: Teks hyperlink dalam berkas PDF merujuk pada teks terlihat yang diklik pengguna untuk menavigasi ke lokasi atau sumber tertentu, seperti URL, halaman lain dalam dokumen yang sama, atau dokumen eksternal.
 
-#### T: Bagaimana mengekstraksi teks hyperlink bermanfaat bagi analisis dokumen PDF saya?
+#### T: Bagaimana ekstraksi teks hyperlink bermanfaat bagi analisis dokumen PDF saya?
 
-J: Mengekstraksi teks hyperlink memungkinkan Anda mengumpulkan dan menganalisis label deskriptif hyperlink dalam dokumen PDF. Informasi ini dapat digunakan untuk validasi tautan, kategorisasi konten, dan ekstraksi metadata.
+A: Mengekstrak teks hyperlink memungkinkan Anda mengumpulkan dan menganalisis label deskriptif hyperlink dalam dokumen PDF. Informasi ini dapat digunakan untuk validasi tautan, kategorisasi konten, dan ekstraksi metadata.
 
-#### T: Bagaimana Aspose.PDF untuk .NET dapat membantu mengekstraksi teks hyperlink?
+#### T: Bagaimana Aspose.PDF untuk .NET dapat membantu mengekstrak teks hyperlink?
 
-J: Aspose.PDF untuk .NET menyediakan API yang kuat untuk mengekstrak teks hyperlink. Tutorial ini memberikan panduan langkah demi langkah tentang cara menyelesaikan tugas ini menggunakan C#.
+A: Aspose.PDF untuk .NET menyediakan API yang tangguh untuk mengekstrak teks hyperlink. Tutorial ini menyediakan panduan langkah demi langkah tentang cara menyelesaikan tugas ini menggunakan C#.
 
 #### T: Dapatkah saya mengekstrak teks hyperlink secara selektif berdasarkan kriteria tertentu?
 
-J: Ya, Anda dapat mengekstrak teks hyperlink secara selektif dengan mengulangi setiap halaman dokumen PDF dan mengakses teks yang terkait dengan anotasi hyperlink.
+A: Ya, Anda dapat mengekstrak teks hyperlink secara selektif dengan mengulangi setiap halaman dokumen PDF dan mengakses teks yang terkait dengan anotasi hyperlink.
 
-#### T: Apakah ada batasan saat mengekstraksi teks hyperlink?
+#### T: Apakah ada batasan saat mengekstrak teks hyperlink?
 
-J: Keakuratan ekstraksi teks hyperlink bergantung pada format dan tata letak dokumen PDF. Elemen grafis yang kompleks atau representasi hyperlink non-standar mungkin memerlukan penanganan tambahan.
+J: Keakuratan ekstraksi teks hyperlink bergantung pada format dan tata letak dokumen PDF. Elemen grafis yang rumit atau representasi hyperlink yang tidak standar mungkin memerlukan penanganan tambahan.
 
-#### T: Bisakah saya mengekstrak teks hyperlink dari dokumen PDF yang dilindungi kata sandi?
+#### T: Dapatkah saya mengekstrak teks hyperlink dari dokumen PDF yang dilindungi kata sandi?
 
-J: Aspose.PDF untuk .NET dapat mengekstrak teks hyperlink dari dokumen PDF yang dilindungi kata sandi selama Anda memberikan kredensial autentikasi yang sesuai saat memuat dokumen.
+A: Aspose.PDF untuk .NET dapat mengekstrak teks hyperlink dari dokumen PDF yang dilindungi kata sandi selama Anda memberikan kredensial autentikasi yang sesuai saat memuat dokumen.
 
-#### T: Bagaimana cara memanfaatkan teks hyperlink yang diekstraksi di aplikasi saya?
+#### T: Bagaimana saya dapat memanfaatkan teks hyperlink yang diekstrak dalam aplikasi saya?
 
 J: Setelah mengekstrak teks hyperlink, Anda dapat menganalisis, mengkategorikan, atau menampilkannya sesuai kebutuhan dalam aplikasi Anda. Anda juga dapat memasukkannya ke dalam laporan atau analisis data.
 
-#### T: Apakah mungkin mengekstrak atribut hyperlink lainnya, seperti URL atau tujuan?
+#### T: Apakah mungkin untuk mengekstrak atribut hyperlink lainnya, seperti URL atau tujuan?
 
-A: Tutorial ini berfokus pada mengekstraksi teks hyperlink. Untuk mengekstrak atribut lain seperti URL atau tujuan, Anda dapat merujuk ke dokumentasi resmi Aspose.PDF untuk penanganan hyperlink tingkat lanjut.
+J: Tutorial ini berfokus pada ekstraksi teks hyperlink. Untuk mengekstrak atribut lain seperti URL atau tujuan, Anda dapat merujuk ke dokumentasi Aspose.PDF resmi untuk penanganan hyperlink tingkat lanjut.

@@ -1,125 +1,172 @@
 ---
-title: 単語の取り消し線
-linktitle: 単語の取り消し線
+title: 単語を消す
+linktitle: 単語を消す
 second_title: Aspose.PDF for .NET API リファレンス
-description: この記事では、Aspose.PDF for .NET の単語の取り消し線機能を使用するためのステップバイステップのガイドと説明を提供します。
+description: この包括的なステップバイステップ ガイドでは、Aspose.PDF for .NET を使用して PDF 内の単語を取り消す方法を学習します。ドキュメント編集スキルを向上させます。
 type: docs
 weight: 150
 url: /ja/net/annotations/strikeoutwords/
 ---
-Aspose.PDF for .NET は、PDF ファイルを作成、変更、変換するためのさまざまな機能を提供する PDF ドキュメント操作および処理ライブラリです。 Aspose.PDF が提供する便利な機能の 1 つは、C# ソース コードを使用して PDF ドキュメント内の単語や語句を取り消す機能です。この記事では、Aspose.PDF for .NET を使用して単語を取り消す方法について段階的なガイドを提供します。
+## 導入
 
-## ステップ 1: PDF ドキュメントをロードする
-最初のステップは、変更する PDF ドキュメントをロードすることです。このチュートリアルでは、「YOUR DOCUMENT DIRECTORY」フォルダーから「input.pdf」という名前の PDF ドキュメントを読み込みます。 
+PDF 内の特定のテキストを取り消し線で強調する必要に迫られたことはありませんか? ドキュメントをレビューしたり、テキストにマークを付けたり、特定のセクションを強調表示したりする場合、単語を取り消し線で強調表示することは便利なツールです。このチュートリアルでは、Aspose.PDF for .NET を使用してそれを実行する方法について説明します。この包括的なガイドでは、各手順を順を追って説明し、この機能を .NET アプリケーションに効果的に実装するために必要なすべての情報を提供します。 
+
+## 前提条件
+
+コードに進む前に、このチュートリアルを進めるために満たす必要のある前提条件がいくつかあります。
+
+1.  Aspose.PDF for .NETライブラリ: Aspose.PDF for .NETライブラリがインストールされていることを確認してください。[ここからダウンロード](https://releases.aspose.com/pdf/net/).
+
+2. .NET Framework: マシンに .NET Framework がインストールされていることを確認してください。このチュートリアルは、.NET アプリケーション向けに設計されています。
+
+3. 開発環境: コードを記述して実行するには、Visual Studio などの IDE が必要です。
+
+4. PDF ドキュメント: 作業に使用するサンプル PDF ファイルを用意します。これがテキストを取り消し線で消すドキュメントになります。
+
+5. 基本的な C# の知識: このチュートリアルの手順を理解して実装するには、C# プログラミングの知識が必要です。
+
+## パッケージのインポート
+
+コーディングを開始する前に、.NET プロジェクトに必要な名前空間をインポートする必要があります。これにより、Aspose.PDF を使用して PDF ファイルを操作するために必要なクラスとメソッドにアクセスできるようになります。
 
 ```csharp
+using System;
+using System.IO;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
+```
+
+これらの名前空間は、PDF ドキュメントの操作、テキストの処理、取り消し線などの注釈の追加に不可欠です。
+
+このセクションでは、PDF ドキュメント内の単語を取り消すプロセスを、シンプルで扱いやすいステップに分解します。各ステップには詳細な説明が付いており、すべての仕組みを理解できるようになります。
+
+## ステップ1: PDFドキュメントを読み込む
+
+最初のステップは、編集する PDF ドキュメントを読み込むことです。このドキュメントでは、特定の単語やフレーズを取り消すことになります。
+
+```csharp
+//ドキュメント ディレクトリへのパス。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// PDF文書を開く
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## ステップ 2: テキストの断片を検索する
-PDF 文書内の特定の単語や語句を取り消すには、まずそれらを検索する必要があります。 Aspose.PDF は、PDF ドキュメント内の特定のテキスト フラグメントを検索するために使用できる TextFragmentAbsorber クラスを提供します。
+- `dataDir` この変数はドキュメントディレクトリへのパスを保持します。`"YOUR DOCUMENT DIRECTORY"` PDF ファイルが保存されている実際のパスを入力します。
+- `Document` : の`Document`クラスは PDF ドキュメントを表します。ファイル パスをコンストラクターに渡すことで、PDF ファイルを処理用に開きます。
+
+## ステップ2: 特定のテキストを見つけるためのTextFragment Absorberを作成する
+
+次に、インスタンスを作成します`TextFragmentAbsorber`PDF ドキュメント内の特定のテキスト部分を検索します。これにより、取り消し線を引くテキストを見つけることができます。
 
 ```csharp
+//特定のテキストフラグメントを検索するための TextFragment Absorber インスタンスを作成する
 Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
 ```
 
-上記のコードでは、PDF ドキュメント内のテキスト フラグメント「Estoque」を検索しています。これを変更して、取り消し線を付けたい他の単語や語句を検索することができます。
+- `TextFragmentAbsorber`このクラスは、PDF ドキュメント内の特定のテキスト フラグメントを検索して操作するために使用されます。この例では、「Estoque」という単語を検索しています。「Estoque」をドキュメント内で検索する単語またはフレーズに置き換えます。
 
-## ステップ 3: テキストの断片を取り消し線で削除する
-テキストの断片を見つけたら、次のステップはそれらに取り消し線を引くことです。 Aspose.PDF は、テキスト フラグメントに取り消し線の注釈を作成するために使用できる StrikeOutAnnotation クラスを提供します。 
+## ステップ3: PDFドキュメントのページを反復処理する
 
-```csharp
-Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle((float)textFragment.Position.XIndent, (float)textFragment.Position.YIndent, (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width, (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
-
-StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-strikeOut.Opacity = .80f;
-strikeOut.Border = new Border(strikeOut);
-strikeOut.Color = Aspose.Pdf.Color.Red;
-textFragment.Page.Annotations.Add(strikeOut);
-```
-
-上記のコードでは、見つかったテキスト断片ごとに取り消し線の注釈を作成しています。取り消し線の注釈の不透明度、境界線、色も設定します。
-
-## ステップ 4: 変更した PDF ドキュメントを保存する
-テキストの断片を削除した後、変更したドキュメントを保存します。
+今、私たちは`TextFragmentAbsorber`指定されたテキストを見つけるには、PDF ドキュメントの各ページを反復処理する必要があります。
 
 ```csharp
-dataDir = dataDir + "StrikeOutWords_out.pdf";
-document.Save(dataDir);
-```
-
-### Aspose.PDF for .NET を使用した取り消し線のソース コードの例
-
-
-```csharp
-
-//ドキュメントディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-//開いた文書
-Document document = new Document(dataDir + "input.pdf");
-
-//特定のテキストフラグメントを検索する TextFragment Absorber インスタンスを作成する
-Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
-//PDF ドキュメントのページを反復処理する
+// PDF文書のページを反復処理する
 for (int i = 1; i <= document.Pages.Count; i++)
 {
-	//PDF ドキュメントの最初のページを取得する
-	Page page = document.Pages[1];
-	page.Accept(textFragmentAbsorber);
+    //PDF文書の現在のページを取得する
+    Page page = document.Pages[i];
+    page.Accept(textFragmentAbsorber);
 }
+```
 
-//吸収されたテキストのコレクションを作成する
+- `for (int i = 1; i <= document.Pages.Count; i++)`このループは PDF ドキュメントの各ページを反復処理します。
+- `document.Pages[i]`: 現在処理中のページを取得します。
+- `page.Accept(textFragmentAbsorber)` : この方法は、`TextFragmentAbsorber`現在のページに移動し、指定されたテキストを検索します。
+
+## ステップ4: テキストフラグメントを収集して処理する
+
+ページを反復処理した後、見つかったテキストの断片を収集し、さらに処理できるように準備します。
+
+```csharp
+//吸収されたテキスト断片のコレクションを作成する
 Aspose.Pdf.Text.TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+```
 
-//上記のコレクションを反復処理する
+- `TextFragmentCollection`このコレクションには、ドキュメント内で見つかったすべてのテキスト フラグメントが格納されます。次の手順でこのコレクションを使用して、テキストを取り消します。
+
+## ステップ5: テキストフラグメントを反復処理して取り消し線を引く
+
+このステップでは、コレクション内の各テキスト フラグメントをループし、取り消し線の注釈を適用します。
+
+```csharp
+//テキストフラグメントのコレクションを反復処理する
 for (int j = 1; j <= textFragmentCollection.Count; j++)
 {
 	Aspose.Pdf.Text.TextFragment textFragment = textFragmentCollection[j];
 
-	//TextFragment オブジェクトの長方形の寸法を取得する
-	Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
-				(float)textFragment.Position.XIndent,
-				(float)textFragment.Position.YIndent,
-				(float)textFragment.Position.XIndent +
-				(float)textFragment.Rectangle.Width,
-				(float)textFragment.Position.YIndent +
-				(float)textFragment.Rectangle.Height);
+    //TextFragmentオブジェクトの長方形の寸法を取得します
+    Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
+        (float)textFragment.Position.XIndent,
+        (float)textFragment.Position.YIndent,
+        (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width,
+        (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
 
-	//StrikeOut Annotation インスタンスをインスタンス化する
-	StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-	//注釈の不透明度を設定する
-	strikeOut.Opacity = .80f;
-	//注釈インスタンスの境界線を設定します
-	strikeOut.Border = new Border(strikeOut);
-	//注釈の色を設定する
-	strikeOut.Color = Aspose.Pdf.Color.Red;
-	//TextFragment の注釈コレクションに注釈を追加します
-	textFragment.Page.Annotations.Add(strikeOut);
+    //StrikeOut Annotationインスタンスをインスタンス化する
+    StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
+
+    //取り消し線注釈のプロパティを設定する
+    strikeOut.Opacity = .80f;
+    strikeOut.Border = new Border(strikeOut);
+    strikeOut.Color = Aspose.Pdf.Color.Red;
+
+    //テキストフラグメントのページの注釈コレクションに注釈を追加します
+    textFragment.Page.Annotations.Add(strikeOut);
 }
+```
+
+- `TextFragment textFragment = textFragmentCollection[j]`この行は現在のテキストフラグメントを取得します。
+- `Aspose.Pdf.Rectangle`: テキスト フラグメントの長方形の寸法を計算して、取り消し線を適用する場所を決定します。
+- `StrikeOutAnnotation`: このクラスは取り消し線注釈を表します。計算された四角形と現在のページを使用してインスタンス化します。
+- `strikeOut.Opacity`: このプロパティは取り消し線の不透明度を設定し、80% 表示されるようにします。
+- `strikeOut.Color`取り消し線の色を赤に設定しましたが、お好みの色に変更できます。
+- `textFragment.Page.Annotations.Add(strikeOut)`: ページに取り消し線注釈が追加されます。
+
+## ステップ6: 変更したPDF文書を保存する
+
+最後の手順は、取り消し線を適用した変更済みの PDF ドキュメントを保存することです。
+
+```csharp
+//更新されたPDF文書を保存する
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
 
+- `dataDir + "StrikeOutWords_out.pdf"`: 変更されたドキュメントに新しいファイル名が作成されます。元のファイルは変更されません。
+- `document.Save(dataDir)`: 取り消し線付きの PDF 文書を指定した場所に保存します。
+
 ## 結論
 
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメント内の特定の単語を取り消す方法を学習しました。ステップバイステップのガイドに従い、提供されている C# ソース コードを使用すると、PDF ドキュメントを簡単にロードし、特定のテキストの断片を検索し、取り消し線の注釈を作成してそれらの単語を視覚的にマークしたり取り消し線を引いたりすることができます。 Aspose.PDF for .NET は、PDF ドキュメントをプログラムで操作するためのシンプルかつ効果的な方法を提供し、.NET アプリケーションで PDF ファイルを扱う開発者にとって貴重なツールとなります。
+おめでとうございます! Aspose.PDF for .NET を使用して、PDF ドキュメント内の特定の単語を取り消すことができました。このステップ バイ ステップ ガイドに従うことで、テキストを強調表示したり取り消したりして PDF ドキュメントをカスタマイズし、より動的に、ニーズに合わせてカスタマイズできるようになります。法的文書に注釈を付ける場合、レポートを準備する場合、またはレビュー用にテキストにマークアップする場合など、このチュートリアルでは、これらを効率的に行うためのスキルを身に付けることができます。
 
-### よくある質問
+## よくある質問
 
-#### Q: Aspose.PDF for .NET とは何ですか?
+### 取り消し線の色を変更できますか?
 
-A: Aspose.PDF for .NET は、開発者が .NET アプリケーションでプログラムによって PDF ドキュメントを作成、編集、操作できるようにする強力なライブラリです。テキスト抽出、注釈処理、フォーム入力など、PDF ファイルを操作するための幅広い機能を提供します。
+はい、色を変更するには、`strikeOut.Color`プロパティを設定します。例えば、次のように設定します。`Aspose.Pdf.Color.Blue`青い三振。
 
-#### Q: Aspose.PDF for .NET を使用して PDF ドキュメント内の特定の単語を取り消すことはできますか?
+### 一度に複数の単語を取り消すことは可能ですか?
 
-A: はい。Aspose.PDF for .NET は、PDF ドキュメント内の特定のテキスト断片を検索し、それらの単語を視覚的にマークして取り消し線を引く注釈を作成する機能を提供します。
+絶対に！`TextFragmentAbsorber`文書内の任意の単語やフレーズを検索するために使用できます。`TextFragmentCollection`.
 
-#### Q: PDF 文書内で取り消し線を引くテキストを指定するにはどうすればよいですか?
+### 特定のページのテキストのみを取り消し線で消したい場合はどうすればよいでしょうか?
 
- A: 取り消し線を引くテキストを指定するには、`TextFragmentAbsorber` Aspose.PDF for .NET によって提供されるクラス。希望の基準に基づいて PDF ドキュメント内の特定のテキスト断片を検索できます。
+ページを反復するループを変更して、変更したいページだけを含めることができます。たとえば、`for (int i = 1; i <= 3; i++)`最初の 3 ページにのみ取り消し線が適用されます。
 
-#### Q: 取り消し線の注釈の外観をカスタマイズできますか?
+### 取り消し線の太さを調整するにはどうすればよいですか?
 
-A: はい、取り消し線注釈のさまざまなプロパティ (不透明度、境界線のスタイル、色など) をカスタマイズできます。これにより、取り消し線の注釈の外観を特定の要件に合わせて調整できます。
+取り消し線の太さは、`Border`の財産`StrikeOutAnnotation`これにより、取り消し線の外観をカスタマイズできます。
+
+### 文書を保存した後に取り消し線を元に戻す方法はありますか?
+
+文書を保存すると、取り消し線は永続的になります。取り消し線のない元のテキストを保持する必要がある場合は、変更を適用する前に元の文書のバックアップを保存することを検討してください。

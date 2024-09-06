@@ -1,18 +1,18 @@
 ---
 title: 옵션이 있는 라디오 버튼
 linktitle: 옵션이 있는 라디오 버튼
-second_title: .NET API 참조용 Aspose.PDF
-description: .NET용 Aspose.PDF를 사용하여 옵션이 포함된 라디오 버튼을 PDF 문서에 쉽게 추가하세요.
+second_title: .NET API 참조를 위한 Aspose.PDF
+description: Aspose.PDF for .NET을 사용하여 PDF 문서에 옵션이 있는 라디오 버튼을 쉽게 추가할 수 있습니다.
 type: docs
 weight: 230
 url: /ko/net/programming-with-forms/radio-button-with-options/
 ---
 
-이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 문서에 옵션이 포함된 라디오 버튼을 추가하는 방법을 보여줍니다. 이 프로세스를 안내하기 위해 C# 소스 코드를 단계별로 설명하겠습니다.
+이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 문서에 옵션이 있는 라디오 버튼을 추가하는 방법을 보여드리겠습니다. 이 과정을 안내하기 위해 C# 소스 코드를 단계별로 설명하겠습니다.
 
 ## 1단계: 준비
 
-필요한 라이브러리를 가져왔는지 확인하고 문서 디렉터리 경로를 설정하세요.
+필요한 라이브러리를 가져왔는지 확인하고 문서 디렉토리 경로를 설정하세요.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -20,7 +20,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## 2단계: 문서 개체 인스턴스화
 
-Document 개체를 인스턴스화하여 새 PDF 문서를 만듭니다.
+새 PDF 문서를 만들려면 Document 객체를 인스턴스화하세요.
 
 ```csharp
 Document doc = new Document();
@@ -37,9 +37,9 @@ table. ColumnWidths = "120 120 120";
 page.Paragraphs.Add(table);
 ```
 
-## 4단계: RadioButtonField 개체 인스턴스화
+## 4단계: RadioButtonField 객체 인스턴스화
 
-라디오 버튼을 나타내는 RadioButtonField 객체를 인스턴스화합니다.
+라디오 버튼을 나타내기 위해 RadioButtonField 객체를 인스턴스화합니다.
 
 ```csharp
 RadioButtonField rf = new RadioButtonField(page);
@@ -81,13 +81,13 @@ opt1.Characteristics.Border = System.Drawing.Color.Black;
 opt1.DefaultAppearance.TextColor = System.Drawing.Color.Red;
 opt1.Caption = new TextFragment("Item1");
 
-// opt2 및 opt3에 대해 동일한 단계를 반복하십시오.
+// opt2 및 opt3에 대해 동일한 단계를 반복합니다.
 
 ```
 
-## 7단계: 테이블에 라디오 버튼 옵션 추가
+## 7단계: 라디오 버튼 옵션을 테이블에 추가합니다.
 
-라디오 버튼 옵션을 테이블에 추가하여 표시합니다.
+라디오 버튼 옵션을 표에 추가하여 표시합니다.
 
 ```csharp
 Cell c1 = table.Rows.Add().Cells.Add();
@@ -108,11 +108,11 @@ dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
 doc.Save(dataDir);
 ```
 
-### .NET용 Aspose.PDF를 사용하는 옵션이 있는 라디오 버튼의 샘플 소스 코드 
+### .NET용 Aspose.PDF를 사용하여 옵션이 있는 라디오 버튼에 대한 샘플 소스 코드 
 ```csharp
 try
 {
-	// 문서 디렉터리의 경로입니다.
+	// 문서 디렉토리의 경로입니다.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	Document doc = new Document();
 	Page page = doc.Pages.Add();
@@ -175,4 +175,4 @@ catch (Exception ex)
 
 ## 결론
 
-축하합니다! .NET용 Aspose.PDF를 사용하여 PDF 문서에 옵션이 포함된 라디오 버튼을 성공적으로 추가했습니다. 이제 이 방법을 사용하여 PDF 문서에 대화형 양식을 만들 수 있습니다.
+축하합니다! Aspose.PDF for .NET을 사용하여 PDF 문서에 옵션이 있는 라디오 버튼을 성공적으로 추가했습니다. 이제 이 방법을 사용하여 PDF 문서에서 대화형 양식을 만들 수 있습니다.

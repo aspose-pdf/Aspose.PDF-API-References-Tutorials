@@ -12,7 +12,7 @@ url: /cs/java/pdf-tags-and-structure/illustration-structure-elements-in-pdf-usin
 
 tomto podrobném průvodci se ponoříme do fascinujícího světa vytváření prvků struktury ilustrace v souborech PDF pomocí Javy, to vše díky výkonné knihovně Aspose.PDF. Ať už jste ostřílený vývojář nebo jen ponoříte prsty do manipulace s PDF, tento tutoriál vám poskytne znalosti a zdrojový kód, který potřebujete, abyste mohli začít.
 
-## Úvod
+## Zavedení
 
 Dokumenty PDF často vyžadují více než jen prostý text. K efektivnímu přenosu informací mohou potřebovat ilustrace, diagramy a strukturované prvky. Aspose.PDF pro Javu umožňuje přidávat tyto prvky programově. Pojďme se rovnou ponořit.
 
@@ -22,7 +22,7 @@ Než se pustíme do našeho dobrodružství s ilustracemi ve formátu PDF, ujist
 
 - Vývojové prostředí Java: Ujistěte se, že máte v systému nainstalovanou Javu.
 
--  Aspose.PDF for Java: Stáhněte si a nainstalujte knihovnu Aspose.PDF pro Java z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF for Java: Stáhněte si a nainstalujte knihovnu Aspose.PDF pro Java z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Nastavení vašeho projektu
 
@@ -94,7 +94,7 @@ pdfDocument.save("Illustration.pdf");
 
 ## Závěr
 
-Gratulujeme! Naučili jste se vytvářet ilustrace a prvky struktury v souborech PDF pomocí Java a Aspose.PDF. Nyní můžete vylepšit své dokumenty PDF o text, obrázky a další.
+Gratuluji! Naučili jste se vytvářet ilustrace a prvky struktury v souborech PDF pomocí Java a Aspose.PDF. Nyní můžete vylepšit své dokumenty PDF o text, obrázky a další.
 
  Pokud máte nějaké dotazy nebo potřebujete další pomoc, neváhejte prozkoumat[Aspose.PDF pro dokumentaci Java](https://reference.aspose.com/pdf/java/) pro podrobnější informace.
 

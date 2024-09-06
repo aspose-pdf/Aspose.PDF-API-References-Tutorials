@@ -27,7 +27,7 @@ Kezdésként hozzon létre egy új Java-projektet a kívánt integrált fejleszt
 
 1. Töltse le az Aspose.PDF for Java könyvtárat a webhelyről.
 2. Adja hozzá a letöltött JAR-fájlt a projekt osztályútvonalához.
-3. Előfordulhat, hogy az Aspose.PDF dokumentációban leírtak szerint minden szükséges függőséget is hozzá kell adnia.
+3. Előfordulhat, hogy az Aspose.PDF dokumentációban leírtak szerint minden szükséges függőséget hozzá kell adnia.
 
 ## PDF dokumentum létrehozása
 

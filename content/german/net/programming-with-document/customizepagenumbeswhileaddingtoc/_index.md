@@ -2,35 +2,77 @@
 title: Passen Sie die Seitenzahlen beim Hinzufügen des Inhaltsverzeichnisses an
 linktitle: Passen Sie die Seitenzahlen beim Hinzufügen des Inhaltsverzeichnisses an
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie mit dieser Schritt-für-Schritt-Anleitung und dem Codebeispiel, wie Sie Seitenzahlen anpassen und gleichzeitig ein Inhaltsverzeichnis (TOC) mit Aspose.PDF für .NET hinzufügen.
+description: Erfahren Sie in diesem umfassenden Tutorial, wie Sie mit Aspose.PDF für .NET Seitenzahlen anpassen, während Sie Ihren PDF-Dokumenten ein Inhaltsverzeichnis hinzufügen.
 type: docs
 weight: 100
 url: /de/net/programming-with-document/customizepagenumbeswhileaddingtoc/
 ---
-In diesem Tutorial erfahren Sie, wie Sie mit Aspose.PDF für .NET Seitenzahlen anpassen und gleichzeitig ein Inhaltsverzeichnis (TOC) hinzufügen. Wir stellen Ihnen eine Schritt-für-Schritt-Anleitung zusammen mit einem Codebeispiel zur Verfügung, um Ihnen dabei zu helfen, dies zu erreichen.
+## Einführung
 
-## Schritt 1: Laden einer vorhandenen PDF-Datei
+In der Welt des Dokumentenmanagements sind PDFs unangefochtener König. Sie sind das Standardformat zum Teilen und Aufbewahren von Dokumenten auf verschiedenen Plattformen. Aber was passiert, wenn Sie Ihre PDF-Dokumente mit Funktionen wie einem Inhaltsverzeichnis (TOC) erweitern möchten? Hier kommt Aspose.PDF für .NET ins Spiel! Mit dieser leistungsstarken Bibliothek können Entwickler PDF-Dateien problemlos bearbeiten und Inhalte mühelos hinzufügen, ändern und anpassen. In diesem Tutorial erfahren Sie, wie Sie Seitenzahlen anpassen und gleichzeitig mit Aspose.PDF für .NET ein Inhaltsverzeichnis zu Ihren PDF-Dokumenten hinzufügen. Also, schnappen Sie sich Ihren Programmierhut und legen Sie los!
 
-Zuerst müssen wir eine vorhandene PDF-Datei laden. Für dieses Tutorial verwenden wir die Datei „42824.pdf“, die sich im Verzeichnis „IHR DOKUMENTENVERZEICHNIS“ befindet. Ersetzen Sie diesen Verzeichnispfad durch den tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
+## Voraussetzungen
+
+Bevor wir uns in den Code stürzen, müssen einige Dinge bereitstehen:
+
+1. Visual Studio: Stellen Sie sicher, dass Visual Studio auf Ihrem Computer installiert ist. Dies wird unsere Entwicklungsumgebung sein.
+2. Aspose.PDF für .NET: Sie müssen die Aspose.PDF-Bibliothek herunterladen und installieren. Sie finden sie[Hier](https://releases.aspose.com/pdf/net/).
+3. Grundkenntnisse in C#: Wenn Sie mit der C#-Programmierung vertraut sind, verstehen Sie die Codeausschnitte besser.
+4. Eine Beispiel-PDF-Datei: Halten Sie eine Beispiel-PDF-Datei bereit, mit der wir arbeiten können. Sie können eine einfache Datei erstellen oder eine vorhandene PDF-Datei herunterladen.
+
+## Pakete importieren
+
+Um zu beginnen, müssen wir die erforderlichen Pakete importieren. Öffnen Sie Ihr Visual Studio-Projekt und fügen Sie einen Verweis auf die Aspose.PDF-Bibliothek hinzu. Sie können dies mithilfe des NuGet-Paket-Managers tun:
+
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf Ihr Projekt.
+2. Wählen Sie „NuGet-Pakete verwalten“ aus.
+3. Suchen Sie nach „Aspose.PDF“ und installieren Sie es.
+
+```csharp
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Sobald Sie die Bibliothek installiert haben, können Sie mit dem Codieren beginnen!
+
+## Schritt 1: Richten Sie Ihr Dokumentverzeichnis ein
+
+Als Erstes müssen wir unser Dokumentverzeichnis einrichten. Hier werden wir unsere Eingabe- und Ausgabe-PDF-Dateien speichern. 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "42824.pdf";
 string outFile = dataDir + "42824_out.pdf";
+```
+
+Ersetzen Sie in diesem Snippet`YOUR DOCUMENT DIRECTORY` mit dem tatsächlichen Pfad, in dem sich Ihre PDF-Dateien befinden. Dies hilft uns, das vorhandene PDF zu laden und die geänderte Version zu speichern.
+
+## Schritt 2: Laden Sie die vorhandene PDF-Datei
+
+Nachdem wir nun unser Dokumentverzeichnis eingerichtet haben, laden wir die vorhandene PDF-Datei. 
+
+```csharp
 Document doc = new Document(inFile);
 ```
 
-## Schritt 2: Hinzufügen einer Inhaltsverzeichnisseite
+ Hier erstellen wir ein neues`Document` Objekt, indem wir den Eingabedateipfad übergeben. Dadurch können wir den PDF-Inhalt programmgesteuert bearbeiten.
 
- Als Nächstes müssen wir am Anfang des Dokuments eine neue Seite hinzufügen, die als Inhaltsverzeichnisseite dient. Wir können dies erreichen, indem wir die verwenden`Insert()` Methode der`Pages` Sammlung der`Document` Objekt.
+## Schritt 3: Einfügen einer neuen Seite für das Inhaltsverzeichnis
+
+Als Nächstes müssen wir in unserem PDF eine neue Seite erstellen, auf der das Inhaltsverzeichnis gespeichert wird.
 
 ```csharp
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
 ```
 
-## Schritt 3: Erstellen eines TOC-Objekts
+Diese Zeile fügt am Anfang des Dokuments eine neue Seite ein. Das Inhaltsverzeichnis wird auf dieser Seite angezeigt.
 
- Um ein TOC-Objekt zu erstellen, müssen wir zunächst ein erstellen`TocInfo` Objekt und legen Sie seine Eigenschaften fest. In diesem Tutorial setzen wir den Titel des Inhaltsverzeichnisses auf „Inhaltsverzeichnis“ und das Seitenzahlpräfix auf „P“.
+## Schritt 4: Inhaltsverzeichnisinformationen erstellen
+
+Erstellen wir nun ein Objekt zur Darstellung der Inhaltsverzeichnisinformationen.
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -42,99 +84,55 @@ tocInfo.PageNumbersPrefix = "P";
 tocPage.TocInfo = tocInfo;
 ```
 
-## Schritt 4: Inhaltsverzeichniseinträge erstellen
+ In diesem Schritt erstellen wir eine`TocInfo` Objekt und setzen seinen Titel auf "Inhaltsverzeichnis". Wir passen auch die Schriftgröße und den Stil an. Das`PageNumbersPrefix` ist auf „P“ eingestellt, wodurch den Seitenzahlen im Inhaltsverzeichnis ein Präfix vorangestellt wird.
 
-Um Inhaltsverzeichniseinträge zu erstellen, müssen wir alle Seiten des Dokuments mit Ausnahme der Inhaltsverzeichnisseite durchlaufen und für jede Seite ein Überschriftenobjekt erstellen. Anschließend können wir das Überschriftenobjekt zur Inhaltsverzeichnisseite hinzufügen und seine Zielseite angeben.
+## Schritt 5: Überschriften zum Inhaltsverzeichnis hinzufügen
+
+Jetzt kommt der spaßige Teil! Wir durchlaufen die Seiten des Dokuments und fügen unserem Inhaltsverzeichnis Überschriften hinzu.
 
 ```csharp
 for (int i = 1; i < doc.Pages.Count; i++)
 {
-    // Erstellen Sie ein Überschriftenobjekt
     Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
     TextSegment segment2 = new TextSegment();
     heading2.TocPage = tocPage;
     heading2.Segments.Add(segment2);
-    // Geben Sie die Zielseite für das Überschriftenobjekt an
     heading2.DestinationPage = doc.Pages[i + 1];
-    // Zielseite
     heading2.Top = doc.Pages[i + 1].Rect.Height;
-    // Zielkoordinate
     segment2.Text = "Page " + i.ToString();
-    // Fügen Sie der Seite mit dem Inhaltsverzeichnis eine Überschrift hinzu
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
-## Schritt 5: Speichern des aktualisierten Dokuments
+ In dieser Schleife erstellen wir eine neue`Heading` Objekt für jede Seite. Wir legen die Zielseite für jede Überschrift fest und geben den anzuzeigenden Text an, nämlich „Seite X“, wobei X die Seitenzahl ist. Schließlich fügen wir die Überschrift zur Inhaltsverzeichnisseite hinzu.
 
-Schließlich müssen wir das aktualisierte Dokument in einer neuen Datei speichern. Wir können dies erreichen, indem wir die verwenden`Save()` Methode der`Document` Objekt.
+## Schritt 6: Speichern Sie das aktualisierte Dokument
+
+Nachdem wir alle erforderlichen Überschriften hinzugefügt haben, ist es an der Zeit, unser aktualisiertes Dokument zu speichern.
 
 ```csharp
 doc.Save(outFile);
 ```
 
-### Beispielquellcode zum Anpassen von Seitenzahlen beim Hinzufügen von Inhaltsverzeichnissen mit Aspose.PDF für .NET
-
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string inFile = dataDir + "42824.pdf";
-string outFile = dataDir + "42824_out.pdf";
-// Laden Sie eine vorhandene PDF-Datei
-Document doc = new Document(inFile);
-// Erhalten Sie Zugriff auf die erste Seite der PDF-Datei
-Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
-// Erstellen Sie ein Objekt zur Darstellung von TOC-Informationen
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-// Legen Sie den Titel für das Inhaltsverzeichnis fest
-tocInfo.Title = title;
-tocInfo.PageNumbersPrefix = "P";
-tocPage.TocInfo = tocInfo;
-for (int i = 1; i<doc.Pages.Count; i++)
-{
-	// Erstellen Sie ein Überschriftenobjekt
-	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-	TextSegment segment2 = new TextSegment();
-	heading2.TocPage = tocPage;
-	heading2.Segments.Add(segment2);
-	// Geben Sie die Zielseite für das Überschriftenobjekt an
-	heading2.DestinationPage = doc.Pages[i + 1];
-	// Zielseite
-	heading2.Top = doc.Pages[i + 1].Rect.Height;
-	// Zielkoordinate
-	segment2.Text = "Page " + i.ToString();
-	// Fügen Sie der Seite mit dem Inhaltsverzeichnis eine Überschrift hinzu
-	tocPage.Paragraphs.Add(heading2);
-}
-
-// Speichern Sie das aktualisierte Dokument
-doc.Save(outFile);
-```
+Diese Zeile speichert die geänderte PDF-Datei mit dem Inhaltsverzeichnis. Sie können nun die Ausgabedatei öffnen und Ihr angepasstes Inhaltsverzeichnis anzeigen!
 
 ## Abschluss
 
-In diesem Tutorial haben wir eine Schritt-für-Schritt-Anleitung zum Anpassen von Seitenzahlen beim Hinzufügen eines Inhaltsverzeichnisses mit Aspose.PDF für .NET bereitgestellt. Wir haben auch ein Codebeispiel bereitgestellt, das Sie als Referenz bei der Implementierung dieser Funktion in Ihrem Unternehmen verwenden können
+Und da haben Sie es! Sie haben erfolgreich Seitenzahlen angepasst, während Sie mit Aspose.PDF für .NET ein Inhaltsverzeichnis zu Ihrem PDF-Dokument hinzugefügt haben. Diese leistungsstarke Bibliothek erleichtert die Bearbeitung von PDF-Dateien und mit nur wenigen Codezeilen können Sie Ihre Dokumente erheblich verbessern. Egal, ob Sie Berichte, eBooks oder andere PDF-Dateien erstellen, ein Inhaltsverzeichnis kann die Navigation für Ihre Leser erheblich verbessern. Also, worauf warten Sie noch? Tauchen Sie ein in Aspose.PDF und beginnen Sie noch heute mit der Erstellung fantastischer PDFs!
 
-### FAQs
+## Häufig gestellte Fragen
 
-#### F: Was ist ein Inhaltsverzeichnis (TOC) in einem PDF-Dokument?
+### Was ist Aspose.PDF für .NET?
+Aspose.PDF für .NET ist eine Bibliothek, die es Entwicklern ermöglicht, PDF-Dokumente programmgesteuert zu erstellen, zu bearbeiten und zu konvertieren.
 
-A: Ein Inhaltsverzeichnis (TOC) in einem PDF-Dokument ist eine Navigationshilfe, die eine organisierte Liste von Dokumentabschnitten oder Kapiteln zusammen mit den entsprechenden Seitenzahlen bereitstellt. Dadurch können Leser schnell zu bestimmten Abschnitten im Dokument navigieren.
+### Kann ich Aspose.PDF kostenlos nutzen?
+ Ja, Aspose bietet eine kostenlose Testversion an, mit der Sie die Funktionen der Bibliothek erkunden können. Sie können sie herunterladen[Hier](https://releases.aspose.com/).
 
-#### F: Warum sollte ich Seitenzahlen in einem Inhaltsverzeichnis anpassen?
+### Wie erhalte ich Support für Aspose.PDF?
+ Sie können Unterstützung erhalten, indem Sie das Aspose-Forum besuchen[Hier](https://forum.aspose.com/c/pdf/10).
 
-A: Das Anpassen von Seitenzahlen in einem Inhaltsverzeichnis kann nützlich sein, wenn Sie ein bestimmtes Seitennummerierungsformat verwenden oder zusätzliche Informationen zusammen mit den Seitenzahlen hinzufügen möchten. Es ermöglicht Ihnen, ein personalisierteres und informativeres Inhaltsverzeichnis zu erstellen.
+### Ist eine temporäre Lizenz verfügbar?
+ Ja, Sie können eine temporäre Lizenz für Aspose.PDF anfordern[Hier](https://purchase.aspose.com/temporary-license/).
 
-#### F: Kann ich Hyperlinks in das Inhaltsverzeichnis einfügen, um auf bestimmte Abschnitte oder Seiten im PDF-Dokument zu verweisen?
-
-A: Ja, mit Aspose.PDF für .NET können Sie im Inhaltsverzeichnis Hyperlinks erstellen, die auf bestimmte Abschnitte oder Seiten im PDF-Dokument verweisen. Dies verbessert die Interaktivität und Navigation des PDF-Dokuments.
-
-#### F: Ist Aspose.PDF für .NET mit PDF/A-Standards kompatibel?
-
-A: Ja, Aspose.PDF für .NET unterstützt PDF/A-Standards, einschließlich PDF/A-1, PDF/A-2 und PDF/A-3. Damit können Sie PDF-Dokumente erstellen, die den Archivierungs- und Langzeitarchivierungsanforderungen entsprechen.
-
-#### F: Kann ich den Inhaltsverzeichniseinträgen weitere Formatierungen hinzufügen, z. B. Schriftarten oder Farben?
-
-A: Ja, Sie können den Inhaltsverzeichniseinträgen zusätzliche Formatierungen hinzufügen, z. B. Schriftarten, Farben und Schriftgrößen, indem Sie Aspose.PDF für .NET verwenden. Dadurch können Sie das Erscheinungsbild des Inhaltsverzeichnisses an Ihre Anforderungen anpassen.
+### Wo kann ich Aspose.PDF für .NET kaufen?
+ Sie können Aspose.PDF für .NET kaufen[Hier](https://purchase.aspose.com/buy).

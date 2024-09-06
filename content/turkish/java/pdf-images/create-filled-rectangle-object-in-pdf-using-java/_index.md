@@ -1,40 +1,40 @@
 ---
-title: Java kullanarak PDF'de Dolgulu Dikdörtgen Nesnesi Oluşturun
-linktitle: Java kullanarak PDF'de Dolgulu Dikdörtgen Nesnesi Oluşturun
+title: Java kullanarak PDF'de Dolu Dikdörtgen Nesnesi Oluşturma
+linktitle: Java kullanarak PDF'de Dolu Dikdörtgen Nesnesi Oluşturma
 second_title: Aspose.PDF Java PDF İşleme API'si
-description: Aspose.PDF for Java ile Java kullanarak PDF'lerde içi dolu dikdörtgenler oluşturmayı öğrenin. Kod örnekleriyle adım adım eğitim.
+description: Java kullanarak Aspose.PDF for Java ile PDF'lerde dolu dikdörtgenlerin nasıl oluşturulacağını öğrenin. Kod örnekleriyle adım adım eğitim.
 type: docs
 weight: 12
 url: /tr/java/pdf-images/create-filled-rectangle-object-in-pdf-using-java/
 ---
 
-## Java kullanarak PDF'de Dolgulu Dikdörtgen Nesnesi Oluşturmaya Giriş
+## Java kullanarak PDF'de Dolu Dikdörtgen Nesnesi Oluşturmaya Giriş
 
-Bu derste, Aspose.PDF for Java'nın yardımıyla Java kullanarak bir PDF belgesinde içi dolu bir dikdörtgen nesnenin nasıl oluşturulacağını keşfedeceğiz. Dolu dikdörtgenler, PDF'lerde önemli bilgileri vurgulamak veya görsel ayrımlar oluşturmak gibi çeşitli amaçlarla yaygın olarak kullanılır.
+Bu eğitimde, Java kullanarak Aspose.PDF for Java'nın yardımıyla bir PDF belgesinde dolu dikdörtgen nesnesinin nasıl oluşturulacağını inceleyeceğiz. Dolu dikdörtgenler, önemli bilgileri vurgulamak veya görsel ayrımlar oluşturmak gibi çeşitli amaçlar için PDF'lerde yaygın olarak kullanılır.
 
-## Önkoşullar
+## Ön koşullar
 
-Başlamadan önce aşağıdaki önkoşulların mevcut olduğundan emin olun:
+Başlamadan önce aşağıdaki ön koşulların mevcut olduğundan emin olun:
 
-- Java Geliştirme Kiti (JDK) yüklü
+- Java Geliştirme Kiti (JDK) yüklendi
 - Eclipse veya IntelliJ gibi Entegre Geliştirme Ortamı (IDE)
-- Aspose.PDF for Java kütüphanesi indirildi ve yapılandırıldı
+- Java kütüphanesi için Aspose.PDF indirildi ve yapılandırıldı
 
-## Java için Aspose.PDF'yi Kurma
+## Java için Aspose.PDF Kurulumu
 
-Başlamak için web sitesinden Aspose.PDF for Java'yı indirmeniz gerekiyor. Bu adımları takip et:
+Başlamak için web sitesinden Aspose.PDF for Java'yı indirmeniz gerekir. Şu adımları izleyin:
 
-1.  Aspose.PDF for Java belgelerine şu adresten erişebilirsiniz:[Burada](https://reference.aspose.com/pdf/java/).
+1.  Java için Aspose.PDF belgelerine şu adresten erişin:[Burada](https://reference.aspose.com/pdf/java/).
 
 2. Kütüphaneyi indirin ve verilen kurulum talimatlarını izleyin.
 
 3. Aspose.PDF kütüphanesini Java projenize aktarın.
 
-Artık Aspose.PDF for Java'yı kurduğumuza göre, bir PDF belgesinde içi dolu bir dikdörtgen oluşturmaya geçelim.
+Artık Java için Aspose.PDF'yi kurduğumuza göre, şimdi bir PDF belgesinde dolu dikdörtgen oluşturmaya geçelim.
 
 ## Yeni Bir PDF Belgesi Oluşturma
 
-Bu bölümde Aspose.PDF for Java kullanarak yeni bir PDF belgesi oluşturacağız. İlk önce gerekli sınıfları içe aktarın:
+Bu bölümde, Java için Aspose.PDF kullanarak yeni bir PDF belgesi oluşturacağız. İlk olarak, gerekli sınıfları içe aktarın:
 
 ```java
 import com.aspose.pdf.Document;
@@ -42,16 +42,16 @@ import com.aspose.pdf.Page;
 import com.aspose.pdf.Rectangle;
 ```
 
-Ardından yeni bir belge ve sayfa oluşturun:
+Daha sonra yeni bir belge ve sayfa oluşturun:
 
 ```java
 Document pdfDocument = new Document();
 Page page = pdfDocument.getPages().add();
 ```
 
-## İçi Dolu Bir Dikdörtgen Ekleme
+## Dolu Dikdörtgen Ekleme
 
-Dolu bir dikdörtgen eklemek için koordinatlarını, boyutlarını ve rengini tanımlamanız gerekir. Aşağıda içi dolu bir dikdörtgenin nasıl oluşturulacağına ilişkin bir örnek verilmiştir:
+Dolu bir dikdörtgen eklemek için koordinatlarını, boyutlarını ve rengini tanımlamanız gerekir. İşte dolu bir dikdörtgenin nasıl oluşturulacağına dair bir örnek:
 
 ```java
 Rectangle filledRectangle = new Rectangle(page, 100, 100, 200, 50);
@@ -60,17 +60,17 @@ page.getParagraphs().add(filledRectangle);
 ```
 
 Bu kodda:
--  Yeni bir tane yaratıyoruz`Rectangle` konumunu (x=100, y=100), genişliğini (200) ve yüksekliğini (50) belirterek nesneyi seçin.
-- Dikdörtgenin arka plan rengini kırmızı olarak ayarladık.
+-  Yeni bir şey yaratıyoruz`Rectangle` nesne, konumunu (x=100, y=100), genişliğini (200) ve yüksekliğini (50) belirterek.
+- Dikdörtgenin arka plan rengini kırmızı olarak ayarlıyoruz.
 - Son olarak dikdörtgeni sayfaya ekliyoruz.
 
 ## Dikdörtgeni Özelleştirme
 
-Rengini, kenarlığını veya diğer özelliklerini değiştirerek dikdörtgeni daha da özelleştirebilirsiniz. Daha fazla seçenek için Aspose.PDF for Java belgelerini inceleyin.
+Dikdörtgeni rengini, kenarlığını veya diğer özelliklerini değiştirerek daha da özelleştirebilirsiniz. Daha fazla seçenek için Aspose.PDF for Java belgelerini inceleyin.
 
 ## PDF'yi kaydetme
 
-Dolu dikdörtgeni içeren PDF belgesini oluşturduktan sonra onu bir dosyaya kaydedin:
+Dolu dikdörtgeni içeren PDF belgesini oluşturduktan sonra bir dosyaya kaydedin:
 
 ```java
 pdfDocument.save("FilledRectangle.pdf");
@@ -78,30 +78,30 @@ pdfDocument.save("FilledRectangle.pdf");
 
 ## Kodu Çalıştırma
 
-Java kodunuzu derleyin ve çalıştırın. Artık içi dolu dikdörtgen içeren "FilledRectangle.pdf" adında bir PDF dosyanız olmalıdır.
+Java kodunuzu derleyin ve çalıştırın. Artık dolu bir dikdörtgene sahip "FilledRectangle.pdf" adlı bir PDF dosyanız olmalı.
 
 ## Çözüm
 
-Bu eğitimde, Java ve Aspose.PDF for Java kullanarak bir PDF belgesinde içi dolu dikdörtgen nesnenin nasıl oluşturulacağını öğrendik. Bu, önemli bilgileri vurgulamak veya PDF'lerinize görsel öğeler eklemek için yararlı olabilir. Aspose.PDF for Java, Java uygulamalarındaki PDF'lerle çalışmanın güçlü ve esnek bir yolunu sunar.
+Bu eğitimde, Java ve Java için Aspose.PDF kullanarak bir PDF belgesinde doldurulmuş dikdörtgen nesnesinin nasıl oluşturulacağını öğrendik. Bu, önemli bilgileri vurgulamak veya PDF'lerinize görsel öğeler eklemek için yararlı olabilir. Java için Aspose.PDF, Java uygulamalarında PDF'lerle çalışmak için güçlü ve esnek bir yol sağlar.
 
-## SSS'ler
+## SSS
 
 ### Java için Aspose.PDF nedir?
 
-Aspose.PDF for Java, geliştiricilerin Java uygulamalarında PDF dosyalarıyla çalışmasına olanak tanıyan bir Java kütüphanesidir. PDF belgelerini oluşturmak, değiştirmek ve yönetmek için çok çeşitli özellikler sunar.
+Aspose.PDF for Java, geliştiricilerin Java uygulamalarında PDF dosyalarıyla çalışmasına olanak tanıyan bir Java kütüphanesidir. PDF belgeleri oluşturmak, düzenlemek ve yönetmek için çok çeşitli özellikler sunar.
 
-### Aspose.PDF for Java'yı nasıl yüklerim?
+### Java için Aspose.PDF'yi nasıl yüklerim?
 
-Aspose.PDF for Java'yı Aspose web sitesinden kütüphaneyi indirerek ve belgelerde verilen kurulum talimatlarını takip ederek kurabilirsiniz.
+Aspose.PDF for Java'yı, Aspose web sitesinden kütüphaneyi indirerek ve dokümantasyonda verilen kurulum talimatlarını izleyerek yükleyebilirsiniz.
 
 ### Dolu dikdörtgenin rengini değiştirebilir miyim?
 
- Evet, doldurulmuş dikdörtgenin rengini, arka plan rengini ayarlayarak özelleştirebilirsiniz.`setBackgroundColor`öğreticide gösterildiği gibi yöntem.
+ Evet, arka plan rengini ayarlayarak doldurulmuş dikdörtgenin rengini özelleştirebilirsiniz.`setBackgroundColor`Yöntem, eğitimde gösterildiği gibidir.
 
-### Aspose.PDF for Java'nın kullanımı ücretsiz midir?
+### Aspose.PDF for Java'yı kullanmak ücretsiz mi?
 
-Aspose.PDF for Java ticari bir kütüphanedir ve bunu projelerinizde kullanmak için bir lisans satın almanız gerekebilir. Lisans ayrıntıları için Aspose web sitesine bakın.
+Java için Aspose.PDF ticari bir kütüphanedir ve projelerinizde kullanmak için bir lisans satın almanız gerekebilir. Lisanslama ayrıntıları için Aspose web sitesini kontrol edin.
 
-### Aspose.PDF for Java'yı kullanarak daha fazla örneği nerede bulabilirim?
+### Java için Aspose.PDF'i kullanarak daha fazla örneği nerede bulabilirim?
 
- Aspose.PDF for Java'nın nasıl kullanılacağına ilişkin daha fazla örneği ve ayrıntılı belgeleri Aspose web sitesinde bulabilirsiniz:[Burada](https://reference.aspose.com/pdf/java/).
+ Aspose.PDF'in Java için nasıl kullanılacağına dair daha fazla örnek ve ayrıntılı belgeleri Aspose web sitesinde bulabilirsiniz.[Burada](https://reference.aspose.com/pdf/java/).

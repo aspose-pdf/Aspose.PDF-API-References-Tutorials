@@ -30,7 +30,7 @@ Document doc = new Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## 第2步：新增圖片
+## 第二步：新增圖片
 
 接下來，我們將向 PDF 文件的頁面新增圖像。使用以下程式碼：
 

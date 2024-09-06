@@ -1,19 +1,19 @@
 ---
-title: Zastosuj styl liczbowy w pliku PDF
-linktitle: Zastosuj styl liczbowy w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak zastosować styl numerowania do nagłówków w pliku PDF przy użyciu Aspose.PDF dla .NET. Przewodnik krok po kroku.
+title: Zastosuj styl numeracji w pliku PDF
+linktitle: Zastosuj styl numeracji w pliku PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak zastosować styl numeracji do nagłówków w pliku PDF za pomocą Aspose.PDF dla .NET. Przewodnik krok po kroku.
 type: docs
 weight: 10
 url: /pl/net/programming-with-headings/apply-number-style/
 ---
-W tym samouczku przeprowadzimy Cię krok po kroku przez następujący kod źródłowy C#, aby zastosować styl numerowania w pliku PDF przy użyciu Aspose.PDF dla .NET.
+W tym samouczku pokażemy Ci krok po kroku poniższy kod źródłowy w języku C#, który pozwoli Ci zastosować styl numeracji w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
 
-Zanim zaczniesz, upewnij się, że zainstalowałeś bibliotekę Aspose.PDF i skonfigurowałeś środowisko programistyczne. Posiadasz także podstawową wiedzę z zakresu programowania w języku C#.
+Upewnij się, że zainstalowałeś bibliotekę Aspose.PDF i skonfigurowałeś środowisko programistyczne, zanim zaczniesz. Posiadaj również podstawową wiedzę na temat programowania w języku C#.
 
 ### Krok 1: Konfiguracja katalogu dokumentów
 
-W dostarczonym kodzie źródłowym musisz określić katalog, w którym chcesz zapisać wygenerowany plik PDF. Zmień zmienną „dataDir” na żądany katalog.
+podanym kodzie źródłowym musisz określić katalog, w którym chcesz zapisać wygenerowany plik PDF. Zmień zmienną „dataDir” na żądany katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -21,7 +21,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ### Krok 2: Tworzenie dokumentu PDF
 
-Tworzymy nowy dokument PDF o określonych wymiarach i marginesach.
+Tworzymy nowy dokument PDF z określonymi wymiarami i marginesami.
 
 ```csharp
 Document pdfDoc = new Document();
@@ -34,9 +34,9 @@ pdfDoc.PageInfo.Margin.Top = 72;
 pdfDoc.PageInfo.Margin.Bottom = 72;
 ```
 
-### Krok 3: Tworzenie strony i pływającego kontenera
+### Krok 3: Tworzenie strony i kontenera pływającego
 
-Dodajemy stronę do dokumentu i tworzymy pływający kontener do porządkowania treści.
+Dodajemy stronę do dokumentu i tworzymy pływający kontener w celu uporządkowania zawartości.
 
 ```csharp
 Aspose.Pdf.Page pdfPage = pdfDoc.Pages.Add();
@@ -86,7 +86,7 @@ floatBox.Paragraphs.Add(heading3);
 
 ### Krok 5: Zapisywanie dokumentu PDF
 
-Zapisujemy wygenerowany dokument PDF we wskazanym katalogu.
+Wygenerowany dokument PDF zapisujemy w wskazanym katalogu.
 
 ```csharp
 dataDir = dataDir + "ApplyNumberStyle_out.pdf";
@@ -149,25 +149,25 @@ Console.WriteLine("\nNumber style applied successfully in headings.\nFile saved 
 
 ## Wniosek
 
-W tym samouczku wyjaśniliśmy, jak zastosować styl numerowania do nagłówków w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Możesz teraz wykorzystać tę wiedzę do tworzenia dokumentów PDF z niestandardową numeracją nagłówków.
+W tym samouczku wyjaśniliśmy, jak stosować styl numeracji do nagłówków w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Teraz możesz wykorzystać tę wiedzę do tworzenia dokumentów PDF z niestandardową numeracją nagłówków.
 
-### Często zadawane pytania dotyczące stosowania stylu liczb w pliku PDF
+### Często zadawane pytania dotyczące stosowania stylu liczbowego w pliku PDF
 
-#### P: Jaki jest styl numeracji w dokumencie PDF?
+#### P: Czym jest styl numeracji w dokumencie PDF?
 
-Odp.: Styl numeracji odnosi się do formatu, w jakim numerowane są nagłówki lub sekcje w dokumencie PDF. Może zawierać cyfry, litery lub inne znaki, aby zapewnić strukturę hierarchiczną.
+A: Styl numeracji odnosi się do formatu, w którym nagłówki lub sekcje są numerowane w dokumencie PDF. Może obejmować cyfry, litery lub inne znaki, aby zapewnić strukturę hierarchiczną.
 
-#### P: Dlaczego miałbym zastosować styl numerowania do nagłówków w dokumencie PDF?
+#### P: Dlaczego muszę stosować styl numeracji do nagłówków w dokumencie PDF?
 
-Odp.: Zastosowanie stylu numeracji do nagłówków poprawia czytelność i organizację dokumentu PDF. Pomaga czytelnikom w łatwej nawigacji i zrozumieniu hierarchicznej struktury treści.
+A: Stosowanie stylu numeracji do nagłówków poprawia czytelność i organizację dokumentu PDF. Pomaga czytelnikom łatwo poruszać się i zrozumieć hierarchiczną strukturę treści.
 
-#### P: Co to jest Aspose.PDF dla .NET?
+#### P: Czym jest Aspose.PDF dla platformy .NET?
 
-O: Aspose.PDF dla .NET to biblioteka, która umożliwia programistom programową pracę z plikami PDF w aplikacjach .NET. Zapewnia szeroką gamę funkcji do tworzenia, edytowania, konwertowania i manipulowania dokumentami PDF.
+A: Aspose.PDF dla .NET to biblioteka, która umożliwia programistom programistyczną pracę z plikami PDF w aplikacjach .NET. Zapewnia szeroki zakres funkcji do tworzenia, edytowania, konwertowania i manipulowania dokumentami PDF.
 
 #### P: Jak zaimportować wymagane biblioteki do mojego projektu C#?
 
-O: Aby zaimportować niezbędne biblioteki do projektu C#, dołącz następujące dyrektywy importu:
+A: Aby zaimportować niezbędne biblioteki do projektu C#, należy uwzględnić następujące dyrektywy importu:
 
 ```csharp
 using Aspose.Pdf;
@@ -176,9 +176,9 @@ using Aspose.Pdf.InteractiveFeatures;
 
 Dyrektywy te umożliwiają dostęp do klas i metod potrzebnych do pracy z dokumentami PDF i stosowania stylów numeracji.
 
-#### P: Jak określić katalog, w którym ma zostać zapisany wygenerowany plik PDF?
+#### P: Jak wskazać katalog, w którym zostanie zapisany wygenerowany plik PDF?
 
-O: W dostarczonym kodzie źródłowym zmodyfikuj zmienną „dataDir”, aby określić katalog, w którym chcesz zapisać wygenerowany plik PDF.
+A: W udostępnionym kodzie źródłowym zmodyfikuj zmienną „dataDir”, aby określić katalog, w którym chcesz zapisać wygenerowany plik PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -188,7 +188,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 #### P: Jak utworzyć dokument PDF o określonych wymiarach i marginesach?
 
-O: Aby utworzyć dokument PDF o określonych wymiarach i marginesach, użyj następującego kodu:
+A: Aby utworzyć dokument PDF o określonych wymiarach i marginesach, użyj następującego kodu:
 
 ```csharp
 Document pdfDoc = new Document();
@@ -201,13 +201,13 @@ pdfDoc.PageInfo.Margin.Top = 72;
 pdfDoc.PageInfo.Margin.Bottom = 72;
 ```
 
-#### P: Jak dodać nagłówki ze stylem numeracji do dokumentu PDF?
+#### P: Jak dodać nagłówki ze stylem numerowania do dokumentu PDF?
 
-Odp.: Aby dodać nagłówki ze stylem numeracji do dokumentu PDF, użyj dostarczonych przykładów kodu, aby utworzyć nagłówki i dostosować ich style numeracji. W razie potrzeby dostosuj właściwości, takie jak tekst, styl numeracji, numer początkowy i sekwencja automatyczna.
+A: Aby dodać nagłówki ze stylem numeracji do dokumentu PDF, użyj dostarczonych przykładów kodu, aby utworzyć nagłówki i dostosować ich style numeracji. Dostosuj właściwości, takie jak tekst, styl numeracji, numer początkowy i sekwencję automatyczną, w razie potrzeby.
 
 #### P: Jak zapisać wygenerowany dokument PDF?
 
- Odp.: Aby zapisać wygenerowany dokument PDF, użyj pliku`Save` metoda`pdfDoc` obiekt:
+ A: Aby zapisać wygenerowany dokument PDF, użyj`Save` metoda`pdfDoc` obiekt:
 
 ```csharp
 dataDir = dataDir + "ApplyNumberStyle_out.pdf";
@@ -215,14 +215,14 @@ pdfDoc.Save(dataDir);
 Console.WriteLine("\nNumbering style applied to headers.\nFile saved as: " + dataDir);
 ```
 
-#### P: Jak mogę sprawdzić, czy zastosowano styl numeracji?
+#### P: Jak mogę sprawdzić, czy styl numeracji został zastosowany?
 
-O: Otwórz wygenerowany plik PDF, aby sprawdzić, czy do nagłówków zastosowano określony styl numeracji.
+A: Otwórz wygenerowany plik PDF, aby sprawdzić, czy do nagłówków został zastosowany wskazany styl numeracji.
 
-#### P: Czy mogę bardziej dostosować styl numeracji?
+#### P: Czy mogę dodatkowo dostosować styl numeracji?
 
- O: Tak, możesz dodatkowo dostosować styl numerowania, dostosowując właściwości pliku`Heading` obiektów, takich jak typ stylu numeracji, numer początkowy i sekwencja automatyczna.
+ O: Tak, możesz dodatkowo dostosować styl numeracji, dostosowując właściwości`Heading` obiekty, takie jak styl numeracji, numer początkowy i sekwencja automatyczna.
 
 #### P: Czy mogę zastosować różne style numeracji do różnych sekcji dokumentu?
 
-O: Tak, możesz zastosować różne style numeracji do różnych sekcji dokumentu, tworząc ich wiele`Heading` obiekty o różnych stylach i sekwencjach.
+ O: Tak, możesz stosować różne style numeracji do różnych sekcji dokumentu, tworząc wiele`Heading` obiekty o różnych stylach i sekwencjach.

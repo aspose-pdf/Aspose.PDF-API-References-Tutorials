@@ -41,7 +41,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 4. lépés: Hozzon létre egy .NET Regex objektumot
 
- Hozzon létre egy`.NET Regex` objektum a keresési minta meghatározásához:
+ Hozzon létre a`.NET Regex` objektum a keresési minta meghatározásához:
 
 ```csharp
 System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"[\S]+");
@@ -71,7 +71,7 @@ Page page = document.Pages[1];
 
 ## 7. lépés: Hozzon létre egy TextFragmentAbsorber-t
 
- Hozzon létre egy`TextFragmentAbsorber` objektumot a bemeneti reguláris kifejezés összes példányának megtalálásához:
+ Hozzon létre a`TextFragmentAbsorber` objektumot a bemeneti reguláris kifejezés összes példányának megtalálásához:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(regex);
@@ -88,7 +88,7 @@ page.Accept(textFragmentAbsorber);
 
 ## 9. lépés: Töltse le a kibontott szövegrészleteket
 
-Szerezze be a kivont szövegrészleteket a`TextFragments` tulajdona a`TextFragmentAbsorber` tárgy:
+Szerezze be a kivont szövegrészleteket a`TextFragments` tulajdona a`TextFragmentAbsorber` objektum:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -132,7 +132,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan kereshet szöveget .NET reguláris kifejezésekkel egy PDF-dokumentumban az Aspose.PDF for .NET használatával. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a projekt beállításától a kivont szövegrészletek eléréséig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy speciális szöveges kereséseket végezhessen PDF-fájlokban.
+Gratulálok! Sikeresen megtanulta, hogyan kereshet szöveget .NET reguláris kifejezésekkel egy PDF-dokumentumban az Aspose.PDF for .NET használatával. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a projekt beállításától a kivont szövegrészletek eléréséig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy speciális szöveges kereséseket végezhessen PDF-fájlokban.
 
 ### GYIK
 

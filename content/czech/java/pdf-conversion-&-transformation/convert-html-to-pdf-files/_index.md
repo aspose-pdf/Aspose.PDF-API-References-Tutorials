@@ -10,7 +10,7 @@ url: /cs/java/pdf-conversion-transformation/convert-html-to-pdf-files/
 
 ## Úvod do převodu HTML do PDF souborů
 
-dnešním digitálním světě je potřeba převádět obsah HTML do souborů PDF všudypřítomná. Ať už archivujete webové stránky, generujete sestavy nebo jednoduše uchováváte webový obsah, převod HTML do PDF je cennou funkcí. Tento článek vás provede procesem převodu souborů HTML na soubory PDF pomocí knihovny Aspose.PDF for Java, což je výkonný nástroj, který tento úkol zjednodušuje.
+dnešním digitálním světě je potřeba převádět obsah HTML do souborů PDF všudypřítomná. Ať už archivujete webové stránky, generujete sestavy nebo jednoduše uchováváte webový obsah, převod HTML do PDF je cennou funkcí. Tento článek vás provede procesem převodu souborů HTML na soubory PDF pomocí knihovny Aspose.PDF for Java, výkonného nástroje, který tento úkol zjednodušuje.
 
 ## Pochopení knihovny Aspose.PDF for Java
 
@@ -63,7 +63,7 @@ Nakonec uložte dokument PDF do požadovaného umístění:
 pdfDocument.save("output.pdf");
 ```
 
-A je to! Úspěšně jste převedli HTML do PDF pomocí Aspose.PDF for Java.
+To je vše! Úspěšně jste převedli HTML do PDF pomocí Aspose.PDF for Java.
 
 ## Přizpůsobení konverze
 
@@ -83,7 +83,7 @@ V této obsáhlé příručce jsme prozkoumali proces převodu HTML na soubory P
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
- Chcete-li nainstalovat Aspose.PDF pro Java, můžete si stáhnout knihovnu z webu[tady](https://releases.aspose.com/pdf/java/) a přidejte jej do svého projektu Java jako závislost.
+ Chcete-li nainstalovat Aspose.PDF pro Java, můžete si stáhnout knihovnu z webu[zde](https://releases.aspose.com/pdf/java/) a přidejte jej do svého projektu Java jako závislost.
 
 ### Mohu převést složité HTML stránky?
 

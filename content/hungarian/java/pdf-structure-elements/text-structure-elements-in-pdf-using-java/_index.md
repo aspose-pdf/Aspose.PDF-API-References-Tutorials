@@ -12,7 +12,7 @@ url: /hu/java/pdf-structure-elements/text-structure-elements-in-pdf-using-java/
 
 modern technológia világában a PDF dokumentumok kezelése sok fejlesztő számára rutinfeladattá vált. Legyen szó számlákról, jelentésekről vagy bármilyen más típusú dokumentumról, a PDF-fájlok programozott kezelésének képessége értékes készség lehet. A Java fejlesztők szerencsések, hogy egy hatékony eszköz áll a rendelkezésükre - Aspose.PDF for Java. Ebben a lépésről lépésre bemutatjuk, hogyan dolgozhatunk a PDF szövegszerkezeti elemeivel Java használatával az Aspose.PDF for Java API segítségével. Az alapoktól a haladóbb témákig mindent lefedünk, úgyhogy merüljünk bele!
 
-## Elkezdeni
+## Kezdő lépések
 
  Mielőtt belemerülnénk a részletekbe, győződjön meg arról, hogy az Aspose.PDF for Java telepítve van. Letöltheti a weboldalról[itt](https://releases.aspose.com/pdf/java/).
 

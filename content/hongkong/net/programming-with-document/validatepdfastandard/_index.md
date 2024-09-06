@@ -70,7 +70,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 #### Q：是否有必要在我的專案中新增對 Aspose.PDF for .NET 的參考？
 
-答：是的，安裝 Aspose.PDF for .NET 後，您需要在專案中新增對該程式庫的參考。這可以在 Visual Studio 中透過右鍵單擊解決方案資源管理器中的「參考」資料夾、選擇「新增參考」並瀏覽到「Aspose.PDF.dll」的位置來完成。
+答：是的，安裝 Aspose.PDF for .NET 後，您需要在專案中新增對該程式庫的參考。這可以在 Visual Studio 中透過右鍵單擊解決方案資源管理器中的「引用」資料夾、選擇「新增參考」並瀏覽到「Aspose.PDF.dll」的位置來完成。
 
 #### Q：我可以使用 Aspose.PDF for .NET 根據其他 PDF 標準驗證 PDF 檔案嗎？
 

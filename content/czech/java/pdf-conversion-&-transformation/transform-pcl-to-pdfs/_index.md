@@ -16,7 +16,7 @@ Než se ponoříme do procesu transformace, ujistěte se, že máte splněny ná
 
 - Java Development Environment: Ujistěte se, že máte v systému nainstalovanou sadu Java Development Kit (JDK).
 
--  Aspose.PDF for Java Library: Stáhněte si a zahrňte do svého projektu knihovnu Aspose.PDF for Java. Odkaz ke stažení najdete[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF for Java Library: Stáhněte si a zahrňte do svého projektu knihovnu Aspose.PDF for Java. Odkaz ke stažení najdete[zde](https://releases.aspose.com/pdf/java/).
 
 ## Nástin transformačního procesu
 
@@ -110,7 +110,7 @@ Ano, Aspose.PDF for Java může vyžadovat licenci pro určité funkce nebo scé
 
 ### Mohu přizpůsobit výstupní formát PDF při převodu PCL do PDF?
 
-Ano, výstupní formát PDF si můžete přizpůsobit úpravou nastavení stránky, písem a dalších parametrů v kódu Java. Aspose.PDF for Java poskytuje rozsáhlé možnosti přizpůsobení.
+Ano, výstupní formát PDF si můžete přizpůsobit úpravou nastavení stránky, písem a dalších parametrů v kódu Java. Aspose.PDF pro Java poskytuje rozsáhlé možnosti přizpůsobení.
 
 ### Je Aspose.PDF for Java vhodný pro dávkové zpracování souborů PCL?
 

@@ -6,21 +6,21 @@ weight: 19
 url: /id/net/programming-with-bookmarks/
 description: Pelajari cara memanipulasi, mengelola, dan menyesuaikan bookmark di dokumen PDF Anda untuk navigasi yang lebih baik dan pengalaman pengguna yang lebih baik.
 ---
-Tutorial Aspose.PDF untuk .NET tentang pemrograman dengan bookmark memandu Anda melalui langkah-langkah untuk memanipulasi dan mengelola bookmark di dokumen PDF Anda. Pelajari cara membuat, mengedit, dan menghapus bookmark untuk memudahkan navigasi dan mengatur file PDF Anda.
+Tutorial Aspose.PDF untuk .NET tentang pemrograman dengan bookmark memandu Anda melalui langkah-langkah untuk memanipulasi dan mengelola bookmark dalam dokumen PDF Anda. Pelajari cara membuat, mengedit, dan menghapus bookmark untuk mempermudah navigasi dan pengaturan file PDF Anda.
 
-Selain itu, tutorial ini menunjukkan kepada Anda cara menyesuaikan properti bookmark, seperti judul, tindakan, dan tingkat hierarki, untuk meningkatkan pengalaman pengguna dan membuat dokumen PDF Anda lebih interaktif dan ramah pengguna. Kuasai penggunaan bookmark dalam proyek PDF Anda dengan panduan langkah demi langkah ini.
+Selain itu, tutorial ini menunjukkan kepada Anda cara menyesuaikan properti penanda, seperti judul, tindakan, dan tingkat hierarki, untuk meningkatkan pengalaman pengguna dan membuat dokumen PDF Anda lebih interaktif dan ramah pengguna. Kuasai penggunaan penanda dalam proyek PDF Anda dengan panduan langkah demi langkah ini.
 
 ## Tutorial
 | Judul | Keterangan |
 | --- | --- | 
-| [Tambahkan Bookmark Dalam File PDF](./add-bookmark/) | Tambahkan bookmark dengan mudah dalam file PDF untuk meningkatkan navigasi dengan Aspose.PDF untuk .NET. |  
-| [Tambahkan Bookmark Anak Dalam File PDF](./add-child-bookmark/) | Tambahkan bookmark anak dengan mudah dalam file PDF untuk penelusuran yang lebih terorganisir dengan Aspose.PDF untuk .NET. |  
-| [Hapus Semua Bookmark Dalam File PDF](./delete-all-bookmarks/) | Hapus semua bookmark dalam file PDF dengan mudah menggunakan Aspose.PDF untuk .NET. |  
-| [Hapus Bookmark Tertentu Dalam File PDF](./delete-particular-bookmark/) | Hapus bookmark tertentu dengan mudah dalam file PDF dengan Aspose.PDF untuk .NET. |  
-| [Perluas Bookmark Dalam File PDF](./expand-bookmarks/) | Perluas bookmark dalam file PDF dengan mudah untuk meningkatkan navigasi dengan Aspose.PDF untuk .NET. |  
-| [Dapatkan Nomor Halaman Bookmark Dalam File PDF](./get-bookmark-page-number/) | Dapatkan nomor halaman bookmark dengan mudah dalam file PDF dengan Aspose.PDF untuk .NET. |  
-| [Dapatkan Bookmark Dalam File PDF](./get-bookmarks/) | Dapatkan bookmark dalam file PDF dengan mudah menggunakan Aspose.PDF untuk .NET. |  
-| [Dapatkan Bookmark Anak Dalam File PDF](./get-child-bookmarks/) | Dapatkan bookmark anak dengan mudah dalam file PDF dengan Aspose.PDF untuk .NET. |  
-| [Mewarisi Zoom Dalam File PDF](./inherit-zoom/) | Mewarisi zoom bookmark dalam file PDF dengan mudah dengan Aspose.PDF untuk .NET. |  
-| [Perbarui Bookmark Dalam File PDF](./update-bookmarks/) | Perbarui bookmark dalam file PDF dengan mudah menggunakan Aspose.PDF untuk .NET. |  
-| [Perbarui Bookmark Anak Dalam File PDF](./update-child-bookmarks/) | Perbarui bookmark anak dengan mudah dalam file PDF dengan Aspose.PDF untuk .NET. |  
+| [Tambahkan Bookmark Dalam File PDF](./add-bookmark/) | Pelajari cara menambahkan bookmark ke file PDF menggunakan Aspose.PDF for .NET dalam tutorial langkah demi langkah ini. Sempurnakan navigasi PDF Anda. |  
+| [Tambahkan Penanda Anak Dalam File PDF](./add-child-bookmark/) | Pelajari cara menambahkan penanda anak dalam file PDF menggunakan Aspose.PDF for .NET dengan panduan langkah demi langkah ini. Sempurnakan navigasi PDF Anda. |  
+| [Hapus Semua Bookmark Dalam File PDF](./delete-all-bookmarks/) | Pelajari cara menghapus semua bookmark dalam file PDF menggunakan Aspose.PDF for .NET dengan panduan langkah demi langkah ini. Sederhanakan pengelolaan PDF Anda. |  
+| [Hapus Bookmark Tertentu Dalam File PDF](./delete-particular-bookmark/) | Pelajari cara menghapus penanda tertentu dalam berkas PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah ini. |  
+| [Perluas Bookmark Dalam File PDF](./expand-bookmarks/) | Pelajari cara memperluas bookmark dalam file PDF menggunakan Aspose.PDF for .NET dengan panduan langkah demi langkah ini. Sempurna bagi pengembang yang ingin meningkatkan navigasi PDF. |  
+| [Dapatkan Nomor Halaman Bookmark Dalam File PDF](./get-bookmark-page-number/) | Pelajari cara mengekstrak nomor halaman penanda halaman dari file PDF menggunakan Aspose.PDF untuk .NET dalam tutorial komprehensif ini. |  
+| [Dapatkan Bookmark dalam File PDF](./get-bookmarks/) | Pelajari cara mengekstrak bookmark dari file PDF menggunakan Aspose.PDF for .NET dalam tutorial langkah demi langkah ini. Sempurnakan navigasi PDF Anda. |  
+| [Dapatkan Penanda Buku Anak dalam File PDF](./get-child-bookmarks/) | Pelajari cara mendapatkan penanda anak dalam file PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah ini. Tingkatkan navigasi PDF Anda. |  
+| [Mewarisi File PDF Zoom In](./inherit-zoom/) | Pelajari cara mewarisi zoom pada file PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah ini. Tingkatkan pengalaman menonton PDF Anda. |  
+| [Perbarui Bookmark dalam File PDF](./update-bookmarks/) | Pelajari cara memperbarui bookmark dalam file PDF menggunakan Aspose.PDF untuk .NET dengan panduan ini. Sempurna bagi pengembang yang ingin memodifikasi bookmark PDF secara efektif. |  
+| [Perbarui Bookmark Anak Dalam File PDF](./update-child-bookmarks/) | Pelajari cara memperbarui penanda anak dalam file PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah ini. Tingkatkan navigasi PDF Anda. |  

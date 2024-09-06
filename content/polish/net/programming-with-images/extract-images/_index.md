@@ -1,17 +1,17 @@
 ---
 title: Wyodrębnij obrazy z pliku PDF
 linktitle: Wyodrębnij obrazy z pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: łatwością wyodrębnij obrazy z pliku PDF za pomocą Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwe wyodrębnianie obrazów z plików PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 120
 url: /pl/net/programming-with-images/extract-images/
 ---
-Ten przewodnik poprowadzi Cię krok po kroku, jak wyodrębnić obrazy z pliku PDF za pomocą Aspose.PDF dla .NET. Upewnij się, że masz już skonfigurowane środowisko i wykonaj poniższe czynności:
+Ten przewodnik krok po kroku pokaże Ci, jak wyodrębnić obrazy z pliku PDF za pomocą Aspose.PDF dla .NET. Upewnij się, że skonfigurowałeś już swoje środowisko i wykonaj poniższe kroki:
 
 ## Krok 1: Zdefiniuj katalog dokumentów
 
- Zanim zaczniesz, upewnij się, że ustawiłeś właściwy katalog dla dokumentów. Zastępować`"YOUR DOCUMENT DIRECTORY"` w kodzie ścieżką do katalogu, w którym znajduje się Twój dokument PDF.
+Przed rozpoczęciem upewnij się, że ustawiłeś właściwy katalog dla dokumentów. Zastąp`"YOUR DOCUMENT DIRECTORY"` w kodzie podając ścieżkę do katalogu, w którym znajduje się Twój dokument PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 2: Otwórz dokument PDF
 
- tym kroku otworzymy dokument PDF za pomocą`Document` klasa Aspose.PDF. Użyj`Document` konstruktor i podaj ścieżkę do dokumentu PDF.
+ W tym kroku otworzymy dokument PDF za pomocą`Document` klasa Aspose.PDF. Użyj`Document` konstruktora i przekazuje ścieżkę do dokumentu PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractImages.pdf");
@@ -27,7 +27,7 @@ Document pdfDocument = new Document(dataDir + "ExtractImages.pdf");
 
 ## Krok 3: Wyodrębnij konkretny obraz
 
- Na tym etapie wyodrębnimy konkretny obraz z konkretnej strony. Użyj`Images` zbiór strony`s `Obiekt Resources umożliwiający dostęp do żądanego obrazu. W poniższym przykładzie wyodrębniamy obraz z indeksem 1 z pierwszej strony.
+ tym kroku wyodrębnimy konkretny obraz z konkretnej strony. Użyj`Images` kolekcja stron`s `Obiekt Resources, aby uzyskać dostęp do żądanego obrazu. W poniższym przykładzie wyodrębniamy obraz z indeksem 1 z pierwszej strony.
 
 ```csharp
 XImage xImage = pdfDocument.Pages[1].Resources.Images[1];
@@ -45,14 +45,14 @@ outputImage.Close();
 
 ## Krok 5: Zapisz zaktualizowany plik PDF
 
- Zapisz zaktualizowany plik PDF za pomocą rozszerzenia`Save` metoda`pdfDocument` obiekt. Określ ścieżkę wyjściową pliku PDF.
+ Zapisz zaktualizowany plik PDF za pomocą`Save` metoda`pdfDocument` obiekt. Określ ścieżkę wyjściową dla pliku PDF.
 
 ```csharp
 dataDir = dataDir + "ExtractImages_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Przykładowy kod źródłowy dla wyodrębniania obrazów przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla Extract Images using Aspose.PDF for .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -72,41 +72,41 @@ Console.WriteLine("\nImages extracted successfully.\nFile saved at " + dataDir);
 
 ## Wniosek
 
-Gratulacje! Pomyślnie wyodrębniłeś obrazy z pliku PDF przy użyciu Aspose.PDF dla .NET. Wyodrębniony obraz zostanie zapisany w określonym katalogu, podobnie jak zaktualizowany plik PDF. Możesz teraz używać tych plików do swoich konkretnych potrzeb.
+Gratulacje! Udało Ci się wyodrębnić obrazy z pliku PDF przy użyciu Aspose.PDF dla .NET. Wyodrębniony obraz został zapisany w określonym katalogu, a zaktualizowany plik PDF również został zapisany. Teraz możesz używać tych plików zgodnie ze swoimi potrzebami.
 
-### Często zadawane pytania dotyczące wyodrębniania obrazów z pliku PDF
+### FAQ dotyczące wyodrębniania obrazów z pliku PDF
 
-#### P: Dlaczego miałbym chcieć wyodrębnić obrazy z pliku PDF przy użyciu Aspose.PDF dla .NET?
+#### P: Dlaczego miałbym chcieć wyodrębnić obrazy z pliku PDF za pomocą Aspose.PDF dla platformy .NET?
 
-Odp.: Wyodrębnianie obrazów z pliku PDF może być przydatne do różnych celów, takich jak archiwizacja, ponowne wykorzystywanie obrazów w innych dokumentach, analizowanie treści lub wykonywanie zadań związanych z przetwarzaniem obrazów.
+A: Wyodrębnianie obrazów z pliku PDF może być przydatne w różnych celach, takich jak archiwizacja, ponowne wykorzystywanie obrazów w innych dokumentach, analizowanie treści lub wykonywanie zadań związanych z przetwarzaniem obrazów.
 
 #### P: W jaki sposób Aspose.PDF dla .NET ułatwia wyodrębnianie obrazów z dokumentu PDF?
 
-Odp.: Aspose.PDF dla .NET zapewnia krok po kroku proces otwierania dokumentu PDF, uzyskiwania dostępu do określonych obrazów i zapisywania ich w plikach obrazów w różnych formatach.
+A: Aspose.PDF dla platformy .NET oferuje proces krok po kroku umożliwiający otwieranie dokumentu PDF, uzyskiwanie dostępu do określonych obrazów i zapisywanie ich w plikach graficznych przy użyciu różnych formatów.
 
-####  P: Jaką rolę odgrywa`Document` class in Aspose.PDF for .NET play in image extraction?
+####  P: Jaką rolę pełni`Document` class in Aspose.PDF for .NET play in image extraction?
 
- O:`Document` klasa służy do ładowania i manipulowania dokumentami PDF. W tym kontekście pomaga w otwarciu dokumentu PDF, z którego zostaną wyodrębnione obrazy.
+ A: Ten`Document` Klasa służy do ładowania i manipulowania dokumentami PDF. W tym kontekście pomaga w otwieraniu dokumentu PDF, z którego zostaną wyodrębnione obrazy.
 
-#### P: Jak określić konkretny obraz, który chcę wyodrębnić ze strony PDF?
+#### P: Jak mogę wskazać konkretny obraz, który chcę wyodrębnić ze strony PDF?
 
-Odp.: Możesz użyć`Images` zbiór stron`Resources` obiekt, aby uzyskać dostęp do żądanego obrazu według jego indeksu. Na przykład,`pdfDocument.Pages[1].Resources.Images[1]` umożliwia dostęp do pierwszego obrazu na pierwszej stronie.
+ A: Możesz użyć`Images` kolekcja stron`Resources` obiekt, aby uzyskać dostęp do pożądanego obrazu według jego indeksu. Na przykład,`pdfDocument.Pages[1].Resources.Images[1]` uzyskuje dostęp do pierwszego obrazu na pierwszej stronie.
 
 #### P: Czy mogę wyodrębnić obrazy z dowolnej strony dokumentu PDF?
 
-O: Tak, możesz wyodrębnić obrazy z dowolnej strony dokumentu PDF, określając żądany indeks strony i indeks obrazu, który ma zostać wyodrębniony.
+O: Tak, możesz wyodrębnić obrazy z dowolnej strony dokumentu PDF, określając indeks żądanej strony i indeks obrazu, który chcesz wyodrębnić.
 
 #### P: W jakich formatach obrazów mogę zapisać wyodrębnione obrazy?
 
- Odp.: Możesz zapisać wyodrębnione obrazy w różnych formatach obsługiwanych przez`ImageFormat` enum, takie jak JPEG, PNG, BMP i inne.
+ A: Wyodrębnione obrazy można zapisać w różnych formatach obsługiwanych przez`ImageFormat` wyliczenia, takie jak JPEG, PNG, BMP i inne.
 
-#### P: Jak mogę wykorzystać wyodrębnione obrazy po zapisaniu ich w plikach?
+#### P: W jaki sposób mogę wykorzystać wyodrębnione obrazy po zapisaniu ich do plików?
 
-Odp.: Wyodrębnionych obrazów można używać jak innych plików graficznych. Możesz przeglądać, edytować, udostępniać lub włączać je do innych dokumentów lub projektów.
+A: Wyodrębnione obrazy można wykorzystać jak każdy inny plik obrazu. Można je przeglądać, edytować, udostępniać lub włączać do innych dokumentów lub projektów.
 
-#### P: Czy wyodrębnianie obrazów z pliku PDF wpływa na układ lub zawartość oryginalnego dokumentu PDF?
+#### P: Czy wyodrębnianie obrazów z pliku PDF ma wpływ na układ lub zawartość oryginalnego dokumentu PDF?
 
-O: Nie, wyodrębnianie obrazów z pliku PDF nie ma wpływu na układ ani zawartość oryginalnego dokumentu PDF. Dotyczy to tylko wyodrębnionych obrazów.
+A: Nie, wyodrębnianie obrazów z pliku PDF nie wpływa na układ ani zawartość oryginalnego dokumentu PDF. Dotyczy to tylko wyodrębnionych obrazów.
 
 #### P: Czy mogę wyodrębnić wiele obrazów z różnych stron w jednym procesie?
 

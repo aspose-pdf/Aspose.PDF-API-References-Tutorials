@@ -17,7 +17,7 @@ var dataDir = "YOUR DOCUMENTS DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## 2. lépés: Tábla inicializálása
+## 2. lépés: Táblázat inicializálása
 Ezután inicializáljuk a táblázatot:
 
 ```csharp
@@ -122,7 +122,7 @@ Gratulálok ! Most megtanulta, hogyan igazíthatja egy sor tartalmát egy tábl�
 
 #### K: Hogyan igazíthatom vízszintesen a táblázatcellák tartalmát?
 
- V: A táblázatcellák tartalmát vízszintesen igazíthatja a`HorizontalAlign` a sejt tulajdonsága`TextState` tárgy. Például a szöveg középre igazításához használja a`cell.TextState.HorizontalAlignment = HorizontalAlignment.Center` . Azt is beállíthatja`HorizontalAlignment.Left` vagy`HorizontalAlignment.Right` balra és jobbra igazításhoz.
+ V: A táblázatcellák tartalmát vízszintesen igazíthatja a`HorizontalAlign` a sejt tulajdonsága`TextState` objektum. Például a szöveg középre igazításához használja a`cell.TextState.HorizontalAlignment = HorizontalAlignment.Center` . Azt is beállíthatja`HorizontalAlignment.Left` vagy`HorizontalAlignment.Right` balra és jobbra igazításhoz.
 
 #### K: Alkalmazhatok különböző szegélystílusokat és színeket a táblázat egyes celláira?
 
@@ -138,4 +138,4 @@ Gratulálok ! Most megtanulta, hogyan igazíthatja egy sor tartalmát egy tábl�
 
 #### K: Hogyan állíthatok be háttérszínt bizonyos cellákhoz vagy az egész táblázathoz?
 
- V: Adott cellák vagy a teljes táblázat háttérszínének beállításához használja a`BackgroundColor` tulajdona a`Cell` vagy`Table` tárgy. Például egy cella háttérszínének beállításához használja a`cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.
+ V: Adott cellák vagy a teljes táblázat háttérszínének beállításához használja a`BackgroundColor` tulajdona a`Cell` vagy`Table` objektum. Például egy cella háttérszínének beállításához használja a`cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.

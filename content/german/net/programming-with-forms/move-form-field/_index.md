@@ -7,17 +7,17 @@ type: docs
 weight: 200
 url: /de/net/programming-with-forms/move-form-field/
 ---
-In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET ein Formularfeld in einem PDF-Dokument verschieben. Wir erklären Ihnen Schritt für Schritt den C#-Quellcode, um Sie durch diesen Prozess zu führen.
+In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET ein Formularfeld in einem PDF-Dokument verschieben. Wir erklären Ihnen den C#-Quellcode Schritt für Schritt, um Sie durch diesen Vorgang zu führen.
 
 ## Schritt 1: Vorbereitung
 
-Stellen Sie sicher, dass Sie die erforderlichen Bibliotheken importiert und den Pfad zu Ihrem Dokumentenverzeichnis festgelegt haben:
+Stellen Sie sicher, dass Sie die erforderlichen Bibliotheken importiert haben, und legen Sie den Pfad zu Ihrem Dokumentverzeichnis fest:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Schritt 2: Laden Sie das Dokument
+## Schritt 2: Dokument einlegen
 
 Laden Sie das vorhandene PDF-Dokument:
 
@@ -25,7 +25,7 @@ Laden Sie das vorhandene PDF-Dokument:
 Document pdfDocument = new Document(dataDir + "MoveFormField.pdf");
 ```
 
-## Schritt 3: Holen Sie sich das Formularfeld
+## Schritt 3: Formularfeld abrufen
 
 Holen Sie sich das Formularfeld, das Sie verschieben möchten:
 
@@ -52,13 +52,13 @@ pdfDocument.Save(dataDir);
 
 ### Beispielquellcode für „Formularfeld verschieben“ mit Aspose.PDF für .NET 
 ```csharp
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Dokument öffnen
 Document pdfDocument = new Document(dataDir + "MoveFormField.pdf");
 // Holen Sie sich ein Feld
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
-// Feldstandort ändern
+// Feldposition ändern
 textBoxField.Rect = new Aspose.Pdf.Rectangle(300, 400, 600, 500);
 dataDir = dataDir + "MoveFormField_out.pdf";
 // Geändertes Dokument speichern
@@ -68,10 +68,10 @@ Console.WriteLine("\nForm field moved successfully to a new location.\nFile save
 
 ## Abschluss
 
-In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET ein Formularfeld in einem PDF-Dokument verschiebt. Wenn Sie diese Schritte befolgen, können Sie ganz einfach zu einem bestimmten Feld navigieren und dessen Position nach Bedarf ändern.
+In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET ein Formularfeld in einem PDF-Dokument verschiebt. Indem Sie diese Schritte befolgen, können Sie problemlos zu einem bestimmten Feld navigieren und dessen Position nach Bedarf ändern.
 
 
-### FAQs
+### Häufig gestellte Fragen
 
 #### F: Kann ich mit Aspose.PDF für .NET mehrere Formularfelder innerhalb eines einzelnen PDF-Dokuments verschieben?
 
@@ -79,11 +79,11 @@ A: Ja, Sie können mit Aspose.PDF für .NET mehrere Formularfelder innerhalb ein
 
 #### F: Hat das Verschieben eines Formularfelds Auswirkungen auf die zugehörigen Daten oder Funktionen?
 
-A: Nein, das Verschieben eines Formularfelds hat keine Auswirkungen auf die zugehörigen Daten oder Funktionen. Das Formularfeld behält alle seine Eigenschaften und Werte, nachdem es an einen neuen Speicherort verschoben wurde.
+A: Nein, das Verschieben eines Formularfelds hat keine Auswirkungen auf die zugehörigen Daten oder Funktionen. Das Formularfeld behält alle seine Eigenschaften und Werte, nachdem es an einen neuen Ort verschoben wurde.
 
-#### F: Wie kann ich die genauen Koordinaten für den neuen Standort des Formularfelds ermitteln?
+#### F: Wie kann ich die genauen Koordinaten für den neuen Standort des Formularfeldes ermitteln?
 
- A: Sie können den neuen Standort mit angeben`Aspose.Pdf.Rectangle` Klasse, in der Sie die X- und Y-Koordinaten der oberen linken Ecke und die X- und Y-Koordinaten der unteren rechten Ecke des rechteckigen Bereichs definieren.
+ A: Sie können den neuen Standort angeben mit dem`Aspose.Pdf.Rectangle` Klasse, in der Sie die X- und Y-Koordinaten der oberen linken Ecke und die X- und Y-Koordinaten der unteren rechten Ecke des rechteckigen Bereichs definieren.
 
 #### F: Ist Aspose.PDF für .NET sowohl mit Windows- als auch mit Linux-Umgebungen kompatibel?
 

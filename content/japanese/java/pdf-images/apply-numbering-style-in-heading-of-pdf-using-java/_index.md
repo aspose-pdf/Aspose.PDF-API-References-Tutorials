@@ -1,37 +1,37 @@
 ---
-title: Javaを使用してPDFの見出しに番号付けスタイルを適用する
-linktitle: Javaを使用してPDFの見出しに番号付けスタイルを適用する
+title: Java を使用して PDF の見出しに番号付けスタイルを適用する
+linktitle: Java を使用して PDF の見出しに番号付けスタイルを適用する
 second_title: Aspose.PDF Java PDF 処理 API
-description: Aspose.PDF for Java を使用して PDF 見出しに番号付けスタイルを適用する方法を学びます。ステップバイステップのガイドでは、ドキュメントにプロフェッショナルなタッチを加えるためのソース コードのサンプルを提供します。
+description: Aspose.PDF for Java を使用して PDF の見出しに番号付けスタイルを適用する方法を学びます。ステップバイステップ ガイドには、ドキュメントにプロフェッショナルなタッチを加えるためのソース コードの例が示されています。
 type: docs
 weight: 14
 url: /ja/java/pdf-images/apply-numbering-style-in-heading-of-pdf-using-java/
 ---
 
-## Java 用 Aspose.PDF の概要
+## Aspose.PDF for Java の紹介
 
-Aspose.PDF for Java は、開発者がプログラムで PDF ドキュメントを操作できるようにする堅牢なライブラリです。テキストの書式設定、ページ操作、そしてもちろん見出しへの番号付けスタイルの適用など、PDF 操作のための幅広い機能を提供します。
+Aspose.PDF for Java は、開発者がプログラムで PDF ドキュメントを操作できるようにする強力なライブラリです。テキストの書式設定、ページの操作、そしてもちろん見出しへの番号付けスタイルの適用など、PDF を操作するための幅広い機能を提供します。
 
-## 開発環境のセットアップ
+## 開発環境の設定
 
-コードに入る前に、開発環境に必要なツールがセットアップされていることを確認してください。
+コードに進む前に、開発環境に必要なツールが設定されていることを確認してください。
 
 - Java 開発キット (JDK)
 - 選択した統合開発環境 (IDE) (Eclipse、IntelliJ IDEA など)
-- Java ライブラリ用の Aspose.PDF
+- Aspose.PDF for Java ライブラリ
 
 ## PDFドキュメントの作成
 
-まずは、Aspose.PDF for Java を使用して新しい PDF ドキュメントを作成しましょう。開始するためのサンプル コードを次に示します。
+まず、Aspose.PDF for Java を使用して新しい PDF ドキュメントを作成しましょう。次に、開始するためのサンプル コードを示します。
 
 ```java
-//新しい PDF ドキュメントを作成する
+//新しいPDF文書を作成する
 com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document();
 ```
 
-## PDF への見出しの追加
+## PDFに見出しを追加する
 
-ここで、PDF ドキュメントにいくつかの見出しを追加します。これらの見出しは、ドキュメント内のセクションとして機能します。見出しを追加する例を次に示します。
+ここで、PDF ドキュメントに見出しをいくつか追加します。これらの見出しは、ドキュメント内のセクションとして機能します。見出しを追加する例を次に示します。
 
 ```java
 //見出しを作成する
@@ -49,9 +49,9 @@ heading.getFragments().add(titleFragment);
 pdfDocument.getPages().get_Item(1).getParagraphs().add(heading);
 ```
 
-## 番号付けスタイルの適用
+## 番号スタイルの適用
 
-ここで、見出しに番号付けスタイルを適用するという興味深い部分が来ます。 Aspose.PDF for Java は、これを実現する簡単な方法を提供します。番号付けを適用する例を次に示します。
+次は、見出しに番号付けスタイルを適用するという、面白い部分です。Aspose.PDF for Java では、これを簡単に実現できます。番号付けを適用する例を次に示します。
 
 ```java
 //番号付けスタイルを作成する
@@ -59,13 +59,13 @@ com.aspose.pdf.NumberingStyle numberingStyle = new com.aspose.pdf.NumberingStyle
 numberingStyle.setFormat("(1)");
 numberingStyle.setFirstIndex(1);
 
-//見出しに番号付けスタイルを適用する
+//見出しに番号スタイルを適用する
 heading.setNumberingStyle(numberingStyle);
 ```
 
-## 番号付け形式のカスタマイズ
+## 番号書式のカスタマイズ
 
-ニーズに合わせて番号付け形式をカスタマイズできます。 Aspose.PDF for Java を使用すると、プレフィックス、サフィックス、形式など、番号付けのさまざまな側面を制御できます。番号付けをカスタマイズする例を次に示します。
+番号付けの形式は、ニーズに合わせてカスタマイズできます。Aspose.PDF for Java では、プレフィックス、サフィックス、形式など、番号付けのさまざまな側面を制御できます。番号付けをカスタマイズする例を次に示します。
 
 ```java
 //番号付けスタイルをカスタマイズする
@@ -74,21 +74,21 @@ numberingStyle.setSuffix(":");
 numberingStyle.setStartNumber(5);
 ```
 
-## PDF の保存と表示
+## PDFの保存と表示
 
-番号付けスタイルを使用して見出しを追加したら、PDF ドキュメントを保存して結果を表示します。
+番号付けスタイルを使用して見出しを追加したら、PDF ドキュメントを保存して結果を確認します。
 
 ```java
-// PDF ドキュメントを保存する
+// PDF文書を保存する
 pdfDocument.save("NumberedDocument.pdf");
 
-// PDF ドキュメントを開いて表示します
+// PDF文書を開いて表示する
 java.awt.Desktop.getDesktop().open(new java.io.File("NumberedDocument.pdf"));
 ```
 
 ## 結論
 
-このステップバイステップ ガイドでは、Aspose.PDF for Java を使用して PDF ドキュメントの見出しに番号付けスタイルを適用する方法を説明しました。この強力なライブラリを使用すると、カスタマイズされた番号付け形式を使用して、プロフェッショナルな外観のドキュメントを簡単に作成できます。
+このステップバイステップ ガイドでは、Aspose.PDF for Java を使用して PDF ドキュメントの見出しに番号付けスタイルを適用する方法について説明しました。この強力なライブラリを使用すると、カスタマイズされた番号付け形式を使用してプロフェッショナルな外観のドキュメントを簡単に作成できます。
 
 ## よくある質問
 
@@ -96,22 +96,22 @@ java.awt.Desktop.getDesktop().open(new java.io.File("NumberedDocument.pdf"));
 
 Aspose.PDF for Java をインストールするには、次の手順に従います。
 
-1. 次の場所にある Aspose.PDF for Java ドキュメントにアクセスしてください。[ここ](https://reference.aspose.com/pdf/java/).
-2. ライブラリの最新バージョンを次からダウンロードします。[ここ](https://releases.aspose.com/pdf/java/).
+1.  Aspose.PDF for Javaのドキュメントは以下をご覧ください。[ここ](https://reference.aspose.com/pdf/java/).
+2. ライブラリの最新バージョンをダウンロードするには、[ここ](https://releases.aspose.com/pdf/java/).
 3. ドキュメントに記載されているインストール手順に従って、ライブラリを Java プロジェクトに統合します。
 
 ### Aspose.PDF for Java を無料で使用できますか?
 
-Aspose.PDF for Java は、その機能を評価するために使用できる無料の試用版を提供しています。ただし、フルアクセスおよび商用利用するには、ライセンスを購入する必要があります。
+Aspose.PDF for Java には、機能を評価するのに使用できる無料試用版が用意されています。ただし、フル アクセスと商用利用には、ライセンスを購入する必要があります。
 
-### 文書の異なるセクションに異なる番号付けスタイルを適用することはできますか?
+### ドキュメントのセクションごとに異なる番号付けスタイルを適用することは可能ですか?
 
-はい、Aspose.PDF for Java を使用して、PDF ドキュメントのさまざまなセクションにさまざまな番号付けスタイルを適用できます。別途作成するだけです`Heading`オブジェクトを編集し、各セクションの番号付けスタイルをカスタマイズします。
+はい、Aspose.PDF for Javaを使用してPDFドキュメントの異なるセクションに異なる番号スタイルを適用できます。`Heading`オブジェクトを作成し、各セクションの番号付けスタイルをカスタマイズします。
 
-### 番号付きの見出しを含む PDF を DOCX や HTML などの他の形式にエクスポートできますか?
+### 番号付き見出し付きの PDF を DOCX や HTML などの他の形式にエクスポートできますか?
 
-はい、Aspose.PDF for Java は、番号付きの見出しを持つ PDF ドキュメントを DOCX、HTML などのさまざまな形式にエクスポートする機能を提供します。これらの変換を実行する方法の詳細な例については、ドキュメントを参照してください。
+はい、Aspose.PDF for Java には、番号付き見出し付きの PDF ドキュメントを DOCX、HTML などのさまざまな形式にエクスポートする機能があります。これらの変換を実行する方法の詳細な例については、ドキュメントを参照してください。
 
-### Aspose.PDF for Java のその他の例やドキュメントはどこで見つけられますか?
+### Aspose.PDF for Java のその他の例やドキュメントはどこで入手できますか?
 
- Aspose.PDF for Java の包括的なドキュメント、コード サンプル、API リファレンスは、次のドキュメント Web サイトで見つけることができます。[ここ](https://reference.aspose.com/pdf/java/).
+ Aspose.PDF for Javaの包括的なドキュメント、コード例、APIリファレンスは、次のドキュメントWebサイトでご覧いただけます。[ここ](https://reference.aspose.com/pdf/java/).

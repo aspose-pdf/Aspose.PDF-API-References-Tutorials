@@ -92,7 +92,7 @@ V: A PDF-fájl oldaltartalmának nagyításához az Aspose.PDF for .NET használ
 
 1. Állítsa be a dokumentumkönyvtárat az elérési út megadásával, ahol a forrás PDF-fájl található, és hová szeretné menteni a módosított PDF-fájlt. Cserélje ki a "DOKUMENTUMKÖNYVTÁR" elemet a megfelelő elérési útra.
 2.  Töltse be a forrás PDF-fájlt a`Document` osztályú Aspose.PDF. Ügyeljen arra, hogy a PDF-fájl helyes elérési útját adja meg.
-3.  Állítsa helyre a PDF első oldalának téglalap alakú területét a`Rect` tulajdona a`Page` tárgy.
+3.  Állítsa helyre a PDF első oldalának téglalap alakú területét a`Rect` tulajdona a`Page` objektum.
 4.  Példányosítsa a`PdfPageEditor` osztályt a nagyítási művelet végrehajtásához.
 5.  Kapcsolja össze a forrás PDF-et a`PdfPageEditor` például a`BindPdf()` módszer.
 6. Határozza meg a nagyítási együtthatót a visszakeresett téglalap szélessége és magassága szerint.

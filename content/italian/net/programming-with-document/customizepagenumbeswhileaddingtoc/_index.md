@@ -1,36 +1,78 @@
 ---
 title: Personalizza i numeri di pagina durante l'aggiunta del sommario
 linktitle: Personalizza i numeri di pagina durante l'aggiunta del sommario
-second_title: Aspose.PDF per riferimento all'API .NET
-description: Scopri come personalizzare i numeri di pagina aggiungendo un sommario (TOC) utilizzando Aspose.PDF per .NET con questa guida passo passo e un esempio di codice.
+second_title: Riferimento API Aspose.PDF per .NET
+description: In questo tutorial completo scoprirai come personalizzare i numeri di pagina aggiungendo un indice ai tuoi documenti PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 100
 url: /it/net/programming-with-document/customizepagenumbeswhileaddingtoc/
 ---
-In questa esercitazione, esploreremo come personalizzare i numeri di pagina aggiungendo un sommario (TOC) utilizzando Aspose.PDF per .NET. Forniremo una guida passo passo, insieme a un esempio di codice, per aiutarti a raggiungere questo obiettivo.
+## Introduzione
 
-## Passaggio 1: caricamento di un file PDF esistente
+Nel mondo della gestione dei documenti, i PDF regnano sovrani. Sono il formato di riferimento per la condivisione e la conservazione dei documenti su diverse piattaforme. Ma cosa succede quando vuoi migliorare i tuoi documenti PDF con funzionalità come un indice (TOC)? Ecco dove entra in gioco Aspose.PDF per .NET! Questa potente libreria consente agli sviluppatori di manipolare i file PDF con facilità, consentendo loro di aggiungere, modificare e personalizzare i contenuti senza sforzo. In questo tutorial, approfondiremo come personalizzare i numeri di pagina aggiungendo un indice ai tuoi documenti PDF utilizzando Aspose.PDF per .NET. Quindi, prendi il tuo cappello da programmatore e iniziamo!
 
-Innanzitutto, dobbiamo caricare un file PDF esistente. Per questo tutorial utilizzeremo il file "42824.pdf" situato nella directory "LA TUA DIRECTORY DOCUMENTI". Sostituisci questo percorso di directory con il percorso effettivo della directory dei documenti.
+## Prerequisiti
+
+Prima di passare al codice, ecco alcune cose che devi sapere:
+
+1. Visual Studio: assicurati di avere Visual Studio installato sul tuo computer. Questo sarà il nostro ambiente di sviluppo.
+2. Aspose.PDF per .NET: devi scaricare e installare la libreria Aspose.PDF. Puoi trovarla[Qui](https://releases.aspose.com/pdf/net/).
+3. Conoscenza di base di C#: la familiarità con la programmazione C# ti aiuterà a comprendere meglio i frammenti di codice.
+4. Un file PDF di esempio: tieni pronto un file PDF di esempio con cui possiamo lavorare. Puoi crearne uno semplice o scaricare un PDF esistente.
+
+## Importa pacchetti
+
+Per iniziare, dobbiamo importare i pacchetti necessari. Apri il tuo progetto Visual Studio e aggiungi un riferimento alla libreria Aspose.PDF. Puoi farlo usando NuGet Package Manager:
+
+1. Fare clic con il pulsante destro del mouse sul progetto in Esplora soluzioni.
+2. Seleziona "Gestisci pacchetti NuGet".
+3. Cerca "Aspose.PDF" e installalo.
+
+```csharp
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Una volta installata la libreria, puoi iniziare a programmare!
+
+## Passaggio 1: imposta la directory dei documenti
+
+Per prima cosa, dobbiamo impostare la nostra directory dei documenti. È qui che memorizzeremo i nostri file PDF di input e output. 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "42824.pdf";
 string outFile = dataDir + "42824_out.pdf";
+```
+
+In questo frammento, sostituisci`YOUR DOCUMENT DIRECTORY` con il percorso effettivo in cui si trovano i tuoi file PDF. Questo ci aiuterà a caricare il PDF esistente e a salvare la versione modificata.
+
+## Passaggio 2: caricare il file PDF esistente
+
+Ora che abbiamo impostato la directory dei documenti, carichiamo il file PDF esistente. 
+
+```csharp
 Document doc = new Document(inFile);
 ```
 
-## Passaggio 2: aggiunta di una pagina di sommario
+ Qui creiamo un nuovo`Document` oggetto passando il percorso del file di input. Questo ci consente di manipolare il contenuto PDF a livello di programmazione.
 
- Successivamente, dobbiamo aggiungere una nuova pagina all'inizio del documento che funga da pagina del sommario. Possiamo raggiungere questo obiettivo utilizzando il file`Insert()` metodo del`Pages` raccolta del`Document` oggetto.
+## Passaggio 3: inserire una nuova pagina per il sommario
+
+Ora dobbiamo creare una nuova pagina nel nostro PDF in cui inserire l'indice.
 
 ```csharp
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
 ```
 
-## Passaggio 3: creazione di un oggetto TOC
+Questa riga inserisce una nuova pagina all'inizio del documento. Il TOC verrà visualizzato su questa pagina.
 
- Per creare un oggetto TOC, dobbiamo prima creare un file`TocInfo` oggetto e impostarne le proprietà. In questo tutorial, imposteremo il titolo del sommario su "Sommario" e il prefisso del numero di pagina su "P".
+## Passaggio 4: creare le informazioni del sommario
+
+Ora creiamo un oggetto per rappresentare le informazioni dell'indice.
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -42,99 +84,55 @@ tocInfo.PageNumbersPrefix = "P";
 tocPage.TocInfo = tocInfo;
 ```
 
-## Passaggio 4: creazione delle voci del sommario
+ In questo passaggio creiamo un`TocInfo` oggetto e impostare il suo titolo su "Indice". Personalizziamo anche la dimensione e lo stile del carattere. Il`PageNumbersPrefix` è impostato su "P", che verrà aggiunto come anteposto ai numeri di pagina nell'indice.
 
-Per creare voci di sommario, dobbiamo scorrere tutte le pagine del documento, ad eccezione della pagina del sommario, e creare un oggetto intestazione per ciascuna pagina. Possiamo quindi aggiungere l'oggetto intestazione alla pagina TOC e specificarne la pagina di destinazione.
+## Passaggio 5: aggiungere titoli al sommario
+
+Ora arriva la parte divertente! Faremo un ciclo tra le pagine del documento e aggiungeremo titoli al nostro TOC.
 
 ```csharp
 for (int i = 1; i < doc.Pages.Count; i++)
 {
-    // Crea oggetto Intestazione
     Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
     TextSegment segment2 = new TextSegment();
     heading2.TocPage = tocPage;
     heading2.Segments.Add(segment2);
-    // Specificare la pagina di destinazione per l'oggetto intestazione
     heading2.DestinationPage = doc.Pages[i + 1];
-    // Pagina di destinazione
     heading2.Top = doc.Pages[i + 1].Rect.Height;
-    // Coordinata di destinazione
     segment2.Text = "Page " + i.ToString();
-    // Aggiungi intestazione alla pagina contenente il sommario
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
-## Passaggio 5: salvataggio del documento aggiornato
+ In questo ciclo, creiamo un nuovo`Heading` oggetto per ogni pagina. Impostiamo la pagina di destinazione per ogni intestazione e specifichiamo il testo da visualizzare, che è "Pagina X" dove X è il numero di pagina. Infine, aggiungiamo l'intestazione alla pagina TOC.
 
-Infine, dobbiamo salvare il documento aggiornato in un nuovo file. Possiamo raggiungere questo obiettivo utilizzando il file`Save()` metodo del`Document` oggetto.
+## Passaggio 6: salvare il documento aggiornato
+
+Dopo aver aggiunto tutte le intestazioni necessarie, è il momento di salvare il nostro documento aggiornato.
 
 ```csharp
 doc.Save(outFile);
 ```
 
-### Esempio di codice sorgente per personalizzare i numeri di pagina durante l'aggiunta del sommario utilizzando Aspose.PDF per .NET
-
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string inFile = dataDir + "42824.pdf";
-string outFile = dataDir + "42824_out.pdf";
-// Carica un file PDF esistente
-Document doc = new Document(inFile);
-// Ottieni l'accesso alla prima pagina del file PDF
-Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
-// Crea un oggetto per rappresentare le informazioni del sommario
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-// Imposta il titolo per il sommario
-tocInfo.Title = title;
-tocInfo.PageNumbersPrefix = "P";
-tocPage.TocInfo = tocInfo;
-for (int i = 1; i<doc.Pages.Count; i++)
-{
-	// Crea oggetto Intestazione
-	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-	TextSegment segment2 = new TextSegment();
-	heading2.TocPage = tocPage;
-	heading2.Segments.Add(segment2);
-	// Specificare la pagina di destinazione per l'oggetto intestazione
-	heading2.DestinationPage = doc.Pages[i + 1];
-	// Pagina di destinazione
-	heading2.Top = doc.Pages[i + 1].Rect.Height;
-	// Coordinata di destinazione
-	segment2.Text = "Page " + i.ToString();
-	// Aggiungi intestazione alla pagina contenente il sommario
-	tocPage.Paragraphs.Add(heading2);
-}
-
-// Salva il documento aggiornato
-doc.Save(outFile);
-```
+Questa riga salva il PDF modificato con il TOC incluso. Ora puoi aprire il file di output e vedere il tuo indice personalizzato!
 
 ## Conclusione
 
-In questo tutorial, abbiamo fornito una guida passo passo su come personalizzare i numeri di pagina aggiungendo un sommario utilizzando Aspose.PDF per .NET. Abbiamo anche fornito un esempio di codice che puoi utilizzare come riferimento quando implementi questa funzionalità nel tuo
+Ed ecco fatto! Hai personalizzato con successo i numeri di pagina aggiungendo un indice al tuo documento PDF usando Aspose.PDF per .NET. Questa potente libreria semplifica la manipolazione dei file PDF e, con solo poche righe di codice, puoi migliorare notevolmente i tuoi documenti. Che tu stia creando report, eBook o qualsiasi altro tipo di PDF, avere un indice può migliorare notevolmente la navigazione per i tuoi lettori. Quindi, cosa aspetti? Immergiti in Aspose.PDF e inizia a creare PDF straordinari oggi stesso!
 
-### Domande frequenti
+## Domande frequenti
 
-#### D: Cos'è un sommario (TOC) in un documento PDF?
+### Che cos'è Aspose.PDF per .NET?
+Aspose.PDF per .NET è una libreria che consente agli sviluppatori di creare, manipolare e convertire documenti PDF a livello di programmazione.
 
-R: Un sommario (TOC) in un documento PDF è un aiuto alla navigazione che fornisce un elenco organizzato di sezioni o capitoli del documento insieme ai numeri di pagina corrispondenti. Consente ai lettori di navigare rapidamente verso sezioni specifiche all'interno del documento.
+### Posso usare Aspose.PDF gratuitamente?
+ Sì, Aspose offre una versione di prova gratuita che puoi usare per esplorare le funzionalità della libreria. Puoi scaricarla[Qui](https://releases.aspose.com/).
 
-#### D: Perché dovrei personalizzare i numeri di pagina in un sommario?
+### Come posso ottenere supporto per Aspose.PDF?
+ Puoi ottenere supporto visitando il forum Aspose[Qui](https://forum.aspose.com/c/pdf/10).
 
-R: La personalizzazione dei numeri di pagina in un sommario può essere utile quando desideri utilizzare un formato di numerazione delle pagine specifico o includere informazioni aggiuntive insieme ai numeri di pagina. Ti consente di creare un sommario più personalizzato e informativo.
+### È disponibile una licenza temporanea?
+ Sì, puoi richiedere una licenza temporanea per Aspose.PDF[Qui](https://purchase.aspose.com/temporary-license/).
 
-#### D: Posso includere collegamenti ipertestuali nel sommario per collegarmi a sezioni o pagine specifiche all'interno del documento PDF?
-
-R: Sì, Aspose.PDF per .NET ti consente di creare collegamenti ipertestuali nel sommario che collegano a sezioni o pagine specifiche all'interno del documento PDF. Ciò migliora l'interattività e la navigazione del documento PDF.
-
-#### D: Aspose.PDF per .NET è compatibile con gli standard PDF/A?
-
-R: Sì, Aspose.PDF per .NET supporta gli standard PDF/A, inclusi PDF/A-1, PDF/A-2 e PDF/A-3. Consente di creare documenti PDF conformi ai requisiti di archiviazione e conservazione a lungo termine.
-
-#### D: Posso aggiungere ulteriore formattazione alle voci del sommario, ad esempio stili o colori dei caratteri?
-
-R: Sì, puoi aggiungere ulteriore formattazione alle voci del sommario, come stili di carattere, colori e dimensioni dei caratteri, utilizzando Aspose.PDF per .NET. Ciò ti consente di personalizzare l'aspetto del sommario in base alle tue esigenze.
+### Dove posso acquistare Aspose.PDF per .NET?
+ Puoi acquistare Aspose.PDF per .NET[Qui](https://purchase.aspose.com/buy).

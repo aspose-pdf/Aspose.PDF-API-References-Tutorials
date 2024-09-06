@@ -43,7 +43,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Βήμα 4: Δημιουργήστε ένα TextFragmentAbsorber
 
- Δημιουργώ ένα`TextFragmentAbsorber` αντικείμενο για να βρείτε όλες τις παρουσίες της φράσης αναζήτησης εισόδου:
+ Δημιουργία α`TextFragmentAbsorber` αντικείμενο για να βρείτε όλες τις παρουσίες της φράσης αναζήτησης εισόδου:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
@@ -61,7 +61,7 @@ absorber.TextSearchOptions = new TextSearchOptions(true);
 
 ## Βήμα 6: Ανοίξτε και συνδέστε το έγγραφο PDF
 
- Δημιουργώ ένα`PdfContentEditor` αντικείμενο και συνδέστε το στο αρχείο προέλευσης PDF:
+ Δημιουργία α`PdfContentEditor` αντικείμενο και συνδέστε το στο αρχείο προέλευσης PDF:
 
 ```csharp
 PdfContentEditor editor = new PdfContentEditor();
@@ -147,7 +147,7 @@ editor.Close();
 Console.WriteLine("\nText replaced and hyperlink added successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Συγχαρητήρια! Έχετε μάθει με επιτυχία πώς να αναζητάτε συγκεκριμένο κείμενο σε ένα έγγραφο PDF, να προσθέτετε υπερσυνδέσμους στο κείμενο που βρέθηκε και να αποθηκεύετε το τροποποιημένο έγγραφο χρησιμοποιώντας το Aspose.PDF για .NET. Αυτό το σεμινάριο παρείχε έναν οδηγό βήμα προς βήμα, από τη ρύθμιση του έργου έως την εκτέλεση των απαιτούμενων ενεργειών. Τώρα μπορείτε να ενσωματώσετε αυτόν τον κώδικα στα δικά σας έργα C# για να χειριστείτε κείμενο και να προσθέσετε υπερσυνδέσμους σε αρχεία PDF.
 

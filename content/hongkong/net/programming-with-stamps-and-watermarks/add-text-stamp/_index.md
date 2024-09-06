@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-stamps-and-watermarks/add-text-stamp/
 
 ## 第 2 步：載入 PDF 文檔
 
-第一步是將現有的 PDF 文件載入到您的專案中。就是這樣：
+第一步是將現有的 PDF 文件載入到您的專案中。方法如下：
 
 ```csharp
 //文檔目錄的路徑。
@@ -43,7 +43,7 @@ TextStamp textStamp = new TextStamp("Example Stamp");
 
 ## 步驟 4：配置文字圖章屬性
 
-在將文字圖章新增至 PDF 文件之前，您可以配置圖章的各種屬性，例如背景、位置、旋轉、字體、大小等。操作方法如下：
+在將文字圖章新增至 PDF 文件之前，您可以設定圖章的各種屬性，例如背景、位置、旋轉、字型、大小等。
 
 ```csharp
 //配置文字緩衝區屬性
@@ -61,7 +61,7 @@ textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Co
 
 ## 第 5 步：將文字圖章新增至 PDF
 
-現在文字圖章已準備就緒，您可以將其新增至 PDF 文件的特定頁面。就是這樣：
+現在文字圖章已準備就緒，您可以將其新增至 PDF 文件的特定頁面。方法如下：
 
 ```csharp
 //將文字緩衝區新增至特定頁面
@@ -72,7 +72,7 @@ pdfDocument.Pages[1].AddStamp(textStamp);
 
 ## 步驟 6：儲存輸出文檔
 
-新增文字圖章後，您可以儲存編輯後的 PDF 文件。就是這樣：
+新增文字圖章後，您可以儲存編輯後的 PDF 文件。方法如下：
 
 ```csharp
 //儲存輸出文檔

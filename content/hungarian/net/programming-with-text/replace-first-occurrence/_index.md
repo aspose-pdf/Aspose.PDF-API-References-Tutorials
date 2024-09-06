@@ -7,7 +7,7 @@ type: docs
 weight: 330
 url: /hu/net/programming-with-text/replace-first-occurrence/
 ---
-Ebben az oktatóanyagban elmagyarázzuk, hogyan lehet lecserélni egy adott szöveg első előfordulását egy PDF-dokumentumban az Aspose.PDF könyvtár segítségével a .NET-hez. Lépésről lépésre végigvezetjük a PDF-dokumentum megnyitásának, a keresőkifejezés első előfordulásának megtalálását, a szöveg cseréjét, a tulajdonságok frissítését és a módosított PDF mentését a mellékelt C# forráskóddal.
+Ebben az oktatóanyagban elmagyarázzuk, hogyan lehet lecserélni egy adott szöveg első előfordulását egy PDF-dokumentumban az Aspose.PDF könyvtár segítségével a .NET-hez. Lépésről lépésre megyünk végig a PDF-dokumentum megnyitásán, a keresett kifejezés első előfordulásának megtalálásán, a szöveg cseréjén, a tulajdonságok frissítésén és a módosított PDF mentésén a mellékelt C# forráskóddal.
 
 ## Előfeltételek
 
@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 1. lépés: Állítsa be a dokumentumkönyvtárat
 
- Először is be kell állítania annak a könyvtárnak az elérési útját, ahol a bemeneti PDF-fájl található. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó a PDF-fájl elérési útjával.
+ Először is be kell állítania annak a könyvtárnak az elérési útját, ahol a bemeneti PDF-fájl található. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó a PDF-fájl elérési útjával.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -112,14 +112,14 @@ V: A szöveg első előfordulásának cseréje egy PDF-dokumentumban akkor haszn
 
 V: A dokumentumkönyvtár beállításához:
 
-1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a bemeneti PDF-fájl található.
+1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a bemeneti PDF-fájl található.
 
 #### K: Hogyan cserélhetem le egy adott szöveg első előfordulását egy PDF-dokumentumban?
 
 V: Az oktatóanyag lépésről lépésre végigvezeti a folyamaton:
 
 1.  Nyisson meg egy PDF dokumentumot a`Document` osztály.
-2.  Hozzon létre egy`TextFragmentAbsorber` objektumot, és fogadja el az összes oldalon, hogy megtalálja a keresési kifejezés példányait.
+2.  Hozzon létre a`TextFragmentAbsorber` objektumot, és fogadja el az összes oldalon, hogy megtalálja a keresési kifejezés példányait.
 3. Ha a keresési kifejezés megtalálható, keresse ki a szövegrészlet első előfordulását, és frissítse a tulajdonságait az új szöveggel és formázással.
 4. Mentse el a módosított PDF dokumentumot.
 

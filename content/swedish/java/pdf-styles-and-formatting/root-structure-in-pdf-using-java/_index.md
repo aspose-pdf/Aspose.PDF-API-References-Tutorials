@@ -35,7 +35,7 @@ Document pdfDocument = new Document();
 
 ## Ändra rotstrukturen
 
-För att ändra rotstrukturen kan vi komma åt den via PDF-dokumentobjektet. Vi kan lägga till eller ta bort objekt, såsom sidor eller anteckningar, för att anpassa PDF:en.
+För att ändra rotstrukturen kan vi komma åt den via PDF-dokumentobjektet. Vi kan lägga till eller ta bort objekt, som sidor eller anteckningar, för att anpassa PDF:en.
 
 ```java
 // Java-kod för att lägga till en ny sida i PDF-filen

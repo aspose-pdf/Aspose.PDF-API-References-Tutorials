@@ -7,7 +7,7 @@ type: docs
 weight: 250
 url: /zh-hant/net/programming-with-forms/select-radio-button/
 ---
-以下是如何使用 Aspose.PDF for .NET 選擇單選按鈕的詳細教學。按著這些次序：
+以下是如何使用 Aspose.PDF for .NET 選擇單選按鈕的詳細教學。請依照下列步驟操作：
 
 ## 步驟 1：首先透過指定路徑來定義文件的目錄`dataDir` variable.
 

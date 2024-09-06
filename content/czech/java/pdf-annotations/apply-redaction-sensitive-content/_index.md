@@ -10,14 +10,14 @@ url: /cs/java/pdf-annotations/apply-redaction-sensitive-content/
 
 ## Úvod do redakce
 
-Redakce je proces trvalého odstranění nebo zakrytí citlivých informací v dokumentu, který se tak stane nedostupným pro kohokoli, kdo by k těmto datům neměl mít přístup. Tento proces se běžně používá k ochraně důvěrných údajů, jako jsou rodná čísla, finanční informace nebo osobní adresy, v dokumentech, jako jsou právní smlouvy, finanční zprávy nebo vládní záznamy.
+Redakce je proces trvalého odstranění nebo zakrytí citlivých informací v dokumentu, který se tak stane nedostupným pro kohokoli, kdo by k těmto datům neměl mít přístup. Tento proces se běžně používá k ochraně důvěrných dat, jako jsou rodná čísla, finanční informace nebo osobní adresy, v dokumentech, jako jsou právní smlouvy, finanční zprávy nebo vládní záznamy.
 
 ## Předpoklady
 
 Než se ponoříme do procesu redakce, ujistěte se, že máte splněny následující předpoklady:
 
 - Vývojové prostředí Java: Ujistěte se, že máte v systému nainstalovanou Javu.
--  Aspose.PDF for Java Library: Stáhněte si a nainstalujte knihovnu Aspose.PDF for Java z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF for Java Library: Stáhněte si a nainstalujte knihovnu Aspose.PDF for Java z[zde](https://releases.aspose.com/pdf/java/).
 
 
 ## Nastavení prostředí Java

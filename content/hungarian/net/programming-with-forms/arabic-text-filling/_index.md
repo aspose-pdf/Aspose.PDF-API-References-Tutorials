@@ -31,7 +31,7 @@ Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(fs);
 
 ## 2. lépés: Nyissa meg a TextBoxField mezőt
 
- Az űrlapmező arab szöveggel való kitöltéséhez el kell érnünk az adott`TextBoxField` mezőt, amelyet ki szeretnénk tölteni. Ebben a példában feltételezzük, hogy a mező neve "textbox1". A mező hivatkozását a`Form` tulajdona a`pdfDocument` tárgy:
+ Az űrlapmező arab szöveggel való kitöltéséhez el kell érnünk az adott`TextBoxField` mezőt, amelyet ki szeretnénk tölteni. Ebben a példában feltételezzük, hogy a mező neve "textbox1". A mező hivatkozását a`Form` tulajdona a`pdfDocument` objektum:
 
 ```csharp
 TextBoxField txtFld = pdfDocument.Form["textbox1"] as TextBoxField;
@@ -64,9 +64,9 @@ Console.WriteLine("\nArabic text successfully filled in the form field.\nFile sa
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Töltse be a PDF űrlap tartalmát
+//Töltse be a PDF űrlap tartalmát
 FileStream fs = new FileStream(dataDir + "FillFormField.pdf", FileMode.Open, FileAccess.ReadWrite);
-//Dokumentumpéldány példányosítása adatfolyam-tároló űrlapfájllal
+// Dokumentumpéldány példányosítása adatfolyam-tároló űrlapfájllal
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(fs);
 // A particuarl TextBoxField hivatkozásának lekérése
 TextBoxField txtFld = pdfDocument.Form["textbox1"] as TextBoxField;
@@ -80,13 +80,13 @@ Console.WriteLine("\nArabic text filled successfully in form field.\nFile saved 
 
 ## Következtetés
 
-Ebben az oktatóanyagban megvizsgáltuk, hogyan tölthet fel egy PDF űrlapmezőt arab szöveggel az Aspose.PDF for .NET használatával. Lépésről lépésre végigjártuk a folyamatot, és elmagyaráztuk a vonatkozó C# forráskódot. Ezen utasítások követésével könnyedén integrálhatja az arab szövegkitöltés funkciót .NET-alkalmazásaiba. Ha további kérdése van, vagy további információra van szüksége, forduljon bizalommal az Aspose.PDF ügyfélszolgálati csapatához, vagy tekintse meg az alábbi további forrásokat.
+Ebben az oktatóanyagban megvizsgáltuk, hogyan tölthet fel egy PDF űrlapmezőt arab szöveggel az Aspose.PDF for .NET használatával. Lépésről lépésre végigjártuk a folyamatot, és elmagyaráztuk a vonatkozó C# forráskódot. Ezen utasítások követésével könnyedén integrálhatja az arab szövegkitöltés funkciót .NET-alkalmazásaiba. Ha további kérdései vannak, vagy további információra van szüksége, forduljon bizalommal az Aspose.PDF ügyfélszolgálati csapatához, vagy tekintse meg az alábbi további forrásokat.
 
 ### GYIK
 
 #### K: Kitölthetek-e más típusú űrlapmezőket arab szöveggel az Aspose.PDF for .NET használatával?
 
- V: Igen, az Aspose.PDF for .NET segítségével más típusú űrlapmezőket is kitölthet arab szöveggel, például jelölőnégyzetekkel, választógombokkal, kombinált mezőkkel stb. A folyamat hasonló az a`TextBoxField` . Egyszerűen nyissa meg az adott mezőt annak nevével vagy azonosítójával, és állítsa be`Value` tulajdonság a kívánt arab szöveghez.
+ V: Igen, az Aspose.PDF for .NET segítségével más típusú űrlapmezőket is kitölthet arab szöveggel, például jelölőnégyzetekkel, választógombokkal, kombinált mezőkkel stb. A folyamat hasonló az a`TextBoxField` . Egyszerűen nyissa meg az adott mezőt annak nevével vagy azonosítójával, és állítsa be`Value`tulajdonság a kívánt arab szöveghez.
 
 #### K: Az Aspose.PDF for .NET kompatibilis az arab szöveggel és a jobbról balra (RTL) írással?
 
@@ -102,4 +102,4 @@ V: Igen, testreszabhatja a kitöltött arab szöveg megjelenését az űrlapmez�
 
 #### K: Hogyan szerezhetek támogatást vagy találhatok további forrásokat az Aspose.PDF for .NET számára?
 
-V: Az Aspose.PDF for .NET számára támogatást kaphat, ha felkeresi az Aspose hivatalos támogatási fórumát, vagy közvetlenül kapcsolatba lép a támogatási csapatával. Ezenkívül az Aspose webhelyén hasznos dokumentációkat, példákat és API-referenciákat találhat, amelyek segítséget nyújtanak a különféle PDF-ekkel kapcsolatos feladatok végrehajtásához.
+V: Az Aspose.PDF for .NET számára támogatást kaphat, ha felkeresi az Aspose hivatalos támogatási fórumát, vagy közvetlenül kapcsolatba lép a támogatási csapatával. Ezenkívül az Aspose webhelyén hasznos dokumentumokat, példákat és API-hivatkozásokat találhat, amelyek segítséget nyújtanak a különféle PDF-ekkel kapcsolatos feladatok végrehajtásához.

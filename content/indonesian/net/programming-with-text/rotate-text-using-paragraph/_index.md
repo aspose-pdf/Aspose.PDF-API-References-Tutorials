@@ -1,20 +1,20 @@
 ---
-title: Putar Teks Menggunakan Paragraf Dalam File PDF
-linktitle: Putar Teks Menggunakan Paragraf Dalam File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara memutar teks menggunakan paragraf dalam file PDF menggunakan Aspose.PDF untuk .NET.
+title: Memutar Teks Menggunakan Paragraf Dalam File PDF
+linktitle: Memutar Teks Menggunakan Paragraf Dalam File PDF
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara memutar teks menggunakan paragraf dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
 type: docs
 weight: 380
 url: /id/net/programming-with-text/rotate-text-using-paragraph/
 ---
-Tutorial ini menjelaskan cara menggunakan Aspose.PDF untuk .NET untuk memutar teks menggunakan paragraf. Kode sumber C# yang disediakan menunjukkan proses langkah demi langkah.
+Tutorial ini menjelaskan cara menggunakan Aspose.PDF untuk .NET guna memutar teks menggunakan paragraf. Kode sumber C# yang disediakan menunjukkan proses tersebut langkah demi langkah.
 
 ## Prasyarat
 
 Sebelum melanjutkan tutorial, pastikan Anda memiliki hal berikut:
 
-- Pengetahuan dasar bahasa pemrograman C#.
-- Aspose.PDF untuk perpustakaan .NET diinstal. Anda dapat memperolehnya dari situs Aspose atau menggunakan NuGet untuk menginstalnya di proyek Anda.
+- Pengetahuan dasar tentang bahasa pemrograman C#.
+- Pustaka Aspose.PDF untuk .NET telah terinstal. Anda dapat memperolehnya dari situs web Aspose atau menggunakan NuGet untuk menginstalnya di proyek Anda.
 
 ## Langkah 1: Siapkan proyek
 
@@ -22,7 +22,7 @@ Mulailah dengan membuat proyek C# baru di lingkungan pengembangan terintegrasi (
 
 ## Langkah 2: Impor namespace yang diperlukan
 
-Tambahkan arahan penggunaan berikut di awal file C# Anda untuk mengimpor namespace yang diperlukan:
+Tambahkan perintah berikut di awal file C# Anda untuk mengimpor namespace yang diperlukan:
 
 ```csharp
 using Aspose.Pdf;
@@ -51,7 +51,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 ## Langkah 5: Buat paragraf teks
 
- Membuat`TextParagraph` objek dan atur posisinya di halaman:
+ Membuat sebuah`TextParagraph` objek dan mengatur posisinya di halaman:
 
 ```csharp
 TextParagraph paragraph = new TextParagraph();
@@ -60,9 +60,9 @@ paragraph.Position = new Position(200, 600);
 
 Sesuaikan nilai posisi sesuai kebutuhan Anda.
 
-## Langkah 6: Buat dan konfigurasikan fragmen teks
+## Langkah 6: Membuat dan mengonfigurasi fragmen teks
 
- Buat banyak`TextFragment` objek dan mengatur teks dan propertinya:
+ Buat beberapa`TextFragment` objek dan mengatur teks dan propertinya:
 
 ```csharp
 TextFragment textFragment1 = new TextFragment("rotated text");
@@ -94,7 +94,7 @@ paragraph.AppendLine(textFragment3);
 
 ## Langkah 8: Buat TextBuilder dan tambahkan paragraf
 
- Membuat`TextBuilder` objek menggunakan`pdfPage` dan tambahkan paragraf teks ke halaman PDF:
+ Membuat sebuah`TextBuilder` objek menggunakan`pdfPage` dan tambahkan paragraf teks ke halaman PDF:
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(pdfPage);
@@ -122,22 +122,22 @@ TextParagraph paragraph = new TextParagraph();
 paragraph.Position = new Position(200, 600);
 // Buat fragmen teks
 TextFragment textFragment1 = new TextFragment("rotated text");
-// Atur properti teks
+// Mengatur properti teks
 textFragment1.TextState.FontSize = 12;
 textFragment1.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-// Atur rotasi
+// Mengatur rotasi
 textFragment1.TextState.Rotation = 45;
 // Buat fragmen teks
 TextFragment textFragment2 = new TextFragment("main text");
-// Atur properti teks
+// Mengatur properti teks
 textFragment2.TextState.FontSize = 12;
 textFragment2.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 // Buat fragmen teks
 TextFragment textFragment3 = new TextFragment("another rotated text");
-// Atur properti teks
+// Mengatur properti teks
 textFragment3.TextState.FontSize = 12;
 textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-// Atur rotasi
+// Mengatur rotasi
 textFragment3.TextState.Rotation = -45;
 // Tambahkan fragmen teks ke paragraf
 paragraph.AppendLine(textFragment1);
@@ -154,43 +154,43 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated2_out.pdf");
 
 ## Kesimpulan
 
-Selamat! Anda telah berhasil mempelajari cara memutar teks menggunakan paragraf dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini memberikan panduan langkah demi langkah, mulai dari membuat dokumen hingga menyimpan versi modifikasi. Anda sekarang dapat memasukkan kode ini ke dalam proyek C# Anda sendiri untuk memanipulasi rotasi teks dalam file PDF.
+Selamat! Anda telah berhasil mempelajari cara memutar teks menggunakan paragraf dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini menyediakan panduan langkah demi langkah, mulai dari membuat dokumen hingga menyimpan versi yang dimodifikasi. Anda sekarang dapat memasukkan kode ini ke dalam proyek C# Anda sendiri untuk memanipulasi rotasi teks dalam file PDF.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### Q: Apa tujuan dari tutorial "Memutar Teks Menggunakan Paragraf"?
+#### T: Apa tujuan dari tutorial "Memutar Teks Menggunakan Paragraf"?
 
-J: Tutorial "Putar Teks Menggunakan Paragraf" bertujuan untuk memandu Anda melalui proses penggunaan pustaka Aspose.PDF untuk .NET untuk memutar teks menggunakan paragraf teks dalam dokumen PDF. Tutorial ini memberikan petunjuk langkah demi langkah dan kode contoh untuk mencapai fungsi ini.
+J: Tutorial "Putar Teks Menggunakan Paragraf" bertujuan untuk memandu Anda melalui proses penggunaan pustaka Aspose.PDF untuk .NET guna memutar teks menggunakan paragraf teks dalam dokumen PDF. Tutorial ini menyediakan petunjuk langkah demi langkah dan contoh kode untuk mencapai fungsi ini.
 
-#### Q: Apa yang dimaksud dengan "memutar teks menggunakan paragraf"?
+#### T: Apa yang dimaksud dengan "memutar teks menggunakan paragraf"?
 
-J: Memutar teks menggunakan paragraf mengacu pada kemampuan untuk menerapkan rotasi pada teks dalam dokumen PDF menggunakan paragraf teks. Teknik ini memungkinkan Anda mengorientasikan teks pada sudut atau posisi berbeda dalam konten PDF.
+A: Memutar teks menggunakan paragraf mengacu pada kemampuan untuk menerapkan rotasi pada teks dalam dokumen PDF menggunakan paragraf teks. Teknik ini memungkinkan Anda untuk mengarahkan teks pada sudut atau posisi yang berbeda dalam konten PDF.
 
 #### T: Mengapa saya ingin memutar teks dalam dokumen PDF?
 
-J: Memutar teks dalam dokumen PDF dapat berguna untuk berbagai tujuan, seperti menekankan konten tertentu, membuat desain artistik, atau meningkatkan tata letak dan keterbacaan.
+A: Memutar teks dalam dokumen PDF dapat berguna untuk berbagai tujuan, seperti menekankan konten tertentu, membuat desain artistik, atau meningkatkan tata letak dan keterbacaan.
 
 #### T: Bagaimana cara membuat dokumen PDF baru?
 
- A: Untuk membuat dokumen PDF baru, inisialisasi a`Document`objek dari perpustakaan Aspose.PDF. Anda dapat menggunakan objek ini untuk menambahkan halaman dan konten ke PDF.
+ A: Untuk membuat dokumen PDF baru, inisialisasi`Document`objek dari pustaka Aspose.PDF. Anda dapat menggunakan objek ini untuk menambahkan halaman dan konten ke PDF.
 
 #### T: Bagaimana cara memutar teks menggunakan paragraf?
 
 A: Untuk memutar teks menggunakan paragraf:
 
-1.  Membuat`TextParagraph` obyek.
+1.  Membuat sebuah`TextParagraph` obyek.
 2.  Membuat`TextFragment` objek dengan teks dan sudut rotasi yang diinginkan.
 3. Tambahkan fragmen teks ke paragraf teks.
-4.  Membuat`TextBuilder` objek dan tambahkan paragraf teks ke halaman PDF tertentu.
+4.  Membuat sebuah`TextBuilder` objek dan menambahkan paragraf teks ke halaman PDF tertentu.
 
 #### T: Dapatkah saya mengontrol sudut rotasi setiap fragmen teks?
 
- A: Ya, Anda dapat mengontrol sudut rotasi individu`TextFragment` objek dengan mengatur`TextState.Rotation` Properti. Nilai positif menunjukkan putaran searah jarum jam, sedangkan nilai negatif menunjukkan putaran berlawanan arah jarum jam.
+ A: Ya, Anda dapat mengontrol sudut rotasi masing-masing`TextFragment` objek dengan mengatur`TextState.Rotation` properti. Nilai positif menunjukkan putaran searah jarum jam, sedangkan nilai negatif menunjukkan putaran berlawanan arah jarum jam.
 
-#### T: Dapatkah saya menerapkan sudut rotasi berbeda pada fragmen teks berbeda dalam paragraf yang sama?
+#### T: Dapatkah saya menerapkan sudut rotasi yang berbeda pada fragmen teks yang berbeda dalam paragraf yang sama?
 
- A: Ya, Anda dapat menerapkan sudut rotasi yang berbeda ke sudut yang berbeda`TextFragment` objek dalam paragraf yang sama dengan mengatur`TextState.Rotation` properti masing-masing fragmen sesuai.
+ A: Ya, Anda dapat menerapkan sudut rotasi yang berbeda ke berbagai`TextFragment` objek dalam paragraf yang sama dengan mengatur`TextState.Rotation` properti masing-masing fragmen sebagaimana mestinya.
 
-#### Q: Bagaimana cara menyimpan dokumen PDF yang diputar?
+#### T: Bagaimana cara menyimpan dokumen PDF yang diputar?
 
-A: Untuk menyimpan dokumen PDF yang diputar, gunakan`Save` metode`Document` objek dan berikan jalur dan nama file keluaran yang diinginkan.
+A: Untuk menyimpan dokumen PDF yang diputar, gunakan`Save` metode dari`Document` objek dan menyediakan jalur dan nama file keluaran yang diinginkan.

@@ -26,7 +26,7 @@ Mielőtt belemerülnénk a kódba, győződjön meg arról, hogy a következő e
 
 ## A projekt beállítása
 
-A kezdéshez állítsunk be egy új Java-projektet az IDE-ben. Kovesd ezeket a lepeseket:
+A kezdéshez állítsunk be egy új Java-projektet az IDE-ben. Kövesse az alábbi lépéseket:
 
 1. Nyissa meg az IDE-jét.
 2. Hozzon létre egy új Java projektet.

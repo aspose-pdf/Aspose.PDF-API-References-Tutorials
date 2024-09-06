@@ -180,7 +180,7 @@ using Aspose.Pdf.Operators;
 
 #### Q：GSave 和 GRestore 運算子的目的為何？
 
-答： 的`GSave`和`GRestore`Aspose.PDF中的運算子用於儲存和還原圖形狀態。它們有助於確保應用於內容某一部分的轉換和設定不會影響後續部分。
+答： 的`GSave`和`GRestore` Aspose.PDF中的運算子用於儲存和還原圖形狀態。它們有助於確保應用於內容某一部分的轉換和設定不會影響後續部分。
 
 #### Q：如何使用 Aspose.PDF 定義 XForm？
 
@@ -188,7 +188,7 @@ using Aspose.Pdf.Operators;
 
 #### Q：如何在 XForm 中繪製影像？
 
- A：將圖像載入到流中並將其新增至`Resources.Images`XForm 的集合。使用`Do`XForm 中的運算符`Contents`繪製影像。
+A：將圖像載入到流中並將其新增至`Resources.Images`XForm 的集合。使用`Do`XForm 中的運算符`Contents`繪製影像。
 
 #### Q：如何在 PDF 頁面上放置 XForm？
 

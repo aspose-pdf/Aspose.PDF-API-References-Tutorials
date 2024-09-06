@@ -134,7 +134,7 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated1_out.pdf");
 
 ## 結論
 
-恭喜！您已成功學習如何使用 Aspose.PDF for .NET 在 PDF 文件中使用文字片段來旋轉文字。本教學提供了從建立文件到儲存修改版本的逐步指南。現在，您可以將此程式碼合併到您自己的 C# 專案中，以操作 PDF 文件中的文字旋轉。
+恭喜！您已成功學習如何使用 Aspose.PDF for .NET 在 PDF 文件中使用文字片段來旋轉文字。本教學提供了從建立文件到儲存修改版本的逐步指南。現在，您可以將此程式碼合併到您自己的 C# 專案中，以操作 PDF 檔案中的文字旋轉。
 
 ### 常見問題解答
 

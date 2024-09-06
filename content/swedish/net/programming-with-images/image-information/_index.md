@@ -11,7 +11,7 @@ Den här guiden tar dig steg för steg hur du extraherar information om bilder i
 
 ## Steg 1: Definiera dokumentkatalogen
 
- Se till att ställa in rätt dokumentkatalog. Byta ut`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där ditt PDF-dokument finns.
+ Se till att ställa in rätt dokumentkatalog. Ersätta`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där ditt PDF-dokument finns.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";

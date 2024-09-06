@@ -1,13 +1,13 @@
 ---
-title: Stiltabellenzelle
-linktitle: Stiltabellenzelle
+title: Tabellenzelle formatieren
+linktitle: Tabellenzelle formatieren
 second_title: Aspose.PDF für .NET API-Referenz
 description: Erfahren Sie, wie Sie Tabellenzellen mit Aspose.PDF für .NET formatieren. Schritt-für-Schritt-Anleitung zum Erstellen und Anpassen von Tabellen.
 type: docs
 weight: 160
 url: /de/net/programming-with-tagged-pdf/style-table-cell/
 ---
-Willkommen zu diesem ausführlichen Tutorial zum Formatieren von Tabellenzellen mit Aspose.PDF für .NET. In diesem Leitfaden erklären wir jeden Schritt des bereitgestellten C#-Quellcodes im Detail, um Ihnen zu helfen, den Stil von Tabellenzellen zu verstehen. Stellen Sie sicher, dass Sie Aspose.PDF für .NET installiert und Ihre Entwicklungsumgebung eingerichtet haben, bevor Sie beginnen.
+Willkommen zu diesem ausführlichen Tutorial zum Formatieren von Tabellenzellen mit Aspose.PDF für .NET. In dieser Anleitung erklären wir jeden Schritt des bereitgestellten C#-Quellcodes im Detail, damit Sie verstehen, wie Sie Tabellenzellen formatieren. Stellen Sie sicher, dass Sie Aspose.PDF für .NET installiert und Ihre Entwicklungsumgebung eingerichtet haben, bevor Sie beginnen.
 
 ## Schritt 1: Einrichten der Umgebung
 
@@ -18,10 +18,10 @@ Bevor Sie beginnen, stellen Sie sicher, dass Sie Ihre Entwicklungsumgebung für 
 In diesem Schritt erstellen wir ein neues Dokumentobjekt Aspose.PDF.
 
 ```csharp
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Dokumentenerstellung
+// Dokumenterstellung
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example of table cell formatting");
@@ -30,23 +30,23 @@ taggedContent.SetLanguage("fr-FR");
 
 Wir haben ein neues Dokument erstellt und den Dokumenttitel und die Sprache festgelegt.
 
-## Schritt 3: Erhalten des Wurzelstrukturelements
+## Schritt 3: Abrufen des Stammstrukturelements
 
 In diesem Schritt erhalten wir das Stammstrukturelement für unser Dokument.
 
 ```csharp
-//Rufen Sie das Wurzelstrukturelement ab
+//Erhalten Sie das Stammstrukturelement
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-Wir haben das Wurzelstrukturelement erhalten, das als Container für die Array-Elemente dient.
+Wir haben das Stammstrukturelement, das als Container für die Array-Elemente dient.
 
 ## Schritt 4: Erstellen des Array-Strukturelements
 
-Jetzt erstellen wir ein neues Tabellenstrukturelement für unser Dokument.
+Lassen Sie uns nun ein neues Tabellenstrukturelement für unser Dokument erstellen.
 
 ```csharp
-// Erstellen Sie das Array-Strukturelement
+// Erstellen des Array-Strukturelements
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
@@ -54,11 +54,11 @@ TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
 ```
 
-Wir haben ein neues Array-Strukturelement erstellt und es dem Root-Strukturelement hinzugefügt. Wir haben auch die Kopf-, Haupt- und Fußzeilenelemente der Tabelle erstellt.
+Wir haben ein neues Array-Strukturelement erstellt und es dem Stammstrukturelement hinzugefügt. Außerdem haben wir die Tabellenkopf-, -text- und -fußzeilenelemente erstellt.
 
 ## Schritt 5: Tabellenüberschriften hinzufügen
 
-In diesem Schritt fügen wir die Tabellenüberschriften zu unserer Tabelle hinzu.
+In diesem Schritt fügen wir unserer Tabelle die Tabellenüberschriften hinzu.
 
 ```csharp
 // Anzahl der Zeilen und Spalten in der Tabelle
@@ -68,7 +68,7 @@ int colCount = 4;
 int rowIndex;
 int colIndex;
 
-// Erstellen Sie die Tabellenkopfzeile
+// Erstellen der Tabellenkopfzeile
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Header Row";
 
@@ -86,9 +86,9 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 
 Wir haben eine Kopfzeile für unsere Tabelle erstellt und Kopfzellen mit Formatierungseigenschaften wie Hintergrundfarbe, Rahmen, Rändern und Ausrichtung hinzugefügt.
 
-## Schritt 6: Hinzufügen der Tabellenhauptzeilen
+## Schritt 6: Hinzufügen der Zeilen des Tabellenkörpers
 
-Fügen wir nun die Tabellenhauptzeilen zu unserer Tabelle hinzu.
+Fügen wir nun die Tabellentextzeilen zu unserer Tabelle hinzu.
 ```csharp
 for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 {
@@ -137,11 +137,11 @@ for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 }
 ```
 
-Wir haben Zeilen zum Hauptteil der Tabelle hinzugefügt, indem wir Schleifen verwendet haben, um jede Tabellenzelle zu durchlaufen. Wir legen für jede Zelle Formatierungseigenschaften fest, z. B. Hintergrundfarbe, Rahmen, Ränder, Textausrichtung usw.
+Wir haben dem Hauptteil der Tabelle Zeilen hinzugefügt, indem wir Schleifen verwendet haben, um über jede Tabellenzelle zu iterieren. Wir haben für jede Zelle Formatierungseigenschaften festgelegt, wie z. B. Hintergrundfarbe, Rahmen, Ränder, Textausrichtung usw.
 
 ## Schritt 7: Fußzeile hinzufügen
 
-Zum Schluss fügen wir die Tabellenfußzeile zu unserer Tabelle hinzu.
+Zum Schluss fügen wir unserer Tabelle den Tabellenfuß hinzu.
 
 ```csharp
 TableTRElement footTrElement = tableTFootElement.CreateTR();
@@ -160,32 +160,32 @@ Wir haben eine Fußzeile für unsere Tabelle erstellt und Fußzeilenzellen mit T
 
 ## Schritt 8: Speichern des getaggten PDF-Dokuments
 
-Nachdem wir nun unser Dokument mit der gestalteten Tabelle erstellt haben, speichern wir es als getaggtes PDF-Dokument.
+Nachdem wir nun unser Dokument mit der formatierten Tabelle erstellt haben, speichern wir es als getaggtes PDF-Dokument.
 
 ```csharp
-// Speichern Sie das getaggte PDF-Dokument
+// Speichern des getaggten PDF-Dokuments
 document.Save(dataDir + "StyleTableCell.pdf");
 ```
 
 Wir haben das getaggte PDF-Dokument im angegebenen Verzeichnis gespeichert.
 
-## Schritt 9: PDF/UA-Konformitätsvalidierung
+## Schritt 9: Validierung der PDF/UA-Konformität
 
 Als nächstes validieren wir die PDF/UA-Konformität unseres Dokuments.
 
 ```csharp
-// Prüfung der PDF/UA-Konformität
+// PDF/UA-Konformitätsprüfung
 document = new Document(dataDir + "StyleTableCell.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableCell.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-Wir haben das getaggte PDF-Dokument hochgeladen und seine PDF/UA-Konformität durch die Erstellung eines XML-Berichts validiert.
+Wir haben das getaggte PDF-Dokument hochgeladen und seine PDF/UA-Konformität durch die Generierung eines XML-Berichts validiert.
 
-### Beispielquellcode für Style Table Cell mit Aspose.PDF für .NET 
+### Beispiel-Quellcode für Style Table Cell mit Aspose.PDF für .NET 
 ```csharp
 
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Dokument erstellen
@@ -197,7 +197,7 @@ taggedContent.SetLanguage("en-US");
 // Stammstrukturelement abrufen
 StructureElement rootElement = taggedContent.RootElement;
 
-// Erstellen Sie ein Tabellenstrukturelement
+// Tabellenstrukturelement erstellen
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
@@ -267,7 +267,7 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 	tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
 
-// Markiertes PDF-Dokument speichern
+// Getaggtes PDF-Dokument speichern
 document.Save(dataDir + "StyleTableCell.pdf");
 
 // Überprüfung der PDF/UA-Konformität
@@ -279,46 +279,46 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ## Abschluss
 
-In diesem Tutorial haben wir gelernt, wie man Tabellenzellen mit Aspose.PDF für .NET formatiert. Wir haben gesehen, wie man ein Dokument erstellt, eine Tabelle mit Kopfzeilen, Hauptzeilen und einer Fußzeile hinzufügt und Zellstile anpasst. Schließlich haben wir das getaggte PDF-Dokument gespeichert und seine PDF/UA-Konformität validiert. Sie können jetzt Aspose.PDF für .NET verwenden, um Tabellen in Ihren .NET-Anwendungen zu erstellen und zu formatieren.
+In diesem Tutorial haben wir gelernt, wie man Tabellenzellen mit Aspose.PDF für .NET formatiert. Wir haben gesehen, wie man ein Dokument erstellt, eine Tabelle mit Kopfzeilen, Textzeilen und Fußzeilen hinzufügt und Zellenformate anpasst. Abschließend haben wir das getaggte PDF-Dokument gespeichert und seine PDF/UA-Konformität überprüft. Sie können jetzt Aspose.PDF für .NET verwenden, um Tabellen in Ihren .NET-Anwendungen zu erstellen und zu formatieren.
 
-### FAQs
+### Häufig gestellte Fragen
 
 #### F: Was ist der Zweck dieses Tutorials zum Formatieren von Tabellenzellen mit Aspose.PDF für .NET?
 
-A: Dieses Tutorial soll eine umfassende Anleitung zum Formatieren von Tabellenzellen in einem PDF-Dokument mithilfe der Aspose.PDF-Bibliothek für .NET bieten. Es umfasst Schritt-für-Schritt-Anleitungen und C#-Quellcode-Beispiele, die Ihnen helfen, die Formatierung von Tabellenzellen zu verstehen und umzusetzen.
+A: Dieses Tutorial soll eine umfassende Anleitung zum Formatieren von Tabellenzellen in einem PDF-Dokument mithilfe der Aspose.PDF-Bibliothek für .NET bieten. Es enthält schrittweise Anleitungen und C#-Quellcodebeispiele, die Ihnen dabei helfen, die Formatierung von Tabellenzellen zu verstehen und umzusetzen.
 
-#### F: Was sind die Voraussetzungen, um diesem Tutorial zu folgen?
+#### F: Welche Voraussetzungen müssen für die Teilnahme an diesem Tutorial erfüllt sein?
 
 A: Bevor Sie beginnen, stellen Sie sicher, dass Sie Aspose.PDF für .NET installiert und Ihre Entwicklungsumgebung eingerichtet haben. Dazu gehört die Konfiguration Ihres Projekts, um auf die Aspose.PDF-Bibliothek zu verweisen.
 
-#### F: Wie erstelle ich ein neues PDF-Dokument mit Aspose.PDF für .NET?
+#### F: Wie erstelle ich mit Aspose.PDF für .NET ein neues PDF-Dokument?
 
-A: Um ein neues PDF-Dokument zu erstellen, müssen Sie ein instanziieren`Document` Objekt aus der Aspose.PDF-Bibliothek. Der bereitgestellte C#-Quellcode zeigt, wie ein Dokument erstellt und dessen Titel und Sprache festgelegt wird.
+A: Um ein neues PDF-Dokument zu erstellen, müssen Sie eine`Document` Objekt aus der Aspose.PDF-Bibliothek. Der bereitgestellte C#-Quellcode zeigt, wie ein Dokument erstellt und dessen Titel und Sprache festgelegt wird.
 
 #### F: Welche Bedeutung hat das Stammstrukturelement in einem PDF-Dokument?
 
-A: Das Stammstrukturelement dient als Container für andere Strukturelemente und hilft bei der Organisation und Kategorisierung des Inhalts des PDF-Dokuments. Es spielt eine entscheidende Rolle bei der Festlegung der logischen Struktur des Dokuments.
+A: Das Stammstrukturelement dient als Container für andere Strukturelemente und hilft dabei, den Inhalt des PDF-Dokuments zu organisieren und zu kategorisieren. Es spielt eine entscheidende Rolle bei der Erstellung der logischen Struktur des Dokuments.
 
 #### F: Wie kann ich mit Aspose.PDF für .NET ein Tabellenstrukturelement erstellen und sein Erscheinungsbild anpassen?
 
- A: Sie können ein Tabellenstrukturelement mit erstellen`CreateTableElement()` Methode. Der bereitgestellte Quellcode zeigt, wie Sie das Erscheinungsbild der Tabelle, einschließlich Kopf-, Haupt- und Fußzeile, anpassen können, indem Sie Eigenschaften wie Hintergrundfarbe, Rahmen, Ränder und Ausrichtung festlegen.
+ A: Sie können ein Tabellenstrukturelement erstellen, indem Sie`CreateTableElement()` Methode. Der bereitgestellte Quellcode zeigt, wie Sie das Erscheinungsbild der Tabelle (einschließlich Kopf-, Text- und Fußzeile) anpassen können, indem Sie Eigenschaften wie Hintergrundfarbe, Rahmen, Ränder und Ausrichtung festlegen.
 
 #### F: Kann ich dem Tabellenkörper mehrere Zeilen und Spalten hinzufügen und deren Formatierung anpassen?
 
-A: Ja, das Tutorial zeigt, wie man mithilfe von Schleifen mehrere Zeilen und Spalten zum Tabellenkörper hinzufügt. Außerdem finden Sie Beispiele für die Anpassung der Zellenformatierung, z. B. Hintergrundfarbe, Rahmen, Textausrichtung, Schriftstil und mehr.
+A: Ja, das Tutorial zeigt, wie Sie mithilfe von Schleifen mehrere Zeilen und Spalten zum Tabellenkörper hinzufügen. Es enthält auch Beispiele zum Anpassen der Zellenformatierung, wie Hintergrundfarbe, Rahmen, Textausrichtung, Schriftstil und mehr.
 
 #### F: Was ist der Zweck der Validierung der PDF/UA-Konformität und wie kann ich diese Validierung durchführen?
 
- A: Durch die Validierung der PDF/UA-Konformität wird sichergestellt, dass das PDF-Dokument den Barrierefreiheitsstandards entspricht, wodurch es für Benutzer mit Behinderungen leichter zugänglich wird. Das Tutorial zeigt, wie Sie die PDF/UA-Konformität mithilfe von validieren`Validate()` Methode und generieren Sie einen XML-Bericht.
+ A: Durch die Validierung der PDF/UA-Konformität wird sichergestellt, dass das PDF-Dokument den Zugänglichkeitsstandards entspricht und somit für Benutzer mit Behinderungen besser zugänglich ist. Das Tutorial zeigt, wie Sie die PDF/UA-Konformität mithilfe des`Validate()` Methode und generieren Sie einen XML-Bericht.
 
 #### F: Wie kann ich diese Konzepte auf meine eigenen .NET-Anwendungen anwenden?
 
-A: Sie können die bereitgestellten C#-Quellcodebeispiele als Leitfaden für die Implementierung der Tabellenzellenformatierung in Ihren eigenen .NET-Anwendungen verwenden. Passen Sie den Code nach Bedarf an Ihre Anforderungen an und integrieren Sie ihn in Ihre Projekte.
+A: Sie können die bereitgestellten C#-Quellcodebeispiele als Leitfaden zur Implementierung der Tabellenzellenformatierung in Ihren eigenen .NET-Anwendungen verwenden. Passen Sie den Code nach Bedarf an Ihre Anforderungen an und integrieren Sie ihn in Ihre Projekte.
 
-#### F: Gibt es empfohlene Best Practices für die Formatierung von Tabellenzellen in PDF-Dokumenten?
+#### F: Gibt es empfohlene Best Practices zum Formatieren von Tabellenzellen in PDF-Dokumenten?
 
-A: Berücksichtigen Sie beim Gestalten von Tabellenzellen die Bedürfnisse Ihrer Zielgruppe, einschließlich der Anforderungen an die Barrierefreiheit. Verwenden Sie kontrastierende Farben, geeignete Schriftarten und eine klare Zellenausrichtung, um die Lesbarkeit zu verbessern. Überprüfen Sie außerdem die PDF/UA-Konformität, um sicherzustellen, dass die Barrierefreiheitsstandards eingehalten werden.
+A: Berücksichtigen Sie beim Gestalten von Tabellenzellen die Bedürfnisse Ihrer Zielgruppe, einschließlich der Zugänglichkeitsanforderungen. Verwenden Sie kontrastierende Farben, geeignete Schriftarten und eine klare Zellenausrichtung, um die Lesbarkeit zu verbessern. Überprüfen Sie außerdem die PDF/UA-Konformität, um sicherzustellen, dass die Zugänglichkeitsstandards eingehalten werden.
 
-#### F: Welche anderen Funktionen von Aspose.PDF für .NET kann ich für die Bearbeitung von PDF-Dokumenten erkunden?
+#### F: Welche anderen Funktionen von Aspose.PDF für .NET kann ich zur Bearbeitung von PDF-Dokumenten erkunden?
 
-A: Aspose.PDF für .NET bietet eine breite Palette von Funktionen für die Bearbeitung von PDF-Dokumenten, einschließlich Textextraktion, Bildeinfügung, Formularfeldverwaltung, digitale Signaturen und mehr. Entdecken Sie die offizielle Dokumentation und Ressourcen, um mehr über zusätzliche Funktionen zu erfahren.
+A: Aspose.PDF für .NET bietet eine breite Palette an Funktionen zur Bearbeitung von PDF-Dokumenten, darunter Textextraktion, Bildeinfügung, Formularfeldverwaltung, digitale Signaturen und mehr. Erkunden Sie die offizielle Dokumentation und Ressourcen, um mehr über zusätzliche Funktionen zu erfahren.

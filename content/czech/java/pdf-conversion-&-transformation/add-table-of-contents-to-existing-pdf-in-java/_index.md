@@ -8,13 +8,13 @@ weight: 34
 url: /cs/java/pdf-conversion-transformation/add-table-of-contents-to-existing-pdf-in-java/
 ---
 
-## Úvod
+## Zavedení
 V tomto podrobném průvodci se naučíme, jak přidat obsah do existujícího PDF v Javě pomocí knihovny Aspose.PDF for Java. Obsah je užitečná funkce v dokumentech PDF, která umožňuje čtenářům rychle procházet dokumentem.
 
 ## Předpoklady
 Než začneme, ujistěte se, že máte splněny následující předpoklady:
 - Java Development Kit (JDK) nainstalovaný ve vašem systému.
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Přidání závislostí
 Chcete-li začít, vytvořte nový projekt Java a přidejte knihovnu Aspose.PDF for Java do závislostí vašeho projektu. Můžete to provést zahrnutím souboru JAR do cesty sestavení vašeho projektu.

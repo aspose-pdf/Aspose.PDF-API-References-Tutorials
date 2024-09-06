@@ -1,138 +1,128 @@
 ---
 title: Tambahkan Anotasi PDF
 linktitle: Tambahkan Anotasi
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara menambahkan anotasi teks PDF dengan Aspose.PDF untuk .NET menggunakan kode sumber C# ini. Sesuaikan anotasi Anda dengan detail dan ikon spesifik.
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Tambahkan anotasi khusus ke PDF Anda dengan mudah menggunakan Aspose.PDF for .NET dengan panduan langkah demi langkah ini. Sesuaikan anotasi Anda dengan detail dan ikon tertentu.
 type: docs
 weight: 10
 url: /id/net/annotations/addannotation/
 ---
-Menambahkan anotasi ke dokumen PDF adalah fitur canggih yang dapat meningkatkan proses kolaborasi dan peninjauan. Aspose.PDF untuk .NET memudahkan menambahkan anotasi secara terprogram ke dokumen PDF menggunakan C#. Dalam panduan ini, kami akan menjelaskan langkah demi langkah cara menggunakan Aspose.PDF untuk .NET guna menambahkan anotasi ke dokumen PDF.
+## Perkenalan
 
-## Langkah 1: Buat Proyek Baru dan Instal Aspose.PDF untuk .NET
+Anotasi merupakan cara yang bagus untuk memperkaya dokumen PDF, membuatnya interaktif dan informatif. Baik Anda meninggalkan catatan untuk kolaborator atau menambahkan informasi tambahan untuk pembaca, anotasi dapat menjadi hal yang penting. Dalam tutorial ini, kami akan membahas secara mendalam proses penambahan anotasi PDF menggunakan Aspose.PDF untuk .NET. Kami akan menguraikan setiap langkah sehingga di akhir panduan ini, Anda akan menjadi ahli dalam menyematkan anotasi dalam file PDF Anda. Mari kita mulai!
 
-Sebelum kita mulai menulis kode untuk menambahkan anotasi, kita perlu membuat proyek baru dan menginstal Aspose.PDF untuk .NET. Untuk menginstal Aspose.PDF untuk .NET, ikuti langkah-langkah berikut:
+## Prasyarat
 
-1. Buka Visual Studio dan buat proyek C# baru.
-2. Klik kanan pada proyek di Solution Explorer dan pilih "Kelola Paket NuGet".
-3. Cari "Aspose.PDF" dan pilih "Instal".
+Sebelum kita masuk ke kode, mari pastikan Anda memiliki semua yang Anda butuhkan:
 
-Setelah instalasi selesai, kita dapat mulai menulis kodenya.
+-  Aspose.PDF untuk .NET: Pastikan Anda telah menginstal pustaka Aspose.PDF. Anda dapat mengunduhnya dari[Halaman unduhan Aspose.PDF untuk .NET](https://releases.aspose.com/pdf/net/).
+- Lingkungan Pengembangan: Visual Studio atau IDE C# lain pilihan Anda.
+- Pengetahuan Dasar C#: Panduan ini mengasumsikan Anda nyaman dengan pemrograman C#.
+- Dokumen PDF: Contoh file PDF yang akan Anda tambahkan anotasi.
 
-## Langkah 2: Buka Dokumen PDF
+ Jika Anda belum memiliki pustaka Aspose.PDF, Anda dapat mengambilnya dari tautan di atas dan memulai[uji coba gratis](https://releases.aspose.com/) atau beli[lisensi](https://purchase.aspose.com/buy). 
 
-Langkah pertama dalam menambahkan anotasi adalah membuka dokumen PDF. Kita dapat menggunakan kode berikut untuk membuka dokumen:
+## Paket Impor
+
+Sebelum Anda mulai membuat kode, pastikan Anda telah mengimpor namespace yang diperlukan:
 
 ```csharp
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+```
+
+Ruang nama ini menyediakan akses ke kelas dan metode yang Anda perlukan untuk manipulasi dan anotasi PDF.
+
+## Langkah 1: Muat Dokumen PDF Anda
+
+Hal pertama yang harus dilakukan, Anda perlu memuat dokumen PDF di mana Anda berencana untuk menambahkan anotasi.
+
+```csharp
+// Jalur ke direktori dokumen.
 string dataDir = "YOUR DATA DIRECTORY";
-Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
-```
-
-Dalam kode ini, kita menentukan jalur ke dokumen PDF yang ingin kita buka. Pastikan untuk mengganti "DIREKTORI DATA ANDA" dengan jalur sebenarnya ke direktori data Anda.
-
-## Langkah 3: Buat Anotasi
-
- Untuk menambahkan anotasi, kita perlu membuat instance baru dari`TextAnnotation` kelas. Kita dapat menggunakan kode berikut untuk membuat anotasi teks baru:
-
-```csharp
-TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
-textAnnotation.Title = "Sample Annotation Title";
-textAnnotation.Subject = "Sample Subject";
-textAnnotation.State = AnnotationState.Accepted;
-textAnnotation.Contents = "Sample contents for the annotation";
-textAnnotation.Open = true;
-textAnnotation.Icon = TextIcon.Key;
-```
-
-Dalam kode ini, kami membuat anotasi teks baru di halaman kedua dokumen PDF. Kami juga mengatur properti judul, subjek, status, konten, buka, dan ikon anotasi.
-
-## Langkah 4: Sesuaikan Anotasi
-
- Kita dapat menyesuaikan tampilan anotasi menggunakan`Border` kelas. Kita dapat menggunakan kode berikut untuk menyesuaikan batas anotasi:
-
-```csharp
-Border border = new Border(textAnnotation);
-border.Width = 5;
-border.Dash = new Dash(1, 1);
-textAnnotation.Border = border;
-textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
-```
-
- Dalam kode ini, kami membuat yang baru`Border`objek dan atur properti lebar dan tanda hubungnya. Kami kemudian mengatur`Border` properti anotasi ke yang baru`Border` obyek. Akhirnya, kami mengatur`Rect` properti anotasi untuk menentukan posisi dan ukurannya.
-
-## Langkah 5: Tambahkan Anotasi ke Dokumen PDF
-
-Setelah kami membuat dan menyesuaikan anotasi, kami perlu menambahkannya ke dokumen PDF. Kita dapat menggunakan kode berikut untuk menambahkan anotasi ke dokumen PDF:
-
-```csharp
-pdfDocument.Pages[1].Annotations.Add(textAnnotation);
-```
-
-Dalam kode ini, kami menambahkan anotasi ke kumpulan anotasi halaman kedua dokumen PDF.
-
-## Langkah 6: Simpan File Keluaran
-
-Terakhir, kita perlu menyimpan dokumen PDF dengan anotasi tambahan. Kita dapat menggunakan kode berikut untuk menyimpan file output:
-
-```csharp
-dataDir = dataDir + "AddAnnotation_out.pdf";
-pdfDocument.Save(dataDir);
-```
-### Contoh kode sumber untuk Menambahkan Anotasi menggunakan Aspose.PDF untuk .NET
-
-
-```csharp   
- // Jalur ke direktori dokumen.
-string dataDir = "YOUR DATA DIRECTORY";
-
 // Buka dokumen
 Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
+```
 
+ Inilah yang terjadi: Anda menentukan direktori tempat file PDF Anda disimpan, lalu memuatnya menggunakan`Document` kelas yang disediakan oleh Aspose.PDF. Langkah ini penting karena tanpa memuat dokumen, Anda tidak dapat membuat perubahan apa pun pada dokumen tersebut.
+
+## Langkah 2: Buat Anotasi
+
+### Menentukan Properti Anotasi
+ Sekarang, mari kita buat anotasinya sendiri. Kita akan menggunakan`TextAnnotation`, yang sempurna untuk menambahkan komentar atau catatan ke PDF Anda.
+
+```csharp
 // Buat anotasi
 TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
 textAnnotation.Title = "Sample Annotation Title";
 textAnnotation.Subject = "Sample Subject";
-textAnnotation.State = AnnotationState.Accepted;
 textAnnotation.Contents = "Sample contents for the annotation";
 textAnnotation.Open = true;
 textAnnotation.Icon = TextIcon.Key;
+```
 
+Dalam cuplikan ini:
+-  Lokasi dan Ukuran:`Rectangle` kelas menentukan di mana pada halaman anotasi Anda akan muncul dan dimensinya.
+- Judul, Subjek, dan Isi: Properti ini memungkinkan Anda menentukan tentang apa anotasi Anda dan apa saja isinya.
+-  Ikon:`TextIcon.Key` menetapkan ikon untuk anotasi, membuatnya lebih menarik secara visual.
+
+## Langkah 3: Sesuaikan Tampilan Anotasi
+
+Berikutnya, mari buat anotasi ini menonjol dengan menambahkan batas dan mengubah tampilannya.
+
+```csharp
 Border border = new Border(textAnnotation);
 border.Width = 5;
 border.Dash = new Dash(1, 1);
 textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
-
-// Tambahkan anotasi di kumpulan anotasi halaman
-pdfDocument.Pages[1].Annotations.Add(textAnnotation);
-dataDir = dataDir + "AddAnnotation_out.pdf";
-// Simpan file keluaran
-pdfDocument.Save(dataDir);
 ```
-Kode ini menunjukkan cara menambahkan anotasi teks dengan judul, subjek, status, konten, dan ikon tertentu ke halaman PDF menggunakan Aspose.PDF untuk .NET. Anda dapat mengubah kode ini sesuai dengan kebutuhan Anda untuk menambahkan anotasi ke dokumen PDF Anda. Ingatlah untuk mengganti DIREKTORI DATA ANDA dengan jalur direktori sebenarnya tempat file PDF Anda berada dan tempat Anda ingin menyimpan file keluaran.
+
+Berikut rincian kejadiannya:
+-  Perbatasan: Kami membuat`Border` objek dan atur lebarnya menjadi 5, yang memberikan anotasi kita garis luar yang menonjol.
+-  Pola Garis:`Dash` Properti ini memungkinkan Anda membuat batas putus-putus dan menambahkan sedikit gaya pada anotasi.
+
+## Langkah 4: Tambahkan Anotasi ke Halaman PDF
+
+Setelah membuat dan menyesuaikan anotasi, saatnya menambahkannya ke halaman PDF Anda.
+
+```csharp
+// Tambahkan anotasi ke koleksi anotasi halaman
+pdfDocument.Pages[1].Annotations.Add(textAnnotation);
+```
+
+ Kode ini menambahkan anotasi ke halaman pertama PDF Anda.`Annotations` koleksi menampung semua anotasi untuk halaman tertentu, dan langkah ini memastikan anotasi baru Anda menjadi bagian dari koleksi tersebut.
+
+## Langkah 5: Simpan Dokumen PDF yang Diperbarui
+
+Terakhir, mari simpan dokumen tersebut sehingga anotasi Anda ditambahkan secara permanen.
+
+```csharp
+// Simpan file keluaran
+dataDir = dataDir + "AddAnnotation_out.pdf";
+pdfDocument.Save(dataDir);
+Console.WriteLine("\nAnnotation added successfully.\nFile saved at " + dataDir);
+```
+
+Dengan menyimpan dokumen dengan nama baru (`AddAnnotation_out.pdf`), Anda menyimpan berkas asli dan membuat berkas baru dengan anotasi yang ditambahkan. Pesan konsol mengonfirmasi bahwa semuanya berhasil, dan kini Anda dapat menemukan PDF yang diberi anotasi di direktori yang ditentukan.
 
 ## Kesimpulan
 
-Menambahkan anotasi ke dokumen PDF menggunakan Aspose.PDF untuk .NET menawarkan alat yang berharga untuk meningkatkan kolaborasi dokumen dan proses peninjauan. Dengan mengikuti panduan langkah demi langkah yang disediakan dalam artikel ini, pengembang dapat dengan lancar mengintegrasikan kemampuan anotasi ke dalam aplikasi C# mereka.
+Menambahkan anotasi ke PDF bukan hanya fitur yang hebat; tetapi juga sangat mudah dengan Aspose.PDF untuk .NET. Baik Anda menandai dokumen untuk ditinjau atau menambahkan catatan untuk referensi di masa mendatang, panduan ini telah mencakup semua yang perlu Anda ketahui. Dengan mengikuti langkah-langkah ini, Anda dapat membuat anotasi khusus yang memperkaya PDF Anda, membuatnya lebih bermanfaat dan interaktif.
 
-### FAQ
+## Pertanyaan yang Sering Diajukan
 
-#### T: Jenis anotasi apa yang dapat ditambahkan menggunakan Aspose.PDF untuk .NET?
+### Jenis anotasi apa yang dapat saya tambahkan menggunakan Aspose.PDF untuk .NET?
+Anda dapat menambahkan berbagai jenis anotasi, termasuk anotasi teks, tautan, sorotan, dan stempel, antara lain.
 
-J: Aspose.PDF untuk .NET mendukung berbagai jenis anotasi, termasuk anotasi teks, stempel, tautan, bentuk, dan banyak lagi. Pengembang dapat menyesuaikan tampilan dan properti anotasi ini agar sesuai dengan kebutuhan spesifik mereka.
+### Bisakah saya menyesuaikan tampilan anotasi?
+Tentu saja! Anda dapat menyesuaikan ukuran, warna, batas, dan bahkan ikon anotasi Anda.
 
-#### T: Dapatkah saya menambahkan anotasi ke halaman tertentu dalam dokumen PDF multi-halaman?
+### Apakah mungkin untuk menambahkan beberapa anotasi ke satu halaman?
+Ya, Anda dapat menambahkan anotasi sebanyak yang diperlukan ke halaman mana pun di PDF Anda.
 
-J: Ya, Aspose.PDF untuk .NET memungkinkan Anda menentukan halaman tempat Anda ingin menambahkan anotasi. Anda dapat memilih halaman tertentu atau menambahkan anotasi ke beberapa halaman sesuai kebutuhan.
+### Bisakah saya menghapus anotasi setelah menambahkannya?
+ Ya, anotasi dapat dihapus menggunakan`Annotations.Delete` metode yang disediakan oleh Aspose.PDF.
 
-#### T: Bagaimana cara menyesuaikan tampilan anotasi?
-
-J: Anotasi dapat dikustomisasi menggunakan properti seperti lebar tepi, warna, gaya tanda hubung, gaya teks, dan lainnya. Aspose.PDF untuk .NET menyediakan serangkaian opsi untuk menyesuaikan tampilan anotasi.
-
-#### T: Apakah mungkin menambahkan hyperlink sebagai anotasi menggunakan Aspose.PDF untuk .NET?
-
-J: Ya, Anda dapat menambahkan hyperlink sebagai anotasi ke dokumen PDF menggunakan Aspose.PDF untuk .NET. Anotasi hyperlink dapat digunakan untuk menautkan ke URL eksternal atau lokasi tertentu dalam dokumen yang sama.
-
-#### T: Bisakah anotasi ditambahkan ke dokumen PDF yang sudah ada tanpa mengubah konten aslinya?
-
-J: Ya, Aspose.PDF untuk .NET menambahkan anotasi sebagai elemen tambahan tanpa mengubah konten asli dokumen PDF. Konten PDF asli tetap utuh.
+### Apakah saya memerlukan lisensi untuk menggunakan Aspose.PDF untuk .NET?
+ Ya, untuk membuka semua fitur dan menghindari batasan apa pun, Anda memerlukan[lisensi](https://purchase.aspose.com/buy) Anda juga bisa mendapatkan[lisensi sementara](https://purchase.aspose.com/temporary-license/) untuk evaluasi.

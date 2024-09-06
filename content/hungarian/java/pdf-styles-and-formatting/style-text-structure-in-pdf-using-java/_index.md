@@ -21,7 +21,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy a következő előfeltételek
 
 ## A környezet beállítása
 
-PDF-fájlok szövegének Java használatával történő stíluszásának megkezdéséhez be kell állítania a fejlesztői környezetet. Kovesd ezeket a lepeseket:
+PDF-fájlok szövegének Java használatával történő stíluszásának megkezdéséhez be kell állítania a fejlesztői környezetet. Kövesse az alábbi lépéseket:
 
 1.  Töltse le az Aspose.PDF for Java könyvtárat innen[itt](https://releases.aspose.com/pdf/java/).
 
@@ -194,7 +194,7 @@ textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
 
 ### Mi az ajánlott módszer az oldaltörések kezelésére PDF-ben?
 
- Az oldaltörések kezeléséhez PDF-ben állítsa be a`IsAutoTruncated` és`IsWordWrapped` tulajdonságait`true` ban,-ben`TextState`. Ez biztosítja, hogy a szöveg megfelelően csonkolva és tördelve legyen az oldalhatárokon belül.
+ Az oldaltörések kezeléséhez PDF-ben állítsa be a`IsAutoTruncated` és`IsWordWrapped` tulajdonságait`true` a`TextState`. Ez biztosítja, hogy a szöveg megfelelően csonkolva és tördelve legyen az oldalhatárokon belül.
 
 ### Hogyan védhetem meg a PDF dokumentumaimat vízjelekkel?
 

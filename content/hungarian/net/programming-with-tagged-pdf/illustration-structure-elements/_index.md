@@ -47,7 +47,7 @@ ITaggedContent taggedContent = document.TaggedContent;
 
 ## 4. lépés: Állítsa be a dokumentum címét és nyelvét
 
-Most beállíthatjuk a dokumentum címét és nyelvét.
+Most már beállíthatjuk a dokumentum címét és nyelvét.
 
 ```csharp
 // Határozza meg a dokumentum címét és nyelvét
@@ -60,7 +60,7 @@ taggedContent.SetLanguage("fr-FR");
 Most adjunk hozzá szemléltető elemeket, például képeket és ábrákat a dokumentumunkhoz.
 
 ```csharp
-// Fejlesztés alatt
+// Fejletlenség
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
 figure1.AlternativeText = "Figure One";
@@ -129,7 +129,7 @@ V: Az Aspose.PDF for .NET olyan osztályokat és módszereket biztosít, amelyek
 
 #### K: Hogyan javítják az illusztrációs szerkezeti elemek a PDF-dokumentum tartalmának megértését?
 
-V: Az illusztrációs szerkezeti elemek vizuális kontextust és támogatást nyújtanak a PDF-dokumentum szöveges tartalmához. Segítenek összetett információk, adatok vagy fogalmak közvetítésében képeken és ábrákon keresztül, így a tartalom könnyebben érthető és megjegyezhető.
+V: Az illusztrációs szerkezeti elemek vizuális kontextust és támogatást nyújtanak a PDF-dokumentum szöveges tartalmához. Segítenek összetett információkat, adatokat vagy fogalmakat közvetíteni képeken és ábrákon keresztül, így a tartalom könnyebben megérthető és megjegyezhető.
 
 #### K: Milyen típusú vizuális tartalom adható hozzá illusztrációs szerkezeti elemekkel?
 

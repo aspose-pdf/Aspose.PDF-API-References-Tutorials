@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 2: Otevřete dokument PDF
 
- tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
+ V tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "AddImage.pdf");
@@ -27,7 +27,7 @@ Document doc = new Document(dataDir + "AddImage.pdf");
 
 ## Krok 3: Inicializujte možnosti optimalizace
 
- tomto kroku inicializujeme možnosti optimalizace pro kompresi obrázků. Vytvořte instanci`OptimizationOptions` a nastavte příslušné možnosti. V tomto příkladu používáme kompresi Flate Decode k optimalizaci obrázků.
+ V tomto kroku inicializujeme možnosti optimalizace pro kompresi obrázků. Vytvořte instanci`OptimizationOptions` a nastavte příslušné možnosti. V tomto příkladu používáme kompresi Flate Decode k optimalizaci obrázků.
 
 ```csharp
 var optimizationOptions = new Aspose.Pdf.Optimization.OptimizationOptions();
@@ -36,7 +36,7 @@ optimizationOptions.ImageCompressionOptions.Encoding = ImageEncoding.Flate;
 
 ## Krok 4: Optimalizujte dokument PDF
 
- V tomto kroku provedeme optimalizaci dokumentu PDF pomocí možností optimalizace definovaných dříve. Zavolej`OptimizeResources` metoda`doc` objekt a předat možnosti optimalizace.
+ tomto kroku provedeme optimalizaci dokumentu PDF pomocí možností optimalizace definovaných dříve. Zavolejte na`OptimizeResources` metoda`doc` objekt a předat možnosti optimalizace.
 
 ```csharp
 doc.OptimizeResources(optimizationOptions);

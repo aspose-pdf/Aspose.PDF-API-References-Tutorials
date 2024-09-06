@@ -1,27 +1,27 @@
 ---
 title: Niestandardowe tabulatory w pliku PDF
 linktitle: Niestandardowe tabulatory w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak tworzyć niestandardowe tabulatory w pliku PDF przy użyciu Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak tworzyć niestandardowe tabulatory w plikach PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 120
 url: /pl/net/programming-with-text/custom-tab-stops/
 ---
 
-Ten samouczek poprowadzi Cię przez proces tworzenia niestandardowych tabulatorów w pliku PDF przy użyciu Aspose.PDF dla .NET. Dostarczony kod źródłowy języka C# demonstruje niezbędne kroki.
+Ten samouczek przeprowadzi Cię przez proces tworzenia niestandardowych tabulatorów w pliku PDF przy użyciu Aspose.PDF dla .NET. Dostarczony kod źródłowy C# demonstruje niezbędne kroki.
 
 ## Wymagania
-Zanim zaczniesz, upewnij się, że masz następujące elementy:
+Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
 
-- Visual Studio lub dowolny inny kompilator C# zainstalowany na twoim komputerze.
-- Aspose.PDF dla biblioteki .NET. Możesz pobrać go z oficjalnej strony Aspose lub użyć menedżera pakietów, takiego jak NuGet, aby go zainstalować.
+- Visual Studio lub inny kompilator C# zainstalowany na Twoim komputerze.
+- Aspose.PDF dla biblioteki .NET. Możesz pobrać ją z oficjalnej strony Aspose lub użyć menedżera pakietów, takiego jak NuGet, aby ją zainstalować.
 
 ## Krok 1: Skonfiguruj projekt
 1. Utwórz nowy projekt C# w preferowanym środowisku programistycznym.
-2. Dodaj odwołanie do biblioteki Aspose.PDF dla .NET.
+2. Dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
 
-## Krok 2: Zaimportuj wymagane przestrzenie nazw
-W pliku kodu, w którym chcesz utworzyć niestandardowe tabulatory, dodaj następujące instrukcje za pomocą dyrektyw na górze pliku:
+## Krok 2: Importuj wymagane przestrzenie nazw
+W pliku kodu, w którym chcesz utworzyć niestandardowe tabulatory, dodaj na początku pliku następujące dyrektywy using:
 
 ```csharp
 using Aspose.Pdf;
@@ -29,10 +29,10 @@ using Aspose.Pdf.Text;
 ```
 
 ## Krok 3: Ustaw katalog dokumentów
- W kodzie znajdź wiersz, który mówi`string dataDir = "YOUR DOCUMENT DIRECTORY";` i wymienić`"YOUR DOCUMENT DIRECTORY"` ze ścieżką do katalogu, w którym przechowywane są Twoje dokumenty.
+ W kodzie znajdź linię, która mówi`string dataDir = "YOUR DOCUMENT DIRECTORY";` i zastąpić`"YOUR DOCUMENT DIRECTORY"` ze ścieżką do katalogu, w którym przechowywane są Twoje dokumenty.
 
 ## Krok 4: Utwórz nową instancję dokumentu
- Utwórz instancję nowego`Document` obiekt, dodając następujący wiersz kodu:
+ Utwórz nową instancję`Document` obiekt dodając następujący wiersz kodu:
 
 ```csharp
 Document _pdfdocument = new Document();
@@ -46,7 +46,7 @@ Page page = _pdfdocument.Pages.Add();
 ```
 
 ## Krok 6: Utwórz niestandardowe tabulatory
- Stwórz`TabStops` obiekt i dodaj do niego niestandardowe tabulatory. Ustaw typ wyrównania i typ linii wiodącej dla każdego tabulatora.
+ Utwórz`TabStops` obiekt i dodaj do niego niestandardowe tabulatory. Ustaw typ wyrównania i typ linii odniesienia dla każdego tabulatora.
 
 ```csharp
 TabStops ts = new TabStops();
@@ -64,7 +64,7 @@ ts3.LeaderType = TabLeaderType.Dot;
 ```
 
 ## Krok 7: Utwórz fragmenty tekstu z tabulatorami
- Tworzyć`TextFragment` obiektów i przekazać im niestandardowe tabulatory. Użyj znaków specjalnych`#$TAB` aby wskazać tabulatory w tekście.
+ Tworzyć`TextFragment` obiektów i przekaż im niestandardowe tabulatory. Użyj znaków specjalnych`#$TAB` do wskazania tabulatorów w tekście.
 
 ```csharp
 TextFragment header = new TextFragment("This is an example of forming a table with TAB stops", ts);
@@ -90,7 +90,7 @@ _pdfdocument.Save(dataDir);
 Console.WriteLine("\nCustom tab stops setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Przykładowy kod źródłowy dla niestandardowych przystanków tabulatora przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla niestandardowych tabulatorów przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -124,17 +124,17 @@ Console.WriteLine("\nCustom tab stops setup successfully.\nFile saved at " + dat
 ```
 
 ## Wniosek
-Pomyślnie utworzyłeś dokument PDF z niestandardowymi tabulatorami przy użyciu Aspose.PDF dla .NET. Wynikowy plik PDF można teraz znaleźć pod określoną ścieżką pliku wyjściowego.
+Udało Ci się utworzyć dokument PDF z niestandardowymi tabulatorami przy użyciu Aspose.PDF dla .NET. Wynikowy plik PDF można teraz znaleźć w określonej ścieżce pliku wyjściowego.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
 #### P: Na czym skupia się ten samouczek?
 
-Odp.: Ten samouczek skupia się na przeprowadzeniu Cię przez proces tworzenia niestandardowych tabulatorów w pliku PDF przy użyciu biblioteki Aspose.PDF dla .NET. Dostarczony kod źródłowy języka C# przedstawia kroki niezbędne do osiągnięcia tego celu.
+A: Ten samouczek koncentruje się na przeprowadzeniu Cię przez proces tworzenia niestandardowych tabulatorów w pliku PDF przy użyciu biblioteki Aspose.PDF dla .NET. Dostarczony kod źródłowy C# demonstruje niezbędne kroki, aby to osiągnąć.
 
-#### P: Które przestrzenie nazw powinienem zaimportować na potrzeby tego samouczka?
+#### P: Jakie przestrzenie nazw powinienem zaimportować na potrzeby tego samouczka?
 
-O: W pliku kodu, w którym chcesz utworzyć niestandardowe tabulatory, zaimportuj na początku pliku następujące przestrzenie nazw:
+A: W pliku kodu, w którym chcesz utworzyć niestandardowe tabulatory, zaimportuj następujące przestrzenie nazw na początku pliku:
 
 ```csharp
 using Aspose.Pdf;
@@ -143,28 +143,28 @@ using Aspose.Pdf.Text;
 
 #### P: Jak określić katalog dokumentów?
 
- Odp.: W kodzie znajdź linię`string dataDir = "YOUR DOCUMENT DIRECTORY";` i wymienić`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do katalogu dokumentów.
+ A: W kodzie znajdź linię`string dataDir = "YOUR DOCUMENT DIRECTORY";` i zastąpić`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do katalogu dokumentów.
 
 #### P: Jak utworzyć nową instancję dokumentu?
 
- O: W kroku 4 utworzysz nową instancję`Document` obiekt za pomocą dostarczonego kodu.
+ A: W kroku 4 utworzysz nową instancję`Document` obiekt używając dostarczonego kodu.
 
 #### P: Jak dodać stronę do dokumentu?
 
- Odp.: W kroku 5 dodasz nową stronę do dokumentu za pomocą`Add` metoda`Pages` kolekcja.
+ A: W kroku 5 dodasz nową stronę do dokumentu za pomocą`Add` metoda`Pages` kolekcja.
 
 #### P: Jak utworzyć niestandardowe tabulatory?
 
- O: W kroku 6 utworzysz plik`TabStops` obiekt i dodaj do niego niestandardowe tabulatory. Ustawisz także wyrównanie i typy linii wiodących dla każdego tabulatora.
+ A: W kroku 6 utworzysz`TabStops` obiekt i dodać do niego niestandardowe tabulatory. Ustawisz również wyrównanie i typy linii odniesienia dla każdego tabulatora.
 
-#### P: Jak utworzyć fragmenty tekstu z tabulatorami?
+#### P: Jak tworzyć fragmenty tekstu z tabulatorami?
 
- O: W kroku 7 utworzysz`TextFragment` obiektów i przekazać im niestandardowe tabulatory. Będziesz używać znaków specjalnych`#$TAB` aby wskazać tabulatory w tekście.
+ A: W kroku 7 utworzysz`TextFragment` obiekty i przekaż im niestandardowe tabulatory. Użyjesz znaków specjalnych`#$TAB` do wskazania tabulatorów w tekście.
 
 #### P: Jak zapisać dokument PDF?
 
- Odp.: W kroku 8 zapiszesz dokument PDF za pomocą pliku`Save` metoda`Document` obiekt.
+ A: W kroku 8 zapiszesz dokument PDF za pomocą`Save` metoda`Document` obiekt.
 
-#### P: Jaki jest główny wniosek z tego samouczka?
+#### P: Jakie są najważniejsze wnioski z tego samouczka?
 
-Odp.: Wykonując ten samouczek, nauczyłeś się tworzyć dokument PDF z niestandardowymi tabulatorami przy użyciu Aspose.PDF dla .NET. Może to być przydatne do organizowania i wyrównywania tekstu w uporządkowany sposób.
+A: Postępując zgodnie z tym samouczkiem, nauczyłeś się, jak utworzyć dokument PDF z niestandardowymi tabulatorami przy użyciu Aspose.PDF dla .NET. Może to być przydatne do organizowania i wyrównywania tekstu w sposób uporządkowany.

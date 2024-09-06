@@ -42,7 +42,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 ```
 
 ## Steg 5: Hitta texten som ska ändras
- Använda sig av`TextFragmentAbsorber` för att hitta önskad text i dokumentet. I den medföljande koden letar den efter texten "Lorem ipsum".
+ Använda`TextFragmentAbsorber` för att hitta önskad text i dokumentet. I den medföljande koden letar den efter texten "Lorem ipsum".
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");

@@ -11,7 +11,7 @@ url: /el/net/programming-with-images/bradley-algorithm/
 
 ## Βήμα 1: Ορίστε τον κατάλογο εγγράφων
 
- Πριν ξεκινήσετε, βεβαιωθείτε ότι έχετε ορίσει τον σωστό κατάλογο για τα έγγραφα. Αντικαθιστώ`"YOUR DOCUMENT DIRECTORY"` στον κώδικα με τη διαδρομή προς τον κατάλογο όπου βρίσκεται το έγγραφο PDF σας.
+Πριν ξεκινήσετε, βεβαιωθείτε ότι έχετε ορίσει τον σωστό κατάλογο για τα έγγραφα. Αντικαθιστώ`"YOUR DOCUMENT DIRECTORY"` στον κώδικα με τη διαδρομή προς τον κατάλογο όπου βρίσκεται το έγγραφο PDF σας.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Βήμα 2: Ανοίξτε το έγγραφο
 
-Σε αυτό το βήμα, θα ανοίξουμε το έγγραφο PDF χρησιμοποιώντας το`Document` κλάση του Aspose.PDF. Χρησιμοποιήστε το`Document` κατασκευαστή και περάστε τη διαδρομή προς το έγγραφο PDF.
+ Σε αυτό το βήμα, θα ανοίξουμε το έγγραφο PDF χρησιμοποιώντας το`Document` κλάση του Aspose.PDF. Χρησιμοποιήστε το`Document` κατασκευαστή και περάστε τη διαδρομή προς το έγγραφο PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
@@ -36,7 +36,7 @@ string outputBinImageFile = dataDir + "37116-bin_out.tif";
 
 ## Βήμα 4: Δημιουργήστε το αντικείμενο Ανάλυση
 
- Δημιουργώ ένα`Resolution`αντικείμενο για να ορίσετε την ανάλυση της εικόνας TIFF. Σε αυτό το παράδειγμα, χρησιμοποιούμε ανάλυση 300 dpi.
+ Δημιουργία α`Resolution` αντικείμενο για να ορίσετε την ανάλυση της εικόνας TIFF. Σε αυτό το παράδειγμα, χρησιμοποιούμε ανάλυση 300 dpi.
 
 ```csharp
 Resolution resolution = new Resolution(300);
@@ -44,7 +44,7 @@ Resolution resolution = new Resolution(300);
 
 ## Βήμα 5: Δημιουργήστε το αντικείμενο TiffSettings
 
- Δημιουργώ ένα`TiffSettings`αντικείμενο να καθορίσετε ρυθμίσεις για το αρχείο TIFF εξόδου. Σε αυτό το παράδειγμα, χρησιμοποιούμε συμπίεση LZW και βάθος χρώματος 1 bit ανά pixel (μορφή 1 bpp).
+ Δημιουργία α`TiffSettings` αντικείμενο να καθορίσετε ρυθμίσεις για το αρχείο TIFF εξόδου. Σε αυτό το παράδειγμα, χρησιμοποιούμε συμπίεση LZW και βάθος χρώματος 1 bit ανά pixel (μορφή 1 bpp).
 
 ```csharp
 TiffSettings tiffSettings = new TiffSettings();
@@ -70,7 +70,7 @@ tiffDevice.Process(pdfDocument, outputImageFile);
 
 ## Βήμα 8: Δυαδοποιήστε την εικόνα χρησιμοποιώντας τον αλγόριθμο Bradley
 
- Χρησιμοποιήστε το`BinarizeBradley` μέθοδος της συσκευής TIFF για τη δυαδοποίηση της εικόνας χρησιμοποιώντας τον αλγόριθμο Bradley. Αυτή η μέθοδος λαμβάνει μια ροή εισόδου της αρχικής εικόνας και μια ροή εξόδου για τη δυαδική εικόνα. Καθορίστε το όριο δυαδοποίησης (0,1 σε αυτό το παράδειγμα).
+ Χρησιμοποιήστε το`BinarizeBradley`μέθοδος της συσκευής TIFF για τη δυαδοποίηση της εικόνας χρησιμοποιώντας τον αλγόριθμο Bradley. Αυτή η μέθοδος λαμβάνει μια ροή εισόδου της αρχικής εικόνας και μια ροή εξόδου για τη δυαδική εικόνα. Καθορίστε το όριο δυαδοποίησης (0,1 σε αυτό το παράδειγμα).
 
 ```csharp
 using (FileStream
@@ -100,7 +100,7 @@ tiffSettings.Compression = CompressionType.LZW;
 tiffSettings.Depth = Aspose.Pdf.Devices.ColorDepth.Format1bpp;
 // Δημιουργία συσκευής TIFF
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-//Μετατρέψτε μια συγκεκριμένη σελίδα και αποθηκεύστε την εικόνα σε ροή
+// Μετατρέψτε μια συγκεκριμένη σελίδα και αποθηκεύστε την εικόνα σε ροή
 tiffDevice.Process(pdfDocument, outputImageFile);
 using (FileStream inStream = new FileStream(outputImageFile, FileMode.Open))
 {
@@ -112,7 +112,7 @@ using (FileStream inStream = new FileStream(outputImageFile, FileMode.Open))
 System.Console.WriteLine("Conversion using bradley algorithm performed successfully!");
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Συγχαρητήρια ! Ολοκληρώσατε με επιτυχία τη μετατροπή χρησιμοποιώντας τον αλγόριθμο Bradley με Aspose.PDF για .NET. Τώρα μπορείτε να χρησιμοποιήσετε τις εικόνες που προκύπτουν στα έργα ή τις εφαρμογές σας.
 

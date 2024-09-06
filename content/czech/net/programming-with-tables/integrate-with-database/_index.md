@@ -68,7 +68,7 @@ PDF dokument uložíme s daty z vložené databáze.
 doc.Save(dataDir + "DataIntegrated_out.pdf");
 ```
 
-Gratulujeme! Nyní víte, jak vložit data databáze do dokumentu PDF pomocí Aspose.PDF pro .NET.
+Gratuluji! Nyní víte, jak vložit data databáze do dokumentu PDF pomocí Aspose.PDF pro .NET.
 
 ### Příklad zdrojového kódu pro Integrate With Database using Aspose.PDF for .NET
 
@@ -124,7 +124,7 @@ Odpověď: Ano, můžete použít Aspose.PDF pro .NET s různými typy databáz�
 
 #### Otázka: Jak mohu přizpůsobit vzhled tabulky v dokumentu PDF?
 
-Odpověď: Vzhled tabulky v dokumentu PDF můžete upravit pomocí různých vlastností poskytovaných knihovnou Aspose.PDF for .NET. Můžete například nastavit různé styly ohraničení, barvy pozadí, styly písma a zarovnání pro tabulku a její buňky. Další podrobnosti o přizpůsobení vzhledu tabulky naleznete v dokumentaci Aspose.PDF pro .NET.
+Odpověď: Vzhled tabulky v dokumentu PDF můžete přizpůsobit pomocí různých vlastností poskytovaných knihovnou Aspose.PDF for .NET. Můžete například nastavit různé styly ohraničení, barvy pozadí, styly písma a zarovnání pro tabulku a její buňky. Další podrobnosti o přizpůsobení vzhledu tabulky naleznete v dokumentaci Aspose.PDF pro .NET.
 
 #### Otázka: Je možné k datům importovaným z databáze přidat hypertextové odkazy nebo interaktivní prvky?
 

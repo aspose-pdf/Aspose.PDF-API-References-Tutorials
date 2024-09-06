@@ -2,24 +2,24 @@
 title: 線を引く
 linktitle: 線を引く
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用してページ全体に線を引く方法を学びます。カスタムラインを作成するためのステップバイステップのガイド。
+description: Aspose.PDF for .NET を使用してページ全体に線を描く方法を学習します。カスタム線を作成するためのステップバイステップ ガイドです。
 type: docs
 weight: 80
 url: /ja/net/programming-with-graphs/drawing-line/
 ---
-このチュートリアルでは、次の C# ソース コードを段階的に説明し、Aspose.PDF for .NET を使用して線を描画します。
+このチュートリアルでは、Aspose.PDF for .NET を使用して線を描画するための次の C# ソース コードを段階的に説明します。
 
-始める前に、Aspose.PDF ライブラリをインストールし、開発環境をセットアップしていることを確認してください。 C# プログラミングの基本的な知識も必要です。
+始める前に、Aspose.PDF ライブラリがインストールされ、開発環境が設定されていることを確認してください。また、C# プログラミングの基本的な知識も必要です。
 
-## ステップ 1: ドキュメント ディレクトリのセットアップ
+## ステップ1: ドキュメントディレクトリの設定
 
-提供されたソース コードでは、結果の PDF ファイルを保存するディレクトリを指定する必要があります。 「dataDir」変数を目的のディレクトリに変更します。
+提供されているソース コードでは、結果の PDF ファイルを保存するディレクトリを指定する必要があります。「dataDir」変数を目的のディレクトリに変更します。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## ステップ 2: ドキュメント インスタンスの作成とページの追加
+## ステップ2: ドキュメントインスタンスの作成とページの追加
 
 Document クラスのインスタンスを作成し、このドキュメントにページを追加します。
 
@@ -28,17 +28,17 @@ Document pDoc = new Document();
 Page pg = pDoc.Pages.Add();
 ```
 
-## ステップ 3: ページ余白の設定
+## ステップ3: ページ余白の設定
 
-ページの余白をすべての辺で 0 に設定します。
+すべての辺のページの余白を 0 に設定します。
 
 ```csharp
 pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
 ```
 
-## ステップ 4: グラフ オブジェクトと最初の行の作成
+## ステップ4: グラフオブジェクトと最初の線を作成する
 
-ページの寸法と同じ寸法の Graph オブジェクトを作成し、ページの左下隅から右上隅に向かう最初の線を描画します。
+ページと同じ寸法の Graph オブジェクトを作成し、ページの左下隅から右上隅までの最初の線を描画します。
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width, (float)pg.PageInfo.Height);
@@ -46,24 +46,24 @@ Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)
 graph.Shapes.Add(line);
 ```
 
-## ステップ 5: 2 番目の線を描画する
+## ステップ5: 2本目の線を描く
 
-ページの左上隅から右下隅に向かう 2 番目の線を描きます。
+番目の線をページの左上隅から右下隅まで描きます。
 
 ```csharp
 Aspose.Pdf.Drawing.Line line2 = new Aspose.Pdf.Drawing.Line(new float[] { 0, (float)pg.Rect.URY, (float)pg.PageInfo.Width, (float)pg.Rect. LLX });
 graph.Shapes.Add(line2);
 ```
 
-## ステップ 6: グラフ オブジェクトをページに追加する
+## ステップ6: グラフオブジェクトをページに追加する
 
-Graph オブジェクトをページの段落コレクションに追加します。
+ページの段落コレクションに Graph オブジェクトを追加します。
 
 ```csharp
 pg.Paragraphs.Add(graph);
 ```
 
-## ステップ 7: 結果の PDF ファイルを保存する
+## ステップ7: 結果のPDFファイルを保存する
 
 最後に、結果の PDF ファイルを「DrawingLine_out.pdf」という名前で指定したディレクトリに保存します。
 
@@ -71,32 +71,32 @@ pg.Paragraphs.Add(graph);
 pDoc.Save(dataDir + "DrawingLine_out.pdf");
 ```
 
-### Aspose.PDF for .NET を使用した描画線のサンプル ソース コード 
+### Aspose.PDF for .NET を使用して線を描くためのサンプル ソース コード 
 
 ```csharp
 
-//ドキュメントディレクトリへのパス。
+//ドキュメント ディレクトリへのパス。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//ドキュメントインスタンスの作成
+//ドキュメントインスタンスを作成する
 Document pDoc = new Document();
-//PDF ドキュメントのページコレクションにページを追加
+//PDFドキュメントのページコレクションにページを追加する
 Page pg = pDoc.Pages.Add();
-//ページの四辺の余白を 0 に設定します。
+//すべてのページの余白を0に設定する
 pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
-//幅と高さがページの寸法と等しいグラフ オブジェクトを作成します。
+//ページサイズと同じ幅と高さのグラフオブジェクトを作成します。
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width , (float)pg.PageInfo.Height);
-//ページの左下隅から右上隅まで始まる最初の行オブジェクトを作成します
+//ページの左下隅から右上隅までの最初の行オブジェクトを作成します。
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)pg.Rect.LLX, 0, (float)pg.PageInfo.Width, (float)pg.Rect.URY });
-//Graph オブジェクトのシェイプ コレクションにラインを追加します
+// Graphオブジェクトの図形コレクションに線を追加する
 graph.Shapes.Add(line);
-//ページの左上隅からページの右下隅まで線を引きます
+//ページの左上隅から右下隅まで線を引きます
 Aspose.Pdf.Drawing.Line line2 = new Aspose.Pdf.Drawing.Line(new float[] { 0, (float)pg.Rect.URY, (float)pg.PageInfo.Width, (float)pg.Rect.LLX });
-//Graph オブジェクトのシェイプ コレクションにラインを追加します
+// Graphオブジェクトの図形コレクションに線を追加する
 graph.Shapes.Add(line2);
-//ページの段落コレクションに Graph オブジェクトを追加します
+//ページの段落コレクションにグラフオブジェクトを追加する
 pg.Paragraphs.Add(graph);
 dataDir = dataDir + "DrawingLine_out.pdf";
-//PDFファイルを保存する
+//PDFファイルを保存
 pDoc.Save(dataDir);
 Console.WriteLine("\nLine drawn successfully across the page.\nFile saved at " + dataDir);            
 
@@ -104,34 +104,34 @@ Console.WriteLine("\nLine drawn successfully across the page.\nFile saved at " +
 
 ## 結論
 
-このチュートリアルでは、Aspose.PDF for .NET を使用して線を描画する方法を説明しました。この知識を利用して、PDF ファイル内にカスタム線を含む幾何学的形状を作成できるようになりました。
+このチュートリアルでは、Aspose.PDF for .NET を使用して線を描画する方法を説明しました。この知識を使用して、PDF ファイルにカスタム線を含む幾何学的図形を作成できます。
 
 ### よくある質問
 
 #### Q: このチュートリアルの目的は何ですか?
 
-A: このチュートリアルの目的は、Aspose.PDF for .NET を使用して線を描画するプロセスをガイドすることです。 PDF ページに線を作成し、その外観をカスタマイズする方法を学習します。
+A: このチュートリアルの目的は、Aspose.PDF for .NET を使用して線を描画するプロセスを説明することです。PDF ページに線を作成し、その外観をカスタマイズする方法を学習します。
 
-#### Q: 開始する前にどのような前提条件が必要ですか?
+#### Q: 始める前に必要な前提条件は何ですか?
 
-A: 始める前に、Aspose.PDF ライブラリをインストールし、開発環境をセットアップしていることを確認してください。 C# プログラミングの基本的な知識も推奨されます。
+A: 始める前に、Aspose.PDF ライブラリがインストールされ、開発環境が設定されていることを確認してください。C# プログラミングの基礎知識も推奨されます。
 
 #### Q: PDF ファイルを保存するディレクトリを指定するにはどうすればよいですか?
 
-A: 提供されたソース コードの「dataDir」変数を変更して、結果の PDF ファイルを保存するディレクトリを指定します。
+A: 提供されたソース コード内の「dataDir」変数を変更して、結果の PDF ファイルを保存するディレクトリを指定します。
 
-#### Q: PDF ページに線を作成するにはどうすればよいですか?
+#### Q: PDF ページに線を作成するにはどうすればいいですか?
 
-A: このチュートリアルでは、ページの寸法を使用して Graph オブジェクトを作成し、それに Line オブジェクトを追加する方法を示します。 Line オブジェクトの座標とプロパティを変更して、目的の線を作成します。
+A: このチュートリアルでは、ページのサイズで Graph オブジェクトを作成し、それに Line オブジェクトを追加する方法を説明します。Line オブジェクトの座標とプロパティを変更して、必要な線を作成します。
 
 #### Q: 線の外観をカスタマイズできますか?
 
-A: はい、Line オブジェクトのプロパティを変更することで、線の外観をカスタマイズできます。これには、座標、色、厚さ、その他のグラフィック属性の変更が含まれます。
+A: はい、Line オブジェクトのプロパティを変更することで、線の外観をカスタマイズできます。これには、座標、色、太さ、その他のグラフィック属性の変更が含まれます。
 
-#### Q: 線を引いた後、PDF 文書を保存するにはどうすればよいですか?
+#### Q: 線を描いた後、PDF ドキュメントを保存するにはどうすればよいですか?
 
-A: Line オブジェクトを含む Graph オブジェクトをページに追加した後、作成された PDF ドキュメントを`pDoc.Save(dataDir + "DrawingLine_out.pdf");`提供されたソースコード内の行。
+ A: グラフオブジェクトと線オブジェクトをページに追加した後、結果のPDFドキュメントを`pDoc.Save(dataDir + "DrawingLine_out.pdf");`提供されたソースコード内の行。
 
-#### Q: 異なる角度や方向の線を引くことはできますか?
+#### Q: 異なる角度や方向の線を描くことはできますか?
 
-A: はい、グラフ内の Line オブジェクトの座標とプロパティを調整することで、さまざまな角度や方向の線を描くことができます。
+A: はい、グラフ内の Line オブジェクトの座標とプロパティを調整することで、さまざまな角度と方向の線を描くことができます。

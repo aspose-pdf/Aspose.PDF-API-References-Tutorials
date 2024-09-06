@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 1: Konfigurera dokumentkatalogen
 
- Först måste du ställa in sökvägen till katalogen där dina PDF-filer finns. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till dina PDF-filer.
+ Först måste du ställa in sökvägen till katalogen där dina PDF-filer finns. Ersätta`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till dina PDF-filer.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -81,7 +81,7 @@ S: Att ta bort all text från ett PDF-dokument kan vara användbart i scenarier 
 
 S: Så här ställer du in dokumentkatalogen:
 
-1.  Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där dina PDF-filer finns.
+1.  Ersätta`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där dina PDF-filer finns.
 
 #### F: Hur tar jag bort all text från ett PDF-dokument med Aspose.PDF-biblioteket?
 

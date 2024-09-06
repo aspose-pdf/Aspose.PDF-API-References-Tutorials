@@ -7,7 +7,7 @@ type: docs
 weight: 410
 url: /cs/net/programming-with-text/rotate-text-using-text-paragraph-and-builder/
 ---
-Tento výukový program vysvětluje, jak používat Aspose.PDF pro .NET k otáčení textu pomocí odstavců textu a tvůrců v souboru PDF. Poskytnutý zdrojový kód C# demonstruje proces krok za krokem.
+Tento výukový program vysvětluje, jak používat Aspose.PDF pro .NET k otáčení textu pomocí textových odstavců a tvůrců v souboru PDF. Poskytnutý zdrojový kód C# demonstruje proces krok za krokem.
 
 ## Předpoklady
 
@@ -51,7 +51,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 ## Krok 5: Vytvořte a otočte odstavce textu
 
- Vytvořit`for` smyčka pro generování více odstavců textu s různým otočením:
+ Vytvořte a`for` smyčka pro generování více odstavců textu s různým otočením:
 
 ```csharp
 for (int i = 0; i < 4; i++)
@@ -102,7 +102,7 @@ paragraph.AppendLine(textFragment3);
 
 ## Krok 8: Vytvořte TextBuilder a připojte odstavec
 
- Vytvořit`TextBuilder` objekt pomocí`pdfPage` a připojte textový odstavec na stránku PDF:
+ Vytvořte a`TextBuilder` objekt pomocí`pdfPage` a připojte textový odstavec na stránku PDF:
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(pdfPage);
@@ -123,7 +123,7 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated4_out.pdf");
 ### Ukázkový zdrojový kód pro Otočení textu pomocí odstavce a Tvůrce textu pomocí Aspose.PDF pro .NET 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Inicializujte objekt dokumentu
+// Inicializovat objekt dokumentu
 Document pdfDocument = new Document();
 // Získejte konkrétní stránku
 Page pdfPage = (Page)pdfDocument.Pages.Add();
@@ -169,7 +169,7 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated4_out.pdf");
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili otáčet text pomocí textových odstavců a tvůrců v dokumentu PDF pomocí Aspose.PDF pro .NET. Tento výukový program poskytuje podrobného průvodce od vytvoření dokumentu po uložení upravené verze. Nyní můžete tento kód začlenit do svých vlastních projektů C# a manipulovat s rotací textu v souborech PDF.
+Gratuluji! Úspěšně jste se naučili otáčet text pomocí textových odstavců a tvůrců v dokumentu PDF pomocí Aspose.PDF pro .NET. Tento výukový program poskytuje podrobného průvodce od vytvoření dokumentu po uložení upravené verze. Nyní můžete tento kód začlenit do svých vlastních projektů C# a manipulovat s rotací textu v souborech PDF.
 
 ### FAQ
 
@@ -187,7 +187,7 @@ Odpověď: Použití odstavců a tvůrců textu umožňuje lepší kontrolu rota
 
 #### Otázka: Mohu na každý textový odstavec použít různé úhly otočení?
 
- Odpověď: Ano, na každý textový odstavec můžete použít různé úhly otočení nastavením`Rotation` vlastnictvím`TextParagraph` objekt. To vám umožňuje vytvářet různé a dynamické efekty rotace textu v dokumentu PDF.
+ Odpověď: Ano, na každý textový odstavec můžete použít různé úhly otočení nastavením`Rotation` majetek z`TextParagraph` objekt. To vám umožňuje vytvářet různé a dynamické efekty rotace textu v dokumentu PDF.
 
 #### Otázka: Jak přizpůsobím formátování fragmentů textu v odstavcích textu?
 

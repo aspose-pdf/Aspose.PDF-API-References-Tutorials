@@ -1,17 +1,17 @@
 ---
-title: Ustaw łącze docelowe w pliku PDF
-linktitle: Ustaw łącze docelowe w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak ustawić łącze docelowe w pliku PDF przy użyciu Aspose.PDF dla .NET.
+title: Ustaw link docelowy w pliku PDF
+linktitle: Ustaw link docelowy w pliku PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak ustawić łącze docelowe w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 100
 url: /pl/net/programming-with-links-and-actions/set-target-link/
 ---
-Dowiedz się, jak ustawić łącze docelowe w pliku PDF przy użyciu Aspose.PDF dla .NET, korzystając z tego przewodnika krok po kroku.
+Dowiedz się, jak ustawić łącze docelowe w pliku PDF za pomocą Aspose.PDF dla platformy .NET, korzystając z tego przewodnika krok po kroku.
 
 ## Krok 1: Konfigurowanie środowiska
 
-Upewnij się, że skonfigurowałeś środowisko programistyczne z projektem C# i odpowiednimi odniesieniami do Aspose.PDF.
+Upewnij się, że skonfigurowałeś środowisko programistyczne z projektem C# i odpowiednimi odniesieniami Aspose.PDF.
 
 ## Krok 2: Ładowanie pliku PDF
 
@@ -24,32 +24,32 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document document = new Document(dataDir + "UpdateLinks.pdf");
 ```
 
-## Krok 3: Edycja linku docelowego
+## Krok 3: Edycja łącza docelowego
 
-Uzyskaj adnotację łącza do modyfikacji, korzystając z następującego kodu:
+Pobierz adnotację łącza, aby zmodyfikować ją, korzystając z następującego kodu:
 
 ```csharp
 LinkAnnotation linkAnnot = (LinkAnnotation)document.Pages[1].Annotations[1];
 GoToRemoteAction goToR = (GoToRemoteAction)linkAnnot.Action;
 ```
 
- Możesz dostosować`[1]` indeksy, aby wybrać konkretną stronę lub adnotację.
+ Możesz dostosować`[1]` indeksy umożliwiające wybór konkretnej strony lub adnotacji.
 
-Następnie zaktualizuj miejsce docelowe bez aktualizacji pliku:
+Następnie zaktualizuj miejsce docelowe bez aktualizowania pliku:
 
 ```csharp
 goToR.Destination = new XYZExplicitDestination(2, 0, 0, 1.5);
 ```
 
-A jeśli chcesz także zaktualizować plik:
+A jeśli chcesz również zaktualizować plik:
 
 ```csharp
 goToR.File = new FileSpecification(dataDir + "input.pdf");
 ```
 
-## Krok 4: Zapisz dokument ze zaktualizowanym łączem
+## Krok 4: Zapisz dokument z zaktualizowanym linkiem
 
- Zapisz dokument ze zaktualizowanym łączem za pomocą pliku`Save` metoda:
+ Zapisz dokument z zaktualizowanym linkiem, korzystając z`Save` metoda:
 
 ```csharp
 dataDir = dataDir + "SetTargetLink_out.pdf";
@@ -64,7 +64,7 @@ Wyświetl komunikat informujący, że łącze docelowe zostało pomyślnie skonf
 Console.WriteLine("\nConfiguration of target link successful.\nFile saved at location: " + dataDir);
 ```
 
-### Przykładowy kod źródłowy dla Ustaw łącze docelowe przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla Set Target Link przy użyciu Aspose.PDF dla .NET 
 ```csharp
 try
 {
@@ -74,12 +74,12 @@ try
 	Document document = new Document(dataDir + "UpdateLinks.pdf");
 	LinkAnnotation linkAnnot = (LinkAnnotation)document.Pages[1].Annotations[1];
 	GoToRemoteAction goToR = (GoToRemoteAction)linkAnnot.Action;
-	// Miejsce docelowe aktualizacji w następnym wierszu, nie aktualizuj pliku
+	// Następny wiersz aktualizuje miejsce docelowe, nie aktualizuje pliku
 	goToR.Destination = new XYZExplicitDestination(2, 0, 0, 1.5);
-	// Plik aktualizacji następnej linii
+	// Następny wiersz pliku aktualizacji
 	goToR.File = new FileSpecification(dataDir +  "input.pdf");
 	dataDir = dataDir + "SetTargetLink_out.pdf";
-	// Zapisz dokument ze zaktualizowanym linkiem
+	// Zapisz dokument z zaktualizowanym linkiem
 	document.Save(dataDir);
 	Console.WriteLine("\nTarget link setup successfully.\nFile saved at " + dataDir);
 }
@@ -91,52 +91,52 @@ catch (Exception ex)
 
 ## Wniosek
 
-Gratulacje! Teraz wiesz, jak ustawić łącze docelowe w pliku PDF przy użyciu Aspose.PDF dla .NET. Wykorzystaj tę wiedzę, aby dostosować łącza w dokumentach PDF i stworzyć interaktywne doświadczenia dla użytkowników.
+Gratulacje! Teraz wiesz, jak ustawić link docelowy w pliku PDF za pomocą Aspose.PDF dla .NET. Wykorzystaj tę wiedzę, aby dostosować linki w dokumentach PDF i tworzyć interaktywne doświadczenia dla użytkowników.
 
-Teraz, gdy ukończyłeś ten przewodnik, możesz zastosować te koncepcje do własnych projektów i dokładniej poznać funkcje oferowane przez Aspose.PDF dla .NET.
+Po zapoznaniu się z tym przewodnikiem możesz zastosować poznane koncepcje we własnych projektach i lepiej poznać funkcje oferowane przez Aspose.PDF dla platformy .NET.
 
-### Często zadawane pytania dotyczące ustawiania łącza docelowego w pliku PDF
+### FAQ dotyczące ustawiania linku docelowego w pliku PDF
 
-#### P: Co to jest łącze docelowe w pliku PDF?
+#### P: Czym jest link docelowy w pliku PDF?
 
-Odp.: Łącze docelowe w pliku PDF to klikalne łącze, które prowadzi czytelnika do określonego miejsca docelowego w tym samym dokumencie lub do innego pliku PDF.
+A: Link docelowy w pliku PDF to klikalny link, który kieruje czytelnika do określonego miejsca w tym samym dokumencie lub do innego pliku PDF.
 
-#### P: Dlaczego miałbym chcieć ustawić łącze docelowe w pliku PDF?
+#### P: Dlaczego miałbym chcieć ustawić link docelowy w pliku PDF?
 
-Odp.: Ustawienie łączy docelowych umożliwia płynną nawigację w dokumencie PDF lub utworzenie łącza do określonych sekcji lub stron w innych plikach PDF.
+A: Ustawienie łączy docelowych umożliwia stworzenie płynnego środowiska nawigacji w dokumencie PDF lub łączy do określonych sekcji lub stron w innych plikach PDF.
 
-#### P: W jaki sposób Aspose.PDF dla .NET pomaga w ustawianiu łączy docelowych?
+#### P: W jaki sposób Aspose.PDF dla .NET pomaga w ustawianiu linków docelowych?
 
-Odp.: Aspose.PDF dla .NET zapewnia interfejsy API umożliwiające manipulowanie różnymi aspektami plików PDF, w tym tworzenie i modyfikowanie łączy. W tym samouczku pokazano, jak ustawić łącze docelowe przy użyciu kodu C#.
+A: Aspose.PDF dla .NET udostępnia API do manipulowania różnymi aspektami plików PDF, w tym tworzenia i modyfikowania linków. Ten samouczek pokazuje, jak ustawić link docelowy za pomocą kodu C#.
 
-#### P: Czy mogę ustawić łącza docelowe, aby prowadziły do określonych stron w tym samym dokumencie?
+#### P: Czy mogę ustawić linki docelowe, aby kierować do konkretnych stron w obrębie tego samego dokumentu?
 
-Odp.: Tak, Aspose.PDF dla .NET umożliwia ustawienie docelowych łączy prowadzących do określonych stron w tym samym dokumencie.
+O: Tak, Aspose.PDF dla platformy .NET umożliwia ustawienie łączy docelowych umożliwiających nawigację do określonych stron w obrębie tego samego dokumentu.
 
-#### P: Czy mogę ustawić łącza docelowe, aby prowadziły do określonych stron w innym pliku PDF?
+#### P: Czy mogę ustawić linki docelowe, aby kierować do konkretnych stron w innym pliku PDF?
 
-Odp.: Tak, możesz ustawić łącza docelowe, aby przechodziły do określonych stron w innym pliku PDF, używając Aspose.PDF dla .NET.
+O: Tak, za pomocą Aspose.PDF dla platformy .NET można ustawić linki docelowe umożliwiające nawigację do konkretnych stron w innym pliku PDF.
 
-#### P: Czy są jakieś ograniczenia w ustawianiu linków docelowych?
+#### P: Czy istnieją jakieś ograniczenia w ustawianiu linków docelowych?
 
-Odp.: Łącza docelowe mogą prowadzić wyłącznie w obrębie tego samego dokumentu lub do określonych stron w innych plikach PDF. Nie mogą zawierać bezpośrednich linków do określonej treści w innych dokumentach.
+A: Linki docelowe mogą nawigować tylko w obrębie tego samego dokumentu lub do określonych stron w innych plikach PDF. Nie mogą bezpośrednio linkować do określonej zawartości w innych dokumentach.
 
-#### P: Jak mogę dostosować wygląd łącza docelowego?
+#### P: W jaki sposób mogę dostosować wygląd linku docelowego?
 
-Odp.: Wygląd łącza docelowego, taki jak jego kolor i styl, można dostosować za pomocą właściwości dostarczonych przez Aspose.PDF dla .NET.
+A: Wygląd łącza docelowego, na przykład jego kolor i styl, można dostosować za pomocą właściwości udostępnianych przez Aspose.PDF dla platformy .NET.
 
-#### P: Czy mogę ustawić wiele łączy docelowych w tym samym dokumencie PDF?
+#### P: Czy mogę ustawić wiele linków docelowych w tym samym dokumencie PDF?
 
-Odp.: Tak, możesz ustawić wiele łączy docelowych w tym samym dokumencie PDF. Po prostu powtórz proces dla każdego łącza, które chcesz utworzyć.
+A: Tak, możesz ustawić wiele linków docelowych w tym samym dokumencie PDF. Po prostu powtórz proces dla każdego linku, który chcesz utworzyć.
 
-#### P: Czy mogę ustawić link docelowy przy użyciu określonego kształtu lub tekstu?
+#### P: Czy mogę ustawić link docelowy, używając określonego kształtu lub tekstu?
 
-Odp.: Tak, możesz dołączyć łącze docelowe do określonych kształtów lub tekstu w dokumencie PDF, korzystając z odpowiednich właściwości i metod dostarczonych przez Aspose.PDF dla .NET.
+O: Tak, możesz dołączyć link docelowy do konkretnych kształtów lub tekstu w dokumencie PDF, korzystając z odpowiednich właściwości i metod udostępnianych przez Aspose.PDF dla platformy .NET.
 
-#### P: Jak mogę sprawdzić, czy łącze docelowe działa zgodnie z oczekiwaniami?
+#### P: Jak mogę sprawdzić, czy link docelowy działa zgodnie z oczekiwaniami?
 
-Odp.: Po ustawieniu łącza docelowego przy użyciu dostarczonego kodu otwórz zmodyfikowany plik PDF i kliknij łącze, aby upewnić się, że prowadzi ono do żądanego miejsca docelowego.
+A: Po ustawieniu łącza docelowego za pomocą dostarczonego kodu otwórz zmodyfikowany plik PDF i kliknij łącze, aby upewnić się, że prowadzi do żądanego miejsca docelowego.
 
-#### P: Czy mogę ustawić łącza docelowe w plikach PDF chronionych hasłem?
+#### P: Czy mogę ustawić linki docelowe w plikach PDF chronionych hasłem?
 
-O: Tak, możesz ustawić łącza docelowe w plikach PDF chronionych hasłem, pod warunkiem, że podasz odpowiednie dane uwierzytelniające umożliwiające dostęp do dokumentu i jego modyfikację.
+O: Tak, możesz ustawić linki docelowe w plikach PDF chronionych hasłem, pod warunkiem że podasz odpowiednie dane uwierzytelniające, aby uzyskać dostęp do dokumentu i go modyfikować.

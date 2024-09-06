@@ -82,7 +82,7 @@ tomto tutoriálu jste se naučili, jak odstranit veškerý text z dokumentu PDF 
 
 #### Otázka: Jaký je účel výukového programu "Odebrat veškerý text ze souboru PDF"?
 
-Odpověď: Výukový program "Odebrat veškerý text ze souboru PDF" má za cíl demonstrovat, jak používat knihovnu Aspose.PDF pro .NET k odstranění veškerého textu z dokumentu PDF. Výukový program poskytuje podrobného průvodce a zdrojový kód C#, který vám pomůže otevřít dokument PDF, vybrat a odstranit text z každé stránky a uložit upravený PDF.
+Odpověď: Výukový program "Odstranit veškerý text ze souboru PDF" má za cíl demonstrovat, jak používat knihovnu Aspose.PDF pro .NET k odstranění veškerého textu z dokumentu PDF. Výukový program poskytuje podrobného průvodce a zdrojový kód C#, který vám pomůže otevřít dokument PDF, vybrat a odstranit text z každé stránky a uložit upravený PDF.
 
 #### Otázka: Proč bych měl chtít odstranit veškerý text z dokumentu PDF?
 

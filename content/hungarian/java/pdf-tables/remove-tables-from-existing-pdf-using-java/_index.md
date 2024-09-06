@@ -66,7 +66,7 @@ pdfDocument.save("path/to/modified/document.pdf");
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan távolíthat el táblázatokat egy meglévő PDF-dokumentumból a Java és az Aspose.PDF for Java használatával. Ez hihetetlenül hasznos lehet, ha különféle célokra kell manipulálnia a PDF-tartalmat.
+Gratulálok! Sikeresen megtanulta, hogyan távolíthat el táblázatokat egy meglévő PDF-dokumentumból a Java és az Aspose.PDF for Java használatával. Ez hihetetlenül hasznos lehet, ha különféle célokra kell manipulálnia a PDF-tartalmat.
 
 ## GYIK
 

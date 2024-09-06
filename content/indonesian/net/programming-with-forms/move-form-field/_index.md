@@ -1,17 +1,17 @@
 ---
 title: Pindahkan Bidang Formulir
 linktitle: Pindahkan Bidang Formulir
-second_title: Aspose.PDF untuk Referensi .NET API
+second_title: Referensi API Aspose.PDF untuk .NET
 description: Pindahkan kolom formulir dengan mudah di dokumen PDF Anda dengan Aspose.PDF untuk .NET.
 type: docs
 weight: 200
 url: /id/net/programming-with-forms/move-form-field/
 ---
-Dalam tutorial ini, kami akan menunjukkan cara memindahkan kolom formulir di dokumen PDF menggunakan Aspose.PDF untuk .NET. Kami akan menjelaskan kode sumber C# langkah demi langkah untuk memandu Anda melalui proses ini.
+Dalam tutorial ini, kami akan menunjukkan cara memindahkan kolom formulir dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Kami akan menjelaskan kode sumber C# langkah demi langkah untuk memandu Anda melalui proses ini.
 
 ## Langkah 1: Persiapan
 
-Pastikan Anda telah mengimpor perpustakaan yang diperlukan dan mengatur jalur ke direktori dokumen Anda:
+Pastikan Anda telah mengimpor pustaka yang diperlukan dan mengatur jalur ke direktori dokumen Anda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -68,23 +68,23 @@ Console.WriteLine("\nForm field moved successfully to a new location.\nFile save
 
 ## Kesimpulan
 
-Dalam tutorial ini, kita mempelajari cara memindahkan bidang formulir dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Dengan mengikuti langkah-langkah ini, Anda dapat dengan mudah menavigasi ke bidang tertentu dan mengubah lokasinya sesuai kebutuhan.
+Dalam tutorial ini, kita mempelajari cara memindahkan kolom formulir dalam dokumen PDF menggunakan Aspose.PDF for .NET. Dengan mengikuti langkah-langkah ini, Anda dapat dengan mudah menavigasi ke kolom tertentu dan mengubah lokasinya sesuai kebutuhan.
 
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
 #### T: Dapatkah saya memindahkan beberapa bidang formulir dalam satu dokumen PDF menggunakan Aspose.PDF untuk .NET?
 
-J: Ya, Anda dapat memindahkan beberapa bidang formulir dalam satu dokumen PDF menggunakan Aspose.PDF untuk .NET. Cukup ulangi proses untuk setiap bidang formulir yang ingin Anda pindahkan.
+A: Ya, Anda dapat memindahkan beberapa kolom formulir dalam satu dokumen PDF menggunakan Aspose.PDF for .NET. Cukup ulangi proses untuk setiap kolom formulir yang ingin Anda pindahkan.
 
-#### T: Apakah memindahkan bidang formulir akan memengaruhi data atau fungsi terkaitnya?
+#### T: Apakah pemindahan kolom formulir akan memengaruhi data atau fungsi terkait?
 
-J: Tidak, memindahkan bidang formulir tidak memengaruhi data atau fungsi terkaitnya. Bidang formulir mempertahankan semua properti dan nilainya setelah dipindahkan ke lokasi baru.
+J: Tidak, memindahkan kolom formulir tidak akan memengaruhi data atau fungsi terkaitnya. Kolom formulir akan tetap memiliki semua properti dan nilainya setelah dipindahkan ke lokasi baru.
 
-#### T: Bagaimana cara menentukan koordinat yang tepat untuk lokasi baru bidang formulir?
+#### T: Bagaimana cara menentukan koordinat yang tepat untuk lokasi baru kolom formulir?
 
- J: Anda dapat menentukan lokasi baru menggunakan`Aspose.Pdf.Rectangle` kelas, dimana Anda menentukan koordinat X dan Y dari sudut kiri atas dan koordinat X dan Y dari sudut kanan bawah dari area persegi panjang.
+ A: Anda dapat menentukan lokasi baru menggunakan`Aspose.Pdf.Rectangle` kelas, di mana Anda menentukan koordinat X dan Y di sudut kiri atas dan koordinat X dan Y di sudut kanan bawah area persegi panjang.
 
 #### T: Apakah Aspose.PDF untuk .NET kompatibel dengan lingkungan Windows dan Linux?
 
-J: Ya, Aspose.PDF untuk .NET kompatibel dengan lingkungan Windows dan Linux, memberikan fleksibilitas bagi pengembang untuk bekerja di sistem operasi pilihan mereka.
+A: Ya, Aspose.PDF untuk .NET kompatibel dengan lingkungan Windows dan Linux, memberikan fleksibilitas bagi pengembang untuk bekerja di sistem operasi pilihan mereka.

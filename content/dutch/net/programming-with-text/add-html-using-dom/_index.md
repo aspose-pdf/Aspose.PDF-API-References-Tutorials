@@ -1,57 +1,57 @@
 ---
-title: HTML toevoegen met DOM
-linktitle: HTML toevoegen met DOM
+title: HTML toevoegen met behulp van DOM
+linktitle: HTML toevoegen met behulp van DOM
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u HTML-inhoud kunt toevoegen met DOM in Aspose.PDF voor .NET.
+description: Leer hoe u HTML-inhoud toevoegt met behulp van DOM in Aspose.PDF voor .NET.
 type: docs
 weight: 40
 url: /nl/net/programming-with-text/add-html-using-dom/
 ---
-Deze tutorial leidt u door het proces van het toevoegen van HTML-inhoud met behulp van DOM (Document Object Model) in Aspose.PDF voor .NET. De meegeleverde C#-broncode demonstreert de noodzakelijke stappen.
+Deze tutorial begeleidt u door het proces van het toevoegen van HTML-inhoud met behulp van DOM (Document Object Model) in Aspose.PDF voor .NET. De meegeleverde C#-broncode demonstreert de benodigde stappen.
 
 ## Vereisten
-Zorg ervoor dat u over het volgende beschikt voordat u begint:
+Voordat u begint, moet u ervoor zorgen dat u over het volgende beschikt:
 
 - Visual Studio of een andere C#-compiler die op uw computer is geïnstalleerd.
-- Aspose.PDF voor .NET-bibliotheek. Je kunt het downloaden van de officiële Aspose-website of een pakketbeheerder zoals NuGet gebruiken om het te installeren.
+- Aspose.PDF voor .NET-bibliotheek. U kunt het downloaden van de officiële Aspose-website of een pakketbeheerder zoals NuGet gebruiken om het te installeren.
 
-## Stap 1: Zet het project op
-1. Maak een nieuw C#-project in de ontwikkelomgeving van uw voorkeur.
+## Stap 1: Het project opzetten
+1. Maak een nieuw C#-project in uw favoriete ontwikkelomgeving.
 2. Voeg een verwijzing toe naar de Aspose.PDF voor .NET-bibliotheek.
 
 ## Stap 2: Importeer de vereiste naamruimten
-In het codebestand waaraan u de HTML-inhoud wilt toevoegen, voegt u het volgende toe met behulp van richtlijnen bovenaan het bestand:
+Voeg in het codebestand waaraan u de HTML-inhoud wilt toevoegen, het volgende toe met behulp van richtlijnen boven aan het bestand:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Stap 3: Stel de documentmap en het uitvoerbestandspad in
+## Stap 3: Stel de documentdirectory en het pad naar het uitvoerbestand in
  Zoek in de code de regel met de tekst`string dataDir = "YOUR DOCUMENT DIRECTORY";` en vervangen`"YOUR DOCUMENT DIRECTORY"` met het pad naar de map waar uw documenten zijn opgeslagen.
 
-## Stap 4: Maak een nieuw Document-object
- Instantieer een nieuwe`Document` object door de volgende regel code toe te voegen:
+## Stap 4: Een nieuw Document-object maken
+ Een nieuwe instantiëren`Document` object door de volgende regel code toe te voegen:
 
 ```csharp
 Document doc = new Document();
 ```
 
 ## Stap 5: Voeg een pagina toe aan het document
- Voeg een nieuwe pagina aan het document toe met behulp van de`Add` werkwijze van de`Pages`verzameling. In de opgegeven code wordt de nieuwe pagina aan de variabele toegewezen`page`.
+ Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages`verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
 ## Stap 6: Maak een HtmlFragment met de HTML-inhoud
- Instantieer een`HtmlFragment` object en geef de gewenste HTML-inhoud op. In de meegeleverde code wordt de HTML-inhoud aan de variabele toegewezen`titel`. U kunt de HTML-inhoud indien nodig wijzigen.
+ Instantieer een`HtmlFragment` object en de gewenste HTML-inhoud leveren. In de meegeleverde code wordt de HTML-inhoud toegewezen aan de variabele`titel`U kunt de HTML-inhoud indien nodig wijzigen.
 
 ```csharp
 HtmlFragment titel = new HtmlFragment("<fontsize=10><b><i>Table</i></b></fontsize>");
 ```
 
 ## Stap 7: Marge-informatie instellen
-Pas indien nodig de onder- en bovenmarge van het HTML-fragment aan. In de opgegeven code is de ondermarge ingesteld op 10 en de bovenmarge op 200.
+Pas indien nodig de onder- en bovenmarge van het HTML-fragment aan. In de meegeleverde code is de ondermarge ingesteld op 10 en de bovenmarge op 200.
 
 ```csharp
 title. Margin. Bottom = 10;
@@ -59,7 +59,7 @@ title. Margin. Top = 200;
 ```
 
 ## Stap 8: Voeg het HtmlFragment toe aan de pagina
- Voeg de`HtmlFragment` bezwaar maken tegen het verzamelen van alinea's op de pagina.
+ Voeg de`HtmlFragment` bezwaar maken tegen de verzameling alinea's van de pagina.
 
 ```csharp
 page.Paragraphs.Add(title);
@@ -67,34 +67,34 @@ dataDir = dataDir + "AddHTMLUsingDOM_out.pdf";
 ```
 
 ## Stap 9: Sla het PDF-document op
- Sla het PDF-document op met behulp van de`Save` werkwijze van de`Document` voorwerp. Geef het uitvoerbestandspad op dat u in stap 3 hebt ingesteld.
+ Sla het PDF-document op met behulp van de`Save` methode van de`Document` object. Geef het pad op naar het uitvoerbestand dat u in stap 3 hebt ingesteld.
 
 ```csharp
 doc.Save(dataDir);
 ```
 
 ## Stap 10: Geef het succesbericht weer
-Geef een succesbericht weer samen met het pad waar het PDF-bestand is opgeslagen.
+Geef een succesbericht weer, samen met het pad waar het PDF-bestand is opgeslagen.
 
 ```csharp
 Console.WriteLine("\nHTML using DOM added successfully.\nFile saved at " + dataDir);
 ```
 
-### Voorbeeldbroncode voor HTML toevoegen met DOM met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor HTML toevoegen met behulp van DOM met Aspose.PDF voor .NET 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantieer een documentobject
+// Instantieer Document object
 Document doc = new Document();
 // Voeg een pagina toe aan de paginaverzameling van een PDF-bestand
 Page page = doc.Pages.Add();
-// Instantieer HtmlFragment met HTML-contnets
+// Instantieer HtmlFragment met HTML-inhoud
 HtmlFragment titel = new HtmlFragment("<fontsize=10><b><i>Table</i></b></fontsize>");
-// Stel informatie over de ondermarge in
+// Informatie over de ondermarge instellen
 titel.Margin.Bottom = 10;
-// Stel informatie over de bovenmarge in
+// Bovenste marge-informatie instellen
 titel.Margin.Top = 200;
-// Voeg een HTML-fragment toe aan de alineaverzameling van de pagina
+// HTML-fragment toevoegen aan alineaverzameling van pagina
 page.Paragraphs.Add(titel);
 dataDir = dataDir + "AddHTMLUsingDOM_out.pdf";
 // PDF-bestand opslaan
@@ -103,84 +103,84 @@ Console.WriteLine("\nHTML using DOM added successfully.\nFile saved at " + dataD
 ```
 
 ## Conclusie
-U hebt met succes HTML-inhoud toegevoegd met behulp van DOM in Aspose.PDF voor .NET. Het resulterende PDF-bestand is nu te vinden op het opgegeven uitvoerbestandspad.
+U hebt HTML-inhoud met DOM succesvol toegevoegd in Aspose.PDF voor .NET. Het resulterende PDF-bestand is nu te vinden op het opgegeven pad naar het uitvoerbestand.
 
 ### Veelgestelde vragen
 
-#### Vraag: Wat is het doel van deze tutorial?
+#### V: Wat is het doel van deze tutorial?
 
-A: Deze tutorial is bedoeld om stapsgewijze handleidingen te bieden voor het toevoegen van HTML-inhoud aan een PDF-document met behulp van het Document Object Model (DOM) in Aspose.PDF voor .NET. Het bevat C#-broncodefragmenten om u te helpen het proces te begrijpen en te implementeren.
+A: Deze tutorial is bedoeld om een stapsgewijze handleiding te bieden over hoe u HTML-inhoud toevoegt aan een PDF-document met behulp van het Document Object Model (DOM) in Aspose.PDF voor .NET. Het bevat C#-broncodefragmenten om u te helpen het proces te begrijpen en te implementeren.
 
-#### Vraag: Welke naamruimten moet ik importeren voor deze tutorial?
+#### V: Welke naamruimten moet ik importeren voor deze tutorial?
 
-A: In het codebestand waaraan u HTML-inhoud wilt toevoegen, importeert u de volgende naamruimte aan het begin van het bestand:
+A: Importeer de volgende naamruimte aan het begin van het bestand in het codebestand waaraan u HTML-inhoud wilt toevoegen:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-#### Vraag: Hoe geef ik de documentmap en het uitvoerbestandspad op?
+#### V: Hoe geef ik de documentdirectory en het pad naar het uitvoerbestand op?
 
- A: Zoek de regel in de code`string dataDir = "YOUR DOCUMENT DIRECTORY";` en vervangen`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad naar uw documentmap.
+ A: Zoek in de code de regel`string dataDir = "YOUR DOCUMENT DIRECTORY";` en vervangen`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad naar uw documentenmap.
 
-#### Vraag: Hoe maak ik een Document-object?
+#### V: Hoe maak ik een Document-object?
 
- A: In stap 4 maakt u een nieuw bestand aan`Document` object door de volgende regel code toe te voegen:
+ A: In stap 4, instantiëren een nieuwe`Document` object door de volgende regel code toe te voegen:
 
 ```csharp
 Document doc = new Document();
 ```
 
-#### Vraag: Hoe voeg ik een pagina toe aan het document?
+#### V: Hoe voeg ik een pagina toe aan het document?
 
- A: In stap 5 voegt u een nieuwe pagina aan het document toe met behulp van de`Add` werkwijze van de`Pages` verzameling:
+ A: In stap 5 voegt u een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages` verzameling:
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-#### Vraag: Hoe kan ik HTML-inhoud instellen met behulp van de DOM?
+#### V: Hoe kan ik HTML-inhoud instellen met behulp van de DOM?
 
- A: In stap 6 maakt u een`HtmlFragment` object en wijs er de gewenste HTML-inhoud aan toe. De HTML-inhoud wordt aan de variabele toegewezen`titel`:
+ A: In stap 6 maak je een`HtmlFragment` object en wijs uw gewenste HTML-inhoud eraan toe. De HTML-inhoud wordt toegewezen aan de variabele`titel`:
 
 ```csharp
 HtmlFragment titel = new HtmlFragment("<fontsize=10><b><i>Table</i></b></fontsize>");
 ```
 
-#### Vraag: Kan ik de marge van de HTML-inhoud aanpassen?
+#### V: Kan ik de marge van de HTML-inhoud aanpassen?
 
-A: Ja, in stap 7 kunt u de onder- en bovenmarges van het HTML-fragment indien nodig aanpassen:
+A: Ja, in stap 7 kunt u de onder- en bovenmarges van het HTML-fragment naar wens aanpassen:
 
 ```csharp
 titel.Margin.Bottom = 10;
 titel.Margin.Top = 200;
 ```
 
-#### Vraag: Hoe voeg ik het HTMLFragment toe aan het PDF-document?
+#### V: Hoe voeg ik het HTMLFragment toe aan het PDF-document?
 
- A: In stap 8 voegt u de`HtmlFragment` voorwerp (`titel`) naar de alineaverzameling van de pagina:
+ A: In stap 8 voegt u de`HtmlFragment` voorwerp (`titel`) naar de paragrafenverzameling van de pagina:
 
 ```csharp
 page.Paragraphs.Add(titel);
 dataDir = dataDir + "AddHTMLUsingDOM_out.pdf";
 ```
 
-#### Vraag: Hoe bewaar ik het resulterende PDF-document?
+#### V: Hoe kan ik het resulterende PDF-document opslaan?
 
- A: Nadat u de HTML-inhoud heeft toegevoegd en de marges heeft aangepast, gebruikt u de`Save` werkwijze van de`Document` object om het PDF-document op te slaan:
+ A: Nadat u de HTML-inhoud hebt toegevoegd en de marges hebt aangepast, gebruikt u de`Save` methode van de`Document` object om het PDF-document op te slaan:
 
 ```csharp
 doc.Save(dataDir);
 ```
 
-#### Vraag: Is er een manier om te verifiëren of het proces succesvol is geweest?
+#### V: Is er een manier om te controleren of het proces succesvol is geweest?
 
-A: Zeker, in stap 10 wordt een succesbericht weergegeven samen met het pad waar het PDF-bestand is opgeslagen:
+A: Zeker, in stap 10 wordt een succesbericht weergegeven, samen met het pad waar het PDF-bestand is opgeslagen:
 
 ```csharp
 Console.WriteLine("\nHTML using DOM added successfully.\nFile saved at " + dataDir);
 ```
 
-#### Vraag: Wat is de belangrijkste conclusie uit deze tutorial?
+#### V: Wat is de belangrijkste les die je uit deze tutorial hebt geleerd?
 
-A: Door deze tutorial te volgen, heeft u met succes geleerd hoe u het Document Object Model (DOM) in Aspose.PDF voor .NET kunt gebruiken om HTML-inhoud aan een PDF-document toe te voegen. Deze kennis stelt u in staat uw mogelijkheden voor het genereren van PDF-bestanden te verbeteren.
+A: Door deze tutorial te volgen, hebt u succesvol geleerd hoe u het Document Object Model (DOM) in Aspose.PDF voor .NET kunt gebruiken om HTML-inhoud toe te voegen aan een PDF-document. Deze kennis stelt u in staat om uw PDF-generatiemogelijkheden te verbeteren.

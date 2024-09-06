@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 2. lépés: A meglévő PDF dokumentum betöltése
 
-Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Itt van, hogyan:
+Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Íme, hogyan:
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
@@ -32,7 +32,7 @@ Feltétlenül cserélje ki a „DOKUMENTUMKÖNYVTÁR” elemet a PDF-dokumentum 
 
 ## 3. lépés: A kép létrehozása és hozzáadása a fejléc részhez
 
-Most, hogy a PDF dokumentum betöltődött, létrehozhatunk egy képpuffert, és hozzáadhatjuk a dokumentum összes oldalához fejlécként. Itt van, hogyan:
+Most, hogy a PDF dokumentum betöltődött, létrehozhatunk egy képpuffert, és hozzáadhatjuk a dokumentum összes oldalához fejlécként. Íme, hogyan:
 
 ```csharp
 // Hozza létre a keretpuffert
@@ -43,7 +43,7 @@ imageStamp.TopMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Képpuffer hozzáadása az összes oldalhoz
+//Képpuffer hozzáadása az összes oldalhoz
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
@@ -54,7 +54,7 @@ A fenti kód képpuffert hoz létre az "aspose-logo.jpg" fájlból, és beállí
 
 ## 4. lépés: Mentse el a módosított PDF dokumentumot
 
-Miután a kép bekerült a fejlécbe, elmenthetjük a módosított PDF dokumentumot. Itt van, hogyan:
+Miután a kép bekerült a fejlécbe, elmenthetjük a módosított PDF dokumentumot. Íme, hogyan:
 
 ```csharp
 // Mentse el a módosított PDF dokumentumot
@@ -110,15 +110,15 @@ V: Ha egy PDF-dokumentum fejlécéhez képet ad hozzá, vizuális elemeket, pél
 
 #### K: Beállíthatom a kép helyzetét és igazítását a fejléc részben?
 
- V: Igen, beállíthatja a kép helyzetét és igazítását a fejléc részben a kép tulajdonságainak módosításával.`ImageStamp` tárgy. A kódrészlet olyan tulajdonságokat állít be, mint pl`TopMargin`, `HorizontalAlignment` , és`VerticalAlignment`.
+ V: Igen, beállíthatja a kép helyzetét és igazítását a fejléc részben a kép tulajdonságainak módosításával.`ImageStamp` objektum. A kódrészlet olyan tulajdonságokat állít be, mint pl`TopMargin`, `HorizontalAlignment` , és`VerticalAlignment`.
 
 #### K: Lehetséges-e különböző képeket hozzáadni a fejléchez a PDF-dokumentum különböző oldalain?
 
- V: Igen, a különböző oldalak fejlécrészéhez különböző képeket adhat hozzá, ha külön létrehozza azokat`ImageStamp` különböző képfájlokkal és tulajdonságokkal rendelkező objektumokat, majd hozzáadhatja azokat adott oldalakhoz.
+ V: Igen, a különböző oldalak fejlécrészéhez különböző képeket is hozzáadhat, ha külön létrehozza azokat`ImageStamp` különböző képfájlokkal és tulajdonságokkal rendelkező objektumokat, majd hozzáadhatja azokat adott oldalakhoz.
 
 #### K: Hogyan biztosítja a kód, hogy a kép a PDF-dokumentum fejlécrészének minden oldalára felkerüljön?
 
-V: A megadott kód a`foreach` ciklus a PDF-dokumentum összes oldalán való iterációhoz, és hozzáadja ugyanazt`ImageStamp`az egyes oldalak fejlécrészéhez.
+ V: A megadott kód a`foreach` ciklus a PDF-dokumentum összes oldalán való iterációhoz, és hozzáadja ugyanazt`ImageStamp` az egyes oldalak fejlécrészéhez.
 
 #### K: Hozzáadhatok más elemeket, például szöveget vagy alakzatokat a fejléchez hasonló megközelítéssel?
 
@@ -134,7 +134,7 @@ V: A megadott kód a`foreach` ciklus a PDF-dokumentum összes oldalán való ite
 
 #### K: Eltávolítható vagy lecserélhető a kép a fejléc részben, miután hozzáadta?
 
- V: Igen, eltávolíthatja vagy lecserélheti a képet a fejléc részben a tartalmának módosításával`ImageStamp` objektumot vagy eltávolítja a bélyeget bizonyos oldalakról.
+V: Igen, eltávolíthatja vagy lecserélheti a képet a fejléc részben a tartalmának módosításával`ImageStamp` objektumot vagy eltávolítja a bélyeget bizonyos oldalakról.
 
 #### K: Hogyan kezeli a kód azokat a forgatókönyveket, amikor a kép mérete meghaladja a fejlécben rendelkezésre álló helyet?
 

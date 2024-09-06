@@ -1,17 +1,17 @@
 ---
 title: Wypełnij pole formularza PDF
 linktitle: Wypełnij pole formularza PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Z łatwością wypełniaj pola formularzy w dokumentach PDF za pomocą Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwe wypełnianie pól formularzy w dokumentach PDF przy użyciu Aspose.PDF dla .NET.
 type: docs
 weight: 80
 url: /pl/net/programming-with-forms/fill-form-field/
 ---
-W tym samouczku pokażemy, jak wypełnić pole formularza za pomocą Aspose.PDF dla .NET. Krok po kroku wyjaśnimy kod źródłowy C#, aby poprowadzić Cię przez ten proces.
+W tym samouczku pokażemy, jak wypełnić pole formularza za pomocą Aspose.PDF dla .NET. Wyjaśnimy kod źródłowy C# krok po kroku, aby przeprowadzić Cię przez ten proces.
 
 ## Krok 1: Przygotowanie
 
-Najpierw upewnij się, że zaimportowałeś niezbędne biblioteki i ustaw ścieżkę do katalogu dokumentów:
+Najpierw upewnij się, że zaimportowałeś niezbędne biblioteki i ustawiłeś ścieżkę do katalogu dokumentów:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -25,9 +25,9 @@ Otwórz istniejący dokument PDF:
 Document pdfDocument = new Document(dataDir + "FillFormField.pdf");
 ```
 
-## Krok 3: Zdobądź pole
+## Krok 3: Pobierz pole
 
-Uzyskaj żądane pole formularza (w tym przykładzie używamy pola „textbox1”):
+Pobierz żądane pole formularza (w tym przykładzie używamy pola „textbox1”):
 
 ```csharp
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
@@ -35,7 +35,7 @@ TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 
 ## Krok 4: Zmień wartość pola
 
-Zmodyfikuj wartość pola, podając żądaną wartość:
+Zmień wartość pola na pożądaną wartość:
 
 ```csharp
 textBoxField.Value = "Value to fill in the field";
@@ -50,7 +50,7 @@ dataDir = dataDir + "FillFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Przykładowy kod źródłowy dla pola formularza wypełniającego przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla pola formularza wypełniania przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -58,7 +58,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "FillFormField.pdf");
 // Zdobądź pole
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
-// Zmodyfikuj wartość pola
+// Modyfikuj wartość pola
 textBoxField.Value = "Value to be filled in the field";
 dataDir = dataDir + "FillFormField_out.pdf";
 // Zapisz zaktualizowany dokument
@@ -68,26 +68,26 @@ Console.WriteLine("\nForm field filled successfully.\nFile saved at " + dataDir)
 
 ## Wniosek
 
-tym samouczku nauczyliśmy się, jak wypełnić pole formularza za pomocą Aspose.PDF dla .NET. Wykonując poniższe kroki, możesz łatwo zmieniać wartości pól formularzy w dokumentach PDF za pomocą Aspose.PDF.
+tym samouczku nauczyliśmy się, jak wypełnić pole formularza za pomocą Aspose.PDF dla .NET. Wykonując te kroki, możesz łatwo zmienić wartości pól formularza w dokumentach PDF za pomocą Aspose.PDF.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Czy mogę wypełnić wiele pól formularza w dokumencie PDF przy użyciu Aspose.PDF dla .NET?
+#### P: Czy mogę wypełnić wiele pól formularza w dokumencie PDF, korzystając z Aspose.PDF dla platformy .NET?
 
-Odp.: Tak, możesz wypełnić wiele pól formularza w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Po otwarciu dokumentu PDF możesz pobrać każde pole formularza z osobna i zmodyfikować jego wartość według potrzeb.
+A: Tak, możesz wypełnić wiele pól formularza w dokumencie PDF za pomocą Aspose.PDF dla .NET. Po otwarciu dokumentu PDF możesz uzyskać każde pole formularza osobno i zmodyfikować jego wartość według potrzeb.
 
-#### P: Jak znaleźć nazwy pól formularzy w dokumencie PDF?
+#### P: Jak mogę znaleźć nazwy pól formularza w dokumencie PDF?
 
- Odp.: Aby znaleźć nazwy pól formularzy w dokumencie PDF, możesz iterować po pliku`pdfDocument.Form.Fields` kolekcja. Każde pole formularza ma`FullName` właściwość, która zawiera jej unikalną nazwę. Nazw tych można używać do identyfikowania i modyfikowania określonych pól formularzy.
+ A: Aby znaleźć nazwy pól formularza w dokumencie PDF, można przejść przez nie iteracyjnie`pdfDocument.Form.Fields` kolekcja. Każde pole formularza ma`FullName` właściwość, która zawiera swoją unikalną nazwę. Możesz użyć tych nazw, aby zidentyfikować i zmodyfikować określone pola formularza.
 
-#### P: Co się stanie, jeśli pole formularza, które chcę wypełnić, nie istnieje w dokumencie PDF?
+#### P: Co zrobić, jeśli pole formularza, które chcę wypełnić, nie istnieje w dokumencie PDF?
 
- Odp.: Jeśli pole formularza, które chcesz wypełnić, nie istnieje w dokumencie PDF, spróbuj uzyskać do niego dostęp za pomocą`pdfDocument.Form["fieldName"]`zwróci wartość null. Dlatego przed próbą wypełnienia należy upewnić się, że pole formularza istnieje. W razie potrzeby możesz programowo dodać nowe pola formularza, używając Aspose.PDF dla .NET.
+ A: Jeśli pole formularza, które chcesz wypełnić, nie istnieje w dokumencie PDF, próba dostępu do niego za pomocą`pdfDocument.Form["fieldName"]`zwróci null. Dlatego też, przed próbą wypełnienia pola formularza, należy się upewnić, że ono istnieje. W razie potrzeby można dodać nowe pola formularza programowo, używając Aspose.PDF dla .NET.
 
-#### P: Czy mogę wypełnić pola formularza danymi dynamicznymi z bazy danych lub innego źródła danych?
+#### P: Czy mogę wypełniać pola formularza dynamicznymi danymi z bazy danych lub innego źródła danych?
 
-O: Tak, możesz wypełnić pola formularza danymi dynamicznymi z bazy danych lub dowolnego innego źródła danych. Przed ustawieniem wartości pola pobierz dane ze źródła i na ich podstawie ustaw odpowiednią wartość pola formularza.
+A: Tak, możesz wypełniać pola formularza dynamicznymi danymi z bazy danych lub dowolnego innego źródła danych. Przed ustawieniem wartości pola pobierz dane ze źródła i użyj ich do ustawienia wartości pola formularza.
 
-#### P: Czy istnieją jakieś ograniczenia podczas wypełniania pól formularzy w dokumentach PDF opartych na XFA?
+#### P: Czy istnieją jakieś ograniczenia przy wypełnianiu pól formularzy w dokumentach PDF w formacie XFA?
 
-Odp.: Wypełnianie pól formularzy w dokumentach PDF opartych na XFA (architektura formularzy XML) może mieć pewne ograniczenia ze względu na złożoną strukturę formularzy XFA. Aspose.PDF dla .NET obsługuje wypełnianie pól formularzy XFA, ale niektóre specyficzne właściwości pól formularzy, unikalne dla formularzy XFA, mogą nie być w pełni obsługiwane w AcroForms.
+A: Wypełnianie pól formularza w dokumentach PDF opartych na XFA (XML Forms Architecture) może mieć pewne ograniczenia ze względu na złożoną strukturę formularzy XFA. Aspose.PDF dla .NET obsługuje wypełnianie pól formularza w formularzach XFA, ale niektóre specyficzne właściwości pól formularza, unikalne dla formularzy XFA, mogą nie być w pełni obsługiwane w AcroForms.

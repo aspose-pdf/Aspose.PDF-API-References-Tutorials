@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 1. lépés: Állítsa be a dokumentumkönyvtárat
 
- Először is be kell állítania annak a könyvtárnak az elérési útját, ahol a PDF-fájlok találhatók. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó a PDF-fájlok elérési útjával.
+ Először is be kell állítania annak a könyvtárnak az elérési útját, ahol a PDF-fájlok találhatók. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó a PDF-fájlok elérési útjával.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -100,21 +100,21 @@ V: A nem használt betűtípusok PDF-dokumentumból való eltávolítása csökk
 
 V: A dokumentumkönyvtár beállításához:
 
-1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a PDF-fájlok találhatók.
+1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a PDF-fájlok találhatók.
 
 #### K: Hogyan távolíthatom el a nem használt betűtípusokat egy PDF-dokumentumból az Aspose.PDF könyvtár használatával?
 
 V: Az oktatóanyag lépésről lépésre végigvezeti a folyamaton:
 
 1.  Nyissa meg a PDF dokumentumot a`Document` osztály.
-2.  Hozzon létre egy`TextFragmentAbsorber` tárgyat`TextEditOptions` állítva`FontReplace.RemoveUnusedFonts`.
+2.  Hozzon létre a`TextFragmentAbsorber` tárgyat`TextEditOptions` beállítva`FontReplace.RemoveUnusedFonts`.
 3. Fogadja el az abszorbert a nem használt betűtípusok azonosításához és eltávolításához a PDF-ből.
 4.  Iteráljon mindent`TextFragments` és állítsa be a betűtípust a kívánt betűtípusra.
 5. Mentse el a frissített PDF dokumentumot.
 
 ####  K: Mi a célja a`TextEditOptions.FontReplace.RemoveUnusedFonts` parameter?
 
- V: A`TextEditOptions.FontReplace.RemoveUnusedFonts` paraméter utasítja a`TextFragmentAbsorber` a nem használt betűtípusok azonosítása és eltávolítása a PDF-dokumentumból.
+ V: A`TextEditOptions.FontReplace.RemoveUnusedFonts` paraméter utasítja a`TextFragmentAbsorber` nem használt betűtípusok azonosítása és eltávolítása a PDF-dokumentumból.
 
 #### K: Lecserélhetem a nem használt betűtípusokat egy általam választott betűtípusra?
 

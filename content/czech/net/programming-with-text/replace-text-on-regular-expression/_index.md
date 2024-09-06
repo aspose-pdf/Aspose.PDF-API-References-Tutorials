@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "SearchRegularExpressionPage.pdf")
 
 ## Krok 3: Vyhledejte a nahraďte text pomocí regulárních výrazů
 
- Vytvořit`TextFragmentAbsorber` objekt a zadejte vzor regulárního výrazu, abyste našli všechny fráze odpovídající vzoru. Chcete-li povolit použití regulárních výrazů, nastavte možnost textového vyhledávání.
+ Vytvořte a`TextFragmentAbsorber` objekt a zadejte vzor regulárního výrazu, abyste našli všechny fráze odpovídající vzoru. Chcete-li povolit použití regulárních výrazů, nastavte možnost textového vyhledávání.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Jako 1999-2000
@@ -124,7 +124,7 @@ A: Chcete-li nastavit adresář dokumentů:
 Odpověď: Výukový program vás provede následujícími kroky:
 
 1.  Načtěte dokument PDF pomocí`Document` třída.
-2.  Vytvořit`TextFragmentAbsorber` objekt a zadejte vzor regulárního výrazu, abyste našli fráze odpovídající vzoru. Chcete-li povolit použití regulárních výrazů, nastavte možnost textového vyhledávání.
+2.  Vytvořte a`TextFragmentAbsorber` objekt a zadejte vzor regulárního výrazu, abyste našli fráze odpovídající vzoru. Chcete-li povolit použití regulárních výrazů, nastavte možnost textového vyhledávání.
 3. Procházejte extrahované části textu a nahraďte text. Podle potřeby aktualizujte další vlastnosti, jako je písmo, velikost písma, barva popředí a barva pozadí.
 4. Uložte upravený dokument PDF.
 

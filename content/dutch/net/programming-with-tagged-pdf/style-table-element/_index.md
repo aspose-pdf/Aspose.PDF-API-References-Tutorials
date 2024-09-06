@@ -1,19 +1,19 @@
 ---
-title: Stijltabelelement
-linktitle: Stijltabelelement
+title: Stijl Tabel Element
+linktitle: Stijl Tabel Element
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u een tabelelement opmaakt met Aspose.PDF voor .NET. Stapsgewijze handleiding voor het aanpassen van stijlen en eigenschappen.
+description: Leer hoe u tabelelementen kunt opmaken met Aspose.PDF voor .NET. Stapsgewijze handleiding voor het aanpassen van stijlen en eigenschappen.
 type: docs
 weight: 170
 url: /nl/net/programming-with-tagged-pdf/style-table-element/
 ---
-In deze gedetailleerde zelfstudie leiden we u stap voor stap door de meegeleverde C#-broncode om het array-element te formatteren met Aspose.PDF voor .NET. Volg de onderstaande instructies om te begrijpen hoe u de stijlen en eigenschappen van het array-element kunt aanpassen.
+In deze gedetailleerde tutorial leiden we u stap voor stap door de meegeleverde C#-broncode om het array-element te formatteren met Aspose.PDF voor .NET. Volg de onderstaande instructies om te begrijpen hoe u de stijlen en eigenschappen van het array-element kunt aanpassen.
 
 ## Stap 1: De omgeving instellen
 
-Voordat u begint, moet u ervoor zorgen dat u uw ontwikkelomgeving hebt geconfigureerd voor het gebruik van Aspose.PDF voor .NET. Dit omvat het installeren van de Aspose.PDF-bibliotheek en het configureren van uw project om ernaar te verwijzen.
+Voordat u begint, moet u ervoor zorgen dat u uw ontwikkelomgeving hebt geconfigureerd om Aspose.PDF voor .NET te gebruiken. Dit omvat het installeren van de Aspose.PDF-bibliotheek en het configureren van uw project om ernaar te verwijzen.
 
-## Stap 2: Een document aanmaken
+## Stap 2: Een document maken
 
 In deze stap maken we een nieuw documentobject Aspose.PDF.
 
@@ -30,30 +30,30 @@ taggedContent.SetLanguage("fr-FR");
 
 We hebben een nieuw document gemaakt en de documenttitel en taal ingesteld.
 
-## Stap 3: Het wortelstructuurelement verkrijgen
+## Stap 3: Het verkrijgen van het wortelstructuurelement
 
-In deze stap krijgen we het hoofdstructuurelement voor ons document.
+In deze stap verkrijgen we het rootstructuurelement voor ons document.
 
 ```csharp
-//Verkrijg het hoofdstructuurelement
+//Verkrijg het wortelstructuurelement
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We hebben het rootstructuurelement dat zal dienen als container voor het array-element.
+We hebben het rootstructuurelement dat als container voor het arrayelement zal dienen.
 
 ## Stap 4: Het array-structuurelement maken
 
 Laten we nu een nieuw tabelstructuurelement voor ons document maken.
 
 ```csharp
-// Maak het arraystructuurelement
+// Maak het array-structuurelement
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 ```
 
-We hebben een nieuw arraystructuurelement gemaakt en dit aan het hoofdstructuurelement toegevoegd.
+We hebben een nieuw array-structuurelement gemaakt en toegevoegd aan het root-structuurelement.
 
-## Stap 5: De stijlen en eigenschappen van array-elementen aanpassen
+## Stap 5: Array-elementstijlen en -eigenschappen aanpassen
 
 In deze stap passen we de stijlen en eigenschappen van het array-element aan.
 
@@ -77,17 +77,17 @@ tableElement. Top = 40F;
 tableElement.RepeatingColumnsCount = 2;
 tableElement.RepeatingRowsCount = 3;
 
-// Pas de stijl van herhaalde lijnen aan
+// Pas de stijl van herhaalde regels aan
 TextState rowStyle = new TextState();
 rowStyle.BackgroundColor = Color.LightCoral;
 tableElement.RepeatingRowsStyle = rowStyle;
 ```
 
-We hebben verschillende eigenschappen gebruikt om het tabelelement aan te passen, zoals achtergrondkleur, randen, uitlijning, standaard celstijl, marges, kolombreedte, enz.
+We hebben verschillende eigenschappen gebruikt om het tabelelement aan te passen, zoals achtergrondkleur, randen, uitlijning, standaardcelstijl, marges, kolombreedte, enzovoort.
 
 ## Stap 6: Voeg tabelkopteksten, hoofdtekst en voettekst toe
 
-Laten we nu de tabelkopteksten, hoofdtekst en voettekst aan het tabelelement toevoegen.
+Nu gaan we de tabelkopteksten, de hoofdtekst en de voettekst aan het tabelelement toevoegen.
 ```csharp
 // Tabelkoppen toevoegen
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
@@ -110,7 +110,7 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
      theElement.SetText(string.Format("Header {0}", colIndex));
 }
 
-//Voeg de rijen van de tabeltekst toe
+//Voeg de rijen van de tabelbody toe
 for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 {
      TableTRElement trElement = tableTBodyElement.CreateTR();
@@ -123,7 +123,7 @@ for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
      }
 }
 
-// Voeg de voetlijn van de tabel toe
+// Voeg de voetregel van de tabel toe
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Footline";
 
@@ -134,33 +134,33 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-We hebben de kopteksten, hoofdtekstrijen en voettekstrij aan de tabel toegevoegd met behulp van de overeenkomstige elementen.
+We hebben de kopteksten, hoofdtekstrijen en voettekstrijen aan de tabel toegevoegd met behulp van de bijbehorende elementen.
 
 ## Stap 7: Het getagde PDF-document opslaan
 
-Nu we ons document met het opgemaakte tabelelement hebben gemaakt, slaan we het op als een getagd PDF-document.
+Nu we ons document met het gestileerde tabelelement hebben gemaakt, slaan we het op als een getagd PDF-document.
 
 ```csharp
 // Sla het getagde PDF-document op
 document.Save(dataDir + "StyleTableElement.pdf");
 ```
 
-We hebben het getagde PDF-document in de opgegeven map opgeslagen.
+We hebben het getagde PDF-document opgeslagen in de opgegeven directory.
 
-## Stap 8: Validatie van PDF/UA-naleving
+## Stap 8: PDF/UA-nalevingsvalidatie
 
 Vervolgens valideren we de PDF/UA-conformiteit van ons document.
 
 ```csharp
-// Conformiteitscontrole van PDF/UA
+// PDF/UA-nalevingscontrole
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-We hebben het getagde PDF-document geüpload en de PDF/UA-compatibiliteit ervan gevalideerd door een XML-rapport te genereren.
+We hebben het getagde PDF-document geüpload en de PDF/UA-conformiteit ervan gevalideerd door een XML-rapport te genereren.
 
-### Voorbeeldbroncode voor Style Table Element met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Style Table Element met behulp van Aspose.PDF voor .NET 
 
 ```csharp
 
@@ -173,10 +173,10 @@ ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table style");
 taggedContent.SetLanguage("en-US");
 
-// Haal het hoofdstructuurelement op
+// Krijg wortelstructuur element
 StructureElement rootElement = taggedContent.RootElement;
 
-// Tabelstructuurelement maken
+// Maak een tabelstructuurelement
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 tableElement.BackgroundColor = Color.Beige;
@@ -231,10 +231,10 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 	tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
 
-// Bewaar het getagde pdf-document
+// Gelabeld PDF-document opslaan
 document.Save(dataDir + "StyleTableElement.pdf");
 
-// Conformiteit met PDF/UA controleren
+// Controleren van PDF/UA-compatibiliteit
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
@@ -243,50 +243,50 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ## Conclusie
 
-In deze zelfstudie hebben we geleerd hoe u het array-element kunt formatteren met Aspose.PDF voor .NET. We hebben de stijlen en eigenschappen van het tabelelement aangepast, kopteksten, hoofdrijen en een voettekst toegevoegd, het getagde PDF-document opgeslagen en de PDF/UA-compatibiliteit ervan gevalideerd.
+In deze tutorial hebben we geleerd hoe we het array-element kunnen formatteren met Aspose.PDF voor .NET. We hebben de stijlen en eigenschappen van het tabelelement aangepast, headers, body-rijen en een voettekst toegevoegd, het getagde PDF-document opgeslagen en de PDF/UA-compliance gevalideerd.
 
 ### Veelgestelde vragen
 
-#### Vraag: Wat is het doel van deze tutorial over het formatteren van het array-element met Aspose.PDF voor .NET?
+#### V: Wat is het doel van deze tutorial over het opmaken van het array-element met Aspose.PDF voor .NET?
 
-A: Het doel van deze tutorial is om u te begeleiden bij het formatteren van het array-element in een PDF-document met Aspose.PDF voor .NET. Het biedt stapsgewijze instructies en C#-broncodevoorbeelden om u te helpen de stijlen en eigenschappen van het array-element aan te passen.
+A: Het doel van deze tutorial is om u te begeleiden door het proces van het formatteren van het array-element in een PDF-document met behulp van Aspose.PDF voor .NET. Het biedt stapsgewijze instructies en C#-broncodevoorbeelden om u te helpen de stijlen en eigenschappen van het array-element aan te passen.
 
-#### Vraag: Wat zijn de vereisten voor het volgen van deze tutorial?
+#### V: Wat zijn de vereisten om deze tutorial te kunnen volgen?
 
-A: Zorg ervoor dat u, voordat u begint, uw ontwikkelomgeving hebt ingesteld voor het gebruik van Aspose.PDF voor .NET. Dit omvat het installeren van de Aspose.PDF-bibliotheek en het configureren van uw project om ernaar te verwijzen.
+A: Voordat u begint, moet u ervoor zorgen dat u uw ontwikkelomgeving hebt ingesteld om Aspose.PDF voor .NET te gebruiken. Dit houdt in dat u de Aspose.PDF-bibliotheek installeert en uw project configureert om ernaar te verwijzen.
 
-#### Vraag: Hoe kan ik een nieuw PDF-document maken en de titel en taal instellen met Aspose.PDF voor .NET?
+#### V: Hoe kan ik een nieuw PDF-document maken en de titel en taal instellen met Aspose.PDF voor .NET?
 
- A: Om een nieuw PDF-document te maken, moet u een`Document` object uit de Aspose.PDF-bibliotheek. De C#-broncode van de tutorial laat zien hoe u een document maakt en de titel- en taaleigenschappen instelt.
+ A: Om een nieuw PDF-document te maken, moet u een`Document` object uit de Aspose.PDF-bibliotheek. De C#-broncode van de tutorial laat zien hoe u een document maakt en de titel en taaleigenschappen instelt.
 
-#### Vraag: Wat is de betekenis van het hoofdstructuurelement in een PDF-document?
+#### V: Wat is de betekenis van het rootstructuurelement in een PDF-document?
 
-A: Het hoofdstructuurelement fungeert als container voor andere structuurelementen en helpt bij het ordenen en categoriseren van de inhoud van het PDF-document. Het speelt een cruciale rol bij het vaststellen van de logische structuur van het document.
+A: Het root-structuurelement fungeert als een container voor andere structuurelementen en helpt de inhoud van het PDF-document te organiseren en categoriseren. Het speelt een cruciale rol bij het vaststellen van de logische structuur van het document.
 
-#### Vraag: Hoe kan ik een arraystructuurelement maken en aanpassen met Aspose.PDF voor .NET?
+#### V: Hoe kan ik een arraystructuurelement maken en aanpassen met Aspose.PDF voor .NET?
 
  A: U kunt een arraystructuurelement maken met behulp van de`CreateTableElement()` methode. De broncode van de tutorial biedt voorbeelden van het aanpassen van verschillende eigenschappen van het tabelelement, zoals achtergrondkleur, randen, uitlijning, kolombreedte en meer.
 
-#### Vraag: Kan ik de stijlen en eigenschappen van tabelcellen binnen het array-element aanpassen?
+#### V: Kan ik de stijlen en eigenschappen van tabelcellen binnen het array-element aanpassen?
 
-A: Ja, in de tutorial wordt beschreven hoe u de stijlen en eigenschappen van het gehele tabelelement kunt aanpassen, inclusief kopteksten, hoofdrijen en voettekst. Het gaat echter niet specifiek in op het aanpassen van individuele tabelcellen.
+A: Ja, de tutorial behandelt hoe u de stijlen en eigenschappen van het gehele tabelelement kunt aanpassen, inclusief headers, body-rijen en footer. Het behandelt echter niet specifiek het aanpassen van individuele tabelcellen.
 
-#### Vraag: Hoe kan ik kopteksten, hoofdtekstrijen en een voettekst aan het tabelelement toevoegen?
+#### V: Hoe kan ik kopteksten, hoofdtekstrijen en een voettekst toevoegen aan het tabelelement?
 
-A: In de tutorial wordt uitgelegd hoe u kopteksten, hoofdrijen en een voettekst kunt maken en toevoegen aan het tabelelement met behulp van de juiste methoden van Aspose.PDF voor .NET.
+A: In de tutorial wordt uitgelegd hoe u headers, body-rijen en een voettekst aan het tabelelement kunt toevoegen met behulp van de juiste methoden die Aspose.PDF voor .NET biedt.
 
-#### Vraag: Wat is PDF/UA-compliance en hoe kan ik dit valideren voor mijn getagde PDF-document?
+#### V: Wat is PDF/UA-compliance en hoe kan ik dit valideren voor mijn getagde PDF-document?
 
- A: PDF/UA-compliance zorgt ervoor dat het PDF-document voldoet aan de toegankelijkheidsnormen, waardoor het toegankelijker wordt voor gebruikers met een beperking. In de tutorial wordt gedemonstreerd hoe u de PDF/UA-conformiteit kunt valideren met behulp van de`Validate()` methode en genereer een XML-compliancerapport.
+ A: PDF/UA-compliance zorgt ervoor dat het PDF-document voldoet aan de toegankelijkheidsnormen, waardoor het toegankelijker wordt voor gebruikers met een beperking. De tutorial laat zien hoe u PDF/UA-conformiteit kunt valideren met behulp van de`Validate()` methode en genereer een XML-nalevingsrapport.
 
-#### Vraag: Hoe kan ik deze concepten integreren in mijn eigen .NET-applicaties?
+#### V: Hoe kan ik deze concepten integreren in mijn eigen .NET-toepassingen?
 
-A: U kunt de meegeleverde C#-broncodevoorbeelden gebruiken als richtlijn voor het implementeren van de opmaak van array-elementen in uw eigen .NET-toepassingen. Wijzig en pas de code aan uw vereisten aan en integreer deze in uw projecten.
+A: U kunt de meegeleverde C# broncodevoorbeelden gebruiken als leidraad voor het implementeren van array-elementopmaak in uw eigen .NET-toepassingen. Wijzig en pas de code aan om aan uw vereisten te voldoen en integreer deze in uw projecten.
 
-#### Vraag: Zijn er aanbevolen best practices voor het opmaken van array-elementen in PDF-documenten?
+#### V: Zijn er aanbevolen best practices voor het opmaken van array-elementen in PDF-documenten?
 
-A: Houd bij het opmaken van array-elementen (tabellen) rekening met de leesbaarheid en toegankelijkheid van de inhoud. Gebruik duidelijke en leesbare lettertypen, geschikte kleuren en zorg voor een consistente lay-out. Valideer de PDF/UA-compliance om ervoor te zorgen dat aan de toegankelijkheidsnormen wordt voldaan.
+A: Houd bij het formatteren van array-elementen (tabellen) rekening met de leesbaarheid en toegankelijkheid van de inhoud. Gebruik duidelijke en leesbare lettertypen, geschikte kleuren en zorg voor een consistente lay-out. Valideer PDF/UA-naleving om te garanderen dat aan de toegankelijkheidsnormen wordt voldaan.
 
-#### Vraag: Welke andere functies van Aspose.PDF voor .NET kan ik verkennen voor het aanpassen van PDF-documenten?
+#### V: Welke andere functies van Aspose.PDF voor .NET kan ik gebruiken om PDF-documenten aan te passen?
 
-A: Aspose.PDF voor .NET biedt een reeks functies voor het aanpassen van PDF-documenten, waaronder tekstmanipulatie, het invoegen van afbeeldingen, beheer van formuliervelden, digitale handtekeningen, annotaties en meer. Raadpleeg de officiële documentatie en bronnen om aanvullende functionaliteiten te verkennen.
+A: Aspose.PDF voor .NET biedt een scala aan functies voor het aanpassen van PDF-documenten, waaronder tekstmanipulatie, het invoegen van afbeeldingen, beheer van formuliervelden, digitale handtekeningen, annotaties en meer. Raadpleeg de officiële documentatie en bronnen om extra functionaliteiten te verkennen.

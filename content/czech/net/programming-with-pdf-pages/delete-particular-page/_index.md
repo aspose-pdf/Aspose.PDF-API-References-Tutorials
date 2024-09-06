@@ -37,7 +37,7 @@ pdfDocument.Pages.Delete(2);
 ```
 
 ## Krok 4: Uložte aktualizovaný soubor PDF
- Nakonec můžete aktualizovaný dokument PDF uložit do výstupního souboru pomocí dokumentu`Save()` metoda. Ujistěte se, že jste zadali správnou cestu a název souboru.
+Nakonec můžete aktualizovaný dokument PDF uložit do výstupního souboru pomocí dokumentu`Save()` metoda. Ujistěte se, že jste zadali správnou cestu a název souboru.
 
 ```csharp
 dataDir = dataDir + "DeleteParticularPage_out.pdf";
@@ -84,4 +84,4 @@ Odpověď: Pokud se pokusíte odstranit stránku s indexem, který je mimo rozsa
 
 #### Otázka: Jak mohu určit celkový počet stránek v dokumentu PDF před odstraněním stránky?
 
- Odpověď: Celkový počet stránek v dokumentu PDF můžete určit přístupem k`Count` vlastnictvím`Pages` sbírka. Můžete například použít`pdfDocument.Pages.Count` získat celkový počet stránek v`pdfDocument`.
+ Odpověď: Celkový počet stránek v dokumentu PDF můžete určit přístupem k`Count` majetek z`Pages` sbírka. Můžete například použít`pdfDocument.Pages.Count` získat celkový počet stránek v`pdfDocument`.

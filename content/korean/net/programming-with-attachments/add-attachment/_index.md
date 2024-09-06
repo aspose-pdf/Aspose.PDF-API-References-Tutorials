@@ -1,113 +1,121 @@
 ---
 title: PDF 파일에 첨부 파일 추가
 linktitle: PDF 파일에 첨부 파일 추가
-second_title: .NET API 참조용 Aspose.PDF
-description: .NET용 Aspose.PDF를 사용하여 PDF 파일에 첨부 파일을 추가하는 방법을 알아보세요. 쉬운 취급을 위한 단계별 가이드입니다.
+second_title: .NET API 참조를 위한 Aspose.PDF
+description: 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 파일에 첨부 파일을 추가하는 방법을 알아보세요. 손쉽게 문서를 강화하세요.
 type: docs
 weight: 10
 url: /ko/net/programming-with-attachments/add-attachment/
 ---
-이 튜토리얼에서는 .NET용 Aspose.PDF를 사용하여 PDF 파일에 첨부 파일을 추가하기 위해 다음 C# 소스 코드를 단계별로 안내합니다.
+## 소개
 
-시작하기 전에 Aspose.PDF 라이브러리를 설치하고 개발 환경을 설정했는지 확인하세요. 또한 C# 프로그래밍에 대한 기본 지식이 있어야 합니다.
+PDF 문서에 파일을 첨부해야 하는 경우가 있었나요? 보충 텍스트 파일이든, 이미지든, 다른 유형의 문서든, PDF에 첨부 파일을 추가하면 파일의 사용성과 기능을 향상시킬 수 있습니다. 이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 파일에 첨부 파일을 추가하는 방법을 살펴보겠습니다. 이 강력한 라이브러리를 사용하면 개발자가 PDF 문서를 쉽게 조작할 수 있으며, 이 가이드를 마치면 전문가처럼 첨부 파일을 추가할 수 있을 것입니다!
 
-### 1단계: 문서 디렉터리 설정
+## 필수 조건
 
-제공된 소스 코드에서 첨부 파일을 추가하려는 PDF 파일이 있는 디렉터리를 지정해야 합니다. "dataDir" 변수를 원하는 디렉터리로 변경합니다.
+첨부 파일 추가의 세부 사항을 살펴보기 전에 몇 가지 필수 조건을 충족해야 합니다.
+
+1.  .NET용 Aspose.PDF: Aspose.PDF 라이브러리가 설치되어 있는지 확인하세요. 다음에서 다운로드할 수 있습니다.[대지](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: .NET 코드를 작성하고 테스트할 수 있는 개발 환경입니다.
+3. C#에 대한 기본 지식: C# 프로그래밍에 익숙하면 코드 조각을 더 잘 이해하는 데 도움이 됩니다.
+
+## 패키지 가져오기
+
+시작하려면 C# 프로젝트에서 필요한 패키지를 가져와야 합니다. 방법은 다음과 같습니다.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-### 2단계: 기존 PDF 문서 열기
+패키지를 설치한 후 코드 작성을 시작할 수 있습니다.
 
-지정된 경로를 사용하여 기존 PDF 문서를 엽니다.
+이제 모든 것이 설정되었으니 PDF 파일에 첨부 파일을 추가하는 과정을 관리하기 쉬운 단계로 나누어 보겠습니다.
 
-```csharp
-Document pdfDocument = new Document(dataDir + "AddAttachment.pdf");
-```
+## 1단계: 문서 디렉토리 정의
 
-### 3단계: 첨부 파일로 추가할 새 파일 설정
-
-첨부 파일로 추가하려는 새 파일을 구성합니다. 이 예에서는 이름이 "test.txt"이고 설명이 "예제 텍스트 파일"인 텍스트 파일을 추가합니다.
+첫 번째 단계는 문서 디렉토리 경로를 정의하는 것입니다. 여기에 PDF 파일과 첨부하려는 파일이 위치하게 됩니다.
 
 ```csharp
-FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
-```
-
-### 4단계: 문서의 첨부 파일 컬렉션에 첨부 파일 추가
-
-문서의 첨부 파일 컬렉션에 첨부 파일을 추가합니다.
-
-```csharp
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-```
-
-### 5단계: 새 출력 파일 저장
-
-마지막으로 지정된 디렉터리에 "AddAttachment_out.pdf"라는 이름으로 결과 새 PDF 파일을 저장합니다.
-
-```csharp
-pdfDocument.Save(dataDir + "AddAttachment_out.pdf");
-```
-
-### .NET용 Aspose.PDF를 사용하여 첨부 파일 추가에 대한 샘플 소스 코드
- 
-```csharp
-
-// 문서 디렉터리의 경로입니다.
+// 문서 디렉토리의 경로입니다.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ 교체를 꼭 해주세요`"YOUR DOCUMENT DIRECTORY"` 파일이 저장된 실제 경로를 사용합니다.
+
+## 2단계: PDF 문서 열기
+
+ 다음으로, 첨부 파일을 추가하려는 PDF 문서를 열어야 합니다. 이는 다음을 사용하여 수행됩니다.`Document` Aspose.PDF에서 제공하는 클래스입니다.
+
+```csharp
 // 문서 열기
 Document pdfDocument = new Document(dataDir + "AddAttachment.pdf");
-// 첨부 파일로 추가할 새 파일 설정
-FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
-//문서의 첨부 파일 컬렉션에 첨부 파일 추가
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-dataDir = dataDir + "AddAttachment_out.pdf";
-// 새 출력 저장
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nSample text file attached successfully.\nFile saved at " + dataDir);
-
 ```
+
+ 이 줄에서 우리는 새로운 인스턴스를 생성하고 있습니다.`Document` 클래스 및 기존 PDF 파일 로딩`AddAttachment.pdf`.
+
+## 3단계: 첨부할 파일 설정
+
+ 이제 첨부하려는 파일을 지정할 시간입니다.`FileSpecification` 파일 경로와 설명을 포함하는 객체입니다.
+
+```csharp
+// 첨부파일로 추가할 새 파일을 설정합니다.
+FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
+```
+
+ 여기서는 다음 이름의 텍스트 파일을 첨부할 준비를 하고 있습니다.`test.txt` "샘플 텍스트 파일"에 대한 설명이 포함되어 있습니다.
+
+## 4단계: 문서에 첨부 파일 추가
+
+파일 사양이 준비되면 이제 PDF 문서의 첨부 파일 컬렉션에 첨부 파일을 추가할 수 있습니다.
+
+```csharp
+// 문서의 첨부 파일 컬렉션에 첨부 파일 추가
+pdfDocument.EmbeddedFiles.Add(fileSpecification);
+```
+
+이 코드 줄은 지정된 파일을 PDF 문서에 내장 파일로 추가합니다.
+
+## 5단계: 업데이트된 문서 저장
+
+첨부 파일을 추가한 후 업데이트된 PDF 문서를 저장해야 합니다. 새 파일을 저장할 출력 경로를 지정하세요.
+
+```csharp
+dataDir = dataDir + "AddAttachment_out.pdf";
+// 새로운 출력 저장
+pdfDocument.Save(dataDir);
+```
+
+ 이 단계에서는 수정된 PDF를 다음과 같이 저장합니다.`AddAttachment_out.pdf` 같은 디렉토리에 있습니다.
+
+## 6단계: 작업 확인
+
+마지막으로, 작업이 성공했는지 확인하는 것이 항상 좋은 관행입니다. 콘솔에 메시지를 인쇄하여 이를 수행할 수 있습니다.
+
+```csharp
+Console.WriteLine("\nSample text file attached successfully.\nFile saved at " + dataDir);
+```
+
+이 메시지는 첨부 파일이 성공적으로 추가되었으며, 새 파일의 위치가 어디인지 알려줍니다.
 
 ## 결론
 
-이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 파일에 첨부 파일을 추가하는 방법을 설명했습니다. 이제 이 지식을 사용하여 추가 파일을 PDF 문서에 첨부 파일로 추가할 수 있습니다.
+Aspose.PDF for .NET을 사용하여 PDF 파일에 첨부 파일을 추가하는 것은 문서의 기능을 크게 향상시킬 수 있는 간단한 프로세스입니다. 이 튜토리얼에 설명된 단계를 따르면 PDF에 파일을 쉽게 첨부하여 청중에게 더 유익하고 유용하게 만들 수 있습니다. 보고서, 프레젠테이션 또는 다른 유형의 문서를 작업하든 이 기능은 게임 체인저가 될 수 있습니다.
 
-### PDF 파일에 첨부 파일 추가에 대한 FAQ
+## 자주 묻는 질문
 
-#### Q: PDF 파일에 첨부 파일을 추가해야 하는 이유는 무엇입니까?
+### PDF에 어떤 유형의 파일을 첨부할 수 있나요?
+텍스트 파일, 이미지, 문서 등 다양한 파일 유형을 첨부할 수 있습니다.
 
-A: PDF 파일에 첨부 파일을 추가하면 지원 문서, 이미지, 파일과 같은 보충 자료를 포함할 수 있어 PDF 콘텐츠에 추가 컨텍스트나 정보를 제공할 수 있습니다.
+### .NET용 Aspose.PDF는 무료로 사용할 수 있나요?
+Aspose.PDF는 무료 평가판을 제공하지만, 모든 기능을 사용하려면 라이선스를 구매해야 합니다.
 
-#### Q: .NET용 Aspose.PDF는 첨부 파일 추가 프로세스를 어떻게 단순화합니까?
+### 하나의 PDF에 여러 개의 첨부 파일을 추가할 수 있나요?
+네, PDF 첨부 파일 컬렉션에 여러 개의 파일을 추가할 수 있습니다.
 
-A: .NET용 Aspose.PDF는 PDF 파일에 첨부 파일을 쉽게 추가할 수 있는 간소화된 API를 제공합니다. 제공된 소스 코드는 이 작업을 수행하는 방법을 단계별로 보여줍니다.
+### Aspose.PDF에 대한 더 많은 문서는 어디에서 찾을 수 있나요?
+ 포괄적인 문서는 다음에서 찾을 수 있습니다.[Aspose 웹사이트](https://reference.aspose.com/pdf/net/).
 
-#### Q: .NET용 Aspose.PDF를 사용하여 PDF에 어떤 유형의 파일을 첨부할 수 있습니까?
-
-A: .NET용 Aspose.PDF는 개발 환경에서 액세스할 수 있는 경우 텍스트 파일, 이미지, 문서, 스프레드시트 등을 포함한 다양한 유형의 파일 첨부를 지원합니다.
-
-#### Q: PDF 파일에 추가할 수 있는 첨부 파일 수에 제한이 있습니까?
-
-A: 추가할 수 있는 첨부 파일 수에는 엄격한 제한이 없지만 전체 파일 크기와 문서 성능에 대한 잠재적 영향을 고려하는 것이 중요합니다.
-
-#### Q: 첨부파일의 설명을 맞춤설정할 수 있나요?
-
-A: 예, 첨부된 각 파일의 설명을 사용자 정의할 수 있습니다. 이 설명은 첨부 파일에 대한 추가 컨텍스트를 제공하고 사용자가 해당 목적을 이해하는 데 도움이 됩니다.
-
-#### Q: 첨부 파일을 추가할 때 파일 크기 고려 사항이 있나요?
-
-A: 첨부 파일은 PDF의 전체 파일 크기를 늘릴 수 있지만 .NET용 Aspose.PDF는 문서 성능에 대한 부정적인 영향을 최소화하기 위해 효율적인 첨부 파일 처리를 보장합니다.
-
-#### Q: PDF 문서 내의 특정 페이지에 첨부 파일을 추가할 수 있습니까?
-
-A: 첨부 파일은 특정 페이지가 아닌 전체 PDF 문서와 연결됩니다. PDF 뷰어의 첨부 패널을 통해 사용자가 액세스할 수 있습니다.
-
-#### Q: 첨부 파일이 성공적으로 추가되었는지 어떻게 확인할 수 있나요?
-
-A: 제공된 소스 코드를 따른 후 결과 PDF 파일을 열어 첨부 패널을 통해 첨부 파일에 액세스할 수 있는지 확인할 수 있습니다.
-
-#### Q: 첨부 파일을 추가한 후 제거하거나 업데이트할 수 있습니까?
-
-A: 예, .NET API용 Aspose.PDF를 사용하여 PDF 파일에서 첨부 파일을 수정하거나 제거할 수 있으므로 필요에 따라 첨부 파일을 유연하게 관리할 수 있습니다.
+### Aspose.PDF에 대한 지원은 어떻게 받을 수 있나요?
+ 방문하면 지원을 받을 수 있습니다.[Aspose 포럼](https://forum.aspose.com/c/pdf/10).

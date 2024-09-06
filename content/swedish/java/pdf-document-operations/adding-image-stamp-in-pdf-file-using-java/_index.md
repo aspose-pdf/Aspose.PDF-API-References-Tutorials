@@ -42,7 +42,7 @@ Document pdfDocument = new Document();
 
 ## Steg 4: Lägg till en bildstämpel
 
-För att lägga till en bildstämpel till PDF-dokumentet behöver du en bildfil som du kan använda som stämpel. Så här kan du göra det:
+För att lägga till en bildstämpel i PDF-dokumentet behöver du en bildfil som du kan använda som stämpel. Så här kan du göra det:
 
 ```java
 // Kod för att lägga till en bildstämpel

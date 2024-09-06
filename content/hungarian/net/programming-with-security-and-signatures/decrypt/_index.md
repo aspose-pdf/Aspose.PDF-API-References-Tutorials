@@ -67,7 +67,7 @@ A frissített PDF a megadott helyre kerül mentésre.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 // Nyissa meg a dokumentumot
 Document document = new Document(dataDir+ "Decrypt.pdf", "password");
-//PDF visszafejtése
+// PDF visszafejtése
 document.Decrypt();
 dataDir = dataDir + "Decrypt_out.pdf";
 // A frissített PDF mentése
@@ -77,13 +77,13 @@ Console.WriteLine("\nPDF file decrypted successfully.\nFile saved at " + dataDir
 
 ## Következtetés
 
-Gratulálok ! Sikeresen visszafejtett egy PDF-fájlt az Aspose.PDF for .NET használatával. Ez az oktatóanyag a dokumentum megnyitásától a frissített verzió mentéséig tartó lépésről lépésre haladó folyamatot ismertette. Most már használhatja ezt a funkciót a jelszavak eltávolítására a PDF-fájlokból.
+Gratulálok ! Sikeresen visszafejtett egy PDF-fájlt az Aspose.PDF for .NET használatával. Ez az oktatóanyag a dokumentum megnyitásától a frissített verzió mentéséig lépésről lépésre haladó folyamatot ismertette. Most már használhatja ezt a funkciót a jelszavak eltávolítására a PDF-fájlokból.
 
 ### GYIK a PDF fájl visszafejtéséhez
 
 #### K: Mi a célja ennek az oktatóanyagnak?
 
-V: Ennek az oktatóanyagnak az a célja, hogy végigvezeti Önt a PDF-fájlok Aspose.PDF for .NET használatával visszafejtésének folyamatán. A könyvtár lehetővé teszi a jelszó eltávolítását egy meglévő PDF-dokumentumból és a frissített verzió mentését, így könnyebben hozzáférhet a fájlhoz.
+V: Ennek az oktatóanyagnak az a célja, hogy végigvezesse a PDF-fájlok Aspose.PDF for .NET használatával visszafejtésének folyamatán. A könyvtár lehetővé teszi, hogy eltávolítsa a jelszót egy meglévő PDF-dokumentumból, és elmentse a frissített verziót, így könnyebben hozzáférhet a fájlhoz.
 
 #### K: Milyen előfeltételek szükségesek a kezdéshez?
 
@@ -99,7 +99,7 @@ V: Kövesse a megadott lépéseket a fejlesztői környezet beállításához, b
 
 #### K: Hogyan dekódolhatok egy PDF dokumentumot?
 
- V: Miután megnyitotta a PDF-dokumentumot, használja a`Decrypt` módszer a`Document` tárgy. Ehhez a módszerhez nincs szükség paraméterekre.
+ V: Miután megnyitotta a PDF-dokumentumot, használja a`Decrypt` módszer a`Document` objektum. Ehhez a módszerhez nincs szükség paraméterekre.
 
 #### K: Megadhatok különböző jelszavakat a visszafejtéshez?
 

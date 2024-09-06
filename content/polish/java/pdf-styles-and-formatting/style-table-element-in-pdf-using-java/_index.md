@@ -1,8 +1,8 @@
 ---
-title: Stylizuj element tabeli w formacie PDF przy użyciu języka Java
-linktitle: Stylizuj element tabeli w formacie PDF przy użyciu języka Java
-second_title: Aspose.PDF Interfejs API przetwarzania plików Java w formacie Java
-description: Naucz się stylizować tabele w dokumentach PDF przy użyciu Java z Aspose.PDF. Twórz atrakcyjne wizualnie tabele i dostosowuj ich wygląd do profesjonalnych plików PDF.
+title: Styl elementu tabeli w PDF przy użyciu Java
+linktitle: Styl elementu tabeli w PDF przy użyciu Java
+second_title: Aspose.PDF Java PDF Processing API
+description: Naucz się stylizować tabele w dokumentach PDF za pomocą Java z Aspose.PDF. Twórz atrakcyjne wizualnie tabele i dostosowuj ich wygląd do profesjonalnych plików PDF.
 type: docs
 weight: 14
 url: /pl/java/pdf-styles-and-formatting/style-table-element-in-pdf-using-java/
@@ -10,15 +10,15 @@ url: /pl/java/pdf-styles-and-formatting/style-table-element-in-pdf-using-java/
 
 ## Wstęp
 
-Tabele stanowią podstawową część wielu dokumentów PDF, a ich stylizacja może znacznie poprawić wizualną prezentację danych. W tym artykule przeprowadzimy Cię przez proces stylizowania elementów tabeli w plikach PDF przy użyciu języka Java i Aspose.PDF.
+Tabele są podstawową częścią wielu dokumentów PDF, a ich stylizacja może znacznie poprawić wizualną prezentację danych. W tym artykule przeprowadzimy Cię przez proces stylizowania elementów tabeli w plikach PDF przy użyciu Java i Aspose.PDF.
 
-## Warunki wstępne
+## Wymagania wstępne
 
-Zanim zaczniemy, upewnij się, że masz następujące elementy:
+Zanim zaczniemy, upewnij się, że masz następujące rzeczy:
 
 - Środowisko programistyczne Java
 - Aspose.PDF dla biblioteki Java
-- Podstawowa znajomość programowania w języku Java
+- Podstawowa znajomość programowania w Javie
 
 ## Konfigurowanie Aspose.PDF dla Java
 
@@ -28,7 +28,7 @@ Po pobraniu dołącz bibliotekę do swojego projektu Java.
 
 ## Tworzenie dokumentu PDF
 
-Zacznijmy od utworzenia nowego dokumentu PDF przy użyciu Aspose.PDF dla Java.
+Zacznijmy od utworzenia nowego dokumentu PDF za pomocą Aspose.PDF dla Java.
 
 ```java
 // Kod Java do tworzenia dokumentu PDF
@@ -37,21 +37,21 @@ Document pdfDocument = new Document();
 
 ## Dodawanie tabeli
 
-Dodajmy teraz tabelę do naszego dokumentu PDF. Możemy określić liczbę wierszy i kolumn tabeli.
+Teraz dodajmy tabelę do naszego dokumentu PDF. Możemy określić liczbę wierszy i kolumn dla tabeli.
 
 ```java
-// Kod Java umożliwiający dodanie tabeli
+// Kod Java do dodania tabeli
 Table table = new Table();
 table.setColumnWidths("100");
 pdfDocument.getPages().get_Item(1).getParagraphs().add(table);
 ```
 
-## Stylizacja stołu
+## Stylizacja tabeli
 
-Aby nadać styl tabeli, możesz dostosować różne aspekty, takie jak kolor tła komórki, czcionka tekstu i inne.
+Aby nadać styl tabeli, możesz dostosować różne jej aspekty, np. kolor tła komórki, czcionkę tekstu i inne.
 
 ```java
-//Kod Java do stylizacji tabeli
+//Kod Java do stylizowania tabeli
 table.setDefaultCellBorder(new BorderInfo(BorderSide.All, 1F));
 table.setDefaultCellPadding(new MarginInfo(5, 5, 5, 5));
 table.setDefaultCellTextState(new TextState());
@@ -68,12 +68,12 @@ row.getCells().add("Name");
 row.getCells().add("Age");
 row.getCells().add("Country");
 
-// W razie potrzeby dodaj więcej wierszy i danych
+// Dodaj więcej wierszy i danych w razie potrzeby
 ```
 
 ## Dostosowywanie obramowań tabeli
 
-Możesz dodatkowo dostosować obramowania stołu, aby uzyskać pożądany wygląd.
+Możesz dodatkowo dostosować obramowanie tabeli, aby uzyskać pożądany wygląd.
 
 ```java
 // Kod Java do dostosowywania obramowań tabeli
@@ -82,7 +82,7 @@ table.setBorder(new BorderInfo(BorderSide.All, 2F));
 
 ## Formatowanie zawartości komórki
 
-Formatowanie zawartości komórki, np. wyrównania tekstu i stylu czcionki, można łatwo wykonać.
+Formatowanie zawartości komórki, na przykład wyrównanie tekstu i styl czcionki, można wykonać łatwo.
 
 ```java
 // Kod Java do formatowania zawartości komórki
@@ -97,7 +97,7 @@ cell.setAlignment(HorizontalAlignment.Center);
 
 ## Dodawanie nagłówków i stopek
 
-Nagłówki i stopki są niezbędne w dokumentach PDF. W razie potrzeby możesz dodać je do swojego stołu.
+Nagłówki i stopki są niezbędne w dokumentach PDF. Możesz je dodać do tabeli w razie potrzeby.
 
 ```java
 // Kod Java do dodawania nagłówków i stopek
@@ -116,26 +116,26 @@ pdfDocument.save("styled_table_example.pdf");
 
 ## Wniosek
 
-tym samouczku omówiliśmy, jak stylizować elementy tabeli w dokumentach PDF przy użyciu języka Java i Aspose.PDF. Nauczyłeś się tworzyć tabele, dostosowywać ich wygląd, dodawać dane i formatować zawartość komórek. Dzięki tej wiedzy możesz tworzyć profesjonalnie wyglądające pliki PDF ze stylizowanymi tabelami do różnych zastosowań.
+tym samouczku sprawdziliśmy, jak stylizować elementy tabeli w dokumentach PDF za pomocą języka Java z Aspose.PDF. Nauczyłeś się tworzyć tabele, dostosowywać ich wygląd, dodawać dane i formatować zawartość komórek. Dzięki tej wiedzy możesz tworzyć profesjonalnie wyglądające pliki PDF ze stylizowanymi tabelami dla różnych aplikacji.
 
 ## Często zadawane pytania
 
-### Jak zmienić kolor tła tabeli?
+### Jak mogę zmienić kolor tła tabeli?
 
- Aby zmienić kolor tła tabeli, możesz użyć opcji`table.setBackgroundColor(Color)` metodę i określ żądany kolor.
+ Aby zmienić kolor tła tabeli, możesz użyć`table.setBackgroundColor(Color)` metodę i określ pożądany kolor.
 
 ### Czy mogę scalić komórki w tabeli?
 
- Tak, możesz łączyć komórki w tabeli za pomocą`Cell` klasa`setColSpan(int)` I`setRowSpan(int)` metody.
+ Tak, możesz scalić komórki w tabeli za pomocą`Cell` klasa`setColSpan(int)` I`setRowSpan(int)` metody.
 
-### Jak dodać obramowanie do określonej komórki?
+### Jak dodać obramowanie do konkretnej komórki?
 
- Aby dodać obramowanie do określonej komórki, możesz użyć opcji`Cell` klasa`setBorder` metodę i określ właściwości obramowania.
+ Aby dodać obramowanie do określonej komórki, możesz użyć`Cell` klasa`setBorder` metodę i określ właściwości obramowania.
 
-### Czy plik Aspose.PDF dla Java jest kompatybilny z różnymi środowiskami IDE Java?
+### Czy Aspose.PDF dla Java jest kompatybilny z różnymi środowiskami IDE Java?
 
-Tak, Aspose.PDF dla Java jest kompatybilny z różnymi zintegrowanymi środowiskami programistycznymi Java (IDE), w tym Eclipse, IntelliJ IDEA i NetBeans.
+Tak, Aspose.PDF for Java jest kompatybilny z różnymi zintegrowanymi środowiskami programistycznymi (IDE) Java, w tym Eclipse, IntelliJ IDEA i NetBeans.
 
 ### Gdzie mogę znaleźć więcej dokumentacji dla Aspose.PDF dla Java?
 
- Szczegółową dokumentację i odniesienia do API dla Aspose.PDF dla Java można znaleźć pod adresem[Aspose.PDF dla dokumentacji Java](https://reference.aspose.com/pdf/java/).
+ Szczegółową dokumentację i odniesienia do interfejsu API dla Aspose.PDF dla języka Java można znaleźć pod adresem[Aspose.PDF dla dokumentacji Java](https://reference.aspose.com/pdf/java/).

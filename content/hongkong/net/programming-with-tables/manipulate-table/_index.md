@@ -121,7 +121,7 @@ catch (Exception ex)
 
 #### Q：是否可以從 PDF 文件中刪除表格？
 
-答：是的，您可以使用 Aspose.PDF for .NET 從 PDF 文件中刪除表格。要實現此目的，您可以刪除特定的`Table`對象從`Page.Paragraphs`收藏。您可以使用下列屬性來標識要刪除的表`Table.NumberOfColumns`, `Table.NumberOfRows`，以及其他唯一識別碼。
+答：是的，您可以使用 Aspose.PDF for .NET 從 PDF 文件中刪除表格。為此，您可以刪除特定的`Table`對象從`Page.Paragraphs`收藏。您可以使用下列屬性來標識要刪除的表`Table.NumberOfColumns`, `Table.NumberOfRows`，以及其他唯一識別碼。
 
 #### Q：我可以更改表格文字的格式（字體、顏色、對齊方式）嗎？
 

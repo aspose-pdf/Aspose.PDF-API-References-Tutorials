@@ -2,142 +2,142 @@
 title: 根據影像尺寸決定頁面方向
 linktitle: 根據影像尺寸決定頁面方向
 second_title: Aspose.PDF for .NET API 參考
-description: 使用 Aspose.PDF for .NET 根據影像尺寸設定頁面方向的逐步指南。
+description: 在此逐步指南中了解如何使用 Aspose.PDF for .NET 建立 PDF，根據影像尺寸設定頁面方向。
 type: docs
 weight: 80
 url: /zh-hant/net/document-conversion/page-orientation-according-image-dimensions/
 ---
-在本教學中，我們將引導您完成使用 Aspose.PDF for .NET 根據影像尺寸設定頁面方向的過程。我們將循環遍歷給定目錄中的 JPG 圖像列表，並根據每個圖像的寬度自動調整頁面方向。請按照以下步驟來實現此目的。
+## 介紹
+
+歡迎來到 Aspose.PDF for .NET 的世界！如果您希望以程式設計方式建立、操作或轉換 PDF 文檔，那麼您來對地方了。 Aspose.PDF 是一個功能強大的程式庫，可讓開發人員無縫地處理 PDF 檔案。在本指南中，我們將引導您完成根據圖像尺寸設定頁面方向的過程。無論您是經驗豐富的開發人員還是新手，本教學都將為您提供開始使用 Aspose.PDF 所需的知識。
 
 ## 先決條件
-在開始之前，請確保滿足以下先決條件：
 
-- C# 程式語言的基礎知識。
-- 您的系統上安裝了適用於 .NET 的 Aspose.PDF 庫。
-- 開發環境，例如 Visual Studio。
+在我們深入研究程式碼之前，讓我們確保您擁有遵循所需的一切：
 
-## 第 1 步：瀏覽 JPG 圖像
-在此步驟中，我們將瀏覽給定目錄中的所有 JPG 圖像。請按照以下程式碼操作：
+1. Visual Studio：確保您的電腦上安裝了 Visual Studio。它是 .NET 開發的最佳 IDE。
+2. .NET Framework：本指南假設您使用的是 .NET Framework。確保您安裝了合適的版本。
+3.  Aspose.PDF for .NET：您可以從下列位置下載程式庫：[阿斯普斯網站](https://releases.aspose.com/pdf/net/) 。如果您想先嘗試一下，您可以獲取[免費試用](https://releases.aspose.com/).
+4. C#基礎知識：熟悉C#程式設計將有助於您更好地理解範例。
 
-```csharp
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+## 導入包
 
-//建立新的 PDF 文檔
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+首先，您需要匯入必要的套件。您可以這樣做：
 
-//檢索特定目錄中所有 JPG 檔案的名稱
-string[] fileEntries = Directory.GetFiles(dataDir, "*.JPG");
-```
+1. 開啟您的 Visual Studio 專案。
+2. 在解決方案資源管理器中以滑鼠右鍵按一下您的項目，然後選擇「管理 NuGet 套件」。
+3. 搜尋`Aspose.PDF`並安裝它。
 
-一定要更換`"YOUR DOCUMENTS DIRECTORY"`與 JPG 影像所在的實際目錄。
+現在我們已經完成了所有設置，讓我們逐步分解該範例。
 
-## 第2步：建立頁面和圖像
-瀏覽 JPG 檔案後，我們將為每個檔案建立一個頁面和一個圖像。使用以下程式碼：
+## 第 1 步：設定您的文件目錄
+
+首先，您需要指定儲存影像的文檔目錄的路徑。 Aspose 將在此處找到 JPG 檔案。
 
 ```csharp
-int counter;
-for (counter = 0; counter < fileEntries.Length - 1; counter++)
-{
-//建立頁面對象
-Aspose.Pdf.Page page = doc.Pages.Add();
-
-//建立影像對象
-Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
-image1.File = fileEntries[counter];
-```
-
-## 第 3 步：檢查影像尺寸
-現在讓我們檢查每個圖像的尺寸以確定頁面方向。使用以下程式碼：
-
-```csharp
-//建立 BitMap 物件以從影像檔案中獲取訊息
-Bitmap myimage = new Bitmap(fileEntries[counter]);
-
-//檢查圖像的寬度是否大於頁面的寬度
-if (myimage.Width > page.PageInfo.Width)
-//
-
-  If the width of the image is greater than the width of the page, set the page orientation to landscape
-page.PageInfo.IsLandscape = true;
-else
-//如果圖像的寬度小於頁面的寬度，請將頁面方向設定為縱向
-page.PageInfo.IsLandscape = false;
-```
-
-## 步驟 4：將影像新增至 PDF 文檔
-檢查影像的尺寸後，我們將把影像加入 PDF 文件的段落集合中。使用以下程式碼：
-
-```csharp
-//將影像加入PDF文件的段落集合中
-page.Paragraphs.Add(image1);
-```
-
-## 步驟 5：儲存 PDF 文件
-將所有圖像新增至 PDF 文件後，我們現在可以儲存生成的 PDF 文件。這是最後一步：
-
-```csharp
-//儲存 PDF 文件
-doc.Save(dataDir + "SetPageOrientation_out.pdf");
-```
-
-代替`"YOUR DOCUMENTS DIRECTORY"`以及要儲存輸出 PDF 檔案的所需目錄。
-
-### 使用 Aspose.PDF for .NET 根據圖像尺寸確定頁面方向的範例原始程式碼
-
-```csharp
-
 //文檔目錄的路徑。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+代替`"YOUR DOCUMENT DIRECTORY"`與影像所在的實際路徑。這一點至關重要，因為如果 Aspose 找不到您的圖像，它將無法建立 PDF。
+
+## 第 2 步：建立新的 PDF 文檔
+
+接下來，您將建立一個新的 PDF 文件物件。這是添加所有圖像的位置。
+
+```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+```
 
-//檢索特定目錄中所有 JPG 檔案的名稱
+這一行初始化了一個新的實例`Document`類，代表您的 PDF 文件。
+
+## 第 3 步：檢索影像文件
+
+現在，讓我們從指定目錄中檢索所有 JPG 檔案。這是使用以下方法完成的`Directory.GetFiles`方法。
+
+```csharp
 string[] fileEntries = Directory.GetFiles(dataDir, "*.JPG");
+```
 
+此行將為您提供與 JPG 格式相符的檔案名稱陣列。確保您的目錄包含一些 JPG 圖像才能正常工作！
+
+## 第 4 步：循環遍歷每個影像
+
+您需要循環遍歷每個影像檔案並將其新增至 PDF 文件中。您可以按照以下方法執行此操作：
+
+```csharp
 int counter;
 for (counter = 0; counter < fileEntries.Length - 1; counter++)
 {
-	//建立頁面對象
-	Aspose.Pdf.Page page = doc.Pages.Add();
+    //建立頁面對象
+    Aspose.Pdf.Page page = doc.Pages.Add();
+```
 
-	//建立影像對象
-	Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
-	image1.File = fileEntries[counter];
+在此循環中，您將為每個圖像建立一個新頁面。這`doc.Pages.Add()`方法將新頁面新增到您的 PDF 文件中。
 
-	//建立一個BitMap物件以取得影像檔案的信息
-	Bitmap myimage = new Bitmap(fileEntries[counter]);
-	//檢查圖像檔案的寬度是否大於頁面寬度
-	if (myimage.Width > page.PageInfo.Width)
-		//如果影像寬度大於頁面寬度，則將頁面方向設為橫向
-		page.PageInfo.IsLandscape = true;
-	else
-		//如果圖像寬度小於頁面寬度，則將頁面方向設定為縱向
-		page.PageInfo.IsLandscape = false;
-	//將影像新增至 PDF 文件的段落集合中
-	page.Paragraphs.Add(image1);
+## 第 5 步：建立影像對象
+
+對於每個圖像，您需要建立一個`Image`將保存影像資料的物件。
+
+```csharp
+    Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
+    image1.File = fileEntries[counter];
+```
+
+在這裡，您將當前圖像檔案指派給`Image`目的。這對於將圖像添加到 PDF 至關重要。
+
+## 第 6 步：檢查影像尺寸
+
+在將圖像新增至 PDF 之前，您需要檢查其尺寸以確定頁面方向。
+
+```csharp
+    Bitmap myimage = new Bitmap(fileEntries[counter]);
+    if (myimage.Width > page.PageInfo.Width)
+        page.PageInfo.IsLandscape = true;
+    else
+        page.PageInfo.IsLandscape = false;
+```
+
+此程式碼片段檢查圖像的寬度是否大於頁面寬度。如果是，則頁面方向設定為橫向；否則，它將保持縱向模式。
+
+## 第 7 步：將圖像新增至 PDF
+
+現在您已經設定了方向，是時候將圖像新增至 PDF 文件了。
+
+```csharp
+    page.Paragraphs.Add(image1);
 }
-//儲存 PDF 文件
+```
+
+此行將圖像新增至目前頁面的段落集合中。就像將照片放入相框中一樣！
+
+## 步驟 8：儲存 PDF 文檔
+
+最後，您需要將PDF文件儲存到您指定的目錄中。
+
+```csharp
 doc.Save(dataDir + "SetPageOrientation_out.pdf");
 ```
 
+該行以名稱儲存文檔`SetPageOrientation_out.pdf`。請務必檢查您的文件目錄中是否有新建立的 PDF！
+
 ## 結論
-在本教學中，我們介紹了使用 Aspose.PDF for .NET 根據圖像尺寸設定頁面方向的逐步過程。按照上述說明，您現在應該能夠建立每個影像具有正確頁面方向的 PDF 文件。當您有不同尺寸的圖像並希望將它們嵌入 PDF 文件中時，此功能非常有用。
 
-### 常見問題解答
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功建立了 PDF 文檔，並根據影像的尺寸設定頁面方向。這個強大的庫為您在應用程式中處理 PDF 文件開闢了無限可能。無論您是產生報告、發票或任何其他類型的文檔，Aspose.PDF 都能滿足您的需求。
 
-#### Q：我可以使用其他圖像格式代替 JPG 來根據圖像尺寸設定頁面方向嗎？
+## 常見問題解答
 
-答：是的，除了 JPG 之外，您還可以使用其他圖像格式（例如 PNG、BMP 或 GIF）來根據圖像尺寸設定頁面方向。提供的程式碼循環遍歷所有擴展名為“.JPG”的圖像文件，但您也可以修改它以包含其他圖像格式。
+### 什麼是 Aspose.PDF for .NET？
+Aspose.PDF for .NET 是一個函式庫，可讓開發人員以程式設計方式建立、操作和轉換 PDF 文件。
 
-#### Q：如果圖像的尺寸剛好等於頁面寬度會發生什麼事？
+### 如何安裝 Aspose.PDF？
+您可以透過 Visual Studio 中的 NuGet 套件管理器安裝 Aspose.PDF 或從[阿斯普斯網站](https://releases.aspose.com/pdf/net/).
 
-答：如果影像的寬度恰好等於頁面寬度，則頁面方向將設定為縱向。在提供的程式碼中，僅當影像的寬度大於頁面寬度時，頁面方向才會設定為橫向。
+### 我可以免費使用 Aspose.PDF 嗎？
+是的，Aspose 提供了[免費試用](https://releases.aspose.com/)供您在購買前測試該庫。
 
-#### Q：我可以根據具體需求自訂頁面方向邏輯嗎？
+### 在哪裡可以找到對 Aspose.PDF 的支援？
+您可以在以下位置找到支持[Aspose論壇](https://forum.aspose.com/c/pdf/10).
 
-A：是的，您可以根據特定需求自訂頁面方向邏輯。例如，您可以設定閾值來確定何時應將頁面方向設定為橫向或縱向。此外，您可以考慮影像高度或寬高比等因素來決定頁面方向。
-
-#### Q：我可以將其他內容（例如文字或表格）與圖像一起添加到 PDF 文件中嗎？
-
-答：是的，您可以將其他內容（例如文字或表格）與圖像一起添加到 PDF 文件中。 Aspose.PDF for .NET 提供了一組豐富的功能來操作 PDF 文檔，包括在頁面上新增文字、圖像、表格和其他元素。
+### 我可以使用 Aspose 將哪些類型的檔案轉換為 PDF？
+Aspose.PDF 支援多種文件格式，包括影像、Word 文件、Excel 試算表等。

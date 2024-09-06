@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-stamps-and-watermarks/image-in-header/
 
 ## 步驟 2： 載入現有 PDF 文檔
 
-第一步是將現有的 PDF 文件載入到您的專案中。就是這樣：
+第一步是將現有的 PDF 文件載入到您的專案中。方法如下：
 
 ```csharp
 //文檔目錄的路徑。
@@ -32,7 +32,7 @@ Document pdfDocument = new Document(dataDir + "ImageinHeader.pdf");
 
 ## 步驟 3：在標題部分建立並新增圖像
 
-現在 PDF 文件已加載，我們可以建立一個圖像緩衝區並將其作為頁眉部分添加到文件的所有頁面。就是這樣：
+現在 PDF 文件已加載，我們可以建立一個圖像緩衝區並將其作為頁眉部分添加到文件的所有頁面。方法如下：
 
 ```csharp
 //建立幀緩衝區
@@ -54,7 +54,7 @@ foreach(Page page in pdfDocument.Pages)
 
 ## 第四步：儲存修改後的PDF文檔
 
-將圖像新增至標題部分後，我們就可以儲存修改後的 PDF 文件。就是這樣：
+將圖像新增至標題部分後，我們就可以儲存修改後的 PDF 文件。方法如下：
 
 ```csharp
 //儲存修改後的PDF文檔

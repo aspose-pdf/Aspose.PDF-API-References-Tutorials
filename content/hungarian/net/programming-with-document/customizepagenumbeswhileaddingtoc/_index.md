@@ -2,35 +2,77 @@
 title: Az oldalszámok testreszabása a tartalomjegyzék hozzáadása közben
 linktitle: Az oldalszámok testreszabása a tartalomjegyzék hozzáadása közben
 second_title: Aspose.PDF for .NET API Reference
-description: Ebből a lépésenkénti útmutatóból és kódpéldából megtudhatja, hogyan lehet testreszabni az oldalszámokat, miközben tartalomjegyzéket (TOC) ad hozzá az Aspose.PDF for .NET használatával.
+description: Ebben az átfogó oktatóanyagban megtudhatja, hogyan testreszabhatja az oldalszámokat, miközben tartalomjegyzéket ad hozzá PDF-dokumentumaihoz az Aspose.PDF for .NET használatával.
 type: docs
 weight: 100
 url: /hu/net/programming-with-document/customizepagenumbeswhileaddingtoc/
 ---
-Ebben az oktatóanyagban megvizsgáljuk, hogyan lehet testreszabni az oldalszámokat, miközben tartalomjegyzéket (TOC) adunk hozzá az Aspose.PDF for .NET használatával. Lépésről lépésre útmutatást adunk egy kódpéldával együtt, hogy segítsük ezt elérni.
+## Bevezetés
 
-## 1. lépés: Meglévő PDF-fájl betöltése
+dokumentumkezelés világában a PDF-ek uralkodnak. Ezek a legjobb formátumok a dokumentumok megosztásához és megőrzéséhez különböző platformokon. De mi történik akkor, ha PDF-dokumentumait olyan funkciókkal szeretné bővíteni, mint a tartalomjegyzék (TOC)? Itt jön képbe az Aspose.PDF for .NET! Ez a nagy teljesítményű könyvtár lehetővé teszi a fejlesztők számára a PDF-fájlok egyszerű kezelését, lehetővé téve számukra a tartalom könnyű hozzáadását, módosítását és testreszabását. Ebben az oktatóanyagban bemutatjuk, hogyan lehet testreszabni az oldalszámokat, miközben tartalomjegyzéket ad hozzá PDF-dokumentumaihoz az Aspose.PDF for .NET használatával. Szóval, fogd meg a kódoló kalapot, és kezdjük is!
 
-Először is be kell töltenünk egy meglévő PDF-fájlt. Ehhez az oktatóanyaghoz a "42824.pdf" fájlt fogjuk használni, amely a "DOKUMENTUMKÖNYVTÁR" könyvtárban található. Cserélje ki ezt a könyvtár elérési útját a dokumentumkönyvtár tényleges elérési útjával.
+## Előfeltételek
+
+Mielőtt belevágnánk a kódba, néhány dolgot meg kell határoznia:
+
+1. Visual Studio: Győződjön meg arról, hogy a Visual Studio telepítve van a gépen. Ez lesz a fejlesztési környezetünk.
+2. Aspose.PDF for .NET: Le kell töltenie és telepítenie kell az Aspose.PDF könyvtárat. Megtalálhatod[itt](https://releases.aspose.com/pdf/net/).
+3. Alapvető C# ismerete: A C# programozás ismerete segít jobban megérteni a kódrészleteket.
+4. Minta PDF fájl: Készítsen egy minta PDF fájlt, amellyel dolgozni tudunk. Létrehozhat egy egyszerűt, vagy letölthet egy meglévő PDF-et.
+
+## Csomagok importálása
+
+A kezdéshez importálnunk kell a szükséges csomagokat. Nyissa meg a Visual Studio projektet, és adjon hozzá hivatkozást az Aspose.PDF könyvtárhoz. Ezt a NuGet Package Manager használatával teheti meg:
+
+1. Kattintson a jobb gombbal a projektre a Solution Explorerben.
+2. Válassza a "NuGet-csomagok kezelése" lehetőséget.
+3. Keresse meg az "Aspose.PDF" kifejezést, és telepítse.
+
+```csharp
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Miután telepítette a könyvtárat, elkezdheti a kódolást!
+
+## 1. lépés: Állítsa be a dokumentumkönyvtárat
+
+Először is be kell állítanunk a dokumentumkönyvtárunkat. Itt tároljuk a bemeneti és kimeneti PDF fájljainkat. 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "42824.pdf";
 string outFile = dataDir + "42824_out.pdf";
+```
+
+Ebben a részletben cserélje ki`YOUR DOCUMENT DIRECTORY` a PDF-fájlok tényleges elérési útjával. Ez segít a meglévő PDF betöltésében és a módosított verzió mentésében.
+
+## 2. lépés: Töltse be a meglévő PDF-fájlt
+
+Most, hogy beállítottuk a dokumentumkönyvtárunkat, töltsük be a meglévő PDF-fájlt. 
+
+```csharp
 Document doc = new Document(inFile);
 ```
 
-## 2. lépés: TOC oldal hozzáadása
+ Itt létrehozunk egy újat`Document` objektumot a bemeneti fájl elérési útjának átadásával. Ez lehetővé teszi számunkra a PDF-tartalom programozott kezelését.
 
- Ezután egy új oldalt kell hozzáadnunk a dokumentum elejéhez, hogy a TOC oldalként szolgáljon. Ezt úgy érhetjük el, hogy a`Insert()` módszere a`Pages` gyűjteménye a`Document` tárgy.
+## 3. lépés: Szúrjon be egy új oldalt a tartalomjegyzékhez
+
+Ezután létre kell hoznunk egy új oldalt a PDF-ben, ahol a tartalomjegyzék található.
 
 ```csharp
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
 ```
 
-## 3. lépés: TOC objektum létrehozása
+Ez a sor egy új oldalt szúr be a dokumentum elejére. A TOC ezen az oldalon jelenik meg.
 
- TOC objektum létrehozásához először létre kell hoznunk a`TocInfo` objektumot, és állítsa be a tulajdonságait. Ebben az oktatóanyagban a tartalomjegyzék címét "Tartalomjegyzék"-re, az oldalszám előtagját pedig "P"-re állítjuk.
+## 4. lépés: Hozzon létre TOC információkat
+
+Most hozzunk létre egy objektumot a tartalomjegyzék információ megjelenítésére.
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -42,99 +84,55 @@ tocInfo.PageNumbersPrefix = "P";
 tocPage.TocInfo = tocInfo;
 ```
 
-## 4. lépés: TOC bejegyzések létrehozása
+ Ebben a lépésben létrehozzuk a`TocInfo` objektumot, és állítsa a címét "Tartalomjegyzék"-re. A betűméretet és -stílust is személyre szabjuk. A`PageNumbersPrefix` "P"-re van állítva, amely a tartalomjegyzékben az oldalszámok elé kerül.
 
-A tartalomjegyzék-bejegyzések létrehozásához a dokumentum összes oldalát a tartalomjegyzék-oldal kivételével végig kell tekintenünk, és minden oldalhoz létre kell hoznunk egy fejléc objektumot. Ezután hozzáadhatjuk a címsor objektumot a TOC oldalhoz, és megadhatjuk a céloldalt.
+## 5. lépés: Adjon hozzá címeket a tartalomjegyzékhez
+
+Most jön a szórakoztató rész! Végigpörgetjük a dokumentum oldalait, és fejléceket adunk a TOC-hoz.
 
 ```csharp
 for (int i = 1; i < doc.Pages.Count; i++)
 {
-    // Címsor objektum létrehozása
     Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
     TextSegment segment2 = new TextSegment();
     heading2.TocPage = tocPage;
     heading2.Segments.Add(segment2);
-    // Adja meg a címsor objektum céloldalát
     heading2.DestinationPage = doc.Pages[i + 1];
-    // Céloldal
     heading2.Top = doc.Pages[i + 1].Rect.Height;
-    // Cél koordináta
     segment2.Text = "Page " + i.ToString();
-    // Címsor hozzáadása a tartalomjegyzéket tartalmazó oldalhoz
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
-## 5. lépés: Mentse el a frissített dokumentumot
+ Ebben a ciklusban újat hozunk létre`Heading` objektumot minden oldalhoz. Minden címsorhoz beállítjuk a céloldalt, és megadjuk a megjelenítendő szöveget, ami az "X oldal", ahol X az oldalszám. Végül hozzáadjuk a címsort a TOC oldalhoz.
 
-Végül el kell mentenünk a frissített dokumentumot egy új fájlba. Ezt úgy érhetjük el, hogy a`Save()` módszere a`Document` tárgy.
+## 6. lépés: Mentse el a frissített dokumentumot
+
+Az összes szükséges címsor hozzáadása után ideje elmenteni frissített dokumentumunkat.
 
 ```csharp
 doc.Save(outFile);
 ```
 
-### Példa forráskódra az oldalszámok testreszabásához a tartalomjegyzék hozzáadásához az Aspose.PDF for .NET használatával
-
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string inFile = dataDir + "42824.pdf";
-string outFile = dataDir + "42824_out.pdf";
-// Töltsön be egy meglévő PDF fájlt
-Document doc = new Document(inFile);
-// Hozzáférés a PDF-fájl első oldalához
-Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
-// Hozzon létre objektumot a TOC információk megjelenítéséhez
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-// Állítsa be a TOC címét
-tocInfo.Title = title;
-tocInfo.PageNumbersPrefix = "P";
-tocPage.TocInfo = tocInfo;
-for (int i = 1; i<doc.Pages.Count; i++)
-{
-	// Címsor objektum létrehozása
-	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-	TextSegment segment2 = new TextSegment();
-	heading2.TocPage = tocPage;
-	heading2.Segments.Add(segment2);
-	// Adja meg a címsor objektum céloldalát
-	heading2.DestinationPage = doc.Pages[i + 1];
-	// Céloldal
-	heading2.Top = doc.Pages[i + 1].Rect.Height;
-	// Cél koordináta
-	segment2.Text = "Page " + i.ToString();
-	// Címsor hozzáadása a tartalomjegyzéket tartalmazó oldalhoz
-	tocPage.Paragraphs.Add(heading2);
-}
-
-// Mentse el a frissített dokumentumot
-doc.Save(outFile);
-```
+Ez a sor menti a módosított PDF fájlt a tartalomjegyzékkel együtt. Most megnyithatja a kimeneti fájlt, és megtekintheti a testreszabott tartalomjegyzékét!
 
 ## Következtetés
 
-Ebben az oktatóanyagban lépésről lépésre útmutatást adunk az oldalszámok testreszabásához, miközben tartalomjegyzéket ad hozzá az Aspose.PDF for .NET használatával. Adtunk egy kódpéldát is, amelyet referenciaként használhat a funkció implementálásakor
+És megvan! Sikeresen testreszabta az oldalszámokat, miközben tartalomjegyzéket adott a PDF-dokumentumhoz az Aspose.PDF for .NET használatával. Ez a nagy teljesítményű könyvtár megkönnyíti a PDF-fájlok kezelését, és mindössze néhány sornyi kóddal jelentősen javíthatja dokumentumait. Akár jelentéseket, e-könyveket vagy bármilyen más típusú PDF-fájlt készít, a tartalomjegyzék nagymértékben javíthatja olvasói navigációját. Szóval, mire vársz? Merüljön el az Aspose.PDF-ben, és kezdjen el lenyűgöző PDF-fájlok létrehozásával még ma!
 
-### GYIK
+## GYIK
 
-#### K: Mi az a tartalomjegyzék (TOC) egy PDF-dokumentumban?
+### Mi az Aspose.PDF for .NET?
+Az Aspose.PDF for .NET egy olyan könyvtár, amely lehetővé teszi a fejlesztők számára PDF-dokumentumok programozott létrehozását, kezelését és konvertálását.
 
-V: A PDF-dokumentumban található tartalomjegyzék (TOC) egy navigációs segédeszköz, amely a dokumentumrészek vagy fejezetek rendezett listáját tartalmazza a hozzájuk tartozó oldalszámokkal együtt. Lehetővé teszi az olvasók számára, hogy gyorsan eligazodjanak a dokumentum bizonyos részeihez.
+### Használhatom ingyenesen az Aspose.PDF-et?
+ Igen, az Aspose ingyenes próbaverziót kínál, amellyel felfedezheti a könyvtár funkcióit. Letöltheti[itt](https://releases.aspose.com/).
 
-#### K: Miért szeretném személyre szabni az oldalszámokat a tartalomjegyzékben?
+### Hogyan kaphatok támogatást az Aspose.PDF fájlhoz?
+ Támogatást kaphat az Aspose fórum meglátogatásával[itt](https://forum.aspose.com/c/pdf/10).
 
-V: Az oldalszámok testreszabása a TOC-ban akkor lehet hasznos, ha egy adott oldalszámozási formátumot szeretne használni, vagy további információkat szeretne megadni az oldalszámokkal együtt. Lehetővé teszi személyre szabottabb és informatívabb tartalomjegyzék létrehozását.
+### Van ideiglenes engedély?
+ Igen, kérhet ideiglenes licencet az Aspose.PDF fájlhoz[itt](https://purchase.aspose.com/temporary-license/).
 
-#### K: Szerelhetek-e hiperhivatkozásokat a tartalomjegyzékbe, amelyek a PDF-dokumentum bizonyos szakaszaira vagy oldalaira hivatkoznak?
-
-V: Igen, az Aspose.PDF for .NET lehetővé teszi hiperhivatkozások létrehozását a TOC-ban, amelyek a PDF-dokumentum meghatározott szakaszaira vagy oldalaira hivatkoznak. Ez javítja a PDF-dokumentum interaktivitását és navigációját.
-
-#### K: Az Aspose.PDF for .NET kompatibilis a PDF/A szabványokkal?
-
-V: Igen, az Aspose.PDF for .NET támogatja a PDF/A szabványokat, beleértve a PDF/A-1, PDF/A-2 és PDF/A-3 szabványokat. Lehetővé teszi olyan PDF dokumentumok létrehozását, amelyek megfelelnek az archiválási és hosszú távú megőrzési követelményeknek.
-
-#### K: Hozzáadhatok további formázást a TOC bejegyzésekhez, például betűstílusokat vagy színeket?
-
-V: Igen, az Aspose.PDF for .NET használatával további formázásokat is hozzáadhat a TOC bejegyzésekhez, például betűstílusokat, színeket és betűméreteket. Ez lehetővé teszi a TOC megjelenésének testreszabását az Ön igényei szerint.
+### Hol vásárolhatok Aspose.PDF-et .NET-hez?
+ Megvásárolhatja az Aspose.PDF-et .NET-hez[itt](https://purchase.aspose.com/buy).

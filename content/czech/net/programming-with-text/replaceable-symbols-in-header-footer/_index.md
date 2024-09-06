@@ -18,7 +18,7 @@ Než začnete, ujistěte se, že máte následující:
 
 ## Krok 1: Nastavte adresář dokumentů
 
- Nejprve je potřeba nastavit cestu k adresáři, kam chcete vygenerovaný PDF soubor uložit. Nahradit`"YOUR DOCUMENT DIRECTORY"` v`dataDir`proměnnou s cestou k požadovanému adresáři.
+ Nejprve je potřeba nastavit cestu k adresáři, kam chcete vygenerovaný PDF soubor uložit. Nahradit`"YOUR DOCUMENT DIRECTORY"` v`dataDir` proměnnou s cestou k požadovanému adresáři.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## Krok 3: Nastavte okraje
 
- Okraje stránky nastavíme pomocí`MarginInfo`třída. Upravte hodnoty okrajů podle svých požadavků.
+Okraje stránky nastavíme pomocí`MarginInfo` třída. Upravte hodnoty okrajů podle svých požadavků.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -67,7 +67,7 @@ t1.TextState.LineSpacing = 5f;
 
 hfFirst.Paragraphs.Add(t1);
 
-// Přidejte další TextFragmenty nebo upravte podle potřeby
+// Přidejte další TextFragments nebo upravte podle potřeby
 ```
 
 ## Krok 5: Přidejte zápatí s vyměnitelnými symboly
@@ -84,7 +84,7 @@ TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
 
-// Přidejte další TextFragmenty nebo upravte podle potřeby
+// Přidejte další TextFragments nebo upravte podle potřeby
 
 hfFoot.Paragraphs.Add(tab2);
 ```
@@ -160,7 +160,7 @@ row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java je kompilací všech komponent Java nabízených společností Aspose. Je kompilován na #$NL" + "denně, aby bylo zajištěno, že obsahuje nejaktuálnější verze každého našich komponent Java. #$NL " + "Pomocí Aspose.Total for Java mohou vývojáři vytvořit širokou škálu aplikací. #$NL #$NL #$NP" + "Aspose.Total for Java je kompilací všech komponent Java nabízené společností Aspose. Je kompilován na #$NL" + "denně, aby bylo zajištěno, že obsahuje nejaktuálnější verze každé z našich komponent Java. #$NL " + "Pomocí Aspose.Total pro vývojáře Java mohou vytvořit široké rozsah aplikací. #$NL #$NL #$NP" + "Aspose.Total for Java je kompilací všech komponent Java nabízených společností Aspose. Kompiluje se na #$NL" + "denně, aby bylo zajištěno, že obsahuje co nejvíce aktuální verze každé z našich komponent Java. #$NL " + "Pomocí Aspose.Total pro vývojáře Java mohou vytvářet širokou škálu aplikací. #$NL #$NL"))
+//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java je kompilací všech komponent Java nabízených společností Aspose. Je kompilován na #$NL" + "denně, aby bylo zajištěno, že obsahuje nejaktuálnější verze každého #$NL " + "Pomocí Aspose.Total for Java mohou vývojáři vytvořit širokou škálu aplikací. nabízený Aspose je kompilován na #$NL" + "denně, aby bylo zajištěno, že obsahuje nejaktuálnější verze každé z našich komponent Java " + "Použití Aspose.Total pro vývojáře Java může vytvořit širokou rozsah aplikací aktuální verze každé z našich komponent Java " + "Pomocí Aspose.Total pro vývojáře Java mohou vytvářet širokou škálu aplikací.
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
 table.DefaultCellPadding = new MarginInfo();
@@ -221,7 +221,7 @@ Odpověď: Nahraditelné symboly v záhlaví a zápatí jsou užitečné, když 
 
 #### Otázka: Jak mohu nastavit okraje pro stránku PDF?
 
- Odpověď: Okraje stránky PDF můžete nastavit pomocí`MarginInfo` třídy a přiřadit ji k`Margin` vlastnictvím`PageInfo` stránky. Podle potřeby upravte hodnoty okrajů.
+ Odpověď: Okraje stránky PDF můžete nastavit pomocí`MarginInfo` třídy a přiřadit ji k`Margin` majetek z`PageInfo` stránky. Podle potřeby upravte hodnoty okrajů.
 
 #### Otázka: Jak přidám vyměnitelné symboly do záhlaví a zápatí?
 
@@ -237,7 +237,7 @@ Odpověď: Můžete použít různé vyměnitelné symboly, například:
 
 - `$p`: Číslo aktuální stránky.
 - `$P`: Celkový počet stránek.
-- `$d`: Dnešní datum.
+- `$d`: Aktuální datum.
 - `$t`: Aktuální čas.
 - Vlastní zástupné symboly, které definujete.
 

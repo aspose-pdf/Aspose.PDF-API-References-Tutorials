@@ -2,7 +2,7 @@
 title: Převod souborů XPS na soubory PDF
 linktitle: Převod souborů XPS na soubory PDF
 second_title: Aspose.PDF Java PDF Processing API
-description: Naučte se, jak bez námahy převádět soubory XPS na soubory PDF pomocí Aspose.PDF for Java. Náš průvodce krok za krokem tento proces zjednodušuje.
+description: Naučte se, jak bez námahy převádět soubory XPS na soubory PDF pomocí Aspose.PDF for Java. Náš průvodce krok za krokem celý proces zjednodušuje.
 type: docs
 weight: 27
 url: /cs/java/pdf-conversion-transformation/convert-xps-to-pdf-files/
@@ -18,11 +18,11 @@ Než se ponoříme do procesu převodu, budete muset nastavit vývojové prostř
 
 - Java Development Kit (JDK)
 - Integrované vývojové prostředí (IDE), jako je Eclipse nebo IntelliJ IDEA
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Nastavení projektu
 
-Než budeme moci použít Aspose.PDF pro Javu, musíme nastavit Java projekt. Následuj tyto kroky:
+Než budeme moci použít Aspose.PDF pro Javu, musíme nastavit Java projekt. Postupujte takto:
 
 - Vytvořte nový Java projekt ve zvoleném IDE.
 - Přidejte knihovnu Aspose.PDF for Java do cesty třídy vašeho projektu.
@@ -57,7 +57,7 @@ V této příručce jsme prozkoumali, jak převést soubory XPS na soubory PDF p
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
- Chcete-li nainstalovat Aspose.PDF pro Java, stáhněte si knihovnu z[tady](https://releases.aspose.com/pdf/java/) a přidejte jej do třídy třídy svého projektu Java.
+ Chcete-li nainstalovat Aspose.PDF pro Java, stáhněte si knihovnu z[zde](https://releases.aspose.com/pdf/java/) a přidejte jej do třídy třídy svého projektu Java.
 
 ### Mohu převést více souborů XPS do PDF najednou?
 
@@ -73,4 +73,4 @@ Ano, Aspose.PDF for Java podporuje širokou škálu formátů dokumentů, včetn
 
 ### Je Aspose.PDF for Java vhodný pro zpracování dokumentů ve velkém měřítku?
 
-Ano, Aspose.PDF for Java je navržen tak, aby efektivně zvládal rozsáhlé zpracování dokumentů. Je to robustní volba pro aplikace, které vyžadují rozsáhlé operace související s PDF.
+Ano, Aspose.PDF pro Java je navržen tak, aby efektivně zvládal rozsáhlé zpracování dokumentů. Je to robustní volba pro aplikace, které vyžadují rozsáhlé operace související s PDF.

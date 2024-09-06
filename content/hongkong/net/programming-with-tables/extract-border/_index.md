@@ -7,7 +7,7 @@ type: docs
 weight: 80
 url: /zh-hant/net/programming-with-tables/extract-border/
 ---
-在本教學中，我們將學習如何使用 Aspose.PDF for .NET 來擷取 PDF 檔案中的邊框。我們將一步步解釋C#的原始碼。在本教程結束時，您將了解如何從 PDF 文件中提取邊框並將其另存為圖像。開始吧！
+在本教學中，我們將學習如何使用 Aspose.PDF for .NET 來擷取 PDF 檔案中的邊框。我們將一步步解釋C#的原始碼。在本教程結束時，您將了解如何從 PDF 文件中提取邊框並將其另存為圖像。讓我們開始吧！
 
 ## 第一步：建構環境
 首先，請確保您已使用 Aspose.PDF for .NET 設定 C# 開發環境。新增對庫的引用並導入必要的命名空間。
@@ -40,7 +40,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
      foreach(Operator op in doc.Pages[1].Contents)
      {
          //檢查操作類型
-         // …
+         // ……
          //新增程式碼來處理每個操作
      }
 }
@@ -88,10 +88,10 @@ else if (opMoveTo != null)
 else if (opLineTo != null)
 {
      //處理直線的繪製
-     // …
+     // ……
      //新增程式碼來處理畫線
 }
-// …
+// ……
 //新增 else if 區塊用於其他操作
 ```
 

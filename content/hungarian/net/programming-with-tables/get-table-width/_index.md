@@ -1,6 +1,6 @@
 ---
-title: Táblázat szélességének lekérése PDF-fájlban
-linktitle: Táblázat szélességének lekérése PDF-fájlban
+title: Töltse le a táblázat szélességét PDF-fájlban
+linktitle: Töltse le a táblázat szélességét PDF-fájlban
 second_title: Aspose.PDF for .NET API Reference
 description: Ismerje meg, hogyan határozhatja meg a táblázat szélességét PDF-fájlban az Aspose.PDF for .NET segítségével.
 type: docs

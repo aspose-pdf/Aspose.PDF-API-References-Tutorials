@@ -24,7 +24,7 @@ Prvním krokem je načtení stávajícího dokumentu PDF do vašeho projektu. Zd
 // Cesta k adresáři dokumentů.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-//Otevřete dokument PDF
+// Otevřete dokument PDF
 Document pdfDocument = new Document(dataDir + "watermark.pdf");
 ```
 
@@ -73,7 +73,7 @@ Odpověď: Vodoznak v dokumentu PDF je rozpoznatelný obrázek nebo text, který
 
 #### Otázka: Jak dodaný zdrojový kód C# pomáhá extrahovat informace o vodoznaku ze souboru PDF?
 
- Odpověď: Poskytnutý kód ukazuje, jak načíst existující dokument PDF, procházet artefakty konkrétní stránky a extrahovat informace o vodoznakech. Dělá to přístupem k`Subtype`, `Text` , a`Rectangle` vlastnosti každého artefaktu.
+ Odpověď: Poskytnutý kód ukazuje, jak načíst existující dokument PDF, procházet artefakty konkrétní stránky a extrahovat informace o vodoznakech. Dělá to přístupem k`Subtype`, `Text` a`Rectangle` vlastnosti každého artefaktu.
 
 ####  Q: Co dělá`Subtype` property of an artifact represent?
 

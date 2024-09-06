@@ -21,7 +21,7 @@ using Aspose.Pdf.Text;
 
 ## 2. lépés: Állítsa be a dokumentumok mappa elérési útját
 
-Ebben a lépésben meg kell adnia a hiperhivatkozást hozzáadni kívánt PDF-fájlt tartalmazó mappa elérési útját. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` következő kódban a dokumentummappa tényleges elérési útjával:
+ Ebben a lépésben meg kell adnia a hiperhivatkozást hozzáadni kívánt PDF-fájlt tartalmazó mappa elérési útját. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a következő kódban a dokumentummappa tényleges elérési útjával:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -62,7 +62,7 @@ document.Pages[1].Annotations.Add(textAnnotation);
 
 ## 6. lépés: Mentse el a frissített fájlt
 
- Most mentsük el a frissített PDF fájlt a`Save` módszere a`document` tárgy. Itt van a megfelelő kód:
+Most mentsük el a frissített PDF fájlt a`Save` módszere a`document` objektum. Itt van a megfelelő kód:
 
 ```csharp
 dataDir = dataDir + "AddHyperlink_out.pdf";
@@ -87,9 +87,9 @@ border.Width = 0;
 link.Border = border;
 // Adja meg a hivatkozás típusát távoli URI-ként
 link.Action = new GoToURIAction("www.aspose.com");
-//Hivatkozási megjegyzés hozzáadása a PDF-fájl első oldalának kommentárgyűjteményéhez
+// Hivatkozási megjegyzés hozzáadása a PDF-fájl első oldalának kommentárgyűjteményéhez
 page.Annotations.Add(link);
-// Hozzon létre szabad szöveges annotációt
+// Ingyenes szöveges kommentár létrehozása
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(document.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), new DefaultAppearance(Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman"), 10, System.Drawing.Color.Blue));
 // Szabad szövegként hozzáadandó karakterlánc
 textAnnotation.Contents = "Link to Aspose website";
@@ -127,7 +127,7 @@ V: Igen, hiperhivatkozások adhatók hozzá különféle típusú PDF-dokumentum
 
 #### K: Milyen egyéb funkciókat kínál az Aspose.PDF for .NET?
 
-V: Az Aspose.PDF for .NET egy robusztus könyvtár, amely szolgáltatások széles skáláját kínálja, beleértve a PDF-generálást, -kezelést, -konvertálást és -kinyerést. Támogatja a szöveggel, képekkel, megjegyzésekkel és egyebekkel való munkát, így sokoldalú eszköz a PDF-ekkel kapcsolatos feladatokhoz.
+V: Az Aspose.PDF for .NET egy robusztus könyvtár, amely funkciók széles skáláját kínálja, beleértve a PDF-generálást, -manipulációt, -konvertálást és -kinyerést. Támogatja a szöveggel, képekkel, megjegyzésekkel és egyebekkel való munkát, így sokoldalú eszköz a PDF-ekkel kapcsolatos feladatokhoz.
 
 #### K: Hozzáadhatók-e hiperhivatkozások a dokumentum egyes szakaszaihoz?
 

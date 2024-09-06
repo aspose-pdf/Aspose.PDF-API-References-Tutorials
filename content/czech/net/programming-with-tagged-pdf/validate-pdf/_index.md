@@ -35,7 +35,7 @@ Ujistěte se, že váš soubor PDF, který má být ověřen, je ve zdrojovém k
 V tomto kroku použijeme Aspose.PDF for .NET k ověření zadaného PDF dokumentu a vygenerování ověřovací zprávy.
 
 ```csharp
-//Otevřete dokument PDF
+// Otevřete dokument PDF
 using (var document = new Aspose.Pdf.Document(inputFileName))
 {
 // Ověřte dokument PDF

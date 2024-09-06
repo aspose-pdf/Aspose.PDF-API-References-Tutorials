@@ -2,7 +2,7 @@
 title: Ověření souborů PDF Standard
 linktitle: Ověření standardu PDF A
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se, jak používat Aspose.PDF for .NET k ověření souborů PDF pro PDFAStandard pomocí tohoto podrobného průvodce.
+description: Naučte se, jak používat Aspose.PDF for .NET k ověřování souborů PDF pro PDFAStandard pomocí tohoto podrobného průvodce.
 type: docs
 weight: 390
 url: /cs/net/programming-with-document/validatepdfastandard/

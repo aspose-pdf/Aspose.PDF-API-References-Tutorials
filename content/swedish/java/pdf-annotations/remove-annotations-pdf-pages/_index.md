@@ -27,7 +27,7 @@ För att arbeta med ett PDF-dokument måste du först ladda det i din Java-appli
 Document pdfDocument = new Document("example.pdf");
 ```
 
- Byta ut`"example.pdf"` med sökvägen till din PDF-fil.
+ Ersätta`"example.pdf"` med sökvägen till din PDF-fil.
 
 
 ## Identifiera och komma åt anteckningar
@@ -60,7 +60,7 @@ När du har tagit bort anteckningarna måste du spara det ändrade PDF-dokumente
 pdfDocument.save("modified.pdf");
 ```
 
- Byta ut`"modified.pdf"` med önskat utdatafilnamn.
+ Ersätta`"modified.pdf"` med önskat utdatafilnamn.
 
 ## Slutsats
 

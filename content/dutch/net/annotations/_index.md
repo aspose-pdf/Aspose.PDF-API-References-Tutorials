@@ -4,26 +4,26 @@ linktitle: Programmeren met annotaties
 type: docs
 weight: 12
 url: /nl/net/annotations/
-description: Programmeren met annotaties omvat API-tutorials en codefragmenten van Aspose.PDF voor .NET, inclusief het toevoegen van annotaties, het verwijderen van annotaties, het verkrijgen van annotatie-informatie en nog veel meer.
+description: Programmeren met annotaties omvat API-zelfstudies en codefragmenten van Aspose.PDF voor .NET, inclusief het toevoegen en verwijderen van annotaties, het ophalen van annotatie-info en nog veel meer.
 ---
-Een uitgebreide verzameling zelfstudies waarin wordt getoond hoe u met annotaties in PDF-documenten kunt werken met behulp van Aspose.PDF voor .NET. Het biedt een breed scala aan codefragmenten die demonstreren hoe u verschillende soorten annotaties kunt maken en manipuleren, zoals tekst, lijn, cirkel, rechthoek, veelhoek, hyperlink en nog veel meer. Elk voorbeeld bevat de volledige C#-code samen met een gedetailleerde uitleg van de functionaliteit van de code en de verwachte uitvoer. Het is een uitstekende bron voor .NET-ontwikkelaars die willen leren werken met annotaties in PDF-documenten met behulp van Aspose.PDF.
+Een uitgebreide verzameling tutorials die laten zien hoe u met annotaties in PDF-documenten kunt werken met Aspose.PDF voor .NET. Het biedt een breed scala aan codefragmenten die laten zien hoe u verschillende typen annotaties kunt maken en bewerken, zoals tekst, lijn, cirkel, rechthoek, polygoon, hyperlink en nog veel meer. Elk voorbeeld bevat de volledige C#-code, samen met een gedetailleerde uitleg van de functionaliteit van de code en de verwachte uitvoer. Het is een uitstekende bron voor .NET-ontwikkelaars die willen leren hoe ze met annotaties in PDF-documenten kunnen werken met Aspose.PDF.
 
-## Handleidingen
+## Zelfstudies
 | Titel | Beschrijving |
 | --- | --- | 
-| [PDF-annotatie toevoegen](./addannotation/) | Leer hoe u tekst-PDF-annotaties kunt toevoegen met Aspose.PDF voor .NET met behulp van deze C#-broncode. Pas uw annotaties aan met specifieke details en pictogrammen. |  
-| [Link-annotatie toevoegen](./addlnkannotation/) | Leer hoe u de functie Inktannotatie kunt toevoegen aan PDF-documenten in C# met behulp van Aspose.PDF voor .NET met stapsgewijze handleiding en volledige broncode. |  
-| [Voeg SWF-bestand toe als PDF-annotatie](./addswffileasannotation/) | Leer met deze stapsgewijze handleiding hoe u SWF-bestanden kunt toevoegen als PDF-annotaties in Aspose.PDF voor .NET. |  
-| [Verwijder alle annotaties van de pagina](./deleteallannotationsfrompage/) | Leer hoe u alle annotaties van een PDF-pagina verwijdert met Aspose.PDF voor .NET met behulp van deze stapsgewijze handleiding. |  
-| [Verwijder een bepaalde annotatie in een PDF-bestand](./deleteparticularannotation/) | Leer hoe u een bepaalde annotatie in een PDF-bestand verwijdert met Aspose.PDF voor .NET met deze stapsgewijze handleiding. |  
-| [Extraheer gemarkeerde tekst in PDF-bestand](./extracthighlightedtext/) | Leer hoe u gemarkeerde tekst uit een PDF-bestand kunt extraheren met Aspose.PDF voor .NET met deze stapsgewijze handleiding. |  
-| [Haal alle annotaties van de pagina](./getallannotationsfrompage/) | Leer met deze stapsgewijze handleiding hoe u Aspose.PDF voor .NET kunt gebruiken om alle annotaties van een PDF-pagina op te halen. |  
-| [Krijg specifieke annotaties in een PDF-bestand](./getparticularannotation/) | Leer met deze stapsgewijze handleiding hoe u Aspose.PDF voor .NET kunt gebruiken om bepaalde annotaties in een PDF-bestand te krijgen.  |  
-| [Krijg bron van annotatie](./getresourceofannotation/) | Leer met deze stapsgewijze handleiding hoe u de bron van een annotatie kunt ophalen met Aspose.PDF voor .NET.  |  
-| [Onzichtbare annotatie in PDF-bestand](./invisibleannotation/) | Leer hoe u annotaties in PDF-bestanden onzichtbaar kunt maken met behulp van C#-broncode met Aspose.PDF voor .NET. Stap-voor-stap handleiding. |  
-| [lnk Annotatielijndikte](./lnkannotationlinewidth/) | Dit artikel biedt een stapsgewijze handleiding voor het instellen van de lijnbreedte van de lnk-annotatie met Aspose.PDF voor .NET. |  
-| [Pagina redigeren](./redactpage/) | In dit artikel wordt uitgelegd hoe u een PDF-pagina kunt redigeren met Aspose.PDF voor .NET, inclusief stapsgewijze instructies en voorbeeldbroncode. |  
-| [Bijschrifteigenschap instellen in PDF-bestand](./setcalloutproperty/) | Leer hoe u de Callout-eigenschap in een PDF-bestand instelt met Aspose.PDF voor .NET. Pas annotaties aan met toelichtingslijnen, tekstkleur en eindstijlen. |  
-| [Stel de opmaak van vrije tekstannotaties in](./setfreetextannotationformatting/) | Dit artikel biedt een stapsgewijze handleiding voor het maken van een vrije tekstannotatie en het specificeren van de inhoud ervan met Aspose.PDF voor .NET. |  
-| [Woorden doorhalen](./strikeoutwords/) | Dit artikel biedt een stapsgewijze handleiding voor het gebruik van Aspose.PDF voor de Woorden doorhalen-functie van .NET, inclusief stapsgewijze handleiding en uitleg. |  
-| [Update vrije tekst PDF-annotatie](./updatefreetextannotation/) | Leer hoe u de gratis tekst-PDF-annotatiefunctie van Aspose.PDF voor .NET kunt bijwerken met behulp van de C#-broncode. |  
+| [PDF-annotatie toevoegen](./addannotation/) | Voeg eenvoudig aangepaste annotaties toe aan uw PDF's met Aspose.PDF voor .NET met deze stapsgewijze handleiding. Pas uw annotaties aan met specifieke details en pictogrammen. |  
+| [Voeg lnk-annotatie toe](./addlnkannotation/) | Leer hoe u inktannotaties aan PDF-bestanden toevoegt met Aspose.PDF voor .NET in deze boeiende, stapsgewijze handleiding. |  
+| [Swf-bestand toevoegen als PDF-annotatie](./addswffileasannotation/) | Leer hoe u SWF-bestanden als PDF-annotaties toevoegt met Aspose.PDF voor .NET. Verbeter uw PDF's met interactieve multimediacontent via deze gedetailleerde tutorial. |  
+| [Verwijder alle annotaties van de pagina](./deleteallannotationsfrompage/) | Leer hoe u alle annotaties van een PDF-pagina verwijdert met Aspose.PDF voor .NET. Volg onze stapsgewijze handleiding om uw PDF's efficiënt op te schonen. |  
+| [Bepaalde aantekening in PDF-bestand verwijderen](./deleteparticularannotation/) | Leer hoe u een specifieke aantekening in een PDF-bestand verwijdert met Aspose.PDF voor .NET met deze stapsgewijze handleiding. |  
+| [Gemarkeerde tekst uit PDF-bestand extraheren](./extracthighlightedtext/) | Leer hoe u efficiënt gemarkeerde tekst uit een PDF-bestand kunt extraheren met Aspose.PDF voor .NET met deze tutorial. Perfect voor data-analyse en content review. |  
+| [Alle annotaties van de pagina ophalen](./getallannotationsfrompage/) | Leer hoe u annotaties uit PDF-bestanden kunt extraheren met Aspose.PDF voor .NET in deze stapsgewijze handleiding. Perfect voor ontwikkelaars van alle niveaus. |  
+| [Krijg specifieke annotatie in PDF-bestand](./getparticularannotation/) | Leer hoe u een specifieke annotatie uit een PDF-bestand kunt halen met Aspose.PDF voor .NET in deze gedetailleerde tutorial van 2000 woorden. Perfect voor ontwikkelaars.  |  
+| [Bron van annotatie verkrijgen](./getresourceofannotation/) | Ontdek de kracht van PDF-beheer met Aspose.PDF voor .NET: uw go-to-bibliotheek voor naadloze PDF-annotatie en -bewerking. |  
+| [Onzichtbare annotatie in PDF-bestand](./invisibleannotation/) | Leer hoe u een onzichtbare annotatie aan een PDF-bestand toevoegt met Aspose.PDF voor .NET. Volg onze stapsgewijze handleiding om deze krachtige functie onder de knie te krijgen. |  
+| [lnk Annotatie Lijnbreedte](./lnkannotationlinewidth/) | Leer hoe u de lijnbreedte van inktannotaties in een PDF instelt met Aspose.PDF voor .NET. Deze gedetailleerde tutorial begeleidt u door elke stap en zorgt voor een uitvoer van hoge kwaliteit. |  
+| [Redactiepagina](./redactpage/) | Leer hoe u documenten effectief kunt redigeren met Aspose.PDF voor .NET met deze uitgebreide, stapsgewijze handleiding. |  
+| [Callout-eigenschap instellen in PDF-bestand](./setcalloutproperty/) | Leer hoe u de callout-eigenschap in een PDF-bestand instelt met Aspose.PDF voor .NET in deze gedetailleerde, stapsgewijze zelfstudie. |  
+| [Stel de opmaak van tekstannotaties in](./setfreetextannotationformatting/) | Leer hoe u vrije tekstopmaak in PDF-documenten kunt instellen met Aspose.PDF voor .NET met behulp van deze stapsgewijze handleiding. |  
+| [Woorden doorhalen](./strikeoutwords/) | Leer hoe u woorden in een PDF kunt doorhalen met Aspose.PDF voor .NET met deze uitgebreide stapsgewijze handleiding. Verbeter uw vaardigheden in het bewerken van documenten. |  
+| [Update gratis tekst PDF-annotatie](./updatefreetextannotation/) | Leer hoe u vrije tekstannotaties in PDF-documenten kunt bijwerken met Aspose.PDF voor .NET met deze stapsgewijze handleiding. |  

@@ -1,45 +1,45 @@
 ---
-title: PDF Dosyasındaki Kayan Kutu İçerikleri İçin Metin Hizalaması
-linktitle: PDF Dosyasındaki Kayan Kutu İçerikleri İçin Metin Hizalaması
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET'i kullanarak PDF dosyasındaki kayan kutular içindeki metni nasıl hizalayacağınızı öğrenin.
+title: PDF Dosyasında Yüzen Kutu İçeriği İçin Metin Hizalaması
+linktitle: PDF Dosyasında Yüzen Kutu İçeriği İçin Metin Hizalaması
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki yüzen kutulardaki metni nasıl hizalayacağınızı öğrenin.
 type: docs
 weight: 520
 url: /tr/net/programming-with-text/text-alignment-for-floating-box-contents/
 ---
-Bu eğitimde Aspose.PDF for .NET kullanılarak PDF dosyasındaki kayan kutular içindeki metnin nasıl hizalanacağı açıklanmaktadır. Sağlanan C# kaynak kodu süreci adım adım gösterir.
+Bu eğitim, .NET için Aspose.PDF kullanarak PDF dosyasındaki yüzen kutulardaki metnin nasıl hizalanacağını açıklar. Sağlanan C# kaynak kodu, işlemi adım adım gösterir.
 
-## Önkoşullar
+## Ön koşullar
 
-Eğiticiye devam etmeden önce aşağıdakilere sahip olduğunuzdan emin olun:
+Eğitime başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Temel C# programlama dili bilgisi.
-- Aspose.PDF for .NET kütüphanesi kuruldu. Bunu Aspose web sitesinden edinebilir veya projenize kurmak için NuGet'i kullanabilirsiniz.
+- C# programlama dilinin temel bilgisi.
+- .NET kütüphanesi için Aspose.PDF yüklendi. Bunu Aspose web sitesinden edinebilir veya projenize yüklemek için NuGet'i kullanabilirsiniz.
 
-## 1. Adım: Projeyi ayarlayın
+## Adım 1: Projeyi kurun
 
-Tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturarak başlayın ve Aspose.PDF for .NET kitaplığına bir referans ekleyin.
+Tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturarak başlayın ve .NET için Aspose.PDF kitaplığına bir başvuru ekleyin.
 
-## 2. Adım: Gerekli ad alanlarını içe aktarın
+## Adım 2: Gerekli ad alanlarını içe aktarın
 
-Gerekli ad alanlarını içe aktarmak için C# dosyanızın başına aşağıdaki kullanma yönergelerini ekleyin:
+Gerekli ad alanlarını içe aktarmak için C# dosyanızın başına aşağıdaki using yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## 3. Adım: Belge dizininin yolunu ayarlayın
+## Adım 3: Belge dizinine giden yolu ayarlayın
 
- kullanarak belge dizininizin yolunu ayarlayın.`dataDir` değişken:
+ Belge dizininize giden yolu kullanarak ayarlayın`dataDir` değişken:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` belge dizininize giden gerçek yol ile.
 
-## 4. Adım: Yeni bir Belge oluşturun
+## Adım 4: Yeni bir Belge Oluşturun
 
  Yeni bir tane oluştur`Document` nesne:
 
@@ -48,9 +48,9 @@ Aspose.Pdf.Document doc = new Document();
 doc.Pages.Add();
 ```
 
-## Adım 5: Metin Parçalarıyla Kayan Kutular Oluşturun
+## Adım 5: Metin Parçalarıyla Yüzen Kutular Oluşturun
 
- Birden fazla oluştur`FloatingBox` farklı dikey hizalamalara ve yatay hizalamalara sahip nesneler:
+ Birden fazla oluştur`FloatingBox` farklı dikey ve yatay hizalamalara sahip nesneler:
 
 ```csharp
 Aspose.Pdf.FloatingBox floatBox = new Aspose.Pdf.FloatingBox(100, 100);
@@ -75,7 +75,7 @@ floatBox2.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.P
 doc.Pages[1].Paragraphs.Add(floatBox2);
 ```
 
- Metnini ve stilini değiştirin`TextFragment` nesneleri istediğiniz gibi seçin.
+ Metni ve stilini değiştirin`TextFragment` İstenilen nesneler.
 
 ## Adım 6: PDF belgesini kaydedin
 
@@ -85,11 +85,11 @@ Değiştirilen PDF belgesini kaydedin:
 doc.Save(dataDir + "FloatingBox_alignment_review_out.pdf");
 ```
 
- Değiştirdiğinizden emin olun`"FloatingBox_alignment_review_out.pdf"` İstenilen çıktı dosyası adı ile.
+ Değiştirdiğinizden emin olun`"FloatingBox_alignment_review_out.pdf"` İstenilen çıktı dosya adı ile.
 
-### Aspose.PDF for .NET kullanarak Kayan Kutu İçeriği İçin Metin Hizalama için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Yüzen Kutu İçerikleri için Metin Hizalaması için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document doc = new Document();
 doc.Pages.Add();
@@ -116,42 +116,42 @@ doc.Save(dataDir + "FloatingBox_alignment_review_out.pdf");
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF belgesindeki kayan kutular içindeki metni nasıl hizalayacağınızı başarıyla öğrendiniz. Bu eğitimde, projenin kurulumundan değiştirilen belgenin kaydedilmesine kadar adım adım bir kılavuz sağlanmıştır. PDF dosyalarındaki kayan kutular içindeki metnin hizalamasını özelleştirmek için artık bu kodu kendi C# projelerinize dahil edebilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesinde yüzen kutulardaki metni nasıl hizalayacağınızı başarıyla öğrendiniz. Bu eğitim, projeyi kurmaktan değiştirilmiş belgeyi kaydetmeye kadar adım adım bir kılavuz sağladı. Artık bu kodu kendi C# projelerinize dahil ederek PDF dosyalarındaki yüzen kutulardaki metnin hizalamasını özelleştirebilirsiniz.
 
-### SSS'ler
+### SSS
 
-#### S: "PDF Dosyasındaki Kayan Kutu İçerikleri İçin Metin Hizalama" eğitiminin amacı nedir?
+#### S: "PDF Dosyasında Kayan Kutu İçeriği İçin Metin Hizalaması" eğitiminin amacı nedir?
 
-C: "PDF Dosyasındaki Kayan Kutu İçeriği İçin Metin Hizalama" eğitimi, kullanıcılara Aspose.PDF for .NET kullanarak bir PDF belgesindeki kayan kutular içindeki metni nasıl hizalayacakları konusunda rehberlik etmeyi amaçlamaktadır. Öğretici, süreci göstermek için adım adım talimatlar ve C# kod örnekleri sağlar.
+A: "PDF Dosyasında Yüzen Kutu İçerikleri İçin Metin Hizalaması" öğreticisinin amacı, kullanıcılara .NET için Aspose.PDF kullanarak bir PDF belgesindeki yüzen kutulardaki metni nasıl hizalayacakları konusunda rehberlik etmektir. Öğretici, işlemi göstermek için adım adım talimatlar ve C# kod örnekleri sağlar.
 
-#### S: Bu eğitim, kayan kutulardaki metnin hizalanmasına nasıl yardımcı olur?
+#### S: Bu eğitim, kayan kutulardaki metinlerin hizalanmasına nasıl yardımcı oluyor?
 
-C: Bu eğitim, kullanıcıların bir PDF belgesindeki kayan kutular içindeki metni hizalamak için Aspose.PDF for .NET'i nasıl kullanacaklarını anlamalarına yardımcı olur. Sağlanan adımları ve kod örneklerini takip ederek kullanıcılar, kayan kutular içindeki metnin dikey ve yatay hizalamasını özelleştirebilir.
+A: Bu eğitim, kullanıcıların bir PDF belgesindeki yüzen kutulardaki metni hizalamak için Aspose.PDF for .NET'i nasıl kullanacaklarını anlamalarına yardımcı olur. Sağlanan adımları ve kod örneklerini izleyerek, kullanıcılar yüzen kutulardaki metnin dikey ve yatay hizalamasını özelleştirebilir.
 
-#### S: Bu öğreticiyi takip etmek için hangi ön koşullar gereklidir?
+#### S: Bu eğitimi takip etmek için hangi ön koşullar gereklidir?
 
-C: Eğitime başlamadan önce C# programlama dili hakkında temel bilgiye sahip olmanız gerekir. Ayrıca Aspose.PDF for .NET kütüphanesinin de kurulu olması gerekir. Bunu Aspose web sitesinden edinebilir veya NuGet'i kullanarak projenize yükleyebilirsiniz.
+A: Eğitime başlamadan önce, C# programlama dili hakkında temel bir anlayışa sahip olmalısınız. Ek olarak, .NET için Aspose.PDF kütüphanesinin yüklü olması gerekir. Bunu Aspose web sitesinden edinebilir veya NuGet kullanarak projenize yükleyebilirsiniz.
 
-#### S: Projemi bu öğreticiyi takip edecek şekilde nasıl ayarlayabilirim?
+#### S: Bu eğitimi takip edecek şekilde projemi nasıl kurarım?
 
-C: Başlamak için tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturun ve Aspose.PDF for .NET kütüphanesine bir referans ekleyin. Bu, kitaplığın PDF belgeleriyle çalışma ve kayan kutular içindeki metni hizalama özelliklerinden yararlanmanıza olanak tanır.
+A: Başlamak için, tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturun ve Aspose.PDF for .NET kitaplığına bir referans ekleyin. Bu, PDF belgeleriyle çalışmak ve yüzen kutular içindeki metni hizalamak için kitaplığın özelliklerinden yararlanmanızı sağlar.
 
-#### S: Bu öğreticiyi herhangi bir kayan kutu türündeki metni hizalamak için kullanabilir miyim?
+#### S: Bu eğitimi herhangi bir tür yüzen kutu içindeki metni hizalamak için kullanabilir miyim?
 
-C: Evet, bu eğitimde Aspose.PDF for .NET kullanılarak bir PDF belgesindeki kayan kutular içindeki metnin nasıl hizalanacağına ilişkin talimatlar verilmektedir. Kayan kutular içindeki metnin dikey ve yatay hizalamasını özelleştirmek için sağlanan kod örneklerini kullanabilirsiniz.
+C: Evet, bu eğitim, .NET için Aspose.PDF kullanarak bir PDF belgesindeki yüzen kutulardaki metnin nasıl hizalanacağına dair talimatlar sağlar. Yüzen kutulardaki metnin dikey ve yatay hizalamasını özelleştirmek için sağlanan kod örneklerini kullanabilirsiniz.
 
-#### S: Kayan bir kutu içindeki metnin hizalamasını nasıl belirlerim?
+#### S: Yüzen bir kutu içindeki metnin hizalamasını nasıl belirlerim?
 
- C: Eğitimde nasıl oluşturulacağı gösteriliyor`FloatingBox`nesneleri ve bunların ayarlarını yapın`VerticalAlignment` Ve`HorizontalAlignment` içerilen metnin hizalamasını kontrol eden özellikler. Bu özellikleri ihtiyaçlarınıza göre ayarlayabilirsiniz.
+ A: Eğitimde nasıl oluşturulacağı gösterilmektedir`FloatingBox`nesneleri ve bunların ayarlarını ayarlayın`VerticalAlignment` Ve`HorizontalAlignment` İçerilen metnin hizalamasını kontrol etmek için özellikler. Bu özellikleri gereksinimlerinize göre ayarlayabilirsiniz.
 
 #### S: Yüzen kutuların görünümünü nasıl özelleştirebilirim?
 
- C: Kenarlık, boyut ve metin içeriği gibi özellikleri değiştirerek kayan kutuların görünümünü özelleştirebilirsiniz. Öğreticide, öğenin nasıl oluşturulacağını ve stillendirileceğini gösteren kod örnekleri sağlanır.`FloatingBox` nesneler.
+ A: Sınır, boyut ve metin içeriği gibi özellikleri değiştirerek yüzen kutuların görünümünü özelleştirebilirsiniz. Eğitim, yüzen kutuların nasıl oluşturulacağını ve biçimlendirileceğini gösteren kod örnekleri sağlar.`FloatingBox` nesneler.
 
-#### S: Aynı PDF belgesine farklı hizalamalara sahip birden fazla kayan kutu ekleyebilir miyim?
+#### S: Aynı PDF belgesine farklı hizalamalara sahip birden fazla yüzen kutu ekleyebilir miyim?
 
- C: Evet, eğitimde birden fazla öğenin nasıl oluşturulacağı gösterilmektedir`FloatingBox` farklı dikey ve yatay hizalamalara sahip nesneleri seçin ve bunları aynı PDF belgesine ekleyin. Bu, aynı belgedeki çeşitli hizalamaların etkilerini görmenize olanak tanır.
+ A: Evet, eğitimde birden fazla öğenin nasıl oluşturulacağı gösterilmektedir.`FloatingBox` Farklı dikey ve yatay hizalamalara sahip nesneleri aynı PDF belgesine ekleyin. Bu, aynı belge içinde çeşitli hizalamaların etkilerini görmenizi sağlar.
 
-#### S: Değiştirilen PDF belgesini nasıl kaydederim?
+#### S: Değiştirilen PDF belgesini nasıl kaydedebilirim?
 
- C: Değiştirilen PDF belgesini kaydetmek için`Save` yöntemi`Document` nesne. Eğitimde, ortaya çıkan PDF belgesinin nasıl kaydedileceğini gösteren kod örnekleri sağlanır.
+ A: Değiştirilen PDF belgesini kaydetmek için şunu kullanabilirsiniz:`Save` yöntemi`Document` nesne. Eğitim, ortaya çıkan PDF belgesinin nasıl kaydedileceğini gösteren kod örnekleri sağlar.

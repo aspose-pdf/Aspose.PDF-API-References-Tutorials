@@ -10,7 +10,7 @@ url: /zh-hant/java/pdf-form-fields/convert-dynamic-xfa-form-to-standard-acroform
 
 ## 將動態 XFA 表單轉換為 PDF 中的標準 AcroForm 簡介
 
-在 PDF 操作和產生領域，將動態 XFA（XML 表單架構）表單轉換為標準 AcroForms 的需求是常見的需求。 XFA表單以其動態和互動特性而聞名，有其優點。儘管如此，在某些情況下，相容性問題和更廣泛的可訪問性的需要使得有必要將它們轉換為更普遍支援的 AcroForms。在本指南中，我們將引導您逐步完成使用 Aspose.PDF for Java 將動態 XFA 表單轉換為 PDF 中的標準 AcroForms 的過程。
+在 PDF 操作和產生領域，將動態 XFA（XML 表單架構）表單轉換為標準 AcroForms 的需求是常見的需求。 XFA表單以其動態和互動特性而聞名，有其優點。儘管如此，在某些情況下，相容性問題和更廣泛的可訪問性的需要使得有必要將它們轉換為更普遍支援的 AcroForms。在本指南中，我們將引導您逐步完成使用 Aspose.PDF for Java 將動態 XFA 表單轉換為 PDF 格式的標準 AcroForms 的過程。
 
 ## 先決條件
 

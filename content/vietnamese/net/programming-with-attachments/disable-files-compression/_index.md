@@ -1,123 +1,124 @@
 ---
-title: Tắt tính năng nén tệp trong tệp PDF
-linktitle: Tắt tính năng nén tệp trong tệp PDF
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Tìm hiểu cách tắt tính năng nén tệp trong tệp PDF bằng Aspose.PDF cho .NET. Hướng dẫn từng bước để xử lý dễ dàng.
+title: Tắt tính năng nén tập tin trong tệp PDF
+linktitle: Tắt tính năng nén tập tin trong tệp PDF
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách vô hiệu hóa nén tệp trong tệp PDF bằng Aspose.PDF cho .NET với hướng dẫn từng bước này. Nâng cao kỹ năng quản lý PDF của bạn.
 type: docs
 weight: 30
 url: /vi/net/programming-with-attachments/disable-files-compression/
 ---
-Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn từng bước mã nguồn C# sau để tắt tính năng nén tệp trong PDF bằng Aspose.PDF cho .NET.
+## Giới thiệu
 
-Đảm bảo bạn đã cài đặt thư viện Aspose.PDF và thiết lập môi trường phát triển của mình trước khi bắt đầu. Ngoài ra còn có kiến thức cơ bản về lập trình C#.
+Trong thời đại kỹ thuật số, việc quản lý các tệp PDF hiệu quả là rất quan trọng đối với cả mục đích sử dụng cá nhân và chuyên nghiệp. Cho dù bạn là nhà phát triển muốn cải thiện ứng dụng của mình hay là chuyên gia kinh doanh quản lý tài liệu, việc hiểu cách thao tác với các tệp PDF có thể giúp bạn tiết kiệm thời gian và công sức. Một yêu cầu phổ biến là vô hiệu hóa tính năng nén tệp trong các tài liệu PDF. Điều này có thể đặc biệt hữu ích khi bạn muốn đảm bảo rằng các tệp nhúng vẫn giữ nguyên định dạng gốc mà không có bất kỳ thay đổi nào. Trong hướng dẫn này, chúng ta sẽ khám phá cách vô hiệu hóa tính năng nén tệp trong tệp PDF bằng Aspose.PDF cho .NET. 
 
-### Bước 1: Thiết lập thư mục tài liệu
+## Điều kiện tiên quyết
 
-Trong mã nguồn được cung cấp, bạn cần chỉ định thư mục chứa tệp PDF mà bạn muốn tắt tính năng nén tệp. Thay đổi biến "dataDir" thành thư mục mong muốn.
+Trước khi bắt đầu viết mã, bạn cần phải có một số điều kiện tiên quyết sau:
+
+1.  Aspose.PDF cho .NET: Đảm bảo bạn đã cài đặt thư viện Aspose.PDF. Bạn có thể tải xuống từ[trang web](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: Môi trường phát triển nơi bạn có thể viết và thực thi mã .NET của mình.
+3. Kiến thức cơ bản về C#: Sự quen thuộc với lập trình C# sẽ giúp bạn hiểu các đoạn mã tốt hơn.
+
+## Nhập gói
+
+Để bắt đầu, bạn cần nhập các gói cần thiết vào dự án C# của mình. Sau đây là cách bạn có thể thực hiện:
+
+### Tạo một dự án mới
+
+Mở Visual Studio và tạo một dự án C# mới. Bạn có thể chọn Ứng dụng Console để đơn giản hơn.
+
+### Thêm tham chiếu Aspose.PDF
+
+1. Nhấp chuột phải vào dự án của bạn trong Solution Explorer.
+2. Chọn "Quản lý gói NuGet".
+3. Tìm kiếm "Aspose.PDF" và cài đặt phiên bản mới nhất.
+
+### Nhập không gian tên
+
+Ở đầu tệp C# của bạn, hãy nhập không gian tên Aspose.PDF:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-### Bước 2: Mở tài liệu PDF hiện có
+Bây giờ chúng ta đã thiết lập xong mọi thứ, hãy chia nhỏ quá trình vô hiệu hóa tính năng nén tệp trong tệp PDF thành các bước dễ quản lý.
 
-Chúng tôi mở tài liệu PDF hiện có bằng đường dẫn đã chỉ định.
+## Bước 1: Xác định thư mục tài liệu
 
-```csharp
-Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-```
-
-### Bước 3: Thiết lập tệp mới để thêm dưới dạng tệp đính kèm
-
-Chúng tôi định cấu hình tệp mới mà chúng tôi muốn thêm dưới dạng tệp đính kèm. Trong ví dụ này, chúng tôi thêm một tệp văn bản có tên "test_out.txt" và mô tả "Tệp văn bản mẫu".
+Đầu tiên, bạn cần chỉ định đường dẫn đến thư mục chứa tệp PDF của bạn. Điều này rất quan trọng vì nó cho chương trình biết nơi tìm tệp bạn muốn thao tác.
 
 ```csharp
-FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-```
-
-### Bước 4: Vô hiệu hóa nén tệp
-
-Chúng tôi vô hiệu hóa tính năng nén tệp bằng cách đặt thuộc tính Encoding của đối tượng FileSpecification thành FileEncoding.None.
-
-```csharp
-fileSpecification.Encoding = FileEncoding.None;
-```
-
-### Bước 5: Thêm tệp đính kèm vào bộ sưu tập tệp đính kèm của tài liệu
-
-Chúng tôi thêm tệp đính kèm vào bộ sưu tập tệp đính kèm của tài liệu.
-
-```csharp
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-```
-
-### Bước 6: Lưu file đầu ra mới
-
-Cuối cùng, chúng tôi lưu tệp PDF mới thu được có tên "DisableFilesCompression_out.pdf" trong thư mục đã chỉ định.
-
-```csharp
-pdfDocument.Save(dataDir + "DisableFilesCompression_out.pdf");
-```
-
-
-### Mã nguồn mẫu cho Tắt tính năng nén tệp bằng Aspose.PDF cho .NET 
-
-```csharp
-
-// Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Thiết lập tệp mới sẽ được thêm dưới dạng tệp đính kèm
-FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-// Chỉ định nhóm mã hóa đặt nó thành FileEncoding.None
-fileSpecification.Encoding = FileEncoding.None;
-//Thêm tệp đính kèm vào bộ sưu tập tệp đính kèm của tài liệu
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-dataDir = dataDir + "DisableFilesCompression_out.pdf";
-// Lưu đầu ra mới
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
+```
 
+## Bước 2: Tải Tài liệu PDF
+
+ Tiếp theo, bạn sẽ tải tài liệu PDF mà bạn muốn sửa đổi. Điều này được thực hiện bằng cách sử dụng`Document` lớp được cung cấp bởi Aspose.PDF.
+
+```csharp
+Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
+```
+
+## Bước 3: Thiết lập tệp sẽ được thêm vào dưới dạng tệp đính kèm
+
+Bây giờ, bạn cần tạo một thông số tệp mới cho tệp đính kèm mà bạn muốn thêm vào PDF. Điều này bao gồm việc chỉ định tên và loại tệp.
+
+```csharp
+FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
+```
+
+## Bước 4: Chỉ định Thuộc tính Mã hóa
+
+ Để đảm bảo rằng tệp được thêm vào mà không cần nén, bạn cần đặt thuộc tính mã hóa của thông số kỹ thuật tệp thành`FileEncoding.None`. Bước này rất quan trọng vì nó ảnh hưởng trực tiếp đến cách tệp được nhúng vào PDF.
+
+```csharp
+fileSpecification.Encoding = FileEncoding.None;
+```
+
+## Bước 5: Thêm tệp đính kèm vào tài liệu
+
+Khi đã chuẩn bị xong thông số kỹ thuật của tệp, giờ đây bạn có thể thêm tệp đính kèm vào bộ sưu tập tệp đính kèm của tài liệu. Bước này sẽ tích hợp tệp vào PDF.
+
+```csharp
+pdfDocument.EmbeddedFiles.Add(fileSpecification);
+```
+
+## Bước 6: Lưu đầu ra mới
+
+Cuối cùng, bạn cần lưu tài liệu PDF đã sửa đổi. Chỉ định đường dẫn đầu ra nơi bạn muốn lưu tệp mới.
+
+```csharp
+dataDir = dataDir + "DisableFilesCompression_out.pdf";
+pdfDocument.Save(dataDir);
+```
+
+## Bước 7: Xác nhận thao tác
+
+Để đảm bảo mọi việc diễn ra suôn sẻ, bạn có thể in tin nhắn xác nhận vào bảng điều khiển.
+
+```csharp
+Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
 ```
 
 ## Phần kết luận
 
-Trong hướng dẫn này, chúng tôi đã giải thích cách tắt tính năng nén tệp trong PDF bằng Aspose.PDF cho .NET. Bây giờ bạn có thể sử dụng kiến thức này để duy trì tính toàn vẹn của các tệp đính kèm mà không cần nén.
+Vô hiệu hóa nén tệp trong tài liệu PDF có thể là một quá trình đơn giản với các công cụ phù hợp. Bằng cách làm theo các bước được nêu trong hướng dẫn này, bạn có thể dễ dàng quản lý các tệp PDF của mình và đảm bảo rằng các tệp đính kèm được nhúng giữ nguyên định dạng gốc. Aspose.PDF for .NET cung cấp một cách mạnh mẽ và linh hoạt để thao tác các tài liệu PDF, khiến nó trở thành lựa chọn tuyệt vời cho cả nhà phát triển và doanh nghiệp.
 
-## Câu hỏi thường gặp về tắt tính năng nén tệp trong tệp PDF
+## Câu hỏi thường gặp
 
-#### Hỏi: Tại sao tôi muốn tắt tính năng nén tệp trong tài liệu PDF?
+### Aspose.PDF dành cho .NET là gì?
+Aspose.PDF for .NET là một thư viện cho phép các nhà phát triển tạo, chỉnh sửa và chuyển đổi tài liệu PDF theo cách lập trình.
 
-Đáp: Việc tắt tính năng nén tệp đảm bảo rằng các tệp đính kèm trong tài liệu PDF không bị nén, duy trì chất lượng và nội dung ban đầu của chúng.
+### Tại sao tôi muốn tắt tính năng nén tệp trong PDF?
+Việc tắt tính năng nén tệp sẽ đảm bảo các tệp được nhúng vẫn giữ nguyên định dạng ban đầu, điều này rất quan trọng đối với tính toàn vẹn của dữ liệu.
 
-#### Câu hỏi: Việc tắt tính năng nén tệp có lợi cho tệp đính kèm PDF như thế nào?
+### Tôi có thể sử dụng Aspose.PDF miễn phí không?
+ Có, Aspose cung cấp phiên bản dùng thử miễn phí mà bạn có thể sử dụng để đánh giá thư viện. Bạn có thể tải xuống[đây](https://releases.aspose.com/).
 
-Đáp: Việc tắt tính năng nén sẽ ngăn chặn bất kỳ tình trạng mất dữ liệu hoặc chất lượng nào có thể xảy ra trong quá trình nén, đảm bảo rằng các tệp đính kèm được trình bày nguyên trạng.
+### Tôi có thể tìm thêm tài liệu về Aspose.PDF ở đâu?
+ Bạn có thể tìm thấy tài liệu toàn diện về[Trang web Aspose](https://reference.aspose.com/pdf/net/).
 
-#### Câu hỏi: Tôi có thể tắt tính năng nén có chọn lọc cho các tệp đính kèm cụ thể bằng hướng dẫn này không?
-
-Đáp: Có, hướng dẫn này sẽ hướng dẫn bạn cách tắt tính năng nén tệp cho từng tệp đính kèm trong tài liệu PDF, cung cấp khả năng kiểm soát chi tiết.
-
-#### Câu hỏi: Tôi có thể tắt tính năng nén cho những loại tệp đính kèm nào?
-
-Đáp: Bạn có thể tắt tính năng nén đối với bất kỳ loại tệp đính kèm nào, chẳng hạn như hình ảnh, tài liệu, bảng tính, v.v., để đảm bảo tính toàn vẹn của chúng được duy trì.
-
-#### Câu hỏi: Việc tắt tính năng nén có ảnh hưởng đến kích thước tệp tổng thể của tài liệu PDF không?
-
-Đáp: Việc tắt tính năng nén cho tệp đính kèm có thể làm tăng nhẹ kích thước tệp tổng thể của tài liệu PDF vì các tệp không nén sẽ chiếm nhiều dung lượng hơn.
-
-#### Câu hỏi: Aspose.PDF dành cho .NET hỗ trợ quá trình tắt tính năng nén tệp như thế nào?
-
-Đáp: Aspose.PDF for .NET cung cấp một API dễ sử dụng cho phép bạn tắt tính năng nén tệp đối với các tệp đính kèm, như được minh họa trong mã nguồn được cung cấp.
-
-#### Câu hỏi: Sau này tôi có thể bật lại tính năng nén cho tệp đính kèm nếu cần không?
-
-Đáp: Có, bạn có thể sửa đổi cài đặt của tệp đính kèm để bật lại tính năng nén nếu cần.
-
-#### Hỏi: Điều gì xảy ra nếu tôi mở tệp PDF trên thiết bị hoặc phần mềm hỗ trợ nén?
-
-Đáp: Nếu bạn mở tệp PDF trên thiết bị hoặc phần mềm hỗ trợ nén, tệp đính kèm có thể được hiển thị ở dạng không nén, có khả năng ảnh hưởng đến kích thước tệp và hiệu suất hiển thị.
-
-#### Câu hỏi: Có trường hợp cụ thể nào nên tắt tính năng nén không?
-
-Đáp: Bạn nên tắt tính năng nén đối với các tệp đính kèm trong đó việc duy trì chất lượng ban đầu và tính toàn vẹn của dữ liệu là ưu tiên hàng đầu, chẳng hạn như hình ảnh có độ phân giải cao hoặc tài liệu nhạy cảm.
+### Làm thế nào để tôi nhận được hỗ trợ cho Aspose.PDF?
+ Bạn có thể nhận được hỗ trợ bằng cách truy cập[Diễn đàn Aspose](https://forum.aspose.com/c/pdf/10).

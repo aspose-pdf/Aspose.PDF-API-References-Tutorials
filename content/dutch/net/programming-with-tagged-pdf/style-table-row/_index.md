@@ -1,19 +1,19 @@
 ---
-title: Stijltabelrij
-linktitle: Stijltabelrij
+title: Stijl tabelrij
+linktitle: Stijl tabelrij
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u tabelrijen kunt aanpassen met Aspose.PDF voor .NET, stapsgewijze handleiding voor het opmaken en opmaken van rijen.
+description: Leer hoe u tabelrijen kunt aanpassen met Aspose.PDF voor .NET. Stapsgewijze handleiding voor het opmaken en stylen van rijen.
 type: docs
 weight: 180
 url: /nl/net/programming-with-tagged-pdf/style-table-row/
 ---
-In deze gedetailleerde zelfstudie leiden we u stap voor stap door de meegeleverde C#-broncode om de tabelrij te formatteren met Aspose.PDF voor .NET. Volg de onderstaande instructies om te begrijpen hoe u de stijlen en eigenschappen van tabelrijen kunt aanpassen.
+In deze gedetailleerde tutorial leiden we u stap voor stap door de meegeleverde C#-broncode om de tabelrij te formatteren met Aspose.PDF voor .NET. Volg de onderstaande instructies om te begrijpen hoe u tabelrijstijlen en -eigenschappen kunt aanpassen.
 
 ## Stap 1: De omgeving instellen
 
-Voordat u begint, moet u ervoor zorgen dat u uw ontwikkelomgeving hebt geconfigureerd voor het gebruik van Aspose.PDF voor .NET. Dit omvat het installeren van de Aspose.PDF-bibliotheek en het configureren van uw project om ernaar te verwijzen.
+Voordat u begint, moet u ervoor zorgen dat u uw ontwikkelomgeving hebt geconfigureerd om Aspose.PDF voor .NET te gebruiken. Dit omvat het installeren van de Aspose.PDF-bibliotheek en het configureren van uw project om ernaar te verwijzen.
 
-## Stap 2: Een document aanmaken
+## Stap 2: Een document maken
 
 In deze stap maken we een nieuw documentobject Aspose.PDF.
 
@@ -30,35 +30,35 @@ taggedContent.SetLanguage("fr-FR");
 
 We hebben een nieuw document gemaakt en de documenttitel en taal ingesteld.
 
-## Stap 3: Het wortelstructuurelement verkrijgen
+## Stap 3: Het verkrijgen van het wortelstructuurelement
 
-In deze stap krijgen we het hoofdstructuurelement voor ons document.
+In deze stap verkrijgen we het rootstructuurelement voor ons document.
 
 ```csharp
-//Verkrijg het hoofdstructuurelement
+//Verkrijg het wortelstructuurelement
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We hebben het rootstructuurelement dat zal dienen als container voor het array-element.
+We hebben het rootstructuurelement dat als container voor het arrayelement zal dienen.
 
 ## Stap 4: Het array-structuurelement maken
 
 Laten we nu een nieuw tabelstructuurelement voor ons document maken.
 
 ```csharp
-// Maak het arraystructuurelement
+// Maak het array-structuurelement
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 ```
 
-We hebben een nieuw arraystructuurelement gemaakt en dit aan het hoofdstructuurelement toegevoegd.
+We hebben een nieuw array-structuurelement gemaakt en toegevoegd aan het root-structuurelement.
 
-## Stap 5: Pas de stijlen en eigenschappen van tabelrijen aan
+## Stap 5: Pas de rijstijlen en eigenschappen van de tabel aan
 
-In deze stap passen we de stijlen en eigenschappen van de tabelrijen aan.
+In deze stap passen we de rijstijlen en eigenschappen van de tabel aan.
 
 ```csharp
-// Pas de stijlen en eigenschappen van tabelrijen aan
+// Stijlen en eigenschappen van tabelrijen aanpassen
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
@@ -114,33 +114,33 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-We hebben verschillende aspecten van de tabelrij aangepast, zoals achtergrondkleur, randen, rijhoogte, paginering, standaardcelstijl en meer.
+We hebben verschillende aspecten van de tabelrij aangepast, zoals de achtergrondkleur, randen, rijhoogte, paginering, standaardcelstijl en meer.
 
 ## Stap 6: Het getagde PDF-document opslaan
 
-Nu we ons document met de opgemaakte tabelrij hebben gemaakt, slaan we het op als een getagd PDF-document.
+Nu we ons document met de opgemaakte tabelrij hebben gemaakt, slaan we het op als een PDF-document met tags.
 ```csharp
 // Sla het getagde PDF-document op
 document.Save(dataDir + "StyleTableRow.pdf");
 ```
 
-We hebben het getagde PDF-document in de opgegeven map opgeslagen.
+We hebben het getagde PDF-document opgeslagen in de opgegeven directory.
 
-## Stap 7: Validatie van PDF/UA-naleving
+## Stap 7: PDF/UA-nalevingsvalidatie
 
 Vervolgens valideren we de PDF/UA-conformiteit van ons document.
 
 ```csharp
-// Conformiteitscontrole van PDF/UA
+// PDF/UA-nalevingscontrole
 document = new Document(dataDir + "StyleTableRow.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableRow.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-We hebben het getagde PDF-document geüpload en de PDF/UA-compatibiliteit ervan gevalideerd door een XML-rapport te genereren.
+We hebben het getagde PDF-document geüpload en de PDF/UA-conformiteit ervan gevalideerd door een XML-rapport te genereren.
 
 
-### Voorbeeldbroncode voor Style Table Row met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Style Table Row met behulp van Aspose.PDF voor .NET 
 ```csharp
 
 // Het pad naar de documentenmap.
@@ -152,10 +152,10 @@ ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table row style");
 taggedContent.SetLanguage("en-US");
 
-// Haal het hoofdstructuurelement op
+// Krijg wortelstructuur element
 StructureElement rootElement = taggedContent.RootElement;
 
-// Tabelstructuurelement maken
+// Maak een tabelstructuurelement
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
@@ -202,10 +202,10 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 	tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
 
-// Bewaar het getagde pdf-document
+// Gelabeld PDF-document opslaan
 document.Save(dataDir + "StyleTableRow.pdf");
 
-// Conformiteit met PDF/UA controleren
+// Controleren van PDF/UA-compatibiliteit
 document = new Document(dataDir + "StyleTableRow.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableRow.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
@@ -214,50 +214,50 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ## Conclusie
 
-In deze zelfstudie hebben we geleerd hoe u een tabelrij kunt opmaken met Aspose.PDF voor .NET. We hebben de rijstijlen en -eigenschappen van de tabel aangepast, de kopteksten, hoofdrijen en voettekst toegevoegd, het getagde PDF-document opgeslagen en de PDF/UA-compatibiliteit ervan gevalideerd.
+In deze tutorial hebben we geleerd hoe we een tabelrij kunnen formatteren met Aspose.PDF voor .NET. We hebben de stijlen en eigenschappen van de tabelrij aangepast, de headers, bodyrijen en footer toegevoegd, het getagde PDF-document opgeslagen en de PDF/UA-compliance gevalideerd.
 
 ### Veelgestelde vragen
 
-#### Vraag: Wat is het doel van deze tutorial over het opmaken van tabelrijen met Aspose.PDF voor .NET?
+#### V: Wat is het doel van deze tutorial over het opmaken van tabelrijen met Aspose.PDF voor .NET?
 
-A: Het doel van deze tutorial is om u te begeleiden bij het opmaken van tabelrijen in een PDF-document met Aspose.PDF voor .NET. Het biedt stapsgewijze instructies en C#-broncodevoorbeelden om u te helpen de stijlen en eigenschappen van tabelrijen aan te passen.
+A: Het doel van deze tutorial is om u te begeleiden door het proces van het formatteren van tabelrijen in een PDF-document met behulp van Aspose.PDF voor .NET. Het biedt stapsgewijze instructies en C#-broncodevoorbeelden om u te helpen bij het aanpassen van tabelrijstijlen en -eigenschappen.
 
-#### Vraag: Wat zijn de vereisten voor het volgen van deze tutorial?
+#### V: Wat zijn de vereisten om deze tutorial te kunnen volgen?
 
-A: Zorg ervoor dat u, voordat u begint, uw ontwikkelomgeving hebt ingesteld voor het gebruik van Aspose.PDF voor .NET. Dit omvat het installeren van de Aspose.PDF-bibliotheek en het configureren van uw project om ernaar te verwijzen.
+A: Voordat u begint, moet u ervoor zorgen dat u uw ontwikkelomgeving hebt ingesteld om Aspose.PDF voor .NET te gebruiken. Dit houdt in dat u de Aspose.PDF-bibliotheek installeert en uw project configureert om ernaar te verwijzen.
 
-#### Vraag: Hoe kan ik een nieuw PDF-document maken en de titel en taal instellen met Aspose.PDF voor .NET?
+#### V: Hoe kan ik een nieuw PDF-document maken en de titel en taal instellen met Aspose.PDF voor .NET?
 
- A: Om een nieuw PDF-document te maken, moet u een`Document` object uit de Aspose.PDF-bibliotheek. De C#-broncode van de tutorial laat zien hoe u een document maakt en de titel- en taaleigenschappen instelt.
+ A: Om een nieuw PDF-document te maken, moet u een`Document` object uit de Aspose.PDF-bibliotheek. De C#-broncode van de tutorial laat zien hoe u een document maakt en de titel en taaleigenschappen instelt.
 
-#### Vraag: Wat is de betekenis van het hoofdstructuurelement in een PDF-document?
+#### V: Wat is de betekenis van het rootstructuurelement in een PDF-document?
 
-A: Het hoofdstructuurelement fungeert als container voor andere structuurelementen en helpt bij het ordenen en categoriseren van de inhoud van het PDF-document. Het speelt een cruciale rol bij het vaststellen van de logische structuur van het document.
+A: Het root-structuurelement fungeert als een container voor andere structuurelementen en helpt de inhoud van het PDF-document te organiseren en categoriseren. Het speelt een cruciale rol bij het vaststellen van de logische structuur van het document.
 
-#### Vraag: Hoe kan ik een tabelstructuurelement maken en aanpassen om tabelrijen op te maken met Aspose.PDF voor .NET?
+#### V: Hoe kan ik een tabelstructuurelement maken en aanpassen om tabelrijen op te maken met behulp van Aspose.PDF voor .NET?
 
-A: In de tutorial wordt uitgelegd hoe u een tabelstructuurelement maakt en de eigenschappen ervan aanpast om tabelrijen op te maken. Het behandelt aspecten zoals achtergrondkleur, randen, rijhoogte, paginering, standaard celstijl en meer.
+A: De tutorial legt uit hoe u een tabelstructuurelement maakt en de eigenschappen ervan aanpast om tabelrijen op te maken. Het behandelt aspecten zoals achtergrondkleur, randen, rijhoogte, paginering, standaard celstijl en meer.
 
-#### Vraag: Kan ik de stijlen en eigenschappen van individuele cellen binnen een tabelrij aanpassen?
+#### V: Kan ik de stijlen en eigenschappen van afzonderlijke cellen in een tabelrij aanpassen?
 
-A: Ja, u kunt de stijlen en eigenschappen van individuele cellen binnen een tabelrij aanpassen. In de zelfstudie wordt gedemonstreerd hoe u eigenschappen zoals achtergrondkleur, randen, tekstkleur, opvulling en meer instelt voor tabelcellen binnen de opgemaakte tabelrij.
+A: Ja, u kunt de stijlen en eigenschappen van afzonderlijke cellen binnen een tabelrij aanpassen. De tutorial laat zien hoe u eigenschappen zoals achtergrondkleur, randen, tekstkleur, opvulling en meer instelt voor tabelcellen binnen de opgemaakte tabelrij.
 
-#### Vraag: Hoe kan ik kopteksten, hoofdrijen en een voettekst toevoegen aan de opgemaakte tabelrij?
+#### V: Hoe kan ik kopteksten, hoofdtekstrijen en een voettekst toevoegen aan de opgemaakte tabelrij?
 
-A: De tutorial biedt voorbeelden van het maken en toevoegen van kopteksten, hoofdrijen en een voettekst aan het tabelstructuurelement. Deze elementen kunnen verder worden aangepast met behulp van de eigenschappen die in de tutorial worden beschreven.
+A: De tutorial geeft voorbeelden van het maken en toevoegen van headers, body-rijen en een footer aan het tabelstructuurelement. Deze elementen kunnen verder worden aangepast met behulp van de eigenschappen die in de tutorial worden beschreven.
 
-#### Vraag: Wat is PDF/UA-compliance en hoe kan ik dit valideren voor mijn getagde PDF-document?
+#### V: Wat is PDF/UA-compliance en hoe kan ik dit valideren voor mijn getagde PDF-document?
 
- A: PDF/UA-compliance zorgt ervoor dat het PDF-document voldoet aan de toegankelijkheidsnormen, waardoor het toegankelijker wordt voor gebruikers met een beperking. In de tutorial wordt gedemonstreerd hoe u de PDF/UA-conformiteit kunt valideren met behulp van de`Validate()` methode en genereer een XML-compliancerapport.
+ A: PDF/UA-compliance zorgt ervoor dat het PDF-document voldoet aan de toegankelijkheidsnormen, waardoor het toegankelijker wordt voor gebruikers met een beperking. De tutorial laat zien hoe u PDF/UA-conformiteit kunt valideren met behulp van de`Validate()` methode en genereer een XML-nalevingsrapport.
 
-#### Vraag: Hoe kan ik deze concepten integreren in mijn eigen .NET-applicaties?
+#### V: Hoe kan ik deze concepten integreren in mijn eigen .NET-toepassingen?
 
-A: U kunt de meegeleverde C#-broncodevoorbeelden gebruiken als richtlijn voor het implementeren van de opmaak van tabelrijen in uw eigen .NET-toepassingen. Wijzig en pas de code aan uw vereisten aan en integreer deze in uw projecten.
+A: U kunt de meegeleverde C# broncodevoorbeelden gebruiken als leidraad voor het implementeren van tabelrijopmaak in uw eigen .NET-toepassingen. Wijzig en pas de code aan om aan uw vereisten te voldoen en integreer deze in uw projecten.
 
-#### Vraag: Zijn er aanbevolen best practices voor het opmaken van tabelrijen in PDF-documenten?
+#### V: Zijn er aanbevolen best practices voor het opmaken van tabelrijen in PDF-documenten?
 
-A: Houd bij het opmaken van tabelrijen rekening met de leesbaarheid en toegankelijkheid van de inhoud. Zorg ervoor dat kleuren voldoende contrast hebben, gebruik duidelijke en leesbare lettertypen en zorg voor een consistente lay-out. Valideer de PDF/UA-compliance om ervoor te zorgen dat aan de toegankelijkheidsnormen wordt voldaan.
+A: Houd bij het formatteren van tabelrijen rekening met de leesbaarheid en toegankelijkheid van de inhoud. Zorg ervoor dat kleuren voldoende contrast hebben, gebruik duidelijke en leesbare lettertypen en zorg voor een consistente lay-out. Valideer PDF/UA-naleving om te zorgen dat aan de toegankelijkheidsnormen wordt voldaan.
 
-#### Vraag: Welke andere functies van Aspose.PDF voor .NET kan ik verkennen voor het aanpassen van PDF-documenten?
+#### V: Welke andere functies van Aspose.PDF voor .NET kan ik gebruiken om PDF-documenten aan te passen?
 
-A: Aspose.PDF voor .NET biedt een breed scala aan functies voor het aanpassen van PDF-documenten, waaronder tekstmanipulatie, het invoegen van afbeeldingen, beheer van formuliervelden, digitale handtekeningen, annotaties en meer. Raadpleeg de officiële documentatie en bronnen om aanvullende functionaliteiten te verkennen.
+A: Aspose.PDF voor .NET biedt een breed scala aan functies voor het aanpassen van PDF-documenten, waaronder tekstmanipulatie, het invoegen van afbeeldingen, beheer van formuliervelden, digitale handtekeningen, annotaties en meer. Raadpleeg de officiële documentatie en bronnen om extra functionaliteiten te verkennen.

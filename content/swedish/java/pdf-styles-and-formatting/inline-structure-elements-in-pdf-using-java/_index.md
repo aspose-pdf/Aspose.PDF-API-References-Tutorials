@@ -74,7 +74,7 @@ Inline-strukturelement hjälper inte bara till med dokumentets struktur utan lå
 
 ### Ändra textfärg
 
-Du kan ändra färgen på inline text med Aspose.PDF. Här är hur:
+Du kan ändra färgen på inline text med Aspose.PDF. Så här gör du:
 
 ```java
 textFragment.getTextState().setForegroundColor(Color.getRed());
@@ -171,7 +171,7 @@ inlineTextElement.setText("This is an inline structure element.");
 textFragment.getTextState().setStructureElement(inlineTextElement);
 ```
 
-### Associera strukturelement med innehåll
+### Att associera strukturelement med innehåll
 
 Genom att associera strukturelement med innehåll ger du ytterligare information om textens semantik. Detta är avgörande för tillgängligheten.
 

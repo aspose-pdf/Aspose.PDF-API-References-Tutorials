@@ -1,21 +1,21 @@
 ---
-title: Phần tử bảng kiểu
-linktitle: Phần tử bảng kiểu
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Tìm hiểu cách định dạng thành phần bảng bằng Aspose.PDF cho .NET. Hướng dẫn từng bước để tùy chỉnh kiểu và thuộc tính.
+title: Kiểu Bảng Phần Tử
+linktitle: Kiểu Bảng Phần Tử
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách định dạng phần tử bảng bằng Aspose.PDF cho .NET. Hướng dẫn từng bước để tùy chỉnh kiểu và thuộc tính.
 type: docs
 weight: 170
 url: /vi/net/programming-with-tagged-pdf/style-table-element/
 ---
-Trong hướng dẫn chi tiết này, chúng tôi sẽ hướng dẫn bạn từng bước về mã nguồn C# được cung cấp để định dạng phần tử mảng bằng Aspose.PDF cho .NET. Hãy làm theo hướng dẫn bên dưới để hiểu cách tùy chỉnh kiểu và thuộc tính của phần tử mảng.
+Trong hướng dẫn chi tiết này, chúng tôi sẽ hướng dẫn bạn từng bước mã nguồn C# được cung cấp để định dạng phần tử mảng bằng Aspose.PDF cho .NET. Làm theo hướng dẫn bên dưới để hiểu cách tùy chỉnh kiểu và thuộc tính của phần tử mảng.
 
 ## Bước 1: Thiết lập môi trường
 
-Trước khi bắt đầu, hãy đảm bảo bạn đã định cấu hình môi trường phát triển của mình để sử dụng Aspose.PDF cho .NET. Điều này bao gồm việc cài đặt thư viện Aspose.PDF và định cấu hình dự án của bạn để tham chiếu nó.
+Trước khi bắt đầu, hãy đảm bảo bạn đã cấu hình môi trường phát triển của mình để sử dụng Aspose.PDF cho .NET. Điều này bao gồm cài đặt thư viện Aspose.PDF và cấu hình dự án của bạn để tham chiếu đến nó.
 
 ## Bước 2: Tạo tài liệu
 
-Trong bước này, chúng ta sẽ tạo một đối tượng tài liệu mới Aspose.PDF.
+Ở bước này, chúng ta sẽ tạo một đối tượng tài liệu mới Aspose.PDF.
 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
@@ -32,18 +32,18 @@ Chúng tôi đã tạo một tài liệu mới và đặt tiêu đề và ngôn 
 
 ## Bước 3: Lấy phần tử cấu trúc gốc
 
-Trong bước này, chúng ta sẽ lấy phần tử cấu trúc gốc cho tài liệu của mình.
+Ở bước này, chúng ta sẽ lấy phần tử cấu trúc gốc cho tài liệu của mình.
 
 ```csharp
 //Lấy phần tử cấu trúc gốc
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-Chúng ta đã có phần tử cấu trúc gốc sẽ đóng vai trò là vùng chứa cho phần tử mảng.
+Chúng ta có phần tử cấu trúc gốc sẽ đóng vai trò là vùng chứa cho phần tử mảng.
 
 ## Bước 4: Tạo phần tử cấu trúc mảng
 
-Bây giờ hãy tạo một thành phần cấu trúc bảng mới cho tài liệu của chúng ta.
+Bây giờ chúng ta hãy tạo một phần tử cấu trúc bảng mới cho tài liệu của mình.
 
 ```csharp
 // Tạo phần tử cấu trúc mảng
@@ -53,12 +53,12 @@ rootElement.AppendChild(tableElement);
 
 Chúng tôi đã tạo một phần tử cấu trúc mảng mới và thêm nó vào phần tử cấu trúc gốc.
 
-## Bước 5: Tùy chỉnh kiểu và thuộc tính phần tử mảng
+## Bước 5: Tùy chỉnh Kiểu và Thuộc tính của Phần tử Mảng
 
-Trong bước này, chúng ta sẽ tùy chỉnh kiểu và thuộc tính của phần tử mảng.
+Ở bước này, chúng ta sẽ tùy chỉnh kiểu dáng và thuộc tính của phần tử mảng.
 
 ```csharp
-// Tùy chỉnh kiểu và thuộc tính của phần tử mảng
+// Tùy chỉnh kiểu dáng và thuộc tính của phần tử mảng
 tableElement.BackgroundColor = Color.Beige;
 tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
 tableElement. Alignment = HorizontalAlignment. Center;
@@ -77,24 +77,24 @@ tableElement. Top = 40F;
 tableElement.RepeatingColumnsCount = 2;
 tableElement.RepeatingRowsCount = 3;
 
-// Tùy chỉnh kiểu dòng lặp lại
+// Tùy chỉnh kiểu của các dòng lặp lại
 TextState rowStyle = new TextState();
 rowStyle.BackgroundColor = Color.LightCoral;
 tableElement.RepeatingRowsStyle = rowStyle;
 ```
 
-Chúng tôi đã sử dụng nhiều thuộc tính khác nhau để tùy chỉnh thành phần bảng, chẳng hạn như màu nền, đường viền, căn chỉnh, kiểu ô mặc định, lề, độ rộng cột, v.v.
+Chúng tôi đã sử dụng nhiều thuộc tính khác nhau để tùy chỉnh thành phần của bảng, chẳng hạn như màu nền, đường viền, căn chỉnh, kiểu ô mặc định, lề, chiều rộng cột, v.v.
 
 ## Bước 6: Thêm tiêu đề, nội dung và chân trang của bảng
 
-Bây giờ hãy thêm tiêu đề, nội dung và chân trang của bảng vào thành phần bảng.
+Bây giờ chúng ta hãy thêm tiêu đề, nội dung và chân trang vào phần tử bảng.
 ```csharp
 // Thêm tiêu đề bảng
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
 
-// Số hàng và cột trong bảng
+// Số lượng hàng và cột trong bảng
 int rowCount = 10;
 int colCount = 5;
 int rowIndex;
@@ -110,7 +110,7 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
      theElement.SetText(string.Format("Header {0}", colIndex));
 }
 
-//Thêm các hàng của nội dung bảng
+//Thêm các hàng của thân bảng
 for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 {
      TableTRElement trElement = tableTBodyElement.CreateTR();
@@ -123,7 +123,7 @@ for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
      }
 }
 
-// Thêm đường chân bàn
+// Thêm đường chân đế của bảng
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Footline";
 
@@ -134,33 +134,33 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-Chúng tôi đã thêm các dòng đầu trang, hàng nội dung và hàng chân trang vào bảng bằng cách sử dụng các phần tử tương ứng.
+Chúng tôi đã thêm các hàng tiêu đề, hàng nội dung và hàng chân trang vào bảng bằng các phần tử tương ứng.
 
-## Bước 7: Lưu tài liệu PDF được gắn thẻ
+## Bước 7: Lưu tài liệu PDF đã gắn thẻ
 
-Bây giờ chúng tôi đã tạo tài liệu của mình với thành phần bảng được tạo kiểu, chúng tôi sẽ lưu nó dưới dạng tài liệu PDF được gắn thẻ.
+Bây giờ chúng ta đã tạo xong tài liệu với phần tử bảng được tạo kiểu, chúng ta sẽ lưu nó dưới dạng tài liệu PDF có gắn thẻ.
 
 ```csharp
-// Lưu tài liệu PDF được gắn thẻ
+// Lưu tài liệu PDF đã gắn thẻ
 document.Save(dataDir + "StyleTableElement.pdf");
 ```
 
-Chúng tôi đã lưu tài liệu PDF được gắn thẻ vào thư mục được chỉ định.
+Chúng tôi đã lưu tài liệu PDF được gắn thẻ vào thư mục đã chỉ định.
 
-## Bước 8: Xác thực tuân thủ PDF/UA
+## Bước 8: Xác thực sự tuân thủ PDF/UA
 
-Tiếp theo, chúng tôi sẽ xác thực tính tuân thủ PDF/UA của tài liệu của chúng tôi.
+Tiếp theo, chúng tôi sẽ xác thực tính phù hợp PDF/UA của tài liệu.
 
 ```csharp
-// Kiểm tra tuân thủ PDF/UA
+// Kiểm tra sự tuân thủ PDF/UA
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-Chúng tôi đã tải tài liệu PDF được gắn thẻ lên và xác thực tính tuân thủ PDF/UA của tài liệu đó bằng cách tạo báo cáo XML.
+Chúng tôi đã tải lên tài liệu PDF được gắn thẻ và xác thực tính tuân thủ PDF/UA của tài liệu này bằng cách tạo báo cáo XML.
 
-### Mã nguồn mẫu cho Phần tử bảng kiểu bằng cách sử dụng Aspose.PDF cho .NET 
+### Mã nguồn mẫu cho Style Table Element sử dụng Aspose.PDF cho .NET 
 
 ```csharp
 
@@ -231,10 +231,10 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 	tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
 
-// Lưu tài liệu PDF được gắn thẻ
+// Lưu tài liệu PDF có gắn thẻ
 document.Save(dataDir + "StyleTableElement.pdf");
 
-// Kiểm tra việc tuân thủ PDF/UA
+// Kiểm tra sự tuân thủ PDF/UA
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
@@ -243,50 +243,50 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ## Phần kết luận
 
-Trong hướng dẫn này, chúng ta đã học cách định dạng phần tử mảng bằng Aspose.PDF cho .NET. Chúng tôi đã tùy chỉnh kiểu và thuộc tính của thành phần bảng, thêm tiêu đề, hàng nội dung và chân trang, lưu tài liệu PDF được gắn thẻ và xác thực tính tuân thủ PDF/UA của nó.
+Trong hướng dẫn này, chúng ta đã học cách định dạng phần tử mảng bằng Aspose.PDF cho .NET. Chúng ta đã tùy chỉnh các kiểu và thuộc tính của phần tử bảng, thêm tiêu đề, hàng nội dung và chân trang, lưu tài liệu PDF được gắn thẻ và xác thực tính tuân thủ PDF/UA của nó.
 
 ### Câu hỏi thường gặp
 
-#### Câu hỏi: Mục đích của hướng dẫn này về định dạng phần tử mảng bằng Aspose.PDF cho .NET là gì?
+#### H: Mục đích của hướng dẫn định dạng phần tử mảng bằng Aspose.PDF cho .NET này là gì?
 
-Đáp: Mục tiêu của hướng dẫn này là hướng dẫn bạn quy trình định dạng phần tử mảng trong tài liệu PDF bằng Aspose.PDF cho .NET. Nó cung cấp hướng dẫn từng bước và ví dụ về mã nguồn C# để giúp bạn tùy chỉnh kiểu và thuộc tính của thành phần mảng.
+A: Mục tiêu của hướng dẫn này là hướng dẫn bạn quy trình định dạng phần tử mảng trong tài liệu PDF bằng Aspose.PDF cho .NET. Hướng dẫn này cung cấp hướng dẫn từng bước và ví dụ mã nguồn C# để giúp bạn tùy chỉnh kiểu và thuộc tính của phần tử mảng.
 
-#### Hỏi: Điều kiện tiên quyết để làm theo hướng dẫn này là gì?
+#### H: Cần có những điều kiện tiên quyết nào để thực hiện hướng dẫn này?
 
-Trả lời: Trước khi bắt đầu, hãy đảm bảo rằng bạn đã thiết lập môi trường phát triển của mình để sử dụng Aspose.PDF cho .NET. Điều này liên quan đến việc cài đặt thư viện Aspose.PDF và định cấu hình dự án của bạn để tham chiếu nó.
+A: Trước khi bắt đầu, hãy đảm bảo rằng bạn đã thiết lập môi trường phát triển để sử dụng Aspose.PDF cho .NET. Điều này bao gồm cài đặt thư viện Aspose.PDF và cấu hình dự án của bạn để tham chiếu đến nó.
 
-#### Hỏi: Làm cách nào tôi có thể tạo một tài liệu PDF mới cũng như đặt tiêu đề và ngôn ngữ của nó bằng Aspose.PDF cho .NET?
+#### H: Làm thế nào để tạo một tài liệu PDF mới và đặt tiêu đề cũng như ngôn ngữ cho nó bằng Aspose.PDF cho .NET?
 
- Đáp: Để tạo một tài liệu PDF mới, bạn cần tạo một`Document` đối tượng từ thư viện Aspose.PDF. Mã nguồn C# được cung cấp trong hướng dẫn này trình bày cách tạo một tài liệu và đặt các thuộc tính ngôn ngữ và tiêu đề của nó.
+ A: Để tạo một tài liệu PDF mới, bạn cần tạo một`Document` đối tượng từ thư viện Aspose.PDF. Mã nguồn C# được cung cấp trong hướng dẫn này sẽ trình bày cách tạo tài liệu và thiết lập tiêu đề cũng như thuộc tính ngôn ngữ của tài liệu đó.
 
-#### Hỏi: Tầm quan trọng của thành phần cấu trúc gốc trong tài liệu PDF là gì?
+#### H: Tầm quan trọng của phần tử cấu trúc gốc trong tài liệu PDF là gì?
 
-Trả lời: Phần tử cấu trúc gốc đóng vai trò là nơi chứa các phần tử cấu trúc khác, giúp tổ chức và phân loại nội dung của tài liệu PDF. Nó đóng một vai trò quan trọng trong việc thiết lập cấu trúc logic của tài liệu.
+A: Phần tử cấu trúc gốc đóng vai trò như một container cho các phần tử cấu trúc khác, giúp sắp xếp và phân loại nội dung của tài liệu PDF. Nó đóng vai trò quan trọng trong việc thiết lập cấu trúc logic của tài liệu.
 
-#### Câu hỏi: Làm cách nào để tạo và tùy chỉnh phần tử cấu trúc mảng bằng Aspose.PDF cho .NET?
+#### H: Làm thế nào để tạo và tùy chỉnh phần tử cấu trúc mảng bằng Aspose.PDF cho .NET?
 
- Đáp: Bạn có thể tạo một phần tử cấu trúc mảng bằng cách sử dụng`CreateTableElement()` phương pháp. Mã nguồn của hướng dẫn này cung cấp các ví dụ về cách tùy chỉnh các thuộc tính khác nhau của thành phần bảng, chẳng hạn như màu nền, đường viền, căn chỉnh, độ rộng cột, v.v.
+ A: Bạn có thể tạo một phần tử cấu trúc mảng bằng cách sử dụng`CreateTableElement()` phương pháp. Mã nguồn của hướng dẫn cung cấp các ví dụ về cách tùy chỉnh nhiều thuộc tính khác nhau của phần tử bảng, chẳng hạn như màu nền, đường viền, căn chỉnh, chiều rộng cột, v.v.
 
-#### Câu hỏi: Tôi có thể tùy chỉnh kiểu và thuộc tính của các ô bảng trong phần tử mảng không?
+#### H: Tôi có thể tùy chỉnh kiểu dáng và thuộc tính của các ô trong bảng bên trong phần tử mảng không?
 
-Đáp: Có, hướng dẫn này bao gồm cách tùy chỉnh kiểu và thuộc tính của toàn bộ thành phần bảng, bao gồm đầu trang, hàng nội dung và chân trang. Tuy nhiên, nó không đề cập cụ thể đến việc tùy chỉnh các ô trong bảng riêng lẻ.
+A: Có, hướng dẫn này đề cập đến cách tùy chỉnh kiểu và thuộc tính của toàn bộ phần tử bảng, bao gồm tiêu đề, hàng nội dung và chân trang. Tuy nhiên, hướng dẫn này không đề cập cụ thể đến việc tùy chỉnh từng ô bảng.
 
-#### Câu hỏi: Làm cách nào tôi có thể thêm đầu trang, hàng nội dung và chân trang vào thành phần bảng?
+#### H: Làm thế nào tôi có thể thêm tiêu đề, hàng nội dung và chân trang vào phần tử bảng?
 
-Đáp: Hướng dẫn này giải thích cách tạo và thêm tiêu đề, hàng nội dung và chân trang vào thành phần bảng bằng các phương pháp thích hợp do Aspose.PDF cung cấp cho .NET.
+A: Bài hướng dẫn này giải thích cách tạo và thêm tiêu đề, hàng nội dung và chân trang vào phần tử bảng bằng các phương pháp phù hợp do Aspose.PDF cung cấp cho .NET.
 
-#### Câu hỏi: Tuân thủ PDF/UA là gì và làm cách nào để xác thực nó cho tài liệu PDF được gắn thẻ của tôi?
+#### H: Tuân thủ PDF/UA là gì và tôi có thể xác thực nó cho tài liệu PDF được gắn thẻ của mình như thế nào?
 
- Đáp: Việc tuân thủ PDF/UA đảm bảo rằng tài liệu PDF tuân thủ các tiêu chuẩn trợ năng, giúp người dùng khuyết tật dễ dàng truy cập hơn. Hướng dẫn này trình bày cách xác thực sự tuân thủ PDF/UA bằng cách sử dụng`Validate()` phương pháp và tạo ra một báo cáo tuân thủ XML.
+ A: Tuân thủ PDF/UA đảm bảo rằng tài liệu PDF tuân thủ các tiêu chuẩn về khả năng truy cập, giúp người dùng khuyết tật dễ truy cập hơn. Hướng dẫn này trình bày cách xác thực tính tuân thủ PDF/UA bằng cách sử dụng`Validate()` phương pháp và tạo báo cáo tuân thủ XML.
 
-#### Câu hỏi: Làm cách nào tôi có thể kết hợp các khái niệm này vào các ứng dụng .NET của riêng mình?
+#### H: Làm thế nào tôi có thể kết hợp những khái niệm này vào ứng dụng .NET của riêng mình?
 
-Trả lời: Bạn có thể sử dụng các ví dụ về mã nguồn C# được cung cấp làm hướng dẫn triển khai định dạng phần tử mảng trong các ứng dụng .NET của riêng bạn. Sửa đổi và điều chỉnh mã để phù hợp với yêu cầu của bạn và tích hợp nó vào các dự án của bạn.
+A: Bạn có thể sử dụng các ví dụ mã nguồn C# được cung cấp làm hướng dẫn để triển khai định dạng phần tử mảng trong các ứng dụng .NET của riêng bạn. Sửa đổi và điều chỉnh mã để phù hợp với yêu cầu của bạn và tích hợp vào các dự án của bạn.
 
-#### Câu hỏi: Có bất kỳ phương pháp hay nhất nào được đề xuất để định dạng các phần tử mảng trong tài liệu PDF không?
+#### H: Có khuyến nghị nào về phương pháp hay nhất để định dạng các phần tử mảng trong tài liệu PDF không?
 
-Đáp: Khi định dạng các phần tử mảng (bảng), hãy xem xét khả năng đọc và khả năng truy cập của nội dung. Sử dụng phông chữ rõ ràng và dễ đọc, màu sắc phù hợp và duy trì bố cục nhất quán. Xác thực việc tuân thủ PDF/UA để đảm bảo đáp ứng các tiêu chuẩn về khả năng truy cập.
+A: Khi định dạng các phần tử mảng (bảng), hãy cân nhắc đến khả năng đọc và khả năng truy cập của nội dung. Sử dụng phông chữ rõ ràng và dễ đọc, màu sắc phù hợp và duy trì bố cục nhất quán. Xác thực sự tuân thủ PDF/UA để đảm bảo đáp ứng các tiêu chuẩn về khả năng truy cập.
 
-#### Câu hỏi: Tôi có thể khám phá những tính năng nào khác của Aspose.PDF dành cho .NET để tùy chỉnh tài liệu PDF?
+#### H: Tôi có thể khám phá những tính năng nào khác của Aspose.PDF cho .NET để tùy chỉnh tài liệu PDF?
 
-Trả lời: Aspose.PDF for .NET cung cấp nhiều tính năng để tùy chỉnh tài liệu PDF, bao gồm thao tác văn bản, chèn hình ảnh, quản lý trường biểu mẫu, chữ ký số, chú thích, v.v. Tham khảo tài liệu và tài nguyên chính thức để khám phá các chức năng bổ sung.
+A: Aspose.PDF for .NET cung cấp nhiều tính năng để tùy chỉnh tài liệu PDF, bao gồm chỉnh sửa văn bản, chèn hình ảnh, quản lý trường biểu mẫu, chữ ký số, chú thích, v.v. Tham khảo tài liệu và tài nguyên chính thức để khám phá các chức năng bổ sung.

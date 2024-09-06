@@ -42,7 +42,7 @@ info.BindPdf(dataDir + "IsPasswordProtected.pdf");
 
 ## Βήμα 4: Προσδιορίστε την πηγή κρυπτογράφησης PDF
 
-Αφού ανεβάσετε το αρχείο προέλευσης PDF, μπορείτε να προσδιορίσετε εάν είναι κρυπτογραφημένο χρησιμοποιώντας το`IsEncrypted` μέθοδος του`PdfFileInfo` αντικείμενο.
+ Αφού ανεβάσετε το αρχείο προέλευσης PDF, μπορείτε να προσδιορίσετε εάν είναι κρυπτογραφημένο χρησιμοποιώντας το`IsEncrypted` μέθοδος του`PdfFileInfo` αντικείμενο.
 
 ```csharp
 Console.WriteLine("The file is password protected: " + info.IsEncrypted);
@@ -81,7 +81,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 // Φόρτωση αρχείου PDF πηγής
 PdfFileInfo info = new PdfFileInfo();
 info.BindPdf(dataDir + "IsPasswordProtected.pdf");
-// Προσδιορίστε εάν το PDF προέλευσης είναι κρυπτογραφημένο
+//Προσδιορίστε εάν το PDF προέλευσης είναι κρυπτογραφημένο
 Console.WriteLine("File is password protected " + info.IsEncrypted);
 String[] passwords = new String[5] { "test", "test1", "test2", "test3", "sample" };
 for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
@@ -99,7 +99,7 @@ for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
 }
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Συγχαρητήρια ! Έχετε καθορίσει με επιτυχία τον σωστό κωδικό πρόσβασης για ένα αρχείο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Αυτό το σεμινάριο κάλυψε τη διαδικασία βήμα προς βήμα, από την επαλήθευση της κρυπτογράφησης του αρχείου μέχρι την εύρεση του σωστού κωδικού πρόσβασης από μια προκαθορισμένη λίστα. Τώρα μπορείτε να χρησιμοποιήσετε αυτήν τη δυνατότητα για να ελέγξετε και να βρείτε τον σωστό κωδικό πρόσβασης των αρχείων PDF σας.
 
@@ -119,7 +119,7 @@ for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
 
 #### Ε: Πώς μπορώ να προσδιορίσω εάν ένα αρχείο PDF είναι κρυπτογραφημένο;
 
- Α: Χρησιμοποιήστε το`PdfFileInfo` κλάση για δέσμευση του αρχείου προέλευσης PDF. Στη συνέχεια, χρησιμοποιήστε το`IsEncrypted` για να προσδιορίσετε εάν το αρχείο PDF προστατεύεται με κωδικό πρόσβασης.
+ Α: Χρησιμοποιήστε το`PdfFileInfo` κλάση για δέσμευση του αρχείου προέλευσης PDF. Στη συνέχεια, χρησιμοποιήστε το`IsEncrypted`για να προσδιορίσετε εάν το αρχείο PDF προστατεύεται με κωδικό πρόσβασης.
 
 #### Ε: Πώς μπορώ να βρω τον σωστό κωδικό πρόσβασης για ένα αρχείο PDF;
 

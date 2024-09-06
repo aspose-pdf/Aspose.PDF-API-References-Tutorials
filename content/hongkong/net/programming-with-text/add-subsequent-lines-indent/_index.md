@@ -45,7 +45,7 @@ Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
 ## 步驟 6：建立一個有後續行縮排的 TextFragment
-實例化一個`TextFragment`物件並提供所需的文字。在提供的程式碼中，文字被分配給變數`text`。然後，初始化`TextFormattingOptions`為了`TextFragment`並指定`SubsequentLinesIndent`價值。
+實例化一個`TextFragment`物件並提供所需的文字。在提供的程式碼中，文字被分配給變數`text`。然後，初始化`TextFormattingOptions`為`TextFragment`並指定`SubsequentLinesIndent`價值。
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -148,7 +148,7 @@ Aspose.Pdf.Page page = document.Pages.Add();
 
 #### Q：如何為文字新增後續行縮排？
 
-答：在步驟 6 中，您將建立一個`TextFragment`物件並為其分配所需的文字。然後，您將初始化`TextFormattingOptions`為了`TextFragment`並指定`SubsequentLinesIndent`價值：
+答：在步驟 6 中，您將建立一個`TextFragment`物件並為其分配所需的文字。然後，您將初始化`TextFormattingOptions`為`TextFragment`並指定`SubsequentLinesIndent`價值：
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");

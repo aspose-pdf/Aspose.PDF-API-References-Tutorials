@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 1. lépés: Állítsa be a dokumentumkönyvtárat
 
- Először is be kell állítania annak a könyvtárnak az elérési útját, ahol a PDF-fájlok találhatók. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó a PDF-fájlok elérési útjával.
+ Először is be kell állítania annak a könyvtárnak az elérési útját, ahol a PDF-fájlok találhatók. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó a PDF-fájlok elérési útjával.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -98,7 +98,7 @@ Ebben az oktatóanyagban megtanulta, hogyan rendezheti át a PDF-dokumentumok ta
 
 ### GYIK
 
-#### K: Mi a célja a "Tartalom átrendezése szövegcsere használatával" oktatóanyagnak?
+#### K: Mi a "Tartalom átrendezése szövegcsere használatával" oktatóanyag célja?
 
 V: A „Tartalom átrendezése szövegcsere használatával” oktatóanyag bemutatja, hogyan használható a .NET Aspose.PDF könyvtára a PDF-dokumentum tartalmának átrendezésére szövegcsere végrehajtásával. Az oktatóanyag lépésenkénti útmutatót és C# forráskódot tartalmaz a PDF betöltéséhez, adott szövegrészletek kereséséhez, a szöveg cseréjéhez és a módosított PDF mentéséhez.
 
@@ -110,7 +110,7 @@ V: A PDF-dokumentum tartalmának átrendezése különféle célokra hasznos leh
 
 V: A dokumentumkönyvtár beállításához:
 
-1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a PDF-fájlok találhatók.
+1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a PDF-fájlok találhatók.
 
 #### K: Hogyan hajthatok végre szövegcserét egy PDF-dokumentumban?
 
@@ -118,11 +118,11 @@ V: A dokumentumkönyvtár beállításához:
 
 #### K: Testreszabhatom a lecserélt szöveg betűtípusát, méretét és színét?
 
- V: Igen, testreszabhatja a lecserélt szöveg betűtípusát, méretét és színét, ha módosítja a`TextState` tulajdonságai a`TextFragment` tárgy. Az oktatóanyag példát mutat be a betűtípus, a betűméret és a szöveg előtérszínének beállítására.
+ V: Igen, testreszabhatja a lecserélt szöveg betűtípusát, méretét és színét, ha módosítja a`TextState` tulajdonságai a`TextFragment` objektum. Az oktatóanyag példát mutat be a betűtípus, a betűméret és a szöveg előtérszínének beállítására.
 
 #### K: Hogyan menthetem el a módosított PDF dokumentumot?
 
- V: A szövegcsere végrehajtása és a szövegrészletek testreszabása után elmentheti a módosított PDF dokumentumot a`Save` módszere a`Document` osztály. Adja meg a kívánt kimeneti fájl elérési útját argumentumként a`Save` módszer.
+ V: A szövegcsere végrehajtása és a szövegrészletek testreszabása után a módosított PDF-dokumentumot elmentheti a`Save` módszere a`Document` osztály. Adja meg a kívánt kimeneti fájl elérési útját argumentumként a`Save` módszer.
 
 #### K: Mi az oktatóanyag várható eredménye?
 

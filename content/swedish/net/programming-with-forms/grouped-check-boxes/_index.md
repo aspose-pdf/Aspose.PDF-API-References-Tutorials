@@ -146,7 +146,7 @@ S: Ja, du kan anpassa utseendet på grupperade kryssrutor i Aspose.PDF för .NET
 
 #### F: Hur lägger jag till grupperade kryssrutor på en specifik sida i ett PDF-dokument?
 
-S: För att lägga till grupperade kryssrutor på en specifik sida i ett PDF-dokument måste du instansiera en`RadioButtonField` objekt med önskat sidnummer som argument. Skapa sedan`RadioButtonOptionField` objekt som representerar varje alternativknapp och ange deras position med hjälp av`Rectangle` objekt. Lägg slutligen till dessa alternativ till`RadioButtonField` och anpassa deras utseende efter behov innan du lägger till`RadioButtonField` till dokumentformuläret.
+S: För att lägga till grupperade kryssrutor till en specifik sida i ett PDF-dokument måste du instansiera en`RadioButtonField` objekt med önskat sidnummer som argument. Skapa sedan`RadioButtonOptionField` objekt som representerar varje alternativknapp och ange deras position med hjälp av`Rectangle` objekt. Lägg slutligen till dessa alternativ till`RadioButtonField` och anpassa deras utseende efter behov innan du lägger till`RadioButtonField` till dokumentformuläret.
 
 #### F: Kan jag lägga till flera grupper av kryssrutor i ett enda PDF-dokument?
 

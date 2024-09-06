@@ -1,17 +1,17 @@
 ---
-title: Zaktualizuj kolor tekstu łącza w pliku PDF
-linktitle: Zaktualizuj kolor tekstu łącza w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak zaktualizować kolor tekstu linków w pliku PDF za pomocą Aspose.PDF dla .NET.
+title: Aktualizuj kolor tekstu łącza w pliku PDF
+linktitle: Aktualizuj kolor tekstu łącza w pliku PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak zaktualizować kolor tekstu łączy w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 130
 url: /pl/net/programming-with-links-and-actions/update-link-text-color/
 ---
-Dowiedz się, jak zaktualizować kolor tekstu łączy w pliku PDF za pomocą Aspose.PDF dla .NET, korzystając z tego przewodnika krok po kroku.
+Dowiedz się, jak zaktualizować kolor tekstu łączy w pliku PDF za pomocą Aspose.PDF dla platformy .NET, korzystając z tego przewodnika krok po kroku.
 
 ## Krok 1: Konfigurowanie środowiska
 
-Upewnij się, że skonfigurowałeś środowisko programistyczne z projektem C# i odpowiednimi odniesieniami do Aspose.PDF.
+Upewnij się, że skonfigurowałeś środowisko programistyczne z projektem C# i odpowiednimi odniesieniami Aspose.PDF.
 
 ## Krok 2: Ładowanie pliku PDF
 
@@ -26,7 +26,7 @@ Document doc = new Document(dataDir + "UpdateLinks.pdf");
 
 ## Krok 3: Nawigacja po adnotacjach linków
 
-Przejrzyj wszystkie adnotacje linków na drugiej stronie dokumentu, używając następującego kodu:
+Przejrzyj wszystkie adnotacje linków na drugiej stronie dokumentu, korzystając z następującego kodu:
 
 ```csharp
 foreach(Annotation annotation in doc.Pages[1].Annotations)
@@ -51,9 +51,9 @@ foreach(Annotation annotation in doc.Pages[1].Annotations)
 }
 ```
 
-## Krok 4: Zapisz dokument ze zaktualizowanym tekstem łącza
+## Krok 4: Zapisz dokument z zaktualizowanym tekstem łącza
 
- Zapisz dokument ze zaktualizowanym tekstem łącza za pomocą`Save` metoda:
+ Zapisz dokument z zaktualizowanym tekstem łącza, używając`Save` metoda:
 
 ```csharp
 dataDir = dataDir + "UpdateLinkTextColor_out.pdf";
@@ -62,13 +62,13 @@ doc.Save(dataDir);
 
 ## Krok 5: Wyświetlanie wyniku
 
-Wyświetl komunikat, że kolor tekstu adnotacji łącza został pomyślnie zaktualizowany i określ lokalizację zapisanego pliku:
+Wyświetl komunikat informujący o pomyślnej aktualizacji koloru tekstu adnotacji łącza i określ lokalizację zapisanego pliku:
 
 ```csharp
 Console.WriteLine("\nText color of link annotations updated successfully.\nFile saved to location: " + dataDir);
 ```
 
-### Przykładowy kod źródłowy aktualizacji koloru tekstu łącza przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla aktualizacji koloru tekstu łącza przy użyciu Aspose.PDF dla .NET 
 ```csharp
 try
 {
@@ -97,7 +97,7 @@ try
 		}
 	}
 	dataDir = dataDir + "UpdateLinkTextColor_out.pdf";
-	// Zapisz dokument ze zaktualizowanym linkiem
+	// Zapisz dokument z zaktualizowanym linkiem
 	doc.Save(dataDir);
 	Console.WriteLine("\nLinkAnnotation text color updated successfully.\nFile saved at " + dataDir);
 }
@@ -109,44 +109,44 @@ catch (Exception ex)
 
 ## Wniosek
 
-Gratulacje! Teraz wiesz, jak zaktualizować kolor tekstu linków w pliku PDF przy użyciu Aspose.PDF dla .NET. Skorzystaj z tej wiedzy, aby dostosować wygląd łączy w dokumentach PDF.
+Gratulacje! Teraz wiesz, jak aktualizować kolor tekstu linków w pliku PDF za pomocą Aspose.PDF dla .NET. Wykorzystaj tę wiedzę, aby dostosować wygląd swoich linków w dokumentach PDF.
 
-Teraz, gdy ukończyłeś ten przewodnik, możesz zastosować te koncepcje do własnych projektów i dokładniej poznać funkcje oferowane przez Aspose.PDF dla .NET.
+Po zapoznaniu się z tym przewodnikiem możesz zastosować poznane koncepcje we własnych projektach i lepiej poznać funkcje oferowane przez Aspose.PDF dla platformy .NET.
 
-### Często zadawane pytania dotyczące aktualizacji koloru tekstu łącza w pliku PDF 
+### Często zadawane pytania dotyczące koloru tekstu łącza aktualizacji w pliku PDF 
 
-#### P: Dlaczego miałbym chcieć zaktualizować kolor tekstu łączy w dokumencie PDF?
+#### P: Dlaczego miałbym chcieć aktualizować kolor tekstu linków w dokumencie PDF?
 
-O: Aktualizacja koloru tekstu łączy pozwala wizualnie podkreślić i dostosować wygląd hiperłączy w dokumencie PDF, czyniąc je bardziej zauważalnymi i poprawiając wygodę użytkownika.
+A: Zmiana koloru tekstu łączy pozwala wizualnie podkreślić i dostosować wygląd hiperłączy w dokumencie PDF, dzięki czemu stają się one bardziej widoczne i wygodniejsze dla użytkownika.
 
-#### P: W jaki sposób zmiana koloru tekstu linków wpływa na wygodę użytkownika?
+#### P: W jaki sposób zmiana koloru tekstu linków wpływa na komfort użytkowania?
 
-O: Zmiana koloru tekstu linków może pomóc użytkownikom w łatwej identyfikacji klikalnych elementów i interakcji z nimi, poprawiając nawigację i zaangażowanie w dokumencie PDF.
+A: Zmiana koloru tekstu łączy może pomóc użytkownikom w łatwiejszym identyfikowaniu i interakcji z klikalnymi elementami, co usprawni nawigację i zaangażowanie w dokumencie PDF.
 
-#### P: Czy mogę zmienić kolor tekstu określonych łączy lub wszystkich łączy w dokumencie?
+#### P: Czy mogę zmienić kolor tekstu wybranych lub wszystkich linków w dokumencie?
 
-Odp.: Ten samouczek koncentruje się na zmianie koloru tekstu określonych linków. Możesz jednak zmodyfikować dostarczony kod, aby przeglądać wszystkie adnotacje do linków, jeśli chcesz zmienić kolor tekstu wszystkich linków.
+A: Ten samouczek koncentruje się na zmianie koloru tekstu konkretnych linków. Możesz jednak zmodyfikować podany kod, aby przejść przez wszystkie adnotacje linków, jeśli chcesz zmienić kolor tekstu wszystkich linków.
 
-####  P: Co oznacza`TextFragmentAbsorber` class do in the provided code?
+####  P: Co to jest`TextFragmentAbsorber` class do in the provided code?
 
- O:`TextFragmentAbsorber` class służy do wyszukiwania fragmentów tekstu w określonym obszarze, który w tym przypadku odpowiada obszarowi adnotacji łącza. Pomaga zidentyfikować i ukierunkować tekst powiązany z linkiem.
+ A: Ten`TextFragmentAbsorber` Klasa ta służy do wyszukiwania fragmentów tekstu w określonym regionie, który w tym przypadku odpowiada obszarowi adnotacji łącza. Pomaga ona identyfikować i określać tekst powiązany z łączem.
 
-#### P: Jak mogę dostosować rozmiar obszaru uwzględnianego przy zmianie koloru tekstu?
+#### P: W jaki sposób mogę dostosować rozmiar obszaru uwzględnianego przy zmianie koloru tekstu?
 
- Odp.: Rozmiar obszaru jest dostosowywany poprzez modyfikację pliku`rect` obiekt w dostarczonym kodzie. Możesz zmienić współrzędne, aby rozszerzyć lub zmniejszyć obszar wyszukiwania wokół adnotacji łącza.
+ A: Rozmiar obszaru można dostosować poprzez modyfikację`rect` obiekt w podanym kodzie. Możesz zmienić współrzędne, aby rozszerzyć lub zmniejszyć obszar wyszukiwania wokół adnotacji łącza.
 
 #### P: Czy mogę zmienić kolor tekstu na inny niż czerwony?
 
- Odp.: Tak, możesz dostosować kolor tekstu, modyfikując plik`tf.TextState.ForegroundColor` nieruchomość. Możesz ustawić dowolny żądany kolor za pomocą`Color` class z przestrzeni nazw System.Drawing.
+ A: Tak, możesz dostosować kolor tekstu, modyfikując`tf.TextState.ForegroundColor` właściwość. Możesz ustawić dowolny pożądany kolor za pomocą`Color` klasa z przestrzeni nazw System.Drawing.
 
 #### P: Czy istnieją jakieś ograniczenia dotyczące zmiany koloru tekstu linków?
 
-Odp.: Zmiana koloru tekstu linków ogranicza się do modyfikacji ich wyglądu. Nie ma to wpływu na miejsce docelowe ani zachowanie łącza.
+A: Zmiana koloru tekstu linków ogranicza się do modyfikacji ich wyglądu. Nie wpływa na miejsce docelowe ani zachowanie linku.
 
-#### P: Jak mogę sprawdzić, czy kolor tekstu w adnotacjach do linków został pomyślnie zaktualizowany?
+#### P: Jak mogę sprawdzić, czy kolor tekstu adnotacji linków został pomyślnie zaktualizowany?
 
-Odp.: Po zastosowaniu dostarczonego kodu w celu aktualizacji koloru tekstu otwórz zmodyfikowany plik PDF i sprawdź, czy kolor tekstu określonych łączy zmienił się zgodnie z oczekiwaniami.
+A: Po zastosowaniu dostarczonego kodu w celu aktualizacji koloru tekstu otwórz zmodyfikowany plik PDF i sprawdź, czy kolor tekstu wskazanych linków zmienił się zgodnie z oczekiwaniami.
 
 #### P: Czy istnieje sposób na przywrócenie oryginalnego koloru tekstu linków?
 
-O: Tak, możesz zmodyfikować kod, aby zachować oryginalny kolor tekstu przed jego aktualizacją, a następnie użyć tych informacji, aby w razie potrzeby przywrócić kolor tekstu.
+O: Tak, możesz zmodyfikować kod, aby zapisać oryginalny kolor tekstu przed jego aktualizacją, a następnie wykorzystać tę informację, aby w razie potrzeby przywrócić kolor tekstu.

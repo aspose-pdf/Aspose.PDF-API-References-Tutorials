@@ -63,7 +63,7 @@ Végül mentse a PDF dokumentumot a kívánt helyre:
 pdfDocument.save("output.pdf");
 ```
 
-Ez az! Sikeresen konvertálta a HTML-t PDF-be az Aspose.PDF for Java segítségével.
+Ennyi! Sikeresen konvertálta a HTML-t PDF-be az Aspose.PDF for Java segítségével.
 
 ## Az átalakítás testreszabása
 
@@ -91,7 +91,7 @@ Igen, az Aspose.PDF for Java képes kezelni az összetett HTML-oldalakat CSS-, J
 
 ### Az Aspose.PDF alkalmas kötegelt konvertálásra?
 
-Teljesen. Az Aspose.PDF for Java támogatja a kötegelt feldolgozást, lehetővé téve több HTML-fájl egy menetben történő konvertálását PDF-be.
+Teljesen. Az Aspose.PDF for Java támogatja a kötegelt feldolgozást, amely lehetővé teszi több HTML-fájl egy menetben történő konvertálását PDF-be.
 
 ### Hogyan állíthatok be oldalmargót a PDF-ben?
 

@@ -7,7 +7,7 @@ type: docs
 weight: 110
 url: /cs/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section/
 ---
-tomto tutoriálu vás krok za krokem provedeme přidáním obrázku a čísla stránky do sekce záhlaví a zápatí dokumentu PDF pomocí Aspose.PDF for .NET. Ukážeme vám, jak pomocí poskytnutého zdrojového kódu C# vytvořit stránku, nastavit záhlaví a zápatí, přidat obrázek do záhlaví a text s číslem stránky do zápatí dokumentu PDF.
+tomto tutoriálu vás krok za krokem provedeme přidáním obrázku a čísla stránky do sekce záhlaví a zápatí dokumentu PDF pomocí Aspose.PDF pro .NET. Ukážeme vám, jak pomocí poskytnutého zdrojového kódu C# vytvořit stránku, nastavit záhlaví a zápatí, přidat obrázek do záhlaví a text s číslem stránky do zápatí dokumentu PDF.
 
 ## Krok 1: Nastavení prostředí
 
@@ -133,7 +133,7 @@ doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 
 ## Závěr
 
-gratuluji! Naučili jste se, jak přidat obrázek a číslo stránky do sekce záhlaví a zápatí dokumentu PDF pomocí Aspose.PDF pro .NET. Nyní můžete tuto metodu použít k přizpůsobení záhlaví a zápatí v dokumentech PDF.
+gratuluji! Naučili jste se, jak přidat obrázek a číslo stránky do části záhlaví a zápatí dokumentu PDF pomocí Aspose.PDF for .NET. Nyní můžete tuto metodu použít k přizpůsobení záhlaví a zápatí v dokumentech PDF.
 
 ### FAQ
 
@@ -147,7 +147,7 @@ Odpověď: Poskytnutý kód ukazuje, jak vytvořit dokument PDF, přidat stránk
 
 #### Otázka: Mohu pro záhlaví použít jakýkoli formát obrázku a jak určím jeho cestu?
 
- Odpověď: Ano, pro obrázek záhlaví můžete použít různé formáty obrázků (jako JPEG, PNG, GIF atd.). Cesta k obrázku je určena pomocí`File` vlastnictvím`Aspose.Pdf.Image` objekt.
+ Odpověď: Ano, pro obrázek záhlaví můžete použít různé formáty obrázků (jako JPEG, PNG, GIF atd.). Cesta k obrázku je určena pomocí`File` majetek z`Aspose.Pdf.Image` objekt.
 
 #### Otázka: Jak přizpůsobím vzhled a umístění obrázku v sekci záhlaví?
 

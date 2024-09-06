@@ -32,7 +32,7 @@ using System.Text;
  A kódban keresse meg azt a sort, amely ezt mondja`string dataDir = "YOUR DOCUMENT DIRECTORY";` és cserélje ki`"YOUR DOCUMENT DIRECTORY"` annak a könyvtárnak az elérési útjával, ahol a dokumentumokat tárolják.
 
 ## 4. lépés: Nyissa meg a PDF dokumentumot
- Nyisson meg egy meglévő PDF dokumentumot a`Document`konstruktort, és átadja a bemeneti PDF-fájl elérési útját.
+ Nyisson meg egy meglévő PDF dokumentumot a`Document` konstruktort, és átadja a bemeneti PDF-fájl elérési útját.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
@@ -81,7 +81,7 @@ foreach(PageMarkup markup in absorber.PageMarkups)
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Nyisson meg egy meglévő PDF-fájlt
+// Nyisson meg egy meglévő PDF-fájlt
 Document doc = new Document(dataDir + "input.pdf");
 // Példányosítsa a bekezdéselnyelőt
 ParagraphAbsorber absorber = new ParagraphAbsorber();
@@ -134,7 +134,7 @@ using System.Text;
 
 #### K: Hogyan adhatom meg a dokumentumkönyvtárat?
 
- V: Keresse meg a vonalat`string dataDir = "YOUR DOCUMENT DIRECTORY";` a kódban és cserélje ki`"YOUR DOCUMENT DIRECTORY"` a dokumentumkönyvtár tényleges elérési útjával.
+ V: Keresse meg a vonalat`string dataDir = "YOUR DOCUMENT DIRECTORY";` a kódban, és cserélje ki`"YOUR DOCUMENT DIRECTORY"` a dokumentumkönyvtár tényleges elérési útjával.
 
 #### K: Hogyan nyithatok meg egy meglévő PDF-dokumentumot?
 

@@ -8,7 +8,7 @@ weight: 14
 url: /hu/java/pdf-conversion-transformation/change-pdfs-to-doc-or-docx-format/
 ---
 
-## 1. Bemutatkozás
+## 1. Bevezetés
 
 Az Aspose.PDF for Java egy hatékony API, amely lehetővé teszi a PDF-dokumentumok használatát Java alkalmazásokban. Egyik hasznos funkciója a PDF-ek más formátumokba, például DOC és DOCX formátumokba való konvertálása. Ez akkor lehet hasznos, ha szöveget kell kivonnia, vagy szövegszerkesztő formátumban módosítania kell egy PDF-dokumentum tartalmát.
 

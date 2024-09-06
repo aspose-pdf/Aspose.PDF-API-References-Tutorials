@@ -13,7 +13,7 @@ Ebben az oktatóanyagban lépésről lépésre bemutatjuk, hogyan hozhat létre 
 
 Mielőtt elkezdené, győződjön meg arról, hogy a következő előfeltételeket teljesítette:
 
-1. A Visual Studio .NET keretrendszerrel telepítve.
+1. Visual Studio .NET keretrendszerrel telepítve.
 2. Az Aspose.PDF könyvtár a .NET-hez.
 
 ## 1. lépés: A projekt beállítása

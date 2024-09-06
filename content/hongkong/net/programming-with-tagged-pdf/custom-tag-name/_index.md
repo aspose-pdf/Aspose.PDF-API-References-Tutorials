@@ -171,7 +171,7 @@ document.Save(dataDir + "CustomTag.pdf");
 
 ### 常見問題解答
 
-#### Q：PDF 文件上下文中的自訂標籤名稱是什麼？為什麼我要將其與 Aspose.PDF for .NET 一起使用？
+#### Q：PDF 文件上下文中的自訂標籤名稱是什麼？
 
 答：PDF 文件中的自訂標籤名稱是使用者定義的標籤，為文件內容提供特定的結構資訊。在 Aspose.PDF for .NET 中使用自訂標籤名稱可以增強 PDF 文件的可存取性和組織性，使其更易於導航、理解和互動。
 

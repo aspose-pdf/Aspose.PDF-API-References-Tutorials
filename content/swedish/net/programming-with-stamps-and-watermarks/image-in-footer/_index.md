@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 2: Laddar det befintliga PDF-dokumentet
 
-Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Här är hur:
+Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Så här gör du:
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -32,7 +32,7 @@ Var noga med att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till
 
 ## Steg 3: Skapa och lägga till bilden i sidfotssektionen
 
-Nu när PDF-dokumentet är laddat kan vi skapa en bildstämpel och lägga till den på alla sidor i dokumentet. Här är hur:
+Nu när PDF-dokumentet är laddat kan vi skapa en bildstämpel och lägga till den på alla sidor i dokumentet. Så här gör du:
 
 ```csharp
 // Skapa rambufferten
@@ -43,7 +43,7 @@ imageStamp.BottomMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-// Lägg till bildbuffert på alla sidor
+//Lägg till bildbuffert på alla sidor
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
@@ -54,7 +54,7 @@ Koden ovan skapar en bildbuffert från filen "aspose-logo.jpg" och ställer in d
 
 ## Steg 4: Spara det ändrade PDF-dokumentet
 
-När bilden har lagts till i sidfoten kan vi spara det ändrade PDF-dokumentet. Här är hur:
+När bilden har lagts till i sidfoten kan vi spara det ändrade PDF-dokumentet. Så här gör du:
 
 ```csharp
 // Spara det ändrade PDF-dokumentet
@@ -112,11 +112,11 @@ S: Genom att lägga till en bild i sidfoten i ett PDF-dokument kan du inkludera 
 
 #### F: Är det möjligt att lägga till olika bilder i sidfoten på olika sidor i PDF-dokumentet?
 
- S: Ja, du kan lägga till olika bilder i sidfoten på olika sidor genom att skapa separata`ImageStamp` objekt med olika bildfiler och egenskaper och sedan lägga till dem på specifika sidor.
+S: Ja, du kan lägga till olika bilder i sidfoten på olika sidor genom att skapa separata`ImageStamp` objekt med olika bildfiler och egenskaper och sedan lägga till dem på specifika sidor.
 
 #### F: Hur säkerställer koden att bilden läggs till på alla sidor i PDF-dokumentet?
 
-S: Den medföljande koden använder en`foreach` loop för att iterera genom alla sidor i PDF-dokumentet och lägger till samma`ImageStamp` till varje sidas sidfotssektion.
+ S: Den medföljande koden använder en`foreach` loop för att iterera genom alla sidor i PDF-dokumentet och lägger till samma`ImageStamp` till varje sidas sidfotssektion.
 
 #### F: Kan jag lägga till andra element, t.ex. text eller former, i sidfotsavsnittet med ett liknande tillvägagångssätt?
 

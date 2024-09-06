@@ -27,7 +27,7 @@ Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "PlacementImage.pdf"
  Feltétlenül cserélje ki`"YOUR DOCUMENTS DIRECTORY"` a PDF-fájlt tartalmazó dokumentumkönyvtár tényleges elérési útjával.
 
 ## 3. lépés: Az elhelyezési információk kinyerése a képekből
- Most, hogy betöltöttük a PDF dokumentumot, kivonhatjuk a képekből az elhelyezési információkat. Használni fogjuk`ImagePlacementAbsorber`hogy elnyelje a képhelyeket a dokumentum első oldaláról.
+ Most, hogy betöltöttük a PDF dokumentumot, kivonhatjuk a képekből az elhelyezési információkat. használni fogjuk`ImagePlacementAbsorber`hogy elnyelje a képhelyeket a dokumentum első oldaláról.
 
 ```csharp
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
@@ -101,7 +101,7 @@ foreach (ImagePlacement imagePlacement in abs.ImagePlacements)
 ```
 
 ## Következtetés
-Gratulálok ! Most megtanulta, hogyan használhatja az Aspose.PDF for .NET fájlt a képek elhelyezésére PDF-dokumentumban. Elmagyaráztuk a mellékelt C# forráskódot, amely lehetővé teszi PDF dokumentum betöltését, a képekből az elhelyezési információk kinyerését, valamint a látható méretekkel rendelkező képek lekérését. Nyugodtan kísérletezzen még többet az Aspose.PDF fájllal, hogy felfedezze sok más funkcióját.
+Gratulálok ! Most megtanulta, hogyan használhatja az Aspose.PDF for .NET fájlt a képek elhelyezésére PDF-dokumentumban. Elmagyaráztuk a mellékelt C# forráskódot, amely lehetővé teszi PDF dokumentum betöltését, a képekből az elhelyezési információk kinyerését, és a látható méretekkel rendelkező képek lekérését. Nyugodtan kísérletezzen még többet az Aspose.PDF fájllal, hogy felfedezze sok más funkcióját.
 
 ### GYIK
 

@@ -1,23 +1,23 @@
 ---
 title: Spłaszcz formularze w dokumencie PDF
 linktitle: Spłaszcz formularze w dokumencie PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Z łatwością spłaszczaj formularze w dokumencie PDF za pomocą Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwe spłaszczanie formularzy w dokumentach PDF przy użyciu Aspose.PDF dla .NET.
 type: docs
 weight: 100
 url: /pl/net/programming-with-forms/flatten-forms/
 ---
-W tym samouczku pokażemy, jak spłaszczyć formularze za pomocą Aspose.PDF dla .NET. Krok po kroku wyjaśnimy kod źródłowy C#, aby poprowadzić Cię przez ten proces.
+W tym samouczku pokażemy Ci, jak spłaszczyć formularze za pomocą Aspose.PDF dla .NET. Wyjaśnimy kod źródłowy C# krok po kroku, aby przeprowadzić Cię przez ten proces.
 
 ## Krok 1: Przygotowanie
 
-Najpierw upewnij się, że zaimportowałeś niezbędne biblioteki i ustaw ścieżkę do katalogu dokumentów:
+Najpierw upewnij się, że zaimportowałeś niezbędne biblioteki i ustawiłeś ścieżkę do katalogu dokumentów:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Krok 2: Załaduj źródłowy formularz PDF
+## Krok 2: Załaduj formularz PDF źródłowy
 
 Załaduj źródłowy formularz PDF:
 
@@ -27,7 +27,7 @@ Document doc = new Document(dataDir + "input.pdf");
 
 ## Krok 3: Spłaszcz formy
 
-Najpierw sprawdź, czy w dokumencie znajdują się pola formularzy. Jeśli tak, wykonaj iterację po każdym polu i zastosuj spłaszczenie:
+Najpierw sprawdź, czy w dokumencie są jakieś pola formularza. Jeśli tak, przejrzyj każde pole i zastosuj spłaszczanie:
 
 ```csharp
 if (doc.Form.Fields.Count() > 0)
@@ -54,7 +54,7 @@ doc.Save(dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Załaduj źródłowy formularz PDF
 Document doc = new Document(dataDir + "input.pdf");
-// Spłaszcz formy
+// Spłaszcz formularze
 if (doc.Form.Fields.Count() > 0)
 {
 	foreach (var item in doc.Form.Fields)
@@ -70,26 +70,26 @@ Console.WriteLine("\nForms flattened successfully.\nFile saved at " + dataDir);
 
 ## Wniosek
 
-W tym samouczku nauczyliśmy się, jak spłaszczać formularze za pomocą Aspose.PDF dla .NET. Wykonując poniższe kroki, możesz łatwo spłaszczyć formularze w dokumentach PDF, uniemożliwiając edytowanie pól i łącząc adnotacje z treścią dokumentu.
+W tym samouczku nauczyliśmy się, jak spłaszczać formularze za pomocą Aspose.PDF dla .NET. Wykonując te kroki, możesz łatwo spłaszczać formularze w dokumentach PDF, czyniąc pola nieedytowalnymi i łącząc adnotacje z treścią dokumentu.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Co oznacza „spłaszczanie formularzy” w Aspose.PDF dla .NET?
+#### P: Co oznacza „spłaszczanie formularzy” w pliku Aspose.PDF dla platformy .NET?
 
-Odp.: Spłaszczanie formularzy w Aspose.PDF dla .NET odnosi się do procesu uniemożliwiającego edytowanie pól formularzy w dokumencie PDF i łączenia adnotacji (takich jak pola formularzy, adnotacje i podpisy cyfrowe) z zawartością dokumentu. Po spłaszczeniu formularzy użytkownicy nie mogą modyfikować pól formularzy, a wygląd pól formularzy staje się częścią statycznej zawartości dokumentu PDF.
+A: Spłaszczanie formularzy w Aspose.PDF dla .NET odnosi się do procesu uczynienia pól formularza w dokumencie PDF nieedytowalnymi i scalania adnotacji (takich jak pola formularza, adnotacje i podpisy cyfrowe) z zawartością dokumentu. Po spłaszczeniu formularzy użytkownicy nie mogą modyfikować pól formularza, a wygląd wizualny pól formularza staje się częścią statycznej zawartości dokumentu PDF.
 
-#### P: Czy mogę odwrócić proces spłaszczania i ponownie udostępnić pola formularza do edycji?
+#### P: Czy mogę odwrócić proces spłaszczania i ponownie umożliwić edycję pól formularza?
 
-Odp.: Nie, po spłaszczeniu pól formularza proces jest nieodwracalny przy użyciu Aspose.PDF dla .NET. Spłaszczanie trwale łączy wygląd pól formularza z zawartością pliku PDF, a poszczególne elementy pól formularza nie są już dostępne ani edytowalne.
+A: Nie, po spłaszczeniu pól formularza proces ten jest nieodwracalny przy użyciu Aspose.PDF dla .NET. Spłaszczenie trwale łączy wygląd pól formularza z zawartością pliku PDF, a poszczególne elementy pól formularza nie są już dostępne ani edytowalne.
 
-#### P: Kiedy należy spłaszczyć formularze w dokumencie PDF?
+#### P: Kiedy należy spłaszczać formularze w dokumencie PDF?
 
-Odp.: Spłaszczanie formularzy jest przydatne, gdy chcesz zachować wygląd pól formularzy i adnotacji w dokumencie PDF, jednocześnie uniemożliwiając użytkownikom modyfikowanie danych. Dzieje się tak często, gdy chcesz udostępnić dokument PDF ze wstępnie wypełnionymi danymi formularza lub adnotacjami, które nie powinny być zmieniane przez odbiorców.
+A: Spłaszczanie formularzy jest przydatne, gdy chcesz zachować wygląd wizualny pól formularza i adnotacji w dokumencie PDF, jednocześnie uniemożliwiając użytkownikom modyfikowanie danych. Jest to powszechnie stosowane, gdy chcesz udostępnić dokument PDF z wstępnie wypełnionymi danymi formularza lub adnotacjami, które nie powinny być zmieniane przez odbiorców.
 
-#### P: Czy spłaszczenie formularzy wpłynie na inne adnotacje, takie jak podpisy cyfrowe?
+#### P: Czy spłaszczanie formularzy wpłynie na inne adnotacje, np. podpisy cyfrowe?
 
-O: Tak, spłaszczenie formularzy spowoduje połączenie wszystkich adnotacji, w tym podpisów cyfrowych, z zawartością pliku PDF. Po spłaszczeniu formularzy wszelkie istniejące podpisy cyfrowe staną się trwałą częścią dokumentu i użytkownicy nie będą mogli ich modyfikować ani usuwać.
+A: Tak, spłaszczanie formularzy połączy wszystkie adnotacje, w tym podpisy cyfrowe, z zawartością pliku PDF. Po spłaszczeniu formularzy wszelkie istniejące podpisy cyfrowe staną się stałą częścią dokumentu, a użytkownicy nie będą mogli ich modyfikować ani usuwać.
 
-#### P: Czy mogę selektywnie spłaszczyć określone pola formularza i pozostawić inne do edycji?
+#### P: Czy mogę selektywnie spłaszczyć określone pola formularza, a pozostałe pozostawić edytowalne?
 
-O: Tak, możesz selektywnie spłaszczyć określone pola formularza w dokumencie PDF, pozostawiając inne pola do edycji. Zamiast używać kodu do spłaszczania wszystkich pól formularza, możesz spłaszczyć tylko żądane pola formularza na podstawie ich nazw lub innych kryteriów.
+A: Tak, możesz selektywnie spłaszczyć określone pola formularza w dokumencie PDF, pozostawiając inne edytowalne. Zamiast używać kodu do spłaszczania wszystkich pól formularza, możesz wybrać spłaszczenie tylko żądanych pól formularza na podstawie ich nazw lub innych kryteriów.

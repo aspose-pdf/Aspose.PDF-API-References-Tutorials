@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 2: Skapa PDF-dokumentet och -sidan
 
-Det första steget är att skapa ett nytt dokumentobjekt och en sida i PDF-dokumentet. Här är hur:
+Det första steget är att skapa ett nytt dokumentobjekt och en sida i PDF-dokumentet. Så här gör du:
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -35,7 +35,7 @@ Koden ovan skapar ett nytt dokumentobjekt och en tom sida i PDF-dokumentet.
 
 ## Steg 3: Lägga till rubriken med en bild
 
-Nu när sidan är skapad kan vi lägga till en rubriksektion med en bild. Här är hur:
+Nu när sidan är skapad kan vi lägga till en rubriksektion med en bild. Så här gör du:
 
 ```csharp
 // Skapa en rubriksektion
@@ -58,7 +58,7 @@ Koden ovan skapar ett rubrikavsnitt, ställer in sidhuvudet med det här avsnitt
 
 ## Steg 4: Lägga till sidfoten med sidnumret
 
-Nu när sidhuvudet har lagts till kan vi lägga till en sidfotssektion med ett sidnummer. Här är hur:
+Nu när sidhuvudet har lagts till kan vi lägga till en sidfotssektion med ett sidnummer. Så här gör du:
 
 ```csharp
 // Skapa en sidfotssektion
@@ -80,7 +80,7 @@ Ovanstående kod skapar en sidfotssektion, ställer in sidfoten på sidan med de
 
 ## Steg 5: Spara det ändrade PDF-dokumentet
 
-När sidhuvudet och sidfoten har lagts till kan vi spara det ändrade PDF-dokumentet. Här är hur:
+När sidhuvudet och sidfoten har lagts till kan vi spara det ändrade PDF-dokumentet. Så här gör du:
 
 ```csharp
 // Spara det ändrade PDF-dokumentet

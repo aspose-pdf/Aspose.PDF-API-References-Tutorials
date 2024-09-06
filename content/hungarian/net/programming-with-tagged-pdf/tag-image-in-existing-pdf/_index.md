@@ -1,6 +1,6 @@
 ---
-title: Kép címkézése a meglévő PDF-ben
-linktitle: Kép címkézése a meglévő PDF-ben
+title: Címke kép a meglévő PDF-ben
+linktitle: Címke kép a meglévő PDF-ben
 second_title: Aspose.PDF for .NET API Reference
 description: Ismerje meg, hogyan jelölhet meg egy képet egy meglévő PDF-ben az Aspose.PDF for .NET segítségével. Útmutató lépésről lépésre a képekhez címkék hozzáadásához.
 type: docs
@@ -175,7 +175,7 @@ V: Alternatív szövegek és határolókeretek hozzárendelése a képekhez jav�
 
 #### K: Hogyan állíthatom be egy címkézett PDF-dokumentum címét az Aspose.PDF for .NET használatával?
 
-V: Az oktatóanyag C#-forráskód példákat tartalmaz, amelyek bemutatják, hogyan lehet beállítani egy címkézett PDF-dokumentum címét az Aspose.PDF for .NET használatával.
+V: Az oktatóanyag C#-forráskód-példákat tartalmaz, amelyek bemutatják, hogyan lehet beállítani egy címkézett PDF-dokumentum címét az Aspose.PDF for .NET használatával.
 
 #### K: Mit foglal magában az elemek mozgatása egy PDF dokumentumon belül?
 

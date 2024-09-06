@@ -7,7 +7,7 @@ type: docs
 weight: 20
 url: /zh-hant/net/programming-with-tables/add-repeating-column/
 ---
-在本教學中，我們將學習如何使用 Aspose.PDF for .NET 在 PDF 文件中新增重複列。我們將一步步解釋C#的原始碼。在本教學結束時，您將了解如何在 PDF 文件中建立帶有重複列的表格。開始吧！
+在本教學中，我們將學習如何使用 Aspose.PDF for .NET 在 PDF 文件中新增重複列。我們將一步步解釋C#的原始碼。在本教學結束時，您將了解如何在 PDF 文件中建立帶有重複列的表格。讓我們開始吧！
 
 ## 第一步：建構環境
 首先，請確保您已使用 Aspose.PDF for .NET 設定 C# 開發環境。新增對庫的引用並導入必要的命名空間。
@@ -59,7 +59,7 @@ Row headerRow = mytable.Rows.Add();
 headerRow.Cells.Add("header 1");
 headerRow.Cells.Add("header 2");
 headerRow.Cells.Add("header 3");
-// …
+// ……
 //在這裡添加其他標題
 
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
@@ -68,7 +68,7 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
      row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
      row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
      row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
-     // …
+     // ……
      //在此處新增其他列
 }
 ```

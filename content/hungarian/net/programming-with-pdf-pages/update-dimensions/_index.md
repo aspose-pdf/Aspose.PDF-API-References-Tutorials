@@ -44,7 +44,7 @@ Page pdfPage = pageCollection[1];
 ```
 
 ## 5. lépés: Határozza meg az új oldalméreteket
- Most a gombbal állíthatja be az új oldalméretet`SetPageSize()` módszere a`Page`tárgy. Ebben a példában az oldalméreteket A4-re (11,7 x 8,3 hüvelyk) állítjuk, pontokra konvertálva (1 hüvelyk = 72 pont).
+ Most a gombbal állíthatja be az új oldalméretet`SetPageSize()` módszere a`Page`objektum. Ebben a példában az oldalméreteket A4-re (11,7 x 8,3 hüvelyk) állítjuk, pontokra konvertálva (1 hüvelyk = 72 pont).
 
 ```csharp
 pdfPage.SetPageSize(597.6, 842.4);
@@ -81,7 +81,7 @@ System.Console.WriteLine("\nPage dimensions updated successfully.\nFile saved at
 ```
 
 ## Következtetés
-Ebben az oktatóanyagban megtanultuk, hogyan lehet frissíteni egy oldal méreteit egy PDF-dokumentumban az Aspose.PDF for .NET használatával. Ennek a lépésről-lépésre szóló útmutatónak a követésével szükség szerint egyszerűen módosíthatja egy PDF-dokumentum oldalának méretét. Az Aspose.PDF hatékony és rugalmas API-t kínál a PDF-fájlokkal való munkavégzéshez és különféle manipulációk végrehajtásához, beleértve az oldalméretek módosítását. Ezzel a tudással szabályozhatja és testreszabhatja PDF-oldalainak méreteit, hogy megfeleljenek az Ön egyedi igényeinek.
+Ebben az oktatóanyagban megtanultuk, hogyan lehet frissíteni egy oldal méreteit egy PDF-dokumentumban az Aspose.PDF for .NET használatával. Ennek a lépésről-lépésre szóló útmutatónak a követésével szükség szerint egyszerűen módosíthatja egy PDF-dokumentum oldalának méreteit. Az Aspose.PDF hatékony és rugalmas API-t kínál a PDF-fájlokkal való munkavégzéshez és különféle manipulációk végrehajtásához, beleértve az oldalméretek módosítását. Ezzel a tudással szabályozhatja és személyre szabhatja PDF-oldalainak méreteit, hogy megfeleljenek az Ön egyedi igényeinek.
 
 ### GYIK a PDF oldalméretek frissítéséhez
 
@@ -93,7 +93,7 @@ V: A PDF-dokumentum egy adott oldalának méreteinek frissítéséhez az Aspose.
 2.  Nyissa meg a meglévő PDF-dokumentumot a frissítéshez a`Document` osztályú Aspose.PDF. Ügyeljen arra, hogy megadja az eredeti PDF-dokumentum megfelelő elérési útját.
 3.  Nyissa meg a PDF dokumentum oldalgyűjteményét a`Pages` tulajdona a`Document` osztály.
 4. Válassza ki a frissíteni kívánt oldalt az oldalgyűjteményből az oldal indexe segítségével. A megadott C# forráskódban a második oldalt használjuk (1. index).
-5.  Határozza meg az új oldalméretet a gombbal`SetPageSize()` módszere a`Page` tárgy. A példában az oldalméreteket A4-es méretre (11,7 x 8,3 hüvelyk) állítottuk be, pontokra konvertálva (1 hüvelyk = 72 pont).
+5.  Határozza meg az új oldalméretet a gombbal`SetPageSize()` módszere a`Page` objektum. A példában az oldalméreteket A4-es méretre (11,7 x 8,3 hüvelyk) állítottuk be, pontokra konvertálva (1 hüvelyk = 72 pont).
 6.  Mentse el a frissített PDF-dokumentumot fájlba a`Save()` módszere a`Document`osztály. Ügyeljen arra, hogy a megfelelő elérési utat és fájlnevet adja meg.
 
 #### K: Frissíthetem a PDF-dokumentum több oldalának méreteit egyidejűleg?
@@ -110,4 +110,4 @@ V: Igen, az oldal méreteinek frissítése hatással lesz a PDF-dokumentum tarta
 
 #### K: Lehetséges a módosítások visszaállítása és az eredeti oldalméretek visszaállítása azok frissítése után?
 
-V: Igen, ha vissza szeretné állítani a módosításokat és vissza szeretné állítani az eredeti oldalméreteket, akkor vagy megtarthatja az eredeti PDF-dokumentum másolatát a módosítások elvégzése előtt, vagy újra megnyithatja az eredeti PDF-dokumentumot a változtatások mentése nélkül. Így az eredeti méretek megmaradnak.
+V: Igen, ha vissza szeretné állítani a módosításokat és vissza szeretné állítani az eredeti oldalméreteket, akkor vagy megtarthatja az eredeti PDF-dokumentum másolatát, mielőtt változtatásokat hajtana végre, vagy újra megnyithatja az eredeti PDF-dokumentumot a változtatások mentése nélkül. Így az eredeti méretek megmaradnak.

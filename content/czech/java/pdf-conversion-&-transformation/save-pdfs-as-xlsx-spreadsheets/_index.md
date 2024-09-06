@@ -2,7 +2,7 @@
 title: Uložte soubory PDF jako tabulky XLSX
 linktitle: Uložte soubory PDF jako tabulky XLSX
 second_title: Aspose.PDF Java PDF Processing API
-description: Naučte se, jak převádět soubory PDF na tabulky XLSX pomocí Aspose.PDF pro Java. Podrobný průvodce pro efektivní extrakci a analýzu dat.
+description: Naučte se převádět soubory PDF na tabulky XLSX pomocí Aspose.PDF pro Java. Podrobný průvodce pro efektivní extrakci a analýzu dat.
 type: docs
 weight: 21
 url: /cs/java/pdf-conversion-transformation/save-pdfs-as-xlsx-spreadsheets/
@@ -15,7 +15,7 @@ Aspose.PDF for Java je výkonné API, které umožňuje vývojářům pracovat s
 Než se ponoříme do kódu, ujistěte se, že máte splněny následující předpoklady:
 
 - Java Development Kit (JDK) nainstalovaný ve vašem systému.
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Nastavení vašeho projektu Java
 

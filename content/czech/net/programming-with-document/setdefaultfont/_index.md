@@ -33,7 +33,7 @@ using (Document document = new Document(fs))
 
 ## Krok 3: Nastavte výchozí písmo
 
- Dále nastavíme výchozí písmo pro dokument PDF pomocí`PdfSaveOptions` třída. V tomto příkladu nastavíme výchozí písmo na "Arial".
+ Dále nastavíme výchozí písmo pro dokument PDF pomocí`PdfSaveOptions`třída. V tomto příkladu nastavíme výchozí písmo na "Arial".
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
@@ -78,7 +78,7 @@ Odpověď: Nastavení výchozího písma v dokumentech PDF je důležité, proto
 
 #### Otázka: Mohu si pomocí Aspose.PDF pro .NET vybrat jakékoli písmo jako výchozí?
 
- Odpověď: Ano, pomocí Aspose.PDF pro .NET si můžete vybrat jakékoli písmo, které je v systému dostupné jako výchozí písmo. Jednoduše zadejte název písma v`DefaultFontName` vlastnictvím`PdfSaveOptions` třída.
+ Odpověď: Ano, pomocí Aspose.PDF pro .NET si můžete vybrat jakékoli písmo, které je v systému dostupné jako výchozí písmo. Jednoduše zadejte název písma v`DefaultFontName` majetek z`PdfSaveOptions` třída.
 
 #### Otázka: Co se stane, když zadané výchozí písmo není v systému dostupné?
 

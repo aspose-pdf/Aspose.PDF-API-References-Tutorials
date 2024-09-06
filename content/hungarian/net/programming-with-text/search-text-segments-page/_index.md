@@ -51,7 +51,7 @@ Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
 
 ## 5. lépés: Hozzon létre egy TextFragmentAbsorber-t
 
- Hozzon létre egy`TextFragmentAbsorber` objektumot a bemeneti keresési kifejezés összes példányának megtalálásához:
+ Hozzon létre a`TextFragmentAbsorber` objektumot a bemeneti keresési kifejezés összes példányának megtalálásához:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -61,7 +61,7 @@ TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 
 ## 6. lépés: Fogadja el az abszorbert egy adott oldalhoz
 
-Fogadja el az abszorbert a dokumentum kívánt oldalához:
+Fogadja el az elnyelőt a dokumentum kívánt oldalához:
 
 ```csharp
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);
@@ -71,7 +71,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## 7. lépés: Töltse le a kibontott szövegrészeket
 
- Szerezze be a kivont szövegszegmenseket a`TextFragments` tulajdona a`TextFragmentAbsorber` tárgy:
+ Szerezze be a kivont szövegszegmenseket a`TextFragments` tulajdona a`TextFragmentAbsorber` objektum:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -143,7 +143,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan kereshet meghatározott szövegszegmenseket egy PDF-dokumentum oldalán az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentum betöltésétől a kivont szövegrészek eléréséig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy speciális szövegszegmens-kereséseket hajtson végre PDF-fájlokban.
+Gratulálok! Sikeresen megtanulta, hogyan kereshet meghatározott szövegszegmenseket egy PDF-dokumentum oldalán az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentum betöltésétől a kivont szövegrészek eléréséig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy speciális szövegszegmens-kereséseket hajtson végre PDF-fájlokban.
 
 ### GYIK
 
@@ -181,4 +181,4 @@ V: Abszolút. Az oktatóanyag mintakódja egy ciklust biztosít a lekért szöve
 
 #### K: Hogyan menthetem el a módosított PDF-dokumentumot a szövegszegmensek kibontása után?
 
-V: Ez az oktatóanyag elsősorban a szövegszegmensek keresésére és tulajdonságaik lekérésére összpontosít. Ha módosítani kívánja a PDF-fájlt, tekintse meg az Aspose.PDF többi dokumentációját, ahol megtudhatja, hogyan kezelheti és mentheti el a dokumentumot sajátos igényei szerint.
+V: Ez az oktatóanyag elsősorban a szövegszegmensek keresésére és tulajdonságaik lekérésére összpontosít. Ha módosítani kívánja a PDF-fájlt, tekintse meg a többi Aspose.PDF dokumentációt, ahol megtudhatja, hogyan kezelheti és mentheti el a dokumentumot sajátos igényei szerint.

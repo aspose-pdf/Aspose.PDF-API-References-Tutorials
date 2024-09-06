@@ -29,7 +29,7 @@ Výukové programy Aspose.PDF for .NET "Programování s obrázky" vás provedou
 | [Identifikujte obrázky v souboru PDF](./identify-images/) | Snadno identifikujte obrázky v souboru PDF a určete jejich barevný typ pomocí Aspose.PDF pro .NET. |  
 | [Informace o obrázku v souboru PDF](./image-information/) | Extrahujte informace o obrázku do souboru PDF pomocí Aspose.PDF pro .NET. |  
 | [Umístění obrázků](./image-placements/) | Naučte se používat Aspose.PDF for .NET k umístění obrázků do dokumentu PDF. |  
-| [Obrázek do PDF](./image-to-pdf/) | Snadno převádějte obrázek do PDF pomocí Aspose.PDF pro .NET. |  
+| [Obrázek do PDF](./image-to-pdf/) | Snadno převeďte obrázek do PDF pomocí Aspose.PDF pro .NET. |  
 | [Velký obrázek CGM do PDF](./large-cgm-image-to-pdf/) | Snadno převeďte velký obrázek CGM do PDF pomocí Aspose.PDF pro .NET. |  
 | [Stránky k obrázkům](./pages-to-images/) | Snadno převádějte stránky dokumentu PDF na obrázky pomocí Aspose.PDF pro .NET. |  
 | [Page To EMF](./page-to-emf/) | Krok za krokem průvodce převodem stránky PDF do formátu EMF pomocí Aspose.PDF pro .NET. |  
@@ -40,4 +40,4 @@ Výukové programy Aspose.PDF for .NET "Programování s obrázky" vás provedou
 | [Vyhledávejte a získejte obrázky v souboru PDF](./search-and-get-images/) | Průvodce krok za krokem pro vyhledávání a získávání obrázků v souboru PDF pomocí Aspose.PDF pro .NET. |  
 | [Nastavte velikost obrázku v souboru PDF](./set-image-size/) | Podrobný průvodce nastavením velikosti obrázku v souboru PDF pomocí Aspose.PDF pro .NET. |  
 | [Zmenšit obrázky v souboru PDF](./shrink-images/) | Podrobný průvodce pro zmenšení velikosti obrázků v souboru PDF pomocí Aspose.PDF pro .NET. |  
-| [Uložte obrázek do kolekce XImage](./store-image-in-ximage-collection/) |  Průvodce krok za krokem k uložení obrázku do kolekce XImage pomocí Aspose.PDF pro .NET. |  
+| [Uložte obrázek do kolekce XImage](./store-image-in-ximage-collection/) |  průvodce krok za krokem k uložení obrázku do kolekce XImage pomocí Aspose.PDF pro .NET. |  

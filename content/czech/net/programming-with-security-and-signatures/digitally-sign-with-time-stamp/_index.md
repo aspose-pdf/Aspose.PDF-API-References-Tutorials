@@ -65,7 +65,7 @@ using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
 		TimestampSettings timestampSettings = new TimestampSettings("https:\\your_timestamp_settings", "user:password"); // Uživatel/Heslo lze vynechat
 		pkcs.TimestampSettings = timestampSettings;
 		System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-		// Vytvořte libovolný ze tří typů podpisu
+		// Vytvořte libovolný ze tří typů podpisů
 		signature.Sign(1, "Signature Reason", "Contact", "Location", true, rect, pkcs);
 		// Uložit výstupní soubor PDF
 		signature.Save(dataDir + "DigitallySignWithTimeStamp_out.pdf");
@@ -81,7 +81,7 @@ gratuluji! Úspěšně jste provedli digitální podpis s časovým razítkem na
 
 #### Otázka: Jaký je účel digitálního podepisování s časovým razítkem?
 
-Odpověď: Digitální podpis s časovým razítkem přidá do souboru PDF elektronický otisk s časovým razítkem, čímž zajistí autentičnost a integritu dokumentu v konkrétním okamžiku.
+Odpověď: Digitální podepisování s časovým razítkem přidá do souboru PDF elektronický otisk s časovým razítkem, což zajistí autentičnost a integritu dokumentu v konkrétním okamžiku.
 
 #### Otázka: Jaké předpoklady jsou potřeba ke spuštění tohoto kurzu?
 
@@ -89,7 +89,7 @@ Odpověď: Než začnete, ujistěte se, že máte základní znalosti programova
 
 #### Otázka: Jak mohu nastavit své vývojové prostředí?
 
-Odpověď: Podle uvedených kroků nastavte vývojové prostředí, včetně vytvoření nového projektu C# v sadě Visual Studio a importu potřebných oborů názvů.
+Odpověď: Podle poskytnutých kroků nastavte vývojové prostředí, včetně vytvoření nového projektu C# v sadě Visual Studio a importu potřebných oborů názvů.
 
 #### Otázka: Jak přidám digitální podpis s časovým razítkem do PDF?
 

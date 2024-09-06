@@ -1,30 +1,30 @@
 ---
-title: Đánh dấu ký tự trong tệp PDF
-linktitle: Đánh dấu ký tự trong tệp PDF
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Tìm hiểu cách đánh dấu các ký tự trong tệp PDF bằng Aspose.PDF cho .NET.
+title: Làm nổi bật ký tự trong tệp PDF
+linktitle: Làm nổi bật ký tự trong tệp PDF
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách làm nổi bật các ký tự trong tệp PDF bằng Aspose.PDF cho .NET.
 type: docs
 weight: 240
 url: /vi/net/programming-with-text/highlight-character-in-pdf/
 ---
-Trong hướng dẫn này, chúng tôi sẽ giải thích cách đánh dấu các ký tự trong tệp PDF bằng thư viện Aspose.PDF cho .NET. Chúng ta sẽ thực hiện quy trình từng bước đánh dấu các ký tự trong tệp PDF bằng mã nguồn C# được cung cấp.
+Trong hướng dẫn này, chúng tôi sẽ giải thích cách làm nổi bật các ký tự trong tệp PDF bằng thư viện Aspose.PDF cho .NET. Chúng tôi sẽ hướng dẫn từng bước để làm nổi bật các ký tự trong tệp PDF bằng mã nguồn C# được cung cấp.
 
 ## Yêu cầu
 
-Trước khi bắt đầu, hãy đảm bảo rằng bạn có những điều sau:
+Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
 
 - Đã cài đặt thư viện Aspose.PDF cho .NET.
 - Hiểu biết cơ bản về lập trình C#.
 
 ## Bước 1: Thiết lập thư mục tài liệu
 
- Trước tiên, bạn cần đặt đường dẫn đến thư mục chứa tệp PDF đầu vào của bạn. Thay thế`"YOUR DOCUMENT DIRECTORY"` bên trong`dataDir` biến bằng đường dẫn đến tệp PDF của bạn.
+ Đầu tiên, bạn cần thiết lập đường dẫn đến thư mục chứa tệp PDF đầu vào của bạn. Thay thế`"YOUR DOCUMENT DIRECTORY"` trong`dataDir` biến có đường dẫn đến tệp PDF của bạn.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Bước 2: Tải tài liệu PDF
+## Bước 2: Tải Tài liệu PDF
 
  Tiếp theo, chúng tôi tải tài liệu PDF đầu vào bằng cách sử dụng`Aspose.Pdf.Document` lớp học.
 
@@ -32,9 +32,9 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
 ```
 
-## Bước 3: Chuyển đổi PDF thành hình ảnh
+## Bước 3: Chuyển đổi PDF sang hình ảnh
 
- Để làm nổi bật các ký tự, chúng tôi chuyển đổi tài liệu PDF thành hình ảnh bằng cách sử dụng`PdfConverter` lớp học. Chúng tôi đặt độ phân giải cho chuyển đổi và truy xuất hình ảnh dưới dạng`Bitmap` sự vật.
+ Để làm nổi bật các ký tự, chúng tôi chuyển đổi tài liệu PDF thành hình ảnh bằng cách sử dụng`PdfConverter` lớp. Chúng tôi thiết lập độ phân giải cho quá trình chuyển đổi và lấy hình ảnh dưới dạng`Bitmap` sự vật.
 
 ```csharp
 int resolution = 150;
@@ -46,14 +46,14 @@ using (MemoryStream ms = new MemoryStream())
      Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
 ```
 
-## Bước 4: Đánh dấu nhân vật
+## Bước 4: Làm nổi bật các ký tự
 
- Chúng tôi lặp qua từng trang của tài liệu PDF và sử dụng một`TextFragmentAbsorber` đối tượng để tìm tất cả các từ trong trang. Sau đó, chúng tôi lặp lại các đoạn văn bản, phân đoạn và ký tự để đánh dấu chúng bằng hình chữ nhật.
+ Chúng tôi lặp qua từng trang của tài liệu PDF và sử dụng`TextFragmentAbsorber` đối tượng để tìm tất cả các từ trong trang. Sau đó, chúng tôi lặp lại các đoạn văn bản, phân đoạn và ký tự để làm nổi bật chúng bằng hình chữ nhật.
 
 ```csharp
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 {
-     //Đặt tỷ lệ và chuyển đổi
+     // Đặt tỷ lệ và chuyển đổi
      float scale = resolution / 72f;
      gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
 
@@ -62,7 +62,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
      {
          Page page = pdfDocument.Pages[1];
 
-         // Tìm tất cả các từ trong trang
+         //Tìm tất cả các từ trong trang
          TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
          textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
          page. Accept(textFragmentAbsorber);
@@ -84,7 +84,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                  // Lặp qua các phân đoạn
                  foreach(TextSegment segment in textFragment.Segments)
                  {
-                     // Đánh dấu đoạn
+                     // Đoạn nổi bật
                      gr.DrawRectangle(
                          Think Green,
                          (float)segment.Rectangle.LLX,
@@ -95,7 +95,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                      // Lặp qua các ký tự
                      foreach(CharInfo characterInfo in segment.Characters)
                      {
-                         // nhân vật nổi bật
+                         // Nhân vật nổi bật
                          gr.DrawRectangle(
                              Think.Black,
                              (float)characterInfo.Rectangle.LLx,
@@ -112,14 +112,14 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 
 ## Bước 5: Lưu hình ảnh đầu ra
 
-Cuối cùng, chúng tôi lưu hình ảnh đã sửa đổi có các ký tự được đánh dấu vào tệp đầu ra được chỉ định.
+Cuối cùng, chúng ta lưu hình ảnh đã chỉnh sửa với các ký tự được tô sáng vào tệp đầu ra đã chỉ định.
 
 ```csharp
 dataDir = dataDir + "HighlightCharacterInPDF_out.png";
 bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
 ```
 
-### Mã nguồn mẫu cho Ký tự nổi bật trong PDF bằng Aspose.PDF for .NET 
+### Mã nguồn mẫu cho tính năng Làm nổi bật ký tự trong PDF bằng Aspose.PDF cho .NET 
 ```csharp
 try
 {
@@ -144,9 +144,9 @@ try
 				TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
 				textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
 				page.Accept(textFragmentAbsorber);
-				// Lấy các đoạn văn bản được trích xuất
+				// Lấy các đoạn văn bản đã trích xuất
 				TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-				// Lặp lại các mảnh vỡ
+				// Lặp lại các đoạn
 				foreach (TextFragment textFragment in textFragmentCollection)
 				{
 					if (i == 0)
@@ -197,40 +197,40 @@ catch (Exception ex)
 
 ## Phần kết luận
 
-Trong hướng dẫn này, bạn đã học cách đánh dấu các ký tự trong tài liệu PDF bằng thư viện Aspose.PDF cho .NET. Bằng cách làm theo hướng dẫn từng bước và thực thi mã C# được cung cấp, bạn có thể đánh dấu các ký tự trong tệp PDF và lưu kết quả đầu ra dưới dạng hình ảnh.
+Trong hướng dẫn này, bạn đã học cách làm nổi bật các ký tự trong tài liệu PDF bằng thư viện Aspose.PDF cho .NET. Bằng cách làm theo hướng dẫn từng bước và thực thi mã C# được cung cấp, bạn có thể làm nổi bật các ký tự trong PDF và lưu đầu ra dưới dạng hình ảnh.
 
 ### Câu hỏi thường gặp
 
-#### Hỏi: Mục đích của hướng dẫn "Đánh dấu ký tự trong tệp PDF" là gì?
+#### H: Mục đích của hướng dẫn "Làm nổi bật ký tự trong tệp PDF" là gì?
 
-Đáp: Hướng dẫn "Đánh dấu ký tự trong tệp PDF" giải thích cách sử dụng thư viện Aspose.PDF cho .NET để đánh dấu các ký tự trong tài liệu PDF. Hướng dẫn này cung cấp hướng dẫn từng bước và mã nguồn C# để đạt được điều này.
+A: Hướng dẫn "Đánh dấu ký tự trong tệp PDF" giải thích cách sử dụng thư viện Aspose.PDF cho .NET để đánh dấu các ký tự trong tài liệu PDF. Hướng dẫn cung cấp hướng dẫn từng bước và mã nguồn C# để thực hiện việc này.
 
-#### Hỏi: Tại sao tôi muốn đánh dấu các ký tự trong tài liệu PDF?
+#### H: Tại sao tôi muốn làm nổi bật các ký tự trong tài liệu PDF?
 
-Đáp: Việc đánh dấu các ký tự trong tài liệu PDF có thể hữu ích cho nhiều mục đích khác nhau, chẳng hạn như nhấn mạnh nội dung cụ thể hoặc làm cho văn bản nhất định hiển thị và dễ phân biệt hơn.
+A: Việc tô sáng các ký tự trong tài liệu PDF có thể hữu ích cho nhiều mục đích khác nhau, chẳng hạn như nhấn mạnh nội dung cụ thể hoặc làm cho một số văn bản dễ nhìn và dễ phân biệt hơn.
 
-#### Hỏi: Làm cách nào để thiết lập thư mục tài liệu?
+#### H: Tôi phải thiết lập thư mục tài liệu như thế nào?
 
 A: Để thiết lập thư mục tài liệu:
 
-1.  Thay thế`"YOUR DOCUMENT DIRECTORY"` bên trong`dataDir` biến có đường dẫn đến thư mục chứa tệp PDF đầu vào của bạn.
+1.  Thay thế`"YOUR DOCUMENT DIRECTORY"` trong`dataDir` biến có đường dẫn đến thư mục chứa tệp PDF đầu vào của bạn.
 
-#### Hỏi: Làm cách nào để tải tài liệu PDF và chuyển đổi nó thành hình ảnh?
+#### H: Làm thế nào để tải tài liệu PDF và chuyển đổi nó thành hình ảnh?
 
- A: Trong phần hướng dẫn,`Aspose.Pdf.Document` lớp được sử dụng để tải tài liệu PDF đầu vào. Sau đó,`PdfConverter` lớp được sử dụng để chuyển đổi tài liệu PDF thành hình ảnh. Độ phân giải của hình ảnh được đặt và hình ảnh được truy xuất dưới dạng`Bitmap` sự vật.
+ A: Trong hướng dẫn,`Aspose.Pdf.Document` lớp được sử dụng để tải tài liệu PDF đầu vào. Sau đó,`PdfConverter` lớp được sử dụng để chuyển đổi tài liệu PDF thành hình ảnh. Độ phân giải của hình ảnh được thiết lập và hình ảnh được lấy ra dưới dạng`Bitmap` sự vật.
 
-#### Hỏi: Làm cách nào để đánh dấu các ký tự trong hình ảnh tài liệu PDF?
+#### H: Làm thế nào để tô sáng các ký tự trong hình ảnh tài liệu PDF?
 
-Đáp: Hướng dẫn này hướng dẫn bạn qua quy trình lặp qua từng trang của tài liệu PDF, tìm từ bằng cách sử dụng một`TextFragmentAbsorber`và lặp qua các đoạn văn bản, phân đoạn và ký tự để đánh dấu chúng bằng hình chữ nhật.
+A: Hướng dẫn này hướng dẫn bạn thực hiện quy trình lặp qua từng trang của tài liệu PDF, tìm từ bằng cách sử dụng`TextFragmentAbsorber`và lặp lại các đoạn văn bản, phân đoạn và ký tự để làm nổi bật chúng bằng hình chữ nhật.
 
-#### Câu hỏi: Tôi có thể tùy chỉnh hình thức của các ký tự và phân đoạn được đánh dấu không?
+#### H: Tôi có thể tùy chỉnh giao diện của các ký tự và phân đoạn được tô sáng không?
 
-Đáp: Có, bạn có thể tùy chỉnh hình thức của các ký tự và đoạn được đánh dấu bằng cách sửa đổi màu sắc và kiểu dáng được sử dụng trong các thao tác vẽ.
+A: Có, bạn có thể tùy chỉnh giao diện của các ký tự và phân đoạn được tô sáng bằng cách sửa đổi màu sắc và kiểu dáng được sử dụng trong thao tác vẽ.
 
-#### Hỏi: Làm cách nào để lưu hình ảnh đã sửa đổi với các ký tự được đánh dấu?
+#### H: Làm thế nào để lưu hình ảnh đã chỉnh sửa có các ký tự được tô sáng?
 
- Đáp: Hướng dẫn trình bày cách lưu hình ảnh đã sửa đổi với các ký tự được tô sáng vào tệp đầu ra được chỉ định bằng cách sử dụng`Save` phương pháp của`Bitmap` lớp học.
+ A: Hướng dẫn này trình bày cách lưu hình ảnh đã chỉnh sửa với các ký tự được tô sáng vào tệp đầu ra đã chỉ định bằng cách sử dụng`Save` phương pháp của`Bitmap` lớp học.
 
-#### Câu hỏi: Có cần phải có Giấy phép Aspose hợp lệ cho hướng dẫn này không?
+#### H: Có cần Giấy phép Aspose hợp lệ cho hướng dẫn này không?
 
-Trả lời: Có, cần có Giấy phép Aspose hợp lệ để hướng dẫn này hoạt động chính xác. Bạn có thể mua giấy phép đầy đủ hoặc lấy giấy phép tạm thời 30 ngày từ trang web Aspose.
+A: Có, cần phải có Giấy phép Aspose hợp lệ để hướng dẫn này hoạt động chính xác. Bạn có thể mua giấy phép đầy đủ hoặc xin giấy phép tạm thời 30 ngày từ trang web Aspose.

@@ -7,7 +7,7 @@ type: docs
 weight: 170
 url: /sv/net/programming-with-document/getdocumentwindow/
 ---
- Aspose.PDF för .NET är ett kraftfullt PDF-manipuleringsbibliotek som låter utvecklare skapa, redigera och konvertera PDF-filer i sina .NET-applikationer. En av funktionerna som erbjuds av detta bibliotek är möjligheten att hämta information om ett dokuments fönsteregenskaper. Denna handledning guidar dig genom stegen för att använda`GetDocumentWindow` funktion i Aspose.PDF för .NET för att hämta information om ett PDF-dokuments fönsteregenskaper.
+Aspose.PDF för .NET är ett kraftfullt PDF-manipuleringsbibliotek som låter utvecklare skapa, redigera och konvertera PDF-filer i sina .NET-applikationer. En av funktionerna som erbjuds av detta bibliotek är möjligheten att hämta information om ett dokuments fönsteregenskaper. Denna handledning guidar dig genom stegen för att använda`GetDocumentWindow` funktion i Aspose.PDF för .NET för att hämta information om ett PDF-dokuments fönsteregenskaper.
 
 ## Steg 1: Installera Aspose.PDF för .NET
 
@@ -17,7 +17,7 @@ När du har laddat ner biblioteket, extrahera innehållet i ZIP-filen till en ma
 
 ## Steg 2: Ladda PDF-dokumentet
 
-När du har installerat Aspose.PDF för .NET och lagt till en referens till DLL-filen i ditt .NET-projekt kan du börja använda`GetDocumentWindow` funktion för att hämta information om ett PDF-dokuments fönsteregenskaper.
+ När du har installerat Aspose.PDF för .NET och lagt till en referens till DLL-filen i ditt .NET-projekt kan du börja använda`GetDocumentWindow`funktion för att hämta information om ett PDF-dokuments fönsteregenskaper.
 
 Det första steget i att använda den här funktionen är att ladda PDF-dokumentet som du vill hämta information om. För att göra detta kan du använda följande kod:
 
@@ -25,7 +25,7 @@ Det första steget i att använda den här funktionen är att ladda PDF-dokument
 // Sökvägen till PDF-dokumentet
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Öppna PDF-dokumentet
+// Öppna PDF-dokumentet
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 
@@ -49,7 +49,7 @@ Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
 Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```
 
-koden ovan hämtar varje rad en annan fönsteregenskap för PDF-dokumentet och matar ut den till konsolen. Du kan anpassa den här koden för att bara hämta de egenskaper som du är intresserad av.
+I koden ovan hämtar varje rad en annan fönsteregenskap för PDF-dokumentet och matar ut den till konsolen. Du kan anpassa den här koden för att bara hämta de egenskaper som du är intresserad av.
 
 ### Exempel på källkod för hämta dokumentfönster för PDF-fil med Aspose.PDF för .NET 
 
@@ -81,14 +81,14 @@ Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
 // Om menyraden för visningsprogrammet ska döljas - Standard: falskt
 Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
 
-//Om verktygsfältet för visningsprogrammet ska döljas - Standard: falskt
+// Om verktygsfältet för visningsprogrammet ska döljas - Standard: falskt
 Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
 
 // Om du vill dölja UI-element som rullningslister
 // Och lämnar bara sidinnehållet visas - Standard: falskt
 Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
 
-// Dokumentets sidläge. Så här visar du dokument när du avslutar helskärmsläge.
+//Dokumentets sidläge. Så här visar du dokument när du avslutar helskärmsläge.
 Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
 
 // Sidlayouten dvs en sida, en kolumn

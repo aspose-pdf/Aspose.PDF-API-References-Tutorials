@@ -35,7 +35,7 @@ doc.Pages.Add();
 
 ## Steg 4: Lägga till text i PDF-dokumentet
 
-Efter att ha lagt till en sida i PDF-dokumentet kan vi lägga till text till det med hjälp av`Paragraphs` samling. Vi kan göra detta med följande kod:
+ Efter att ha lagt till en sida i PDF-dokumentet kan vi lägga till text till det med hjälp av`Paragraphs` samling. Vi kan göra detta med hjälp av följande kod:
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));

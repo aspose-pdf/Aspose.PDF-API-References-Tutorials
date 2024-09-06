@@ -2,122 +2,123 @@
 title: 禁用 PDF 文件中的文件压缩
 linktitle: 禁用 PDF 文件中的文件压缩
 second_title: Aspose.PDF for .NET API 参考
-description: 了解如何使用 Aspose.PDF for .NET 禁用 PDF 文件中的文件压缩。分步指南，方便操作。
+description: 通过本分步指南了解如何使用 Aspose.PDF for .NET 禁用 PDF 文件中的文件压缩。增强您的 PDF 管理技能。
 type: docs
 weight: 30
 url: /zh/net/programming-with-attachments/disable-files-compression/
 ---
-在本教程中，我们将引导您逐步完成以下 C# 源代码，以使用 Aspose.PDF for .NET 禁用 PDF 中的文件压缩。
+## 介绍
 
-在开始之前，请确保您已经安装了 Aspose.PDF 库并设置了开发环境。还具备 C# 编程的基础知识。
+在数字时代，有效管理 PDF 文件对于个人和专业用途都至关重要。无论您是希望增强应用程序的开发人员，还是管理文档的商业专业人士，了解如何操作 PDF 文件都可以节省您的时间和精力。一个常见的要求是禁用 PDF 文档中的文件压缩。当您想要确保嵌入文件保持其原始格式而不进行任何更改时，这可能特别有用。在本教程中，我们将探讨如何使用 Aspose.PDF for .NET 禁用 PDF 文件中的文件压缩。 
 
-### 第 1 步：文档目录设置
+## 先决条件
 
-在提供的源代码中，您需要指定要禁用文件压缩的 PDF 文件所在的目录。将“dataDir”变量更改为所需的目录。
+在深入研究代码之前，您需要满足一些先决条件：
+
+1.  Aspose.PDF for .NET：确保已安装 Aspose.PDF 库。您可以从[网站](https://releases.aspose.com/pdf/net/).
+2. Visual Studio：您可以在其中编写和执行 .NET 代码的开发环境。
+3. C# 基础知识：熟悉 C# 编程将帮助您更好地理解代码片段。
+
+## 导入包
+
+首先，您需要在 C# 项目中导入必要的包。具体操作如下：
+
+### 创建新项目
+
+打开 Visual Studio 并创建一个新的 C# 项目。为了简单起见，您可以选择控制台应用程序。
+
+### 添加 Aspose.PDF 参考
+
+1. 在解决方案资源管理器中右键单击您的项目。
+2. 选择“管理 NuGet 包”。
+3. 搜索“Aspose.PDF”并安装最新版本。
+
+### 导入命名空间
+
+在 C# 文件的顶部，导入 Aspose.PDF 命名空间：
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-### 步骤 2：打开现有 PDF 文档
+现在我们已经完成所有设置，让我们将禁用 PDF 文件中的文件压缩的过程分解为易于管理的步骤。
 
-我们使用指定的路径打开现有的 PDF 文档。
+## 步骤 1：定义文档目录
 
-```csharp
-Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-```
-
-### 步骤 3：设置新文件以添加为附件
-
-我们配置要添加为附件的新文件。在此示例中，我们添加一个名为“test_out.txt”和描述“示例文本文件”的文本文件。
+首先，您需要指定 PDF 文件所在目录的路径。这很重要，因为它会告诉程序在哪里找到您要操作的文件。
 
 ```csharp
-FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-```
-
-### 步骤 4：禁用文件压缩
-
-我们通过将 FileSpecification 对象的 Encoding 属性设置为 FileEncoding.None 来禁用文件压缩。
-
-```csharp
-fileSpecification.Encoding = FileEncoding.None;
-```
-
-### 步骤 5：将附件添加到文档的附件集合中
-
-我们将附件添加到文档的附件集合中。
-
-```csharp
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-```
-
-### 第 6 步：保存新的输出文件
-
-最后，我们将生成的新 PDF 文件以名称“DisableFilesCompression_out.pdf”保存在指定目录中。
-
-```csharp
-pdfDocument.Save(dataDir + "DisableFilesCompression_out.pdf");
-```
-
-
-### 使用 Aspose.PDF for .NET 禁用文件压缩的示例源代码 
-
-```csharp
-
-//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-//设置要添加为附件的新文件
-FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-//指定 Encoding proparty 将其设置为 FileEncoding.None
-fileSpecification.Encoding = FileEncoding.None;
-//将附件添加到文档的附件集合
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-dataDir = dataDir + "DisableFilesCompression_out.pdf";
-//保存新输出
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
+```
 
+## 第 2 步：加载 PDF 文档
+
+接下来，您将加载要修改的 PDF 文档。这是使用`Document`Aspose.PDF 提供的类。
+
+```csharp
+Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
+```
+
+## 步骤 3：设置要添加为附件的文件
+
+现在，您需要为要添加到 PDF 的附件创建新的文件规范。这涉及指定文件的名称和类型。
+
+```csharp
+FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
+```
+
+## 步骤 4：指定编码属性
+
+为了确保文件在未压缩的情况下添加，您需要将文件规范的编码属性设置为`FileEncoding.None`。这一步至关重要，因为它直接影响文件如何嵌入到 PDF 中。
+
+```csharp
+fileSpecification.Encoding = FileEncoding.None;
+```
+
+## 步骤 5：将附件添加到文档
+
+文件规范准备好后，您现在可以将附件添加到文档的附件集合中。此步骤将文件集成到 PDF 中。
+
+```csharp
+pdfDocument.EmbeddedFiles.Add(fileSpecification);
+```
+
+## 步骤 6：保存新输出
+
+最后，您需要保存修改后的PDF文档。指定要保存新文件的输出路径。
+
+```csharp
+dataDir = dataDir + "DisableFilesCompression_out.pdf";
+pdfDocument.Save(dataDir);
+```
+
+## 步骤7：确认操作
+
+为了确保一切顺利，您可以将确认消息打印到控制台。
+
+```csharp
+Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
 ```
 
 ## 结论
 
-在本教程中，我们解释了如何使用 Aspose.PDF for .NET 禁用 PDF 中的文件压缩。您现在可以使用这些知识来维护附加文件的完整性，而无需压缩。
+使用正确的工具，禁用 PDF 文档中的文件压缩是一个简单的过程。按照本教程中概述的步骤，您可以轻松管理 PDF 文件并确保嵌入的附件保留其原始格式。Aspose.PDF for .NET 提供了一种强大而灵活的方式来处理 PDF 文档，使其成为开发人员和企业的绝佳选择。
 
-## 在 PDF 文件中禁用文件压缩的常见问题解答
+## 常见问题解答
 
-#### 问：为什么我要在 PDF 文档中禁用文件压缩？
+### 什么是 Aspose.PDF for .NET？
+Aspose.PDF for .NET 是一个库，允许开发人员以编程方式创建、操作和转换 PDF 文档。
 
-答：禁用文件压缩可确保 PDF 文档中的附加文件保持未压缩状态，从而保留其原始质量和内容。
+### 为什么我要禁用 PDF 中的文件压缩？
+禁用文件压缩可确保嵌入的文件保持其原始格式，这对于数据完整性非常重要。
 
-#### 问：禁用文件压缩对 PDF 附件有何好处？
+### 我可以免费使用 Aspose.PDF 吗？
+是的，Aspose 提供免费试用版，您可以使用它来评估该库。您可以下载它[这里](https://releases.aspose.com/).
 
-答：禁用压缩可以防止压缩过程中可能发生的任何数据或质量损失，从而确保附加文件按原样呈现。
+### 在哪里可以找到有关 Aspose.PDF 的更多文档？
+您可以找到有关[Aspose 网站](https://reference.aspose.com/pdf/net/).
 
-#### 问：我可以使用本教程选择性地禁用特定附件的压缩吗？
-
-答：是的，本教程将指导您禁用 PDF 文档中各个附件的文件压缩，从而提供细粒度的控制。
-
-#### 问：我可以对哪些类型的附件禁用压缩？
-
-答：您可以对任何类型的附件（例如图像、文档、电子表格等）禁用压缩，以确保保持其完整性。
-
-#### 问：禁用压缩会影响 PDF 文档的整体文件大小吗？
-
-答：禁用附件压缩可能会导致 PDF 文档的整体文件大小略有增加，因为未压缩的文件会占用更多空间。
-
-#### 问：Aspose.PDF for .NET 如何促进禁用文件压缩的过程？
-
-答：Aspose.PDF for .NET 提供了一个易于使用的 API，允许您禁用附件的文件压缩，如提供的源代码中所示。
-
-#### 问：如果需要，我可以稍后重新启用附件压缩吗？
-
-答：是的，如有必要，您可以修改附件的设置以再次启用压缩。
-
-#### 问：如果我在支持压缩的设备或软件上打开 PDF，会发生什么情况？
-
-答：如果您在支持压缩的设备或软件上打开 PDF，附件可能会以未压缩的形式显示，这可能会影响文件大小和渲染性能。
-
-#### 问：是否存在建议禁用压缩的特定场景？
-
-答：对于优先考虑保持原始质量和数据完整性的附件（例如高分辨率图像或敏感文档），建议禁用压缩。
+### 如何获得 Aspose.PDF 的支持？
+您可以通过访问获得支持[Aspose 论坛](https://forum.aspose.com/c/pdf/10).

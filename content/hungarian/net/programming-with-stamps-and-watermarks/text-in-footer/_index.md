@@ -112,7 +112,7 @@ V: A kód bemutatja egy meglévő PDF-dokumentum megnyitásának folyamatát, sz
 
 #### K: Módosíthatom a lábléc szövegének megjelenését, például annak betűtípusát, méretét, színét és igazítását?
 
- V: Igen, testreszabhatja a lábléc szövegének megjelenését a tulajdonságok módosításával`TextStamp` tárgy. A kódpélda olyan beállítási tulajdonságokat tartalmaz, mint az alsó margó, a vízszintes igazítás és a függőleges igazítás. Beállíthatja a betűtípust, a méretet, a színt és a szöveggel kapcsolatos egyéb tulajdonságokat is.
+ V: Igen, testreszabhatja a lábléc szövegének megjelenését a tulajdonságok módosításával`TextStamp` objektum. A kódpélda olyan beállítási tulajdonságokat tartalmaz, mint az alsó margó, a vízszintes igazítás és a függőleges igazítás. Beállíthatja a betűtípust, a méretet, a színt és a szöveggel kapcsolatos egyéb tulajdonságokat is.
 
 #### K: Lehetséges-e különböző szöveget hozzáadni az egyes oldalak láblécéhez?
 

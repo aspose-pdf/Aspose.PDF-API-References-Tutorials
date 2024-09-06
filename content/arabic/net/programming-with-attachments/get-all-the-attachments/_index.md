@@ -1,155 +1,154 @@
 ---
 title: احصل على جميع المرفقات في ملف PDF
 linktitle: احصل على جميع المرفقات في ملف PDF
-second_title: Aspose.PDF لمرجع .NET API
-description: تعرف على كيفية الحصول على جميع المرفقات في ملف PDF باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة لسهولة التعامل.
+second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
+description: تعرف على كيفية استخراج جميع المرفقات من ملف PDF باستخدام Aspose.PDF لـ .NET في هذا البرنامج التعليمي خطوة بخطوة.
 type: docs
 weight: 40
 url: /ar/net/programming-with-attachments/get-all-the-attachments/
 ---
-في هذا البرنامج التعليمي، سنرشدك عبر التعليمات البرمجية المصدر لـ C# التالية خطوة بخطوة للحصول على جميع المرفقات في ملف PDF باستخدام Aspose.PDF لـ .NET.
+## مقدمة
 
-تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك قبل البدء. لديك أيضًا معرفة أساسية ببرمجة C#.
+في العصر الرقمي، أصبحت ملفات PDF عنصرًا أساسيًا لمشاركة المستندات. فهي متعددة الاستخدامات وآمنة ويمكن أن تحتوي على قدر كبير من المعلومات، بما في ذلك المرفقات. هل تساءلت يومًا عن كيفية استخراج كل هذه الجواهر المخفية من ملف PDF؟ حسنًا، أنت محظوظ! في هذا البرنامج التعليمي، سنتعمق في استخدام Aspose.PDF لـ .NET للحصول على كل المرفقات في ملف PDF. سواء كنت مطورًا متمرسًا أو مبتدئًا، سيرشدك هذا الدليل خلال العملية خطوة بخطوة.
 
-### الخطوة 1: إعداد دليل المستندات
+## المتطلبات الأساسية
 
-في الكود المصدري المقدم، تحتاج إلى تحديد الدليل الذي يوجد به ملف PDF الذي تريد الحصول على المرفقات منه. قم بتغيير المتغير "dataDir" إلى الدليل المطلوب.
+قبل أن ننتقل إلى الكود، دعنا نتأكد من أن لديك كل ما تحتاجه للبدء:
+
+1. Visual Studio: تأكد من تثبيت Visual Studio على جهازك. فهو بيئة التطوير المتكاملة المثالية لتطوير .NET.
+2.  Aspose.PDF لـ .NET: ستحتاج إلى تنزيل مكتبة Aspose.PDF وتثبيتها. يمكنك العثور عليها[هنا](https://releases.aspose.com/pdf/net/).
+3. المعرفة الأساسية بلغة C#: ستساعدك المعرفة ببرمجة C# على فهم مقتطفات التعليمات البرمجية بشكل أفضل.
+
+## استيراد الحزم
+
+للبدء، ستحتاج إلى استيراد الحزم اللازمة في مشروع C# الخاص بك. وإليك كيفية القيام بذلك:
+
+### إنشاء مشروع جديد
+
+افتح Visual Studio وأنشئ مشروع C# جديدًا. اختر تطبيق وحدة التحكم لتسهيل الأمر.
+
+### إضافة مرجع Aspose.PDF
+
+1. انقر بزر الماوس الأيمن على مشروعك في مستكشف الحلول.
+2. حدد "إدارة حزم NuGet".
+3. ابحث عن “Aspose.PDF” وقم بتثبيت الإصدار الأحدث.
+
+### استيراد مساحة الاسم
+
+في الجزء العلوي من ملف C# الخاص بك، قم باستيراد مساحة اسم Aspose.PDF
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using System;
 ```
 
-### الخطوة 2: افتح مستند PDF الموجود
+الآن بعد أن قمنا بإعداد البيئة الخاصة بنا، دعنا ننتقل إلى التفاصيل الدقيقة لاستخراج المرفقات من ملف PDF.
 
-نفتح مستند PDF الموجود باستخدام المسار المحدد.
+## الخطوة 1: إعداد دليل المستندات الخاص بك
+
+أولاً وقبل كل شيء، عليك تحديد المسار إلى دليل المستندات الخاص بك. هذا هو المكان الذي سيتم فيه وضع ملف PDF الخاص بك.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ يستبدل`YOUR DOCUMENT DIRECTORY` مع المسار الفعلي الذي يتم تخزين ملف PDF فيه. وهذا أمر بالغ الأهمية لأن البرنامج يحتاج إلى معرفة المكان الذي يبحث فيه عن الملف.
+
+## الخطوة 2: افتح مستند PDF
+
+بعد ذلك، سنفتح مستند PDF باستخدام مكتبة Aspose.PDF. وهنا تبدأ السحر!
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
 ```
 
-### الخطوة 3: الحصول على مجموعة المرفقات
+ هنا نقوم بإنشاء جديد`Document` قم بتمرير مسار ملف PDF. تأكد من أن اسم الملف يتطابق تمامًا، بما في ذلك الامتداد.
 
-نحصل على مجموعة المرفقات من الوثيقة.
+## الخطوة 3: الوصول إلى مجموعة الملفات المضمنة
+
+الآن بعد أن فتحنا المستند، فلننتقل إلى مجموعة الملفات المضمنة. هذا هو المكان الذي يتم فيه تخزين كافة المرفقات.
 
 ```csharp
 EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
 ```
 
-### الخطوة الرابعة: استرجاع المرفقات
+باستخدام هذا السطر، نقوم بسحب جميع الملفات المضمنة إلى مجموعة يمكننا التنقل خلالها بسهولة.
 
-نتصفح المجموعة للحصول على جميع المرفقات وعرض معلوماتها. نقوم أيضًا بحفظ المرفقات في ملفات فردية.
+## الخطوة 4: عد الملفات المضمنة
+
+من الجيد دائمًا معرفة عدد المرفقات التي تتعامل معها. دعنا نطبع العدد الإجمالي للملفات المضمنة.
+
+```csharp
+Console.WriteLine("Total files : {0}", embeddedFiles.Count);
+```
+
+سيمنحك هذا نظرة عامة سريعة على عدد المرفقات الموجودة في ملف PDF الخاص بك.
+
+## الخطوة 5: قم بالتنقل عبر المرفقات
+
+الآن يأتي الجزء الممتع! سننتقل عبر مواصفات كل ملف في مجموعة الملفات المضمنة ونستخرج التفاصيل.
 
 ```csharp
 int count = 1;
-foreach(FileSpecification fileSpecification in embeddedFiles)
-{
-Console.WriteLine("Name: {0}", fileSpecification.Name);
-Console.WriteLine("Description: {0}", fileSpecification.Description);
-Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// تحقق مما إذا كانت معلمات الكائن تحتوي على معلومات إضافية
+foreach (FileSpecification fileSpecification in embeddedFiles)
+{
+    Console.WriteLine("Name: {0}", fileSpecification.Name);
+    Console.WriteLine("Description: {0}", fileSpecification.Description);
+    Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
+```
+
+في هذه الحلقة، نقوم بطباعة الاسم والوصف ونوع MIME لكل مرفق. وهذا يمنحك صورة واضحة لما بداخل ملف PDF الخاص بك.
+
+## الخطوة 6: التحقق من المعلمات الإضافية
+
+قد تحتوي بعض المرفقات على معلمات إضافية. دعنا نتحقق من وجودها ونطبعها.
+
+```csharp
 if (fileSpecification.Params != null)
 {
-Console.WriteLine("CheckSum: {0}", fileSpecification.Params.CheckSum);
-Console.WriteLine("Creation date: {0}", fileSpecification.Params.CreationDate);
-Console.WriteLine("Modified date: {0}", fileSpecification.Params.ModDate);
-Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
+    Console.WriteLine("CheckSum: {0}", fileSpecification.Params.CheckSum);
+    Console.WriteLine("Creation Date: {0}", fileSpecification.Params.CreationDate);
+    Console.WriteLine("Modification Date: {0}", fileSpecification.Params.ModDate);
+    Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
+```
 
-// قم باسترجاع المرفق وحفظه في ملف
+تضمن هذه الخطوة عدم تفويت أي تفاصيل مهمة حول المرفقات.
+
+## الخطوة 7: استخراج المرفقات وحفظها
+
+أخيرًا، دعنا نستخرج محتوى كل مرفق ونحفظه في ملف. هنا سترى نتائج عملك الشاق!
+
+```csharp
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
 fileSpecification.Contents.Read(fileContent, 0, fileContent.Length);
 FileStream fileStream = new FileStream(dataDir + count + "_out" + ".txt", FileMode.Create);
 fileStream.Write(fileContent, 0, fileContent.Length);
 fileStream.Close();
-
 count += 1;
-}
 ```
 
-
-### نموذج التعليمات البرمجية المصدر للحصول على كافة المرفقات باستخدام Aspose.PDF لـ .NET 
-
-```csharp
-
-// المسار إلى دليل المستندات.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// افتح المستند
-Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// احصل على مجموعة الملفات المضمنة
-EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
-// الحصول على عدد من الملفات المدمجة
-Console.WriteLine("Total files : {0}", embeddedFiles.Count);
-int count = 1;
-// قم بالمراجعة عبر المجموعة للحصول على كافة المرفقات
-foreach (FileSpecification fileSpecification in embeddedFiles)
-{
-	Console.WriteLine("Name: {0}", fileSpecification.Name);
-	Console.WriteLine("Description: {0}",
-	fileSpecification.Description);
-	Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-	//تحقق مما إذا كان كائن المعلمة يحتوي على المعلمات
-	if (fileSpecification.Params != null)
-	{
-		Console.WriteLine("CheckSum: {0}",
-		fileSpecification.Params.CheckSum);
-		Console.WriteLine("Creation Date: {0}",
-		fileSpecification.Params.CreationDate);
-		Console.WriteLine("Modification Date: {0}",
-		fileSpecification.Params.ModDate);
-		Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
-	}
-	// احصل على المرفق واكتبه في ملف أو دفق
-	byte[] fileContent = new byte[fileSpecification.Contents.Length];
-	fileSpecification.Contents.Read(fileContent, 0,
-	fileContent.Length);
-	FileStream fileStream = new FileStream(dataDir + count + "_out" + ".txt",
-	FileMode.Create);
-	fileStream.Write(fileContent, 0, fileContent.Length);
-	fileStream.Close();
-	count+=1;
-}
-
-```
+ في هذا الكود، نقرأ محتويات كل مرفق في مصفوفة بايت ثم نكتبها في ملف جديد. سيتم تسمية الملفات بشكل تسلسلي (على سبيل المثال،`1_out.txt`, `2_out.txt`، إلخ.).
 
 ## خاتمة
 
-في هذا البرنامج التعليمي، شرحنا كيفية الحصول على كافة المرفقات من ملف PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام هذه المعرفة لاستخراج المرفقات من ملفات PDF الخاصة بك ومعالجتها.
+والآن، لقد نجحت في استخراج جميع المرفقات من ملف PDF باستخدام Aspose.PDF for .NET. تسهل هذه المكتبة القوية التعامل مع مستندات PDF والوصول إلى كنوزها المخفية. سواء كنت تعمل على مشروع شخصي أو تطبيق احترافي، فإن معرفة كيفية استخراج المرفقات يمكن أن تكون مفيدة بشكل لا يصدق.
 
-## الأسئلة الشائعة للحصول على جميع المرفقات في ملف PDF
+## الأسئلة الشائعة
 
-#### س: لماذا أحتاج إلى استرداد جميع المرفقات من مستند PDF؟
+### ما هو Aspose.PDF لـ .NET؟
+Aspose.PDF for .NET هي مكتبة تسمح للمطورين بإنشاء مستندات PDF ومعالجتها وتحويلها برمجيًا.
 
-ج: يتيح لك استرداد المرفقات الوصول إلى الملفات الإضافية المضمنة في ملف PDF ومعالجتها، مما قد يكون مفيدًا للأرشفة أو المشاركة أو المعالجة الإضافية.
+### هل يمكنني استخدام Aspose.PDF مجانًا؟
+ نعم، تقدم Aspose إصدارًا تجريبيًا مجانيًا يمكنك استخدامه لاستكشاف ميزات المكتبة. تحقق من ذلك[هنا](https://releases.aspose.com/).
 
-#### س: ما هي أنواع الملفات التي يمكن إرفاقها بمستند PDF؟
+### كيف أحصل على الدعم لـ Aspose.PDF؟
+ يمكنك الحصول على الدعم من خلال منتدى Aspose[هنا](https://forum.aspose.com/c/pdf/10).
 
-ج: يمكن أن تحتوي مستندات PDF على مجموعة واسعة من الملفات المرفقة، بما في ذلك الصور والمستندات وجداول البيانات والملفات الصوتية والمزيد.
+### هل هناك ترخيص مؤقت متاح؟
+نعم، يمكنك الحصول على ترخيص مؤقت لـ Aspose.PDF[هنا](https://purchase.aspose.com/temporary-license/).
 
-#### س: كيف يساعدني هذا البرنامج التعليمي في استرداد المرفقات من ملف PDF باستخدام Aspose.PDF لـ .NET؟
-
-ج: يوفر هذا البرنامج التعليمي إرشادات خطوة بخطوة وكود مصدر C# للوصول إلى جميع المرفقات واستردادها داخل مستند PDF.
-
-#### س: هل يمكنني استرداد مرفقات معينة بدلاً من كافة المرفقات باستخدام هذا البرنامج التعليمي؟
-
-ج: نعم، يمكنك تعديل الكود المقدم لاسترداد المرفقات بشكل انتقائي بناءً على متطلباتك.
-
-#### س: ما هي المعلومات المتعلقة بكل مرفق التي يمكنني الحصول عليها باستخدام هذا البرنامج التعليمي؟
-
-ج: يوضح هذا البرنامج التعليمي كيفية استرداد وعرض التفاصيل مثل اسم المرفق والوصف ونوع MIME وتاريخ الإنشاء وتاريخ التعديل والحجم.
-
-#### س: كيف يتم حفظ المرفقات المستردة باستخدام هذا البرنامج التعليمي؟
-
-ج: يرشدك البرنامج التعليمي خلال حفظ كل مرفق تم استرداده كملف منفصل في الدليل المحدد.
-
-#### س: هل يمكنني استخدام هذه المعرفة لاستخراج المرفقات من ملفات PDF محمية بكلمة مرور؟
-
-ج: نعم، يمكنك تطبيق مبادئ مماثلة لاسترداد المرفقات من ملفات PDF المحمية بكلمة مرور باستخدام Aspose.PDF لـ .NET.
-
-#### س: كيف يسهل Aspose.PDF for .NET استرجاع المرفقات؟
-
-ج: يوفر Aspose.PDF for .NET واجهة برمجة تطبيقات بديهية تسمح لك بالوصول إلى المرفقات في مستندات PDF ومعالجتها بسهولة.
-
-#### س: هل هناك سيناريوهات محددة يوصى فيها باسترداد المرفقات؟
-
-ج: يعد استرداد المرفقات مفيدًا عندما تحتاج إلى الوصول إلى الملفات المضمنة في ملف PDF، مثل استخراج الصور أو الملفات الصوتية أو المستندات الإضافية.
+### أين يمكنني العثور على الوثائق؟
+ يمكن العثور على وثائق Aspose.PDF لـ .NET[هنا](https://reference.aspose.com/pdf/net/).

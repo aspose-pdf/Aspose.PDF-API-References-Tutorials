@@ -1,8 +1,8 @@
 ---
-title: PDF'lerden Ekleri Kaldırma
-linktitle: PDF'lerden Ekleri Kaldırma
+title: PDF'lerden Ekleri Kaldır
+linktitle: PDF'lerden Ekleri Kaldır
 second_title: Aspose.PDF Java PDF İşleme API'si
-description: Aspose.PDF ile Java'daki PDF'lerdeki ekleri nasıl kaldıracağınızı öğrenin. PDF işleme için adım adım kılavuz ve kod.
+description: Aspose.PDF ile Java'da PDF'lerden ekleri nasıl kaldıracağınızı öğrenin. PDF düzenleme için adım adım kılavuz ve kod.
 type: docs
 weight: 11
 url: /tr/java/pdf-attachments/remove-attachments-from-pdfs/
@@ -10,79 +10,79 @@ url: /tr/java/pdf-attachments/remove-attachments-from-pdfs/
 
 ## PDF'lerden Ekleri Kaldırmaya Giriş
 
-Günümüzün dijital çağında PDF dosyalarıyla çalışmak birçok yazılım uygulamasının ayrılmaz bir parçası haline geldi. Genellikle bu PDF'ler resimler, belgeler veya diğer dosyalar gibi çeşitli ekler içerir. Ancak, bu ekleri programlı olarak kaldırmanız gereken durumlar olabilir ve işte bu noktada Aspose.PDF for Java imdadımıza yetişiyor. Bu adım adım kılavuzda, Java'da Aspose.PDF kullanarak PDF'lerdeki eklerin nasıl kaldırılacağını inceleyeceğiz.
+Günümüzün dijital çağında, PDF dosyalarıyla çalışmak birçok yazılım uygulamasının ayrılmaz bir parçası haline geldi. Genellikle bu PDF'ler, resimler, belgeler veya diğer dosyalar gibi çeşitli ekler içerir. Ancak, bu ekleri programatik olarak kaldırmanız gereken durumlar olabilir ve işte tam bu noktada Java için Aspose.PDF kurtarmaya gelir. Bu adım adım kılavuzda, Java'da Aspose.PDF kullanarak PDF'lerden ekleri nasıl kaldıracağınızı inceleyeceğiz.
 
-## Önkoşullar
+## Ön koşullar
 
 Koda dalmadan önce ihtiyacınız olan her şeye sahip olduğunuzdan emin olalım:
 
-- Java Geliştirme Ortamı: Sisteminizde Java'nın kurulu olduğundan emin olun.
--  Aspose.PDF for Java: Kütüphaneyi şu adresten indirebilirsiniz:[Burada](https://releases.aspose.com/pdf/java/).
+- Java Geliştirme Ortamı: Sisteminizde Java'nın yüklü olduğundan emin olun.
+-  Java için Aspose.PDF: Kütüphaneyi şu adresten indirebilirsiniz:[Burada](https://releases.aspose.com/pdf/java/).
 
 ## Projenizi Kurma
 
 1. Tercih ettiğiniz Entegre Geliştirme Ortamında (IDE) yeni bir Java projesi oluşturun.
 
-2. Aspose.PDF for Java kütüphanesini projenize ekleyin. Bunu, JAR dosyasını projenizin derleme yoluna ekleyerek yapabilirsiniz.
+2. Projenize Aspose.PDF for Java kütüphanesini ekleyin. Bunu JAR dosyasını projenizin derleme yoluna ekleyerek yapabilirsiniz.
 
 3. Artık kodlamaya başlamaya hazırsınız!
 
 ## Ekleri Kaldırma
 
-### 1. Adım: PDF Belgesini Yükleyin
+### Adım 1: PDF Belgesini Yükleyin
 
 ```java
 // PDF belgesini yükleyin
 Document pdfDocument = new Document("path/to/your/pdf/file.pdf");
 ```
 
-### Adım 2: Ek Koleksiyonunu Alın
+### Adım 2: Ekler Koleksiyonunu Edinin
 
 ```java
-// Ek koleksiyonunu edinin
+// Ekler koleksiyonunu alın
 AttachmentCollection attachments = pdfDocument.getEmbeddedFiles();
 ```
 
-### 3. Adım: Ekleri Kaldır
+### Adım 3: Ekleri Kaldırın
 
 ```java
-// Ekler arasında dolaşın ve bunları kaldırın
+// Ekleri döngüye alın ve kaldırın
 for (Attachment attachment : attachments) {
     attachments.remove(attachment);
 }
 ```
 
-### 4. Adım: Değiştirilen PDF'yi kaydedin
+### Adım 4: Değiştirilen PDF'yi Kaydedin
 
 ```java
-// Değiştirilen PDF'yi kaydedin
+// Değiştirilen PDF'yi kaydet
 pdfDocument.save("path/to/save/modified/file.pdf");
 ```
 
 ## Çözüm
 
-Aspose.PDF for Java kullanarak ekleri PDF'lerden kaldırmak basit bir işlemdir. Yalnızca birkaç satır kodla PDF'leri değiştirebilir ve bunları özel ihtiyaçlarınıza göre uyarlayabilirsiniz.
+Aspose.PDF for Java kullanarak PDF'lerden ekleri kaldırmak basit bir işlemdir. Sadece birkaç satır kodla PDF'leri düzenleyebilir ve özel ihtiyaçlarınıza göre uyarlayabilirsiniz.
 
-Bir deneyin ve Aspose.PDF'in Java uygulamalarınızda PDF belgeleriyle çalışmayı nasıl kolaylaştırdığını görün!
+Deneyin ve Aspose.PDF'in Java uygulamalarınızda PDF belgeleriyle çalışmayı ne kadar kolaylaştırdığını görün!
 
-## SSS'ler
+## SSS
 
-### Bir PDF'yi kaldırmadan önce eklerin olup olmadığını nasıl kontrol edebilirim?
+### Bir PDF'i kaldırmadan önce ekleri olup olmadığını nasıl kontrol edebilirim?
 
- Şunu kullanabilirsiniz:`getEmbeddedFiles()` Ek koleksiyonunu alma yöntemi. Boşsa PDF'de hiçbir ek yoktur.
+ Kullanabilirsiniz`getEmbeddedFiles()` Ekler koleksiyonunu alma yöntemi. Boşsa, PDF'de ek yoktur.
 
-### Belirli ekleri kaldırıp diğerlerini saklayabilir miyim?
+### Belirli ekleri kaldırıp diğerlerini tutabilir miyim?
 
-Evet, ekleri kodunuzda kaldırma koşulunu belirterek seçerek kaldırabilirsiniz.
+Evet, kodunuzda ekleri kaldırma koşulunu belirterek ekleri seçici olarak kaldırabilirsiniz.
 
-### Aspose.PDF for Java'nın kullanımı ücretsiz midir?
+### Aspose.PDF for Java'yı kullanmak ücretsiz mi?
 
-Aspose.PDF for Java ticari bir kütüphanedir ancak özelliklerini değerlendirmek için kullanabileceğiniz ücretsiz bir deneme sürümü sunar.
+Aspose.PDF for Java ticari bir kütüphanedir, ancak özelliklerini değerlendirebilmeniz için ücretsiz deneme sürümü sunmaktadır.
 
 ### Aspose.PDF diğer programlama dillerini destekliyor mu?
 
-Evet, Aspose.PDF birden fazla programlama dili için mevcuttur, bu da onu çeşitli geliştirme ortamları için çok yönlü kılar.
+Evet, Aspose.PDF birçok programlama dili için mevcuttur ve bu da onu çeşitli geliştirme ortamları için çok yönlü hale getirir.
 
-### Aspose.PDF for Java ile ilgili nasıl daha fazla yardım alabilirim?
+### Aspose.PDF for Java ile ilgili daha fazla yardıma nasıl ulaşabilirim?
 
- Aspose.PDF for Java belgelerini şu adreste ziyaret edebilirsiniz:[Burada](https://reference.aspose.com/pdf/java/) detaylı bilgi ve örnekler için.
+ Java belgeleri için Aspose.PDF'i şu adresten ziyaret edebilirsiniz:[Burada](https://reference.aspose.com/pdf/java/) Detaylı bilgi ve örnekler için.

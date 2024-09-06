@@ -1,6 +1,6 @@
 ---
-title: Maak een lijst van alle bijlagen in PDF-documenten
-linktitle: Maak een lijst van alle bijlagen in PDF-documenten
+title: Alle bijlagen in PDF-documenten weergeven
+linktitle: Alle bijlagen in PDF-documenten weergeven
 second_title: Aspose.PDF Java PDF-verwerkings-API
 description: Ontdek hoe u bijlagen in PDF's kunt weergeven met Aspose.PDF voor Java. Stapsgewijze handleiding voor het eenvoudig extraheren van PDF-bijlagen.
 type: docs
@@ -10,28 +10,28 @@ url: /nl/java/pdf-attachments/list-all-attachments-pdf-documents/
 
 ## Inleiding tot het weergeven van alle bijlagen in PDF-documenten
 
-In het huidige digitale tijdperk zijn PDF-documenten een integraal onderdeel van ons leven geworden en dienen ze als een betrouwbaar formaat voor het delen en bewaren van informatie. Vaak bevatten deze PDF's bijlagen, dit kunnen bestanden, afbeeldingen of andere documenten zijn, verborgen in het hoofd-PDF-bestand. Als u een Java-ontwikkelaar bent en met PDF's wilt werken en deze bijlagen wilt extraheren, bent u hier op de juiste plek. In dit artikel zullen we onderzoeken hoe u alle bijlagen in PDF-documenten kunt weergeven met behulp van Aspose.PDF voor Java.
+In het digitale tijdperk van vandaag zijn PDF-documenten een integraal onderdeel van ons leven geworden, en dienen ze als een betrouwbaar formaat voor het delen en bewaren van informatie. Vaak bevatten deze PDF's bijlagen, die bestanden, afbeeldingen of andere documenten kunnen zijn, verborgen in het hoofd-PDF-bestand. Als u een Java-ontwikkelaar bent die met PDF's wil werken en deze bijlagen wil extraheren, bent u hier aan het juiste adres. In dit artikel onderzoeken we hoe u alle bijlagen in PDF-documenten kunt weergeven met Aspose.PDF voor Java.
 
-## Aspose.PDF voor Java begrijpen
+## Begrijpen van Aspose.PDF voor Java
 
-Voordat we in de code duiken, maken we eerst kennis met Aspose.PDF voor Java. Het is een krachtige Java-bibliotheek waarmee u programmatisch PDF-documenten kunt maken, manipuleren en converteren. Met Aspose.PDF kunt u verschillende taken uitvoeren, waaronder het extraheren van bijlagen uit PDF's.
+Voordat we in de code duiken, maken we kennis met Aspose.PDF voor Java. Het is een krachtige Java-bibliotheek waarmee u PDF-documenten programmatisch kunt maken, bewerken en converteren. Met Aspose.PDF kunt u verschillende taken uitvoeren, waaronder het extraheren van bijlagen uit PDF's.
 
 ## Vereisten
 
-Voordat we beginnen, zorg ervoor dat u aan de volgende vereisten voldoet:
+Voordat we beginnen, moet u ervoor zorgen dat u aan de volgende vereisten voldoet:
 
 - Java Development Kit (JDK) op uw systeem geïnstalleerd.
--  Aspose.PDF voor Java-bibliotheek. Je kunt het downloaden[hier](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF voor Java-bibliotheek. U kunt het downloaden[hier](https://releases.aspose.com/pdf/java/).
 
-Laten we nu de stappen schetsen om alle bijlagen in een PDF-document weer te geven met behulp van Aspose.PDF voor Java.
+Laten we nu de stappen beschrijven om alle bijlagen in een PDF-document weer te geven met behulp van Aspose.PDF voor Java.
 
-## Stapsgewijze handleiding
+## Stap-voor-stap handleiding
 
-### Stap 1: Maak een Java-project
+### Stap 1: Een Java-project maken
 
-Begin met het maken van een nieuw Java-project in de Integrated Development Environment (IDE) van uw voorkeur. Zorg ervoor dat u uw project configureert om de Aspose.PDF-bibliotheek te gebruiken.
+Begin met het maken van een nieuw Java-project in uw favoriete Integrated Development Environment (IDE). Zorg ervoor dat u uw project configureert om de Aspose.PDF-bibliotheek te gebruiken.
 
-### Stap 2: Laad het PDF-document
+### Stap 2: Het PDF-document laden
 
 ```java
 // Laad het PDF-document
@@ -49,10 +49,10 @@ com.aspose.pdf.EmbeddedFileCollection embeddedFiles = pdfDocument.getEmbeddedFil
 
 ### Stap 4: Maak een lijst van de bijlagen
 
-Loop nu door de bijlagen en geef hun namen weer:
+Blader nu door de bijlagen en geef hun namen weer:
 
 ```java
-// Vermeld alle bijlagen
+// Alle bijlagen weergeven
 for (com.aspose.pdf.FileSpecification fileSpecification : embeddedFiles) {
     System.out.println("Attachment Name: " + fileSpecification.getName());
 }
@@ -69,27 +69,27 @@ pdfDocument.close();
 
 ## Conclusie
 
-In deze zelfstudie hebben we onderzocht hoe u alle bijlagen in PDF-documenten kunt weergeven met behulp van Aspose.PDF voor Java. Met slechts een paar eenvoudige stappen kunt u de namen van bijlagen die verborgen zijn in uw PDF-bestanden openen en weergeven. Dit kan met name handig zijn in scenario's waarin u specifieke bijlagen moet extraheren voor verdere verwerking.
+In deze tutorial hebben we onderzocht hoe u alle bijlagen in PDF-documenten kunt weergeven met Aspose.PDF voor Java. Met slechts een paar eenvoudige stappen kunt u de namen van bijlagen die verborgen zijn in uw PDF-bestanden openen en weergeven. Dit kan met name handig zijn in scenario's waarin u specifieke bijlagen moet extraheren voor verdere verwerking.
 
-Nu beschikt u over de kennis om met PDF-bijlagen in Java te werken met behulp van Aspose.PDF. Experimenteer met verschillende PDF's en ontdek de mogelijkheden om bijlagen programmatisch te beheren.
+Nu hebt u de kennis om met PDF-bijlagen in Java te werken met Aspose.PDF. Experimenteer met verschillende PDF's en verken de mogelijkheden van het programmatisch beheren van bijlagen.
 
 ## Veelgestelde vragen
 
-### Hoe kan ik bijlagen uit een specifieke pagina van de PDF extraheren?
+### Hoe kan ik bijlagen van een specifieke pagina van de PDF extraheren?
 
- Om bijlagen uit een specifieke pagina van de PDF te extraheren, kunt u de`getPage` methode om toegang te krijgen tot een bepaalde pagina en vervolgens de bijlagen van die pagina op te halen.
+ Om bijlagen van een specifieke pagina van de PDF te extraheren, kunt u de`getPage` Methode om toegang te krijgen tot een bepaalde pagina en vervolgens de bijlagen van die pagina op te halen.
 
-### Kan ik bijlagen van een specifiek type extraheren, zoals alleen afbeeldingsbestanden?
+### Kan ik bijlagen van een specifiek type extraheren, bijvoorbeeld alleen afbeeldingsbestanden?
 
-Ja, u kunt bijlagen filteren op basis van hun typen. U kunt de bestandsextensie of het MIME-type van elke bijlage controleren om het type ervan te bepalen en vervolgens specifieke soorten bijlagen uitpakken.
+Ja, u kunt bijlagen filteren op basis van hun typen. U kunt de bestandsextensie of het MIME-type van elke bijlage controleren om het type te bepalen en vervolgens specifieke typen bijlagen extraheren.
 
 ### Is Aspose.PDF voor Java gratis te gebruiken?
 
-Aspose.PDF voor Java is een commerciële bibliotheek met een gratis proefversie. U kunt de kenmerken en functionaliteit ervan evalueren voordat u besluit een licentie aan te schaffen.
+Aspose.PDF voor Java is een commerciële bibliotheek met een gratis proefversie beschikbaar. U kunt de functies en functionaliteit evalueren voordat u besluit een licentie aan te schaffen.
 
-### Zijn er beperkingen aan de grootte van PDF's die Aspose.PDF voor Java aankan?
+### Zijn er beperkingen aan de grootte van PDF-bestanden die Aspose.PDF voor Java kan verwerken?
 
-Aspose.PDF voor Java kan PDF's van verschillende groottes verwerken, maar de prestaties kunnen variëren afhankelijk van de complexiteit en grootte van het document. Het wordt aanbevolen om de bibliotheek te testen met uw specifieke PDF-bestanden om optimale prestaties te garanderen.
+Aspose.PDF voor Java kan PDF's van verschillende groottes verwerken, maar de prestaties kunnen variëren afhankelijk van de complexiteit en grootte van het document. Het is raadzaam om de bibliotheek te testen met uw specifieke PDF-bestanden om optimale prestaties te garanderen.
 
 ### Waar kan ik meer bronnen en documentatie vinden voor Aspose.PDF voor Java?
 

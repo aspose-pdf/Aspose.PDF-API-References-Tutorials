@@ -10,7 +10,7 @@ url: /sv/java/pdf-images/add-line-object-to-pdf-using-java/
 
 ## Introduktion till att lägga till linjeobjekt till PDF med Java
 
-I den här handledningen kommer vi att utforska hur man lägger till linjeobjekt till PDF-filer med hjälp av Java med hjälp av Aspose.PDF för Java. Linjer används ofta för att understryka text, skapa former eller markera specifika områden i ett PDF-dokument. Vi kommer att gå igenom hela processen steg för steg, från att sätta upp utvecklingsmiljön till att anpassa linjeegenskaper och spara PDF:en. Låt oss börja!
+I den här handledningen kommer vi att utforska hur man lägger till linjeobjekt till PDF-filer med hjälp av Java med hjälp av Aspose.PDF för Java. Linjer används ofta för att understryka text, skapa former eller markera specifika områden i ett PDF-dokument. Vi kommer att gå igenom hela processen steg för steg, från att sätta upp utvecklingsmiljön till att anpassa linjeegenskaper och spara PDF:en. Låt oss komma igång!
 
 ## Ställa in miljön
 

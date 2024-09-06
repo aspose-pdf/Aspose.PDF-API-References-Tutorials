@@ -44,7 +44,7 @@ Document pdfDocument = new Document();
 
 ## 4. lépés: Oldalak hozzáadása a PDF-hez
 
-Adja hozzá a szükséges oldalakat a PDF-dokumentumhoz. Minden oldalhoz szükség szerint különböző fejléceket határozhat meg. Íme egy példa három oldal hozzáadására:
+Adja hozzá a szükséges oldalakat a PDF dokumentumhoz. Minden oldalhoz szükség szerint különböző fejléceket határozhat meg. Íme egy példa három oldal hozzáadására:
 
 ```java
 Page page1 = pdfDocument.getPages().add();
@@ -83,7 +83,7 @@ Végül mentse el a PDF dokumentumot:
 pdfDocument.save("output.pdf");
 ```
 
-Gratulálunk! Sikeresen hozzáadott különböző fejléceket egyetlen PDF-fájlhoz az Aspose.PDF for Java használatával.
+Gratulálok! Sikeresen hozzáadott különböző fejléceket egyetlen PDF-fájlhoz az Aspose.PDF for Java használatával.
 
 ## Következtetés
 
@@ -93,7 +93,7 @@ Ebben az útmutatóban megvizsgáltuk, hogyan javíthatja PDF-dokumentumait úgy
 
 ### Hogyan szabhatom tovább a fejléc tartalmát?
 
-Testreszabhatja a fejléc tartalmát szöveg, képek vagy egyéb elemek hozzáadásával az Aspose.PDF gazdag funkciókészletével.
+Testreszabhatja a fejléc tartalmát szöveg, képek vagy egyéb elemek hozzáadásával az Aspose.PDF gazdag szolgáltatáskészletével.
 
 ### Az Aspose.PDF kompatibilis a Java 8-cal?
 

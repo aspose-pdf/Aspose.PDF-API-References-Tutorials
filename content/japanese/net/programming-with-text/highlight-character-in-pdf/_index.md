@@ -1,40 +1,40 @@
 ---
-title: PDFファイル内の文字を強調表示する
-linktitle: PDFファイル内の文字を強調表示する
+title: PDF ファイル内の文字を強調表示する
+linktitle: PDF ファイル内の文字を強調表示する
 second_title: Aspose.PDF for .NET API リファレンス
 description: Aspose.PDF for .NET を使用して PDF ファイル内の文字を強調表示する方法を学びます。
 type: docs
 weight: 240
 url: /ja/net/programming-with-text/highlight-character-in-pdf/
 ---
-このチュートリアルでは、.NET 用の Aspose.PDF ライブラリを使用して PDF ファイル内の文字を強調表示する方法を説明します。提供されている C# ソース コードを使用して、PDF 内の文字を強調表示するプロセスを段階的に説明します。
+このチュートリアルでは、.NET 用の Aspose.PDF ライブラリを使用して PDF ファイル内の文字を強調表示する方法について説明します。提供されている C# ソース コードを使用して、PDF 内の文字を強調表示するプロセスを段階的に説明します。
 
 ## 要件
 
-始める前に、以下のものがあることを確認してください。
+始める前に、次のものがあることを確認してください。
 
-- Aspose.PDF for .NET ライブラリがインストールされています。
+- Aspose.PDF for .NET ライブラリがインストールされました。
 - C# プログラミングの基本的な理解。
 
-## ステップ 1: ドキュメント ディレクトリを設定する
+## ステップ1: ドキュメントディレクトリを設定する
 
-まず、入力 PDF ファイルが配置されているディレクトリへのパスを設定する必要があります。交換する`"YOUR DOCUMENT DIRECTORY"`の中に`dataDir`変数を PDF ファイルへのパスに置き換えます。
+まず、入力PDFファイルが保存されているディレクトリへのパスを設定する必要があります。`"YOUR DOCUMENT DIRECTORY"`の`dataDir` PDF ファイルへのパスを含む変数。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## ステップ 2: PDF ドキュメントをロードする
+## ステップ2: PDFドキュメントを読み込む
 
-次に、次のコマンドを使用して入力 PDF ドキュメントを読み込みます。`Aspose.Pdf.Document`クラス。
+次に、入力PDF文書を読み込み、`Aspose.Pdf.Document`クラス。
 
 ```csharp
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
 ```
 
-## ステップ 3: PDF を画像に変換する
+## ステップ3: PDFを画像に変換する
 
-文字を強調表示するには、PDF ドキュメントを画像に変換します。`PdfConverter`クラス。変換の解像度を設定し、画像を`Bitmap`物体。
+文字を強調するには、PDF文書を画像に変換します。`PdfConverter`クラス。変換の解像度を設定し、画像を`Bitmap`物体。
 
 ```csharp
 int resolution = 150;
@@ -46,14 +46,14 @@ using (MemoryStream ms = new MemoryStream())
      Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
 ```
 
-## ステップ 4: 文字を強調表示する
+## ステップ4: 文字を強調表示する
 
-PDF ドキュメントの各ページをループして、`TextFragmentAbsorber`ページ内のすべての単語を検索するオブジェクト。次に、テキストの断片、セグメント、文字を反復処理して、長方形を使用してそれらを強調表示します。
+PDF文書の各ページをループし、`TextFragmentAbsorber`オブジェクトを使用して、ページ内のすべての単語を検索します。次に、テキストのフラグメント、セグメント、文字を反復処理して、四角形を使用して強調表示します。
 
 ```csharp
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 {
-     //スケールと変形を設定する
+     //スケールと変換を設定する
      float scale = resolution / 72f;
      gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
 
@@ -62,7 +62,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
      {
          Page page = pdfDocument.Pages[1];
 
-         //ページ内のすべての単語を検索します
+         //ページ内のすべての単語を検索
          TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
          textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
          page. Accept(textFragmentAbsorber);
@@ -95,7 +95,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                      //文字をループする
                      foreach(CharInfo characterInfo in segment.Characters)
                      {
-                         //ハイライト文字
+                         //ハイライトキャラクター
                          gr.DrawRectangle(
                              Think.Black,
                              (float)characterInfo.Rectangle.LLx,
@@ -110,7 +110,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 }
 ```
 
-## ステップ 5: 出力画像を保存する
+## ステップ5: 出力画像を保存する
 
 最後に、強調表示された文字を含む変更された画像を指定された出力ファイルに保存します。
 
@@ -119,11 +119,11 @@ dataDir = dataDir + "HighlightCharacterInPDF_out.png";
 bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
 ```
 
-### Aspose.PDF for .NET を使用した PDF のハイライト文字のサンプル ソース コード 
+### Aspose.PDF for .NET を使用して PDF 内の文字を強調表示するサンプル ソース コード 
 ```csharp
 try
 {
-	//ドキュメントディレクトリへのパス。
+	//ドキュメント ディレクトリへのパス。
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	int resolution = 150;
 	Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
@@ -140,11 +140,11 @@ try
 			for (int i = 0; i < pdfDocument.Pages.Count; i++)
 			{
 				Page page = pdfDocument.Pages[1];
-				//すべての単語を検索する TextAbsorber オブジェクトを作成する
+				//すべての単語を見つけるためのTextAbsorberオブジェクトを作成する
 				TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
 				textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
 				page.Accept(textFragmentAbsorber);
-				//抽出されたテキスト断片を取得する
+				//抽出されたテキストフラグメントを取得する
 				TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 				//フラグメントをループする
 				foreach (TextFragment textFragment in textFragmentCollection)
@@ -197,40 +197,40 @@ catch (Exception ex)
 
 ## 結論
 
-このチュートリアルでは、.NET 用の Aspose.PDF ライブラリを使用して PDF ドキュメント内の文字を強調表示する方法を学習しました。ステップバイステップのガイドに従って、提供されている C# コードを実行すると、PDF 内の文字を強調表示し、出力を画像として保存できます。
+このチュートリアルでは、.NET 用の Aspose.PDF ライブラリを使用して PDF ドキュメント内の文字を強調表示する方法を学びました。ステップ バイ ステップ ガイドに従って、提供されている C# コードを実行すると、PDF 内の文字を強調表示し、出力を画像として保存できます。
 
 ### よくある質問
 
-#### Q: 「PDF ファイル内の文字をハイライトする」チュートリアルの目的は何ですか?
+#### Q: 「PDF ファイル内の文字を強調表示する」チュートリアルの目的は何ですか?
 
-A: 「PDF ファイル内の文字を強調表示する」チュートリアルでは、.NET 用の Aspose.PDF ライブラリを使用して PDF ドキュメント内の文字を強調表示する方法を説明しています。このチュートリアルでは、これを実現するためのステップバイステップのガイドと C# ソース コードを提供します。
+A: 「PDF ファイル内の文字を強調表示する」チュートリアルでは、.NET 用の Aspose.PDF ライブラリを使用して PDF ドキュメント内の文字を強調表示する方法について説明します。このチュートリアルでは、これを実現するためのステップバイステップのガイドと C# ソース コードが提供されます。
 
-#### Q: PDF ドキュメント内の文字を強調表示したいのはなぜですか?
+#### Q: PDF 文書内の文字を強調表示する必要があるのはなぜですか?
 
-A: PDF ドキュメント内の文字を強調表示すると、特定のコンテンツを強調したり、特定のテキストをより見やすく区別したりするなど、さまざまな目的に役立ちます。
+A: PDF ドキュメント内の文字を強調表示すると、特定のコンテンツを強調したり、特定のテキストをより見やすく識別しやすくしたりするなど、さまざまな目的に役立ちます。
 
-#### Q: ドキュメント ディレクトリはどのように設定すればよいですか?
+#### Q: ドキュメント ディレクトリを設定するにはどうすればよいですか?
 
-A: ドキュメント ディレクトリを設定するには:
+A: ドキュメントディレクトリを設定するには:
 
-1. 交換する`"YOUR DOCUMENT DIRECTORY"`の中に`dataDir`変数には、入力 PDF ファイルが配置されているディレクトリへのパスを指定します。
+1. 交換する`"YOUR DOCUMENT DIRECTORY"`の`dataDir`入力 PDF ファイルが配置されているディレクトリへのパスを持つ変数。
 
-#### Q: PDF ドキュメントをロードして画像に変換するにはどうすればよいですか?
+#### Q: PDF ドキュメントを読み込んで画像に変換するにはどうすればよいですか?
 
- A: チュートリアルでは、`Aspose.Pdf.Document`クラスは、入力 PDF ドキュメントをロードするために使用されます。そうして`PdfConverter`PDF ドキュメントを画像に変換するためにクラスが使用されます。画像の解像度が設定され、画像が`Bitmap`物体。
+ A: チュートリアルでは、`Aspose.Pdf.Document`クラスは入力PDF文書を読み込むために使用されます。次に、`PdfConverter`クラスはPDF文書を画像に変換するために使われます。画像の解像度が設定され、画像は`Bitmap`物体。
 
 #### Q: PDF ドキュメント画像内の文字を強調表示するにはどうすればよいですか?
 
-A: このチュートリアルでは、PDF ドキュメントの各ページをループし、`TextFragmentAbsorber`、テキストの断片、セグメント、文字を反復処理して、長方形を使用してそれらを強調表示します。
+A: チュートリアルでは、PDF文書の各ページをループし、`TextFragmentAbsorber`テキストの断片、セグメント、文字を反復処理して、四角形を使用して強調表示します。
 
-#### Q: ハイライトされた文字やセグメントの外観をカスタマイズできますか?
+#### Q: 強調表示された文字やセグメントの外観をカスタマイズできますか?
 
-A: はい、描画操作で使用される色とスタイルを変更することで、強調表示された文字とセグメントの外観をカスタマイズできます。
+A: はい、描画操作で使用する色とスタイルを変更することで、強調表示された文字とセグメントの外観をカスタマイズできます。
 
-#### Q: 変更した文字を強調表示した画像を保存するにはどうすればよいですか?
+#### Q: 文字を強調表示した変更後の画像を保存するにはどうすればよいですか?
 
- A: このチュートリアルでは、強調表示された文字を含む変更されたイメージを、`Save`の方法`Bitmap`クラス。
+ A: このチュートリアルでは、強調表示された文字を含む変更された画像を、指定された出力ファイルに保存する方法を説明します。`Save`方法の`Bitmap`クラス。
 
 #### Q: このチュートリアルには有効な Aspose ライセンスが必要ですか?
 
-A: はい、このチュートリアルが正しく動作するには、有効な Aspose ライセンスが必要です。 Aspose Web サイトから完全ライセンスを購入するか、30 日間の一時ライセンスを取得できます。
+A: はい、このチュートリアルを正しく動作させるには、有効な Aspose ライセンスが必要です。Aspose Web サイトからフル ライセンスを購入するか、30 日間の一時ライセンスを取得できます。

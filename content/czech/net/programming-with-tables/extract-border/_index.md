@@ -67,7 +67,7 @@ else if (opRestoreState != null)
 }
 else if (opCtm != null)
 {
-     // Načtěte aktuální transformační matici
+     // Získejte aktuální transformační matici
      System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
          (float)opCtm.Matrix.A,
          (float)opCtm.Matrix.B,
@@ -235,7 +235,7 @@ Console.WriteLine("\nBorder extracted successfully as image.\nFile saved at " + 
 ## Závěr
 V tomto tutoriálu jsme se naučili, jak extrahovat ohraničení z dokumentu PDF pomocí Aspose.PDF pro .NET. Pomocí tohoto podrobného průvodce můžete extrahovat ohraničení z jiných dokumentů PDF.
 
-### Časté dotazy k extrahování ohraničení v souboru PDF
+### Nejčastější dotazy pro extrahování ohraničení v souboru PDF
 
 #### Otázka: Jaký je účel extrahování ohraničení ze souboru PDF?
 

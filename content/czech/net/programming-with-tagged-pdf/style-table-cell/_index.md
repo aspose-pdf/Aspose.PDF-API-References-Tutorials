@@ -7,7 +7,7 @@ type: docs
 weight: 160
 url: /cs/net/programming-with-tagged-pdf/style-table-cell/
 ---
-Vítejte v tomto podrobném tutoriálu o formátování buněk tabulky pomocí Aspose.PDF pro .NET. V této příručce podrobně vysvětlíme každý krok poskytnutého zdrojového kódu C#, abychom vám pomohli pochopit, jak stylovat buňky tabulky. Než začnete, ujistěte se, že jste nainstalovali Aspose.PDF for .NET a nastavili vývojové prostředí.
+Vítejte v tomto podrobném tutoriálu o formátování buněk tabulky pomocí Aspose.PDF pro .NET. V této příručce podrobně vysvětlíme každý krok poskytnutého zdrojového kódu C#, abychom vám pomohli pochopit, jak stylovat buňky tabulky. Než začnete, ujistěte se, že jste nainstalovali Aspose.PDF for .NET a nastavili své vývojové prostředí.
 
 ## Krok 1: Nastavení prostředí
 
@@ -163,7 +163,7 @@ Vytvořili jsme zápatí pro naši tabulku a přidali buňky zápatí s textem.
 Nyní, když jsme vytvořili náš dokument se stylizovanou tabulkou, uložíme jej jako tagovaný dokument PDF.
 
 ```csharp
-// Uložte tagovaný dokument PDF
+// Uložte označený dokument PDF
 document.Save(dataDir + "StyleTableCell.pdf");
 ```
 
@@ -305,7 +305,7 @@ Odpověď: Prvek kořenové struktury slouží jako kontejner pro další prvky 
 
 #### Otázka: Mohu do těla tabulky přidat více řádků a sloupců a upravit jejich formátování?
 
-Odpověď: Ano, tutoriál ukazuje, jak přidat více řádků a sloupců do těla tabulky pomocí smyček. Poskytuje také příklady přizpůsobení formátování buněk, jako je barva pozadí, ohraničení, zarovnání textu, styl písma a další.
+Odpověď: Ano, tutoriál ukazuje, jak přidat více řádků a sloupců do těla tabulky pomocí smyček. Poskytuje také příklady přizpůsobení formátování buněk, jako je barva pozadí, okraje, zarovnání textu, styl písma a další.
 
 #### Otázka: Jaký je účel ověření souladu s PDF/UA a jak mohu toto ověření provést?
 

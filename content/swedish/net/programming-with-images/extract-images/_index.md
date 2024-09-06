@@ -11,7 +11,7 @@ Den här guiden tar dig steg för steg hur du extraherar bilder från PDF-fil me
 
 ## Steg 1: Definiera dokumentkatalogen
 
- Innan du börjar, se till att du ställer in rätt katalog för dokumenten. Byta ut`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där ditt PDF-dokument finns.
+Innan du börjar, se till att du ställer in rätt katalog för dokumenten. Ersätta`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där ditt PDF-dokument finns.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Steg 2: Öppna PDF-dokumentet
 
- det här steget kommer vi att öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF. Använd`Document` konstruktor och skicka sökvägen till PDF-dokumentet.
+ I det här steget kommer vi att öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF. Använd`Document` konstruktor och skicka sökvägen till PDF-dokumentet.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractImages.pdf");
@@ -27,7 +27,7 @@ Document pdfDocument = new Document(dataDir + "ExtractImages.pdf");
 
 ## Steg 3: Extrahera en specifik bild
 
- I det här steget ska vi extrahera en specifik bild från en viss sida. Använd`Images` samling av sidan`s `Resursobjekt för att komma åt den önskade bilden. I exemplet nedan extraherar vi bilden med index 1 från första sidan.
+ det här steget ska vi extrahera en specifik bild från en viss sida. Använd`Images` samling av sidan`s `Resursobjekt för att komma åt den önskade bilden. I exemplet nedan extraherar vi bilden med index 1 från första sidan.
 
 ```csharp
 XImage xImage = pdfDocument.Pages[1].Resources.Images[1];
@@ -90,7 +90,7 @@ S: Aspose.PDF för .NET tillhandahåller en steg-för-steg-process för att öpp
 
 #### F: Hur anger jag den specifika bilden jag vill extrahera från en PDF-sida?
 
-S: Du kan använda`Images` samling av sidans`Resources` objekt för att komma åt den önskade bilden genom dess index. Till exempel,`pdfDocument.Pages[1].Resources.Images[1]` kommer åt den första bilden på första sidan.
+ S: Du kan använda`Images` samling av sidans`Resources` objekt för att komma åt den önskade bilden genom dess index. Till exempel,`pdfDocument.Pages[1].Resources.Images[1]` kommer åt den första bilden på första sidan.
 
 #### F: Kan jag extrahera bilder från vilken sida som helst i PDF-dokumentet?
 

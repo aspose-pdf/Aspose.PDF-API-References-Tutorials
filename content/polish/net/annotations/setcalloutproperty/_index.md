@@ -1,127 +1,154 @@
 ---
-title: Ustaw właściwość objaśnienia w pliku PDF
-linktitle: Ustaw właściwość objaśnienia w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak ustawić właściwość objaśnienia w pliku PDF przy użyciu Aspose.PDF dla .NET. Dostosuj adnotacje za pomocą linii objaśnień, koloru tekstu i stylów końcowych.
+title: Ustaw właściwość odwołania w pliku PDF
+linktitle: Ustaw właściwość odwołania w pliku PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak ustawić właściwość odwołania w pliku PDF za pomocą Aspose.PDF dla platformy .NET, korzystając ze szczegółowego samouczka krok po kroku.
 type: docs
 weight: 130
 url: /pl/net/annotations/setcalloutproperty/
 ---
- Aspose.PDF dla .NET to potężna biblioteka do tworzenia, manipulowania i konwertowania dokumentów PDF w języku C#. Jedną z funkcji udostępnianych przez tę bibliotekę jest możliwość ustawienia właściwości objaśnień dla dowolnych adnotacji tekstowych w dokumentach PDF. Można tego dokonać za pomocą`FreeTextAnnotation` class, która umożliwia tworzenie adnotacji z objaśnieniami.
+## Wstęp
 
-W tym samouczku przeprowadzimy Cię przez proces ustawiania właściwości objaśnień dla adnotacji tekstowej przy użyciu Aspose.PDF dla .NET w C#. Aby rozpocząć, wykonaj poniższe czynności.
+Tworzenie profesjonalnych i atrakcyjnych wizualnie dokumentów PDF często wymaga dodawania adnotacji, które zwracają uwagę na określoną treść. Jedną z takich adnotacji jest callout, który przypomina dymki w komiksach. Pomagają one wyjaśnić lub podkreślić tekst w pliku PDF. Aspose.PDF dla .NET sprawia, że dodawanie takich adnotacji do dokumentów jest niezwykle łatwe, a w tym samouczku pokażemy, jak ustawić właściwość callout w pliku PDF za pomocą tej potężnej biblioteki. Niezależnie od tego, czy jesteś doświadczonym programistą, czy dopiero zaczynasz, pod koniec tego przewodnika będziesz mieć jasne pojęcie o tym, jak pracować z callout w plikach PDF.
 
-## Zainstaluj Aspose.PDF dla .NET
+## Wymagania wstępne
 
- Jeśli jeszcze tego nie zrobiłeś, będziesz musiał to zrobić[pobierać](https://releases.aspose.com/pdf/net/) i zainstaluj Aspose.PDF dla .NET z wersji Aspose lub za pośrednictwem menedżera pakietów NuGet.
+Zanim zagłębimy się w kod, omówmy podstawowe kwestie potrzebne na początek.
 
-## Krok 1: Utwórz nowy dokument PDF
+1.  Aspose.PDF dla .NET: Upewnij się, że masz zainstalowaną bibliotekę Aspose.PDF dla .NET. Możesz ją pobrać z[Tutaj](https://releases.aspose.com/pdf/net/).
+2. IDE: Środowisko programistyczne, takie jak Visual Studio.
+3. .NET Framework: Upewnij się, że na Twoim komputerze jest zainstalowany .NET.
+4. Licencja tymczasowa: Jeśli chcesz wypróbować wszystkie funkcje Aspose.PDF bez ograniczeń, pobierz[licencja tymczasowa](https://purchase.aspose.com/temporary-license/).
 
- Utwórz nowy dokument PDF za pomocą`Document`klasa dostarczona przez Aspose.PDF dla .NET.
+## Importuj pakiety
+
+Zanim zaczniesz pisać kod, musisz zaimportować niezbędne pakiety, które umożliwią Ci pracę z plikami PDF i adnotacjami.
+
+```csharp
+using Aspose.Pdf.Annotations;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+```
+
+Te importy zapewnią Ci wszystkie niezbędne klasy i metody do manipulowania dokumentami PDF i tworzenia adnotacji, takich jak objaśnienia.
+
+## Krok 1: Zainicjuj dokument PDF
+
+Pierwszym krokiem w naszej podróży jest zainicjowanie nowego dokumentu PDF, w którym dodamy adnotację z odwołaniem. Pomyśl o tym jak o ustawieniu pustego płótna, na którym możesz zacząć dodawać elementy.
 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Zainicjuj nowy dokument PDF
 Document doc = new Document();
 ```
+ Tutaj tworzymy nowy`Document` obiekt, który będzie służył jako nasz plik PDF.`dataDir` Zmienna jest ustawiona na katalog, w którym chcesz zapisać plik PDF po zakończeniu.
 
 ## Krok 2: Dodaj nową stronę do dokumentu
 
- Dodaj nową stronę do dokumentu za pomocą`Pages` zbiór`Document` klasa.
+Dokument PDF może mieć wiele stron, a w tym kroku dodamy nową stronę do naszego dokumentu. Na tej stronie zostanie umieszczona nasza adnotacja wywołania.
 
 ```csharp
+//Dodaj nową stronę do dokumentu
 Page page = doc.Pages.Add();
 ```
+ Ten`Pages.Add()`Metoda ta służy do dodawania nowej strony do`doc` obiekt. Nowa strona jest przechowywana w`page` zmienna, której użyjemy później podczas dodawania adnotacji.
 
-## Krok 3: Ustaw domyślny wygląd
+## Krok 3: Zdefiniuj wygląd domyślny
 
- Ustaw domyślny wygląd adnotacji tekstowej, tworząc nową`DefaultAppearance` obiektu i ustawienie jego właściwości, takich jak`TextColor` I`FontSize`.
+Adnotacje, takie jak objaśnienie, mają wygląd wizualny, który można dostosować. W tym kroku zdefiniujemy, jak powinien wyglądać tekst w objaśnieniu.
 
 ```csharp
+// Zdefiniuj domyślny wygląd adnotacji
 DefaultAppearance da = new DefaultAppearance();
 da.TextColor = System.Drawing.Color.Red;
 da.FontSize = 10;
 ```
+ Tworzymy`DefaultAppearance` obiekt, który definiuje kolor tekstu i rozmiar czcionki. Tutaj tekst będzie czerwony, a rozmiar czcionki zostanie ustawiony na 10. Ten wygląd zostanie zastosowany do adnotacji callout.
 
-## Krok 4: Utwórz dowolną adnotację tekstową z objaśnieniem
+## Krok 4: Utwórz adnotację tekstu swobodnego
 
- Utwórz nową adnotację tekstową z objaśnieniem, korzystając z opcji`FreeTextAnnotation` klasa. Ustaw`Intent` własność do`FreeTextIntent.FreeTextCallout` aby określić, że jest to adnotacja objaśniająca. Ustaw`EndingStyle` własność do`LineEnding.OpenArrow` aby określić styl strzałki na końcu objaśnienia. Ustaw`Callout` właściwość do tablicy`Point` obiekty reprezentujące punkty na stronie, w których powinna zostać narysowana linia objaśnienia.
+Teraz czas na stworzenie właściwej adnotacji. Adnotacja swobodnego tekstu pozwala nam dodać callout ze szczegółowym tekstem i stylem.
 
 ```csharp
+// Utwórz adnotację FreeTextAnnotation z objaśnieniem
 FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
 fta.Intent = FreeTextIntent.FreeTextCallout;
 fta.EndingStyle = LineEnding.OpenArrow;
+```
+ Tworzymy`FreeTextAnnotation` obiekt o określonych współrzędnych, definiujący jego pozycję na stronie.`Intent` jest ustawiony na`FreeTextCallout` , wskazując, że jest to adnotacja wywołania.`EndingStyle` jest ustawiony na`OpenArrow`co oznacza, że linia odwołania zakończy się otwartą strzałką.
+
+## Krok 5: Zdefiniuj punkty linii wywoławczej
+
+Adnotacja callout ma linię wskazującą na obszar zainteresowania. Tutaj zdefiniujemy punkty tworzące tę linię.
+
+```csharp
+// Zdefiniuj punkty dla linii wywołania
 fta.Callout = new Point[]
 {
-    new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
+    new Point(428.25, 651.75), 
+    new Point(462.75, 681.375), 
+    new Point(474, 681.375)
 };
 ```
+ Ten`Callout` Nieruchomość jest tablicą`Point` obiekty, z których każdy reprezentuje współrzędną na stronie. Punkty te definiują ścieżkę linii wywołania, nadając jej klasyczny wygląd dymka.
 
-## Krok 5: Dodaj dowolną adnotację tekstową do strony
+## Krok 6: Dodaj adnotację do strony
 
- Dodaj dowolną adnotację tekstową do strony, używając opcji`Annotations` zbiór`Page` klasa.
+Po utworzeniu i skonfigurowaniu adnotacji następnym krokiem jest dodanie jej do strony.
 
 ```csharp
+// Dodaj adnotację do strony
 page.Annotations.Add(fta);
 ```
+ Ten`Annotations.Add()` Metoda ta jest używana do umieszczenia adnotacji na stronie, którą utworzyliśmy wcześniej. Ten krok skutecznie „rysuje” wywołanie na stronie PDF.
 
-## Krok 6: Dodaj tekst do adnotacji
+## Krok 7: Ustaw zawartość Rich Text
 
- Dodaj tekst do adnotacji, ustawiając opcję`RichText`właściwość na ciąg sformatowany XML. W tym samouczku ustawiamy kolor tekstu na czerwony i rozmiar czcionki na 9.
+Adnotacje callout mogą zawierać bogaty tekst, umożliwiając sformatowaną treść w dymku. Dodajmy przykładowy tekst.
 
 ```csharp
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF
+// Ustaw bogaty tekst dla adnotacji
+fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"><span style=\"font-size:9.0pt;font-family:Helvetica\">To jest przykład</span></p></body>";
 ```
+ Ten`RichText` właściwość jest ustawiona za pomocą zawartości HTML. Pozwala to na szczegółowe formatowanie w ramach odwołania, takie jak określanie rozmiaru czcionki, koloru i stylu.
 
-## Krok 7: zapisz dokument
+## Krok 8: Zapisz dokument PDF
 
-Teraz zapisz dokument, używając następującego kodu:
-
-```csharp
-doc.Save(dataDir + "SetCalloutProperty.pdf")
-```
-
-### Przykładowy kod źródłowy dla Ustaw właściwość objaśnienia przy użyciu Aspose.PDF dla .NET
+Na koniec, po skonfigurowaniu wszystkiego, musimy zapisać dokument. Ten krok kończy tworzenie pliku PDF z adnotacją callout.
 
 ```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-Document doc = new Document();
-Page page = doc.Pages.Add();
-DefaultAppearance da = new DefaultAppearance();
-da.TextColor = System.Drawing.Color.Red;
-da.FontSize = 10;
-FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
-fta.Intent = FreeTextIntent.FreeTextCallout;
-fta.EndingStyle = LineEnding.OpenArrow;
-fta.Callout = new Point[]
-{
-	new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
-};
-page.Annotations.Add(fta);
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"> <span style=\"font-size:9.0pt;font-family:Helvetica\">To jest przykład</span></p></body>";
+// Zapisz dokument
 doc.Save(dataDir + "SetCalloutProperty.pdf");
 ```
+ Ten`Save()` Metoda zapisuje dokument do określonego katalogu pod nazwą pliku „SetCalloutProperty.pdf”. Ten krok kończy nasz proces tworzenia pliku PDF.
 
 ## Wniosek
 
-tym samouczku omówiliśmy, jak ustawić właściwości objaśnień dla dowolnej adnotacji tekstowej w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Adnotacje objaśnień są przydatne do dostarczania dodatkowych informacji lub wyjaśnień związanych z określonymi obszarami dokumentu. Aspose.PDF dla .NET zapewnia szeroką gamę funkcji i możliwości pracy z plikami PDF, w tym tworzenie i dostosowywanie adnotacji, takich jak objaśnienia. Postępując zgodnie ze szczegółowym przewodnikiem i korzystając z dostarczonego kodu źródłowego C#, programiści mogą z łatwością wdrożyć adnotacje w swoich dokumentach PDF, zwiększając użyteczność i przejrzystość swoich dokumentów. Aspose.PDF dla .NET to wszechstronna i niezawodna biblioteka do operacji PDF w aplikacjach .NET, oferująca potężne narzędzia do wydajnej obsługi różnych zadań związanych z plikami PDF.
+masz to! Właśnie utworzyłeś dokument PDF z adnotacją objaśniającą przy użyciu Aspose.PDF dla .NET. Ta adnotacja może być niezwykle przydatna do wyróżniania lub wyjaśniania określonych części dokumentu. Aspose.PDF oferuje potężne API, które sprawia, że manipulacja PDF jest prosta i elastyczna. Niezależnie od tego, czy dodajesz adnotacje, konwertujesz dokumenty, czy obsługujesz złożone zadania PDF, Aspose.PDF ma dla Ciebie rozwiązanie.
 
-### Często zadawane pytania dotyczące ustawiania właściwości objaśnień w pliku PDF
+## Najczęściej zadawane pytania
 
-#### P: Co to jest adnotacja objaśniająca w dokumencie PDF?
+### Czy mogę dodatkowo dostosować wygląd objaśnienia?
 
-Odp.: Adnotacja objaśniająca w dokumencie PDF to rodzaj adnotacji, który umożliwia utworzenie pola tekstowego z linią odniesienia wskazującą określony obszar w dokumencie. Jest powszechnie używany do podawania dodatkowych informacji lub komentarzy związanych z konkretną sekcją lub elementem dokumentu.
+Oczywiście! Możesz dostosować różne aspekty, takie jak kolor linii, grubość oraz rodzinę i styl czcionek tekstu.
 
-#### P: Czy mogę dostosować wygląd adnotacji objaśnienia za pomocą Aspose.PDF dla .NET?
+### Czy można dodać wiele objaśnień na jednej stronie?
 
-O: Tak, możesz dostosować różne właściwości adnotacji objaśnienia, takie jak kolor, rozmiar czcionki, wyrównanie tekstu, styl linii, styl strzałki i inne.
+Tak, możesz dodać dowolną liczbę objaśnień, powtarzając te kroki dla każdej adnotacji.
 
-#### P: Jak dodać tekst do adnotacji objaśnienia?
+### Jak zmienić położenie objaśnienia?
 
- O: Aby dodać tekst do adnotacji objaśnienia, możesz ustawić opcję`RichText` własność`FreeTextAnnotation` obiekt. The`RichText` Właściwość pobiera ciąg znaków w formacie XML reprezentujący tekst wyświetlany w adnotacji objaśnienia.
+ Wystarczy zmienić współrzędne w`Rectangle` I`Callout` właściwości, aby zmienić położenie adnotacji.
 
-#### P: Czy mogę dodać wiele adnotacji objaśnień do dokumentu PDF przy użyciu Aspose.PDF dla .NET?
+### Czy mogę dodać inne typy adnotacji za pomocą Aspose.PDF?
 
- Odp.: Tak, możesz utworzyć wiele adnotacji objaśnień w dokumencie PDF, tworząc wiele wystąpień pliku`FreeTextAnnotation`obiektu i dodając je do różnych stron lub lokalizacji w dokumencie.
+Tak, Aspose.PDF obsługuje różne typy adnotacji, w tym wyróżnienia, stemple i załączniki.
+
+### Czy treść sformatowana ogranicza się do formatu HTML?
+
+ Ten`RichText` Właściwość obsługuje podzbiór HTML, co pozwala na dołączenie stylizowanego tekstu i podstawowego formatowania.

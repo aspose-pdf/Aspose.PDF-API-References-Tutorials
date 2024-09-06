@@ -1,13 +1,13 @@
 ---
-title: Verwijder meerdere tabellen in PDF-document
-linktitle: Verwijder meerdere tabellen in PDF-document
+title: Meerdere tabellen in een PDF-document verwijderen
+linktitle: Meerdere tabellen in een PDF-document verwijderen
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u meerdere tabellen in een PDF-document verwijdert met Aspose.PDF voor .NET.
+description: Leer hoe u meerdere tabellen uit een PDF-document verwijdert met Aspose.PDF voor .NET.
 type: docs
 weight: 150
 url: /nl/net/programming-with-tables/remove-multiple-tables/
 ---
-In deze zelfstudie begeleiden we u stap voor stap bij het verwijderen van meerdere tabellen in een PDF-document met Aspose.PDF voor .NET. We leggen de meegeleverde C#-broncode uit en laten u zien hoe u deze kunt implementeren.
+In deze tutorial begeleiden we u stap voor stap bij het verwijderen van meerdere tabellen in een PDF-document met Aspose.PDF voor .NET. We leggen de meegeleverde C#-broncode uit en laten zien hoe u deze implementeert.
 
 ## Stap 1: Het bestaande PDF-document laden
 Eerst moet u het bestaande PDF-document laden met behulp van de volgende code:
@@ -28,8 +28,8 @@ Vervolgens maken we een TableAbsorber-object om de tabellen in het PDF-document 
 TableAbsorber absorber = new TableAbsorber();
 ```
 
-## Stap 3: Bezoek de tweede pagina met de absorber
-We gaan nu naar de tweede pagina van het PDF-document met behulp van de absorber:
+## Stap 3: Ga naar de tweede pagina met de absorber
+We gaan nu de tweede pagina van het PDF-document bekijken met behulp van de absorber:
 
 ```csharp
 // Bezoek de tweede pagina met de absorber
@@ -37,16 +37,16 @@ absorb.Visit(pdfDocument.Pages[1]);
 ```
 
 ## Stap 4: Een kopie van de tabelverzameling verkrijgen
-Om de tabellen te kunnen verwijderen, hebben we een kopie van de tabellenverzameling nodig:
+Om de tabellen te kunnen verwijderen, moeten we een kopie van de tabellenverzameling hebben:
 
 ```csharp
-//Ontvang een kopie van de tafelcollectie
+//Ontvang een exemplaar van de tafelcollectie
 AbsorbedTable[] tables = new AbsorbedTable[absorb.TableList.Count];
 absorb.TableList.CopyTo(tables, 0);
 ```
 
 ## Stap 5: Blader door de kopie van de verzameling en verwijder de tabellen
-Laten we nu de kopie van de verzameling tabellen doorlopen en ze één voor één verwijderen:
+Laten we nu door de kopie van de verzameling tabellen itereren en ze één voor één verwijderen:
 
 ```csharp
 // Blader door de kopie van de collectie en verwijder de tabellen
@@ -58,11 +58,11 @@ foreach(AbsorbedTable table in tables)
 Ten slotte slaan we het gewijzigde PDF-document op:
 
 ```csharp
-// Bewaar het document
+// Sla het document op
 pdfDocument.Save(dataDir + "Table2_out.pdf");
 ```
 
-### Voorbeeldbroncode voor het verwijderen van meerdere tabellen met Aspose.PDF voor .NET
+### Voorbeeldbroncode voor het verwijderen van meerdere tabellen met behulp van Aspose.PDF voor .NET
 
 ```csharp
 // Het pad naar de documentenmap.
@@ -74,42 +74,42 @@ Document pdfDocument = new Document(dataDir + "Table_input2.pdf");
 // Maak een TableAbsorber-object om tabellen te vinden
 TableAbsorber absorber = new TableAbsorber();
 
-// Bezoek de tweede pagina met absorber
+// Bezoek tweede pagina met absorber
 absorber.Visit(pdfDocument.Pages[1]);
 
-// Ontvang een kopie van de tafelcollectie
+// Kopie van de tabelverzameling ophalen
 AbsorbedTable[] tables = new AbsorbedTable[absorber.TableList.Count];
 absorber.TableList.CopyTo(tables, 0);
 
-// Loop door de kopie van het verzamelen en verwijderen van tabellen
+// Doorloop de kopie van de verzameling en verwijder tabellen
 foreach (AbsorbedTable table in tables)
 	absorber.Remove(table);
 
-// Bewaar document
+// Document opslaan
 pdfDocument.Save(dataDir + "Table2_out.pdf");
 ```
 
 ## Conclusie
-Gefeliciteerd! U hebt nu geleerd hoe u meerdere tabellen in een PDF-document kunt verwijderen met Aspose.PDF voor .NET. In deze stapsgewijze handleiding ziet u hoe u het document kunt uploaden, de tabellen kunt vinden en deze kunt verwijderen. Nu kunt u deze kennis toepassen op uw eigen projecten.
+Gefeliciteerd! U hebt nu geleerd hoe u meerdere tabellen in een PDF-document verwijdert met Aspose.PDF voor .NET. Deze stapsgewijze handleiding liet u zien hoe u het document uploadt, de tabellen vindt en ze verwijdert. Nu kunt u deze kennis toepassen op uw eigen projecten.
 
-### Veelgestelde vragen over het verwijderen van meerdere tabellen in een PDF-document
+### FAQ's voor het verwijderen van meerdere tabellen in een PDF-document
 
-#### Vraag: Kan ik specifieke tabellen verwijderen in plaats van alle tabellen in een PDF-document?
+#### V: Kan ik specifieke tabellen verwijderen in plaats van alle tabellen uit een PDF-document?
 
-A: Ja, u kunt specifieke tabellen in plaats van alle tabellen in een PDF-document verwijderen met behulp van Aspose.PDF voor .NET. In het gegeven voorbeeld zijn alle tabellen op de tweede pagina verwijderd. U kunt de code echter wijzigen om specifieke tabellen te targeten en te verwijderen op basis van uw vereisten. Om dit te doen, moet u de tabellen identificeren die u wilt verwijderen en vervolgens de`absorber.Remove(table)` methode voor elke specifieke tabel die u wilt verwijderen.
+A: Ja, u kunt specifieke tabellen verwijderen in plaats van alle tabellen in een PDF-document met Aspose.PDF voor .NET. In het gegeven voorbeeld worden alle tabellen op de tweede pagina verwijderd. U kunt de code echter aanpassen om specifieke tabellen te targeten en te verwijderen op basis van uw vereisten. Om dit te doen, moet u de tabellen identificeren die u wilt verwijderen en vervolgens de`absorber.Remove(table)` methode voor elke specifieke tabel die u wilt verwijderen.
 
-#### Vraag: Hoe kan ik tabellen van meerdere pagina's in het PDF-document verwijderen?
+#### V: Hoe kan ik tabellen van meerdere pagina's in een PDF-document verwijderen?
 
- A: Om tabellen van meerdere pagina's in het PDF-document te verwijderen, moet u het proces voor elke pagina herhalen. In het gegeven voorbeeld verwijdert de code alleen tabellen van de tweede pagina met behulp van`pdfDocument.Pages[1]` . Om tabellen van andere pagina's te verwijderen, kunt u voor elke gewenste pagina soortgelijke code gebruiken door de pagina-index te vervangen (bijv.`pdfDocument.Pages[2]`, `pdfDocument.Pages[3]`, enzovoort).
+ A: Om tabellen van meerdere pagina's in het PDF-document te verwijderen, moet u het proces voor elke pagina herhalen. In het gegeven voorbeeld verwijdert de code alleen tabellen van de tweede pagina met behulp van`pdfDocument.Pages[1]` . Om tabellen van andere pagina's te verwijderen, kunt u voor elke gewenste pagina een vergelijkbare code gebruiken door de pagina-index te vervangen (bijv.`pdfDocument.Pages[2]`, `pdfDocument.Pages[3]`, enzovoort).
 
-#### Vraag: Wat gebeurt er als ik een tabel probeer te verwijderen die niet bestaat op de opgegeven pagina?
+#### V: Wat gebeurt er als ik een tabel probeer te verwijderen die niet op de opgegeven pagina bestaat?
 
-A: Als u probeert een tabel te verwijderen die niet bestaat op de opgegeven pagina, zal dit niet resulteren in een fout. De`absorber.Remove(table)` methode negeert eenvoudigweg het verwijderingsverzoek en het PDF-document blijft ongewijzigd.
+A: Als u probeert een tabel te verwijderen die niet bestaat op de opgegeven pagina, zal dit niet resulteren in een fout.`absorber.Remove(table)` Met deze methode wordt het verzoek tot verwijdering gewoon genegeerd en blijft het PDF-document ongewijzigd.
 
-#### Vraag: Kan ik het verwijderen van tabellen ongedaan maken nadat ik het document heb opgeslagen?
+#### V: Kan ik het verwijderen van tabellen ongedaan maken nadat ik het document heb opgeslagen?
 
-A: Nee, zodra u het gewijzigde PDF-document opslaat nadat u de tabellen heeft verwijderd, zijn de wijzigingen permanent en kunt u de verwijdering van tabellen niet meer ongedaan maken. Daarom is het essentieel om voorzichtig te zijn bij het verwijderen van inhoud uit een PDF-document, aangezien de originele gegevens verloren gaan.
+A: Nee, zodra u het gewijzigde PDF-document opslaat nadat u de tabellen hebt verwijderd, zijn de wijzigingen permanent en kunt u het verwijderen van tabellen niet ongedaan maken. Daarom is het essentieel om voorzichtig te zijn bij het verwijderen van inhoud uit een PDF-document, omdat de originele gegevens verloren gaan.
 
-#### Vraag: Zijn er beperkingen op het type tabellen dat met deze methode kan worden verwijderd?
+#### V: Zijn er beperkingen aan het type tabellen dat met deze methode kan worden verwijderd?
 
-A: Met de methode die in deze zelfstudie wordt getoond, kunt u tabellen uit een PDF-document verwijderen zonder beperkingen op basis van de inhoud van de tabel. Het is echter essentieel om rekening te houden met de algehele structuur en lay-out van het document om ervoor te zorgen dat het verwijderen van tabellen geen negatieve invloed heeft op de resterende inhoud en leesbaarheid.
+A: Met de methode die in deze tutorial wordt getoond, kunt u tabellen uit een PDF-document verwijderen zonder beperkingen op basis van de inhoud van de tabel. Het is echter essentieel om rekening te houden met de algehele structuur en lay-out van het document om ervoor te zorgen dat het verwijderen van tabellen geen negatieve invloed heeft op de resterende inhoud en leesbaarheid.

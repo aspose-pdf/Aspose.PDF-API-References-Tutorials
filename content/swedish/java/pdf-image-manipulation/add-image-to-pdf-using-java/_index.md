@@ -42,7 +42,7 @@ Låt oss nu ladda ett befintligt PDF-dokument som vi vill lägga till en bild ti
 Document pdfDocument = new Document("path_to_existing_pdf.pdf");
 ```
 
- Byta ut`"path_to_existing_pdf.pdf"` med den faktiska sökvägen till din PDF-fil.
+ Ersätta`"path_to_existing_pdf.pdf"` med den faktiska sökvägen till din PDF-fil.
 
 ### Steg 3: Lägg till bilden
 
@@ -53,7 +53,7 @@ Image image = new Image();
 image.setFile("path_to_image.png");
 ```
 
- Byta ut`"path_to_image.png"` med sökvägen till bilden du vill lägga till.
+ Ersätta`"path_to_image.png"` med sökvägen till bilden du vill lägga till.
 
 ### Steg 4: Ställ in bildens mått och position
 

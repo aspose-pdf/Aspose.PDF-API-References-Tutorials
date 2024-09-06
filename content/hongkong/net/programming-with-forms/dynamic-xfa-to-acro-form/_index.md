@@ -76,7 +76,7 @@ Console.WriteLine("\nDynamic XFA form converted to standard AcroForm successfull
 
 #### Q：將動態 XFA 表單轉換為標準 AcroForms 時是否有任何限製或註意事項？
 
-答：是的，將動態 XFA 表單轉換為標準 AcroForms 時需要考慮一些限制。 XFA 表單可以具有複雜且動態的佈局，包括動態表格、重複部分和表單計算等功能，這些功能在轉換過程中可能無法完全保留。此外，XFA 表單獨有的某些特定表單欄位屬性可能不適用於 AcroForms。
+答：是的，將動態 XFA 表單轉換為標準 AcroForms 時需要考慮一些限制。 XFA 表單可以具有複雜且動態的佈局，包括動態表、重複部分和表單計算等功能，這些功能在轉換過程中可能無法完全保留。此外，XFA 表單獨有的某些特定表單欄位屬性可能不適用於 AcroForms。
 
 #### Q：我可以使用 Aspose.PDF for .NET 將標準 AcroForm 轉換為動態 XFA 表單嗎？
 

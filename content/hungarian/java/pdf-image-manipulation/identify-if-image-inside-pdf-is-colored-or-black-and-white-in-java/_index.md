@@ -18,7 +18,7 @@ Az Aspose.PDF for Java egy hatékony könyvtár, amely lehetővé teszi a fejles
 
 ## A kép színének azonosítása PDF-ben
 
-Annak megállapításához, hogy egy PDF-ben található kép színes vagy fekete-fehér-e, egy sor lépést kell követnünk. Kezdjük el.
+Annak megállapításához, hogy egy PDF-ben található kép színes vagy fekete-fehér-e, egy sor lépést kell követnünk. Kezdjük.
 
 ## Előfeltételek
 

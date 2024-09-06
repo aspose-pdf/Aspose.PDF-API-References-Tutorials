@@ -1,26 +1,26 @@
 ---
-title: Przycisk opcji z opcjami
-linktitle: Przycisk opcji z opcjami
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Z łatwością dodawaj przycisk radiowy z opcjami do dokumentu PDF za pomocą Aspose.PDF dla .NET.
+title: Przycisk radiowy z opcjami
+linktitle: Przycisk radiowy z opcjami
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwe dodawanie przycisków radiowych z opcjami do dokumentu PDF przy użyciu Aspose.PDF dla platformy .NET.
 type: docs
 weight: 230
 url: /pl/net/programming-with-forms/radio-button-with-options/
 ---
 
-W tym samouczku pokażemy, jak dodać przycisk opcji z opcjami do dokumentu PDF przy użyciu Aspose.PDF dla .NET. Krok po kroku wyjaśnimy kod źródłowy C#, aby poprowadzić Cię przez ten proces.
+W tym samouczku pokażemy, jak dodać przycisk radiowy z opcjami do dokumentu PDF za pomocą Aspose.PDF dla .NET. Wyjaśnimy kod źródłowy C# krok po kroku, aby przeprowadzić Cię przez ten proces.
 
 ## Krok 1: Przygotowanie
 
-Upewnij się, że zaimportowałeś niezbędne biblioteki i ustaw ścieżkę do katalogu dokumentów:
+Upewnij się, że zaimportowałeś niezbędne biblioteki i ustawiłeś ścieżkę do katalogu dokumentów:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Krok 2: Utwórz instancję obiektu dokumentu
+## Krok 2: Utwórz obiekt dokumentu
 
-Utwórz instancję obiektu Document, aby utworzyć nowy dokument PDF:
+Utwórz obiekt Document, aby utworzyć nowy dokument PDF:
 
 ```csharp
 Document doc = new Document();
@@ -37,9 +37,9 @@ table. ColumnWidths = "120 120 120";
 page.Paragraphs.Add(table);
 ```
 
-## Krok 4: Utwórz instancję obiektu RadioButtonField
+## Krok 4: Utwórz obiekt RadioButtonField
 
-Utwórz instancję obiektu RadioButtonField reprezentującego przycisk radiowy:
+Utwórz obiekt RadioButtonField, aby reprezentować przycisk opcji:
 
 ```csharp
 RadioButtonField rf = new RadioButtonField(page);
@@ -71,7 +71,7 @@ rf.Add(opt3);
 
 ## Krok 6: Dostosuj opcje przycisków radiowych
 
-Dostosuj opcje przycisków opcji, ustawiając atrybuty, takie jak obramowanie, kolor tekstu i tekst podpisu:
+Dostosuj opcje przycisków radiowych, ustawiając atrybuty takie jak obramowanie, kolor tekstu i tekst podpisu:
 
 ```csharp
 opt1.Border = new Border(opt1);
@@ -85,9 +85,9 @@ opt1.Caption = new TextFragment("Item1");
 
 ```
 
-## Krok 7: Dodaj opcje przycisku radiowego do tabeli
+## Krok 7: Dodaj opcje przycisków radiowych do tabeli
 
-Dodaj opcje przycisku radiowego do tabeli, aby je wyświetlić:
+Dodaj opcje przycisków radiowych do tabeli, aby je wyświetlić:
 
 ```csharp
 Cell c1 = table.Rows.Add().Cells.Add();
@@ -108,7 +108,7 @@ dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Przykładowy kod źródłowy przycisku radiowego z opcjami przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla przycisku radiowego z opcjami przy użyciu Aspose.PDF dla .NET 
 ```csharp
 try
 {
@@ -175,4 +175,4 @@ catch (Exception ex)
 
 ## Wniosek
 
-Gratulacje! Pomyślnie dodałeś przycisk radiowy z opcjami do dokumentu PDF przy użyciu Aspose.PDF dla .NET. Możesz teraz używać tej metody do tworzenia interaktywnych formularzy w dokumentach PDF.
+Gratulacje! Udało Ci się dodać przycisk radiowy z opcjami do dokumentu PDF przy użyciu Aspose.PDF dla .NET. Teraz możesz użyć tej metody, aby tworzyć interaktywne formularze w swoich dokumentach PDF.

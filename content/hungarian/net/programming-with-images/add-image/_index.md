@@ -11,7 +11,7 @@ Ez az útmutató lépésről lépésre bemutatja, hogyan adhat hozzá képet PDF
 
 ## 1. lépés: Határozza meg a dokumentumkönyvtárat
 
- Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a PDF-dokumentum található.
+Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a PDF-dokumentum található.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 2. lépés: Nyissa meg a dokumentumot
 
-Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
+ Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddImage.pdf");
@@ -54,7 +54,7 @@ FileStream imageStream = new FileStream(dataDir + "aspose-logo.jpg", FileMode.Op
 
 ## 6. lépés: Adja hozzá a képet az oldalelemekhez
 
-A kép PDF-dokumentumban való használatához hozzá kell adnunk az oldal erőforrás-képgyűjteményéhez.
+kép PDF-dokumentumban való használatához hozzá kell adnunk az oldal erőforrás-képgyűjteményéhez.
 
 ```csharp
 page.Resources.Images.Add(imageStream);
@@ -70,7 +70,7 @@ page.Contents.Add(new Aspose.Pdf.Operators.GSave());
 
 ## 8. lépés: Hozzon létre téglalap és mátrix objektumokat
 
- Most létrehozzuk a`Rectangle` tárgy és a`Matrix`tárgy. A téglalap a kép helyzetét és méretét jelzi, míg a mátrix határozza meg a kép elhelyezését.
+ Most létrehozzuk a`Rectangle` tárgy és a`Matrix` objektum. A téglalap a kép helyzetét és méretét jelzi, míg a mátrix határozza meg a kép elhelyezését.
 
 ```csharp
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(lower
@@ -89,7 +89,7 @@ page.Contents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(matrix));
 
 ## 10. lépés: Rajzolja meg a képet
 
- Ebben a lépésben az oldalra rajzoljuk a képet a`Do` operátor. A`Do` operátor kiveszi a kép nevét az erőforrásokból, és ráhúzza az oldalra.
+ Ebben a lépésben az oldalra rajzoljuk a képet a`Do` operátor. A`Do`operátor kiveszi a kép nevét az erőforrásokból, és ráhúzza az oldalra.
 
 ```csharp
 XImage ximage = page.Resources.Images[page.Resources.Images.Count];
@@ -124,7 +124,7 @@ int lowerLeftX = 100;
 int lowerLeftY = 100;
 int upperRightX = 200;
 int upperRightY = 200;
-//Szerezze meg azt az oldalt, amelyhez képet kell hozzáadni
+// Szerezze meg azt az oldalt, amelyhez képet kell hozzáadni
 Page page = pdfDocument.Pages[1];
 // Kép betöltése adatfolyamba
 FileStream imageStream = new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open);
@@ -188,7 +188,7 @@ V: Ha a képfájl nem található a megadott elérési úton, a kód kivételt d
 
 #### K: Tovább szabhatom a kép elhelyezését és megjelenését?
 
- V: Igen, testreszabhatja a kép megjelenését a`Matrix`objektum és a kódon belüli többi operátor beállítása. Tekintse meg az Aspose.PDF dokumentációját a speciális testreszabáshoz.
+ V: Igen, testreszabhatja a kép megjelenését a`Matrix` objektum és a kódon belüli többi operátor beállítása. Tekintse meg az Aspose.PDF dokumentációját a speciális testreszabáshoz.
 
 #### K: Hogyan tesztelhetem, hogy a képet sikeresen hozzáadta-e a PDF-hez?
 

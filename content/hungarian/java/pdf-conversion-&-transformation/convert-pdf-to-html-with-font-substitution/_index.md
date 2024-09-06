@@ -87,7 +87,7 @@ try {
 
 ## Következtetés
 
-Ebben az útmutatóban bemutattuk a PDF-nek HTML-be konvertálásának folyamatát betűtípus-helyettesítéssel az Aspose.PDF for Java használatával. Ez a hatékony könyvtár leegyszerűsíti az átalakítási folyamatot, és biztosítja, hogy HTML-dokumentumai ugyanazt a megjelenést őrzik, még akkor is, ha nem webbiztonságos betűtípusokkal foglalkozik.
+Ebben az útmutatóban bemutattuk a PDF-nek HTML-be konvertálásának folyamatát betűtípus-helyettesítéssel az Aspose.PDF for Java használatával. Ez a hatékony könyvtár leegyszerűsíti az átalakítási folyamatot, és biztosítja, hogy a HTML-dokumentumok ugyanazt a megjelenést viseljék, még akkor is, ha nem webbiztonságos betűtípusokkal foglalkozik.
 
 Most már zökkenőmentesen integrálhatja a PDF-HTML konvertálást Java-alkalmazásaiba. Ha bármilyen kérdése van, vagy bármilyen kihívással néz szembe, tekintse meg az alábbi GYIK-et.
 

@@ -144,7 +144,7 @@ using Aspose.Pdf.Operators;
 
 #### Q：GSave 和 GRestore 運算子的目的為何？
 
-答： 的`GSave`和`GRestore`Aspose.PDF中的運算子用於儲存和還原圖形狀態。它們有助於確保應用於內容某一部分的轉換和設定不會影響後續部分。
+答： 的`GSave`和`GRestore` Aspose.PDF中的運算子用於儲存和還原圖形狀態。它們有助於確保應用於內容某一部分的轉換和設定不會影響後續部分。
 
 #### Q：如何調整新增的影像在PDF頁面上的位置？
 

@@ -1,6 +1,6 @@
 ---
-title: Sign med smartkort med pdf-filsignatur
-linktitle: Sign med smartkort med pdf-filsignatur
+title: Signera med smartkort med pdf-filsignatur
+linktitle: Signera med smartkort med pdf-filsignatur
 second_title: Aspose.PDF för .NET API-referens
 description: Signera dina PDF-filer säkert med ett smartkort med Aspose.PDF för .NET.
 type: docs
@@ -22,7 +22,7 @@ using System.Security.Cryptography.X509Certificates;
 
 ## Steg 2: Ange sökväg till dokumentmappen
 
- I det här steget måste du ange sökvägen till mappen som innehåller PDF-filen du vill signera. Byta ut`"YOUR DOCUMENTS DIRECTORY"` följande kod med den faktiska sökvägen till din dokumentmapp:
+ I det här steget måste du ange sökvägen till mappen som innehåller PDF-filen du vill signera. Ersätta`"YOUR DOCUMENTS DIRECTORY"` i följande kod med den faktiska sökvägen till din dokumentmapp:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -138,7 +138,7 @@ S: Källkoden visar hur man binder ett PDF-dokument, väljer ett smartkortcertif
 
 S: Absolut, du kan använda flera smartkort-baserade signaturer på en enda PDF-fil. Varje signatur är unik och bidrar till dokumentets övergripande säkerhet.
 
-#### F: Vad händer om en signatur inte kan verifieras under verifieringssteget?
+#### F: Vad händer om en signatur misslyckas med verifiering under verifieringssteget?
 
 S: Om en signatur misslyckas med verifiering, skapas ett undantag, vilket indikerar att signaturen inte är giltig. Detta säkerställer att endast giltiga och pålitliga signaturer accepteras.
 

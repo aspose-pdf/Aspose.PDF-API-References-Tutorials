@@ -18,7 +18,7 @@ Než se ponoříme do kódu, ujistěte se, že máte splněny následující př
 
 - Vývojové prostředí Java: V systému byste měli mít nainstalovanou Javu.
 
-- Aspose.PDF for Java Library: Stáhněte si a zahrňte do svého projektu knihovnu Aspose.PDF for Java. Můžete to získat od[tady](https://releases.aspose.com/pdf/java/).
+- Aspose.PDF for Java Library: Stáhněte si a zahrňte do svého projektu knihovnu Aspose.PDF for Java. Můžete to získat od[zde](https://releases.aspose.com/pdf/java/).
 
 ## Krok 1: Načtěte dokument PDF
 
@@ -62,17 +62,17 @@ Nakonec uložme zachycenou oblast jako soubor obrázku. Můžete si vybrat z rů
 ImageIO.write(image, "PNG", new File("captured_region.png"));
 ```
 
-A to je vše! Úspěšně jste převedli konkrétní oblast stránky na obrázek v PDF pomocí Java a Aspose.PDF for Java.
+A je to! Úspěšně jste převedli konkrétní oblast stránky na obrázek v PDF pomocí Java a Aspose.PDF for Java.
 
 ## Závěr
 
-V tomto tutoriálu jsme se naučili, jak využít Aspose.PDF pro Java k extrahování konkrétní oblasti stránky z dokumentu PDF a uložení jako obrázku. To může být neuvěřitelně užitečné pro různé aplikace, včetně extrakce dat, generování sestav a dalších.
+V tomto tutoriálu jsme se naučili, jak využít Aspose.PDF pro Java k extrahování konkrétní oblasti stránky z dokumentu PDF a jeho uložení jako obrázku. To může být neuvěřitelně užitečné pro různé aplikace, včetně extrakce dat, generování sestav a dalších.
 
 ## FAQ
 
 ### Jak mohu nainstalovat Aspose.PDF pro Javu?
 
- Knihovnu Aspose.PDF for Java si můžete stáhnout z[tady](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci uvedených v dokumentaci.
+ Knihovnu Aspose.PDF for Java si můžete stáhnout z[zde](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci uvedených v dokumentaci.
 
 ### Mohu extrahovat regiony z více stránek?
 

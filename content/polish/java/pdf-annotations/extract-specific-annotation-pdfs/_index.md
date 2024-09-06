@@ -1,8 +1,8 @@
 ---
-title: Wyodrębnij określoną adnotację z plików PDF
-linktitle: Wyodrębnij określoną adnotację z plików PDF
-second_title: Aspose.PDF Interfejs API przetwarzania plików Java w formacie Java
-description: Dowiedz się, jak wyodrębnić określone adnotacje z plików PDF przy użyciu Aspose.PDF dla Java. Ten przewodnik krok po kroku zawiera przykłady kodu i często zadawane pytania dotyczące wydajnego wyodrębniania adnotacji PDF.
+title: Wyodrębnij konkretne adnotacje z plików PDF
+linktitle: Wyodrębnij konkretne adnotacje z plików PDF
+second_title: Aspose.PDF Java PDF Processing API
+description: Dowiedz się, jak wyodrębnić określone adnotacje z plików PDF za pomocą Aspose.PDF dla Java. Ten przewodnik krok po kroku zawiera przykłady kodu i FAQ dotyczące wydajnej ekstrakcji adnotacji PDF.
 type: docs
 weight: 14
 url: /pl/java/pdf-annotations/extract-specific-annotation-pdfs/
@@ -10,16 +10,16 @@ url: /pl/java/pdf-annotations/extract-specific-annotation-pdfs/
 
 ## Wstęp
 
-Adnotacje w plikach PDF mogą być skarbnicą informacji. Umożliwiają użytkownikom dodawanie komentarzy, wyróżnianie ważnych sekcji, a nawet dołączanie niestandardowych notatek. Czasami jednak może być konieczne wyodrębnienie określonych adnotacji do celów raportowania lub analiz. Aspose.PDF dla Java ułatwia to zadanie dzięki wszechstronnemu zestawowi funkcji.
+Adnotacje w plikach PDF mogą być skarbnicą informacji. Umożliwiają użytkownikom dodawanie komentarzy, wyróżnianie ważnych sekcji, a nawet dołączanie niestandardowych notatek. Czasami jednak może być konieczne wyodrębnienie określonych adnotacji do celów raportowania lub analizy. Aspose.PDF for Java ułatwia to zadanie dzięki kompleksowemu zestawowi funkcji.
 
-## Warunki wstępne
+## Wymagania wstępne
 
-Zanim zagłębimy się w kod, upewnij się, że spełnione są następujące wymagania wstępne:
+Zanim zagłębisz się w kod, upewnij się, że spełnione są następujące wymagania wstępne:
 
-- Zestaw Java Development Kit (JDK) zainstalowany w systemie.
--  Aspose.PDF dla biblioteki Java. Można go pobrać z[Tutaj](https://releases.aspose.com/pdf/java/).
+- Java Development Kit (JDK) zainstalowany w Twoim systemie.
+-  Aspose.PDF dla biblioteki Java. Możesz pobrać ją z[Tutaj](https://releases.aspose.com/pdf/java/).
 
-## Konfiguracja projektu
+## Konfigurowanie projektu
 
 Aby rozpocząć, utwórz nowy projekt Java i dodaj bibliotekę Aspose.PDF for Java do zależności swojego projektu.
 
@@ -49,10 +49,10 @@ for (Annotation annotation : pdfDocument.getPages().get_Item(1).getAnnotations()
 }
 ```
 
-## Wyodrębnianie adnotacji wyróżnionych
+## Wyodrębnianie wyróżnionych adnotacji
 
 ```java
-// Wyodrębnij adnotacje wyróżnień
+// Wyodrębnij wyróżnione adnotacje
 for (Annotation annotation : pdfDocument.getPages().get_Item(1).getAnnotations()) {
     if (annotation instanceof HighlightAnnotation) {
         HighlightAnnotation highlightAnnotation = (HighlightAnnotation) annotation;
@@ -61,7 +61,7 @@ for (Annotation annotation : pdfDocument.getPages().get_Item(1).getAnnotations()
 }
 ```
 
-## Wyodrębnianie niestandardowych adnotacji
+## Ekstrakcja niestandardowych adnotacji
 
 ```java
 // Wyodrębnij niestandardowe adnotacje
@@ -73,42 +73,42 @@ for (Annotation annotation : pdfDocument.getPages().get_Item(1).getAnnotations()
 }
 ```
 
-## Wyodrębnianie adnotacji według stron
+## Ekstrakcja adnotacji według strony
 
 ```java
-// Wyodrębnij adnotacje z określonej strony (strona nr 2)
+// Wyodrębnij adnotacje ze konkretnej strony (strona numer 2)
 Page page = pdfDocument.getPages().get_Item(2);
 for (Annotation annotation : page.getAnnotations()) {
-    // Przetwarzaj adnotacje na tej stronie
+    // Adnotacje dotyczące procesu na tej stronie
 }
 ```
 
 ## Obsługa różnych typów adnotacji
 
-Aspose.PDF dla Java obsługuje różne typy adnotacji, takie jak adnotacje tekstowe, adnotacje z wyróżnieniami, niestandardowe stemple i inne. Możesz dostosować kod ekstrakcji do swoich konkretnych potrzeb.
+Aspose.PDF for Java obsługuje różne typy adnotacji, takie jak adnotacje tekstowe, adnotacje wyróżnień, niestandardowe stemple i inne. Możesz dostosować kod ekstrakcji do swoich konkretnych potrzeb.
 
 ## Wniosek
 
-tym artykule dowiedzieliśmy się, jak wyodrębnić określone adnotacje z plików PDF za pomocą Aspose.PDF dla Java. Adnotacje w dokumentach PDF mogą zawierać cenne informacje, a dzięki odpowiednim narzędziom możesz wykorzystać te dane do różnych celów. Niezależnie od tego, czy chcesz analizować komentarze użytkowników, śledzić wyróżnione sekcje, czy wyodrębniać niestandardowe stemple, Aspose.PDF dla Java zapewnia elastyczność, aby to zrobić.
+tym artykule dowiedzieliśmy się, jak wyodrębnić określone adnotacje z plików PDF za pomocą Aspose.PDF dla Java. Adnotacje w dokumentach PDF mogą zawierać cenne informacje, a przy użyciu odpowiednich narzędzi można wykorzystać te dane do różnych celów. Niezależnie od tego, czy trzeba analizować komentarze użytkowników, śledzić wyróżnione sekcje, czy wyodrębniać niestandardowe stemple, Aspose.PDF dla Java zapewnia elastyczność, aby to zrobić.
 
-## Często zadawane pytania
+## Najczęściej zadawane pytania
 
 ### Jak zainstalować Aspose.PDF dla Java?
 
- Możesz pobrać Aspose.PDF dla Java z[Tutaj](https://releases.aspose.com/pdf/java/). Postępuj zgodnie z instrukcjami instalacji podanymi na stronie internetowej, aby skonfigurować go w projekcie Java.
+ Możesz pobrać Aspose.PDF dla Javy ze strony[Tutaj](https://releases.aspose.com/pdf/java/). Postępuj zgodnie z instrukcjami instalacji podanymi na stronie internetowej, aby skonfigurować ją w swoim projekcie Java.
 
-### Czy mogę wyodrębnić adnotacje z określonej strony w dokumencie PDF?
+### Czy mogę wyodrębnić adnotacje z konkretnej strony dokumentu PDF?
 
-Tak, możesz wyodrębnić adnotacje z określonej strony, uzyskując dostęp do adnotacji tej strony za pomocą Aspose.PDF dla Java. Aby uzyskać szczegółowe informacje, zapoznaj się z przykładem kodu w artykule.
+Tak, możesz wyodrębnić adnotacje z konkretnej strony, uzyskując dostęp do adnotacji tej strony za pomocą Aspose.PDF dla Java. Zapoznaj się z przykładem kodu w artykule, aby uzyskać szczegółowe informacje.
 
 ### Jakie inne typy adnotacji mogę wyodrębnić za pomocą Aspose.PDF dla Java?
 
-Aspose.PDF dla Java obsługuje różne typy adnotacji, w tym adnotacje tekstowe, adnotacje wyróżnień, niestandardowe stemple i inne. Możesz dostosować przykłady kodu, aby wyodrębnić określone typy adnotacji, których potrzebujesz.
+Aspose.PDF for Java obsługuje różne typy adnotacji, w tym adnotacje tekstowe, adnotacje wyróżnień, niestandardowe stemple i inne. Możesz dostosować przykłady kodu, aby wyodrębnić konkretne typy adnotacji, których potrzebujesz.
 
-### Czy Aspose.PDF dla Java nadaje się do obsługi dużych dokumentów PDF?
+### Czy Aspose.PDF for Java nadaje się do obsługi dużych dokumentów PDF?
 
-Tak, Aspose.PDF dla Java został zaprojektowany do wydajnej obsługi zarówno małych, jak i dużych dokumentów PDF. Zapewnia funkcje umożliwiające pracę z dużymi dokumentami bez problemów z wydajnością.
+Tak, Aspose.PDF for Java jest zaprojektowany do wydajnej obsługi małych i dużych dokumentów PDF. Oferuje funkcje do pracy z dużymi dokumentami bez problemów z wydajnością.
 
 ### Czy mogę dostosować format wyjściowy podczas wyodrębniania adnotacji?
 
-Tak, możesz dostosować format wyjściowy podczas wyodrębniania adnotacji w oparciu o swoje wymagania. Aspose.PDF dla Java oferuje elastyczność w przetwarzaniu i formatowaniu wyodrębnionych danych adnotacji.
+Tak, możesz dostosować format wyjściowy podczas wyodrębniania adnotacji na podstawie swoich wymagań. Aspose.PDF dla Java oferuje elastyczność w przetwarzaniu i formatowaniu wyodrębnionych danych adnotacji.

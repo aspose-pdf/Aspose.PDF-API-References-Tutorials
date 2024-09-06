@@ -69,7 +69,7 @@ for (XImage image : images) {
 
 Slutligen kan vi visa resultaten för användaren eller spara dem för vidare bearbetning. Detta enkla kodavsnitt låter oss identifiera färgstatusen för bilder i ett PDF-dokument utan ansträngning.
 
-## Exempelkod
+## Provkod
 
 Här är ett komplett exempel på kodavsnitt som visar hur man identifierar om en bild i en PDF-fil är färgad eller svartvit med Aspose.PDF för Java:
 

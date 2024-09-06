@@ -1,37 +1,37 @@
 ---
-title: Receba avisos para substituição de fontes
-linktitle: Receba avisos para substituição de fontes
-second_title: Referência da API Aspose.PDF para .NET
-description: Aprenda como usar o recurso GetWarningsForFontSubstitution do Aspose.PDF for .NET para detectar avisos de substituição de fonte ao abrir um documento PDF.
+title: Receba avisos sobre substituição de fonte
+linktitle: Receba avisos sobre substituição de fonte
+second_title: Referência da API do Aspose.PDF para .NET
+description: Aprenda a usar o recurso GetWarningsForFontSubstitution do Aspose.PDF para .NET para detectar avisos de substituição de fonte ao abrir um documento PDF.
 type: docs
 weight: 190
 url: /pt/net/programming-with-document/getwarningsforfontsubstitution/
 ---
-Aspose.PDF for .NET é uma biblioteca popular de manipulação de PDF que permite aos desenvolvedores criar, editar e converter arquivos PDF em seus aplicativos .NET. Um dos recursos oferecidos por esta biblioteca é a capacidade de detectar avisos de substituição de fontes quando um documento PDF é aberto. Este tutorial irá guiá-lo através das etapas de uso do`GetWarningsForFontSubstitution` recurso do Aspose.PDF for .NET para detectar avisos de substituição de fonte ao abrir um documento PDF.
+Aspose.PDF para .NET é uma biblioteca popular de manipulação de PDF que permite aos desenvolvedores criar, editar e converter arquivos PDF em seus aplicativos .NET. Um dos recursos oferecidos por esta biblioteca é a capacidade de detectar avisos de substituição de fonte quando um documento PDF é aberto. Este tutorial o guiará pelas etapas de uso do`GetWarningsForFontSubstitution` recurso do Aspose.PDF para .NET para detectar avisos de substituição de fonte ao abrir um documento PDF.
 
-## Etapa 1: Instale Aspose.PDF para .NET
+## Etapa 1: instalar o Aspose.PDF para .NET
 
- Para usar Aspose.PDF for .NET em seus aplicativos .NET, você deve primeiro instalar a biblioteca. Você pode baixar a versão mais recente da biblioteca no[Página de download do Aspose.PDF para .NET](https://relases.aspose.com/pdf/net).
+ Para usar o Aspose.PDF para .NET em seus aplicativos .NET, você deve primeiro instalar a biblioteca. Você pode baixar a versão mais recente da biblioteca do[Página de download do Aspose.PDF para .NET](https://relases.aspose.com/pdf/net).
 
-Depois de baixar a biblioteca, extraia o conteúdo do arquivo ZIP para uma pasta no seu computador. Em seguida, você precisará adicionar uma referência à DLL Aspose.PDF para .NET em seu projeto .NET.
+Após baixar a biblioteca, extraia o conteúdo do arquivo ZIP para uma pasta no seu computador. Você precisará então adicionar uma referência ao Aspose.PDF for .NET DLL no seu projeto .NET.
 
-## Passo 2: Carregue o Documento PDF
+## Etapa 2: Carregue o documento PDF
 
-Depois de instalar o Aspose.PDF for .NET e adicionar uma referência à DLL em seu projeto .NET, você pode começar a usar o`GetWarningsForFontSubstitution` recurso para detectar avisos de substituição de fonte ao abrir um documento PDF.
+ Depois de instalar o Aspose.PDF para .NET e adicionar uma referência à DLL no seu projeto .NET, você pode começar a usar o`GetWarningsForFontSubstitution` recurso para detectar avisos de substituição de fonte ao abrir um documento PDF.
 
-A primeira etapa para usar esse recurso é carregar o documento PDF para o qual você deseja detectar avisos de substituição de fonte. Para fazer isso, você pode usar o seguinte código:
+O primeiro passo para usar esse recurso é carregar o documento PDF para o qual você deseja detectar avisos de substituição de fonte. Para fazer isso, você pode usar o seguinte código:
 
 ```csharp
 // O caminho para o documento PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Abra o documento PDF
+// Abra o documento PDF
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
  No código acima, substitua`"YOUR DOCUMENT DIRECTORY"` com o caminho para o diretório onde seu documento PDF está localizado. Este código carregará o documento PDF em um`Document` objeto, que você pode usar para detectar avisos de substituição de fonte.
 
-## Etapa 3: detectar avisos de substituição de fonte
+## Etapa 3: Detectar avisos de substituição de fonte
 
 Para detectar avisos de substituição de fonte ao abrir um documento PDF, você pode usar o seguinte código:
 
@@ -39,7 +39,7 @@ Para detectar avisos de substituição de fonte ao abrir um documento PDF, você
 doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
 ```
 
- No código acima,`OnFontSubstitution`é um método que será chamado sempre que um aviso de substituição de fonte for detectado. Você pode personalizar esse método para lidar com o aviso de substituição de fonte da maneira que desejar.
+ No código acima,`OnFontSubstitution`é um método que será chamado sempre que um aviso de substituição de fonte for detectado. Você pode personalizar esse método para manipular o aviso de substituição de fonte da maneira que quiser.
 
  Aqui está um exemplo de implementação do`OnFontSubstitution` método:
 
@@ -50,17 +50,17 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 }
 ```
 
- No código acima, o`OnFontSubstitution` O método simplesmente exibe o nome da fonte original e o nome da fonte substituída no console sempre que um aviso de substituição de fonte é detectado. Você pode personalizar esse método para lidar com o aviso de substituição de fonte da maneira que desejar.
+ No código acima, o`OnFontSubstitution` O método simplesmente emite o nome da fonte original e o nome da fonte substituída para o console sempre que um aviso de substituição de fonte é detectado. Você pode personalizar esse método para manipular o aviso de substituição de fonte da maneira que desejar.
 
-### Exemplo de código-fonte para obter avisos para substituição de fontes usando Aspose.NET para PDF
+### Exemplo de código-fonte para obter avisos para substituição de fonte usando Aspose.NET para PDF
 
- Aqui está o código-fonte completo para detectar avisos de substituição de fonte ao abrir um documento PDF usando o`GetWarningsForFontSubstitution` recurso do Aspose.PDF para .NET:
+ Aqui está o código-fonte completo para detectar avisos de substituição de fonte ao abrir um documento PDF usando o`GetWarningsForFontSubstitution` Recurso do Aspose.PDF para .NET:
 
 ```csharp
 // O caminho para o documento PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Abra o documento PDF
+// Abra o documento PDF
 Document doc = new Document(dataDir + "input.pdf");
 
 // Detectar avisos de substituição de fonte
@@ -75,22 +75,22 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 
 ## Conclusão
 
- Neste tutorial, discutimos como usar Aspose.PDF for .NET para detectar avisos de substituição de fonte ao abrir um documento PDF. Ao se inscrever no`FontSubstitution`Nesse caso, os desenvolvedores podem detectar situações de substituição de fontes e tratá-las de acordo com as necessidades de sua aplicação. Aspose.PDF for .NET fornece uma API simples para detectar e lidar com avisos de substituição de fontes, ajudando os desenvolvedores a garantir a fidelidade visual e a consistência de documentos PDF em diferentes sistemas.
+ Neste tutorial, discutimos como usar o Aspose.PDF para .NET para detectar avisos de substituição de fonte ao abrir um documento PDF. Ao assinar o`FontSubstitution`event, os desenvolvedores podem detectar situações de substituição de fonte e lidar com elas de acordo com as necessidades de seus aplicativos. O Aspose.PDF para .NET fornece uma API direta para detectar e lidar com avisos de substituição de fonte, ajudando os desenvolvedores a garantir a fidelidade visual e a consistência de documentos PDF em diferentes sistemas.
 
 ### Perguntas frequentes
 
 #### P: O que é substituição de fonte em um documento PDF?
 
-R: A substituição de fontes em um documento PDF ocorre quando uma fonte usada no documento não está disponível ou incorporada no arquivo. Nesses casos, o visualizador ou impressora substitui a fonte ausente por uma semelhante que esteja disponível no sistema. A substituição de fontes pode afetar a aparência e o layout do documento.
+R: A substituição de fonte em um documento PDF ocorre quando uma fonte usada no documento não está disponível ou incorporada no arquivo. Nesses casos, o visualizador ou a impressora substitui a fonte ausente por uma semelhante que esteja disponível no sistema. A substituição de fonte pode afetar a aparência e o layout do documento.
 
 #### P: Por que é importante detectar a substituição de fontes?
 
-R: É importante detectar a substituição de fontes porque pode afetar a fidelidade visual e o layout do documento PDF. A detecção de avisos de substituição de fontes permite que os desenvolvedores identifiquem situações em que as fontes estão sendo substituídas e tomem as ações apropriadas para garantir que a aparência visual do documento seja consistente em diferentes sistemas.
+R: A substituição de fonte é importante de detectar porque pode impactar a fidelidade visual e o layout do documento PDF. Detectar avisos de substituição de fonte permite que os desenvolvedores identifiquem situações em que as fontes estão sendo substituídas e tomem as ações apropriadas para garantir que a aparência visual do documento seja consistente em diferentes sistemas.
 
 #### P: Como posso lidar com avisos de substituição de fonte?
 
- R: Você pode lidar com avisos de substituição de fonte assinando o`FontSubstitution` evento do`Document` classe e fornecendo um método personalizado para lidar com o evento. Neste método personalizado, você pode registrar os avisos de substituição de fonte, notificar os usuários ou realizar outras ações com base nos requisitos do seu aplicativo.
+ R: Você pode lidar com avisos de substituição de fonte assinando o`FontSubstitution` evento do`Document` class e fornecer um método personalizado para manipular o evento. Neste método personalizado, você pode registrar os avisos de substituição de fonte, notificar usuários ou tomar outras ações com base nos requisitos do seu aplicativo.
 
-#### P: Posso personalizar o tratamento dos avisos de substituição de fontes?
+#### P: Posso personalizar o tratamento de avisos de substituição de fonte?
 
- R: Sim, você pode personalizar o tratamento de avisos de substituição de fonte fornecendo um método personalizado para lidar com os avisos de substituição de fonte.`FontSubstitution`evento. Neste método personalizado, você pode registrar os avisos de substituição de fonte, notificar os usuários ou tomar qualquer outra ação apropriada com base nos requisitos do seu aplicativo.
+ R: Sim, você pode personalizar o tratamento de avisos de substituição de fonte fornecendo um método personalizado para lidar com o`FontSubstitution`evento. Neste método personalizado, você pode registrar os avisos de substituição de fonte, notificar usuários ou tomar quaisquer outras ações apropriadas com base nos requisitos do seu aplicativo.

@@ -1,8 +1,8 @@
 ---
-title: Cấu trúc văn bản kiểu trong PDF bằng Java
-linktitle: Cấu trúc văn bản kiểu trong PDF bằng Java
-second_title: Aspose.PDF API xử lý PDF Java
-description: Tìm hiểu cách tạo kiểu cấu trúc văn bản trong tệp PDF bằng Java với hướng dẫn từng bước của chúng tôi. Tùy chỉnh phông chữ, màu sắc, siêu liên kết, v.v. để có tài liệu trông chuyên nghiệp.
+title: Cấu trúc văn bản theo phong cách trong PDF bằng Java
+linktitle: Cấu trúc văn bản theo phong cách trong PDF bằng Java
+second_title: API xử lý PDF Java Aspose.PDF
+description: Tìm hiểu cách định dạng cấu trúc văn bản trong PDF bằng Java với hướng dẫn từng bước của chúng tôi. Tùy chỉnh phông chữ, màu sắc, siêu liên kết và nhiều thứ khác để có tài liệu trông chuyên nghiệp.
 type: docs
 weight: 11
 url: /vi/java/pdf-styles-and-formatting/style-text-structure-in-pdf-using-java/
@@ -10,28 +10,28 @@ url: /vi/java/pdf-styles-and-formatting/style-text-structure-in-pdf-using-java/
 
 ## Giới thiệu
 
-PDF đã trở thành định dạng chuẩn để chia sẻ tài liệu, báo cáo và nhiều loại nội dung khác nhau. Khi làm việc với các tệp PDF trong Java, điều cần thiết không chỉ là điền dữ liệu vào chúng mà còn phải tạo kiểu cho văn bản để có giao diện bóng bẩy.
+PDF đã trở thành định dạng chuẩn để chia sẻ tài liệu, báo cáo và nhiều loại nội dung khác nhau. Khi làm việc với PDF trong Java, điều quan trọng không chỉ là điền dữ liệu vào mà còn phải định dạng văn bản để có giao diện đẹp mắt.
 
 ## Điều kiện tiên quyết
 
-Trước khi chúng tôi bắt đầu, hãy đảm bảo bạn có sẵn các điều kiện tiên quyết sau:
+Trước khi bắt đầu, hãy đảm bảo bạn đã đáp ứng đủ các điều kiện tiên quyết sau:
 
-- Đã cài đặt Bộ công cụ phát triển Java (JDK).
-- Thư viện Aspose.PDF cho Java được tải xuống và thiết lập.
+- Đã cài đặt Java Development Kit (JDK).
+- Đã tải xuống và thiết lập thư viện Aspose.PDF cho Java.
 
 ## Thiết lập môi trường
 
-Để bắt đầu tạo kiểu văn bản trong tệp PDF bằng Java, bạn cần thiết lập môi trường phát triển của mình. Thực hiện theo các bước sau:
+Để bắt đầu định dạng văn bản trong PDF bằng Java, bạn cần thiết lập môi trường phát triển của mình. Thực hiện theo các bước sau:
 
 1.  Tải xuống thư viện Aspose.PDF cho Java từ[đây](https://releases.aspose.com/pdf/java/).
 
-2. Đưa thư viện vào dự án Java của bạn.
+2. Thêm thư viện vào dự án Java của bạn.
 
 3. Nhập các lớp cần thiết từ Aspose.PDF vào mã của bạn.
 
 ## Thêm văn bản vào PDF
 
-Bây giờ, hãy bắt đầu bằng cách thêm văn bản vào tài liệu PDF. Đây là một ví dụ đơn giản:
+Bây giờ, chúng ta hãy bắt đầu bằng cách thêm văn bản vào tài liệu PDF. Sau đây là một ví dụ đơn giản:
 
 ```java
 // Tạo một tài liệu PDF mới
@@ -50,20 +50,20 @@ pdfDocument.getPages().get_Item(1).getParagraphs().add(textFragment);
 pdfDocument.save("output.pdf");
 ```
 
-Mã này tạo tài liệu PDF, thêm trang và chèn văn bản "Xin chào, PDF!" lên trang.
+Mã này tạo một tài liệu PDF, thêm một trang và chèn văn bản "Xin chào, PDF!" vào trang đó.
 
-## Kiểu dáng phông chữ
+## Kiểu chữ
 
-Bạn có thể tùy chỉnh phông chữ của văn bản của bạn. Đây là cách thay đổi họ phông chữ và kích thước:
+Bạn có thể tùy chỉnh phông chữ của văn bản. Sau đây là cách thay đổi họ phông chữ và kích thước:
 
 ```java
 textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
 textFragment.getTextState().setFontSize(12);
 ```
 
-## Kích thước và màu văn bản
+## Kích thước và màu sắc văn bản
 
-Điều chỉnh kích thước và màu sắc văn bản rất đơn giản:
+Việc điều chỉnh kích thước và màu sắc của văn bản rất đơn giản:
 
 ```java
 textFragment.getTextState().setFontSize(16);
@@ -78,9 +78,9 @@ Kiểm soát căn chỉnh văn bản trong tệp PDF của bạn:
 textFragment.getTextState().setHorizontalAlignment(HorizontalAlignment.Center);
 ```
 
-## Thêm đầu trang và chân trang
+## Thêm Tiêu đề và Chân trang
 
-Nâng cao cấu trúc tài liệu với đầu trang và chân trang:
+Cải thiện cấu trúc tài liệu bằng tiêu đề và chân trang:
 
 ```java
 Page page = pdfDocument.getPages().get_Item(1);
@@ -138,7 +138,7 @@ Chuyển đổi văn bản khi cần thiết:
 
 ```java
 textFragment.getTextState().setTextRise(5); // Nâng cao văn bản
-textFragment.getTextState().setTextScaling(200); // Chia tỷ lệ văn bản
+textFragment.getTextState().setTextScaling(200); // Thu nhỏ văn bản
 textFragment.getTextState().setUnderline(true);
 ```
 
@@ -154,7 +154,7 @@ page.getPageInfo().getMargin().setRight(50);
 
 ## Xử lý ngắt trang
 
-Đảm bảo ngắt trang thích hợp cho nội dung của bạn:
+Đảm bảo ngắt trang phù hợp cho nội dung của bạn:
 
 ```java
 textFragment.getTextState().setIsAutoTruncated(true);
@@ -176,11 +176,11 @@ page.getParagraphs().add(watermark);
 
 ## Phần kết luận
 
-Trong hướng dẫn này, chúng tôi đã khám phá cách tạo kiểu cho cấu trúc văn bản trong tệp PDF bằng Java với sự trợ giúp của Aspose.PDF. Giờ đây, bạn có thể tạo các tài liệu PDF có cấu trúc tốt và hấp dẫn về mặt hình ảnh, đáp ứng các yêu cầu cụ thể của bạn. Thử nghiệm các kỹ thuật được cung cấp và nâng cao kỹ năng tạo PDF của bạn.
+Trong hướng dẫn này, chúng tôi đã khám phá cách định dạng cấu trúc văn bản trong PDF bằng Java với sự trợ giúp của Aspose.PDF. Bây giờ bạn có thể tạo các tài liệu PDF hấp dẫn về mặt hình ảnh và có cấu trúc tốt đáp ứng các yêu cầu cụ thể của mình. Thử nghiệm các kỹ thuật được cung cấp và nâng cao kỹ năng tạo PDF của bạn.
 
 ## Câu hỏi thường gặp
 
-### Làm cách nào để thay đổi phông chữ của văn bản trong PDF?
+### Làm thế nào để thay đổi phông chữ của văn bản trong PDF?
 
  Để thay đổi phông chữ của văn bản trong PDF, hãy sử dụng`setTextState()` phương pháp và chỉ định phông chữ mong muốn bằng cách sử dụng`setFont()`. Ví dụ:
 
@@ -188,18 +188,18 @@ Trong hướng dẫn này, chúng tôi đã khám phá cách tạo kiểu cho c�
 textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
 ```
 
-### Tôi có thể thêm siêu liên kết vào tệp PDF của mình bằng Aspose.PDF cho Java không?
+### Tôi có thể thêm siêu liên kết vào PDF của mình bằng Aspose.PDF cho Java không?
 
- Có, bạn có thể thêm siêu liên kết vào tệp PDF của mình bằng Aspose.PDF cho Java. Sử dụng`Hyperlink` lớp để tạo liên kết và chỉ định các hành động, chẳng hạn như mở URL.
+ Có, bạn có thể thêm siêu liên kết vào PDF của mình bằng Aspose.PDF cho Java. Sử dụng`Hyperlink` lớp để tạo liên kết và chỉ định hành động, chẳng hạn như mở URL.
 
-### Cách được đề xuất để xử lý ngắt trang trong PDF là gì?
+### Cách xử lý ngắt trang trong PDF được khuyến nghị như thế nào?
 
- Để xử lý ngắt trang trong PDF, hãy đặt`IsAutoTruncated` Và`IsWordWrapped` thuộc tính để`true` bên trong`TextState`. Điều này đảm bảo rằng văn bản được cắt ngắn và ngắt dòng đúng cách để vừa với ranh giới trang.
+ Để xử lý ngắt trang trong PDF, hãy đặt`IsAutoTruncated` Và`IsWordWrapped` thuộc tính để`true` trong`TextState`. Điều này đảm bảo rằng văn bản được cắt ngắn và ngắt dòng đúng cách để vừa với ranh giới trang.
 
-### Làm cách nào tôi có thể bảo vệ tài liệu PDF của mình bằng hình mờ?
+### Làm thế nào tôi có thể bảo vệ tài liệu PDF của mình bằng hình mờ?
 
-Bạn có thể bảo vệ tài liệu PDF của mình bằng hình mờ bằng cách thêm đoạn văn bản hình mờ vào tệp PDF. Tùy chỉnh hình thức của hình mờ, chẳng hạn như kích thước phông chữ và màu sắc, để đạt được hiệu quả mong muốn.
+Bạn có thể bảo vệ tài liệu PDF của mình bằng hình mờ bằng cách thêm một đoạn văn bản hình mờ vào PDF. Tùy chỉnh giao diện của hình mờ, chẳng hạn như kích thước phông chữ và màu sắc, để đạt được hiệu ứng mong muốn.
 
 ### Tôi có thể tìm thêm thông tin và tài liệu về Aspose.PDF cho Java ở đâu?
 
- Bạn có thể tìm thấy tài liệu toàn diện về Aspose.PDF for Java tại[đây](https://reference.aspose.com/pdf/java/).
+ Bạn có thể tìm thấy tài liệu toàn diện về Aspose.PDF cho Java tại[đây](https://reference.aspose.com/pdf/java/).

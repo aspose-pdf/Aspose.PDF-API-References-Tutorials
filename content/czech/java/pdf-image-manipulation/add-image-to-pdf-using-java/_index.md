@@ -8,7 +8,7 @@ weight: 10
 url: /cs/java/pdf-image-manipulation/add-image-to-pdf-using-java/
 ---
 
-## Úvod do přidávání obrázku do PDF pomocí Javy
+## Úvod k přidání obrázku do PDF pomocí Java
 
 V dnešní digitální době jsou dokumenty často více než jen text. Mohou obsahovat obrázky, diagramy a další vizuální prvky, které zlepšují jejich obsah. Pokud pracujete s PDF v Javě a potřebujete do nich přidat obrázky, jste na správném místě. V tomto podrobném průvodci vás provedeme procesem přidávání obrázků do PDF pomocí Aspose.PDF for Java API.
 
@@ -22,7 +22,7 @@ Než se pustíme do kódování, ujistěte se, že máte následující nastaven
 
 ## Začínáme
 
-Začněme nastavením našeho projektu Java a zahrnutím knihovny Aspose.PDF. Pokud jste tak ještě neučinili, můžete si stáhnout knihovnu Aspose.PDF for Java z[tady](https://releases.aspose.com/pdf/java/).
+Začněme nastavením našeho projektu Java a zahrnutím knihovny Aspose.PDF. Pokud jste tak ještě neučinili, můžete si stáhnout knihovnu Aspose.PDF for Java z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Přidání obrázku do existujícího PDF
 

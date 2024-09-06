@@ -66,7 +66,7 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nForm field moved successfully to a new location.\nFile saved at " + dataDir);
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Σε αυτό το σεμινάριο, μάθαμε πώς να μετακινούμε ένα πεδίο φόρμας σε ένα έγγραφο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Ακολουθώντας αυτά τα βήματα, μπορείτε εύκολα να πλοηγηθείτε σε ένα συγκεκριμένο πεδίο και να αλλάξετε τη θέση του ανάλογα με τις ανάγκες.
 

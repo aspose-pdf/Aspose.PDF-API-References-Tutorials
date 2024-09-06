@@ -61,7 +61,7 @@ foreach (Page page in doc.Pages)
 ```
 
 ## Következtetés
-Ebben az oktatóanyagban megtanultuk, hogyan állíthatja be a PDF-oldal tartalmát az Aspose.PDF for .NET használatával. A fent vázolt lépések követésével könnyedén megvalósíthatja ezt a funkciót saját projektjeiben. Nyugodtan fedezze fel az Aspose.PDF dokumentációt, hogy további hasznos funkciókat fedezzen fel a PDF-fájlokkal való munkavégzéshez.
+Ebben az oktatóanyagban megtanultuk, hogyan állíthatja be a PDF-oldal tartalmát az Aspose.PDF for .NET használatával. A fent vázolt lépések követésével könnyedén megvalósíthatja ezt a funkciót saját projektjeiben. Nyugodtan fedezze fel az Aspose.PDF dokumentációját, hogy további hasznos funkciókat fedezzen fel a PDF-fájlokkal való munkavégzéshez.
 
 ### GYIK az oldal tartalmának PDF-fájlba illesztéséhez
 
@@ -79,7 +79,7 @@ V: Igen, beállíthatja az oldal tartalmát egy adott mérethez vagy képarányh
 
 #### K: Mi történik az oldalon lévő tartalommal az oldalméret beállítása után?
 
-V: Miután beállította az oldalméretet a mellékelt C# forráskóddal, az oldal tartalma arányosan át lesz méretezve. Ha az eredeti tartalom képaránya jelentősen eltér az új képaránytól, a tartalom megnyújtottnak vagy tömörítettnek tűnhet.
+V: Miután beállította az oldalméretet a megadott C# forráskóddal, az oldal tartalma arányosan át lesz méretezve. Ha az eredeti tartalom képaránya jelentősen eltér az új képaránytól, a tartalom megnyújtottnak vagy tömörítettnek tűnhet.
 
 #### K: Beállíthatom bizonyos oldalak tartalmát a PDF-dokumentum összes oldala helyett?
 

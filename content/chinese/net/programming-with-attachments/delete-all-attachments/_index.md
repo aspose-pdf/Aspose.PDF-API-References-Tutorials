@@ -2,100 +2,121 @@
 title: 删除 PDF 文件中的所有附件
 linktitle: 删除 PDF 文件中的所有附件
 second_title: Aspose.PDF for .NET API 参考
-description: 了解如何使用 Aspose.PDF for .NET 删除 PDF 文件中的所有附件。分步指南，方便操作。
+description: 通过本分步指南了解如何使用 Aspose.PDF for .NET 删除 PDF 文件中的所有附件。简化您的 PDF 管理。
 type: docs
 weight: 20
 url: /zh/net/programming-with-attachments/delete-all-attachments/
 ---
-在本教程中，我们将引导您逐步完成以下 C# 源代码，以使用 Aspose.PDF for .NET 删除 PDF 文件中的所有附件。
+## 介绍
 
-在开始之前，请确保您已经安装了 Aspose.PDF 库并设置了开发环境。还具备 C# 编程的基础知识。
+您是否曾经遇到过需要通过删除所有附件来清理 PDF 文件的情况？无论是出于隐私原因、文件大小减小还是仅仅为了整理文档，了解如何从 PDF 中删除附件都非常有用。在本教程中，我们将引导您完成使用 Aspose.PDF for .NET 删除 PDF 文件中所有附件的过程。这个功能强大的库使以编程方式操作 PDF 文档变得容易，在本指南结束时，您将掌握像专业人士一样处理附件的知识！
 
-### 第 1 步：文档目录设置
+## 先决条件
 
-在提供的源代码中，您需要指定要从中删除附件的 PDF 文件所在的目录。将“dataDir”变量更改为所需的目录。
+在深入研究代码之前，您需要做好以下几件事：
 
-```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-```
+1.  Aspose.PDF for .NET：确保已安装 Aspose.PDF 库。您可以从[网站](https://releases.aspose.com/pdf/net/).
+2. Visual Studio：您可以在其中编写和执行 .NET 代码的开发环境。
+3. C# 基础知识：熟悉 C# 编程将帮助您更好地理解代码片段。
 
-### 步骤 2：打开现有 PDF 文档
+## 导入包
 
-我们使用指定的路径打开现有的 PDF 文档。
+首先，您需要在 C# 项目中导入必要的包。具体操作如下：
 
-```csharp
-Document pdfDocument = new Document(dataDir + "DeleteAllAttachments.pdf");
-```
+### 创建新项目
 
-### 第 3 步：删除所有附件
+打开 Visual Studio 并创建一个新的 C# 项目。为了简单起见，您可以选择控制台应用程序。
 
-我们从文档中删除所有附件。
+### 添加 Aspose.PDF 参考
 
-```csharp
-pdfDocument.EmbeddedFiles.Delete();
-```
+1. 在解决方案资源管理器中右键单击您的项目。
+2. 选择“管理 NuGet 包”。
+3. 搜索“Aspose.PDF”并安装最新版本。
 
-### 步骤 4：保存更新的文件
+### 导入所需的命名空间
 
-最后，我们将更新后的 PDF 文件保存在指定目录中，名称为“DeleteAllAttachments_out.pdf”。
+添加库后，打开您的`Program.cs`文件并在文件顶部导入必要的命名空间：
 
 ```csharp
-pdfDocument.Save(dataDir + "DeleteAllAttachments_out.pdf");
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-### 使用 Aspose.PDF for .NET 删除所有附件的示例源代码 
+现在您已完成所有设置，让我们继续实际的代码！
+
+## 步骤 1：设置文档目录
+
+首先，您需要指定文档目录的路径。这是您的 PDF 文件所在的位置。您可以按照以下步骤操作：
 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+代替`"YOUR DOCUMENT DIRECTORY"`与您的 PDF 文件存储的实际路径。这很重要，因为程序需要知道在哪里找到您要修改的文件。
+
+## 第 2 步：打开 PDF 文档
+
+接下来，您需要打开包含要删除的附件的 PDF 文档。以下是执行此操作的代码：
+
+```csharp
 //打开文档
 Document pdfDocument = new Document(dataDir + "DeleteAllAttachments.pdf");
+```
+
+这行代码创建一个新的`Document`对象，代表您的 PDF 文件。请确保文件名与您目录中的文件名匹配。
+
+## 步骤 3：删除所有附件
+
+现在到了令人兴奋的部分！您只需一行代码即可删除 PDF 中的所有附件：
+
+```csharp
 //删除所有附件
 pdfDocument.EmbeddedFiles.Delete();
+```
+
+此方法调用将从 PDF 文档中删除所有嵌入文件。就这么简单！
+
+## 步骤 4：保存更新的文件
+
+删除附件后，您需要保存更新的 PDF 文件。操作方法如下：
+
+```csharp
 dataDir = dataDir + "DeleteAllAttachments_out.pdf";
 //保存更新的文件
 pdfDocument.Save(dataDir);
-Console.WriteLine("\nAll attachments deleted successfully.\nFile saved at " + dataDir);
-
 ```
+
+此代码会将修改后的 PDF 保存为新名称，从而确保原始文件保持完整。保留备份始终是明智之举！
+
+## 步骤 5：确认删除
+
+最后，让我们添加一条小确认消息，让您知道一切进展顺利：
+
+```csharp
+Console.WriteLine("\nAll attachments deleted successfully.\nFile saved at " + dataDir);
+```
+
+此行将在控制台中打印一条消息，确认附件已被删除，并显示新文件的保存位置。
 
 ## 结论
 
-在本教程中，我们解释了如何使用 Aspose.PDF for .NET 从 PDF 文件中删除所有附件。您现在可以使用这些知识通过删除所有不需要的附件来清理您的 PDF 文档。
+就这样！您已经成功学会了如何使用 Aspose.PDF for .NET 从 PDF 文件中删除所有附件。这种简单而强大的技术可以帮助您更有效地管理 PDF 文档。无论您是清理文件以供个人使用还是准备用于专业目的的文档，了解如何操作 PDF 附件都是一项宝贵的技能。
 
-## 删除 PDF 文件中所有附件的常见问题解答
+## 常见问题解答
 
-#### 问：为什么我需要删除 PDF 文件中的所有附件？
+### 我可以删除特定的附件而不是全部吗？
+是的，您可以通过以下方式选择性地删除附件：`EmbeddedFiles`收藏。
 
-答：从 PDF 文件中删除所有附件可以帮助简化文档、减小文件大小并消除任何不必要或过时的补充材料。
+### 如果我删除附件会发生什么情况？
+一旦删除，附件将无法恢复，除非您有原始 PDF 文件的备份。
 
-#### 问：Aspose.PDF for .NET 如何简化删除所有附件的过程？
+### Aspose.PDF 可以免费使用吗？
+Aspose.PDF 提供免费试用，但要获得完整功能，您需要购买许可证。查看[购买页面](https://purchase.aspose.com/buy)了解更多详情。
 
-答：Aspose.PDF for .NET 提供了一个用户友好的 API，允许您轻松地从 PDF 文件中删除所有附件。提供的源代码演示了分步过程。
+### 在哪里可以找到更多文档？
+您可以找到有关 Aspose.PDF for .NET 的全面文档[这里](https://reference.aspose.com/pdf/net/).
 
-#### 问：我可以使用本教程有选择地删除特定附件吗？
-
-答：不，本教程的重点是从 PDF 文档中删除所有附件。如果您需要删除特定附件，您可以探索 Aspose.PDF for .NET 的 API 以进行更高级的附件管理。
-
-#### 问：使用此方法可以删除的附件数量有限制吗？
-
-答：使用此方法可以删除的附件数量没有严格限制。但请务必注意，PDF 文档中的所有附件都将被删除。
-
-#### 问：删除附件会影响PDF文档的主要内容吗？
-
-答：不会，删除附件不会影响PDF文档的主要内容。仅删除附件，例如附加文件或材料。
-
-#### 问：如何验证所有附件是否已成功删除？
-
-答：按照提供的源代码操作后，您可以打开生成的 PDF 文件以确认附件已从文档中删除。
-
-#### 问：附件删除完成后我可以撤消吗？
-
-答：不可以，一旦从 PDF 文件中删除附件，该操作就不可逆转。在执行此操作之前，请确保备份原始 PDF 文件。
-
-#### 问：删除附件时是否需要考虑文件大小？
-
-答：删除附件可以减少 PDF 文档的整体文件大小，从而提高文档性能和共享效率。
-
-#### 问：我可以自动删除多个 PDF 文件的附件吗？
-答：是的，您可以使用 Aspose.PDF for .NET 创建脚本或程序来自动执行批量删除多个 PDF 文件中附件的过程。
+### 如果我遇到问题，如何获得支持？
+您可以在 Aspose 社区上寻求帮助[支持论坛](https://forum.aspose.com/c/pdf/10).

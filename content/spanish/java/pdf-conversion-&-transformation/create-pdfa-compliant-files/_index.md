@@ -1,8 +1,8 @@
 ---
-title: Cree archivos compatibles con PDF/A
-linktitle: Cree archivos compatibles con PDF/A
-second_title: Aspose.PDF API de procesamiento de PDF Java
-description: Aprenda a crear archivos compatibles con PDF/A utilizando Aspose.PDF para Java. Guía paso a paso con ejemplos de código para archivos PDF estándar de la industria.
+title: Crear archivos compatibles con PDF/A
+linktitle: Crear archivos compatibles con PDF/A
+second_title: API de procesamiento de PDF de Java Aspose.PDF
+description: Aprenda a crear archivos compatibles con PDF/A con Aspose.PDF para Java. Guía paso a paso con ejemplos de código para archivos PDF estándar de la industria.
 type: docs
 weight: 18
 url: /es/java/pdf-conversion-transformation/create-pdfa-compliant-files/
@@ -12,23 +12,23 @@ url: /es/java/pdf-conversion-transformation/create-pdfa-compliant-files/
 
 La creación de documentos PDF que cumplan con el estándar PDF/A garantiza que sus archivos sean accesibles y confiables a lo largo del tiempo. Aspose.PDF para Java simplifica esta tarea con su sólido conjunto de funciones y su API fácil de usar.
 
-## Comprensión del cumplimiento de PDF/A
+## Comprender la conformidad con PDF/A
 
-La compatibilidad con PDF/A garantiza que un documento se reproducirá exactamente de la misma manera en el futuro que hoy, independientemente del software o hardware utilizado. También garantiza que el texto dentro del documento se pueda buscar y seleccionar.
+La compatibilidad con PDF/A garantiza que un documento se reproducirá exactamente de la misma manera en el futuro que en la actualidad, independientemente del software o hardware utilizado. También garantiza que el texto dentro del documento se pueda buscar y seleccionar.
 
-## Configurar su entorno de desarrollo
+## Configuración de su entorno de desarrollo
 
- Antes de comenzar, asegúrese de tener Java instalado en su sistema. Puedes descargarlo desde[aquí](https://www.java.com/download/). Además, asegúrese de tener un entorno de desarrollo integrado (IDE) como IntelliJ IDEA o Eclipse.
+ Antes de comenzar, asegúrese de tener Java instalado en su sistema. Puede descargarlo desde[aquí](https://www.java.com/download/)Además, asegúrese de tener un entorno de desarrollo integrado (IDE) como IntelliJ IDEA o Eclipse.
 
 ## Creando un nuevo proyecto Java
 
-Comience creando un nuevo proyecto Java en su IDE preferido. Asígnale un nombre y elige la configuración adecuada para tu proyecto.
+Comience por crear un nuevo proyecto Java en su IDE preferido. Asígnele un nombre y elija la configuración adecuada para su proyecto.
 
-## Agregar Aspose.PDF para Java a su proyecto
+## Cómo agregar Aspose.PDF para Java a su proyecto
 
- Para utilizar Aspose.PDF para Java, debe agregar la biblioteca Aspose.PDF a su proyecto. Puedes descargarlo desde el[Aspose.PDF para Java](https://releases.aspose.com/pdf/java/)Una vez descargado, agregue el archivo JAR al classpath de su proyecto.
+ Para utilizar Aspose.PDF para Java, debe agregar la biblioteca Aspose.PDF a su proyecto. Puede descargarla desde[Aspose.PDF para Java](https://releases.aspose.com/pdf/java/)Una vez descargado, agregue el archivo JAR a la ruta de clase de su proyecto.
 
-## Inicializando un documento PDF
+## Inicialización de un documento PDF
 
 En su código Java, importe las clases necesarias de la biblioteca Aspose.PDF y cree un nuevo objeto de documento PDF.
 
@@ -41,7 +41,7 @@ Document pdfDocument = new Document();
 
 ## Agregar contenido al PDF
 
-Puede agregar varios elementos a su PDF, incluidos texto, imágenes y tablas. A continuación se muestra un ejemplo de cómo agregar texto al documento:
+Puede agregar varios elementos a su PDF, incluidos texto, imágenes y tablas. A continuación, se muestra un ejemplo de cómo agregar texto al documento:
 
 ```java
 import com.aspose.pdf.Page;
@@ -53,29 +53,29 @@ Page page = pdfDocument.getPages().add();
 // Crear un fragmento de texto
 TextFragment textFragment = new TextFragment("Hello, PDF/A!");
 
-// Añade el fragmento de texto a la página.
+// Añade el fragmento de texto a la página
 page.getParagraphs().add(textFragment);
 ```
 
-## Configuración del nivel de cumplimiento de PDF/A
+## Configuración del nivel de conformidad con PDF/A
 
-Para garantizar la conformidad con PDF/A, establezca el nivel de conformidad del documento PDF:
+Para garantizar la conformidad con PDF/A, configure el nivel de conformidad del documento PDF:
 
 ```java
 import com.aspose.pdf.PdfFormat;
 
-// Establecer el nivel de cumplimiento de PDF/A
+// Establecer el nivel de conformidad con PDF/A
 pdfDocument.setPdfFormat(PdfFormat.PDF_A_1B);
 ```
 
-## Validación del cumplimiento de PDF/A
+## Validación de la conformidad con PDF/A
 
 Aspose.PDF para Java proporciona herramientas de validación integradas para comprobar si su documento es compatible con PDF/A:
 
 ```java
 import com.aspose.pdf.PdfFormatConversionOptions;
 
-// Validar el cumplimiento de PDF/A
+// Validar la conformidad con PDF/A
 PdfFormatConversionOptions conversionOptions = new PdfFormatConversionOptions(PdfFormat.PDF_A_1B, new PdfFormatConversionOptions(), 1000);
 boolean isCompliant = pdfDocument.validate(conversionOptions);
 ```
@@ -85,23 +85,23 @@ boolean isCompliant = pdfDocument.validate(conversionOptions);
 Guarde el documento compatible con PDF/A en un archivo:
 
 ```java
-// Guarde el archivo PDF/A
+// Guardar el archivo PDF/A
 pdfDocument.save("output.pdf");
 ```
 
 ## Funciones adicionales y personalización
 
-Aspose.PDF para Java ofrece una amplia gama de funciones para personalizar sus documentos PDF, incluida la adición de encabezados, pies de página, marcas de agua y más. Explorar el[documentación](https://reference.aspose.com/pdf/java/) para obtener información detallada sobre las opciones de personalización.
+Aspose.PDF para Java ofrece una amplia gama de funciones para personalizar sus documentos PDF, como agregar encabezados, pies de página, marcas de agua y más. Explore[documentación](https://reference.aspose.com/pdf/java/) para obtener información detallada sobre las opciones de personalización.
 
 ## Conclusión
 
-Crear archivos compatibles con PDF/A utilizando Aspose.PDF para Java es un proceso sencillo que garantiza la accesibilidad y confiabilidad a largo plazo de sus documentos. Comience a incorporar la compatibilidad con PDF/A en sus proyectos hoy para mejorar la preservación de los documentos.
+Crear archivos compatibles con PDF/A con Aspose.PDF para Java es un proceso sencillo que garantiza la accesibilidad y la fiabilidad a largo plazo de sus documentos. Comience hoy mismo a incorporar la compatibilidad con PDF/A en sus proyectos para mejorar la conservación de los documentos.
 
 ## Preguntas frecuentes
 
 ### ¿Cómo agrego imágenes a un documento PDF usando Aspose.PDF para Java?
 
- Para agregar imágenes a un documento PDF, puede utilizar el`Image` clase de Aspose.PDF para Java. Aquí hay un ejemplo básico:
+ Para agregar imágenes a un documento PDF, puede utilizar el`Image` Clase de Aspose.PDF para Java. A continuación se muestra un ejemplo básico:
 
 ```java
 import com.aspose.pdf.Image;
@@ -110,7 +110,7 @@ import com.aspose.pdf.Image;
 Image image = new Image();
 image.setFile("image.jpg");
 
-// Agregar la imagen a una página del documento PDF
+// Agregar la imagen a una página en el documento PDF
 page.getParagraphs().add(image);
 ```
 
@@ -120,11 +120,11 @@ Sí, puede proteger con contraseña un documento compatible con PDF/A utilizando
 
 ### ¿Aspose.PDF para Java es compatible con Java 11?
 
-Sí, Aspose.PDF para Java es compatible con Java 11 y versiones más recientes. Asegúrese de tener instalada la versión de Java adecuada en su sistema para una integración fluida.
+Sí, Aspose.PDF para Java es compatible con Java 11 y versiones más nuevas. Asegúrese de tener la versión de Java adecuada instalada en su sistema para una integración sin problemas.
 
 ### ¿Cómo puedo agregar hipervínculos al texto en un documento PDF?
 
- Para agregar hipervínculos al texto en un documento PDF, puede utilizar el`LinkAnnotation` clase de Aspose.PDF para Java. He aquí un ejemplo sencillo:
+ Para agregar hipervínculos al texto en un documento PDF, puede utilizar el`LinkAnnotation` Clase de Aspose.PDF para Java. A continuación, se muestra un ejemplo sencillo:
 
 ```java
 import com.aspose.pdf.LinkAnnotation;
@@ -135,13 +135,13 @@ link.setAction(new GoToURIAction("https://ejemplo.com"));
 link.setBorderStyle(new BorderStyle());
 link.setHighlightMode(HighlightMode.INVERT);
 
-// Añade el enlace a la página.
+// Añade el enlace a la página
 page.getAnnotations().add(link);
 ```
 
 ### ¿Cómo puedo extraer texto de un documento PDF usando Aspose.PDF para Java?
 
- Puede extraer texto de un documento PDF utilizando el`TextAbsorber` clase proporcionada por Aspose.PDF para Java. Aquí hay un ejemplo básico:
+ Puede extraer texto de un documento PDF utilizando el`TextAbsorber` Clase proporcionada por Aspose.PDF para Java. A continuación se muestra un ejemplo básico:
 
 ```java
 import com.aspose.pdf.TextAbsorber;

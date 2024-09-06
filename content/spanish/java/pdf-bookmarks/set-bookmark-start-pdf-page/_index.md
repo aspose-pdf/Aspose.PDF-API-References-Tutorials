@@ -1,32 +1,32 @@
 ---
 title: Establecer marcador al inicio de la página PDF
 linktitle: Establecer marcador al inicio de la página PDF
-second_title: Aspose.PDF API de procesamiento de PDF Java
-description: Aprenda a establecer marcadores al inicio de las páginas PDF usando Aspose.PDF para Java. Nuestra guía paso a paso hace que la navegación en PDF sea muy sencilla.
+second_title: API de procesamiento de PDF de Java Aspose.PDF
+description: Aprenda a colocar marcadores al comienzo de las páginas de un PDF con Aspose.PDF para Java. Nuestra guía paso a paso facilita la navegación en PDF.
 type: docs
 weight: 12
 url: /es/java/pdf-bookmarks/set-bookmark-start-pdf-page/
 ---
 
-## Introducción a Establecer marcador al inicio de la página PDF
+## Introducción a la función Establecer marcador al inicio de la página PDF
 
-Aspose.PDF para Java es una poderosa biblioteca para trabajar con documentos PDF en aplicaciones Java. En este tutorial, aprenderemos cómo establecer un marcador al inicio de una página PDF usando Aspose.PDF para Java. Los marcadores son una forma cómoda de navegar por documentos PDF grandes y, con Aspose.PDF, puedes agregarlos fácilmente a tus archivos PDF.
+Aspose.PDF para Java es una potente biblioteca para trabajar con documentos PDF en aplicaciones Java. En este tutorial, aprenderemos a establecer un marcador al comienzo de una página PDF utilizando Aspose.PDF para Java. Los marcadores son una forma cómoda de navegar por documentos PDF de gran tamaño y, con Aspose.PDF, puede agregarlos fácilmente a sus archivos PDF.
 
 ## ¿Qué es Aspose.PDF para Java?
 
-Aspose.PDF para Java es una biblioteca Java que permite a los desarrolladores crear, manipular y renderizar documentos PDF en sus aplicaciones Java. Proporciona una amplia gama de funciones para trabajar con archivos PDF, incluida la creación, edición y conversión de archivos PDF.
+Aspose.PDF para Java es una biblioteca Java que permite a los desarrolladores crear, manipular y renderizar documentos PDF en sus aplicaciones Java. Ofrece una amplia gama de funciones para trabajar con archivos PDF, incluidas la creación, edición y conversión de archivos PDF.
 
-## Configurando su entorno Java
+## Configuración del entorno Java
 
-Antes de comenzar a trabajar con Aspose.PDF para Java, debe configurar su entorno de desarrollo Java. Asegúrese de tener Java JDK (Java Development Kit) instalado en su sistema.
+Antes de comenzar a trabajar con Aspose.PDF para Java, debe configurar su entorno de desarrollo de Java. Asegúrese de tener instalado Java JDK (Java Development Kit) en su sistema.
 
-## Agregar Aspose.PDF a su proyecto
+## Cómo agregar Aspose.PDF a su proyecto
 
-Para usar Aspose.PDF para Java en su proyecto, debe agregar la biblioteca Aspose.PDF a las dependencias de su proyecto. Puede hacerlo descargando el archivo JAR Aspose.PDF del sitio web e incluyéndolo en su proyecto.
+Para utilizar Aspose.PDF para Java en su proyecto, debe agregar la biblioteca Aspose.PDF a las dependencias de su proyecto. Puede hacerlo descargando el archivo JAR Aspose.PDF del sitio web e incluyéndolo en su proyecto.
 
-## Crear un documento PDF
+## Creación de un documento PDF
 
- Comencemos creando un nuevo documento PDF usando Aspose.PDF para Java. Puedes crear una instancia del`Document` clase, que representa un documento PDF, y luego agregarle páginas.
+ Comencemos por crear un nuevo documento PDF con Aspose.PDF para Java. Puede crear una instancia de`Document` clase, que representa un documento PDF y luego agregarle páginas.
 
 ```java
 // Crear un nuevo documento PDF
@@ -47,12 +47,12 @@ TextFragment textFragment = new TextFragment("This is the start of the page.");
 page.getParagraphs().add(textFragment);
 ```
 
-## Establecer un marcador al inicio de una página
+## Establecer un marcador al comienzo de una página
 
- Ahora, establezcamos un marcador al inicio de la página que creamos. Los marcadores se agregan a la`Outline` colección del documento PDF. Puede especificar el título y la página de destino del marcador.
+ Ahora, vamos a establecer un marcador al comienzo de la página que hemos creado. Los marcadores se agregan al comienzo de la página.`Outline` Colección de documentos PDF. Puede especificar el título y la página de destino del marcador.
 
 ```java
-// Crear un marcador al inicio de la página.
+// Crear un marcador al inicio de la página
 OutlineItemCollection outlines = pdfDocument.getOutlines();
 OutlineItemCollection outlineItem = new OutlineItemCollection(outlines);
 outlineItem.setTitle("Start of Page");
@@ -60,32 +60,32 @@ outlineItem.setDestination(new XYZExplicitDestination(1, 0, 0, 0));
 outlines.add(outlineItem);
 ```
 
-## Personalizando el marcador
+## Personalizar el marcador
 
-Puede personalizar la apariencia y el comportamiento del marcador según sus requisitos. Aspose.PDF para Java proporciona varias propiedades y métodos para ajustar los marcadores.
+Puede personalizar la apariencia y el comportamiento del marcador según sus necesidades. Aspose.PDF para Java ofrece varias propiedades y métodos para ajustar los marcadores.
 
 ## Guardar el documento PDF
 
-Una vez que haya agregado contenido y marcadores a su documento PDF, puede guardarlo en un archivo o secuencia. Así es como puedes guardarlo en un archivo:
+Después de agregar contenido y marcadores a su documento PDF, puede guardarlo en un archivo o secuencia. A continuación, le indicamos cómo hacerlo:
 
 ```java
-// Guarde el documento PDF en un archivo
+// Guardar el documento PDF en un archivo
 pdfDocument.save("sample.pdf");
 ```
 
 ## Conclusión
 
-En este tutorial, hemos aprendido cómo establecer un marcador al inicio de una página PDF usando Aspose.PDF para Java. Aspose.PDF proporciona un conjunto completo de herramientas para trabajar con documentos PDF en aplicaciones Java, lo que facilita la creación, edición y administración de archivos PDF.
+En este tutorial, hemos aprendido a establecer un marcador al comienzo de una página PDF utilizando Aspose.PDF para Java. Aspose.PDF ofrece un conjunto completo de herramientas para trabajar con documentos PDF en aplicaciones Java, lo que facilita la creación, edición y gestión de archivos PDF.
 
 # Preguntas frecuentes
 
 ### ¿Cómo instalo Aspose.PDF para Java?
 
-Para instalar Aspose.PDF para Java, puede descargar la biblioteca desde el sitio web de Aspose y agregarla a su proyecto Java como una dependencia. Asegúrese de consultar la documentación para obtener instrucciones detalladas de instalación.
+Para instalar Aspose.PDF para Java, puede descargar la biblioteca desde el sitio web de Aspose y agregarla a su proyecto Java como una dependencia. Asegúrese de consultar la documentación para obtener instrucciones de instalación detalladas.
 
 ### ¿Puedo configurar varios marcadores en un documento PDF?
 
-Sí, puede configurar varios marcadores en un documento PDF utilizando Aspose.PDF para Java. Puede crear una jerarquía de esquema con múltiples niveles de marcadores para organizar el contenido de su documento.
+Sí, puedes configurar varios marcadores en un documento PDF con Aspose.PDF para Java. Puedes crear una jerarquía de esquema con varios niveles de marcadores para organizar el contenido de tu documento.
 
 ### ¿Aspose.PDF es adecuado para proyectos comerciales?
 
@@ -93,8 +93,8 @@ Sí, Aspose.PDF es adecuado para proyectos comerciales. Es una biblioteca sólid
 
 ### ¿Cuáles son los requisitos del sistema para Aspose.PDF para Java?
 
-Aspose.PDF para Java es compatible con Java 1.6 o superior. Asegúrese de que su entorno Java cumpla con los requisitos mínimos especificados en la documentación.
+Aspose.PDF para Java es compatible con Java 1.6 o versiones posteriores. Asegúrese de que su entorno Java cumpla con los requisitos mínimos especificados en la documentación.
 
 ### ¿Dónde puedo encontrar más tutoriales de Aspose.PDF para Java?
 
-Puede encontrar más tutoriales y documentación de Aspose.PDF para Java en el sitio web de Aspose. Además, puede explorar la documentación de Aspose.PDF para conocer en detalle sus capacidades y uso.
+Puede encontrar más tutoriales y documentación de Aspose.PDF para Java en el sitio web de Aspose. Además, puede explorar la documentación de Aspose.PDF para conocer sus capacidades y uso en detalle.

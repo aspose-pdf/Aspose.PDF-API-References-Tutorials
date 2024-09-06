@@ -1,52 +1,52 @@
 ---
-title: Agregue un sello de imagen como fondo en un cuadro flotante de PDF usando Java
-linktitle: Agregue un sello de imagen como fondo en un cuadro flotante de PDF usando Java
-second_title: Aspose.PDF API de procesamiento de PDF Java
-description: Aprenda a agregar sellos de imágenes como fondos en archivos PDF usando Java y Aspose.PDF para Java. Guía paso a paso con ejemplos de códigos para información y marcas personalizadas.
+title: Agregar un sello de imagen como fondo en un cuadro flotante de PDF usando Java
+linktitle: Agregar un sello de imagen como fondo en un cuadro flotante de PDF usando Java
+second_title: API de procesamiento de PDF de Java Aspose.PDF
+description: Aprenda a agregar sellos de imagen como fondo en archivos PDF con Java y Aspose.PDF para Java. Guía paso a paso con ejemplos de código para personalizar la marca y la información.
 type: docs
 weight: 10
 url: /es/java/pdf-document-operations/add-image-stamp-as-background-in-floating-box-of-pdf-using-java/
 ---
 
-## Introducción a los sellos de imágenes
+## Introducción a los sellos de imagen
 
-Los sellos de imagen son elementos gráficos que se agregan a los documentos PDF. Sirven para diversos fines, como agregar logotipos, marcas de agua o anotaciones para hacer que el documento sea más atractivo o informativo visualmente.
+Los sellos de imagen son elementos gráficos que se agregan a los documentos PDF. Sirven para diversos propósitos, como agregar logotipos, marcas de agua o anotaciones para que el documento sea más atractivo visualmente o informativo.
 
-## Requisitos previos
+## Prerrequisitos
 
-Antes de comenzar, asegúrese de cumplir con los siguientes requisitos previos:
+Antes de comenzar, asegúrese de tener los siguientes requisitos previos:
 
-- Kit de desarrollo Java (JDK) instalado
+- Kit de desarrollo de Java (JDK) instalado
 - Entorno de desarrollo integrado (IDE) para Java, como IntelliJ IDEA o Eclipse
--  Aspose.PDF para la biblioteca Java. Puedes descargarlo desde[aquí](https://releases.aspose.com/pdf/java/).
+-  Biblioteca Aspose.PDF para Java. Puede descargarla desde[aquí](https://releases.aspose.com/pdf/java/).
 
 ## ¿Qué es Aspose.PDF para Java?
 
-Aspose.PDF para Java es una potente API que permite a los desarrolladores trabajar con archivos PDF en sus aplicaciones Java. Proporciona una amplia gama de funciones para crear, manipular y optimizar documentos PDF, lo que la convierte en una herramienta valiosa para empresas y personas que trabajan con archivos PDF con regularidad.
+Aspose.PDF para Java es una potente API que permite a los desarrolladores trabajar con archivos PDF en sus aplicaciones Java. Ofrece una amplia gama de funciones para crear, manipular y optimizar documentos PDF, lo que la convierte en una herramienta valiosa para empresas y personas que trabajan con archivos PDF de forma habitual.
 
-## Comprender los sellos de imagen
+## Comprensión de los sellos de imagen
 
-Los sellos de imagen en archivos PDF son elementos gráficos que se pueden agregar a un documento para transmitir información o marca. En este tutorial, nos centraremos en agregar sellos de imágenes como fondos dentro de cuadros flotantes, lo que puede resultar particularmente útil para crear plantillas, membretes o formularios.
+Los sellos de imagen en archivos PDF son elementos gráficos que se pueden agregar a un documento para transmitir información o marca. En este tutorial, nos centraremos en agregar sellos de imagen como fondos dentro de cuadros flotantes, lo que puede resultar particularmente útil para crear plantillas, membretes o formularios.
 
-## Preparando su entorno de desarrollo
+## Preparación del entorno de desarrollo
 
- Antes de profundizar en el código, debe configurar su entorno de desarrollo. Asegúrese de tener la biblioteca Aspose.PDF para Java instalada y configurada en su proyecto Java. Puedes descargar la biblioteca desde[aquí](https://releases.aspose.com/pdf/java/).
+ Antes de sumergirnos en el código, debes configurar tu entorno de desarrollo. Asegúrate de tener la biblioteca Aspose.PDF para Java instalada y configurada en tu proyecto Java. Puedes descargar la biblioteca desde[aquí](https://releases.aspose.com/pdf/java/).
 
-## Crear un documento PDF
+## Creación de un documento PDF
 
-Para comenzar, creemos un nuevo documento PDF usando Aspose.PDF para Java. Crearemos un documento en blanco al que luego podremos agregar el sello de imagen.
+Para comenzar, vamos a crear un nuevo documento PDF con Aspose.PDF para Java. Crearemos un documento en blanco al que luego podremos agregar el sello de imagen.
 
 ```java
-// Código Java para crear un documento PDF.
+// Código Java para crear un documento PDF
 Document pdfDocument = new Document();
 ```
 
-## Agregar un sello de imagen
+## Cómo añadir un sello de imagen
 
- A continuación, agregaremos un sello de imagen al documento PDF. Deberías tener tu archivo de imagen listo para este paso. Usaremos el`addStamp` Método para agregar la imagen como sello.
+ A continuación, agregaremos un sello de imagen al documento PDF. Debe tener el archivo de imagen listo para este paso. Usaremos el`addStamp` Método para agregar la imagen como sello.
 
 ```java
-// Código Java para agregar un sello de imagen.
+// Código Java para agregar un sello de imagen
 Stamp stamp = new Stamp();
 stamp.setBackground(true);
 stamp.setOpacity(0.5);
@@ -56,26 +56,26 @@ stamp.setHeight(100);
 // Cargar la imagen desde un archivo
 stamp.setImage("path/to/your/image.png");
 
-// Agregue el sello a la página PDF
+// Añade el sello a la página PDF
 pdfDocument.getPages().get_Item(1).addStamp(stamp);
 ```
 
-## Configurar el sello de imagen
+## Configuración del sello de imagen
 
-Puede configurar varias propiedades del sello de imagen, como su posición, tamaño, opacidad y más. Ajuste estas configuraciones para adaptarlas a sus requisitos específicos.
+Puede configurar varias propiedades del sello de imagen, como su posición, tamaño, opacidad y más. Ajuste estas configuraciones para que se adapten a sus requisitos específicos.
 
 ## Guardar el documento PDF
 
-Una vez que haya agregado el sello de imagen, puede guardar el documento PDF con el sello incluido. Elija una ruta de archivo adecuada y utilice el siguiente código:
+Una vez que hayas añadido el sello de imagen, puedes guardar el documento PDF con el sello incluido. Elige una ruta de archivo adecuada y utiliza el siguiente código:
 
 ```java
-// Código Java para guardar el documento PDF.
+// Código Java para guardar el documento PDF
 pdfDocument.save("output.pdf");
 ```
 
 ## Ejecutando el código Java
 
-Compile y ejecute el código Java para generar el documento PDF con el sello de imagen. Debería ver el sello de imagen agregado como fondo dentro de un cuadro flotante.
+Compila y ejecuta el código Java para generar el documento PDF con el sello de imagen. Deberías ver el sello de imagen agregado como fondo dentro de un cuadro flotante.
 
 ## Opciones de personalización adicionales
 
@@ -83,26 +83,26 @@ Aspose.PDF para Java ofrece muchas opciones de personalización para sellos de i
 
 ## Conclusión
 
-En este tutorial, aprendimos cómo agregar un sello de imagen como fondo en un cuadro flotante de un documento PDF usando Java y Aspose.PDF para la API de Java. Esta puede ser una característica valiosa para crear documentos PDF profesionales con información y marca personalizadas.
+En este tutorial, aprendimos a agregar un sello de imagen como fondo en un cuadro flotante de un documento PDF mediante Java y la API Aspose.PDF para Java. Esta puede ser una característica valiosa para crear documentos PDF profesionales con información y marca personalizadas.
 
 ## Preguntas frecuentes
 
-### ¿Cómo puedo cambiar la posición del sello de la imagen en el PDF?
+### ¿Cómo puedo cambiar la posición del sello de imagen en el PDF?
 
- Puede ajustar la posición del sello de imagen modificando sus coordenadas X e Y usando el`stamp.setX` y`stamp.setY` métodos.
+ Puede ajustar la posición del sello de imagen modificando sus coordenadas X e Y utilizando el`stamp.setX` y`stamp.setY` métodos.
 
-### ¿Puedo agregar varios sellos de imágenes al mismo documento PDF?
+### ¿Puedo agregar varios sellos de imagen al mismo documento PDF?
 
-Sí, puede agregar varios sellos de imágenes a un documento PDF repitiendo el proceso de estampado para cada imagen.
+Sí, puede agregar varios sellos de imagen a un documento PDF repitiendo el proceso de estampado para cada imagen.
 
 ### ¿Aspose.PDF para Java es adecuado para uso comercial?
 
-Sí, Aspose.PDF para Java es adecuado tanto para uso comercial como personal. Ofrece opciones de licencia para adaptarse a diversas necesidades.
+Sí, Aspose.PDF para Java es adecuado tanto para uso comercial como personal. Ofrece opciones de licencia para adaptarse a distintas necesidades.
 
-### ¿Puedo agregar sellos de texto junto con sellos de imágenes?
+### ¿Puedo agregar sellos de texto junto con sellos de imagen?
 
-¡Ciertamente! Puede agregar sellos de texto junto con sellos de imágenes para proporcionar información o etiquetas adicionales en sus documentos PDF.
+¡Por supuesto! Puedes agregar sellos de texto junto con sellos de imagen para brindar información adicional o etiquetas en tus documentos PDF.
 
-### ¿Dónde puedo encontrar más ejemplos y documentación para Aspose.PDF para Java?
+### ¿Dónde puedo encontrar más ejemplos y documentación de Aspose.PDF para Java?
 
  Puede encontrar documentación completa y ejemplos en la página de documentación de Aspose.PDF para Java:[aquí](https://reference.aspose.com/pdf/java/).

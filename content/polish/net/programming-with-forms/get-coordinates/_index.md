@@ -1,17 +1,17 @@
 ---
-title: Uzyskaj współrzędne pola formularza PDF
-linktitle: Uzyskaj współrzędne pola formularza PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Z łatwością uzyskaj współrzędne pól formularza PDF w dokumentach PDF za pomocą Aspose.PDF dla .NET.
+title: Pobierz współrzędne pola formularza PDF
+linktitle: Pobierz współrzędne pola formularza PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwo uzyskaj współrzędne pól formularza PDF w dokumentach PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 120
 url: /pl/net/programming-with-forms/get-coordinates/
 ---
-W tym samouczku pokażemy, jak uzyskać współrzędne pola formularza PDF za pomocą Aspose.PDF dla .NET. Krok po kroku wyjaśnimy kod źródłowy C#, aby poprowadzić Cię przez ten proces.
+W tym samouczku pokażemy Ci, jak uzyskać współrzędne pola formularza PDF za pomocą Aspose.PDF dla .NET. Wyjaśnimy kod źródłowy C# krok po kroku, aby przeprowadzić Cię przez ten proces.
 
 ## Krok 1: Przygotowanie
 
-Upewnij się, że zaimportowałeś niezbędne biblioteki i ustaw ścieżkę do katalogu dokumentów:
+Upewnij się, że zaimportowałeś niezbędne biblioteki i ustawiłeś ścieżkę do katalogu dokumentów:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -27,7 +27,7 @@ Document doc1 = new Document(dataDir + "input.pdf");
 
 ## Krok 3: Znajdź dodane pola
 
-Znajdź dodane pola formularza (w tym przykładzie używamy pól „Pozycja1”, „Pozycja2” i „Pozycja3”):
+Znajdź dodane pola formularza (w tym przykładzie używamy pól „Item1”, „Item2” i „Item3”):
 
 ```csharp
 RadioButtonField field0 = doc1.Form["Item1"] as RadioButtonField;
@@ -37,7 +37,7 @@ RadioButtonField field2 = doc1.Form["Item3"] as RadioButtonField;
 
 ## Krok 4: Wyświetl pozycje podelementów dla każdego pola
 
-Przełączaj opcje dla każdego pola i przeglądaj współrzędne każdego elementu podrzędnego:
+Przechodź między opcjami dla każdego pola i wyświetlaj współrzędne dla każdego podelementu:
 
 ```csharp
 foreach(RadioButtonOptionField option in field0)
@@ -54,7 +54,7 @@ Console.WriteLine(option.Rect);
 }
 ```
 
-### Przykładowy kod źródłowy narzędzia Pobierz współrzędne przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Pobierz współrzędne przy użyciu Aspose.PDF dla .NET 
 ```csharp
 try
 {
@@ -88,26 +88,26 @@ catch (Exception ex)
 
 ## Wniosek
 
-W tym samouczku nauczyliśmy się, jak uzyskać współrzędne pola formularza za pomocą Aspose.PDF dla .NET. Wykonując poniższe kroki, możesz łatwo pobrać współrzędne elementów podrzędnych pól formularza w dokumentach PDF za pomocą Aspose.PDF.
+W tym samouczku nauczyliśmy się, jak uzyskać współrzędne pól formularza za pomocą Aspose.PDF dla .NET. Wykonując te kroki, możesz łatwo pobrać współrzędne podelementów pól formularza w dokumentach PDF za pomocą Aspose.PDF.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Czy mogę użyć tej metody, aby uzyskać współrzędne dowolnego typu pola formularza w Aspose.PDF dla .NET?
+#### P: Czy mogę użyć tej metody, aby uzyskać współrzędne dowolnego typu pola formularza w pliku Aspose.PDF dla platformy .NET?
 
-Odp.: Tak, możesz użyć tej metody, aby uzyskać współrzędne dla różnych typów pól formularzy w Aspose.PDF dla .NET. Dostarczony kod źródłowy C# pokazuje, jak uzyskać współrzędne dla pól RadioButton, ale możesz dostosować to samo podejście do innych typów pól formularzy, takich jak TextBox, CheckBox, ListBox i nie tylko.
+A: Tak, możesz użyć tej metody, aby uzyskać współrzędne dla różnych typów pól formularza w Aspose.PDF dla .NET. Dostarczony kod źródłowy C# pokazuje, jak uzyskać współrzędne dla pól RadioButton, ale możesz dostosować to samo podejście do innych typów pól formularza, takich jak TextBox, CheckBox, ListBox i inne.
 
-#### P: Jak mogę zmodyfikować lub dostosować współrzędne pola formularza?
+#### P: W jaki sposób mogę zmodyfikować lub dostosować współrzędne pól formularza?
 
-Odp.: Współrzędne pól formularza są oparte na układzie współrzędnych dokumentu PDF, gdzie początek (0,0) znajduje się w lewym dolnym rogu strony. Aby zmodyfikować lub dostosować współrzędne pola formularza, możesz zaktualizować plik`Rect` właściwość odpowiedniego pola formularza lub jego elementów podrzędnych, taka jak RadioButtonOptionField.
+A: Współrzędne pola formularza są oparte na układzie współrzędnych dokumentu PDF, gdzie początek (0,0) znajduje się w lewym dolnym rogu strony. Aby zmodyfikować lub dostosować współrzędne pola formularza, możesz zaktualizować`Rect` właściwość odpowiedniego pola formularza lub jego podelementów, np. RadioButtonOptionField.
 
 #### P: Czy mogę programowo dodać współrzędne pól formularza do dokumentu PDF?
 
-O: Tak, możesz uzyskać współrzędne pól formularza, które zostały programowo dodane do dokumentu PDF. Aspose.PDF dla .NET umożliwia dynamiczne dodawanie pól formularzy, a po dodaniu można pobrać ich współrzędne, korzystając z podejścia zademonstrowanego w tym samouczku.
+A: Tak, możesz uzyskać współrzędne pól formularza, które zostały dodane programowo do dokumentu PDF. Aspose.PDF dla .NET umożliwia dynamiczne dodawanie pól formularza, a po dodaniu możesz pobrać ich współrzędne, korzystając z podejścia zademonstrowanego w tym samouczku.
 
-#### P: Jaki jest cel pobierania współrzędnych pola formularza?
+#### P: Jaki jest cel pobierania współrzędnych pól formularza?
 
-O: Pobieranie współrzędnych pól formularza może być pomocne, gdy trzeba wykonać określone operacje związane z układem lub sprawdzić poprawność pól formularza w dokumencie PDF. Umożliwia dokładne ustawienie i wyrównanie pól formularzy na podstawie ich współrzędnych, zapewniając ich prawidłowe wyświetlanie w dokumencie i zapewniając bezproblemową obsługę.
+A: Pobieranie współrzędnych pól formularza może być pomocne, gdy trzeba wykonać określone operacje związane z układem lub walidacje pól formularza w dokumencie PDF. Umożliwia dokładne pozycjonowanie i wyrównywanie pól formularza na podstawie ich współrzędnych, zapewniając, że będą one poprawnie wyświetlane w dokumencie i zapewnią płynne działanie użytkownika.
 
-#### P: Czy współrzędne pól formularza są wyrażone w punktach czy w innej jednostce?
+#### P: Czy współrzędne pól formularza wyrażone są w punktach czy w innych jednostkach?
 
-Odp.: Współrzędne pola formularza w Aspose.PDF dla .NET są wyrażone w punktach. Jeden punkt odpowiada 1/72 cala, co czyni go standardową jednostką miary w formacie PDF.
+A: Współrzędne pola formularza w Aspose.PDF dla .NET są wyrażone w punktach. Jeden punkt odpowiada 1/72 cala, co czyni go standardową jednostką miary w formacie PDF.

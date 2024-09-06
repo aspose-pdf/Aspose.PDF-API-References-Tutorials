@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 2: Laddar PDF-dokumentet
 
-Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Här är hur:
+Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Så här gör du:
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -58,9 +58,9 @@ imageStamp. Opacity = 0.5;
 
 Du kan anpassa dessa egenskaper efter dina behov.
 
-## Steg 5: Lägga till bildstämpeln i PDF:en
+## Steg 5: Lägga till bildstämpeln till PDF:en
 
-Nu när bildstämpeln är klar kan du lägga till den på en specifik sida i PDF-dokumentet. Här är hur:
+Nu när bildstämpeln är klar kan du lägga till den på en specifik sida i PDF-dokumentet. Så här gör du:
 
 ```csharp
 // Lägg till rambufferten på den specifika sidan
@@ -71,7 +71,7 @@ Koden ovan lägger till bildbufferten på första sidan i PDF-dokumentet. Du kan
 
 ## Steg 6: Spara utdatadokumentet
 
-När du har lagt till bildbufferten kan du spara det ändrade PDF-dokumentet. Här är hur:
+När du har lagt till bildbufferten kan du spara det ändrade PDF-dokumentet. Så här gör du:
 
 ```csharp
 // Spara utdatadokumentet

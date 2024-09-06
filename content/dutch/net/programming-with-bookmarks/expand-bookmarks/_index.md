@@ -1,158 +1,125 @@
 ---
-title: Vouw bladwijzers uit in PDF-bestand
-linktitle: Vouw bladwijzers uit in PDF-bestand
+title: Bladwijzers in PDF-bestand uitbreiden
+linktitle: Bladwijzers in PDF-bestand uitbreiden
 second_title: Aspose.PDF voor .NET API-referentie
-description: Breid eenvoudig bladwijzers uit in een PDF-bestand voor verbeterde navigatie met Aspose.PDF voor .NET.
+description: Leer hoe u bladwijzers in PDF-bestanden kunt uitbreiden met Aspose.PDF voor .NET met deze stapsgewijze handleiding. Perfect voor ontwikkelaars die PDF-navigatie willen verbeteren.
 type: docs
 weight: 50
 url: /nl/net/programming-with-bookmarks/expand-bookmarks/
 ---
-Als u bladwijzers in een PDF-bestand uitvouwt, worden standaard alle geopende bladwijzers weergegeven. Met Aspose.PDF voor .NET kunt u eenvoudig bladwijzers uitbreiden door de volgende broncode te volgen:
+## Invoering
 
-## Stap 1: Importeer de vereiste bibliotheken
+Heb je ooit een PDF-bestand geopend en ontdekt dat alle bladwijzers zijn samengevouwen? Dat kan frustrerend zijn, vooral als je door een lang document probeert te navigeren. Gelukkig kun je met Aspose.PDF voor .NET eenvoudig bladwijzers in je PDF-bestanden programmatisch uitvouwen. Deze gids leidt je stap voor stap door het proces, zodat je elk onderdeel van de code begrijpt en weet hoe het werkt. Pak dus je favoriete drankje en duik in de wereld van PDF-manipulatie!
 
-Voordat u begint, moet u de benodigde bibliotheken voor uw C#-project importeren. Hier is de noodzakelijke importrichtlijn:
+## Vereisten
+
+Voordat we beginnen, zijn er een paar dingen die u moet regelen:
+
+1. Visual Studio: Zorg ervoor dat u Visual Studio op uw machine hebt geïnstalleerd. Het is de beste omgeving voor .NET-ontwikkeling.
+2.  Aspose.PDF voor .NET: U moet de Aspose.PDF-bibliotheek downloaden en installeren. U kunt deze vinden[hier](https://releases.aspose.com/pdf/net/).
+3. Basiskennis van C#: Kennis van C#-programmering helpt u de codefragmenten beter te begrijpen.
+
+## Pakketten importeren
+
+Om te beginnen moet u de benodigde pakketten importeren in uw C#-project. Dit is hoe u dat kunt doen:
+
+### Een nieuw project maken
+
+Open Visual Studio en maak een nieuw C#-project. U kunt een Console Application kiezen voor de eenvoud.
+
+### Voeg Aspose.PDF-referentie toe
+
+1. Klik met de rechtermuisknop op uw project in de Solution Explorer.
+2. Selecteer 'NuGet-pakketten beheren'.
+3. Zoek naar "Aspose.PDF" en installeer de nieuwste versie.
+
+### Importeer de naamruimte
+
+Importeer bovenaan uw C#-bestand de Aspose.PDF-naamruimte:
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 ```
 
-## Stap 2: Stel het pad naar de documentenmap in
+Nu alles is ingesteld, kunnen we verder met de daadwerkelijke code!
 
- In deze stap moet u het pad opgeven naar de map met het PDF-bestand waarvan u de bladwijzers wilt uitvouwen. Vervangen`"YOUR DOCUMENT DIRECTORY"`in de volgende code met het daadwerkelijke pad naar uw documentenmap:
+## Stap 1: Stel uw documentenmap in
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+Eerst moet u het pad naar uw documentenmap opgeven. Dit is waar uw invoer-PDF-bestand zich bevindt en waar het uitvoerbestand wordt opgeslagen.
 
-## Stap 3: Open het PDF-document
-
-Nu openen we het PDF-document waarvan we de bladwijzers willen uitbreiden met behulp van de volgende code:
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
-## Stap 4: Stel de paginaweergavemodus in
-
-In deze stap stellen we de paginaweergavemodus in om standaard bladwijzers weer te geven. Wij gebruiken de`PageMode` eigendom van de`doc` object om de gewenste paginamodus in te stellen. Hier is de bijbehorende code:
-
-```csharp
-doc.PageMode = PageMode.UseOutlines;
-```
-
-## Stap 5: Blader door bladwijzers en vouw ze uit
-
- Nu doorlopen we elk bladwijzeritem in de bladwijzerverzameling van het document en stellen we de open status van elk item in op`true` om ze standaard uit te breiden. Hier is de bijbehorende code:
-
-```csharp
-foreach(OutlineItemCollection item in doc.Outlines)
-{
-     item. Open = true;
-}
-```
-
-## Stap 6: Sla het bijgewerkte bestand op
-
- Ten slotte slaan we het bijgewerkte PDF-bestand op met behulp van de`Save` werkwijze van de`doc` voorwerp. Hier is de bijbehorende code:
-
-```csharp
-dataDir = dataDir + "ExpandBookmarks_out.pdf";
-doc.Save(dataDir);
-```
-
-### Voorbeeldbroncode voor Expand Bookmarks met Aspose.PDF voor .NET 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+## Stap 2: Open het PDF-document
+
+ Vervolgens opent u het PDF-document met de bladwijzers die u wilt uitvouwen. Dit doet u met behulp van de`Document` klas uit de Aspose.PDF bibliotheek.
+
+```csharp
 // Document openen
-Document doc = new Document(dataDir + "input.pdf");
-// Stel de paginaweergavemodus in, dwz toon miniaturen, volledig scherm, toon bijlagenpaneel
+Document doc = new Document(dataDir + "input-bookmark.pdf");
+```
+
+## Stap 3: Stel de paginaweergavemodus in
+
+Nu moet u de paginaweergavemodus van het document instellen. Dit bepaalt hoe de PDF wordt weergegeven wanneer deze wordt geopend. In dit geval willen we contouren (bladwijzers) gebruiken.
+
+```csharp
+//Stel de paginaweergavemodus in, bijvoorbeeld miniaturen weergeven, volledig scherm, bijlagepaneel weergeven
 doc.PageMode = PageMode.UseOutlines;
-// Blader door elk Ouline-item in de overzichtsverzameling van een PDF-bestand
+```
+
+## Stap 4: Doorloop de overzichtsitems
+
+Hier komt het leuke gedeelte! U doorloopt elk outline-item in de outlines-collectie van de PDF en stelt hun open status in op true. Dit breidt de bladwijzers uit.
+
+```csharp
+// Doorloop elk overzichtsitem in de overzichtsverzameling van het PDF-bestand
 foreach (OutlineItemCollection item in doc.Outlines)
 {
-	// Stel de open status in voor het overzichtsitem
-	item.Open = true;
+    // Open status instellen voor overzichtsitem
+    item.Open = true;
 }
+```
+
+## Stap 5: Sla het uitvoerdocument op
+
+Nadat u de bladwijzers hebt uitgevouwen, is het tijd om het gewijzigde document op te slaan. U geeft een nieuwe bestandsnaam op voor de uitvoer-PDF.
+
+```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 // Uitvoer opslaan
 doc.Save(dataDir);
+```
+
+## Stap 6: Bevestigingsbericht
+
+Tot slot kunt u een bevestigingsbericht naar de console sturen om u te laten weten dat de bladwijzers succesvol zijn uitgevouwen.
+
+```csharp
 Console.WriteLine("\nBookmarks expanded successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusie
 
-Gefeliciteerd! U hebt nu een stapsgewijze handleiding voor het ontwikkelen van bladwijzers met Aspose.PDF voor .NET. U kunt deze code gebruiken om alle standaardbladwijzers in uw PDF-documenten weer te geven.
+En daar heb je het! Je hebt succesvol bladwijzers in een PDF-bestand uitgebreid met Aspose.PDF voor .NET. Deze eenvoudige maar krachtige bibliotheek stelt je in staat om PDF-documenten eenvoudig te bewerken, wat je leven een stuk eenvoudiger maakt. Of je nu werkt aan een persoonlijk project of een professionele applicatie, Aspose.PDF is een fantastische tool om in je arsenaal te hebben.
 
-Zorg ervoor dat u de officiële Aspose.PDF-documentatie bekijkt voor meer informatie over geavanceerde functies voor bladwijzermanipulatie.
+## Veelgestelde vragen
 
-### Veelgestelde vragen over het uitvouwen van bladwijzers in PDF-bestanden
+### Wat is Aspose.PDF voor .NET?
+Aspose.PDF voor .NET is een krachtige bibliotheek waarmee ontwikkelaars programmatisch PDF-documenten kunnen maken, bewerken en converteren.
 
-#### Vraag: Wat zijn bladwijzers in een PDF-bestand?
+### Kan ik Aspose.PDF gratis gebruiken?
+ Ja, Aspose biedt een gratis proefversie die u kunt gebruiken om de functies van de bibliotheek te verkennen. U kunt deze downloaden[hier](https://releases.aspose.com/).
 
-A: Bladwijzers in een PDF-bestand zijn navigatiehulpmiddelen waarmee gebruikers snel naar specifieke secties of pagina's in het document kunnen springen. Ze bieden een handige manier om toegang te krijgen tot verschillende delen van een document.
+### Waar kan ik meer documentatie vinden?
+ U kunt uitgebreide documentatie vinden op Aspose.PDF voor .NET[hier](https://reference.aspose.com/pdf/net/).
 
-#### Vraag: Waarom zou ik bladwijzers in een PDF-bestand willen uitvouwen?
+### Is er ondersteuning beschikbaar voor Aspose.PDF?
+ Absoluut! Je kunt ondersteuning krijgen van de Aspose-community[hier](https://forum.aspose.com/c/pdf/10).
 
-A: Het uitvouwen van bladwijzers kan de gebruikerservaring verbeteren door alle bladwijzers standaard uitgevouwen weer te geven. Hierdoor krijgen gebruikers een duidelijk overzicht van de structuur van het document en kunnen ze gemakkelijk naar verschillende secties navigeren.
-
-#### Vraag: Hoe importeer ik de benodigde bibliotheken voor mijn C#-project?
-
-A: Om de vereiste bibliotheek voor uw C#-project te importeren, gebruikt u de volgende importinstructie:
-
-```csharp
-using Aspose.Pdf;
-```
-
-Met deze richtlijn kunt u de klassen en methoden van Aspose.PDF voor .NET gebruiken.
-
-#### Vraag: Hoe geef ik het pad naar de documentenmap op?
-
- A: Vervang in de meegeleverde broncode`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad naar de map met het PDF-bestand waarmee u wilt werken. Dit zorgt ervoor dat de code het doel-PDF-bestand kan lokaliseren.
-
-#### Vraag: Hoe open ik een PDF-document om de bladwijzers uit te vouwen?
-
-A: Gebruik de volgende code om een PDF-document te openen en bladwijzers uit te vouwen:
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
- Vervangen`"input.pdf"` met de werkelijke bestandsnaam.
-
-#### Vraag: Hoe stel ik de paginaweergavemodus in om standaard bladwijzers weer te geven?
-
-A: Om de paginaweergavemodus zo in te stellen dat bladwijzers standaard worden weergegeven, gebruikt u de`PageMode` eigendom van de`doc` voorwerp:
-
-```csharp
-doc.PageMode = PageMode.UseOutlines;
-```
-
-#### Vraag: Hoe vouw ik alle bladwijzers in het PDF-document uit?
-
- A: Om alle bladwijzers uit te vouwen, loopt u door elk bladwijzeritem in de overzichtscollectie van het document en stelt u de`Open` eigendom aan`true`:
-
-```csharp
-foreach (OutlineItemCollection item in doc.Outlines)
-{
-    item.Open = true;
-}
-```
-
-#### Vraag: Wat gebeurt er als een bladwijzer geneste onderliggende bladwijzers heeft?
-
-A: Als een bladwijzer geneste onderliggende bladwijzers heeft, zal het uitvouwen van de bovenliggende bladwijzer ook de onderliggende bladwijzers uitvouwen, waardoor een uitgebreid beeld ontstaat van de structuur van het document.
-
-#### Vraag: Hoe bewaar ik het bijgewerkte PDF-bestand nadat ik bladwijzers heb uitgevouwen?
-
-A: Gebruik de volgende code om het bijgewerkte PDF-bestand op te slaan nadat u de bladwijzers hebt uitgevouwen:
-
-```csharp
-dataDir = dataDir + "ExpandBookmarks_out.pdf";
-doc.Save(dataDir);
-```
-
-#### Vraag: Kan ik het uiterlijk van uitgevouwen bladwijzers aanpassen?
-
-A: Hoewel deze tutorial zich standaard richt op het uitbreiden van bladwijzers, kunt u het uiterlijk van bladwijzers aanpassen met behulp van de andere functies en eigenschappen van Aspose.PDF.
+### Hoe koop ik een licentie voor Aspose.PDF?
+ U kunt een licentie voor Aspose.PDF kopen[hier](https://purchase.aspose.com/buy).

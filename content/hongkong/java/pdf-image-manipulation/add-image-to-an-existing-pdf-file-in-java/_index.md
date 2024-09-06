@@ -22,7 +22,7 @@ url: /zh-hant/java/pdf-image-manipulation/add-image-to-an-existing-pdf-file-in-j
 
 ## 第 1 步：設定您的開發環境
 
-首先，您需要設定開發環境。按著這些次序：
+首先，您需要設定開發環境。請依照下列步驟操作：
 
 1. 下載並安裝 Aspose.PDF for Java 函式庫。
 2. 在您首選的整合開發環境 (IDE) 中建立一個新的 Java 專案。

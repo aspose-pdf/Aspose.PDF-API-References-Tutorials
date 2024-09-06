@@ -7,7 +7,7 @@ type: docs
 weight: 160
 url: /sv/net/programming-with-tables/remove-table/
 ---
-I den här handledningen guidar vi dig steg för steg för att ta bort en tabell i PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och visa dig hur du implementerar den.
+I denna handledning guidar vi dig steg för steg för att ta bort en tabell i PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och visa dig hur du implementerar den.
 
 ## Steg 1: Laddar det befintliga PDF-dokumentet
 Först måste du ladda det befintliga PDF-dokumentet med följande kod:
@@ -29,7 +29,7 @@ TableAbsorber absorber = new TableAbsorber();
 ```
 
 ## Steg 3: Besök den första sidan med absorbenten
-Vi kommer nu att besöka den första sidan i PDF-dokumentet med hjälp av absorberaren:
+Vi kommer nu att besöka den första sidan av PDF-dokumentet med hjälp av absorberaren:
 
 ```csharp
 // Besök första sidan med absorbenten

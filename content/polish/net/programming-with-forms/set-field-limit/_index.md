@@ -1,15 +1,15 @@
 ---
 title: Ustaw limit pola
 linktitle: Ustaw limit pola
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak ustawić granicę pola w dokumencie PDF przy użyciu Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak ustawić granicę pola w dokumencie PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 260
 url: /pl/net/programming-with-forms/set-field-limit/
 ---
-Oto szczegółowy samouczek dotyczący ustawiania granicy pola przy użyciu Aspose.PDF dla .NET. Wykonaj następujące kroki:
+Oto szczegółowy samouczek, jak ustawić granicę pola za pomocą Aspose.PDF dla .NET. Wykonaj następujące kroki:
 
-##  Krok 1: Zacznij od zdefiniowania katalogu swoich dokumentów, podając ścieżkę w pliku`dataDir` variable.
+##  Krok 1: Zacznij od zdefiniowania katalogu dokumentów, podając ścieżkę w`dataDir` variable.
 
 ```csharp
 // Ścieżka do katalogu dokumentów.
@@ -57,27 +57,27 @@ Console.WriteLine("\nField added successfully with limit.\nFile saved at " + dat
 
 ## Wniosek
 
-W tym samouczku nauczyliśmy się, jak ustawić granicę pola za pomocą Aspose.PDF dla .NET. Wykonując kroki opisane powyżej, możesz manipulować i ustawiać limity pól formularzy w dokumentach PDF za pomocą Aspose.PDF dla .NET.
+W tym samouczku nauczyliśmy się, jak ustawić granicę pola za pomocą Aspose.PDF dla .NET. Postępując zgodnie z powyższymi krokami, możesz manipulować polami formularza i ustawiać dla nich limity w dokumentach PDF za pomocą Aspose.PDF dla .NET.
 
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
 #### P: Czy mogę ustawić różne limity dla różnych pól formularza w tym samym dokumencie PDF?
 
-Odp.: Tak, możesz ustawić różne limity dla różnych pól formularzy w tym samym dokumencie PDF, używając Aspose.PDF dla .NET. Po prostu określ żądaną nazwę pola i odpowiedni limit dla każdego pola formularza w swoim kodzie.
+A: Tak, możesz ustawić różne limity dla różnych pól formularza w tym samym dokumencie PDF za pomocą Aspose.PDF dla .NET. Po prostu określ żądaną nazwę pola i odpowiedni limit dla każdego pola formularza w swoim kodzie.
 
-#### P: Jak usunąć granicę lub limit pola za pomocą Aspose.PDF dla .NET?
+#### P: Jak usunąć granicę pola lub limit korzystając z Aspose.PDF dla platformy .NET?
 
- Odp.: Aby usunąć granicę lub limit pola, możesz użyć opcji`RemoveFieldLimit` metoda`FormEditor` class i podaj nazwę pola formularza, z którego chcesz usunąć limit.
+ A: Aby usunąć granicę lub limit pola, możesz użyć`RemoveFieldLimit` metoda`FormEditor` klasę i podaj nazwę pola formularza, z którego chcesz usunąć limit.
 
-#### P: Czy Aspose.PDF dla .NET obsługuje ustawianie limitów pól dla pól wyboru i przycisków opcji?
+#### P: Czy Aspose.PDF dla platformy .NET obsługuje ustawianie limitów pól dla pól wyboru i przycisków radiowych?
 
-Odpowiedź: Nie, ograniczenia pól dotyczą tylko pól tekstowych. Aspose.PDF dla .NET nie obsługuje ustawiania limitów pól dla pól wyboru i przycisków opcji.
+A: Nie, limity pól dotyczą tylko pól tekstowych. Aspose.PDF dla .NET nie obsługuje ustawiania limitów pól dla pól wyboru i przycisków radiowych.
 
-#### P: Czy mogę dostosować wygląd granicy pola za pomocą Aspose.PDF dla .NET?
+#### P: Czy mogę dostosować wygląd granicy pola za pomocą Aspose.PDF dla platformy .NET?
 
-O: Nie, limity pól ustawione przy użyciu Aspose.PDF dla .NET nie są widoczne w wizualnej reprezentacji dokumentu PDF. Służą do kontrolowania długości wprowadzania i wprowadzania danych w polach tekstowych, ale nie mają wpływu na wygląd pól formularza.
+A: Nie, limity pól ustawione za pomocą Aspose.PDF dla .NET nie są widoczne w reprezentacji wizualnej dokumentu PDF. Służą do kontrolowania długości wprowadzania i wprowadzania danych dla pól tekstowych, ale nie wpływają na wygląd pól formularza.
 
-#### P: Czy możliwe jest ustawienie limitów pól dla wielu pól jednocześnie przy użyciu Aspose.PDF dla .NET?
+#### P: Czy można ustawić limity pól dla wielu pól jednocześnie, korzystając z Aspose.PDF dla .NET?
 
-O: Tak, możesz ustawić limity pól dla wielu pól jednocześnie, przeglądając każde pole formularza i używając opcji`SetFieldLimit` metodę dla każdego pola z żądanym limitem.
+O: Tak, możesz ustawić limity pól dla wielu pól jednocześnie, przechodząc przez każde pole formularza i używając`SetFieldLimit` metodę dla każdego pola z żądanym limitem.

@@ -46,14 +46,14 @@ doc.PageInfo.Margin.Right = 40;
 ```
 
 ## 6. lépés: Adjon hozzá egy oldalt a dokumentumhoz
- Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`Gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
+ Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
 ## 7. lépés: Hozzon létre egy Graph objektumot, és adjon hozzá egy sort
- Újat csinálni`Graph` adott méretű objektumot, és adjunk hozzá egy sort. Ezután adja hozzá a`Graph` tiltakozik a`Paragraphs` az oldal gyűjteménye.
+ Hozzon létre egy újat`Graph` adott méretű objektumot, és adjunk hozzá egy sort. Ezután adja hozzá a`Graph` tiltakozik a`Paragraphs` az oldal gyűjteménye.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
@@ -75,7 +75,7 @@ page.Paragraphs.Add(heading_text);
 ```
 
 ## 9. lépés: Hozzon létre egy FloatingBoxot több oszloppal
- Hozzon létre egy`FloatingBox` objektumot, és állítsa be az oszlopok számát és az oszlopközöket. Ezután adjon hozzá szövegrészleteket és egy sort a`Paragraphs` gyűjteménye a`FloatingBox`.
+ Hozzon létre a`FloatingBox` objektumot, és állítsa be az oszlopok számát és az oszlopközöket. Ezután adjon hozzá szövegrészleteket és egy sort a`Paragraphs` gyűjteménye a`FloatingBox`.
 
 ```csharp
 Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
@@ -101,7 +101,7 @@ page.Paragraphs.Add(box);
 ```
 
 ## 10. lépés: Mentse el a PDF dokumentumot
- Mentse el a PDF dokumentumot a`Save` módszere a`Document` tárgy.
+ Mentse el a PDF dokumentumot a`Save` módszere a`Document` objektum.
 
 ```csharp
 doc.Save(dataDir);
@@ -112,9 +112,9 @@ doc.Save(dataDir);
 // A dokumentumok könyvtárának elérési útja.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
-// Adja meg a bal margó információit a PDF-fájlhoz
+//Adja meg a bal margó információit a PDF-fájlhoz
 doc.PageInfo.Margin.Left = 40;
-//Adja meg a jobb margó információit a PDF-fájlhoz
+// Adja meg a jobb margó információit a PDF-fájlhoz
 doc.PageInfo.Margin.Right = 40;
 Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
@@ -169,7 +169,7 @@ Sikeresen létrehozott egy több oszlopos PDF-fájlt az Aspose.PDF for .NET hasz
 
 Ez az oktatóanyag a többoszlopos PDF létrehozásának folyamatán összpontosít, az Aspose.PDF for .NET könyvtár használatával. A mellékelt C# forráskód bemutatja az ehhez szükséges lépéseket.
 
-#### K: Mely névtereket kell importálnom ehhez az oktatóanyaghoz?
+#### K: Milyen névtereket importáljak ehhez az oktatóanyaghoz?
 
 V: Abban a kódfájlban, amelyben több oszlopból álló PDF-et szeretne létrehozni, importálja a következő névtereket a fájl elejére:
 
@@ -192,7 +192,7 @@ using Aspose.Pdf.Drawing;
 
 #### K: Hogyan adhatok hozzá oldalt a dokumentumhoz?
 
- V: A 6. lépésben új oldalt ad hozzá a dokumentumhoz a`Add` módszere a`Pages` Gyűjtemény.
+ V: A 6. lépésben új oldalt ad hozzá a dokumentumhoz a`Add` módszere a`Pages` gyűjtemény.
 
 #### K: Hogyan hozhatok létre egy Graph objektumot és adhatok hozzá egy sort?
 
@@ -208,7 +208,7 @@ using Aspose.Pdf.Drawing;
 
 #### K: Hogyan menthetem el a PDF dokumentumot?
 
- V: A 10. lépésben a PDF-dokumentumot a`Save` módszere a`Document` tárgy.
+ V: A 10. lépésben a PDF-dokumentumot a`Save` módszere a`Document` objektum.
 
 #### K: Mi a fő kivonat ebből az oktatóanyagból?
 

@@ -1,49 +1,80 @@
 ---
-title: TOC toevoegen aan PDF-bestand
-linktitle: TOC toevoegen aan PDF-bestand
+title: Inhoudsopgave toevoegen aan PDF-bestand
+linktitle: Inhoudsopgave toevoegen aan PDF-bestand
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u een inhoudsopgave aan een PDF-bestand kunt toevoegen met Aspose.PDF voor .NET. Stap-voor-stap handleiding met voorbeeldbroncode. Verbeter de documentnavigatie!
+description: Leer hoe u een inhoudsopgave aan een PDF toevoegt met Aspose.PDF voor .NET. Deze stapsgewijze handleiding vereenvoudigt het proces en zorgt voor eenvoudige navigatie binnen uw documenten.
 type: docs
 weight: 40
 url: /nl/net/programming-with-document/addtoc/
 ---
-In deze zelfstudie onderzoeken we hoe u de functie TOC (inhoudsopgave) toevoegen aan PDF-bestanden van Aspose.PDF voor .NET kunt gebruiken om een inhoudsopgave aan PDF-documenten toe te voegen. We geven een stapsgewijze handleiding en leggen de C#-broncode uit die nodig is om dit te bereiken. Aan het einde van deze zelfstudie kunt u met Aspose.PDF voor .NET een PDF-document met een inhoudsopgave genereren.
+## Invoering
 
+Heb je ooit eindeloos door een lange PDF gescrold, terwijl je wenste dat er een goed georganiseerde inhoudsopgave in zat? Nou, vandaag is je geluksdag! In deze tutorial leer je hoe je een inhoudsopgave aan je PDF-bestand toevoegt met Aspose.PDF voor .NET. Of je nu werkt aan een complex rapport, een e-book of een zakelijk voorstel, een inhoudsopgave kan je document transformeren in een professioneel, navigeerbaar meesterwerk.
 
-## Stap 1: Laad het bestaande PDF-bestand
+## Vereisten
 
- Om aan de slag te gaan, moeten we een bestaand PDF-bestand laden. Vervangen`"YOUR DOCUMENT DIRECTORY"` in de volgende code met het daadwerkelijke pad naar uw PDF-bestand:
+Voordat we in de code duiken, controleren we of je alles hebt wat je nodig hebt:
+
+1. Aspose.PDF voor .NET: Zorg ervoor dat u de Aspose.PDF-bibliotheek hebt gedownload en geïnstalleerd. U kunt deze downloaden van[hier](https://releases.aspose.com/pdf/net/).
+   
+2. Ontwikkelomgeving: Zorg ervoor dat u een .NET-ontwikkelomgeving zoals Visual Studio op uw computer hebt ingesteld.
+
+3.  Licentie: Als u geen licentie hebt, kunt u een gratis proefversie krijgen of een tijdelijke licentie aanvragen[hier](https://purchase.aspose.com/temporary-license/).
+
+## Pakketten importeren
+
+Om te beginnen, zorg ervoor dat u de benodigde namespaces aan het begin van uw codebestand importeert. Dit is hoe:
+
+```csharp
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+```
+
+Met deze naamruimten krijgt u toegang tot PDF-specifieke functionaliteiten en kunt u tekstelementen in uw document bewerken.
+
+Laten we deze taak opsplitsen in kleine stapjes. Elke stap begeleidt u door het proces van het maken en invoegen van een TOC in uw PDF-document.
+
+## Stap 1: Laad het PDF-document
+
+Het eerste wat we moeten doen, is het bestaande PDF-bestand laden waaraan we de inhoudsopgave willen toevoegen.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "AddTOC.pdf");
 ```
 
-## Stap 2: Maak een nieuwe pagina voor de inhoudsopgave
+ In deze stap specificeren we het pad naar de documentenmap en laden we de PDF met behulp van de`Document` object. Zorg ervoor dat u het vervangt`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad naar uw bestand.
 
-We zullen een nieuwe pagina maken met de inhoudsopgave. De volgende code voegt een nieuwe pagina in bij index 1:
+## Stap 2: Voeg een nieuwe pagina in voor de inhoudsopgave
+
+Vervolgens voegen we een nieuwe pagina toe aan het begin van het PDF-document. Deze pagina zal de inhoudsopgave hosten.
 
 ```csharp
 Page tocPage = doc.Pages.Insert(1);
 ```
 
-## Stap 3: Definieer de informatie over de inhoudsopgave
+Door de inhoudsopgavepagina aan het begin te plaatsen, zorgen we ervoor dat deze het allereerste is wat lezers in de PDF zien.
 
-Vervolgens moeten we de inhoudsopgave-informatie definiëren. We zullen de titel en andere eigenschappen van de inhoudsopgave instellen. Voeg de volgende code toe:
+## Stap 3: Maak een TOC-informatieobject
+
+Laten we nu een object maken dat de TOC-informatie vertegenwoordigt. We voegen ook een titel toe aan de TOC om deze te laten opvallen.
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
-
 tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 ```
 
-## Stap 4: TOC-elementen maken
+Hier hebben we de titel van de inhoudsopgave ingesteld op 'Inhoudsopgave', het lettertype vergroot en de tekst vetgedrukt gemaakt om de tekst te benadrukken.
 
-Nu gaan we de elementen van de inhoudsopgave maken. In deze zelfstudie maken we vier TOC-elementen die overeenkomen met verschillende pagina's. Wijzig de volgende code volgens uw vereisten:
+## Stap 4: Definieer TOC-elementen
+
+In deze stap definiëren we de elementen (of koppen) die in de TOC worden weergegeven. Deze elementen helpen lezers om naar specifieke secties van het document te navigeren.
 
 ```csharp
 string[] titles = new string[4];
@@ -51,7 +82,15 @@ titles[0] = "First page";
 titles[1] = "Second page";
 titles[2] = "Third page";
 titles[3] = "Fourth page";
+```
 
+We hebben een reeks strings gemaakt die als inhoudsopgave-items dienen en die overeenkomen met verschillende pagina's in de PDF.
+
+## Stap 5: Inhoudsopgavekoppen maken
+
+Nu komt het cruciale onderdeel: het toevoegen van koppen aan de inhoudsopgave en het koppelen ervan aan de bijbehorende pagina's.
+
+```csharp
 for (int i = 0; i < 2; i++)
 {
     Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
@@ -61,100 +100,56 @@ for (int i = 0; i < 2; i++)
 
     heading2.DestinationPage = doc.Pages[i + 2];
     heading2.Top = doc.Pages[i + 2].Rect.Height;
-
     segment2.Text = titles[i];
+
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
-## Stap 5: Sla het bijgewerkte document op
+Dit is wat er gebeurt:
+- Kop: Wij creëren een`Heading` object en voeg een toe`TextSegment` ernaartoe.
+- Bestemmingspagina: Wij stellen de pagina in waarnaar elke koptekst zal linken.
+- Bovenste positie: Wij geven de positie op de pagina aan waar de koptekst naar verwijst.
+- Tekst: Elke kop krijgt een bijbehorende titel uit de matrix die we eerder hebben gemaakt.
 
- Ten slotte moeten we het gewijzigde document opslaan met de inhoudsopgave. Vervangen`"YOUR DOCUMENT DIRECTORY"` in de onderstaande code met het gewenste uitvoerbestandspad:
+Deze lus maakt koppen voor de eerste twee elementen in de inhoudsopgave en koppelt deze aan de bijbehorende pagina's.
+
+## Stap 6: Sla de PDF op met de inhoudsopgave
+
+Nadat we alle elementen van de inhoudsopgave hebben toegevoegd, is het tijd om de bijgewerkte PDF op te slaan.
 
 ```csharp
 dataDir = dataDir + "TOC_out.pdf";
 doc.Save(dataDir);
-Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
-### Voorbeeldbroncode voor het toevoegen van TOC aan PDF-documenten met Aspose.PDF voor .NET
+Het bestand is nu opgeslagen met de TOC toegevoegd aan de PDF. Gefeliciteerd, u hebt succesvol een inhoudsopgave toegevoegd!
+
+## Stap 7: Bevestigingsbericht
+
+Om de gebruiker te laten weten dat het proces is voltooid, tonen we een eenvoudig bericht in de console.
 
 ```csharp
-
-// Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Laad een bestaand PDF-bestand
-Document doc = new Document(dataDir + "AddTOC.pdf");
-
-// Krijg toegang tot de eerste pagina van het PDF-bestand
-Page tocPage = doc.Pages.Insert(1);
-
-// Maak een object om TOC-informatie weer te geven
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-
-// Stel de titel voor TOC in
-tocInfo.Title = title;
-tocPage.TocInfo = tocInfo;
-
-//Maak tekenreeksobjecten die als TOC-elementen worden gebruikt
-string[] titles = new string[4];
-titles[0] = "First page";
-titles[1] = "Second page";
-titles[2] = "Third page";
-titles[3] = "Fourth page";
-for (int i = 0; i < 2; i++)
-{
-	// Maak een Heading-object
-	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-	TextSegment segment2 = new TextSegment();
-	heading2.TocPage = tocPage;
-	heading2.Segments.Add(segment2);
-
-	// Geef de doelpagina voor het kopobject op
-	heading2.DestinationPage = doc.Pages[i + 2];
-
-	// Bestemmingspagina
-	heading2.Top = doc.Pages[i + 2].Rect.Height;
-
-	// Bestemmingscoördinaat
-	segment2.Text = titles[i];
-
-	// Voeg een kop toe aan de pagina met inhoudsopgave
-	tocPage.Paragraphs.Add(heading2);
-}
-dataDir = dataDir + "TOC_out.pdf";
-// Sla het bijgewerkte document op
-doc.Save(dataDir);
-
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
 ## Conclusie
 
-In deze zelfstudie hebben we onderzocht hoe u een inhoudsopgave (TOC) aan PDF-documenten kunt toevoegen met Aspose.PDF voor .NET. Door de stapsgewijze handleiding te volgen en de meegeleverde C#-broncode te gebruiken, kunt u eenvoudig een PDF-document met een inhoudsopgave genereren. De inhoudsopgave verbetert de bruikbaarheid van het document, waardoor gebruikers efficiënter naar specifieke secties of pagina's kunnen navigeren. Aspose.PDF voor .NET biedt een robuuste en gebruiksvriendelijke oplossing voor het werken met PDF-bestanden in .NET-toepassingen, waardoor u eenvoudig dynamische en interactieve PDF-documenten kunt maken.
+En daar heb je het! Met Aspose.PDF voor .NET is het toevoegen van een inhoudsopgave aan een PDF niet alleen eenvoudig, maar ook aanpasbaar. Of je nu simpele navigatielinks of complexe structuren moet maken, deze tool heeft het voor je. Dus vergeet niet om de volgende keer dat je aan een lange PDF werkt, een inhoudsopgave toe te voegen voor een professionele touch!
 
-### Veelgestelde vragen over het toevoegen van TOC aan een PDF-bestand
+## Veelgestelde vragen
 
-#### Vraag: Wat is Aspose.PDF voor .NET?
+### Kan ik het uiterlijk van de inhoudsopgave in Aspose.PDF aanpassen?  
+Ja, u kunt het uiterlijk van de inhoudsopgave volledig aanpassen, inclusief het lettertype, de grootte en de uitlijning.
 
-A: Aspose.PDF voor .NET is een krachtige bibliotheek waarmee ontwikkelaars effectief met PDF-bestanden in .NET-toepassingen kunnen werken. Het biedt een breed scala aan functies voor het programmatisch maken, manipuleren en beheren van PDF-documenten.
+### Hoe voeg ik subkoppen toe aan de inhoudsopgave?  
+ U kunt subkoppen toevoegen door de`Heading` niveau (bijv.`Heading(2)`) om een hiërarchische inhoudsopgave te maken.
 
-#### Vraag: Wat is het doel van het toevoegen van een inhoudsopgave (TOC) aan een PDF-document?
+### Is het mogelijk om de inhoudsopgave automatisch bij te werken als het document verandert?  
+Nee, de TOC wordt niet automatisch bijgewerkt. U moet deze opnieuw maken als de documentstructuur verandert.
 
-A: De inhoudsopgave (TOC) biedt gebruikers een navigatiehulpmiddel, waardoor ze snel naar specifieke secties of pagina's in het PDF-document kunnen springen. Het verbetert de bruikbaarheid en gebruikerservaring van het document.
+### Kan ik inhoudsopgavevermeldingen koppelen aan externe documenten?  
+Ja, u kunt hyperlinks gebruiken om inhoudsopgave-items te koppelen aan externe PDF's of URL's.
 
-#### Vraag: Hoe voeg ik een inhoudsopgave toe aan een PDF-document met Aspose.PDF voor .NET?
-
-A: Om een inhoudsopgave aan een PDF-document toe te voegen met Aspose.PDF voor .NET, moet u een nieuwe pagina maken voor de inhoudsopgave, de inhoudsopgave-informatie definiëren en vervolgens TOC-elementen maken die overeenkomen met specifieke pagina's of secties in het document.
-
-#### Vraag: Kan ik het uiterlijk van de inhoudsopgave aanpassen?
-
-A: Ja, u kunt het uiterlijk van de inhoudsopgave aanpassen door verschillende eigenschappen van de TOC-elementen in te stellen, zoals lettergrootte, letterstijl en uitlijning. Aspose.PDF voor .NET biedt flexibiliteit bij het ontwerpen van de inhoudsopgave zodat deze bij uw gewenste look en feel past.
-
-#### Vraag: Is Aspose.PDF voor .NET geschikt voor het toevoegen van geavanceerde functies aan PDF-documenten?
-
-A: Absoluut, Aspose.PDF voor .NET is een bibliotheek met veel functies waarmee u geavanceerde functionaliteiten aan PDF-documenten kunt toevoegen, waaronder interactieve elementen, formuliervelden, digitale handtekeningen en meer.
+### Ondersteunt Aspose.PDF inhoudsopgaven met meerdere niveaus?  
+Ja, Aspose.PDF ondersteunt inhoudsopgaven op meerdere niveaus voor complexe documenten met subsecties.

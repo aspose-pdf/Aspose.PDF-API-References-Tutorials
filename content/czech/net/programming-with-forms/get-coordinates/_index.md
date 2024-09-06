@@ -94,7 +94,7 @@ V tomto tutoriálu jsme se naučili, jak získat souřadnice pole formuláře po
 
 #### Otázka: Mohu použít tuto metodu k získání souřadnic pro jakýkoli typ pole formuláře v Aspose.PDF pro .NET?
 
-Odpověď: Ano, tuto metodu můžete použít k získání souřadnic pro různé typy polí formuláře v Aspose.PDF pro .NET. Poskytnutý zdrojový kód C# ukazuje, jak získat souřadnice pro pole RadioButton, ale stejný přístup můžete upravit pro jiné typy polí formuláře, jako jsou TextBox, CheckBox, ListBox a další.
+Odpověď: Ano, tuto metodu můžete použít k získání souřadnic pro různé typy polí formuláře v Aspose.PDF pro .NET. Poskytnutý zdrojový kód C# ukazuje, jak získat souřadnice pro pole RadioButton, ale stejný přístup můžete upravit pro jiné typy polí formuláře, jako je TextBox, CheckBox, ListBox a další.
 
 #### Otázka: Jak mohu upravit nebo upravit souřadnice pole formuláře?
 

@@ -1,8 +1,8 @@
 ---
-title: PDF'de Dikdörtgenin Z Sırasını Java ile Kontrol Etme
-linktitle: PDF'de Dikdörtgenin Z Sırasını Java ile Kontrol Etme
+title: Java ile PDF'deki Dikdörtgenin Z-Sırasını Kontrol Etme
+linktitle: Java ile PDF'deki Dikdörtgenin Z-Sırasını Kontrol Etme
 second_title: Aspose.PDF Java PDF İşleme API'si
-description: Aspose.PDF for Java kullanarak Java ile PDF'lerdeki dikdörtgenlerin Z sırasını nasıl kontrol edeceğinizi öğrenin. Hassas PDF işlemleri için adım adım kılavuz.
+description: Java ile Aspose.PDF for Java kullanarak PDF'lerdeki dikdörtgenlerin Z sırasını nasıl kontrol edeceğinizi öğrenin. Hassas PDF düzenleme için adım adım kılavuz.
 type: docs
 weight: 11
 url: /tr/java/pdf-images/controlling-z-order-of-rectangle-in-pdf-with-java/
@@ -10,40 +10,40 @@ url: /tr/java/pdf-images/controlling-z-order-of-rectangle-in-pdf-with-java/
 
 ## giriiş
 
-PDF işleme dünyasında, PDF belgenizdeki nesnelerin görünürlüğünü ve konumunu kontrol etmek istediğinizde öğelerin Z sırasını yönetmek çok önemlidir. Bu makale, PDF dosyalarıyla çalışmak için güçlü bir Java API'si olan Aspose.PDF for Java'yı kullanarak PDF'deki dikdörtgenlerin Z sırasını kontrol etme sanatını ele alacaktır.
+PDF düzenleme dünyasında, PDF belgenizdeki nesnelerin görünürlüğünü ve konumunu kontrol etmek istediğinizde öğelerin Z sırasını yönetmek çok önemlidir. Bu makale, PDF dosyalarıyla çalışmak için güçlü bir Java API'si olan Java için Aspose.PDF'yi kullanarak bir PDF'deki dikdörtgenlerin Z sırasını kontrol etme sanatına derinlemesine inecektir.
 
-## PDF'lerde Z Sırasını Anlamak
+## PDF'lerde Z-Sırasını Anlamak
 
-Teknik detaylara dalmadan önce PDF'lerdeki Z-düzeni kavramını kavrayalım. Z sırası, bir PDF sayfasındaki grafik nesnelerinin derinliğini veya katmanlanmasını ifade eder. Daha yüksek Z-düzeni değerine sahip nesneler, daha düşük değerlere sahip nesnelerin önünde görüntülenir. Bu kavram, görüntü düzenleme yazılımındaki katmanlara benzer.
+Teknik detaylara dalmadan önce, PDF'lerdeki Z-düzeni kavramını kavrayalım. Z-düzeni, bir PDF sayfasındaki grafik nesnelerin derinliğini veya katmanlaşmasını ifade eder. Daha yüksek Z-düzeni değerine sahip nesneler, daha düşük değerlere sahip nesnelerin önünde görüntülenir. Bu kavram, görüntü düzenleme yazılımlarındaki katmanlara benzer.
 
-## PDF'lerde Z Sırasını Kontrol Etme
+## PDF'lerde Z-Sırasını Kontrol Etme
 
-Bir PDF'deki öğelerin Z sırasını kontrol etmek, çeşitli kullanım durumları için çok önemlidir. Örneğin, ana içeriğin arkasına bir filigran yerleştirmek, belirli açıklamaların her zaman görünür olmasını sağlamak veya daha iyi sunum için grafik öğelerini belirli bir sıraya göre düzenlemek isteyebilirsiniz.
+Bir PDF'deki öğelerin Z sırasını kontrol etmek çeşitli kullanım durumları için önemlidir. Örneğin, ana içeriğin arkasına bir filigran yerleştirmek, belirli açıklamaların her zaman görünür olduğundan emin olmak veya daha iyi sunum için grafik öğeleri belirli bir sıraya göre düzenlemek isteyebilirsiniz.
 
-## Aspose.PDF for Java Kullanarak Z Sırasını Ayarlama
+## Java için Aspose.PDF Kullanarak Z-Sırasını Ayarlama
 
-Aspose.PDF for Java kullanarak bir PDF'deki dikdörtgenlerin Z sırası üzerinde hassas kontrol elde etmek için şu adımları izleyin:
+Java için Aspose.PDF'i kullanarak bir PDF'deki dikdörtgenlerin Z düzeni üzerinde hassas kontrol sağlamak için şu adımları izleyin:
 
-## Önkoşullar
+## Ön koşullar
 
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
 - Java geliştirme ortamı kuruldu.
--  Aspose.PDF for Java kütüphanesi kuruldu. Şuradan indirebilirsiniz[Burada](https://releases.aspose.com/pdf/java/).
+-  Java kütüphanesi için Aspose.PDF yüklendi. Buradan indirebilirsiniz[Burada](https://releases.aspose.com/pdf/java/).
 
-## Adım adım rehber
+## Adım Adım Kılavuz
 
-Aspose.PDF for Java kullanarak bir PDF'deki dikdörtgenlerin Z sırasını kontrol etmek için pratik adımlara bakalım:
+Java için Aspose.PDF'i kullanarak bir PDF'deki dikdörtgenlerin Z sırasını kontrol etmek için pratik adımlara bir göz atalım:
 
-### Adım 1: Yeni Bir Java Projesi Oluşturun
+### Adım 1: Yeni bir Java Projesi Oluşturun
 
-Favori IDE'nizde yeni bir Java projesi oluşturarak başlayın.
+En sevdiğiniz IDE'de yeni bir Java projesi oluşturarak başlayın.
 
 ### Adım 2: Java Kütüphanesi için Aspose.PDF'yi ekleyin
 
-Aspose.PDF for Java kütüphanesini projenizin bağımlılıklarına ekleyin. Bunu daha önce indirdiğiniz JAR dosyasını dahil ederek yapabilirsiniz.
+Projenizin bağımlılıklarına Aspose.PDF for Java kütüphanesini ekleyin. Bunu daha önce indirdiğiniz JAR dosyasını ekleyerek yapabilirsiniz.
 
-### 3. Adım: PDF Belgesini Başlatın
+### Adım 3: Bir PDF Belgesi Başlatın
 
 ```java
 // Bir PDF belgesini başlat
@@ -53,12 +53,12 @@ com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document();
 ### Adım 4: Dikdörtgenler Oluşturun
 
 ```java
-// Farklı Z sırası değerlerine sahip dikdörtgenler oluşturma
+// Farklı Z-düzeni değerlerine sahip dikdörtgenler oluşturun
 com.aspose.pdf.Page page = pdfDocument.getPages().get_Item(1);
 com.aspose.pdf.Rectangle rect1 = new com.aspose.pdf.Rectangle(100, 100, 200, 200);
 com.aspose.pdf.Rectangle rect2 = new com.aspose.pdf.Rectangle(150, 150, 250, 250);
 
-// Dikdörtgenler için Z sırasını ayarlama
+// Dikdörtgenler için Z düzenini ayarlayın
 rect1.setZIndex(1);
 rect2.setZIndex(2);
 
@@ -76,30 +76,30 @@ pdfDocument.save("output.pdf");
 
 ### Adım 6: Kodu Çalıştırın
 
-Java kodunuzu çalıştırdığınızda, Z sırasına göre düzenlenmiş dikdörtgenler içeren bir PDF oluşturacaktır.
+Java kodunuzu çalıştırdığınızda dikdörtgenlerin Z sırasına göre düzenlendiği bir PDF oluşturulacaktır.
 
 ## Çözüm
 
-Bu makalede, PDF belgelerindeki dikdörtgenlerin Z sırasını kontrol etmenin önemini araştırdık ve Aspose.PDF for Java'yı kullanarak adım adım bir kılavuz sunduk. Artık PDF'lerinizdeki grafik öğelerin görünürlüğünü ve konumlandırılmasını güvenle yönetebilirsiniz.
+Bu makalede, PDF belgelerindeki dikdörtgenlerin Z düzenini kontrol etmenin önemini inceledik ve Java için Aspose.PDF'yi kullanarak adım adım bir kılavuz sağladık. Artık PDF'lerinizdeki grafik öğelerin görünürlüğünü ve konumunu güvenle yönetebilirsiniz.
 
-## SSS'ler
+## SSS
 
-### Aspose.PDF for Java'yı nasıl yüklerim?
+### Java için Aspose.PDF'yi nasıl yüklerim?
 
-Aspose.PDF for Java'yı yüklemek için kütüphaneyi şu adresten indirebilirsiniz:[Burada](https://releases.aspose.com/pdf/java/) ve JAR dosyasını Java projenizin bağımlılıklarına ekleyin.
+Java için Aspose.PDF'yi yüklemek için kütüphaneyi şu adresten indirebilirsiniz:[Burada](https://releases.aspose.com/pdf/java/) ve JAR dosyasını Java projenizin bağımlılıklarına ekleyin.
 
-### Dikdörtgenlerin yanı sıra diğer PDF öğelerinin Z sırasını da kontrol edebilir miyim?
+### Dikdörtgenlerin dışında diğer PDF öğelerinin Z sırasını kontrol edebilir miyim?
 
-Evet, Aspose.PDF for Java'yı kullanarak metin, görseller ve açıklamalar dahil olmak üzere çeşitli PDF öğelerinin Z sırasını kontrol edebilirsiniz.
+Evet, Aspose.PDF for Java'yı kullanarak metin, resim ve açıklamalar dahil olmak üzere çeşitli PDF öğelerinin Z sırasını kontrol edebilirsiniz.
 
-### Aspose.PDF for Java diğer PDF işleme görevlerini destekliyor mu?
+### Aspose.PDF for Java diğer PDF düzenleme görevlerini destekliyor mu?
 
-Kesinlikle! Aspose.PDF for Java, PDF işleme için metin çıkarma, belge dönüştürme ve dijital imzalar gibi çok çeşitli özellikler sunar.
+Kesinlikle! Aspose.PDF for Java, metin çıkarma, belge dönüştürme ve dijital imzalar gibi PDF düzenleme için geniş bir özellik yelpazesi sunar.
 
-### Aspose.PDF for Java hem basit hem de karmaşık PDF projelerine uygun mu?
+### Aspose.PDF for Java hem basit hem de karmaşık PDF projeleri için uygun mudur?
 
-Evet, Aspose.PDF for Java çok yönlüdür ve hem temel PDF görevleri hem de gelişmiş gereksinimleri olan karmaşık PDF projeleri için kullanılabilir.
+Evet, Aspose.PDF for Java çok yönlüdür ve hem temel PDF görevlerinde hem de gelişmiş gereksinimleri olan karmaşık PDF projelerinde kullanılabilir.
 
-### Aspose.PDF for Java için daha fazla örnek ve belgeyi nerede bulabilirim?
+### Java için Aspose.PDF için daha fazla örnek ve dokümanı nerede bulabilirim?
 
- Ayrıntılı belgeleri ve daha fazla kod örneğini şuradan inceleyebilirsiniz:[Java belgeleri için Aspose.PDF](https://reference.aspose.com/pdf/java/) sayfa.
+ Ayrıntılı belgeleri ve daha fazla kod örneğini şu adreste inceleyebilirsiniz:[Java belgeleri için Aspose.PDF](https://reference.aspose.com/pdf/java/) sayfa.

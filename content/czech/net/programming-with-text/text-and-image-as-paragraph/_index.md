@@ -7,7 +7,7 @@ type: docs
 weight: 530
 url: /cs/net/programming-with-text/text-and-image-as-paragraph/
 ---
-Tento tutoriál vysvětluje, jak přidat text a obrázek jako vložené odstavce do souboru PDF pomocí Aspose.PDF pro .NET. Poskytnutý zdrojový kód C# demonstruje proces krok za krokem.
+Tento tutoriál vysvětluje, jak přidat text a obrázek jako vložené odstavce do souboru PDF pomocí Aspose.PDF for .NET. Poskytnutý zdrojový kód C# demonstruje proces krok za krokem.
 
 ## Předpoklady
 
@@ -42,7 +42,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 4: Vytvořte nový dokument a stránku
 
- Vytvoř nový`Document` objekt a přidejte stránku do kolekce stránek:
+ Vytvořte nový`Document` objekt a přidejte stránku do kolekce stránek:
 
 ```csharp
 Document doc = new Document();
@@ -51,7 +51,7 @@ Page page = doc.Pages.Add();
 
 ## Krok 5: Vytvořte TextFragment a přidejte jej jako odstavec
 
- Vytvořit`TextFragment` objekt a přidejte jej do kolekce odstavců na stránce:
+ Vytvořte a`TextFragment` objekt a přidejte jej do kolekce odstavců na stránce:
 
 ```csharp
 TextFragment text = new TextFragment("Hello World.. ");
@@ -66,7 +66,7 @@ page.Paragraphs.Add(text);
 Aspose.Pdf.Image image = new Aspose.Pdf.Image();
 image.IsInLineParagraph = true;
 image.File = dataDir + "aspose-logo.jpg";
-image.FixHeight = 30; // Volitelné: Nastavte výšku obrázku
+image.FixHeight = 30; // Volitelné: Nastavte výšku obrazu
 image.FixWidth = 100; // Volitelné: Nastavte šířku obrázku
 page.Paragraphs.Add(image);
 ```
@@ -132,7 +132,7 @@ Console.WriteLine("\nText and image added successfully as an inline paragraphs.\
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili, jak přidat text a obrázek jako vložené odstavce do dokumentu PDF pomocí Aspose.PDF for .NET. Tento výukový program poskytuje podrobného průvodce, od nastavení projektu až po uložení upraveného dokumentu. Nyní můžete tento kód začlenit do svých vlastních projektů C# a přizpůsobit tak rozvržení textu a obrázků v souborech PDF.
+Gratuluji! Úspěšně jste se naučili, jak přidat text a obrázek jako vložené odstavce do dokumentu PDF pomocí Aspose.PDF for .NET. Tento výukový program poskytuje podrobného průvodce, od nastavení projektu až po uložení upraveného dokumentu. Nyní můžete tento kód začlenit do svých vlastních projektů C# a přizpůsobit tak rozvržení textu a obrázků v souborech PDF.
 
 ### FAQ
 

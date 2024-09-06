@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 1: Konfigurera dokumentkatalogen
 
- Först måste du ställa in sökvägen till katalogen där du vill spara den genererade PDF-filen. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir`variabel med sökvägen till din önskade katalog.
+ Först måste du ställa in sökvägen till katalogen där du vill spara den genererade PDF-filen. Ersätta`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till din önskade katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## Steg 3: Ställ in marginaler
 
- Vi ställer in marginalerna för sidan med hjälp av`MarginInfo`klass. Justera marginalvärdena enligt dina krav.
+Vi ställer in marginalerna för sidan med hjälp av`MarginInfo` klass. Justera marginalvärdena enligt dina krav.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -116,7 +116,7 @@ HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
 hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
-// Instantiera ett textstycke som lagrar innehållet så att det visas som rubrik
+// Instantiera ett textstycke som lagrar innehållet för att visas som rubrik
 TextFragment t1 = new TextFragment("report title");
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
@@ -160,7 +160,7 @@ row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-//Sec1.Paragraphs.Add(New Text("Aspose.Total för Java är en sammanställning av alla Java-komponenter som erbjuds av Aspose. Den kompileras på en #$NL" + "daglig basis för att säkerställa att den innehåller de mest uppdaterade versionerna av varje av våra Java-komponenter. #$NL " + "Genom att använda Aspose.Total för Java kan utvecklare skapa ett brett utbud av applikationer. #$NL #$NL #$NP" + "Aspose.Total för Java är en sammanställning av alla Java-komponenter erbjuds av Aspose. Den sammanställs dagligen #$NL" + "för att säkerställa att den innehåller de senaste versionerna av var och en av våra Java-komponenter. #$NL " + "Genom att använda Aspose.Total för Java-utvecklare kan du skapa en bred utbud av applikationer. #$NL #$NL #$NP" + "Aspose.Total för Java är en sammanställning av alla Java-komponenter som erbjuds av Aspose. Den kompileras på en#$NL" + "daglig basis för att säkerställa att den innehåller det mesta uppdaterade versioner av var och en av våra Java-komponenter. #$NL " + "Att använda Aspose.Total för Java kan utvecklare skapa ett brett utbud av applikationer. #$NL #$NL"))
+//Sec1.Paragraphs.Add(New Text("Aspose.Total för Java är en sammanställning av alla Java-komponenter som erbjuds av Aspose. Den kompileras på en #$NL" + "daglig basis för att säkerställa att den innehåller de mest uppdaterade versionerna av varje av våra Java-komponenter #$NL " + "Att använda Aspose.Total för Java-utvecklare kan skapa ett brett utbud av applikationer. som erbjuds av Aspose Den kompileras på en #$NL" + "daglig basis för att säkerställa att den innehåller de mest uppdaterade versionerna av var och en av våra Java-komponenter utbud av applikationer #$NL #$NL #$NP" + "Aspose.Total för Java är en sammanställning av alla Java-komponenter som erbjuds av Aspose. Den kompileras dagligen för att säkerställa att den innehåller det mesta uppdaterade versioner av var och en av våra Java-komponenter " + "Användning av Aspose.Total för Java-utvecklare kan skapa ett brett utbud av applikationer.
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
 table.DefaultCellPadding = new MarginInfo();
@@ -225,7 +225,7 @@ S: Utbytbara symboler i sidhuvudet och sidfoten är användbara när du vill ink
 
 #### F: Hur lägger jag till utbytbara symboler i sidhuvudet och sidfoten?
 
- S: Du kan lägga till utbytbara symboler genom att skapa en`HeaderFooter` objekt för sidhuvud och sidfot på sidan. Sedan kan du lägga till`TextFragment`objekt med önskad text, inklusive utbytbara symboler, till`Paragraphs` samling av`HeaderFooter` objekt.
+ S: Du kan lägga till utbytbara symboler genom att skapa en`HeaderFooter` objekt för sidhuvudet och sidfoten på sidan. Sedan kan du lägga till`TextFragment`objekt med önskad text, inklusive utbytbara symboler, till`Paragraphs` samling av`HeaderFooter` objekt.
 
 #### F: Kan jag anpassa utseendet på de utbytbara symbolerna?
 
@@ -237,7 +237,7 @@ S: Du kan använda en mängd olika utbytbara symboler, som:
 
 - `$p`: Aktuellt sidnummer.
 - `$P`: Totalt antal sidor.
-- `$d`: Dagens datum.
+- `$d`: Aktuellt datum.
 - `$t`: Aktuell tid.
 - Anpassade platshållare du definierar.
 

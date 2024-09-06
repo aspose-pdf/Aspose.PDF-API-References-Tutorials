@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 2: Skapa TextState-objektet
 
-Det första steget är att skapa ett TextState-objekt för att skicka de avancerade egenskaperna. Här är hur:
+Det första steget är att skapa ett TextState-objekt för att skicka de avancerade egenskaperna. Så här gör du:
 
 ```csharp
 // Skapa TextState-objekt för att överföra avancerade egenskaper
@@ -35,7 +35,7 @@ Ovanstående kod skapar ett nytt TextState-objekt och ställer in konturfärgen 
 
 ## Steg 3: Laddar PDF-dokumentet
 
-Nu när TextState-objektet är klart kan vi ladda PDF-dokumentet där vi vill använda textfyllningen och konturen. Här är hur:
+Nu när TextState-objektet är klart kan vi ladda PDF-dokumentet där vi vill använda textfyllningen och konturen. Så här gör du:
 
 ```csharp
 // Ladda PDF-dokumentet som indata
@@ -46,7 +46,7 @@ Koden ovan laddar det befintliga PDF-dokumentet med klassen PdfFileStamp från A
 
 ## Steg 4: Lägg till fyllning och streck i text
 
-Nu när PDF-dokumentet är laddat kan vi lägga till fyllningen och konturen till texten. Här är hur:
+Nu när PDF-dokumentet är laddat kan vi lägga till fyllningen och konturen till texten. Så här gör du:
 
 ```csharp
 // Skapa en stämpel (stämpel) med den definierade texten och egenskaperna
@@ -71,7 +71,7 @@ Ovanstående kod skapar en stämpel med den specificerade texten och definierade
 
 ## Steg 5: Spara utdatadokumentet
 
-När textstämpeln har lagts till kan vi spara det ändrade PDF-dokumentet. Här är hur:
+När textstämpeln har lagts till kan vi spara det ändrade PDF-dokumentet. Så här gör du:
 
 ```csharp
 // Spara det ändrade dokumentet
@@ -142,7 +142,7 @@ S: Att fylla och konturera text i ett PDF-dokument innebär att färger applicer
 
 #### F: Kan jag använda fyllnings- och konturfärger på text som redan finns i PDF-dokumentet?
 
- S: Ja, du kan använda liknande principer för att tillämpa fyllnings- och konturfärger på befintlig text i PDF-dokumentet genom att välja lämpliga textobjekt och lägga till dem som stämplar med önskat`TextState` egenskaper.
+ S: Ja, du kan använda liknande principer för att tillämpa fyllnings- och konturfärger på befintlig text i PDF-dokumentet genom att välja lämpliga textobjekt och lägga till dem som stämplar med önskat`TextState` fastigheter.
 
 #### F: Hur kan jag justera opaciteten och blandningen av den fyllda och konturerade texten?
 
@@ -158,8 +158,8 @@ S: Att fylla och konturera text i ett PDF-dokument innebär att färger applicer
 
 #### F: Hur kan jag ändra rotationsvinkeln för den konturerade och fyllda texten?
 
- S: Den medföljande koden låter dig ställa in stämpelns rotationsvinkel med hjälp av`Rotation` fast egendom. Du kan justera den här egenskapen för att ange önskad rotationsvinkel för texten.
+ S: Den medföljande koden låter dig ställa in stämpelns rotationsvinkel med hjälp av`Rotation` egendom. Du kan justera den här egenskapen för att ange önskad rotationsvinkel för texten.
 
 #### F: Hur kan jag kontrollera placeringen och storleken på den konturerade och fyllda texten på sidan?
 
-S: Du kan använda`SetOrigin` metod för`Stamp` objekt för att ställa in X- och Y-koordinaterna för stämpelns position på sidan. Dessutom kan du justera teckenstorleken i`FormattedText` konstruktor för att kontrollera storleken på texten.
+ S: Du kan använda`SetOrigin` metod för`Stamp` objekt för att ställa in X- och Y-koordinaterna för stämpelns position på sidan. Dessutom kan du justera teckenstorleken i`FormattedText` konstruktor för att kontrollera storleken på texten.

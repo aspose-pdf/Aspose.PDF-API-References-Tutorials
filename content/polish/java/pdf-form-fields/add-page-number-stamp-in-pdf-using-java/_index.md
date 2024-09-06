@@ -1,28 +1,28 @@
 ---
-title: Dodaj stempel z numerem strony w formacie PDF przy użyciu języka Java
-linktitle: Dodaj stempel z numerem strony w formacie PDF przy użyciu języka Java
-second_title: Aspose.PDF Interfejs API przetwarzania plików Java w formacie Java
-description: Dowiedz się, jak łatwo dodawać znaczniki numerów stron do dokumentów PDF przy użyciu języka Java z Aspose.PDF dla języka Java. Ulepsz swoje pliki PDF za pomocą dostosowywalnych numerów stron.
+title: Dodaj numer strony w pliku PDF za pomocą Java
+linktitle: Dodaj numer strony w pliku PDF za pomocą Java
+second_title: Aspose.PDF Java PDF Processing API
+description: Dowiedz się, jak łatwo dodawać stemple numeracji stron do dokumentów PDF za pomocą Javy z Aspose.PDF dla Javy. Ulepsz swoje pliki PDF za pomocą konfigurowalnych numerów stron.
 type: docs
 weight: 11
 url: /pl/java/pdf-form-fields/add-page-number-stamp-in-pdf-using-java/
 ---
 
-## Wprowadzenie do dodawania stempla numeru strony w formacie PDF przy użyciu języka Java
+## Wprowadzenie do dodawania stempla numeru strony w pliku PDF przy użyciu języka Java
 
-Dokumenty PDF są powszechnie używane do udostępniania i prezentowania informacji, ale czasami może zaistnieć potrzeba ich ulepszenia poprzez dodanie numerów stron. Niezależnie od tego, czy pracujesz nad raportami, podręcznikami czy artykułami akademickimi, numery stron pomagają czytelnikom efektywnie poruszać się po treści. W tym samouczku przeprowadzimy Cię przez proces dodawania znaczników numeru strony do plików PDF przy użyciu języka Java. Będziemy używać Aspose.PDF dla Java, potężnej biblioteki, która upraszcza manipulację plikami PDF.
+Dokumenty PDF są powszechnie używane do udostępniania i prezentowania informacji, ale czasami może być konieczne ich ulepszenie poprzez dodanie numerów stron. Niezależnie od tego, czy pracujesz nad raportami, podręcznikami czy pracami naukowymi, numery stron pomagają czytelnikom sprawnie poruszać się po Twoich treściach. W tym samouczku przeprowadzimy Cię przez proces dodawania znaczników numeracji stron do plików PDF za pomocą Javy. Będziemy używać Aspose.PDF dla Javy, potężnej biblioteki, która upraszcza manipulację plikami PDF.
 
 ## Konfigurowanie Aspose.PDF dla Java
 
-Zanim zagłębimy się w kodowanie, musisz skonfigurować Aspose.PDF dla Java. Wykonaj następujące kroki:
+Zanim przejdziemy do kodowania, musisz skonfigurować Aspose.PDF dla Javy. Wykonaj następujące kroki:
 
-1.  Pobierz Aspose.PDF dla Java: Uzyskaj dostęp do biblioteki z[Tutaj](https://releases.aspose.com/pdf/java/) i pobierz odpowiednią wersję dla swojego projektu.
+1.  Pobierz Aspose.PDF dla Java: Uzyskaj dostęp do biblioteki z[Tutaj](https://releases.aspose.com/pdf/java/) i pobierz wersję odpowiednią dla swojego projektu.
 
-2. Utwórz projekt Java: Jeśli nie masz jeszcze projektu Java, utwórz nowy, korzystając z preferowanego IDE.
+2. Utwórz projekt Java: Jeśli nie masz jeszcze projektu Java, utwórz nowy, korzystając z preferowanego środowiska IDE.
 
 ## Dodawanie zależności
 
- Gdy już będziesz mieć plik Aspose.PDF dla Java, dodaj go jako zależność do swojego projektu. Jeśli używasz Mavena, dodaj następującą zależność do pliku`pom.xml`:
+ Gdy już masz Aspose.PDF dla Java, dodaj go jako zależność do swojego projektu. Jeśli używasz Mavena, dodaj następującą zależność do swojego`pom.xml`:
 
 ```xml
 <dependency>
@@ -32,15 +32,15 @@ Zanim zagłębimy się w kodowanie, musisz skonfigurować Aspose.PDF dla Java. W
 </dependency>
 ```
 
-Jeśli wolisz Gradle, dołącz to do swojego`build.gradle` plik:
+Jeśli wolisz Gradle, uwzględnij to w swoim`build.gradle` plik:
 
 ```gradle
-implementation group: 'com.aspose', name: 'aspose-pdf', version: '21.11' // Zamień na najnowszą wersję
+implementation group: 'com.aspose', name: 'aspose-pdf', version: '21.11' // Zastąp najnowszą wersją
 ```
 
 ## Kodowanie stempla z numerem strony
 
-Teraz zagłębimy się w kod. Stworzymy prosty program w języku Java, który będzie dodawać znaczniki numerów stron do dokumentu PDF.
+Teraz zanurkujmy w kod. Stworzymy prosty program Java, aby dodać znaczniki numerów stron do dokumentu PDF.
 
 ```java
 import com.aspose.pdf.*;
@@ -57,7 +57,7 @@ public class AddPageNumberStamp {
         pageNumberStamp.setStartingNumber(1);
         pageNumberStamp.setFormat("Page #");
 
-        // Dodaj stempel do wszystkich stron
+        // Dodaj znaczek do wszystkich stron
         for (int page = 1; page <= pdfDocument.getPages().size(); page++) {
             pdfDocument.getPages().get_Item(page).addStamp(pageNumberStamp);
         }
@@ -74,32 +74,32 @@ W tym kodzie ładujemy dokument PDF, tworzymy stempel z numerem strony, dostosow
 
 Aby zastosować stempel z numerem strony, wykonaj następujące kroki:
 
-1.  Załaduj dokument PDF za pomocą`Document pdfDocument = new Document("input.pdf");` , Gdzie`"input.pdf"` to ścieżka do pliku PDF.
+1.  Załaduj dokument PDF za pomocą`Document pdfDocument = new Document("input.pdf");` , Gdzie`"input.pdf"` jest ścieżką do Twojego pliku PDF.
 
-2.  Stwórz`PageNumberStamp` obiekt i dostosuj go do swoich preferencji.
+2.  Utwórz`PageNumberStamp` obiekt i dostosuj go według swoich preferencji.
 
-3. Dodaj stempel do każdej strony pliku PDF za pomocą pętli.
+3. Dodaj znaczek do każdej strony pliku PDF za pomocą pętli.
 
-4.  Zapisz zmodyfikowany plik PDF za pomocą`pdfDocument.save("output.pdf");` . Możesz wymienić`"output.pdf"` z żądaną nazwą pliku.
+4.  Zapisz zmodyfikowany plik PDF za pomocą`pdfDocument.save("output.pdf");` . Możesz zastąpić`"output.pdf"` z żądaną nazwą pliku.
 
 ## Testowanie wyniku
 
-Po dodaniu stempla numeru strony do pliku PDF czas przetestować wynik. Uruchom program Java, a zobaczysz numery stron zastosowane do każdej strony dokumentu PDF.
+Teraz, gdy dodałeś numer strony do swojego pliku PDF, czas przetestować wynik. Uruchom program Java, a zobaczysz numery stron zastosowane do każdej strony dokumentu PDF.
 
 ## Wniosek
 
-W tym samouczku pokazaliśmy, jak dodawać znaczniki numerów stron do dokumentów PDF przy użyciu języka Java i Aspose.PDF dla języka Java. Numery stron zwiększają użyteczność plików PDF, ułatwiając czytelnikom nawigację po zawartości. Dzięki Aspose.PDF dla Java zadanie to staje się proste, nawet dla osób z podstawowymi umiejętnościami programowania. Już dziś zacznij ulepszać swoje dokumenty PDF za pomocą niestandardowych znaczników numerów stron.
+W tym samouczku pokazaliśmy, jak dodawać stemple z numerami stron do dokumentów PDF za pomocą Javy i Aspose.PDF dla Javy. Numery stron zwiększają użyteczność plików PDF, ułatwiając czytelnikom nawigację po treści. Dzięki Aspose.PDF dla Javy zadanie to staje się proste, nawet dla osób z podstawowymi umiejętnościami programowania. Zacznij ulepszać swoje dokumenty PDF już dziś za pomocą niestandardowych stempli z numerami stron.
 
 ## Często zadawane pytania
 
 ### Jak pobrać Aspose.PDF dla Java?
 
- Możesz pobrać plik Aspose.PDF dla Java ze strony internetowej pod adresem[Tutaj](https://releases.aspose.com/pdf/java/). Wybierz wersję pasującą do Twojego projektu.
+ Plik Aspose.PDF dla języka Java można pobrać ze strony internetowej pod adresem[Tutaj](https://releases.aspose.com/pdf/java/). Wybierz wersję, która pasuje do Twojego projektu.
 
 ### Czy mogę dostosować wygląd stempla z numerem strony?
 
-Tak, Aspose.PDF dla Java umożliwia szerokie dostosowywanie stempla numeru strony. Możesz dostosować czcionkę, rozmiar, kolor i położenie, aby dopasować je do stylu dokumentu.
+Tak, Aspose.PDF dla Java umożliwia rozległą personalizację stempla numeru strony. Możesz dostosować czcionkę, rozmiar, kolor i pozycję, aby pasowały do stylu dokumentu.
 
 ### Czy Aspose.PDF dla Java jest kompatybilny z różnymi wersjami PDF?
 
-Absolutnie! Aspose.PDF dla Java obsługuje różne wersje PDF, zapewniając kompatybilność z szeroką gamą dokumentów, niezależnie od ich wersji PDF.
+Oczywiście! Aspose.PDF for Java obsługuje różne wersje PDF, zapewniając zgodność z szeroką gamą dokumentów, niezależnie od ich wersji PDF.

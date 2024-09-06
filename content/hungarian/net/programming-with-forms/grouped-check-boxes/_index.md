@@ -41,7 +41,7 @@ Példányosítson egy RadioButtonField objektumot az oldalszámmal argumentumké
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## 5. lépés: Adja meg a választógomb opcióit
+## 5. lépés: Adja hozzá a választógomb opcióit
 
 Adjon hozzá választógomb-beállításokat a RadioButtonOptionField objektum segítségével, és adja meg helyzetüket a Rectangle objektum segítségével:
 
@@ -142,11 +142,11 @@ V: A PDF-dokumentumban lévő csoportosított jelölőnégyzetek egy csoportba s
 
 #### K: Testreszabhatom a csoportosított jelölőnégyzetek megjelenését az Aspose.PDF for .NET fájlban?
 
-V: Igen, testreszabhatja a csoportosított jelölőnégyzetek megjelenését az Aspose.PDF for .NET fájlban. Az API különféle lehetőségeket kínál a választógomb-beállítások stílusának, szegélyének és megjelenésének beállítására. Meghatározhatja az egyes opciók helyzetét, választhat a különböző dobozstílusok közül (pl. négyzet, kör, kereszt), és módosíthatja a szegély tulajdonságait a kívánt vizuális megjelenítés eléréséhez.
+V: Igen, testreszabhatja a csoportosított jelölőnégyzetek megjelenését az Aspose.PDF for .NET fájlban. Az API különféle lehetőségeket kínál a választógomb-opciók stílusának, szegélyének és megjelenésének beállítására. Meghatározhatja az egyes opciók helyzetét, választhat a különböző dobozstílusok közül (pl. négyzet, kör, kereszt), és módosíthatja a szegély tulajdonságait a kívánt vizuális megjelenítés eléréséhez.
 
 #### K: Hogyan adhatok csoportosított jelölőnégyzeteket egy PDF-dokumentum egy adott oldalához?
 
-V: Ha csoportosított jelölőnégyzeteket szeretne hozzáadni egy PDF-dokumentum egy adott oldalához, példányosítania kell a`RadioButtonField` objektum a kívánt oldalszámmal argumentumként. Ezután hozzon létre`RadioButtonOptionField` az egyes választógomb opciókat képviselő objektumokat, és adjuk meg pozíciójukat a gombbal`Rectangle` tárgy. Végül adja hozzá ezeket a lehetőségeket a`RadioButtonField` és szükség szerint testreszabhatja megjelenésüket, mielőtt hozzáadná a`RadioButtonField` a dokumentum űrlapra.
+V: Ha csoportosított jelölőnégyzeteket szeretne hozzáadni egy PDF-dokumentum egy adott oldalához, példányosítania kell a`RadioButtonField` objektum a kívánt oldalszámmal argumentumként. Ezután hozzon létre`RadioButtonOptionField` az egyes választógomb opciókat képviselő objektumokat, és adjuk meg pozíciójukat a gombbal`Rectangle` objektum. Végül adja hozzá ezeket a beállításokat a`RadioButtonField` és szükség szerint testreszabhatja megjelenésüket, mielőtt hozzáadná a`RadioButtonField` a dokumentum űrlapra.
 
 #### K: Hozzáadhatok több jelölőnégyzetcsoportot egyetlen PDF-dokumentumhoz?
 

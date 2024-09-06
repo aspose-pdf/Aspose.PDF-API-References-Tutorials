@@ -1,18 +1,18 @@
 ---
-title: Tabelbreedte ophalen in PDF-bestand
-linktitle: Tabelbreedte ophalen in PDF-bestand
+title: Tabelbreedte in PDF-bestand ophalen
+linktitle: Tabelbreedte in PDF-bestand ophalen
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u de breedte van een tabel in een PDF-bestand kunt verkrijgen met Aspose.PDF voor .NET.
+description: Leer hoe u de breedte van een tabel in een PDF-bestand kunt bepalen met Aspose.PDF voor .NET.
 type: docs
 weight: 90
 url: /nl/net/programming-with-tables/get-table-width/
 ---
-In deze tutorial gaan we leren hoe we de breedte van een tabel in een PDF-bestand kunnen krijgen met Aspose.PDF voor .NET. We leggen de broncode in C# stap voor stap uit. Aan het einde van deze tutorial weet u hoe u de breedte van een tabel in een PDF-document kunt bepalen. Laten we beginnen!
+In deze tutorial gaan we leren hoe je de breedte van een tabel in een PDF-bestand kunt krijgen met Aspose.PDF voor .NET. We leggen de broncode in C# stap voor stap uit. Aan het einde van deze tutorial weet je hoe je de breedte van een tabel in een PDF-document kunt krijgen. Laten we beginnen!
 
 ## Stap 1: De omgeving instellen
-Zorg er eerst voor dat u uw C#-ontwikkelomgeving hebt ingesteld met Aspose.PDF voor .NET. Voeg de verwijzing naar de bibliotheek toe en importeer de benodigde naamruimten.
+Zorg er eerst voor dat u uw C#-ontwikkelomgeving hebt ingesteld met Aspose.PDF voor .NET. Voeg de referentie toe aan de bibliotheek en importeer de benodigde naamruimten.
 
-## Stap 2: Een nieuw document en pagina maken
+## Stap 2: Een nieuw document en een nieuwe pagina maken
 We maken een nieuw PDF-document en voegen een pagina toe aan dit document.
 
 ```csharp
@@ -21,7 +21,7 @@ Page page = doc.Pages.Add();
 ```
 
 ## Stap 3: Een nieuwe tabel initialiseren
-We initialiseren een nieuwe tabel en stellen de kolom passend in op "AutoFitToContent".
+We initialiseren een nieuwe tabel en stellen de kolompassing in op "AutoFitToContent".
 
 ```csharp
 Table table = new Table
@@ -30,8 +30,8 @@ ColumnAdjustment = ColumnAdjustment.AutoFitToContent
 };
 ```
 
-## Stap 4: Voeg rij en cellen toe aan de tabel
-We voegen een rij toe aan de tabel en voegen cellen toe aan die rij.
+## Stap 4: Rijen en cellen toevoegen aan tabel
+We voegen een rij toe aan de tabel en voegen cellen toe in die rij.
 
 ```csharp
 Row row = table.Rows.Add();
@@ -39,57 +39,57 @@ Cell cell = row.Cells.Add("Text of cell 1");
 cell = row.Cells.Add("Text from cell 2");
 ```
 
-## Stap 5: Haal de tafelbreedte op
-We gebruiken de methode "GetWidth()" om de breedte van de tabel te bepalen.
+## Stap 5: Tabelbreedte verkrijgen
+We gebruiken de methode "GetWidth()" om de breedte van de tabel te verkrijgen.
 
 ```csharp
 Console.WriteLine(table.GetWidth());
 ```
 
-### Voorbeeldbroncode voor het verkrijgen van tabelbreedte met Aspose.PDF voor .NET
+### Voorbeeldbroncode voor het verkrijgen van tabelbreedte met behulp van Aspose.PDF voor .NET
 
 ```csharp
-// Maak een nieuw document
+// Een nieuw document maken
 Document doc = new Document();
-// Pagina toevoegen aan document
+// Pagina toevoegen in document
 Page page = doc.Pages.Add();
-// Initialiseer een nieuwe tabel
+// Initialiseer nieuwe tabel
 Table table = new Table
 {
 	ColumnAdjustment = ColumnAdjustment.AutoFitToContent
 };
-// Rij toevoegen aan tabel
+// Rij toevoegen in tabel
 Row row = table.Rows.Add();
-// Cel toevoegen aan tabel
+// Cel toevoegen in tabel
 Cell cell = row.Cells.Add("Cell 1 text");
 cell = row.Cells.Add("Cell 2 text");
-// Tabelbreedte verkrijgen
+// Tabelbreedte ophalen
 Console.WriteLine(table.GetWidth());
 
 System.Console.WriteLine("Extracted table width succesfully!");
 ```
 
 ## Conclusie
-In deze zelfstudie hebben we geleerd hoe u de breedte van een tabel in een PDF-document kunt verkrijgen met behulp van Aspose.PDF voor .NET. U kunt deze stapsgewijze handleiding gebruiken om tabelbreedtes in uw eigen C#-projecten te verkrijgen.
+In deze tutorial hebben we geleerd hoe je de breedte van een tabel in een PDF-document kunt krijgen met Aspose.PDF voor .NET. Je kunt deze stapsgewijze handleiding gebruiken om tabelbreedtes in je eigen C#-projecten te krijgen.
 
-### Veelgestelde vragen over het verkrijgen van tabelbreedte in PDF-bestand
+### FAQ's voor het verkrijgen van tabelbreedte in PDF-bestand
 
-#### Vraag: Kan ik de kolomaanpassing van de tabel wijzigen naar een vaste breedte in plaats van AutoFitToContent?
+#### V: Kan ik de kolombreedte van de tabel aanpassen naar een vaste breedte in plaats van AutoFitToContent?
 
- A: Ja, u kunt de kolombreedte aanpassen naar een vaste waarde door de`ColumnAdjustment` eigendom aan`ColumnAdjustment.FixedColumnWidth` . Nadat u deze eigenschap hebt ingesteld, kunt u voor elke kolom de gewenste breedte opgeven met behulp van de`ColumnWidths` eigendom van de tafel.
+ A: Ja, u kunt de kolombreedte aanpassen naar een vaste waarde door de`ColumnAdjustment` eigendom van`ColumnAdjustment.FixedColumnWidth` Nadat u deze eigenschap hebt ingesteld, kunt u de gewenste breedte voor elke kolom opgeven met behulp van de`ColumnWidths` Eigenschap van de tabel.
 
-####  Vraag: Wat moet ik doen als de tabel meerdere pagina's beslaat? Zal de`GetWidth()` method still provide accurate results?
+####  V: Wat als de tabel zich over meerdere pagina's uitstrekt? Zal de`GetWidth()` method still provide accurate results?
 
- EEN: De`GetWidth()` methode berekent de breedte van de tabel op basis van de inhoud op de huidige pagina. Als de tabel meerdere pagina's beslaat, moet u mogelijk elke pagina doorlopen en de breedten van de tabel op elke pagina bij elkaar optellen om de totale breedte van de volledige tabel te krijgen.
+ A: De`GetWidth()` methode berekent de breedte van de tabel op basis van de inhoud ervan op de huidige pagina. Als de tabel zich over meerdere pagina's uitstrekt, moet u mogelijk door elke pagina itereren en de breedtes van de tabel op elke pagina optellen om de totale breedte van de volledige tabel te krijgen.
 
-#### Vraag: Kan ik de individuele kolombreedtes van de tabel verkrijgen met Aspose.PDF voor .NET?
+#### V: Kan ik de individuele kolombreedtes van de tabel verkrijgen met Aspose.PDF voor .NET?
 
-A: Ja, u kunt de individuele kolombreedtes van de tabel opvragen met behulp van de`ColumnWidths` eigendom. Het retourneert een tekenreeks die de breedte van elke kolom vertegenwoordigt, gescheiden door spaties. U kunt deze tekenreeks vervolgens parseren om de breedte van elke kolom te bepalen.
+A: Ja, u kunt de individuele kolombreedtes van de tabel ophalen met behulp van de`ColumnWidths` eigenschap. Het retourneert een string die de breedte van elke kolom vertegenwoordigt, gescheiden door spaties. U kunt deze string vervolgens parsen om de breedte van elke kolom te krijgen.
 
-#### Vraag: Is het mogelijk om de hoogte van de tabel te achterhalen met Aspose.PDF voor .NET?
+#### V: Is het mogelijk om de hoogte van de tabel te bepalen met Aspose.PDF voor .NET?
 
- A: Ja, u kunt de hoogte van de tafel bepalen met behulp van de`GetHeight()` werkwijze van de tafel. Deze methode retourneert de totale hoogte van de tabel op basis van de inhoud en lay-out.
+ A: Ja, u kunt de hoogte van de tafel bepalen met behulp van de`GetHeight()` methode van de tabel. Deze methode retourneert de totale hoogte van de tabel op basis van de inhoud en lay-out.
 
-#### Vraag: Kan ik de tabelbreedte aanpassen op basis van specifieke inhoud in elke cel?
+#### V: Kan ik de tabelbreedte aanpassen op basis van de specifieke inhoud van elke cel?
 
- A: Ja, u kunt de tabelbreedte aanpassen op basis van specifieke inhoud in elke cel door de`ColumnAdjustment` eigendom aan`ColumnAdjustment.AutoFitToContent`. Aspose.PDF voor .NET past automatisch de kolombreedte aan zodat deze in elke cel past.
+ A: Ja, u kunt de tabelbreedte aanpassen op basis van de specifieke inhoud in elke cel door de`ColumnAdjustment` eigendom van`ColumnAdjustment.AutoFitToContent`. Aspose.PDF voor .NET past automatisch de kolombreedtes aan zodat de inhoud van elke cel past.

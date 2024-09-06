@@ -1,26 +1,26 @@
 ---
-title: Sütun Metnini PDF Dosyasından Çıkartın
-linktitle: Sütun Metnini PDF Dosyasından Çıkartın
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak PDF dosyasındaki sütun metinlerini nasıl çıkaracağınızı öğrenin.
+title: PDF Dosyasındaki Sütun Metnini Çıkar
+linktitle: PDF Dosyasındaki Sütun Metnini Çıkar
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki sütun metinlerinin nasıl çıkarılacağını öğrenin.
 type: docs
 weight: 150
 url: /tr/net/programming-with-text/extract-columns-text/
 ---
-Bu eğitim, Aspose.PDF for .NET'i kullanarak PDF dosyasındaki sütun metnini çıkarma sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları gösterir.
+Bu eğitim, .NET için Aspose.PDF kullanarak PDF dosyasındaki sütun metinlerini çıkarma sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları göstermektedir.
 
 ## Gereksinimler
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Makinenizde kurulu Visual Studio veya başka herhangi bir C# derleyicisi.
-- Aspose.PDF for .NET kitaplığı. Resmi Aspose web sitesinden indirebilir veya yüklemek için NuGet gibi bir paket yöneticisi kullanabilirsiniz.
+- Bilgisayarınızda Visual Studio veya herhangi bir C# derleyicisi yüklü olmalıdır.
+- Aspose.PDF for .NET kütüphanesi. Resmi Aspose web sitesinden indirebilir veya NuGet gibi bir paket yöneticisi kullanarak kurabilirsiniz.
 
-## 1. Adım: Projeyi ayarlayın
+## Adım 1: Projeyi kurun
 1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
-2. Aspose.PDF for .NET kitaplığına bir referans ekleyin.
+2. .NET için Aspose.PDF kitaplığına bir referans ekleyin.
 
-## 2. Adım: Gerekli ad alanlarını içe aktarın
-Sütun metnini çıkarmak istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki kullanma yönergelerini ekleyin:
+## Adım 2: Gerekli ad alanlarını içe aktarın
+Sütun metinlerini çıkarmak istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki using yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,18 +28,18 @@ using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-## 3. Adım: Belge dizinini ayarlayın
- Kodda yazan satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belgelerinizin saklandığı dizinin yolu ile birlikte.
+## Adım 3: Belge dizinini ayarlayın
+ Kodda şu satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` Belgelerinizin saklandığı dizinin yolunu içeren.
 
-## 4. Adım: PDF belgesini açın
- Mevcut bir PDF belgesini kullanarak açın.`Document`yapıcı ve yolu giriş PDF dosyasına geçirme.
+## Adım 4: PDF belgesini açın
+ Mevcut bir PDF belgesini şu şekilde açın:`Document` yapıcı ve giriş PDF dosyasına giden yolu geçirme.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
 ```
 
-## 5. Adım: Yazı tipi boyutunu ayarlayın
-Okunabilirliği artırmak ve sütunlu metni daha iyi temsil etmek için metin parçalarının yazı tipi boyutunu 0,7 kat azaltın.
+## Adım 5: Yazı tipi boyutunu ayarlayın
+Okunabilirliği artırmak ve sütunlu metni daha iyi temsil etmek için metin parçalarının yazı tipi boyutunu 0,7 oranında azaltın.
 
 ```csharp
 TextFragmentAbsorber tfa = new TextFragmentAbsorber();
@@ -51,8 +51,8 @@ foreach(TextFragment tf in tfc)
 }
 ```
 
-## 6. Adım: Sütunlardan metni çıkarın
- Değiştirilen PDF belgesini bir bellek akışına kaydedin ve yeni bir belge olarak yeniden yükleyin. Daha sonra şunu kullanın:`TextAbsorber` Sütunlardan metin çıkarmak için sınıf.
+## Adım 6: Sütunlardan metin çıkarın
+ Değiştirilen PDF belgesini bir bellek akışına kaydedin ve yeni bir belge olarak yeniden yükleyin. Ardından, şunu kullanın:`TextAbsorber` Sütunlardan metin çıkarmak için sınıf.
 
 ```csharp
 Stream st = new MemoryStream();
@@ -64,7 +64,7 @@ String extractedText = textAbsorber.Text;
 textAbsorber.Visit(pdfDocument);
 ```
 
-## 7. Adım: Çıkarılan metni kaydedin
+## Adım 7: Çıkarılan metni kaydedin
 Çıkarılan metni belirtilen çıktı dosyası yolundaki bir metin dosyasına kaydedin.
 
 ```csharp
@@ -73,9 +73,9 @@ File.WriteAllText(dataDir, extractedText);
 Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
 ```
 
-### Aspose.PDF for .NET kullanarak Sütun Metnini Çıkart için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Sütun Metnini Çıkarmak için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");                
@@ -100,17 +100,17 @@ Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Docum
 ```
 
 ## Çözüm
-Aspose.PDF for .NET'i kullanarak bir PDF belgesinden sütun metinlerini başarıyla çıkardınız. Çıkarılan metin belirtilen çıktı dosyasına kaydedildi.
+Aspose.PDF for .NET kullanarak bir PDF belgesinden sütun metinlerini başarıyla çıkardınız. Çıkarılan metin belirtilen çıktı dosyasına kaydedildi.
 
-### SSS'ler
+### SSS
 
 #### S: Bu eğitimin amacı nedir?
 
-C: Bu eğitim, Aspose.PDF for .NET kullanarak bir PDF dosyasından metin sütunlarının çıkarılması konusunda adım adım bir kılavuz sunar. Ekteki C# kaynak kodu, gerekli prosedürlerin pratik bir gösterimini sağlar.
+A: Bu eğitim, .NET için Aspose.PDF kullanarak bir PDF dosyasından metin sütunlarını çıkarmak için adım adım bir kılavuz sunar. Eşlik eden C# kaynak kodu, gerekli prosedürlerin pratik bir gösterimini sağlar.
 
 #### S: Hangi ad alanlarını içe aktarmalıyım?
 
-C: Metin sütunlarını çıkarmayı planladığınız kod dosyasında, dosyanın başına aşağıdaki kullanma yönergelerini ekleyin:
+A: Metin sütunlarını çıkarmayı planladığınız kod dosyasında, dosyanın başına aşağıdaki using yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
@@ -120,28 +120,28 @@ using System.IO;
 
 #### S: Belge dizinini nasıl belirlerim?
 
- A: Çizgiyi bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` kodda ve değiştirin`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
+ A: Satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` kodda ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininize giden gerçek yol ile.
 
-#### S: Mevcut bir PDF belgesini nasıl açarım?
+#### S: Mevcut bir PDF belgesini nasıl açabilirim?
 
- C: 4. Adımda, mevcut bir PDF belgesini aşağıdaki komutu kullanarak açacaksınız:`Document` yapıcı ve giriş PDF dosyasının yolunu sağlama.
+ A: 4. Adımda, mevcut bir PDF belgesini kullanarak açacaksınız.`Document` yapıcı ve giriş PDF dosyasına giden yolu sağlama.
 
-#### S: Yazı tipi boyutu neden ayarlandı?
+#### S: Yazı tipi boyutu neden ayarlanıyor?
 
-C: Adım 5, metin parçalarının yazı tipi boyutunun 0,7 kat azaltılmasını içerir. Bu ayarlama okunabilirliği artırır ve sütunlu metni daha doğru şekilde temsil eder.
+A: Adım 5, metin parçalarının yazı tipi boyutunu 0,7 faktörüyle azaltmayı içerir. Bu ayarlama okunabilirliği artırır ve sütunlu metni daha doğru bir şekilde temsil eder.
 
-#### S: Sütunlardan metni nasıl ayıklayabilirim?
+#### S: Sütunlardan metni nasıl çıkarabilirim?
 
- C: Adım 6, değiştirilmiş PDF belgesinin bir bellek akışına kaydedilmesini, yeni bir belge olarak yeniden yüklenmesini ve ardından`TextAbsorber` Sütunlardan metin çıkarmak için sınıf.
+ A: 6. Adım, değiştirilen PDF belgesini bir bellek akışına kaydetmek, yeni bir belge olarak yeniden yüklemek ve ardından`TextAbsorber` Sütunlardan metin çıkarmak için sınıf.
 
-#### S: Çıkarılan metni kaydetmenin amacı nedir?
+#### S: Çıkarılan metnin kaydedilmesinin amacı nedir?
 
-C: 7. Adımda, çıkarılan metni belirtilen çıktı dosyası yolundaki bir metin dosyasına kaydedeceksiniz.
+A: 7. Adımda, çıkarılan metni belirtilen çıktı dosyası yolundaki bir metin dosyasına kaydedeceksiniz.
 
-#### S: Çıkartmadan önce neden yazı tipi boyutunu küçültmelisiniz?
+#### S: Çıkarmadan önce yazı tipi boyutunu neden küçültmek gerekiyor?
 
-C: Yazı tipi boyutunun küçültülmesi, çıkarılan metnin sütunlar içinde düzgün şekilde hizalanmasını sağlayarak orijinal düzenin daha doğru bir temsilini sağlar.
+A: Yazı tipi boyutunu küçültmek, çıkarılan metnin sütunlar içinde düzgün bir şekilde hizalanmasını sağlayarak, orijinal düzenin daha doğru bir şekilde gösterilmesini sağlar.
 
-#### S: Bu eğitimden çıkarılacak önemli sonuç nedir?
+#### S: Bu eğitimden çıkarılacak en önemli ders nedir?
 
-C: Bu eğitimi takip ederek Aspose.PDF for .NET kullanarak bir PDF belgesinden metin sütunları çıkarmak için gereken bilgi ve becerileri edindiniz. Ortaya çıkan metin belirtilen çıktı dosyasına kaydedildi.
+A: Bu öğreticiyi takip ederek, .NET için Aspose.PDF kullanarak bir PDF belgesinden metin sütunlarını çıkarmak için gereken bilgi ve becerileri edindiniz. Ortaya çıkan metin belirtilen çıktı dosyasına kaydedildi.

@@ -80,4 +80,4 @@ S: Ja, det finns några begränsningar att tänka på när du konverterar dynami
 
 #### F: Kan jag konvertera en standard AcroForm till en dynamisk XFA-form med Aspose.PDF för .NET?
 
-S: Aspose.PDF för .NET stöder för närvarande konvertering av dynamiska XFA-formulär till vanliga AcroForms, men det stöder inte den omvända operationen av att konvertera standard AcroForms till dynamiska XFA-formulär. Att konvertera standard AcroForms till dynamiska XFA-formulär innebär mer komplexa transformationer och kanske inte stöds fullt ut i alla scenarier.
+S: Aspose.PDF för .NET stöder för närvarande konvertering av dynamiska XFA-formulär till standard AcroForms, men det stöder inte den omvända operationen av att konvertera standard AcroForms till dynamiska XFA-formulär. Att konvertera standard AcroForms till dynamiska XFA-formulär innebär mer komplexa transformationer och kanske inte stöds fullt ut i alla scenarier.

@@ -1,37 +1,37 @@
 ---
 title: PDF'deki Kenarlığı Tabloya Ayarla
 linktitle: PDF'deki Kenarlığı Tabloya Ayarla
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile PDF'de tabloya nasıl kenarlık ayarlayacağınızı öğrenin.
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET ile PDF'de tabloya kenarlık eklemeyi öğrenin.
 type: docs
 weight: 200
 url: /tr/net/programming-with-tables/set-border/
 ---
-Bu eğitimde, Aspose.PDF for .NET'i kullanarak bir PDF belgesinin tablosunda kenarlık ayarlama konusunda size adım adım rehberlik edeceğiz. Sağlanan C# kaynak kodunu açıklayacağız ve size nasıl uygulayacağınızı göstereceğiz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesinin tablosunda bir kenarlık ayarlamanız için size adım adım rehberlik edeceğiz. Sağlanan C# kaynak kodunu açıklayacağız ve nasıl uygulayacağınızı göstereceğiz.
 
-## Adım 1: Belge nesnesini örneklendirme
-İlk olarak bir Document nesnesini başlatacağız:
+## Adım 1: Belge nesnesini örnekleme
+İlk olarak bir Document nesnesi oluşturacağız:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Adım 2: PDF belgesine sayfa ekleme
-Daha sonra PDF belgesine bir sayfa ekleyeceğiz:
+## Adım 2: PDF belgesine bir sayfa ekleme
+Şimdi PDF belgesine bir sayfa ekleyeceğiz:
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
 ## Adım 3: BorderInfo nesnesini oluşturma
-Şimdi tablonun kenarlığını tanımlamak için bir BorderInfo nesnesi oluşturacağız:
+Şimdi tablonun sınırını tanımlamak için bir BorderInfo nesnesi oluşturacağız:
 
 ```csharp
 Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
 ```
 
-## 4. Adım: Üst ve alt kenarlıkları belirtme
-Üst ve alt kenarlıkların çift olacağını belirteceğiz:
+## Adım 4: Üst ve alt sınırların belirlenmesi
+Üst ve alt sınırların çift olacağını belirtelim:
 
 ```csharp
 border.Top.IsDoubled = true;
@@ -39,14 +39,14 @@ border.Bottom.IsDoubled = true;
 ```
 
 ## Adım 5: Tablo nesnesini örneklendirme
-Şimdi bir Table nesnesini başlatalım:
+Şimdi bir Table nesnesi oluşturalım:
 
 ```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 ```
 
 ## Adım 6: Sütun genişliklerini belirtme
-Tablonun sütunlarının genişliklerini belirleyeceğiz:
+Tablonun sütun genişliklerini belirleyeceğiz:
 
 ```csharp
 table. ColumnWidths = "100";
@@ -59,7 +59,7 @@ Bir Row nesnesi oluşturacağız:
 Aspose.Pdf.Row row = table.Rows.Add();
 ```
 
-## Adım 8: Satıra hücre ekleme
+## Adım 8: Satıra bir hücre ekleme
 Daha sonra satıra bir hücre ekleyeceğiz:
 
 ```csharp
@@ -67,7 +67,7 @@ Aspose.Pdf.Cell cell = row.Cells.Add("some text");
 ```
 
 ## Adım 9: Hücre kenarlığını ayarlama
-Hücrenin kenarlığını (çift kenarlık) tanımlayacağız:
+Hücrenin sınırını (çift kenarlık) tanımlayacağız:
 
 ```csharp
 cell. Border = border;
@@ -81,7 +81,7 @@ page.Paragraphs.Add(table);
 ```
 
 ## Adım 11: PDF belgesini kaydedin
-Son olarak PDF belgesini kaydedeceğiz:
+Son olarak PDF dokümanını kaydedeceğiz:
 
 ```csharp
 dataDir = dataDir + "TableBorderTest_out.pdf";
@@ -90,33 +90,33 @@ doc.Save(dataDir);
 Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Aspose.PDF for .NET kullanarak Set Border için örnek kaynak kodu
+### .NET için Aspose.PDF kullanarak Set Border için örnek kaynak kodu
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Belge nesnesini somutlaştır
+// Belge nesnesini örnekle
 Document doc = new Document();
 // PDF belgesine sayfa ekle
 Page page = doc.Pages.Add();
-// BorderInfo nesnesi oluştur
+// BorderInfo nesnesini oluştur
 Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
 //Üst sınırın çift olacağını belirtin
 border.Top.IsDoubled = true;
-// Alt kenarlığın çift olacağını belirtin
+// Alt sınırın çift olacağını belirtin
 border.Bottom.IsDoubled = true;
-// Tablo nesnesini somutlaştır
+// Tablo nesnesini örnekle
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Sütun genişliği bilgisini belirtin
+// Sütun genişliği bilgilerini belirtin
 table.ColumnWidths = "100";
 // Satır nesnesi oluştur
 Aspose.Pdf.Row row = table.Rows.Add();
-// Satırın hücre koleksiyonuna bir Tablo hücresi ekleme
+// Satır hücre koleksiyonuna bir Tablo hücresi ekleyin
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
-// Hücre nesnesinin kenarlığını ayarlayın (çift kenarlık)
+// Hücre nesnesi için kenarlığı ayarlayın (çift kenarlık)
 cell.Border = border;
-// Sayfanın paragraf koleksiyonuna tablo ekleyin
+// Sayfanın paragraf koleksiyonuna tablo ekle
 page.Paragraphs.Add(table);
 dataDir = dataDir + "TableBorderTest_out.pdf";
 // PDF belgesini kaydedin
@@ -126,26 +126,26 @@ Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
 ## Çözüm
-Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesinin tablosunda nasıl kenarlık ayarlayacağınızı öğrendiniz. Bu adım adım kılavuz size nasıl belge oluşturacağınızı, sayfa ekleyeceğinizi, tablo kenarlığını nasıl yapılandıracağınızı ve PDF belgesini nasıl kaydedeceğinizi gösterdi. Artık bu bilgiyi kendi projelerinize uygulayabilirsiniz.
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesinin tablosuna kenarlık koymayı öğrendiniz. Bu adım adım kılavuz size bir belge oluşturmayı, bir sayfa eklemeyi, tablo kenarlığını yapılandırmayı ve PDF belgesini kaydetmeyi gösterdi. Artık bu bilgiyi kendi projelerinize uygulayabilirsiniz.
 
-### SSS'ler
+### SSS
 
-#### S: Tablonun üst ve alt kenarları için farklı kenarlık stilleri (ör. kesikli veya noktalı) ayarlayabilir miyim?
+#### S: Tablonun üst ve alt kenarları için farklı kenarlık stilleri (örneğin kesikli veya noktalı) belirleyebilir miyim?
 
- C: Evet, tablonun üst ve alt kenarlıkları için farklı kenar stilleri ayarlayabilirsiniz.`border.Top.Style` Ve`border.Bottom.Style`Sağlanan C# kaynak kodundaki özellikler. Aspose.PDF for .NET, Düz, Kesikli, Noktalı, Çift ve daha fazlası dahil olmak üzere çeşitli kenarlık stilleri arasından seçim yapmanızı sağlar.
+ A: Evet, tablonun üst ve alt sınırları için farklı sınır stilleri belirleyebilirsiniz.`border.Top.Style` Ve`border.Bottom.Style`Sağlanan C# kaynak kodundaki özellikler. Aspose.PDF for .NET, Katı, Kesikli, Noktalı, Çift ve daha fazlası dahil olmak üzere çeşitli kenarlık stilleri arasından seçim yapmanıza olanak tanır.
 
-#### S: Tablonun kenarlığının rengini nasıl ayarlayabilirim?
+#### S: Tablonun kenarlık rengini nasıl ayarlayabilirim?
 
- C: Tablonun kenarlığının rengini değiştirerek ayarlayabilirsiniz.`border.Color` C# kaynak kodundaki özellik. Basitçe istediğiniz rengi sağlayın, örneğin`Aspose.Pdf.Color.Red` veya kenarlık rengini özelleştirmek için geçerli herhangi bir renk gösterimi.
+ A: Tablonun kenarlığının rengini,`border.Color` C# kaynak kodundaki özellik. Sadece istediğiniz rengi sağlayın, örneğin`Aspose.Pdf.Color.Red` veya herhangi bir geçerli renk gösterimini kullanarak, kenarlık rengini özelleştirebilirsiniz.
 
-#### S: Tablo içindeki tek tek hücrelere farklı ayarlarla (örneğin, farklı renkler veya kenarlık stilleri) kenarlıklar uygulamak mümkün müdür?
+#### S: Tablo içindeki her bir hücreye farklı ayarlarla (örneğin farklı renkler veya kenarlık stilleri) kenarlık uygulamak mümkün müdür?
 
- C: Evet, tablodaki ayrı ayrı hücrelere farklı ayarlarla kenarlıklar uygulayabilirsiniz.`cell.Border` Her hücre için ayrı ayrı özellik. Bu, gereksinimlerinize göre hücreye özgü kenarlık stillerine ve renklerine sahip olmanızı sağlar.
+ A: Evet, tablo içindeki ayrı hücrelere farklı ayarlarla kenarlıklar uygulayabilirsiniz.`cell.Border` her hücre için ayrı ayrı özellik. Bu, gereksinimlerinize göre hücreye özgü kenarlık stilleri ve renklerine sahip olmanızı sağlar.
 
-#### S: Tablonun belirli taraflarındaki kenarlığı kaldırabilir miyim (örn. sol ve sağ kenarlıklar)?
+#### S: Masanın belirli taraflarındaki (örneğin sol ve sağ kenarlıklar) kenarları kaldırabilir miyim?
 
- C: Evet, tablonun belirli taraflarındaki kenarlığı, kenarlığı değiştirerek kaldırabilirsiniz.`border.Left`, `border.Right`, `border.Top` , Ve`border.Bottom`C# kaynak kodundaki özellikler. Bu özelliklerin ayarlanması`null` tablonun karşılık gelen kenarlarındaki kenarlığı kaldıracaktır.
+ A: Evet, tablonun belirli taraflarındaki kenarlıkları,`border.Left`, `border.Right`, `border.Top` , Ve`border.Bottom`C# kaynak kodundaki özellikler. Bu özellikleri şu şekilde ayarlayın:`null` Tablonun ilgili kenarlarındaki sınırı kaldıracaktır.
 
-#### S: Tablonun kenarlığının kalınlığını nasıl ayarlayabilirim?
+#### S: Tablonun kenarlık kalınlığını nasıl ayarlayabilirim?
 
- C: Tablonun kenarlığının kalınlığını değiştirerek ayarlayabilirsiniz.`border.Width` C# kaynak kodundaki özellik. İstenilen kalınlığı elde etmek için istenilen kenar genişliğini (nokta olarak) ayarlamanız yeterlidir.
+ A: Tablonun kenarlığının kalınlığını,`border.Width` C# kaynak kodundaki özellik. İstenilen kalınlığı elde etmek için istenilen kenarlık genişliğini (nokta cinsinden) ayarlamanız yeterlidir.

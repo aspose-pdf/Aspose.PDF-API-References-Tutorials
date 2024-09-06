@@ -14,7 +14,7 @@ Aspose.PDF for Java je výkonné API, které umožňuje vývojářům pracovat s
 
 ## Začínáme s Aspose.PDF pro Javu
 
-Než se ponoříme do kódu, ujistěte se, že máte ve svém projektu nainstalovaný Aspose.PDF for Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci uvedených na webu.
+Než se ponoříme do kódu, ujistěte se, že máte ve svém projektu nainstalovaný Aspose.PDF for Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci uvedených na webu.
 
 ## Přidání Aspose.PDF do vašeho projektu
 
@@ -57,7 +57,7 @@ public class DrawLine {
         // Vytvořte nový dokument
         Document doc = new Document();
         
-        // Vytvořit stránku
+        // Vytvořte stránku
         Page page = doc.getPages().add();
         
         // Vytvořte čárový objekt
@@ -91,7 +91,7 @@ Po přidání řádku a jeho přizpůsobení můžete dokument PDF uložit do so
 doc.save("output.pdf");
 ```
 
-Gratulujeme! Úspěšně jste nakreslili čáru přes stránku v dokumentu PDF pomocí Aspose.PDF for Java.
+Gratuluji! Úspěšně jste nakreslili čáru přes stránku v dokumentu PDF pomocí Aspose.PDF for Java.
 
 ## Závěr
 
@@ -124,8 +124,8 @@ Ano, Aspose.PDF for Java je kompatibilní s Java 8 a novějšími verzemi. Ujist
 
 ### Jak mohu přidat text nad čáru, kterou jsem nakreslil?
 
- Chcete-li přidat text nad řádek, můžete použít`TextFragment` třídy poskytuje Aspose.PDF. Vytvořit`TextFragment` objekt a přidejte jej na stránku.
+ Chcete-li přidat text nad řádek, můžete použít`TextFragment` třídy poskytuje Aspose.PDF. Vytvořte a`TextFragment` objekt a přidejte jej na stránku.
 
 ### Kde najdu další příklady a dokumentaci k Aspose.PDF pro Javu?
 
- Úplnou dokumentaci a další příklady naleznete na stránce dokumentace Aspose.PDF for Java:[tady](https://reference.aspose.com/pdf/java/).
+ Úplnou dokumentaci a další příklady naleznete na stránce dokumentace Aspose.PDF for Java:[zde](https://reference.aspose.com/pdf/java/).

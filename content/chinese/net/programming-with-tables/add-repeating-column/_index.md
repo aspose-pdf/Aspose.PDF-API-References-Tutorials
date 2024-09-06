@@ -7,13 +7,13 @@ type: docs
 weight: 20
 url: /zh/net/programming-with-tables/add-repeating-column/
 ---
-在本教程中，我们将学习如何使用 Aspose.PDF for .NET 在 PDF 文档中添加重复列。我们将一步步解释C#的源代码。在本教程结束时，您将了解如何在 PDF 文档中创建带有重复列的表格。开始吧！
+在本教程中，我们将学习如何使用 Aspose.PDF for .NET 在 PDF 文档中添加重复列。我们将逐步解释 C# 中的源代码。在本教程结束时，您将了解如何在 PDF 文档中创建带有重复列的表格。让我们开始吧！
 
-## 第一步：搭建环境
-首先，确保您已使用 Aspose.PDF for .NET 设置 C# 开发环境。添加对库的引用并导入必要的命名空间。
+## 步骤 1：设置环境
+首先，确保您已使用 Aspose.PDF for .NET 设置了 C# 开发环境。添加对库的引用并导入必要的命名空间。
 
-## 第 2 步：创建 PDF 文档
-在此步骤中，我们创建一个新的 PDF 文档。
+## 步骤 2：创建 PDF 文档
+这一步我们创建一个新的PDF文档。
 
 ```csharp
 Document doc = new Document();
@@ -22,8 +22,8 @@ Page page = doc.Pages.Add();
 
 我们创建了一个空的 PDF 文档，可以在其中添加内容。
 
-## 第 3 步：创建表
-在此步骤中，我们创建一个主表（`outerTable`）和嵌套表（`mytable`）这将在该列中重复。
+## 步骤 3：创建表
+在此步骤中，我们创建一个主表（`outerTable`）和嵌套表格（`mytable`) 将会在列中重复出现。
 
 ```csharp
 Table outerTable = new Table();
@@ -35,9 +35,9 @@ mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
 ```
 
-我们指定了表属性，例如列宽和嵌套表分隔模式。
+我们指定了表格属性，例如列宽和嵌套表格中断模式。
 
-## 步骤 4：将表格添加到文档中
+## 步骤 4：将表格添加到文档
 现在我们将创建的表格添加到 PDF 文档中。
 
 ```csharp
@@ -49,10 +49,10 @@ mytable.RepeatingColumnsCount = 5;
 page.Paragraphs.Add(mytable);
 ```
 
-我们首先添加主表（`outerTable`) 到 PDF 文档。接下来，我们添加嵌套表（`mytable` ) 作为主表单元格中的一个段落。我们还指定重复列的数量`mytable`（在本例中为 5 列）。
+我们首先添加主表（`outerTable`) 到 PDF 文档中。接下来，我们添加嵌套表格 (`mytable` ) 作为主表格单元格中的一个段落。我们还指定了`mytable`（在此示例中为 5 列）。
 
-## 第 5 步：添加标题和行
-现在我们将标题和行添加到表中。
+## 步骤 5：添加标题和行
+现在我们向表中添加标题和行。
 
 ```csharp
 Row headerRow = mytable.Rows.Add();
@@ -60,7 +60,7 @@ headerRow.Cells.Add("header 1");
 headerRow.Cells.Add("header 2");
 headerRow.Cells.Add("header 3");
 // ...
-//在这里添加其他标题
+//在此处添加其他标题
 
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 {
@@ -73,17 +73,17 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 }
 ```
 
-我们首先将标题添加到表格的第一行（`headerRow`）。然后我们添加循环中的数据行。在此示例中，我们添加 6 行数据。
+我们首先将标题添加到表格的第一行（`headerRow`）。然后我们从循环中添加数据行。在此示例中，我们添加了 6 行数据。
 
-## 第6步：保存PDF文档
-最后，我们将PDF文档保存到指定的文件中。
+## 步骤 6：保存 PDF 文档
+最后我们将PDF文档保存到指定的文件中。
 
 ```csharp
 string outFile = dataDir + "AddRepeatingColumn_out.pdf";
 doc.Save(outFile);
 ```
 
-确保指定正确的目录和文件名来保存输出 PDF 文件。
+确保指定正确的目录和文件名来保存输出的 PDF 文件。
 
 ### 使用 Aspose.PDF for .NET 添加重复列的示例源代码
 
@@ -92,22 +92,22 @@ doc.Save(outFile);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 string outFile = dataDir + "AddRepeatingColumn_out.pdf";
-//创建一个新文档
+//创建新文档
 Document doc = new Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 
-//实例化一个占据整个页面的外表
+//实例化占据整个页面的外部表格
 Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-//实例化一个表格对象，该对象将嵌套在outerTable中，该对象将在同一页面内中断
+//实例化一个表对象，该对象将嵌套在 outerTable 中，并在同一页面内中断
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
 
-//将outerTable添加到页面段落中
-//将 mytable 添加到outerTable
+//将 outerTable 添加到页面段落
+//将 mytable 添加到 outerTable
 page.Paragraphs.Add(outerTable);
 var bodyRow = outerTable.Rows.Add();
 var bodyCell = bodyRow.Cells.Add();
@@ -135,7 +135,7 @@ row.Cells.Add("header 17");
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 
 {
-	//在表中创建行，然后在行中创建单元格
+	//在表格中创建行，然后在行中创建单元格
 	Aspose.Pdf.Row row1 = mytable.Rows.Add();
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
@@ -156,21 +156,21 @@ doc.Save(outFile);
 ```
 
 ## 结论
-在本教程中，我们学习了如何使用 Aspose.PDF for .NET 在 PDF 文档中添加重复列。您可以使用此分步指南在您自己的 C# 项目中创建具有重复列的表。
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 在 PDF 文档中添加重复列。您可以使用本分步指南在自己的 C# 项目中创建带有重复列的表格。
 
 ### 在 PDF 文档中添加重复列的常见问题解答
 
-#### 问：我可以自定义嵌套表中重复列的数量吗？
+#### 问：我可以自定义嵌套表中的重复列数吗？
 
-答：是的，您可以自定义嵌套表中重复列的数量。在提供的示例中，我们设置`mytable.RepeatingColumnsCount = 5;`，这意味着将有 5 个重复列。您可以将此值更改为任何所需的数字。
+答：是的，您可以自定义嵌套表中重复列的数量。在提供的示例中，我们设置`mytable.RepeatingColumnsCount = 5;`，这意味着将有 5 个重复的列。您可以将此值更改为任何所需的数字。
 
-#### 问：是否可以动态向嵌套表添加更多行？
+#### 问：是否可以动态地向嵌套表添加更多行？
 
-答：是的，您可以按照教程中所示的相同方式向嵌套表动态添加更多行。您可以使用循环或任何其他逻辑根据您的数据添加行。
+答：是的，您可以按照教程中所示的相同方式动态地向嵌套表添加更多行。您可以使用循环或任何其他逻辑根据您的数据添加行。
 
 #### 问：我可以将样式和格式应用于表格及其单元格吗？
 
-答：是的，您可以使用 Aspose.PDF for .NET 将样式和格式应用于表格及其单元格。该库提供了各种属性和方法来自定义表及其内容的外观。
+答：是的，您可以使用 Aspose.PDF for .NET 将样式和格式应用于表格及其单元格。该库提供了各种属性和方法来自定义表格及其内容的外观。
 
 #### 问：Aspose.PDF for .NET 与 .NET Core 兼容吗？
 
@@ -178,4 +178,4 @@ doc.Save(outFile);
 
 #### 问：我可以使用此方法在现有 PDF 文档中添加重复列吗？
 
-答：是的，您可以使用此方法在现有 PDF 文档中添加重复列。只需使用 Aspose.PDF for .NET 加载现有文档，然后按照相同的步骤创建和添加重复列。
+答：是的，您可以使用这种方法在现有 PDF 文档中添加重复列。只需使用 Aspose.PDF for .NET 加载现有文档，然后按照相同的步骤创建和添加重复列即可。

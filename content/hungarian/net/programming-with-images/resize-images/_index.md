@@ -113,7 +113,7 @@ V: A PDF-fájlban lévő képek átméretezése optimalizálhatja a dokumentum m
 
 ####  K: Mi a célja a`MaxResolution` option in the optimization settings?
 
- V: A`MaxResolution` választási lehetőség (`optimizeOptions.ImageCompressionOptions.MaxResolution`) beállítja a PDF-dokumentumban lévő képek maximális felbontását. A nagyobb felbontású képek az optimalizálási folyamat során erre a megadott értékre lesznek kicsinyítve.
+ V: A`MaxResolution` opció (`optimizeOptions.ImageCompressionOptions.MaxResolution`) beállítja a PDF-dokumentumban lévő képek maximális felbontását. A nagyobb felbontású képek az optimalizálási folyamat során erre a megadott értékre lesznek kicsinyítve.
 
 #### K: Hogyan állíthatom be a képméretezés optimalizálási beállításait?
 

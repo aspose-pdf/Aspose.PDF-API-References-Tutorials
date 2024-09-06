@@ -39,8 +39,8 @@ optimizationOptions.ImageCompressionOptions.ImageQuality = 10;
 I det här exemplet ställer vi in följande alternativ:
 - `LinkDuplcateStreams`: Det här alternativet gör det möjligt att ta bort dubbletter av strömmar i PDF-dokumentet, vilket kan hjälpa till att minska filstorleken.
 - `RemoveUnusedObjects`: Det här alternativet gör det möjligt att ta bort alla oanvända objekt i PDF-dokumentet, vilket också kan hjälpa till att minska filstorleken.
-- `RemoveUnusedStreams`Detta alternativ gör det möjligt att ta bort oanvända strömmar i PDF-dokumentet, vilket kan minska filstorleken ytterligare.
-- `CompressImages`: Det här alternativet möjliggör komprimering av bilder i PDF-dokumentet, vilket kan minska filstorleken avsevärt.
+- `RemoveUnusedStreams`: Detta alternativ gör det möjligt att ta bort oanvända strömmar i PDF-dokumentet, vilket kan minska filstorleken ytterligare.
+- `CompressImages`Det här alternativet möjliggör komprimering av bilder i PDF-dokumentet, vilket kan minska filstorleken avsevärt.
 - `ImageQuality`: Detta alternativ ställer in kvaliteten på de komprimerade bilderna. En lägre kvalitetsinställning kommer att resultera i en mindre filstorlek, men kan också resultera i en lägre bildkvalitet.
 
 ## Steg 4: Optimera PDF-dokumentet

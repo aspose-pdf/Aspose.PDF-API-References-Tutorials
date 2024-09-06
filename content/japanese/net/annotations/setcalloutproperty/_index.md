@@ -1,127 +1,154 @@
 ---
-title: PDF ファイルに吹き出しプロパティを設定する
-linktitle: PDF ファイルに吹き出しプロパティを設定する
+title: PDF ファイルの吹き出しプロパティを設定する
+linktitle: PDF ファイルの吹き出しプロパティを設定する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して PDF ファイルの吹き出しプロパティを設定する方法を学びます。吹き出し線、テキストの色、終了スタイルを使用して注釈をカスタマイズします。
+description: この詳細なステップバイステップのチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイルにコールアウト プロパティを設定する方法を学習します。
 type: docs
 weight: 130
 url: /ja/net/annotations/setcalloutproperty/
 ---
- Aspose.PDF for .NET は、C# で PDF ドキュメントを作成、操作、変換するための強力なライブラリです。このライブラリが提供する機能の 1 つは、PDF ドキュメント内のフリー テキスト注釈の吹き出しプロパティを設定する機能です。これは、`FreeTextAnnotation`クラスを使用すると、吹き出し付きの注釈を作成できます。
+## 導入
 
-このチュートリアルでは、C# で Aspose.PDF for .NET を使用してフリー テキスト注釈の吹き出しプロパティを設定するプロセスを説明します。以下の手順に従って開始してください。
+プロフェッショナルで視覚的に魅力的な PDF ドキュメントを作成するには、特定のコンテンツに注目を集める注釈の追加が必要になることがよくあります。そのような注釈の 1 つが吹き出しです。吹き出しは、漫画で見られる吹き出しのようなものです。吹き出しは、PDF 内のテキストを明確化したり強調したりするのに役立ちます。Aspose.PDF for .NET を使用すると、ドキュメントにそのような注釈を簡単に追加できます。このチュートリアルでは、この強力なライブラリを使用して PDF ファイルに吹き出しプロパティを設定する方法について説明します。熟練した開発者でも、初心者でも、このガイドを読み終える頃には、PDF ファイルで吹き出しを操作する方法を明確に理解できるようになります。
 
-## Aspose.PDF for .NET をインストールする
+## 前提条件
 
-まだ行っていない場合は、次のことを行う必要があります[ダウンロード](https://releases.aspose.com/pdf/net/)Aspose リリースまたは NuGet パッケージ マネージャー経由で Aspose.PDF for .NET をインストールします。
+コードに進む前に、始めるために必要な基本事項について説明しましょう。
 
-## ステップ 1: 新しい PDF ドキュメントを作成する
+1.  Aspose.PDF for .NET: Aspose.PDF for .NETライブラリがインストールされていることを確認してください。ダウンロードはこちらからできます。[ここ](https://releases.aspose.com/pdf/net/).
+2. IDE: Visual Studio などの開発環境。
+3. .NET Framework: マシンに .NET がインストールされていることを確認します。
+4. 一時ライセンス: Aspose.PDFの機能を制限なく試してみたい場合は、[一時ライセンス](https://purchase.aspose.com/temporary-license/).
 
-を使用して新しい PDF ドキュメントを作成します。`Document`Aspose.PDF for .NET によって提供されるクラス。
+## パッケージのインポート
+
+コードの記述を開始する前に、PDF ファイルと注釈を操作するために必要なパッケージをインポートする必要があります。
 
 ```csharp
-//ドキュメントディレクトリへのパス。
+using Aspose.Pdf.Annotations;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+```
+
+これらのインポートにより、PDF ドキュメントを操作し、吹き出しなどの注釈を作成するために必要なすべてのクラスとメソッドが提供されます。
+
+## ステップ1: PDFドキュメントを初期化する
+
+最初のステップは、吹き出し注釈を追加する新しい PDF ドキュメントを初期化することです。これは、要素を追加し始めることができる空白のキャンバスを設定することと考えてください。
+
+```csharp
+//ドキュメント ディレクトリへのパス。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+//新しいPDF文書を初期化する
 Document doc = new Document();
 ```
+ここでは、新しい`Document`PDFファイルとして機能するオブジェクトです。`dataDir`変数は、完了後に PDF ファイルを保存するディレクトリに設定されます。
 
-## ステップ 2: ドキュメントに新しいページを追加する
+## ステップ2: ドキュメントに新しいページを追加する
 
-を使用してドキュメントに新しいページを追加します。`Pages`のコレクション`Document`クラス。
+PDF ドキュメントには複数のページを含めることができます。この手順では、ドキュメントに新しいページを追加します。このページに、吹き出し注釈を配置します。
 
 ```csharp
+//ドキュメントに新しいページを追加する
 Page page = doc.Pages.Add();
 ```
+の`Pages.Add()`メソッドは、新しいページを追加するために使用されます`doc`オブジェクトに保存されます。新しいページは`page`変数は後で注釈を追加するときに使用します。
 
-## ステップ 3: デフォルトの外観を設定する
+## ステップ3: デフォルトの外観を定義する
 
-新しい注釈を作成して、フリー テキスト注釈のデフォルトの外観を設定します。`DefaultAppearance`オブジェクトとそのプロパティの設定`TextColor`そして`FontSize`.
+注釈には、吹き出しと同様に、カスタマイズ可能な外観があります。この手順では、吹き出し内のテキストの外観を定義します。
 
 ```csharp
+//注釈のデフォルトの外観を定義する
 DefaultAppearance da = new DefaultAppearance();
 da.TextColor = System.Drawing.Color.Red;
 da.FontSize = 10;
 ```
+私たちは`DefaultAppearance`テキストの色とフォント サイズを定義するオブジェクト。ここでは、テキストは赤になり、フォント サイズは 10 に設定されています。この外観は吹き出し注釈に適用されます。
 
-## ステップ 4: 吹き出し付きのフリーテキスト注釈を作成する
+## ステップ4: フリーテキスト注釈を作成する
 
-を使用して、吹き出し付きの新しいフリーテキスト注釈を作成します。`FreeTextAnnotation`クラス。をセットする`Intent`財産を`FreeTextIntent.FreeTextCallout`これが吹き出し注釈であることを指定します。をセットする`EndingStyle`財産を`LineEnding.OpenArrow`吹き出しの端の矢印のスタイルを指定します。をセットする`Callout`プロパティを配列に変換`Point`吹き出し線を描画する必要があるページ上の点を表すオブジェクト。
+次に、実際の注釈を作成します。フリーテキスト注釈を使用すると、特定のテキストとスタイルを使用して吹き出しを追加できます。
 
 ```csharp
+//吹き出し付きのFreeTextAnnotationを作成する
 FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
 fta.Intent = FreeTextIntent.FreeTextCallout;
 fta.EndingStyle = LineEnding.OpenArrow;
+```
+私たちは`FreeTextAnnotation`オブジェクトを特定の座標に関連付け、ページ上の位置を定義します。`Intent`に設定されています`FreeTextCallout`は、これが吹き出し注釈であることを示します。`EndingStyle`に設定されています`OpenArrow`つまり、吹き出し線は開いた矢印で終わります。
+
+## ステップ5: 吹き出し線のポイントを定義する
+
+吹き出し注釈には、関心領域を指す線があります。ここでは、この線を構成するポイントを定義します。
+
+```csharp
+//吹き出し線のポイントを定義する
 fta.Callout = new Point[]
 {
-    new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
+    new Point(428.25, 651.75), 
+    new Point(462.75, 681.375), 
+    new Point(474, 681.375)
 };
 ```
+の`Callout`プロパティは配列です`Point`オブジェクトはそれぞれページ上の座標を表します。これらのポイントは吹き出し線のパスを定義し、古典的な吹き出しの外観を与えます。
 
-## ステップ 5: フリーテキストの注釈をページに追加する
+## ステップ6: ページに注釈を追加する
 
-を使用して、フリーテキストの注釈をページに追加します。`Annotations`のコレクション`Page`クラス。
+注釈を作成して構成したら、次のステップはそれをページに追加することです。
 
 ```csharp
+//ページに注釈を追加する
 page.Annotations.Add(fta);
 ```
+の`Annotations.Add()`メソッドは、前に作成したページに注釈を配置するために使用されます。この手順により、PDF ページにコールアウトが効果的に「描画」されます。
 
-## ステップ 6: 注釈にテキストを追加する
+## ステップ7: リッチテキストコンテンツを設定する
 
-注釈にテキストを追加するには、`RichText`プロパティをフォーマットされた XML の文字列に変換します。このチュートリアルでは、テキストの色を赤、フォント サイズを 9 に設定します。
+吹き出し注釈にはリッチ テキストを含めることができ、吹き出し内にフォーマットされたコンテンツを表示できます。サンプル テキストを追加してみましょう。
 
 ```csharp
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF
+//注釈のリッチテキストを設定する
+fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"><span style=\"font-size:9.0pt;font-family:Helvetica\">これはサンプルです</span></p></body>";
 ```
+の`RichText`プロパティは HTML コンテンツで設定されます。これにより、フォント サイズ、色、スタイルを指定するなど、コールアウト内で詳細な書式設定が可能になります。
 
-## ステップ 7: ドキュメントを保存する
+## ステップ8: PDFドキュメントを保存する
 
-次に、次のコードを使用してドキュメントを保存します。
-
-```csharp
-doc.Save(dataDir + "SetCalloutProperty.pdf")
-```
-
-### Aspose.PDF for .NET を使用した Set Callout Property のソース コード例
+最後に、すべてを設定したら、ドキュメントを保存する必要があります。この手順で、コールアウト注釈付きの PDF の作成が完了します。
 
 ```csharp
-//ドキュメントディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-Document doc = new Document();
-Page page = doc.Pages.Add();
-DefaultAppearance da = new DefaultAppearance();
-da.TextColor = System.Drawing.Color.Red;
-da.FontSize = 10;
-FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
-fta.Intent = FreeTextIntent.FreeTextCallout;
-fta.EndingStyle = LineEnding.OpenArrow;
-fta.Callout = new Point[]
-{
-	new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
-};
-page.Annotations.Add(fta);
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"> <span style=\"font-size:9.0pt;font-family:Helvetica\">これはサンプルです</span></p></body>";
+//文書を保存する
 doc.Save(dataDir + "SetCalloutProperty.pdf");
 ```
+の`Save()`メソッドは、ドキュメントを指定されたディレクトリに「SetCalloutProperty.pdf」というファイル名で保存します。この手順で PDF 作成プロセスは完了です。
 
 ## 結論
 
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメント内のフリー テキスト注釈の吹き出しプロパティを設定する方法を検討しました。吹き出し注釈は、文書内の特定の領域に関連する追加情報や説明を提供するのに役立ちます。 Aspose.PDF for .NET は、吹き出しなどの注釈の作成やカスタマイズなど、PDF ファイルを操作するための幅広い機能を提供します。ステップバイステップのガイドに従い、提供されている C# ソース コードを使用することで、開発者は PDF ドキュメントに吹き出し注釈を簡単に実装でき、ドキュメントの使いやすさと明瞭さが向上します。 Aspose.PDF for .NET は、.NET アプリケーションでの PDF 操作のための多用途で信頼性の高いライブラリであり、さまざまな PDF 関連タスクを効率的に処理するための強力なツールを提供します。
+これで完了です。Aspose.PDF for .NET を使用して、吹き出し注釈付きの PDF ドキュメントを作成しました。この注釈は、ドキュメントの特定の部分を強調表示したり説明したりするのに非常に便利です。Aspose.PDF は、PDF の操作を簡単かつ柔軟にする強力な API を提供します。注釈の追加、ドキュメントの変換、複雑な PDF タスクの処理など、Aspose.PDF が対応します。
 
-### PDF ファイルのコールアウトプロパティの設定に関する FAQ
+## よくある質問
 
-#### Q: PDF ドキュメントの吹き出し注釈とは何ですか?
+### コールアウトの外観をさらにカスタマイズできますか?
 
-A: PDF ドキュメントの吹き出し注釈は、ドキュメント内の特定の領域を指す引出線を持つテキスト ボックスを作成できる注釈の一種です。通常、文書内の特定のセクションまたは要素に関連する追加情報またはコメントを提供するために使用されます。
+もちろんです! 線の色、太さ、テキストのフォント ファミリやスタイルなど、さまざまな側面をカスタマイズできます。
 
-#### Q: Aspose.PDF for .NET を使用してコールアウト注釈の外観をカスタマイズできますか?
+### 1 ページに複数のコールアウトを追加することは可能ですか?
 
-A: はい、色、フォント サイズ、テキストの配置、線のスタイル、矢印のスタイルなど、吹き出し注釈のさまざまなプロパティをカスタマイズできます。
+はい、注釈ごとに手順を繰り返すことで、必要な数の吹き出しを追加できます。
 
-#### Q: 吹き出しの注釈にテキストを追加するにはどうすればよいですか?
+### 吹き出しの位置を変更するにはどうすればよいですか?
 
- A: 吹き出しの注釈にテキストを追加するには、`RichText`の財産`FreeTextAnnotation`物体。の`RichText`プロパティは、吹き出し注釈に表示されるテキストを表す、フォーマットされた XML の文字列を受け取ります。
+座標を変更するだけで、`Rectangle`そして`Callout`注釈の位置を変更するプロパティ。
 
-#### Q: Aspose.PDF for .NET を使用して PDF ドキュメントに複数の吹き出し注釈を追加できますか?
+### Aspose.PDF を使用して他の種類の注釈を追加できますか?
 
- A: はい、PDF ドキュメント内に複数の吹き出し注釈を作成するには、`FreeTextAnnotation`オブジェクトを作成し、ドキュメント内の別のページまたは場所に追加します。
+はい、Aspose.PDF は、ハイライト、スタンプ、ファイル添付など、さまざまな注釈タイプをサポートしています。
+
+### リッチテキストコンテンツは HTML に限定されますか?
+
+の`RichText`プロパティは HTML のサブセットをサポートしており、スタイル設定されたテキストと基本的な書式設定を含めることができます。

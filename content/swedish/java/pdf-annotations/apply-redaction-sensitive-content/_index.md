@@ -44,7 +44,7 @@ I det här steget laddar vi ett PDF-dokument som innehåller känslig informatio
 Document pdfDocument = new Document("example.pdf");
 ```
 
- Byta ut`"example.pdf"` med sökvägen till din PDF-fil.
+ Ersätta`"example.pdf"` med sökvägen till din PDF-fil.
 
 ## Identifiera känsligt innehåll
 
@@ -105,4 +105,4 @@ Ja, du kan batchbearbeta flera PDF-dokument för att tillämpa redigering på de
 
 ### Finns det några begränsningar för redigering i Aspose.PDF för Java?
 
-Aspose.PDF för Java tillhandahåller kraftfulla redigeringsmöjligheter, men det är viktigt att noggrant testa de redigerade dokumenten för att säkerställa att inget oavsiktligt informationsläckage inträffar.
+Aspose.PDF för Java ger kraftfulla redigeringsmöjligheter, men det är viktigt att noggrant testa de redigerade dokumenten för att säkerställa att inget oavsiktligt informationsläckage inträffar.

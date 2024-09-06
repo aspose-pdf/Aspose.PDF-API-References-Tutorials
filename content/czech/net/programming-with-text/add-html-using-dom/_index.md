@@ -59,7 +59,7 @@ title. Margin. Top = 200;
 ```
 
 ## Krok 8: Přidejte na stránku HtmlFragment
- Přidat`HtmlFragment` objekt proti kolekci odstavců na stránce.
+ Přidejte`HtmlFragment` objekt proti kolekci odstavců na stránce.
 
 ```csharp
 page.Paragraphs.Add(title);

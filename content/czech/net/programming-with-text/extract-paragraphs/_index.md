@@ -32,7 +32,7 @@ using System.Text;
  V kódu vyhledejte řádek, který říká`string dataDir = "YOUR DOCUMENT DIRECTORY";` a nahradit`"YOUR DOCUMENT DIRECTORY"` s cestou k adresáři, kde jsou uloženy vaše dokumenty.
 
 ## Krok 4: Otevřete dokument PDF
- Otevřete existující dokument PDF pomocí`Document`konstruktoru a předání cesty ke vstupnímu souboru PDF.
+ Otevřete existující dokument PDF pomocí`Document` konstruktoru a předání cesty ke vstupnímu souboru PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
@@ -81,7 +81,7 @@ foreach(PageMarkup markup in absorber.PageMarkups)
 ```csharp
 // Cesta k adresáři dokumentů.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Otevřete existující soubor PDF
+// Otevřete existující soubor PDF
 Document doc = new Document(dataDir + "input.pdf");
 // Okamžitý odstavecAbsorber
 ParagraphAbsorber absorber = new ParagraphAbsorber();

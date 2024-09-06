@@ -1,17 +1,17 @@
 ---
-title: Przyciski opcji poziomo i pionowo
-linktitle: Przyciski opcji poziomo i pionowo
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Z łatwością twórz poziome i pionowe przyciski opcji w dokumentach PDF za pomocą Aspose.PDF dla .NET.
+title: Przyciski radiowe poziomo i pionowo
+linktitle: Przyciski radiowe poziomo i pionowo
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwe tworzenie poziomych i pionowych przycisków radiowych w dokumentach PDF za pomocą Aspose.PDF dla .NET.
 type: docs
 weight: 180
 url: /pl/net/programming-with-forms/horizontally-and-vertically-radio-buttons/
 ---
-W tym samouczku pokażemy, jak utworzyć przyciski opcji ułożone poziomo i pionowo w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Krok po kroku wyjaśnimy kod źródłowy C#, aby poprowadzić Cię przez ten proces.
+W tym samouczku pokażemy Ci, jak tworzyć przyciski radiowe ułożone poziomo i pionowo w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Wyjaśnimy kod źródłowy C# krok po kroku, aby przeprowadzić Cię przez ten proces.
 
 ## Krok 1: Przygotowanie
 
-Upewnij się, że zaimportowałeś niezbędne biblioteki i ustaw ścieżkę do katalogu dokumentów:
+Upewnij się, że zaimportowałeś niezbędne biblioteki i ustawiłeś ścieżkę do katalogu dokumentów:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -28,31 +28,31 @@ formEditor.BindPdf(dataDir + "input.pdf");
 
 ## Krok 3: Dostosuj opcje przycisków radiowych
 
-Dostosuj opcje przycisków opcji, ustawiając następujące właściwości:
+Dostosuj opcje przycisków radiowych, ustawiając następujące właściwości:
 
 ```csharp
-formEditor. RadioGap = 4; // Odległość między dwiema opcjami przycisku radiowego
-formEditor. RadioHoriz = true; //Poziomy układ przycisków opcji
-formEditor.RadioButtonItemSize = 20; // Rozmiar przycisków opcji
-formEditor.Facade.BorderWidth = 1; // Szerokość obramowania przycisku opcji
+formEditor. RadioGap = 4; // Odległość między dwoma opcjami przycisków radiowych
+formEditor. RadioHoriz = true; //Poziomy układ przycisków radiowych
+formEditor.RadioButtonItemSize = 20; // Rozmiar przycisków radiowych
+formEditor.Facade.BorderWidth = 1; // Szerokość obramowania przycisku radiowego
 formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Kolor obramowania przycisku radiowego
 ```
 
-## Krok 4: Dodaj poziome przyciski opcji
+## Krok 4: Dodaj poziome przyciski radiowe
 
-Dodaj przyciski opcji ułożone poziomo, określając opcje i położenie pola:
+Dodaj przyciski radiowe ułożone poziomo, określając opcje i położenie pola:
 
 ```csharp
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
 ```
 
-## Krok 5: Dodaj pionowe przyciski opcji
+## Krok 5: Dodaj pionowe przyciski radiowe
 
 Dodaj przyciski radiowe ułożone pionowo, określając opcje i położenie pola:
 
 ```csharp
-formEditor. RadioHoriz = false; // Pionowy układ przycisków opcji
+formEditor. RadioHoriz = false; // Pionowy układ przycisków radiowych
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
 ```
@@ -66,18 +66,18 @@ dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
 ```
 
-### Przykładowy kod źródłowy przycisków radiowych w poziomie i w pionie przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla przycisków radiowych poziomo i pionowo przy użyciu Aspose.PDF dla .NET 
 ```csharp
 try
 {
 	// Ścieżka do katalogu dokumentów.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Załaduj poprzednio zapisany dokument
+	// Załaduj wcześniej zapisany dokument
 	FormEditor formEditor = new FormEditor();
 	formEditor.BindPdf(dataDir + "input.pdf");
-	// RadioGap to odległość pomiędzy dwiema opcjami przycisków radiowych.
+	// RadioGap to odległość między dwoma opcjami wyboru.
 	formEditor.RadioGap = 4;
-	// Dodaj poziomy przycisk opcji
+	// Dodaj poziomy przycisk radiowy
 	formEditor.RadioHoriz = true;
 	// RadioButtonItemSize, jeśli rozmiar elementu przycisku radiowego.
 	formEditor.RadioButtonItemSize = 20;
@@ -102,26 +102,26 @@ catch (Exception ex)
 
 ## Wniosek
 
-tym samouczku nauczyliśmy się tworzyć przyciski opcji ułożone poziomo i pionowo w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Wykonując poniższe kroki, możesz łatwo dostosować układ przycisków opcji i dodać je do dokumentów PDF za pomocą Aspose.PDF.
+tym samouczku nauczyliśmy się, jak tworzyć przyciski radiowe ułożone poziomo i pionowo w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Wykonując te kroki, możesz łatwo dostosować układ przycisków radiowych i dodać je do dokumentów PDF przy użyciu Aspose.PDF.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Czym są przyciski opcji rozmieszczone poziomo i pionowo w dokumencie PDF?
+#### P: Czym są przyciski radiowe ułożone poziomo i pionowo w dokumencie PDF?
 
-O: Przyciski opcji rozmieszczone poziomo i pionowo w dokumencie PDF odnoszą się do orientacji układu opcji przycisków radiowych. Układ poziomy umieszcza opcje przycisków obok siebie, umożliwiając użytkownikom dokonanie wyboru od lewej do prawej. Z drugiej strony układ pionowy umożliwia układanie opcji przycisków opcji jedna na drugiej, umożliwiając użytkownikom dokonanie wyboru od góry do dołu.
+A: Poziomo i pionowo ułożone przyciski radiowe w dokumencie PDF odnoszą się do orientacji układu opcji przycisków radiowych. Układ poziomy umieszcza opcje przycisków radiowych obok siebie, umożliwiając użytkownikom dokonywanie wyboru od lewej do prawej. Z drugiej strony układ pionowy układa opcje przycisków radiowych jedna na drugiej, umożliwiając użytkownikom dokonywanie wyboru od góry do dołu.
 
-#### P: Jak dostosować wygląd opcji przycisków radiowych w Aspose.PDF dla .NET?
+#### P: W jaki sposób mogę dostosować wygląd opcji przycisków radiowych w pliku Aspose.PDF dla platformy .NET?
 
-Odp.: Możesz dostosować wygląd opcji przycisków radiowych w Aspose.PDF dla .NET, dostosowując kilka właściwości. Interfejs API udostępnia opcje ustawiania odległości między dwiema opcjami przycisku radiowego (`RadioGap`), orientację układu (`RadioHoriz`), rozmiar elementów przycisku radiowego (`RadioButtonItemSize`), szerokość obramowania i kolor przycisków opcji i nie tylko.
+A: Możesz dostosować wygląd opcji przycisków radiowych w Aspose.PDF dla .NET, dostosowując kilka właściwości. API udostępnia opcje ustawiania odległości między dwoma opcjami przycisków radiowych (`RadioGap`), orientacja układu (`RadioHoriz`), rozmiar elementów przycisków radiowych (`RadioButtonItemSize`), szerokość obramowania i kolor przycisków opcji i wiele innych.
 
-#### P: Czy mogę dodać zarówno poziome, jak i pionowe przyciski opcji do tego samego dokumentu PDF?
+#### P: Czy mogę dodać zarówno poziome, jak i pionowe przyciski radiowe do tego samego dokumentu PDF?
 
-O: Tak, możesz dodać zarówno poziome, jak i pionowe przyciski opcji do tego samego dokumentu PDF, używając Aspose.PDF dla .NET. Przykładowy kod źródłowy podany w samouczku pokazuje, jak najpierw dodać przyciski opcji ułożone poziomo, a następnie dodać kolejny zestaw przycisków opcji ułożonych pionowo do tego samego dokumentu PDF.
+A: Tak, możesz dodać zarówno poziome, jak i pionowe przyciski radiowe do tego samego dokumentu PDF za pomocą Aspose.PDF dla .NET. Przykładowy kod źródłowy podany w samouczku pokazuje, jak najpierw dodać przyciski radiowe ułożone poziomo, a następnie dodać kolejny zestaw przycisków radiowych ułożonych pionowo do tego samego dokumentu PDF.
 
-#### P: Czy mogę ustawić różne opcje przycisków opcji dla każdej grupy przycisków opcji?
+#### P: Czy mogę ustawić różne opcje przycisków radiowych dla każdej grupy przycisków radiowych?
 
- O: Tak, możesz ustawić różne opcje przycisków radiowych dla każdej grupy przycisków radiowych. Każda grupa powinna mieć unikatową`RadioButtonField` obiekt i`RadioButtonOptionField` obiekty w każdej grupie powinny mieć tę samą stronę i unikalne nazwy swoich opcji. Dzięki temu przyciski radiowe w każdej grupie działają prawidłowo, a wybory wzajemnie się wykluczają.
+ A: Tak, możesz ustawić różne opcje przycisków radiowych dla każdej grupy przycisków radiowych. Każda grupa powinna mieć unikalny`RadioButtonField` obiekt i`RadioButtonOptionField` obiekty w każdej grupie powinny mieć tę samą stronę i unikalne nazwy dla swoich opcji. Zapewnia to, że przyciski radiowe w każdej grupie działają poprawnie, a wybory wykluczają się wzajemnie.
 
-#### P: Czy ustawienia układu i wyglądu przycisków opcji są obsługiwane we wszystkich przeglądarkach i aplikacjach plików PDF?
+#### P: Czy ustawienia układu i wyglądu przycisków radiowych są obsługiwane we wszystkich przeglądarkach i aplikacjach PDF?
 
-O: Tak, ustawienia układu i wyglądu przycisków opcji są obsługiwane we wszystkich przeglądarkach i aplikacjach PDF zgodnych ze standardami. Specyfikacja PDF definiuje przyciski opcji i ich różne atrybuty, dzięki czemu są one powszechnie rozpoznawane w formacie PDF. Jednakże konieczne jest przetestowanie wyglądu i zachowania przycisków opcji w różnych przeglądarkach plików PDF, aby zapewnić spójne renderowanie na różnych platformach.
+A: Tak, ustawienia układu i wyglądu przycisków radiowych są obsługiwane we wszystkich zgodnych ze standardem przeglądarkach PDF i aplikacjach. Specyfikacja PDF definiuje przyciski radiowe i ich różne atrybuty, dzięki czemu są one powszechnie rozpoznawane w formacie PDF. Jednak konieczne jest przetestowanie wyglądu i zachowania przycisków radiowych w różnych przeglądarkach PDF, aby zapewnić spójne renderowanie na różnych platformach.

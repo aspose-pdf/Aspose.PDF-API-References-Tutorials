@@ -162,7 +162,7 @@ Odpověď: Ano, do tabulky můžete přidat záhlaví nebo zápatí vytvořením
 
 #### Otázka: Jak mohu ovládat pozici tabulky na stránce?
 
- A: Chcete-li ovládat pozici tabulky na stránce, můžete upravit`MarginInfo` z`PageInfo` objekt. The`MarginInfo`umožňuje nastavit levý, pravý, horní a dolní okraj stránky, což ovlivňuje dostupné místo pro tabulku. Můžete také použít`PositioningType` vlastnictvím`Aspose.Pdf.Table` k ovládání jejího vodorovného a svislého zarovnání v oblasti obsahu stránky.
+ A: Chcete-li ovládat pozici tabulky na stránce, můžete upravit`MarginInfo` z`PageInfo` objekt. The`MarginInfo`umožňuje nastavit levý, pravý, horní a dolní okraj stránky, což ovlivňuje dostupné místo pro tabulku. Můžete také použít`PositioningType` majetek z`Aspose.Pdf.Table` k ovládání jejího vodorovného a svislého zarovnání v oblasti obsahu stránky.
 
 #### Otázka: Mohu exportovat tabulku do různých formátů souborů, jako je Excel nebo CSV?
 

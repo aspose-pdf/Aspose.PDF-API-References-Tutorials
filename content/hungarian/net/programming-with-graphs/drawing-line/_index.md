@@ -13,7 +13,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy telepítette az Aspose.PDF k�
 
 ## 1. lépés: Dokumentumkönyvtár beállítása
 
-megadott forráskódban meg kell adnia azt a könyvtárat, ahová menteni szeretné az eredményül kapott PDF fájlt. Módosítsa a "dataDir" változót a kívánt könyvtárra.
+A megadott forráskódban meg kell adnia azt a könyvtárat, ahová menteni szeretné az eredményül kapott PDF fájlt. Módosítsa a "dataDir" változót a kívánt könyvtárra.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -48,7 +48,7 @@ graph.Shapes.Add(line);
 
 ## 5. lépés: Rajzolja meg a második vonalat
 
-A második vonalat az oldal bal felső sarkától a jobb alsó sarkáig húzzuk.
+második vonalat az oldal bal felső sarkától a jobb alsó sarkáig húzzuk.
 
 ```csharp
 Aspose.Pdf.Drawing.Line line2 = new Aspose.Pdf.Drawing.Line(new float[] { 0, (float)pg.Rect.URY, (float)pg.PageInfo.Width, (float)pg.Rect. LLX });
@@ -57,7 +57,7 @@ graph.Shapes.Add(line2);
 
 ## 6. lépés: Graph objektum hozzáadása az oldalhoz
 
-Graph objektumot hozzáadjuk az oldal bekezdésgyűjteményéhez.
+A Graph objektumot hozzáadjuk az oldal bekezdésgyűjteményéhez.
 
 ```csharp
 pg.Paragraphs.Add(graph);
@@ -130,7 +130,7 @@ V: Igen, testreszabhatja a vonalak megjelenését a Vonal objektumok tulajdonsá
 
 #### K: Hogyan menthetem el a PDF-dokumentumot a vonalak megrajzolása után?
 
-V: Miután hozzáadta a Graph objektumot vonal objektumokkal az oldalhoz, elmentheti az eredményül kapott PDF dokumentumot a`pDoc.Save(dataDir + "DrawingLine_out.pdf");` sort a megadott forráskódban.
+ V: Miután hozzáadta a Graph objektumot vonal objektumokkal az oldalhoz, elmentheti az eredményül kapott PDF dokumentumot a`pDoc.Save(dataDir + "DrawingLine_out.pdf");` sort a megadott forráskódban.
 
 #### K: Rajzolhatok különböző szögű és tájolású vonalakat?
 

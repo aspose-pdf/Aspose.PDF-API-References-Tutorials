@@ -72,7 +72,7 @@ Igény szerint állítsa be a szöveget, az elforgatási szöget és az egyéb t
 
 ## 6. lépés: Adjon hozzá szövegrészleteket az oldalhoz
 
- Adja hozzá a létrehozott szövegrészleteket az oldalhoz úgy, hogy hozzáfűzi őket a`Paragraphs` Gyűjtemény:
+ Adja hozzá a létrehozott szövegrészleteket az oldalhoz úgy, hogy hozzáfűzi őket a`Paragraphs` gyűjtemény:
 
 ```csharp
 pdfPage.Paragraphs.Add(textFragment1);
@@ -125,7 +125,7 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated3_out.pdf");
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan forgathat el szöveget szövegrészletek és bekezdések használatával egy PDF-dokumentumban az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentum létrehozásától a módosított verzió mentéséig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy módosítsa a PDF-fájlok szövegforgatását.
+Gratulálok! Sikeresen megtanulta, hogyan forgathat el szöveget szövegrészletek és bekezdések használatával egy PDF-dokumentumban az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentum létrehozásától a módosított verzió mentéséig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy módosítsa a PDF-fájlok szövegforgatását.
 
 ### GYIK
 
@@ -156,7 +156,7 @@ V: A lépések a következők:
 1. A projekt beállítása egy új C# projekt létrehozásával és hivatkozás hozzáadásával az Aspose.PDF for .NET könyvtárhoz.
 2. PDF dokumentum létrehozása és oldal hozzáadása.
 3. Szövegtöredékek létrehozása, tulajdonságaik beállítása, elforgatási szögek megadása.
-4.  Szövegtöredékek hozzáadása az oldalhoz a`Paragraphs` Gyűjtemény.
+4.  Szövegtöredékek hozzáadása az oldalhoz a`Paragraphs` gyűjtemény.
 5. A módosított PDF dokumentum mentése.
 
 #### K: Alkalmazhatom a forgatást a teljes bekezdésekre?

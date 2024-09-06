@@ -20,7 +20,7 @@ using Aspose.Pdf.Annotations;
 
 ## Krok 2: Nastavte cestu ke složce dokumentů
 
- V tomto kroku musíte zadat cestu ke složce obsahující soubor PDF, ze kterého chcete extrahovat odkazy. Nahradit`"YOUR DOCUMENT DIRECTORY"` následujícím kódu se skutečnou cestou ke složce dokumentů:
+ V tomto kroku musíte zadat cestu ke složce obsahující soubor PDF, ze kterého chcete extrahovat odkazy. Nahradit`"YOUR DOCUMENT DIRECTORY"` v následujícím kódu se skutečnou cestou ke složce dokumentů:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -28,7 +28,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 3: Otevřete dokument PDF
 
-Dokument PDF otevřeme pomocí`Document` třída. Zde je odpovídající kód:
+ Dokument PDF otevřeme pomocí`Document` třída. Zde je odpovídající kód:
 
 ```csharp
 Document document = new Document(dataDir + "ExtractLinks.pdf");
@@ -48,7 +48,7 @@ Annotation annotation = (Annotation)list[0];
 
 ## Krok 5: Uložte aktualizovaný dokument
 
- Nyní uložme aktualizovaný soubor PDF pomocí`Save` metoda`document` objekt. Zde je odpovídající kód:
+Nyní uložme aktualizovaný soubor PDF pomocí`Save` metoda`document` objekt. Zde je odpovídající kód:
 
 ```csharp
 dataDir = dataDir + "ExtractLinks_out.pdf";
@@ -95,7 +95,7 @@ Odpověď: Aspose.PDF for .NET poskytuje výkonná rozhraní API pro snadné ext
 
 #### Otázka: Mohu extrahovat specifické typy odkazů, jako jsou hypertextové odkazy nebo odkazy na interní dokumenty?
 
- Odpověď: Ano, můžete selektivně extrahovat konkrétní typy odkazů pomocí`AnnotationSelector` třída. To vám umožní filtrovat a získávat požadované odkazy na základě vašich požadavků.
+ Odpověď: Ano, můžete selektivně extrahovat konkrétní typy odkazů pomocí`AnnotationSelector`třída. To vám umožní filtrovat a získávat požadované odkazy na základě vašich požadavků.
 
 #### Otázka: Je možné extrahovat odkazy z konkrétních stránek dokumentu PDF?
 

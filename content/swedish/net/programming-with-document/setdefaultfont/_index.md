@@ -33,7 +33,7 @@ using (Document document = new Document(fs))
 
 ## Steg 3: Ställ in standardteckensnittet
 
- Därefter ställer vi in standardteckensnittet för PDF-dokumentet med hjälp av`PdfSaveOptions` klass. I det här exemplet ställer vi in standardteckensnittet till "Arial".
+ Därefter ställer vi in standardteckensnittet för PDF-dokumentet med hjälp av`PdfSaveOptions`klass. I det här exemplet ställer vi in standardteckensnittet till "Arial".
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
@@ -74,7 +74,7 @@ Att ställa in ett standardteckensnitt i PDF-dokument med Aspose.PDF för .NET �
 
 #### F: Varför är det viktigt att ställa in ett standardteckensnitt i PDF-dokument?
 
-S: Att ställa in ett standardteckensnitt i PDF-dokument är viktigt eftersom det säkerställer att texten kommer att visas korrekt även om de ursprungliga teckensnitten inte är tillgängliga på systemet där PDF-filen visas eller skrivs ut. Det hjälper till att förhindra problem som saknad eller förvrängd text, vilket säkerställer en konsekvent och pålitlig tittarupplevelse.
+S: Att ställa in ett standardteckensnitt i PDF-dokument är viktigt eftersom det säkerställer att texten kommer att visas korrekt även om originalteckensnitten inte är tillgängliga i systemet där PDF-filen visas eller skrivs ut. Det hjälper till att förhindra problem som saknad eller förvrängd text, vilket säkerställer en konsekvent och pålitlig tittarupplevelse.
 
 #### F: Kan jag välja vilket typsnitt som helst som standardteckensnitt med Aspose.PDF för .NET?
 

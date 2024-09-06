@@ -7,25 +7,25 @@ type: docs
 weight: 40
 url: /de/net/programming-with-forms/create-doc/
 ---
-In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET ein Dokument mit Optionsfeldern erstellen. Wir erklären Ihnen Schritt für Schritt den C#-Quellcode, um Sie durch diesen Prozess zu führen.
+In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET ein Dokument mit Optionsfeldern erstellen. Wir erklären Ihnen den C#-Quellcode Schritt für Schritt, um Sie durch diesen Prozess zu führen.
 
 ##Schritt 1: Vorbereitung
 
-Stellen Sie zunächst sicher, dass Sie die erforderlichen Bibliotheken importiert haben und legen Sie den Pfad zum Dokumentenverzeichnis fest:
+Stellen Sie zunächst sicher, dass Sie die erforderlichen Bibliotheken importiert haben, und legen Sie den Pfad zum Dokumentverzeichnis fest:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Schritt 2: Erstellen Sie ein neues Dokument
+## Schritt 2: Neues Dokument erstellen
 
-Erstellen Sie ein neues Document-Objekt zum Speichern des PDF-Dokuments:
+Erstellen Sie ein neues Dokumentobjekt zur Aufnahme des PDF-Dokuments:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Schritt 3: Fügen Sie eine Seite hinzu
+## Schritt 3: Seite hinzufügen
 
 Fügen Sie dem Dokument eine neue Seite hinzu:
 
@@ -33,9 +33,9 @@ Fügen Sie dem Dokument eine neue Seite hinzu:
 Page page = doc.Pages.Add();
 ```
 
-## Schritt 4: Fügen Sie ein Optionsfeld hinzu
+## Schritt 4: Ein Optionsfeld hinzufügen
 
-Erstellen Sie ein Optionsfeld und legen Sie dessen Position und Größe fest:
+Erstellen Sie ein Optionsfeld und legen Sie seine Position und Größe fest:
 
 ```csharp
 RadioButtonField field = new RadioButtonField(page);
@@ -43,9 +43,9 @@ field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 field. PartialName = "NewField";
 ```
 
-## Schritt 5: Optionsfelder hinzufügen
+## Schritt 5: Optionsfeldoptionen hinzufügen
 
-Fügen Sie die gewünschten Optionen zum Optionsfeld hinzu. Sie können die Koordinaten und die Größe jeder Option nach Bedarf festlegen:
+Fügen Sie dem Optionsfeld die gewünschten Optionen hinzu. Die Koordinaten und die Größe der einzelnen Optionen können Sie nach Bedarf festlegen:
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField();
@@ -74,7 +74,7 @@ field. Add(opt2);
 field. Add(opt3);
 ```
 
-## Schritt 6: Fügen Sie dem Formular das Optionsfeld hinzu
+## Schritt 6: Das Optionsfeld zum Formular hinzufügen
 
 Fügen Sie das Optionsfeld zur Sammlung „Dokumentformularfelder“ hinzu:
 
@@ -91,22 +91,22 @@ dataDir = dataDir + "CreateDoc_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Beispielquellcode für „Dokument erstellen mit Aspose.PDF für .NET“. 
+### Beispielquellcode für „Create Doc“ mit Aspose.PDF für .NET 
 ```csharp
 try
 {
-	// Der Pfad zum Dokumentenverzeichnis.
+	// Der Pfad zum Dokumentverzeichnis.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Erstellen Sie ein neues Dokument
+	// Neues Dokument erstellen
 	Document doc = new Document();
 	Page page = doc.Pages.Add();
 	// Optionsfeld hinzufügen
 	RadioButtonField field = new RadioButtonField(page);
 	field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 	field.PartialName = "NewField";
-	// Fügen Sie Optionsfeldoptionen hinzu. Bitte beachten Sie, dass sich diese Optionen befinden
+	// Optionsfeldoptionen hinzufügen. Bitte beachten Sie, dass sich diese Optionen befinden
 	// Weder horizontal noch vertikal.
-	// Sie können versuchen, beliebige Koordinaten (und sogar die Größe) für sie festzulegen.
+	// Sie können versuchen, beliebige Koordinaten (und sogar Größe) für sie festzulegen.
 	RadioButtonOptionField opt1 = new RadioButtonOptionField();
 	opt1.Rect = new Aspose.Pdf.Rectangle(40, 650, 60, 670);
 	opt1.OptionName = "Item1";
@@ -130,7 +130,7 @@ try
 	field.Add(opt3);
 	doc.Form.Add(field);
 	dataDir = dataDir + "CreateDoc_out.pdf";
-	// Speichern Sie das PDF-Dokument
+	// Speichern des PDF-Dokuments
 	doc.Save(dataDir);
 	Console.WriteLine("\nNew doc with 3 items radio button created successfully.\nFile saved at " + dataDir);
 }
@@ -142,9 +142,9 @@ catch (Exception ex)
 
 ## Abschluss
 
-In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET ein Dokument mit Optionsfeldern erstellt. Wenn Sie diese Schritte befolgen, können Sie mit Aspose.PDF ganz einfach Optionsfelder zu Ihren PDF-Dokumenten hinzufügen.
+In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET ein Dokument mit Optionsfeldern erstellt. Indem Sie diese Schritte befolgen, können Sie mit Aspose.PDF ganz einfach Optionsfelder zu Ihren PDF-Dokumenten hinzufügen.
 
-### FAQs
+### Häufig gestellte Fragen
 
 #### F: Kann ich das Erscheinungsbild der Optionsfelder im Dokument mit Aspose.PDF für .NET anpassen?
 
@@ -152,16 +152,16 @@ A: Ja, Sie können das Erscheinungsbild der Optionsfelder im Dokument mit Aspose
 
 #### F: Wie kann ich Optionsfeldgruppen mit sich gegenseitig ausschließenden Optionen hinzufügen?
 
-A: Um sich gegenseitig ausschließende Optionen zu erstellen, können Sie mehrere Optionsfelder mit demselben Namen hinzufügen. Dadurch wird sichergestellt, dass bei Auswahl einer Option die anderen Optionen mit demselben Namen automatisch deaktiviert werden.
+A: Um sich gegenseitig ausschließende Optionen zu erstellen, können Sie mehrere Optionsfeldfelder mit demselben Namen hinzufügen. Dadurch wird sichergestellt, dass beim Auswählen einer Option die anderen Optionen mit demselben Namen automatisch abgewählt werden.
 
 #### F: Ist es möglich, eine standardmäßig ausgewählte Option für die Optionsfelder festzulegen?
 
-A: Ja, Sie können mit Aspose.PDF für .NET eine standardmäßig ausgewählte Option für die Optionsfelder festlegen. Du kannst den ... benutzen`Selected` Eigentum der`RadioButtonOptionField` Objekt, um eine Option als standardmäßig ausgewählt zu markieren.
+A: Ja, Sie können mit Aspose.PDF für .NET eine standardmäßig ausgewählte Option für die Optionsfelder festlegen. Sie können die`Selected` Eigentum der`RadioButtonOptionField` Objekt, um eine Option als standardmäßig ausgewählt zu markieren.
 
 #### F: Kann ich den Optionsfeldern Ereignishandler hinzufügen?
 
- A: Ja, Sie können mit Aspose.PDF für .NET Ereignishandler zu den Optionsfeldern hinzufügen. Sie können JavaScript-Aktionen zuordnen, z`OnValueChanged`, zu den Optionsfeldern, um bestimmte Aktionen auszuführen, wenn der Benutzer eine Option auswählt.
+ A: Ja, Sie können den Optionsfeldern mit Aspose.PDF für .NET Eventhandler hinzufügen. Sie können JavaScript-Aktionen zuordnen, wie zum Beispiel`OnValueChanged`, zu den Optionsfeldern, um bestimmte Aktionen auszuführen, wenn der Benutzer eine Option auswählt.
 
 #### F: Wie kann ich die ausgewählte Option aus der Optionsfeldgruppe abrufen, nachdem der Benutzer eine Auswahl getroffen hat?
 
- A: Sie können die ausgewählte Option mit Aspose.PDF für .NET aus der Optionsfeldgruppe abrufen. Nachdem der Benutzer eine Auswahl getroffen hat, können Sie darauf zugreifen`Selected` Eigentum der`RadioButtonOptionField` Objekt, um zu überprüfen, welche Option ausgewählt ist.
+ A: Sie können die ausgewählte Option aus der Optionsfeldgruppe mit Aspose.PDF für .NET abrufen. Nachdem der Benutzer eine Auswahl getroffen hat, können Sie auf die`Selected` Eigentum der`RadioButtonOptionField` Objekt, um zu prüfen, welche Option ausgewählt ist.

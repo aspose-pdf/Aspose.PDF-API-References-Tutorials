@@ -37,7 +37,7 @@ Document doc = new Document();
 ```
 
 ## 5. lépés: Adjon hozzá egy oldalt a dokumentumhoz
- Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`Gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
+ Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -67,7 +67,7 @@ dataDir = dataDir + "AddHTMLUsingDOM_out.pdf";
 ```
 
 ## 9. lépés: Mentse el a PDF dokumentumot
- Mentse el a PDF dokumentumot a`Save` módszere a`Document` tárgy. Adja meg a kimeneti fájl elérési útját, amelyet a 3. lépésben állított be.
+ Mentse el a PDF dokumentumot a`Save` módszere a`Document` objektum. Adja meg a kimeneti fájl elérési útját, amelyet a 3. lépésben állított be.
 
 ```csharp
 doc.Save(dataDir);
@@ -133,7 +133,7 @@ Document doc = new Document();
 
 #### K: Hogyan adhatok hozzá oldalt a dokumentumhoz?
 
- V: Az 5. lépésben új oldalt ad hozzá a dokumentumhoz a`Add` módszere a`Pages` Gyűjtemény:
+ V: Az 5. lépésben új oldalt ad hozzá a dokumentumhoz a`Add` módszere a`Pages` gyűjtemény:
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -183,4 +183,4 @@ Console.WriteLine("\nHTML using DOM added successfully.\nFile saved at " + dataD
 
 #### K: Mi a legfontosabb kivonat ebből az oktatóanyagból?
 
-V: Az oktatóanyag követésével sikeresen megtanulta, hogyan használhatja az Aspose.PDF for .NET-ben található dokumentumobjektum-modellt (DOM) HTML-tartalom hozzáadására egy PDF-dokumentumhoz. Ez a tudás feljogosítja Önt a PDF-generálási képességek fejlesztésére.
+V: Az oktatóanyag követésével sikeresen megtanulta, hogyan használhatja az Aspose.PDF for .NET-ben található dokumentumobjektum-modellt (DOM) HTML-tartalom hozzáadásához egy PDF-dokumentumhoz. Ez a tudás feljogosítja Önt a PDF-generálási képességek fejlesztésére.

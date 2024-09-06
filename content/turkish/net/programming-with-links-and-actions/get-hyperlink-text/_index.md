@@ -1,15 +1,15 @@
 ---
 title: PDF Dosyasında Köprü Metnini Alın
 linktitle: PDF Dosyasında Köprü Metnini Alın
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak PDF dosyasındaki köprü metnini nasıl çıkaracağınızı öğrenin.
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki köprü metninin nasıl çıkarılacağını öğrenin.
 type: docs
 weight: 70
 url: /tr/net/programming-with-links-and-actions/get-hyperlink-text/
 ---
 Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak PDF dosyasındaki köprülerden metin çıkarmayı öğrenin.
 
-## 1. Adım: Ortamı ayarlama
+## Adım 1: Ortamı kurma
 
 Geliştirme ortamınızı bir C# projesi ve uygun Aspose.PDF referanslarıyla kurduğunuzdan emin olun.
 
@@ -18,27 +18,27 @@ Geliştirme ortamınızı bir C# projesi ve uygun Aspose.PDF referanslarıyla ku
 Belgelerinizin dizin yolunu ayarlayın ve aşağıdaki kodu kullanarak PDF dosyasını yükleyin:
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// PDF dosyasını yükleyin
+// PDF dosyasını yükle
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## 3. Adım: Belgenin sayfalarında gezinme
+## Adım 3: Belgenin sayfalarında gezinme
 
- kullanarak belgenin her sayfasını yineleyin.`foreach` döngü:
+ Belgenin her sayfasını bir`foreach` döngü:
 
 ```csharp
 foreach(Page page in document.Pages)
 {
-     // Bağlantı ek açıklamalarını görüntüle
+     // Bağlantı açıklamalarını görüntüle
      ShowLinkAnnotations(page);
 }
 ```
 
-## Adım 4: Hata İşleme
+## Adım 4: Hata Yönetimi
 
-Herhangi bir istisnayı yakalamak ve ilgili hata mesajını görüntülemek için hata işlemeyi ekleyin:
+Herhangi bir istisnayı yakalamak ve ilgili hata mesajını görüntülemek için hata işleme ekleyin:
 
 ```csharp
 catch (Exception ex)
@@ -47,18 +47,18 @@ catch (Exception ex)
 }
 ```
 
-### Aspose.PDF for .NET kullanarak Köprü Metni Alma için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Köprü Metni Almak için örnek kaynak kodu 
 ```csharp
 try
 {
-	// Belgeler dizininin yolu.
+	// Belgeler dizinine giden yol.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// PDF dosyasını yükleyin
+	// PDF dosyasını yükle
 	Document document = new Document(dataDir + "input.pdf");
-	// PDF'nin her sayfasını yineleyin
+	// PDF'in her sayfasını yineleyin
 	foreach (Page page in document.Pages)
 	{
-		// Bağlantı ek açıklamasını göster
+		// Bağlantı açıklamasını göster
 		ShowLinkAnnotations(page);
 	}
 }
@@ -70,31 +70,31 @@ catch (Exception ex)
 
 ## Çözüm
 
-Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF dosyasından köprü metnini nasıl çıkaracağınızı biliyorsunuz. Bu bilgiyi projelerinizdeki köprülerle ilgilenmek ve PDF dosyalarıyla ilgili görevleri otomatikleştirmek için kullanabilirsiniz.
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF dosyasından köprü metni çıkarmayı biliyorsunuz. Bu bilgiyi projelerinizdeki köprü metinleriyle başa çıkmak ve PDF dosyalarıyla ilgili görevleri otomatikleştirmek için kullanabilirsiniz.
 
-Artık bu kılavuzu tamamladığınıza göre, bu kavramları kendi projelerinize uygulayabilir ve Aspose.PDF for .NET'in sunduğu özellikleri daha fazla keşfedebilirsiniz.
+Artık bu kılavuzu tamamladığınıza göre, bu kavramları kendi projelerinize uygulayabilir ve Aspose.PDF for .NET tarafından sunulan özellikleri daha ayrıntılı olarak inceleyebilirsiniz.
 
-### PDF dosyasında köprü metni almak için SSS
+### PDF dosyasında köprü metni alma hakkında SSS
 
 #### S: PDF dosyasındaki köprü metni nedir?
 
-C: PDF dosyasındaki köprü metni, kullanıcıların URL, aynı belgedeki başka bir sayfa veya harici bir belge gibi belirli bir konuma veya kaynağa gitmek için tıkladıkları görünür metni ifade eder.
+A: PDF dosyasındaki köprü metni, kullanıcıların URL, aynı belgedeki başka bir sayfa veya harici bir belge gibi belirli bir konuma veya kaynağa gitmek için tıkladığı görünür metni ifade eder.
 
-#### S: Köprü metnini çıkarmanın PDF belge analizime nasıl faydası olur?
+#### S: Köprü metnini çıkarmak PDF belgemin analizine nasıl fayda sağlar?
 
-C: Köprü metninin çıkarılması, bir PDF belgesindeki köprülerin açıklayıcı etiketlerini toplayıp analiz etmenize olanak tanır. Bu bilgiler bağlantı doğrulama, içerik sınıflandırması ve meta veri çıkarma için kullanılabilir.
+A: Köprü metni çıkarmak, bir PDF belgesindeki köprü metinlerinin açıklayıcı etiketlerini toplamanıza ve analiz etmenize olanak tanır. Bu bilgiler, bağlantı doğrulama, içerik kategorizasyonu ve meta veri çıkarma için kullanılabilir.
 
-#### S: Aspose.PDF for .NET, köprü metninin çıkarılmasına nasıl yardımcı olabilir?
+#### S: Aspose.PDF for .NET köprü metninin çıkarılmasına nasıl yardımcı olabilir?
 
-C: Aspose.PDF for .NET, köprü metnini çıkarmak için güçlü API'ler sağlar. Bu eğitimde, bu görevin C# kullanılarak nasıl gerçekleştirileceğine ilişkin adım adım bir kılavuz sağlanmaktadır.
+A: Aspose.PDF for .NET, köprü metni çıkarmak için sağlam API'ler sağlar. Bu eğitim, bu görevi C# kullanarak nasıl gerçekleştireceğinize dair adım adım bir kılavuz sağlar.
 
-#### S: Köprü metnini belirli ölçütlere göre seçici olarak çıkarabilir miyim?
+#### S: Belirli kriterlere göre seçici olarak köprü metni çıkarabilir miyim?
 
-C: Evet, PDF belgesinin her sayfasını yineleyerek ve köprü ek açıklamalarıyla ilişkili metne erişerek köprü metnini seçerek çıkarabilirsiniz.
+C: Evet, PDF belgesinin her sayfasında gezinerek ve köprü metni açıklamalarıyla ilişkili metne erişerek köprü metnini seçici olarak çıkarabilirsiniz.
 
-#### S: Köprü metnini çıkarırken herhangi bir sınırlama var mı?
+#### S: Köprü metni çıkarırken herhangi bir sınırlama var mı?
 
-C: Köprü metni çıkarmanın doğruluğu, PDF belgesinin formatına ve düzenine bağlıdır. Karmaşık grafik öğeler veya standart dışı köprü gösterimleri ek işlem gerektirebilir.
+A: Köprü metni çıkarma doğruluğu PDF belgesinin biçimlendirmesine ve düzenine bağlıdır. Karmaşık grafiksel öğeler veya standart dışı köprü metni gösterimleri ek işlem gerektirebilir.
 
 #### S: Parola korumalı PDF belgelerinden köprü metni çıkarabilir miyim?
 
@@ -102,8 +102,8 @@ C: Aspose.PDF for .NET, belgeyi yüklerken uygun kimlik doğrulama bilgilerini s
 
 #### S: Çıkarılan köprü metnini uygulamamda nasıl kullanabilirim?
 
-C: Köprü metnini çıkardıktan sonra, onu uygulamanızda gerektiği şekilde analiz edebilir, kategorilere ayırabilir veya görüntüleyebilirsiniz. Ayrıca bunu raporlara veya veri analizine de dahil edebilirsiniz.
+A: Köprü metnini çıkardıktan sonra, uygulamanızda gerektiği gibi analiz edebilir, kategorilere ayırabilir veya görüntüleyebilirsiniz. Ayrıca bunu raporlara veya veri analizine dahil edebilirsiniz.
 
-#### S: Köprülerin URL'ler veya hedefler gibi diğer niteliklerini çıkarmak mümkün müdür?
+#### S: Köprü metinlerinin URL veya hedef gibi diğer niteliklerini çıkarmak mümkün müdür?
 
-C: Bu eğitim köprü metninin çıkarılmasına odaklanmaktadır. URL'ler veya hedefler gibi diğer nitelikleri çıkarmak için gelişmiş köprü yönetimi için resmi Aspose.PDF belgelerine başvurabilirsiniz.
+A: Bu eğitim köprü metni çıkarmaya odaklanır. URL'ler veya hedefler gibi diğer öznitelikleri çıkarmak için gelişmiş köprü işleme için resmi Aspose.PDF belgelerine başvurabilirsiniz.

@@ -1,6 +1,6 @@
 ---
-title: Med Smart Card Använda Signaturfältet
-linktitle: Med Smart Card Använda Signaturfältet
+title: Sign Med Smart Card Använder Signaturfältet
+linktitle: Sign Med Smart Card Använder Signaturfältet
 second_title: Aspose.PDF för .NET API-referens
 description: Signera dina PDF-filer säkert med ett smartkort med Aspose.PDF för .NET.
 type: docs
@@ -21,7 +21,7 @@ using System.Security.Cryptography.X509Certificates;
 
 ## Steg 2: Ange sökväg till dokumentmappen
 
- I det här steget måste du ange sökvägen till mappen som innehåller PDF-filen du vill signera. Byta ut`"YOUR DOCUMENTS DIRECTORY"` följande kod med den faktiska sökvägen till din dokumentmapp:
+ I det här steget måste du ange sökvägen till mappen som innehåller PDF-filen du vill signera. Ersätta`"YOUR DOCUMENTS DIRECTORY"` i följande kod med den faktiska sökvägen till din dokumentmapp:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";

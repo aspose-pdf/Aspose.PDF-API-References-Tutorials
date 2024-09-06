@@ -7,7 +7,7 @@ type: docs
 weight: 20
 url: /cs/net/programming-with-security-and-signatures/decrypt/
 ---
-V tomto tutoriálu vás provedeme procesem dešifrování souboru PDF pomocí Aspose.PDF pro .NET. Tato knihovna umožňuje otevřít existující soubor PDF, dešifrovat jej a uložit aktualizovanou verzi. Tato funkce je užitečná, když potřebujete odstranit heslo ze souboru PDF pro snazší přístup.
+tomto tutoriálu vás provedeme procesem dešifrování souboru PDF pomocí Aspose.PDF pro .NET. Tato knihovna umožňuje otevřít existující soubor PDF, dešifrovat jej a uložit aktualizovanou verzi. Tato funkce je užitečná, když potřebujete odstranit heslo ze souboru PDF pro snazší přístup.
 
 ## Krok 1: Předpoklady
 
@@ -67,7 +67,7 @@ Aktualizovaný soubor PDF bude uložen do určeného umístění.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 // Otevřete dokument
 Document document = new Document(dataDir+ "Decrypt.pdf", "password");
-//Dešifrovat PDF
+// Dešifrovat PDF
 document.Decrypt();
 dataDir = dataDir + "Decrypt_out.pdf";
 // Uložit aktualizované PDF
@@ -107,7 +107,7 @@ Odpověď: Podle poskytnutých kroků nastavte vývojové prostředí, včetně 
 
 #### Otázka: Jak uložím dešifrovaný dokument PDF?
 
- Odpověď: Po dešifrování PDF použijte`Save` metoda na`Document` objekt pro uložení aktualizovaného dokumentu PDF. Zadejte cestu k výstupnímu souboru, kam bude dešifrovaný soubor PDF uložen.
+ Odpověď: Po dešifrování PDF použijte soubor`Save` metoda na`Document` objekt pro uložení aktualizovaného dokumentu PDF. Zadejte cestu k výstupnímu souboru, kam bude dešifrovaný soubor PDF uložen.
 
 #### Otázka: Jak mohu zajistit bezpečnost mých dešifrovaných souborů PDF?
 

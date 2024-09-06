@@ -50,7 +50,7 @@ Document doc = new Document();
 
 ## 5. lépés: Hozzon létre TextFormattingOptions
 
- Hozzon létre egy`TextFormattingOptions` objektumot, és állítsa be a sorköz módot`FullSize`:
+ Hozzon létre a`TextFormattingOptions` objektumot, és állítsa be a sorköz módot`FullSize`:
 
 ```csharp
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
@@ -59,7 +59,7 @@ formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 
 ## 6. lépés: Hozzon létre egy szövegrészletet
 
- Hozzon létre egy`TextFragment` objektumot, és adja meg a szöveg tartalmát:
+ Hozzon létre a`TextFragment` objektumot, és adja meg a szöveg tartalmát:
 
 ```csharp
 TextFragment textFragment = new TextFragment("Hello world");
@@ -67,7 +67,7 @@ TextFragment textFragment = new TextFragment("Hello world");
 
 ## 7. lépés: Töltse be a betűtípusfájlt (opcionális)
 
- Ha egy adott betűtípust szeretne használni a szöveghez, töltse be a TrueType betűtípusfájlt a`FileStream` tárgy:
+ Ha egy adott betűtípust szeretne használni a szöveghez, töltse be a TrueType betűtípusfájlt a`FileStream` objektum:
 
 ```csharp
 string fontFile = dataDir + "HPSimplified.TTF";
@@ -81,7 +81,7 @@ using (FileStream fontStream = File.OpenRead(fontFile))
 
 ## 8. lépés: Adja meg a szöveg pozícióját és sorközét
 
- Állítsa be a szövegrészlet pozícióját, és rendelje hozzá a`TextFormattingOptions` hoz`TextState.FormattingOptions` ingatlan:
+ Állítsa be a szövegrészlet pozícióját, és rendelje hozzá a`TextFormattingOptions` a`TextState.FormattingOptions` ingatlan:
 
 ```csharp
 textFragment.Position = new Position(100, 600);
@@ -90,7 +90,7 @@ textFragment.TextState.FormattingOptions = formattingOptions;
 
 ## 9. lépés: Adja hozzá a szöveget a dokumentumhoz
 
- Adja hozzá a szövegrészletet a dokumentumhoz, akár az a-hoz fűzve`TextBuilder` vagy közvetlenül egy oldalra`Paragraphs` Gyűjtemény:
+ Adja hozzá a szövegrészletet a dokumentumhoz, akár az a-hoz fűzve`TextBuilder` vagy közvetlenül egy oldalra`Paragraphs` gyűjtemény:
 
 ```csharp
 var page = doc.Pages.Add();
@@ -120,16 +120,16 @@ TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 // Szövegkészítő objektum létrehozása a dokumentum első oldalához
 //TextBuilder textBuilder = new TextBuilder(doc.Pages[1]);
-// Szövegrészlet létrehozása mintakarakterlánccal
+// Szövegrészlet létrehozása minta karakterlánccal
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
 	// Töltse be a TrueType betűtípust az adatfolyam objektumba
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
-		//Állítsa be a betűtípus nevét a szöveges karakterlánchoz
+		// Állítsa be a betűtípus nevét a szöveges karakterlánchoz
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		// Adja meg a szövegtöredék pozícióját
+		//Adja meg a szövegtöredék pozícióját
 		textFragment.Position = new Position(100, 600);
 		//Állítsa be az aktuális töredék TextFormattingOptions beállítását előre meghatározott értékre (ami a LineSpacingMode.FullSize-re mutat)
 		textFragment.TextState.FormattingOptions = formattingOptions;
@@ -146,7 +146,7 @@ if (fontFile != "")
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan adhat meg sorközt egy PDF-dokumentumban az Aspose.PDF for .NET használatával. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a projekt beállításától a módosított dokumentum mentéséig. Most már beépítheti ezt a kódot saját C#-projektjébe, hogy testreszabhassa a PDF-fájlok szövegének sorközét.
+Gratulálok! Sikeresen megtanulta, hogyan adhat meg sorközt egy PDF-dokumentumban az Aspose.PDF for .NET használatával. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a projekt beállításától a módosított dokumentum mentéséig. Most már beépítheti ezt a kódot saját C#-projektjébe, hogy testreszabhassa a PDF-fájlok szövegének sorközét.
 
 ### GYIK
 
@@ -184,4 +184,4 @@ V: Igen, ez az oktatóanyag útmutatást ad arra vonatkozóan, hogy miként adha
 
 #### K: Alkalmazhatom ezeket a sortávolság-módosításokat meglévő PDF-dokumentumokra?
 
- V: Igen, módosíthatja a sorközt a meglévő PDF dokumentumokban. Az oktatóanyag bemutatja, hogyan kell létrehozni a`TextFragment` a megadott sortávolsággal és pozícióval, majd adja hozzá egy oldalhoz`Paragraphs` Gyűjtemény.
+ V: Igen, módosíthatja a sorközt a meglévő PDF dokumentumokban. Az oktatóanyag bemutatja, hogyan kell létrehozni a`TextFragment` a megadott sortávolsággal és pozícióval, majd adja hozzá egy oldalhoz`Paragraphs` gyűjtemény.

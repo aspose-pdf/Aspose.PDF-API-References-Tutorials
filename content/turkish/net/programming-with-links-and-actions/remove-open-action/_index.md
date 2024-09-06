@@ -1,15 +1,15 @@
 ---
 title: Açık Eylemi Kaldır
 linktitle: Açık Eylemi Kaldır
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak açma eylemini PDF'den nasıl kaldıracağınızı öğrenin.
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak bir PDF'den açma eyleminin nasıl kaldırılacağını öğrenin.
 type: docs
 weight: 80
 url: /tr/net/programming-with-links-and-actions/remove-open-action/
 ---
-Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak açma eylemini bir PDF dosyasından nasıl kaldıracağınızı öğrenin.
+Bu adım adım kılavuzla Aspose.PDF for .NET'i kullanarak bir PDF dosyasından açık eyleminin nasıl kaldırılacağını öğrenin.
 
-## 1. Adım: Ortamı ayarlama
+## Adım 1: Ortamı kurma
 
 Geliştirme ortamınızı bir C# projesi ve uygun Aspose.PDF referanslarıyla kurduğunuzdan emin olun.
 
@@ -18,23 +18,23 @@ Geliştirme ortamınızı bir C# projesi ve uygun Aspose.PDF referanslarıyla ku
 Belgelerinizin dizin yolunu ayarlayın ve aşağıdaki kodu kullanarak PDF dosyasını yükleyin:
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 // Belgeyi aç
 Document document = new Document(dataDir + "RemoveOpenAction.pdf");
 ```
 
-## 3. Adım: Açık eylemi silme
+## Adım 3: Açık eylemi silme
 
- ayarlayarak belgeden açma eylemini kaldırın.`OpenAction` null özelliği:
+ Belgeden açık eylemi kaldırmak için şu ayarı yapın:`OpenAction` özellik null'a:
 
 ```csharp
 document. OpenAction = null;
 ```
 
-## 4. Adım: Güncellenen belgeyi kaydedin
+## Adım 4: Güncellenen belgeyi kaydedin
 
- Güncellenen belgeyi kullanarak kaydedin.`Save` yöntem:
+ Güncellenen belgeyi kullanarak kaydedin`Save` yöntem:
 
 ```csharp
 dataDir = dataDir + "RemoveOpenAction_out.pdf";
@@ -43,15 +43,15 @@ document. Save(dataDir);
 
 ## Adım 5: Sonucun görüntülenmesi
 
-Açma eyleminin başarıyla kaldırıldığını belirten bir mesaj görüntüleyin ve kaydedilen dosyanın konumunu belirtin:
+Açık eylemin başarıyla kaldırıldığını belirten bir mesaj görüntüleyin ve kaydedilen dosyanın konumunu belirtin:
 
 ```csharp
 Console.WriteLine("\nOpen action deleted successfully.\nFile saved to location: " + dataDir);
 ```
 
-### Aspose.PDF for .NET kullanarak Açık Eylemi Kaldır için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Açık Eylemi Kaldırmak için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document document = new Document(dataDir + "RemoveOpenAction.pdf");
@@ -65,43 +65,43 @@ Console.WriteLine("\nOpen action removed successfully.\nFile saved at " + dataDi
 
 ## Çözüm
 
-Tebrikler! Artık Aspose.PDF for .NET kullanarak açma eylemini bir PDF'den nasıl kaldıracağınızı biliyorsunuz. Projelerinizdeki PDF dosyalarının özelliklerini ve davranışını özelleştirmek için bu bilgiyi kullanın.
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF'den açık eylemi nasıl kaldıracağınızı biliyorsunuz. Bu bilgiyi projelerinizdeki PDF dosyalarının özelliklerini ve davranışlarını özelleştirmek için kullanın.
 
-Artık bu kılavuzu tamamladığınıza göre, bu kavramları kendi projelerinize uygulayabilir ve Aspose.PDF for .NET'in sunduğu özellikleri daha fazla keşfedebilirsiniz.
+Artık bu kılavuzu tamamladığınıza göre, bu kavramları kendi projelerinize uygulayabilir ve Aspose.PDF for .NET tarafından sunulan özellikleri daha ayrıntılı olarak inceleyebilirsiniz.
 
-### SSS'ler 
+### SSS 
 
-#### S: Bir PDF dosyasındaki "açık eylem" nedir?
+#### S: PDF dosyasındaki "açık eylem" nedir?
 
-C: Bir PDF dosyasındaki "açma eylemi", PDF açıldığında ne olması gerektiğini belirten bir talimattır. Belge içindeki belirli bir sayfaya veya konuma gitmek, harici bir uygulamayı başlatmak veya belirli bir görünümü görüntülemek gibi eylemleri içerebilir.
+A: Bir PDF dosyasındaki "açma eylemi", PDF açıldığında ne olması gerektiğini belirten bir talimattır. Belge içinde belirli bir sayfaya veya konuma gitme, harici bir uygulamayı başlatma veya belirli bir görünümü görüntüleme gibi eylemleri içerebilir.
 
-#### S: Açma eylemini neden bir PDF dosyasından kaldırmak isteyeyim?
+#### S: Bir PDF dosyasından açma eylemini neden kaldırmak isterim?
 
-C: Açma eylemini kaldırmak, güvenliği, kullanıcı deneyimini ve PDF'nin açıldığında nasıl sunulacağının kontrolünü artırabilir. Örneğin, belgeyi açarken otomatik gezinmeyi engellemek veya belirli eylemleri devre dışı bırakmak isteyebilirsiniz.
+A: Açık eyleminin kaldırılması, güvenliği, kullanıcı deneyimini ve PDF açıldığında nasıl sunulacağı üzerindeki denetimi artırabilir. Örneğin, belgeyi açarken otomatik gezinmeyi engellemek veya belirli eylemleri devre dışı bırakmak isteyebilirsiniz.
 
-#### S: Aspose.PDF for .NET açık eylemin kaldırılmasına nasıl yardımcı olur?
+#### S: Aspose.PDF for .NET, açma eylemini kaldırmada nasıl yardımcı olur?
 
-C: Aspose.PDF for .NET, PDF dosyalarının çeşitli yönlerini değiştirmek için API'ler sağlar. Bu eğitimde, C# kodunu kullanarak açık eylemin nasıl kaldırılacağı gösterilmektedir.
+A: Aspose.PDF for .NET, PDF dosyalarının çeşitli yönlerini düzenlemek için API'ler sağlar. Bu eğitim, C# kodu kullanılarak açık eylemin nasıl kaldırılacağını gösterir.
 
-#### S: Açık eylemi kaldırırken herhangi bir potansiyel risk veya husus var mı?
+#### S: Açık eylemi kaldırırken herhangi bir potansiyel risk veya dikkate alınması gereken bir husus var mı?
 
-C: Açma eyleminin kaldırılması PDF'nin varsayılan davranışını değiştirebilir; bu nedenle amaçlanan kullanıcı deneyimiyle uyumlu olduğundan emin olun. Kaldırma işleminin diğer işlevleri etkilemediğini doğrulamak için değiştirilen PDF'yi kapsamlı bir şekilde test edin.
+A: Açık eylemi kaldırmak PDF'nin varsayılan davranışını değiştirebilir, bu nedenle amaçlanan kullanıcı deneyimiyle uyumlu olduğundan emin olun. Kaldırmanın diğer işlevleri etkilemediğini doğrulamak için değiştirilmiş PDF'yi iyice test edin.
 
-#### S: Açık eylemi, diğer eylemleri gerçekleştirecek şekilde özelleştirebilir miyim?
+#### S: Açık eylemi diğer eylemleri gerçekleştirecek şekilde özelleştirebilir miyim?
 
-C: Evet, Aspose.PDF for .NET, açık eylemi, belirli bir sayfaya gitmek veya JavaScript'i çalıştırmak gibi çeşitli eylem türlerine ayarlayarak özelleştirmenizi sağlar.
+C: Evet, Aspose.PDF for .NET, belirli bir sayfaya gitmek veya JavaScript'i çalıştırmak gibi çeşitli eylem türlerine ayarlayarak açık eylemi özelleştirmenize olanak tanır.
 
-#### S: Açık eylemleri parola korumalı PDF'lerden kaldırabilir miyim?
-C: Evet, belgeye erişmek ve belgeyi değiştirmek için uygun kimlik bilgilerini sağladığınız sürece, parola korumalı PDF'lerdeki açık eylemleri kaldırabilirsiniz.
+#### S: Parola korumalı PDF'lerden açık eylemleri kaldırabilir miyim?
+C: Evet, belgeye erişmek ve belgeyi değiştirmek için uygun kimlik bilgilerini sağladığınız sürece parola korumalı PDF'lerden açık eylemleri kaldırabilirsiniz.
 
-#### S: Açık eylemin kaldırılması geri döndürülebilir mi?
+#### S: Açık eylem sökümü geri döndürülebilir mi?
 
 C: Hayır, açma eylemi kaldırıldıktan ve PDF kaydedildikten sonra, orijinal açma eylemi değiştirilen PDF'den geri yüklenemez.
 
 #### S: Açık eylemin başarıyla kaldırıldığını nasıl doğrularım?
 
-C: Sağlanan kodu kullanarak açma eylemini kaldırdıktan sonra, değiştirilen PDF'yi açın ve açılışta belirli bir eylemin gerçekleşmediğini doğrulayın.
+A: Sağlanan kod kullanılarak açma eylemi kaldırıldıktan sonra, değiştirilmiş PDF'yi açın ve açılışta belirli bir eylemin gerçekleşmediğini doğrulayın.
 
-#### S: Açık eylemleri aynı anda birden fazla PDF dosyasından kaldırabilir miyim?
+#### S: Birden fazla PDF dosyasından aynı anda açık eylemleri kaldırabilir miyim?
 
-C: Evet, toplu işleme senaryosunda birden çok PDF dosyasındaki açık eylemleri kaldırmak için aynı yaklaşımı kullanabilirsiniz.
+C: Evet, toplu işlem senaryosunda birden fazla PDF dosyasından açık eylemleri kaldırmak için aynı yaklaşımı kullanabilirsiniz.

@@ -26,7 +26,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 ```
 
- Ezután hozzon létre egy szakaszt a`Pdf` tárgy.
+ Ezután hozzon létre egy szakaszt a`Pdf` objektum.
 
 ```csharp
 Page sec1 = doc.Pages.Add();
@@ -34,7 +34,7 @@ Page sec1 = doc.Pages.Add();
 
 ## 3. lépés: Táblázat hozzáadása a dokumentumhoz
 
- Ebben a lépésben egy táblázatot fogunk hozzáadni a PDF dokumentumunkhoz. Először hozzon létre a`Table` tárgy.
+ Ebben a lépésben egy táblázatot fogunk hozzáadni a PDF dokumentumunkhoz. Először hozzon létre a`Table` objektum.
 
 ```csharp
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();

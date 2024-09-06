@@ -12,19 +12,19 @@ description: 此資源提供了文件程式設計的 Aspose.PDF for .NET 函式�
 | 標題 | 描述 |
 | --- | --- | 
 | [將 Java 腳本新增至 PDF 文件](./addjavascripttopage/) | 了解如何使用 Aspose.PDF for .NET 將 JavaScript 新增至 PDF 檔案。包含文件和頁面層級腳本編寫程式碼教學的逐步指南。 |  
-| [新增圖層到 PDF 文件](./addlayers/) | 了解如何使用 Aspose.PDF for .NET 將圖層新增至 PDF 檔案。包含用於建立和保存分層 PDF 的程式碼教學的逐步指南。 |  
+| [新增圖層到 PDF 文件](./addlayers/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 中新增圖層。本逐步指南將提升您的 PDF 操作技能。 |  
 | [新增刪除 Javascript 到 PDF 文檔](./addremovejavascripttodoc/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中新增和刪除 JavaScript。包含文檔層級腳本編寫程式碼教學的逐步指南。 |  
-| [新增目錄到 PDF 文件](./addtoc/) | 了解如何使用 Aspose.PDF for .NET 將目錄新增至 PDF 檔案。帶有範例原始程式碼的分步指南。增強文件導航！ |  
+| [新增目錄到 PDF 文件](./addtoc/) | 了解如何使用 Aspose.PDF for .NET 將目錄新增至 PDF。本逐步指南簡化了流程並確保在文件中輕鬆導航。 |  
 | [允許重複使用頁面內容](./allowresusepagecontent/) | 了解如何使用 Aspose.PDF for .NET 啟用「允許重複使用頁面內容」功能來最佳化 PDF。減小檔案大小並提高效能。 |  
-| [從 RGB 轉換為灰階](./convertfromrgbtograyscale/) | 了解如何使用 Aspose.PDF for .NET 將 PDF 從 RGB 轉換為灰階。提高列印品質並減小檔案大小。 |  
+| [從 RGB 轉換為灰階](./convertfromrgbtograyscale/) | 了解如何使用 Aspose.PDF for .NET 將 PDF 從 RGB 轉換為灰階。簡化 PDF 顏色轉換並節省文件空間的逐步指南。 |  
 | [建立多層 PDF 檔案優先方法](./createmultilayerpdffirstapproach/) | 了解如何使用 Aspose.PDF for .NET 的第一個方法建立多層 PDF 檔案。添加文字、圖像等以增強您的 PDF。 |  
-| [建立多層 PDF 第二種方法](./createmultilayerpdfsecondapproach/) | 了解如何使用 Aspose.PDF for .NET 建立多層 PDF。包含原始程式碼的逐步指南，用於建立包含文字和圖像的動態 PDF。 |  
-| [使用 Aspose Pdf 建立 PDF A1](./createpdfa1withasposepdf/) | 了解如何使用 Aspose.PDF for .NET 建立 PDF A1 文件。包含 C# 原始程式碼的逐步指南。有效優化 PDF。 |  
-| [新增目錄時自訂頁碼](./customizepagenumbeswhileaddingtoc/) | 透過此逐步指南和程式碼範例，了解如何使用 Aspose.PDF for .NET 新增目錄 (TOC) 時自訂頁碼。 |  
-| [確定 PDF 檔案的進度](./determineprogress/) | 透過此逐步指南和程式碼範例，了解如何使用 Aspose.PDF for .NET 確定 PDF 文件轉換過程的進度。 |  
+| [建立多層 PDF 第二種方法](./createmultilayerpdfsecondapproach/) | 了解如何使用 Aspose.PDF for .NET 建立多層 PDF。按照我們的逐步指南輕鬆將文字、圖像和圖層新增到您的 PDF 檔案中。 |  
+| [使用 Aspose Pdf 建立 PDF A1](./createpdfa1withasposepdf/) | 在此詳細教學中了解如何使用 Aspose.PDF for .NET 建立 PDF/A-1 檔案。帶有程式碼範例和解釋的分步指南。 |  
+| [新增目錄時自訂頁碼](./customizepagenumbeswhileaddingtoc/) | 在此綜合教學中，了解如何使用 Aspose.PDF for .NET 自訂頁碼，同時將目錄新增至 PDF 文件。 |  
+| [確定 PDF 檔案的進度](./determineprogress/) | 在此綜合指南中了解如何使用 Aspose.PDF for .NET 來確定 PDF 轉換的進度。 |  
 | [在 PDF 檔案中嵌入字體](./embedfont/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中嵌入字體。確保您的文件在任何裝置上都能正確顯示。 |  
 | [使用子集策略在 PDF 檔案中嵌入字體](./embedfontsusingsubsetstrategy/) | 了解如何使用 Aspose.PDF for .NET 透過子集策略在 PDF 檔案中嵌入字型。透過僅嵌入必要的字元來優化 PDF 大小。 |  
-| [建立 PDF 文件時嵌入字體](./embedfontwhiledoccreation/) | 了解如何使用 Aspose.PDF for .NET 建立 PDF 文件時嵌入字型。確保在不同裝置上正確顯示。 |  
+| [建立 PDF 文件時嵌入字體](./embedfontwhiledoccreation/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 文件中嵌入字型。增強 PDF 的外觀。 |  
 | [拼合 PDF 檔案中的註釋](./flattenannotation/) | 了解如何使用 Aspose.PDF for .NET 拼合 PDF 檔案中的註解。保留註釋並防止意外更改。 |  
 | [取得PDF檔案中的所有字體](./getallfonts/) | 透過此逐步指南和範例程式碼，了解如何使用 Aspose.PDF for .NET 以程式設計方式取得 PDF 檔案中使用的所有字體。 |  
 | [取得文檔視窗](./getdocumentwindow/) | 了解如何使用 Aspose.PDF for .NET 的 GetDocumentWindow 功能來擷取 PDF 文件視窗屬性的資訊。 |  

@@ -8,7 +8,7 @@ weight: 11
 url: /cs/java/pdf-styles-and-formatting/style-text-structure-in-pdf-using-java/
 ---
 
-## Úvod
+## Zavedení
 
 Soubory PDF se staly standardním formátem pro sdílení dokumentů, zpráv a různých typů obsahu. Při práci s PDF v Javě je nezbytné nejen naplnit je daty, ale také upravit styl textu pro vyleštěný vzhled.
 
@@ -21,9 +21,9 @@ Než začneme, ujistěte se, že máte splněny následující předpoklady:
 
 ## Nastavení prostředí
 
-Chcete-li začít upravovat text v PDF pomocí Javy, musíte nastavit vývojové prostředí. Následuj tyto kroky:
+Chcete-li začít upravovat text v PDF pomocí Javy, musíte nastavit vývojové prostředí. Postupujte takto:
 
-1.  Stáhněte si knihovnu Aspose.PDF for Java z[tady](https://releases.aspose.com/pdf/java/).
+1.  Stáhněte si knihovnu Aspose.PDF for Java z[zde](https://releases.aspose.com/pdf/java/).
 
 2. Zahrňte knihovnu do svého projektu Java.
 
@@ -202,4 +202,4 @@ Své dokumenty PDF můžete chránit vodoznaky přidáním fragmentu textu vodoz
 
 ### Kde najdu další informace a dokumentaci k Aspose.PDF pro Javu?
 
- Komplexní dokumentaci k Aspose.PDF pro Javu naleznete na adrese[tady](https://reference.aspose.com/pdf/java/).
+ Komplexní dokumentaci k Aspose.PDF pro Javu naleznete na adrese[zde](https://reference.aspose.com/pdf/java/).

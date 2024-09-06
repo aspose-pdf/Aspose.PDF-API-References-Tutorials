@@ -7,7 +7,7 @@ type: docs
 weight: 100
 url: /hu/net/programming-with-tables/html-tags-inside-table/
 ---
-Ebben az oktatóanyagban megtanuljuk, hogyan használhatunk HTML-címkéket egy táblázatban egy PDF-dokumentumban az Aspose.PDF for .NET használatával. Lépésről lépésre elmagyarázzuk a forráskódot C# nyelven. Ennek az oktatóanyagnak a végén tudni fogja, hogyan illeszthet be HTML-tartalmat egy PDF-dokumentum táblázatába. Kezdjük!
+Ebben az oktatóanyagban megtudjuk, hogyan használhatunk HTML-címkéket egy táblázatban egy PDF-dokumentumban az Aspose.PDF for .NET használatával. Lépésről lépésre elmagyarázzuk a forráskódot C# nyelven. Ennek az oktatóanyagnak a végén tudni fogja, hogyan illeszthet be HTML-tartalmat egy PDF-dokumentum táblázatába. Kezdjük!
 
 ## 1. lépés: A környezet beállítása
 Győződjön meg arról, hogy a C# fejlesztői környezetet az Aspose.PDF for .NET segítségével konfigurálta. Adja hozzá a hivatkozást a könyvtárhoz, és importálja a szükséges névtereket.

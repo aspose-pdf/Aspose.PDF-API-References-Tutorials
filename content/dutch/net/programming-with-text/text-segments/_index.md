@@ -2,36 +2,36 @@
 title: Tekstsegmenten in PDF-bestand
 linktitle: Tekstsegmenten in PDF-bestand
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u naar specifieke tekstsegmenten in een PDF-bestand kunt zoeken met behulp van reguliere expressies in Aspose.PDF voor .NET.
+description: Leer hoe u met behulp van reguliere expressies in Aspose.PDF voor .NET naar specifieke tekstsegmenten in een PDF-bestand kunt zoeken.
 type: docs
 weight: 540
 url: /nl/net/programming-with-text/text-segments/
 ---
-In deze zelfstudie wordt uitgelegd hoe u naar specifieke tekstsegmenten in een PDF-bestand kunt zoeken met Aspose.PDF voor .NET. De meegeleverde C#-broncode demonstreert verschillende scenario's met behulp van reguliere expressies.
+Deze tutorial legt uit hoe u specifieke tekstsegmenten in een PDF-bestand kunt zoeken met Aspose.PDF voor .NET. De meegeleverde C#-broncode demonstreert verschillende scenario's met behulp van reguliere expressies.
 
 ## Vereisten
 
-Voordat u doorgaat met de zelfstudie, moet u ervoor zorgen dat u over het volgende beschikt:
+Voordat u verdergaat met de tutorial, moet u ervoor zorgen dat u het volgende hebt:
 
 - Basiskennis van de programmeertaal C#.
-- Aspose.PDF voor .NET-bibliotheek geïnstalleerd. U kunt het verkrijgen via de Aspose-website of NuGet gebruiken om het in uw project te installeren.
+- Aspose.PDF voor .NET-bibliotheek geïnstalleerd. U kunt het verkrijgen van de Aspose-website of NuGet gebruiken om het in uw project te installeren.
 
-## Stap 1: Zet het project op
+## Stap 1: Het project opzetten
 
-Begin met het maken van een nieuw C#-project in de geïntegreerde ontwikkelomgeving (IDE) van uw voorkeur en voeg een verwijzing toe naar de Aspose.PDF voor .NET-bibliotheek.
+Begin met het maken van een nieuw C#-project in uw favoriete geïntegreerde ontwikkelomgeving (IDE) en voeg een verwijzing toe naar de Aspose.PDF voor .NET-bibliotheek.
 
 ## Stap 2: Importeer de benodigde naamruimten
 
-Voeg het volgende toe met behulp van richtlijnen aan het begin van uw C#-bestand om de vereiste naamruimten te importeren:
+Voeg de volgende using-richtlijnen toe aan het begin van uw C#-bestand om de vereiste naamruimten te importeren:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Stap 3: Gebruik TextFragmentAbsorber voor het zoeken naar tekst
+## Stap 3: Gebruik TextFragmentAbsorber voor tekst zoeken
 
- Maak een`TextFragmentAbsorber` object om naar specifieke tekstsegmenten te zoeken met behulp van reguliere expressies:
+ Maak een`TextFragmentAbsorber` object om te zoeken naar specifieke tekstsegmenten met behulp van reguliere expressies:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber;
@@ -41,60 +41,60 @@ TextFragmentAbsorber textFragmentAbsorber;
 
 Voer tekstzoekopdrachten uit op basis van verschillende scenario's met behulp van reguliere expressies. Hier zijn een paar voorbeelden:
 
-- Zoeken naar een exacte woordovereenkomst: 
+- Om te zoeken naar een exacte woordmatch: 
 
 ```csharp
 textFragmentAbsorber = new TextFragmentAbsorber(@"\bWord\b", new TextSearchOptions(true));
 ```
 
-- Zoeken naar een tekenreeks in hoofdletters of kleine letters: 
+- Om naar een tekenreeks te zoeken in hoofdletters of kleine letters: 
 
 ```csharp
 textFragmentAbsorber = new TextFragmentAbsorber("(?i)Line", new TextSearchOptions(true));
 ```
 
-- Zoeken naar alle tekenreeksen in het PDF-document: 
+- Om naar alle strings in het PDF-document te zoeken: 
 
 ```csharp
 textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
 
-- Tekst zoeken na een specifieke tekenreeks tot aan een regeleinde: 
+- Om tekst te vinden na een specifieke tekenreeks tot aan een regelafbreking: 
 
 ```csharp
 textFragmentAbsorber = new TextFragmentAbsorber(@"(?i)the ((.)*)");
 ```
 
-- Tekst zoeken na een regex-overeenkomst: 
+- Om tekst te vinden na een regex-match: 
 
 ```csharp
 textFragmentAbsorber = new TextFragmentAbsorber(@"(?<=word).*");
 ```
 
-- Zoeken naar hyperlinks/URL's in het PDF-document: 
+- Om te zoeken naar hyperlinks/URL's in het PDF-document: 
 
 ```csharp
 textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?");
 ```
 
-Vervang de reguliere expressies door uw gewenste zoekpatronen.
+Vervang de reguliere expressies door de gewenste zoekpatronen.
 
 ## Stap 5: Voer de zoekopdracht uit en verwerk de resultaten
 
- Voer de zoekopdracht uit met behulp van het gemaakte`TextFragmentAbsorber` bezwaar maken en de resultaten verwerken op basis van uw vereisten.
+ Voer de zoekopdracht uit met behulp van de gemaakte`TextFragmentAbsorber` Objectiveer en verwerk de resultaten op basis van uw vereisten.
 
-### Voorbeeldbroncode voor tekstsegmenten met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor tekstsegmenten met behulp van Aspose.PDF voor .NET 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber;
-// Om de exacte overeenkomst van een woord te zoeken, kunt u overwegen reguliere expressies te gebruiken.
+// Om een exacte overeenkomst met een woord te zoeken, kunt u reguliere expressies gebruiken.
 textFragmentAbsorber = new TextFragmentAbsorber(@"\bWord\b", new TextSearchOptions(true));
-// Als u een tekenreeks in hoofdletters of kleine letters wilt doorzoeken, kunt u overwegen reguliere expressies te gebruiken.
+// Om een tekenreeks in hoofdletters of kleine letters te doorzoeken, kunt u gebruikmaken van reguliere expressies.
 textFragmentAbsorber = new TextFragmentAbsorber("(?i)Line", new TextSearchOptions(true));
-//Om alle tekenreeksen (parseer alle tekenreeksen) in een PDF-document te doorzoeken, kunt u de volgende reguliere expressie gebruiken.
+//Om alle strings in een PDF-document te doorzoeken (alle strings te parseren), kunt u de volgende reguliere expressie gebruiken.
 textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
-// Zoek de overeenkomst met de zoekreeks en haal alles op na de tekenreeks tot aan het einde van de regel.
+// Vind een overeenkomst met de zoekreeks en haal alles op na de reeks tot aan het regeleinde.
 textFragmentAbsorber = new TextFragmentAbsorber(@"(?i)the ((.)*)");
-// Gebruik de volgende reguliere expressie om tekst te vinden die volgt op de regex-overeenkomst.
+// Gebruik de volgende reguliere expressie om tekst te vinden die volgt op de regex-match.
 textFragmentAbsorber = new TextFragmentAbsorber(@"(?<=word).*");
 // Om hyperlinks/URL's in een PDF-document te doorzoeken, kunt u de volgende reguliere expressie gebruiken.
 textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?");
@@ -103,42 +103,42 @@ textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+
 
 ## Conclusie
 
-Gefeliciteerd! U hebt met succes geleerd hoe u naar specifieke tekstsegmenten binnen een PDF-document kunt zoeken met Aspose.PDF voor .NET. Deze tutorial gaf voorbeelden van verschillende zoekscenario's met reguliere expressies. U kunt deze code nu in uw eigen C#-projecten opnemen om tekstsegmenten in PDF-bestanden te zoeken en te verwerken.
+Gefeliciteerd! U hebt succesvol geleerd hoe u specifieke tekstsegmenten in een PDF-document kunt zoeken met Aspose.PDF voor .NET. Deze tutorial gaf voorbeelden van verschillende zoekscenario's met behulp van reguliere expressies. U kunt deze code nu opnemen in uw eigen C#-projecten om tekstsegmenten in PDF-bestanden te zoeken en te verwerken.
 
 ### Veelgestelde vragen
 
-#### Vraag: Wat is het doel van de tutorial "Tekstsegmenten in PDF-bestand"?
+#### V: Wat is het doel van de tutorial 'Tekstsegmenten in PDF-bestand'?
 
-A: De tutorial "Tekstsegmenten in PDF-bestand" is bedoeld om gebruikers te begeleiden bij het zoeken naar specifieke tekstsegmenten in een PDF-bestand met behulp van Aspose.PDF voor .NET. De zelfstudie biedt stapsgewijze instructies en C#-codevoorbeelden voor het uitvoeren van tekstzoekopdrachten op basis van verschillende scenario's met behulp van reguliere expressies.
+A: De tutorial "Tekstsegmenten in PDF-bestand" is bedoeld om gebruikers te begeleiden bij het zoeken naar specifieke tekstsegmenten in een PDF-bestand met Aspose.PDF voor .NET. De tutorial biedt stapsgewijze instructies en C#-codevoorbeelden voor het uitvoeren van tekstzoekopdrachten op basis van verschillende scenario's met behulp van reguliere expressies.
 
-#### Vraag: Hoe helpt deze tutorial bij het zoeken naar tekstsegmenten in een PDF-document?
+#### V: Hoe helpt deze tutorial bij het zoeken naar tekstsegmenten in een PDF-document?
 
-A: Deze tutorial helpt gebruikers begrijpen hoe ze de Aspose.PDF voor .NET-bibliotheek kunnen gebruiken om naar specifieke tekstsegmenten in een PDF-document te zoeken. Door verschillende codevoorbeelden en reguliere expressies aan te bieden, kunnen gebruikers hun tekstzoekopdrachten aanpassen om de gewenste inhoud in PDF-bestanden te vinden.
+A: Deze tutorial helpt gebruikers te begrijpen hoe ze de Aspose.PDF for .NET-bibliotheek kunnen gebruiken om te zoeken naar specifieke tekstsegmenten in een PDF-document. Door verschillende codevoorbeelden en reguliere expressies te bieden, kunnen gebruikers hun tekstzoekopdrachten aanpassen om de gewenste inhoud in PDF-bestanden te vinden.
 
-#### Vraag: Welke vereisten zijn vereist om deze tutorial te volgen?
+#### V: Welke vereisten zijn vereist om deze tutorial te volgen?
 
-A: Voordat u met de zelfstudie begint, moet u een basiskennis hebben van de programmeertaal C#. Bovendien moet de Aspose.PDF voor .NET-bibliotheek zijn geïnstalleerd. U kunt het verkrijgen via de Aspose-website of in uw project installeren met NuGet.
+A: Voordat u met de tutorial begint, moet u een basiskennis hebben van de programmeertaal C#. Daarnaast moet u de Aspose.PDF voor .NET-bibliotheek geïnstalleerd hebben. U kunt deze verkrijgen via de Aspose-website of in uw project installeren met NuGet.
 
-#### Vraag: Hoe stel ik mijn project in om deze tutorial te volgen?
+#### V: Hoe stel ik mijn project in om deze tutorial te volgen?
 
-A: Om aan de slag te gaan, maakt u een nieuw C#-project in de geïntegreerde ontwikkelomgeving (IDE) van uw voorkeur en voegt u een verwijzing toe naar de Aspose.PDF voor .NET-bibliotheek. Hierdoor kunt u de functionaliteit van de bibliotheek benutten voor het werken met PDF-documenten en tekstfragmenten.
+A: Om te beginnen, maak een nieuw C#-project in uw favoriete geïntegreerde ontwikkelomgeving (IDE) en voeg een referentie toe aan de Aspose.PDF voor .NET-bibliotheek. Hiermee kunt u de functionaliteit van de bibliotheek gebruiken voor het werken met PDF-documenten en tekstfragmenten.
 
-#### Vraag: Hoe kan ik zoeken naar specifieke tekstsegmenten in een PDF-bestand?
+#### V: Hoe kan ik zoeken naar specifieke tekstsegmenten in een PDF-bestand?
 
- A: Om naar specifieke tekstsegmenten te zoeken, moet u een`TextFragmentAbsorber` voorwerp. De tutorial biedt verschillende codevoorbeelden waarbij reguliere expressies worden gebruikt om verschillende zoekscenario's te demonstreren. Door de reguliere expressies aan te passen, kunt u uw gewenste zoekpatronen definiëren.
+ A: Om naar specifieke tekstsegmenten te zoeken, moet u een`TextFragmentAbsorber` object. De tutorial biedt verschillende codevoorbeelden met behulp van reguliere expressies om verschillende zoekscenario's te demonstreren. Door de reguliere expressies aan te passen, kunt u uw gewenste zoekpatronen definiëren.
 
-#### Vraag: Welke typen zoekscenario's worden in de zelfstudie behandeld?
+#### V: Welke soorten zoekscenario's worden in de tutorial behandeld?
 
-A: De tutorial behandelt een reeks zoekscenario's waarbij gebruik wordt gemaakt van reguliere expressies, zoals exacte woordovereenkomsten, hoofdletterongevoelige zoekopdrachten, zoeken naar alle tekenreeksen in een document, zoeken naar tekst na specifieke tekenreeksen en zoeken naar hyperlinks/URL's. De verstrekte codevoorbeelden kunnen worden aangepast aan uw specifieke zoekvereisten.
+A: De tutorial behandelt een reeks zoekscenario's met behulp van reguliere expressies, zoals exacte woordmatches, hoofdletterongevoelige zoekopdrachten, zoeken naar alle strings in een document, tekst vinden na specifieke strings en zoeken naar hyperlinks/URL's. De meegeleverde codevoorbeelden kunnen worden aangepast aan uw specifieke zoekvereisten.
 
-#### Vraag: Hoe verwerk ik de zoekresultaten nadat ik de tekstzoekopdracht heb uitgevoerd?
+#### V: Hoe verwerk ik de zoekresultaten nadat ik een tekstuele zoekopdracht heb uitgevoerd?
 
- A: Na het maken van een`TextFragmentAbsorber`object en het uitvoeren van de zoekopdracht, kunt u de zoekresultaten verwerken op basis van uw vereisten. De tutorial richt zich op het demonstreren van het zoekproces zelf, terwijl de manier waarop u de zoekresultaten verwerkt en gebruikt afhangt van de behoeften van uw project.
+ A: Nadat u een`TextFragmentAbsorber`object en het uitvoeren van de zoekopdracht, kunt u de zoekresultaten verwerken op basis van uw vereisten. De tutorial richt zich op het demonstreren van het zoekproces zelf, terwijl de manier waarop u de zoekresultaten verwerkt en gebruikt, afhankelijk is van de behoeften van uw project.
 
-#### Vraag: Kan ik de meegeleverde codevoorbeelden in mijn eigen projecten gebruiken?
+#### V: Kan ik de meegeleverde codevoorbeelden in mijn eigen projecten gebruiken?
 
-A: Ja, u kunt de meegeleverde codevoorbeelden gebruiken als referentie in uw eigen C#-projecten. De voorbeelden laten zien hoe u de zoekopdracht instelt, reguliere expressies definieert en tekstzoekopdrachten uitvoert. U kunt deze code aanpassen en integreren in uw applicaties om naar specifieke tekstsegmenten binnen PDF-bestanden te zoeken.
+A: Ja, u kunt de meegeleverde codevoorbeelden gebruiken als referentie in uw eigen C#-projecten. De voorbeelden laten zien hoe u de zoekopdracht instelt, reguliere expressies definieert en tekstzoekopdrachten uitvoert. U kunt deze code aanpassen en integreren in uw toepassingen om te zoeken naar specifieke tekstsegmenten in PDF-bestanden.
 
-#### Vraag: Waar kan ik de volledige tutorial en de voorbeeldcode vinden?
+#### V: Waar kan ik de volledige tutorial en de voorbeeldcode vinden?
 
- A: U kunt toegang krijgen tot de volledige tutorial en de meegeleverde voorbeeld-C#-code bekijken door naar de volgende link te gaan:[https://bit.ly/TextSegmentsTutorial](https://bit.ly/TextSegmentsTutorial)
+ A: U kunt de volledige tutorial openen en de meegeleverde C#-voorbeeldcode bekijken via de volgende link:[https://bit.ly/TextSegmentsTutorial](https://bit.ly/TextSegmentsTutorial)

@@ -16,7 +16,7 @@ Aspose.PDF for Java je knihovna Java, která vám umožňuje pracovat s dokument
 
 ## Pochopení uspořádaných seznamů HTML
 
-Seřazené seznamy HTML se používají k zobrazení seznamu položek v sekvenčním pořadí, obvykle s čísly nebo písmeny. V tomto tutoriálu se naučíme, jak převést uspořádaný seznam HTML do dokumentu PDF pomocí Aspose.PDF pro Java.
+Seřazené seznamy HTML se používají k zobrazení seznamu položek v sekvenčním pořadí, obvykle s čísly nebo písmeny. V tomto tutoriálu se naučíme, jak převést uspořádaný seznam HTML do dokumentu PDF pomocí Aspose.PDF pro Javu.
 
 ## Přidání Aspose.PDF pro Java do vašeho projektu
 

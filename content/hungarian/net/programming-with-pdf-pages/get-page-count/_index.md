@@ -71,7 +71,7 @@ Console.WriteLine("Number of pages in document = " + doc.Pages.Count);
 ```
 
 ## Következtetés
-Ebben az oktatóanyagban megtanultuk, hogyan lehet lekérni egy PDF-fájl oldalszámát az Aspose.PDF for .NET használatával. A fent vázolt lépések követésével könnyedén megvalósíthatja ezt a funkciót saját projektjeiben. Nyugodtan fedezze fel az Aspose.PDF dokumentációt, hogy további hasznos funkciókat fedezzen fel a PDF-fájlokkal való munkavégzéshez.
+Ebben az oktatóanyagban megtanultuk, hogyan lehet lekérni egy PDF-fájl oldalszámát az Aspose.PDF for .NET használatával. A fent vázolt lépések követésével könnyedén megvalósíthatja ezt a funkciót saját projektjeiben. Nyugodtan fedezze fel az Aspose.PDF dokumentációját, hogy további hasznos funkciókat fedezzen fel a PDF-fájlokkal való munkavégzéshez.
 
 ### GYIK az oldalak számának lekéréséhez PDF-fájlban
 
@@ -80,8 +80,8 @@ Ebben az oktatóanyagban megtanultuk, hogyan lehet lekérni egy PDF-fájl oldals
 V: Egy PDF-fájl oldalszámának megtekintéséhez kövesse az alábbi lépéseket:
 
 1.  Példányosítás a`Document` objektum segítségével`Document` osztályú Aspose.PDF.
-2.  Adjon hozzá egy oldalt a dokumentumhoz a gombbal`Add()` a dokumentum módszere`Pages` Gyűjtemény.
-3.  Oldaltartalom létrehozása hozzáadással`TextFragment` kifogásolják a`Page` tárgyat`Paragraphs` Gyűjtemény.
+2.  Adjon hozzá egy oldalt a dokumentumhoz a gombbal`Add()` a dokumentum módszere`Pages` gyűjtemény.
+3.  Oldaltartalom létrehozása hozzáadással`TextFragment` kifogásolják a`Page` tárgyat`Paragraphs` gyűjtemény.
 4.  A dokumentum bekezdéseinek feldolgozása a`ProcessParagraphs()` módszer az oldalak számának pontos kiszámításához.
 5.  Hozzáférés a`Count` tulajdona a`Pages` gyűjtemény a dokumentum oldalainak megtekintéséhez.
 
@@ -97,6 +97,6 @@ V: Igen, használhatja az Aspose.PDF for .NET fájlt a jelszóval védett PDF-f�
 
  V: Igen, az Aspose.PDF for .NET módszereket biztosít a PDF-dokumentum egy adott oldalára történő navigáláshoz. Használhatja a`Page` osztályt és tulajdonságait a dokumentum egyes oldalainak eléréséhez és kezeléséhez.
 
-#### K: Az Aspose.PDF for .NET segítségével kinyerhetek szöveget vagy egyéb tartalmat a PDF-dokumentum egy adott oldaláról?
+#### K: Használhatom az Aspose.PDF for .NET fájlt szöveg vagy egyéb tartalom kinyerésére a PDF-dokumentum egy adott oldaláról?
 
- V: Igen, az Aspose.PDF for .NET hatékony funkciókat kínál szövegek, képek és egyéb tartalmak kinyerésére egy PDF-dokumentum adott oldalairól. Használhatja a`TextFragmentAbsorber` és más osztályok ennek eléréséhez.
+ V: Igen, az Aspose.PDF for .NET hatékony szolgáltatásokat nyújt a szövegek, képek és egyéb tartalmak kinyerésére egy PDF-dokumentum adott oldalairól. Használhatja a`TextFragmentAbsorber` és más osztályok ennek eléréséhez.

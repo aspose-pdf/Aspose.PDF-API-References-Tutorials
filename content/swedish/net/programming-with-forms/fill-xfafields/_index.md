@@ -80,7 +80,7 @@ S: XFA står för XML Forms Architecture, vilket är ett XML-baserat format för
 
 #### F: Kan jag fylla i XFA-fält i alla PDF-dokument?
 
- S: Alla PDF-dokument innehåller inte XFA-formulär. XFA-formulär är mindre vanliga än traditionella AcroForms. Du kan avgöra om ett PDF-dokument innehåller ett XFA-formulär genom att markera`doc.Form.Type` fast egendom. Om värdet är`FormType.Xfa` , innehåller dokumentet ett XFA-formulär och du kan fortsätta med att fylla i dess fält med`doc.Form.XFA`.
+ S: Alla PDF-dokument innehåller inte XFA-formulär. XFA-formulär är mindre vanliga än traditionella AcroForms. Du kan avgöra om ett PDF-dokument innehåller ett XFA-formulär genom att markera`doc.Form.Type` egendom. Om värdet är`FormType.Xfa` , innehåller dokumentet ett XFA-formulär och du kan fortsätta med att fylla i dess fält med`doc.Form.XFA`.
 
 #### F: Hur hittar jag namnen på XFA-formulärfält i ett PDF-dokument?
 

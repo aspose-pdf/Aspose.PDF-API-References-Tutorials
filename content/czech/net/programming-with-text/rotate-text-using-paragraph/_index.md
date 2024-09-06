@@ -51,7 +51,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 ## Krok 5: Vytvořte textový odstavec
 
- Vytvořit`TextParagraph` objekt a nastavte jeho pozici na stránce:
+ Vytvořte a`TextParagraph` objekt a nastavte jeho pozici na stránce:
 
 ```csharp
 TextParagraph paragraph = new TextParagraph();
@@ -94,7 +94,7 @@ paragraph.AppendLine(textFragment3);
 
 ## Krok 8: Vytvořte TextBuilder a připojte odstavec
 
- Vytvořit`TextBuilder` objekt pomocí`pdfPage` a připojte textový odstavec na stránku PDF:
+ Vytvořte a`TextBuilder` objekt pomocí`pdfPage` a připojte textový odstavec na stránku PDF:
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(pdfPage);
@@ -114,7 +114,7 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated2_out.pdf");
 ### Ukázka zdrojového kódu pro otáčení textu pomocí odstavce pomocí Aspose.PDF pro .NET 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Inicializujte objekt dokumentu
+// Inicializovat objekt dokumentu
 Document pdfDocument = new Document();
 // Získejte konkrétní stránku
 Page pdfPage = (Page)pdfDocument.Pages.Add();
@@ -154,7 +154,7 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated2_out.pdf");
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili otáčet text pomocí odstavců v dokumentu PDF pomocí Aspose.PDF pro .NET. Tento výukový program poskytuje podrobného průvodce od vytvoření dokumentu po uložení upravené verze. Nyní můžete tento kód začlenit do svých vlastních projektů C# a manipulovat s rotací textu v souborech PDF.
+Gratuluji! Úspěšně jste se naučili otáčet text pomocí odstavců v dokumentu PDF pomocí Aspose.PDF pro .NET. Tento výukový program poskytuje podrobného průvodce od vytvoření dokumentu po uložení upravené verze. Nyní můžete tento kód začlenit do svých vlastních projektů C# a manipulovat s rotací textu v souborech PDF.
 
 ### FAQ
 
@@ -178,10 +178,10 @@ Odpověď: Otáčení textu v dokumentu PDF může být užitečné pro různé 
 
 A: Otáčení textu pomocí odstavců:
 
-1.  Vytvořit`TextParagraph` objekt.
+1.  Vytvořte a`TextParagraph` objekt.
 2.  Vytvořit`TextFragment` objekty s požadovaným textem a úhly natočení.
 3. Připojte fragmenty textu k odstavci textu.
-4.  Vytvořit`TextBuilder` objekt a připojit odstavec textu ke konkrétní stránce PDF.
+4.  Vytvořte a`TextBuilder` objekt a připojit odstavec textu ke konkrétní stránce PDF.
 
 #### Otázka: Mohu ovládat úhel otočení jednotlivých fragmentů textu?
 

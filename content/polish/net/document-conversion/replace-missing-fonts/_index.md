@@ -1,113 +1,111 @@
 ---
 title: Zastąp brakujące czcionki
 linktitle: Zastąp brakujące czcionki
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Przewodnik krok po kroku dotyczący zastępowania brakujących czcionek w pliku PDF przy użyciu Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak zastąpić brakujące czcionki w dokumentach PDF za pomocą Aspose.PDF dla .NET, korzystając z tego przewodnika krok po kroku.
 type: docs
 weight: 260
 url: /pl/net/document-conversion/replace-missing-fonts/
 ---
-W tym samouczku przeprowadzimy Cię przez proces zastępowania brakujących czcionek w pliku PDF przy użyciu Aspose.PDF dla .NET. Po otwarciu pliku PDF na komputerze, na którym brakuje określonej czcionki, mogą wystąpić problemy z wyświetlaniem czcionek. W takich przypadkach istnieje możliwość zastąpienia brakującej czcionki inną czcionką dostępną na maszynie. Wykonując poniższe kroki, będziesz mógł zastąpić brakujące czcionki w pliku PDF.
+## Wstęp
 
-## Warunki wstępne
-Zanim zaczniesz, upewnij się, że spełniasz następujące wymagania wstępne:
+Czy kiedykolwiek otworzyłeś dokument PDF i odkryłeś, że brakuje niektórych czcionek? To może być frustrujące, prawda? Brakujące czcionki mogą sprawić, że dokument będzie wyglądał zupełnie inaczej, niż zamierzał twórca. Na szczęście dzięki Aspose.PDF dla .NET możesz łatwo zastąpić brakujące czcionki i upewnić się, że Twoje dokumenty PDF zachowają zamierzony wygląd. W tym samouczku przeprowadzimy Cię przez proces krok po kroku, dzięki czemu będzie on prosty i przejrzysty.
 
-- Podstawowa znajomość języka programowania C#.
-- Biblioteka Aspose.PDF dla .NET zainstalowana w Twoim systemie.
-- Środowisko programistyczne, takie jak Visual Studio.
+## Wymagania wstępne
 
-## Krok 1: Znalezienie brakującej czcionki
-Pierwszym krokiem jest znalezienie brakującej czcionki w pliku PDF. Użyj następującego kodu:
+Zanim zaczniemy, jest kilka rzeczy, które musisz mieć na miejscu:
 
-```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+1.  Aspose.PDF dla .NET: Upewnij się, że masz zainstalowaną bibliotekę Aspose.PDF. Możesz ją pobrać z[Tutaj](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: środowisko programistyczne, w którym można pisać i testować kod.
+3. Podstawowa wiedza o języku C#: Znajomość programowania w języku C# pomoże Ci lepiej zrozumieć fragmenty kodu.
 
-Aspose.Pdf.Text.Font originalFont = null;
-try
-{
-     // Znajdź oryginalną czcionkę
-     originalFont = FontRepository.FindFont("AgencyFB");
-}
-catch(Exception)
-{
-     // Na komputerze docelowym brakuje czcionki
-     // Dodaj proste zastępowanie czcionek
-     FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
-}
-```
+## Importuj pakiety
 
- Pamiętaj o wymianie`"YOUR DOCUMENTS DIRECTORY"` z rzeczywistym katalogiem, w którym znajduje się plik PDF.
-
-## Krok 2: Zastąp brakującą czcionkę
-Następnie zastąpimy brakującą czcionkę inną dostępną czcionką. Użyj następującego kodu:
+Na początek musisz zaimportować niezbędne pakiety do swojego projektu C#. Oto jak możesz to zrobić:
 
 ```csharp
-var fileNew = new FileInfo(dataDir + "newfile_out.pdf");
-var pdf = new Document(dataDir + "input.pdf");
-
-// Konwertuj plik PDF do formatu PDF/A z usuwaniem błędów
-pdf.Convert(dataDir + "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
-
-// Zapisz wynikowy plik PDF
-pdf.Save(fileNew.FullName);
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
- Pamiętaj o wymianie`"input.pdf"` z rzeczywistą ścieżką do oryginalnego pliku PDF i`"newfile_out.pdf"` z żądaną nazwą wynikowego pliku PDF.
+## Krok 1: Skonfiguruj katalog dokumentów
 
-## Krok 3: Zapisanie wynikowego pliku PDF
-Na koniec zapiszemy powstały plik PDF z zastąpioną czcionką. Użyj następującego kodu:
-
-```csharp
-// Zapisz wynikowy plik PDF
-pdf.Save(fileNew.FullName);
-```
-
-Zapewnia, że ustawiłeś poprawną ścieżkę docelową dla wynikowego pliku PDF.
-
-### Przykładowy kod źródłowy funkcji Zamień brakujące czcionki przy użyciu Aspose.PDF dla .NET
+Najpierw musisz określić ścieżkę do katalogu dokumentów. To tutaj znajduje się plik PDF wejściowy i plik wyjściowy zostanie zapisany.
 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+## Krok 2: Zainicjuj oryginalną czcionkę
+
+Następnie spróbuj znaleźć oryginalną czcionkę, której może brakować. W tym przypadku szukamy „AgencyFB”.
+
+```csharp
 Aspose.Pdf.Text.Font originalFont = null;
 try
 {
-	originalFont = FontRepository.FindFont("AgencyFB");
+    originalFont = FontRepository.FindFont("AgencyFB");
 }
 catch (Exception)
 {
-	// Na komputerze docelowym brakuje czcionki
-	FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
+    //Brak czcionki na komputerze docelowym
+    FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
 }
+```
+
+Tutaj próbujemy znaleźć czcionkę. Jeśli nie zostanie znaleziona, wyłapujemy wyjątek i zastępujemy ją bardziej powszechną czcionką „Arial”. Dzięki temu dokument nadal będzie wyglądał dobrze, nawet jeśli oryginalna czcionka nie będzie dostępna.
+
+## Krok 3: Załaduj dokument PDF
+
+Teraz załadujmy dokument PDF, który chcesz przetworzyć. Musisz określić ścieżkę do pliku wejściowego.
+
+```csharp
 var fileNew = new FileInfo(dataDir + "newfile_out.pdf");
 var pdf = new Document(dataDir + "input.pdf");
-pdf.Convert( dataDir +  "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
+```
+
+ W tym kroku tworzymy nowy`FileInfo` obiekt dla pliku wyjściowego i załaduj dokument PDF wejściowy do nowego`Document` obiekt.
+
+## Krok 4: Konwertuj dokument PDF
+
+Przed zapisaniem dokumentu dobrym pomysłem jest przekonwertowanie go do określonego formatu PDF. W tym przypadku przekonwertujemy go do formatu PDF/A-1B, który jest standardem długoterminowej archiwizacji dokumentów elektronicznych.
+
+```csharp
+pdf.Convert(dataDir + "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
+```
+
+Ten wiersz konwertuje plik PDF i rejestruje wszelkie błędy w określonym pliku XML. Jeśli podczas konwersji wystąpią jakieś problemy, zostaną one zarejestrowane w pliku „log.xml”.
+
+## Krok 5: Zapisz zaktualizowany dokument PDF
+
+Na koniec nadszedł czas na zapisanie zaktualizowanego dokumentu PDF ze zmienionymi czcionkami.
+
+```csharp
 pdf.Save(fileNew.FullName);
 ```
 
+Ten wiersz zapisuje zmodyfikowany plik PDF do określonej ścieżki pliku wyjściowego. I tak po prostu, pomyślnie zastąpiłeś brakujące czcionki w swoim dokumencie PDF!
+
 ## Wniosek
-tym samouczku omówiliśmy krok po kroku proces zastępowania brakujących czcionek w pliku PDF przy użyciu Aspose.PDF dla .NET. Postępując zgodnie z instrukcjami opisanymi powyżej, będziesz w stanie pomyślnie zastąpić brakujące czcionki w pliku PDF.
 
-### Często zadawane pytania
+Zastępowanie brakujących czcionek w dokumentach PDF nie musi być trudnym zadaniem. Dzięki Aspose.PDF dla .NET możesz łatwo zarządzać zamianami czcionek i upewnić się, że Twoje dokumenty wyglądają tak, jak powinny. Postępując zgodnie z krokami opisanymi w tym samouczku, możesz zachować integralność swoich plików PDF, nawet gdy niektóre czcionki są niedostępne. Więc następnym razem, gdy napotkasz problem z brakującymi czcionkami, będziesz dokładnie wiedział, co zrobić!
 
-#### P: Co to jest Aspose.PDF dla .NET?
+## Najczęściej zadawane pytania
 
-Odp.: Aspose.PDF dla .NET to potężna biblioteka, która umożliwia programistom pracę z dokumentami PDF w aplikacjach C#. Oferuje różne funkcjonalności, w tym możliwość zastępowania brakujących czcionek w plikach PDF.
+### Czym jest Aspose.PDF dla .NET?
+Aspose.PDF dla platformy .NET to zaawansowana biblioteka umożliwiająca programistom programowe tworzenie, edytowanie i konwertowanie dokumentów PDF.
 
-#### P: Dlaczego w pliku PDF występują brakujące czcionki?
+### Czy mogę używać Aspose.PDF bezpłatnie?
+ Tak, Aspose oferuje bezpłatną wersję próbną, której możesz użyć do oceny biblioteki. Możesz ją pobrać[Tutaj](https://releases.aspose.com/).
 
-Odp.: Brakujące czcionki w pliku PDF mogą wystąpić, gdy plik zostanie otwarty na komputerze, na którym nie zainstalowano niezbędnych czcionek. Może to prowadzić do zastępowania czcionek, co wpływa na wygląd dokumentu.
+### Co mam zrobić, jeśli czcionka, której potrzebuję, jest niedostępna?
+Brakującą czcionkę możesz zastąpić bardziej powszechną czcionką, korzystając z funkcji podstawiania czcionek w pliku Aspose.PDF.
 
-#### P: Jak mogę znaleźć i zastąpić brakujące czcionki w pliku PDF przy użyciu Aspose.PDF dla .NET?
+### Czy można konwertować pliki PDF do innych formatów?
+Oczywiście! Aspose.PDF obsługuje konwersję do różnych formatów, w tym PDF/A, DOCX i innych.
 
- O: Aby znaleźć i zastąpić brakujące czcionki, możesz użyć metody`FontRepository.FindFont` metoda sprawdzenia obecności wymaganej czcionki. Jeśli brakuje czcionki, możesz dodać czcionkę zastępczą za pomocą`FontRepository.Substitutions` nieruchomość.
-
-#### P: Czy mogę dostosować proces zastępowania czcionek?
-
-O: Tak, możesz dostosować proces zastępowania czcionek, określając inną czcionkę do zamiany. W dostarczonym kodzie zastosowaliśmy Arial jako zamiennik brakującej czcionki „AgencyFB”, ale możesz wybrać inną czcionkę zgodnie ze swoimi preferencjami.
-
-#### P: Jak mogę zapewnić dokładność renderowania czcionek po podstawieniu?
-
-Odp.: Aspose.PDF dla .NET zapewnia solidne możliwości obsługi czcionek, zapewniając dokładne renderowanie czcionek po podstawieniu. Możesz wyświetlić podgląd wynikowego pliku PDF, aby zweryfikować zamianę czcionki.
+### Gdzie mogę znaleźć pomoc dotyczącą Aspose.PDF?
+ Wsparcie i możliwość zadawania pytań znajdziesz na forum Aspose[Tutaj](https://forum.aspose.com/c/pdf/10).

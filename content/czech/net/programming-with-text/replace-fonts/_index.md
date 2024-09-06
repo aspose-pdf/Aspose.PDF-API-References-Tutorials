@@ -122,7 +122,7 @@ A: Chcete-li nastavit adresář dokumentů:
 Odpověď: Výukový program vás provede procesem krok za krokem:
 
 1.  Načtěte dokument PDF pomocí`Document` třída.
-2.  Vytvořit`TextFragmentAbsorber` objekt a nastavte možnost úpravy pro odstranění nepoužívaných písem. Přijměte absorbér pro všechny stránky a vyhledejte fragmenty textu.
+2.  Vytvořte a`TextFragmentAbsorber` objekt a nastavte možnost úpravy pro odstranění nepoužívaných písem. Přijměte absorbér pro všechny stránky a vyhledejte fragmenty textu.
 3. Procházejte identifikované fragmenty textu. Pokud název písma části textu odpovídá písmu, které chcete nahradit, nahraďte jej novým písmem.
 
 ####  Otázka: Jaký je účel použití`TextFragmentAbsorber` with font replacement options?

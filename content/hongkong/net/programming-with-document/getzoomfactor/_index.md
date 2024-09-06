@@ -26,7 +26,7 @@ Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
 
 ## 步驟2：建立GoToAction對象
 
-下一步是創建一個`GoToAction`目的。 A`GoToAction`物件表示前往 PDF 文件中特定目的地的操作。在我們的例子中，我們想要取得 PDF 檔案的縮放係數，因此我們將使用`OpenAction`的財產`Document`對象得到`GoToAction`目的。
+下一步是創建一個`GoToAction`目的。一個`GoToAction`物件表示前往 PDF 文件中特定目的地的操作。在我們的例子中，我們想要取得 PDF 檔案的縮放係數，因此我們將使用`OpenAction`的財產`Document`對象得到`GoToAction`目的。
 
 ```csharp
 //建立GoToAction對象
@@ -37,7 +37,7 @@ GoToAction action = doc.OpenAction as GoToAction;
 
 ## 步驟3：取得PDF檔案的縮放係數
 
-第三步是取得PDF檔案的縮放係數。我們可以透過造訪來取得 PDF 檔案的縮放係數`Destination`的財產`GoToAction`對象，然後將其投射到`XYZExplicitDestination`。這`XYZExplicitDestination`類別表示 PDF 文件中的目的地，指定要轉到的座標和縮放係數。
+第三步是取得PDF檔案的縮放係數。我們可以透過存取來取得PDF檔案的縮放係數`Destination`的財產`GoToAction`對象，然後將其投射到`XYZExplicitDestination` 。這`XYZExplicitDestination`類別表示 PDF 文件中的目的地，指定要轉到的座標和縮放係數。
 
 ```csharp
 //取得PDF檔案的縮放係數

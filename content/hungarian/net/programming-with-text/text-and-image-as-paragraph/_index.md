@@ -42,7 +42,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 4. lépés: Hozzon létre egy új dokumentumot és oldalt
 
- Újat csinálni`Document` objektumot, és adjon hozzá egy oldalt az oldalgyűjteményéhez:
+ Hozzon létre egy újat`Document` objektumot, és adjon hozzá egy oldalt az oldalgyűjteményéhez:
 
 ```csharp
 Document doc = new Document();
@@ -51,7 +51,7 @@ Page page = doc.Pages.Add();
 
 ## 5. lépés: Hozzon létre egy szövegtöredéket, és adja hozzá bekezdésként
 
- Hozzon létre egy`TextFragment` objektumot, és adja hozzá az oldal bekezdésgyűjteményéhez:
+ Hozzon létre a`TextFragment` objektumot, és adja hozzá az oldal bekezdésgyűjteményéhez:
 
 ```csharp
 TextFragment text = new TextFragment("Hello World.. ");
@@ -132,7 +132,7 @@ Console.WriteLine("\nText and image added successfully as an inline paragraphs.\
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan adhat szöveget és képet sorközi bekezdésként egy PDF-dokumentumhoz az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a projekt beállításától a módosított dokumentum mentéséig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy testreszabhassa a PDF-fájlok szövegének és képeinek elrendezését.
+Gratulálok! Sikeresen megtanulta, hogyan adhat szöveget és képet sorközi bekezdésként egy PDF-dokumentumhoz az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a projekt beállításától a módosított dokumentum mentéséig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy testreszabhassa a PDF-fájlok szövegének és képeinek elrendezését.
 
 ### GYIK
 
@@ -142,7 +142,7 @@ V: A "Szöveg és kép bekezdésként PDF-fájlban" oktatóanyag célja, hogy el
 
 #### K: Hogyan segít ez az oktatóanyag szövegek és képek sorközi bekezdésként történő hozzáadásához?
 
-V: Ez az oktatóanyag segít a felhasználóknak megérteni, hogyan használhatják az Aspose.PDF for .NET fájlt, hogy szöveget és képeket is beépíthessenek sorközi bekezdésként egy PDF-dokumentumba. A megadott lépések és kódpéldák követésével a felhasználók szöveget és képeket kombináló, egyedi elrendezésű PDF-fájlokat hozhatnak létre.
+V: Ez az oktatóanyag segít a felhasználóknak megérteni, hogyan használhatják az Aspose.PDF for .NET fájlt, hogy szöveget és képeket is beépíthessenek sorközi bekezdésként egy PDF-dokumentumba. A megadott lépések és kódpéldák követésével a felhasználók szöveget és képeket kombináló egyéni elrendezésű PDF-fájlokat hozhatnak létre.
 
 #### K: Milyen előfeltételek szükségesek az oktatóanyag követéséhez?
 
@@ -154,7 +154,7 @@ V: Kezdésként hozzon létre egy új C# projektet a kívánt integrált fejlesz
 
 #### K: Használhatom ezt az oktatóanyagot több szöveges és képi bekezdés hozzáadására egy PDF-fájlhoz?
 
-V: Igen, a megadott kódminták segítségével több szöveges és képi bekezdést is hozzáadhat ugyanabban a PDF-dokumentumban. Ez az oktatóanyag bemutatja, hogyan hozható létre sorközi bekezdések, amelyek megkönnyítik a szövegek és képek különböző kombinációinak beillesztését.
+V: Igen, a mellékelt kódminták segítségével több szöveges és képi bekezdést is hozzáadhat ugyanabban a PDF-dokumentumban. Ez az oktatóanyag bemutatja, hogyan hozható létre sorközi bekezdések, amelyek megkönnyítik a szövegek és képek különböző kombinációinak beillesztését.
 
 #### K: Hogyan határozhatom meg a szöveges bekezdések és képek tartalmát és megjelenését?
 
@@ -166,4 +166,4 @@ V: Igen, a megadott kódminták segítségével több szöveges és képi bekezd
 
 #### K: Hogyan menthetem el a módosított PDF dokumentumot?
 
- V: A módosított PDF dokumentum mentéséhez használhatja a`Save` módszere a`Document` tárgy. Az oktatóanyag kódmintákat tartalmaz, amelyek bemutatják, hogyan kell menteni az eredményül kapott PDF-dokumentumot.
+ V: A módosított PDF dokumentum mentéséhez használhatja a`Save` módszere a`Document` objektum. Az oktatóanyag kódmintákat tartalmaz, amelyek bemutatják, hogyan kell elmenteni az eredményül kapott PDF-dokumentumot.

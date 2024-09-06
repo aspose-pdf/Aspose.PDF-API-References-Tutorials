@@ -121,4 +121,4 @@ Odpověď: Ano, Aspose.PDF pro .NET je kompatibilní se všemi verzemi .NET Fram
 
 #### Otázka: Mohu programově ovládat výběr možnosti přepínače v dokumentu PDF?
 
- Odpověď: Ano, můžete programově ovládat výběr možnosti přepínače pomocí`IsSelected` vlastnictvím`RadioButtonOption` třída. Tato vlastnost umožňuje nastavit konkrétní možnost jako vybranou.
+ Odpověď: Ano, můžete programově ovládat výběr možnosti přepínače pomocí`IsSelected` majetek z`RadioButtonOption` třída. Tato vlastnost umožňuje nastavit konkrétní možnost jako vybranou.

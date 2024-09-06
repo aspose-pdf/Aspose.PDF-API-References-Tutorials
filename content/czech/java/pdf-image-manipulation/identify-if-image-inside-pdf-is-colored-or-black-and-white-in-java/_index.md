@@ -8,7 +8,7 @@ weight: 10
 url: /cs/java/pdf-image-manipulation/identify-if-image-inside-pdf-is-colored-or-black-and-white-in-java/
 ---
 
-## Úvod
+## Zavedení
 
 Ve světě zpracování dokumentů jsou soubory PDF všudypřítomné a často obsahují obrázky. Určení, zda je obrázek uvnitř dokumentu PDF barevný nebo černobílý, může být zásadním úkolem, zejména ve scénářích, kde je vyžadováno zpracování nebo analýza obrázků. V tomto článku prozkoumáme, jak identifikovat barevný režim obrázků v dokumentu PDF pomocí Aspose.PDF for Java.
 
@@ -25,7 +25,7 @@ Abychom zjistili, zda je obrázek uvnitř PDF barevný nebo černobílý, musím
 Než začneme, ujistěte se, že máte splněny následující předpoklady:
 
 - Java Development Kit (JDK)
--  Aspose.PDF pro knihovnu Java (Můžete si ji stáhnout z[tady](https://releases.aspose.com/pdf/java/)
+-  Aspose.PDF pro knihovnu Java (Můžete si ji stáhnout z[zde](https://releases.aspose.com/pdf/java/)
 
 ## Načítání dokumentu PDF
 
@@ -120,4 +120,4 @@ Ano, Aspose.PDF for Java poskytuje funkce pro manipulaci s obrázky, včetně p�
 
 ### Kde najdu další zdroje a dokumentaci k Aspose.PDF pro Javu?
 
- Máte přístup ke komplexní dokumentaci a zdrojům pro Aspose.PDF pro Java na[tady](https://reference.aspose.com/pdf/java/).
+ Máte přístup ke komplexní dokumentaci a zdrojům pro Aspose.PDF pro Java na[zde](https://reference.aspose.com/pdf/java/).

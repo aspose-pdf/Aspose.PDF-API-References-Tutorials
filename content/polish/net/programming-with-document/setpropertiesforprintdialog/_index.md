@@ -1,22 +1,22 @@
 ---
-title: Ustaw właściwości okna dialogowego drukowania
-linktitle: Ustaw właściwości okna dialogowego drukowania
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak ustawić właściwości okna dialogowego drukowania w Aspose.PDF dla .NET, korzystając z przewodnika krok po kroku.
+title: Ustaw właściwości dla okna dialogowego drukowania
+linktitle: Ustaw właściwości dla okna dialogowego drukowania
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak ustawić właściwości okna dialogowego drukowania w pliku Aspose.PDF dla platformy .NET, korzystając z przewodnika krok po kroku.
 type: docs
 weight: 320
 url: /pl/net/programming-with-document/setpropertiesforprintdialog/
 ---
-oto przewodnik krok po kroku dotyczący ustawiania właściwości okna dialogowego drukowania przy użyciu Aspose.PDF dla .NET:
+Oto przewodnik krok po kroku, jak ustawić właściwości okna dialogowego drukowania przy użyciu Aspose.PDF dla platformy .NET:
 
 
-## Krok 1: Zdefiniuj katalog, w którym znajduje się dokument PDF:
+## Krok 1: Zdefiniuj katalog, w którym znajduje się Twój dokument PDF:
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
    
-##  Krok 2: Utwórz nową instancję pliku`Document` class:
+##  Krok 2: Utwórz nową instancję`Document` class:
 
 ```csharp
 using (Document doc = new Document())
@@ -37,13 +37,13 @@ doc.Pages.Add();
 doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
 ```
    
-## Krok 5: Zapisz dokument z określoną nazwą pliku i formatem:
+## Krok 5: Zapisz dokument pod określoną nazwą pliku i w określonym formacie:
 
 ```csharp
 doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
 ```
 
-### Przykładowy kod źródłowy dla okna dialogowego Ustaw właściwości dla okna drukowania przy użyciu Aspose.PDF dla .NET
+### Przykładowy kod źródłowy dla okna dialogowego Ustaw właściwości dla drukowania przy użyciu Aspose.PDF dla .NET
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -58,18 +58,18 @@ using (Document doc = new Document())
 
 ## Wniosek
 
-Aspose.PDF dla .NET ułatwia ustawienie właściwości okna dialogowego drukowania w plikach PDF. Postępując zgodnie z powyższym przewodnikiem krok po kroku, możesz szybko zoptymalizować pliki PDF pod kątem drukowania.
+Aspose.PDF dla .NET ułatwia ustawianie właściwości dla okna dialogowego drukowania w plikach PDF. Postępując zgodnie z powyższym przewodnikiem krok po kroku, możesz szybko zoptymalizować pliki PDF do drukowania.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Czy mogę ustawić inne właściwości okna dialogowego drukowania poza trybem dwustronnym, używając Aspose.PDF dla .NET?
+#### P: Czy mogę ustawić inne właściwości okna dialogowego drukowania niż tryb dupleksowy, używając Aspose.PDF dla .NET?
 
-O: Tak, poza ustawieniem trybu dupleksu, Aspose.PDF dla .NET umożliwia ustawienie różnych innych właściwości okna dialogowego drukowania. Niektóre przykłady obejmują ustawienie jakości wydruku, zakresu stron, liczby kopii, rozmiaru papieru i innych. Możesz zapoznać się z dokumentacją Aspose.PDF dla .NET, aby zapoznać się z pełną listą dostępnych właściwości.
+A: Tak, oprócz ustawienia trybu dupleksu, Aspose.PDF dla .NET pozwala ustawić różne inne właściwości dla okna dialogowego drukowania. Niektóre przykłady obejmują ustawienie jakości wydruku, zakresu stron, liczby kopii, rozmiaru papieru i inne. Możesz zapoznać się z dokumentacją Aspose.PDF dla .NET, aby zapoznać się z pełną listą dostępnych właściwości.
 
-#### P: Jak mogę ustawić jakość druku podczas drukowania dokumentu PDF?
+#### P: Jak mogę ustawić jakość wydruku podczas drukowania dokumentu PDF?
 
- Odp.: Aby ustawić jakość druku, możesz użyć opcji`PrintQuality` własność`Document` klasa w Aspose.PDF dla .NET. W zależności od wymagań możesz wybierać spośród różnych opcji jakości druku, takich jak wysoka, średnia lub niska.
+ A: Aby ustawić jakość wydruku, możesz użyć`PrintQuality` własność`Document` klasa w Aspose.PDF dla .NET. Możesz wybierać spośród różnych opcji jakości wydruku, takich jak wysoka, średnia lub niska, w zależności od swoich wymagań.
 
 #### P: Czy można określić niestandardowe ustawienia drukowania dla różnych stron dokumentu PDF?
 
- Odp.: Tak, możesz ustawić niestandardowe ustawienia drukowania dla różnych stron dokumentu PDF za pomocą Aspose.PDF dla .NET. Dostęp do poszczególnych stron można uzyskać poprzez`doc.Pages` kolekcji i ustaw określone ustawienia drukowania dla każdej strony osobno.
+ A: Tak, możesz ustawić niestandardowe ustawienia drukowania dla różnych stron w dokumencie PDF za pomocą Aspose.PDF dla .NET. Możesz uzyskać dostęp do poszczególnych stron za pomocą`doc.Pages` kolekcję i ustawić specyficzne ustawienia drukowania dla każdej strony osobno.

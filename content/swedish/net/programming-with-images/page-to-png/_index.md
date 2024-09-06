@@ -36,7 +36,7 @@ Därefter kommer vi att konvertera en specifik sida i PDF-dokumentet till PNG-fo
 ```csharp
 using (FileStream imageStream = new FileStream(dataDir + "aspose-logo.png", FileMode.Create))
 {
-// Skapa ett Resolution-objekt
+//Skapa ett Resolution-objekt
 Resolution resolution = new Resolution(300);
 // Skapa en PNG-enhet med de angivna attributen (bredd, höjd, upplösning)
 PngDevice pngDevice = new PngDevice(resolution);
@@ -61,7 +61,7 @@ using (FileStream imageStream = new FileStream(dataDir + "aspose-logo.png", File
 	Resolution resolution = new Resolution(300);
 	// Skapa PNG-enhet med specificerade attribut (bredd, höjd, upplösning)
 	PngDevice pngDevice = new PngDevice(resolution);
-	//Konvertera en viss sida och spara bilden för att streama
+	// Konvertera en viss sida och spara bilden för att streama
 	pngDevice.Process(pdfDocument.Pages[1], imageStream);
 	// Stäng strömmen
 	imageStream.Close();

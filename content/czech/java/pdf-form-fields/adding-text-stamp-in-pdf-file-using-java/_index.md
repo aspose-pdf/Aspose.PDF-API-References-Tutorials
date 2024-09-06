@@ -18,7 +18,7 @@ Než se ponoříme do kódovací části, ujistěte se, že máte vše, co potř
 
 - Java Development Kit (JDK) nainstalovaný ve vašem systému.
 - Integrované vývojové prostředí (IDE) pro Javu (Eclipse, IntelliJ IDEA atd.).
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout[zde](https://releases.aspose.com/pdf/java/).
 
 ## Nastavení vašeho projektu Java
 

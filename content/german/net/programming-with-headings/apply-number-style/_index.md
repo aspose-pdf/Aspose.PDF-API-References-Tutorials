@@ -2,16 +2,16 @@
 title: Zahlenstil in PDF-Datei anwenden
 linktitle: Zahlenstil in PDF-Datei anwenden
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET einen Nummerierungsstil auf Überschriften in einer PDF-Datei anwenden. Schritt für Schritt Anleitung.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET einen Nummerierungsstil auf Überschriften in PDF-Dateien anwenden. Schritt-für-Schritt-Anleitung.
 type: docs
 weight: 10
 url: /de/net/programming-with-headings/apply-number-style/
 ---
-In diesem Tutorial führen wir Sie Schritt für Schritt durch den folgenden C#-Quellcode, um mit Aspose.PDF für .NET den Nummerierungsstil in einer PDF-Datei anzuwenden.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch den folgenden C#-Quellcode, um mit Aspose.PDF für .NET einen Nummerierungsstil in einer PDF-Datei anzuwenden.
 
-Stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert und Ihre Entwicklungsumgebung eingerichtet haben, bevor Sie beginnen. Außerdem verfügen Sie über Grundkenntnisse der C#-Programmierung.
+Stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert und Ihre Entwicklungsumgebung eingerichtet haben, bevor Sie beginnen. Sie benötigen außerdem Grundkenntnisse in der C#-Programmierung.
 
-### Schritt 1: Einrichten des Dokumentenverzeichnisses
+### Schritt 1: Einrichten des Dokumentverzeichnisses
 
 Im bereitgestellten Quellcode müssen Sie das Verzeichnis angeben, in dem Sie die generierte PDF-Datei speichern möchten. Ändern Sie die Variable „dataDir“ in das gewünschte Verzeichnis.
 
@@ -21,7 +21,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ### Schritt 2: Erstellen des PDF-Dokuments
 
-Wir erstellen ein neues PDF-Dokument mit den angegebenen Abmessungen und Rändern.
+Wir erstellen ein neues PDF-Dokument mit angegebenen Abmessungen und Rändern.
 
 ```csharp
 Document pdfDoc = new Document();
@@ -54,7 +54,7 @@ pdfPage.Paragraphs.Add(floatBox);
 
 ### Schritt 4: Überschriften mit Nummerierung hinzufügen
 
-Wir erstellen Header mit vorgegebener Nummerierung und fügen sie dem Floating-Container hinzu.
+Wir erstellen Überschriften mit vorgegebener Nummerierung und fügen diese dem Floating-Container hinzu.
 
 ```csharp
 Aspose.Pdf.Heading heading = new Aspose.Pdf.Heading(1);
@@ -86,7 +86,7 @@ floatBox.Paragraphs.Add(heading3);
 
 ### Schritt 5: Speichern des PDF-Dokuments
 
-Wir speichern das generierte PDF-Dokument im angegebenen Verzeichnis.
+Das erzeugte PDF-Dokument speichern wir im angegebenen Verzeichnis.
 
 ```csharp
 dataDir = dataDir + "ApplyNumberStyle_out.pdf";
@@ -94,10 +94,10 @@ pdfDoc.Save(dataDir);
 Console.WriteLine("\nNumbering style successfully applied to headers.\nFile saved as: " + dataDir);
 ```
 
-### Beispielquellcode für „Anwenden des Zahlenstils“ mit Aspose.PDF für .NET 
+### Beispielquellcode für „Apply Number Style“ mit Aspose.PDF für .NET 
 ```csharp
 
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDoc = new Document();
 pdfDoc.PageInfo.Width = 612.0;
@@ -151,19 +151,19 @@ Console.WriteLine("\nNumber style applied successfully in headings.\nFile saved 
 
 In diesem Tutorial haben wir erklärt, wie Sie mit Aspose.PDF für .NET einen Nummerierungsstil auf Überschriften in einem PDF-Dokument anwenden. Dieses Wissen können Sie nun nutzen, um PDF-Dokumente mit benutzerdefinierten Nummerierungen für Überschriften zu erstellen.
 
-### FAQs zum Anwenden des Zahlenstils in einer PDF-Datei
+### FAQs zum Anwenden von Nummerierungsstilen in PDF-Dateien
 
 #### F: Was ist der Nummerierungsstil in einem PDF-Dokument?
 
-A: Der Nummerierungsstil bezieht sich auf das Format, in dem Überschriften oder Abschnitte in einem PDF-Dokument nummeriert werden. Es kann Ziffern, Buchstaben oder andere Zeichen enthalten, um eine hierarchische Struktur bereitzustellen.
+A: Der Nummerierungsstil bezieht sich auf das Format, in dem Überschriften oder Abschnitte in einem PDF-Dokument nummeriert werden. Er kann Ziffern, Buchstaben oder andere Zeichen enthalten, um eine hierarchische Struktur bereitzustellen.
 
-#### F: Warum sollte ich den Nummerierungsstil auf Überschriften in einem PDF-Dokument anwenden?
+#### F: Warum muss ich auf Überschriften in einem PDF-Dokument einen Nummerierungsstil anwenden?
 
-A: Das Anwenden eines Nummerierungsstils auf Überschriften verbessert die Lesbarkeit und Organisation Ihres PDF-Dokuments. Es hilft den Lesern, sich leicht zurechtzufinden und die hierarchische Struktur des Inhalts zu verstehen.
+A: Durch die Anwendung eines Nummerierungsstils auf Überschriften wird die Lesbarkeit und Organisation Ihres PDF-Dokuments verbessert. Es hilft den Lesern, einfach zu navigieren und die hierarchische Struktur des Inhalts zu verstehen.
 
 #### F: Was ist Aspose.PDF für .NET?
 
-A: Aspose.PDF für .NET ist eine Bibliothek, die es Entwicklern ermöglicht, programmgesteuert mit PDF-Dateien in .NET-Anwendungen zu arbeiten. Es bietet eine breite Palette von Funktionen zum Erstellen, Bearbeiten, Konvertieren und Bearbeiten von PDF-Dokumenten.
+A: Aspose.PDF für .NET ist eine Bibliothek, die es Entwicklern ermöglicht, programmgesteuert in .NET-Anwendungen mit PDF-Dateien zu arbeiten. Sie bietet eine breite Palette an Funktionen zum Erstellen, Bearbeiten, Konvertieren und Manipulieren von PDF-Dokumenten.
 
 #### F: Wie importiere ich die erforderlichen Bibliotheken für mein C#-Projekt?
 
@@ -174,9 +174,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-Mit diesen Anweisungen können Sie auf die Klassen und Methoden zugreifen, die zum Arbeiten mit PDF-Dokumenten und zum Anwenden von Nummerierungsstilen erforderlich sind.
+Diese Anweisungen ermöglichen Ihnen den Zugriff auf die Klassen und Methoden, die zum Arbeiten mit PDF-Dokumenten und Anwenden von Nummerierungsstilen erforderlich sind.
 
-#### F: Wie lege ich das Verzeichnis zum Speichern der generierten PDF-Datei fest?
+#### F: Wie gebe ich das Verzeichnis zum Speichern der generierten PDF-Datei an?
 
 A: Ändern Sie im bereitgestellten Quellcode die Variable „dataDir“, um das Verzeichnis anzugeben, in dem Sie die generierte PDF-Datei speichern möchten.
 
@@ -184,9 +184,9 @@ A: Ändern Sie im bereitgestellten Quellcode die Variable „dataDir“, um das 
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
- Ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnispfad.
+ Ersetzen`"YOUR DOCUMENTS DIRECTORY"` durch den tatsächlichen Verzeichnispfad.
 
-#### F: Wie erstelle ich ein PDF-Dokument mit bestimmten Abmessungen und Rändern?
+#### F: Wie erstelle ich ein PDF-Dokument mit festgelegten Abmessungen und Rändern?
 
 A: Um ein PDF-Dokument mit angegebenen Abmessungen und Rändern zu erstellen, verwenden Sie den folgenden Code:
 
@@ -201,9 +201,9 @@ pdfDoc.PageInfo.Margin.Top = 72;
 pdfDoc.PageInfo.Margin.Bottom = 72;
 ```
 
-#### F: Wie füge ich Überschriften mit Nummerierungsstil zum PDF-Dokument hinzu?
+#### F: Wie füge ich dem PDF-Dokument Überschriften im Nummerierungsstil hinzu?
 
-A: Um dem PDF-Dokument Überschriften mit Nummerierungsstil hinzuzufügen, verwenden Sie die bereitgestellten Codebeispiele, um Überschriften zu erstellen und deren Nummerierungsstile anzupassen. Passen Sie Eigenschaften wie Text, Nummerierungsstil, Startnummer und automatische Reihenfolge nach Bedarf an.
+A: Um dem PDF-Dokument Überschriften mit Nummerierungsstil hinzuzufügen, verwenden Sie die bereitgestellten Codebeispiele, um Überschriften zu erstellen und ihre Nummerierungsstile anzupassen. Passen Sie Eigenschaften wie Text, Nummerierungsstil, Startnummer und automatische Sequenz nach Bedarf an.
 
 #### F: Wie speichere ich das generierte PDF-Dokument?
 
@@ -221,8 +221,8 @@ A: Öffnen Sie die generierte PDF-Datei, um zu überprüfen, ob der angegebene N
 
 #### F: Kann ich den Nummerierungsstil weiter anpassen?
 
- A: Ja, Sie können den Nummerierungsstil weiter anpassen, indem Sie die Eigenschaften anpassen`Heading` Objekte wie Nummerierungsstiltyp, Startnummer und automatische Reihenfolge.
+ A: Ja, Sie können den Nummerierungsstil weiter anpassen, indem Sie die Eigenschaften des`Heading` Objekte, wie etwa Nummerierungsstiltyp, Startnummer und automatische Sequenz.
 
-#### F: Kann ich unterschiedliche Nummerierungsstile auf verschiedene Abschnitte des Dokuments anwenden?
+#### F: Kann ich auf verschiedene Abschnitte des Dokuments unterschiedliche Nummerierungsstile anwenden?
 
-A: Ja, Sie können verschiedene Nummerierungsstile auf verschiedene Abschnitte des Dokuments anwenden, indem Sie mehrere erstellen`Heading` Objekte mit unterschiedlichen Stilen und Sequenzen.
+ A: Ja, Sie können verschiedene Nummerierungsstile auf verschiedene Abschnitte des Dokuments anwenden, indem Sie mehrere`Heading` Objekte mit unterschiedlichen Stilen und Sequenzen.

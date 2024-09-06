@@ -82,7 +82,7 @@ excelWorkbook.save("path/to/your/excel/workbook.xlsx");
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan exportálhat PDF-eket Excel-munkafüzetekbe az Aspose.PDF for Java használatával. Az Aspose.PDF és az Aspose.Cells ezen hatékony kombinációja megkönnyíti a PDF dokumentumokból származó adatok kinyerését és kezelését. Függetlenül attól, hogy adatelemzésen, jelentéskészítésen vagy bármilyen más, PDF-ből Excel formátumba konvertálást igénylő feladaton dolgozik, ez az útmutató felvértezi Önt a munka hatékony elvégzéséhez szükséges ismeretekkel.
+Gratulálok! Sikeresen megtanulta, hogyan exportálhat PDF-eket Excel-munkafüzetekbe az Aspose.PDF for Java használatával. Az Aspose.PDF és az Aspose.Cells ezen hatékony kombinációja megkönnyíti a PDF-dokumentumok adatainak kinyerését és kezelését. Függetlenül attól, hogy adatelemzésen, jelentéskészítésen vagy bármilyen más, PDF-ből Excel formátumba konvertálást igénylő feladaton dolgozik, ez az útmutató felvértezi Önt a munka hatékony elvégzéséhez szükséges ismeretekkel.
 
 ## GYIK
 

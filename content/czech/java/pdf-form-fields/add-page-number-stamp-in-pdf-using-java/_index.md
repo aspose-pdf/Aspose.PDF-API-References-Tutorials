@@ -10,13 +10,13 @@ url: /cs/java/pdf-form-fields/add-page-number-stamp-in-pdf-using-java/
 
 ## Úvod k přidání razítka čísla stránky v PDF pomocí Java
 
-Dokumenty PDF se široce používají pro sdílení a prezentaci informací, ale někdy je možná budete muset vylepšit přidáním čísel stránek. Ať už pracujete na zprávách, příručkách nebo akademických pracích, čísla stránek pomáhají čtenářům efektivně se orientovat ve vašem obsahu. V tomto tutoriálu vás provedeme procesem přidávání razítek s čísly stránek do souborů PDF pomocí Javy. Budeme používat Aspose.PDF for Java, výkonnou knihovnu, která zjednodušuje manipulaci s PDF.
+Dokumenty PDF se široce používají pro sdílení a prezentaci informací, ale někdy je možná budete muset vylepšit přidáním čísel stránek. Ať už pracujete na zprávách, příručkách nebo akademických pracích, čísla stránek pomáhají čtenářům efektivně se orientovat ve vašem obsahu. V tomto tutoriálu vás provedeme procesem přidávání razítek s čísly stránek do souborů PDF pomocí Java. Budeme používat Aspose.PDF for Java, výkonnou knihovnu, která zjednodušuje manipulaci s PDF.
 
 ## Nastavení Aspose.PDF pro Javu
 
-Než se vrhneme na kódování, budete muset nastavit Aspose.PDF pro Javu. Následuj tyto kroky:
+Než se vrhneme na kódování, budete muset nastavit Aspose.PDF pro Javu. Postupujte takto:
 
-1.  Stáhnout Aspose.PDF pro Java: Přístup ke knihovně z[tady](https://releases.aspose.com/pdf/java/) a stáhněte si příslušnou verzi pro váš projekt.
+1.  Stáhnout Aspose.PDF pro Java: Přístup ke knihovně z[zde](https://releases.aspose.com/pdf/java/) a stáhněte si příslušnou verzi pro váš projekt.
 
 2. Vytvoření projektu Java: Pokud ještě nemáte projekt Java, nastavte nový pomocí preferovaného IDE.
 
@@ -76,7 +76,7 @@ Chcete-li použít razítko s číslem stránky, postupujte takto:
 
 1.  Načtěte dokument PDF pomocí`Document pdfDocument = new Document("input.pdf");` , kde`"input.pdf"` je cesta k vašemu souboru PDF.
 
-2.  Vytvořit`PageNumberStamp` objekt a upravte jej podle svých preferencí.
+2.  Vytvořte a`PageNumberStamp` objekt a upravte jej podle svých preferencí.
 
 3. Přidejte razítko na každou stránku v PDF pomocí smyčky.
 
@@ -94,7 +94,7 @@ V tomto tutoriálu jsme si ukázali, jak přidat razítka s čísly stránek do 
 
 ### Jak si stáhnu Aspose.PDF pro Javu?
 
- Aspose.PDF pro Java si můžete stáhnout z webové stránky na adrese[tady](https://releases.aspose.com/pdf/java/). Vyberte verzi, která vyhovuje vašemu projektu.
+ Aspose.PDF pro Java si můžete stáhnout z webové stránky na adrese[zde](https://releases.aspose.com/pdf/java/). Vyberte verzi, která vyhovuje vašemu projektu.
 
 ### Mohu upravit vzhled razítka s číslem stránky?
 

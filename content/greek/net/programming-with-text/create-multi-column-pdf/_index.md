@@ -53,7 +53,7 @@ Page page = doc.Pages.Add();
 ```
 
 ## Βήμα 7: Δημιουργήστε ένα αντικείμενο Graph και προσθέστε μια γραμμή
- Δημιούργησε ένα νέο`Graph` αντικείμενο με συγκεκριμένες διαστάσεις και προσθέστε μια γραμμή σε αυτό. Στη συνέχεια, προσθέστε το`Graph` αντίρρηση στο`Paragraphs` συλλογή της σελίδας.
+ Δημιουργήστε ένα νέο`Graph` αντικείμενο με συγκεκριμένες διαστάσεις και προσθέστε μια γραμμή σε αυτό. Στη συνέχεια, προσθέστε το`Graph` αντίρρηση στο`Paragraphs` συλλογή της σελίδας.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
@@ -75,7 +75,7 @@ page.Paragraphs.Add(heading_text);
 ```
 
 ## Βήμα 9: Δημιουργήστε ένα FloatingBox με πολλές στήλες
- Δημιουργώ ένα`FloatingBox` αντικείμενο και ορίστε τον αριθμό των στηλών και την απόσταση στηλών. Στη συνέχεια, προσθέστε θραύσματα κειμένου και μια γραμμή στο`Paragraphs` συλλογή των`FloatingBox`.
+ Δημιουργία α`FloatingBox` αντικείμενο και ορίστε τον αριθμό των στηλών και την απόσταση στηλών. Στη συνέχεια, προσθέστε θραύσματα κειμένου και μια γραμμή στο`Paragraphs` συλλογή των`FloatingBox`.
 
 ```csharp
 Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
@@ -112,9 +112,9 @@ doc.Save(dataDir);
 // Η διαδρομή προς τον κατάλογο εγγράφων.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
-// Καθορίστε τις πληροφορίες του αριστερού περιθωρίου για το αρχείο PDF
+//Καθορίστε τις πληροφορίες του αριστερού περιθωρίου για το αρχείο PDF
 doc.PageInfo.Margin.Left = 40;
-//Καθορίστε τις πληροφορίες του δεξιού περιθωρίου για το αρχείο PDF
+// Καθορίστε τις πληροφορίες του δεξιού περιθωρίου για το αρχείο PDF
 doc.PageInfo.Margin.Right = 40;
 Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
@@ -160,7 +160,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nMulti column pdf file created successfully.\nFile saved at " + dataDir);
 ```
 
-## συμπέρασμα
+## Σύναψη
 Δημιουργήσατε επιτυχώς ένα PDF πολλαπλών στηλών χρησιμοποιώντας το Aspose.PDF για .NET. Το αρχείο PDF που προκύπτει μπορεί τώρα να βρεθεί στην καθορισμένη διαδρομή αρχείου εξόδου.
 
 ### Συχνές ερωτήσεις

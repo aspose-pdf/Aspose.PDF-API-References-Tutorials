@@ -7,7 +7,7 @@ type: docs
 weight: 30
 url: /sv/net/programming-with-operators/remove-graphics-objects/
 ---
-I den här handledningen kommer vi att ge dig en steg-för-steg-guide om hur du tar bort grafiska objekt i PDF-fil med Aspose.PDF för .NET. Aspose.PDF är ett kraftfullt bibliotek som låter dig skapa, manipulera och konvertera PDF-dokument programmatiskt. Med hjälp av operatorerna som tillhandahålls av Aspose.PDF kan du rikta in och ta bort specifika grafiska objekt från en PDF-sida.
+den här handledningen kommer vi att ge dig en steg-för-steg-guide om hur du tar bort grafiska objekt i PDF-fil med Aspose.PDF för .NET. Aspose.PDF är ett kraftfullt bibliotek som låter dig skapa, manipulera och konvertera PDF-dokument programmatiskt. Med hjälp av operatorerna som tillhandahålls av Aspose.PDF kan du rikta in och ta bort specifika grafiska objekt från en PDF-sida.
 
 ## Förutsättningar
 
@@ -115,7 +115,7 @@ using Aspose.Pdf.Operators;
 
 #### F: Hur kan jag ladda ett PDF-dokument med Aspose.PDF?
 
-S: Du kan använda`Document` klass för att ladda ett PDF-dokument. Följ kodexemplet i handledningen för att ladda dokumentet.
+ S: Du kan använda`Document` klass för att ladda ett PDF-dokument. Följ kodexemplet i handledningen för att ladda dokumentet.
 
 #### F: Hur identifierar och tar jag bort grafiska objekt från en PDF-sida?
 

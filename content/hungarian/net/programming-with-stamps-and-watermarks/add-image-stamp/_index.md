@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 2. lépés: A PDF dokumentum betöltése
 
-Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Itt van, hogyan:
+Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Íme, hogyan:
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
@@ -60,7 +60,7 @@ Ezeket a tulajdonságokat igényei szerint módosíthatja.
 
 ## 5. lépés: A képbélyegző hozzáadása a PDF-hez
 
-Most, hogy a képbélyegző készen áll, hozzáadhatja a PDF-dokumentum egy adott oldalához. Itt van, hogyan:
+Most, hogy a képbélyegző készen áll, hozzáadhatja a PDF-dokumentum egy adott oldalához. Íme, hogyan:
 
 ```csharp
 // Adja hozzá a keretpuffert az adott oldalhoz
@@ -71,7 +71,7 @@ A fenti kód hozzáadja a képpuffert a PDF-dokumentum első oldalához. Szüks�
 
 ## 6. lépés: Mentse el a kimeneti dokumentumot
 
-Miután hozzáadta a képpuffert, elmentheti a módosított PDF dokumentumot. Itt van, hogyan:
+Miután hozzáadta a képpuffert, elmentheti a módosított PDF dokumentumot. Íme, hogyan:
 
 ```csharp
 // Mentse el a kimeneti dokumentumot
@@ -124,15 +124,15 @@ V: Igen, több képpuffert is hozzáadhat ugyanazon PDF-dokumentum különböző
 
 #### K: Hogyan állíthatom be a képpuffer helyzetét és méretét a PDF-dokumentumban?
 
- V: Testreszabhatja a képpuffer pozícióját és méretét a tulajdonságok módosításával`ImageStamp` tárgy. Az oktatóanyagban található kód bemutatja, hogyan lehet olyan tulajdonságokat beállítani, mint pl`XIndent`, `YIndent`, `Height` , és`Width` a képbélyegző elhelyezésének és méreteinek szabályozására.
+ V: Testreszabhatja a képpuffer pozícióját és méretét a tulajdonságok módosításával`ImageStamp` objektum. Az oktatóanyagban található kód bemutatja, hogyan lehet olyan tulajdonságokat beállítani, mint pl`XIndent`, `YIndent`, `Height` , és`Width` a képbélyegző elhelyezésének és méreteinek szabályozására.
 
 #### K: Elforgatható a képpuffer, amikor hozzáadja a PDF dokumentumhoz?
 
- V: Igen, elforgathatja a képpuffert, mielőtt hozzáadná a PDF dokumentumhoz a következő beállításával`Rotate` tulajdona a`ImageStamp` tárgy. Az oktatóanyagban található kód bemutatja, hogyan forgathatja el a képbélyeget olyan értékekkel, mint pl`Rotation.on270`, de szükség szerint módosíthatja az elforgatási szöget.
+ V: Igen, elforgathatja a képpuffert, mielőtt hozzáadná a PDF dokumentumhoz a következő beállításával`Rotate` tulajdona a`ImageStamp` objektum. Az oktatóanyagban található kód bemutatja, hogyan forgathatja el a képbélyeget olyan értékekkel, mint pl`Rotation.on270`, de szükség szerint módosíthatja az elforgatási szöget.
 
 #### K: Szabályozhatom a képpuffer átlátszatlanságát, amikor hozzáadom a PDF dokumentumhoz?
 
- V: Abszolút szabályozhatja a képpuffer átlátszatlanságát a`Opacity` tulajdona a`ImageStamp` tárgy. A mellékelt C# forráskód bemutatja, hogyan kell beállítani az átlátszatlansági szintet, lehetővé téve a kívánt átlátszósági hatás elérését.
+ V: Abszolút szabályozhatja a képpuffer átlátszatlanságát a`Opacity` tulajdona a`ImageStamp` objektum. A mellékelt C# forráskód bemutatja, hogyan kell beállítani az átlátszatlansági szintet, lehetővé téve a kívánt átlátszósági hatás elérését.
 
 #### K: Hogyan integrálhatom ezt a módszert a saját projektjeimbe, hogy képpuffereket adhassak PDF dokumentumokhoz?
 

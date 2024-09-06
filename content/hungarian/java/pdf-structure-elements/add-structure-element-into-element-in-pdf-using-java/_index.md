@@ -26,7 +26,7 @@ Mielőtt elkezdené, győződjön meg róla, hogy be van állítva egy Java fejl
 
 ### Új PDF dokumentum létrehozása
 
-Kezdjük egy új PDF dokumentum létrehozásával az Aspose.PDF használatával. Kovesd ezeket a lepeseket:
+Kezdjük egy új PDF dokumentum létrehozásával az Aspose.PDF használatával. Kövesse az alábbi lépéseket:
 
 ```java
 // Hozzon létre egy új PDF dokumentumot
@@ -74,12 +74,12 @@ imageElement.setFile("image.png");
 
 ### Strukturáló táblázatok
 
-A táblázatok a strukturált PDF-ek másik fontos részét képezik. A TableElement használata a táblázatok strukturálásához:
+A táblázatok a strukturált PDF-ek másik fontos részét képezik. Használja a TableElement elemet a táblázatok strukturálásához:
 
 ```java
 // Hozzon létre egy táblázat szerkezeti elemet
 TableElement tableElement = new TableElement();
-// Adjon hozzá táblázatsorokat és cellákat ide
+// Adja hozzá ide a táblázat sorait és celláit
 ```
 
 ### A PDF mentése és bezárása

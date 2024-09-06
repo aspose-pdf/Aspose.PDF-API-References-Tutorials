@@ -1,8 +1,8 @@
 ---
-title: Kotak kombo
-linktitle: Kotak kombo
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Buat daftar kotak kombo dengan mudah di dokumen PDF Anda menggunakan Aspose.PDF untuk .NET.
+title: Kotak Kombo
+linktitle: Kotak Kombo
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Buat daftar kotak kombo dengan mudah dalam dokumen PDF Anda menggunakan Aspose.PDF untuk .NET.
 type: docs
 weight: 30
 url: /id/net/programming-with-forms/combo-box/
@@ -11,7 +11,7 @@ Dalam tutorial ini, kami akan menunjukkan cara membuat daftar kotak kombo menggu
 
 ## Langkah 1: Persiapan
 
-Pertama, pastikan Anda telah mengimpor perpustakaan yang diperlukan dan mengatur jalur ke direktori dokumen:
+Pertama, pastikan Anda telah mengimpor pustaka yang diperlukan dan mengatur jalur ke direktori dokumen:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -33,9 +33,9 @@ Tambahkan halaman ke dokumen:
 doc.Pages.Add();
 ```
 
-## Langkah 4: Buat instance Objek ComboBoxField
+## Langkah 4: Buat instance objek ComboBoxField
 
-Buat instance objek ComboBoxField dengan dimensi yang diinginkan:
+Buat objek ComboBoxField dengan dimensi yang diinginkan:
 
 ```csharp
 ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
@@ -79,7 +79,7 @@ try
 	Document doc = new Document();
 	// Tambahkan halaman ke objek dokumen
 	doc.Pages.Add();
-	// Buat instance objek Bidang ComboBox
+	// Membuat instance objek ComboBox Field
 	ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
 	// Tambahkan opsi ke ComboBox
 	combo.AddOption("Red");
@@ -103,24 +103,24 @@ catch (Exception ex)
 
 Dalam tutorial ini, kita mempelajari cara membuat daftar kotak kombo menggunakan Aspose.PDF untuk .NET. Dengan mengikuti langkah-langkah ini, Anda dapat dengan mudah menambahkan daftar kotak kombo ke dokumen PDF Anda menggunakan Aspose.PDF.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### T: Bisakah saya mengkustomisasi tampilan daftar kotak kombo menggunakan Aspose.PDF untuk .NET?
+#### T: Dapatkah saya menyesuaikan tampilan daftar kotak kombo menggunakan Aspose.PDF untuk .NET?
 
-A: Ya, Anda dapat menyesuaikan tampilan daftar kotak kombo menggunakan Aspose.PDF untuk .NET. Anda dapat mengatur properti seperti ukuran font, warna, warna latar belakang, gaya tepi, dan lainnya agar sesuai dengan tampilan dan nuansa yang Anda inginkan.
+A: Ya, Anda dapat menyesuaikan tampilan daftar kotak kombo menggunakan Aspose.PDF untuk .NET. Anda dapat mengatur properti seperti ukuran font, warna, warna latar belakang, gaya border, dan lainnya agar sesuai dengan tampilan dan nuansa yang Anda inginkan.
 
-#### T: Dapatkah saya menetapkan pilihan default yang dipilih dalam daftar kotak kombo?
+#### T: Dapatkah saya mengatur opsi yang dipilih default dalam daftar kotak kombo?
 
- A: Ya, Anda dapat mengatur pilihan default yang dipilih dalam daftar kotak kombo menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan`Selected` properti dari`ComboBoxField` objek untuk menandai satu atau lebih opsi sebagai yang dipilih secara default.
+ A: Ya, Anda dapat mengatur pilihan default dalam daftar kotak kombo menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan`Selected` milik`ComboBoxField` objek untuk menandai satu atau lebih opsi sebagai dipilih secara default.
 
-#### T: Bagaimana cara mengambil nilai yang dipilih dari daftar kotak kombo setelah pengguna membuat pilihan?
+#### T: Bagaimana saya dapat mengambil nilai yang dipilih dari daftar kotak kombo setelah pengguna membuat pilihan?
 
- J: Anda dapat mengambil nilai yang dipilih dari daftar kotak kombo menggunakan Aspose.PDF untuk .NET. Setelah pengguna membuat pilihan, Anda dapat mengakses`Value` properti dari`ComboBoxField`objek untuk mendapatkan nilai yang dipilih.
+ A: Anda dapat mengambil nilai yang dipilih dari daftar kotak kombo menggunakan Aspose.PDF untuk .NET. Setelah pengguna membuat pilihan, Anda dapat mengakses`Value` milik`ComboBoxField`objek untuk mendapatkan nilai yang dipilih.
 
-#### T: Apakah mungkin untuk menambahkan event handler atau tindakan ke daftar kotak kombo?
+#### T: Apakah mungkin untuk menambahkan pengendali peristiwa atau tindakan ke daftar kotak kombo?
 
- J: Ya, Aspose.PDF untuk .NET memungkinkan Anda menambahkan event handler atau tindakan ke daftar kotak kombo. Anda dapat mengaitkan tindakan JavaScript, seperti`OnValueChanged`, ke daftar kotak kombo untuk melakukan tindakan tertentu saat pengguna memilih opsi.
+ A: Ya, Aspose.PDF untuk .NET memungkinkan Anda menambahkan pengendali peristiwa atau tindakan ke daftar kotak kombo. Anda dapat mengaitkan tindakan JavaScript, seperti`OnValueChanged`, ke daftar kotak kombo untuk melakukan tindakan tertentu saat pengguna memilih suatu opsi.
 
-#### T: Dapatkah saya menambahkan keterangan alat atau deskripsi pada opsi di daftar kotak kombo?
+#### T: Dapatkah saya menambahkan keterangan alat atau deskripsi ke opsi dalam daftar kotak kombo?
 
- J: Ya, Anda dapat menambahkan tooltips atau deskripsi ke opsi di daftar kotak kombo menggunakan Aspose.PDF untuk .NET. Anda dapat mengatur`AlternateName` properti setiap opsi untuk memberikan tooltip atau deskripsi yang akan ditampilkan saat pengguna mengarahkan kursor ke opsi tersebut.
+ A: Ya, Anda dapat menambahkan tooltip atau deskripsi ke opsi dalam daftar kotak kombo menggunakan Aspose.PDF untuk .NET. Anda dapat mengatur`AlternateName` properti setiap opsi untuk menyediakan keterangan alat atau deskripsi yang akan ditampilkan saat pengguna mengarahkan kursor ke opsi tersebut.

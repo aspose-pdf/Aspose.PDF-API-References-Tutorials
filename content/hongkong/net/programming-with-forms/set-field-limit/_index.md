@@ -7,7 +7,7 @@ type: docs
 weight: 260
 url: /zh-hant/net/programming-with-forms/set-field-limit/
 ---
-以下是如何使用 Aspose.PDF for .NET 設定欄位邊界的詳細教學。按著這些次序：
+以下是如何使用 Aspose.PDF for .NET 設定欄位邊界的詳細教學。請依照下列步驟操作：
 
 ## 步驟 1：首先透過指定路徑來定義文件的目錄`dataDir` variable.
 

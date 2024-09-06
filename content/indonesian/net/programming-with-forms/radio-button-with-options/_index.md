@@ -1,8 +1,8 @@
 ---
 title: Tombol Radio Dengan Opsi
 linktitle: Tombol Radio Dengan Opsi
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Tambahkan tombol radio dengan opsi dengan mudah ke dokumen PDF menggunakan Aspose.PDF untuk .NET.
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Tambahkan tombol radio dengan opsi ke dokumen PDF dengan mudah menggunakan Aspose.PDF untuk .NET.
 type: docs
 weight: 230
 url: /id/net/programming-with-forms/radio-button-with-options/
@@ -12,13 +12,13 @@ Dalam tutorial ini, kami akan menunjukkan cara menambahkan tombol radio dengan o
 
 ## Langkah 1: Persiapan
 
-Pastikan Anda telah mengimpor perpustakaan yang diperlukan dan mengatur jalur ke direktori dokumen Anda:
+Pastikan Anda telah mengimpor pustaka yang diperlukan dan mengatur jalur ke direktori dokumen Anda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Langkah 2: Buat Instansiasi Objek Dokumen
+## Langkah 2: Membuat Instansi Objek Dokumen
 
 Buat instance objek Dokumen untuk membuat dokumen PDF baru:
 
@@ -37,7 +37,7 @@ table. ColumnWidths = "120 120 120";
 page.Paragraphs.Add(table);
 ```
 
-## Langkah 4: Buat instance Objek RadioButtonField
+## Langkah 4: Membuat Instansiasi Objek RadioButtonField
 
 Buat instance objek RadioButtonField untuk mewakili tombol radio:
 
@@ -108,7 +108,7 @@ dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Contoh kode sumber untuk Tombol Radio Dengan Opsi menggunakan Aspose.PDF untuk .NET 
+### Contoh kode sumber untuk Tombol Radio dengan Opsi menggunakan Aspose.PDF untuk .NET 
 ```csharp
 try
 {
@@ -163,7 +163,7 @@ try
 	c2.Paragraphs.Add(opt2);
 	c3.Paragraphs.Add(opt3);
 	dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
-	// Simpan file PDFnya
+	// Simpan file PDF
 	doc.Save(dataDir);
 	Console.WriteLine("\nRadio button field with three options added successfully.\nFile saved at " + dataDir);
 }
@@ -175,4 +175,4 @@ catch (Exception ex)
 
 ## Kesimpulan
 
-Selamat! Anda telah berhasil menambahkan tombol radio dengan opsi ke dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda sekarang dapat menggunakan metode ini untuk membuat formulir interaktif di dokumen PDF Anda.
+Selamat! Anda telah berhasil menambahkan tombol radio dengan opsi ke dokumen PDF menggunakan Aspose.PDF for .NET. Kini Anda dapat menggunakan metode ini untuk membuat formulir interaktif di dokumen PDF Anda.

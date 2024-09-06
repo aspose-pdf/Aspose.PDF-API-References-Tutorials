@@ -10,7 +10,7 @@ url: /hu/java/pdf-bookmarks/create-bookmarks-pdf-documents/
 
 ## Bevezetés
 
-digitális korban a nagy PDF-dokumentumok kezelése és navigálása ijesztő feladat lehet. Képzelje el, hogy száz oldalas dokumentuma van, és megpróbál gyorsan megtalálni bizonyos részeket. Itt a könyvjelzők segítenek. A könyvjelzők segítségével kattintható tartalomjegyzéket hozhat létre a PDF-dokumentumban, így az olvasók könnyebben ugorhatnak az adott szakaszokra. Ebben az oktatóanyagban megvizsgáljuk, hogyan hozhat létre könyvjelzőket PDF-dokumentumokban az Aspose.PDF for Java használatával, amely egy hatékony API, amely leegyszerűsíti a PDF-fájlokkal való munkát Java alkalmazásokban.
+digitális korban a nagy PDF-dokumentumok kezelése és navigálása ijesztő feladat lehet. Képzelje el, hogy száz oldalas dokumentuma van, és megpróbál gyorsan megtalálni bizonyos részeket. Itt segítenek a könyvjelzők. A könyvjelzők segítségével kattintható tartalomjegyzéket hozhat létre a PDF-dokumentumban, így az olvasók könnyebben ugorhatnak az adott szakaszokra. Ebben az oktatóanyagban megvizsgáljuk, hogyan hozhat létre könyvjelzőket PDF-dokumentumokban az Aspose.PDF for Java használatával, amely egy hatékony API, amely leegyszerűsíti a PDF-fájlokkal való munkát Java alkalmazásokban.
 
 ## Előfeltételek
 
@@ -19,7 +19,7 @@ Mielőtt belemerülnénk a kódolási részbe, győződjön meg arról, hogy a k
 - Java fejlesztői környezet: Győződjön meg arról, hogy a Java telepítve van a rendszeren.
 -  Aspose.PDF for Java: Töltse le és telepítse az Aspose.PDF for Java könyvtárat innen[itt](https://releases.aspose.com/pdf/java/).
 
-## Elkezdeni
+## Kezdő lépések
 
 ### 1. lépés: A projekt beállítása
 

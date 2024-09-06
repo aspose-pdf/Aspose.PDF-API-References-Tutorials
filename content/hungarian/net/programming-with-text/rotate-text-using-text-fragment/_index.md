@@ -76,7 +76,7 @@ Igény szerint állítsa be a szöveget, a pozíciókat és az egyéb tulajdons�
 
 ## 6. lépés: Hozzon létre egy TextBuilder programot, és fűzzen hozzá szövegrészleteket
 
- Hozzon létre egy`TextBuilder` objektum segítségével`pdfPage` és csatolja a szövegrészleteket a PDF-oldalhoz:
+ Hozzon létre a`TextBuilder` objektum segítségével`pdfPage` és csatolja a szövegrészleteket a PDF-oldalhoz:
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(pdfPage);
@@ -95,7 +95,7 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated1_out.pdf");
 
  Ügyeljen arra, hogy cserélje ki`"TextFragmentTests_Rotated1_out.pdf"` a kívánt kimeneti fájlnévvel.
 
-### Forráskód minta a Szövegforgatás szövegtöredék használatával az Aspose.PDF for .NET használatával programhoz 
+### Forráskód minta a Szövegforgatás szövegtöredék használatával az Aspose.PDF for .NET használatával 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Dokumentumobjektum inicializálása
@@ -134,7 +134,7 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated1_out.pdf");
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan forgathat el szöveget szövegrészletek használatával egy PDF-dokumentumban az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentum létrehozásától a módosított verzió mentéséig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy módosítsa a PDF-fájlok szövegforgatását.
+Gratulálok! Sikeresen megtanulta, hogyan forgathat el szöveget szövegrészletek használatával egy PDF-dokumentumban az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentum létrehozásától a módosított verzió mentéséig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy módosítsa a PDF-fájlok szövegforgatását.
 
 ### GYIK
 
@@ -160,7 +160,7 @@ V: A projekt beállításához:
 
 #### K: Hogyan hozhatok létre új PDF-dokumentumot?
 
- V: Új PDF-dokumentum létrehozásához inicializálja a`Document`objektumot az Aspose.PDF könyvtárból. Ezzel az objektummal oldalakat és tartalmat adhat hozzá a PDF-hez.
+ V: Új PDF-dokumentum létrehozásához inicializálja a`Document`objektum az Aspose.PDF könyvtárból. Ezzel az objektummal oldalakat és tartalmat adhat hozzá a PDF-hez.
 
 #### K: Hogyan forgathatom el a szövegrészleteket szövegtöredékekkel?
 
@@ -170,7 +170,7 @@ V: Szövegtöredékek elforgatása szövegtöredékekkel:
 2. Állítsa be a szövegrészletek szövegét és tulajdonságait.
 3. Adja meg a szövegrészletek pozícióját az oldalon.
 4.  Állítsa be az elforgatási szöget a gombbal`TextState.Rotation` a szövegtöredékek tulajdonsága.
-5.  Hozzon létre egy`TextBuilder`objektumot, és hozzáfűzi a szövegrészleteket a PDF-oldalhoz.
+5.  Hozzon létre a`TextBuilder`objektumot, és hozzáfűzi a szövegrészleteket a PDF-oldalhoz.
 
 #### K: Alkalmazhatok különböző elforgatási szögeket a különböző szövegrészletekre?
 

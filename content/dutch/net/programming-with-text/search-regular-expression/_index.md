@@ -2,27 +2,27 @@
 title: Zoek reguliere expressie in PDF-bestand
 linktitle: Zoek reguliere expressie in PDF-bestand
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u tekst kunt zoeken en ophalen met behulp van reguliere expressies in een PDF-bestand met Aspose.PDF voor .NET.
+description: Leer hoe u met behulp van reguliere expressies tekst in een PDF-bestand kunt zoeken en ophalen met Aspose.PDF voor .NET.
 type: docs
 weight: 440
 url: /nl/net/programming-with-text/search-regular-expression/
 ---
-In deze zelfstudie wordt uitgelegd hoe u Aspose.PDF voor .NET gebruikt om tekst te zoeken en op te halen die overeenkomt met een reguliere expressie in een PDF-bestand. De meegeleverde C#-broncode demonstreert het proces stap voor stap.
+Deze tutorial legt uit hoe u Aspose.PDF voor .NET kunt gebruiken om tekst te zoeken en op te halen die overeenkomt met een reguliere expressie in een PDF-bestand. De meegeleverde C#-broncode demonstreert het proces stap voor stap.
 
 ## Vereisten
 
-Voordat u doorgaat met de zelfstudie, moet u ervoor zorgen dat u over het volgende beschikt:
+Voordat u verdergaat met de tutorial, moet u ervoor zorgen dat u het volgende hebt:
 
 - Basiskennis van de programmeertaal C#.
-- Aspose.PDF voor .NET-bibliotheek geïnstalleerd. U kunt het verkrijgen via de Aspose-website of NuGet gebruiken om het in uw project te installeren.
+- Aspose.PDF voor .NET-bibliotheek geïnstalleerd. U kunt het verkrijgen van de Aspose-website of NuGet gebruiken om het in uw project te installeren.
 
-## Stap 1: Zet het project op
+## Stap 1: Het project opzetten
 
-Begin met het maken van een nieuw C#-project in de geïntegreerde ontwikkelomgeving (IDE) van uw voorkeur en voeg een verwijzing toe naar de Aspose.PDF voor .NET-bibliotheek.
+Begin met het maken van een nieuw C#-project in uw favoriete geïntegreerde ontwikkelomgeving (IDE) en voeg een verwijzing toe naar de Aspose.PDF voor .NET-bibliotheek.
 
 ## Stap 2: Importeer de benodigde naamruimten
 
-Voeg het volgende toe met behulp van richtlijnen aan het begin van uw C#-bestand om de vereiste naamruimten te importeren:
+Voeg de volgende using-richtlijnen toe aan het begin van uw C#-bestand om de vereiste naamruimten te importeren:
 
 ```csharp
 using Aspose.Pdf;
@@ -31,24 +31,24 @@ using Aspose.Pdf.Text;
 
 ## Stap 3: Laad het PDF-document
 
- Stel het pad in naar uw PDF-documentmap en laad het document met behulp van de`Document` klas:
+ Stel het pad naar uw PDF-documentmap in en laad het document met behulp van de`Document` klas:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
 ```
 
- Zorg ervoor dat u vervangt`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad naar uw documentmap.
+ Zorg ervoor dat u vervangt`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad naar uw documentenmap.
 
 ## Stap 4: Zoeken met reguliere expressie
 
- Maak een`TextFragmentAbsorber` object en stel het reguliere expressiepatroon in om alle zinnen te vinden die overeenkomen met het patroon:
+ Maak een`TextFragmentAbsorber` object en stel het reguliere-expressiepatroon in om alle zinnen te vinden die aan het patroon voldoen:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Zoals 1999-2000
 ```
 
- Vervangen`"\\d{4}-\\d{4}"` met uw gewenste reguliere expressiepatroon.
+ Vervangen`"\\d{4}-\\d{4}"` met het door u gewenste reguliere-expressiepatroon.
 
 ## Stap 5: Stel tekstzoekopties in
 
@@ -67,7 +67,7 @@ Accepteer de absorber voor alle pagina's van het document:
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
 
-## Stap 7: Haal geëxtraheerde tekstfragmenten op
+## Stap 7: Geëxtraheerde tekstfragmenten ophalen
 
 Haal de geëxtraheerde tekstfragmenten op met behulp van de`TextFragments` eigendom van de`TextFragmentAbsorber` voorwerp:
 
@@ -77,7 +77,7 @@ TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragmen
 
 ## Stap 8: Loop door de tekstfragmenten
 
-Loop door de opgehaalde tekstfragmenten en open hun eigenschappen:
+Doorloop de opgehaalde tekstfragmenten en krijg toegang tot hun eigenschappen:
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentCollection)
@@ -95,9 +95,9 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-U kunt de code binnen de lus wijzigen om verdere acties op elk tekstfragment uit te voeren.
+U kunt de code binnen de lus aanpassen om verdere acties uit te voeren op elk tekstfragment.
 
-### Voorbeeldbroncode voor reguliere expressie doorzoeken met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Search Regular Expression met behulp van Aspose.PDF voor .NET 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -105,10 +105,10 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
 // Maak een TextAbsorber-object om alle zinnen te vinden die overeenkomen met de reguliere expressie
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Zoals 1999-2000
-// Stel de tekstzoekoptie in om het gebruik van reguliere expressies te specificeren
+// Stel de optie voor tekst zoeken in om het gebruik van reguliere expressies te specificeren
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textFragmentAbsorber.TextSearchOptions = textSearchOptions;
-// Accepteer het absorber voor alle pagina's
+// Accepteer de absorber voor alle pagina's
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 // Haal de geëxtraheerde tekstfragmenten op
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -130,46 +130,46 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 ## Conclusie
 
-Gefeliciteerd! U hebt met succes geleerd hoe u met Aspose.PDF voor .NET tekst kunt zoeken en ophalen die overeenkomt met een reguliere expressie in een PDF-document. Deze tutorial bood een stapsgewijze handleiding, van het laden van het document tot het openen van de geëxtraheerde tekstfragmenten. U kunt deze code nu in uw eigen C#-projecten opnemen om geavanceerde tekstzoekopdrachten in PDF-bestanden uit te voeren.
+Gefeliciteerd! U hebt succesvol geleerd hoe u tekst kunt zoeken en ophalen die overeenkomt met een reguliere expressie in een PDF-document met Aspose.PDF voor .NET. Deze tutorial bood een stapsgewijze handleiding, van het laden van het document tot het openen van de geëxtraheerde tekstfragmenten. U kunt deze code nu opnemen in uw eigen C#-projecten om geavanceerde tekstzoekopdrachten uit te voeren in PDF-bestanden.
 
 ### Veelgestelde vragen
 
-#### Vraag: Wat is het doel van de tutorial "Reguliere expressie zoeken in PDF-bestand"?
+#### V: Wat is het doel van de tutorial "Reguliere expressie zoeken in PDF-bestand"?
 
-A: De tutorial "Reguliere expressie zoeken in PDF-bestand" is bedoeld om te laten zien hoe u de Aspose.PDF-bibliotheek voor .NET kunt gebruiken om tekst te zoeken en te extraheren die overeenkomt met een opgegeven reguliere-expressiepatroon in een PDF-bestand. De zelfstudie biedt uitgebreide richtlijnen en voorbeeld C#-code om het proces te demonstreren.
+A: De tutorial "Search Regular Expression In PDF File" is bedoeld om te laten zien hoe u de Aspose.PDF-bibliotheek voor .NET kunt gebruiken om te zoeken naar en tekst te extraheren die overeenkomt met een opgegeven regular expression-patroon in een PDF-bestand. De tutorial biedt uitgebreide begeleiding en voorbeeld-C#-code om het proces te demonstreren.
 
-#### Vraag: Hoe helpt deze tutorial bij het zoeken naar tekst met behulp van reguliere expressies in een PDF-document?
+#### V: Hoe helpt deze tutorial bij het zoeken naar tekst met behulp van reguliere expressies in een PDF-document?
 
-A: Deze tutorial biedt een stapsgewijze aanpak voor het gebruik van de Aspose.PDF-bibliotheek om tekstzoekopdrachten uit te voeren in een PDF-document op basis van een reguliere-expressiepatroon. Er wordt gedetailleerd beschreven hoe u het project opzet, het PDF-document laadt, een reguliere-expressiepatroon definieert en de overeenkomende tekstfragmenten ophaalt.
+A: Deze tutorial biedt een stapsgewijze aanpak voor het gebruik van de Aspose.PDF-bibliotheek om tekstzoekopdrachten uit te voeren in een PDF-document op basis van een regulier expressiepatroon. Het beschrijft hoe u het project instelt, het PDF-document laadt, een regulier expressiepatroon definieert en de overeenkomende tekstfragmenten ophaalt.
 
-#### Vraag: Wat zijn de vereisten voor het volgen van deze tutorial?
+#### V: Wat zijn de vereisten om deze tutorial te kunnen volgen?
 
-A: Voordat u met deze tutorial begint, moet u een basiskennis hebben van de programmeertaal C#. Bovendien moet de Aspose.PDF voor .NET-bibliotheek zijn geïnstalleerd. U kunt het verkrijgen via de Aspose-website of NuGet gebruiken om het in uw project te integreren.
+A: Voordat u met deze tutorial begint, moet u een basiskennis hebben van de programmeertaal C#. Daarnaast moet u de Aspose.PDF voor .NET-bibliotheek geïnstalleerd hebben. U kunt deze verkrijgen via de Aspose-website of NuGet gebruiken om deze in uw project te integreren.
 
-#### Vraag: Hoe stel ik mijn project in om deze tutorial te volgen?
+#### V: Hoe stel ik mijn project in om deze tutorial te volgen?
 
-A: Maak om te beginnen een nieuw C#-project in de geïntegreerde ontwikkelomgeving (IDE) van uw voorkeur en voeg een verwijzing toe naar de Aspose.PDF voor .NET-bibliotheek. Hierdoor kunt u de mogelijkheden van de bibliotheek binnen uw project benutten.
+A: Om te beginnen, maak een nieuw C#-project in uw favoriete geïntegreerde ontwikkelomgeving (IDE) en voeg een referentie toe aan de Aspose.PDF voor .NET-bibliotheek. Hiermee kunt u de mogelijkheden van de bibliotheek binnen uw project benutten.
 
-#### Vraag: Kan ik reguliere expressies gebruiken om naar tekst in een PDF-document te zoeken?
+#### V: Kan ik reguliere expressies gebruiken om naar tekst in een PDF-document te zoeken?
 
- A: Ja, deze tutorial laat zien hoe u reguliere expressies kunt gebruiken om tekst uit een PDF-document te zoeken en te extraheren. Het gaat om het gebruik van de`TextFragmentAbsorber` klasse en het specificeren van een reguliere-expressiepatroon om zinsdelen te vinden die overeenkomen met het opgegeven patroon.
+ A: Ja, deze tutorial laat zien hoe je reguliere expressies kunt gebruiken om tekst te zoeken en te extraheren uit een PDF-document. Het omvat het gebruik van de`TextFragmentAbsorber` klasse en het specificeren van een regulier expressiepatroon om zinnen te vinden die overeenkomen met het opgegeven patroon.
 
-#### Vraag: Hoe definieer ik het reguliere expressiepatroon voor tekstzoeken?
+#### V: Hoe definieer ik het reguliere expressiepatroon voor tekst zoeken?
 
- A: Om een reguliere-expressiepatroon voor tekstzoekopdrachten te definiëren, maakt u een`TextFragmentAbsorber` object en stel het patroon ervan in met behulp van de`Text` parameter. Vervang het standaardpatroon`"\\d{4}-\\d{4}"` in de code van de tutorial met het gewenste reguliere-expressiepatroon.
+ A: Om een regulier expressiepatroon voor tekst zoeken te definiëren, maakt u een`TextFragmentAbsorber` object en stel het patroon ervan in met behulp van de`Text` parameter. Vervang het standaardpatroon`"\\d{4}-\\d{4}"` in de code van de tutorial met het door u gewenste reguliere-expressiepatroon.
 
-#### Vraag: Hoe kan ik het gebruik van reguliere expressies inschakelen voor tekstzoekopdrachten?
+#### V: Hoe kan ik het gebruik van reguliere expressies voor tekst zoeken inschakelen?
 
- A: Het gebruik van reguliere expressies wordt mogelijk gemaakt door een`TextSearchOptions` object en de waarde ervan instellen`true` . Wijs dit object toe aan de`TextSearchOptions` eigendom van de`TextFragmentAbsorber` voorbeeld. Dit zorgt ervoor dat het reguliere-expressiepatroon wordt toegepast tijdens het zoeken naar tekst.
+ A: Het gebruik van reguliere expressies wordt ingeschakeld door een`TextSearchOptions` object en het instellen van de waarde ervan op`true` . Wijs dit object toe aan de`TextSearchOptions` eigendom van de`TextFragmentAbsorber` voorbeeld. Dit zorgt ervoor dat het reguliere-expressiepatroon wordt toegepast tijdens tekstzoekopdrachten.
 
-#### Vraag: Kan ik tekstfragmenten ophalen die overeenkomen met het reguliere expressiepatroon?
+#### V: Kan ik tekstfragmenten ophalen die overeenkomen met het reguliere expressiepatroon?
 
- EEN: Absoluut. Nadat u de reguliere expressie-zoekopdracht op het PDF-document hebt toegepast, kunt u de geëxtraheerde tekstfragmenten ophalen met behulp van de`TextFragments` eigendom van de`TextFragmentAbsorber` voorwerp. Deze tekstfragmenten bevatten de tekstsegmenten die overeenkomen met het opgegeven reguliere expressiepatroon.
+ A: Absoluut. Nadat u de reguliere expressiezoekopdracht op het PDF-document hebt toegepast, kunt u de geëxtraheerde tekstfragmenten ophalen met behulp van de`TextFragments` eigendom van de`TextFragmentAbsorber` object. Deze tekstfragmenten bevatten de tekstsegmenten die overeenkomen met het opgegeven reguliere-expressiepatroon.
 
-#### Vraag: Waartoe kan ik toegang krijgen tot de opgehaalde tekstfragmenten?
+#### V: Wat kan ik uit de opgehaalde tekstfragmenten halen?
 
-A: Vanuit de opgehaalde tekstfragmenten heeft u toegang tot verschillende eigenschappen, zoals de overeenkomende tekstinhoud, positie (X- en Y-coördinaten), lettertype-informatie (naam, grootte, kleur) en meer. De voorbeeldcode in de lus van de zelfstudie laat zien hoe u deze eigenschappen kunt openen en weergeven.
+A: Vanuit de opgehaalde tekstfragmenten kunt u toegang krijgen tot verschillende eigenschappen, zoals de overeenkomende tekstinhoud, positie (X- en Y-coördinaten), lettertype-informatie (naam, grootte, kleur) en meer. De voorbeeldcode in de lus van de tutorial laat zien hoe u toegang krijgt tot deze eigenschappen en deze kunt weergeven.
 
-#### Vraag: Hoe kan ik acties op de geëxtraheerde tekstfragmenten aanpassen?
+#### V: Hoe kan ik acties op de geëxtraheerde tekstfragmenten aanpassen?
 
-A: Zodra u de geëxtraheerde tekstfragmenten heeft, kunt u de code binnen de lus aanpassen om extra acties op elk tekstfragment uit te voeren. Dit kan het opslaan van de geëxtraheerde tekst omvatten, het analyseren van patronen of het implementeren van opmaakwijzigingen op basis van uw vereisten.
+A: Zodra u de geëxtraheerde tekstfragmenten hebt, kunt u de code binnen de lus aanpassen om extra acties uit te voeren op elk tekstfragment. Dit kan het opslaan van de geëxtraheerde tekst, het analyseren van patronen of het implementeren van opmaakwijzigingen omvatten op basis van uw vereisten.

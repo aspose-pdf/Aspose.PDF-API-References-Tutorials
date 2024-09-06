@@ -1,107 +1,135 @@
 ---
-title: Stel de standaardlettertypenaam in
-linktitle: Stel de standaardlettertypenaam in
+title: Standaardlettertypenaam instellen
+linktitle: Standaardlettertypenaam instellen
 second_title: Aspose.PDF voor .NET API-referentie
-description: Stapsgewijze handleiding voor het instellen van de standaardlettertypenaam in een PDF-bestand met Aspose.PDF voor .NET.
+description: Leer hoe u een standaardlettertypenaam instelt bij het renderen van PDF's naar afbeeldingen met Aspose.PDF voor .NET. Deze handleiding behandelt vereisten, stapsgewijze instructies en veelgestelde vragen.
 type: docs
 weight: 270
 url: /nl/net/document-conversion/set-default-font-name/
 ---
-In deze zelfstudie laten we u zien hoe u de standaardlettertypenaam in een PDF-bestand instelt met Aspose.PDF voor .NET. Wanneer u afbeeldingen uit een PDF-bestand extraheert, kunt u soms problemen met ontbrekende lettertypen tegenkomen. Door een standaardlettertypenaam op te geven, kunt u ervoor zorgen dat de geëxtraheerde tekst correct wordt weergegeven. Volg de onderstaande stappen om de standaardlettertypenaam in een PDF-bestand in te stellen.
+## Invoering
+
+Heb je ooit geprobeerd om een PDF-document naar een afbeelding te renderen, maar zag je dat de lettertypen er gewoon niet goed uitzagen? Misschien lijkt de tekst vervormd, of misschien wordt het originele lettertype niet ondersteund. Dit is waar het instellen van een standaardlettertype de dag kan redden! Met Aspose.PDF voor .NET kun je eenvoudig een standaardlettertype instellen voor je PDF-rendering, zodat je document er scherp en professioneel uitziet. In deze tutorial laten we je zien hoe je de standaardlettertypenaam instelt bij het renderen van een PDF naar een afbeelding. Aan het einde van deze gids heb je de vaardigheden om alle PDF-renderinguitdagingen aan te pakken die je tegenkomt. Klaar? Laten we erin duiken!
 
 ## Vereisten
-Zorg ervoor dat u aan de volgende vereisten voldoet voordat u begint:
 
-- Basiskennis van de programmeertaal C#.
-- Aspose.PDF-bibliotheek voor .NET geïnstalleerd op uw systeem.
-- Een ontwikkelomgeving zoals Visual Studio.
+Voordat we met de code beginnen, zijn er een paar dingen die je moet regelen:
 
-## Stap 1: Het PDF-document laden
- De eerste stap is het laden van het PDF-document in een`Document` voorwerp. Gebruik de volgende code:
+- Aspose.PDF voor .NET: Deze krachtige bibliotheek gebruiken we om ons PDF-document te manipuleren. U kunt het downloaden van de[Aspose-website](https://releases.aspose.com/pdf/net/).
+- Visual Studio: Zorg ervoor dat Visual Studio op uw machine is geïnstalleerd. Dit wordt onze ontwikkelomgeving.
+- .NET Framework: Zorg ervoor dat u het .NET Framework hebt geïnstalleerd. Aspose.PDF voor .NET ondersteunt verschillende versies, dus controleer de documentatie om te zien of deze aan uw behoeften voldoet.
+- Een PDF-document: U hebt een voorbeeld-PDF-document nodig om mee te werken. Als u die niet hebt, maakt u een eenvoudige PDF of downloadt u een voorbeeld online.
 
-```csharp
-// Pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+Zodra je alles hebt ingesteld, kunnen we beginnen met coderen!
 
-using (Document pdfDocument = new Document(dataDir + "input.pdf"))
-{
-     // Code om toe te voegen
-}
-```
+## Pakketten importeren
 
- Zeker vervangen`"YOUR DOCUMENTS DIRECTORY"` met de daadwerkelijke map waar uw PDF-bestand zich bevindt.
-
-## Stap 2: Stel de standaardlettertypenaam in
- Vervolgens stellen we de standaardlettertypenaam in met behulp van de`DefaultFontName` optie van de`RenderingOptions` voorwerp. Gebruik de volgende code:
+Voordat we in de code duiken, is het essentieel om de benodigde pakketten te importeren. Dit zorgt ervoor dat we toegang hebben tot alle klassen en methoden die we nodig hebben voor ons project.
 
 ```csharp
-using (Document pdfDocument = new Document(dataDir + "input.pdf"))
-{
-     using (FileStream imageStream = new FileStream(dataDir + "SetDefaultFontName.png", FileMode.Create))
-     {
-         Resolution resolution = new Resolution(300);
-         PngDevice pngDevice = new PngDevice(resolution);
-         RenderingOptions ro = new RenderingOptions();
-         ro.DefaultFontName = "Arial";
-         pngDevice.RenderingOptions = ro;
-        
-         // Code om toe te voegen
-     }
-}
+using Aspose.Pdf.Devices;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
 ```
 
- Zeker vervangen`"Arial"` met de gewenste lettertypenaam.
+Deze imports zijn van essentieel belang omdat ze de vereiste naamruimten binnenhalen voor het verwerken van PDF-manipulatie, beeldrendering en bestandsstroombewerkingen.
 
-## Stap 3: Afbeeldingsextractie
-Vervolgens extraheren we de afbeelding van de opgegeven pagina van het PDF-document. Gebruik de volgende code:
+## Stap 1: Stel uw project- en documentpad in
 
-```csharp
-pngDevice.Process(pdfDocument.Pages[1], imageStream);
-```
-
- Zorg ervoor dat u het juiste paginanummer opgeeft`pdfDocument.Pages[1]`.
-
-### Voorbeeldbroncode voor het instellen van de standaardlettertypenaam met Aspose.PDF voor .NET
+Laten we eerst het directorypad instellen waar uw PDF-document zich bevindt. Dit is uw startpunt voor het manipuleren van het PDF-bestand.
 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-using (Document pdfDocument = new Document(dataDir + "input.pdf"))
-{
-	using (FileStream imageStream = new FileStream(dataDir + "SetDefaultFontName.png", FileMode.Create))
-	{
-		Resolution resolution = new Resolution(300);
-		PngDevice pngDevice = new PngDevice(resolution);
-		RenderingOptions ro = new RenderingOptions();
-		ro.DefaultFontName = "Arial";
-		pngDevice.RenderingOptions = ro;
-		pngDevice.Process(pdfDocument.Pages[1], imageStream);
-	}
-}
 ```
+ Hier,`dataDir` is de directory waar uw PDF-document zich bevindt. Zorg ervoor dat u vervangt`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad naar uw document. Dit is essentieel omdat de code moet weten waar het PDF-bestand vandaan moet komen.
+
+## Stap 2: Het PDF-document laden
+
+Nu we het documentpad hebben, is de volgende stap het laden van het PDF-document in het geheugen, zodat we ermee aan de slag kunnen.
+
+```csharp
+using (Document pdfDocument = new Document(dataDir + "input.pdf"))
+```
+ Wij gebruiken de`Document` klasse uit de Aspose.PDF-bibliotheek om ons PDF-bestand te laden. Deze klasse biedt verschillende methoden en eigenschappen om met het PDF-document te werken. De`"input.pdf"` moet worden vervangen door de werkelijke bestandsnaam van uw PDF. Dit bestand wordt gebruikt als invoer voor rendering.
+
+## Stap 3: Maak een afbeeldingsstroom voor de uitvoer
+
+Zodra het document is geladen, moeten we een stream instellen om de gerenderde afbeelding op te slaan. Dit is waar de uitvoerafbeelding wordt opgeslagen.
+
+```csharp
+using (FileStream imageStream = new FileStream(dataDir + "SetDefaultFontName.png", FileMode.Create))
+```
+ De`FileStream`klasse wordt gebruikt om een nieuw bestand te maken waarin de gerenderde afbeelding wordt opgeslagen. In dit voorbeeld slaan we de afbeelding op als`"SetDefaultFontName.png"` . De`FileMode.Create` zorgt ervoor dat er een nieuw bestand wordt gemaakt of dat een bestaand bestand wordt overschreven.
+
+## Stap 4: Stel de resolutie voor de afbeelding in
+
+Voordat u de PDF naar een afbeelding rendert, is het cruciaal om de resolutie in te stellen. Dit bepaalt de kwaliteit en helderheid van de uitvoerafbeelding.
+
+```csharp
+Resolution resolution = new Resolution(300);
+```
+ De`Resolution` class stelt de resolutie van de uitvoerafbeelding in. Hier hebben we een resolutie van 300 DPI (dots per inch) gekozen, wat standaard is voor afbeeldingen van hoge kwaliteit. Dit zorgt ervoor dat de tekst en afbeeldingen in uw PDF duidelijk worden weergegeven zonder dat er details verloren gaan.
+
+## Stap 5: Configureer het PNG-apparaat
+
+Vervolgens moeten we het apparaat configureren dat de rendering van de PDF naar een PNG-afbeelding zal verwerken.
+
+```csharp
+PngDevice pngDevice = new PngDevice(resolution);
+```
+ De`PngDevice` klasse is verantwoordelijk voor het renderen van het PDF-document in een PNG-afbeelding. Door de`resolution` Als we bezwaar maken, zorgen we ervoor dat de afbeelding met de opgegeven DPI wordt gemaakt.
+
+## Stap 6: Stel de standaardlettertypenaam in
+
+Hier is het kritieke deel: het instellen van de standaardlettertypenaam. Dit is het fallback-lettertype voor het geval het originele lettertype in de PDF niet beschikbaar is.
+
+```csharp
+RenderingOptions ro = new RenderingOptions();
+ro.DefaultFontName = "Arial";
+pngDevice.RenderingOptions = ro;
+```
+ We maken een exemplaar van`RenderingOptions` en zet zijn`DefaultFontName` eigendom van`"Arial"`. Dit betekent dat als het originele lettertype in de PDF niet kan worden gevonden, Arial in plaats daarvan wordt gebruikt. Deze stap is cruciaal voor het behouden van de leesbaarheid en het uiterlijk van de tekst in de gerenderde afbeelding.
+
+## Stap 7: De PDF-pagina renderen naar een afbeelding
+
+Nu alles is ingesteld, kunnen we de eerste pagina van het PDF-document omzetten in een afbeelding en deze opslaan met behulp van de bestandsstroom die we eerder hebben gemaakt.
+
+```csharp
+pngDevice.Process(pdfDocument.Pages[1], imageStream);
+```
+ De`Process` methode van de`PngDevice` klasse wordt gebruikt om de opgegeven PDF-pagina (in dit geval de eerste pagina) in een afbeelding te renderen. De uitvoer wordt vervolgens opgeslagen in de`imageStream`. Met deze stap wordt de PDF-pagina omgezet in een PNG-afbeelding met de opgegeven resolutie en het standaardlettertype.
+
+## Stap 8: Sluit de bestandsstroom en het PDF-document
+
+Nadat u de afbeelding hebt gerenderd, is het belangrijk om de bestandsstroom en het PDF-document te sluiten om bronnen vrij te maken.
+
+```csharp
+imageStream.Close();
+pdfDocument.Dispose();
+```
+Het sluiten van de`imageStream` zorgt ervoor dat het bestand correct wordt opgeslagen en dat er geen gegevens verloren gaan. Het weggooien van de`pdfDocument` maakt geheugen en bronnen vrij en voorkomt zo mogelijke geheugenlekken.
 
 ## Conclusie
-In deze zelfstudie hebben we geleerd hoe u de standaardlettertypenaam in een PDF-bestand kunt instellen met Aspose.PDF voor .NET. Door een standaardlettertypenaam op te geven, kunt u ervoor zorgen dat de geëxtraheerde tekst correct wordt weergegeven. Gebruik deze methode om problemen met ontbrekende lettertypen op te lossen bij het extraheren van afbeeldingen uit PDF-bestanden.
 
-### Veelgestelde vragen
+En daar heb je het! Met slechts een paar regels code heb je geleerd hoe je een standaardlettertypenaam instelt bij het renderen van een PDF naar een afbeelding met Aspose.PDF voor .NET. Deze vaardigheid is ongelooflijk handig, vooral bij het werken met PDF's die mogelijk niet-ondersteunde lettertypen bevatten. Door een standaardlettertype in te stellen, zorg je ervoor dat je gerenderde afbeeldingen hun leesbaarheid en professionele uitstraling behouden.
 
-#### Vraag: Wat is Aspose.PDF voor .NET?
+## Veelgestelde vragen
 
-A: Aspose.PDF voor .NET is een krachtige bibliotheek waarmee ontwikkelaars met PDF-documenten in C#-toepassingen kunnen werken. Het biedt verschillende functionaliteiten, waaronder het instellen van de standaardlettertypenaam in een PDF-bestand.
+### Wat gebeurt er als het opgegeven standaardlettertype niet op het systeem is geïnstalleerd?
+ Als het standaardlettertype is opgegeven in de`RenderingOptions` niet op het systeem is geïnstalleerd, gebruikt Aspose.PDF een door het systeem gedefinieerd fallback-lettertype.
 
-#### Vraag: Waarom moet ik de standaardlettertypenaam instellen in een PDF-bestand?
+### Kan ik andere lettertypen dan Arial als standaardlettertype gebruiken?
+Absoluut! U kunt elk lettertype dat op uw systeem is geïnstalleerd instellen als standaardlettertype.
 
-A: Het instellen van de standaardlettertypenaam is handig bij het extraheren van tekst uit een PDF-document. Als de PDF tekst bevat met lettertypen die niet beschikbaar zijn op de extractiemachine, zorgt het opgeven van een standaardlettertypenaam ervoor dat de tekst correct wordt weergegeven.
+### Is het mogelijk om meerdere pagina's van een PDF in één keer naar afbeeldingen te converteren?
+Ja, u kunt de pagina's van uw PDF doorlopen en elke pagina afzonderlijk weergeven met hetzelfde proces.
 
-#### Vraag: Hoe kan ik een PDF-document laden en de standaardlettertypenaam instellen met Aspose.PDF voor .NET?
+### Heeft het instellen van een hoge resolutie invloed op de prestaties van PDF-rendering?
+Ja, hogere resoluties resulteren in grotere afbeeldingsbestanden en kunnen de rendertijd verlengen, maar ze produceren ook duidelijkere beelden.
 
- A: Om een PDF-document te laden en de standaardlettertypenaam in te stellen, kunt u de`Document`class om het PDF-bestand te laden en de`RenderingOptions.DefaultFontName` eigenschap om de gewenste standaardlettertypenaam op te geven.
-
-#### Vraag: Kan ik elk lettertype als standaardlettertypenaam kiezen?
-
-A:Ja, u kunt elk lettertype dat beschikbaar is op de extractiemachine als standaardlettertypenaam kiezen. Gebruik een lettertype dat nauw aansluit bij de ontbrekende lettertypen in de originele PDF om een nauwkeurige weergave van de tekst te garanderen.
-
-#### Vraag: Is het instellen van de standaardlettertypenaam een permanente wijziging van het PDF-bestand?
-
-A: Nee, het instellen van de standaardlettertypenaam met Aspose.PDF voor .NET is een tijdelijke wijziging die wordt aangebracht tijdens het extraheren van tekst. Het wijzigt het originele PDF-bestand niet.
+### Kan ik de PDF naar andere afbeeldingsformaten dan PNG converteren?
+Ja, Aspose.PDF ondersteunt rendering naar verschillende afbeeldingsformaten, zoals JPEG, BMP en TIFF.

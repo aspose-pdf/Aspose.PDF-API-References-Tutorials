@@ -1,21 +1,21 @@
 ---
-title: Kiểu cấu trúc văn bản trong tệp PDF
-linktitle: Kiểu cấu trúc văn bản trong tệp PDF
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Tìm hiểu cách định dạng cấu trúc văn bản trong tệp PDF bằng Aspose.PDF cho .NET. Hướng dẫn từng bước để tạo kiểu cho văn bản.
+title: Cấu trúc văn bản theo phong cách trong tệp PDF
+linktitle: Cấu trúc văn bản theo phong cách trong tệp PDF
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách định dạng cấu trúc văn bản trong tệp PDF bằng Aspose.PDF cho .NET. Hướng dẫn từng bước để định dạng văn bản.
 type: docs
 weight: 190
 url: /vi/net/programming-with-tagged-pdf/style-text-structure/
 ---
-Trong hướng dẫn chi tiết này, chúng tôi sẽ hướng dẫn bạn từng bước về mã nguồn C# được cung cấp để định dạng cấu trúc văn bản bằng Aspose.PDF cho .NET. Thực hiện theo các hướng dẫn bên dưới để hiểu cách tạo kiểu và định dạng văn bản trong tệp PDF.
+Trong hướng dẫn chi tiết này, chúng tôi sẽ hướng dẫn bạn từng bước mã nguồn C# được cung cấp để định dạng cấu trúc văn bản bằng Aspose.PDF cho .NET. Làm theo hướng dẫn bên dưới để hiểu cách định dạng và định dạng văn bản trong tệp PDF.
 
 ## Bước 1: Thiết lập môi trường
 
-Trước khi bắt đầu, hãy đảm bảo bạn đã định cấu hình môi trường phát triển của mình để sử dụng Aspose.PDF cho .NET. Điều này bao gồm việc cài đặt thư viện Aspose.PDF và định cấu hình dự án của bạn để tham chiếu nó.
+Trước khi bắt đầu, hãy đảm bảo bạn đã cấu hình môi trường phát triển của mình để sử dụng Aspose.PDF cho .NET. Điều này bao gồm cài đặt thư viện Aspose.PDF và cấu hình dự án của bạn để tham chiếu đến nó.
 
 ## Bước 2: Tạo tài liệu PDF
 
-Trong bước này, chúng tôi sẽ tạo một đối tượng tài liệu PDF mới với Aspose.PDF.
+Ở bước này, chúng ta sẽ tạo một đối tượng tài liệu PDF mới bằng Aspose.PDF.
 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
@@ -25,22 +25,22 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document document = new Document();
 ```
 
-Chúng tôi đã tạo một tài liệu PDF mới với Aspose.PDF.
+Chúng tôi đã tạo một tài liệu PDF mới bằng Aspose.PDF.
 
-## Bước 3: Làm cho nội dung hoạt động với TaggedPdf
+## Bước 3: Sử dụng nội dung để làm việc với TaggedPdf
 
-Trong bước này, chúng ta sẽ làm cho nội dung của tài liệu PDF hoạt động với cấu trúc được gắn thẻ.
+Ở bước này, chúng ta sẽ sử dụng nội dung của tài liệu PDF theo cấu trúc được gắn thẻ.
 
 ```csharp
-// Nhận nội dung để hoạt động với TaggedPdf
+// Nhận nội dung để làm việc với TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-Chúng tôi đã có nội dung của tài liệu PDF để làm việc với cấu trúc được gắn thẻ.
+Chúng tôi đã đưa nội dung của tài liệu PDF vào hoạt động theo cấu trúc được gắn thẻ.
 
-## Bước 4: Đặt tiêu đề và ngôn ngữ tài liệu
+## Bước 4: Đặt tiêu đề và ngôn ngữ cho tài liệu
 
-Bây giờ chúng ta sẽ đặt tiêu đề và ngôn ngữ của tài liệu PDF.
+Bây giờ chúng ta sẽ thiết lập tiêu đề và ngôn ngữ cho tài liệu PDF.
 
 ```csharp
 // Xác định tiêu đề và ngôn ngữ của tài liệu
@@ -50,21 +50,21 @@ taggedContent.SetLanguage("fr-FR");
 
 Chúng tôi đã xác định tiêu đề và ngôn ngữ của tài liệu PDF.
 
-## Bước 5: Tạo thành phần đoạn văn
+## Bước 5: Tạo phần tử đoạn văn
 
-Trong bước này, chúng ta sẽ tạo một thành phần đoạn văn mới và thêm nó vào cấu trúc được gắn thẻ.
+Ở bước này, chúng ta sẽ tạo một phần tử đoạn văn mới và thêm nó vào cấu trúc được gắn thẻ.
 
 ```csharp
-// Tạo thành phần đoạn văn
+// Tạo một phần tử đoạn văn
 ParagraphElement p = taggedContent.CreateParagraphElement();
 taggedContent.RootElement.AppendChild(p);
 ```
 
-Chúng tôi đã tạo một thành phần đoạn văn mới và thêm nó vào thư mục gốc của cấu trúc được gắn thẻ.
+Chúng tôi đã tạo một phần tử đoạn văn mới và thêm nó vào gốc của cấu trúc được gắn thẻ.
 
 ## Bước 6: Định dạng văn bản
 
-Bây giờ hãy tạo kiểu và định dạng văn bản của thành phần đoạn văn.
+Bây giờ chúng ta hãy định dạng và tạo kiểu cho văn bản của phần đoạn văn.
 
 ```csharp
 // Định dạng văn bản
@@ -74,18 +74,18 @@ p.StructureTextState.FontStyle = FontStyles.Italic;
 p.SetText("Text in italic red.");
 ```
 
-Chúng tôi đã áp dụng định dạng cho văn bản bằng cách đặt kích thước phông chữ, màu sắc và kiểu phông chữ.
+Chúng tôi áp dụng định dạng cho văn bản bằng cách thiết lập kích thước phông chữ, màu sắc và kiểu phông chữ.
 
-## Bước 7: Lưu tài liệu PDF được gắn thẻ
+## Bước 7: Lưu tài liệu PDF đã gắn thẻ
 
-Bây giờ chúng ta đã tạo kiểu cho văn bản trong tài liệu PDF của mình, hãy lưu nó dưới dạng tài liệu PDF được gắn thẻ.
+Bây giờ chúng ta đã định dạng văn bản trong tài liệu PDF, hãy lưu nó dưới dạng tài liệu PDF có gắn thẻ.
 
 ```csharp
-// Lưu tài liệu PDF được gắn thẻ
+// Lưu tài liệu PDF đã gắn thẻ
 document.Save(dataDir + "StyleTextStructure.pdf");
 ```
 
-Chúng tôi đã lưu tài liệu PDF được gắn thẻ vào thư mục được chỉ định.
+Chúng tôi đã lưu tài liệu PDF được gắn thẻ vào thư mục đã chỉ định.
 
 ### Mã nguồn mẫu cho Cấu trúc văn bản kiểu sử dụng Aspose.PDF cho .NET 
 
@@ -94,71 +94,71 @@ Chúng tôi đã lưu tài liệu PDF được gắn thẻ vào thư mục đư�
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Tạo tài liệu PDF
+// Tạo Tài Liệu PDF
 Document document = new Document();
 
-// Nhận nội dung để làm việc với TaggedPdf
+// Nhận nội dung cho công việc với TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Đặt tiêu đề và ngôn ngữ cho Documnet
+// Đặt Tiêu đề và Ngôn ngữ cho Documnet
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 ParagraphElement p = taggedContent.CreateParagraphElement();
 taggedContent.RootElement.AppendChild(p);
 
-// Đang trong quá trình phát triển
+// Đang phát triển
 p.StructureTextState.FontSize = 18F;
 p.StructureTextState.ForegroundColor = Color.Red;
 p.StructureTextState.FontStyle = FontStyles.Italic;
 p.SetText("Red italic text.");
 
-// Lưu tài liệu PDF được gắn thẻ
+// Lưu tài liệu PDF có gắn thẻ
 document.Save(dataDir + "StyleTextStructure.pdf");
 
 ```
 
 ## Phần kết luận
 
-Trong hướng dẫn này, chúng ta đã học cách tạo kiểu và định dạng cấu trúc văn bản trong tài liệu PDF bằng Aspose.PDF cho .NET. Bây giờ bạn có thể sử dụng Aspose.PDF để tạo tài liệu PDF với định dạng tùy chỉnh cho văn bản.
+Trong hướng dẫn này, chúng ta đã học cách định dạng và tạo kiểu cho cấu trúc văn bản trong tài liệu PDF bằng Aspose.PDF cho .NET. Bây giờ bạn có thể sử dụng Aspose.PDF để tạo tài liệu PDF với định dạng tùy chỉnh cho văn bản.
 
 ### Câu hỏi thường gặp
 
-#### Hỏi: Mục tiêu chính của hướng dẫn này về tạo kiểu cấu trúc văn bản trong tệp PDF bằng Aspose.PDF cho .NET là gì?
+#### H: Mục tiêu chính của hướng dẫn này về cách định dạng cấu trúc văn bản trong tệp PDF bằng Aspose.PDF cho .NET là gì?
 
-Đáp: Mục tiêu chính của hướng dẫn này là hướng dẫn bạn quy trình định dạng và tạo kiểu văn bản trong tài liệu PDF bằng Aspose.PDF cho .NET. Nó cung cấp hướng dẫn từng bước và ví dụ về mã nguồn C# để giúp bạn hiểu cách áp dụng kiểu và định dạng cho các thành phần văn bản.
+A: Mục tiêu chính của hướng dẫn này là hướng dẫn bạn quy trình định dạng và tạo kiểu văn bản trong tài liệu PDF bằng Aspose.PDF cho .NET. Hướng dẫn này cung cấp hướng dẫn từng bước và ví dụ mã nguồn C# để giúp bạn hiểu cách áp dụng kiểu và định dạng cho các thành phần văn bản.
 
-#### Câu hỏi: Điều kiện tiên quyết để làm theo hướng dẫn này về cách tạo kiểu cấu trúc văn bản trong PDF bằng Aspose.PDF cho .NET là gì?
+#### H: Cần có những điều kiện tiên quyết nào để thực hiện theo hướng dẫn này về cách định dạng cấu trúc văn bản trong PDF bằng Aspose.PDF cho .NET?
 
-Trả lời: Trước khi bắt đầu, hãy đảm bảo rằng bạn đã thiết lập môi trường phát triển của mình để sử dụng Aspose.PDF cho .NET. Điều này liên quan đến việc cài đặt thư viện Aspose.PDF và định cấu hình dự án của bạn để tham chiếu nó.
+A: Trước khi bắt đầu, hãy đảm bảo rằng bạn đã thiết lập môi trường phát triển để sử dụng Aspose.PDF cho .NET. Điều này bao gồm cài đặt thư viện Aspose.PDF và cấu hình dự án của bạn để tham chiếu đến nó.
 
-#### Hỏi: Làm cách nào tôi có thể tạo một tài liệu PDF mới cũng như đặt tiêu đề và ngôn ngữ của nó bằng Aspose.PDF cho .NET?
+#### H: Làm thế nào để tạo một tài liệu PDF mới và đặt tiêu đề cũng như ngôn ngữ cho nó bằng Aspose.PDF cho .NET?
 
-Đáp: Hướng dẫn này cung cấp các ví dụ về mã nguồn C# để trình bày cách tạo một tài liệu PDF mới bằng Aspose.PDF cho .NET cũng như cách đặt các thuộc tính ngôn ngữ và tiêu đề của tài liệu đó.
+A: Bài hướng dẫn cung cấp các ví dụ về mã nguồn C# để chứng minh cách tạo tài liệu PDF mới bằng Aspose.PDF cho .NET và cách thiết lập tiêu đề và thuộc tính ngôn ngữ của tài liệu đó.
 
-#### Câu hỏi: Mục đích của "cấu trúc được gắn thẻ" trong ngữ cảnh của tài liệu PDF là gì?
+#### H: Mục đích của "cấu trúc gắn thẻ" trong bối cảnh tài liệu PDF là gì?
 
-Đáp: "Cấu trúc được gắn thẻ" đề cập đến cách tổ chức nội dung hợp lý trong tài liệu PDF, cho phép khả năng truy cập và thông tin cấu trúc cho các công nghệ hỗ trợ. Nó cho phép trích xuất văn bản, điều hướng và hiểu ngữ nghĩa thích hợp về nội dung của tài liệu.
+A: "Cấu trúc gắn thẻ" đề cập đến tổ chức hợp lý của nội dung trong tài liệu PDF, cho phép truy cập và thông tin cấu trúc cho các công nghệ hỗ trợ. Nó cho phép trích xuất văn bản, điều hướng và hiểu ngữ nghĩa phù hợp về nội dung của tài liệu.
 
-#### Câu hỏi: Làm cách nào tôi có thể tạo thành phần đoạn văn và thêm nó vào cấu trúc được gắn thẻ của tài liệu PDF?
+#### H: Làm thế nào tôi có thể tạo một phần tử đoạn văn và thêm nó vào cấu trúc được gắn thẻ của tài liệu PDF?
 
-Đáp: Hướng dẫn giải thích cách tạo thành phần đoạn văn bằng Aspose.PDF cho .NET và thêm nó vào cấu trúc được gắn thẻ của tài liệu PDF. Phần tử này sẽ đóng vai trò là nơi chứa văn bản được tạo kiểu.
+A: Hướng dẫn giải thích cách tạo phần tử đoạn văn bằng Aspose.PDF cho .NET và thêm nó vào cấu trúc được gắn thẻ của tài liệu PDF. Phần tử này sẽ đóng vai trò là vùng chứa cho văn bản được định kiểu.
 
-#### Câu hỏi: Làm cách nào để áp dụng định dạng và kiểu dáng cho văn bản trong thành phần đoạn văn bằng Aspose.PDF cho .NET?
+#### H: Làm thế nào để áp dụng định dạng và kiểu dáng cho văn bản trong phần tử đoạn văn bằng Aspose.PDF cho .NET?
 
-Đáp: Hướng dẫn này cung cấp các ví dụ về mã nguồn C# minh họa cách định dạng và tạo kiểu cho văn bản trong một thành phần đoạn văn. Bạn sẽ tìm hiểu cách đặt các thuộc tính như cỡ chữ, màu văn bản và kiểu phông chữ.
+A: Hướng dẫn cung cấp các ví dụ về mã nguồn C# để chứng minh cách định dạng và định dạng văn bản trong một phần tử đoạn văn. Bạn sẽ học cách thiết lập các thuộc tính như kích thước phông chữ, màu chữ và kiểu phông chữ.
 
-#### Hỏi: Tầm quan trọng của việc đặt cỡ chữ, màu sắc và kiểu chữ cho văn bản trong tài liệu PDF là gì?
+#### H: Việc thiết lập kích thước phông chữ, màu sắc và kiểu chữ cho văn bản trong tài liệu PDF có ý nghĩa gì?
 
-Đáp: Việc đặt kích thước phông chữ, màu sắc và kiểu cho văn bản sẽ nâng cao hình thức trực quan của tài liệu, khiến tài liệu trở nên hấp dẫn và thẩm mỹ hơn đối với người đọc. Ngoài ra, kiểu dáng phù hợp giúp nhấn mạnh thông tin quan trọng và cải thiện khả năng đọc.
+A: Thiết lập kích thước phông chữ, màu sắc và kiểu chữ cho văn bản giúp cải thiện giao diện trực quan của tài liệu, khiến tài liệu hấp dẫn hơn và đẹp hơn đối với người đọc. Ngoài ra, kiểu dáng phù hợp giúp nhấn mạnh thông tin quan trọng và cải thiện khả năng đọc.
 
-#### Hỏi: Làm cách nào tôi có thể lưu tài liệu PDF sau khi tạo kiểu và định dạng cấu trúc văn bản?
+#### H: Làm thế nào để lưu tài liệu PDF sau khi tạo kiểu và định dạng cấu trúc văn bản?
 
- Đáp: Khi bạn đã tạo kiểu và định dạng cấu trúc văn bản, bạn có thể sử dụng các ví dụ về mã nguồn C# được cung cấp để lưu tài liệu PDF được gắn thẻ bằng cách sử dụng`Save()` phương pháp.
+ A: Sau khi bạn đã định dạng và tạo kiểu cho cấu trúc văn bản, bạn có thể sử dụng các ví dụ mã nguồn C# được cung cấp để lưu tài liệu PDF được gắn thẻ bằng cách sử dụng`Save()` phương pháp.
 
-#### Câu hỏi: Mục đích của mã nguồn mẫu được cung cấp trong hướng dẫn là gì?
+#### H: Mục đích của mã nguồn mẫu được cung cấp trong hướng dẫn là gì?
 
-Trả lời: Mã nguồn mẫu đóng vai trò là tài liệu tham khảo thực tế để triển khai kiểu dáng và định dạng văn bản bằng Aspose.PDF cho .NET. Bạn có thể sử dụng mã này làm điểm bắt đầu và sửa đổi nó cho phù hợp với yêu cầu cụ thể của mình.
+A: Mã nguồn mẫu đóng vai trò là tài liệu tham khảo thực tế để triển khai kiểu dáng và định dạng văn bản bằng Aspose.PDF cho .NET. Bạn có thể sử dụng mã này làm điểm khởi đầu và sửa đổi cho phù hợp với yêu cầu cụ thể của mình.
 
-#### Câu hỏi: Tôi có thể kết hợp các khái niệm này vào ứng dụng .NET của riêng mình để tạo tài liệu PDF tùy chỉnh không?
+#### H: Tôi có thể kết hợp những khái niệm này vào ứng dụng .NET của riêng mình để tạo tài liệu PDF tùy chỉnh không?
 
-Đáp: Có, bạn có thể sử dụng các khái niệm và mã được cung cấp trong hướng dẫn này làm nền tảng để tạo tài liệu PDF tùy chỉnh của riêng bạn với văn bản được tạo kiểu và định dạng. Sửa đổi và mở rộng mã để đạt được kết quả mong muốn của bạn.
+A: Có, bạn có thể sử dụng các khái niệm và mã được cung cấp trong hướng dẫn làm nền tảng để tạo tài liệu PDF tùy chỉnh của riêng bạn với văn bản được định dạng và tạo kiểu. Sửa đổi và mở rộng mã để đạt được kết quả mong muốn.

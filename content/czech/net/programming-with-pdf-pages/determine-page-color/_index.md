@@ -30,7 +30,7 @@ Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
 ## Krok 3: Analyzujte stránky
- Nyní můžete procházet všechny stránky dokumentu PDF pomocí a`for` smyčka. Pro každou stránku můžete získat barevný typ stránky pomocí`ColorType` vlastnictvím`Page` objekt a zobrazit jej v konzole.
+ Nyní můžete procházet všechny stránky dokumentu PDF pomocí a`for` smyčka. Pro každou stránku můžete získat barevný typ stránky pomocí`ColorType` majetek z`Page` objekt a zobrazit jej v konzole.
 
 ```csharp
 for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
@@ -97,11 +97,11 @@ A: Vlastnost "ColorType" objektu "Page" v Aspose.PDF for .NET představuje barev
 
 #### Otázka: Mohu určit typ barvy konkrétní stránky ve vícestránkovém dokumentu PDF?
 
-Odpověď: Ano, pomocí Aspose.PDF for .NET můžete určit typ barvy konkrétní stránky ve vícestránkovém dokumentu PDF. Poskytnutý zdrojový kód C# ukazuje, jak procházet všemi stránkami v dokumentu PDF a analyzovat typ barev každé stránky. Kód můžete snadno upravit tak, aby analyzoval typ barvy konkrétní stránky zadáním čísla stránky.
+Odpověď: Ano, pomocí Aspose.PDF for .NET můžete určit typ barvy konkrétní stránky ve vícestránkovém dokumentu PDF. Poskytnutý zdrojový kód C# ukazuje, jak procházet všemi stránkami v dokumentu PDF a analyzovat typ barev každé stránky. Kód můžete snadno upravit tak, aby analyzoval barevný typ konkrétní stránky, zadáním čísla stránky.
 
 #### Otázka: Co znamená „ColorType.Undefined“?
 
-Odpověď: "ColorType.Undefined" znamená, že typ barvy stránky není explicitně definován. K tomu může dojít v některých případech, kdy obsah stránky nespadá do kategorií černobílé, šedé nebo barvy RGB.
+Odpověď: "ColorType.Undefined" znamená, že typ barvy stránky není explicitně definován. To se může stát v některých případech, kdy obsah stránky nespadá do kategorií černobílé, šedé nebo barvy RGB.
 
 #### Otázka: Mohu tuto funkci použít k převodu stránek na určitý barevný typ (např. stupně šedi)?
 

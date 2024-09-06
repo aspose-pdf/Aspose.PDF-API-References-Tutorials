@@ -11,8 +11,8 @@ description: 許可 Aspose.PDF for .NET 教學課程將引導您管理使用 Asp
 ## 教學
 | 標題 | 描述 |
 | --- | --- | 
-| [在 PDF 檔案中配置計量許可證密鑰](./configure-metered-license/) | 使用 Aspose.PDF for .NET 在 PDF 檔案中設定計量許可證金鑰並受益於進階功能的逐步指南。 |  
-| [從文件載入許可證](./load-license-from-file/) | 使用 Aspose.PDF for .NET 從文件載入授權的逐步指南。解鎖附加功能並以最佳方式使用 Aspose.PDF。 |  
-| [從流對象載入許可證](./load-license-from-stream-object/) | 使用 Aspose.PDF for .NET 從 Stream 物件載入授權的逐步指南。解鎖附加功能。 |  
-| [PDF 檔案中的安全許可證](./secure-license/) | 使用 Aspose.PDF for .NET 保護 PDF 檔案中的授權的逐步指南。保護您的 PDF 應用程式免遭未經授權的存取。 |  
-| [使用嵌入式資源設定許可證](./set-license-using-embedded-resource/) | 使用 Aspose.PDF for .NET 的嵌入式資源設定授權的逐步指南。解鎖全部功能。 |  
+| [在 PDF 檔案中配置計量許可證密鑰](./configure-metered-license/) | 透過這份全面的逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中配置計量授權金鑰。 |  
+| [從文件載入許可證](./load-license-from-file/) | 透過這份綜合指南，了解如何從 Aspose.PDF for .NET 中的文件載入許可證。透過正確設定許可證來確保完整功能。 |  
+| [從流對象載入許可證](./load-license-from-stream-object/) | 透過這份全面的逐步指南，了解如何從 Aspose.PDF for .NET 中的串流物件載入授權。 |  
+| [PDF 檔案中的安全許可證](./secure-license/) | 透過此逐步指南了解如何保護 PDF 檔案中的 Aspose.PDF 授權。輕鬆解鎖高級功能並確保合規性。 |  
+| [使用嵌入式資源設定許可證](./set-license-using-embedded-resource/) | 透過這份綜合指南釋放 Aspose.PDF for .NET 的強大功能。了解如何設定許可證、操作 PDF 等。 |  

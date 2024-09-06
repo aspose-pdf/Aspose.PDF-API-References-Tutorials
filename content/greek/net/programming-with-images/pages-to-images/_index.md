@@ -54,11 +54,11 @@ using (FileStream imageStream = new FileStream(dataDir + "image" + pageCount + "
 // Κωδικός για τη μετατροπή της σελίδας σε εικόνα
 }
 ```
-4.  μεσα στην`using` μπλοκ, δημιουργία α`Resolution` αντικείμενο για να ορίσετε την ανάλυση της εικόνας.
+4.  Μέσα στο`using` μπλοκ, δημιουργία α`Resolution` αντικείμενο για να ορίσετε την ανάλυση της εικόνας.
 ```csharp
 Resolution resolution = new Resolution(300);
 ```
-5.  Δημιουργώ ένα`JpegDevice` αντικείμενο χρησιμοποιώντας την καθορισμένη ανάλυση και ποιότητα.
+5.  Δημιουργία α`JpegDevice` αντικείμενο χρησιμοποιώντας την καθορισμένη ανάλυση και ποιότητα.
 ```csharp
 JpegDevice jpegDevice = new JpegDevice(resolution, 100);
 ```
@@ -88,12 +88,12 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 	{
 		// Δημιουργία συσκευής JPEG με καθορισμένα χαρακτηριστικά
 		// Πλάτος, Ύψος, Ανάλυση, Ποιότητα
-		// Ποιότητα [0-100], 100 είναι η μέγιστη
+		//Ποιότητα [0-100], 100 είναι η μέγιστη
 		// Δημιουργία αντικειμένου ανάλυσης
 		Resolution resolution = new Resolution(300);
-		//JpegDevice jpegDevice = new JpegDevice(500, 700, ανάλυση, 100);
+		// JpegDevice jpegDevice = new JpegDevice(500, 700, ανάλυση, 100);
 		JpegDevice jpegDevice = new JpegDevice(resolution, 100);
-		//Μετατρέψτε μια συγκεκριμένη σελίδα και αποθηκεύστε την εικόνα σε ροή
+		// Μετατρέψτε μια συγκεκριμένη σελίδα και αποθηκεύστε την εικόνα σε ροή
 		jpegDevice.Process(pdfDocument.Pages[pageCount], imageStream);
 		// Κλείσιμο ροής
 		imageStream.Close();
@@ -102,7 +102,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 System.Console.WriteLine("PDF pages are converted to individual images successfully!");
 ```
 
-## συμπέρασμα
+## Σύναψη
 Ακολουθώντας αυτόν τον οδηγό βήμα προς βήμα, μάθατε πώς να μετατρέπετε τις σελίδες ενός εγγράφου PDF σε μεμονωμένες εικόνες χρησιμοποιώντας τη βιβλιοθήκη Aspose.PDF για .NET. Αυτή η διαδικασία περιλαμβάνει τη ρύθμιση του έργου, την εισαγωγή των απαραίτητων χώρων ονομάτων, την προετοιμασία μεταβλητών και διαδρομών και τη μετατροπή σελίδων σε εικόνες. Τώρα μπορείτε να ενσωματώσετε αυτόν τον κώδικα στα δικά σας έργα και να τον τροποποιήσετε ώστε να ταιριάζει στις συγκεκριμένες ανάγκες σας.
 
 ### Συχνές ερωτήσεις
@@ -117,7 +117,7 @@ System.Console.WriteLine("PDF pages are converted to individual images successfu
 
 #### Ε: Μπορώ να προσαρμόσω την ανάλυση και την ποιότητα της εικόνας κατά τη διαδικασία μετατροπής;
 
- Α: Ναι, μπορείτε να προσαρμόσετε την ανάλυση και την ποιότητα της εικόνας δημιουργώντας ένα`Resolution` αντικείμενο και προσδιορίζοντας τις επιθυμητές τιμές. Στον παρεχόμενο κωδικό,`Resolution resolution = new Resolution(300)` ορίζει την ανάλυση σε 300 DPI και`JpegDevice jpegDevice = new JpegDevice(resolution, 100)` καθορίζει την ποιότητα εικόνας ως 100.
+ Α: Ναι, μπορείτε να προσαρμόσετε την ανάλυση και την ποιότητα της εικόνας δημιουργώντας ένα`Resolution` αντικείμενο και καθορίζοντας τις επιθυμητές τιμές. Στον παρεχόμενο κωδικό,`Resolution resolution = new Resolution(300)` ορίζει την ανάλυση σε 300 DPI και`JpegDevice jpegDevice = new JpegDevice(resolution, 100)` καθορίζει την ποιότητα εικόνας ως 100.
 
 #### Ε: Πώς μπορώ να καθορίσω τη μορφή αρχείου εξόδου και την ονομασία για τις εικόνες που έχουν μετατραπεί;
 

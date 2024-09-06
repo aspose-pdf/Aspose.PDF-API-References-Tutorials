@@ -1,6 +1,6 @@
 ---
-title: Oldalszám bélyegek PDF fájlban
-linktitle: Oldalszám bélyegek PDF fájlban
+title: Oldalszám bélyegzők PDF fájlban
+linktitle: Oldalszám bélyegzők PDF fájlban
 second_title: Aspose.PDF for .NET API Reference
 description: Ismerje meg, hogyan adhat hozzá oldalszámbélyegzőket PDF-fájlhoz az Aspose.PDF for .NET segítségével.
 type: docs
@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 2. lépés: A meglévő PDF dokumentum betöltése
 
-Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Itt van, hogyan:
+Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Íme, hogyan:
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
@@ -32,7 +32,7 @@ Feltétlenül cserélje ki a „DOKUMENTUMKÖNYVTÁR” elemet a PDF-dokumentum 
 
 ## 3. lépés: Az oldalszámozási bélyegző létrehozása és konfigurálása
 
-Most, hogy a PDF dokumentum betöltődött, létrehozhatunk egy oldalszámozási puffert, és igényeink szerint konfigurálhatjuk. Itt van, hogyan:
+Most, hogy a PDF dokumentum betöltődött, létrehozhatunk egy oldalszámozási puffert, és igényeink szerint konfigurálhatjuk. Íme, hogyan:
 
 ```csharp
 // Hozzon létre egy oldalszám puffert
@@ -65,7 +65,7 @@ fenti kód oldalszámbélyeget hoz létre olyan tulajdonságokkal, mint az oldal
 
 ## 4. lépés: Az oldalszámbélyegző hozzáadása egy adott oldalhoz
 
-Az oldalszámbélyegző beállítása után hozzáadhatjuk a PDF dokumentum egy adott oldalához. Itt van, hogyan:
+Az oldalszámbélyegző beállítása után hozzáadhatjuk a PDF dokumentum egy adott oldalához. Íme, hogyan:
 
 ```csharp
 // Adja hozzá az oldalszám puffert egy adott oldalhoz
@@ -76,7 +76,7 @@ A fenti kód hozzáadja az oldalszám bélyeget a PDF dokumentum első oldaláho
 
 ## 5. lépés: Mentse el a módosított PDF dokumentumot
 
-Miután az oldalszám bélyegzőt hozzáadtuk a PDF dokumentumhoz, elmenthetjük a módosított PDF dokumentumot. Itt van, hogyan:
+Miután az oldalszám bélyegzőt hozzáadtuk a PDF dokumentumhoz, elmenthetjük a módosított PDF dokumentumot. Íme, hogyan:
 
 ```csharp
 // Mentse el a módosított PDF dokumentumot

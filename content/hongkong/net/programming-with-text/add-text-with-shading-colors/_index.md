@@ -51,7 +51,7 @@ TextFragment textFragment = absorb.TextFragments[1];
 ```
 
 ## 步驟6：設定文字的底紋顏色
-創建一個新的`Color`具有圖案色彩空間的物件並指定漸層著色顏色。將此顏色指派給`ForegroundColor`的財產`TextState`的`TextFragment`目的。
+創建一個新的`Color`具有圖案色彩空間的物件並指定漸層著色顏色。將此顏色指定給`ForegroundColor`的財產`TextState`的`TextFragment`目的。
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
@@ -139,7 +139,7 @@ TextFragment textFragment = absorber.TextFragments[1];
 
 #### Q：如何設定文字的底紋顏色？
 
-答：在步驟 6 中，您將建立一個新的`Color`具有圖案色彩空間的物件並指定漸層著色顏色。將此顏色指派給`ForegroundColor`的財產`TextState`的`TextFragment`目的：
+答：在步驟 6 中，您將建立一個新的`Color`具有圖案色彩空間的物件並指定漸層著色顏色。將此顏色指定給`ForegroundColor`的財產`TextState`的`TextFragment`目的：
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()

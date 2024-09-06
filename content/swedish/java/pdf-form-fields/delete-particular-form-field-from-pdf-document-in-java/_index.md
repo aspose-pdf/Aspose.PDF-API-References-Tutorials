@@ -35,7 +35,7 @@ Document pdfDocument = new Document("input.pdf");
 
 ## Steg 3: Identifiera formulärfältet
 
- Nu måste vi identifiera det specifika formulärfältet du vill ta bort. Du kan göra detta genom dess namn. Byta ut`"fieldName"` med det faktiska namnet på formulärfältet du vill ta bort.
+ Nu måste vi identifiera det specifika formulärfältet du vill ta bort. Du kan göra detta genom dess namn. Ersätta`"fieldName"` med det faktiska namnet på formulärfältet du vill ta bort.
 
 ```java
 // Identifiera formulärfältet med namn
@@ -69,7 +69,7 @@ Grattis! Du har framgångsrikt tagit bort ett visst formulärfält från ett PDF
 
 ### Hur hittar jag namnet på ett formulärfält i ett PDF-dokument?
 
-Du kan vanligtvis hitta namnet på ett formulärfält genom att inspektera PDF-dokumentets struktur eller genom att använda en PDF-redigerare som låter dig se formulärfältegenskaper.
+Du kan vanligtvis hitta namnet på ett formulärfält genom att inspektera PDF-dokumentets struktur eller genom att använda en PDF-redigerare som låter dig visa formulärfältegenskaper.
 
 ### Finns det några begränsningar för att använda Aspose.PDF för Java?
 

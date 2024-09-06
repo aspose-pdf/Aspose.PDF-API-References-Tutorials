@@ -1,26 +1,26 @@
 ---
-title: Elementos de estructura de enlace
-linktitle: Elementos de estructura de enlace
-second_title: Aspose.PDF para referencia de API .NET
-description: Guía paso a paso para utilizar elementos de estructura de enlaces con Aspose.PDF para .NET. Cree hipervínculos en sus documentos PDF.
+title: Elementos de la estructura de enlaces
+linktitle: Elementos de la estructura de enlaces
+second_title: Referencia de API de Aspose.PDF para .NET
+description: Guía paso a paso para utilizar elementos de estructura de vínculos con Aspose.PDF para .NET. Cree hipervínculos en sus documentos PDF.
 type: docs
 weight: 120
 url: /es/net/programming-with-tagged-pdf/link-structure-elements/
 ---
-En esta guía paso a paso, le mostraremos cómo utilizar elementos de estructura de enlaces con Aspose.PDF para .NET. Aspose.PDF es una poderosa biblioteca que le permite crear y manipular documentos PDF mediante programación. Los elementos de la estructura de enlaces le permiten agregar hipervínculos a su documento PDF, lo que permite a los usuarios hacer clic en los enlaces y navegar a recursos en línea.
+En esta guía paso a paso, le mostraremos cómo utilizar elementos de estructura de vínculos con Aspose.PDF para .NET. Aspose.PDF es una potente biblioteca que le permite crear y manipular documentos PDF mediante programación. Los elementos de estructura de vínculos le permiten agregar hipervínculos a su documento PDF, lo que permite a los usuarios hacer clic en los vínculos y navegar a recursos en línea.
 
-Profundicemos en el código y aprendamos a utilizar elementos de estructura de enlaces con Aspose.PDF para .NET.
+Profundicemos en el código y aprendamos cómo utilizar elementos de estructura de enlace con Aspose.PDF para .NET.
 
-## Requisitos previos
+## Prerrequisitos
 
 Antes de comenzar, asegúrese de tener lo siguiente:
 
 1. Biblioteca Aspose.PDF para .NET instalada.
-2. Conocimientos básicos del lenguaje de programación C#.
+2. Un conocimiento básico del lenguaje de programación C#.
 
-## Paso 1: configurar el entorno
+## Paso 1: Configuración del entorno
 
-Para comenzar, abra su entorno de desarrollo C# y cree un nuevo proyecto. Asegúrese de haber agregado una referencia a la biblioteca Aspose.PDF para .NET en su proyecto.
+Para comenzar, abra su entorno de desarrollo de C# y cree un nuevo proyecto. Asegúrese de haber agregado una referencia a la biblioteca Aspose.PDF para .NET en su proyecto.
 
 ```csharp
 // La ruta al directorio de documentos.
@@ -30,7 +30,7 @@ string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 ```
 
-## Paso 2: crear el documento
+## Paso 2: Creación del documento
 
  El primer paso es crear un nuevo documento PDF utilizando el`Document` clase.
 
@@ -39,33 +39,33 @@ string imgFile = dataDir + "google-icon-512.png";
 Document document = new Document();
 ```
 
-## Paso 3: trabajar con contenido etiquetado
+## Paso 3: Trabajar con contenido etiquetado
 
-Luego obtenemos el contenido etiquetado del documento con el que trabajar.
+Luego obtenemos el contenido etiquetado del documento para trabajar con él.
 
 ```csharp
-// Obtener el contenido etiquetado del documento.
+// Obtener el contenido etiquetado del documento
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Paso 4: Establecer el título y el idioma del documento
+## Paso 4: Establezca el título y el idioma del documento
 
 Ahora podemos configurar el título y el idioma del documento.
 
 ```csharp
-// Definir el título y el idioma del documento.
+// Definir el título y el idioma del documento
 taggedContent.SetTitle("Example Link Items");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Paso 5: agregar elementos de estructura de enlace
+## Paso 5: Agregar elementos de la estructura del enlace
 
-Ahora agreguemos elementos de estructura de enlaces a nuestro documento. Crearemos diferentes tipos de enlaces, incluidos enlaces de texto simples, enlaces de imágenes y enlaces de varias líneas.
+Ahora, agreguemos elementos de estructura de enlaces a nuestro documento. Crearemos distintos tipos de enlaces, incluidos enlaces de texto simples, enlaces de imágenes y enlaces de varias líneas.
 ```csharp
-// Obtenga el elemento de estructura raíz (elemento de estructura del documento)
+// Obtener el elemento de estructura raíz (elemento de estructura del documento)
 StructureElement rootElement = taggedContent.RootElement;
 
-// Agregar un párrafo con un hipervínculo
+// Añadir un párrafo con un hipervínculo
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
 LinkElement link1 = taggedContent.CreateLinkElement();
@@ -74,7 +74,7 @@ link1.Hyperlink = new WebHyperlink("http://google.com");
 link1.SetText("Google");
 link1.AlternateDescriptions = "Link to Google";
 
-// Agregue un párrafo con un hipervínculo que contenga texto enriquecido
+// Agregar un párrafo con un hipervínculo que contenga texto enriquecido
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p2);
 LinkElement link2 = taggedContent.CreateLinkElement();
@@ -85,7 +85,7 @@ span2.SetText("Google");
 link2.AppendChild(span2);
 link2.AlternateDescriptions = "Link to Google";
 
-// Agregue un párrafo con un hipervínculo que contenga texto parcialmente formateado
+// Agregar un párrafo con un hipervínculo que contenga texto parcialmente formateado
 ParagraphElement p3 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p3);
 LinkElement link3 = taggedContent.CreateLinkElement();
@@ -109,7 +109,7 @@ link4.Hyperlink = new WebHyperlink("http://google.com");
 link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
 link4.AlternateDescriptions = "Link to Google (multiline)";
 
-// Agregue un párrafo con un hipervínculo que contenga una imagen
+// Añadir un párrafo con un hipervínculo que contenga una imagen
 ParagraphElement p5 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p5);
 LinkElement link5 = taggedContent.CreateLinkElement();
@@ -126,28 +126,28 @@ link5.AppendChild(figure5);
 link5.AlternateDescriptions = "Link to Google";
 ```
 
-## Paso 6: guarde el documento PDF etiquetado
+## Paso 6: Guarde el documento PDF etiquetado
 
-Finalmente guardamos el documento PDF etiquetado.
+Finalmente, guardamos el documento PDF etiquetado.
 
 ```csharp
-// Guarde el documento PDF etiquetado
+// Guardar el documento PDF etiquetado
 document. Save(outFile);
 ```
 
-## Paso 7: Verifique el cumplimiento de PDF/UA
+## Paso 7: Verificar la conformidad con PDF/UA
 
- También podemos verificar que el documento cumpla con PDF/UA utilizando el`Validate` método de la`Document` clase.
+ También podemos comprobar la conformidad del documento con PDF/UA utilizando el`Validate` método de la`Document` clase.
 
 ```csharp
-// Verifique el cumplimiento de PDF/UA
+// Verificar la conformidad con PDF/UA
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
 
-### Código fuente de muestra para elementos de estructura de enlaces usando Aspose.PDF para .NET 
+### Código fuente de muestra para elementos de estructura de enlaces que utilizan Aspose.PDF para .NET 
 ```csharp
 
 // La ruta al directorio de documentos.
@@ -156,11 +156,11 @@ string outFile = dataDir + "LinkStructureElements_Output.pdf";
 string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 
-// Creación de documento y obtención de contenido PDF etiquetado
+// Creación de documentos y obtención de contenido PDF etiquetado
 Document document = new Document(); 
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Configuración del título y el idioma natural del documento
+// Configuración del título y el idioma de la naturaleza del documento
 taggedContent.SetTitle("Link Elements Example");
 taggedContent.SetLanguage("en-US");
 
@@ -220,7 +220,7 @@ link5.AlternateDescriptions = "Link to Google";
 // Guardar documento PDF etiquetado
 document.Save(outFile);
 
-// Comprobación del cumplimiento de PDF/UA
+// Comprobación de la conformidad con PDF/UA
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
@@ -228,45 +228,45 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 ```
 ## Conclusión
 
-¡Enhorabuena! Ha aprendido a utilizar elementos de estructura de enlaces con Aspose.PDF para .NET. Ahora puede crear hipervínculos en sus documentos PDF, lo que permite a los usuarios navegar a recursos en línea. Experimente y explore más funciones de Aspose.PDF para crear documentos PDF interactivos y enriquecidos.
+¡Felicitaciones! Aprendió a usar elementos de estructura de vínculos con Aspose.PDF para .NET. Ahora puede crear hipervínculos en sus documentos PDF, lo que permite a los usuarios navegar a recursos en línea. Experimente y explore más funciones de Aspose.PDF para crear documentos PDF interactivos y enriquecidos.
 
 ### Preguntas frecuentes
 
-#### P: ¿Qué son los elementos de la estructura de vínculos en un documento PDF y cómo mejoran la interactividad del documento?
+#### P: ¿Qué son los elementos de estructura de enlace en un documento PDF y cómo mejoran la interactividad del documento?
 
-R: Los elementos de la estructura de vínculos en un documento PDF se utilizan para crear hipervínculos que permiten a los usuarios navegar a recursos en línea o ubicaciones específicas dentro del documento. Estos elementos mejoran la interactividad al proporcionar enlaces en los que se puede hacer clic y que permiten a los usuarios acceder a contenido relacionado o sitios web externos.
+A: Los elementos de estructura de enlaces de un documento PDF se utilizan para crear hipervínculos que permiten a los usuarios navegar a recursos en línea o a ubicaciones específicas dentro del documento. Estos elementos mejoran la interactividad al proporcionar enlaces en los que se puede hacer clic que permiten a los usuarios acceder a contenido relacionado o a sitios web externos.
 
-#### P: ¿Cómo pueden resultar beneficiosos los elementos de la estructura de enlaces en un documento PDF?
+#### P: ¿Cómo pueden resultar beneficiosos los elementos de estructura de enlace en un documento PDF?
 
-R: Los elementos de la estructura de enlaces mejoran la experiencia del usuario al hacer que el documento PDF sea interactivo. Proporcionan acceso rápido a información adicional, contenido relacionado, sitios web externos o secciones específicas dentro del documento, mejorando la navegación y facilitando la recuperación de información.
+A: Los elementos de estructura de enlaces mejoran la experiencia del usuario al hacer que el documento PDF sea interactivo. Proporcionan un acceso rápido a información adicional, contenido relacionado, sitios web externos o secciones específicas dentro del documento, lo que mejora la navegación y facilita la recuperación de información.
 
-#### P: ¿Puedo crear diferentes tipos de hipervínculos utilizando elementos de estructura de vínculos en Aspose.PDF para .NET?
+#### P: ¿Puedo crear diferentes tipos de hipervínculos utilizando elementos de estructura de enlace en Aspose.PDF para .NET?
 
-R: Sí, puede crear varios tipos de hipervínculos utilizando elementos de estructura de vínculos. Aspose.PDF para .NET le permite crear hipervínculos con texto sin formato, texto enriquecido, imágenes y descripciones de varias líneas, lo que ofrece versatilidad en la forma de vincular contenido externo o ubicaciones dentro del documento.
+R: Sí, puede crear varios tipos de hipervínculos utilizando elementos de estructura de vínculo. Aspose.PDF para .NET le permite crear hipervínculos con texto simple, texto enriquecido, imágenes y descripciones de varias líneas, lo que ofrece versatilidad en la forma de vincular a contenido externo o ubicaciones dentro del documento.
 
-#### P: ¿Cómo configuro e inicializo elementos de estructura de enlaces en un documento PDF usando Aspose.PDF para .NET?
+#### P: ¿Cómo configuro e inicializo elementos de estructura de enlace en un documento PDF usando Aspose.PDF para .NET?
 
- R: Para utilizar elementos de estructura de vínculos, primero debe crear un nuevo documento PDF utilizando el`Document` clase. Luego, obtenga el contenido etiquetado usando el`TaggedContent`propiedad del documento. Desde allí, puede crear y personalizar elementos de estructura de enlaces y agregarlos al elemento de estructura raíz.
+ A: Para utilizar elementos de estructura de enlace, primero debe crear un nuevo documento PDF utilizando el`Document` clase. Luego, obtenga el contenido etiquetado utilizando el`TaggedContent`propiedad del documento. Desde allí, puede crear y personalizar elementos de estructura de vínculo y agregarlos al elemento de estructura raíz.
 
-#### P: ¿Cómo puedo crear un hipervínculo de texto simple utilizando elementos de estructura de vínculo?
- R: Puedes crear un hipervínculo de texto simple creando un`LinkElement` y estableciendo su`Hyperlink` propiedad a un`WebHyperlink` con la URL a la que desea vincular. También puede configurar el texto para mostrar del enlace usando el`SetText` método.
+#### P: ¿Cómo puedo crear un hipervínculo de texto simple utilizando elementos de estructura de enlace?
+ A: Puede crear un hipervínculo de texto simple creando un`LinkElement` y estableciendo su`Hyperlink` propiedad a un`WebHyperlink` con la URL a la que desea vincular. También puede configurar el texto que se mostrará en el enlace mediante el botón`SetText` método.
 
-#### P: ¿Es posible crear hipervínculos con imágenes utilizando elementos de estructura de vínculos?
+#### P: ¿Es posible crear hipervínculos con imágenes utilizando elementos de estructura de enlace?
 
- R: Sí, puede crear hipervínculos con imágenes utilizando elementos de estructura de vínculos. crearías un`LinkElement` y luego agregar un`FigureElement` con una imagen. Esto le permite crear un hipervínculo basado en imágenes.
+ R: Sí, puedes crear hipervínculos con imágenes utilizando elementos de estructura de vínculo. Crearías un`LinkElement` y luego anexar un`FigureElement` Con una imagen adjunta. Esto le permite crear un hipervínculo basado en una imagen.
 
-#### P: ¿Cómo puedo asegurarme de que mi documento PDF con hipervínculos cumpla con el estándar PDF/UA de accesibilidad?
+#### P: ¿Cómo puedo asegurarme de que mi documento PDF con hipervínculos cumple con el estándar PDF/UA de accesibilidad?
 
- R: Aspose.PDF para .NET brinda la capacidad de validar el cumplimiento de su documento PDF con el estándar PDF/UA utilizando el`Validate` método de la`Document`clase. Esto garantiza que los hipervínculos del documento sean accesibles para los usuarios con discapacidades.
+ A: Aspose.PDF para .NET brinda la posibilidad de validar el cumplimiento de su documento PDF con el estándar PDF/UA mediante el`Validate` método de la`Document`clase. Esto garantiza que los hipervínculos del documento sean accesibles para usuarios con discapacidades.
 
-#### P: ¿Cuáles son las descripciones alternativas para los elementos de la estructura de enlaces y por qué son importantes?
+#### P: ¿Cuáles son las descripciones alternativas de los elementos de la estructura de enlace y por qué son importantes?
 
-R: Las descripciones alternativas (texto alternativo) para los elementos de la estructura de enlaces proporcionan descripciones textuales de los hipervínculos. Estas descripciones son esenciales para la accesibilidad, permitiendo a los usuarios con discapacidad visual comprender el propósito del enlace y su destino.
+A: Las descripciones alternativas (texto alternativo) de los elementos de la estructura de enlaces proporcionan descripciones textuales de los hipervínculos. Estas descripciones son esenciales para la accesibilidad, ya que permiten que los usuarios con discapacidades visuales comprendan el propósito del enlace y su destino.
 
-#### P: ¿Puedo personalizar la apariencia y el comportamiento de los hipervínculos creados utilizando elementos de la estructura del vínculo?
+#### P: ¿Puedo personalizar la apariencia y el comportamiento de los hipervínculos creados utilizando elementos de estructura de enlace?
 
-R: Si bien los elementos de la estructura de enlaces se centran principalmente en la creación de hipervínculos, puede personalizar aún más la apariencia y el comportamiento de los hipervínculos utilizando otras funciones que ofrece Aspose.PDF para .NET. Esto incluye especificar colores, estilos y acciones de enlace.
+R: Si bien los elementos de la estructura de enlaces se centran principalmente en la creación de hipervínculos, puede personalizar aún más la apariencia y el comportamiento de los hipervínculos mediante otras funciones que ofrece Aspose.PDF para .NET, como especificar colores, estilos y acciones de los enlaces.
 
-#### P: ¿Cómo contribuyen los elementos de la estructura de vínculos a hacer que los documentos PDF sean más interactivos y fáciles de usar?
+#### P: ¿Cómo contribuyen los elementos de estructura de enlaces a hacer que los documentos PDF sean más interactivos y fáciles de usar?
 
-R: Los elementos de la estructura de enlaces transforman documentos PDF estáticos en experiencias interactivas agregando hipervínculos en los que se puede hacer clic. Esta interactividad mejora la participación del usuario, permite una navegación fluida entre contenido relacionado y mejora la usabilidad general del documento.
+A: Los elementos de estructura de enlaces transforman los documentos PDF estáticos en experiencias interactivas al agregar hipervínculos en los que se puede hacer clic. Esta interactividad mejora la participación del usuario, permite una navegación fluida entre contenidos relacionados y mejora la usabilidad general del documento.

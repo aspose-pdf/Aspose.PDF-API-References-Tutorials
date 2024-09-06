@@ -18,7 +18,7 @@ Než začneme, ujistěte se, že máte splněny následující předpoklady:
 
 - Java Development Kit (JDK) nainstalovaný ve vašem systému.
 - Integrované vývojové prostředí (IDE) dle vašeho výběru (např. Eclipse, IntelliJ IDEA).
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Nastavení prostředí
 
@@ -83,13 +83,13 @@ pdfDocument.save("path/to/your/output/modified.pdf");
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili, jak nahradit obrázek v existujícím souboru PDF pomocí Java a knihovny Aspose.PDF for Java. To může být neuvěřitelně užitečné, když potřebujete aktualizovat nebo upravit dokumenty PDF programově.
+Gratuluji! Úspěšně jste se naučili, jak nahradit obrázek v existujícím souboru PDF pomocí Java a knihovny Aspose.PDF for Java. To může být neuvěřitelně užitečné, když potřebujete aktualizovat nebo upravit dokumenty PDF programově.
 
 ## Nejčastější dotazy
 
 ### Jak mohu získat knihovnu Aspose.PDF for Java?
 
- Knihovnu Aspose.PDF for Java si můžete stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+ Knihovnu Aspose.PDF for Java si můžete stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ### Je knihovna Aspose.PDF zdarma k použití?
 
@@ -105,4 +105,4 @@ Aspose.PDF for Java podporuje širokou škálu obrazových formátů, včetně J
 
 ### Jak mohu získat podporu nebo další pomoc?
 
- Další podporu a zdroje naleznete v dokumentaci k Aspose.PDF for Java na adrese[tady](https://reference.aspose.com/pdf/java/).
+ Další podporu a zdroje naleznete v dokumentaci k Aspose.PDF for Java na adrese[zde](https://reference.aspose.com/pdf/java/).

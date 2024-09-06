@@ -106,7 +106,7 @@ taggedContent.SetLanguage("en-US");
 ParagraphElement p = taggedContent.CreateParagraphElement();
 taggedContent.RootElement.AppendChild(p);
 
-// Υπό ανάπτυξη
+// Υπό Ανάπτυξη
 p.StructureTextState.FontSize = 18F;
 p.StructureTextState.ForegroundColor = Color.Red;
 p.StructureTextState.FontStyle = FontStyles.Italic;
@@ -117,7 +117,7 @@ document.Save(dataDir + "StyleTextStructure.pdf");
 
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Σε αυτό το σεμινάριο, μάθαμε πώς να διαμορφώνουμε το στυλ και τη μορφοποίηση της δομής κειμένου σε ένα έγγραφο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Τώρα μπορείτε να χρησιμοποιήσετε το Aspose.PDF για να δημιουργήσετε έγγραφα PDF με προσαρμοσμένη μορφοποίηση κειμένου.
 

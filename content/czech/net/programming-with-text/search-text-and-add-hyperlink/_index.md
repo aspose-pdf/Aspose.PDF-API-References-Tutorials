@@ -43,7 +43,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 4: Vytvořte TextFragmentAbsorber
 
- Vytvořit`TextFragmentAbsorber` objekt k nalezení všech výskytů vstupní vyhledávací fráze:
+ Vytvořte a`TextFragmentAbsorber` objekt k nalezení všech výskytů vstupní vyhledávací fráze:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
@@ -61,7 +61,7 @@ absorber.TextSearchOptions = new TextSearchOptions(true);
 
 ## Krok 6: Otevřete a svažte dokument PDF
 
- Vytvořit`PdfContentEditor` objekt a svázat jej se zdrojovým souborem PDF:
+ Vytvořte a`PdfContentEditor` objekt a svázat jej se zdrojovým souborem PDF:
 
 ```csharp
 PdfContentEditor editor = new PdfContentEditor();
@@ -82,7 +82,7 @@ editor.Document.Pages[1].Accept(absorber);
 
 ## Krok 8: Přidejte k nalezenému textu hypertextové odkazy
 
-Procházejte načtené fragmenty textu a přidejte k nim hypertextové odkazy:
+Procházejte načtené části textu a přidejte k nim hypertextové odkazy:
 
 ```csharp
 foreach (TextFragment textFragment in absorber.TextFragments)
@@ -149,7 +149,7 @@ Console.WriteLine("\nText replaced and hyperlink added successfully based on a r
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili, jak vyhledat konkrétní text v dokumentu PDF, přidat k nalezenému textu hypertextové odkazy a uložit upravený dokument pomocí Aspose.PDF for .NET. Tento výukový program poskytuje průvodce krok za krokem, od nastavení projektu až po provedení požadovaných akcí. Nyní můžete tento kód začlenit do svých vlastních projektů C# a manipulovat s textem a přidávat hypertextové odkazy do souborů PDF.
+Gratuluji! Úspěšně jste se naučili, jak vyhledat konkrétní text v dokumentu PDF, přidat k nalezenému textu hypertextové odkazy a uložit upravený dokument pomocí Aspose.PDF for .NET. Tento výukový program poskytuje průvodce krok za krokem, od nastavení projektu až po provedení požadovaných akcí. Nyní můžete tento kód začlenit do svých vlastních projektů C# a manipulovat s textem a přidávat hypertextové odkazy do souborů PDF.
 
 ### FAQ
 
@@ -179,7 +179,7 @@ Odpověď: Ano, tento kurz se konkrétně zaměřuje na přidávání hypertexto
 
 #### Otázka: Jak mohu povolit vyhledávání textu pomocí regulárních výrazů?
 
- A: Hledání regulárních výrazů je povoleno vytvořením a`TextSearchOptions` objektu a nastavení jeho hodnoty na`true` . Přiřaďte tento objekt k`TextSearchOptions` vlastnictvím`TextFragmentAbsorber` instance. Tím je zajištěno, že se při vyhledávání textu použije vzor regulárního výrazu.
+ A: Hledání regulárních výrazů je povoleno vytvořením a`TextSearchOptions` objektu a nastavení jeho hodnoty na`true` . Přiřaďte tento objekt k`TextSearchOptions` majetek z`TextFragmentAbsorber` instance. Tím je zajištěno, že se při vyhledávání textu použije vzor regulárního výrazu.
 
 #### Otázka: Jak přidám hypertextové odkazy k nalezenému textu?
 

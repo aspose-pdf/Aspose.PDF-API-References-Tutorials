@@ -9,7 +9,7 @@ url: /cs/java/pdf-tags-and-structure/create-structure-element-tree-in-pdf-using-
 ---
 V tomto tutoriálu vás provedeme procesem vytváření stromu prvků struktury v dokumentu PDF pomocí Aspose.PDF for Java. Stromy prvků struktury jsou nezbytné pro zpřístupnění a dobrou strukturu dokumentů PDF, zejména pro zrakově postižené uživatele, kteří se spoléhají na programy pro čtení z obrazovky. Poskytneme vám podrobné pokyny a zdrojový kód Java, jak toho dosáhnout.
 
-## Úvod
+## Zavedení
 
 Dokumenty PDF často obsahují složitý obsah, který je třeba organizovat a prezentovat strukturovaným způsobem. To je zásadní pro přístupnost a zajištění toho, aby všichni uživatelé, včetně těch se zrakovým postižením, mohli porozumět obsahu dokumentu. V tomto tutoriálu prozkoumáme, jak vytvořit strom strukturních prvků v dokumentu PDF pomocí Aspose.PDF pro Java.
 
@@ -19,7 +19,7 @@ Strom prvků struktury, často označovaný jako „tagované PDF“, je hierarc
 
 ## Krok 1: Nastavení vývojového prostředí
 
- Než se ponoříme do kódu, ujistěte se, že máte nainstalovanou knihovnu Aspose.PDF for Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+ Než se ponoříme do kódu, ujistěte se, že máte nainstalovanou knihovnu Aspose.PDF for Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 Dále vytvořte projekt Java a přidejte knihovnu Aspose.PDF for Java do cesty třídy vašeho projektu.
 
@@ -74,7 +74,7 @@ pdfDocument.save("output.pdf");
 
 V tomto tutoriálu jsme si ukázali, jak vytvořit strom strukturních prvků v dokumentu PDF pomocí Aspose.PDF pro Javu. Tento strukturovaný přístup zajišťuje dostupnost a zlepšuje uživatelskou zkušenost pro všechny čtenáře, včetně těch se zdravotním postižením.
 
-Dodržením těchto kroků a začleněním prvků struktury do dokumentů PDF můžete svůj obsah učinit přístupnějším a v souladu se standardy usnadnění. Jedná se o zásadní krok k zajištění toho, aby vaše dokumenty byly komplexní a uživatelsky přívětivé.
+Dodržováním těchto kroků a začleněním prvků struktury do dokumentů PDF můžete svůj obsah učinit přístupnějším a v souladu se standardy usnadnění. Jedná se o zásadní krok k zajištění toho, aby vaše dokumenty byly komplexní a uživatelsky přívětivé.
 
 ## FAQ
 
@@ -82,7 +82,7 @@ Dodržením těchto kroků a začleněním prvků struktury do dokumentů PDF m�
 
 Strom prvků struktury představuje logickou strukturu obsahu v dokumentu PDF a umožňuje přístupnost a efektivní komunikaci obsahu uživatelům, zejména těm se zrakovým postižením.
 
-### Jak mohu přidat obrázky do označeného dokumentu PDF?
+### Jak mohu přidat obrázky do tagovaného dokumentu PDF?
 
  Můžete použít`com.aspose.pdf.Image` třídy pro přidání obrázků do tagovaného dokumentu PDF. Zajistěte, abyste k obrázkům přiřadili vhodné prvky struktury pro usnadnění.
 

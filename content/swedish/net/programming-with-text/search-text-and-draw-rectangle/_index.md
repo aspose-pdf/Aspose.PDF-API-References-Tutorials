@@ -39,7 +39,7 @@ using Aspose.Pdf.Facades;
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Byta ut`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
+ Ersätta`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
 
 ## Steg 4: Ladda PDF-dokumentet
 
@@ -49,7 +49,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 ```
 
- Byta ut`"SearchAndGetTextFromAll.pdf"` med det faktiska namnet på din PDF-fil.
+ Ersätta`"SearchAndGetTextFromAll.pdf"` med det faktiska namnet på din PDF-fil.
 
 ## Steg 5: Skapa en TextFragmentAbsorber
 
@@ -59,7 +59,7 @@ Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
 
- Byta ut`@"[\S]+"` med ditt önskade reguljära uttrycksmönster.
+ Ersätta`@"[\S]+"` med ditt önskade reguljära uttrycksmönster.
 
 ## Steg 6: Aktivera sökning i reguljära uttryck
 
@@ -152,7 +152,7 @@ S: Börja med att skapa ett nytt C#-projekt i din föredragna integrerade utveck
 
 #### F: Kan jag rita rektanglar runt specifik text med den här handledningen?
 
-S: Ja, handledningen fokuserar på att rita rektanglar runt specifika textsegment i ett PDF-dokument. Den visar hur man lokaliserar önskad text med hjälp av reguljära uttryck, skapar rektanglar runt de identifierade textsegmenten och sparar den modifierade PDF-filen.
+S: Ja, handledningen fokuserar på att rita rektanglar runt specifika textsegment i ett PDF-dokument. Den visar hur man lokaliserar den önskade texten med hjälp av reguljära uttryck, skapar rektanglar runt de identifierade textsegmenten och sparar den modifierade PDF-filen.
 
 #### F: Hur kan jag specificera texten jag vill söka efter och rita rektanglar runt?
 

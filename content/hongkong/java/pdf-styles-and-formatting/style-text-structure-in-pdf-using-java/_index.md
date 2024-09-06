@@ -21,7 +21,7 @@ PDF 已成為共享文件、報告和各種類型內容的標準格式。在 Jav
 
 ## 設定環境
 
-要開始使用 Java 設定 PDF 中的文字樣式，您需要設定開發環境。按著這些次序：
+要開始使用 Java 設定 PDF 中的文字樣式，您需要設定開發環境。請依照下列步驟操作：
 
 1. 從下列位置下載 Aspose.PDF for Java 函式庫[這裡](https://releases.aspose.com/pdf/java/).
 
@@ -194,7 +194,7 @@ textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
 
 ### 處理 PDF 中分頁符號的建議方法是什麼？
 
-若要處理 PDF 中的分頁符，請設定`IsAutoTruncated`和`IsWordWrapped`屬性到`true`在裡面`TextState`。這可確保文字被正確截斷和換行以適合頁面邊界。
+若要處理 PDF 中的分頁符，請設定`IsAutoTruncated`和`IsWordWrapped`屬性到`true`在`TextState`。這可確保文字被正確截斷和換行以適合頁面邊界。
 
 ### 如何使用浮水印保護我的 PDF 文件？
 

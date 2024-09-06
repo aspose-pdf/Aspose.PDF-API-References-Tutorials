@@ -29,7 +29,7 @@ com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document();
 
 ## Lägga till strukturelement
 
-Strukturelement läggs till PDF-dokumentet som en del av innehållet. Du kan skapa stycken, rubriker, tabeller och mer med Aspose.PDF:s API. Här är ett exempel på hur du lägger till en rubrik:
+Strukturelement läggs till PDF-dokumentet som en del av innehållet. Du kan skapa stycken, rubriker, tabeller och mer med Aspose.PDF:s API. Här är ett exempel på att lägga till en rubrik:
 
 ```java
 // Skapa ett rubrikstrukturelement

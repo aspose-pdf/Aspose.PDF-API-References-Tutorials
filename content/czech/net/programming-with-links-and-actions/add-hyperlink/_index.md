@@ -21,7 +21,7 @@ using Aspose.Pdf.Text;
 
 ## Krok 2: Nastavte cestu ke složce dokumentů
 
- tomto kroku musíte zadat cestu ke složce obsahující soubor PDF, do kterého chcete přidat hypertextový odkaz. Nahradit`"YOUR DOCUMENT DIRECTORY"` následujícím kódu se skutečnou cestou ke složce dokumentů:
+ V tomto kroku musíte zadat cestu ke složce obsahující soubor PDF, do kterého chcete přidat hypertextový odkaz. Nahradit`"YOUR DOCUMENT DIRECTORY"` v následujícím kódu se skutečnou cestou ke složce dokumentů:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -62,7 +62,7 @@ document.Pages[1].Annotations.Add(textAnnotation);
 
 ## Krok 6: Uložte aktualizovaný soubor
 
- Nyní uložme aktualizovaný soubor PDF pomocí`Save` metoda`document` objekt. Zde je odpovídající kód:
+Nyní uložme aktualizovaný soubor PDF pomocí`Save` metoda`document` objekt. Zde je odpovídající kód:
 
 ```csharp
 dataDir = dataDir + "AddHyperlink_out.pdf";
@@ -87,7 +87,7 @@ border.Width = 0;
 link.Border = border;
 // Zadejte typ odkazu jako vzdálené URI
 link.Action = new GoToURIAction("www.aspose.com");
-//Přidejte anotaci odkazu do kolekce anotací na první stránce souboru PDF
+// Přidejte anotaci odkazu do kolekce anotací na první stránce souboru PDF
 page.Annotations.Add(link);
 // Vytvořte anotaci volného textu
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(document.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), new DefaultAppearance(Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman"), 10, System.Drawing.Color.Blue));
@@ -123,7 +123,7 @@ A: Rozhodně! Aspose.PDF for .NET nabízí možnosti přizpůsobení vzhledu hyp
 
 #### Otázka: Jsou hypertextové odkazy podporovány ve všech typech dokumentů PDF?
 
-Odpověď: Ano, hypertextové odkazy lze přidávat do různých typů dokumentů PDF, včetně textových dokumentů, obrázků a multimediálních souborů. Aspose.PDF for .NET zajišťuje, že hypertextové odkazy jsou funkční v různých formátech PDF.
+Odpověď: Ano, hypertextové odkazy lze přidat do různých typů dokumentů PDF, včetně textových dokumentů, obrázků a multimediálních souborů. Aspose.PDF for .NET zajišťuje, že hypertextové odkazy jsou funkční v různých formátech PDF.
 
 #### Otázka: Jaké další funkce nabízí Aspose.PDF pro .NET?
 

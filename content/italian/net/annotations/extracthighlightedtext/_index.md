@@ -1,109 +1,114 @@
 ---
 title: Estrai il testo evidenziato nel file PDF
 linktitle: Estrai il testo evidenziato nel file PDF
-second_title: Aspose.PDF per riferimento all'API .NET
-description: Scopri come estrarre il testo evidenziato nel file PDF utilizzando Aspose.PDF per .NET con questa guida passo passo.
+second_title: Riferimento API Aspose.PDF per .NET
+description: Scopri come estrarre in modo efficiente il testo evidenziato da un file PDF usando Aspose.PDF per .NET con questo tutorial. Perfetto per l'analisi dei dati e la revisione dei contenuti.
 type: docs
 weight: 60
 url: /it/net/annotations/extracthighlightedtext/
 ---
-Per estrarre il testo evidenziato nel file PDF, è possibile utilizzare Aspose.PDF per l'API .NET. Questa API fornisce un modo semplice per recuperare tutto il testo evidenziato in un documento.
+## Introduzione
 
-## Passaggio 1: carica il documento PDF
+Quando si lavora con file PDF, estrarre il testo evidenziato può essere un compito cruciale, sia per l'analisi dei dati, la revisione dei contenuti o semplicemente l'organizzazione delle note. Se si utilizza Aspose.PDF per .NET, questo processo è semplice ed efficiente. In questo tutorial, ti guideremo attraverso l'estrazione del testo evidenziato da un documento PDF utilizzando Aspose.PDF per .NET. Tratteremo tutto, dai prerequisiti alla guida passo dopo passo, assicurandoti di avere una comprensione completa alla fine.
 
- Il primo passo per estrarre il testo evidenziato nel file PDF è caricare il documento utilizzando l'API Aspose.PDF per .NET. Puoi farlo creando una nuova istanza del file`Document` class e passando il percorso del documento PDF come parametro. 
+## Prerequisiti
+
+Prima di immergerti nel codice, ecco alcune cose che devi sapere:
+
+-  Aspose.PDF per la libreria .NET: assicurati di avere la libreria Aspose.PDF installata. In caso contrario, puoi scaricarla da[pagina di rilascio](https://releases.aspose.com/pdf/net/).
+- Ambiente di sviluppo: dovresti avere un ambiente di sviluppo funzionante, come Visual Studio.
+- Conoscenza di base di C#: è essenziale avere familiarità con il linguaggio di programmazione C# e con la programmazione orientata agli oggetti.
+-  Una licenza Aspose valida: sebbene tu possa iniziare con una prova gratuita, prendi in considerazione l'idea di ottenere una[licenza temporanea](https://purchase.aspose.com/temporary-license/) o acquistandone uno da[Qui](https://purchase.aspose.com/buy) per un utilizzo senza restrizioni.
+
+## Importa pacchetti
+
+Per iniziare, devi importare i namespace necessari nel tuo progetto C#. Questo è fondamentale per accedere alle classi e ai metodi forniti da Aspose.PDF per .NET.
 
 ```csharp
-// Il percorso della directory dei documenti.
-string dataDir ="YOUR DOCUMENT DIRECTORY";
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Ora, analizziamo il processo di estrazione del testo evidenziato da un file PDF usando Aspose.PDF per .NET. Ogni passaggio è spiegato in dettaglio per aiutarti a comprendere i concetti e l'implementazione sottostanti.
+
+## Passaggio 1: imposta la directory del progetto
+
+Per prima cosa, devi impostare la directory del progetto in cui si trova il tuo file PDF. È qui che avviene la magia.
+
+```csharp
+// Percorso verso la directory dei documenti.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Sostituire`"YOUR DOCUMENT DIRECTORY"`con il percorso effettivo alla directory in cui risiede il file PDF. Questa directory è dove l'applicazione recupererà il PDF per l'elaborazione.
+
+## Passaggio 2: caricare il documento PDF
+
+ Successivamente, devi caricare il documento PDF da cui vuoi estrarre il testo evidenziato. Questo viene fatto usando il`Document` classe fornita da Aspose.PDF.
+
+```csharp
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 ```
 
-## Passaggio 2: scorrere tutte le annotazioni
+ IL`Document` la classe viene istanziata con il percorso al file PDF. Qui,`"ExtractHighlightedText.pdf"` è il nome del file PDF che contiene il testo evidenziato. Assicurati che questo file esista nella directory specificata.
 
- Il passaggio successivo consiste nel scorrere tutte le annotazioni nel documento PDF. Puoi farlo usando a`foreach` ciclo, in questo modo:
+## Passaggio 3: accedi alla raccolta di annotazioni
+
+Una volta caricato il documento PDF, il passo successivo è accedere alle annotazioni sulla prima pagina del documento. Le annotazioni vengono utilizzate nei PDF per aggiungere informazioni aggiuntive come evidenziazioni, commenti e altro.
 
 ```csharp
 foreach (Annotation annotation in doc.Pages[1].Annotations)
 {
-	// Il codice va qui
-}
 ```
 
-## Passaggio 3: filtra le annotazioni di markup del testo
+ IL`Annotations` proprietà del`Page` object fornisce accesso a tutte le annotazioni su una pagina specifica del PDF. Qui, stiamo scorrendo ogni annotazione sulla prima pagina.
 
- Dentro il`foreach` loop, dovrai filtrare tutte le annotazioni che non sono annotazioni di markup di testo. Puoi farlo controllando se l'annotazione è un'istanza di`TextMarkupAnnotation` classe.
+## Passaggio 4: filtro per annotazioni di testo evidenziate
+
+Ora che abbiamo accesso a tutte le annotazioni, dobbiamo filtrare solo le annotazioni di testo evidenziate. Questo si ottiene controllando il tipo di ogni annotazione.
 
 ```csharp
 if (annotation is TextMarkupAnnotation)
 {
-	// Il codice va qui
-}
+    TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
 ```
 
-## Passaggio 4: recupera i frammenti di testo evidenziati
+ IL`TextMarkupAnnotation` La classe viene utilizzata per rappresentare annotazioni di markup di testo, comprese le evidenziazioni. La`is` la parola chiave controlla se l'annotazione è di tipo`TextMarkupAnnotation` e, se lo è, converte l'annotazione in`TextMarkupAnnotation`.
 
- Dopo aver filtrato tutte le annotazioni di markup di testo, puoi recuperare i frammenti di testo evidenziati per ciascuna annotazione. Puoi farlo chiamando il`GetMarkedTextFragments()` metodo sul`TextMarkupAnnotation` oggetto.
+## Passaggio 5: estrai il testo evidenziato
+
+Una volta identificata l'annotazione evidenziata, il passo successivo consiste nell'estrarre il testo associato all'evidenziazione.
 
 ```csharp
-TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
 TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
-```
-
-## Passaggio 5: visualizza il testo evidenziato
-
- Infine, puoi visualizzare il testo evidenziato all'utente. Puoi farlo eseguendo il looping su ciascuno di essi`TextFragment` oggetto in`TextFragmentCollection` e chiamando il`Text` proprietà.
-
-```csharp
 foreach (TextFragment tf in collection)
 {
-	Console.WriteLine(tf.Text);
+    Console.WriteLine(tf.Text);
 }
 ```
 
-### Codice sorgente di esempio per estrarre il testo evidenziato utilizzando Aspose.PDF per .NET
-
-```csharp
-// Il percorso della directory dei documenti.
-string dataDir ="YOUR DOCUMENT DIRECTORY";
-Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
-
-foreach (Annotation annotation in doc.Pages[1].Annotations)
-{
-	if (annotation is TextMarkupAnnotation)
-	{
-		TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
-		TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
-		foreach (TextFragment tf in collection)
-		{
-			Console.WriteLine(tf.Text);
-		}
-	}
-}
-```
+ IL`GetMarkedTextFragments()` il metodo restituisce una raccolta di`TextFragment` oggetti, ognuno dei quali rappresenta una porzione del testo evidenziato. Eseguiamo un ciclo attraverso questa raccolta e stampiamo il testo di ogni frammento sulla console.
 
 ## Conclusione
 
-In questo tutorial, abbiamo esplorato come estrarre il testo evidenziato da un documento PDF utilizzando Aspose.PDF per .NET. Seguendo la guida passo passo e utilizzando il codice sorgente C# fornito, gli sviluppatori possono estrarre e gestire facilmente il testo evidenziato nei propri documenti PDF.
+L'estrazione di testo evidenziato da un PDF tramite Aspose.PDF per .NET è una potente funzionalità che può semplificare il flusso di lavoro, soprattutto se si gestiscono documenti di grandi dimensioni. Seguendo i passaggi descritti in questo tutorial, è possibile implementare facilmente questa funzionalità nei propri progetti. Che si stiano organizzando appunti, preparando report o conducendo analisi di dati, questo metodo offre una soluzione fluida per estrarre e utilizzare testo evidenziato.
 
-### Domande frequenti sull'estrazione del testo evidenziato nel file PDF
+## Domande frequenti
 
-#### D: Cosa sono le annotazioni di markup di testo in un documento PDF?
+### Posso estrarre altri tipi di annotazioni utilizzando questo metodo?  
+ Sì, puoi estrarre altri tipi di annotazioni modificando il`if` condizione per controllare diversi tipi di annotazione, come ad esempio`TextAnnotation`, `StampAnnotation`, ecc.
 
-R: Le annotazioni di markup del testo sono annotazioni che evidenziano o contrassegnano un testo specifico in un documento PDF. Esempi di annotazioni di markup di testo includono evidenziazioni, sottolineature e barre barrate.
+### È possibile estrarre il testo evidenziato da tutte le pagine del PDF?  
+Assolutamente! Puoi scorrere ogni pagina del documento PDF e applicare la stessa logica di estrazione per raccogliere il testo evidenziato da ogni pagina.
 
-#### D: Posso estrarre testo da altri tipi di annotazioni utilizzando Aspose.PDF per .NET?
+### Ho bisogno di una licenza per utilizzare Aspose.PDF per .NET?  
+ Sebbene sia possibile iniziare con una prova gratuita, si consiglia di ottenere una[licenza temporanea](https://purchase.aspose.com/temporary-license/)oppure acquista una licenza completa per un accesso illimitato a tutte le funzionalità.
 
-R: Sì, Aspose.PDF per .NET fornisce vari metodi per estrarre testo da diversi tipi di annotazioni, incluse annotazioni di markup di testo, annotazioni di testo libero e altro.
+### Posso salvare il testo estratto in un file invece di stamparlo sulla console?  
+Sì, puoi facilmente modificare il codice per salvare il testo estratto in un file di testo o in qualsiasi altro formato desiderato.
 
-#### D: Aspose.PDF per .NET supporta l'estrazione di testo da file PDF protetti da password?
-
- R: Sì, Aspose.PDF per .NET supporta l'estrazione di testo da file PDF protetti da password. È necessario fornire la password corretta quando si carica il documento PDF utilizzando il file`Document` classe.
-
-#### D: Posso filtrare il testo evidenziato in base ad altri criteri, come colore o autore?
-
-R: Sì, puoi filtrare il testo evidenziato in base ad altri criteri, come colore, autore o data di creazione. Aspose.PDF per .NET fornisce metodi per accedere e filtrare le annotazioni in base alle loro proprietà.
-
-#### D: È possibile salvare il testo evidenziato estratto in un file separato?
-
-R: Sì, puoi salvare il testo evidenziato estratto in un file separato o memorizzarlo in una struttura dati per ulteriore elaborazione o analisi.
+### Aspose.PDF supporta anche altre piattaforme oltre a .NET?  
+Sì, Aspose.PDF supporta anche Java e altre piattaforme, offrendo funzionalità simili in diversi ambienti.

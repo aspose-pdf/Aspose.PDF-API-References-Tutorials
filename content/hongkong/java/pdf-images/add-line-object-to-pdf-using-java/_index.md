@@ -52,14 +52,14 @@ pdfDocument.save("output.pdf");
 
 此程式碼初始化 PDF 文件、建立頁面並向其添加水平線。您可以自訂線條屬性，例如顏色和粗細，以滿足您的要求。
 
-## 自訂線路屬性
+## 自訂線條屬性
 
 若要自訂線條屬性，可以使用以下程式碼：
 
 ```java
 //自訂線條屬性
 line.setColor(com.aspose.pdf.Color.getRed());
-line.setLineWidth(2f); //線的粗細
+line.setLineWidth(2f); //線寬
 line.setDashArray(new float[] { 1, 1 }); //線條樣式（點線）
 ```
 

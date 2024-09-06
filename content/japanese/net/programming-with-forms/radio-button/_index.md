@@ -7,25 +7,25 @@ type: docs
 weight: 220
 url: /ja/net/programming-with-forms/radio-button/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメントにラジオ ボタンを追加する方法を説明します。このプロセスをガイドするために、C# ソース コードをステップごとに説明します。
+このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメントにラジオ ボタンを追加する方法を説明します。このプロセスをガイドするために、C# ソース コードを段階的に説明します。
 
-## ステップ 1: 準備
+## ステップ1: 準備
 
-必要なライブラリをインポートし、ドキュメント ディレクトリへのパスを設定していることを確認してください。
+必要なライブラリがインポートされ、ドキュメント ディレクトリへのパスが設定されていることを確認してください。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## ステップ 2: ドキュメント オブジェクトをインスタンス化する
+## ステップ2: ドキュメントオブジェクトのインスタンスを作成する
 
-Document オブジェクトをインスタンス化して、新しい PDF ドキュメントを作成します。
+Document オブジェクトをインスタンス化して新しい PDF ドキュメントを作成します。
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-## ステップ 3: ページを追加する
+## ステップ3: ページを追加する
 
 PDF ドキュメントにページを追加します。
 
@@ -33,7 +33,7 @@ PDF ドキュメントにページを追加します。
 pdfDocument.Pages.Add();
 ```
 
-## ステップ 4: RadioButtonField オブジェクトをインスタンス化する
+## ステップ4: RadioButtonFieldオブジェクトのインスタンスを作成する
 
 ページ番号を引数として指定して RadioButtonField オブジェクトをインスタンス化します。
 
@@ -41,24 +41,24 @@ pdfDocument.Pages.Add();
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## ステップ 5: ラジオ ボタン オプションを追加する
+## ステップ5: ラジオボタンオプションを追加する
 
-Rectangle オブジェクトで各オプションの座標を指定することにより、ラジオ ボタン オプションを RadioButtonField オブジェクトに追加します。
+各オプションの座標を Rectangle オブジェクトで指定して、ラジオ ボタン オプションを RadioButtonField オブジェクトに追加します。
 
 ```csharp
 radio.AddOption("Test", new Rectangle(0, 0, 20, 20));
 radio.AddOption("Test1", new Rectangle(20, 20, 40, 40));
 ```
 
-## ステップ 6: フォームにラジオ ボタンを追加する
+## ステップ6: フォームにラジオボタンを追加する
 
-ドキュメントの Form オブジェクトにラジオ ボタンを追加します。
+ドキュメントのフォーム オブジェクトにラジオ ボタンを追加します。
 
 ```csharp
 pdfDocument.Form.Add(radio);
 ```
 
-## ステップ 7: PDF ドキュメントを保存する
+## ステップ7: PDFドキュメントを保存する
 
 作成した PDF ドキュメントを保存します。
 
@@ -71,22 +71,22 @@ pdfDocument.Save(dataDir);
 ```csharp
 try
 {
-	//ドキュメントディレクトリへのパス。
+	//ドキュメント ディレクトリへのパス。
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	//Documentオブジェクトをインスタンス化する
+	// Documentオブジェクトをインスタンス化する
 	Document pdfDocument = new Document();
-	//PDF ファイルにページを追加する
+	//PDFファイルにページを追加する
 	pdfDocument.Pages.Add();
-	//ページ番号を引数として RadioButtonField オブジェクトをインスタンス化します。
+	//ページ番号を引数としてRadioButtonFieldオブジェクトをインスタンス化する
 	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	//最初のラジオ ボタン オプションを追加し、Rectangle オブジェクトを使用してその原点も指定します
+	//最初のラジオボタンオプションを追加し、Rectangleオブジェクトを使用してその原点も指定します。
 	radio.AddOption("Test", new Rectangle(0, 0, 20, 20));
-	// 番目のラジオ ボタン オプションを追加
+	//2番目のラジオボタンオプションを追加する
 	radio.AddOption("Test1", new Rectangle(20, 20, 40, 40));
-	//Documentオブジェクトのフォームオブジェクトにラジオボタンを追加
+	// Document オブジェクトのフォーム オブジェクトにラジオ ボタンを追加します。
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "RadioButton_out.pdf";
-	//PDF ファイルを保存する
+	//PDFファイルを保存する
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nRadio button field added successfully.\nFile saved at " + dataDir);
 }
@@ -98,27 +98,27 @@ catch (Exception ex)
 
 ## 結論
 
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメントにラジオ ボタンを追加する方法を学びました。これらの手順に従うことで、ラジオ ボタンを簡単に作成し、PDF ドキュメント内の特定のページに配置することができます。
+このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメントにラジオ ボタンを追加する方法を学習しました。これらの手順に従うことで、ラジオ ボタンを簡単に作成し、PDF ドキュメントの特定のページに配置できます。
 
 
 ### よくある質問
 
 #### Q: ラジオ ボタンのサイズや色などの外観をカスタマイズできますか?
 
- A: はい、ラジオ ボタンの外観は、`Rectangle`オブジェクトの座標を使用して、そのサイズと位置を定義します。 Aspose.PDF for .NET を使用すると、ニーズに合わせてラジオ ボタンの外観を調整できます。
+ A: はい、ラジオボタンの外観は、`Rectangle`オブジェクトの座標を使用して、サイズと位置を定義します。Aspose.PDF for .NET を使用すると、ラジオ ボタンの外観をニーズに合わせて調整できます。
 
-#### Q: 同じページに異なるグループを持つ複数のラジオ ボタンを追加できますか?
+#### Q: 同じページに異なるグループのラジオ ボタンを複数追加できますか?
 
-A: はい、同じページに異なるグループを持つ複数のラジオ ボタンを追加できます。ラジオ ボタンの各グループには一意の名前を付けることができ、各グループ内のオプションは一度に 1 つだけ選択できます。
+A: はい、同じページに異なるグループのラジオ ボタンを複数追加できます。ラジオ ボタンの各グループには一意の名前を付けることができ、各グループ内で一度に選択できるオプションは 1 つだけです。
 
-#### Q: ラジオ ボタンのオプションにラベルまたはテキストの説明を追加するにはどうすればよいですか?
+#### Q: ラジオ ボタン オプションにラベルまたはテキストの説明を追加するにはどうすればよいですか?
 
- A: ラジオ ボタン オプションにラベルまたはテキストの説明を追加するには、`TextStamp`Aspose.PDF for .NET のクラスを使用して、PDF ドキュメント上の特定の座標でテキストをオーバーレイします。
+ A: ラジオボタンのオプションにラベルやテキストの説明を追加するには、`TextStamp`Aspose.PDF for .NET のクラスを使用して、PDF ドキュメント上の特定の座標にテキストをオーバーレイします。
 
-#### Q: Aspose.PDF for .NET は、.NET Framework のすべてのバージョンと互換性がありますか?
+#### Q: Aspose.PDF for .NET は、すべてのバージョンの .NET Framework と互換性がありますか?
 
-A: はい、Aspose.PDF for .NET は、.NET Core や .NET Standard を含む .NET Framework のすべてのバージョンと互換性があります。
+A: はい、Aspose.PDF for .NET は、.NET Core および .NET Standard を含むすべてのバージョンの .NET Framework と互換性があります。
 
 #### Q: PDF ドキュメント内のラジオ ボタン オプションの選択をプログラムで制御できますか?
 
- A: はい、ラジオ ボタン オプションの選択をプログラムで制御できます。`IsSelected`の財産`RadioButtonOption`クラス。このプロパティを使用すると、特定のオプションを選択済みとして設定できます。
+ A: はい、ラジオボタンオプションの選択をプログラムで制御できます。`IsSelected`の財産`RadioButtonOption`クラス。このプロパティを使用すると、特定のオプションを選択済みとして設定できます。

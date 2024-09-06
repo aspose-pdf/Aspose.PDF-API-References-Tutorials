@@ -1,24 +1,24 @@
 ---
 title: Stempel Nomor Halaman Dalam File PDF
 linktitle: Stempel Nomor Halaman Dalam File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara menambahkan stempel nomor halaman dalam file PDF dengan Aspose.PDF untuk .NET.
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara menambahkan stempel nomor halaman dalam berkas PDF dengan Aspose.PDF untuk .NET.
 type: docs
 weight: 160
 url: /id/net/programming-with-stamps-and-watermarks/page-number-stamps/
 ---
-Dalam tutorial ini, kami akan memandu Anda langkah demi langkah tentang cara menambahkan stempel nomor halaman di file PDF menggunakan Aspose.PDF untuk .NET. Kami akan menggunakan kode sumber C# yang disediakan untuk membuka dokumen PDF yang ada, membuat stempel nomor halaman, mengatur propertinya, dan menambahkannya ke halaman tertentu di file PDF.
+Dalam tutorial ini, kami akan memandu Anda langkah demi langkah tentang cara menambahkan stempel nomor halaman dalam berkas PDF menggunakan Aspose.PDF untuk .NET. Kami akan menggunakan kode sumber C# yang disediakan untuk membuka dokumen PDF yang sudah ada, membuat stempel nomor halaman, mengatur propertinya, dan menambahkannya ke halaman tertentu dalam berkas PDF.
 
 ## Langkah 1: Menyiapkan lingkungan
 
 Sebelum memulai, pastikan Anda memiliki hal berikut:
 
 - Lingkungan pengembangan .NET yang terinstal.
-- Pustaka Aspose.PDF untuk .NET diunduh dan direferensikan dalam proyek Anda.
+- Pustaka Aspose.PDF untuk .NET diunduh dan dirujuk dalam proyek Anda.
 
 ## Langkah 2: Memuat dokumen PDF yang ada
 
-Langkah pertama adalah memuat dokumen PDF yang ada ke dalam proyek Anda. Begini caranya:
+Langkah pertama adalah memuat dokumen PDF yang ada ke dalam proyek Anda. Berikut caranya:
 
 ```csharp
 // Jalur ke direktori dokumen.
@@ -32,13 +32,13 @@ Pastikan untuk mengganti "DIREKTORI DOKUMEN ANDA" dengan jalur sebenarnya ke dir
 
 ## Langkah 3: Membuat dan Mengonfigurasi Stempel Penomoran Halaman
 
-Sekarang dokumen PDF telah dimuat, kita dapat membuat buffer penomoran halaman dan mengkonfigurasinya sesuai kebutuhan kita. Begini caranya:
+Setelah dokumen PDF dimuat, kita dapat membuat buffer penomoran halaman dan mengonfigurasinya sesuai kebutuhan. Berikut caranya:
 
 ```csharp
 // Buat buffer nomor halaman
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
 
-// Tentukan apakah buffer ada di latar belakang atau tidak
+// Tentukan apakah buffer berada di latar belakang atau tidak
 pageNumberStamp.Background = false;
 
 // Format buffer penomoran halaman
@@ -47,13 +47,13 @@ pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
 // Margin bawah buffer penomoran halaman
 pageNumberStamp.BottomMargin = 10;
 
-// Penjajaran horizontal buffer penomoran halaman
+// Penyelarasan horizontal buffer penomoran halaman
 pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
 
-// Mulai nomor penomoran halaman
+// Nomor awal penomoran halaman
 pageNumberStamp.StartingNumber = 1;
 
-// Setel properti teks buffer nomor halaman
+// Mengatur properti teks buffer nomor halaman
 pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
 pageNumberStamp.TextState.FontSize = 14.0F;
 pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
@@ -65,18 +65,18 @@ Kode di atas membuat stempel nomor halaman dengan properti seperti format nomor 
 
 ## Langkah 4: Menambahkan stempel nomor halaman ke halaman tertentu
 
-Setelah cap nomor halaman dikonfigurasi, kita dapat menambahkannya ke halaman tertentu dari dokumen PDF. Begini caranya:
+Setelah stempel nomor halaman dikonfigurasi, kita dapat menambahkannya ke halaman tertentu dari dokumen PDF. Berikut caranya:
 
 ```csharp
 // Tambahkan buffer nomor halaman ke halaman tertentu
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 ```
 
-Kode di atas menambahkan cap nomor halaman ke halaman pertama dokumen PDF. Anda dapat mengubah nomor halaman sesuai kebutuhan.
+Kode di atas menambahkan cap nomor halaman pada halaman pertama dokumen PDF. Anda dapat mengubah nomor halaman sesuai kebutuhan.
 
 ## Langkah 5: Menyimpan dokumen PDF yang dimodifikasi
 
-Setelah cap nomor halaman ditambahkan ke dokumen PDF, kita dapat menyimpan dokumen PDF yang dimodifikasi. Begini caranya:
+Setelah stempel nomor halaman ditambahkan ke dokumen PDF, kita dapat menyimpan dokumen PDF yang telah dimodifikasi. Berikut caranya:
 
 ```csharp
 // Simpan dokumen PDF yang dimodifikasi
@@ -97,21 +97,21 @@ Document pdfDocument = new Document(dataDir+ "PageNumberStamp.pdf");
 // Buat stempel nomor halaman
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
 
-// Apakah stempel tersebut merupakan latar belakang
+// Apakah prangko itu berlatar belakang
 pageNumberStamp.Background = false;
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
 pageNumberStamp.BottomMargin = 10;
 pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
 pageNumberStamp.StartingNumber = 1;
 
-// Atur properti teks
+// Mengatur properti teks
 pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
 pageNumberStamp.TextState.FontSize = 14.0F;
 pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
 pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
 pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 
-// Tambahkan stempel ke halaman tertentu
+// Tambahkan prangko ke halaman tertentu
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 dataDir = dataDir + "PageNumberStamp_out.pdf";
 
@@ -123,46 +123,46 @@ Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + da
 
 ## Kesimpulan
 
-Selamat! Anda telah mempelajari cara menambahkan stempel nomor halaman ke dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda sekarang dapat mempersonalisasi dokumen PDF Anda dengan menambahkan nomor halaman yang jelas dan informatif.
+Selamat! Anda telah mempelajari cara menambahkan stempel nomor halaman ke dokumen PDF menggunakan Aspose.PDF untuk .NET. Kini Anda dapat mempersonalisasi dokumen PDF Anda dengan menambahkan nomor halaman yang jelas dan informatif.
 
 ### FAQ untuk stempel nomor halaman dalam file PDF
 
-#### T: Apa itu Stempel Nomor Halaman, dan bagaimana cara menggunakannya untuk menambahkan nomor halaman ke file PDF?
+#### T: Apa itu Stempel Nomor Halaman, dan bagaimana cara menggunakannya untuk menambahkan nomor halaman ke berkas PDF?
 
-J: Stempel Nomor Halaman adalah fitur di Aspose.PDF yang memungkinkan Anda menambahkan nomor halaman dinamis ke halaman tertentu dalam dokumen PDF. Dalam tutorial ini, hal ini dicapai dengan membuat objek PageNumberStamp, mengonfigurasi propertinya, dan menambahkannya ke halaman yang ditentukan.
+J: Stempel Nomor Halaman adalah fitur di Aspose.PDF yang memungkinkan Anda menambahkan nomor halaman dinamis ke halaman tertentu dari dokumen PDF. Dalam tutorial ini, hal ini dicapai dengan membuat objek PageNumberStamp, mengonfigurasi propertinya, dan menambahkannya ke halaman tertentu.
 
-#### T: Bagaimana kode sumber C# yang disediakan dapat menambahkan stempel nomor halaman ke file PDF?
+#### T: Bagaimana kode sumber C# yang disediakan menambahkan stempel nomor halaman ke berkas PDF?
 
-J: Kode ini menunjukkan cara memuat dokumen PDF yang ada, membuat PageNumberStamp, mengatur berbagai properti (seperti format, font, perataan, dll.), lalu menambahkan stempel ke halaman tertentu. Stempel secara otomatis menghitung jumlah halaman total dan memasukkan nomor halaman yang benar.
+A: Kode ini menunjukkan cara memuat dokumen PDF yang sudah ada, membuat PageNumberStamp, mengatur berbagai properti (seperti format, font, perataan, dll.), lalu menambahkan stempel ke halaman tertentu. Stempel tersebut secara otomatis menghitung jumlah halaman total dan memasukkan nomor halaman yang benar.
 
 #### T: Dapatkah saya menyesuaikan tampilan nomor halaman, seperti gaya font, warna, dan ukuran?
 
-J: Tentu saja, Anda dapat menyesuaikan tampilan cap nomor halaman dengan menyesuaikan properti seperti font, ukuran font, gaya font (tebal, miring, dll.), dan warna teks.
+A: Tentu saja, Anda dapat menyesuaikan tampilan stempel nomor halaman dengan menyesuaikan properti seperti font, ukuran font, gaya font (tebal, miring, dll.), dan warna teks.
 
-#### T: Apakah mungkin menambahkan stempel nomor halaman ke beberapa halaman dalam dokumen PDF?
+#### T: Apakah mungkin untuk menambahkan stempel nomor halaman ke beberapa halaman dalam dokumen PDF?
 
-J: Ya, Anda dapat menambahkan stempel nomor halaman ke beberapa halaman dengan membuat beberapa objek PageNumberStamp dan menambahkan masing-masing objek ke halaman yang diinginkan.
+A: Ya, Anda dapat menambahkan stempel nomor halaman ke beberapa halaman dengan membuat beberapa objek PageNumberStamp dan menambahkan masing-masing ke halaman yang diinginkan.
 
 #### T: Dapatkah saya memilih apakah stempel nomor halaman muncul sebagai bagian dari konten halaman atau sebagai elemen latar belakang?
 
- J: Ya, Anda dapat mengontrol apakah cap nomor halaman muncul sebagai bagian dari konten halaman atau sebagai elemen latar belakang dengan mengatur`Background` milik PageNumberStamp.
+ A: Ya, Anda dapat mengontrol apakah stempel nomor halaman muncul sebagai bagian dari konten halaman atau sebagai elemen latar belakang dengan mengatur`Background` properti dari PageNumberStamp.
 
-#### T: Bagaimana cara menentukan format nomor halaman, termasuk jumlah halaman total?
+#### T: Bagaimana cara menentukan format nomor halaman, termasuk jumlah total halaman?
 
- A: Kode menggunakan`Format`properti PageNumberStamp untuk menentukan format nomor halaman. Makro "# of" digunakan untuk mewakili jumlah halaman total.
+ A: Kode tersebut menggunakan`Format`properti PageNumberStamp untuk menentukan format nomor halaman. Makro "# of" digunakan untuk menunjukkan jumlah total halaman.
 
-#### Q: Apa yang terjadi jika saya menambahkan stempel nomor halaman yang sama ke beberapa halaman?
+#### T: Apa yang terjadi jika saya menambahkan stempel nomor halaman yang sama ke beberapa halaman?
 
-J: Menambahkan instance PageNumberStamp yang sama ke beberapa halaman akan menampilkan nomor halaman yang benar untuk setiap halaman. Stempel secara otomatis menyesuaikan nomor halaman dan jumlah halaman total.
+A: Menambahkan instance PageNumberStamp yang sama ke beberapa halaman akan menampilkan nomor halaman yang benar untuk setiap halaman. Stempel tersebut secara otomatis menyesuaikan nomor halaman dan jumlah halaman total.
 
 #### T: Dapatkah saya menambahkan stempel nomor halaman ke bagian header atau footer dokumen PDF?
 
-J: Meskipun PageNumberStamps biasanya ditambahkan langsung ke konten halaman, Anda dapat menggunakan FloatingBox atau teknik lain untuk memposisikannya di bagian header atau footer.
+A: Meskipun PageNumberStamps biasanya ditambahkan langsung ke konten halaman, Anda dapat menggunakan FloatingBox atau teknik lain untuk memposisikannya di bagian header atau footer.
 
-#### Q: Bagaimana cara menentukan posisi cap nomor halaman pada halaman?
+#### T: Bagaimana cara menentukan posisi stempel nomor halaman pada halaman?
 
- J: Itu`BottomMargin` Dan`HorizontalAlignment` properti PageNumberStamp memungkinkan Anda mengontrol posisi stempel di dalam halaman.
+ Sebuah:`BottomMargin` Dan`HorizontalAlignment` Properti PageNumberStamp memungkinkan Anda mengontrol posisi stempel di dalam halaman.
 
-#### T: Bagaimana jika saya ingin memulai penomoran halaman dari nomor yang berbeda, bukan 1?
+#### T: Bagaimana jika saya ingin memulai penomoran halaman dari nomor selain 1?
 
- J: Anda dapat mengaturnya`StartingNumber`properti PageNumberStamp untuk menentukan nomor halaman awal.
+ A: Anda dapat mengatur`StartingNumber`properti PageNumberStamp untuk menentukan nomor halaman awal.

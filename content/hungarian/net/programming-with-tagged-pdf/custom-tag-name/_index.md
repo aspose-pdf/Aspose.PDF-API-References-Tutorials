@@ -47,7 +47,7 @@ ITaggedContent taggedContent = document.TaggedContent;
 
 ## 4. lépés: Állítsa be a dokumentum címét és nyelvét
 
-Most beállíthatjuk a dokumentum címét és nyelvét.
+Most már beállíthatjuk a dokumentum címét és nyelvét.
 
 ```csharp
 // Határozza meg a dokumentum címét és nyelvét
@@ -189,7 +189,7 @@ V: Az egyéni címkenevek további kontextust és szemantikát biztosítanak a d
 
 #### K: Használhatok egyéni címkeneveket a PDF-dokumentum különböző típusú szerkezeti elemeihez?
 
-V: Igen, egyedi címkeneveket rendelhet a szerkezeti elemek széles skálájához, beleértve a bekezdéseket, szakaszokat, szakaszokat és egyebeket. Ez lehetővé teszi a dokumentum tartalmának különböző részeinek kategorizálását és címkézését, így szervezettebb és érthetőbb elrendezést hozhat létre.
+V: Igen, egyéni címkeneveket rendelhet a szerkezeti elemek széles skálájához, beleértve a bekezdéseket, szakaszokat, szakaszokat és egyebeket. Ez lehetővé teszi a dokumentum tartalmának különböző részeinek kategorizálását és címkézését, így szervezettebb és érthetőbb elrendezést hozhat létre.
 
 #### K: Hogyan határozhatok meg és rendelhetek egyéni címkeneveket egy PDF-dokumentum elemeihez az Aspose.PDF for .NET használatával?
 

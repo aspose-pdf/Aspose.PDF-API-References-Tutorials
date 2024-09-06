@@ -53,7 +53,7 @@ dataDir = dataDir + "OptimizeDocument_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-je to! Úspěšně jste odstranili nepoužívané objekty z vašeho dokumentu PDF pomocí Aspose.PDF for .NET.
+To je vše! Úspěšně jste odstranili nepoužívané objekty z vašeho dokumentu PDF pomocí Aspose.PDF for .NET.
 
 ### Příklad zdrojového kódu pro Remove Unused Objects using Aspose.PDF for .NET:
 

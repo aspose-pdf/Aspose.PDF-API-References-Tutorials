@@ -63,7 +63,7 @@ htmlFragment.setHorizontalAlignment(HorizontalAlignment.Left);
 pdfDocument.save("output.pdf");
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Σε αυτό το σεμινάριο, μάθαμε πώς να προσθέτουμε μια λίστα με σειρά HTML σε έγγραφα σε Java χρησιμοποιώντας το Aspose.PDF για Java. Αυτή η ισχυρή βιβλιοθήκη σάς επιτρέπει να χειρίζεστε εύκολα έγγραφα PDF και να δημιουργείτε δυναμικό περιεχόμενο.
 

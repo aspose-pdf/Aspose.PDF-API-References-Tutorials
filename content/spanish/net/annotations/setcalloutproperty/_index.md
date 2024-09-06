@@ -1,127 +1,154 @@
 ---
 title: Establecer propiedad de llamada en archivo PDF
 linktitle: Establecer propiedad de llamada en archivo PDF
-second_title: Aspose.PDF para referencia de API .NET
-description: Aprenda a configurar la propiedad de llamada en un archivo PDF usando Aspose.PDF para .NET. Personalice las anotaciones con líneas de leyenda, color de texto y estilos finales.
+second_title: Referencia de API de Aspose.PDF para .NET
+description: Aprenda a configurar la propiedad de llamada en un archivo PDF usando Aspose.PDF para .NET en este tutorial detallado paso a paso.
 type: docs
 weight: 130
 url: /es/net/annotations/setcalloutproperty/
 ---
- Aspose.PDF para .NET es una poderosa biblioteca para crear, manipular y convertir documentos PDF en C#. Una de las características que ofrece esta biblioteca es la capacidad de establecer propiedades de llamada para anotaciones de texto libre en documentos PDF. Esto se puede hacer usando el`FreeTextAnnotation` clase, que le permite crear anotaciones con llamadas.
+## Introducción
 
-En este tutorial, lo guiaremos a través del proceso de configuración de propiedades de llamada para una anotación de texto libre usando Aspose.PDF para .NET en C#. Siga los pasos a continuación para comenzar.
+Para crear documentos PDF profesionales y visualmente atractivos, a menudo es necesario añadir anotaciones que llamen la atención sobre un contenido específico. Una de esas anotaciones es el texto destacado, que es como esos globos de diálogo que se ven en los cómics. Ayudan a aclarar o enfatizar el texto dentro de un PDF. Aspose.PDF para .NET hace que sea increíblemente fácil añadir este tipo de anotaciones a los documentos y, en este tutorial, explicaremos cómo configurar la propiedad de texto destacado en un archivo PDF utilizando esta potente biblioteca. Tanto si es un desarrollador experimentado como si está empezando, al final de esta guía comprenderá claramente cómo trabajar con textos destacados en archivos PDF.
 
-## Instalar Aspose.PDF para .NET
+## Prerrequisitos
 
- Si aún no lo ha hecho, deberá[descargar](https://releases.aspose.com/pdf/net/) e instale Aspose.PDF para .NET desde Aspose Releases o mediante el administrador de paquetes NuGet.
+Antes de sumergirnos en el código, cubramos los aspectos esenciales que necesitas para comenzar.
 
-## Paso 1: crea un nuevo documento PDF
+1.  Aspose.PDF para .NET: Asegúrese de tener instalada la biblioteca Aspose.PDF para .NET. Puede descargarla desde[aquí](https://releases.aspose.com/pdf/net/).
+2. IDE: Un entorno de desarrollo como Visual Studio.
+3. .NET Framework: asegúrese de tener .NET instalado en su máquina.
+4. Licencia temporal: si desea probar todas las funciones de Aspose.PDF sin limitaciones, obtenga una[licencia temporal](https://purchase.aspose.com/temporary-license/).
 
- Cree un nuevo documento PDF utilizando el`Document`clase proporcionada por Aspose.PDF para .NET.
+## Importar paquetes
 
-```csharp
-// La ruta al directorio de documentos.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document();
-```
-
-## Paso 2: agregue una nueva página al documento
-
- Agregue una nueva página al documento usando el`Pages` colección de la`Document` clase.
+Antes de comenzar a escribir el código, debe importar los paquetes necesarios que le permitirán trabajar con archivos PDF y anotaciones.
 
 ```csharp
-Page page = doc.Pages.Add();
+using Aspose.Pdf.Annotations;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
 ```
 
-## Paso 3: establecer la apariencia predeterminada
+Estas importaciones le proporcionarán todas las clases y métodos necesarios para manipular documentos PDF y crear anotaciones como el llamado.
 
- Establezca la apariencia predeterminada para la anotación de texto libre creando una nueva`DefaultAppearance` objeto y estableciendo sus propiedades como`TextColor` y`FontSize`.
+## Paso 1: Inicializar el documento PDF
 
-```csharp
-DefaultAppearance da = new DefaultAppearance();
-da.TextColor = System.Drawing.Color.Red;
-da.FontSize = 10;
-```
-
-## Paso 4: crea una anotación de texto libre con llamada
-
- Cree una nueva anotación de texto libre con llamada usando el`FreeTextAnnotation` clase. Selecciona el`Intent` propiedad a`FreeTextIntent.FreeTextCallout` para especificar que se trata de una anotación de llamada. Selecciona el`EndingStyle` propiedad a`LineEnding.OpenArrow` para especificar el estilo de la flecha al final de la llamada. Selecciona el`Callout` propiedad a una serie de`Point` objetos que representan los puntos de la página donde se debe dibujar la línea de llamada.
-
-```csharp
-FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
-fta.Intent = FreeTextIntent.FreeTextCallout;
-fta.EndingStyle = LineEnding.OpenArrow;
-fta.Callout = new Point[]
-{
-    new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
-};
-```
-
-## Paso 5: agregue la anotación de texto libre a la página
-
- Agregue la anotación de texto libre a la página usando el`Annotations` colección de la`Page` clase.
-
-```csharp
-page.Annotations.Add(fta);
-```
-
-## Paso 6: agregue texto a la anotación
-
- Agregue texto a la anotación configurando el`RichText`propiedad a una cadena de XML formateado. En este tutorial, configuraremos el color del texto en rojo y el tamaño de fuente en 9.
-
-```csharp
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" estilo=\"color:#FF
-```
-
-## Paso 7: guarda el documento
-
-Ahora guarde el documento usando el siguiente código:
-
-```csharp
-doc.Save(dataDir + "SetCalloutProperty.pdf")
-```
-
-### Código fuente de ejemplo para establecer propiedad de llamada usando Aspose.PDF para .NET
+El primer paso de nuestro recorrido es crear un nuevo documento PDF en el que agregaremos nuestra anotación destacada. Piense en esto como si estuviera creando un lienzo en blanco en el que puede comenzar a agregar elementos.
 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
+// Inicializar un nuevo documento PDF
 Document doc = new Document();
+```
+ Aquí estamos creando uno nuevo`Document` objeto que servirá como nuestro archivo PDF.`dataDir` La variable se establece en el directorio donde desea guardar el archivo PDF después de que hayamos terminado.
+
+## Paso 2: Agregar una nueva página al documento
+
+Un documento PDF puede tener varias páginas y, en este paso, agregaremos una nueva página a nuestro documento. Esta página será donde se colocará nuestra anotación destacada.
+
+```csharp
+//Agregar una nueva página al documento
 Page page = doc.Pages.Add();
+```
+ El`Pages.Add()`El método se utiliza para agregar una nueva página a la`doc` objeto. La nueva página se almacena en el`page` variable, que usaremos más adelante al agregar la anotación.
+
+## Paso 3: Definir la apariencia predeterminada
+
+Las anotaciones, al igual que el texto destacado, tienen una apariencia visual que puedes personalizar. En este paso, definiremos cómo debe verse el texto dentro del texto destacado.
+
+```csharp
+// Definir la apariencia predeterminada para la anotación
 DefaultAppearance da = new DefaultAppearance();
 da.TextColor = System.Drawing.Color.Red;
 da.FontSize = 10;
+```
+ Creamos una`DefaultAppearance` objeto que define el color del texto y el tamaño de la fuente. Aquí, el texto será rojo y el tamaño de la fuente se establecerá en 10. Esta apariencia se aplicará a la anotación de llamada.
+
+## Paso 4: Crear la anotación de texto libre
+
+Ahora es el momento de crear la anotación propiamente dicha. La anotación de texto libre es lo que nos permite agregar un texto destacado con un estilo y un texto específicos.
+
+```csharp
+// Crear una anotación de texto libre con un texto destacado
 FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
 fta.Intent = FreeTextIntent.FreeTextCallout;
 fta.EndingStyle = LineEnding.OpenArrow;
+```
+ Creamos una`FreeTextAnnotation` objeto con coordenadas específicas, que definen su posición en la página.`Intent` está configurado para`FreeTextCallout` , lo que indica que se trata de una anotación de llamada.`EndingStyle` está configurado para`OpenArrow`lo que significa que la línea de llamada terminará con una flecha abierta.
+
+## Paso 5: Defina los puntos de la línea de llamada
+
+Una anotación de llamada tiene una línea que señala el área de interés. Aquí, definiremos los puntos que componen esta línea.
+
+```csharp
+// Definir los puntos para la línea de llamada
 fta.Callout = new Point[]
 {
-	new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
+    new Point(428.25, 651.75), 
+    new Point(462.75, 681.375), 
+    new Point(474, 681.375)
 };
+```
+ El`Callout` La propiedad es un conjunto de`Point` objetos, cada uno de los cuales representa una coordenada en la página. Estos puntos definen la ruta de la línea de llamada, lo que le da la apariencia clásica de bocadillo de diálogo.
+
+## Paso 6: Agrega la anotación a la página
+
+Después de crear y configurar nuestra anotación, el siguiente paso es agregarla a la página.
+
+```csharp
+// Añadir la anotación a la página
 page.Annotations.Add(fta);
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"> <span style=\"font-size:9.0pt;font-family:Helvetica\">Esto es una muestra</span></p></body>";
+```
+ El`Annotations.Add()` El método se utiliza para colocar la anotación en la página que creamos anteriormente. Este paso "dibuja" efectivamente el texto destacado en la página PDF.
+
+## Paso 7: Establezca el contenido de texto enriquecido
+
+Las anotaciones de texto destacado pueden incluir texto enriquecido, lo que permite incluir contenido formateado dentro de la burbuja. Agreguemos un texto de muestra.
+
+```csharp
+// Establecer el texto enriquecido para la anotación
+fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"><span style=\"font-size:9.0pt;font-family:Helvetica\">Esta es una muestra</span></p></body>";
+```
+ El`RichText` La propiedad se configura con contenido HTML. Esto permite un formato detallado dentro del texto destacado, como especificar el tamaño de fuente, el color y el estilo.
+
+## Paso 8: Guarde el documento PDF
+
+Finalmente, después de configurar todo, debemos guardar el documento. Este paso finaliza la creación del PDF con la anotación de llamada.
+
+```csharp
+// Guardar el documento
 doc.Save(dataDir + "SetCalloutProperty.pdf");
 ```
+ El`Save()` El método guarda el documento en el directorio especificado con el nombre de archivo "SetCalloutProperty.pdf". Este paso concluye nuestro proceso de creación de PDF.
 
 ## Conclusión
 
-En este tutorial, exploramos cómo configurar propiedades de llamada para una anotación de texto libre en un documento PDF usando Aspose.PDF para .NET. Las anotaciones de llamada son útiles para proporcionar información adicional o explicaciones relacionadas con áreas específicas de un documento. Aspose.PDF para .NET proporciona una amplia gama de funciones y capacidades para trabajar con archivos PDF, incluida la creación y personalización de anotaciones, como llamadas. Siguiendo la guía paso a paso y utilizando el código fuente C# proporcionado, los desarrolladores pueden implementar fácilmente anotaciones en sus documentos PDF, mejorando la usabilidad y claridad de sus documentos. Aspose.PDF para .NET es una biblioteca versátil y confiable para operaciones de PDF en aplicaciones .NET, que ofrece herramientas poderosas para manejar diversas tareas relacionadas con PDF de manera eficiente.
+¡Y ya está! Acaba de crear un documento PDF con una anotación de llamada con Aspose.PDF para .NET. Esta anotación puede resultar increíblemente útil para resaltar o explicar partes específicas de su documento. Aspose.PDF ofrece una potente API que hace que la manipulación de PDF sea sencilla y flexible. Ya sea que esté agregando anotaciones, convirtiendo documentos o manejando tareas PDF complejas, Aspose.PDF lo tiene cubierto.
 
-### Preguntas frecuentes sobre cómo establecer la propiedad de llamada en un archivo PDF
+## Preguntas frecuentes
 
-#### P: ¿Qué es una anotación en un documento PDF?
+### ¿Puedo personalizar aún más la apariencia del llamado?
 
-R: Una anotación de llamada en un documento PDF es un tipo de anotación que le permite crear un cuadro de texto con una línea guía que apunta a un área específica del documento. Se utiliza comúnmente para proporcionar información adicional o comentarios relacionados con una sección o elemento particular del documento.
+¡Por supuesto! Puedes personalizar varios aspectos como el color de línea, el grosor y la familia de fuentes y el estilo del texto.
 
-#### P: ¿Puedo personalizar la apariencia de la anotación de llamada usando Aspose.PDF para .NET?
+### ¿Es posible agregar múltiples llamadas en una sola página?
 
-R: Sí, puede personalizar varias propiedades de la anotación de llamada, como el color, el tamaño de fuente, la alineación del texto, el estilo de línea, el estilo de flecha y más.
+Sí, puedes agregar tantas llamadas como necesites repitiendo los pasos para cada anotación.
 
-#### P: ¿Cómo agrego texto a la anotación de llamada?
+### ¿Cómo cambio la posición del llamado?
 
- R: Para agregar texto a la anotación de llamada, puede configurar el`RichText` propiedad de la`FreeTextAnnotation` objeto. El`RichText` La propiedad toma una cadena de XML formateado que representa el texto que se mostrará en la anotación de llamada.
+ Simplemente modifique las coordenadas en el`Rectangle` y`Callout` Propiedades para reposicionar la anotación.
 
-#### P: ¿Puedo agregar varias anotaciones a un documento PDF usando Aspose.PDF para .NET?
+### ¿Puedo agregar otros tipos de anotaciones usando Aspose.PDF?
 
- R: Sí, puede crear varias anotaciones de leyenda en un documento PDF creando varias instancias de la`FreeTextAnnotation`objeto y agregarlos a diferentes páginas o ubicaciones en el documento.
+Sí, Aspose.PDF admite varios tipos de anotaciones, incluidos resaltados, sellos y archivos adjuntos.
+
+### ¿El contenido de texto enriquecido está limitado a HTML?
+
+ El`RichText` La propiedad admite un subconjunto de HTML, lo que le permite incluir texto con estilo y formato básico.

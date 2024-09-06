@@ -1,118 +1,142 @@
 ---
-title: PDF ドキュメントに Javascript を追加削除
-linktitle: ドキュメントに Javascript を追加削除
+title: PDF ドキュメントに Javascript を追加/削除する
+linktitle: ドキュメントにJavascriptを追加/削除する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して PDF ドキュメントに JavaScript を追加および削除する方法を学びます。ドキュメントレベルのスクリプト作成のためのコードチュートリアルを含むステップバイステップのガイド。
+description: Aspose.PDF for .NET を使用して PDF ドキュメントに JavaScript を追加および削除する方法を学びます。ドキュメント レベルのスクリプトのコード チュートリアルを含むステップ バイ ステップ ガイドです。
 type: docs
 weight: 30
 url: /ja/net/programming-with-document/addremovejavascripttodoc/
 ---
-PDF ドキュメントに JavaScript を追加および削除するには、Aspose.PDF for .NET ライブラリを利用します。この強力なライブラリを使用すると、.NET アプリケーションで PDF ファイルを操作できます。 Aspose.PDF for .NET を使用して JavaScript を追加および削除するには、以下の段階的な手順に従ってください。
+## 導入
 
-## ステップ 1: 新しい PDF ドキュメントを作成する
+このガイドでは、Aspose.PDF for .NET を使用して PDF ファイルに JavaScript を挿入する方法と、必要に応じて JavaScript を削除する方法について説明します。このチュートリアルの最後には、PDF で JavaScript を簡単に操作する方法を明確に理解できるようになります。
 
-まず、新しいインスタンスを作成します。`Document` Aspose.PDF for .NET によって提供されるクラス。これは、JavaScript を追加する PDF ドキュメントとして機能します。
+## 前提条件
+
+コードに進む前に、設定しておく必要のあるものがいくつかあります。
+
+1.  Aspose.PDF for .NET: プロジェクトにAspose.PDF for .NETライブラリがインストールされている必要があります。まだインストールしていない場合は、次の場所からライブラリを入手してください。[Aspose.PDF for .NET ダウンロード ページ](https://releases.aspose.com/pdf/net/).
+2. IDE またはテキスト エディター: Visual Studio などの .NET 互換の IDE を使用できます。
+3. 基本的な C# の知識: このチュートリアルでは、読者が C# に慣れており、PDF の操作に精通していることを前提としています。
+4. ライセンス: 制限を回避するために有効なライセンスを適用してください。一時ライセンスは以下から取得できます。[ここ](https://purchase.aspose.com/temporary-license/).
+
+## パッケージのインポート
+
+Aspose.PDF for .NET の使用を開始するには、必要な名前空間をプロジェクトにインポートする必要があります。手順は次のとおりです。
 
 ```csharp
-//ドキュメントディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Text;
+using System.Collections;
+```
 
+これら 2 つの名前空間は不可欠です。`Aspose.Pdf` PDF文書を扱うことができ、`System.Collections` JavaScript キーの処理に使用されます。
+
+PDF に JavaScript を追加したり削除したりするプロセス全体を、わかりやすい手順に分解してみましょう。
+
+## ステップ1: 新しいPDFドキュメントを初期化する
+
+最初に行う必要があるのは、新しい PDF ドキュメントを作成することです。このドキュメントは、JavaScript を追加するための空白のキャンバスとして機能します。
+
+```csharp
 Document doc = new Document();
 doc.Pages.Add();
 ```
 
-## ステップ 2: ドキュメント レベルで JavaScript を追加する
+ここでは、新しい`Document`オブジェクトを作成し、そこに空白ページを追加します。これを PDF の基礎と考えてください。
 
-ドキュメント レベルで JavaScript を追加するには、`JavaScript`の財産`Document`クラス。 JavaScript 関数を JavaScript 辞書内のキーに割り当てます。
+## ステップ2: PDFにJavaScriptを追加する
+
+ドキュメントが完成したので、次は JavaScript を追加します。PDF 内の JavaScript を使用すると、アラートやフォーム検証などのカスタム動作を追加できます。
 
 ```csharp
 doc.JavaScript["func1"] = "function func1() { hello(); }";
 doc.JavaScript["func2"] = "function func2() { hello(); }";
+```
+
+このコードスニペットでは、2つのJavaScript関数（`func1`そして`func2` ）をPDFに追加します。これらの関数は、必要に応じてさまざまなタスクを実行できます。ここでは、プレースホルダー関数を呼び出しています。`hello()`.
+
+## ステップ3: JavaScriptを使用してPDFを保存する
+
+必要な JavaScript を追加したら、PDF を保存します。
+
+```csharp
 doc.Save(dataDir + "AddJavascript.pdf");
 ```
 
-このチュートリアルでは、2 つの JavaScript 関数を追加しました。`func1`そして`func2`、PDF ドキュメントに。
+これにより、JavaScriptを含むドキュメントが次の名前で保存されます。`AddJavascript.pdf`指定されたディレクトリ（`dataDir`）。
 
-## ステップ 3: ドキュメント レベルの JavaScript を削除する
+## ステップ4: 既存のPDFにJavaScriptを読み込んで表示する
 
-ドキュメント レベルで JavaScript を削除するには、PDF ドキュメントをロードし、`JavaScript`辞書。キーを反復処理し、必要な JavaScript 関数を削除します。
+既存の PDF 内の JavaScript 関数を確認または変更する必要がある場合、最初の手順は PDF ファイルを読み込み、JavaScript キーにアクセスすることです。
 
 ```csharp
 Document doc1 = new Document(dataDir + "AddJavascript.pdf");
 IList keys = (System.Collections.IList)doc1.JavaScript.Keys;
+```
 
+既存のものをロードしています`AddJavascript.pdf`JavaScriptのキーをリストに保存します。`Keys`プロパティは、ドキュメントに添付されているすべての JavaScript 関数の名前を返します。
+
+## ステップ5: JavaScript関数を表示する
+
+次に、JavaScript 関数を反復処理して、ドキュメント内で何が使用可能かを確認します。
+
+```csharp
+Console.WriteLine("=============================== ");
 foreach (string key in keys)
 {
     Console.WriteLine(key + " ==> " + doc1.JavaScript[key]);
 }
+```
 
+これにより、各 JavaScript 関数名とそれに対応するコードがコンソールに出力されます。ドキュメントに現在どのような関数が含まれているかを確認する場合に便利です。
+
+## ステップ6: PDFからJavaScriptを削除する
+
+さて、次のような特定のJavaScript関数を削除したいとします。`func1`方法は次のとおりです。
+
+```csharp
 doc1.JavaScript.Remove("func1");
-Console.WriteLine("Key 'func1' removed");
+Console.WriteLine("Key 'func1' removed ");
 ```
 
-このチュートリアルでは、`func1` PDF ドキュメントからの JavaScript 関数。
+の`Remove`メソッドは JavaScript 関数の名前を引数として受け取り、それをドキュメントから削除します。
 
-## ステップ 4: 変更を保存して確認する
+## ステップ7: JavaScriptの削除を確認する
 
-変更した PDF ドキュメントを保存し、変更を確認します。
-
-```csharp
-Console.WriteLine("\nJavascript added/removed successfully to a document.");
-```
-
-このコードは、変更された PDF ドキュメントを保存し、成功メッセージを表示します。
-
-### Aspose.PDF for .NET を使用して PDF ドキュメントに Javascript を追加削除するソース コードの例
+JavaScriptを削除した後、残りの関数を再印刷して確認することができます。`func1`正常に削除されました。
 
 ```csharp
-//ドキュメントディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-Document doc = new Document();
-doc.Pages.Add();
-doc.JavaScript["func1"] = "function func1() { hello(); }";
-doc.JavaScript["func2"] = "function func2() { hello(); }";
-doc.Save(dataDir + "AddJavascript.pdf");
-
-//ドキュメントレベルのJavaScriptを削除
-Document doc1 = new Document(dataDir + "AddJavascript.pdf");
-IList keys = (System.Collections.IList)doc1.JavaScript.Keys;
 Console.WriteLine("=============================== ");
 foreach (string key in keys)
 {
-	Console.WriteLine(key + " ==> " + doc1.JavaScript[key]);
+    Console.WriteLine(key + " ==> " + doc1.JavaScript[key]);
 }
-
-doc1.JavaScript.Remove("func1");
-Console.WriteLine("Key 'func1' removed ");
-Console.WriteLine("=============================== ");
-
-Console.WriteLine("\nJavascript added/removed successfully to a document.");
+Console.WriteLine("Javascript added/removed successfully.");
 ```
+
+このコードの最後の部分により、すべてが適切に行われ、JavaScript 関数が正しく更新されることが保証されます。
 
 ## 結論
 
-この記事では、Aspose.PDF for .NET を使用して PDF ドキュメントに JavaScript を追加および削除するためのステップバイステップのガイドを提供しました。指示に従い、提供されたコードチュートリアルを利用することで、PDF ドキュメントに JavaScript を簡単に組み込み、必要に応じて削除できます。 JavaScript により、PDF ファイルの動的な機能と対話性が可能になり、ユーザー エクスペリエンスが向上します。
+おめでとうございます。Aspose.PDF for .NET を使用して PDF ドキュメントに JavaScript を追加および削除する方法を学習しました。この強力な機能は、動的なメッセージの追加からカスタム計算や検証の実行まで、さまざまなタスクに利用できます。PDF 内で JavaScript を操作することで、ユーザー エクスペリエンスを大幅に向上できます。
 
+## よくある質問
 
-### PDF ドキュメントへの JavaScript の追加と削除に関する FAQ
+### 1 つの PDF に複数の JavaScript 関数を追加できますか?
+もちろんです！JavaScript関数を必要なだけ追加できます。`doc.JavaScript`コレクション。
 
-#### Q: Aspose.PDF for .NET とは何ですか?
+### 存在しない JavaScript 関数を削除しようとするとどうなりますか?
+関数が存在しない場合は、`Remove`メソッドはエラーをスローしませんが、何も削除されません。
 
-A: Aspose.PDF for .NET は、開発者が .NET アプリケーションで PDF ファイルを効果的に操作できるようにする強力なライブラリです。 PDF ドキュメントをプログラムで操作するための広範な機能を提供します。
+### PDF を開いたらすぐに JavaScript を実行することは可能ですか?
+はい。ドキュメントを開いたり、ボタンをクリックしたりするなど、特定のトリガーで JavaScript が実行されるように構成できます。
 
-#### Q: Aspose.PDF for .NET を使用して PDF ドキュメントに JavaScript を追加するにはどうすればよいですか?
+### PDF に追加した後で JavaScript を編集できますか?
+はい、既存の PDF を読み込み、その JavaScript にアクセスし、コードを変更して、ドキュメントを再度保存することができます。
 
- A: JavaScript をドキュメント レベルで追加するには、`JavaScript`の財産`Document`クラス。 JavaScript 関数を JavaScript 辞書内のキーに割り当てるだけです。
-
-#### Q: Aspose.PDF for .NET を使用して PDF ドキュメントから JavaScript を削除できますか?
-
- A: はい、PDF ドキュメントから JavaScript を削除するには、`JavaScript`辞書を作成し、目的の JavaScript 関数を削除します。
-
-#### Q: Aspose.PDF for .NET はプロフェッショナルなプロジェクトに適していますか?
-
-A: 確かに、Aspose.PDF for .NET は、PDF の操作および生成タスクのために専門的なプロジェクトで広く使用されています。高性能で信頼性の高い機能を提供します。
-
-#### Q: PDF ドキュメントに JavaScript を追加するとどのようなメリットがありますか?
-
-A: PDF ドキュメントに JavaScript を追加すると、インタラクティブで動的な PDF ファイルを作成できます。フォーム検証を実装し、計算を実行し、さまざまな対話機能を追加して、ユーザー エクスペリエンスを向上させることができます。
+### JavaScript を削除すると、PDF コンテンツの残りの部分に影響しますか?
+いいえ、JavaScript を削除してもスクリプトにのみ影響します。PDF の内容は変更されません。

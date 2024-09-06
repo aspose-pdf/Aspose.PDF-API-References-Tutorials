@@ -43,7 +43,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 ## 4. lépés: Az alapértelmezett cellaszegély beállítása
 
- A következetesség érdekében beállíthatunk egy alapértelmezett cellaszegélyt a`DefaultCellBorder`az asztal tulajdonsága`BorderInfo` tárgy.
+ A következetesség érdekében beállíthatunk egy alapértelmezett cellaszegélyt a`DefaultCellBorder`az asztal tulajdonsága`BorderInfo` objektum.
 
 ```csharp
 // Állítsa be az alapértelmezett cellaszegélyt a BorderInfo objektum segítségével
@@ -118,7 +118,7 @@ row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
-Gratulálunk! Sikeresen megtanulta, hogyan adhat hozzá képet egy táblázatcellához az Aspose.PDF for .NET használatával. Nyugodtan fedezze fel a további testreszabási lehetőségeket, és integrálja ezt a funkciót projektjeibe.
+Gratulálok! Sikeresen megtanulta, hogyan adhat hozzá képet egy táblázatcellához az Aspose.PDF for .NET használatával. Nyugodtan fedezze fel a további testreszabási lehetőségeket, és integrálja ezt a funkciót projektjeibe.
 
 ### Példa forráskódra kép hozzáadásához egy táblázatcellában az Aspose.PDF for .NET használatával
 
@@ -165,7 +165,7 @@ V: Igen, az Aspose.PDF for .NET használatával több képet is hozzáadhat ugya
 
 #### K: Testreszabhatom a kép méretét és pozícióját a táblázatcellán belül?
 
- V: Igen, testreszabhatja a kép méretét és pozícióját a táblázatcellán belül a tulajdonságok beállításával`Image`tárgy. Beállíthatja a kép szélességét és magasságát, valamint a cellán belüli igazítást.
+ V: Igen, testreszabhatja a kép méretét és pozícióját a táblázatcellán belül a tulajdonságok beállításával`Image`objektum. Beállíthatja a kép szélességét és magasságát, valamint a cellán belüli igazítást.
 
 #### K: Hozzáadhatok képeket egy dinamikus számú sorral és oszloppal rendelkező táblázathoz?
 

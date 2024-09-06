@@ -50,7 +50,7 @@ ITaggedContent taggedContent = document.TaggedContent;
 
 ## 4. lépés: Állítsa be a dokumentum címét és nyelvét
 
-Most beállíthatjuk a dokumentum címét és nyelvét.
+Most már beállíthatjuk a dokumentum címét és nyelvét.
 
 ```csharp
 // Határozza meg a dokumentum címét és nyelvét
@@ -74,7 +74,7 @@ link1.Hyperlink = new WebHyperlink("http://google.com");
 link1.SetText("Google");
 link1.AlternateDescriptions = "Link to Google";
 
-// Adjon hozzá egy bekezdést egy formázott szöveget tartalmazó hiperhivatkozással
+// Adjon hozzá egy bekezdést formázott szöveget tartalmazó hiperhivatkozással
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p2);
 LinkElement link2 = taggedContent.CreateLinkElement();

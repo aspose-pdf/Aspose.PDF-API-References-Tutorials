@@ -36,7 +36,7 @@ Ezután a PDF dokumentum egy adott oldalát PNG formátumba konvertáljuk. Haszn
 ```csharp
 using (FileStream imageStream = new FileStream(dataDir + "aspose-logo.png", FileMode.Create))
 {
-// Hozzon létre egy Resolution objektumot
+//Hozzon létre egy Resolution objektumot
 Resolution resolution = new Resolution(300);
 // Hozzon létre egy PNG-eszközt a megadott attribútumokkal (szélesség, magasság, felbontás)
 PngDevice pngDevice = new PngDevice(resolution);
@@ -61,7 +61,7 @@ using (FileStream imageStream = new FileStream(dataDir + "aspose-logo.png", File
 	Resolution resolution = new Resolution(300);
 	// PNG-eszköz létrehozása megadott attribútumokkal (szélesség, magasság, felbontás)
 	PngDevice pngDevice = new PngDevice(resolution);
-	//Konvertálja az adott oldalt, és mentse a képet adatfolyamba
+	// Konvertálja az adott oldalt, és mentse a képet adatfolyamba
 	pngDevice.Process(pdfDocument.Pages[1], imageStream);
 	// Folyamat bezárása
 	imageStream.Close();
@@ -88,7 +88,7 @@ V: A PDF-oldalak PNG formátumba konvertálása hasznos lehet, ha egy PDF-dokume
 
 #### K: Hogyan szabhatom testre a PNG-kép felbontását és méreteit a konvertálás során?
 
- V: A felbontás és a méretek testreszabásához hozzon létre a`Resolution` objektumot a kívánt felbontással, majd hozzon létre a`PngDevice` objektum szélességének, magasságának és a létrehozott objektum megadásával`Resolution` tárgy.
+ V: A felbontás és a méretek testreszabásához hozzon létre a`Resolution` objektumot a kívánt felbontással, majd hozzon létre a`PngDevice` objektum szélességének, magasságának és a létrehozott objektum megadásával`Resolution` objektum.
 
 #### K: Átalakíthatok egy adott oldalt PDF dokumentumból PNG formátumba?
 

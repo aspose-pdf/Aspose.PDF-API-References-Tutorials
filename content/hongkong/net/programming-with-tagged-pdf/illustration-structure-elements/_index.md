@@ -60,7 +60,7 @@ taggedContent.SetLanguage("fr-FR");
 現在，讓我們為文件中添加說明性元素，例如圖像和圖形。
 
 ```csharp
-//正在開發中
+//欠發達
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
 figure1.AlternativeText = "Figure One";
@@ -96,7 +96,7 @@ ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-//正在開發中
+//開發中
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
 figure1.AlternativeText = "Figure One";
@@ -115,9 +115,9 @@ document.Save(dataDir + "IllustrationStructureElements.pdf");
 
 ### 常見問題解答
 
-#### Q：PDF 文件中的插圖結構元素是什麼？它們如何增強視覺呈現？
+#### Q：PDF 文件中的插圖結構元素是什麼？
 
-答：PDF 文件中的插圖結構元素可讓您合併影像和圖形等視覺內容。透過將插圖結構元素與 Aspose.PDF for .NET 結合使用，您可以增強 PDF 文件的視覺呈現，使它們更具吸引力和資訊量。
+答：PDF 文件中的插圖結構元素可讓您合併影像和圖形等視覺內容。透過將插圖結構元素與 Aspose.PDF for .NET 結合使用，您可以增強 PDF 文件的視覺呈現效果，使它們更具吸引力和資訊量。
 
 #### Q：Aspose.PDF for .NET 如何促進插畫結構元素的使用？
 

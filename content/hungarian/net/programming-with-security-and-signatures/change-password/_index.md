@@ -40,7 +40,7 @@ Document document = new Document(dataDir + "ChangePassword.pdf", "owner");
 
 ## 4. lépés: A jelszó megváltoztatása
 
- Miután betöltötte a PDF-dokumentumot, megváltoztathatja a jelszavát a`ChangePasswords` módszer. A módszer három paramétert igényel: az aktuális tulajdonosi jelszót, az új felhasználói jelszót és az új tulajdonosi jelszót.
+ Miután betöltötte a PDF-dokumentumot, megváltoztathatja a jelszavát a`ChangePasswords`módszer. A módszer három paramétert igényel: az aktuális tulajdonosi jelszót, az új felhasználói jelszót és az új tulajdonosi jelszót.
 
 ```csharp
 document.ChangePasswords("owner", "newuser", "newowner");
@@ -76,7 +76,7 @@ Console.WriteLine("\nPDF file password changed successfully.\nFile saved at " + 
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megváltoztatta egy PDF-dokumentum jelszavát az Aspose.PDF for .NET használatával. Ez az oktatóanyag a dokumentum betöltésétől a frissített verzió mentéséig a lépésről lépésre haladó folyamatot ismertette. Most már használhatja ezt a funkciót PDF-fájlok új jelszavakkal történő védelmére.
+Gratulálok! Sikeresen megváltoztatta egy PDF-dokumentum jelszavát az Aspose.PDF for .NET használatával. Ez az oktatóanyag a dokumentum betöltésétől a frissített verzió mentéséig a lépésről lépésre haladó folyamatot ismertette. Most már használhatja ezt a funkciót PDF-fájlok új jelszavakkal történő védelmére.
 
 ### GYIK a jelszó módosításához PDF fájlban
 
@@ -102,7 +102,7 @@ V: Kövesse a megadott lépéseket a fejlesztői környezet beállításához, b
 
 #### K: Megadhatok különböző jelszavakat a felhasználóknak és a tulajdonosoknak?
 
- V: Igen, a`ChangePasswords`módszer lehetővé teszi különböző jelszavak beállítását a felhasználó és a tulajdonos számára. Cserélje ki az „újfelhasználó” és „újtulajdonos” helyőrzőket a kívánt jelszavakra.
+ V: Igen, a`ChangePasswords` módszer lehetővé teszi különböző jelszavak beállítását a felhasználó és a tulajdonos számára. Cserélje ki az „újfelhasználó” és „újtulajdonos” helyőrzőket a kívánt jelszavakra.
 
 #### K: Hogyan menthetem el a frissített PDF dokumentumot?
 

@@ -10,7 +10,7 @@ url: /cs/java/pdf-tags-and-structure/custom-tag-name-for-pdf-using-java/
 
 tomto podrobném průvodci vás provedeme procesem nastavení vlastních názvů značek pro dokumenty PDF pomocí Java s Aspose.PDF pro Java. Vlastní názvy tagů pomáhají zlepšit dostupnost vašich dokumentů PDF, takže jsou uživatelsky přívětivější pro osoby se zdravotním postižením.
 
-## Úvod
+## Zavedení
 
 Dokumenty PDF často obsahují složitý obsah, jako jsou tabulky, obrázky a text. Abyste zajistili, že tyto dokumenty budou přístupné všem uživatelům, je nezbytné používat správné tagování. Vlastní názvy tagů vám umožňují definovat smysluplné a popisné názvy prvků ve vašem PDF, což usnadňuje interpretaci obsahu pro programy pro čtení z obrazovky a další pomocné technologie.
 
@@ -95,7 +95,7 @@ Vlastní názvy tagů zlepšují přístupnost dokumentů PDF a usnadňují jeji
 ### 2. Mohu po vytvoření PDF změnit vlastní názvy tagů?
 Ano, názvy vlastních značek můžete kdykoli upravit přístupem k prvkům struktury a aktualizací vlastností značek.
 
-### 3. Jsou názvy vlastních značek jazykově specifické?
+### 3. Jsou názvy vlastních značek jazykové?
 Názvy vlastních značek mohou být specifické pro jazyk, což vám umožní poskytovat podporu usnadnění pro různé jazyky.
 
 ### 4. Jak mohu otestovat dostupnost mého tagovaného PDF?

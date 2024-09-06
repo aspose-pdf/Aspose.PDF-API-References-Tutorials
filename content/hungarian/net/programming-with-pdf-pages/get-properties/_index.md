@@ -30,7 +30,7 @@ Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
 ```
 
 ## 3. lépés: Nyissa meg az oldalgyűjteményt
- Mostantól elérheti a dokumentum oldalgyűjteményét a`Pages` tulajdona a`pdfDocument` tárgy.
+ Mostantól elérheti a dokumentum oldalgyűjteményét a`Pages` tulajdona a`pdfDocument` objektum.
 
 ```csharp
 PageCollection pageCollection = pdfDocument.Pages;
@@ -44,7 +44,7 @@ Page pdfPage = pageCollection[1];
 ```
 
 ## 5. lépés: Szerezze be az oldal tulajdonságait
- Mostantól megkaphatja a PDF-oldal különböző tulajdonságait, például rajzdobozt, vágódobozt, vágódobozt stb., a megfelelő tulajdonságok használatával`pdfPage` tárgy.
+ Mostantól megkaphatja a PDF-oldal különböző tulajdonságait, például rajzdobozt, vágódobozt, vágódobozt stb., a megfelelő tulajdonságok használatával`pdfPage` objektum.
 
 ```csharp
 Console.WriteLine("ArtBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
@@ -96,9 +96,9 @@ V: Az Aspose.PDF for .NET használatával PDF tulajdonságainak lekéréséhez k
 
 1. Állítsa be a dokumentumkönyvtárat a lekérni kívánt PDF-fájl elérési útjának megadásával.
 2.  Nyissa meg a PDF dokumentumot a`Document` osztályú Aspose.PDF, amely megadja a PDF-fájl helyes elérési útját.
-3.  A dokumentum oldalgyűjteményének eléréséhez használja a`Pages` tulajdona a`pdfDocument` tárgy.
+3.  A dokumentum oldalgyűjteményének eléréséhez használja a`Pages` tulajdona a`pdfDocument` objektum.
 4. Ugrás egy adott oldalra a gyűjteményben lévő oldal indexével (az indexelés 1-től kezdődik).
-5.  Szerezze meg a PDF-oldal különböző tulajdonságait, például ArtBox, BleedBox, CropBox, MediaBox, TrimBox, Rect, Oldalszám és Rotation, a megfelelő tulajdonságok használatával`pdfPage` tárgy.
+5.  Szerezze meg a PDF-oldal különböző tulajdonságait, például ArtBox, BleedBox, CropBox, MediaBox, TrimBox, Rect, Oldalszám és Rotation, a megfelelő tulajdonságok használatával`pdfPage` objektum.
 
 #### K: Melyek a PDF-oldalak különböző tulajdonságai, amelyeket az Aspose.PDF for .NET használatával tölthetek le?
 

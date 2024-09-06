@@ -1,8 +1,8 @@
 ---
-title: Gaya Struktur Teks dalam PDF menggunakan Java
-linktitle: Gaya Struktur Teks dalam PDF menggunakan Java
-second_title: Aspose.PDF API Pemrosesan PDF Java
-description: Pelajari cara menata struktur teks dalam PDF menggunakan Java dengan panduan langkah demi langkah kami. Sesuaikan font, warna, hyperlink, dan lainnya untuk dokumen yang terlihat profesional.
+title: Struktur Teks Gaya dalam PDF menggunakan Java
+linktitle: Struktur Teks Gaya dalam PDF menggunakan Java
+second_title: API Pemrosesan PDF Java Aspose.PDF
+description: Pelajari cara menata struktur teks dalam PDF menggunakan Java dengan panduan langkah demi langkah kami. Sesuaikan font, warna, hyperlink, dan lainnya untuk dokumen yang tampak profesional.
 type: docs
 weight: 11
 url: /id/java/pdf-styles-and-formatting/style-text-structure-in-pdf-using-java/
@@ -10,28 +10,28 @@ url: /id/java/pdf-styles-and-formatting/style-text-structure-in-pdf-using-java/
 
 ## Perkenalan
 
-PDF telah menjadi format standar untuk berbagi dokumen, laporan, dan berbagai jenis konten. Saat bekerja dengan PDF di Java, penting untuk tidak hanya mengisinya dengan data tetapi juga menata teks agar tampilannya lebih halus.
+PDF telah menjadi format standar untuk berbagi dokumen, laporan, dan berbagai jenis konten. Saat bekerja dengan PDF di Java, penting untuk tidak hanya mengisinya dengan data tetapi juga memberi gaya pada teks agar tampilannya lebih menarik.
 
 ## Prasyarat
 
-Sebelum kita mulai, pastikan Anda memiliki prasyarat berikut:
+Sebelum kita memulai, pastikan Anda memiliki prasyarat berikut:
 
-- Kit Pengembangan Java (JDK) diinstal.
-- Aspose.PDF untuk perpustakaan Java diunduh dan diatur.
+- Java Development Kit (JDK) terpasang.
+- Aspose.PDF untuk pustaka Java diunduh dan disiapkan.
 
 ## Menyiapkan Lingkungan
 
-Untuk mulai menata teks dalam PDF menggunakan Java, Anda perlu menyiapkan lingkungan pengembangan Anda. Ikuti langkah ini:
+Untuk mulai menata teks dalam PDF menggunakan Java, Anda perlu menyiapkan lingkungan pengembangan Anda. Ikuti langkah-langkah berikut:
 
-1.  Unduh perpustakaan Aspose.PDF untuk Java dari[Di Sini](https://releases.aspose.com/pdf/java/).
+1.  Unduh pustaka Aspose.PDF untuk Java dari[Di Sini](https://releases.aspose.com/pdf/java/).
 
-2. Sertakan perpustakaan dalam proyek Java Anda.
+2. Sertakan pustaka tersebut dalam proyek Java Anda.
 
 3. Impor kelas yang diperlukan dari Aspose.PDF dalam kode Anda.
 
 ## Menambahkan Teks ke PDF
 
-Sekarang, mari kita mulai dengan menambahkan teks ke dokumen PDF. Berikut ini contoh sederhananya:
+Sekarang, mari kita mulai dengan menambahkan teks ke dokumen PDF. Berikut contoh sederhananya:
 
 ```java
 // Buat dokumen PDF baru
@@ -46,15 +46,15 @@ com.aspose.pdf.TextFragment textFragment = new com.aspose.pdf.TextFragment("Hell
 // Tambahkan TextFragment ke halaman
 pdfDocument.getPages().get_Item(1).getParagraphs().add(textFragment);
 
-// Simpan dokumennya
+// Simpan dokumen
 pdfDocument.save("output.pdf");
 ```
 
 Kode ini membuat dokumen PDF, menambahkan halaman, dan menyisipkan teks "Halo, PDF!" ke halaman.
 
-## Penataan Huruf
+## Gaya Font
 
-Anda dapat menyesuaikan font teks Anda. Berikut cara mengubah jenis dan ukuran font:
+Anda dapat menyesuaikan fon teks Anda. Berikut cara mengubah jenis dan ukuran fon:
 
 ```java
 textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
@@ -63,14 +63,14 @@ textFragment.getTextState().setFontSize(12);
 
 ## Ukuran dan Warna Teks
 
-Menyesuaikan ukuran dan warna teks itu sederhana:
+Menyesuaikan ukuran dan warna teks itu mudah:
 
 ```java
 textFragment.getTextState().setFontSize(16);
 textFragment.getTextState().setForegroundColor(com.aspose.pdf.Color.getBlue());
 ```
 
-## Perataan Teks
+## Penyelarasan Teks
 
 Kontrol perataan teks dalam PDF Anda:
 
@@ -80,7 +80,7 @@ textFragment.getTextState().setHorizontalAlignment(HorizontalAlignment.Center);
 
 ## Menambahkan Header dan Footer
 
-Sempurnakan struktur dokumen dengan header dan footer:
+Tingkatkan struktur dokumen dengan header dan footer:
 
 ```java
 Page page = pdfDocument.getPages().get_Item(1);
@@ -100,7 +100,7 @@ header.getParagraphs().add(footerText);
 
 ## Menambahkan Daftar Berpoin
 
-Buat daftar terorganisir di PDF Anda:
+Buat daftar terorganisir dalam PDF Anda:
 
 ```java
 ListSection listSection = new ListSection();
@@ -138,7 +138,7 @@ Ubah teks sesuai kebutuhan:
 
 ```java
 textFragment.getTextState().setTextRise(5); // Menaikkan teks
-textFragment.getTextState().setTextScaling(200); // Menskalakan teks
+textFragment.getTextState().setTextScaling(200); // Skala teks
 textFragment.getTextState().setUnderline(true);
 ```
 
@@ -154,7 +154,7 @@ page.getPageInfo().getMargin().setRight(50);
 
 ## Menangani Hentian Halaman
 
-Pastikan hentian halaman yang tepat untuk konten Anda:
+Pastikan pemutusan halaman yang tepat untuk konten Anda:
 
 ```java
 textFragment.getTextState().setIsAutoTruncated(true);
@@ -176,9 +176,9 @@ page.getParagraphs().add(watermark);
 
 ## Kesimpulan
 
-Dalam panduan ini, kami telah menjelajahi cara menata struktur teks dalam PDF menggunakan Java dengan bantuan Aspose.PDF. Anda sekarang dapat membuat dokumen PDF yang menarik secara visual dan terstruktur dengan baik yang memenuhi kebutuhan spesifik Anda. Bereksperimenlah dengan teknik yang disediakan dan tingkatkan keterampilan pembuatan PDF Anda.
+Dalam panduan ini, kami telah mengeksplorasi cara menata struktur teks dalam PDF menggunakan Java dengan bantuan Aspose.PDF. Kini Anda dapat membuat dokumen PDF yang menarik secara visual dan terstruktur dengan baik yang memenuhi persyaratan khusus Anda. Bereksperimenlah dengan teknik yang disediakan dan tingkatkan keterampilan pembuatan PDF Anda.
 
-## FAQ
+## Pertanyaan yang Sering Diajukan
 
 ### Bagaimana cara mengubah font teks dalam PDF?
 
@@ -188,13 +188,13 @@ Dalam panduan ini, kami telah menjelajahi cara menata struktur teks dalam PDF me
 textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
 ```
 
-### Bisakah saya menambahkan hyperlink ke PDF saya menggunakan Aspose.PDF untuk Java?
+### Dapatkah saya menambahkan hyperlink ke PDF saya menggunakan Aspose.PDF untuk Java?
 
- Ya, Anda dapat menambahkan hyperlink ke PDF Anda menggunakan Aspose.PDF untuk Java. Menggunakan`Hyperlink` kelas untuk membuat tautan dan menentukan tindakan, seperti membuka URL.
+ Ya, Anda dapat menambahkan hyperlink ke PDF Anda menggunakan Aspose.PDF untuk Java. Gunakan`Hyperlink` kelas untuk membuat tautan dan menentukan tindakan, seperti membuka URL.
 
-### Apa cara yang disarankan untuk menangani hentian halaman dalam PDF?
+### Apa cara yang disarankan untuk menangani jeda halaman dalam PDF?
 
- Untuk menangani hentian halaman dalam PDF, atur`IsAutoTruncated` Dan`IsWordWrapped` properti ke`true` dalam`TextState`. Hal ini memastikan bahwa teks terpotong dan dibungkus dengan benar agar sesuai dengan batas halaman.
+ Untuk menangani jeda halaman dalam PDF, atur`IsAutoTruncated` Dan`IsWordWrapped` properti untuk`true` di dalam`TextState`Ini memastikan bahwa teks terpotong dan terbungkus dengan benar agar sesuai dengan batas halaman.
 
 ### Bagaimana cara melindungi dokumen PDF saya dengan tanda air?
 
@@ -202,4 +202,4 @@ Anda dapat melindungi dokumen PDF Anda dengan tanda air dengan menambahkan fragm
 
 ### Di mana saya dapat menemukan informasi dan dokumentasi lebih lanjut untuk Aspose.PDF untuk Java?
 
- Anda dapat menemukan dokumentasi komprehensif untuk Aspose.PDF untuk Java di[Di Sini](https://reference.aspose.com/pdf/java/).
+ Anda dapat menemukan dokumentasi lengkap untuk Aspose.PDF untuk Java di[Di Sini](https://reference.aspose.com/pdf/java/).

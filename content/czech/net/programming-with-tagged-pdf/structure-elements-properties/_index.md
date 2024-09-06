@@ -71,7 +71,7 @@ h1.ActualText = "Actual Text";
 Nakonec tagovaný dokument PDF uložíme.
 
 ```csharp
-// Uložte tagovaný dokument PDF
+// Uložte označený dokument PDF
 document.Save(dataDir + "StructureElementsProperties.pdf");
 ```
 

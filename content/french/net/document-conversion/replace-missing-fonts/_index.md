@@ -1,113 +1,111 @@
 ---
 title: Remplacer les polices manquantes
 linktitle: Remplacer les polices manquantes
-second_title: Aspose.PDF pour la référence de l'API .NET
-description: Guide étape par étape pour remplacer les polices manquantes dans un fichier PDF à l'aide d'Aspose.PDF pour .NET.
+second_title: Référence de l'API Aspose.PDF pour .NET
+description: Découvrez comment remplacer les polices manquantes dans les documents PDF à l'aide d'Aspose.PDF pour .NET avec ce guide étape par étape.
 type: docs
 weight: 260
 url: /fr/net/document-conversion/replace-missing-fonts/
 ---
-Dans ce didacticiel, nous vous guiderons tout au long du processus de remplacement des polices manquantes dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Lorsque vous ouvrez un fichier PDF sur un ordinateur sur lequel une police spécifique est manquante, des problèmes d'affichage des polices peuvent survenir. Dans de tels cas, il est possible de remplacer la police manquante par une autre police disponible sur la machine. En suivant les étapes ci-dessous, vous pourrez remplacer les polices manquantes dans un fichier PDF.
+## Introduction
 
-## Conditions préalables
-Avant de commencer, assurez-vous de remplir les conditions préalables suivantes :
+Avez-vous déjà ouvert un document PDF et constaté que certaines polices manquaient ? Cela peut être frustrant, n'est-ce pas ? Les polices manquantes peuvent donner lieu à un document qui n'a absolument pas l'air conforme à l'intention du créateur. Heureusement, avec Aspose.PDF pour .NET, vous pouvez facilement remplacer les polices manquantes et garantir que vos documents PDF conservent l'apparence souhaitée. Dans ce didacticiel, nous vous guiderons pas à pas tout au long du processus, de manière simple et directe.
 
-- Connaissance de base du langage de programmation C#.
-- Bibliothèque Aspose.PDF pour .NET installée sur votre système.
-- Un environnement de développement tel que Visual Studio.
+## Prérequis
 
-## Étape 1 : Trouver la police manquante
-La première étape consiste à trouver la police manquante dans le fichier PDF. Utilisez le code suivant :
+Avant de commencer, vous devez mettre en place quelques éléments :
+
+1.  Aspose.PDF pour .NET : assurez-vous que la bibliothèque Aspose.PDF est installée. Vous pouvez la télécharger à partir de[ici](https://releases.aspose.com/pdf/net/).
+2. Visual Studio : un environnement de développement dans lequel vous pouvez écrire et tester votre code.
+3. Connaissances de base de C# : la familiarité avec la programmation C# vous aidera à mieux comprendre les extraits de code.
+
+## Paquets d'importation
+
+Pour commencer, vous devrez importer les packages nécessaires dans votre projet C#. Voici comment procéder :
 
 ```csharp
-// Chemin d'accès au répertoire des documents.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-Aspose.Pdf.Text.Font originalFont = null;
-try
-{
-     // Trouver la police d'origine
-     originalFont = FontRepository.FindFont("AgencyFB");
-}
-catch(Exception)
-{
-     // La police est manquante sur la machine de destination
-     // Ajouter une substitution de police simple
-     FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
-}
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
- Assurez-vous de remplacer`"YOUR DOCUMENTS DIRECTORY"` avec le répertoire réel où se trouve votre fichier PDF.
+## Étape 1 : Configurez votre répertoire de documents
 
-## Étape 2 : Remplacer la police manquante
-Ensuite, nous remplacerons la police manquante par une autre police disponible. Utilisez le code suivant :
-
-```csharp
-var fileNew = new FileInfo(dataDir + "newfile_out.pdf");
-var pdf = new Document(dataDir + "input.pdf");
-
-// Convertissez le fichier PDF au format PDF/A avec suppression des erreurs
-pdf.Convert(dataDir + "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
-
-// Enregistrez le fichier PDF résultant
-pdf.Save(fileNew.FullName);
-```
-
- Assurez-vous de remplacer`"input.pdf"` avec le chemin réel vers votre fichier PDF original et`"newfile_out.pdf"` avec le nom souhaité pour le fichier PDF résultant.
-
-## Étape 3 : Enregistrement du fichier PDF résultant
-Enfin, nous enregistrerons le fichier PDF résultant avec la police remplacée. Utilisez le code suivant :
+Tout d'abord, vous devez spécifier le chemin d'accès à votre répertoire de documents. C'est là que se trouve votre fichier PDF d'entrée et où le fichier de sortie sera enregistré.
 
 ```csharp
-// Enregistrez le fichier PDF résultant
-pdf.Save(fileNew.FullName);
-```
-
-Assurez-vous que vous avez défini le chemin de destination correct pour le fichier PDF résultant.
-
-### Exemple de code source pour remplacer les polices manquantes à l'aide d'Aspose.PDF pour .NET
-
-```csharp
-// Le chemin d'accès au répertoire des documents.
+// Le chemin vers le répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+## Étape 2 : Initialiser la police d'origine
+
+Ensuite, vous devrez essayer de trouver la police d'origine qui pourrait manquer. Dans ce cas, nous recherchons « AgencyFB ».
+
+```csharp
 Aspose.Pdf.Text.Font originalFont = null;
 try
 {
-	originalFont = FontRepository.FindFont("AgencyFB");
+    originalFont = FontRepository.FindFont("AgencyFB");
 }
 catch (Exception)
 {
-	// La police est manquante sur la machine de destination
-	FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
+    //La police est manquante sur la machine de destination
+    FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
 }
+```
+
+Ici, nous essayons de trouver la police. Si elle n'est pas trouvée, nous interceptons l'exception et la remplaçons par une police plus courante, « Arial ». Cela garantit que votre document reste beau même si la police d'origine n'est pas disponible.
+
+## Étape 3 : Charger le document PDF
+
+Chargez maintenant le document PDF que vous souhaitez traiter. Vous devrez spécifier le chemin du fichier d'entrée.
+
+```csharp
 var fileNew = new FileInfo(dataDir + "newfile_out.pdf");
 var pdf = new Document(dataDir + "input.pdf");
-pdf.Convert( dataDir +  "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
+```
+
+ Dans cette étape, nous créons un nouveau`FileInfo` objet pour le fichier de sortie et charger le document PDF d'entrée dans un nouveau`Document` objet.
+
+## Étape 4 : Convertir le document PDF
+
+Avant d'enregistrer le document, il est conseillé de le convertir dans un format PDF spécifique. Dans ce cas, nous le convertirons au format PDF/A-1B, qui est une norme pour l'archivage à long terme des documents électroniques.
+
+```csharp
+pdf.Convert(dataDir + "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
+```
+
+Cette ligne convertit le PDF et enregistre toutes les erreurs dans un fichier XML spécifié. Si des problèmes surviennent lors de la conversion, ils seront enregistrés dans « log.xml ».
+
+## Étape 5 : Enregistrer le document PDF mis à jour
+
+Enfin, il est temps d'enregistrer le document PDF mis à jour avec les polices remplacées.
+
+```csharp
 pdf.Save(fileNew.FullName);
 ```
 
+Cette ligne enregistre le PDF modifié dans le chemin de fichier de sortie spécifié. Et voilà, vous avez réussi à remplacer les polices manquantes dans votre document PDF !
+
 ## Conclusion
-Dans ce didacticiel, nous avons couvert le processus étape par étape de remplacement des polices manquantes dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. En suivant les instructions décrites ci-dessus, vous pourrez remplacer avec succès les polices manquantes dans votre fichier PDF.
 
-### FAQ
+Remplacer les polices manquantes dans les documents PDF n'est pas forcément une tâche ardue. Avec Aspose.PDF pour .NET, vous pouvez facilement gérer les substitutions de polices et garantir que vos documents s'affichent comme ils le devraient. En suivant les étapes décrites dans ce didacticiel, vous pouvez maintenir l'intégrité de vos fichiers PDF, même lorsque certaines polices ne sont pas disponibles. Ainsi, la prochaine fois que vous rencontrerez un problème de police manquante, vous saurez exactement quoi faire !
 
-#### Q : Qu'est-ce qu'Aspose.PDF pour .NET ?
+## FAQ
 
-R : Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de travailler avec des documents PDF dans des applications C#. Il offre diverses fonctionnalités, notamment la possibilité de remplacer les polices manquantes dans les fichiers PDF.
+### Qu'est-ce qu'Aspose.PDF pour .NET ?
+Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de créer, manipuler et convertir des documents PDF par programmation.
 
-#### Q : Pourquoi devrais-je rencontrer des polices manquantes dans un fichier PDF ?
+### Puis-je utiliser Aspose.PDF gratuitement ?
+ Oui, Aspose propose une version d'essai gratuite que vous pouvez utiliser pour évaluer la bibliothèque. Vous pouvez la télécharger[ici](https://releases.aspose.com/).
 
-R : Des polices manquantes dans un fichier PDF peuvent se produire lorsque le fichier est ouvert sur un ordinateur sur lequel les polices nécessaires ne sont pas installées. Cela peut conduire à une substitution de police, affectant l'apparence visuelle du document.
+### Que dois-je faire si la police dont j’ai besoin n’est pas disponible ?
+Vous pouvez remplacer la police manquante par une police plus courante en utilisant la fonction de substitution de police dans Aspose.PDF.
 
-#### Q : Comment puis-je rechercher et remplacer les polices manquantes dans un fichier PDF à l'aide d'Aspose.PDF pour .NET ?
+### Est-il possible de convertir des PDF vers d’autres formats ?
+Absolument ! Aspose.PDF prend en charge la conversion vers différents formats, notamment PDF/A, DOCX, etc.
 
- R : Pour rechercher et remplacer les polices manquantes, vous pouvez utiliser l'outil`FontRepository.FindFont` méthode pour vérifier la présence de la police requise. Si la police est manquante, vous pouvez ajouter une substitution de police à l'aide du`FontRepository.Substitutions` propriété.
-
-#### Q : Puis-je personnaliser le processus de substitution de police ?
-
-R : Oui, vous pouvez personnaliser le processus de substitution de police en spécifiant une police différente pour la substitution. Dans le code fourni, nous avons utilisé Arial comme substitut à la police "AgencyFB" manquante, mais vous pouvez choisir une police différente selon vos préférences.
-
-#### Q : Comment puis-je garantir l’exactitude du rendu des polices après substitution ?
-
-R : Aspose.PDF pour .NET offre des capacités robustes de gestion des polices, garantissant un rendu précis des polices après substitution. Vous pouvez prévisualiser le fichier PDF résultant pour vérifier le remplacement de la police.
+### Où puis-je trouver de l'aide pour Aspose.PDF ?
+ Vous pouvez trouver de l'aide et poser des questions sur le forum Aspose[ici](https://forum.aspose.com/c/pdf/10).
